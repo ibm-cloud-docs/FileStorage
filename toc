@@ -1,0 +1,27 @@
+{:navgroup: .navgroup}
+{:topicgroup: .topicgroup}
+
+{: .toc subcollection="File Storage" audience="services" href=“/docs/infrastructure/FileStorage/index.html”}
+IBM Bluemix Storage - File Storage
+
+    {: .navgroup id="learn"}
+    index.md 
+    new-ibm-block-and-file-storage-location-and-features.md
+    {: .navgroup-end}
+    
+    {: .navgroup id="howto"}
+    provisioning-file-storage.md
+    mounting-nsf-file-storage.md
+    accessing-file-storage-linux.md
+    block-file-storage-encryption-rest.md
+    migrate-file-storage-encrypted-file-storage.md
+    mounting-storage-coreos.md
+    how-to-create-duplicate-volume.md
+    replication.md
+    set-host-queue-depth-settings-performance-and-endurance-storage.md
+    snapshots.md
+    {: .navgroup-end}
+               
+    {: .navgroup id="help"}
+    File-Storage-FAQ.md
+    {: .navgroup-end}
