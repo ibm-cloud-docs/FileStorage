@@ -2,13 +2,13 @@
 
 copyright:
   years: 2014, 2017
-lastupdated: "2017-08-01"
+lastupdated: "2017-08-21"
 
 ---
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 
-# File Storage
+# Getting Started with File Storage
 
 File Storage is persistent, fast, and flexible Network Attached, NFS-based file storage. In this Network Attached Storage (NAS) environment, you have total control over your file shares function and performance. File storage shares can be connected to up to 64 authorized devices over routed TCP/IP connections for resiliency.
 
