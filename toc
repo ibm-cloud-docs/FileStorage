@@ -7,6 +7,9 @@ IBM Bluemix Storage - File Storage
     {: .navgroup id="learn"}
     index.md 
     new-ibm-block-and-file-storage-location-and-features.md
+    architecture-guide-file-storage-vmware.md
+    replication.md
+    snapshots.md
     {: .navgroup-end}
     
     {: .navgroup id="howto"}
@@ -17,9 +20,7 @@ IBM Bluemix Storage - File Storage
     migrate-file-storage-encrypted-file-storage.md
     mounting-storage-coreos.md
     how-to-create-duplicate-volume.md
-    replication.md
     set-host-queue-depth-settings-performance-and-endurance-storage.md
-    snapshots.md
     {: .navgroup-end}
                
     {: .navgroup id="help"}
