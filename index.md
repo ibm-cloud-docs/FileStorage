@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2017
-lastupdated: "2017-08-22"
+lastupdated: "2017-08-25"
 
 ---
 {:new_window: target="_blank"}
@@ -158,7 +158,7 @@ IOPS, for both Endurance and Performance, are measured based on a 16KB block siz
 
 ### Tips for provisioning IOPS for file storage
 
-Choosing the block storage that is right for your workload is important, and equally important is how to avoid bottlenecks.  IOPS for both Endurance and Performance is measured based on a 16KB block size with a 50/50 read/write mix. This is important because if you choose a block size larger than 16KB, the throughput is affected. The reason is that a 16KB block is the equivalent of one write to the volume. Each multiple adds more writes decreasing the response time to the server. For example, a 64KB block size is the equivalent to four writes to the volume. Or, four IOPS per GB at 16KB block size is equivalent to one IOPS per GB at 64KB block size.
+Choosing the storage solution that is right for your workload is important, and equally important is how to avoid bottlenecks.  IOPS for both Endurance and Performance is measured based on a 16KB block size with a 50/50 read/write mix. This is important because if you choose a size larger than 16KB, the throughput is affected. The reason is that a 16KB block is the equivalent of one write to the volume. Each multiple adds more writes decreasing the response time to the server. For example, a 64KB block size is the equivalent to four writes to the volume. Or, four IOPS per GB at 16KB block size is equivalent to one IOPS per GB at 64KB block size.
 
 Knowing how many IOPS you are getting from your volume can help you determine what your throughput will be. A way to calculate expected throughput is to multiply block size by IOPS (block size * IOPS = throughput). However, throughput can also be constrained by other factors. The speed of your Ethernet connection must be faster than the expected maximum throughput from your volume. For example, if you have 6,000 IOPS and are using a 16KB block size, the volume is capable of approximately 94MB per second. If you have a 1Gbps Ethernet connection to your LUN, it will become a bottleneck when your servers attempt to utilize the maximum available throughput.
 
