@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2017
-lastupdated: "2017-08-22"
+lastupdated: "2017-08-25"
 
 ---
 {:new_window: target="_blank"}
@@ -36,7 +36,14 @@ Take advantage of the following core features of Block Storage:
    - Allows multiple hosts (up to 64) to simultaneously access file volumes
 - **Clustered databases**
    - Supports advanced use cases, such as clustered databases
-  
+
+## Hourly / Monthly Billing
+
+You can select hourly or monthly billing for a File Volume. The type of billing selected for a LUN will apply to its snapshot space and replicas. For example, if you provision a LUN with hourly billing, any snapshots or replica fees will be billed hourly. If you provision a LUN with monthly billing, any snapshots or replica fees will be billed monthly. 
+
+With **hourly billing**, the calculation of the number of hours the file volume existed on the account is performed at the time the volume is deleted or at the end of the billing cycle, which ever comes first.  Hourly billing is a good choice for storage that is used for a few days or less than a full month. Hourly billing is only available for storage provisioned in [select data centers](/docs/infrastructure/BlockStorage/new-ibm-block-and-file-storage-location-and-features.html). 
+
+With **monthly billing**, the calculation for the price is pro-rated from the date of creation to the end of the billing cycle and billed immediately. There is no refund If a file volume is deleted before the end of the billing cycle.  Monthly billing is a good choice for storage used in production workloads that use data that needs to be stored and accessed for long periods of time (one month or longer).  
 
 ## Provisioning
 
@@ -158,7 +165,7 @@ IOPS, for both Endurance and Performance, are measured based on a 16KB block siz
 
 ### Tips for provisioning IOPS for file storage
 
-Choosing the block storage that is right for your workload is important, and equally important is how to avoid bottlenecks.  IOPS for both Endurance and Performance is measured based on a 16KB block size with a 50/50 read/write mix. This is important because if you choose a block size larger than 16KB, the throughput is affected. The reason is that a 16KB block is the equivalent of one write to the volume. Each multiple adds more writes decreasing the response time to the server. For example, a 64KB block size is the equivalent to four writes to the volume. Or, four IOPS per GB at 16KB block size is equivalent to one IOPS per GB at 64KB block size.
+Choosing the storage solution that is right for your workload is important, and equally important is how to avoid bottlenecks.  IOPS for both Endurance and Performance is measured based on a 16KB block size with a 50/50 read/write mix. This is important because if you choose a size larger than 16KB, the throughput is affected. The reason is that a 16KB block is the equivalent of one write to the volume. Each multiple adds more writes decreasing the response time to the server. For example, a 64KB block size is the equivalent to four writes to the volume. Or, four IOPS per GB at 16KB block size is equivalent to one IOPS per GB at 64KB block size.
 
 Knowing how many IOPS you are getting from your volume can help you determine what your throughput will be. A way to calculate expected throughput is to multiply block size by IOPS (block size * IOPS = throughput). However, throughput can also be constrained by other factors. The speed of your Ethernet connection must be faster than the expected maximum throughput from your volume. For example, if you have 6,000 IOPS and are using a 16KB block size, the volume is capable of approximately 94MB per second. If you have a 1Gbps Ethernet connection to your LUN, it will become a bottleneck when your servers attempt to utilize the maximum available throughput.
 
