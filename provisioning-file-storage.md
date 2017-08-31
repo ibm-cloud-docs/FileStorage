@@ -19,10 +19,6 @@ lastupdated: "2017-08-31"
 2. Click **Order File Storage** in the top right corner of the screen. 
 3. Select **Endurance** from the **Select Storage Type** drop-down list.
 4. Click the **Location** drop-down list and select your data center.
-   - If you selected a data center with improved capabilities (denoted with an * in the drop-down), you will have the option to choose between Monthly or Hourly Billing. 
-     1. With **hourly** billing, the calculation of the number of hours the file volume existed on the account is performed at the time the volume is deleted or at the end of the billing cycle, which ever comes first.  Hourly billing is a good choice for storage that is used for a few days or less than a full month. Hourly billing is only available for storage provisioned in these [select data centers](new-ibm-block-and-file-storage-location-and-features.html). 
-     2. With **monthly** billing, the calculation for the price is pro-rated from the date of creation to the end of the billing cycle and billed immediately. There is no refund If a file volume is deleted before the end of the billing cycle.  Monthly billing is a good choice for storage used in production workloads that use data that needs to be stored and accessed for long periods of time (month or longer).
-     **NOTE**: Monthly billing type is used by default for storage provisioned in data centers that are not updated with improved capabilities.
 5. Select the storage level for your applications:
     - **0.25 IOPS per GB** is designed for workloads with low I/O intensity. These workloads are typically characterized by having a large percentage of data inactive at a given time. Example applications include storing mailboxes or departmental level file shares.
     - **2 IOPS per GB** is designed for most general purpose usage. Example applications include hosting small databases backing web applications or virtual machine disk images for a hypervisor.
@@ -40,10 +36,6 @@ lastupdated: "2017-08-31"
 2. Click **Order File Storage** in the top right corner of the screen. 
 3. Select **Performance** from the Select Storage Type drop-down list.
 4. Click the **Location** drop-down list and select your data center.
-    -  If you selected a data center with improved capabilities (denoted with an * in the drop-down), you will have the option to choose between Monthly or Hourly Billing. 
-       1.  With **hourly** billing, the calculation of the number of hours the file volume existed on the account is performed at the time the volume is deleted or at the end of the billing cycle, which ever comes first.  Hourly billing is a good choice for storage that is used for a few days or less than a full month. Hourly billing is only available for storage provisioned in these select data centers. 
-       2. With **monthly** billing, the calculation for the price is pro-rated from the date of creation to the end of the billing cycle and billed immediately. There is no refund If a file volume is deleted before the end of the billing cycle.  Monthly billing is a good choice for storage used in production workloads that use data that needs to be stored and accessed for long periods of time (month or longer).
-       **NOTE**: Monthly billing type is used by default for storage provisioned in data centers that are not updated with improved capabilities.  
 5. Select the radio button next to the appropriate **Storage Size**.
 6. Enter the IOPS in the **Specify IOPS** field.
 7. Click **Continue**. You are shown the monthly and prorated charges with a final chance to review order details. Click **Previous** if you want to change your order.
