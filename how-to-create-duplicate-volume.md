@@ -48,7 +48,7 @@ From the customer portal, click **Storage**, **File Storage** OR from Bluemix Ca
       -	Select **Create from latest snapshot** – this will create a duplicate from whatever the latest snapshot that exists for this volume. 
     -	If ordering from a replica volume – the only option for snapshot is to use the latest snapshot available. 
 3.	Hourly or Monthly Billing – you can choose to provision the new duplicate volume with hourly or monthly billing.  The billing type for the original volume is automatically selected, but if you would like to choose a different billing type for your new duplicate storage, you can make that selection here.
-4.      Storage Type (Endurance or Performance) and Location will remain the same as the original volume. 
+4. 	Storage Type (Endurance or Performance) and Location will remain the same as the original volume. 
 5.	If desired you can specify IOPs or IOPs Tier for the new volume. The IOPs designation of the original volume is set by default. 
       -	If your original volume is 0.25 IOPs Endurance tier, you will not be able to make a new selection. 
       -	If you original volume is 2, 4, or 10 IOPs Endurance tier, you can move anywhere between those tiers for the new volume. 

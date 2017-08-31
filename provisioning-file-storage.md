@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2017
-lastupdated: "2017-08-01"
+lastupdated: "2017-08-31"
 
 ---
 {:new_window: target="_blank"}
@@ -54,9 +54,11 @@ lastupdated: "2017-08-01"
 
 ### How to authorize hosts to access File Storage
 
-“Authorized” hosts are hosts that have been given access rights to a particular volume. Without host authorization you won’t be able to access or use the storage from your system. Authorizing a host to access your volume generates the Username, Password.
+“Authorized” hosts are hosts that have been given access rights to a particular volume. Without host authorization you won’t be able to access or use the storage from your system. Authorizing a host to access your volume generates the Username, Password. 
 
-1. Click **Storage** > **File Storage**, and click on your **LUN Name**.
+**Note**: You can only authorize and connect hosts that reside in the same datacenter as your storage. If you have multiple accounts, you cannot authorize a host from one account to access your storage on another. 
+
+1. Click **Storage** > **File Storage**, and click on your **Volume Name**.
 2. Scroll to the **Authorized Hosts** section of the page.
 3. Click the **Authorize Host** link on the right side of the page. Select the hosts that can access that particular volume.
 
@@ -66,10 +68,10 @@ lastupdated: "2017-08-01"
 
 Use the following steps to view the list of hosts authorized to a volume.
 
-1. Click **Storage > File Storage**, and click on your **LUN Name**.
+1. Click **Storage > File Storage**, and click on your **Volume Name**.
 2. Scroll down to the bottom of the page to the **Authorized Hosts** section.
 
-Here you will see the list of hosts which are currently authorized to access the LUN and, specifically for iSCSI, the authentication information needed to make a connection –Username, Password, and IQN Host. The Target address is at the top of the Storage Detail page. For NFS it’s described as a DNS name and for iSCSI the IP address of the Discover Target Portal.
+Here you will see the list of hosts which are currently authorized to access the volume.
 
 
 ### How to view the File Storage volumes to which a host is authorized
