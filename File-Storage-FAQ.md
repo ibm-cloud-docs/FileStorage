@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2017
-lastupdated: "2017-05-04"
+lastupdated: "2017-09-14"
 
 ---
 {:new_window: target="_blank"}
@@ -12,7 +12,7 @@ lastupdated: "2017-05-04"
 
 ## How are IOPS measured?
 
-IOPS are measured based on a load profile of 16kb blocks with random 50% read and 50% writes. Workloads that differ from this profile may experience lower performance.
+IOPS are measured based on a load profile of 16kB blocks with random 50% read and 50% writes. Workloads that differ from this profile may experience lower performance.
 
 ## What happens if I use a smaller block size when measuring performance?
 
