@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2017
-lastupdated: "2017-08-24"
+lastupdated: "2017-09-25"
 
 ---
 {:new_window: target="_blank"}
@@ -30,6 +30,7 @@ When ordering file storage, you will want to keep in mind the following informat
 - Technically, multiple volumes can be striped together to achieve higher IOPS and more throughput, however, VMware recommends a single Virtual Machine File System (VMFS) data store per volume to avoid performance degradation.
 - File Storage volumes are exposed to authorized devices, subnets, or IP addresses.
 - Snapshot and Replication services are natively available on Endurance file storage volumes only. Performance file storage does not have these capabilities.
+- Both NFS v3 and NFS v4.1 are supported in the IBM Cloud environment. However, it is our recommendation that NFS v3 be used. Because NFS v4.1 is a stateful protocol (not stateless like NFSv3) protocol issues can occur during network events. NFS v4.1 must quiesce operations and then perform lock reclamation. On a relatively busy NFS file server, the increased latency can cause disruptions. The lack of NFS v4.1 multipath/trunking can also extend NFS operations recovery.
 
 **Note**: Increasing block size will increase throughput but decrease IOPS. For example, doubling the block size to 32KB blocks will maintain the maximum throughput but halve the IOPS.
 

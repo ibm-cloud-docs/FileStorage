@@ -21,6 +21,7 @@ IBM Bluemix Storage - File Storage
     mounting-storage-coreos.md
     how-to-create-duplicate-volume.md
     set-host-queue-depth-settings-performance-and-endurance-storage.md
+    brocade-vrouter-vyatta-set-guide-vmware-environments-endurance-or-performance-storage.md
     {: .navgroup-end}
                
     {: .navgroup id="help"}
