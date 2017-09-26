@@ -2,13 +2,13 @@
 
 copyright:
   years: 2014, 2017
-lastupdated: "2017-06-23"
+lastupdated: "2017-09-26"
 
 ---
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 
-# Access File Storage on Linux
+# Accessing File Storage on Linux
 
 Before starting, make sure the host accessing the File Storage volume has been authorized through the Customer Portal:
 

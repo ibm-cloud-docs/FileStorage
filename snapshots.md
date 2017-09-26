@@ -2,13 +2,13 @@
 
 copyright:
   years: 2014, 2017
-lastupdated: "2017-06-23"
+lastupdated: "2017-09-26"
 
 ---
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 
-# What are Snapshots?
+# Working with Snapshots
 
 Snapshots are a feature of Block and File Storage. A snapshot represents a volume's contents at a particular point in time. Snapshots enable you to protect your data with no performance impact, minimal consumption of space, and are considered your first line of defense for data protection. Data can be easily and quickly restored from a snapshot copy if a user accidently modifies or deletes crucial data from a volume with the snapshot feature.
 

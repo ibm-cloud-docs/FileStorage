@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2017
-lastupdated: "2017-09-07"
+lastupdated: "2017-09-26"
 
 ---
 {:new_window: target="_blank"}
@@ -14,7 +14,7 @@ File Storage is persistent, fast, and flexible Network Attached, NFS-based file 
 
 File Storage brings best-in-class levels of durability and availability with an unmatched feature set and is built using industry standards and best practices, and designed to protect the integrity of the data and maintain availability through maintenance events and unplanned failures while providing a consistent performance baseline.
 
-Take advantage of the following core features of Block Storage:
+Take advantage of the following core features of File Storage:
 
 - **Consistent performance baseline**
    - Provided through the allocation of protocol-level input/output operations per second (IOPS) to individual volumes
@@ -28,7 +28,7 @@ Take advantage of the following core features of Block Storage:
    - All flash storage for volumes provisioned with Endurance or Performance at 2IOPS/GB or higher
 - **Snapshots (When provisioned with Endurance or Performance in [select data centers]**(new-ibm-block-and-file-storage-location-and-features.html)).
    - Captures point-in-time data snapshots non-disruptively
-- **Replication** (When provisioned with Endurance or Performance in [select data centers](new-ibm-block-and-file-storage-location-and-features.html)).
+- **Replication** (When provisioned with Endurance or Performance in [select data centers](new-ibm-block-and-file-storage-location-and-features.html).
    - Automatically copies snapshots to a partner Bluemix Infrastructure data center
 - **Highly available connectivity**
    - Uses redundant networking connections to maximize availability - NFS-based File Storage routed TCP/IP connections
@@ -41,7 +41,7 @@ Take advantage of the following core features of Block Storage:
 
 You can select hourly or monthly billing for a File Volume. The type of billing selected for a LUN will apply to its snapshot space and replicas. For example, if you provision a LUN with hourly billing, any snapshots or replica fees will be billed hourly. If you provision a LUN with monthly billing, any snapshots or replica fees will be billed monthly. 
 
-With **hourly billing**, the calculation of the number of hours the file volume existed on the account is performed at the time the volume is deleted or at the end of the billing cycle, which ever comes first.  Hourly billing is a good choice for storage that is used for a few days or less than a full month. Hourly billing is only available for storage provisioned in [select data centers](/docs/infrastructure/BlockStorage/new-ibm-block-and-file-storage-location-and-features.html). 
+With **hourly billing**, the calculation of the number of hours the file volume existed on the account is performed at the time the volume is deleted or at the end of the billing cycle, which ever comes first.  Hourly billing is a good choice for storage that is used for a few days or less than a full month. Hourly billing is only available for storage provisioned in [select data centers](new-ibm-block-and-file-storage-location-and-features.html). 
 
 With **monthly billing**, the calculation for the price is pro-rated from the date of creation to the end of the billing cycle and billed immediately. There is no refund If a file volume is deleted before the end of the billing cycle.  Monthly billing is a good choice for storage used in production workloads that use data that needs to be stored and accessed for long periods of time (one month or longer).  
 
@@ -164,3 +164,5 @@ As a general rule you should not expect to saturate your Ethernet connection bey
 Another factor to consider is the number of hosts that are utilizing your volume. If there is a single host that is accessing the volume it may be difficult to realize the maximum IOPS available, especially at extreme IOPS counts (10,000s). If your workload requires high throughput it would best to configure at least two or three servers to access your volume to avoid a single server bottleneck.
 
 To achieve maximum IOPS, adequate network resources need to be in place. Other considerations include private network usage outside of storage and host side and application specific tunings (IP stack, queue depths, and so on).
+
+Both NFS v3 and NFS v4.1 are supported in the IBM Cloud environment. However, it is our recommendation that NFS v3 be used. Because NFS v4.1 is a stateful protocol (not stateless like NFSv3) protocol issues can occur during network events. NFS v4.1 must quiesce operations and then perform lock reclamation. On a relatively busy NFS file server, the increased latency can cause disruptions. The lack of NFS v4.1 multipath/trunking can also extend NFS operations recovery.

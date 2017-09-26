@@ -2,13 +2,13 @@
 
 copyright:
   years: 2014, 2017
-lastupdated: "2017-06-24"
+lastupdated: "2017-09-26"
 
 ---
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 
-# Migrate File Storage to Encrypted File Storage
+# Migrating File Storage to Encrypted File Storage
 
 
 ## Overview

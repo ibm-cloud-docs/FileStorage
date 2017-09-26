@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2017
-lastupdated: "2017-06-16"
+lastupdated: "2017-09-26"
 
 ---
 {:new_window: target="_blank"}
@@ -10,7 +10,7 @@ lastupdated: "2017-06-16"
 
 # Mounting NFS/File Storage
 
-The process for mounting our Endurance/Performance File Storage is pretty much the same, but since the mount is NFS we can specify some additional options using the Options= line in the mount file. In the following example we are setting the NFS to mount at /data/www . Note the NFS mount point of the file storage instance can be obtained from the File Storage listing pageor via call to API -SoftLayer_Network_Storage::getNetworkMountAddress().
+The process for mounting our Endurance/Performance File Storage is pretty much the same, but since the mount is NFS we can specify some additional options using the Options= line in the mount file. In the following example we are setting the NFS to mount at /data/www . Note the NFS mount point of the file storage instance can be obtained from the File Storage listing pageor via call to API -`SoftLayer_Network_Storage::getNetworkMountAddress()`.
 
 ```
 $ cat data-www.mount
