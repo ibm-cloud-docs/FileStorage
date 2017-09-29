@@ -10,7 +10,7 @@ lastupdated: "2017-09-29"
 
 # Architecture Guide for File Storage with VMware
 
-Following are the steps to order and configure File Storage in a vSphere 5.5 and vSphere 6.0 environment at {{site.data.keyword.BluSoftlayer_full)}}.
+Following are the steps to order and configure File Storage in a vSphere 5.5 and vSphere 6.0 environment at {{site.data.keyword.BluSoftlayer_full}}.
 
 ## File Storage Overview
 
@@ -30,7 +30,7 @@ When ordering file storage, you will want to keep in mind the following informat
 - Technically, multiple volumes can be striped together to achieve higher IOPS and more throughput, however, VMware recommends a single Virtual Machine File System (VMFS) data store per volume to avoid performance degradation.
 - File Storage volumes are exposed to authorized devices, subnets, or IP addresses.
 - Snapshot and Replication services are natively available on Endurance file storage volumes only. Performance file storage does not have these capabilities.
-- Both NFS v3 and NFS v4.1 are supported in the {{site.data.keyword.BluSoftlayer_full)}} environment. However, it is our recommendation that NFS v3 be used. Because NFS v4.1 is a stateful protocol (not stateless like NFSv3) protocol issues can occur during network events. NFS v4.1 must quiesce operations and then perform lock reclamation. On a relatively busy NFS file server, the increased latency can cause disruptions. The lack of NFS v4.1 multipath/trunking can also extend NFS operations recovery.
+- Both NFS v3 and NFS v4.1 are supported in the {{site.data.keyword.BluSoftlayer_full}} environment. However, it is our recommendation that NFS v3 be used. NFS v4.1 is a stateful protocol (not stateless like NFSv3) thus protocol issues can occur during network events. NFS v4.1 must quiesce operations and then perform lock reclamation. On a relatively busy NFS file server, the increased latency can cause disruptions. The lack of NFS v4.1 multipath/trunking can also extend NFS operations recovery.
 
 **Note**: Increasing block size will increase throughput but decrease IOPS. For example, doubling the block size to 32KB blocks will maintain the maximum throughput but halve the IOPS.
 
@@ -110,8 +110,8 @@ After the subnets are authorized, make note of the hostname of the Endurance or 
 
 Before beginning the VMware configuration process, make sure that the following prerequisites are met:
 
-- {{site.data.keyword.BluBareMetServers_short)} with VMware ESXi are provisioned with proper storage configuration and ESXi login credentials.
-- {{site.data.keyword.BluSoftlayer_full)} Windows physical or {{site.data.keyword.virtualmachinesshort}} in the same data center as the {{site.data.keyword.BluBareMetServers_short)}. Including Public IP address of the {{site.data.keyword.BluSoftlayer_full)}} Windows VM and login credentials.
+- {{site.data.keyword.BluBareMetServers_short}} with VMware ESXi are provisioned with proper storage configuration and ESXi login credentials.
+- {{site.data.keyword.BluSoftlayer_full}} Windows physical or {{site.data.keyword.virtualmachinesshort}} in the same data center as the {{site.data.keyword.BluBareMetServers_short}}. Including Public IP address of the {{site.data.keyword.BluSoftlayer_full}} Windows VM and login credentials.
 - A computer with Internet access, and with the web browser software and a Remote Desktop Protocol (RDP) client installed.
  
 
@@ -184,7 +184,7 @@ The network configuration for this architecture guide uses a minimal number of p
 7. Review the inputs on the next screen and click **Finish**.
 8. Repeat for any additional File storage volumes.
 
-**Note**: It is {{site.data.keyword.BluSoftlayer_full)}’s recommendation that FQDN names be used to connect to the datastore. Using direct IP addressing may be bypassing the load balancing mechanism provided by using FQDN. To use the IP address instead of the FQDN execute the following command to obtain the IP address.
+**Note**: It is {{site.data.keyword.BluSoftlayer_full}}’s recommendation that FQDN names be used to connect to the datastore. Using direct IP addressing may be bypassing the load balancing mechanism provided by using FQDN. To use the IP address instead of the FQDN execute the following command to obtain the IP address.
 
   - `ping <hostname of the endurance/performance array>`
   - From an ESXi host:
@@ -294,7 +294,7 @@ There are some additional settings required for setting up ESXi 5.x hosts for NF
 
 ## Enabling Jumbo Frames in SoftLayer – Windows and Linux
 
-{{site.data.keyword.BluSoftlayer_full)} has stated that in order to fully realize the speeds on the storage Jumbo Frames needs to be enabled at 9,000 MTU.
+{{site.data.keyword.BluSoftlayer_full}} has stated that in order to fully realize the speeds on the storage Jumbo Frames needs to be enabled at 9,000 MTU.
 
 
 A jumbo frame is an Ethernet frame with a payload greater than the standard maximum transmission unit (MTU) of 1,500 bytes. Jumbo frames are used on local area networks that support at least 1 Gbps and can be as large as 9,000 bytes.

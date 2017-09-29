@@ -115,7 +115,7 @@ In Latin America Region, MEX01 is enabled with encrypted storage. Replication no
 
 ## How Do I Create an Initial Replication?
 
-Replications work off of a snapshot schedule. You must first have snapshot space and a snapshot schedule set up for the source volume before you can replicate. You’ll receive prompts letting you know space needs to be purchased or a schedule set up if you try to set up replication and one or the other is not in place. Replications are managed under **Storage** > **File Storage** in the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
+Replications work off of a snapshot schedule. You must first have snapshot space and a snapshot schedule set up for the source volume before you can replicate. You’ll receive prompts letting you know space needs to be purchased or a schedule set up if you try to set up replication and one or the other is not in place. Replications are managed under **Storage** > **File Storage** in the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} .
 
 1. Click on your storage volume.
 2. Click on the **Replica** tab and click the **Purchase a replication** link.

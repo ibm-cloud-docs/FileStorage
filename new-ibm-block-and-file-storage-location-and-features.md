@@ -10,7 +10,7 @@ lastupdated: "2017-09-29"
 
 # New {{site.data.keyword.blockstorageshort}} and File Storage Location and Features
 
-{{site.data.keyword.BluSoftlayer_full)} is introducing a new version of {{site.data.keyword.blockstorageshort}} and File storage!  The new storage is available in select data centers, and is backed by flash storage at higher IOPS levels with disk level encryption for data-at-rest. All storage provisioned in the select data centers will automatically be provisioned with the new version of {{site.data.keyword.blockstorageshort}} and File storage.
+{{site.data.keyword.BluSoftlayer_full}} is introducing a new version of {{site.data.keyword.blockstorageshort}} and File storage!  The new storage is available in select data centers, and is backed by flash storage at higher IOPS levels with disk level encryption for data-at-rest. All storage provisioned in the select data centers will automatically be provisioned with the new version of {{site.data.keyword.blockstorageshort}} and File storage.
 
 **Note:** The NFS mount point for new volumes has changed. See **New Mount Point for encrypted File Storage Volumes** below for details.
 

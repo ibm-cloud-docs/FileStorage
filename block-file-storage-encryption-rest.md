@@ -10,7 +10,7 @@ lastupdated: "2017-09-29"
 
 # File Storage Encryption-At-Rest 
 
-{{site.data.keyword.BluSoftlayer_full)} takes the need for security seriously, and understand the importance of being able to encrypt data to keep it safe. With provider managed encryption, File storage provisioned with either Endurance or Performance are encrypted by default at no additional cost and no impact to performance.
+{{site.data.keyword.BluSoftlayer_full}} takes the need for security seriously, and understand the importance of being able to encrypt data to keep it safe. With provider managed encryption, File storage provisioned with either Endurance or Performance are encrypted by default at no additional cost and no impact to performance.
 
 The provider managed encryption-at-rest feature uses the following industry standard protocols:
 

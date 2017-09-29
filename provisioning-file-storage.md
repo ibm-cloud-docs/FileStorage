@@ -15,7 +15,7 @@ lastupdated: "2017-09-29"
 
 ### How to order Endurance for File Storage
 
-1. From the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}, click **Storage** > **File Storage** OR from {{site.data.keyword.BluSoftlayer_full)} Catalog click **Infrastructure** > **Storage** > **File Storage**.
+1. From the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}, click **Storage** > **File Storage** OR from {{site.data.keyword.BluSoftlayer_full}} Catalog click **Infrastructure** > **Storage** > **File Storage**.
 2. Click **Order File Storage** in the top right corner of the screen. 
 3. Select **Endurance** from the **Select Storage Type** drop-down list.
 4. Click the **Location** drop-down list and select your data center.
@@ -36,7 +36,7 @@ lastupdated: "2017-09-29"
 
 ### How to order Performance for File Storage
 
-1. From the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}, click **Storage**, **File Storage** OR from {{site.data.keyword.BluSoftlayer_full)} Catalog click **Infrastructure** >** Storage** > **File Storage**.
+1. From the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}, click **Storage**, **File Storage** OR from {{site.data.keyword.BluSoftlayer_full}} Catalog click **Infrastructure** >** Storage** > **File Storage**.
 2. Click **Order File Storage** in the top right corner of the screen. 
 3. Select **Performance** from the Select Storage Type drop-down list.
 4. Click the **Location** drop-down list and select your data center.
@@ -78,7 +78,7 @@ Here you will see the list of hosts which are currently authorized to access the
 
 You can view the volumes to which a host has access to, including information needed to make a connection – Volume Name, Storage Type, Target Address, capacity and location:
 
-1. Click Devices, Device List from the customer portal and click the appropriate device.
+1. Click **Devices** > **Device List** from the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} and click the appropriate device.
 2. Select the Storage tab.
 
 You will then be presented with a list of storage volumes that this particular host has access to, all grouped by storage type (block, file, other). From the respective **Action** menus you can authorize additional storage or remove access.

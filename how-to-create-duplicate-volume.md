@@ -12,11 +12,11 @@ lastupdated: "2017-09-29"
 
 We provide the ability to create a duplicate of an existing File storage volume. The duplicate volume will inherit the capacity and performance options of the original volume by default and will have a copy of the data up to the point in time of a snapshot.   
 
-Because the duplicate is based on the data in a point in time snapshot, snapshot space is required on the original volume before you can create a duplicate.  To learn more about snapshots and how to order snapshot space, refer to [Snapshot documentation](snapshots.html).  
+Because the duplicate is based on the data in a point in time snapshot, snapshot space is required on the original volume before you can create a duplicate.  To learn more about snapshots and how to order snapshot space, refer to the [Snapshot documentation](snapshots.html).  
 
 Duplicates can be created from both primary and replica volumes, with the new duplicate being created in the same data center as the original volume.  For example, if you create a duplicate from a replica volume, the new volume will be created in the same data center as the replica volume.    
 
-Duplicate volumes can be accessed by a host for read/write as soon as the storage is provisioned.  Snapshots and replication will not be allowed until the data copy from the original to the duplicate is complete. 
+Duplicate volumes can be accessed by a host for read/write as soon as the storage is provisioned. Snapshots and replication will not be allowed until the data copy from the original to the duplicate is complete. 
 
 Once the data copy is complete, the duplicate can be managed and used as a completely independent volume from the original. 
 
@@ -37,7 +37,7 @@ There are a couple of ways to create a duplicate volume via the [{{site.data.key
 
 Navigate to your list of File storage:
 
-From the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}, click **Storage**, **File Storage** OR from {{site.data.keyword.BluSoftlayer_full)} Catalog click **Infrastructure->Storage >File Storage**. 
+From the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}, click **Storage**, **File Storage** OR from {{site.data.keyword.BluSoftlayer_full}} Catalog click **Infrastructure->Storage >File Storage**. 
 
 1.	Select a volume from the list and click **Actions** > **Duplicate LUN (Volume)** 
 2.	Choose your snapshot option: 

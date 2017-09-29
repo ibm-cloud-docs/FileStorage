@@ -18,8 +18,8 @@ The Brocade vRouter (Vyatta) gateway will serve as a gateway and router for your
 
 In our example configuration, there will be five zones created in the Brocade vRouter (Vyatta):
 
-- SLSERVICE – {{site.data.keyword.BluSoftlayer_full)} services
-- VMACCESS – {{site.data.keyword.BluVirtServers_short}}(VMs) on the capacity cluster
+- SLSERVICE – {{site.data.keyword.BluSoftlayer_full}} services
+- VMACCESS – {{site.data.keyword.BluVirtServers_short}} (VMs) on the capacity cluster
 - MGMT – Management and capacity clusters as well as management VMs
 - STORAGE – Storage server(s)
 - OUTSIDE – Public Internet access
@@ -355,7 +355,7 @@ save
 
 Once the zones and firewall rules have been set up on the Brocade vRouter (Vyatta), we must associate the VLANs to it and enable routing of the VLANs via the Brocade vRouter (Vyatta).
 
-1. Log in to the [Customer portal](https://control.softlayer.com/) and click on **Network > Gateway Appliance** and click on the Brocade vRouter (Vyatta).
+1. Log in to the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} and click on **Network > Gateway Appliance** and click on the Brocade vRouter (Vyatta).
 2. Select a **VLAN** and click on the **Associate** button.
 3. Repeat step 2 for each VLAN you created for your environment. The VLANs next need to have routing enabled in order to be associated with the Brocade vRouter (Vyatta).
 4. Locate the VLANs under **Associated VLANs** and check the box next to each one.
@@ -364,6 +364,6 @@ Once the zones and firewall rules have been set up on the Brocade vRouter (Vyatt
 
 Your VLANs should now be routed via the Brocade vRouter (Vyatta). If you notice that communication is hindered between two zones, bypass the particular VLAN(s) in question and check your Brocade vRouter (Vyatta) settings.
 
-You should now have a working single-site VMware environment secured by a Brocade vRouter (Vyatta) within {{site.data.keyword.BluSoftlayer_full)}.
+You should now have a working single-site VMware environment secured by a Brocade vRouter (Vyatta) within {{site.data.keyword.BluSoftlayer_full}}.
 
  
