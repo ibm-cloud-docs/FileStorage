@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2017
-lastupdated: "2017-08-31"
+lastupdated: "2017-09-29"
 
 ---
 {:new_window: target="_blank"}
@@ -15,7 +15,7 @@ lastupdated: "2017-08-31"
 
 ### How to order Endurance for File Storage
 
-1. From the customer portal, click **Storage** > **File Storage** OR from Bluemix Catalog click **Infrastructure** > **Storage** > **File Storage**.
+1. From the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}, click **Storage** > **File Storage** OR from {{site.data.keyword.BluSoftlayer_full)} Catalog click **Infrastructure** > **Storage** > **File Storage**.
 2. Click **Order File Storage** in the top right corner of the screen. 
 3. Select **Endurance** from the **Select Storage Type** drop-down list.
 4. Click the **Location** drop-down list and select your data center.
@@ -36,7 +36,7 @@ lastupdated: "2017-08-31"
 
 ### How to order Performance for File Storage
 
-1. From the customer portal, click **Storage**, **File Storage** OR from Bluemix Catalog click **Infrastructure** >** Storage** > **File Storage**.
+1. From the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}, click **Storage**, **File Storage** OR from {{site.data.keyword.BluSoftlayer_full)} Catalog click **Infrastructure** >** Storage** > **File Storage**.
 2. Click **Order File Storage** in the top right corner of the screen. 
 3. Select **Performance** from the Select Storage Type drop-down list.
 4. Click the **Location** drop-down list and select your data center.
@@ -103,7 +103,7 @@ You can revoke access from either Storage from the Device List or the Storage vi
 
 #### How to Revoke access from the Device List:
 
-1. Click **Devices** > **Device List** from the customer portal and double-click the appropriate device.
+1. Click **Devices** > **Device List** from the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} and double-click the appropriate device.
 2. Select the **Storage** tab.
 3. You will then be presented with a list of storage volumes that this particular host has access to, all grouped by storage type (block, file, other). Select the respective **Action** menu next to the volume that you want to revoke access from and click **Revoke Access**.
 4. You will be asked if you want to revoke the access for a volume because the action cannot be undone. Click **Yes** to revoke volume access or **No** to cancel the action.

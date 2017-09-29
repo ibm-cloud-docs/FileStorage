@@ -2,7 +2,7 @@
 {:topicgroup: .topicgroup}
 
 {: .toc subcollection="FileStorage" audience="services" href=“/docs/infrastructure/FileStorage/index.html”}
-IBM Bluemix Storage - File Storage
+IBM Cloud Storage - File Storage
 
     {: .navgroup id="learn"}
     index.md 

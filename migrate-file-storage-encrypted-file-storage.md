@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2017
-lastupdated: "2017-09-26"
+lastupdated: "2017-09-29"
 
 ---
 {:new_window: target="_blank"}
@@ -13,7 +13,7 @@ lastupdated: "2017-09-26"
 
 ## Overview
 
-Encrypted file storage for Endurance or Performance has been launched in select data centers. Below you will find information on how to migrate your file storage from unencrypted to encrypted. For more information on provider managed encrypted storage, read Block and File Storage Encryption-At-Rest article. To see a list of upgraded data centers and available features click here.
+Encrypted file storage for Endurance or Performance has been launched in select data centers. Below you will find information on how to migrate your file storage from unencrypted to encrypted. For more information on provider managed encrypted storage, read the [File Storage Encryption-At-Rest](block-file-storage-encryption-rest.html) article. To see a list of upgraded data centers and available features click [here](new-ibm-block-and-file-storage-location-and-features).
 
 The preferred migration path is to connect to both volumes simultaneously and transfer data directly from one file volume to another. The specifics will depend on your operating system  and whether the data is expected to change during the copy operation.
 
@@ -29,7 +29,7 @@ Use the following steps to create a volume the same size or larger that is encry
 
 ### Order an Encrypted Endurance Storage Volume
 
-1. Click **Storage** > **File Storage** from the Bluemix customer portal home page OR Click **Infrastructure** > **Storage** > **File Storage** in the Bluemix catalog.
+1. Click **Storage** > **File Storage** from the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} home page OR Click **Infrastructure** > **Storage** > **File Storage** in the {{site.data.keyword.BluSoftlayer_full)} catalog.
 
 2. Click **Order File Storage** link on the File Storage page.
 
@@ -49,13 +49,13 @@ Use the following steps to create a volume the same size or larger that is encry
  
 ### Order an Encrypted Performance Storage Volume
 
-1. Click **Storage** > **File Storage** from the Customer portal home page OR Click **Infrastructure** > **Storage** > **File Storage** in the Bluemix catalog.
+1. Click **Storage** > **File Storage** from the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} home page OR Click **Infrastructure** > **Storage** > **File Storage** in the {{site.data.keyword.BluSoftlayer_full)} catalog.
 
 2. Click on the **Order File Storage**.
 
 3. Select **Performance**.
 
-4. Select the data center where your original volume is located. Note that encryption is only available in data centers with an asterisk.
+4. Select the data center where your original volume is located. Note that encryption is only available in data centers with an asterisk (`*`).
 
 5. Select the desired amount of storage space in GBs of the same size of the original volume or larger.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2017
-lastupdated: "2017-09-25"
+lastupdated: "2017-09-29"
 
 ---
 {:new_window: target="_blank"}
@@ -10,7 +10,7 @@ lastupdated: "2017-09-25"
 
 # Architecture Guide for File Storage with VMware
 
-Following are the steps to order and configure File Storage in a vSphere 5.5 and vSphere 6.0 environment at IBM Cloud Infrastructure.
+Following are the steps to order and configure File Storage in a vSphere 5.5 and vSphere 6.0 environment at {{site.data.keyword.BluSoftlayer_full)}}.
 
 ## File Storage Overview
 
@@ -30,7 +30,7 @@ When ordering file storage, you will want to keep in mind the following informat
 - Technically, multiple volumes can be striped together to achieve higher IOPS and more throughput, however, VMware recommends a single Virtual Machine File System (VMFS) data store per volume to avoid performance degradation.
 - File Storage volumes are exposed to authorized devices, subnets, or IP addresses.
 - Snapshot and Replication services are natively available on Endurance file storage volumes only. Performance file storage does not have these capabilities.
-- Both NFS v3 and NFS v4.1 are supported in the IBM Cloud environment. However, it is our recommendation that NFS v3 be used. Because NFS v4.1 is a stateful protocol (not stateless like NFSv3) protocol issues can occur during network events. NFS v4.1 must quiesce operations and then perform lock reclamation. On a relatively busy NFS file server, the increased latency can cause disruptions. The lack of NFS v4.1 multipath/trunking can also extend NFS operations recovery.
+- Both NFS v3 and NFS v4.1 are supported in the {{site.data.keyword.BluSoftlayer_full)}} environment. However, it is our recommendation that NFS v3 be used. Because NFS v4.1 is a stateful protocol (not stateless like NFSv3) protocol issues can occur during network events. NFS v4.1 must quiesce operations and then perform lock reclamation. On a relatively busy NFS file server, the increased latency can cause disruptions. The lack of NFS v4.1 multipath/trunking can also extend NFS operations recovery.
 
 **Note**: Increasing block size will increase throughput but decrease IOPS. For example, doubling the block size to 32KB blocks will maintain the maximum throughput but halve the IOPS.
 
@@ -38,11 +38,11 @@ When ordering file storage, you will want to keep in mind the following informat
 
 ### 2. Endurance File Storage snapshots
 
-Endurance file storage allows administrators to set snapshot schedules that create and delete snapshot copies automatically for each storage volume. They can also create additional snapshot schedules (hourly, daily, weekly) for automatic snapshots and manually create adhoc snapshots for business continuity and disaster recovery (BCDR) scenarios. Automatic alerts are delivered via the SoftLayer customer portal to the volume owner for the retained snapshots and space consumed.
+Endurance file storage allows administrators to set snapshot schedules that create and delete snapshot copies automatically for each storage volume. They can also create additional snapshot schedules (hourly, daily, weekly) for automatic snapshots and manually create adhoc snapshots for business continuity and disaster recovery (BCDR) scenarios. Automatic alerts are delivered via the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} to the volume owner for the retained snapshots and space consumed.
 
 Be aware that “snapshot space” is required to use snapshots. Space can be acquired on the initial volume ordering or after initial provisioning via the **Volume Details** page by clicking the Actions drop-down button and selecting **Add Snapshot Space**.
 
-It is important to note that VMware environments are not aware of snapshots. The Endurance file storage snapshot capability must not be confused with VMware snapshots. Any recovery using the Endurance file storage snapshot feature must be handled from the SoftLayer customer portal. Restoring the Endurance file storage volume will require powering off all the VMs that reside on Endurance file storage, and temporarily unmounting the volume from the ESXi hosts to avoid any data corruption during the process.
+It is important to note that VMware environments are not aware of snapshots. The Endurance file storage snapshot capability must not be confused with VMware snapshots. Any recovery using the Endurance file storage snapshot feature must be handled from the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}. Restoring the Endurance file storage volume will require powering off all the VMs that reside on Endurance file storage, and temporarily unmounting the volume from the ESXi hosts to avoid any data corruption during the process.
 
 Refer to our [snapshots](snapshots.html) article for more details about how to configure snapshots.
  
@@ -76,26 +76,25 @@ Refer to the [Replication](replication.html) information page for more details a
 You can order and configure File storage for a VMware ESXi 5 environment. Use the following information in conjunction with the Advanced Single-Site VMware Reference Architecture to set up one of these storage options in your VMware environment.
 
 
-File storage can be ordered through the SoftLayer customer portal (control.SoftLayer.com) by accessing the File Storage page (Storage, File Storage). The process for ordering Endurance and Performance file storage is slightly different.
-
+File storage can be ordered through the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} by accessing the File Storage page via **Storage** > **File Storage**.
  
 
 ### 1. Ordering File Storage
 
 Use the following steps to order File storage:
-1. Click **Storage** > **File Storage** from the [Customer portal](https://control.softlayer.com/) home page.
+1. Click **Storage** > **File Storage** on the[{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} home page.
 2. Click on the **Order File Storage** link on the **File Storage** page.
 3. Select the desired amount of storage space in GBs. For TB, 1TB equals 1,000GB, and 12TB equals 12,000GB.
 4. Enter the desired amount of IOPS in intervals of 100 or select an IOPS Tier.
 5. Submit the order.
 
-Storage will be provisioned in less than a minute and will be visible on the **File Storage** page of the SoftLayer customer portal.
+Storage will be provisioned in less than a minute and will be visible on the **File Storage** page of the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
 
  
 
 ### 2. Authorize Hosts to use File Storage
 
-Once a volume is provisioned, the bare metal servers or virtual machines that will use the volume must be authorized to access the storage. Use the following steps to authorize the volume:
+Once a volume is provisioned, the {{site.data.keyword.BluBareMetServers_full)} or {{site.data.keyword.BluVirtServers_full}} that will use the volume must be authorized to access the storage. Use the following steps to authorize the volume:
 
 1. Click on **Storage** > **File Storage**.
 2. Select **Access Host** on the **Endurance** or **Performance Volume Actions** menu.
@@ -111,8 +110,8 @@ After the subnets are authorized, make note of the hostname of the Endurance or 
 
 Before beginning the VMware configuration process, make sure that the following prerequisites are met:
 
-- IBM Cloud (SoftLayer) bare metal server with VMware ESXi are provisioned with proper storage configuration and ESXi login credentials.
-- IBM Cloud (SoftLayer) Windows physical or virtual machine in the same data center as the bare metal server. Including Public IP address of the IBM Cloud (SoftLayer) Windows VM and login credentials.
+- {{site.data.keyword.BluBareMetServers_short)} with VMware ESXi are provisioned with proper storage configuration and ESXi login credentials.
+- {{site.data.keyword.BluSoftlayer_full)} Windows physical or {{site.data.keyword.virtualmachinesshort}} in the same data center as the {{site.data.keyword.BluBareMetServers_short)}. Including Public IP address of the {{site.data.keyword.BluSoftlayer_full)}} Windows VM and login credentials.
 - A computer with Internet access, and with the web browser software and a Remote Desktop Protocol (RDP) client installed.
  
 
@@ -120,8 +119,8 @@ Before beginning the VMware configuration process, make sure that the following 
 
 To configure the virtual host, complete the following steps:
 
-1. From an Internet connected computer, launch an RDP client and establish an RDP session to the SoftLayer Windows VM provisioned in the same data center where vSphere vCenter is installed.
-2. From the SoftLayer Windows virtual machine, launch a web browser and connect to VMware vCenter via the vSphere Web Client.
+1. From an Internet connected computer, launch an RDP client and establish an RDP session to the {{site.data.keyword.BluVirtServers_full}} provisioned in the same data center where vSphere vCenter is installed.
+2. From the {{site.data.keyword.BluVirtServers_short}}, launch a web browser and connect to VMware vCenter via the vSphere Web Client.
 3. From the **HOME** screen select **Hosts and Clusters**. Expand the panel on the left and select the **VMware ESXi server** that is to be used for this deployment.
 4. Make sure the firewall port for the NFS client is open on all hosts in order to configure the NFS client on the vSphere host. This is automatically opened in the more recent releases of vSphere. To check if the port is open, go to the **ESXi host Manage** tab in VMware® vCenter™, select **Settings** and then select **Security Profile**. In the **Firewall** section click **Edit** and scroll down to **NFS Client**.
 5. Make sure **Allow connection from any IP address or a list of IP addresses** is provided. <br/>
@@ -133,13 +132,13 @@ To configure the virtual host, complete the following steps:
 9. If desired, the jumbo frame settings can be validated as follows:
    - From Windows: ping -f -l 8972 a.b.c.d
    - From Unix: ping -s 8972 a.b.c.d
-   Where a.b.c.d is neighboring virtual machine interface with the command:
+   Where a.b.c.d is neighboring {{site.data.keyword.BluVirtServers_short}} interface with the command:
    The output appears similar to:
    ```ping a.b.c.d (a.b.c.d) 8972(9000) bytes of data.
    8980 bytes from a.b.c.d: icmp_seq=1 ttl=128 time=3.36 ms
    ```
 
-More information on VMware and Jumbo Frames can be found here: https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=1003712
+More information on VMware and Jumbo Frames can be found [here](https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=1003712){:new_window}.
  
 
 ### 3. Adding An Uplink Adapter To A Virtual Switch
@@ -171,7 +170,7 @@ The network configuration for this architecture guide uses a minimal number of p
 2. Note that static routes are not persistent across reboots on ESXi 5.0 and earlier. To ensure that any added static routes are persistent, these commands need to be added to the local.sh file on each host, located in the /etc/rc.local.d/ directory. To do this, open the local.sh file using the visual editor and add the command above to be executed above the line exit 0.
    - Make note of the IP address as it can be used for mounting the volume in the next step.
    - This process needs to be done for each NFS volume you plan to mount to your ESXi host.
-   - Here is the link to a VMware KB article [Configuring static routes for VMkernel ports on an ESXi host](https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=2001426).
+   - Here is the link to a VMware KB article: [Configuring static routes for VMkernel ports on an ESXi host](https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=2001426){:new_window}.
  
 
 ##  Mount File Storage Volume(s) on the ESXi hosts
@@ -185,7 +184,7 @@ The network configuration for this architecture guide uses a minimal number of p
 7. Review the inputs on the next screen and click **Finish**.
 8. Repeat for any additional File storage volumes.
 
-**Note**: It is IBM Cloud’s recommendation that FQDN names be used to connect to the datastore. Using direct IP addressing may be bypassing the load balancing mechanism provided by using FQDN. To use the IP address instead of the FQDN execute the following command to obtain the IP address.
+**Note**: It is {{site.data.keyword.BluSoftlayer_full)}’s recommendation that FQDN names be used to connect to the datastore. Using direct IP addressing may be bypassing the load balancing mechanism provided by using FQDN. To use the IP address instead of the FQDN execute the following command to obtain the IP address.
 
   - `ping <hostname of the endurance/performance array>`
   - From an ESXi host:
@@ -223,22 +222,22 @@ Use the following steps to enable SIOC with recommended values for Endurance and
 **Note**: This setting is specific to the datastore and not to the host.
  
 
-### 2. Storage I/O Control For A Virtual Machine
+### 2. Storage I/O Control For A {{site.data.keyword.BluVirtServers_short}}
 
 You can also limit individual virtual disks for individual VMs or grant them different shares with SIOC. The limiting of disks and granting different shares allows you to match and align the environment to the workload with the acquired file storage volume IOPS number. The limit is set by IOPS and it is possible to set a different weight or "Shares." Virtual disks shares set to High (2,000 shares) receive twice as much as I/O as a disk set to Normal (1,000 shares) and four times as much as one set to Low (500 shares). Normal is the default value for all the VMs, so you just need to adjust the values above or below Normal for the VMs that actually require it.
 
 
 Use the following steps to change the vDisk shares and limit:
 
-1. Choose a virtual machine in the **VMs and Templates** inventory. Icon is on the top left of the web page. 
-2. Select the virtual machine for I/O Control.
+1. Choose a {{site.data.keyword.BluVirtServers_short}} in the **VMs and Templates** inventory. Icon is on the top left of the web page. 
+2. Select the {{site.data.keyword.BluVirtServers_short}} for I/O Control.
 3. Click the **Manage** tab and click **Settings**. Click **Edit**.
-4. Expand the Hard disk pull down arrow. Modify the Shares or Limit-IOPs as is appropriate for your environment. Choose a virtual hard disk from the list and modify the Shares selection to choose the relative amount of shares to allocate to the virtual machine (Low, Normal, or High). You can also click **Custom** and enter a user-defined share value.
+4. Expand the Hard disk pull down arrow. Modify the Shares or Limit-IOPs as is appropriate for your environment. Choose a virtual hard disk from the list and modify the Shares selection to choose the relative amount of shares to allocate to the {{site.data.keyword.BluVirtServers_short}} (Low, Normal, or High). You can also click **Custom** and enter a user-defined share value.
 5. Click the Limit - IOPS column and enter the upper limit of storage resources to allocate to the virtual machine.
 6. Click **OK**
  
 
-   **Note**: The above process is used to set the resource consumption limits of individual vDisks in a virtual machine even when SIOC is not enabled. These settings are specific to the individual guest, and not the host, although they are used by SIOC.
+   **Note**: The above process is used to set the resource consumption limits of individual vDisks in a {{site.data.keyword.BluVirtServers_short}} even when SIOC is not enabled. These settings are specific to the individual guest, and not the host, although they are used by SIOC.
 
  
 
@@ -295,7 +294,7 @@ There are some additional settings required for setting up ESXi 5.x hosts for NF
 
 ## Enabling Jumbo Frames in SoftLayer – Windows and Linux
 
-Softlayer has stated that in order to fully realize the speeds on the storage Jumbo Frames needs to be enabled at 9,000 MTU.
+{{site.data.keyword.BluSoftlayer_full)} has stated that in order to fully realize the speeds on the storage Jumbo Frames needs to be enabled at 9,000 MTU.
 
 
 A jumbo frame is an Ethernet frame with a payload greater than the standard maximum transmission unit (MTU) of 1,500 bytes. Jumbo frames are used on local area networks that support at least 1 Gbps and can be as large as 9,000 bytes.
@@ -332,4 +331,4 @@ MTU 9000
 A note about Debian / Ubuntu Linux user:
 Debian / Ubuntu Linux user should add MTU=9000 to /etc/network/interfaces configuration file.
 
-Learn more about Advanced Single-Site VMware Reference Architecture [here](http://knowledgelayer.softlayer.com/articles/advanced-single-site-vmware-reference-architecturesoftlayer).
+Learn more about Advanced Single-Site VMware Reference Architecture [here](http://knowledgelayer.softlayer.com/articles/advanced-single-site-vmware-reference-architecturesoftlayer){:new_window}.

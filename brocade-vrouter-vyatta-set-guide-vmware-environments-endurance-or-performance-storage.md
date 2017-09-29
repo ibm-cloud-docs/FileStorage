@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2017
-lastupdated: "2017-09-08"
+lastupdated: "2017-09-29"
 
 ---
 {:new_window: target="_blank"}
@@ -10,7 +10,7 @@ lastupdated: "2017-09-08"
 
 # Brocade vRouter (Vyatta) Set up Guide for VMware Environments with Endurance or Performance Storage
 
-You can configure a Brocade vRouter (Brocade vRouter (Vyatta) appliance [high availability (HA) configuration] within a VMware environment that is using either Endurance or Performance storage. Use the following information in conjunction with the [Advanced Single-Site VMware Reference Architecture](http://knowledgelayer.softlayer.com/articles/advanced-single-site-vmware-reference-architecturesoftlayer) to set up one of these storage options in your VMware environment.
+You can configure a Brocade vRouter (Brocade vRouter (Vyatta) appliance [high availability (HA) configuration] within a VMware environment that is using either Endurance or Performance storage. Use the following information in conjunction with the [Advanced Single-Site VMware Reference Architecture](http://knowledgelayer.softlayer.com/articles/advanced-single-site-vmware-reference-architecturesoftlayer){:new_window} to set up one of these storage options in your VMware environment.
 
 ## Brocade vRouter (Vyatta) Overview
 
@@ -18,8 +18,8 @@ The Brocade vRouter (Vyatta) gateway will serve as a gateway and router for your
 
 In our example configuration, there will be five zones created in the Brocade vRouter (Vyatta):
 
-- SLSERVICE – SoftLayer services
-- VMACCESS – Virtual machines(VMs) on the capacity cluster
+- SLSERVICE – {{site.data.keyword.BluSoftlayer_full)} services
+- VMACCESS – {{site.data.keyword.BluVirtServers_short}}(VMs) on the capacity cluster
 - MGMT – Management and capacity clusters as well as management VMs
 - STORAGE – Storage server(s)
 - OUTSIDE – Public Internet access
@@ -364,6 +364,6 @@ Once the zones and firewall rules have been set up on the Brocade vRouter (Vyatt
 
 Your VLANs should now be routed via the Brocade vRouter (Vyatta). If you notice that communication is hindered between two zones, bypass the particular VLAN(s) in question and check your Brocade vRouter (Vyatta) settings.
 
-You should now have a working single-site VMware environment secured by a Brocade vRouter (Vyatta) within IBM Cloud Infrastructure.
+You should now have a working single-site VMware environment secured by a Brocade vRouter (Vyatta) within {{site.data.keyword.BluSoftlayer_full)}.
 
  

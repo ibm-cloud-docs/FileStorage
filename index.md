@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2017
-lastupdated: "2017-09-26"
+lastupdated: "2017-09-29"
 
 ---
 {:new_window: target="_blank"}
@@ -29,7 +29,7 @@ Take advantage of the following core features of File Storage:
 - **Snapshots (When provisioned with Endurance or Performance in [select data centers]**(new-ibm-block-and-file-storage-location-and-features.html)).
    - Captures point-in-time data snapshots non-disruptively
 - **Replication** (When provisioned with Endurance or Performance in [select data centers](new-ibm-block-and-file-storage-location-and-features.html).
-   - Automatically copies snapshots to a partner Bluemix Infrastructure data center
+   - Automatically copies snapshots to a partner {{site.data.keyword.BluSoftlayer_full)} data center
 - **Highly available connectivity**
    - Uses redundant networking connections to maximize availability - NFS-based File Storage routed TCP/IP connections
 - **Concurrent access**
@@ -47,7 +47,7 @@ With **monthly billing**, the calculation for the price is pro-rated from the da
 
 ## Provisioning
 
-File Storage LUNs can be provisioned from 20GB to 12TB with two options for provisioning:
+File Storage volumes can be provisioned from 20GB to 12TB with two options for provisioning:
 
 Provision with Endurance tiers – featuring pre-defined performance levels and features like snapshots and replication or build a high-powered Performance environment with allocated input/output operations per second (IOPS).
 
@@ -72,7 +72,7 @@ While choosing the right tier of Endurance file storage for your workload it is 
  
 ### Performance
 
-Performance is a class of Bluemix file storage that is designed to support high I/O applications with well understood performance requirements that don’t fit well within an Endurance tier. Predictable performance is achieved through the allocation of protocol-level IOPS to individual volumes. IOPS ranging from 100 through 6,000 can be provisioned with storage sizes that range from 20 GB to 12 TB. 
+Performance is a class of {{site.data.keyword.BluSoftlayer_full)} file storage that is designed to support high I/O applications with well understood performance requirements that don’t fit well within an Endurance tier. Predictable performance is achieved through the allocation of protocol-level IOPS to individual volumes. IOPS ranging from 100 through 6,000 can be provisioned with storage sizes that range from 20 GB to 12 TB. 
 
 Performance for file storage is accessed and mounted through a Network File System (NFS) connection. File Storage is typically used when the volume will be accessed by multiple machines simultaneously. Consistent Performance volumes can be ordered according to the Sizes and IOPS in Table 1 and can be used with Linux operating systems.
 
@@ -165,4 +165,4 @@ Another factor to consider is the number of hosts that are utilizing your volume
 
 To achieve maximum IOPS, adequate network resources need to be in place. Other considerations include private network usage outside of storage and host side and application specific tunings (IP stack, queue depths, and so on).
 
-Both NFS v3 and NFS v4.1 are supported in the IBM Cloud environment. However, it is our recommendation that NFS v3 be used. Because NFS v4.1 is a stateful protocol (not stateless like NFSv3) protocol issues can occur during network events. NFS v4.1 must quiesce operations and then perform lock reclamation. On a relatively busy NFS file server, the increased latency can cause disruptions. The lack of NFS v4.1 multipath/trunking can also extend NFS operations recovery.
+Both NFS v3 and NFS v4.1 are supported in the {{site.data.keyword.BluSoftlayer_full)} environment. However, it is our recommendation that NFS v3 be used. NFS v4.1 is a stateful protocol (not stateless like NFSv3) and thus protocol issues can occur during network events. NFS v4.1 must quiesce operations and then perform lock reclamation. On a relatively busy NFS file server, the increased latency can cause disruptions. The lack of NFS v4.1 multipath/trunking can also extend NFS operations recovery.
