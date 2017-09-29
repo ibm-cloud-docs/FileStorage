@@ -2,25 +2,25 @@
 
 copyright:
   years: 2014, 2017
-lastupdated: "2017-09-08"
+lastupdated: "2017-09-29"
 
 ---
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 
-# File Storage FAQ
+# File Storage - Frequently Asked Questions
 
 ## How are IOPS measured?
 
-IOPS are measured based on a load profile of 16kb blocks with random 50% read and 50% writes. Workloads that differ from this profile may experience lower performance.
+IOPS are measured based on a load profile of 16 KB blocks with random 50% reads and 50% writes. Workloads that differ from this profile may experience lower performance.
 
 ## What happens if I use a smaller block size when measuring performance?
 
 Maximum IOPS can still be obtained when using smaller block sizes, however throughput will be lower. For example; a volume with 6000 IOPS would have the following throughput at various block sizes:
 
-- 16KB * 6000 IOPS == ~93.75 MB/sec
-- 8KB * 6000 IOPS == ~46.88 MB/sec
-- 4KB * 6000 IOPS == ~23.44 MB/sec
+- 16 KB * 6000 IOPS == ~93.75 MB/sec
+- 8 KB * 6000 IOPS == ~46.88 MB/sec
+- 4 KB * 6000 IOPS == ~23.44 MB/sec
 
 
 ## Does the volume need to be pre-warmed to achieve expected throughput?
@@ -37,7 +37,7 @@ File storage that is provisioned prior to a data center upgrade cannot be encryp
 
 ## How do I know if I am provisioning Block or File storage in an upgraded data center?
 
-When provisioning Block or File storage, all upgraded data centers will be denoted with an asterisk (*) in the order form and an indication that you will be provisioning storage with encryption. Once the storage is provisioned, you will see an icon in the storage list that shows that volume or volume as encrypted. All encrypted volumes and volumes are provisioned in upgraded data centers only. You can find a full list of upgraded data centers and available features [here](/docs//infrastructure/BlockStorage/new-ibm-block-and-file-storage-location-and-features.html).
+When provisioning Block or File storage, all upgraded data centers will be denoted with an asterisk (`*`) in the order form and an indication that you will be provisioning storage with encryption. Once the storage is provisioned, you will see an icon in the storage list that shows that volume or volume as encrypted. All encrypted volumes and volumes are provisioned in upgraded data centers only. You can find a full list of upgraded data centers and available features [here](/docs//infrastructure/BlockStorage/new-ibm-block-and-file-storage-location-and-features.html).
 
 ## Why can I provision block and file storage with an Endurance 10 IOPS tier in some data centers and not in others?
 
@@ -45,7 +45,7 @@ The File storage Endurance type 10 IOPS/GB tier is only available in select data
 
 ## How can I find the correct mount point for my File Storage?
 
-All encrypted File storage volumes provisioned in these data centers have a different mount point than non-encrypted volumes.  To ensure you are using the correct mount point for both your encrypted and non-encrypted file storage volumes you can view the mount point information in the **Volume Details** page in the UI as well as access the correct mountpoint via an API call:  SoftLayer_Network_Storage::getNetworkMountAddress().
+All encrypted File storage volumes provisioned in these data centers have a different mount point than non-encrypted volumes.  To ensure you are using the correct mount point for both your encrypted and non-encrypted file storage volumes you can view the mount point information in the **Volume Details** page in the UI as well as access the correct mountpoint via an API call:  `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 
 ## How many file shares are allowed per file volume size? What are the maximum file shares allowed per volume size?
 Following are the maximum inodes or file shares allowed based on volume size:
@@ -57,15 +57,15 @@ Following are the maximum inodes or file shares allowed based on volume size:
             <th>Inodes/Files</th>
           </tr>
           <tr>
-            <td>20GB </td>
+            <td>20 GB </td>
             <td>622,484</td>
           </tr>
           <tr>
-            <td>40GB </td>
+            <td>40 GB </td>
             <td>1,245,084</td>
           </tr>          
           <tr>
-            <td>80GB</td>
+            <td>80 GB</td>
             <td>2,490,263</td>
           </tr>          
           <tr>
@@ -73,15 +73,15 @@ Following are the maximum inodes or file shares allowed based on volume size:
             <td>3,112,863</td>
           </tr>          
           <tr>
-            <td>250GB</td>
+            <td>250 GB</td>
             <td>7,782,300</td>
           </tr>          
           <tr>
-            <td>500GB</td>
+            <td>500 GB</td>
             <td>15,564,695</td>
           </tr>
           <tr>
-            <td>1TB+</td>
+            <td>1 TB+</td>
             <td>31,876,593</td>
           </tr>
         </tbody>
