@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2017
-lastupdated: "2017-09-29"
+lastupdated: "2017-10-09"
 
 ---
 {:new_window: target="_blank"}
@@ -10,9 +10,9 @@ lastupdated: "2017-09-29"
 
 # Working with Snapshots
 
-Snapshots are a feature of File Storage. A snapshot represents a volume's contents at a particular point in time. Snapshots enable you to protect your data with no performance impact, minimal consumption of space, and are considered your first line of defense for data protection. Data can be easily and quickly restored from a snapshot copy if a user accidently modifies or deletes crucial data from a volume with the snapshot feature.
+Snapshots are a feature of {{site.data.keyword.filestorage_full}}. A snapshot represents a volume's contents at a particular point in time. Snapshots enable you to protect your data with no performance impact, minimal consumption of space, and are considered your first line of defense for data protection. Data can be easily and quickly restored from a snapshot copy if a user accidently modifies or deletes crucial data from a volume with the snapshot feature.
 
-File Storage provides you with two ways to take your snapshots – through a configurable snapshot schedule that creates and deletes snapshot copies automatically for each storage volume. You can also create additional snapshot schedules, manually delete copies, and manage schedules based on your requirements. The second way is to take a manual snapshot.
+{{site.data.keyword.filestorage_short}} provides you with two ways to take your snapshots – through a configurable snapshot schedule that creates and deletes snapshot copies automatically for each storage volume. You can also create additional snapshot schedules, manually delete copies, and manage schedules based on your requirements. The second way is to take a manual snapshot.
 
 Snapshots let users
 
@@ -20,7 +20,7 @@ Snapshots let users
 - Revert volumes to previous points-in-time
 - You must purchase some amount of snapshot space for your volume in order to take snapshots of it. The snapshot space can be added during initial volume ordering or after initial provisioning via volume Details page and clicking the Actions drop-down button, and select Add Snapshot Space. Be aware that scheduled and manual snapshots share the snapshot space, so order your space accordingly.
 
-**Note**: Unless otherwise noted, the steps are the same for both {{site.data.keyword.blockstorageshort}} and File Storage.
+**Note**: Unless otherwise noted, the steps are the same for both {{site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_short}}.
 
 ## How do I Purchase Snapshot Space?
 
@@ -34,7 +34,7 @@ In order to create snapshots of your storage volume, either automated or manuall
 
 ## How do I Create a Snapshot Schedule?
 
-Snapshot schedules let you decide how often and when you want to create a point-in-time reference of your storage volume. You can have a maximum of 50 snapshots per storage volume. Schedules are managed via the **Storage** > **File Storage** tab of the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
+Snapshot schedules let you decide how often and when you want to create a point-in-time reference of your storage volume. You can have a maximum of 50 snapshots per storage volume. Schedules are managed via the **Storage** > **{{site.data.keyword.filestorage_short}}** tab of the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
 
 Before you can set up your initial schedule, you must first purchase snapshot space if you did not purchase it during the initial provisioning of the storage volume.
 
@@ -70,7 +70,7 @@ The snapshot will be taken and will display in the Snapshots section of the Deta
 
 ## How Do I See a List of Snapshots with Space Consumed and Management Functions?
 
-A list of retained snapshots and space consumed can be seen on the Detail page (**Storage** > **File Storage**). Management functions (editing schedules and adding more space) are conducted on the **Detail** page using the **Actions** drop-down menu or links in the various sections on the page.
+A list of retained snapshots and space consumed can be seen on the Detail page (**Storage** > **{{site.data.keyword.filestorage_short}}**). Management functions (editing schedules and adding more space) are conducted on the **Detail** page using the **Actions** drop-down menu or links in the various sections on the page.
 
 ## How Do I View a List of Retained Snapshots?
 
@@ -84,7 +84,7 @@ The pie chart at the top of the **Details** page displays how much space has bee
 
 You may need to add snapshot space to a volume that did not previously have any or may require additional snapshot space. You can add between 5 GB and 4,000 GB depending on your needs. Note: Snapshot space can only be increased and not reduced. You may want to select a smaller amount of space until you determine how much space you actually need. Remember, automated and manual snapshots share the same space.
 
-Snapshot space is changed via **Storage** > **File Storage**.
+Snapshot space is changed via **Storage** > **{{site.data.keyword.filestorage_short}}**.
 
 1. Click on your storage volumes, click the **Actions** drop-down box, and click **Add More Snapshot Space**.
 2. Select from a range of sizes from the prompt. Sizes typically range from 0 to the size of your volume.
@@ -102,7 +102,7 @@ Notifications are sent via support tickets from Support to the Master User on yo
 
 ## How Do I Delete a Snapshot Schedule?
 
-Snapshot schedules can be cancelled via **Storage** > **File Storage**.
+Snapshot schedules can be cancelled via **Storage** > **{{site.data.keyword.filestorage_short}}**.
 
 1. Click on the schedule to be deleted in the **Snapshot Schedules** frame on the **Details** page.
 2. Click in the checkbox next to the schedule to be deleted and click **Save**.<br/>
@@ -110,7 +110,7 @@ Caution: If you’re using the replication feature, be sure that the schedule yo
 
 ## How Do I Delete a Snapshot?
 
-Snapshots that are no longer needed can be manually removed to free up space for future snapshots. Deletion is done via **Storage** > **File Storage**.
+Snapshots that are no longer needed can be manually removed to free up space for future snapshots. Deletion is done via **Storage** > **{{site.data.keyword.filestorage_short}}**.
 
 1. Click on your storage volume and scroll down to the Snapshot section to see a list of existing snapshots.
 2. Click the Actions drop-down list next to a particular snapshot and click **Delete** to delete the snapshot. This will not affect any future or past snapshots on the same schedule as there is no dependency between snapshots.
@@ -122,12 +122,12 @@ Manual snapshots that are not deleted in the way described above, are automatica
 You may need to take your storage volume back to a specific point in time because of user error or data corruption.
 
 1. Unmount and detach your storage volume from the host.
-   - Click [here](accessing-file-storage-linux.html) for file storage on Linux instructions.
-2. Click **Storage**, **File Storage** in the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
+   - Click [here](accessing-file-storage-linux.html) for {{site.data.keyword.filestorage_short}} on Linux instructions.
+2. Click **Storage**, **{{site.data.keyword.filestorage_short}}** in the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
 3. Scroll down and click on your volume to be restored. The Snapshots section of the Detail page will display a list of all saved snapshots along with their size and creation date.
 4. Click the **Actions** button for the snapshot to be used and click **Restore**. 
 
    **Note**: Performing a restore will result in a loss of data that has been created or modified since the snapshot being used was taken. Once complete, your storage volume will be returned to the same state it was in when the snapshot was taken. A prompt will appear to notify you of this.
-5. Click **Yes** to initiate the restore. You will receive a message across the top of the page stating the volume was restored using the selected snapshot. Additionally, an icon will appear next to your volume on the Block Storage or File Storage indicating that an active transaction is in progress. Hovering over the icon produces a dialog indicating the transaction. The icon will disappear once the transaction is complete.
+5. Click **Yes** to initiate the restore. You will receive a message across the top of the page stating the volume was restored using the selected snapshot. Additionally, an icon will appear next to your volume on the {{site.data.keyword.filestorage_short}} indicating that an active transaction is in progress. Hovering over the icon produces a dialog indicating the transaction. The icon will disappear once the transaction is complete.
 6. Mount and re-attach your storage volume to the host.
-   - Click [here](accessing-file-storage-linux.html) for file storage on Linux instructions.
+   - Click [here](accessing-file-storage-linux.html) for {{site.data.keyword.filestorage_short}} on Linux instructions.

@@ -2,7 +2,7 @@
  
 copyright:
   years: 2015, 2017
-lastupdated: "2017-09-29"
+lastupdated: "2017-10-09"
  
 ---
 
@@ -21,11 +21,11 @@ Replicas let you
 Before you can replicate, you must create a snapshot schedule. When you failover, you’re “flipping the switch” from your storage volume in your primary data center to the destination volume in your remote data center. For example, your primary data center is London and your secondary data center is Amsterdam. In the case of a failure event, you’d fail over to Amsterdam – connecting to the now-primary volume from a compute instance in Amsterdam. After your volume in London has been repaired, a snapshot is taken of the Amsterdam volume in order to fall back to London and the once-again primary volume from a compute instance in London.
 
  
-**Note:** Unless otherwise noted, the steps are the same for both Block and File Storage.
+**Note:** Unless otherwise noted, the steps are the same for both {{site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_full}}.
 
 ## How Do I Determine the Remote Data Center for My Replicated Storage Volume?
 
-{{site.data.keyword.BluSoftlayer_full)}'s worldwide data centers have been paired into primary and remote combinations.
+{{site.data.keyword.BluSoftlayer_full}}'s worldwide data centers have been paired into primary and remote combinations.
 See Table 1 for a complete list of data center availability and replication targets.
 Note that some cities, such as Dallas, San Jose, Washington, D.C., and Amsterdam have multiple data centers.
 
@@ -115,7 +115,7 @@ In Latin America Region, MEX01 is enabled with encrypted storage. Replication no
 
 ## How Do I Create an Initial Replication?
 
-Replications work off of a snapshot schedule. You must first have snapshot space and a snapshot schedule set up for the source volume before you can replicate. You’ll receive prompts letting you know space needs to be purchased or a schedule set up if you try to set up replication and one or the other is not in place. Replications are managed under **Storage** > **File Storage** in the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} .
+Replications work off of a snapshot schedule. You must first have snapshot space and a snapshot schedule set up for the source volume before you can replicate. You’ll receive prompts letting you know space needs to be purchased or a schedule set up if you try to set up replication and one or the other is not in place. Replications are managed under **Storage** > **{{site.data.keyword.filestorage_short}}** in the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} .
 
 1. Click on your storage volume.
 2. Click on the **Replica** tab and click the **Purchase a replication** link.
@@ -129,7 +129,7 @@ Replications work off of a snapshot schedule. You must first have snapshot space
 
 ## How Do I Edit an Existing Replication?
 
-You can edit your replication schedule and change your replication space from either the **Primary** or **Replica** tab under **Storage** > **File Storage** from the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
+You can edit your replication schedule and change your replication space from either the **Primary** or **Replica** tab under **Storage** > **{{site.data.keyword.filestorage_short}}** from the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
 
  
 
@@ -158,13 +158,13 @@ Click the I have read the Master Service Agreement… check box and click the Pl
 
 ## How Do I See My Replica Volumes in the Volume List?
 
-You can view your replication volumes from the File Storage page under **Storage**> **File Storage**. The Volume Name will have the primary volume’s name followed by REP. The Type is Endurance(Performance) – Replica, the Target Address is N/A because the replica volume is not mounted at the replica data center, and the Status is Inactive.
+You can view your replication volumes from the {{site.data.keyword.filestorage_short}} page under **Storage** > **{{site.data.keyword.filestorage_short}}**. The Volume Name will have the primary volume’s name followed by REP. The Type is Endurance(Performance) – Replica, the Target Address is N/A because the replica volume is not mounted at the replica data center, and the Status is Inactive.
 
  
 
 ## How Do I View a Replicated Volume's Details at the Replica Data Center?
 
-You can view the replica volume details on the **Replica** tab under **Storage** > **File Storage**. Another option is to select the replica volume from the **File Storage** page and click on the **Replica** tab.
+You can view the replica volume details on the **Replica** tab under **Storage** > **{{site.data.keyword.filestorage_short}}**. Another option is to select the replica volume from the **{{site.data.keyword.filestorage_short}}** page and click on the **Replica** tab.
 
  
 
@@ -172,7 +172,7 @@ You can view the replica volume details on the **Replica** tab under **Storage**
 
 Authorized hosts and volumes must be in the same data center. You can’t have a replica volume in London and the host in Amsterdam; both have to be London or both have to be Amsterdam.
 
-1. Click on your source or destination volume on the **File Storage** page.
+1. Click on your source or destination volume on the **{{site.data.keyword.filestorage_short}}** page.
 2. Click on the **Replica** tab.
 3. Scroll down to the **Authorize Hosts** frame and click on the **Authorize Hosts** link on the right side of the screen.
 4. Highlight the host that is to be authorized for replications. To select multiple hosts, use the CTRL-key and click on the applicable hosts.
@@ -191,16 +191,16 @@ Click [here](snapshots.html) for how to increase your snapshot space.
 
 In the case of a failure event, the **Failover** action lets you initiate a failover to your destination, or target, volume. The target volume will become active, the last successfully replicated snapshot is activated, and the volume is made active for mounting. Any data written to the source volume since the previous replication cycle will be destroyed. Be aware that once a failover is initiated, the **replication relationship flipped**. Your target volume is now your source volume, and your former source volume becomes your target as indicated by the **LUN Name** followed by **REP**.
 
-Failovers are initiated under **Storage** > **File Storage** from the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
+Failovers are initiated under **Storage** > **{{site.data.keyword.filestorage_short}}** from the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
 
 **Before proceeding with this process, it is recommended to disconnect the volume. Failure to do so, will end with corruption and/or data loss.**
 
 1. Click on your active LUN (“source”).
 2. Click on the Replica tab and click the Actions link in the upper-right corner.
 3. Select Failover.
-   You will receive a message across the top of the page stating the failover is in progress. Additionally, an icon will appear next to your volume on the **File Storage** indicating that an active transaction is occurring. Hovering over the icon produces a dialog indicating the transaction. The icon will disappear once the transaction is complete. During the failover process, configuration-related actions are read only; you cannot edit any snapshot schedule, change snapshot space, and so on. The event is logged in replication history.
+   You will receive a message across the top of the page stating the failover is in progress. Additionally, an icon will appear next to your volume on the **{{site.data.keyword.filestorage_short}}** indicating that an active transaction is occurring. Hovering over the icon produces a dialog indicating the transaction. The icon will disappear once the transaction is complete. During the failover process, configuration-related actions are read only; you cannot edit any snapshot schedule, change snapshot space, and so on. The event is logged in replication history.
    Another message will let you know when your target volume is live. Your original source volume’s LUN Name will be followed by REP and its Status will be Inactive.
-4. Click the **View All File Storage** link in the top right corner.
+4. Click the **View All {{site.data.keyword.filestorage_short}}** link in the top right corner.
 5. Click on your active LUN (formerly your target volume). This volume will now have an **Active** status.
 6. Mount and attach your storage volume to the host.
  
@@ -217,14 +217,14 @@ Once your original source volume has been repaired, the **Fallback** action lets
 
 Be aware that once a fallback is initiated, the **replication relationship is once again flipped**. Your source volume is restored as your source volume, and your target volume once again is the target volume as indicated by the **LUN Name** followed by **REP**.
 
-Fallbacks are initiated under **Storage** > **File Storage** from the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}..
+Fallbacks are initiated under **Storage** > **{{site.data.keyword.filestorage_short}}** from the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}..
 
 1. Click on your active Endurance LUN (“target”).
 2. Click on the **Replica** tab and click the **Actions** link in the upper-right corner.
 3. Select **Fallback**.
-   You will receive a message across the top of the page stating the failover is in progress. Additionally, an icon will appear next to your volume on the **File Storage** indicating that an active transaction is occurring. Hovering over the icon produces a dialog indicating the transaction. The icon will disappear once the transaction is complete. During the fallback process, configuration-related actions are read only; you cannot edit any snapshot schedule, change snapshot space, and so on. The event is logged in replication history.
+   You will receive a message across the top of the page stating the failover is in progress. Additionally, an icon will appear next to your volume on the **{{site.data.keyword.filestorage_short}}** indicating that an active transaction is occurring. Hovering over the icon produces a dialog indicating the transaction. The icon will disappear once the transaction is complete. During the fallback process, configuration-related actions are read only; you cannot edit any snapshot schedule, change snapshot space, and so on. The event is logged in replication history.
    Another message will let you know when your source volume is live. Your target volume will now have an Inactive status.
-4. Click the **View All File Storage** link in the top right corner.
+4. Click the **View All {{site.data.keyword.filestorage_short}}** link in the top right corner.
 5. Click on your active Endurance LUN (source). This volume will now have an **Active** status.
 6. Mount and attach your storage volume to the host. Click [here](provisioning-file-storage.html) for instructions.
  
@@ -244,7 +244,7 @@ Replication history is viewed on the **Audit Log** via the **Account** tab under
 
 Cancelation can be performed either immediately or on the anniversary date, which causes billing to terminate. Replication can be canceled from either the **Primary** or **Replica** tabs.
 
-1. Click on the volume from the **File Storage** page.
+1. Click on the volume from the **{{site.data.keyword.filestorage_short}}** page.
 2. Click on the **Actions** drop-down on either the **Primary** or **Replica** tab.
 3. Select **Cancel Replica**.
 4. Select when to cancel – **Immediately** or **Anniversary Date** and click **Continue**.
@@ -253,9 +253,9 @@ Cancelation can be performed either immediately or on the anniversary date, whic
 
 ## How Do I Cancel Replication When the Primary Volume Is Cancelled?
 
-When a primary volume is canceled, the replication schedule and the volume in the replica data center are deleted. Replicas are canceled from the **File Storage** page.
+When a primary volume is canceled, the replication schedule and the volume in the replica data center are deleted. Replicas are canceled from the **{{site.data.keyword.filestorage_short}}** page.
 
- 1. Highlight your volume on the **File Storage** page.
- 2. Click the **Actions** drop-down menu and select **Cancel for file storage**.
+ 1. Highlight your volume on the **{{site.data.keyword.filestorage_short}}** page.
+ 2. Click the **Actions** drop-down menu and select **Cancel for {{site.data.keyword.filestorage_short}}**.
  3. Select when to cancel the volume – **Immediately** or **Anniversary Date** and click **Continue**.
  4. Click the **I acknowledge that due to cancellation, data loss may occur** checkbox and click **Cancel**.

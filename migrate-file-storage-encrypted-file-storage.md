@@ -2,26 +2,26 @@
 
 copyright:
   years: 2014, 2017
-lastupdated: "2017-09-29"
+lastupdated: "2017-10-09"
 
 ---
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 
-# Migrating File Storage to Encrypted File Storage
+# Migrating {{site.data.keyword.filestorage_full_notm}} to Encrypted {{site.data.keyword.filestorage_short}}
 
 
 ## Overview
 
-Encrypted file storage for Endurance or Performance has been launched in select data centers. Below you will find information on how to migrate your file storage from unencrypted to encrypted. For more information on provider managed encrypted storage, read the [File Storage Encryption-At-Rest](block-file-storage-encryption-rest.html) article. To see a list of upgraded data centers and available features click [here](new-ibm-block-and-file-storage-location-and-features).
+Encrypted {{site.data.keyword.filestorage_full}} for Endurance or Performance has been launched in select data centers. Below you will find information on how to migrate your {{site.data.keyword.filestorage_short}} from unencrypted to encrypted. For more information on provider managed encrypted storage, read the [{{site.data.keyword.filestorage_short}} Encryption-At-Rest](block-file-storage-encryption-rest.html) article. To see a list of upgraded data centers and available features click [here](new-ibm-block-and-file-storage-location-and-features).
 
 The preferred migration path is to connect to both volumes simultaneously and transfer data directly from one file volume to another. The specifics will depend on your operating system  and whether the data is expected to change during the copy operation.
 
 The more common scenarios have been outlined for your convenience. There is an assumption that you already have your non-encrypted file volume attached to your host. If not, follow the directions below that best fits the operating system you're running to accomplish this task. 
 
-**NOTE:**  All encrypted File storage volumes have a different mount point than non-encrypted volumes.  To ensure you are using the correct mount point for both your encrypted and non-encrypted file storage volumes you can view the mount point information in the Volume Detials page in the UI as well as access the correct mountpoint via an API call:  SoftLayer_Network_Storage::getNetworkMountAddress().
+**NOTE:**  All encrypted {{site.data.keyword.filestorage_short}} volumes have a different mount point than non-encrypted volumes.  To ensure you are using the correct mount point for both your encrypted and non-encrypted {{site.data.keyword.filestorage_short}} volumes you can view the mount point information in the Volume Detials page in the UI as well as access the correct mountpoint via an API call:  SoftLayer_Network_Storage::getNetworkMountAddress().
 
-[Accessing File Storage on Linux](accessing-file-storage-linux.html)
+[Accessing {{site.data.keyword.filestorage_short}} on Linux](accessing-file-storage-linux.html)
 
 ## Create an Encrypted File Volume
 
@@ -29,9 +29,9 @@ Use the following steps to create a volume the same size or larger that is encry
 
 ### Order an Encrypted Endurance Storage Volume
 
-1. Click **Storage** > **File Storage** from the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} home page OR Click **Infrastructure** > **Storage** > **File Storage** in the {{site.data.keyword.BluSoftlayer_full)} catalog.
+1. Click **Storage** > **{{site.data.keyword.filestorage_short}}** from the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} home page OR Click **Infrastructure** > **Storage** > **{{site.data.keyword.filestorage_short}}** in the {{site.data.keyword.BluSoftlayer_full}} catalog.
 
-2. Click **Order File Storage** link on the File Storage page.
+2. Click **Order {{site.data.keyword.filestorage_short}}** link on the {{site.data.keyword.filestorage_short}} page.
 
 3. Select **Endurance**.
 
@@ -49,9 +49,9 @@ Use the following steps to create a volume the same size or larger that is encry
  
 ### Order an Encrypted Performance Storage Volume
 
-1. Click **Storage** > **File Storage** from the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} home page OR Click **Infrastructure** > **Storage** > **File Storage** in the {{site.data.keyword.BluSoftlayer_full)} catalog.
+1. Click **Storage** > **{{site.data.keyword.filestorage_short}}** from the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} home page OR Click **Infrastructure** > **Storage** > **{{site.data.keyword.filestorage_short}}** in the {{site.data.keyword.BluSoftlayer_full}} catalog.
 
-2. Click on the **Order File Storage**.
+2. Click on the **Order {{site.data.keyword.filestorage_short}}**.
 
 3. Select **Performance**.
 
@@ -65,7 +65,7 @@ Use the following steps to create a volume the same size or larger that is encry
 
 8. Submit the order.
 
-Storage will be provisioned in less than a minute and will be visible on the File Storage page of the customer portal.
+Storage will be provisioned in less than a minute and will be visible on the {{site.data.keyword.filestorage_short}} page of the customer portal.
 
  
 ## Connect New Volume to Host
@@ -90,7 +90,7 @@ Note that if your target data center has not been upgraded for encryption, you w
  
 ## Migrate your data
 
-Your host should be connected to both your original and encrypted file storage volumes. If not:
+Your host should be connected to both your original and encrypted {{site.data.keyword.filestorage_short}} volumes. If not:
 
 • Make sure that you have followed the steps above and referenced documents correctly.
 
@@ -98,13 +98,13 @@ Your host should be connected to both your original and encrypted file storage v
 
 ### Data considerations
 
-At this point, consider what type of data you have on your original file storage volume and how best to copy it to your encrypted volume. If you have backups, static content, and things that aren't expected to change during the copy, there aren't any major considerations.
+At this point, consider what type of data you have on your original {{site.data.keyword.filestorage_short}} volume and how best to copy it to your encrypted volume. If you have backups, static content, and things that aren't expected to change during the copy, there aren't any major considerations.
 
-If you're running a database or a virtual machine on your file storage, make sure that the data on the original volume is not altered during copy so that no corruption occurs. If you have any bandwidth concerns, you should perform the migration during off peak times. If you need assistance with these considerations, please do not hesitate to open a support ticket.
+If you're running a database or a virtual machine on your {{site.data.keyword.filestorage_short}}, make sure that the data on the original volume is not altered during copy so that no corruption occurs. If you have any bandwidth concerns, you should perform the migration during off peak times. If you need assistance with these considerations, please do not hesitate to open a support ticket.
 
 ### Microsoft Windows
 
-To copy data from your original file storage volume to your encrypted volume, format the new storage and copy the files over using Windows Explorer.
+To copy data from your original {{site.data.keyword.filestorage_short}} volume to your encrypted volume, format the new storage and copy the files over using Windows Explorer.
 
 ### Linux
 
@@ -114,6 +114,6 @@ You may consider using rsync to copy over the data. Below is an example command
 
 It’s recommended that you use the above command with the `--dry-run` flag once to make sure the paths line up correctly. If this process is interrupted, you may want to delete the last destination file that was being copied to make sure that it is copied from the beginning to the new location.
 
-Once this command completes without the `--dry-run` flag, your data should be copied to the encrypted file storage volume. You should scroll up and run the command again to make sure nothing was missed. You may also want to manually review both locations to look for anything that might be missing.
+Once this command completes without the `--dry-run` flag, your data should be copied to the encrypted {{site.data.keyword.filestorage_short}} volume. You should scroll up and run the command again to make sure nothing was missed. You may also want to manually review both locations to look for anything that might be missing.
 
 When your migration is complete, you will be able to move production to the encrypted volume and detach and delete your original volume from your configuration. Note that the deletion will also remove any snapshot or replica on the target site that was associated with the original volume.

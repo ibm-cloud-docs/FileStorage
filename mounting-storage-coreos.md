@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2017
-lastupdated: "2017-07-13"
+lastupdated: "2017-10-09"
 
 ---
 {:new_window: target="_blank"}
@@ -36,9 +36,9 @@ CoreOS uses systemd so in order to make the mount point survive a reboot you mus
 
 `$ systemctl enable --now mnt-www.mount`
 
-## Mounting NFS/File Storage
+## Mounting NFS/{{site.data.keyword.filestorage_short}}
 
-The process for mounting our Endurance/Performance File Storage is pretty much the same, but since the mount is NFS we can specify some additional options using the Options= line in the mount file. In the following example we are setting the NFS to mount at `/data/www`. Note the NFS mount point of the file storage instance can be obtained from the File Storage listing pageor via call to API -SoftLayer_Network_Storage::getNetworkMountAddress().
+The process for mounting our Endurance/Performance {{site.data.keyword.filestorage_short}} is pretty much the same, but since the mount is NFS we can specify some additional options using the Options= line in the mount file. In the following example we are setting the NFS to mount at `/data/www`. Note the NFS mount point of the {{site.data.keyword.filestorage_short}} instance can be obtained from the {{site.data.keyword.filestorage_short}} listing page or via call to API -SoftLayer_Network_Storage::getNetworkMountAddress().
 
 ```
 $ cat data-www.mount

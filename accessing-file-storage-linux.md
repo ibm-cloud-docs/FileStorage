@@ -2,24 +2,24 @@
 
 copyright:
   years: 2014, 2017
-lastupdated: "2017-09-29"
+lastupdated: "2017-10-09"
 
 ---
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 
-# Accessing File Storage on Linux
+# Accessing {{site.data.keyword.filestorage_full_notm}} on Linux
 
-Before starting, make sure the host accessing the File Storage volume has been authorized through the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}:
+Before starting, make sure the host accessing the {{site.data.keyword.filestorage_full}} volume has been authorized through the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}:
 
-1. From the File Storage listing page, click **Actions** associated with the newly provisioned share and click **Authorize Host**.
+1. From the {{site.data.keyword.filestorage_short}} listing page, click **Actions** associated with the newly provisioned share and click **Authorize Host**.
 2. Select the desired host(s) from the list and click **Submit**; this authorizes the host(s) to access the share.
 
-## Mounting the File Storage share
+## Mounting the {{site.data.keyword.filestorage_short}} share
 
 Following are the steps required to connect a Linux-based {{site.data.keyword.BluSoftlayer_full}} Compute instance to a Network File System (NFS) share. The example is based on Red Hat Enterprise Linux 6. The steps can be adjusted for other Linux distributions according to the operating system (OS) vendor documentation.
 
-**Note:** The mount point of the file storage instance can be obtained from the File Storage listing page or via call to API  - SoftLayer_Network_Storage::getNetworkMountAddress().
+**Note:** The mount point of the file storage instance can be obtained from the {{site.data.keyword.filestorage_short}} listing page or via call to API  - SoftLayer_Network_Storage::getNetworkMountAddress().
 
 1. Install required packages/tools.
 

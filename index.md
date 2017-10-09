@@ -2,23 +2,23 @@
 
 copyright:
   years: 2014, 2017
-lastupdated: "2017-09-29"
+lastupdated: "2017-10-09"
 
 ---
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 
-# Getting Started with File Storage
+# Getting Started with {{site.data.keyword.filestorage_full_notm}}
 
-File Storage is persistent, fast, and flexible Network Attached, NFS-based file storage. In this Network Attached Storage (NAS) environment, you have total control over your file shares function and performance. File storage shares can be connected to up to 64 authorized devices over routed TCP/IP connections for resiliency.
+{{site.data.keyword.filestorage_full}} is persistent, fast, and flexible Network Attached, NFS-based {{site.data.keyword.filestorage_short}}. In this Network Attached Storage (NAS) environment, you have total control over your file shares function and performance. {{site.data.keyword.filestorage_short}} shares can be connected to up to 64 authorized devices over routed TCP/IP connections for resiliency.
 
-File Storage brings best-in-class levels of durability and availability with an unmatched feature set and is built using industry standards and best practices, and designed to protect the integrity of the data and maintain availability through maintenance events and unplanned failures while providing a consistent performance baseline.
+{{site.data.keyword.filestorage_short}} brings best-in-class levels of durability and availability with an unmatched feature set and is built using industry standards and best practices, and designed to protect the integrity of the data and maintain availability through maintenance events and unplanned failures while providing a consistent performance baseline.
 
-Take advantage of the following core features of File Storage:
+Take advantage of the following core features of {{site.data.keyword.filestorage_short}}:
 
 - **Consistent performance baseline**
    - Provided through the allocation of protocol-level input/output operations per second (IOPS) to individual volumes
-- **File storage**
+- **{{site.data.keyword.filestorage_short}}**
    - Available for file-based NFS shares
 - **Highly durable and resilient**
    - Protects the integrity of the data and maintains availability through maintenance events and unplanned failures without the need to create and manage operating system-level redundant array of independent disk (RAID) arrays
@@ -26,12 +26,12 @@ Take advantage of the following core features of File Storage:
    - Provider managed encryption for data-at-rest at no additional cost
 - **All Flash Backed Storage** [(Available in select data centers.)](new-ibm-block-and-file-storage-location-and-features.html)
    - All flash storage for volumes provisioned with Endurance or Performance at 2IOPS/GB or higher
-- **Snapshots (When provisioned with Endurance or Performance in [select data centers]**(new-ibm-block-and-file-storage-location-and-features.html)).
+- **Snapshots (When provisioned with Endurance or Performance in [select data centers](new-ibm-block-and-file-storage-location-and-features.html))**.
    - Captures point-in-time data snapshots non-disruptively
 - **Replication** (When provisioned with Endurance or Performance in [select data centers](new-ibm-block-and-file-storage-location-and-features.html).
-   - Automatically copies snapshots to a partner {{site.data.keyword.BluSoftlayer_full)} data center
+   - Automatically copies snapshots to a partner {{site.data.keyword.BluSoftlayer_full}} data center
 - **Highly available connectivity**
-   - Uses redundant networking connections to maximize availability - NFS-based File Storage routed TCP/IP connections
+   - Uses redundant networking connections to maximize availability - NFS-based {{site.data.keyword.filestorage_short}} routed TCP/IP connections
 - **Concurrent access**
    - Allows multiple hosts (up to 64) to simultaneously access file volumes
 - **Clustered databases**
@@ -47,7 +47,7 @@ With **monthly billing**, the calculation for the price is pro-rated from the da
 
 ## Provisioning
 
-File Storage volumes can be provisioned from 20GB to 12TB with two options for provisioning:
+{{site.data.keyword.filestorage_short}} volumes can be provisioned from 20GB to 12TB with two options for provisioning:
 
 Provision with Endurance tiers – featuring pre-defined performance levels and features like snapshots and replication or build a high-powered Performance environment with allocated input/output operations per second (IOPS).
 
@@ -68,13 +68,13 @@ Endurance is available in three IOPS performance tiers to support varying applic
 Up to 48,000 IOPS are available with a 12TB Endurance volume.
 
 
-While choosing the right tier of Endurance file storage for your workload it is key, it is equally important to use the block size, Ethernet connection speed, and number of hosts necessary to achieve maximum performance. If any of these parts do not align with the other, it can have a significant impact on the resulting throughput
+While choosing the right tier of Endurance {{site.data.keyword.filestorage_short}} for your workload it is key, it is equally important to use the block size, Ethernet connection speed, and number of hosts necessary to achieve maximum performance. If any of these parts do not align with the other, it can have a significant impact on the resulting throughput
  
 ### Performance
 
-Performance is a class of {{site.data.keyword.BluSoftlayer_full)} file storage that is designed to support high I/O applications with well understood performance requirements that don’t fit well within an Endurance tier. Predictable performance is achieved through the allocation of protocol-level IOPS to individual volumes. IOPS ranging from 100 through 6,000 can be provisioned with storage sizes that range from 20 GB to 12 TB. 
+Performance is a class of {{site.data.keyword.filestorage_full}} that is designed to support high I/O applications with well understood performance requirements that don’t fit well within an Endurance tier. Predictable performance is achieved through the allocation of protocol-level IOPS to individual volumes. IOPS ranging from 100 through 6,000 can be provisioned with storage sizes that range from 20 GB to 12 TB. 
 
-Performance for file storage is accessed and mounted through a Network File System (NFS) connection. File Storage is typically used when the volume will be accessed by multiple machines simultaneously. Consistent Performance volumes can be ordered according to the Sizes and IOPS in Table 1 and can be used with Linux operating systems.
+Performance for {{site.data.keyword.filestorage_short}} is accessed and mounted through a Network File System (NFS) connection. {{site.data.keyword.filestorage_short}} is typically used when the volume will be accessed by multiple machines simultaneously. Consistent Performance volumes can be ordered according to the Sizes and IOPS in Table 1 and can be used with Linux operating systems.
 
 <table cellpadding="1" cellspacing="1" style="width: 99%;">
         <colgroup>
@@ -153,7 +153,7 @@ Performance volumes are designed to perform consistently close to the provisione
 
 IOPS, for both Endurance and Performance, are measured based on a 16KB block size with a 50/50 read/write mix. To achieve maximum IOPS on a volume, adequate network resources need to be in place. Other considerations include private network usage outside of storage and host side and application specific tunings (IP stack, queue depths, and so on). 
 
-### Tips for provisioning IOPS for file storage
+### Tips for provisioning IOPS for {{site.data.keyword.filestorage_short}}
 
 Choosing the storage solution that is right for your workload is important, and equally important is how to avoid bottlenecks.  IOPS for both Endurance and Performance is measured based on a 16KB block size with a 50/50 read/write mix. This is important because if you choose a size larger than 16KB, the throughput is affected. The reason is that a 16KB block is the equivalent of one write to the volume. Each multiple adds more writes decreasing the response time to the server. For example, a 64KB block size is the equivalent to four writes to the volume. Or, four IOPS per GB at 16KB block size is equivalent to one IOPS per GB at 64KB block size.
 

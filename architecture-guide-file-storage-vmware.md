@@ -2,47 +2,47 @@
 
 copyright:
   years: 2014, 2017
-lastupdated: "2017-09-29"
+lastupdated: "2017-10-09"
 
 ---
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 
-# Architecture Guide for File Storage with VMware
+# Architecture Guide for {{site.data.keyword.filestorage_full_notm}} with VMware
 
-Following are the steps to order and configure File Storage in a vSphere 5.5 and vSphere 6.0 environment at {{site.data.keyword.BluSoftlayer_full}}.
+Following are the steps to order and configure {{site.data.keyword.filestorage_full}} in a vSphere 5.5 and vSphere 6.0 environment at {{site.data.keyword.BluSoftlayer_full}}.
 
-## File Storage Overview
+## {{site.data.keyword.filestorage_short}} Overview
 
-Our File Storage is designed to support high I/O applications requiring predictable levels of performance. The predictable performance is achieved through the allocation of protocol-level input/output operations per second (IOPS) to individual volumes. 
+Our {{site.data.keyword.filestorage_short}} is designed to support high I/O applications requiring predictable levels of performance. The predictable performance is achieved through the allocation of protocol-level input/output operations per second (IOPS) to individual volumes. 
 
-The file storage offering is accessed and mounted through an NFS connection. In a VMware deployment, a single volume can be mounted to up to 64 ESXi hosts as shared storage, or you can mount multiple volumes to create a storage cluster to utilize vSphere Storage DYNAMIC Resource Scheduling.
+The {{site.data.keyword.filestorage_short}} offering is accessed and mounted through an NFS connection. In a VMware deployment, a single volume can be mounted to up to 64 ESXi hosts as shared storage, or you can mount multiple volumes to create a storage cluster to utilize vSphere Storage DYNAMIC Resource Scheduling.
 
-Pricing and configuration options for Endurance and Performance file storage are charged based on a combination of the reserved space and for the offered IOPS.
+Pricing and configuration options for Endurance and Performance {{site.data.keyword.filestorage_short}} are charged based on a combination of the reserved space and for the offered IOPS.
 
-### 1. File Storage Considerations
+### 1. {{site.data.keyword.filestorage_short}} Considerations
 
-When ordering file storage, you will want to keep in mind the following information and considerations:
+When ordering {{site.data.keyword.filestorage_short}}, you will want to keep in mind the following information and considerations:
 
-- The storage size, IOPS, and operating system cannot be changed once file storage volumes are provisioned. Any changes you want to make for the amount of space, the number of IOPS, or the operating system requires a new volume to be provisioned. Any data stored in the previous volume will have to be migrated to the new volume(s) using VMware Storage vMotion.
+- The storage size, IOPS, and operating system cannot be changed once {{site.data.keyword.filestorage_short}} volumes are provisioned. Any changes you want to make for the amount of space, the number of IOPS, or the operating system requires a new volume to be provisioned. Any data stored in the previous volume will have to be migrated to the new volume(s) using VMware Storage vMotion.
 - An administrator can choose the size of the instance needed for a workload. IOPS are measured based on a 16KB block size with a 50/50 read/write mix. This formula proves to be a very consistent calculation for block storage.
 - NFS utilizes many additional file control operations such as lookup, getattr and readdir to name a few. These operations in addition to read/write operations can count as IOPS and vary by operation type and NFS version.
 - Technically, multiple volumes can be striped together to achieve higher IOPS and more throughput, however, VMware recommends a single Virtual Machine File System (VMFS) data store per volume to avoid performance degradation.
-- File Storage volumes are exposed to authorized devices, subnets, or IP addresses.
-- Snapshot and Replication services are natively available on Endurance file storage volumes only. Performance file storage does not have these capabilities.
+- {{site.data.keyword.filestorage_short}} volumes are exposed to authorized devices, subnets, or IP addresses.
+- Snapshot and Replication services are natively available on Endurance {{site.data.keyword.filestorage_short}} volumes only. Performance {{site.data.keyword.filestorage_short}} does not have these capabilities.
 - Both NFS v3 and NFS v4.1 are supported in the {{site.data.keyword.BluSoftlayer_full}} environment. However, it is our recommendation that NFS v3 be used. NFS v4.1 is a stateful protocol (not stateless like NFSv3) thus protocol issues can occur during network events. NFS v4.1 must quiesce operations and then perform lock reclamation. On a relatively busy NFS file server, the increased latency can cause disruptions. The lack of NFS v4.1 multipath/trunking can also extend NFS operations recovery.
 
 **Note**: Increasing block size will increase throughput but decrease IOPS. For example, doubling the block size to 32KB blocks will maintain the maximum throughput but halve the IOPS.
 
  
 
-### 2. Endurance File Storage snapshots
+### 2. Endurance {{site.data.keyword.filestorage_short}} snapshots
 
-Endurance file storage allows administrators to set snapshot schedules that create and delete snapshot copies automatically for each storage volume. They can also create additional snapshot schedules (hourly, daily, weekly) for automatic snapshots and manually create adhoc snapshots for business continuity and disaster recovery (BCDR) scenarios. Automatic alerts are delivered via the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} to the volume owner for the retained snapshots and space consumed.
+Endurance {{site.data.keyword.filestorage_short}} allows administrators to set snapshot schedules that create and delete snapshot copies automatically for each storage volume. They can also create additional snapshot schedules (hourly, daily, weekly) for automatic snapshots and manually create adhoc snapshots for business continuity and disaster recovery (BCDR) scenarios. Automatic alerts are delivered via the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} to the volume owner for the retained snapshots and space consumed.
 
 Be aware that “snapshot space” is required to use snapshots. Space can be acquired on the initial volume ordering or after initial provisioning via the **Volume Details** page by clicking the Actions drop-down button and selecting **Add Snapshot Space**.
 
-It is important to note that VMware environments are not aware of snapshots. The Endurance file storage snapshot capability must not be confused with VMware snapshots. Any recovery using the Endurance file storage snapshot feature must be handled from the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}. Restoring the Endurance file storage volume will require powering off all the VMs that reside on Endurance file storage, and temporarily unmounting the volume from the ESXi hosts to avoid any data corruption during the process.
+It is important to note that VMware environments are not aware of snapshots. The Endurance {{site.data.keyword.filestorage_short}} snapshot capability must not be confused with VMware snapshots. Any recovery using the Endurance {{site.data.keyword.filestorage_short}} snapshot feature must be handled from the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}. Restoring the Endurance {{site.data.keyword.filestorage_short}} volume will require powering off all the VMs that reside on Endurance {{site.data.keyword.filestorage_short}}, and temporarily unmounting the volume from the ESXi hosts to avoid any data corruption during the process.
 
 Refer to our [snapshots](snapshots.html) article for more details about how to configure snapshots.
  
@@ -71,37 +71,37 @@ Refer to the [Replication](replication.html) information page for more details a
 
  
 
-## Order File Storage
+## Order {{site.data.keyword.filestorage_short}}
 
-You can order and configure File storage for a VMware ESXi 5 environment. Use the following information in conjunction with the Advanced Single-Site VMware Reference Architecture to set up one of these storage options in your VMware environment.
+You can order and configure {{site.data.keyword.filestorage_short}} for a VMware ESXi 5 environment. Use the following information in conjunction with the Advanced Single-Site VMware Reference Architecture to set up one of these storage options in your VMware environment.
 
 
-File storage can be ordered through the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} by accessing the File Storage page via **Storage** > **File Storage**.
+{{site.data.keyword.filestorage_short}} can be ordered through the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} by accessing the {{site.data.keyword.filestorage_short}} page via **Storage** > **{{site.data.keyword.filestorage_short}}**.
  
 
-### 1. Ordering File Storage
+### 1. Ordering {{site.data.keyword.filestorage_short}}
 
-Use the following steps to order File storage:
-1. Click **Storage** > **File Storage** on the[{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} home page.
-2. Click on the **Order File Storage** link on the **File Storage** page.
+Use the following steps to order {{site.data.keyword.filestorage_short}}:
+1. Click **Storage** > **{{site.data.keyword.filestorage_short}}** on the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} home page.
+2. Click on the **Order {{site.data.keyword.filestorage_short}}** link on the **{{site.data.keyword.filestorage_short}}** page.
 3. Select the desired amount of storage space in GBs. For TB, 1TB equals 1,000GB, and 12TB equals 12,000GB.
 4. Enter the desired amount of IOPS in intervals of 100 or select an IOPS Tier.
 5. Submit the order.
 
-Storage will be provisioned in less than a minute and will be visible on the **File Storage** page of the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
+Storage will be provisioned in less than a minute and will be visible on the **{{site.data.keyword.filestorage_short}}** page of the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
 
  
 
-### 2. Authorize Hosts to use File Storage
+### 2. Authorize Hosts to use {{site.data.keyword.filestorage_short}}
 
-Once a volume is provisioned, the {{site.data.keyword.BluBareMetServers_full)} or {{site.data.keyword.BluVirtServers_full}} that will use the volume must be authorized to access the storage. Use the following steps to authorize the volume:
+Once a volume is provisioned, the {{site.data.keyword.BluBareMetServers_full}} or {{site.data.keyword.BluVirtServers_full}} that will use the volume must be authorized to access the storage. Use the following steps to authorize the volume:
 
-1. Click on **Storage** > **File Storage**.
+1. Click on **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Select **Access Host** on the **Endurance** or **Performance Volume Actions** menu.
 3. Select the **Subnets** radio button
 4. Choose from the list of available subnets that are assigned to the vmkernel ports on the ESXi hosts, and click on **Submit**.
 
-After the subnets are authorized, make note of the hostname of the Endurance or Performance storage server you wish to utilize when mounting the volume. This information can be found on the file storage detail page by clicking on a specific volume.
+After the subnets are authorized, make note of the hostname of the Endurance or Performance storage server you wish to utilize when mounting the volume. This information can be found on the {{site.data.keyword.filestorage_short}} detail page by clicking on a specific volume.
 
  
 ##  Configure the VMware Virtual Machine Host
@@ -110,8 +110,8 @@ After the subnets are authorized, make note of the hostname of the Endurance or 
 
 Before beginning the VMware configuration process, make sure that the following prerequisites are met:
 
-- {{site.data.keyword.BluBareMetServers_short}} with VMware ESXi are provisioned with proper storage configuration and ESXi login credentials.
-- {{site.data.keyword.BluSoftlayer_full}} Windows physical or {{site.data.keyword.virtualmachinesshort}} in the same data center as the {{site.data.keyword.BluBareMetServers_short}}. Including Public IP address of the {{site.data.keyword.BluSoftlayer_full}} Windows VM and login credentials.
+- {{site.data.keyword.BluBareMetServers}} with VMware ESXi are provisioned with proper storage configuration and ESXi login credentials.
+- {{site.data.keyword.BluSoftlayer_full}} Windows physical or {{site.data.keyword.virtualmachinesshort}} in the same data center as the {{site.data.keyword.BluBareMetServers}}. Including Public IP address of the {{site.data.keyword.BluSoftlayer_full}} Windows VM and login credentials.
 - A computer with Internet access, and with the web browser software and a Remote Desktop Protocol (RDP) client installed.
  
 
@@ -173,7 +173,7 @@ The network configuration for this architecture guide uses a minimal number of p
    - Here is the link to a VMware KB article: [Configuring static routes for VMkernel ports on an ESXi host](https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=2001426){:new_window}.
  
 
-##  Mount File Storage Volume(s) on the ESXi hosts
+##  Mount {{site.data.keyword.filestorage_short}} Volume(s) on the ESXi hosts
 
 1. Click **Go to vCenter** icon at the top of the web page and then **Hosts and Clusters**.
 2. Click on **Datastores** under the **Related Object** tab. Click on the **Create a new datastore** icon. 
@@ -182,7 +182,7 @@ The network configuration for this architecture guide uses a minimal number of p
 5. On the **Name and configuration** screen, enter the name you wish to call the datastore. Additionally, enter the hostname of the NFS server. Using the FQDN for the NFS server produces the best traffic distribution to the underlying server. IP address is also valid but used less frequently and only in specific instances. Enter the folder name in the form of /foldername.
 6. On the **Host accessibility** screen, select all the host(s) that you wish to mount the NFS datastore and click **next**.
 7. Review the inputs on the next screen and click **Finish**.
-8. Repeat for any additional File storage volumes.
+8. Repeat for any additional {{site.data.keyword.filestorage_short}} volumes.
 
 **Note**: It is {{site.data.keyword.BluSoftlayer_full}}’s recommendation that FQDN names be used to connect to the datastore. Using direct IP addressing may be bypassing the load balancing mechanism provided by using FQDN. To use the IP address instead of the FQDN execute the following command to obtain the IP address.
 
@@ -224,7 +224,7 @@ Use the following steps to enable SIOC with recommended values for Endurance and
 
 ### 2. Storage I/O Control For A {{site.data.keyword.BluVirtServers_short}}
 
-You can also limit individual virtual disks for individual VMs or grant them different shares with SIOC. The limiting of disks and granting different shares allows you to match and align the environment to the workload with the acquired file storage volume IOPS number. The limit is set by IOPS and it is possible to set a different weight or "Shares." Virtual disks shares set to High (2,000 shares) receive twice as much as I/O as a disk set to Normal (1,000 shares) and four times as much as one set to Low (500 shares). Normal is the default value for all the VMs, so you just need to adjust the values above or below Normal for the VMs that actually require it.
+You can also limit individual virtual disks for individual VMs or grant them different shares with SIOC. The limiting of disks and granting different shares allows you to match and align the environment to the workload with the acquired {{site.data.keyword.filestorage_short}} volume IOPS number. The limit is set by IOPS and it is possible to set a different weight or "Shares." Virtual disks shares set to High (2,000 shares) receive twice as much as I/O as a disk set to Normal (1,000 shares) and four times as much as one set to Low (500 shares). Normal is the default value for all the VMs, so you just need to adjust the values above or below Normal for the VMs that actually require it.
 
 
 Use the following steps to change the vDisk shares and limit:
