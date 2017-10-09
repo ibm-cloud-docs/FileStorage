@@ -242,7 +242,7 @@ Replication history is viewed on the **Audit Log** via the **Account** tab under
 
 ## How Do I Cancel an Existing Replication?
 
-Cancelation can be performed either immediately or on the anniversary date, which causes billing to terminate. Replication can be canceled from either the **Primary** or **Replica** tabs.
+Cancelation can be performed either immediately or on the anniversary date, which causes billing to terminate. Replication can be cancelled from either the **Primary** or **Replica** tabs.
 
 1. Click on the volume from the **{{site.data.keyword.filestorage_short}}** page.
 2. Click on the **Actions** drop-down on either the **Primary** or **Replica** tab.
@@ -253,7 +253,7 @@ Cancelation can be performed either immediately or on the anniversary date, whic
 
 ## How Do I Cancel Replication When the Primary Volume Is Cancelled?
 
-When a primary volume is canceled, the replication schedule and the volume in the replica data center are deleted. Replicas are canceled from the **{{site.data.keyword.filestorage_short}}** page.
+When a primary volume is cancelled, the replication schedule and the volume in the replica data center are deleted. Replicas are cancelled from the **{{site.data.keyword.filestorage_short}}** page.
 
  1. Highlight your volume on the **{{site.data.keyword.filestorage_short}}** page.
  2. Click the **Actions** drop-down menu and select **Cancel for {{site.data.keyword.filestorage_short}}**.
