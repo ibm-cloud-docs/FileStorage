@@ -39,7 +39,7 @@ Use the following steps to create a volume the same size or larger that is encry
 
 5. Enter the desired **IOPS tier**.
 
-6. Select the desired amount of storage space in GBs. For TB, 1TB equals 1,000GB, and 12TB equals 12,000GB.
+6. Select the desired amount of storage space in GBs. For TB, 1 TB equals 1,000 GB, and 12 TB equals 12,000 GB.
 
 7. Enter the desired amount of storage space in GBs for snapshots.
 
