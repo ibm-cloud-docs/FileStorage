@@ -8,7 +8,7 @@ lastupdated: "2017-10-11"
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 
-# New Location and Features of {{site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_short}}
+# New Locations and Features of {{site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_short}}
 
 {{site.data.keyword.BluSoftlayer_full}} is introducing a new version of {{site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_full}}!  The new storage is available in select data centers, and is backed by flash storage at higher IOPS levels with disk level encryption for data-at-rest. All storage provisioned in the select data centers will automatically be provisioned with the new version of {{site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_short}}.
 
