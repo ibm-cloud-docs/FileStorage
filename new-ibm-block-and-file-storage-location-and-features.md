@@ -8,7 +8,7 @@ lastupdated: "2017-10-11"
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 
-# New {{site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_short}} Location and Features
+# New Location and Features of {{site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_short}}
 
 {{site.data.keyword.BluSoftlayer_full}} is introducing a new version of {{site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_full}}!  The new storage is available in select data centers, and is backed by flash storage at higher IOPS levels with disk level encryption for data-at-rest. All storage provisioned in the select data centers will automatically be provisioned with the new version of {{site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_short}}.
 
@@ -74,7 +74,7 @@ The new storage has the following features and capabilities:
 -  [Provider Managed encryption for data-at-rest](block-file-storage-encryption-rest.html). All {{site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_short}} will automatically be provisioned as encrypted at no additional charge.
 -  10 IOPS per GB tier option. A new tier has been added to the Endurance type {{site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_short}} to support the most demanding workloads.
 -  All flash-backed storage.  {{site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_short}} provisioned with either Endurance or Performance at 2 IOPS per GB or higher with backed by all-flash storage.
--  Snapshot and Replication support with {{site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_short}} provisioned with with either Endurance or Performance.
+-  Snapshot and Replication support with {{site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_short}} provisioned with either Endurance or Performance.
 -  Hourly Billing option added for storage that is planned to be used for less than a full month. 
 -  Up to 48,000 IOPS for {{site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_short}} provisioned with Performance.
 -  Create a new clone of your data with the [File Storage Volume Duplication feature](how-to-create-duplicate-volume.html).  
