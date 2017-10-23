@@ -48,7 +48,7 @@ lastupdated: "2017-10-09"
 6. Enter the IOPS in the **Specify IOPS** field.
 7. Click **Continue**. You are shown the monthly and prorated charges with a final chance to review order details. Click **Previous** if you want to change your order.
 8. Click the **I have read the Master Service Agreement** checkbox and click **Place Order**.
-9.Your new storage allocation should be available in a few minutes.
+9. Your new storage allocation should be available in a few minutes.
 
 ## Managing {{site.data.keyword.filestorage_short}}
 

@@ -2,15 +2,15 @@
 
 copyright:
   years: 2014, 2017
-lastupdated: "2017-09-29"
+lastupdated: "2017-10-16"
 
 ---
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 
-# Brocade vRouter (Vyatta) Set up Guide for VMware Environments with Endurance or Performance Storage
+# Brocade vRouter (Vyatta) Set up Guide for VMware Environments with {{site.data.keyword.filestorage_full_notm}}
 
-You can configure a Brocade vRouter (Brocade vRouter (Vyatta) appliance [high availability (HA) configuration] within a VMware environment that is using either Endurance or Performance storage. Use the following information in conjunction with the [Advanced Single-Site VMware Reference Architecture](http://knowledgelayer.softlayer.com/articles/advanced-single-site-vmware-reference-architecturesoftlayer){:new_window} to set up one of these storage options in your VMware environment.
+You can configure a Brocade vRouter (Brocade vRouter (Vyatta) appliance [high availability (HA) configuration] within a VMware environment that is using either {{site.data.keyword.filestorage_full}}. Use the following information in conjunction with the [Advanced Single-Site VMware Reference Architecture](http://knowledgelayer.softlayer.com/articles/advanced-single-site-vmware-reference-architecturesoftlayer){:new_window} to set up one of these storage options in your VMware environment.
 
 ## Brocade vRouter (Vyatta) Overview
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2017
-lastupdated: "2017-10-09"
+lastupdated: "2017-10-16"
 
 ---
 {:new_window: target="_blank"}
@@ -10,7 +10,7 @@ lastupdated: "2017-10-09"
 
 # Architecture Guide for {{site.data.keyword.filestorage_full_notm}} with VMware
 
-Following are the steps to order and configure {{site.data.keyword.filestorage_full}} in a vSphere 5.5 and vSphere 6.0 environment at {{site.data.keyword.BluSoftlayer_full}}.
+Following are the steps to order and configure {{site.data.keyword.filestorage_full}} in a vSphere 5.5 and vSphere 6.0 environment at {{site.data.keyword.BluSoftlayer_full}}. Using {{site.data.keyword.filestorage_short}} is the Best Practice if you require more than 8 connections to your VMWare host.
 
 ## {{site.data.keyword.filestorage_short}} Overview
 
