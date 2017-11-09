@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2017
-lastupdated: "2017-10-16"
+lastupdated: "2017-11-09"
 
 ---
 {:new_window: target="_blank"}
@@ -10,7 +10,7 @@ lastupdated: "2017-10-16"
 
 # Architecture Guide for {{site.data.keyword.filestorage_full_notm}} with VMware
 
-Following are the steps to order and configure {{site.data.keyword.filestorage_full}} in a vSphere 5.5 and vSphere 6.0 environment at {{site.data.keyword.BluSoftlayer_full}}. Using {{site.data.keyword.filestorage_short}} is the Best Practice if you require more than 8 connections to your VMWare host.
+Following are the steps to order and configure {{site.data.keyword.filestorage_full}} in a vSphere 5.5 and vSphere 6.0 environment at {{site.data.keyword.BluSoftlayer_full}}. Using NFS {{site.data.keyword.filestorage_short}} is the Best Practice if you require more than 8 connections to your VMWare host.
 
 ## {{site.data.keyword.filestorage_short}} Overview
 
@@ -25,14 +25,72 @@ Pricing and configuration options for Endurance and Performance {{site.data.keyw
 When ordering {{site.data.keyword.filestorage_short}}, you will want to keep in mind the following information and considerations:
 
 - The storage size, IOPS, and operating system cannot be changed once {{site.data.keyword.filestorage_short}} volumes are provisioned. Any changes you want to make for the amount of space, the number of IOPS, or the operating system requires a new volume to be provisioned. Any data stored in the previous volume will have to be migrated to the new volume(s) using VMware Storage vMotion.
-- An administrator can choose the size of the instance needed for a workload. IOPS are measured based on a 16KB block size with a 50/50 read/write mix. This formula proves to be a very consistent calculation for block storage.
+- When deciding on the size, consider the size of the workload and throughput needed. Size matters with the Endurance service which scales performance linearly in relation to capacity (IOPS/GB) as opposed to the Performance service which allows the administrator to choose capacity and performance independently. Throughput requirements matter with Performance. <br/> **Note**: The throughput calculation is IOPS x 16 KB. IOPS are measured based on a 16 KB block size with a 50/50 read/write mix. <br/> **Note**: Increasing block size will increase throughput but decrease IOPS. For example, doubling the block size to 32KB blocks will maintain the maximum throughput but halve the IOPS.
 - NFS utilizes many additional file control operations such as lookup, getattr and readdir to name a few. These operations in addition to read/write operations can count as IOPS and vary by operation type and NFS version.
 - Technically, multiple volumes can be striped together to achieve higher IOPS and more throughput, however, VMware recommends a single Virtual Machine File System (VMFS) data store per volume to avoid performance degradation.
 - {{site.data.keyword.filestorage_short}} volumes are exposed to authorized devices, subnets, or IP addresses.
 - Snapshot and Replication services are natively available on Endurance {{site.data.keyword.filestorage_short}} volumes only. Performance {{site.data.keyword.filestorage_short}} does not have these capabilities.
-- Both NFS v3 and NFS v4.1 are supported in the {{site.data.keyword.BluSoftlayer_full}} environment. However, it is our recommendation that NFS v3 be used. NFS v4.1 is a stateful protocol (not stateless like NFSv3) thus protocol issues can occur during network events. NFS v4.1 must quiesce operations and then perform lock reclamation. On a relatively busy NFS file server, the increased latency can cause disruptions. The lack of NFS v4.1 multipath/trunking can also extend NFS operations recovery.
+- To avoid storage disconnection during path fail over {{site.data.keyword.IBM}} recommends installing VMWare tools which will set an appropriate timeout value. There is no need to change the value, the default setting is sufficient to ensure that your VMWare host will not lose connectivity.
+- Both NFS v3 and NFS v4.1 are supported in the {{site.data.keyword.BluSoftlayer_full}} environment. However, it is {{site.data.keyword.IBM}}'s recommendation that NFS v3 be used. Because NFS v4.1 is a stateful protocol (not stateless like NFSv3) protocol issues can occur during network events. NFS v4.1 must quiesce operations and then perform lock reclamation. While these operations are taking place, disruptions may occur.
 
-**Note**: Increasing block size will increase throughput but decrease IOPS. For example, doubling the block size to 32KB blocks will maintain the maximum throughput but halve the IOPS.
+####  NFS Protocol VMware feature support matrix.
+<table>
+ <tbody>
+  <tr>
+   <th>vSphere Features</th>
+   <th>NFS version 3</th>
+   <th>NFS version 4.1</th>
+  </tr>
+  <tr>
+   <td>vMotion and Storage vMotion</td>
+   <td>Yes</td>
+   <td>Yes</td>
+  </tr>
+  <tr>
+   <td>High Availability (HA)</td>
+   <td>Yes</td>
+   <td>Yes</td>
+  </tr>
+  <tr>
+   <td>Fault Tolerance (FT)</td>
+   <td>Yes</td>
+   <td>Yes</td>
+  </tr>
+  <tr>
+   <td>Distributed Resource Scheduler (DRS)</td>
+   <td>Yes</td>
+   <td>Yes</td>
+  </tr>
+  <tr>
+   <td>Host Profiles</td>
+   <td>Yes</td>
+   <td>Yes</td>
+  </tr>
+  <tr>
+   <td>Storage DRS</td>
+   <td>Yes</td>
+   <td>No</td>
+  </tr>
+  <tr>
+   <td>Storage I/O Control</td>
+   <td>Yes</td>
+   <td>No</td>
+  </tr>
+  <tr>
+   <td>Site Recovery Manager</td>
+   <td>Yes</td>
+   <td>No</td>
+  </tr>
+  <tr>
+   <td>Virtual Volumes</td>
+   <td>Yes</td>
+   <td>No</td>
+  </tr>
+ </tbody>
+</table>
+*Source: [VMWare - NFS Protocols and ESXi](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){:new_window}*
+
+
 
  
 
@@ -84,9 +142,17 @@ You can order and configure {{site.data.keyword.filestorage_short}} for a VMware
 Use the following steps to order {{site.data.keyword.filestorage_short}}:
 1. Click **Storage** > **{{site.data.keyword.filestorage_short}}** on the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} home page.
 2. Click on the **Order {{site.data.keyword.filestorage_short}}** link on the **{{site.data.keyword.filestorage_short}}** page.
-3. Select the desired amount of storage space in GBs. For TB, 1TB equals 1,000GB, and 12TB equals 12,000GB.
-4. Enter the desired amount of IOPS in intervals of 100 or select an IOPS Tier.
-5. Submit the order.
+3. Select the **Endurance**/**Performance** from the Select Storage Type dropdown list.
+4. Select location. Datacenters with improved capabilities are denoted with `*`. Ensure that the new Storage will be added in the same location as the previously ordered ESXi host(s). 
+5. Select Billing method. Monthly and hourly billing options are available.
+6. Select the desired amount of storage space in GBs. For TB, 1 TB equals 1,000 GB, and 12 TB equals 12,000 GB.
+7. Enter the desired amount of IOPS in intervals of 100 or select an IOPS Tier.
+8. Specify the size of Snapshot Space.
+9. Click **Continue**.
+10. Enter a promo code if you have one, and click **Recalculate**.
+11. Review your order.
+12. Check the **I have read the Master Service Agreement and agree to the terms therein** check box.
+13. Click **Place Order** to submit the order, or **Cancel** to close the form without submitting an order.
 
 Storage will be provisioned in less than a minute and will be visible on the **{{site.data.keyword.filestorage_short}}** page of the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
 
@@ -99,7 +165,8 @@ Once a volume is provisioned, the {{site.data.keyword.BluBareMetServers_full}} o
 1. Click on **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Select **Access Host** on the **Endurance** or **Performance Volume Actions** menu.
 3. Select the **Subnets** radio button
-4. Choose from the list of available subnets that are assigned to the vmkernel ports on the ESXi hosts, and click on **Submit**.
+4. Choose from the list of available subnets that are assigned to the vmkernel ports on the ESXi hosts, and click on **Submit**.<br/> **Note**: The subnets displayed will be subscribed subnets in the same datacenter as the storage volume.
+
 
 After the subnets are authorized, make note of the hostname of the Endurance or Performance storage server you wish to utilize when mounting the volume. This information can be found on the {{site.data.keyword.filestorage_short}} detail page by clicking on a specific volume.
 
