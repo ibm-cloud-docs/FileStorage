@@ -2,7 +2,7 @@
  
 copyright:
   years: 2015, 2017
-lastupdated: "2017-10-09"
+lastupdated: "2017-11-28"
  
 ---
 
@@ -59,7 +59,7 @@ Note that some cities, such as Dallas, San Jose, Washington, D.C., and Amsterdam
 			       WDC04<br />
 			       WDC06<br />
 			       WDC07<br />
-				DAL09<br />
+			       DAL09<br />
 				DAL10<br />
 				DAL12<br />
 				DAL13<br /><br /></p>
@@ -76,13 +76,13 @@ Note that some cities, such as Dallas, San Jose, Washington, D.C., and Amsterdam
 				LON06<sup><img src="/images/numberone.png" alt="1" /></sup><br />
 				OSL01<sup><img src="/images/numberone.png" alt="1" /></sup><br />
 				PAR01<sup><img src="/images/numberone.png" alt="1" /></sup><br />
-				______<br />
-				MIL01<br />
+				MIL01<sup><img src="/images/numberone.png" alt="1" /></sup><br />
+				_____<br />
 				AMS01<br />
 			</td>
 			<td>HKG02<sup><img src="/images/numberone.png" alt="1" /></sup><br />
 				TOK02<sup><img src="/images/numberone.png" alt="1" /></sup><br />
-				______<br />
+				_____<br />
 				SEO01<br />
 				SNG01<br />
 				CHE01<br />
@@ -101,8 +101,7 @@ Note that some cities, such as Dallas, San Jose, Washington, D.C., and Amsterdam
 		<tr>
 			<td colspan="100%">
 				<p><sup><img src="/images/numberone.png" alt="1" /></sup>Data centers in these regions or specifically noted within a region have encrypted storage.</p>
-				<p>In EU region, PAR01, MIL01 and AMS01 are all replication partners, and can initiate
-replication to data centers with encrypted storage as replicas (data centers above the line). <br/>
+				<p>In EU region, AMS01 can initiate replication to data centers with encrypted storage as replicas (data centers above the line). <br/>
 In Asia Pacific region, SEO01, SNG01 and CHE01 are all replication partners, and can initiate replication data centers with encrypted storage as replicas (data centers above the line). <br/>
 In Latin America Region, MEX01 is enabled with encrypted storage. Replication not allowed from MEX01 to SAO01. But, replication can be established from SAO01 to MEX01. <br/>
 <strong>Note</strong>: Data centers with encrypted storage <strong>cannot</strong> initiate replication with non-encrypted data centers as replica targets.
