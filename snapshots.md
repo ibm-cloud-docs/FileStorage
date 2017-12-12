@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2017
-lastupdated: "2017-11-27"
+lastupdated: "2017-12-11"
 
 ---
 {:new_window: target="_blank"}
@@ -62,11 +62,12 @@ In the active file system, the changed blocks are rewritten to different locatio
 
 In order to create snapshots of your storage volume, either automated or manually, you need to purchase space to hold them. You can purchase capacity up to your storage volume amount (during the initial volume purchase or later using the below steps).
 
-1. Click the **Purchase snapshot space now** link in the Snapshots frame.
-2. Select the amount of space you need by clicking the radio button next to the appropriate amount.
-3. Click **Continue**.
-4. Enter any Promo Code you have and click **Recalculate**. The Charges for this order and Order Review will have default values.
-5. Click the **I have read the Master Service Agreement…** checkbox and click **Place Order**. Your snapshot space will be provisioned in a few minutes.
+1. Access your Storage via **Storage** > **{{site.data.keyword.filestorage_short}}** tab of the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}
+2. Click the Add Snapshot Space link in the Snapshots frame.Click the **Purchase snapshot space now** link in the Snapshots frame.
+3. Select the amount of space you need by clicking the radio button next to the appropriate amount.
+4. Click **Continue**.
+5. Enter any Promo Code you have and click **Recalculate**. The Charges for this order and Order Review will have default values.
+6. Click the **I have read the Master Service Agreement…** checkbox and click **Place Order**. Your snapshot space will be provisioned in a few minutes.
 
 ## How do I Create a Snapshot Schedule?
 
