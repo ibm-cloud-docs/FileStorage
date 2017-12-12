@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2017
-lastupdated: "2017-11-08"
+lastupdated: "2017-12-12"
 
 ---
 {:new_window: target="_blank"}
@@ -199,15 +199,69 @@ Performance volumes are designed to perform consistently close to the provisione
 
 IOPS, for both Endurance and Performance, are measured based on a 16 KB block size with a 50/50 read/write mix. To achieve maximum IOPS on a volume, adequate network resources need to be in place. Other considerations include private network usage outside of storage and host side and application specific tunings (IP stack, queue depths, and so on). 
 
-### Tips for provisioning IOPS for {{site.data.keyword.filestorage_short}}
+## Tips for provisioning IOPS for {{site.data.keyword.filestorage_short}}
 
-Choosing the storage solution that is right for your workload is important, and equally important is how to avoid bottlenecks.  IOPS for both Endurance and Performance is measured based on a 16 KB block size with a 50/50 read/write mix. This is important because if you choose a size larger than 16 KB, the throughput is affected. The reason is that a 16 KB block is the equivalent of one write to the volume. Each multiple adds more writes decreasing the response time to the server. For example, a 64 KB block size is the equivalent to four writes to the volume. Or, four IOPS per GB at 16 KB block size is equivalent to one IOPS per GB at 64 KB block size.
+IOPS for both Endurance and Performance is based on a 16 KB block size with a 50/50 read/write 50% random workload. A ~16 KB block is the equivalent of one write to the volume.
 
-Knowing how many IOPS you are getting from your volume can help you determine what your throughput will be. A way to calculate expected throughput is to multiply block size by IOPS (block size * IOPS = throughput). However, throughput can also be constrained by other factors. The speed of your Ethernet connection must be faster than the expected maximum throughput from your volume. For example, if you have 6,000 IOPS and are using a 16 KB block size, the volume is capable of approximately 94 MB per second. If you have a 1 Gbps Ethernet connection to your LUN, it will become a bottleneck when your servers attempt to utilize the maximum available throughput.
+The block size used by your application will directly impact storage performance.  If the block size used by your application is smaller than 16 KB the IOP limit will be realized prior to the throughput limit.  Conversely, if the block size used by your application is larger than 16KB the throughput limit will be realized prior to the IOP limit.
 
-As a general rule you should not expect to saturate your Ethernet connection beyond 70% of the available bandwidth. If expected workload will require the maximum throughput of your volume, it is recommended to assure that your Ethernet connection speed can accommodate the necessary throughput. In the example above, 70% of the theoretical limit of a 1Gbps Ethernet connection (125 MB per second) would allow for 88 MB per second. You would encounter a bottleneck if you were attempting to utilize the maximum throughput of 94 MB per second of your volume.
+Changing the block size will affect the performance as follows:
 
-Another factor to consider is the number of hosts that are utilizing your volume. If there is a single host that is accessing the volume it may be difficult to realize the maximum IOPS available, especially at extreme IOPS counts (10,000s). If your workload requires high throughput it would best to configure at least two or three servers to access your volume to avoid a single server bottleneck.
+<table cellpadding="1" cellspacing="1" style="width: 99%;">
+        <colgroup>
+          <col/>
+          <col/>
+          <col/>
+        </colgroup>
+        <tbody>
+          <tr>
+            <th>Block Size (KB)</th>
+            <th>IOPS</th>
+            <th>Throughput (MB/s)</th>
+          </tr>
+          <tr>
+            <td>4 (typical for Linux)</td>
+            <td>1,000</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>8 (typical for Oracle)</td>
+            <td>1,000</td>
+            <td>8</td>
+          </tr>
+          <tr>
+            <td>16</td>
+            <td>1,000</td>
+            <td>16</td>
+          </tr>
+          <tr>
+            <td>32 (typical for SQLServer)</td>
+            <td>500</td>
+            <td>16</td>
+          </tr>          
+          <tr>
+            <td>64</td>
+            <td>250</td>
+            <td>16</td>
+          </tr>
+          <tr>
+            <td>128</td>
+            <td>128</td>
+            <td>16</td>
+          </tr>
+          <tr>
+            <td>512</td>
+            <td>32</td>
+            <td>16</td>
+          </tr>
+        </tbody>
+</table>
+
+Choosing the {{site.data.keyword.blockstorageshort}} that is right for your workload is important, and equally important is how to avoid bottlenecks. The speed of your Ethernet connection must be faster than the expected maximum throughput from your volume. As a general rule you should not expect to saturate your Ethernet connection beyond 70% of the available bandwidth. For example, if you have 6,000 IOPS and are using a 16 KB block size, the volume is capable of approximately 94 MB per second. If you have a 1 Gbps Ethernet connection to your LUN, it will become a bottleneck when your servers attempt to utilize the maximum available throughput because 70% of the theoretical limit of a 1 Gbps Ethernet connection (125 MB per second) would only allow for 88 MB per second.
+
+
+Another factor to consider is the number of hosts that are utilizing your volume. If there is a single host that is accessing the volume it may be difficult to realize the maximum IOPS available, especially at extreme IOPS counts (10,000s). If your workload requires high throughput it would be best to configure at least two or three servers to access your volume to avoid a single server bottleneck.
+
 
 To achieve maximum IOPS, adequate network resources need to be in place. Other considerations include private network usage outside of storage and host side and application specific tunings (IP stack, queue depths, and so on).
 

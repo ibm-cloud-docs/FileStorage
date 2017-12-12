@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2017
-lastupdated: "2017-10-09"
+lastupdated: "2017-12-12"
 
 ---
 {:new_window: target="_blank"}
@@ -19,6 +19,7 @@ lastupdated: "2017-10-09"
 2. Click **Order {{site.data.keyword.filestorage_short}}** in the top right corner of the screen. 
 3. Select **Endurance** from the **Select Storage Type** drop-down list.
 4. Click the **Location** drop-down list and select your data center.
+   - Ensure that the new Storage will be added in the same location as the previously ordered host(s).
    - If you selected a data center with improved capabilities (denoted with an * in the drop-down), you will have the option to choose between Monthly or Hourly Billing. 
      1. With **hourly** billing, the calculation of the number of hours the file volume existed on the account is performed at the time the volume is deleted or at the end of the billing cycle, which ever comes first.  Hourly billing is a good choice for storage that is used for a few days or less than a full month. Hourly billing is only available for storage provisioned in these [select data centers](new-ibm-block-and-file-storage-location-and-features.html). 
      2. With **monthly** billing, the calculation for the price is pro-rated from the date of creation to the end of the billing cycle and billed immediately. There is no refund If a file volume is deleted before the end of the billing cycle.  Monthly billing is a good choice for storage used in production workloads that use data that needs to be stored and accessed for long periods of time (a month or longer).
@@ -40,6 +41,7 @@ lastupdated: "2017-10-09"
 2. Click **Order {{site.data.keyword.filestorage_short}}** in the top right corner of the screen. 
 3. Select **Performance** from the Select Storage Type drop-down list.
 4. Click the **Location** drop-down list and select your data center.
+    -  Ensure that the new Storage will be added in the same location as the previously ordered host(s).
     -  If you selected a data center with improved capabilities (denoted with an * in the drop-down), you will have the option to choose between Monthly or Hourly Billing. 
        1.  With **hourly** billing, the calculation of the number of hours the file volume existed on the account is performed at the time the volume is deleted or at the end of the billing cycle, which ever comes first.  Hourly billing is a good choice for storage that is used for a few days or less than a full month. Hourly billing is only available for storage provisioned in these select data centers. 
        2. With **monthly** billing, the calculation for the price is pro-rated from the date of creation to the end of the billing cycle and billed immediately. There is no refund If a file volume is deleted before the end of the billing cycle.  Monthly billing is a good choice for storage used in production workloads that use data that needs to be stored and accessed for long periods of time (a month or longer).
