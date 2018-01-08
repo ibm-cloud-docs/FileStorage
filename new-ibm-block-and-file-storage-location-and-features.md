@@ -63,7 +63,7 @@ The new {{site.data.keyword.filestorage_short}} is currently available in follow
 						<td>
 				<p>TOK02<br />
 				HKG02<br />
-				CHE01<br /><br /><br /><br /><br /><br /><br /></p>
+				SNG01<br /><br /><br /><br /><br /><br /><br /></p>
 			</td>
 			</tr>
 	</tbody>
