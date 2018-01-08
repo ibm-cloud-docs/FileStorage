@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2017
-lastupdated: "2017-12-14"
+  years: 2014, 2018
+lastupdated: "2018-01-08"
 
 ---
 {:new_window: target="_blank"}
@@ -62,7 +62,8 @@ The new {{site.data.keyword.filestorage_short}} is currently available in follow
 			</td>
 						<td>
 				<p>TOK02<br />
-					HKG02<br /><br /><br /><br /><br /><br /><br /><br /></p>
+				HKG02<br />
+				CHE01<br /><br /><br /><br /><br /><br /><br /></p>
 			</td>
 			</tr>
 	</tbody>
