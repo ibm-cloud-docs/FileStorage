@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2017
-lastupdated: "2017-12-12"
+  years: 2014, 2018
+lastupdated: "2018-01-15"
 
 ---
 {:new_window: target="_blank"}
@@ -103,8 +103,6 @@ Provision with Endurance tiers – featuring pre-defined performance levels and 
 When ordering with Endurance choose from multiple performance tiers to support varied application needs.
 
 Endurance is available in three IOPS performance tiers to support varying application needs.
-
-**Note:** Once provisioned, you cannot migrate between tiers.
 
 - **0.25 IOPS per GB** is designed for workloads with low I/O intensity. These workloads are typically characterized by having a large percentage of data inactive at a given time. Example applications include storing mailboxes or departmental level file shares.
 - **2 IOPS per GB** is designed for most general purpose usage. Example applications include hosting small databases backing web applications or virtual machine disk images for a hypervisor.
