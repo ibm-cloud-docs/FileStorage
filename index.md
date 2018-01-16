@@ -93,8 +93,7 @@ With **monthly billing**, the calculation for the price is pro-rated from the da
 
 ## Provisioning
 
-{{site.data.keyword.filestorage_short}} volumes can be provisioned from 20 GB to 12 TB with two options for provisioning:
-
+{{site.data.keyword.filestorage_short}} volumes can be provisioned from 20 GB to 12 TB with two options for provisioning: <br/>
 Provision with Endurance tiers – featuring pre-defined performance levels and features like snapshots and replication or build a high-powered Performance environment with allocated input/output operations per second (IOPS).
 
  
