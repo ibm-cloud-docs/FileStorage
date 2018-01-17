@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-01-08"
+lastupdated: "2018-01-17"
 
 ---
 {:new_window: target="_blank"}
@@ -58,7 +58,7 @@ The new {{site.data.keyword.filestorage_short}} is currently available in follow
 					MON01<br /><br /><br /><br /><br /><br /><br /><br /></p>
 			</td>
 			<td>
-				<p>MEX01<br /><br /><br /><br /><br /><br /><br /><br /><br /></p>
+				<p>MEX01<br />SAO01<br /><br /><br /><br /><br /><br /><br /><br /></p>
 			</td>
 						<td>
 				<p>TOK02<br />
