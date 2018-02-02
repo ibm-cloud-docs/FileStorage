@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2017
-lastupdated: "2017-10-09"
+  years: 2014, 2018
+lastupdated: "2018-02-02"
 
 ---
 {:new_window: target="_blank"}
@@ -106,3 +106,7 @@ Throughput limits are set at a per-volume/LUN level so using a faster Ethernet c
 ## Will firewalls/security groups impact performance?
 
 We recommend running storage traffic on a vlan which bypasses the firewall as a best practice. Running storage traffic through software firewalls will increase latency and adversely affect storage performance.
+
+## What happens to my data when {{site.data.keyword.filestorage_short}} Volumes are deleted?
+
+When storage is deleted any pointers to the data on that volume are removed thus the data becomes completely inaccessible. If the physical storage is re-provisioned to another account a new set of pointers are assigned. There is no way for the new account to access any data that may have been on the physical storage, the new set of pointers shows all 0's. When new data is written to the volume/LUN, any inaccessible data that still exists gets overwritten. 
