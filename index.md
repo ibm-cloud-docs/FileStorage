@@ -48,7 +48,6 @@ With **monthly billing**, the calculation for the price is pro-rated from the da
  
 ### Performance:
 <table>
-<table>
  <tbody>
   <tr>
    <th>Monthly Price</th>
@@ -62,7 +61,6 @@ With **monthly billing**, the calculation for the price is pro-rated from the da
 </table>
  
 ### Endurance:
-<table>
 <table>
  <tbody>
   <tr>

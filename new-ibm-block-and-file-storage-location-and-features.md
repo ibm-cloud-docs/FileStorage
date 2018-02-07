@@ -24,7 +24,7 @@ The new {{site.data.keyword.filestorage_short}} is currently available in follow
 			<td><strong>Australia</strong></td>
 			<td><strong>Canada</strong></td>
 			<td><strong>Latin America</strong></td>
-			<td><strong>Asia Pacific</td>
+			<td><strong>Asia Pacific</strong></td>
 		</tr>
 		<tr>
 			<td>
