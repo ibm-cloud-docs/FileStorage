@@ -34,13 +34,13 @@ Note that some cities, such as Dallas, San Jose, Washington, D.C., and Amsterdam
 	<caption>Table 1</caption>
 	<tbody>
 		<tr>
-			<td><strong>US 1</strong></td>
-			<td><strong>US 2</strong><sup><img src="/images/numberone.png" alt="1" /></sup></td>
-			<td><strong>Latin/South America</strong><sup><img src="/images/numberone.png" alt="1" /></sup></td>
-			<td><strong>Canada</strong><sup><img src="/images/numberone.png" alt="1" /></sup></td>
-			<td><strong>Europe</strong><sup><img src="/images/numberone.png" alt="1" /></sup></td>
+			<td><strong>US 1</strong><sup><img src="/images/numberone.png" alt="1" /></sup></td>
+			<td><strong>US 2</strong></td>
+			<td><strong>Latin/South America</strong></td>
+			<td><strong>Canada</strong></td>
+			<td><strong>Europe</strong></td>
 			<td><strong>Asian Pacific</strong></td>
-			<td><strong>Australias</strong><sup><img src="./images/numberone.png" alt="1" /></sup></td>
+			<td><strong>Australias</strong></td>
 		</tr>
 		<tr>
 			<td>DAL01<br />
@@ -80,12 +80,12 @@ Note that some cities, such as Dallas, San Jose, Washington, D.C., and Amsterdam
 				PAR01<br />
 				MIL01<br />
 			</td>
-			<td>HKG02<sup><img src="/images/numberone.png" alt="1" /></sup><br />
-				TOK02<sup><img src="/images/numberone.png" alt="1" /></sup><br />
-				SNG01<sup><img src="/images/numberone.png" alt="1" /></sup><br />
-				SEO01<sup><img src="/images/numberone.png" alt="1" /></sup><br />
+			<td>HKG02<br />
+				TOK02<br />
+				SNG01<br />
+				SEO01<br />
                                 _____<br />
-				CHE01<br />
+				CHE01<sup><img src="/images/numberone.png" alt="1" /></sup><br />
 				<br />
 				<br />
 				<br />
@@ -98,11 +98,9 @@ Note that some cities, such as Dallas, San Jose, Washington, D.C., and Amsterdam
 			</td>
 		</tr>
 		<tr>
-			<td colspan="100%">
-				<p><sup><img src="/images/numberone.png" alt="1" /></sup>Data centers in these regions or specifically noted within a region have encrypted storage.</p>
-				<p>
-In Asia Pacific region, CHE01 can initiate replication to data centers with encrypted storage as replicas (data centers above the line). <br/>
-<strong>Note</strong>: Data centers with encrypted storage <strong>cannot</strong> initiate replication with non-encrypted data centers as replica targets.
+			<td colspan="100%"><p><sup><img src="/images/numberone.png" alt="1" /></sup>Data centers in these regions or specifically noted within a region do NOT have encrypted storage.</p>
+				<p><strong>Note</strong>: Data centers with encrypted storage <strong>cannot</strong> initiate replication with non-encrypted data centers as replica targets.
+				<p>In Asia Pacific region, CHE01 can initiate replication to data centers with encrypted storage as replicas (data centers above the line). <br/>
 </p>
 			</td>
 		</tr>
