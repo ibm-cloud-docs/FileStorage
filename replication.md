@@ -52,9 +52,8 @@ Note that some cities, such as Dallas, San Jose, Washington, D.C., and Amsterdam
 				<br />
 				<br />
 				<br />
-				<br /><br />
 			</td>
-			<td><p>SJC03<br />
+			<td>SJC03<br />
 			       SJC04<br />
 			       WDC04<br />
 			       WDC06<br />
@@ -62,12 +61,14 @@ Note that some cities, such as Dallas, San Jose, Washington, D.C., and Amsterdam
 			       DAL09<br />
 				DAL10<br />
 				DAL12<br />
-				DAL13<br /><br /></p>
+				DAL13<br />
 			</td>
 			<td>MEX01<br />
-				SAO01<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></td>
+				SAO01<br /><br /><br /><br /><br /><br /><br /><br />
+			</td>
 			<td>TOR01<br />
-				MON01<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></td>
+				MON01<br /><br /><br /><br /><br /><br /><br /><br />
+			</td>
 			<td>
 				AMS01<br />
 				AMS03<br />
@@ -77,8 +78,7 @@ Note that some cities, such as Dallas, San Jose, Washington, D.C., and Amsterdam
 				LON06<br />
 				OSL01<br />
 				PAR01<br />
-				MIL01<br /><br />
-				<br />
+				MIL01<br />
 			</td>
 			<td>HKG02<sup><img src="/images/numberone.png" alt="1" /></sup><br />
 				TOK02<sup><img src="/images/numberone.png" alt="1" /></sup><br />
@@ -89,13 +89,12 @@ Note that some cities, such as Dallas, San Jose, Washington, D.C., and Amsterdam
 				<br />
 				<br />
 				<br />
-				<br /><br />
-				</td>
+			</td>
 			<td>
 				SYD01<br />
 				SYD04<br />
 				MEL01<br />
-				<br /><br /><br /><br /><br /><br /><br /><br />
+				<br /><br /><br /><br /><br /><br />
 			</td>
 		</tr>
 		<tr>
