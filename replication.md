@@ -77,7 +77,7 @@ Note that some cities, such as Dallas, San Jose, Washington, D.C., and Amsterdam
 				LON06<br />
 				OSL01<br />
 				PAR01<br />
-				MIL01<br />
+				MIL01<br /><br />
 				<br />
 			</td>
 			<td>HKG02<sup><img src="/images/numberone.png" alt="1" /></sup><br />
