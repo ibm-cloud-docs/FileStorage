@@ -98,10 +98,7 @@ Note that some cities, such as Dallas, San Jose, Washington, D.C., and Amsterdam
 			</td>
 		</tr>
 		<tr>
-			<td colspan="100%"><p><sup><img src="/images/numberone.png" alt="1" /></sup>Data centers in these regions or specifically noted within a region do NOT have encrypted storage.</p>
-				<p><strong>Note</strong>: Data centers with encrypted storage <strong>cannot</strong> initiate replication with non-encrypted data centers as replica targets.
-				<p>In Asia Pacific region, CHE01 can initiate replication to data centers with encrypted storage as replicas (data centers above the line). <br/>
-</p>
+			<td colspan="100%"><p><sup><img src="/images/numberone.png" alt="1" /></sup>Data centers in these regions or specifically noted within a region do NOT have encrypted storage.<br /><strong>Note</strong>: Data centers with encrypted storage <strong>cannot</strong> initiate replication with non-encrypted data centers as replica targets.<br />In Asia Pacific region, CHE01 can initiate replication to data centers with encrypted storage as replicas (data centers above the line).</p>
 			</td>
 		</tr>
 	</tbody>
