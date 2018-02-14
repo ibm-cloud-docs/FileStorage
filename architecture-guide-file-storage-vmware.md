@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2017
-lastupdated: "2017-11-09"
+  years: 2014, 2018
+lastupdated: "2018-02-14"
 
 ---
 {:new_window: target="_blank"}
@@ -398,4 +398,4 @@ MTU 9000
 A note about Debian / Ubuntu Linux user:
 Debian / Ubuntu Linux user should add MTU=9000 to /etc/network/interfaces configuration file.
 
-Learn more about Advanced Single-Site VMware Reference Architecture [here](http://knowledgelayer.softlayer.com/articles/advanced-single-site-vmware-reference-architecturesoftlayer){:new_window}.
+Learn more about Advanced Single-Site VMware Reference Architecture [here](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}.
