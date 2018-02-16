@@ -1,14 +1,14 @@
 ---
 
 copyright:
-  years: 2014, 2017
-lastupdated: "2017-09-26"
+  years: 2014, 2018
+lastupdated: "2018-02-16"
 
 ---
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 
-# Setting up Host Queue Depth Settings
+# Recommendation for Host Queue Depth Settings
 
 We recommend a maximum host and application input/output (I/O) queue depth for each performance tiers. The host setting doesn’t affect disk and controller latency, only latency observed by the host and application.
 

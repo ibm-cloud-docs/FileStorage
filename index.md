@@ -2,13 +2,13 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-01-15"
+lastupdated: "2018-02-12"
 
 ---
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 
-# Getting Started with {{site.data.keyword.filestorage_full_notm}}
+# About {{site.data.keyword.filestorage_full_notm}}
 
 {{site.data.keyword.filestorage_full}} is persistent, fast, and flexible Network Attached, NFS-based {{site.data.keyword.filestorage_short}}. In this Network Attached Storage (NAS) environment, you have total control over your file shares function and performance. {{site.data.keyword.filestorage_short}} shares can be connected to up to 64 authorized devices over routed TCP/IP connections for resiliency.
 
@@ -92,7 +92,8 @@ With **monthly billing**, the calculation for the price is pro-rated from the da
 ## Provisioning
 
 {{site.data.keyword.filestorage_short}} volumes can be provisioned from 20 GB to 12 TB with two options for provisioning: <br/>
-Provision with Endurance tiers – featuring pre-defined performance levels and features like snapshots and replication or build a high-powered Performance environment with allocated input/output operations per second (IOPS).
+- Provision with **Endurance tiers** featuring pre-defined performance levels and features like snapshots and replication.
+- Build a high-powered **Performance** environment with allocated input/output operations per second (IOPS).
 
  
 ### Endurance Tiers

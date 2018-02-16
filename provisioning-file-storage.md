@@ -1,14 +1,14 @@
 ---
 
 copyright:
-  years: 2014, 2017
-lastupdated: "2017-12-12"
+  years: 2014, 2018
+lastupdated: "2018-02-12"
 
 ---
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 
-# Provisioning and Managing {{site.data.keyword.filestorage_full_notm}}
+# Ordering and Managing {{site.data.keyword.filestorage_full_notm}}
 
 
 ## Provisioning {{site.data.keyword.filestorage_short}}

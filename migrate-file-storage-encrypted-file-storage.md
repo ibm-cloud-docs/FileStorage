@@ -1,17 +1,14 @@
 ---
 
 copyright:
-  years: 2014, 2017
-lastupdated: "2017-10-09"
+  years: 2014, 2018
+lastupdated: "2018-02-12"
 
 ---
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
-
+ 
 # Migrating {{site.data.keyword.filestorage_full_notm}} to Encrypted {{site.data.keyword.filestorage_short}}
-
-
-## Overview
 
 Encrypted {{site.data.keyword.filestorage_full}} for Endurance or Performance has been launched in select data centers. Below you will find information on how to migrate your {{site.data.keyword.filestorage_short}} from unencrypted to encrypted. For more information on provider managed encrypted storage, read the [{{site.data.keyword.filestorage_short}} Encryption-At-Rest](block-file-storage-encryption-rest.html) article. To see a list of upgraded data centers and available features click [here](new-ibm-block-and-file-storage-location-and-features).
 
@@ -19,7 +16,7 @@ The preferred migration path is to connect to both volumes simultaneously and tr
 
 The more common scenarios have been outlined for your convenience. There is an assumption that you already have your non-encrypted file volume attached to your host. If not, follow the directions below that best fits the operating system you're running to accomplish this task. 
 
-**NOTE:**  All encrypted {{site.data.keyword.filestorage_short}} volumes have a different mount point than non-encrypted volumes.  To ensure you are using the correct mount point for both your encrypted and non-encrypted {{site.data.keyword.filestorage_short}} volumes you can view the mount point information in the Volume Detials page in the UI as well as access the correct mountpoint via an API call:  SoftLayer_Network_Storage::getNetworkMountAddress().
+**NOTE:**  All encrypted {{site.data.keyword.filestorage_short}} volumes have a different mount point than non-encrypted volumes.  To ensure you are using the correct mount point for both your encrypted and non-encrypted {{site.data.keyword.filestorage_short}} volumes you can view the mount point information in the **Volume Details** page in the UI as well as access the correct mountpoint via an API call:  SoftLayer_Network_Storage::getNetworkMountAddress().
 
 [Accessing {{site.data.keyword.filestorage_short}} on Linux](accessing-file-storage-linux.html)
 
