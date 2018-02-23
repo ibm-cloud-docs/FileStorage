@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-01-15"
+lastupdated: "2018-02-23"
 
 ---
 {:new_window: target="_blank"}
@@ -39,8 +39,8 @@ If the volume has replication in place, the replica will be automatically update
 1. From the {{site.data.keyword.slportal}}, click **Storage** > **{{site.data.keyword.filestorage_short}}** OR from {{site.data.keyword.BluSoftlayer_full}} Catalog click **Infrastructure** > **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Select the volume from the list and click **Actions** > **Modify Volume**
 3. Under **Storage IOPS Options**, make a new selection:
-    - Endurance (Tiered IOPS): select an IOPS Tier greater than 0.025 of your storage. You may increase the IOPS tier at any time. However, decreasing is only available once a month. 
-    - Performance (Allocated IOPS): specify new IOPS option for your storage by entering a value between 100 to 6000 IOPS.
+    - Endurance (Tiered IOPS): select an IOPS Tier greater than 0.25 IOPS/GB of your storage. You may increase the IOPS tier at any time. However, decreasing is only available once a month.
+    - Performance (Allocated IOPS): specify new IOPS option for your storage by entering a value between 100 to 48,000 IOPS. (Be sure to look at any specific boundaries required by size in the order form.)
 4. Review your selection and the new pricing.
 5. Click the **I have read the Master Service Agreement...** checkbox and click **Place Order**.
 6. Your new storage allocation should be available in a few minutes.
