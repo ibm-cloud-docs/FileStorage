@@ -21,7 +21,6 @@ IBM Cloud Storage - File Storage
         accessing-file-storage-linux.md
         mounting-nsf-file-storage.md
         mounting-storage-coreos.md
-        [Connecting iSCSI Storage in VMWare ESXi](https://console.bluemix.net/docs/infrastructure/vmware/mounting-iscsi-vmware-esxi.html)
         set-host-queue-depth-settings-performance-and-endurance-storage.md
 
     {: .topicgroup}
