@@ -6,7 +6,6 @@ IBM Cloud Storage - File Storage
 
     {: .navgroup id="learn"}
     index.md 
-    provisioning-file-storage.md
     new-ibm-block-and-file-storage-location-and-features.md
     architecture-guide-file-storage-vmware.md
     snapshots.md
@@ -16,6 +15,11 @@ IBM Cloud Storage - File Storage
     {: .navgroup-end}
     
     {: .navgroup id="howto"}
+    {: .topicgroup}
+    Provisioning
+        provisioning-file-storage.md
+        managing-storage-limits.md
+        
     {: .topicgroup}
     Configuration
         accessing-file-storage-linux.md

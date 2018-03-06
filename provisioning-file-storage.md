@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-02-12"
+lastupdated: "2018-03-06"
 
 ---
 {:new_window: target="_blank"}
@@ -10,6 +10,10 @@ lastupdated: "2018-02-12"
 
 # Ordering and Managing {{site.data.keyword.filestorage_full_notm}}
 
+There are two different types of storage you can provision based on your needs and preferences. The two options of {{site.data.keyword.filestorage_short}} volumes are:
+
+Endurance: provision Endurance tiers featuring pre-defined performance levels and features like snapshots and replication.
+Performance: build a high powered Performance environment where you can allocate the desired input/output operations per second (IOPS).
 
 ## Provisioning {{site.data.keyword.filestorage_short}}
 
@@ -35,6 +39,10 @@ lastupdated: "2018-02-12"
 9. Click the **I have read the Master Service Agreement** checkbox and click **Place Order**.
 10. Your new storage allocation should be available in a few minutes.
 
+**Note**: By default, you can provision a combined total of 250 {{site.data.keyword.blockstorageshort}} volumes. To increase the number of your volumes please contact your sales representative. Read about increasing limits [here](managing-storage-limits.html).
+
+For the limit on simultaneous authorizations please see our [FAQs](File-Storage-FAQ.html)
+
 ### How to order Performance for {{site.data.keyword.filestorage_short}}
 
 1. From the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}, click **Storage**, **{{site.data.keyword.filestorage_short}}** OR from {{site.data.keyword.BluSoftlayer_full}} Catalog click **Infrastructure** >** Storage** > **{{site.data.keyword.filestorage_short}}**.
@@ -51,6 +59,10 @@ lastupdated: "2018-02-12"
 7. Click **Continue**. You are shown the monthly and prorated charges with a final chance to review order details. Click **Previous** if you want to change your order.
 8. Click the **I have read the Master Service Agreement** checkbox and click **Place Order**.
 9. Your new storage allocation should be available in a few minutes.
+
+**Note**: By default, you can provision a combined total of 250 {{site.data.keyword.blockstorageshort}} volumes. To increase the number of your volumes please contact your sales representative. Read about increasing limits [here](managing-storage-limits.html).
+
+For the limit on simultaneous authorizations please see our [FAQs](File-Storage-FAQ.html)
 
 ## Managing {{site.data.keyword.filestorage_short}}
 
