@@ -8,7 +8,7 @@ lastupdated: "2017-10-09"
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 
-# Mounting Storage on CoreOS
+# Mounting {{site.data.keyword.filestorage_short}} on CoreOS
 
 CoreOS is a powerful Linux distribution built to make large, scalable deployments on varied infrastructure simple to manage. Based on a build of Chrome OS, CoreOS maintains a lightweight host system and uses Docker containers for all applications.
 
