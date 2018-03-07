@@ -8,7 +8,7 @@ lastupdated: "2018-02-12"
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 
-# Getting Started with {{site.data.keyword.filestorage_full_notm}}
+# Getting Started with {{site.data.keyword.filestorage_short}}
 
 {{site.data.keyword.filestorage_full}} is persistent, fast, and flexible Network Attached, NFS-based {{site.data.keyword.filestorage_short}}. In this Network Attached Storage (NAS) environment, you have total control over your file shares function and performance. {{site.data.keyword.filestorage_short}} shares can be connected to up to 64 authorized devices over routed TCP/IP connections for resiliency.
 
