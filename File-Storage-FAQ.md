@@ -8,7 +8,7 @@ lastupdated: "2018-02-02"
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 
-# {{site.data.keyword.filestorage_full_notm}} - Frequently Asked Questions
+# {{site.data.keyword.filestorage_short}} - Frequently Asked Questions
 
 ## How are IOPS measured?
 
