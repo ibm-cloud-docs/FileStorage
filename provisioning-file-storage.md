@@ -12,8 +12,8 @@ lastupdated: "2018-03-06"
 
 There are two different types of storage you can provision based on your needs and preferences. The two options of {{site.data.keyword.filestorage_short}} volumes are:
 
-Endurance: provision Endurance tiers featuring pre-defined performance levels and features like snapshots and replication.
-Performance: build a high powered Performance environment where you can allocate the desired input/output operations per second (IOPS).
+- Endurance: provision Endurance tiers featuring pre-defined performance levels and features like snapshots and replication.
+- Performance: build a high powered Performance environment where you can allocate the desired input/output operations per second (IOPS).
 
 ## Provisioning {{site.data.keyword.filestorage_short}}
 
