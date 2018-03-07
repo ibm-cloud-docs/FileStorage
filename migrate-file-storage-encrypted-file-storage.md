@@ -8,7 +8,7 @@ lastupdated: "2018-02-12"
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
  
-# Migrating {{site.data.keyword.filestorage_full_notm}} to Encrypted {{site.data.keyword.filestorage_short}}
+# Migrating {{site.data.keyword.filestorage_short}} to Encrypted {{site.data.keyword.filestorage_short}}
 
 Encrypted {{site.data.keyword.filestorage_full}} for Endurance or Performance has been launched in select data centers. Below you will find information on how to migrate your {{site.data.keyword.filestorage_short}} from unencrypted to encrypted. For more information on provider managed encrypted storage, read the [{{site.data.keyword.filestorage_short}} Encryption-At-Rest](block-file-storage-encryption-rest.html) article. To see a list of upgraded data centers and available features click [here](new-ibm-block-and-file-storage-location-and-features).
 
