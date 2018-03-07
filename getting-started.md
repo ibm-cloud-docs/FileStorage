@@ -13,7 +13,7 @@ lastupdated: "2018-01-08"
 {:pre: .pre}
 
 
-# Getting started with {{site.data.keyword.filestorage_full_notm}}
+# Getting started with {{site.data.keyword.filestorage_short}}
 
 The short description section should include one to two sentences describing why a system administrator or dev ops engineer would want to use this infrasturcture offering or service.
 Briefly mention what the user's learning goal is and include the following SEO keywords in the title and/or the short description: IBM Cloud, ServiceName. Be sure to use conversational style. For more details, see the guidance on conversational style in the Carbon Design System at http://www.carbondesignsystem.com/guidelines/content/general.
