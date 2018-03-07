@@ -8,7 +8,7 @@ lastupdated: "2018-02-16"
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 
-# Accessing {{site.data.keyword.filestorage_full_notm}} on Linux
+# Accessing {{site.data.keyword.filestorage_short}} on Linux
 
 Before starting, make sure the host accessing the {{site.data.keyword.filestorage_full}} volume has been authorized through the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}:
 
