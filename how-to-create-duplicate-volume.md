@@ -8,7 +8,7 @@ lastupdated: "2017-10-09"
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 
-# Creating a Duplicate {{site.data.keyword.filestorage_full_notm}}
+# Creating a Duplicate {{site.data.keyword.filestorage_short}}
 
 We provide the ability to create a duplicate of an existing {{site.data.keyword.filestorage_full}} volume. The duplicate volume will inherit the capacity and performance options of the original volume by default and will have a copy of the data up to the point in time of a snapshot.   
 
