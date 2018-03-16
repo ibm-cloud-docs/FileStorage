@@ -18,6 +18,7 @@ IBM Cloud Storage - File Storage
     {: .topicgroup}
     Provisioning
         provisioning-file-storage.md
+        ordering-snapshots.md
         managing-storage-limits.md
         
     {: .topicgroup}
@@ -34,7 +35,9 @@ IBM Cloud Storage - File Storage
         block-file-storage-encryption-rest.md    
         migrate-file-storage-encrypted-file-storage.md
 
+    managing-file-storage.md
     how-to-create-duplicate-volume.md
+    working-with-snapshots.md
     brocade-vrouter-vyatta-set-guide-vmware-environments-endurance-or-performance-storage.md
     {: .navgroup-end}
                
