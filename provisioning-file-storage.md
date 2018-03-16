@@ -8,14 +8,14 @@ lastupdated: "2018-03-06"
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 
-# Ordering and Managing {{site.data.keyword.filestorage_full_notm}}
+# Ordering and Managing {{site.data.keyword.filestorage_short}}
+
+## Provisioning {{site.data.keyword.filestorage_short}}
 
 There are two different types of storage you can provision based on your needs and preferences. The two options of {{site.data.keyword.filestorage_short}} volumes are:
 
 - **Endurance**: provision Endurance tiers featuring pre-defined performance levels and features like snapshots and replication.
 - **Performance**: build a high powered Performance environment where you can allocate the desired input/output operations per second (IOPS).
-
-## Provisioning {{site.data.keyword.filestorage_short}}
 
 ### How to order Endurance for {{site.data.keyword.filestorage_short}}
 
