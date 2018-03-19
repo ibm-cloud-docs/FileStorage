@@ -37,7 +37,7 @@ There are two different types of {{site.data.keyword.filestorage_full}} you can 
 9. Click the **I have read the Master Service Agreement** checkbox and click **Place Order**.
 10. Your new storage allocation should be available in a few minutes.
 
-**Note**: By default, you can provision a combined total of 250 {{site.data.keyword.blockstorageshort}} volumes. To increase the number of your volumes please contact your sales representative. Read about increasing limits [here](managing-storage-limits.html).
+**Note**: By default, you can provision a combined total of 250 {{site.data.keyword.filestorage_short}} volumes. To increase the number of your volumes please contact your sales representative. Read about increasing limits [here](managing-storage-limits.html).
 
 For the limit on simultaneous authorizations please see our [FAQs](File-Storage-FAQ.html)
 
@@ -58,7 +58,7 @@ For the limit on simultaneous authorizations please see our [FAQs](File-Storage-
 8. Click the **I have read the Master Service Agreement** checkbox and click **Place Order**.
 9. Your new storage allocation should be available in a few minutes.
 
-**Note**: By default, you can provision a combined total of 250 {{site.data.keyword.blockstorageshort}} volumes. To increase the number of your volumes please contact your sales representative. Read about increasing limits [here](managing-storage-limits.html).
+**Note**: By default, you can provision a combined total of 250 {{site.data.keyword.filestorage_short}} volumes. To increase the number of your volumes please contact your sales representative. Read about increasing limits [here](managing-storage-limits.html).
 
 For the limit on simultaneous authorizations please see our [FAQs](File-Storage-FAQ.html)
 
