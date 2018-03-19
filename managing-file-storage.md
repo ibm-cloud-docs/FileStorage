@@ -10,7 +10,7 @@ lastupdated: "2018-03-16"
 
 # Managing {{site.data.keyword.filestorage_short}}
 
-You can manager your {{site.data.keyword.filestorage_full}} volumes through {{site.data.keyword.slportal}}{:new_window}. This article provides instructions for the most common tasks.
+You can manager your {{site.data.keyword.filestorage_full}} volumes through {{site.data.keyword.slportal}}. This article provides instructions for the most common tasks.
 
 ## How to authorize hosts to access {{site.data.keyword.filestorage_short}}
 
