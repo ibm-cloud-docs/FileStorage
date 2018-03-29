@@ -14,7 +14,7 @@ Following are the steps to order and configure {{site.data.keyword.filestorage_f
 
 ## {{site.data.keyword.filestorage_short}} Overview
 
-Our {{site.data.keyword.filestorage_short}} is designed to support high I/O applications requiring predictable levels of performance. The predictable performance is achieved through the allocation of protocol-level input/output operations per second (IOPS) to individual volumes. 
+Our {{site.data.keyword.filestorage_short}} is designed to support high I/O applications requiring predictable levels of performance. The predictable performance is achieved through the allocation of protocol-level input/output operations per second (IOPS) to individual volumes.
 
 The {{site.data.keyword.filestorage_short}} offering is accessed and mounted through an NFS connection. In a VMware deployment, a single volume can be mounted to up to 64 ESXi hosts as shared storage, or you can mount multiple volumes to create a storage cluster to utilize vSphere Storage DYNAMIC Resource Scheduling.
 
@@ -92,7 +92,7 @@ When ordering {{site.data.keyword.filestorage_short}}, you will want to keep in 
 
 
 
- 
+
 
 ### 2. Endurance {{site.data.keyword.filestorage_short}} snapshots
 
@@ -103,7 +103,7 @@ Be aware that “snapshot space” is required to use snapshots. Space can be ac
 It is important to note that VMware environments are not aware of snapshots. The Endurance {{site.data.keyword.filestorage_short}} snapshot capability must not be confused with VMware snapshots. Any recovery using the Endurance {{site.data.keyword.filestorage_short}} snapshot feature must be handled from the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}. Restoring the Endurance {{site.data.keyword.filestorage_short}} volume will require powering off all the VMs that reside on Endurance {{site.data.keyword.filestorage_short}}, and temporarily unmounting the volume from the ESXi hosts to avoid any data corruption during the process.
 
 Refer to our [snapshots](snapshots.html) article for more details about how to configure snapshots.
- 
+
 
 ### 3. File Store Replication
 
@@ -125,9 +125,9 @@ Refer to the [Replication](replication.html) information page for more details a
 
 **Note**: Invalid data, whether corrupted, hacked or infected will replicate according to the snapshot schedule and snapshot retention. Using the smallest replication windows can provide for a better recovery point objective. It also may provide less time to react to the replication of invalid data.
 
- 
 
- 
+
+
 
 ## Order {{site.data.keyword.filestorage_short}}
 
@@ -135,7 +135,7 @@ You can order and configure {{site.data.keyword.filestorage_short}} for a VMware
 
 
 {{site.data.keyword.filestorage_short}} can be ordered through the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} by accessing the {{site.data.keyword.filestorage_short}} page via **Storage** > **{{site.data.keyword.filestorage_short}}**.
- 
+
 
 ### 1. Ordering {{site.data.keyword.filestorage_short}}
 
@@ -143,7 +143,7 @@ Use the following steps to order {{site.data.keyword.filestorage_short}}:
 1. Click **Storage** > **{{site.data.keyword.filestorage_short}}** on the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} home page.
 2. Click on the **Order {{site.data.keyword.filestorage_short}}** link on the **{{site.data.keyword.filestorage_short}}** page.
 3. Select the **Endurance**/**Performance** from the Select Storage Type dropdown list.
-4. Select location. Datacenters with improved capabilities are denoted with `*`. Ensure that the new Storage will be added in the same location as the previously ordered ESXi host(s). 
+4. Select location. Datacenters with improved capabilities are denoted with `*`. Ensure that the new Storage will be added in the same location as the previously ordered ESXi host(s).
 5. Select Billing method. Monthly and hourly billing options are available.
 6. Select the desired amount of storage space in GBs. For TB, 1 TB equals 1,000 GB, and 12 TB equals 12,000 GB.
 7. Enter the desired amount of IOPS in intervals of 100 or select an IOPS Tier.
@@ -156,7 +156,7 @@ Use the following steps to order {{site.data.keyword.filestorage_short}}:
 
 Storage will be provisioned in less than a minute and will be visible on the **{{site.data.keyword.filestorage_short}}** page of the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
 
- 
+
 
 ### 2. Authorize Hosts to use {{site.data.keyword.filestorage_short}}
 
@@ -170,7 +170,7 @@ Once a volume is provisioned, the {{site.data.keyword.BluBareMetServers_full}} o
 
 After the subnets are authorized, make note of the hostname of the Endurance or Performance storage server you wish to utilize when mounting the volume. This information can be found on the {{site.data.keyword.filestorage_short}} detail page by clicking on a specific volume.
 
- 
+
 ##  Configure the VMware Virtual Machine Host
 
 ### 1. Prerequisites
@@ -180,7 +180,7 @@ Before beginning the VMware configuration process, make sure that the following 
 - {{site.data.keyword.BluBareMetServers}} with VMware ESXi are provisioned with proper storage configuration and ESXi login credentials.
 - {{site.data.keyword.BluSoftlayer_full}} Windows physical or {{site.data.keyword.virtualmachinesshort}} in the same data center as the {{site.data.keyword.BluBareMetServers}}. Including Public IP address of the {{site.data.keyword.BluSoftlayer_full}} Windows VM and login credentials.
 - A computer with Internet access, and with the web browser software and a Remote Desktop Protocol (RDP) client installed.
- 
+
 
 ### 2. VMware Host Configuration Steps.
 
@@ -206,12 +206,12 @@ To configure the virtual host, complete the following steps:
    ```
 
 More information on VMware and Jumbo Frames can be found [here](https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=1003712){:new_window}.
- 
+
 
 ### 3. Adding An Uplink Adapter To A Virtual Switch
 
 1. Configure a new uplink adapter by going to the **ESXi host Manage** tab, select **Manage** and then **Networking**.
-2. Select the **Physical adapters** tab 
+2. Select the **Physical adapters** tab
 3. Click **Add host networking**. (Globe icon with a plus sign)
 4. Select connection type as **Physical Network Adapter** and click **Next**.
 5. Select the existing **vSwitch** and click **Next**.
@@ -222,7 +222,7 @@ More information on VMware and Jumbo Frames can be found [here](https://kb.vmwar
 9. Navigate back to the **Virtual switches** tab and select the upper **Edit setting** icon under the **Virtual Switches** heading. (Pencil icon)
 10. Select the **vSwitch Teaming** and failover entry on the left.
 Verify that the **Load balancing** option is set to **Route based on the originating virtual port** and click **OK**.
- 
+
 
 ### 4. Configure ESXi static routing (Optional)
 
@@ -230,7 +230,7 @@ The network configuration for this architecture guide uses a minimal number of p
 
 1. To configure a static route, SSH to each ESXi host utilizing Performance or Endurance and run the following commands. Note that you must take the resulting IP address  ping command (first command) and use it with the esxcli network command shown below:
    - `ping <hostname of the endurance/performance array>`
-   
+
       **Note** that the NFS storage DNS host name is a Forwarding Zone (FZ) that is assigned multiple IP addresses. These IP addresses are static and belong to that specific DNS host name.  Any of those IP addresses can be used to access a specific volume.
    - `esxcli network ip route ipv4 add –gateway GATEWAYIP –network <result of ping command>/32`
 
@@ -238,12 +238,12 @@ The network configuration for this architecture guide uses a minimal number of p
    - Make note of the IP address as it can be used for mounting the volume in the next step.
    - This process needs to be done for each NFS volume you plan to mount to your ESXi host.
    - Here is the link to a VMware KB article: [Configuring static routes for VMkernel ports on an ESXi host](https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=2001426){:new_window}.
- 
+
 
 ##  Mount {{site.data.keyword.filestorage_short}} Volume(s) on the ESXi hosts
 
 1. Click **Go to vCenter** icon at the top of the web page and then **Hosts and Clusters**.
-2. Click on **Datastores** under the **Related Object** tab. Click on the **Create a new datastore** icon. 
+2. Click on **Datastores** under the **Related Object** tab. Click on the **Create a new datastore** icon.
 3. On the **New Datastore** screen, select the location of the datastore (your ESXi host) and click **Next**.
 4. On the **Type** screen, select **NFS** radio button, and click **next**.
 5. On the **Name and configuration** screen, enter the name you wish to call the datastore. Additionally, enter the hostname of the NFS server. Using the FQDN for the NFS server produces the best traffic distribution to the underlying server. IP address is also valid but used less frequently and only in specific instances. Enter the folder name in the form of /foldername.
@@ -272,7 +272,7 @@ In order for SIOC to determine when a storage device is congested or constrained
 
 It should be noted that incorrectly configuring SIOC for a datastore or for a VMDK can significantly impact performance.
 
- 
+
 
 ### 1. Storage I/O Control For A Datastore
 
@@ -287,28 +287,28 @@ Use the following steps to enable SIOC with recommended values for Endurance and
 6. Click **OK**.
 
 **Note**: This setting is specific to the datastore and not to the host.
- 
+
 
 ### 2. Storage I/O Control For A {{site.data.keyword.BluVirtServers_short}}
 
-You can also limit individual virtual disks for individual VMs or grant them different shares with SIOC. The limiting of disks and granting different shares allows you to match and align the environment to the workload with the acquired {{site.data.keyword.filestorage_short}} volume IOPS number. The limit is set by IOPS and it is possible to set a different weight or "Shares." Virtual disks shares set to High (2,000 shares) receive twice as much as I/O as a disk set to Normal (1,000 shares) and four times as much as one set to Low (500 shares). Normal is the default value for all the VMs, so you just need to adjust the values above or below Normal for the VMs that actually require it.
+You can also limit individual virtual disks for individual VMs or grant them different shares with SIOC. The limiting of disks and granting different shares allows you to match and align the environment to the workload with the acquired {{site.data.keyword.filestorage_short}} volume IOPS number. The limit is set by IOPS and it is possible to set a different weight or "Shares." Virtual disks with shares set to High (2,000 shares) receive twice as much I/O as a disk set to Normal (1,000 shares) and four times as much as one set to Low (500 shares). Normal is the default value for all the VMs, so you just need to adjust the values above or below Normal for the VMs that actually require it.
 
 
 Use the following steps to change the vDisk shares and limit:
 
-1. Choose a {{site.data.keyword.BluVirtServers_short}} in the **VMs and Templates** inventory. Icon is on the top left of the web page. 
+1. Choose a {{site.data.keyword.BluVirtServers_short}} in the **VMs and Templates** inventory. Icon is on the top left of the web page.
 2. Select the {{site.data.keyword.BluVirtServers_short}} for I/O Control.
 3. Click the **Manage** tab and click **Settings**. Click **Edit**.
 4. Expand the Hard disk pull down arrow. Modify the Shares or Limit-IOPs as is appropriate for your environment. Choose a virtual hard disk from the list and modify the Shares selection to choose the relative amount of shares to allocate to the {{site.data.keyword.BluVirtServers_short}} (Low, Normal, or High). You can also click **Custom** and enter a user-defined share value.
 5. Click the Limit - IOPS column and enter the upper limit of storage resources to allocate to the virtual machine.
 6. Click **OK**
- 
+
 
    **Note**: The above process is used to set the resource consumption limits of individual vDisks in a {{site.data.keyword.BluVirtServers_short}} even when SIOC is not enabled. These settings are specific to the individual guest, and not the host, although they are used by SIOC.
 
- 
 
- 
+
+
 
 ## ESXi  Host Side Settings
 
@@ -324,10 +324,10 @@ There are some additional settings required for setting up ESXi 5.x hosts for NF
 |NFS.HeartbeatFrequency |	12 |
 |NFS.HeartbeatTimeout |	5 |
 |NFS.MaxQueueDepth|	64 |
- 
+
 
 - Using CLI on ESXi 5.x host for advanced configuration parameters:
-  The following examples use the CLI to set these advanced configuration parameters and then check them. The esxcfg-advcfg tool used in the examples can be found in the /usr/sbindirectory on the ESXi 5.x hosts.
+  The following examples use the CLI to set these advanced configuration parameters and then check them. The esxcfg-advcfg tool used in the examples can be found in the /usr/sbin directory on the ESXi 5.x hosts.
 
    - Setting the advanced configuration parameters from the ESXi 5.x CLI:
    ```
@@ -381,7 +381,7 @@ Jumbo Frames needs to be configured the same on the entire network path from sou
 
 Note that when you make the change, the NIC will lose network connectivity for a few seconds. You should also reboot to ensure the change has taken effect.
 
- 
+
 
 ### LINUX
 

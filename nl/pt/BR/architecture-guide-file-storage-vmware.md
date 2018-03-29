@@ -15,7 +15,7 @@ A seguir estão as etapas para solicitar e configurar o {{site.data.keyword.file
 ## Visão Geral do
 {{site.data.keyword.filestorage_short}}
 
-Nosso {{site.data.keyword.filestorage_short}} é projetado para suportar aplicativos de E/S alta que requerem níveis previsíveis de desempenho. O desempenho previsível é alcançado por meio da alocação de input/output operations per second (IOPS) de nível de protocolo para volumes individuais. 
+Nosso {{site.data.keyword.filestorage_short}} é projetado para suportar aplicativos de E/S alta que requerem níveis previsíveis de desempenho. O desempenho previsível é alcançado por meio da alocação de input/output operations per second (IOPS) de nível de protocolo para volumes individuais.
 
 A oferta {{site.data.keyword.filestorage_short}} é acessada e montada por meio de uma conexão NFS. Em uma implementação do VMware, um único volume pode ser montado em até 64 hosts ESXi como armazenamento compartilhado ou é possível montar múltiplos volumes para criar um cluster de armazenamento para utilizar o vSphere Storage DYNAMIC Resource Scheduling.
 
@@ -104,7 +104,7 @@ Esteja ciente de que o “espaço de captura instantânea” é necessário para
 É importante observar que os ambientes VMware não estão cientes de capturas instantâneas. O recurso de captura instantânea do Endurance {{site.data.keyword.filestorage_short}} não deve ser confundido com capturas instantâneas do VMware. Qualquer recuperação usando o recurso de captura instantânea do Endurance {{site.data.keyword.filestorage_short}} deve ser manipulada por meio do [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}. A restauração do volume do Endurance {{site.data.keyword.filestorage_short}} irá requerer o desligamento de todas as VMs que residem no Endurance {{site.data.keyword.filestorage_short}} e a desmontagem temporária do volume dos hosts ESXi para evitar qualquer distorção de dados durante o processo.
 
 Consulte o nosso artigo de [capturas instantâneas](snapshots.html) para obter mais detalhes sobre como configurar capturas instantâneas.
- 
+
 
 ### 3. Replicação de armazenamento de arquivos
 
@@ -126,9 +126,9 @@ Consulte a página de informações [Replicação](replication.html) para obter 
 
 **Nota**: os dados inválidos, quer estejam corrompidos, hackeados ou infectados, serão replicados de acordo com o planejamento de captura instantânea e a retenção de captura instantânea. O uso das janelas de replicação menores pode fornecer um objetivo do ponto de recuperação melhor. Isso também pode fornecer menos tempo para reagir à replicação de dados inválidos.
 
- 
 
- 
+
+
 
 ## Pedir o {{site.data.keyword.filestorage_short}}
 
@@ -136,7 +136,7 @@ Consulte a página de informações [Replicação](replication.html) para obter 
 
 
 O {{site.data.keyword.filestorage_short}} pode ser pedido por meio do [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} acessando a página {{site.data.keyword.filestorage_short}} via **Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
- 
+
 
 ### 1. Pedindo o {{site.data.keyword.filestorage_short}}
 
@@ -144,7 +144,7 @@ Use as etapas a seguir para pedir o {{site.data.keyword.filestorage_short}}:
 1. Clique em **Armazenamento** > **{{site.data.keyword.filestorage_short}}** na página inicial do [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
 2. Clique no link **Pedir {{site.data.keyword.filestorage_short}}** na página **{{site.data.keyword.filestorage_short}}**.
 3. Selecione **Endurance**/**Performance** na lista suspensa Selecionar tipo de armazenamento.
-4. Selecione o local. Os data centers com recursos melhorados são denotados com `*`. Assegure-se de que o novo armazenamento será incluído no mesmo local que os hosts ESXi pedidos anteriormente. 
+4. Selecione o local. Os data centers com recursos melhorados são denotados com `*`. Assegure-se de que o novo armazenamento será incluído no mesmo local que os hosts ESXi pedidos anteriormente.
 5. Selecione o método de Faturamento. As opções de faturamento Mensal e Por hora estão disponíveis.
 6. Selecione a quantia desejada de espaço de armazenamento em GBs. Para TB, 1 TB é igual a 1.000 GB e 12 TB é igual a 12.000 GB.
 7. Digite a quantia desejada de IOPS em intervalos de 100 ou selecione uma camada de IOPS.
@@ -157,7 +157,7 @@ Use as etapas a seguir para pedir o {{site.data.keyword.filestorage_short}}:
 
 O armazenamento será provisionado em menos de um minuto e ficará visível na página **{{site.data.keyword.filestorage_short}}** do [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
 
- 
+
 
 ### 2. Autorizar hosts a usarem o {{site.data.keyword.filestorage_short}}
 
@@ -171,7 +171,7 @@ Quando um volume é provisionado, o {{site.data.keyword.BluBareMetServers_full}}
 
 Após as sub-redes serem autorizadas, anote o nome do host do servidor de armazenamento Endurance ou Performance que você deseja utilizar ao montar o volume. Essas informações podem ser localizadas na página de detalhes do {{site.data.keyword.filestorage_short}} clicando em um volume específico.
 
- 
+
 ##  Configurar o host de máquina virtual VMware
 
 ### 1. Pré-requisitos
@@ -181,7 +181,7 @@ Antes de iniciar o processo de configuração do VMware, certifique-se de que os
 - Os {{site.data.keyword.BluBareMetServers}} com VMware ESXi são provisionados com a configuração de armazenamento adequada e as credenciais de login do ESXi.
 - Os {{site.data.keyword.virtualmachinesshort}} ou físicos do Windows do {{site.data.keyword.BluSoftlayer_full}} no mesmo data center que o {{site.data.keyword.BluBareMetServers}}. Incluindo o endereço IP público da VM do Windows do {{site.data.keyword.BluSoftlayer_full}} e credenciais de login.
 - Um computador com acesso à Internet e com o software de navegador da web e um cliente Remote Desktop Protocol (RDP) instalados.
- 
+
 
 ### 2. Etapas de configuração de host VMware.
 
@@ -207,12 +207,12 @@ Para configurar o host virtual, conclua as etapas a seguir:
    ```
 
 Mais informações sobre VMware e Quadros Gigantes podem ser localizadas [aqui](https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=1003712){:new_window}.
- 
+
 
 ### 3. Incluindo um adaptador de uplink para um comutador virtual
 
 1. Configure um novo adaptador de uplink acessando a guia **Gerenciar do host ESXi**, selecione **Gerenciar** e, em seguida, **Rede**.
-2. Selecione a guia **Adaptadores físicos** 
+2. Selecione a guia **Adaptadores físicos**
 3. Clique em **Incluir rede de host**. (Ícone de globo com um sinal de mais)
 4. Selecione o tipo de conexão como **Adaptador de rede física** e clique em **Avançar**.
 5. Selecione o **vSwitch** existente e clique em **Avançar**.
@@ -223,7 +223,7 @@ Mais informações sobre VMware e Quadros Gigantes podem ser localizadas [aqui](
 9. Navegue de volta para a guia **Comutadores virtuais** e selecione o ícone superior **Editar configuração** sob o título **Comutadores virtuais**. (Ícone de lápis)
 10. Selecione a **Equipe do vSwitch** e a entrada de failover à esquerda.
 Verifique se a opção **Balanceamento de carga** está configurada para **Rotear com base na porta virtual de origem** e clique em **OK**.
- 
+
 
 ### 4. Configurar o roteamento estático de ESXi (opcional)
 
@@ -231,7 +231,7 @@ A configuração de rede para este guia de arquitetura usa um número mínimo de
 
 1. Para configurar uma rota estática, execute o SSH para cada host ESXi utilizando o Performance ou Endurance e execute os comandos a seguir. Observe que deve-se tomar o comando ping do endereço IP resultante (primeiro comando) e usá-lo com o comando esxcli network mostrado abaixo:
    - `ping <hostname of the endurance/performance array>`
-   
+
       **Observe** que o nome do host DNS do armazenamento NFS é um Forwarding Zone (FZ) designado a múltiplos endereços IP. Esses endereços IP são estáticos e pertencem a esse nome do host DNS específico. Qualquer um desses endereços IP pode ser usado para acessar um volume específico.
    - `esxcli network ip route ipv4 add –gateway GATEWAYIP –network <result of ping command>/32`
 
@@ -239,12 +239,12 @@ A configuração de rede para este guia de arquitetura usa um número mínimo de
    - Anote o endereço IP, pois ele poderá ser usado para montar o volume na próxima etapa.
    - Esse processo precisa ser feito para cada volume NFS que você planeja montar em seu host ESXi.
    - Aqui está o link para um artigo de KB do VMware: [Configurando rotas estáticas para as portas do VMkernel no host ESXi](https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=2001426){:new_window}.
- 
+
 
 ##  Montar os volumes do {{site.data.keyword.filestorage_short}} nos hosts ESXi
 
 1. Clique no ícone **Acessar o vCenter** na parte superior da página da web e, em seguida, em **Hosts e clusters**.
-2. Clique em **Armazenamentos de dados** sob a guia **Objeto relacionado**. Clique no ícone **Criar um novo armazenamento de dados**. 
+2. Clique em **Armazenamentos de dados** sob a guia **Objeto relacionado**. Clique no ícone **Criar um novo armazenamento de dados**.
 3. Na tela **Novo armazenamento de dados**, selecione o local do armazenamento de dados (seu host ESXi) e clique em **Avançar**.
 4. Na tela **Tipo**, selecione o botão de opções **NFS** e clique em **Avançar**.
 5. Na tela **Nome e configuração**, insira o nome como você deseja chamar o armazenamento de dados. Além disso, insira o nome do host do servidor NFS. Usar o FQDN para o servidor NFS produz a melhor distribuição de tráfego para o servidor subjacente. O endereço IP também é válido, mas usado menos frequentemente e somente em instâncias específicas. Insira o nome da pasta na forma de /foldername.
@@ -273,7 +273,7 @@ Para que o SIOC determine quando um dispositivo de armazenamento está congestio
 
 Deve ser observado que configurar incorretamente o SIOC para um armazenamento de dados ou para um VMDK pode afetar significativamente o desempenho.
 
- 
+
 
 ### 1. Storage I/O Control para um armazenamento de dados
 
@@ -288,7 +288,7 @@ Use as etapas a seguir para ativar o SIOC com os valores recomendados para armaz
 6. Clique em **OK**.
 
 **Nota**: esta configuração é específica para o armazenamento de dados e não para o host.
- 
+
 
 ### 2. Storage I/O Control para {{site.data.keyword.BluVirtServers_short}}
 
@@ -297,19 +297,19 @@ Também é possível limitar discos virtuais individuais para VMs individuais ou
 
 Use as etapas a seguir para mudar os compartilhamentos de vDisk e o limite:
 
-1. Escolha um dos {{site.data.keyword.BluVirtServers_short}} no inventário **VMs e modelos**. O ícone está na parte superior esquerda da página da web. 
+1. Escolha um dos {{site.data.keyword.BluVirtServers_short}} no inventário **VMs e modelos**. O ícone está na parte superior esquerda da página da web.
 2. Selecione os {{site.data.keyword.BluVirtServers_short}} para controle de E/S.
 3. Clique na guia **Gerenciar** e clique em **Configurações**. Clique em **Editar**.
 4. Expanda a seta suspensa de Disco rígido. Modifique os compartilhamentos ou o Limite - IOPS conforme apropriado para seu ambiente. Escolha um disco rígido virtual na lista e modifique a seleção Compartilhamentos para escolher a quantia relativa de compartilhamentos para alocar para os {{site.data.keyword.BluVirtServers_short}} (Baixo, Normal ou Alto). Também é possível clicar em **Customizado** e insira um valor compartilhado definido pelo usuário.
 5. Clique na coluna Limite - IOPS e insira o limite superior de recursos de armazenamento para alocar para a máquina virtual.
 6. Clique em **OK**
- 
+
 
    **Nota**: o processo acima é usado para configurar os limites de consumo de recurso de vDisks individuais em um dos {{site.data.keyword.BluVirtServers_short}} mesmo quando o SIOC não está ativado. Essas configurações são específicas para o guest individual e não para o host, embora elas sejam usadas por SIOC.
 
- 
 
- 
+
+
 
 ## Configurações do lado do host ESXi
 
@@ -325,10 +325,10 @@ Existem algumas configurações adicionais necessárias para configurar hosts ES
 |NFS.HeartbeatFrequency |	12 |
 |NFS.HeartbeatTimeout |	5 |
 |NFS.MaxQueueDepth|	64 |
- 
+
 
 - Usando a CLI no host ESXi 5.x host para parâmetros de configuração avançada:
-   Os exemplos a seguir usam a CLI para configurar esses parâmetros de configuração avançada e, em seguida, verificá-los. A ferramenta esxcfg-advcfg usada nos exemplos pode ser localizada no /usr/sbindirectory nos hosts ESXi 5.x.
+   Os exemplos a seguir usam a CLI para configurar esses parâmetros de configuração avançada e, em seguida, verificá-los. A ferramenta esxcfg-advcfg usada nos exemplos pode ser localizada no /usr/sbin nos hosts ESXi 5.x.
 
    - Configurando os parâmetros de configuração avançada por meio da CLI do ESXi 5.x:
    ```
@@ -382,7 +382,7 @@ Os quadros gigantes precisam ser configurados da mesma maneira no caminho de red
 
 Observe que quando você fizer a mudança, o NIC perderá a conectividade de rede por alguns segundos. Também é necessário reinicializar para assegurar que a mudança entre em vigor.
 
- 
+
 
 ### LINUX
 
