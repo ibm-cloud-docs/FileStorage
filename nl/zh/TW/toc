@@ -5,7 +5,7 @@
 IBM Cloud Storage - File Storage
 
     {: .navgroup id="learn"}
-    index.md
+    index.md 
     new-ibm-block-and-file-storage-location-and-features.md
     architecture-guide-file-storage-vmware.md
     snapshots.md
@@ -13,35 +13,30 @@ IBM Cloud Storage - File Storage
     expandable_file_storage.md
     adjustable-iops.md
     {: .navgroup-end}
-
+    
     {: .navgroup id="howto"}
     {: .topicgroup}
     佈建
         provisioning-file-storage.md
-        ordering-snapshots.md
         managing-storage-limits.md
-
+        
     {: .topicgroup}
     配置
         accessing-file-storage-linux.md
         mounting-nsf-file-storage.md
         mounting-storage-coreos.md
         set-host-queue-depth-settings-performance-and-endurance-storage.md
-        configure-backup-cpanel.md
-        configure-backup-plesk.md
 
     {: .topicgroup}
     安全
-        block-file-storage-encryption-rest.md
+        block-file-storage-encryption-rest.md    
         migrate-file-storage-encrypted-file-storage.md
 
-    managing-file-storage.md
     how-to-create-duplicate-volume.md
-    working-with-snapshots.md
     brocade-vrouter-vyatta-set-guide-vmware-environments-endurance-or-performance-storage.md
     {: .navgroup-end}
-
+               
     {: .navgroup id="help"}
     File-Storage-FAQ.md
-    [Python API Client Information](https://github.com/softlayer/softlayer-python)
+    [Python API 用戶端資訊](https://github.com/softlayer/softlayer-python)
     {: .navgroup-end}
