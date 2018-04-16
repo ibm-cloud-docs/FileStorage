@@ -2,7 +2,7 @@
  
 copyright:
   years: 2015, 2018
-lastupdated: "2018-02-13"
+lastupdated: "2018-04-16"
  
 ---
 
@@ -84,8 +84,8 @@ Observe que algumas cidades, como Dallas, San Jose, Washington, D. C. e Amsterd�
 				TOK02<br />
 				SNG01<br />
 				SEO01<br />
-                                _____<br />
-				CHE01<sup><img src="/images/numberone.png" alt="1" /></sup><br />
+                                CHE01<br />
+				<br />
 				<br />
 				<br />
 				<br />
@@ -98,7 +98,7 @@ Observe que algumas cidades, como Dallas, San Jose, Washington, D. C. e Amsterd�
 			</td>
 		</tr>
 		<tr>
-			<td colspan="100%"><p><sup><img src="/images/numberone.png" alt="1" /></sup>Os data centers nessas regiões ou especificamente observados dentro de uma região    NÃO têm armazenamento criptografado.<br /><strong>Nota</strong>: os data centers com armazenamento criptografado <strong>não podem</strong> iniciar a replicação com data centers não criptografados como destinos de réplica.<br />Na região Ásia-Pacífico, CHE01 pode iniciar a replicação em data centers com armazenamento criptografado como réplicas (data centers acima da linha).</p>
+			<td colspan="100%"><p><sup><img src="/images/numberone.png" alt="1" /></sup>Os data centers nessas regiões ou especificamente observados dentro de uma região    NÃO têm armazenamento criptografado.<br /><strong>Nota</strong>: os data centers com armazenamento criptografado <strong>não podem</strong> iniciar a replicação com data centers não criptografados como destinos de réplica.</p>
 			</td>
 		</tr>
 	</tbody>

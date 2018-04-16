@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-02-13"
+lastupdated: "2018-04-16"
 
 ---
 {:new_window: target="_blank"}
@@ -65,7 +65,8 @@ El nuevo {{site.data.keyword.filestorage_short}} está disponible actualmente en
 				<p>TOK02<br />
 				HKG02<br />
 				SEO01<br />
-				SNG01<br /><br /><br /><br /><br /><br /></p>
+				SNG01<br />
+				CHE01<br /><br /><br /><br /><br /></p>
 			</td>
 			</tr>
 	</tbody>

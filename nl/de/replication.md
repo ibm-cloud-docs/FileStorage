@@ -2,7 +2,7 @@
  
 copyright:
   years: 2015, 2018
-lastupdated: "2018-02-13"
+lastupdated: "2018-04-16"
  
 ---
 
@@ -84,8 +84,8 @@ Beachten Sie, dass in einigen Städten wie Dallas, San Jose, Washington D.C. und
 				TOK02<br />
 				SNG01<br />
 				SEO01<br />
-                                _____<br />
-				CHE01<sup><img src="/images/numberone.png" alt="1" /></sup><br />
+                                CHE01<br />
+				<br />
 				<br />
 				<br />
 				<br />
@@ -98,7 +98,7 @@ Beachten Sie, dass in einigen Städten wie Dallas, San Jose, Washington D.C. und
 			</td>
 		</tr>
 		<tr>
-			<td colspan="100%"><p><sup><img src="/images/numberone.png" alt="1" /></sup>Rechenzentren in diesen Regionen oder mit entsprechender Anmerkung in einer Region haben keinen verschlüsselten Speicher.<br /><strong>Anmerkung:</strong> Rechenzentren mit verschlüsseltem Speicher können <strong>keine</strong> Replikation mit nicht verschlüsselten Rechenzentren als Replikationszielen einleiten.<br />In der asiatisch-pazifischen Region kann CHE01 eine Replikation zu Rechenzentren mit verschlüsseltem Speicher als Replikate (Rechenzentren oberhalb der Linie) einleiten.</p>
+			<td colspan="100%"><p><sup><img src="/images/numberone.png" alt="1" /></sup>Rechenzentren in diesen Regionen haben keinen verschlüsselten Speicher.<br /><strong>Anmerkung:</strong> Rechenzentren mit verschlüsseltem Speicher können <strong>keine</strong> Replikation mit nicht verschlüsselten Rechenzentren als Replikationszielen einleiten.</p>
 			</td>
 		</tr>
 	</tbody>

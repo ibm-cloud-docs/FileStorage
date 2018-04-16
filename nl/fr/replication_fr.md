@@ -2,7 +2,7 @@
  
 copyright:
   years: 2015, 2018
-lastupdated: "2018-02-13"
+lastupdated: "2018-04-16"
  
 ---
 
@@ -84,8 +84,8 @@ Il est à noter que certaines villes, comme Dallas, San Jose, Washington D.C. et
 				TOK02<br />
 				SNG01<br />
 				SEO01<br />
-                                _____<br />
-				CHE01<sup><img src="/images/numberone.png" alt="1" /></sup><br />
+                                CHE01<br />
+				<br />
 				<br />
 				<br />
 				<br />
@@ -98,7 +98,7 @@ Il est à noter que certaines villes, comme Dallas, San Jose, Washington D.C. et
 			</td>
 		</tr>
 		<tr>
-			<td colspan="100%"><p><sup><img src="/images/numberone.png" alt="1" /></sup>Les centres de données de ces régions ou comportant une indication spécifique au sein d'une région NE disposent PAS d'un stockage chiffré.<br /><strong>Remarque</strong> : Les centres de données avec stockage chiffré <strong>ne peuvent pas</strong> lancer de réplication avec pour cibles de réplique des centres de données ne permettant pas le chiffrement. <br />Dans la région Asie Pacifique, CHE01 peut initier une réplication vers des centres de données permettant un stockage chiffré (centres de données situés au-dessus de la ligne). </p>
+			<td colspan="100%"><p><sup><img src="/images/numberone.png" alt="1" /></sup>Les centres de données de ces régions ou comportant une indication spécifique au sein d'une région NE disposent PAS d'un stockage chiffré.<br /><strong>Remarque</strong> : Les centres de données avec stockage chiffré <strong>ne peuvent pas</strong> lancer de réplication avec pour cibles de réplique des centres de données ne permettant pas le chiffrement.</p>
 			</td>
 		</tr>
 	</tbody>

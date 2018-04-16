@@ -2,7 +2,7 @@
  
 copyright:
   years: 2015, 2018
-lastupdated: "2018-02-13"
+lastupdated: "2018-04-16"
  
 ---
 
@@ -84,8 +84,8 @@ lastupdated: "2018-02-13"
 				TOK02<br />
 				SNG01<br />
 				SEO01<br />
-                                _____<br />
-				CHE01<sup><img src="/images/numberone.png" alt="1" /></sup><br />
+                                CHE01<br />
+				<br />
 				<br />
 				<br />
 				<br />
@@ -98,7 +98,7 @@ lastupdated: "2018-02-13"
 			</td>
 		</tr>
 		<tr>
-			<td colspan="100%"><p><sup><img src="/images/numberone.png" alt="1" /></sup> 이 지역 내 및 지역 내에 특별하게 명시된 데이터 센터에는 암호화된 스토리지가 없습니다. <br /><strong>참고</strong>: 암호화된 스토리지를 포함하는 데이터 센터는 복제본 대상으로 암호화되지 않은 데이터 센터에서 복제를 시작할 수 <strong>없습니다</strong>. <br />아시아 태평양 지역에서 CHE01은 복제본으로 암호화된 스토리지를 포함하는 데이터 센터(선 위의 데이터 센터)로 복제를 시작할 수 있습니다. </p>
+			<td colspan="100%"><p><sup><img src="/images/numberone.png" alt="1" /></sup> 이 지역 내 및 지역 내에 특별하게 명시된 데이터 센터에는 암호화된 스토리지가 없습니다. <br /><strong>참고</strong>: 암호화된 스토리지를 포함하는 데이터 센터는 복제본 대상으로 암호화되지 않은 데이터 센터에서 복제를 시작할 수 <strong>없습니다</strong>.</p>
 			</td>
 		</tr>
 	</tbody>

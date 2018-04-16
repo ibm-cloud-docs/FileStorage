@@ -2,7 +2,7 @@
  
 copyright:
   years: 2015, 2018
-lastupdated: "2018-02-13"
+lastupdated: "2018-04-16"
  
 ---
 
@@ -84,8 +84,8 @@ lastupdated: "2018-02-13"
 				TOK02<br />
 				SNG01<br />
 				SEO01<br />
-                                _____<br />
-				CHE01<sup><img src="/images/numberone.png" alt="1" /></sup><br />
+                                CHE01<br />
+				<br />
 				<br />
 				<br />
 				<br />
@@ -98,7 +98,7 @@ lastupdated: "2018-02-13"
 			</td>
 		</tr>
 		<tr>
-			<td colspan="100%"><p><sup><img src="/images/numberone.png" alt="1" /></sup>これらの地域内のデータ・センター、または地域内で特に注記されているデータ・センターには、暗号化ストレージはありません。<br /><strong>注</strong>: 暗号化ストレージを使用するデータ・センターは、非暗号化データ・センターをレプリカ・ターゲットとするレプリケーションを開始<strong>できません</strong>。<br />アジア太平洋地域では、CHE01 は、暗号化されたストレージをレプリカとして使用するデータ・センター (線より上のデータ・センター) へのレプリケーションを開始できます。</p>
+			<td colspan="100%"><p><sup><img src="/images/numberone.png" alt="1" /></sup>これらの地域内のデータ・センター、または地域内で特に注記されているデータ・センターには、暗号化ストレージはありません。<br /><strong>注</strong>: 暗号化ストレージを使用するデータ・センターは、非暗号化データ・センターをレプリカ・ターゲットとするレプリケーションを開始<strong>できません</strong>。</p>
 			</td>
 		</tr>
 	</tbody>
