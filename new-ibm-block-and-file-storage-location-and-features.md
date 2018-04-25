@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-04-16"
+lastupdated: "2018-04-25"
 
 ---
 {:new_window: target="_blank"}
@@ -29,20 +29,21 @@ The new {{site.data.keyword.filestorage_short}} is currently available in follow
 		<tr>
 			<td>
 				<p>SJC03<br />
-				   SJC04<br />
-					WDC04<br />
-					WDC06<br />
-					WDC07<br />
-					DAL09<br />
-					DAL10<br />
-					DAL12<br />
-					DAL13</p>
+				SJC04<br />
+				WDC04<br />
+				WDC06<br />
+				WDC07<br />
+				DAL09<br />
+				DAL10<br />
+				DAL12<br />
+				DAL13<br /><br /></p>
 			</td>
 			<td>
 				<p>LON02<br />
 				LON04<br />
 				LON06<br />
 				FRA02<br />
+				FRA04<br />
 				AMS01<br />
 				AMS03<br />
 				OSLO1<br />
@@ -52,21 +53,21 @@ The new {{site.data.keyword.filestorage_short}} is currently available in follow
 			<td>
 				<p>SYD01<br />
 				SYD04<br />
-				MEL01<br /><br /><br /><br /><br /><br /><br /></p>
+				MEL01<br /><br /><br /><br /><br /><br /><br /><br /></p>
 			</td>
 			<td>
 				<p>TOR01<br />
-					MON01<br /><br /><br /><br /><br /><br /><br /><br /></p>
+				MON01<br /><br /><br /><br /><br /><br /><br /><br /><br /></p>
 			</td>
 			<td>
-				<p>MEX01<br />SAO01<br /><br /><br /><br /><br /><br /><br /><br /></p>
+				<p>MEX01<br />SAO01<br /><br /><br /><br /><br /><br /><br /><br /><br /></p>
 			</td>
 						<td>
 				<p>TOK02<br />
 				HKG02<br />
 				SEO01<br />
 				SNG01<br />
-				CHE01<br /><br /><br /><br /><br /></p>
+				CHE01<br /><br /><br /><br /><br /><br /></p>
 			</td>
 			</tr>
 	</tbody>
