@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-04-25"
+lastupdated: "2018-05-02"
 
 ---
 
@@ -39,8 +39,8 @@ Note that some cities, such as Dallas, San Jose, Washington, D.C., and Amsterdam
 			<td><strong>Latin/South America</strong></td>
 			<td><strong>Canada</strong></td>
 			<td><strong>Europe</strong></td>
-			<td><strong>Asian Pacific</strong></td>
-			<td><strong>Australias</strong></td>
+			<td><strong>Asia Pacific</strong></td>
+			<td><strong>Australia</strong></td>
 		</tr>
 		<tr>
 			<td>DAL01<br />
