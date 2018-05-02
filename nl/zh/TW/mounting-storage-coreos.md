@@ -10,7 +10,7 @@ lastupdated: "2017-10-09"
 
 # 在 CoreOS 上裝載 {{site.data.keyword.filestorage_short}}
 
-CoreOS 是功能強大的 Linux 發行套件，建置目的是要使各種基礎架構上的大型可調式部署變得容易管理。根據 Chrome OS 建置，CoreOS 會維護輕量型主機系統，並將 Docker 容器用於所有應用程式。
+CoreOS 是功能強大的 Linux 發行套件，建置目的是要使各種基礎架構上的大型可調式部署變得容易管理。根據 Chrome OS 建置，CoreOS 會維護輕量型主機系統，並使用 Docker 容器來存放所有應用程式。
 
 ## 裝載可攜式儲存空間
 

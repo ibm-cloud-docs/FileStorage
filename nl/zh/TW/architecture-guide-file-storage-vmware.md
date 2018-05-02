@@ -14,7 +14,7 @@ lastupdated: "2018-02-14"
 
 ## {{site.data.keyword.filestorage_short}} 概觀
 
-{{site.data.keyword.filestorage_short}} 的設計旨在支援需要可預測效能層次的高 I/O 應用程式。透過將通訊協定層次的每秒輸入/輸出作業數 (IOPS) 配置給個別磁區，即可達成可預測效能。 
+{{site.data.keyword.filestorage_short}} 的設計旨在支援需要可預測效能層次的高 I/O 應用程式。透過將通訊協定層次的每秒輸入/輸出作業數 (IOPS) 配置給個別磁區，即可達成可預測效能。
 
 {{site.data.keyword.filestorage_short}} 供應項目是透過 NFS 連線進行存取及裝載。在 VMware 部署中，單一磁區最多可以裝載至 64 台 ESXi 主機作為共用儲存空間，或者您可以裝載多個磁區，以建立儲存空間叢集來使用「vSphere 儲存空間動態資源排程」。
 
@@ -103,7 +103,7 @@ lastupdated: "2018-02-14"
 請務必注意，VMware 環境不知道 Snapshot。「耐久性」{{site.data.keyword.filestorage_short}} Snapshot 功能不得與 VMware Snapshot 混淆。必須從 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} 處理任何使用「耐久性」{{site.data.keyword.filestorage_short}} Snapshot 特性的回復。還原「耐久性」{{site.data.keyword.filestorage_short}} 磁區時，需要關閉位於「耐久性」{{site.data.keyword.filestorage_short}} 上所有 VM 的電源，並暫時從 ESXi 主機卸載磁區，以避免在處理程序期間發生資料損毀。
 
 如需有關如何配置 Snapshot 的詳細資料，請參閱 [Snapshot](snapshots.html) 文章。
- 
+
 
 ### 3. 檔案儲存庫抄寫
 
@@ -125,9 +125,9 @@ lastupdated: "2018-02-14"
 
 **附註**：會根據 Snapshot 排程及 Snapshot 保留，來抄寫無效的資料（不論是毀損、受到駭客入侵還是感染病毒）。使用最小的抄寫時間範圍可以提供更好的回復點目標。它也可能使得需要較少時間即可對無效資料的抄寫做出反應。
 
- 
 
- 
+
+
 
 ## 訂購 {{site.data.keyword.filestorage_short}}
 
@@ -135,7 +135,7 @@ lastupdated: "2018-02-14"
 
 
 {{site.data.keyword.filestorage_short}} 可以透過 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} 訂購，方法是透過**儲存空間** > **{{site.data.keyword.filestorage_short}}** 來存取 {{site.data.keyword.filestorage_short}} 頁面。
- 
+
 
 ### 1. 訂購 {{site.data.keyword.filestorage_short}}
 
@@ -143,7 +143,7 @@ lastupdated: "2018-02-14"
 1. 按一下 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} 首頁上的**儲存空間** > **{{site.data.keyword.filestorage_short}}**。
 2. 按一下 **{{site.data.keyword.filestorage_short}}** 頁面上的**訂購 {{site.data.keyword.filestorage_short}}** 鏈結。
 3. 從「選取儲存空間類型」下拉清單中，選取**耐久性**/**效能**。
-4. 選取位置。具有改良功能的資料中心會以 `*` 表示。確定新的「儲存空間」將會新增至與先前訂購的 ESXi 主機相同的位置。 
+4. 選取位置。具有改良功能的資料中心會以 `*` 表示。確定新的「儲存空間」將會新增至與先前訂購的 ESXi 主機相同的位置。
 5. 選取計費方法。可用的計費選項為按每月及按每小時計費。
 6. 選取所需的儲存空間量（以 GB 為單位）。若為 TB，1 TB 等於 1,000 GB，而 12 TB 等於 12,000 GB。
 7. 輸入所需的 IOPS 數量（間隔為 100），或選取「IOPS 層級」。
@@ -156,7 +156,7 @@ lastupdated: "2018-02-14"
 
 在一分鐘以內即會佈建儲存空間，並且它會顯示在 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} 的 **{{site.data.keyword.filestorage_short}}** 頁面上。
 
- 
+
 
 ### 2. 授權主機以使用 {{site.data.keyword.filestorage_short}}
 
@@ -170,7 +170,7 @@ lastupdated: "2018-02-14"
 
 授權子網路之後，請記下您在裝載磁區時想要使用之「耐久性」或「效能」儲存空間伺服器的主機名稱。按一下特定磁區，即可在 {{site.data.keyword.filestorage_short}} 詳細資料頁面上找到這項資訊。
 
- 
+
 ##  配置 VMware 虛擬機器主機
 
 ### 1. 必要條件
@@ -180,7 +180,7 @@ lastupdated: "2018-02-14"
 - 具有 VMware ESXi 的 {{site.data.keyword.BluBareMetServers}} 是使用適當的儲存空間配置及 ESXi 登入認證所佈建。
 - {{site.data.keyword.BluSoftlayer_full}} Windows 實體或 {{site.data.keyword.virtualmachinesshort}}，位於與 {{site.data.keyword.BluBareMetServers}} 相同的資料中心內。包括 {{site.data.keyword.BluSoftlayer_full}} Windows VM 的「公用 IP 位址」及登入認證。
 - 具有網際網路存取的電腦，並且已安裝 Web 瀏覽器軟體及「遠端桌面通訊協定 (RDP)」用戶端。
- 
+
 
 ### 2. VMware 主機配置步驟。
 
@@ -206,12 +206,12 @@ lastupdated: "2018-02-14"
    ```
 
 如需 VMware 及「巨大訊框」的相關資訊，請參閱[這裡](https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=1003712){:new_window}。
- 
+
 
 ### 3. 將上行鏈路配接卡新增至虛擬交換器
 
 1. 移至 **ESXi 主機管理**標籤，選取**管理**，然後選取**網路**，來配置新的上行鏈路配接卡。
-2. 選取**實體配接卡**標籤 
+2. 選取**實體配接卡**標籤
 3. 按一下**新增主機網路**。（具有加號的「地球」圖示）
 4. 選取連線類型作為**實體網路配接卡**，然後按**下一步**。
 5. 選取現有 **vSwitch**，然後按**下一步**。
@@ -221,7 +221,7 @@ lastupdated: "2018-02-14"
 8. 按**下一步**及**完成**。
 9. 導覽回**虛擬交換器**標籤，然後選取**虛擬交換器**標題下的上方**編輯設定**圖示。（「鉛筆」圖示）
 10. 選取左側的 **vSwitch 小組**及失效接手項目。驗證**負載平衡**選項已設為**根據原始虛擬埠來遞送**，然後按一下**確定**。
- 
+
 
 ### 4. 配置 ESXi 靜態遞送（選用）
 
@@ -229,7 +229,7 @@ lastupdated: "2018-02-14"
 
 1. 若要配置靜態路由，請以 SSH 方式連接至每一台利用「效能」或「耐久性」的 ESXi 主機，並執行下列指令。請注意，您必須取得產生的 IP 位址 ping 指令（第一個指令），並將它與下面顯示的 esxcli network 指令搭配使用：
    - `ping <hostname of the endurance/performance array>`
-   
+
       **附註**：NFS 儲存空間 DNS 主機名稱是獲指派多個 IP 位址的「轉遞區域 (FZ)」。這些 IP 位址是靜態的，並屬於該特定 DNS 主機名稱。您可以使用其中任何一個 IP 位址來存取特定的磁區。
    - `esxcli network ip route ipv4 add -gateway GATEWAYIP -network <result of ping command>/32`
 
@@ -237,12 +237,12 @@ lastupdated: "2018-02-14"
    - 記下 IP 位址，因為它可以在下一步中用於裝載磁區。
    - 需要對計劃要裝載至 ESXi 主機的每一個 NFS 磁區執行此處理程序。
    - 以下是 VMware KB 文章的鏈結：[Configuring static routes for VMkernel ports on an ESXi host](https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=2001426){:new_window}。
- 
+
 
 ##  在 ESXi 主機上裝載 {{site.data.keyword.filestorage_short}} 磁區
 
 1. 按一下網頁頂端的**移至 vCenter** 圖示，然後按一下**主機及叢集**。
-2. 按一下**相關物件**標籤下的**資料儲存庫**。按一下**建立新的資料儲存庫**圖示。 
+2. 按一下**相關物件**標籤下的**資料儲存庫**。按一下**建立新的資料儲存庫**圖示。
 3. 在**新建資料儲存庫**畫面上，選取資料儲存庫的位置（您的 ESXi 主機），然後按**下一步**。
 4. 在**類型**畫面上，選取 **NFS** 圓鈕，然後按**下一步**。
 5. 在**名稱及配置**畫面上，輸入您想要稱呼資料儲存庫的名稱。此外，請輸入 NFS 伺服器的主機名稱。使用 NFS 伺服器的 FQDN 可產生對基礎伺服器的最佳資料流量分佈。IP 位址也有效，但不常使用，而且只有在特定實例中才會使用。請以 /foldername 形式輸入資料夾名稱。
@@ -271,7 +271,7 @@ lastupdated: "2018-02-14"
 
 請注意，不正確地針對資料儲存庫或 VMDK 配置 SIOC，可能會嚴重影響效能。
 
- 
+
 
 ### 1. 資料儲存庫的儲存空間 I/O 控制
 
@@ -286,7 +286,7 @@ lastupdated: "2018-02-14"
 6. 按一下**確定**。
 
 **附註**：此設定是資料儲存庫特有的，而不是主機特有的。
- 
+
 
 ### 2. {{site.data.keyword.BluVirtServers_short}} 的儲存空間 I/O 控制
 
@@ -295,19 +295,19 @@ lastupdated: "2018-02-14"
 
 請使用下列步驟來變更 vDisk 共用及限制：
 
-1. 在 **VM 及範本**庫存中，選擇 {{site.data.keyword.BluVirtServers_short}}。圖示位於網頁的左上角。 
+1. 在 **VM 及範本**庫存中，選擇 {{site.data.keyword.BluVirtServers_short}}。圖示位於網頁的左上角。
 2. 選取「I/O 控制」的 {{site.data.keyword.BluVirtServers_short}}。
 3. 按一下**管理**標籤，然後按一下**設定**。按一下**編輯**。
 4. 展開「硬碟」下拉箭頭。適當地修改您環境的「共用」或「限制 IOPS」。從清單中選擇虛擬硬碟，然後修改「共用」選項來選擇要配置給 {{site.data.keyword.BluVirtServers_short}} 的相對共用數量（「低」、「正常」或「高」）。您也可以按一下**自訂**，然後輸入使用者定義的共用值。
 5. 按一下「限制 IOPS」直欄，然後輸入要配置給虛擬機器的儲存空間資源上限。
 6. 按一下**確定**
- 
+
 
    **附註**：即使未啟用 SIOC 時，也會使用上述處理程序來設定 {{site.data.keyword.BluVirtServers_short}} 中個別 vDisk 的資源耗用限制。這些設定專用於個別訪客，而不是主機（雖然是由 SIOC 使用它們）。
 
- 
 
- 
+
+
 
 ## ESXi 主機端設定
 
@@ -323,7 +323,7 @@ lastupdated: "2018-02-14"
 |NFS.HeartbeatFrequency |	12 |
 |NFS.HeartbeatTimeout |	5 |
 |NFS.MaxQueueDepth|	64 |
- 
+
 
 - 在 ESXi 5.x 主機上使用 CLI 作為進階配置參數：下列範例使用 CLI 來設定這些進階配置參數，然後檢查它們。在 ESXi 5.x 主機的 /usr/sbin 目錄中，可以找到範例中所使用的 esxcfg-advcfg 工具。
 
@@ -379,7 +379,7 @@ lastupdated: "2018-02-14"
 
 請注意，當您進行變更時，NIC 的網路連線功能會中斷幾秒鐘。您也應該重新開機，以確保變更生效。
 
- 
+
 
 ### LINUX
 
