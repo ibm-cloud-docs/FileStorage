@@ -8,9 +8,9 @@ lastupdated: "2017-10-09"
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 
-# CentOS への NFS/{{site.data.keyword.filestorage_short}}のマウント
+# 在 CentOS 中裝載 NFS/{{site.data.keyword.filestorage_short}}
 
-CentOS 7 へのエンデュランス/パフォーマンス {{site.data.keyword.filestorage_full}} のマウントのプロセスは [RHEL 6 への{{site.data.keyword.filestorage_short}}のマウント](https://console.stage1.bluemix.net/docs/infrastructure/FileStorage/accessing-file-storage-linux.html)のプロセスとほとんど同じですが、マウントが NFS なので、マウント・ファイルで *Options=* 行を使用して追加のオプションをいくつか指定できます。次の例では、/data/www にマウントするように NFS を設定します。 {{site.data.keyword.filestorage_short}}・インスタンスの NFS マウント・ポイントは、{{site.data.keyword.filestorage_short}}のリスト・ページから、または `SoftLayer_Network_Storage::getNetworkMountAddress()` の API 呼び出しで取得できます。
+在 CentOS 7 中裝載「耐久性」/「效能」{{site.data.keyword.filestorage_full}} 的處理程序，與[在 RHEL 6 上裝載 {{site.data.keyword.filestorage_short}}](https://console.stage1.bluemix.net/docs/infrastructure/FileStorage/accessing-file-storage-linux.html) 的處理程序極為相同，但因為裝載是 NFS，所以我們可以在裝載檔中使用 *Options=* 這一行來指定一些其他選項。在下列範例中，我們會設定在 /data/www 裝載 NFS。附註：您可以從 {{site.data.keyword.filestorage_short}} 清單頁面或透過 API 呼叫 `SoftLayer_Network_Storage::getNetworkMountAddress()`，來取得 {{site.data.keyword.filestorage_short}} 實例的 NFS 裝載點。
 
 ```
 $ cat data-www.mount
@@ -27,7 +27,7 @@ Options=vers=4,sec=sys,noauto
 WantedBy = multi-user.target
 ```
 
-次は、マウントを有効にして、適切にマウントされたことを確認します。
+我們現在可以啟用裝載，並確認它已適當地裝載。
 
 ```
 systemctl enable --now /etc/systemd/system/data-www.mount

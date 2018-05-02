@@ -8,129 +8,129 @@ lastupdated: "2018-02-14"
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 
-# {{site.data.keyword.filestorage_short}}を使用する VMware 環境の Brocade vRouter (Vyatta) のセットアップ・ガイド
+# 含 {{site.data.keyword.filestorage_short}} 之 VMware 環境的 Brocade vRouter (Vyatta) 設定手冊
 
-いずれかの {{site.data.keyword.filestorage_full}} を使用する VMware 環境内で、Brocade vRouter (Vyatta) アプライアンスを高可用性 (HA) 構成にすることができます。以下の情報と『[Advanced Single-Site VMware Reference Architecture](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}』を合わせて使用して、これらのストレージ・オプションのいずれかを VMware 環境にセットアップできます。
+您可以在使用 {{site.data.keyword.filestorage_full}} 的 VMware 環境內，進行 Brocade vRouter (Vyatta) 應用裝置的高可用性 (HA) 配置。將下列資訊與[進階單一網站 VMware 參照架構](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}一起使用，以在 VMware 環境中設定其中一個儲存空間選項。
 
-## Brocade vRouter (Vyatta) の概要
+## Brocade vRouter (Vyatta) 概觀
 
-Brocade vRouter (Vyatta) ゲートウェイは、お客様の環境のゲートウェイおよびルーターとして機能し、サブネットで構成される複数のゾーンが含まれています。 ゾーン間で通信できるように、ゾーンの間にファイアウォール・ルールを設定します。 他のゾーンと通信する必要がないゾーンにはファイアウォール・ルールは不要です。すべてのパケットがドロップされるからです。
+Brocade vRouter (Vyatta) 閘道將作為環境的閘道及路由器，並包含由子網路組成的區域。在區域之間會設定防火牆規則，以彼此通訊。對於不需要與其他區域通訊的區域，不需要任何防火牆規則，因為將會捨棄所有封包。
 
-この構成例では、Brocade vRouter (Vyatta) 内に以下の 5 つのゾーンを作成します。
+在範例配置中，將會在 Brocade vRouter (Vyatta) 中建立五個區域：
 
-- SLSERVICE – {{site.data.keyword.BluSoftlayer_full}} サービス
-- VMACCESS – キャパシティー・クラスター上の {{site.data.keyword.BluVirtServers_short}} (VM)
-- MGMT – 管理クラスターとキャパシティー・クラスター、および管理 VM
-- STORAGE – ストレージ・サーバー
-- OUTSIDE - パブリック・インターネット・アクセス
-
-
-図 1 は、ゾーン間の通信を表しています。ご使用の環境によって、異なるものになったり、別のゾーンやファイアウォール・ルールが必要になったりする可能性があります。
-
-![図 1: Brocade vRouter (Vyatta) ゾーン構成](/images/figure1_6.png)
+- SLSERVICE - {{site.data.keyword.BluSoftlayer_full}} 服務
+- VMACCESS - 容量叢集上的 {{site.data.keyword.BluVirtServers_short}} (VM)
+- MGMT - 管理和容量叢集，以及管理 VM
+- STORAGE - 儲存空間伺服器
+- OUTSIDE - 公用網際網路存取
 
 
+圖 1 說明每一個區域之間的通訊。請注意，您的環境可能有所不同，因此可能需要不同的區域及防火牆規則。
 
-## Brocade vRouter (Vyatta) の構成
+![圖 1：Brocade vRouter (Vyatta) 區域配置](/images/figure1_6.png)
 
-Brocade vRouter (Vyatta) を構成するには、以下のようにします。
 
-1. 「デバイスの詳細」画面にある root パスワードを使用して、アプライアンスに SSH でログインします。
-2. 「Configure」と入力して構成モードに入り、後続のセクションの手順に従います。
 
-### インターフェースのセットアップ
+## 配置 Brocade vRouter (Vyatta)
 
-このセクションでは、環境内のサブネットにリンクするために、両方の Brocade vRouter (Vyatta) に結合インターフェースを構成します。 この VLAN (1101、1102、および 1103) は、ご使用の環境の対応する VLAN に置き換えてください。また、<> で説明している箇所は、ご使用の環境の詳細情報に置き換える必要があります (<> は除いてください)。
+若要配置 Brocade vRouter (Vyatta)，請執行下列動作：
 
-以下のコマンドを使用して、Brocade vRouter (Vyatta) に結合インターフェースを構成します。構成モードに入っておく必要があります。
+1. 使用在「裝置詳細資料」畫面上找到的 root 密碼，以 SSH 連接至應用裝置。
+2. 鍵入 Configure 以進入配置模式，並遵循後續各節中的步驟。
+
+### 設定介面
+
+在本節中，我們將在兩台 Brocade vRouter (Vyatta) 上都配置結合介面，以鏈結至環境中的子網路。請記得，將我們的 VLAN（1101、1102 及 1103）取代為您環境中的對應 VLAN。也請注意，使用 <> 所做的指示應該取代為您環境的詳細資料（並移除 <>）。
+
+使用下列指令，在 Brocade vRouter (Vyatta) 上配置結合介面。您必須處於配置模式。
 
 Brocade vRouter (Vyatta) 1
 ```
-set interfaces bonding bond0 vif 1101 address ‘##.###.###.###/##’ (VLAN 1101/管理に結合されるプライマリー・プライベート・サブネットの IP アドレスを入力)
-set interfaces bonding bond0 vif 1101 address ‘##.###.###.###/##’ (VLAN 1101/管理 VM に結合されるポータブル・プライベート・サブネットの IP アドレスを入力)
-set interfaces bonding bond0 vif 1102 address ‘##.###.###.###/##’ (VLAN 1102/ストレージ・パス A に結合されるポータブル・プライベート・サブネットの IP アドレスを入力)
-set interfaces bonding bond0 vif 1102 address ‘##.###.###.###/##’ (VLAN 1102/ストレージ・パス B に結合されるポータブル・プライベート・サブネットの IP アドレスを入力)
-set interfaces bonding bond0 vif 1103 address ‘##.###.###.###/##’ (VLAN 1103/仮想マシンに結合されるポータブル・プライベート・サブネットの IP アドレスを入力)
+set interfaces bonding bond0 vif 1101 address ‘##.###.###.###/##’ (Enter an IP address from Primary Private Subnet Bound to VLAN 1101/Management)
+set interfaces bonding bond0 vif 1101 address ‘##.###.###.###/##’ (Enter an IP address from Portable Private Subnet Bound to VLAN 1101/Management VMs)
+set interfaces bonding bond0 vif 1102 address ‘##.###.###.###/##’ (Enter an IP address from Portable Private Subnet Bound to VLAN 1102/Storage Path A)
+set interfaces bonding bond0 vif 1102 address ‘##.###.###.###/##’ (Enter an IP address from Portable Private Subnet Bound to VLAN 1102/Storage Path B)
+set interfaces bonding bond0 vif 1103 address ‘##.###.###.###/##’ (Enter an IP address from Portable Private Subnet Bound to VLAN 1103/Virtual Machines)
 set interfaces bonding bond0 vif 1101 vrrp vrrp-group 2 advertise-interval '1'
 set interfaces bonding bond0 vif 1101 vrrp vrrp-group 2 preempt 'false'
 set interfaces bonding bond0 vif 1101 vrrp vrrp-group 2 priority '253'
 set interfaces bonding bond0 vif 1101 vrrp vrrp-group 2 'rfc3768-compatibility'
 set interfaces bonding bond0 vif 1101 vrrp vrrp-group 2 sync-group 'vgroup1'
-set interfaces bonding bond0 vif 1101 vrrp vrrp-group 2 virtual-address ‘<1101/管理に結合されるプライマリー・プライベート VLAN のゲートウェイ・アドレス/マスク>’
-set interfaces bonding bond0 vif 1101 vrrp vrrp-group 2 virtual-address ‘<1101/管理 VM に結合されるポータブル・プライベート VLAN のゲートウェイ・アドレス/マスク>’
+set interfaces bonding bond0 vif 1101 vrrp vrrp-group 2 virtual-address ‘<GATEWAY ADDRESS/MASK of Primary Private VLAN Bound to 1101/Management>’
+set interfaces bonding bond0 vif 1101 vrrp vrrp-group 2 virtual-address ‘<GATEWAY ADDRESS/MASK of Portable Private VLAN Bound to 1101/Management VMs>’
 set interfaces bonding bond0 vif 1102 vrrp vrrp-group 3 advertise-interval '1'
 set interfaces bonding bond0 vif 1102 vrrp vrrp-group 3 preempt 'false'
 set interfaces bonding bond0 vif 1102 vrrp vrrp-group 3 priority '253'
 set interfaces bonding bond0 vif 1102 vrrp vrrp-group 3 'rfc3768-compatibility'
 set interfaces bonding bond0 vif 1102 vrrp vrrp-group 3 sync-group 'vgroup1'
-set interfaces bonding bond0 vif 1102 vrrp vrrp-group 3 virtual-address ‘<1102/ストレージに結合されるプライマリー・プライベート VLAN のゲートウェイ・アドレス/マスク>’
-set interfaces bonding bond0 vif 1102 vrrp vrrp-group 3 virtual-address ‘<1102/ストレージ・パス A に結合されるポータブル・プライベート VLAN のゲートウェイ・アドレス/マスク>’
-set interfaces bonding bond0 vif 1102 vrrp vrrp-group 3 virtual-address ‘<1102/ストレージ・パス B に結合されるポータブル・プライベート VLAN のゲートウェイ・アドレス/マスク>’
+set interfaces bonding bond0 vif 1102 vrrp vrrp-group 3 virtual-address ‘<GATEWAY ADDRESS/MASK of Primary Private VLAN Bound to 1102/Storage>’
+set interfaces bonding bond0 vif 1102 vrrp vrrp-group 3 virtual-address ‘<GATEWAY ADDRESS/MASK of Portable Private VLAN Bound to 1102/Storage Path A>’
+set interfaces bonding bond0 vif 1102 vrrp vrrp-group 3 virtual-address ‘<GATEWAY ADDRESS/MASK of Portable Private VLAN Bound to 1102/Storage Path B>’
 set interfaces bonding bond0 vif 1103 vrrp vrrp-group 4 advertise-interval '1'
 set interfaces bonding bond0 vif 1103 vrrp vrrp-group 4 preempt 'false'
 set interfaces bonding bond0 vif 1103 vrrp vrrp-group 4 priority '253'
 set interfaces bonding bond0 vif 1103 vrrp vrrp-group 4 'rfc3768-compatibility'
 set interfaces bonding bond0 vif 1103 vrrp vrrp-group 4 sync-group 'vgroup1'
-set interfaces bonding bond0 vif 1103 vrrp vrrp-group 4 virtual-address ‘<1103/仮想マシンに結合されるプライマリー・プライベート VLAN のゲートウェイ・アドレス/マスク>’
-set interfaces bonding bond0 vif 1103 vrrp vrrp-group 4 virtual-address ‘<1103/仮想マシンに結合されるポータブル・プライベート VLAN のゲートウェイ・アドレス/マスク>’
+set interfaces bonding bond0 vif 1103 vrrp vrrp-group 4 virtual-address ‘<GATEWAY ADDRESS/MASK of Primary Private VLAN Bound to 1103/Virtual Machines>’
+set interfaces bonding bond0 vif 1103 vrrp vrrp-group 4 virtual-address ‘<GATEWAY ADDRESS/MASK of Portable Private VLAN Bound to 1103/Virtual Machines>’
 commit
 save
 ```
 
 Brocade vRouter (Vyatta) 2
 ```
-set interfaces bonding bond0 vif 1101 address ‘##.###.###.###/##’ (VLAN 1101/管理に結合されるプライマリー・プライベート・サブネットの IP アドレスを入力。Brocade vRouter (Vyatta)1 に割り当てたものとは別のもの)
-set interfaces bonding bond0 vif 1101 address ‘##.###.###.###/##’ (VLAN 1101/管理 VM に結合されるポータブル・プライベート・サブネットの IP アドレスを入力。Brocade vRouter (Vyatta)1 に割り当てたものとは別のもの)
-set interfaces bonding bond0 vif 1102 address ‘##.###.###.###/##’ (VLAN 1102/ストレージ・パス A に結合されるポータブル・プライベート・サブネットの IP アドレスを入力。Brocade vRouter (Vyatta)1 に割り当てたものとは別のもの)
-set interfaces bonding bond0 vif 1102 address ‘##.###.###.###/##’ (VLAN 1102/ストレージ・パス B に結合されるポータブル・プライベート・サブネットの IP アドレスを入力。Brocade vRouter (Vyatta)1 に割り当てたものとは別のもの)
-set interfaces bonding bond0 vif 1103 address ‘##.###.###.###/##’ (VLAN 1103/仮想マシンに結合されるポータブル・プライベート・サブネットの IP アドレスを入力。Brocade vRouter (Vyatta)1 に割り当てたものとは別のもの)
+set interfaces bonding bond0 vif 1101 address ‘##.###.###.###/##’ (Enter an IP address from Primary Private Subnet Bound to VLAN 1101/Management. Must be different than the one assigned to Brocade vRouter (Vyatta)1)
+set interfaces bonding bond0 vif 1101 address ‘##.###.###.###/##’ (Enter an IP address from Portable Private Subnet Bound to VLAN 1101/Management VMs. Must be different than the one assigned to Brocade vRouter (Vyatta)1)
+set interfaces bonding bond0 vif 1102 address ‘##.###.###.###/##’ (Enter an IP address from Portable Private Subnet Bound to VLAN 1102/Storage Path A. Must be different than the one assigned to Brocade vRouter (Vyatta)1)
+set interfaces bonding bond0 vif 1102 address ‘##.###.###.###/##’ (Enter an IP address from Portable Private Subnet Bound to VLAN 1102/Storage Path B. Must be different than the one assigned to Brocade vRouter (Vyatta)1)
+set interfaces bonding bond0 vif 1103 address ‘##.###.###.###/##’ (Enter an IP address from Portable Private Subnet Bound to VLAN 1103/Virtual Machines. Must be different than the one assigned to Brocade vRouter (Vyatta)1)
 set interfaces bonding bond0 vif 1101 vrrp vrrp-group 2 advertise-interval '1'
 set interfaces bonding bond0 vif 1101 vrrp vrrp-group 2 preempt 'false'
 set interfaces bonding bond0 vif 1101 vrrp vrrp-group 2 priority '253'
 set interfaces bonding bond0 vif 1101 vrrp vrrp-group 2 'rfc3768-compatibility'
 set interfaces bonding bond0 vif 1101 vrrp vrrp-group 2 sync-group 'vgroup1'
-set interfaces bonding bond0 vif 1101 vrrp vrrp-group 2 virtual-address ‘<1101/管理に結合されるプライマリー・プライベート VLAN のゲートウェイ・アドレス/マスク>’
-set interfaces bonding bond0 vif 1101 vrrp vrrp-group 2 virtual-address ‘<1101/管理 VM に結合されるポータブル・プライベート VLAN のゲートウェイ・アドレス/マスク>’
+set interfaces bonding bond0 vif 1101 vrrp vrrp-group 2 virtual-address ‘<GATEWAY ADDRESS/MASK of Primary Private VLAN Bound to 1101/Management>’
+set interfaces bonding bond0 vif 1101 vrrp vrrp-group 2 virtual-address ‘<GATEWAY ADDRESS/MASK of Portable Private VLAN Bound to 1101/Management VMs>’
 set interfaces bonding bond0 vif 1102 vrrp vrrp-group 3 advertise-interval '1'
 set interfaces bonding bond0 vif 1102 vrrp vrrp-group 3 preempt 'false'
 set interfaces bonding bond0 vif 1102 vrrp vrrp-group 3 priority '253'
 set interfaces bonding bond0 vif 1102 vrrp vrrp-group 3 'rfc3768-compatibility'
 set interfaces bonding bond0 vif 1102 vrrp vrrp-group 3 sync-group 'vgroup1'
-set interfaces bonding bond0 vif 1102 vrrp vrrp-group 3 virtual-address ‘<1102/ストレージに結合されるプライマリー・プライベート VLAN のゲートウェイ・アドレス/マスク>’
-set interfaces bonding bond0 vif 1102 vrrp vrrp-group 3 virtual-address ‘<1102/ストレージ・パス A に結合されるポータブル・プライベート VLAN のゲートウェイ・アドレス/マスク>’
-set interfaces bonding bond0 vif 1102 vrrp vrrp-group 3 virtual-address ‘<1102/ストレージ・パス B に結合されるポータブル・プライベート VLAN のゲートウェイ・アドレス/マスク>’
+set interfaces bonding bond0 vif 1102 vrrp vrrp-group 3 virtual-address ‘<GATEWAY ADDRESS/MASK of Primary Private VLAN Bound to 1102/Storage>’
+set interfaces bonding bond0 vif 1102 vrrp vrrp-group 3 virtual-address ‘<GATEWAY ADDRESS/MASK of Portable Private VLAN Bound to 1102/Storage Path A>’
+set interfaces bonding bond0 vif 1102 vrrp vrrp-group 3 virtual-address ‘<GATEWAY ADDRESS/MASK of Portable Private VLAN Bound to 1102/Storage Path B>’
 set interfaces bonding bond0 vif 1103 vrrp vrrp-group 4 advertise-interval '1'
 set interfaces bonding bond0 vif 1103 vrrp vrrp-group 4 preempt 'false'
 set interfaces bonding bond0 vif 1103 vrrp vrrp-group 4 priority '253'
 set interfaces bonding bond0 vif 1103 vrrp vrrp-group 4 'rfc3768-compatibility'
 set interfaces bonding bond0 vif 1103 vrrp vrrp-group 4 sync-group 'vgroup1'
-set interfaces bonding bond0 vif 1103 vrrp vrrp-group 4 virtual-address ‘<1103/仮想マシンに結合されるプライマリー・プライベート VLAN のゲートウェイ・アドレス/マスク>’
-set interfaces bonding bond0 vif 1103 vrrp vrrp-group 4 virtual-address ‘<1103/仮想マシンに結合されるポータブル・プライベート VLAN のゲートウェイ・アドレス/マスク>’
+set interfaces bonding bond0 vif 1103 vrrp vrrp-group 4 virtual-address ‘<GATEWAY ADDRESS/MASK of Primary Private VLAN Bound to 1103/Virtual Machines>’
+set interfaces bonding bond0 vif 1103 vrrp vrrp-group 4 virtual-address ‘<GATEWAY ADDRESS/MASK of Portable Private VLAN Bound to 1103/Virtual Machines>’
 commit
 save
 ```
-### 外部アクセス用の SNAT の構成
+### 配置 SNAT 進行外部存取
 
-この手順では、管理 VM とキャパシティー・クラスター上の VM がインターネットにアクセスできるように SNAT を構成します。後でセットアップを同期するので、これ以降の手順では、片方の Brocade vRouter (Vyatta) だけを構成します。
+在此步驟中，我們將配置 SNAT，讓管理 VM 以及容量叢集上的 VM 可以存取網際網路。從此步驟開始，只需要在一台 Brocade vRouter (Vyatta) 上執行配置，因為我們會在稍後的時間點同步設定。
 
-構成モードで以下のコマンドを使用します。
+請在配置模式中使用下列指令：
 ```
 set nat source rule 10
-set nat source rule 10 source address ##.###.###.###/## (ポータブル・プライベート・サブネット VLAN1101/管理 VM)
+set nat source rule 10 source address ##.###.###.###/## (Portable Private Subnet VLAN1101/Management VMs)
 set nat source rule 10 translation address ##.###.###.### (Brocade vRouter (Vyatta) bond1 IP)
 set nat source rule 10 outbound-interface bond1
 set nat source rule 20
-set nat source rule 20 source address ##.###.###.###/## (ポータブル・プライベート・サブネット VLAN1103/仮想マシン)
+set nat source rule 20 source address ##.###.###.###/## (Portable Private Subnet VLAN1103/Virtual Machines)
 set nat source rule 20 translation address ##.###.###.### (Brocade vRouter (Vyatta) bond1 IP)
 set nat source rule 20 outbound-interface bond1
 commit
 save
 ```
-### ファイアウォール・グループの構成
+### 配置防火牆群組
 
-次に、特定の IP 範囲に関連付けられたファイアウォール・グループを構成します。
+接下來，我們將配置與特定 IP 範圍相關聯的防火牆群組。
 
-構成モードで以下のコマンドを使用します。
+請在配置模式中使用下列指令：
 ```
 set firewall group network-group SLSERVICES
 set firewall group network-group SLSERVICES network 10.1.128.0/19
@@ -155,23 +155,23 @@ set firewall group network-group SLSERVICES network 10.1.224.0/24
 set firewall group network-group SLSERVICES network 10.2.192.0/24
 set firewall group network-group SLSERVICES network 10.1.16.0/24
 set firewall group network-group SLSERVICES network 10.0.0.0/14
-set firewall group network-group 1101PRIMARY network ###.###.###.### (プライマリー・プライベート・サブネット 1101/管理)
-set firewall group network-group 1101MGMT network ###.###.###.### (ポータブル・プライベート・サブネット 1101/管理 VM)
-set firewall group network-group 1102PRIMARY network ###.###.###.### (プライマリー・プライベート・サブネット 1102/ストレージ)
-set firewall group network-group 1102STORAGEA network ###.###.###.### (ポータブル・プライベート・サブネット 1102/ストレージ・パス A)
-set firewall group network-group 1102STORAGEB network ###.###.###.### (ポータブル・プライベート・サブネット 1102/ストレージ・パス B)
-set firewall group network-group 1103VMACCESS network ###.###.###.### (ポータブル・プライベート・サブネット 1103/仮想マシン)
-set firewall group address-group PERFORMANCEENDURANCE address '##.###.###.###' (パフォーマンス/エンデュランスのプライマリー IP)
-set firewall group address-group PERFORMANCEENDURANCE address '##.###.###.###' (パフォーマンス/エンデュランスのセカンダリー IP)
+set firewall group network-group 1101PRIMARY network ###.###.###.### (Primary Private Subnet 1101/Management)
+set firewall group network-group 1101MGMT network ###.###.###.### (Portable Private Subnet 1101/Management VMs)
+set firewall group network-group 1102PRIMARY network ###.###.###.### (Primary Private Subnet 1102/Storage)
+set firewall group network-group 1102STORAGEA network ###.###.###.### (Portable Private Subnet 1102/Storage Path A)
+set firewall group network-group 1102STORAGEB network ###.###.###.### (Portable Private Subnet 1102/Storage Path B)
+set firewall group network-group 1103VMACCESS network ###.###.###.### (Portable Private Subnet 1103/Virtual Machines)
+set firewall group address-group PERFORMANCEENDURANCE address '##.###.###.###' (Performance/Endurance Primary IP)
+set firewall group address-group PERFORMANCEENDURANCE address '##.###.###.###' (Performance/Endurance Secondary IP)
 commit
 save
 ```
 
-### ファイアウォール名ルールの構成
+### 配置防火牆名稱規則
 
-次は、トラフィックの方向ごとにファイアウォール・ルールを定義します。
+我們現在將定義每一個資料流量方向的防火牆規則。
 
-構成モードで以下のコマンドを使用します。
+請在配置模式中使用下列指令：
 ```
 set firewall name INSIDE2OUTSIDE
 set firewall name INSIDE2OUTSIDE default-action drop
@@ -271,11 +271,11 @@ set firewall name SLSERVICE2INSIDE rule 8 protocol 'all'
 commit
 save
 ```
-### ゾーン・バインディングの構成
+### 配置區域連結
 
-この手順では、Brocade vRouter (Vyatta) 上のインターフェースに特定のゾーンをバインドします。
+在此步驟中，我們會將特定區域連結至 Brocade vRouter (Vyatta) 上的介面。
 
-構成モードで以下のコマンドを使用します。
+請在配置模式中使用下列指令：
 ```
 set zone-policy zone OUTSIDE description “Internet Zone”
 set zone-policy zone OUTSIDE default-action drop
@@ -296,11 +296,11 @@ commit
 save
 ```
 
-### ゾーンへのファイアウォール・ルールの適用
+### 將防火牆規則套用至區域
 
-次は、ゾーン間の通信にファイアウォール・ルールを適用します。
+我們現在會將防火牆規則套用至區域之間的通訊。
 
-構成モードで以下のコマンドを使用します。
+請在配置模式中使用下列指令：
 ```
 set zone-policy zone OUTSIDE from MGMT firewall name INSIDE2OUTSIDE
 set zone-policy zone OUTSIDE from VMACCESS firewall name INSIDE2OUTSIDE
@@ -317,15 +317,15 @@ commit
 save
 ```
 
-### HA ペアの Brocade vRouter (Vyatta) との同期
+### 與 HA 配對中的另一台 Brocade vRouter (Vyatta) 同步
 
-HA ペアのうち片方の Brocade vRouter (Vyatta) をセットアップしたので、もう一方のゲートウェイ・デバイスに変更内容を同期する必要があります。
+因為我們已設定 HA 配對中的其中一台 Brocade vRouter (Vyatta)，所以必須將變更同步至另一台閘道裝置。
 
-構成モードで以下のコマンドを使用します。
+請在配置模式中使用下列指令：
 ```
-set system config-sync remote-router <他方の BROCADE VROUTER (VYATTA) の IP> password <他方の BROCADE VROUTER (VYATTA) のパスワード>
-set system config-sync remote-router <他方の BROCADE VROUTER (VYATTA) の IP> sync-map 'SYNC'
-set system config-sync remote-router <他方の BROCADE VROUTER (VYATTA) の IP> username <他方の BROCADE VROUTER (VYATTA) のユーザー名>
+set system config-sync remote-router <OTHER BROCADE VROUTER (VYATTA) IP> password <OTHER BROCADE VROUTER (VYATTA) PASSWORD>
+set system config-sync remote-router <OTHER BROCADE VROUTER (VYATTA) IP> sync-map 'SYNC'
+set system config-sync remote-router <OTHER BROCADE VROUTER (VYATTA) IP> username <OTHER BROCADE VROUTER (VYATTA) USERNAME>
 set system config-sync sync-map SYNC rule 1 action 'include'
 set system config-sync sync-map SYNC rule 1 location 'nat'
 set system config-sync sync-map SYNC rule 2 action 'include'
@@ -351,19 +351,19 @@ set system config-sync sync-map SYNC rule 11 location 'nat'
 commit
 save
 ```
-### VLAN の関連付けとルーティング
+### 關聯及遞送 VLAN
 
-Brocade vRouter (Vyatta) でゾーンとファイアウォール・ルールをセットアップしたら、それに VLAN を関連付け、Brocade vRouter (Vyatta) を介する VLAN のルーティングを有効にする必要があります。
+在 Brocade vRouter (Vyatta) 上設定區域及防火牆規則之後，我們必須將 VLAN 與其相關聯，並啟用透過 Brocade vRouter (Vyatta) 遞送 VLAN。
 
-1. [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}にログインして、**「ネットワーク」>「ゲートウェイ・アプライアンス」**をクリックし、Brocade vRouter (Vyatta) をクリックします。
-2. **「VLAN」**を選択し、**「関連付け」**ボタンをクリックします。
-3. ご使用の環境用に作成した VLAN ごとに、手順 2 を繰り返します。次に、Brocade vRouter (Vyatta) に関連付けるために、VLAN のルーティングを有効にする必要があります。
-4. **「関連付けられた VLAN」**で VLAN を見つけ、それぞれの横にあるボックスにチェック・マークを付けます。
-5. **「一括アクション」**ドロップダウン・メニューをクリックし、**「経路」**を選択します。
-6. ポップアップ画面で**「OK」**をクリックします。
+1. 登入 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}，按一下**網路 > 閘道應用裝置**，然後按一下 Brocade vRouter (Vyatta)。
+2. 選取 **VLAN**，然後按一下**關聯**按鈕。
+3. 針對您為環境建立的每一個 VLAN 重複步驟 2。接下來需要啟用 VLAN 的遞送，才能與 Brocade vRouter (Vyatta) 相關聯。
+4. 在**關聯的 VLAN** 下找出 VLAN，然後勾選每一個 VLAN 旁的勾選框。
+5. 按一下**大量動作**下拉功能表，然後選取**遞送**。
+6. 在蹦現畫面上，按一下**確定**。
 
-これで、VLAN が Brocade vRouter (Vyatta) 経由でルーティングされるようになりました。 2 つのゾーンの間で通信できないことに気付いた場合は、問題の VLAN をバイパスし、Brocade vRouter (Vyatta) 設定を確認してください。
+現在應該已透過 Brocade vRouter (Vyatta) 遞送您的 VLAN。如果您發現兩個區域之間的通訊受阻，請略過討論中的特定 VLAN，並檢查 Brocade vRouter (Vyatta) 設定。
 
-これで、Brocade vRouter (Vyatta) で保護された単一サイト VMware 環境を、{{site.data.keyword.BluSoftlayer_full}} で使用できるようになりました。
+您現在應該有運作中的單一網站 VMware 環境，並且由 {{site.data.keyword.BluSoftlayer_full}} 內的 Brocade vRouter (Vyatta) 加以保護。
 
  
