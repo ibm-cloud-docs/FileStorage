@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-04-23"
+lastupdated: "2018-05-02"
 
 ---
 {:new_window: target="_blank"}
@@ -10,7 +10,7 @@ lastupdated: "2018-04-23"
 
 # Securing Your Data - Provider Managed Encryption-At-Rest 
 
-{{site.data.keyword.BluSoftlayer_full}} takes the need for security seriously, and understand the importance of being able to encrypt data to keep it safe. With provider managed encryption, {{site.data.keyword.filestorage_full}} provisioned with either Endurance or Performance are encrypted by default at no additional cost and no impact to performance.
+{{site.data.keyword.BluSoftlayer_full}} takes the need for security seriously, and understand the importance of being able to encrypt data to keep it safe. With provider managed encryption, {{site.data.keyword.filestorage_full}} provisioned with either Endurance or Performance is encrypted by default at no additional cost and no impact to performance.
 
 The provider managed encryption-at-rest feature uses the following industry standard protocols:
 
