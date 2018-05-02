@@ -11,35 +11,35 @@ lastupdated: "2018-03-16"
 {:codeblock: .codeblock}
 {:pre: .pre}
  
-# 使用 cPanel 配置 {{site.data.keyword.filestorage_short}} 以進行備份
+# cPanel を使用してバックアップするための{{site.data.keyword.filestorage_short}}の構成
 
-在本文章中，我們的目標是提供指示來透過 cPanel 將您的備份配置為儲存在 {{site.data.keyword.filestorage_full}} 中。我們假設可以使用 root 或 sudo SSH 及完整 WebHost Manager (WHM) 存取權。此範例以 **CentOS 7** 主機為基礎。
+この記事では、cPanel を使用してバックアップを{{site.data.keyword.filestorage_full}}に保管するように構成する手順を説明します。root を使用できるか、または sudo SSH で WebHost Manager (WHM) のフル・アクセス権限を使用できる必要があります。この例は、**CentOS 7** ホストに基づいています。
 
-**附註**：您可以[在這裡](https://docs.cpanel.net/display/68Docs/Backup+Configuration#BackupConfiguration-ConfigureBackupDirectory){:new_window}找到關於配置備份目錄的 cPanel 文件。
+**注**: [ここ](https://docs.cpanel.net/display/68Docs/Backup+Configuration#BackupConfiguration-ConfigureBackupDirectory){:new_window}で、バックアップ・ディレクトリーの構成方法についての cPanel の資料を参照できます。
 
-1. 透過 SSH 連接至主機。
+1. SSH を使用してホストに接続します。
 
-2. 確定裝載點目標已存在。<br />
-   **附註**：依預設，cPanel 系統會在本端將備份檔儲存至 `/backup` 目錄。基於本文件的用途，我們假設 `/backup` 已存在且包含備份，因此我們將使用 `/backup2` 作為新的裝載點。
+2. マウント・ポイント・ターゲットが存在することを確認します。<br />
+   **注**: デフォルトでは、cPanel システムは、バックアップ・ファイルをローカルの `/backup` ディレクトリーに保存します。このドキュメントでは、`/backup` が既に存在していてバックアップが含まれていることを前提としています。そのため、`/backup2` を新しいマウント・ポイントとして使用します。
    
-3. 配置 {{site.data.keyword.filestorage_short}}，如[在 Red Hat Enterprise Linux 上存取 {{site.data.keyword.filestorage_short}}](accessing-file-storage-linux.html) 及[在 CentOS 中裝載 NFS/{{site.data.keyword.filestorage_short}}](mounting-nsf-file-storage.html) 中所述。請確定您將它裝載至 `/backup2`，並在 `/etc/fstab` 中配置它以啟用開機時裝載。<br />
-   **附註**：依預設，NFS 會將使用 root 使用者許可權建立的任何檔案降級成 nobody 使用者。若要容許 root 用戶端保留 NFS 共用上的 root 使用者許可權，應該將 `no_root_squash` 新增至 `/etc/exports`。<br />
-   **附註**：關於[在 CoreOS 上裝載 NFS/{{site.data.keyword.filestorage_short}}](mounting-storage-coreos.html) 也有可用的指示。<br />
+3. [Red Hat Enterprise Linux での{{site.data.keyword.filestorage_short}}へのアクセス](accessing-file-storage-linux.html)および [CentOS への NFS/{{site.data.keyword.filestorage_short}}のマウント](mounting-nsf-file-storage.html)の説明に従って{{site.data.keyword.filestorage_short}}を構成します。必ず、`/backup2` にマウントし、ブート時にマウントされるように `/etc/fstab` で構成してください。<br />
+   **注**: デフォルトでは、NFS は、ルート権限で作成されたファイルを nobody ユーザーにダウングレードします。root クライアントが NFS 共有に対する root 権限を保持できるように、`/etc/exports` に `no_root_squash` を追加する必要があります。<br />
+   **注**: [CoreOS に NFS/{{site.data.keyword.filestorage_short}}をマウントする](mounting-storage-coreos.html)手順についても説明しています。<br />
 
-4. **選用**：將現有備份複製到新的儲存空間。請使用 `rsync`，例如：
+4. **オプション**: 既存のバックアップを新しいストレージにコピーします。例えば、次のように `rsync` を使用します。
    ```
    rsync -azv /backup/* /backup2/
    ```
    {: pre}
     
-    **附註**：此指令會傳輸壓縮的資料，同時保留儘可能多的內容（但硬式鏈結除外），並提供要傳送哪些檔案的相關資訊，也會在尾端附上簡短摘要。
+    **注**: このコマンドは、データを可能な限り保持した状態で (ハードリンクは除く) 圧縮転送し、転送中のファイルに関する情報を表示し、最後に簡単なサマリーを表示します。
     
-5.  登入 WebHost Manager，然後透過**首頁** > **備份** > **備份配置**導覽至備份配置。
+5.  WebHost Manager にログインし、**「ホーム」** > **「バックアップ (Backup)」** > **「バックアップ構成 (Backup Configuration)」**を選択してバックアップ構成に移動します。
 
-6.  編輯配置以將備份儲存在新的裝載點中。 
-    - 輸入新位置的絕對路徑來取代 /backup/ 目錄，以變更預設備份目錄。 
-    - 選取**啟用以裝載備份磁碟機**。此設定會使得「備份配置」處理程序檢查 `/etc/fstab` 檔案中是否有備份裝載 (`/backup2`)。<br /> **附註**：如果存在的裝載名稱與暫置目錄相同，則「備份配置」處理程序會裝載磁碟機，並將資訊備份至該裝載。在備份處理程序完成之後，它會卸載磁碟機。 
+6.  新しいマウント・ポイントにバックアップを保存するように構成を編集します。 
+    - /backup/ ディレクトリーの代わりに新しい場所の絶対パスを入力して、デフォルトのバックアップ・ディレクトリーを変更します。 
+    - **「バックアップ・ドライブのマウントを有効にする (Enable to mount a backup drive)」**を選択します。この設定にすると、バックアップ構成プロセスが、`/etc/fstab` ファイルにバックアップ・マウント (`/backup2`) があるか検査します。<br /> **注**: ステージング・ディレクトリーと同じ名前のマウントが存在する場合、バックアップ構成プロセスは、ドライブをマウントして情報をそのマウントにバックアップします。バックアップ・プロセスは、終了時にドライブをアンマウントします。 
 
-7. 套用變更，方法是按一下**備份配置**介面底端的**儲存配置**。
+7. **「バックアップ構成 (Backup Configuration)」**インターフェース下部の**「構成の保存」**をクリックして変更を適用します。
 
-8. **選用**：根據您的特定使用案例和商業需要，從伺服器中移除舊的儲存空間並從帳戶中取消。
+8. **オプション**: 具体的なユース・ケースやビジネス・ニーズに応じて、古いストレージをサーバーから削除し、アカウントからキャンセルします。

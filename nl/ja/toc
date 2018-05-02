@@ -2,7 +2,7 @@
 {:topicgroup: .topicgroup}
 
 {: .toc subcollection="FileStorage" audience="services" href=“/docs/infrastructure/FileStorage/index.html”}
-IBM Cloud Storage - File Storage
+IBM Cloud Storage - ファイル・ストレージ
 
     {: .navgroup id="learn"}
     index.md 
@@ -16,13 +16,13 @@ IBM Cloud Storage - File Storage
     
     {: .navgroup id="howto"}
     {: .topicgroup}
-    佈建
+    プロビジョン
         provisioning-file-storage.md
         ordering-snapshots.md
         managing-storage-limits.md
         
     {: .topicgroup}
-    配置
+    構成
         accessing-file-storage-linux.md
         mounting-nsf-file-storage.md
         mounting-storage-coreos.md
@@ -31,7 +31,7 @@ IBM Cloud Storage - File Storage
         configure-backup-plesk.md
 
     {: .topicgroup}
-    安全
+    セキュリティー
         block-file-storage-encryption-rest.md    
         migrate-file-storage-encrypted-file-storage.md
 
@@ -43,5 +43,5 @@ IBM Cloud Storage - File Storage
                
     {: .navgroup id="help"}
     File-Storage-FAQ.md
-    [Python API 用戶端資訊](https://github.com/softlayer/softlayer-python)
+    [Python API クライアントの情報](https://github.com/softlayer/softlayer-python)
     {: .navgroup-end}

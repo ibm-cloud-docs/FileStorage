@@ -8,109 +8,109 @@ lastupdated: "2018-02-12"
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
  
-# 將 {{site.data.keyword.filestorage_short}} 移轉至加密 {{site.data.keyword.filestorage_short}}
+# {{site.data.keyword.filestorage_short}}から暗号化{{site.data.keyword.filestorage_short}}へのマイグレーション
 
-已在精選資料中心內啟動「耐久性」或「效能」的加密 {{site.data.keyword.filestorage_full}}。您將在下面找到如何將 {{site.data.keyword.filestorage_short}} 從未加密移轉至加密的相關資訊。如需提供者管理之加密儲存空間的相關資訊，請閱讀 [{{site.data.keyword.filestorage_short}} 靜態加密](block-file-storage-encryption-rest.html)文章。若要查看已升級資料中心及可用特性的清單，請按一下[這裡](new-ibm-block-and-file-storage-location-and-features)。
+エンデュランスまたはパフォーマンスの暗号化 {{site.data.keyword.filestorage_full}} が、一部のデータ・センターで提供開始されました。 ここでは、{{site.data.keyword.filestorage_short}}を非暗号化から暗号化にマイグレーションする方法について説明します。 プロバイダー管理の暗号化ストレージについて詳しくは、[保存データの{{site.data.keyword.filestorage_short}}暗号化](block-file-storage-encryption-rest.html)の記事を参照してください。 アップグレードされたデータ・センターと使用可能な機能のリストを確認するには、[ここ](new-ibm-block-and-file-storage-location-and-features)をクリックしてください。
 
-偏好的移轉路徑是同時連接至兩個磁區，並將資料直接從某個檔案磁區傳送至另一個檔案磁區。細節將取決於作業系統，以及是否預期在複製作業期間變更資料。
+お勧めするマイグレーション・パスは、両方のボリュームに同時に接続してファイル・ボリューム間で直接データを転送する方法です。 具体的な手順は、オペレーティング・システムと、コピー操作中にデータ変更が行われるかどうかによって異なります。
 
-已概述較常見的情境，方便您使用。我們假設您已將未加密檔案磁區連接至主機。若否，請遵循下面最適合您所執行之作業系統的指示來完成此作業。 
+ご参考までに、一般的なシナリオで大まかに説明します。 ホストに非暗号化ファイル・ボリュームが既に接続されていることを前提としています。 そうでない場合は、以下の説明のうち、実行しているオペレーティング・システムに最も該当する説明に従って、このタスクを実行してください。 
 
-**附註：**所有加密 {{site.data.keyword.filestorage_short}} 磁區都具有與未加密磁區不同的裝載點。為了確保加密及未加密 {{site.data.keyword.filestorage_short}} 磁區都使用正確的裝載點，您可以在使用者介面的**磁區詳細資料**頁面中檢視裝載點資訊，並且透過 API 呼叫 SoftLayer_Network_Storage::getNetworkMountAddress() 來存取正確的裝載點。
+**注:**  すべての暗号化{{site.data.keyword.filestorage_short}}・ボリュームは、非暗号化ボリュームとは異なるマウント・ポイントになります。  暗号化と非暗号化の両方の{{site.data.keyword.filestorage_short}}・ボリュームに正しいマウント・ポイントを使用するには、UI の**「ボリュームの詳細 (Volume Details)」**ページでマウント・ポイント情報を参照するか、API 呼び出し SoftLayer_Network_Storage::getNetworkMountAddress() を使用して正しいマウント・ポイントを取得してください。
 
-[存取 Linux 上的 {{site.data.keyword.filestorage_short}}](accessing-file-storage-linux.html)
+[Linux での{{site.data.keyword.filestorage_short}}へのアクセス](accessing-file-storage-linux.html)
 
-## 建立加密檔案磁區
+## 暗号化ファイル・ボリュームの作成
 
-使用下列步驟，以建立一個相同大小或較大的加密磁區，以協助進行移轉處理程序。
+マイグレーション・プロセスを円滑に進めるために、以下の手順を使用して、同じサイズ以上の暗号化ボリュームを作成します。
 
-### 訂購加密耐久性儲存空間磁區
+### 暗号化エンデュランス・ストレージ・ボリュームの注文
 
-1. 按一下 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} 首頁中的**儲存空間** > **{{site.data.keyword.filestorage_short}}**，或者，按一下 {{site.data.keyword.BluSoftlayer_full}} 型錄中的**基礎架構** > **儲存空間** > **{{site.data.keyword.filestorage_short}}**。
+1. [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}のホーム・ページから**「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**をクリックするか、{{site.data.keyword.BluSoftlayer_full}} カタログで**「インフラストラクチャー」** > **「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**をクリックします。
 
-2. 按一下 {{site.data.keyword.filestorage_short}} 頁面上的**訂購 {{site.data.keyword.filestorage_short}}** 鏈結。
+2. 「{{site.data.keyword.filestorage_short}}」ページで**「{{site.data.keyword.filestorage_short}}を注文」**リンクをクリックします。
 
-3. 選取**耐久性**。
+3. **「エンデュランス」**を選択します。
 
-4. 選取原始磁區所在的資料中心。請注意，加密僅適用於有星號的資料中心。
+4. 元のボリュームが置かれているデータ・センターを選択します。 暗号化はアスタリスクが付いたデータ・センターでしか使用できないので注意してください。
 
-5. 輸入所需的 **IOPS 層級**。
+5. 必要な **IOPS ティア**を入力します。
 
-6. 選取所需的儲存空間量（以 GB 為單位）。若為 TB，1 TB 等於 1,000 GB，而 12 TB 等於 12,000 GB。
+6. 必要なストレージ・スペース量を GB 単位で選択します。 TB の場合、1 TB は 1,000 GB、12 TB は 12,000 GB に相当します。
 
-7. 輸入 Snapshot 所需的儲存空間量（以 GB 為單位）。
+7. スナップショット用の必要なストレージ・スペース量を GB 単位で入力します。
 
-8. 從下拉清單中，選取 **VMware OS**。
+8. ドロップダウン・リストから**「VMware OS」**を選択します。
 
-9. 提交訂單。
+9. 注文を送信します。
  
-### 訂購加密效能儲存空間磁區
+### 暗号化パフォーマンス・ストレージ・ボリュームの注文
 
-1. 按一下 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} 首頁中的**儲存空間** > **{{site.data.keyword.filestorage_short}}**，或者，按一下 {{site.data.keyword.BluSoftlayer_full}} 型錄中的**基礎架構** > **儲存空間** > **{{site.data.keyword.filestorage_short}}**。
+1. [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}のホーム・ページから**「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**をクリックするか、{{site.data.keyword.BluSoftlayer_full}} カタログで**「インフラストラクチャー」** > **「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**をクリックします。
 
-2. 按一下**訂購 {{site.data.keyword.filestorage_short}}**。
+2. **「{{site.data.keyword.filestorage_short}}を注文」**をクリックします。
 
-3. 選取**效能**。
+3. **「パフォーマンス」**を選択します。
 
-4. 選取原始磁區所在的資料中心。請注意，加密僅適用於有星號 (`*`) 的資料中心。
+4. 元のボリュームが置かれているデータ・センターを選択します。 暗号化はアスタリスク (`*`) が付いたデータ・センターでしか使用できないので注意してください。
 
-5. 選取相同大小或較大的原始磁區所需的儲存空間量（以 GB 為單位）。
+5. 必要なストレージ・スペース量 (元のボリュームのサイズ以上) を GB 単位で選択します。
 
-6. 輸入所需的 IOPS 數量（間隔為 100）。
+6. 必要な IOPS 量を 100 単位で入力します。
 
-7. 從下拉清單中，選取 VMware OS。
+7. ドロップダウン・リストから VMware OS を選択します。
 
-8. 提交訂單。
+8. 注文を送信します。
 
-將在一分鐘內佈建儲存空間，並將它顯示在客戶入口網站的 {{site.data.keyword.filestorage_short}} 頁面上。
-
- 
-## 將新磁區連接至主機
-
-「授權」主機是已獲得磁區存取權的主機。如果沒有主機授權，就無法從系統中存取或使用儲存空間。
-
-1. 按一下加密**磁區名稱**。
-
-2. 捲動至頁面的**授權主機**區段。
-
-3. 按一下頁面右側的**授權主機**鏈結。選取可存取磁區的主機。
-
-授權之後，請將磁區連接至主機。
+ストレージが 1 分もしないうちにプロビジョンされ、カスタマー・ポータルの「{{site.data.keyword.filestorage_short}}」ページに表示されます。
 
  
-## Snapshot 及抄寫
+## ホストへの新規ボリュームの接続
 
-您是否已為原始磁區建立 Snapshot 及抄寫？如果是，則需要為新的加密磁區使用與原始磁區相同的設定，設定抄寫、Snapshot 空間，以及建立 Snapshot 排程。 
+「許可」ホストとは、ボリュームに対するアクセス権を付与されたホストのことです。 ホストの許可がなければ、システムからストレージにアクセスすることも、ストレージを使用することもできません。
 
-請注意，如果未升級您的目標資料中心來進行加密，則除非升級該資料中心，否則無法建立新磁區的抄寫。
+1. 暗号化**ボリュームの名前**をクリックします。
+
+2. ページの**「許可ホスト」**セクションまでスクロールします。
+
+3. ページの右側にある**「ホストの許可」**リンクをクリックします。 ボリュームにアクセスできるホストを選択します。
+
+許可されたら、ボリュームをホストに接続します。
 
  
-## 移轉資料
+## スナップショットとレプリケーション
 
-您的主機應該同時連接至原始及加密 {{site.data.keyword.filestorage_short}} 磁區。如果沒有，請：
+元のボリュームにスナップショットとレプリケーションを設定していましたか? そうであれば、元のボリュームと同じ設定で新しい暗号化ボリュームのレプリケーションとスナップショット・スペースをセットアップし、スナップショット・スケジュールを作成する必要があります。 
 
-• 確定您已正確遵循上述步驟並參閱文件。
+暗号化できるようにターゲット・データ・センターがアップグレードされていない場合は、そのデータ・センターがアップグレードされるまで、新規ボリュームのレプリケーションを設定できません。
 
-• 開立支援問題單，以取得將兩個磁區連接至主機的進一步協助。
+ 
+## データのマイグレーション
 
-### 資料考量
+元の{{site.data.keyword.filestorage_short}}・ボリュームと暗号化{{site.data.keyword.filestorage_short}}・ボリュームの両方にホストが接続されているはずです。 そうでない場合は、以下のようにします。
 
-此時，請考量您在原始 {{site.data.keyword.filestorage_short}} 磁區上具有的資料類型，以及如何最適當地將資料複製到加密磁區。如果您有備份、靜態內容，以及在複製期間預期不會變更的事物，則沒有任何主要考量。
+• 上記の手順に従ったこと、資料を正しく参照したことを確認してください。
 
-如果您正在 {{site.data.keyword.filestorage_short}} 上執行資料庫或虛擬機器，請確定在複製期間未變更原始磁區上的資料，以期不會發生毀損。如果您有任何頻寬考量，則應該在離峰時間執行移轉。如果您需要關於這些考量的協助，歡迎開立支援問題單。
+• 2 つのボリュームをホストに接続するための支援がさらに必要な場合は、サポート・チケットを開いてください。
+
+### データに関する考慮事項
+
+ここで、元の{{site.data.keyword.filestorage_short}}・ボリュームにあるデータのタイプと、そのデータを暗号化ボリュームにコピーする最適な方法について検討しましょう。 バックアップや静的コンテンツがあり、コピー中に変更がない場合は、特に考慮事項はありません。
+
+{{site.data.keyword.filestorage_short}}上でデータベースまたは仮想マシンを実行している場合は、破損が発生しないように、コピー中は元のボリューム上のデータが変更されないようにしてください。 帯域幅に懸念がある場合は、非ピーク時にマイグレーションを行う必要があります。 これらの考慮事項に関して支援が必要な場合は、遠慮なくサポート・チケットを開いてください。
 
 ### Microsoft Windows
 
-若要將資料從原始 {{site.data.keyword.filestorage_short}} 磁區複製到加密磁區，請使用「Windows 檔案總管」格式化新的儲存空間並將檔案複製到其中。
+元の{{site.data.keyword.filestorage_short}}・ボリュームから暗号化ボリュームにデータをコピーするには、新しいストレージをフォーマットし、Windows エクスプローラーを使用してファイルをコピーしてください。
 
 ### Linux
 
-您可以考慮使用 rsync 來複製資料。以下為範例指令
+rsync を使用してデータをコピーすることを検討していることでしょう。 以下にコマンドの例を示します。
 
 `[root@server ~]# rsync -Pavzu /path/to/original/file/storage/* /path/to/encrypted/file/storage` 
 
-建議您搭配使用上述指令與 `--dry-run` 旗標一次，以確定正確地排列路徑。如果此程序被岔斷，建議您刪除最後一個正在複製的目的地檔案，以確定從頭將它複製到新位置。
+一度 `--dry-run` フラグを指定して上記のコマンドを使用して、パスの並びが正しいことを確認することをお勧めします。 このプロセスが中断された場合は、最後にコピー中であった宛先ファイルを削除して、その宛先ファイルが最初から新規ロケーションにコピーされるようにする必要があります。
 
-此指令在沒有 `--dry-run` 旗標的情況下完成之後，資料應該已複製到加密 {{site.data.keyword.filestorage_short}} 磁區。您應該向上捲動並重新執行指令，確定未遺漏任何項目。您也可以手動檢閱這兩個位置，以尋找任何可能遺漏的項目。
+`--dry-run` フラグなしでこのコマンドが完了したら、データは暗号化{{site.data.keyword.filestorage_short}}・ボリュームにコピーされています。 スクロールアップしてコマンドを再度実行して、何も欠落していないことを確認する必要があります。 両方のロケーションを手動で確認して、欠落しているものがないか探すことをお勧めします。
 
-移轉完成後，您就可以將正式作業移至加密磁區，然後分離並刪除配置中的原始磁區。請注意，刪除作業也會移除目標網站上與原始磁區相關聯的任何 Snapshot 或抄本。
+マイグレーションが完了したら、実動環境を暗号化ボリュームに移し、構成から元のボリュームを切り離して削除することができます。 削除により、元のボリュームに関連付けられていたターゲット・サイト上のスナップショットやレプリカも除去されることに注意してください。

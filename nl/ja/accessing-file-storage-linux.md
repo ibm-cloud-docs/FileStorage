@@ -8,33 +8,33 @@ lastupdated: "2018-02-16"
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 
-# 在 Linux 上存取 {{site.data.keyword.filestorage_short}}
+# Linux での{{site.data.keyword.filestorage_short}}へのアクセス
 
-開始之前，請確定已透過 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} 授權正在存取 {{site.data.keyword.filestorage_full}} 磁區的主機：
+始める前に、必ず、[{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}で、{{site.data.keyword.filestorage_full}} ボリュームにアクセスするホストを許可してください。
 
-1. 從 {{site.data.keyword.filestorage_short}} 清單頁面中，按一下與剛佈建的共用相關聯的**動作**，然後按一下**授權主機**。
-2. 從清單中選取所需的主機，然後按一下**提交**；這會授權主機存取共用。
+1. {{site.data.keyword.filestorage_short}}のリスト・ページで、新しくプロビジョンした共有に関連付けられている**「アクション」**をクリックし、**「ホストの許可」**をクリックします。
+2. リストから 1 つ以上の目的のホストを選択して、**「送信」**をクリックします。これにより、この共有へのアクセスがホストに許可されます。
 
-## 裝載 {{site.data.keyword.filestorage_short}} 共用
+## {{site.data.keyword.filestorage_short}}の共有のマウント
 
-以下是將 Linux 型「{{site.data.keyword.BluSoftlayer_full}} 運算」實例連接至「網路檔案系統 (NFS)」共用的必要步驟。此範例是以 Red Hat Enterprise Linux 6 為基礎。針對其他 Linux 發行套件，可以根據作業系統 (OS) 供應商文件來調整這些步驟。
+Linux ベースの {{site.data.keyword.BluSoftlayer_full}} コンピューティング・インスタンスをネットワーク・ファイル・システム (NFS) 共有に接続するために必要な手順を以下に示します。 この例は、Red Hat Enterprise Linux 6 に基づいています。オペレーティング・システム (OS) ベンダーの資料に従って、この手順をその他の Linux ディストリビューション用に調整することができます。
 
-**附註：**您可以從 {{site.data.keyword.filestorage_short}} 清單頁面或透過 API 呼叫，來取得檔案儲存空間實例的裝載點 - SoftLayer_Network_Storage::getNetworkMountAddress()。
+**注:** ファイル・ストレージ・インスタンスのマウント・ポイントは、{{site.data.keyword.filestorage_short}}のリスト・ページから取得するか、API の呼び出し SoftLayer_Network_Storage::getNetworkMountAddress() を介して取得できます。
 
-1. 安裝必要的套件/工具。
+1. 必要なパッケージ/ツールをインストールします。
 
     `[root@TEST-RHEL6]# yum -y install nfs-utils nfs-utils-lib
     `
-2. 裝載遠端共用
+2. リモート共有をマウントします。
     `[root@TEST-RHEL6]# mount -t "nfs version" -o "options" <mount_point> /mnt`
     
-    以下是將遠端共用裝載至儲存空間實例的範例。
+    次に、リモート共有をストレージ・インスタンスにマウントする例を示します。
     
     `[root@TEST-RHEL6 mnt]# mount -t nfs4 -o hard,intr`
     
     `nfsdal0501a.service.softlayer.com:/IBM01SV278685_7 /mnt`
  
-3. 驗證已成功裝載。
+3. マウントが成功したことを確認します。
 
     `[root@TEST-RHEL6]# df -h`
     
@@ -46,7 +46,7 @@ lastupdated: "2018-02-16"
     
     `/dev/xvda1 97M 51M 42M 55%`
     
-4. 導覽至裝載點並讀寫檔案。
+4. マウント・ポイントにナビゲートし、ファイルを読み取り/書き込みます。
 
     `[root@TEST-RHEL6]# touch /mnt/test`
     
@@ -60,32 +60,33 @@ lastupdated: "2018-02-16"
     
     `-rw-r--r-- 1 nobody nobody 0 Sep 8 15:52 test`
 
-    **附註：**root 所建立的檔案會有 nobody:nobody 所有權。為了能夠正確地顯示所有權，必須使用正確的網域設定來更新 idmapd.conf。請參閱下面的「如何實作 NFS 的 no_root_squash」。
+    **注:** root を使用して作成したファイルの所有権は nobody:nobody になります。 所有権を正しく表示するには、idmapd.conf を正しいドメイン設定に更新する必要があります。 下記の『NFS 用の no_root_squash の実装方法』を参照してください。
     
-5. 在開機時裝載遠端共用。為了完成設定，請編輯檔案系統表格 /etc/fstab，將遠端共用新增至在啟動時自動裝載的項目清單：
+5. ブート時にリモート共有をマウントします。 セットアップを完了するには、ファイル・システム・テーブル /etc/fstab を編集して、始動時に自動的にマウントされるエントリーのリストにリモート共有を追加します。
 
     `(hostname):/(username) /mnt "nfs version" "options" 0 0`
     
-    使用裝載遠端共用範例中的實例，項目會是：
+    リモート共有をマウントした上記の例を使用すると、次のようなエントリーになります。
     
     `nfsdal0501a.service.softlayer.com:/IBM01SV278685_7 /mnt nfs4 defaults,hard,intr 0 0`
     
-6.  驗證配置檔未發生任何錯誤。
+6.  構成ファイルにエラーがないことを確認します。
 
     `[root@TEST-RHEL6 /]# mount -fav`
     
-    如果指令完成且沒有任何錯誤，則設定已完成。
+    コマンドがエラーなしで完了したら、セットアップは完了です。
 
-**附註：**如果使用 NFS 4.1，請將 'sec=sys' 新增至 mount 指令，以防止檔案所有權問題。
+**注:** NFS 4.1 を使用する場合は、mount コマンドに 'sec=sys' を追加して、ファイル所有権の問題を回避してください。
 
  
-## 如何實作 NFS 的 no_root_squash（選用）
+## NFS 用の no_root_squash の実装方法 (オプション)
 
-配置 no_root_squash 可讓 root 用戶端保留 NFS 共用上的 root 許可權。若為 NFSv3，用戶端不需要執行任何動作；no_root_squash 應該就會運作。若為 NFSv4，您需要將 nfsv4 網域設為 slnfsv4.com，並根據 OS 版本來啟動 rpcidmapd 或類似的服務。
+no_root_squash を構成すると、root クライアントが NFS 共有に対する root 権限を保持できます。 NFSv3 の場合は、クライアントが何もしなくても、no_root_squash は正常に機能します。
+NFSv4 の場合は、nfsv4 ドメインを slnfsv4.com に設定し、rpcidmapd を開始するか、または OS のバージョンに応じた同様のサービスを開始する必要があります。
 
-範例如下：
+以下に例を示します。
 
-1. 從主機中，於 /etc/idmapd.conf 中設定網域設定。
+1. ホストから、/etc/idmapd.conf でドメイン設定を行います。
 
     `#vi /etc/idmapd.conf`
     
@@ -105,8 +106,8 @@ lastupdated: "2018-02-16"
     
     `Nobody-Group = nobody`
     
-2. 執行 nfsidmap -c。
-3. 啟動 rpcidmapd。
+2. nfsidmap -c を実行します。
+3. rpcidmapd を開始します。
 
    ` # /etc/init.d/rpcidmapd start`
    

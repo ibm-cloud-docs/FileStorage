@@ -8,252 +8,253 @@ lastupdated: "2018-02-14"
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 
-# {{site.data.keyword.filestorage_short}}（含 VMware）的架構手冊
+# VMware を使用する場合の{{site.data.keyword.filestorage_short}}のアーキテクチャー・ガイド
 
-以下是在 {{site.data.keyword.BluSoftlayer_full}} 為 vSphere 5.5 及 vSphere 6.0 環境訂購及配置 {{site.data.keyword.filestorage_full}} 的步驟。如果您需要超過 8 條與 VMWare 主機的連線，則使用 NFS {{site.data.keyword.filestorage_short}} 是最佳作法。
+{{site.data.keyword.BluSoftlayer_full}} の vSphere 5.5 と vSphere 6.0 の環境で {{site.data.keyword.filestorage_full}} を注文して構成するための手順を以下に示します。 VMWare ホストへの必要な接続数が 8 を超える場合は、NFS {{site.data.keyword.filestorage_short}} を使用することがベスト・プラクティスです。
 
-## {{site.data.keyword.filestorage_short}} 概觀
+## {{site.data.keyword.filestorage_short}}の概要
 
-{{site.data.keyword.filestorage_short}} 的設計旨在支援需要可預測效能層次的高 I/O 應用程式。透過將通訊協定層次的每秒輸入/輸出作業數 (IOPS) 配置給個別磁區，即可達成可預測效能。
+{{site.data.keyword.filestorage_short}}は、予測可能なレベルのパフォーマンスが求められる、入出力負荷の高いアプリケーションをサポートできるように設計されています。 プロトコル・レベルの IOPS (1 秒あたりの入出力操作数) を個々のボリュームに割り振ることで、予測可能なパフォーマンスを実現しています。
 
-{{site.data.keyword.filestorage_short}} 供應項目是透過 NFS 連線進行存取及裝載。在 VMware 部署中，單一磁區最多可以裝載至 64 台 ESXi 主機作為共用儲存空間，或者您可以裝載多個磁區，以建立儲存空間叢集來使用「vSphere 儲存空間動態資源排程」。
+{{site.data.keyword.filestorage_short}}のオファリングの利用とマウントは、NFS 接続を使用して行います。 VMware デプロイメントでは、単一ボリュームを最大 64 台の ESXi ホストに共有ストレージとしてマウントしたり、複数のボリュームをマウントしてストレージ・クラスターを作成し、vSphere Storage DYNAMIC Resource Scheduling を使用したりできます。
 
-「耐久性」及「效能」{{site.data.keyword.filestorage_short}} 的定價及配置選項，是根據保留空間與所提供 IOPS 的組合進行收費。
+エンデュランスとパフォーマンスの{{site.data.keyword.filestorage_short}}の価格オプションと構成オプションは、予約したスペースと提供される IOPS の組み合わせに基づいて課金されます。
 
-### 1. {{site.data.keyword.filestorage_short}} 考量
+### 1. {{site.data.keyword.filestorage_short}}の考慮事項
 
-訂購 {{site.data.keyword.filestorage_short}} 時，請記住下列資訊及考量：
+{{site.data.keyword.filestorage_short}}を注文する際には、以下の情報と考慮事項に留意してください。
 
-- 佈建 {{site.data.keyword.filestorage_short}} 磁區之後，就無法變更儲存空間大小、IOPS 及作業系統。您要對空間量、IOPS 數目或作業系統所做的任何變更都需要佈建新的磁區。必須使用 VMware Storage vMotion 將任何儲存在先前磁區中的資料移轉至新的磁區。
-- 決定大小時，請考量工作負載的大小以及所需的傳輸量。大小與「耐久性」服務有重大關係，「耐久性」服務會根據容量 (IOPS/GB) 以線性方式擴充效能。這點與「效能」服務相反，「效能」服務容許管理者獨立地選擇容量及效能。傳輸量需求與「效能」有重大關係。<br/> **附註**：傳輸量計算方式為 IOPS x 16 KB。IOPS 的測量基礎是 16 KB 區塊大小，並且具有 50/50 的讀寫混合。<br/> **附註**：增加區塊大小會增加傳輸量，但會減少 IOPS。例如，將區塊大小加倍為 32KB 的區塊可維持最大傳輸量，但會將 IOPS 減半。
-- NFS 利用許多其他檔案控制作業，列舉一些包括例如 lookup、getattr 及 readdir。除了讀/寫作業之外，這些作業也可以計算為 IOPS，而且會依作業類型及 NFS 版本而不同。
-- 在技術上，可以將多個磁區等量配置在一起，以達到更高的 IOPS 及更多傳輸量，不過，VMware 建議每個磁區有單一的「虛擬機器檔案系統 (VMFS)」資料儲存庫，以避免效能降低。
-- {{site.data.keyword.filestorage_short}} 磁區會向授權裝置、子網路或 IP 位址公開。
-- Snapshot 及「抄寫」服務一開始只在「耐久性」{{site.data.keyword.filestorage_short}} 磁區上提供。「效能」{{site.data.keyword.filestorage_short}} 沒有這些功能。
-- 為避免在路徑失效接手期間發生儲存空間斷線，{{site.data.keyword.IBM}} 建議安裝 VMWare 工具，以設定適當的逾時值。不需要變更值，預設值就足以確保 VMWare 主機不會中斷連線。
-- 在 {{site.data.keyword.BluSoftlayer_full}} 環境中，同時支援 NFS 第 3 版及 NFS 4.1 版。不過，{{site.data.keyword.IBM}} 建議使用 NFS 第 3 版。因為 NFS 4.1 版是有狀態的通訊協定（不像 NFSv3 是無狀態的通訊協定），所以在網路事件期間可能會發生通訊協定問題。NFS 4.1 版必須靜止作業，然後執行鎖定收回。進行這些作業時，可能會發生中斷。
+- {{site.data.keyword.filestorage_short}}のボリュームをプロビジョンした後に、ストレージ・サイズ、IOPS、オペレーティング・システムを変更することはできません。 スペースの量、IOPS の数、オペレーティング・システムを変更するには、新しいボリュームをプロビジョンする必要があります。 前のボリュームに保管されたデータは、VMware Storage vMotion を使用して新しいボリュームにマイグレーションする必要があります。
+- サイズを決定する際には、必要なワークロードのサイズとスループットを考慮してください。 容量と性能を管理者が個別に選択できるパフォーマンス・サービスとは異なり、容量 (IOPS/GB) に応じて性能が直線的に高くなるエンデュランス・サービスにとっては、サイズが重要になります。 性能はスループット要件によって決まります。 <br/> **注**: スループットは IOPS x 16 KB という式で計算します。 IOPS は、16 KB ブロック・サイズの読み取り/書き込みが 50/50 の割合で混在するものとして測定されます。 <br/> **注**: ブロック・サイズを大きくすると、スループットは向上しますが IOPS は減少します。 例えば、ブロック・サイズを 2 倍にして 32 KB にすると、最大スループットは維持されますが、IOPS は半減します。
+- NFS は、例えば lookup、getattr、readdir など、他の多くのファイル制御操作を使用します。 読み取り/書き込み操作に加えて、これらの操作も IOPS と見なされ、操作のタイプや NFS のバージョンに応じて異なります。
+- 技術的には、複数のボリュームをまとめてストライピングして IOPS とスループットを向上させることができますが、VMware では、パフォーマンスの低下を防ぐために、単一の Virtual Machine File System (VMFS) データ・ストアをボリュームごとに使用することをお勧めします。
+- {{site.data.keyword.filestorage_short}}のボリュームは、許可されたデバイス、サブネット、または IP アドレスに公開されます。
+- スナップショット・サービスとレプリケーション・サービスは、エンデュランス・{{site.data.keyword.filestorage_short}}のボリュームのネイティブでのみ使用できます。 パフォーマンス・{{site.data.keyword.filestorage_short}}には、これらの機能はありません。
+- パス・フェイルオーバー中のストレージの切断を避けるために、{{site.data.keyword.IBM}} は、適切なタイムアウト値を設定する VMWare ツールをインストールすることをお勧めします。 値を変更する必要はありません。VMWare ホストが接続を失わないようにするには、デフォルト設定で十分です。
+- {{site.data.keyword.BluSoftlayer_full}} 環境では NFS v3 と NFS v4.1 の両方がサポートされます。 ただし、{{site.data.keyword.IBM}} は、NFS v3 を使用することをお勧めします。 NFS v4.1 は、ステートフル・プロトコルである (NFSv3 のようなステートレス・プロトコルではない) ため、ネットワーク・イベント中にプロトコルの問題が発生する可能性があります。 NFS v4.1 では、操作を停止してからロック再利用を行う必要があります。 それらの操作の実行中に、切断される可能性があります。
 
-####  NFS 通訊協定 VMware 特性支援矩陣。
+####  NFS プロトコルと VMware 機能の対応表。
 <table>
  <tbody>
   <tr>
-   <th>vSphere 特性</th>
-   <th>NFS 第 3 版</th>
-   <th>NFS 4.1 版</th>
+   <th>vSphere の機能</th>
+   <th>NFS バージョン 3</th>
+   <th>NFS バージョン 4.1</th>
   </tr>
   <tr>
-   <td>vMotion 及 Storage vMotion</td>
-   <td>是</td>
-   <td>是</td>
+   <td>vMotion および Storage vMotion</td>
+   <td>○</td>
+   <td>○</td>
   </tr>
   <tr>
    <td>高可用性 (HA)</td>
-   <td>是</td>
-   <td>是</td>
+   <td>○</td>
+   <td>○</td>
   </tr>
   <tr>
-   <td>容錯 (FT)</td>
-   <td>是</td>
-   <td>是</td>
+   <td>フォールト・トレランス (FT)</td>
+   <td>○</td>
+   <td>○</td>
   </tr>
   <tr>
-   <td>分散式資源排程器 (DRS)</td>
-   <td>是</td>
-   <td>是</td>
+   <td>分散リソース・スケジューラー (DRS)</td>
+   <td>○</td>
+   <td>○</td>
   </tr>
   <tr>
-   <td>主機設定檔</td>
-   <td>是</td>
-   <td>是</td>
+   <td>ホスト・プロファイル</td>
+   <td>○</td>
+   <td>○</td>
   </tr>
   <tr>
-   <td>儲存空間 DRS</td>
-   <td>是</td>
-   <td>否</td>
+   <td>ストレージ DRS</td>
+   <td>○</td>
+   <td>×</td>
   </tr>
   <tr>
-   <td>儲存空間 I/O 控制</td>
-   <td>是</td>
-   <td>否</td>
+   <td>ストレージ入出力制御</td>
+   <td>○</td>
+   <td>×</td>
   </tr>
   <tr>
-   <td>Site Recovery Manager</td>
-   <td>是</td>
-   <td>否</td>
+   <td>サイト・リカバリー・マネージャー</td>
+   <td>○</td>
+   <td>×</td>
   </tr>
   <tr>
-   <td>虛擬磁區</td>
-   <td>是</td>
-   <td>否</td>
+   <td>仮想ボリューム</td>
+   <td>○</td>
+   <td>×</td>
   </tr>
  </tbody>
 </table>
-*來源：[VMWare - NFS 通訊協定及 ESXi](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){:new_window}*
+*出典: [VMWare - NFS Protocols and ESXi](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){:new_window}*
 
 
 
 
 
-### 2. 耐久性 {{site.data.keyword.filestorage_short}} Snapshot
+### 2. エンデュランス・{{site.data.keyword.filestorage_short}}のスナップショット
 
-「耐久性」{{site.data.keyword.filestorage_short}} 容許管理者設定 Snapshot 排程，以自動建立及刪除每一個儲存空間磁區的 Snapshot 副本。他們也可以建立其他 Snapshot 排程（每小時、每日、每週）來自動取得 Snapshot，以及針對企業永續及災難回復 (BCDR) 情境手動建立特定 Snapshot。會透過 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} 將已保留 Snapshot 及耗用空間的自動警示傳遞給磁區擁有者。
+エンデュランス・{{site.data.keyword.filestorage_short}}を使用すると、管理者は、各ストレージ・ボリュームのスナップショット・コピーを自動的に作成および削除するスナップショット・スケジュールを設定できます。 また、自動スナップショットのスナップショット・スケジュール (毎時、日次、週次) を追加で作成したり、事業継続および災害復旧 (BCDR) のシナリオのスナップショットを随時手動で作成したりすることもできます。 ボリューム所有者に、[{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}を介して、保存されたスナップショットおよび消費されたスペースについての自動アラートが送信されます。
 
-請注意，需要有「Snapshot 空間」才能使用 Snapshot。您可以在初次訂購磁區時或初次佈建之後，透過**磁區詳細資料**頁面獲得空間，方法是按一下「動作」下拉按鈕，然後選取**新增 Snapshot 空間**。
+スナップショットを使用するには、「スナップショット・スペース」が必要であることに注意してください。 スペースはボリュームを最初に注文するときに取得できます。また、最初のプロビジョニングの後で、**「ボリュームの詳細 (Volume Details)」**ページで「アクション」ドロップダウン・ボタンをクリックし、**「スナップショット・スペースの追加 (Add Snapshot Space)」**を選択して取得することもできます。
 
-請務必注意，VMware 環境不知道 Snapshot。「耐久性」{{site.data.keyword.filestorage_short}} Snapshot 功能不得與 VMware Snapshot 混淆。必須從 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} 處理任何使用「耐久性」{{site.data.keyword.filestorage_short}} Snapshot 特性的回復。還原「耐久性」{{site.data.keyword.filestorage_short}} 磁區時，需要關閉位於「耐久性」{{site.data.keyword.filestorage_short}} 上所有 VM 的電源，並暫時從 ESXi 主機卸載磁區，以避免在處理程序期間發生資料損毀。
+VMware 環境はスナップショットを認識しないことに注意してください。 エンデュランス・{{site.data.keyword.filestorage_short}}のスナップショット機能を VMware のスナップショットと混同しないでください。 エンデュランス・{{site.data.keyword.filestorage_short}}のスナップショット機能を使用したリカバリーは、[{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}から行う必要があります。 エンデュランス・{{site.data.keyword.filestorage_short}}のボリュームを復元するには、エンデュランス・{{site.data.keyword.filestorage_short}}上のすべての VM の電源をオフにし、ESXi ホストから一時的にボリュームをアンマウントして、復元処理中のデータ破損を回避する必要があります。
 
-如需有關如何配置 Snapshot 的詳細資料，請參閱 [Snapshot](snapshots.html) 文章。
-
-
-### 3. 檔案儲存庫抄寫
-
-抄寫使用您的其中一個 Snapshot 排程，自動將 Snapshot 複製到遠端資料中心內的目的地磁區。如果發生資料毀損或災難性事件，則可以在遠端網站中回復副本。
+スナップショットの構成方法について詳しくは、[スナップショット](snapshots.html)の記事を参照してください。
 
 
-抄本可讓您
+### 3. ファイル・ストアのレプリケーション
 
-- 透過失效接手至目的地磁區，快速從網站故障及其他災難回復
-- 失效接手至 DR 副本中的特定時間點
-
-您必須先建立 Snapshot 排程，才能進行抄寫。當您失效接手時，您會將「開關」從主要資料中心的儲存空間磁區快速切換到遠端資料中心的目的地磁區。例如，您的主要資料中心是「倫敦」，而次要資料中心是「阿姆斯特丹」。如果發生故障事件，您會失效接手至「阿姆斯特丹」- 從「阿姆斯特丹」的 vSphere Cluster 實例連接至現行主要磁區。
+レプリケーションでは、スナップショット・スケジュールの 1 つを使用して、スナップショットを自動的にリモート・データ・センター内の宛先ボリュームにコピーします。 データの破損や壊滅的な状況が発生した場合に、リモート・サイトのコピーを復旧できます。
 
 
-修復「倫敦」中的磁區之後，會建立「阿姆斯特丹」磁區的 Snapshot，以從「倫敦」的運算實例撤回至「倫敦」及那個再度成為主要磁區的磁區。在磁區撤回至主要資料中心之前，需要先停止在遠端網站的使用。會先建立任何新資訊或已變更資訊的 Snapshot，並抄寫至主要資料中心，然後才能在正式作業網站 ESXi 主機上重新進行裝載。
+レプリカは以下の目的に使用できます。
+
+- 宛先ボリュームにフェイルオーバーして、サイト障害やその他の災害から素早く復旧する
+- DR コピー内の特定の時点にフェイルオーバーする
+
+レプリケーションを行うには、その前にスナップショット・スケジュールを作成する必要があります。 フェイルオーバー時には、プライマリー・データ・センターのストレージ・ボリュームからリモート・データ・センターの宛先ボリュームにスイッチを「切り替え」ます。 例えば、プライマリー・データ・センターがロンドンにあり、セカンダリー・データ・センターがアムステルダムにあるとします。 障害が発生したら、アムステルダムにフェイルオーバーします。つまり、アムステルダムの vSphere Cluster インスタンスにある新プライマリー・ボリュームに接続します。
 
 
-如需有關如何配置抄寫的詳細資料，請參閱[抄寫](replication.html)資訊頁面。
-
-**附註**：會根據 Snapshot 排程及 Snapshot 保留，來抄寫無效的資料（不論是毀損、受到駭客入侵還是感染病毒）。使用最小的抄寫時間範圍可以提供更好的回復點目標。它也可能使得需要較少時間即可對無效資料的抄寫做出反應。
+ロンドンのボリュームが修復されたら、ロンドンにフォールバックしてロンドンのコンピューティング・インスタンスのボリュームをプライマリーに戻すために、アムステルダムのボリュームのスナップショットが作成されます。 ボリュームをプライマリー・データ・センターにフェイルバックする前に、リモート・サイトでの使用を停止する必要があります。 新規または変更された情報のスナップショットが取得され、プライマリー・データ・センターに複製された後に、実動サイトの ESXi ホストに再度マウントできるようになります。
 
 
+レプリケーションの構成方法について詳しくは、[レプリケーション](replication.html)の情報ページを参照してください。
+
+**注**: 破損したり、ハッキングされたり、感染したりしていても、スナップショット・スケジュールとスナップショット保持設定に従って無効なデータが複製されます。 最短のレプリケーション期間にすると、より適切なリカバリー・ポイントに復旧できます。 また、短時間で無効なデータのレプリケーションに対処できる可能性があります。
 
 
 
-## 訂購 {{site.data.keyword.filestorage_short}}
-
-您可以針對 VMware ESXi 5 環境訂購及配置 {{site.data.keyword.filestorage_short}}。將下列資訊與「進階單一網站 VMware 參照架構」一起使用，以在 VMware 環境中設定其中一個儲存空間選項。
 
 
-{{site.data.keyword.filestorage_short}} 可以透過 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} 訂購，方法是透過**儲存空間** > **{{site.data.keyword.filestorage_short}}** 來存取 {{site.data.keyword.filestorage_short}} 頁面。
+## {{site.data.keyword.filestorage_short}}の注文
+
+VMware ESXi 5 環境用の{{site.data.keyword.filestorage_short}}を注文して構成できます。 以下の情報と拡張単一サイト VMware リファレンス・アーキテクチャーを使用して、VMware 環境でこれらのストレージ・オプションのいずれかをセットアップできます。
 
 
-### 1. 訂購 {{site.data.keyword.filestorage_short}}
-
-請使用下列步驟來訂購 {{site.data.keyword.filestorage_short}}：
-1. 按一下 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} 首頁上的**儲存空間** > **{{site.data.keyword.filestorage_short}}**。
-2. 按一下 **{{site.data.keyword.filestorage_short}}** 頁面上的**訂購 {{site.data.keyword.filestorage_short}}** 鏈結。
-3. 從「選取儲存空間類型」下拉清單中，選取**耐久性**/**效能**。
-4. 選取位置。具有改良功能的資料中心會以 `*` 表示。確定新的「儲存空間」將會新增至與先前訂購的 ESXi 主機相同的位置。
-5. 選取計費方法。可用的計費選項為按每月及按每小時計費。
-6. 選取所需的儲存空間量（以 GB 為單位）。若為 TB，1 TB 等於 1,000 GB，而 12 TB 等於 12,000 GB。
-7. 輸入所需的 IOPS 數量（間隔為 100），或選取「IOPS 層級」。
-8. 指定「Snapshot 空間」的大小。
-9. 按一下**繼續**。
-10. 如果您有促銷代碼，請輸入促銷代碼，然後按一下**重新計算**。
-11. 檢閱訂單。
-12. 勾選**我已閱讀主要服務合約，並同意其中的條款**勾選框。
-13. 按一下**下訂單**來提交訂單，或按一下**取消**來關閉表單，而不提交訂單。
-
-在一分鐘以內即會佈建儲存空間，並且它會顯示在 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} 的 **{{site.data.keyword.filestorage_short}}** 頁面上。
+{{site.data.keyword.filestorage_short}}は、[{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}から**「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**にアクセスして「{{site.data.keyword.filestorage_short}}」ページで注文できます。
 
 
+### 1. {{site.data.keyword.filestorage_short}}を注文する
 
-### 2. 授權主機以使用 {{site.data.keyword.filestorage_short}}
+{{site.data.keyword.filestorage_short}}を注文するには、以下の手順を実行します。
+1. [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}のホーム・ページの**「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**をクリックします。
+2. **「{{site.data.keyword.filestorage_short}}」**ページの**「{{site.data.keyword.filestorage_short}}を注文」**リンクをクリックします。
+3. 「ストレージ・タイプの選択」ドロップダウン・リストから**「エンデュランス」**または**「パフォーマンス」**を選択します。
+4. 場所を選択します。 拡張機能を備えたデータ・センターには、`*` が表示されます。 必ず、先に注文した ESXi ホストと同じ場所に新しいストレージが追加されるようにしてください。
+5. 請求方法を選択します。 請求オプションとして毎月または毎時を選択できます。
+6. 必要なストレージ・スペース量を GB 単位で選択します。 TB の場合、1 TB は 1,000 GB、12 TB は 12,000 GB に相当します。
+7. 必要な IOPS 量を 100 単位で入力するか、IOPS ティアを選択します。
+8. スナップショット・スペースのサイズを指定します。
+9. **「次へ進む (Continue)」**をクリックします。
+10. プロモーション・コードがある場合は入力し、**「再計算」**をクリックします。
+11. 注文を確認します。
+12. **「マスター・サービス契約を読み、その契約条件に同意します」**チェック・ボックスにチェック・マークを付けます。
+13. **「注文する」**をクリックして注文を送信するか、**「キャンセル」**をクリックして注文を送信せずにフォームを閉じます。
 
-佈建磁區之後，必須授權將使用磁區的 {{site.data.keyword.BluBareMetServers_full}} 或 {{site.data.keyword.BluVirtServers_full}} 來存取儲存空間。請使用下列步驟來授權磁區：
-
-1. 按一下**儲存空間** > **{{site.data.keyword.filestorage_short}}**。
-2. 在**耐久性**或**效能磁區動作**功能表上，選取**存取主機**。
-3. 選取**子網路**圓鈕。
-4. 從指派給 ESXi 主機上 vmkernel 埠的可用子網路清單中進行選擇，然後按一下**提交**。<br/> **附註**：所顯示的子網路，將是與儲存空間磁區相同資料中心內的已訂閱子網路。
-
-
-授權子網路之後，請記下您在裝載磁區時想要使用之「耐久性」或「效能」儲存空間伺服器的主機名稱。按一下特定磁區，即可在 {{site.data.keyword.filestorage_short}} 詳細資料頁面上找到這項資訊。
-
-
-##  配置 VMware 虛擬機器主機
-
-### 1. 必要條件
-
-開始 VMware 配置處理程序之前，請確定符合下列必要條件：
-
-- 具有 VMware ESXi 的 {{site.data.keyword.BluBareMetServers}} 是使用適當的儲存空間配置及 ESXi 登入認證所佈建。
-- {{site.data.keyword.BluSoftlayer_full}} Windows 實體或 {{site.data.keyword.virtualmachinesshort}}，位於與 {{site.data.keyword.BluBareMetServers}} 相同的資料中心內。包括 {{site.data.keyword.BluSoftlayer_full}} Windows VM 的「公用 IP 位址」及登入認證。
-- 具有網際網路存取的電腦，並且已安裝 Web 瀏覽器軟體及「遠端桌面通訊協定 (RDP)」用戶端。
+ストレージが 1 分もしないうちにプロビジョンされ、[{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}の**「{{site.data.keyword.filestorage_short}}」**ページに表示されます。
 
 
-### 2. VMware 主機配置步驟。
 
-若要配置虛擬主機，請完成下列步驟：
+### 2. {{site.data.keyword.filestorage_short}}の使用をホストに許可する
 
-1. 從已連接網際網路的電腦啟動 RDP 用戶端，並建立與已安裝 vSphere vCenter 之相同資料中心內佈建的 {{site.data.keyword.BluVirtServers_full}} 的 RDP 階段作業。
-2. 從 {{site.data.keyword.BluVirtServers_short}} 中，啟動 Web 瀏覽器，並透過 vSphere Web 用戶端連接至 VMware vCenter。
-3. 從**首頁**畫面中，選取**主機及叢集**。展開左側的畫面，然後選取要用於此部署的 **VMware ESXi 伺服器**。
-4. 確定在所有主機上已開啟 NFS 用戶端的防火牆埠，以便在 vSphere 主機上配置 NFS 用戶端。這會在較新版本的 vSphere 中自動開啟。若要檢查是否已開啟埠，請移至 VMware® vCenter™ 中的 **ESXi 主機管理**標籤、選取**設定**，然後選取**安全設定檔**。在**防火牆**區段中，按一下**編輯**，然後向下捲動至 **NFS 用戶端**。
-5. 確定已提供**容許來自任何 IP 位址或 IP 位址清單的連線**。<br/>
-   ![容許連線](/images/1_4.png)
-6. 移至 **ESXi 主機管理**標籤、選取**管理**，然後選取**網路**，來配置「巨大訊框」。
-7. 選取 **VMkernel 配接卡**、強調顯示 **vSwitch**，然後按一下**編輯**。（「鉛筆」圖示）
-8. 選取 **NIC 設定**，然後確保 NIC MTU 已設為 9000。
-   - 必要時，請將 MTU 設為 9000，然後按一下**確定**。
-9. 需要時，可以驗證巨大訊框設定，如下所示：
-   - 從 Windows：ping -f -l 8972 a.b.c.d
-   - 從 Unix：ping -s 8972 a.b.c.d
-   其中 a.b.c.d 是使用指令的鄰接 {{site.data.keyword.BluVirtServers_short}} 介面：
-   顯示的輸出類似於：
+ボリュームがプロビジョンされたら、そのボリュームを使用する {{site.data.keyword.BluBareMetServers_full}} または {{site.data.keyword.BluVirtServers_full}} に、ストレージへのアクセスを許可する必要があります。 ボリュームを許可するには、以下の手順を実行します。
+
+1. **「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**をクリックします。
+2. **「エンデュランス・ボリューム・アクション (Endurance Volume Actions)」**または**「パフォーマンス・ボリューム・アクション (Performance Volume Actions)」**メニューで**「アクセス・ホスト (Access Host)」**を選択します。
+3. **「サブネット」**ラジオ・ボタンを選択します。
+4. ESXi ホスト上の vmkernel ポートに割り当てられている使用可能なサブネットのリストからサブネットを選択し、**「送信」**をクリックします。<br/> **注**: ストレージ・ボリュームと同じデータ・センター内のサブスクライブされたサブネットが表示されます。
+
+
+サブネットが許可されたら、ボリュームのマウント時に使用するエンデュランス・ストレージ・サーバーまたはパフォーマンス・ストレージ・サーバーのホスト名をメモします。 この情報は、特定のボリュームをクリックすると、{{site.data.keyword.filestorage_short}}の詳細ページに表示されます。
+
+
+##  VMware 仮想マシン・ホストの構成
+
+### 1. 前提条件
+
+VMware 構成プロセスを開始する前に、以下の前提条件が満たされていることを確認してください。
+
+- VMware ESXi を搭載した {{site.data.keyword.BluBareMetServers}} が、適切なストレージ構成と ESXi ログイン資格情報を使用してプロビジョンされている。
+- {{site.data.keyword.BluSoftlayer_full}} Windows 物理サーバーまたは{{site.data.keyword.virtualmachinesshort}}が、{{site.data.keyword.BluBareMetServers}} と同じデータ・センター内にある。 {{site.data.keyword.BluSoftlayer_full}} Windows VM のパブリック IP アドレスおよびログイン資格情報を含む。
+- インターネットにアクセスできるコンピューターがあり、Web ブラウザー・ソフトウェアとリモート・デスクトップ・プロトコル (RDP) クライアントがインストールされている。
+
+
+### 2. VMware ホスト構成手順
+
+仮想ホストを構成するには、以下の手順を実行します。
+
+1. インターネットに接続されたコンピューターから RDP クライアントを起動し、vSphere vCenter がインストールされているのと同じデータ・センターにプロビジョンされた {{site.data.keyword.BluVirtServers_full}} への RDP セッションを確立します。
+2. {{site.data.keyword.BluVirtServers_short}} で Web ブラウザーを起動し、vSphere Web Client を経由して VMware vCenter に接続します。
+3. **「ホーム」**画面で**「ホストおよびクラスター (Hosts and Clusters)」**を選択します。 左側のパネルを展開し、このデプロイメントに使用する **VMware ESXi サーバー**を選択します。
+4. vSphere ホストに NFS クライアントを構成するために、すべてのホストで NFS クライアント用のファイアウォール・ポートが開かれていることを確認します。 これは、最新リリースの vSphere では自動的に開かれます。 ポートが開いているかどうかを確認するには、VMware® vCenter™ の**「ESXi ホストの管理 (ESXi host Manage)」**タブに移動し、**「設定」**を選択し、**「セキュリティー・プロファイル (Security Profile)」**を選択します。 **「ファイアウォール (Firewall)」**セクションで**「編集」**をクリックし、**「NFS クライアント (NFS Client)」**までスクロールダウンします。
+5. **「すべての IP アドレスからの接続を許可する (Allow connection from any IP address)」**が指定されているか、IP アドレスのリストが指定されていることを確認します。 <br/>
+   ![接続を許可する](/images/1_4.png)
+6. **「ESXi ホストの管理 (ESXi host Manage)」**タブに移動し、**「管理」**を選択してから**「ネットワーキング」**を選択して、ジャンボ・フレームを構成します。
+7. **「VMkernel アダプター (VMkernel adapters)」**を選択し、**「vSwitch」**を強調表示し、**「編集」**をクリックします。 (鉛筆アイコン)
+8. **「NIC 設定 (NIC setting)」**を選択し、NIC MTU が 9000 に設定されていることを確認します。
+   - 必要に応じて、MTU を 9000 に設定し、**「OK」**をクリックします。
+9. 必要に応じて、ジャンボ・フレーム設定を以下のように検証できます。
+   - Windows の場合: ping -f -l 8972 a.b.c.d
+   - UNIX の場合: ping -s 8972 a.b.c.d
+   このコマンドで a.b.c.d は、隣接する {{site.data.keyword.BluVirtServers_short}} インターフェースです。
+   出力は次のようになります。
    ```ping a.b.c.d (a.b.c.d) 8972(9000) bytes of data.
    8980 bytes from a.b.c.d: icmp_seq=1 ttl=128 time=3.36 ms
    ```
 
-如需 VMware 及「巨大訊框」的相關資訊，請參閱[這裡](https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=1003712){:new_window}。
+VMware およびジャンボ・フレームについて詳しくは、[こちら](https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=1003712){:new_window}を参照してください。
 
 
-### 3. 將上行鏈路配接卡新增至虛擬交換器
+### 3. 仮想スイッチへのアップリンク・アダプターの追加
 
-1. 移至 **ESXi 主機管理**標籤，選取**管理**，然後選取**網路**，來配置新的上行鏈路配接卡。
-2. 選取**實體配接卡**標籤
-3. 按一下**新增主機網路**。（具有加號的「地球」圖示）
-4. 選取連線類型作為**實體網路配接卡**，然後按**下一步**。
-5. 選取現有 **vSwitch**，然後按**下一步**。
-6. 選取**未用的配接卡**，然後按一下**新增配接卡**。（加號）
-7. 按一下其他「已連接」配接卡，然後按一下**確定**。<br/>
-   ![將實體配接卡新增至交換器](/images/2_3.png)
-8. 按**下一步**及**完成**。
-9. 導覽回**虛擬交換器**標籤，然後選取**虛擬交換器**標題下的上方**編輯設定**圖示。（「鉛筆」圖示）
-10. 選取左側的 **vSwitch 小組**及失效接手項目。驗證**負載平衡**選項已設為**根據原始虛擬埠來遞送**，然後按一下**確定**。
+1. **「ESXi ホストの管理 (ESXi host Manage)」**タブに移動し、**「管理」**を選択してから**「ネットワーキング」**を選択して、新規アップリンク・アダプターを構成します。
+2. **「物理アダプター (Physical adapters)」**タブを選択します。
+3. **「ホスト・ネットワーキングの追加 (Add host networking)」**をクリックします。 (正符号付きの地球儀アイコン)
+4. 接続タイプとして**「物理ネットワーク・アダプター (Physical Network Adapter)」**を選択し、**「次へ」**をクリックします。
+5. 既存の **vSwitch** を選択し、**「次へ」**をクリックします。
+6. **「未使用のアダプター (Unused adapters)」**を選択し、**「アダプターの追加 (Add adapters)」**をクリックします。 (正符号)
+7. もう一方の「接続済み (Connected)」アダプターをクリックし、**「OK」**をクリックします。 <br/>
+   ![物理アダプターをスイッチに追加する](/images/2_3.png)
+8. **「次へ」**をクリックして、**「完了」**をクリックします。
+9. **「仮想スイッチ (Virtual switches)」**タブに戻り、**「仮想スイッチ (Virtual Switches)」**見出しの下にある**「設定の編集 (Edit setting)」**アイコンを選択します。 (鉛筆アイコン)
+10. **「vSwitch チーミング (vSwitch Teaming)」**と左側のフェイルオーバー・エントリーを選択します。
+**「ロード・バランシング (Load balancing)」**オプションが**「発信元の仮想ポートに基づいたルート (Route based on the originating virtual port)」**に設定されていることを確認し、**「OK」**をクリックします。
 
 
-### 4. 配置 ESXi 靜態遞送（選用）
+### 4. ESXi 静的ルーティングの構成 (オプション)
 
-此架構手冊的網路配置使用最少數目的埠群組。如果您已設定 NFS 儲存空間的 VMkernal 埠群組，則必須執行其他步驟。依預設，ESXi 將使用位在與 NFS 磁區相同子網路上的 vmkernel 埠，以在「耐久性/效能」儲存空間上裝載 NFS 磁區。因為我們使用第 3 層遞送來裝載 NFS 磁區，所以必須強制 ESXi 使用我們已配置的 vmkernel 埠來裝載 NFS 磁區。若要這麼做，我們必須建立一個指向「耐久性/效能」儲存空間陣列的靜態路由。
+このアーキテクチャー・ガイドのネットワーク構成では、最小限の数のポート・グループを使用します。 NFS ストレージ用に VMkernal ポート・グループをセットアップした場合は、追加の手順を実行する必要があります。 デフォルトでは、ESXi は NFS ボリュームと同じサブネット上にある vmkernel ポートを使用して、エンデュランス/パフォーマンス・ストレージに NFS ボリュームをマウントします。 NFS ボリュームをマウントするためにレイヤー 3 ルーティングを使用しているため、NFS ボリュームをマウントするように構成した vmkernel ポートを ESXi に強制的に使用させる必要があります。 このために、エンデュランス/パフォーマンス・ストレージ・アレイへの静的ルートを作成する必要があります。
 
-1. 若要配置靜態路由，請以 SSH 方式連接至每一台利用「效能」或「耐久性」的 ESXi 主機，並執行下列指令。請注意，您必須取得產生的 IP 位址 ping 指令（第一個指令），並將它與下面顯示的 esxcli network 指令搭配使用：
+1. 静的ルートを構成するには、パフォーマンスまたはエンデュランスを使用する各 ESXi ホストに SSH で接続し、以下のコマンドを実行します。 ping コマンド (最初のコマンド) の結果として得られる IP アドレスを、以下の esxcli ネットワーク・コマンドで使用する必要があります。
    - `ping <hostname of the endurance/performance array>`
 
-      **附註**：NFS 儲存空間 DNS 主機名稱是獲指派多個 IP 位址的「轉遞區域 (FZ)」。這些 IP 位址是靜態的，並屬於該特定 DNS 主機名稱。您可以使用其中任何一個 IP 位址來存取特定的磁區。
-   - `esxcli network ip route ipv4 add -gateway GATEWAYIP -network <result of ping command>/32`
+      **注**: NFS ストレージの DNS ホスト名は、複数の IP アドレスが割り当てられる転送ゾーン (FZ) であることに注意してください。 これらの IP アドレスは静的であり、その特定の DNS ホスト名に属します。  これらの IP アドレスはすべて、特定のボリュームにアクセスするために使用できます。
+   - `esxcli network ip route ipv4 add –gateway GATEWAYIP –network <result of ping command>/32`
 
-2. 請注意，在 ESXi 5.0 及更早版本上，靜態路由在各次重新開機之間無法持續保存。為了確定任何已新增的靜態路由都能持續保存，需要將這些指令新增至每一台主機上的 local.sh 檔案，該檔案位於 /etc/rc.local.d/ 目錄中。若要這麼做，請使用視覺化編輯器開啟 local.sh 檔案，並新增上述指令，以在 exit 0 這一行上方執行。
-   - 記下 IP 位址，因為它可以在下一步中用於裝載磁區。
-   - 需要對計劃要裝載至 ESXi 主機的每一個 NFS 磁區執行此處理程序。
-   - 以下是 VMware KB 文章的鏈結：[Configuring static routes for VMkernel ports on an ESXi host](https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=2001426){:new_window}。
+2. ESXi 5.0 以前では、静的ルートはリブートをまたいで保持されません。 追加した静的ルートを保持させるには、これらのコマンドを各ホストの /etc/rc.local.d/ ディレクトリーにある local.sh ファイルに追加する必要があります。 そのためには、Visual Editor を使用して local.sh ファイルを開き、上記のコマンドを行終了 0 の上に追加して実行されるようにします。
+   - 次の手順でボリュームをマウントする際に使用できるように、IP アドレスをメモします。
+   - このプロセスは、ESXi ホストにマウントする NFS ボリュームごとに実行する必要があります。
+   - VMware KB の記事「[Configuring static routes for VMkernel ports on an ESXi host](https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=2001426){:new_window}」を参照してください。
 
 
-##  在 ESXi 主機上裝載 {{site.data.keyword.filestorage_short}} 磁區
+##  ESXi ホストへの{{site.data.keyword.filestorage_short}}・ボリュームのマウント
 
-1. 按一下網頁頂端的**移至 vCenter** 圖示，然後按一下**主機及叢集**。
-2. 按一下**相關物件**標籤下的**資料儲存庫**。按一下**建立新的資料儲存庫**圖示。
-3. 在**新建資料儲存庫**畫面上，選取資料儲存庫的位置（您的 ESXi 主機），然後按**下一步**。
-4. 在**類型**畫面上，選取 **NFS** 圓鈕，然後按**下一步**。
-5. 在**名稱及配置**畫面上，輸入您想要稱呼資料儲存庫的名稱。此外，請輸入 NFS 伺服器的主機名稱。使用 NFS 伺服器的 FQDN 可產生對基礎伺服器的最佳資料流量分佈。IP 位址也有效，但不常使用，而且只有在特定實例中才會使用。請以 /foldername 形式輸入資料夾名稱。
-6. 在**主機可存取性**畫面上，選取您想要裝載 NFS 資料儲存庫的所有主機，然後按**下一步**。
-7. 檢閱下一個畫面上的輸入，然後按一下**完成**。
-8. 針對任何其他 {{site.data.keyword.filestorage_short}} 磁區重複進行。
+1. Web ページの上部にある**「vCenter に移動 (Go to vCenter)」**アイコンをクリックし、次に**「ホストおよびクラスター (Hosts and Clusters)」**をクリックします。
+2. **「関連オブジェクト (Related Object)」**タブの下にある**「データ・ストア (Datastores)」**をクリックします。 **「新規データ・ストアの作成 (Create a new datastore)」**アイコンをクリックします。
+3. **「新規データ・ストア (New Datastore)」**画面で、データ・ストア (使用する ESXi ホスト) の場所を選択し、**「次へ」**をクリックします。
+4. **「タイプ」**画面で**「NFS」**ラジオ・ボタンを選択し、**「次へ」**をクリックします。
+5. **「名前と構成 (Name and configuration)」**画面で、データ・ストアに付ける名前を入力します。 さらに、NFS サーバーのホスト名を入力します。 NFS サーバーの FQDN を使用すると、その基礎サーバーへの最適なトラフィック配信が行われます。 IP アドレスも有効ですが、特定の状況を除き、あまり使用されません。 フォルダー名を /foldername の形式で入力します。
+6. **「ホストのアクセス可能性 (Host accessibility)」**画面で、NFS データ・ストアをマウントするホストをすべて選択し、**「次へ」**をクリックします。
+7. 次の画面で入力を確認し、**「完了」**をクリックします。
+8. 他の{{site.data.keyword.filestorage_short}}・ボリュームについても同じ手順を繰り返します。
 
-**附註**：{{site.data.keyword.BluSoftlayer_full}} 建議使用 FQDN 名稱來連接至資料儲存庫。使用直接 IP 定址可能會略過使用 FQDN 所提供的負載平衡機制。若要使用 IP 位址，而非 FQDN，請執行下列指令來取得 IP 位址。
+**注**: {{site.data.keyword.BluSoftlayer_full}} はデータ・ストアへの接続に FQDN 名を使用することをお勧めします。 直接 IP アドレッシングを使用すると、FQDN を使用することで機能するロード・バランシング・メカニズムがバイパスされる可能性があります。 FQDN の代わりに IP アドレスを使用するには、以下のコマンドを実行して IP アドレスを取得します。
 
   - `ping <hostname of the endurance/performance array>`
-  - 從 ESXi 主機：
+  - ESXi ホストで以下を実行します。
     ```
     ~ # vmkping nfsdal0902a-fz.service.softlayer.com
     PING nfsdal0902a-fz.service.softlayer.com (10.2.125.80): 56 data bytes
@@ -261,73 +262,74 @@ lastupdated: "2018-02-14"
     10.2.125.80 is the IP address associated with the FQDN
     ```
 
-## 啟用 ESXi 儲存空間 I/O 控制設定（選用）
+## ESXi ストレージ入出力制御設定を有効にする (オプション)
 
-「儲存空間 I/O 控制 (SIOC)」是一種特性，可供使用 Enterprise Plus 授權的客戶使用。在環境中啟用 SIOC 時，會變更單一 VM 的裝置佇列長度。裝置佇列長度變更，會將所有 VM 的儲存空間陣列佇列，減少為儲存空間佇列的相等共用及節流控制。只有在資源受限且儲存空間 I/O 延遲高於定義的臨界值時，才會使用 SIOC。
-
-
-為了讓 SIOC 判斷儲存裝置何時壅塞或受限，需要已定義的臨界值。不同儲存空間類型的壅塞臨界值延遲會不同；預設選項是尖峰傳輸量的 90%。尖峰傳輸量值的百分比指出資料儲存庫使用這個百分比的預估尖峰傳輸量時的預估延遲臨界值。
+ストレージ入出力制御 (SIOC) は、Enterprise Plus ライセンスを利用するお客様が使用できる機能です。 SIOC を有効にした環境では、単一 VM のデバイス・キューの長さが変更されます。 デバイス・キューの長さの変更により、すべての VM のストレージ・アレイ・キューが縮小されて、ストレージ・キューが均等に割り当てられ、調整されるようになります。 SIOC は、リソースが制約されていて、定義したしきい値をストレージ入出力の待ち時間が超える場合にのみ有効です。
 
 
-請注意，不正確地針對資料儲存庫或 VMDK 配置 SIOC，可能會嚴重影響效能。
+ストレージ・デバイスが輻輳または制約されていることを SIOC が検知できるようにするために、定義されたしきい値が必要です。 輻輳しきい値待ち時間は、ストレージ・タイプによって異なります。デフォルトではピーク・スループットの 90% が選択されます。 ピーク・スループット値のパーセンテージは、データ・ストアがその推定ピーク・スループットのパーセンテージを使用している場合の推定待ち時間しきい値を示します。
 
 
-
-### 1. 資料儲存庫的儲存空間 I/O 控制
-
-使用下列步驟，以針對「耐久性」及「效能」儲存空間使用建議值啟用 SIOC：
-
-1. 在「vSphere Web 用戶端」導覽器中，瀏覽至資料儲存庫。
-2. 按一下**管理**標籤。
-3. 按一下**設定**，然後按一下**一般**。
-4. 針對**資料儲存庫功能**，按一下**編輯**。
-5. 選取**啟用儲存空間 I/O 控制**勾選框。<br/>
-   ![NSFDataStore](/images/3_0.png)
-6. 按一下**確定**。
-
-**附註**：此設定是資料儲存庫特有的，而不是主機特有的。
-
-
-### 2. {{site.data.keyword.BluVirtServers_short}} 的儲存空間 I/O 控制
-
-您也可以使用 SIOC 限制個別 VM 的個別虛擬磁碟，或授與不同的共用給它們。限制磁碟以及授與不同的共用可讓您比對環境，並讓環境符合所獲得 {{site.data.keyword.filestorage_short}} 磁區 IOPS 數目的工作負載。限制是由 IOPS 設定，而且可以設定不同的加權或「共用」。共用設為「高」（2,000 個共用）的虛擬磁碟所收到的 I/O 是設為「正常」（1,000 個共用）的磁碟的兩倍，且是設為「低」（500 個共用）的磁碟的四倍。「正常」是所有 VM 的預設值，因此您只需要針對實際有需要的 VM 調整高於或低於「正常」的值。
-
-
-請使用下列步驟來變更 vDisk 共用及限制：
-
-1. 在 **VM 及範本**庫存中，選擇 {{site.data.keyword.BluVirtServers_short}}。圖示位於網頁的左上角。
-2. 選取「I/O 控制」的 {{site.data.keyword.BluVirtServers_short}}。
-3. 按一下**管理**標籤，然後按一下**設定**。按一下**編輯**。
-4. 展開「硬碟」下拉箭頭。適當地修改您環境的「共用」或「限制 IOPS」。從清單中選擇虛擬硬碟，然後修改「共用」選項來選擇要配置給 {{site.data.keyword.BluVirtServers_short}} 的相對共用數量（「低」、「正常」或「高」）。您也可以按一下**自訂**，然後輸入使用者定義的共用值。
-5. 按一下「限制 IOPS」直欄，然後輸入要配置給虛擬機器的儲存空間資源上限。
-6. 按一下**確定**
-
-
-   **附註**：即使未啟用 SIOC 時，也會使用上述處理程序來設定 {{site.data.keyword.BluVirtServers_short}} 中個別 vDisk 的資源耗用限制。這些設定專用於個別訪客，而不是主機（雖然是由 SIOC 使用它們）。
+データ・ストアまたは VMDK にとって適切でない SIOC を構成すると、パフォーマンスに重大な影響を及ぼす可能性があることに注意してください。
 
 
 
+### 1. データ・ストアのストレージ入出力制御
+
+エンデュランス・ストレージとパフォーマンス・ストレージの推奨値を使用して SIOC を有効にするには、以下の手順を実行します。
+
+1. vSphere Web Client ナビゲーターでデータ・ストアを参照します。
+2. **「管理」**タブをクリックします。
+3. **「設定」**をクリックし、**「一般」**をクリックします。
+4. **「データ・ストア機能 (Datastore Capabilities)」**の**「編集」**をクリックします。
+5. **「ストレージ入出力制御を有効にする (Enable Storage I/O Control)」**チェック・ボックスをオンにします。<br/>
+   ![NSF データ・ストア](/images/3_0.png)
+6. **「OK」**をクリックします。
+
+**注**: この設定は (ホストではなく) データ・ストアに固有の設定です。
 
 
-## ESXi 主機端設定
+### 2. {{site.data.keyword.BluVirtServers_short}} のストレージ入出力制御
 
-設定 NFS 儲存空間的 ESXi 5.x 主機需要一些其他設定。
+SIOC を使用して、個々の VM の個々の仮想ディスクを制限したり、異なる数の割り当てを付与したりすることもできます。 ディスクを制限し、異なる数の割り当てを付与することで、取得した{{site.data.keyword.filestorage_short}}・ボリュームの IOPS 数のワークロードに環境を合わせることができます。 この制限は IOPS の単位で設定します。異なるウェイトまたは「割り当て数」を設定できます。 割り当て数を「高 (High)」(割り当て数 2,000) に設定した仮想ディスクは、「標準 (Normal)」(割り当て数 1,000) に設定したディスクの 2 倍、また、「低 (Low)」(割り当て数 500) に設定したディスクの 4 倍の入出力を受け取ります。「標準 (Normal)」がすべての VM のデフォルト値であるため、実際に入出力を必要とする VM に合わせて「標準 (Normal)」より上または下に値を調整する必要があります。
 
-|參數      | 設為   ... |
+
+vDisk の割り当て数と制限を変更するには、以下の手順を実行します。
+
+1. **「VM およびテンプレート (VMs and Templates)」**インベントリーで「{{site.data.keyword.BluVirtServers_short}}」を選択します。 アイコンは、Web ページの左上にあります。
+2. 入出力制御を行う {{site.data.keyword.BluVirtServers_short}} を選択します。
+3. **「管理」**タブをクリックし、**「設定」**をクリックします。 **「編集」**をクリックします。
+4. ハード・ディスクのプルダウンの矢印を展開します。 環境に応じて、「割り当て (Shares)」または「制限 - IOPS (Limit-IOPs)」を変更します。 リストから仮想ハード・ディスクを選択し、「割り当て (Shares)」の選択を変更して、{{site.data.keyword.BluVirtServers_short}} に割り振る相対的な割り当て量 (「低 (Low)」、「標準 (Normal)」、または「高 (High)」) を選択します。 **「カスタム」**をクリックして、ユーザー定義の割り当て値を入力することもできます。
+5. 「制限 - IOPS (Limit - IOPS)」列をクリックし、仮想マシンに割り振るストレージ・リソースの上限を入力します。
+6. **「OK」**をクリックします。
+
+
+   **注**: 上記のプロセスは、SIOC が有効になっていない場合でも、{{site.data.keyword.BluVirtServers_short}} 内の個々の vDisk のリソース使用量の上限を設定する目的で使用できます。 これらの設定は、SIOC で使用されますが、ホストではなく個々のゲストにのみ適用されます。
+
+
+
+
+
+## ESXi ホスト・サイドの設定
+
+NFS ストレージを使用できるように ESXi 5.x ホストをセットアップするには、いくつかの追加設定が必要です。
+
+|パラメーター | 設定値 |
 |----------|------------|
 |Net.TcpipHeapSize |	32 |
-|Net.TcpipHeapMax |	若為 vSphere 5.0/5.1，設為 128 <br/> 若為 vSphere 5.5 或更新版本，設為 512 |
+|Net.TcpipHeapMax |	vSphere 5.0/5.1 の場合は 128 に設定 <br/> vSphere 5.5 以降の場合は 512 に設定 |
 |NFS.MaxVolumes |	256 |
-|NFS41.MaxVolumes |	256（僅限 vSphere 6.0 或更新版本）|
+|NFS41.MaxVolumes |	256 (vSphere 6.0 以降のみ) |
 |NFS.HeartbeatMaxFailures |	10 |
 |NFS.HeartbeatFrequency |	12 |
 |NFS.HeartbeatTimeout |	5 |
 |NFS.MaxQueueDepth|	64 |
 
 
-- 在 ESXi 5.x 主機上使用 CLI 作為進階配置參數：下列範例使用 CLI 來設定這些進階配置參數，然後檢查它們。在 ESXi 5.x 主機的 /usr/sbin 目錄中，可以找到範例中所使用的 esxcfg-advcfg 工具。
+- ESXi 5.x ホストで CLI を使用して拡張構成パラメーターを設定する場合:
+  以下の例では、CLI を使用してこれらの拡張構成パラメーターを設定し、設定後に確認しています。 例で使用している esxcfg-advcfg ツールは、ESXi 5.x ホスト上の /usr/sbin ディレクトリー内にあります。
 
-   - 從 ESXi 5.x CLI 設定進階配置參數：
+   - ESXi 5.x CLI からの拡張構成パラメーターの設定:
    ```
    #esxcfg-advcfg -s 32 /Net/TcpipHeapSize
    #esxcfg-advcfg -s 128 /Net/TcpipHeapMax(For vSphere 5.0/5.1)
@@ -342,7 +344,7 @@ lastupdated: "2018-02-14"
    #esxcfg-advcfg -s 8 /Disk/QFullThreshold
    ```
 
-- 從 ESXi 5.x CLI 檢查進階配置參數：
+- ESXi 5.x CLI からの拡張構成パラメーターの確認:
    ```
    #esxcfg-advcfg -g /Net/TcpipHeapSize
    #esxcfg-advcfg -g /Net/TcpipHeapMax
@@ -357,42 +359,39 @@ lastupdated: "2018-02-14"
    ```
 
 
-## 在 SoftLayer 中啟用巨大訊框 - Windows 及 Linux
+## SoftLayer でのジャンボ・フレームの有効化 - Windows および Linux
 
-{{site.data.keyword.BluSoftlayer_full}} 表示，為了能夠完整實現儲存空間上的速度，需要以 9,000 個 MTU 啟用「巨大訊框」。
-
-
-巨大訊框是有效負載大於標準最大傳輸單位 (MTU) 1,500 位元組的乙太網路訊框。巨大訊框用於支援最少 1 Gbps 的區域網路，且最大可達到 9,000 個位元組。
+{{site.data.keyword.BluSoftlayer_full}} は、ストレージの速度を完全に実現するためには、ジャンボ・フレームを 9,000 MTU で有効にする必要があることを明記しています。
 
 
-必須在來源裝置 <-> 交換器 <-> 路由器 <-> 交換器 <-> 目的地裝置中的整個網路路徑上，配置相同的「巨大訊框」。如果整個鏈結未設為相同，則會預設為鏈結的最低設定。SoftLayer 目前將其網路裝置設為 9,000。所有客戶裝置都需要設為相同。
+ジャンボ・フレームとは、標準最大伝送単位 (MTU) である 1,500 バイトよりペイロードが大きいイーサネット・フレームです。 ジャンボ・フレームは、1 Gbps 以上をサポートするローカル・エリア・ネットワークで使用され、9,000 バイトのサイズにすることができます。
+
+
+ソース・デバイスから <-> スイッチ <-> ルーター <-> スイッチ <-> 宛先デバイスまでのネットワーク・パス全体で、同じジャンボ・フレームを構成する必要があります。 チェーン全体で同じ設定になっていないと、チェーン全体がデフォルトの最小設定に変更されます。 SoftLayer のネットワーク・デバイスは現在 9,000 に設定されています。 すべてのカスタマー・デバイスを同じ設定にする必要があります。
 
 ### Windows
 
-1. 開啟**網路及共用中心**。
-2. 按一下**變更介面卡設定**。
-3. 用滑鼠右鍵按一下您要啟用巨大訊框的 NIC，然後選取**內容**。
-4. 在**網路**標籤下，按一下網路配接卡的**設定**。
-5. 選取**進階**標籤。
-6. 選取**巨大訊框**，然後根據 NIC，將值從 disabled 變更為所需的值（例如 9kB MTU 或 9,014 個位元組）。
-7. 按一下所有對話框的**確定**。
+1. **「ネットワークと共有センター」**を開きます。
+2. **「アダプターの設定の変更」**をクリックします。
+3. ジャンボ・フレームを有効にする NIC を右クリックし、**「プロパティ」**を選択します。
+4. **「ネットワーク」**タブでネットワーク・アダプターの**「構成」**をクリックします。
+5. **「詳細設定」**タブを選択します。
+6. **「ジャンボフレーム」**を選択し、NIC に応じて、値を「無効」から適切な値 (9kB MTU、9,014 バイトなど) に変更します。
+7. すべてのダイアログで**「OK」**をクリックします。
 
-請注意，當您進行變更時，NIC 的網路連線功能會中斷幾秒鐘。您也應該重新開機，以確保變更生效。
+変更を加えると、数秒間 NIC がネットワーク接続を失うので注意してください。 また、変更を有効にするためにリブートする必要があります。
 
 
 
 ### LINUX
 
-1. 編輯 eth0 介面的網路配置檔，例如，/etc/sysconfig/network-script/ifcfg-eth0 (CentOS/RHEL/Fedora Linux)：
-`# vi /etc/sysconfig/network-script/ifcfg-eth0`
+1. eth0 インターフェースのネットワーク構成ファイル (例: /etc/sysconfig/network-script/ifcfg-eth0 (CentOS / RHEL / Fedora Linux)) を編集します。`# vi/etc/sysconfig/network-script/ifcfg-eth0`
 
-2. 附加下列配置指引，以指定訊框大小（以位元組為單位）：MTU 9000
+2. フレームのサイズをバイト単位で指定する構成ディレクティブ「MTU 9000」を追加します。
 
-3. 關閉並儲存檔案。重新啟動介面 eth0：
-`# /etc/init.d/networking restart (This will cause a brief loss of network connectivity)`
+3. ファイルを閉じて保存します。 インターフェース eth0 を再始動します。`# /etc/init.d/networking restart (これにより、ネットワーク接続が一時的に失われます)`
 
 
-Debian/Ubuntu Linux 使用者的附註：
-Debian/Ubuntu Linux 使用者應該將 MTU=9000 新增至 /etc/network/interfaces 配置檔。
+注 (Debian / Ubuntu Linux ユーザーのみ): Debian / Ubuntu Linux ユーザーは、MTU=9000 を /etc/network/interfaces 構成ファイルに追加する必要があります。
 
-在[這裡](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}進一步瞭解「進階單一網站 VMware 參照架構」。
+拡張単一サイト VMware リファレンス・アーキテクチャーについて詳しくは、[こちら](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}を参照してください。

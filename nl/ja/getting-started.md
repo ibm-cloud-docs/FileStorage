@@ -13,25 +13,25 @@ lastupdated: "2018-01-08"
 {:pre: .pre}
 
 
-# 開始使用 {{site.data.keyword.filestorage_short}}
+# {{site.data.keyword.filestorage_short}}の概説
 
-簡要說明小節應該包括一到兩個句子，用以說明系統管理者或 DevOps 工程師為何要使用此基礎架構供應項目或服務。簡單提及使用者的學習目標，並在標題及（或）簡要說明中包括下列 SEO 關鍵字：IBM Cloud、ServiceName。請務必使用交談樣式。如需詳細資料，請參閱 Carbon Design System 中的交談樣式指引，網址為 http://www.carbondesignsystem.com/guidelines/content/general。
+簡略説明セクションには、システム管理者または開発運用エンジニアに、このインフラストラクチャー・オファリングまたはサービスの使用をお勧めする理由を表す文を 1 つから 2 つ含める必要があります。
+ユーザーの学習目標が何であるかを簡潔に記述し、タイトルまたは簡略説明、あるいはその両方に、SEO キーワードである IBM Cloud と ServiceName を含めます。 会話型スタイルを使用するようにしてください。 詳しくは、Carbon Design System の会話型スタイルについてのガイダンス (http://www.carbondesignsystem.com/guidelines/content/general) を参照してください。
 
-範例：資源需求驟增時，您需要可以在控制下橫向擴充以立即符合這些新需求的雲端基礎架構服務。在適合您工作負載的地理區域中，只要幾分鐘，就能透過您選擇的虛擬伺服器映像檔來部署「{{site.data.keyword.Bluemix}} 虛擬伺服器」。只要工作負載消失，就可以暫停或關閉那些虛擬伺服器的電源，讓您的雲端環境完美地符合基礎架構需求。
+例: リソース需要が急増した場合に、制御された方法でスケールアウトして、それらの新しい要件にただちに対応できるクラウド・インフラストラクチャー・サービスが必要です。 {{site.data.keyword.Bluemix}} 仮想サーバーは、任意の仮想サーバー・イメージから、ワークロードにとって合理的な地理的領域にわずか数分でデプロイできます。 ワークロードが軽くなった場合には、それらの仮想サーバーを一時停止したり停止したりして、クラウド環境をインフラストラクチャー・ニーズに完全に合わせることができます。
 
-作業區段包括裝置、儲存空間或網路的設定及執行步驟。
-- 使用以作業為基礎的技術資訊，減少交談樣式，以支持簡明扼要且直接的指示。
-- 包括基本最常用的情境步驟，以使用基礎架構服務。
-- 不要包括從 Bluemix 型錄新增服務的步驟；我們假設使用者已在使用者介面中執行新增服務的步驟。
-- 包括以所有語言撰寫且可複製的程式碼 Snippet，以及 VCAP 服務資訊。VCAP 服務資訊的相關資訊，請參閱 https://console.ng.bluemix.net/docs/cli/vcapsvc.html
-- 針對配置、管理等等其他作業，請在作業區段或所使用的「關於」區段下面新增作業區段 (## Gerund_task_title)。使用 "Configuring x"、"Administering y"、"Managing z" 這類作業標題。-->
+タスク・セクションには、デバイス、ストレージ、またはネットワーキングを稼働状態にするための手順を含めます。
+- タスク・ベースの技術情報では、簡潔で直接的な説明を優先して、会話型スタイルは減らしてください。
+- インフラストラクチャー・サービスを使用するための最も一般的な使い方のシナリオの基本的な手順を含めてください。
+- Bluemix カタログからサービスを追加するための手順は含めないでください。サービスを追加する手順をユーザーは既に UI で実行していることを前提としています。
+- すべての言語のコピー可能なコード・スニペットに加えて、VCAP サービス情報を含めてください。VCAP サービス情報については、https://console.ng.bluemix.net/docs/cli/vcapsvc.html を参照してください。
+- 構成や管理などの追加タスクについては、タスク・セクションまたは「About」セクション (使用する場合) の下に、タスク・セクション (## Gerund_task_title) を追加してください。 「Configuring x」「Administering y」、「Managing z」などのタスク・タイトルを使用してください。 -->
 
-## 必要條件
-管理者必須先具有已升級的 {{site.data.keyword.Bluemix}} 帳戶，才能佈建或管理其基礎架構供應項目。如需相關資訊，請參閱[升級與統一 {{site.data.keyword.Bluemix_notm}} 及 SoftLayer 計費帳戶](../docs/admin/softlayerlink.html)。
+## 前提条件
+管理者は、インフラストラクチャー・オファリングをプロビジョンしたり管理したりする前に、{{site.data.keyword.Bluemix}} アカウントをアップグレードしておく必要があります。 詳しくは、[{{site.data.keyword.Bluemix_notm}} と SoftLayer の請求アカウントのアップグレードと統一](../docs/admin/softlayerlink.html)を参照してください。
 
-## 作業導向的標題及說明
-若要快速開始進行此基礎架構服務，請遵循以下步驟：-或者-
-完成以下步驟，以開始使用 Block Storage 服務：
+## タスク指向のタイトルと説明
+このインフラストラクチャー・サービスを迅速に稼働させるには、以下の手順を実行します。つまり、以下の手順に従って、ブロック・ストレージ・サービスを開始します。
 
 <!-- Use ordered list markup for the step section. For code examples:
 - use three backticks ahead of and after the example (```)
@@ -40,36 +40,36 @@ lastupdated: "2018-01-08"
 - For non-copyable output snippet, include {: screen} following the last set of backticks.
  -->
 
-1. 步驟 1 設定服務。
-2. 步驟 2 設定服務。
+1. サービスをセットアップするための手順 1。
+2. サービスをセットアップするための手順 2。
 
 	```
-	Copyable example for this step.
-	This example might be multiline code
-	to copy into a file.
-	When displayed in the doc framework,
-	it will have a copy button on the right.
-	The user can click to copy the example
-	so they can paste it into their code editor.
+	この手順のコピー可能なサンプル。
+	このサンプルは、ファイルにコピーする
+	複数行コードでもかまわない。
+	doc フレームワークで表示されると、
+	右側にコピー・ボタンがある。
+	ユーザーは、クリックしてサンプルをコピーすることで、
+	コード・エディターに貼り付けることができる。
 	```
 	{: codeblock}
 
-3. 步驟 3. 在此步驟中，我們有一個單行的指令範例。由文件架構顯示時，會在指令行開頭顯示 $，並在右側顯示複製按鈕。複製按鈕將會複製指令，但不複製 $。
+3. 手順 3. この手順では、単一行コマンドの例を示します。 doc フレームワークによって表示されると、行の先頭に $ が示され、右側にコピー・ボタンがあります。 コピー・ボタンでコマンドがコピーされますが、$ はコピーされません。
 
 	```
-	my command -and -options
+	コマンドとオプション
 	```
 	{: pre}
 
-4. 步驟 4
+4. 手順 4
 	```
-	This is a bunch of output from
-		a command or program I ran
-			and it can run lots of lines
-			and the doc framework will show it as
-			output with no copy button.
+	これは、実行されたコマンドまたは
+		プログラムからの一連の出力です。
+			何行にもわたる可能性があります。
+			doc フレームワークでは、コピー・ボタンのない
+			出力として表示されます。
 	```
 	{: screen}
 
-## 後續步驟
+## 次の手順
 
