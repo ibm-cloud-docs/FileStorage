@@ -14,7 +14,7 @@ Die folgenden Schritte zeigen, wie {{site.data.keyword.filestorage_full}} in ein
 
 ## Übersicht über {{site.data.keyword.filestorage_short}}
 
-{{site.data.keyword.filestorage_short}} wurde zur Unterstützung von Anwendungen mit hoher E/A-Aktivität entwickelt, die vorhersagbare Leistungsniveaus erfordern. Die vorhersagbare Leistung wird durch Zuordnung von E/A-Operationen pro Sekunde (IOPS) zu einzelnen Datenträgern auf Protokollebene erzielt. 
+{{site.data.keyword.filestorage_short}} wurde zur Unterstützung von Anwendungen mit hoher E/A-Aktivität entwickelt, die vorhersagbare Leistungsniveaus erfordern. Die vorhersagbare Leistung wird durch Zuordnung von E/A-Operationen pro Sekunde (IOPS) zu einzelnen Datenträgern auf Protokollebene erzielt.
 
 Das {{site.data.keyword.filestorage_short}}-Angebot wird über eine NFS-Verbindung angehängt und zugänglich gemacht. In einer VMware-Bereitstellung kann ein einzelner Datenträger mit bis zu 64 ESXi-Hosts als gemeinsam genutzter Speicher durch Mounts verbunden werden. Sie können aber auch mehrere Datenträger anhängen, um einen Speichercluster zu erstellen und vSphere Storage DYNAMIC Resource Scheduling zu nutzen.
 
@@ -103,7 +103,7 @@ Beachten Sie, dass zur Verwendung von Snapshots “Snapshotbereich” erforderli
 Es wichtig zu beachten, dass VMware-Umgebungen Snapshots nicht erkennen. Die Endurance {{site.data.keyword.filestorage_short}}-Snapshotfunktionalität darf nicht mit VMware-Snapshots verwechselt werden. Jede Wiederherstellung mithilfe der Endurance {{site.data.keyword.filestorage_short}}-Snapshotfunktion muss über das [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} durchgeführt werden. Zur Wiederherstellung des Endurance {{site.data.keyword.filestorage_short}}-Datenträgers ist es erforderlich, alle VMs auszuschalten, die sich auf Endurance {{site.data.keyword.filestorage_short}} befinden, und den Datenträger zeitweilig von den ESXi-Hosts abzuhängen, um eine Beschädigung von Daten während des Prozesses zu vermeiden.
 
 Weitere Einzelheiten zur Konfiguration von Snapshots finden Sie im Artikel zu [Snapshots](snapshots.html).
- 
+
 
 ### 3. Dateispeicherreplikation
 
@@ -118,16 +118,16 @@ Replikate bieten folgende Möglichkeiten:
 Bevor Sie replizieren können, müssen Sie einen Snapshotplan erstellen. Wenn Sie einen Failover durchführen, “schalten Sie um”, und zwar von Ihrem Speicherdatenträger in Ihrem primären Rechenzentrum auf den Zieldatenträger in Ihrem fernen Rechenzentrum. Ihr primäres Rechenzentrum ist zum Beispiel London und Ihr sekundäres Rechenzentrum ist Amsterdam. Im Falle eines Fehlerereignisses können Sie ein Failover auf Amsterdam durchführen – dazu stellen Sie zu dem jetzigen primären Datenträger eine Verbindung von einer vSphere Cluster-Instanz in Amsterdam her.
 
 
-Nachdem Ihr Datenträger in London repariert wurde, wird ein Snapshot des Datenträgers in Amsterdam erstellt, um die Zurückübertragung (Fallback) auf den Datenträger in London und den nun wieder primären Datenträger von einer Compute-Instanz in London durchzuführen. Bevor der Datenträger wieder auf das primäre Rechenzentrum zurückübertragen wird, muss seine Verwendung am fernen Standort gestoppt werden. Ein Snapshot neuer oder geänderter Informationen wird erstellt und an das pirmäre Rechenzentrum repliziert, bevor der Datenträger wieder an die ESXi-Hosts am Produktionsstandort angehängt werden kann.
+Nachdem Ihr Datenträger in London repariert wurde, wird ein Snapshot des Datenträgers in Amsterdam erstellt, um die Rückübertragung auf den Datenträger in London und den nun wieder primären Datenträger von einer Compute-Instanz in London durchzuführen. Bevor der Datenträger wieder auf das primäre Rechenzentrum zurückübertragen wird, muss seine Verwendung am fernen Standort gestoppt werden. Ein Snapshot neuer oder geänderter Informationen wird erstellt und an das pirmäre Rechenzentrum repliziert, bevor der Datenträger wieder an die ESXi-Hosts am Produktionsstandort angehängt werden kann.
 
 
 Weitere Informationen zur Konfiguration der Replikation finden Sie auf der Informationsseite zur [Replikation](replication.html).
 
 **Anmerkung:** Ungültige Daten, seien es beschädigte, gehackte oder infizierte, werden dem Snapshotplan und der angegebenen Snapshotaufbewahrung entsprechend repliziert. Durch Verwendung der kleinsten Replikationsfenster lässt sich ein besseres Ziel in Bezug auf den maximal tolerierbaren Datenverlust bei einem Ausfall (Recovery Point Objective, RPO) realisieren. Außerdem lässt es möglicherweise weniger Zeit zur Reaktion auf die Replikation ungültiger Daten.
 
- 
 
- 
+
+
 
 ## {{site.data.keyword.filestorage_short}} bestellen
 
@@ -135,7 +135,7 @@ Sie können {{site.data.keyword.filestorage_short}} für eine VMware ESXi 5-Umge
 
 
 {{site.data.keyword.filestorage_short}} kann über das [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} bestellt werden. Greifen Sie zu diesem Zweck auf die {{site.data.keyword.filestorage_short}}-Seite über die Optionen **Speicher** > **{{site.data.keyword.filestorage_short}}** zu.
- 
+
 
 ### 1. {{site.data.keyword.filestorage_short}} bestellen
 
@@ -143,7 +143,7 @@ Führen Sie die folgenden Schritte aus, um {{site.data.keyword.filestorage_short
 1. Klicken Sie auf **Speicher** > **{{site.data.keyword.filestorage_short}}** auf der [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}-Startseite.
 2. Klicken Sie auf den Link **{{site.data.keyword.filestorage_short}} bestellen** auf der Seite **{{site.data.keyword.filestorage_short}}**.
 3. Wählen Sie **Endurance**/**Performance** in der Dropdown-Liste 'Speichertyp auswählen' aus.
-4. Wählen Sie die Position aus. Rechenzentren mit verbesserter Funktionalität sind durch einen Stern (`*`) gekennzeichnet. Stellen Sie sicher, dass der neue Speicher an derselben Position wie der zuvor bestellte ESXi-Host (bzw. die bestellten Hosts) hinzugefügt wird. 
+4. Wählen Sie die Position aus. Rechenzentren mit verbesserter Funktionalität sind durch einen Stern (`*`) gekennzeichnet. Stellen Sie sicher, dass der neue Speicher an derselben Position wie der zuvor bestellte ESXi-Host (bzw. die bestellten Hosts) hinzugefügt wird.
 5. Wählen Sie die Rechnungsstellungsmethode aus. Die Optionen 'Monatliche' und 'Stündliche' Rechnungsstellung sind verfügbar.
 6. Wählen Sie die gewünschte Größe des Speicherbereichs in GB aus. Bei TB ist 1 TB gleich 1.000 GB und 12 TB sind gleich 12.000 GB.
 7. Geben Sie den gewünschten Wert für IOPS (E/A-Operationen pro Sekunde) in Intervallen von 100 ein oder wählen Sie eine IOPS-Stufe aus.
@@ -156,7 +156,7 @@ Führen Sie die folgenden Schritte aus, um {{site.data.keyword.filestorage_short
 
 Der Speicher wird in weniger als einer Minute bereitgestellt und auf der Seite **{{site.data.keyword.filestorage_short}}** im [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} angezeigt.
 
- 
+
 
 ### 2. Hosts für die Verwendung von {{site.data.keyword.filestorage_short}} autorisieren
 
@@ -170,7 +170,7 @@ Sobald ein Datenträger bereitgestellt ist, müssen {{site.data.keyword.BluBareM
 
 Wenn die Teilnetze autorisiert sind, notieren Sie den Hostnamen des Endurance- oder Performance-Speicherservers, den Sie beim Anhängen des Datenträgers verwenden wollen. Diese Information ist auf der {{site.data.keyword.filestorage_short}}-Detailseite durch Klicken auf einen bestimmten Datenträger zu finden.
 
- 
+
 ##  Host für virtuelle VMware-Maschinen konfigurieren
 
 ### 1. Voraussetzungen
@@ -180,7 +180,7 @@ Stellen Sie vor Beginn des VMware-Konfigurationsprozesses sicher, dass die folge
 - {{site.data.keyword.BluBareMetServers}} mit VMware ESXi wurde mit der entsprechenden Konfiguration und den ESXi-Anmeldeberechtigungsnachweisen bereitgestellt.
 - {{site.data.keyword.BluSoftlayer_full}} Windows ist physisch vorhanden oder {{site.data.keyword.virtualmachinesshort}} im selben Rechenzentrum wie die {{site.data.keyword.BluBareMetServers}}. Dies schließt die öffentliche IP-Adresse der {{site.data.keyword.BluSoftlayer_full}} Windows VM und die Anmeldeberechtigungsnachweise ein.
 - Ein Computer mit Internetzugang und mit der Web-Browser-Software sowie mit einem installierten RDP-Client (RDP - Remote Desktop Protocol) ist verfügbar.
- 
+
 
 ### 2. Schritte für die VMware-Hostkonfiguration
 
@@ -190,7 +190,7 @@ Führen Sie die folgenden Schritte aus, um den virtuellen Host zu konfigurieren:
 2. Starten Sie in {{site.data.keyword.BluVirtServers_short}} einen Web-Browser und stellen Sie eine Verbindung zu VMware vCenter über den vSphere Web Client her.
 3. Wählen Sie auf der Hauptanzeige (**HOME**) die Option für Hosts und Cluster (**Hosts and Clusters**) aus. Erweitern Sie die Anzeige auf der linken Seite und wählen Sie den **VMware-ESXi-Server** aus, der für diese Bereitstellung verwendet werden soll.
 4. Stellen Sie sicher, dass der Firewall-Port für den NFS-Client auf allen Hosts geöffnet ist, um den NFS-Client auf dem vSphere-Host zu konfigurieren. Dieser Port wird in den zuletzt veröffentlichen Releases von vSphere automatisch geöffnet. Wechseln Sie zum Prüfen, ob der Port geöffnet ist, zur Registerkarte für die ESXi-Hostverwaltung (**ESXi host Manage**) in VMware® vCenter™, wählen Sie **Settings** (Einstellungen) und anschließend **Security Profile** (Sicherheitsprofil) aus. Klicken Sie im Abschnitt **Firewall** auf **Edit** (Bearbeiten) und blättern Sie nach unten zu **NFS Client**.
-5. Stellen Sie sicher, dass **eine Verbindung über eine beliebige IP-Adresse oder aus einer angegebenen Liste von IP-Adressen** zugelassen wird.<br/>
+5. Stellen Sie sicher, dass **eine Verbindung über eine beliebige IP-Adresse oder aus einer angegebenen Liste von IP-Adressen** zugelassen wird. <br/>
    ![Verbindung zulassen](/images/1_4.png)
 6. Konfigurieren Sie Jumbo-Frames, indem Sie zur Registerkarte **ESXi host Manage** wechseln und die Optionen **Manage** (Verwalten) und **Networking** (Netz) auswählen.
 7. Wählen Sie **VMkernel adapters** (VM-Kernel-Adapter) aus, heben Sie den Eintrag **vSwitch** hervor und klicken Sie auf **Edit** (Bearbeiten - Stiftsymbol).
@@ -206,12 +206,12 @@ Führen Sie die folgenden Schritte aus, um den virtuellen Host zu konfigurieren:
    ```
 
 Weitere Informationen zu VMware und Jumbo-Frames finden Sie [hier](https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=1003712){:new_window}.
- 
+
 
 ### 3. Uplink-Adapter zum virtuellen Switch hinzufügen
 
 1. Konfigurieren Sie einen neuen Uplink-Adapter, indem Sie zur Registerkarte **ESXi host Manage** wechseln und die Optionen **Manage** und **Networking** auswählen.
-2. Wählen Sie die Registerkarte **Physical adapters** (Physische Adapter) aus. 
+2. Wählen Sie die Registerkarte **Physical adapters** (Physische Adapter) aus.
 3. Klicken Sie auf die Option **Add host networking** (Hostnetz hinzufügen - Globussymbol mit Pluszeichen)
 4. Wählen Sie für den Verbindungstyp die Option **Physical Network Adapter** (Physischer Netzadapter) und klicken Sie auf **Next** (Weiter).
 5. Wählen Sie den vorhandenen **vSwitch** aus und klicken Sie auf **Next**.
@@ -222,28 +222,28 @@ Weitere Informationen zu VMware und Jumbo-Frames finden Sie [hier](https://kb.vm
 9. Navigieren Sie zur Registerkarte **Virtual switches** zurück und wählen Sie das obere Symbol **Einstellung bearbeiten** (Stiftsymbol) unter der Überschrift **Virtual Switches** aus.
 10. Wählen Sie den Eintrag für **vSwitch Teaming** und Failover auf der linken Seite aus.
 Stellen Sie sicher, dass die Option **Load balancing** (Lastverteilung) auf **Route based on the originating virtual port** (Route auf Basis des virtuellen Herkunftsports) und klicken Sie auf **OK**.
- 
+
 
 ### 4. Statisches ESXi-Routing konfigurieren (optional)
 
 Die Netzkonfiguration für diesen Architekturleitfaden arbeitet mit einer minimalen Anzahl von Portgruppen. Wenn Sie eine VMkernal-Portgruppe für den NFS-Speicher eingerichtet haben, sind zusätzliche Schritte erforderlich. ESXi verwendet standardmäßig den VMkernel-Port, der sich im gleichen Teilnetz wie ein NFS-Datenträger befindet, um den NFS-Datenträger an einen Endurance/Performance-Speicher anzuhängen. Da Routing der Schicht 3 (Layer 3 Routing) zum Anhängen des NFS-Datenträgers verwendet wird, muss ESXi veranlasst werden, den VMkernel-Port zu verwenden, der zum Anhängen des NFS-Datenträgers konfiguriert wurde. Dazu muss eine statische Route zum Endurance/Performance-Speicherarray erstellt werden.
 
 1. Zum Konfigurieren einer statischen Route stellen Sie eine SSH-Verbindung zu jedem ESXi-Host her, der Performance oder Endurance verwendet, und führen die folgenden Befehle aus. Beachten Sie, dass Sie den resultierenden Pingbefehl für die IP-Adresse (erster Befehl) nehmen und mit dem nachfolgend gezeigten esxcli-Netzbefehl verwenden müssen:
-   - `ping <Hostname des Endurance/Performance-Arrays>`
-   
-      **Anmerkung:** Der DNS-Hostname des NFS-Speichers ist eine Weiterleitungszone (Forwarding Zone - FZ), der mehrere IP-Adressen zugeordnet sind. Diese IP-Adressen sind statisch und gehören zu diesem speziellen DNS-Hostnamen. Jede dieser IP-Adressen kann für den Zugriff auf einen bestimmten Datenträger verwendet werden.
-   - `esxcli network ip route ipv4 add –gateway GATEWAY-IP –network <Ergebnis des Pingbefehls>/32`
+   - `ping <hostname of the endurance/performance array>`
+
+      **Anmerkung:** Der DNS-Hostname des NFS-Speichers ist eine Weiterleitungszone (Forwarding Zone - FZ), der mehrere IP-Adressen zugeordnet sind. Diese IP-Adressen sind statisch und gehören zu diesem speziellen DNS-Hostnamen.  Jede dieser IP-Adressen kann für den Zugriff auf einen bestimmten Datenträger verwendet werden.
+   - `esxcli network ip route ipv4 add –gateway GATEWAY-IP –network <result of ping command>/32`
 
 2. Beachten Sie, dass statische Routen unter ESXi 5.0 und früheren Versionen nicht über Neustarts hinweg bestehen bleiben. Zur Sicherstellung, dass alle hinzugefügten statischen Routen persistent bestehen bleiben, müssen diese Befehle in der Datei 'local.sh' auf jedem Host im Verzeichnis /etc/rc.local.d/ hinzugefügt werden. Öffnen Sie dazu die Datei 'local.sh' mit dem visuellen Editor und fügen Sie den obigen auszuführenden Befehl über der Zeile 'exit 0' hinzu.
    - Notieren Sie die IP-Adresse, da sie zum Anhängen des Datenträgers im nächsten Schritt verwendet werden kann.
    - Dies muss für jeden NFS-Datenträger ausgeführt werden, der an Ihren ESXi-Host angehängt werden soll.
    - Einen Artikel zu VMware KB erreichen Sie über den folgenden Link: [Statische Routen für VMkernel-Ports auf einem ESXi-Host konfigurieren (englisch)](https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=2001426){:new_window}.
- 
+
 
 ##  {{site.data.keyword.filestorage_short}}-Datenträger an die ESXi-Hosts anhängen
 
 1. Klicken Sie auf das Symbol **Go to vCenter** im oberen Bereich der Webseite und anschließend auf **Hosts and Clusters**.
-2. Klicken Sie auf **Datastores** (Datenspeicher) unter der Registerkarte **Related Object** (Zugehöriges Objekt). Klicken Sie auf das Symbol **Create a new datastore** (Neuen Datenspeicher erstellen). 
+2. Klicken Sie auf **Datastores** (Datenspeicher) unter der Registerkarte **Related Object** (Zugehöriges Objekt). Klicken Sie auf das Symbol **Create a new datastore** (Neuen Datenspeicher erstellen).
 3. Wählen Sie auf der Anzeige **New Datastore** (Neuer Datenspeicher) die Position des Datenspeichers (Ihren ESXi-Host) aus und klicken Sie auf **Next** (Weiter).
 4. Wählen Sie auf der Anzeige **Type** das Optionsfeld **NFS** aus und klicken Sie auf **Next**.
 5. Geben Sie auf der Anzeige **Name and configuration** den Namen ein, den Sie dem Datenspeicher geben möchten. Geben Sie außerdem den Hostnamen des NFS-Servers ein. Die Verwendung des FQDN für den NFS-Server sorgt für die beste Datenverkehrsverteilung an den zugrunde liegenden Server. Die IP-Adresse ist ebenfalls gültig, wird jedoch weniger häufig und nur in bestimmten Instanzen verwendet. Geben Sie den Ordnernamen in der Form '/ordnername' ein.
@@ -253,7 +253,7 @@ Die Netzkonfiguration für diesen Architekturleitfaden arbeitet mit einer minima
 
 **Anmerkung:** Für {{site.data.keyword.BluSoftlayer_full}} wird empfohlen, FQDN-Namen für die Verbindung zum Datenspeicher zu verwenden. Durch die direkte Verwendung von IP-Adressen könnte der Lastausgleichsmechanismus, der durch die Verwendung von FQDN-Namen bereitgestellt wird, umgangen werden. Zur Verwendung der IP-Adresse anstelle des FQDN führen Sie den folgenden Befehl aus, um die IP-Adresse abzurufen.
 
-  - `ping <Hostname des Endurance/Performance-Arrays>`
+  - `ping <hostname of the endurance/performance array>`
   - Von einem ESXi-Host:
     ```
     ~ # vmkping nfsdal0902a-fz.service.softlayer.com
@@ -272,7 +272,7 @@ Zur Feststellung, wann eine Speichereinheit ausgelastet oder eingeschränkt ist,
 
 Es ist zu beachten, dass eine falsche Konfiguration von SIOC für einen Datenspeicher oder für eine VMDK die Leistung erheblich beeinträchtigen kann.
 
- 
+
 
 ### 1. Storage I/O Control für einen Datenspeicher
 
@@ -287,28 +287,28 @@ Führen Sie die folgenden Schritte aus, um SIOC mit den empfohlenen Werten für 
 6. Klicken Sie auf **OK**.
 
 **Anmerkung:** Diese Einstellung ist für den Datenspeicher, nicht für den Host spezifisch.
- 
+
 
 ### 2. Storage I/O Control für einen {{site.data.keyword.BluVirtServers_short}}-Speicher
 
-Mit SIOC können Sie auch einzelne virtuelle Platten für einzelne VMs begrenzen oder ihnen unterschiedliche Anteile (Shares) zuteilen. Die Begrenzung von Platten und die Zuteilung unterschiedlicher Anteile geben Ihnen die Möglichkeit, die Umgebung auf die Workload mit dem IOPS-Wert des erhaltenen {{site.data.keyword.filestorage_short}}-Datenträgers abzustimmen und auszurichten. Die Begrenzung wird durch E/A-Operationen pro Sekunde (IOPS) festgelegt und es ist möglich, eine andere Gewichtung oder Anteile ("Shares") festzulegen. Anteile virtueller Platten, die auf High (2.000 Anteile) gesetzt sind, empfangen zweimal so viele E/A-Operationen wie eine Platte, die auf Normal (1.000 Anteile) gesetzt ist, und viermal so viele E/A-Operationen wie eine Platte, die auf Low (500 Anteile) gesetzt ist. Normal ist der Standardwert für alle VMs, sodass Sie nur die Werte über oder unter Normal für die VMs anpassen müssen, für die dies tatsächlich erforderlich ist.
+Mit SIOC können Sie auch einzelne virtuelle Platten für einzelne VMs begrenzen oder ihnen unterschiedliche Anteile (Shares) zuteilen. Die Begrenzung von Platten und die Zuteilung unterschiedlicher Anteile geben Ihnen die Möglichkeit, die Umgebung auf die Workload mit dem IOPS-Wert des erhaltenen {{site.data.keyword.filestorage_short}}-Datenträgers abzustimmen und auszurichten. Die Begrenzung wird durch E/A-Operationen pro Sekunde (IOPS) festgelegt und es ist möglich, eine andere Gewichtung oder Anteile ("Shares") festzulegen. Virtuelle Platten mit Anteilen, die auf High (2.000 Anteile) gesetzt sind, empfangen zweimal so viele E/A-Operationen wie eine Platte, die auf Normal (1.000 Anteile) gesetzt ist, und viermal so viele E/A-Operationen wie eine Platte, die auf Low (500 Anteile) gesetzt ist. Normal ist der Standardwert für alle VMs, sodass Sie nur die Werte über oder unter Normal für die VMs anpassen müssen, für die dies tatsächlich erforderlich ist.
 
 
 Führen Sie die folgenden Schritte aus, um die vDisk-Anteile (Shares) und die Begrenzung zu ändern:
 
-1. Wählen Sie einen {{site.data.keyword.BluVirtServers_short}}-Speicher in der Bestandsliste **VMs and Templates** (VMs und Vorlagen) aus. Das Symbol befindet sich oben links auf der Webseite. 
+1. Wählen Sie einen {{site.data.keyword.BluVirtServers_short}}-Speicher in der Bestandsliste **VMs and Templates** (VMs und Vorlagen) aus. Das Symbol befindet sich oben links auf der Webseite.
 2. Wählen Sie {{site.data.keyword.BluVirtServers_short}} for I/O Control aus.
 3. Klicken Sie auf die Registerkarte **Manage** und klicken Sie auf **Settings**. Klicken Sie auf **Edit** (Bearbeiten).
 4. Erweitern Sie den Pulldown-Pfeil für Festplatten (Hard disk). Ändern Sie die Anteile (Shares) oder Begrenzungs-IOPS (Limit-IOPs) wie für Ihre Umgebung angemessen. Wählen Sie eine virtuelle Festplatte in der Liste aus und ändern Sie den Abschnitt für Anteile (Shares), um die relative Menge an Anteilen auszuwählen, die dem {{site.data.keyword.BluVirtServers_short}}-Speicher zugeordnet werden soll (Low, Normal oder High). Sie können auch auf **Custom** klicken und einen benutzerdefinierten Anteilswert eingeben.
 5. Klicken Sie auf die Spalte 'Limit - IOPS' und geben Sie die Obergrenze der Speicherressourcen ein, die der virtuellen Maschine zugeordnet werden sollen.
 6. Klicken Sie auf  **OK**.
- 
+
 
    **Anmerkung:** Durch die oben beschriebene Vorgehensweise werden Begrenzungen für die Ressourcennutzung einzelner virtueller Platten (vDisks) in einem {{site.data.keyword.BluVirtServers_short}}-Speicher festgelegt, auch wenn SIOC nicht aktiviert ist. Diese Einstellungen sind für den einzelnen Gast spezifisch, nicht für den Host, obwohl sie von SIOC verwendet werden.
 
- 
 
- 
+
+
 
 ## Einstellungen auf der ESXi-Hostseite
 
@@ -324,7 +324,7 @@ Es gibt einige zusätzliche Einstellungen, die für die Einrichtung von ESXi 5.x
 |NFS.HeartbeatFrequency |	12 |
 |NFS.HeartbeatTimeout |	5 |
 |NFS.MaxQueueDepth|	64 |
- 
+
 
 - Über die Befehlszeilenschnittstelle (CLI) auf einem ESXi 5.x-Host für erweiterte Konfigurationsparameter:
   In den folgenden Beispielen werden diese erweiterten Konfigurationsparameter über die CLI festgelegt und anschließend geprüft. Das Tool 'esxcfg-advcfg' in den Beispielen befindet sich auf den ESXi 5.x-Hosts im Verzeichnis /usr/sbin.
@@ -381,7 +381,7 @@ Jumbo-Frames müssen im gesamten Netzpfad von der Quelleneinheit <-> Switch <-> 
 
 Beachten Sie, dass die Netzkonnektivität der Netzadapterkarte (NIC) bei Änderungen für ein paar Sekunden unterbrochen wird. Sie sollten einen Warmstart durchführen, um sicherzustellen, dass die Änderung wirksam ist.
 
- 
+
 
 ### LINUX
 

@@ -16,7 +16,7 @@ Der bevorzugte Migrationspfad besteht darin, beide Datenträger gleichzeitig zu 
 
 Die etwas gängigeren Szenarios werden zur Veranschaulichung kurz dargestellt. Dabei wird davon ausgegangen, dass Sie Ihren nicht verschlüsselten Dateidatenträger bereits an Ihren Host angehängt haben. Wenn dies nicht der Fall ist, führen Sie von den nachfolgenden Anweisungen diejenigen aus, die am besten zu dem Betriebssystem passen, das Sie ausführen, um diese Task zu erledigen. 
 
-**Anmerkung:** Alle verschlüsselten {{site.data.keyword.filestorage_short}}-Datenträger haben einen anderen Mountpunkt als nicht verschlüsselte Datenträger. Um sicherzustellen, dass Sie den richtigen Mountpunkt für Ihre verschlüsselten und nicht verschlüsselten {{site.data.keyword.filestorage_short}}-Datenträger verwenden, können Sie die Mountpunktinformationen auf der Seite **Datenträgerdetails** in der Benutzerschnittstelle abrufen sowie auf den richtigen Mountpunkt durch einen API-Aufruf zugreifen: SoftLayer_Network_Storage::getNetworkMountAddress().
+**Anmerkung:** Alle verschlüsselten {{site.data.keyword.filestorage_short}}-Datenträger haben einen anderen Mountpunkt als nicht verschlüsselte Datenträger.  Um sicherzustellen, dass Sie den richtigen Mountpunkt für Ihre verschlüsselten und nicht verschlüsselten {{site.data.keyword.filestorage_short}}-Datenträger verwenden, können Sie die Mountpunktinformationen auf der Seite **Datenträgerdetails** in der Benutzerschnittstelle abrufen sowie auf den richtigen Mountpunkt durch einen API-Aufruf zugreifen: SoftLayer_Network_Storage::getNetworkMountAddress().
 
 [Auf {{site.data.keyword.filestorage_short}} unter Linux zugreifen](accessing-file-storage-linux.html)
 

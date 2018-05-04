@@ -68,7 +68,7 @@ cluster1 ~ # mount |grep data
 
 Das Anhängen einer CIFS-Freigabe wird in CoreOS nicht nativ unterstützt, jedoch ist eine recht einfache Ausweichlösung verfügbar, durch die NAS-Freigaben an das Hostsystem angehängt werden können. Dazu verwenden Sie einen Container, um die Moduldatei 'mount.cfis' zu erstellen und diese anschließend auf das CoreOS-System zu kopieren.
  
-Führen Sie auf dem CoreOS-System den folgenden Befehl aus, um die Moduldatei herunterzuladen und in einem Fedora-Container abzulegen: <br/>
+Führen Sie auf dem CoreOS-System den folgenden Befehl aus, um die Moduldatei herunterzuladen und in einem Fedora-Container abzulegen:  <br/>
 `docker run -t -i -v /tmp:/host_tmp fedora /bin/bash`
  
 Sobald Sie sich in dem Container befinden, können Sie die folgenden Befehle ausführen, um das CIFS-Dienstprogramm zu erstellen:

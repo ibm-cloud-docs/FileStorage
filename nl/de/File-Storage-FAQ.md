@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-02-02"
+lastupdated: "2018-04-24"
 
 ---
 {:new_window: target="_blank"}
@@ -41,7 +41,7 @@ Bei der Bereitstellung von {{site.data.keyword.filestorage_short}}-Speicher werd
 
 ## Warum kann {{site.data.keyword.filestorage_short}} mit einer Endurance-Stufe von 10 IOPS in einigen Rechenzentren bereitgestellt werden, in anderen jedoch nicht?
 
-Der {{site.data.keyword.filestorage_short}}-Typ Endurance mit der 10 IOPS/GB-Stufe ist nur in ausgewählten Rechenzentren verfügbar. Weitere Rechenzentren werden in Kürze hinzugefügt. Eine vollständige Liste der aktualisierten Rechenzentren und der verfügbaren Features finden Sie [hier](/docs//infrastructure/BlockStorage/new-ibm-block-and-file-storage-location-and-features.html).
+Der {{site.data.keyword.filestorage_short}}-Typ Endurance mit der 10 IOPS/GB-Stufe ist nur in ausgewählten Rechenzentren verfügbar. Weitere Rechenzentren werden in Kürze hinzugefügt.  Eine vollständige Liste der aktualisierten Rechenzentren und der verfügbaren Features finden Sie [hier](/docs//infrastructure/BlockStorage/new-ibm-block-and-file-storage-location-and-features.html).
 
 ## Wie wird der richtige Mountpunkt für den eigenen {{site.data.keyword.filestorage_short}}-Speicher ermittelt?
 
@@ -57,11 +57,11 @@ In der folgenden Tabelle sind die maximalen Anzahlen von Dateidescriptoren (I-No
             <th>Dateidescriptoren (I-Nodes)/Dateien</th>
           </tr>
           <tr>
-            <td>20 GB</td>
+            <td>20 GB </td>
             <td>622.484</td>
           </tr>
           <tr>
-            <td>40 GB</td>
+            <td>40 GB </td>
             <td>1.245.084</td>
           </tr>          
           <tr>
@@ -89,7 +89,7 @@ In der folgenden Tabelle sind die maximalen Anzahlen von Dateidescriptoren (I-No
 
 ## Wie viele Datenträger können bereitgestellt werden?
 
-Sie können standardmäßig eine kombinierte Gesamtzahl von 250 Block- und Dateispeicherdatenträger bereitstellen. Wenden Sie sich an Ihren Vertriebsbeauftragten, um die Anzahl Ihrer Datenträger zu erhöhen.
+Sie können standardmäßig eine kombinierte Gesamtzahl von 250 Block- und Dateispeicherdatenträger bereitstellen.  Wenden Sie sich an Ihren Vertriebsbeauftragten, um die Anzahl Ihrer Datenträger zu erhöhen.
 
 ## Wie viele Instanzen können einen bereitgestellten {{site.data.keyword.filestorage_short}}-Datenträger gemeinsam nutzen?
 
@@ -107,11 +107,15 @@ Durchsatzbegrenzungen werden auf Datenträger- bzw. LUN-Ebne festgelegt. Daher f
 
 Als bewährtes Verfahren wird empfohlen, den Speicherdatenverkehr über ein VLAN zu leiten, das die Firewall umgeht. Wenn der Speicherdatenverkehr über Software-Firewalls geleitet wird, erhöht sich dadurch die Latenz und die Speicherleistung wird beeinträchtigt.
 
+## Welche Leistungslatenz ist von {{site.data.keyword.filestorage_short}}-Speicher zu erwarten?   
+
+Die Ziellatenz innerhalb des Speichers beträgt < 1 ms. File Storage-Speicher wird mit Compute-Instanzen in einem gemeinsam genutzten Netz verbunden, sodass die genaue Leistungslatenz vom Netzverkehr in einem bestimmten Zeitrahmen abhängig ist.
+
 ## Was geschieht mit den Daten, wenn {{site.data.keyword.filestorage_short}}-Datenträger gelöscht werden?
 
 Wenn Speicher gelöscht wird, werden alle Verweise auf die Daten in diesem Datenträger entfernt, sodass die Daten völlig unzugänglich werden. Wenn der physische Speicher erneut für ein anderes Konto bereitgestellt wird, wird eine neue Gruppe von Verweisen zugeordnet. Es besteht keine Möglichkeit für das neue Konto, auf Daten zuzugreifen, die sich möglicherweise einmal auf dem physischen Speicher befunden haben. Die neue Gruppe von Verweisen zeigt ausschließlich Nullen (0) an. Wenn neue Daten auf den Datenträger/die LUN geschrieben werden, werden alle unzugänglichen Daten, die noch vorhanden sein könnten, überschrieben. 
 
-## Welche Leistungslatenz ist von {{site.data.keyword.filestorage_short}}-Speicher zu erwarten?   
+## Was passiert mit den Laufwerken, die über das Cloud-Rechenzentrum außer Betrieb gesetzt werden?
 
-Die Ziellatenz innerhalb des Speichers beträgt < 1 ms. File Storage-Speicher wird mit Compute-Instanzen in einem gemeinsam genutzten Netz verbunden, sodass die genaue Leistungslatenz vom Netzverkehr in einem bestimmten Zeitrahmen abhängig ist.
+Wenn Laufwerke außer Betrieb gesetzt werden, werden sie vor dem Entsorgen durch IBM zerstört, sodass sie nicht mehr verwendet werden können. Auf Daten, die auf diesem Laufwerk gespeichert waren, kann nicht mehr zugegriffen werden.
 

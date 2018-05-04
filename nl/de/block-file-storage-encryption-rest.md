@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-02-08"
+lastupdated: "2018-04-23"
 
 ---
 {:new_window: target="_blank"}
@@ -15,7 +15,7 @@ lastupdated: "2018-02-08"
 Die Funktion der durch den Provider verwalteten Verschlüsselung ruhender Daten (Encryption-at-rest) arbeitet mit den folgenden Standardprotokollen:
 
 * Verschlüsselung mit dem Industriestandard AES-256
-* Hausinterne Schlüsselverwaltung mit dem Industriestandard Key Management Improbability Protocol (KMIP)
+* Hausinterne Schlüsselverwaltung mit dem Industriestandard Key Management Interoperability Protocol (KMIP)
 * Der Speicher wurde gemäß dem Federal Information Processing Standard (FIPS), Publication 140-2, auf Konformität mit dem Federal Information Security Management Act (FISMA), mit dem Health Insurance Portability and Accountability Act (HIPAA), mit dem Standard Payment Card Industry (PCI), mit Basel II, mit dem California Security Breach Information Act (SB 1386) und mit der EU-Datenschutzdirektive 95/46/EC (EU Data Protection Directive 95/46/EC) geprüft.
 
 ## Verschlüsselung ruhender Daten für Snapshots und replizierten Speicher  

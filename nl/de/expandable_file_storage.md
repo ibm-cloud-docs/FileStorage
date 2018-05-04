@@ -10,7 +10,7 @@ lastupdated: "2017-12-14"
 
 # Erweiterbare Dateifreigabekapazität
 
-Mit diesem neuen Feature können aktuelle Benutzer von {{site.data.keyword.filestorage_full}} die Größe ihres vorhandenen {{site.data.keyword.filestorage_short}}-Speichers in GB-Inkrementen auf bis zu 12 TB sofort erweitern, ohne ein Duplikat erstellen oder Daten manuell auf größere Datenträger migrieren zu müssen. Die Vergrößerungsoperation erfolgt ausfallsicher und ohne Verlust des Speicherzugriffs. 
+Mit diesem neuen Feature können aktuelle Benutzer von {{site.data.keyword.filestorage_full}} die Größe ihres vorhandenen {{site.data.keyword.filestorage_short}}-Speichers in GB-Inkrementen auf bis zu 12 TB sofort erweitern, ohne ein Duplikat erstellen oder Daten manuell auf größere Datenträger migrieren zu müssen.  Die Vergrößerungsoperation erfolgt ausfallsicher und ohne Verlust des Speicherzugriffs. 
 
 Die Rechnungsstellung für den Datenträger wird automatisch aktualisiert, um die anteilmäßige Differenz des neuen Preises in den laufenden Rechnungsstellungszyklus einzuarbeiten und den vollen Betrag im nächsten Rechnungsstellungszyklus in Rechnung zu stellen.
 
@@ -34,7 +34,7 @@ Die bestehenden Größenbegrenzungen für {{site.data.keyword.filestorage_short}
 
 ## Wie lässt sich feststellen, ob der bereitgestellte Speicher erweiterbar ist?
 
-Für Speicher, der mit erweiterter Funktionalität bereitgestellt wird, werden ruhende Daten immer verschlüsselt. Sie können leicht feststellen, dass Ihr Speicher dazu gehört, wenn neben ihm das Sperrsymbol in der Portalbenutzerschnittstelle angezeigt wird. 
+Für Speicher, der mit erweiterter Funktionalität bereitgestellt wird, werden ruhende Daten immer verschlüsselt.  Sie können leicht feststellen, dass Ihr Speicher dazu gehört, wenn neben ihm das Sperrsymbol in der Portalbenutzerschnittstelle angezeigt wird. 
 
 ## Wie lässt sich die Größe des Speichers ändern?
 
