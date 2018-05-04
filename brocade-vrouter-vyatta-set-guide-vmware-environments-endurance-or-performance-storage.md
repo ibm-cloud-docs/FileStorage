@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2017
-lastupdated: "2018-02-14"
+  years: 2014, 2018
+lastupdated: "2018-05-04"
 
 ---
 {:new_window: target="_blank"}
@@ -10,7 +10,7 @@ lastupdated: "2018-02-14"
 
 # Brocade vRouter (Vyatta) Set up Guide for VMware Environments with {{site.data.keyword.filestorage_short}}
 
-You can configure a Brocade vRouter (Vyatta) appliance for high availability (HA) configuration within a VMware environment that is using either {{site.data.keyword.filestorage_full}}. Use the following information in conjunction with the [Advanced Single-Site VMware Reference Architecture](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} to set up one of these storage options in your VMware environment.
+You can configure a Brocade vRouter (Vyatta) appliance for high availability (HA) configuration within a VMware environment that is using {{site.data.keyword.filestorage_full}}. Use the following information in conjunction with the [Advanced Single-Site VMware Reference Architecture](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} to set up one of these storage options in your VMware environment.
 
 ## Brocade vRouter (Vyatta) Overview
 
