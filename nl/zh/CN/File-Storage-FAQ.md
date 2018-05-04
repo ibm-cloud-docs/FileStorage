@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-02-02"
+lastupdated: "2018-04-24"
 
 ---
 {:new_window: target="_blank"}
@@ -31,7 +31,7 @@ IOPS 根据 16 KB 块的负载概要文件来度量，其中随机 50% 读操作
 
 在客户门户网站中查看 {{site.data.keyword.filestorage_short}} 的列表时，加密 LUN/卷的名称右侧会显示“锁定”图标。
 
-## 如果在已升级用于加密的数据中心内供应了非加密 {{site.data.keyword.filestorage_short}}，能对我的 {{site.data.keyword.filestorage_short}} 加密吗？
+## 如果数据中心内有在升级前供应的非加密 {{site.data.keyword.filestorage_short}}，那么在数据中心升级进行加密后我能对此 {{site.data.keyword.filestorage_short}} 进行加密吗？
 
 无法对数据中心升级之前供应的 {{site.data.keyword.filestorage_short}} 进行加密。在已升级的数据中心内供应的新 {{site.data.keyword.filestorage_short}} 会自动加密；没有加密设置可供选择，这是自动执行的操作。通过创建新的文件卷，然后使用基于主机的迁移将数据复制到新的加密卷，可以对已升级数据中心内非加密存储器上的数据进行加密。有关如何执行迁移的指示信息，请参阅[此文章](/docs/infrastructure/FileStorage/migrate-file-storage-encrypted-file-storage.html)。
 
@@ -89,7 +89,7 @@ IOPS 根据 16 KB 块的负载概要文件来度量，其中随机 50% 读操作
 
 ## 可以供应多少个卷？
 
-缺省情况下，总共可以供应 250 个 Block Storage 和 File Storage 卷。要增加卷数，请联系销售代表。
+缺省情况下，总共可以供应 250 个块存储卷和文件存储卷。要增加卷数，请联系销售代表。
 
 ## 一个供应的 {{site.data.keyword.filestorage_short}} 卷可以由多少个实例共享使用？
 
@@ -107,11 +107,15 @@ IOPS 会在卷级别强制执行。换句话说，连接到一个具有 6000 IOP
 
 建议的最佳做法是在绕过防火墙的 VLAN 上运行存储流量。通过软件防火墙运行存储流量会延长等待时间，并对存储器性能产生负面影响。
 
+## 预计 {{site.data.keyword.filestorage_short}} 中的性能等待时间是多少？   
+
+存储器中的目标等待时间小于 1 毫秒。存储器连接到共享网络上的计算实例，所以确切的性能等待时间将取决于给定时间范围内的网络流量。
+
 ## 删除 {{site.data.keyword.filestorage_short}} 卷时，数据会发生什么情况？
 
 删除存储器时，会除去该卷上数据的所有指针，因此数据会变得完全不可访问。如果将物理存储器重新供应给其他帐户，那么会分配一组新指针。新帐户无法访问物理存储器上原先可能存在的任何数据，这组新指针会显示全为 0。将新数据写入卷/LUN 时，会覆盖仍存在的任何不可访问的数据。 
 
-## 预计 {{site.data.keyword.filestorage_short}} 中的性能等待时间是多少？   
+## 使驱动器从云数据中心退役时会发生什么情况？
 
-存储器中的目标等待时间小于 1 毫秒。存储器连接到共享网络上的计算实例，所以确切的性能等待时间将取决于给定时间范围内的网络流量。
+使驱动器退役后，IBM 会在处置前先销毁驱动器，从而使其无法使用。写入该驱动器的任何数据都将变得无法访问。
 

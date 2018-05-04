@@ -14,7 +14,7 @@ lastupdated: "2018-02-14"
 
 ## {{site.data.keyword.filestorage_short}} 概述
 
-{{site.data.keyword.filestorage_short}} 旨在支持需要可预测性能级别的高 I/O 应用程序。通过为各个卷分配协议级别每秒输入/输出操作数 (IOPS)，可实现可预测的性能。 
+{{site.data.keyword.filestorage_short}} 旨在支持需要可预测性能级别的高 I/O 应用程序。通过为各个卷分配协议级别每秒输入/输出操作数 (IOPS)，可实现可预测的性能。
 
 {{site.data.keyword.filestorage_short}} 产品可通过 NFS 连接进行访问和安装。在 VMware 部署中，单个卷最多可以安装到 64 个 ESXi 主机作为共享存储器，也可以安装多个卷来创建存储器集群，以利用“vSphere 存储器动态资源安排”。
 
@@ -100,10 +100,10 @@ lastupdated: "2018-02-14"
 
 请注意，需要“快照空间”才能使用快照。在初始卷订购期间或初始供应后，可以通过在**卷详细信息**页面中，单击“操作”下拉按钮并选择**添加快照空间**来获取空间。
 
-值得注意的是，VMware 环境并不知道快照。耐久性 {{site.data.keyword.filestorage_short}} 快照功能不能与 VMware 快照相混淆。使用 {{site.data.keyword.filestorage_short}} 快照功能的任何恢复都必须在 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} 中进行处理。还原耐久性 {{site.data.keyword.filestorage_short}} 卷需要关闭位于耐久性 {{site.data.keyword.filestorage_short}} 上的所有 VM 的电源，并暂时从 ESXi 主机卸装该卷，以避免执行该过程期间发生任何数据损坏。
+值得注意的是，VMware 环境并不知道快照。耐久性 {{site.data.keyword.filestorage_short}} 快照功能不能与 VMware 快照相混淆。使用耐久性 {{site.data.keyword.filestorage_short}} 快照功能的任何恢复都必须在 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} 中进行处理。还原耐久性 {{site.data.keyword.filestorage_short}} 卷需要关闭位于耐久性 {{site.data.keyword.filestorage_short}} 上的所有 VM 的电源，并暂时从 ESXi 主机卸装该卷，以避免执行该过程期间发生任何数据损坏。
 
 有关如何配置快照的更多详细信息，请参阅[快照](snapshots.html)文章。
- 
+
 
 ### 3. 文件存储复制
 
@@ -125,9 +125,9 @@ lastupdated: "2018-02-14"
 
 **注**：无效数据（不管是损坏数据、被黑客入侵数据还是被感染数据）会根据快照安排和快照保留时间进行复制。使用最小的复制时段可提供更好的恢复点目标。这还可能会缩短对无效数据的复制做出反应的时间。
 
- 
 
- 
+
+
 
 ## 订购 {{site.data.keyword.filestorage_short}}
 
@@ -135,7 +135,7 @@ lastupdated: "2018-02-14"
 
 
 可以通过 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} 中的**存储** > **{{site.data.keyword.filestorage_short}}** 访问“{{site.data.keyword.filestorage_short}}”页面来订购 {{site.data.keyword.filestorage_short}}。
- 
+
 
 ### 1. 订购 {{site.data.keyword.filestorage_short}}
 
@@ -143,7 +143,7 @@ lastupdated: "2018-02-14"
 1. 单击 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} 主页上的**存储** > **{{site.data.keyword.filestorage_short}}**。
 2. 单击 **{{site.data.keyword.filestorage_short}}** 页面上的**订购 {{site.data.keyword.filestorage_short}}** 链接。
 3. 从“选择存储类型”下拉列表中，选择**耐久性**/**性能**。
-4. 选择位置。具有已改进功能的数据中心用 `*` 表示。确保将新存储器添加到先前订购的 ESXi 主机所在的位置。 
+4. 选择位置。具有已改进功能的数据中心用 `*` 表示。确保将新存储器添加到先前订购的 ESXi 主机所在的位置。
 5. 选择“计费方式”。提供了按月和按小时计费选项。
 6. 选择所需的存储空间量（以 GB 为单位）。对于 TB，1 TB 等于 1,000 GB，12 TB 等于 12,000 GB。
 7. 输入所需的 IOPS 量（以 100 为区间），或者选择 IOPS 层。
@@ -156,7 +156,7 @@ lastupdated: "2018-02-14"
 
 存储器将在不到一分钟的时间内进行供应，并且将在 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} 的 **{{site.data.keyword.filestorage_short}}** 页面上显示。
 
- 
+
 
 ### 2. 授权主机使用 {{site.data.keyword.filestorage_short}}
 
@@ -170,17 +170,17 @@ lastupdated: "2018-02-14"
 
 在授权子网后，记下您希望在安装卷时使用的耐久性或性能存储服务器的主机名。可以通过在“{{site.data.keyword.filestorage_short}} 详细信息”页面上单击特定卷来找到此信息。
 
- 
+
 ##  配置 VMware 虚拟机主机
 
 ### 1. 先决条件
 
 在开始 VMware 配置过程之前，请确保满足以下先决条件：
 
-- VMware ESXi 的 {{site.data.keyword.BluBareMetServers}} 供应有相应的存储器配置和 ESXi 登录凭证。
+- 为 VMware ESXi 的 {{site.data.keyword.BluBareMetServers}} 供应了适当的存储器配置和 ESXi 登录凭证。
 - {{site.data.keyword.BluSoftlayer_full}} Windows 物理计算机或 {{site.data.keyword.virtualmachinesshort}} 与 {{site.data.keyword.BluBareMetServers}} 位于同一数据中心。包含 {{site.data.keyword.BluSoftlayer_full}} Windows VM 的公共 IP 地址和登录凭证。
 - 有一台计算机具有因特网访问权，并且安装了 Web 浏览器软件和远程桌面协议 (RDP) 客户机。
- 
+
 
 ### 2. VMware 主机配置步骤
 
@@ -206,12 +206,12 @@ lastupdated: "2018-02-14"
    ```
 
 有关 VMware 和巨型帧的更多信息，请参阅[此处](https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=1003712){:new_window}。
- 
+
 
 ### 3. 向虚拟交换机添加上行链路适配器
 
 1. 通过转至 **ESXi 主机管理**选项卡，选择**管理**，然后选择**网络**来配置新的上行链路适配器。
-2. 选择**物理适配器**选项卡。 
+2. 选择**物理适配器**选项卡。
 3. 单击**添加主机网络**（带加号的“地球”图标）。
 4. 选择**物理网络适配器**作为连接类型，然后单击**下一步**。
 5. 选择现有 **vSwitch**，然后单击**下一步**。
@@ -222,7 +222,7 @@ lastupdated: "2018-02-14"
 9. 浏览回**虚拟交换机**选项卡，然后选择**虚拟交换机**标题下面靠上的**编辑设置**图标（“画笔”图标）。
 10. 选择左侧的 **vSwitch 成组和故障转移**条目。
 验证**负载均衡**选项是否设置为**基于源虚拟端口进行路由**，然后单击**确定**。
- 
+
 
 ### 4. 配置 ESXi 静态路由（可选）
 
@@ -230,7 +230,7 @@ lastupdated: "2018-02-14"
 
 1. 要配置静态路由，请通过 SSH 登录到利用性能或耐久性的每台 ESXi 主机，然后运行以下命令。请注意，必须采用 ping 命令（第一个命令）中生成的 IP 地址，并将其用于 esxcli network 命令，如下所示：
    - `ping <hostname of the endurance/performance array>`
-   
+
       请**注意**，NFS 存储器 DNS 主机名是分配有多个 IP 地址的转发区域 (FZ)。这些 IP 地址是静态的，并且属于该特定 DNS 主机名。可以使用其中任一 IP 地址来访问特定卷。
    - `esxcli network ip route ipv4 add –gateway GATEWAYIP –network <result of ping command>/32`
 
@@ -238,12 +238,12 @@ lastupdated: "2018-02-14"
    - 记下 IP 地址，因为此地址可用于在下一步中安装卷。
    - 对于计划安装到 ESXi 主机的每个 NFS 卷，都需要完成此过程。
    - 下面是 VMware 知识库文章的链接：[Configuring static routes for VMkernel ports on an ESXi host](https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=2001426){:new_window}。
- 
+
 
 ##  在 ESXi 主机上安装 {{site.data.keyword.filestorage_short}} 卷
 
 1. 单击 Web 页面顶部的**转至 vCenter** 图标，然后单击**主机和集群**。
-2. 单击**相关对象**选项卡下的**数据存储**。单击**新建数据存储**图标。 
+2. 单击**相关对象**选项卡下的**数据存储**。单击**新建数据存储**图标。
 3. 在**新建数据存储**屏幕上，选择数据存储的位置（ESXi 主机），然后单击**下一步**。
 4. 在**类型**屏幕上，选中 **NFS** 单选按钮，然后单击**下一步**。
 5. 在**名称和配置**屏幕上，输入要对数据存储命名的名称。此外，还请输入 NFS 服务器的主机名。使用 NFS 服务器的 FQDN 将生成至底层服务器的最佳流量分配。IP 地址也有效，但使用频率较低，并且仅在特定情况下使用。请以 /foldername 形式输入文件夹名称。
@@ -272,7 +272,7 @@ Storage I/O Control (SIOC) 是可供利用 Enterprise Plus 许可证的客户使
 
 应该注意的是，为数据存储或 VMDK 错误地配置 SIOC 可能会显著影响性能。
 
- 
+
 
 ### 1. 用于数据存储的 Storage I/O Control
 
@@ -287,7 +287,7 @@ Storage I/O Control (SIOC) 是可供利用 Enterprise Plus 许可证的客户使
 6. 单击**确定**。
 
 **注**：此设置特定于数据存储，而不是特定于主机。
- 
+
 
 ### 2. 用于 {{site.data.keyword.BluVirtServers_short}} 的 Storage I/O Control
 
@@ -296,19 +296,19 @@ Storage I/O Control (SIOC) 是可供利用 Enterprise Plus 许可证的客户使
 
 使用以下步骤来更改 vDisk 份额和限制：
 
-1. 在 **VM 和模板**清单中，选择 {{site.data.keyword.BluVirtServers_short}}。相应图标位于 Web 页面左上角。 
+1. 在 **VM 和模板**清单中，选择 {{site.data.keyword.BluVirtServers_short}}。相应图标位于 Web 页面左上角。
 2. 选择要进行 I/O 控制的 {{site.data.keyword.BluVirtServers_short}}。
 3. 单击**管理**选项卡，然后单击**设置**。单击**编辑**。
 4. 展开“硬盘”下拉箭头。将“份额”或“限制 - IOPS”修改为适合您环境的值。从列表中选择虚拟硬盘，然后修改“份额”选项，以选择要分配给 {{site.data.keyword.BluVirtServers_short}} 的相对份额量（“低”、“正常”或“高”）。还可以单击**定制**并输入用户定义的份额值。
 5. 单击“限制 - IOPS”列，然后输入要分配给虚拟机的存储资源的上限。
 6. 单击**确定**。
- 
+
 
    **注**：以上过程用于在 {{site.data.keyword.BluVirtServers_short}} 中设置各个 vDisk 的资源消耗限制，即便未启用 SIOC，此过程也适用。尽管 SIOC 会使用这些设置，但这些设置特定于单个访客，而不是特定于主机。
 
- 
 
- 
+
+
 
 ## ESXi 主机端设置
 
@@ -324,7 +324,7 @@ Storage I/O Control (SIOC) 是可供利用 Enterprise Plus 许可证的客户使
 |NFS.HeartbeatFrequency|	12|
 |NFS.HeartbeatTimeout|	5|
 |NFS.MaxQueueDepth|	64|
- 
+
 
 - 在 ESXi 5.x 主机上使用 CLI 来设置高级配置参数：
   以下示例使用 CLI 来设置这些高级配置参数，然后对其进行检查。示例中使用的 esxcfg-advcfg 工具位于 ESXi 5.x 主机上的 /usr/sbin 目录中。
@@ -381,7 +381,7 @@ Storage I/O Control (SIOC) 是可供利用 Enterprise Plus 许可证的客户使
 
 请注意，进行更改时，NIC 会有几秒钟时间失去网络连接。您还应该重新引导以确保更改生效。
 
- 
+
 
 ### LINUX
 

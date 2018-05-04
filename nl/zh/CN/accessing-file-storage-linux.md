@@ -81,7 +81,7 @@ lastupdated: "2018-02-16"
  
 ## 如何对 NFS 实施 no_root_squash（可选）
 
-通过配置 no_root_squash，root 用户可以保留对 NFS 共享的 root 用户许可权。对于 NFS V3，客户无需执行任何操作；no_root_squash 应该也会正常运作。
+通过配置 no_root_squash，root 用户客户机可以保留对 NFS 共享的 root 用户许可权。对于 NFS V3，客户机无需执行任何操作；no_root_squash 应该会正常运作。
 对于 NFS V4，您需要将 nfsv4 域设置为 slnfsv4.com，并根据操作系统版本启动 rpcidmapd 或类似服务。
 
 下面是示例：

@@ -10,7 +10,7 @@ lastupdated: "2017-10-09"
 
 # 在 CoreOS 上安装 {{site.data.keyword.filestorage_short}}
 
-CoreOS 是一种功能强大的 Linux 分发版，构建用于使不同基础架构上的大型可扩展部署易于管理。CoreOS 基于 Chrome OS 的构建版，可维护轻量级主机系统，并对所有应用程序使用 Docker 容器。
+CoreOS 是一种功能强大的 Linux 分发版，构建后将简化对不同基础架构上大型可扩展部署的管理。CoreOS 基于 Chrome OS 的构建版，可维护轻量级主机系统，并对所有应用程序使用 Docker 容器。
 
 ## 安装可移植存储器
 
