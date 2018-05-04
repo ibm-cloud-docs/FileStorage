@@ -36,7 +36,7 @@ Figure 1 describes the communication between each zone. Note that your environme
 To configure the Brocade vRouter (Vyatta):
 
 1. SSH into the appliance using the root password found on the Device Details screen.
-2. Type Configure to enter the configuration mode and follow the steps in the subsequent sections.
+2. Type `configure` to enter the configuration mode and follow the steps in the subsequent sections.
 
 ### Set up Interfaces
 
