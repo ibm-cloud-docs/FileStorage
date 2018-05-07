@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-04-24"
+lastupdated: "2018-05-07"
 
 ---
 {:new_window: target="_blank"}
@@ -33,11 +33,11 @@ When viewing your list of {{site.data.keyword.filestorage_short}} in the custome
 
 ## If I have non-encrypted {{site.data.keyword.filestorage_short}} provisioned in a data center that has been upgraded for encryption, can I encrypt my {{site.data.keyword.filestorage_short}}?
 
-{{site.data.keyword.filestorage_short}} that is provisioned prior to a data center upgrade cannot be encrypted. New {{site.data.keyword.filestorage_short}} provisioned in upgraded data centers is automatically encrypted ; there is no encrypt setting to choose from, it’s automatic.. Data on non-encrypted storage in an upgraded data center can be encrypted by creating a new File volume, then copying the data to the new encrypted volume or volume with host-based migration. See [this article](/docs/infrastructure/FileStorage/migrate-file-storage-encrypted-file-storage.html) for instructions on how to perform the migration.
+{{site.data.keyword.filestorage_short}} that is provisioned prior to a data center upgrade cannot be encrypted. New {{site.data.keyword.filestorage_short}} provisioned in upgraded data centers is automatically encrypted ; there is no encrypt setting to choose from, it’s automatic.. Data on non-encrypted storage in an upgraded data center can be encrypted by creating a new File volume, then copying the data to the new encrypted volume or file share with host-based migration. See [this article](/docs/infrastructure/FileStorage/migrate-file-storage-encrypted-file-storage.html) for instructions on how to perform the migration.
 
 ## How do I know if I am provisioning {{site.data.keyword.filestorage_short}} in an upgraded data center?
 
-When provisioning {{site.data.keyword.filestorage_short}}, all upgraded data centers will be denoted with an asterisk (`*`) in the order form and an indication that you will be provisioning storage with encryption. Once the storage is provisioned, you will see an icon in the storage list that shows that volume or volume as encrypted. All encrypted volumes and volumes are provisioned in upgraded data centers only. You can find a full list of upgraded data centers and available features [here](/docs//infrastructure/BlockStorage/new-ibm-block-and-file-storage-location-and-features.html).
+When provisioning {{site.data.keyword.filestorage_short}}, all upgraded data centers will be denoted with an asterisk (`*`) in the order form and an indication that you will be provisioning storage with encryption. Once the storage is provisioned, you will see an icon in the storage list that shows that volume or LUN as encrypted. All encrypted volumes and file shares are provisioned in upgraded data centers only. You can find a full list of upgraded data centers and available features [here](/docs//infrastructure/BlockStorage/new-ibm-block-and-file-storage-location-and-features.html).
 
 ## Why can I provision {{site.data.keyword.filestorage_short}} with an Endurance 10 IOPS tier in some data centers and not in others?
 
