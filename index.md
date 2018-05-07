@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-02-12"
+lastupdated: "2018-05-07"
 
 ---
 {:new_window: target="_blank"}
@@ -51,11 +51,11 @@ With **monthly billing**, the calculation for the price is pro-rated from the da
  <tbody>
   <tr>
    <th>Monthly Price</th>
-   <td>$0.10/GB + $0.07/IOP</td>
+   <td>$0.10/GB + $0.07/IOPS</td>
   </tr>
   <tr>
    <th>Hourly Price</th>
-   <td>$0.0001/GB + $0.0002/IOP</td>
+   <td>$0.0001/GB + $0.0002/IOPS</td>
   </tr>
   </tbody>
 </table>
@@ -199,7 +199,7 @@ IOPS, for both Endurance and Performance, are measured based on a 16 KB block si
 
 IOPS for both Endurance and Performance is based on a 16 KB block size with a 50/50 read/write 50% random workload. A ~16 KB block is the equivalent of one write to the volume.
 
-The block size used by your application will directly impact storage performance.  If the block size used by your application is smaller than 16 KB the IOP limit will be realized prior to the throughput limit.  Conversely, if the block size used by your application is larger than 16KB the throughput limit will be realized prior to the IOP limit.
+The block size used by your application will directly impact storage performance.  If the block size used by your application is smaller than 16 KB the IOPS limit will be realized prior to the throughput limit.  Conversely, if the block size used by your application is larger than 16KB the throughput limit will be realized prior to the IOPS limit.
 
 Changing the block size will affect the performance as follows:
 
@@ -261,4 +261,4 @@ Another factor to consider is the number of hosts that are utilizing your volume
 
 To achieve maximum IOPS, adequate network resources need to be in place. Other considerations include private network usage outside of storage and host side and application specific tunings (IP stack, queue depths, and so on).
 
-Both NFS v3 and NFS v4.1 are supported in the {{site.data.keyword.BluSoftlayer_full}} environment. However, it is our recommendation that NFS v3 be used. NFS v4.1 is a stateful protocol (not stateless like NFSv3) and thus protocol issues can occur during network events. NFS v4.1 must quiesce operations and then perform lock reclamation. On a relatively busy NFS file server, the increased latency can cause disruptions. The lack of NFS v4.1 multipath/trunking can also extend NFS operations recovery.
+Both NFS v3 and NFS v4.1 are supported in the {{site.data.keyword.BluSoftlayer_full}} environment. However, it is our recommendation that NFS v3 be used. NFS v4.1 is a stateful protocol (not stateless like NFSv3) and thus protocol issues can occur during network events. NFS v4.1 must quiesce all operations and then perform a lock reclamation. On a relatively busy NFS file server, the increased latency can cause disruptions. The lack of NFS v4.1 multipath/trunking can also extend NFS operations recovery.
