@@ -21,9 +21,9 @@ Mentionnez brièvement l'objectif d'apprentissage de l'utilisateur et incluez le
 Exemple :
 En cas d'un accroissement des demandes de ressources, vous avez besoin de services d'infrastructure de cloud qui peuvent s'adapter immédiatement à ces nouvelles exigences, sous votre contrôle. Les serveurs virtuels {{site.data.keyword.Bluemix}} peuvent être déployés en quelques minutes à partir des images de serveur virtuel de votre choix, dans la région géographique pertinente en fonction de vos charges de travail. Dès que vos charges de travail diminuent, il est possible d'interrompre ou de mettre hors tension ces serveurs virtuels pour que votre environnement de cloud s'adapte parfaitement à vos besoins en matière d'infrastructure.
 
-La section des tâches inclut les étapes indiquant comment rendre une unité, un stockage ou un réseau opérationnel. 
+La section des tâches inclut les étapes indiquant comment rendre une unité, un stockage ou un réseau opérationnel.
 - Indiquez des informations techniques liées aux tâches à effectuer en rédigeant des instructions directes et succinctes au détriment du style conversationnel.
-- INDIQUEZ les étapes du scénario de base le plus courant permettant d'utiliser le service d'infrastructure. 
+- INDIQUEZ les étapes du scénario de base le plus courant permettant d'utiliser le service d'infrastructure.
 - N'INCLUEZ PAS les étapes permettant d'ajouter le service à partir du catalogue Bluemix ; nous supposons que l'utilisateur a déjà effectué ces étapes dans l'interface utilisateur pour ajouter le service.
 - INDIQUEZ les fragments de code dans tous les langages susceptibles d'être copiés, ainsi que les informations du service VCAP. Pour plus d'informations sur les informations du service VCAP, voir https://console.ng.bluemix.net/docs/cli/vcapsvc.html.
 - Pour les tâches supplémentaires comme la configuration, la gestion, etc., ajoutez une section de tâche (## Gerund_task_title) sous la section des tâches ou sous la section "A propos de" le cas échéant. Utilisez un titre de tâche similaire à "Configuration de x", "Administration de y", "Gestion de z". -->

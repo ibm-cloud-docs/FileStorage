@@ -16,7 +16,7 @@ CoreOS est une distribution Linux puissante conçue pour simplifier la gestion d
 
 Tous les fichiers de montage secondaires sont placés dans le répertoire */etc/systemd/system* car les montages au niveau du système sont effectués dans un répertoire en lecture seule dans CoreOS. Vous allez créer un fichier MOUNTPOINT.mount. La section Where du fichier .mount doit correspondre au nom de fichier. Si le point de montage comporte des barres obliques (/), vous devez nommer le fichier en respectant la syntaxe suivante : chemin-de-montage.mount. Comme vous pouvez le voir dans l'exemple suivant, l'unité de stockage portable doit être montée dans `/mnt/www`, donc le fichier est nommé `mnt-www.mount`.
 
-Vous devez utiliser fdisk ou parted pour créer la partition et vérifier que le système de fichiers que vous créez correspond à celui qui est indiqué dans le fichier `.mount` ; dans le cas contraire, le démarrage du service échoue. 
+Vous devez utiliser fdisk ou parted pour créer la partition et vérifier que le système de fichiers que vous créez correspond à celui qui est indiqué dans le fichier `.mount` ; dans le cas contraire, le démarrage du service échoue.
 
 
 ```
@@ -32,7 +32,7 @@ Type=ext4
 WantedBy = multi-user.target
 ```
 
-CoreOS utilise systemd ; par conséquent, vous devez activer le fichier  `*.mount` pour que le point de montage survive au réamorçage. Si vous utilisez l'indicateur `--now`, la partition est montée immédiatement et est définie pour démarrer à l'amorçage. 
+CoreOS utilise systemd ; par conséquent, vous devez activer le fichier  `*.mount` pour que le point de montage survive au réamorçage. Si vous utilisez l'indicateur `--now`, la partition est montée immédiatement et est définie pour démarrer à l'amorçage.
 
 `$ systemctl enable --now mnt-www.mount`
 
@@ -55,7 +55,7 @@ Options=vers=4,sec=sys,noauto
 WantedBy = multi-user.target
 ```
 
-Vous pouvez maintenant activer le montage et vérifier qu'il est monté correctement. 
+Vous pouvez maintenant activer le montage et vérifier qu'il est monté correctement.
 
 ```
 systemctl enable --now /etc/systemd/system/data-www.mount
@@ -68,7 +68,7 @@ cluster1 ~ # mount |grep data
 
 Le montage d'un partage cifs n'est pas pris en charge nativement dans CoreOS, mais une solution de contournement très simple permet d'autoriser le système hôte à monter des partages NAS. Vous allez utiliser un conteneur pour créer le module mount.cfis, puis le copier sur le système CoreOS.
  
-Sur le système CoreOS, exécutez la commande suivante pour télécharger et accéder à un conteneur Fedora :   <br/>
+Sur le système CoreOS, exécutez la commande suivante pour télécharger et accéder à un conteneur Fedora :  <br/>
 `docker run -t -i -v /tmp:/host_tmp fedora /bin/bash`
  
 Une fois dans le conteneur, exécutez la commande suivante pour créer l'utilitaire cifs :
@@ -82,7 +82,7 @@ cd cifs-utils-6.4/
 cp mount.cifs /host_tmp/
 ```
  
-Notez que lorsque le fichier mount.cifs est copié sur la machine hôte, vous pouvez quitter le conteneur Docker à l'aide de la commande `exit` ou des touches **ctrl+d**. Une fois revenu dans le système CoreOS, vous pouvez monter le partage CIFS avec la commande suivante :  <br/>
+Notez que lorsque le fichier mount.cifs est copié sur la machine hôte, vous pouvez quitter le conteneur Docker à l'aide de la commande `exit` ou des touches **ctrl+d**. Une fois revenu dans le système CoreOS, vous pouvez monter le partage CIFS avec la commande suivante : <br/>
 `/tmp/mount.cifs //nasXXX.service.softlayer.com/USERNAME -o username=USERNAME,password=PASSWORD /path/to/mount`
  
 ## Montage d'ISCSI

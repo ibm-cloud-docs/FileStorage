@@ -13,7 +13,7 @@ lastupdated: "2018-02-16"
 Avant de commencer, vérifiez que l'hôte accédant au volume {{site.data.keyword.filestorage_full}} a été autorisé via le portail [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} :
 
 1. Dans la page des listes de {{site.data.keyword.filestorage_short}}, cliquez sur l'option **Actions** associée au partage nouvellement mis à disposition, puis cliquez sur **Hôte autorisé**.
-2. Sélectionnez le ou les hôtes souhaités dans la liste et cliquez sur **Soumettre** pour autoriser les hôtes à accéder au partage. 
+2. Sélectionnez le ou les hôtes souhaités dans la liste et cliquez sur **Soumettre** pour autoriser les hôtes à accéder au partage.
 
 ## Montage du partage {{site.data.keyword.filestorage_short}}
 
@@ -46,7 +46,7 @@ Voici les étapes permettant de connecter une instance de traitement {{site.data
     
     `/dev/xvda1 97M 51M 42M 55%`
     
-4. Accédez au point de montage et au fichiers en lecture/écriture. 
+4. Accédez au point de montage et au fichiers en lecture/écriture.
 
     `[root@TEST-RHEL6]# touch /mnt/test`
     
@@ -62,27 +62,27 @@ Voici les étapes permettant de connecter une instance de traitement {{site.data
 
     **Remarque :** Les fichiers créés par le superutilisateur ont pour propriété nobody:nobody. Si vous souhaitez afficher correctement la propriété, vous devez mettre à jour idmapd.conf avec les paramètres de domaine corrects. Voir "Implémentation de no_root_squash pour NFS" ci-dessous.
     
-5. Montez le partage distant à l'amorçage. Pour terminer la configuration, éditez la table des systèmes de fichiers /etc/fstab et ajoutez le partage distant dans la liste des entrées automatiquement montées au démarrage : 
+5. Montez le partage distant à l'amorçage. Pour terminer la configuration, éditez la table des systèmes de fichiers /etc/fstab et ajoutez le partage distant dans la liste des entrées automatiquement montées au démarrage :
 
     `(hostname):/(username) /mnt "nfs version" "options" 0 0`
     
-    Si vous utilisez l'instance de l'exemple de montage du partage distant, l'entrée est la suivante : 
+    Si vous utilisez l'instance de l'exemple de montage du partage distant, l'entrée est la suivante :
     
     `nfsdal0501a.service.softlayer.com:/IBM01SV278685_7 /mnt nfs4 defaults,hard,intr 0 0`
     
-6.  Vérifiez l'absence d'erreurs dans le fichier de configuration. 
+6.  Vérifiez l'absence d'erreurs dans le fichier de configuration.
 
     `[root@TEST-RHEL6 /]# mount -fav`
     
     Si la commande s'exécute sans erreur, votre installation est terminée.
 
-**Remarque :** Si vous utilisez NFS 4.1, ajoutez 'sec=sys' à la commande mount pour prévenir tout problème lié à la propriété des fichiers. 
+**Remarque :** Si vous utilisez NFS 4.1, ajoutez 'sec=sys' à la commande mount pour prévenir tout problème lié à la propriété des fichiers.
 
  
 ## Implémentation de no_root_squash pour NFS (facultatif)
 
 La configuration de no_root_squash permet aux clients root de conserver les droits root sur le partage NFS. Pour NFSv3, aucune action n'est nécessaire de la part des clients ; no_root_squash devrait fonctionner.
-Pour NFSv4, vous devez définir le domaine nfsv4 sur slnfsv4.com et démarrer rpcidmapd ou un service similaire en fonction de la version du système d'exploitation. 
+Pour NFSv4, vous devez définir le domaine nfsv4 sur slnfsv4.com et démarrer rpcidmapd ou un service similaire en fonction de la version du système d'exploitation.
 
 Voici un exemple :
 

@@ -27,7 +27,7 @@ Options=vers=4,sec=sys,noauto
 WantedBy = multi-user.target
 ```
 
-Vous pouvez maintenant activer le montage et vérifier qu'il est monté correctement. 
+Vous pouvez maintenant activer le montage et vérifier qu'il est monté correctement.
 
 ```
 systemctl enable --now /etc/systemd/system/data-www.mount

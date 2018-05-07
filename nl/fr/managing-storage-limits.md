@@ -12,13 +12,13 @@ lastupdated: "2018-03-06"
 
 Vous pouvez, par défaut, mettre à disposition un total combiné de 250 volumes {{site.data.keyword.filestorage_full}} globalement. 
 
-Vous pouvez demander une augmentation de cette limite en soumettant un ticket dans le portail [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}. Une fois la demande approuvée, une limite de volume est définie pour un centre de données spécifique.   
+Vous pouvez demander une augmentation de cette limite en soumettant un ticket dans le portail [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}. Une fois la demande approuvée, une limite de volume est définie pour un centre de données spécifique.  
 
-Pour demander une mise à jour ou une augmentation de limite, ouvrez un ticket et envoyez-le à votre ingénieur commercial. 
+Pour demander une mise à jour ou une augmentation de limite, ouvrez un ticket et envoyez-le à votre ingénieur commercial.
 
 Dans le ticket, indiquez les informations suivantes :
 
-- **Sujet du ticket** : demande d'augmentation de la limite de stockage en nombre de volumes pour un centre de données 
+- **Sujet du ticket** : demande d'augmentation de la limite de stockage en nombre de volumes pour un centre de données
 
 - **Quel cas d'utilisation la demande de volumes supplémentaires concerne-t-elle ?** <br />
 *Exemple de réponse : un nouveau magasin de données de machine virtuelle, un nouvel environnement de développement/test, une base de données SQL, la consignation, etc. *
