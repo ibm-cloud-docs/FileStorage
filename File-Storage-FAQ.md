@@ -33,7 +33,7 @@ When viewing your list of {{site.data.keyword.filestorage_short}} in the custome
 
 ## If I have non-encrypted {{site.data.keyword.filestorage_short}} provisioned in a data center that has been upgraded for encryption, can I encrypt my {{site.data.keyword.filestorage_short}}?
 
-{{site.data.keyword.filestorage_short}} that is provisioned prior to a data center upgrade cannot be encrypted. New {{site.data.keyword.filestorage_short}} provisioned in upgraded data centers is automatically encrypted ; there is no encrypt setting to choose from, it’s automatic.. Data on non-encrypted storage in an upgraded data center can be encrypted by creating a new File volume, then copying the data to the new encrypted volume or file share with host-based migration. See [this article](/docs/infrastructure/FileStorage/migrate-file-storage-encrypted-file-storage.html) for instructions on how to perform the migration.
+{{site.data.keyword.filestorage_short}} that is provisioned prior to a data center upgrade cannot be encrypted. New {{site.data.keyword.filestorage_short}} provisioned in upgraded data centers is automatically encrypted ; there is no encrypt setting to choose from, it’s automatic. Data on non-encrypted storage in an upgraded data center can be encrypted by creating a new File volume, then copying the data to the new encrypted volume or file share with host-based migration. See [this article](/docs/infrastructure/FileStorage/migrate-file-storage-encrypted-file-storage.html) for instructions on how to perform the migration.
 
 ## How do I know if I am provisioning {{site.data.keyword.filestorage_short}} in an upgraded data center?
 
@@ -69,7 +69,7 @@ Following are the maximum inodes or file shares allowed based on volume size:
             <td>2,490,263</td>
           </tr>          
           <tr>
-            <td>100GB</td>
+            <td>100 GB</td>
             <td>3,112,863</td>
           </tr>          
           <tr>
