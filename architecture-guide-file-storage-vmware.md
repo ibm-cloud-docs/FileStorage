@@ -290,7 +290,7 @@ Use the following steps to enable SIOC with recommended values for Endurance and
 **Note**: This setting is specific to the datastore and not to the host.
 
 
-### 2. Storage I/O Control For A {{site.data.keyword.BluVirtServers_short}}
+### 2. Storage I/O Control For {{site.data.keyword.BluVirtServers_short}}
 
 You can also limit individual virtual disks for individual VMs or grant them different shares with SIOC. The limiting of disks and granting different shares allows you to match and align the environment to the workload with the acquired {{site.data.keyword.filestorage_short}} volume IOPS number. The limit is set by IOPS and it is possible to set a different weight or "Shares." Virtual disks with shares set to High (2,000 shares) receive twice as much I/O as a disk set to Normal (1,000 shares) and four times as much as one set to Low (500 shares). Normal is the default value for all the VMs, so you just need to adjust the values above or below Normal for the VMs that actually require it.
 
