@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-02-14"
+lastupdated: "2018-05-07"
 
 ---
 {:new_window: target="_blank"}
@@ -263,7 +263,7 @@ The network configuration for this architecture guide uses a minimal number of p
     10.2.125.80 is the IP address associated with the FQDN
     ```
 
-## Enable ESXi Storage I/O Control settings (Optional)
+## Enable ESXi Storage I/O Control (Optional)
 
 Storage I/O Control (SIOC) is a feature available for customers utilizing an Enterprise Plus license. When SIOC is enabled in the environment, it will change the device queue length for the single VM. The change to the device queue length reduces the storage array queue for all VMs to an equal share and throttle of the storage queue. SIOC engages only if resources are constrained and the storage I/O latency is above a defined threshold.
 
@@ -283,7 +283,7 @@ Use the following steps to enable SIOC with recommended values for Endurance and
 2. Click the **Manage** tab.
 3. Click **Settings** and click **General**.
 4. Click **Edit** for **Datastore Capabilities**.
-5. Select the E**nable Storage I/O Control** check box.<br/>
+5. Select the **Enable Storage I/O Control** check box.<br/>
    ![NSFDataStore](/images/3_0.png)
 6. Click **OK**.
 
