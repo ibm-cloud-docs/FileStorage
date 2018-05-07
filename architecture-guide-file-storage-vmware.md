@@ -31,7 +31,7 @@ When ordering {{site.data.keyword.filestorage_short}}, you will want to keep in 
 - {{site.data.keyword.filestorage_short}} volumes are exposed to authorized devices, subnets, or IP addresses.
 - Snapshot and Replication services are natively available on Endurance {{site.data.keyword.filestorage_short}} volumes only. Performance {{site.data.keyword.filestorage_short}} does not have these capabilities.
 - To avoid storage disconnection during path fail over {{site.data.keyword.IBM}} recommends installing VMWare tools which will set an appropriate timeout value. There is no need to change the value, the default setting is sufficient to ensure that your VMWare host will not lose connectivity.
-- Both NFS v3 and NFS v4.1 are supported in the {{site.data.keyword.BluSoftlayer_full}} environment. However, it is {{site.data.keyword.IBM}}'s recommendation that NFS v3 be used. Because NFS v4.1 is a stateful protocol (not stateless like NFSv3) protocol issues can occur during network events. NFS v4.1 must quiesce operations and then perform lock reclamation. While these operations are taking place, disruptions may occur.
+- Both NFS v3 and NFS v4.1 are supported in the {{site.data.keyword.BluSoftlayer_full}} environment. However, it is {{site.data.keyword.IBM}}'s recommendation that NFS v3 be used. Because NFS v4.1 is a stateful protocol (not stateless like NFSv3) protocol issues can occur during network events. NFS v4.1 must quiesce all operations and then perform the lock reclamation. While these operations are taking place, disruptions may occur.
 
 ####  NFS Protocol VMware feature support matrix.
 <table>
@@ -201,7 +201,8 @@ To configure the virtual host, complete the following steps:
    - From Unix: ping -s 8972 a.b.c.d
    Where a.b.c.d is neighboring {{site.data.keyword.BluVirtServers_short}} interface with the command:
    The output appears similar to:
-   ```ping a.b.c.d (a.b.c.d) 8972(9000) bytes of data.
+   ```
+   ping a.b.c.d (a.b.c.d) 8972(9000) bytes of data.
    8980 bytes from a.b.c.d: icmp_seq=1 ttl=128 time=3.36 ms
    ```
 
@@ -220,8 +221,8 @@ More information on VMware and Jumbo Frames can be found [here](https://kb.vmwar
    ![Add Physical Adapters to Switch](/images/2_3.png)
 8. Click **Next** and the **Finish**.
 9. Navigate back to the **Virtual switches** tab and select the upper **Edit setting** icon under the **Virtual Switches** heading. (Pencil icon)
-10. Select the **vSwitch Teaming** and failover entry on the left.
-Verify that the **Load balancing** option is set to **Route based on the originating virtual port** and click **OK**.
+10. On the left, select the vSwitch **Teaming and failover** entry.
+11. Verify that the **Load balancing** option is set to **Route based on the originating virtual port** and click **OK**.
 
 
 ### 4. Configure ESXi static routing (Optional)
@@ -367,7 +368,7 @@ There are some additional settings required for setting up ESXi 5.x hosts for NF
 A jumbo frame is an Ethernet frame with a payload greater than the standard maximum transmission unit (MTU) of 1,500 bytes. Jumbo frames are used on local area networks that support at least 1 Gbps and can be as large as 9,000 bytes.
 
 
-Jumbo Frames needs to be configured the same on the entire network path from source device <-> switch <-> router <-> switch <-> destination device. If the entire chain is not set the same it will default to the lowest setting along the chain. SoftLayer has their network devices set to 9,000 currently. All customer devices will need to be set to the same.
+Jumbo Frames needs to be configured the same on the entire network path from source device <-> switch <-> router <-> switch <-> destination device. If the entire chain is not set the same it will default to the lowest setting along the chain. {{site.data.keyword.BluSoftlayer_full}} has their network devices set to 9,000 currently. All customer devices will need to be set to the same.
 
 ### Windows
 
