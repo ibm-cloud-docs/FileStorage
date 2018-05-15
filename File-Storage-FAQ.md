@@ -12,11 +12,11 @@ lastupdated: "2018-05-07"
 
 ## How are IOPS measured?
 
-IOPS are measured based on a load profile of 16 KB blocks with random 50% reads and 50% writes. Workloads that differ from this profile may experience lower performance.
+IOPS is measured based on a load profile of 16 KB blocks with random 50 percent reads and 50 percent writes. Workloads that differ from this profile may experience lower performance.
 
-## What happens if I use a smaller block size when measuring performance?
+## What happens when I use a smaller block size when measuring performance?
 
-Maximum IOPS can still be obtained when using smaller block sizes, however throughput will be lower. For example; a volume with 6000 IOPS would have the following throughput at various block sizes:
+Maximum IOPS can still be obtained when using smaller block sizes, however throughput will be lower. For example, a volume with 6000 IOPS would have the following throughput at various block sizes:
 
 - 16 KB * 6000 IOPS == ~93.75 MB/sec
 - 8 KB * 6000 IOPS == ~46.88 MB/sec
@@ -25,27 +25,27 @@ Maximum IOPS can still be obtained when using smaller block sizes, however throu
 
 ## Does the volume need to be pre-warmed to achieve expected throughput?
 
-There is no need for pre-warming. You will observe specified throughput immediately upon provisioning the volume.
+There's no need for pre-warming. You’ll observe specified throughput immediately upon provisioning the volume.
 
 ## How can I tell which of my {{site.data.keyword.filestorage_short}} LUNs/volumes are encrypted?
 
-When viewing your list of {{site.data.keyword.filestorage_short}} in the customer portal, you will see a lock icon to the right of LUN/volume name for those that are encrypted.
+When viewing your list of {{site.data.keyword.filestorage_short}} in the customer portal, you'll see a lock icon to the right of LUN/volume name for those that are encrypted.
 
 ## If I have non-encrypted {{site.data.keyword.filestorage_short}} provisioned in a data center that has been upgraded for encryption, can I encrypt my {{site.data.keyword.filestorage_short}}?
 
-{{site.data.keyword.filestorage_short}} that is provisioned prior to a data center upgrade cannot be encrypted. New {{site.data.keyword.filestorage_short}} provisioned in upgraded data centers is automatically encrypted ; there is no encrypt setting to choose from, it’s automatic. Data on non-encrypted storage in an upgraded data center can be encrypted by creating a new File volume, then copying the data to the new encrypted volume or file share with host-based migration. See [this article](/docs/infrastructure/FileStorage/migrate-file-storage-encrypted-file-storage.html) for instructions on how to perform the migration.
+{{site.data.keyword.filestorage_short}} that is provisioned before a data center upgrade can't be encrypted. New {{site.data.keyword.filestorage_short}} provisioned in upgraded data centers is automatically encrypted; there's no encrypt setting to choose from, it’s automatic. Data on non-encrypted storage in an upgraded data center can be encrypted by creating a new File volume, then copying the data to the new encrypted volume with host-based migration. See [this article](/docs/infrastructure/FileStorage/migrate-file-storage-encrypted-file-storage.html) for instructions on how to perform the migration.
 
 ## How do I know if I am provisioning {{site.data.keyword.filestorage_short}} in an upgraded data center?
 
-When provisioning {{site.data.keyword.filestorage_short}}, all upgraded data centers will be denoted with an asterisk (`*`) in the order form and an indication that you will be provisioning storage with encryption. Once the storage is provisioned, you will see an icon in the storage list that shows that volume or LUN as encrypted. All encrypted volumes and file shares are provisioned in upgraded data centers only. You can find a full list of upgraded data centers and available features [here](/docs//infrastructure/BlockStorage/new-ibm-block-and-file-storage-location-and-features.html).
+When provisioning {{site.data.keyword.filestorage_short}}, all upgraded data centers will be denoted with an asterisk (`*`) in the order form and an indication that you'll be provisioning storage with encryption. Once the storage is provisioned, you'll see an icon in the storage list that shows that volume as encrypted. All encrypted volumes and file shares are provisioned in upgraded data centers only. You can find a full list of upgraded data centers and available features [here](/docs//infrastructure/BlockStorage/new-ibm-block-and-file-storage-location-and-features.html).
 
 ## Why can I provision {{site.data.keyword.filestorage_short}} with an Endurance 10 IOPS tier in some data centers and not in others?
 
-The {{site.data.keyword.filestorage_short}} Endurance type 10 IOPS/GB tier is only available in select data centers, with new data centers being added soon.  You can find a full list of upgraded data centers and available features [here](/docs//infrastructure/BlockStorage/new-ibm-block-and-file-storage-location-and-features.html).
+The {{site.data.keyword.filestorage_short}} Endurance type 10 IOPS/GB tier is only available in select data centers, with new data centers being added soon. You can find a full list of upgraded data centers and available features [here](/docs//infrastructure/BlockStorage/new-ibm-block-and-file-storage-location-and-features.html).
 
 ## How can I find the correct mount point for my {{site.data.keyword.filestorage_short}}?
 
-All encrypted {{site.data.keyword.filestorage_short}} volumes provisioned in these data centers have a different mount point than non-encrypted volumes. To ensure you are using the correct mount point for both your encrypted and non-encrypted {{site.data.keyword.filestorage_short}} volumes you can view the mount point information in the **Volume Details** page in the UI as well as access the correct mountpoint via an API call:  `SoftLayer_Network_Storage::getNetworkMountAddress()`.
+All encrypted {{site.data.keyword.filestorage_short}} volumes provisioned in these data centers have a different mount point than non-encrypted volumes. To ensure you’re using the correct mount point for both your encrypted and non-encrypted {{site.data.keyword.filestorage_short}} volumes you can view the mount point information in the **Volume Details** page in the UI as well as access the correct mount point via an API call:  `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 
 ## How many file shares are allowed per file volume size? What are the maximum file shares allowed per volume size?
 Following are the maximum inodes or file shares allowed based on volume size:
@@ -113,9 +113,8 @@ Target latency within the storage is <1ms. Our storage is connected to compute i
 
 ## What happens to my data when {{site.data.keyword.filestorage_short}} Volumes are deleted?
 
-When storage is deleted any pointers to the data on that volume are removed thus the data becomes completely inaccessible. If the physical storage is re-provisioned to another account a new set of pointers are assigned. There is no way for the new account to access any data that may have been on the physical storage, the new set of pointers shows all 0's. When new data is written to the volume/LUN, any inaccessible data that still exists gets overwritten. 
+When storage is deleted any pointers to the data on that volume are removed thus the data becomes completely inaccessible. If the physical storage is re-provisioned to another account a new set of pointers are assigned. There is no way for the new account to access any data that may have been on the physical storage, the new set of pointers shows all 0's. When new data is written to the volume/LUN, any inaccessible data that still exists gets overwritten.
 
 ## What happens to the drives that are decommissioned from the cloud data center?
 
 When drives are decommissioned IBM destroys them before disposing of them, thus making them unusable. Any data that was written to that drive becomes inaccessible.
-

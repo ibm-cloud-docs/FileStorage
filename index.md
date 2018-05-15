@@ -2,7 +2,11 @@
 
 copyright:
   years: 2014, 2018
+<<<<<<< HEAD
 lastupdated: "2018-05-07"
+=======
+lastupdated: "2018-05-11"
+>>>>>>> d43abad3f66bf5123169ff8622ff5c5718e6df44
 
 ---
 {:new_window: target="_blank"}
@@ -12,7 +16,7 @@ lastupdated: "2018-05-07"
 
 {{site.data.keyword.filestorage_full}} is persistent, fast, and flexible Network Attached, NFS-based {{site.data.keyword.filestorage_short}}. In this Network Attached Storage (NAS) environment, you have total control over your file shares function and performance. {{site.data.keyword.filestorage_short}} shares can be connected to up to 64 authorized devices over routed TCP/IP connections for resiliency.
 
-{{site.data.keyword.filestorage_short}} brings best-in-class levels of durability and availability with an unmatched feature set and is built using industry standards and best practices, and designed to protect the integrity of the data and maintain availability through maintenance events and unplanned failures while providing a consistent performance baseline.
+{{site.data.keyword.filestorage_short}} brings best-in-class levels of durability and availability with an unmatched feature set. {{site.data.keyword.filestorage_short}} is built using industry standards and best practices, and designed to protect the integrity of the data. {{site.data.keyword.filestorage_short}} maintains availability through maintenance events and unplanned failures while providing a consistent performance baseline.
 
 Take advantage of the following core features of {{site.data.keyword.filestorage_short}}:
 
@@ -23,7 +27,7 @@ Take advantage of the following core features of {{site.data.keyword.filestorage
 - **Highly durable and resilient**
    - Protects the integrity of the data and maintains availability through maintenance events and unplanned failures without the need to create and manage operating system-level redundant array of independent disk (RAID) arrays
 - **Data-At-Rest Encryption** [(Available in select data centers.)](new-ibm-block-and-file-storage-location-and-features.html)
-   - Provider managed encryption for data-at-rest at no additional cost
+   - Provider-managed encryption for data-at-rest at no additional cost
 - **All Flash Backed Storage** [(Available in select data centers.)](new-ibm-block-and-file-storage-location-and-features.html)
    - All flash storage for volumes provisioned with Endurance or Performance at 2 IOPS/GB or higher
 - **Snapshots (When provisioned with Endurance or Performance in [select data centers](new-ibm-block-and-file-storage-location-and-features.html))**.
@@ -41,9 +45,9 @@ Take advantage of the following core features of {{site.data.keyword.filestorage
 
 You can select hourly or monthly billing for a File Volume. The type of billing selected for a LUN will apply to its snapshot space and replicas. For example, if you provision a LUN with hourly billing, any snapshots or replica fees will be billed hourly. If you provision a LUN with monthly billing, any snapshots or replica fees will be billed monthly. 
 
-With **hourly billing**, the calculation of the number of hours the file volume existed on the account is performed at the time the volume is deleted or at the end of the billing cycle, which ever comes first.  Hourly billing is a good choice for storage that is used for a few days or less than a full month. Hourly billing is only available for storage provisioned in [select data centers](new-ibm-block-and-file-storage-location-and-features.html). 
+With **hourly billing**, the number of hours the file volume existed on the account is calculated at the time the volume is deleted or at the end of the billing cycle, which ever comes first. Hourly billing is a good choice for storage that is used for a few days or less than a full month. Hourly billing is only available for storage provisioned in [select data centers](new-ibm-block-and-file-storage-location-and-features.html). 
 
-With **monthly billing**, the calculation for the price is pro-rated from the date of creation to the end of the billing cycle and billed immediately. There is no refund If a file volume is deleted before the end of the billing cycle.  Monthly billing is a good choice for storage used in production workloads that use data that needs to be stored and accessed for long periods of time (one month or longer).
+With **monthly billing**, the calculation for the price is pro-rated from the date of creation to the end of the billing cycle and billed immediately. There's no refund if a file volume is deleted before the end of the billing cycle. Monthly billing is a good choice for storage used in production workloads that use data that needs to be stored and accessed for long periods of time (one month or longer).
 
  
 ### Performance:

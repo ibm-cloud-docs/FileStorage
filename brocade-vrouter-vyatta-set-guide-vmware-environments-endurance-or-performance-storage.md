@@ -2,19 +2,19 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-05-04"
+lastupdated: "2018-05-11"
 
 ---
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 
-# Brocade vRouter (Vyatta) Set up Guide for VMware Environments with {{site.data.keyword.filestorage_short}}
+# Brocade vRouter (Vyatta) Set-up Guide for VMware Environments with {{site.data.keyword.filestorage_short}}
 
-You can configure a Brocade vRouter (Vyatta) appliance for high availability (HA) configuration within a VMware environment that is using {{site.data.keyword.filestorage_full}}. Use the following information in conjunction with the [Advanced Single-Site VMware Reference Architecture](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} to set up one of these storage options in your VMware environment.
+You can configure a Brocade vRouter (Vyatta) appliance for high availability (HA) configuration within a VMware environment that is using {{site.data.keyword.filestorage_full}}. Use the following information along with the [Advanced Single-Site VMware Reference Architecture](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} to set up one of these storage options in your VMware environment.
 
 ## Brocade vRouter (Vyatta) Overview
 
-The Brocade vRouter (Vyatta) gateway will serve as a gateway and router for your environment and contain zones comprising of subnets. Firewall rules will be set in place between zones so they can communicate with each other. For those zones that do not need to communicate with other zones, no firewall rule is needed as all packets will be dropped.
+The Brocade vRouter (Vyatta) gateway will serve as a gateway and router for your environment and contain zones consisting of subnets. Firewall rules will be set in place between zones so they can communicate with each other. For those zones that don’t need to communicate with other zones, no firewall rule is needed as all packets will be dropped.
 
 In our example configuration, there will be five zones created in the Brocade vRouter (Vyatta):
 
@@ -22,7 +22,7 @@ In our example configuration, there will be five zones created in the Brocade vR
 - VMACCESS – {{site.data.keyword.BluVirtServers_short}} (VMs) on the capacity cluster
 - MGMT – Management and capacity clusters as well as management VMs
 - STORAGE – Storage server(s)
-- OUTSIDE – Public Internet access
+- OUTSIDE – Public internet access
 
 
 Figure 1 describes the communication between each zone. Note that your environment may be different and may require different zones and firewall rules.
@@ -40,7 +40,7 @@ To configure the Brocade vRouter (Vyatta):
 
 ### Set up Interfaces
 
-In this section, we will configure the bond interfaces on both Brocade vRouters (Vyatta) to be linked to the subnets in the environment. Remember to replace our VLANs (1101, 1102, and 1103) with the corresponding VLANs in your environment. Also note that instructions made with <> should be replaced with your environment’s details (with the <> removed).
+In this section, we’ll configure the bond interfaces on both Brocade vRouters (Vyatta) to be linked to the subnets in the environment. Remember to replace our VLANs (1101, 1102, and 1103) with the corresponding VLANs in your environment. Also note that instructions made with <> should be replaced with your environment’s details (with the <> removed).
 
 Use the following commands to configure the bond interfaces on the Brocade vRouters (Vyatta). You must be in configure mode.
 

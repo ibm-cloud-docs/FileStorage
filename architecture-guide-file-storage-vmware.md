@@ -16,24 +16,24 @@ Following are the steps to order and configure {{site.data.keyword.filestorage_f
 
 Our {{site.data.keyword.filestorage_short}} is designed to support high I/O applications requiring predictable levels of performance. The predictable performance is achieved through the allocation of protocol-level input/output operations per second (IOPS) to individual volumes.
 
-The {{site.data.keyword.filestorage_short}} offering is accessed and mounted through an NFS connection. In a VMware deployment, a single volume can be mounted to up to 64 ESXi hosts as shared storage, or you can mount multiple volumes to create a storage cluster to utilize vSphere Storage DYNAMIC Resource Scheduling.
+The {{site.data.keyword.filestorage_short}} offering is accessed and mounted through an NFS connection. In a VMware deployment, a single volume can be mounted to up to 64 ESXi hosts as shared storage, or you can mount multiple volumes to create a storage cluster to use vSphere Storage DYNAMIC Resource Scheduling.
 
 Pricing and configuration options for Endurance and Performance {{site.data.keyword.filestorage_short}} are charged based on a combination of the reserved space and for the offered IOPS.
 
 ### 1. {{site.data.keyword.filestorage_short}} Considerations
 
-When ordering {{site.data.keyword.filestorage_short}}, you will want to keep in mind the following information and considerations:
+When ordering {{site.data.keyword.filestorage_short}}, you’ll want to keep in mind the following information and considerations:
 
-- The storage size, IOPS, and operating system cannot be changed once {{site.data.keyword.filestorage_short}} volumes are provisioned. Any changes you want to make for the amount of space, the number of IOPS, or the operating system requires a new volume to be provisioned. Any data stored in the previous volume will have to be migrated to the new volume(s) using VMware Storage vMotion.
-- When deciding on the size, consider the size of the workload and throughput needed. Size matters with the Endurance service which scales performance linearly in relation to capacity (IOPS/GB) as opposed to the Performance service which allows the administrator to choose capacity and performance independently. Throughput requirements matter with Performance. <br/> **Note**: The throughput calculation is IOPS x 16 KB. IOPS are measured based on a 16 KB block size with a 50/50 read/write mix. <br/> **Note**: Increasing block size will increase throughput but decrease IOPS. For example, doubling the block size to 32KB blocks will maintain the maximum throughput but halve the IOPS.
-- NFS utilizes many additional file control operations such as lookup, getattr and readdir to name a few. These operations in addition to read/write operations can count as IOPS and vary by operation type and NFS version.
+- The storage size, IOPS, and operating system can’t be changed once {{site.data.keyword.filestorage_short}} volumes are provisioned. Any changes you want to make for the amount of space, the number of IOPS, or the operating system requires a new volume to be provisioned. Any data stored in the previous volume has to be migrated to the new volume(s) using VMware Storage vMotion.
+- When deciding on the size, consider the size of the workload and throughput needed. Size matters with the Endurance service, which scales performance linearly in relation to capacity (IOPS/GB) as opposed to the Performance service, which allows the administrator to choose capacity and performance independently. Throughput requirements matter with Performance. <br/> **Note**: The throughput calculation is IOPS x 16 KB. IOPS is measured based on a 16 KB block size with a 50/50 read/write mix. <br/> **Note**: Increasing block size will increase throughput but decrease IOPS. For example, doubling the block size to 32 KB blocks will maintain the maximum throughput but halve the IOPS.
+- NFS uses many additional file control operations such as lookup, getattr and readdir to name a few. These operations in addition to read/write operations can count as IOPS and vary by operation type and NFS version.
 - Technically, multiple volumes can be striped together to achieve higher IOPS and more throughput, however, VMware recommends a single Virtual Machine File System (VMFS) data store per volume to avoid performance degradation.
 - {{site.data.keyword.filestorage_short}} volumes are exposed to authorized devices, subnets, or IP addresses.
-- Snapshot and Replication services are natively available on Endurance {{site.data.keyword.filestorage_short}} volumes only. Performance {{site.data.keyword.filestorage_short}} does not have these capabilities.
-- To avoid storage disconnection during path fail over {{site.data.keyword.IBM}} recommends installing VMWare tools which will set an appropriate timeout value. There is no need to change the value, the default setting is sufficient to ensure that your VMWare host will not lose connectivity.
-- Both NFS v3 and NFS v4.1 are supported in the {{site.data.keyword.BluSoftlayer_full}} environment. However, it is {{site.data.keyword.IBM}}'s recommendation that NFS v3 be used. Because NFS v4.1 is a stateful protocol (not stateless like NFSv3) protocol issues can occur during network events. NFS v4.1 must quiesce all operations and then perform the lock reclamation. While these operations are taking place, disruptions may occur.
+- Snapshot and Replication services are natively available on Endurance {{site.data.keyword.filestorage_short}} volumes only. Performance {{site.data.keyword.filestorage_short}} doesn’t have these capabilities.
+- To avoid storage disconnection during path failover {{site.data.keyword.IBM}} recommends installing VMWare tools, which will set an appropriate timeout value. There’s no need to change the value, the default setting is sufficient to ensure that your VMWare host won’t lose connectivity.
+- Both NFS v3 and NFS v4.1 are supported in the {{site.data.keyword.BluSoftlayer_full}} environment. However, it’s {{site.data.keyword.IBM}}'s recommendation that NFS v3 be used. Because NFS v4.1 is a stateful protocol (not stateless like NFSv3) protocol issues can occur during network events. NFS v4.1 must quiesce all operations and then perform the lock reclamation. While these operations are taking place, disruptions may occur.
 
-####  NFS Protocol VMware feature support matrix.
+#### NFS Protocol VMware feature support matrix.
 <table>
  <tbody>
   <tr>
