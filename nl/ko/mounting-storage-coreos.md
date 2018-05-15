@@ -8,15 +8,15 @@ lastupdated: "2017-10-09"
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 
-# CoreOS에서 {{site.data.keyword.filestorage_short}} 마운트
+# CoreOS에 {{site.data.keyword.filestorage_short}} 마운트
 
-CoreOS는 다양한 인프라에서 확장 가능한 대형 배치를 쉽게 관리하도록 빌드된 강력한 Linux 배포입니다. Chrome OS 빌드에 기반하는 CoreOS는 경량 호스트 시스템을 유지보수하고 모든 애플리케이션에 대해 Docker 컨테이너를 사용합니다. 
+CoreOS는 다양한 인프라의 대규모 확장 가능한 배치를 관리하기가 용이하도록 할 목적으로 빌드된 강력한 Linux 배포입니다. Chrome OS의 빌드를 기반으로 하는 CoreOS는 경량 호스트 시스템을 유지보수하며 모든 애플리케이션에 대해 Docker 컨테이너를 사용합니다. 
 
 ## 휴대용 스토리지 마운트
 
-시스템 레벨 마운트는 CoreOS에서 읽기 전용인 디렉토리에 있으므로 모든 보조 마운트 파일은 */etc/systemd/system* 디렉토리로 이동합니다. MOUNTPOINT.mount 파일을 작성합니다. .mount 파일의 Where 섹션은 파일 이름과 일치해야 합니다. 마운트 지점이 직접 /로 시작하지 않는 경우 다음 구문을 사용하여 파일 이름을 지정해야 합니다. path-to-mount.mount. 다음 예제에서 보는 대로, `/mnt/www`에 휴대용 스토리지 드라이브를 마운트하려고 하므로, 파일 이름을 `mnt-www.mount`로 지정합니다. 
+시스템 레벨 마운트가 CoreOS의 읽기 전용 디렉토리에 있으므로, 모든 2차 마운트 파일은 */etc/systemd/system* 디렉토리로 이동됩니다. 사용자는 MOUNTPOINT.mount 파일을 작성합니다. .mount 파일의 Where 섹션은 파일 이름과 일치해야 합니다. 마운트 지점이 / 바로 아래가 아닌 경우에는 path-to-mount.mount 구문을 사용하여 파일 이름을 지정해야 합니다. 다음 예제에서 볼 수 있듯이, `mnt-www.mount` 파일 이름을 지정할 수 있도록 휴대용 스토리지 드라이브를 `/mnt/www`에 마운트하고자 합니다. 
 
-파티션을 작성하기 위해 fdisk 또는 parted를 사용하고 작성한 파일 시스템이 `.mount` 파일에 나열된 항목과 일치하는지 확인해야 합니다. 그렇지 않으면 서비스가 시작되지 않습니다. 
+사용자는 fdisk 또는 parted를 사용하여 파티션을 작성해야 하며, 작성하는 파일 시스템이 `.mount` 파일에 나열된 것과 일치하는지 확인해야 합니다. 그렇지 않으면, 서비스가 시작되지 않습니다. 
 
 
 ```
@@ -32,13 +32,13 @@ Type=ext4
 WantedBy = multi-user.target
 ```
 
-CoreOS는 systemd를 사용하므로 마운트 지점을 유지하려면 재부팅 시 `*.mount` 파일을 사용해야 합니다. `--now` 플래그를 사용하는 경우 파티션은 즉시 마운트되며 부팅 시 시작하도록 설정됩니다. 
+CoreOS는 systemd를 사용합니다. 따라서 다시 부팅해도 마운트 지점이 계속 유효하려면 `*.mount` 파일을 사용해야 합니다. `--now` 플래그를 사용하는 경우, 파티션은 즉각적으로 마운트되며 부트 시에 시작하도록 설정됩니다. 
 
 `$ systemctl enable --now mnt-www.mount`
 
 ## NFS/{{site.data.keyword.filestorage_short}} 마운트
 
-Endurance/Performance {{site.data.keyword.filestorage_short}} 마운트 프로세스도 거의 비슷하지만, 마운트가 NFS이므로 mount 파일에서 Options= 행을 사용하여 몇 가지 추가 옵션을 지정할 수 있습니다. 다음 예제에서는 `/data/www`에서 마운트할 NFS를 설정합니다. {{site.data.keyword.filestorage_short}} 인스턴스의 NFS 마운트 포인트는 {{site.data.keyword.filestorage_short}} 목록 페이지에서 또는 API -SoftLayer_Network_Storage::getNetworkMountAddress() 호출을 통해 확보할 수 있습니다. 
+Endurance/Performance {{site.data.keyword.filestorage_short}}의 마운트 프로세스는 거의 동일하지만, 마운트가 NFS이므로 마운트 파일의 Options= 행을 사용하여 일부 추가 옵션을 지정할 수 있습니다. 다음 예제에서는 `/data/www`에서 마운트할 NFS를 설정합니다. 참고로, {{site.data.keyword.filestorage_short}} 인스턴스의 NFS 마운트 지점은 {{site.data.keyword.filestorage_short}} 목록 페이지에서 또는 API 호출 SoftLayer_Network_Storage::getNetworkMountAddress()를 통해 가져올 수 있습니다. 
 
 ```
 $ cat data-www.mount
@@ -66,12 +66,12 @@ cluster1 ~ # mount |grep data
  
 ## NAS/Cifs 마운트
 
-cifs 공유 마운트는 CoreOS에서 기본적으로 지원되지 않지만, 호스트 시스템이 NFS 공유를 마운트할 수 있도록 하는 쉬운 임시 해결책이 있습니다. 컨테이너를 사용하여 mount.cfis 모듈을 빌드하고 CoreOS 시스템에 복사합니다. 
+cifs 공유의 마운트는 기본적으로 CoreOS에서 지원되지 않지만, 호스트 시스템이 NAS 공유를 마운트할 수 있도록 허용하는 매우 손쉬운 임시 해결책이 있습니다. 사용자는 컨테이너를 사용하여 mount.cfis 모듈을 빌드한 후에 이를 CoreOS 시스템에 복사합니다. 
  
-CoreOS 시스템에서 다음을 실행하여 Fedora 컨테이너를 다운로드하고 여기에 넣습니다. <br/>
+CoreOS 시스템에서 다음을 실행하여 Fedora 컨테이너를 다운로드하고 내부로 진입하십시오. <br/>
 `docker run -t -i -v /tmp:/host_tmp fedora /bin/bash`
  
-컨테이너에 있으면 다음을 실행하여 cifs 유틸리티를 빌드하려고 합니다. 
+일단 컨테이너 내부에 있는 경우, 사용자는 다음을 실행하여 cifs 유틸리티를 빌드하고자 합니다. 
 ```
 dnf groupinstall -y "Development Tools" "Development Libraries"
 dnf install -y tar
@@ -82,9 +82,9 @@ cd cifs-utils-6.4/
 cp mount.cifs /host_tmp/
 ```
  
-mount.cifs 파일이 호스트 시스템에 복사되었으므로 `exit` 명령을 실행하거나 **ctrl+d**를 눌러 Docker 컨테이너를 종료할 수 있습니다. CoreOS 시스템으로 돌아가면 다음 명령으로 CIFS 공유를 마운트할 수 있습니다. <br/>
+이제 mount.cifs 파일이 호스트 시스템에 복사되었으므로 `exit`명령을 실행하거나 **ctrl+d**를 눌러서 Docker 컨테이너를 종료할 수 있습니다. CoreOS 시스템으로 다시 돌아오면 다음 명령으로 CIFS 공유를 마운트할 수 있습니다. <br/>
 `/tmp/mount.cifs //nasXXX.service.softlayer.com/USERNAME -o username=USERNAME,password=PASSWORD /path/to/mount`
  
-## iSCSI 마운트
+## ISCSI 마운트
 
-현재 CoreOS에서 지원되지 않지만 향후 릴리스에서 준비 중입니다. https://github.com/coreos/bugs/issues/634
+현재 이는 CoreOS에서 지원되지 않지만 향후 릴리스에서는 지원될 예정입니다(https://github.com/coreos/bugs/issues/634). 
