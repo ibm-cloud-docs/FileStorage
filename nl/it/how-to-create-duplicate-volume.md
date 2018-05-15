@@ -12,9 +12,9 @@ lastupdated: "2017-10-09"
 
 Offriamo la possibilità di creare un duplicato di un volume {{site.data.keyword.filestorage_full}} esistente. Il volume duplicato erediterà per impostazione predefinita le opzioni di capacità e prestazioni del volume originale e avrà una copia dei dati che arriva fino al punto temporale di un'istantanea.   
 
-Poiché il duplicato è basato sui dati in un'istantanea a un punto temporale, è necessario lo spazio per le istantanee sul volume originale prima che tu possa creare un duplicato. Per ulteriori informazioni sulle istantanee e su come ordinare lo spazio per le istantanee, consulta la [documentazione delle istantanee](snapshots.html).  
+Poiché il duplicato è basato sui dati in un'istantanea a un punto temporale, è necessario lo spazio per le istantanee sul volume originale prima che tu possa creare un duplicato.  Per ulteriori informazioni sulle istantanee e su come ordinare lo spazio per le istantanee, consulta la [documentazione delle istantanee](snapshots.html).  
 
-I duplicati possono essere creati sia dal volume primario che da quello di replica e il nuovo duplicato viene creato nello stesso data center del volume originale. Ad esempio, se crei un duplicato da un volume di replica, il nuovo volume verrà creato nello stesso data center del volume di replica.    
+I duplicati possono essere creati sia dal volume primario che da quello di replica e il nuovo duplicato viene creato nello stesso data center del volume originale.  Ad esempio, se crei un duplicato da un volume di replica, il nuovo volume verrà creato nello stesso data center del volume di replica.    
 
 I volumi duplicati solo accessibili da un host per la lettura/scrittura non appena viene seguito il provisioning dell'archiviazione. Le istantanee e le repliche saranno consentite solo dopo il completamento della copia dei dati dall'originale al duplicato. 
 
@@ -42,18 +42,18 @@ Dal [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window
 1.	Seleziona un volume dall'elenco e fai clic su **Actions** > **Duplicate LUN (Volume)** 
 2.	Scegli la tua opzione di istantanea: 
     -	In caso di ordinazione da un volume non di replica:
-      -	Seleziona **Create from new snapshot** - questo creerà una nuova istantanea che verrà utilizzata per il duplicato. Usa questa opzione se non ci sono attualmente istantanee per il tuo volume o se vuoi creare un duplicato a tale punto temporale.
+      -	Seleziona **Create from new snapshot** - questo creerà una nuova istantanea che verrà utilizzata per il duplicato. Usa questa opzione se non ci sono attualmente istantanee per il tuo volume o se vuoi creare un duplicato a tale punto temporale. 
                       OPPURE 
 
       -	Seleziona **Create from latest snapshot** - questo creerà un duplicato da qualunque cosa esista nell'ultima istantanea per questo volume. 
     -	In caso da ordinazione da un volume di replica - la sola opzione per l'istantanea consiste nell'utilizzare l'istantanea più recente disponibile. 
-3.	Fatturazione oraria o mensile – puoi scegliere di eseguire il provisioning del nuovo volume duplicato con la fatturazione oraria o mensile. Il tipo di fatturazione per il volume originale viene selezionato automaticamente ma, se vuoi scegliere un tipo di fatturazione differente per la nuova archiviazione duplicata, puoi operare tale selezione qui.
+3.	Fatturazione oraria o mensile – puoi scegliere di eseguire il provisioning del nuovo volume duplicato con la fatturazione oraria o mensile.  Il tipo di fatturazione per il volume originale viene selezionato automaticamente ma, se vuoi scegliere un tipo di fatturazione differente per la nuova archiviazione duplicata, puoi operare tale selezione qui.
 4. 	Il tipo di archiviazione (Endurance o Performance) e l'ubicazione rimarranno gli stessi del volume originale. 
 5.	Volendo, puoi specificare gli IOPS o il livello IOPS per il nuovo volume. La designazione degli IOPS del volume originale è impostata per impostazione predefinita. 
       -	Se il tuo volume originale è al livello Endurance 0,25 IOPS, non potrai operare una nuova selezione. 
       -	Se il tuo volume originale è al livello Endurance 2, 4 o 10 IOPS, puoi spostarti dovunque tra questi livelli per il nuovo volume. 
       -	Verranno visualizzate le combinazioni di Performance e dimensioni disponibili. 
-6.	Se vuoi, puoi aggiornare la dimensione del nuovo volume in modo che sia più grande dell'originale. La dimensione del volume originale è impostata per impostazione predefinita. 
+6.	Se vuoi, puoi aggiornare la dimensione del nuovo volume in modo che sia più grande dell'originale.  La dimensione del volume originale è impostata per impostazione predefinita. 
   	-	**Nota**: la dimensione di {{site.data.keyword.filestorage_short}} può essere modificata solo a 10x la dimensione originale del volume. 
 7.	Se vuoi, puoi aggiornare lo spazio per le istantanee per il nuovo volume per aggiungere più, meno o zero spazio per le istantanee. Lo spazio per le istantanee del volume originale verrà impostato per impostazione predefinita. 
 8.	Fai clic su **Continue** per effettuare il tuo ordine per il duplicato. 
@@ -71,7 +71,7 @@ Accedi al tuo elenco di {{site.data.keyword.filestorage_short}}:
       - Se il tuo volume originale è al livello Endurance 0,25 IOPS, non potrai operare una nuova selezione. 
       - Se il tuo volume originale è al livello Endurance 2, 4 o 10 IOPS, puoi spostarti dovunque tra questi livelli per il nuovo volume. 
       - Verranno visualizzate le combinazioni di Performance e dimensioni disponibili. 
-5.	Se vuoi, puoi aggiornare la dimensione del nuovo volume in modo che sia più grande dell'originale. La dimensione del volume originale è impostata per impostazione predefinita. 
+5.	Se vuoi, puoi aggiornare la dimensione del nuovo volume in modo che sia più grande dell'originale.  La dimensione del volume originale è impostata per impostazione predefinita. 
       - **Nota**: la dimensione di {{site.data.keyword.filestorage_short}} può essere modificata solo a 10x la dimensione originale del volume. 
 6.	Se vuoi, puoi aggiornare lo spazio per le istantanee per il nuovo volume per aggiungere più, meno o zero spazio per le istantanee. Lo spazio per le istantanee del volume originale verrà impostato per impostazione predefinita. 
 7.	Fai clic su **Continue** per effettuare il tuo ordine per il duplicato. 

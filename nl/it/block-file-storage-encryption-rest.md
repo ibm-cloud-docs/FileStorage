@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-02-08"
+lastupdated: "2018-04-23"
 
 ---
 {:new_window: target="_blank"}
@@ -15,7 +15,7 @@ lastupdated: "2018-02-08"
 La funzione di crittografia dei dati inattivi gestita dal provider utilizza i seguenti protocolli standard del settore:
 
 * Crittografia AES-256 standard del settore
-* Le chiavi sono gestite internamente con il KMIP (Key Management Improbability Protocol) standard del settore
+* Le chiavi sono gestite internamente con il KMIP (Key Management Interoperability Protocol) standard del settore
 * L'archiviazione è convalidata in base allo standard FIPS PUB (Federal Information Processing Standard Publication) 140-2 per la conformità a FISMA (Federal Information Security Management Act), HIPAA (Health Insurance Portability and Accountability Act), PCI (Payment Card Industry), Basel II, California Security Breach Information Act (SB 1386) e alla direttiva sulla protezione dei dati dell'Unione europea 95/46/EC
 
 ## Crittografia dei dati inattivi per istantanee o archiviazione replicata  

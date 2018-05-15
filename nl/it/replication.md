@@ -1,12 +1,12 @@
 ---
- 
+
 copyright:
   years: 2015, 2018
-lastupdated: "2018-02-13"
- 
+lastupdated: "2018-04-25"
+
 ---
 
-{:shortdesc: .shortdesc} 
+{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 
 # Gestione della replica
@@ -20,7 +20,7 @@ Le repliche ti consentono
 
 Prima di poter eseguire la replica, devi creare una pianificazione delle istantanee. Quando esegui il failover, stai passando dal tuo volume di archiviazione nel tuo data center primario al volume di destinazione nel tuo data center remoto. Ad esempio, il tuo data center primario si trova a Londra e il tuo data center secondario si trova ad Amsterdam. Se si verifica un evento di malfunzionamento, eseguirai il failover ad Amsterdam, stabilendo una connessione al volume che ora è quello primario da un'istanza di elaborazione ad Amsterdam. Dopo che il tuo volume a Londra sarà stato riparato, verrà acquisita un'istantanea del volume che si trova ad Amsterdam per eseguire il fallback a Londra e al volume che ora è nuovamente quello primario da un'istanza di elaborazione a Londra.
 
- 
+
 **Nota:** se non è indicato diversamente, la procedura è uguale sia per {{site.data.keyword.blockstorageshort}} sia per {{site.data.keyword.filestorage_full}}.
 
 ## Come determino il data center remoto per il mio volume di archiviazione replicato?
@@ -52,6 +52,7 @@ Nota: alcune città. come Dallas, San Jose, Washington, D.C. e Amsterdam hanno p
 				<br />
 				<br />
 				<br />
+				<br />
 			</td>
 			<td>SJC03<br />
 			       SJC04<br />
@@ -62,17 +63,19 @@ Nota: alcune città. come Dallas, San Jose, Washington, D.C. e Amsterdam hanno p
 				DAL10<br />
 				DAL12<br />
 				DAL13<br />
+				<br />
 			</td>
 			<td>MEX01<br />
-				SAO01<br /><br /><br /><br /><br /><br /><br /><br />
+				SAO01<br /><br /><br /><br /><br /><br /><br /><br /><br />
 			</td>
 			<td>TOR01<br />
-				MON01<br /><br /><br /><br /><br /><br /><br /><br />
+				MON01<br /><br /><br /><br /><br /><br /><br /><br /><br />
 			</td>
 			<td>
 				AMS01<br />
 				AMS03<br />
 				FRA02<br />
+				FRA04<br />
 				LON02<br />
 				LON04<br />
 				LON06<br />
@@ -84,8 +87,9 @@ Nota: alcune città. come Dallas, San Jose, Washington, D.C. e Amsterdam hanno p
 				TOK02<br />
 				SNG01<br />
 				SEO01<br />
-                                _____<br />
-				CHE01<sup><img src="/images/numberone.png" alt="1" /></sup><br />
+                                CHE01<br />
+				<br />
+				<br />
 				<br />
 				<br />
 				<br />
@@ -94,16 +98,16 @@ Nota: alcune città. come Dallas, San Jose, Washington, D.C. e Amsterdam hanno p
 				SYD01<br />
 				SYD04<br />
 				MEL01<br />
-				<br /><br /><br /><br /><br /><br />
+				<br /><br /><br /><br /><br /><br /><br />
 			</td>
 		</tr>
 		<tr>
-			<td colspan="100%"><p><sup><img src="/images/numberone.png" alt="1" /></sup>I data center in queste regioni o specificamente indicati in una regione NON hanno l'archiviazione crittografata.<br /><strong>Nota</strong>: i data center con l'archiviazione crittografata <strong>non possono</strong> avviare la replica con data center non crittografati come destinazioni della replica.<br />Nella regione Asia Pacifico, CHE01 può avviare la replica ai data center con l'archiviazione crittografata come repliche (data center sopra la riga).</p>
+			<td colspan="100%"><p><sup><img src="/images/numberone.png" alt="1" /></sup>I data center in questa regione NON hanno l'archiviazione crittografata.<br /><strong>Nota</strong>: i data center con l'archiviazione crittografata <strong>non possono</strong> avviare la replica con data center non crittografati come destinazioni della replica.</p>
 			</td>
 		</tr>
 	</tbody>
 </table>
- 
+
 
 ## Come creo un replica iniziale?
 
@@ -117,13 +121,13 @@ Le repliche iniziano da una pianificazione delle istantanee. Prima di poter eseg
 4. Fai clic su **Continue**.
 5. Immetti un codice promozionale (**Promo Code**), se ne hai uno, e fai clic su **Recalculate**. Gli altri campi nella finestra di dialogo prenderanno i valori predefiniti.
 6. Fai clic sulla casella di spunta **I have read the Master Service Agreement…** e fai clic su **Place Order**.
- 
+
 
 ## Come modifico una replica esistente?
 
 Puoi modificare la tua pianificazione replica e modificare il tuo spazio di replica dalla scheda **Primary** o da quella **Replica** in **Storage** > **{{site.data.keyword.filestorage_short}}** dal [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
 
- 
+
 
 ## Come modifico una pianificazione della replica?
 
@@ -135,7 +139,7 @@ La modifica della pianificazione può essere eseguita nella scheda **Primary** o
 2. Seleziona **Edit Snapshot Schedule**.
 3. Controlla nel frame Snapshot in Schedule per determinare quale pianificazione stai usando per la replica. Apporta le modifiche alla pianificazione utilizzata per la replica; ad esempio, se la tua pianificazione replica è **Daily**, puoi modificare l'ora del giorno in cui deve essere eseguita la replica.
 4. Fai clic su **Save**.
- 
+
 
 ## Come modifico lo spazio di replica?
 
@@ -144,20 +148,21 @@ Il tuo spazio per le istantanee primario e il tuo spazio di replica devono esser
 Fai clic sul menu a discesa **Actions** dalla scheda **Primary** o da quella **Replica**.
 Seleziona **Add More Snapshot Space**.
 Seleziona la dimensione di archiviazione dall'elenco e fai clic su **Continue**.
-Immetti un codice promozionale (**Promo Code**), se ne hai uno, e fai clic su **Recalculate**. Gli altri campi nella finestra di dialogo prenderanno i valori predefiniti. Fai clic sulla casella di spunta I have read the Master Service Agreement… e fai clic sul pulsante Place Order.
- 
+Immetti un codice promozionale (**Promo Code**), se ne hai uno, e fai clic su **Recalculate**. Gli altri campi nella finestra di dialogo prenderanno i valori predefiniti.
+Fai clic sulla casella di spunta I have read the Master Service Agreement… e fai clic sul pulsante Place Order.
+
 
 ## Come vedo i miei volumi di replica nell'elenco volumi?
 
 Puoi visualizzare i tuoi volumi di replica dalla pagina {{site.data.keyword.filestorage_short}} in **Storage** > **{{site.data.keyword.filestorage_short}}**. Il nome del volume (Volume Name) avrà il nome del volume primario seguito da REP. Il tipo (Type) è Endurance(Performance) – Replica, l'indirizzo di destinazione (Target Address) è Non disponibile (N/A) perché il volume di replica non è montato nel data center di replica e lo stato (Status) è inattivo (Inactive).
 
- 
+
 
 ## Come visualizzo i dettagli di un volume replicato nel data center di replica?
 
 Puoi visualizzare i dettagli del volume di replica nella scheda **Replica** in **Storage** > **{{site.data.keyword.filestorage_short}}**. Un'altra opzione consiste nel selezionare il volume di replica dalla pagina **{{site.data.keyword.filestorage_short}}** e nel fare clic sulla scheda **Replica**.
 
- 
+
 
 ## Come specifico le autorizzazioni host prima dell'esecuzione del failover al data center secondario?
 
@@ -168,7 +173,7 @@ Gli host autorizzati e i volumi si devono trovare nello stesso data center. Non 
 3. Scorri giù al frame **Authorize Hosts** e fai clic sul link **Authorize Hosts** sul lato destro della schermata.
 4. Evidenzia l'host che deve essere autorizzato per le repliche. Per selezionare più host, utilizza il tasto CTRL e fai clic sugli host applicabili.
 5. Fai clic su **Submit**. Se non hai alcun host, la finestra di dialogo ti offrirà l'opzione di acquistare delle risorse di elaborazione nello stesso data center; in alternativa, puoi fare clic su **Close**.
- 
+
 
 ## Come aumento il mio spazio per le istantanee nel mio data center di replica quando aumento lo spazio nel mio data center primario?
 
@@ -176,7 +181,7 @@ Le dimensioni dei tuoi volumi devono essere le stesse per i volumi di archiviazi
 
 Fai clic [qui](snapshots.html) per informazioni su come aumentare il tuo spazio per le istantanee.
 
- 
+
 
 ## Come avvio un failover da un volume alla sua replica?
 
@@ -194,11 +199,11 @@ I failover vengono avviati in **Storage** > **{{site.data.keyword.filestorage_sh
 4. Fai clic sul link **View All {{site.data.keyword.filestorage_short}}** nell'angolo superiore destro.
 5. Fai clic sulla tua LUN attiva (in precedenza il tuo volume di destinazione). Questo volume avrà ora uno stato **Active**.
 6. Monta o collega il tuo volume di archiviazione all'host.
- 
 
-## Come avvio un fallback da un volume alla sua replica?
 
-Dopo che il tuo volume di origine originale sarà stato riparato, l'azione **Fallback** ti consentirà di avviare un fallback controllato al tuo volume di origine originale. In un fallback controllato,
+## Come avvio un failback da un volume alla sua replica? 
+
+Dopo che il tuo volume di origine originale sarà stato riparato, l'azione **failback** ti consentirà di avviare un failback controllato al tuo volume di origine originale. In un failback controllato,
 
 - il volume di origine operativo viene portato offline;
 - viene acquisita un'istantanea;
@@ -206,30 +211,30 @@ Dopo che il tuo volume di origine originale sarà stato riparato, l'azione **Fal
 - l'istantanea di dati appena acquisita viene attivata;
 - il volume di origine viene quindi reso attivo per il montaggio.
 
-Tieni presente che, una volta avviato un fallback, la **relazione di replica viene nuovamente invertita**. Il tuo volume di origine viene ripristinato come tuo volume di origine e il tuo volume di destinazione diventa nuovamente il volume di destinazione, come indicato dal nome LUN (**LUN Name**) seguito da **REP**.
+Tieni presente che, una volta avviato un failback, la **relazione di replica viene nuovamente invertita**. Il tuo volume di origine viene ripristinato come tuo volume di origine e il tuo volume di destinazione diventa nuovamente il volume di destinazione, come indicato dal nome LUN (**LUN Name**) seguito da **REP**.
 
-I fallback vengono avviati in **Storage** > **{{site.data.keyword.filestorage_short}}** dal [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
+I failback vengono avviati in **Storage** > **{{site.data.keyword.filestorage_short}}** dal [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.. 
 
 1. Fai clic sulla tua LUN Endurance attiva ("destinazione").
 2. Fai clic sulla scheda **Replica** e fai clic sul link **Actions** nell'angolo superiore destro.
-3. Seleziona **Fallback**.
-   Riceverai un messaggio nella parte superiore della pagina che indica che il failover è in corso. Comparirà inoltre un'icona accanto al tuo volume in **{{site.data.keyword.filestorage_short}}** che indica che è in corso una transazione attiva. Se passi il puntatore del mouse sull'icona, verrà visualizzata una finestra di dialogo che indica la transazione. Una volta completata la transazione, l'icona scomparirà. Durante il processo di fallback, le azioni correlate alla configurazione sono di sola lettura; non puoi modificare le pianificazioni delle istantanee, modificare lo spazio per le istantanee e così via. L'evento viene registrato nella cronologia replica.
+3. Seleziona **failback**.
+   Riceverai un messaggio nella parte superiore della pagina che indica che il failover è in corso. Comparirà inoltre un'icona accanto al tuo volume in **{{site.data.keyword.filestorage_short}}** che indica che è in corso una transazione attiva. Se passi il puntatore del mouse sull'icona, verrà visualizzata una finestra di dialogo che indica la transazione. Una volta completata la transazione, l'icona scomparirà. Durante il processo di failback, le azioni correlate alla configurazione sono di sola lettura; non puoi modificare le pianificazioni delle istantanee, modificare lo spazio per le istantanee e così via. L'evento viene registrato nella cronologia replica.
    Un altro messaggio ti informerà quando il tuo volume di origine è operativo. Il tuo volume di destinazione avrà ora uno stato di Inactive.
 4. Fai clic sul link **View All {{site.data.keyword.filestorage_short}}** nell'angolo superiore destro.
 5. Fai clic sulla tua LUN Endurance attiva (origine). Questo volume avrà ora uno stato **Active**.
 6. Monta o collega il tuo volume di archiviazione all'host. Fai clic [qui](provisioning-file-storage.html) per le istruzioni.
- 
+
 
 ## Come vedo la mia cronologia replica?
 
 La cronologia replica viene visualizzata in **Audit Log** tramite la scheda **Account** in **Manage** . Entrambi i volumi primario e di replica visualizzeranno una cronologia replica identica, che include:
 
-- il tipo per la replica (failover o fallback);
+- il tipo per la replica (failover o failback);
 - quando è stata avviata;
 - l'istantanea utilizzata per la replica;
 - la dimensione della replica;
 - quando è stata completata
- 
+
 
 ## Come annullo una replica esistente?
 
@@ -240,7 +245,7 @@ L'annullamento può essere eseguito immediatamente a alla data dell'anniversario
 3. Seleziona **Cancel Replica**.
 4. Seleziona quando annullare, **Immediately** oppure **Anniversary Date**, e fai clic su **Continue**.
 5. Fai clic sulla casella di spunta **I acknowledge that due to cancellation, data loss may occur** e fai clic su **Cancel Replica**.
- 
+
 
 ## Come annullo la replica quando il volume primario viene annullato?
 

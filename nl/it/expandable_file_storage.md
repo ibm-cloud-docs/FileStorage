@@ -10,7 +10,7 @@ lastupdated: "2017-12-14"
 
 # Capacità di condivisione file espandibile
 
-Con questa nuova funzione, i nostri attuali utenti {{site.data.keyword.filestorage_full}} possono espandere la dimensione del loro {{site.data.keyword.filestorage_short}} esistente in incrementi di GB fino a 12 TB senza causare alcuna interruzione, senza dover creare un duplicato o migrare manualmente i dati a un volume più grande. Non si verificherà alcuna interruzione o mancanza di accesso all'archiviazione mentre viene eseguita la modifica della dimensione. 
+Con questa nuova funzione, i nostri attuali utenti {{site.data.keyword.filestorage_full}} possono espandere la dimensione del loro {{site.data.keyword.filestorage_short}} esistente in incrementi di GB fino a 12 TB senza causare alcuna interruzione, senza dover creare un duplicato o migrare manualmente i dati a un volume più grande.  Non si verificherà alcuna interruzione o mancanza di accesso all'archiviazione mentre viene eseguita la modifica della dimensione. 
 
 La fatturazione per il volume viene aggiornata per aggiungere la differenza calcolata proporzionalmente del nuovo prezzo al ciclo di fatturazione corrente e l'intero nuovo ammontare verrà fatturato nel prossimo ciclo di fatturazione.
 
@@ -34,7 +34,7 @@ Le limitazioni di dimensione esistenti per {{site.data.keyword.filestorage_short
 
 ## Come posso distinguere se la mia archiviazione di cui è stato eseguito il provisioning è espandibile?
 
-L'archiviazione di cui è stato eseguito il provisioning con le funzionalità avanzate è sempre crittografata da inattiva. Puoi identificare facilmente se la tua archiviazione è idonea poiché, se lo è, presenta accanto ad essa un'icona di "blocco" nell'IU del portale. 
+L'archiviazione di cui è stato eseguito il provisioning con le funzionalità avanzate è sempre crittografata da inattiva.  Puoi identificare facilmente se la tua archiviazione è idonea poiché, se lo è, presenta accanto ad essa un'icona di "blocco" nell'IU del portale. 
 
 ## Come posso modificare la dimensione della mia archiviazione?
 

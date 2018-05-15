@@ -41,9 +41,9 @@ Avvaliti delle seguenti funzioni principali di {{site.data.keyword.filestorage_s
 
 Puoi selezionare la fatturazione mensile o oraria per un volume di file. Il tipo di fatturazione selezionato per una LUN si applicherà al suo spazio per le istantanee e alle sue repliche. Ad esempio, se esegui il provisioning di una LUN con fatturazione oraria, eventuali addebiti di istantanee o replica verranno fatturati in modo orario. Se esegui il provisioning di una LUN con fatturazione mensile, eventuali addebiti di istantanee o replica verranno fatturati in modo mensile. 
 
-Con la **fatturazione oraria**, il calcolo del numero di ore per cui il volume di file è esistito nell'account viene eseguito quando il volume viene eliminato oppure alla fine del ciclo di fatturazione, a seconda di quale di queste condizioni si verifichi per prima. La fatturazione oraria è una buona scelta per l'archiviazione utilizzata per qualche giorno o per meno di un mese completo. La fatturazione oraria è disponibile solo per l'archiviazione di cui viene eseguito il provisioning in [data center selezionati](new-ibm-block-and-file-storage-location-and-features.html). 
+Con la **fatturazione oraria**, il calcolo del numero di ore per cui il volume di file è esistito nell'account viene eseguito quando il volume viene eliminato oppure alla fine del ciclo di fatturazione, a seconda di quale di queste condizioni si verifichi per prima.  La fatturazione oraria è una buona scelta per l'archiviazione utilizzata per qualche giorno o per meno di un mese completo. La fatturazione oraria è disponibile solo per l'archiviazione di cui viene eseguito il provisioning in [data center selezionati](new-ibm-block-and-file-storage-location-and-features.html). 
 
-Con la **fatturazione mensile**, il calcolo per il prezzo è a base proporzionale dalla data di creazione alla fine del ciclo di fatturazione e viene fatturato immediatamente. Non è previsto alcun rimborso se il volume di file viene eliminato prima della fine del ciclo di fatturazione. La fatturazione mensile è una buona scelta per l'archiviazione utilizzata nei carichi di lavoro di produzione che usano dati che devono essere archiviati e a cui bisogna accedere per lunghi periodi di tempo (un mese o più).
+Con la **fatturazione mensile**, il calcolo per il prezzo è a base proporzionale dalla data di creazione alla fine del ciclo di fatturazione e viene fatturato immediatamente. Non è previsto alcun rimborso se il volume di file viene eliminato prima della fine del ciclo di fatturazione.  La fatturazione mensile è una buona scelta per l'archiviazione utilizzata nei carichi di lavoro di produzione che usano dati che devono essere archiviati e a cui bisogna accedere per lunghi periodi di tempo (un mese o più).
 
  
 ### Prestazioni:
@@ -105,7 +105,7 @@ Endurance è disponibile in tre livelli di prestazioni IOPS per supportare diver
 - **0,25 IOPS per GB** è progettato per carichi di lavori con bassa intensità di I/O. Questi carichi di lavoro sono di norma caratterizzati dall'avere un'ampia percentuale di dati inattivi in un dato momento. Delle applicazioni di esempio includono le caselle di posta di archiviazione o le condizioni di file a livello di reparto.
 - **2 IOPS per GB** è progettato per un utilizzo per finalità più generiche. Delle applicazioni di esempio includono le attività di host di piccoli database a supporto di applicazioni web o le immagini disco di macchina virtuale per un hypervisor.
 - **4 IOPS per GB** è progettato per i carichi di lavoro a maggiore intensità. Questi carichi di lavoro sono di norma caratterizzati dall'avere un'elevata percentuale di dati attivi in un dato momento. Delle applicazioni di esempio includono i database transazionali e altri database sensibili alle prestazioni.
-- **10 IOPS per GB** è progettato per i carichi di lavoro più esigenti quali quelli creati dai database NoSQL e l'elaborazione di dati per l'analisi. Questo livello è disponibile per l'archiviazione di cui viene eseguito il provisioning fino a 4 TB di dimensione in [data center selezionati](new-ibm-block-and-file-storage-location-and-features.html).
+- **10 IOPS per GB** è progettato per i carichi di lavoro più esigenti quali quelli creati dai database NoSQL e l'elaborazione di dati per l'analisi.  Questo livello è disponibile per l'archiviazione di cui viene eseguito il provisioning fino a 4 TB di dimensione in [data center selezionati](new-ibm-block-and-file-storage-location-and-features.html).
 
 Sono disponibili fino a 48.000 IOPS con un volume Endurance di 12 TB.
 
@@ -116,7 +116,7 @@ La scelta del livello giusto di {{site.data.keyword.filestorage_short}} Enduranc
 
 Performance è una classe di {{site.data.keyword.filestorage_full}} progettata per supportare applicazioni a elevato I/O con requisiti di prestazioni chiari che mal si adattano in un livello Endurance. Delle prestazioni prevedibili si raggiungono tramite l'allocazione di IOPS a livello di protocollo ai singoli volumi. È possibile eseguire il provisioning di un IOPS che va da 100 a 6.000 con delle dimensioni dell'archiviazione che vanno da 20 GB a 12 TB. 
 
-A Performance per {{site.data.keyword.filestorage_short}} si accede, e viene montato, tramite una connessione NFS (Network File System).{{site.data.keyword.filestorage_short}} viene di norma utilizzato quando al volume accederanno più macchine simultaneamente. Dei volumi Performance congruenti possono essere ordinati in base alle dimensioni e all'IOPS nella Tabella 1 e possono essere utilizzati con i sistemi operativi Linux.
+A Performance per {{site.data.keyword.filestorage_short}} si accede, e viene montato, tramite una connessione NFS (Network File System). {{site.data.keyword.filestorage_short}} viene di norma utilizzato quando al volume accederanno più macchine simultaneamente. Dei volumi Performance congruenti possono essere ordinati in base alle dimensioni e all'IOPS nella Tabella 1 e possono essere utilizzati con i sistemi operativi Linux.
 
 <table cellpadding="1" cellspacing="1" style="width: 99%;">
         <colgroup>
@@ -199,7 +199,7 @@ La misurazione di IOPS, sia per Endurance che per Performance, è basata su una 
 
 IOPS sia per Endurance che per Performance è basato su una dimensione in blocchi da 16 KB con un carico di lavoro casuale al 50% e con lettura/scrittura al 50/50. Un blocco di approssimativamente 16 KB è l'equivalente di una scrittura sul volume.
 
-La dimensione del blocco utilizzata dalla tua applicazione avrà una ripercussione diretta sulla prestazioni dell'archiviazione. Se la dimensione del blocco utilizzata dalla tua applicazione è inferiore a 16 KB, il limite IOPS verrà realizzato prima del limite di velocità effettiva. Viceversa, se la dimensione del blocco utilizzata dalla tua applicazione è superiore a 16KB, il limite di velocità effettiva verrà realizzato prima del limite di IOPS.
+La dimensione del blocco utilizzata dalla tua applicazione avrà una ripercussione diretta sulla prestazioni dell'archiviazione.  Se la dimensione del blocco utilizzata dalla tua applicazione è inferiore a 16 KB, il limite IOPS verrà realizzato prima del limite di velocità effettiva.  Viceversa, se la dimensione del blocco utilizzata dalla tua applicazione è superiore a 16KB, il limite di velocità effettiva verrà realizzato prima del limite di IOPS.
 
 La modifica della dimensione del blocco influenzerà le prestazioni nel seguente modo:
 

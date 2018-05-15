@@ -14,7 +14,7 @@ Viene qui di seguito indicata la procedura per ordinare e configurare {{site.dat
 
 ## Panoramica di {{site.data.keyword.filestorage_short}}
 
-La nostra {{site.data.keyword.filestorage_short}} è progettata per supportare applicazioni ad elevato I/O che richiedono dei livelli di prestazioni prevedibili. Le prestazioni prevedibili si raggiungono tramite l'allocazione di IOPS (input/output operations per second) a livello di protocollo ai singoli volumi. 
+La nostra {{site.data.keyword.filestorage_short}} è progettata per supportare applicazioni ad elevato I/O che richiedono dei livelli di prestazioni prevedibili. Le prestazioni prevedibili si raggiungono tramite l'allocazione di IOPS (input/output operations per second) a livello di protocollo ai singoli volumi.
 
 L'offerta di {{site.data.keyword.filestorage_short}} è accessibile e montata tramite una connessione NFS. In una distribuzione VMware, un singolo volume può essere montato su un massimo di 64 host ESXi come archiviazione condivisa oppure puoi montare più volumi per creare un cluster di archiviazione per utilizzare la pianificazione risorse DINAMICA di vSphere Storage.
 
@@ -31,7 +31,7 @@ Quando ordini l'{{site.data.keyword.filestorage_short}}, dovresti tener presente
 - I volumi {{site.data.keyword.filestorage_short}} sono presentati agli indirizzi IP, alle sottoreti o ai dispositivi autorizzati.
 - I servizi di istantanea e replica sono disponibili in modo nativo solo sui volumi {{site.data.keyword.filestorage_short}} Endurance. L'{{site.data.keyword.filestorage_short}} Performance non ha tali funzionalità.
 - Per evitare una disconnessione dell'archiviazione durante il failover del percorso, {{site.data.keyword.IBM}} consiglia di installare gli strumenti VMWare che imposteranno un valore di timeout appropriato. Non è necessario modificare il valore; l'impostazione predefinita è sufficiente per garantire che il tuo host VMWare non perderà la connettività.
-- Nell'ambiente {{site.data.keyword.BluSoftlayer_full}} sono supportati sia NFS v3 che NFS v4.1. Tuttavia, {{site.data.keyword.IBM}} consiglia di utilizzare NFS v3.Poiché NFS v4.1 è un protocollo con stato (non senza stato come NFSv3), durante gli eventi di rete potrebbero verificarsi dei problemi di protocollo. NFS v4.1 deve disattivare le operazioni e quindi eseguire un recupero del blocco. Mentre sono in corso tali operazioni, potrebbero verificarsi delle interruzioni del servizio.
+- Nell'ambiente {{site.data.keyword.BluSoftlayer_full}} sono supportati sia NFS v3 che NFS v4.1. Tuttavia, {{site.data.keyword.IBM}} consiglia di utilizzare NFS v3. Poiché NFS v4.1 è un protocollo con stato (non senza stato come NFSv3), durante gli eventi di rete potrebbero verificarsi dei problemi di protocollo. NFS v4.1 deve disattivare le operazioni e quindi eseguire un recupero del blocco. Mentre sono in corso tali operazioni, potrebbero verificarsi delle interruzioni del servizio.
 
 ####  Matrice di supporto delle funzioni VMware del protocollo NFS
 <table>
@@ -103,7 +103,7 @@ Tieni presente che per utilizzare le istantanee è necessario lo "spazio per le 
 Importante: gli ambienti VMware non rilevano le istantanee. La funzionalità di istantanea dell'{{site.data.keyword.filestorage_short}} Endurance non deve essere confusa con le istantanee VMware. Qualsiasi ripristino utilizzando la funzione di istantanea dell'{{site.data.keyword.filestorage_short}} Endurance deve essere gestita dal [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}. Il ripristino del volume di {{site.data.keyword.filestorage_short}} Endurance richiederà lo spegnimento di tutte le macchine virtuali (VM, Virtual Machine) presenti nell'{{site.data.keyword.filestorage_short}} Endurance e lo smontaggio temporaneo del volume dagli host ESXi per evitare eventuali danneggiamenti di dati durante il processo.
 
 Consulta il nostro articolo sulle [istantanee](snapshots.html) per ulteriori dettagli su come configurare le istantanee.
- 
+
 
 ### 3. Replica dell'archivio file
 
@@ -115,7 +115,7 @@ Le repliche ti consentono
 - di eseguire il ripristino da malfunzionamento del sito e altre situazioni critiche in modo rapido eseguendo il failover al volume di destinazione;
 - di eseguire il failover a uno specifico punto temporale nella copia di ripristino di emergenza (DR, disaster recovery)
 
-Prima di poter eseguire la replica, devi creare una pianificazione delle istantanee. Quando esegui il failover, stai passando dal tuo volume di archiviazione nel tuo data center primario al volume di destinazione nel tuo data center remoto. Ad esempio, il tuo data center primario si trova a Londra e il tuo data center secondario si trova ad Amsterdam. Se si verifica un evento di malfunzionamento, eseguirai il failover ad Amsterdam, stabilendo una connessione al volume che ora è quello primario da un'istanza di VSphere Cluster ad Amsterdam. 
+Prima di poter eseguire la replica, devi creare una pianificazione delle istantanee. Quando esegui il failover, stai passando dal tuo volume di archiviazione nel tuo data center primario al volume di destinazione nel tuo data center remoto. Ad esempio, il tuo data center primario si trova a Londra e il tuo data center secondario si trova ad Amsterdam. Se si verifica un evento di malfunzionamento, eseguirai il failover ad Amsterdam, stabilendo una connessione al volume che ora è quello primario da un'istanza di VSphere Cluster ad Amsterdam.
 
 
 Dopo che il tuo volume a Londra sarà stato riparato, verrà acquisita un'istantanea del volume che si trova ad Amsterdam per eseguire il fallback a Londra e al volume che ora è nuovamente quello primario da un'istanza di elaborazione a Londra. Prima dell'esecuzione del failback del volume al data center primario, è necessario che si smetta di farne uso presso il sito remoto. Un'istantanea delle informazioni nuove o modificate viene eseguita e replicata al data center primario prima che possa essere nuovamente eseguito il montaggio sugli host ESXi del sito di produzione.
@@ -125,9 +125,9 @@ Consulta la pagina delle informazioni sulla [replica](replication.html) per ulte
 
 **Nota**: i dati non validi, non importa se danneggiati, oggetto di attacchi o infettati, verranno replicati nella pianificazione dell'istantanea e nella conservazione dell'istantanea. L'utilizzo delle finestre di replica più piccole può fornire un migliore obiettivo di punto di ripristino. Può anche fornire meno tempo per reagire alla replica di dati non validi.
 
- 
 
- 
+
+
 
 ## Ordinare {{site.data.keyword.filestorage_short}}
 
@@ -135,7 +135,7 @@ Puoi ordinare e configurare l'{{site.data.keyword.filestorage_short}} per un amb
 
 
 L'{{site.data.keyword.filestorage_short}} può essere ordinata tramite il [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} accedendo alla pagina {{site.data.keyword.filestorage_short}} tramite **Storage** > **{{site.data.keyword.filestorage_short}}**.
- 
+
 
 ### 1. Ordinazione dell'{{site.data.keyword.filestorage_short}}
 
@@ -143,7 +143,7 @@ Utilizza la seguente procedura per ordinare {{site.data.keyword.filestorage_shor
 1. Fai clic su **Storage** > **{{site.data.keyword.filestorage_short}}** nella home page del [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
 2. Fai clic sul link **Order {{site.data.keyword.filestorage_short}}** nella pagina **{{site.data.keyword.filestorage_short}}**.
 3. Seleziona **Endurance**/**Performance** dall'elenco a discesa Select Storage Type.
-4. Seleziona l'ubicazione. I data center con funzionalità migliorate sono indicati con un `*`. Assicurati che la nuova archiviazione sarà aggiunta nella stessa ubicazione dell'host o degli host ESXi ordinati in precedenza. 
+4. Seleziona l'ubicazione. I data center con funzionalità migliorate sono indicati con un `*`. Assicurati che la nuova archiviazione sarà aggiunta nella stessa ubicazione dell'host o degli host ESXi ordinati in precedenza.
 5. Seleziona il metodo di fatturazione. Sono disponibili le opzioni di fatturazione mensile ed oraria.
 6. Seleziona la quantità desiderata di spazio di archiviazione in GB. Per TB, 1 TB equivale a 1.000 GB e 12 TB equivalgono a 12.000 GB.
 7. Immetti la quantità desiderata di IOPS in intervalli di 100 oppure seleziona un livello IOPS.
@@ -156,7 +156,7 @@ Utilizza la seguente procedura per ordinare {{site.data.keyword.filestorage_shor
 
 Il provisioning dell'archiviazione verrà eseguito in meno di un minuto e sarà visibile sulla pagina **{{site.data.keyword.filestorage_short}}** del [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
 
- 
+
 
 ### 2. Autorizza gli host a utilizzare l'{{site.data.keyword.filestorage_short}}
 
@@ -170,7 +170,7 @@ Dopo che è stato eseguito il provisioning di un volume, i {{site.data.keyword.B
 
 Dopo che le sottoreti sono state autorizzate, annota il nome host del server di archiviazione Endurance o Performance che desideri utilizzare quando monti il volume. Queste informazioni sono disponibili nella pagina dei dettagli dell'{{site.data.keyword.filestorage_short}} facendo clic su uno specifico volume.
 
- 
+
 ##  Configurare l'host della macchina virtuale (VM, Virtual Machine) VMware Virtual Machine
 
 ### 1. Prerequisiti
@@ -180,7 +180,7 @@ Prima di iniziare il processo di configurazione di VMware, assicurati che siano 
 - Il provisioning dei {{site.data.keyword.BluBareMetServers}} con VMware ESXi viene eseguito con la corretta configurazione dell'archiviazione e le corrette credenziali di accesso ESXi.
 - {{site.data.keyword.BluSoftlayer_full}} Windows fisico o {{site.data.keyword.virtualmachinesshort}} nello stesso data center dei {{site.data.keyword.BluBareMetServers}}. Devono essere inclusi l'indirizzo IP pubblico della macchina virtuale (VM, Virtual Machine) {{site.data.keyword.BluSoftlayer_full}} e le credenziali di accesso.
 - Un computer con accesso a Internet e con il software di browser web e un client RDP (Remote Desktop Protocol) installati.
- 
+
 
 ### 2. Procedura di configurazione dell'host VMware.
 
@@ -190,7 +190,7 @@ per configurare l'host virtuale, completa la seguente procedura:
 2. Da {{site.data.keyword.BluVirtServers_short}}, avvia un browser web e stabilisci una connessione a VMware vCenter tramite vSphere Web Client.
 3. Dalla schermata **HOME**, seleziona **Hosts and Clusters**. Espandi il pannello sulla sinistra e seleziona il server ESXi VMware (**VMware ESXi server**) che deve essere utilizzato per questa distribuzione.
 4. Assicurati che la porta del firewall per il client NFS sia aperta su tutti gli host per configurare il client NFS sull'host vSphere. Viene aperta automaticamente nelle release più recenti di vSphere. Per controllare se la porta è aperta, vai alla scheda **ESXi host Manage** in VMware® vCenter™, seleziona **Settings** e seleziona quindi **Security Profile**. Nella sezione **Firewall**, fai clic su **Edit** e scorri verso il basso a **NFS Client**.
-5. Assicurati che venga fornito **Allow connection from any IP address or a list of IP addresses**.<br/>
+5. Assicurati che venga fornito **Allow connection from any IP address or a list of IP addresses**. <br/>
    ![Consenti la connessione](/images/1_4.png)
 6. Configura i frame jumbo andando alla scheda **ESXi host Manage**, selezionando **Manage** e quindi **Networking**.
 7. Seleziona **VMkernel adapters**, evidenzia il **vSwitch** e fai clic su **Edit**. (Icona di una matita)
@@ -206,12 +206,12 @@ per configurare l'host virtuale, completa la seguente procedura:
    ```
 
 Ulteriori informazioni su VMware e i frame jumbo sono disponibili [qui](https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=1003712){:new_window}.
- 
+
 
 ### 3. Aggiunta di un adattatore uplink a uno switch virtuale
 
 1. Configura un nuovo adattatore uplink andando alla scheda **ESXi host Manage**, selezionando **Manage** e quindi **Networking**.
-2. Seleziona la scheda **Physical adapters** 
+2. Seleziona la scheda **Physical adapters**
 3. Fai clic su **Add host networking**. (Icona di un globo con un segno più)
 4. Seleziona il tipo di connessione come **Physical Network Adapter** e fai clic su **Next**.
 5. Selezionare l'**vSwitch** esistente e fai clic su **Next**.
@@ -222,7 +222,7 @@ Ulteriori informazioni su VMware e i frame jumbo sono disponibili [qui](https://
 9. Torna alla scheda **Virtual switches** e seleziona l'icona **Edit setting** superiore sotto l'intestazione **Virtual Switches**. (Icona di una matita)
 10. Seleziona la voce di vSwitch **Teaming and failover** sulla sinistra.
 Verifica che l'opzione **Load balancing** sia impostata su **Route based on the originating virtual port** e fai clic su **OK**.
- 
+
 
 ### 4. Configura l'instradamento statico ESXi (facoltativo)
 
@@ -230,20 +230,20 @@ La configurazione di rete per questa guida all'architettura utilizza un numero m
 
 1. Per configurare un instradamento statico, esegui SSH a ciascun host ESXi con Performance o Endurance ed esegui questi comandi. Nota: devi prendere il comando ping dell'indirizzo IP risultante (primo comando) e utilizzarlo con il comando di rete esxcli visualizzato di seguito:
    - `ping <hostname of the endurance/performance array>`
-   
-      **Nota** che il nome host DNS dell'archiviazione NFS è una FZ (Forwarding Zone) a cui sono assegnati più indirizzi IP. Questi indirizzi IP sono statici e appartengono a quello specifico nome host DNS. Per accedere a uno specifico volume può essere utilizzato uno qualsiasi di questi indirizzi IP.
+
+      **Nota** che il nome host DNS dell'archiviazione NFS è una FZ (Forwarding Zone) a cui sono assegnati più indirizzi IP. Questi indirizzi IP sono statici e appartengono a quello specifico nome host DNS.  Per accedere a uno specifico volume può essere utilizzato uno qualsiasi di questi indirizzi IP.
    - `esxcli network ip route ipv4 add –gateway GATEWAYIP –network <result of ping command>/32`
 
 2. Nota che gli instradamenti statici non sono persistenti tra i riavvii su ESXi 5.0 e antecedenti. Per garantire che qualsiasi instradamento statico aggiunto sia persistente, è necessario aggiungere questi comandi al file local.sh su ciascun host, che si trova nella directory /etc/rc.local.d/. Per eseguire tale operazione, apri il file local.sh utilizzando l'editor visivo e aggiungi il comando sopra indicato da eseguire sopra la riga exit 0.
    - Annota l'indirizzo IP poiché può essere utilizzato per montare il volume nel passo successivo.
    - Questo processo deve essere eseguito per ciascun volume NFS che intendi montare al tuo host ESXi.
    - Questo è un link a un articolo della Knowledge Base di VMware: [Configuring static routes for VMkernel ports on an ESXi host](https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=2001426){:new_window}.
- 
+
 
 ##  Monta uno o più volumi {{site.data.keyword.filestorage_short}} sugli host ESXi
 
 1. Fai clic sull'icona **Go to vCenter** nella parte superiore della pagina web e quindi su **Hosts and Clusters**.
-2. Fai clic su **Datastores** nella scheda **Related Object**. Fai clic sull'icona **Create a new datastore**. 
+2. Fai clic su **Datastores** nella scheda **Related Object**. Fai clic sull'icona **Create a new datastore**.
 3. Nella schermata **New Datastore**, seleziona l'ubicazione dell'archivio dati (il tuo host ESXi) e fai clic su **Next**.
 4. Nella schermata **Type**, seleziona il pulsante di opzione **NFS** e fai clic su **Next**.
 5. Nella schermata **Name and configuration**, immetti il nome che desideri dare all'archivio dati. Immetti inoltre il nome host del server NFS. L'utilizzo dell'FQDN per il server NFS produce la migliore distribuzione del traffico al server sottostante. Anche l'indirizzo IP è valido ma viene utilizzato meno di frequente e solo in specifiche istanze. Immetti il nome cartella nel formato /nomecartella.
@@ -272,7 +272,7 @@ Per determinare quando un dispositivo di archiviazione è congestionato o vincol
 
 Nota: configurare in modo non corretto SIOC per un archivio dati o per un VMDK può avere notevoli ripercussioni sulle prestazioni.
 
- 
+
 
 ### 1. SIOC (Storage I/O Control) per un archivio dati
 
@@ -287,28 +287,28 @@ Attieniti alla seguente procedura per abilitare SIOC con i valori consigliati pe
 6. Fai clic su **OK**.
 
 **Nota**: questa impostazione è specifica per l'archivio dati e non per l'host.
- 
+
 
 ### 2. SIOC (Storage I/O Control) per {{site.data.keyword.BluVirtServers_short}}
 
-Puoi anche limitare i singoli dischi virtuali per le singole VM oppure concedere loro condivisioni differenti con SIOC. La limitazione di dischi e la concessione di condivisioni differenti ti consente di mettere in corrispondenza e allineare l'ambiente al carico di lavoro con il numero di IOPS di volume {{site.data.keyword.filestorage_short}} acquisito. Il limite è impostato da IOPS e non è possibile impostare un peso o condivisioni ("Shares") differenti. Le condivisioni di dischi virtuali impostate a High (2.000 condivisioni) ricevono il doppio dell'I/O di un disco impostato su Normal (1.000 condivisioni) e il quadruplo di uno impostato su Low (500 condivisioni). Normal è il valore normale per tutte le VM; devi pertanto regolare i valori sopra o sotto Normal solo per le VM che effettivamente lo richiedono.
+Puoi anche limitare i singoli dischi virtuali per le singole VM oppure concedere loro condivisioni differenti con SIOC. La limitazione di dischi e la concessione di condivisioni differenti ti consente di mettere in corrispondenza e allineare l'ambiente al carico di lavoro con il numero di IOPS di volume {{site.data.keyword.filestorage_short}} acquisito. Il limite è impostato da IOPS e non è possibile impostare un peso o condivisioni ("Shares") differenti. Dischi virtuali con le condivisioni impostate a High (2.000 condivisioni) ricevono il doppio dell'I/O di un disco impostato su Normal (1.000 condivisioni) e il quadruplo di uno impostato su Low (500 condivisioni). Normal è il valore normale per tutte le VM; devi pertanto regolare i valori sopra o sotto Normal solo per le VM che effettivamente lo richiedono.
 
 
 Utilizza la seguente procedura per modificare le condivisioni e il limite di vDisk:
 
-1. Scegli un {{site.data.keyword.BluVirtServers_short}} nell'inventario **VMs and Templates**. L'icona si trova nella parte superiore sinistra della pagina web. 
+1. Scegli un {{site.data.keyword.BluVirtServers_short}} nell'inventario **VMs and Templates**. L'icona si trova nella parte superiore sinistra della pagina web.
 2. Seleziona i {{site.data.keyword.BluVirtServers_short}} per I/O Control.
 3. Fai clic sulla scheda **Manage** e fai clic su **Settings**. Fai clic su **Edit**.
 4. Espandi la freccia a discesa Hard disk. Modifica i valori di Shares o Limit-IOPs come appropriato per il tuo ambiente. Scegli un disco rigido virtuale dall'elenco e modifica la selezione Shares per scegliere la quantità relativa di condivisioni da allocare ai {{site.data.keyword.BluVirtServers_short}} (Low, Normal o High). Puoi anche fare clic su **Custom** e immettere un valore di condivisione definito dall'utente.
 5. Fai clic sulla colonna Limit - IOPS e immetti il limite superiore di risorse di archiviazione da allocare alla macchina virtuale (VM, Virtual Machine).
 6. Fai clic su **OK**
- 
+
 
    **Nota**: il processo suindicato viene utilizzato per impostare i limiti di consumo di risorse dei singoli vDisk in un {{site.data.keyword.BluVirtServers_short}} anche quando SIOC non è abilitato. Queste impostazioni sono specifiche per il singolo guest, e non l'host, anche se sono utilizzate da SIOC.
 
- 
 
- 
+
+
 
 ## Impostazioni lato host ESXi
 
@@ -324,10 +324,10 @@ Ci sono alcune impostazioni aggiuntive necessarie per configurare gli host ESXi 
 |NFS.HeartbeatFrequency |	12 |
 |NFS.HeartbeatTimeout |	5 |
 |NFS.MaxQueueDepth|	64 |
- 
+
 
 - Utilizzo della CLI sull'host ESXi 5.x per i parametri di configurazione avanzata:
-  I seguenti esempi utilizzano la CLI per impostare questi parametri di configurazione avanzata e per eseguirne quindi il controllo. Lo strumento esxcfg-advcfg utilizzato negli esempi è disponibile in /usr/sbindirectory sugli host ESXi 5.x.
+  I seguenti esempi utilizzano la CLI per impostare questi parametri di configurazione avanzata e per eseguirne quindi il controllo. Lo strumento esxcfg-advcfg utilizzato negli esempi è disponibile nella directory /usr/sbin sugli host ESXi 5.x.
 
    - Impostazione dei parametri di configurazione avanzata dalla CLI ESXi 5.x:
    ```
@@ -381,7 +381,7 @@ I frame jumbo devono essere configurati nello stesso modo nell'intero percorso d
 
 Nota: quando effettui la modifica, la NIC perderà la connettività di rete per qualche secondo. Devi anche eseguire un riavvio per assicurarti che la modifica sia diventata effettiva.
 
- 
+
 
 ### LINUX
 

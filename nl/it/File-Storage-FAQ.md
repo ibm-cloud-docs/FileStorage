@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-02-02"
+lastupdated: "2018-04-24"
 
 ---
 {:new_window: target="_blank"}
@@ -41,7 +41,7 @@ Quando esegui il provisioning di {{site.data.keyword.filestorage_short}}, tutti 
 
 ## Perché posso eseguire il provisioning di {{site.data.keyword.filestorage_short}} con un livello Endurance 10 IOPS in alcuni data center e non in altri?
 
-Il livello 10 IOPS/GB del tipo Endurance di {{site.data.keyword.filestorage_short}} è disponibile solo in data center selezionati; a tale selezione verranno a breve aggiunti dei nuovi data center. Puoi trovare un elenco completo dei data center di cui è stato eseguito l'upgrade e delle funzioni disponibili [qui](/docs//infrastructure/BlockStorage/new-ibm-block-and-file-storage-location-and-features.html).
+Il livello 10 IOPS/GB del tipo Endurance di {{site.data.keyword.filestorage_short}} è disponibile solo in data center selezionati; a tale selezione verranno a breve aggiunti dei nuovi data center.  Puoi trovare un elenco completo dei data center di cui è stato eseguito l'upgrade e delle funzioni disponibili [qui](/docs//infrastructure/BlockStorage/new-ibm-block-and-file-storage-location-and-features.html).
 
 ## Come posso trovare il punto di montaggio corretto per il mio {{site.data.keyword.filestorage_short}}?
 
@@ -89,7 +89,7 @@ Tutti i volumi {{site.data.keyword.filestorage_short}} crittografati di cui vien
 
 ## Di quanti volumi posso eseguire il provisioning?
 
-Per impostazione predefinita, puoi eseguire il provisioning di un totale combinato di 250 volumi di archiviazione blocchi e file. Per aumentare i tuoi volumi, ti invitiamo a contattare il tuo rappresentante di vendita.
+Per impostazione predefinita, puoi eseguire il provisioning di un totale combinato di 250 volumi di archiviazione blocchi e file.  Per aumentare i tuoi volumi, ti invitiamo a contattare il tuo rappresentante di vendita.
 
 ## Quante istanze possono condividere l'uso di un volume {{site.data.keyword.filestorage_short}} di cui è stato eseguito il provisioning?
 
@@ -107,11 +107,15 @@ I limiti di velocità effettiva sono impostati su un livello per volume/LUN; per
 
 Come prassi ottimale, consigliamo di eseguire il traffico di archiviazione su una VLAN che ignora il firewall. L'esecuzione del traffico di archiviazione tramite i firewall software aumenterà la latenza e avrà un impatto negativo sulle prestazioni dell'archiviazione.
 
+## Che latenza delle prestazioni mi posso aspettare dal mio {{site.data.keyword.filestorage_short}}?   
+
+La latenza di destinazione nell'archiviazione è di <1ms. La nostra archiviazione è connessa alle istanze di elaborazione su una rete condivisa e, pertanto, la latenza delle prestazioni esatta dipenderà dal traffico di rete entro uno specifico periodo di tempo.
+
 ## Cosa succede ai miei dati quando i volumi {{site.data.keyword.filestorage_short}} vengono eliminati?
 
 Quando l'archiviazione viene eliminata, gli eventuali puntatori ai dati su tale volume vengono rimossi e, pertanto, i dati diventano completamente inaccessibili. Se viene eseguito nuovamente il provisioning dell'archiviazione fisica a un altro account, viene assegnato un nuovo set di puntatori. Non vi è alcuna possibilità che il nuovo account acceda ad eventuali dati che potrebbero essere stati sull'archiviazione fisica; il nuovo set di puntatori mostra tutti 0. Quando vengono scritti i nuovi dati nel volume/LUN, tutti i dati non accessibili che ancora esistono vengono sovrascritti. 
 
-## Che latenza delle prestazioni mi posso aspettare dal mio {{site.data.keyword.filestorage_short}}?   
+## Cosa succede ai driver che vengono disattivati dal data center cloud? 
 
-La latenza di destinazione nell'archiviazione è di <1ms. La nostra archiviazione è connessa alle istanze di elaborazione su una rete condivisa e, pertanto, la latenza delle prestazioni esatta dipenderà dal traffico di rete entro uno specifico periodo di tempo.
+Quando i driver vengono disattivati, IBM li distrugge prima di eliminarli, rendendoli quindi inutilizzabili. Tutti i dati scritti in questi driver diventano inaccessibili. 
 

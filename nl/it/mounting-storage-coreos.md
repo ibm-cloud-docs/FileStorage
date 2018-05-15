@@ -68,7 +68,7 @@ cluster1 ~ # mount |grep data
 
 Il montaggio di una condivisione cifs non è supportato in modo nativo in CoreOS ma c'è una soluzione temporanea abbastanza facile per consentire al sistema di montare le condivisioni NAS. Utilizzerai un contenitore per creare il modulo mount.cfis e copiarlo quindi nel sistema CoreOS
  
-Sul sistema CoreOS, esegui quanto segue per il download e il rilascio in un contenitore Fedora: <br/>
+Sul sistema CoreOS, esegui quanto segue per il download e il rilascio in un contenitore Fedora:  <br/>
 `docker run -t -i -v /tmp:/host_tmp fedora /bin/bash`
  
 Una volta che ti trovi nel contenitore, dovresti eseguire quanto segue per creare il programma di utilità cifs

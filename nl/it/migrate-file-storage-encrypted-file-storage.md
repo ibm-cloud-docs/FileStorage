@@ -16,7 +16,7 @@ Il percorso di migrazione preferito consiste nello stabilire una connessione a e
 
 Per tua comodità, sono stati indicati gli scenari più comuni. Si presuppone che tu già abbia il tuo volume di file non crittografato collegato al tuo host. In caso contrario, per svolgere tale compito, attieniti alle indicazioni qui di seguito che meglio rispondono al sistema operativo che stai eseguendo. 
 
-**NOTA:** tutti i volumi {{site.data.keyword.filestorage_short}} crittografati hanno un punto di montaggio diverso rispetto ai volumi non crittografati. Per assicurarti che stai usando il punto di montaggio corretto per entrambi i volumi {{site.data.keyword.filestorage_short}} crittografati e non crittografati, puoi visualizzare le informazioni sul punto di montaggio nella pagina **Volume Details** nell'IU, nonché accedere al punto di montaggio corretto tramite una chiamata API: SoftLayer_Network_Storage::getNetworkMountAddress().
+**NOTA:** tutti i volumi {{site.data.keyword.filestorage_short}} crittografati hanno un punto di montaggio diverso rispetto ai volumi non crittografati.  Per assicurarti che stai usando il punto di montaggio corretto per entrambi i volumi {{site.data.keyword.filestorage_short}} crittografati e non crittografati, puoi visualizzare le informazioni sul punto di montaggio nella pagina **Volume Details** nell'IU, nonché accedere al punto di montaggio corretto tramite una chiamata API: SoftLayer_Network_Storage::getNetworkMountAddress().
 
 [Accesso a {{site.data.keyword.filestorage_short}} su Linux](accessing-file-storage-linux.html)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-02-13"
+lastupdated: "2018-04-25"
 
 ---
 {:new_window: target="_blank"}
@@ -29,20 +29,21 @@ La nuova {{site.data.keyword.filestorage_short}} è attualmente disponibile nell
 		<tr>
 			<td>
 				<p>SJC03<br />
-				   SJC04<br />
-					WDC04<br />
-					WDC06<br />
-					WDC07<br />
-					DAL09<br />
-					DAL10<br />
-					DAL12<br />
-					DAL13</p>
+				SJC04<br />
+				WDC04<br />
+				WDC06<br />
+				WDC07<br />
+				DAL09<br />
+				DAL10<br />
+				DAL12<br />
+				DAL13<br /><br /></p>
 			</td>
 			<td>
 				<p>LON02<br />
 				LON04<br />
 				LON06<br />
 				FRA02<br />
+				FRA04<br />
 				AMS01<br />
 				AMS03<br />
 				OSLO1<br />
@@ -52,20 +53,21 @@ La nuova {{site.data.keyword.filestorage_short}} è attualmente disponibile nell
 			<td>
 				<p>SYD01<br />
 				SYD04<br />
-				MEL01<br /><br /><br /><br /><br /><br /><br /></p>
+				MEL01<br /><br /><br /><br /><br /><br /><br /><br /></p>
 			</td>
 			<td>
 				<p>TOR01<br />
-					MON01<br /><br /><br /><br /><br /><br /><br /><br /></p>
+				MON01<br /><br /><br /><br /><br /><br /><br /><br /><br /></p>
 			</td>
 			<td>
-				<p>MEX01<br />SAO01<br /><br /><br /><br /><br /><br /><br /><br /></p>
+				<p>MEX01<br />SAO01<br /><br /><br /><br /><br /><br /><br /><br /><br /></p>
 			</td>
 						<td>
 				<p>TOK02<br />
 				HKG02<br />
 				SEO01<br />
-				SNG01<br /><br /><br /><br /><br /><br /></p>
+				SNG01<br />
+				CHE01<br /><br /><br /><br /><br /><br /></p>
 			</td>
 			</tr>
 	</tbody>
@@ -76,7 +78,7 @@ La nuova archiviazione ha le seguenti funzioni e capacità:
 
 -  [Crittografia gestita dal provider per i dati inattivi](block-file-storage-encryption-rest.html). Verrà eseguito automaticamente il provisioning di tutti i {{site.data.keyword.blockstorageshort}} e {{site.data.keyword.filestorage_short}} come crittografati senza costi aggiuntivi.
 -  Opzione livello 10 IOPS per GB. Un nuovo livello è stato aggiunto a {{site.data.keyword.blockstorageshort}} e {{site.data.keyword.filestorage_short}} di tipo Endurance per i carichi di lavoro più esigenti.
--  Archiviazione con supporto all-flash. {{site.data.keyword.blockstorageshort}} e {{site.data.keyword.filestorage_short}} di cui viene eseguito il provisioning con Endurance o Performance a 2 IOPS per GB o superiore con archiviazione con supporto all-flash.
+-  Archiviazione con supporto all-flash.  {{site.data.keyword.blockstorageshort}} e {{site.data.keyword.filestorage_short}} di cui viene eseguito il provisioning con Endurance o Performance a 2 IOPS per GB o superiore con archiviazione con supporto all-flash.
 -  Il supporto di istantanea e replica con {{site.data.keyword.blockstorageshort}} e {{site.data.keyword.filestorage_short}} di cui viene eseguito il provisioning con Endurance o Performance.
 -  L'opzione di fatturazione oraria aggiunta per l'archiviazione di cui è pianificato l'utilizzo per meno di un intero mese. 
 -  Fino a 48.000 IOPS per {{site.data.keyword.blockstorageshort}} e {{site.data.keyword.filestorage_short}} di cui viene eseguito il provisioning con Performance.
@@ -86,6 +88,6 @@ La nuova archiviazione ha le seguenti funzioni e capacità:
 
 ## Nuovo punto di montaggio per i volumi {{site.data.keyword.filestorage_short}} crittografati
 
-Tutti i volumi {{site.data.keyword.filestorage_short}} crittografati di cui viene eseguito il provisioning in questi data center hanno un punto di montaggio diverso rispetto ai volumi non crittografati. Per assicurarti che stai usando il punto di montaggio corretto per entrambi i volumi di archiviazione crittografati e non crittografati, puoi visualizzare le informazioni sul punto di montaggio nella pagina Volume Details nell'IU, nonché accedere al punto di montaggio corretto tramite una chiamata API: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
+Tutti i volumi {{site.data.keyword.filestorage_short}} crittografati di cui viene eseguito il provisioning in questi data center hanno un punto di montaggio diverso rispetto ai volumi non crittografati.  Per assicurarti che stai usando il punto di montaggio corretto per entrambi i volumi di archiviazione crittografati e non crittografati, puoi visualizzare le informazioni sul punto di montaggio nella pagina Volume Details nell'IU, nonché accedere al punto di montaggio corretto tramite una chiamata API: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 
 Ritorna qui a controllare quando viene eseguito l'upgrade di ulteriori data center e per vedere le nuove funzioni e funzionalità che vengono aggiunte per l'{{site.data.keyword.blockstorageshort}} e l'{{site.data.keyword.filestorage_short}}.
