@@ -10,7 +10,7 @@ lastupdated: "2018-05-14"
 
 # Managing Snapshots
 
-## How do I Create a Snapshot Schedule?
+## How do I create a Snapshot Schedule?
 
 You can decide how often and when you want to create a point-in-time reference of your storage volume by creating snapshot schedules. You can have a maximum of 50 snapshots per storage volume. Schedules are managed through the **Storage** > **{{site.data.keyword.filestorage_short}}** tab of the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
 
@@ -35,7 +35,7 @@ Snapshots schedules can be set up for hourly, daily, and weekly intervals, each 
 
 A list of the snapshots will display as they’re taken in the **Snapshots** section of the **Detail** page.
 
-## How Do I Take a Manual Snapshot?
+## How do I take a Manual Snapshot?
 
 Manual snapshots can be taken at various points during an application upgrade or maintenance. You can also take snapshots across multiple servers that have been temporarily deactivated at the application level.
 
@@ -47,21 +47,21 @@ There's a maximum of 50 manual snapshots per storage volume.
 
 The snapshot is taken immediately and is displayed in the Snapshots section of the **Detail** page. Its schedule appears as Manual.
 
-## How Do I See a List of Snapshots with Space Consumed and Management Functions?
+## How do see a list of Snapshots with space used and Management Functions?
 
 A list of retained snapshots and space used can be seen on the **Detail** page (**Storage** > **{{site.data.keyword.filestorage_short}}**). Management functions (editing schedules and adding more space) are conducted on the **Detail** page using the **Actions** drop-down menu or links in the various sections on the page.
 
-## How Do I View a List of Retained Snapshots?
+## How do I view a list of Retained Snapshots?
 
 Retained snapshots are based on the number you entered in the **Keep the last field** when setting up your schedules. You can view the snapshots that have been taken under the **Snapshot** section. Snapshots are listed by schedule.
 
-## How Do I See How Much Snapshot Space Has Been Used?
+## How do I see how much Snapshot Space has been used?
 
 The pie chart at the top of the **Details** page displays how much space has been used and how much space is left. You’ll receive notifications when you reach space thresholds – 75 percent, 90 percent, and 95 percent.
 
 ## How Do I Change the Amount of Snapshot Space for My Volume?
 
-You may need to add snapshot space to a volume that didn't previously have any or may require additional snapshot space. You can add between 5 GB and 4,000 GB depending on your needs. 
+You may need to add snapshot space to a volume that didn't previously have any or may require more snapshot space. You can add between 5 and 4,000 GB depending on your needs. 
 **Note**: Snapshot space can only be increased and not reduced. You may want to select a smaller amount of space until you determine how much space you actually need. Remember, automated and manual snapshots share the same space.
 
 Snapshot space is changed via **Storage** > **{{site.data.keyword.filestorage_short}}**.
@@ -72,15 +72,15 @@ Snapshot space is changed via **Storage** > **{{site.data.keyword.filestorage_sh
 4. Enter any Promo Code you have and click **Recalculate**. The **Charges for this order** and **Order Review** show default values.
 5. Click the **I have read the Master Service Agreement…** check box and click **Place Order**. Your additional snapshot space will be provisioned in a few minutes.
 
-## How Do I Receive Notifications when I'm Close to My Snapshot Space Limit and Snapshots Are Deleted?
+## How do I receive Notifications when I'm close to my Snapshot Space Limit and Snapshots are deleted?
 
 Notifications are sent via support tickets from Support to the Master User on your account when you reach three different space thresholds – 75 percent, 90 percent, and 95 percent.
 
-- 75 percent capacity: A warning is sent that snapshot space utilization has exceeded 75%. If you heed the warning and manually add space or delete retained and unnecessary snapshots, the action is noted and the ticket’s closed. If you do nothing, you must manually acknowledge the ticket and then it’s closed.
-- 90 percent capacity: A second warning is sent when snapshot space utilization has exceeded 90%. Like with reaching 75% capacity, if you take the necessary actions to decrease the space used, the action is noted and the ticket’s closed. If you do nothing, you must manually acknowledge the ticket and then it’s closed.
-- 95 percent capacity: A final warning is sent. If no action is taken to bring your space below the threshold, a notification is generated and automatic deletion occurs so that future snapshots can be created. Scheduled snapshots are deleted, starting with the oldest, until usage drops below 95%, and will continue to be deleted each time utilization exceeds 95% until it drops below the threshold. If the space is manually increased or snapshots deleted, the warning will be reset and re-issued if the threshold is exceeded again. If no actions are taken, this will be the only warning that will be received.
+- 75 percent capacity: A warning is sent that snapshot space utilization has exceeded 75 percent. If you heed the warning and manually add space or delete retained and unnecessary snapshots, the action is noted and the ticket's closed. If you do nothing, you must manually acknowledge the ticket and then it's closed.
+- 90 percent capacity: A second warning is sent when snapshot space utilization has exceeded 90 percent. Like with reaching 75 percent capacity, if you take the necessary actions to decrease the space used, the action is noted and the ticket's closed. If you do nothing, you must manually acknowledge the ticket and then it's closed.
+- 95 percent capacity: A final warning is sent. If no action is taken to bring your space below the threshold, a notification is generated and automatic deletion occurs so that future snapshots can be created. Scheduled snapshots are deleted, starting with the oldest, until usage drops below 95 percent, and will continue to be deleted each time utilization exceeds 95 percent until it drops below the threshold. If the space is manually increased or snapshots deleted, the warning will be reset and reissued if the threshold is exceeded again. If no actions are taken, this will be the only warning that will be received.
 
-## How Do I Delete a Snapshot Schedule?
+## How do I delete a Snapshot Schedule?
 
 Snapshot schedules can be canceled through **Storage** > **{{site.data.keyword.filestorage_short}}**.
 
@@ -88,7 +88,7 @@ Snapshot schedules can be canceled through **Storage** > **{{site.data.keyword.f
 2. Next to the schedule to be deleted, click in the check box and click **Save**.<br/>
 **Caution**: If you’re using the replication feature, be sure that the schedule you’re deleting isn't the schedule that is used by replication. Click [here](replication.html) for more information on deleting a replication schedule.
 
-## How Do I Delete a Snapshot?
+## How do I delete a Snapshot?
 
 Snapshots that are no longer needed can be manually removed to free up space for future snapshots. Deletion is done through **Storage** > **{{site.data.keyword.filestorage_short}}**.
 
@@ -97,7 +97,7 @@ Snapshots that are no longer needed can be manually removed to free up space for
 
 Manual snapshots that aren't deleted in the way described here, are automatically deleted (oldest first) when you reach space limitations.
 
-## How Do I Restore My Storage Volume to a Specific Point-in-Time Using a Snapshot?
+## How do I restore my Storage Volume to a specific point-in-time using a Snapshot?
 
 You may need to take your storage volume back to a specific point in time because of user error or data corruption.
 
@@ -109,7 +109,7 @@ You may need to take your storage volume back to a specific point in time becaus
 
    **Note**: Performing a restore will result in a loss of data that has been created or modified since the snapshot being used was taken. When complete, your storage volume will be returned to the same state it was in when the snapshot was taken. A prompt will appear to notify you of this.
 5. Click **Yes** to initiate the restore. You'll receive a message across the top of the page stating the volume was restored using the selected snapshot. Additionally, an icon will appear next to your volume on the {{site.data.keyword.filestorage_short}} indicating that an active transaction is in progress. Hovering over the icon produces a dialog indicating the transaction. The icon will disappear when the transaction is complete.
-6. Mount and re-attach your storage volume to the host.
+6. Mount and reattach your storage volume to the host.
    - Click [here](accessing-file-storage-linux.html) for {{site.data.keyword.filestorage_short}} on Linux instructions.
    
-**Note**: Restoring a volume will result in deleting all snapshots prior to the restored snapshot.
+**Note**: Restoring a volume will result in deleting all snapshots before the restored snapshot.
