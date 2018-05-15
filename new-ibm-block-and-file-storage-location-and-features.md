@@ -2,19 +2,20 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-04-25"
+lastupdated: "2018-05-14"
 
 ---
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 
-# New Locations and Features of {{site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_short}}
+# New Locations and Features of {{site.data.keyword.filestorage_short}}
 
-{{site.data.keyword.BluSoftlayer_full}} is introducing a new version of {{site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_full}}!  The new storage is available in select data centers, and is backed by flash storage at higher IOPS levels with disk level encryption for data-at-rest. All storage provisioned in the select data centers will automatically be provisioned with the new version of {{site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_short}}.
+{{site.data.keyword.BluSoftlayer_full}} is introducing a new version of {{site.data.keyword.filestorage_full}}! The new storage is available in select data centers, and is backed by flash storage at higher IOPS levels with disk level encryption for data-at-rest. All storage provisioned in the select data centers are automatically provisioned with the new version of {{site.data.keyword.filestorage_short}}.
 
-**Note:** The NFS mount point for new volumes has changed. See **New Mount Point for encrypted {{site.data.keyword.filestorage_short}} Volumes** below for details.
+**Note:** The NFS mount point for new volumes has changed. See **New Mount Point for encrypted {{site.data.keyword.filestorage_short}} Volumes** section for details.
 
-The new {{site.data.keyword.filestorage_short}} is currently available in following regions/data centers with additional data center availability coming soon!
+The new {{site.data.keyword.filestorage_short}} is available in following regions/data centers with additional data center availability added later!
+
 <table style="width:100%;">
 	<caption>Data Center Availability</caption>
 	<tbody>
@@ -76,18 +77,18 @@ The new {{site.data.keyword.filestorage_short}} is currently available in follow
 
 The new storage has the following features and capabilities:
 
--  [Provider Managed encryption for data-at-rest](block-file-storage-encryption-rest.html). All {{site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_short}} will automatically be provisioned as encrypted at no additional charge.
--  10 IOPS per GB tier option. A new tier has been added to the Endurance type {{site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_short}} to support the most demanding workloads.
--  All flash-backed storage.  {{site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_short}} provisioned with either Endurance or Performance at 2 IOPS per GB or higher with backed by all-flash storage.
--  Snapshot and Replication support with {{site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_short}} provisioned with either Endurance or Performance.
--  Hourly Billing option added for storage that is planned to be used for less than a full month. 
--  Up to 48,000 IOPS for {{site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_short}} provisioned with Performance.
--  IOPS rates are adjustable to improve performance in case of seasonal load changes. Read more about this feature [here](adjustable-iops.html).
--  Create a new clone of your data with the [{{site.data.keyword.filestorage_short}} Volume Duplication feature](how-to-create-duplicate-volume.html).
-- Storage is expandable in GB increments up to 12 TB on the fly, without the need to create a duplicate or manually migrate data to a larger volume. Read more about this feature [here](expandable_file_storage.html).
+- [Provider-managed encryption for data-at-rest](block-file-storage-encryption-rest.html). All {{site.data.keyword.filestorage_short}} volumes are automatically provisioned as encrypted at no additional charge.
+- 10 IOPS per GB tier option. A new tier has been added to the Endurance type {{site.data.keyword.filestorage_short}} to support the most demanding workloads.
+- All flash-backed storage. {{site.data.keyword.filestorage_short}} is provisioned with either Endurance or Performance options at 2 IOPS per GB or higher are backed by all-flash storage.
+- Snapshot and Replication support for {{site.data.keyword.filestorage_short}} provisioned with either Endurance or Performance options.
+- Hourly Billing option added for storage that is planned to be used for less than a full month. 
+- Up to 48,000 IOPS for {{site.data.keyword.filestorage_short}} provisioned with the Performance type.
+- IOPS rates are adjustable to improve performance in case of seasonal load changes. Read more about this feature [here](adjustable-iops.html).
+- Create a new clone of your data with the [{{site.data.keyword.filestorage_short}} Volume Duplication feature](how-to-create-duplicate-volume.html).
+- Storage is expandable in GB increments up to 12 TB immediately, without the need to create a duplicate or manually migrate data to a larger volume. Read more about this feature [here](expandable_file_storage.html).
 
 ## New Mount Point for Encrypted {{site.data.keyword.filestorage_short}} Volumes
 
-All encrypted {{site.data.keyword.filestorage_short}} volumes provisioned in these data centers have a different mount point than non-encrypted volumes.  To ensure you are using the correct mount point for both your encrypted and non-encrypted file storage volumes you can view the mount point information in the Volume Details page in the UI as well as access the correct mountpoint via an API call:  `SoftLayer_Network_Storage::getNetworkMountAddress()`.
+All encrypted {{site.data.keyword.filestorage_short}} volumes provisioned in these data centers have a different mount point than non-encrypted volumes.  To ensure you're using the correct mount point for both your encrypted and non-encrypted file storage volumes, you can view the mount point information in the **Volume Details** page in the UI and access the correct mount point through an API call: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 
-Check back here to see when additional data centers have been upgraded and for newly available features and capabilities that are being added for {{site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_short}}.
+Check back here to see when additional data centers have been upgraded and for new features and capabilities that are being added for {{site.data.keyword.filestorage_short}}.
