@@ -12,7 +12,8 @@ lastupdated: "2018-05-14"
 
 # Mounting NFS/{{site.data.keyword.filestorage_short}} in CentOS
 
-The process for mounting our {{site.data.keyword.filestorage_full}} in CentOS 7 is pretty much the same as the process for [Mounting {{site.data.keyword.filestorage_short}} on RHEL 6](accessing-file-storage-linux.html). However, since the mount is NFS we can specify some additional options using the *Options=* line in the mount file. In the following example, we are setting the NFS to mount at `/data/www`. 
+The process for mounting our {{site.data.keyword.filestorage_full}} in CentOS 7 is pretty much the same as the process for [Mounting {{site.data.keyword.filestorage_short}} on RHEL 6](accessing-file-storage-linux.html). However, since the mount is NFS we can specify some additional options using the *Options=* line in the mount file. In the following example, we're setting the NFS to mount at `/data/www`. 
+
 **Note**: the NFS mount point of the {{site.data.keyword.filestorage_short}} instance can be obtained from the {{site.data.keyword.filestorage_short}} listing page or through an API call -`SoftLayer_Network_Storage::getNetworkMountAddress()`.
 
 ```
