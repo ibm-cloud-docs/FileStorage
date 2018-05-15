@@ -13,7 +13,7 @@ lastupdated: "2018-05-18"
 To create snapshots of your storage volume, either automated or manually, you need to purchase space to hold them. You can purchase capacity up to your storage volume amount (during the initial volume purchase or later using these steps).
 
 1. Access your Storage through **Storage** > **{{site.data.keyword.filestorage_short}}** tab of the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}
-2. In the **Snapshots** frame, click **Add Snapshot Space*.
+2. In the **Snapshots** frame, click **Add Snapshot Space**.
 3. In the **Snapshots** frame, click **Purchase snapshot space now**.
 3. Select the amount of space you need.
 4. Click **Continue**.
