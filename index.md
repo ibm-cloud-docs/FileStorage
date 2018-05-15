@@ -2,11 +2,7 @@
 
 copyright:
   years: 2014, 2018
-<<<<<<< HEAD
 lastupdated: "2018-05-07"
-=======
-lastupdated: "2018-05-11"
->>>>>>> d43abad3f66bf5123169ff8622ff5c5718e6df44
 
 ---
 {:new_window: target="_blank"}
@@ -14,7 +10,7 @@ lastupdated: "2018-05-11"
 
 # Getting Started with {{site.data.keyword.filestorage_short}}
 
-{{site.data.keyword.filestorage_full}} is persistent, fast, and flexible Network Attached, NFS-based {{site.data.keyword.filestorage_short}}. In this Network Attached Storage (NAS) environment, you have total control over your file shares function and performance. {{site.data.keyword.filestorage_short}} shares can be connected to up to 64 authorized devices over routed TCP/IP connections for resiliency.
+{{site.data.keyword.filestorage_full}} is persistent, fast, and flexible Network Attached, NFS-based {{site.data.keyword.filestorage_short}}. In this network-attached storage (NAS) environment, you have total control over your file shares function and performance. {{site.data.keyword.filestorage_short}} shares can be connected to up to 64 authorized devices over routed TCP/IP connections for resiliency.
 
 {{site.data.keyword.filestorage_short}} brings best-in-class levels of durability and availability with an unmatched feature set. {{site.data.keyword.filestorage_short}} is built using industry standards and best practices, and designed to protect the integrity of the data. {{site.data.keyword.filestorage_short}} maintains availability through maintenance events and unplanned failures while providing a consistent performance baseline.
 
