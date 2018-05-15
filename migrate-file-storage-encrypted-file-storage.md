@@ -10,7 +10,7 @@ lastupdated: "2018-05-14"
  
 # Migrating {{site.data.keyword.filestorage_short}} to Encrypted {{site.data.keyword.filestorage_short}}
 
-Encrypted {{site.data.keyword.filestorage_full}} for Endurance or Performance has been launched in select data centers. In this article, you''ll find information on how to migrate your {{site.data.keyword.filestorage_short}} from unencrypted to encrypted. For more information on provider-managed encrypted storage, read the [{{site.data.keyword.filestorage_short}} Encryption-At-Rest](block-file-storage-encryption-rest.html) article. To see the list of upgraded data centers and available features click [here](new-ibm-block-and-file-storage-location-and-features).
+Encrypted {{site.data.keyword.filestorage_full}} for Endurance or Performance has been launched in select data centers. In this article, you''ll find information on how to migrate your {{site.data.keyword.filestorage_short}} from unencrypted to encrypted. For more information on provider-managed encrypted storage, read the [{{site.data.keyword.filestorage_short}} Encryption-At-Rest](block-file-storage-encryption-rest.html) article. To see the list of upgraded data centers and available features click [here](new-ibm-block-and-file-storage-location-and-features.html).
 
 The preferred migration path is to connect to both volumes simultaneously and transfer data directly from one file volume to another. The specifics depend on your operating system and whether the data is expected to change during the copy operation.
 

@@ -18,7 +18,7 @@ lastupdated: "2018-01-08"
 The short description section should include one to two sentences describing why a system administrator or dev ops engineer would want to use this infrasturcture offering or service.
 Briefly mention what the user's learning goal is and include the following SEO keywords in the title and/or the short description: IBM Cloud, ServiceName. Be sure to use conversational style. For more details, see the guidance on conversational style in the Carbon Design System at http://www.carbondesignsystem.com/guidelines/content/general.
 
-Example: 
+Example:
 When resource demands spike, you need cloud infrastructure services that can scale out to meet those new requirements immediately, with control. {{site.data.keyword.Bluemix}} Virtual Servers can be deployed in a matter of minutes from virtual server images of your choice, in the geographic region that makes sense for your workloads. As soon as your workloads subside, those virtual servers can be suspended or powered down so that your cloud environment perfectly fits your infrastructure needs.
 
 The task section includes steps to get a device, storage, or networking up and running.
@@ -74,4 +74,3 @@ Complete these steps to get started with the Block Storage service:
 	{: screen}
 
 ## Next Steps
-

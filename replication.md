@@ -195,7 +195,7 @@ Failovers are initiated under **Storage** > **{{site.data.keyword.filestorage_sh
 2. Click on the Replica tab and click the Actions link in the upper-right corner.
 3. Select Failover.
    You will receive a message across the top of the page stating the failover is in progress. Additionally, an icon will appear next to your volume on the **{{site.data.keyword.filestorage_short}}** indicating that an active transaction is occurring. Hovering over the icon produces a dialog indicating the transaction. The icon will disappear once the transaction is complete. During the failover process, configuration-related actions are read only; you cannot edit any snapshot schedule, change snapshot space, and so on. The event is logged in replication history.
-   Another message will let you know when your target volume is live. Your original source volume’s LUN Name will be followed by REP and its Status will be Inactive.
+   Another message will let you know when your target volume is live. Your original source volume's LUN Name will be followed by REP and its Status will be Inactive.
 4. Click the **View All {{site.data.keyword.filestorage_short}}** link in the top right corner.
 5. Click on your active LUN (formerly your target volume). This volume will now have an **Active** status.
 6. Mount and attach your storage volume to the host.
@@ -238,7 +238,7 @@ Replication history is viewed on the **Audit Log** via the **Account** tab under
 
 ## How Do I Cancel an Existing Replication?
 
-Cancelation can be performed either immediately or on the anniversary date, which causes billing to terminate. Replication can be cancelled from either the **Primary** or **Replica** tabs.
+Cancelation can be performed either immediately or on the anniversary date, which causes billing to terminate. Replication can be canceled from either the **Primary** or **Replica** tabs.
 
 1. Click on the volume from the **{{site.data.keyword.filestorage_short}}** page.
 2. Click on the **Actions** drop-down on either the **Primary** or **Replica** tab.
@@ -247,11 +247,11 @@ Cancelation can be performed either immediately or on the anniversary date, whic
 5. Click the **I acknowledge that due to cancellation, data loss may occur** checkbox and click **Cancel Replica**.
 
 
-## How Do I Cancel Replication When the Primary Volume Is Cancelled?
+## How Do I Cancel Replication When the Primary Volume Is Canceled?
 
-When a primary volume is cancelled, the replication schedule and the volume in the replica data center are deleted. Replicas are cancelled from the **{{site.data.keyword.filestorage_short}}** page.
+When a primary volume is canceled, the replication schedule and the volume in the replica data center are deleted. Replicas are canceled from the **{{site.data.keyword.filestorage_short}}** page.
 
  1. Highlight your volume on the **{{site.data.keyword.filestorage_short}}** page.
  2. Click the **Actions** drop-down menu and select **Cancel for {{site.data.keyword.filestorage_short}}**.
  3. Select when to cancel the volume – **Immediately** or **Anniversary Date** and click **Continue**.
- 4. Click the **I acknowledge that due to cancellation, data loss may occur*a* checkbox and click **Cancel**.
+ 4. Click the **I acknowledge that due to cancellation, data loss may occur*a* check box and click **Cancel**.

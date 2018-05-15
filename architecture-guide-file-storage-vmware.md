@@ -206,7 +206,7 @@ To configure the virtual host, complete the following steps:
    8980 bytes from a.b.c.d: icmp_seq=1 ttl=128 time=3.36 ms
    ```
 
-More information on VMware and Jumbo Frames can be found [here](https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=1003712){:new_window}.
+More information on VMware and Jumbo Frames can be found [here](https://kb.vmware.com/s/article/1003712){:new_window}.
 
 
 ### 3. Adding An Uplink Adapter To A Virtual Switch
@@ -238,7 +238,7 @@ The network configuration for this architecture guide uses a minimal number of p
 2. Note that static routes are not persistent across reboots on ESXi 5.0 and earlier. To ensure that any added static routes are persistent, these commands need to be added to the local.sh file on each host, located in the /etc/rc.local.d/ directory. To do this, open the local.sh file using the visual editor and add the command above to be executed above the line exit 0.
    - Make note of the IP address as it can be used for mounting the volume in the next step.
    - This process needs to be done for each NFS volume you plan to mount to your ESXi host.
-   - Here is the link to a VMware KB article: [Configuring static routes for VMkernel ports on an ESXi host](https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=2001426){:new_window}.
+   - Here is the link to a VMware KB article: [Configuring static routes for VMkernel ports on an ESXi host](https://kb.vmware.com/s/article/2001426){:new_window}.
 
 
 ##  Mount {{site.data.keyword.filestorage_short}} Volume(s) on the ESXi hosts
@@ -368,7 +368,7 @@ There are some additional settings required for setting up ESXi 5.x hosts for NF
 A jumbo frame is an Ethernet frame with a payload greater than the standard maximum transmission unit (MTU) of 1,500 bytes. Jumbo frames are used on local area networks that support at least 1 Gbps and can be as large as 9,000 bytes.
 
 
-Jumbo Frames needs to be configured the same on the entire network path from source device <-> switch <-> router <-> switch <-> destination device. If the entire chain is not set the same it will default to the lowest setting along the chain. {{site.data.keyword.BluSoftlayer_full}} has their network devices set to 9,000 currently. All customer devices will need to be set to the same.
+Jumbo Frames needs to be configured the same on the entire network path from source device <-> switch <-> router <-> switch <-> destination device. If the entire chain isn't set the same it will default to the lowest setting along the chain. {{site.data.keyword.BluSoftlayer_full}} has their network devices set to 9,000 currently. All customer devices will need to be set to the same.
 
 ### Windows
 
