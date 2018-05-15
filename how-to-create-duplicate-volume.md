@@ -36,7 +36,7 @@ There are a couple of ways to create a duplicate volume through the [{{site.data
 
 Browse to your list of {{site.data.keyword.filestorage_short}}:
 
-From the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}, click **Storage**, **{{site.data.keyword.filestorage_short}}** OR from {{site.data.keyword.BluSoftlayer_full}} Catalog click **Infrastructure > Storage > {{site.data.keyword.filestorage_short}}**. 
+From the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}, click **Storage**, **{{site.data.keyword.filestorage_short}}** OR from {{site.data.keyword.BluSoftlayer_full}} catalog click **Infrastructure > Storage > {{site.data.keyword.filestorage_short}}**. 
 
 1.	Select a volume from the list and click **Actions** > **Duplicate LUN (Volume)** 
 2.	Choose your snapshot option: 
@@ -48,9 +48,9 @@ From the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_w
     -	If ordering from a replica volume – the only option for snapshot is to use the latest snapshot available. 
 3.	Hourly or Monthly Billing – you can choose to provision the new duplicate volume with hourly or monthly billing. The billing type for the original volume is automatically selected. However, if you would like to choose a different billing type for your new duplicate storage, you can make that selection here.
 4. 	Storage Type (Endurance or Performance) and Location will remain the same as the original volume. 
-5.	If you want to, you can specify IOPs or IOPs Tier for the new volume. The IOPs designation of the original volume is set by default. 
-      -	If your original volume is 0.25 IOPs Endurance tier, you won't be able to make a new selection. 
-      -	If your original volume is 2, 4, or 10 IOPs Endurance tier, you can move anywhere between those tiers for the new volume. 
+5.	If you want to, you can specify IOPS or IOPS Tier for the new volume. The IOPS designation of the original volume is set by default. 
+      -	If your original volume is 0.25 IOPS Endurance tier, you won't be able to make a new selection. 
+      -	If your original volume is 2, 4, or 10 IOPS Endurance tier, you can move anywhere between those tiers for the new volume. 
       -	Available Performance and size combinations will be displayed. 
 6.	If you want to, you can update the size of the new volume so that it's larger than the original.  The size of the original volume is set by default. 
   	-	**Note**: {{site.data.keyword.filestorage_short}} can only be resized to 10x the original size of the volume. 
