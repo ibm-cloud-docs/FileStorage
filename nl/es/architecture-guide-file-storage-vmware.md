@@ -116,10 +116,10 @@ Las réplicas le permiten
 - Recuperarse rápidamente de fallos del sitio y otros desastres realizando la migración al volumen de destino
 - Realizando la migración tras error a un punto específico en el tiempo en la copia de recuperación tras desastre
 
-Antes de poder replicar, debe crear una planificación de instantáneas. Cuando realiza la migración tras error, está “cambiando el interruptor” de su volumen de almacenamiento del centro de datos primario al volumen de destino del centro de datos remoto. Por ejemplo, su centro de datos primario es Londres y el centro de datos secundario es Amsterdam. Si se produce un suceso de error, realizaría la migración a Amsterdam – conectando al ahora volumen primario desde una instancia de clúster de vSphere en Amsterdam.
+Antes de poder replicar, debe crear una planificación de instantáneas. Cuando realiza la migración tras error, está “cambiando el interruptor” de su volumen de almacenamiento del centro de datos primario al volumen de destino del centro de datos remoto. Por ejemplo, su centro de datos primario es Londres y el centro de datos secundario es Ámsterdam. Si se produce un suceso de error, realizaría la migración a Ámsterdam – conectando al ahora volumen primario desde una instancia de clúster de vSphere en Ámsterdam.
 
 
-Cuando su volumen de Londres se haya reparado, se realiza una instantánea del volumen de Amsterdam para volver a Londres y al volumen primario de nuevo desde una instancia de cálculo de Londres. Antes de que el volumen vuelva al centro de datos primario, debe dejar de ser utilizado en el sitio remoto. Se realiza una instantánea de cualquier información nueva o modificada y se replica al centro de datos primario antes de poder montarse de nuevo en los hosts de ESXi del sitio de producción.
+Cuando su volumen de Londres se haya reparado, se realiza una instantánea del volumen de Ámsterdam para volver a Londres y al volumen primario de nuevo desde una instancia de cálculo de Londres. Antes de que el volumen vuelva al centro de datos primario, debe dejar de ser utilizado en el sitio remoto. Se realiza una instantánea de cualquier información nueva o modificada y se replica al centro de datos primario antes de poder montarse de nuevo en los hosts de ESXi del sitio de producción.
 
 
 Consulte la página de información [Réplica](replication.html) para obtener más detalles sobre cómo configurar la réplica.
@@ -292,7 +292,7 @@ Efectúe los pasos siguientes para habilitar SIOC con valores recomendados para 
 
 ### 2. Control de E/S de almacenamiento para {{site.data.keyword.BluVirtServers_short}}
 
-También puede limitar los discos virtuales individuales para máquinas virtuales individuales u otorgarles distintas comparticiones con SIOC. Limitar los discos y otorgar distintas comparticiones le permite alinear el entorno a la carga de trabajo con el número de IOPS de volumen de {{site.data.keyword.filestorage_short}} adquirido. El límite se establece por IOPS y es posible establecer un peso diferente o "comparticiones". Las comparticiones de discos virtuales establecidas en Alta (2.000 comparticiones) reciben el doble de E/S que un disco establecido en Normal (1.000 comparticiones) y cuatro veces más que uno establecido en Baja (500 comparticiones). Normal es el valor predeterminado para todas las máquinas virtuales, de modo que solo tendrá que ajustar los valores por encima o por debajo de normal para las máquinas virtuales que así lo requieran.
+También puede limitar los discos virtuales individuales para máquinas virtuales individuales u otorgarles distintas comparticiones con SIOC. Limitar los discos y otorgar distintas comparticiones le permite alinear el entorno a la carga de trabajo con el número de IOPS de volumen de {{site.data.keyword.filestorage_short}} adquirido. El límite se establece por IOPS y es posible establecer un peso diferente o "comparticiones". Los discos virtuales con comparticiones establecidas en Alta (2.000 comparticiones) reciben el doble de E/S que un disco establecido en Normal (1.000 comparticiones) y cuatro veces más que uno establecido en Baja (500 comparticiones). Normal es el valor predeterminado para todas las máquinas virtuales, de modo que solo tendrá que ajustar los valores por encima o por debajo de normal para las máquinas virtuales que así lo requieran.
 
 
 Efectúe los siguientes pasos para cambiar las comparticiones y el límite de discos virtuales:
@@ -377,7 +377,7 @@ Las tramas Jumbo deben configurarse igual en toda la vía de acceso de la red de
 3. Pulse con el botón derecho del ratón el NIC para el cual desea habilitar las tramas Jumbo y seleccione **Propiedades**.
 4. En el separador **Redes**, pulse **Configurar** para el adaptador de red.
 5. Seleccione el separador **Avanzado**.
-6. Seleccione **Trama Jumbo** y cambie el valor de inhabilitado al valor deseado, como MTU de 9kB o 9.014 Bytes, en función del NIC.
+6. Seleccione **Trama Jumbo** y cambie el valor de inhabilitado al valor deseado, como MTU de 9 kB o 9.014 Bytes, en función del NIC.
 7. Pulse **Aceptar** para cerrar todos los diálogos.
 
 Tenga en cuenta que cuando se realice el cambio, el NIC perderá la conectividad de red durante unos segundos. Deberá rearrancar para asegurarse de que el cambio se aplique.

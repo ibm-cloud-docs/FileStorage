@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-02-02"
+lastupdated: "2018-04-24"
 
 ---
 {:new_window: target="_blank"}
@@ -107,11 +107,15 @@ Los límites de rendimiento están establecidos por volumen/LUN, por lo que util
 
 Recomendamos que ejecute el tráfico de almacenamiento en una red de área local virtual que omita el cortafuegos. La ejecución del tráfico de almacenamiento a través de cortafuegos de software incrementará la latencia e incidirá negativamente sobre el rendimiento del almacenamiento.
 
+## ¿Qué latencia de rendimiento puedo esperar de mi {{site.data.keyword.filestorage_short}}?   
+
+La latencia de destino en el almacenamiento es de <1 ms. Nuestro almacenamiento está conectado a instancias de cálculo en una red compartida, por lo que la latencia de rendimiento exacta dependerá del tráfico de la red dentro de un plazo determinado.
+
 ## ¿Qué ocurre con mis datos cuando se suprimen volúmenes de {{site.data.keyword.filestorage_short}}?
 
 Cuando se suprime el almacenamiento, se eliminan todos los punteros a los datos en dicho volumen, por lo que los datos serán completamente inaccesibles. Si el almacenamiento físico se vuelve a suministrar a otra cuenta, se asignará un nuevo conjunto de punteros. La nueva cuenta no tiene ningún modo de acceder a los datos que pudieran haberse guardado en el almacenamiento físico, el nuevo conjunto de punteros muestra todo 0. Cuando se escriben nuevos datos en el volumen/LUN, se sobrescriben los datos inaccesibles que aún existan. 
 
-## ¿Qué latencia de rendimiento puedo esperar de mi {{site.data.keyword.filestorage_short}}?   
+## ¿Qué ocurre en las unidades que están fuera de servicio del centro de datos en la nube?
 
-La latencia de destino en el almacenamiento es de <1 ms. Nuestro almacenamiento está conectado a instancias de cálculo en una red compartida, por lo que la latencia de rendimiento exacta dependerá del tráfico de la red dentro de un plazo determinado.
+Cuando las unidades están fuera de servicio, IBM las destruye antes de desecharlas, haciéndolas así en inutilizables. Los datos escritos en dicha unidad se vuelven inaccesibles.
 
