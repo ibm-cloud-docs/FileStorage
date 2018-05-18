@@ -1,11 +1,11 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="FileStorage" audience="services" href=“/docs/infrastructure/FileStorage/index.html”}
+{: .toc subcollection="FileStorage" audience="services" href="/docs/infrastructure/FileStorage/index.html"}
 IBM Cloud Storage - File Storage
 
     {: .navgroup id="learn"}
-    index.md 
+    index.md
     new-ibm-block-and-file-storage-location-and-features.md
     architecture-guide-file-storage-vmware.md
     snapshots.md
@@ -13,14 +13,14 @@ IBM Cloud Storage - File Storage
     expandable_file_storage.md
     adjustable-iops.md
     {: .navgroup-end}
-    
+
     {: .navgroup id="howto"}
     {: .topicgroup}
     Provisioning
         provisioning-file-storage.md
         ordering-snapshots.md
         managing-storage-limits.md
-        
+
     {: .topicgroup}
     Configuration
         accessing-file-storage-linux.md
@@ -32,7 +32,7 @@ IBM Cloud Storage - File Storage
 
     {: .topicgroup}
     Security
-        block-file-storage-encryption-rest.md    
+        block-file-storage-encryption-rest.md
         migrate-file-storage-encrypted-file-storage.md
 
     managing-file-storage.md
@@ -40,7 +40,7 @@ IBM Cloud Storage - File Storage
     working-with-snapshots.md
     brocade-vrouter-vyatta-set-guide-vmware-environments-endurance-or-performance-storage.md
     {: .navgroup-end}
-               
+
     {: .navgroup id="help"}
     File-Storage-FAQ.md
     [Python API Client Information](https://github.com/softlayer/softlayer-python)
