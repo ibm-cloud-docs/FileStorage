@@ -13,15 +13,16 @@ lastupdated: "2018-05-17"
 We recommend a maximum host and application input/output (I/O) queue depth for each performance tier. The host setting doesn’t affect disk and controller latency, only latency observed by the host and application.
 
 <table align="center">
+	<caption>Recommended queue depth per IOPS tier</caption>
 	<tbody>
 		<tr>
-			<th><strong>Performance tier</strong></th>
+			<th>Performance tier</th>
 			<td style="text-align: center; vertical-align: middle;">0.25 IOPS per GB</td>
 			<td style="text-align: center; vertical-align: middle;">2 IOPS per GB</td>
 			<td style="text-align: center; vertical-align: middle;">4 IOPS per GB</td>
 		</tr>
 		<tr>
-			<th><strong>Maximum host queue depth</strong></th>
+			<th>Maximum host queue depth</th>
 			<td style="text-align: center; vertical-align: middle;">8</td>
 			<td style="text-align: center; vertical-align: middle;">24</td>
 			<td style="text-align: center; vertical-align: middle;">56</td>
