@@ -32,13 +32,13 @@ Note that some cities, such as Dallas, San Jose, Washington, D.C., and Amsterdam
 	<caption>Table 1</caption>
 	<tbody>
 		<tr>
-			<th><strong>US 1</strong><sup><img src="/images/numberone.png" alt="footnote" /></sup></td>
-			<th><strong>US 2</strong></td>
-			<th><strong>Latin/South America</strong></td>
-			<th><strong>Canada</strong></td>
-			<th><strong>Europe</strong></td>
-			<th><strong>Asia-Pacific</strong></td>
-			<th><strong>Australia</strong></td>
+			<th><strong>US 1</strong><sup><img src="/images/numberone.png" alt="footnote" /></sup></th>
+			<th><strong>US 2</strong></th>
+			<th><strong>Latin/South America</strong></th>
+			<th><strong>Canada</strong></th>
+			<th><strong>Europe</strong></th>
+			<th><strong>Asia-Pacific</strong></th>
+			<th><strong>Australia</strong></t>
 		</tr>
 		<tr>
 			<td>DAL01<br />

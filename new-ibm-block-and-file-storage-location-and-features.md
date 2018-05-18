@@ -20,12 +20,12 @@ The new {{site.data.keyword.filestorage_short}} is available in following region
 	<caption>Data Center Availability</caption>
 	<tbody>
 		<tr>
-			<th><strong>US 2</strong></td>
-			<th><strong>EU</strong></td>
-			<th><strong>Australia</strong></td>
-			<th><strong>Canada</strong></td>
-			<th><strong>Latin America</strong></td>
-			<th><strong>Asia Pacific</strong></td>
+			<th><strong>US 2</strong></th>
+			<th><strong>EU</strong></th>
+			<th><strong>Australia</strong></th>
+			<th><strong>Canada</strong></th>
+			<th><strong>Latin America</strong></th>
+			<th><strong>Asia Pacific</strong></th>
 		</tr>
 		<tr>
 			<td>
@@ -81,7 +81,7 @@ The new storage has the following features and capabilities:
 - 10 IOPS per GB tier option. <br/> A new tier has been added to the Endurance type {{site.data.keyword.filestorage_short}} to support the most demanding workloads.
 - All flash-backed storage. <br/> {{site.data.keyword.filestorage_short}} that is provisioned with either Endurance or Performance options at 2 IOPS per GB or higher is backed by all-flash storage.
 - Snapshot and Replication support.
-- Hourly Billing option added for storage that is planned to be used for less than a full month. 
+- Hourly Billing option added for storage that is planned to be used for less than a full month.
 - Up to 48,000 IOPS for {{site.data.keyword.filestorage_short}} provisioned with the Performance type.
 - IOPS rates are adjustable to improve performance in case of seasonal load changes. Read more about this feature [here](adjustable-iops.html).
 - Create a new clone of your data with the [{{site.data.keyword.filestorage_short}} Volume Duplication feature](how-to-create-duplicate-volume.html).
