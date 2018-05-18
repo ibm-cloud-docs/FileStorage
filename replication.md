@@ -33,7 +33,7 @@ See Table 1 for the complete list of data center availability and replication ta
 </caption>
 	<thead>
 		<tr>
-			<th>US 1 &#42;</th>
+			<th>US 1*</th>
 			<th>US 2</th>
 			<th>Latin America</th>
 			<th>Canada</th>
