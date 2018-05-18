@@ -23,23 +23,26 @@ Before you can replicate, you must create a snapshot schedule. When you failover
 
 ## How do I determine the remote data center for my replicated storage volume?
 
-{{site.data.keyword.BluSoftlayer_full}}'s data centers have been paired into primary and remote combinations worldwide .
-See Table 1 for a complete list of data center availability and replication targets.
-Note that some cities, such as Dallas, San Jose, Washington, D.C., and Amsterdam have multiple data centers.
+{{site.data.keyword.BluSoftlayer_full}}'s data centers have been paired into primary and remote combinations worldwide.
+See Table 1 for the complete list of data center availability and replication targets.
 
 
 <table cellpadding="1" cellspacing="1">
-	<caption>Table 1</caption>
-	<tbody>
+	<caption><p>Table 1 - This table shows the complete list of data centers with enhanced capabilities in each region. Every region is a separate column. Some cities, such as Dallas, San Jose, Washington DC, Amsterdam, Frankfurt, London and Sydney have multiple data centers.</p>
+		<p>Data centers in US 1 region do NOT have enhanced storage. Hosts in data centers with enhanced storage capabilities <strong>can't</strong> initiate replication with replica targets in US 1 data centers.</p>
+</caption>
+	<thead>
 		<tr>
-			<th><strong>US 1</strong><sup><img src="/images/numberone.png" alt="footnote" /></sup></th>
-			<th><strong>US 2</strong></th>
-			<th><strong>Latin/South America</strong></th>
-			<th><strong>Canada</strong></th>
-			<th><strong>Europe</strong></th>
-			<th><strong>Asia-Pacific</strong></th>
-			<th><strong>Australia</strong></t>
+			<th>US 1 &#42;</th>
+			<th>US 2</th>
+			<th>Latin America</th>
+			<th>Canada</th>
+			<th>Europe</th>
+			<th>Asia-Pacific</th>
+			<th>Australia</strong></t>
 		</tr>
+	</thead>
+	<tbody>
 		<tr>
 			<td>DAL01<br />
 				DAL05<br />
@@ -97,10 +100,6 @@ Note that some cities, such as Dallas, San Jose, Washington, D.C., and Amsterdam
 				SYD04<br />
 				MEL01<br />
 				<br /><br /><br /><br /><br /><br /><br />
-			</td>
-		</tr>
-		<tr>
-			<td colspan="100%"><p><sup><img src="/images/numberone.png" alt="footnote" /></sup>Data centers in this region do NOT have encrypted storage.<br /><strong>Note</strong>: Data centers with encrypted storage <strong>cannot</strong> initiate replication with non-encrypted data centers as replica targets.</p>
 			</td>
 		</tr>
 	</tbody>
