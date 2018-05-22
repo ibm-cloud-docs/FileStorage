@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-05-18"
+lastupdated: "2018-05-22"
 
 ---
 
@@ -11,24 +11,24 @@ lastupdated: "2018-05-18"
 
 # Working with Replication
 
-Replication uses one of your snapshot schedules to automatically copy snapshots to a destination volume in a remote data center. The copies can be recovered in the remote site in the event of corrupted data or a catastrophic event.
+Replication uses one of your snapshot schedules to automatically copy snapshots to a destination volume in a remote data center. The copies can be recovered in the remote site in if a catastrophic event or data corruption occurs.
 
-Replicas let you
+With replicas, you can:
 
 - Recover from site failures and other disasters quickly by failing over to the destination volume,
-- Failover to a specific point in time in the DR copy.
+- Fail over to a specific point-in-time in the DR copy.
 
-Before you can replicate, you must create a snapshot schedule. When you failover, you’re “"flipping the switch" from your storage volume in your primary data center to the destination volume in your remote data center. For example, your primary data center is London and your secondary data center is Amsterdam. In the case of a failure event, you'd fail over to Amsterdam – connecting to the now-primary volume from a compute instance in Amsterdam. After your volume in London has been repaired, a snapshot is taken of the Amsterdam volume in order to fail back to London and the once-again primary volume from a compute instance in London.
+Before you can replicate, you must create a snapshot schedule. When you fail over, you’re "flipping the switch" from your storage volume in your primary data center to the destination volume in your remote data center. For example, your primary data center is London and your secondary data center is Amsterdam. If a failure event occurs, you'd fail over to Amsterdam – connecting to the now-primary volume from a compute instance in Amsterdam. After your volume in London is repaired, a snapshot is taken of the Amsterdam volume to fail back to London and the once-again primary volume from a compute instance in London.
 
 
 ## How do I determine the remote data center for my replicated storage volume?
 
-{{site.data.keyword.BluSoftlayer_full}}'s data centers have been paired into primary and remote combinations worldwide.
+{{site.data.keyword.BluSoftlayer_full}}'s data centers are paired into primary and remote combinations worldwide.
 See Table 1 for the complete list of data center availability and replication targets.
 
 
 <table style="width: 80.0%;">
-	<caption style="text-align: left;"><p>Table 1 - This table shows the complete list of data centers with enhanced capabilities in each region. Every region is a separate column. Some cities, such as Dallas, San Jose, Washington DC, Amsterdam, Frankfurt, London and Sydney have multiple data centers.</p>
+	<caption style="text-align: left;"><p>Table 1 - This table shows the complete list of data centers with enhanced capabilities in each region. Every region is a separate column. Some cities, such as Dallas, San Jose, Washington DC, Amsterdam, Frankfurt, London, and Sydney have multiple data centers.</p>
 		<p>&#42; Data centers in US 1 region do NOT have enhanced storage. Hosts in data centers with enhanced storage capabilities <strong>can't</strong> initiate replication with replica targets in US 1 data centers.</p>
 </caption>
 	<thead>
@@ -54,6 +54,7 @@ See Table 1 for the complete list of data center availability and replication ta
 				<br />
 				<br />
 				<br />
+				<br />
 			</td>
 			<td>SJC03<br />
 			       SJC04<br />
@@ -64,19 +65,20 @@ See Table 1 for the complete list of data center availability and replication ta
 				DAL10<br />
 				DAL12<br />
 				DAL13<br />
-				<br />
+				<br /><br />
 			</td>
 			<td>MEX01<br />
-				SAO01<br /><br /><br /><br /><br /><br /><br /><br /><br />
+				SAO01<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 			</td>
 			<td>TOR01<br />
-				MON01<br /><br /><br /><br /><br /><br /><br /><br /><br />
+				MON01<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 			</td>
 			<td>
 				AMS01<br />
 				AMS03<br />
 				FRA02<br />
 				FRA04<br />
+				FRA05<br />
 				LON02<br />
 				LON04<br />
 				LON06<br />
@@ -94,12 +96,13 @@ See Table 1 for the complete list of data center availability and replication ta
 				<br />
 				<br />
 				<br />
+				<br />
 			</td>
 			<td>
 				SYD01<br />
 				SYD04<br />
 				MEL01<br />
-				<br /><br /><br /><br /><br /><br /><br />
+				<br /><br /><br /><br /><br /><br /><br /><br />
 			</td>
 		</tr>
 	</tbody>
