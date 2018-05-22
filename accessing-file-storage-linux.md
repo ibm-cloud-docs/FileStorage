@@ -25,23 +25,23 @@ Following are the steps required to connect a Linux-based {{site.data.keyword.Bl
 
 1. Install required packages/tools.
    ```
-   [root@TEST-RHEL6]# yum -y install nfs-utils nfs-utils-lib
+   # yum -y install nfs-utils nfs-utils-lib
    ```
     
 2. Mount the remote share
    ```
-   [root@TEST-RHEL6]# mount -t "nfs version" -o "options" <mount_point> /mnt
+   # mount -t "nfs version" -o "options" <mount_point> /mnt
    ```
        
    Here is an example of mounting the remote share to a storage instance.
    ```
-   [root@TEST-RHEL6 mnt]# mount -t nfs4 -o hard,intr
+   # mount -t nfs4 -o hard,intr
    nfsdal0501a.service.softlayer.com:/IBM01SV278685_7 /mnt
    ```
  
 3. Verify the mount was successful.
    ```
-   [root@TEST-RHEL6]# df -h
+   # df -h
    Filesystem Size Used Avail Use% Mounted on
    /dev/xvda2 25G 1.4G 22G 6% /
    tmpfs 1.9G 0 1.9G 0% /dev/shm
@@ -50,8 +50,8 @@ Following are the steps required to connect a Linux-based {{site.data.keyword.Bl
     
 4. Navigate to the mount point and read/write files.
    ```
-   [root@TEST-RHEL6]# touch /mnt/test
-   [root@TEST-RHEL6]# ls -la /mnt
+   # touch /mnt/test
+   # ls -la /mnt
    total 12
    drwxr-xr-x 2 nobody nobody 4096 Sep 8 15:52 .
    dr-xr-xr-x. 22 root root 4096 Sep 8 14:30 ..
@@ -75,7 +75,7 @@ Following are the steps required to connect a Linux-based {{site.data.keyword.Bl
 6. Verify there are no errors with the configuration file.
 
    ```
-   [root@TEST-RHEL6 /]# mount -fav
+   # mount -fav
    ```
     
    If the command completes with no errors, your setup is complete.
