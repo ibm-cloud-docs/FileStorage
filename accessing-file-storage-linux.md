@@ -76,15 +76,16 @@ The following steps are required to connect a Linux-based {{site.data.keyword.Bl
    ```
    # mount -fav
    ```
+   {:pre}
     
    If the command completes with no errors, your setup is complete.
 
-**Note:** If you are using NFS 4.1, add 'sec=sys' to the mount command to prevent file ownership issues.
+**Note:** If you are using NFS 4.1, add `sec=sys` to the mount command to prevent file ownership issues.
 
  
 ## How to implement no_root_squash for NFS (optional)
 
-Configuring no_root_squash allows root clients to retain root permissions on the NFS share. For NFSv3, there is nothing that clients need to do; no_root_squash should just work.
+Configuring no_root_squash allows root clients to retain root permissions on the NFS share. For NFSv3, there is nothing that clients need to do; no_root_squash just works.
 For NFSv4, you need to set the nfsv4 domain to: `slnfsv4.com` and start `rpcidmapd`, or similar service depending on the OS version.
 
 Here’s an example:
