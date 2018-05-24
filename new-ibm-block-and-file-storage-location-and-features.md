@@ -2,17 +2,16 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-05-22"
+lastupdated: "2018-05-24"
 
 ---
 {:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
 
 # New Locations and Features of {{site.data.keyword.filestorage_short}}
 
-{{site.data.keyword.BluSoftlayer_full}} is introducing a new version of {{site.data.keyword.filestorage_full}}! The new storage is available in select data centers, and is backed by flash storage at higher IOPS levels with disk-level encryption for data-at-rest. All storage ordered in the select data centers is automatically created with the new version of {{site.data.keyword.filestorage_short}}.
+{{site.data.keyword.BluSoftlayer_full}} is introducing a new version of {{site.data.keyword.filestorage_full}}! The new storage is available in select data centers, and is backed by flash storage at higher IOPS levels with disk-level encryption for data-at-rest. All storage that is ordered in the select data centers is automatically created with the new version of {{site.data.keyword.filestorage_short}}.
 
-**Note:** The NFS mount point for new volumes has changed. See **New mount point for enhanced {{site.data.keyword.filestorage_short}} volumes** section for details.
+**Note:** The NFS mount point for new volumes changed. See **New mount point for enhanced {{site.data.keyword.filestorage_short}} volumes** section for details.
 
 The new {{site.data.keyword.filestorage_short}} is available in following regions/data centers with more data center availability added later!
 
