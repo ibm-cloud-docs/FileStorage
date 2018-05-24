@@ -2,45 +2,46 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-05-07"
+lastupdated: "2018-05-24"
 
 ---
 {:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
 
 # Architecture Guide for {{site.data.keyword.filestorage_short}} with VMware
 
-Following are the steps to order and configure {{site.data.keyword.filestorage_full}} in a vSphere 5.5 and vSphere 6.0 environment at {{site.data.keyword.BluSoftlayer_full}}. Using NFS {{site.data.keyword.filestorage_short}} is the Best Practice if you require more than 8 connections to your VMWare host.
+The following steps can help you order and configure {{site.data.keyword.filestorage_full}} in a vSphere 5.5 and vSphere 6.0 environment at {{site.data.keyword.BluSoftlayer_full}}. If you require more than eight connections to your VMWare host, using NFS {{site.data.keyword.filestorage_short}} is the best practice.
 
-## {{site.data.keyword.filestorage_short}} Overview
+## {{site.data.keyword.filestorage_short}} overview
 
 Our {{site.data.keyword.filestorage_short}} is designed to support high I/O applications requiring predictable levels of performance. The predictable performance is achieved through the allocation of protocol-level input/output operations per second (IOPS) to individual volumes.
 
-The {{site.data.keyword.filestorage_short}} offering is accessed and mounted through an NFS connection. In a VMware deployment, a single volume can be mounted to up to 64 ESXi hosts as shared storage, or you can mount multiple volumes to create a storage cluster to use vSphere Storage DYNAMIC Resource Scheduling.
+The {{site.data.keyword.filestorage_short}} offering is accessed and mounted through an NFS connection. In a VMware deployment, a single volume can be mounted to up to 64 ESXi hosts as shared storage, or you can mount multiple volumes to create a storage cluster to use vSphere Storage Distributed Resource Scheduling (DRS).
 
 Pricing and configuration options for Endurance and Performance {{site.data.keyword.filestorage_short}} are charged based on a combination of the reserved space and for the offered IOPS.
 
 ### 1. {{site.data.keyword.filestorage_short}} Considerations
 
-When ordering {{site.data.keyword.filestorage_short}}, you’ll want to keep in mind the following information and considerations:
+When you order {{site.data.keyword.filestorage_short}}, consider the following information:
 
-- The storage size, IOPS, and operating system can’t be changed once {{site.data.keyword.filestorage_short}} volumes are provisioned. Any changes you want to make for the amount of space, the number of IOPS, or the operating system requires a new volume to be provisioned. Any data stored in the previous volume has to be migrated to the new volume(s) using VMware Storage vMotion.
-- When deciding on the size, consider the size of the workload and throughput needed. Size matters with the Endurance service, which scales performance linearly in relation to capacity (IOPS/GB) as opposed to the Performance service, which allows the administrator to choose capacity and performance independently. Throughput requirements matter with Performance. <br/> **Note**: The throughput calculation is IOPS x 16 KB. IOPS is measured based on a 16 KB block size with a 50/50 read/write mix. <br/> **Note**: Increasing block size will increase throughput but decrease IOPS. For example, doubling the block size to 32 KB blocks will maintain the maximum throughput but halve the IOPS.
-- NFS uses many additional file control operations such as lookup, getattr and readdir to name a few. These operations in addition to read/write operations can count as IOPS and vary by operation type and NFS version.
-- Technically, multiple volumes can be striped together to achieve higher IOPS and more throughput, however, VMware recommends a single Virtual Machine File System (VMFS) data store per volume to avoid performance degradation.
+- When you decide on the size, consider the size of the workload and throughput needed. Size matters with the Endurance service, which scales performance linearly in relation to capacity (IOPS/GB). Conversely, the Performance service allows the administrator to choose capacity and performance independently. Throughput requirements matter with Performance. <br/> **Note**: The throughput calculation is IOPS x 16 KB. IOPS is measured based on a 16 KB block size with a 50/50 read/write mix. <br/> **Note**: Increasing block size will increase throughput but decrease IOPS. For example, doubling the block size to 32 KB blocks will maintain the maximum throughput but halve the IOPS.
+- NFS uses many extra file control operations such as `lookup`, `getattr` and `readdir` to name a few. These operations in addition to read/write operations can count as IOPS and vary by operation type and NFS version.
+- Technically, multiple volumes can be striped together to achieve higher IOPS and more throughput. However, VMware recommends a single virtual machine file system (VMFS) data store per volume to avoid performance degradation.
 - {{site.data.keyword.filestorage_short}} volumes are exposed to authorized devices, subnets, or IP addresses.
 - Snapshot and Replication services are natively available on Endurance {{site.data.keyword.filestorage_short}} volumes only. Performance {{site.data.keyword.filestorage_short}} doesn’t have these capabilities.
 - To avoid storage disconnection during path failover {{site.data.keyword.IBM}} recommends installing VMWare tools, which will set an appropriate timeout value. There’s no need to change the value, the default setting is sufficient to ensure that your VMWare host won’t lose connectivity.
-- Both NFS v3 and NFS v4.1 are supported in the {{site.data.keyword.BluSoftlayer_full}} environment. However, it’s {{site.data.keyword.IBM}}'s recommendation that NFS v3 be used. Because NFS v4.1 is a stateful protocol (not stateless like NFSv3) protocol issues can occur during network events. NFS v4.1 must quiesce all operations and then perform the lock reclamation. While these operations are taking place, disruptions may occur.
+- Both NFS v3 and NFS v4.1 are supported in the {{site.data.keyword.BluSoftlayer_full}} environment. However, {{site.data.keyword.IBM}} recommends that you use NFS v3. Because NFS v4.1 is a stateful protocol (not stateless like NFSv3), protocol issues can occur during network events. NFS v4.1 must quiesce all operations and then perform the lock reclamation. While these operations are taking place, disruptions can occur.
 
 #### NFS Protocol VMware feature support matrix.
 <table>
- <tbody>
+  <caption>Table 1 shows the vSphere features as they apply to the two different versions of NFS</caption>
+ <thead>
   <tr>
    <th>vSphere Features</th>
    <th>NFS version 3</th>
    <th>NFS version 4.1</th>
   </tr>
+ </thead>
+ <tbody>
   <tr>
    <td>vMotion and Storage vMotion</td>
    <td>Yes</td>
@@ -96,57 +97,56 @@ When ordering {{site.data.keyword.filestorage_short}}, you’ll want to keep in 
 
 ### 2. Endurance {{site.data.keyword.filestorage_short}} snapshots
 
-Endurance {{site.data.keyword.filestorage_short}} allows administrators to set snapshot schedules that create and delete snapshot copies automatically for each storage volume. They can also create additional snapshot schedules (hourly, daily, weekly) for automatic snapshots and manually create adhoc snapshots for business continuity and disaster recovery (BCDR) scenarios. Automatic alerts are delivered via the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} to the volume owner for the retained snapshots and space consumed.
+Endurance {{site.data.keyword.filestorage_short}} allows administrators to set snapshot schedules that create and delete snapshot copies automatically for each storage volume. They can also create extra snapshot schedules (hourly, daily, weekly) for automatic snapshots and manually create ad hoc snapshots for business continuity and disaster recovery (BCDR) scenarios. Automatic alerts are delivered through the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} to the volume owner for the retained snapshots and space used.
 
-Be aware that “snapshot space” is required to use snapshots. Space can be acquired on the initial volume ordering or after initial provisioning via the **Volume Details** page by clicking the Actions drop-down button and selecting **Add Snapshot Space**.
+Be aware that “snapshot space” is required to use snapshots. Space can be acquired on the initial volume order or after initial provisioning through the **Volume Details** page by clicking **Actions** and selecting **Add Snapshot Space**.
 
-It is important to note that VMware environments are not aware of snapshots. The Endurance {{site.data.keyword.filestorage_short}} snapshot capability must not be confused with VMware snapshots. Any recovery using the Endurance {{site.data.keyword.filestorage_short}} snapshot feature must be handled from the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}. Restoring the Endurance {{site.data.keyword.filestorage_short}} volume will require powering off all the VMs that reside on Endurance {{site.data.keyword.filestorage_short}}, and temporarily unmounting the volume from the ESXi hosts to avoid any data corruption during the process.
+It's important to note that VMware environments are not aware of snapshots. The Endurance {{site.data.keyword.filestorage_short}} snapshot capability must not be confused with VMware snapshots. Any recovery that uses the Endurance {{site.data.keyword.filestorage_short}} snapshot feature must be handled from the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}. 
+
+Restoring the Endurance {{site.data.keyword.filestorage_short}} volume requires powering off all the VMs that reside on Endurance {{site.data.keyword.filestorage_short}}. The volume needs to be temporarily unmounted from the ESXi hosts to avoid any data corruption during the process.
 
 Refer to our [snapshots](snapshots.html) article for more details about how to configure snapshots.
 
 
 ### 3. File Store Replication
 
-Replication uses one of your snapshot schedules to automatically copy snapshots to a destination volume in a remote data center. The copies can be recovered in the remote site in the event of corrupted data or a catastrophic event.
+Replication uses one of your snapshot schedules to automatically copy snapshots to a destination volume in a remote data center. The copies can be recovered in the remote site if a catastrophic event or data corruption occurs.
 
 
-Replicas let you
+With replicas, you can
 
 - Recover from site failures and other disasters quickly by failing over to the destination volume
-- Failover to a specific point in time in the DR copy
+- Fail over to a specific point in time in the DR copy
 
-Before you can replicate, you must create a snapshot schedule. When you failover, you are “flipping the switch” from your storage volume in your primary data center to the destination volume in your remote data center. For example, your primary data center is London and your secondary data center is Amsterdam. In the case of a failure event, you’d fail over to Amsterdam – connecting to the now-primary volume from a vSphere Cluster instance in Amsterdam.
+Before you can replicate, you must create a snapshot schedule. When you fail over, you are “flipping the switch” from your storage volume in your primary data center to the destination volume in your remote data center. For example, your primary data center is London and your secondary data center is Amsterdam. If a failure event occurs, you’d fail over to Amsterdam – connecting to the now-primary volume from a vSphere Cluster instance in Amsterdam.
 
+After your volume in London is repaired, a snapshot is taken of the Amsterdam volume. Then, you can fail back to London and the once-again primary volume from a compute instance in London. 
 
-After your volume in London has been repaired, a snapshot is taken of the Amsterdam volume in order to fall back to London and the once-again primary volume from a compute instance in London. Before the volume fails back to the primary data center, it needs to stop being used at the remote site. A snapshot of any new or changed information is taken and replicated to the primary data center before it can be mounted again on the production site ESXi hosts.
-
+Before the volume fails back to the primary data center, it needs to stop being used at the remote site. A snapshot of any new or changed information is taken and replicated to the primary data center before it can be mounted again on the production site ESXi hosts.
 
 Refer to the [Replication](replication.html) information page for more details about how to configure replication.
 
-**Note**: Invalid data, whether corrupted, hacked or infected will replicate according to the snapshot schedule and snapshot retention. Using the smallest replication windows can provide for a better recovery point objective. It also may provide less time to react to the replication of invalid data.
-
-
-
+**Note**: Invalid data, whether corrupted, hacked, or infected will replicate according to the snapshot schedule and snapshot retention. Using the smallest replication windows can provide for a better recovery point objective. However, it also can provide less time to react to the replication of invalid data.
 
 
 ## Order {{site.data.keyword.filestorage_short}}
 
-You can order and configure {{site.data.keyword.filestorage_short}} for a VMware ESXi 5 environment. Use the following information in conjunction with the Advanced Single-Site VMware Reference Architecture to set up one of these storage options in your VMware environment.
+You can order and configure {{site.data.keyword.filestorage_short}} for a VMware ESXi 5 environment. Use the following information along with the Advanced Single-Site VMware Reference Architecture to set up one of these storage options in your VMware environment.
 
 
-{{site.data.keyword.filestorage_short}} can be ordered through the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} by accessing the {{site.data.keyword.filestorage_short}} page via **Storage** > **{{site.data.keyword.filestorage_short}}**.
+{{site.data.keyword.filestorage_short}} can be ordered through the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} by accessing the {{site.data.keyword.filestorage_short}} page through **Storage** > **{{site.data.keyword.filestorage_short}}**.
 
 
 ### 1. Ordering {{site.data.keyword.filestorage_short}}
 
 Use the following steps to order {{site.data.keyword.filestorage_short}}:
 1. Click **Storage** > **{{site.data.keyword.filestorage_short}}** on the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} home page.
-2. Click on the **Order {{site.data.keyword.filestorage_short}}** link on the **{{site.data.keyword.filestorage_short}}** page.
-3. Select the **Endurance**/**Performance** from the Select Storage Type dropdown list.
-4. Select location. Datacenters with improved capabilities are denoted with `*`. Ensure that the new Storage will be added in the same location as the previously ordered ESXi host(s).
+2. Click **Order {{site.data.keyword.filestorage_short}}** on the **{{site.data.keyword.filestorage_short}}** page.
+3. Select the **Endurance**/**Performance** from the **Select Storage Type** list.
+4. Select location. Datacenters with improved capabilities are denoted with an asterisk. Ensure that the new Storage is added in the same location as the previously ordered ESXi host.
 5. Select Billing method. Monthly and hourly billing options are available.
-6. Select the desired amount of storage space in GBs. For TB, 1 TB equals 1,000 GB, and 12 TB equals 12,000 GB.
-7. Enter the desired amount of IOPS in intervals of 100 or select an IOPS Tier.
+6. Select the amount of storage space in GBs. For TB, 1 TB equals 1,000 GB, and 12 TB equals 12,000 GB.
+7. Enter the amount of IOPS in intervals of 100 or select an IOPS Tier.
 8. Specify the size of Snapshot Space.
 9. Click **Continue**.
 10. Enter a promo code if you have one, and click **Recalculate**.
@@ -162,7 +162,7 @@ Storage will be provisioned in less than a minute and will be visible on the **{
 
 Once a volume is provisioned, the {{site.data.keyword.BluBareMetServers_full}} or {{site.data.keyword.BluVirtServers_full}} that will use the volume must be authorized to access the storage. Use the following steps to authorize the volume:
 
-1. Click on **Storage** > **{{site.data.keyword.filestorage_short}}**.
+1. Click **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Select **Access Host** on the **Endurance** or **Performance Volume Actions** menu.
 3. Select the **Subnets** radio button
 4. Choose from the list of available subnets that are assigned to the vmkernel ports on the ESXi hosts, and click on **Submit**.<br/> **Note**: The subnets displayed will be subscribed subnets in the same datacenter as the storage volume.
