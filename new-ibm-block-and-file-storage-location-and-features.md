@@ -18,12 +18,12 @@ The new {{site.data.keyword.filestorage_short}} is available in following region
 <table style="width:80%;">
   <caption>Data Center Availability</caption>
 	<tr>
-		<th><strong>US 2</strong></th>
-		<th><strong>EU</strong></th>
-		<th><strong>Australia</strong></th>
-		<th><strong>Canada</strong></th>
-		<th><strong>Latin America</strong></th>
-		<th><strong>Asia Pacific</strong></th>
+		<td><strong>US 2</strong></td>
+		<td><strong>EU</strong></td>
+		<td><strong>Australia</strong></td>
+		<td><strong>Canada</strong></td>
+		<td><strong>Latin America</strong></td>
+		<td><strong>Asia Pacific</strong></td>
 	</tr>
 	<tr>
 		<td><p>SJC03<br />
