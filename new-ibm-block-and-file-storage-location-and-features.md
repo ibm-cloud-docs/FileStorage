@@ -16,7 +16,7 @@ lastupdated: "2018-05-29"
 The new {{site.data.keyword.filestorage_short}} is available in following regions/data centers with more data center availability added later!
 
 <table style="width:100%;">
-  <caption>Data Center Availability</caption>
+  <caption>Table 1 shows our Data Center Availability. Each region has its own column. Some cities, such as Dallas, San Jose, Washington DC, Amsterdam, Frankfurt, London and Sydney have multiple data centers.</caption>
 	<tr>
 		<td><strong>US 2</strong></td>
 		<td><strong>EU</strong></td>
