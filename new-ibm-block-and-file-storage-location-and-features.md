@@ -15,7 +15,7 @@ lastupdated: "2018-05-29"
 
 The new {{site.data.keyword.filestorage_short}} is available in following regions/data centers with more data center availability added later!
 
-<table style="width:80%;">
+<table style="width:100%;">
   <caption>Data Center Availability</caption>
 	<tr>
 		<td><strong>US 2</strong></td>
