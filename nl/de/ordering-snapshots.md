@@ -2,13 +2,13 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-03-16"
+lastupdated: "2018-06-04"
 
 ---
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 
-# Screenshots bestellen
+# Snapshots bestellen
 
 Zum automatischen oder manuellen Erstellen von Snapshots für Ihren Speicherdatenträger müssen Sie Speicherbereich kaufen, um diese Snapshots aufzubewahren. Sie können Kapazität bis zur Größe Ihres Speicherdatenträgers kaufen (beim Erstkauf des Datenträgers oder später, indem Sie die nachfolgenden Schritte ausführen).
 
