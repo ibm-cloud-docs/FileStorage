@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-03-16"
+lastupdated: "2018-05-14"
 
 ---
 {:new_window: target="_blank"}
@@ -16,11 +16,11 @@ Sie können Ihre {{site.data.keyword.filestorage_full}}-Datenträger über {{sit
 
 Berechtigte (“autorisierte”) Hosts sind Hosts, denen Zugriffsrechte für einen bestimmten Datenträger erteilt wurden. Ohne die Hostberechtigung können Sie über Ihr System nicht auf den Speicher zugreifen und ihn nicht verwenden. Durch das Berechtigen eines Hosts für den Zugriff auf Ihren Datenträger werden der Benutzername und das Kennwort generiert. 
 
-**Anmerkung:** Sie können nur Hosts berechtigen und verbinden, die sich im selben Rechenzentrum wie Ihr Speicher befinden. Wenn Sie über mehrere Konten verfügen, können Sie einen Host nicht über das Konto für den Zugriff auf Ihren Speicher auf einem anderen Konto berechtigen. 
+**Anmerkung:** Sie können nur Hosts berechtigen und verbinden, die sich im selben Rechenzentrum wie Ihr Speicher befinden. Wenn Sie über mehrere Konten verfügen, können Sie einen Host nicht mithilfe des einen Kontos für den Zugriff auf Speicher in einem anderen Konto berechtigen. 
 
 1. Klicken Sie auf **Speicher** > **{{site.data.keyword.filestorage_short}}** und klicken Sie auf den Namen Ihres Datenträgers im Feld **Datenträgername**.
 2. Blättern Sie zum Abschnitt **Autorisierte Hosts** auf der Seite.
-3. Klicken Sie auf den Link **Host autorisieren** auf der rechten Seite der Anzeige. Wählen Sie die Hosts aus, die auf diesen bestimmten Datenträger zugreifen können.
+3. Klicken Sie rechts auf der Seite auf **Host autorisieren**. Wählen Sie die Hosts aus, die auf diesen bestimmten Datenträger zugreifen können.
 
  
 
@@ -31,7 +31,7 @@ Führen Sie die folgenden Schritte aus, um die Liste der Hosts anzuzeigen, die f
 1. Klicken Sie auf **Speicher > {{site.data.keyword.filestorage_short}}** und klicken Sie auf den Namen Ihres Datenträgers im Feld **Datenträgername**.
 2. Blättern Sie zum Abschnitt **Autorisierte Hosts** am Ende der Seite.
 
-Hier finden Sie die Liste der Hosts, die zurzeit dazu berechtigt sind, auf den Datenträger zuzugreifen.
+Hier finden Sie die Liste der Hosts, die zurzeit berechtigt sind, auf den Datenträger zuzugreifen.
 
 
 ## Vorgehensweise zum Anzeigen der {{site.data.keyword.filestorage_short}}-Datenträger, für die ein Host zugriffsberechtigt ist
@@ -41,7 +41,7 @@ Sie können die Datenträger, auf die ein Host Zugriff hat, sowie Informationen,
 1. Klicken Sie auf **Geräte** > **Geräteliste** im [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} und klicken Sie auf das gewünschte Gerät.
 2. Wählen Sie die Registerkarte 'Speicher' aus.
 
-Es wird eine Liste von Speicherdatenträgern angezeigt, auf die dieser bestimmte Host Zugriff hat. Die Datenträger werden nach Speichertyp (Block, Datei, andere) gruppiert. Über die jeweiligen Menüs **Aktion** können Sie zusätzlichen Speicher autorisieren oder Zugriffsberechtigungen entfernen.
+Es wird eine Liste von Speicherdatenträgern angezeigt, auf die dieser bestimmte Host Zugriff hat. Die Datenträger werden nach Speichertyp (Block, Datei, andere) gruppiert. Über die jeweiligen **Aktion**-Menüs können Sie zusätzlichen Speicher autorisieren oder Zugriffsberechtigungen entfernen.
 
  
 
@@ -55,9 +55,9 @@ In dem folgenden Artikel finden Sie Details zum Anhängen und Abhängen von {{si
 
 ## Vorgehensweise zum Widerrufen des Hostzugriffs auf {{site.data.keyword.filestorage_short}}
 
-Wenn Sie den Zugriff von einem Host auf einen bestimmten Speicherdatenträger beenden wollen, können Sie den Zugriff widerrufen. Nach dem Widerruf des Zugriffs wird die Hostverbindung von dem Datenträger getrennt und weder das Betriebssystem noch Anwendungen können mit dem Datenträger kommunizieren. 
+Wenn Sie den Zugriff von einem Host auf einen bestimmten Speicherdatenträger beenden wollen, können Sie den Zugriff wiederrufen. Nach dem Widerrufen des Zugriffs wird die Hostverbindung vom Datenträger gelöscht und weder das Betriebssystem noch Anwendungen können mit dem Datenträger kommunizieren. 
 
-**Anmerkung:** Zur Vermeidung unerwünschter Nebeneffekte für den Host hängen Sie den Speicherdatenträger von Ihrem Betriebssystem ab, bevor Sie den Zugriff widerrufen, sodass keine Laufwerke vermisst oder Daten beschädigt werden.
+**Anmerkung:** Zur Vermeidung von hostseitigen Problemen hängen Sie den Speicherdatenträger von Ihrem Betriebssystem ab, bevor Sie den Zugriff widerrufen, sodass keine Laufwerke fehlen oder Daten beschädigt werden.
 
 Sie können den Zugriff über 'Speicher' in der Ansicht 'Geräteliste' oder in der Ansicht 'Speicher' widerrufen.
 
@@ -65,8 +65,8 @@ Sie können den Zugriff über 'Speicher' in der Ansicht 'Geräteliste' oder in d
 
 1. Klicken Sie auf **Geräte** > **Geräteliste** im [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} und klicken Sie doppelt auf das betreffende Gerät.
 2. Wählen Sie die Registerkarte **Speicher** aus.
-3. Es wird eine Liste von Speicherdatenträgern angezeigt, auf die dieser bestimmte Host Zugriff hat. Die Datenträger werden nach Speichertyp (Block, Datei, andere) gruppiert. Wählen Sie das jeweilige Menü **Aktion** neben dem Datenträger aus, für den Sie den Zugriff widerrufen möchten, und klicken Sie auf **Zugriff widerrufen**.
-4. Sie werden aufgefordert, den Zugriffswiderruf für einen Datenträger zu bestätigen, da die Aktion nicht rückgängig gemacht werden kann. Klicken Sie auf **Ja**, um den Datenträgerzugriff zu widerrufen, oder auf **Nein**, um die Aktion abzubrechen.
+3. Es wird gruppiert nach Speichertyp (Block, Datei, andere) eine Liste von Speicherdatenträgern angezeigt, auf die dieser bestimmte Host Zugriff. Wählen Sie das jeweilige Menü **Aktion** neben dem Datenträger aus, für den Sie den Zugriff widerrufen möchten, und klicken Sie auf **Zugriff widerrufen**.
+4. Bestätigen Sie, dass Sie den Zugriff auf einen Datenträger widerrufen möchten, da die Aktion nicht rückgängig gemacht werden kann. Klicken Sie auf **Ja**, um den Datenträgerzugriff zu widerrufen, oder auf **Nein**, um die Aktion abzubrechen.
 
 **Anmerkung:** Wenn Sie die Verbindungen mehrerer Datenträger von einem bestimmten Host trennen wollen, müssen Sie die Aktion 'Zugriff widerrufen' für jeden Datenträger wiederholen.
 
@@ -75,10 +75,10 @@ Sie können den Zugriff über 'Speicher' in der Ansicht 'Geräteliste' oder in d
 ### Vorgehensweise zum Widerrufen des Zugriffs über die Ansicht 'Speicher':
 1. Klicken Sie auf **Speicher > {{site.data.keyword.filestorage_short}}** und wählen Sie den **Datenträger** aus, für den Sie den Zugriff widerrufen wollen.
 2. Blättern Sie hinunter zum Abschnitt **Autorisierte Hosts** auf der Seite.
-3. Klicken Sie auf den Dropdown-Pfeil für **Aktionen** neben dem Host, dessen Zugriff widerrufen werden soll, und wählen Sie **Zugriff widerrufen** aus.
-4. Sie werden aufgefordert, den Zugriffswiderruf für einen Datenträger zu bestätigen, da die Aktion nicht rückgängig gemacht werden kann. Klicken Sie auf **Ja**, um den Datenträgerzugriff zu widerrufen, oder auf **Nein**, um die Aktion abzubrechen.
+3. Klicken Sie neben dem Host, dessen Zugriff widerrufen werden soll, auf **Aktionen** und wählen Sie **Zugriff widerrufen** aus.
+4. Bestätigen Sie, dass Sie den Zugriff auf einen Datenträger widerrufen möchten, da die Aktion nicht rückgängig gemacht werden kann. Klicken Sie auf **Ja**, um den Datenträgerzugriff zu widerrufen, oder auf **Nein**, um die Aktion abzubrechen.
 
-**Anmerkung:** Wenn Sie die Verbindungen mehrerer Hosts von einem bestimmten Datenträger trennen wollen, müssen Sie die Aktion 'Zugriff widerrufen' für jeden Host wiederholen.
+**Anmerkung:** Wenn Sie die Verbindung zwischen mehreren Hosts und einem bestimmten Datenträger trennen wollen, müssen Sie die Aktion 'Zugriff widerrufen' für jeden Host wiederholen.
 
  
 
@@ -87,16 +87,15 @@ Sie können den Zugriff über 'Speicher' in der Ansicht 'Geräteliste' oder in d
 Wenn Sie einen bestimmten Datenträger nicht mehr benötigen, können Sie ihn stornieren. Zur Stornierung eines Speicherdatenträgers müssen Sie zunächst den Zugriff für alle Hosts widerrufen.
 
 1. Klicken Sie auf **Speicher**>**{{site.data.keyword.filestorage_short}}**.
-2. Klicken Sie auf den Dropdown-Pfeil für **Aktionen** für den zu stornierenden Datenträger und wählen Sie **{{site.data.keyword.filestorage_short}} stornieren** aus.
-3. Sie werden zu der Angabe aufgefordert, ob der Datenträger sofort oder am Rechnungsstichtag für den Bereitstellungszeitpunkt des Datenträgers storniert werden soll. Klicken Sie auf **Weiter** oder **Schließen**. 
-**Anmerkung:** Wenn Sie die Option zum Stornieren des Datenträgers am Rechnungsstichtag auswählen, können Sie die Stornierungsanforderung vor ihrem Stichtag nichtig machen.
-4. Klicken Sie auf das Kontrollkästchen zur Bestätigung und klicken Sie auf **Bestätigen**.
+2. Klicken Sie für den zu stornierenden Datenträger auf **Aktionen** und wählen Sie die Option zum Stornieren der {{site.data.keyword.filestorage_short}}-Instanz aus.****
+3. Bestätigen Sie, ob der Datenträger sofort oder am Rechnungsstichtag für den Bereitstellungszeitpunkt des Datenträgers storniert werden soll. Klicken Sie auf **Weiter** oder **Schließen**. **Anmerkung:** Wenn Sie die Option auswählen, den Datenträger am Rechnungsstichtag zu stornieren, können Sie die Stornierungsanforderung vor ihrem Stichtag nichtig machen.
+4. Klicken Sie auf das Kontrollkästchen für die Bestätigung und klicken Sie auf **Bestätigen**.
 
  
 
 ## Vorgehensweise zum Anzeigen der Details eines bereitgestellten {{site.data.keyword.filestorage_short}}-Datenträgers
 
-Sie können eine Zusammenfassung der wichtigen Informationen für den ausgewählten Speicherdatenträger, einschließlich der Snapshot- und Replikationsfunktionen anzeigen, die dem Speicher hinzugefügt wurden.
+Sie können eine Zusammenfassung der wichtigen Informationen für den ausgewählten Speicherdatenträger, einschließlich weiterer Snapshot- und Replikationsfunktionen anzeigen, die dem Speicher hinzugefügt wurden.
 
 1. Klicken Sie auf **Speicher**>**{{site.data.keyword.filestorage_short}}**.
 2. Klicken Sie auf den gewünschten **Datenträgernamen** in der Liste.

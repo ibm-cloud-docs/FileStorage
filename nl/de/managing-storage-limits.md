@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-03-06"
+lastupdated: "2018-05-14"
 
 ---
 {:new_window: target="_blank"}
@@ -21,18 +21,18 @@ Geben Sie in diesem Ticket die folgenden Informationen an:
 - **Ticketbetreff:** Anforderung einer Erhöhung der Speicherbegrenzung für Datenträgeranzahl und Rechenzentren
 
 - **Was ist der Anwendungsfall für die Anforderung zusätzlicher Datenträger?** <br />
-*Ihre Antwort könnte zum Beispiel ein neuer VM-Datenspeicher, eine neue Entwicklungs-/Testumgebung, eine SQL-Datenbank, Protokollierung o.ä. sein.*
+*Ihre Antwort könnte zum Beispiel ein neuer VMWare-Datenspeicher, eine neue Entwicklungs-/Testumgebung, eine SQL-Datenbank oder Protokollierung sein.*
 
 - **Wie viele zusätzliche Blockdatenträger werden nach Typ, Größe, IOPS und Position benötigt?** <br />
-*Ihre Antwort könnte zum Beispiel ähnlich wie folgt lauten: "25x Endurance 2TB @ 4 IOPS in DAL09" oder "25x Performance 4TB @ 2 IOPS in WDC04".*
+*Ihre Antwort könnte zum Beispiel ähnlich wie folgt lauten: "25x Endurance 2 TB @ 4 IOPS in DAL09" oder "25x Performance 4 TB @ 2 IOPS in WDC04".*
 
 - **Wie viele zusätzliche Dateidatenträger werden nach Typ, Größe, IOPS und Position benötigt?** <br />
-*Ihre Antwort könnte zum Beispiel ähnlich wie folgt lauten: "25x Performance 20GB @ 10 IOPS in DAL09" oder "50x Endurance 2TB @ 0.25 IOPS in SJC03".*
+*Ihre Antwort könnte zum Beispiel ähnlich wie folgt lauten: "25x Performance 20 GB @ 10 IOPS in DAL09" oder "50x Endurance 2 TB @ 0,25 IOPS in SJC03".*
  
 - **Geben Sie einen geschätzten Zeitpunkt an, zu dem Sie erwarten, dass alle angeforderten Datenträgervergrößerungen bereitgestellt sind.** <br />
  *Ihre Antwort könnte zum Beispiel ähnlich wie folgt lauten: "90 Tage".*
 
 - **Geben Sie eine 90-Tage-Vorhersage für die erwartete durchschnittliche Kapazitätsnutzung dieser Datenträger an.** <br />
-*Ihre Antwort könnte zum Beispiel ähnlich wie folgt lauten: "Erwarte 25% belegt in 30 Tagen, 50% belegt in 60 Tagen und 75% belegt in 90 Tagen".*
+*Ihre Antwort könnte zum Beispiel ähnlich wie folgt lauten: "Erwarte 25 Prozent belegt in 30 Tagen, 50 Prozent belegt in 60 Tagen und 75 Prozent belegt in 90 Tagen".*
 
 Eine Antwort auf alle obigen Fragen ist erforderlich. Sie werden von der Aktualisierung Ihrer Begrenzungen durch den Ticket-Prozess benachrichtigt. 

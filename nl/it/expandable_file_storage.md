@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2017
-lastupdated: "2017-12-14"
+  years: 2014, 2018
+lastupdated: "2018-05-11"
 
 ---
 {:new_window: target="_blank"}
@@ -10,9 +10,9 @@ lastupdated: "2017-12-14"
 
 # Capacità di condivisione file espandibile
 
-Con questa nuova funzione, i nostri attuali utenti {{site.data.keyword.filestorage_full}} possono espandere la dimensione del loro {{site.data.keyword.filestorage_short}} esistente in incrementi di GB fino a 12 TB senza causare alcuna interruzione, senza dover creare un duplicato o migrare manualmente i dati a un volume più grande.  Non si verificherà alcuna interruzione o mancanza di accesso all'archiviazione mentre viene eseguita la modifica della dimensione. 
+Con questa nuova funzione, i nostri attuali utenti {{site.data.keyword.filestorage_full}} possono espandere la dimensione del loro {{site.data.keyword.filestorage_short}} in incrementi immediati di GB fino a 12 TB, senza dover creare un duplicato o migrare manualmente i dati a un volume più grande.  Non si verificherà alcuna interruzione o mancanza di accesso all'archiviazione mentre viene eseguita la modifica della dimensione.  
 
-La fatturazione per il volume viene aggiornata per aggiungere la differenza calcolata proporzionalmente del nuovo prezzo al ciclo di fatturazione corrente e l'intero nuovo ammontare verrà fatturato nel prossimo ciclo di fatturazione.
+La fatturazione per il volume viene aggiornata per aggiungere la differenza calcolata proporzionalmente del nuovo prezzo al ciclo di fatturazione corrente. Successivamente, la nuova quantità completa viene fatturata nel ciclo di fatturazione successivo.
 
 Questa funzione è disponibile solo in [data center selezionati](new-ibm-block-and-file-storage-location-and-features.html). 
 
@@ -28,13 +28,13 @@ L'azione di espansione sull'archiviazione primaria determinerà una modifica del
 
 ## Ci sono delle limitazioni?
 
-Questa funzione è disponibile solo per l'archiviazione di cui viene eseguito il provisioning nei [data center](new-ibm-block-and-file-storage-location-and-features.html) con funzionalità migliorate. L'archiviazione crittografata di cui viene eseguito il provisioning in questi data center può essere aumentata fino a 12 TB. 
+Questa funzione è disponibile solo per l'archiviazione di cui viene eseguito il provisioning nei [data center](new-ibm-block-and-file-storage-location-and-features.html) con funzionalità migliorate. L'archiviazione crittografata di cui viene eseguito il provisioning in questi data center può essere aumentata fino a 12 TB.  
 
 Le limitazioni di dimensione esistenti per {{site.data.keyword.filestorage_short}} di cui viene eseguito il provisioning con Endurance continuano a essere valide (fino a 4 TB per il livello a 10 IOPS e fino a 12 TB per tutti gli altri livelli).
 
-## Come posso distinguere se la mia archiviazione di cui è stato eseguito il provisioning è espandibile?
+## Come posso distinguere se la mia archiviazione di cui è stato eseguito il provisioning è espandibile? 
 
-L'archiviazione di cui è stato eseguito il provisioning con le funzionalità avanzate è sempre crittografata da inattiva.  Puoi identificare facilmente se la tua archiviazione è idonea poiché, se lo è, presenta accanto ad essa un'icona di "blocco" nell'IU del portale. 
+L'archiviazione di cui è stato eseguito il provisioning con le funzionalità avanzate è sempre crittografata da inattiva. Puoi identificare facilmente se la tua archiviazione è idonea poiché, se lo è, presenta accanto ad essa un'icona di "blocco" nell'IU del portale. 
 
 ## Come posso modificare la dimensione della mia archiviazione?
 
@@ -42,6 +42,6 @@ L'archiviazione di cui è stato eseguito il provisioning con le funzionalità av
 2. Seleziona il volume dall'elenco e fai clic su **Actions** > **Modify Volume**
 3. Immetti la nuova dimensione dell'archiviazione in GB.
 4. Riesamina la tua selezione e la nuova determinazione del prezzo.
-5. Fai clic sulla casella di spunta **I have read the Master Service Agreement...** e fai clic su **Place Order**.
+5. Fai clic sulla casella di spunta **I have read the Master Service Agreement...** e fai clic su **Place Order**.  
 6. La tua nuova allocazione di archiviazione dovrebbe essere disponibile in pochi minuti.
 

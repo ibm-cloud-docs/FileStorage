@@ -2,45 +2,46 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-02-14"
+lastupdated: "2018-05-24"
 
 ---
 {:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
 
 # Guida all'architettura per {{site.data.keyword.filestorage_short}} con VMware
 
-Viene qui di seguito indicata la procedura per ordinare e configurare {{site.data.keyword.filestorage_full}} in un ambiente vSphere 5.5 e vSphere 6.0 a {{site.data.keyword.BluSoftlayer_full}}. Utilizzare l'{{site.data.keyword.filestorage_short}} NFS è la prassi ottimale se hai bisogno di più di 8 connessioni al tuo host VMWare.
+La seguente procedura può aiutarti a ordinare e configurare {{site.data.keyword.filestorage_full}} in un ambiente vSphere 5.5 e vSphere 6.0 a {{site.data.keyword.BluSoftlayer_full}}. Se hai bisogno di più di otto connessioni al tuo host VMWare, l'utilizzo di NFS {{site.data.keyword.filestorage_short}} è la prassi migliore.
 
 ## Panoramica di {{site.data.keyword.filestorage_short}}
 
 La nostra {{site.data.keyword.filestorage_short}} è progettata per supportare applicazioni ad elevato I/O che richiedono dei livelli di prestazioni prevedibili. Le prestazioni prevedibili si raggiungono tramite l'allocazione di IOPS (input/output operations per second) a livello di protocollo ai singoli volumi.
 
-L'offerta di {{site.data.keyword.filestorage_short}} è accessibile e montata tramite una connessione NFS. In una distribuzione VMware, un singolo volume può essere montato su un massimo di 64 host ESXi come archiviazione condivisa oppure puoi montare più volumi per creare un cluster di archiviazione per utilizzare la pianificazione risorse DINAMICA di vSphere Storage.
+L'offerta di {{site.data.keyword.filestorage_short}} è accessibile e montata tramite una connessione NFS. In una distribuzione VMware, un singolo volume può essere montato su un massimo di 64 host ESXi come archiviazione condivisa oppure puoi montare più volumi per creare un cluster di archiviazione per utilizzare vSphere Storage Distributed Resource Scheduling (DRS). 
 
 Le opzioni di prezzo e di configurazione per l'{{site.data.keyword.filestorage_short}} Endurance e Performance sono addebitate in base a una combinazione dello spazio riservato e dell'IOPS offerto.
 
 ### 1. Considerazioni su {{site.data.keyword.filestorage_short}}
 
-Quando ordini l'{{site.data.keyword.filestorage_short}}, dovresti tener presente le seguenti informazioni e considerazioni:
+Quando ordini {{site.data.keyword.filestorage_short}}, tieni conto delle seguenti informazioni:
 
-- La dimensione dell'archiviazione, IOPS e sistema operativo non possono essere modificati dopo che è stato eseguito il provisioning dei volumi di {{site.data.keyword.filestorage_short}}. Eventuali modifiche che desideri apportare per la quantità di spazio, il numero di IOPS o il sistema operativo richiedono l'esecuzione del provisioning di un nuovo volume. Tutti i dati archiviati nel volume precedente dovranno essere migrati al nuovo volume, o ai nuovi volumi se più di uno, utilizzando VMware Storage vMotion.
-- Quando decidi la dimensione, tieni conto della dimensione del carico di lavoro e della velocità effettiva necessaria. La dimensione è importante con il servizio Endurance che scala le prestazioni in modo lineare in relazione alla capacità (IOPS/GB), diversamente dal servizio Performance che consente all'amministratore di scegliere la capacità e le prestazioni indipendentemente. I requisiti di velocità effettiva sono importanti, con Performance. <br/> **Nota**: il calcolo della velocità effettiva è IOPS x 16 KB. Gli IOPS sono misurati in base a una dimensione in blocchi da 16 KB con una combinazione 50/50 di lettura e scrittura. <br/> **Nota**: aumentare la dimensione del blocco aumenterà la velocità effettiva ma diminuirà l'IOPS. Ad esempio, raddoppiare la dimensione di blocco a 32KB blocchi manterrà la velocità effettiva massima ma dimezzerà l'IOPS.
-- NFS utilizza molte operazioni di controllo file aggiuntivi come lookup, getattr e readdir, per indicarne qualcuna. Queste operazioni, in aggiunta alle operazioni di lettura/scrittura, possono contare come IOPS e variare in base al tipo di operazione e alla versione NFS.
-- Tecnicamente, è possibile eseguire uno striping di più volumi insieme per ottenere un IOPS più elevato e una maggiore velocità effettiva; tuttavia,VMware consiglia un singolo archivio dati VMFS (Virtual Machine File System) per volume per evitare una riduzione delle prestazioni.
+- Quando decidi la dimensione, tieni conto della dimensione del carico di lavoro e della velocità effettiva necessaria. La dimensione è importante con il servizio Endurance che scala le prestazioni in modo lineare in relazione alla capacità (IOPS/GB). Al contrario, il servizio Performance consente all'amministratore di scegliere la capacità e le prestazioni indipendentemente. I requisiti di velocità effettiva sono importanti, con Performance. <br/> **Nota**: il calcolo della velocità effettiva è IOPS x 16 KB. Gli IOPS sono misurati in base a una dimensione in blocchi da 16 KB con una combinazione 50/50 di lettura e scrittura. <br/> **Nota**: aumentare la dimensione del blocco aumenterà la velocità effettiva ma diminuirà l'IOPS. Ad esempio, raddoppiare la dimensione di blocco a blocchi di 32 KB manterrà la velocità effettiva massima ma dimezzerà l'IOPS. 
+- NFS utilizza ulteriori operazioni di controllo file come ad esempio `lookup`, `getattr` e `readdir` per indicarne qualcuna. Queste operazioni, in aggiunta alle operazioni di lettura/scrittura, possono contare come IOPS e variare in base al tipo di operazione e alla versione NFS.
+- Tecnicamente, è possibile eseguire uno striping di più volumi insieme per ottenere un IOPS più elevato e una maggiore velocità effettiva. Tuttavia, VMware consiglia un singolo archivio dati VMFS (virtual machine file system) per volume per evitare una riduzione delle prestazioni. 
 - I volumi {{site.data.keyword.filestorage_short}} sono presentati agli indirizzi IP, alle sottoreti o ai dispositivi autorizzati.
-- I servizi di istantanea e replica sono disponibili in modo nativo solo sui volumi {{site.data.keyword.filestorage_short}} Endurance. L'{{site.data.keyword.filestorage_short}} Performance non ha tali funzionalità.
-- Per evitare una disconnessione dell'archiviazione durante il failover del percorso, {{site.data.keyword.IBM}} consiglia di installare gli strumenti VMWare che imposteranno un valore di timeout appropriato. Non è necessario modificare il valore; l'impostazione predefinita è sufficiente per garantire che il tuo host VMWare non perderà la connettività.
-- Nell'ambiente {{site.data.keyword.BluSoftlayer_full}} sono supportati sia NFS v3 che NFS v4.1. Tuttavia, {{site.data.keyword.IBM}} consiglia di utilizzare NFS v3. Poiché NFS v4.1 è un protocollo con stato (non senza stato come NFSv3), durante gli eventi di rete potrebbero verificarsi dei problemi di protocollo. NFS v4.1 deve disattivare le operazioni e quindi eseguire un recupero del blocco. Mentre sono in corso tali operazioni, potrebbero verificarsi delle interruzioni del servizio.
+- I servizi di istantanea e replica sono disponibili in modo nativo solo sui volumi {{site.data.keyword.filestorage_short}} Endurance. L'{{site.data.keyword.filestorage_short}} Performance non ha tali funzionalità. 
+- Per evitare una disconnessione dell'archiviazione durante il failover del percorso, {{site.data.keyword.IBM}} consiglia di installare gli strumenti VMWare che imposteranno un valore di timeout appropriato. Non è necessario modificare il valore; l'impostazione predefinita è sufficiente per garantire che il tuo host VMWare non perderà la connettività. 
+- Nell'ambiente {{site.data.keyword.BluSoftlayer_full}} sono supportati sia NFS v3 che NFS v4.1. Tuttavia, {{site.data.keyword.IBM}} consiglia di utilizzare NFS v3. Poiché NFS v4.1 è un protocollo con stato (non senza stato come NFSv3), durante gli eventi di rete potrebbero verificarsi dei problemi di protocollo. NFS v4.1 deve disattivare tutte le operazioni e quindi eseguire un recupero del blocco. Mentre sono in corso tali operazioni, possono verificarsi delle interruzioni del servizio. 
 
-####  Matrice di supporto delle funzioni VMware del protocollo NFS
+#### Matrice di supporto delle funzioni VMware del protocollo NFS
 <table>
- <tbody>
+  <caption>La tabella 1 illustra le funzioni vSphere come vengono applicate a due versioni differenti di NFS</caption>
+ <thead>
   <tr>
    <th>Funzioni vSphere</th>
    <th>NFS versione 3</th>
    <th>NFS versione 4.1</th>
   </tr>
+ </thead>
+ <tbody>
   <tr>
    <td>vMotion e Storage vMotion</td>
    <td>Sì</td>
@@ -96,42 +97,41 @@ Quando ordini l'{{site.data.keyword.filestorage_short}}, dovresti tener presente
 
 ### 2. Istantanee di {{site.data.keyword.filestorage_short}} Endurance
 
-L'{{site.data.keyword.filestorage_short}} Endurance consente agli amministratori di impostare le pianificazioni delle istantanee che creano ed eliminano copie di istantanea automaticamente per ciascun volume di archiviazione. Possono anche creare delle pianificazioni delle istantanee aggiuntive (orarie, giornaliere, settimanali) per le istantanee automatiche e creare manualmente delle istantanee ad hoc per gli scenari di continuità aziendale e ripristino di emergenza (BCDR, business continuity and disaster recovery). Gli avvisi automatici vengono consegnati tramite il [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} al proprietario del volume per le istantanee conservate e lo spazio consumato.
+L'{{site.data.keyword.filestorage_short}} Endurance consente agli amministratori di impostare le pianificazioni delle istantanee che creano ed eliminano copie di istantanea automaticamente per ciascun volume di archiviazione. Possono anche creare delle pianificazioni delle istantanee aggiuntive (orarie, giornaliere, settimanali) per le istantanee automatiche e creare manualmente delle istantanee ad hoc per gli scenari di continuità aziendale e ripristino di emergenza (BCDR, business continuity and disaster recovery). Gli avvisi automatici vengono consegnati tramite il [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} al proprietario del volume per le istantanee conservate e lo spazio utilizzato. 
 
-Tieni presente che per utilizzare le istantanee è necessario lo "spazio per le istantanee". Lo spazio può essere acquisito durante l'ordinazione di volumi iniziale e dopo il provisioning iniziale tramite la pagina **Volume Details** facendo clic sul pulsante a discesa Actions e selezionando **Add Snapshot Space**.
+Tieni presente che per utilizzare le istantanee è necessario lo "spazio per le istantanee". Lo spazio può essere acquisito durante l'ordine dei volumi iniziale e dopo il provisioning iniziale tramite la pagina **Volume Details** facendo clic su **Actions** e selezionando **Add Snapshot Space**.
 
-Importante: gli ambienti VMware non rilevano le istantanee. La funzionalità di istantanea dell'{{site.data.keyword.filestorage_short}} Endurance non deve essere confusa con le istantanee VMware. Qualsiasi ripristino utilizzando la funzione di istantanea dell'{{site.data.keyword.filestorage_short}} Endurance deve essere gestita dal [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}. Il ripristino del volume di {{site.data.keyword.filestorage_short}} Endurance richiederà lo spegnimento di tutte le macchine virtuali (VM, Virtual Machine) presenti nell'{{site.data.keyword.filestorage_short}} Endurance e lo smontaggio temporaneo del volume dagli host ESXi per evitare eventuali danneggiamenti di dati durante il processo.
+È importare notare che gli ambienti VMware non rilevano le istantanee. La funzionalità di istantanea dell'{{site.data.keyword.filestorage_short}} Endurance non deve essere confusa con le istantanee VMware. Qualsiasi ripristino che utilizza la funzione di istantanea dell'{{site.data.keyword.filestorage_short}} Endurance deve essere gestita dal [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}. 
+
+Il ripristino del volume di {{site.data.keyword.filestorage_short}} Endurance richiede lo spegnimento di tutte le macchine virtuali (VM, Virtual Machine) presenti nell'{{site.data.keyword.filestorage_short}} Endurance. Il volume deve essere temporaneamente smontato dagli host ESXi per evitare eventuali danneggiamenti di dati durante il processo.
 
 Consulta il nostro articolo sulle [istantanee](snapshots.html) per ulteriori dettagli su come configurare le istantanee.
 
 
 ### 3. Replica dell'archivio file
 
-La replica usa una delle tue pianificazioni delle istantanee per copiare automaticamente le istantanee su un volume di destinazione in un data center remoto. Le copie possono essere ripristinate nel sito remoto se si verifica un danneggiamento dei dati oppure un evento catastrofico.
+La replica usa una delle tue pianificazioni delle istantanee per copiare automaticamente le istantanee su un volume di destinazione in un data center remoto. Le copie possono essere ripristinate nel sito remoto nel caso si verifichi un evento catastrofico o un danneggiamento dei dati. 
 
 
-Le repliche ti consentono
+Con le repliche, puoi 
 
-- di eseguire il ripristino da malfunzionamento del sito e altre situazioni critiche in modo rapido eseguendo il failover al volume di destinazione;
-- di eseguire il failover a uno specifico punto temporale nella copia di ripristino di emergenza (DR, disaster recovery)
+- Eseguire il ripristino da malfunzionamenti del sito e da altre situazioni critiche in modo rapido eseguendo il failover al volume di destinazione
+- Eseguire il failover a uno specifico punto temporale nella copia di ripristino di emergenza (DR, disaster recovery) 
 
-Prima di poter eseguire la replica, devi creare una pianificazione delle istantanee. Quando esegui il failover, stai passando dal tuo volume di archiviazione nel tuo data center primario al volume di destinazione nel tuo data center remoto. Ad esempio, il tuo data center primario si trova a Londra e il tuo data center secondario si trova ad Amsterdam. Se si verifica un evento di malfunzionamento, eseguirai il failover ad Amsterdam, stabilendo una connessione al volume che ora è quello primario da un'istanza di VSphere Cluster ad Amsterdam.
+Prima di poter eseguire la replica, devi creare una pianificazione delle istantanee. Quando esegui il failover, stai passando dal tuo volume di archiviazione nel tuo data center primario al volume di destinazione nel tuo data center remoto. Ad esempio, il tuo data center primario si trova a Londra e il tuo data center secondario si trova ad Amsterdam. Se si verifica un evento di malfunzionamento, eseguirai il failover ad Amsterdam, stabilendo una connessione al volume che ora è quello primario da un'istanza di VSphere Cluster ad Amsterdam. 
 
+Dopo che il tuo volume a Londra è stato riparato, verrà acquisita un'istantanea del volume che si trova ad Amsterdam. Successivamente, puoi eseguire il fallback a Londra e al volume che ora è nuovamente quello primario da un'istanza di elaborazione a Londra.  
 
-Dopo che il tuo volume a Londra sarà stato riparato, verrà acquisita un'istantanea del volume che si trova ad Amsterdam per eseguire il fallback a Londra e al volume che ora è nuovamente quello primario da un'istanza di elaborazione a Londra. Prima dell'esecuzione del failback del volume al data center primario, è necessario che si smetta di farne uso presso il sito remoto. Un'istantanea delle informazioni nuove o modificate viene eseguita e replicata al data center primario prima che possa essere nuovamente eseguito il montaggio sugli host ESXi del sito di produzione.
-
+Prima dell'esecuzione del failback del volume al data center primario, è necessario che si smetta di farne uso presso il sito remoto. Un'istantanea delle informazioni nuove o modificate viene eseguita e replicata al data center primario prima che possa essere nuovamente eseguito il montaggio sugli host ESXi del sito di produzione.
 
 Consulta la pagina delle informazioni sulla [replica](replication.html) per ulteriori dettagli su come configurare la replica.
 
-**Nota**: i dati non validi, non importa se danneggiati, oggetto di attacchi o infettati, verranno replicati nella pianificazione dell'istantanea e nella conservazione dell'istantanea. L'utilizzo delle finestre di replica più piccole può fornire un migliore obiettivo di punto di ripristino. Può anche fornire meno tempo per reagire alla replica di dati non validi.
-
-
-
+**Nota**: i dati non validi, non importa se danneggiati, oggetto di attacchi o infettati, verranno replicati nella pianificazione dell'istantanea e nella conservazione dell'istantanea. L'utilizzo delle finestre di replica più piccole può fornire un migliore obiettivo di punto di ripristino. Tuttavia, può anche fornire meno tempo per reagire alla replica di dati non validi. 
 
 
 ## Ordinare {{site.data.keyword.filestorage_short}}
 
-Puoi ordinare e configurare l'{{site.data.keyword.filestorage_short}} per un ambiente VMware ESXi 5. Utilizza le seguenti informazioni insieme alla Advanced Single-Site VMware Reference Architecture per configurare una di queste opzioni di archiviazione nel tuo ambiente VMware.
+Puoi ordinare e configurare l'{{site.data.keyword.filestorage_short}} per un ambiente VMware ESXi 5. Utilizza le seguenti informazioni insieme alla Advanced Single-Site VMware Reference Architecture per configurare una di queste opzioni di archiviazione nel tuo ambiente VMware. 
 
 
 L'{{site.data.keyword.filestorage_short}} può essere ordinata tramite il [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} accedendo alla pagina {{site.data.keyword.filestorage_short}} tramite **Storage** > **{{site.data.keyword.filestorage_short}}**.
@@ -141,12 +141,12 @@ L'{{site.data.keyword.filestorage_short}} può essere ordinata tramite il [{{sit
 
 Utilizza la seguente procedura per ordinare {{site.data.keyword.filestorage_short}}:
 1. Fai clic su **Storage** > **{{site.data.keyword.filestorage_short}}** nella home page del [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
-2. Fai clic sul link **Order {{site.data.keyword.filestorage_short}}** nella pagina **{{site.data.keyword.filestorage_short}}**.
-3. Seleziona **Endurance**/**Performance** dall'elenco a discesa Select Storage Type.
-4. Seleziona l'ubicazione. I data center con funzionalità migliorate sono indicati con un `*`. Assicurati che la nuova archiviazione sarà aggiunta nella stessa ubicazione dell'host o degli host ESXi ordinati in precedenza.
+2. Fai clic su **Order {{site.data.keyword.filestorage_short}}** nella pagina **{{site.data.keyword.filestorage_short}}**.
+3. Seleziona **Endurance**/**Performance** dall'elenco **Select Storage Type**.
+4. Seleziona l'ubicazione. I data center con funzionalità migliorate sono indicati con un asterisco. Assicurati che la nuova archiviazione sia aggiunta nella stessa ubicazione dell'host ESXi ordinato in precedenza. 
 5. Seleziona il metodo di fatturazione. Sono disponibili le opzioni di fatturazione mensile ed oraria.
-6. Seleziona la quantità desiderata di spazio di archiviazione in GB. Per TB, 1 TB equivale a 1.000 GB e 12 TB equivalgono a 12.000 GB.
-7. Immetti la quantità desiderata di IOPS in intervalli di 100 oppure seleziona un livello IOPS.
+6. Seleziona la quantità di spazio di archiviazione in GB. Per TB, 1 TB equivale a 1.000 GB e 12 TB equivalgono a 12.000 GB.
+7. Immetti la quantità di IOPS in intervalli di 100 oppure seleziona un livello IOPS. 
 8. Specifica la dimensione dello spazio per le istantanee.
 9. Fai clic su **Continue**.
 10. Immetti un codice promozionale, se ne hai uno, e fai clic su **Recalculate**.
@@ -201,11 +201,12 @@ per configurare l'host virtuale, completa la seguente procedura:
    - Da Unix: ping -s 8972 a.b.c.d
    dove a.b.c.d è l'interfaccia {{site.data.keyword.BluVirtServers_short}} adiacente con il comando:
    L'output è simile al seguente:
-   ```ping a.b.c.d (a.b.c.d) 8972(9000) bytes of data.
+   ```
+   ping a.b.c.d (a.b.c.d) 8972(9000) bytes of data.
    8980 bytes from a.b.c.d: icmp_seq=1 ttl=128 time=3.36 ms
    ```
 
-Ulteriori informazioni su VMware e i frame jumbo sono disponibili [qui](https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=1003712){:new_window}.
+Ulteriori informazioni su VMware e i frame jumbo sono disponibili [qui](https://kb.vmware.com/s/article/1003712){:new_window}.
 
 
 ### 3. Aggiunta di un adattatore uplink a uno switch virtuale
@@ -220,8 +221,8 @@ Ulteriori informazioni su VMware e i frame jumbo sono disponibili [qui](https://
    ![Aggiungi adattatori fisici allo switch](/images/2_3.png)
 8. Fai clic su **Next** e quindi su **Finish**.
 9. Torna alla scheda **Virtual switches** e seleziona l'icona **Edit setting** superiore sotto l'intestazione **Virtual Switches**. (Icona di una matita)
-10. Seleziona la voce di vSwitch **Teaming and failover** sulla sinistra.
-Verifica che l'opzione **Load balancing** sia impostata su **Route based on the originating virtual port** e fai clic su **OK**.
+10. A sinistra, seleziona la voce **Teaming and failover** vSwitch.
+11. Verifica che l'opzione **Load balancing** sia impostata su **Route based on the originating virtual port** e fai clic su **OK**.
 
 
 ### 4. Configura l'instradamento statico ESXi (facoltativo)
@@ -237,7 +238,7 @@ La configurazione di rete per questa guida all'architettura utilizza un numero m
 2. Nota che gli instradamenti statici non sono persistenti tra i riavvii su ESXi 5.0 e antecedenti. Per garantire che qualsiasi instradamento statico aggiunto sia persistente, è necessario aggiungere questi comandi al file local.sh su ciascun host, che si trova nella directory /etc/rc.local.d/. Per eseguire tale operazione, apri il file local.sh utilizzando l'editor visivo e aggiungi il comando sopra indicato da eseguire sopra la riga exit 0.
    - Annota l'indirizzo IP poiché può essere utilizzato per montare il volume nel passo successivo.
    - Questo processo deve essere eseguito per ciascun volume NFS che intendi montare al tuo host ESXi.
-   - Questo è un link a un articolo della Knowledge Base di VMware: [Configuring static routes for VMkernel ports on an ESXi host](https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=2001426){:new_window}.
+   - Questo è un link a un articolo della Knowledge Base di VMware: [Configuring static routes for VMkernel ports on an ESXi host](https://kb.vmware.com/s/article/2001426){:new_window}.
 
 
 ##  Monta uno o più volumi {{site.data.keyword.filestorage_short}} sugli host ESXi
@@ -262,7 +263,7 @@ La configurazione di rete per questa guida all'architettura utilizza un numero m
     10.2.125.80 is the IP address associated with the FQDN
     ```
 
-## Impostazioni di abilitatazione di ESXi SIOC (Storage I/O Control) (facoltativo)
+## Abilita ESXi SIOC (Storage I/O Control) (facoltativo) 
 
 SIOC (Storage I/O Control) è una funzione disponibile per i clienti che utilizzano una licenza Enterprise Plus. Quando è abilitato nell'ambiente, SIOC modificherà la lunghezza della coda del dispositivo per la singola VM. La modifica alla lunghezza della coda del dispositivo riduce la coda dell'array di archiviazione per tutte le VM a una condivisione e una limitazione della coda di archiviazione uguali. SIOC si attiva solo se le risorse sono vincolate e la latenza I/O dell'archiviazione è superiore a una soglia definita.
 
@@ -282,14 +283,14 @@ Attieniti alla seguente procedura per abilitare SIOC con i valori consigliati pe
 2. Fai clic sulla scheda **Manage**.
 3. Fai clic su **Settings** e fai clic su **General**.
 4. Fai clic su **Edit** per **Datastore Capabilities**.
-5. Seleziona la casella di spunta **Enable Storage I/O Control**.<br/>
+5. Seleziona la casella di spunta **Enable Storage I/O Control**. <br/>
    ![NSFDataStore](/images/3_0.png)
 6. Fai clic su **OK**.
 
 **Nota**: questa impostazione è specifica per l'archivio dati e non per l'host.
 
 
-### 2. SIOC (Storage I/O Control) per {{site.data.keyword.BluVirtServers_short}}
+### 2. SIOC (Storage I/O Control) per {{site.data.keyword.BluVirtServers_short}} 
 
 Puoi anche limitare i singoli dischi virtuali per le singole VM oppure concedere loro condivisioni differenti con SIOC. La limitazione di dischi e la concessione di condivisioni differenti ti consente di mettere in corrispondenza e allineare l'ambiente al carico di lavoro con il numero di IOPS di volume {{site.data.keyword.filestorage_short}} acquisito. Il limite è impostato da IOPS e non è possibile impostare un peso o condivisioni ("Shares") differenti. Dischi virtuali con le condivisioni impostate a High (2.000 condivisioni) ricevono il doppio dell'I/O di un disco impostato su Normal (1.000 condivisioni) e il quadruplo di uno impostato su Low (500 condivisioni). Normal è il valore normale per tutte le VM; devi pertanto regolare i valori sopra o sotto Normal solo per le VM che effettivamente lo richiedono.
 
@@ -367,7 +368,7 @@ Ci sono alcune impostazioni aggiuntive necessarie per configurare gli host ESXi 
 Un frame jumbo è un frame Ethernet con un payload più grande della MTU (maximum transmission unit) standard di 1.500 byte. I frame jumbo sono utilizzati sulle LAN (local area network) che supportano almeno 1 Gbps e possono arrivare a una dimensione di 9.000 byte.
 
 
-I frame jumbo devono essere configurati nello stesso modo nell'intero percorso di rete dal dispositivo di origine <-> switch <-> router <-> switch <-> dispositivo di destinazione. Se l'intera catena non è impostata nello stesso modo, verrà per impostazione predefinita utilizzata l'impostazione più bassa lungo la catena. SoftLayer ha i suoi dispositivi di rete impostati su 9.000, attualmente. Tutti i dispositivi cliente dovranno essere impostati allo stesso valore.
+I frame jumbo devono essere configurati nello stesso modo nell'intero percorso di rete dal dispositivo di origine <-> switch <-> router <-> switch <-> dispositivo di destinazione. Se l'intera catena non è impostata nello stesso modo, verrà per impostazione predefinita utilizzata l'impostazione più bassa lungo la catena. {{site.data.keyword.BluSoftlayer_full}} ha i suoi dispositivi di rete impostati su 9.000, attualmente. Tutti i dispositivi cliente dovranno essere impostati allo stesso valore.
 
 ### Windows
 

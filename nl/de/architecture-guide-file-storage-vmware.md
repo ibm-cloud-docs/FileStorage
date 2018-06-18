@@ -2,45 +2,46 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-02-14"
+lastupdated: "2018-05-24"
 
 ---
 {:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
 
 # Leitfaden zur Architektur für {{site.data.keyword.filestorage_short}} mit VMware
 
-Die folgenden Schritte zeigen, wie {{site.data.keyword.filestorage_full}} in einer Umgebung mit vSphere 5.5 und vSphere 6.0 bei {{site.data.keyword.BluSoftlayer_full}} bestellt und konfiguriert wird. Die Verwendung von NFS {{site.data.keyword.filestorage_short}} ist das beste Verfahren, wenn Sie mehr als acht Verbindungen zu Ihrem VMWare-Host benötigen.
+Folgende Schritte zeigen Ihnen, wie {{site.data.keyword.filestorage_full}} in einer Umgebung mit vSphere 5.5 und vSphere 6.0 bei {{site.data.keyword.BluSoftlayer_full}} bestellt und konfiguriert wird. Wenn Sie mehr als acht Verbindungen zu Ihrem VMWare-Host benötigen, stellt die Verwendung von NFS {{site.data.keyword.filestorage_short}} das beste Verfahren dar.
 
-## Übersicht über {{site.data.keyword.filestorage_short}}
+## Übersicht über {{site.data.keyword.filestorage_short}} 
 
 {{site.data.keyword.filestorage_short}} wurde zur Unterstützung von Anwendungen mit hoher E/A-Aktivität entwickelt, die vorhersagbare Leistungsniveaus erfordern. Die vorhersagbare Leistung wird durch Zuordnung von E/A-Operationen pro Sekunde (IOPS) zu einzelnen Datenträgern auf Protokollebene erzielt.
 
-Das {{site.data.keyword.filestorage_short}}-Angebot wird über eine NFS-Verbindung angehängt und zugänglich gemacht. In einer VMware-Bereitstellung kann ein einzelner Datenträger mit bis zu 64 ESXi-Hosts als gemeinsam genutzter Speicher durch Mounts verbunden werden. Sie können aber auch mehrere Datenträger anhängen, um einen Speichercluster zu erstellen und vSphere Storage DYNAMIC Resource Scheduling zu nutzen.
+Das {{site.data.keyword.filestorage_short}}-Angebot wird über eine NFS-Verbindung angehängt und zugänglich gemacht. In einer VMware-Bereitstellung kann ein einzelner Datenträger mit bis zu 64 ESXi-Hosts als gemeinsam genutzter Speicher durch Mounts verbunden werden. Sie können aber auch mehrere Datenträger anhängen, um zur Verwendung von vSphere Storage Distributed Resource Scheduling (DRS) einen Speichercluster zu erstellen.
 
 Preis- und Konfigurationsoptionen für Endurance und Performance {{site.data.keyword.filestorage_short}} werden auf Basis einer Kombination aus dem reservierten Speicherbereich und der angebotenen IOPS-Kapazität in Rechnung gestellt.
 
 ### 1. Aspekte von {{site.data.keyword.filestorage_short}}
 
-Bei der Bestellung von {{site.data.keyword.filestorage_short}} sind die folgenden Informationen und Hinweise zu beachten:
+Beachten Sie für die Bestellung von {{site.data.keyword.filestorage_short}} folgende Informationen:
 
-- Die Speichergröße, die Kapazität an E/A-Operationen pro Sekunde (IOPS) und das Betriebssystem können nicht geändert werden, wenn {{site.data.keyword.filestorage_short}}-Datenträger einmal bereitgestellt sind. Alle Änderungen, die in Bezug auf die Speichergröße, die IOPS-Kapazität oder das Betriebssystem gewünscht werden, erfordern die Bereitstellung eines neuen Datenträgers. Alle Daten, die im vorherigen Datenträger gespeichert sind, müssen auf den/die neuen Datenträger mithilfe von VMware Storage vMotion migriert werden.
-- Berücksichtigen Sie bei der Festlegung der Größe den Umfang der Workload und den benötigten Durchsatz. Die Größe spielt für den Endurance-Service eine Rolle, der die Leistung linear in Relation zur Kapazität (IOPS/GB) skaliert. Für den Performance-Service, bei dem der Administrator die Kapazität und die Leistung unabhängig wählen kann, ist dies nicht der Fall. Für den Performance-Service sind wiederum Durchsatzanforderungen relevant. <br/> **Anmerkung:** Der Durchsatz wird durch IOPS x 16 KB berechnet. IOPS werden auf der Basis der Blockgröße von 16 KB und einer 50:50-Mischung von Schreib- und Leseoperationen gemessen. <br/> **Anmerkung:** Eine Erhöhung der Blockgröße erhöht zwar den Durchsatz, verringert jedoch die IOPS-Kapazität. Beispiel: Eine Verdopplung der Blockgröße auf 32-KB-Blöcke behält den maximalen Durchsatz bei, halbiert jedoch die IOPS-Kapazität.
-- NFS nutzt viele zusätzliche Dateisteuerungsoperationen wie 'lookup', 'getattr' und 'readdir', um nur einige zu nennen. Diese Operationen können neben Lese- und Schreiboperationen ebenfalls als IOPS gezählt werden und sind je nach Operationstyp und NFS-Version unterschiedlich.
-- Technisch können mehrere Datenträger übergreifend zusammenkonfiguriert werden, um eine höhere IOPS-Kapazität und mehr Durchsatz zu erzielen. VMware empfiehlt jedoch nur einen VMFS-Datenspeicher (Virtual Machine File System) pro Datenträger, um Leistungseinbußen zu vermeiden.
+- Berücksichtigen Sie bei der Festlegung der Größe den Umfang der Workload und den benötigten Durchsatz. Für den Endurance-Service, der die Leistung linear in Relation zur Kapazität (IOPS/GB) skaliert, ist Größe wichtig. Der Performance-Service ermöglicht dem Administrator dagegen, Kapazität und Leistung unabhängig voneinander zu wählen. Für den Performance-Service sind wiederum Durchsatzanforderungen relevant. <br/> **Anmerkung:** Der Durchsatz wird durch IOPS x 16 KB berechnet. IOPS werden auf der Basis der Blockgröße von 16 KB und einer 50:50-Mischung von Schreib- und Leseoperationen gemessen. <br/> **Anmerkung:** Eine Erhöhung der Blockgröße erhöht zwar den Durchsatz, verringert jedoch die IOPS-Kapazität. Beispiel: Eine Verdoppelung der Blockgröße auf 32-KB-Blöcke behält den maximalen Durchsatz bei, halbiert jedoch die IOPS-Kapazität.
+- NFS verwendet viele zusätzliche Dateisteuerungsoperationen wie `lookup`, `getattr` und `readdir`, um nur einige zu nennen. Diese Operationen können neben Lese- und Schreiboperationen ebenfalls als IOPS gezählt werden und sind je nach Operationstyp und NFS-Version unterschiedlich.
+- Technisch gesehen können mehrere Datenträger in einer Stripekonfiguration zusammengefasst werden, um eine höhere IOPS-Kapazität und mehr Durchsatz zu erzielen. VMware empfiehlt jedoch nur einen VMFS-Datenspeicher (Virtual Machine File System) pro Datenträger, um Leistungseinbußen zu vermeiden.
 - {{site.data.keyword.filestorage_short}}-Datenträger werden autorisierten Einheiten (Geräten), Teilnetzen oder IP-Adressen zugänglich gemacht.
-- Snapshot- und Replikationsservices sind nur auf Endurance {{site.data.keyword.filestorage_short}}-Datenträgern nativ verfügbar. Performance {{site.data.keyword.filestorage_short}} verfügt über diese Funktionen nicht.
-- Zur Vermeidung einer Speicherverbindungsunterbrechung während des Pfadfailovers empfiehlt {{site.data.keyword.IBM}}, VMWare-Tools zu installieren, die einen angemessenen Zeitlimitwert festlegen. Der Wert muss nicht geändert werden. Die Standardeinstellung reicht aus, um sicherzustellen, dass Ihr VMWare-Host die Konnektivität nicht verliert.
-- NFS Version 3 und NFS Version 4.1 werden in der Umgebung von {{site.data.keyword.BluSoftlayer_full}} unterstützt. {{site.data.keyword.IBM}} empfiehlt jedoch die Verwendung von NFS Version 3. Da NFS Version 4.1 ein Protokoll mit Zustandsüberwachung (und nicht wie NFSv3 ohne Zustandsüberwachung) ist, können bei Netzereignissen Probleme auftreten. NFS Version 4.1 muss Operationen ruhen lassen und eine Sperrenrückforderung ausführen. Während dieser Operationen kann es zu Unterbrechnungen kommen.
+- Snapshot- und Replikationsservices sind nur auf Endurance {{site.data.keyword.filestorage_short}}-Datenträgern nativ verfügbar. Performance {{site.data.keyword.filestorage_short}} verfügt nicht über diese Funktionen.
+- Zur Vermeidung einer Speicherverbindungsunterbrechung während des Pfadfailovers empfiehlt {{site.data.keyword.IBM}}, VMWare-Tools zu installieren, die einen angemessenen Zeitlimitwert festlegen. Der Wert muss nicht geändert werden; die Standardeinstellung reicht aus, um sicherzustellen, dass Ihr VMWare-Host die Konnektivität nicht verliert.
+- NFS Version 3 und NFS Version 4.1 werden in der Umgebung von {{site.data.keyword.BluSoftlayer_full}} unterstützt. {{site.data.keyword.IBM}} empfiehlt jedoch, NFS v3 zu verwenden. Da NFS Version 4.1 ein Protokoll mit Zustandsüberwachung (und nicht wie NFSv3 ohne Zustandsüberwachung) ist, können bei Netzereignissen Probleme mit dem Protokoll auftreten. NFS Version 4.1 muss alle Operationen ruhen lassen und anschließend eine Sperrenrückforderung ausführen. Während dieser Operationen kann es zu Unterbrechnungen kommen.
 
-####  Unterstützungsmatrix für das NFS-Protokoll und VMware-Funktionen
+#### Unterstützungsmatrix für das NFS-Protokoll und VMware-Funktionen
 <table>
- <tbody>
+  <caption>Tabelle 1 zeigt, welche vSphere-Funktionen für die beiden unterschiedlichen Versionen von NFS gelten.</caption>
+ <thead>
   <tr>
    <th>vSphere-Funktionen</th>
    <th>NFS Version 3</th>
    <th>NFS Version 4.1</th>
   </tr>
+ </thead>
+ <tbody>
   <tr>
    <td>vMotion und Storage vMotion</td>
    <td>Ja</td>
@@ -96,11 +97,13 @@ Bei der Bestellung von {{site.data.keyword.filestorage_short}} sind die folgende
 
 ### 2. Endurance {{site.data.keyword.filestorage_short}}-Snapshots
 
-Endurance {{site.data.keyword.filestorage_short}} gibt Administratoren die Möglichkeit, Snapshotpläne festzulegen, durch die Snapshotkopien für jeden Speicherdatenträger automatisch erstellt und gelöscht werden. Sie können darüber hinaus weitere Snapshotpläne (stündlich, täglich, wöchentlich) für automatische Snapshots erstellen und manuell Ad-hoc-Snapshots für DCDR-Szenarios (BCDR - Business-Continuity/Disaster Recovery) erstellen. Automatische Alerts werden über das [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} an den Datenträgereigner in Bezug auf die aufbewahrten Snapshots und den belegten Speicherplatz zugestellt.
+Endurance {{site.data.keyword.filestorage_short}} gibt Administratoren die Möglichkeit, Snapshotpläne festzulegen, durch die Snapshotkopien für jeden Speicherdatenträger automatisch erstellt und gelöscht werden. Sie können darüber hinaus zuästzliche Snapshotpläne (stündlich, täglich, wöchentlich) für automatische Snapshots erstellen und manuell Ad-hoc-Snapshots für BCDR-Szenarios (BCDR – Business-Continuity/Disaster Recovery) erstellen. Automatische Alerts werden über das [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} an den Datenträgereigner in Bezug auf die aufbewahrten Snapshots und den belegten Speicherplatz zugestellt.
 
-Beachten Sie, dass zur Verwendung von Snapshots “Snapshotbereich” erforderlich ist. Der Speicherbereich kann bei der ersten Datenträgerbestellung oder nach der Erstbereitstellung über die Seite **Datenträgerdetails** durch Klicken auf die Dropdown-Schaltfläche für Aktionen und Auswählen der Option **Snapshotbereich hinzufügen** angefordert werden.
+Beachten Sie, dass zur Verwendung von Snapshots “Snapshotbereich” erforderlich ist. Der Speicherbereich kann bei der ersten Datenträgerbestellung oder nach der Erstbereitstellung über die Seite **Datenträgerdetails** durch Klicken auf **Aktionen** und Auswählen der Option **Snapshotbereich hinzufügen** angefordert werden.
 
-Es wichtig zu beachten, dass VMware-Umgebungen Snapshots nicht erkennen. Die Endurance {{site.data.keyword.filestorage_short}}-Snapshotfunktionalität darf nicht mit VMware-Snapshots verwechselt werden. Jede Wiederherstellung mithilfe der Endurance {{site.data.keyword.filestorage_short}}-Snapshotfunktion muss über das [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} durchgeführt werden. Zur Wiederherstellung des Endurance {{site.data.keyword.filestorage_short}}-Datenträgers ist es erforderlich, alle VMs auszuschalten, die sich auf Endurance {{site.data.keyword.filestorage_short}} befinden, und den Datenträger zeitweilig von den ESXi-Hosts abzuhängen, um eine Beschädigung von Daten während des Prozesses zu vermeiden.
+Es ist wichtig zu beachten, dass VMware-Umgebungen Snapshots nicht erkennen. Die Endurance {{site.data.keyword.filestorage_short}}-Snapshotfunktionalität darf nicht mit VMware-Snapshots verwechselt werden. Jede Wiederherstellung mithilfe der Endurance {{site.data.keyword.filestorage_short}}-Snapshotfunktion muss über das [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} durchgeführt werden.  
+
+Zur Wiederherstellung des Endurance {{site.data.keyword.filestorage_short}}-Datenträgers ist es erforderlich, alle VMs auszuschalten, die sich auf Endurance {{site.data.keyword.filestorage_short}} befinden. Der Datenträger muss vorübergehend von den ESXi-Hosts abgehängt werden, um eine Beschädigung von Daten während des Prozesses zu vermeiden.
 
 Weitere Einzelheiten zur Konfiguration von Snapshots finden Sie im Artikel zu [Snapshots](snapshots.html).
 
@@ -110,28 +113,25 @@ Weitere Einzelheiten zur Konfiguration von Snapshots finden Sie im Artikel zu [S
 Die Replikation verwendet einen Ihrer Snapshotpläne, um Snapshots automatisch auf einen Zieldatenträger in einem fernen Rechenzentrum zu kopieren. Die Kopien können am fernen Standort wiederhergestellt werden, falls Daten beschädigt werden oder ein Elementarereignis auftritt.
 
 
-Replikate bieten folgende Möglichkeiten:
+Replikate ermöglichen Folgendes: 
 
 - Schnelle Wiederherstellung nach Standortausfällen oder anderen Katastrophen durch Failover auf den Zieldatenträger
 - Failover auf einen bestimmten Zeitpunkt in der Disaster Recovery-Kopie (DR-Kopie)
 
-Bevor Sie replizieren können, müssen Sie einen Snapshotplan erstellen. Wenn Sie einen Failover durchführen, “schalten Sie um”, und zwar von Ihrem Speicherdatenträger in Ihrem primären Rechenzentrum auf den Zieldatenträger in Ihrem fernen Rechenzentrum. Ihr primäres Rechenzentrum ist zum Beispiel London und Ihr sekundäres Rechenzentrum ist Amsterdam. Im Falle eines Fehlerereignisses können Sie ein Failover auf Amsterdam durchführen – dazu stellen Sie zu dem jetzigen primären Datenträger eine Verbindung von einer vSphere Cluster-Instanz in Amsterdam her.
+Bevor Sie replizieren können, müssen Sie einen Snapshotplan erstellen. Wenn Sie einen Failover durchführen, 'schalten Sie um', und zwar von Ihrem Speicherdatenträger in Ihrem primären Rechenzentrum auf den Zieldatenträger in Ihrem fernen Rechenzentrum. Ihr primäres Rechenzentrum ist zum Beispiel London und Ihr sekundäres Rechenzentrum ist Amsterdam. Wenn ein Fehlerereignis auftritt, führen Sie ein Failover auf Amsterdam durch – dazu stellen Sie zu dem jetzigen primären Datenträger eine Verbindung von einer vSphere Cluster-Instanz in Amsterdam her.
 
+Nachdem Ihr Datenträger in London repariert wurde, wird ein Snapshot des Datenträgers in Amsterdam erstellt. Sie können anschließend von einer Compute-Instanz in London eine Rückübertragung auf den Datenträger in London und den nun wieder primären Datenträger durchführen. 
 
-Nachdem Ihr Datenträger in London repariert wurde, wird ein Snapshot des Datenträgers in Amsterdam erstellt, um die Rückübertragung auf den Datenträger in London und den nun wieder primären Datenträger von einer Compute-Instanz in London durchzuführen. Bevor der Datenträger wieder auf das primäre Rechenzentrum zurückübertragen wird, muss seine Verwendung am fernen Standort gestoppt werden. Ein Snapshot neuer oder geänderter Informationen wird erstellt und an das pirmäre Rechenzentrum repliziert, bevor der Datenträger wieder an die ESXi-Hosts am Produktionsstandort angehängt werden kann.
-
+Bevor der Datenträger wieder auf das primäre Rechenzentrum zurückübertragen wird, muss seine Verwendung am fernen Standort gestoppt werden. Ein Snapshot neuer oder geänderter Informationen wird erstellt und an das pirmäre Rechenzentrum repliziert, bevor der Datenträger wieder an die ESXi-Hosts am Produktionsstandort angehängt werden kann.
 
 Weitere Informationen zur Konfiguration der Replikation finden Sie auf der Informationsseite zur [Replikation](replication.html).
 
-**Anmerkung:** Ungültige Daten, seien es beschädigte, gehackte oder infizierte, werden dem Snapshotplan und der angegebenen Snapshotaufbewahrung entsprechend repliziert. Durch Verwendung der kleinsten Replikationsfenster lässt sich ein besseres Ziel in Bezug auf den maximal tolerierbaren Datenverlust bei einem Ausfall (Recovery Point Objective, RPO) realisieren. Außerdem lässt es möglicherweise weniger Zeit zur Reaktion auf die Replikation ungültiger Daten.
-
-
-
+**Anmerkung:** Ungültige Daten, seien es beschädigte, gehackte oder infizierte, werden dem Snapshotplan und der angegebenen Snapshotaufbewahrung entsprechend repliziert. Durch Verwendung der kleinsten Replikationsfenster lässt sich ein besseres Ziel in Bezug auf den maximal tolerierbaren Datenverlust bei einem Ausfall (Recovery Point Objective, RPO) realisieren. Dadurch steht möglicherweise jedoch weniger Zeit für die Reaktion auf die Replikation ungültiger Daten zur Verfügung.
 
 
 ## {{site.data.keyword.filestorage_short}} bestellen
 
-Sie können {{site.data.keyword.filestorage_short}} für eine VMware ESXi 5-Umgebung bestellen und konfigurieren. Verwenden Sie die folgenden Informationen in Verbindung mit Advanced Single-Site VMware Reference Architecture, um eine dieser Speicheroptionen in Ihrer VMware-Umgebung einzurichten.
+Sie können {{site.data.keyword.filestorage_short}} für eine VMware ESXi 5-Umgebung bestellen und konfigurieren. Verwenden Sie folgende Informationen zusammen mit Advanced Single-Site VMware Reference Architecture, um eine dieser Speicheroptionen in Ihrer VMware-Umgebung einzurichten.
 
 
 {{site.data.keyword.filestorage_short}} kann über das [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} bestellt werden. Greifen Sie zu diesem Zweck auf die {{site.data.keyword.filestorage_short}}-Seite über die Optionen **Speicher** > **{{site.data.keyword.filestorage_short}}** zu.
@@ -141,12 +141,12 @@ Sie können {{site.data.keyword.filestorage_short}} für eine VMware ESXi 5-Umge
 
 Führen Sie die folgenden Schritte aus, um {{site.data.keyword.filestorage_short}} zu bestellen:
 1. Klicken Sie auf **Speicher** > **{{site.data.keyword.filestorage_short}}** auf der [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}-Startseite.
-2. Klicken Sie auf den Link **{{site.data.keyword.filestorage_short}} bestellen** auf der Seite **{{site.data.keyword.filestorage_short}}**.
-3. Wählen Sie **Endurance**/**Performance** in der Dropdown-Liste 'Speichertyp auswählen' aus.
-4. Wählen Sie die Position aus. Rechenzentren mit verbesserter Funktionalität sind durch einen Stern (`*`) gekennzeichnet. Stellen Sie sicher, dass der neue Speicher an derselben Position wie der zuvor bestellte ESXi-Host (bzw. die bestellten Hosts) hinzugefügt wird.
+2. Klicken Sie auf **{{site.data.keyword.filestorage_short}} bestellen** auf der Seite **{{site.data.keyword.filestorage_short}}**.
+3. Wählen Sie **Endurance**/**Performance** in der Liste **Speichertyp auswählen** aus.
+4. Wählen Sie die Position aus. Rechenzentren mit verbesserter Funktionalität sind durch einen Stern gekennzeichnet. Stellen Sie sicher, dass der neue Speicher an derselben Position wie der zuvor bestellte ESXi-Host hinzugefügt wird.
 5. Wählen Sie die Rechnungsstellungsmethode aus. Die Optionen 'Monatliche' und 'Stündliche' Rechnungsstellung sind verfügbar.
-6. Wählen Sie die gewünschte Größe des Speicherbereichs in GB aus. Bei TB ist 1 TB gleich 1.000 GB und 12 TB sind gleich 12.000 GB.
-7. Geben Sie den gewünschten Wert für IOPS (E/A-Operationen pro Sekunde) in Intervallen von 100 ein oder wählen Sie eine IOPS-Stufe aus.
+6. Wählen Sie die Größe des Speicherbereichs in GB aus. Bei TB ist 1 TB gleich 1.000 GB und 12 TB sind gleich 12.000 GB.
+7. Geben Sie den Wert für IOPS (E/A-Operationen pro Sekunde) in Intervallen von 100 ein oder wählen Sie eine IOPS-Stufe aus.
 8. Geben Sie die Größe des Snapshotbereichs an.
 9. Klicken Sie auf **Weiter**.
 10. Geben Sie einen Werbeaktionscode ein und klicken Sie auf **Neu berechnen**.
@@ -201,11 +201,12 @@ Führen Sie die folgenden Schritte aus, um den virtuellen Host zu konfigurieren:
    - Unter Unix: ping -s 8972 a.b.c.d
    Dabei ist a.b.c.d die benachbarte {{site.data.keyword.BluVirtServers_short}}-Schnittstelle.
    Die Ausgabe ist dem folgenden Beispiel ähnlich:
-   ```ping a.b.c.d (a.b.c.d) 8972(9000) bytes of data.
+   ```
+   ping a.b.c.d (a.b.c.d) 8972(9000) bytes of data.
    8980 bytes from a.b.c.d: icmp_seq=1 ttl=128 time=3.36 ms
    ```
 
-Weitere Informationen zu VMware und Jumbo-Frames finden Sie [hier](https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=1003712){:new_window}.
+Weitere Informationen zu VMware und Jumbo-Frames finden Sie [hier](https://kb.vmware.com/s/article/1003712){:new_window}.
 
 
 ### 3. Uplink-Adapter zum virtuellen Switch hinzufügen
@@ -220,8 +221,8 @@ Weitere Informationen zu VMware und Jumbo-Frames finden Sie [hier](https://kb.vm
    ![Physische Adapter zum Switch hinzufügen](/images/2_3.png)
 8. Klicken Sie auf **Next** (Weiter) und anschließend **Finish** (Fertigstellen).
 9. Navigieren Sie zur Registerkarte **Virtual switches** zurück und wählen Sie das obere Symbol **Einstellung bearbeiten** (Stiftsymbol) unter der Überschrift **Virtual Switches** aus.
-10. Wählen Sie den Eintrag für **vSwitch Teaming** und Failover auf der linken Seite aus.
-Stellen Sie sicher, dass die Option **Load balancing** (Lastverteilung) auf **Route based on the originating virtual port** (Route auf Basis des virtuellen Herkunftsports) und klicken Sie auf **OK**.
+10. Wählen Sie auf der linken Seite den vSwitch-Eintrag **Teaming and Failover** aus. 
+11. Stellen Sie sicher, dass die Option **Load balancing** (Lastverteilung) auf **Route based on the originating virtual port** (Route auf Basis des virtuellen Herkunftsports) und klicken Sie auf **OK**.
 
 
 ### 4. Statisches ESXi-Routing konfigurieren (optional)
@@ -237,7 +238,7 @@ Die Netzkonfiguration für diesen Architekturleitfaden arbeitet mit einer minima
 2. Beachten Sie, dass statische Routen unter ESXi 5.0 und früheren Versionen nicht über Neustarts hinweg bestehen bleiben. Zur Sicherstellung, dass alle hinzugefügten statischen Routen persistent bestehen bleiben, müssen diese Befehle in der Datei 'local.sh' auf jedem Host im Verzeichnis /etc/rc.local.d/ hinzugefügt werden. Öffnen Sie dazu die Datei 'local.sh' mit dem visuellen Editor und fügen Sie den obigen auszuführenden Befehl über der Zeile 'exit 0' hinzu.
    - Notieren Sie die IP-Adresse, da sie zum Anhängen des Datenträgers im nächsten Schritt verwendet werden kann.
    - Dies muss für jeden NFS-Datenträger ausgeführt werden, der an Ihren ESXi-Host angehängt werden soll.
-   - Einen Artikel zu VMware KB erreichen Sie über den folgenden Link: [Statische Routen für VMkernel-Ports auf einem ESXi-Host konfigurieren (englisch)](https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=2001426){:new_window}.
+   - Einen Artikel zu VMware KB erreichen Sie über den folgenden Link: [Statische Routen für VMkernel-Ports auf einem ESXi-Host konfigurieren (englisch)](https://kb.vmware.com/s/article/2001426){:new_window}.
 
 
 ##  {{site.data.keyword.filestorage_short}}-Datenträger an die ESXi-Hosts anhängen
@@ -262,7 +263,7 @@ Die Netzkonfiguration für diesen Architekturleitfaden arbeitet mit einer minima
     10.2.125.80 is the IP address associated with the FQDN
     ```
 
-## Storage I/O Control-Einstellungen für ESXi aktivieren (optional)
+## Storage I/O Control für ESXi aktivieren (optional)
 
 Storage I/O Control (SIOC) ist ein Feature, das für Kunden mit einer Enterprise Plus-Lizenz verfügbar ist. Wenn SIOC in der Umgebung aktiviert wird, ändert sich dadurch die Einheitenwarteschlangenlänge für die einzelne VM. Die Änderung der Einheitenwarteschlangenlänge verkleinert die Speicherarray-Warteschlange für alle VMs auf einen gleichen Anteil und sorgt für eine gleiche Regulierung der Speicherwarteschlange. SIOC greift nur ein, wenn Ressourcen beschränkt sind und die E/A-Latenz des Speichers über einem definierten Schwellenwert liegt.
 
@@ -289,7 +290,7 @@ Führen Sie die folgenden Schritte aus, um SIOC mit den empfohlenen Werten für 
 **Anmerkung:** Diese Einstellung ist für den Datenspeicher, nicht für den Host spezifisch.
 
 
-### 2. Storage I/O Control für einen {{site.data.keyword.BluVirtServers_short}}-Speicher
+### 2. Storage I/O Control für einen {{site.data.keyword.BluVirtServers_short}}-Speicher 
 
 Mit SIOC können Sie auch einzelne virtuelle Platten für einzelne VMs begrenzen oder ihnen unterschiedliche Anteile (Shares) zuteilen. Die Begrenzung von Platten und die Zuteilung unterschiedlicher Anteile geben Ihnen die Möglichkeit, die Umgebung auf die Workload mit dem IOPS-Wert des erhaltenen {{site.data.keyword.filestorage_short}}-Datenträgers abzustimmen und auszurichten. Die Begrenzung wird durch E/A-Operationen pro Sekunde (IOPS) festgelegt und es ist möglich, eine andere Gewichtung oder Anteile ("Shares") festzulegen. Virtuelle Platten mit Anteilen, die auf High (2.000 Anteile) gesetzt sind, empfangen zweimal so viele E/A-Operationen wie eine Platte, die auf Normal (1.000 Anteile) gesetzt ist, und viermal so viele E/A-Operationen wie eine Platte, die auf Low (500 Anteile) gesetzt ist. Normal ist der Standardwert für alle VMs, sodass Sie nur die Werte über oder unter Normal für die VMs anpassen müssen, für die dies tatsächlich erforderlich ist.
 
@@ -367,7 +368,7 @@ Laut {{site.data.keyword.BluSoftlayer_full}} müssen Jumbo-Frames, um die Geschw
 Ein Jumbo-Frame ist ein Ethernet-Rahmen mit einem Nutzdatenvolumen, das größer als die standardmäßig maximale Übertragungseinheit (MTU - Maximum Transmission Unit) von 1.500 Byte ist. Jumbo-Frames werden in LAN-Netzen verwendet, die mindestens 1 Gb/s unterstützen, und können eine Größe von bis zu 9.000 Byte haben.
 
 
-Jumbo-Frames müssen im gesamten Netzpfad von der Quelleneinheit <-> Switch <-> Router <-> Switch <-> Zieleinheit identisch konfiguriert werden. Wenn nicht die gesamte Kette identisch konfiguriert ist, wird standardmäßig die niedrigste Einstellung innerhalb der Kette verwendet. SoftLayer stellt seine Netzeinheiten gegenwärtig auf 9.000 ein. Alle Kundeneinheiten müssen auf denselben Wert eingestellt werden.
+Jumbo-Frames müssen im gesamten Netzpfad von der Quelleneinheit <-> Switch <-> Router <-> Switch <-> Zieleinheit identisch konfiguriert werden. Wenn die Kette nicht insgesamt identisch konfiguriert ist, wird standardmäßig die niedrigste Einstellung innerhalb der Kette verwendet. {{site.data.keyword.BluSoftlayer_full}} hat seine Netzeinheiten kürzlich auf 9.000 eingestellt. Alle Kundeneinheiten müssen auf denselben Wert eingestellt werden.
 
 ### Windows
 

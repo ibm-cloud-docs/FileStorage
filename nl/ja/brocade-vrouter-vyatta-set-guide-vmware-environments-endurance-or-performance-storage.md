@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2017
-lastupdated: "2018-02-14"
+  years: 2014, 2018
+lastupdated: "2018-05-11"
 
 ---
 {:new_window: target="_blank"}
@@ -10,11 +10,11 @@ lastupdated: "2018-02-14"
 
 # {{site.data.keyword.filestorage_short}}を使用する VMware 環境の Brocade vRouter (Vyatta) のセットアップ・ガイド
 
-いずれかの {{site.data.keyword.filestorage_full}} を使用する VMware 環境内で、Brocade vRouter (Vyatta) アプライアンスを高可用性 (HA) 構成にすることができます。 以下の情報と『[Advanced Single-Site VMware Reference Architecture](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}』を合わせて使用して、これらのストレージ・オプションのいずれかを VMware 環境にセットアップできます。
+{{site.data.keyword.filestorage_full}} を使用する VMware 環境内で、Brocade vRouter (Vyatta) アプライアンスを高可用性 (HA) 構成にすることができます。 以下の情報と[拡張単一サイト VMware のリファレンス・アーキテクチャー](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}を使用して、これらのストレージ・オプションのいずれかをVMware 環境にセットアップできます。
 
 ## Brocade vRouter (Vyatta) の概要
 
-Brocade vRouter (Vyatta) ゲートウェイは、お客様の環境のゲートウェイおよびルーターとして機能し、サブネットで構成される複数のゾーンが含まれています。 ゾーン間で通信できるように、ゾーンの間にファイアウォール・ルールを設定します。 他のゾーンと通信する必要がないゾーンにはファイアウォール・ルールは不要です。すべてのパケットがドロップされるからです。
+Brocade vRouter (Vyatta) ゲートウェイは、お客様の環境のゲートウェイとルーターとして機能し、サブネットで構成される複数のゾーンが含まれています。ゾーン間で通信できるように、ゾーンの間にファイアウォール・ルールを設定します。 他のゾーンと通信する必要がないゾーンにはファイアウォール・ルールは不要です。すべてのパケットがドロップされるからです。
 
 この構成例では、Brocade vRouter (Vyatta) 内に以下の 5 つのゾーンを作成します。
 
@@ -36,7 +36,7 @@ Brocade vRouter (Vyatta) ゲートウェイは、お客様の環境のゲート�
 Brocade vRouter (Vyatta) を構成するには、以下のようにします。
 
 1. 「デバイスの詳細」画面にある root パスワードを使用して、アプライアンスに SSH でログインします。
-2. 「Configure」と入力して構成モードに入り、後続のセクションの手順に従います。
+2. `「Configure」`と入力して構成モードに入り、後続のセクションの手順に従います。
 
 ### インターフェースのセットアップ
 

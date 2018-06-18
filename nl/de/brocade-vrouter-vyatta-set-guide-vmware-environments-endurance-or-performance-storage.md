@@ -1,16 +1,16 @@
 ---
 
 copyright:
-  years: 2014, 2017
-lastupdated: "2018-02-14"
+  years: 2014, 2018
+lastupdated: "2018-05-11"
 
 ---
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 
-# Brocade vRouter (Vyatta) - Konfigurationsanleitfaden für VMware-Umgebungen mit {{site.data.keyword.filestorage_short}}
+# Brocade vRouter (Vyatta) - Konfigurationsleitfaden für VMware-Umgebungen mit {{site.data.keyword.filestorage_short}}
 
-Sie können eine Brocade vRouter-Appliance (Vyatta-Appliance) für hohe Verfügbarkeit (HA) in einer VMware-Umgebung konfigurieren, die {{site.data.keyword.filestorage_full}} verwendet. Verwenden Sie die folgenden Informationen in Verbindung mit den Informationen zu [Advanced Single-Site VMware Reference Architecture](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}, um eine dieser Speicheroptionen in Ihrer VMware-Umgebung einzurichten.
+Sie können eine Brocade vRouter-Appliance (Vyatta-Appliance) für hohe Verfügbarkeit (HA) in einer VMware-Umgebung konfigurieren, die {{site.data.keyword.filestorage_full}} verwendet. Verwenden Sie folgende Informationen zusammen mit [Advanced Single-Site VMware Reference Architecture](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}, um eine dieser Speicheroptionen in Ihrer VMware-Umgebung einzurichten.
 
 ## Brocade vRouter (Vyatta) - Übersicht
 
@@ -36,7 +36,7 @@ Abbildung 1 beschreibt die Kommunikation zwischen den einzelnen Zonen. Beachten 
 Gehen Sie wie folgt vor, um den Brocade vRouter (Vyatta) zu konfigurieren:
 
 1. Stellen Sie eine SSH-Verbindung in die Appliance mit dem Rootkennwort her, das auf der Anzeige der Gerätedetails (Device Details) zu finden ist.
-2. Geben Sie 'Configure' ein, um in den Konfigurationsmodus zu wechseln, und führen Sie die Schritte in den nachfolgenden Abschnitten aus.
+2. Geben Sie `Configure` ein, um in den Konfigurationsmodus zu wechseln, und führen Sie die Schritte in den nachfolgenden Abschnitten aus.
 
 ### Schnittstellen einrichten
 

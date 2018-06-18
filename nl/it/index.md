@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-02-12"
+lastupdated: "2018-05-14"
 
 ---
 {:new_window: target="_blank"}
@@ -12,7 +12,7 @@ lastupdated: "2018-02-12"
 
 {{site.data.keyword.filestorage_full}} è {{site.data.keyword.filestorage_short}} persistente, veloce, flessibile, basato su NFS e collegato alla rete. In questo ambiente NAS (Network Attached Storage), hai il controllo totale sulle prestazioni e la funzione di condivisioni dei tuoi file. Le condivisioni di {{site.data.keyword.filestorage_short}} possono essere connesse a un massimo di 64 dispositivi autorizzati su connessioni TCP/IP instradate per la resilienza.
 
-{{site.data.keyword.filestorage_short}} offre i livelli migliori del settore di durabilità e disponibilità con un insieme di funzioni senza paragone, è sviluppato utilizzando gli standard del settore e le prassi ottimali e progettato per proteggere l'integrità dei dati e mantenere la disponibilità durante gli eventi di manutenzione e i malfunzionamenti non pianificati, fornendo al tempo stesso una baseline di prestazioni congruente.
+{{site.data.keyword.filestorage_short}} offre i livelli migliori del settore di durabilità e disponibilità con un insieme di funzioni senza paragone. {{site.data.keyword.filestorage_short}} è sviluppato utilizzando gli standard del settore e le prassi ottimali e progettato per proteggere l'integrità dei dati. {{site.data.keyword.filestorage_short}} mantiene la disponibilità durante gli eventi di manutenzione e i malfunzionamenti non pianificati, fornendo al tempo stesso una baseline di prestazioni congruente.
 
 Avvaliti delle seguenti funzioni principali di {{site.data.keyword.filestorage_short}}:
 
@@ -23,7 +23,7 @@ Avvaliti delle seguenti funzioni principali di {{site.data.keyword.filestorage_s
 - **Altamente durevole e resiliente**
    - Protegge l'integrità dei dati e mantiene la disponibilità durante gli eventi di manutenzione e i malfunzionamenti non pianificati senza che occorra creare o gestire un array ridondante a livello di sistema operativo di array di dischi indipendenti (RAID)
 - **Crittografia dei dati inattivi** [(Disponibile in data center selezionati).](new-ibm-block-and-file-storage-location-and-features.html)
-   - Crittografia gestita dal provider per i dati inattivi senza costi aggiuntivi
+   - Crittografia gestita dal provider per i dati inattivi senza costi aggiuntivi 
 - **Archiviazione con supporto All-Flash** [(Disponibile in data center selezionati).](new-ibm-block-and-file-storage-location-and-features.html)
    - Archiviazione All-Flash per i volumi di cui viene eseguito il provisioning con Endurance o Performance a 2 IOPS/GB o superiore
 - **Istantanee (quando ne viene eseguito il provisioning con Endurance o Performance in [data center selezionati](new-ibm-block-and-file-storage-location-and-features.html))**.
@@ -41,9 +41,9 @@ Avvaliti delle seguenti funzioni principali di {{site.data.keyword.filestorage_s
 
 Puoi selezionare la fatturazione mensile o oraria per un volume di file. Il tipo di fatturazione selezionato per una LUN si applicherà al suo spazio per le istantanee e alle sue repliche. Ad esempio, se esegui il provisioning di una LUN con fatturazione oraria, eventuali addebiti di istantanee o replica verranno fatturati in modo orario. Se esegui il provisioning di una LUN con fatturazione mensile, eventuali addebiti di istantanee o replica verranno fatturati in modo mensile. 
 
-Con la **fatturazione oraria**, il calcolo del numero di ore per cui il volume di file è esistito nell'account viene eseguito quando il volume viene eliminato oppure alla fine del ciclo di fatturazione, a seconda di quale di queste condizioni si verifichi per prima.  La fatturazione oraria è una buona scelta per l'archiviazione utilizzata per qualche giorno o per meno di un mese completo. La fatturazione oraria è disponibile solo per l'archiviazione di cui viene eseguito il provisioning in [data center selezionati](new-ibm-block-and-file-storage-location-and-features.html). 
+Con la **fatturazione oraria**, il numero di ore per cui il volume di file è esistito nell'account viene calcolato quando il volume viene eliminato oppure alla fine del ciclo di fatturazione, a seconda di quale di queste condizioni si verifichi per prima. La fatturazione oraria è una buona scelta per l'archiviazione utilizzata per qualche giorno o per meno di un mese completo. La fatturazione oraria è disponibile solo per l'archiviazione di cui viene eseguito il provisioning in [data center selezionati](new-ibm-block-and-file-storage-location-and-features.html). 
 
-Con la **fatturazione mensile**, il calcolo per il prezzo è a base proporzionale dalla data di creazione alla fine del ciclo di fatturazione e viene fatturato immediatamente. Non è previsto alcun rimborso se il volume di file viene eliminato prima della fine del ciclo di fatturazione.  La fatturazione mensile è una buona scelta per l'archiviazione utilizzata nei carichi di lavoro di produzione che usano dati che devono essere archiviati e a cui bisogna accedere per lunghi periodi di tempo (un mese o più).
+Con la **fatturazione mensile**, il calcolo per il prezzo è a base proporzionale dalla data di creazione alla fine del ciclo di fatturazione e viene fatturato immediatamente. Non è previsto alcun rimborso se il volume di file viene eliminato prima della fine del ciclo di fatturazione. La fatturazione mensile è una buona scelta per l'archiviazione utilizzata nei carichi di lavoro di produzione che usano dati che devono essere archiviati e a cui bisogna accedere per lunghi periodi di tempo (un mese o più).
 
  
 ### Prestazioni:
@@ -51,11 +51,11 @@ Con la **fatturazione mensile**, il calcolo per il prezzo è a base proporzional
  <tbody>
   <tr>
    <th>Prezzo mensile</th>
-   <td>$0,10/GB + $0,07/IOP</td>
+   <td>$0.10/GB + $0.07/IOPS</td>
   </tr>
   <tr>
    <th>Prezzo orario</th>
-   <td>$0,0001/GB + $0,0002/IOP</td>
+   <td>$0.0001/GB + $0.0002/IOPS</td>
   </tr>
   </tbody>
 </table>
@@ -199,7 +199,7 @@ La misurazione di IOPS, sia per Endurance che per Performance, è basata su una 
 
 IOPS sia per Endurance che per Performance è basato su una dimensione in blocchi da 16 KB con un carico di lavoro casuale al 50% e con lettura/scrittura al 50/50. Un blocco di approssimativamente 16 KB è l'equivalente di una scrittura sul volume.
 
-La dimensione del blocco utilizzata dalla tua applicazione avrà una ripercussione diretta sulla prestazioni dell'archiviazione.  Se la dimensione del blocco utilizzata dalla tua applicazione è inferiore a 16 KB, il limite IOPS verrà realizzato prima del limite di velocità effettiva.  Viceversa, se la dimensione del blocco utilizzata dalla tua applicazione è superiore a 16KB, il limite di velocità effettiva verrà realizzato prima del limite di IOPS.
+La dimensione del blocco utilizzata dalla tua applicazione avrà una ripercussione diretta sulla prestazioni dell'archiviazione.  Se la dimensione del blocco utilizzata dalla tua applicazione è inferiore a 16 KB, il limite IOPS verrà realizzato prima del limite di velocità effettiva. Viceversa, se la dimensione del blocco utilizzata dalla tua applicazione è superiore a 16KB, il limite di velocità effettiva verrà realizzato prima del limite di IOPS. 
 
 La modifica della dimensione del blocco influenzerà le prestazioni nel seguente modo:
 
@@ -261,4 +261,4 @@ Un altro fattore da considerare è il numero di host che sta utilizzando il tuo 
 
 Per raggiungere l'IOPS massimo, è necessario che siano implementate delle risorse di rete adeguate. Altre considerazioni includono l'utilizzo della rete privata esternamente al lato archiviazione e host e le regolazioni specifiche per le applicazioni (stack di IP, profondità di coda e così via).
 
-Nell'ambiente {{site.data.keyword.BluSoftlayer_full}} sono supportati sia NFS v3 che NFS v4.1. Consigliamo tuttavia l'utilizzo di NFS v3. NFS v4.1 è un protocollo con stato (non senza stato come NFSv3) e, pertanto, durante gli eventi di rete potrebbero verificarsi dei problemi di protocollo. NFS v4.1 deve disattivare le operazioni e quindi eseguire un recupero del blocco. Su un server di file NFS relativamente occupato, l'aumentata latenza può causare interruzioni del servizio. La mancanza di multipercorso/trunking NFS v4.1 può anche estendere il ripristino di uno stato normale delle operazioni NFS.
+Nell'ambiente {{site.data.keyword.BluSoftlayer_full}} sono supportati sia NFS v3 che NFS v4.1. Consigliamo tuttavia l'utilizzo di NFS v3. NFS v4.1 è un protocollo con stato (non senza stato come NFSv3) e, pertanto, durante gli eventi di rete potrebbero verificarsi dei problemi di protocollo. NFS v4.1 deve disattivare tutte le operazioni e quindi eseguire un recupero del blocco. Su un server di file NFS relativamente occupato, l'aumentata latenza può causare interruzioni del servizio. La mancanza di multipercorso/trunking NFS v4.1 può anche estendere il ripristino di uno stato normale delle operazioni NFS.

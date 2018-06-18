@@ -1,20 +1,20 @@
 ---
 
 copyright:
-  years: 2014, 2017
-lastupdated: "2018-02-14"
+  years: 2014, 2018
+lastupdated: "2018-05-11"
 
 ---
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 
-# Guida alla configurazione di Brocade vRouter (Vyatta)per gli ambienti VMware con {{site.data.keyword.filestorage_short}}
+# Guida alla configurazione di Brocade vRouter (Vyatta) per gli ambienti VMware con {{site.data.keyword.filestorage_short}} 
 
 Puoi configurare un'applicazione Brocade vRouter (Vyatta) per la configurazione ad alta disponibilità (HA, high availability)] in un ambiente VMware che sta utilizzando {{site.data.keyword.filestorage_full}}. Utilizza le seguenti informazioni insieme alla [Advanced Single-Site VMware Reference Architecture](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} per configurare una di queste opzioni di archiviazione nel tuo ambiente VMware.
 
 ## Panoramica di Brocade vRouter (Vyatta)
 
-Il gateway Brocade vRouter (Vyatta) fungerà da gateway e router per il tuo ambiente e conterrà zone formate da sottoreti. Le regole del firewall verranno implementate tra le zone in modo che possano comunicare tra di loro. Per le zone che non devono comunicare con altre zone, non è necessaria alcuna regola del firewall poiché tutti i pacchetti verranno ignorati.
+Il gateway Brocade vRouter (Vyatta) fungerà da gateway e router per il tuo ambiente e conterrà zone formate da sottoreti. Le regole del firewall verranno implementate tra le zone in modo che possano comunicare tra di loro. Per le zone che non devono comunicare con altre zone, non è necessaria alcuna regola del firewall poiché tutti i pacchetti verranno ignorati. 
 
 Nella nostra configurazione di esempio, ci saranno cinque zone create nel Brocade vRouter (Vyatta):
 
@@ -22,7 +22,7 @@ Nella nostra configurazione di esempio, ci saranno cinque zone create nel Brocad
 - VMACCESS – le macchine virtuali (VM, Virtual Machine) {{site.data.keyword.BluVirtServers_short}} sul cluster di capacità.
 - MGMT – i cluster di gestione e capacità nonché le macchine virtuali (VM, Virtual Machine) di gestione
 - STORAGE – il server o i server di archiviazione
-- OUTSIDE – l'accesso a Internet pubblico
+- OUTSIDE – l'accesso a internet pubblico 
 
 
 la Figura 1 descrive le comunicazioni tra ciascuna zona. Nota: il tuo ambiente potrebbe essere differente e potrebbe richiedere zone e regole del firewall differenti.
@@ -36,7 +36,7 @@ la Figura 1 descrive le comunicazioni tra ciascuna zona. Nota: il tuo ambiente p
 Per configurare il Brocade vRouter (Vyatta):
 
 1. Esegui l'SSH nell'applicazione utilizzando la password root trovata nella schermata Device Details.
-2. Immetti configure per entrare nella modalità di configurazione e attieniti alla procedura nelle sezioni successive.
+2. Immetti `configure` per entrare nella modalità di configurazione e attieniti alla procedura nelle sezioni successive.
 
 ### Configura le interfacce
 

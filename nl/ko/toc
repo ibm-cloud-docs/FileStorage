@@ -1,8 +1,8 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="FileStorage" audience="services" href=“/docs/infrastructure/FileStorage/index.html”}
-IBM Cloud Storage - 파일 스토리지
+{: .toc subcollection="FileStorage" audience="services" href="/docs/infrastructure/FileStorage/index.html"}
+IBM Cloud Storage - File Storage
 
     {: .navgroup id="learn"}
     index.md 
@@ -13,14 +13,14 @@ IBM Cloud Storage - 파일 스토리지
     expandable_file_storage.md
     adjustable-iops.md
     {: .navgroup-end}
-    
+
     {: .navgroup id="howto"}
     {: .topicgroup}
     프로비저닝
         provisioning-file-storage.md
         ordering-snapshots.md
         managing-storage-limits.md
-        
+
     {: .topicgroup}
     구성
         accessing-file-storage-linux.md
@@ -32,7 +32,7 @@ IBM Cloud Storage - 파일 스토리지
 
     {: .topicgroup}
     보안
-        block-file-storage-encryption-rest.md    
+        block-file-storage-encryption-rest.md
         migrate-file-storage-encrypted-file-storage.md
 
     managing-file-storage.md
@@ -40,7 +40,7 @@ IBM Cloud Storage - 파일 스토리지
     working-with-snapshots.md
     brocade-vrouter-vyatta-set-guide-vmware-environments-endurance-or-performance-storage.md
     {: .navgroup-end}
-               
+
     {: .navgroup id="help"}
     File-Storage-FAQ.md
     [Python API 클라이언트 정보](https://github.com/softlayer/softlayer-python)

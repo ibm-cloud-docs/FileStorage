@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-02-12"
+lastupdated: "2018-05-14"
 
 ---
 {:new_window: target="_blank"}
@@ -10,9 +10,9 @@ lastupdated: "2018-02-12"
 
 # Einführung in {{site.data.keyword.filestorage_short}}
 
-{{site.data.keyword.filestorage_full}} ist ein persistenter, schneller und flexibler, NFS-basierter {{site.data.keyword.filestorage_short}}, der über ein Netz angeschlossen ist. In dieser Umgebung mit NAS-Speicher (NAS - Network Attached Storage) haben Sie vollständige Kontrolle über die Funktion und Leistung Ihrer Dateifreigaben. {{site.data.keyword.filestorage_short}}-Freigaben können aus Gründen der Ausfallsicherheit mit bis zu 64 autorisierten Geräten über gesteuerte TCP/IP-Verbindungen verbunden werden.
+{{site.data.keyword.filestorage_full}} ist ein persistenter, schneller und flexibler, NFS-basierter {{site.data.keyword.filestorage_short}}, der über ein Netz angeschlossen ist. In dieser Umgebung mit NAS-Speicher (NAS – Network-attached Storage) haben Sie vollständige Kontrolle über die Funktion und Leistung Ihrer Dateifreigaben. {{site.data.keyword.filestorage_short}}-Freigaben können aus Gründen der Ausfallsicherheit mit bis zu 64 autorisierten Geräten über gesteuerte TCP/IP-Verbindungen verbunden werden.
 
-{{site.data.keyword.filestorage_short}} ist aufgrund höchster Permanenz und Verfügbarkeit, kombiniert mit einem außergewöhnlichen Feature-Set, sowie durch die Nutzung von Industriestandards und bewährten Verfahren darauf ausgerichtet, die Integrität der Daten zu schützen und die Verfügbarkeit sowohl bei Wartungsereignissen als auch bei ungeplanten Ausfällen aufrechtzuerhalten und gleichzeitig eine konsistentes Leistungsniveau sicherzustellen.
+{{site.data.keyword.filestorage_short}} bietet kombiniert mit einem außergewöhnlichen Feature-Set eine leistungsfähige Permanenz und Verfügbarkeit. {{site.data.keyword.filestorage_short}} wurde unter Verwendung von Industriestandards und bewährten Verfahren erstellt und ist darauf ausgerichtet, die Integrität der Daten zu schützen. {{site.data.keyword.filestorage_short}} hält die Verfügbarkeit sowohl bei Wartungsereignissen als auch bei ungeplanten Ausfällen aufrecht und stellt gleichzeitig ein konsistentes Leistungsniveau sicher.
 
 Nutzen Sie die folgenden Kernfunktionen von {{site.data.keyword.filestorage_short}}:
 
@@ -23,7 +23,7 @@ Nutzen Sie die folgenden Kernfunktionen von {{site.data.keyword.filestorage_shor
 - **Hohe Dauerhaftigkeit und Ausfallsicherheit**
    - Schützt die Integrität der Daten und gewährleistet die Verfügbarkeit bei Wartungsereignissen und ungeplanten Ausfällen, ohne dass RAID-Arrays (Redundant Arrays of Independent Disks) auf Betriebssystemebene erstellt und verwaltet werden müssen.
 - **Verschlüsselung ruhender Daten** [(in ausgewählten Rechenzentren verfügbar)](new-ibm-block-and-file-storage-location-and-features.html)
-   - Vom Provider verwaltete Verschlüsselung für ruhende Daten ohne Zusatzkosten
+   - Providerverwaltete Verschlüsselung für ruhende Daten ohne Zusatzkosten
 - **Gesamter Speicher Flash-gestützt** [(in ausgewählten Rechenzentren verfügbar)](new-ibm-block-and-file-storage-location-and-features.html)
    - Gesamter Speicher ist Flashspeicher für Datenträger, die mit Endurance oder Performance und 2 IOPS/GB oder höher bereitgestellt werden.
 - **Snapshots (Bei Bereitstellung mit Endurance oder Performance in [ausgewählten Rechenzentren](new-ibm-block-and-file-storage-location-and-features.html))**
@@ -41,9 +41,9 @@ Nutzen Sie die folgenden Kernfunktionen von {{site.data.keyword.filestorage_shor
 
 Sie können stündliche oder monatliche Rechnungsstellung für einen Dateidatenträger auswählen. Der Typ der Rechnungsstellung, der für eine LUN ausgewählt wird, gilt für den zugehörigen Snapshotbereich und für Replikate. Wenn Sie zum Beispiel eine LUN mit stündlicher Rechnungsstellung bereitstellen, werden alle Gebühren für Snapshots oder Replikate stündlich in Rechnung gestellt. Wenn Sie eine LUN mit monatlicher Rechnungsstellung bereitstellen, werden Gebühren für Snapshots oder Replikate monatlich in Rechnung gestellt. 
 
-Bei der **stündlichen Rechnungsstellung** wird die Berechnung der Stundenzahl, die der Dateidatenträger auf dem Konto vorhanden war, zu dem Zeitpunkt berechnet, zu dem der Datenträger gelöscht wird oder zu dem der Rechnungsstellungszyklus endet, je nachdem, welcher Zeitpunkt zuerst kommt.  Die stündliche Rechnungsstellung ist eine gute Wahl für Speicher, der für einige wenige Tage oder weniger als einen ganzen Monat lang genutzt wird. Eine stündliche Rechnungsstellung ist nur für Speicher verfügbar, der in [ausgewählten Rechenzentren](new-ibm-block-and-file-storage-location-and-features.html) bereitgestellt wurde. 
+Bei der **stündlichen Rechnungsstellung** wird die Stundenzahl, die der Dateidatenträger auf dem Konto vorhanden war, zu dem Zeitpunkt berechnet, an dem der Datenträger gelöscht wird oder der Rechnungsstellungszyklus endet, je nachdem, welcher Zeitpunkt zuerst kommt. Die stündliche Rechnungsstellung ist eine gute Wahl für Speicher, der für einige wenige Tage oder weniger als einen ganzen Monat lang genutzt wird. Eine stündliche Rechnungsstellung ist nur für Speicher verfügbar, der in [ausgewählten Rechenzentren](new-ibm-block-and-file-storage-location-and-features.html) bereitgestellt wurde. 
 
-Bei der **monatlichen Rechnungsstellung** erfolgt die Berechnung für den Preis anteilmäßig ab dem Erstellungsdatum bis zum Ende des Rechnungsstellungszyklus und die Rechnung wird unverzüglich gestellt. Es erfolgt keine Rückvergütung, wenn ein Datenträger vor dem Ende des Rechnungsstellungszyklus gelöscht wird.  Die monatliche Rechnungsstellung ist eine gute Wahl für Speicher, der für Auslastungen im Produktionsbetrieb genutzt wird, die Daten verwenden, die über längere Zeiträume (einen Monat oder länger) gespeichert werden und zugänglich sein müssen.
+Bei der **monatlichen Rechnungsstellung** erfolgt die Berechnung für den Preis anteilmäßig ab dem Erstellungsdatum bis zum Ende des Rechnungsstellungszyklus und die Rechnung wird unverzüglich gestellt. Es erfolgt keine Rückerstattung, wenn ein Datenträger vor dem Ende des Rechnungsstellungszyklus gelöscht wird. Die monatliche Rechnungsstellung ist eine gute Wahl für Speicher, der für Auslastungen im Produktionsbetrieb genutzt wird, die Daten verwenden, die über längere Zeiträume (einen Monat oder länger) gespeichert werden und zugänglich sein müssen.
 
  
 ### Performance:
@@ -51,11 +51,11 @@ Bei der **monatlichen Rechnungsstellung** erfolgt die Berechnung für den Preis 
  <tbody>
   <tr>
    <th>Monatlicher Preis</th>
-   <td>$0,10/GB + $0,07/IOP</td>
+   <td>$0.10/GB + $0.07/IOPS</td>
   </tr>
   <tr>
    <th>Stündlicher Preis</th>
-   <td>$0,0001/GB + $0,0002/IOP</td>
+   <td>$0.0001/GB + $0.0002/IOPS</td>
   </tr>
   </tbody>
 </table>
@@ -199,7 +199,7 @@ E/A-Operationen pro Sekunde (IOPS) werden für Endurance und Performance auf Bas
 
 IOPS für Endurance und Performance basieren auf einer Blockgröße von 16 KB und einer 50-prozentigen Zufallsworkload aus einem 50:50-Mix von Schreib- und Leseoperationen. Ein ~16-KB-Block entspricht einer Schreiboperation auf dem Datenträger.
 
-Die Blockgröße, die von Ihrer Anwendung verwendet wird, hat eine direkte Auswirkung auf die Speicherleistung.  Wenn die von Ihrer Anwendung verwendete Blockgröße kleiner als 16 KB ist, wird die IOPS-Grenze vor der Durchsatzbegrenzung erreicht.  Umgekehrt, wenn die von Ihrer Anwendung verwendete Blockgröße größer als 15 KB ist, wird die Durchsatzbegrenzung vor der IOPS-Grenze erreicht.
+Die Blockgröße, die von Ihrer Anwendung verwendet wird, hat eine direkte Auswirkung auf die Speicherleistung.  Wenn die von Ihrer Anwendung verwendete Blockgröße kleiner als 16 KB ist, wird der IOPS-Grenzwert vor der Durchsatzbegrenzung erreicht. Wenn dagegen die von Ihrer Anwendung verwendete Blockgröße größer als 16 KB ist, wird die Durchsatzbegrenzung vor dem IOPS-Grenzwert erreicht.
 
 Eine Änderung der Blockgröße wirkt sich wie folgt auf die Leistung aus:
 
@@ -261,4 +261,4 @@ Ein weitere Faktor, der zu beachten ist, ist die Anzahl der Hosts, die Ihren Dat
 
 Zur Erzielung der maximalen E/A-Operationen pro Sekunde müssen geeignete Netzressourcen eingesetzt werden. Weitere Aspekte sind die private Netznutzung außerhalb von Speicher sowie hostseitige und anwendungsspezifische Optimierungen (IP-Stack, Warteschlangenlängen usw.).
 
-NFS Version 3 und NFS Version 4.1 werden in der Umgebung von {{site.data.keyword.BluSoftlayer_full}} unterstützt. Es wird jedoch empfohlen, NFS v3 zu verwenden. NFS Version 4.1 ist ein Protokoll mit Zustandsüberwachung (und nicht wie NFSv3 ohne Zustandsüberwachung), sodass bei Netzereignissen Probleme auftreten können. NFS Version 4.1 muss Operationen ruhen lassen und eine Sperrenrückforderung ausführen. Auf einem relativ ausgelasteten NFS-Dateiserver kann die erhöhte Latenz zu Unterbrechungen führen. Die fehlende Multipath/Trunking-Funktionalität in NFS v4.1 kann darüber hinaus die Wiederherstellung des NFS-Betriebs verlängern.
+NFS Version 3 und NFS Version 4.1 werden in der Umgebung von {{site.data.keyword.BluSoftlayer_full}} unterstützt. Es wird jedoch empfohlen, NFS v3 zu verwenden. NFS Version 4.1 ist ein Protokoll mit Zustandsüberwachung (und nicht wie NFSv3 ohne Zustandsüberwachung), sodass bei Netzereignissen Probleme auftreten können. NFS Version 4.1 muss alle Operationen ruhen lassen und anschließend eine Sperrenrückforderung ausführen. Auf einem relativ ausgelasteten NFS-Dateiserver kann die erhöhte Latenz zu Unterbrechungen führen. Die fehlende Multipath/Trunking-Funktionalität in NFS v4.1 kann darüber hinaus die Wiederherstellung des NFS-Betriebs verlängern.
