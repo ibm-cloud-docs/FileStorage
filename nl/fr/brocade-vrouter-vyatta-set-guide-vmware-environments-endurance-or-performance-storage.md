@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2017
-lastupdated: "2018-02-14"
+  years: 2014, 2018
+lastupdated: "2018-05-11"
 
 ---
 {:new_window: target="_blank"}
@@ -10,7 +10,7 @@ lastupdated: "2018-02-14"
 
 # Brocade vRouter (Vyatta) - Guide de configuration pour les environnements VMware avec {{site.data.keyword.filestorage_short}}
 
-Vous pouvez configurer un dispositif Brocade vRouter (Vyatta) pour la haute disponibilité dans un environnement VMware qui utilise {{site.data.keyword.filestorage_full}}. Utilisez les informations suivantes ainsi que celles de l'article [Advanced Single-Site VMware Reference Architecture](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} pour configurer une des options de stockage suivantes dans votre environnement VMware.
+Vous pouvez configurer un dispositif Brocade vRouter (Vyatta) pour la haute disponibilité dans un environnement VMware qui utilise {{site.data.keyword.filestorage_full}}. Utilisez les informations suivantes ainsi que celles de l'article [Advanced Single-Site VMware Reference Architecture](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} pour configurer l'une des options de stockage suivantes dans votre environnement VMware.
 
 ## Présentation de Brocade vRouter (Vyatta)
 
@@ -22,7 +22,7 @@ Dans notre exemple de configuration, cinq zones sont créées dans Brocade vRout
 - VMACCESS – machines virtuelles {{site.data.keyword.BluVirtServers_short}} sur le cluster de capacité
 - MGMT – clusters de gestion et de capacité, et machines virtuelles de gestion
 - STORAGE – serveur(s) de stockage
-- OUTSIDE – accès Internet public
+- OUTSIDE – accès internet public
 
 
 La Figure 1 décrit la communication entre chaque zone. Notez que votre environnement peut être différent et nécessiter d'autres zones et règles de pare-feu.
@@ -36,7 +36,7 @@ La Figure 1 décrit la communication entre chaque zone. Notez que votre environn
 Pour configurer Brocade vRouter (Vyatta) :
 
 1. Etablissez une liaison SSH avec le dispositif à l'aide du mot de passe root trouvé sur l'écran Détails de l'unité.
-2. Entrez Configure pour passer en mode de configuration et suivez les étapes indiquées ultérieurement.
+2. Entrez `configure` pour passer en mode de configuration et suivez les étapes indiquées ultérieurement. 
 
 ### Configuration des interfaces
 

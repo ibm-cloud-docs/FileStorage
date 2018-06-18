@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2017
-lastupdated: "2017-12-14"
+  years: 2014, 2018
+lastupdated: "2018-05-11"
 
 ---
 {:new_window: target="_blank"}
@@ -10,9 +10,9 @@ lastupdated: "2017-12-14"
 
 # Capacité de partage de fichiers extensible
 
-Cette nouvelle fonctionnalité permet aux utilisateurs d'{{site.data.keyword.filestorage_full}} d'étendre à la volée la taille de leur stockage {{site.data.keyword.filestorage_short}} existant en incréments de Go jusqu'à 12 To, sans qu'il soit nécessaire de créer un doublon ou de migrer manuellement les données vers un volume plus grand.  Les utilisateurs ne sont confrontés à aucune indisponibilité, ni manque d'accès au  stockage lorsque le redimensionnement a lieu. 
+Cette nouvelle fonctionnalité permet aux utilisateurs d'{{site.data.keyword.filestorage_full}} d'étendre immédiatement la taille de leur stockage {{site.data.keyword.filestorage_short}} en incréments de Go jusqu'à 12 To, sans qu'il soit nécessaire de créer un doublon ou de faire migrer manuellement les données vers un volume plus grand.  Les utilisateurs ne sont confrontés à aucune indisponibilité, ni manque d'accès au stockage lorsque le redimensionnement a lieu. 
 
-La facturation du volume est mise à jour : la différence calculée au prorata du nouveau prix est ajoutée dans le cycle de facturation en cours et le nouveau montant total est ensuite facturé lors du cycle de facturation suivant.
+La facturation du volume est automatiquement mise à jour : la différence calculée au prorata du nouveau prix est ajoutée au cycle de facturation en cours. Ensuite, le nouveau montant total est facturé au cours du cycle de facturation suivant. 
 
 Cette fonctionnalité est disponible uniquement dans des [centres de données sélectionnés](new-ibm-block-and-file-storage-location-and-features.html). 
 
@@ -34,11 +34,11 @@ Les limitations de taille existantes pour un stockage {{site.data.keyword.filest
 
 ## Comment savoir si mon stockage mis à disposition est extensible ?
 
-Un stockage mis à disposition avec des capacités améliorées est toujours chiffré au repos.  Si votre stockage est marqué par une icône en forme de verrou dans l'interface utilisateur du portail, cela signifie qu'il est éligible pour l'extension. 
+Un stockage mis à disposition avec des capacités améliorées est toujours chiffré au repos. Si votre stockage est marqué par une icône en forme de verrou dans l'interface utilisateur du portail, cela signifie qu'il est éligible pour l'extension. 
 
 ## Comment redimensionner mon stockage ?
 
-1. Sur le portail {{site.data.keyword.slportal}}, cliquez sur **Stockage** > **{{site.data.keyword.filestorage_short}}** OU, dans le Catalogue {{site.data.keyword.BluSoftlayer_full}}, cliquez sur **Infrastructure** > **Stockage** > **{{site.data.keyword.filestorage_short}}**.
+1. Sur le portail {{site.data.keyword.slportal}}, cliquez sur **Stockage** > **{{site.data.keyword.filestorage_short}}** OU, dans le catalogue {{site.data.keyword.BluSoftlayer_full}}, cliquez sur **Infrastructure** > **Stockage** > **{{site.data.keyword.filestorage_short}}**.
 2. Sélectionnez le volume dans la liste et cliquez sur **Actions** > **Modifier le volume**
 3. Entrez la nouvelle taille de stockage en Go.
 4. Vérifiez votre sélection et la nouvelle tarification.

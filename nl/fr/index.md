@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-02-12"
+lastupdated: "2018-05-14"
 
 ---
 {:new_window: target="_blank"}
@@ -12,7 +12,7 @@ lastupdated: "2018-02-12"
 
 {{site.data.keyword.filestorage_full}} est un système de stockage de fichiers {{site.data.keyword.filestorage_short}} NAS basé sur NFS, permanent, rapide et flexible. Cet environnement NAS vous permet d'avoir un contrôle total des fonctions et des performances de vos partages de fichiers. Les partages {{site.data.keyword.filestorage_short}} peuvent être connectés à un maximum de 64 unités autorisées via des connexions TCP/IP routées pour la résilience.
 
-{{site.data.keyword.filestorage_short}} offre les meilleurs niveaux du marché en matière de durabilité et de disponibilité avec un jeu de fonctions inégalé et est conçu avec les normes et les meilleures pratiques de l'industrie pour protéger l'intégrité des données et conserver leur disponibilité lors des événements de maintenance et les défaillances imprévues tout en garantissant une base de référence cohérente pour les performances.
+{{site.data.keyword.filestorage_short}} offre les meilleurs niveaux du marché en matière de durabilité et de disponibilité grâce à un ensemble de fonctions inégalé. {{site.data.keyword.filestorage_short}} est conçu avec les normes et les meilleures pratiques de l'industrie pour protéger l'intégrité des données. {{site.data.keyword.filestorage_short}} conserve leur disponibilité via des événements de maintenance et des défaillances imprévues tout en garantissant une base de référence cohérente pour les performances. 
 
 Tirez parti des principales fonctionnalités de {{site.data.keyword.filestorage_short}} :
 
@@ -23,7 +23,7 @@ Tirez parti des principales fonctionnalités de {{site.data.keyword.filestorage_
 - **Durabilités et résiliences élevées**
    - Protège l'intégrité des données et maintient la disponibilité lors des événements de maintenance et des défaillances imprévues sans qu'il soit nécessaire de créer et de gérer des tableaux RAID au niveau du système d'exploitation
 - **Chiffrement des données au repos** [(disponible dans des centres de données sélectionnés.)](new-ibm-block-and-file-storage-location-and-features.html)
-   - Chiffrement géré par le fournisseur pour les données au repos sans coût supplémentaire
+   - Chiffrement géré par le fournisseur pour les données au repos, sans coût supplémentaire
 - **Stockage entièrement sécurisé par mémoire flash** [(disponible dans des centres de données sélectionnés.)](new-ibm-block-and-file-storage-location-and-features.html)
    - Stockage flash pour les volumes mis à disposition avec des options Endurance ou Performance supérieures ou égales à 2 IOPS/Go
 - **Instantanés (si mise à disposition avec les options Endurance ou Performance dans des [centres de données sélectionnés](new-ibm-block-and-file-storage-location-and-features.html))**.
@@ -41,9 +41,9 @@ Tirez parti des principales fonctionnalités de {{site.data.keyword.filestorage_
 
 Vous pouvez choisir une facturation horaire ou mensuelle pour un volume de fichier. Le type de facturation sélectionné pour un numéro d'unité logique s'applique à son espace d'image instantanée et à ses répliques. Par exemple, si vous mettez à disposition un numéro d'unité logique avec une facturation horaire, tous les frais liés aux instantanés ou aux répliques seront facturés à l'heure. Si vous mettez à disposition un numéro d'unité logique avec une facturation mensuelle, tous les frais liés aux instantanés ou aux répliques seront facturés au mois. 
 
-Avec la **facturation horaire**, le calcul du nombre d'heures d'existence du volume de fichier sur le compte s'effectue lors de la suppression du volume ou à la fin du cycle de facturation, à la première occurrence de l'un des deux événements.  La facturation horaire est un bon choix si vous avez besoin d'un stockage pour quelques jours ou pour moins d'un mois complet. La facturation horaire est disponible uniquement pour le stockage mis à disposition dans des [centres de données sélectionnés](new-ibm-block-and-file-storage-location-and-features.html). 
+Avec la **facturation horaire**, le nombre d'heures d'existence du volume de fichier sur le compte est calculé lors de la suppression du volume ou à la fin du cycle de facturation, à la première occurrence de l'un de ces deux événements. La facturation horaire est un bon choix si vous avez besoin d'un stockage pour quelques jours ou pour moins d'un mois complet. La facturation horaire est disponible uniquement pour le stockage mis à disposition dans des [centres de données sélectionnés](new-ibm-block-and-file-storage-location-and-features.html). 
 
-Avec la **facturation mensuelle**, le calcul du prix est calculé au prorata depuis la date de création jusqu'à la fin du cycle de facturation et la facturation est immédiate. Aucun remboursement n'est possible si un volume de fichier est supprimé avant la fin du cycle de facturation.  La facturation mensuelle convient si vous avez besoin d'un stockage pour des charges de travail utilisant des données devant être stockées et rester accessibles pour de longues périodes (un mois ou plus).
+Avec la **facturation mensuelle**, le calcul du prix est calculé au prorata depuis la date de création jusqu'à la fin du cycle de facturation et la facturation est immédiate. Aucun remboursement n'est possible si un volume de fichier est supprimé avant la fin du cycle de facturation. La facturation mensuelle convient si vous avez besoin d'un stockage pour des charges de travail utilisant des données devant être stockées et rester accessibles pour de longues périodes (un mois ou plus).
 
  
 ### Performance :
@@ -51,11 +51,11 @@ Avec la **facturation mensuelle**, le calcul du prix est calculé au prorata dep
  <tbody>
   <tr>
    <th>Prix mensuel</th>
-   <td>0,10 $/Go + 0,07 $/E-S</td>
+   <td>0,10 $/Go + 0,07 $/IOPS</td>
   </tr>
   <tr>
    <th>Prix horaire</th>
-   <td>0,0001 $/Go + 0,0002 $/E-S</td>
+   <td>0,0001 $/Go + 0,0002 $/IOPS</td>
   </tr>
   </tbody>
 </table>
@@ -199,7 +199,7 @@ Le nombre d'IOPS, pour les options Endurance et Performance, est mesuré sur la 
 
 Le nombre d'IOPS pour les options Endurance et Performance est basé sur une taille de bloc de 16 ko avec une charge de travail aléatoire à 50 % de lecture/écriture 50/50. Un bloc d'environ 16 ko est l'équivalent d'une écriture sur le volume.
 
-La taille de bloc utilisée par votre application a une incidence directe sur les performances du stockage.  Si la taille de bloc employée par votre application est inférieure à 16 ko, la limite des opérations d'entrée-sortie est atteinte avant la limite de débit.  A l'inverse, si la taille de bloc utilisée par votre application est supérieure à 16 ko, la limite de débit est atteinte avant la limite des opérations d'entrée-sortie.
+La taille de bloc utilisée par votre application a une incidence directe sur les performances du stockage.  Si la taille de bloc employée par votre application est inférieure à 16 ko, la limite des opérations d'entrée-sortie par seconde est atteinte avant la limite de débit. A l'inverse, si la taille de bloc utilisée par votre application est supérieure à 16 ko, la limite de débit est atteinte avant la limite des opérations d'entrée-sortie par seconde.
 
 La modification de la taille de bloc affecte les performances comme suit :
 
@@ -261,4 +261,4 @@ Un autre facteur à prendre en compte est le nombre d'hôtes qui utilisent votre
 
 Pour atteindre le nombre maximal d'IOPS, vous devez mettre en place les ressources réseau adéquates. Vous devez également tenir compte de l'utilisation du réseau privé en dehors du stockage, ainsi que des réglages côté hôte et spécifiques aux applications (pile IP, nombre de lignes de file d'attente, etc.).
 
-NFS version 3 et NFS version 4.1 sont pris en charge dans l'environnement {{site.data.keyword.BluSoftlayer_full}}. Il est toutefois recommandé d'utiliser NFS version 3. NFS version 4.1 est un protocole avec état (et non sans état comme NFS version 3) et donc susceptible de générer des anomalies lors des événements de réseau. NFS version 4.1 doit mettre au repos les opérations puis effectuer la réclamation de verrou. Sur un serveur de fichiers relativement occupé, l'augmentation du temps d'attente peut entraîner une interruption. L'absence de fonctions de multi-accès et d'établissement de liaison dans NFS version 4.1 peut également allonger la reprise des opérations NFS.
+NFS version 3 et NFS version 4.1 sont pris en charge dans l'environnement {{site.data.keyword.BluSoftlayer_full}}. Il est toutefois recommandé d'utiliser NFS version 3. NFS version 4.1 est un protocole avec état (et non sans état comme NFS version 3) et donc susceptible de générer des anomalies lors des événements de réseau. NFS v4.1 doit mettre au repos toutes les opérations, puis effectuer la réclamation de verrou. Sur un serveur de fichiers relativement occupé, l'augmentation du temps d'attente peut entraîner une interruption. L'absence de fonctions de multi-accès et d'établissement de liaison dans NFS version 4.1 peut également allonger la reprise des opérations NFS.
