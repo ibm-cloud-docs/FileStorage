@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2017
-lastupdated: "2018-02-14"
+  years: 2014, 2018
+lastupdated: "2018-05-11"
 
 ---
 {:new_window: target="_blank"}
@@ -10,7 +10,7 @@ lastupdated: "2018-02-14"
 
 # 含 {{site.data.keyword.filestorage_short}} 之 VMware 環境的 Brocade vRouter (Vyatta) 設定手冊
 
-您可以在使用 {{site.data.keyword.filestorage_full}} 的 VMware 環境內，進行 Brocade vRouter (Vyatta) 應用裝置的高可用性 (HA) 配置。將下列資訊與[進階單一網站 VMware 參照架構](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}一起使用，以在 VMware 環境中設定其中一個儲存空間選項。
+您可以在使用 {{site.data.keyword.filestorage_full}} 的 VMware 環境內，進行 Brocade vRouter (Vyatta) 應用裝置的高可用性 (HA) 配置。請將下列資訊與[進階單一網站 VMware 參照架構](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}一起使用，以在 VMware 環境中設定其中一個儲存空間選項。
 
 ## Brocade vRouter (Vyatta) 概觀
 
@@ -36,7 +36,7 @@ Brocade vRouter (Vyatta) 閘道將作為環境的閘道及路由器，並包含�
 若要配置 Brocade vRouter (Vyatta)，請執行下列動作：
 
 1. 使用在「裝置詳細資料」畫面上找到的 root 密碼，以 SSH 連接至應用裝置。
-2. 鍵入 Configure 以進入配置模式，並遵循後續各節中的步驟。
+2. 鍵入 `configure` 以進入配置模式，並遵循後續各節中的步驟。
 
 ### 設定介面
 

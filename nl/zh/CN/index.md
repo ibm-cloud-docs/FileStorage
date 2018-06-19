@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-02-12"
+lastupdated: "2018-05-14"
 
 ---
 {:new_window: target="_blank"}
@@ -12,7 +12,7 @@ lastupdated: "2018-02-12"
 
 {{site.data.keyword.filestorage_full}} 是一种基于 NFS 的、网络连接的 {{site.data.keyword.filestorage_short}}，具有持久、快速、灵活的特点。在此网络连接的存储器 (NAS) 环境中，您对文件共享功能和性能具有完全控制权。{{site.data.keyword.filestorage_short}} 共享可通过路由 TCP/IP 连接来连接到最多 64 个已授权设备，从而实现弹性。
 
-{{site.data.keyword.filestorage_short}} 通过一组无与伦比的功能实现了同类最优水平的耐久性和可用性，它使用业界标准和最佳实践进行构建，旨在发生维护事件和意外故障期间保护数据完整性并保持可用性，同时提供一致的性能基线。
+{{site.data.keyword.filestorage_short}} 通过一组无与伦比的功能，实现了同类最优水平的耐久性和可用性。{{site.data.keyword.filestorage_short}} 使用业界标准和最佳实践进行构建，旨在保护数据完整性。{{site.data.keyword.filestorage_short}} 可在发生维护事件和意外故障期间保持可用性，同时提供一致的性能基线。
 
 可利用 {{site.data.keyword.filestorage_short}} 的以下核心功能：
 
@@ -23,7 +23,7 @@ lastupdated: "2018-02-12"
 - **持久性高，弹性大**
    - 在发生维护事件和意外故障期间保护数据完整性并保持可用性，而无需创建和管理操作系统级别的独立磁盘冗余阵列 (RAID)
 - **静态数据加密**（[在精选数据中心内可用](new-ibm-block-and-file-storage-location-and-features.html)。）
-   - 免费对静态数据进行提供者管理的加密
+   - 免费对静态数据进行提供者管理的加密。
 - **所有支持闪存的存储器**（[在精选数据中心内可用](new-ibm-block-and-file-storage-location-and-features.html)。）
    - 用于在 2 IOPS/GB 或更高级别供应的类型为“耐久性”或“性能”的卷的所有闪存存储器
 - **快照**（在[精选数据中心](new-ibm-block-and-file-storage-location-and-features.html)内供应的类型为“耐久性”或“性能”时。）
@@ -51,11 +51,11 @@ lastupdated: "2018-02-12"
  <tbody>
   <tr>
    <th>每月价格</th>
-   <td>0.10 美元/GB + 0.07 美元/IOP</td>
+   <td>0.10 美元/GB + 0.07 美元/IOPS</td>
   </tr>
   <tr>
    <th>每小时价格</th>
-   <td>0.0001 美元/GB + 0.0002 美元/IOP</td>
+   <td>0.0001 美元/GB + 0.0002 美元/IOPS</td>
   </tr>
   </tbody>
 </table>
@@ -199,7 +199,7 @@ lastupdated: "2018-02-12"
 
 “耐久性”和“性能”的 IOPS 基于 16 KB 的块大小，具有 50/50 读/写随机工作负载。一个约 16 KB 的块相当于对卷执行一次写操作。
 
-应用程序使用的块大小将直接影响存储器性能。如果应用程序使用的块大小小于 16 KB，那么在达到吞吐量限制之前，会先达到 IOP 限制。相反，如果应用程序使用的块大小大于 16 KB，那么在达到 IOP 限制之前，会先达到吞吐量限制。
+应用程序使用的块大小将直接影响存储器性能。如果应用程序使用的块大小小于 16 KB，那么在达到吞吐量限制之前，会先达到 IOPS 限制。相反，如果应用程序使用的块大小大于 16 KB，那么在达到 IOPS 限制之前，会先达到吞吐量限制。
 
 更改块大小将影响性能，如下所示：
 
@@ -261,4 +261,4 @@ lastupdated: "2018-02-12"
 
 要实现最大 IOPS，需要落实足够的网络资源。其他注意事项包括在存储器外部使用的专用网络、主机端以及特定于应用程序的调整（IP 堆栈、队列深度等）。
 
-{{site.data.keyword.BluSoftlayer_full}} 环境中同时支持 NFS V3 和 NFS V4.1。但是，建议使用 NFS V3。NFS V4.1 是有状态协议（不像 NFS V3 那样是无状态协议），所以在网络事件期间可能会发生协议问题。NFS V4.1 必须停顿运行，然后执行锁定回收。在相对繁忙的 NFS 文件服务器上，延长的等待时间可能会导致中断。缺少 NFS V4.1 多路径/中继也会延长 NFS 操作恢复时间。
+{{site.data.keyword.BluSoftlayer_full}} 环境中同时支持 NFS V3 和 NFS V4.1。但是，建议使用 NFS V3。NFS V4.1 是有状态协议（不像 NFS V3 那样是无状态协议），所以在网络事件期间可能会发生协议问题。NFS V4.1 必须停顿所有操作，然后执行锁定回收。在相对繁忙的 NFS 文件服务器上，延长的等待时间可能会导致中断。缺少 NFS V4.1 多路径/中继也会延长 NFS 操作恢复时间。

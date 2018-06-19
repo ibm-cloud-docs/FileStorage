@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2017
-lastupdated: "2017-12-14"
+  years: 2014, 2018
+lastupdated: "2018-05-11"
 
 ---
 {:new_window: target="_blank"}
@@ -10,9 +10,9 @@ lastupdated: "2017-12-14"
 
 # 可扩展的文件共享容量
 
-利用此新功能，当前 {{site.data.keyword.filestorage_full}} 用户能够将其现有 {{site.data.keyword.filestorage_short}} 的大小动态扩展到最大 12 TB（以 GB 为增量），而无需创建复制项或手动将数据迁移到更大的卷。在调整大小时，不会发生针对存储器的任何中断或访问权缺乏问题。 
+利用此新功能，当前 {{site.data.keyword.filestorage_full}} 用户能够直接将其 {{site.data.keyword.filestorage_short}} 的大小扩展到最大 12 TB（以 GB 为增量），而无需创建复制项或手动将数据迁移到更大的卷。在调整大小时，不会发生针对存储器的任何中断或访问权缺乏问题。 
 
-对卷的记帐会自动更新，以将新价格的按比例差值添加到当前计费周期，然后在下一个计费周期中采用整个新金额记帐。
+对卷的记帐会自动更新，以将新价格的按比例差值添加到当前计费周期。然后，在下一个计费周期中采用整个新金额记帐。
 
 该功能仅在[精选数据中心](new-ibm-block-and-file-storage-location-and-features.html)内可用。 
 

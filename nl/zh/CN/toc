@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="FileStorage" audience="services" href=“/docs/infrastructure/FileStorage/index.html”}
+{: .toc subcollection="FileStorage" audience="services" href="/docs/infrastructure/FileStorage/index.html"}
 IBM Cloud 存储 - File Storage
 
     {: .navgroup id="learn"}
@@ -13,14 +13,14 @@ IBM Cloud 存储 - File Storage
     expandable_file_storage.md
     adjustable-iops.md
     {: .navgroup-end}
-    
+
     {: .navgroup id="howto"}
     {: .topicgroup}
     供应
         provisioning-file-storage.md
         ordering-snapshots.md
         managing-storage-limits.md
-        
+
     {: .topicgroup}
     配置
         accessing-file-storage-linux.md
@@ -32,7 +32,7 @@ IBM Cloud 存储 - File Storage
 
     {: .topicgroup}
     安全性
-        block-file-storage-encryption-rest.md    
+        block-file-storage-encryption-rest.md
         migrate-file-storage-encrypted-file-storage.md
 
     managing-file-storage.md
@@ -40,7 +40,7 @@ IBM Cloud 存储 - File Storage
     working-with-snapshots.md
     brocade-vrouter-vyatta-set-guide-vmware-environments-endurance-or-performance-storage.md
     {: .navgroup-end}
-               
+
     {: .navgroup id="help"}
     File-Storage-FAQ.md
     [Python API 客户机信息](https://github.com/softlayer/softlayer-python)

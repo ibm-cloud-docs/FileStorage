@@ -2,45 +2,46 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-02-14"
+lastupdated: "2018-05-24"
 
 ---
 {:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
 
 # VMware 的 {{site.data.keyword.filestorage_short}} 体系结构指南
 
-下面是在 vSphere 5.5 和 vSphere 6.0 环境中通过 {{site.data.keyword.BluSoftlayer_full}} 订购和配置 {{site.data.keyword.filestorage_full}} 的步骤。如果需要与 VMWare 主机建立 8 个以上的连接，那么最好使用 NFS {{site.data.keyword.filestorage_short}}。
+以下步骤可帮助您在 vSphere 5.5 和 vSphere 6.0 环境中通过 {{site.data.keyword.BluSoftlayer_full}} 订购和配置 {{site.data.keyword.filestorage_full}}。如果需要与 VMWare 主机建立 8 个以上的连接，那么最好使用 NFS {{site.data.keyword.filestorage_short}}。
 
 ## {{site.data.keyword.filestorage_short}} 概述
 
 {{site.data.keyword.filestorage_short}} 旨在支持需要可预测性能级别的高 I/O 应用程序。通过为各个卷分配协议级别每秒输入/输出操作数 (IOPS)，可实现可预测的性能。
 
-{{site.data.keyword.filestorage_short}} 产品可通过 NFS 连接进行访问和安装。在 VMware 部署中，单个卷最多可以安装到 64 个 ESXi 主机作为共享存储器，也可以安装多个卷来创建存储器集群，以利用“vSphere 存储器动态资源安排”。
+{{site.data.keyword.filestorage_short}} 产品可通过 NFS 连接进行访问和安装。在 VMware 部署中，单个卷最多可以安装到 64 个 ESXi 主机作为共享存储器，也可以安装多个卷来创建存储器集群，以使用“vSphere 存储器分布式资源安排”(DRS)。
 
 耐久性和性能 {{site.data.keyword.filestorage_short}} 的定价及配置选项根据保留的空间和所提供 IOPS 的组合收费。
 
 ### 1. {{site.data.keyword.filestorage_short}} 注意事项
 
-订购 {{site.data.keyword.filestorage_short}} 时，您需要记住以下信息和注意事项：
+订购 {{site.data.keyword.filestorage_short}} 时，请考虑以下信息：
 
-- 一旦供应 {{site.data.keyword.filestorage_short}} 卷后，即无法更改存储器大小、IOPS 和操作系统。对空间量、IOPS 数字或操作系统进行任何更改都需要供应新卷。存储在先前卷中的任何数据都必须使用 VMware Storage vMotion 迁移到新卷。
-- 确定大小时，请考虑所需的工作负载和吞吐量的大小。对于“耐久性”服务，大小很重要，该服务的性能扩展与容量 (IOPS/GB) 呈线性关系，而“性能”服务则不同，允许管理员独立地选择容量和性能。对于“性能”服务，吞吐量需求很重要。<br/> **注**：吞吐量计算公式是 IOPS x 16 KB。IOPS 基于16 KB 的块大小进行度量，其中读/写操作构成比例为 50/50。<br/> **注**：增大块大小将提高吞吐量，但会降低 IOPS。例如，如果使块大小翻倍为 32 KB 的块，将保持最大吞吐量，但 IOPS 会降低一半。
-- NFS 利用其他许多文件控制操作，例如 lookup、getattr 和 readdir 等。这些操作可以与读/写操作一样计为 IOPS，并根据操作类型和 NFS 版本而变化。
-- 从技术角度而言，可以将多个卷以条带化方式组合在一起，以实现更高的 IOPS 计数和更大吞吐量；但是，VMware 建议每个卷使用单个虚拟机文件系统 (VMFS) 数据存储，以避免性能下降。
+- 确定大小时，请考虑所需的工作负载和吞吐量的大小。对于“耐久性”服务，大小很重要，该服务的性能扩展与容量 (IOPS/GB) 呈线性关系。“性能”服务则不同，它允许管理员独立地选择容量和性能。对于“性能”服务，吞吐量需求很重要。<br/> **注**：吞吐量计算公式是 IOPS x 16 KB。IOPS 基于 16 KB 的块大小进行度量，其中读/写操作构成比例为 50/50。<br/> **注**：增大块大小将提高吞吐量，但会降低 IOPS。例如，如果使块大小翻倍为 32 KB 的块，将保持最大吞吐量，但 IOPS 会降低一半。
+- NFS 利用许多额外的文件控制操作，例如 `lookup`、`getattr` 和 `readdir` 等。这些操作可以与读/写操作一样计为 IOPS，并根据操作类型和 NFS 版本而变化。
+- 从技术角度而言，可以将多个卷以条带化方式组合在一起，以实现更高的 IOPS 和更大吞吐量。但是，VMware 建议每个卷使用单个虚拟机文件系统 (VMFS) 数据存储，以避免性能下降。
 - {{site.data.keyword.filestorage_short}} 卷将公开给已授权的设备、子网或 IP 地址。
 - 快照和复制服务仅在耐久性 {{site.data.keyword.filestorage_short}} 卷上本机可用。性能 {{site.data.keyword.filestorage_short}} 没有这些功能。
 - 为了避免在路径故障转移期间断开存储器连接，{{site.data.keyword.IBM}} 建议安装 VMWare Tools，以用于设置适当的超时值。无需更改此值，缺省设置就足以确保 VMWare 主机不会失去连接。
-- {{site.data.keyword.BluSoftlayer_full}} 环境中同时支持 NFS V3 和 NFS V4.1。但是，{{site.data.keyword.IBM}} 建议使用 NFS V3。因为 NFS V4.1 是有状态协议（不像 NFS V3 那样是无状态协议），所以在网络事件期间可能会发生协议问题。NFS V4.1 必须停顿运行，然后执行锁定回收。执行这些操作时，可能会发生中断。
+- {{site.data.keyword.BluSoftlayer_full}} 环境中同时支持 NFS V3 和 NFS V4.1。但是，{{site.data.keyword.IBM}} 建议您使用 NFS V3。因为 NFS V4.1 是有状态协议（不像 NFS V3 那样是无状态协议），所以在网络事件期间可能会发生协议问题。NFS V4.1 必须停顿所有操作，然后执行锁定回收。这些操作正在执行时，可能会发生中断。
 
-####  NFS 协议与 VMware 功能支持矩阵。
+#### NFS 协议与 VMware 功能支持矩阵。
 <table>
- <tbody>
+  <caption>表 1 显示了适用于两个不同版本 NFS 的 vSphere 功能</caption>
+ <thead>
   <tr>
    <th>vSphere 功能</th>
    <th>NFS V3</th>
    <th>NFS V4.1</th>
   </tr>
+ </thead>
+ <tbody>
   <tr>
    <td>vMotion 和 Storage vMotion</td>
    <td>是</td>
@@ -96,42 +97,41 @@ lastupdated: "2018-02-14"
 
 ### 2. 耐久性 {{site.data.keyword.filestorage_short}} 快照
 
-通过耐久性 {{site.data.keyword.filestorage_short}}，管理员可以为每个存储卷设置快照安排，以自动创建和删除快照副本。管理员还可以创建其他快照安排（每小时、每天和每周）来自动生成快照，也可以为业务连续性和灾难恢复 (BCDR) 方案手动创建特别快照。有关保留的快照和使用的空间的自动警报通过 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} 传递给卷所有者。
+通过耐久性 {{site.data.keyword.filestorage_short}}，管理员可以为每个存储卷设置快照安排，以自动创建和删除快照副本。管理员还可以创建额外的快照安排（每小时、每天和每周）来自动生成快照，也可以为业务连续性和灾难恢复 (BCDR) 方案手动创建特别快照。有关保留的快照和使用的空间的自动警报通过 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} 传递给卷所有者。
 
-请注意，需要“快照空间”才能使用快照。在初始卷订购期间或初始供应后，可以通过在**卷详细信息**页面中，单击“操作”下拉按钮并选择**添加快照空间**来获取空间。
+请注意，需要“快照空间”才能使用快照。在初始卷订购期间或初始供应后，可以通过在**卷详细信息**页面中，单击**操作**并选择**添加快照空间**来获取空间。
 
-值得注意的是，VMware 环境并不知道快照。耐久性 {{site.data.keyword.filestorage_short}} 快照功能不能与 VMware 快照相混淆。使用耐久性 {{site.data.keyword.filestorage_short}} 快照功能的任何恢复都必须在 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} 中进行处理。还原耐久性 {{site.data.keyword.filestorage_short}} 卷需要关闭位于耐久性 {{site.data.keyword.filestorage_short}} 上的所有 VM 的电源，并暂时从 ESXi 主机卸装该卷，以避免执行该过程期间发生任何数据损坏。
+值得注意的是，VMware 环境并不知道快照。耐久性 {{site.data.keyword.filestorage_short}} 快照功能不能与 VMware 快照相混淆。使用耐久性 {{site.data.keyword.filestorage_short}} 快照功能的任何恢复都必须在 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} 中进行处理。 
+
+复原耐久性 {{site.data.keyword.filestorage_short}} 卷需要关闭位于耐久性 {{site.data.keyword.filestorage_short}} 上的所有 VM 的电源。需要暂时从 ESXi 主机卸装该卷，以避免执行该过程期间发生任何数据损坏。
 
 有关如何配置快照的更多详细信息，请参阅[快照](snapshots.html)文章。
 
 
 ### 3. 文件存储复制
 
-复制使用其中一个快照安排自动将快照复制到远程数据中心内的目标卷。万一发生数据损坏或灾难性事件，可以在远程站点中恢复副本。
+复制使用其中一个快照安排自动将快照复制到远程数据中心内的目标卷。如果发生灾难性事件或者发生数据损坏，那么可以在远程站点中恢复副本。
 
 
-通过复制，能够实现
+使用副本，您可以：
 
 - 通过故障转移到目标卷，快速从站点故障和其他灾难进行恢复
 - 故障转移到 DR 副本中的特定时间点
 
 必须创建快照安排后，才能进行复制。进行故障转移时，将“翻转开关”从主数据中心的存储卷切换到远程数据中心的目标卷。例如，主数据中心是伦敦，辅助数据中心是阿姆斯特丹。万一发生故障事件，将故障转移到阿姆斯特丹 - 从阿姆斯特丹的 vSphere 集群实例连接到现在的主卷。
 
+修复伦敦的卷之后，会生成阿姆斯特丹卷的快照。然后，可以故障恢复到伦敦，并从伦敦的计算实例连接到原先的主卷。 
 
-修复伦敦的卷之后，会生成阿姆斯特丹卷的快照，以便回退到伦敦，并从伦敦的计算实例连接到原先的主卷。在该卷故障恢复到主数据中心之前，需要停止远程站点上对该卷的使用。这将生成任何新信息或更改的信息的快照，并复制到主数据中心，然后才能将该卷重新安装到生产站点 ESXi 主机上。
-
+在该卷故障恢复到主数据中心之前，需要停止远程站点上对该卷的使用。这将生成任何新信息或更改的信息的快照，并复制到主数据中心，然后才能将该卷重新安装到生产站点 ESXi 主机上。
 
 有关如何配置复制的更多详细信息，请参阅[复制](replication.html)信息页面。
 
-**注**：无效数据（不管是损坏数据、被黑客入侵数据还是被感染数据）会根据快照安排和快照保留时间进行复制。使用最小的复制时段可提供更好的恢复点目标。这还可能会缩短对无效数据的复制做出反应的时间。
-
-
-
+**注**：无效数据（不管是损坏数据、被黑客入侵数据还是被感染数据）会根据快照安排和快照保留时间进行复制。使用最小的复制时段可提供更好的恢复点目标。不过，这还可能会缩短对无效数据的复制做出反应的时间。
 
 
 ## 订购 {{site.data.keyword.filestorage_short}}
 
-您可以为 VMware ESXi 5 环境订购和配置 {{site.data.keyword.filestorage_short}}。将以下信息与“高级单站点 VMware 参考体系结构”结合使用，以在 VMware 环境中设置其中一个存储器选项。
+您可以为 VMware ESXi 5 环境订购和配置 {{site.data.keyword.filestorage_short}}。将以下信息与“高级单站点 VMware 参考体系结构”结合使用，在 VMware 环境中设置其中一个存储器选项。
 
 
 可以通过 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} 中的**存储** > **{{site.data.keyword.filestorage_short}}** 访问“{{site.data.keyword.filestorage_short}}”页面来订购 {{site.data.keyword.filestorage_short}}。
@@ -141,12 +141,12 @@ lastupdated: "2018-02-14"
 
 使用以下步骤来订购 {{site.data.keyword.filestorage_short}}：
 1. 单击 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} 主页上的**存储** > **{{site.data.keyword.filestorage_short}}**。
-2. 单击 **{{site.data.keyword.filestorage_short}}** 页面上的**订购 {{site.data.keyword.filestorage_short}}** 链接。
-3. 从“选择存储类型”下拉列表中，选择**耐久性**/**性能**。
-4. 选择位置。具有已改进功能的数据中心用 `*` 表示。确保将新存储器添加到先前订购的 ESXi 主机所在的位置。
+2. 单击 **{{site.data.keyword.filestorage_short}}** 页面上的**订购 {{site.data.keyword.filestorage_short}}**。
+3. 从**选择存储类型**列表中，选择**耐久性**/**性能**。
+4. 选择位置。具有已改进功能的数据中心会标有星号。确保将新存储器添加到先前订购的 ESXi 主机所在的位置。
 5. 选择“计费方式”。提供了按月和按小时计费选项。
 6. 选择所需的存储空间量（以 GB 为单位）。对于 TB，1 TB 等于 1,000 GB，12 TB 等于 12,000 GB。
-7. 输入所需的 IOPS 量（以 100 为区间），或者选择 IOPS 层。
+7. 输入 IOPS 量（以 100 为区间），或者选择 IOPS 层。
 8. 指定“快照空间”的大小。
 9. 单击**继续**。
 10. 如果您有促销代码，请输入促销代码，然后单击**重新计算**。
@@ -201,11 +201,12 @@ lastupdated: "2018-02-14"
    - 对于 Unix：ping -s 8972 a.b.c.d
    其中，命令中的 a.b.c.d 是相邻 {{site.data.keyword.BluVirtServers_short}} 接口：
    输出类似于以下内容：
-   ```ping a.b.c.d (a.b.c.d) 8972(9000) bytes of data.
-   8980 bytes from a.b.c.d: icmp_seq=1 ttl=128 time=3.36 ms
+   ```
+   ping a.b.c.d (a.b.c.d) 8972(9000) bytes of data.
+      8980 bytes from a.b.c.d: icmp_seq=1 ttl=128 time=3.36 ms
    ```
 
-有关 VMware 和巨型帧的更多信息，请参阅[此处](https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=1003712){:new_window}。
+有关 VMware 和巨型帧的更多信息，请参阅[此处](https://kb.vmware.com/s/article/1003712){:new_window}。
 
 
 ### 3. 向虚拟交换机添加上行链路适配器
@@ -220,8 +221,9 @@ lastupdated: "2018-02-14"
    ![向交换机添加物理适配器](/images/2_3.png)
 8. 单击**下一步**，再单击**完成**。
 9. 浏览回**虚拟交换机**选项卡，然后选择**虚拟交换机**标题下面靠上的**编辑设置**图标（“画笔”图标）。
-10. 选择左侧的 **vSwitch 成组和故障转移**条目。
-验证**负载均衡**选项是否设置为**基于源虚拟端口进行路由**，然后单击**确定**。
+10. 选择左侧的 vSwitch **成组和故障转移**条目。
+
+11. 验证**负载均衡**选项是否设置为**基于源虚拟端口进行路由**，然后单击**确定**。
 
 
 ### 4. 配置 ESXi 静态路由（可选）
@@ -237,7 +239,7 @@ lastupdated: "2018-02-14"
 2. 请注意，在 ESXi 5.0 和更低版本上，静态路由在重新引导后不会持久存储。要确保添加的任何静态路由都是持久的，需要将这些命令添加到每个主机上 /etc/rc.local.d/ 目录下的 local.sh 文件中。为此，请使用可视化编辑器来打开 local.sh 文件，并将上面要执行的命令添加到行 exit 0 之上。
    - 记下 IP 地址，因为此地址可用于在下一步中安装卷。
    - 对于计划安装到 ESXi 主机的每个 NFS 卷，都需要完成此过程。
-   - 下面是 VMware 知识库文章的链接：[Configuring static routes for VMkernel ports on an ESXi host](https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=2001426){:new_window}。
+   - 下面是 VMware 知识库文章的链接：[Configuring static routes for VMkernel ports on an ESXi host](https://kb.vmware.com/s/article/2001426){:new_window}。
 
 
 ##  在 ESXi 主机上安装 {{site.data.keyword.filestorage_short}} 卷
@@ -262,7 +264,7 @@ lastupdated: "2018-02-14"
     10.2.125.80 is the IP address associated with the FQDN
     ```
 
-## 启用 ESXi Storage I/O Control 设置（可选）
+## 启用 ESXi Storage I/O Control（可选）
 
 Storage I/O Control (SIOC) 是可供利用 Enterprise Plus 许可证的客户使用的功能。在环境中启用 SIOC 后，此功能会更改单个 VM 的设备队列长度。对设备队列长度的更改会使所有 VM 的存储阵列队列的份额和调速减少到与存储器队列的相同。仅当资源受到约束且存储器 I/O 等待时间超过定义的阈值时，SIOC 才会起作用。
 
@@ -314,7 +316,7 @@ Storage I/O Control (SIOC) 是可供利用 Enterprise Plus 许可证的客户使
 
 下面是设置 ESXi 5.x 主机以使用 NFS 存储器时所需的其他一些设置。
 
-|参数| 设置为...|
+|参数|设置为...|
 |----------|------------|
 |Net.TcpipHeapSize|	32|
 |Net.TcpipHeapMax|	对于 vSphere 5.0/5.1，设置为 128<br/> 对于 vSphere 5.5 或更高版本，设置为 512|
@@ -367,7 +369,7 @@ Storage I/O Control (SIOC) 是可供利用 Enterprise Plus 许可证的客户使
 巨型帧是一种以太网帧，其有效内容大于标准的最大传输单元 (MTU) 1,500 字节。巨型帧在至少支持 1 Gbps 的局域网上使用，并且最大可达 9000 字节。
 
 
-需要通过“源设备”<->“交换机”<->“路由器”<->“交换机”<->“目标设备”，将巨型帧配置为在整个网络路径上相同。如果未将整个链设置为相同值，那么将缺省为链上的最低设置。目前，SoftLayer 将其网络设备设置为 9000。所有客户设备都需要设置为相同值。
+需要通过“源设备”<->“交换机”<->“路由器”<->“交换机”<->“目标设备”，将巨型帧配置为在整个网络路径上相同。如果未将整个链设置为相同值，那么将缺省为链上的最低设置。目前，{{site.data.keyword.BluSoftlayer_full}} 将其网络设备设置为 9,000。所有客户设备都需要设置为相同值。
 
 ### Windows
 

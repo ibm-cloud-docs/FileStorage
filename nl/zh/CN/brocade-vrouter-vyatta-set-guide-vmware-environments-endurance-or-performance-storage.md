@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2017
-lastupdated: "2018-02-14"
+  years: 2014, 2018
+lastupdated: "2018-05-11"
 
 ---
 {:new_window: target="_blank"}
@@ -10,7 +10,7 @@ lastupdated: "2018-02-14"
 
 # Brocade vRouter (Vyatta) 设置指南 - 针对具有 {{site.data.keyword.filestorage_short}} 的 VMware 环境
 
-可以在使用任一种 {{site.data.keyword.filestorage_full}} 的 VMware 环境中配置 Brocade vRouter (Vyatta) 设备，以实现高可用性 (HA) 配置。将以下信息与[高级单站点 VMware 参考体系结构](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}结合使用，在 VMware 环境中设置其中一个存储器选项。
+可以在使用 {{site.data.keyword.filestorage_full}} 的 VMware 环境中配置 Brocade vRouter (Vyatta) 设备，以实现高可用性 (HA) 配置。将以下信息与[高级单站点 VMware 参考体系结构](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}结合使用，在 VMware 环境中设置其中一个存储器选项。
 
 ## Brocade vRouter (Vyatta) 概述
 
@@ -36,7 +36,7 @@ Brocade vRouter (Vyatta) 网关将充当环境的网关和路由器，并包含�
 要配置 Brocade vRouter (Vyatta)，请执行以下操作：
 
 1. 使用在“设备详细信息”屏幕上找到的 root 用户密码通过 SSH 登录到设备。
-2. 输入“配置”以进入配置方式，然后执行后续部分中的步骤。
+2. 输入 `configure` 以进入配置方式，然后执行后续部分中的步骤。
 
 ### 设置接口
 

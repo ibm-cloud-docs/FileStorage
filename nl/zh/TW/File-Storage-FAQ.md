@@ -2,21 +2,20 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-04-24"
+lastupdated: "2018-05-24"
 
 ---
 {:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
 
 # {{site.data.keyword.filestorage_short}} - 常見問題集
 
 ## 如何測量 IOPS？
 
-IOPS 的測量基礎是具有隨機 50% 讀取及 50% 寫入之 16 KB 區塊的負載設定檔。與此設定檔不同的工作負載可能會經歷效能降低。
+IOPS 的測量基礎是具有隨機百分之 50 讀取及百分之 50 寫入之 16 KB 區塊的負載設定檔。與此設定檔不同的工作負載可能會經歷效能降低。
 
 ## 如果我在測量效能時使用較小的區塊大小，會發生什麼情況？
 
-使用較小的區塊大小時，仍然可以取得最大 IOPS，不過，傳輸量會降低。例如，具有 6000 IOPS 的磁區會有下列各種區塊大小的傳輸量：
+即使您使用較小的區塊大小，也可以取得 IOPS 的最大數目。不過，傳輸量將會降低。例如，具有 6000 IOPS 的磁區會有下列各種區塊大小的傳輸量：
 
 - 16 KB * 6000 IOPS == ~93.75 MB/秒
 - 8 KB * 6000 IOPS == ~46.88 MB/秒
@@ -27,17 +26,19 @@ IOPS 的測量基礎是具有隨機 50% 讀取及 50% 寫入之 16 KB 區塊的�
 
 不需要預先暖機。佈建磁區時，會立即觀察到指定的傳輸量。
 
-## 如何分辨哪些 {{site.data.keyword.filestorage_short}} LUN/磁區已加密？
+## 如何分辨哪些 {{site.data.keyword.filestorage_short}} 磁區已加密？
 
-在客戶入口網站中檢視 {{site.data.keyword.filestorage_short}} 清單時，您會在已加密的 LUN/磁區名稱右側看到一個鎖定圖示。
+請查看客戶入口網站中的 {{site.data.keyword.filestorage_short}} 清單。您會看到已加密磁區的 LUN/磁區名稱右側有一個鎖定圖示。
 
-## 如果我在已升級來進行加密的資料中心內，已佈建未加密的 {{site.data.keyword.filestorage_short}}，則是否可以加密 {{site.data.keyword.filestorage_short}}？
+## 如果我在已升級進行加密的資料中心內購買未加密的 {{site.data.keyword.filestorage_short}}，則是否可以加密我的 {{site.data.keyword.filestorage_short}}？
 
-無法加密在資料中心升級之前佈建的 {{site.data.keyword.filestorage_short}}。會自動加密在已升級資料中心內佈建的新 {{site.data.keyword.filestorage_short}}；沒有任何加密設定可供選擇，它是自動的。建立新的「檔案」磁區，然後將資料複製到新的加密磁區或具有主機型移轉的磁區，即可將已升級資料中心內未加密儲存空間上的資料加密。如需如何執行移轉的指示，請參閱[本文](/docs/infrastructure/FileStorage/migrate-file-storage-encrypted-file-storage.html)。
+在資料中心升級之前所佈建的 {{site.data.keyword.filestorage_short}} 無法加密。在已升級的資料中心內佈建的新 {{site.data.keyword.filestorage_short}} 則會自動加密。由於是自動，因此沒有任何加密設定可供選擇。未加密儲存空間上的資料可以透過立建新磁區來加密，然後再透過主機型移轉將資料複製到新的已加密磁區。如需如何執行移轉的指示，請參閱[本文](/docs/infrastructure/FileStorage/migrate-file-storage-encrypted-file-storage.html)。
 
 ## 如何知道是否在已升級資料中心內佈建 {{site.data.keyword.filestorage_short}}？
 
-佈建 {{site.data.keyword.filestorage_short}} 時，將在訂單表格中以星號 (`*`) 表示所有已升級的資料中心，並指出您即將會佈建具有加密的儲存空間。佈建儲存空間之後，您會在儲存空間清單中看到一個圖示，顯示該磁區或磁區已加密。所有加密磁區及磁區都只會佈建在已升級資料中心內。您可以在[這裡](/docs//infrastructure/BlockStorage/new-ibm-block-and-file-storage-location-and-features.html)找到完整的已升級資料中心及可用特性清單。
+在 {{site.data.keyword.filestorage_short}} 訂單表格中，所有已升級的資料中心都會註記星號 (`*`)。在訂購程序期間，會提供您指示，表示您正在佈建加密的儲存空間。儲存空間完成佈建後，您會看到儲存空間清單中有一個圖示，表示該磁區已加密。 
+
+所有加密磁區及檔案共用都只會佈建在已升級資料中心內。您可以在[這裡](/docs//infrastructure/BlockStorage/new-ibm-block-and-file-storage-location-and-features.html)找到完整的已升級資料中心及可用特性清單。
 
 ## 為什麼可以在某些資料中心內佈建具有「耐久性 10 IOPS」層級的 {{site.data.keyword.filestorage_short}}，但不能在其他資料中心內進行？
 
@@ -45,59 +46,61 @@ IOPS 的測量基礎是具有隨機 50% 讀取及 50% 寫入之 16 KB 區塊的�
 
 ## 如何找到 {{site.data.keyword.filestorage_short}} 的正確裝載點？
 
-這些資料中心內佈建的所有加密 {{site.data.keyword.filestorage_short}} 磁區都具有與未加密磁區不同的裝載點。為了確保加密及未加密 {{site.data.keyword.filestorage_short}} 磁區都使用正確的裝載點，您可以在使用者介面的**磁區詳細資料**頁面中檢視裝載點資訊，並且透過 API 呼叫來存取正確的裝載點：`SoftLayer_Network_Storage::getNetworkMountAddress()`。
+加強型資料中心內佈建的所有加密 {{site.data.keyword.filestorage_short}} 磁區都具有與未加密磁區不同的裝載點。為確保您使用正確的裝載點，請檢視使用者介面中**磁區詳細資料**頁面上的裝載點資訊。您也可以透過 API 呼叫來存取正確的裝載點：`SoftLayer_Network_Storage::getNetworkMountAddress()`。
 
 ## 每個檔案磁區大小容許多少個檔案共用？每個磁區大小容許的檔案共用上限為何？
-以下是根據磁區大小容許的 Inode 或檔案共用上限：
 
 <table>
-        <tbody>
-          <tr>
-            <th>磁區大小</th>
-            <th>Inode/檔案</th>
-          </tr>
-          <tr>
-            <td>20 GB </td>
-            <td>622,484</td>
-          </tr>
-          <tr>
-            <td>40 GB </td>
-            <td>1,245,084</td>
-          </tr>          
-          <tr>
-            <td>80 GB</td>
-            <td>2,490,263</td>
-          </tr>          
-          <tr>
-            <td>100GB</td>
-            <td>3,112,863</td>
-          </tr>          
-          <tr>
-            <td>250 GB</td>
-            <td>7,782,300</td>
-          </tr>          
-          <tr>
-            <td>500 GB</td>
-            <td>15,564,695</td>
-          </tr>
-          <tr>
-            <td>1 TB+</td>
-            <td>31,876,593</td>
-          </tr>
-        </tbody>
+  <caption>表 1 顯示根據磁區大小而容許的 Inode 數目上限。磁區大小在左側。Inode/檔案共用數目在右側。</caption>
+  <thead>
+    <tr>
+      <th>磁區大小</th>
+      <th>Inode/檔案共用</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>20 GB </td>
+      <td>622,484</td>
+    </tr>
+    <tr>
+      <td>40 GB </td>
+      <td>1,245,084</td>
+    </tr>          
+    <tr>
+      <td>80 GB</td>
+      <td>2,490,263</td>
+    </tr>          
+    <tr>
+      <td>100 GB</td>
+      <td>3,112,863</td>
+    </tr>          
+    <tr>
+      <td>250 GB</td>
+      <td>7,782,300</td>
+    </tr>          
+    <tr>
+      <td>500 GB</td>
+      <td>15,564,695</td>
+    </tr>
+    <tr>
+      <td>1 TB+</td>
+      <td>31,876,593</td>
+    </tr>
+   </tbody>
 </table>
 
 ## 可以佈建多少個磁區？
 
-依預設，您可以佈建總計 250 個區塊及檔案儲存空間磁區。請與業務代表聯絡，以增加磁區。
+依預設，您可以佈建總計 250 個區塊及檔案儲存空間磁區。若要增加限制，請與業務代表聯絡。
 
 ## 有多少實例可以共用已佈建的 {{site.data.keyword.filestorage_short}} 磁區？
 
-每個檔案磁區的預設授權數目限制是 64。請與業務代表聯絡，以提高限制。
+每個檔案磁區的預設授權數目限制是 64。若要增加此限制，請與業務代表聯絡。
 
-## 佈建「效能」或「耐久性」{{site.data.keyword.filestorage_short}} 時，是依實例還是依磁區施行已配置的 IOPS？
+## 佈建「效能」或「耐久性」{{site.data.keyword.filestorage_short}} 時，是依實例還是依磁區執行已配置的 IOPS？
 
-IOPS 是在磁區層次上施行。換句話說，連接至具有 6000 IOPS 之磁區的兩台主機會共用該 6000 IOPS。
+IOPS 是在磁區層次上執行。換句話說，連接至具有 6000 IOPS 之磁區的兩台主機會共用該 6000 IOPS。
 
 ## 如果使用速度更快的乙太網路連線，是否可以達到更高的傳輸量？
 
@@ -113,9 +116,8 @@ IOPS 是在磁區層次上施行。換句話說，連接至具有 6000 IOPS 之�
 
 ## 刪除「{{site.data.keyword.filestorage_short}} 磁區」時，資料會發生什麼情況？
 
-刪除儲存空間時，會移除對於該磁區上之資料的所有指標，因此資料會變成完全無法存取。如果將實體儲存空間重新佈建給另一個帳戶，則會指派一組新的指標。新帳戶無法存取已在實體儲存空間上的任何資料，這組新指標全都會顯示 0。將新資料寫入至磁區/LUN 時，會改寫任何仍存在且無法存取的資料。 
+刪除儲存空間時，會移除對於該磁區上之資料的所有指標，因此資料會變成完全無法存取。如果將實體儲存空間重新佈建給另一個帳戶，則會指派一組新的指標。新帳戶無法存取已在實體儲存空間上的任何資料，這組新指標全都會顯示 0。將新資料寫入至磁區/LUN 時，會改寫任何仍存在且無法存取的資料。
 
 ## 從雲端資料中心解除任務的磁碟機發生什麼事？
 
 磁碟機解除任務時，IBM 會先破壞它們再進行處理，因此它們無法再使用。已寫入該磁碟機的任何資料都會變成無法存取。
-
