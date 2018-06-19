@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-02-12"
+lastupdated: "2018-05-14"
 
 ---
 {:new_window: target="_blank"}
@@ -12,7 +12,7 @@ lastupdated: "2018-02-12"
 
 {{site.data.keyword.filestorage_full}} es {{site.data.keyword.filestorage_short}} adjunto en red, basado en NFS, flexible, rápido y persistente. En este entorno de almacenamiento adjunto de red (NAS), tiene el control total sobre las funciones y el rendimiento de los recursos compartidos de archivos. Los recursos compartidos de {{site.data.keyword.filestorage_short}} se pueden conectar a hasta 64 dispositivos autorizados sobre conexiones TCP/IP direccionadas para aumentar la capacidad de recuperación.
 
-{{site.data.keyword.filestorage_short}} aporta los mejores niveles de durabilidad y disponibilidad con un conjunto de características único, utilizando estándares del sector y las mejores prácticas, y se ha diseñado para proteger la integridad de los datos y mantener la disponibilidad en sucesos de mantenimiento y fallos imprevistos, así como proporcionar una línea base de rendimiento coherente.
+{{site.data.keyword.filestorage_short}} aporta niveles óptimos de durabilidad y disponibilidad con un excelente conjunto de características. {{site.data.keyword.filestorage_short}} se ha diseñado para proteger la integridad de los datos y mantener la disponibilidad en sucesos de mantenimiento y fallos imprevistos. {{site.data.keyword.filestorage_short}} mantiene la disponibilidad en casos de mantenimiento y fallos imprevistos, así como proporcionar una línea base de rendimiento coherente.
 
 Aproveche las siguientes características básicas de {{site.data.keyword.filestorage_short}}:
 
@@ -41,9 +41,9 @@ Aproveche las siguientes características básicas de {{site.data.keyword.filest
 
 Puede elegir entre facturación por horas o mensual para un volumen de archivos. El tipo de facturación seleccionado para un LUN será aplicable a su espacio de instantáneas y réplicas. Por ejemplo, si suministra un LUN con facturación por horas, todas las tasas de instantáneas o réplicas se facturarán por horas. Si suministra un LUN con facturación mensual, todas las tasas de instantáneas o réplicas se facturarán mensualmente. 
 
-Con la **facturación por horas**, el cálculo del número de horas que el volumen de archivos ha existido en la cuenta se realiza en el momento en que se suprime el volumen o al final del ciclo de facturación, lo que se produzca primero.  La facturación por horas es una buena opción para el almacenamiento que se utiliza unos pocos días o menos de un mes completo. La facturación por horas solo está disponible para el almacenamiento suministrado en [centros de datos seleccionados](new-ibm-block-and-file-storage-location-and-features.html). 
+Con la **facturación por horas**, el número de horas que el volumen de archivos ha existido en la cuenta se calcula en el momento en que se suprime el volumen o al final del ciclo de facturación, lo que se produzca primero. La facturación por horas es una buena opción para el almacenamiento que se utiliza unos pocos días o menos de un mes completo. La facturación por horas solo está disponible para el almacenamiento suministrado en [centros de datos seleccionados](new-ibm-block-and-file-storage-location-and-features.html). 
 
-Con la **facturación mensual**, el cálculo del precio se prorratea desde la fecha de creación hasta la finalización del ciclo de facturación y se factura al momento. No se reembolsará si un volumen de archivos se suprime antes de finalizar el ciclo de facturación.  La facturación mensual es una buena opción para el almacenamiento utilizado en cargas de trabajo de producción que utilizan datos que tienen que almacenarse, y por tanto acceder a ellos, durante largo periodos de tiempo (un mes o más).
+Con la **facturación mensual**, el cálculo del precio se prorratea desde la fecha de creación hasta la finalización del ciclo de facturación y se factura al momento. No se reembolsará si un volumen de archivos se suprime antes de finalizar el ciclo de facturación. La facturación mensual es una buena opción para el almacenamiento utilizado en cargas de trabajo de producción que utilizan datos que tienen que almacenarse, y por tanto acceder a ellos, durante largo periodos de tiempo (un mes o más).
 
  
 ### Rendimiento:
@@ -105,7 +105,7 @@ La resistencia está disponible en tres niveles de rendimiento de IOPS para dar 
 - **0,25 IOPS por GB** está diseñado para cargas de trabajo con intensidad baja de E/S. Estas cargas de trabajo se suelen caracterizar por tener un porcentaje elevado de datos inactivos en un momento determinado. Aplicaciones de ejemplo incluyen el almacenamiento de buzones o el uso compartido de archivos a nivel departamental.
 - **2 IOPS por GB** está diseñado para usos de finalidad más general. Entre las aplicaciones de ejemplo, se incluye el alojamiento de bases de datos pequeñas que respaldan aplicaciones web o imágenes de disco de máquinas virtuales para un hipervisor.
 - **4 IOPS por GB** está diseñado para cargas de trabajo de mayor intensidad. Estas cargas de trabajo se suelen caracterizar por tener un porcentaje alto de datos activos en un momento determinado. Entre las aplicaciones de ejemplo, se incluyen las bases de datos transaccionales y otras bases de datos que dependen del rendimiento.
-- **10 IOPS por GB** está diseñado para las cargas de trabajo más exigentes, como las creadas por bases de datos NoSQL, y el procesamiento de datos para Analytics.  Este nivel está disponible para almacenamiento suministrado de hasta 4 TB de tamaño en [centros de datos seleccionados](new-ibm-block-and-file-storage-location-and-features.html).
+- **10 IOPS por GB** está diseñado para las cargas de trabajo más exigentes, como las creadas por bases de datos NoSQL y el proceso de datos para Analytics.  Este nivel está disponible para almacenamiento suministrado de hasta 4 TB de tamaño en [centros de datos seleccionados](new-ibm-block-and-file-storage-location-and-features.html).
 
 Hay disponibles hasta 48.000 IOPS con el volumen de Resistencia de 12 TB.
 
@@ -199,7 +199,7 @@ Los IOPS, para Resistencia y Rendimiento, se miden en base a un tamaño de bloqu
 
 Los IOPS, para Resistencia y Rendimiento, se basan en un tamaño de bloque de 16 KB con una carga de trabajo aleatoria del 50% de lectura/escritura 50/50. Un bloque de ~16 KB es el equivalente a una escritura en el volumen.
 
-El tamaño de bloque utilizado por la aplicación afectará directamente al rendimiento.  Si el tamaño de bloque utilizado por la aplicación es inferior a 16 KB, el límite de IOPS se alcanzará antes que el límite de rendimiento.  Por el contrario, si el tamaño de bloque utilizado por la aplicación es superior a 16 KB, el límite de rendimiento se alcanzará antes que el límite de IOPS.
+El tamaño de bloque utilizado por la aplicación afectará directamente al rendimiento.  Si el tamaño de bloque utilizado por la aplicación es inferior a 16 KB, se alcanzará el límite de IOPS antes que el límite de rendimiento.  Por el contrario, si el tamaño de bloque utilizado por la aplicación es superior a 16 KB, se alcanzará el límite de rendimiento antes que el límite de IOPS.
 
 Cambiar el tamaño de bloque afectará al rendimiento de la siguiente manera:
 
@@ -261,4 +261,4 @@ Otro factor a tener en cuenta es el número de hosts que están utilizando el vo
 
 Para alcanzar el número máximo de IOPS, es necesario disponer de los recursos de red adecuados. Otros aspectos a tener en cuenta son el uso de la red privada fuera del almacenamiento y los ajustes del lado del host y específicos de la aplicación (pila IP, profundidades de colas, etc.).
 
-Tanto NFS v3 como NFS v4.1 están soportados en el entorno de {{site.data.keyword.BluSoftlayer_full}}. Sin embargo, recomendamos que se utilice NFS v3. NFS v4.1 es un protocolo con estado (no sin estado como NFSv3) y esto puede generar problemas de protocolo durante sucesos de red. NFS v4.1 debe desactivar temporalmente las operaciones y realizar la reclamación de bloqueo. En un servidor de archivos NFS relativamente ocupado, la latencia incrementada puede causar interrupciones. La falta de truncación/multivía de NFS v4.1 también puede alargar la recuperación de operaciones de NFS.
+Tanto NFS v3 como NFS v4.1 están soportados en el entorno de {{site.data.keyword.BluSoftlayer_full}}. Sin embargo, recomendamos que se utilice NFS v3. NFS v4.1 es un protocolo con estado (no sin estado como NFSv3) y esto puede generar problemas de protocolo durante sucesos de red. NFS v4.1 debe desactivar temporalmente todas las operaciones y realizar una reclamación de bloqueo. En un servidor de archivos NFS relativamente ocupado, la latencia incrementada puede causar interrupciones. La falta de truncación/multivía de NFS v4.1 también puede alargar la recuperación de operaciones de NFS.

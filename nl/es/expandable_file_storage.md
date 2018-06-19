@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2017
-lastupdated: "2017-12-14"
+  years: 2014, 2018
+lastupdated: "2018-05-11"
 
 ---
 {:new_window: target="_blank"}
@@ -10,15 +10,15 @@ lastupdated: "2017-12-14"
 
 # Capacidad de compartición de archivos ampliable
 
-Con esta nueva característica, nuestros usuarios de {{site.data.keyword.filestorage_full}} actuales podrán ampliar el tamaño de su {{site.data.keyword.filestorage_short}} existente en incrementos de GB hasta 12 TB sobre la marcha, sin necesidad de crear un duplicado o migrar datos manualmente a un volumen más grande.  No se producen paradas ni falta de acceso al almacenamiento mientras se realiza el redimensionamiento. 
+Con esta nueva característica, nuestros usuarios de {{site.data.keyword.filestorage_full}} actuales podrán ampliar el tamaño de su {{site.data.keyword.filestorage_short}} en incrementos de GB hasta 12 TB inmediatamente, sin necesidad de crear un duplicado o migrar datos manualmente a un volumen más grande. No se producen paradas ni falta de acceso al almacenamiento mientras se realiza el redimensionamiento. 
 
-La facturación del volumen se actualizará automáticamente para añadir la diferencia prorrateada del nuevo precio en el ciclo de facturación actual y posteriormente se facturará el nuevo importe total en el próximo ciclo de facturación.
+La facturación del volumen se actualizará automáticamente para añadir la diferencia prorrateada del nuevo precio en el ciclo de facturación actual. Entonces, el nuevo importe completo se factura en el siguiente ciclo de facturación.
 
 Esta característica solo está disponible en [centros de datos seleccionados](new-ibm-block-and-file-storage-location-and-features.html). 
 
 ## ¿Por qué utilizar los recursos compartidos de archivos ampliables?
 
-- **Gestión de costes** – Es consciente del potencial de crecimiento de sus datos, pero necesitara una cantidad de almacenamiento inferior para empezar. La capacidad de ampliar permite a nuestros clientes ahorrar en costes de almacenamiento al inicio e ir creciendo en función de sus necesidades.  
+- **Gestión de costes**: ya es consciente del potencial de crecimiento de sus datos, pero además necesita una menor cantidad de almacenamiento para empezar. La capacidad de ampliar permite a nuestros clientes ahorrar en costes de almacenamiento al inicio e ir creciendo en función de sus necesidades.  
 
 - **Necesidades de almacenamiento crecientes** - Los clientes con un rápido crecimiento, por encima de sus necesidades, necesitan un modo rápido y sencillo de incrementar su almacenamiento para gestionar este crecimiento.
 
@@ -34,11 +34,11 @@ Las limitaciones de tamaño actuales para {{site.data.keyword.filestorage_short}
 
 ## ¿Cómo puedo saber si mi almacenamiento suministrado es ampliable?
 
-El almacenamiento suministrado con funciones mejoradas siempre incluye cifrado en descanso.  Puede saber fácilmente si es aplicable a su almacenamiento si tiene un icono de bloqueo en la interfaz de usuario del portal. 
+El almacenamiento suministrado con funciones mejoradas siempre incluye cifrado en reposo. Puede saber fácilmente si es aplicable a su almacenamiento si tiene un icono de bloqueo en la interfaz de usuario del portal. 
 
 ## ¿Cómo puedo redimensionar mi almacenamiento?
 
-1. Desde el {{site.data.keyword.slportal}}, pulse **Almacenamiento** > **{{site.data.keyword.filestorage_short}}** O desde el catálogo de {{site.data.keyword.BluSoftlayer_full}}, pulse **Infraestructura** > **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**.
+1. En el {{site.data.keyword.slportal}}, pulse **Almacenamiento** > **{{site.data.keyword.filestorage_short}}** O desde el catálogo de {{site.data.keyword.BluSoftlayer_full}}, pulse **Infraestructura** > **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**.
 2. Seleccione el volumen de la lista y pulse **Acciones** > **Modificar volumen**
 3. Especifique el nuevo tamaño de almacenamiento en GB.
 4. Revise su selección y el nuevo precio.

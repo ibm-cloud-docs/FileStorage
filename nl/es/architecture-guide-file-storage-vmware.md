@@ -2,45 +2,46 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-02-14"
+lastupdated: "2018-05-24"
 
 ---
 {:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
 
 # Guía de arquitectura para {{site.data.keyword.filestorage_short}} con VMware
 
-A continuación se describen los pasos para realizar el pedido y configurar {{site.data.keyword.filestorage_full}} en un entorno de vSphere 5.5 y vSphere 6.0 en {{site.data.keyword.BluSoftlayer_full}}. Utilizar {{site.data.keyword.filestorage_short}} NFS es la práctica recomendada si necesita más de 8 conexiones a su host VMWare.
+Los siguientes pasos le ayudan a realizar el pedido y configurar {{site.data.keyword.filestorage_full}} en un entorno de vSphere 5.5 y vSphere 6.0 en {{site.data.keyword.BluSoftlayer_full}}. Si necesita más de ocho conexiones con el host VMWare, recomendamos que utilice {{site.data.keyword.filestorage_short}} NFS.
 
 ## Visión general de {{site.data.keyword.filestorage_short}}
 
 Nuestro {{site.data.keyword.filestorage_short}} está diseñado para dar soporte a aplicaciones de entrada/salida alta que requieren niveles de rendimiento previsibles. El rendimiento previsible se consigue mediante la asignación de operaciones de entrada/salida a nivel de protocolo por segundo (IOPS) para volúmenes individuales.
 
-El acceso y el montaje de la oferta de {{site.data.keyword.filestorage_short}} se realiza mediante una conexión NFS. En un despliegue de VMware, se puede montar un único volumen para hasta 64 hosts ESXi como almacenamiento compartido, o bien puede montar múltiples volúmenes para crear un clúster de almacenamiento para utilizar la Planificación de recursos DYNAMIC de almacenamiento vSphere.
+El acceso y el montaje de la oferta de {{site.data.keyword.filestorage_short}} se realiza mediante una conexión NFS. En un despliegue de VMware, se puede montar un único volumen para hasta 64 hosts ESXi como almacenamiento compartido, o bien puede montar múltiples volúmenes para crear un clúster de almacenamiento que utilice DRS (Distributed Resource Scheduling) de almacenamiento de vSphere.
 
 Las opciones de precio y configuración para el {{site.data.keyword.filestorage_short}} de Resistencia y Rendimiento se facturan en base a una combinación del espacio reservado y para las IOPS ofrecidas.
 
 ### 1. Consideraciones de {{site.data.keyword.filestorage_short}}
 
-Al realizar el pedido de {{site.data.keyword.filestorage_short}}, deberá tener en cuenta la siguiente información y consideraciones:
+Al realizar el pedido de {{site.data.keyword.filestorage_short}}, tenga en cuenta la información siguiente:
 
-- El tamaño del almacenamiento, las IOPS y el sistema operativo no se podrán cambiar una vez suministrados los volúmenes de {{site.data.keyword.filestorage_short}}. Cualquier cambio que desee realizar con respecto a la cantidad de espacio, el número de IOPS o el sistema operativo requerirá el suministro de un nuevo volumen. Cualquier dato almacenado en el volumen anterior tendrá que migrarse al nuevo volumen utilizando VMware Storage vMotion.
-- Al decidir sobre el tamaño, tenga en cuenta el tamaño de la carga de trabajo y el rendimiento necesario. El tamaño es importante con el servicio Resistencia, que escala el rendimiento de forma lineal en relación con la capacidad (IOPS/GB), en contraposición al servicio Rendimiento, que permite al administrador elegir la capacidad y el rendimiento de forma independiente. Los requisitos de rendimiento son importantes con el servicio Rendimiento. <br/> **Nota**: el cálculo del rendimiento es IOPS x 16 KB. Los IOPS se miden en base a un tamaño de bloque de 16 KB con una combinación de lectura/escritura 50/50. <br/> **Nota**: si aumenta el tamaño de bloque, aumenta el rendimiento pero disminuye las IOPS. Por ejemplo, duplicar el tamaño de bloque a 32KB bloques mantendrá el rendimiento máximo pero reducirá a la mitad las IOPS.
-- NFS utiliza muchas operaciones de control de archivos adicionales tales como búsqueda, getattr o readdir, por nombrar algunos. Estas operaciones, junto con las operaciones de lectura/escritura, pueden contar como IOPS y varían según el tipo de operación y la versión de NFS.
-- Técnicamente, se pueden seleccionar conjuntamente varios volúmenes para conseguir IOPS más altos y un mayor rendimiento, pero VMware recomienda un único almacén de datos Virtual Machine File System (VMFS) por volumen para evitar la degradación del rendimiento.
+- Al decidir sobre el tamaño, tenga en cuenta el tamaño de la carga de trabajo y el rendimiento necesario. El tamaño es importante con el servicio Resistencia, que escala el rendimiento de forma lineal en relación con la capacidad (IOPS/GB). Por el contrario, el servicio Rendimiento permite al administrador elegir la capacidad y el rendimiento de forma independiente. Los requisitos de rendimiento son importantes con el servicio Rendimiento. <br/> **Nota**: el cálculo del rendimiento es IOPS x 16 KB. El IOPS se mide en base a un tamaño de bloque de 16 KB con una combinación de lectura/escritura 50/50. <br/> **Nota**: si aumenta el tamaño de bloque, aumenta el rendimiento pero disminuye las IOPS. Por ejemplo, duplicar el tamaño de bloque a bloques de 32 KB mantendrá el rendimiento máximo pero reducirá a la mitad las IOPS.
+- NFS utiliza muchas operaciones de control de archivos adicionales, como `lookup`, `getattr` y `readdir` por nombrar algunas. Estas operaciones, junto con las operaciones de lectura/escritura, pueden contar como IOPS y varían según el tipo de operación y la versión de NFS.
+- Técnicamente, es posible seccionar conjuntamente diversos volúmenes para conseguir más IOPS y un mayor rendimiento. Sin embargo, VMware recomienda un único almacén de datos Virtual Machine File System (VMFS) por volumen para evitar la degradación del rendimiento.
 - Los volúmenes de {{site.data.keyword.filestorage_short}} están expuestos a dispositivos autorizados, subredes o direcciones IP.
 - Los servicios de Instantánea y Réplica están disponibles de forma nativa únicamente en volúmenes de {{site.data.keyword.filestorage_short}} de Resistencia. El {{site.data.keyword.filestorage_short}} de Rendimiento no tiene estas prestaciones.
 - Para evitar la desconexión del almacenamiento durante una migración tras error de vía de acceso, {{site.data.keyword.IBM}} recomienda la instalación de herramientas VMWare, que establecerán un valor de tiempo de espera adecuado. No es necesario cambiar el valor, el valor predeterminado es suficiente para garantizar que el host de VMWare no pierda la conectividad.
-- Tanto NFS v3 como NFS v4.1 están soportados en el entorno de {{site.data.keyword.BluSoftlayer_full}}. Sin embargo, {{site.data.keyword.IBM}} recomienda el uso de NFS v3. Como NFS v4.1 es un protocolo con estado (no sin estado como NFSv3), se pueden producir problemas de protocolo durante sucesos de red. NFS v4.1 debe desactivar temporalmente las operaciones y realizar la reclamación de bloqueo. Durante estas operaciones, pueden producirse interrupciones.
+- Tanto NFS v3 como NFS v4.1 están soportados en el entorno de {{site.data.keyword.BluSoftlayer_full}}. Sin embargo, {{site.data.keyword.IBM}} recomienda que utilice NFS v3. Como NFS v4.1 es un protocolo con estado (no sin estado como NFSv3), se pueden producir problemas de protocolo durante sucesos de red. NFS v4.1 debe desactivar temporalmente todas las operaciones y realizar la reclamación de bloqueo. Durante estas operaciones, pueden producirse interrupciones.
 
-####  Matriz de soporte de características VMware de protocolo NFS.
+#### Matriz de soporte de características VMware de protocolo NFS.
 <table>
- <tbody>
+  <caption>La Tabla 1 muestra cómo se aplican las características de vSphere a las dos versiones diferentes de NFS</caption>
+ <thead>
   <tr>
    <th>Características de vSphere</th>
    <th>NFS versión 3</th>
    <th>NFS versión 4.1</th>
   </tr>
+ </thead>
+ <tbody>
   <tr>
    <td>vMotion y Storage vMotion</td>
    <td>Sí</td>
@@ -97,37 +98,36 @@ Volumes</td>
 
 ### 2. Instantáneas de {{site.data.keyword.filestorage_short}} de Resistencia
 
-El {{site.data.keyword.filestorage_short}} de Resistencia permite a los administradores establecer planificaciones de instantáneas que crean y suprimen copias de instantáneas automáticamente para cada volumen de almacenamiento. También pueden crear planificaciones de instantáneas adicionales (cada hora, diariamente, semanalmente) para instantáneas automáticas y crear instantáneas adhoc manualmente para casos de continuidad del negocio y recuperación tras desastre (BCDR). Las alertas automáticas se envían a través del [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} al propietario del volumen para las instantáneas retenidas y el espacio consumido.
+El {{site.data.keyword.filestorage_short}} de Resistencia permite a los administradores establecer planificaciones de instantáneas que crean y suprimen copias de instantáneas automáticamente para cada volumen de almacenamiento. También pueden crear planificaciones de instantáneas adicionales (cada hora, diariamente, semanalmente) para instantáneas automáticas y crear instantáneas ad manualmente para casos de continuidad del negocio y recuperación tras desastre (BCDR). Las alertas automáticas se envían a través del {{site.data.keyword.slportal}}{:new_window} de [ al propietario del volumen para las instantáneas retenidas y el espacio utilizado.
 
-Tenga en cuenta que se necesita "espacio de instantáneas" para utilizar instantáneas. El espacio se puede adquirir en el pedido de volumen inicial o después del suministro inicial a través de la página **Detalles de volumen** pulsando el botón desplegable Acciones y seleccionando **Añadir espacio de instantáneas**.
+Tenga en cuenta que se necesita "espacio de instantáneas" para utilizar instantáneas. El espacio se puede adquirir durante el pedido del volumen inicial o después del suministro inicial mediante la página Detalles del volumen, pulsando Acciones y seleccionando Añadir espacio de instantáneas.
 
-Es importante señalar que los entornos de VMware no son conscientes de las instantáneas. La capacidad de instantáneas de {{site.data.keyword.filestorage_short}} de Resistencia no debe confundirse con las instantáneas de VMware. Toda recuperación que utilice la característica de instantáneas de {{site.data.keyword.filestorage_short}} de Resistencia debe manejarse desde el [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}. Restaurar el volumen de {{site.data.keyword.filestorage_short}} de Resistencia requerirá apagar todas las máquinas virtuales que residen en el {{site.data.keyword.filestorage_short}} de Resistencia y desmontar temporalmente el volumen de los hosts de ESXi para evitar la corrupción de datos durante el proceso.
+Es importante señalar que los entornos de VMware no son conscientes de las instantáneas. La capacidad de instantáneas de {{site.data.keyword.filestorage_short}} de Resistencia no debe confundirse con las instantáneas de VMware. Toda recuperación que utilice la característica de instantáneas de {{site.data.keyword.filestorage_short}} de Resistencia debe manejarse desde el [{{site.data.keyword.slportal}}](https://control.softlayer.com/)(https://control.softlayer.com/)]{:new_window}. 
+
+Restaurar el volumen de {{site.data.keyword.filestorage_short}} de Resistencia requiere apagar todas las máquinas virtuales que residen en el {{site.data.keyword.filestorage_short}} de Resistencia. El volumen se debe desmontar temporalmente de los hosts de ESXi para evitar la corrupción de datos durante el proceso.
 
 Consulte nuestro artículo sobre [instantáneas](snapshots.html) para obtener más detalles sobre cómo configurar las instantáneas.
 
 
 ### 3. Réplica de almacén de archivos
 
-La réplica utiliza una de sus planificaciones de instantáneas para copiar automáticamente las instantáneas a un volumen de destino de un centro de datos remoto. Las copias se pueden recuperar en el sitio remoto en caso de corrupción de datos o de suceso catastrófico.
+La réplica utiliza una de sus planificaciones de instantáneas para copiar automáticamente las instantáneas a un volumen de destino de un centro de datos remoto. Las copias se pueden recuperar en el sitio remoto si se produce un suceso catastrófico o los datos resultan dañados.
 
 
-Las réplicas le permiten
+Con las réplicas puede:
 
 - Recuperarse rápidamente de fallos del sitio y otros desastres realizando la migración al volumen de destino
 - Realizando la migración tras error a un punto específico en el tiempo en la copia de recuperación tras desastre
 
-Antes de poder replicar, debe crear una planificación de instantáneas. Cuando realiza la migración tras error, está “cambiando el interruptor” de su volumen de almacenamiento del centro de datos primario al volumen de destino del centro de datos remoto. Por ejemplo, su centro de datos primario es Londres y el centro de datos secundario es Ámsterdam. Si se produce un suceso de error, realizaría la migración a Ámsterdam – conectando al ahora volumen primario desde una instancia de clúster de vSphere en Ámsterdam.
+Antes de poder replicar, debe crear una planificación de instantáneas. Cuando realiza la migración tras error, está “cambiando el interruptor” de su volumen de almacenamiento del centro de datos primario al volumen de destino del centro de datos remoto. Por ejemplo, su centro de datos primario es Londres y el centro de datos secundario es Amsterdam. Si se produce un suceso de error, realizaría la migración a Amsterdam – conectando al ahora volumen primario desde una instancia de clúster de vSphere en Amsterdam.
 
+Cuando su volumen de Londres se haya reparado, se realizará una instantánea del volumen de Amsterdam. Luego puede volver a Londres y al volumen primario de nuevo desde una instancia de cálculo de Londres. 
 
-Cuando su volumen de Londres se haya reparado, se realiza una instantánea del volumen de Ámsterdam para volver a Londres y al volumen primario de nuevo desde una instancia de cálculo de Londres. Antes de que el volumen vuelva al centro de datos primario, debe dejar de ser utilizado en el sitio remoto. Se realiza una instantánea de cualquier información nueva o modificada y se replica al centro de datos primario antes de poder montarse de nuevo en los hosts de ESXi del sitio de producción.
-
+Antes de que el volumen vuelva al centro de datos primario, debe dejar de ser utilizado en el sitio remoto. Se realiza una instantánea de cualquier información nueva o modificada y se replica al centro de datos primario antes de poder montarse de nuevo en los hosts de ESXi del sitio de producción.
 
 Consulte la página de información [Réplica](replication.html) para obtener más detalles sobre cómo configurar la réplica.
 
-**Nota**: los datos no válidos, ya estén corruptos, pirateados o infectados, se replicarán de acuerdo con la planificación de instantáneas y la retención de instantáneas. El uso de la ventana de réplica más pequeña puede proporcionar un mejor objetivo de punto de recuperación, además de reducir el tiempo de reacción a la réplica de datos no válidos.
-
-
-
+**Nota**: los datos no válidos, ya estén corruptos, pirateados o infectados, se replicarán de acuerdo con la planificación de instantáneas y la retención de instantáneas. El uso de la ventana de réplica más pequeña puede proporcionar un mejor objetivo de punto de recuperación, pero también puede reducir el tiempo de reacción a la réplica de datos no válidos.
 
 
 ## Realizar el pedido de {{site.data.keyword.filestorage_short}}
@@ -142,12 +142,12 @@ Se puede realizar el pedido de {{site.data.keyword.filestorage_short}} a través
 
 Efectúe los siguientes pasos para realizar un pedido de {{site.data.keyword.filestorage_short}}:
 1. Pulse **Almacenamiento** > **{{site.data.keyword.filestorage_short}}** en la página de inicio de [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
-2. Pulse sobre el enlace **Realizar el pedido de {{site.data.keyword.filestorage_short}}** en la página de **{{site.data.keyword.filestorage_short}}**.
-3. Seleccione **Resistencia**/**Rendimiento** en la lista desplegable Seleccionar tipo de almacenamiento.
-4. Seleccione la ubicación. Los centros de datos con las prestaciones mejoradas están marcados con `*`. Asegúrese de que el nuevo almacenamiento se añada en la misma ubicación que el host de ESXi pedido anteriormente.
+2. Pulse **Realizar pedido de {{site.data.keyword.filestorage_short}}** en la página de **{{site.data.keyword.filestorage_short}}**.
+3. Seleccione **Resistencia**/**Rendimiento** en la lista **Seleccionar tipo de almacenamiento**.
+4. Seleccione la ubicación. Los centros de datos con las prestaciones mejoradas están marcados con un asterisco. Asegúrese de que el nuevo almacenamiento se añada en la misma ubicación que el host de ESXi pedido anteriormente.
 5. Seleccione el método de facturación. Están disponibles las opciones de facturación mensual y por horas.
-6. Seleccione la cantidad de espacio de almacenamiento deseada en GB. Para TB, 1 TB equivale a 1.000 GB, y 12 TB equivale a 12.000 GB.
-7. Especifique la cantidad de IOPS deseada en intervalos de 100 o seleccione un nivel de IOPS.
+6. Seleccione la cantidad de espacio de almacenamiento en GB. Para TB, 1 TB equivale a 1.000 GB, y 12 TB equivale a 12.000 GB.
+7. Especifique la cantidad de IOPS en intervalos de 100 o seleccione un nivel de IOPS.
 8. Especifique el tamaño del espacio de instantáneas.
 9. Pulse **Continuar**.
 10. Escriba un código promocional si tiene uno, y pulse **Recalcular**.
@@ -163,7 +163,7 @@ El almacenamiento se suministrará en menos de un minuto y estará visible en la
 
 Una vez suministrado el volumen, los {{site.data.keyword.BluBareMetServers_full}} o {{site.data.keyword.BluVirtServers_full}} que utilizarán el volumen necesitarán autorización para acceder al almacenamiento. Utilice los siguientes pasos para autorizar el volumen:
 
-1. Pulse en **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**.
+1. Pulse **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**.
 2. Seleccione **Acceder a host** en el menú **Acciones de volumen de rendimiento** o **Resistencia**.
 3. Seleccione el botón de opción **Subredes**
 4. Elija de la lista de subredes disponibles que están asignadas a los puertos vmkernel en los hosts de ESXi y pulse **Enviar**.<br/> **Nota**: las subredes mostradas serán redes suscritas en el mismo centro de datos que el volumen de almacenamiento.
@@ -202,11 +202,12 @@ Para configurar el host virtual, siga los siguientes pasos:
    - Desde Unix: ping -s 8972 a.b.c.d
    Donde a.b.c.d es la interfaz de {{site.data.keyword.BluVirtServers_short}} contigua con el mandato:
    La salida aparece similar a:
-   ```ping a.b.c.d (a.b.c.d) 8972(9000) bytes of data.
+   ```
+   ping a.b.c.d (a.b.c.d) 8972(9000) bytes of data.
    8980 bytes from a.b.c.d: icmp_seq=1 ttl=128 time=3.36 ms
    ```
 
-Encontrará más información sobre VMware y las tramas Jumbo [aquí](https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=1003712){:new_window}.
+Encontrará más información sobre VMware y las tramas Jumbo [aquí](https://kb.vmware.com/s/article/1003712){:new_window}.
 
 
 ### 3. Añadir un adaptador de enlace ascendente a un conmutador virtual
@@ -221,8 +222,8 @@ Encontrará más información sobre VMware y las tramas Jumbo [aquí](https://kb
    ![Añadir adaptadores físicos a un conmutador](/images/2_3.png)
 8. Pulse **Siguiente** y **Finalizar**.
 9. Vuelva al separador **Conmutadores virtuales** y seleccione el icono superior **Editar configuración** situado bajo la cabecera **Conmutadores virtuales** (icono de lápiz).
-10. Seleccione el **Equipo vSwitch** y la entrada de migración tras error a la izquierda.
-Verifique que la opción **Equilibrio de carga** esté establecida en **Ruta basada en el puerto virtual de origen** y pulse **Aceptar**.
+10. En la izquierda, seleccione la entrada **Equipo y migración tras error** de vSwitch.
+11. Verifique que la opción **Equilibrio de carga** esté establecida en **Ruta basada en el puerto virtual de origen** y pulse **Aceptar**.
 
 
 ### 4. Configurar el direccionamiento estático de ESXi (Opcional)
@@ -238,7 +239,7 @@ La configuración de red para esta guía de arquitectura utiliza un número mín
 2. Tenga en cuenta que las rutas estáticas no son persistentes entre rearranques en ESXi 5.0 y versiones anteriores. Para asegurarse de que todas las rutas estáticas añadidas sean persistentes, deben añadirse estos mandatos al archivo local.sh de cada host, ubicado en el directorio /etc/rc.local.d/. Para ello, abra el archivo local.sh con el editor visual y añada el mandato anterior sobre la línea exit 0.
    - Tome nota de la dirección IP, ya que puede utilizarse para montar el volumen en el siguiente paso.
    - Este proceso debe realizarse para cada volumen NFS que tenga previsto montar en el host de ESXi.
-   - Este es el enlace a un artículo de VMware KB: [Configuring static routes for VMkernel ports on an ESXi host](https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=2001426){:new_window}.
+   - Este es el enlace a un artículo de VMware KB: [Configuring static routes for VMkernel ports on an ESXi host](https://kb.vmware.com/s/article/2001426){:new_window}.
 
 
 ##  Montar volúmenes de {{site.data.keyword.filestorage_short}} en los hosts de ESXi
@@ -263,7 +264,7 @@ La configuración de red para esta guía de arquitectura utiliza un número mín
     10.2.125.80 es la dirección IP asociada al FQDN
     ```
 
-## Habilitar los valores de control de E/S de almacenamiento de ESXi (Opcional)
+## Habilitar el control de E/S de almacenamiento de ESXi (Opcional)
 
 El control de E/S de almacenamiento (SIOC) es una característica disponible para los clientes que utilizan una licencia Enterprise Plus. Si SIOC está habilitado en el entorno, cambiará la longitud de cola del dispositivo para la única máquina virtual. El cambio en la longitud de cola del dispositivo reduce la cola de matriz de almacenamiento para todas las máquinas virtuales en una proporción igual y regula la cola de almacenamiento. SIOC solo interviene si los recursos están restringidos y la latencia de entrada/salida del almacenamiento está por encima de un umbral definido.
 
@@ -368,7 +369,7 @@ Se requieren algunos valores adicionales para configurar los hosts de ESXi 5.x p
 Una trama Jumbo es una trama de Ethernet con una carga útil superior a la unidad de transmisión máxima (MTU) estándar de 1.500 bytes. Las tramas Jumbo se utilizan en redes de área local que dan soporte como mínimo a 1 Gbps y pueden alcanzar un tamaño de 9.000 bytes.
 
 
-Las tramas Jumbo deben configurarse igual en toda la vía de acceso de la red desde el dispositivo de origen <-> conmutador <-> direccionador <-> conmutador <-> dispositivo de destino. Si toda la cadena no se define igual, se establecerá el valor predeterminado más bajo en toda la cadena. SoftLayer tiene sus dispositivos de red establecidos en 9.000. Todos los dispositivos del cliente deberán establecerse en el mismo valor.
+Las tramas Jumbo deben configurarse igual en toda la vía de acceso de la red desde el dispositivo de origen <-> conmutador <-> direccionador <-> conmutador <-> dispositivo de destino. Si toda la cadena no se define igual, se establecerá el valor predeterminado más bajo en toda la cadena. {{site.data.keyword.BluSoftlayer_full}} tiene sus dispositivos de red establecidos en 9.000. Todos los dispositivos del cliente deberán establecerse en el mismo valor.
 
 ### Windows
 

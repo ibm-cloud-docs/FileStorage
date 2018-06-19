@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2017
-lastupdated: "2018-02-14"
+  years: 2014, 2018
+lastupdated: "2018-05-11"
 
 ---
 {:new_window: target="_blank"}
@@ -36,7 +36,7 @@ La figura 1 describe la comunicación entre cada zona. Tenga en cuenta que su en
 Para configurar Brocade vRouter (Vyatta):
 
 1. Establezca una conexión SSH con el dispositivo utilizando la contraseña raíz que se encuentra en la pantalla de detalles del dispositivo.
-2. Escriba 'Configure' para especificar la modalidad de configuración y siga los pasos en las secciones posteriores.
+2. Escriba `configure` para especificar la modalidad de configuración y siga los pasos en las secciones posteriores.
 
 ### Configuración de interfaces
 
