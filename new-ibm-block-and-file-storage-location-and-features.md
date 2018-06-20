@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-19"
+lastupdated: "2018-06-20"
 
 ---
 {:new_window: target="_blank"}
@@ -15,8 +15,7 @@ lastupdated: "2018-06-19"
 
 The new {{site.data.keyword.filestorage_short}} is available in following regions/data centers with more data center availability added later!
 
-<table role="presentation" style="width:100%;">
-  <caption>Table 1 shows our Data Center Availability. Each region has its own column. Some cities, such as Dallas, San Jose, Washington DC, Amsterdam, Frankfurt, London and Sydney have multiple data centers.</caption>
+<table role="presentation">
 	<tr>
 		<td><strong>US 2</strong></td>
 		<td><strong>EU</strong></td>
@@ -80,7 +79,7 @@ The new storage has the following features and capabilities:
 - Create a clone of your data with the [{{site.data.keyword.filestorage_short}} Volume Duplication feature](how-to-create-duplicate-volume.html).
 - Storage is expandable in GB increments up to 12 TB immediately, without the need to create a duplicate or manually moving data to a larger volume. Read more about this feature [here](expandable_file_storage.html).
 
-## New mount point for enhanced {{site.data.keyword.filestorage_short}} volumes
+## New Mount Point for enhanced {{site.data.keyword.filestorage_short}} volumes
 
 All enhanced {{site.data.keyword.filestorage_short}} volumes that are provisioned in these data centers have a different mount point than non-encrypted volumes. To ensure you're using the correct mount point for both your storage volumes, you can view the mount point information in the **Volume Details** page in the UI. You can also access the correct mount point through an API call: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 
