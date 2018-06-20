@@ -360,7 +360,7 @@ The following examples use the CLI to set these advanced configuration parameter
    ```
 
 
-## Enabling Jumbo Frames in {{site.data.keyword.BluSoftlayer}} for Windows and Linux
+## Enabling Jumbo Frames in {{site.data.keyword.BluSoftlayer_notm}} for Windows and Linux
 
 {{site.data.keyword.BluSoftlayer_full}} has stated that in order to fully realize the speeds on the storage Jumbo Frames needs to be enabled at 9,000 MTU.
 
