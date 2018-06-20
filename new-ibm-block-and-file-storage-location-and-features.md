@@ -66,6 +66,7 @@ The new {{site.data.keyword.filestorage_short}} is available in following region
 	</tr>
 </table>
 
+*Table 1 shows our Data Center Availability. Each region has its own column. Some cities, such as Dallas, San Jose, Washington DC, Amsterdam, Frankfurt, London and Sydney have multiple data centers.*
 
 The new storage has the following features and capabilities:
 
