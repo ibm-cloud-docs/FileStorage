@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-02-12"
+lastupdated: "2018-05-14"
 
 ---
 {:new_window: target="_blank"}
@@ -10,9 +10,9 @@ lastupdated: "2018-02-12"
 
 # Introdução ao {{site.data.keyword.filestorage_short}}
 
-O {{site.data.keyword.filestorage_full}} é um {{site.data.keyword.filestorage_short}} baseado no NFS, persistente, rápido e conectado por rede flexível. Nesse ambiente Network Attached Storage (NAS), você tem controle total sobre sua função de compartilhamentos de arquivo e desempenho. Os compartilhamentos do {{site.data.keyword.filestorage_short}} podem ser conectados a até 64 dispositivos autorizados sobre conexões TCP/IP roteadas para resiliência.
+O {{site.data.keyword.filestorage_full}} é um {{site.data.keyword.filestorage_short}} baseado no NFS, persistente, rápido e conectado por rede flexível. Nesse ambiente de armazenamento conectado à rede (NAS), você tem controle total sobre sua função de compartilhamentos de arquivo e sobre o desempenho. Os compartilhamentos do {{site.data.keyword.filestorage_short}} podem ser conectados a até 64 dispositivos autorizados sobre conexões TCP/IP roteadas para resiliência.
 
-O {{site.data.keyword.filestorage_short}} traz os melhores níveis da classe de durabilidade e disponibilidade com um conjunto de recursos não correspondidos e é construído usando os padrões de mercado e as melhores práticas e projetado para proteger a integridade dos dados e manter a disponibilidade por meio de eventos de manutenção e falhas não planejadas enquanto fornece uma linha de base de desempenho consistente.
+O {{site.data.keyword.filestorage_short}} traz os melhores níveis de durabilidade e disponibilidade com um conjunto de recursos incomparável. O {{site.data.keyword.filestorage_short}} foi construído usando os padrões de mercado e as melhores práticas e foi projetado para proteger a integridade dos dados. O {{site.data.keyword.filestorage_short}} mantém a disponibilidade por meio dos eventos de manutenção e de falhas não planejadas ao mesmo tempo em que fornece uma linha de base de desempenho consistente.
 
 Tire vantagem dos recursos principais do {{site.data.keyword.filestorage_short}} a seguir:
 
@@ -23,7 +23,7 @@ Tire vantagem dos recursos principais do {{site.data.keyword.filestorage_short}}
 - **Altamente durável e resiliente**
    - Protege a integridade dos dados e mantém a disponibilidade por meio de eventos de manutenção e falhas não planejadas sem a necessidade de criar e gerenciar matrizes Redundant Array of Independent Disks (RAID) de nível de sistema operacional
 - **Criptografia de dados em repouso** [(disponível em data centers selecionados.)](new-ibm-block-and-file-storage-location-and-features.html)
-   - Criptografia gerenciada por provedor para dados em repouso sem nenhum custo adicional
+   - Criptografia gerenciada por provedor para dados em repouso sem custo adicional
 - **Todo armazenamento suportado por flash** [(disponível em data centers selecionados.)](new-ibm-block-and-file-storage-location-and-features.html)
    - Todo armazenamento flash para volumes provisionados com Endurance ou Performance em 2 IOPS/GB ou superior
 - **Capturas instantâneas (quando provisionado com Endurance ou Performance em [data centers selecionados](new-ibm-block-and-file-storage-location-and-features.html))**.
@@ -41,9 +41,9 @@ Tire vantagem dos recursos principais do {{site.data.keyword.filestorage_short}}
 
 É possível selecionar o faturamento por hora ou mensal para um Volume de arquivo. O tipo de faturamento selecionado para um LUN será aplicado ao seu espaço de captura instantânea e réplicas. Por exemplo, se você provisionar um LUN com o faturamento por hora, quaisquer capturas instantâneas ou taxas de réplica serão faturadas por hora. Se você provisionar um LUN com faturamento mensal, quaisquer capturas instantâneas ou taxas de réplica serão faturadas mensalmente. 
 
-Com o **faturamento por hora**, o cálculo do número de horas que o volume de arquivo existiu na conta é executado no momento em que o volume é excluído ou no término do ciclo de faturamento, aquele que vier primeiro. O faturamento por hora é uma boa opção para armazenamento usado por alguns dias ou menos de um mês completo. O faturamento por hora está disponível somente para armazenamento provisionado em [data centers selecionados](new-ibm-block-and-file-storage-location-and-features.html). 
+Com o **faturamento por hora**, o número de horas em que o volume de arquivo existiu na conta é calculado no momento em que o volume é excluído ou no término do ciclo de faturamento, o que vier primeiro. O faturamento por hora é uma boa opção para armazenamento usado por alguns dias ou menos de um mês completo. O faturamento por hora está disponível somente para armazenamento provisionado em [data centers selecionados](new-ibm-block-and-file-storage-location-and-features.html). 
 
-Com o **faturamento mensal**, o cálculo para o preço é rateado da data de criação ao término do ciclo de faturamento e faturado imediatamente. Não haverá reembolso se um volume de arquivo for excluído antes do término do ciclo de faturamento.  O faturamento mensal é uma boa opção para armazenamento usado em cargas de trabalho de produção que usam dados que precisam ser armazenados e acessados por longos períodos de tempo (um mês ou mais).
+Com o **faturamento mensal**, o cálculo para o preço é rateado da data de criação ao término do ciclo de faturamento e faturado imediatamente. Não há reembolso se um volume de arquivo é excluído antes do término do ciclo de faturamento. O faturamento mensal é uma boa opção para armazenamento usado em cargas de trabalho de produção que usam dados que precisam ser armazenados e acessados por longos períodos de tempo (um mês ou mais).
 
  
 ### Performance:
@@ -51,11 +51,11 @@ Com o **faturamento mensal**, o cálculo para o preço é rateado da data de cri
  <tbody>
   <tr>
    <th>Preço mensal</th>
-   <td>$0,10/GB + $0,07/IOP</td>
+   <td>US$ 0,10/GB + US$ 0,07/IOPS</td>
   </tr>
   <tr>
    <th>Preço por hora</th>
-   <td>$0,0001/GB + $0,0002/IOP</td>
+   <td>US$ 0,0001/GB + US$ 0,0002/IOPS</td>
   </tr>
   </tbody>
 </table>
@@ -199,7 +199,7 @@ O IOPS, para Endurance e Performance, é medido com base em um tamanho de bloco 
 
 O IOPS para Endurance e Performance é baseado em um tamanho de bloco de 16 KB com uma carga de trabalho aleatória de 50% de leitura/gravação 50/50. Um bloco de ~16 KB é o equivalente de uma gravação para o volume.
 
-O tamanho de bloco usado por seu aplicativo afetará diretamente o desempenho de armazenamento. Se o tamanho de bloco usado por seu aplicativo for menor que 16 KB, o limite de IOP será realizado antes do limite de rendimento. Por outro lado, se o tamanho de bloco usado por seu aplicativo for maior que 16 KB, o limite de rendimento será realizado antes do limite de IOP.
+O tamanho de bloco usado por seu aplicativo afetará diretamente o desempenho de armazenamento.  Se o tamanho de bloco usado por seu aplicativo for menor que 16 KB, o limite de IOPS será percebido antes do limite de rendimento. Por outro lado, se o tamanho de bloco usado por seu aplicativo for maior que 16 KB, o limite de rendimento será percebido antes do limite de IOPS.
 
 Mudar o tamanho de bloco afetará o desempenho como a seguir:
 
@@ -256,9 +256,9 @@ Mudar o tamanho de bloco afetará o desempenho como a seguir:
 A escolha do {{site.data.keyword.blockstorageshort}} correto para sua carga de trabalho é importante e igualmente importante é como evitar gargalos. A velocidade da sua conexão Ethernet deve ser mais rápida do que o rendimento máximo esperado de seu volume. Como uma regra geral, você não deve esperar saturar a sua conexão Ethernet além de 70% da largura da banda disponível. Por exemplo, se você tiver 6.000 IOPS e estiver usando um tamanho de bloco de 16 KB, o volume será capaz de aproximadamente 94 MB por segundo. Se você tiver uma conexão Ethernet de 1 Gbps para o LUN, ela se tornará um gargalo quando seus servidores tentarem utilizar o rendimento máximo disponível porque 70% do limite teórico de uma conexão Ethernet de 1 Gbps (125 MB por segundo) permitiria somente para 88 MB por segundo.
 
 
-Outro fator a considerar é o número de hosts que estão utilizando o volume. Se houver um único host que está acessando o volume, poderá ser difícil realizar o IOPS máximo disponível, especialmente em contagens extremas de IOPS (10.000s). Se sua carga de trabalho requer alto rendimento, é melhor para configurar pelo menos dois ou três servidores para acessar seu volume para evitar um gargalo de servidor único.
+Outro fator a considerar é o número de hosts que estão utilizando o volume. Se houver um único host que está acessando o volume, poderá ser difícil realizar o IOPS máximo disponível, especialmente em contagens extremas de IOPS (10.000s). Se sua carga de trabalho requer alto rendimento, é melhor configurar pelo menos dois ou três servidores para acessarem seu volume e evitarem um gargalo de servidor único.
 
 
 Para alcançar o IOPS máximo, recursos de rede adequados precisam estar em vigor. Outras considerações incluem o uso da rede privada fora do armazenamento e do lado do host e dos ajustes específicos do aplicativo (pilha IP, profundidades da fila, e assim por diante).
 
-O NFS v3 e NFS v4.1 são suportados no ambiente do {{site.data.keyword.BluSoftlayer_full}}. No entanto, é nossa recomendação que o NFS v3 seja usado. O NFS v4.1 é um protocolo stateful (não stateless como o NFSv3) e, portanto, problemas de protocolo podem ocorrer durante eventos de rede. O NFS v4.1 deve colocar as operações em modo quiesce e, em seguida, executar a recuperação de bloqueio. Em um servidor de arquivos NFS relativamente ocupado, a latência aumentada pode causar interrupções. A falta de caminhos múltiplos/entroncamento do NFS v4.1 também pode estender a recuperação de operações do NFS.
+O NFS v3 e NFS v4.1 são suportados no ambiente do {{site.data.keyword.BluSoftlayer_full}}. No entanto, é nossa recomendação que o NFS v3 seja usado. O NFS v4.1 é um protocolo stateful (não stateless como o NFSv3) e, portanto, problemas de protocolo podem ocorrer durante eventos de rede. O NFS v4.1 deve colocar em modo quiesce todas as operações e, em seguida, executar uma recuperação de bloqueio. Em um servidor de arquivos NFS relativamente ocupado, a latência aumentada pode causar interrupções. A falta de caminhos múltiplos/entroncamento do NFS v4.1 também pode estender a recuperação de operações do NFS.

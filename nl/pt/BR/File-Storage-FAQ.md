@@ -2,21 +2,20 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-02-02"
+lastupdated: "2018-05-24"
 
 ---
 {:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
 
-# {{site.data.keyword.filestorage_short}} - Perguntas mais frequentes
+# {{site.data.keyword.filestorage_short}} - perguntas mais frequentes
 
 ## Como o IOPS é medido?
 
-O IOPS é medido com base em um perfil de carregamento de blocos de 16 KB com 50% de leituras e 50% de gravações aleatórias. As cargas de trabalho que diferem desse perfil podem experimentar desempenho inferior.
+O IOPS é medido com base em um perfil de carregamento de blocos de 16 KB com 50 por cento de leituras e 50 por cento de gravações aleatórias. As cargas de trabalho que diferem desse perfil podem ter um desempenho inferior.
 
-## O que acontece se eu uso um tamanho de bloco menor ao medir o desempenho?
+## O que acontece quando eu uso um tamanho de bloco menor para medir o desempenho?
 
-O máximo de IOPS ainda pode ser obtido ao usar tamanhos de blocos menores, porém o rendimento será inferior. Por exemplo, um volume com 6.000 IOPS teria o rendimento a seguir em vários tamanhos de blocos:
+O máximo de IOPS poderá ser obtido mesmo se você usar tamanhos de blocos menores. No entanto, o rendimento será inferior. Por exemplo, um volume com 6.000 IOPS teria o rendimento a seguir em vários tamanhos de bloco:
 
 - 16 KB * 6.000 IOPS == ~93,75 MB/s
 - 8 KB * 6.000 IOPS == ~46,88 MB/s
@@ -27,73 +26,77 @@ O máximo de IOPS ainda pode ser obtido ao usar tamanhos de blocos menores, por�
 
 Não há necessidade de pré-aquecimento. Você observará o rendimento especificado imediatamente depois de provisionar o volume.
 
-## Como posso identificar quais de meus LUNs/volumes do {{site.data.keyword.filestorage_short}} são criptografados?
+## Como posso saber quais dos meus volumes do {{site.data.keyword.filestorage_short}} são criptografados?
 
-Ao visualizar sua lista de {{site.data.keyword.filestorage_short}} no portal do cliente, você verá um ícone de bloqueio à direita do LUN/nome do volume para aqueles que são criptografados.
+Veja a sua lista de {{site.data.keyword.filestorage_short}} no portal do cliente. É possível ver um ícone de bloqueio à direita do nome do LUN/do volume para os volumes que estão criptografados.
 
-## Se eu tiver {{site.data.keyword.filestorage_short}} não criptografado provisionado em um data center que foi submetido a upgrade para criptografia, posso criptografar meus {{site.data.keyword.filestorage_short}}s?
+## Se eu comprei um {{site.data.keyword.filestorage_short}} não criptografado em um data center que foi submetido a upgrade para criptografia, posso criptografar meu {{site.data.keyword.filestorage_short}}?
 
-O {{site.data.keyword.filestorage_short}} que é provisionado antes de um upgrade do data center não pode ser criptografado. O novo {{site.data.keyword.filestorage_short}} provisionado em data centers submetidos a upgrade é criptografado automaticamente; não há nenhuma configuração de criptografia para escolher, isso é automático. Os dados no armazenamento não criptografado em um data center submetido a upgrade podem ser criptografados criando um novo volume de arquivo, em seguida, copiando os dados para o novo volume criptografado ou volume com migração baseada em host. Veja [este artigo](/docs/infrastructure/FileStorage/migrate-file-storage-encrypted-file-storage.html) para obter instruções sobre como executar a migração.
+O {{site.data.keyword.filestorage_short}} que foi provisionado antes de um upgrade do data center não pode ser criptografado. O novo {{site.data.keyword.filestorage_short}} provisionado em data centers submetidos a upgrade é criptografado automaticamente. Não há configuração de criptografia para escolher, é automático. Os dados no armazenamento não criptografado podem ser criptografados criando um novo volume e, em seguida, copiando os dados para o novo volume criptografado com migração baseada em host. Veja [este artigo](/docs/infrastructure/FileStorage/migrate-file-storage-encrypted-file-storage.html) para obter instruções sobre como executar a migração.
 
 ## Como eu sei se estou provisionando o {{site.data.keyword.filestorage_short}} em um data center submetido a upgrade?
 
-Ao provisionar o {{site.data.keyword.filestorage_short}}, todos os data centers submetidos a upgrade serão denotados com um asterisco (`*`) no formulário de ordem e uma indicação de que você provisionará o armazenamento com criptografia. Quando o armazenamento for provisionado, você verá um ícone na lista de armazenamentos que mostra esse volume ou o volume como criptografado. Todos os volumes criptografados e os volumes são provisionados somente em data centers submetidos a upgrade. É possível localizar uma lista completa de data centers submetidos a upgrade e recursos disponíveis [aqui](/docs//infrastructure/BlockStorage/new-ibm-block-and-file-storage-location-and-features.html).
+No formulário de pedido do {{site.data.keyword.filestorage_short}}, todos os data centers submetidos a upgrade são denotados com um asterisco (`*`). Durante o processo de pedido, você recebe uma indicação de que está provisionando armazenamento com criptografia. Quando o armazenamento for provisionado, você verá um ícone na lista de armazenamentos que mostra esse volume como criptografado. 
+
+Todos os volumes criptografados e os compartilhamentos de arquivo são provisionados somente em data centers submetidos a upgrade. É possível localizar uma lista completa de data centers submetidos a upgrade e recursos disponíveis [aqui](/docs//infrastructure/BlockStorage/new-ibm-block-and-file-storage-location-and-features.html).
 
 ## Por que eu posso provisionar o {{site.data.keyword.filestorage_short}} com uma camada 10 IOPS do Endurance em alguns data centers e não em outros?
 
-A camada 10 IOPS/GB do tipo Endurance do {{site.data.keyword.filestorage_short}} está disponível somente em data centers selecionados, com novos data centers sendo incluídos em breve. É possível localizar uma lista completa de data centers submetidos a upgrade e recursos disponíveis [aqui](/docs//infrastructure/BlockStorage/new-ibm-block-and-file-storage-location-and-features.html).
+A camada de 10 IOPS/GB do tipo Endurance do {{site.data.keyword.filestorage_short}} está disponível somente em data centers selecionados e novos data centers serão incluídos em breve. É possível localizar uma lista completa de data centers submetidos a upgrade e recursos disponíveis [aqui](/docs//infrastructure/BlockStorage/new-ibm-block-and-file-storage-location-and-features.html).
 
 ## Como posso localizar o ponto de montagem correto para o meu {{site.data.keyword.filestorage_short}}?
 
-Todos os volumes criptografados do {{site.data.keyword.filestorage_short}} provisionados nestes data centers têm um ponto de montagem diferente de volumes não criptografados. Para assegurar que você esteja usando o ponto de montagem correto para os volumes criptografados e não criptografados do {{site.data.keyword.filestorage_short}}, é possível visualizar as informações do ponto de montagem na página **Detalhes do volume** na UI, assim como acessar o ponto de montagem correto por meio de uma chamada API: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
+Todos os volumes criptografados do {{site.data.keyword.filestorage_short}} que são provisionados nos data centers aprimorados têm um ponto de montagem diferente de volumes não criptografados. Para assegurar que você esteja usando o ponto de montagem correto, visualize as informações do ponto de montagem na página **Detalhes do volume** na IU. Também é possível acessar o ponto de montagem correto por meio de uma chamada API: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 
 ## Quantos compartilhamentos de arquivo são permitidos por tamanho do volume de arquivo? Quais são os compartilhamentos máximos de arquivo permitidos por tamanho do volume?
-A seguir estão os nós-i ou compartilhamentos de arquivo máximos permitidos com base no tamanho do volume:
 
 <table>
-        <tbody>
-          <tr>
-            <th>Tamanho do volume</th>
-            <th>Nós-i/arquivos</th>
-          </tr>
-          <tr>
-            <td>20 GB </td>
-            <td>622.484</td>
-          </tr>
-          <tr>
-            <td>40 GB </td>
-            <td>1.245.084</td>
-          </tr>          
-          <tr>
-            <td>80 GB</td>
-            <td>2.490.263</td>
-          </tr>          
-          <tr>
-            <td>100 GB</td>
-            <td>3.112.863</td>
-          </tr>          
-          <tr>
-            <td>250 GB</td>
-            <td>7.782.300</td>
-          </tr>          
-          <tr>
-            <td>500 GB</td>
-            <td>15.564.695</td>
-          </tr>
-          <tr>
-            <td>1 TB+</td>
-            <td>31.876.593</td>
-          </tr>
-        </tbody>
+  <caption>A Tabela 1 mostra o número máximo de nós-i permitidos com base no tamanho do volume. Os tamanhos de volume estão à esquerda. O número de nós-i/compartilhamentos de arquivo está à direita.</caption>
+  <thead>
+    <tr>
+      <th>Tamanho do volume</th>
+      <th>Nós-i/Compartilhamentos de arquivo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>20 GB </td>
+      <td>622.484</td>
+    </tr>
+    <tr>
+      <td>40 GB </td>
+      <td>1.245.084</td>
+    </tr>          
+    <tr>
+      <td>80 GB</td>
+      <td>2.490.263</td>
+    </tr>          
+    <tr>
+      <td>100 GB</td>
+      <td>3.112.863</td>
+    </tr>          
+    <tr>
+      <td>250 GB</td>
+      <td>7.782.300</td>
+    </tr>          
+    <tr>
+      <td>500 GB</td>
+      <td>15.564.695</td>
+    </tr>
+    <tr>
+      <td>1 TB+</td>
+      <td>31.876.593</td>
+    </tr>
+   </tbody>
 </table>
 
 ## Quantos volumes posso provisionar?
 
-Por padrão, é possível provisionar um total combinado de 250 volumes de armazenamento de arquivo e bloco. Entre em contato com seu representante de vendas para aumentar seus volumes.
+Por padrão, é possível provisionar um total combinado de 250 volumes de armazenamento de arquivo e bloco. Para aumentar o limite, entre em contato com seu representante de vendas.
 
 ## Quantas instâncias podem compartilhar o uso de um volume fornecido do {{site.data.keyword.filestorage_short}}?
 
-O limite padrão para o número de autorizações por volume de arquivo é 64. Entre em contato com seu representante de vendas para aumentar o limite.
+O limite padrão para o número de autorizações por volume de arquivo é 64. Para aumentar esse limite, entre em contato com seu representante de vendas.
 
 ## Ao provisionar o {{site.data.keyword.filestorage_short}} Performance ou Endurance, o IOPS alocado é cumprido por instância ou por volume?
 
@@ -107,11 +110,15 @@ Os limites de rendimento são configurados em um nível por volume/LUN, portanto
 
 Como uma melhor prática, recomendamos executar o tráfego de armazenamento em uma vlan que efetua bypass do firewall. Executar o tráfego de armazenamento por meio de firewalls de software aumentará a latência e afetará adversamente o desempenho de armazenamento.
 
-## O que acontece com os meus dados quando os Volumes do {{site.data.keyword.filestorage_short}} são excluídos?
-
-Quando o armazenamento é excluído, quaisquer ponteiros para os dados nesse volume são removidos, portanto os dados se tornam completamente inacessíveis. Se o armazenamento físico é reprovisionado para outra conta, um novo conjunto de ponteiros é designado. Não há nenhuma maneira para a nova conta acessar quaisquer dados que podem ter estado no armazenamento físico, o novo conjunto de ponteiros mostra todos como 0 (zero). Quando novos dados são gravados no volume/LUN, quaisquer dados inacessíveis que ainda existem são sobrescritos. 
-
 ## Qual latência de desempenho posso esperar do meu {{site.data.keyword.filestorage_short}}?   
 
 A latência de destino dentro do armazenamento é <1 ms. Nosso armazenamento está conectado a instâncias de cálculo em uma rede compartilhada, então a latência exata de desempenho dependerá do tráfego de rede dentro de um intervalo de tempo especificado.
 
+## O que acontece com os meus dados quando os Volumes do {{site.data.keyword.filestorage_short}} são excluídos?
+
+Quando o armazenamento é excluído, quaisquer ponteiros para os dados nesse volume são removidos, portanto os dados se tornam completamente inacessíveis. Se o armazenamento físico é reprovisionado para outra conta, um novo conjunto de ponteiros é designado. Não há nenhuma maneira para a nova conta acessar quaisquer dados que podem ter estado no armazenamento físico, o novo conjunto de ponteiros mostra todos como 0 (zero). Quando novos dados são gravados no volume/LUN, quaisquer dados inacessíveis que ainda existem são sobrescritos.
+
+## O que acontece com as unidades que são desatribuídas do data center de nuvem?
+
+Quando as unidades são desatribuídas, a IBM as destrói antes de descartá-las, tornando-as
+inutilizáveis. Quaisquer dados que foram gravados nessa unidade se tornam inacessíveis.
