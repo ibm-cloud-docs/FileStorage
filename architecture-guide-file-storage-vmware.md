@@ -11,15 +11,13 @@ lastupdated: "2018-06-25"
 
 The following steps can help you order and configure {{site.data.keyword.filestorage_full}} in a vSphere 5.5 and vSphere 6.0 environment at {{site.data.keyword.BluSoftlayer_full}}. If you require more than eight connections to your VMWare host, then choosing NFS {{site.data.keyword.filestorage_short}} is the best practice.
 
-## {{site.data.keyword.filestorage_short}} overview
-
-Our {{site.data.keyword.filestorage_short}} is designed to support high I/O applications requiring predictable levels of performance. The predictable performance is achieved through the allocation of protocol-level input/output operations per second (IOPS) to individual volumes.
+The {{site.data.keyword.filestorage_short}} is designed to support high I/O applications requiring predictable levels of performance. The predictable performance is achieved through the allocation of protocol-level input/output operations per second (IOPS) to individual volumes.
 
 The {{site.data.keyword.filestorage_short}} offering is accessed and mounted through an NFS connection. In a VMware deployment, a single volume can be mounted to up to 64 ESXi hosts as shared storage. You can also mount multiple volumes to create a storage cluster to use vSphere Storage Distributed Resource Scheduler (DRS).
 
 Pricing and configuration options for Endurance and Performance {{site.data.keyword.filestorage_short}} are charged based on a combination of the reserved space and the offered IOPS.
 
-### 1. {{site.data.keyword.filestorage_short}} Considerations
+### Ordering Considerations
 
 When you order {{site.data.keyword.filestorage_short}}, consider the following information:
 
