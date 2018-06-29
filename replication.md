@@ -193,7 +193,7 @@ Failovers are started under **Storage**, **{{site.data.keyword.filestorage_short
    >Expect a message that states that the failover is in progress. Additionally, an icon appears next to your volume on the **{{site.data.keyword.filestorage_short}}** that indicates that an active transaction is occurring. Hovering over the icon produces a window that shows the transaction. The icon disappears when the transaction is complete. During the failover process, configuration-related actions are read-only. You can't edit any snapshot schedule or change snapshot space. The event is logged in replication history.<br/> When your target volume is live you get another message. Your original source volume's LUN Name updates to end in "REP" and its Status becomes Inactive.
 4. Click **View All ({{site.data.keyword.filestorage_short}})**.
 5. Click your active volume (formerly your target volume). This volume now has an **Active** status.
-6. Mount and attach your storage volume to the host. Click [here](provisioning-block_storage.html) for instructions.
+6. Mount and attach your storage volume to the host. Click [here](provisioning-file-storage.html) for instructions.
 
 
 ## Starting a failback from a volume to its replica
@@ -216,7 +216,7 @@ Failbacks are started under **Storage**, **{{site.data.keyword.filestorage_short
    >Expect a message that shows the failover is in progress. Additionally, an icon appears next to your volume on the **{{site.data.keyword.filestorage_short}}** that indicates that an active transaction is occurring. Hovering over the icon produces a window that shows the transaction. The icon disappears when the transaction is complete. During the Failback process, configuration-related actions are read-only. You can't edit any snapshot schedule or change snapshot space. The event is logged in replication history.
 4. In the upper right, click **View All {{site.data.keyword.filestorage_short}}** link.
 5. Click your active volume ("source").
-6. Mount and attach your storage volume to the host. Click [here](provisioning-block_storage.html) for instructions.
+6. Mount and attach your storage volume to the host. Click [here](provisioning-file-storage.html) for instructions.
 
 
 ## Viewing the replication history
