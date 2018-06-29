@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-05-24"
+lastupdated: "2018-06-29"
 
 ---
 
@@ -23,22 +23,18 @@ The provider-managed encryption-at-rest feature uses the following industry stan
     - California Security Breach Information Act (SB 1386), and 
     - EU Data Protection Directive 95/46/EC compliance.
 
-## Encryption-at-Rest for snapshots or replicated storage  
+## Securing your snapshots or replicated storage  
 
 All snapshots and replicas of encrypted file storage are also encrypted by default. This feature can’t be turned off on a volume basis.
 
 ## Provisioning storage with encryption
 
-The provider-managed encryption-at-rest feature is only available in select data centers. All storage that is ordered in these data centers is automatically provisioned with encryption for data-at-rest. Click [here](new-ibm-block-and-file-storage-location-and-features.html) to see the current list of data centers where {{site.data.keyword.filestorage_short}} encryption for data-at-rest is available.
+The provider-managed encryption-at-rest feature is available in select data centers. All storage that is ordered in these data centers is automatically provisioned with encryption for data-at-rest. Click [here](new-ibm-block-and-file-storage-location-and-features.html) to see the current list of data centers where {{site.data.keyword.filestorage_short}} encryption is available.
 
-
-When you order {{site.data.keyword.filestorage_short}}, select a data center that is marked with an asterisk (`*`). You’ll see a lock icon to the right of the LUN/Volume Name field that indicates that the volume is encrypted. See Figure 1.
+When you order {{site.data.keyword.filestorage_short}}, select a data center that is marked with an asterisk (`*`). You can see a lock icon to the right of the LUN/Volume Name field that indicates that the volume is encrypted. See Figure 1.
 
 ![The lock icon indicates that the LUN is encrypted](/images/encryptedstorage.png)
 <caption>Figure 1. Example of the lock icon that indicates that the volume is encrypted.</caption>
 
 
-
-**Note**: Any non-encrypted storage that was provisioned before a data center upgrade will **not** be automatically encrypted. If you have non-encrypted storage in an upgraded data center, you’ll need to create a new volume and move your data. The following article can provide guidance.
-
-* [File Storage Migration in Upgraded Data Centers](migrate-file-storage-encrypted-file-storage.html)
+>**Note** - Any non-encrypted storage that was provisioned before a data center upgrade is **not** automatically encrypted. If you own non-encrypted storage in an upgraded data center and you want to have it encrypted, you need to create a new volume, and move your data. For more informatin, see [File Storage Migration in Upgraded Data Centers](migrate-file-storage-encrypted-file-storage.html)
