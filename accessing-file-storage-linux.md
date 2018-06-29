@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-05-24"
+lastupdated: "2018-06-29"
 
 ---
 {:new_window: target="_blank"}
@@ -12,27 +12,27 @@ lastupdated: "2018-05-24"
 
 First, make sure that the host that is to access the {{site.data.keyword.filestorage_full}} volume is authorized through the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
 
-1. From the {{site.data.keyword.filestorage_short}} listing page, click **Actions** associated with the new share and click **Authorize Host**.
-2. Select the desired host or hosts from the list and click **Submit**. This authorizes the host to access the share.
+1. From the {{site.data.keyword.filestorage_short}} listing page, click **Actions** that is associated with the new share and click **Authorize Host**.
+2. Select the host or hosts from the list and click **Submit**. This action authorizes the host to access the share.
 
 ## Mounting the {{site.data.keyword.filestorage_short}} share
 
-The following steps are required to connect a Linux-based {{site.data.keyword.BluSoftlayer_full}} Compute instance to a Network File System (NFS) share. The example is based on Red Hat Enterprise Linux 6. The steps can be adjusted for other Linux distributions according to the operating system (OS) vendor documentation.
+Use these instructions to connect a Linux-based {{site.data.keyword.BluSoftlayer_full}} Compute instance to a Network File System (NFS) share. The example is based on Red Hat Enterprise Linux 6. The steps can be adjusted for other Linux distributions according to the operating system (OS) vendor documentation.
 
-**Note:** The mount point of the file storage instance can be obtained from the {{site.data.keyword.filestorage_short}} listing page or through an API call - `SoftLayer_Network_Storage::getNetworkMountAddress()`.
+>**Note** - The mount point of the file storage instance can be obtained from the {{site.data.keyword.filestorage_short}} listing page or through an API call - `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 
-1. Install required packages/tools.
+1. Install the required packages/tools.
    ```
    # yum -y install nfs-utils nfs-utils-lib
    ```
    {:pre}
     
-2. Mount the remote share
+2. Mount the remote share.
    ```
    # mount -t "nfs version" -o "options" <mount_point> /mnt
    ```
        
-   Here is an example of mounting the remote share to a storage instance.
+   Example
    ```
    # mount -t nfs4 -o hard,intr
    nfsdal0501a.service.softlayer.com:/IBM01SV278685_7 /mnt
@@ -47,7 +47,7 @@ The following steps are required to connect a Linux-based {{site.data.keyword.Bl
    /dev/xvda1 97M 51M 42M 55%
    ```
     
-4. Navigate to the mount point and read/write files.
+4. Go to the mount point, and read/write files.
    ```
    # touch /mnt/test
    # ls -la /mnt
@@ -57,21 +57,21 @@ The following steps are required to connect a Linux-based {{site.data.keyword.Bl
    -rw-r--r-- 1 nobody nobody 0 Sep 8 15:52 test
    ```
 
-   **Note:** The files that are created by root have ownership of `nobody:nobody`. To display ownership correctly, `idmapd.conf` needs to be updated with the correct domain settings. See “How to implement no_root_squash for NFS” at the bottom of this page.
+   >**Note** - The files that are created by root have ownership of `nobody:nobody`. To display ownership correctly, `idmapd.conf` needs to be updated with the correct domain settings. See the **How to implement no_root_squash for NFS** section.
     
-5. Mount the remote share on start. To complete the setup, edit the file systems table `/etc/fstab` to add the remote share to the list of entries that will be automatically mounted on startup:
+5. Mount the remote share on start. To complete the setup, edit the file systems table (`/etc/fstab`) to add the remote share to the list of entries that are automatically mounted on startup:
 
    ```
    (hostname):/(username) /mnt "nfs version" "options" 0 0
    ```
     
-   Using the instance from the mounting the remote share example, the entry would be:
+   Example
     
    ```
    nfsdal0501a.service.softlayer.com:/IBM01SV278685_7 /mnt nfs4 defaults,hard,intr 0 0
    ```
     
-6. Verify that there are no errors with the configuration file.
+6. Verify that the configuration file has no errors.
 
    ```
    # mount -fav
@@ -80,15 +80,16 @@ The following steps are required to connect a Linux-based {{site.data.keyword.Bl
     
    If the command completes with no errors, your setup is complete.
 
-**Note:** If you are using NFS 4.1, add `sec=sys` to the mount command to prevent file ownership issues.
+   >**Note** - If you're using NFS 4.1, add `sec=sys` to the mount command to prevent file ownership issues.
 
  
-## How to implement no_root_squash for NFS (optional)
+## Implementing `no_root_squash` for NFS (optional)
 
-Configuring no_root_squash allows root clients to retain root permissions on the NFS share. For NFSv3, there is nothing that clients need to do; no_root_squash just works.
-For NFSv4, you need to set the nfsv4 domain to: `slnfsv4.com` and start `rpcidmapd`, or similar service depending on the OS version.
+Configuring `no_root_squash` allows root clients to retain root permissions on the NFS share. 
+- For NFSv3, there is nothing that clients need to do; `no_root_squash` works.
+- For NFSv4, you need to set the nfsv4 domain to: `slnfsv4.com` and start `rpcidmapd`, or a similar service that is used by your OS.
 
-Here’s an example:
+Example
 
 1. From the host, set domain setting in `/etc/idmapd.conf`.
 
