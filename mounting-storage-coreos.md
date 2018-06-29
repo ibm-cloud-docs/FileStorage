@@ -74,9 +74,9 @@ cluster1 ~ # mount |grep data
 ```
 {:codeblock}
  
-## Mounting NAS/Cifs
+## Mounting NAS/CIFS
 
-Mounting a cifs share isn't natively supported in CoreOS but there's an easy workaround to allow the host system to mount NAS shares. You can use a container to build the `mount.cfis` module, and then copy it to the CoreOS system
+Mounting a CIFS share isn't natively supported in CoreOS but there's an easy workaround to allow the host system to mount NAS shares. You can use a container to build the `mount.cfis` module, and then copy it to the CoreOS system
  
 On the CoreOS system, run the following to download and drop in to a Fedora container.
 
@@ -85,7 +85,7 @@ docker run -t -i -v /tmp:/host_tmp fedora /bin/bash
 ```
 {:pre}
  
-When you're in the container, run the following to build the cifs utility.
+When you're in the container, run the following to build the CIFS utility.
 
 ```
 dnf groupinstall -y "Development Tools" "Development Libraries"
@@ -98,7 +98,7 @@ cp mount.cifs /host_tmp/
 ```
 {:codeblock}
  
-Now that the mount.cifs file is copied to the host you can exit the docker container by entering the `exit` command or pressing **ctrl+d**. When you're back in the CoreOS system, you can mount the CIFS share with the following command: 
+Now that the `mount.cifs` file is copied to the host you can exit the docker container by entering the `exit` command or pressing **ctrl+d**. When you're back in the CoreOS system, you can mount the CIFS share with the following command: 
 ```
 /tmp/mount.cifs //nasXXX.service.softlayer.com/USERNAME -o username=USERNAME,password=PASSWORD /path/to/mount
 ```
