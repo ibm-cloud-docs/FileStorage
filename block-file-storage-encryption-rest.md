@@ -37,4 +37,5 @@ When you order {{site.data.keyword.filestorage_short}}, select a data center tha
 <caption>Figure 1. Example of the lock icon that indicates that the volume is encrypted.</caption>
 
 
->**Note** - Any non-encrypted storage that was provisioned before a data center upgrade is **not** automatically encrypted. If you own non-encrypted storage in an upgraded data center and you want to have it encrypted, you need to create a new volume, and move your data. For more informatin, see [File Storage Migration in Upgraded Data Centers](migrate-file-storage-encrypted-file-storage.html)
+
+>**Note** - Any non-encrypted storage that was provisioned before a data center upgrade is **not** automatically encrypted. If you own non-encrypted storage in an upgraded data center and you want to have it encrypted, you need to create a new volume, and move your data. For more information, see [File Storage Migration in Upgraded Data Centers](migrate-file-storage-encrypted-file-storage.html)
