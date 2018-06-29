@@ -213,7 +213,7 @@ Failbacks are started under **Storage**, **{{site.data.keyword.filestorage_short
 1. Click your active volume ("target").
 2. In the upper right, click **Replica** and click **Actions**.
 3. Select **Failback**.
-   >Expect a message that shows the failover is in progress. Additionally, an icon appears next to your volume on the **{{site.data.keyword.filestorage_short}}** that indicates that an active transaction is occurring. Hovering over the icon produces a window that shows the transaction. The icon disappears when the transaction is complete. During the Failback process, configuration-related actions are read-only. You can't edit any snapshot schedule or change snapshot space. The event is logged in replication history.
+   >Expect a message that shows the failover is in progress. Additionally, an icon appears next to your volume on the **{{site.data.keyword.filestorage_short}}** that indicates that an active transaction is occurring. Hovering over the icon produces a window that shows the transaction. The icon disappears when the transaction is complete. During the Failback process, configuration-related actions are read-only. You can't edit any snapshot schedule or change snapshot space. The event is logged in replication history.
 4. In the upper right, click **View All {{site.data.keyword.filestorage_short}}** link.
 5. Click your active volume ("source").
 6. Mount and attach your storage volume to the host. Click [here](provisioning-block_storage.html) for instructions.
