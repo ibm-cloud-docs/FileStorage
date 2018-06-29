@@ -11,6 +11,8 @@ lastupdated: "2018-06-29"
 
 # Replicating Data
 
+Snapshot and Replication services are natively available on Endurance {{site.data.keyword.filestorage_short}} volumes only. Performance {{site.data.keyword.filestorage_short}} doesn't have these capabilities.
+
 Replication uses one of your snapshot schedules to automatically copy snapshots to a destination volume in a remote data center. The copies can be recovered in the remote site if a catastrophic event occurs or your data becomes corrupted.
 
 With replicas, you can
