@@ -17,10 +17,10 @@ You can use these instructions to configure {{site.data.keyword.blockstoragefull
 1. Connect to the host through SSH.
 
 2. Ensure that a mount point target exists. <br />
->**Note** - Plesk has two options for storing backups. One is the internal Plesk storage, which is storage on your Plesk server. The other is external FTP storage, which is storage on some external server in the web or your local network. Commonly on Plesk boxes, internal backups are stored in `/var/lib/psa/dumps` and use `/tmp` as a temporary directory. In this example, the temporary directory is kept local, but the `dumps` directory is moved to the STaaS target (`/backup/psa/dumps`). No FTP user credentials are required.
+   >**Note** - Plesk has two options for storing backups. One is the internal Plesk storage, which is storage on your Plesk server. The other is external FTP storage, which is storage on some external server in the web or your local network. Commonly on Plesk boxes, internal backups are stored in `/var/lib/psa/dumps` and use `/tmp` as a temporary directory. In this example, the temporary directory is kept local, but the `dumps` directory is moved to the STaaS target (`/backup/psa/dumps`). No FTP user credentials are required.
    
 3. Configure your {{site.data.keyword.filestorage_short}} as described in [Accessing {{site.data.keyword.filestorage_short}} on Red Hat Enterprise Linux](accessing-file-storage-linux.html) and [Mounting NFS/{{site.data.keyword.filestorage_short}} in CentOS](mounting-nsf-file-storage.html) or [Mounting NFS/{{site.data.keyword.filestorage_short}} on CoreOS](mounting-storage-coreos.html). Mount the volume to `/backup` and configure it in the file system table `/etc/fstab` to enable mounting on start. <br />
->**Note** - By default, NFS downgrades any files that were created with the root permissions to the nobody user. To allow root clients to retain root permissions on the NFS share, `no_root_squash`needs to be added to `/etc/exports`. <br />
+   >**Note** - By default, NFS downgrades any files that were created with the root permissions to the nobody user. To allow root clients to retain root permissions on the NFS share, `no_root_squash`needs to be added to `/etc/exports`. <br />
 
 4. **Optional**. Copy existing backups to the new storage. Use `rsync` for example:
    ```
