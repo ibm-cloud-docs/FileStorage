@@ -37,11 +37,9 @@ You can provision {{site.data.keyword.blockstorageshort}} based on your needs an
 10. Click the **I have read the Master Service Agreement** check box and click **Place Order**.
 11. Your new storage allocation is available in a few minutes.
 
-**Note**: By default, you can provision a combined total of 250 {{site.data.keyword.filestorage_short}} volumes. Contact your sales representative to increase the number of your volumes. Read about increasing limits [here](managing-storage-limits.html).
+>**Note** - By default, you can provision a combined total of 250 {{site.data.keyword.blockstorageshort}} volumes. To increase the number of your volumes, contact your sales representative. Read about increasing limits [here](managing-storage-limits.html).<br/><br/>For the limit on simultaneous authorizations, see the [FAQs](File-Storage-FAQ.html)
 
-For the limit on simultaneous authorizations, see our [FAQs](File-Storage-FAQ.html)
-
-## How to order Performance for {{site.data.keyword.filestorage_short}}
+## Ordering Performance for {{site.data.keyword.filestorage_short}}
 
 1. From the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}, click **Storage**, **{{site.data.keyword.filestorage_short}}** OR from {{site.data.keyword.BluSoftlayer_full}} catalog click **Infrastructure** >** Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. In the upper right, click **Order {{site.data.keyword.blockstorageshort}}**.
@@ -58,9 +56,9 @@ For the limit on simultaneous authorizations, see our [FAQs](File-Storage-FAQ.ht
 8. Click the **I have read the Master Service Agreement** check box and click **Place Order**.
 9. Your new storage allocation is available in a few minutes.
 
->**Note** - By default, you can provision a combined total of 250 {{site.data.keyword.blockstorageshort}} volumes. To increase the number of your volumes, contact your sales representative. Read about increasing limits [here](managing-storage-limits.html).<br/>For the limit on simultaneous authorizations, see our [FAQs](File-Storage-FAQ.html)
+>**Note** - By default, you can provision a combined total of 250 {{site.data.keyword.blockstorageshort}} volumes. To increase the number of your volumes, contact your sales representative. Read about increasing limits [here](managing-storage-limits.html).<br/><br/>For the limit on simultaneous authorizations, see the [FAQs](File-Storage-FAQ.html)
 
-## Identifying my {{site.data.keyword.filestorage_short}} volumes on the invoice
+## Identifying {{site.data.keyword.filestorage_short}} volumes on the invoice
 
 All LUNs appear on your invoice as a line item. Endurance appears as “Endurance Storage Service” and Performance appears as "Performance Storage Service" The rate varies based on your storage level. You can expand on Endurance or Performance to see that it's {{site.data.keyword.filestorage_short}}.
 
