@@ -6,7 +6,6 @@ lastupdated: "2018-05-17"
 
 ---
 {:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
 
 # Ordering {{site.data.keyword.filestorage_short}} 
 
