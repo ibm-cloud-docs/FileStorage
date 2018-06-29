@@ -9,6 +9,8 @@ lastupdated: "2018-06-29"
 
 # Snapshots
 
+Snapshot and Replication services are natively available on Endurance {{site.data.keyword.filestorage_short}} volumes only. Performance {{site.data.keyword.filestorage_short}} doesn't have these capabilities.
+
 Snapshots are a feature of {{site.data.keyword.filestorage_full}}. A snapshot represents a volume's contents at a particular point in time. Snapshots enable you to protect your data with no performance impact, minimal consumption of space, and are considered your first line of defense for data protection. If a user accidentally modifies or deletes crucial data from a volume, the data can be easily and quickly restored from a snapshot copy.
 
 {{site.data.keyword.filestorage_short}} provides you with two ways to take your snapshots.
