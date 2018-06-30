@@ -58,7 +58,18 @@ You can provision {{site.data.keyword.blockstorageshort}} based on your needs an
 
 >**Note** - By default, you can provision a combined total of 250 {{site.data.keyword.blockstorageshort}} volumes. To increase the number of your volumes, contact your sales representative. Read about increasing limits [here](managing-storage-limits.html).<br/><br/>For the limit on simultaneous authorizations, see the [FAQs](File-Storage-FAQ.html)
 
+
+## Connecting your new storage
+
+When your provisioning request is complete, authorize your hosts to access the new storage and configure your connection. Depending on your host's operating system, follow the appropriate link.
+- [Accessing {{site.data.keyword.filestorage_short}} on Linux](accessing-file-storage-linux.html)
+- [Mounting NFS/File Storage in CentOS](mounting-nsf-file-storage.html)
+- [Mounting {{site.data.keyword.filestorage_short}} on CoreOS](mounting-storage-coreos.html)
+- [Configuring {{site.data.keyword.filestorage_short}} for Backup with cPanel](configure-backup-cpanel.html)
+- [Configuring {{site.data.keyword.filestorage_short}} for Backup with Plesk](configure-backup-plesk.html)
+- [Mounting {{site.data.keyword.filestorage_short}} Volume on ESXi hosts](architecture-guide-file-storage-vmware.html)
+
+
 ## Identifying {{site.data.keyword.filestorage_short}} volumes on the invoice
 
 All LUNs appear on your invoice as a line item. Endurance appears as “Endurance Storage Service” and Performance appears as "Performance Storage Service" The rate varies based on your storage level. You can expand on Endurance or Performance to see that it's {{site.data.keyword.filestorage_short}}.
-
