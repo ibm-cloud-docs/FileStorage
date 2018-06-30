@@ -63,7 +63,7 @@ You can provision {{site.data.keyword.blockstorageshort}} based on your needs an
 
 When your provisioning request is complete, authorize your hosts to access the new storage and configure your connection. Depending on your host's operating system, follow the appropriate link.
 - [Accessing {{site.data.keyword.filestorage_short}} on Linux](accessing-file-storage-linux.html)
-- [Mounting NFS/File Storage in CentOS](mounting-nsf-file-storage.html)
+- [Mounting NFS/{{site.data.keyword.filestorage_short}} in CentOS](mounting-nsf-file-storage.html)
 - [Mounting {{site.data.keyword.filestorage_short}} on CoreOS](mounting-storage-coreos.html)
 - [Configuring {{site.data.keyword.filestorage_short}} for Backup with cPanel](configure-backup-cpanel.html)
 - [Configuring {{site.data.keyword.filestorage_short}} for Backup with Plesk](configure-backup-plesk.html)
