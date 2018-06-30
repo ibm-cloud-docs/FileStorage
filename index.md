@@ -25,11 +25,11 @@ Take advantage of the following core features of {{site.data.keyword.filestorage
 - **Data-At-Rest Encryption** [(Available in select data centers.)](new-ibm-block-and-file-storage-location-and-features.html)
    - Provider-managed encryption for data-at-rest is provided at no additional cost
 - **All Flash Backed Storage** [(Available in select data centers.)](new-ibm-block-and-file-storage-location-and-features.html)
-   - All flash storage for volumes can be provisioned with Endurance or Performance at 2 IOPS/GB or higher levels.
-- **Snapshots (When provisioned with Endurance or Performance in [select data centers](new-ibm-block-and-file-storage-location-and-features.html))**.
+   - All flash storage for volumes can be provisioned at 2 IOPS/GB or higher levels.
+- **Snapshots** [(Available in select data centers.)](new-ibm-block-and-file-storage-location-and-features.html).
    - Captures point-in-time data snapshots non-disruptively.
-- **Replication** 
-   - Available when storage is provisioned with Endurance or Performance in [select data centers](new-ibm-block-and-file-storage-location-and-features.html).
+- **Replication**  [(Available in select data centers.)](new-ibm-block-and-file-storage-location-and-features.html)
+   - Available when storage is provisioned in [select data centers](new-ibm-block-and-file-storage-location-and-features.html).
    - Automatically copies snapshots to a partner {{site.data.keyword.BluSoftlayer_full}} data center.
 - **Highly available connectivity**
    - Uses redundant networking connections to maximize availability.
@@ -264,3 +264,17 @@ To achieve maximum IOPS, adequate network resources need to be in place. Other c
 **NFS version**
 
 Both NFS v3 and NFS v4.1 are supported in the {{site.data.keyword.BluSoftlayer_full}} environment. However, NFS v3 is preferred because NFS v4.1 is a stateful protocol (not stateless like NFSv3) and protocol issues can occur during network events. NFS v4.1 must quiesce all operations and then complete lock reclamation. On a relatively busy NFS file server, the increased latency can cause disruptions. The lack of NFS v4.1 multipath/trunking can also extend NFS operations recovery.
+
+## Submitting your Order
+
+When you're ready to submit your order, follow the instructions [here](provisioning-file-storage.html). For Provisioning File Storage with VMware, click [here](architecture-guide-file-storage-vmware.html)
+
+## Connecting your new storage
+
+When your provisioning request is complete, authorize your hosts to access the new storage and configure your connection. Depending on your host's operating system, follow the appropriate link.
+- [Accessing {{site.data.keyword.filestorage_short}} on Linux](accessing-file-storage-linux.html)
+- [Mounting NFS/File Storage in CentOS](mounting-nsf-file-storage.html)
+- [Mounting {{site.data.keyword.filestorage_short}} on CoreOS](mounting-storage-coreos.html)
+- [Configuring {{site.data.keyword.filestorage_short}} for Backup with cPanel](configure-backup-cpanel.html)
+- [Configuring {{site.data.keyword.filestorage_short}} for Backup with Plesk](configure-backup-plesk.html)
+- [Mounting {{site.data.keyword.filestorage_short}} Volume on ESXi hosts](architecture-guide-file-storage-vmware.html)
