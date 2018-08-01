@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-08-01"
 
 ---
 
@@ -230,6 +230,17 @@ Replication history is viewed on the **Audit Log** on the **Account** tab under 
 - Snapshot that was used for the replication,
 - Size of the replication,
 - When it completed.
+
+
+## Creating a duplicate of a replica
+
+You can create a duplicate of an existing {{site.data.keyword.BluSoftlayer_full}} {{site.data.keyword.blockstoragefull}}. The duplicate volume inherits the capacity and performance options of the original LUN/volume by default and has a copy of the data up to the point-in-time of a snapshot.
+
+Duplicates can be created from both primary and replica volumes. The new duplicate is created in the same data center as the original volume. If you create a duplicate from a replica volume, the new volume is created in the same data center as the replica volume.
+
+Duplicate volumes can be accessed by a host for read/write as soon as the storage is provisioned. However, snapshots and replication aren't allowed until the data copy from the original to the duplicate is complete.
+
+For more information, see [Creating a duplicate File Volume](how-to-create-duplicate-volume.html)
 
 
 ## Canceling an existing replication
