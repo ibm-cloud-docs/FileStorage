@@ -2,12 +2,12 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-08-08"
 
 ---
 {:new_window: target="_blank"}
 
-# {{site.data.keyword.filestorage_short}} - frequently Asked Questions
+# FAQs
 
 ## How can I tell which of my {{site.data.keyword.filestorage_short}} volumes are encrypted?
 Look at your list of {{site.data.keyword.filestorage_short}} in the customer portal. You can see a lock icon to the right of the LUN/volume name for the volumes that are encrypted.
