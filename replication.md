@@ -2,11 +2,10 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-08-01"
+lastupdated: "2018-08-08"
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 
 # Replicating Data
@@ -40,7 +39,7 @@ See Table 1 for the complete list of data center availability and replication ta
 			<th>Canada</th>
 			<th>Europe</th>
 			<th>Asia-Pacific</th>
-			<th>Australia</strong></t>
+			<th>Australia</t>
 		</tr>
 	</thead>
 	<tbody>
