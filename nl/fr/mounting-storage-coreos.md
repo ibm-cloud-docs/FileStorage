@@ -2,23 +2,22 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-05-14"
+lastupdated: "2018-06-29"
 
 ---
 {:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
 {:codeblock: .codeblock}
 {:pre: .pre}
 
 # Montage de {{site.data.keyword.filestorage_short}} sur CoreOS
 
-CoreOS est une distribution Linux puissante conçue pour simplifier la gestion de déploiements importants et évolutifs sur des infrastructures variées. Basé sur une génération de Chrome OS, CoreOS gère un système hôte léger et utilise des conteneurs Docker pour toutes les applications.
+CoreOS est une distribution Linux puissante qui est conçue pour simplifier la gestion de déploiements importants et évolutifs sur des infrastructures variées. Basé sur une génération de Chrome OS, CoreOS gère un système hôte léger et utilise des conteneurs Docker pour toutes les applications.
 
 ## Montage de stockage portable
 
-Tous les fichiers de montage secondaires sont placés dans le répertoire `/etc/systemd/system` car les montages au niveau du système sont effectués dans un répertoire en lecture seule dans CoreOS. Vous allez créer un fichier `MOUNTPOINT.mount`. La section **Where** du fichier .mount doit correspondre au nom de fichier. Si le point de montage comporte des barres obliques (`/`), vous devez nommer le fichier en respectant la syntaxe suivante : `chemin-de-montage.mount`. Comme vous pouvez le voir dans l'exemple suivant, l'unité de stockage portable doit être montée dans `/mnt/www`, donc le fichier est nommé `mnt-www.mount`.
+Tous les fichiers de montage secondaires sont placés dans le répertoire `/etc/systemd/system` car les montages au niveau du système sont effectués dans un répertoire en lecture seule dans CoreOS. Vous devez d'abord créer un fichier `MOUNTPOINT.mount`. La section **Where** du fichier `.mount` doit correspondre au nom de fichier. Si le point de montage comporte des barres obliques (`/`), vous devez nommer le fichier en respectant la syntaxe `chemin-de-montage.mount`. Par exemple, si vous souhaitez monter l'unité de stockage portable dans `/mnt/www`, vous devez nommer le fichier `mnt-www.mount`.
 
-Vous devez utiliser `fdisk` ou `parted` pour créer la partition et vérifier que le système de fichiers que vous créez correspond à celui qui est indiqué dans le fichier `.mount`, sinon, le service ne pourra pas démarrer. 
+Vous pouvez utiliser `fdisk` ou `parted` pour créer la partition et vérifier que le système de fichiers que vous créez correspond à celui qui est indiqué dans le fichier `.mount`, sinon, le service ne pourra pas démarrer. 
 
 
 ```
@@ -43,9 +42,11 @@ $ systemctl enable --now mnt-www.mount
 ```
 {:pre}
 
-## Montage NFS/{{site.data.keyword.filestorage_short}}
+## Montage de NFS/{{site.data.keyword.filestorage_short}}
 
-Le processus de montage d'un stockage {{site.data.keyword.filestorage_short}} est similaire, mais étant donné que le montage fait appel à NFS, il est possible d'indiquer certaines options supplémentaires à l'aide de la ligne Options= dans le fichier de montage. Dans l'exemple suivant, le système NFS est défini pour un montage dans `/data/www`. Notez que le point de montage NFS de l'instance {{site.data.keyword.filestorage_short}} peut être obtenu sur la page de la liste de {{site.data.keyword.filestorage_short}} ou via un appel API `SoftLayer_Network_Storage::getNetworkMountAddress()`.
+Le processus de montage de {{site.data.keyword.filestorage_short}} est le même. Etant donné que le montage fait appel à NFS, vous pouvez indiquer davantage d'options à l'aide de la ligne `Options=` dans le fichier de montage.  
+
+Dans l'exemple, le système NFS est défini pour un montage dans `/data/www`. Le point de montage NFS de l'instance {{site.data.keyword.filestorage_short}} peut être obtenu sur la page de la liste de {{site.data.keyword.filestorage_short}} ou via un appel API `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 
 ```
 $ cat data-www.mount
@@ -63,7 +64,7 @@ WantedBy = multi-user.target
 ```
 {:codeblock}
 
-Vous pouvez maintenant activer le montage et vérifier que celui-ci est correct. 
+A présent, activez le montage et vérifiez que celui-ci est correct. 
 
 ```
 systemctl enable --now /etc/systemd/system/data-www.mount
@@ -73,17 +74,19 @@ cluster1 ~ # mount |grep data
 ```
 {:codeblock}
  
-## Montage NAS/Cifs
+## Montage de NAS/CIFS
 
-Le montage d'un partage cifs n'est pas pris en charge nativement dans CoreOS, mais une solution de contournement très simple permet d'autoriser le système hôte à monter des partages NAS. Vous pouvez utiliser un conteneur pour créer le module `mount.cfis`, puis le copier sur le système CoreOS.
+Le montage d'un partage CIFS n'est pas pris en charge nativement dans CoreOS, mais une solution de contournement très simple permet d'autoriser le système hôte pour monter des partages NAS. Vous pouvez utiliser un conteneur pour créer le module `mount.cfis`, puis le copier sur le système CoreOS.
  
-Sur le système CoreOS, exécutez la commande suivante pour télécharger et accéder à un conteneur Fedora :   
+Sur le système CoreOS, exécutez la commande suivante pour télécharger et accéder à un conteneur Fedora :
+
 ```
 docker run -t -i -v /tmp:/host_tmp fedora /bin/bash
 ```
 {:pre}
  
-Une fois dans le conteneur, exécutez la commande suivante pour créer l'utilitaire cifs :
+Une fois dans le conteneur, exécutez la commande suivante pour créer l'utilitaire CIFS :
+
 ```
 dnf groupinstall -y "Development Tools" "Development Libraries"
 dnf install -y tar
@@ -95,7 +98,7 @@ cp mount.cifs /host_tmp/
 ```
 {:codeblock}
  
-A présent que le fichier mount.cifs est copié sur l'hôte, vous pouvez quitter le conteneur Docker à l'aide de la commande `exit` ou des touches **ctrl+d**. Une fois revenu dans le système CoreOS, vous pouvez monter le partage CIFS à l'aide de la commande suivante :  
+A présent que le fichier `mount.cifs` est copié sur l'hôte, vous pouvez quitter le conteneur Docker à l'aide de la commande `exit` ou des touches **ctrl+d**. Une fois revenu dans le système CoreOS, vous pouvez monter le partage CIFS à l'aide de la commande suivante : 
 ```
 /tmp/mount.cifs //nasXXX.service.softlayer.com/USERNAME -o username=USERNAME,password=PASSWORD /path/to/mount
 ```

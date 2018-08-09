@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-05-14"
+lastupdated: "2018-06-29"
 
 ---
 {:new_window: target="_blank"}
@@ -10,18 +10,18 @@ lastupdated: "2018-05-14"
 
 # Gestion des limites de stockage
 
-Vous pouvez, par défaut, mettre à disposition un total combiné de 250 volumes {{site.data.keyword.filestorage_full}} globalement. 
+Vous pouvez, par défaut, mettre à disposition un total combiné de 250 volumes {{site.data.keyword.blockstorageshort}} globalement. 
 
 Vous pouvez demander une augmentation de cette limite en soumettant un ticket dans le portail [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}. Lorsque la demande est approuvée, une limite de volume est définie pour un centre de données spécifique.   
 
-Pour demander une mise à jour ou une augmentation de limite, ouvrez un ticket et envoyez-le à votre ingénieur commercial.
+Pour demander une augmentation de la limite, ouvrez un ticket et envoyez-le à votre ingénieur commercial.
 
 Dans le ticket, indiquez les informations suivantes :
 
 - **Sujet du ticket** : demande d'augmentation de la limite de stockage en nombre de volumes pour un centre de données
 
 - **Quel cas d'utilisation la demande de volumes supplémentaires concerne-t-elle ?** <br />
-*Exemple de réponse : un nouveau magasin de données VMWare, un nouvel environnement de développement/test, une base de données SQL ou la consignation.*
+*Exemple de réponse : un nouveau magasin de données VMware, un nouvel environnement de développement/test, une base de données SQL ou la consignation.*
 
 - **Combien de volumes de bloc supplémentaires sont-ils nécessaires par type, taille, IOPS et emplacement ? ** <br />
 *Exemple de réponse : "25x Endurance 2 To @ 4 IOPS dans DAL09" ou "25x Performance 4 To @ 2 IOPS dans WDC04".*
@@ -29,7 +29,7 @@ Dans le ticket, indiquez les informations suivantes :
 - **Combien de volumes de fichier supplémentaires sont-ils nécessaires par type, taille, IOPS et emplacement ? ** <br />
 *Exemple de réponse : "25x Performance 20 Go @ 10 IOPS dans DAL09" ou "50x Endurance 2 To @ 0,25 IOPS dans SJC03".*
  
-- **Indiquez une estimation du délai au bout duquel la totalité de l'augmentation de volume demandée doit être mise à disposition.** <br />
+- **Indiquez une estimation du délai au terme duquel la totalité de l'augmentation de volume demandée doit être mise à disposition.** <br />
  *Exemple de réponse : "90 jours".*
 
 - **Indiquez une prévision à 90 jours de l'utilisation moyenne de la capacité attendue de ces volumes.** <br />

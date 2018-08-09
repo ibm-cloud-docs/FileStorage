@@ -1,13 +1,12 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="FileStorage" audience="services" href="/docs/infrastructure/FileStorage/index.html"}
+{: .toc subcollection="FileStorage" audience="services" arm="3662725" href="/docs/infrastructure/FileStorage/index.html"}
 IBM Cloud Storage - File Storage
 
     {: .navgroup id="learn"}
     index.md
     new-ibm-block-and-file-storage-location-and-features.md
-    architecture-guide-file-storage-vmware.md
     snapshots.md
     replication.md
     expandable_file_storage.md
@@ -20,6 +19,7 @@ IBM Cloud Storage - File Storage
         provisioning-file-storage.md
         ordering-snapshots.md
         managing-storage-limits.md
+        architecture-guide-file-storage-vmware.md
 
     {: .topicgroup}
     Configuration

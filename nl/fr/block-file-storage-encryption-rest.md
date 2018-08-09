@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-05-24"
+lastupdated: "2018-06-29"
 
 ---
 
@@ -23,22 +23,19 @@ Le chiffrement au repos géré par le fournisseur utilise les protocoles suivant
     - California Security Breach Information Act (SB 1386) 
     - Conformité à la directive européenne 95/46/EC concernant la protection des données
 
-## Chiffrement au repos pour le stockage des instantanés ou le stockage répliqué  
+## Sécurisation de vos instantanés ou de votre stockage répliqué.   
 
 Tous les instantanés et toutes les répliques d'un stockage de fichier chiffré sont également chiffrés par défaut. Il est impossible de désactiver cette fonctionnalité volume par volume.
 
 ## Mise à disposition du stockage avec chiffrement
 
-La fonctionnalité de chiffrement au repos géré par le fournisseur est disponible uniquement dans des centres de données sélectionnés. La totalité du stockage commandé dans ces centres de données est automatiquement doté du chiffrement des données au repos. Cliquez [ici](new-ibm-block-and-file-storage-location-and-features.html) pour afficher la liste des centres de données dans lesquels le chiffrement {{site.data.keyword.filestorage_short}} des données au repos est disponible.
+La fonctionnalité de chiffrement au repos géré par le fournisseur est disponible dans des centres de données sélectionnés. La totalité du stockage commandé dans ces centres de données est automatiquement doté du chiffrement des données au repos. Cliquez [ici](new-ibm-block-and-file-storage-location-and-features.html) pour afficher la liste des centres de données dans lesquels le chiffrement {{site.data.keyword.filestorage_short}} est disponible.
 
-
-Lorsque vous commandez {{site.data.keyword.filestorage_short}}, sélectionnez un centre de données signalé par un astérisque (`*`). Une icône en forme de verrou figure à droite du numéro d'unité logique/nom de volume pour indiquer qu'il est chiffré. Voir la Figure 1.
+Lorsque vous commandez {{site.data.keyword.filestorage_short}}, sélectionnez un centre de données signalé par un astérisque (`*`). Une icône en forme de verrou figure à droite de la zone Numéro d'unité logique/nom de volume pour indiquer que le volume est chiffré. Voir la Figure 1.
 
 ![L'icône en forme de verrou indique que le numéro d'unité logique est chiffré](/images/encryptedstorage.png)
 <caption>Figure 1. Exemple d'icône en forme de verrou indiquant que le volume est chiffré.</caption>
 
 
 
-**Remarque** : un stockage non chiffré mis à disposition avant la mise à niveau d'un centre de données **n'est pas** automatiquement chiffré. Si vous disposez d'un stockage non chiffré dans un centre de données mis à niveau, vous devrez créer un nouveau volume et déplacer vos données. Vous trouverez de l'aide à ce sujet dans l'article suivant :
-
-* [Migration de stockage de fichier dans des centres de données mis à niveau](migrate-file-storage-encrypted-file-storage.html)
+>**Remarque** - un stockage non chiffré mis à disposition avant la mise à niveau d'un centre de données **n'est pas** automatiquement chiffré. Si vous disposez d'un stockage non chiffré dans un centre de données mis à niveau et que vous souhaitez le chiffrer, vous devrez créer un nouveau volume et déplacer vos données. Pour plus d'informations, voir [Migration de stockage de fichier dans des centres de données mis à niveau](migrate-file-storage-encrypted-file-storage.html)
