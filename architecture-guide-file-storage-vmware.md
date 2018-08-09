@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-08-09"
 
 ---
 {:pre: .pre}
@@ -236,7 +236,7 @@ The network configuration for this architecture guide uses a minimal number of p
    ```
    {: pre}
 
-2. Static routes are not persistent across reboots on ESXi 5.0 and earlier. To ensure that any added static routes remain persistent, this command needs to be added to the `local.sh` file on each host, which is located in the `/etc/rc.local.d/` directory. Open the `local.sh` file by using the visual editor, and add the second command in Step 4.1. the `exit 0` line. 
+2. Static routes are not persistent across reboots on ESXi 5.0 and earlier. To ensure that any added static routes remain persistent, this command needs to be added to the `local.sh` file on each host, which is located in the `/etc/rc.local.d/` directory. Open the `local.sh` file by using the visual editor, and add the second command in Step 4.1. in front of the `exit 0` line. 
 
 >**Notes**<br/>- Make note of the IP address as it can be used for mounting the volume in the next step.<br/>This process needs to be done for each NFS volume you plan to mount to your ESXi host.<br/>For more information, see the VMware KB article, [Configuring static routes for VMkernel ports on an ESXi host](https://kb.vmware.com/s/article/2001426){:new_window}.
 
@@ -328,7 +328,7 @@ Extra settings are required for configuring ESXi 5.x hosts for NFS storage. This
 |NFS.MaxQueueDepth|	64 |
 
 
-### Updating advanced configuration parameters on ESXi 5.x host for by using the CLI:
+### Updating advanced configuration parameters on ESXi 5.x host by using the CLI
 
 The following examples use the CLI to set the advanced configuration parameters, and then, check them. The `esxcfg-advcfg` tool that is used in the examples can be found in the `/usr/sbin` directory on the ESXi 5.x hosts.
 
