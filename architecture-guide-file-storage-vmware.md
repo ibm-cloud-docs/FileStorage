@@ -236,7 +236,7 @@ The network configuration for this architecture guide uses a minimal number of p
    ```
    {: pre}
 
-2. Static routes are not persistent across reboots on ESXi 5.0 and earlier. To ensure that any added static routes remain persistent, this command needs to be added to the `local.sh` file on each host, which is located in the `/etc/rc.local.d/` directory. Open the `local.sh` file by using the visual editor, and add the second command in Step 4.1. the `exit 0` line. 
+2. Static routes are not persistent across reboots on ESXi 5.0 and earlier. To ensure that any added static routes remain persistent, this command needs to be added to the `local.sh` file on each host, which is located in the `/etc/rc.local.d/` directory. Open the `local.sh` file by using the visual editor, and add the second command in Step 4.1. in front of the `exit 0` line. 
 
 >**Notes**<br/>- Make note of the IP address as it can be used for mounting the volume in the next step.<br/>This process needs to be done for each NFS volume you plan to mount to your ESXi host.<br/>For more information, see the VMware KB article, [Configuring static routes for VMkernel ports on an ESXi host](https://kb.vmware.com/s/article/2001426){:new_window}.
 
