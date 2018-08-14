@@ -2,21 +2,20 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-05-29"
+lastupdated: "2018-06-20"
 
 ---
 {:new_window: target="_blank"}
 
 # {{site.data.keyword.filestorage_short}} 的新位置和功能
 
-{{site.data.keyword.BluSoftlayer_full}} 将推出新版本的 {{site.data.keyword.filestorage_full}}！新的存储器在精选数据中心内可用，是更高 IOPS 级别的闪存支持的存储器，具有针对静态数据的磁盘级别加密。在精选数据中心内订购的所有存储器都将自动通过新版本的 {{site.data.keyword.filestorage_short}} 创建。
+{{site.data.keyword.BluSoftlayer_full}} 将推出新版本的 {{site.data.keyword.filestorage_full}}！新的存储器在精选数据中心内提供，是更高 IOPS 级别的闪存支持的存储器，具有针对静态数据的磁盘级别加密。在精选数据中心内订购的所有存储器都将自动通过新版本的 {{site.data.keyword.filestorage_short}} 创建。
 
 **注：**新卷的 NFS 安装点已更改。有关详细信息，请参阅**增强型 {{site.data.keyword.filestorage_short}} 卷的新安装点**。
 
-新的 {{site.data.keyword.filestorage_short}} 在以下区域/数据中心内可用，日后会增加更多数据中心！
+新的 {{site.data.keyword.filestorage_short}} 在以下区域/数据中心内提供，日后会增加更多数据中心！
 
-<table style="width:100%;">
-  <caption>表 1 显示了我们的数据中心可用性。每个区域单独一列。某些城市（例如，达拉斯、圣何塞、华盛顿特区、阿姆斯特丹、法兰克福、伦敦和悉尼）有多个数据中心。</caption>
+<table role="presentation">
 	<tr>
 		<td><strong>美国 2</strong></td>
 		<td><strong>欧盟</strong></td>
@@ -67,6 +66,7 @@ lastupdated: "2018-05-29"
 	</tr>
 </table>
 
+*表 1 显示了数据中心可用性。每个区域单独一列。某些城市（例如，达拉斯、圣何塞、华盛顿特区、阿姆斯特丹、法兰克福、伦敦和悉尼）有多个数据中心。*
 
 新存储器具有以下特性和功能：
 

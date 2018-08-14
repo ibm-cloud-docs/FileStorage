@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-05-29"
+lastupdated: "2018-06-20"
 
 ---
 {:new_window: target="_blank"}
@@ -13,10 +13,9 @@ lastupdated: "2018-05-29"
 
 **Nota:** il punto di montaggio NFS per i nuovi volumi è cambiato. Per i dettagli, consulta la sezione **Nuovo punto di montaggio per i volumi di {{site.data.keyword.filestorage_short}} avanzato**.
 
-La nuova {{site.data.keyword.filestorage_short}} è disponibile nelle seguenti regioni/nei seguenti data center e a breve verrà aggiunta la disponibilità di ulteriori data center. 
+La nuova {{site.data.keyword.filestorage_short}} è disponibile nelle seguenti regioni/nei seguenti data center e a breve verrà aggiunta la disponibilità di ulteriori data center.
 
-<table style="width:100%;">
-  <caption>La tabella 1 mostra la nostra disponibilità di data center. Ogni regione ha la propria colonna. Alcune città, come Dallas, San Jose, Washington DC, Amsterdam, Francoforte, Londra e Sydney hanno più data center.</caption>
+<table role="presentation">
 	<tr>
 		<td><strong>US 2</strong></td>
 		<td><strong>UE</strong></td>
@@ -67,20 +66,21 @@ La nuova {{site.data.keyword.filestorage_short}} è disponibile nelle seguenti r
 	</tr>
 </table>
 
+*La tabella 1 mostra la nostra disponibilità di data center. Ogni regione ha la propria colonna. Alcune città, come Dallas, San Jose, Washington DC, Amsterdam, Francoforte, Londra e Sydney hanno più data center.*
 
 La nuova archiviazione ha le seguenti funzioni e capacità:
 
 - [Crittografia gestita dal provider per i dati inattivi](block-file-storage-encryption-rest.html). <br/> Viene eseguito automaticamente il provisioning di tutti i volumi {{site.data.keyword.filestorage_short}} come crittografati senza costi aggiuntivi.
 - Opzione livello 10 IOPS per GB. <br/> Un nuovo livello è stato aggiunto a {{site.data.keyword.filestorage_short}} di tipo Endurance per supportare i carichi di lavoro più esigenti.
 - Archiviazione con supporto all-flash. <br/> {{site.data.keyword.filestorage_short}} di cui viene eseguito il provisioning con le opzioni Endurance o Performance a 2 IOPS per GB o superiore viene eseguito il backup dall'archiviazione con supporto all-flash.
-- Supporto di istantanea e replica. 
+- Supporto di istantanea e replica.
 - L'opzione di fatturazione oraria aggiunta per l'archiviazione di cui è pianificato l'utilizzo per meno di un intero mese.
 - Fino a 48.000 IOPS per {{site.data.keyword.filestorage_short}} di cui viene eseguito il provisioning con il tipo Performance.
 - I tassi di IOPS sono regolabili per migliorare le prestazioni di cambiamenti del carico stagionali. Leggi ulteriori informazioni su questa funzione [qui](adjustable-iops.html).
 - Crea un clone dei tuoi dati con la [funzione di duplicazione del volume di {{site.data.keyword.filestorage_short}}](how-to-create-duplicate-volume.html).
 - L'archiviazione è espandibile in incrementi di GB fino a 12 TB immediatamente, senza dover creare un duplicato o eseguire manualmente lo spostamento dei dati a un volume più grande. Leggi ulteriori informazioni su questa funzione [qui](expandable_file_storage.html).
 
-## Nuovo punto di montaggio per i volumi di {{site.data.keyword.filestorage_short}} avanzato 
+## Nuovo punto di montaggio per i volumi di {{site.data.keyword.filestorage_short}} avanzato
 
 Tutti i volumi di {{site.data.keyword.filestorage_short}} avanzato di cui viene eseguito il provisioning in questi data center hanno un punto di montaggio diverso rispetto ai volumi non crittografati. Per assicurarti che stai usando il punto di montaggio corretto per entrambi i tuoi volumi, puoi visualizzare le informazioni sul punto di montaggio nella pagina **Volume Details** nell'IU. Puoi inoltre accedere al punto di montaggio corrente tramite una chiamata API: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 

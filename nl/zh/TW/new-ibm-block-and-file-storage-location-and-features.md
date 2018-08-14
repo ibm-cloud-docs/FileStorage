@@ -2,21 +2,20 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-05-29"
+lastupdated: "2018-06-20"
 
 ---
 {:new_window: target="_blank"}
 
 # {{site.data.keyword.filestorage_short}} 的新位置及特性
 
-{{site.data.keyword.BluSoftlayer_full}} 將引進新版的 {{site.data.keyword.filestorage_full}}！精選資料中心內會提供新的儲存空間，並且由更高 IOPS 層次的快閃記憶體儲存空間支援，且具有靜態資料的磁碟層次加密。在精選資料中心訂購的所有儲存空間都會自動建立新版本的 {{site.data.keyword.filestorage_short}}。
+{{site.data.keyword.BluSoftlayer_full}} 將引進新版的 {{site.data.keyword.filestorage_full}}！新的儲存空間會提供在精選資料中心內，並且由更高 IOPS 層次的快閃記憶體儲存空間支援，且具有靜態資料的磁碟層次加密。在精選資料中心訂購的所有儲存空間，都會自動使用新版本的 {{site.data.keyword.filestorage_short}} 建立。
 
 **附註：**新磁區的 NFS 裝載點已變更。如需詳細資料，請參閱**加強型 {{site.data.keyword.filestorage_short}} 磁區的新裝載點**區段。
 
 下列地區/資料中心已提供新的 {{site.data.keyword.filestorage_short}}，其他資料中心稍後即會推出！
 
-<table style="width:100%;">
-  <caption>表 1 顯示我們的「資料中心可用性」。每一個地區都有自己的直欄。有些城市（例如「達拉斯」、「聖荷西」、「華盛頓特區」、「阿姆斯特丹」、「法蘭克福」、「倫敦」及「雪梨」）會有多個資料中心。</caption>
+<table role="presentation">
 	<tr>
 		<td><strong>美國 2</strong></td>
 		<td><strong>歐盟</strong></td>
@@ -67,6 +66,7 @@ lastupdated: "2018-05-29"
 	</tr>
 </table>
 
+*「表 1」顯示「資料中心可用性」。每一個地區都有自己的直欄。有些城市（例如「達拉斯」、「聖荷西」、「華盛頓特區」、「阿姆斯特丹」、「法蘭克福」、「倫敦」及「雪梨」）會有多個資料中心。*
 
 新的儲存空間具有下列特性及功能：
 
@@ -74,7 +74,7 @@ lastupdated: "2018-05-29"
 - 每 GB 10 IOPS 層級選項。<br/> 「耐久性」類型 {{site.data.keyword.filestorage_short}} 已新增層級，可支援最嚴苛的工作負載。
 - 全快閃記憶體支援的儲存空間。<br/> {{site.data.keyword.filestorage_short}} 已佈建每 GB 2 IOPS 或以上的「耐久性」或「效能」選項，並由全快閃記憶體儲存空間支援。
 - Snapshot 及抄寫支援。
-- 針對計劃使用期間不到一整個月的儲存空間，新增了「每小時計費」選項。
+- 針對計劃使用期間不到一整個月的儲存空間，新增了「按小時計費」選項。
 - 已佈建「效能」類型的 {{site.data.keyword.filestorage_short}} 最多有 48,000 IOPS。
 - 可以調整 IOPS 速率，以改善季節性負載變更的效能。請在[這裡](adjustable-iops.html)深入閱讀此特性。
 - 使用 [{{site.data.keyword.filestorage_short}} 磁區複製特性](how-to-create-duplicate-volume.html)，以建立您資料的複製品。

@@ -2,19 +2,18 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-05-14"
+lastupdated: "2018-06-29"
 
 ---
 {:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
 {:codeblock: .codeblock}
 {:pre: .pre}
 
 # Montaggio di NFS/{{site.data.keyword.filestorage_short}} in CentOS
 
-Il processo per montare la nostra {{site.data.keyword.filestorage_full}} in CentOS 7 è praticamente uguale al processo per il [montaggio dell'{{site.data.keyword.filestorage_short}} su RHEL 6](accessing-file-storage-linux.html). Tuttavia, poiché il montaggio è NFS, possiamo specificare delle opzioni aggiuntive utilizzando la riga *Options=* nel file di montaggio. Nel seguente esempio, stiamo impostando NFS per il montaggio a `/data/www`.  
+Il processo per montare {{site.data.keyword.filestorage_full}} in CentOS 7 è simile al processo di [montaggio di {{site.data.keyword.filestorage_short}} su RHEL 6](accessing-file-storage-linux.html). Tuttavia, poiché il montaggio è NFS, puoi specificare delle opzioni aggiuntive utilizzando la riga `Options=` nel file di montaggio. Nel seguente esempio, NFS è impostato per il montaggio a `/data/www`.  
 
-**Nota**: il punto di montaggio dell'istanza di {{site.data.keyword.filestorage_short}} può essere ottenuto dalla pagina di elenco {{site.data.keyword.filestorage_short}} oppure tramite una chiamata API - `SoftLayer_Network_Storage::getNetworkMountAddress()`.
+>**Nota** - il punto di montaggio dell'istanza di {{site.data.keyword.filestorage_short}} può essere ottenuto dalla pagina di elenco {{site.data.keyword.filestorage_short}} oppure tramite una chiamata API - `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 
 ```
 $ cat data-www.mount
@@ -32,7 +31,7 @@ WantedBy = multi-user.target
 ```
 {:codeblock}
 
-Possiamo ora abilitare il montaggio e verificare che ne venga eseguito il montaggio correttamente. 
+Abilita quindi il montaggio e verifica che ne venga eseguito il montaggio correttamente.
 
 ```
 systemctl enable --now /etc/systemd/system/data-www.mount
@@ -40,4 +39,4 @@ systemctl enable --now /etc/systemd/system/data-www.mount
 cluster1 ~ # mount |grep data
 <nfs_mount_point> on /data/www type nfs4 (rw,relatime,vers=4.0,rsize=65536,wsize=65536,namlen=255,hard,proto=tcp,port=0,timeo=600,retrans=2,sec=sys,clientaddr=10.81.x.x,local_lock=none,addr=10.1.x.x)
 ```
-{:codeblock
+{:codeblock}

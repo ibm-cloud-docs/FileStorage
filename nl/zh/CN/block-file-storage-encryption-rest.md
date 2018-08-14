@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-05-24"
+lastupdated: "2018-06-29"
 
 ---
 
@@ -19,26 +19,23 @@ lastupdated: "2018-05-24"
     - 《联邦信息安全管理法案》(FISMA)， 
     - 《健康保险可移植性和责任法案》(HIPAA)， 
     - 支付卡行业 (PCI) 标准， 
-    - 巴塞尔协议， 
+    - 新巴塞尔协议， 
     - 《加利福尼亚州违反安全信息法》(SB 1386)，以及 
     - 《欧盟数据保护指令 (95/46/EC)》合规要求。
 
-## 针对快照或已复制存储器的静态加密  
+## 确保快照或已复制存储器的安全  
 
 缺省情况下，加密文件存储器的所有快照和副本也都已加密。此功能无法逐个卷加以禁用。
 
 ## 为存储器供应加密
 
-提供者管理的静态加密功能仅在精选数据中心内可用。对于在这些数据中心内订购的所有存储器，都自动供应了静态数据加密。单击[此处](new-ibm-block-and-file-storage-location-and-features.html)以查看可使用 {{site.data.keyword.filestorage_short}} 静态数据加密的数据中心的当前列表。
+提供者管理的静态加密功能在精选数据中心内提供。对于在这些数据中心内订购的所有存储器，都自动供应了静态数据加密。单击[此处](new-ibm-block-and-file-storage-location-and-features.html)以查看可使用 {{site.data.keyword.filestorage_short}} 加密的数据中心的当前列表。
 
-
-订购 {{site.data.keyword.filestorage_short}} 时，请选择标有星号 (`*`) 的数据中心。您将在“LUN/卷名”字段右侧看到“锁定”图标，指示已对该卷进行加密。请参阅图 1。
+订购 {{site.data.keyword.filestorage_short}} 时，请选择标有星号 (`*`) 的数据中心。您可以在“LUN/卷名”字段右侧看到“锁定”图标，指示已对该卷进行加密。请参阅图 1。
 
 ![“锁定”图标指示 LUN 已加密](/images/encryptedstorage.png)
 <caption>图 1. 用于指示卷已加密的“锁定”图标的示例。</caption>
 
 
 
-**注**：在数据中心升级之前供应的任何非加密存储器**不会**自动进行加密。如果在已升级的数据中心内有非加密存储器，那么需要创建新卷，然后移动数据。以下文章可以提供相关指导。
-
-* [在已升级的数据中心内进行文件存储器迁移](migrate-file-storage-encrypted-file-storage.html)
+>**注** - 在数据中心升级之前供应的任何非加密存储器**不会**自动进行加密。如果在已升级的数据中心内拥有非加密存储器，并且希望对其进行加密，那么需要创建新卷，然后移动数据。有关更多信息，请参阅[在已升级的数据中心内进行文件存储器迁移](migrate-file-storage-encrypted-file-storage.html)

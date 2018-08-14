@@ -8,13 +8,11 @@ lastupdated: "2018-05-11"
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 
-# Brocade vRouter (Vyatta) 设置指南 - 针对具有 {{site.data.keyword.filestorage_short}} 的 VMware 环境
+# 针对具有 {{site.data.keyword.filestorage_short}} 的 VMware 环境设置 Brocade vRouter (Vyatta)
 
 可以在使用 {{site.data.keyword.filestorage_full}} 的 VMware 环境中配置 Brocade vRouter (Vyatta) 设备，以实现高可用性 (HA) 配置。将以下信息与[高级单站点 VMware 参考体系结构](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}结合使用，在 VMware 环境中设置其中一个存储器选项。
 
-## Brocade vRouter (Vyatta) 概述
-
-Brocade vRouter (Vyatta) 网关将充当环境的网关和路由器，并包含由子网组成的区域。将在区域之间设置防火墙规则，以便各区域可以相互通信。对于不需要与其他区域通信的区域，无需防火墙规则，因为将丢弃所有包。
+Brocade vRouter (Vyatta) 网关将充当环境的网关和路由器，并包含由子网组成的区域。将在区域之间设置防火墙规则，以便各区域可以相互通信。对于不需要与其他区域通信的区域，无需防火墙规则。
 
 在示例配置中，将在 Brocade vRouter (Vyatta) 中创建五个区域：
 
@@ -25,7 +23,7 @@ Brocade vRouter (Vyatta) 网关将充当环境的网关和路由器，并包含�
 - OUTSIDE - 公用因特网访问
 
 
-图 1 描述了各个区域之间的通信。请注意，您的环境可能有所不同，可能需要不同的区域和防火墙规则。
+图 1 描述了各个区域之间的通信。您的环境可能有所不同，可能需要不同的区域和防火墙规则。
 
 ![图 1：Brocade vRouter (Vyatta) 区域配置](/images/figure1_6.png)
 
@@ -33,14 +31,12 @@ Brocade vRouter (Vyatta) 网关将充当环境的网关和路由器，并包含�
 
 ## 配置 Brocade vRouter (Vyatta)
 
-要配置 Brocade vRouter (Vyatta)，请执行以下操作：
-
 1. 使用在“设备详细信息”屏幕上找到的 root 用户密码通过 SSH 登录到设备。
 2. 输入 `configure` 以进入配置方式，然后执行后续部分中的步骤。
 
 ### 设置接口
 
-在此部分中，将在两个 Brocade vRouter (Vyatta) 上配置结合接口以用于链接到环境中的子网。请记住将 VLAN（1101、1102 和 1103）替换为您环境中相应的 VLAN。另请注意，<> 中的指示信息应替换为您环境的相应详细信息（除去 <>）。
+接下来，在两个 Brocade vRouter (Vyatta) 上的结合接口将链接到环境中的子网。请记住将 {{site.data.keyword.BluSoftlayer_full}} VLAN（1101、1102 和 1103）替换为您环境中相应的 VLAN。此外，显示 `<>` 的指示信息必须替换为您环境的相应详细信息（除去 `<>`）。
 
 使用以下命令在 Brocade vRouter (Vyatta) 上配置结合接口。您必须处于配置方式。
 
@@ -111,7 +107,7 @@ save
 ```
 ### 配置 SNAT 进行外部访问
 
-在此步骤中，我们将配置 SNAT，以便管理 VM 和容量集群上的 VM 可以访问因特网。从此步骤开始，只需在一个 Brocade vRouter (Vyatta) 上完成配置，因为我们将在稍后时间点对设置进行同步。
+在此步骤中，将配置 SNAT 以便管理 VM 和容量集群上的 VM 可以访问因特网。从此步骤开始，只需在一个 Brocade vRouter (Vyatta) 上完成配置，因为稍后会对设置进行同步。
 
 在配置方式下使用以下命令：
 ```
@@ -126,9 +122,11 @@ set nat source rule 20 outbound-interface bond1
 commit
 save
 ```
+
+
 ### 配置防火墙组
 
-接下来，将配置与特定 IP 范围关联的防火墙组。
+接下来，该配置与特定 IP 范围关联的防火墙组了。
 
 在配置方式下使用以下命令：
 ```
@@ -169,9 +167,8 @@ save
 
 ### 配置防火墙名称规则
 
-现在，将为每个方向的流量定义防火墙规则。
+现在，将为每个方向的流量定义防火墙规则。在配置方式下使用以下命令：
 
-在配置方式下使用以下命令：
 ```
 set firewall name INSIDE2OUTSIDE
 set firewall name INSIDE2OUTSIDE default-action drop
@@ -271,9 +268,10 @@ set firewall name SLSERVICE2INSIDE rule 8 protocol 'all'
 commit
 save
 ```
+
 ### 配置区域绑定
 
-在此步骤中，要将特定区域绑定到 Brocade vRouter (Vyatta) 上的接口。
+在此步骤中，特定区域将绑定到 Brocade vRouter (Vyatta) 上的接口。
 
 在配置方式下使用以下命令：
 ```
@@ -298,9 +296,8 @@ save
 
 ### 将防火墙规则应用于区域
 
-现在，将对区域之间的通信应用防火墙规则。
+对区域之间的通信应用防火墙规则。在配置方式下使用以下命令：
 
-在配置方式下使用以下命令：
 ```
 set zone-policy zone OUTSIDE from MGMT firewall name INSIDE2OUTSIDE
 set zone-policy zone OUTSIDE from VMACCESS firewall name INSIDE2OUTSIDE
@@ -319,7 +316,7 @@ save
 
 ### 与 HA 对中的另一个 Brocade vRouter (Vyatta) 同步
 
-我们已设置了 HA 对中的其中一个 Brocade vRouter (Vyatta)，因此必须将更改同步到另一个网关设备。
+现在已设置了 HA 对中的一个 Brocade vRouter (Vyatta)，因此必须将更改同步到另一个网关设备。
 
 在配置方式下使用以下命令：
 ```
@@ -351,19 +348,17 @@ set system config-sync sync-map SYNC rule 11 location 'nat'
 commit
 save
 ```
+
 ### 关联和路由 VLAN
 
 在 Brocade vRouter (Vyatta) 上设置区域和防火墙规则后，必须将 VLAN 与其相关联，并通过 Brocade vRouter (Vyatta) 启用这些 VLAN 的路由。
 
 1. 登录到 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} 并单击**网络 > 网关设备**，然后单击 Brocade vRouter (Vyatta)。
-2. 选择 **VLAN**，然后单击**关联**按钮。
-3. 对于为环境创建的每个 VLAN，重复步骤 2。接下来，VLAN 需要启用路由，以便与 Brocade vRouter (Vyatta) 相关联。
+2. 选择 **VLAN**，然后单击**关联**。
 4. 在**关联的 VLAN** 下找到所需 VLAN，并选中每个 VLAN 旁边的框。
 5. 单击**批量操作**下拉菜单，然后选择**路由**。
-6. 在弹出屏幕上，单击**确定**。
+6. 单击**确定**。
 
-现在，VLAN 应该已通过 Brocade vRouter (Vyatta) 进行路由。如果您注意到两个区域之间存在通信障碍，请绕过相关的特定 VLAN，并检查 Brocade vRouter (Vyatta) 设置。
-
-现在，您应该在 {{site.data.keyword.BluSoftlayer_full}} 中拥有通过 Brocade vRouter (Vyatta) 保护的有效单站点 VMware 环境。
+VLAN 将通过 Brocade vRouter (Vyatta) 进行路由。如果您注意到两个区域之间存在通信障碍，请绕过相关的特定 VLAN，并检查 Brocade vRouter (Vyatta) 设置。
 
  

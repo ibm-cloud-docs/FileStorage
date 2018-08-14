@@ -2,21 +2,20 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-05-29"
+lastupdated: "2018-06-20"
 
 ---
 {:new_window: target="_blank"}
 
 # {{site.data.keyword.filestorage_short}}의 새 위치와 기능
 
-{{site.data.keyword.BluSoftlayer_full}}에서는 {{site.data.keyword.filestorage_full}}의 새 버전을 도입합니다. 새 스토리지는 엄선된 데이터 센터에서 사용 가능하며, 저장 데이터의 디스크 레벨 암호화를 사용하는 상위 IOPS 레벨에서 플래시 스토리지의 지원을 받습니다. 엄선된 데이터 센터에서 주문된 모든 스토리지는 새 버전의 {{site.data.keyword.filestorage_short}}로 자동으로 작성됩니다.
+{{site.data.keyword.BluSoftlayer_full}}에서는 {{site.data.keyword.filestorage_full}}의 새 버전을 도입합니다. 새 스토리지는 특정 데이터 센터에서 사용 가능하며, 저장 데이터의 디스크 레벨 암호화를 사용하는 상위 IOPS 레벨에서 플래시 스토리지의 지원을 받습니다. 특정 데이터 센터에서 주문된 모든 스토리지는 새 버전의 {{site.data.keyword.filestorage_short}}로 자동으로 작성됩니다.
 
 **참고:** 새 볼륨의 NFS 마운트 지점이 변경되었습니다. 세부사항은 **개선된 {{site.data.keyword.filestorage_short}} 볼륨의 새 마운트 지점**을 참조하십시오.
 
 새 {{site.data.keyword.filestorage_short}}는 다음의 지역/데이터 센터에서 사용 가능하며, 추가적인 데이터 센터도 나중에 사용할 수 있습니다.
 
-<table style="width:100%;">
-  <caption>표 1에서는 데이터 센터 가용성을 표시합니다. 각 지역에는 고유 열이 있습니다. 일부 도시(예: 댈러스, 산호세, 워싱턴 DC, 암스테르담, 프랑크푸르트, 런던 및 시드니)에는 다수의 데이터 센터가 있습니다.</caption>
+<table role="presentation">
 	<tr>
 		<td><strong>미국 2</strong></td>
 		<td><strong>유럽연합(EU)</strong></td>
@@ -67,6 +66,7 @@ lastupdated: "2018-05-29"
 	</tr>
 </table>
 
+*표 1에는 데이터 센터 가용성이 표시되어 있습니다. 각 지역에는 고유 열이 있습니다. 일부 도시(예: 댈러스, 산호세, 워싱턴 DC, 암스테르담, 프랑크푸르트, 런던 및 시드니)에는 여러 데이터 센터가 있습니다. *
 
 새 스토리지에는 다음과 같은 특성과 기능이 있습니다.
 

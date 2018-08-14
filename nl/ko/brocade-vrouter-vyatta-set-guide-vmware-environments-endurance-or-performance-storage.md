@@ -8,24 +8,22 @@ lastupdated: "2018-05-11"
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 
-# {{site.data.keyword.filestorage_short}}의 VMware 환경에 대한 Brocade vRouter(Vyatta) 설정 안내서
+# {{site.data.keyword.filestorage_short}}를 사용하는 VMware 환경에 대한 Brocade vRouter(Vyatta) 설정
 
-{{site.data.keyword.filestorage_full}}를 사용하는 VMware 환경 내에서 고가용성(HA) 구성을 위한 Brocade vRouter(Vyatta) 어플라이언스를 구성할 수 있습니다. 다음 정보를 [고급 단일 사이트 VMware 참조 아키텍처](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}와 함께 사용하면 VMware 환경에서 이러한 스토리지 옵션 중 하나를 설정할 수 있습니다.
+{{site.data.keyword.filestorage_full}}를 사용하는 VMware 환경 내에서 고가용성(HA) 구성을 위해 Brocade vRouter(Vyatta) 어플라이언스를 구성할 수 있습니다. 다음 정보를 [고급 단일 사이트 VMware 참조 아키텍처](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}와 함께 사용하면 VMware 환경에서 이러한 스토리지 옵션 중 하나를 설정할 수 있습니다.
 
-## Brocade vRouter(Vyatta) 개요
+Brocade vRouter(Vyatta) 게이트웨이는 사용자 환경의 게이트웨이 및 라우터 역할을 수행하며 서브넷으로 구성된 구역을 포함합니다. 구역 간에 서로 통신할 수 있도록 방화벽 규칙이 설정됩니다. 다른 구역과 통신할 필요가 없는 구역의 경우에는 방화벽 규칙이 필요하지 않습니다. 
 
-Brocade vRouter(Vyatta) 게이트웨이는 사용자 환경에 대한 게이트웨이 및 라우터의 역할을 수행하며 이에는 서브넷을 구성하는 구역이 포함되어 있습니다. 방화벽 규칙은 서로 간에 통신이 가능하도록 구역 간의 알맞은 위치에 설정됩니다. 기타 구역과 통신할 필요가 없는 해당 구역의 경우, 모든 패킷이 삭제되므로 방화벽 규칙이 필요하지 않습니다.
-
-예제 구성에서는 5개의 구역이 Brocade vRouter(Vyatta)에서 작성됩니다.
+구성 예에서는 Brocade vRouter(Vyatta)에 5개의 구역이 작성됩니다. 
 
 - SLSERVICE – {{site.data.keyword.BluSoftlayer_full}} 서비스
 - VMACCESS – 용량 클러스터의 {{site.data.keyword.BluVirtServers_short}}(VM)
 - MGMT – 관리 및 용량 클러스터와 함께 관리 VM
-- STORAGE – 스토리지 서버
+- STORAGE - 스토리지 서버
 - OUTSIDE – 공용 인터넷 액세스
 
 
-그림 1은 각 구역 간의 통신을 설명합니다. 참고로, 사용자 환경은 다를 수 있으며 서로 다른 구역 및 방화벽 규칙이 필요할 수 있습니다.
+그림 1은 각 구역 간의 통신을 설명합니다. 사용자의 환경은 이와 다를 수 있으며 다른 구역 및 방화벽 규칙을 필요로 할 수 있습니다. 
 
 ![그림 1: Brocade vRouter(Vyatta) 구역 구성](/images/figure1_6.png)
 
@@ -33,14 +31,12 @@ Brocade vRouter(Vyatta) 게이트웨이는 사용자 환경에 대한 게이트�
 
 ## Brocade vRouter(Vyatta) 구성
 
-Brocade vRouter(Vyatta)를 구성하려면 다음을 수행하십시오.
-
-1. 디바이스 세부사항 화면에서 찾은 루트 비밀번호를 사용하여 어플라이언스로 SSH를 실행하십시오.
+1. 디바이스 세부사항 화면에 있는 루트 비밀번호를 사용하여 어플라이언스에 SSH를 실행하십시오. 
 2. `configure`를 입력하여 구성 모드를 시작하고 후속 섹션의 단계를 따르십시오.
 
 ### 인터페이스 설정
 
-이 섹션에서는 환경의 서브넷에 링크할 두 Brocade vRouter(Vyatta)의 bond 인터페이스를 구성합니다. 반드시 VLAN(1101, 1102 및 1103)을 사용자 환경의 대응되는 VLAN으로 대체하십시오. 또한 <>로 작성된 지시사항은 사용자 환경의 세부사항으로 대체되어야 함을 유념하십시오(<>를 제거하여).
+그 다음에는 두 Brocade vRouters(Vyatta)의 bond 인터페이스가 환경의 서브넷에 링크됩니다. {{site.data.keyword.BluSoftlayer_full}} VLAN(1101, 1102 및 1103)을 사용자 환경의 해당 VLAN으로 대체해야 한다는 점을 기억하십시오. 또한 `<>`로 표시된 지시사항은 사용자 환경의 세부사항으로 대체해야 합니다(`<>`는 제거한 상태로). 
 
 다음 명령을 사용하여 Brocade vRouter(Vyatta)의 bond 인터페이스를 구성하십시오. 사용자는 구성 모드에 있어야 합니다.
 
@@ -109,9 +105,9 @@ set interfaces bonding bond0 vif 1103 vrrp vrrp-group 4 virtual-address ‘<GATE
 commit
 save
 ```
-### 외부 액세스용 SNAT 구성
+### 외부 액세스를 위한 SNAT 구성
 
-이 단계에서는 관리 VM 및 용량 클러스터의 VM이 인터넷에 액세스할 수 있도록 SNAT를 구성합니다. 설정이 나중에 동기화되기 때문에, 이 단계 이후로 구성은 하나의 Brocade vRouter(Vyatta)에서만 수행되어야 합니다.
+이 단계에서는 관리 VM 및 용량 클러스터의 VM이 인터넷에 액세스할 수 있도록 SNAT가 구성됩니다. 설정이 나중에 동기화되므로, 이 단계 이후로는 하나의 Brocade vRouter(Vyatta)에서만 구성을 수행해야 합니다. 
 
 구성 모드에서 다음 명령을 사용하십시오.
 ```
@@ -126,9 +122,11 @@ set nat source rule 20 outbound-interface bond1
 commit
 save
 ```
+
+
 ### 방화벽 그룹 구성
 
-그 다음에는 특정 IP 범위와 연관된 방화벽 그룹을 구성합니다.
+그 다음에는 특정 IP 범위와 연관된 방화벽 그룹을 구성해야 합니다. 
 
 구성 모드에서 다음 명령을 사용하십시오.
 ```
@@ -169,9 +167,8 @@ save
 
 ### 방화벽 이름 규칙 구성
 
-이제 트래픽의 각 방향에 대한 방화벽 규칙을 정의합니다.
+이제 트래픽의 각 방향에 대한 방화벽 규칙을 정의하십시오. 구성 모드에서 다음 명령을 사용하십시오.
 
-구성 모드에서 다음 명령을 사용하십시오.
 ```
 set firewall name INSIDE2OUTSIDE
 set firewall name INSIDE2OUTSIDE default-action drop
@@ -271,9 +268,10 @@ set firewall name SLSERVICE2INSIDE rule 8 protocol 'all'
 commit
 save
 ```
+
 ### 구역 바인딩 구성
 
-이 단계에서는 특정 구역을 Brocade vRouter(Vyatta)의 인터페이스에 바인드합니다.
+이 단계에서는 특정 구역이 Brocade vRouter(Vyatta)의 인터페이스에 바인드됩니다. 
 
 구성 모드에서 다음 명령을 사용하십시오.
 ```
@@ -298,9 +296,8 @@ save
 
 ### 구역에 방화벽 규칙 적용
 
-이제 구역 간의 통신에 방화벽 규칙을 적용합니다.
+구역 간 통신에 방화벽 규칙을 적용하십시오. 구성 모드에서 다음 명령을 사용하십시오.
 
-구성 모드에서 다음 명령을 사용하십시오.
 ```
 set zone-policy zone OUTSIDE from MGMT firewall name INSIDE2OUTSIDE
 set zone-policy zone OUTSIDE from VMACCESS firewall name INSIDE2OUTSIDE
@@ -317,9 +314,9 @@ commit
 save
 ```
 
-### HA 쌍의 기타 Brocade vRouter(Vyatta)와 동기화
+### HA 쌍의 다른 Brocade vRouter(Vyatta)와 동기화
 
-HA 쌍의 Brocade vRouter(Vyatta) 중 하나를 설정했으므로, 변경사항을 기타 게이트웨이 디바이스와 동기화해야 합니다.
+HA 쌍 중 한 Brocade vRouter(Vyatta)의 설정을 완료했으며, 이제 변경사항을 다른 게이트웨이 디바이스와 동기화해야 합니다. 
 
 구성 모드에서 다음 명령을 사용하십시오.
 ```
@@ -351,19 +348,17 @@ set system config-sync sync-map SYNC rule 11 location 'nat'
 commit
 save
 ```
-### VLAN 연관 및 라우트
 
-일단 구역 및 방화벽 규칙이 Brocade vRouter(Vyatta)에서 설정된 경우에는 VLAN을 이에 연관시키고 Brocade vRouter(Vyatta)를 통해 VLAN의 라우팅을 사용해야 합니다.
+### VLAN 연관 및 라우팅
 
-1. [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}에 로그인하고 **네트워크 > 게이트웨이 어플라이언스**를 클릭한 후에 Brocade vRouter(Vyatta)를 클릭하십시오.
-2. **VLAN**을 선택하고 **연관** 단추를 클릭하십시오.
-3. 사용자 환경을 위해 작성된 각 VLAN에 대해 2단계를 반복 실행하십시오. 다음의 VLAN에서는 Brocade vRouter(Vyatta)와 연관될 수 있도록 라우팅을 사용해야 합니다.
+구역 및 방화벽 규칙이 Brocade vRouter(Vyatta)에 설정되고 나면, 여기에 VLAN을 연관시키고 Brocade vRouter(Vyatta)를 통한 VLAN 라우팅을 사용으로 설정해야 합니다. 
+
+1. [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}에 로그인하고 **네트워크 > 게이트웨이 어플라이언스**를 클릭한 후 Brocade vRouter(Vyatta)를 클릭하십시오. 
+2. **VLAN**을 선택하고 **연관**을 클릭하십시오. 
 4. **연관된 VLAN** 아래에서 VLAN을 찾고 각각의 옆에 있는 상자를 선택하십시오.
-5. **대량 조치** 드롭 다운 메뉴을 클릭하고 **라우트**를 선택하십시오.
-6. 팝업 화면에서 **확인**을 클릭하십시오.
+5. **대량 조치** 드롭 다운 메뉴를 클릭하고 **라우트**를 선택하십시오. 
+6. **확인**을 클릭하십시오.
 
-이제 VLAN이 Brocade vRouter(Vyatta)를 통해 라우팅되어야 합니다. 두 구역 간의 통신 이상이 파악된 경우에는 문제의 특정 VLAN을 우회하고 Brocade vRouter(Vyatta) 설정을 확인하십시오.
-
-이제 작동 중인 단일 사이트 VMware 환경이 {{site.data.keyword.BluSoftlayer_full}} 내에서 Brocade vRouter(Vyatta)에 의해 보호되어야 합니다.
+VLAN이 Brocade vRouter(Vyatta)를 통해 라우팅됩니다. 두 구역 간의 통신 이상을 발견하는 경우에는 문제가 발생한 특정 VLAN을 우회하고 Brocade vRouter(Vyatta) 설정을 확인하십시오. 
 
  
