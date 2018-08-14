@@ -8,39 +8,35 @@ lastupdated: "2018-05-11"
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 
-# Guia de configuração do Brocade vRouter (Vyatta) para ambientes VMware com o {{site.data.keyword.filestorage_short}}
+# Configurando o Brocade vRouter (Vyatta) para Ambientes VMware com o {{site.data.keyword.filestorage_short}}
 
-É possível configurar um dispositivo Brocade vRouter (Vyatta) para configuração de alta disponibilidade (HA) em um ambiente VMware que está usando o {{site.data.keyword.filestorage_full}}. Use as informações a seguir junto com a [Arquitetura de referência do Advanced Single-Site VMware](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} para configurar uma dessas opções de armazenamento em seu ambiente VMware.
+É possível configurar um dispositivo Brocade vRouter (Vyatta) para configuração de alta disponibilidade (HA) em um ambiente VMware que usa o {{site.data.keyword.filestorage_full}}. Use as informações a seguir junto com a [Arquitetura de referência do Advanced Single-Site VMware](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} para configurar uma dessas opções de armazenamento em seu ambiente VMware.
 
-## Visão geral do Brocade vRouter (Vyatta)
+O gateway Brocade vRouter (Vyatta) serve como um gateway e um roteador para seu ambiente e contém zonas que consistem em sub-redes. As regras de firewall são configuradas no local entre as zonas para que possam se comunicar entre si. Para as zonas que não precisam se comunicar com outras zonas, nenhuma regra de firewall será necessária.
 
-O gateway Brocade vRouter (Vyatta) servirá como um gateway e roteador para seu ambiente e conterá zonas que consistem em sub-redes. As regras de firewall serão configuradas no local entre as zonas de maneira que elas possam se comunicar entre si. Para aquelas zonas que não precisam se comunicar com outras zonas, nenhuma regra de firewall será necessária porque todos os pacotes serão eliminados.
-
-Em nosso exemplo de configuração, haverá cinco zonas criadas no Brocade vRouter (Vyatta):
+Em nossa configuração de exemplo, cinco zonas são criadas no Brocade vRouter (Vyatta):
 
 - SLSERVICE – Serviços do {{site.data.keyword.BluSoftlayer_full}}
 - VMACCESS – {{site.data.keyword.BluVirtServers_short}} (VMs) no cluster de capacidade
 - MGMT – Clusters de gerenciamento e capacidade, bem como VMs de gerenciamento
-- STORAGE – Servidores de armazenamento
+- STORAGE-Servidor de armazenamento ou servidores
 - OUTSIDE – Acesso à Internet pública
 
 
-A Figura 1 descreve a comunicação entre cada zona. Observe que o seu ambiente pode ser diferente e pode requerer diferentes zonas e regras de firewall.
+A Figura 1 descreve a comunicação entre cada zona. Seu ambiente pode ser diferente e pode requerer diferentes zonas e regras de firewall.
 
 ![Figura 1: Configuração de zona do Brocade vRouter (Vyatta)](/images/figure1_6.png)
 
 
 
-## Configurar o Brocade vRouter (Vyatta)
+## Configurando o Brocade vRouter (Vyatta)
 
-Para configurar o Brocade vRouter (Vyatta):
-
-1. Execute o SSH no dispositivo usando a senha raiz localizada na tela Detalhes do dispositivo.
+1. Use SSH no dispositivo com a senha raiz localizada na tela Detalhes do dispositivo.
 2. Digite `configure` para entrar no modo de configuração e siga as etapas nas seções subsequentes.
 
-### Configurar interfaces
+### Configurando Interfaces
 
-Nesta seção, vamos configurar as interfaces de ligação em ambos os Brocade vRouters (Vyatta) a serem vinculados às sub-redes no ambiente. Lembre-se de substituir as nossas VLANs (1101, 1102 e 1103) pelas VLANs correspondentes em seu ambiente. Observe também que as instruções feitas com <> devem ser substituídas por detalhes do seu ambiente (com o <> removido).
+Em seguida, as interfaces de ligação em ambos os Brocade vRouters (Vyatta) são vinculadas às sub-redes no ambiente. Lembre-se de substituir as VLANs (1101, 1102 e 1103) do {{site.data.keyword.BluSoftlayer_full}} pelas VLANs correspondentes em seu ambiente. Além disso, as instruções que mostram  `<>` devem ser substituídas pelos detalhes de seu ambiente (com o `<>` removido).
 
 Use os comandos a seguir para configurar as interfaces de ligação no Brocade vRouters (Vyatta). Deve-se estar no modo de configuração.
 
@@ -81,9 +77,9 @@ set interfaces bonding bond0 vif 1103 vrrp vrrp-group 4 preempt 'false' set inte
 set interfaces bonding bond0 vif 1103 vrrp vrrp-group 4 'rfc3768-compatibility' set interfaces bonding bond0 vif 1103 vrrp vrrp-group 4 sync-group 'vgroup1'
 set interfaces bonding bond0 vif 1103 vrrp vrrp-group 4 virtual-address ‘<GATEWAY ADDRESS/MASK of Primary Private VLAN Bound to 1103/Virtual Machines>’ set interfaces bonding bond0 vif 1103 vrrp vrrp-group 4 virtual-address ‘<GATEWAY ADDRESS/MASK of Portable Private VLAN Bound to 1103/Virtual Machines>’ commit save
 ```
-### Configurar o SNAT para acesso externo
+### Configurando o SNAT para Acesso Externo
 
-Nesta etapa, vamos configurar o SNAT para que as VMs de gerenciamento e as VMs no cluster capacidade possam acessar a Internet. Dessa etapa em diante, a configuração precisa ser feita somente em um Brocade vRouter (Vyatta), pois sincronizaremos a configuração em um momento posterior.
+Nesta etapa, o SNAT é configurado para que as VMs de gerenciamento e as VMs no cluster de capacidade possam acessar a Internet. Dessa etapa em diante, a configuração precisa ser feita somente em um Brocade vRouter (Vyatta), pois a configuração será sincronizada posteriormente.
 
 Use os comandos a seguir no modo de configuração:
 ```
@@ -98,9 +94,11 @@ set nat source rule 20 outbound-interface bond1
 commit
 save
 ```
-### Configurar grupos de firewall
 
-Em seguida, vamos configurar os grupos de firewall que estão associados com certos intervalos de IP.
+
+### Configurando Grupos de Firewall
+
+Em seguida, será hora de configurar os grupos de firewall que estiverem associados a certos intervalos de IP.
 
 Use os comandos a seguir no modo de configuração:
 ```
@@ -139,11 +137,10 @@ commit
 save
 ```
 
-### Configurar regras de nomes de firewall
+### Configurando Regras de Nomes de Firewall
 
-Vamos agora definir as regras de firewall para cada direção de tráfego.
+Agora defina as regras de firewall para cada direção de tráfego. Use os comandos a seguir no modo de configuração:
 
-Use os comandos a seguir no modo de configuração:
 ```
 set firewall name INSIDE2OUTSIDE
 set firewall name INSIDE2OUTSIDE default-action drop
@@ -243,9 +240,10 @@ set firewall name SLSERVICE2INSIDE rule 8 protocol 'all'
 commit
 save
 ```
-### Configurar ligações de zona
 
-Nesta etapa, vamos ligar zonas específicas para as interfaces no Brocade vRouter (Vyatta).
+### Configurando Ligações de Zona
+
+Nesta etapa, as zonas específicas são ligadas a interfaces no Brocade vRouter (Vyatta).
 
 Use os comandos a seguir no modo de configuração:
 ```
@@ -268,11 +266,10 @@ commit
 save
 ```
 
-### Aplicar regras de firewall a zonas
+### Aplicando Regras de Firewall a Zonas
 
-Agora aplicaremos as regras de firewall à comunicação entre zonas.
+Aplique as regras de firewall para a comunicação entre zonas. Use os comandos a seguir no modo de configuração:
 
-Use os comandos a seguir no modo de configuração:
 ```
 set zone-policy zone OUTSIDE from MGMT firewall name INSIDE2OUTSIDE
 set zone-policy zone OUTSIDE from VMACCESS firewall name INSIDE2OUTSIDE
@@ -289,9 +286,9 @@ commit
 save
 ```
 
-### Sincronizar com outro Brocade vRouter (Vyatta) no par de HA
+### Sincronizando com outro Brocade vRouter (Vyatta) no Par de HA
 
-Como configuramos um dos Brocade vRouter (Vyatta) no par de HA, devemos sincronizar as mudanças no outro dispositivo de gateway.
+Um dos Brocade vRouter (Vyatta) no par de HA agora está configurado e deve-se sincronizar as mudanças para o outro dispositivo de gateway.
 
 Use os comandos a seguir no modo de configuração:
 ```
@@ -323,19 +320,17 @@ set system config-sync sync-map SYNC rule 11 location 'nat'
 commit
 save
 ```
-### Associar e rotear VLANs
 
-Uma vez que as zonas e as regras de firewall tiverem sido configuradas no Brocade vRouter (Vyatta), devemos associar as VLANs a ele e ativar o roteamento das VLANs por meio do Brocade vRouter (Vyatta).
+### Associando e roteia VLANs
+
+Quando as zonas e as regras de firewall são configuradas no Brocade vRouter (Vyatta), deve-se associar as VLANs a ele e ativar o roteamento das VLANs por meio do Brocade vRouter (Vyatta).
 
 1. Efetue login no [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} e clique em **Rede > Dispositivo de gateway** e clique no Brocade vRouter (Vyatta).
-2. Selecione uma **VLAN** e clique no botão **Associar**.
-3. Repita a etapa 2 para cada VLAN que você criou para seu ambiente. As VLANs precisam, em seguida, ter o roteamento ativado para serem associadas ao Brocade vRouter (Vyatta).
+2. Selecione uma **VLAN** e clique em **Associar**.
 4. Localize as VLANs sob **VLANs associadas** e marque a caixa próxima a cada uma.
-5. Clique no menu suspenso **Ações em massa** e selecione **Rotear**.
-6. Clique em **OK** na tela pop-up.
+5. Clique no menu suspenso **Ações em massa** e selecione **Rota**.
+6. Clique em **OK**.
 
-Suas VLANs devem agora ser roteadas por meio do Brocade vRouter (Vyatta). Se você observar que a comunicação foi prejudicada entre duas zonas, efetue bypass das VLANs específicas em questão e verifique suas configurações do Brocade vRouter (Vyatta).
-
-Você agora deve ter um ambiente VMware de site único em funcionamento protegido por um Brocade vRouter (Vyatta) no {{site.data.keyword.BluSoftlayer_full}}.
+Suas VLANs são roteadas por meio do Brocade vRouter (Vyatta). Se você perceber que a comunicação está impedida entre as duas zonas, efetue bypass da VLAN específica ou das VLANs em questão e verifique as configurações do Brocade vRouter (Vyatta).
 
  

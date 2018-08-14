@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-05-17"
+lastupdated: "2018-06-29"
 
 ---
 {:new_window: target="_blank"}
@@ -12,42 +12,42 @@ lastupdated: "2018-05-17"
 
 O {{site.data.keyword.filestorage_full}} aprimorado está agora disponível nos data centers selecionados. Para ver a lista de data centers submetidos a upgrade e recursos disponíveis, como taxas de IOPS ajustáveis e volumes expansíveis, clique [aqui](new-ibm-block-and-file-storage-location-and-features.html). Para obter mais informações sobre armazenamento criptografado gerenciado por provedor, leia o artigo [Criptografia em repouso do {{site.data.keyword.filestorage_short}}](block-file-storage-encryption-rest.html).
 
-O caminho de migração preferencial é conectar-se aos dois LUNs simultaneamente e transferir dados diretamente de um LUN para outro. Os detalhes dependerão de seu sistema operacional e se os dados são esperados mudar durante a operação de cópia. 
+O caminho de migração preferencial é conectar-se a ambos os volumes simultaneamente e transferir dados diretamente de um LUN para outro. Os detalhes dependerão de seu sistema operacional e se os dados são esperados mudar durante a operação de cópia. 
 
-Supõe-se que seu LUN não criptografado já esteja conectado ao seu host. Se não, siga as instruções que se ajustam melhor ao seu sistema operacional para realizar essa tarefa:
+Supõe-se que seu LUN não criptografado já esteja conectado ao seu host. Caso contrário, siga as instruções que melhor se ajustem ao seu sistema operacional para realizar essa tarefa.
 
 - [Montando o {{site.data.keyword.filestorage_short}} no Linux](accessing-file-storage-linux.html)
 - [Montando o NFS/{{site.data.keyword.filestorage_short}} no CentOS](mounting-nsf-file-storage.html)
 - [Montando o {{site.data.keyword.filestorage_short}} no CoreOS](mounting-storage-coreos.html)
 
-**NOTA:** todos os volumes aprimorados do {{site.data.keyword.filestorage_short}} têm um ponto de montagem diferente de volumes não criptografados. Para assegurar que você esteja usando o ponto de montagem correto para os volumes criptografados e não criptografados do {{site.data.keyword.filestorage_short}}, é possível visualizar as informações do ponto de montagem na página **Detalhes do volume** na IU. Também é possível acessar o ponto de montagem correto por meio de uma chamada API: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
+>**NOTA** - Todos os volumes aprimorados do {{site.data.keyword.filestorage_short}} têm um ponto de montagem diferente de volumes não criptografados. Para assegurar-se de que esteja usando o ponto de montagem correto para os volumes criptografados e não criptografados do {{site.data.keyword.filestorage_short}}, é possível visualizar as informações do ponto de montagem na página **Detalhes do volume** no {{site.data.keyword.slportal}}. Também é possível acessar o ponto de montagem correto por meio de uma chamada API: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 
 
-## Criar um novo {{site.data.keyword.filestorage_short}}
+## Criando um novo  {{site.data.keyword.filestorage_short}}
 
-**IMPORTANTE**: ao fazer um pedido com a API, especifique o pacote "Armazenamento como um Serviço" para assegurar que você esteja recebendo os recursos atualizados com seu novo armazenamento.
+**IMPORTANTE** - Quando você fizer um pedido com a API, especifique o pacote "Armazenamento como um serviço" para assegurar-se de que esteja obtendo os recursos atualizados com seu novo armazenamento.
 
-As instruções a seguir são para pedir um volume/compartilhamento de arquivo aprimorado por meio da IU. Seu novo volume deve ser do mesmo tamanho ou maior que o volume original para facilitar a migração.
+As instruções a seguir são para pedir um volume/compartilhamento de arquivo aprimorado por meio do catálogo do {{site.data.keyword.slportal}}/{{site.data.keyword.BluSoftlayer_full}}. Seu novo volume deve ser do mesmo tamanho ou maior que o volume original para facilitar a migração.
 
-### Pedir um novo volume de armazenamento do Endurance
+### Solicitando um novo volume de Armazenamento de Endurance
 
 1. No [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}, clique em **Armazenamento** > **{{site.data.keyword.filestorage_short}}** OU, no catálogo do {{site.data.keyword.BluSoftlayer_full}}, clique em **Infraestrutura** > **Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
-2. Clique em **Pedir o {{site.data.keyword.filestorage_short}}** no canto superior direito. 
+2. Clique em **Pedir {{site.data.keyword.filestorage_short}}**. 
 3. Selecione **Endurance** na lista **Selecionar tipo de armazenamento**.
 4. Clique em **Local** e selecione seu data center.
    - Assegure-se de que o novo Armazenamento seja incluído no mesmo local que o original.
 5. Selecione sua opção de faturamento. É possível escolher entre faturamento mensal ou por hora.
 6. Clique em **Endurance** e selecione a camada de IOPS.
 6. Selecione o **Tamanho de armazenamento utilizável** na lista. Seu novo volume deve ser do mesmo tamanho ou maior que o volume original.
-7. Escolha o **Tamanho do espaço de captura instantânea** (além de seu espaço utilizável) na lista suspensa.
+7. Escolha o **Tamanho do espaço de captura instantânea** (além de seu espaço utilizável) na lista.
 8. Clique em **Continuar**. Os encargos por mês e rateados são mostrados com uma chance final de revisar os detalhes do pedido. Clique em **Anterior** se você desejar mudar sua ordem.
 9. Clique na caixa de seleção **Eu li o Contrato de Prestação de Serviços Principal** e clique em **Fazer pedido**
  
-### Pedir um volume de armazenamento do Performance criptografado
+### Solicitando um Volume de Armazenamento de Desempenho Criptografado
 
 1. No [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}, clique em **Armazenamento**, **{{site.data.keyword.filestorage_short}}** OU, no catálogo do {{site.data.keyword.BluSoftlayer_full}}, clique em **Infraestrutura** >** Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
-2. Clique em **Pedir o {{site.data.keyword.filestorage_short}}** no canto superior direito. 
-3. Selecione **Desempenho** na lista Selecionar tipo de armazenamento.
+2. Clique em **Pedir {{site.data.keyword.filestorage_short}}**. 
+3. Selecione **Performance** na lista **Selecionar tipo de armazenamento**.
 4. Clique em **Local** e selecione seu data center.
     -  Assegure-se de que o novo Armazenamento seja incluído no mesmo local que o original.
 5. Selecione suas opções de faturamento. É possível escolher entre faturamento por hora e mensal.
@@ -56,56 +56,45 @@ As instruções a seguir são para pedir um volume/compartilhamento de arquivo a
 7. Clique em **Continuar**. Os encargos por mês e rateados são mostrados com uma chance final de revisar os detalhes do pedido. Clique em **Anterior** se você desejar mudar sua ordem.
 8. Clique na caixa de seleção **Eu li o Contrato de Prestação de Serviços Principal** e clique em **Fazer pedido**.
 
-O armazenamento será provisionado em menos de um minuto e ficará visível na página {{site.data.keyword.filestorage_short}} do {{site.data.keyword.slportal}}.
+O armazenamento é provisionado em menos de um minuto e é visível na página {{site.data.keyword.filestorage_short}} do {{site.data.keyword.slportal}}.
 
  
-## Conectar o novo {{site.data.keyword.filestorage_short}} ao host
+## Autorizando o host para o novo {{site.data.keyword.filestorage_short}}
 
-Hosts "autorizados" são hosts que receberam direitos de acesso a um volume. Sem autorização do host, você não será capaz de acessar ou usar o armazenamento de seu sistema.
+Hosts "autorizados" são aqueles que receberam acesso a um volume. Sem a autorização do host, não é possível acessar ou usar o armazenamento de seu sistema.
 
 1. Clique no nome de seu novo volume.
-2. Role para a seção **Hosts autorizados** da página.
-3. Clique no link **Autorizar host** no lado direito da página. Selecione os hosts que podem acessar o volume.
+2. Role para a seção  ** Hosts Autorizados ** .
+3. Clique no link **Autorizar host** à direita. Selecione os hosts que podem acessar o volume.
 
-Quando autorizado, conecte o volume ao seu host.
-
- 
-## Capturas instantâneas e replicação
-
-Você tem capturas instantâneas e replicação estabelecida para seu volume original? Se sim, será necessário configurar a replicação, o espaço de captura instantânea e criar planejamentos de captura instantânea para o novo volume criptografado com as mesmas configurações que o volume original. 
-
-**Nota**: se o seu data center de destino não foi submetido a upgrade para criptografia, não será possível estabelecer a replicação para o novo volume até que o data center seja submetido a upgrade.
+Quando o host estiver autorizado, conecte o volume ao host.
 
  
-## Migrar seus dados
+## Configurando Capturas Instantâneas e Replicação
 
-O host deve estar conectado aos volumes do {{site.data.keyword.filestorage_short}} original e criptografado. Se não:
+Se capturas instantâneas e replicação tiverem sido estabelecidas para seu volume original, será necessário configurá-las para o novo volume. Configure a replicação, o espaço de captura instantânea e crie planejamentos de captura instantânea com as mesmas configurações do volume original. 
 
-- Certifique-se de que você seguiu as etapas neste documento e referenciou os documentos corretamente.
-- Abra um chamado de suporte para obter assistência adicional ao conectar os dois volumes a seu host.
+>**Nota** - Se o data center de destino não tiver criptografia, não será possível estabelecer a replicação para o novo volume até que o data center seja submetido a upgrade.
 
-### Considerações de dados
+ 
+## Migrando seus dados
 
-Neste momento, considere que tipo de dados você tem em seu volume original do {{site.data.keyword.filestorage_short}} e qual a melhor maneira de copiá-los para o seu volume criptografado. Se você tem backups, conteúdo estático e coisas que não são esperadas mudar durante a cópia, não há nenhuma consideração importante.
+1. Conecte-se a ambos os volumes do {{site.data.keyword.filestorage_short}}, originais e novos. 
+  - Se precisar de assistência com a conexão dos dois compartilhamentos de arquivo a seu host, abra um chamado de suporte.
 
-Se você estiver executando um banco de dados ou uma máquina virtual em seu {{site.data.keyword.filestorage_short}}, certifique-se de que os dados no volume original não sejam alterados durante a cópia para que nenhuma distorção ocorra. Se você tiver preocupações com relação à largura da banda, será necessário executar a migração durante os horários fora de pico. Se precisar de assistência com essas considerações, abra um chamado de suporte.
-
-### Microsoft Windows
-
-Para copiar dados do volume original do {{site.data.keyword.filestorage_short}} para seu volume criptografado, formatar o novo armazenamento e copie os arquivos usando o Windows Explorer.
-
-### Linux
-
-Você pode considerar usar `rsync` para copiar sobre os dados. Aqui está um comando de exemplo:
-
-```
-[root@server ~]# rsync -Pavzu /path/to/original/file/storage/* /path/to/encrypted/file/storage
-```
-
-É recomendado usar o exemplo de comando com a sinalização `--dry-run` uma vez para garantir que os caminhos sejam alinhados corretamente. Se esse processo for interrompido, você talvez deseje excluir o último arquivo de destino que estava sendo copiado para assegurar que ele seja copiado do início no novo local.
-
-Quando esse comando é concluído sem a sinalização `--dry-run`, seus dados devem ser copiados para o volume criptografado do {{site.data.keyword.filestorage_short}}. É necessário rolar para cima e executar o comando novamente para ter certeza de que nada foi perdido. Você também pode desejar revisar manualmente ambos os locais para procurar qualquer coisa que possa estar ausente.
-
-Quando a migração for concluída, você será capaz de mover a produção para o volume criptografado e separar e excluir o volume original da sua configuração. 
-
-**Nota**: a exclusão também removerá qualquer captura instantânea ou réplica no site de destino que foi associada ao volume original.
+2. Considere qual tipo de dados você tem no volume original do {{site.data.keyword.filestorage_short}} e como melhor copiá-lo para o novo compartilhamento de arquivo 
+  - Se você tiver backups, conteúdo estático e coisas que não devem mudar durante a cópia, não haverá grandes preocupações.
+  - Se você estiver executando um banco de dados ou uma máquina virtual em seu {{site.data.keyword.filestorage_short}}, certifique-se de que os dados não sejam alterados durante a cópia para evitar distorção de dados. Se você tiver alguma preocupação com a largura de banda, faça a migração durante os horários fora de pico. Se precisar de assistência com essas considerações, abra um chamado de suporte.
+ 
+3. Copie seus dados entre.
+   - **Microsoft Windows** 
+     - Para copiar dados do LUN original do {{site.data.keyword.filestorage_short}} para o novo LUN, formate o novo armazenamento e copie os arquivos usando o Windows Explorer.
+   - **Linux** 
+     - É possível usar `rsync` para copiar os dados.
+       ```
+       [root@server ~]# rsync -Pavzu /path/to/original/file/storage/* /path/to/encrypted/file/storage
+       ```
+   
+   É uma boa ideia usar o comando anterior com a sinalização `--dry-run` uma vez para certificar-se de que os caminhos sejam alinhados corretamente. Se esse processo for interrompido, será possível excluir o último arquivo de destino que estava sendo copiado para certificar-se de que ele seja copiado para o novo local do início.<br/>
+   Quando esse comando for concluído sem a sinalização `--dry-run`, seus dados serão copiados para o novo volume do {{site.data.keyword.filestorage_short}}. Execute o comando novamente para certificar-se de que nada foi perdido. Também é possível revisar manualmente ambos os locais para procurar qualquer coisa que possa estar ausente.<br/>
+   Quando a migração estiver concluída, será possível mover a produção para o novo LUN. Em seguida, será possível remover e excluir o volume original de sua configuração. A exclusão também remove qualquer captura instantânea ou réplica no site de destino que tenha sido associada ao volume original.

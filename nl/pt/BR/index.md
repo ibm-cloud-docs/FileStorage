@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-05-14"
+lastupdated: "2018-06-29"
 
 ---
 {:new_window: target="_blank"}
@@ -10,59 +10,60 @@ lastupdated: "2018-05-14"
 
 # Introdução ao {{site.data.keyword.filestorage_short}}
 
-O {{site.data.keyword.filestorage_full}} é um {{site.data.keyword.filestorage_short}} baseado no NFS, persistente, rápido e conectado por rede flexível. Nesse ambiente de armazenamento conectado à rede (NAS), você tem controle total sobre sua função de compartilhamentos de arquivo e sobre o desempenho. Os compartilhamentos do {{site.data.keyword.filestorage_short}} podem ser conectados a até 64 dispositivos autorizados sobre conexões TCP/IP roteadas para resiliência.
+O {{site.data.keyword.filestorage_full}} é um {{site.data.keyword.filestorage_short}} baseado em NFS persistente, rápido e flexível, conectado à rede. Nesse ambiente de armazenamento conectado à rede (NAS), você tem controle total sobre sua função de compartilhamentos de arquivo e sobre o desempenho. Os compartilhamentos do {{site.data.keyword.filestorage_short}} podem ser conectados a até 64 dispositivos autorizados sobre conexões TCP/IP roteadas para resiliência.
 
-O {{site.data.keyword.filestorage_short}} traz os melhores níveis de durabilidade e disponibilidade com um conjunto de recursos incomparável. O {{site.data.keyword.filestorage_short}} foi construído usando os padrões de mercado e as melhores práticas e foi projetado para proteger a integridade dos dados. O {{site.data.keyword.filestorage_short}} mantém a disponibilidade por meio dos eventos de manutenção e de falhas não planejadas ao mesmo tempo em que fornece uma linha de base de desempenho consistente.
+O {{site.data.keyword.filestorage_short}} traz os melhores níveis de durabilidade e disponibilidade com um conjunto de recursos incomparável. O {{site.data.keyword.filestorage_short}} é construído usando padrões de mercado e melhores práticas, além de ser projetado para proteger a integridade dos dados. O {{site.data.keyword.filestorage_short}} mantém a disponibilidade por meio de eventos de manutenção e falhas não planejadas e fornece uma linha de base de desempenho consistente.
 
 Tire vantagem dos recursos principais do {{site.data.keyword.filestorage_short}} a seguir:
 
 - **Linha de base de desempenho consistente**
-   - Fornecido pela alocação de input/output operations per second (IOPS) de nível de protocolo para volumes individuais
+   - Fornecida por meio da alocação de operações de entrada/saída por segundo (IOPS) no nível de protocolo para volumes individuais.
 - **{{site.data.keyword.filestorage_short}}**
-   - Disponível para compartilhamentos NFS baseados em arquivo
+   - Disponível para compartilhamentos de NFS baseados em arquivo.
 - **Altamente durável e resiliente**
-   - Protege a integridade dos dados e mantém a disponibilidade por meio de eventos de manutenção e falhas não planejadas sem a necessidade de criar e gerenciar matrizes Redundant Array of Independent Disks (RAID) de nível de sistema operacional
+   - Protege a integridade dos dados e mantém a disponibilidade por meio de eventos de manutenção e falhas não planejadas sem a necessidade de criar e gerenciar matrizes Redundant Array of Independent Disks (RAID) no nível de sistema operacional
 - **Criptografia de dados em repouso** [(disponível em data centers selecionados.)](new-ibm-block-and-file-storage-location-and-features.html)
-   - Criptografia gerenciada por provedor para dados em repouso sem custo adicional
+   - A criptografia gerenciada por provedor para dados em repouso é fornecida sem custo adicional
 - **Todo armazenamento suportado por flash** [(disponível em data centers selecionados.)](new-ibm-block-and-file-storage-location-and-features.html)
-   - Todo armazenamento flash para volumes provisionados com Endurance ou Performance em 2 IOPS/GB ou superior
-- **Capturas instantâneas (quando provisionado com Endurance ou Performance em [data centers selecionados](new-ibm-block-and-file-storage-location-and-features.html))**.
-   - Captura as capturas instantâneas de dados de um momento sem interrupção
-- **Replicação** (quando provisionado com Endurance ou Performance em [data centers selecionados](new-ibm-block-and-file-storage-location-and-features.html).
-   - Copia capturas instantâneas automaticamente para um data center do {{site.data.keyword.BluSoftlayer_full}} de parceiro.
+   - O armazenamento totalmente em flash para volumes pode ser provisionado em 2 IOPS/GB ou níveis mais altos.
+- ** Capturas Instantâneas **  [ (Disponíveis em data centers selecionados.)](new-ibm-block-and-file-storage-location-and-features.html).
+   - Captura capturas instantâneas de dados point-in-time sem interrupções.
+- **Replicação** [(Disponível nos data centers selecionados.)](new-ibm-block-and-file-storage-location-and-features.html)
+   - Disponível quando o armazenamento é provisionado em [data centers selecionados](new-ibm-block-and-file-storage-location-and-features.html).
+   - Copia capturas instantâneas automaticamente para um data center parceiro do {{site.data.keyword.BluSoftlayer_full}}.
 - **Conectividade altamente disponível**
-   - Usa conexões de rede redundantes para maximizar a disponibilidade - conexão TCP/IP roteada pelo {{site.data.keyword.filestorage_short}} com base em NFS
+   - Usa conexões de rede redundantes para maximizar a disponibilidade.
+   - Conexões TCP/IP  {{site.data.keyword.filestorage_short}}  roteadas por NFS.
 - **Acesso simultâneo**
-   - Permite que múltiplos hosts (até 64) acessem volumes de arquivo simultaneamente
+   - Permite que múltiplos hosts (até 64) acessem volumes de arquivo simultaneamente.
 - **Bancos de dados em cluster**
-   - Suporta casos de uso avançados, como bancos de dados em cluster
+   - Suporta casos de uso avançados, como bancos de dados em cluster.
 
-## Faturamento por hora/mensal
+## Faturamento
 
-É possível selecionar o faturamento por hora ou mensal para um Volume de arquivo. O tipo de faturamento selecionado para um LUN será aplicado ao seu espaço de captura instantânea e réplicas. Por exemplo, se você provisionar um LUN com o faturamento por hora, quaisquer capturas instantâneas ou taxas de réplica serão faturadas por hora. Se você provisionar um LUN com faturamento mensal, quaisquer capturas instantâneas ou taxas de réplica serão faturadas mensalmente. 
+É possível selecionar o faturamento por hora ou mensal para um volume de Arquivo. O tipo de faturamento selecionado para um LUN aplica-se a seu espaço de captura instantânea e réplicas. Por exemplo, se você provisionar um LUN com o faturamento por hora, quaisquer capturas instantâneas ou taxas de réplica serão faturadas por hora. Se você provisionar um LUN com faturamento mensal, quaisquer capturas instantâneas ou taxas de réplica serão faturadas mensalmente. 
 
-Com o **faturamento por hora**, o número de horas em que o volume de arquivo existiu na conta é calculado no momento em que o volume é excluído ou no término do ciclo de faturamento, o que vier primeiro. O faturamento por hora é uma boa opção para armazenamento usado por alguns dias ou menos de um mês completo. O faturamento por hora está disponível somente para armazenamento provisionado em [data centers selecionados](new-ibm-block-and-file-storage-location-and-features.html). 
+Com o **faturamento por hora**, o número de horas que o volume de Arquivo existiu na conta é calculado no momento em que o LUN é excluído ou no término do ciclo de faturamento, o que vem primeiro. O faturamento por hora é uma boa opção para armazenamento usado por alguns dias ou menos de um mês completo. O faturamento por hora está disponível para o armazenamento provisionado em [data centers selecionados](new-ibm-block-and-file-storage-location-and-features.html) apenas. 
 
-Com o **faturamento mensal**, o cálculo para o preço é rateado da data de criação ao término do ciclo de faturamento e faturado imediatamente. Não há reembolso se um volume de arquivo é excluído antes do término do ciclo de faturamento. O faturamento mensal é uma boa opção para armazenamento usado em cargas de trabalho de produção que usam dados que precisam ser armazenados e acessados por longos períodos de tempo (um mês ou mais).
+Com o **faturamento mensal**, o cálculo para o preço é rateado da data de criação ao término do ciclo de faturamento e faturado imediatamente. Se um volume for excluído antes do término do ciclo de faturamento, não haverá reembolso. O faturamento mensal é uma boa opção para o armazenamento usado em cargas de trabalho de produção que usam dados que precisam ser armazenados e acessados por longos períodos de tempo (um mês ou mais). 
 
  
-### Performance:
+**Performance**
 <table>
- <tbody>
+  <caption>A Tabela 1 está mostrando os preços para o armazenamento do Performance com faturamento mensal e por hora.</caption>
   <tr>
    <th>Preço mensal</th>
-   <td>US$ 0,10/GB + US$ 0,07/IOPS</td>
+   <td>$0,10/GB + $0,07/IOP</td>
   </tr>
   <tr>
    <th>Preço por hora</th>
-   <td>US$ 0,0001/GB + US$ 0,0002/IOPS</td>
+   <td>$0,0001/GB + $0,0002/IOP</td>
   </tr>
-  </tbody>
 </table>
  
-### Endurance:
+**Endurance**
 <table>
- <tbody>
+  <caption>A Tabela 2 está mostrando os preços para o armazenamento do Endurance para cada camada com opções de faturamento mensais e por hora.</caption>
   <tr>
    <th>Camada de IOPS</th>
    <th>0,25 IOPS/GB</th>
@@ -84,47 +85,46 @@ Com o **faturamento mensal**, o cálculo para o preço é rateado da data de cri
    <td>$0,0005/GB</td>
    <td>$0,0009/GB</td>
   </tr>
-  </tbody>
 </table>
 
  
 
 ## Fornecimento
 
-Os volumes do {{site.data.keyword.filestorage_short}} podem ser provisionados de 20 GB a 12 TB com duas opções para fornecimento: <br/>
-- Provisione com **camadas do Endurance** que apresentam níveis de desempenho e recursos predefinidos, como capturas instantâneas e replicação.
-- Construa um ambiente **Performance** de alta potência com input/output operations per second (IOPS) alocado.
+Os volumes do {{site.data.keyword.filestorage_short}} podem ser provisionados de 20 GB a 12 TB com duas opções: <br/>
+- Provisiona camadas do **Endurance** que apresentam níveis de desempenho predefinidos e outros recursos, como capturas instantâneas e replicação.
+- Construa um ambiente **Performance** de alta potência com input/output operations per second (IOPS) alocado. 
 
  
-### Camadas do Endurance
+### Provisionando com Camadas de Endurance
 
-Ao pedir com o Endurance, escolha entre múltiplas camadas de desempenho para suportar necessidades variadas do aplicativo.
+O {{site.data.keyword.filestorage_short}} Endurance está disponível em quatro camadas de desempenho do IOPS para suportar necessidades de aplicativo variadas. <br />
 
-O Endurance está disponível em três camadas de desempenho de IOPS para suportar necessidades variadas do aplicativo.
+- **0,25 IOPS por GB** foi projetado para cargas de trabalho com baixa intensidade de E/S. Essas cargas de trabalho geralmente são caracterizadas por ter uma grande porcentagem de dados inativos a qualquer momento. Aplicativos de exemplo incluem o armazenamento de caixas de correio ou compartilhamentos de arquivos de nível departamental.
 
-- **0,25 IOPS por GB** foi projetado para cargas de trabalho com baixa intensidade de E/S. Essas cargas de trabalho são caracterizadas geralmente por ter uma grande porcentagem de dados inativos em um determinado momento. Aplicativos de exemplo incluem o armazenamento de caixas de correio ou compartilhamentos de arquivos de nível departamental.
-- **2 IOPS por GB** foi projetado para uso de propósito mais geral. Aplicativos de exemplo incluem a hospedagem de pequenos bancos de dados que suportam aplicativos da web ou imagens de disco de máquina virtual para um hypervisor.
-- **4 IOPS por GB** foi projetado para cargas de trabalho de maior intensidade. Essas cargas de trabalho são caracterizadas geralmente por ter uma alta porcentagem de dados ativos em um determinado momento. Aplicativos de exemplo incluem bancos de dados transacionais e outros sensíveis ao desempenho.
-- **10 IOPS por GB** foi projetado para as cargas de trabalho de maior demanda, como aquelas criadas por Bancos de dados NoSQL e processamento de dados para Analytics.  Essa camada está disponível para armazenamento provisionado de até 4 TB de tamanho em [data centers selecionados](new-ibm-block-and-file-storage-location-and-features.html).
+- **2 IOPS por GB** é projetado para uso de propósito geral. Os aplicativos de exemplo incluem a hospedagem de bancos de dados pequenos que estão suportando aplicativos da web ou imagens de disco da VM para um hypervisor.
+
+- **4 IOPS por GB** foi projetado para cargas de trabalho de maior intensidade. Essas cargas de trabalho geralmente são caracterizadas por ter uma alta porcentagem de dados ativos a qualquer momento. Aplicativos de exemplo incluem bancos de dados transacionais e outros sensíveis ao desempenho.
+
+- **10 IOPS por GB** é projetado para as cargas de trabalho mais exigentes, como aquelas criadas por bancos de dados NoSQL, e para processamento de dados para Analytics. Essa camada está disponível para o armazenamento provisionado até 4 TB em [data centers selecionados](new-ibm-block-and-file-storage-location-and-features.html) apenas.
 
 Até 48.000 IOPS estão disponíveis com um volume do Endurance de 12 TB.
-
-
-Embora escolher a camada correta do Endurance {{site.data.keyword.filestorage_short}} para sua carga de trabalho seja fundamental, é igualmente importante usar o tamanho de bloco, a velocidade de conexão Ethernet e o número de hosts necessários para alcançar o desempenho máximo. Se alguma dessas partes não se alinhar com a outra, isso poderá ter um impacto significativo no rendimento resultante
  
-### Performance
+A escolha da camada correta do Endurance é essencial para sua carga de trabalho. É igualmente importante usar o tamanho de bloco, a velocidade de conexão Ethernet e o número de hosts corretos necessários para alcançar o máximo desempenho. Se alguma dessas partes não se alinhar, poderá haver um impacto significativo no rendimento resultante.
+ 
+### Provisionando com Desempenho
 
-O Performance é uma classe de {{site.data.keyword.filestorage_full}} que é projetada para suportar aplicativos de E/S alta com requisitos de desempenho bem entendidos que não se ajustam bem dentro de uma camada do Endurance. O desempenho previsível é alcançado por meio da alocação de IOPS de nível de protocolo para volumes individuais. O IOPS que varia de 100 a 6.000 pode ser provisionado com tamanhos de armazenamento que variam de 20 GB a 12 TB. 
+Performance é uma classe do {{site.data.keyword.filestorage_short}} projetada para suportar aplicativos de alta E/S com requisitos de desempenho entendidos que não se ajustam bem em uma camada do Endurance. O desempenho previsível é alcançado por meio da alocação de IOPS de nível de protocolo para volumes individuais. Várias taxas de IOPS (100 - 48.000) podem ser provisionadas com tamanhos de armazenamento que variam de 20 GB a 12 TB.
 
-O Performance para o {{site.data.keyword.filestorage_short}} é acessado e montado por meio de uma conexão do Network File System (NFS). O {{site.data.keyword.filestorage_short}} é geralmente usado quando o volume será acessado por múltiplas máquinas simultaneamente. Os volumes consistentes do Performance podem ser pedidos de acordo com os Tamanhos e o IOPS na Tabela 1 e podem ser usados com os sistemas operacionais Linux.
+O Performance para o {{site.data.keyword.filestorage_short}} é acessado e montado por meio de uma conexão do Network File System (NFS). O {{site.data.keyword.filestorage_short}} é usado geralmente quando o volume é acessado por múltiplos servidores simultaneamente. Os volumes consistentes do Performance podem ser pedidos de acordo com os Tamanhos e o IOPS na Tabela 1 e podem ser usados com os sistemas operacionais Linux.
 
 <table cellpadding="1" cellspacing="1" style="width: 99%;">
+ <caption>A Tabela 3 está mostrando combinações de tamanho e de IOPS para armazenamento do Performance.<br/><sup><img src="/images/numberone.png" alt="Nota de rodapé" /></sup> O limite de IOPS maior que 6.000 está disponível nos data centers selecionados.</caption>
         <colgroup>
           <col/>
           <col/>
           <col/>
         </colgroup>
-        <tbody>
           <tr>
             <th>Tamanho (GB)</th>
             <th>Mínimo de IOPS</th>
@@ -163,58 +163,57 @@ O Performance para o {{site.data.keyword.filestorage_short}} é acessado e monta
           <tr>
             <td>1.000</td>
             <td>100</td>
-            <td>6.000 ou 20.000<sup><img src="/images/numberone.png" alt="nota de rodapé" /></sup></td>
+            <td>6.000 ou 20.000 <sup> <img src="/images/numberone.png" alt="Footnote" /> </sup></td>
           </tr>
           <tr>
             <td>2.000 - 3.000</td>
             <td>200</td>
-            <td>6.000 ou 40.000<sup><img src="/images/numberone.png" alt="nota de rodapé" /></sup></td>
+            <td>6.000 ou 40.000 <sup> <img src="/images/numberone.png" alt="Footnote" /> </sup></td>
           </tr>
           <tr>
             <td>4.000 - 7.000</td>
             <td>300</td>
-            <td>6.000 ou 48.000<sup><img src="/images/numberone.png" alt="nota de rodapé" /></sup></td>
+            <td>6.000 ou 48.000<sup><img src="/images/numberone.png" alt="Nota de rodapé" /></sup></td>
           </tr>
           <tr>
             <td>8.000 - 9.000</td>
             <td>500</td>
-            <td>6.000 ou 48.000<sup><img src="/images/numberone.png" alt="nota de rodapé" /></sup></td>
+            <td>6.000 ou 48.000<sup><img src="/images/numberone.png" alt="Nota de rodapé" /></sup></td>
           </tr>
           <tr>
             <td>10.000 - 12.000</td>
             <td>1.000</td>
-            <td>6.000 ou 48.000<sup><img src="/images/numberone.png" alt="nota de rodapé" /></sup></td>
+            <td>6.000 ou 48.000<sup><img src="/images/numberone.png" alt="Nota de rodapé" /></sup></td>
           </tr>
-        </tbody>
 </table>
 
-<sup>![nota de rodapé](/images/numberone.png)</sup> O limite de IOPS acima de 6.000 está disponível em data centers selecionados.
 
+Os volumes do Performance foram projetados para operar consistentemente próximo ao nível de IOPS provisionado. A consistência facilita dimensionar e escalar ambientes de aplicativos com um nível específico de desempenho. Além disso, é possível otimizar um ambiente construindo um volume com a proporção preço/desempenho ideal.
 
-Os volumes do Performance são projetados para executar consistentemente próximo ao nível de IOPS provisionado. A consistência torna mais fácil dimensionar e escalar ambientes de aplicativos com um determinado nível de desempenho. Além disso, dado o intervalo de tamanhos de volume e as contagens de IOPS, torna-se possível otimizar um ambiente construindo um volume com a razão de preço ideal para desempenho.
+### Considerações de fornecimento
 
-O IOPS, para Endurance e Performance, é medido com base em um tamanho de bloco de 16 KB com uma combinação de leitura/gravação 50/50. Para alcançar o máximo de IOPS em um volume, recursos de rede adequados precisam estar em vigor. Outras considerações incluem o uso da rede privada fora do armazenamento e do lado do host e dos ajustes específicos do aplicativo (pilha IP, profundidades da fila, e assim por diante). 
+** Tamanho do Bloco **
 
-## Dicas para provisionar o IOPS para {{site.data.keyword.filestorage_short}}
+A IOPS para Endurance e Performance tem como base um tamanho de bloco de 16 KB com leitura/gravação de 50/50 e 50 por cento de carga de trabalho aleatória. Um bloco de 16 KB equivale a uma gravação no
+volume.
 
-O IOPS para Endurance e Performance é baseado em um tamanho de bloco de 16 KB com uma carga de trabalho aleatória de 50% de leitura/gravação 50/50. Um bloco de ~16 KB é o equivalente de uma gravação para o volume.
+O tamanho do bloco usado por seu aplicativo afetará diretamente o desempenho do armazenamento. Se o tamanho do bloco usado por seu aplicativo for menor que 16 KB, o limite do IOPS será realizado antes do limite do rendimento. Por outro lado, se o tamanho do bloco usado por seu aplicativo for maior que 16 KB, o limite de rendimento será realizado antes do limite do IOPS.
 
-O tamanho de bloco usado por seu aplicativo afetará diretamente o desempenho de armazenamento.  Se o tamanho de bloco usado por seu aplicativo for menor que 16 KB, o limite de IOPS será percebido antes do limite de rendimento. Por outro lado, se o tamanho de bloco usado por seu aplicativo for maior que 16 KB, o limite de rendimento será percebido antes do limite de IOPS.
-
-Mudar o tamanho de bloco afetará o desempenho como a seguir:
-
-<table cellpadding="1" cellspacing="1" style="width: 99%;">
+<table>
+  <caption>A Tabela 4 mostra exemplos de como o tamanho do bloco e o IOPS afetam o rendimento.</caption>
         <colgroup>
           <col/>
           <col/>
           <col/>
         </colgroup>
-        <tbody>
+        <thead>
           <tr>
             <th>Tamanho de bloco (KB)</th>
             <th>IOPS</th>
             <th>Rendimento (MB/s)</th>
           </tr>
+        </thead>
+        <tbody>
           <tr>
             <td>4 (típico para Linux)</td>
             <td>1.000</td>
@@ -253,12 +252,30 @@ Mudar o tamanho de bloco afetará o desempenho como a seguir:
         </tbody>
 </table>
 
-A escolha do {{site.data.keyword.blockstorageshort}} correto para sua carga de trabalho é importante e igualmente importante é como evitar gargalos. A velocidade da sua conexão Ethernet deve ser mais rápida do que o rendimento máximo esperado de seu volume. Como uma regra geral, você não deve esperar saturar a sua conexão Ethernet além de 70% da largura da banda disponível. Por exemplo, se você tiver 6.000 IOPS e estiver usando um tamanho de bloco de 16 KB, o volume será capaz de aproximadamente 94 MB por segundo. Se você tiver uma conexão Ethernet de 1 Gbps para o LUN, ela se tornará um gargalo quando seus servidores tentarem utilizar o rendimento máximo disponível porque 70% do limite teórico de uma conexão Ethernet de 1 Gbps (125 MB por segundo) permitiria somente para 88 MB por segundo.
+** Hosts autorizados **
 
+Outro fator a ser considerado é o número de hosts que estão usando seu volume. Se houver um único host acessando o volume, poderá ser difícil realizar o IOPS máximo disponível, especialmente em contagens extremas de IOPS (10.000s). Se a sua carga de trabalho requerer alto rendimento, será melhor configurar pelo menos alguns servidores para acessar seu volume para evitar um gargalo de servidor único.
 
-Outro fator a considerar é o número de hosts que estão utilizando o volume. Se houver um único host que está acessando o volume, poderá ser difícil realizar o IOPS máximo disponível, especialmente em contagens extremas de IOPS (10.000s). Se sua carga de trabalho requer alto rendimento, é melhor configurar pelo menos dois ou três servidores para acessarem seu volume e evitarem um gargalo de servidor único.
+** Conexão de rede **
 
+A velocidade da sua conexão Ethernet deve ser mais rápida do que o rendimento máximo esperado de seu volume. Em geral, não espere saturar sua conexão Ethernet além de 70% da largura de banda disponível. Por exemplo, se você tiver 6.000 IOPS e estiver usando um tamanho de bloco de 16 KB, o volume poderá manipular aproximadamente o rendimento de 94 MBps. Se você tiver uma conexão Ethernet de 1 Gbps para seu LUN, ela se tornará um gargalo quando seus servidores tentarem usar o rendimento máximo disponível. Isso é porque 70 por cento do limite teórico de uma conexão Ethernet de 1 Gbps (125 MB por segundo) permitiria 88 MB por segundo apenas.
 
-Para alcançar o IOPS máximo, recursos de rede adequados precisam estar em vigor. Outras considerações incluem o uso da rede privada fora do armazenamento e do lado do host e dos ajustes específicos do aplicativo (pilha IP, profundidades da fila, e assim por diante).
+Para alcançar o IOPS máximo, recursos de rede adequados precisam estar em vigor. Outras considerações incluem o uso de rede privada fora do armazenamento e do lado do host e de ajustes específicos do aplicativo (pilha IP ou profundidades da fila e outras configurações).
 
-O NFS v3 e NFS v4.1 são suportados no ambiente do {{site.data.keyword.BluSoftlayer_full}}. No entanto, é nossa recomendação que o NFS v3 seja usado. O NFS v4.1 é um protocolo stateful (não stateless como o NFSv3) e, portanto, problemas de protocolo podem ocorrer durante eventos de rede. O NFS v4.1 deve colocar em modo quiesce todas as operações e, em seguida, executar uma recuperação de bloqueio. Em um servidor de arquivos NFS relativamente ocupado, a latência aumentada pode causar interrupções. A falta de caminhos múltiplos/entroncamento do NFS v4.1 também pode estender a recuperação de operações do NFS.
+** Versão do NFS **
+
+O NFS v3 e NFS v4.1 são suportados no ambiente do {{site.data.keyword.BluSoftlayer_full}}. No entanto, o NFS v3 é preferencial porque o NFS v4.1 é um protocolo stateful (não stateless como o NFSv3) e problemas de protocolo podem ocorrer durante eventos de rede. O NFS v4.1 deve colocar em modo quiesce todas as operações e, em seguida, concluir a recuperação de bloqueio. Em um servidor de arquivos NFS relativamente ocupado, a latência aumentada pode causar interrupções. A falta de caminhos múltiplos/entroncamento do NFS v4.1 também pode estender a recuperação de operações do NFS.
+
+## Enviando sua Ordem
+
+Quando você estiver pronto para enviar seu pedido, siga as instruções indicadas [aqui](provisioning-file-storage.html). Para ver Provisionando o File Storage com o VMware, clique [aqui](architecture-guide-file-storage-vmware.html)
+
+## Conectando seu novo armazenamento
+
+Quando sua solicitação de fornecimento estiver concluída, autorize seus hosts a acessar o novo armazenamento e configurar sua conexão. Dependendo do sistema operacional de seu host, siga o link apropriado.
+- [Acessando o {{site.data.keyword.filestorage_short}} no Linux](accessing-file-storage-linux.html)
+- [ Montando o NFS/File Storage no CentOS ](mounting-nsf-file-storage.html)
+- [Montando o {{site.data.keyword.filestorage_short}} no CoreOS](mounting-storage-coreos.html)
+- [Configurando o {{site.data.keyword.filestorage_short}} para backup com cPanel](configure-backup-cpanel.html)
+- [Configurando o {{site.data.keyword.filestorage_short}} para backup com Plesk](configure-backup-plesk.html)
+- [Montando o volume do {{site.data.keyword.filestorage_short}} em hosts ESXi](architecture-guide-file-storage-vmware.html)

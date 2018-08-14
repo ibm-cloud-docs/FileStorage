@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-05-29"
+lastupdated: "2018-06-20"
 
 ---
 {:new_window: target="_blank"}
@@ -16,8 +16,7 @@ O {{site.data.keyword.BluSoftlayer_full}} está introduzindo uma nova versão do
 
 O novo {{site.data.keyword.filestorage_short}} está disponível nas regiões/data centers a seguir com mais disponibilidade do data center incluída em breve.
 
-<table style="width:100%;">
-  <caption>A Tabela 1 mostra nossa disponibilidade do Data Center. Cada região possui sua própria coluna. Algumas cidades, como Dallas, San Jose, Washington DC, Amsterdã, Frankfurt, Londres e Sydney, têm múltiplos data centers.</caption>
+<table role="presentation">
 	<tr>
 		<td><strong>EUA 2</strong></td>
 		<td><strong>UE</strong></td>
@@ -68,6 +67,7 @@ O novo {{site.data.keyword.filestorage_short}} está disponível nas regiões/da
 	</tr>
 </table>
 
+*A Tabela 1 mostra nossa Disponibilidade do Data center. Cada região possui sua própria coluna. Algumas cidades, como Dallas, São José, Washington DC, Amsterdã, Frankfurt, Londres e Sydney, têm múltiplos data centers.*
 
 O novo armazenamento tem os seguintes recursos e capacidades:
 
@@ -81,7 +81,7 @@ O novo armazenamento tem os seguintes recursos e capacidades:
 - Crie um clone de seus dados com o [recurso de Duplicação de volume do {{site.data.keyword.filestorage_short}}](how-to-create-duplicate-volume.html).
 - O armazenamento é expansível em incrementos de GB até 12 TB imediatamente, sem a necessidade de criar uma duplicata ou de mover manualmente os dados para um volume maior. Leia mais sobre esse recurso [aqui](expandable_file_storage.html).
 
-## Novo ponto de montagem para volumes aprimorados do {{site.data.keyword.filestorage_short}}
+## Novo Ponto de Montagem para volumes  {{site.data.keyword.filestorage_short}}  aprimorados
 
 Todos os volumes aprimorados do {{site.data.keyword.filestorage_short}} provisionados nesses data centers têm um ponto de montagem diferente de volumes não criptografados. Para assegurar-se de que esteja usando o ponto de montagem correto para seus volumes de armazenamento, é possível visualizar as informações de ponto de montagem na página **Detalhes do volume** na IU. Também é possível acessar o ponto de montagem correto por meio de uma chamada API: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 

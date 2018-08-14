@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-05-24"
+lastupdated: "2018-06-29"
 
 ---
 {:new_window: target="_blank"}
@@ -12,27 +12,27 @@ lastupdated: "2018-05-24"
 
 Primeiro, certifique-se de que o host que acessará o volume do {{site.data.keyword.filestorage_full}} esteja autorizado por meio do [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
 
-1. Na página de listagem do {{site.data.keyword.filestorage_short}}, clique em **Ações** associadas ao novo compartilhamento e clique em **Autorizar host**.
-2. Selecione o host ou hosts desejados na lista e clique em **Enviar**. Isso autoriza o host a acessar o compartilhamento.
+1. Na página de listagem do {{site.data.keyword.filestorage_short}}, clique na opção **Ações** que está associada ao novo compartilhamento e clique em **Autorizar host**.
+2. Selecione o host ou os hosts na lista e clique em **Enviar**. Essa ação autoriza o host a acessar o compartilhamento.
 
 ## Montando o compartilhamento do {{site.data.keyword.filestorage_short}}
 
-As etapas a seguir são necessárias para conectar uma instância de cálculo do {{site.data.keyword.BluSoftlayer_full}} baseada no Linux a um compartilhamento do Network File System (NFS). O exemplo é baseado no Red Hat Enterprise Linux 6. As etapas podem ser ajustadas para outras distribuições do Linux de acordo com a documentação do fornecedor do sistema operacional (OS).
+Use estas instruções para conectar uma instância de Cálculo do {{site.data.keyword.BluSoftlayer_full}} baseada em Linux a um compartilhamento do Network File System (NFS). O exemplo é baseado no Red Hat Enterprise Linux 6. As etapas podem ser ajustadas para outras distribuições do Linux de acordo com a documentação do fornecedor do sistema operacional (OS).
 
-**Nota:** o ponto de montagem da instância de armazenamento de arquivo pode ser obtido na página de listagem do {{site.data.keyword.filestorage_short}} ou por meio de uma chamada API - `SoftLayer_Network_Storage::getNetworkMountAddress()`.
+>**Nota** - O ponto de montagem da instância do File Storage pode ser obtido da página de listagem do {{site.data.keyword.filestorage_short}} ou por meio de uma chamada API - `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 
-1. Instale os pacotes/ferramentas necessários.
+1. Instale os pacotes / ferramentas necessários.
    ```
    # yum -y install nfs-utils nfs-utils-lib
    ```
    {:pre}
     
-2. Monte o compartilhamento remoto
+2. Monte o compartilhamento remoto.
    ```
    # mount -t "nfs version" -o "options" <mount_point> /mnt
    ```
        
-   Aqui está um exemplo de montagem do compartilhamento remoto para uma instância de armazenamento.
+   Exemplo
    ```
    # mount -t nfs4 -o hard,intr
    nfsdal0501a.service.softlayer.com:/IBM01SV278685_7 /mnt
@@ -47,7 +47,7 @@ As etapas a seguir são necessárias para conectar uma instância de cálculo do
    /dev/xvda1 97M 51M 42M 55%
    ```
     
-4. Navegue para o ponto de montagem e arquivos de leitura/gravação.
+4. Acesse o ponto de montagem e os arquivos de leitura/gravação.
    ```
    # touch /mnt/test
    # ls -la /mnt
@@ -57,21 +57,21 @@ As etapas a seguir são necessárias para conectar uma instância de cálculo do
    -rw-r--r-- 1 nobody nobody 0 Sep 8 15:52 test
    ```
 
-   **Nota:** os arquivos que são criados por raiz têm a propriedade de `nobody:nobody`. Para exibir a propriedade corretamente, o `idmapd.conf` precisa ser atualizado com as configurações de domínio corretas. Veja “Como implementar no_root_squash para NFS” na parte inferior desta página.
+   >**Nota** - Os arquivos criados pela raiz têm a propriedade de `nobody:nobody`. Para exibir a propriedade corretamente, o `idmapd.conf` precisa ser atualizado com as configurações de domínio corretas. Consulte a seção **Como implementar no_root_squash para o NFS**.
     
-5. Monte o compartilhamento remoto no início. Para concluir a configuração, edite a tabela de sistemas de arquivos `/etc/fstab` para incluir o compartilhamento remoto na lista de entradas que serão montadas automaticamente na inicialização:
+5. Monte o compartilhamento remoto no início. Para concluir a configuração, edite a tabela de sistemas de arquivos (`/etc/fstab`) para incluir o compartilhamento remoto na lista de entradas montadas automaticamente na inicialização:
 
    ```
    (hostname):/(username) /mnt "nfs version" "options" 0 0
    ```
     
-   Usando a instância da montagem do exemplo de compartilhamento remoto, a entrada seria:
+   Exemplo
     
    ```
    nfsdal0501a.service.softlayer.com:/IBM01SV278685_7 /mnt nfs4 defaults,hard,intr 0 0
    ```
     
-6. Verifique se não há erros com o arquivo de configuração.
+6. Verifique se o arquivo de configuração não tem erros.
 
    ```
    # mount -fav
@@ -80,15 +80,16 @@ As etapas a seguir são necessárias para conectar uma instância de cálculo do
     
    Se o comando for concluído sem erros, sua configuração estará completa.
 
-**Nota:** se você estiver usando o NFS 4,1, inclua `sec=sys` no comando de montagem para evitar problemas de propriedade do arquivo.
+   >**Nota** - Se estiver usando o NFS 4.1, inclua `sec=sys` no comando de montagem para evitar problemas de propriedade do arquivo.
 
  
-## Como implementar no_root_squash para NFS (opcional)
+## Implementando  ` no_root_squash `  para NFS (opcional)
 
-Configurar no_root_squash permite que os clientes raiz retenham as permissões raiz no compartilhamento do NFS. Para NFSv3, não há nada que os clientes precisam fazer; no_root_squash simplesmente funciona.
-Para NFSv4, você precisa configurar o domínio nfsv4 para: `slnfsv4.com` e iniciar o `rpcidmapd` ou serviço semelhante dependendo da versão do S.O.
+A configuração de `no_root_squash` permite que os clientes raiz retenham permissões raiz no compartilhamento do NFS. 
+- Para o NFSv3, os clientes não precisam fazer nada; `no_root_squash` funciona.
+- Para o NFSv4, é necessário configurar o domínio nfsv4 como: `slnfsv4.com` e iniciar `rpcidmapd` ou um serviço semelhante usado por seu S.O.
 
-Aqui está um exemplo:
+Exemplo
 
 1. No host, defina a configuração de domínio em `/etc/idmapd.conf`.
 
