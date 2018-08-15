@@ -2,16 +2,13 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-08-01"
+lastupdated: "2018-08-15"
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 
 # Replicando dados
-
-Os serviços de Captura instantânea e Replicação estão nativamente disponíveis somente em volumes do Endurance {{site.data.keyword.filestorage_short}}. O Performance {{site.data.keyword.filestorage_short}} não tem esses recursos.
 
 A replicação usa um de seus planejamentos de captura instantânea para copiar automaticamente capturas instantâneas para um volume de destino em um data center remoto. As cópias poderão ser recuperadas no site remoto se ocorrer um evento catastrófico ou se os dados forem corrompidos.
 
