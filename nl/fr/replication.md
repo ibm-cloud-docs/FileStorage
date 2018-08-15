@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-08-01"
+lastupdated: "2018-08-15"
 
 ---
 
@@ -10,8 +10,6 @@ lastupdated: "2018-08-01"
 {:new_window: target="_blank"}
 
 # Réplication de données
-
-Les services Instantané et Réplication sont disponibles en mode natif sur les volumes {{site.data.keyword.filestorage_short}} Endurance uniquement. {{site.data.keyword.filestorage_short}} Performance ne dispose pas de ces fonctionnalités.
 
 La réplication utilise l'un de vos plannings d'instantané pour copier automatiquement des instantanés sur un volume de destination dans un centre de données distant. Les copies peuvent être récupérées sur le site distant en cas de données endommagées ou de catastrophe.
 
