@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-08-01"
+lastupdated: "2018-08-15"
 
 ---
 
@@ -10,8 +10,6 @@ lastupdated: "2018-08-01"
 {:new_window: target="_blank"}
 
 # Replica dei dati
-
-I servizi di istantanea e replica sono disponibili in modo nativo solo sui volumi {{site.data.keyword.filestorage_short}} Endurance. {{site.data.keyword.filestorage_short}} Performance non ha tali funzionalità.
 
 La replica usa una delle tue pianificazioni delle istantanee per copiare automaticamente le istantanee su un volume di destinazione in un data center remoto. Le copie possono essere ripristinate nel sito remoto nel caso si verifichi un evento catastrofico o un danneggiamento dei dati.
 
