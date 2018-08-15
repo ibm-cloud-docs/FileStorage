@@ -11,8 +11,6 @@ lastupdated: "2018-08-01"
 
 # 抄寫資料
 
-只有「耐久性」{{site.data.keyword.filestorage_short}} 磁區上原本即提供 Snapshot 及「抄寫」服務。「效能」{{site.data.keyword.filestorage_short}} 沒有這些功能。
-
 抄寫使用您的其中一個 Snapshot 排程，自動將 Snapshot 複製到遠端資料中心內的目的地磁區。如果發生災難性事件，或者您的資料毀損，則可以在遠端網站中回復副本。
 
 您可以使用抄本來進行下列作業
