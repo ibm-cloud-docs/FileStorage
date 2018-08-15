@@ -2,16 +2,13 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-08-01"
+lastupdated: "2018-08-15"
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 
 # 데이터 복제
-
-스냅샷 및 복제 서비스는 기본적으로 Endurance {{site.data.keyword.filestorage_short}} 볼륨에서만 사용 가능합니다. Performance {{site.data.keyword.filestorage_short}}에는 이러한 기능이 없습니다. 
 
 복제는 스냅샷 스케줄 중 하나를 사용하여 스냅샷을 원격 데이터 센터의 대상 볼륨으로 자동으로 복사합니다. 중대한 문제가 발생하거나 데이터가 손상되는 경우에는 원격 사이트로부터 사본을 복구할 수 있습니다. 
 
