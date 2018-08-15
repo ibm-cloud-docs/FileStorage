@@ -2,16 +2,13 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-08-01"
+lastupdated: "2018-08-15"
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 
 # 复制数据
-
-快照和复制服务仅在耐久性 {{site.data.keyword.filestorage_short}} 卷上本机可用。性能 {{site.data.keyword.filestorage_short}} 没有这些功能。
 
 复制使用其中一个快照安排自动将快照复制到远程数据中心内的目标卷。如果发生灾难性事件，或者数据变得损坏，那么可以在远程站点中恢复副本。
 
