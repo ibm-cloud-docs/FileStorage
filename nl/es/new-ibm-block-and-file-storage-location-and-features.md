@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-05-29"
+lastupdated: "2018-06-20"
 
 ---
 {:new_window: target="_blank"}
@@ -15,8 +15,7 @@ lastupdated: "2018-05-29"
 
 El nuevo {{site.data.keyword.filestorage_short}} está disponible actualmente en los siguientes centros de datos y regiones, y pronto se incrementará la disponibilidad de centros de datos.
 
-<table style="width:100%;">
-  <caption>La Tabla 1 muestra nuestra disponibilidad de centro de datos. Cada región tiene su propia columna. Algunas ciudades, como Dallas, San José, Washington DC, Amsterdam, Frankfurt, Londres y Sidney, tienen varios centros de datos.</caption>
+<table role="presentation">
 	<tr>
 		<td><strong>EE.UU. 2</strong></td>
 		<td><strong>UE</strong></td>
@@ -67,6 +66,7 @@ El nuevo {{site.data.keyword.filestorage_short}} está disponible actualmente en
 	</tr>
 </table>
 
+*La Tabla 1 muestra nuestra disponibilidad de centro de datos. Cada región tiene su propia columna. Algunas ciudades, como Dallas, San José, Washington DC, Ámsterdam, Frankfurt, Londres y Sídney, tienen varios centros de datos.*
 
 El nuevo almacenamiento tiene las siguientes características y funciones:
 
@@ -80,7 +80,7 @@ El nuevo almacenamiento tiene las siguientes características y funciones:
 - Cree un clon de sus datos con la característica de [duplicación de volúmenes de {{site.data.keyword.filestorage_short}}](how-to-create-duplicate-volume.html).
 - El almacenamiento es se puede ampliar en incrementos de GB hasta un máximo de 12 TB de inmediato, sin necesidad de crear un duplicado o transferir datos manualmente a un volumen de mayor tamaño. [Aquí](expandable_file_storage.html) puede leer más información sobre esta característica.
 
-## Nuevo punto de montaje para volúmenes de {{site.data.keyword.filestorage_short}} mejorado
+## Nuevo punto de montaje para volúmenes de {{site.data.keyword.filestorage_short}}
 
 Todos los volúmenes de {{site.data.keyword.filestorage_short}} mejorado suministrados en estos centros de datos tienen un punto de montaje distinto que los volúmenes no cifrados. Para asegurarse de que está utilizando el punto de montaje correcto para ambos volúmenes de almacenamiento, puede ver la información de punto de montaje en la página **Detalles del volumen** en la interfaz de usuario. También puede acceder al punto de montaje correcto mediante una llamada de API: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-05-24"
+lastupdated: "2018-06-29"
 
 ---
 
@@ -23,16 +23,15 @@ La característica de cifrado en reposo gestionado por proveedor utiliza los sig
     - California Security Breach Information Act (SB 1386) y 
     - Conformidad con EU Data Protection Directive 95/46/EC.
 
-## Cifrado en reposo para instantáneas o almacenamiento replicado  
+## Protección de las instantáneas o almacenamiento replicado  
 
 Todas las instantáneas y réplicas de almacenamiento de archivos cifrados también se cifran de forma predeterminada. Esta característica no se puede desactivar por volumen.
 
 ## Suministro del almacenamiento con cifrado
 
-La característica de cifrado en reposo gestionado por el proveedor solo está disponible en determinados centros de datos. Todo el almacenamiento que se solicita en estos centros de datos se suministra automáticamente con el cifrado de datos en reposo. Pulse [aquí](new-ibm-block-and-file-storage-location-and-features.html) para ver la lista actual de los centros de datos donde está disponible el cifrado del {{site.data.keyword.filestorage_short}} de datos en reposo.
+La característica de cifrado en reposo gestionado por el proveedor está disponible en determinados centros de datos. Todo el almacenamiento que se solicita en estos centros de datos se suministra automáticamente con el cifrado de datos en reposo. Pulse [aquí](new-ibm-block-and-file-storage-location-and-features.html) para ver la lista actual de los centros de datos donde está disponible el cifrado de {{site.data.keyword.filestorage_short}}.
 
-
-Al realizar el pedido de {{site.data.keyword.filestorage_short}}, seleccione un centro de datos marcado con un asterisco (*) (`*`). Verá un icono de bloqueo a la derecha del campo Nombre de volumen/LUN, que indica que el volumen está cifrado. Consulte
+Al realizar el pedido de {{site.data.keyword.filestorage_short}}, seleccione un centro de datos marcado con un asterisco (*) (`*`). Puede ver un icono de bloqueo a la derecha del campo Nombre de volumen/LUN, que indica que el volumen está cifrado. Consulte
 la Figura 1.
 
 ![El icono de bloqueo indica que el LUN está cifrado](/images/encryptedstorage.png)
@@ -40,6 +39,4 @@ la Figura 1.
 
 
 
-**Nota**: El almacenamiento no cifrado que se haya suministrado antes de una actualización del centro de datos **no** se cifrará automáticamente. Si tiene almacenamiento no cifrado en un centro de datos actualizado, tendrá que crear un nuevo volumen y mover sus datos. El siguiente artículo puede proporcionarle orientación.
-
-* [Migración del almacenamiento de archivos en centros de datos actualizados](migrate-file-storage-encrypted-file-storage.html)
+>**Nota**: El almacenamiento no cifrado que se haya suministrado antes de una actualización del centro de datos **no** se cifrará automáticamente. Si dispone de almacenamiento no cifrado en un centro de datos actualizado y desea cifrarlo, debe crear un nuevo volumen y mover los datos. Para obtener más información, consulte [Migración del almacenamiento de archivos en centros de datos actualizados](migrate-file-storage-encrypted-file-storage.html)

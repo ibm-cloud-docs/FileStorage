@@ -2,11 +2,10 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-05-14"
+lastupdated: "2018-06-29"
 
 ---
 {:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
 {:codeblock: .codeblock}
 {:pre: .pre}
 
@@ -16,9 +15,9 @@ CoreOS es una potente distribución de Linux creada para facilitar la gestión d
 
 ## Montaje de almacenamiento portátil
 
-Todos los archivos de montaje secundario van al directorio `/etc/systemd/system` ya que los montajes de nivel de sistema están en un directorio que es solo de lectura en CoreOS. Creará un archivo `MOUNTPOINT.mount`. La sección **Where** del archivo .mount debe coincidir con el nombre de archivo. Si el punto de montaje no está directamente fuera de `/` debe nombrar el archivo utilizando la siguiente sintaxis: `path-to-mount.mount`. Como se puede ver en el siguiente ejemplo, queremos montar la unidad de almacenamiento portátil en `/mnt/www`, por lo que nombramos el archivo `mnt-www.mount`.
+Todos los archivos de montaje secundario van al directorio `/etc/systemd/system` ya que los montajes de nivel de sistema están en un directorio que es solo de lectura en CoreOS. Primero, cree un archivo `MOUNTPOINT.mount`. La sección **Where** del archivo `.mount` debe coincidir con el nombre de archivo. Si el punto de montaje no está directamente fuera de `/`, debe nombrar el archivo utilizando la sintaxis `path-to-mount.mount`. Por ejemplo, si desea montar la unidad de almacenamiento portátil en `/mnt/www`, nombre el archivo `mnt-www.mount`.
 
-Debe utilizar `fdisk` o `parted` para crear la partición y asegurarse de que el sistema de archivos que crea coincide con el listado en el archivo `.mount`, si no el servicio no podrá iniciarse.
+Puede utilizar `fdisk` o `parted` para crear la partición y asegurarse de que el sistema de archivos que crea coincide con el listado en el archivo `.mount`; si no, el servicio no se inicia.
 
 
 ```
@@ -36,7 +35,7 @@ WantedBy = multi-user.target
 {:codeblock}
 
 
-CoreOS utiliza `systemd`, de manera que para que el punto de montaje sobreviva a un reinicio debe habilitar el archivo `*.mount`. Si utiliza el distintivo `--now`, la partición se montará inmediatamente y se iniciará al arrancar.
+CoreOS utiliza `systemd`, de manera que, para que el punto de montaje sobreviva a un reinicio, debe habilitar el archivo `*.mount`. Si utiliza el distintivo `--now`, la partición se monta inmediatamente y se inicia al arrancar.
 
 ```
 $ systemctl enable --now mnt-www.mount
@@ -45,7 +44,9 @@ $ systemctl enable --now mnt-www.mount
 
 ## Montaje de NFS/{{site.data.keyword.filestorage_short}}
 
-El proceso de montar nuestro {{site.data.keyword.filestorage_short}} es muy similar, pero como el montaje es NFS, podemos especificar algunas opciones adicionales utilizando la línea Options= del archivo de montaje. En el ejemplo siguiente, establecemos el NFS para su montaje en `/data/www`. Tenga en cuenta que el punto de montaje de NFS de la instancia de {{site.data.keyword.filestorage_short}} se puede obtener desde la página de listado de {{site.data.keyword.filestorage_short}} o mediante una llamada a API -`SoftLayer_Network_Storage::getNetworkMountAddress()`.
+El proceso de montar el almacenamiento {{site.data.keyword.filestorage_short}} es el mismo. Como el montaje es NFS, puede especificar más opciones utilizando la línea `Options=` del archivo de montaje. 
+
+En el ejemplo, NFS está configurado para montarse en `/data/www`. El punto de montaje de NFS de la instancia de {{site.data.keyword.filestorage_short}} se puede obtener desde la página de listado de {{site.data.keyword.filestorage_short}} o mediante una llamada a API -`SoftLayer_Network_Storage::getNetworkMountAddress()`.
 
 ```
 $ cat data-www.mount
@@ -63,7 +64,7 @@ WantedBy = multi-user.target
 ```
 {:codeblock}
 
-Ahora podemos habilitar el montaje y comprobar que se haya montado correctamente.
+A continuación, habilite el montaje y compruebe que se haya montado correctamente.
 
 ```
 systemctl enable --now /etc/systemd/system/data-www.mount
@@ -73,17 +74,19 @@ cluster1 ~ # mount |grep data
 ```
 {:codeblock}
  
-## Montaje de NAS/Cifs
+## Montaje de NAS/CIFS
 
-Montar una compartición de cifs no está soportado de forma nativa en CoreOS, pero existe un método alternativo sencillo para permitir que el sistema de host monte comparticiones de NAS. Puede utilizar un contenedor para crear el módulo `mount.cfis` y, a continuación, lo copiará en el sistema CoreOS
+Montar una compartición de CIFS no está soportado de forma nativa en CoreOS, pero existe un método alternativo sencillo para permitir que el sistema de host monte comparticiones de NAS. Puede utilizar un contenedor para crear el módulo `mount.cfis` y, a continuación, cópielo en el sistema CoreOS
  
-En el sistema CoreOS, ejecute el siguiente mandato para descargarlo y soltarlo en un contenedor Fedora: 
+En el sistema CoreOS, ejecute el siguiente mandato para descargarlo y soltarlo en un contenedor Fedora.
+
 ```
 docker run -t -i -v /tmp:/host_tmp fedora /bin/bash
 ```
 {:pre}
  
-Cuando esté en el contenedor, ejecute el siguiente mandato para crear el programa de utilidad cifs
+Cuando esté en el contenedor, ejecute el siguiente mandato para crear el programa de utilidad CIFS.
+
 ```
 dnf groupinstall -y "Development Tools" "Development Libraries"
 dnf install -y tar
@@ -95,7 +98,7 @@ cp mount.cifs /host_tmp/
 ```
 {:codeblock}
  
-Ahora que el archivo mount.cifs se ha copiado en el host, puede salir del contenedor docker escribiendo el mandato `exit` o pulsando **ctrl+d**. Una vez de vuelta en el sistema CoreOS, puede montar la compartición de CIFS con el siguiente mandato: 
+Ahora que el archivo `mount.cifs` se ha copiado en el host, puede salir del contenedor docker escribiendo el mandato `exit` o pulsando **ctrl+d**. Una vez de vuelta en el sistema CoreOS, puede montar la compartición de CIFS con el siguiente mandato: 
 ```
 /tmp/mount.cifs //nasXXX.service.softlayer.com/USERNAME -o username=USERNAME,password=PASSWORD /path/to/mount
 ```

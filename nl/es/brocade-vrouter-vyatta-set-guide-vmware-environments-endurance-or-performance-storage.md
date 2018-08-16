@@ -8,24 +8,22 @@ lastupdated: "2018-05-11"
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 
-# Guía de configuración de Brocade vRouter (Vyatta) para entornos de VMware con {{site.data.keyword.filestorage_short}}
+# Configuración de Brocade vRouter (Vyatta) para entornos de VMware con {{site.data.keyword.filestorage_short}}
 
 Puede configurar un dispositivo Brocade vRouter (Vyatta) para la configuración de alta disponibilidad (HA) en un entorno de VMware que utiliza {{site.data.keyword.filestorage_full}}. Utilice la información siguiente junto con la [Arquitectura avanzada de referencia de VMware de un solo sitio](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} para establecer una de estas opciones de almacenamiento en el entorno de VMware.
 
-## Visión general de Brocade vRouter (Vyatta)
+La pasarela de Brocade vRouter (Vyatta) sirve como pasarela y direccionador para el entorno y contiene zonas que constan de subredes. Se establecen reglas de cortafuegos entre las zonas para que puedan comunicarse entre sí. Para las zonas que no necesitan comunicarse con otras zonas, no es necesaria ninguna regla de cortafuegos.
 
-La pasarela de Brocade vRouter (Vyatta) sirve como pasarela y direccionador para el entorno y contiene zonas que constan de subredes. Se establecen reglas de cortafuegos entre las zonas para que puedan comunicarse entre sí. Para las zonas que no necesitan comunicarse con otras zonas, no es necesaria ninguna regla de cortafuegos, ya que se descartan todos los paquetes.
-
-En la configuración de ejemplo, hay cinco zonas creadas en Brocade vRouter (Vyatta):
+En la configuración de ejemplo, se crean cinco zonas en Brocade vRouter (Vyatta):
 
 - SLSERVICE: servicios de {{site.data.keyword.BluSoftlayer_full}}
 - VMACCESS: {{site.data.keyword.BluVirtServers_short}} (VM) en el clúster de capacidad
 - MGMT: clústeres de capacidad y gestión, así como VM de gestión
-- STORAGE: servidor(es) de almacenamiento
+- STORAGE: servidor o servidores de almacenamiento
 - OUTSIDE: acceso público a Internet
 
 
-La figura 1 describe la comunicación entre cada zona. Tenga en cuenta que su entorno puede ser diferente y puede necesitar diferentes zonas y reglas de cortafuegos.
+La figura 1 describe la comunicación entre cada zona. Su entorno puede ser diferente y puede necesitar diferentes zonas y reglas de cortafuegos.
 
 ![Figura 1: Configuración de zonas de Brocade vRouter (Vyatta)](/images/figure1_6.png)
 
@@ -33,14 +31,12 @@ La figura 1 describe la comunicación entre cada zona. Tenga en cuenta que su en
 
 ## Configuración de Brocade vRouter (Vyatta)
 
-Para configurar Brocade vRouter (Vyatta):
-
 1. Establezca una conexión SSH con el dispositivo utilizando la contraseña raíz que se encuentra en la pantalla de detalles del dispositivo.
 2. Escriba `configure` para especificar la modalidad de configuración y siga los pasos en las secciones posteriores.
 
 ### Configuración de interfaces
 
-En esta sección, se configuran las interfaces de enlace en los Brocade vRouters (Vyatta) que se deben vincular a las subredes en el entorno. Recuerde sustituir las VLAN (1101, 1102 y 1103) con las VLAN correspondientes de su entorno. Además, tenga en cuenta que las instrucciones incluidas con <> se deben sustituir con los detalles de su entorno (sin <>).
+A continuación, las interfaces de enlace en ambos Brocade vRouters (Vyatta) se enlazan a las subredes en el entorno. Recuerde sustituir las VLAN de {{site.data.keyword.BluSoftlayer_full}} (1101, 1102 y 1103) con las VLAN correspondientes de su entorno. Además, las instrucciones que incluyen `<>` se deben sustituir con los detalles de su entorno (eliminando `<>` ).
 
 Utilice los mandatos siguientes para configurar las interfaces de enlace en los Brocade vRouters (Vyatta). Debe estar en la modalidad de configuración.
 
@@ -126,6 +122,8 @@ set nat source rule 20 outbound-interface bond1
 commit
 save
 ```
+
+
 ### Configuración de grupos de cortafuegos
 
 A continuación, se deben configurar los grupos de cortafuegos que están asociados con determinados rangos de IP.
@@ -169,9 +167,8 @@ save
 
 ### Configuración de reglas de nombre de cortafuegos
 
-Ahora, defina las reglas de cortafuegos para cada dirección del tráfico.
+Ahora, defina las reglas de cortafuegos para cada dirección del tráfico. Utilice los mandatos siguientes en modalidad de configuración:
 
-Utilice los mandatos siguientes en modalidad de configuración:
 ```
 set firewall name INSIDE2OUTSIDE
 set firewall name INSIDE2OUTSIDE default-action drop
@@ -271,6 +268,7 @@ set firewall name SLSERVICE2INSIDE rule 8 protocol 'all'
 commit
 save
 ```
+
 ### Configuración de los enlaces de zona
 
 En este paso, se enlazan zonas concretas con interfaces en el Brocade vRouter (Vyatta).
@@ -298,9 +296,8 @@ save
 
 ### Aplicación de reglas de cortafuegos a zonas
 
-Ahora se aplican las reglas de cortafuegos a la comunicación entre zonas.
+Aplique las reglas de cortafuegos a la comunicación entre zonas. Utilice los mandatos siguientes en modalidad de configuración:
 
-Utilice los mandatos siguientes en modalidad de configuración:
 ```
 set zone-policy zone OUTSIDE from MGMT firewall name INSIDE2OUTSIDE
 set zone-policy zone OUTSIDE from VMACCESS firewall name INSIDE2OUTSIDE
@@ -319,7 +316,7 @@ save
 
 ### Sincronización con el otro Brocade vRouter (Vyatta) del par de alta disponibilidad
 
-Puesto que se ha configurado uno de los Brocade vRouters (Vyatta) del par de alta disponibilidad, se deben sincronizar los cambios en el con el otro dispositivo de pasarela.
+Ahora uno de los Brocade vRouters (Vyatta) del par de alta disponibilidad está configurado, y debe sincronizar los cambios en el con el otro dispositivo de pasarela.
 
 Utilice los mandatos siguientes en modalidad de configuración:
 ```
@@ -351,19 +348,17 @@ set system config-sync sync-map SYNC rule 11 location 'nat'
 commit
 save
 ```
+
 ### Asociación y direccionamiento de VLAN
 
-Una vez que las zonas y las reglas de cortafuegos se hayan configurado en el Brocade vRouter (Vyatta), se le deben asociar las VLAN y habilitar el direccionamiento de las VLAN a través del Brocade vRouter (Vyatta).
+Una vez que las zonas y las reglas de cortafuegos se hayan configurado en el Brocade vRouter (Vyatta), debe asociarle las VLAN y habilitar el direccionamiento de las VLAN a través del Brocade vRouter (Vyatta).
 
 1. Inicie sesión en el [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} y pulse **Red > Dispositivo de pasarela** y pulse el Brocade vRouter (Vyatta).
-2. Seleccione una **VLAN** y pulse el botón **Asociar**.
-3. Repita el paso 2 para cada VLAN que haya creado para su entorno. Las VLAN deben tener el direccionamiento habilitado para asociarse con el Brocade vRouter (Vyatta).
+2. Seleccione una **VLAN** y pulse **Asociar**.
 4. Localice las VLAN bajo **VLAN asociadas** y marque el recuadro situado junto a cada una.
 5. Pulse el menú desplegable **Acciones masivas** y seleccione **Direccionar**.
-6. Pulse **Aceptar** en la pantalla emergente.
+6. Pulse **Aceptar**.
 
-Ahora las VLAN deberían están direccionadas a través del Brocade vRouter (Vyatta). Si observa que la comunicación está obstaculizada entre dos zonas, omita la(s) VLAN en cuestión y compruebe los valores del Brocade vRouter (Vyatta).
-
-Ahora debería tener un entorno funcional de VMware de un solo sitio que está protegido por un Brocade vRouter (Vyatta) en {{site.data.keyword.BluSoftlayer_full}}.
+Las VLAN están direccionadas a través del Brocade vRouter (Vyatta). Si observa que la comunicación está obstaculizada entre dos zonas, omita la(s) VLAN en cuestión y compruebe los valores del Brocade vRouter (Vyatta).
 
  
