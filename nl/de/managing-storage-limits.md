@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-05-14"
+lastupdated: "2018-06-29"
 
 ---
 {:new_window: target="_blank"}
@@ -10,18 +10,18 @@ lastupdated: "2018-05-14"
 
 # Speicherbegrenzungen verwalten
 
-Sie können global standardmäßig eine kombinierte Gesamtzahl von 250 {{site.data.keyword.filestorage_full}}-Datenträgern bereitstellen. 
+Sie können global standardmäßig eine kombinierte Gesamtzahl von 250 {{site.data.keyword.blockstorageshort}}-Datenträgern bereitstellen. 
 
-Sie können eine Erhöhung der Begrenzung anfordern, indem Sie ein Ticket beim [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} einreichen. Wenn die Anforderung genehmigt ist, hat sie zur Folge, dass eine Datenträgerbegrenzung für ein bestimmtes Rechenzentrum festgelegt wird.  
+Sie können eine Erhöhung der Begrenzung anfordern, indem Sie ein Ticket beim [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} einreichen. Wenn die Anforderung genehmigt ist, wird eine Datenträgerbegrenzung für ein bestimmtes Rechenzentrum festgelegt.  
 
-Zum Anfordern einer Aktualisierung und Erhöhung einer Begrenzung öffnen Sie ein Ticket und richten es an Ihren Vertriebsbeauftragten.
+Zum Anfordern einer Erhöhung einer Begrenzung öffnen Sie ein Ticket und richten es an Ihren Vertriebsbeauftragten.
 
 Geben Sie in diesem Ticket die folgenden Informationen an:
 
 - **Ticketbetreff:** Anforderung einer Erhöhung der Speicherbegrenzung für Datenträgeranzahl und Rechenzentren
 
 - **Was ist der Anwendungsfall für die Anforderung zusätzlicher Datenträger?** <br />
-*Ihre Antwort könnte zum Beispiel ein neuer VMWare-Datenspeicher, eine neue Entwicklungs-/Testumgebung, eine SQL-Datenbank oder Protokollierung sein.*
+*Ihre Antwort könnte zum Beispiel ein neuer VMware-Datenspeicher, eine neue Entwicklungs- und Testumgebung, eine SQL-Datenbank oder Protokollierung sein.*
 
 - **Wie viele zusätzliche Blockdatenträger werden nach Typ, Größe, IOPS und Position benötigt?** <br />
 *Ihre Antwort könnte zum Beispiel ähnlich wie folgt lauten: "25x Endurance 2 TB @ 4 IOPS in DAL09" oder "25x Performance 4 TB @ 2 IOPS in WDC04".*

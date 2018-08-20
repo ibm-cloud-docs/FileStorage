@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-05-24"
+lastupdated: "2018-06-29"
 
 ---
 
@@ -23,14 +23,13 @@ Die vom Provider verwaltete Verschlüsselungsfunktion für ruhende Daten (Encryp
     - California Security Breach Information Act (SB 1386) und 
     - EU-Datenschutzdirektive 95/46/EC (EU Data Protection Directive 95/46/EC).
 
-## Verschlüsselung ruhender Daten für Snapshots oder replizierten Speicher  
+## Snapshots oder replizierten Speicher schützen  
 
 Alle Snapshots und Replikate verschlüsselter Dateispeicher werden standardmäßig ebenfalls verschlüsselt. Diese Funktion kann auf Datenträgerebene nicht inaktiviert werden.
 
 ## Speicher mit Verschlüsselung bereitstellen
 
-Die vom Provider verwaltete Funktion für die Verschlüsselung ruhender Daten ist nur in ausgewählten Rechenzentren verfügbar. Aller Speicher, der in diesen Rechenzentren bestellt wird, wird automatisch mit Verschlüsselung für ruhende Daten bereitgestellt. Klicken Sie [hier](new-ibm-block-and-file-storage-location-and-features.html), um die aktuelle Liste der Rechenzentren anzuzeigen, in denen die {{site.data.keyword.filestorage_short}}-Verschlüsselung ruhender Daten verfügbar ist.
-
+Die vom Provider verwaltete Funktion für die Verschlüsselung ruhender Daten ist in ausgewählten Rechenzentren verfügbar. Aller Speicher, der in diesen Rechenzentren bestellt wird, wird automatisch mit Verschlüsselung für ruhende Daten bereitgestellt. Klicken Sie [hier](new-ibm-block-and-file-storage-location-and-features.html), um die aktuelle Liste der Rechenzentren anzuzeigen, in denen die {{site.data.keyword.filestorage_short}}-Verschlüsselung verfügbar ist.
 
 Wählen Sie beim Bestellen Ihres {{site.data.keyword.filestorage_short}}-Speichers ein Rechenzentrum, das mit einem Stern (`*`) markiert ist. Das rechts neben dem Feld 'LUN/Datenträgername' angezeigte Sperrsymbol gibt an, dass der Datenträger verschlüsselt wird. Siehe Abbildung 1.
 
@@ -39,7 +38,4 @@ Wählen Sie beim Bestellen Ihres {{site.data.keyword.filestorage_short}}-Speiche
 
 
 
-**Anmerkung**: Sämtlicher nicht verschlüsselter Speicher, der vor der Aktualisierung eines Rechenzentrums bereitgestellt
-wurde, wird **nicht** automatisch verschlüsselt. Wenn Sie nicht verschlüsselten Speicher in einem aktualisierten Rechenzentrum haben, müssen Sie einen neuen Datenträger erstellen und eine Datenmigration durchführen. Im folgenden Artikel finden Sie eine Anleitung dazu.
-
-* [File Storage-Speicher in aktualisierten Rechenzentren migrieren](migrate-file-storage-encrypted-file-storage.html)
+>**Anmerkung** - Sämtlicher nicht verschlüsselter Speicher, der vor der Aktualisierung eines Rechenzentrums bereitgestellt wurde, wird **nicht** automatisch verschlüsselt. Wenn Sie nicht verschlüsselten Speicher in einem aktualisierten Rechenzentrum besitzen und ihn verschlüsseln wollen, müssen Sie einen neuen Datenträger erstellen und eine Datenmigration durchführen. Weitere Informationen finden Sie im Abschnitt [File Storage in aktualisierten Rechenzentren migrieren](migrate-file-storage-encrypted-file-storage.html).
