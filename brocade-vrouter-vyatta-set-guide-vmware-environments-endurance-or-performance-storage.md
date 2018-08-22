@@ -2,11 +2,10 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-05-11"
+lastupdated: "2018-08-22"
 
 ---
 {:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
 
 # Setting up Brocade vRouter (Vyatta) for VMware Environments with {{site.data.keyword.filestorage_short}}
 
@@ -25,7 +24,7 @@ In our example configuration, five zones are created in the Brocade vRouter (Vya
 
 Figure 1 describes the communication between each zone. Your environment might be different and might require different zones and firewall rules.
 
-![Figure 1: Brocade vRouter (Vyatta) Zone Configuration](/images/figure1_6.png)
+![Figure 1 - Brocade vRouter (Vyatta) Zone Configuration](/images/figure1_6.png)
 
 
 
@@ -360,5 +359,3 @@ When the zones and firewall rules are set up on the Brocade vRouter (Vyatta), yo
 6. Click **OK**.
 
 Your VLANs are routed through the Brocade vRouter (Vyatta). If you notice that communication is hindered between two zones, bypass the particular VLAN or VLANs in question and check your Brocade vRouter (Vyatta) settings.
-
- 
