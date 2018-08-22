@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-08-08"
+lastupdated: "2018-08-21"
 
 ---
 {:new_window: target="_blank"}
@@ -31,6 +31,9 @@ By default, you can provision a combined total of 250 block and file storage vol
 
 ## How many instances can share the use of a provisioned {{site.data.keyword.filestorage_short}} volume?
 The default limit for number of authorizations per file volume is 64. To increase this limit, contact your sales representative.
+
+## How many {{site.data.keyword.filestorage_short}} volumes can be attached to a single host?
+That depends on what the host operating system can handle, it’s not something that {{site.data.keyword.BluSoftlayer_full}} limits. Refer to your OS documentation for limits on the number of file shares that can be mounted.
 
 ## How many file shares are allowed per file volume size? What are the maximum file shares allowed per volume size?
 
