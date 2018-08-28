@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-08-24"
+lastupdated: "2018-08-28"
 
 ---
 {:new_window: target="_blank"}
@@ -104,7 +104,7 @@ It's best to run storage traffic on a VLAN, which bypasses the firewall. Running
 Target latency within the storage is <1ms. The storage is connected to compute instances on a shared network, so the exact performance latency depends on the network traffic during the operation.
 
 ## What happens to the data when {{site.data.keyword.filestorage_short}} Volumes are deleted?
-When storage is deleted, the data on that volume is wiped. Wiping occurs immediately after storage deletion. If the physical storage is re-provisioned to another account, there’s no way for the new account to access any data that might have been on the physical storage before the provisioning.
+{{site.data.keyword.filestorage_full}} presents file shares to customers on physical storage that is wiped before any re-use. Customers with special requirements for compliance such as NIST 800-88 Guidelines for Media Sanitization need to perform the data sanitization procedure before they delete their storage.
 
 ## What happens to the drives that are decommissioned from the cloud data center?
 When drives are decommissioned, IBM destroys them before they are disposed of. The drives become unusable. Any data that was written to that drive becomes inaccessible.
