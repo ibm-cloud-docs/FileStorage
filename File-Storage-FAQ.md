@@ -47,7 +47,7 @@ That depends on what the host operating system can handle, it’s not something 
   </thead>
   <tbody>
     <tr>
-      <td>20 GB -39 GB</td>
+      <td>20 GB - 39 GB</td>
       <td>622,484</td>
     </tr>
     <tr>
