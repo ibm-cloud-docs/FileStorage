@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-08-28"
+lastupdated: "2018-08-29"
 
 ---
 {:new_window: target="_blank"}
@@ -38,7 +38,7 @@ That depends on what the host operating system can handle, it’s not something 
 ## How many file shares are allowed per file volume size? What are the maximum file shares allowed per volume size?
 
 <table>
-  <caption>Table 1 shows that the maximum number of inodes allowed based on the volume size. Volume sizes are in the left. The number of inodes/file shares are on the right.</caption>
+  <caption>Table 1 shows the maximum number of inodes that are allowed based on the volume size. Volume sizes are in the left column. The number of inodes/file shares are on the right.</caption>
   <thead>
     <tr>
       <th>Volume Size</th>
@@ -47,32 +47,44 @@ That depends on what the host operating system can handle, it’s not something 
   </thead>
   <tbody>
     <tr>
-      <td>20 GB </td>
+      <td>20 GB -39 GB</td>
       <td>622,484</td>
     </tr>
     <tr>
-      <td>40 GB </td>
+      <td>40 GB - 79 GB</td>
       <td>1,245,084</td>
     </tr>          
     <tr>
-      <td>80 GB</td>
+      <td>80 GB - 99 GB</td>
       <td>2,490,263</td>
     </tr>          
     <tr>
-      <td>100 GB</td>
+      <td>100 GB - 249 GB</td>
       <td>3,112,863</td>
     </tr>          
     <tr>
-      <td>250 GB</td>
+      <td>250 GB - 499 GB</td>
       <td>7,782,300</td>
     </tr>          
     <tr>
-      <td>500 GB</td>
+      <td>500 GB - 999 GB</td>
       <td>15,564,695</td>
     </tr>
     <tr>
-      <td>1 TB+</td>
+      <td>1 TB</td>
       <td>31,876,593</td>
+    </tr>
+    <tr>
+      <td>2 TB</td>
+      <td>63,753,186</td>
+    </tr>
+    <tr>
+      <td>3 TB</td>
+      <td>95,629,970</td>
+    </tr>
+    <tr>
+      <td>4 TB - 12 TB</td>
+      <td>127,506,359</td>
     </tr>
    </tbody>
 </table>
