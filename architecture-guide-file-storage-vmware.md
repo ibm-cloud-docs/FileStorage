@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-08-09"
+lastupdated: "2018-09-05"
 
 ---
 {:pre: .pre}
@@ -10,7 +10,7 @@ lastupdated: "2018-08-09"
 
 # Provisioning {{site.data.keyword.filestorage_short}} with VMware
 
-The following steps can help you order and configure {{site.data.keyword.filestorage_full}} in a vSphere 5.5 and vSphere 6.0 environment at {{site.data.keyword.BluSoftlayer_full}}. If you require more than eight connections to your VMWare host, then choosing NFS {{site.data.keyword.filestorage_short}} is the best practice.
+The following steps can help you order and configure {{site.data.keyword.filestorage_full}} in a vSphere 5.5 and vSphere 6.0 environment at {{site.data.keyword.BluSoftlayer_full}}. If you require more than eight connections to your VMware host, then choosing NFS {{site.data.keyword.filestorage_short}} is the best practice.
 
 The {{site.data.keyword.filestorage_short}} is designed to support high I/O applications that require predictable levels of performance. The predictable performance is achieved through the allocation of protocol-level input/output operations per second (IOPS) to individual volumes.
 
@@ -27,8 +27,7 @@ When you order {{site.data.keyword.filestorage_short}}, consider the following i
 - NFS uses many extra file control operations such as `lookup`, `getattr`, and `readdir`. These operations in addition to read/write operations can count as IOPS and vary by operation type and NFS version.
 - Technically, multiple volumes can be striped together to achieve higher IOPS and more throughput. However, VMware recommends a single virtual machine file system (VMFS) data store per volume to avoid performance degradation.
 - {{site.data.keyword.filestorage_short}} volumes are exposed to authorized devices, subnets, or IP addresses.
-- Snapshot and Replication services are natively available on Endurance {{site.data.keyword.filestorage_short}} volumes only. Performance {{site.data.keyword.filestorage_short}} doesn't have these capabilities.
-- To avoid storage disconnection during path failover {{site.data.keyword.IBM}} recommends installing VMWare tools, which set an appropriate timeout value. There’s no need to change the value, the default setting is sufficient to ensure that your VMWare host doesn't lose connectivity.
+- To avoid storage disconnection during path failover {{site.data.keyword.IBM}} recommends installing VMware tools, which set an appropriate timeout value. There’s no need to change the value, the default setting is sufficient to ensure that your VMware host doesn't lose connectivity.
 - Both NFS v3 and NFS v4.1 are supported in the {{site.data.keyword.BluSoftlayer_full}} environment. However, {{site.data.keyword.IBM}} suggests that you use NFS v3. Because NFS v4.1 is a stateful protocol (not stateless like NFSv3), protocol issues can occur during network events. NFS v4.1 must quiesce all operations and then complete lock reclamation. While these operations are taking place, disruptions can occur.
 
 **NFS Protocol VMware feature support matrix**
@@ -89,24 +88,24 @@ When you order {{site.data.keyword.filestorage_short}}, consider the following i
   </tr>
  </tbody>
 </table>
-*Source: [VMWare - NFS Protocols and ESXi](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){:new_window}*
+*Source - [VMware - NFS Protocols and ESXi](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){:new_window}*
 
 
 
-### Using Endurance {{site.data.keyword.filestorage_short}} snapshots
+### Using Snapshots
 
-Endurance {{site.data.keyword.filestorage_short}} allows administrators to set snapshot schedules that create and delete snapshot copies automatically for each storage volume. They can also create extra snapshot schedules (hourly, daily, weekly) for automatic snapshots and manually create ad hoc snapshots for business continuity and disaster recovery (BCDR) scenarios. Automatic alerts are delivered through the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} to the volume owner for the retained snapshots and space used.
+{{site.data.keyword.filestorage_short}} allows administrators to set snapshot schedules that create and delete snapshot copies automatically for each storage volume. They can also create extra snapshot schedules (hourly, daily, weekly) for automatic snapshots and manually create ad hoc snapshots for business continuity and disaster recovery (BCDR) scenarios. Automatic alerts are delivered through the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} to the volume owner for the retained snapshots and space used.
 
 Snapshot space is required to use snapshots. Space can be purchased on the initial volume order or after the initial provisioning through the **Volume Details** page by clicking **Actions** and selecting **Add Snapshot Space**.
 
-It's important to note that VMware environments are not aware of snapshots. The Endurance {{site.data.keyword.filestorage_short}} snapshot capability must not be confused with VMware snapshots. Any recovery that uses the Endurance {{site.data.keyword.filestorage_short}} snapshot feature must be handled from the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}. 
+It's important to note that VMware environments are not aware of snapshots. The Endurance {{site.data.keyword.filestorage_short}} snapshot capability must not be confused with VMware snapshots. Any recovery that uses the {{site.data.keyword.filestorage_short}} snapshot feature must be handled from the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}. 
 
-Restoring the Endurance {{site.data.keyword.filestorage_short}} volume requires powering off all the VMs on the Endurance {{site.data.keyword.filestorage_short}}. The volume needs to be temporarily unmounted from the ESXi hosts to avoid any data corruption during the process.
+Restoring the {{site.data.keyword.filestorage_short}} volume requires powering off all the VMs on the {{site.data.keyword.filestorage_short}}. The volume needs to be temporarily unmounted from the ESXi hosts to avoid any data corruption during the process.
 
 For more details about configuring Snapshots, see the [snapshots](snapshots.html) article.
 
 
-### Using Endurance Replication
+### Using Replication
 
 Replication uses one of your snapshot schedules to automatically copy snapshots to a destination volume in a remote data center. The copies can be recovered in the remote site if a catastrophic event or data corruption occurs.
 
@@ -128,7 +127,7 @@ For more information about configuring replicas, see [Replication](replication.h
 
 ## Ordering {{site.data.keyword.filestorage_short}}
 
-You can order and configure {{site.data.keyword.filestorage_short}} for a VMware ESXi 5 environment. Use the following information along with the Advanced Single-Site VMware Reference Architecture to set up one of these storage options in your VMware environment.
+You can order and configure {{site.data.keyword.filestorage_short}} for a VMware ESXi 5 environment. Use the following information along with the [Advanced Single-Site VMware Reference Architecture](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} to set up one of these storage options in your VMware environment.
 
 {{site.data.keyword.filestorage_short}} can be ordered through the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} by accessing the {{site.data.keyword.filestorage_short}} page through **Storage** > **{{site.data.keyword.filestorage_short}}**.
 
