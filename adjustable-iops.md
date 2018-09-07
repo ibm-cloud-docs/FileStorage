@@ -43,4 +43,4 @@ If the volume has replication in place, the replica is automatically updated to 
     - Performance (Allocated IOPS): specify new IOPS option for your storage by entering a value in the range 100 - 48,000 IOPS. (Be sure to look at any specific boundaries that are required by size in the order form.)
 4. Review your selection and the new pricing.
 5. Click the **I have read the Master Service Agreement...** check box and click **Place Order**.
-6. Your new storage allocation will be available in a few minutes.
+6. Your new storage allocation is going to be available in a few minutes.
