@@ -2,14 +2,14 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-05-24"
+lastupdated: "2018-09-09"
 
 ---
 {:new_window: target="_blank"}
 
 # Adjusting IOPS
 
-With this new feature, {{site.data.keyword.blockstoragefull}} storage users can adjust the IOPS of their existing {{site.data.keyword.blockstorageshort}} immediately. They don't need to create a duplicate or manually copy data to new storage. Users don't experience any kind of outage or lack of access to the storage while the adjustment is taking place. 
+With this new feature, {{site.data.keyword.filestorage_full}} storage users can adjust the IOPS of their existing {{site.data.keyword.filestorage_short}} immediately. They don't need to create a duplicate or manually copy data to new storage. Users don't experience any kind of outage or lack of access to the storage while the adjustment is taking place. 
 
 Billing for the storage is updated to add the pro-rated difference of the new price to the current billing cycle. The full new amount is billed in the next billing cycle.
 
@@ -34,7 +34,7 @@ If the volume has replication in place, the replica is automatically updated to 
 
 ## Adjusting the IOPS on your Storage
 
-1. Go to your list of {{site.data.keyword.blockstorageshort}}
+1. Go to your list of {{site.data.keyword.filestorage_short}}
     - From the customer portal, click **Storage** > **{{site.data.keyword.filestorage_short}}** OR
     - From the {{site.data.keyword.BluSoftlayer_full}} catalog click **Infrastructure** > **Storage** > **{{site.data.keyword.filestorage_short}}**. 
 2. Select the volume from the list and click **Actions** > **Modify Volume**
