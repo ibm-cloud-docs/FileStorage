@@ -2,14 +2,14 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-09-09"
+lastupdated: "2018-09-07"
 
 ---
 {:new_window: target="_blank"}
 
 # Adjusting IOPS
 
-With this new feature, {{site.data.keyword.filestorage_full}} storage users can adjust the IOPS of their existing {{site.data.keyword.filestorage_short}} immediately. They don't need to create a duplicate or manually copy data to new storage. Users don't experience any kind of outage or lack of access to the storage while the adjustment is taking place. 
+With this new feature, {{site.data.keyword.filestorage_full}} storage users can adjust the IOPS of their existing {{site.data.keyword.filestorage_short}} immediately. They don't need to create a duplicate or manually copy data to new storage. Users don't experience any kind of outage or lack of access to the storage while the adjustment is taking place.
 
 Billing for the storage is updated to add the pro-rated difference of the new price to the current billing cycle. The full new amount is billed in the next billing cycle.
 
@@ -20,23 +20,23 @@ Billing for the storage is updated to add the pro-rated difference of the new pr
 
 ## Limitations
 
-This feature is only available in [select data centers](new-ibm-block-and-file-storage-location-and-features.html). 
+This feature is only available in [select data centers](new-ibm-block-and-file-storage-location-and-features.html).
 
 Clients can’t switch between Endurance and Performance when they adjust their IOPS. Users can specify a new IOPS tier or IOPS level for their storage based on the following criteria/restrictions.
 
 - If original volume is Endurance 0.25 tier, IOPS tier can’t be updated.
-- If original volume is Performance with less than 0.30 IOPS/GB, options available include only the size and IOPS combinations that result in less than 0.30 IOPS/GB. 
-- If original volume is Performance with more than or equal to 0.30 IOPS/GB, options available include only the size and IOPS combinations that result in more than or equal to 0.30 IOPS/GB. 
+- If original volume is Performance with less than 0.30 IOPS/GB, options available include only the size and IOPS combinations that result in less than 0.30 IOPS/GB.
+- If original volume is Performance with more than or equal to 0.30 IOPS/GB, options available include only the size and IOPS combinations that result in more than or equal to 0.30 IOPS/GB.
 
 ## Effect of IOPS adjustment on replication
 
-If the volume has replication in place, the replica is automatically updated to match the IOPS selection of the primary. 
+If the volume has replication in place, the replica is automatically updated to match the IOPS selection of the primary.
 
 ## Adjusting the IOPS on your Storage
 
 1. Go to your list of {{site.data.keyword.filestorage_short}}
     - From the customer portal, click **Storage** > **{{site.data.keyword.filestorage_short}}** OR
-    - From the {{site.data.keyword.BluSoftlayer_full}} catalog click **Infrastructure** > **Storage** > **{{site.data.keyword.filestorage_short}}**. 
+    - From the {{site.data.keyword.BluSoftlayer_full}} catalog click **Infrastructure** > **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Select the volume from the list and click **Actions** > **Modify Volume**
 3. Under **Storage IOPS Options**, make a new selection:
     - Endurance (Tiered IOPS): select an IOPS Tier greater than 0.25 IOPS/GB of your storage. You can increase the IOPS tier at any time. However, decreasing is available only once a month.
