@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-08-31"
+lastupdated: "2018-09-07"
 
 ---
 {:new_window: target="_blank"}
@@ -49,7 +49,7 @@ You can create a duplicate volume through the [{{site.data.keyword.slportal}}](h
     - If your original volume is 0.25 IOPS Endurance tier, you can't make a new selection.
     - If your original volume is 2, 4, or 10 IOPS Endurance tier, you can move anywhere between those tiers for the new volume.
 6. You can update the size of the new volume so that it's larger than the original. The size of the original volume is set by default.
-    - **Note**: {{site.data.keyword.blockstorageshort}} can be resized to 10 times the original size of the volume.
+    - **Note**: {{site.data.keyword.filestorage_short}} can be resized to 10 times the original size of the volume.
 7. You can update the snapshot space for the new volume to add more, less, or no snapshot space. The snapshot space of the original volume is set by default.
 8. Click **Continue** to place your order.
 
@@ -64,7 +64,7 @@ You can create a duplicate volume through the [{{site.data.keyword.slportal}}](h
     - If your original volume is 0.25 IOPS Endurance tier, you can't make a new selection.
     - If your original volume is 2, 4, or 10 IOPS Endurance tier, you can move anywhere between those tiers for the new volume.
 6. You can update the size of the new volume so that it is larger than the original. The size of the original volume is set by default.
-    - **Note**: {{site.data.keyword.blockstorageshort}} can be resized to 10 times the original size of the volume.
+    - **Note**: {{site.data.keyword.filestorage_short}} can be resized to 10 times the original size of the volume.
 7. You can update the snapshot space for the new volume to add more, less, or no snapshot space. The snapshot space of the original volume is set by default.
 8. Click **Continue** to place your order for the duplicate.
 
