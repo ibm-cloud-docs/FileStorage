@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-09-05"
+lastupdated: "2018-09-11"
 
 ---
 {:pre: .pre}
@@ -25,10 +25,12 @@ When you order {{site.data.keyword.filestorage_short}}, consider the following i
 - When you decide on the size, consider the size of the workload and throughput needed. Size matters with the Endurance service, which scales performance linearly in relation to capacity (IOPS/GB). Conversely, the Performance service allows the administrator to choose capacity and performance independently. Throughput requirements matter with Performance.
   >**Note** - The throughput calculation is IOPS x 16 KB. IOPS is measured based on a 16 KB block size with a 50/50 read/write mix.<br/>Increasing block size increases the throughput but decreases IOPS. For example, doubling the block size to 32 KB blocks maintains the maximum throughput but halves the IOPS.
 - NFS uses many extra file control operations such as `lookup`, `getattr`, and `readdir`. These operations in addition to read/write operations can count as IOPS and vary by operation type and NFS version.
-- Technically, multiple volumes can be striped together to achieve higher IOPS and more throughput. However, VMware recommends a single virtual machine file system (VMFS) data store per volume to avoid performance degradation.
 - {{site.data.keyword.filestorage_short}} volumes are exposed to authorized devices, subnets, or IP addresses.
 - To avoid storage disconnection during path failover {{site.data.keyword.IBM}} recommends installing VMware tools, which set an appropriate timeout value. There’s no need to change the value, the default setting is sufficient to ensure that your VMware host doesn't lose connectivity.
 - Both NFS v3 and NFS v4.1 are supported in the {{site.data.keyword.BluSoftlayer_full}} environment. However, {{site.data.keyword.IBM}} suggests that you use NFS v3. Because NFS v4.1 is a stateful protocol (not stateless like NFSv3), protocol issues can occur during network events. NFS v4.1 must quiesce all operations and then complete lock reclamation. While these operations are taking place, disruptions can occur.
+
+For more information, see VMware's Whitepaper on [Best Practices for running
+VMware vSphere on Network Attached Storage](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){:new_window}
 
 **NFS Protocol VMware feature support matrix**
 <table>
