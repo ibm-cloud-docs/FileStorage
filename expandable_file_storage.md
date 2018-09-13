@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-09-12"
 
 ---
 {:new_window: target="_blank"}
@@ -30,10 +30,6 @@ Expand action on the primary storage results in automatic resizing of the replic
 This feature is only available for storage that is provisioned in [data centers](new-ibm-block-and-file-storage-location-and-features.html) with enhanced capabilities. Encrypted storage that is provisioned in these data centers can be increased up to 12 TB. 
 
 Existing size limitations for {{site.data.keyword.filestorage_short}} that was provisioned with Endurance still apply (up to 4 TB for 10 IOPS tier and up to 12 TB for all other tiers).
-
-## Identifying eligible storage
-
-Storage that is provisioned with enhanced capabilities is always encrypted-at-rest. You can easily tell that your storage is eligible if it has a "lock" icon next to it in the portal UI. 
 
 ## Resizing storage
 
