@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-09-07"
+lastupdated: "2018-09-17"
 
 ---
 
@@ -86,11 +86,11 @@ See Table 1 for the complete list of data center availability and replication ta
 			</td>
 			<td>HKG02<br />
 				TOK02<br />
+				TOK04<br />
+	                        TOK05<br />
 				SNG01<br />
 				SEO01<br />
                                 CHE01<br />
-				<br />
-				<br />
 				<br />
 				<br />
 				<br />
