@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-09-17"
 
 ---
 {:new_window: target="_blank"}
@@ -111,4 +111,5 @@ You might need to take your storage volume back to a specific point-in-time beca
 5. Click **Yes** to start the restore. Expect a message across the top of the page that states that the volume is being restored by using the selected snapshot. Additionally, an icon appears next to your volume on the {{site.data.keyword.filestorage_short}} that indicates that an active transaction is in progress. Hovering over the icon produces a window that shows the transaction. The icon disappears when the transaction is complete.
 6. Mount and reattach your storage volume to the host.
   - Click [here](accessing-file-storage-linux.html) for {{site.data.keyword.filestorage_short}} on Linux instructions.
-    >**Note** - Restoring a volume results in deleting all snapshots that were taken before the restored snapshot.
+    
+>**Note** - Restoring a volume results in deleting all snapshots that were taken after the snapshot that was used for the restore.
