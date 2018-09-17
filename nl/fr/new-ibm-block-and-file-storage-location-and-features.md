@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-20"
+lastupdated: "2018-09-17"
 
 ---
 {:new_window: target="_blank"}
@@ -58,10 +58,12 @@ La nouvelle fonction {{site.data.keyword.filestorage_short}} est disponible dans
 			SAO01<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></p>
 		</td>
 		<td><p>TOK02<br />
+      TOK04<br />
+      TOK05<br/>
 			HKG02<br />
 			SEO01<br />
 			SNG01<br />
-			CHE01<br /><br /><br /><br /><br /><br /><br /></p>
+			CHE01<br /><br /><br /><br /><br /></p>
 		</td>
 	</tr>
 </table>

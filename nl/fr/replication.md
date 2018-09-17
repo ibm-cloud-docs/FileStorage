@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-08-15"
+lastupdated: "2018-09-17"
 
 ---
 
@@ -87,11 +87,11 @@ Pour obtenir la liste complète de la disponibilité des centres de données et 
 			</td>
 			<td>HKG02<br />
 				TOK02<br />
+        TOK04<br />
+        TOK05<br/>
 				SNG01<br />
 				SEO01<br />
-                                CHE01<br />
-				<br />
-				<br />
+        CHE01<br />
 				<br />
 				<br />
 				<br />
@@ -141,11 +141,11 @@ La modification du planning peut s'effectuer sur l'onglet Principal ou Réplique
 
 ## Modification de l'espace de réplication
 
-Votre espace d'image instantanée principal et votre espace de réplique doivent être identiques. Si vous modifiez l'espace sur l'onglet **Principal** ou **Réplique**, l'espace est automatiquement ajouté à vos centres de données source et de destination. L'augmentation de l'espace d'image instantanée déclenche également une mise à jour immédiate de la réplication. 
+Votre espace d'image instantanée principal et votre espace de réplique doivent être identiques. Si vous modifiez l'espace sur l'onglet **Principal** ou **Réplique**, l'espace est automatiquement ajouté à vos centres de données source et de destination. L'augmentation de l'espace d'image instantanée déclenche également une mise à jour immédiate de la réplication.
 
 1. Cliquez sur **Actions** sur l'onglet **Principal** ou **Réplique**.
 2. Sélectionnez **Ajouter de l'espace d'image instantanée supplémentaire**.
-3. Sélectionnez la taille de stockage dans la liste, puis cliquez sur **Continuer**. 
+3. Sélectionnez la taille de stockage dans la liste, puis cliquez sur **Continuer**.
 4. Entrez un **Code Promo** le cas échéant et cliquez sur **Recalculer**. Les autres zones de la boîte de dialogue contiennent les valeurs par défaut.
 5. Cochez la case **J'ai lu et j'accepte l'intégralité du Contrat cadre de service**, puis cliquez sur **Valider la commande**.
 
@@ -163,7 +163,7 @@ Vous pouvez afficher les détails du volume de réplique sur l'onglet **Répliqu
 
 ## Spécification des autorisations de l'hôte avant le basculement du serveur vers le centre de données secondaire
 
-Les hôtes et les volumes autorisés doivent figurer dans le même centre de données. Vous ne pouvez pas avoir un volume de réplique à Londres et un hôte à Amsterdam. ils doivent se trouver tous les deux à Londres ou à Amsterdam. 
+Les hôtes et les volumes autorisés doivent figurer dans le même centre de données. Vous ne pouvez pas avoir un volume de réplique à Londres et un hôte à Amsterdam. ils doivent se trouver tous les deux à Londres ou à Amsterdam.
 
 1. Cliquez sur votre volume source ou cible à partir de la page **{{site.data.keyword.filestorage_short}}**.
 2. Cliquez sur **Réplique**.
@@ -172,7 +172,7 @@ Les hôtes et les volumes autorisés doivent figurer dans le même centre de don
 5. Cliquez sur **Soumettre**. En l'absence d'hôte, vous êtes invité à acheter des ressources de traitement dans le même centre de données.
 
 
-## Augmentation de l'espace d'image instantanée dans le centre de données de réplique lorsque l'espace d'image instantanée est augmenté dans le centre de données principal. 
+## Augmentation de l'espace d'image instantanée dans le centre de données de réplique lorsque l'espace d'image instantanée est augmenté dans le centre de données principal.
 
 Les tailles des volumes de stockage principal et de réplique doivent être identiques. Il n'est pas possible que l'un soit plus grand que l'autre. Lorsque vous augmentez votre espace d'image instantanée dans le volume principal, l'espace de réplique est automatiquement augmenté. L'augmentation de l'espace d'image instantanée déclenche une mise à jour immédiate de la réplication. L'augmentation des deux volumes apparaît sous forme de lignes d'article dans votre facture et est calculée au prorata si nécessaire.
 
@@ -214,7 +214,7 @@ Les reprises par restauration sont lancées sous **Stockage**, **{{site.data.key
 2. Dans l'angle supérieur droit, cliquez sur **Réplique**, puis sur **Actions**.
 3. Sélectionnez **Reprise par restauration**.
    >Un message doit s'afficher pour vous indiquer que la reprise par restauration est en cours. En outre, une icône apparaît en regard de votre volume sur **{{site.data.keyword.filestorage_short}}** pour indiquer qu'une transaction active est en cours. Survolez cette icône pour ouvrir une boîte de dialogue affichant la transaction. L'icône disparaît une fois la transaction terminée. Durant le processus de reprise par restauration, les actions liées à la configuration sont accessibles en lecture seule. Vous ne pouvez pas éditer de planning d'instantané, ni modifier l'espace d'image instantanée. L'événement est consigné dans l'historique des réplications.
-4. Dans l'angle supérieur droit, cliquez sur le lien **Afficher tout {{site.data.keyword.filestorage_short}}**. 
+4. Dans l'angle supérieur droit, cliquez sur le lien **Afficher tout {{site.data.keyword.filestorage_short}}**.
 5. Cliquez sur votre volume actif ("source").
 6. Montez votre volume de stockage sur l'hôte et associez-les. Cliquez [ici](provisioning-file-storage.html) pour obtenir des instructions.
 

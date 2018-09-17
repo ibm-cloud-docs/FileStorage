@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-08-15"
+lastupdated: "2018-09-17"
 
 ---
 
@@ -87,11 +87,11 @@ In Tabelle 1 finden Sie die vollständige Liste der verfügbaren Rechenzentren u
 			</td>
 			<td>HKG02<br />
 				TOK02<br />
+        TOK04<br />
+        TOK05<br/>
 				SNG01<br />
 				SEO01<br />
-                                CHE01<br />
-				<br />
-				<br />
+        CHE01<br />
 				<br />
 				<br />
 				<br />

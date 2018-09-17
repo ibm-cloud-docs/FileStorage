@@ -2,11 +2,10 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-08-01"
+lastupdated: "2018-09-17"
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 
 # 抄寫資料
@@ -85,11 +84,11 @@ lastupdated: "2018-08-01"
 			</td>
 			<td>HKG02<br />
 				TOK02<br />
+        TOK04<br />
+        TOK05<br/>
 				SNG01<br />
 				SEO01<br />
-                                CHE01<br />
-				<br />
-				<br />
+        CHE01<br />
 				<br />
 				<br />
 				<br />

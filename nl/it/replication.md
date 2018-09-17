@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-08-15"
+lastupdated: "2018-09-17"
 
 ---
 
@@ -13,18 +13,18 @@ lastupdated: "2018-08-15"
 
 La replica usa una delle tue pianificazioni delle istantanee per copiare automaticamente le istantanee su un volume di destinazione in un data center remoto. Le copie possono essere ripristinate nel sito remoto nel caso si verifichi un evento catastrofico o un danneggiamento dei dati.
 
-Con le repliche, puoi 
+Con le repliche, puoi
 
 - Eseguire il ripristino da malfunzionamenti del sito e altre situazioni critiche in modo rapido eseguendo il failover al volume di destinazione,
 - Eseguire il failover a uno specifico punto temporale nella copia di ripristino di emergenza (DR, disaster recovery).
 
-Prima di poter eseguire la replica, devi creare una pianificazione delle istantanee. Quando esegui il failover, stai passando dal tuo volume di archiviazione nel tuo data center primario al volume di destinazione nel tuo data center remoto. Ad esempio, il tuo data center primario si trova a Londra e il tuo data center secondario si trova ad Amsterdam. Se si verifica un evento di malfunzionamento, eseguirai il failover ad Amsterdam, stabilendo una connessione al volume che ora è quello primario da un'istanza di calcolo in Amsterdam. Dopo che il tuo volume a Londra è stato riparato, verrà acquisita un'istantanea del volume che si trova ad Amsterdam per eseguire il fallback a Londra e al volume che ora è nuovamente quello primario da un'istanza di elaborazione a Londra. 
+Prima di poter eseguire la replica, devi creare una pianificazione delle istantanee. Quando esegui il failover, stai passando dal tuo volume di archiviazione nel tuo data center primario al volume di destinazione nel tuo data center remoto. Ad esempio, il tuo data center primario si trova a Londra e il tuo data center secondario si trova ad Amsterdam. Se si verifica un evento di malfunzionamento, eseguirai il failover ad Amsterdam, stabilendo una connessione al volume che ora è quello primario da un'istanza di calcolo in Amsterdam. Dopo che il tuo volume a Londra è stato riparato, verrà acquisita un'istantanea del volume che si trova ad Amsterdam per eseguire il fallback a Londra e al volume che ora è nuovamente quello primario da un'istanza di elaborazione a Londra.
 
 
 ## Determinazione del data center remoto per il volume di archiviazione replicato
 
 I data center in tutto il mondo di {{site.data.keyword.BluSoftlayer_full}} sono accoppiati in combinazioni di primario e secondario.
-Vedi la Tabella 1 per l'elenco completo della disponibilità dei data center e delle destinazioni di replica. 
+Vedi la Tabella 1 per l'elenco completo della disponibilità dei data center e delle destinazioni di replica.
 
 <table>
 	<caption style="text-align: left;"><p>Tabella 1 - Questa tabella mostra l'elenco completo dei data center con funzionalità avanzate in ogni regione. Ogni regione è una colonna separata. Alcune città, come Dallas, San Jose, Washington DC, Amsterdam, Francoforte, Londra e Sydney hanno più data center. </p>
@@ -87,11 +87,11 @@ Vedi la Tabella 1 per l'elenco completo della disponibilità dei data center e d
 			</td>
 			<td>HKG02<br />
 				TOK02<br />
+        TOK04<br />
+        TOK05<br/>
 				SNG01<br />
 				SEO01<br />
-                                CHE01<br />
-				<br />
-				<br />
+        CHE01<br />
 				<br />
 				<br />
 				<br />
@@ -119,7 +119,7 @@ Le repliche funzionano in base a una pianificazione delle istantanee. Prima di p
 3. Fai clic su **Location** e seleziona il data center che è il tuo sito di ripristino di emergenza (DR, disaster recovery).
 4. Fai clic su **Continue**.
 5. Immetti un codice promozionale (**Promo Code**), se ne hai uno, e fai clic su **Recalculate**. Gli altri campi nella finestra vengono completati per impostazione predefinita.
-6. Fai clic sulla casella di spunta **I have read the Master Service Agreement…** e fai clic su **Place Order**. 
+6. Fai clic sulla casella di spunta **I have read the Master Service Agreement…** e fai clic su **Place Order**.
 
 
 ## Modifica di una replica esistente
@@ -236,7 +236,7 @@ Puoi creare un duplicato di un {{site.data.keyword.BluSoftlayer_full}} {{site.da
 
 I duplicati possono essere creati sia dai volumi primari che da quelli di replica. Il nuovo duplicato viene creato nello stesso data center del volume originale. Se crei un duplicato da un volume di replica, il nuovo volume viene creato nello stesso data center del volume di replica.
 
-I volumi duplicati solo accessibili da un host per la lettura/scrittura non appena viene seguito il provisioning dell'archiviazione. Tuttavia, le istantanee e le repliche sono consentite solo dopo il completamento della copia dei dati dall'originale al duplicato. 
+I volumi duplicati solo accessibili da un host per la lettura/scrittura non appena viene seguito il provisioning dell'archiviazione. Tuttavia, le istantanee e le repliche sono consentite solo dopo il completamento della copia dei dati dall'originale al duplicato.
 
 Per ulteriori informazioni, vedi [Creazione di un volume di file duplicato](how-to-create-duplicate-volume.html)
 
