@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-08-29"
+lastupdated: "2018-09-18"
 
 ---
 {:new_window: target="_blank"}
@@ -27,7 +27,7 @@ The {{site.data.keyword.filestorage_short}} Endurance type 10 IOPS/GB tier is av
 All encrypted {{site.data.keyword.filestorage_short}} volumes that are provisioned in the enhanced data centers have a different mount point than non-encrypted volumes. To ensure that you're using the correct mount point, view the mount point information in the **Volume Details** page in the UI. You can also access the correct mount point through an API call: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 
 ## How many volumes can I provision?
-By default, you can provision a combined total of 250 block and file storage volumes. To increase your limit, contact your sales representative.
+By default, you can provision a combined total of 250 block and file storage volumes. To increase your limit, contact your sales representative. For more information, see [Managing storage limits](managing-storage-limits.html).
 
 ## How many instances can share the use of a provisioned {{site.data.keyword.filestorage_short}} volume?
 The default limit for number of authorizations per file volume is 64. To increase this limit, contact your sales representative.
