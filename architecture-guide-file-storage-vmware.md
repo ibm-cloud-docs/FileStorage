@@ -18,7 +18,7 @@ The {{site.data.keyword.filestorage_short}} offering is accessed and mounted thr
 
 Pricing and configuration options for Endurance and Performance {{site.data.keyword.filestorage_short}} are charged based on a combination of the reserved space and the offered IOPS.
 
-### Ordering Considerations
+## Ordering Considerations
 
 When you order {{site.data.keyword.filestorage_short}}, consider the following information:
 
@@ -94,20 +94,20 @@ VMware vSphere on Network Attached Storage](https://www.vmware.com/content/dam/d
 
 
 
-### Using Snapshots
+## Using Snapshots
 
 {{site.data.keyword.filestorage_short}} allows administrators to set snapshot schedules that create and delete snapshot copies automatically for each storage volume. They can also create extra snapshot schedules (hourly, daily, weekly) for automatic snapshots and manually create ad hoc snapshots for business continuity and disaster recovery (BCDR) scenarios. Automatic alerts are delivered through the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} to the volume owner for the retained snapshots and space used.
 
 Snapshot space is required to use snapshots. Space can be purchased on the initial volume order or after the initial provisioning through the **Volume Details** page by clicking **Actions** and selecting **Add Snapshot Space**.
 
-It's important to note that VMware environments are not aware of snapshots. The Endurance {{site.data.keyword.filestorage_short}} snapshot capability must not be confused with VMware snapshots. Any recovery that uses the {{site.data.keyword.filestorage_short}} snapshot feature must be handled from the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}. 
+It's important to note that VMware environments are not aware of snapshots. The Endurance {{site.data.keyword.filestorage_short}} snapshot capability must not be confused with VMware snapshots. Any recovery that uses the {{site.data.keyword.filestorage_short}} snapshot feature must be handled from the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
 
 Restoring the {{site.data.keyword.filestorage_short}} volume requires powering off all the VMs on the {{site.data.keyword.filestorage_short}}. The volume needs to be temporarily unmounted from the ESXi hosts to avoid any data corruption during the process.
 
 For more details about configuring Snapshots, see the [snapshots](snapshots.html) article.
 
 
-### Using Replication
+## Using Replication
 
 Replication uses one of your snapshot schedules to automatically copy snapshots to a destination volume in a remote data center. The copies can be recovered in the remote site if a catastrophic event or data corruption occurs.
 
@@ -116,9 +116,9 @@ With replicas, you can
 - Recover from site failures and other disasters quickly by failing over to the destination volume
 - Fail over to a specific point in time in the DR copy
 
-Before you can replicate, you must create a snapshot schedule. 
+Before you can replicate, you must create a snapshot schedule.
 
-When you fail over, you are “flipping the switch” from your storage volume in your primary data center to the destination volume in your remote data center. For example, your primary data center is in London and your secondary data center is in Amsterdam. If a failure event occurs, you’d fail over to Amsterdam. This means connecting to the now-primary volume from a vSphere Cluster instance in Amsterdam. After your volume in London is repaired, a snapshot is taken of the Amsterdam volume. Then, you can fail back to London and the once-again primary volume from a compute instance in London. 
+When you fail over, you are “flipping the switch” from your storage volume in your primary data center to the destination volume in your remote data center. For example, your primary data center is in London and your secondary data center is in Amsterdam. If a failure event occurs, you’d fail over to Amsterdam. This means connecting to the now-primary volume from a vSphere Cluster instance in Amsterdam. After your volume in London is repaired, a snapshot is taken of the Amsterdam volume. Then, you can fail back to London and the once-again primary volume from a compute instance in London.
 
 Before the volume fails back to the primary data center, it needs to stop being used at the remote site. A snapshot of any new or changed information is taken and replicated to the primary data center before it can be mounted again on the production site ESXi hosts.
 
@@ -134,7 +134,7 @@ You can order and configure {{site.data.keyword.filestorage_short}} for a VMware
 {{site.data.keyword.filestorage_short}} can be ordered through the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} by accessing the {{site.data.keyword.filestorage_short}} page through **Storage** > **{{site.data.keyword.filestorage_short}}**.
 
 
-### 1. Ordering {{site.data.keyword.filestorage_short}}
+### 1. Ordering
 
 Use the following steps to order {{site.data.keyword.filestorage_short}}:
 1. Click **Storage** > **{{site.data.keyword.filestorage_short}}** on the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} home page.
@@ -229,15 +229,15 @@ The network configuration for this architecture guide uses a minimal number of p
    ping <host name of the endurance/performance array>
    ```
    {: pre}
-   
+
    >**Note** - the NFS storage DNS host name is a Forwarding Zone (FZ) that is assigned multiple IP addresses. These IP addresses are static and belong to that specific DNS host name. Any of those IP addresses can be used to access a specific volume.
-   
+
    ```
    esxcli network ip route ipv4 add –gateway GATEWAYIP –network <result of ping command>/32
    ```
    {: pre}
 
-2. Static routes are not persistent across reboots on ESXi 5.0 and earlier. To ensure that any added static routes remain persistent, this command needs to be added to the `local.sh` file on each host, which is located in the `/etc/rc.local.d/` directory. Open the `local.sh` file by using the visual editor, and add the second command in Step 4.1. in front of the `exit 0` line. 
+2. Static routes are not persistent across reboots on ESXi 5.0 and earlier. To ensure that any added static routes remain persistent, this command needs to be added to the `local.sh` file on each host, which is located in the `/etc/rc.local.d/` directory. Open the `local.sh` file by using the visual editor, and add the second command in Step 4.1. in front of the `exit 0` line.
 
 >**Notes**<br/>- Make note of the IP address as it can be used for mounting the volume in the next step.<br/>This process needs to be done for each NFS volume you plan to mount to your ESXi host.<br/>For more information, see the VMware KB article, [Configuring static routes for VMkernel ports on an ESXi host](https://kb.vmware.com/s/article/2001426){:new_window}.
 
@@ -245,7 +245,7 @@ The network configuration for this architecture guide uses a minimal number of p
 ##  Mounting {{site.data.keyword.filestorage_short}} Volume on the ESXi hosts
 
 1. Click **Go to vCenter** icon, and then **Hosts and Clusters**.
-2. On the **Related Object** tab, click **Datastores**. 
+2. On the **Related Object** tab, click **Datastores**.
 3. Click the **Create a new datastore** icon.
 4. On the **New Datastore** screen, select the location of the WMware datastore (your ESXi host) and click **Next**.
 5. On the **Type** screen, select **NFS**, and click **next**.
@@ -254,7 +254,7 @@ The network configuration for this architecture guide uses a minimal number of p
 8. Review the inputs on the next screen and click **Finish**.
 9. Repeat for any additional {{site.data.keyword.filestorage_short}} volumes.
 
->**Note** - It is {{site.data.keyword.BluSoftlayer_full}}’s recommendation that FQDN names be used to connect to the WMware datastore. Using direct IP addressing might bypass the load-balancing mechanism that is provided by using FQDN. 
+>**Note** - It is {{site.data.keyword.BluSoftlayer_full}}’s recommendation that FQDN names be used to connect to the WMware datastore. Using direct IP addressing might bypass the load-balancing mechanism that is provided by using FQDN.
 
 To use the IP address instead of the FQDN simply ping the server to obtain the IP address.
 ```
@@ -334,7 +334,7 @@ Extra settings are required for configuring ESXi 5.x hosts for NFS storage. This
 The following examples use the CLI to set the advanced configuration parameters, and then, check them. The `esxcfg-advcfg` tool that is used in the examples can be found in the `/usr/sbin` directory on the ESXi 5.x hosts.
 
    - Setting the advanced configuration parameters from the ESXi 5.x CLI.
-     
+
      ```
      #esxcfg-advcfg -s 32 /Net/TcpipHeapSize
      #esxcfg-advcfg -s 128 /Net/TcpipHeapMax(For vSphere 5.0/5.1)
@@ -348,9 +348,9 @@ The following examples use the CLI to set the advanced configuration parameters,
      #esxcfg-advcfg -s 32 /Disk/QFullSampleSize
      #esxcfg-advcfg -s 8 /Disk/QFullThreshold
      ```
-  
+
   - Checking the advanced configuration parameters from the ESXi 5.x CLI.
-  
+
     ```
     #esxcfg-advcfg -g /Net/TcpipHeapSize
     #esxcfg-advcfg -g /Net/TcpipHeapMax
@@ -385,13 +385,13 @@ Jumbo frames need to be configured the same on the entire network path from sour
 
 ### Enabling Jumbo Frames in Linux
 
-1. Edit the network configuration file for eth0 interface. 
+1. Edit the network configuration file for eth0 interface.
    - CentOS/RHEL/Fedora Linux users edit `/etc/sysconfig/network-script/ifcfg-eth0`
      ```
      # vi /etc/sysconfig/network-script/ifcfg-eth0
      ```
      {: pre}
-   
+
    - Debian/Ubuntu Linux users edit `/etc/network/interfaces`.
 
 2. Append the following configuration directive, which specifies the size of the frame in bytes.
@@ -400,10 +400,10 @@ Jumbo frames need to be configured the same on the entire network path from sour
      MTU 9000
      ```
      {: pre}
-     
-   - Debian/Ubuntu Linux 
+
+   - Debian/Ubuntu Linux
      ```
-     MTU=9000 
+     MTU=9000
      ```
      {: pre}
 
@@ -412,7 +412,7 @@ Jumbo frames need to be configured the same on the entire network path from sour
    # /etc/init.d/networking restart
    ```
    {: pre}
-   
+
    This action causes a brief loss of network connectivity.
 
 Learn more about Advanced Single-Site VMware Reference Architecture [here](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}.
