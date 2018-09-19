@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-09-11"
+lastupdated: "2018-09-19"
 
 ---
 {:pre: .pre}
@@ -94,7 +94,7 @@ VMware vSphere on Network Attached Storage](https://www.vmware.com/content/dam/d
 
 
 
-## Using Snapshots
+### Using Snapshots
 
 {{site.data.keyword.filestorage_short}} allows administrators to set snapshot schedules that create and delete snapshot copies automatically for each storage volume. They can also create extra snapshot schedules (hourly, daily, weekly) for automatic snapshots and manually create ad hoc snapshots for business continuity and disaster recovery (BCDR) scenarios. Automatic alerts are delivered through the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} to the volume owner for the retained snapshots and space used.
 
@@ -107,7 +107,7 @@ Restoring the {{site.data.keyword.filestorage_short}} volume requires powering o
 For more details about configuring Snapshots, see the [snapshots](snapshots.html) article.
 
 
-## Using Replication
+### Using Replication
 
 Replication uses one of your snapshot schedules to automatically copy snapshots to a destination volume in a remote data center. The copies can be recovered in the remote site if a catastrophic event or data corruption occurs.
 
