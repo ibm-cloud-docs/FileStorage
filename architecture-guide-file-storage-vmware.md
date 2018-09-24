@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-09-19"
+lastupdated: "2018-09-24"
 
 ---
 {:pre: .pre}
@@ -180,7 +180,7 @@ Before you begin the VMware configuration process, make sure that the following 
 - A computer with internet access, and with the web browser software and a Remote Desktop Protocol (RDP) client installed.
 
 
-### 2. Configuring the VMware Host.
+### 1. Configuring the VMware Host.
 
 1. From an internet connected computer, start an RDP client and establish an RDP session to the {{site.data.keyword.BluVirtServers_full}} that is provisioned in the same data center where vSphere vCenter is installed.
 2. From the {{site.data.keyword.BluVirtServers_short}}, start a web browser and connect to VMware vCenter through the vSphere Web Client.
@@ -204,7 +204,7 @@ Before you begin the VMware configuration process, make sure that the following 
 For more information about VMware and Jumbo Frames, click [here](https://kb.vmware.com/s/article/1003712){:new_window}.
 
 
-### 3. Adding an uplink Adapter to a virtual switch
+### 2. Adding an uplink Adapter to a virtual switch
 
 1. Configure a new uplink adapter by going to the **ESXi host Manage** tab, select **Manage** and then **Networking**.
 2. Select the **Physical adapters** tab
@@ -220,7 +220,7 @@ For more information about VMware and Jumbo Frames, click [here](https://kb.vmwa
 11. Verify that the **Load balancing** option is set to **Route based on the originating virtual port** and click **OK**.
 
 
-### 4. Configuring ESXi static routing (Optional)
+### 3. Configuring ESXi static routing (Optional)
 
 The network configuration for this architecture guide uses a minimal number of port groups. If you have a VMkernel port group for NFS storage, extra steps must be taken. By default, ESXi uses the VMkernel port that is on the same subnet as an NFS volume to mount the NFS volume on Endurance/Performance storage. Since layer 3 routing is used to mount the NFS volume, ESXi must be forced to use the VMkernel port that was configured to mount the NFS volume. To do this, a static route must be created to Endurance/Performance storage array.
 
@@ -242,7 +242,7 @@ The network configuration for this architecture guide uses a minimal number of p
 >**Notes**<br/>- Make note of the IP address as it can be used for mounting the volume in the next step.<br/>This process needs to be done for each NFS volume you plan to mount to your ESXi host.<br/>For more information, see the VMware KB article, [Configuring static routes for VMkernel ports on an ESXi host](https://kb.vmware.com/s/article/2001426){:new_window}.
 
 
-##  Mounting {{site.data.keyword.filestorage_short}} Volume on the ESXi hosts
+##  Creating and mounting {{site.data.keyword.filestorage_short}} Volume on the ESXi hosts
 
 1. Click **Go to vCenter** icon, and then **Hosts and Clusters**.
 2. On the **Related Object** tab, click **Datastores**.
