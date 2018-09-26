@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-09-26"
 
 ---
 {:new_window: target="_blank"}
@@ -16,7 +16,7 @@ You can manage your {{site.data.keyword.filestorage_full}} volumes through {{sit
 
 “Authorized” hosts are hosts that were given access to a particular volume. Without host authorization, you can't access or use the storage from your system. Authorizing a host to access your volume generates the user name and password. 
 
-**Note** - You can authorize and connect hosts that are located in the same data center as your storage. If you have multiple accounts, you can't authorize a host from one account to access your storage on another. 
+**Note** - You can authorize and connect hosts that are located in the same data center as your storage. However, if you have multiple accounts, you can't authorize a host from one account to access your storage on another account. 
 
 1. Click **Storage** > **{{site.data.keyword.filestorage_short}}**, and click your **Volume Name**.
 2. Scroll to the **Authorized Hosts** section of the page.
