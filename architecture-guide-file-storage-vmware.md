@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-09-24"
+lastupdated: "2018-09-27"
 
 ---
 {:pre: .pre}
@@ -27,7 +27,7 @@ When you order {{site.data.keyword.filestorage_short}}, consider the following i
 - NFS uses many extra file control operations such as `lookup`, `getattr`, and `readdir`. These operations in addition to read/write operations can count as IOPS and vary by operation type and NFS version.
 - {{site.data.keyword.filestorage_short}} volumes are exposed to authorized devices, subnets, or IP addresses.
 - To avoid storage disconnection during path failover {{site.data.keyword.IBM}} recommends installing VMware tools, which set an appropriate timeout value. There’s no need to change the value, the default setting is sufficient to ensure that your VMware host doesn't lose connectivity.
-- Both NFS v3 and NFS v4.1 are supported in the {{site.data.keyword.BluSoftlayer_full}} environment. However, {{site.data.keyword.IBM}} suggests that you use NFS v3. Because NFS v4.1 is a stateful protocol (not stateless like NFSv3), protocol issues can occur during network events. NFS v4.1 must quiesce all operations and then complete lock reclamation. While these operations are taking place, disruptions can occur.
+- Both NFSv3 and NFSv4.1 are supported in the {{site.data.keyword.BluSoftlayer_full}} environment. However, {{site.data.keyword.IBM}} suggests that you use NFSv3. Because NFSv4.1 is a stateful protocol (not stateless like NFSv3), protocol issues can occur during network events. NFSv4.1 must quiesce all operations and then complete lock reclamation. While these operations are taking place, disruptions can occur.
 
 For more information, see VMware's Whitepaper on [Best Practices for running
 VMware vSphere on Network Attached Storage](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){:new_window}
@@ -249,10 +249,11 @@ The network configuration for this architecture guide uses a minimal number of p
 3. Click the **Create a new datastore** icon.
 4. On the **New Datastore** screen, select the location of the WMware datastore (your ESXi host) and click **Next**.
 5. On the **Type** screen, select **NFS**, and click **next**.
-6. On the **Name and configuration** screen, enter the name that you want to call the WMware datastore. Additionally, enter the host name of the NFS server. Using the FQDN for the NFS server produces the best traffic distribution to the underlying server. IP address is also valid but is used less frequently and only in specific instances. Enter the folder name in the form of `/foldername`.
-7. On the **Host accessibility** screen, select one or more hosts that you want to mount the NFS WMware datastore on and click **next**.
-8. Review the inputs on the next screen and click **Finish**.
-9. Repeat for any additional {{site.data.keyword.filestorage_short}} volumes.
+6. Then, select the NFS version. Both NFSv3 and NFSv4.1 are supported, but NFSv3 is prefered. Make sure you use only one NFS version to access a given datastore. Consequences of mounting one or more hosts to the same datastore by using different versions can result in data corruption.
+7. On the **Name and configuration** screen, enter the name that you want to call the WMware datastore. Additionally, enter the host name of the NFS server. Using the FQDN for the NFS server produces the best traffic distribution to the underlying server. IP address is also valid but is used less frequently and only in specific instances. Enter the folder name in the form of `/foldername`.
+8. On the **Host accessibility** screen, select one or more hosts that you want to mount the NFS WMware datastore on and click **next**.
+9. Review the inputs on the next screen and click **Finish**.
+10. Repeat for any additional {{site.data.keyword.filestorage_short}} volumes.
 
 >**Note** - It is {{site.data.keyword.BluSoftlayer_full}}’s recommendation that FQDN names be used to connect to the WMware datastore. Using direct IP addressing might bypass the load-balancing mechanism that is provided by using FQDN.
 
