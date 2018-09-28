@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-09-17"
 
 ---
 {:new_window: target="_blank"}
@@ -106,9 +106,10 @@ Es ist möglich, dass Sie Ihren Speicherdatenträger aufgrund eines Benutzerfehl
    - Klicken Sie hier [hier](accessing-file-storage-linux.html), um weitere Anweisungen für {{site.data.keyword.filestorage_short}} unter Linux anzuzeigen.
 2. Klicken Sie auf **Speicher** > **{{site.data.keyword.filestorage_short}}** im [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
 3. Blättern Sie nach unten und klicken Sie auf den Datenträger, der wiederhergestellt werden soll. Im Abschnitt **Snapshots** der Seite **Detail** wird die Liste aller gespeicherten Snapshots mit Angabe ihrer Größe und ihres Erstellungsdatums angezeigt.
-4. Klicken Sie neben dem zu verwendenden Snapshot auf **Aktionen** und klicken Sie auf **Wiederherstellen**.<br/>
+4. Klicken Sie neben dem zu verwendenden Snapshot auf **Aktionen** und klicken Sie auf **Wiederherstellen**. <br/>
    >**Anmerkung**: Bei der Wiederherstellung gehen die Daten verloren, die nach der Erstellung des Snapshots erstellt oder geändert wurden. Dieser Datenverlust passiert, weil Ihr Speicherdatenträger in denselben Zustand wiederherstellt wird, den er zum Zeitpunkt der Snapshoterstellung hatte. 
 5. Klicken Sie auf **Ja**, um die Wiederherstellung zu starten. Quer über den oberen Bereich der Seite wird die Nachricht angezeigt, dass der Datenträger mit dem ausgewählten Snapshot wiederhergestellt wird. Darüber hinaus wird neben Ihrem Datenträger auf der {{site.data.keyword.filestorage_short}}-Seite ein Symbol angezeigt, das darauf hinweist, dass zurzeit eine Transaktion aktiv ist. Bei Bewegen des Mauszeigers über das Symbol wird die Transaktion in einem Fenster angezeigt. Das Symbol wird ausgeblendet, sobald die Transaktion abgeschlossen ist.
 6. Hängen Sie Ihren Speicherdatenträger an den Host an und ordnen Sie ihn erneut zu.
   - Klicken Sie hier [hier](accessing-file-storage-linux.html), um weitere Anweisungen für {{site.data.keyword.filestorage_short}} unter Linux anzuzeigen.
-    >**Anmerkung** - Beim Wiederherstellen eines Datenträgers werden alle Snapshots gelöscht, die vor dem wiederhergestellten Snapshot erstellt wurden.
+    
+>**Hinweis** - Beim Zurücksetzen eines Datenträgers werden alle Snapshots gelöscht, die nach dem für das Zurücksetzen verwendeten Snapshot erstellt wurden.

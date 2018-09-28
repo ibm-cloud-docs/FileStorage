@@ -57,9 +57,7 @@ Die neue Version von {{site.data.keyword.filestorage_short}} steht in folgenden 
 		<td><p>MEX01<br />
 			SAO01<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></p>
 		</td>
-		<td><p>TOK02<br />
-      TOK04<br />
-      TOK05<br/>
+		<td><p>TOK02<br />TOK04<br />TOK05<br />
 			HKG02<br />
 			SEO01<br />
 			SNG01<br />

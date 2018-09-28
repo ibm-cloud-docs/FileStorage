@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-09-26"
 
 ---
 {:new_window: target="_blank"}
@@ -10,13 +10,13 @@ lastupdated: "2018-06-29"
 
 # {{site.data.keyword.filestorage_short}} verwalten
 
-Sie können Ihre {{site.data.keyword.filestorage_full}}-Datenträger über {{site.data.keyword.slportal}} verwalten. 
+Sie können Ihre {{site.data.keyword.filestorage_full}}-Datenträger über {{site.data.keyword.slportal}} verwalten.
 
 ## Hosts für den Zugriff auf {{site.data.keyword.filestorage_short}} berechtigen
 
 Berechtigte (“autorisierte”) Hosts sind Hosts, denen Zugriff auf einen bestimmten Datenträger erteilt wurde. Ohne die Hostberechtigung können Sie nicht über Ihr System auf den Speicher zugreifen oder ihn verwenden. Durch das Berechtigen eines Hosts für den Zugriff auf Ihren Datenträger werden der Benutzername und das Kennwort generiert. 
 
-**Anmerkung** - Sie können Hosts berechtigen und verbinden, die sich im selben Rechenzentrum wie Ihr Speicher befinden. Wenn Sie über mehrere Konten verfügen, können Sie einen Host nicht mithilfe des einen Kontos für den Zugriff auf Speicher in einem anderen Konto berechtigen. 
+**Anmerkung** - Sie können Hosts berechtigen und verbinden, die sich im selben Rechenzentrum wie Ihr Speicher befinden. Wenn Sie jedoch über mehrere Konten verfügen, können Sie einen Host nicht mithilfe des einen Kontos für den Zugriff auf Speicher in einem anderen Konto berechtigen. 
 
 1. Klicken Sie auf **Speicher** > **{{site.data.keyword.filestorage_short}}** und klicken Sie auf den Namen Ihres Datenträgers im Feld **Datenträgername**.
 2. Blättern Sie zum Abschnitt **Autorisierte Hosts** auf der Seite.

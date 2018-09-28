@@ -27,7 +27,7 @@ Dabei wird davon ausgegangen, dass Sie Ihre nicht verschlüsselte LUN bereits an
 
 **Wichtig** - Geben Sie beim Abschicken einer Bestellung über die API 'Storage as a Service' an, um sicherzustellen, dass Sie Ihren neuen Speicher mit den aktualisierten Funktionen erhalten.
 
-Folgende Anweisungen gelten für die Bestellung von erweiterten Datenträgern/Dateifreigaben über den {{site.data.keyword.slportal}}/{{site.data.keyword.BluSoftlayer_full}}-Katalog. Damit die Migration ermöglicht wird, muss Ihr neuer Datenträger dieselbe Größe wie der ursprüngliche haben oder größer sein.
+Folgende Anweisungen gelten für die Bestellung von erweiterten Datenträgern/gemeinsam genutzten Dateispeichern über den {{site.data.keyword.slportal}}/{{site.data.keyword.BluSoftlayer_full}}-Katalog. Damit die Migration ermöglicht wird, muss Ihr neuer Datenträger dieselbe Größe wie der ursprüngliche haben oder größer sein.
 
 ### Neuen Endurance-Speicherdatenträger bestellen
 
@@ -61,7 +61,7 @@ Der Speicher wird in weniger als einer Minute bereitgestellt und auf der Seite {
  
 ## Host für die neue {{site.data.keyword.filestorage_short}}-Instanz autorisieren
 
-Berechtigte ("autorisierte") Hosts sind Hosts, denen Zugriff auf einen bestimmten Datenträger erteilt wurde. Ohne die Hostberechtigung können Sie nicht über Ihr System auf den Speicher zugreifen oder ihn verwenden. 
+Berechtigte ("autorisierte") Hosts sind Hosts, denen Zugriff auf einen bestimmten Datenträger erteilt wurde. Ohne die Hostberechtigung können Sie nicht über Ihr System auf den Speicher zugreifen oder ihn verwenden.
 
 1. Klicken Sie auf den Namen des neuen Datenträgers.
 2. Blättern Sie zum Abschnitt **Autorisierte Hosts**.
@@ -80,9 +80,9 @@ Wenn Snapshots und Replikation für Ihren ursprünglichen Datenträger erstellt 
 ## Daten migrieren
 
 1. Stellen Sie eine Verbindung zu Ihren ursprünglichen und neuen {{site.data.keyword.filestorage_short}}-Datenträgern her. 
-  - Öffnen Sie ein Support-Ticket, wenn Sie Hilfe beim Herstellen einer Verbindung zwischen den beiden Dateifreigaben und Ihrem Host benötigen.
+  - Öffnen Sie ein Support-Ticket, wenn Sie Hilfe beim Herstellen einer Verbindung zwischen den beiden gemeinsam genutzten Dateispeichern und Ihrem Host benötigen.
 
-2. Überlegen Sie, welchen Typ von Daten Sie auf Ihrem ursprünglichen {{site.data.keyword.filestorage_short}}-Datenträger haben und wie die Daten am besten auf Ihre neue Dateifreigabe kopiert werden könnten.  
+2. Überlegen Sie, welchen Typ von Daten Sie auf Ihrem ursprünglichen {{site.data.keyword.filestorage_short}}-Datenträger haben und wie die Daten am besten in den neuen gemeinsam genutzten Dateispeicher kopiert werden könnten. 
   - Wenn Sie Sicherungsdaten, statische Inhalte und Daten haben, von denen nicht zu erwarten ist, dass sie sich während des Kopierens ändern, sind weiter keine wichtigen Punkte zu beachten.
   - Wenn Sie eine Datenbank oder eine virtuelle Maschine auf Ihrem {{site.data.keyword.filestorage_short}}-Speicher ausführen, müssen Sie sicherstellen, dass die Daten während des Kopiervorgangs nicht geändert werden, um Datenbeschädigung zu vermeiden. Wenn Sie Bandbreitenprobleme befürchten, führen Sie die Migration in Zeiten geringer Systemauslastung aus. Öffnen Sie ein Support-Ticket, wenn Sie Hilfe im Hinblick auf diese Aspekte benötigen.
  
@@ -96,5 +96,5 @@ Wenn Snapshots und Replikation für Ihren ursprünglichen Datenträger erstellt 
        ```
    
    Es ist sinnvoll, den vorigen Befehl einmal mit dem Flag `--dry-run` zu verwenden, um die korrekte Zusammenstellung der Pfade sicherzustellen. Wenn dieser Prozess unterbrochen wird, können Sie die letzte zu kopierende Zieldatei löschen, um sicherzustellen, dass sie von Anfang an an die neue Position kopiert wird.<br/>
-Wenn dieser Befehl ohne das Flag `--dry-run` ausgeführt wird, werden Ihre Daten auf den neuen {{site.data.keyword.filestorage_short}}-Datenträger kopiert. Führen Sie den Befehl erneut aus, um sicherzustellen, dass keine Daten ausgelassen wurden. Sie können außerdem beide Position manuell prüfen, um nach möglicherweise fehlenden Daten zu suchen.<br/>
-Nach Abschluss der Migration können Sie die Produktion auf die neue LUN verlegen. Anschließend können Sie Ihren ursprünglichen Datenträger abhängen und ihn aus der Konfiguration löschen. Durch das Löschen werden auf der Zielseite auch alle Snapshots oder Replikate gelöscht, die dem ursprünglichen Datenträger zugeordnet waren.
+   Wenn dieser Befehl ohne das Flag `--dry-run` ausgeführt wird, werden Ihre Daten auf den neuen {{site.data.keyword.filestorage_short}}-Datenträger kopiert. Führen Sie den Befehl erneut aus, um sicherzustellen, dass keine Daten ausgelassen wurden. Sie können außerdem beide Position manuell prüfen, um nach möglicherweise fehlenden Daten zu suchen.<br/>
+   Nach Abschluss der Migration können Sie die Produktion auf die neue LUN verlegen. Anschließend können Sie Ihren ursprünglichen Datenträger abhängen und ihn aus der Konfiguration löschen. Durch das Löschen werden auf der Zielseite auch alle Snapshots oder Replikate gelöscht, die dem ursprünglichen Datenträger zugeordnet waren.

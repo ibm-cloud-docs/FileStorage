@@ -11,7 +11,7 @@ lastupdated: "2018-08-01"
 
 Snapshots sind eine Funktion von {{site.data.keyword.filestorage_full}}. Ein Snapshot stellt den Inhalt eines Datenträgers zu einem bestimmten Zeitpunkt dar. Mithilfe von Snapshots können Sie Ihre Daten ohne Auswirkungen auf die Leistung unter minimalem Speicherplatzbedarf schützen. Daher sind Snapshots als erste Verteidigungslinie für den Schutz Ihrer Daten zu betrachten. Falls ein Benutzer wichtige Daten versehentlich ändert oder von einem Datenträger löscht, lassen sich diese Daten problemlos und schnell aus einer Snapshotkopie wiederherstellen.
 
-{{site.data.keyword.filestorage_short}} stellt zwei Möglichkeiten zur Erstellung von Snapshots bereit. 
+{{site.data.keyword.filestorage_short}} stellt zwei Möglichkeiten zur Erstellung von Snapshots bereit.
 
 – Zum einen durch einen konfigurierbaren Snapshotplan, der Snapshotkopien für jeden Speicherdatenträger automatisch erstellt und löscht. Sie können außerdem weitere Snapshotzeitpläne erstellen, Kopien manuell löschen und Zeitpläne Ihren Anforderungen entsprechend verwalten. 
 - Die zweite Möglichkeit ist die Erstellung eines manuellen Snapshots.

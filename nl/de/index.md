@@ -2,15 +2,14 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-09-10"
 
 ---
 {:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
 
 # Einführung in {{site.data.keyword.filestorage_short}}
 
-{{site.data.keyword.filestorage_full}} ist ein persistenter, schneller und flexibler, NFS-basierter {{site.data.keyword.filestorage_short}}, der über ein Netz angeschlossen ist. In dieser Umgebung mit NAS-Speicher (NAS – Network-attached Storage) haben Sie vollständige Kontrolle über die Funktion und Leistung Ihrer Dateifreigaben. {{site.data.keyword.filestorage_short}}-Freigaben können aus Gründen der Ausfallsicherheit mit bis zu 64 autorisierten Geräten über gesteuerte TCP/IP-Verbindungen verbunden werden.
+{{site.data.keyword.filestorage_full}} ist ein persistenter, schneller und flexibler, NFS-basierter {{site.data.keyword.filestorage_short}}, der über ein Netz angeschlossen ist. In dieser Umgebung mit NAS-Speicher (NAS – Network-attached Storage) haben Sie vollständige Kontrolle über die Funktion und Leistung Ihrer gemeinsam genutzten Dateispeicher. Gemeinsam genutzte {{site.data.keyword.filestorage_short}}-Speicher können aus Gründen der Ausfallsicherheit mit bis zu 64 autorisierten Geräten über gesteuerte TCP/IP-Verbindungen verbunden werden.
 
 {{site.data.keyword.filestorage_short}} bietet kombiniert mit einem außergewöhnlichen Feature-Set eine leistungsfähige Permanenz und Verfügbarkeit. {{site.data.keyword.filestorage_short}} wurde unter Verwendung von Industriestandards und bewährten Verfahren erstellt und ist darauf ausgerichtet, die Integrität der Daten zu schützen. {{site.data.keyword.filestorage_short}} hält die Verfügbarkeit sowohl bei Wartungsereignissen als auch bei ungeplanten Ausfällen aufrecht und stellt gleichzeitig ein konsistentes Leistungsniveau sicher.
 
@@ -19,7 +18,7 @@ Nutzen Sie die folgenden Kernfunktionen von {{site.data.keyword.filestorage_shor
 - **Konsistentes Leistungsniveau**
    - Wird durch die Zuordnung von E/A-Operationen pro Sekunde (IOPS) zu einzelnen Datenträgern auf Protokollebene bereitgestellt.
 - **{{site.data.keyword.filestorage_short}}**
-   - Ist für dateibasierte NFS-Freigaben verfügbar.
+   - Ist für dateibasierte, gemeinsam genutzte NFS-Speicher verfügbar.
 - **Hohe Dauerhaftigkeit und Ausfallsicherheit**
    - Schützt die Integrität der Daten und gewährleistet die Verfügbarkeit bei Wartungsereignissen und ungeplanten Ausfällen, ohne dass RAID-Arrays (Redundant Arrays of Independent Disks) auf Betriebssystemebene erstellt und verwaltet werden müssen.
 - **Verschlüsselung ruhender Daten** [(in ausgewählten Rechenzentren verfügbar)](new-ibm-block-and-file-storage-location-and-features.html)
@@ -98,9 +97,9 @@ Bei der **monatlichen Rechnungsstellung** erfolgt die Berechnung für den Preis 
  
 ### Bereitstellung mit Endurance-Stufen
 
-Endurance {{site.data.keyword.filestorage_short}} ist in vier IOPS-Leistungsstufen zur Unterstützung verschiedener Anwendungsanforderungen verfügbar.<br />
+Endurance {{site.data.keyword.filestorage_short}} ist in vier IOPS-Leistungsstufen zur Unterstützung verschiedener Anwendungsanforderungen verfügbar. <br />
 
-- **0,25 IOPS pro GB** sind für Workloads mit niedriger E/A-Intensität gedacht. Solche Workloads sind in der Regel durch einen hohen Prozentsatz an Daten gekennzeichnet, die zu jedem Zeitpunkt inaktiv sind. Beispiele für Anwendungen sind das Speichern von Mailboxen oder das Speichern von Dateifreigaben auf Abteilungsebene.
+- **0,25 IOPS pro GB** sind für Workloads mit niedriger E/A-Intensität gedacht. Solche Workloads sind in der Regel durch einen hohen Prozentsatz an Daten gekennzeichnet, die zu jedem Zeitpunkt inaktiv sind. Beispiele für Anwendungen sind das Speichern von Mailboxen oder das Speichern von gemeinsam genutzten Dateien auf Abteilungsebene.
 
 - **2 IOPS pro GB** sind für die meisten Fälle allgemeiner Nutzung vorgesehen. Beispiele für Anwendungen sind das Hosting kleiner Datenbanken zur Unterstützung von Webanwendungen oder VM-Plattenimages für einen Hypervisor.
 
@@ -261,13 +260,15 @@ Die Geschwindigkeit Ihrer Ethernet-Verbindung muss höher als der erwartete maxi
 
 Zur Erzielung der maximalen E/A-Operationen pro Sekunde müssen geeignete Netzressourcen eingesetzt werden. Weitere Aspekte sind die private Netznutzung außerhalb von Speicher sowie hostseitige und anwendungsspezifische Optimierungen (IP-Stack, Warteschlangenlängen und andere Einstellungen).
 
+Der Speicherdatenverkehr ist in der gesamten Netznutzung von öffentlichen virtuellen Servern enthalten. Die [Dokumentation zu virtuellen Servern](https://console.bluemix.net/docs/vsi/vsi_public.html#public-virtual-servers) enthält Informationen zu den möglichen Einschränkungen im Zusammenhang mit dem Service.
+
 **NFS-Version**
 
 NFS Version 3 und NFS Version 4.1 werden in der Umgebung von {{site.data.keyword.BluSoftlayer_full}} unterstützt. NFS Version 3 wird jedoch bevorzugt, da NFS Version 4.1 ein Protokoll mit Zustandsüberwachung (und nicht wie NFSv3 ohne Zustandsüberwachung) ist und bei Netzereignissen Probleme mit dem Protokoll auftreten können. NFS Version 4.1 muss alle Operationen ruhen lassen und anschließend eine Sperrenrückforderung ausführen. Auf einem relativ ausgelasteten NFS-Dateiserver kann die erhöhte Latenz zu Unterbrechungen führen. Die fehlende Multipath/Trunking-Funktionalität in NFS v4.1 kann darüber hinaus die Wiederherstellung des NFS-Betriebs verlängern.
 
 ## Bestellung abschicken
 
-Wenn Sie bereit sind, Ihre Bestellung abzuschicken, führen Sie die [hier](provisioning-file-storage.html) beschriebenen Anweisungen aus. Zur Bereitstellung von File Storage mit VMware klicken Sie [hier](architecture-guide-file-storage-vmware.html). 
+Wenn Sie bereit sind, Ihre Bestellung abzuschicken, führen Sie die [hier](provisioning-file-storage.html) beschriebenen Anweisungen aus. Zur Bereitstellung von File Storage mit VMware klicken Sie [hier](architecture-guide-file-storage-vmware.html).
 
 ## Verbindung zum neuen Speicher herstellen
 

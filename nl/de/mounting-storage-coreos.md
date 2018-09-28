@@ -76,7 +76,7 @@ cluster1 ~ # mount |grep data
  
 ## NAS/CIFS anhängen
 
-Das Anhängen einer CIFS-Freigabe wird in CoreOS nicht nativ unterstützt, jedoch ist eine einfache Ausweichlösung verfügbar, mit der NAS-Freigaben an das Hostsystem angehängt werden können. Sie können einen Container verwenden, um die Moduldatei `mount.cfis` zu erstellen und sie anschließend auf das CoreOS-System zu kopieren.
+Das Anhängen eines gemeinsam genutzten CIFS-Speichers wird in CoreOS nicht nativ unterstützt, jedoch ist eine einfache Ausweichlösung verfügbar, mit der gemeinsam genutzte NAS-Speicher an das Hostsystem angehängt werden können. Sie können einen Container verwenden, um die Moduldatei `mount.cfis` zu erstellen und sie anschließend auf das CoreOS-System zu kopieren.
  
 Führen Sie auf dem CoreOS-System den folgenden Befehl aus, um die Moduldatei herunterzuladen und in einem Fedora-Container abzulegen.
 
@@ -98,7 +98,7 @@ cp mount.cifs /host_tmp/
 ```
 {:codeblock}
  
-Nach dem Kopieren der Datei `mount.cifs` auf den Host können Sie den Docker-Container verlassen, indem Sie den Befehl `exit` eingeben oder die Tastenkombination **STRG+d** drücken. Wenn Sie wieder im CoreOS-System sind, können Sie die CIFS-Freigabe mit dem folgenden Befehl anhängen: 
+Nach dem Kopieren der Datei `mount.cifs` auf den Host können Sie den Docker-Container verlassen, indem Sie den Befehl `exit` eingeben oder die Tastenkombination **STRG+d** drücken. Wenn Sie wieder im CoreOS-System sind, können Sie den gemeinsam genutzten CIFS-Speicher mit dem folgenden Befehl anhängen: 
 ```
 /tmp/mount.cifs //nasXXX.service.softlayer.com/USERNAME -o username=USERNAME,password=PASSWORD /path/to/mount
 ```

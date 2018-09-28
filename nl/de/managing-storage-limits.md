@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-08-21"
 
 ---
 {:new_window: target="_blank"}
@@ -10,7 +10,7 @@ lastupdated: "2018-06-29"
 
 # Speicherbegrenzungen verwalten
 
-Sie können global standardmäßig eine kombinierte Gesamtzahl von 250 {{site.data.keyword.blockstorageshort}}-Datenträgern bereitstellen. 
+Sie können global standardmäßig eine kombinierte Gesamtzahl von 250 {{site.data.keyword.filestorage_short}}-Datenträgern bereitstellen. 
 
 Sie können eine Erhöhung der Begrenzung anfordern, indem Sie ein Ticket beim [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} einreichen. Wenn die Anforderung genehmigt ist, wird eine Datenträgerbegrenzung für ein bestimmtes Rechenzentrum festgelegt.  
 

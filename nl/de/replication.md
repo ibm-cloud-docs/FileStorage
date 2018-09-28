@@ -6,7 +6,6 @@ lastupdated: "2018-09-17"
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 
 # Daten replizieren
@@ -87,11 +86,11 @@ In Tabelle 1 finden Sie die vollständige Liste der verfügbaren Rechenzentren u
 			</td>
 			<td>HKG02<br />
 				TOK02<br />
-        TOK04<br />
-        TOK05<br/>
+				TOK04<br />
+	                        TOK05<br />
 				SNG01<br />
 				SEO01<br />
-        CHE01<br />
+                                CHE01<br />
 				<br />
 				<br />
 				<br />
@@ -189,7 +188,7 @@ Failoveroperationen werden unter **Speicher** > **{{site.data.keyword.filestorag
 
 1. Klicken Sie auf Ihren aktiven Datenträger ('Quelle').
 2. Klicken Sie rechts oben auf **Replikat** und **Aktionen**.
-3. Wählen Sie die Option für **Failover** aus.
+3. Wählen Sie die Option für **Failover** aus. 
    >Es wird die Nachricht angezeigt, dass der Failover in Bearbeitung ist. Darüber hinaus wird neben Ihrem Datenträger auf der **{{site.data.keyword.filestorage_short}}**-Seite ein Symbol angezeigt, das darauf hinweist, dass zurzeit eine Transaktion aktiv ist. Bei Bewegen des Mauszeigers über das Symbol wird die Transaktion in einem Fenster angezeigt. Das Symbol wird ausgeblendet, sobald die Transaktion abgeschlossen ist. Während des Failover-Prozesses sind konfigurationsbezogene Aktionen schreibgeschützt. Sie können Snapshotpläne nicht bearbeiten oder Snapshotbereiche ändern. Das Ereignis wird im Replikationsprotokoll aufgezeichnet.<br/> Wenn Ihr Zieldatenträger aktiv ist, erhalten Sie eine andere Nachricht. Der LUN-Name Ihres ursprünglichen Quellendatenträgers wird so aktualisiert, dass er mit "REP" endet, und sein Status ändert sich in "Inaktiv".
 4. Klicken Sie auf **Alle anzeigen ({{site.data.keyword.filestorage_short}})**.
 5. Klicken Sie auf Ihren aktiven Datenträger (früher Ihr Zieldatenträger). Dieser Datenträger hat nun den Status **Aktiv**.
@@ -232,7 +231,7 @@ Das Replikationsprotokoll wird auf der Registerkarte **Konto** unter **Verwalten
 
 ## Duplikat eines Replikats erstellen
 
-Sie können ein Duplikat eines vorhandenen {{site.data.keyword.BluSoftlayer_full}} {{site.data.keyword.blockstoragefull}}-Datenträgers erstellen. Der Duplikatdatenträger übernimmt standardmäßig die Kapazitäts- und Leistungsoptionen der ursprünglichen LUN bzw. des ursprünglichen Datenträgers und enthält eine Kopie der Daten bis zum Zeitpunkt eines Snapshots.
+Sie können ein Duplikat eines vorhandenen {{site.data.keyword.BluSoftlayer_full}} {{site.data.keyword.filestorage_full}}-Datenträgers erstellen. Der Duplikatdatenträger übernimmt standardmäßig die Kapazitäts- und Leistungsoptionen der ursprünglichen LUN bzw. des ursprünglichen Datenträgers und enthält eine Kopie der Daten bis zum Zeitpunkt eines Snapshots.
 
 Duplikate können sowohl von primären Datenträgern als auch von Replikatdatenträgern erstellt werden. Das neue Duplikat wird im selben Rechenzentrum wie der ursprüngliche Datenträger erstellt. Wenn Sie einen Duplikatdatenträger von einem Replikatdatenträger erstellen, wird der neue Datenträger im selben Rechenzentrum wie der Replikatdatenträger erstellt.
 
