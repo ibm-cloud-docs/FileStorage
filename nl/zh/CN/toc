@@ -43,5 +43,5 @@ IBM Cloud 存储 - File Storage
 
     {: .navgroup id="help"}
     File-Storage-FAQ.md
-    [Python API 客户机信息](https://github.com/softlayer/softlayer-python)
+    [Python API 客户机信息](https://softlayer-python.readthedocs.io/en/latest/index.html)
     {: .navgroup-end}

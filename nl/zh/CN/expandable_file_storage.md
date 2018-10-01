@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-09-12"
 
 ---
 {:new_window: target="_blank"}
@@ -30,10 +30,6 @@ lastupdated: "2018-06-29"
 此功能仅可用于在具有增强功能的[数据中心](new-ibm-block-and-file-storage-location-and-features.html)内供应的存储器。这些数据中心内供应的加密存储器可以增大到最高 12 TB。 
 
 使用“耐久性”类型供应的 {{site.data.keyword.filestorage_short}} 的现有大小限制仍然适用（对于 10 IOPS 层，最高为 4 TB，对于其他所有层，最高为 12 TB）。
-
-## 识别有资格的存储器
-
-供应了增强功能的存储器始终会静态加密。如果在门户网站 UI 中，存储器旁边有“锁定”图标，那么可以轻松判断该存储器有资格扩展。 
 
 ## 调整存储器大小
 

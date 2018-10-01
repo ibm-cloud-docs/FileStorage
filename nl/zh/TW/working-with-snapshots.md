@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-09-17"
 
 ---
 {:new_window: target="_blank"}
@@ -111,4 +111,5 @@ Snapshot 排程可以透過**儲存空間** > **{{site.data.keyword.filestorage_
 5. 按一下**是**，以啟動還原。預期頁面頂端會出現一則訊息，指出將使用選取的 Snapshot 還原磁區。此外，{{site.data.keyword.filestorage_short}} 上的磁區旁會出現一個圖示，指出有一個作用中交易正在進行。將游標移至圖示上方會產生一個視窗，顯示該交易。交易完成之後，圖示即會消失。
 6. 將儲存空間磁區裝載並重新連接至主機。
   - 按一下[這裡](accessing-file-storage-linux.html)，以取得 Linux 上的 {{site.data.keyword.filestorage_short}} 指示。
-    >**附註**：還原磁區會導致刪除在還原的 Snapshot 之前擷取的所有 Snapshot。
+    
+>**附註** - 還原磁區會導致刪除在用於還原的 Snapshot 之後擷取的所有 Snapshot。

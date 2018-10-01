@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-08-21"
 
 ---
 {:new_window: target="_blank"}
@@ -10,7 +10,7 @@ lastupdated: "2018-06-29"
 
 # 管理存储限制
 
-缺省情况下，总共可以全局供应 250 个 {{site.data.keyword.blockstorageshort}} 卷。 
+缺省情况下，总共可以全局供应 250 个 {{site.data.keyword.filestorage_short}} 卷。 
 
 您可以通过在 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} 中提交凭单来请求增大限制。请求得到核准后，您将获得针对特定数据中心设置的卷限制。  
 

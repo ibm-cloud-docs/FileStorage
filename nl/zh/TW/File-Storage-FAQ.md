@@ -2,12 +2,12 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-09-18"
 
 ---
 {:new_window: target="_blank"}
 
-# {{site.data.keyword.filestorage_short}} - 常見問題集
+# 常見問題
 
 ## 如何分辨哪些 {{site.data.keyword.filestorage_short}} 磁區已加密？
 請查看客戶入口網站中的 {{site.data.keyword.filestorage_short}} 清單。您會看到已加密磁區的 LUN/磁區名稱右側有一個鎖定圖示。
@@ -27,15 +27,18 @@ lastupdated: "2018-06-29"
 加強型資料中心內佈建的所有加密 {{site.data.keyword.filestorage_short}} 磁區都具有與未加密磁區不同的裝載點。為確保您使用正確的裝載點，請檢視使用者介面中**磁區詳細資料**頁面上的裝載點資訊。您也可以透過 API 呼叫來存取正確的裝載點：`SoftLayer_Network_Storage::getNetworkMountAddress()`。
 
 ## 可以佈建多少個磁區？
-依預設，您可以佈建總計 250 個區塊及檔案儲存空間磁區。若要增加限制，請與業務代表聯絡。
+依預設，您可以佈建總計 250 個區塊及檔案儲存空間磁區。若要增加限制，請與業務代表聯絡。如需相關資訊，請參閱[管理儲存空間限制](managing-storage-limits.html)。
 
 ## 有多少實例可以共用已佈建的 {{site.data.keyword.filestorage_short}} 磁區？
 每個檔案磁區的預設授權數目限制是 64。若要增加此限制，請與業務代表聯絡。
 
+## 可以將多少個 {{site.data.keyword.filestorage_short}} 磁區連接至單一主機？
+這取決於主機作業系統可處理的項目，而不是由 {{site.data.keyword.BluSoftlayer_full}} 所限制。如需可裝載的檔案共用數目限制，請參閱 OS 文件。
+
 ## 每個檔案磁區大小容許多少個檔案共用？每個磁區大小容許的檔案共用上限為何？
 
 <table>
-  <caption>表 1 顯示根據磁區大小而容許的 Inode 數目上限。磁區大小在左側。Inode/檔案共用數目在右側。</caption>
+  <caption>表 1 顯示根據磁區大小而容許的 Inode 數目上限。磁區大小在左直欄中。Inode/檔案共用數目在右側。</caption>
   <thead>
     <tr>
       <th>磁區大小</th>
@@ -44,32 +47,44 @@ lastupdated: "2018-06-29"
   </thead>
   <tbody>
     <tr>
-      <td>20 GB </td>
+      <td>20 GB - 39 GB</td>
       <td>622,484</td>
     </tr>
     <tr>
-      <td>40 GB </td>
+      <td>40 GB - 79 GB</td>
       <td>1,245,084</td>
     </tr>          
     <tr>
-      <td>80 GB</td>
+      <td>80 GB - 99 GB</td>
       <td>2,490,263</td>
     </tr>          
     <tr>
-      <td>100 GB</td>
+      <td>100 GB - 249 GB</td>
       <td>3,112,863</td>
     </tr>          
     <tr>
-      <td>250 GB</td>
+      <td>250 GB - 499 GB</td>
       <td>7,782,300</td>
     </tr>          
     <tr>
-      <td>500 GB</td>
+      <td>500 GB - 999 GB</td>
       <td>15,564,695</td>
     </tr>
     <tr>
-      <td>1 TB+</td>
+      <td>1 TB</td>
       <td>31,876,593</td>
+    </tr>
+    <tr>
+      <td>2 TB</td>
+      <td>63,753,186</td>
+    </tr>
+    <tr>
+      <td>3 TB</td>
+      <td>95,629,970</td>
+    </tr>
+    <tr>
+      <td>4 TB - 12 TB</td>
+      <td>127,506,359</td>
     </tr>
    </tbody>
 </table>
@@ -101,7 +116,7 @@ IOPS 是在磁區層次上施行。換句話說，連接至具有 6000 IOPS 之�
 儲存空間內的目標延遲為 < 1 毫秒。儲存空間會連接至共用網路上的運算實例，因此，確切的效能延遲取決於該作業期間的網路資料流量。
 
 ## 刪除 {{site.data.keyword.filestorage_short}} 磁區時，資料會發生什麼情況？
-刪除儲存空間時，會移除該磁區上之資料的所有指標，因此資料會變成無法存取。如果將實體儲存空間重新佈建給另一個帳戶，則會指派一組新的指標。新帳戶無法存取已在實體儲存空間上的任何資料。這組新的指標全部顯示 0。新資料會改寫該實體儲存空間上已存在的任何無法存取的資料。
+{{site.data.keyword.filestorage_full}} 會向客戶呈現在任何重複使用之前抹除的實體儲存空間上的檔案共用。具有特殊規範需求的客戶（例如 NIST 800-88 媒體資料安全清除準則）必須先執行資料安全清除程序，再刪除其儲存空間。
 
 ## 從雲端資料中心解除任務的磁碟機會發生什麼情況？
 磁碟機解除任務時，IBM 會先破壞它們再進行處理。磁碟機會變成無法使用。已寫入該磁碟機的任何資料都會變成無法存取。

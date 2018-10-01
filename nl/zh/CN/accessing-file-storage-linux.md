@@ -2,13 +2,13 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-08-17"
 
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
 
-# 在 Linux 上访问 {{site.data.keyword.filestorage_short}}
+# 在 Linux 上安装 {{site.data.keyword.filestorage_short}}
 
 首先，确保通过 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} 对要访问 {{site.data.keyword.filestorage_full}} 卷的主机授权。
 

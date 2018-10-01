@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-09-07"
 
 ---
 {:new_window: target="_blank"}
@@ -10,7 +10,7 @@ lastupdated: "2018-06-29"
  
 # 使用 Plesk 配置 {{site.data.keyword.filestorage_short}} 进行备份
 
-您可以使用这些指示信息在 Plesk 中配置 {{site.data.keyword.blockstoragefull}} 进行备份。假定以 root 用户或 sudo 用户身份通过 SSH 登录到系统，并且有完整的管理级别 Plesk 访问权。此示例基于 CentOS7 主机。
+您可以使用这些指示信息在 Plesk 中配置 {{site.data.keyword.filestorage_full}} 进行备份。假定以 root 用户或 sudo 用户身份通过 SSH 登录到系统，并且有完整的管理级别 Plesk 访问权。此示例基于 CentOS7 主机。
 
 **注** - 您可以在[此处](https://docs.plesk.com/en-US/12.5/administrator-guide/backing-up-and-restoration.59256/){:new_window}找到 Plesk 文档中有关备份和复原的内容。
 

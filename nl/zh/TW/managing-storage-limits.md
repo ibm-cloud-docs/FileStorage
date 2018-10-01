@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-08-21"
 
 ---
 {:new_window: target="_blank"}
@@ -10,7 +10,7 @@ lastupdated: "2018-06-29"
 
 # 管理儲存空間限制
 
-依預設，您可以在全球佈建總計 250 個 {{site.data.keyword.blockstorageshort}} 磁區。 
+依預設，您可以在全球佈建總計 250 個 {{site.data.keyword.filestorage_short}} 磁區。 
 
 您可以在 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} 中提交問題單，以要求提高限制。要求經核准之後，您會收到針對特定資料中心所設定的磁區限制。  
 

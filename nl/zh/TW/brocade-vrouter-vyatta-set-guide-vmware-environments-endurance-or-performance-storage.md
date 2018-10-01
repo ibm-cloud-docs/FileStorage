@@ -2,11 +2,10 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-05-11"
+lastupdated: "2018-08-22"
 
 ---
 {:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
 
 # 針對含 {{site.data.keyword.filestorage_short}} 的 VMware 環境設定 Brocade vRouter (Vyatta)
 
@@ -25,7 +24,7 @@ Brocade vRouter (Vyatta) 閘道會作為環境的閘道及路由器，並包含�
 
 圖 1 說明每一個區域之間的通訊。您的環境可能有所不同，因此可能需要不同的區域及防火牆規則。
 
-![圖 1：Brocade vRouter (Vyatta) 區域配置](/images/figure1_6.png)
+![圖 1 - Brocade vRouter (Vyatta) 區域配置](/images/figure1_6.png)
 
 
 
@@ -360,5 +359,3 @@ save
 6. 按一下**確定**。
 
 即會透過 Brocade vRouter (Vyatta) 遞送您的 VLAN。如果您發現兩個區域之間的通訊受阻，請略過討論中的一或多個特定 VLAN，並檢查 Brocade vRouter (Vyatta) 設定。
-
- 

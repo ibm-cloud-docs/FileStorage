@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-09-17"
 
 ---
 {:new_window: target="_blank"}
@@ -111,4 +111,5 @@ lastupdated: "2018-06-29"
 5. 单击**是**以启动复原。应该会在页面顶部收到一条消息，声明正在使用所选快照复原卷。此外，{{site.data.keyword.filestorage_short}} 上的相应卷旁边会显示一个图标，指示正在执行活动事务。将鼠标悬停在该图标上将生成一个用于显示事务的窗口。事务完成后，该图标会消失。
 6. 安装存储卷并将其重新连接到主机。
   - 单击[此处](accessing-file-storage-linux.html)以获取有关 Linux 上 {{site.data.keyword.filestorage_short}} 的指示信息。
-    >**注** - 复原卷会导致删除在所复原快照之前生成的所有快照。
+    
+>**注**：复原卷会导致在用于复原的快照之后拍摄的所有快照均会被删除。

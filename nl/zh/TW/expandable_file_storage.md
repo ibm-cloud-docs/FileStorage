@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-09-12"
 
 ---
 {:new_window: target="_blank"}
@@ -30,10 +30,6 @@ lastupdated: "2018-06-29"
 此特性只適用於佈建在具有加強功能之[資料中心](new-ibm-block-and-file-storage-location-and-features.html)內的儲存空間。在這些資料中心內佈建的加密儲存空間最多可以增加到 12 TB。 
 
 已佈建「耐久性」之 {{site.data.keyword.filestorage_short}} 的現有大小限制仍然適用（10 IOPS 層級最多為 4 TB，而所有其他層級最多為 12 TB）。
-
-## 識別合格的儲存空間
-
-已佈建加強型功能的儲存空間一律採取靜態加密。如果入口網站使用者介面中儲存空間旁具有「鎖定」圖示，則可以輕鬆地分辨出儲存空間符合資格。 
 
 ## 重新調整儲存空間大小
 

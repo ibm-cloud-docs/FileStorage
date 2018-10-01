@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-09-24"
 
 ---
 {:pre: .pre}
@@ -10,7 +10,7 @@ lastupdated: "2018-06-29"
 
 # 使用 VMware 佈建 {{site.data.keyword.filestorage_short}}
 
-以下是在 {{site.data.keyword.BluSoftlayer_full}} 為 vSphere 5.5 及 vSphere 6.0 環境訂購及配置 {{site.data.keyword.filestorage_full}} 的步驟。如果您需要超過 8 個與 VMWare 主機的連線，則選擇 NFS {{site.data.keyword.filestorage_short}} 是最佳作法。
+以下是在 {{site.data.keyword.BluSoftlayer_full}} 為 vSphere 5.5 及 vSphere 6.0 環境訂購及配置 {{site.data.keyword.filestorage_full}} 的步驟。如果您需要超過 8 個與 VMware 主機的連線，則選擇 NFS {{site.data.keyword.filestorage_short}} 是最佳作法。
 
 {{site.data.keyword.filestorage_short}} 的設計旨在支援需要可預測效能層次的高 I/O 應用程式。透過將通訊協定層次的每秒輸入/輸出作業數 (IOPS) 配置給個別磁區，即可達成可預測效能。
 
@@ -18,22 +18,22 @@ lastupdated: "2018-06-29"
 
 「耐久性」及「效能」{{site.data.keyword.filestorage_short}} 的定價及配置選項，是根據保留空間與所提供 IOPS 的組合進行收費。
 
-### 訂購考量
+## 訂購考量
 
 訂購 {{site.data.keyword.filestorage_short}} 時，請考量下列資訊：
 
 - 當您決定大小時，請考量工作負載的大小以及所需的傳輸量。大小與「耐久性」服務有重大關係，「耐久性」服務會根據容量 (IOPS/GB) 以線性方式擴充效能。反之，「效能」服務可讓管理者獨立選擇容量和效能。傳輸量需求與「效能」有重大關係。
   >**附註**：傳輸量計算方式為 IOPS x 16 KB。IOPS 的測量基礎是 16 KB 區塊大小（具有 50/50 讀寫混合）。<br/>增加區塊大小會增加傳輸量，但會減少 IOPS。例如，將區塊大小加倍為 32 KB 區塊可維持最大傳輸量，但會讓 IOPS 減半。
 - NFS 使用許多額外的檔案控制作業（例如 `lookup`、`getattr` 及 `readdir`）。除了讀/寫作業之外，這些作業也可以計算為 IOPS，而且會依作業類型及 NFS 版本而不同。
-- 在技術上，可以將多個磁區等量配置在一起，以達到更高的 IOPS 及更多傳輸量。不過，VMware 建議每個磁區有單一的虛擬機器檔案系統 (VMFS) 資料儲存庫，以避免效能降低。
 - {{site.data.keyword.filestorage_short}} 磁區會向授權裝置、子網路或 IP 位址公開。
-- 只有「耐久性」{{site.data.keyword.filestorage_short}} 磁區上原本即提供 Snapshot 及「抄寫」服務。「效能」{{site.data.keyword.filestorage_short}} 沒有這些功能。
-- 為避免在路徑失效接手期間發生儲存空間斷線，{{site.data.keyword.IBM}} 建議安裝 VMWare 工具，以設定適當的逾時值。不需要變更值，預設值就足以確保 VMWare 主機不會失去連線功能。
+- 為避免在路徑失效接手期間發生儲存空間斷線，{{site.data.keyword.IBM}} 建議安裝 VMware 工具，以設定適當的逾時值。不需要變更值，預設值就足以確保 VMware 主機不會中斷連線。
 - 在 {{site.data.keyword.BluSoftlayer_full}} 環境中，同時支援 NFS 第 3 版及 NFS 4.1 版。不過，{{site.data.keyword.IBM}} 建議您使用 NFS 第 3 版。因為 NFS 4.1 版是有狀態的通訊協定（不像 NFSv3 是無狀態的通訊協定），所以在網路事件期間可能會發生通訊協定問題。NFS 4.1 版必須靜止所有作業，然後完成鎖定收回。進行這些作業時，可能會發生中斷。
+
+如需相關資訊，請參閱 VMware 的白皮書：[Best Practices for running VMware vSphere on Network Attached Storage](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){:new_window}
 
 **NFS 通訊協定 VMware 特性支援矩陣**
 <table>
-  <caption>「表 1」顯示適用於兩個不同版本 NFS 的 vSphere 特性。</caption>
+  <caption>表 1 顯示適用於兩個不同版本 NFS 的 vSphere 特性。</caption>
  <thead>
   <tr>
    <th>vSphere 特性</th>
@@ -89,26 +89,24 @@ lastupdated: "2018-06-29"
   </tr>
  </tbody>
 </table>
-*來源：[VMWare - NFS Protocols and ESXi](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){:new_window}*
+*來源 - [VMware - NFS 通訊協定及 ESXi](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){:new_window}*
 
 
 
+### 使用 Snapshot
 
-
-### 使用耐久性 {{site.data.keyword.filestorage_short}} Snapshot
-
-「耐久性」{{site.data.keyword.filestorage_short}} 容許管理者設定 Snapshot 排程，以自動建立及刪除每一個儲存空間磁區的 Snapshot 副本。他們也可以建立額外的 Snapshot 排程（每小時、每日、每週）來自動擷取 Snapshot，以及針對企業永續及災難回復 (BCDR) 情境手動建立特定 Snapshot。已保留 Snapshot 及使用空間，會透過 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} 將自動警示傳遞給磁區擁有者。
+{{site.data.keyword.filestorage_short}} 容許管理者設定 Snapshot 排程，以自動建立及刪除每個儲存空間磁區的 Snapshot 副本。他們也可以建立額外的 Snapshot 排程（每小時、每日、每週）來自動擷取 Snapshot，以及針對企業永續及災難回復 (BCDR) 情境手動建立特定 Snapshot。已保留 Snapshot 及使用空間，會透過 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} 將自動警示傳遞給磁區擁有者。
 
 需要有「Snapshot 空間」，才能使用 Snapshot。您可以在初次訂購磁區時購買空間，或在初次佈建之後，透過**磁區詳細資料**頁面購買空間，方法是按一下**動作**然後選取**新增 Snapshot 空間**。
 
-請務必注意，VMware 環境並不知道 Snapshot。「耐久性」{{site.data.keyword.filestorage_short}} Snapshot 功能不得與 VMware Snapshot 混淆。必須從 {{site.data.keyword.filestorage_short}} 處理任何使用「耐久性」[{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} Snapshot 特性的回復。 
+請務必注意，VMware 環境並不知道 Snapshot。「耐久性」{{site.data.keyword.filestorage_short}} Snapshot 功能不得與 VMware Snapshot 混淆。必須從 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} 處理任何使用 {{site.data.keyword.filestorage_short}} Snapshot 特性的回復。
 
-還原「耐久性」{{site.data.keyword.filestorage_short}} 磁區時，需要關閉「耐久性」{{site.data.keyword.filestorage_short}} 上所有 VM 的電源。磁區必須暫時從 ESXi 主機卸載，以避免在處理程序期間發生任何資料損毀。
+還原 {{site.data.keyword.filestorage_short}} 磁區時，需要關閉 {{site.data.keyword.filestorage_short}} 上所有 VM 的電源。磁區必須暫時從 ESXi 主機卸載，以避免在處理程序期間發生任何資料損毀。
 
 如需配置 Snapshot 的詳細資料，請參閱 [Snapshot](snapshots.html) 文章。
 
 
-### 使用耐久性抄寫
+### 使用抄寫
 
 抄寫使用您的其中一個 Snapshot 排程，自動將 Snapshot 複製到遠端資料中心內的目的地磁區。如果發生災難性事件或資料毀損，則可以在遠端網站中回復副本。
 
@@ -117,11 +115,11 @@ lastupdated: "2018-06-29"
 - 透過失效接手至目的地磁區，快速從網站故障及其他災難回復
 - 失效接手至 DR 副本中的特定時間點
 
-您必須先建立 Snapshot 排程，才能進行抄寫。 
+您必須先建立 Snapshot 排程，才能進行抄寫。
 
-當您失效接手時，您會將「開關」從主要資料中心的儲存空間磁區快速切換到遠端資料中心的目的地磁區。例如，您的主要資料中心是在「倫敦」，而次要資料中心是在「阿姆斯特丹」。如果發生故障事件，您會失效接手至「阿姆斯特丹」。這表示從「阿姆斯特丹」的 vSphere Cluster 實例連接至現行主要磁區。修復「倫敦」中的磁區之後，會擷取「阿姆斯特丹」磁區的 Snapshot。然後，您可以從「倫敦」的運算實例失效回復至「倫敦」及那個再度成為主要磁區的磁區。 
+當您失效接手時，您會將「開關」從主要資料中心的儲存空間磁區快速切換到遠端資料中心的目的地磁區。例如，您的主要資料中心是在「倫敦」，而次要資料中心是在「阿姆斯特丹」。如果發生故障事件，您會失效接手至「阿姆斯特丹」。這表示從「阿姆斯特丹」的 vSphere Cluster 實例連接至現行主要磁區。修復「倫敦」中的磁區之後，會擷取「阿姆斯特丹」磁區的 Snapshot。然後，您可以從「倫敦」的運算實例失效回復至「倫敦」及那個再度成為主要磁區的磁區。
 
-在磁區失效回復至主要資料中心之前，需要先停止在遠端網站的使用。會先擷取任何新資訊或已變更資訊的 Snapshot，並抄寫至主要資料中心，然後才能在正式作業網站 ESXi 主機上重新進行裝載。
+在磁區撤回至主要資料中心之前，需要先停止在遠端網站的使用。會先建立任何新資訊或已變更資訊的 Snapshot，並抄寫至主要資料中心，然後才能在正式作業網站 ESXi 主機上重新進行裝載。
 
 如需配置抄本的相關資訊，請參閱[抄寫](replication.html)。
 
@@ -130,12 +128,12 @@ lastupdated: "2018-06-29"
 
 ## 訂購 {{site.data.keyword.filestorage_short}}
 
-您可以針對 VMware ESXi 5 環境訂購及配置 {{site.data.keyword.filestorage_short}}。請將下列資訊與「進階單一網站 VMware 參照架構」一起使用，以在 VMware 環境中設定其中一個儲存空間選項。
+您可以針對 VMware ESXi 5 環境訂購及配置 {{site.data.keyword.filestorage_short}}。請將下列資訊與[進階單一網站 VMware 參照架構](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}一起使用，以在 VMware 環境中設定其中一個儲存空間選項。
 
 {{site.data.keyword.filestorage_short}} 可以透過 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} 訂購，方法是透過**儲存空間** > **{{site.data.keyword.filestorage_short}}** 來存取 {{site.data.keyword.filestorage_short}} 頁面。
 
 
-### 1. 訂購 {{site.data.keyword.filestorage_short}}
+### 1. 訂購 
 
 請使用下列步驟來訂購 {{site.data.keyword.filestorage_short}}：
 1. 按一下 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} 首頁上的**儲存空間** > **{{site.data.keyword.filestorage_short}}**。
@@ -181,7 +179,7 @@ lastupdated: "2018-06-29"
 - 具有網際網路存取的電腦，並且已安裝 Web 瀏覽器軟體及「遠端桌面通訊協定 (RDP)」用戶端。
 
 
-### 2. 配置「VMware 主機」。
+### 1. 配置「VMware 主機」。
 
 1. 從已連接網際網路的電腦啟動 RDP 用戶端，並建立與已安裝 vSphere vCenter 之相同資料中心內佈建的 {{site.data.keyword.BluVirtServers_full}} 的 RDP 階段作業。
 2. 從 {{site.data.keyword.BluVirtServers_short}} 中，啟動 Web 瀏覽器，並透過 vSphere Web Client 連接至 VMware vCenter。
@@ -189,7 +187,7 @@ lastupdated: "2018-06-29"
 4. 確定在所有主機上已開啟 NFS 用戶端的防火牆埠，才能在 vSphere 主機上配置 NFS 用戶端。這會在較新版本的 vSphere 中自動開啟。若要檢查是否已開啟埠，請移至 VMware® vCenter™ 中的 **ESXi 主機管理**標籤、選取**設定**，然後選取**安全設定檔**。在**防火牆**區段中，按一下**編輯**，然後向下捲動至 **NFS 用戶端**。
 5. 確定已提供**容許來自任何 IP 位址或 IP 位址清單的連線**。<br/>
    ![容許連線](/images/1_4.png)
-6. 移至 **ESXi 主機管理**標籤、選取**管理**，然後選取**網路**，來配置「大型訊框」。
+6. 移至 **ESXi 主機管理**標籤、選取**管理**，然後選取**網路**，來配置「巨大訊框」。
 7. 選取 **VMkernel 配接卡**、強調顯示 **vSwitch**，然後按一下**編輯**（鉛筆圖示）。
 8. 選取 **NIC 設定**，然後確定 NIC MTU 已設為 9000。
 9. **選用**。驗證巨大訊框設定。
@@ -205,7 +203,7 @@ lastupdated: "2018-06-29"
 如需 VMware 及「巨大訊框」的相關資訊，請按一下[這裡](https://kb.vmware.com/s/article/1003712){:new_window}。
 
 
-### 3. 將上行鏈路配接卡新增至虛擬交換器
+### 2. 將上行鏈路配接卡新增至虛擬交換器
 
 1. 移至 **ESXi 主機管理**標籤，選取**管理**，然後選取**網路**，來配置新的上行鏈路配接卡。
 2. 選取**實體配接卡**標籤
@@ -221,7 +219,7 @@ lastupdated: "2018-06-29"
 11. 驗證**負載平衡**選項已設為**根據原始虛擬埠來遞送**，然後按一下**確定**。
 
 
-### 4. 配置 ESXi 靜態遞送（選用）
+### 3. 配置 ESXi 靜態遞送（選用）
 
 此架構手冊的網路配置使用最少數目的埠群組。如果您有 NFS 儲存空間的 VMkernel 埠群組，則必須採取額外的步驟。依預設，ESXi 會使用位在與 NFS 磁區相同子網路上的 VMkernel 埠，以在「耐久性」/「效能」儲存空間上裝載 NFS 磁區。因為使用第 3 層遞送來裝載 NFS 磁區，所以必須強制 ESXi 使用已配置成裝載 NFS 磁區的 VMkernel 埠。若要這麼做，則必須建立一個指向「耐久性」/「效能」儲存空間陣列的靜態路由。
 
@@ -230,24 +228,24 @@ lastupdated: "2018-06-29"
    ping <host name of the endurance/performance array>
    ```
    {: pre}
-   
+
    >**附註**：NFS 儲存空間 DNS 主機名稱是獲指派多個 IP 位址的「轉遞區域 (FZ)」。這些 IP 位址是靜態的，並屬於該特定 DNS 主機名稱。您可以使用其中任何一個 IP 位址來存取特定的磁區。
 
-   
+
    ```
    esxcli network ip route ipv4 add –gateway GATEWAYIP –network <result of ping command>/32
    ```
    {: pre}
 
-2. 在 ESXi 5.0 及更早版本上，靜態路由在各次重新開機之間無法持續保存。為了確定任何已新增的靜態路由都能持續保存，需要將此指令新增至每台主機上的 `local.sh` 檔案，該檔案位於 `/etc/rc.local.d/` 目錄中。請使用視覺化編輯器開啟 `local.sh` 檔案，並且在步驟 4.1 中新增第二個指令。`exit 0` 行。 
+2. 在 ESXi 5.0 及更早版本上，靜態路由在各次重新開機之間無法持續保存。為了確定任何已新增的靜態路由都能持續保存，需要將此指令新增至每台主機上的 `local.sh` 檔案，該檔案位於 `/etc/rc.local.d/` 目錄中。請使用視覺化編輯器開啟 `local.sh` 檔案，並且在 `exit 0` 行前面新增步驟 4.1 中的第二個指令。
 
 >**附註**<br/>- 記下 IP 位址，因為它可以在下一步中用於裝載磁區。<br/>需要對計劃要裝載至 ESXi 主機的每一個 NFS 磁區執行此處理程序。<br/>如需相關資訊，請參閱 VMware KB 文章：[在 ESXi 主機上配置 VMkernel 埠的靜態路由](https://kb.vmware.com/s/article/2001426){:new_window}。
 
 
-##  在 ESXi 主機上裝載 {{site.data.keyword.filestorage_short}} 磁區
+##  在 ESXi 主機上建立及裝載 {{site.data.keyword.filestorage_short}} 磁區
 
 1. 按一下**移至 vCenter** 圖示，然後按一下**主機及叢集**。
-2. 在**相關物件**標籤上，按一下**資料儲存庫**。 
+2. 在**相關物件**標籤上，按一下**資料儲存庫**。
 3. 按一下**建立新的資料儲存庫**圖示。
 4. 在**新建資料儲存庫**畫面上，選取 WMware 資料儲存庫的位置（您的 ESXi 主機），然後按**下一步**。
 5. 在**類型**畫面上，選取 **NFS**，然後按**下一步**。
@@ -256,7 +254,7 @@ lastupdated: "2018-06-29"
 8. 檢閱下一個畫面上的輸入，然後按一下**完成**。
 9. 針對任何其他 {{site.data.keyword.filestorage_short}} 磁區重複進行。
 
->**附註**：{{site.data.keyword.BluSoftlayer_full}} 建議使用 FQDN 名稱來連接至 WMware 資料儲存庫。使用直接 IP 定址可能會略過使用 FQDN 所提供的負載平衡機制。 
+>**附註**：{{site.data.keyword.BluSoftlayer_full}} 建議使用 FQDN 名稱來連接至 WMware 資料儲存庫。使用直接 IP 定址可能會略過使用 FQDN 所提供的負載平衡機制。
 
 若要使用 IP 位址，而非 FQDN，只需要對伺服器進行連線測試即可取得 IP 位址。
 ```
@@ -305,7 +303,7 @@ Storage I/O Control (SIOC) 是一種特性，可供使用 Enterprise Plus 授權
 請使用下列步驟來變更 VDisk 共用及限制。
 
 1. 在 **VM 及範本**庫存中，選擇 {{site.data.keyword.BluVirtServers_short}}。
-2. 選取要進行 I/O 控制的 {{site.data.keyword.BluVirtServers_short}}。
+2. 選取「I/O 控制」的 {{site.data.keyword.BluVirtServers_short}}。
 3. 按一下**管理**標籤，然後按一下**設定**。按一下**編輯**。
 4. 展開**硬碟**箭頭。選取適合您環境的**修改共用**或**限制 IOPS**。從清單中選擇虛擬硬碟，然後修改「共用」選項來選擇要配置給 {{site.data.keyword.BluVirtServers_short}} 的相對共用數目（「低」、「正常」或「高」）。您也可以按一下**自訂**，然後輸入使用者定義的共用值。
 5. 按一下**限制 IOPS** 直欄，然後輸入要配置給虛擬機器的儲存空間資源上限。
@@ -331,12 +329,12 @@ Storage I/O Control (SIOC) 是一種特性，可供使用 Enterprise Plus 授權
 |NFS.MaxQueueDepth|	64 |
 
 
-### 使用 CLI 來更新 ESXi 5.x 主機上的進階配置參數：
+### 使用 CLI 來更新 ESXi 5.x 主機上的進階配置參數
 
 下列範例使用 CLI 來設定進階配置參數，然後檢查它們。在 ESXi 5.x 主機的 `/usr/sbin` 目錄中，可以找到範例中所使用的 `esxcfg-advcfg` 工具。
 
    - 從 ESXi 5.x CLI 設定進階配置參數。
-     
+
      ```
      #esxcfg-advcfg -s 32 /Net/TcpipHeapSize
      #esxcfg-advcfg -s 128 /Net/TcpipHeapMax(For vSphere 5.0/5.1)
@@ -350,9 +348,9 @@ Storage I/O Control (SIOC) 是一種特性，可供使用 Enterprise Plus 授權
      #esxcfg-advcfg -s 32 /Disk/QFullSampleSize
      #esxcfg-advcfg -s 8 /Disk/QFullThreshold
      ```
-  
+
   - 從 ESXi 5.x CLI 檢查進階配置參數。
-  
+
     ```
    #esxcfg-advcfg -g /Net/TcpipHeapSize
    #esxcfg-advcfg -g /Net/TcpipHeapMax
@@ -368,7 +366,7 @@ Storage I/O Control (SIOC) 是一種特性，可供使用 Enterprise Plus 授權
 
 ## 針對 Windows 及 Linux 在 {{site.data.keyword.BluSoftlayer_notm}} 中啟用巨大訊框
 
-大型訊框是有效負載大於標準最大傳輸單位 (MTU) 1,500 位元組的乙太網路訊框。大型訊框用於支援最少 1 Gbps 的區域網路，且最大可達到 9,000 個位元組。
+巨大訊框是有效負載大於標準最大傳輸單位 (MTU) 1,500 位元組的乙太網路訊框。巨大訊框用於支援最少 1 Gbps 的區域網路，且最大可達到 9,000 個位元組。
 
 必須在來源裝置 <-> 交換器 <-> 路由器 <-> 交換器 <-> 目的地裝置中的整個網路路徑上，配置相同的巨大訊框。如果整個鏈結未設為相同，則會預設為鏈結的最低設定。{{site.data.keyword.BluSoftlayer_full}} 目前將網路裝置設為 9,000。所有客戶裝置都需要設為相同的 9,000 值。
 
@@ -376,7 +374,7 @@ Storage I/O Control (SIOC) 是一種特性，可供使用 Enterprise Plus 授權
 
 1. 開啟**網路及共用中心**。
 2. 按一下**變更介面卡設定**。
-3. 用滑鼠右鍵按一下您要啟用大型訊框的 NIC，然後選取**內容**。
+3. 用滑鼠右鍵按一下您要啟用巨大訊框的 NIC，然後選取**內容**。
 4. 在**網路**標籤下，按一下網路配接卡的**設定**。
 5. 選取**進階**標籤。
 6. 選取**巨大訊框**，然後將值從 **disabled** 變更為您要的值。此值（例如 9 KB 或 9014 位元組）取決於 NIC。
@@ -387,13 +385,13 @@ Storage I/O Control (SIOC) 是一種特性，可供使用 Enterprise Plus 授權
 
 ### 在 Linux 中啟用巨大訊框
 
-1. 編輯 eth0 介面的網路配置檔。 
+1. 編輯 eth0 介面的網路配置檔。
    - CentOS/RHEL/Fedora Linux 使用者編輯 `/etc/sysconfig/network-script/ifcfg-eth0`
      ```
      # vi /etc/sysconfig/network-script/ifcfg-eth0
      ```
      {: pre}
-   
+
    - Debian/Ubuntu Linux 使用者編輯 `/etc/network/interfaces`。
 
 2. 附加下列配置指引，以指定訊框大小（以位元組為單位）。
@@ -402,7 +400,7 @@ Storage I/O Control (SIOC) 是一種特性，可供使用 Enterprise Plus 授權
      MTU 9000
      ```
      {: pre}
-     
+
    - Debian/Ubuntu Linux 
      ```
      MTU=9000 
@@ -414,7 +412,7 @@ Storage I/O Control (SIOC) 是一種特性，可供使用 Enterprise Plus 授權
    # /etc/init.d/networking restart
    ```
    {: pre}
-   
+
    此動作會導致網路連線短暫中斷。
 
 在[這裡](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}進一步瞭解「進階單一網站 VMware 參照架構」。

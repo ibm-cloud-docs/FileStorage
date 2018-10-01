@@ -2,13 +2,13 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-08-17"
 
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
 
-# 在 Linux 上存取 {{site.data.keyword.filestorage_short}}
+# 在 Linux 上裝載 {{site.data.keyword.filestorage_short}}
 
 首先，請確定要存取 {{site.data.keyword.filestorage_full}} 磁區的主機已透過 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} 獲得授權。
 

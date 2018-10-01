@@ -2,12 +2,12 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-09-18"
 
 ---
 {:new_window: target="_blank"}
 
-# {{site.data.keyword.filestorage_short}} - 常见问题
+# 常见问题
 
 ## 如何判断哪些 {{site.data.keyword.filestorage_short}} 卷已加密？
 查看客户门户网站中 {{site.data.keyword.filestorage_short}} 的列表。您将在 LUN/卷名右侧看到“锁定”图标，指示已对这些卷进行加密。
@@ -27,15 +27,18 @@ lastupdated: "2018-06-29"
 增强型数据中心内供应的所有加密 {{site.data.keyword.filestorage_short}} 卷的安装点与非加密卷不同。要确保使用的是正确的安装点，可以在 UI 中的**卷详细信息**页面中查看安装点信息。还可以通过 API 调用来访问正确的安装点：`SoftLayer_Network_Storage::getNetworkMountAddress()`。
 
 ## 可以供应多少个卷？
-缺省情况下，总共可以供应 250 个块存储卷和文件存储卷。要增大限制，请联系销售代表。
+缺省情况下，总共可以供应 250 个块存储卷和文件存储卷。要增大限制，请联系销售代表。有关更多信息，请参阅[管理存储限制](managing-storage-limits.html)。
 
 ## 一个供应的 {{site.data.keyword.filestorage_short}} 卷可以由多少个实例共享使用？
 每个文件卷的缺省授权数限制为 64。要增大此限制，请联系销售代表。
 
+## 一个主机可连接多少个 {{site.data.keyword.filestorage_short}} 卷？
+这取决于主机操作系统的处理能力，而不受 {{site.data.keyword.BluSoftlayer_full}} 的限制。有关可安装的文件共享数的限制，请参阅操作系统文档。
+
 ## 每种文件卷大小允许多少个文件共享？每种卷大小允许的最大文件共享数是多少？
 
 <table>
-  <caption>表 1 显示了根据卷大小允许的最大索引节点数。左侧是卷大小。右侧是索引节点数/文件共享数。</caption>
+  <caption>表 1 显示了根据卷大小允许的最大索引节点数。左列是卷大小。右列是索引节点数/文件共享数。</caption>
   <thead>
     <tr>
       <th>卷大小</th>
@@ -44,32 +47,44 @@ lastupdated: "2018-06-29"
   </thead>
   <tbody>
     <tr>
-      <td>20 GB</td>
+      <td>20 GB - 39 GB</td>
       <td>622,484</td>
     </tr>
     <tr>
-      <td>40 GB</td>
+      <td>40 GB - 79 GB</td>
       <td>1,245,084</td>
     </tr>          
     <tr>
-      <td>80 GB</td>
+      <td>80 GB - 99 GB</td>
       <td>2,490,263</td>
     </tr>          
     <tr>
-      <td>100 GB</td>
+      <td>100 GB - 249 GB</td>
       <td>3,112,863</td>
     </tr>          
     <tr>
-      <td>250 GB</td>
+      <td>250 GB - 499 GB</td>
       <td>7,782,300</td>
     </tr>          
     <tr>
-      <td>500 GB</td>
+      <td>500 GB - 999 GB</td>
       <td>15,564,695</td>
     </tr>
     <tr>
-      <td>1 TB+</td>
+      <td>1 TB</td>
       <td>31,876,593</td>
+    </tr>
+    <tr>
+      <td>2 TB</td>
+      <td>63,753,186</td>
+    </tr>
+    <tr>
+      <td>3 TB</td>
+      <td>95,629,970</td>
+    </tr>
+    <tr>
+      <td>4 TB - 12 TB</td>
+      <td>127,506,359</td>
     </tr>
    </tbody>
 </table>
@@ -101,7 +116,7 @@ IOPS 会在卷级别强制执行。换句话说，连接到一个具有 6000 IOP
 存储器中的目标等待时间小于 1 毫秒。存储器会连接到共享网络上的计算实例，所以确切的性能等待时间将取决于运行期间的网络流量。
 
 ## 删除 {{site.data.keyword.filestorage_short}} 卷时，数据会发生什么情况？
-删除存储器时，会除去该卷上数据的所有指针，因此数据会变得不可访问。如果将物理存储器重新供应给其他帐户，那么会分配一组新指针。新帐户无法访问物理存储器上原先存在的任何数据。这组新指针会全部显示为 0。新数据将覆盖该物理存储器上先前存在的任何不可访问的数据。
+{{site.data.keyword.filestorage_full}} 会在物理存储器上为客户提供文件共享，并且会在重复使用物理存储器之前擦除其上的数据。如果客户对合规性有特殊要求（如 NIST 800-88《存储介质清理指南》），那么在删除存储器之前，需要执行数据清理过程。
 
 ## 使驱动器从云数据中心退役时会发生什么情况？
 使驱动器退役后，IBM 会在处置前先销毁驱动器。驱动器将变为无法使用。写入该驱动器的任何数据都将变得无法访问。
