@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-09-12"
 
 ---
 {:new_window: target="_blank"}
@@ -30,10 +30,6 @@ L'extension du stockage principal entraîne le redimensionnement automatique de 
 Cette fonctionnalité est disponible uniquement pour un stockage mis à disposition dans des [centres de données](new-ibm-block-and-file-storage-location-and-features.html) dotés de capacités améliorées. Un stockage chiffré qui est mis à disposition dans ces centres de données peut être augmenté à hauteur de 12 To. 
 
 Les limitations de taille existantes pour le stockage {{site.data.keyword.filestorage_short}} qui a été mis à disposition avec l'option Endurance sont toujours applicables (jusqu'à 4 To pour un niveau de 10 IOPS et jusqu'à 12 To pour tous les autres niveaux).
-
-## Identification du stockage éligible
-
-Un stockage qui est mis à disposition avec des capacités améliorées est toujours chiffré au repos. Si votre stockage est marqué par une icône en forme de verrou dans l'interface utilisateur du portail, cela signifie qu'il est éligible pour l'extension. 
 
 ## Redimensionnement du stockage
 

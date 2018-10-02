@@ -15,7 +15,7 @@ CoreOS は、さまざまなインフラストラクチャーで大規模かつ�
 
 ## ポータブル・ストレージのマウント
 
-CoreOS では、システム・レベルのマウントは読み取り専用のディレクトリーに入っているため、2 次マウント・ファイルはすべて `/etc/systemd/system` ディレクトリーに入れます。 まず、`MOUNTPOINT.mount` ファイルを作成する必要があります。この `.mount` ファイルの **Where** セクションはファイル名と一致しなければなりません。 マウント・ポイントが `/` の直下にない場合は、`path-to-mount.mount` という構文を使用してファイルに名前を付ける必要があります。例えば、ポータブル・ストレージ・ドライブを `/mnt/www` にマウントする場合は、`mnt-www.mount` という名前をファイルに付けます。
+CoreOS では、システム・レベルのマウントは読み取り専用のディレクトリーに入っているため、2 次マウント・ファイルはすべて `/etc/systemd/system` ディレクトリーに入れます。 まず、`MOUNTPOINT.mount` ファイルを作成する必要があります。 この `.mount` ファイルの **Where** セクションはファイル名と一致しなければなりません。 マウント・ポイントが `/` の直下にない場合は、`path-to-mount.mount` という構文を使用してファイルに名前を付ける必要があります。 例えば、ポータブル・ストレージ・ドライブを `/mnt/www` にマウントする場合は、`mnt-www.mount` という名前をファイルに付けます。
 
 `fdisk` または `parted` を使用してパーティションを作成して、作成するファイル・システムが `.mount` ファイルにリストしたものと一致するようにしておくことができます。そうしないと、サービスは開始に失敗します。
 
@@ -44,9 +44,9 @@ $ systemctl enable --now mnt-www.mount
 
 ## NFS/{{site.data.keyword.filestorage_short}}のマウント
 
-{{site.data.keyword.filestorage_short}} のマウントのプロセスは同じです。マウントが NFS なので、マウント・ファイルで `Options=` 行を使用して追加のオプションを指定できます。 
+{{site.data.keyword.filestorage_short}} のマウントのプロセスは同じです。 マウントが NFS なので、マウント・ファイルで `Options=` 行を使用して追加のオプションを指定できます。 
 
-以下の例では、`/data/www` にマウントするように NFS を設定します。{{site.data.keyword.filestorage_short}}・インスタンスの NFS マウント・ポイントは、{{site.data.keyword.filestorage_short}}のリスト・ページから取得できます。また、API 呼び出し `SoftLayer_Network_Storage::getNetworkMountAddress()` を使用して取得することもできます。
+以下の例では、`/data/www` にマウントするように NFS を設定します。 {{site.data.keyword.filestorage_short}}・インスタンスの NFS マウント・ポイントは、{{site.data.keyword.filestorage_short}}のリスト・ページから取得できます。また、API 呼び出し `SoftLayer_Network_Storage::getNetworkMountAddress()` を使用して取得することもできます。
 
 ```
 $ cat data-www.mount

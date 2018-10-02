@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-09-17"
 
 ---
 {:new_window: target="_blank"}
@@ -111,4 +111,5 @@ Potresti dover riportare il tuo volume di archiviazione a uno specifico punto te
 5. Fai clic su **Yes** per avviare il ripristino. Aspettati un messaggio nella parte superiore della pagina che indica che è in corso il ripristino del volume utilizzando l'istantanea selezionata. Inoltre, compare un'icona accanto al tuo volume in {{site.data.keyword.filestorage_short}} che indica che è in corso una transazione attiva. Se passi il puntatore del mouse sull'icona, viene visualizzata una finestra che mostra la transazione. Una volta completata la transazione, l'icona scompare.
 6. Monta e ricollega il tuo volume di archiviazione all'host.
   - Fai clic [qui ](accessing-file-storage-linux.html) per le istruzioni di {{site.data.keyword.filestorage_short}} su Linux.
-    >**Nota** - Il ripristino di un volume comporta l'eliminazione di tutte le istantanee che erano state acquisite prima dell'istantanea ripristinata.
+    
+>**Nota** - Il ripristino di un volume comporta l'eliminazione di tutte le istantanee che erano state acquisite dopo che l'istantana era stata utilizzata per il ripristino.

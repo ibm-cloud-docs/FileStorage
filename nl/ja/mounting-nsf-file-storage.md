@@ -11,7 +11,7 @@ lastupdated: "2018-06-29"
 
 # CentOS への NFS/{{site.data.keyword.filestorage_short}}のマウント
 
-CentOS 7 への {{site.data.keyword.filestorage_full}} のマウントのプロセスは、[RHEL 6 への {{site.data.keyword.filestorage_short}} のマウント](accessing-file-storage-linux.html)のプロセスと同様です。しかし、マウントが NFS なので、マウント・ファイルで `Options=` 行を使用して追加のオプションをいくつか指定できます。次の例では、`/data/www` にマウントするように NFS を設定します。 
+CentOS 7 への {{site.data.keyword.filestorage_full}} のマウントのプロセスは、[RHEL 6 への {{site.data.keyword.filestorage_short}} のマウント](accessing-file-storage-linux.html)のプロセスと同様です。しかし、マウントが NFS なので、マウント・ファイルで `Options=` 行を使用して追加のオプションをいくつか指定できます。 次の例では、`/data/www` にマウントするように NFS を設定します。 
 
 >**注** - {{site.data.keyword.filestorage_short}}・インスタンスの NFS マウント・ポイントは、{{site.data.keyword.filestorage_short}}のリスト・ページから取得できます。また、API 呼び出し `SoftLayer_Network_Storage::getNetworkMountAddress()` を使用して取得することもできます。
 

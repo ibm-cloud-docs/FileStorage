@@ -2,12 +2,12 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-09-18"
 
 ---
 {:new_window: target="_blank"}
 
-# {{site.data.keyword.filestorage_short}} - Domande frequenti (FAQ - Frequently Asked Questions)
+# Domande frequenti (FAQ) 
 
 ## Come faccio a distinguere quali dei miei volumi {{site.data.keyword.filestorage_short}} sono crittografati?
 Ricerca nel tuo elenco di {{site.data.keyword.filestorage_short}} nel portale clienti. Puoi vedere un'icona di blocco a destra del nome LUN/volume per i volumi che sono crittografati.
@@ -16,26 +16,29 @@ Ricerca nel tuo elenco di {{site.data.keyword.filestorage_short}} nel portale cl
 {{site.data.keyword.filestorage_short}} di cui era stato eseguito il provisioning prima dell'upgrade a un data center non può essere crittografato. Il nuovo {{site.data.keyword.filestorage_short}} di cui è stato eseguito il provisioning in data center di cui è stato eseguito l'upgrade viene crittografato automaticamente. Non c'è alcuna impostazione di crittografia da cui scegliere, l'operazione è automatica. I dati su un'archiviazione non crittografata possono essere crittografati creando un nuovo volume e copiando quindi i dati nel nuovo volume crittografato con la migrazione basata sull'host. Per ulteriori informazioni, vedi [Migrazione dell'archiviazione file](/docs/infrastructure/FileStorage/migrate-file-storage-encrypted-file-storage.html).
 
 ## Come faccio a sapere se sto eseguendo il provisioning di {{site.data.keyword.filestorage_short}} in un data center di cui è stato eseguito l'upgrade?
-Nel modulo di ordine {{site.data.keyword.filestorage_short}}, tutti i data center di cui è stato eseguito l'upgrade sono segnalati da un asterisco (`*`). Durante il processo di ordine, stai dando un'indicazione che stai eseguendo il provisioning con la crittografia. Una volta eseguito il provisioning dell'archiviazione, puoi vedere un'icona nell'elenco archiviazioni che mostra il volume come crittografato.  
+Nel modulo di ordine {{site.data.keyword.filestorage_short}}, tutti i data center di cui è stato eseguito l'upgrade sono segnalati da un asterisco (`*`). Durante il processo di ordine, stai dando un'indicazione che stai eseguendo il provisioning con la crittografia. Una volta eseguito il provisioning dell'archiviazione, puoi vedere un'icona nell'elenco archiviazioni che mostra il volume come crittografato. 
 
 Il provisioning di tutte le condivisioni file e di tutti i volumi crittografati viene eseguito solo nei data center di cui è stato eseguito l'upgrade. Puoi trovare un elenco completo dei data center di cui è stato eseguito l'upgrade e delle funzioni disponibili [qui](/docs//infrastructure/BlockStorage/new-ibm-block-and-file-storage-location-and-features.html).
 
 ## Perché è possibile eseguire il provisioning di {{site.data.keyword.filestorage_short}} con un livello Endurance 10 IOPS in alcuni data center e non in altri?
-Il livello 10 IOPS/GB del tipo Endurance di {{site.data.keyword.filestorage_short}} è disponibile solo in data center selezionati e a tale selezione verranno a breve aggiunti dei nuovi data center.  Puoi trovare un elenco completo dei data center di cui è stato eseguito l'upgrade e delle funzioni disponibili [qui](/docs//infrastructure/BlockStorage/new-ibm-block-and-file-storage-location-and-features.html).
+Il livello 10 IOPS/GB del tipo Endurance di {{site.data.keyword.filestorage_short}} è disponibile solo in data center selezionati e a tale selezione verranno a breve aggiunti dei nuovi data center. Puoi trovare un elenco completo dei data center di cui è stato eseguito l'upgrade e delle funzioni disponibili [qui](/docs//infrastructure/BlockStorage/new-ibm-block-and-file-storage-location-and-features.html).
 
 ## Come posso trovare il punto di montaggio corretto per il mio {{site.data.keyword.filestorage_short}}?
 Tutti i volumi {{site.data.keyword.filestorage_short}} crittografati di cui viene eseguito il provisioning nei data center avanzati hanno un punto di montaggio diverso rispetto ai volumi non crittografati. Per assicurarti che stai usando il punto di montaggio corretto, visualizza le informazioni sul punto di montaggio nella pagina **Volume Details** nell'IU. Puoi inoltre accedere al punto di montaggio corrente tramite una chiamata API: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 
 ## Di quanti volumi posso eseguire il provisioning?
-Per impostazione predefinita, puoi eseguire il provisioning di un totale combinato di 250 volumi di archiviazione blocchi e file. Per incrementare il tuo limite, contatta il tuo rappresentante delle vendite.
+Per impostazione predefinita, puoi eseguire il provisioning di un totale combinato di 250 volumi di archiviazione blocchi e file. Per incrementare il tuo limite, contatta il tuo rappresentante delle vendite. Per ulteriori informazioni, vedi [Gestione dei limiti di archiviazione](managing-storage-limits.html).
 
 ## Quante istanze possono condividere l'uso di un volume {{site.data.keyword.filestorage_short}} di cui è stato eseguito il provisioning?
 Il limite predefinito per il numero di autorizzazioni per volume di file è 64. Per incrementare questo limite, contatta il tuo rappresentante delle vendite.
 
+## Quanti volumi {{site.data.keyword.filestorage_short}} possono essere collegati a un solo host?
+Dipende da ciò che può gestire il sistema operativo dell'host, non riguarda i limiti {{site.data.keyword.BluSoftlayer_full}}. Fai riferimento alla tua documentazione SO per i limiti sul numero di condivisioni file che possono essere montate.
+
 ## Quante condivisione file sono consentite in base alla dimensione del volume di file? Quali sono le dimensioni file massime consentite in base alla dimensione del volume?
 
 <table>
-  <caption>La tabella 1 mostra che il numero massimo di inode consentiti si basa sulla dimensione del volume. Le dimensioni del volume sono a sinistra. Il numero di inode/condivisioni file è a destra.</caption>
+  <caption>La tabella 1 mostra che il numero massimo di inode consentiti si basa sulla dimensione del volume. Le dimensioni del volume sono nella colonna di sinistra. Il numero di inode/condivisioni file è a destra.</caption>
   <thead>
     <tr>
       <th>Dimensione del volume</th>
@@ -44,32 +47,44 @@ Il limite predefinito per il numero di autorizzazioni per volume di file è 64. 
   </thead>
   <tbody>
     <tr>
-      <td>20 GB </td>
+      <td>20 GB - 39 GB</td>
       <td>622.484</td>
     </tr>
     <tr>
-      <td>40 GB </td>
+      <td>40 GB - 79 GB</td>
       <td>1.245.084</td>
     </tr>          
     <tr>
-      <td>80 GB</td>
+      <td>80 GB - 99 GB</td>
       <td>2.490.263</td>
     </tr>          
     <tr>
-      <td>100 GB</td>
+      <td>100 GB - 249 GB</td>
       <td>3.112.863</td>
     </tr>          
     <tr>
-      <td>250 GB</td>
+      <td>250 GB - 499 GB</td>
       <td>7.782.300</td>
     </tr>          
     <tr>
-      <td>500 GB</td>
+      <td>500 GB - 999 GB</td>
       <td>15.564.695</td>
     </tr>
     <tr>
-      <td>1 TB+</td>
+      <td>1 TB</td>
       <td>31.876.593</td>
+    </tr>
+    <tr>
+      <td>2 TB</td>
+      <td>63,753,186</td>
+    </tr>
+    <tr>
+      <td>3 TB</td>
+      <td>95,629,970</td>
+    </tr>
+    <tr>
+      <td>4 TB - 12 TB</td>
+      <td>127,506,359</td>
     </tr>
    </tbody>
 </table>
@@ -85,11 +100,11 @@ Il numero massimo di IOPS può essere ottenuto anche se utilizzi dimensioni bloc
 - 4 KB * 6000 IOPS == ~23,44 MB/sec
 
 
-## L'IOPS allocato viene implementato in base all'istanza o in base al volume? 
+## L'IOPS allocato viene implementato in base all'istanza o in base al volume?
 L'IOPS viene implementato a livello dei volumi. In altre parole, due host connessi a un volume con 6000 IOPS condividono questi 6000 IOPS.
 
 ## Occorre preriscaldare il volume per ottenere la velocità effettiva prevista?
-Non è necessario eseguire un preriscaldamento. Puoi osservare la velocità effettiva specificata non appena verrà eseguito il provisioning del volume. 
+Non è necessario eseguire un preriscaldamento. Puoi osservare la velocità effettiva specificata non appena verrà eseguito il provisioning del volume.
 
 ## È possibile ottenere una velocità effettiva maggiore se viene utilizzata una connessione Ethernet più veloce?
 I limiti di velocità effettiva sono impostati su un livello per volume/LUN; pertanto, l'utilizzo di una connessione Ethernet più veloce non aumenta tale limite impostato. Tuttavia, con una connessione Ethernet più lenta, la tua larghezza di banda può essere un potenziale collo di bottiglia.
@@ -101,7 +116,7 @@ I limiti di velocità effettiva sono impostati su un livello per volume/LUN; per
 La latenza di destinazione nell'archiviazione è di <1ms. L'archiviazione è connessa alle istanze di elaborazione su una rete condivisa e, pertanto, la latenza delle prestazioni esatta dipende dal traffico di rete durante l'operazione.
 
 ## Cosa succede ai dati quando i volumi {{site.data.keyword.filestorage_short}} vengono eliminati?
-Quando l'archiviazione viene eliminata, gli eventuali puntatori ai dati su tale volume vengono rimossi e, pertanto, i dati diventano inaccessibili. Se viene eseguito nuovamente il provisioning dell'archiviazione fisica a un altro account, viene assegnato un nuovo set di puntatori. Non vi è alcuna possibilità che il nuovo account acceda ad eventuali dati che erano presenti nell'archiviazione fisica. La nuova serie di puntatori mostra tutti 0. I nuovi dati sovrascrivono gli eventuali dati inaccessibili che erano presenti nell'archiviazione fisica.
+{{site.data.keyword.filestorage_full}} presenta le condivisioni file ai clienti sull'archiviazione fisica che viene ripulita prima di ogni riutilizzo. I clienti con requisiti speciali per la conformità come le linee guida NIST 800-88 per Media Sanitization devono eseguire la procedura di sanitizzazione dei dati prima di eliminare la propria archiviazione.
 
 ## Cosa succede alle unità che vengono disattivate dal data center cloud?
 Quando le unità vengono disattivate, IBM le distrugge prima del loro smaltimento. Le unità diventano inutilizzabili. Tutti i dati scritti in queste unità diventano inaccessibili.

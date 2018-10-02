@@ -26,8 +26,8 @@ In linea generale, lo spazio per le istantanee viene utilizzato dalle istantanee
 - A quante modifiche è soggetto il tuo file system attivo nel corso del tempo.
 - Per quanto tempo prevedi di conservare le istantanee.  
 
-Il modo per calcolare la quantità di spazio necessaria è **(Frequenza di modifica)** x **(numero di ore/giorni/settimane/mesi di conservazione dei dati)**.   
-> **Nota** - la prima istantanea utilizza una quantità trascurabile di spazio poiché è solo una copia dei metadati (puntatori) che indica i blocchi di file system attivi.  
+Il modo per calcolare la quantità di spazio necessaria è **(Frequenza di modifica)** x **(numero di ore/giorni/settimane/mesi di conservazione dei dati)**.  
+> **Nota** - la prima istantanea utilizza una quantità trascurabile di spazio poiché è solo una copia dei metadati (puntatori) che indica i blocchi di file system attivi. 
 
 Un volume con numerose modifiche e un lungo periodo di conservazione richiede più spazio di un volume con una modifica e una pianificazione di conservazione moderate. Un esempio per il primo tipo è un database con un'elevata frequenza di modifica. Un esempio per il secondo tipo è un archivio dati VMware.
 

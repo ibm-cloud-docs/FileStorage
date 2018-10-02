@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-08-21"
 
 ---
 {:new_window: target="_blank"}
@@ -10,9 +10,9 @@ lastupdated: "2018-06-29"
 
 # Gestione dei limiti di archiviazione
 
-Per impostazione predefinita, puoi eseguire il provisioning di un totale combinato di 250 volumi {{site.data.keyword.blockstorageshort}} globalmente. 
+Per impostazione predefinita, puoi eseguire il provisioning di un totale combinato di 250 volumi {{site.data.keyword.filestorage_short}} globalmente. 
 
-Puoi richiedere un aumento del limite inoltrando un ticket nel [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}. Una volta approvata la richiesta, ottieni un limite dei volumi che è impostato per uno specifico data center.   
+Puoi richiedere un aumento del limite inoltrando un ticket nel [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}. Una volta approvata la richiesta, ottieni un limite dei volumi che è impostato per uno specifico data center.  
 
 Per richiedere un aumento del limite, apri un ticket e indirizzalo al tuo rappresentante di vendita.
 

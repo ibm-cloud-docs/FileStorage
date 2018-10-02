@@ -2,14 +2,14 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-05-24"
+lastupdated: "2018-09-12"
 
 ---
 {:new_window: target="_blank"}
 
 # IOPS の調整
 
-この新機能により、{{site.data.keyword.blockstoragefull}} ストレージ・ユーザーは、既存の{{site.data.keyword.blockstorageshort}}の IOPS をただちに調整できます。 新しいストレージに複製を作成したり手動でデータをコピーしたりする必要はありません。調整中に、ストレージが停止したり、利用できなくなったりすることはありません。 
+この新機能により、{{site.data.keyword.filestorage_full}} ストレージ・ユーザーは、既存の{{site.data.keyword.filestorage_short}}の IOPS をただちに調整できます。 新しいストレージに複製を作成したり手動でデータをコピーしたりする必要はありません。 調整中に、ストレージが停止したり、利用できなくなったりすることはありません。
 
 ストレージの請求方法が更新され、新しい価格の日割り額が現在の請求サイクルに加算されます。 次の請求サイクルでは新しい価格が全額請求されます。
 
@@ -20,23 +20,23 @@ lastupdated: "2018-05-24"
 
 ## 制限
 
-この機能は、[一部のデータ・センター](new-ibm-block-and-file-storage-location-and-features.html)でのみ使用できます。 
+この機能は、[一部のデータ・センター](new-ibm-block-and-file-storage-location-and-features.html)でのみ使用できます。
 
 クライアントは IOPS を調整する際に、エンデュランスとパフォーマンスを切り替えることはできません。 ユーザーは、次の基準または制限に基づいて、ストレージの新しい IOPS ティアまたは IOPS レベルを指定できます。
 
 - 元のボリュームがエンデュランス 0.25 ティアである場合は、IOPS ティアを更新できません。
-- 元のボリュームが 0.30 IOPS/GB より低いパフォーマンスである場合、0.30 IOPS/GB 未満になる組み合わせのサイズと IOPS しかオプションとして提供されません。 
-- 元のボリュームが 0.30 IOPS/GB 以上のパフォーマンスである場合、0.30 IOPS/GB 以上になる組み合わせのサイズと IOPS しかオプションとして提供されません。 
+- 元のボリュームが 0.30 IOPS/GB 以下のパフォーマンスである場合、0.30 IOPS/GB 以下になる組み合わせのサイズと IOPS しかオプションとして提供されません。
+- 元のボリュームが 0.30 IOPS/GB より高いパフォーマンスである場合、0.30 IOPS/GB より高くなる組み合わせのサイズと IOPS しかオプションとして提供されません。
 
 ## レプリケーションに対する IOPS 調整の影響
 
-ボリュームでレプリケーションが実行されている場合は、プライマリーの IOPS の選択と一致するように自動的にレプリカが更新されます。 
+ボリュームでレプリケーションが実行されている場合は、プライマリーの IOPS の選択と一致するように自動的にレプリカが更新されます。
 
 ## 実際のストレージでの IOPS の調整
 
-1. {{site.data.keyword.blockstorageshort}}のリストに進みます
+1. {{site.data.keyword.filestorage_short}}のリストに進みます
     - カスタマー・ポータルから、**「ストレージ」**>**「{{site.data.keyword.filestorage_short}}」**をクリックします。または
-    - {{site.data.keyword.BluSoftlayer_full}} カタログで、**「インフラストラクチャー」** > **「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**をクリックします。 
+    - {{site.data.keyword.BluSoftlayer_full}} カタログで、**「インフラストラクチャー」** > **「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**をクリックします。
 2. リストからボリュームを選択し、**「アクション」** > **「ボリュームの変更 (Modify Volume)」**をクリックします。
 3. **「ストレージ IOPS オプション (Storage IOPS Options)」**で、新しい選択を行います。
     - エンデュランス (IOPS ティア)(Endurance (Tiered IOPS)): 0.25 IOPS/GB を超えるストレージの IOPS ティアを選択します。 IOPS ティアはいつでも上げることができます。 ただし、下げることができるのは、月に 1 回のみです。

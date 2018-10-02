@@ -35,7 +35,7 @@ La conception des instantanés dépend de l'environnement du client. Prenez en c
 - La fonction de suppression automatique des instantanés permet de contrôler la croissance de la consommation d'espace de stockage. <br/>
   >**Remarque** - le seuil de suppression automatique est fixé à 95 %.
     
-Les instantanés ne se substituent pas à la réplication de reprise après incident hors site ou à la sauvegarde à long terme. 
+Les instantanés ne se substituent pas à la réplication de reprise après incident hors site ou à la sauvegarde à long terme.
     
 **Comment les instantanés affectent-ils l'espace disque ?**
 

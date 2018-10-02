@@ -15,9 +15,9 @@ CoreOS는 다양한 인프라의 대규모 확장 가능한 배치를 쉽게 관
 
 ## 휴대용 스토리지 마운트
 
-시스템 레벨 마운트가 CoreOS의 읽기 전용 디렉토리에 있으므로, 모든 2차 마운트 파일은 `/etc/systemd/system` 디렉토리로 이동됩니다. 먼저 `MOUNTPOINT.mount` 파일을 작성해야 합니다. `.mount` 파일의 **Where** 섹션은 파일 이름과 일치해야 합니다. 마운트 지점이 `/` 바로 아래가 아닌 경우에는 `path-to-mount.mount` 구문을 사용하여 파일 이름을 지정해야 합니다. 예를 들어, `/mnt/www`에 휴대용 스토리지 드라이브를 마운트하려는 경우에는 파일 이름을 `mnt-www.mount`로 지정하십시오. 
+시스템 레벨 마운트가 CoreOS의 읽기 전용 디렉토리에 있으므로, 모든 2차 마운트 파일은 `/etc/systemd/system` 디렉토리로 이동됩니다. 먼저 `MOUNTPOINT.mount` 파일을 작성해야 합니다. `.mount` 파일의 **Where** 섹션은 파일 이름과 일치해야 합니다. 마운트 지점이 `/` 바로 아래가 아닌 경우에는 `path-to-mount.mount` 구문을 사용하여 파일 이름을 지정해야 합니다. 예를 들어, `/mnt/www`에 휴대용 스토리지 드라이브를 마운트하려는 경우에는 파일 이름을 `mnt-www.mount`로 지정하십시오.
 
-`fdisk` 또는 `parted`를 사용하여 파티션을 작성할 수 있으며, 작성하는 파일 시스템은 `.mount` 파일에 나열된 것과 일치하도록 해야 합니다. 그렇지 않은 경우에는 서비스가 시작되지 않습니다. 
+`fdisk` 또는 `parted`를 사용하여 파티션을 작성할 수 있으며, 작성하는 파일 시스템은 `.mount` 파일에 나열된 것과 일치하도록 해야 합니다. 그렇지 않은 경우에는 서비스가 시작되지 않습니다.
 
 
 ```
@@ -35,7 +35,7 @@ WantedBy = multi-user.target
 {:codeblock}
 
 
-CoreOS는 `systemd`를 사용하므로, 마운트 지점이 다시 시작 후에도 지속되도록 하려면 `*.mount` 파일을 사용으로 설정해야 합니다. `--now` 플래그를 사용하면 파티션이 즉시 마운트되며 부팅 시 시작하도록 설정됩니다. 
+CoreOS는 `systemd`를 사용하므로, 마운트 지점이 다시 시작 후에도 지속되도록 하려면 `*.mount` 파일을 사용으로 설정해야 합니다. `--now` 플래그를 사용하면 파티션이 즉시 마운트되며 부팅 시 시작하도록 설정됩니다.
 
 ```
 $ systemctl enable --now mnt-www.mount
@@ -44,9 +44,9 @@ $ systemctl enable --now mnt-www.mount
 
 ## NFS/{{site.data.keyword.filestorage_short}} 마운트
 
-{{site.data.keyword.filestorage_short}} 마운트 프로세스 또한 동일합니다. 마운트가 NFS이므로 사용자는 마운트 파일에 `Options=` 행을 사용하여 추가 옵션을 지정할 수 있습니다.  
+{{site.data.keyword.filestorage_short}} 마운트 프로세스 또한 동일합니다. 마운트가 NFS이므로 사용자는 마운트 파일에 `Options=` 행을 사용하여 추가 옵션을 지정할 수 있습니다. 
 
-예에서 NFS는 `/data/www`에 마운트되도록 설정되어 있습니다. {{site.data.keyword.filestorage_short}} 인스턴스의 NFS 마운트 지점은 {{site.data.keyword.filestorage_short}} 목록 페이지에서, 또는 API 호출 `SoftLayer_Network_Storage::getNetworkMountAddress()`를 통해 얻을 수 있습니다. 
+예에서 NFS는 `/data/www`에 마운트되도록 설정되어 있습니다. {{site.data.keyword.filestorage_short}} 인스턴스의 NFS 마운트 지점은 {{site.data.keyword.filestorage_short}} 목록 페이지에서, 또는 API 호출 `SoftLayer_Network_Storage::getNetworkMountAddress()`를 통해 얻을 수 있습니다.
 
 ```
 $ cat data-www.mount
@@ -64,7 +64,7 @@ WantedBy = multi-user.target
 ```
 {:codeblock}
 
-그 후 마운트를 사용으로 설정하고 올바르게 마운트되었는지 확인하십시오. 
+그 후 마운트를 사용으로 설정하고 올바르게 마운트되었는지 확인하십시오.
 
 ```
 systemctl enable --now /etc/systemd/system/data-www.mount
@@ -76,16 +76,16 @@ cluster1 ~ # mount |grep data
  
 ## NAS/CIFS 마운트
 
-CIFS 공유의 마운트는 기본적으로 CoreOS에서 지원되지 않지만, 호스트 시스템이 NAS 공유를 마운트할 수 있도록 하는 쉬운 임시 해결책이 있습니다. 컨테이너를 사용하여 `mount.cfis` 모듈을 빌드한 후 이를 CoreOS 시스템에 복사할 수 있습니다. 
+CIFS 공유의 마운트는 기본적으로 CoreOS에서 지원되지 않지만, 호스트 시스템이 NAS 공유를 마운트할 수 있도록 하는 쉬운 임시 해결책이 있습니다. 컨테이너를 사용하여 `mount.cfis` 모듈을 빌드한 후 이를 CoreOS 시스템에 복사할 수 있습니다.
  
-CoreOS 시스템에서 다음을 실행하여 Fedora 컨테이너를 다운로드하고 내부로 진입하십시오. 
+CoreOS 시스템에서 다음을 실행하여 Fedora 컨테이너를 다운로드하고 내부로 진입하십시오.
 
 ```
 docker run -t -i -v /tmp:/host_tmp fedora /bin/bash
 ```
 {:pre}
  
-컨테이너 내부에서 다음을 실행하여 CIFS 유틸리티를 빌드하십시오. 
+컨테이너 내부에서 다음을 실행하여 CIFS 유틸리티를 빌드하십시오.
 
 ```
 dnf groupinstall -y "Development Tools" "Development Libraries"

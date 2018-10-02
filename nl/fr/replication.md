@@ -6,7 +6,6 @@ lastupdated: "2018-09-17"
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 
 # Réplication de données
@@ -28,7 +27,7 @@ Pour obtenir la liste complète de la disponibilité des centres de données et 
 
 <table>
 	<caption style="text-align: left;"><p>Le tableau 1 répertorie l'ensemble des centres de données avec les fonctionnalités améliorées dans chaque région. Chaque région correspond à une colonne. Certaines villes, comme Dallas, San Jose, Washington DC, Amsterdam, Francfort, Londres et Sydney disposent de plusieurs centres de données.</p>
-		<p>&#42; Les centres de données de la région EU 1 ne comportent PAS de stockage amélioré. Les hôtes des centres de données comportant des fonctionnalités de stockage améliorées <strong>ne peuvent pas</strong> démarrer la réplication avec des cibles de réplique dans les centres de données de la région EU 1. </p>
+		<p>&#42; Les centres de données de la région EU 1 ne comportent PAS de stockage amélioré. Les hôtes des centres de données comportant des fonctionnalités de stockage améliorées <strong>ne peuvent pas</strong> démarrer la réplication avec des cibles de réplique dans les centres de données de la région EU 1.</p>
 </caption>
 	<thead>
 		<tr>
@@ -87,11 +86,11 @@ Pour obtenir la liste complète de la disponibilité des centres de données et 
 			</td>
 			<td>HKG02<br />
 				TOK02<br />
-        TOK04<br />
-        TOK05<br/>
+				TOK04<br />
+	                        TOK05<br />
 				SNG01<br />
 				SEO01<br />
-        CHE01<br />
+                                CHE01<br />
 				<br />
 				<br />
 				<br />
@@ -115,7 +114,7 @@ Les réplications fonctionnent selon un planning d'instantané. Vous devez d'abo
 1. Cliquez sur votre volume de stockage.
 2. Cliquez sur **Réplique**, puis sur **Acheter une réplication**.
 3. Sélectionnez le planning d'instantané existant que vous souhaitez que votre réplication suive. La liste contient tous vos plannings d'instantané actifs. <br />
-   >**Remarque :** vous ne pouvez sélectionner qu'une seul planning, même si vous combinez des réplications horaires, quotidiennes et hebdomadaires.  Tous les instantanés qui ont été capturés depuis le cycle de réplication précédent sont répliqués quel que soit leur planning d'origine. <br />Si vous n'avez pas configuré d'instantanés, vous êtes invité à le faire avant de pouvoir commander la réplication. Pour plus de détails, voir [Utilisation d'instantanés](snapshots.html).
+   >**Remarque :** vous ne pouvez sélectionner qu'une seul planning, même si vous combinez des réplications horaires, quotidiennes et hebdomadaires. Tous les instantanés qui ont été capturés depuis le cycle de réplication précédent sont répliqués quel que soit leur planning d'origine.<br />Si vous n'avez pas configuré d'instantanés, vous êtes invité à le faire avant de pouvoir commander la réplication. Pour plus de détails, voir [Utilisation d'instantanés](snapshots.html).
 3. Cliquez sur **Emplacement** et sélectionnez le centre de données qui est votre site de reprise après incident.
 4. Cliquez sur **Continuer**.
 5. Entrez un **Code promo** le cas échéant et cliquez sur **Recalculer**. Les autres zones de la boîte de dialogue contiennent les valeurs par défaut.
@@ -189,7 +188,7 @@ Les basculements sont lancés sous **Stockage**, **{{site.data.keyword.filestora
 
 1. Cliquez sur votre volume actif ("source").
 2. Dans l'angle supérieur droit, cliquez sur **Réplique**, puis sur **Actions**.
-3. Sélectionnez **Basculement**.
+3. Sélectionnez **Basculement**. 
    >Un message doit s'afficher pour vous indiquer que le basculement est en cours. En outre, une icône apparaît en regard de votre volume sur **{{site.data.keyword.filestorage_short}}** pour indiquer qu'une transaction active est en cours. Survolez cette icône pour ouvrir une boîte de dialogue affichant la transaction. L'icône disparaît une fois la transaction terminée. Durant le processus de basculement, les actions liées à la configuration sont accessibles en lecture seule. Vous ne pouvez pas éditer de planning d'instantané, ni modifier l'espace d'image instantanée. L'événement est consigné dans l'historique des réplications.<br/> Lorsque le volume cible est opérationnel, vous obtenez un autre message. Le nom LUN de votre volume source d'origine est mis à jour afin de se terminer par "REP" et il devient inactif.
 4. Cliquez sur **Tout afficher ({{site.data.keyword.filestorage_short}})**.
 5. Cliquez sur votre volume actif (anciennement votre volume cible). Ce volume a désormais le statut **Actif**.
@@ -232,7 +231,7 @@ L'historique des réplications s'affiche dans le **Journal d'audit** sur l'ongle
 
 ## Création d'un doublon d'un volume de réplique
 
-Vous pouvez créer un doublon d'un {{site.data.keyword.BluSoftlayer_full}} {{site.data.keyword.blockstoragefull}} existant. Le volume en double hérite par défaut des options de capacité et de performance du numéro d'unité logique/volume d'origine et contient une copie des données jusqu'au moment de la prise d'un instantané.
+Vous pouvez créer un doublon d'un {{site.data.keyword.BluSoftlayer_full}} {{site.data.keyword.filestorage_full}} existant. Le volume en double hérite par défaut des options de capacité et de performance du numéro d'unité logique/volume d'origine et contient une copie des données jusqu'au moment de la prise d'un instantané.
 
 Vous pouvez créer des doublons à partir de volumes principaux et de volumes de réplique. Le nouveau doublon est créé dans le même centre de données que le volume d'origine. Si vous créez un doublon à partir d'un volume de réplique, le nouveau volume est créé dans le même centre de données que le volume de réplique.
 

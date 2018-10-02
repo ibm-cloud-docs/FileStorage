@@ -6,7 +6,6 @@ lastupdated: "2018-09-17"
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 
 # Replica dei dati
@@ -27,7 +26,7 @@ I data center in tutto il mondo di {{site.data.keyword.BluSoftlayer_full}} sono 
 Vedi la Tabella 1 per l'elenco completo della disponibilità dei data center e delle destinazioni di replica.
 
 <table>
-	<caption style="text-align: left;"><p>Tabella 1 - Questa tabella mostra l'elenco completo dei data center con funzionalità avanzate in ogni regione. Ogni regione è una colonna separata. Alcune città, come Dallas, San Jose, Washington DC, Amsterdam, Francoforte, Londra e Sydney hanno più data center. </p>
+	<caption style="text-align: left;"><p>Tabella 1 - Questa tabella mostra l'elenco completo dei data center con funzionalità avanzate in ogni regione. Ogni regione è una colonna separata. Alcune città, come Dallas, San Jose, Washington DC, Amsterdam, Francoforte, Londra e Sydney hanno più data center.</p>
 		<p>&#42; I data center nella regione US 1 NON dispongono dell'archiviazione avanzata. Gli host nei data center con le funzionalità di archiviazione avanzata <strong>non possono</strong> avviare la replica con destinazioni della replica nei data center US 1.</p>
 </caption>
 	<thead>
@@ -87,11 +86,11 @@ Vedi la Tabella 1 per l'elenco completo della disponibilità dei data center e d
 			</td>
 			<td>HKG02<br />
 				TOK02<br />
-        TOK04<br />
-        TOK05<br/>
+				TOK04<br />
+	                        TOK05<br />
 				SNG01<br />
 				SEO01<br />
-        CHE01<br />
+                                CHE01<br />
 				<br />
 				<br />
 				<br />
@@ -189,8 +188,8 @@ I failover vengono avviati in **Storage**, **{{site.data.keyword.filestorage_sho
 
 1. Fai clic sul volume attivo (“origine”).
 2. In alto a destra, fai clic su **Replica** e fai clic su **Actions**.
-3. Seleziona **Failover**.
-   >Aspettati un messaggio che indica che il failover è in corso. Inoltre, compare un'icona accanto al tuo volume in **{{site.data.keyword.filestorage_short}}** che indica che è in corso una transazione attiva. Se passi il puntatore del mouse sull'icona, viene visualizzata una finestra che mostra la transazione. Una volta completata la transazione, l'icona scompare. Durante il processo di failover, le azioni correlate alla configurazione sono di sola lettura. Non puoi modificare le pianificazioni delle istantanee o modificare lo spazio per le istantanee. L'evento viene registrato nella cronologia replica. <br/> Quando il tuo volume di destinazione è attivo, ricevi un altro messaggio. Il nome LUN (LUN Name) del tuo volume di origine originale viene aggiornato in modo da terminare con "REP" e il suo stato (Status) diventa inattivo (Inactive).
+3. Seleziona **Failover**. 
+   >Aspettati un messaggio che indica che il failover è in corso. Inoltre, compare un'icona accanto al tuo volume in **{{site.data.keyword.filestorage_short}}** che indica che è in corso una transazione attiva. Se passi il puntatore del mouse sull'icona, viene visualizzata una finestra che mostra la transazione. Una volta completata la transazione, l'icona scompare. Durante il processo di failover, le azioni correlate alla configurazione sono di sola lettura. Non puoi modificare le pianificazioni delle istantanee o modificare lo spazio per le istantanee. L'evento viene registrato nella cronologia replica.<br/> Quando il tuo volume di destinazione è attivo, ricevi un altro messaggio. Il nome LUN (LUN Name) del tuo volume di origine originale viene aggiornato in modo da terminare con "REP" e il suo stato (Status) diventa inattivo (Inactive).
 4. Fai clic su **View All ({{site.data.keyword.filestorage_short}})**.
 5. Fai clic sul volume attivo (precedentemente il volume di destinazione). Questo volume ora ha uno stato attivo (**Active**).
 6. Monta o collega il tuo volume di archiviazione all'host. Fai clic [qui](provisioning-file-storage.html) per le istruzioni.
@@ -232,7 +231,7 @@ La cronologia replica viene visualizzata in **Audit Log** nella scheda **Account
 
 ## Creazione di un duplicato di una replica
 
-Puoi creare un duplicato di un {{site.data.keyword.BluSoftlayer_full}} {{site.data.keyword.blockstoragefull}} esistente. Il volume duplicato eredita per impostazione predefinita le opzioni di capacità e prestazioni del LUN/volume originale e ha una copia dei dati che arriva fino al punto temporale di un'istantanea.
+Puoi creare un duplicato di un {{site.data.keyword.BluSoftlayer_full}} {{site.data.keyword.filestorage_full}} esistente. Il volume duplicato eredita per impostazione predefinita le opzioni di capacità e prestazioni del LUN/volume originale e ha una copia dei dati che arriva fino al punto temporale di un'istantanea.
 
 I duplicati possono essere creati sia dai volumi primari che da quelli di replica. Il nuovo duplicato viene creato nello stesso data center del volume originale. Se crei un duplicato da un volume di replica, il nuovo volume viene creato nello stesso data center del volume di replica.
 

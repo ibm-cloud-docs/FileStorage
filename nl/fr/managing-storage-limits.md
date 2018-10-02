@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-08-21"
 
 ---
 {:new_window: target="_blank"}
@@ -10,9 +10,9 @@ lastupdated: "2018-06-29"
 
 # Gestion des limites de stockage
 
-Vous pouvez, par défaut, mettre à disposition un total combiné de 250 volumes {{site.data.keyword.blockstorageshort}} globalement. 
+Vous pouvez, par défaut, mettre à disposition un total combiné de 250 volumes {{site.data.keyword.filestorage_short}} globalement. 
 
-Vous pouvez demander une augmentation de cette limite en soumettant un ticket dans le portail [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}. Lorsque la demande est approuvée, une limite de volume est définie pour un centre de données spécifique.   
+Vous pouvez demander une augmentation de cette limite en soumettant un ticket dans le portail [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}. Lorsque la demande est approuvée, une limite de volume est définie pour un centre de données spécifique.  
 
 Pour demander une augmentation de la limite, ouvrez un ticket et envoyez-le à votre ingénieur commercial.
 

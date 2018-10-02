@@ -2,11 +2,10 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-09-10"
 
 ---
 {:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
 
 # Introduzione a {{site.data.keyword.filestorage_short}}
 
@@ -45,7 +44,7 @@ Puoi selezionare la fatturazione mensile o oraria per un volume di file. Il tipo
 
 Con la **fatturazione oraria**, il numero di ore per cui il volume di file è esistito nell'account viene calcolato quando il LUN viene eliminato oppure alla fine del ciclo di fatturazione, a seconda di quale di queste condizioni si verifichi per prima. La fatturazione oraria è una buona scelta per l'archiviazione utilizzata per qualche giorno o per meno di un mese completo. La fatturazione oraria è disponibile solo per l'archiviazione di cui viene eseguito il provisioning in [data center selezionati](new-ibm-block-and-file-storage-location-and-features.html). 
 
-Con la **fatturazione mensile**, il calcolo per il prezzo è a base proporzionale dalla data di creazione alla fine del ciclo di fatturazione e viene fatturato immediatamente. Non è previsto alcun rimborso se un volume viene eliminato prima della fine del ciclo di fatturazione.  La fatturazione mensile è una buona scelta per l'archiviazione utilizzata nei carichi di lavoro di produzione che usano dati che devono essere archiviati e a cui bisogna accedere per lunghi periodi di tempo (un mese o più). 
+Con la **fatturazione mensile**, il calcolo per il prezzo è a base proporzionale dalla data di creazione alla fine del ciclo di fatturazione e viene fatturato immediatamente. Non è previsto alcun rimborso se un volume viene eliminato prima della fine del ciclo di fatturazione. La fatturazione mensile è una buona scelta per l'archiviazione utilizzata nei carichi di lavoro di produzione che usano dati che devono essere archiviati e a cui bisogna accedere per lunghi periodi di tempo (un mese o più). 
 
  
 **Performance**
@@ -91,14 +90,14 @@ Con la **fatturazione mensile**, il calcolo per il prezzo è a base proporzional
 
 ## Provisioning
 
-È possibile eseguire il provisioning di volumi {{site.data.keyword.filestorage_short}} da 20 GB a 12 TB con due opzioni:<br/>
+È possibile eseguire il provisioning di volumi {{site.data.keyword.filestorage_short}} da 20 GB a 12 TB con due opzioni: <br/>
 - Esegui il provisioning di livelli **Endurance** che offrono livelli di prestazioni predefiniti e funzioni quali le istantanee e la replica.
 - Crea un ambiente **Performance** molto potente con IOPS (input/output operations per second) allocato. 
 
  
 ### Provisioning con i livelli Endurance
 
-{{site.data.keyword.filestorage_short}} Endurance è disponibile in quattro livelli di prestazioni IOPS per supportare diverse esigenze applicative.<br />
+{{site.data.keyword.filestorage_short}} Endurance è disponibile in quattro livelli di prestazioni IOPS per supportare diverse esigenze applicative. <br />
 
 - **0,25 IOPS per GB** è progettato per carichi di lavori con bassa intensità di I/O. Questi carichi di lavoro sono di norma caratterizzati dall'avere un'ampia percentuale di dati inattivi in un dato momento. Delle applicazioni di esempio includono le caselle di posta di archiviazione o le condizioni di file a livello di reparto.
 
@@ -119,7 +118,7 @@ Performance è una classe di {{site.data.keyword.filestorage_short}} progettata 
 A Performance per {{site.data.keyword.filestorage_short}} si accede, e viene montato, tramite una connessione NFS (Network File System). {{site.data.keyword.filestorage_short}} viene di norma utilizzato quando al volume accedono più server simultaneamente. Dei volumi Performance congruenti possono essere ordinati in base alle dimensioni e all'IOPS nella Tabella 1 e possono essere utilizzati con i sistemi operativi Linux.
 
 <table cellpadding="1" cellspacing="1" style="width: 99%;">
- <caption>La tabella 3 mostra le combinazioni di dimensione e iOPS per l'archiviazione Performance. <br/><sup><img src="/images/numberone.png" alt="Nota a piè di pagina" /></sup> Un limite IOPS superiore a 6000 è disponibile in data center selezionati.</caption>
+ <caption>La tabella 3 mostra le combinazioni di dimensione e iOPS per l'archiviazione Performance.<br/><sup><img src="/images/numberone.png" alt="Nota a piè di pagina" /></sup> Un limite IOPS superiore a 6000 è disponibile in data center selezionati.</caption>
         <colgroup>
           <col/>
           <col/>
@@ -260,6 +259,8 @@ Un altro fattore da considerare è il numero di host che sta utilizzando il tuo 
 La velocità della tua connessione Ethernet deve essere superiore a quella effettiva massima prevista dal tuo volume. In generale, non prevedere di saturare la tua connessione Ethernet oltre il 70% della larghezza di banda disponibile. Ad esempio, se hai 6.000 IOPS e stai utilizzando una dimensione del blocco di 16 KB, il volume può gestire una velocità effettiva di circa 94 MBps. Se hai una connessione Ethernet da 1 Gbps al tuo LUN, diventa un collo di bottiglia quando i tuoi server provano a utilizzare la velocità effettiva massima disponibile. Ciò è dovuto al fatto che il 70 percento del limite teorico di una connessione Ethernet da 1 Gbps (125 MB al secondo) consentirebbe solo 88 MB al secondo.
 
 Per raggiungere l'IOPS massimo, è necessario che siano implementate delle risorse di rete adeguate. Altre considerazioni includono l'utilizzo della rete privata esternamente al lato archiviazione e host e le regolazioni specifiche per le applicazioni (stack di IP o profondità di coda e altre impostazioni).
+
+Il traffico di archiviazione viene incluso nell'utilizzo di rete totale dei server virtuali pubblici. Consulta la [Documentazione Virtual Server](https://console.bluemix.net/docs/vsi/vsi_public.html#public-virtual-servers) per conoscere i limiti che possono essere applicati dal servizio.
 
 **Versione NFS**
 

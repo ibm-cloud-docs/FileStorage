@@ -23,7 +23,7 @@ Le chiffrement au repos géré par le fournisseur utilise les protocoles suivant
     - California Security Breach Information Act (SB 1386) 
     - Conformité à la directive européenne 95/46/EC concernant la protection des données
 
-## Sécurisation de vos instantanés ou de votre stockage répliqué.   
+## Sécurisation de vos instantanés ou de votre stockage répliqué.  
 
 Tous les instantanés et toutes les répliques d'un stockage de fichier chiffré sont également chiffrés par défaut. Il est impossible de désactiver cette fonctionnalité volume par volume.
 

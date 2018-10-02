@@ -17,7 +17,7 @@ CoreOS est une distribution Linux puissante qui est conçue pour simplifier la g
 
 Tous les fichiers de montage secondaires sont placés dans le répertoire `/etc/systemd/system` car les montages au niveau du système sont effectués dans un répertoire en lecture seule dans CoreOS. Vous devez d'abord créer un fichier `MOUNTPOINT.mount`. La section **Where** du fichier `.mount` doit correspondre au nom de fichier. Si le point de montage comporte des barres obliques (`/`), vous devez nommer le fichier en respectant la syntaxe `chemin-de-montage.mount`. Par exemple, si vous souhaitez monter l'unité de stockage portable dans `/mnt/www`, vous devez nommer le fichier `mnt-www.mount`.
 
-Vous pouvez utiliser `fdisk` ou `parted` pour créer la partition et vérifier que le système de fichiers que vous créez correspond à celui qui est indiqué dans le fichier `.mount`, sinon, le service ne pourra pas démarrer. 
+Vous pouvez utiliser `fdisk` ou `parted` pour créer la partition et vérifier que le système de fichiers que vous créez correspond à celui qui est indiqué dans le fichier `.mount`, sinon, le service ne pourra pas démarrer.
 
 
 ```
@@ -44,7 +44,7 @@ $ systemctl enable --now mnt-www.mount
 
 ## Montage de NFS/{{site.data.keyword.filestorage_short}}
 
-Le processus de montage de {{site.data.keyword.filestorage_short}} est le même. Etant donné que le montage fait appel à NFS, vous pouvez indiquer davantage d'options à l'aide de la ligne `Options=` dans le fichier de montage.  
+Le processus de montage de {{site.data.keyword.filestorage_short}} est le même. Etant donné que le montage fait appel à NFS, vous pouvez indiquer davantage d'options à l'aide de la ligne `Options=` dans le fichier de montage. 
 
 Dans l'exemple, le système NFS est défini pour un montage dans `/data/www`. Le point de montage NFS de l'instance {{site.data.keyword.filestorage_short}} peut être obtenu sur la page de la liste de {{site.data.keyword.filestorage_short}} ou via un appel API `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 
@@ -64,7 +64,7 @@ WantedBy = multi-user.target
 ```
 {:codeblock}
 
-A présent, activez le montage et vérifiez que celui-ci est correct. 
+A présent, activez le montage et vérifiez que celui-ci est correct.
 
 ```
 systemctl enable --now /etc/systemd/system/data-www.mount

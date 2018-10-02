@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-09-17"
 
 ---
 {:new_window: target="_blank"}
@@ -24,15 +24,15 @@ Vous pouvez configurer les plannings d'instantané à une fréquence horaire, qu
 1. Cliquez sur votre volume de stockage, cliquez sur **Actions**, puis sur **Planifier un échantillonnage**.
 2. Dans la fenêtre Nouveau planning d'instantané, trois fréquences d'instantané vous sont proposées. Vous pouvez utiliser n'importe quelle combinaison de ces trois fréquences pour créer un planning d'instantané complet.
    - Horaire
-      - Indiquez la minute de chaque heure à laquelle un instantané doit être pris. La minute en cours est indiquée par défaut. 
-      - Indiquez le nombre d'instantanés horaires à conserver avant la suppression du plus ancien d'entre eux. 
+      - Indiquez la minute de chaque heure à laquelle un instantané doit être pris. La minute en cours est indiquée par défaut.
+      - Indiquez le nombre d'instantanés horaires à conserver avant la suppression du plus ancien d'entre eux.
    - Quotidienne
-      - Indiquez l'heure et la minute auxquelles un instantané doit être pris. L'heure et la minute en cours sont indiquées par défaut. 
-      - Sélectionnez le nombre d'instantanés horaires à conserver avant la suppression du plus ancien d'entre eux. 
+      - Indiquez l'heure et la minute auxquelles un instantané doit être pris. L'heure et la minute en cours sont indiquées par défaut.
+      - Sélectionnez le nombre d'instantanés horaires à conserver avant la suppression du plus ancien d'entre eux.
    - Hebdomadaire
       - Indiquez le jour de la semaine, l'heure et la minute de la prise d'un instantané. Le jour, l'heure et la minute en cours sont indiqués par défaut.
       - Sélectionnez le nombre d'instantanés hebdomadaires à conserver avant la suppression du plus ancien d'entre eux.
-3. Cliquez sur **Enregistrer** et créez un autre planning avec une fréquence différente. Si le nombre total d'instantanés planifiés est supérieur à 50, vous recevez un message d'avertissement et la sauvegarde est impossible. 
+3. Cliquez sur **Enregistrer** et créez un autre planning avec une fréquence différente. Si le nombre total d'instantanés planifiés est supérieur à 50, vous recevez un message d'avertissement et la sauvegarde est impossible.
 
 La liste des instantanés s'affiche lors de leur prise dans la section **Instantanés** de la page **Détails**.
 
@@ -61,7 +61,7 @@ Le graphique circulaire en haut de la page **Détails** indique la quantité d'e
 
 ## Modification de la quantité d'espace d'image instantanée pour un volume
 
-Il se peut que vous deviez ajouter de l'espace d'image instantanée à un volume qui n'en disposait pas auparavant ou qui en requiert davantage. Vous pouvez ajouter entre 5 et 4 000 Go, selon vos besoins.  
+Il se peut que vous deviez ajouter de l'espace d'image instantanée à un volume qui n'en disposait pas auparavant ou qui en requiert davantage. Vous pouvez ajouter entre 5 et 4 000 Go, selon vos besoins. 
 
 **Remarque** : l'espace d'image instantanée peut uniquement être augmenté. Il est impossible de le réduire. Vous pouvez sélectionner une quantité moins élevée d'espace jusqu'à ce que vous déterminiez vos besoins réels. Gardez à l'esprit que les instantanés automatisés et manuels partagent le même espace.
 
@@ -79,7 +79,7 @@ Des notifications sont envoyées via les tickets de demande de service à l'util
 
 - **75 % de la capacité ** : un avertissement indiquant que l'utilisation de l'espace d'image instantanée a dépassé 75 % de la capacité est envoyé. Si vous tenez compte de l'avertissement et que vous procédez manuellement à l'ajout d'espace ou à la suppression d'images instantanés conservées et inutiles, l'action est notée et le ticket est fermé. Si vous ne faites rien, vous devez manuellement accuser réception du ticket, qui est ensuite fermé.
 - **90 % de la capacité** : un second avertissement indiquant que l'utilisation de l'espace d'image instantanée a dépassé 90 % de la capacité est envoyé. Comme lors du dépassement de 75 % de la capacité, si vous effectuez les actions nécessaires pour réduire l'espace qui est utilisé, l'action est notée et le ticket est fermé. Si vous ne faites rien, vous devez manuellement accuser réception du ticket, qui est ensuite fermé.
-- **Capacité de 95 % **: Un dernier avertissement est envoyé. Si vous ne faites rien pour ramener votre utilisation d'espace sous le seuil, une notification est générée et une suppression automatique est instaurée empêchant la création de futurs instantanés. Les instantanés planifiés sont supprimés, en commençant par le plus ancien, jusqu'à ce que l'utilisation se situe en dessous de 95 %. Les instantanés continuent d'être supprimés à chaque fois que l'utilisation dépasse 95 % de la capacité jusqu'à ce qu'elle retombe sous le seuil. Si l'espace est augmenté manuellement ou que des instantanés sont supprimés, l'avertissement est réinitialisé et émis à nouveau en cas de nouveau dépassement du seuil. Si aucune action n'est effectuée, il s'agit du seul avertissement que vous recevez. 
+- **Capacité de 95 % **: Un dernier avertissement est envoyé. Si vous ne faites rien pour ramener votre utilisation d'espace sous le seuil, une notification est générée et une suppression automatique est instaurée empêchant la création de futurs instantanés. Les instantanés planifiés sont supprimés, en commençant par le plus ancien, jusqu'à ce que l'utilisation se situe en dessous de 95 %. Les instantanés continuent d'être supprimés à chaque fois que l'utilisation dépasse 95 % de la capacité jusqu'à ce qu'elle retombe sous le seuil. Si l'espace est augmenté manuellement ou que des instantanés sont supprimés, l'avertissement est réinitialisé et émis à nouveau en cas de nouveau dépassement du seuil. Si aucune action n'est effectuée, il s'agit du seul avertissement que vous recevez.
 
 ## Suppression d'un planning d'instantané
 
@@ -96,19 +96,20 @@ Il est possible de supprimer manuellement des instantanés inutiles afin de lib�
 1. Cliquez sur votre volume de stockage et faites défiler l'écran jusqu'à la section **Instantané** pour afficher la liste des instantanés existants.
 2. Cliquez sur **Actions** en regard d'un instantané spécifique, puis cliquez sur **Supprimer** pour supprimer l'instantané. Cela n'affecte pas les instantanés futurs ou passés du même planning puisqu'il n'existe pas de dépendance entre les instantanés.
 
-Les instantanés manuels qui ne sont pas supprimés comme indiqué précédemment sont automatiquement supprimés lorsque vous atteignez les limites en termes d'espace ((le plus ancien d'abord).
+Les instantanés manuels qui ne sont pas supprimés comme indiqué précédemment sont automatiquement supprimés lorsque vous atteignez les limites en termes d'espace (le plus ancien d'abord).
 
 ## Restauration de volume de stockage à un point de cohérence spécifique à l'aide d'un instantané
 
-Il se peut que vous deviez ramener votre volume de stockage à un point de cohérence spécifique en raison d'une erreur d'utilisateur ou d'une altération des données. 
+Il se peut que vous deviez ramener votre volume de stockage à un point de cohérence spécifique en raison d'une erreur d'utilisateur ou d'une altération des données.
 
 1. Démontez et déconnectez le volume de stockage de l'hôte.
    - Cliquez [ici](accessing-file-storage-linux.html) pour obtenir les instructions liées à {{site.data.keyword.filestorage_short}} sur Linux.
 2. Cliquez sur **Stockage**, **{{site.data.keyword.filestorage_short}}** dans le portail [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
 3. Faites défiler l'écran et cliquez sur le volume à restaurer. La section **Instantanés** de la page **Détails** affiche la liste de tous les instantanés sauvegardés, ainsi que leur taille et leur date de création.
 4. Cliquez sur **Actions** en regard de l'instantané à utiliser, puis cliquez sur **Restaurer**. <br/>
-   >**Remarque** : l'opération de restauration entraîne la perte des données qui ont été créées ou modifiées après la prise de l'instantané. Cette perte de données se produit car votre volume de stockage reprend le même état que celui qui était le sien au moment de la prise de l'instantané.  
+   >**Remarque** : l'opération de restauration entraîne la perte des données qui ont été créées ou modifiées après la prise de l'instantané. Cette perte de données se produit car votre volume de stockage reprend le même état que celui qui était le sien au moment de la prise de l'instantané. 
 5. Cliquez sur **Oui** pour lancer la restauration. Un message doit s'afficher en haut de la page pour vous indiquer que le volume est restauré à l'aide de l'instantané sélectionné. En outre, une icône apparaît en regard de votre volume sur {{site.data.keyword.filestorage_short}} pour indiquer qu'une transaction active est en cours. Survolez cette icône pour ouvrir une boîte de dialogue affichant la transaction. L'icône disparaît une fois la transaction terminée.
 6. Montez et reconnectez le volume de stockage à l'hôte.
   - Cliquez [ici](accessing-file-storage-linux.html) pour obtenir les instructions liées à {{site.data.keyword.filestorage_short}} sur Linux.
-    >**Remarque** : la restauration d'un volume entraîne la suppression de tous les instantanés qui ont été pris avant l'instantané restauré. 
+    
+>**Remarque** - La restauration d'un volume entraîne la suppression de tous les instantanés pris après l'instantané utilisé pour la restauration. 

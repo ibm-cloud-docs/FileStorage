@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-08-21"
 
 ---
 {:new_window: target="_blank"}
@@ -10,11 +10,11 @@ lastupdated: "2018-06-29"
 
 # 스토리지 한계 관리
 
-기본적으로, 글로벌하게 250개 {{site.data.keyword.blockstorageshort}} 볼륨의 통합 총계를 프로비저닝할 수 있습니다. 
+기본적으로, 글로벌하게 250개 {{site.data.keyword.filestorage_short}} 볼륨의 통합 총계를 프로비저닝할 수 있습니다. 
 
-[{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}에서 티켓을 제출하여 한계 늘리기를 요청할 수 있습니다. 요청이 승인되면 특정 데이터 센터에 대해 설정된 볼륨 한계를 받습니다.   
+[{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}에서 티켓을 제출하여 한계 늘리기를 요청할 수 있습니다. 요청이 승인되면 특정 데이터 센터에 대해 설정된 볼륨 한계를 받습니다.  
 
-한계 늘리기를 요청하려면 티켓을 열고 이를 영업 담당자에게 보내십시오. 
+한계 늘리기를 요청하려면 티켓을 열고 이를 영업 담당자에게 보내십시오.
 
 티켓에서 다음 정보를 제공하십시오.
 

@@ -57,9 +57,7 @@ La nouvelle fonction {{site.data.keyword.filestorage_short}} est disponible dans
 		<td><p>MEX01<br />
 			SAO01<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></p>
 		</td>
-		<td><p>TOK02<br />
-      TOK04<br />
-      TOK05<br/>
+		<td><p>TOK02<br />TOK04<br />TOK05<br />
 			HKG02<br />
 			SEO01<br />
 			SNG01<br />
@@ -86,4 +84,4 @@ Le nouveau stockage inclut les nouvelles fonctions et capacités suivantes :
 
 Tous les volumes {{site.data.keyword.filestorage_short}} améliorés mis à disposition dans ces centres de données ont un point de montage différent de celui des volumes non chiffrés. Pour vérifier que vous utilisez le bon point de montage pour les deux types de volume de stockage, vous pouvez afficher les informations sur le point de montage sur la page **Détails du volume** de l'interface utilisateur. Vous pouvez également accéder au point de montage correct via un appel d'API : `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 
-Revenez ici pour savoir si d'autres centres de données ont été mis à niveau et si de nouvelles fonctions et capacités ont été ajoutées pour  {{site.data.keyword.filestorage_short}}.
+Revenez ici pour savoir si d'autres centres de données ont été mis à niveau et si de nouvelles fonctions et capacités ont été ajoutées pour {{site.data.keyword.filestorage_short}}.

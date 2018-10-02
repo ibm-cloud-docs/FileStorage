@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-08-21"
 
 ---
 {:new_window: target="_blank"}
@@ -10,7 +10,7 @@ lastupdated: "2018-06-29"
 
 # ストレージ制限の管理
 
-デフォルトでは、合計で 250 の {{site.data.keyword.blockstorageshort}} ボリュームをグローバルにプロビジョンできます。 
+デフォルトでは、合計で 250 の {{site.data.keyword.filestorage_short}} ボリュームをグローバルにプロビジョンできます。 
 
 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}でチケットを送信して、制限の拡大を要求できます。 要求が承認されると、特定のデータ・センターでボリューム制限が設定されます。  
 

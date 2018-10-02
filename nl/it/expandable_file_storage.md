@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-09-12"
 
 ---
 {:new_window: target="_blank"}
@@ -30,10 +30,6 @@ L'azione di espansione sull'archiviazione primaria determina una modifica della 
 Questa funzione è disponibile solo per l'archiviazione di cui viene eseguito il provisioning nei [data center](new-ibm-block-and-file-storage-location-and-features.html) con funzionalità migliorate. L'archiviazione crittografata di cui viene eseguito il provisioning in questi data center può essere aumentata fino a 12 TB. 
 
 Le limitazioni di dimensione esistenti per {{site.data.keyword.filestorage_short}} di cui era stato eseguito il provisioning con Endurance continuano a essere valide (fino a 4 TB per il livello a 10 IOPS e fino a 12 TB per tutti gli altri livelli).
-
-## Identificazione dell'archiviazione idonea
-
-L'archiviazione di cui è stato eseguito il provisioning con le funzionalità avanzate è sempre crittografata da inattiva. Puoi identificare facilmente se la tua archiviazione è idonea poiché, se lo è, presenta accanto ad essa un'icona di "blocco" nell'IU del portale. 
 
 ## Ridimensionamento dell'archiviazione
 

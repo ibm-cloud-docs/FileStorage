@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-09-26"
 
 ---
 {:new_window: target="_blank"}
@@ -14,9 +14,9 @@ Puoi gestire i tuoi volumi {{site.data.keyword.filestorage_full}} tramite il {{s
 
 ## Autorizzazione degli host ad accedere a {{site.data.keyword.filestorage_short}}
 
-Gli host “autorizzati” sono gli host a cui era stato concesso l'accesso a uno specifico volume. Senza l'autorizzazione host, non puoi accedere all'archiviazione dal tuo sistema o utilizzarla. L'autorizzazione di un host ad accedere al tuo volume genera il nome utente e la password.  
+Gli host “autorizzati” sono gli host a cui era stato concesso l'accesso a uno specifico volume. Senza l'autorizzazione host, non puoi accedere all'archiviazione dal tuo sistema o utilizzarla. L'autorizzazione di un host ad accedere al tuo volume genera il nome utente e la password. 
 
-**Nota**- puoi autorizzare e connettere gli host che si trovano nello stesso data center della tua archiviazione. Se hai più account, non puoi autorizzare un host da un account ad accedere alla tua archiviazione su un altro. 
+**Nota**- puoi autorizzare e connettere gli host che si trovano nello stesso data center della tua archiviazione. Tuttavia, se hai più account, non puoi autorizzare un host da un account ad accedere alla tua archiviazione su un altro. 
 
 1. Fai clic su **Storage** > **{{site.data.keyword.filestorage_short}}** e fai clic sul tuo nome volume (**Volume Name**).
 2. Scorri alla sezione **Authorized Hosts** della pagina.

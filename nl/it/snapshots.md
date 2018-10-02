@@ -33,7 +33,7 @@ La progettazione dell'istantanea dipende dall'ambiente del cliente. Le seguenti 
 - Puoi creare fino a 50 istantanee tramite una pianificazione e fino a 50 manualmente su ogni volume o LUN. 
 - Non acquisire troppe istantanee. Assicurati che la tua frequenza di istantanee pianificate soddisfi le tue esigenze di obiettivo del tempo di ripristino (RTO) e obiettivo del punto di ripristino (RPO) e i tuoi requisiti di business applicativi pianificando istantanee orarie, giornaliere o settimanali. 
 - La funzione di eliminazione automatica (AutoDelete) di istantanea può essere utilizzata per controllare la crescita del consumo dell'archiviazione. <br/>
-  >**Nota** - la soglia di AutoDelete è fissata al 95 percento. 
+  >**Nota** - la soglia di AutoDelete è fissata al 95 percento.
     
 Le istantanee non sono sostituzioni della replica di ripristino di emergenza (DR, Disaster Recovery) offsite o di un backup a lunga conservazione effettivi.
     
@@ -59,8 +59,8 @@ Nel file system attivo, i blocchi modificati vengono riscritti in ubicazioni dif
      <tr>
         <td style="border: 0.0px;">Prima che venga creata qualsiasi copia di istantanea, lo spazio su disco è utilizzato solo dal file system attivo.</td>
         <td style="border: 0.0px;">Dopo la creazione di una copia di istantanea, il file system attivo e la copia di istantanea puntano agli stessi blocchi disco. La copia di istantanea non usa spazio su disco extra.</td>
-        <td style="border: 0.0px;">Dopo che <i>myfile.txt</i> è stato eliminato dal file system attivo, la copia di istantanea continua a includere il file e i riferimenti ai suoi blocchi disco. Per tale motivo l'eliminazione dei dati del file system attivo non sempre libera spazio su disco. </td>
+        <td style="border: 0.0px;">Dopo che <i>myfile.txt</i> è stato eliminato dal file system attivo, la copia di istantanea continua a includere il file e i riferimenti ai suoi blocchi disco. Per tale motivo l'eliminazione dei dati del file system attivo non sempre libera spazio su disco.</td>
       </tr>
 </table>
 
-Per visualizzare quanto spazio di istantanea è utilizzato, attieniti alle istruzioni nell'articolo [Gestione delle istantanee](working-with-snapshots.html). 
+Per visualizzare quanto spazio di istantanea è utilizzato, attieniti alle istruzioni nell'articolo [Gestione delle istantanee](working-with-snapshots.html).

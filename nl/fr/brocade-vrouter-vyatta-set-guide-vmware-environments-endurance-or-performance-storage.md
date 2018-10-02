@@ -2,17 +2,16 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-05-11"
+lastupdated: "2018-08-22"
 
 ---
 {:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
 
 # Configuration de Brocade vRouter (Vyatta) pour les environnements VMware avec {{site.data.keyword.filestorage_short}}
 
 Vous pouvez configurer un dispositif Brocade vRouter (Vyatta) pour la haute disponibilité dans un environnement VMware qui utilise {{site.data.keyword.filestorage_full}}. Utilisez les informations suivantes ainsi que celles de l'article [Advanced Single-Site VMware Reference Architecture](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} pour configurer l'une des options de stockage suivantes dans votre environnement VMware.
 
-La passerelle Brocade vRouter (Vyatta) sert de passerelle et de routeur dans votre environnement et inclut des zones composées de sous-réseaux. Des règles de pare-feu sont mises en place entre les zones pour leur permettre de communiquer entre elles. Dans le cas de zones qui n'ont pas besoin de communiquer avec d'autres zones, aucune règle de pare-feu n'est nécessaire. 
+La passerelle Brocade vRouter (Vyatta) sert de passerelle et de routeur dans votre environnement et inclut des zones composées de sous-réseaux. Des règles de pare-feu sont mises en place entre les zones pour leur permettre de communiquer entre elles. Dans le cas de zones qui n'ont pas besoin de communiquer avec d'autres zones, aucune règle de pare-feu n'est nécessaire.
 
 Dans notre exemple de configuration, cinq zones sont créées dans Brocade vRouter (Vyatta) :
 
@@ -25,7 +24,7 @@ Dans notre exemple de configuration, cinq zones sont créées dans Brocade vRout
 
 La Figure 1 décrit la communication entre chaque zone. Votre environnement peut être différent et nécessiter d'autres zones et règles de pare-feu.
 
-![Figure 1 : Configuration des zones Brocade vRouter (Vyatta)](/images/figure1_6.png)
+![Figure 1 - Configuration des zones Brocade vRouter (Vyatta)](/images/figure1_6.png)
 
 
 
@@ -36,7 +35,7 @@ La Figure 1 décrit la communication entre chaque zone. Votre environnement peut
 
 ### Configuration des interfaces
 
-Ensuite, les interfaces de liaison sur les deux dispositifs Brocade vRouter (Vyatta) sont liées aux sous-réseaux de l'environnement. Gardez à l'esprit qu'il convient de remplacer les réseaux locaux virtuels {{site.data.keyword.BluSoftlayer_full}} (1101, 1102 et 1103) par les réseaux locaux virtuels de votre environnement. De plus, les instructions qui affichent `<>` doivent être remplacées par les détails de votre environnement (les marques `<>` doivent être retirées). 
+Ensuite, les interfaces de liaison sur les deux dispositifs Brocade vRouter (Vyatta) sont liées aux sous-réseaux de l'environnement. Gardez à l'esprit qu'il convient de remplacer les réseaux locaux virtuels {{site.data.keyword.BluSoftlayer_full}} (1101, 1102 et 1103) par les réseaux locaux virtuels de votre environnement. De plus, les instructions qui affichent `<>` doivent être remplacées par les détails de votre environnement (les marques `<>` doivent être retirées).
 
 Utilisez les commandes suivantes pour configurer les interfaces de liaison sur les dispositifs Brocade vRouter (Vyatta). Vous devez être en mode de configuration.
 
@@ -316,7 +315,7 @@ save
 
 ### Synchronisation avec l'autre dispositif Brocade vRouter (Vyatta) dans la paire haute disponibilité
 
-L'un des dispositifs Brocade vRouter (Vyatta) de la paire haute disponibilité étant désormais configuré, vous devez synchroniser les modifications sur l'autre périphérique de passerelle. 
+L'un des dispositifs Brocade vRouter (Vyatta) de la paire haute disponibilité étant désormais configuré, vous devez synchroniser les modifications sur l'autre périphérique de passerelle.
 
 Utilisez les commandes suivantes en mode de configuration :
 ```
@@ -360,5 +359,3 @@ Une fois que les zones et les règle de pare-feu sont configurées sur le dispos
 6. Cliquez sur **OK**.
 
 Vos réseaux locaux virtuels sont routés via le dispositif Brocade vRouter (Vyatta). Si vous remarquez une gêne dans la communication entre deux zones, ignorez le ou les réseaux locaux virtuels en question et vérifiez vos paramètres Brocade vRouter (Vyatta).
-
- 

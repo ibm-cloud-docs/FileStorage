@@ -2,18 +2,18 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-08-17"
 
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
 
-# Accès à {{site.data.keyword.filestorage_short}} sur Linux
+# Montage de {{site.data.keyword.filestorage_short}} sur Linux
 
 Commencez par vérifier que l'hôte qui doit accéder au volume {{site.data.keyword.filestorage_full}} dispose des droits d'accès nécessaires via le portail [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
 
 1. Sur la page de la liste de {{site.data.keyword.filestorage_short}}, cliquez sur l'option **Actions** qui est associée au nouveau partage, puis cliquez sur **Hôte autorisé**.
-2. Sélectionnez le ou les hôtes dans la liste, puis cliquez sur **Soumettre**. L'hôte est ainsi autorisé à accéder au partage. 
+2. Sélectionnez le ou les hôtes dans la liste, puis cliquez sur **Soumettre**. L'hôte est ainsi autorisé à accéder au partage.
 
 ## Montage du partage {{site.data.keyword.filestorage_short}}
 
@@ -27,7 +27,7 @@ Utilisez les instructions décrites ci-après pour connecter une instance de tra
    ```
    {:pre}
     
-2. Montez le partage distant. 
+2. Montez le partage distant.
    ```
    # mount -t "nfs version" -o "options" <mount_point> /mnt
    ```
@@ -57,7 +57,7 @@ Utilisez les instructions décrites ci-après pour connecter une instance de tra
    -rw-r--r-- 1 nobody nobody 0 Sep 8 15:52 test
    ```
 
-   >**Remarque :** les fichiers créés par le superutilisateur ont pour propriété `nobody:nobody`. Pour afficher correctement la propriété, vous devez mettre à jour `idmapd.conf` avec les paramètres de domaine corrects. Voir la section **Implémentation de no_root_squash pour NFS**. 
+   >**Remarque :** les fichiers créés par le superutilisateur ont pour propriété `nobody:nobody`. Pour afficher correctement la propriété, vous devez mettre à jour `idmapd.conf` avec les paramètres de domaine corrects. Voir la section **Implémentation de no_root_squash pour NFS**.
     
 5. Montez le partage distant au démarrage. Pour terminer la configuration, éditez la table des systèmes de fichiers (`/etc/fstab`) et ajoutez le partage distant dans la liste des entrées qui sont automatiquement montées au démarrage :
 
@@ -85,8 +85,8 @@ Utilisez les instructions décrites ci-après pour connecter une instance de tra
  
 ## Implémentation de `no_root_squash` pour NFS (facultatif)
 
-La configuration de `no_root_squash` permet aux clients root de conserver les droits root sur le partage NFS.  
-- Pour NFSv3, aucune action n'est nécessaire de la part des clients ; `no_root_squash` fonctionne. 
+La configuration de `no_root_squash` permet aux clients root de conserver les droits root sur le partage NFS. 
+- Pour NFSv3, aucune action n'est nécessaire de la part des clients ; `no_root_squash` fonctionne.
 - Pour NFSv4, vous devez affecter au domaine nfsv4 la valeur `slnfsv4.com` et démarrer `rpcidmapd` ou un service similaire en fonction de la version du système d'exploitation.
 
 Exemple

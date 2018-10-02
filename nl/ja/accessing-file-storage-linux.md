@@ -2,13 +2,13 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-08-17"
 
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
 
-# Linux での{{site.data.keyword.filestorage_short}}へのアクセス
+# Linux への {{site.data.keyword.filestorage_short}} のマウント
 
 まず、{{site.data.keyword.filestorage_full}} ボリュームにアクセスするホストに、[{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}で許可を与えてください。
 
@@ -17,7 +17,7 @@ lastupdated: "2018-06-29"
 
 ## {{site.data.keyword.filestorage_short}}の共有のマウント
 
-Linux ベースの {{site.data.keyword.BluSoftlayer_full}} コンピューティング・インスタンスをネットワーク・ファイル・システム (NFS) 共有に接続するには、以下の手順を使用します。この例は、Red Hat Enterprise Linux 6 に基づいています。オペレーティング・システム (OS) ベンダーの資料に従って、この手順をその他の Linux ディストリビューション用に調整することができます。
+Linux ベースの {{site.data.keyword.BluSoftlayer_full}} コンピューティング・インスタンスをネットワーク・ファイル・システム (NFS) 共有に接続するには、以下の手順を使用します。 この例は、Red Hat Enterprise Linux 6 に基づいています。オペレーティング・システム (OS) ベンダーの資料に従って、この手順をその他の Linux ディストリビューション用に調整することができます。
 
 >**注** - ファイル・ストレージ・インスタンスのマウント・ポイントは、{{site.data.keyword.filestorage_short}}のリスト・ページから取得できます。また、API 呼び出し `SoftLayer_Network_Storage::getNetworkMountAddress()` を使用して取得することもできます。
 

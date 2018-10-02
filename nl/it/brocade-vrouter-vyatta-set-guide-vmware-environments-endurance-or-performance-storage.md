@@ -2,11 +2,10 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-05-11"
+lastupdated: "2018-08-22"
 
 ---
 {:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
 
 # Configurazione di Brocade vRouter (Vyatta) per gli ambienti VMware con {{site.data.keyword.filestorage_short}}
 
@@ -167,7 +166,7 @@ save
 
 ### Configurazione delle regole di nome firewall
 
-Definisci ora le regole firewall per ciascuna direzione del traffico.Utilizza i seguenti comandi in modalità di configurazione:
+Definisci ora le regole firewall per ciascuna direzione del traffico. Utilizza i seguenti comandi in modalità di configurazione:
 
 ```
 set firewall name INSIDE2OUTSIDE
@@ -360,5 +359,3 @@ Una volta configurate le zone e le regole del firewall sul Brocade vRouter (Vyat
 6. Fai clic su **OK**.
 
 Le tue VLAN vengono instradate tramite il Brocade vRouter (Vyatta). Se noti che le comunicazioni sono ritardate tra le due zone, tralascia la VLAN o le VLAN specifiche in questione e controlla le tue impostazioni Brocade vRouter (Vyatta).
-
- 

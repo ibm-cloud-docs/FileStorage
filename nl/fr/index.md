@@ -2,17 +2,16 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-09-10"
 
 ---
 {:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
 
 # Initiation à {{site.data.keyword.filestorage_short}}
 
 {{site.data.keyword.filestorage_full}} est un système de stockage de fichiers {{site.data.keyword.filestorage_short}} NAS basé sur NFS, permanent, rapide et flexible. Cet environnement NAS vous permet d'avoir un contrôle total des fonctions et des performances de vos partages de fichiers. Les partages {{site.data.keyword.filestorage_short}} peuvent être connectés à un maximum de 64 unités autorisées via des connexions TCP/IP routées pour la résilience.
 
-{{site.data.keyword.filestorage_short}} offre les meilleurs niveaux du marché en matière de durabilité et de disponibilité grâce à un ensemble de fonctions inégalé. {{site.data.keyword.filestorage_short}} est conçu avec les normes et les meilleures pratiques de l'industrie pour protéger l'intégrité des données. {{site.data.keyword.filestorage_short}} maintient la disponibilité lors des événements de maintenance et des défaillances imprévues et garantit une base de référence cohérente pour les performances. 
+{{site.data.keyword.filestorage_short}} offre les meilleurs niveaux du marché en matière de durabilité et de disponibilité grâce à un ensemble de fonctions inégalé. {{site.data.keyword.filestorage_short}} est conçu avec les normes et les meilleures pratiques de l'industrie pour protéger l'intégrité des données. {{site.data.keyword.filestorage_short}} maintient la disponibilité lors des événements de maintenance et des défaillances imprévues et garantit une base de référence cohérente pour les performances.
 
 Tirez parti des principales fonctionnalités de {{site.data.keyword.filestorage_short}} :
 
@@ -28,7 +27,7 @@ Tirez parti des principales fonctionnalités de {{site.data.keyword.filestorage_
    - Stockage flash pour les volumes mis à disposition à des niveaux supérieurs ou égaux à 2 IOPS/Go
 - **Instantanés** [(disponibles dans des centres de données sélectionnés)](new-ibm-block-and-file-storage-location-and-features.html).
    - Capture des instantanés de données ponctuels de manière transparente.
-- **Replication**  [(Available in select data centers)](new-ibm-block-and-file-storage-location-and-features.html)
+- **Replication**  [(disponible dans des centres de données sélectionnés)](new-ibm-block-and-file-storage-location-and-features.html)
    - Disponible uniquement pour le stockage mis à disposition dans des [centres de données sélectionnés](new-ibm-block-and-file-storage-location-and-features.html).
    - Copie automatiquement des instantanés vers un centre de données {{site.data.keyword.BluSoftlayer_full}} partenaire.
 - **Connectivité hautement disponible**
@@ -91,7 +90,7 @@ Avec la **facturation mensuelle**, le calcul du prix est calculé au prorata dep
 
 ## Mise à disposition
 
-Les volumes {{site.data.keyword.filestorage_short}} peuvent être mis à disposition à partir de 20 Go et jusqu'à 12 To avec deux options :<br/>
+Les volumes {{site.data.keyword.filestorage_short}} peuvent être mis à disposition à partir de 20 Go et jusqu'à 12 To avec deux options : <br/>
 - Effectuez la mise à disposition avec des niveaux **Endurance** offrant des niveaux de performance prédéfinis et d'autres fonctionnalités telles que les instantanés et la réplication.
 - Créez un environnement de **Performance** haute puissance avec des opérations d'entrée-sortie par seconde (IOPS) allouées. 
 
@@ -119,7 +118,7 @@ Performance est une classe de {{site.data.keyword.filestorage_short}} conçue po
 {{site.data.keyword.filestorage_short}} Performance est accessible et monté via une connexion NFS. {{site.data.keyword.filestorage_short}} est généralement utilisé lorsque le volume fait l'objet d'un accès simultané par plusieurs serveurs. Il est possible de commander des volumes avec des performances cohérentes en fonction des tailles et du nombre d'IOPS figurant dans le tableau 1 ; ces volumes peuvent être utilisés avec des systèmes d'exploitation Linux.
 
 <table cellpadding="1" cellspacing="1" style="width: 99%;">
- <caption>Le tableau 3 présente les combinaisons de taille et d'IOPS possibles pour le stockage Performance. <br/><sup><img src="/images/numberone.png" alt="Footnote" /></sup> Vous pouvez opter pour un nombre d'IOPS supérieur à 6 000 dans des centres de données sélectionnés. </caption>
+ <caption>Le tableau 3 présente les combinaisons de taille et d'IOPS possibles pour le stockage Performance.<br/><sup><img src="/images/numberone.png" alt="Footnote" /></sup> Vous pouvez opter pour un nombre d'IOPS supérieur à 6 000 dans des centres de données sélectionnés.</caption>
         <colgroup>
           <col/>
           <col/>
@@ -257,9 +256,11 @@ Un autre facteur à prendre en compte est le nombre d'hôtes qui utilisent votre
 
 **Connexion réseau**
 
-La vitesse de votre connexion Ethernet doit être supérieure au débit maximal attendu de votre volume. En règle générale, vous ne devriez pas saturer votre connexion Ethernet au-delà de 70 % de la bande passante disponible. Par exemple, si vous disposez de 6 000 IOPS et que vous utilisez une taille de bloc de 16 ko, le volume peut traiter un débit d'environ 94 Mo par seconde. Si vous disposez d'une connexion Ethernet de 1 Gbps vers votre numéro d'unité logique, vous rencontrez un goulot d'étranglement lorsque vos serveurs tentent d'utiliser le débit maximal disponible. Cela est dû au fait que 70 % de la limite théorique d'une connexion Ethernet de 1 Gbps (125 Mo par seconde) n'autorisent que 88 Mo par seconde. 
+La vitesse de votre connexion Ethernet doit être supérieure au débit maximal attendu de votre volume. En règle générale, vous ne devriez pas saturer votre connexion Ethernet au-delà de 70 % de la bande passante disponible. Par exemple, si vous disposez de 6 000 IOPS et que vous utilisez une taille de bloc de 16 ko, le volume peut traiter un débit d'environ 94 Mo par seconde. Si vous disposez d'une connexion Ethernet de 1 Gbps vers votre numéro d'unité logique, vous rencontrez un goulot d'étranglement lorsque vos serveurs tentent d'utiliser le débit maximal disponible. Cela est dû au fait que 70 % de la limite théorique d'une connexion Ethernet de 1 Gbps (125 Mo par seconde) n'autorisent que 88 Mo par seconde.
 
 Pour atteindre le nombre maximal d'IOPS, vous devez mettre en place les ressources réseau adéquates. Vous devez également tenir compte de l'utilisation du réseau privé en dehors du stockage, ainsi que des réglages côté hôte et spécifiques aux applications (pile IP, nombre de lignes de file d'attente, etc.).
+
+Le trafic de stockage est inclus dans l'utilisation réseau totale des serveurs virtuels publics. Voir la [documentation sur les serveurs virtuels](https://console.bluemix.net/docs/vsi/vsi_public.html#public-virtual-servers) afin de comprendre les limites pouvant être imposées par le service.
 
 **Version NFS**
 
@@ -271,7 +272,7 @@ Lorsque vous êtes prêt à soumettre votre commande, suivez les instructions [d
 
 ## Connexion de votre nouveau stockage
 
-Lorsque votre demande de mise à disposition est terminée, autorisez vos hôtes à accéder au nouveau stockage et configurez votre connexion. Suivez le lien approprié en fonction du système d'exploitation de votre hôte. 
+Lorsque votre demande de mise à disposition est terminée, autorisez vos hôtes à accéder au nouveau stockage et configurez votre connexion. Suivez le lien approprié en fonction du système d'exploitation de votre hôte.
 - [Accès à {{site.data.keyword.filestorage_short}} sur Linux](accessing-file-storage-linux.html)
 - [Montage de NFS/File Storage dans CentOS](mounting-nsf-file-storage.html)
 - [Montage de {{site.data.keyword.filestorage_short}} sur CoreOS](mounting-storage-coreos.html)

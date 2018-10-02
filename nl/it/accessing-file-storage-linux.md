@@ -2,13 +2,13 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-08-17"
 
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
 
-# Accesso a {{site.data.keyword.filestorage_short}} su Linux
+# Montaggio dell'{{site.data.keyword.filestorage_short}} su Linux
 
 Per prima cosa, assicurati che l'host per accedere al volume {{site.data.keyword.filestorage_full}} sia autorizzato tramite [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
 
@@ -85,7 +85,7 @@ Utilizza queste istruzioni per collegare un'istanza di elaborazione {{site.data.
  
 ## Implementazione di `no_root_squash` per NFS (facoltativo)
 
-La configurazione di `no_root_squash` consente ai client root di conservare le autorizzazioni root sulla condivisione NFS.  
+La configurazione di `no_root_squash` consente ai client root di conservare le autorizzazioni root sulla condivisione NFS. 
 - Per NFSv3, i client non devono fare niente; `no_root_squash` funziona.
 - Per NFSv4, devi impostare il dominio nfsv4 su: `slnfsv4.com` e avviare `rpcidmapd` o un servizio simile che viene utilizzato dal tuo sistema operativo.
 

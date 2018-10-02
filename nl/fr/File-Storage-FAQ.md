@@ -2,12 +2,12 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-09-18"
 
 ---
 {:new_window: target="_blank"}
 
-# {{site.data.keyword.filestorage_short}} - Foire aux Questions
+# FAQ (Foire aux questions)
 
 ## Comment savoir si tel ou tel volume {{site.data.keyword.filestorage_short}} est chiffré ?
 Consultez la liste de volumes {{site.data.keyword.filestorage_short}} dans le portail client. Une icône en forme de verrou figure à droite du numéro d'unité logique/nom de volume des volumes qui sont chiffrés.
@@ -16,26 +16,29 @@ Consultez la liste de volumes {{site.data.keyword.filestorage_short}} dans le po
 Le stockage {{site.data.keyword.filestorage_short}} qui a été mis à disposition avant la mise à niveau d'un centre de données ne peut pas être chiffré. Un nouveau stockage {{site.data.keyword.filestorage_short}} mis à disposition dans des centres de données mis à niveau est automatiquement chiffré. Vous n'avez aucun paramètre de chiffrement à sélectionner, car cette action est automatique. Il est possible de chiffrer les données figurant sur un stockage non chiffré en créant un nouveau volume, puis en copiant les données sur ce nouveau volume chiffré en procédant à une migration basée sur l'hôte. Pour plus d'informations, voir [Migration de stockage de fichier](/docs/infrastructure/FileStorage/migrate-file-storage-encrypted-file-storage.html).
 
 ## Comment savoir si je mets à disposition un stockage {{site.data.keyword.filestorage_short}} dans un centre de données mis à niveau ?
-Dans le formulaire de commande  {{site.data.keyword.filestorage_short}}, tous les centres de données mis à niveau sont signalés par un astérisque (`*`). Durant la commande, le système vous indique que vous mettez à disposition du stockage avec chiffrement. Une fois le stockage mis à disposition, une icône apparaît dans la liste de stockage pour indiquer que le volume est chiffré.  
+Dans le formulaire de commande {{site.data.keyword.filestorage_short}}, tous les centres de données mis à niveau sont signalés par un astérisque (`*`). Durant la commande, le système vous indique que vous mettez à disposition du stockage avec chiffrement. Une fois le stockage mis à disposition, une icône apparaît dans la liste de stockage pour indiquer que le volume est chiffré. 
 
 Tous les volumes et partages de fichiers chiffrés sont mis à disposition uniquement dans des centres de données mis à niveau. Vous trouverez la liste complète des centres de données mis à niveau et des fonctionnalités disponibles [ici](/docs//infrastructure/BlockStorage/new-ibm-block-and-file-storage-location-and-features.html).
 
 ## Pourquoi un stockage {{site.data.keyword.filestorage_short}} de type Endurance avec un niveau de 10 IOPS doit-il être mise à disposition dans certains centres de données et pas dans d'autres ?
-Le type de stockage {{site.data.keyword.filestorage_short}} Endurance avec un niveau de 10 IOPS/Go est disponible dans des centres de données sélectionnés, auxquels s'ajouteront bientôt de nouveaux centres de données.  Vous trouverez la liste complète des centres de données mis à niveau et des fonctionnalités disponibles [ici](/docs//infrastructure/BlockStorage/new-ibm-block-and-file-storage-location-and-features.html).
+Le type de stockage {{site.data.keyword.filestorage_short}} Endurance avec un niveau de 10 IOPS/Go est disponible dans des centres de données sélectionnés, auxquels s'ajouteront bientôt de nouveaux centres de données. Vous trouverez la liste complète des centres de données mis à niveau et des fonctionnalités disponibles [ici](/docs//infrastructure/BlockStorage/new-ibm-block-and-file-storage-location-and-features.html).
 
 ## Comment faire pour trouver le point de montage correct de mon stockage {{site.data.keyword.filestorage_short}} ?
 Tous les volumes {{site.data.keyword.filestorage_short}} chiffrés mis à disposition dans les centres de données améliorés ont un point de montage différent de celui des volumes non chiffrés. Pour vérifier que vous utilisez le bon point de montage, vous pouvez afficher les informations sur le point de montage sur la page **Détails du volume** de l'interface utilisateur. Vous pouvez également accéder au point de montage correct via un appel d'API : `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 
 ## Combien de volumes puis-je mettre à disposition ?
-Par défaut, vous pouvez mettre à disposition un total combiné de 250 volumes de bloc et de stockage de fichier. Pour augmenter votre limite, contactez votre commercial.
+Par défaut, vous pouvez mettre à disposition un total combiné de 250 volumes de bloc et de stockage de fichier. Pour augmenter votre limite, contactez votre commercial. Pour plus d'informations, voir [Gestion des limites de stockage](managing-storage-limits.html).
 
 ## Combien d'instances peuvent partager l'utilisation d'un volume {{site.data.keyword.filestorage_short}} mis à disposition ?
 Le nombre d'autorisations par volume de fichier est limité par défaut à 64. Pour augmenter cette limite, contactez votre commercial.
 
+## Combien de volumes {{site.data.keyword.filestorage_short}} peuvent être connectés à un seul hôte ?
+Le nombre dépend de ce que le système d'exploitation hôte est capable de gérer, il ne s'agit pas d'un paramètre limité par {{site.data.keyword.BluSoftlayer_full}}. Consultez la documentation de votre système d'exploitation pour connaître les limites relatives au nombre de partages de fichiers pouvant être montés.
+
 ## Combien de partages de fichiers sont-ils autorisés par taille de volume de fichier ? Quelle est la taille maximale de partage de fichiers autorisée par taille de volume ?
 
 <table>
-  <caption>Le tableau 1 présente le nombre maximal d'i-nodes autorisés en fonction de la taille de volume. Les tailles de volume sont indiquées à gauche. Le nombre d'i-nodes/de partages de fichiers est présenté à droite.</caption>
+  <caption>Le tableau 1 présente le nombre maximal d'i-nodes autorisés en fonction de la taille de volume. Les tailles de volume sont indiquées dans la colonne de gauche. Le nombre d'i-nodes/de partages de fichiers est présenté à droite.</caption>
   <thead>
     <tr>
       <th>Taille de volume</th>
@@ -44,32 +47,44 @@ Le nombre d'autorisations par volume de fichier est limité par défaut à 64. P
   </thead>
   <tbody>
     <tr>
-      <td>20 Go </td>
+      <td>20 Go - 39 Go</td>
       <td>622 484</td>
     </tr>
     <tr>
-      <td>40 Go </td>
+      <td>40 Go - 79 Go</td>
       <td>1 245 084</td>
     </tr>          
     <tr>
-      <td>80 Go</td>
+      <td>80 Go - 99 Go</td>
       <td>2 490 263</td>
     </tr>          
     <tr>
-      <td>100 Go</td>
+      <td>100 Go - 249 Go</td>
       <td>3 112 863</td>
     </tr>          
     <tr>
-      <td>250 Go</td>
+      <td>250 Go - 499 Go</td>
       <td>7 782 300</td>
     </tr>          
     <tr>
-      <td>500 Go</td>
+      <td>500 Go - 999 Go</td>
       <td>15 564 695</td>
     </tr>
     <tr>
-      <td>1 To et +</td>
+      <td>1 To</td>
       <td>31 876 593</td>
+    </tr>
+    <tr>
+      <td>2 To</td>
+      <td>63,753,186</td>
+    </tr>
+    <tr>
+      <td>3 To</td>
+      <td>95,629,970</td>
+    </tr>
+    <tr>
+      <td>4 To - 12 To</td>
+      <td>127,506,359</td>
     </tr>
    </tbody>
 </table>
@@ -101,7 +116,7 @@ Il est recommandé d'exécuter le trafic de stockage sur un réseau local virtue
 Le temps d'attente cible du stockage est < 1 ms. Le stockage est connecté à des instances de traitement sur un réseau partagé ; le temps d'attente exact des performances dépend donc du trafic réseau sur une période donnée.
 
 ## Qu'advient-il des données en cas de suppression des volumes {{site.data.keyword.filestorage_short}} ?
-Lorsque le stockage est supprimé, tous les pointeurs dirigés vers les données de ce volume sont retirés et les données deviennent donc inaccessibles. Si le stockage physique est remis à disposition sur un autre compte, un nouvel ensemble de pointeurs est affecté. Le nouveau compte ne peut pas accéder aux données qui se trouvaient sur le stockage physique. Le nouvel ensemble de pointeurs affiche tous les 0. Les nouvelles données écrasent les données inaccessibles qui figuraient sur ce stockage physique. 
+{{site.data.keyword.filestorage_full}} présente des partages de fichiers aux clients sur un stockage physique avant toute réutilisation. Les clients ayant des exigences particulières en matière de conformité (par exemple, NIST 800-88 Guidelines for Media Sanitization) doivent exécuter une procédure d'expurgation des données avant de supprimer leur stockage.
 
 ## Qu'advient-il des unités déclassées du centre de données de cloud ?
 Lorsque des unités sont déclassées, IBM les détruit avant de les supprimer. Elles sont ainsi inutilisables. Toutes les données écrites sur ces unités deviennent inaccessibles.
