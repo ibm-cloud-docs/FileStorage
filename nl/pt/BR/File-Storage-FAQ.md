@@ -2,12 +2,12 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-09-18"
 
 ---
 {:new_window: target="_blank"}
 
-# {{site.data.keyword.filestorage_short}} - Perguntas mais frequentes
+# Perguntas mais frequentes
 
 ## Como posso saber quais dos meus volumes do {{site.data.keyword.filestorage_short}} são criptografados?
 Veja a sua lista de {{site.data.keyword.filestorage_short}} no portal do cliente. É possível ver um ícone de bloqueio à direita do nome do LUN/do volume para os volumes que estão criptografados.
@@ -27,15 +27,18 @@ A camada de 10 IOPS/GB do tipo Endurance do {{site.data.keyword.filestorage_shor
 Todos os volumes criptografados do {{site.data.keyword.filestorage_short}} que são provisionados nos data centers aprimorados têm um ponto de montagem diferente de volumes não criptografados. Para assegurar que você esteja usando o ponto de montagem correto, visualize as informações do ponto de montagem na página **Detalhes do volume** na IU. Também é possível acessar o ponto de montagem correto por meio de uma chamada API: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 
 ## Quantos volumes posso provisionar?
-Por padrão, é possível provisionar um total combinado de 250 volumes de armazenamento de arquivo e bloco. Para aumentar o limite, entre em contato com seu representante de vendas.
+Por padrão, é possível provisionar um total combinado de 250 volumes de armazenamento de arquivo e bloco. Para aumentar o limite, entre em contato com seu representante de vendas. Para obter mais informações, veja [Gerenciando limites de armazenamento](managing-storage-limits.html).
 
 ## Quantas instâncias podem compartilhar o uso de um volume fornecido do {{site.data.keyword.filestorage_short}}?
 O limite padrão para o número de autorizações por volume de arquivo é 64. Para aumentar esse limite, entre em contato com seu representante de vendas.
 
+## Quantos volumes do {{site.data.keyword.filestorage_short}} podem ser anexados a um único host?
+Isso depende do que o sistema operacional do host é capaz de manipular, não é algo limitado pelo {{site.data.keyword.BluSoftlayer_full}}. Consulte a documentação do S.O. para conhecer os limites com relação ao número de compartilhamentos de arquivo que podem ser montados.
+
 ## Quantos compartilhamentos de arquivo são permitidos por tamanho do volume de arquivo? Quais são os compartilhamentos máximos de arquivo permitidos por tamanho do volume?
 
 <table>
-  <caption>A Tabela 1 mostra o número máximo de nós-i permitidos com base no tamanho do volume. Os tamanhos de volume estão à esquerda. O número de nós-i/compartilhamentos de arquivo está à direita.</caption>
+  <caption>A Tabela 1 mostra o número máximo de nós-i permitidos com base no tamanho do volume. Os tamanhos dos volumes estão na coluna à esquerda. O número de nós-i/compartilhamentos de arquivo está à direita.</caption>
   <thead>
     <tr>
       <th>Tamanho do volume</th>
@@ -44,32 +47,44 @@ O limite padrão para o número de autorizações por volume de arquivo é 64. P
   </thead>
   <tbody>
     <tr>
-      <td>20 GB </td>
+      <td>20 GB - 39 GB</td>
       <td>622.484</td>
     </tr>
     <tr>
-      <td>40 GB </td>
+      <td>40 GB - 79 GB</td>
       <td>1.245.084</td>
     </tr>          
     <tr>
-      <td>80 GB</td>
+      <td>80 GB - 99 GB</td>
       <td>2.490.263</td>
     </tr>          
     <tr>
-      <td>100 GB</td>
+      <td>100 GB - 249 GB</td>
       <td>3.112.863</td>
     </tr>          
     <tr>
-      <td>250 GB</td>
+      <td>250 GB - 499 GB</td>
       <td>7.782.300</td>
     </tr>          
     <tr>
-      <td>500 GB</td>
+      <td>500 GB - 999 GB</td>
       <td>15.564.695</td>
     </tr>
     <tr>
-      <td>1 TB+</td>
+      <td>1 TB</td>
       <td>31.876.593</td>
+    </tr>
+    <tr>
+      <td>2 TB</td>
+      <td>63.753.186</td>
+    </tr>
+    <tr>
+      <td>3 TB</td>
+      <td>95.629.970</td>
+    </tr>
+    <tr>
+      <td>4 TB - 12 TB</td>
+      <td>127.506.359</td>
     </tr>
    </tbody>
 </table>
@@ -101,7 +116,7 @@ Os limites de rendimento são configurados de acordo com o nível de volume/LUN,
 A latência de destino dentro do armazenamento é <1 ms. O armazenamento é conectado a instâncias de cálculo em uma rede compartilhada, portanto, a latência exata de desempenho depende do tráfego de rede durante a operação.
 
 ## O que acontece com os dados quando os Volumes do {{site.data.keyword.filestorage_short}} são excluídos?
-Quando o armazenamento é excluído, todos os ponteiros para os dados nesse volume são removidos, portanto, os dados se tornam inacessíveis. Se o armazenamento físico é reprovisionado para outra conta, um novo conjunto de ponteiros é designado. Não há como a nova conta acessar quaisquer dados que estavam no armazenamento físico. O novo conjunto de ponteiros mostra todos 0s. Os novos dados sobrescrevem todos os dados inacessíveis que existiam nesse armazenamento físico.
+O {{site.data.keyword.filestorage_full}} apresenta compartilhamentos de arquivo para clientes em um armazenamento físico cujos dados são apagados antes da reutilização. Os clientes com necessidades especiais de conformidade, como NIST 800-88 Diretrizes de Sanitização de Mídias, precisam executar o procedimento de sanitização de dados antes de excluir seu armazenamento.
 
 ## O que acontece com as unidades que são desatribuídas do data center de nuvem?
 Quando as unidades são desatribuídas, a IBM as destrói antes de elas serem descartadas. As unidades se tornam inutilizáveis. Quaisquer dados que foram gravados nessa unidade se tornam inacessíveis.

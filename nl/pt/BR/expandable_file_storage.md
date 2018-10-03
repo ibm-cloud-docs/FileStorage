@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-09-12"
 
 ---
 {:new_window: target="_blank"}
@@ -30,10 +30,6 @@ A ação de expansão no armazenamento primário resulta no redimensionamento au
 Esse recurso está disponível somente para armazenamento que é provisionado em [data centers](new-ibm-block-and-file-storage-location-and-features.html) com recursos aprimorados. O armazenamento criptografado provisionado nesses data centers pode ser aumentado em até 12 TB. 
 
 As limitações de tamanho existentes para o {{site.data.keyword.filestorage_short}} que foram provisionadas com o Endurance ainda se aplicam (até 4 TB para a camada de 10 IOPS e até 12 TB para todas as outras camadas).
-
-## Identificando o armazenamento elegível
-
-O armazenamento provisionado com recursos aprimorados é sempre criptografado em repouso. Será possível identificar facilmente se seu armazenamento é elegível se ele tiver um ícone de "bloqueio" próximo a ele na UI do portal. 
 
 ## Redimensionando o
 

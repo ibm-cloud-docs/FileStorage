@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-09-26"
 
 ---
 {:new_window: target="_blank"}
@@ -16,7 +16,7 @@ lastupdated: "2018-06-29"
 
 Hosts "Autorizados" são aqueles que receberam acesso a um volume específico. Sem a autorização do host, não é possível acessar ou usar o armazenamento de seu sistema. Autorizar um host a acessar seu volume gera o nome do usuário e a senha. 
 
-**Nota** - é possível autorizar e conectar hosts que estão localizados no mesmo data center que seu armazenamento. Se você tiver múltiplas contas, não será possível autorizar um host de uma conta a acessar seu armazenamento em outra. 
+**Nota** - é possível autorizar e conectar hosts que estão localizados no mesmo data center que seu armazenamento. No entanto, se você tiver múltiplas contas, não será possível autorizar o host de uma conta a acessar seu armazenamento em outra. 
 
 1. Clique em **Armazenamento** > **{{site.data.keyword.filestorage_short}}** e clique em seu **Nome do volume**.
 2. Role para a seção **Hosts autorizados** da página.

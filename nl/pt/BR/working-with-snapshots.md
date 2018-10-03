@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-09-17"
 
 ---
 {:new_window: target="_blank"}
@@ -118,4 +118,5 @@ Talvez seja necessário retornar o seu volume de armazenamento para um momento e
 5. Clique em  ** Sim **  para iniciar a restauração. Espere uma mensagem na parte superior da página indicando que o volume está sendo restaurado usando a captura instantânea selecionada. Além disso, aparece um ícone próximo ao seu volume no {{site.data.keyword.filestorage_short}} indicando que uma transação ativa está em andamento. Passar o mouse sobre o ícone produz uma janela que mostra a transação. O ícone desaparece quando a transação está concluída.
 6. Monte e reconecte seu volume de armazenamento ao host.
   - Clique [aqui](accessing-file-storage-linux.html) para obter instruções do {{site.data.keyword.filestorage_short}} no Linux.
-    >**Nota** - a restauração de um volume resulta na exclusão de todas as capturas instantâneas que foram tiradas antes da captura instantânea restaurada.
+    
+>**Observação** - A restauração de um volume resulta na exclusão de todas as capturas instantâneas tomadas após a captura instantânea usada para a restauração.

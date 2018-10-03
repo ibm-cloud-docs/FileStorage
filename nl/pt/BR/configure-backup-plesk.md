@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-09-07"
 
 ---
 {:new_window: target="_blank"}
@@ -10,7 +10,7 @@ lastupdated: "2018-06-29"
  
 # Configurando o {{site.data.keyword.filestorage_short}} para backup com o Plesk
 
-É possível usar essas instruções para configurar o {{site.data.keyword.blockstoragefull}} para seus backups no Plesk. A suposição é que o SSH
+É possível usar essas instruções para configurar o {{site.data.keyword.filestorage_full}} para seus backups no Plesk. A suposição é que o SSH
 raiz ou sudo e o acesso Plesk no nível de administrador integral estejam disponíveis. Esse exemplo se baseia
 em um host do CentOS7.
 

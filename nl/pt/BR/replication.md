@@ -26,7 +26,7 @@ Os data centers do {{site.data.keyword.BluSoftlayer_full}} são emparelhados em 
 Veja a Tabela 1 para a lista completa de disponibilidade de data center e destinos de replicação.
 
 <table>
-	<caption style="text-align: left;"><p>Tabela 1 - Esta tabela mostra a lista completa de data centers com recursos aprimorados em cada região. Cada região é uma coluna separada. Algumas cidades, como Dallas, São José, Washington DC, Amsterdã, Frankfurt, Londres e Sydney, têm múltiplos data centers.</p>
+	<caption style="text-align: left;"><p>Tabela 1 - Esta tabela mostra a lista completa de data centers com recursos aprimorados em cada região. Cada região é uma coluna separada. Algumas cidades, como Dallas, San Jose, Washington DC, Amsterdã, Frankfurt, Londres e Sydney, têm múltiplos data centers.</p>
 		<p>&#42; Os data centers na região EUA 1 NÃO têm armazenamento aprimorado. Os hosts em data centers com recursos de armazenamento aprimorados <strong>não podem</strong> iniciar a replicação com destinos de réplica nos data centers dos EUA 1.</p>
 </caption>
 	<thead>
@@ -86,13 +86,11 @@ Veja a Tabela 1 para a lista completa de disponibilidade de data center e destin
 			</td>
 			<td>HKG02<br />
 				TOK02<br />
-        TOK04<br />
-        TOK05<br/>
+				TOK04<br />
+	                        TOK05<br />
 				SNG01<br />
 				SEO01<br />
-        CHE01<br />
-				<br />
-				<br />
+                                CHE01<br />
 				<br />
 				<br />
 				<br />
@@ -193,7 +191,7 @@ Os failovers são iniciados em **Armazenamento**, **{{site.data.keyword.filestor
 
 1. Clique em seu volume ativo ("origem").
 2. Na parte superior direita, clique em **Réplica** e clique em **Ações**.
-3. Selecione **Failover**.
+3. Selecione **Failover**. 
    >Espere uma mensagem indicando que o failover está em andamento. Além disso, um ícone aparece próximo ao seu volume no **{{site.data.keyword.filestorage_short}}** que indica que uma transação ativa está ocorrendo. Passar o mouse sobre o ícone produz uma janela que mostra a transação. O ícone desaparece quando a transação está concluída. Durante o processo de failover, as ações relacionadas à configuração são somente leitura. Não é possível editar qualquer planejamento de captura instantânea ou mudar o espaço de captura instantânea. O evento é registrado no histórico de replicação.<br/> Quando seu volume de destino for em tempo real, você obterá outra mensagem. O nome do LUN do volume de origem original é atualizado para terminar em "REP" e seu Status se torna Inativo.
 4. Clique em **Visualizar todos ({{site.data.keyword.filestorage_short}})**.
 5. Clique no volume ativo (anteriormente seu volume de destino). Esse volume agora tem um status **Ativo**.
@@ -236,7 +234,7 @@ O histórico de replicação é visualizado no **Log de auditoria** na guia **Co
 
 ## Criando uma duplicata de uma réplica
 
-É possível criar uma duplicata de um {{site.data.keyword.BluSoftlayer_full}} {{site.data.keyword.blockstoragefull}}existente. O volume duplicado herda as opções de capacidade e de desempenho do LUN/volume original por padrão e tem uma cópia dos dados até o momento de uma captura instantânea.
+É possível criar uma duplicata de um {{site.data.keyword.BluSoftlayer_full}} {{site.data.keyword.filestorage_full}} existente. O volume duplicado herda as opções de capacidade e de desempenho do LUN/volume original por padrão e tem uma cópia dos dados até o momento de uma captura instantânea.
 
 As duplicatas podem ser criadas de ambos os volumes, o primário e o de réplica. A nova duplicata é criada no mesmo data center que o volume original. Se você criar uma duplicata de um volume de réplica, o novo volume será criado no mesmo data center que o volume de réplica.
 

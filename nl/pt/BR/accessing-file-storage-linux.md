@@ -2,13 +2,13 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-08-17"
 
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
 
-# Acessando o {{site.data.keyword.filestorage_short}} no Linux
+# Montando o {{site.data.keyword.filestorage_short}} no Linux
 
 Primeiro, certifique-se de que o host que acessará o volume do {{site.data.keyword.filestorage_full}} esteja autorizado por meio do [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
 

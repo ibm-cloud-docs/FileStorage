@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-08-21"
 
 ---
 {:new_window: target="_blank"}
@@ -11,7 +11,7 @@ lastupdated: "2018-06-29"
 # Gerenciando limites de armazenamento
 
 Por padrão, é possível provisionar um total combinado de 250
-{{site.data.keyword.blockstorageshort}} volumes globalmente. 
+{{site.data.keyword.filestorage_short}} volumes globalmente. 
 
 É possível solicitar um aumento de limite enviando um chamado no
 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}. Quando a solicitação for aprovada, você obterá um limite de volume configurado para um data center específico.  
