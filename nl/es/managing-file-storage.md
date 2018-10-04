@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-09-26"
 
 ---
 {:new_window: target="_blank"}
@@ -16,7 +16,7 @@ Puede gestionar los volúmenes de {{site.data.keyword.filestorage_full}} mediant
 
 Los hosts “autorizados” son los hosts a los que se les ha otorgado acceso a un volumen determinado. Sin la autorización del host, no puede acceder ni utilizar el almacenamiento de su sistema. El hecho de autorizar a un host el acceso al volumen genera un nombre de usuario y una contraseña. 
 
-**Nota**: Puede autorizar y conectar hosts que estén ubicados en el mismo centro de datos que su almacenamiento. Si tiene varias cuentas, no puede autorizar a un host de una cuenta a que acceda a su almacenamiento en otra. 
+**Nota**: Puede autorizar y conectar hosts que estén ubicados en el mismo centro de datos que su almacenamiento. No obstante, si tiene varias cuentas, no puede autorizar a un host de una cuenta a que acceda a su almacenamiento en otra cuenta. 
 
 1. Pulse **Almacenamiento** > **{{site.data.keyword.filestorage_short}}** y pulse el **Nombre de volumen**.
 2. Desplácese a la sección **Hosts autorizados** de la página.

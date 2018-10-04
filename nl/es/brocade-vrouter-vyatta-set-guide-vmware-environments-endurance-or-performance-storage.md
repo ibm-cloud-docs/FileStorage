@@ -2,11 +2,10 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-05-11"
+lastupdated: "2018-08-22"
 
 ---
 {:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
 
 # Configuración de Brocade vRouter (Vyatta) para entornos de VMware con {{site.data.keyword.filestorage_short}}
 
@@ -25,7 +24,7 @@ En la configuración de ejemplo, se crean cinco zonas en Brocade vRouter (Vyatta
 
 La figura 1 describe la comunicación entre cada zona. Su entorno puede ser diferente y puede necesitar diferentes zonas y reglas de cortafuegos.
 
-![Figura 1: Configuración de zonas de Brocade vRouter (Vyatta)](/images/figure1_6.png)
+![Figure 1 - Configuración de zonas de Brocade vRouter (Vyatta)](/images/figure1_6.png)
 
 
 
@@ -360,5 +359,3 @@ Una vez que las zonas y las reglas de cortafuegos se hayan configurado en el Bro
 6. Pulse **Aceptar**.
 
 Las VLAN están direccionadas a través del Brocade vRouter (Vyatta). Si observa que la comunicación está obstaculizada entre dos zonas, omita la(s) VLAN en cuestión y compruebe los valores del Brocade vRouter (Vyatta).
-
- 

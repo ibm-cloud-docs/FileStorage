@@ -41,7 +41,7 @@ Las siguientes instrucciones son para solicitar un volumen/compartición de arch
 6. Seleccione el **Tamaño de almacenamiento utilizable** en la lista. El nuevo volumen debe tener el mismo tamaño o mayor que el volumen original.
 7. Elija el **Tamaño del espacio de instantáneas** (además del espacio utilizable) en la lista.
 8. Pulse **Continuar**. Se muestran los cargos mensuales y prorrateados, es una última oportunidad para revisar los detalles del pedido. Pulse **Anterior** si desea cambiar el pedido.
-9. Marque el recuadro de selección **He leído el Acuerdo de Servicio Maestro** y pulse **Realizar pedido**.
+9. Marque el recuadro de selección **He leído el Acuerdo de servicio maestro** y pulse **Realizar pedido**.
  
 ### Realización del pedido de un volumen de almacenamiento de Rendimiento cifrado
 
@@ -54,7 +54,7 @@ Las siguientes instrucciones son para solicitar un volumen/compartición de arch
 6. Marque el botón de selección situado junto al **Tamaño de almacenamiento** adecuado.
 6. Especifique las IOPS en el campo **Especificar IOPS**.
 7. Pulse **Continuar**. Se muestran los cargos mensuales y prorrateados, es una última oportunidad para revisar los detalles del pedido. Pulse **Anterior** si desea cambiar el pedido.
-8. Marque el recuadro de selección **He leído el Acuerdo de Servicio Maestro** y pulse **Realizar pedido**.
+8. Marque el recuadro de selección **He leído el Acuerdo de servicio maestro** y pulse **Realizar pedido**.
 
 El almacenamiento se suministra en menos de un minuto y está visible en la página de {{site.data.keyword.filestorage_short}} del {{site.data.keyword.slportal}}.
 

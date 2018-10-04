@@ -18,7 +18,7 @@ Para crear instantáneas de su volumen de almacenamiento, automática o manualme
 3. Seleccione la cantidad de espacio que necesita.
 4. Pulse **Continuar**.
 5. Especifique cualquier código promocional que tenga y pulse **Recalcular**. Las opciones **Cargos para este pedido** y **Revisión del pedido** contienen valores predeterminados.
-6. Marque el recuadro de selección **He leído el Acuerdo de Servicio Maestro…** y pulse **Realizar pedido**. El espacio de instantáneas se suministrará en unos minutos.
+6. Marque el recuadro de selección **He leído el Acuerdo de servicio maestro…** y pulse **Realizar pedido**. El espacio de instantáneas se suministrará en unos minutos.
 
 ## Determinación de la cantidad de espacio de instantáneas que se debe pedir
 

@@ -85,13 +85,12 @@ Consulte la Tabla 1 para ver la lista completa de disponibilidad de centros de d
 				MIL01<br />
 			</td>
 			<td>HKG02<br />
-      TOK02<br />
 				TOK02<br />
-        TOK04<br />
-        TOK05<br/>
+				TOK04<br />
+	                        TOK05<br />
 				SNG01<br />
 				SEO01<br />
-        CHE01<br />
+                                CHE01<br />
 				<br />
 				<br />
 				<br />
@@ -119,7 +118,7 @@ Las réplicas se basan en una planificación de réplica. Primero debe tener un 
 3. Pulse **Ubicación** y seleccione el centro de datos que es su sitio de recuperación tras desastre.
 4. Pulse **Continuar**.
 5. Especifique un **Código promocional** si tiene uno y pulse **Recalcular**. Los otros campos de la ventana se completan de forma predeterminada.
-6. Marque el recuadro de selección **He leído el Acuerdo de Servicio Maestro…** y pulse **Realizar pedido**.
+6. Marque el recuadro de selección **He leído el Acuerdo de servicio maestro…** y pulse **Realizar pedido**.
 
 
 ## Edición de una réplica existente
@@ -147,7 +146,7 @@ El espacio de instantáneas primario y el espacio de réplica deben ser el mismo
 2. Seleccione **Añadir más espacio de instantáneas**.
 3. Seleccione el tamaño de almacenamiento de la lista y pulse **Continuar**.
 4. Especifique un **Código promocional** si tiene uno y pulse **Recalcular**. Los otros campos del recuadro de diálogo contienen información de forma predeterminada.
-5. Marque el recuadro de selección **He leído el Acuerdo de Servicio Maestro…** y pulse **Realizar pedido**.
+5. Marque el recuadro de selección **He leído el Acuerdo de servicio maestro…** y pulse **Realizar pedido**.
 
 
 ## Visualización de los volúmenes de réplica en la lista de volúmenes
@@ -189,7 +188,7 @@ Las migraciones tras error se inician en **Almacenamiento**, **{{site.data.keywo
 
 1. Pulse el volumen activo (“origen”).
 2. En la parte superior derecha, pulse **Réplica** y pulse **Acciones**.
-3. Seleccione **Migración tras error**.
+3. Seleccione **Migración tras error**. 
    >Recibirá un mensaje que indicará que la migración tras error está en curso. También aparecerá un icono junto al volumen en **{{site.data.keyword.filestorage_short}}** que indicará que hay una transacción activa en curso. Al pasar el ratón sobre el icono se abre una ventana que muestra la transacción. El icono desaparecerá una vez completada la transacción. Durante el proceso de migración tras error, las acciones relacionadas con la configuración son de solo lectura. No puede editar ninguna planificación de instantáneas ni cambiar el espacio de instantáneas. El suceso se registra en el historial de réplicas.<br/> Cuando el volumen de destino está activo, obtiene otro mensaje. El Nombre de LUN de su volumen de origen original se actualiza para finalizar en "REP" y su Estado pasa a ser Inactivo.
 4. Pulse **Ver todos ({{site.data.keyword.filestorage_short}})**.
 5. Pulse el volumen activo (anteriormente volumen de destino). Este volumen tiene ahora un estado **Activo**.
@@ -232,7 +231,7 @@ El historial de réplicas se visualiza en el **Registro de auditoría** en el se
 
 ## Creación de un duplicado de una réplica
 
-Puede crear un duplicado de un {{site.data.keyword.BluSoftlayer_full}} {{site.data.keyword.blockstoragefull}} existente. El volumen duplicado hereda la capacidad y las opciones de rendimiento del LUN/volumen original de forma predeterminada y tiene una copia de los datos hasta el momento de la instantánea.
+Puede crear un duplicado de un {{site.data.keyword.BluSoftlayer_full}} {{site.data.keyword.filestorage_full}} existente. El volumen duplicado hereda la capacidad y las opciones de rendimiento del LUN/volumen original de forma predeterminada y tiene una copia de los datos hasta el momento de la instantánea.
 
 Los duplicados pueden crearse a partir de volúmenes primarios y de réplica. El nuevo duplicado se crea en el mismo centro de datos que el volumen original. Si crea un duplicado a partir de un volumen de réplica, el nuevo volumen se crea en el mismo centro de datos que el volumen de réplica.
 

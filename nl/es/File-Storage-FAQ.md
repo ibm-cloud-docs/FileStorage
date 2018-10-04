@@ -2,12 +2,12 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-09-18"
 
 ---
 {:new_window: target="_blank"}
 
-# {{site.data.keyword.filestorage_short}} - Preguntas más frecuentes
+# Preguntas más frecuentes
 
 ## ¿Cómo puedo saber cuáles de mis volúmenes de {{site.data.keyword.filestorage_short}} están cifrados?
 Examine su lista de {{site.data.keyword.filestorage_short}} en el portal de clientes. Verá un icono de bloqueo a la derecha del nombre de LUN o de volumen para los volúmenes que están cifrados.
@@ -27,15 +27,18 @@ Todos los volúmenes y comparticiones de archivos cifrados se suministran única
 Todos los volúmenes de {{site.data.keyword.filestorage_short}} cifrados suministrados en los centros de datos mejorados tienen un punto de montaje distinto que los volúmenes no cifrados. Para asegurarse de que está utilizando el punto de montaje correcto, consulte la información sobre punto de montaje en la página **Detalles del volumen** de la interfaz de usuario. También puede acceder al punto de montaje correcto mediante una llamada de API: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 
 ## ¿Cuántos volúmenes puedo suministrar?
-De forma predeterminada, puede suministrar un total combinado de 250 volúmenes de almacenamiento de archivos y bloques. Para aumentar el límite, póngase en contacto con el representante de ventas.
+De forma predeterminada, puede suministrar un total combinado de 250 volúmenes de almacenamiento de archivos y bloques. Para aumentar el límite, póngase en contacto con el representante de ventas. Para obtener más información, consulte [Gestión de los límites de almacenamiento](managing-storage-limits.html).
 
 ## ¿Cuántas instancias pueden compartir el uso de un volumen de {{site.data.keyword.filestorage_short}} suministrado?
 El límite predeterminado para el número de autorizaciones por volumen de archivo es de 64. Para aumentar este límite, póngase en contacto con el representante de ventas.
 
+## ¿Cuántos volúmenes de {{site.data.keyword.filestorage_short}} se pueden adjuntar a un único host?
+Eso depende de lo que el sistema operativo del host pueda manejar, no se trata de una limitación de {{site.data.keyword.BluSoftlayer_full}}. Consulte la documentación de su sistema operativo para conocer los límites en la cantidad de comparticiones de archivo que se pueden montar.
+
 ## ¿Cuántos recursos compartidos de archivos se permiten por tamaño de volumen de archivos? ¿Cuál es el máximo de recursos compartidos de archivos permitidos por tamaño de volumen?
 
 <table>
-  <caption>La Tabla 1 muestra que el número máximo de inodes permitido se basa en el tamaño del volumen. Los tamaños de volumen están a la izquierda. El número de inodos/comparticiones de archivo está a la derecha.</caption>
+  <caption>La Tabla 1 muestra el número máximo de inodes permitidos según el tamaño del volumen. Los tamaños de volumen están en la columna de la izquierda. El número de inodos/comparticiones de archivo está a la derecha.</caption>
   <thead>
     <tr>
       <th>Tamaño del volumen</th>
@@ -44,32 +47,44 @@ El límite predeterminado para el número de autorizaciones por volumen de archi
   </thead>
   <tbody>
     <tr>
-      <td>20 GB </td>
+      <td>20 GB - 39 GB</td>
       <td>622.484</td>
     </tr>
     <tr>
-      <td>40 GB </td>
+      <td>40 GB - 79 GB</td>
       <td>1.245.084</td>
     </tr>          
     <tr>
-      <td>80 GB</td>
+      <td>80 GB - 99 GB</td>
       <td>2.490.263</td>
     </tr>          
     <tr>
-      <td>100 GB</td>
+      <td>100 GB - 249 GB</td>
       <td>3.112.863</td>
     </tr>          
     <tr>
-      <td>250 GB</td>
+      <td>250 GB - 499 GB</td>
       <td>7.782.300</td>
     </tr>          
     <tr>
-      <td>500 GB</td>
+      <td>500 GB - 999 GB</td>
       <td>15.564.695</td>
     </tr>
     <tr>
-      <td>+1 TB</td>
+      <td>1 TB</td>
       <td>31.876.593</td>
+    </tr>
+    <tr>
+      <td>2 TB</td>
+      <td>63.753.186</td>
+    </tr>
+    <tr>
+      <td>3 TB</td>
+      <td>95.629.970</td>
+    </tr>
+    <tr>
+      <td>4 TB - 12 TB</td>
+      <td>127.506.359</td>
     </tr>
    </tbody>
 </table>
@@ -101,7 +116,7 @@ Es mejor ejecutar el tráfico de almacenamiento en una VLAN, que omita el cortaf
 La latencia de destino en el almacenamiento es de <1 ms. El almacenamiento está conectado a instancias de cálculo en una red compartida, por lo que la latencia de rendimiento exacta depende del tráfico de red durante la operación.
 
 ## ¿Qué ocurre con los datos cuando se suprimen volúmenes de {{site.data.keyword.filestorage_short}}?
-Cuando se suprime el almacenamiento, se eliminan todos los punteros a los datos en dicho volumen, por lo que los datos de vuelven inaccesibles. Si el almacenamiento físico se vuelve a suministrar a otra cuenta, se asignará un nuevo conjunto de punteros. La nueva cuenta no tiene ningún modo de acceder a los datos que se han almacenado en el almacenamiento físico. El nuevo conjunto de punteros muestra todo 0. Los datos nuevos sobrescriben los datos inaccesibles que existían en ese almacenamiento físico.
+{{site.data.keyword.filestorage_full}} presenta comparticiones de archivos a los clientes en almacenamiento físico que se borra antes de cualquier reutilización. Los clientes con requisitos especiales de cumplimiento, como las directrices NIST 800-88 para el saneamiento de datos, deben realizar el procedimiento de saneamiento de datos antes de suprimir su almacenamiento.
 
 ## ¿Qué pasa a las unidades que quedan fuera de servicio en el centro de datos de nube?
 Cuando las unidades quedan fuera de servicio, IBM las destruye antes de desecharlas. Las unidades se vuelven inutilizables. Los datos escritos en dicha unidad se vuelven inaccesibles.

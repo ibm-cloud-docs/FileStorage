@@ -57,9 +57,7 @@ El nuevo {{site.data.keyword.filestorage_short}} está disponible actualmente en
 		<td><p>MEX01<br />
 			SAO01<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></p>
 		</td>
-		<td><p>TOK02<br />
-      TOK04<br />
-      TOK05<br/>
+		<td><p>TOK02<br />TOK04<br />TOK05<br />
 			HKG02<br />
 			SEO01<br />
 			SNG01<br />

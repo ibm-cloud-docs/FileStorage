@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-08-21"
 
 ---
 {:new_window: target="_blank"}
@@ -10,7 +10,7 @@ lastupdated: "2018-06-29"
 
 # Gestión de los límites de almacenamiento
 
-De forma predeterminada, puede suministrar un total combinado de 250 volúmenes de {{site.data.keyword.blockstorageshort}} globalmente. 
+De forma predeterminada, puede suministrar un total combinado de 250 volúmenes de {{site.data.keyword.filestorage_short}} globalmente. 
 
 Puede solicitar un aumento del límite enviando una incidencia en el [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}. Cuando se aprueba la solicitud, se obtiene un límite de volumen que se establece para un centro de datos específico.  
 

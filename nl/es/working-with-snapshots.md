@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-09-17"
 
 ---
 {:new_window: target="_blank"}
@@ -71,7 +71,7 @@ El espacio de instantáneas se cambia seleccionando **Almacenamiento** > **{{sit
 2. Seleccione entre un rango de tamaños que se le ofrece. Los tamaños normalmente oscilan entre 0 y el tamaño de su volumen.
 3. Pulse **Continuar**.
 4. Especifique cualquier código promocional que tenga y pulse **Recalcular**. Los campos Cargos para este pedido y Revisión de pedido contienen información de forma predeterminada.
-5. Marque el recuadro de selección **He leído el Acuerdo de Servicio Maestro…** y pulse **Realizar pedido**. El espacio de instantáneas adicional se suministra en pocos minutos.
+5. Marque el recuadro de selección **He leído el Acuerdo de servicio maestro…** y pulse **Realizar pedido**. El espacio de instantáneas adicional se suministra en pocos minutos.
 
 ## Recepción de notificaciones cuando se alcanza el límite de espacio de instantánea y se suprimen las instantáneas
 
@@ -111,4 +111,5 @@ Es posible que necesite recuperar el volumen de almacenamiento a un punto en el 
 5. Pulse **Sí** para iniciar la restauración. Recibirá un mensaje en la parte superior de la página que indicará que el volumen se ha restaurado utilizando la instantánea seleccionada. También aparecerá un icono junto al volumen en {{site.data.keyword.filestorage_short}} que indicará que hay una transacción activa en curso. Al pasar el ratón sobre el icono se abre una ventana que muestra la transacción. El icono desaparecerá una vez completada la transacción.
 6. Monte y vuelva a conectar el volumen de almacenamiento al host.
   - Pulse [aquí](accessing-file-storage-linux.html) para obtener las instrucciones de {{site.data.keyword.filestorage_short}} en Linux.
-    >**Nota**: La restauración de un volumen da lugar a la supresión de todas las instantáneas que se tomaron antes de la instantánea restaurada.
+    
+>**Nota**: La restauración de un volumen da lugar a la supresión de todas las instantáneas que se tomaron después de la instantánea que se utilizó para la restauración.
