@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-09-17"
+lastupdated: "2018-10-15"
 
 ---
 
@@ -26,84 +26,78 @@ Die verfügbaren Rechenzentren von {{site.data.keyword.BluSoftlayer_full}} wurde
 In Tabelle 1 finden Sie die vollständige Liste der verfügbaren Rechenzentren und Replikationsziele.
 
 <table>
-	<caption style="text-align: left;"><p>Tabelle – Diese Tabelle zeigt die vollständige Liste der Rechenzentren mit erweiterten Funktionen, die in den einzelnen Regionen vorhanden sind. Jede Region bildet eine eigene Spalte. Einige Städte wie beispielsweise Dallas, San Jose, Washington D.C., Amsterdam, Frankfurt, London und Sydney haben mehrere Rechenzentren.</p>
-		<p>&#42; Datenzentren in der Region US 1 haben KEINEN erweiterten Speicher. Hosts in Rechenzentren, die eine erweiterte Funktionalität für Speicher aufweisen, können die Replikation <strong>nicht</strong> mit Replikationszielen in Rechenzentren der Region US 1 starten.</p>
-</caption>
-	<thead>
-		<tr>
-			<th>US 1 &#42;</th>
-			<th>US 2</th>
-			<th>Lateinamerika</th>
-			<th>Kanada</th>
-			<th>Europa</th>
-			<th>Asien-Pazifik</th>
-			<th>Australien</t>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>DAL01<br />
-				DAL05<br />
-				DAL06<br />
-				HOU02<br />
-				SJC01<br />
-				WDC01<br />
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
-			</td>
-			<td>SJC03<br />
-			       SJC04<br />
-			       WDC04<br />
-			       WDC06<br />
-			       WDC07<br />
-			       DAL09<br />
-				DAL10<br />
-				DAL12<br />
-				DAL13<br />
-				<br /><br />
-			</td>
-			<td>MEX01<br />
-				SAO01<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-			</td>
-			<td>TOR01<br />
-				MON01<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-			</td>
-			<td>
-				AMS01<br />
-				AMS03<br />
-				FRA02<br />
-				FRA04<br />
-				FRA05<br />
-				LON02<br />
-				LON04<br />
-				LON06<br />
-				OSL01<br />
-				PAR01<br />
-				MIL01<br />
-			</td>
-			<td>HKG02<br />
-				TOK02<br />
-				TOK04<br />
-	                        TOK05<br />
-				SNG01<br />
-				SEO01<br />
-                                CHE01<br />
-				<br />
-				<br />
-				<br />
-				<br />
-			</td>
-			<td>
-				SYD01<br />
-				SYD04<br />
-				MEL01<br />
-				<br /><br /><br /><br /><br /><br /><br /><br />
-			</td>
-		</tr>
-	</tbody>
+  <caption style="text-align: left;"><p>Tabelle 1 - In dieser Tabelle wird eine vollständige Liste der Rechenzentren mit erweiterten Leistungsmerkmalen in jeder Region aufgeführt. Jede Region wird in einer separaten Spalte angegeben. In manchen Städten, wie zum Beispiel Dallas, San Jose, Washington DC, Amsterdam, Frankfurt, London und Sydney, befinden sich mehrere Rechenzentren.</p>
+  <p>&#42; Rechenzentren in der Region US 1 verfügen NICHT über erweiterten Speicher. Hosts in Rechenzentren mit erweiterten Speicherleistungsmerkmalen können die Replikation mit Replikationszielen in Rechenzentren der Region US 1 <strong>nicht</strong> einleiten.</p>
+  </caption>  
+  <thead>
+    <tr>
+      <th>US 1 &#42;</th>
+      <th>US 2</th>
+      <th>Lateinamerika</th>
+      <th>Kanada</th>
+      <th>Europa</th>
+      <th>Asien/Pazifik</th>
+      <th>Australien</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>DAL01<br />
+          DAL05<br />
+	  DAL06<br />
+	  HOU02<br />
+	  SJC01<br />
+	  WDC01<br />
+	  <br /><br /><br /><br /><br /><br />
+      </td>
+      <td>SJC03<br />
+	  SJC04<br />
+	  WDC04<br />
+	  WDC06<br />
+	  WDC07<br />
+	  DAL09<br />
+	  DAL10<br />
+	  DAL12<br />
+	  DAL13<br />
+	  <br /><br /><br />
+      </td>
+      <td>MEX01<br />
+	  SAO01<br />
+	  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+      </td>
+      <td>TOR01<br />
+          MON01<br />
+	  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+      </td>
+      <td>AMS01<br />
+	  AMS03<br />
+	  FRA02<br />
+	  FRA04<br />
+	  FRA05<br />
+	  LON02<br />
+	  LON04<br />
+	  LON05<br />
+	  LON06<br />
+	  OSL01<br />
+	  PAR01<br />
+	  MIL01<br />
+      </td>
+      <td>HKG02<br />
+          TOK02<br />
+	  TOK04<br />
+	  TOK05<br />
+	  SNG01<br />
+	  SEO01<br />
+          CHE01<br />
+	  <br /><br /><br /><br /><br />
+      </td>
+      <td>SYD01<br />
+          SYD04<br />
+	  MEL01<br />
+	  <br /><br /><br /><br /><br /><br /><br /><br /><br />
+      </td>
+    </tr>
+  </tbody>
 </table>
 
 
