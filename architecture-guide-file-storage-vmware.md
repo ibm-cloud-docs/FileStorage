@@ -249,7 +249,7 @@ The network configuration for this architecture guide uses a minimal number of p
 3. Click the **Create a new datastore** icon.
 4. On the **New Datastore** screen, select the location of the WMware datastore (your ESXi host) and click **Next**.
 5. On the **Type** screen, select **NFS**, and click **next**.
-6. Then, select the NFS version. Both NFSv3 and NFSv4.1 are supported, but NFSv3 is prefered. Make sure you use only one NFS version to access a given datastore. Consequences of mounting one or more hosts to the same datastore by using different versions can result in data corruption.
+6. Then, select the NFS version. Both NFSv3 and NFSv4.1 are supported, but NFSv3 is preferred. Make sure you use only one NFS version to access a given datastore. Consequences of mounting one or more hosts to the same datastore by using different versions can result in data corruption.
 7. On the **Name and configuration** screen, enter the name that you want to call the WMware datastore. Additionally, enter the host name of the NFS server. Using the FQDN for the NFS server produces the best traffic distribution to the underlying server. IP address is also valid but is used less frequently and only in specific instances. Enter the folder name in the form of `/foldername`.
 8. On the **Host accessibility** screen, select one or more hosts that you want to mount the NFS WMware datastore on and click **next**.
 9. Review the inputs on the next screen and click **Finish**.
