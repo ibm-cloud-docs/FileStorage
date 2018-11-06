@@ -11,7 +11,7 @@ lastupdated: "2018-09-07"
 
 Sie können {{site.data.keyword.filestorage_short}} bereitstellen und entsprechend Ihrer Kapazität und Ihren IOPS-Anforderungen optimieren. Ihnen stehen zwei Optionen für die Angabe der Leistung zur Verfügung, um Ihren Speicher zu optimieren.
 
-- Sie können aus Endurance-IOPS-Stufen auswählen, die vordefinierte Leistungsstufen für Workloads enthalten, die nicht über definierte Leistungsanforderungen verfügen. 
+- Sie können aus Endurance-IOPS-Stufen auswählen, die vordefinierte Leistungsstufen für Workloads enthalten, die nicht über definierte Leistungsanforderungen verfügen.
 - Sie können mit Performance die Gesamtzahl der E/A-Operationen pro Sekunde (IOPS) angeben, um Ihren Speicher zu optimieren und an sehr spezielle Leistungsanforderungen anzupassen.
 
 ## {{site.data.keyword.filestorage_short}} mit vordefinierten IOPS-Stufen bestellen (Endurance)
@@ -20,8 +20,8 @@ Sie können {{site.data.keyword.filestorage_short}} bereitstellen und entspreche
 2. Klicken Sie rechts oben auf **{{site.data.keyword.filestorage_short}} bestellen**.
 3. Wählen Sie Ihre Bereitstellungs**position** (Ihr Rechenzentrum) aus.
    - Stellen Sie sicher, dass der neue Speicher an derselben Position hinzugefügt wird, an der sich auch Ihre Rechenhosts befinden.
-4. Abrechnung. Wenn Sie ein Rechenzentrum mit verbesserter Funktionalität (gekennzeichnet durch einen Stern) ausgewählt haben, können Sie zwischen monatlicher und stündlicher Abrechnung wählen. 
-     1. Bei der **stündlichen** Abrechnung wird die Stundenzahl, die der Dateidatenträger im Konto vorhanden war, zu dem Zeitpunkt berechnet, an dem die LUN gelöscht wird oder der Rechnungsstellungszyklus endet. Dies ist abhängig davon, welches Ereignis zuerst eintritt. Die Abrechnung nach Stunden ist eine gute Wahl für Speicher, der für einige wenige Tage oder weniger als einen ganzen Monat lang genutzt wird. Die Abrechnung nach Stunden ist nur für Speicher verfügbar, der in diesen [ausgewählten Rechenzentren](new-ibm-block-and-file-storage-location-and-features.html) bereitgestellt wird. 
+4. Abrechnung. Wenn Sie ein Rechenzentrum mit verbesserter Funktionalität (gekennzeichnet durch einen Stern) ausgewählt haben, können Sie zwischen monatlicher und stündlicher Abrechnung wählen.
+     1. Bei der **stündlichen** Abrechnung wird die Stundenzahl, die der Dateidatenträger im Konto vorhanden war, zu dem Zeitpunkt berechnet, an dem die LUN gelöscht wird oder der Rechnungsstellungszyklus endet. Dies ist abhängig davon, welches Ereignis zuerst eintritt. Die Abrechnung nach Stunden ist eine gute Wahl für Speicher, der für einige wenige Tage oder weniger als einen ganzen Monat lang genutzt wird. Die Abrechnung nach Stunden ist nur für Speicher verfügbar, der in diesen [ausgewählten Rechenzentren](new-ibm-block-and-file-storage-location-and-features.html) bereitgestellt wird.
      2. Bei der **monatlichen** Abrechnung erfolgt die Berechnung für den Preis anteilmäßig ab dem Erstellungsdatum bis zum Ende des Rechnungsstellungszyklus und die Rechnung wird unverzüglich gestellt. Es erfolgt keine Rückerstattung, wenn ein Dateidatenträger vor dem Ende des Rechnungsstellungszyklus gelöscht wird. Die monatliche Rechnungsstellung ist eine gute Wahl für Speicher, der für Auslastungen im Produktionsbetrieb genutzt wird, die Daten verwenden, die über längere Zeiträume (einen Monat oder länger) gespeichert werden und zugänglich sein müssen.
         >**Anmerkung** - Der Abrechnungstyp 'Monatlich' wird standardmäßig für Speicher verwendet, der in Rechenzentren bereitgestellt wird, die **nicht** mit der verbesserten Funktionalität aktualisiert wurden.
 5. Geben Sie Ihre Speichergröße in das Feld **Neue Speichergröße** ein.
@@ -35,7 +35,7 @@ Sie können {{site.data.keyword.filestorage_short}} bereitstellen und entspreche
 9. Wählen Sie das Kontrollkästchen **Bedingungen** aus und klicken Sie auf **Bestellung abschicken**.
 10. Ihre neue Speicherzuordnung steht nach wenigen Minuten zur Verfügung.
 
->**Anmerkung** - Sie können standardmäßig eine kombinierte Gesamtzahl von 250 {{site.data.keyword.blockstorageshort}}-Datenträgern bereitstellen. Wenden Sie sich an Ihren Vertriebsbeauftragten, wenn Sie die Anzahl Ihrer Datenträger erhöhen möchten. Informationen zur Erhöhung von Begrenzungen finden Sie [hier](managing-storage-limits.html).<br/><br/>Informationen zum Grenzwert für gleichzeitige Berechtigungen finden Sie in den [häufig gestellten Fragen (FAQs)](File-Storage-FAQ.html).
+>**Anmerkung** - Sie können standardmäßig eine kombinierte Gesamtzahl von 250 {{site.data.keyword.blockstorageshort}}-Datenträgern bereitstellen. Wenden Sie sich an Ihren Vertriebsbeauftragten, wenn Sie die Anzahl Ihrer Datenträger erhöhen möchten. Informationen zur Erhöhung von Begrenzungen finden Sie [hier](managing-storage-limits.html).<br/><br/>Informationen zum Grenzwert für gleichzeitige Berechtigungen finden Sie in den [häufig gestellten Fragen (FAQs)](faqs.html).
 
 ## {{site.data.keyword.filestorage_short}} mit angepassten IOPS bestellen (Performance)
 
@@ -43,8 +43,8 @@ Sie können {{site.data.keyword.filestorage_short}} bereitstellen und entspreche
 2. Klicken Sie rechts oben auf **{{site.data.keyword.filestorage_short}} bestellen**.
 3. Klicken Sie auf **Position** und wählen Sie Ihr Rechenzentrum aus.
    - Stellen Sie sicher, dass der neue Speicher an derselben Position hinzugefügt wird, an der sich auch Ihre Rechenhosts befinden.
-4. Abrechnung. Wenn Sie ein Rechenzentrum mit verbesserter Funktionalität (gekennzeichnet durch einen Stern) ausgewählt haben, können Sie zwischen monatlicher und stündlicher Abrechnung wählen. 
-     1. Bei der **stündlichen** Abrechnung wird die Stundenzahl, die der Dateidatenträger im Konto vorhanden war, zu dem Zeitpunkt berechnet, an dem die LUN gelöscht wird oder der Rechnungsstellungszyklus endet. Dies ist abhängig davon, welches Ereignis zuerst eintritt. Die Abrechnung nach Stunden ist eine gute Wahl für Speicher, der für einige wenige Tage oder weniger als einen ganzen Monat lang genutzt wird. Die Abrechnung nach Stunden ist nur für Speicher verfügbar, der in diesen [ausgewählten Rechenzentren](new-ibm-block-and-file-storage-location-and-features.html) bereitgestellt wird. 
+4. Abrechnung. Wenn Sie ein Rechenzentrum mit verbesserter Funktionalität (gekennzeichnet durch einen Stern) ausgewählt haben, können Sie zwischen monatlicher und stündlicher Abrechnung wählen.
+     1. Bei der **stündlichen** Abrechnung wird die Stundenzahl, die der Dateidatenträger im Konto vorhanden war, zu dem Zeitpunkt berechnet, an dem die LUN gelöscht wird oder der Rechnungsstellungszyklus endet. Dies ist abhängig davon, welches Ereignis zuerst eintritt. Die Abrechnung nach Stunden ist eine gute Wahl für Speicher, der für einige wenige Tage oder weniger als einen ganzen Monat lang genutzt wird. Die Abrechnung nach Stunden ist nur für Speicher verfügbar, der in diesen [ausgewählten Rechenzentren](new-ibm-block-and-file-storage-location-and-features.html) bereitgestellt wird.
      2. Bei der **monatlichen** Abrechnung erfolgt die Berechnung für den Preis anteilmäßig ab dem Erstellungsdatum bis zum Ende des Rechnungsstellungszyklus und die Rechnung wird unverzüglich gestellt. Es erfolgt keine Rückerstattung, wenn ein Dateidatenträger vor dem Ende des Rechnungsstellungszyklus gelöscht wird. Die monatliche Rechnungsstellung ist eine gute Wahl für Speicher, der für Auslastungen im Produktionsbetrieb genutzt wird, die Daten verwenden, die über längere Zeiträume (einen Monat oder länger) gespeichert werden und zugänglich sein müssen.
         >**Anmerkung** - Der Abrechnungstyp 'Monatlich' wird standardmäßig für Speicher verwendet, der in Rechenzentren bereitgestellt wird, die **nicht** mit der verbesserten Funktionalität aktualisiert wurden.
 5. Geben Sie Ihre Speichergröße in das Feld **Neue Speichergröße** ein.
@@ -54,7 +54,7 @@ Sie können {{site.data.keyword.filestorage_short}} bereitstellen und entspreche
 9. Wählen Sie das Kontrollkästchen **Bedingungen** aus und klicken Sie auf **Bestellung abschicken**.
 10. Ihre neue Speicherzuordnung steht nach wenigen Minuten zur Verfügung.
 
->**Anmerkung** - Sie können standardmäßig eine kombinierte Gesamtzahl von 250 {{site.data.keyword.blockstorageshort}}-Datenträgern bereitstellen. Wenden Sie sich an Ihren Vertriebsbeauftragten, wenn Sie die Anzahl Ihrer Datenträger erhöhen möchten. Informationen zur Erhöhung von Begrenzungen finden Sie [hier](managing-storage-limits.html).<br/><br/>Informationen zum Grenzwert für gleichzeitige Berechtigungen finden Sie in den [häufig gestellten Fragen (FAQs)](File-Storage-FAQ.html).
+>**Anmerkung** - Sie können standardmäßig eine kombinierte Gesamtzahl von 250 {{site.data.keyword.blockstorageshort}}-Datenträgern bereitstellen. Wenden Sie sich an Ihren Vertriebsbeauftragten, wenn Sie die Anzahl Ihrer Datenträger erhöhen möchten. Informationen zur Erhöhung von Begrenzungen finden Sie [hier](managing-storage-limits.html).<br/><br/>Informationen zum Grenzwert für gleichzeitige Berechtigungen finden Sie in den [häufig gestellten Fragen (FAQs)](faqs.html).
 
 
 ## Verbindung zum neuen Speicher herstellen
