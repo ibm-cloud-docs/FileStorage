@@ -42,6 +42,6 @@ IBM Cloud Storage - File Storage
     {: .navgroup-end}
 
     {: .navgroup id="help"}
-faqs.md
+    faqs.md
     [Python API 클라이언트 정보](https://softlayer-python.readthedocs.io/en/latest/index.html)
     {: .navgroup-end}
