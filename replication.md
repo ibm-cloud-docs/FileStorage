@@ -2,20 +2,22 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-15"
+lastupdated: "2018-10-31"
 
 ---
 
 {:new_window: target="_blank"}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
+
 
 # Replicating Data
 
 Replication uses one of your snapshot schedules to automatically copy snapshots to a destination volume in a remote data center. The copies can be recovered in the remote site if a catastrophic event occurs or your data becomes corrupted.
 
-With replicas, you can
-
-- Recover from site failures and other disasters quickly by failing over to the destination volume,
-- Fail over to a specific point-in-time in the DR copy.
+Replication keeps your data in sync in two different locations. If you just want to clone your volume and use it independently from the original volume, see [Creating a duplicate File Volume](how-to-create-duplicate-volume.html).
+{:tip}
 
 Before you can replicate, you must create a snapshot schedule. When you fail over, you’re "flipping the switch" from your storage volume in your primary data center to the destination volume in your remote data center. For example, your primary data center is London and your secondary data center is Amsterdam. If a failure event occurs, you’d fail over to Amsterdam – connecting to the now-primary volume from a compute instance in Amsterdam. After your volume in London is repaired, a snapshot is taken of the Amsterdam volume to fail back to London and the once-again primary volume from a compute instance in London.
 
@@ -107,7 +109,9 @@ Replications work based on a snapshot schedule. You must first have snapshot spa
 1. Click your storage volume.
 2. Click **Replica** and click **Purchase a replication**.
 3. Select the existing snapshot schedule that you want your replication to follow. The list contains all of your active snapshot schedules. <br />
-   >**Note** - You can select only one schedule even if you have a mix of hourly, daily, and weekly. All snapshots that were captured since the previous replication cycle, are replicated regardless of the schedule that originated them.<br />If you don't have Snapshots that are set up, you are prompted to do so before you can order replication. See [Working with Snapshots](snapshots.html) for more details.
+
+   You can select only one schedule even if you have a mix of hourly, daily, and weekly. All snapshots that were captured since the previous replication cycle, are replicated regardless of the schedule that originated them.<br />If you don't have Snapshots that are set up, you are prompted to do so before you can order replication. For more information, see [Working with Snapshots](snapshots.html).
+   {:tip}
 3. Click **Location**, and select the data center that is your DR site.
 4. Click **Continue**.
 5. Enter in a **Promo Code** if you have one, and click **Recalculate**. The other fields in the window are completed by default.
@@ -168,7 +172,7 @@ Authorized hosts and volumes must be in the same data center. You can't have a r
 
 Your volume sizes must be the same for your primary and replica storage volumes. One can't be larger than the other. When you increase your snapshot space for your primary volume, the replica space is automatically increased. Increasing snapshot space triggers an immediate replication update. The increase to both volumes shows as line items on your invoice and is prorated as necessary.
 
-Click [here](snapshots.html) to learn how to increase your snapshot space.
+For more information about increasing snapshot space, see [Snapshots](snapshots.html).
 
 
 ## Starting a failover from a volume to its replica
@@ -177,12 +181,15 @@ If a failure event occurs, you can start a **failover** to your destination, or 
 
 Failovers are started under **Storage**, **{{site.data.keyword.filestorage_short}}** in the [[{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
 
-**Before you proceed with these steps, disconnect the volume. Failure to do so, results in corruption and data loss.**
+Before you proceed with these steps, disconnect the volume. Failure to do so, results in corruption and data loss.
+{:important}
 
 1. Click your active volume (“source”).
 2. In the upper right, click **Replica** and click **Actions**.
-3. Select **Failover**. 
-   >Expect a message that states that the failover is in progress. Additionally, an icon appears next to your volume on the **{{site.data.keyword.filestorage_short}}** that indicates that an active transaction is occurring. Hovering over the icon produces a window that shows the transaction. The icon disappears when the transaction is complete. During the failover process, configuration-related actions are read-only. You can't edit any snapshot schedule or change snapshot space. The event is logged in replication history.<br/> When your target volume is live you get another message. Your original source volume's LUN Name updates to end in "REP" and its Status becomes Inactive.
+3. Select **Failover**.
+
+   Expect a message that states that the failover is in progress. Additionally, an icon appears next to your volume on the **{{site.data.keyword.filestorage_short}}** that indicates that an active transaction is occurring. Hovering over the icon produces a window that shows the transaction. The icon disappears when the transaction is complete. During the failover process, configuration-related actions are read-only. You can't edit any snapshot schedule or change snapshot space. The event is logged in replication history.<br/> When your target volume is live you get another message. Your original source volume's LUN Name updates to end in "REP" and its Status becomes Inactive.
+   {:note}
 4. Click **View All ({{site.data.keyword.filestorage_short}})**.
 5. Click your active volume (formerly your target volume). This volume now has an **Active** status.
 6. Mount and attach your storage volume to the host. Click [here](provisioning-file-storage.html) for instructions.
@@ -205,7 +212,9 @@ Failbacks are started under **Storage**, **{{site.data.keyword.filestorage_short
 1. Click your active volume ("target").
 2. In the upper right, click **Replica** and click **Actions**.
 3. Select **Failback**.
-   >Expect a message that shows the failover is in progress. Additionally, an icon appears next to your volume on the **{{site.data.keyword.filestorage_short}}** that indicates that an active transaction is occurring. Hovering over the icon produces a window that shows the transaction. The icon disappears when the transaction is complete. During the Failback process, configuration-related actions are read-only. You can't edit any snapshot schedule or change snapshot space. The event is logged in replication history.
+
+   Expect a message that shows the failover is in progress. Additionally, an icon appears next to your volume on the **{{site.data.keyword.filestorage_short}}** that indicates that an active transaction is occurring. Hovering over the icon produces a window that shows the transaction. The icon disappears when the transaction is complete. During the Failback process, configuration-related actions are read-only. You can't edit any snapshot schedule or change snapshot space. The event is logged in replication history.
+   {:note}
 4. In the upper right, click **View All {{site.data.keyword.filestorage_short}}** link.
 5. Click your active volume ("source").
 6. Mount and attach your storage volume to the host. Click [here](provisioning-file-storage.html) for instructions.
