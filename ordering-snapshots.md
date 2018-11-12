@@ -12,7 +12,7 @@ lastupdated: "2018-11-12"
 
 # Ordering Snapshots
 
-To create snapshots of your storage volume, either automated or manually, you need to purchase space to hold them. You can purchase capacity up to your storage volume amount (during the initial volume purchase or later using these steps).
+To create snapshots of your storage volume, either automated or manually, you need to purchase space to hold them. You can purchase capacity up to your storage volume amount (during the initial volume purchase or later by using these steps).
 
 1. Log in to [The IBM Cloud console](https://console.bluemix.net/catalog/){:new_window} and click the menu icon on the upper left. Select **Classic Infrastructure**.
 
@@ -21,8 +21,8 @@ To create snapshots of your storage volume, either automated or manually, you ne
 3. Click **Change Snapshot Space** in the Snapshots frame.
 4. Select the amount of space that you need and the payment method.
 5. Click **Continue**.
-6. Enter any Promo Code you have and click **Recalculate**. The **Charges for this order** and **Order Review** have default values.
-7. Check the **I have read the Master Service Agreement and agree to the terms therein.** box and click **Place Order**. Your snapshot space is provisioned in a few minutes.
+6. Enter any Promo Code that you have and click **Recalculate**. The **Charges for this order** and **Order Review** have default values.
+7. Check the **I have read the Master Service Agreement and agree to the terms therein** box and click **Place Order**. Your snapshot space is provisioned in a few minutes.
 
 ## Determining how much snapshot space to order
 
@@ -39,12 +39,12 @@ A volume with numerous changes and a lengthy retention period needs more space t
 
 If you take 12 hourly snapshots of 500 GB of actual data, and there's 1 percent of change between each snapshot, you end up with 60 GB for snapshots.
 
-*(5 G Rate of Change) x (12 hourly snapshots) = (60 GB used space)*
+*(5-G Rate of Change) x (12 hourly snapshots) = (60-GB used space)*
 
 Conversely, if that 500 GB of actual data, with 12 hourly snapshots, saw 10 percent of change every hour, the snapshot space that is used is 600 GB.
 
-*(50 GB Rate of Change) x (12 hourly snapshots) = (600 GB used space)*
+*(50-GB Rate of Change) x (12 hourly snapshots) = (600-GB used space)*
 
-So when you determine how much Snapshot space you need, consider the rate of change carefully. It's a huge influence on how much snapshot space you need. A bigger volume is more likely to change more often. However, a 500 GB volume with 5 GB of change and a 10 TB volume with 5 GB of change use the same amount of snapshot space.
+So when you determine how much Snapshot space you need, consider the rate of change carefully. It's a huge influence on how much snapshot space you need. A bigger volume is more likely to change more often. However, a 500-GB volume with 5 GB of change and a 10-TB volume with 5-GB of change use the same amount of snapshot space.
 
 Additionally, for most workloads, the larger a volume is the less space needs to be set aside initially. It's primarily due to the underlying data efficiencies, and the nature of how snapshots work in the environment.
