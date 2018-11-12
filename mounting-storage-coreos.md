@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-12"
 
 ---
 {:new_window: target="_blank"}
@@ -38,7 +38,7 @@ WantedBy = multi-user.target
 {:codeblock}
 
 
-CoreOS uses `systemd`, so to make the mount point survive a restart, you must enable the `*.mount` file. If you use the `--now` flag the partition is mounted immediately and set to start on boot.
+CoreOS uses `systemd`, so to make the mount point survive a restart, you must enable the `*.mount` file. If you use the `--now` flag, the partition is mounted immediately and set to start on boot.
 
 ```
 $ systemctl enable --now mnt-www.mount
@@ -102,7 +102,7 @@ cp mount.cifs /host_tmp/
 ```
 {:codeblock}
 
-Now that the `mount.cifs` file is copied to the host you can exit the docker container by entering the `exit` command or pressing **ctrl+d**. When you're back in the CoreOS system, you can mount the CIFS share with the following command:
+Now that the `mount.cifs` file is copied to the host you can exit the docker container by entering the `exit` command or pressing **Ctrl+d**. When you're back in the CoreOS system, you can mount the CIFS share with the following command:
 ```
 /tmp/mount.cifs //nasXXX.service.softlayer.com/USERNAME -o username=USERNAME,password=PASSWORD /path/to/mount
 ```
@@ -110,4 +110,4 @@ Now that the `mount.cifs` file is copied to the host you can exit the docker con
 
 ## Mounting ISCSI
 
-This isn't supported currently in CoreOS but is in line for a future release. - https://github.com/coreos/bugs/issues/634
+iSCSI isn't supported currently in CoreOS but is in line for a future release. - https://github.com/coreos/bugs/issues/634
