@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-12"
 
 ---
 {:new_window: target="_blank"}
@@ -11,7 +11,7 @@ lastupdated: "2018-10-31"
 {:important: .important}
 
 # Ordering {{site.data.keyword.filestorage_short}}
-backup with cPanel
+
 You can provision {{site.data.keyword.filestorage_short}} and fine tune to meet your capacity and IOPS needs. Get the most out of your storage with two options for specifying performance.
 
 - You can choose from Endurance IOPs tiers that feature pre-defined performance levels to fit workloads that don't have well defined performance requirements.
