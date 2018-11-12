@@ -130,7 +130,7 @@ Replication keeps your data in sync in two different locations. If you want to c
 
 Before you can replicate, you must create a snapshot schedule.
 
-When you fail over, you are “flipping the switch” from your storage volume in your primary data center to the destination volume in your remote data center. For example, your primary data center is in London and your secondary data center is in Amsterdam. If a failure event occurs, you’d fail over to Amsterdam. This means connecting to the now-primary volume from a vSphere Cluster instance in Amsterdam. After your volume in London is repaired, a snapshot is taken of the Amsterdam volume. Then, you can fail back to London and the once-again primary volume from a compute instance in London.
+When you fail over, you are “flipping the switch” from your storage volume in your primary data center to the destination volume in your remote data center. For example, your primary data center is in London and your secondary data center is in Amsterdam. If a failure event occurs, you’d fail over to Amsterdam. Failing over means connecting to the now-primary volume from a vSphere Cluster instance in Amsterdam. After your volume in London is repaired, a snapshot is taken of the Amsterdam volume. Then, you can fail back to London and the once-again primary volume from a compute instance in London.
 
 Before the volume fails back to the primary data center, it needs to stop being used at the remote site. A snapshot of any new or changed information is taken and replicated to the primary data center before it can be mounted again on the production site ESXi hosts.
 
@@ -200,23 +200,34 @@ Before you begin the VMware configuration process, make sure that the following 
 1. From an internet connected computer, start an RDP client and establish an RDP session to the {{site.data.keyword.BluVirtServers_full}} that is provisioned in the same data center where vSphere vCenter is installed.
 2. From the {{site.data.keyword.BluVirtServers_short}}, start a web browser and connect to VMware vCenter through the vSphere Web Client.
 3. From the **HOME** screen, select **Hosts and Clusters**. Expand the pane on the left and select the **VMware ESXi server** that is to be used for this deployment.
-4. Make sure that the firewall port for the NFS client is open on all hosts so that you can configure the NFS client on the vSphere host. This is automatically opened in the more recent releases of vSphere. To check whether the port is open, go to the **ESXi host Manage** tab in VMware® vCenter™, select **Settings**, and then select **Security Profile**. In the **Firewall** section, click **Edit** and scroll down to **NFS Client**.
+4. Make sure that the firewall port for the NFS client is open on all hosts so that you can configure the NFS client on the vSphere host. (The port is automatically opened in the more recent releases of vSphere.) To check whether the port is open, go to the **ESXi host Manage** tab in VMware® vCenter™, select **Settings**, and then select **Security Profile**. In the **Firewall** section, click **Edit** and scroll down to **NFS Client**.
 5. Make sure **Allow connection from any IP address or a list of IP addresses** is provided. <br/>
    ![Allow Connection](/images/1_4.png)
 6. Configure Jumbo Frames by going to the **ESXi host Manage** tab, select **Manage** and then **Networking**.
 7. Select **VMkernel adapters**, highlight the **vSwitch** and the click **Edit** (Pencil icon).
 8. Select **NIC setting**, and ensure that the NIC MTU is set to 9000.
 9. **Optional**. Validate the jumbo frame settings.
-   - From Windows: `ping -f -l 8972 a.b.c.d`
-   - From UNIX: `ping -s 8972 a.b.c.d`
-     Where a.b.c.d is neighboring {{site.data.keyword.BluVirtServers_short}} interface.
+   - Windows
+     ```
+     ping -f -l 8972 a.b.c.d
+     ```
+     {:pre}
+
+   - Unix
+     ```
+     ping -s 8972 a.b.c.d
+     ```
+     {:pre}
+
+     The value a.b.c.d is the neighboring {{site.data.keyword.BluVirtServers_short}} interface.
+
      Example
      ```
      ping a.b.c.d (a.b.c.d) 8972(9000) bytes of data.
      8980 bytes from a.b.c.d: icmp_seq=1 ttl=128 time=3.36 ms
      ```
 
-For more information about VMware and Jumbo Frames, click [here](https://kb.vmware.com/s/article/1003712){:new_window}.
+For more information about VMware and Jumbo Frames, see [here](https://kb.vmware.com/s/article/1003712){:new_window}.
 {:tip}
 
 
@@ -238,7 +249,7 @@ For more information about VMware and Jumbo Frames, click [here](https://kb.vmwa
 
 ### 3. Configuring ESXi static routing (Optional)
 
-The network configuration for this architecture guide uses a minimal number of port groups. If you have a VMkernel port group for NFS storage, extra steps must be taken. By default, ESXi uses the VMkernel port that is on the same subnet as an NFS volume to mount the NFS volume on Endurance or Performance storage. Since layer 3 routing is used to mount the NFS volume, ESXi must be forced to use the VMkernel port that was configured to mount the NFS volume. To do this, a static route must be created to the storage array.
+The network configuration for this architecture guide uses a minimal number of port groups. If you have a VMkernel port group for NFS storage, extra steps must be taken. By default, ESXi uses the VMkernel port that is on the same subnet as an NFS volume to mount the NFS volume on Endurance or Performance storage. Since layer 3 routing is used to mount the NFS volume, ESXi must be forced to use the VMkernel port that was configured to mount the NFS volume. To use the correct port, a static route must be created to the storage array.
 
 1. To configure a static route, SSH to each ESXi host that uses Performance or Endurance storage and run the following commands. Take note of the IP address that is the result of the `ping` command (first command) and use it with the `esxcli` network command.
    ```
@@ -291,7 +302,7 @@ PING nfsdal0902a-fz.service.softlayer.com (10.2.125.80): 56 data bytes
 
 ## Enabling ESXi Storage I/O Control (Optional)
 
-Storage I/O Control (SIOC) is a feature available for customers who use an Enterprise Plus license. When SIOC is enabled in the environment, it changes the device queue length for the single VM. The change to the device queue length reduces the storage array queue for all VMs to an equal share. SIOC engages only if resources are constrained and the storage I/O latency is above a defined threshold.
+Storage I/O Control (SIOC) is a feature available for customers who use an Enterprise Plus license. When SIOC is enabled in the environment, it changes the device queue length for the single VM. The change to the device queue length reduces the storage array queue for all VMs to an equal share. SIOC engages only if resources are constrained and the storage I/O latency is over a defined threshold.
 
 
 In order for SIOC to determine when a storage device is congested or constrained, it requires a defined threshold. The congestion threshold latency is different for different storage types. The default selection is to 90% of peak throughput. The percentage of peak throughput value indicates the estimated latency threshold when the VMware datastore is using that percentage of its estimated peak throughput.
@@ -319,7 +330,7 @@ This setting is specific to the VMware datastore and not to the host.
 
 ### Configuring Storage I/O Control For {{site.data.keyword.BluVirtServers_short}}
 
-You can also limit individual virtual disks for individual VMs or grant them different shares with SIOC. The limiting of disks and granting different shares allows you to match and align the environment to the workload with the acquired {{site.data.keyword.filestorage_short}} volume IOPS number. The limit is set by IOPS and it is possible to set a different weight or "Shares." Virtual disks with shares set to High (2,000 shares) receive twice as much I/O as a disk set to Normal (1,000 shares) and four times as much as one set to Low (500 shares). Normal is the default value for all the VMs, so you need to adjust the values above or under Normal for the VMs that require it.
+You can also limit individual virtual disks for individual VMs or grant them different shares with SIOC. By limiting the disks and granting different shares, you can match and align the environment to the workload with the acquired {{site.data.keyword.filestorage_short}} volume IOPS number. The limit is set by IOPS and it is possible to set a different weight or "Shares." Virtual disks with shares set to High (2,000 shares) receive twice as much I/O as a disk set to Normal (1,000 shares) and four times as much as one set to Low (500 shares). Normal is the default value for all the VMs, so you need to adjust the values to High or Low for the VMs that require it.
 
 Use the following steps to change the VDisk shares and limit.
 
@@ -360,9 +371,9 @@ The following examples use the CLI to set the advanced configuration parameters,
      ```
      #esxcfg-advcfg -s 32 /Net/TcpipHeapSize
      #esxcfg-advcfg -s 128 /Net/TcpipHeapMax(For vSphere 5.0/5.1)
-     #esxcfg-advcfg -s 512 /Net/TcpipHeapMax(For vSphere 5.5 and above)
+     #esxcfg-advcfg -s 512 /Net/TcpipHeapMax(For vSphere 5.5 and higher)
      #esxcfg-advcfg -s 256 /NFS/MaxVolumes
-     #esxcfg-advcfg -s 256 /NFS41/MaxVolumes (ESXi 6.0 and above)
+     #esxcfg-advcfg -s 256 /NFS41/MaxVolumes (ESXi 6.0 and higher)
      #esxcfg-advcfg -s 10 /NFS/HeartbeatMaxFailures
      #esxcfg-advcfg -s 12 /NFS/HeartbeatFrequency
      #esxcfg-advcfg -s 5 /NFS/HeartbeatTimeout   
@@ -377,7 +388,7 @@ The following examples use the CLI to set the advanced configuration parameters,
     #esxcfg-advcfg -g /Net/TcpipHeapSize
     #esxcfg-advcfg -g /Net/TcpipHeapMax
     #esxcfg-advcfg -g /NFS/MaxVolumes
-    #esxcfg-advcfg -g /NFS41/MaxVolumes (ESXi 6.0 and above)
+    #esxcfg-advcfg -g /NFS41/MaxVolumes (ESXi 6.0 and higher)
     #esxcfg-advcfg -g /NFS/HeartbeatMaxFailures
     #esxcfg-advcfg -g /NFS/HeartbeatFrequency
     #esxcfg-advcfg -g /NFS/HeartbeatTimeout
