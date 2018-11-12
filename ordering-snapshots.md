@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-12"
 
 ---
 {:new_window: target="_blank"}
@@ -14,7 +14,7 @@ lastupdated: "2018-10-31"
 
 To create snapshots of your storage volume, either automated or manually, you need to purchase space to hold them. You can purchase capacity up to your storage volume amount (during the initial volume purchase or later using these steps).
 
-1. Log in to [The IBM Cloud console](https://console.bluemix.net/catalog/){:new_window} and click on the **Menu** icon on the top left. Select **Classic Infrastructure**. 
+1. Log in to [The IBM Cloud console](https://console.bluemix.net/catalog/){:new_window} and click on the menu icon on the top left. Select **Classic Infrastructure**.
 
    Alternatively, you can log into the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
 2. Access your Storage through **Storage** > **{{site.data.keyword.filestorage_short}}**.

@@ -168,7 +168,7 @@ Storage is provisioned in less than a minute and becomes visible on the **{{site
 
 
 
-### 2. Authorizing Hosts to use {{site.data.keyword.filestorage_short}}
+### 2. Authorizing hosts to use {{site.data.keyword.filestorage_short}}
 
 When a volume is provisioned, the {{site.data.keyword.BluBareMetServers_full}} or {{site.data.keyword.BluVirtServers_full}} that is going to use the volume must be authorized to access the storage. Use the following steps to authorize the volume:
 
@@ -184,7 +184,7 @@ When a volume is provisioned, the {{site.data.keyword.BluBareMetServers_full}} o
 After the subnets are authorized, make note of the host name of the Endurance or Performance storage server you want to use when you mount the volume. This information can be found on the {{site.data.keyword.filestorage_short}} detail page by clicking a specific volume.
 
 
-##  Configuring the VMware Virtual Machine Host
+##  Configuring the VMware virtual machine host
 
 ### Meeting the Prerequisites
 
@@ -220,7 +220,7 @@ For more information about VMware and Jumbo Frames, click [here](https://kb.vmwa
 {:tip}
 
 
-### 2. Adding an uplink Adapter to a virtual switch
+### 2. Adding an uplink adapter to a virtual switch
 
 1. Configure a new uplink adapter by going to the **ESXi host Manage** tab, select **Manage** and then **Networking**.
 2. Select the **Physical adapters** tab
@@ -335,7 +335,7 @@ This process is used to set the resource consumption limits of individual vDisks
 {:important}
 
 
-## Configuring ESXi Host Side Settings
+## Configuring ESXi host side settings
 
 Extra settings are required for configuring ESXi 5.x hosts for NFS storage. This table shows what each setting needs to be.
 
