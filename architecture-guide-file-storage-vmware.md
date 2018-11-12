@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-12"
 
 ---
 {:pre: .pre}
@@ -264,15 +264,15 @@ Make note of the IP address as it can be used for mounting the volume in the nex
 1. Click **Go to vCenter** icon, and then **Hosts and Clusters**.
 2. On the **Related Object** tab, click **Datastores**.
 3. Click the **Create a new datastore** icon.
-4. On the **New Datastore** screen, select the location of the WMware datastore (your ESXi host) and click **Next**.
+4. On the **New Datastore** screen, select the location of the VMware datastore (your ESXi host) and click **Next**.
 5. On the **Type** screen, select **NFS**, and click **next**.
 6. Then, select the NFS version. Both NFSv3 and NFSv4.1 are supported, but NFSv3 is preferred. Make sure you use only one NFS version to access a given datastore. Consequences of mounting one or more hosts to the same datastore by using different versions can result in data corruption.
-7. On the **Name and configuration** screen, enter the name that you want to call the WMware datastore. Additionally, enter the host name of the NFS server. Using the FQDN for the NFS server produces the best traffic distribution to the underlying server. IP address is also valid but is used less frequently and only in specific instances. Enter the folder name in the form of `/foldername`.
-8. On the **Host accessibility** screen, select one or more hosts that you want to mount the NFS WMware datastore on and click **next**.
+7. On the **Name and configuration** screen, enter the name that you want to call the VMware datastore. Additionally, enter the host name of the NFS server. Using the FQDN for the NFS server produces the best traffic distribution to the underlying server. IP address is also valid but is used less frequently and only in specific instances. Enter the folder name in the form of `/foldername`.
+8. On the **Host accessibility** screen, select one or more hosts that you want to mount the NFS VMware datastore on and click **next**.
 9. Review the inputs on the next screen and click **Finish**.
 10. Repeat for any additional {{site.data.keyword.filestorage_short}} volumes.
 
-It is {{site.data.keyword.BluSoftlayer_full}}’s recommendation that FQDN names be used to connect to the WMware datastore. Using direct IP addressing might bypass the load-balancing mechanism that is provided by using FQDN.
+It is {{site.data.keyword.BluSoftlayer_full}}’s recommendation that FQDN names be used to connect to the VMware datastore. Using direct IP addressing might bypass the load-balancing mechanism that is provided by using FQDN.
 {:important}
 
 To use the IP address instead of the FQDN simply ping the server to obtain the IP address.
@@ -294,26 +294,26 @@ PING nfsdal0902a-fz.service.softlayer.com (10.2.125.80): 56 data bytes
 Storage I/O Control (SIOC) is a feature available for customers who use an Enterprise Plus license. When SIOC is enabled in the environment, it changes the device queue length for the single VM. The change to the device queue length reduces the storage array queue for all VMs to an equal share. SIOC engages only if resources are constrained and the storage I/O latency is above a defined threshold.
 
 
-In order for SIOC to determine when a storage device is congested or constrained, it requires a defined threshold. The congestion threshold latency is different for different storage types. The default selection is to 90% of peak throughput. The percentage of peak throughput value indicates the estimated latency threshold when the WMware datastore is using that percentage of its estimated peak throughput.
+In order for SIOC to determine when a storage device is congested or constrained, it requires a defined threshold. The congestion threshold latency is different for different storage types. The default selection is to 90% of peak throughput. The percentage of peak throughput value indicates the estimated latency threshold when the VMware datastore is using that percentage of its estimated peak throughput.
 
 
-Incorrectly configuring SIOC for a WMware datastore or for a VMDK can significantly impact performance.
+Incorrectly configuring SIOC for a VMware datastore or for a VMDK can significantly impact performance.
 {:important}
 
 
-### Configuring Storage I/O Control For A WMware Datastore
+### Configuring Storage I/O Control For A VMware Datastore
 
 Use the following steps to enable SIOC with recommended values for Endurance and Performance Storage:
 
-1. Browse to the WMware datastore in the vSphere Web Client navigator.
+1. Browse to the VMware datastore in the vSphere Web Client navigator.
 2. Click the **Manage** tab.
 3. Click **Settings** and click **General**.
 4. Click **Edit** for **Datastore Capabilities**.
 5. Select the **Enable Storage I/O Control** check box.<br/>
-   ![NSF WMware Datastore](/images/3_0.png)
+   ![NSF VMware Datastore](/images/3_0.png)
 6. Click **OK**.
 
-This setting is specific to the WMware datastore and not to the host.
+This setting is specific to the VMware datastore and not to the host.
 {:note}
 
 

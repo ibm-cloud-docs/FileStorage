@@ -11,11 +11,11 @@ lastupdated: "2018-10-31"
 {:note: .note}
 {:important: .important}
 
-# Configuring {{site.data.keyword.filestorage_short}} for Backup with cPanel
+# Configuring {{site.data.keyword.filestorage_short}} for backup with cPanel
 
 You can use these instructions to configure your backups to be stored in {{site.data.keyword.filestorage_full}} by cPanel. The assumption is that root or sudo SSH and full WebHost Manager (WHM) access are available. This example is based on a **CentOS 7** host.
 
-For more information from the vendor, see [cPanel - Configuring Backup Directory](https://docs.cpanel.net/display/68Docs/Backup+Configuration#BackupConfiguration-ConfigureBackupDirectory){:new_window}.
+For more information, see [cPanel - Configuring backup directory](https://docs.cpanel.net/display/68Docs/Backup+Configuration#BackupConfiguration-ConfigureBackupDirectory){:new_window}.
 {:tip}
 
 1. Connect to the host through SSH.

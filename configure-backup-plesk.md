@@ -11,11 +11,11 @@ lastupdated: "2018-10-31"
 {:note: .note}
 {:important: .important}
 
-# Configuring {{site.data.keyword.filestorage_short}} for Backup with Plesk
+# Configuring {{site.data.keyword.filestorage_short}} for backup with Plesk
 
 You can use these instructions to configure {{site.data.keyword.filestorage_full}} for your backups in Plesk. The assumption is that root or sudo SSH and full admin level Plesk access are available. This example is based on a CentOS7 host.
 
-For more information from the vendor, see [Plesk's documentation for backing up and restoration](https://docs.plesk.com/en-US/12.5/administrator-guide/backing-up-and-restoration.59256/){:new_window}.
+For more information, see [Plesk's documentation for backing up and restoration](https://docs.plesk.com/en-US/12.5/administrator-guide/backing-up-and-restoration.59256/){:new_window}.
 {:tip}
 
 1. Connect to the host through SSH.

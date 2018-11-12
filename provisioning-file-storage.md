@@ -11,7 +11,7 @@ lastupdated: "2018-10-31"
 {:important: .important}
 
 # Ordering {{site.data.keyword.filestorage_short}}
-
+backup with cPanel
 You can provision {{site.data.keyword.filestorage_short}} and fine tune to meet your capacity and IOPS needs. Get the most out of your storage with two options for specifying performance.
 
 - You can choose from Endurance IOPs tiers that feature pre-defined performance levels to fit workloads that don't have well defined performance requirements.
@@ -76,8 +76,8 @@ When your provisioning request is complete, authorize your hosts to access the n
 - [Mounting {{site.data.keyword.filestorage_short}} on Linux](accessing-file-storage-linux.html)
 - [Mounting {{site.data.keyword.filestorage_short}} in CentOS](mounting-nsf-file-storage.html)
 - [Mounting {{site.data.keyword.filestorage_short}} on CoreOS](mounting-storage-coreos.html)
-- [Configuring {{site.data.keyword.filestorage_short}} for Backup with cPanel](configure-backup-cpanel.html)
-- [Configuring {{site.data.keyword.filestorage_short}} for Backup with Plesk](configure-backup-plesk.html)
+- [Configuring {{site.data.keyword.filestorage_short}} for backup with cPanel](configure-backup-cpanel.html)
+- [Configuring {{site.data.keyword.filestorage_short}} for backup with Plesk](configure-backup-plesk.html)
 - [Mounting {{site.data.keyword.filestorage_short}} Volume on ESXi hosts](architecture-guide-file-storage-vmware.html)
 
 

@@ -6,8 +6,8 @@ lastupdated: "2018-10-29"
 
 ---
 {:new_window: target="_blank"}
-{:tip: .tip} 
-{:note: .note} 
+{:tip: .tip}
+{:note: .note}
 {:important: .important}
 
 # Getting Started with {{site.data.keyword.filestorage_short}}
@@ -43,13 +43,13 @@ Take advantage of the following core features of {{site.data.keyword.filestorage
 
 ## Billing
 
-You can select hourly or monthly billing for a File volume. The type of billing that is selected for a LUN applies to its snapshot space and replicas. For example, if you provision a LUN with hourly billing, any snapshots or replica fees are billed hourly. If you provision a LUN with monthly billing, any snapshots or replica fees are billed monthly. 
+You can select hourly or monthly billing for a File volume. The type of billing that is selected for a LUN applies to its snapshot space and replicas. For example, if you provision a LUN with hourly billing, any snapshots or replica fees are billed hourly. If you provision a LUN with monthly billing, any snapshots or replica fees are billed monthly.
 
-With **hourly billing**, the number of hours the File volume existed on the account is calculated at the time the LUN is deleted or at the end of the billing cycle, which ever comes first. Hourly billing is a good choice for storage that is used for a few days or less than a full month. Hourly billing is available for storage that is provisioned in [select data centers](new-ibm-block-and-file-storage-location-and-features.html) only. 
+With **hourly billing**, the number of hours the File volume existed on the account is calculated at the time the LUN is deleted or at the end of the billing cycle, which ever comes first. Hourly billing is a good choice for storage that is used for a few days or less than a full month. Hourly billing is available for storage that is provisioned in [select data centers](new-ibm-block-and-file-storage-location-and-features.html) only.
 
-With **monthly billing**, the calculation for the price is pro-rated from the date of creation to the end of the billing cycle and billed immediately. If a volume is deleted before the end of the billing cycle, there's no refund. Monthly billing is a good choice for storage that is used in production workloads that use data that needs to be stored and accessed for long periods of time (one month or longer). 
+With **monthly billing**, the calculation for the price is pro-rated from the date of creation to the end of the billing cycle and billed immediately. If a volume is deleted before the end of the billing cycle, there's no refund. Monthly billing is a good choice for storage that is used in production workloads that use data that needs to be stored and accessed for long periods of time (one month or longer).
 
- 
+
 **Performance**
 <table>
   <caption>Table 1 is showing the prices for Performance Storage with monthly and hourly billing.</caption>
@@ -62,7 +62,7 @@ With **monthly billing**, the calculation for the price is pro-rated from the da
    <td>$0.0001/GB + $0.0002/IOP</td>
   </tr>
 </table>
- 
+
 **Endurance**
 <table>
   <caption>Table 2 is showing the prices for Endurance Storage for each tier with monthly and hourly billing options.</caption>
@@ -89,15 +89,15 @@ With **monthly billing**, the calculation for the price is pro-rated from the da
   </tr>
 </table>
 
- 
+
 
 ## Provisioning
 
 {{site.data.keyword.filestorage_short}} volumes can be provisioned from 20 GB to 12 TB with two options: <br/>
 - Provision **Endurance** tiers that feature pre-defined performance levels and other features like snapshots and replication.
-- Build a high-powered **Performance** environment with allocated input/output operations per second (IOPS). 
+- Build a high-powered **Performance** environment with allocated input/output operations per second (IOPS).
 
- 
+
 ### Provisioning with Endurance Tiers
 
 Endurance {{site.data.keyword.filestorage_short}} is available in four IOPS performance tiers to support varying application needs. <br />
@@ -111,9 +111,9 @@ Endurance {{site.data.keyword.filestorage_short}} is available in four IOPS perf
 - **10 IOPS per GB** is designed for the most demanding workloads such as those created by NoSQL databases, and data processing for Analytics. This tier is available for storage that is provisioned up to 4 TB in [select data centers](new-ibm-block-and-file-storage-location-and-features.html) only.
 
 Up to 48,000 IOPS are available with a 12 TB Endurance volume.
- 
+
 Choosing the right Endurance tier for your workload is key. It's equally important to use the right block size, Ethernet connection speed, and the number of hosts necessary to achieve maximum performance. If any of these parts don't align with the other, it can have a significant impact on the resulting throughput.
- 
+
 ### Provisioning with Performance
 
 Performance is a class of {{site.data.keyword.filestorage_short}} that is designed to support high I/O applications with understood performance requirements that don't fit well within an Endurance tier. Predictable performance is achieved through the allocation of protocol-level IOPS to individual volumes. Various IOPS rates (100 - 48,000) can be provisioned with storage sizes that range from 20 GB to 12 TB.
@@ -280,6 +280,6 @@ When your provisioning request is complete, authorize your hosts to access the n
 - [Accessing {{site.data.keyword.filestorage_short}} on Linux](accessing-file-storage-linux.html)
 - [Mounting NFS/File Storage in CentOS](mounting-nsf-file-storage.html)
 - [Mounting {{site.data.keyword.filestorage_short}} on CoreOS](mounting-storage-coreos.html)
-- [Configuring {{site.data.keyword.filestorage_short}} for Backup with cPanel](configure-backup-cpanel.html)
-- [Configuring {{site.data.keyword.filestorage_short}} for Backup with Plesk](configure-backup-plesk.html)
+- [Configuring {{site.data.keyword.filestorage_short}} for backup with cPanel](configure-backup-cpanel.html)
+- [Configuring {{site.data.keyword.filestorage_short}} for backup with Plesk](configure-backup-plesk.html)
 - [Mounting {{site.data.keyword.filestorage_short}} Volume on ESXi hosts](architecture-guide-file-storage-vmware.html)
