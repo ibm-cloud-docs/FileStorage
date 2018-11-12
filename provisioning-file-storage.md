@@ -12,10 +12,10 @@ lastupdated: "2018-11-12"
 
 # Ordering {{site.data.keyword.filestorage_short}}
 
-You can provision {{site.data.keyword.filestorage_short}} and fine tune to meet your capacity and IOPS needs. Get the most out of your storage with two options for specifying performance.
+You can provision {{site.data.keyword.filestorage_short}} and fine-tune to meet your capacity and IOPS needs. Get the most out of your storage with two options for specifying performance.
 
-- You can choose from Endurance IOPs tiers that feature pre-defined performance levels to fit workloads that don't have well defined performance requirements.
-- You can fine tune your storage to meet very specific performance requirements by specifying the total number of IOPS with Performance.
+- You can choose from Endurance IOPs tiers that feature pre-defined performance levels to fit workloads that don't have well-defined performance requirements.
+- You can fine tune your storage to meet specific performance requirements by specifying the total number of IOPS with Performance.
 
 ## Ordering {{site.data.keyword.filestorage_short}} with pre-defined IOPS Tiers (Endurance)
 
