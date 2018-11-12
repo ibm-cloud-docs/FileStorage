@@ -2,12 +2,15 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-10-31"
 
 ---
 {:new_window: target="_blank"}
 {:codeblock: .codeblock}
 {:pre: .pre}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 
 # Mounting {{site.data.keyword.filestorage_short}} on CoreOS
 
@@ -17,7 +20,7 @@ CoreOS is a powerful Linux distribution that is built to make large, scalable de
 
 All secondary mount files go in the `/etc/systemd/system` directory as the system level mounts are in a directory that is read-only in CoreOS. First, you must create a `MOUNTPOINT.mount` file. The **Where** section of the `.mount` file must match the file name. If the mount point is not directly off the `/`, you must name the file by using the syntax `path-to-mount.mount`. For example, if you want to mount the portable storage drive to `/mnt/www`, name the file `mnt-www.mount`.
 
-You can use `fdisk` or `parted` to create the partition and make sure that the file system you create matches the one listed in the `.mount` file or the service fails to start.
+You can use `fdisk` or `parted` to create the partition. Make sure that the file system you create matches the one listed in the `.mount` file or the service fails to start.
 
 
 ```
@@ -44,9 +47,10 @@ $ systemctl enable --now mnt-www.mount
 
 ## Mounting NFS/{{site.data.keyword.filestorage_short}}
 
-The process for mounting the {{site.data.keyword.filestorage_short}} is the same. Because the mount is NFS, you can specify more options by using the `Options=` line in the mount file. 
+The process for mounting the {{site.data.keyword.filestorage_short}} is the same. Because the mount is NFS, you can specify more options by using the `Options=` line in the mount file.
 
 In the example, NFS is set to mount at `/data/www`. The NFS mount point of the {{site.data.keyword.filestorage_short}} instance can be obtained from the {{site.data.keyword.filestorage_short}} listing page or through an API call `SoftLayer_Network_Storage::getNetworkMountAddress()`.
+{:tip}
 
 ```
 $ cat data-www.mount
@@ -73,18 +77,18 @@ cluster1 ~ # mount |grep data
 <nfs_mount_point> on /data/www type nfs4 (rw,relatime,vers=4.0,rsize=65536,wsize=65536,namlen=255,hard,proto=tcp,port=0,timeo=600,retrans=2,sec=sys,clientaddr=10.81.x.x,local_lock=none,addr=10.1.x.x)
 ```
 {:codeblock}
- 
+
 ## Mounting NAS/CIFS
 
 Mounting a CIFS share isn't natively supported in CoreOS but there's an easy workaround to allow the host system to mount NAS shares. You can use a container to build the `mount.cfis` module, and then copy it to the CoreOS system
- 
+
 On the CoreOS system, run the following to download and drop in to a Fedora container.
 
 ```
 docker run -t -i -v /tmp:/host_tmp fedora /bin/bash
 ```
 {:pre}
- 
+
 When you're in the container, run the following to build the CIFS utility.
 
 ```
@@ -97,13 +101,13 @@ cd cifs-utils-6.4/
 cp mount.cifs /host_tmp/
 ```
 {:codeblock}
- 
-Now that the `mount.cifs` file is copied to the host you can exit the docker container by entering the `exit` command or pressing **ctrl+d**. When you're back in the CoreOS system, you can mount the CIFS share with the following command: 
+
+Now that the `mount.cifs` file is copied to the host you can exit the docker container by entering the `exit` command or pressing **ctrl+d**. When you're back in the CoreOS system, you can mount the CIFS share with the following command:
 ```
 /tmp/mount.cifs //nasXXX.service.softlayer.com/USERNAME -o username=USERNAME,password=PASSWORD /path/to/mount
 ```
 {:pre}
- 
+
 ## Mounting ISCSI
 
-This isn't supported currently in CoreOS but is in line for a future release - https://github.com/coreos/bugs/issues/634
+This isn't supported currently in CoreOS but is in line for a future release. - https://github.com/coreos/bugs/issues/634

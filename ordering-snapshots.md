@@ -2,23 +2,27 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-10-31"
 
 ---
 {:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 
 # Ordering Snapshots
 
 To create snapshots of your storage volume, either automated or manually, you need to purchase space to hold them. You can purchase capacity up to your storage volume amount (during the initial volume purchase or later using these steps).
 
-1. Access your Storage through **Storage** > **{{site.data.keyword.filestorage_short}}** tab of the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}
-2. In the **Snapshots** frame, click **Add Snapshot Space**.
-3. In the **Snapshots** frame, click **Purchase snapshot space now**.
-3. Select the amount of space you need.
-4. Click **Continue**.
-5. Enter any Promo Code you have and click **Recalculate**. The **Charges for this order** and **Order Review** have default values.
-6. Click the **I have read the Master Service Agreement…** check box and click **Place Order**. Your snapshot space will be provisioned in a few minutes.
+1. Log in to [The IBM Cloud console](https://console.bluemix.net/catalog/){:new_window} and click on the **Menu** icon on the top left. Select **Classic Infrastructure**. 
+
+   Alternatively, you can log into the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
+2. Access your Storage through **Storage** > **{{site.data.keyword.filestorage_short}}**.
+3. Click **Change Snapshot Space** in the Snapshots frame.
+4. Select the amount of space that you need and the payment method.
+5. Click **Continue**.
+6. Enter any Promo Code you have and click **Recalculate**. The **Charges for this order** and **Order Review** have default values.
+7. Check the **I have read the Master Service Agreement and agree to the terms therein.** box and click **Place Order**. Your snapshot space is provisioned in a few minutes.
 
 ## Determining how much snapshot space to order
 
@@ -27,7 +31,9 @@ Generically speaking, snapshot space is used by snapshots based on two key facto
 - How long you plan to retain snapshots.  
 
 The way to calculate the amount of space that you need is **(Rate of Change)** x **(number of hours/days/weeks/months data is retained)**.  
-> **Note** - The first snapshot uses a negligible amount of space as it's just a copy of the metadata (pointers) that indicates the active file system blocks. 
+
+The first snapshot uses a negligible amount of space as it's just a copy of the metadata (pointers) that indicates the active file system blocks.
+{:note}
 
 A volume with numerous changes and a lengthy retention period needs more space than a volume with moderate change and a moderate retention schedule. An example for the first type is a high change rate database. An example for the second type is a VMware datastore.
 

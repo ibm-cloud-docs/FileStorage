@@ -2,10 +2,13 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-09-17"
+lastupdated: "2018-10-31"
 
 ---
 {:new_window: target="_blank"}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 
 
 # Managing Snapshots
@@ -16,10 +19,11 @@ You can decide how often and when you want to create a point-in-time reference o
 
 
 Before you can set up your initial schedule, you must first purchase snapshot space if you didn't purchase it during the initial provisioning of the storage volume.
+{:important}
 
 ### Adding a Snapshot schedule
 
-Snapshots schedules can be set up for hourly, daily, and weekly intervals, each with a distinct retention cycle. There is a maximum of 50 scheduled snapshots, which can be a mix of hourly, daily, and weekly schedules, and manual snapshots per storage volume.
+Snapshots schedules can be set up for hourly, daily, and weekly intervals, each with a distinct retention cycle. There is a maximum limit of 50 scheduled snapshots, which can be a mix of hourly, daily, and weekly schedules, and manual snapshots per storage volume.
 
 1. Click your storage volume, click **Actions**, and click **Schedule Snapshot**.
 2. In the New Schedule Snapshot window, there are three different snapshot frequencies to select from. Use any combination of the three to create a comprehensive snapshot schedule.
@@ -40,7 +44,7 @@ The list of the snapshots are displayed as they're taken in the **Snapshots** se
 
 Manual snapshots can be taken at various points during an application upgrade or maintenance. You can also take snapshots across multiple servers that were temporarily deactivated at the application level.
 
-There's a maximum of 50 manual snapshots per storage volume.
+There's a maximum limit of 50 manual snapshots per storage volume.
 
 1. Click your storage volume.
 2. Click **Actions**.
@@ -61,9 +65,10 @@ The pie chart at the top of the **Details** page displays how much space is used
 
 ## Changing the amount of Snapshot space for a volume
 
-You might need to add snapshot space to a volume that didn't previously have any or might require extra snapshot space. You can add 5 - 4,000 GB depending on your needs. 
+You might need to add snapshot space to a volume that didn't previously have any or might require extra snapshot space. You can add 5 - 4,000 GB depending on your needs.
 
-**Note**: Snapshot space can be increased only. It can't be reduced. You can select a smaller amount of space until you determine how much space you actually need. Remember, automated, and manual snapshots share the space.
+Snapshot space can be increased only. It can't be reduced. You can select a smaller amount of space until you determine how much space you actually need. Remember, automated, and manual snapshots share the space.
+{:important}
 
 Snapshot space is changed through **Storage** > **{{site.data.keyword.filestorage_short}}**.
 
@@ -87,7 +92,9 @@ Snapshot schedules can be canceled through **Storage** > **{{site.data.keyword.f
 
 1. Click the schedule to be deleted in the **Snapshot Schedules** frame on the **Details** page.
 2. Click the check box next to the schedule to be deleted and click **Save**.<br />
-**Caution**: If you're using the replication feature, be sure that the schedule you're deleting isn't the schedule that is used by replication. Click [here](replication.html) for more information on deleting a replication schedule.
+
+If you're using the replication feature, be sure that the schedule you're deleting isn't the schedule that is used by replication. Click [here](replication.html) for more information on deleting a replication schedule.
+{:important}
 
 ## Deleting a snapshot
 
@@ -107,9 +114,12 @@ You might need to take your storage volume back to a specific point-in-time beca
 2. Click **Storage**, **{{site.data.keyword.filestorage_short}}** in the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
 3. Scroll down and click your volume to be restored. The **Snapshots** section of the **Detail** page displays the list of all saved snapshots along with their size and creation date.
 4. Click **Actions** next to the snapshot to be used and click **Restore**. <br/>
-   >**Note**: Completing the restore results in the loss of the data that was created or modified after the snapshot was taken. This data loss occurs because your storage volume returns to the same state it was in of the time of the snapshot. 
+
+   Completing the restore results in the loss of the data that was created or modified after the snapshot was taken. This data loss occurs because your storage volume returns to the same state it was in of the time of the snapshot.
+   {:note}
 5. Click **Yes** to start the restore. Expect a message across the top of the page that states that the volume is being restored by using the selected snapshot. Additionally, an icon appears next to your volume on the {{site.data.keyword.filestorage_short}} that indicates that an active transaction is in progress. Hovering over the icon produces a window that shows the transaction. The icon disappears when the transaction is complete.
 6. Mount and reattach your storage volume to the host.
   - Click [here](accessing-file-storage-linux.html) for {{site.data.keyword.filestorage_short}} on Linux instructions.
-    
->**Note** - Restoring a volume results in deleting all snapshots that were taken after the snapshot that was used for the restore.
+
+Restoring a volume results in deleting all snapshots that were taken after the snapshot that was used for the restore.
+{:important}
