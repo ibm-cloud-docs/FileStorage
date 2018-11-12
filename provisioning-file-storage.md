@@ -42,7 +42,7 @@ You can provision {{site.data.keyword.filestorage_short}} and fine tune to meet 
 9. After you reviewed the terms and conditions, check the I** have read and agree to the Third-Party Service Agreements** box.
 10. Click **Create**. Your new storage allocation is available in a few minutes.
 
-By default, you can provision a combined total of 250 {{site.data.keyword.blockstorageshort}} volumes. To increase the number of your volumes, contact your sales representative. Read about increasing limits [here](managing-storage-limits.html).<br/><br/>For more information about the limit on simultaneous authorizations, see the [FAQs](File-Storage-FAQ.html#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-).
+By default, you can provision a combined total of 250 {{site.data.keyword.blockstorageshort}} volumes. To increase the number of your volumes, contact your sales representative. Read about increasing limits [here](managing-storage-limits.html).<br/><br/>For more information about the limit on simultaneous authorizations, see the [FAQs](faqs.html#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-).
 {:tip}
 
 ## Ordering {{site.data.keyword.filestorage_short}} with Custom IOPS (Performance)
@@ -66,7 +66,7 @@ By default, you can provision a combined total of 250 {{site.data.keyword.blocks
 9. After you reviewed the terms and conditions, check the I** have read and agree to the Third-Party Service Agreements** box.
 10. Click **Create**. Your new storage allocation is available in a few minutes.
 
-By default, you can provision a combined total of 250 {{site.data.keyword.blockstorageshort}} volumes. To increase the number of your volumes, contact your sales representative. Read about increasing limits [here](managing-storage-limits.html).<br/><br/>For more information about the limit on simultaneous authorizations, see the [FAQs](File-Storage-FAQ.html#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-).
+By default, you can provision a combined total of 250 {{site.data.keyword.blockstorageshort}} volumes. To increase the number of your volumes, contact your sales representative. Read about increasing limits [here](managing-storage-limits.html).<br/><br/>For more information about the limit on simultaneous authorizations, see the [FAQs](faqs.html#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-).
 {:important}
 
 
