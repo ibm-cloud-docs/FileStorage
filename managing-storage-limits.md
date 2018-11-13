@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-11-12"
+lastupdated: "2018-11-13"
 
 ---
 {:new_window: target="_blank"}
@@ -31,7 +31,7 @@ In the ticket, provide the following information:
 - **How many extra File volumes are needed by type, size, IOPS, and location?** <br />
 *For example, your answer might be something similar to "25x Performance 20 GB @ 10 IOPS in DAL09" or "50x Endurance 2 TB @ 0.25 IOPS in SJC03".*
 
-- **Provide an estimate of when you expect/plan to provision all of the requested volume increase.** <br />
+- **Provide an estimate of when you expect or plan to provision all of the requested volume increase.** <br />
  "*For example, your answer might be something similar to "90 days".*
 
 - **Provide a 90-day forecast of expected average capacity usage of these volumes.** <br />
