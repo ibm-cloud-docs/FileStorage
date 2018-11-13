@@ -18,7 +18,7 @@ The Brocade vRouter (Vyatta) gateway serves as a gateway and router for your env
 
 In our example configuration, five zones are created in the Brocade vRouter (Vyatta):
 
-- SLSERVICE – {{site.data.keyword.BluSoftlayer_full}} services
+- SLSERVICE – {{site.data.keyword.cloud_notm}} services
 - VMACCESS – {{site.data.keyword.BluVirtServers_short}} (VMs) on the capacity cluster
 - MGMT – Management and capacity clusters as well as management VMs
 - STORAGE – Storage server or servers
