@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-13"
 
 ---
 {:new_window: target="_blank"}
@@ -15,7 +15,7 @@ lastupdated: "2018-10-31"
 
 First, make sure that the host that is to access the {{site.data.keyword.filestorage_full}} volume is authorized through the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
 
-1. From the {{site.data.keyword.filestorage_short}} listing page, click **Actions** that is associated with the new share and click **Authorize Host**.
+1. From the {{site.data.keyword.filestorage_short}} listing page, click the **Actions** link that is associated with the new share and click **Authorize Host**.
 2. Select the host or hosts from the list and click **Submit**. This action authorizes the host to access the share.
 
 ## Mounting the {{site.data.keyword.filestorage_short}} share
@@ -25,7 +25,7 @@ Use these instructions to connect a Linux-based {{site.data.keyword.BluSoftlayer
 The mount point of the file storage instance can be obtained from the {{site.data.keyword.filestorage_short}} listing page or through an API call - `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 {:tip}
 
-1. Install the required packages/tools.
+1. Install the required tools.
    ```
    # yum -y install nfs-utils nfs-utils-lib
    ```

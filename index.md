@@ -45,7 +45,7 @@ Take advantage of the following core features of {{site.data.keyword.filestorage
 
 You can select hourly or monthly billing for a File volume. The type of billing that is selected for a LUN applies to its snapshot space and replicas. For example, if you provision a LUN with hourly billing, any snapshots or replica fees are billed hourly. If you provision a LUN with monthly billing, any snapshots or replica fees are billed monthly.
 
-With **hourly billing**, the number of hours the File volume existed on the account is calculated at the time the LUN is deleted or at the end of the billing cycle, which ever comes first. Hourly billing is a good choice for storage that is used for a few days or less than a full month. Hourly billing is available for storage that is provisioned in [select data centers](new-ibm-block-and-file-storage-location-and-features.html) only.
+With **hourly billing**, the number of hours that the File volume existed on the account is calculated at the time the LUN is deleted or at the end of the billing cycle, which ever comes first. Hourly billing is a good choice for storage that is used for a few days or less than a full month. Hourly billing is available for storage that is provisioned in [select data centers](new-ibm-block-and-file-storage-location-and-features.html) only.
 
 With **monthly billing**, the calculation for the price is pro-rated from the date of creation to the end of the billing cycle and billed immediately. If a volume is deleted before the end of the billing cycle, there's no refund. Monthly billing is a good choice for storage that is used in production workloads that use data that needs to be stored and accessed for long periods of time (one month or longer).
 
@@ -160,32 +160,32 @@ Performance for {{site.data.keyword.filestorage_short}} is accessed and mounted 
           <tr>
             <td>500</td>
             <td>100</td>
-            <td>6,000 or 10,000<sup><img src="/images/numberone.png" alt="footnote" /></sup></td>
+            <td>6,000 or 10,000 <sup><img src="/images/numberone.png" alt="footnote" /></sup></td>
           </tr>
           <tr>
             <td>1,000</td>
             <td>100</td>
-            <td>6,000 or 20,000<sup><img src="/images/numberone.png" alt="Footnote" /></sup></td>
+            <td>6,000 or 20,000 <sup><img src="/images/numberone.png" alt="Footnote" /></sup></td>
           </tr>
           <tr>
             <td>2,000-3,000</td>
             <td>200</td>
-            <td>6,000 or 40,000<sup><img src="/images/numberone.png" alt="Footnote" /></sup></td>
+            <td>6,000 or 40,000 <sup><img src="/images/numberone.png" alt="Footnote" /></sup></td>
           </tr>
           <tr>
             <td>4,000-7,000</td>
             <td>300</td>
-            <td>6,000 or 48,000<sup><img src="/images/numberone.png" alt="Footnote" /></sup></td>
+            <td>6,000 or 48,000 <sup><img src="/images/numberone.png" alt="Footnote" /></sup></td>
           </tr>
           <tr>
             <td>8,000-9,000</td>
             <td>500</td>
-            <td>6,000 or 48,000<sup><img src="/images/numberone.png" alt="Footnote" /></sup></td>
+            <td>6,000 or 48,000 <sup><img src="/images/numberone.png" alt="Footnote" /></sup></td>
           </tr>
           <tr>
             <td>10,000-12,000</td>
             <td>1,000</td>
-            <td>6,000 or 48,000<sup><img src="/images/numberone.png" alt="Footnote" /></sup></td>
+            <td>6,000 or 48,000 <sup><img src="/images/numberone.png" alt="Footnote" /></sup></td>
           </tr>
 </table>
 
@@ -264,7 +264,7 @@ The speed of your Ethernet connection must be faster than the expected maximum t
 
 To achieve maximum IOPS, adequate network resources need to be in place. Other considerations include private network usage outside of storage and host side and application-specific tunings (IP stack or [queue depths](set-host-queue-depth-settings-performance-and-endurance-storage.html), and other settings).
 
-Storage traffic is included in the total network usage of Public Virtual Servers. Please see the [Virtual Server documentation](https://console.bluemix.net/docs/vsi/vsi_public.html#public-virtual-servers) to understand limits that might be imposed by the service.
+Storage traffic is included in the total network usage of Public Virtual Servers. For more information about the limits that might be imposed by the service, see the [Virtual Server documentation](https://console.bluemix.net/docs/vsi/vsi_public.html#public-virtual-servers).
 
 **NFS version**
 
@@ -278,7 +278,7 @@ When you're ready to submit your order, follow the instructions [here](provision
 
 When your provisioning request is complete, authorize your hosts to access the new storage and configure your connection. Depending on your host's operating system, follow the appropriate link.
 - [Accessing {{site.data.keyword.filestorage_short}} on Linux](accessing-file-storage-linux.html)
-- [Mounting NFS/File Storage in CentOS](mounting-nsf-file-storage.html)
+- [Mounting {{site.data.keyword.filestorage_short}} in CentOS](mounting-nsf-file-storage.html)
 - [Mounting {{site.data.keyword.filestorage_short}} on CoreOS](mounting-storage-coreos.html)
 - [Configuring {{site.data.keyword.filestorage_short}} for backup with cPanel](configure-backup-cpanel.html)
 - [Configuring {{site.data.keyword.filestorage_short}} for backup with Plesk](configure-backup-plesk.html)

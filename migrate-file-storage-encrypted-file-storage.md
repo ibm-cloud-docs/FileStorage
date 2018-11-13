@@ -12,7 +12,7 @@ lastupdated: "2018-10-31"
 
 # Migrating {{site.data.keyword.filestorage_short}} to enhanced {{site.data.keyword.filestorage_short}}
 
-Enhanced {{site.data.keyword.filestorage_full}} is now available in select data centers. To see the list of upgraded data centers and available features such as adjustable IOPS rates and expandable volumes click [here](new-ibm-block-and-file-storage-location-and-features.html). For more information on provider-managed encrypted storage, see [{{site.data.keyword.filestorage_short}} Encryption-At-Rest](block-file-storage-encryption-rest.html).
+Enhanced {{site.data.keyword.filestorage_full}} is now available in select data centers. To see the list of upgraded data centers and available features such as adjustable IOPS rates and expandable volumes, click [here](new-ibm-block-and-file-storage-location-and-features.html). For more information about provider-managed encryption, see [{{site.data.keyword.filestorage_short}} Encryption-At-Rest](block-file-storage-encryption-rest.html).
 
 The preferred migration path is to connect to both volumes simultaneously and transfer data directly from one LUN to another. The specifics depend on your operating system and whether the data is expected to change during the copy operation.
 
@@ -22,24 +22,26 @@ There's an assumption that you already have your non-encrypted LUN attached to y
 - [Mounting NFS/{{site.data.keyword.filestorage_short}} in CentOS](mounting-nsf-file-storage.html)
 - [Mounting {{site.data.keyword.filestorage_short}} on CoreOS](mounting-storage-coreos.html)
 
-All enhanced {{site.data.keyword.filestorage_short}} volumes have a different mount point than non-encrypted volumes. To ensure you're using the correct mount point for both your encrypted and non-encrypted {{site.data.keyword.filestorage_short}} volumes you can view the mount point information in the **Volume Details** page in the {{site.data.keyword.slportal}}. You can also access the correct mount point through an API call:  `SoftLayer_Network_Storage::getNetworkMountAddress()`.
+All enhanced {{site.data.keyword.filestorage_short}} volumes that are provisioned in these data centers have a different mount point than non-encrypted volumes. To ensure you're using the correct mount point for both storage volumes, you can view the mount point information in the **Volume Details** page in the console. You can also access the correct mount point through an API call: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 {:tip}
 
 
-## Creating a new {{site.data.keyword.filestorage_short}}
+## Creating a {{site.data.keyword.filestorage_short}}
 
 When you place an order with API, specify the "Storage as a Service" package to ensure you're getting the updated features with your new storage.
 {:important}
 
-The following instructions are for ordering an enhanced volume/fileshare through the {{site.data.keyword.slportal}}/{{site.data.keyword.BluSoftlayer_full}} catalog. Your new volume must be the same size or larger than the original volume to facilitate the migration.
+The following instructions are for ordering an enhanced file share through the {{site.data.keyword.slportal}} or the {{site.data.keyword.BluSoftlayer_full}} catalog. Your new volume must be the same size or larger than the original volume to facilitate the migration.
 
-### Ordering a new Endurance Storage volume
+### Ordering an Endurance Storage volume
 
-1. From the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}, click **Storage** > **{{site.data.keyword.filestorage_short}}** OR from {{site.data.keyword.BluSoftlayer_full}} catalog click **Infrastructure** > **Storage** > **{{site.data.keyword.filestorage_short}}**.
+1. From the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}, click **Storage** > **{{site.data.keyword.filestorage_short}}** OR from {{site.data.keyword.BluSoftlayer_full}} catalog, click **Infrastructure** > **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Click **Order {{site.data.keyword.filestorage_short}}**.
 3. Select **Endurance** from the **Select Storage Type** list.
 4. Click **Location** and select your data center.
-   - Ensure that the new Storage is added in the same location as the original.
+
+   Ensure that the new Storage is added in the same location as the original.
+   {:important}
 5. Select your billing option. You can choose between monthly or hourly billing.
 6. Click **Endurance** and select the IOPS tier.
 6. Select the **Usable Storage Size** from the list. Your new volume must be the same size or larger than the original volume.
@@ -47,13 +49,15 @@ The following instructions are for ordering an enhanced volume/fileshare through
 8. Click **Continue**. You're shown the monthly and prorated charges with a final chance to review order details. Click **Previous** if you want to change your order.
 9. Click the **I have read the Master Service Agreement** check box and click **Place Order**
 
-### Ordering an Encrypted Performance Storage Volume
+### Ordering a Performance Storage Volume
 
 1. From the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}, click **Storage**, **{{site.data.keyword.filestorage_short}}** OR from {{site.data.keyword.BluSoftlayer_full}} catalog click **Infrastructure** >** Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Click **Order {{site.data.keyword.filestorage_short}}**.
 3. Select **Performance** from the **Select Storage Type** list.
 4. Click **Location** and select your data center.
-    -  Ensure that the new Storage is added in the same location as the original.
+
+   Ensure that the new Storage is added in the same location as the original.
+   {:important}
 5. Select your billing options. You can choose between hourly and monthly billing.
 6. Select the radio button next to the appropriate **Storage Size**.
 6. Enter the IOPS in the **Specify IOPS** field.
