@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-09-18"
+lastupdated: "2018-11-13"
 
 ---
 {:new_window: target="_blank"}
@@ -13,24 +13,24 @@ lastupdated: "2018-09-18"
 ## How can I tell which of my {{site.data.keyword.filestorage_short}} volumes are encrypted?
 {: faq}
 
-Look at your list of {{site.data.keyword.filestorage_short}} in the customer portal. You can see a lock icon to the right of the LUN/volume name for the volumes that are encrypted.
+Look at your list of {{site.data.keyword.filestorage_short}} in the customer portal. You can see a lock icon to the right of the volume name for the volumes that are encrypted.
 
 ## If I purchased non-encrypted {{site.data.keyword.filestorage_short}} in a data center that was upgraded for encryption, can I encrypt my {{site.data.keyword.filestorage_short}}?
 {: faq}
 
-{{site.data.keyword.filestorage_short}} that was provisioned before a data center upgrade can't be encrypted. New {{site.data.keyword.filestorage_short}} provisioned in upgraded data centers is automatically encrypted. There's no encrypt setting to choose from, it’s automatic. Data on non-encrypted storage can be encrypted by creating a new volume, then copying the data to the new encrypted volume with host-based migration. For more information, see [Migrating File Storage](/docs/infrastructure/FileStorage/migrate-file-storage-encrypted-file-storage.html).
+{{site.data.keyword.filestorage_short}} that was provisioned before a data center upgrade can't be encrypted. New {{site.data.keyword.filestorage_short}} that was provisioned in upgraded data centers is automatically encrypted. There's no encryption setting to choose from, it’s automatic. Data on non-encrypted storage can be encrypted by creating a new volume, then copying the data to the new encrypted volume with host-based migration. For more information, see [Migrating File Storage](migrate-file-storage-encrypted-file-storage.html).
 
 ## How do I know whether I'm provisioning {{site.data.keyword.filestorage_short}} in an upgraded data center?
 {: faq}
 
-In the {{site.data.keyword.filestorage_short}} order form, all upgraded data centers are denoted with an asterisk (`*`). During the ordering process, you're given an indication that you're provisioning storage with encryption. When the storage is provisioned, you can see an icon in the storage list that shows that volume as encrypted. 
+In the {{site.data.keyword.filestorage_short}} order form, all upgraded data centers are denoted with an asterisk (`*`). During the ordering process, you're given an indication that you're provisioning storage with encryption. When the storage is provisioned, you can see an icon in the storage list that shows that volume as encrypted.
 
-All encrypted volumes and file shares are provisioned in upgraded data centers only. You can find a full list of upgraded data centers and available features [here](/docs//infrastructure/BlockStorage/new-ibm-block-and-file-storage-location-and-features.html).
+All encrypted volumes and file shares are provisioned in upgraded data centers only. You can find a full list of upgraded data centers and available features [here](new-ibm-block-and-file-storage-location-and-features.html).
 
 ## Why {{site.data.keyword.filestorage_short}} with an Endurance 10 IOPS tier be provisioned in some data centers and not in others?
 {: faq}
 
-The {{site.data.keyword.filestorage_short}} Endurance type 10 IOPS/GB tier is available in select data centers only, and new data centers are going to be added soon. You can find a full list of upgraded data centers and available features [here](/docs//infrastructure/BlockStorage/new-ibm-block-and-file-storage-location-and-features.html).
+The {{site.data.keyword.filestorage_short}} Endurance type 10 IOPS/GB tier is available in select data centers only, and new data centers are going to be added soon. You can find a full list of upgraded data centers and available features [here](new-ibm-block-and-file-storage-location-and-features.html).
 
 ## How can I find the correct mount point for my {{site.data.keyword.filestorage_short}}?
 {: faq}
@@ -56,11 +56,11 @@ That depends on what the host operating system can handle, it’s not something 
 {: faq}
 
 <table>
-  <caption>Table 1 shows the maximum number of inodes that are allowed based on the volume size. Volume sizes are in the left column. The number of inodes/file shares are on the right.</caption>
+  <caption>Table 1 shows the maximum number of inodes that are allowed based on the volume size. Volume sizes are in the left column. The number of inodes and file shares are on the right.</caption>
   <thead>
     <tr>
       <th>Volume Size</th>
-      <th>Inodes/File shares</th>
+      <th>Inodes and File shares</th>
     </tr>
   </thead>
   <tbody>
@@ -110,7 +110,7 @@ That depends on what the host operating system can handle, it’s not something 
 ## Measuring IOPS
 {: faq}
 
-IOPS is measured based on a load profile of 16 KB blocks with random 50 percent reads and 50 percent writes. Workloads that differ from this profile might experience poor performance.
+IOPS is measured based on a load profile of 16-KB blocks with random 50 percent reads and 50 percent writes. Workloads that differ from this profile might experience poor performance.
 
 ## What happens when I use a smaller block size for measuring performance?
 {: faq}
@@ -135,9 +135,9 @@ There's no need for pre-warming. You can observe the specified throughput immedi
 ## Can more throughput be achieved if a faster Ethernet connection is used?
 {: faq}
 
-Throughput limits are set at a per-volume/LUN level so using a faster Ethernet connection doesn't increase that set limit. However, with a slower Ethernet connection, your bandwidth can be a potential bottleneck.
+Throughput limits are set at a per-volume level so using a faster Ethernet connection doesn't increase that set limit. However, with a slower Ethernet connection, your bandwidth can be a potential bottleneck.
 
-## Do firewalls/security groups impact performance?
+## Do firewalls and security groups impact performance?
 {: faq}
 
 It's best to run storage traffic on a VLAN, which bypasses the firewall. Running storage traffic through software firewalls increases latency and adversely affects storage performance.
@@ -145,12 +145,12 @@ It's best to run storage traffic on a VLAN, which bypasses the firewall. Running
 ## What performance latency can be expected from the {{site.data.keyword.filestorage_short}}?   
 {: faq}
 
-Target latency within the storage is <1ms. The storage is connected to compute instances on a shared network, so the exact performance latency depends on the network traffic during the operation.
+Target latency within the storage is  less than 1 ms. The storage is connected to compute instances on a shared network, so the exact performance latency depends on the network traffic during the operation.
 
 ## What happens to the data when {{site.data.keyword.filestorage_short}} Volumes are deleted?
 {: faq}
 
-{{site.data.keyword.filestorage_full}} presents file shares to customers on physical storage that is wiped before any re-use. Customers with special requirements for compliance such as NIST 800-88 Guidelines for Media Sanitization need to perform the data sanitization procedure before they delete their storage.
+{{site.data.keyword.filestorage_full}} presents file shares to customers on physical storage that is wiped before any reuse. Customers with special requirements for compliance such as NIST 800-88 Guidelines for Media Sanitization need to perform the data sanitization procedure before they delete their storage.
 
 ## What happens to the drives that are decommissioned from the cloud data center?
 {: faq}
