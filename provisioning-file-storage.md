@@ -15,7 +15,7 @@ lastupdated: "2018-11-12"
 You can provision {{site.data.keyword.filestorage_short}} and fine-tune to meet your capacity and IOPS needs. Get the most out of your storage with two options for specifying performance.
 
 - You can choose from Endurance IOPs tiers that feature pre-defined performance levels to fit workloads that don't have well-defined performance requirements.
-- You can fine tune your storage to meet specific performance requirements by specifying the total number of IOPS with Performance.
+- You can fine-tune your storage to meet specific performance requirements by specifying the total number of IOPS with Performance.
 
 ## Ordering {{site.data.keyword.filestorage_short}} with pre-defined IOPS Tiers (Endurance)
 
@@ -25,7 +25,7 @@ You can provision {{site.data.keyword.filestorage_short}} and fine-tune to meet 
 2. Select your deployment **Location** (data center).
    - Ensure that the new Storage is added in the same location as the compute host or hosts that you have.
 3. Billing. If you selected a data center with improved capabilities (marked with an asterisk), you can choose between Monthly or Hourly Billing.
-     1. With **hourly** billing, the number of hours the file volume existed on the account is calculated at the time the LUN is deleted or at the end of the billing cycle. Which ever comes first. Hourly billing is a good choice for storage that is used for a few days or less than a full month. Hourly billing is only available for storage that is provisioned in these [select data centers](new-ibm-block-and-file-storage-location-and-features.html).
+     1. With **hourly** billing, the number of hours that the file volume existed on the account is calculated at the time the LUN is deleted or at the end of the billing cycle. Which ever comes first. Hourly billing is a good choice for storage that is used for a few days or less than a full month. Hourly billing is only available for storage that is provisioned in these [select data centers](new-ibm-block-and-file-storage-location-and-features.html).
      2. With **monthly** billing, the calculation for the price is pro-rated from the date of creation to the end of the billing cycle and billed immediately. There's no refund if a file volume is deleted before the end of the billing cycle. Monthly billing is a good choice for storage that is used in production workloads that use data that needs to be stored and accessed for long periods of time (month or longer).
 
      Monthly billing type is used by default for storage that is provisioned in data centers that are **not** updated with improved capabilities.
@@ -53,7 +53,7 @@ By default, you can provision a combined total of 250 {{site.data.keyword.blocks
 2. Click **Location** and select your data center.
    - Ensure that the new Storage is added in the same location as the compute host or hosts that you have.
 3. Billing. If you selected a data center with improved capabilities (marked with an asterisk), you can choose between Monthly or Hourly Billing.
-     1. With **hourly** billing, the number of hours the file volume existed on the account is calculated at the time the LUN is deleted or at the end of the billing cycle. Which ever comes first. Hourly billing is a good choice for storage that is used for a few days or less than a full month. Hourly billing is only available for storage that is provisioned in these [select data centers](new-ibm-block-and-file-storage-location-and-features.html).
+     1. With **hourly** billing, the number of hours that the file volume existed on the account is calculated at the time the LUN is deleted or at the end of the billing cycle. Which ever comes first. Hourly billing is a good choice for storage that is used for a few days or less than a full month. Hourly billing is only available for storage that is provisioned in these [select data centers](new-ibm-block-and-file-storage-location-and-features.html).
      2. With **monthly** billing, the calculation for the price is pro-rated from the date of creation to the end of the billing cycle and billed immediately. There's no refund if a file volume is deleted before the end of the billing cycle. Monthly billing is a good choice for storage that is used in production workloads that use data that needs to be stored and accessed for long periods of time (month or longer).
 
      Monthly billing type is used by default for storage that is provisioned in data centers that are **not** updated with improved capabilities.

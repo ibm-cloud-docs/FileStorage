@@ -6,7 +6,9 @@ lastupdated: "2018-11-12"
 
 ---
 {:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 
 # Managing Storage Limits
 
@@ -35,4 +37,7 @@ In the ticket, provide the following information:
 - **Provide a 90-day forecast of expected average capacity usage of these volumes.** <br />
 *For example, your answer might be something similar to "expect 25 percent to be used in 30 days, 50 percent to be used in 60 days and 75 percent to be used in 90 days".*
 
-A response to all of the above questions is required. You'll be notified of the update to your limits through the ticket process.
+Respond to all questions and statements in your request. They are required for processing and approval.
+{:important}
+
+You're going to be notified of the update to your limits through the ticket process.
