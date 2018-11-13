@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-13"
 
 ---
 
@@ -188,7 +188,7 @@ Before you proceed with these steps, disconnect the volume. Failure to do so, re
 2. In the upper right, click **Replica** and click **Actions**.
 3. Select **Failover**.
 
-   Expect a message that states that the failover is in progress. Additionally, an icon appears next to your volume on the **{{site.data.keyword.filestorage_short}}** that indicates that an active transaction is occurring. Hovering over the icon produces a window that shows the transaction. The icon disappears when the transaction is complete. During the failover process, configuration-related actions are read-only. You can't edit any snapshot schedule or change snapshot space. The event is logged in replication history.<br/> When your target volume is live you get another message. Your original source volume's LUN Name updates to end in "REP" and its Status becomes Inactive.
+   Expect a message that states that the failover is in progress. Additionally, an icon appears next to your volume on the **{{site.data.keyword.filestorage_short}}** that indicates that an active transaction is occurring. Hovering over the icon produces a window that shows the transaction. The icon disappears when the transaction is complete. During the failover process, configuration-related actions are read-only. You can't edit any snapshot schedule or change snapshot space. The event is logged in replication history.<br/> When your target volume is live, you get another message. Your original source volume's LUN Name updates to end in "REP" and its Status becomes Inactive.
    {:note}
 4. Click **View All ({{site.data.keyword.filestorage_short}})**.
 5. Click your active volume (formerly your target volume). This volume now has an **Active** status.
@@ -222,7 +222,7 @@ Failbacks are started under **Storage**, **{{site.data.keyword.filestorage_short
 
 ## Viewing the replication history
 
-Replication history is viewed on the **Audit Log** on the **Account** tab under **Manage**. Both the primary and replica volumes display identical replication history, which includes
+Replication history is viewed on the **Audit Log** on the **Account** tab under **Manage**. Both the primary and replica volumes display identical replication histories, which include
 
 - Type for replication (failover or failback),
 - When it was initiated,

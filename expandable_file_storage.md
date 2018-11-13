@@ -2,18 +2,18 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-09-12"
+lastupdated: "2018-1-12"
 
 ---
 {:new_window: target="_blank"}
 
 # Expanding File Share Capacity
 
-With this new feature, current {{site.data.keyword.filestorage_full}} users are able to expand the size of their {{site.data.keyword.filestorage_short}} in GB increments up to 12 TB immediately. They don't need to create a duplicate or manually migrate data to a larger volume. There’s no outage or lack of access to the storage while the resize is taking place. 
+With this new feature, current users of {{site.data.keyword.filestorage_full}} are able to expand the size of their {{site.data.keyword.filestorage_short}} in GB increments up to 12 TB immediately. They don't need to create a duplicate or manually migrate data to a larger volume. There’s no outage or lack of access to the storage while the resize is taking place. 
 
 Billing for the volume is automatically updated to add the pro-rated difference of the new price to the current billing cycle. Then, the full new amount is billed in the next billing cycle.
 
-This feature is only available in [select data centers](new-ibm-block-and-file-storage-location-and-features.html). 
+This feature is only available in [select data centers](new-ibm-block-and-file-storage-location-and-features.html).
 
 ## Advantages of Expandable Storage
 
@@ -27,7 +27,7 @@ Expand action on the primary storage results in automatic resizing of the replic
 
 ## Limitations
 
-This feature is only available for storage that is provisioned in [data centers](new-ibm-block-and-file-storage-location-and-features.html) with enhanced capabilities. Encrypted storage that is provisioned in these data centers can be increased up to 12 TB. 
+This feature is only available for storage that is provisioned in [data centers](new-ibm-block-and-file-storage-location-and-features.html) with enhanced capabilities. Encrypted storage that is provisioned in these data centers can be increased up to 12 TB.
 
 Existing size limitations for {{site.data.keyword.filestorage_short}} that was provisioned with Endurance still apply (up to 4 TB for 10 IOPS tier and up to 12 TB for all other tiers).
 
