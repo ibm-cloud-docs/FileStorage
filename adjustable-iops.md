@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-09-12"
+lastupdated: "2018-11-13"
 
 ---
 {:new_window: target="_blank"}
@@ -16,7 +16,7 @@ Billing for the storage is updated to add the pro-rated difference of the new pr
 
 ## Advantages of adjustable IOPS
 
-- Cost management – Some of our clients may only need high IOPS during peak usage times. For example, a large retail store has peak usage during the holidays and might need higher IOPS on their storage then than in the middle of the summer. This feature allows them to manage their costs and pay for higher IOPs only when they need it.
+- Cost management – Some of our clients might need high IOPS just during peak usage times. For example, a large retail store has peak usage during the holidays and might need higher IOPS on their storage then than in the middle of the summer. This feature allows them to manage their costs and pay for higher IOPs only when they need it.
 
 ## Limitations
 
@@ -36,11 +36,11 @@ If the volume has replication in place, the replica is automatically updated to 
 
 1. Go to your list of {{site.data.keyword.filestorage_short}}
     - From the customer portal, click **Storage** > **{{site.data.keyword.filestorage_short}}** OR
-    - From the {{site.data.keyword.BluSoftlayer_full}} catalog click **Infrastructure** > **Storage** > **{{site.data.keyword.filestorage_short}}**.
+    - From the {{site.data.keyword.BluSoftlayer_full}} console, click **Infrastructure** > **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Select the volume from the list and click **Actions** > **Modify Volume**
 3. Under **Storage IOPS Options**, make a new selection:
-    - Endurance (Tiered IOPS): select an IOPS Tier greater than 0.25 IOPS/GB of your storage. You can increase the IOPS tier at any time. However, decreasing is available only once a month.
-    - Performance (Allocated IOPS): specify new IOPS option for your storage by entering a value in the range 100 - 48,000 IOPS. (Be sure to look at any specific boundaries that are required by size in the order form.)
+    - For Endurance (Tiered IOPS), select an IOPS Tier greater than 0.25 IOPS/GB of your storage. You can increase the IOPS tier at any time. However, decreasing is available only once a month.
+    - For Performance (Allocated IOPS), specify new IOPS option for your storage by entering a value in the range 100 - 48,000 IOPS. (Be sure to look at any specific boundaries that are required by size in the order form.)
 4. Review your selection and the new pricing.
-5. Click the **I have read the Master Service Agreement...** check box and click **Place Order**.
+5. Click the **I have read the Master Service Agreement...** check box, and click **Place Order**.
 6. Your new storage allocation is going to be available in a few minutes.
