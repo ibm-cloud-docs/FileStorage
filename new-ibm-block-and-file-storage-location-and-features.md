@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-13"
 
 ---
 {:new_window: target="_blank"}
@@ -17,7 +17,7 @@ lastupdated: "2018-10-31"
 The NFS mount point for new volumes changed. See [New mount point for enhanced {{site.data.keyword.filestorage_short}} volumes](#new-mount-point-for-enhanced-file-storage-volumes) section for details.
 {:important}
 
-The new {{site.data.keyword.filestorage_short}} is available in following regions/data centers with more data center availability added later!
+The new {{site.data.keyword.filestorage_short}} is available in following regions and data centers with more data center availability added later!
 
 <table role="presentation">
   <tr>
@@ -78,7 +78,7 @@ The new {{site.data.keyword.filestorage_short}} is available in following region
   </tr>
 </table>
 
-*Table 1 shows our Data Center Availability. Each region has its own column. Some cities, such as Dallas, San Jose, Washington DC, Amsterdam, Frankfurt, London and Sydney have multiple data centers.*
+*Table 1 shows our Data Center Availability. Each region has its own column. Some cities, such as Dallas, San Jose, Washington DC, Amsterdam, Frankfurt, London, and Sydney have multiple data centers.*
 
 The new storage has the following features and capabilities:
 
