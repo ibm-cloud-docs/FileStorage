@@ -1,14 +1,13 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="FileStorage" audience="services" arm="3662725" href="/docs/infrastructure/FileStorage/index.html"}
+{: .toc subcollection="FileStorage" audience="services" arm="3662725" href="/docs/infrastructure/FileStorage/index.html" path="infrastructure/FileStorage"}
 IBM Cloud Storage - ファイル・ストレージ
 
     {: .navgroup id="learn"}
     index.md
     new-ibm-block-and-file-storage-location-and-features.md
     snapshots.md
-    replication.md
     expandable_file_storage.md
     adjustable-iops.md
     {: .navgroup-end}
@@ -29,6 +28,11 @@ IBM Cloud Storage - ファイル・ストレージ
         set-host-queue-depth-settings-performance-and-endurance-storage.md
         configure-backup-cpanel.md
         configure-backup-plesk.md
+        
+    {: .topicgroup}
+    レプリケーション
+        replication.md
+        disaster-recovery.md
 
     {: .topicgroup}
     セキュリティー
@@ -43,5 +47,5 @@ IBM Cloud Storage - ファイル・ストレージ
 
     {: .navgroup id="help"}
     faqs.md
-    [Python API クライアントの情報](https://softlayer-python.readthedocs.io/en/latest/index.html)
+    [Python API Client 情報](https://softlayer-python.readthedocs.io/en/latest/index.html)
     {: .navgroup-end}

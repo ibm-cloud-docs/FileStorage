@@ -2,11 +2,14 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-10-31"
 
 ---
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 
-# データの保護 - プロバイダー管理の保存データ暗号化機能 
+# データの保護 - プロバイダー管理の保存データ暗号化機能
 
 {{site.data.keyword.BluSoftlayer_full}} はセキュリティーのニーズを真剣に受け止め、安全を維持するためにデータの暗号化機能が重要であることを理解しています。 プロバイダー管理の暗号化により、エンデュランスとパフォーマンスのどちらのオプションでも、プロビジョンした {{site.data.keyword.filestorage_full}} はデフォルトで暗号化されます。追加コストは不要でパフォーマンスへの影響もありません。
 
@@ -14,13 +17,13 @@ lastupdated: "2018-06-29"
 
 * 業界標準の AES-256 暗号化
 * 鍵は、業界標準の Key Management Interoperability Protocol (KMIP) を使用して組織内で管理されます。
-* ストレージは、以下の規格に準拠していることが検証されています。 
-    - 連邦情報処理標準 (FIPS) PUB 140-2 
-    - 連邦情報セキュリティー・マネジメント法 (FISMA) 
-    - 医療保険の相互運用性と説明責任に関する法律 (HIPAA) 
-    - Payment Card Industry (PCI) 
-    - バーゼル II 
-    - California Security Breach Information Act (SB 1386) 
+* ストレージは、以下の規格に準拠していることが検証されています。
+    - 連邦情報処理標準 (FIPS) PUB 140-2
+    - 連邦情報セキュリティー・マネジメント法 (FISMA)
+    - 医療保険の相互運用性と説明責任に関する法律 (HIPAA)
+    - Payment Card Industry (PCI)
+    - バーゼル II
+    - California Security Breach Information Act (SB 1386)
     - EU データ保護指令 95/46/EC
 
 ## スナップショットまたは複製ストレージの保護  
@@ -36,6 +39,5 @@ lastupdated: "2018-06-29"
 ![LUN が暗号化されていることを示す鍵アイコン](/images/encryptedstorage.png)
 <caption>図 1. ボリュームが暗号化されていることを示す鍵アイコンの例。</caption>
 
-
-
->**注** - データ・センターのアップグレードの前にプロビジョンされていた非暗号化ストレージは、自動的には暗号化**されません**。 アップグレードされたデータ・センター内に非暗号化ストレージを所有していて、それを暗号化することが必要な場合は、新規ボリュームを作成してデータを移動する必要があります。 詳しくは、[アップグレードされたデータ・センターでのファイル・ストレージのマイグレーション](migrate-file-storage-encrypted-file-storage.html)を参照してください
+データ・センターのアップグレードの前にプロビジョンされていた非暗号化ストレージは、自動的には暗号化**されません**。 アップグレードされたデータ・センター内に非暗号化ストレージを所有していて、それを暗号化することが必要な場合は、新規ボリュームを作成してデータを移動する必要があります。 詳しくは、[アップグレードされたデータ・センターでのファイル・ストレージのマイグレーション](migrate-file-storage-encrypted-file-storage.html)を参照してください
+{:important}

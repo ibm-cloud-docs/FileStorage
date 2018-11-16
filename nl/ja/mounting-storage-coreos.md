@@ -2,12 +2,15 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-10-31"
 
 ---
 {:new_window: target="_blank"}
 {:codeblock: .codeblock}
 {:pre: .pre}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 
 # CoreOS への{{site.data.keyword.filestorage_short}}のマウント
 
@@ -17,7 +20,7 @@ CoreOS は、さまざまなインフラストラクチャーで大規模かつ�
 
 CoreOS では、システム・レベルのマウントは読み取り専用のディレクトリーに入っているため、2 次マウント・ファイルはすべて `/etc/systemd/system` ディレクトリーに入れます。 まず、`MOUNTPOINT.mount` ファイルを作成する必要があります。 この `.mount` ファイルの **Where** セクションはファイル名と一致しなければなりません。 マウント・ポイントが `/` の直下にない場合は、`path-to-mount.mount` という構文を使用してファイルに名前を付ける必要があります。 例えば、ポータブル・ストレージ・ドライブを `/mnt/www` にマウントする場合は、`mnt-www.mount` という名前をファイルに付けます。
 
-`fdisk` または `parted` を使用してパーティションを作成して、作成するファイル・システムが `.mount` ファイルにリストしたものと一致するようにしておくことができます。そうしないと、サービスは開始に失敗します。
+パーティションを作成するときには、`fdisk` または `parted` を使用できます。作成するファイル・システムは、`.mount` ファイルにリストされているものと一致するようにしてください。そうしないと、サービスは開始に失敗します。
 
 
 ```
@@ -44,9 +47,10 @@ $ systemctl enable --now mnt-www.mount
 
 ## NFS/{{site.data.keyword.filestorage_short}}のマウント
 
-{{site.data.keyword.filestorage_short}} のマウントのプロセスは同じです。 マウントが NFS なので、マウント・ファイルで `Options=` 行を使用して追加のオプションを指定できます。 
+{{site.data.keyword.filestorage_short}} のマウントのプロセスは同じです。 マウントが NFS なので、マウント・ファイルで `Options=` 行を使用して追加のオプションを指定できます。
 
 以下の例では、`/data/www` にマウントするように NFS を設定します。 {{site.data.keyword.filestorage_short}}・インスタンスの NFS マウント・ポイントは、{{site.data.keyword.filestorage_short}}のリスト・ページから取得できます。また、API 呼び出し `SoftLayer_Network_Storage::getNetworkMountAddress()` を使用して取得することもできます。
+{:tip}
 
 ```
 $ cat data-www.mount
@@ -73,18 +77,18 @@ cluster1 ~ # mount |grep data
 <nfs_mount_point> on /data/www type nfs4 (rw,relatime,vers=4.0,rsize=65536,wsize=65536,namlen=255,hard,proto=tcp,port=0,timeo=600,retrans=2,sec=sys,clientaddr=10.81.x.x,local_lock=none,addr=10.1.x.x)
 ```
 {:codeblock}
- 
+
 ## NAS/CIFS のマウント
 
 CIFS 共有のマウントは CoreOS ではネイティブにサポートされていませんが、ホスト・システムに NAS 共有をマウントさせる簡単な回避策があります。 コンテナーを使用して `mount.cfis` モジュールをビルドし、それを CoreOS システムにコピーできます。
- 
+
 CoreOS システムで、次のコマンドを実行して、Fedora コンテナーをダウンロードしてドロップインします。
 
 ```
 docker run -t -i -v /tmp:/host_tmp fedora /bin/bash
 ```
 {:pre}
- 
+
 コンテナーに入ったら、次のコマンドを実行して CIFS ユーティリティーをビルドします。
 
 ```
@@ -97,13 +101,13 @@ cd cifs-utils-6.4/
 cp mount.cifs /host_tmp/
 ```
 {:codeblock}
- 
-`mount.cifs` ファイルがホストにコピーされたので、`exit` コマンドを入力するか、**ctrl+d** を押して、docker コンテナーを終了できます。 CoreOS システムに戻ったら、次のコマンドを使用して CIFS 共有をマウントできます。 
+
+`mount.cifs` ファイルがホストにコピーされたので、`exit` コマンドを入力するか、**ctrl+d** を押して、docker コンテナーを終了できます。 CoreOS システムに戻ったら、次のコマンドを使用して CIFS 共有をマウントできます。
 ```
 /tmp/mount.cifs //nasXXX.service.softlayer.com/USERNAME -o username=USERNAME,password=PASSWORD /path/to/mount
 ```
 {:pre}
- 
+
 ## ISCSI のマウント
 
-これは現在 CoreOS ではサポートされていませんが、今後リリースされる見込みです (https://github.com/coreos/bugs/issues/634)。
+これは現在 CoreOS ではサポートされていませんが、今後リリースされる見込みです。 (https://github.com/coreos/bugs/issues/634)

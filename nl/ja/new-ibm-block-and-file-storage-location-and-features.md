@@ -2,16 +2,20 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-15"
+lastupdated: "2018-10-31"
 
 ---
 {:new_window: target="_blank"}
+ {:tip: .tip}
+ {:note: .note}
+ {:important: .important}
 
 # {{site.data.keyword.filestorage_short}}の新しいロケーションと機能
 
 {{site.data.keyword.BluSoftlayer_full}} は、新しいバージョンの {{site.data.keyword.filestorage_full}} を導入しています。 一部のデータ・センターで提供されているこの新しいストレージは、保存データをディスク・レベルで暗号化する、IOPS レベルの高いフラッシュ・ストレージを基盤としています。 これらの一部のデータ・センターで注文されたストレージはすべて、自動的に新しいバージョンの{{site.data.keyword.filestorage_short}}を使用して作成されます。
 
-**注:** 新しいボリュームの NFS マウント・ポイントは変更されています。 詳しくは、『**拡張{{site.data.keyword.filestorage_short}}・ボリュームの新しいマウント・ポイント**』セクションを参照してください。
+新しいボリュームの NFS マウント・ポイントは変更されています。 詳しくは、『[拡張{{site.data.keyword.filestorage_short}}・ボリュームの新しいマウント・ポイント](#new-mount-point-for-enhanced-file-storage-volumes)』セクションを参照してください。
+{:important}
 
 新しい{{site.data.keyword.filestorage_short}}は、以下の地域/データ・センターで提供されています。今後さらに多くのデータ・センターで提供される予定です。
 
@@ -21,7 +25,7 @@ lastupdated: "2018-10-15"
     <td><strong>EU</strong></td>
     <td><strong>オーストラリア</strong></td>
     <td><strong>カナダ</strong></td>
-    <td><strong>中南米</strong></td>
+    <td><strong>ラテンアメリカ</strong></td>
     <td><strong>アジア太平洋</strong></td>
   </tr>
   <tr>
@@ -93,3 +97,4 @@ lastupdated: "2018-10-15"
 これらのデータ・センターでプロビジョンされる拡張{{site.data.keyword.filestorage_short}}・ボリュームはすべて、非暗号化ボリュームとは異なるマウント・ポイントになります。 両方のストレージ・ボリュームに正しいマウント・ポイントを使用するために、UI の**「ボリュームの詳細 (Volume Details)」**ページでマウント・ポイント情報を確認することができます。 API 呼び出し `SoftLayer_Network_Storage::getNetworkMountAddress()` を使用して正しいマウント・ポイントを取得することもできます。
 
 追加のデータ・センターがアップグレードされていないか確認したり、新しいフィーチャーや機能が{{site.data.keyword.filestorage_short}}に追加されていないか確認したりするには、このページをもう一度参照してください。
+{:tip}
