@@ -2,17 +2,23 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-09-24"
+lastupdated: "2018-10-31"
 
 ---
 {:pre: .pre}
 {:new_window: target="_blank"}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 
 # {{site.data.keyword.filestorage_short}} mit VMware bereitstellen
 
-Folgende Schritte zeigen Ihnen, wie {{site.data.keyword.filestorage_full}} in einer Umgebung mit vSphere 5.5 und vSphere 6.0 bei {{site.data.keyword.BluSoftlayer_full}} bestellt und konfiguriert wird. Wenn Sie mehr als acht Verbindungen zu Ihrem VMware-Host benötigen, stellt die Auswahl von NFS {{site.data.keyword.filestorage_short}} das beste Verfahren dar.
+Folgende Schritte zeigen Ihnen, wie {{site.data.keyword.filestorage_full}} in einer Umgebung mit vSphere 5.5 und vSphere 6.0 bei {{site.data.keyword.BluSoftlayer_full}} bestellt und konfiguriert wird.
 
 {{site.data.keyword.filestorage_short}} wurde zur Unterstützung von Anwendungen mit hoher E/A-Aktivität entwickelt, die vorhersagbare Leistungsniveaus erfordern. Die vorhersagbare Leistung wird durch Zuordnung von E/A-Operationen pro Sekunde (IOPS) zu einzelnen Datenträgern auf Protokollebene erzielt.
+
+Wenn Sie mehr als acht Verbindungen zu Ihrem VMware-Host benötigen, stellt die Auswahl von NFS {{site.data.keyword.filestorage_short}} das beste Verfahren dar.
+{:tip}
 
 Das {{site.data.keyword.filestorage_short}}-Angebot wird über eine NFS-Verbindung angehängt und zugänglich gemacht. In einer VMware-Bereitstellung kann ein einzelner Datenträger mit bis zu 64 ESXi-Hosts als gemeinsam genutzter Speicher durch Mounts verbunden werden. Sie können auch mehrere Datenträger anhängen, um zur Verwendung von vSphere Storage Distributed Resource Scheduler (DRS) einen Speichercluster zu erstellen.
 
@@ -23,14 +29,17 @@ Preis- und Konfigurationsoptionen für Endurance und Performance {{site.data.key
 Beachten Sie für die Bestellung von {{site.data.keyword.filestorage_short}} folgende Informationen:
 
 - Berücksichtigen Sie bei der Festlegung der Größe den Umfang der Workload und den benötigten Durchsatz. Für den Endurance-Service, der die Leistung linear in Relation zur Kapazität (IOPS/GB) skaliert, ist Größe wichtig. Der Performance-Service ermöglicht dem Administrator dagegen, Kapazität und Leistung unabhängig voneinander zu wählen. Für den Performance-Service sind wiederum Durchsatzanforderungen relevant.
-  >**Anmerkung** - Der Durchsatz wird durch IOPS x 16 KB berechnet. IOPS werden auf der Basis der Blockgröße von 16 KB und einer 50:50-Mischung von Schreib- und Leseoperationen gemessen.<br/>Eine Erhöhung der Blockgröße erhöht den Durchsatz, verringert jedoch die IOPS. Beispiel: Eine Verdoppelung der Blockgröße auf 32-KB-Blöcke behält den maximalen Durchsatz bei, halbiert jedoch die IOPS-Kapazität.
+
+  Der Durchsatz wird durch IOPS x 16 KB berechnet. IOPS werden auf der Basis der Blockgröße von 16 KB und einer 50:50-Mischung von Schreib- und Leseoperationen gemessen.<br/>Eine Erhöhung der Blockgröße erhöht den Durchsatz, verringert jedoch die IOPS. Beispiel: Eine Verdoppelung der Blockgröße auf 32-KB-Blöcke behält den maximalen Durchsatz bei, halbiert jedoch die IOPS-Kapazität.
+  {:note}
 - NFS verwendet viele zusätzliche Dateisteuerungsoperationen wie `lookup`, `getattr` und `readdir`. Diese Operationen können neben Lese- und Schreiboperationen ebenfalls als IOPS gezählt werden und sind je nach Operationstyp und NFS-Version unterschiedlich.
 - {{site.data.keyword.filestorage_short}}-Datenträger werden autorisierten Einheiten (Geräten), Teilnetzen oder IP-Adressen zugänglich gemacht.
 - Zur Vermeidung einer Speicherverbindungsunterbrechung während des Pfadfailovers empfiehlt {{site.data.keyword.IBM}}, VMware-Tools zu installieren, die einen angemessenen Zeitlimitwert festlegen. Der Wert muss nicht geändert werden; die Standardeinstellung reicht aus, um sicherzustellen, dass Ihr VMware-Host die Konnektivität nicht verliert.
-- NFS Version 3 und NFS Version 4.1 werden in der Umgebung von {{site.data.keyword.BluSoftlayer_full}} unterstützt. {{site.data.keyword.IBM}} empfiehlt jedoch, NFS v3 zu verwenden. Da NFS Version 4.1 ein Protokoll mit Zustandsüberwachung (und nicht wie NFSv3 ohne Zustandsüberwachung) ist, können bei Netzereignissen Probleme mit dem Protokoll auftreten. NFS Version 4.1 muss alle Operationen ruhen lassen und anschließend eine Sperrenrückforderung ausführen. Während dieser Operationen kann es zu Unterbrechnungen kommen.
+- NFS Version 3 und NFS Version 4.1 werden in der Umgebung von {{site.data.keyword.BluSoftlayer_full}} unterstützt. {{site.data.keyword.IBM}} empfiehlt jedoch, NFS Version 3 zu verwenden. Da NFS Version 4.1 ein Protokoll mit Zustandsüberwachung (und nicht wie NFS Version 3 ohne Zustandsüberwachung) ist, können bei Netzereignissen Probleme mit dem Protokoll auftreten. NFS Version 4.1 muss alle Operationen ruhen lassen und anschließend eine Sperrenrückforderung ausführen. Während dieser Operationen kann es zu Unterbrechungen kommen.
 
 Weitere Informationen finden Sie im Whitepaper von VMware zu [bewährten Verfahren für die Ausführung von
 VMware vSphere unter Network Attached Storage](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf).{:new_window}
+{:tip}
 
 **Unterstützungsmatrix für das NFS-Protokoll und VMware-Funktionen**
 <table>
@@ -96,7 +105,7 @@ VMware vSphere unter Network Attached Storage](https://www.vmware.com/content/da
 
 ### Snapshots verwenden
 
-{{site.data.keyword.filestorage_short}} gibt Administratoren die Möglichkeit, Snapshotpläne festzulegen, durch die Snapshotkopien für jeden Speicherdatenträger automatisch erstellt und gelöscht werden. Sie können darüber hinaus zuästzliche Snapshotpläne (stündlich, täglich, wöchentlich) für automatische Snapshots erstellen und manuell Ad-hoc-Snapshots für BCDR-Szenarios (BCDR – Business-Continuity/Disaster Recovery) erstellen. Automatische Alerts werden über das [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} an den Datenträgereigner in Bezug auf die aufbewahrten Snapshots und den belegten Speicherplatz zugestellt.
+{{site.data.keyword.filestorage_short}} gibt Administratoren die Möglichkeit, Snapshotpläne festzulegen, durch die Snapshotkopien für jeden Speicherdatenträger automatisch erstellt und gelöscht werden. Sie können darüber hinaus zusätzliche Snapshotpläne (stündlich, täglich, wöchentlich) für automatische Snapshots erstellen und manuell Ad-hoc-Snapshots für BCDR-Szenarios (BCDR – Business-Continuity/Disaster Recovery) erstellen. Automatische Alerts werden über das [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} an den Datenträgereigner in Bezug auf die aufbewahrten Snapshots und den belegten Speicherplatz zugestellt.
 
 Zur Verwendung von Snapshots ist ein Snapshotbereich erforderlich. Der Speicherbereich kann bei der ersten Datenträgerbestellung oder nach der Erstbereitstellung über die Seite **Datenträgerdetails** durch Klicken auf **Aktionen** und Auswählen der Option **Snapshotbereich hinzufügen** gekauft werden.
 
@@ -116,15 +125,19 @@ Replikate ermöglichen Folgendes:
 - Schnelle Wiederherstellung nach Standortausfällen oder anderen Katastrophen durch Failover auf den Zieldatenträger
 - Failover auf einen bestimmten Zeitpunkt in der Disaster Recovery-Kopie (DR-Kopie)
 
+Die Replikation hält Ihre Daten an zwei verschiedenen Positionen synchron. Wenn Sie Ihren Datenträger klonen und unabhängig vom ursprünglichen Datenträger verwenden möchten, lesen Sie die Informationen im Abschnitt [Duplikat eines Datenträgers erstellen](how-to-create-duplicate-volume.html).
+{:tip}
+
 Bevor Sie replizieren können, müssen Sie einen Snapshotplan erstellen.
 
 Wenn Sie einen Failover durchführen, 'schalten Sie um', und zwar von Ihrem Speicherdatenträger in Ihrem primären Rechenzentrum auf den Zieldatenträger in Ihrem fernen Rechenzentrum. Ihr primäres Rechenzentrum ist zum Beispiel in London und Ihr sekundäres Rechenzentrum ist in Amsterdam. Wenn ein Fehlerereignis auftritt, führen Sie ein Failover auf Amsterdam durch. Dazu stellen Sie zu dem jetzigen primären Datenträger eine Verbindung von einer vSphere Cluster-Instanz in Amsterdam her. Nachdem Ihr Datenträger in London repariert wurde, wird ein Snapshot des Datenträgers in Amsterdam erstellt. Sie können anschließend von einer Compute-Instanz in London eine Rückübertragung auf den Datenträger in London und den nun wieder primären Datenträger durchführen.
 
-Bevor der Datenträger wieder auf das primäre Rechenzentrum zurückübertragen wird, muss seine Verwendung am fernen Standort gestoppt werden. Ein Snapshot neuer oder geänderter Informationen wird erstellt und an das pirmäre Rechenzentrum repliziert, bevor der Datenträger wieder an die ESXi-Hosts am Produktionsstandort angehängt werden kann.
+Bevor der Datenträger wieder auf das primäre Rechenzentrum zurückübertragen wird, muss seine Verwendung am fernen Standort gestoppt werden. Ein Snapshot neuer oder geänderter Informationen wird erstellt und an das primäre Rechenzentrum repliziert, bevor der Datenträger wieder an die ESXi-Hosts am Produktionsstandort angehängt werden kann.
 
 Weitere Informationen zum Konfigurieren von Replikaten finden Sie im Abschnitt [Replikation](replication.html).
 
->**Anmerkung** - Ungültige Daten, seien es beschädigte, gehackte oder infizierte, werden dem Snapshotplan und der angegebenen Snapshotaufbewahrung entsprechend repliziert. Durch Verwendung der kleinsten Replikationsfenster lässt sich ein besseres Ziel in Bezug auf den maximal tolerierbaren Datenverlust bei einem Ausfall (Recovery Point Objective, RPO) realisieren. Dadurch steht möglicherweise jedoch weniger Zeit für die Reaktion auf die Replikation ungültiger Daten zur Verfügung.
+Ungültige Daten, seien es beschädigte, gehackte oder infizierte, werden dem Snapshotplan und der angegebenen Snapshotaufbewahrung entsprechend repliziert. Durch Verwendung der kleinsten Replikationsfenster lässt sich ein besseres Ziel in Bezug auf den maximal tolerierbaren Datenverlust bei einem Ausfall (Recovery Point Objective, RPO) realisieren. Dadurch steht möglicherweise jedoch weniger Zeit für die Reaktion auf die Replikation ungültiger Daten zur Verfügung.
+{:note}
 
 
 ## {{site.data.keyword.filestorage_short}} bestellen
@@ -163,7 +176,8 @@ Wenn ein Datenträger bereitgestellt wird, müssen {{site.data.keyword.BluBareMe
 2. Wählen Sie die Option **Auf Host zugreifen** im Menü **Aktionen für Endurance-Datenträger** bzw. **Aktionen für Performance-Datenträger** aus.
 3. Klicken Sie auf **Teilnetze**.
 4. Wählen Sie in der Liste der verfügbaren Teilnetze, die den VMkernel-Ports auf den ESXi-Hosts zugeordnet sind, aus und klicken Sie auf **Abschicken**.<br/>
-    >**Anmerkung** - Die angezeigten Teilnetze sind abonnierte Teilnetze in demselben Rechenzentrum wie der Speicherdatenträger.
+
+   Die angezeigten Teilnetze sind abonnierte Teilnetze in demselben Rechenzentrum wie der Speicherdatenträger.{:note}
 
 
 Wenn die Teilnetze autorisiert sind, notieren Sie den Hostnamen des Endurance- oder Performance-Speicherservers, den Sie beim Anhängen des Datenträgers verwenden wollen. Diese Information ist auf der {{site.data.keyword.filestorage_short}}-Detailseite durch Klicken auf einen bestimmten Datenträger zu finden.
@@ -182,7 +196,7 @@ Stellen Sie vor Beginn des VMware-Konfigurationsprozesses sicher, dass die folge
 
 ### 1. VMware-Host konfigurieren
 
-1. Starten Sie auf einem mit dem internet verbundenen Computer einen RDP-Client und richten Sie eine RDP-Sitzung mit {{site.data.keyword.BluVirtServers_full}} ein, das in demselben Rechenzentrum bereitgestellt ist, in dem vSphere vCenter installiert ist.
+1. Starten Sie auf einem mit dem Internet verbundenen Computer einen RDP-Client und richten Sie eine RDP-Sitzung mit {{site.data.keyword.BluVirtServers_full}} ein, das in demselben Rechenzentrum bereitgestellt ist, in dem vSphere vCenter installiert ist.
 2. Starten Sie in {{site.data.keyword.BluVirtServers_short}} einen Web-Browser und stellen Sie eine Verbindung zu VMware vCenter über den vSphere Web Client her.
 3. Wählen Sie auf der Hauptanzeige (**HOME**) die Option für Hosts und Cluster (**Hosts and Clusters**) aus. Erweitern Sie das Teilfenster auf der linken Seite und wählen Sie den **VMware-ESXi-Server** aus, der für diese Bereitstellung verwendet werden soll.
 4. Stellen Sie sicher, dass der Firewall-Port für den NFS-Client auf allen Hosts geöffnet ist, damit Sie den NFS-Client auf dem vSphere-Host konfigurieren können. Dieser Port wird in den zuletzt veröffentlichen Releases von vSphere automatisch geöffnet. Wechseln Sie zum Prüfen, ob der Port geöffnet ist, zur Registerkarte für die ESXi-Hostverwaltung (**ESXi host Manage**) in VMware® vCenter™, wählen Sie **Settings** (Einstellungen) und anschließend **Security Profile** (Sicherheitsprofil) aus. Klicken Sie im Abschnitt **Firewall** auf **Edit** (Bearbeiten) und blättern Sie nach unten zu **NFS Client**.
@@ -202,6 +216,7 @@ Stellen Sie vor Beginn des VMware-Konfigurationsprozesses sicher, dass die folge
      ```
 
 Weitere Informationen zu VMware und Jumbo-Frames finden Sie [hier](https://kb.vmware.com/s/article/1003712){:new_window}.
+{:tip}
 
 
 ### 2. Uplink-Adapter zum virtuellen Switch hinzufügen
@@ -239,7 +254,8 @@ Die Netzkonfiguration für diesen Architekturleitfaden arbeitet mit einer minima
 
 2. Statische Routen bleiben unter ESXi 5.0 und früheren Versionen nicht über Neustarts hinweg bestehen. Zur Sicherstellung, dass alle hinzugefügten statischen Routen persistent bestehen bleiben, muss dieser Befehl in der Datei `local.sh` auf jedem Host im Verzeichnis `/etc/rc.local.d/` hinzugefügt werden. Öffnen Sie die Datei `local.sh` mit dem visuellen Editor und fügen Sie den zweiten Befehl in Schritt 4.1 vor der Zeile `exit 0` hinzu.
 
->**Anmerkungen**<br/>- Notieren Sie die IP-Adresse, da sie zum Anhängen des Datenträgers im nächsten Schritt verwendet werden kann.<br/>Dies muss für jeden NFS-Datenträger ausgeführt werden, der an Ihren ESXi-Host angehängt werden soll.<br/>Weitere Informationen finden Sie im folgend Artikel zu VMware KB: [Statische Routen für VMkernel-Ports auf einem ESXi-Host konfigurieren (englisch)](https://kb.vmware.com/s/article/2001426){:new_window}.
+Notieren Sie die IP-Adresse, da sie zum Anhängen des Datenträgers im nächsten Schritt verwendet werden kann. <br/>Dies muss für jeden NFS-Datenträger ausgeführt werden, der an Ihren ESXi-Host angehängt werden soll.<br/>Weitere Informationen finden Sie im folgend Artikel zu VMware KB: [Statische Routen für VMkernel-Ports auf einem ESXi-Host konfigurieren (englisch)](https://kb.vmware.com/s/article/2001426){:new_window}.
+{:tip}
 
 
 ##  {{site.data.keyword.filestorage_short}}-Datenträger erstellen und an ESXi-Hosts anhängen
@@ -249,12 +265,14 @@ Die Netzkonfiguration für diesen Architekturleitfaden arbeitet mit einer minima
 3. Klicken Sie auf das Symbol **Create a new datastore** (Neuen Datenspeicher erstellen).
 4. Wählen Sie auf der Anzeige **New Datastore** (Neuer Datenspeicher) die Position des WMware-Datenspeichers (Ihren ESXi-Host) aus und klicken Sie auf **Next** (Weiter).
 5. Wählen Sie auf der Anzeige **Type** (Typ) die Option **NFS** aus und klicken Sie auf **Next** (Weiter).
-6. Geben Sie auf der Anzeige **Name and configuration** (Name und Konfiguration) den Namen ein, den Sie dem WMware-Datenspeicher geben möchten. Geben Sie außerdem den Hostnamen des NFS-Servers ein. Die Verwendung des FQDN für den NFS-Server sorgt für die beste Datenverkehrsverteilung an den zugrunde liegenden Server. Die IP-Adresse ist ebenfalls gültig, wird jedoch weniger häufig und nur in bestimmten Instanzen verwendet. Geben Sie den Ordnernamen in der Form `/foldername` ein.
-7. Wählen Sie auf der Anzeige **Host accessibility** (Hostzugänglichkeit) einen oder mehrere Hosts aus, an die Sie den NFS-WMware-Datenspeicher anhängen wollen, und klicken Sie auf **Next** (Weiter).
-8. Prüfen Sie die Eingaben auf der nächsten Anzeige und klicken Sie auf **Finish** (Fertigstellen).
-9. Wiederholen Sie diese Schritte für alle weiteren {{site.data.keyword.filestorage_short}}-Datenträger.
+6. Wählen Sie dann die NFS-Version aus. Es werden sowohl NFS Version 3 als auch NFS Version 4.1 unterstützt. Aber NFS Version 3 wird bevorzugt. Stellen Sie sicher, dass nur eine NFS-Version für den Zugriff auf einen bestimmten Datenspeicher verwendet wird. Durch die Verwendung unterschiedlicher Versionen kann es zu Datenverlust kommen, wenn ein oder mehrere Hosts in denselben Datenspeicher installiert werden.
+7. Geben Sie auf der Anzeige **Name and configuration** (Name und Konfiguration) den Namen ein, den Sie dem WMware-Datenspeicher geben möchten. Geben Sie außerdem den Hostnamen des NFS-Servers ein. Die Verwendung des FQDN für den NFS-Server sorgt für die beste Datenverkehrsverteilung an den zugrunde liegenden Server. Die IP-Adresse ist ebenfalls gültig, wird jedoch weniger häufig und nur in bestimmten Instanzen verwendet. Geben Sie den Ordnernamen in der Form `/foldername` ein.
+8. Wählen Sie auf der Anzeige **Host accessibility** (Hostzugänglichkeit) einen oder mehrere Hosts aus, an die Sie den NFS-WMware-Datenspeicher anhängen wollen, und klicken Sie auf **Next** (Weiter).
+9. Prüfen Sie die Eingaben auf der nächsten Anzeige und klicken Sie auf **Finish** (Fertigstellen).
+10. Wiederholen Sie diese Schritte für alle weiteren {{site.data.keyword.filestorage_short}}-Datenträger.
 
->**Anmerkung** - Für {{site.data.keyword.BluSoftlayer_full}} wird empfohlen, FQDN-Namen für die Verbindung zum WMware-Datenspeicher zu verwenden. Durch die direkte Verwendung von IP-Adressen könnte der Lastausgleichsmechanismus, der durch die Verwendung von FQDN-Namen bereitgestellt wird, umgangen werden.
+Von {{site.data.keyword.BluSoftlayer_full}} wird empfohlen, FQDN-Namen für die Verbindung zum WMware-Datenspeicher zu verwenden. Durch die direkte Verwendung von IP-Adressen könnte der Lastausgleichsmechanismus, der durch die Verwendung von FQDN-Namen bereitgestellt wird, umgangen werden.
+{:important}
 
 Setzen Sie zur Verwendung der IP-Adresse anstelle des FQDN einfach einen Pingbefehl an den Server ab, um die IP-Adresse abzurufen.
 ```
@@ -278,7 +296,8 @@ Storage I/O Control (SIOC) ist ein Feature, das für Kunden mit einer Enterprise
 Zur Feststellung, wann eine Speichereinheit ausgelastet oder eingeschränkt ist, benötigt SIOC einen definierten Schwellenwert. Die Latenz für den Überlastungsschwellenwert ist für verschiedene Speichertypen unterschiedlich. Die Standardauswahl gibt 90% des Spitzendurchsatzes an. Der Prozentsatz des Spitzendurchsatzwerts gibt den geschätzten Latenzschwellenwert an, wenn der WMware-Datenspeicher diesen Prozentsatz seines geschätzten Spitzendurchsatzes verwendet.
 
 
->**Anmerkung** - Eine falsche Konfiguration von SIOC für einen WMware-Datenspeicher oder für eine VMDK kann die Leistung erheblich beeinträchtigen.
+Eine falsche Konfiguration von SIOC für einen WMware-Datenspeicher oder für eine VMDK kann die Leistung erheblich beeinträchtigen.
+{:important}
 
 
 ### Storage I/O Control für einen WMware-Datenspeicher konfigurieren
@@ -293,7 +312,8 @@ Führen Sie die folgenden Schritte aus, um SIOC mit den empfohlenen Werten für 
    ![NSF-WMware-Datenspeicher](/images/3_0.png)
 6. Klicken Sie auf **OK**.
 
-**Anmerkung:** Diese Einstellung ist für den WMware-Datenspeicher, nicht für den Host spezifisch.
+Diese Einstellung ist für den WMware-Datenspeicher, nicht für den Host spezifisch.
+{:note}
 
 
 ### Storage I/O Control für {{site.data.keyword.BluVirtServers_short}} konfigurieren
@@ -310,7 +330,8 @@ Führen Sie die folgenden Schritte aus, um die VDisk-Anteile (Shares) und die Be
 6. Klicken Sie auf  **OK**.
 
 
-> **Anmerkung:** Durch diese Vorgehensweise werden Begrenzungen für die Ressourcennutzung einzelner virtueller Platten (vDisks) in einem {{site.data.keyword.BluVirtServers_short}}-Speicher festgelegt, auch wenn SIOC nicht aktiviert ist. Diese Einstellungen sind für den einzelnen Gast spezifisch, nicht für den Host, obwohl sie von SIOC verwendet werden.
+Durch diese Vorgehensweise werden Begrenzungen für die Ressourcennutzung einzelner virtueller Platten (vDisks) in einem {{site.data.keyword.BluVirtServers_short}}-Speicher festgelegt, auch wenn SIOC nicht aktiviert ist. Diese Einstellungen sind für den einzelnen Gast spezifisch, nicht für den Host, obwohl sie von SIOC verwendet werden.
+{:important}
 
 
 ## Einstellungen auf der ESXi-Hostseite konfigurieren
@@ -369,6 +390,7 @@ In den folgenden Beispielen werden die erweiterten Konfigurationsparameter über
 Ein Jumbo-Frame ist ein Ethernet-Rahmen mit einem Nutzdatenvolumen, das größer als die standardmäßig maximale Übertragungseinheit (MTU - Maximum Transmission Unit) von 1.500 Byte ist. Jumbo-Frames werden in LAN-Netzen verwendet, die mindestens 1 Gb/s unterstützen, und können eine Größe von bis zu 9.000 Byte haben.
 
 Jumbo-Frames müssen im gesamten Netzpfad von der Quelleneinheit <-> Switch <-> Router <-> Switch <-> Zieleinheit identisch konfiguriert werden. Wenn die Kette nicht insgesamt identisch konfiguriert ist, wird standardmäßig die niedrigste Einstellung innerhalb der Kette verwendet. {{site.data.keyword.BluSoftlayer_full}} hat die Netzeinheiten derzeit auf 9.000 eingestellt. Alle Kundeneinheiten müssen auf denselben Wert eingestellt werden: 9.000.
+{:important}
 
 ### Jumbo-Frames in Windows aktivieren
 
@@ -380,7 +402,8 @@ Jumbo-Frames müssen im gesamten Netzpfad von der Quelleneinheit <-> Switch <-> 
 6. Wählen Sie **Großrahmen** aus und ändern Sie den Wert von **Deaktiviert** in den gewünschten Wert. Der Wert, beispielsweise 9 KB oder 9.014 Byte, richtet sich nach der Netzadapterkarte.
 7. Klicken Sie in allen Fenstern auf **OK**.
 
->**Anmerkung** - Die Netzkonnektivität der Netzadapterkarte (NIC) wird bei Änderungen für ein paar Sekunden unterbrochen. Starten Sie das Gerät erneut, um sich zu vergewissen, dass die Änderung wirksam wurde.
+Die Netzkonnektivität der Netzadapterkarte (NIC) wird bei Änderungen für ein paar Sekunden unterbrochen. Starten Sie das Gerät erneut, um sich zu vergewissern, dass die Änderung wirksam wurde.
+{:tip}
 
 
 ### Jumbo-Frames in Linux aktivieren
@@ -416,3 +439,4 @@ Jumbo-Frames müssen im gesamten Netzpfad von der Quelleneinheit <-> Switch <-> 
    Die Netzkonnektivität wird bei dieser Aktion für ein paar Sekunden unterbrochen.
 
 Weitere Informationen zu Advanced Single-Site VMware Reference Architecture finden Sie [hier](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}.
+{:tip}

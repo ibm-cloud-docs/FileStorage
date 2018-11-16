@@ -2,10 +2,13 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-09-07"
+lastupdated: "2018-10-31"
 
 ---
 {:new_window: target="_blank"}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 
 # Duplikat eines {{site.data.keyword.filestorage_short}}-Datenträgers erstellen
 
@@ -15,7 +18,8 @@ Da der Duplikatdatenträger auf den Daten eines zeitpunktgesteuerten Snapshots b
 
 Duplikate können sowohl von **primären** Datenträgern als auch von **Replikat**datenträgern erstellt werden. Das neue Duplikat wird im selben Rechenzentrum wie der ursprüngliche Datenträger erstellt. Wenn Sie einen Duplikatdatenträger von einem Replikatdatenträger erstellen, wird der neue Datenträger im selben Rechenzentrum wie der Replikatdatenträger erstellt.
 
->**Hinweis**: Als Benutzer mit einem dedizierten Konto für {{site.data.keyword.containerlong}} finden Sie in der [{{site.data.keyword.containerlong_notm}}-Dokumentation](/docs/containers/cs_storage_file.html#backup_restore) Informationen zu Optionen für die Duplizierung eines Datenträgers.
+Als Benutzer mit einem dedizierten Konto für {{site.data.keyword.containerlong}} finden Sie in der [{{site.data.keyword.containerlong_notm}}-Dokumentation](/docs/containers/cs_storage_file.html#backup_restore) Informationen zu Optionen für die Duplizierung eines Datenträgers.
+{:tip}
 
 Auf Duplikatdatenträger kann ein Host für Lese-/Schreiboperationen zugreifen, sobald der Speicher bereitgestellt ist. Allerdings sind Snapshots und die Replikation erst zulässig, wenn das Erstellen der Datenkopie vom ursprünglichen Datenträger auf den Duplikatdatenträger abgeschlossen ist. Wenn das Erstellen der Datenkopie abgeschlossen ist, kann der Duplikatdatenträger als vollständig unabhängiger Datenträger verwaltet und verwendet werden.
 
@@ -49,7 +53,8 @@ Es gibt mehrere Möglichkeiten, einen Duplikatdatenträger über das [{{site.dat
     - Wenn der ursprüngliche Datenträger die Endurance-Stufe von 0,25 IOPS hat, können Sie keine neue Auswahl angeben.
     - Wenn der ursprüngliche Datenträger die Endurance-Stufe von 2, 4 oder 10 IOPS hat, können Sie für den neuen Datenträger einen beliebigen Wert zwischen diesen Stufen angeben.
 6. Sie können die Größe des neuen Datenträgers so aktualisieren, dass er größer als der ursprüngliche Datenträger wird. Standardmäßig wird die Größe des ursprünglichen Datenträgers festgelegt.
-    - **Anmerkung:** Die {{site.data.keyword.filestorage_short}}-Speichergröße kann bis auf das Zehnfache der ursprünglichen Größe des Datenträgers erhöht werden.
+
+   {{site.data.keyword.filestorage_short}} kann bis auf das Zehnfache der ursprünglichen Größe des Datenträgers erhöht werden.{:tip}
 7. Sie können den Snapshotbereich für den neuen Datenträger aktualisieren, um mehr, weniger oder keinen Snapshotbereich hinzuzufügen. Standardmäßig wird der Snapshotbereich des ursprünglichen Datenträgers festgelegt.
 8. Klicken Sie auf **Weiter**, um Ihre Bestellung abzuschicken.
 
@@ -64,7 +69,8 @@ Es gibt mehrere Möglichkeiten, einen Duplikatdatenträger über das [{{site.dat
     - Wenn der ursprüngliche Datenträger die Endurance-Stufe von 0,25 IOPS hat, können Sie keine neue Auswahl angeben.
     - Wenn der ursprüngliche Datenträger die Endurance-Stufe von 2, 4 oder 10 IOPS hat, können Sie für den neuen Datenträger einen beliebigen Wert zwischen diesen Stufen angeben.
 6. Sie können die Größe des neuen Datenträgers so aktualisieren, dass er größer als der ursprüngliche Datenträger wird. Standardmäßig wird die Größe des ursprünglichen Datenträgers festgelegt.
-    - **Anmerkung:** Die {{site.data.keyword.filestorage_short}}-Speichergröße kann bis auf das Zehnfache der ursprünglichen Größe des Datenträgers erhöht werden.
+
+   {{site.data.keyword.filestorage_short}} kann bis auf das Zehnfache der ursprünglichen Größe des Datenträgers erhöht werden.{:tip}
 7. Sie können den Snapshotbereich für den neuen Datenträger aktualisieren, um mehr, weniger oder keinen Snapshotbereich hinzuzufügen. Standardmäßig wird der Snapshotbereich des ursprünglichen Datenträgers festgelegt.
 8. Klicken Sie auf **Weiter**, um Ihre Bestellung für das Duplikat abzuschicken.
 

@@ -2,16 +2,20 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-15"
+lastupdated: "2018-10-31"
 
 ---
 {:new_window: target="_blank"}
+ {:tip: .tip}
+ {:note: .note}
+ {:important: .important}
 
 # Neue Standorte und Features für {{site.data.keyword.filestorage_short}}
 
 Mit {{site.data.keyword.BluSoftlayer_full}} wird eine neue Version von {{site.data.keyword.filestorage_full}} eingeführt. Der neue Speicher ist in ausgewählten Rechenzentren verfügbar und wird durch Flashspeicher mit höheren IOPS-Niveaus bei der Verschlüsselung auf Plattenebene für ruhende Daten unterstützt. Sämtlicher in den ausgewählten Rechenzentren bestellter Speicher wird automatisch mit der neuen Version von {{site.data.keyword.filestorage_short}} erstellt.
 
-**Anmerkung:** Der NFS-Mountpunkt für neue Datenträger wurde geändert. Details finden Sie im Abschnitt **Neuer Mountpunkt für verschlüsselte {{site.data.keyword.filestorage_short}}-Datenträger**.
+Der NFS-Mountpunkt für neue Datenträger wurde geändert. Details finden Sie im Abschnitt [Neuer Mountpunkt für verschlüsselte {{site.data.keyword.filestorage_short}}-Datenträger](#new-mount-point-for-enhanced-file-storage-volumes).
+{:important}
 
 Die neue Version von {{site.data.keyword.filestorage_short}} steht in folgenden Regionen/Rechenzentren zur Verfügung und in Kürze werden weitere Rechenzentren hinzugefügt.
 
@@ -22,7 +26,7 @@ Die neue Version von {{site.data.keyword.filestorage_short}} steht in folgenden 
     <td><strong>Australien</strong></td>
     <td><strong>Kanada</strong></td>
     <td><strong>Lateinamerika</strong></td>
-    <td><strong>Asien/Pazifik</strong></td>
+    <td><strong>Asiatisch-pazifischer Raum</strong></td>
   </tr>
   <tr>
     <td>DAL09<br />
@@ -93,3 +97,4 @@ Der neue Speicher verfügt über die folgenden Features und Funktionen:
 Alle erweiterten {{site.data.keyword.filestorage_short}}-Datenträger, die in diesen Rechenzentren bereitgestellt werden, haben einen anderen Mountpunkt als nicht verschlüsselte Datenträger. Um sicherzustellen, dass Sie für beide Speicherdatenträger den richtigen Mountpunkt verwenden, können Sie die Mountpunktinformationen auf der Seite **Datenträgerdetails** in der Benutzerschnittstelle anzeigen. Sie können auch über einen API-Aufruf auf den richtigen Mountpunkt zugreifen: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 
 Prüfen Sie diese Informationen erneut, um festzustellen, ob weitere Rechenzentren aktualisiert wurden, und um sich über neue Features und Funktionen zu informieren, die für {{site.data.keyword.filestorage_short}} hinzugefügt werden.
+{:tip}

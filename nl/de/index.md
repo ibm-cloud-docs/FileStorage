@@ -2,10 +2,13 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-09-10"
+lastupdated: "2018-10-29"
 
 ---
 {:new_window: target="_blank"}
+{:tip: .tip} 
+{:note: .note} 
+{:important: .important}
 
 # Einführung in {{site.data.keyword.filestorage_short}}
 
@@ -72,16 +75,16 @@ Bei der **monatlichen Rechnungsstellung** erfolgt die Berechnung für den Preis 
   </tr>
   <tr>
    <th>Monatlicher Preis</th>
-   <td>$0,10/GB</td>
+   <td>$0,06/GB</td>
+   <td>$0,15/GB</td>
    <td>$0,20/GB</td>
-   <td>$0,35/GB</td>
    <td>$0,58/GB</td>
   </tr>
   <tr>
    <th>Stündlicher Preis</th>
-   <td>0,0002/GB</td>
+   <td>$0,0001/GB</td>
+   <td>$0,0002/GB</td>
    <td>$0,0003/GB</td>
-   <td>$0,0005/GB</td>
    <td>$0,0009/GB</td>
   </tr>
 </table>
@@ -194,6 +197,7 @@ Performance-Datenträger wurden dazu entwickelt, einen konsistenten Betrieb nahe
 **Blockgröße**
 
 IOPS für Endurance und Performance basieren auf einer Blockgröße von 16 KB und einer 50-prozentigen Zufallsworkload aus einem 50:50-Mix von Schreib- und Leseoperationen. Ein 16-KB-Block entspricht einer Schreiboperation auf dem Datenträger.
+{:important}
 
 Die Blockgröße, die von Ihrer Anwendung verwendet wird, wirkt sich direkt auf die Speicherleistung aus. Wenn die von Ihrer Anwendung verwendete Blockgröße kleiner als 16 KB ist, wird der IOPS-Grenzwert vor der Durchsatzbegrenzung erreicht. Wenn dagegen die von Ihrer Anwendung verwendete Blockgröße größer als 16 KB ist, wird die Durchsatzbegrenzung vor dem IOPS-Grenzwert erreicht.
 
@@ -228,7 +232,7 @@ Die Blockgröße, die von Ihrer Anwendung verwendet wird, wirkt sich direkt auf 
             <td>16</td>
           </tr>
           <tr>
-            <td>32 (typisch für SQLServer)</td>
+            <td>32 (typisch für SQL Server)</td>
             <td>500</td>
             <td>16</td>
           </tr>          
@@ -258,7 +262,7 @@ Ein weitere Faktor, der zu beachten ist, ist die Anzahl der Hosts, die Ihren Dat
 
 Die Geschwindigkeit Ihrer Ethernet-Verbindung muss höher als der erwartete maximale Durchsatz von Ihrem Datenträger sein. Grundsätzlich dürfte Ihre Ethernet-Verbindung nicht über 70% der verfügbaren Bandbreite hinaus ausgelastet werden. Wenn Sie zum Beispiel 6.000 IOPS haben und eine Blockgröße von 16 KB verwenden, kann der Datenträger einen Durchsatz von annähernd 94 MB pro Sekunde verarbeiten. Wenn Sie eine 1-Gb/s-Ethernet-Verbindung zu Ihrer LUN haben, wird diese zu einem Engpass, wenn Ihre Server versuchen, den maximal verfügbaren Durchsatz zu nutzen. Das liegt daran, dass 70 Prozent der theoretischen Begrenzung einer 1-Gb/s-Ethernet-Verbindung (125 MB pro Sekunde) nur 88 MB pro Sekunde zulassen würden.
 
-Zur Erzielung der maximalen E/A-Operationen pro Sekunde müssen geeignete Netzressourcen eingesetzt werden. Weitere Aspekte sind die private Netznutzung außerhalb von Speicher sowie hostseitige und anwendungsspezifische Optimierungen (IP-Stack, Warteschlangenlängen und andere Einstellungen).
+Zur Erzielung der maximalen E/A-Operationen pro Sekunde müssen geeignete Netzressourcen eingesetzt werden. Außerdem sind die Nutzung privater Netze außerhalb des Speichers sowie hostseitige und anwendungsspezifische Optimierungen (zum Beispiel IP-Stack oder [Warteschlangenlängen](set-host-queue-depth-settings-performance-and-endurance-storage.html) und andere Einstellungen) zu berücksichtigen. 
 
 Der Speicherdatenverkehr ist in der gesamten Netznutzung von öffentlichen virtuellen Servern enthalten. Die [Dokumentation zu virtuellen Servern](https://console.bluemix.net/docs/vsi/vsi_public.html#public-virtual-servers) enthält Informationen zu den möglichen Einschränkungen im Zusammenhang mit dem Service.
 

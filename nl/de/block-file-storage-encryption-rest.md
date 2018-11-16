@@ -2,11 +2,14 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-10-31"
 
 ---
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 
-# Daten schützen - durch providerseits verwaltete Verschlüsselung ruhender Daten 
+# Daten schützen - durch providerseits verwaltete Verschlüsselung ruhender Daten
 
 In {{site.data.keyword.BluSoftlayer_full}} werden erforderliche Sicherheitsaspekte sehr ernst genommen und die Wichtigkeit der Verschlüsselung für die Datensicherung hat einen hohen Stellenwert. Mit der durch den Provider verwalteten Verschlüsselung wird {{site.data.keyword.filestorage_full}} (bereitgestellt mit Endurance- oder Performance-Optionen) ohne zusätzliche Kosten und ohne Auswirkung auf das Leistungsverhalten standardmäßig verschlüsselt.
 
@@ -14,13 +17,13 @@ Die vom Provider verwaltete Verschlüsselungsfunktion für ruhende Daten (Encryp
 
 * Verschlüsselung mit dem Industriestandard AES-256
 * Hausinterne Schlüsselverwaltung mit dem Industriestandard Key Management Interoperability Protocol (KMIP)
-* Der Speicher wurde auf Konformität mit folgenden Standards geprüft: 
-    - Federal Information Processing Standard (FIPS) Publication 140-2, 
-    - Federal Information Security Management Act (FISMA), 
-    - Health Insurance Portability and Accountability Act (HIPAA), 
-    - Payment Card Industry (PCI), 
-    - Basel II, 
-    - California Security Breach Information Act (SB 1386) und 
+* Der Speicher wurde auf Konformität mit folgenden Standards geprüft:
+    - Federal Information Processing Standard (FIPS) Publication 140-2,
+    - Federal Information Security Management Act (FISMA),
+    - Health Insurance Portability and Accountability Act (HIPAA),
+    - Payment Card Industry (PCI),
+    - Basel II,
+    - California Security Breach Information Act (SB 1386) und
     - EU-Datenschutzdirektive 95/46/EC (EU Data Protection Directive 95/46/EC).
 
 ## Snapshots oder replizierten Speicher schützen  
@@ -36,6 +39,5 @@ Wählen Sie beim Bestellen Ihres {{site.data.keyword.filestorage_short}}-Speiche
 ![Das Sperrsymbol weist darauf hin, dass die LUN verschlüsselt ist.](/images/encryptedstorage.png)
 <caption>Abbildung 1. Beispiel für das Sperrsymbol, das die Verschlüsselung des Datenträgers angibt.</caption>
 
-
-
->**Anmerkung** - Sämtlicher nicht verschlüsselter Speicher, der vor der Aktualisierung eines Rechenzentrums bereitgestellt wurde, wird **nicht** automatisch verschlüsselt. Wenn Sie nicht verschlüsselten Speicher in einem aktualisierten Rechenzentrum besitzen und ihn verschlüsseln wollen, müssen Sie einen neuen Datenträger erstellen und eine Datenmigration durchführen. Weitere Informationen finden Sie im Abschnitt [File Storage in aktualisierten Rechenzentren migrieren](migrate-file-storage-encrypted-file-storage.html).
+Sämtlicher nicht verschlüsselter Speicher, der vor der Aktualisierung eines Rechenzentrums bereitgestellt wurde, wird **nicht** automatisch verschlüsselt.  Wenn Sie nicht verschlüsselten Speicher in einem aktualisierten Rechenzentrum besitzen und ihn verschlüsseln wollen, müssen Sie einen neuen Datenträger erstellen und eine Datenmigration durchführen. Weitere Informationen finden Sie im Abschnitt [File Storage in aktualisierten Rechenzentren migrieren](migrate-file-storage-encrypted-file-storage.html)
+{:important}
