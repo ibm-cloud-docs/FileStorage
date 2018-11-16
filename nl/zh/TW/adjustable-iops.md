@@ -14,7 +14,7 @@ lastupdated: "2018-09-12"
 儲存空間的計費已更新成將新價格的按比例差額新增至現行計費週期。會在下一個計費週期收取新的完整金額。
 
 
-## 可調整 IOPS 的優點
+## 可調式 IOPS 的優點
 
 - 成本管理 - 部分客戶可能只有在用量尖峰時間才需要高 IOPS。例如，大型零售商店在假日期間會有用量尖峰，因此其儲存空間可能在當時比起盛夏而言會需要較高的 IOPS。此特性可讓它們管理其成本，並且只有在需要時才支付較高的 IOPS 費用。
 
@@ -28,15 +28,15 @@ lastupdated: "2018-09-12"
 - 如果原始磁區是具有小於或等於 0.30 IOPS/GB 的「效能」磁區，則可用的選項只包含結果會得到小於或等於 0.30 IOPS/GB 的大小及 IOPS 組合。
 - 如果原始磁區是具有超過 0.30 IOPS/GB 的「效能」磁區，則可用的選項只包含結果會得到超過 0.30 IOPS/GB 的大小及 IOPS 組合。
 
-## 抄寫的 IOPS 調整效果
+## IOPS 調整對於抄寫的效果
 
 如果磁區已有抄寫，則會自動更新抄本，以符合主要磁區的 IOPS 選取項目。
 
 ## 調整儲存空間上的 IOPS
 
 1. 移至您的 {{site.data.keyword.filestorage_short}} 清單
-    - 從客戶入口網站中，按一下**儲存空間** > **{{site.data.keyword.filestorage_short}}**，或者
-    - 從 {{site.data.keyword.BluSoftlayer_full}} 型錄中，按一下**基礎架構** > **儲存空間** > **{{site.data.keyword.filestorage_short}}**。
+    - 從客戶入口網站，按一下**儲存空間** > **{{site.data.keyword.filestorage_short}}**，或者
+    - 從 {{site.data.keyword.BluSoftlayer_full}} 型錄，按一下**基礎架構** > **儲存空間** > **{{site.data.keyword.filestorage_short}}**。
 2. 從清單中選取磁區，然後按一下**動作** > **修改磁區**
 3. 在**儲存空間 IOPS 選項**下，進行新的選取：
     - 耐久性（分層 IOPS）：為儲存空間選取大於 0.25 IOPS/GB 的「IOPS 層級」。您隨時可以增加 IOPS 層級。不過，一個月只能減少一次。

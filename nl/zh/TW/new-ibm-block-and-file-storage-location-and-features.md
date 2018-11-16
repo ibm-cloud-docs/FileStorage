@@ -2,16 +2,20 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-15"
+lastupdated: "2018-10-31"
 
 ---
 {:new_window: target="_blank"}
+ {:tip: .tip}
+ {:note: .note}
+ {:important: .important}
 
 # {{site.data.keyword.filestorage_short}} 的新位置及特性
 
 {{site.data.keyword.BluSoftlayer_full}} 將引進新版的 {{site.data.keyword.filestorage_full}}！新的儲存空間會提供在精選資料中心內，並且由更高 IOPS 層次的快閃記憶體儲存空間支援，且具有靜態資料的磁碟層次加密。在精選資料中心訂購的所有儲存空間，都會自動使用新版本的 {{site.data.keyword.filestorage_short}} 建立。
 
-**附註：**新磁區的 NFS 裝載點已變更。如需詳細資料，請參閱**加強型 {{site.data.keyword.filestorage_short}} 磁區的新裝載點**區段。
+新磁區的 NFS 裝載點已變更。如需詳細資料，請參閱[加強型 {{site.data.keyword.filestorage_short}} 磁區的新裝載點](#new-mount-point-for-enhanced-file-storage-volumes)區段。
+{:important}
 
 下列地區/資料中心已提供新的 {{site.data.keyword.filestorage_short}}，其他資料中心稍後即會推出！
 
@@ -30,14 +34,14 @@ lastupdated: "2018-10-15"
 	DAL12<br />
 	DAL13<br />
 	SJC03<br />
-        SJC04<br />
+SJC04<br />
 	WDC04<br />
 	WDC06<br />
 	WDC07<br />
 	<br /><br /><br />
     </td>
     <td>AMS01<br />
-        AMS03<br />
+AMS03<br />
 	FRA02<br />
 	FRA04<br />
 	FRA05<br />
@@ -50,23 +54,23 @@ lastupdated: "2018-10-15"
 	PAR01<br />
     </td>
     <td>MEL01<br />
-        SYD01<br />
-        SYD04<br />
+SYD01<br />
+SYD04<br />
 	<br /><br /><br /><br /><br /><br /><br /><br /><br />
     </td>
     <td>MON01<br />
-        TOR01<br />
+TOR01<br />
 	<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
     </td>
     <td>MEX01<br />
-        SAO01<br />
+SAO01<br />
 	<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
     </td>
     <td>CHE01<br />
-        HKG02<br />
+HKG02<br />
 	SEO01<br />
 	SNG01<br />
-        TOK02<br />
+TOK02<br />
 	TOK04<br />
 	TOK05<br />
 	<br /><br /><br /><br /><br />
@@ -93,3 +97,4 @@ lastupdated: "2018-10-15"
 這些資料中心內佈建的所有加強型 {{site.data.keyword.filestorage_short}} 磁區都具有與未加密磁區不同的裝載點。為確保您對兩個儲存空間磁區都使用正確的裝載點，您可以在使用者介面的**磁區詳細資料**頁面中檢視裝載點資訊。您也可以透過 API 呼叫來存取正確的裝載點：`SoftLayer_Network_Storage::getNetworkMountAddress()`。
 
 請在這裡再次確認，以查看其他資料中心何時升級以及針對 {{site.data.keyword.filestorage_short}} 新增的特性及功能。
+{:tip}

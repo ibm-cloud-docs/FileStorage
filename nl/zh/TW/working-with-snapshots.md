@@ -2,10 +2,13 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-09-17"
+lastupdated: "2018-10-31"
 
 ---
 {:new_window: target="_blank"}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 
 
 # 管理 Snapshot
@@ -16,10 +19,11 @@ lastupdated: "2018-09-17"
 
 
 您必須先購買 Snapshot 空間（如果未在起始佈建儲存空間磁區期間購買的話），才能設定起始排程。
+{:important}
 
 ### 新增 Snapshot 排程
 
-Snapshot 排程可以設定為每小時、每日及每週間隔，且各有不同的保留週期。每個儲存空間磁區最多可以有 50 個已排定的 Snapshot（這可以混合使用每小時、每日及每週排程）及手動 Snapshot。
+Snapshot 排程可以設定為每小時、每日及每週間隔，且各有不同的保留週期。每個儲存空間磁區限制最多可以有 50 個已排定的 Snapshot（這可以混合使用每小時、每日及每週排程）及手動 Snapshot。
 
 1. 按一下儲存空間磁區，按一下**動作**，然後按一下**排程 Snapshot**。
 2. 在「新建排程 Snapshot」視窗中，有三種不同的 Snapshot 頻率可供選取。使用三者的任意組合，以建立綜合性的 Snapshot 排程。
@@ -38,9 +42,9 @@ Snapshot 排程可以設定為每小時、每日及每週間隔，且各有不�
 
 ## 擷取手動 Snapshot
 
-在應用程式升級或維護期間的各種時間點，都可以擷取手動 Snapshot。您也可以跨多部伺服器擷取 Snapshot，這些伺服器已經在應用程式層次暫時關閉。
+在應用程式升級或維護期間的各種時間點，都可以擷取手動 Snapshot。您也可以跨多部伺服器擷取 Snapshot，這些伺服器已在應用程式層次暫時予以取消啟動。
 
-每個儲存空間磁區最多可以有 50 個手動 Snapshot。
+每個儲存空間磁區限制最多可以有 50 個手動 Snapshot。
 
 1. 按一下儲存空間磁區。
 2. 按一下**動作**。
@@ -61,9 +65,10 @@ Snapshot 排程可以設定為每小時、每日及每週間隔，且各有不�
 ## 變更磁區的 Snapshot 空間量
 
 您可能需要將 Snapshot 空間新增至先前沒有任何 Snapshot 空間或可能需要額外 Snapshot 空間的磁區。您可以視需求新增 5 - 4,000 GB。
- 
 
-**附註**：Snapshot 空間只能增加，不能減少。在您確定實際需要的空間量之前，您可以選取較小的空間量。請記住，自動及手動 Snapshot 會共用空間。
+
+Snapshot 空間只能增加。不能減少。在您確定實際需要的空間量之前，您可以選取較小的空間量。請記住，自動及手動 Snapshot 會共用空間。
+{:important}
 
 透過**儲存空間** > **{{site.data.keyword.filestorage_short}}** 來變更 Snapshot 空間。
 
@@ -87,7 +92,9 @@ Snapshot 排程可以透過**儲存空間** > **{{site.data.keyword.filestorage_
 
 1. 在**詳細資料**頁面的 **Snapshot 排程**頁框中，按一下要刪除的排程。
 2. 按一下要刪除之排程旁的勾選框，然後按一下**儲存**。<br />
-**注意**：如果您要使用抄寫特性，則請確定所刪除的排程不是抄寫所使用的排程。如需刪除抄寫排程的相關資訊，請按一下[這裡](replication.html)。
+
+如果您要使用抄寫特性，請確定您要刪除的排程不是抄寫所使用的排程。如需刪除抄寫排程的相關資訊，請按一下[這裡](replication.html)。
+{:important}
 
 ## 刪除 Snapshot
 
@@ -107,9 +114,11 @@ Snapshot 排程可以透過**儲存空間** > **{{site.data.keyword.filestorage_
 2. 按一下 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} 中的**儲存空間**、**{{site.data.keyword.filestorage_short}}**。
 3. 向下捲動並按一下要還原的磁區。**詳細資料**頁面的 **Snapshot** 區段會顯示所有已儲存 Snapshot 的清單及其大小和建立日期。
 4. 按一下要使用之 Snapshot 旁的**動作**，然後按一下**還原**。<br/>
-   >**附註**：完成還原會導致流失在擷取 Snapshot 之後所建立或修改的資料。這項資料流失的原因是您的儲存空間磁區還原為 Snapshot 時所處的相同狀態。 
+
+   完成還原會導致流失在擷取 Snapshot 之後所建立或修改的資料。這項資料流失的原因是您的儲存空間磁區還原為 Snapshot 時所處的相同狀態。{:note}
 5. 按一下**是**，以啟動還原。預期頁面頂端會出現一則訊息，指出將使用選取的 Snapshot 還原磁區。此外，{{site.data.keyword.filestorage_short}} 上的磁區旁會出現一個圖示，指出有一個作用中交易正在進行。將游標移至圖示上方會產生一個視窗，顯示該交易。交易完成之後，圖示即會消失。
 6. 將儲存空間磁區裝載並重新連接至主機。
   - 按一下[這裡](accessing-file-storage-linux.html)，以取得 Linux 上的 {{site.data.keyword.filestorage_short}} 指示。
-    
->**附註** - 還原磁區會導致刪除在用於還原的 Snapshot 之後擷取的所有 Snapshot。
+
+還原磁區會導致刪除在用於還原的 Snapshot 之後擷取的所有 Snapshot。
+{:important}

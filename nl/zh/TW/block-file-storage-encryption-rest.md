@@ -2,11 +2,14 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-10-31"
 
 ---
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 
-# 保護資料安全 - 提供者管理的靜態加密 
+# 保護資料安全 - 提供者管理的靜態加密 (encryption-at-rest)
 
 {{site.data.keyword.BluSoftlayer_full}} 很認真看待安全，也瞭解能夠加密資料以確保資料安全的重要性。使用提供者管理的加密，依預設會加密已佈建「耐久性」或「效能」選項的 {{site.data.keyword.filestorage_full}}，不需額外付費，而且不會影響效能。
 
@@ -14,13 +17,13 @@ lastupdated: "2018-06-29"
 
 * 業界標準 AES-256 加密
 * 使用業界標準「金鑰管理交互作業通訊協定 (KMIP)」在內部管理金鑰
-* 根據下列標準來驗證儲存空間： 
-    - 美國聯邦資訊處理標準 (FIPS) 出版品 140-2、 
-    - 聯邦資訊安全管理法 (FISMA)、 
-    - 醫療保險轉移和責任法 (HIPAA)、 
-    - 支付卡產業 (PCI)、 
-    - Basel II、 
-    - 加州安全違反資訊行為法案 (SB 1386)，以及 
+* 根據下列標準來驗證儲存空間：
+    - 美國聯邦資訊處理標準 (FIPS) 出版品 140-2、
+    - 聯邦資訊安全管理法 (FISMA)、
+    - 醫療保險轉移和責任法 (HIPAA)、
+    - 支付卡產業 (PCI)、
+    - Basel II、
+    - 加州安全違反資訊行為法案 (SB 1386)，以及
     - 歐盟資料保護指令 95/46/EC 規範。
 
 ## 保護 Snapshot 或已抄寫儲存空間的安全  
@@ -36,6 +39,5 @@ lastupdated: "2018-06-29"
 ![鎖定圖示表示 LUN 已加密](/images/encryptedstorage.png)
 <caption>圖 1. 指出磁區已加密的鎖定圖示範例。</caption>
 
-
-
->**附註**：資料中心升級之前佈建的任何未加密儲存空間都**不會**自動加密。如果您在已升級的資料中心內擁有未加密的儲存空間，而且想要將它加密，則需要建立新磁區，並移動資料。如需相關資訊，請參閱[已升級資料中心內的檔案儲存空間移轉](migrate-file-storage-encrypted-file-storage.html)
+資料中心升級之前佈建的任何未加密儲存空間都**不會**自動加密。如果您在已升級的資料中心內擁有未加密的儲存空間，而且想要將它加密，則需要建立新磁區，並移動資料。如需相關資訊，請參閱[已升級資料中心內的檔案儲存空間移轉](migrate-file-storage-encrypted-file-storage.html)
+{:important}

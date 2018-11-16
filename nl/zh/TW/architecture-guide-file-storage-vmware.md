@@ -2,17 +2,22 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-09-24"
+lastupdated: "2018-10-31"
 
 ---
 {:pre: .pre}
 {:new_window: target="_blank"}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 
 # 使用 VMware 佈建 {{site.data.keyword.filestorage_short}}
 
-以下是在 {{site.data.keyword.BluSoftlayer_full}} 為 vSphere 5.5 及 vSphere 6.0 環境訂購及配置 {{site.data.keyword.filestorage_full}} 的步驟。如果您需要超過 8 個與 VMware 主機的連線，則選擇 NFS {{site.data.keyword.filestorage_short}} 是最佳作法。
+以下是在 {{site.data.keyword.BluSoftlayer_full}} 為 vSphere 5.5 及 vSphere 6.0 環境訂購及配置 {{site.data.keyword.filestorage_full}} 的步驟。
 
 {{site.data.keyword.filestorage_short}} 的設計旨在支援需要可預測效能層次的高 I/O 應用程式。透過將通訊協定層次的每秒輸入/輸出作業數 (IOPS) 配置給個別磁區，即可達成可預測效能。
+
+如果您需要超過 8 個與 VMware 主機的連線，則選擇 NFS {{site.data.keyword.filestorage_short}} 是最佳作法。{:tip}
 
 {{site.data.keyword.filestorage_short}} 供應項目是透過 NFS 連線進行存取及裝載。在 VMware 部署中，單一磁區最多可以裝載至 64 台 ESXi 主機作為共用儲存空間。您也可以裝載多個磁區來建立儲存空間叢集，以使用 vSphere Storage Distributed Resource Scheduler (DRS)。
 
@@ -23,17 +28,19 @@ lastupdated: "2018-09-24"
 訂購 {{site.data.keyword.filestorage_short}} 時，請考量下列資訊：
 
 - 當您決定大小時，請考量工作負載的大小以及所需的傳輸量。大小與「耐久性」服務有重大關係，「耐久性」服務會根據容量 (IOPS/GB) 以線性方式擴充效能。反之，「效能」服務可讓管理者獨立選擇容量和效能。傳輸量需求與「效能」有重大關係。
-  >**附註**：傳輸量計算方式為 IOPS x 16 KB。IOPS 的測量基礎是 16 KB 區塊大小（具有 50/50 讀寫混合）。<br/>增加區塊大小會增加傳輸量，但會減少 IOPS。例如，將區塊大小加倍為 32 KB 區塊可維持最大傳輸量，但會讓 IOPS 減半。
+
+  傳輸量計算方式為 IOPS x 16 KB。IOPS 的測量基礎是 16 KB 區塊大小（具有 50/50 讀寫混合）。<br/>增加區塊大小會增加傳輸量，但會減少 IOPS。例如，將區塊大小加倍為 32 KB 區塊可維持最大傳輸量，但會讓 IOPS 減半。{:note}
 - NFS 使用許多額外的檔案控制作業（例如 `lookup`、`getattr` 及 `readdir`）。除了讀/寫作業之外，這些作業也可以計算為 IOPS，而且會依作業類型及 NFS 版本而不同。
 - {{site.data.keyword.filestorage_short}} 磁區會向授權裝置、子網路或 IP 位址公開。
 - 為避免在路徑失效接手期間發生儲存空間斷線，{{site.data.keyword.IBM}} 建議安裝 VMware 工具，以設定適當的逾時值。不需要變更值，預設值就足以確保 VMware 主機不會中斷連線。
-- 在 {{site.data.keyword.BluSoftlayer_full}} 環境中，同時支援 NFS 第 3 版及 NFS 4.1 版。不過，{{site.data.keyword.IBM}} 建議您使用 NFS 第 3 版。因為 NFS 4.1 版是有狀態的通訊協定（不像 NFSv3 是無狀態的通訊協定），所以在網路事件期間可能會發生通訊協定問題。NFS 4.1 版必須靜止所有作業，然後完成鎖定收回。進行這些作業時，可能會發生中斷。
+- 在 {{site.data.keyword.BluSoftlayer_full}} 環境中，同時支援 NFS 第 3 版及 NFS 4.1 版。不過，{{site.data.keyword.IBM}} 建議您使用 NFS 第 3 版。因為 NFS 4.1 版是有狀態的通訊協定（不像 NFS 第 3 版是無狀態的通訊協定），所以在網路事件期間可能會發生通訊協定問題。NFS 4.1 版必須靜止所有作業，然後完成鎖定收回。進行這些作業時，可能會發生中斷。
 
 如需相關資訊，請參閱 VMware 的白皮書：[Best Practices for running VMware vSphere on Network Attached Storage](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){:new_window}
+{:tip}
 
 **NFS 通訊協定 VMware 特性支援矩陣**
 <table>
-  <caption>表 1 顯示適用於兩個不同版本 NFS 的 vSphere 特性。</caption>
+  <caption>「表 1」顯示適用於兩個不同版本 NFS 的 vSphere 特性。</caption>
  <thead>
   <tr>
    <th>vSphere 特性</th>
@@ -115,6 +122,9 @@ lastupdated: "2018-09-24"
 - 透過失效接手至目的地磁區，快速從網站故障及其他災難回復
 - 失效接手至 DR 副本中的特定時間點
 
+抄寫是將資料同步保留在兩個不同位置。如果您想要複製您的磁區，並與原始磁區分開使用，請參閱[建立重複的檔案磁區](how-to-create-duplicate-volume.html)。
+{:tip}
+
 您必須先建立 Snapshot 排程，才能進行抄寫。
 
 當您失效接手時，您會將「開關」從主要資料中心的儲存空間磁區快速切換到遠端資料中心的目的地磁區。例如，您的主要資料中心是在「倫敦」，而次要資料中心是在「阿姆斯特丹」。如果發生故障事件，您會失效接手至「阿姆斯特丹」。這表示從「阿姆斯特丹」的 vSphere Cluster 實例連接至現行主要磁區。修復「倫敦」中的磁區之後，會擷取「阿姆斯特丹」磁區的 Snapshot。然後，您可以從「倫敦」的運算實例失效回復至「倫敦」及那個再度成為主要磁區的磁區。
@@ -123,7 +133,7 @@ lastupdated: "2018-09-24"
 
 如需配置抄本的相關資訊，請參閱[抄寫](replication.html)。
 
->**附註**：會根據 Snapshot 排程及 Snapshot 保留，來抄寫無效的資料（不論是毀損、受到駭客入侵還是感染病毒的抄寫）。使用最小的抄寫時間範圍可以提供更好的回復點目標。不過，它也提供較少的時間來對無效資料的抄寫做出反應。
+會根據 Snapshot 排程及 Snapshot 保留，來抄寫無效的資料（不論是毀損、受到駭客入侵還是感染病毒）。使用最小的抄寫時間範圍可以提供更好的回復點目標。不過，它也提供較少的時間來對無效資料的抄寫做出反應。{:note}
 
 
 ## 訂購 {{site.data.keyword.filestorage_short}}
@@ -162,7 +172,9 @@ lastupdated: "2018-09-24"
 2. 在**耐久性**或**效能磁區動作**功能表上，選取**存取主機**。
 3. 按一下**子網路**。
 4. 從指派給 ESXi 主機上 VMkernel 埠的可用子網路清單中進行選擇，然後按一下**提交**。<br/>
-    >**附註**：顯示的子網路就是與儲存空間磁區位於相同資料中心內的已訂閱子網路。
+
+   顯示的子網路就是與儲存空間磁區位於相同資料中心內的已訂閱子網路。
+   {:note}
 
 
 授權子網路之後，請記下您在裝載磁區時想要使用之「耐久性」或「效能」儲存空間伺服器的主機名稱。按一下特定磁區，即可在 {{site.data.keyword.filestorage_short}} 詳細資料頁面上找到這項資訊。
@@ -200,7 +212,7 @@ lastupdated: "2018-09-24"
       8980 bytes from a.b.c.d: icmp_seq=1 ttl=128 time=3.36 ms
    ```
 
-如需 VMware 及「巨大訊框」的相關資訊，請按一下[這裡](https://kb.vmware.com/s/article/1003712){:new_window}。
+如需 VMware 及「巨大訊框」的相關資訊，請按一下[這裡](https://kb.vmware.com/s/article/1003712){:new_window}。{:tip}
 
 
 ### 2. 將上行鏈路配接卡新增至虛擬交換器
@@ -237,9 +249,9 @@ lastupdated: "2018-09-24"
    ```
    {: pre}
 
-2. 在 ESXi 5.0 及更早版本上，靜態路由在各次重新開機之間無法持續保存。為了確定任何已新增的靜態路由都能持續保存，需要將此指令新增至每台主機上的 `local.sh` 檔案，該檔案位於 `/etc/rc.local.d/` 目錄中。請使用視覺化編輯器開啟 `local.sh` 檔案，並且在 `exit 0` 行前面新增步驟 4.1 中的第二個指令。
+2. 在 ESXi 5.0 及更早版本上，靜態路由在各次重新開機之間無法持續保存。為了確定任何已新增的靜態路由都能持續保存，需要將此指令新增至每台主機上的 `local.sh` 檔案，該檔案位於 `/etc/rc.local.d/` 目錄中。請使用視覺化編輯器開啟 `local.sh` 檔案，並且在步驟 4.1 中新增第二個指令。位置是在 `exit 0` 這一行前面。
 
->**附註**<br/>- 記下 IP 位址，因為它可以在下一步中用於裝載磁區。<br/>需要對計劃要裝載至 ESXi 主機的每一個 NFS 磁區執行此處理程序。<br/>如需相關資訊，請參閱 VMware KB 文章：[在 ESXi 主機上配置 VMkernel 埠的靜態路由](https://kb.vmware.com/s/article/2001426){:new_window}。
+記下 IP 位址，因為它可以在下一步中用於裝載磁區。<br/>需要對計劃要裝載至 ESXi 主機的每一個 NFS 磁區執行此處理程序。<br/>如需相關資訊，請參閱 VMware KB 文章：[在 ESXi 主機上配置 VMkernel 埠的靜態路由](https://kb.vmware.com/s/article/2001426){:new_window}。{:tip}
 
 
 ##  在 ESXi 主機上建立及裝載 {{site.data.keyword.filestorage_short}} 磁區
@@ -249,12 +261,14 @@ lastupdated: "2018-09-24"
 3. 按一下**建立新的資料儲存庫**圖示。
 4. 在**新建資料儲存庫**畫面上，選取 WMware 資料儲存庫的位置（您的 ESXi 主機），然後按**下一步**。
 5. 在**類型**畫面上，選取 **NFS**，然後按**下一步**。
-6. 在**名稱及配置**畫面上，輸入您要稱呼 WMware 資料儲存庫的名稱。此外，請輸入 NFS 伺服器的主機名稱。使用 NFS 伺服器的 FQDN 可產生對基礎伺服器的最佳資料流量分佈。IP 位址也有效，但不常使用，而且只有在特定實例中才會使用。請以 `/foldername` 形式輸入資料夾名稱。
-7. 在**主機可存取性**畫面上，選取您要裝載 NFS WMware 資料儲存庫的一台以上主機，然後按**下一步**。
-8. 檢閱下一個畫面上的輸入，然後按一下**完成**。
-9. 針對任何其他 {{site.data.keyword.filestorage_short}} 磁區重複進行。
+6. 然後，選取 NFS 版本。NFS 第 3 版及 NFS 4.1 版都受到支援，但建議 NFS 第 3 版。請確定只使用一種 NFS 版本來存取給定的資料儲存庫。使用不同版本將一個以上的主機裝載到相同的資料儲存庫，結果可能導致資料毀損。
+7. 在**名稱及配置**畫面上，輸入您要稱呼 WMware 資料儲存庫的名稱。此外，請輸入 NFS 伺服器的主機名稱。使用 NFS 伺服器的 FQDN 可產生對基礎伺服器的最佳資料流量分佈。IP 位址也有效，但不常使用，而且只有在特定實例中才會使用。請以 `/foldername` 形式輸入資料夾名稱。
+8. 在**主機可存取性**畫面上，選取您要裝載 NFS WMware 資料儲存庫的一台以上主機，然後按**下一步**。
+9. 檢閱下一個畫面上的輸入，然後按一下**完成**。
+10. 針對任何其他 {{site.data.keyword.filestorage_short}} 磁區重複進行。
 
->**附註**：{{site.data.keyword.BluSoftlayer_full}} 建議使用 FQDN 名稱來連接至 WMware 資料儲存庫。使用直接 IP 定址可能會略過使用 FQDN 所提供的負載平衡機制。
+{{site.data.keyword.BluSoftlayer_full}} 建議使用 FQDN 名稱來連接至 WMware 資料儲存庫。使用直接 IP 定址可能會略過使用 FQDN 所提供的負載平衡機制。
+{:important}
 
 若要使用 IP 位址，而非 FQDN，只需要對伺服器進行連線測試即可取得 IP 位址。
 ```
@@ -278,7 +292,8 @@ Storage I/O Control (SIOC) 是一種特性，可供使用 Enterprise Plus 授權
 為了讓 SIOC 判斷儲存裝置何時壅塞或受限，需要已定義的臨界值。不同儲存空間類型的壅塞臨界值延遲會不同。預設選項是尖峰傳輸量的 90%。尖峰傳輸量值的百分比指出 WMware 資料儲存庫使用這個百分比的預估尖峰傳輸量時的預估延遲臨界值。
 
 
->**附註**：不正確地針對 WMware 資料儲存庫或 VMDK 配置 SIOC，可能會嚴重影響效能。
+不正確地針對 WMware 資料儲存庫或 VMDK 配置 SIOC，可能會嚴重影響效能。
+{:important}
 
 
 ### 配置 WMware 資料儲存庫的 Storage I/O Control
@@ -293,7 +308,8 @@ Storage I/O Control (SIOC) 是一種特性，可供使用 Enterprise Plus 授權
    ![NSF WMware 資料儲存庫](/images/3_0.png)
 6. 按一下**確定**。
 
-**附註**：此設定是 WMware 資料儲存庫特有的，而不是主機特有的。
+此設定是 WMware 資料儲存庫特有的，而不是主機特有的。
+{:note}
 
 
 ### 配置 {{site.data.keyword.BluVirtServers_short}} 的 Storage I/O Control
@@ -310,7 +326,8 @@ Storage I/O Control (SIOC) 是一種特性，可供使用 Enterprise Plus 授權
 6. 按一下**確定**
 
 
-> **附註**：即使未啟用 SIOC，也會使用此處理程序來設定 {{site.data.keyword.BluVirtServers_short}} 中個別 vDisk 的資源耗用限制。這些設定專用於個別訪客，而不是主機（雖然是由 SIOC 使用它們）。
+此處理程序是用來設定 {{site.data.keyword.BluVirtServers_short}} 中個別 vDisk 的資源耗用限制（即使未啟用 SIOC）。這些設定專用於個別訪客，而不是主機（雖然是由 SIOC 使用它們）。
+{:important}
 
 
 ## 配置 ESXi 主機端設定
@@ -369,6 +386,7 @@ Storage I/O Control (SIOC) 是一種特性，可供使用 Enterprise Plus 授權
 巨大訊框是有效負載大於標準最大傳輸單位 (MTU) 1,500 位元組的乙太網路訊框。巨大訊框用於支援最少 1 Gbps 的區域網路，且最大可達到 9,000 個位元組。
 
 必須在來源裝置 <-> 交換器 <-> 路由器 <-> 交換器 <-> 目的地裝置中的整個網路路徑上，配置相同的巨大訊框。如果整個鏈結未設為相同，則會預設為鏈結的最低設定。{{site.data.keyword.BluSoftlayer_full}} 目前將網路裝置設為 9,000。所有客戶裝置都需要設為相同的 9,000 值。
+{:important}
 
 ### 在 Windows 中啟用巨大訊框
 
@@ -380,7 +398,7 @@ Storage I/O Control (SIOC) 是一種特性，可供使用 Enterprise Plus 授權
 6. 選取**巨大訊框**，然後將值從 **disabled** 變更為您要的值。此值（例如 9 KB 或 9014 位元組）取決於 NIC。
 7. 按一下所有視窗中的**確定**。
 
->**附註**：當您進行變更時，NIC 的網路連線功能會中斷幾秒鐘。重新啟動裝置，以確認變更生效。
+當您進行變更時，NIC 的網路連線功能會中斷幾秒鐘。重新啟動裝置，以確認變更生效。{:tip}
 
 
 ### 在 Linux 中啟用巨大訊框
@@ -415,4 +433,4 @@ Storage I/O Control (SIOC) 是一種特性，可供使用 Enterprise Plus 授權
 
    此動作會導致網路連線短暫中斷。
 
-在[這裡](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}進一步瞭解「進階單一網站 VMware 參照架構」。
+在[這裡](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}進一步瞭解「進階單一網站 VMware 參照架構」。{:tip}

@@ -21,7 +21,7 @@ lastupdated: "2018-09-12"
 
 - **成長中的儲存空間需求** - 快速成長的客戶需要一種可快速且輕鬆地增加其儲存空間大小的方式，以管理成長。
 
-## 在抄寫上擴充儲存空間容量的效果
+## 擴充儲存空間容量對於抄寫的效果
 
 主要儲存空間上的擴充動作會導致自動調整抄本大小。
 
@@ -31,9 +31,9 @@ lastupdated: "2018-09-12"
 
 已佈建「耐久性」之 {{site.data.keyword.filestorage_short}} 的現有大小限制仍然適用（10 IOPS 層級最多為 4 TB，而所有其他層級最多為 12 TB）。
 
-## 重新調整儲存空間大小
+## 調整儲存空間大小
 
-1. 從 {{site.data.keyword.slportal}} 中，按一下**儲存空間** > **{{site.data.keyword.filestorage_short}}**，或者，從 {{site.data.keyword.BluSoftlayer_full}} 型錄中，按一下**基礎架構** > **儲存空間** > **{{site.data.keyword.filestorage_short}}**。
+1. 從 {{site.data.keyword.slportal}}，按一下**儲存空間** > **{{site.data.keyword.filestorage_short}}**，或者，從 {{site.data.keyword.BluSoftlayer_full}} 型錄，按一下**基礎架構** > **儲存空間** > **{{site.data.keyword.filestorage_short}}**。
 2. 從清單中選取磁區，然後按一下**動作** > **修改磁區**
 3. 輸入新的儲存空間大小（以 GB 為單位）。
 4. 檢閱您的選取項目及新的定價。

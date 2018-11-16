@@ -2,10 +2,13 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-09-10"
+lastupdated: "2018-10-29"
 
 ---
 {:new_window: target="_blank"}
+{:tip: .tip} 
+{:note: .note} 
+{:important: .important}
 
 # 開始使用 {{site.data.keyword.filestorage_short}}
 
@@ -72,16 +75,16 @@ lastupdated: "2018-09-10"
   </tr>
   <tr>
    <th>每月價格</th>
-   <td>$0.10/GB</td>
+   <td>$0.06/GB</td>
+   <td>$0.15/GB</td>
    <td>$0.20/GB</td>
-   <td>$0.35/GB</td>
    <td>$0.58/GB</td>
   </tr>
   <tr>
    <th>每小時價格</th>
-   <td>0.0002/GB</td>
+   <td>$0.0001/GB</td>
+   <td>$0.0002/GB</td>
    <td>$0.0003/GB</td>
-   <td>$0.0005/GB</td>
    <td>$0.0009/GB</td>
   </tr>
 </table>
@@ -194,6 +197,7 @@ lastupdated: "2018-09-10"
 **區塊大小**
 
 「耐久性」及「效能」的 IOPS 都是根據 16 KB 區塊大小（具有 50/50 讀寫 50% 隨機工作負載）。16 KB 區塊相當於寫入一次磁區。
+{:important}
 
 應用程式所使用的區塊大小會直接影響儲存空間效能。如果應用程式所使用的區塊大小小於 16 KB，則 IOPS 限制會比傳輸量限制更早實現。反之，如果應用程式所使用的區塊大小大於 16 KB，則傳輸量限制會比 IOPS 限制更早實現。
 
@@ -228,7 +232,7 @@ lastupdated: "2018-09-10"
             <td>16</td>
           </tr>
           <tr>
-            <td>32（一般用於 SQLServer）</td>
+            <td>32（一般用於 SQL Server）</td>
             <td>500</td>
             <td>16</td>
           </tr>          
@@ -258,7 +262,7 @@ lastupdated: "2018-09-10"
 
 乙太網路連線的速度必須比來自您磁區的預期最大傳輸量更快。一般而言，請不要預期乙太網路連線飽和度超過可用頻寬的 70%。例如，如果您有 6,000 IOPS 而且要使用 16 KB 區塊大小，則磁區可以處理大約 94 MBps 傳輸量。如果您的 LUN 有一條 1 Gbps 乙太網路連線，則它在伺服器嘗試使用最大可用傳輸量時會變成瓶頸。原因是 1 Gbps 乙太網路連線理論限制（每秒 125 MB）的 70% 只容許每秒 88 MB。
 
-為達到最大 IOPS，需要有足夠的網路資源。其他考量包括儲存空間及主機端之外的專用網路使用情形，以及應用程式特定的調整（IP 堆疊或佇列深度，及其他設定）。
+為達到最大 IOPS，需要有足夠的網路資源。其他考量包括儲存空間及主機端之外的專用網路使用情形，以及應用程式特定的調整（IP 堆疊或[佇列深度](set-host-queue-depth-settings-performance-and-endurance-storage.html)，以及其他設定）。
 
 儲存空間資料流量包含在「公用虛擬伺服器」的網路總用量中。請參閱[虛擬伺服器文件](https://console.bluemix.net/docs/vsi/vsi_public.html#public-virtual-servers)，以瞭解服務可能強制的限制。
 
