@@ -32,7 +32,7 @@ Los clientes no pueden cambiar entre Resistencia y Rendimiento al ajustar su IOP
 
 Si el volumen tiene réplica, la réplica se actualiza automáticamente para coincidir con la selección de IOPS de la primaria.
 
-## Ajuste de la IOPS en el almacenamiento
+## Ajuste de IOPS en el almacenamiento
 
 1. Vaya a su lista de {{site.data.keyword.filestorage_short}}
     - Desde el portal de clientes, pulse **Almacenamiento** > **{{site.data.keyword.filestorage_short}}** O

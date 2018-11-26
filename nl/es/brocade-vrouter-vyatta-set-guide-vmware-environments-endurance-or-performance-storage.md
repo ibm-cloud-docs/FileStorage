@@ -2,10 +2,13 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-08-22"
+lastupdated: "2018-10-31"
 
 ---
 {:new_window: target="_blank"}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 
 # Configuración de Brocade vRouter (Vyatta) para entornos de VMware con {{site.data.keyword.filestorage_short}}
 
@@ -30,7 +33,7 @@ La figura 1 describe la comunicación entre cada zona. Su entorno puede ser dife
 
 ## Configuración de Brocade vRouter (Vyatta)
 
-1. Establezca una conexión SSH con el dispositivo utilizando la contraseña raíz que se encuentra en la pantalla de detalles del dispositivo.
+1. Establezca una conexión SSH con el dispositivo utilizando la contraseña root que se encuentra en la pantalla de detalles del dispositivo.
 2. Escriba `configure` para especificar la modalidad de configuración y siga los pasos en las secciones posteriores.
 
 ### Configuración de interfaces

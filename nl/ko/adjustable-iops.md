@@ -25,8 +25,8 @@ lastupdated: "2018-09-12"
 클라이언트는 자체 IOPS를 조정할 때 Endurance와 Performance 간에 전환할 수 없습니다. 사용자는 다음의 기준/제한사항을 기반으로 스토리지에 대해 새 IOPS 계층 또는 IOPS 레벨을 지정할 수 있습니다.
 
 - 원래 볼륨이 Endurance 0.25 계층인 경우에는 IOPS 계층을 업데이트할 수 없습니다.
-- 원래 볼륨이 0.30IOPS/GB 이하의 Performance인 경우, 사용 가능한 옵션에는 결과가 0.30IOPS/GB 이하인 크기 및 IOPS 조합만 포함됩니다. 
-- 원래 볼륨이 0.30IOPS/GB를 초과하는 Performance인 경우, 사용 가능한 옵션에는 결과가 0.30IOPS/GB를 초과하는 크기 및 IOPS 조합만 포함됩니다. 
+- 원래 볼륨이 0.30IOPS/GB 이하의 Performance인 경우, 사용 가능한 옵션에는 결과가 0.30IOPS/GB 이하인 크기 및 IOPS 조합만 포함됩니다.
+- 원래 볼륨이 0.30IOPS/GB를 초과하는 Performance인 경우, 사용 가능한 옵션에는 결과가 0.30IOPS/GB를 초과하는 크기 및 IOPS 조합만 포함됩니다.
 
 ## IOPS 조정이 복제에 미치는 영향
 

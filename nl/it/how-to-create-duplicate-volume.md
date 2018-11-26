@@ -2,10 +2,13 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-09-07"
+lastupdated: "2018-10-31"
 
 ---
 {:new_window: target="_blank"}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 
 # Creazione di un {{site.data.keyword.filestorage_short}} duplicato
 
@@ -15,7 +18,8 @@ Poiché il duplicato è basato sui dati in un'istantanea a un punto temporale, �
 
 I duplicati possono essere creati sia dai volumi **primari** che da quelli di **replica**. Il nuovo duplicato viene creato nello stesso data center del volume originale. Se crei un duplicato da un volume di replica, il nuovo volume viene creato nello stesso data center del volume di replica.
 
->**Nota** - se sei un utente di un account dedicato di {{site.data.keyword.containerlong}}, consulta le tue opzioni per la duplicazione di un volume nella [Documentazione {{site.data.keyword.containerlong_notm}}](/docs/containers/cs_storage_file.html#backup_restore).
+Se sei un utente di un account dedicato di {{site.data.keyword.containerlong}}, consulta le tue opzioni per la duplicazione di un volume nella [Documentazione {{site.data.keyword.containerlong_notm}}](/docs/containers/cs_storage_file.html#backup_restore).
+{:tip}
 
 I volumi duplicati solo accessibili da un host per la lettura/scrittura non appena viene seguito il provisioning dell'archiviazione. Tuttavia, le istantanee e le repliche sono consentite solo dopo il completamento della copia dei dati dall'originale al duplicato. Una volta completata la copia dei dati, il duplicato può essere gestito e utilizzato come un volume del tutto indipendente.
 
@@ -49,7 +53,9 @@ Servendoti del [{{site.data.keyword.slportal}}](https://control.softlayer.com/){
     - Se il tuo volume originale è al livello Endurance 0,25 IOPS, non puoi operare una nuova selezione.
     - Se il tuo volume originale è al livello Endurance 2, 4 o 10 IOPS, puoi spostarti dovunque tra questi livelli per il nuovo volume.
 6. Puoi aggiornare la dimensione del nuovo volume in modo che sia più grande dell'originale. La dimensione del volume originale è impostata per impostazione predefinita.
-    - **Nota**: la dimensione di {{site.data.keyword.filestorage_short}} può essere modificata a 10 volte la dimensione originale del volume.
+
+   {{site.data.keyword.filestorage_short}} può essere ridimensionato fino a 10 volte la dimensione originale del volume.
+   {:tip}
 7. Puoi aggiornare lo spazio per le istantanee per il nuovo volume per aggiungere più, meno o zero spazio per le istantanee. Lo spazio per le istantanee del volume originale viene impostato per impostazione predefinita.
 8. Fai clic su **Continue** per effettuare il tuo ordine.
 
@@ -64,7 +70,9 @@ Servendoti del [{{site.data.keyword.slportal}}](https://control.softlayer.com/){
     - Se il tuo volume originale è al livello Endurance 0,25 IOPS, non puoi operare una nuova selezione.
     - Se il tuo volume originale è al livello Endurance 2, 4 o 10 IOPS, puoi spostarti dovunque tra questi livelli per il nuovo volume.
 6. Puoi aggiornare la dimensione del nuovo volume in modo che sia più grande dell'originale. La dimensione del volume originale è impostata per impostazione predefinita.
-    - **Nota**: la dimensione di {{site.data.keyword.filestorage_short}} può essere modificata a 10 volte la dimensione originale del volume.
+
+   {{site.data.keyword.filestorage_short}} può essere ridimensionato fino a 10 volte la dimensione originale del volume.
+   {:tip}
 7. Puoi aggiornare lo spazio per le istantanee per il nuovo volume per aggiungere più, meno o zero spazio per le istantanee. Lo spazio per le istantanee del volume originale viene impostato per impostazione predefinita.
 8. Fai clic su **Continue** per effettuare il tuo ordine per il duplicato.
 

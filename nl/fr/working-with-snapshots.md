@@ -2,10 +2,13 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-09-17"
+lastupdated: "2018-10-31"
 
 ---
 {:new_window: target="_blank"}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 
 
 # Gestion des instantanés
@@ -16,6 +19,7 @@ Vous pouvez décider de la fréquence et du moment de création d'un point de co
 
 
 Avant de pouvoir configurer votre planning initial, vous devez d'abord acheter de l'espace d'image instantanée si vous ne l'avez pas fait lors de la mise à disposition initiale du volume de stockage.
+{:important}
 
 ### Ajout d'un planning d'instantané
 
@@ -61,9 +65,10 @@ Le graphique circulaire en haut de la page **Détails** indique la quantité d'e
 
 ## Modification de la quantité d'espace d'image instantanée pour un volume
 
-Il se peut que vous deviez ajouter de l'espace d'image instantanée à un volume qui n'en disposait pas auparavant ou qui en requiert davantage. Vous pouvez ajouter entre 5 et 4 000 Go, selon vos besoins. 
+Il se peut que vous deviez ajouter de l'espace d'image instantanée à un volume qui n'en disposait pas auparavant ou qui en requiert davantage. Vous pouvez ajouter entre 5 et 4 000 Go, selon vos besoins.
 
-**Remarque** : l'espace d'image instantanée peut uniquement être augmenté. Il est impossible de le réduire. Vous pouvez sélectionner une quantité moins élevée d'espace jusqu'à ce que vous déterminiez vos besoins réels. Gardez à l'esprit que les instantanés automatisés et manuels partagent le même espace.
+L'espace d'image instantanée peut uniquement être augmenté. Il est impossible de le réduire. Vous pouvez sélectionner une quantité moins élevée d'espace jusqu'à ce que vous déterminiez vos besoins réels. Gardez à l'esprit que les instantanés automatisés et manuels partagent le même espace.
+{:important}
 
 L'espace d'instantané est modifié via **Stockage** > **{{site.data.keyword.filestorage_short}}**.
 
@@ -87,7 +92,9 @@ Vous pouvez annuler des plannings d'instantané en accédant à **Stockage** > *
 
 1. Cliquez sur le planning à supprimer dans le cadre **Plannings d'échantillonnage** sur la page **Détails**.
 2. Cochez la case en regard du planning à supprimer et cliquez sur **Enregistrer**.<br />
-**Attention** : si vous utilisez la fonctionnalité de réplication, vérifiez que le planning que vous supprimez n'est pas celui qui est employé par la réplication. Cliquez [ici](replication.html) pour plus d'informations sur la suppression d'un planning de réplication.
+
+Si vous utilisez la fonctionnalité de réplication, vérifiez que le planning que vous supprimez n'est pas celui qui est employé par la réplication. Cliquez [ici](replication.html) pour plus d'informations sur la suppression d'un planning de réplication.
+{:important}
 
 ## Suppression d'un instantané
 
@@ -107,9 +114,11 @@ Il se peut que vous deviez ramener votre volume de stockage à un point de cohé
 2. Cliquez sur **Stockage**, **{{site.data.keyword.filestorage_short}}** dans le portail [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
 3. Faites défiler l'écran et cliquez sur le volume à restaurer. La section **Instantanés** de la page **Détails** affiche la liste de tous les instantanés sauvegardés, ainsi que leur taille et leur date de création.
 4. Cliquez sur **Actions** en regard de l'instantané à utiliser, puis cliquez sur **Restaurer**. <br/>
-   >**Remarque** : l'opération de restauration entraîne la perte des données qui ont été créées ou modifiées après la prise de l'instantané. Cette perte de données se produit car votre volume de stockage reprend le même état que celui qui était le sien au moment de la prise de l'instantané. 
+
+   L'opération de restauration entraîne la perte des données qui ont été créées ou modifiées après la prise de l'instantané. Cette perte de données se produit car votre volume de stockage reprend le même état que celui qui était le sien au moment de la prise de l'instantané.
+   {:note}
 5. Cliquez sur **Oui** pour lancer la restauration. Un message doit s'afficher en haut de la page pour vous indiquer que le volume est restauré à l'aide de l'instantané sélectionné. En outre, une icône apparaît en regard de votre volume sur {{site.data.keyword.filestorage_short}} pour indiquer qu'une transaction active est en cours. Survolez cette icône pour ouvrir une boîte de dialogue affichant la transaction. L'icône disparaît une fois la transaction terminée.
 6. Montez et reconnectez le volume de stockage à l'hôte.
   - Cliquez [ici](accessing-file-storage-linux.html) pour obtenir les instructions liées à {{site.data.keyword.filestorage_short}} sur Linux.
-    
->**Remarque** - La restauration d'un volume entraîne la suppression de tous les instantanés pris après l'instantané utilisé pour la restauration. 
+
+La restauration d'un volume entraîne la suppression de tous les instantanés qui ont été pris après celui utilisé pour la restauration.{:important}

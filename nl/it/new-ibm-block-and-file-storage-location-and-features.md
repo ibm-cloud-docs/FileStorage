@@ -2,22 +2,26 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-15"
+lastupdated: "2018-10-31"
 
 ---
 {:new_window: target="_blank"}
+ {:tip: .tip}
+ {:note: .note}
+ {:important: .important}
 
 # Nuove ubicazioni e funzioni dell'{{site.data.keyword.filestorage_short}}
 
 {{site.data.keyword.BluSoftlayer_full}} sta introducendo una nuova versione dell'{{site.data.keyword.filestorage_full}}! La nuova archiviazione è disponibile in data center selezionati ed è supportata da una archiviazione flash a livelli IOPS più elevati con la crittografia a livello di disco per i dati non attivi. Di tutta l'archiviazione ordinata in data center selezionati, viene automaticamente creata con la nuova versione di {{site.data.keyword.filestorage_short}}.
 
-**Nota:** il punto di montaggio NFS per i nuovi volumi è cambiato. Per i dettagli, consulta la sezione **Nuovo punto di montaggio per i volumi di {{site.data.keyword.filestorage_short}} avanzato**.
+Il punto di montaggio NFS per i nuovi volumi è cambiato. Per i dettagli, consulta la sezione [Nuovo punto di montaggio per i volumi di {{site.data.keyword.filestorage_short}} avanzato](#new-mount-point-for-enhanced-file-storage-volumes).
+{:important}
 
 La nuova {{site.data.keyword.filestorage_short}} è disponibile nelle seguenti regioni/nei seguenti data center e a breve verrà aggiunta la disponibilità di ulteriori data center.
 
 <table role="presentation">
   <tr>
-    <td><strong>USA 2</strong></td>
+    <td><strong>US 2</strong></td>
     <td><strong>UE</strong></td>
     <td><strong>Australia</strong></td>
     <td><strong>Canada</strong></td>
@@ -93,3 +97,4 @@ La nuova archiviazione ha le seguenti funzioni e capacità:
 Tutti i volumi di {{site.data.keyword.filestorage_short}} avanzato di cui viene eseguito il provisioning in questi data center hanno un punto di montaggio diverso rispetto ai volumi non crittografati. Per assicurarti che stai usando il punto di montaggio corretto per entrambi i tuoi volumi, puoi visualizzare le informazioni sul punto di montaggio nella pagina **Volume Details** nell'IU. Puoi inoltre accedere al punto di montaggio corrente tramite una chiamata API: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 
 Ritorna qui a controllare quando viene eseguito l'upgrade di ulteriori data center e per vedere le nuove funzioni e funzionalità che vengono aggiunte per l'{{site.data.keyword.filestorage_short}}.
+{:tip}

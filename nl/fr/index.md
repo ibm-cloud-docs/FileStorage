@@ -2,10 +2,13 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-09-10"
+lastupdated: "2018-10-29"
 
 ---
 {:new_window: target="_blank"}
+{:tip: .tip} 
+{:note: .note} 
+{:important: .important}
 
 # Initiation à {{site.data.keyword.filestorage_short}}
 
@@ -72,16 +75,16 @@ Avec la **facturation mensuelle**, le calcul du prix est calculé au prorata dep
   </tr>
   <tr>
    <th>Prix mensuel</th>
-   <td>0,10 $/Go</td>
+   <td>0,06 $/Go</td>
+   <td>0,15 $/Go</td>
    <td>0,20 $/Go</td>
-   <td>0,35 $/Go</td>
    <td>0,58 $/Go</td>
   </tr>
   <tr>
    <th>Prix horaire</th>
+   <td>0,0001 $/Go</td>
    <td>0,0002 $/Go</td>
    <td>0,0003 $/Go</td>
-   <td>0,0005 $/Go</td>
    <td>0,0009 $/Go</td>
   </tr>
 </table>
@@ -194,6 +197,7 @@ Les volumes Performance sont conçus pour fonctionner d'une manière cohérente 
 **Taille de bloc**
 
 Les E-S/s pour les niveaux Endurance et Performance se fondent sur une taille de bloc de 16 ko avec une charge de travail aléatoire de 50 % de lectures/écritures. Un bloc de 16 ko équivaut à une écriture sur le volume.
+{:important}
 
 La taille de bloc utilisée par votre application a une incidence directe sur les performances de stockage. Si la taille de bloc employée par votre application est inférieure à 16 ko, la limite des opérations d'entrée-sortie par seconde est atteinte avant la limite de débit. A l'inverse, si la taille de bloc qui est utilisée par votre application est supérieure à 16 ko, la limite de débit est atteinte avant la limite des opérations d'entrée-sortie par seconde.
 
@@ -228,7 +232,7 @@ La taille de bloc utilisée par votre application a une incidence directe sur le
             <td>16</td>
           </tr>
           <tr>
-            <td>32 (standard pour SQLServer)</td>
+            <td>32 (standard pour SQL Server)</td>
             <td>500</td>
             <td>16</td>
           </tr>          
@@ -258,7 +262,7 @@ Un autre facteur à prendre en compte est le nombre d'hôtes qui utilisent votre
 
 La vitesse de votre connexion Ethernet doit être supérieure au débit maximal attendu de votre volume. En règle générale, vous ne devriez pas saturer votre connexion Ethernet au-delà de 70 % de la bande passante disponible. Par exemple, si vous disposez de 6 000 IOPS et que vous utilisez une taille de bloc de 16 ko, le volume peut traiter un débit d'environ 94 Mo par seconde. Si vous disposez d'une connexion Ethernet de 1 Gbps vers votre numéro d'unité logique, vous rencontrez un goulot d'étranglement lorsque vos serveurs tentent d'utiliser le débit maximal disponible. Cela est dû au fait que 70 % de la limite théorique d'une connexion Ethernet de 1 Gbps (125 Mo par seconde) n'autorisent que 88 Mo par seconde.
 
-Pour atteindre le nombre maximal d'IOPS, vous devez mettre en place les ressources réseau adéquates. Vous devez également tenir compte de l'utilisation du réseau privé en dehors du stockage, ainsi que des réglages côté hôte et spécifiques aux applications (pile IP, nombre de lignes de file d'attente, etc.).
+Pour atteindre le nombre maximal d'IOPS, vous devez mettre en place les ressources réseau adéquates. Vous devez également tenir compte de l'utilisation du réseau privé en dehors du stockage, ainsi que des réglages côté hôte et spécifiques aux applications (pile IP ou [nombre de lignes de file d'attente](set-host-queue-depth-settings-performance-and-endurance-storage.html), etc.).
 
 Le trafic de stockage est inclus dans l'utilisation réseau totale des serveurs virtuels publics. Voir la [documentation sur les serveurs virtuels](https://console.bluemix.net/docs/vsi/vsi_public.html#public-virtual-servers) afin de comprendre les limites pouvant être imposées par le service.
 

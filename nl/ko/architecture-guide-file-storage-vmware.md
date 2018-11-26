@@ -2,17 +2,23 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-09-24"
+lastupdated: "2018-10-31"
 
 ---
 {:pre: .pre}
 {:new_window: target="_blank"}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 
 # VMware에서의 {{site.data.keyword.filestorage_short}} 프로비저닝
 
-다음 단계를 수행하여 {{site.data.keyword.BluSoftlayer_full}}의 vSphere 5.5 및 vSphere 6.0 환경에서 {{site.data.keyword.filestorage_full}}를 주문하고 구성할 수 있습니다. VMWare 호스트에 대한 연결이 8개보다 많이 필요한 경우에는 NFS {{site.data.keyword.filestorage_short}}를 선택하는 것이 가장 좋습니다. 
+다음 단계를 수행하여 {{site.data.keyword.BluSoftlayer_full}}의 vSphere 5.5 및 vSphere 6.0 환경에서 {{site.data.keyword.filestorage_full}}를 주문하고 구성할 수 있습니다.
 
 {{site.data.keyword.filestorage_short}}는 예측 가능한 성능 레벨을 필요로 하는, I/O 양이 많은 애플리케이션을 지원하기 위해 디자인되었습니다. 예측 가능한 성능은 개별 볼륨에 대한 프로토콜 레벨 IOPS(Input/Output Operations Per Second)의 할당을 통해 얻을 수 있습니다.
+
+VMWare 호스트에 대한 연결이 8개보다 많이 필요한 경우에는 NFS {{site.data.keyword.filestorage_short}}를 선택하는 것이 가장 좋습니다.
+{:tip}
 
 {{site.data.keyword.filestorage_short}} 오퍼링은 NFS 연결을 통해 액세스되고 마운트됩니다. VMware 배치에서는 하나의 볼륨을 최대 64개의 ESXi 호스트까지 공유 스토리지로서 마운트할 수 있습니다. 또는 여러 볼륨을 마운트하여 vSphere Storage DRS(Distributed Resource Scheduler)를 사용하기 위한 스토리지 클러스터를 작성할 수 있습니다.
 
@@ -23,15 +29,17 @@ Endurance 및 Performance {{site.data.keyword.filestorage_short}}의 가격 및 
 {{site.data.keyword.filestorage_short}}를 주문할 때 다음 정보를 고려하십시오.
 
 - 크기를 결정할 때는 필요한 워크로드와 처리량의 크기를 고려하십시오. 용량(IOPS/GB)에 비례하여 선형적으로 성능을 스케일링하는 Endurance 서비스에서는 크기 문제가 중요합니다. 이와 반대로 Performance 서비스에서는 관리자가 용량과 성능을 별도로 선택할 수 있습니다. Performance 서비스에서는 처리량 요구사항 문제가 중요합니다.
-  >**참고** - 처리량 계산식은 IOPS x 16KB입니다. IOPS는 50/50 읽기/쓰기 혼합의 16KB 블록 크기를 기반으로 측정됩니다.<br/>블록 크기를 늘리면 처리량이 늘어나지만 IOPS가 줄어듭니다. 예를 들어, 32KB 블록으로 블록 크기를 두 배로 늘리면 최대 처리량은 그대로 유지되지만 IOPS는 반으로 감소됩니다.
+
+  처리량 계산식은 IOPS x 16KB입니다. IOPS는 50/50 읽기/쓰기 혼합의 16KB 블록 크기를 기반으로 측정됩니다.<br/>블록 크기를 늘리면 처리량이 늘어나지만 IOPS가 줄어듭니다. 예를 들어, 32KB 블록으로 블록 크기를 두 배로 늘리면 최대 처리량은 그대로 유지되지만 IOPS는 반으로 감소됩니다.
+  {:note}
 - NFS는 `lookup`, `getattr` 및 `readdir`과 같은 여러 추가 파일 제어 오퍼레이션을 사용합니다. 읽기/쓰기 오퍼레이션에 추가하여 이러한 오퍼레이션은 IOPS로 계수될 수 있으며, 이는 오퍼레이션 유형 및 NFS 버전에 따라 다양할 수 있습니다.
 - {{site.data.keyword.filestorage_short}} 볼륨은 권한 부여된 디바이스, 서브넷 또는 IP 주소에 노출됩니다.
-- 경로 장애 복구 중에 스토리지 연결이 끊김을 방지하기 위해 {{site.data.keyword.IBM}}에서는 적절한 제한시간 값을 설정하는 VMWare 도구를 설치하는 것을 권장합니다. 값을 변경할 필요는 없으며, 기본 설정은 VMWare 호스트의 연결이 끊어지지 않도록 하기에 충분합니다. 
-- NFS v3 및 NFS v4.1 모두는 {{site.data.keyword.BluSoftlayer_full}} 환경에서 지원됩니다. 하지만 {{site.data.keyword.IBM}}에서는 NFS v3 사용을 권장합니다. NFS v4.1이 Stateful 프로토콜이므로(NFSv3과 같은 Stateless가 아님), 프로토콜 문제가 네트워크 이벤트 중에 발생할 수 있습니다. NFS v4.1은 모든 오퍼레이션을 중지한 후에 잠금 교정을 수행해야 합니다. 이러한 오퍼레이션이 실행되는 동안 장애가 발생할 수 있습니다.
+- 경로 장애 복구 중에 스토리지 연결이 끊김을 방지하기 위해 {{site.data.keyword.IBM}}에서는 적절한 제한시간 값을 설정하는 VMWare 도구를 설치하는 것을 권장합니다. 값을 변경할 필요는 없으며, 기본 설정은 VMWare 호스트의 연결이 끊어지지 않도록 하기에 충분합니다.
+- NFSv3 및 NFSv4.1이 둘 다 {{site.data.keyword.BluSoftlayer_full}} 환경에서 지원됩니다. 그러나 {{site.data.keyword.IBM}}에서는 NFSv3을 사용하도록 권장합니다. NFSv4.1이 Stateful 프로토콜이므로(NFSv3과 같이 Stateless가 아님), 네트워크 이벤트 중에 프로토콜 문제가 발생할 수 있습니다. NFSv4.1은 모든 오퍼레이션을 중지한 후에 잠금 교정을 완료해야 합니다. 이러한 오퍼레이션이 실행되는 동안 장애가 발생할 수 있습니다.
 
 자세한 정보는 [네트워크 연결 스토리지에서
-VMware vSphere 실행에 대한 우수 사례](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf)의 VMware 백서를 참조하십시오.
-{:new_window}
+VMware vSphere 실행에 대한 우수 사례](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf)의 VMware 백서를 참조하십시오.{:new_window}
+{:tip}
 
 **NFS 프로토콜 VMware 기능 지원 표**
 <table>
@@ -117,6 +125,9 @@ VMware 환경은 스냅샷을 인지하지 않음을 유념하십시오. Enduran
 - 대상 볼륨으로 장애 복구하여 사이트 장애와 기타 장애에서 빠르게 복구합니다.
 - DR 사본의 특정 시점으로 장애 복구합니다.
 
+복제는 서로 다른 두 위치에 동기화된 데이터를 보관합니다. 볼륨을 복제한 후에 이를 원래 볼륨과 독립적으로 사용하려면 [중복 파일 볼륨 작성](how-to-create-duplicate-volume.html)을 참조하십시오.
+{:tip}
+
 복제하려면 우선 스냅샷 스케줄을 작성해야 합니다.
 
 장애 복구 시에 사용자는 기본 데이터 센터의 스토리지 볼륨에서 원격 데이터 센터의 대상 볼륨으로 “스위치를 전환”합니다. 예를 들면, 기본 데이터 센터는 런던에 있고 보조 데이터 센터는 암스테르담에 있습니다. 이 경우에는 장애가 발생하면 암스테르담으로 장애 복구됩니다. 이는 암스테르담의 vSphere 클러스터 인스턴스에서 현재 기본 볼륨으로 연결함을 의미합니다. 런던의 볼륨이 복구된 후에는 암스테르담 볼륨의 스냅샷을 가져옵니다. 그런 다음 런던으로 장애 복구하고 런던의 컴퓨팅 인스턴스의 기본 볼륨으로 다시 연결할 수 있습니다.
@@ -125,7 +136,8 @@ VMware 환경은 스냅샷을 인지하지 않음을 유념하십시오. Enduran
 
 복제본 구성에 대한 자세한 정보는 [복제](replication.html)를 참조하십시오.
 
->**참고** - 손상되거나, 해킹되거나 감염되어 올바르지 않은 데이터 또한 스냅샷 스케줄 및 스냅샷 보존에 따라 복제됩니다. 최소 복제 창을 사용하면 보다 나은 복구 지점 목표가 제공됩니다. 하지만 이에 따라 올바르지 않은 데이터의 복제에 대해 반응하는 시간도 단축될 수 있습니다.
+손상, 해킹 또는 감염되어 올바르지 않은 데이터는 스냅샷 스케줄과 스냅샷 보유에 따라 복제됩니다. 최소 복제 창을 사용하면 보다 나은 복구 지점 목표가 제공됩니다. 하지만 이에 따라 올바르지 않은 데이터의 복제에 대해 반응하는 시간도 단축될 수 있습니다.
+{:note}
 
 
 ## {{site.data.keyword.filestorage_short}} 주문
@@ -164,7 +176,9 @@ VMware ESXi 5 환경에 맞는 {{site.data.keyword.filestorage_short}}를 주문
 2. **Endurance** 또는 **Performance 볼륨 조치** 메뉴에서 **호스트 액세스**를 선택하십시오.
 3. **서브넷**을 클릭하십시오.
 4. ESXi 호스트의 VMkernel 포트에 지정된 사용 가능한 서브넷의 목록에서 선택하고 **제출**을 클릭하십시오.<br/>
-    >**참고** - 표시되는 서브넷은 동일한 데이터 센터에서 스토리지 볼륨으로 구독된 서브넷입니다.
+
+   표시되는 서브넷은 스토리지 볼륨과 동일한 데이터 센터의 구독된 서브넷입니다.
+   {:note}
 
 
 서브넷에 권한이 부여된 후에는 볼륨을 마운트할 때 사용할 Endurance 또는 Performance 스토리지 서버의 호스트 이름을 기록하십시오. 이 정보는 특정 볼륨을 클릭하여 {{site.data.keyword.filestorage_short}} 세부사항 페이지에서 찾을 수 있습니다.
@@ -203,6 +217,7 @@ VMware 구성 프로세스를 시작하기 전에, 다음 전제조건을 만족
      ```
 
 VMware 및 Jumbo 프레임에 대한 자세한 정보를 보려면 [여기](https://kb.vmware.com/s/article/1003712){:new_window}를 클릭하십시오.
+{:tip}
 
 
 ### 2. 가상 스위치에 업링크 어댑터 추가
@@ -238,9 +253,10 @@ VMware 및 Jumbo 프레임에 대한 자세한 정보를 보려면 [여기](http
    ```
    {: pre}
 
-2. ESXi 5.0 이전에서는 정적 라우트가 다시 부팅 간에 지속되지 않습니다. 추가된 정적 라우트가 지속되도록 하려면 이 명령을 각 호스트의 `/etc/rc.local.d/` 디렉토리에 있는 `local.sh` 파일에 추가해야 합니다. Visual Editor를 사용하여 `local.sh` 파일을 열고 `exit 0` 행 앞에 4.1단계의 두 번째 명령을 추가하십시오. 
+2. ESXi 5.0 이전에서는 정적 라우트가 다시 부팅 간에 지속되지 않습니다. 추가된 정적 라우트가 지속되도록 하려면 이 명령을 각 호스트의 `/etc/rc.local.d/` 디렉토리에 있는 `local.sh` 파일에 추가해야 합니다. Visual Editor를 사용하여 `local.sh` 파일을 열고 `exit 0` 행 앞에 4.1단계의 두 번째 명령을 추가하십시오.
 
->**참고**<br/>- 다음 단계에서 볼륨을 마운트하는 데 사용될 수 있으므로 IP 주소를 기록하십시오.<br/>ESXi 호스트에 마운트할 각각의 NFS 볼륨마다 이 프로세스를 수행해야 합니다.<br/>자세한 정보는 VMware KB 문서인 [Configuring static routes for VMkernel ports on an ESXi host](https://kb.vmware.com/s/article/2001426){:new_window}를 참조하십시오.
+다음 단계에서 볼륨을 마운트하는 데 사용될 수 있으므로 IP 주소를 기록해 두십시오. <br/>ESXi 호스트에 마운트할 각각의 NFS 볼륨마다 이 프로세스를 수행해야 합니다.<br/>자세한 정보는 VMware KB 문서인 [Configuring static routes for VMkernel ports on an ESXi host](https://kb.vmware.com/s/article/2001426){:new_window}를 참조하십시오.
+{:tip}
 
 
 ##  ESXi 호스트에 {{site.data.keyword.filestorage_short}} 볼륨 작성 및 마운트
@@ -250,12 +266,14 @@ VMware 및 Jumbo 프레임에 대한 자세한 정보를 보려면 [여기](http
 3. **새 데이터 저장소 작성** 아이콘을 클릭하십시오.
 4. **새 데이터 저장소** 화면에서 WMware 데이터 저장소(ESXi 호스트)의 위치를 선택하고 **다음**을 클릭하십시오.
 5. **유형** 화면에서 **NFS**를 선택하고 **다음**을 클릭하십시오.
-6. **이름 및 구성** 화면에서 WMware 데이터 저장소에 지정할 이름을 입력하십시오. NFS 서버의 호스트 이름도 입력하십시오. NFS 서버에 대해 FQDN을 사용하면 기반 서버에 대한 최상의 트래픽 분배가 이루어집니다. IP 주소도 유효하지만 FQDN보다는 덜 사용되며 특정한 경우에서만 사용됩니다. `/foldername` 양식으로 폴더 이름을 입력하십시오.
-7. **호스트 접근성** 화면에서 NFS WMware 데이터 저장소를 마운트할 호스트를 하나 이상 선택하고 **다음**을 클릭하십시오.
-8. 다음 화면에서 입력을 검토하고 **완료**를 클릭하십시오.
-9. 추가 {{site.data.keyword.filestorage_short}} 볼륨에 대해 반복 실행하십시오.
+6. 그리고 NFS 버전을 선택하십시오. NFSv3 및 NFSv4.1이 둘 다 지원되지만, NFSv3이 선호됩니다. 제공된 데이터 저장소에 액세스하려면 반드시 하나의 NFS 버전만 사용하십시오. 서로 다른 버전을 사용하여 동일한 데이터 저장소에 하나 이상의 호스트를 마운트하면 데이터가 손상될 수 있습니다. 
+7. **이름 및 구성** 화면에서 WMware 데이터 저장소에 지정할 이름을 입력하십시오. NFS 서버의 호스트 이름도 입력하십시오. NFS 서버에 대해 FQDN을 사용하면 기반 서버에 대한 최상의 트래픽 분배가 이루어집니다. IP 주소도 유효하지만 FQDN보다는 덜 사용되며 특정한 경우에서만 사용됩니다. `/foldername` 양식으로 폴더 이름을 입력하십시오.
+8. **호스트 접근성** 화면에서 NFS WMware 데이터 저장소를 마운트할 호스트를 하나 이상 선택하고 **다음**을 클릭하십시오.
+9. 다음 화면에서 입력을 검토하고 **완료**를 클릭하십시오.
+10. 추가 {{site.data.keyword.filestorage_short}} 볼륨에 대해 반복 실행하십시오.
 
->**참고** - {{site.data.keyword.BluSoftlayer_full}}에서는 FQDN 이름을 사용하여 WMware 데이터 저장소에 연결하는 것을 권장합니다. 직접 IP 주소 지정을 사용하면 FQDN을 사용하여 제공되는 로드 밸런싱 메커니즘이 무시될 수 있습니다.
+{{site.data.keyword.BluSoftlayer_full}}에서는 FQDN 이름을 사용하여 WMware 데이터 저장소에 연결하도록 권장합니다. 직접 IP 주소 지정을 사용하면 FQDN을 사용하여 제공되는 로드 밸런싱 메커니즘이 무시될 수 있습니다.
+{:important}
 
 FQDN 대신 IP 주소를 사용하려면 서버에 대해 ping을 실행하여 IP 주소를 얻으십시오.
 ```
@@ -279,7 +297,8 @@ SIOC(Storage I/O Control)는 Enterprise Plus 라이센스를 사용하는 고객
 SIOC에서 스토리지 디바이스의 정체된 또는 제한된 시점을 판별하려면 임계값 정의가 필요합니다. 정체 임계값 대기 시간은 스토리지 유형에 따라 다릅니다. 기본 선택사항은 최대 처리량의 90%입니다. 최대 처리량 값의 백분율은 WMware 데이터 저장소가 예상 최대 처리량의 해당 백분율을 사용할 때의 예상 대기 시간 임계값을 나타냅니다.
 
 
->**참고** - WMware 데이터 저장소 또는 VMDK에 대해 SIOC를 올바르게 구성하지 않으면 성능에 큰 영향을 미칠 수 있습니다.
+WMware 데이터 저장소 또는 VMDK에 대해 SIOC를 올바르게 구성하지 않으면 성능에 상당한 영향을 줄 수 있습니다.
+{:important}
 
 
 ### WMware 데이터 저장소의 SIOC(Storage I/O Control) 구성
@@ -294,7 +313,8 @@ SIOC에서 스토리지 디바이스의 정체된 또는 제한된 시점을 판
    ![NSF WMware 데이터 저장소](/images/3_0.png)
 6. **확인**을 클릭하십시오.
 
-**참고**: 이 설정은 WMware 데이터 저장소에 대해 고유하며 호스트에 대해서는 고유하지 않습니다.
+이 설정은 호스트가 아닌 WMware 데이터 저장소에 특정합니다.
+{:note}
 
 
 ### {{site.data.keyword.BluVirtServers_short}}의 SIOC(Storage I/O Control) 구성
@@ -311,7 +331,8 @@ VDisk 공유 및 한계를 변경하려면 다음 단계를 사용하십시오.
 6. **확인**을 클릭하십시오.
 
 
-> **참고**: 이 프로세스는 SIOC가 사용되지 않는 경우에도 {{site.data.keyword.BluVirtServers_short}}에 있는 개별 vDisk의 리소스 이용 한계를 설정하는 데 사용됩니다. 이러한 설정은 SIOC에 의해 사용되는 경우에도 호스트가 아닌 개별 게스트에 특정합니다.
+이 프로세스는 SIOC가 사용되지 않는 경우에도 {{site.data.keyword.BluVirtServers_short}}에 있는 개별 vDisk의 리소스 이용 한계를 설정하는 데 사용됩니다. 이러한 설정은 SIOC에 의해 사용되는 경우에도 호스트가 아닌 개별 게스트에 특정합니다.
+{:important}
 
 
 ## ESXi 호스트 측 설정 구성
@@ -370,6 +391,7 @@ NFS 스토리지를 위해 ESXi 5.x 호스트를 구성하려면 추가 설정�
 Jumbo 프레임은 1,500바이트의 표준 MTU(Maximum Transmission Unit)보다 큰 페이로드의 이더넷 프레임입니다. Jumbo 프레임은 최소한 1Gbps를 지원하는 근거리 통신망에서 사용되며 최대 9,000바이트 크기까지 가능합니다.
 
 Jumbo 프레임은 소스 디바이스 <-> 스위치 <-> 라우터 <-> 스위치 <-> 대상 디바이스에서 전체 네트워크 경로에 대해 동일하게 구성되어야 합니다. 전체 체인이 동일하게 설정되지 않은 경우에는 체인에서 가장 낮은 설정으로 기본 설정됩니다. {{site.data.keyword.BluSoftlayer_full}}의 네트워크 디바이스는 현재 9,000으로 설정되어 있습니다. 모든 고객 디바이스는 동일한 값인 9,000으로 설정되어야 합니다.
+{:important}
 
 ### Windows에서의 Jumbo 프레임 사용
 
@@ -381,7 +403,8 @@ Jumbo 프레임은 소스 디바이스 <-> 스위치 <-> 라우터 <-> 스위치
 6. **Jumbo 프레임**을 선택하고 **사용 안함** 값을 원하는 값으로 변경하십시오. 값(9kB 또는 9014바이트 등)은 NIC에 따라 달라집니다.
 7. 모든 창에서 **확인**을 클릭하십시오.
 
->**참고** - 변경하면 몇 초 동안 NIC의 네트워크 연결이 끊어집니다. 변경사항이 적용되었는지 확인하려면 디바이스를 다시 시작하십시오.
+변경을 수행할 때 잠시 동안 NIC의 네트워크 연결이 끊어집니다. 변경사항이 적용되었는지 확인하려면 디바이스를 다시 시작하십시오.
+{:tip}
 
 
 ### Linux에서의 Jumbo 프레임 사용
@@ -417,3 +440,4 @@ Jumbo 프레임은 소스 디바이스 <-> 스위치 <-> 라우터 <-> 스위치
    이 조치를 수행하면 네트워크 연결이 잠시 끊어집니다.
 
 [여기서](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} 고급 단일 사이트 VMware 참조 아키텍처에 대해 자세히 알아보십시오.
+{:tip}

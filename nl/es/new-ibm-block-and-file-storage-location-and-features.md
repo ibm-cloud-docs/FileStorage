@@ -2,16 +2,20 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-15"
+lastupdated: "2018-10-31"
 
 ---
 {:new_window: target="_blank"}
+ {:tip: .tip}
+ {:note: .note}
+ {:important: .important}
 
 # Nuevas ubicaciones y características de {{site.data.keyword.filestorage_short}}
 
 {{site.data.keyword.BluSoftlayer_full}} presenta una nueva versión de {{site.data.keyword.filestorage_full}}. El nuevo almacenamiento está disponible en centros de datos seleccionados, y está respaldado por el almacenamiento flash a niveles de IOPS superiores con cifrado de disco para datos en reposo. Todo el almacenamiento solicitado en los centros de datos seleccionados se crea automáticamente con la nueva versión de {{site.data.keyword.filestorage_short}}.
 
-**Nota:** ha cambiado el punto de montaje de NFS para los volúmenes nuevos. Consulte la sección **Nuevo punto de montaje para volúmenes de {{site.data.keyword.filestorage_short}} mejorado** que hay a continuación para ver detalles.
+Ha cambiado el punto de montaje de NFS para los volúmenes nuevos. Consulte la sección [Nuevo punto de montaje para volúmenes de {{site.data.keyword.filestorage_short}} mejorado](#new-mount-point-for-enhanced-file-storage-volumes) que hay a continuación para ver detalles.
+{:important}
 
 El nuevo {{site.data.keyword.filestorage_short}} está disponible actualmente en los siguientes centros de datos y regiones, y pronto se incrementará la disponibilidad de centros de datos.
 
@@ -93,3 +97,4 @@ El nuevo almacenamiento tiene las siguientes características y funciones:
 Todos los volúmenes de {{site.data.keyword.filestorage_short}} mejorado suministrados en estos centros de datos tienen un punto de montaje distinto que los volúmenes no cifrados. Para asegurarse de que está utilizando el punto de montaje correcto para ambos volúmenes de almacenamiento, puede ver la información de punto de montaje en la página **Detalles del volumen** en la interfaz de usuario. También puede acceder al punto de montaje correcto mediante una llamada de API: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 
 Aquí puede consultar si se han actualizado más centros de datos y si se han añadido nuevas funciones y características a {{site.data.keyword.filestorage_short}}.
+{:tip}

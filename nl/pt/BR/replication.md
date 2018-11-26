@@ -2,20 +2,24 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-15"
+lastupdated: "2018-10-31"
 
 ---
 
 {:new_window: target="_blank"}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
+
 
 # Replicando dados
 
 A replicação usa um de seus planejamentos de captura instantânea para copiar automaticamente capturas instantâneas para um volume de destino em um data center remoto. As cópias poderão ser recuperadas no site remoto se ocorrer um evento catastrófico ou se os dados forem corrompidos.
 
-Com réplicas, é possível
+Com réplicas, é possível se recuperar de falhas do site e de outros desastres rapidamente. Em caso de emergência, é possível executar failover no volume de destino e acessar seus dados por meio de um momento específico na cópia DR. Para obter mais informações, consulte [Duplicando volumes de réplicas para recuperação de desastre](disaster-recovery.html).
 
-- Recuperar de falhas do site e outros desastres rapidamente efetuando failover para o volume de destino.
-- Efetuar failover para um momento específico na cópia de DR.
+A replicação mantém seus dados em sincronização em dois locais diferentes. Se você desejar apenas clonar seu volume e usá-lo independentemente do volume original, consulte [Criando um volume de arquivo duplicado](how-to-create-duplicate-volume.html).
+{:tip}
 
 Antes de replicar, deve-se criar um planejamento de captura instantânea. Ao efetuar failover, você está "invertendo o comutador" do volume de armazenamento em seu data center primário para o volume de destino em seu data center remoto. Por exemplo, seu data center primário é Londres e seu data center secundário é Amsterdã. Se um evento de falha ocorresse, você efetuaria failover para Amsterdã - conectando-se ao volume agora primário de uma instância de cálculo em Amsterdã. Depois que seu volume em Londres é reparado, uma captura instantânea é tomada do volume de Amsterdã para efetuar failback para Londres e para o volume novamente primário de uma instância de cálculo em Londres.
 
@@ -40,7 +44,6 @@ Veja a Tabela 1 para a lista completa de disponibilidade de data center e destin
       <th>Austrália</th>
     </tr>
   </thead>
-  
   <tbody>
     <tr>
       <td>DAL01<br />
@@ -101,7 +104,6 @@ Veja a Tabela 1 para a lista completa de disponibilidade de data center e destin
   </tbody>
 </table>
 
-
 ## Criando a réplica inicial
 
 As replicações funcionam com base em um planejamento de captura instantânea. Deve-se primeiro ter espaço de captura instantânea e um planejamento de captura instantânea para o volume de origem antes de poder replicar. Se você tentar configurar a replicação e uma ou a outra não estiver em vigor, será solicitado que compre mais espaço ou configure um planejamento. As replicações são gerenciadas em **Armazenamento** > **{{site.data.keyword.filestorage_short}}** no [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
@@ -109,8 +111,9 @@ As replicações funcionam com base em um planejamento de captura instantânea. 
 1. Clique em seu volume de armazenamento.
 2. Clique em **Réplica** e em **Comprar uma replicação**.
 3. Selecione o planejamento de captura instantânea existente que você deseja que sua replicação siga. A lista contém todos os seus planejamentos de captura instantânea ativa. <br />
-   >**Nota** - Será possível selecionar somente um planejamento, mesmo se você tiver uma combinação de a cada hora, diário e semanal. Todas as capturas instantâneas que foram capturadas desde o ciclo de replicação anterior são replicadas independentemente do planejamento que as originou.<br />Se você não tiver Capturas instantâneas configuradas, será solicitado que faça isso antes de poder pedir replicação. Consulte [Trabalhando
-com capturas instantâneas](snapshots.html) para obter mais detalhes.
+
+   É possível selecionar apenas um planejamento mesmo se você tem uma combinação de Por hora, Diário e Semanal. Todas as capturas instantâneas que foram capturadas desde o ciclo de replicação anterior são replicadas independentemente do planejamento que as originou.<br />Se você não tiver Capturas instantâneas configuradas, será solicitado que faça isso antes de poder pedir replicação. Para obter mais informações, consulte [Trabalhando com capturas instantâneas](snapshots.html).
+   {:tip}
 3. Clique em **Local** e selecione o data center que é seu site de DR.
 4. Clique em **Continuar**.
 5. Insira um **Código promocional** se você tiver um e clique em **Recalcular**. Os outros campos na janela são preenchidos por padrão.
@@ -173,7 +176,7 @@ Os hosts e volumes autorizados devem estar no mesmo data center. Não é possív
 
 Os tamanhos de volume devem ser os mesmos para os volumes de armazenamento primário e de réplica. Um não pode ser maior que o outro. Quando você aumenta seu espaço de captura instantânea para o volume primário, o espaço de réplica é aumentado automaticamente. Aumentar o espaço de captura instantânea aciona uma atualização de replicação imediata. O aumento em ambos os volumes é mostrado como itens de linha em sua fatura e é rateado conforme necessário.
 
-Clique [aqui](snapshots.html) para saber como aumentar o espaço de captura instantânea.
+Para obter mais informações sobre o aumento do espaço de captura instantânea, consulte [Capturas instantâneas](snapshots.html).
 
 
 ## Iniciando um failover de um volume em sua réplica
@@ -182,12 +185,15 @@ Se ocorrer um evento de falha, será possível iniciar um **failover** em seu vo
 
 Os failovers são iniciados em **Armazenamento**, **{{site.data.keyword.filestorage_short}}** no [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
 
-**Antes de continuar com essas etapas, desconecte o volume. A falha ao fazer isso resultará em distorção e perda de dados.**
+Antes de continuar com essas etapas, desconecte o volume. Caso não o faça, isso resultará em distorção e perda de dados.
+{:important}
 
 1. Clique em seu volume ativo ("origem").
 2. Na parte superior direita, clique em **Réplica** e clique em **Ações**.
-3. Selecione **Failover**. 
-   >Espere uma mensagem indicando que o failover está em andamento. Além disso, um ícone aparece próximo ao seu volume no **{{site.data.keyword.filestorage_short}}** que indica que uma transação ativa está ocorrendo. Passar o mouse sobre o ícone produz uma janela que mostra a transação. O ícone desaparece quando a transação está concluída. Durante o processo de failover, as ações relacionadas à configuração são somente leitura. Não é possível editar qualquer planejamento de captura instantânea ou mudar o espaço de captura instantânea. O evento é registrado no histórico de replicação.<br/> Quando seu volume de destino for em tempo real, você obterá outra mensagem. O nome do LUN do volume de origem original é atualizado para terminar em "REP" e seu Status se torna Inativo.
+3. Selecione **Failover**.
+
+   Espere uma mensagem indicando que o failover está em andamento. Além disso, um ícone aparece próximo ao seu volume no **{{site.data.keyword.filestorage_short}}** que indica que uma transação ativa está ocorrendo. Passar o mouse sobre o ícone produz uma janela que mostra a transação. O ícone desaparece quando a transação está concluída. Durante o processo de failover, as ações relacionadas à configuração são somente leitura. Não é possível editar qualquer planejamento de captura instantânea ou mudar o espaço de captura instantânea. O evento é registrado no histórico de replicação.<br/> Quando seu volume de destino for em tempo real, você obterá outra mensagem. O nome do LUN do volume de origem original é atualizado para terminar em "REP" e seu Status se torna Inativo.
+   {:note}
 4. Clique em **Visualizar todos ({{site.data.keyword.filestorage_short}})**.
 5. Clique no volume ativo (anteriormente seu volume de destino). Esse volume agora tem um status **Ativo**.
 6. Montar e anexar seu volume de armazenamento ao host. Clique [aqui](provisioning-file-storage.html) para obter instruções.
@@ -210,7 +216,9 @@ Os failbacks são iniciados em **Armazenamento**, **{{site.data.keyword.filestor
 1. Clique no volume ativo ("destino").
 2. Na parte superior direita, clique em **Réplica** e clique em **Ações**.
 3. Selecione  ** Failback **.
-   >Espere uma mensagem mostrando que o failover está em andamento. Além disso, um ícone aparece próximo ao seu volume no **{{site.data.keyword.filestorage_short}}** que indica que uma transação ativa está ocorrendo. Passar o mouse sobre o ícone produz uma janela que mostra a transação. O ícone desaparece quando a transação está concluída. Durante o processo de Failback, as ações relacionadas à configuração são somente leitura. Não é possível editar qualquer planejamento de captura instantânea ou mudar o espaço de captura instantânea. O evento é registrado no histórico de replicação.
+
+   Espere uma mensagem mostrando que o failover está em andamento. Além disso, um ícone aparece próximo ao seu volume no **{{site.data.keyword.filestorage_short}}** que indica que uma transação ativa está ocorrendo. Passar o mouse sobre o ícone produz uma janela que mostra a transação. O ícone desaparece quando a transação está concluída. Durante o processo de Failback, as ações relacionadas à configuração são somente leitura. Não é possível editar qualquer planejamento de captura instantânea ou mudar o espaço de captura instantânea. O evento é registrado no histórico de replicação.
+   {:note}
 4. No canto superior direito, clique em **Visualizar todo o link do {{site.data.keyword.filestorage_short}}**.
 5. Clique em seu volume ativo ("origem").
 6. Montar e anexar seu volume de armazenamento ao host. Clique [aqui](provisioning-file-storage.html) para obter instruções.

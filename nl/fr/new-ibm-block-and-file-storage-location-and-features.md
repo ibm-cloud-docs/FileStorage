@@ -2,16 +2,20 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-09-17"
+lastupdated: "2018-10-31"
 
 ---
 {:new_window: target="_blank"}
+ {:tip: .tip}
+ {:note: .note}
+ {:important: .important}
 
 # Nouveaux emplacements et nouvelles fonctions de {{site.data.keyword.filestorage_short}}
 
 {{site.data.keyword.BluSoftlayer_full}} propose une nouvelle version d'{{site.data.keyword.filestorage_full}}! Le nouveau stockage est disponible dans des centres de données sélectionnés, et est sécurisé par un stockage flash à des niveaux d'IOPS plus élevés avec un chiffrement au niveau du disque pour les données au repos. La totalité du stockage commandé dans les centres de données sélectionnés est automatiquement créée avec la nouvelle version de {{site.data.keyword.filestorage_short}}.
 
-**Remarque :** le point de montage NFS des nouveaux volumes a été modifié. Pour plus de détails, voir **Nouveau point de montage des volumes {{site.data.keyword.filestorage_short}} améliorés**.
+Le point de montage NFS des nouveaux volumes a été modifié. Pour plus de détails, voir [Nouveau point de montage des volumes {{site.data.keyword.filestorage_short}} améliorés](#new-mount-point-for-enhanced-file-storage-volumes).
+{:important}
 
 La nouvelle fonction {{site.data.keyword.filestorage_short}} est disponible dans les régions/centres de données suivants (cette disponibilité sera bientôt étendue à d'autres centres de données) :
 
@@ -93,3 +97,4 @@ Le nouveau stockage inclut les nouvelles fonctions et capacités suivantes :
 Tous les volumes {{site.data.keyword.filestorage_short}} améliorés mis à disposition dans ces centres de données ont un point de montage différent de celui des volumes non chiffrés. Pour vérifier que vous utilisez le bon point de montage pour les deux types de volume de stockage, vous pouvez afficher les informations sur le point de montage sur la page **Détails du volume** de l'interface utilisateur. Vous pouvez également accéder au point de montage correct via un appel d'API : `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 
 Revenez ici pour savoir si d'autres centres de données ont été mis à niveau et si de nouvelles fonctions et capacités ont été ajoutées pour {{site.data.keyword.filestorage_short}}.
+{:tip}

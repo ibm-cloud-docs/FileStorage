@@ -2,20 +2,24 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-15"
+lastupdated: "2018-10-31"
 
 ---
 
 {:new_window: target="_blank"}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
+
 
 # Replica dei dati
 
 La replica usa una delle tue pianificazioni delle istantanee per copiare automaticamente le istantanee su un volume di destinazione in un data center remoto. Le copie possono essere ripristinate nel sito remoto nel caso si verifichi un evento catastrofico o un danneggiamento dei dati.
 
-Con le repliche, puoi
+Con le repliche, puoi eseguire il ripristino rapidamente per via di errori del sito e di emergenze. In caso di emergenza, puoi eseguire il failover al volume di destinazione e accedere ai tuoi dati da un preciso momento nella copia DR. Per ulteriori informazioni, consulta [Duplicazione dei volumi di replica per il ripristino d'emergenza](disaster-recovery.html). 
 
-- Eseguire il ripristino da malfunzionamenti del sito e altre situazioni critiche in modo rapido eseguendo il failover al volume di destinazione,
-- Eseguire il failover a uno specifico punto temporale nella copia di ripristino di emergenza (DR, disaster recovery).
+La replica mantiene i tuoi dati sincronizzati in due diverse ubicazioni. Se vuoi soltanto clonare il tuo volume e utilizzarlo indipendentemente dal volume originale, consulta [Creazione di un volume di file duplicato](how-to-create-duplicate-volume.html).
+{:tip}
 
 Prima di poter eseguire la replica, devi creare una pianificazione delle istantanee. Quando esegui il failover, stai passando dal tuo volume di archiviazione nel tuo data center primario al volume di destinazione nel tuo data center remoto. Ad esempio, il tuo data center primario si trova a Londra e il tuo data center secondario si trova ad Amsterdam. Se si verifica un evento di malfunzionamento, eseguirai il failover ad Amsterdam, stabilendo una connessione al volume che ora è quello primario da un'istanza di calcolo in Amsterdam. Dopo che il tuo volume a Londra è stato riparato, verrà acquisita un'istantanea del volume che si trova ad Amsterdam per eseguire il fallback a Londra e al volume che ora è nuovamente quello primario da un'istanza di elaborazione a Londra.
 
@@ -26,14 +30,14 @@ I data center in tutto il mondo di {{site.data.keyword.BluSoftlayer_full}} sono 
 Vedi la Tabella 1 per l'elenco completo della disponibilità dei data center e delle destinazioni di replica.
 
 <table>
-  <caption style="text-align: left;"><p>Tabella 1 - questa tabella mostra l'elenco completo di data center con funzionalità migliorate in ciascuna regione. Ogni regione è una colonna separata. Alcune città, come Dallas, San Jose, Washington DC, Amsterdam, Francoforte, Londra e Sydney hanno più data center.</p>
-  <p>&#42; I data center nella regione US 1 NON hanno l'archiviazione migliorata. Gli host nei data center con funzionalità di archiviazione migliorate <strong>non possono</strong> avviare la replica con le destinazioni di replica nei data center US 1.</p>
+  <caption style="text-align: left;"><p>Tabella 1 - Questa tabella mostra l'elenco completo dei data center con funzionalità avanzate in ogni regione. Ogni regione è una colonna separata. Alcune città, come Dallas, San Jose, Washington DC, Amsterdam, Francoforte, Londra e Sydney hanno più data center.</p>
+  <p>&#42; I data center nella regione US 1 NON dispongono dell'archiviazione avanzata. Gli host nei data center con le funzionalità di archiviazione avanzata <strong>non possono</strong> avviare la replica con destinazioni della replica nei data center US 1.</p>
   </caption>
-    <thead>
+  <thead>
     <tr>
       <th>US 1 &#42;</th>
       <th>US 2</th>
-      <th>America Latina</th>
+      <th>America latina</th>
       <th>Canada</th>
       <th>Europa</th>
       <th>Asia-Pacifico</th>
@@ -100,7 +104,6 @@ Vedi la Tabella 1 per l'elenco completo della disponibilità dei data center e d
   </tbody>
 </table>
 
-
 ## Creazione della replica iniziale
 
 Le repliche funzionano in base a una pianificazione delle istantanee. Prima di poter eseguire la replica, devi già disporre dello spazio per le istantanee e di una pianificazione delle istantanee per il volume di origine. Se provi a configurare una replica e non disponi di uno di questi due elementi, ti verrà richiesto di acquistare ulteriore spazio o di configurare una pianificazione. Le repliche sono gestite in **Storage** > **{{site.data.keyword.filestorage_short}}** nel [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} .
@@ -108,7 +111,9 @@ Le repliche funzionano in base a una pianificazione delle istantanee. Prima di p
 1. Fai clic sul tuo volume di archiviazione.
 2. Fai clic su **Replica** e fai clic su **Purchase a replication**.
 3. Seleziona la pianificazione delle istantanee esistente che vuoi venga seguita dalla tua replica. L'elenco contiene tutte le pianificazioni delle istantanee attive. <br />
-   >**Nota** - puoi selezionare solo una singola pianificazione, anche se hai una combinazione di orarie, giornaliere e settimanali. Tutte le istantanee che erano state acquisite a partire dal ciclo di replica precedente vengono replicate indipendentemente dalla pianificazione che ha dato loro origine.<br />Se non disponi di istantanee configurate, ti viene richiesto di procedere a farlo prima di poter ordinare la replica. Per ulteriori dettagli, vedi [Gestione delle istantanee](snapshots.html).
+
+   Puoi selezionare solo una singola pianificazione, anche se hai una combinazione di orarie, giornaliere e settimanali. Tutte le istantanee che erano state acquisite a partire dal ciclo di replica precedente vengono replicate indipendentemente dalla pianificazione che ha dato loro origine.<br />Se non disponi di istantanee configurate, ti viene richiesto di procedere a farlo prima di poter ordinare la replica. Per ulteriori informazioni, vedi [Gestione delle istantanee](snapshots.html).
+{:tip}
 3. Fai clic su **Location** e seleziona il data center che è il tuo sito di ripristino di emergenza (DR, disaster recovery).
 4. Fai clic su **Continue**.
 5. Immetti un codice promozionale (**Promo Code**), se ne hai uno, e fai clic su **Recalculate**. Gli altri campi nella finestra vengono completati per impostazione predefinita.
@@ -169,7 +174,7 @@ Gli host autorizzati e i volumi si devono trovare nello stesso data center. Non 
 
 Le dimensioni dei tuoi volumi devono essere le stesse per i volumi di archiviazione primario e di replica. L'uno non può essere più grande dell'altro. Quando aumenti il tuo spazio per le istantanee per il tuo volume primario, lo spazio di replica viene aumentato automaticamente. L'aumento dello spazio per le istantanee attiva un aggiornamento della replica immediato. L'aumento per entrambi i volumi viene visualizzato come voci di riga nella tua fattura ed è a base proporzionale come necessario.
 
-Fai clic [qui](snapshots.html) per informazioni su come aumentare il tuo spazio per le istantanee.
+Per ulteriori informazioni sull'aumento dello spazio dell'istantanea, consulta [Istantanee](snapshots.html).
 
 
 ## Avvio di un failover da un volume alla sua replica
@@ -178,12 +183,15 @@ Se si verifica un evento di errore, puoi avviare un **failover** al tuo volume d
 
 I failover vengono avviati in **Storage**, **{{site.data.keyword.filestorage_short}}** nel [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
 
-**Prima di procedere con questa procedura, disconnetti il volume. In caso contrario, si verifica un danneggiamento e una perdita di dati.**
+Prima di procedere con questa procedura, disconnetti il volume. In caso contrario, si verifica un danneggiamento e una perdita di dati.
+{:important}
 
 1. Fai clic sul volume attivo (“origine”).
 2. In alto a destra, fai clic su **Replica** e fai clic su **Actions**.
-3. Seleziona **Failover**. 
-   >Aspettati un messaggio che indica che il failover è in corso. Inoltre, compare un'icona accanto al tuo volume in **{{site.data.keyword.filestorage_short}}** che indica che è in corso una transazione attiva. Se passi il puntatore del mouse sull'icona, viene visualizzata una finestra che mostra la transazione. Una volta completata la transazione, l'icona scompare. Durante il processo di failover, le azioni correlate alla configurazione sono di sola lettura. Non puoi modificare le pianificazioni delle istantanee o modificare lo spazio per le istantanee. L'evento viene registrato nella cronologia replica.<br/> Quando il tuo volume di destinazione è attivo, ricevi un altro messaggio. Il nome LUN (LUN Name) del tuo volume di origine originale viene aggiornato in modo da terminare con "REP" e il suo stato (Status) diventa inattivo (Inactive).
+3. Seleziona **Failover**.
+
+   Aspettati un messaggio che indica che il failover è in corso. Inoltre, compare un'icona accanto al tuo volume in **{{site.data.keyword.filestorage_short}}** che indica che è in corso una transazione attiva. Se passi il puntatore del mouse sull'icona, viene visualizzata una finestra che mostra la transazione. Una volta completata la transazione, l'icona scompare. Durante il processo di failover, le azioni correlate alla configurazione sono di sola lettura. Non puoi modificare le pianificazioni delle istantanee o modificare lo spazio per le istantanee. L'evento viene registrato nella cronologia replica.<br/> Quando il tuo volume di destinazione è attivo, ricevi un altro messaggio. Il nome LUN (LUN Name) del tuo volume di origine originale viene aggiornato in modo da terminare con "REP" e il suo stato (Status) diventa inattivo (Inactive).
+   {:note}
 4. Fai clic su **View All ({{site.data.keyword.filestorage_short}})**.
 5. Fai clic sul volume attivo (precedentemente il volume di destinazione). Questo volume ora ha uno stato attivo (**Active**).
 6. Monta o collega il tuo volume di archiviazione all'host. Fai clic [qui](provisioning-file-storage.html) per le istruzioni.
@@ -206,7 +214,9 @@ I failback vengono avviati in **Storage**, **{{site.data.keyword.filestorage_sho
 1. Fai clic sul volume attivo ("destinazione").
 2. In alto a destra, fai clic su **Replica** e fai clic su **Actions**.
 3. Seleziona **Failback**.
-   >Aspettati un messaggio che mostra che il failover è in corso. Inoltre, compare un'icona accanto al tuo volume in **{{site.data.keyword.filestorage_short}}** che indica che è in corso una transazione attiva. Se passi il puntatore del mouse sull'icona, viene visualizzata una finestra che mostra la transazione. Una volta completata la transazione, l'icona scompare. Durante il processo di Failback, le azioni correlate alla configurazione sono di sola lettura. Non puoi modificare le pianificazioni delle istantanee o modificare lo spazio per le istantanee. L'evento viene registrato nella cronologia replica.
+
+   Aspettati un messaggio che mostra che il failover è in corso. Inoltre, compare un'icona accanto al tuo volume in **{{site.data.keyword.filestorage_short}}** che indica che è in corso una transazione attiva. Se passi il puntatore del mouse sull'icona, viene visualizzata una finestra che mostra la transazione. Una volta completata la transazione, l'icona scompare. Durante il processo di Failback, le azioni correlate alla configurazione sono di sola lettura. Non puoi modificare le pianificazioni delle istantanee o modificare lo spazio per le istantanee. L'evento viene registrato nella cronologia replica.
+   {:note}
 4. In alto a destra, fai clic sul link **View All {{site.data.keyword.filestorage_short}}**.
 5. Fai clic sul tuo volume attivo ("origine").
 6. Monta o collega il tuo volume di archiviazione all'host. Fai clic [qui](provisioning-file-storage.html) per le istruzioni.

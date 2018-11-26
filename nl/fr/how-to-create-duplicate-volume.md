@@ -2,10 +2,13 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-09-07"
+lastupdated: "2018-10-31"
 
 ---
 {:new_window: target="_blank"}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 
 # Création d'un volume {{site.data.keyword.filestorage_short}} dupliqué
 
@@ -15,7 +18,7 @@ Etant donné que le volume dupliqué est basé sur les données d'un instantané
 
 Vous pouvez créer des doublons à partir de volumes **principaux** et de **réplique**. Le nouveau doublon est créé dans le même centre de données que le volume d'origine. Si vous créez un doublon à partir d'un volume de réplique, le nouveau volume est créé dans le même centre de données que le volume de réplique.
 
->**Remarque** - Si vous êtes utilisateur d'un compte dédié {{site.data.keyword.containerlong}}, découvrez les options dont vous disposez pour dupliquer un volume dans la [documentation {{site.data.keyword.containerlong_notm}}](/docs/containers/cs_storage_file.html#backup_restore).
+Si vous êtes un utilisateur de compte Dedicated d'{{site.data.keyword.containerlong}}, consultez vos options de duplication d'un volume dans la [documentation {{site.data.keyword.containerlong_notm}}](/docs/containers/cs_storage_file.html#backup_restore).{:tip}
 
 Les volumes dupliqués sont accessibles par un hôte en lecture/écriture dès la mise à disposition du stockage. Toutefois, les instantanés et la réplication ne sont pas autorisés tant que la copie des données depuis le volume d'origine vers le doublon n'est pas terminée. Lorsque la copie de données est terminée, le doublon peut être géré et utilisé en tant que volume complètement indépendant.
 
@@ -49,7 +52,8 @@ Il existe deux manières de créer un volume dupliqué via le portail [{{site.da
     - Si le volume d'origine a un niveau Endurance avec 0,25 IOPS, vous ne pourrez pas effectuer de nouvelle sélection.
     - Si le volume d'origine a un niveau Endurance avec 2, 4 ou 10 IOPS, vous pouvez indiquer n'importe lequel de ces niveaux pour le nouveau volume.
 6. Vous pouvez mettre à jour la taille du nouveau volume pour qu'elle soit supérieure à celle du volume d'origine. La taille du volume d'origine est définie par défaut.
-    - **Remarque** : Le redimensionnement de {{site.data.keyword.filestorage_short}} est soumis à la limite de 10 fois la taille du volume d'origine.
+
+   Le redimensionnement de {{site.data.keyword.filestorage_short}} est soumis à la limite de 10 fois la taille du volume d'origine.{:tip}
 7. Vous pouvez mettre à jour l'espace d'instantané pour le nouveau volume en ajoutant plus, moins ou pas du tout d'espace d'instantané. L'espace d'instantané du volume d'origine est défini par défaut.
 8. Cliquez sur **Continuer** pour passer commande.
 
@@ -64,7 +68,8 @@ Il existe deux manières de créer un volume dupliqué via le portail [{{site.da
     - Si le volume d'origine a un niveau Endurance avec 0,25 IOPS, vous ne pourrez pas effectuer de nouvelle sélection.
     - Si le volume d'origine a un niveau Endurance avec 2, 4 ou 10 IOPS, vous pouvez indiquer n'importe lequel de ces niveaux pour le nouveau volume.
 6. Vous pouvez mettre à jour la taille du nouveau volume pour qu'elle soit supérieure à celle du volume d'origine. La taille du volume d'origine est définie par défaut.
-    - **Remarque** : Le redimensionnement de {{site.data.keyword.filestorage_short}} est soumis à la limite de 10 fois la taille du volume d'origine.
+
+   Le redimensionnement de {{site.data.keyword.filestorage_short}} est soumis à la limite de 10 fois la taille du volume d'origine.{:tip}
 7. Vous pouvez mettre à jour l'espace d'instantané pour le nouveau volume en ajoutant plus, moins ou pas du tout d'espace d'instantané. L'espace d'instantané du volume d'origine est défini par défaut.
 8. Cliquez sur **Continuer** pour passer votre commande du doublon.
 

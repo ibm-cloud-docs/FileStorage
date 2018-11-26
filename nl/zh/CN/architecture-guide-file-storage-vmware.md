@@ -2,17 +2,23 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-09-24"
+lastupdated: "2018-10-31"
 
 ---
 {:pre: .pre}
 {:new_window: target="_blank"}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 
 # 通过 VMware 供应 {{site.data.keyword.filestorage_short}}
 
-以下步骤可帮助您在 vSphere 5.5 和 vSphere 6.0 环境中通过 {{site.data.keyword.BluSoftlayer_full}} 订购和配置 {{site.data.keyword.filestorage_full}}。如果需要与 VMware 主机建立 8 个以上的连接，那么最好选择 NFS {{site.data.keyword.filestorage_short}}。
+以下步骤可帮助您在 vSphere 5.5 和 vSphere 6.0 环境中通过 {{site.data.keyword.BluSoftlayer_full}} 订购和配置 {{site.data.keyword.filestorage_full}}。
 
 {{site.data.keyword.filestorage_short}} 旨在支持需要可预测性能级别的高 I/O 应用程序。通过为各个卷分配协议级别每秒输入/输出操作数 (IOPS)，可实现可预测的性能。
+
+如果需要与 VMware 主机建立 8 个以上的连接，那么最好选择 NFS {{site.data.keyword.filestorage_short}}。
+{:tip}
 
 {{site.data.keyword.filestorage_short}} 产品可通过 NFS 连接进行访问和安装。在 VMware 部署中，单个卷最多可以安装到 64 个 ESXi 主机作为共享存储器。还可以安装多个卷来创建存储器集群，以使用 vSphere 存储器分布式资源调度程序 (DRS)。
 
@@ -23,13 +29,16 @@ lastupdated: "2018-09-24"
 订购 {{site.data.keyword.filestorage_short}} 时，请考虑以下信息：
 
 - 确定大小时，请考虑所需的工作负载和吞吐量的大小。对于“耐久性”服务，大小很重要，该服务的性能扩展与容量 (IOPS/GB) 呈线性关系。“性能”服务则不同，它允许管理员独立地选择容量和性能。对于“性能”服务，吞吐量需求很重要。
-  >**注** - 吞吐量计算公式是 IOPS x 16 KB。IOPS 基于 16 KB 的块大小进行度量，其中读/写操作构成比例为 50/50。<br/>增加块大小会增加吞吐量，但会降低 IOPS。例如，如果使块大小翻倍为 32 KB 的块，那么将保持最大吞吐量，但 IOPS 会降低一半。
+
+  吞吐量的计算公式是 IOPS x 16 KB。IOPS 基于 16 KB 的块大小进行度量，其中读/写操作构成比例为 50/50。<br/>增加块大小会增加吞吐量，但会降低 IOPS。例如，如果使块大小翻倍为 32 KB 的块，那么将保持最大吞吐量，但 IOPS 会降低一半。
+  {:note}
 - NFS 使用许多额外的文件控制操作，例如 `lookup`、`getattr` 和 `readdir`。这些操作可以与读/写操作一样计为 IOPS，并根据操作类型和 NFS 版本而变化。
 - {{site.data.keyword.filestorage_short}} 卷将公开给已授权的设备、子网或 IP 地址。
 - 为了避免在路径故障转移期间断开存储器连接，{{site.data.keyword.IBM}} 建议安装 VMware 工具，以用于设置适当的超时值。无需更改此值，缺省设置可足以确保 VMware 主机不会失去连接。
-- {{site.data.keyword.BluSoftlayer_full}} 环境中同时支持 NFS V3 和 NFS V4.1。但是，{{site.data.keyword.IBM}} 建议您使用 NFS V3。因为 NFS V4.1 是有状态协议（不像 NFS V3 那样是无状态协议），所以在网络事件期间可能会发生协议问题。NFS V4.1 必须停顿所有操作，然后完成锁定回收。这些操作正在执行时，可能会发生中断。
+- {{site.data.keyword.BluSoftlayer_full}} 环境支持 NFS V3 和 NFS V4.1。但是，{{site.data.keyword.IBM}} 建议您使用 NFS V3，因为 NFS V4.1 是有状态协议（NFSv3 是无状态协议），在网络事件期间可能会发生协议问题。NFS V4.1 必须停止所有操作，然后才能完成锁定回收。这些操作正在执行时，可能会发生中断。
 
 有关更多信息，请参阅 VMware 的白皮书 [Best Practices for running VMware vSphere on Network Attached Storage](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){:new_window}
+{:tip}
 
 **NFS 协议与 VMware 功能支持矩阵**
 <table>
@@ -114,6 +123,9 @@ lastupdated: "2018-09-24"
 - 通过故障转移到目标卷，快速从站点故障和其他灾难进行恢复
 - 故障转移到 DR 副本中的特定时间点
 
+复制可以使两个不同位置的数据保持同步。如果要克隆卷并独立于原始卷来使用该卷，请参阅[创建复制文件卷](how-to-create-duplicate-volume.html)。
+{:tip}
+
 必须创建快照安排后，才能进行复制。
 
 进行故障转移时，将“翻转开关”从主数据中心的存储卷切换到远程数据中心的目标卷。例如，主数据中心位于伦敦，辅助数据中心位于阿姆斯特丹。如果发生故障事件，将故障转移到阿姆斯特丹。这意味着从阿姆斯特丹的 vSphere 集群实例连接到现在的主卷。修复伦敦的卷之后，会生成阿姆斯特丹卷的快照。然后，可以故障恢复到伦敦，并从伦敦的计算实例连接到原先的主卷。
@@ -122,7 +134,8 @@ lastupdated: "2018-09-24"
 
 有关配置副本的更多信息，请参阅[复制](replication.html)。
 
->**注** - 无效数据（不管是损坏数据、被黑客入侵的数据还是被感染数据）会根据快照安排和快照保留时间进行复制。使用最小的复制时段可提供更好的恢复点目标。不过，这还可能会缩短对无效数据的复制做出反应的时间。
+对于无效数据（不管是损坏的数据、被黑客入侵的数据，还是被感染的数据），将根据快照安排和快照保留时间进行复制。使用最小的复制时段可提供更好的恢复点目标。不过，这还可能会缩短对无效数据的复制做出反应的时间。
+{:note}
 
 
 ## 订购 {{site.data.keyword.filestorage_short}}
@@ -144,7 +157,7 @@ lastupdated: "2018-09-24"
 7. 输入 IOPS 量（以 100 为区间），或者选择 IOPS 层。
 8. 指定“快照空间”的大小。
 9. 单击**继续**。
-10. 如果您有促销代码，请输入促销代码，然后单击**重新计算**。
+10. 如果您有促销码，请输入促销码，然后单击**重新计算**。
 11. 复查订单。
 12. 选中**我已阅读主服务协议并同意其中的条款**复选框。
 13. 单击**下订单**以提交订单，或者单击**取消**以关闭表单而不提交订单。
@@ -161,7 +174,9 @@ lastupdated: "2018-09-24"
 2. 选择**耐久性**或**性能卷操作**菜单上的**访问主机**。
 3. 单击**子网**。
 4. 从分配给 ESXi 主机上 VMkernel 端口的可用子网的列表中进行选择，然后单击**提交**。<br/>
-    >**注** - 显示的子网是与存储卷位于同一数据中心的预订子网。
+
+   显示的子网是与存储卷位于同一数据中心的预订子网。
+   {:note}
 
 
 在授权子网后，记下您希望在安装卷时使用的耐久性或性能存储服务器的主机名。可以通过在“{{site.data.keyword.filestorage_short}} 详细信息”页面上单击特定卷来找到此信息。
@@ -200,6 +215,7 @@ lastupdated: "2018-09-24"
    ```
 
 有关 VMware 和巨型帧的更多信息，请单击[此处](https://kb.vmware.com/s/article/1003712){:new_window}。
+{:tip}
 
 
 ### 2. 将上行链路适配器添加到虚拟交换机
@@ -239,7 +255,8 @@ lastupdated: "2018-09-24"
 
 2. 在 ESXi 5.0 和更低版本上，静态路由在重新引导后不会持久存储。要确保添加的任何静态路由都是持久存储的，需要将此命令添加到每个主机上 `/etc/rc.local.d/` 目录下的 `local.sh` 文件中。使用可视编辑器来打开 `local.sh` 文件，然后将步骤 4.1 中的第二个命令添加到 `exit 0` 行前面。
 
->**注**<br/>- 记下 IP 地址，因为此地址可用于在下一步中安装卷。<br/>对于计划安装到 ESXi 主机的每个 NFS 卷，都需要完成此过程。<br/>有关更多信息，请参阅 VMware 知识库文章：[Configuring static routes for VMkernel ports on an ESXi host](https://kb.vmware.com/s/article/2001426){:new_window}。
+记下 IP 地址，因为此地址可用于在下一步中安装卷。<br/>对于计划安装到 ESXi 主机的每个 NFS 卷，都需要完成此过程。<br/>有关更多信息，请参阅 VMware 知识库文章：[Configuring static routes for VMkernel ports on an ESXi host](https://kb.vmware.com/s/article/2001426){:new_window}。
+{:tip}
 
 
 ##  在 ESXi 主机上创建和安装 {{site.data.keyword.filestorage_short}} 卷
@@ -249,12 +266,14 @@ lastupdated: "2018-09-24"
 3. 单击**新建数据存储**图标。
 4. 在**新建数据存储**屏幕上，选择 VMware 数据存储的位置（ESXi 主机），然后单击**下一步**。
 5. 在**类型**屏幕上，选择 **NFS**，然后单击**下一步**。
-6. 在**名称和配置**屏幕上，输入要对 VMware 数据存储命名的名称。此外，还请输入 NFS 服务器的主机名。使用 NFS 服务器的 FQDN 将生成至底层服务器的最佳流量分配。IP 地址也有效，但使用频率较低，并且仅在特定情况下使用。请以 `/foldername` 格式输入文件夹名称。
-7. 在**主机可访问性**屏幕上，选择要安装 NFS VMware 数据存储的一个或多个主机，然后单击**下一步**。
-8. 在下一个屏幕上复查输入内容，然后单击**完成**。
-9. 对其他任何 {{site.data.keyword.filestorage_short}} 卷重复此操作。
+6. 然后，选择 NFS 版本。NFS V3 和 NFS V4.1 均受支持，但首选 NFS V3。确保您仅使用一个 NFS 版本来访问给定的数据存储。使用不同版本在同一数据存储上安装一个或多个主机可能会导致数据损坏。
+7. 在**名称和配置**屏幕上，输入要对 VMware 数据存储命名的名称。此外，还请输入 NFS 服务器的主机名。使用 NFS 服务器的 FQDN 将生成至底层服务器的最佳流量分配。IP 地址也有效，但使用频率较低，并且仅在特定情况下使用。请以 `/foldername` 格式输入文件夹名称。
+8. 在**主机可访问性**屏幕上，选择要安装 NFS VMware 数据存储的一个或多个主机，然后单击**下一步**。
+9. 在下一个屏幕上复查输入内容，然后单击**完成**。
+10. 对其他任何 {{site.data.keyword.filestorage_short}} 卷重复此操作。
 
->**注** - {{site.data.keyword.BluSoftlayer_full}} 建议使用 FQDN 名称来连接到 VMware 数据存储。使用直接 IP 寻址可能会绕过使用 FQDN 提供的负载均衡机制。
+{{site.data.keyword.BluSoftlayer_full}} 建议使用 FQDN 名称来连接到 VMware 数据存储。使用直接 IP 寻址可能会绕过使用 FQDN 提供的负载均衡机制。
+{:important}
 
 要使用 IP 地址而不使用 FQDN，只需对服务器执行 ping 操作即可获取 IP 地址。
 ```
@@ -278,7 +297,8 @@ Storage I/O Control (SIOC) 是可用于使用 Enterprise Plus 许可证的客户
 为了使 SIOC 能够确定存储设备何时拥堵或受到约束，SIOC 需要有定义的阈值。对于不同的存储类型，拥堵阈值等待时间各不相同。缺省选择是达到峰值吞吐量的 90%。峰值吞吐量百分比值指示 VMware 数据存储在使用该百分比的估算峰值吞吐量时，估计的等待时间阈值。
 
 
->**注** - 为 VMware 数据存储或 VMDK 错误地配置 SIOC 可能会显著影响性能。
+为 VMware 数据存储或 VMDK 错误地配置 SIOC 可能会显著影响性能。
+{:important}
 
 
 ### 配置用于 VMware 数据存储的 Storage I/O Control
@@ -293,7 +313,8 @@ Storage I/O Control (SIOC) 是可用于使用 Enterprise Plus 许可证的客户
    ![NSF VMware 数据存储](/images/3_0.png)
 6. 单击**确定**。
 
-**注**：此设置特定于 VMware 数据存储，而不是特定于主机。
+此设置特定于 VMware 数据存储，而不是特定于主机。
+{:note}
 
 
 ### 配置用于 {{site.data.keyword.BluVirtServers_short}} 的 Storage I/O Control
@@ -310,7 +331,8 @@ Storage I/O Control (SIOC) 是可用于使用 Enterprise Plus 许可证的客户
 6. 单击**确定**。
 
 
-> **注**：此过程用于在 {{site.data.keyword.BluVirtServers_short}} 中设置各个 vDisk 的资源消耗限制，即便未启用 SIOC，此过程也适用。尽管 SIOC 会使用这些设置，但这些设置特定于单个访客，而不是特定于主机。
+此过程用于在 {{site.data.keyword.BluVirtServers_short}} 中设置各个 vDisk 的资源消耗限制，即便未启用 SIOC，此过程也适用。尽管 SIOC 会使用这些设置，但这些设置特定于单个访客，而不是特定于主机。
+{:important}
 
 
 ## 配置 ESXi 主机端设置
@@ -369,6 +391,7 @@ Storage I/O Control (SIOC) 是可用于使用 Enterprise Plus 许可证的客户
 巨型帧是一种以太网帧，其有效内容大于标准的最大传输单元 (MTU) 1,500 字节。巨型帧在至少支持 1 Gbps 的局域网上使用，并且最大可达 9000 字节。
 
 需要将巨型帧配置为在从“源设备”<->“交换机”<->“路由器”<->“交换机”<->“目标设备”的整个网络路径上相同。如果未将整个链设置为相同值，那么将缺省为链上的最低设置。目前，{{site.data.keyword.BluSoftlayer_full}} 的网络设备设置为 9,000。所有客户设备都需要设置为相同的值 9,000。
+{:important}
 
 ### 在 Windows 中启用巨型帧
 
@@ -380,7 +403,8 @@ Storage I/O Control (SIOC) 是可用于使用 Enterprise Plus 许可证的客户
 6. 选择**巨型帧**，然后将值从**已禁用**更改为所需的值。值（例如，9 kB 或 9014 字节）取决于 NIC。
 7. 单击所有窗口中的**确定**。
 
->**注** - 进行更改时，NIC 会有几秒钟时间失去网络连接。重新启动设备以确认更改生效。
+在您进行更改时，NIC 会有几秒钟时间失去网络连接。重新启动设备以确认更改生效。
+{:tip}
 
 
 ### 在 Linux 中启用巨型帧
@@ -416,3 +440,4 @@ Storage I/O Control (SIOC) 是可用于使用 Enterprise Plus 许可证的客户
    此操作会导致短暂失去网络连接。
 
 要了解有关高级单站点 VMware 参考体系结构的更多信息，请访问[此处](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}。
+{:tip}

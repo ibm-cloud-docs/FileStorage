@@ -2,11 +2,14 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-10-31"
 
 ---
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 
-# Protezione dei tuoi dati - Crittografia dei dati inattivi gestita dal provider 
+# Protezione dei tuoi dati - Crittografia dei dati inattivi gestita dal provider
 
 {{site.data.keyword.BluSoftlayer_full}} prende sul serio la sicurezza e comprende l'importanza di poter crittografare i dati per tenerli al sicuro. Con la crittografia gestita dal provider, {{site.data.keyword.filestorage_full}} di cui è stato eseguito il provisioning con le opzioni Endurance o Performance, viene crittografato per impostazione predefinita senza costi aggiuntivi e ripercussioni sulle prestazioni.
 
@@ -14,13 +17,13 @@ La funzione di crittografia dei dati inattivi gestita dal provider utilizza i se
 
 * Crittografia AES-256 standard del settore
 * Le chiavi sono gestite internamente con il KMIP (Key Management Interoperability Protocol) standard del settore
-* L'archivio è convalidato con i seguenti standard: 
-    - FIPS (Federal Information Processing Standard) Publication 140-2, 
-    - FISMA (Federal Information Security Management Act), 
-    - HIPAA (Health Insurance Portability and Accountability Act), 
-    - PCI (Payment Card Industry), 
-    - Basel II, 
-    - California Security Breach Information Act (SB 1386) e 
+* L'archivio è convalidato con i seguenti standard:
+    - FIPS (Federal Information Processing Standard) Publication 140-2,
+    - FISMA (Federal Information Security Management Act),
+    - HIPAA (Health Insurance Portability and Accountability Act),
+    - PCI (Payment Card Industry),
+    - Basel II,
+    - California Security Breach Information Act (SB 1386) e
     - alla direttiva sulla protezione dei dati dell'Unione europea 95/46/EC.
 
 ## Protezione delle tue istantanee o della tua archiviazione replicata  
@@ -36,6 +39,5 @@ Quando ordini {{site.data.keyword.filestorage_short}}, seleziona un data center 
 ![L'icona di blocco indica che il LUN è crittografato](/images/encryptedstorage.png)
 <caption>Figura 1. Esempio di icona di blocco che indica che il volume è crittografato.</caption>
 
-
-
->**Nota** - tutta l'archiviazione non crittografata di cui era stato eseguito il provisioning prima dell'upgrade a un data center **non** viene crittografata automaticamente. Se hai dell'archiviazione non crittografata in un data center di cui è stato eseguito l'upgrade e vuoi che venga crittografata, devi creare un nuovo volume e spostare i tuoi dati. Per ulteriori informazioni, vedi [Migrazione dell'archiviazione file nei data center di cui è stato eseguito l'upgrade](migrate-file-storage-encrypted-file-storage.html)
+Tutta l'archiviazione non crittografata di cui era stato eseguito il provisioning prima dell'upgrade a un data center **non** viene crittografata automaticamente. Se hai dell'archiviazione non crittografata in un data center di cui è stato eseguito l'upgrade e vuoi che venga crittografata, devi creare un nuovo volume e spostare i tuoi dati. Per ulteriori informazioni, vedi [Migrazione dell'archiviazione file nei data center di cui è stato eseguito l'upgrade](migrate-file-storage-encrypted-file-storage.html)
+{:important}

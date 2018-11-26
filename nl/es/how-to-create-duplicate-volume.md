@@ -2,10 +2,13 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-09-07"
+lastupdated: "2018-10-31"
 
 ---
 {:new_window: target="_blank"}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 
 # Creación de un {{site.data.keyword.filestorage_short}} duplicado
 
@@ -15,7 +18,8 @@ Como el duplicado se basa en los datos en el momento específico de una instant�
 
 Los duplicados pueden crearse a partir de volúmenes **primarios** y **de réplica**. El nuevo duplicado se crea en el mismo centro de datos que el volumen original. Si crea un duplicado a partir de un volumen de réplica, el nuevo volumen se crea en el mismo centro de datos que el volumen de réplica.
 
->**Nota**: Si es un usuario de cuenta dedicada de {{site.data.keyword.containerlong}}, consulte las opciones para la deduplicación de un volumen en la [documentación de {{site.data.keyword.containerlong_notm}}](/docs/containers/cs_storage_file.html#backup_restore).
+Si es un usuario de cuenta dedicada de {{site.data.keyword.containerlong}}, consulte las opciones para la deduplicación de un volumen en la [documentación de {{site.data.keyword.containerlong_notm}}](/docs/containers/cs_storage_file.html#backup_restore).
+{:tip}
 
 Se puede acceder a los volúmenes duplicados mediante un host para lectura/escritura siempre y cuando el almacenamiento esté suministrado. Sin embargo, no se permiten instantáneas ni réplicas hasta que se completa la copia de datos del original en el duplicado. Una vez completada la copia de datos, el duplicado se puede gestionar y utilizar como un volumen completamente independiente.
 
@@ -49,7 +53,9 @@ Puede crear un volumen duplicado a través del [{{site.data.keyword.slportal}}](
     - Si su volumen original es de nivel de Resistencia de IOPS 0,25, no se puede realizar una nueva selección.
     - Si el volumen original es de nivel de Resistencia de IOPS 2, 4 o 10, puede moverse entre estos niveles para el nuevo volumen.
 6. Puede actualizar el tamaño del nuevo volumen de modo que sea mayor que el original. El tamaño del volumen original se establece de forma predeterminada.
-    - **Nota**: {{site.data.keyword.filestorage_short}} se puede redimensionar hasta 10 veces el tamaño original del volumen.
+
+   {{site.data.keyword.filestorage_short}} se puede redimensionar hasta 10 veces el tamaño original del volumen.
+   {:tip}
 7. Puede actualizar el espacio de instantáneas para el nuevo volumen para añadir más, menos o ningún espacio de instantáneas. El espacio de instantáneas del volumen original se establece de forma predeterminada.
 8. Pulse **Continuar** para realizar el pedido.
 
@@ -64,7 +70,9 @@ Puede crear un volumen duplicado a través del [{{site.data.keyword.slportal}}](
     - Si su volumen original es de nivel de Resistencia de IOPS 0,25, no se puede realizar una nueva selección.
     - Si el volumen original es de nivel de Resistencia de IOPS 2, 4 o 10, puede moverse entre estos niveles para el nuevo volumen.
 6. Puede actualizar el tamaño del nuevo volumen de modo que sea mayor que el original. El tamaño del volumen original se establece de forma predeterminada.
-    - **Nota**: {{site.data.keyword.filestorage_short}} se puede redimensionar hasta 10 veces el tamaño original del volumen.
+
+   {{site.data.keyword.filestorage_short}} se puede redimensionar hasta 10 veces el tamaño original del volumen.
+   {:tip}
 7. Puede actualizar el espacio de instantáneas para el nuevo volumen para añadir más, menos o ningún espacio de instantáneas. El espacio de instantáneas del volumen original se establece de forma predeterminada.
 8. Pulse **Continuar** para realizar el orden de los duplicados.
 

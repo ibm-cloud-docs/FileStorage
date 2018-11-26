@@ -2,23 +2,27 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-10-31"
 
 ---
 {:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 
 # Solicitando capturas instantâneas
 
 Para criar capturas instantâneas de seu volume de armazenamento, seja automaticamente ou manualmente, é necessário comprar espaço para mantê-las. É possível comprar capacidade até sua quantia de volume de armazenamento (durante a compra de volume inicial ou posteriormente usando estas etapas).
 
-1. Acesse seu Armazenamento por meio da guia **Armazenamento** > **{{site.data.keyword.filestorage_short}}** do [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}
-2. No quadro **Capturas instantâneas**, clique em **Incluir espaço de captura instantânea**.
-3. No quadro **Capturas instantâneas**, clique em **Comprar espaço de captura instantânea agora**.
-3. Selecione a quantia de espaço que você precisa.
-4. Clique em **Continuar**.
-5. Insira qualquer Código promocional que você tiver e clique em **Recalcular**. **Encargos para este pedido** e **Revisão do pedido** têm valores padrão.
-6. Clique na caixa de seleção **Eu li o contrato de prestação de serviços principal…** e clique em **Fazer pedido**. Seu espaço de captura instantânea será provisionado em alguns minutos.
+1. Efetue login no [Console do IBM Cloud](https://console.bluemix.net/catalog/){:new_window} e clique no ícone **Menu** na parte superior esquerda. Selecione **Infraestrutura clássica**. 
+
+   Como alternativa, é possível efetuar login no [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
+2. Acesse seu Armazenamento por meio de **Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
+3. Clique em **Mudar espaço de captura instantânea** no quadro Capturas instantâneas.
+4. Selecione a quantidade de espaço que você precisa e o método de pagamento.
+5. Clique em **Continuar**.
+6. Insira qualquer Código promocional que você tiver e clique em **Recalcular**. **Encargos para este pedido** e **Revisão do pedido** têm valores padrão.
+7. Selecione a caixa **Eu li o Contrato de serviço principal e concordo com os termos contidos nele.** e clique em **Fazer pedido**. Seu espaço de captura instantânea será provisionado em alguns minutos.
 
 ## Determinando a quantidade de espaço de captura instantânea a ser pedido
 
@@ -27,7 +31,9 @@ Genericamente falando, o espaço de captura instantânea é usado por capturas i
 - Quanto tempo você planeja reter capturas instantâneas.  
 
 A maneira de calcular a quantia de espaço necessário é **(Taxa de mudança)** x **(número de horas/dias/semanas/meses em que os dados são retidos)**.  
-> **Nota** - A primeira captura instantânea usa uma quantia insignificante de espaço, já que é apenas uma cópia dos metadados (ponteiros) que indica os blocos do sistema de arquivos ativo. 
+
+A primeira captura instantânea usa uma quantidade insignificante de espaço, pois é apenas uma cópia dos metadados (ponteiros) que indica os blocos do sistema de arquivos ativo.
+{:note}
 
 Um volume com várias mudanças e um período de retenção longo precisa de mais espaço do que um volume com mudança moderada e um planejamento de retenção moderado. Um exemplo para o primeiro tipo é um banco de dados com uma alta taxa de mudança. Um exemplo para o segundo tipo é um armazenamento de dados do VMware.
 

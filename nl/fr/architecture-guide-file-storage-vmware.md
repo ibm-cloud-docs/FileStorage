@@ -2,17 +2,23 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-09-24"
+lastupdated: "2018-10-31"
 
 ---
 {:pre: .pre}
 {:new_window: target="_blank"}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 
 # Mise à disposition de {{site.data.keyword.filestorage_short}} avec VMware
 
-Les étapes décrites ci-après vous permettent de commander et configurer {{site.data.keyword.filestorage_full}} dans un environnement vSphere 5.5 et vSphere 6.0 sur {{site.data.keyword.BluSoftlayer_full}}. Il est recommandé d'utiliser {{site.data.keyword.filestorage_short}} via NFS si vous avez besoin de plus de huit connexions vers votre hôte VMware.
+Les étapes décrites ci-après vous permettent de commander et configurer {{site.data.keyword.filestorage_full}} dans un environnement vSphere 5.5 et vSphere 6.0 sur {{site.data.keyword.BluSoftlayer_full}}.
 
 {{site.data.keyword.filestorage_short}} est conçu pour prendre en charge des applications avec un volume élevé d'entrées-sorties nécessitant des niveaux prévisibles de performance. La performance prévisible est atteinte grâce à l'allocation d'opérations d'entrée-sortie par seconde (IOPS) au niveau du protocole à des volumes individuels.
+
+Il est recommandé d'utiliser {{site.data.keyword.filestorage_short}} via NFS si vous avez besoin de plus de huit connexions vers votre hôte VMware.
+{:tip}
 
 L'offre {{site.data.keyword.filestorage_short}} est accessible et montée via une connexion NFS. Dans un déploiement VMware, il est possible de monter un seul volume sur un maximum de 64 hôtes ESXi sous forme de stockage partagé. Cela dit, vous pouvez également monter plusieurs volumes afin de créer un cluster de stockage et ainsi utiliser la fonction DRS (Distributed Resource Scheduling) de vSphere Storage.
 
@@ -23,14 +29,17 @@ Les options de tarification et de configuration de {{site.data.keyword.filestora
 Lorsque vous commandez {{site.data.keyword.filestorage_short}}, tenez compte des informations suivantes :
 
 - Lors du choix de la taille, tenez compte de la taille de la charge de travail et des besoins en débit. La taille est essentielle pour le service Endurance qui met à l'échelle les performances de manière linéaire par rapport à la capacité (IOPS/Go). A l'inverse, le service Performance permet à l'administrateur de choisir la capacité et la performance indépendamment l'une de l'autre. Vous devez prendre en compte les exigences en matière de débit avec le service Performance.
-  >**Remarque** : Le calcul du débit s'effectue comme suit : IOPS x 16 ko. Les IOPS sont mesurées sur la base d'une taille de bloc de 16 Ko avec un mélange 50/50 de lecture/écriture.<br/>L'augmentation du taille de bloc a pour conséquence d'augmenter le débit et de réduire les IOPS. Par exemple, si vous doublez la taille de bloc pour atteindre des blocs de 32 Ko, le débit maximal est conservé, mais les IOPS sont diminuées de moitié.
+
+  Le calcul du débit s'effectue comme suit : IOPS x 16 ko. Les IOPS sont mesurées sur la base d'une taille de bloc de 16 Ko avec un mélange 50/50 de lecture/écriture.<br/>L'augmentation du taille de bloc a pour conséquence d'augmenter le débit et de réduire les IOPS. Par exemple, si vous doublez la taille de bloc pour atteindre des blocs de 32 Ko, le débit maximal est conservé, mais les IOPS sont diminuées de moitié.
+  {:note}
 - NFS utilise des opérations de contrôle de fichier supplémentaires, comme `lookup`, `getattr` et `readdir`. Ces opérations, en plus des opérations de lecture/écriture, peuvent compter comme des IOPS et varier selon le type d'opération et la version de NFS.
 - Les volumes {{site.data.keyword.filestorage_short}} sont exposés aux unités, aux sous-réseaux ou aux adresse IP autorisés.
 - Pour éviter toute déconnexion du stockage lors du basculement du chemin, {{site.data.keyword.IBM}} recommande d'installer des outils VMware qui définissent une valeur de délai appropriée. Il n'est pas nécessaire de modifier la valeur, le paramètre par défaut est suffisant pour garantir le maintien de la connectivité de l'hôte VMware.
-- NFS version 3 et NFS version 4.1 sont pris en charge dans l'environnement {{site.data.keyword.BluSoftlayer_full}}. Toutefois, {{site.data.keyword.IBM}} recommande d'utiliser NFS v3. En effet, NFS version 4.1 est un protocole avec état (et non sans état comme NFS v3) et donc susceptible de générer des anomalies lors des événements de réseau. NFS v4.1 doit mettre au repos toutes les opérations, puis effectuer la réclamation de verrou. Des interruptions peuvent survenir lors de telles opérations.
+- NFSv3 et NFSv4.1 sont pris en charge dans l'environnement {{site.data.keyword.BluSoftlayer_full}}. Toutefois, {{site.data.keyword.IBM}} recommande d'utiliser NFSv3. En effet, NFSv4.1 est un protocole avec état (et non sans état comme NFSv3) et donc susceptible de générer des anomalies lors des événements de réseau. NFSv4.1 doit mettre au repos toutes les opérations, puis effectuer la réclamation de verrou. Des interruptions peuvent survenir lors de telles opérations.
 
 Pour plus d'informations, consultez le livre blanc sur VMware [Best Practices for running
 VMware vSphere on Network Attached Storage](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){:new_window}
+{:tip}
 
 **Matrice de prise en charge des fonctions VMware avec le protocole NFS**
 <table>
@@ -116,6 +125,9 @@ Les répliques vous permettent :
 - d'effectuer rapidement une reprise après un échec du site et d'autres incidents en basculant sur le volume de destination ;
 - d'effectuer un basculement vers un point précis dans le temps dans la copie de reprise après incident.
 
+La réplication permet de synchroniser vos données entre deux emplacements différents. Si vous souhaitez cloner votre volume et l'utiliser indépendamment du volume d'origine, voir [Création d'un volume de fichier en double](how-to-create-duplicate-volume.html).
+{:tip}
+
 Avant d'effectuer une réplication, vous devez créer un planning d'instantané.
 
 Lorsque vous effectuez un basculement, vous "basculez l'interrupteur" depuis votre volume de stockage du centre de données principal vers le volume de destination du centre de données distant. Par exemple, votre centre de données principal peut se situer à Londres et votre centre de données secondaire à Amsterdam. Dans le cas d'un événement d'échec, vous basculez vers Amsterdam. Autrement dit, vous vous connectez au volume qui est désormais devenu principal à partir d'une instance de cluster vSphere à Amsterdam. Une fois votre volume de Londres réparé, un instantané du volume d'Amsterdam est pris. Vous pouvez ensuite effectuer une reprise par restauration à Londres avec le volume de Londres à nouveau considéré comme le volume principal à partir d'une instance de traitement située à Londres.
@@ -124,7 +136,8 @@ Vous devez arrêter le volume utilisé sur le site distant avant de reprendre pa
 
 Pour plus d'informations sur la configuration des répliques, voir [Réplication](replication.html).
 
->**Remarque** : les données non valides, qu'il s'agisse de données endommagées, détournées ou infectées, sont répliquées conformément au planning d'instantané et à la conservation des instantanés. Des fenêtres de réplication plus petites peuvent constituer un meilleur objectif de point de reprise. Néanmoins, cela peut également réduire le temps de réaction en cas de réplication de données non valides.
+Les données non valides, qu'il s'agisse de données endommagées, détournées ou infectées, sont répliquées conformément au planning d'instantané et à la conservation des instantanés. Des fenêtres de réplication plus petites peuvent constituer un meilleur objectif de point de reprise. Néanmoins, cela peut également réduire le temps de réaction en cas de réplication de données non valides.
+{:note}
 
 
 ## Commande de {{site.data.keyword.filestorage_short}}
@@ -163,7 +176,8 @@ Une fois qu'un volume est mis à disposition, les serveurs {{site.data.keyword.B
 2. Sélectionnez **Accès à l'hôte** dans le menu Actions du volume **Endurance** ou **Performance**.
 3. Cliquez sur **Sous-réseaux**.
 4. Effectuez votre choix dans la liste des sous-réseaux disponibles affectés aux ports VMkernel sur les hôtes ESXi, puis cliquez sur **Soumettre**.<br/>
-    >**Remarque** : les sous-réseaux affichés sont des sous-réseaux souscrits dans le même centre de données que le volume de stockage.
+
+   Les sous-réseaux affichés sont des sous-réseaux souscrits dans le même centre de données que le volume de stockage.{:note}
 
 
 Une fois les sous-réseaux autorisés, notez le nom d'hôte du serveur de stockage Endurance ou Performance que vous souhaitez utiliser lors du montage du volume. Vous pouvez trouver ces informations sur la page de détails de {{site.data.keyword.filestorage_short}} en cliquant sur un volume spécifique.
@@ -202,6 +216,7 @@ Avant de commencer le processus de configuration de VMware, assurez-vous que les
      ```
 
 Pour plus d'informations sur VMware et les trames Jumbo, cliquez [ici](https://kb.vmware.com/s/article/1003712){:new_window}.
+{:tip}
 
 
 ### 2. Ajout d'un adaptateur de liaison montante à un commutateur virtuel
@@ -239,7 +254,8 @@ La configuration de réseau de ce guide d'architecture utilise un nombre minimal
 
 2. Les routes statiques ne sont pas permanentes si vous effectuez des réamorçages sur ESXi 5.0 et versions antérieures. Pour garantir le caractère permanent des routes statiques ajoutées, vous devez ajouter ces commandes sur chaque hôte dans le fichier `local.sh` qui se trouve dans le répertoire `/etc/rc.local.d/`. Ouvrez le fichier `local.sh` à l'aide de l'éditeur visuel et ajoutez la seconde commande de l'étape 4.1 devant la ligne `exit 0`.
 
->**Remarques**<br/>: notez l'adresse IP car elle peut être utilisée pour le montage à l'étape suivante.<br/>Vous devez procéder de la sorte pour chaque volume NFS que vous envisagez de monter sur votre hôte ESXi.<br/>Pour plus d'informations, voir l'article de la base de connaissances de VMware, [Configuring static routes for VMkernel ports on an ESXi host](https://kb.vmware.com/s/article/2001426){:new_window}.
+Notez l'adresse IP car elle peut être utilisée pour le montage du volume lors de l'étape suivante.<br/>Vous devez procéder de la sorte pour chaque volume NFS que vous envisagez de monter sur votre hôte ESXi.<br/>Pour plus d'informations, voir l'article de la base de connaissances de VMware, [Configuring static routes for VMkernel ports on an ESXi host](https://kb.vmware.com/s/article/2001426){:new_window}.
+{:tip}
 
 
 ##  Création et montage de volume {{site.data.keyword.filestorage_short}} sur des hôtes ESXi
@@ -249,12 +265,14 @@ La configuration de réseau de ce guide d'architecture utilise un nombre minimal
 3. Cliquez sur l'icône **Create a new datastore**.
 4. Sur l'écran **New Datastore**, sélectionnez l'emplacement du magasin de données WMware (votre hôte ESXi) et cliquez sur **Next**.
 5. Sur l'écran **Type**, sélectionnez **NFS**, puis cliquez sur **Next**.
-6. Sur l'écran **Name and configuration**, entrez le nom que vous souhaitez donner au magasin de données WMware. Indiquez également le nom d'hôte du serveur NFS. L'utilisation du nom de domaine complet du serveur NFS permet d'optimiser la répartition du trafic vers le serveur sous-jacent. L'adresse IP est également valide mais elle est moins fréquemment employée et uniquement dans des instances spécifiques. Entrez le nom de dossier au format `/foldername`.
-7. Sur l'écran **Host accessibility**, sélectionnez un ou plusieurs hôtes que vous souhaitez monter sur le magasin de données NFS WMware et cliquez sur **next**.
-8. Vérifiez les entrées sur l'écran suivant et cliquez sur **Finish**.
-9. Répétez ces étapes pour tous les volumes {{site.data.keyword.filestorage_short}} supplémentaires.
+6. Ensuite, sélectionnez la version de NFS. NFSv3 et NFSv4.1 sont pris en charge, mais le premier est recommandé. Prenez soin d'utiliser une seule version de NFS pour accéder à un magasin de données spécifique. Si vous montez un ou plusieurs hôtes sur le même magasin de données en utilisant différentes versions, les données peuvent être endommagées. 
+7. Sur l'écran **Name and configuration**, entrez le nom que vous souhaitez donner au magasin de données WMware. Indiquez également le nom d'hôte du serveur NFS. L'utilisation du nom de domaine complet du serveur NFS permet d'optimiser la répartition du trafic vers le serveur sous-jacent. L'adresse IP est également valide mais elle est moins fréquemment employée et uniquement dans des instances spécifiques. Entrez le nom de dossier au format `/foldername`.
+8. Sur l'écran **Host accessibility**, sélectionnez un ou plusieurs hôtes que vous souhaitez monter sur le magasin de données NFS WMware et cliquez sur **next**.
+9. Vérifiez les entrées sur l'écran suivant et cliquez sur **Finish**.
+10. Répétez ces étapes pour tous les volumes {{site.data.keyword.filestorage_short}} supplémentaires.
 
->**Remarque** : {{site.data.keyword.BluSoftlayer_full}} recommande d'utiliser les noms de domaine complets pour la connexion au magasin de données WMware. L'utilisation de l'adressage IP direct est susceptible d'ignorer le mécanisme d'équilibrage de charge qui est fourni par le nom de domaine complet.
+{{site.data.keyword.BluSoftlayer_full}} recommande d'utiliser les noms de domaine complets pour la connexion au magasin de données WMware. L'utilisation de l'adressage IP direct est susceptible d'ignorer le mécanisme d'équilibrage de charge qui est fourni par le nom de domaine complet.
+{:important}
 
 Pour employer l'adresse IP au lieu du nom de domaine complet, exécutez simplement une commande ping vers le serveur afin d'obtenir l'adresse IP :
 ```
@@ -278,7 +296,7 @@ SIOC (Storage I/O Control) est une fonctionnalité disponible pour les clients q
 Vous devez définir un seuil pour que la fonction SIOC puisse déterminer quand une unité de stockage est saturée ou contrainte. Le temps d'attente du seuil de surcharge est différent selon les types de stockage. Les sélections par défaut atteignent jusqu'à 90 % du débit en période de pic. Le pourcentage de la valeur de débit en période de pic indique le seuil de temps d'attente estimé lorsque le magasin de données WMware utilise ce pourcentage de débit estimé en période de pic.
 
 
->**Remarque** : une configuration incorrecte de la fonction SIOC d'un magasin de données WMware ou d'un disque de machine virtuelle (VMDK) peut affecter les performances de manière significative.
+Une configuration incorrecte de la fonction SIOC d'un magasin de données WMware ou d'un disque de machine virtuelle (VMDK) peut affecter les performances de manière significative.{:important}
 
 
 ### Configuration de la fonction SIOC pour un magasin de données WMware
@@ -293,7 +311,7 @@ Suivez les étapes ci-après pour activer la fonction SIOC avec les valeurs reco
    ![Magasin de données NSF WMware](/images/3_0.png)
 6. Cliquez sur **OK**.
 
-**Remarque** : ce paramètre est propre au magasin de données WMware et non à l'hôte.
+Ce paramètre est propre au magasin de données WMware et non à l'hôte.{:note}
 
 
 ### Configuration de la fonction SIOC pour des {{site.data.keyword.BluVirtServers_short}}
@@ -310,7 +328,8 @@ Suivez les étapes ci-après pour modifier les partages et la limite de disques 
 6. Cliquez sur **OK**.
 
 
-> **Remarque** : ce processus permet de définir les limites de consommation des ressources des disques virtuels individuels dans des {{site.data.keyword.BluVirtServers_short}} même si la fonction SIOC n'est pas activée. Ces paramètres sont propres à l'invité individuel et non à l'hôte, même s'ils sont utilisés par la fonction SIOC.
+Ce processus permet de définir les limites de consommation des ressources des disques virtuels individuels dans des {{site.data.keyword.BluVirtServers_short}} même si la fonction SIOC n'est pas activée. Ces paramètres sont propres à l'invité individuel et non à l'hôte, même s'ils sont utilisés par la fonction SIOC.
+{:important}
 
 
 ## Configuration des paramètres côté hôte ESXi
@@ -369,6 +388,7 @@ Les exemples suivants font appel à l'interface de ligne de commande pour défin
 Une trame Jumbo est une trame Ethernet dotée d'un contenu supérieur à l'unité de transmission maximale (MTU) standard de 1 500 octets. Les trames Jumbo sont utilisées sur des réseaux locaux pouvant prendre en charge au moins 1 Gbps et atteindre 9 000 octets.
 
 Les trames Jumbo doivent être configurées de manière identique sur la totalité du chemin réseau depuis l'unité source <-> commutateur <-> routeur <-> commutateur <-> jusqu'à l'unité de destination. Si la définition n'est pas identique sur la totalité de la chaîne, elle prend par défaut le paramètre le moins élevé sur l'ensemble de la chaîne. Actuellement, la valeur définie pour les périphériques réseau d'{{site.data.keyword.BluSoftlayer_full}} est 9 000. Tous les périphériques de client doivent être définis de manière identique.
+{:important}
 
 ### Activation des trames Jumbo dans Windows
 
@@ -380,7 +400,8 @@ Les trames Jumbo doivent être configurées de manière identique sur la totalit
 6. Sélectionnez **Trame Jumbo** et remplacez la valeur **désactivé** par la valeur souhaitée. La valeur, telle que 9 ko ou 9014 octets, dépend de la carte d'interface réseau.
 7. Cliquez sur **OK** dans toutes les fenêtres.
 
->**Remarque** : lorsque vous effectuez cette modification, la carte d'interface réseau perd la connectivité du réseau pendant quelques secondes. Redémarrez le périphérique pour confirmer que la modification a été appliquée.
+Lorsque vous effectuez cette modification, la carte d'interface réseau perd la connectivité du réseau pendant quelques secondes. Redémarrez le périphérique pour confirmer que la modification a été appliquée.
+{:tip}
 
 
 ### Activation des trames Jumbo dans Linux
@@ -416,3 +437,4 @@ Les trames Jumbo doivent être configurées de manière identique sur la totalit
    Cette action provoque une courte perte de connectivité réseau.
 
 Pour en savoir plus sur l'architecture de référence d'un environnement VMware mono-site avancé, cliquez [ici](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}.
+{:tip}

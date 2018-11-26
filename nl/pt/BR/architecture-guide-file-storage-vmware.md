@@ -2,17 +2,23 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-09-24"
+lastupdated: "2018-10-31"
 
 ---
 {:pre: .pre}
 {:new_window: target="_blank"}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 
 # Provisionando  {{site.data.keyword.filestorage_short}}  com VMware
 
-As etapas a seguir podem ajudar você a pedir e configurar o {{site.data.keyword.filestorage_full}} em um ambiente do vSphere 5.5 e vSphere 6.0 no {{site.data.keyword.BluSoftlayer_full}}. Se você precisar de mais de oito conexões para o host VMware, então, escolher o NFS {{site.data.keyword.filestorage_short}} será a melhor prática.
+As etapas a seguir podem ajudar você a pedir e configurar o {{site.data.keyword.filestorage_full}} em um ambiente do vSphere 5.5 e vSphere 6.0 no {{site.data.keyword.BluSoftlayer_full}}.
 
 O {{site.data.keyword.filestorage_short}} foi projetado para suportar aplicativos de alta E/S que requerem níveis previsíveis de desempenho. O desempenho previsível é alcançado por meio da alocação de input/output operations per second (IOPS) de nível de protocolo para volumes individuais.
+
+Se você precisar de mais de oito conexões para o host VMware, então, escolher o NFS {{site.data.keyword.filestorage_short}} será a melhor prática.
+{:tip}
 
 A oferta {{site.data.keyword.filestorage_short}} é acessada e montada por meio de uma conexão NFS. Em uma implementação do VMware, um único volume pode ser montado para até 64 hosts ESXi como armazenamento compartilhado. Também é possível montar múltiplos volumes para criar um cluster de armazenamento para usar o vSphere Storage Distributed Resource Scheduler (DRS).
 
@@ -23,13 +29,16 @@ As opções de precificação e configuração para o {{site.data.keyword.filest
 Ao pedir o {{site.data.keyword.filestorage_short}}, considere as informações a seguir:
 
 - Quando você decidir sobre o tamanho, considere o tamanho da carga de trabalho e o rendimento necessário. O tamanho é importante com o serviço Endurance, que escala o desempenho linearmente em relação à capacidade (IOPS/GB). Por outro lado, o serviço Performance permite que o administrador escolha a capacidade e o desempenho independentemente. Os requisitos de rendimento são importantes com o Performance.
-  >**Nota** - O cálculo de rendimento é IOPS x 16 KB. O IOPS é medido com base em um tamanho de bloco de 16 KB com uma combinação de leitura/gravação 50/50.<br/>Aumentar o tamanho do bloco aumenta o rendimento, mas diminui o IOPS. Por exemplo, dobrar o tamanho do bloco para blocos de 32 KB mantém o rendimento máximo, mas diminui pela metade o IOPS.
+
+  O cálculo de rendimento é IOPS x 16 KB. O IOPS é medido com base em um tamanho de bloco de 16 KB com uma combinação de leitura/gravação 50/50.<br/>Aumentar o tamanho do bloco aumenta o rendimento, mas diminui o IOPS. Por exemplo, dobrar o tamanho do bloco para blocos de 32 KB mantém o rendimento máximo, mas diminui pela metade o IOPS.
+  {:note}
 - O NFS usa muitas operações de controle de arquivo extras, como `lookup`, `getattr` e `readdir`. Essas operações, além das operações de leitura/gravação, podem contar como IOPS e variam por tipo de operação e versão do NFS.
 - Os volumes do {{site.data.keyword.filestorage_short}} são expostos a dispositivos, sub-redes ou endereços IP autorizados.
 - Para evitar a desconexão do armazenamento durante o failover do caminho, a {{site.data.keyword.IBM}} recomenda a instalação das ferramentas do VMware, que configuram um valor de tempo limite apropriado. Não há necessidade de mudar o valor, a configuração padrão é suficiente para assegurar que o host do VMware não perca a conectividade.
-- O NFS v3 e NFS v4.1 são suportados no ambiente do {{site.data.keyword.BluSoftlayer_full}}. No entanto, a {{site.data.keyword.IBM}} sugere o uso de NFS v3. Como o NFS v4.1 é um protocolo stateful (não stateless como o NFSv3), os problemas de protocolo podem ocorrer durante eventos de rede. O NFS v4.1 deve colocar em modo quiesce todas as operações e, em seguida, concluir a recuperação de bloqueio. Enquanto essas operações estão acontecendo, interrupções podem ocorrer.
+- Tanto o NFSv3 quanto o NFSv4.1 são suportados no ambiente do {{site.data.keyword.BluSoftlayer_full}}. No entanto, a {{site.data.keyword.IBM}} sugere que você use o NFSv3. Como o NFSv4.1 é um protocolo stateful (não um protocolo sem preservação de estado, como o NFSv3), podem ocorrer problemas de protocolo durante eventos de rede. O NFSv4.1 deve colocar em modo quiesce todas as operações e, em seguida, concluir a solicitação de bloqueio. Enquanto essas operações estão acontecendo, interrupções podem ocorrer.
 
 Para obter mais informações, veja o White Paper do VMware em [Best Practices for running VMware vSphere on Network Attached Storage] (https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){:new_window}
+{:tip}
 
 ** Matriz de suporte do recurso do VMware Protocol VMware **
 <table>
@@ -115,6 +124,9 @@ Com réplicas, é possível
 - Recuperar de falhas do site e outros desastres rapidamente efetuando failover para o volume de destino
 - Efetuar failover para um momento específico na cópia de DR
 
+A replicação mantém seus dados em sincronização em dois locais diferentes. Se desejar clonar seu volume e usá-lo independentemente do volume original, consulte [Criando um volume de arquivo duplicado](how-to-create-duplicate-volume.html).
+{:tip}
+
 Antes de replicar, deve-se criar um planejamento de captura instantânea.
 
 Ao efetuar failover, você está “invertendo o comutador” do volume de armazenamento em seu data center primário para o volume de destino em seu data center remoto. Por exemplo, seu data center primário está em Londres e seu data center secundário está em Amsterdã. Se ocorrer um evento de falha, você executará failover em Amsterdã. Isso significa conectar-se ao volume agora primário de uma instância de Cluster do vSphere em Amsterdã. Depois que seu volume em Londres é reparado, uma captura instantânea é tomada do volume de Amsterdã. Em seguida, é possível efetuar failback para Londres e no volume novamente primário de uma instância de cálculo em Londres.
@@ -123,7 +135,8 @@ Antes que o volume efetue failback novamente para o data center primário, ele p
 
 Para obter mais informações sobre como configurar réplicas, consulte [Replicação](replication.html).
 
->**Nota** - Dados inválidos, sejam corrompidos, hackeados ou infectados, são replicados de acordo com o planejamento e a retenção de captura instantânea. O uso das janelas de replicação menores pode fornecer um objetivo do ponto de recuperação melhor. No entanto, isso também pode fornecer menos tempo para reagir à replicação de dados inválidos.
+Dados inválidos, quer estejam corrompidos, hackeados ou infectados, devem ser replicados de acordo com o planejamento de captura instantânea e a retenção de captura instantânea. O uso das janelas de replicação menores pode fornecer um objetivo do ponto de recuperação melhor. No entanto, isso também pode fornecer menos tempo para reagir à replicação de dados inválidos.
+{:note}
 
 
 ## Solicitando o {{site.data.keyword.filestorage_short}}
@@ -162,7 +175,9 @@ Quando um volume é provisionado, o {{site.data.keyword.BluBareMetServers_full}}
 2. Selecione **Acessar host** no menu **Ações de volume do Performance** ou **Endurance**.
 3. Clique em  **Subnets**.
 4. Escolha na lista de sub-redes disponíveis que estão designadas às portas do VMkernel nos hosts ESXi e clique em **Enviar**.<br/>
-    >**Nota** - As sub-redes exibidas são sub-redes inscritas no mesmo data center que o volume de armazenamento.
+
+   As sub-redes que são exibidas são sub-redes inscritas no mesmo data center que o volume de armazenamento.
+   {:note}
 
 
 Depois que as sub-redes forem autorizadas, anote o nome do host do servidor de armazenamento do Endurance ou do Performance que você deseja usar quando montar o volume. Essas informações podem ser localizadas na página de detalhes do {{site.data.keyword.filestorage_short}} clicando em um volume específico.
@@ -201,6 +216,7 @@ Antes de iniciar o processo de configuração do VMware, certifique-se de que os
      ```
 
 Para obter mais informações sobre o VMware e os Quadros gigantes, clique [aqui](https://kb.vmware.com/s/article/1003712){:new_window}.
+{:tip}
 
 
 ### 2. Incluindo um Adaptador uplink em um comutador virtual
@@ -238,7 +254,8 @@ A configuração de rede para este guia de arquitetura usa um número mínimo de
 
 2. As rotas estáticas não são persistentes entre as reinicializações no ESXi 5.0 e anterior. Para assegurar-se de que quaisquer rotas estáticas incluídas permaneçam persistentes, esse comando precisará ser incluído no arquivo `local.sh` em cada host, que está localizado no diretório `/etc/rc.local.d/`. Abra o arquivo `local.sh` usando o editor visual e inclua o segundo comando na Etapa 4.1. na frente da linha `exit 0`.
 
->** Notas **<br/>- Anote o endereço IP, pois ele poderá ser usado para montar o volume na próxima etapa.<br/>Esse processo precisa ser feito para cada volume NFS que você planeja montar em seu host ESXi.<br/>Para obter mais informações, veja o artigo do VMware KB, [Configurando rotas estáticas para portas do VMkernel em um host ESXi](https://kb.vmware.com/s/article/2001426){:new_window}.
+Anote o endereço IP, pois ele poderá ser usado para montar o volume na próxima etapa.<br/>Esse processo precisa ser feito para cada volume NFS que você planeja montar em seu host ESXi.<br/>Para obter mais informações, veja o artigo do VMware KB, [Configurando rotas estáticas para portas do VMkernel em um host ESXi](https://kb.vmware.com/s/article/2001426){:new_window}.
+{:tip}
 
 
 ##  Criando e montando o volume do {{site.data.keyword.filestorage_short}} nos hosts do ESXi
@@ -248,12 +265,14 @@ A configuração de rede para este guia de arquitetura usa um número mínimo de
 3. Clique no ícone **Criar um novo armazenamento de dados**.
 4. Na tela **Novo armazenamento de dados**, selecione o local do armazenamento de dados do WMware (seu host ESXi) e clique em **Avançar**.
 5. Na tela **Tipo**, selecione **NFS** e clique em **Avançar**.
-6. Na tela **Nome e configuração**, insira o nome que você deseja para chamar o armazenamento de dados do WMware. Além disso, insira o nome do host do servidor NFS. Usar o FQDN para o servidor NFS produz a melhor distribuição de tráfego para o servidor subjacente. O endereço IP também é válido, mas é usado menos frequentemente e somente em instâncias específicas. Insira o nome da pasta no formato `/foldername`.
-7. Na tela **Acessibilidade do host**, selecione um ou mais hosts nos quais você deseja montar o armazenamento de dados do NFS WMware e clique em **Avançar**.
-8. Revise as entradas na próxima tela e clique em **Concluir**.
-9. Repita para quaisquer volumes adicionais do {{site.data.keyword.filestorage_short}}.
+6. Em seguida, selecione a versão do NFS. Tanto o NFSv3 quanto o NFSv4.1 são suportados, mas o NFSv3 é preferencial. Certifique-se de usar apenas uma versão do NFS para acessar um determinado armazenamento de dados. A montagem de um ou mais hosts no mesmo armazenamento de dados usando diferentes versões pode resultar em distorção de dados.
+7. Na tela **Nome e configuração**, insira o nome que você deseja para chamar o armazenamento de dados do WMware. Além disso, insira o nome do host do servidor NFS. Usar o FQDN para o servidor NFS produz a melhor distribuição de tráfego para o servidor subjacente. O endereço IP também é válido, mas é usado menos frequentemente e somente em instâncias específicas. Insira o nome da pasta no formato `/foldername`.
+8. Na tela **Acessibilidade do host**, selecione um ou mais hosts nos quais você deseja montar o armazenamento de dados do NFS WMware e clique em **Avançar**.
+9. Revise as entradas na próxima tela e clique em **Concluir**.
+10. Repita para quaisquer volumes adicionais do {{site.data.keyword.filestorage_short}}.
 
->**Nota** - É recomendação do {{site.data.keyword.BluSoftlayer_full}} que os nomes FQDN sejam usados para se conectar ao armazenamento de dados do WMware. O uso do endereçamento IP direto pode efetuar bypass do mecanismo de balanceamento de carga fornecido com o uso do FQDN.
+É recomendação do {{site.data.keyword.BluSoftlayer_full}} que os nomes FQDN sejam usados para conexão ao armazenamento de dados WMware. O uso do endereçamento IP direto pode efetuar bypass do mecanismo de balanceamento de carga fornecido com o uso do FQDN.
+{:important}
 
 Para usar o endereço IP em vez do FQDN, basta executar ping do servidor para obter o endereço IP.
 ```
@@ -277,7 +296,8 @@ O Storage I/O Control (SIOC) é um recurso disponível para clientes que usam um
 Para que o SIOC determine quando um dispositivo de armazenamento está congestionado ou restrito, ele requer um limite definido. A latência de limite de congestionamento é diferente para tipos de armazenamento diferentes. A seleção padrão é de 90% do rendimento de pico. A porcentagem de valor de rendimento de pico indica o limite de latência estimado quando o armazenamento de dados do WMware está usando essa porcentagem de seu rendimento de pico estimado.
 
 
->**Nota** - A configuração incorreta do SIOC para um armazenamento de dados do WMware ou para um VMDK pode afetar significativamente o desempenho.
+Configurar incorretamente o SIOC para um armazenamento de dados WMware ou para um VMDK pode impactar significativamente o desempenho.
+{:important}
 
 
 ### Configurando o Storage I/O Control para um armazenamento de dados do WMware
@@ -292,7 +312,8 @@ Use as etapas a seguir para ativar o SIOC com os valores recomendados para armaz
    ![NSF WMware Datastore](/images/3_0.png)
 6. Clique em **OK**.
 
-**Nota**: essa configuração é específica para o armazenamento de dados do WMware e não para o host.
+Essa configuração é específica para o armazenamento de dados WMware e não para o host.
+{:note}
 
 
 ### Configurando o Storage I/O Control para  {{site.data.keyword.BluVirtServers_short}}
@@ -311,7 +332,8 @@ Use as etapas a seguir para mudar os compartilhamentos e o limite de VDisk.
 6. Clique em **OK**
 
 
-> **Nota**: esse processo é usado para configurar os limites de consumo de recursos de vDisks individuais em um {{site.data.keyword.BluVirtServers_short}} mesmo quando o SIOC não está ativado. Essas configurações são específicas para o guest individual e não para o host, embora elas sejam usadas por SIOC.
+Esse processo é usado para configurar os limites de consumo de recursos de vDisks individuais em um {{site.data.keyword.BluVirtServers_short}} mesmo quando o SIOC não está ativado. Essas configurações são específicas para o guest individual e não para o host, embora elas sejam usadas por SIOC.
+{:important}
 
 
 ## Configurando as configurações do lado do host ESXi
@@ -370,6 +392,7 @@ Os exemplos a seguir usam a CLI para configurar os parâmetros de configuração
 Um quadro gigante é um quadro Ethernet com uma carga útil maior que a unidade máxima de transmissão (MTU) padrão de 1.500 bytes. Os quadros gigantes são usados em redes locais que suportam pelo menos 1 Gbps e podem ser tão grandes quanto 9.000 bytes.
 
 Os quadros gigantes precisam ser configurados da mesma maneira em todo o caminho de rede do dispositivo de origem <-> comutador <-> roteador <-> comutador <-> dispositivo de destino. Se a cadeia inteira não for configurada da mesma maneira, ela será padronizada para a configuração mais baixa ao longo da cadeia. O {{site.data.keyword.BluSoftlayer_full}} tem dispositivos de rede configurados para 9.000 atualmente. Todos os dispositivos do cliente precisam ser configurados com o mesmo valor 9.000.
+{:important}
 
 ### Ativando Quadros Jumbo no Windows
 
@@ -381,7 +404,8 @@ Os quadros gigantes precisam ser configurados da mesma maneira em todo o caminho
 6. Selecione **Quadro gigante** e mude o valor de **disabled** para o valor desejado. O valor, como 9 kB ou 9.014 bytes, depende do NIC.
 7. Clique em  ** OK **  em todas as janelas.
 
->**Nota** - Quando você faz a mudança, o NIC perde a conectividade de rede por alguns segundos. Reinicie o dispositivo para confirmar que a mudança foi efetivada.
+Quando você faz a mudança, a NIC perde a conectividade de rede por alguns segundos. Reinicie o dispositivo para confirmar que a mudança foi efetivada.
+{:tip}
 
 
 ### Ativando Quadros Jumbo no Linux
@@ -417,3 +441,4 @@ Os quadros gigantes precisam ser configurados da mesma maneira em todo o caminho
    Essa ação causa uma breve perda de conectividade de rede.
 
 Saiba mais sobre a arquitetura de referência do Advanced Single-Site VMware [aqui](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}.
+{:tip}

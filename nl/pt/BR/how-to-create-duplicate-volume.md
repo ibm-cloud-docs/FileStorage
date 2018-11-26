@@ -2,10 +2,13 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-09-07"
+lastupdated: "2018-10-31"
 
 ---
 {:new_window: target="_blank"}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 
 # Criando um {{site.data.keyword.filestorage_short}} duplicado
 
@@ -17,7 +20,8 @@ de captura instantânea](snapshots.html).
 
 As duplicatas podem ser criadas de ambos os volumes, o **primário** e o de **réplica**. A nova duplicata é criada no mesmo data center que o volume original. Se você criar uma duplicata de um volume de réplica, o novo volume será criado no mesmo data center que o volume de réplica.
 
->**Observação** - Se você for um usuário de conta Dedicada do {{site.data.keyword.containerlong}}, consulte suas opções para duplicar um volume na documentação do [{{site.data.keyword.containerlong_notm}}](/docs/containers/cs_storage_file.html#backup_restore).
+Se você for um usuário da conta Dedicada do {{site.data.keyword.containerlong}}, consulte suas opções para duplicar um volume na [{{site.data.keyword.containerlong_notm}}documentação](/docs/containers/cs_storage_file.html#backup_restore).
+{:tip}
 
 Os volumes duplicados podem ser acessados por um host para leitura/gravação assim que o armazenamento é provisionado. No entanto, capturas instantâneas e replicação não são permitidas até que a cópia de dados do original para a duplicata seja concluída. Quando a cópia de dados é concluída, a duplicata pode ser gerenciada e usada como um volume completamente independente.
 
@@ -51,7 +55,9 @@ Alguns usos comuns para um volume duplicado:
     - Se o seu volume original for a camada Endurance 0,25 IOPS, não será possível fazer uma nova seleção.
     - Se seu volume original for a camada de 2, 4 ou 10 IOPS do Endurance, será possível se mover em qualquer lugar entre essas camadas para o novo volume.
 6. É possível atualizar o tamanho do novo volume para que seja maior que o do original. O tamanho do volume original é configurado por padrão.
-    - **Nota**: o {{site.data.keyword.filestorage_short}} pode ser redimensionado para 10 vezes o tamanho original do volume.
+
+   O {{site.data.keyword.filestorage_short}} pode ser redimensionado para 10 vezes o tamanho original do volume.
+   {:tip}
 7. É possível atualizar o espaço de captura instantânea do novo volume para incluir mais, menos ou nenhum espaço de captura instantânea. O espaço de captura instantânea do volume original é configurado por padrão.
 8. Clique em  ** Continuar **  para fazer seu pedido.
 
@@ -67,7 +73,9 @@ pode ser um volume de réplica ou não réplica.
     - Se o seu volume original for a camada Endurance 0,25 IOPS, não será possível fazer uma nova seleção.
     - Se seu volume original for a camada de 2, 4 ou 10 IOPS do Endurance, será possível se mover em qualquer lugar entre essas camadas para o novo volume.
 6. É possível atualizar o tamanho do novo volume para que seja maior que o original. O tamanho do volume original é configurado por padrão.
-    - **Nota**: o {{site.data.keyword.filestorage_short}} pode ser redimensionado para 10 vezes o tamanho original do volume.
+
+   O {{site.data.keyword.filestorage_short}} pode ser redimensionado para 10 vezes o tamanho original do volume.
+   {:tip}
 7. É possível atualizar o espaço de captura instantânea do novo volume para incluir mais, menos ou nenhum espaço de captura instantânea. O espaço de captura instantânea do volume original é configurado por padrão.
 8. Clique em **Continuar** para fazer seu pedido para a duplicata.
 

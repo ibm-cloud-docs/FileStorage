@@ -2,10 +2,13 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-09-17"
+lastupdated: "2018-10-31"
 
 ---
 {:new_window: target="_blank"}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 
 
 # Gerenciando capturas instantâneas
@@ -17,11 +20,12 @@ instantâneas por volume de armazenamento. Os planejamentos são gerenciados por
 
 
 Para poder configurar seu planejamento inicial, deve-se primeiramente comprar um espaço de captura instantânea, caso você não tenha comprado durante o fornecimento inicial do volume de armazenamento.
+{:important}
 
 ### Incluindo um Planejamento de Captura Instant
 
 Os planejamentos de capturas instantâneas podem ser configurados em intervalos, como por hora,
-diários e semanais, cada um com um ciclo de retenção diferente. Há um máximo de 50 capturas instantâneas planejadas, que podem ser uma combinação de planejamentos por hora, diários e semanais, e capturas instantâneas manuais por volume de armazenamento.
+diários e semanais, cada um com um ciclo de retenção diferente. Há um limite máximo de 50 capturas instantâneas planejadas, que podem ser uma combinação de planejamentos por hora, diários e semanais e capturas instantâneas manuais por volume de armazenamento.
 
 1. Clique em seu volume de armazenamento, clique em **Ações** e clique em **Planejar captura instantânea**.
 2. Na janela Nova captura instantânea de planejamento, há três frequências de captura instantânea diferentes para seleção. Use qualquer combinação das três para criar um planejamento de captura instantânea abrangente.
@@ -43,7 +47,7 @@ A lista de capturas instantâneas é exibida conforme elas são tomadas na seç�
 Capturas instantâneas manuais podem ser obtidas em vários pontos durante um upgrade ou
 manutenção do aplicativo. Também é possível tirar capturas instantâneas em múltiplos servidores que tenham sido desativados temporariamente no nível do aplicativo.
 
-Há um máximo de 50 capturas instantâneas manuais por volume de armazenamento.
+É possível ter um limite máximo de 50 capturas instantâneas manuais por volume de armazenamento. 
 
 1. Clique em seu volume de armazenamento.
 2. Clique em ** Ações**.
@@ -64,9 +68,10 @@ O gráfico de pizza na parte superior da página **Detalhes** exibe quanto espa�
 
 ## Mudando a quantia de espaço de Captura instantânea para um volume
 
-Talvez seja necessário incluir espaço de captura instantânea em um volume que não tinha nenhum anteriormente ou que pode requerer espaço de captura instantânea extra. É possível incluir de 5 a 4.000 GB, dependendo de suas necessidades. 
+Talvez seja necessário incluir espaço de captura instantânea em um volume que não tinha nenhum anteriormente ou que pode requerer espaço de captura instantânea extra. É possível incluir de 5 a 4.000 GB, dependendo de suas necessidades.
 
-**Nota**: o espaço de captura instantânea só pode ser aumentado. Não pode ser reduzido. Será possível selecionar uma quantia menor de espaço até você determinar quanto espaço realmente é necessário. Lembre-se, capturas instantâneas automatizadas e manuais compartilham o espaço.
+Somente o espaço de captura instantânea pode ser aumentado. Não pode ser reduzido. Será possível selecionar uma quantia menor de espaço até você determinar quanto espaço realmente é necessário. Lembre-se, capturas instantâneas automatizadas e manuais compartilham o espaço.
+{:important}
 
 O espaço de captura instantânea é alterado por meio de  ** Armazenamento **  >  ** {{site.data.keyword.filestorage_short}} **.
 
@@ -91,9 +96,11 @@ Os planejamentos de captura instantânea podem ser cancelados por meio de **Arma
 
 1. Clique no planejamento a ser excluído no quadro **Planejamentos de captura instantânea** na página **Detalhes**.
 2. Clique na caixa de seleção ao lado do planejamento a ser excluído e clique em **Salvar**.<br />
-**Cuidado**: se você estiver usando o recurso de replicação, certifique-se de que o planejamento que estiver sendo excluído não seja o planejamento usado pela replicação. Clique
+
+Se você estiver usando o recurso de replicação, certifique-se de que o planejamento que está sendo excluído não seja o planejamento usado pela replicação. Clique
 [aqui](replication.html) para obter mais informações sobre como excluir um
 planejamento de replicação.
+{:important}
 
 ## Excluindo uma Captura Instant
 
@@ -114,9 +121,12 @@ Talvez seja necessário retornar o seu volume de armazenamento para um momento e
 2. Clique em **Armazenamento**, **{{site.data.keyword.filestorage_short}}**, no [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
 3. Role para baixo e clique no seu volume a ser restaurado. A seção **Capturas instantâneas** da página **Detalhes** exibe a lista de todas as capturas instantâneas salvas juntamente com seu tamanho e data de criação.
 4. Clique em **Ações** próximo à captura instantânea a ser usada e clique em **Restaurar**. <br/>
-   >**Nota**: a conclusão da restauração resulta na perda dos dados que foram criados ou modificados após a obtenção da captura instantânea. Essa perda de dados ocorre porque seu volume de armazenamento retorna para o mesmo estado em que estava no momento da captura instantânea. 
+
+   A conclusão da restauração resulta na perda dos dados que foram criados ou modificados depois que a captura instantânea foi obtida. Essa perda de dados ocorre porque seu volume de armazenamento retorna para o mesmo estado em que estava no momento da captura instantânea.
+   {:note}
 5. Clique em  ** Sim **  para iniciar a restauração. Espere uma mensagem na parte superior da página indicando que o volume está sendo restaurado usando a captura instantânea selecionada. Além disso, aparece um ícone próximo ao seu volume no {{site.data.keyword.filestorage_short}} indicando que uma transação ativa está em andamento. Passar o mouse sobre o ícone produz uma janela que mostra a transação. O ícone desaparece quando a transação está concluída.
 6. Monte e reconecte seu volume de armazenamento ao host.
   - Clique [aqui](accessing-file-storage-linux.html) para obter instruções do {{site.data.keyword.filestorage_short}} no Linux.
-    
->**Observação** - A restauração de um volume resulta na exclusão de todas as capturas instantâneas tomadas após a captura instantânea usada para a restauração.
+
+A restauração de um volume resulta na exclusão de todas as capturas instantâneas que foram tiradas após a captura instantânea que foi usada para a restauração.
+{:important}

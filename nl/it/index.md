@@ -2,10 +2,13 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-09-10"
+lastupdated: "2018-10-29"
 
 ---
 {:new_window: target="_blank"}
+{:tip: .tip} 
+{:note: .note} 
+{:important: .important}
 
 # Introduzione a {{site.data.keyword.filestorage_short}}
 
@@ -72,16 +75,16 @@ Con la **fatturazione mensile**, il calcolo per il prezzo è a base proporzional
   </tr>
   <tr>
    <th>Prezzo mensile</th>
-   <td>$0,10/GB</td>
+   <td>$0.06/GB</td>
+   <td>$0.15/GB</td>
    <td>$0,20/GB</td>
-   <td>$0,35/GB</td>
    <td>$0,58/GB</td>
   </tr>
   <tr>
    <th>Prezzo orario</th>
-   <td>0,0002/GB</td>
+   <td>$0.0001/GB</td>
+   <td>$0.0002/GB</td>
    <td>$0,0003/GB</td>
-   <td>$0,0005/GB</td>
    <td>$0,0009/GB</td>
   </tr>
 </table>
@@ -194,6 +197,7 @@ I volumi Performance sono progettati per operare in modo congruentemente prossim
 **Dimensione blocco**
 
 IOPS sia per Endurance che per Performance è basato su una dimensione di blocco di 16 KB con un carico di lavoro casuale al 50 percento e con lettura/scrittura al 50/50. Un blocco di 16 KB è l'equivalente di una scrittura sul volume.
+{:important}
 
 La dimensione del blocco utilizzata dalla tua applicazione influisce direttamente sulle prestazioni dell'archiviazione. Se la dimensione del blocco utilizzata dalla tua applicazione è inferiore a 16 KB, il limite IOPS si realizza prima del limite di velocità effettiva. Viceversa, se la dimensione del blocco utilizzata dalla tua applicazione è superiore a 16 KB, il limite di velocità effettiva si realizza prima del limite di IOPS.
 
@@ -228,7 +232,7 @@ La dimensione del blocco utilizzata dalla tua applicazione influisce direttament
             <td>16</td>
           </tr>
           <tr>
-            <td>32 (tipica per SQLServer)</td>
+            <td>32 (tipica per SQL Server)</td>
             <td>500</td>
             <td>16</td>
           </tr>          
@@ -258,7 +262,7 @@ Un altro fattore da considerare è il numero di host che sta utilizzando il tuo 
 
 La velocità della tua connessione Ethernet deve essere superiore a quella effettiva massima prevista dal tuo volume. In generale, non prevedere di saturare la tua connessione Ethernet oltre il 70% della larghezza di banda disponibile. Ad esempio, se hai 6.000 IOPS e stai utilizzando una dimensione del blocco di 16 KB, il volume può gestire una velocità effettiva di circa 94 MBps. Se hai una connessione Ethernet da 1 Gbps al tuo LUN, diventa un collo di bottiglia quando i tuoi server provano a utilizzare la velocità effettiva massima disponibile. Ciò è dovuto al fatto che il 70 percento del limite teorico di una connessione Ethernet da 1 Gbps (125 MB al secondo) consentirebbe solo 88 MB al secondo.
 
-Per raggiungere l'IOPS massimo, è necessario che siano implementate delle risorse di rete adeguate. Altre considerazioni includono l'utilizzo della rete privata esternamente al lato archiviazione e host e le regolazioni specifiche per le applicazioni (stack di IP o profondità di coda e altre impostazioni).
+Per raggiungere l'IOPS massimo, è necessario che siano implementate delle risorse di rete adeguate. Altre considerazioni includono l'utilizzo della rete privata esternamente al lato archiviazione e host e le regolazioni specifiche per le applicazioni (stack di IP o [profondità di coda](set-host-queue-depth-settings-performance-and-endurance-storage.html) e altre impostazioni).
 
 Il traffico di archiviazione viene incluso nell'utilizzo di rete totale dei server virtuali pubblici. Consulta la [Documentazione Virtual Server](https://console.bluemix.net/docs/vsi/vsi_public.html#public-virtual-servers) per conoscere i limiti che possono essere applicati dal servizio.
 

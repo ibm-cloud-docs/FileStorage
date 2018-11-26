@@ -2,24 +2,28 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-09-17"
+lastupdated: "2018-10-31"
 
 ---
 {:new_window: target="_blank"}
+ {:tip: .tip}
+ {:note: .note}
+ {:important: .important}
 
 # {{site.data.keyword.filestorage_short}}의 새 위치와 기능
 
 {{site.data.keyword.BluSoftlayer_full}}에서는 {{site.data.keyword.filestorage_full}}의 새 버전을 도입합니다. 새 스토리지는 특정 데이터 센터에서 사용 가능하며, 저장 데이터의 디스크 레벨 암호화를 사용하는 상위 IOPS 레벨에서 플래시 스토리지의 지원을 받습니다. 특정 데이터 센터에서 주문된 모든 스토리지는 새 버전의 {{site.data.keyword.filestorage_short}}로 자동으로 작성됩니다.
 
-**참고:** 새 볼륨의 NFS 마운트 지점이 변경되었습니다. 세부사항은 **개선된 {{site.data.keyword.filestorage_short}} 볼륨의 새 마운트 지점**을 참조하십시오.
+새 볼륨의 NFS 마운트 지점이 변경되었습니다. 세부사항은 [개선된 {{site.data.keyword.filestorage_short}} 볼륨의 새 마운트 지점](#new-mount-point-for-enhanced-file-storage-volumes)을 참조하십시오.
+{:important}
 
 새 {{site.data.keyword.filestorage_short}}는 다음의 지역/데이터 센터에서 사용 가능하며, 추가적인 데이터 센터도 나중에 사용할 수 있습니다.
 
 <table role="presentation">
   <tr>
-    <td><strong>US 2</strong></td>
-    <td><strong>EU</strong></td>
-    <td><strong>오스트레일리아</strong></td>
+    <td><strong>미국 2</strong></td>
+    <td><strong>유럽연합(EU)</strong></td>
+    <td><strong>호주</strong></td>
     <td><strong>캐나다</strong></td>
     <td><strong>라틴 아메리카</strong></td>
     <td><strong>아시아 태평양</strong></td>
@@ -30,14 +34,14 @@ lastupdated: "2018-09-17"
 	DAL12<br />
 	DAL13<br />
 	SJC03<br />
-        SJC04<br />
+SJC04<br />
 	WDC04<br />
 	WDC06<br />
 	WDC07<br />
 	<br /><br /><br />
     </td>
     <td>AMS01<br />
-        AMS03<br />
+AMS03<br />
 	FRA02<br />
 	FRA04<br />
 	FRA05<br />
@@ -50,23 +54,23 @@ lastupdated: "2018-09-17"
 	PAR01<br />
     </td>
     <td>MEL01<br />
-        SYD01<br />
-        SYD04<br />
+SYD01<br />
+SYD04<br />
 	<br /><br /><br /><br /><br /><br /><br /><br /><br />
     </td>
     <td>MON01<br />
-        TOR01<br />
+TOR01<br />
 	<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
     </td>
     <td>MEX01<br />
-        SAO01<br />
+SAO01<br />
 	<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
     </td>
     <td>CHE01<br />
-        HKG02<br />
+HKG02<br />
 	SEO01<br />
 	SNG01<br />
-        TOK02<br />
+TOK02<br />
 	TOK04<br />
 	TOK05<br />
 	<br /><br /><br /><br /><br />
@@ -93,3 +97,4 @@ lastupdated: "2018-09-17"
 이러한 데이터 센터에서 프로비저닝된 모든 개선된 {{site.data.keyword.filestorage_short}} 볼륨에는 암호화되지 않은 볼륨과는 다른 마운트 지점이 있습니다. 두 스토리지 볼륨에 올바른 마운트 지점을 사용 중임을 확인하기 위해 UI의 **볼륨 세부사항** 페이지에서 마운트 지점 정보를 볼 수 있습니다. 또한 API 호출 `SoftLayer_Network_Storage::getNetworkMountAddress()`를 통해 올바른 마운트 지점에 액세스할 수 있습니다.
 
 {{site.data.keyword.filestorage_short}}용으로 추가 중인 새 기능에 대해 그리고 추가 데이터 센터가 업그레이드된 시기를 보려면 다시 여기를 확인하십시오.
+{:tip}

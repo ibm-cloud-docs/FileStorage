@@ -2,10 +2,13 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-08-22"
+lastupdated: "2018-10-31"
 
 ---
 {:new_window: target="_blank"}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 
 # {{site.data.keyword.filestorage_short}}를 사용하는 VMware 환경에 대한 Brocade vRouter(Vyatta) 설정
 

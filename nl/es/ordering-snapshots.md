@@ -2,23 +2,27 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-10-31"
 
 ---
 {:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 
 # Realizar pedidos de instantáneas
 
 Para crear instantáneas de su volumen de almacenamiento, automática o manualmente, necesita adquirir espacio para mantenerlas. Puede adquirir capacidad hasta la cantidad de su volumen de almacenamiento (durante la adquisición del volumen inicial o posteriormente siguiendo estos pasos).
 
-1. Acceda a su Almacenamiento mediante el separador **Almacenamiento** > **{{site.data.keyword.filestorage_short}}** del [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}
-2. En el marco **Instantáneas**, pulse **Añadir espacio de instantáneas**.
-3. En el marco **Instantáneas**, pulse **Adquirir ahora espacio de instantáneas**.
-3. Seleccione la cantidad de espacio que necesita.
-4. Pulse **Continuar**.
-5. Especifique cualquier código promocional que tenga y pulse **Recalcular**. Las opciones **Cargos para este pedido** y **Revisión del pedido** contienen valores predeterminados.
-6. Marque el recuadro de selección **He leído el Acuerdo de servicio maestro…** y pulse **Realizar pedido**. El espacio de instantáneas se suministrará en unos minutos.
+1. Inicie sesión en la [consola de IBM Cloud](https://console.bluemix.net/catalog/){:new_window} y pulse en el icono **Menú** en la parte superior izquierda. Seleccione **Infraestructura clásica**. 
+
+   Alternativamente, puede iniciar sesión en el [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
+2. Acceda al almacenamiento mediante **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**.
+3. Pulse en **Cambiar espacio de la instantánea** en el marco Instantáneas.
+4. Seleccione la cantidad de espacio que necesita y el método de pago.
+5. Pulse **Continuar**.
+6. Especifique cualquier código promocional que tenga y pulse **Recalcular**. Las opciones **Cargos para este pedido** y **Revisión del pedido** contienen valores predeterminados.
+7. Marque el recuadro de selección **He leído el Acuerdo de servicio maestro y acepto sus condiciones** y pulse en **Realizar pedido**. El espacio de instantáneas se suministrará en unos minutos.
 
 ## Determinación de la cantidad de espacio de instantáneas que se debe pedir
 
@@ -27,7 +31,9 @@ Como norma general, el espacio de instantáneas que utilizan las instantáneas s
 - Cuánto tiempo tiene previsto retener las instantáneas.  
 
 La forma de calcular la cantidad de espacio que necesita es **(Tasa de Cambio)** x **(número de horas/días/semanas/meses que se retienen los datos)**.  
-> **Nota**: La primera instantánea utiliza una cantidad insignificante de espacio porque solo es una copia de los metadatos (punteros) que indica los bloques del sistema de archivos activo. 
+
+La primera instantánea utiliza una cantidad insignificante de espacio porque solo es una copia de los metadatos (punteros) que indica los bloques del sistema de archivos activo.
+{:note}
 
 Un volumen con muchos cambios y un periodo largo de retención necesita más espacio que un volumen con una cantidad moderada de cambios y una planificación de retención moderada. Un ejemplo para el primer tipo es una base de datos de tasas de cambio alta. Un ejemplo para el segundo tipo es un almacén de datos VMware.
 

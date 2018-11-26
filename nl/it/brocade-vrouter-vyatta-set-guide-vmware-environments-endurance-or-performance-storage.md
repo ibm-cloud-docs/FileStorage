@@ -2,10 +2,13 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-08-22"
+lastupdated: "2018-10-31"
 
 ---
 {:new_window: target="_blank"}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 
 # Configurazione di Brocade vRouter (Vyatta) per gli ambienti VMware con {{site.data.keyword.filestorage_short}}
 

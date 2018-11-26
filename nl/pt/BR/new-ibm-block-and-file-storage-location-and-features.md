@@ -2,24 +2,28 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-15"
+lastupdated: "2018-10-31"
 
 ---
 {:new_window: target="_blank"}
+ {:tip: .tip}
+ {:note: .note}
+ {:important: .important}
 
 # Novos locais e recursos do {{site.data.keyword.filestorage_short}}
 
 O {{site.data.keyword.BluSoftlayer_full}} está introduzindo uma nova versão do
 {{site.data.keyword.filestorage_full}}. O novo armazenamento está disponível em data centers selecionados é suportado pelo armazenamento flash a níveis de IOPS mais altos com criptografia para dados em repouso no nível de disco. Todo o armazenamento pedido nos data centers selecionados são criados automaticamente com a nova versão do {{site.data.keyword.filestorage_short}}.
 
-**Nota:** o ponto de montagem do NFS para novos volumes mudou. Veja a seção **Novo ponto de montagem para volumes aprimorados do {{site.data.keyword.filestorage_short}}** para obter detalhes.
+O ponto de montagem NFS para novos volumes foi mudado. Consulte a seção [Novo ponto de montagem para volumes aprimorados do {{site.data.keyword.filestorage_short}}](#new-mount-point-for-enhanced-file-storage-volumes) para obter detalhes.
+{:important}
 
 O novo {{site.data.keyword.filestorage_short}} está disponível nas regiões/data centers a seguir com mais disponibilidade do data center incluída em breve.
 
 <table role="presentation">
   <tr>
     <td><strong>EUA 2</strong></td>
-    <td><strong>União Europeia (UE)</strong></td>
+    <td><strong>UE</strong></td>
     <td><strong>Austrália</strong></td>
     <td><strong>Canadá</strong></td>
     <td><strong>América Latina</strong></td>
@@ -94,3 +98,4 @@ O novo armazenamento tem os seguintes recursos e capacidades:
 Todos os volumes aprimorados do {{site.data.keyword.filestorage_short}} provisionados nesses data centers têm um ponto de montagem diferente de volumes não criptografados. Para assegurar-se de que esteja usando o ponto de montagem correto para seus volumes de armazenamento, é possível visualizar as informações de ponto de montagem na página **Detalhes do volume** na IU. Também é possível acessar o ponto de montagem correto por meio de uma chamada API: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 
 Consulte esta página novamente para ver quando mais data centers serão submetidos a upgrade e os novos recursos e capacidades que estão sendo incluídos no {{site.data.keyword.filestorage_short}}.
+{:tip}

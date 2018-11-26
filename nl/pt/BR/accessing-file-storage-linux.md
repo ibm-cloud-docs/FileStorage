@@ -2,11 +2,14 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-08-17"
+lastupdated: "2018-10-31"
 
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 
 # Montando o {{site.data.keyword.filestorage_short}} no Linux
 
@@ -19,25 +22,26 @@ Primeiro, certifique-se de que o host que acessará o volume do {{site.data.keyw
 
 Use estas instruções para conectar uma instância de Cálculo do {{site.data.keyword.BluSoftlayer_full}} baseada em Linux a um compartilhamento do Network File System (NFS). O exemplo é baseado no Red Hat Enterprise Linux 6. As etapas podem ser ajustadas para outras distribuições do Linux de acordo com a documentação do fornecedor do sistema operacional (OS).
 
->**Nota** - O ponto de montagem da instância do File Storage pode ser obtido da página de listagem do {{site.data.keyword.filestorage_short}} ou por meio de uma chamada API - `SoftLayer_Network_Storage::getNetworkMountAddress()`.
+O ponto de montagem da instância de armazenamento de arquivo pode ser obtido por meio da página de listagem do {{site.data.keyword.filestorage_short}} ou por meio de uma chamada API - `SoftLayer_Network_Storage::getNetworkMountAddress()`.
+{:tip}
 
 1. Instale os pacotes / ferramentas necessários.
    ```
    # yum -y install nfs-utils nfs-utils-lib
    ```
    {:pre}
-    
+
 2. Monte o compartilhamento remoto.
    ```
    # mount -t "nfs version" -o "options" <mount_point> /mnt
    ```
-       
+
    Exemplo
    ```
    # mount -t nfs4 -o hard,intr
    nfsdal0501a.service.softlayer.com:/IBM01SV278685_7 /mnt
    ```
- 
+
 3. Verifique se a montagem foi bem-sucedida.
    ```
    # df -h
@@ -46,7 +50,7 @@ Use estas instruções para conectar uma instância de Cálculo do {{site.data.k
    tmpfs 1.9G 0 1.9G 0% /dev/shm
    /dev/xvda1 97M 51M 42M 55%
    ```
-    
+
 4. Acesse o ponto de montagem e os arquivos de leitura/gravação.
    ```
    # touch /mnt/test
@@ -57,35 +61,37 @@ Use estas instruções para conectar uma instância de Cálculo do {{site.data.k
    -rw-r--r-- 1 nobody nobody 0 Sep 8 15:52 test
    ```
 
-   >**Nota** - Os arquivos criados pela raiz têm a propriedade de `nobody:nobody`. Para exibir a propriedade corretamente, o `idmapd.conf` precisa ser atualizado com as configurações de domínio corretas. Consulte a seção **Como implementar no_root_squash para o NFS**.
-    
+   Os arquivos criados pela raiz têm a propriedade de `nobody:nobody`. Para exibir a propriedade corretamente, o `idmapd.conf` precisa ser atualizado com as configurações de domínio corretas. Consulte a seção [Como implementar no_root_squash para o NFS](#implementing-no_root_squash-for-nfs-optional-).
+   {:tip}
+
 5. Monte o compartilhamento remoto no início. Para concluir a configuração, edite a tabela de sistemas de arquivos (`/etc/fstab`) para incluir o compartilhamento remoto na lista de entradas montadas automaticamente na inicialização:
 
    ```
    (hostname):/(username) /mnt "nfs version" "options" 0 0
    ```
-    
+
    Exemplo
-    
+
    ```
    nfsdal0501a.service.softlayer.com:/IBM01SV278685_7 /mnt nfs4 defaults,hard,intr 0 0
    ```
-    
+
 6. Verifique se o arquivo de configuração não tem erros.
 
    ```
    # mount -fav
    ```
    {:pre}
-    
+
    Se o comando for concluído sem erros, sua configuração estará completa.
 
-   >**Nota** - Se estiver usando o NFS 4.1, inclua `sec=sys` no comando de montagem para evitar problemas de propriedade do arquivo.
+   Se você estiver usando o NFS 4.1, inclua `sec=sys` no comando de montagem para evitar problemas de propriedade do arquivo.
+   {:tip}
 
- 
+
 ## Implementando  ` no_root_squash `  para NFS (opcional)
 
-A configuração de `no_root_squash` permite que os clientes raiz retenham permissões raiz no compartilhamento do NFS. 
+A configuração de `no_root_squash` permite que os clientes raiz retenham permissões raiz no compartilhamento do NFS.
 - Para o NFSv3, os clientes não precisam fazer nada; `no_root_squash` funciona.
 - Para o NFSv4, é necessário configurar o domínio nfsv4 como: `slnfsv4.com` e iniciar `rpcidmapd` ou um serviço semelhante usado por seu S.O.
 
@@ -104,7 +110,7 @@ Exemplo
    Nobody-User = nobody
    Nobody-Group = nobody
    ```
-    
+
 2. Execute `nfsidmap -c`.
 3. Inicie o `rpcidmapd`.
    ```

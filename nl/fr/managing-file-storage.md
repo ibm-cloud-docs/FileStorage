@@ -2,10 +2,13 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-09-26"
+lastupdated: "2018-10-31"
 
 ---
 {:new_window: target="_blank"}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 
 
 # Gestion de {{site.data.keyword.filestorage_short}}
@@ -14,14 +17,14 @@ Vous pouvez gérer vos volumes {{site.data.keyword.filestorage_full}} via le por
 
 ## Autorisation des hôtes pour l'accès à {{site.data.keyword.filestorage_short}}
 
-Les hôtes "autorisés" sont des hôtes auxquels des droits d'accès à un volume spécifique ont été accordés. Sans autorisation d'hôte, vous ne pouvez pas accéder au stockage ni l'utiliser depuis votre système. L'autorisation d'un hôte pour l'accès à votre volume génère le nom d'utilisateur et le mot de passe. 
+Les hôtes "autorisés" sont des hôtes auxquels des droits d'accès à un volume spécifique ont été accordés. Sans autorisation d'hôte, vous ne pouvez pas accéder au stockage ni l'utiliser depuis votre système. L'autorisation d'un hôte pour l'accès à votre volume génère le nom d'utilisateur et le mot de passe.
 
-**Remarque** : vous pouvez autoriser et connecter des hôtes qui se trouvent dans le même centre de données que votre stockage. Néanmoins, si vous disposez de plusieurs comptes, vous ne pouvez pas autoriser un hôte d'un autre compte à accéder à votre stockage sur un autre compte. 
+Vous pouvez autoriser et connecter des hôtes qui se trouvent dans le même centre de données que votre stockage. Si vous pouvez disposer de plusieurs comptes, vous ne pouvez pas autoriser un hôte à partir d'un compte à accéder à votre stockage sur un autre compte.{:important}
 
 1. Cliquez sur **Stockage** > **{{site.data.keyword.filestorage_short}}**, puis sur **Nom de volume**.
 2. Faites défiler l'écran jusqu'à la section **Hôtes autorisés** de la page.
 3. Cliquez sur **Hôte autorisé** sur le côté droit. Sélectionnez les hôtes qui peuvent accéder à ce volume en particulier.
- 
+
 
 ## Affichage de la liste des hôtes autorisés à accéder à un volume {{site.data.keyword.filestorage_short}}
 
@@ -49,23 +52,22 @@ Vous pouvez vous reporter aux informations relatives aux points de montage fourn
 
 ## Révocation de l'accès d'un hôte à {{site.data.keyword.filestorage_short}}
 
-Si vous souhaitez ne plus autoriser un hôte à accéder à un volume de stockage en particulier, vous pouvez révoquer l'accès. Lorsque l'accès est révoqué, la connexion à l'hôte est retirée du volume. Le système d'exploitation et les applications ne peuvent plus communiquer avec le volume. 
+Si vous souhaitez ne plus autoriser un hôte à accéder à un volume de stockage en particulier, vous pouvez révoquer l'accès. Lorsque l'accès est révoqué, la connexion à l'hôte est retirée du volume. Le système d'exploitation et les applications ne peuvent plus communiquer avec le volume.
 
-**Remarque** : pour éviter les problèmes côté hôte, démontez le volume de stockage de votre système d'exploitation avant de révoquer l'accès afin de prévenir tout incident lié à des unités manquantes ou à l'altération des données.
+Pour empêcher tout problème côté hôte, démontez le volume de stockage de votre système d'exploitation avant de révoquer l'accès afin de prévenir tout incident lié à des unités manquantes ou à l'altération des données.{:important}
 
 Vous pouvez révoquer l'accès à partir de Stockage dans la Liste des unités ou dans les vues Stockage.
 
 ### Révocation de l'accès à partir de la liste des unités
 
-1. Cliquez sur **Unités** > **Liste des unités** dans le portail [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}. 
+1. Cliquez sur **Unités** > **Liste des unités** dans le portail [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
 2. Cliquez deux fois sur l'unité appropriée.
 3. Sélectionnez l'onglet **Stockage**.
 4. La liste des volumes de stockage auxquels cet hôte particulier a accès s'affiche (les volumes sont regroupés par type de stockage : bloc, fichier, autre). Sélectionnez le menu **Action** adéquat en regard du volume pour lequel vous souhaitez révoquer l'accès et cliquez sur **Révoquer le droit d'accès**.
 5. Confirmez que vous souhaitez révoquer l'accès à un volume car cette action ne peut pas être annulée. Cliquez sur **Oui** pour révoquer l'accès au volume ou sur **Non** pour annuler l'action.
 
-**Remarque** : si vous souhaitez déconnecter plusieurs volumes d'un hôte spécifique, vous devez répéter l'action Révoquer le droit d'accès pour chaque volume.
+Si vous souhaitez déconnecter plusieurs volumes d'un hôte spécifique, vous devez répéter l'action Révoquer le droit d'accès pour chaque volume.{:tip}
 
- 
 
 ### Révocation de l'accès à partir de la vue Stockage
 
@@ -74,8 +76,8 @@ Vous pouvez révoquer l'accès à partir de Stockage dans la Liste des unités o
 3. Cliquez sur **Actions** en regard de l'hôte dont l'accès doit être révoqué et sélectionnez **Révoquer le droit d'accès**.
 4. Confirmez que vous souhaitez révoquer l'accès à un volume car cette action ne peut pas être annulée. Cliquez sur **Oui** pour révoquer l'accès au volume ou sur **Non** pour annuler l'action.
 
-**Remarque :** si vous souhaitez déconnecter plusieurs hôtes d'un volume spécifique, vous devez répéter l'action Révoquer le droit d'accès pour chaque hôte.
- 
+Si vous souhaitez déconnecter plusieurs hôtes d'un volume spécifique, vous devez répéter l'action Révoquer le droit d'accès pour chaque hôte.{:tip}
+
 
 ## Annulation d'un volume de stockage
 
@@ -84,6 +86,7 @@ Si vous n'avez plus besoin d'un volume spécifique, vous pouvez l'annuler. Pour 
 1. Cliquez sur **Stockage**>**{{site.data.keyword.filestorage_short}}**.
 2. Cliquez sur **Actions** correspondant au volume à annuler et sélectionnez **Annuler {{site.data.keyword.filestorage_short}}**.
 3. Confirmez l'annulation du volume de manière immédiate ou à la date anniversaire de la mise à disposition du volume.
-   >**Remarque** : si vous sélectionnez l'option d'annulation du volume à sa date anniversaire, vous pouvez annuler la demande d'annulation avant la date anniversaire.
-4. Cliquez sur **Continuer** ou sur **Fermer**. 
+
+   Si vous sélectionnez l'option d'annulation du volume à sa date anniversaire, vous pouvez annuler la demande d'annulation avant sa date anniversaire.{:tip}
+4. Cliquez sur **Continuer** ou sur **Fermer**.
 5. Cochez la case d'accusé de réception et cliquez sur **Confirmer**.

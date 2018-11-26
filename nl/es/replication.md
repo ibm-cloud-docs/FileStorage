@@ -2,20 +2,24 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-15"
+lastupdated: "2018-10-31"
 
 ---
 
 {:new_window: target="_blank"}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 
-# Replicación de datos
+
+# Réplica de datos
 
 La réplica utiliza una de sus planificaciones de instantáneas para copiar automáticamente las instantáneas a un volumen de destino de un centro de datos remoto. Las copias se pueden recuperar en el sitio remoto si se produce un suceso catastrófico o los datos resultan dañados.
 
-Con las réplicas, puede
+Con las réplicas puede recuperarse rápidamente de fallos del sitio y otros desastres. En caso de emergencia, puede realizar una migración tras error al volumen de destino y acceder a los datos de la copia DR desde un punto específico en el tiempo. Para obtener más información, consulte [Duplicación de volúmenes de réplica para la recuperación tras desastre](disaster-recovery.html).
 
-- Recuperarse rápidamente de fallos del sitio y otros desastres realizando la migración al volumen de destino.
-- Realizar una migración tras error a un punto específico en el tiempo en la copia de recuperación tras desastre.
+La réplica mantiene sus datos sincronizados entre dos ubicaciones distintas. Si solamente desea clonar el volumen y utilizarlo independientemente del volumen original, consulte [Creación de un volumen de archivos duplicado](how-to-create-duplicate-volume.html).
+{:tip}
 
 Antes de poder replicar, debe crear una planificación de instantáneas. Cuando realiza la migración tras error, está "cambiando el conmutador" de su volumen de almacenamiento del centro de datos primario al volumen de destino del centro de datos remoto. Por ejemplo, su centro de datos primario es Londres y el centro de datos secundario es Ámsterdam. Si se produjera un suceso de error, debería realizar la migración a Ámsterdam, conectando al ahora volumen primario desde una instancia de cálculo en Ámsterdam. Cuando su volumen de Londres se haya reparado, se realizará una instantánea del volumen de Ámsterdam para volver a Londres y al volumen primario de nuevo desde una instancia de cálculo de Londres.
 
@@ -29,7 +33,7 @@ Consulte la Tabla 1 para ver la lista completa de disponibilidad de centros de d
   <caption style="text-align: left;"><p>Tabla 1: esta tabla muestra la lista completa de centros de datos con funciones mejoradas en cada región. Cada región está en una columna separada. Algunas ciudades, como Dallas, San José, Washington DC, Ámsterdam, Frankfurt, Londres y Sídney, tienen varios centros de datos.</p>
   <p>&#42; Los centros de datos de la región EE.UU. 1 NO tienen almacenamiento mejorado. Los hosts de los centros de datos con funciones mejoradas de almacenamiento <strong>no pueden</strong> iniciar la réplica con destinos de réplica en los centros de datos de EE.UU. 1.</p>
   </caption>
-    <thead>
+  <thead>
     <tr>
       <th>EE.UU. 1 &#42;</th>
       <th>EE.UU. 2</th>
@@ -100,7 +104,6 @@ Consulte la Tabla 1 para ver la lista completa de disponibilidad de centros de d
   </tbody>
 </table>
 
-
 ## Creación de la réplica inicial
 
 Las réplicas se basan en una planificación de réplica. Primero debe tener un espacio de instantáneas y una planificación de instantáneas para el volumen de origen antes de poder replicar. Si intenta configurar la réplica y uno o el otro no está en su lugar, se le solicitará que compre más espacio o que establezca una planificación. Las réplicas se gestionan en **Almacenamiento** > **{{site.data.keyword.filestorage_short}}** en el [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
@@ -108,7 +111,9 @@ Las réplicas se basan en una planificación de réplica. Primero debe tener un 
 1. Pulse el volumen de almacenamiento.
 2. Pulse **Réplica** y pulse **Adquirir una réplica**.
 3. Seleccione la planificación de instantáneas existente que quiera que siga su réplica. La lista contiene todas las planificaciones de instantáneas activas. <br />
-   >**Nota**: Solo puede seleccionar una planificación, incluso si tiene una combinación de por hora, a diario y mensual. Todas las instantáneas capturadas desde el ciclo de réplica anterior se replicarán, independientemente de la planificación que las originó.<br />Si no tiene configuradas las instantáneas, se le solicitará que lo haga para poder solicitar una réplica. Consulte [Trabajar con instantáneas](snapshots.html) para obtener más detalles.
+
+   Solo puede seleccionar una planificación, incluso si tiene una combinación de por hora, a diario y mensual. Todas las instantáneas capturadas desde el ciclo de réplica anterior se replicarán, independientemente de la planificación que las originó.<br />Si no tiene configuradas las instantáneas, se le solicitará que lo haga para poder solicitar una réplica. Para obtener más información, consulte [Trabajar con instantáneas](snapshots.html).
+   {:tip}
 3. Pulse **Ubicación** y seleccione el centro de datos que es su sitio de recuperación tras desastre.
 4. Pulse **Continuar**.
 5. Especifique un **Código promocional** si tiene uno y pulse **Recalcular**. Los otros campos de la ventana se completan de forma predeterminada.
@@ -161,7 +166,7 @@ Los hosts y volúmenes autorizados deben estar en el mismo centro de datos. No p
 1. Pulse el volumen de origen o de destino en la página de **{{site.data.keyword.filestorage_short}}**.
 2. Pulse **Réplica**.
 3. Desplácese hacia abajo hasta el marco **Autorizar hosts** y pulse **Autorizar hosts** en la parte derecha.
-4. Marque el host que se va a autorizar para las réplicas. Para seleccionar varios hosts, utilice la tecla CTRL y pulse los hosts aplicables.
+4. Marque el host que se va a autorizar para las réplicas. Para seleccionar varios hosts, utilice la tecla Control y pulse los hosts aplicables.
 5. Pulse **Enviar**. Si no tiene ningún host, se le solicitará comprar recursos de cálculo en el mismo centro de datos.
 
 
@@ -169,7 +174,7 @@ Los hosts y volúmenes autorizados deben estar en el mismo centro de datos. No p
 
 Los tamaños de volumen deben ser los mismos para sus volúmenes de almacenamiento primario y de réplica. No puede haber uno mayor que otro. Cuando aumenta el espacio de instantáneas para su volumen primario, el espacio de réplica se aumenta automáticamente. El aumento del espacio de instantáneas desencadena una actualización de réplica inmediata. El aumento en ambos volúmenes se muestra como elementos de línea en su factura, y se prorratea en caso necesario.
 
-Pulse [aquí](snapshots.html) para obtener información sobre cómo aumentar el espacio de instantáneas.
+Para obtener más información sobre cómo incrementar el espacio para instantáneas, consulte [Instantáneas](snapshots.html).
 
 
 ## Inicio de una migración tras error desde un volumen a su réplica
@@ -178,12 +183,15 @@ Si se produce un suceso de error, puede iniciar una **migración tras error** al
 
 Las migraciones tras error se inician en **Almacenamiento**, **{{site.data.keyword.filestorage_short}}** en el [[{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
 
-**Antes de continuar con estos pasos, desconecte el volumen. De lo contrario, dará lugar a la pérdida de datos o a que estos puedan resultar dañados.**
+Antes de continuar con estos pasos, desconecte el volumen. De lo contrario, dará lugar a la pérdida de datos o a que estos resulten dañados.
+{:important}
 
 1. Pulse el volumen activo (“origen”).
 2. En la parte superior derecha, pulse **Réplica** y pulse **Acciones**.
-3. Seleccione **Migración tras error**. 
-   >Recibirá un mensaje que indicará que la migración tras error está en curso. También aparecerá un icono junto al volumen en **{{site.data.keyword.filestorage_short}}** que indicará que hay una transacción activa en curso. Al pasar el ratón sobre el icono se abre una ventana que muestra la transacción. El icono desaparecerá una vez completada la transacción. Durante el proceso de migración tras error, las acciones relacionadas con la configuración son de solo lectura. No puede editar ninguna planificación de instantáneas ni cambiar el espacio de instantáneas. El suceso se registra en el historial de réplicas.<br/> Cuando el volumen de destino está activo, obtiene otro mensaje. El Nombre de LUN de su volumen de origen original se actualiza para finalizar en "REP" y su Estado pasa a ser Inactivo.
+3. Seleccione **Migración tras error**.
+
+   Recibirá un mensaje que indicará que la migración tras error está en curso. También aparecerá un icono junto al volumen en **{{site.data.keyword.filestorage_short}}** que indicará que hay una transacción activa en curso. Al pasar el ratón sobre el icono se abre una ventana que muestra la transacción. El icono desaparecerá una vez completada la transacción. Durante el proceso de migración tras error, las acciones relacionadas con la configuración son de solo lectura. No puede editar ninguna planificación de instantáneas ni cambiar el espacio de instantáneas. El suceso se registra en el historial de réplicas.<br/> Cuando el volumen de destino está activo, obtiene otro mensaje. El Nombre de LUN de su volumen de origen original se actualiza para finalizar en "REP" y su Estado pasa a ser Inactivo.
+   {:note}
 4. Pulse **Ver todos ({{site.data.keyword.filestorage_short}})**.
 5. Pulse el volumen activo (anteriormente volumen de destino). Este volumen tiene ahora un estado **Activo**.
 6. Monte y conecte el volumen de almacenamiento al host. Pulse [aquí](provisioning-file-storage.html) para obtener instrucciones.
@@ -206,7 +214,9 @@ Los restablecimientos se inician en **Almacenamiento**, **{{site.data.keyword.fi
 1. Pulse el volumen activo ("destino").
 2. En la parte superior derecha, pulse **Réplica** y pulse **Acciones**.
 3. Seleccione **Restablecimiento**.
-   >Recibirá un mensaje que indicará que la migración tras error está en curso. También aparecerá un icono junto al volumen en **{{site.data.keyword.filestorage_short}}** que indicará que hay una transacción activa en curso. Al pasar el ratón sobre el icono se abre una ventana que muestra la transacción. El icono desaparecerá una vez completada la transacción. Durante el proceso de retrotracción, las acciones relacionadas con la configuración son de solo lectura. No puede editar ninguna planificación de instantáneas ni cambiar el espacio de instantáneas. El suceso se registra en el historial de réplicas.
+
+   Recibirá un mensaje que indicará que la migración tras error está en curso. También aparecerá un icono junto al volumen en **{{site.data.keyword.filestorage_short}}** que indicará que hay una transacción activa en curso. Al pasar el ratón sobre el icono se abre una ventana que muestra la transacción. El icono desaparecerá una vez completada la transacción. Durante el proceso de retrotracción, las acciones relacionadas con la configuración son de solo lectura. No puede editar ninguna planificación de instantáneas ni cambiar el espacio de instantáneas. El suceso se registra en el historial de réplicas.
+   {:note}
 4. En la parte superior derecha, pulse el enlace **Ver todo {{site.data.keyword.filestorage_short}}**.
 5. Pulse el volumen activo ("origen").
 6. Monte y conecte el volumen de almacenamiento al host. Pulse [aquí](provisioning-file-storage.html) para obtener instrucciones.
