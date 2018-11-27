@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-11-13"
+lastupdated: "2018-11-26"
 
 ---
 {:new_window: target="_blank"}
@@ -95,6 +95,9 @@ The new storage has the following features and capabilities:
 ## New mount point for enhanced {{site.data.keyword.filestorage_short}} volumes
 
 All enhanced {{site.data.keyword.filestorage_short}} volumes that are provisioned in these data centers have a different mount point than non-encrypted volumes. To ensure you're using the correct mount point for both storage volumes, you can view the mount point information in the **Volume Details** page in the console. You can also access the correct mount point through an API call: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
+
+To be able to access all the new features, select `Storage-as-a-Service Package 759` when you place your order through the API. For more information about ordering {{site.data.keyword.filestorage_short}} through the API, see [order_file_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/file.html#SoftLayer.managers.file.FileStorageManager.order_file_volume){:new_window}.
+{:important}
 
 Check back here to see when more data centers are upgraded and for new features and capabilities that are being added for {{site.data.keyword.filestorage_short}}.
 {:tip}
