@@ -21,7 +21,7 @@ You can provision {{site.data.keyword.filestorage_short}} and fine-tune to meet 
 
 1. Log in to [The IBM Cloud catalog](https://console.bluemix.net/catalog/){:new_window} and click **Storage**. Then, select {{site.data.keyword.filestorage_short}}. Click **Create**.
 
-   Alternatively, you can log in to the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} }, click **Storage** > **{{site.data.keyword.filestorage_short}}**. In the upper right, click **Order {{site.data.keyword.filestorage_short}}**.
+   Alternatively, you can log in to the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}, click **Storage** > **{{site.data.keyword.filestorage_short}}**. In the upper right, click **Order {{site.data.keyword.filestorage_short}}**.
 2. Select your deployment **Location** (data center).
    - Ensure that the new Storage is added in the same location as the compute host or hosts that you have.
 3. Billing. If you selected a data center with improved capabilities (marked with an asterisk), you can choose between Monthly or Hourly Billing.
