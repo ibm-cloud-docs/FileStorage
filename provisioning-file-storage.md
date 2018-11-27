@@ -67,7 +67,7 @@ By default, you can provision a combined total of 250 {{site.data.keyword.blocks
 10. Click **Create**. Your new storage allocation is available in a few minutes.
 
 By default, you can provision a combined total of 250 {{site.data.keyword.blockstorageshort}} volumes. To increase the number of your volumes, contact your sales representative. Read about increasing limits [here](managing-storage-limits.html).<br/><br/>For more information about the limit on simultaneous authorizations, see the [FAQs](faqs.html#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-).
-{:important}
+{:tip}
 
 
 ## Connecting your new storage
