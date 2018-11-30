@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-30"
 
 ---
 
@@ -105,7 +105,7 @@ In Tabelle 1 finden Sie die vollständige Liste der verfügbaren Rechenzentren u
 
 ## Erstreplikat erstellen
 
-Replikationen arbeiten nach einem Snapshotplan. Sie müssen zuerst einen Snapshotbereich und einen Snapshotplan für den Quellendatenträger haben, bevor Sie replizieren können. Wenn Sie versuchen, die Replikation zu konfigurieren, und eines dieser beiden Dinge fehlt, werden Sie aufgefordert, mehr Speicherplatz zu kaufen oder einen Zeitplan einzurichten. Replikationen werden unter **Storage** > **{{site.data.keyword.filestorage_short}}** im [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} verwaltet.
+Replikationen arbeiten nach einem Snapshotplan. Sie müssen zuerst einen Snapshotbereich und einen Snapshotplan für den Quellendatenträger haben, bevor Sie replizieren können. Wenn Sie versuchen, die Replikation zu konfigurieren, und eines dieser beiden Dinge fehlt, werden Sie aufgefordert, mehr Speicherplatz zu kaufen oder einen Zeitplan einzurichten. Replikationen werden unter **Storage** > **{{site.data.keyword.filestorage_short}}** im [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} verwaltet.
 
 1. Klicken Sie auf Ihren Speicherdatenträger.
 2. Klicken Sie auf **Replikat** und auf **Replikation kaufen**.
@@ -121,7 +121,7 @@ Replikationen arbeiten nach einem Snapshotplan. Sie müssen zuerst einen Snapsho
 
 ## Vorhandene Replikation bearbeiten
 
-Im [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} auf der Registerkarte **Primär** oder **Replikat** unter **Speicher** > **{{site.data.keyword.filestorage_short}}** können Sie Ihren Replikationsplan bearbeiten und Ihren Replikationsspeicherbereich ändern.
+Im [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} auf der Registerkarte **Primär** oder **Replikat** unter **Speicher** > **{{site.data.keyword.filestorage_short}}** können Sie Ihren Replikationsplan bearbeiten und Ihren Replikationsspeicherbereich ändern.
 
 
 ## Replikationsplan bearbeiten
@@ -180,7 +180,7 @@ Weitere Informationen zum Vergrößern des Snapschotbereichs finden Sie unter [S
 
 Bei einem Fehlerereignis können Sie einen **Failover** auf Ihren Zieldatenträger einleiten. Der Zieldatenträger wird aktiv. Der letzte erfolgreich replizierte Snapshot wird aktiviert und der Datenträger wird zum Anhängen (Mount) aktiviert. Alle Daten, die seit dem letzten Replikationszyklus auf den Quellendatenträger geschrieben wurden, gehen verloren. Beim Start eines Failovers wird die Replikationsbeziehung umgekehrt. Ihr Zieldatenträger wird zum Quellendatenträger und Ihr früherer Quellendatenträger wird zum Zieldatenträger. Dies wird durch den **LUN-Namen** angezeigt, gefolgt von der Zeichenfolge **REP**.
 
-Failoveroperationen werden unter **Speicher** > **{{site.data.keyword.filestorage_short}}** im [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} gestartet.
+Failoveroperationen werden unter **Speicher** > **{{site.data.keyword.filestorage_short}}** im [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} gestartet.
 
 Bevor Sie mit den folgenden Schritten fortfahren, unterbrechen Sie die Verbindung zum Datenträger. Wenn Sie das nicht tun, sind Datenbeschädigungen und/oder Datenverlust die Folge.
 {:important}
@@ -208,7 +208,7 @@ Wenn Ihr ursprünglicher Quellendatenträger repariert ist, können Sie eine ges
 
 Beim Start einer Rückübertragung wird die Replikationsbeziehung wieder umgekehrt. Ihr Quellendatenträger wird als Quellendatenträger wiederhergestellt und Ihr Zieldatenträger ist wieder Ihr Zieldatenträger. Dies wird durch den **LUN-Namen** angezeigt, gefolgt von der Zeichenfolge **REP**.
 
-Rückübertragungen werden unter **Speicher** > **{{site.data.keyword.filestorage_short}}** im [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} gestartet.
+Rückübertragungen werden unter **Speicher** > **{{site.data.keyword.filestorage_short}}** im [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} gestartet.
 
 1. Klicken Sie auf Ihren aktiven Datenträger ("Ziel").
 2. Klicken Sie rechts oben auf **Replikat** und **Aktionen**.

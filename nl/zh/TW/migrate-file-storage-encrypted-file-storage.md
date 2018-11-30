@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-30"
 
 ---
 {:new_window: target="_blank"}
@@ -35,7 +35,7 @@ lastupdated: "2018-10-31"
 
 ### 訂購新的耐久性儲存空間磁區
 
-1. 從 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}，按一下**儲存空間** > **{{site.data.keyword.filestorage_short}}**，或者，從 {{site.data.keyword.BluSoftlayer_full}} 型錄，按一下**基礎架構** > **儲存空間** > **{{site.data.keyword.filestorage_short}}**。
+1. 從 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}，按一下**儲存空間** > **{{site.data.keyword.filestorage_short}}**，或者，從 {{site.data.keyword.BluSoftlayer_full}} 型錄，按一下**基礎架構** > **儲存空間** > **{{site.data.keyword.filestorage_short}}**。
 2. 按一下**訂購 {{site.data.keyword.filestorage_short}}**。
 3. 從**選取儲存空間類型**清單中，選取**耐久性**。
 4. 按一下**位置**，然後選取資料中心。
@@ -49,7 +49,7 @@ lastupdated: "2018-10-31"
 
 ### 訂購加密效能儲存空間磁區
 
-1. 從 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}，按一下**儲存空間**、**{{site.data.keyword.filestorage_short}}**，或者，從 {{site.data.keyword.BluSoftlayer_full}} 型錄，按一下**基礎架構** >** 儲存空間** > **{{site.data.keyword.filestorage_short}}**。
+1. 從 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}，按一下**儲存空間**、**{{site.data.keyword.filestorage_short}}**，或者，從 {{site.data.keyword.BluSoftlayer_full}} 型錄，按一下**基礎架構** >** 儲存空間** > **{{site.data.keyword.filestorage_short}}**。
 2. 按一下**訂購 {{site.data.keyword.filestorage_short}}**。
 3. 從**選取儲存空間類型**清單中，選取**效能**。
 4. 按一下**位置**，然後選取資料中心。

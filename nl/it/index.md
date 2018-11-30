@@ -6,9 +6,11 @@ lastupdated: "2018-10-29"
 
 ---
 {:new_window: target="_blank"}
-{:tip: .tip} 
-{:note: .note} 
+{:tip: .tip}
+{:note: .note}
 {:important: .important}
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
 
 # Introduzione a {{site.data.keyword.filestorage_short}}
 
@@ -43,13 +45,13 @@ Avvaliti delle seguenti funzioni principali di {{site.data.keyword.filestorage_s
 
 ## Fatturazione
 
-Puoi selezionare la fatturazione mensile o oraria per un volume di file. Il tipo di fatturazione selezionato per un LUN si applica al suo spazio per le istantanee e alle sue repliche. Ad esempio, se esegui il provisioning di un LUN con fatturazione oraria, eventuali addebiti di istantanee o replica vengono fatturati in modo orario. Se esegui il provisioning di un LUN con fatturazione mensile, eventuali addebiti di istantanee o replica vengono fatturati in modo mensile. 
+Puoi selezionare la fatturazione mensile o oraria per un volume di file. Il tipo di fatturazione selezionato per un LUN si applica al suo spazio per le istantanee e alle sue repliche. Ad esempio, se esegui il provisioning di un LUN con fatturazione oraria, eventuali addebiti di istantanee o replica vengono fatturati in modo orario. Se esegui il provisioning di un LUN con fatturazione mensile, eventuali addebiti di istantanee o replica vengono fatturati in modo mensile.
 
-Con la **fatturazione oraria**, il numero di ore per cui il volume di file è esistito nell'account viene calcolato quando il LUN viene eliminato oppure alla fine del ciclo di fatturazione, a seconda di quale di queste condizioni si verifichi per prima. La fatturazione oraria è una buona scelta per l'archiviazione utilizzata per qualche giorno o per meno di un mese completo. La fatturazione oraria è disponibile solo per l'archiviazione di cui viene eseguito il provisioning in [data center selezionati](new-ibm-block-and-file-storage-location-and-features.html). 
+Con la **fatturazione oraria**, il numero di ore per cui il volume di file è esistito nell'account viene calcolato quando il LUN viene eliminato oppure alla fine del ciclo di fatturazione, a seconda di quale di queste condizioni si verifichi per prima. La fatturazione oraria è una buona scelta per l'archiviazione utilizzata per qualche giorno o per meno di un mese completo. La fatturazione oraria è disponibile solo per l'archiviazione di cui viene eseguito il provisioning in [data center selezionati](new-ibm-block-and-file-storage-location-and-features.html).
 
-Con la **fatturazione mensile**, il calcolo per il prezzo è a base proporzionale dalla data di creazione alla fine del ciclo di fatturazione e viene fatturato immediatamente. Non è previsto alcun rimborso se un volume viene eliminato prima della fine del ciclo di fatturazione. La fatturazione mensile è una buona scelta per l'archiviazione utilizzata nei carichi di lavoro di produzione che usano dati che devono essere archiviati e a cui bisogna accedere per lunghi periodi di tempo (un mese o più). 
+Con la **fatturazione mensile**, il calcolo per il prezzo è a base proporzionale dalla data di creazione alla fine del ciclo di fatturazione e viene fatturato immediatamente. Non è previsto alcun rimborso se un volume viene eliminato prima della fine del ciclo di fatturazione. La fatturazione mensile è una buona scelta per l'archiviazione utilizzata nei carichi di lavoro di produzione che usano dati che devono essere archiviati e a cui bisogna accedere per lunghi periodi di tempo (un mese o più).
 
- 
+
 **Performance**
 <table>
   <caption>La tabella 1 mostra i prezzi per l'archiviazione Performance con fatturazione mensile e oraria.</caption>
@@ -62,7 +64,7 @@ Con la **fatturazione mensile**, il calcolo per il prezzo è a base proporzional
    <td>$0,0001/GB + $0,0002/IOP</td>
   </tr>
 </table>
- 
+
 **Endurance**
 <table>
   <caption>La tabella 2 mostra i prezzi per l'archiviazione Endurance per ogni livello con le opzioni di fatturazione mensile e oraria.</caption>
@@ -89,15 +91,15 @@ Con la **fatturazione mensile**, il calcolo per il prezzo è a base proporzional
   </tr>
 </table>
 
- 
+
 
 ## Provisioning
 
 È possibile eseguire il provisioning di volumi {{site.data.keyword.filestorage_short}} da 20 GB a 12 TB con due opzioni: <br/>
 - Esegui il provisioning di livelli **Endurance** che offrono livelli di prestazioni predefiniti e funzioni quali le istantanee e la replica.
-- Crea un ambiente **Performance** molto potente con IOPS (input/output operations per second) allocato. 
+- Crea un ambiente **Performance** molto potente con IOPS (input/output operations per second) allocato.
 
- 
+
 ### Provisioning con i livelli Endurance
 
 {{site.data.keyword.filestorage_short}} Endurance è disponibile in quattro livelli di prestazioni IOPS per supportare diverse esigenze applicative. <br />
@@ -111,9 +113,9 @@ Con la **fatturazione mensile**, il calcolo per il prezzo è a base proporzional
 - **10 IOPS per GB** è progettato per i carichi di lavoro più esigenti quali quelli creati dai database NoSQL e l'elaborazione di dati per l'analisi. Questo livello è disponibile solo per l'archiviazione di cui viene eseguito il provisioning fino a 4 TB in [data center selezionati](new-ibm-block-and-file-storage-location-and-features.html).
 
 Sono disponibili fino a 48.000 IOPS con un volume Endurance di 12 TB.
- 
+
 La scelta del livello Endurance corretto per il tuo carico di lavoro è un fattore chiave. È ugualmente importante utilizzare la dimensione blocco, la velocità di connessione Ethernet e il numero di host necessari corretti per ottenere le prestazioni massime. Se qualcuna di queste parti non si allinea con le altre, le ripercussioni sulla velocità effettiva risultante potrebbero essere di notevole entità.
- 
+
 ### Provisioning con Performance
 
 Performance è una classe di {{site.data.keyword.filestorage_short}} progettata per supportare applicazioni a elevato I/O con requisiti di prestazioni chiari che mal si adattano in un livello Endurance. Delle prestazioni prevedibili si raggiungono tramite l'allocazione di IOPS a livello di protocollo ai singoli volumi. È possibile eseguire il provisioning di diversi tassi di IOPS (da 100 a 48.000) con delle dimensioni dell'archiviazione che vanno da 20 GB a 12 TB.
@@ -264,7 +266,7 @@ La velocità della tua connessione Ethernet deve essere superiore a quella effet
 
 Per raggiungere l'IOPS massimo, è necessario che siano implementate delle risorse di rete adeguate. Altre considerazioni includono l'utilizzo della rete privata esternamente al lato archiviazione e host e le regolazioni specifiche per le applicazioni (stack di IP o [profondità di coda](set-host-queue-depth-settings-performance-and-endurance-storage.html) e altre impostazioni).
 
-Il traffico di archiviazione viene incluso nell'utilizzo di rete totale dei server virtuali pubblici. Consulta la [Documentazione Virtual Server](https://console.bluemix.net/docs/vsi/vsi_public.html#public-virtual-servers) per conoscere i limiti che possono essere applicati dal servizio.
+Il traffico di archiviazione viene incluso nell'utilizzo di rete totale dei server virtuali pubblici. Consulta la [Documentazione Virtual Server](https://{DomainName}/docs/vsi/vsi_public.html#public-virtual-servers) per conoscere i limiti che possono essere applicati dal servizio.
 
 **Versione NFS**
 

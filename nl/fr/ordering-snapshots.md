@@ -2,21 +2,23 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-30"
 
 ---
 {:new_window: target="_blank"}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
 
 # Commande d'instantanés
 
 Pour créer des instantanés de votre volume de stockage, que ce soit de manière automatisée ou manuelle, vous devez acheter de l'espace dans lequel les conserver. Vous pouvez acquérir une capacité maximale pouvant atteindre la quantité de votre volume de stockage (lors de l'achat initial du volume ou ultérieurement en suivant les étapes ci-après).
 
-1. Connectez-vous à la [console IBM Cloud](https://console.bluemix.net/catalog/){:new_window} et cliquez sur l'icône **Menu** dans l'angle supérieur gauche. Sélectionnez **Infrastructure classique**. 
+1. Connectez-vous à la [console IBM Cloud](https://{DomainName}/catalog/){:new_window} et cliquez sur l'icône **Menu** dans l'angle supérieur gauche. Sélectionnez **Infrastructure classique**.
 
-   Sinon, vous pouvez aussi vous connecter au portail [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
+   Sinon, vous pouvez aussi vous connecter au portail [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
 2. Accédez à votre stockage via **Stockage** > **{{site.data.keyword.filestorage_short}}**.
 3. Cliquez sur **Modifier l'espace d'instantané** dans le cadre Instantanés.
 4. Sélectionnez la quantité d'espace dont vous avez besoin et la méthode de paiement.

@@ -6,9 +6,11 @@ lastupdated: "2018-10-29"
 
 ---
 {:new_window: target="_blank"}
-{:tip: .tip} 
-{:note: .note} 
+{:tip: .tip}
+{:note: .note}
 {:important: .important}
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
 
 # Introdução ao {{site.data.keyword.filestorage_short}}
 
@@ -43,13 +45,13 @@ Tire vantagem dos recursos principais do {{site.data.keyword.filestorage_short}}
 
 ## Faturamento
 
-É possível selecionar o faturamento por hora ou mensal para um volume de Arquivo. O tipo de faturamento selecionado para um LUN aplica-se a seu espaço de captura instantânea e réplicas. Por exemplo, se você provisionar um LUN com o faturamento por hora, quaisquer capturas instantâneas ou taxas de réplica serão faturadas por hora. Se você provisionar um LUN com faturamento mensal, quaisquer capturas instantâneas ou taxas de réplica serão faturadas mensalmente. 
+É possível selecionar o faturamento por hora ou mensal para um volume de Arquivo. O tipo de faturamento selecionado para um LUN aplica-se a seu espaço de captura instantânea e réplicas. Por exemplo, se você provisionar um LUN com o faturamento por hora, quaisquer capturas instantâneas ou taxas de réplica serão faturadas por hora. Se você provisionar um LUN com faturamento mensal, quaisquer capturas instantâneas ou taxas de réplica serão faturadas mensalmente.
 
-Com o **faturamento por hora**, o número de horas que o volume de Arquivo existiu na conta é calculado no momento em que o LUN é excluído ou no término do ciclo de faturamento, o que vem primeiro. O faturamento por hora é uma boa opção para armazenamento usado por alguns dias ou menos de um mês completo. O faturamento por hora está disponível para o armazenamento provisionado em [data centers selecionados](new-ibm-block-and-file-storage-location-and-features.html) apenas. 
+Com o **faturamento por hora**, o número de horas que o volume de Arquivo existiu na conta é calculado no momento em que o LUN é excluído ou no término do ciclo de faturamento, o que vem primeiro. O faturamento por hora é uma boa opção para armazenamento usado por alguns dias ou menos de um mês completo. O faturamento por hora está disponível para o armazenamento provisionado em [data centers selecionados](new-ibm-block-and-file-storage-location-and-features.html) apenas.
 
-Com o **faturamento mensal**, o cálculo para o preço é rateado da data de criação ao término do ciclo de faturamento e faturado imediatamente. Se um volume for excluído antes do término do ciclo de faturamento, não haverá reembolso. O faturamento mensal é uma boa opção para o armazenamento usado em cargas de trabalho de produção que usam dados que precisam ser armazenados e acessados por longos períodos de tempo (um mês ou mais). 
+Com o **faturamento mensal**, o cálculo para o preço é rateado da data de criação ao término do ciclo de faturamento e faturado imediatamente. Se um volume for excluído antes do término do ciclo de faturamento, não haverá reembolso. O faturamento mensal é uma boa opção para o armazenamento usado em cargas de trabalho de produção que usam dados que precisam ser armazenados e acessados por longos períodos de tempo (um mês ou mais).
 
- 
+
 **Performance**
 <table>
   <caption>A Tabela 1 está mostrando os preços para o armazenamento do Performance com faturamento mensal e por hora.</caption>
@@ -62,7 +64,7 @@ Com o **faturamento mensal**, o cálculo para o preço é rateado da data de cri
    <td>$0,0001/GB + $0,0002/IOP</td>
   </tr>
 </table>
- 
+
 **Endurance**
 <table>
   <caption>A Tabela 2 está mostrando os preços para o armazenamento do Endurance para cada camada com opções de faturamento mensais e por hora.</caption>
@@ -89,15 +91,15 @@ Com o **faturamento mensal**, o cálculo para o preço é rateado da data de cri
   </tr>
 </table>
 
- 
+
 
 ## Fornecimento
 
 Os volumes do {{site.data.keyword.filestorage_short}} podem ser provisionados de 20 GB a 12 TB com duas opções: <br/>
 - Provisiona camadas do **Endurance** que apresentam níveis de desempenho predefinidos e outros recursos, como capturas instantâneas e replicação.
-- Construa um ambiente **Performance** de alta potência com input/output operations per second (IOPS) alocado. 
+- Construa um ambiente **Performance** de alta potência com input/output operations per second (IOPS) alocado.
 
- 
+
 ### Provisionando com Camadas de Endurance
 
 O {{site.data.keyword.filestorage_short}} Endurance está disponível em quatro camadas de desempenho do IOPS para suportar necessidades de aplicativo variadas. <br />
@@ -111,9 +113,9 @@ O {{site.data.keyword.filestorage_short}} Endurance está disponível em quatro 
 - **10 IOPS por GB** é projetado para as cargas de trabalho mais exigentes, como aquelas criadas por bancos de dados NoSQL, e para processamento de dados para Analytics. Essa camada está disponível para o armazenamento provisionado até 4 TB em [data centers selecionados](new-ibm-block-and-file-storage-location-and-features.html) apenas.
 
 Até 48.000 IOPS estão disponíveis com um volume do Endurance de 12 TB.
- 
+
 A escolha da camada correta do Endurance é essencial para sua carga de trabalho. É igualmente importante usar o tamanho de bloco, a velocidade de conexão Ethernet e o número de hosts corretos necessários para alcançar o máximo desempenho. Se alguma dessas partes não se alinhar, poderá haver um impacto significativo no rendimento resultante.
- 
+
 ### Provisionando com Desempenho
 
 Performance é uma classe do {{site.data.keyword.filestorage_short}} projetada para suportar aplicativos de alta E/S com requisitos de desempenho entendidos que não se ajustam bem em uma camada do Endurance. O desempenho previsível é alcançado por meio da alocação de IOPS de nível de protocolo para volumes individuais. Várias taxas de IOPS (100 - 48.000) podem ser provisionadas com tamanhos de armazenamento que variam de 20 GB a 12 TB.
@@ -265,7 +267,7 @@ A velocidade da sua conexão Ethernet deve ser mais rápida do que o rendimento 
 
 Para alcançar o IOPS máximo, recursos de rede adequados precisam estar em vigor. Outras considerações incluem o uso de rede privada fora do armazenamento e do lado do host, além de ajustes específicos do aplicativo (pilha de IP ou [profundidades de fila](set-host-queue-depth-settings-performance-and-endurance-storage.html) e outras configurações).
 
-O tráfego de armazenamento é incluído no uso total de rede de Virtual Servers Públicos. Consulte a [documentação do Virtual Server](https://console.bluemix.net/docs/vsi/vsi_public.html#public-virtual-servers) para entender os limites que podem ser impostos pelo serviço.
+O tráfego de armazenamento é incluído no uso total de rede de Virtual Servers Públicos. Consulte a [documentação do Virtual Server](https://{DomainName}/docs/vsi/vsi_public.html#public-virtual-servers) para entender os limites que podem ser impostos pelo serviço.
 
 ** Versão do NFS **
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-01"
+lastupdated: "2018-11-30"
 
 ---
 
@@ -10,17 +10,19 @@ lastupdated: "2018-11-01"
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
 
 
 # 災害復旧用レプリカ・ボリュームの複製
 
-1 次サイトの停止を引き起こす致命的な障害または災害が発生した場合、お客様は以下の操作を実行して 2 次サイトのデータにすぐにアクセスすることができます。 
+1 次サイトの停止を引き起こす致命的な障害または災害が発生した場合、お客様は以下の操作を実行して 2 次サイトのデータにすぐにアクセスすることができます。
 
 ## 2 次サイトにあるレプリカ・ボリュームの複製を使用するフェイルオーバー
 
-1. [IBM Cloud コンソール](https://console.bluemix.net/catalog/){:new_window}にログインして、左上にある**「メニュー」**アイコンをクリックします。**「クラシック・インフラストラクチャー」**を選択します。 
+1. [IBM Cloud コンソール](https://{DomainName}/catalog/){:new_window}にログインして、左上にある**「メニュー」**アイコンをクリックします。**「クラシック・インフラストラクチャー」**を選択します。
 
-   あるいは、[{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}にログインします。
+   あるいは、[{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}にログインします。
 2. **「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**をクリックします。
 3. リストからファイル共有のレプリカをクリックして、その**「詳細」**ページを表示します。
 4. **「詳細」**ページでスクロールダウンして既存のスナップショットを選択し、**「アクション」**>**「重複」**をクリックします。
@@ -34,16 +36,16 @@ lastupdated: "2018-11-01"
 
 元の 1 次サイトに実動環境を戻す場合は、以下の手順を行う必要があります。
 
-1. [IBM Cloud コンソール](https://console.bluemix.net/catalog/){:new_window}にログインして、左上にある**「メニュー」**アイコンをクリックします。**「クラシック・インフラストラクチャー」**を選択します。 
+1. [IBM Cloud コンソール](https://{DomainName}/catalog/){:new_window}にログインして、左上にある**「メニュー」**アイコンをクリックします。**「クラシック・インフラストラクチャー」**を選択します。
 
-   あるいは、[{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}にログインします。
+   あるいは、[{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}にログインします。
 2. **「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**をクリックします。
-3. LUN 名をクリックし、スナップショット・スケジュールを作成します (まだ存在しない場合)。 
+3. LUN 名をクリックし、スナップショット・スケジュールを作成します (まだ存在しない場合)。
 
    スナップショット・スケジュールについて詳しくは、[スナップショットの管理](working-with-snapshots.html#adding-a-snapshot-schedule)を参照してください。
    {:tip}
 4. **「レプリカ」**をクリックし、**「レプリケーションの購入 (Purchase a replication)」**をクリックします。
-5. レプリケーションに使用する既存のスナップショット・スケジュールを選択します。 リストに、アクティブなすべてのスナップショット・スケジュールが示されます。 
+5. レプリケーションに使用する既存のスナップショット・スケジュールを選択します。 リストに、アクティブなすべてのスナップショット・スケジュールが示されます。
 6. **「場所」**をクリックして、元の実動場所であったデータ・センターを選択します。
 7. **「次へ進む (Continue)」**をクリックします。
 8. **「マスター・サービス契約を読み…」**チェック・ボックスをクリックし、**「注文する」**をクリックします。

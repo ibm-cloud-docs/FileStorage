@@ -2,17 +2,19 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-30"
 
 ---
 {:new_window: target="_blank"}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
 
 # {{site.data.keyword.filestorage_short}} を使用する VMware 環境の Brocade vRouter (Vyatta) のセットアップ
 
-{{site.data.keyword.filestorage_full}} を使用する VMware 環境内で、Brocade vRouter (Vyatta) アプライアンスを高可用性 (HA) 構成にすることができます。 以下の情報と[拡張単一サイト VMware のリファレンス・アーキテクチャー](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}を使用して、これらのストレージ・オプションのいずれかをVMware 環境にセットアップできます。
+{{site.data.keyword.filestorage_full}} を使用する VMware 環境内で、Brocade vRouter (Vyatta) アプライアンスを高可用性 (HA) 構成にすることができます。 以下の情報と[拡張単一サイト VMware のリファレンス・アーキテクチャー](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}を使用して、これらのストレージ・オプションのいずれかをVMware 環境にセットアップできます。
 
 Brocade vRouter (Vyatta) ゲートウェイは、お客様の環境のゲートウェイとルーターとして機能し、サブネットで構成される複数のゾーンが含まれています。 ゾーン間で通信できるように、ゾーンの間にファイアウォール・ルールを設定します。 他のゾーンと通信する必要がないゾーンにはファイアウォール・ルールは不要です。
 
@@ -355,7 +357,7 @@ save
 
 Brocade vRouter (Vyatta) でゾーンとファイアウォール・ルールがセットアップされたら、VLAN をそれに関連付け、Brocade vRouter (Vyatta) を経由した VLAN のルーティングを有効にする必要があります。
 
-1. [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}にログインして、**「ネットワーク」>「ゲートウェイ・アプライアンス」**をクリックし、Brocade vRouter (Vyatta) をクリックします。
+1. [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}にログインして、**「ネットワーク」>「ゲートウェイ・アプライアンス」**をクリックし、Brocade vRouter (Vyatta) をクリックします。
 2. **「VLAN」**を選択し、**「関連付け」**をクリックします。
 4. **「関連付けられた VLAN」**で VLAN を見つけ、それぞれの横にあるボックスにチェック・マークを付けます。
 5. **「一括アクション」**ドロップダウン・メニューをクリックし、**「経路」**を選択します。

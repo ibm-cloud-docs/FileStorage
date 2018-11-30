@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-30"
 
 ---
 {:pre: .pre}
@@ -10,6 +10,8 @@ lastupdated: "2018-10-31"
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
 
 # 使用 VMware 佈建 {{site.data.keyword.filestorage_short}}
 
@@ -35,7 +37,7 @@ lastupdated: "2018-10-31"
 - 為避免在路徑失效接手期間發生儲存空間斷線，{{site.data.keyword.IBM}} 建議安裝 VMware 工具，以設定適當的逾時值。不需要變更值，預設值就足以確保 VMware 主機不會中斷連線。
 - 在 {{site.data.keyword.BluSoftlayer_full}} 環境中，同時支援 NFS 第 3 版及 NFS 4.1 版。不過，{{site.data.keyword.IBM}} 建議您使用 NFS 第 3 版。因為 NFS 4.1 版是有狀態的通訊協定（不像 NFS 第 3 版是無狀態的通訊協定），所以在網路事件期間可能會發生通訊協定問題。NFS 4.1 版必須靜止所有作業，然後完成鎖定收回。進行這些作業時，可能會發生中斷。
 
-如需相關資訊，請參閱 VMware 的白皮書：[Best Practices for running VMware vSphere on Network Attached Storage](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){:new_window}
+如需相關資訊，請參閱 VMware 的白皮書：[Best Practices for running VMware vSphere on Network Attached Storage ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){:new_window}
 {:tip}
 
 **NFS 通訊協定 VMware 特性支援矩陣**
@@ -96,17 +98,17 @@ lastupdated: "2018-10-31"
   </tr>
  </tbody>
 </table>
-*來源 - [VMware - NFS 通訊協定及 ESXi](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){:new_window}*
+*來源 - [VMware - NFS 通訊協定及 ESXi ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){:new_window}*
 
 
 
 ### 使用 Snapshot
 
-{{site.data.keyword.filestorage_short}} 容許管理者設定 Snapshot 排程，以自動建立及刪除每個儲存空間磁區的 Snapshot 副本。他們也可以建立額外的 Snapshot 排程（每小時、每日、每週）來自動擷取 Snapshot，以及針對企業永續及災難回復 (BCDR) 情境手動建立特定 Snapshot。已保留 Snapshot 及使用空間，會透過 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} 將自動警示傳遞給磁區擁有者。
+{{site.data.keyword.filestorage_short}} 容許管理者設定 Snapshot 排程，以自動建立及刪除每個儲存空間磁區的 Snapshot 副本。他們也可以建立額外的 Snapshot 排程（每小時、每日、每週）來自動擷取 Snapshot，以及針對企業永續及災難回復 (BCDR) 情境手動建立特定 Snapshot。已保留 Snapshot 及使用空間，會透過 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} 將自動警示傳遞給磁區擁有者。
 
 需要有「Snapshot 空間」，才能使用 Snapshot。您可以在初次訂購磁區時購買空間，或在初次佈建之後，透過**磁區詳細資料**頁面購買空間，方法是按一下**動作**然後選取**新增 Snapshot 空間**。
 
-請務必注意，VMware 環境並不知道 Snapshot。「耐久性」{{site.data.keyword.filestorage_short}} Snapshot 功能不得與 VMware Snapshot 混淆。必須從 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} 處理任何使用 {{site.data.keyword.filestorage_short}} Snapshot 特性的回復。
+請務必注意，VMware 環境並不知道 Snapshot。「耐久性」{{site.data.keyword.filestorage_short}} Snapshot 功能不得與 VMware Snapshot 混淆。必須從 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} 處理任何使用 {{site.data.keyword.filestorage_short}} Snapshot 特性的回復。
 
 還原 {{site.data.keyword.filestorage_short}} 磁區時，需要關閉 {{site.data.keyword.filestorage_short}} 上所有 VM 的電源。磁區必須暫時從 ESXi 主機卸載，以避免在處理程序期間發生任何資料損毀。
 
@@ -138,15 +140,15 @@ lastupdated: "2018-10-31"
 
 ## 訂購 {{site.data.keyword.filestorage_short}}
 
-您可以針對 VMware ESXi 5 環境訂購及配置 {{site.data.keyword.filestorage_short}}。請將下列資訊與[進階單一網站 VMware 參照架構](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}一起使用，以在 VMware 環境中設定其中一個儲存空間選項。
+您可以針對 VMware ESXi 5 環境訂購及配置 {{site.data.keyword.filestorage_short}}。請將下列資訊與[進階單一網站 VMware 參照架構](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}一起使用，以在 VMware 環境中設定其中一個儲存空間選項。
 
-{{site.data.keyword.filestorage_short}} 可以透過 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} 訂購，方法是透過**儲存空間** > **{{site.data.keyword.filestorage_short}}** 來存取 {{site.data.keyword.filestorage_short}} 頁面。
+{{site.data.keyword.filestorage_short}} 可以透過 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} 訂購，方法是透過**儲存空間** > **{{site.data.keyword.filestorage_short}}** 來存取 {{site.data.keyword.filestorage_short}} 頁面。
 
 
-### 1. 訂購 
+### 1. 訂購
 
 請使用下列步驟來訂購 {{site.data.keyword.filestorage_short}}：
-1. 按一下 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} 首頁上的**儲存空間** > **{{site.data.keyword.filestorage_short}}**。
+1. 按一下 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} 首頁上的**儲存空間** > **{{site.data.keyword.filestorage_short}}**。
 2. 按一下 **{{site.data.keyword.filestorage_short}}** 頁面上的**訂購 {{site.data.keyword.filestorage_short}}**。
 3. 從**選取儲存空間類型**清單中，選取**耐久性**/**效能**。
 4. 選取位置。具有改良功能的資料中心會以星號表示。確定新的「儲存空間」將會新增至與先前訂購的 ESXi 主機相同的位置。
@@ -160,7 +162,7 @@ lastupdated: "2018-10-31"
 12. 勾選**我已閱讀主要服務合約，並同意其中的條款**勾選框。
 13. 按一下**下訂單**來提交訂單，或按一下**取消**來關閉表單，而不提交訂單。
 
-在一分鐘以內即會佈建儲存空間，並且它會顯示在 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} 的 **{{site.data.keyword.filestorage_short}}** 頁面上。
+在一分鐘以內即會佈建儲存空間，並且它會顯示在 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} 的 **{{site.data.keyword.filestorage_short}}** 頁面上。
 
 
 
@@ -212,7 +214,7 @@ lastupdated: "2018-10-31"
       8980 bytes from a.b.c.d: icmp_seq=1 ttl=128 time=3.36 ms
    ```
 
-如需 VMware 及「巨大訊框」的相關資訊，請按一下[這裡](https://kb.vmware.com/s/article/1003712){:new_window}。{:tip}
+如需 VMware 及「巨大訊框」的相關資訊，請按一下[這裡 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://kb.vmware.com/s/article/1003712){:new_window}。{:tip}
 
 
 ### 2. 將上行鏈路配接卡新增至虛擬交換器
@@ -251,7 +253,7 @@ lastupdated: "2018-10-31"
 
 2. 在 ESXi 5.0 及更早版本上，靜態路由在各次重新開機之間無法持續保存。為了確定任何已新增的靜態路由都能持續保存，需要將此指令新增至每台主機上的 `local.sh` 檔案，該檔案位於 `/etc/rc.local.d/` 目錄中。請使用視覺化編輯器開啟 `local.sh` 檔案，並且在步驟 4.1 中新增第二個指令。位置是在 `exit 0` 這一行前面。
 
-記下 IP 位址，因為它可以在下一步中用於裝載磁區。<br/>需要對計劃要裝載至 ESXi 主機的每一個 NFS 磁區執行此處理程序。<br/>如需相關資訊，請參閱 VMware KB 文章：[在 ESXi 主機上配置 VMkernel 埠的靜態路由](https://kb.vmware.com/s/article/2001426){:new_window}。{:tip}
+記下 IP 位址，因為它可以在下一步中用於裝載磁區。<br/>需要對計劃要裝載至 ESXi 主機的每一個 NFS 磁區執行此處理程序。<br/>如需相關資訊，請參閱 VMware KB 文章：[在 ESXi 主機上配置 VMkernel 埠的靜態路由 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://kb.vmware.com/s/article/2001426){:new_window}。{:tip}
 
 
 ##  在 ESXi 主機上建立及裝載 {{site.data.keyword.filestorage_short}} 磁區
@@ -419,9 +421,9 @@ Storage I/O Control (SIOC) 是一種特性，可供使用 Enterprise Plus 授權
      ```
      {: pre}
 
-   - Debian/Ubuntu Linux 
+   - Debian/Ubuntu Linux
      ```
-     MTU=9000 
+     MTU=9000
      ```
      {: pre}
 
@@ -433,4 +435,4 @@ Storage I/O Control (SIOC) 是一種特性，可供使用 Enterprise Plus 授權
 
    此動作會導致網路連線短暫中斷。
 
-在[這裡](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}進一步瞭解「進階單一網站 VMware 參照架構」。{:tip}
+在[這裡](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}進一步瞭解「進階單一網站 VMware 參照架構」。{:tip}

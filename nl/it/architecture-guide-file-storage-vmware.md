@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-30"
 
 ---
 {:pre: .pre}
@@ -10,6 +10,8 @@ lastupdated: "2018-10-31"
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
 
 # Provisioning di {{site.data.keyword.filestorage_short}} con VMware
 
@@ -105,11 +107,11 @@ VMware vSphere on Network Attached Storage](https://www.vmware.com/content/dam/d
 
 ### Utilizzo delle istantanee
 
-L'{{site.data.keyword.filestorage_short}} consente agli amministratori di impostare le pianificazioni delle istantanee che creano ed eliminano copie di istantanea automaticamente per ciascun volume di archiviazione. Possono anche creare delle pianificazioni delle istantanee aggiuntive (orarie, giornaliere, settimanali) per le istantanee automatiche e creare manualmente delle istantanee ad hoc per gli scenari di continuità aziendale e ripristino di emergenza (BCDR, business continuity and disaster recovery). Gli avvisi automatici vengono consegnati tramite il [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} al proprietario del volume per le istantanee conservate e lo spazio utilizzato.
+L'{{site.data.keyword.filestorage_short}} consente agli amministratori di impostare le pianificazioni delle istantanee che creano ed eliminano copie di istantanea automaticamente per ciascun volume di archiviazione. Possono anche creare delle pianificazioni delle istantanee aggiuntive (orarie, giornaliere, settimanali) per le istantanee automatiche e creare manualmente delle istantanee ad hoc per gli scenari di continuità aziendale e ripristino di emergenza (BCDR, business continuity and disaster recovery). Gli avvisi automatici vengono consegnati tramite il [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} al proprietario del volume per le istantanee conservate e lo spazio utilizzato.
 
 Per utilizzare le istantanee è necessario lo spazio per le istantanee. Lo spazio può essere acquistato durante l'ordine dei volumi iniziale e dopo il provisioning iniziale tramite la pagina **Volume Details** facendo clic su **Actions** e selezionando **Add Snapshot Space**.
 
-È importare notare che gli ambienti VMware non rilevano le istantanee. La funzionalità di istantanea dell'{{site.data.keyword.filestorage_short}} Endurance non deve essere confusa con le istantanee VMware. Qualsiasi ripristino che utilizza la funzione di istantanea dell'{{site.data.keyword.filestorage_short}} deve essere gestita dal [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
+È importare notare che gli ambienti VMware non rilevano le istantanee. La funzionalità di istantanea dell'{{site.data.keyword.filestorage_short}} Endurance non deve essere confusa con le istantanee VMware. Qualsiasi ripristino che utilizza la funzione di istantanea dell'{{site.data.keyword.filestorage_short}} deve essere gestita dal [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
 
 Il ripristino del volume di {{site.data.keyword.filestorage_short}} richiede lo spegnimento di tutte le macchine virtuali (VM, Virtual Machine) in {{site.data.keyword.filestorage_short}}. Il volume deve essere temporaneamente smontato dagli host ESXi per evitare eventuali danneggiamenti di dati durante il processo.
 
@@ -142,15 +144,15 @@ I dati non validi, non importa se danneggiati, oggetto di attacchi o infettati, 
 
 ## Ordinazione di {{site.data.keyword.filestorage_short}}
 
-Puoi ordinare e configurare l'{{site.data.keyword.filestorage_short}} per un ambiente VMware ESXi 5. Utilizza le seguenti informazioni insieme alla [Advanced Single-Site VMware Reference Architecture](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} per configurare una di queste opzioni di archiviazione nel tuo ambiente VMware.
+Puoi ordinare e configurare l'{{site.data.keyword.filestorage_short}} per un ambiente VMware ESXi 5. Utilizza le seguenti informazioni insieme alla [Advanced Single-Site VMware Reference Architecture](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} per configurare una di queste opzioni di archiviazione nel tuo ambiente VMware.
 
-L'{{site.data.keyword.filestorage_short}} può essere ordinata tramite il [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} accedendo alla pagina {{site.data.keyword.filestorage_short}} tramite **Storage** > **{{site.data.keyword.filestorage_short}}**.
+L'{{site.data.keyword.filestorage_short}} può essere ordinata tramite il [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} accedendo alla pagina {{site.data.keyword.filestorage_short}} tramite **Storage** > **{{site.data.keyword.filestorage_short}}**.
 
 
 ### 1. Ordinazione dell'
 
 Utilizza la seguente procedura per ordinare {{site.data.keyword.filestorage_short}}:
-1. Fai clic su **Storage** > **{{site.data.keyword.filestorage_short}}** nella home page del [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
+1. Fai clic su **Storage** > **{{site.data.keyword.filestorage_short}}** nella home page del [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
 2. Fai clic su **Order {{site.data.keyword.filestorage_short}}** nella pagina **{{site.data.keyword.filestorage_short}}**.
 3. Seleziona **Endurance**/**Performance** dall'elenco **Select Storage Type**.
 4. Seleziona l'ubicazione. I data center con funzionalità migliorate sono indicati con un asterisco. Assicurati che la nuova archiviazione sia aggiunta nella stessa ubicazione dell'host ESXi ordinato in precedenza.
@@ -164,7 +166,7 @@ Utilizza la seguente procedura per ordinare {{site.data.keyword.filestorage_shor
 12. Seleziona la casella di spunta **I have read the Master Service Agreement and agree to the terms therein**.
 13. Fai clic su **Place Order** per inviare l'ordine oppure su **Cancel** per chiudere il modulo senza inviare un ordine.
 
-Il provisioning dell'archiviazione viene eseguito in meno di un minuto ed è visibile sulla pagina **{{site.data.keyword.filestorage_short}}** del [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
+Il provisioning dell'archiviazione viene eseguito in meno di un minuto ed è visibile sulla pagina **{{site.data.keyword.filestorage_short}}** del [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
 
 
 
@@ -439,5 +441,5 @@ Quando apporti la modifica, la NIC perde la connettività di rete per qualche se
 
    Questa azione causa una breve perdita della connettività di rete.
 
-Trova ulteriori informazioni su Advanced Single-Site VMware Reference Architecture [qui](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}.
+Trova ulteriori informazioni su Advanced Single-Site VMware Reference Architecture [qui](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}.
 {:tip}

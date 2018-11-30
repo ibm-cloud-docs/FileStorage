@@ -2,21 +2,23 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-30"
 
 ---
 {:new_window: target="_blank"}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
 
 # スナップショットの注文
 
 ストレージ・ボリュームのスナップショットを自動または手動で作成するには、それらを保持するためのスペースを購入する必要があります。 最大でストレージ・ボリューム量までの容量を、(ボリュームを最初に購入するとき、または購入後に下記の手順を使用して) 購入できます。
 
-1. [IBM Cloud コンソール](https://console.bluemix.net/catalog/){:new_window}にログインして、左上にある**「メニュー」**アイコンをクリックします。**「クラシック・インフラストラクチャー」**を選択します。 
+1. [IBM Cloud コンソール](https://{DomainName}/catalog/){:new_window}にログインして、左上にある**「メニュー」**アイコンをクリックします。**「クラシック・インフラストラクチャー」**を選択します。
 
-   あるいは、[{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}にログインします。
+   あるいは、[{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}にログインします。
 2. **「ストレージ」**>**「{{site.data.keyword.filestorage_short}}」**の手順でストレージにアクセスします。
 3. 「スナップショット」フレームで**「スナップショット・スペースの変更」**をクリックします。
 4. 必要なスペース量と支払方法を選択します。

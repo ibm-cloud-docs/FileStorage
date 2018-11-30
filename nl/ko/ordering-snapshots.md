@@ -2,27 +2,29 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-30"
 
 ---
 {:new_window: target="_blank"}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
 
 # 스냅샷 구매
 
 자동으로 또는 수동으로 스토리지 볼륨의 스냅샷을 작성하려면 이를 보관하기 위한 영역을 구매해야 합니다. 최대 스토리지 볼륨 양까지 용량을 구매할 수 있습니다(초기 볼륨 구매 중에 또는 이러한 단계를 사용하여 나중에).
 
-1. [IBM Cloud 콘솔](https://console.bluemix.net/catalog/){:new_window}에 로그인하여 맨 위 왼쪽의 **메뉴** 아이콘을 클릭하십시오. **일반 인프라**를 선택하십시오.  
+1. [IBM Cloud 콘솔](https://{DomainName}/catalog/){:new_window}에 로그인하여 맨 위 왼쪽의 **메뉴** 아이콘을 클릭하십시오. **일반 인프라**를 선택하십시오.  
 
-   또는 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}에 로그인할 수 있습니다. 
-2. **스토리지** > **{{site.data.keyword.filestorage_short}}**를 통해 스토리지에 액세스하십시오. 
-3. 스냅샷 프레임에서 **스냅샷 영역 변경**을 클릭하십시오. 
-4. 필요한 영역의 양과 지불 방법을 선택하십시오. 
+   또는 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}에 로그인할 수 있습니다.
+2. **스토리지** > **{{site.data.keyword.filestorage_short}}**를 통해 스토리지에 액세스하십시오.
+3. 스냅샷 프레임에서 **스냅샷 영역 변경**을 클릭하십시오.
+4. 필요한 영역의 양과 지불 방법을 선택하십시오.
 5. **계속**을 클릭하십시오.
 6. 보유한 프로모션 코드를 입력하고 **재계산**을 클릭하십시오. **이 주문의 비용** 및 **주문 검토**에는 기본값이 있습니다.
-7. **마스터 서비스 계약서를 읽었으며 이의 이용 약관에 동의합니다** 상자를 선택하고 **주문하기**를 클릭하십시오. 잠시 후에 스냅샷 영역이 프로비저닝됩니다. 
+7. **마스터 서비스 계약서를 읽었으며 이의 이용 약관에 동의합니다** 상자를 선택하고 **주문하기**를 클릭하십시오. 잠시 후에 스냅샷 영역이 프로비저닝됩니다.
 
 ## 주문할 스냅샷 영역의 양 결정
 

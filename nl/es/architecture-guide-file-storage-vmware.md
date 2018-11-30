@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-30"
 
 ---
 {:pre: .pre}
@@ -10,6 +10,8 @@ lastupdated: "2018-10-31"
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
 
 # Suministro de {{site.data.keyword.filestorage_short}} con VMware
 
@@ -37,7 +39,7 @@ Al realizar el pedido de {{site.data.keyword.filestorage_short}}, tenga en cuent
 - Para evitar la desconexión del almacenamiento durante una migración tras error de vía de acceso, {{site.data.keyword.IBM}} recomienda la instalación de herramientas VMware, que establecen un valor de tiempo de espera adecuado. No es necesario cambiar el valor, el valor predeterminado es suficiente para garantizar que el host de VMware no pierda la conectividad.
 - Tanto NFSv3 como NFSv4.1 están soportados en el entorno de {{site.data.keyword.BluSoftlayer_full}}. Sin embargo, {{site.data.keyword.IBM}} sugiere que utilice NFSv3. Como NFSv4.1 es un protocolo con estado (no sin estado como NFSv3), se pueden producir problemas de protocolo durante sucesos de red. NFSv4.1 debe desactivar temporalmente todas las operaciones y realizar la reclamación de bloqueo. Durante estas operaciones, pueden producirse interrupciones.
 
-Para obtener más información, consulte el documento técnico de VMware en [Mejores prácticas para ejecutar VMware vSphere en el almacenamiento adjunto en red](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){:new_window}
+Para obtener más información, consulte el documento técnico de VMware en [Mejores prácticas para ejecutar VMware vSphere en el almacenamiento adjunto en red ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){:new_window}
 {:tip}
 
 **Matriz de soporte de características VMware de protocolo NFS**
@@ -99,17 +101,17 @@ Volumes</td>
   </tr>
  </tbody>
 </table>
-*Fuente - [VMware - NFS Protocols and ESXi](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){:new_window}*
+*Fuente - [VMware - NFS Protocols and ESXi ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){:new_window}*
 
 
 
 ### Uso de instantáneas
 
-El {{site.data.keyword.filestorage_short}} permite a los administradores establecer planificaciones de instantáneas que crean y suprimen copias de instantáneas automáticamente para cada volumen de almacenamiento. También pueden crear planificaciones de instantáneas adicionales (cada hora, diariamente, semanalmente) para instantáneas automáticas y crear instantáneas ad manualmente para casos de continuidad del negocio y recuperación tras desastre (BCDR). Las alertas automáticas se envían a través del [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} al propietario del volumen para las instantáneas retenidas y el espacio utilizado.
+El {{site.data.keyword.filestorage_short}} permite a los administradores establecer planificaciones de instantáneas que crean y suprimen copias de instantáneas automáticamente para cada volumen de almacenamiento. También pueden crear planificaciones de instantáneas adicionales (cada hora, diariamente, semanalmente) para instantáneas automáticas y crear instantáneas ad manualmente para casos de continuidad del negocio y recuperación tras desastre (BCDR). Las alertas automáticas se envían a través del [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} al propietario del volumen para las instantáneas retenidas y el espacio utilizado.
 
 Se necesita espacio de instantáneas para utilizar las instantáneas. El espacio se puede adquirir durante el pedido del volumen inicial o después del suministro inicial mediante la página **Detalles del volumen**, pulsando **Acciones** y seleccionando **Añadir espacio de instantáneas**.
 
-Es importante señalar que los entornos de VMware no son conscientes de las instantáneas. La capacidad de instantáneas de {{site.data.keyword.filestorage_short}} de Resistencia no debe confundirse con las instantáneas de VMware. Toda recuperación que utilice la característica de instantáneas de {{site.data.keyword.filestorage_short}} debe manejarse desde el [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
+Es importante señalar que los entornos de VMware no son conscientes de las instantáneas. La capacidad de instantáneas de {{site.data.keyword.filestorage_short}} de Resistencia no debe confundirse con las instantáneas de VMware. Toda recuperación que utilice la característica de instantáneas de {{site.data.keyword.filestorage_short}} debe manejarse desde el [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
 
 Restaurar el volumen de {{site.data.keyword.filestorage_short}} requiere apagar todas las máquinas virtuales del {{site.data.keyword.filestorage_short}}. El volumen se debe desmontar temporalmente de los hosts de ESXi para evitar la corrupción de datos durante el proceso.
 
@@ -142,15 +144,15 @@ Los datos no válidos, ya estén corruptos, pirateados o infectados, se replican
 
 ## Solicitud de {{site.data.keyword.filestorage_short}}
 
-Puede realizar el pedido y configurar {{site.data.keyword.filestorage_short}} para un entorno de VMware ESXi 5. Utilice la información siguiente junto con la [Arquitectura avanzada de referencia de VMware de un solo sitio](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} para establecer una de estas opciones de almacenamiento en el entorno de VMware.
+Puede realizar el pedido y configurar {{site.data.keyword.filestorage_short}} para un entorno de VMware ESXi 5. Utilice la información siguiente junto con la [Arquitectura avanzada de referencia de VMware de un solo sitio](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} para establecer una de estas opciones de almacenamiento en el entorno de VMware.
 
-Se puede realizar el pedido de {{site.data.keyword.filestorage_short}} a través del [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}, accediendo a la página {{site.data.keyword.filestorage_short}} a través de **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**.
+Se puede realizar el pedido de {{site.data.keyword.filestorage_short}} a través del [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}, accediendo a la página {{site.data.keyword.filestorage_short}} a través de **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**.
 
 
-### 1. Realizar el pedido de 
+### 1. Realizar el pedido de
 
 Efectúe los siguientes pasos para realizar un pedido de {{site.data.keyword.filestorage_short}}:
-1. Pulse **Almacenamiento** > **{{site.data.keyword.filestorage_short}}** en la página de inicio de [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
+1. Pulse **Almacenamiento** > **{{site.data.keyword.filestorage_short}}** en la página de inicio de [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
 2. Pulse **Realizar pedido de {{site.data.keyword.filestorage_short}}** en la página de **{{site.data.keyword.filestorage_short}}**.
 3. Seleccione **Resistencia**/**Rendimiento** en la lista **Seleccionar tipo de almacenamiento**.
 4. Seleccione la ubicación. Los centros de datos con las prestaciones mejoradas están marcados con un asterisco. Asegúrese de que el nuevo almacenamiento se añada en la misma ubicación que el host de ESXi pedido anteriormente.
@@ -164,7 +166,7 @@ Efectúe los siguientes pasos para realizar un pedido de {{site.data.keyword.fil
 12. Marque el recuadro de selección **He leído el Acuerdo de servicio maestro y acepto sus condiciones**.
 13. Pulse **Realizar pedido** para enviar el pedido, o **Cancelar** para cerrar el formulario sin enviar ningún pedido.
 
-El almacenamiento se suministra en menos de un minuto y pasa a estar visible en la página de **{{site.data.keyword.filestorage_short}}** del [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
+El almacenamiento se suministra en menos de un minuto y pasa a estar visible en la página de **{{site.data.keyword.filestorage_short}}** del [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
 
 
 
@@ -216,7 +218,7 @@ Antes de empezar el proceso de configuración de VMware, asegúrese de que se cu
      8980 bytes from a.b.c.d: icmp_seq=1 ttl=128 time=3.36 ms
      ```
 
-Para obtener más información sobre VMware y las tramas Jumbo, pulse [aquí](https://kb.vmware.com/s/article/1003712){:new_window}.
+Para obtener más información sobre VMware y las tramas Jumbo, pulse [aquí ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://kb.vmware.com/s/article/1003712){:new_window}.
 {:tip}
 
 
@@ -439,5 +441,5 @@ Cuando realice el cambio, el NIC pierde la conectividad de red durante unos segu
 
    Esta acción causa una breve pérdida de conexión de red.
 
-Obtenga más información sobre la Arquitectura avanzada de referencia de VMware de un solo sitio [aquí](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}.
+Obtenga más información sobre la Arquitectura avanzada de referencia de VMware de un solo sitio [aquí](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}.
 {:tip}

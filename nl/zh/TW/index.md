@@ -6,9 +6,11 @@ lastupdated: "2018-10-29"
 
 ---
 {:new_window: target="_blank"}
-{:tip: .tip} 
-{:note: .note} 
+{:tip: .tip}
+{:note: .note}
 {:important: .important}
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
 
 # 開始使用 {{site.data.keyword.filestorage_short}}
 
@@ -43,13 +45,13 @@ lastupdated: "2018-10-29"
 
 ## 計費
 
-您可以為「檔案」磁區選取按小時或按月計費。為 LUN 選取的計費類型會套用至其 Snapshot 空間及抄本。例如，如果您佈建按小時計費的 LUN，則任何 Snapshot 或抄本費用都會按小時計費。如果您佈建按月計費的 LUN，則任何 Snapshot 或抄本費用都會按月計費。 
+您可以為「檔案」磁區選取按小時或按月計費。為 LUN 選取的計費類型會套用至其 Snapshot 空間及抄本。例如，如果您佈建按小時計費的 LUN，則任何 Snapshot 或抄本費用都會按小時計費。如果您佈建按月計費的 LUN，則任何 Snapshot 或抄本費用都會按月計費。
 
-使用**按小時計費**，會在刪除 LUN 或計費週期結束時（看何者為先），計算「檔案」磁區存在於帳戶上的小時數。如果儲存空間使用期間為期只有幾天或不到一整個月，則按小時計費是一個不錯的選擇。按小時計費只適用於[精選資料中心](new-ibm-block-and-file-storage-location-and-features.html)內所佈建的儲存空間。 
+使用**按小時計費**，會在刪除 LUN 或計費週期結束時（看何者為先），計算「檔案」磁區存在於帳戶上的小時數。如果儲存空間使用期間為期只有幾天或不到一整個月，則按小時計費是一個不錯的選擇。按小時計費只適用於[精選資料中心](new-ibm-block-and-file-storage-location-and-features.html)內所佈建的儲存空間。
 
-使用**按月計費**，價格是從建立日期到計費週期結束為止，按比例計算，並立即計費。如果在計費週期結束之前刪除磁區，則不會退款。如果儲存空間用於正式作業工作負載，而正式作業工作負載使用需要長期（一個月或更久）儲存及存取的資料，則按月計費是一個不錯的選擇。 
+使用**按月計費**，價格是從建立日期到計費週期結束為止，按比例計算，並立即計費。如果在計費週期結束之前刪除磁區，則不會退款。如果儲存空間用於正式作業工作負載，而正式作業工作負載使用需要長期（一個月或更久）儲存及存取的資料，則按月計費是一個不錯的選擇。
 
- 
+
 **效能**
 <table>
   <caption>表 1 顯示「效能儲存空間」的價格（按月及按小時計費）。</caption>
@@ -62,7 +64,7 @@ lastupdated: "2018-10-29"
    <td>$0.0001/GB + $0.0002/IOP</td>
   </tr>
 </table>
- 
+
 **耐久性**
 <table>
   <caption>表 2 顯示具有按月及按小時計費選項之每個層級的「耐久性儲存空間」價格。</caption>
@@ -89,15 +91,15 @@ lastupdated: "2018-10-29"
   </tr>
 </table>
 
- 
+
 
 ## 佈建
 
 您可以使用以下兩個選項，來佈建 20 GB 到 12 TB 的 {{site.data.keyword.filestorage_short}} 磁區：<br/>
 - 佈建**耐久性**層級，其特色是預先定義的效能層次，以及 Snapshot 及抄寫這類其他特性。
-- 建置具有已配置每秒輸入/輸出作業 (IOPS) 的高功率**效能**環境。 
+- 建置具有已配置每秒輸入/輸出作業 (IOPS) 的高功率**效能**環境。
 
- 
+
 ### 使用耐久性層級佈建
 
 「耐久性」{{site.data.keyword.filestorage_short}} 提供於四種 IOPS 效能層級，以支援各種應用程式需求。<br />
@@ -111,9 +113,9 @@ lastupdated: "2018-10-29"
 - **每 GB 10 IOPS** 是為了最嚴苛的工作負載（例如 NoSQL 資料庫所建立的工作負載）以及進行分析用的資料處理而設計。此層級只適用於[精選資料中心](new-ibm-block-and-file-storage-location-and-features.html)內最多佈建 4 TB 的儲存空間。
 
 12 TB 耐久性磁區最多提供 48,000 IOPS。
- 
+
 為您的工作負載選擇正確「耐久性」層級固然重要。使用達到最高效能所需的正確區塊大小、乙太網路連線速度及主機數目也同樣重要。如果這其中有任何部分與其他部分不一致，則會對產生的傳輸量有重大的影響。
- 
+
 ### 使用效能佈建
 
 「效能」是一種 {{site.data.keyword.filestorage_short}} 類別，其設計旨在支援高 I/O 應用程式，而這些應用程式具有瞭解且不適合「耐久性」層級的效能需求。透過將通訊協定層次 IOPS 配置到個別磁區，即可達成可預測效能。佈建範圍從 20 GB 到 12 TB 的儲存空間大小時，可以使用各種 IOPS 速率 (100 - 48,000)。
@@ -264,7 +266,7 @@ lastupdated: "2018-10-29"
 
 為達到最大 IOPS，需要有足夠的網路資源。其他考量包括儲存空間及主機端之外的專用網路使用情形，以及應用程式特定的調整（IP 堆疊或[佇列深度](set-host-queue-depth-settings-performance-and-endurance-storage.html)，以及其他設定）。
 
-儲存空間資料流量包含在「公用虛擬伺服器」的網路總用量中。請參閱[虛擬伺服器文件](https://console.bluemix.net/docs/vsi/vsi_public.html#public-virtual-servers)，以瞭解服務可能強制的限制。
+儲存空間資料流量包含在「公用虛擬伺服器」的網路總用量中。請參閱[虛擬伺服器文件](https://{DomainName}/docs/vsi/vsi_public.html#public-virtual-servers)，以瞭解服務可能強制的限制。
 
 **NFS 版本**
 

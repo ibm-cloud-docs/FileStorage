@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-30"
 
 ---
 {:new_window: target="_blank"}
@@ -35,7 +35,7 @@ As instruções a seguir são para pedir um volume/compartilhamento de arquivo a
 
 ### Solicitando um novo volume de Armazenamento de Endurance
 
-1. No [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}, clique em **Armazenamento** > **{{site.data.keyword.filestorage_short}}** OU, no catálogo do {{site.data.keyword.BluSoftlayer_full}}, clique em **Infraestrutura** > **Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
+1. No [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}, clique em **Armazenamento** > **{{site.data.keyword.filestorage_short}}** OU, no catálogo do {{site.data.keyword.BluSoftlayer_full}}, clique em **Infraestrutura** > **Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
 2. Clique em **Pedir {{site.data.keyword.filestorage_short}}**.
 3. Selecione **Endurance** na lista **Selecionar tipo de armazenamento**.
 4. Clique em **Local** e selecione seu data center.
@@ -49,7 +49,7 @@ As instruções a seguir são para pedir um volume/compartilhamento de arquivo a
 
 ### Solicitando um Volume de Armazenamento de Desempenho Criptografado
 
-1. No [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}, clique em **Armazenamento**, **{{site.data.keyword.filestorage_short}}** OU, no catálogo do {{site.data.keyword.BluSoftlayer_full}}, clique em **Infraestrutura** >** Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
+1. No [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}, clique em **Armazenamento**, **{{site.data.keyword.filestorage_short}}** OU, no catálogo do {{site.data.keyword.BluSoftlayer_full}}, clique em **Infraestrutura** >** Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
 2. Clique em **Pedir {{site.data.keyword.filestorage_short}}**.
 3. Selecione **Performance** na lista **Selecionar tipo de armazenamento**.
 4. Clique em **Local** e selecione seu data center.

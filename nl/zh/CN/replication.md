@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-30"
 
 ---
 
@@ -106,7 +106,7 @@ SYD04<br />
 
 ## 创建初始副本
 
-复制将根据快照安排来执行。必须首先具有用于源卷的快照空间和快照安排，然后才能进行复制。如果尝试设置复制，但未设置源卷的快照空间或快照安排，那么系统将提示您购买更多空间或设置安排。复制在 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} 中的**存储** > **{{site.data.keyword.filestorage_short}}** 下进行管理。
+复制将根据快照安排来执行。必须首先具有用于源卷的快照空间和快照安排，然后才能进行复制。如果尝试设置复制，但未设置源卷的快照空间或快照安排，那么系统将提示您购买更多空间或设置安排。复制在 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} 中的**存储** > **{{site.data.keyword.filestorage_short}}** 下进行管理。
 
 1. 单击存储卷。
 2. 单击**副本**，然后单击**购买复制**。
@@ -123,7 +123,7 @@ SYD04<br />
 
 ## 编辑现有复制
 
-您可以在 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} 中的**存储** > **{{site.data.keyword.filestorage_short}}** 下的**主**或**副本**选项卡中，编辑复制安排和更改复制空间。
+您可以在 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} 中的**存储** > **{{site.data.keyword.filestorage_short}}** 下的**主**或**副本**选项卡中，编辑复制安排和更改复制空间。
 
 
 ## 编辑复制安排
@@ -184,7 +184,7 @@ SYD04<br />
 
 如果发生故障事件，可以启动到目标卷的**故障转移**。目标卷会变为活动状态。最后一个成功复制的快照会激活，并且该卷会变为可用于安装。自上一个复制周期以来写入源卷的所有数据都会丢失。启动故障转移后，复制关系会翻转。目标卷成为源卷，原先的源卷会变成目标卷，以 **LUN 名称**后跟 **REP** 来指示。
 
-故障转移在 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} 中的**存储** > **{{site.data.keyword.filestorage_short}}** 下启动。
+故障转移在 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} 中的**存储** > **{{site.data.keyword.filestorage_short}}** 下启动。
 
 继续执行这些步骤之前，请先断开该卷的连接。否则会导致数据损坏和丢失。
 {:important}
@@ -192,7 +192,7 @@ SYD04<br />
 1. 单击活动卷（“源”）。
 2. 单击右上角的**副本**，然后单击**操作**。
 3. 选择**故障转移**。
-   
+
 
    应该会收到一条消息，声明正在进行故障转移。此外，**{{site.data.keyword.filestorage_short}}** 上的相应卷旁边会显示一个图标，指示正在执行活动事务。将鼠标悬停在该图标上将生成一个用于显示事务的窗口。事务完成后，该图标会消失。在故障转移过程中，与配置相关的操作为只读。无法编辑任何快照安排，也无法更改快照空间。该事件将记录在复制历史记录中。
    <br/> 目标卷处于活动状态时，您将收到另一条消息。原始源卷的“LUN 名称”更新为以“REP”结尾，并且其状态将变为“不活动”。
@@ -214,7 +214,7 @@ SYD04<br />
 
 启动故障恢复后，复制关系会再次翻转。原来的源卷会复原为源卷，原来的目标卷将再次成为目标卷，以 **LUN 名称**后跟 **REP** 来指示。
 
-故障恢复在 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} 中的**存储** > **{{site.data.keyword.filestorage_short}}** 下启动。
+故障恢复在 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} 中的**存储** > **{{site.data.keyword.filestorage_short}}** 下启动。
 
 1. 单击活动卷（“目标”）。
 2. 单击右上角的**副本**，然后单击**操作**。

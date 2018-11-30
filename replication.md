@@ -104,7 +104,7 @@ See Table 1 for the complete list of data center availability and replication ta
 
 ## Creating the initial replica
 
-Replications work based on a snapshot schedule. You must first have snapshot space and a snapshot schedule for the source volume before you can replicate. If you try to set up replication and one or the other isn't in place, you are going to be prompted to purchase more space or set up a schedule. Replications are managed under **Storage** > **{{site.data.keyword.filestorage_short}}** in the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
+Replications work based on a snapshot schedule. You must first have snapshot space and a snapshot schedule for the source volume before you can replicate. If you try to set up replication and one or the other isn't in place, you are going to be prompted to purchase more space or set up a schedule. Replications are managed under **Storage** > **{{site.data.keyword.filestorage_short}}** in the [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
 
 1. Click your storage volume.
 2. Click **Replica** and click **Purchase a replication**.
@@ -120,7 +120,7 @@ Replications work based on a snapshot schedule. You must first have snapshot spa
 
 ## Editing an existing replication
 
-You can edit your replication schedule, and change your replication space from either the **Primary** or **Replica** tab under **Storage** > **{{site.data.keyword.filestorage_short}}** from the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
+You can edit your replication schedule, and change your replication space from either the **Primary** or **Replica** tab under **Storage** > **{{site.data.keyword.filestorage_short}}** from the [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
 
 
 ## Editing the Replication Schedule
@@ -179,7 +179,7 @@ For more information about increasing snapshot space, see [Snapshots](snapshots.
 
 If a failure event occurs, you can start a **failover** to your destination, or target, volume. The target volume becomes active. The last successfully replicated snapshot is activated, and the volume is made available for mounting. Any data that was written to the source volume since the previous replication cycle is lost. When a failover is started, the replication relationship is flipped. Your target volume becomes your source volume, and your former source volume becomes your target as indicated by the **LUN Name** followed by **REP**.
 
-Failovers are started under **Storage**, **{{site.data.keyword.filestorage_short}}** in the [[{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
+Failovers are started under **Storage**, **{{site.data.keyword.filestorage_short}}** in the [[{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
 
 Before you proceed with these steps, disconnect the volume. Failure to do so, results in corruption and data loss.
 {:important}
@@ -207,7 +207,7 @@ When your original source volume is repaired, you can start a controlled Failbac
 
 When a Failback is started, the replication relationship is flipped again. Your source volume is restored as your source volume, and your target volume is the target volume again as indicated by the **LUN Name** followed by **REP**.
 
-Failbacks are started under **Storage**, **{{site.data.keyword.filestorage_short}}** in the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
+Failbacks are started under **Storage**, **{{site.data.keyword.filestorage_short}}** in the [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
 
 1. Click your active volume ("target").
 2. In the upper right, click **Replica** and click **Actions**.

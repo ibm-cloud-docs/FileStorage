@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-30"
 
 ---
 {:new_window: target="_blank"}
@@ -15,7 +15,7 @@ lastupdated: "2018-10-31"
 
 ## スナップショット・スケジュールを作成しますか？
 
-スナップショット・スケジュールを作成することで、ストレージ・ボリュームのポイント・イン・タイム・リファレンスを作成する頻度と時間を決定できます。 ストレージ・ボリュームごとに最大 50 個のスナップショットを作成できます。 スケジュールは、[{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}の**「ストレージ」**>**「{{site.data.keyword.filestorage_short}}」**タブで管理します。
+スナップショット・スケジュールを作成することで、ストレージ・ボリュームのポイント・イン・タイム・リファレンスを作成する頻度と時間を決定できます。 ストレージ・ボリュームごとに最大 50 個のスナップショットを作成できます。 スケジュールは、[{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}の**「ストレージ」**>**「{{site.data.keyword.filestorage_short}}」**タブで管理します。
 
 
 ストレージ・ボリュームの初期プロビジョニング時にスナップショット・スペースを購入していなかった場合は、初期スケジュールをセットアップする前に、まず購入する必要があります。
@@ -111,7 +111,7 @@ lastupdated: "2018-10-31"
 
 1. ストレージ・ボリュームをホストからアンマウントして切り離します。
    - [ここ](accessing-file-storage-linux.html)をクリックすると、Linux の{{site.data.keyword.filestorage_short}}についての説明が表示されます。
-2. [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}で、**「ストレージ」**、**「{{site.data.keyword.filestorage_short}}」**をクリックします。
+2. [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}で、**「ストレージ」**、**「{{site.data.keyword.filestorage_short}}」**をクリックします。
 3. スクロールダウンして、リストアするボリュームをクリックします。 **「詳細」**ページの**「スナップショット」**セクションに、保存されているすべてのスナップショットのサイズと作成日のリストが表示されます。
 4. 使用するスナップショットの横の**「アクション」**をクリックし、**「リストア」**をクリックします。 <br/>
 

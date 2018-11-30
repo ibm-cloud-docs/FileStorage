@@ -2,17 +2,19 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-30"
 
 ---
 {:new_window: target="_blank"}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
 
 # Configurazione di Brocade vRouter (Vyatta) per gli ambienti VMware con {{site.data.keyword.filestorage_short}}
 
-Puoi configurare un'applicazione Brocade vRouter (Vyatta) per la configurazione ad alta disponibilità (HA, high availability)] in un ambiente VMware che utilizza {{site.data.keyword.filestorage_full}}. Utilizza le seguenti informazioni insieme alla [Advanced Single-Site VMware Reference Architecture](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} per configurare una di queste opzioni di archiviazione nel tuo ambiente VMware.
+Puoi configurare un'applicazione Brocade vRouter (Vyatta) per la configurazione ad alta disponibilità (HA, high availability)] in un ambiente VMware che utilizza {{site.data.keyword.filestorage_full}}. Utilizza le seguenti informazioni insieme alla [Advanced Single-Site VMware Reference Architecture](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} per configurare una di queste opzioni di archiviazione nel tuo ambiente VMware.
 
 Il gateway Brocade vRouter (Vyatta) funge da gateway e router per il tuo ambiente e contiene zone formate da sottoreti. Le regole del firewall vengono implementate tra le zone in modo che possano comunicare tra di loro. Per le zone che non devono comunicare con altre zone, non è necessaria alcuna regola del firewall.
 
@@ -355,7 +357,7 @@ save
 
 Una volta configurate le zone e le regole del firewall sul Brocade vRouter (Vyatta), devi associare le VLAN ad esso e abilitare l'instradamento delle VLAN tramite il Brocade vRouter (Vyatta).
 
-1. Esegui l'accesso al [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}, fai clic su **Network > Gateway Appliance** e fai clic sul Brocade vRouter (Vyatta).
+1. Esegui l'accesso al [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}, fai clic su **Network > Gateway Appliance** e fai clic sul Brocade vRouter (Vyatta).
 2. Seleziona una **VLAN** e fai clic su **Associate**.
 4. Individua le VLAN in **Associated VLANs** e seleziona la casella accanto a ciascuna di esse.
 5. Fai clic sul menu a discesa **Bulk Actions** e seleziona **Route**.

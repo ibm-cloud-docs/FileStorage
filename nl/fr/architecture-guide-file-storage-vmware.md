@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-30"
 
 ---
 {:pre: .pre}
@@ -10,6 +10,8 @@ lastupdated: "2018-10-31"
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
 
 # Mise à disposition de {{site.data.keyword.filestorage_short}} avec VMware
 
@@ -38,7 +40,7 @@ Lorsque vous commandez {{site.data.keyword.filestorage_short}}, tenez compte des
 - NFSv3 et NFSv4.1 sont pris en charge dans l'environnement {{site.data.keyword.BluSoftlayer_full}}. Toutefois, {{site.data.keyword.IBM}} recommande d'utiliser NFSv3. En effet, NFSv4.1 est un protocole avec état (et non sans état comme NFSv3) et donc susceptible de générer des anomalies lors des événements de réseau. NFSv4.1 doit mettre au repos toutes les opérations, puis effectuer la réclamation de verrou. Des interruptions peuvent survenir lors de telles opérations.
 
 Pour plus d'informations, consultez le livre blanc sur VMware [Best Practices for running
-VMware vSphere on Network Attached Storage](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){:new_window}
+VMware vSphere on Network Attached Storage ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){:new_window}
 {:tip}
 
 **Matrice de prise en charge des fonctions VMware avec le protocole NFS**
@@ -99,17 +101,17 @@ VMware vSphere on Network Attached Storage](https://www.vmware.com/content/dam/d
   </tr>
  </tbody>
 </table>
-*Source - [VMware - NFS Protocols and ESXi](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){:new_window}*
+*Source - [VMware - NFS Protocols and ESXi ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){:new_window}*
 
 
 
 ### Utilisation d'instantanés
 
-{{site.data.keyword.filestorage_short}} permet aux administrateurs de définir des plannings d'instantané qui créent et suppriment automatiquement les copies d'image instantanée pour chaque volume de stockage. Ils peuvent également créer des plannings d'instantané supplémentaires (horaire, quotidien, hebdomadaire) pour les instantanés automatiques et créer manuellement des instantanés ad hoc pour les scénarios de continuité opérationnelle et de reprise après incident (BCDR). Des alertes automatiques sont transmises via le portail [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} au propriétaire du volume afin de leur indiquer les instantanés conservés et l'espace utilisé.
+{{site.data.keyword.filestorage_short}} permet aux administrateurs de définir des plannings d'instantané qui créent et suppriment automatiquement les copies d'image instantanée pour chaque volume de stockage. Ils peuvent également créer des plannings d'instantané supplémentaires (horaire, quotidien, hebdomadaire) pour les instantanés automatiques et créer manuellement des instantanés ad hoc pour les scénarios de continuité opérationnelle et de reprise après incident (BCDR). Des alertes automatiques sont transmises via le portail [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} au propriétaire du volume afin de leur indiquer les instantanés conservés et l'espace utilisé.
 
 Un espace d'image instantanée est requis pour l'utilisation d'instantanés. Vous pouvez acquérir de l'espace lors de la commande de volume initiale ou après la mise à disposition initiale via la page **Détails du volume** en cliquant sur **Actions** et en sélectionnant **Ajouter de l'espace d'instantané**.
 
-Il est important de noter que les environnements VMware n'ont pas connaissance des instantanés. La fonctionnalité d'instantané de {{site.data.keyword.filestorage_short}} Endurance ne doit pas être confondue avec les instantanés VMware. Toute reprise effectuée avec la fonction d'instantané de {{site.data.keyword.filestorage_short}} doit être traitée à partir du portail [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
+Il est important de noter que les environnements VMware n'ont pas connaissance des instantanés. La fonctionnalité d'instantané de {{site.data.keyword.filestorage_short}} Endurance ne doit pas être confondue avec les instantanés VMware. Toute reprise effectuée avec la fonction d'instantané de {{site.data.keyword.filestorage_short}} doit être traitée à partir du portail [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
 
 La restauration du volume {{site.data.keyword.filestorage_short}} requiert la mise hors tension de toutes les machines virtuelles qui se trouvent sur {{site.data.keyword.filestorage_short}}. Le volume doit être temporairement démonté depuis les hôtes ESXi afin d'éviter que les données ne soient endommagées au cours du processus.
 
@@ -142,15 +144,15 @@ Les données non valides, qu'il s'agisse de données endommagées, détournées 
 
 ## Commande de {{site.data.keyword.filestorage_short}}
 
-Vous pouvez commander et configurer {{site.data.keyword.filestorage_short}} pour un environnement VMware ESXi 5. Utilisez les informations suivantes ainsi que celles de l'article [Advanced Single-Site VMware Reference Architecture](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} pour configurer l'une des options de stockage suivantes dans votre environnement VMware.
+Vous pouvez commander et configurer {{site.data.keyword.filestorage_short}} pour un environnement VMware ESXi 5. Utilisez les informations suivantes ainsi que celles de l'article [Advanced Single-Site VMware Reference Architecture](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} pour configurer l'une des options de stockage suivantes dans votre environnement VMware.
 
-Vous pouvez commander {{site.data.keyword.filestorage_short}} via le portail [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} en accédant à la page {{site.data.keyword.filestorage_short}} via **Stockage** > **{{site.data.keyword.filestorage_short}}**.
+Vous pouvez commander {{site.data.keyword.filestorage_short}} via le portail [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} en accédant à la page {{site.data.keyword.filestorage_short}} via **Stockage** > **{{site.data.keyword.filestorage_short}}**.
 
 
-### 1. Commande de 
+### 1. Commande de
 
 Suivez les étapes ci-après pour commander {{site.data.keyword.filestorage_short}} :
-1. Cliquez sur **Stockage** > **{{site.data.keyword.filestorage_short}}** sur la page d'accueil du portail [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
+1. Cliquez sur **Stockage** > **{{site.data.keyword.filestorage_short}}** sur la page d'accueil du portail [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
 2. Cliquez sur **Commander {{site.data.keyword.filestorage_short}}** sur la page **{{site.data.keyword.filestorage_short}}**.
 3. Sélectionnez **Endurance**/**Performance** dans la liste **Sélectionner le type de stockage**.
 4. Sélectionnez l'emplacement. Les centres de données dotés de fonctionnalités améliorées sont signalés par un astérisque. Vérifiez que le nouveau stockage est ajouté au même emplacement que l'hôte ESXi précédemment commandé.
@@ -164,7 +166,7 @@ Suivez les étapes ci-après pour commander {{site.data.keyword.filestorage_shor
 12. Cochez la case **J'ai lu et j'accepte l'intégralité du Contrat cadre de service**.
 13. Cliquez sur **Valider la commande** pour soumettre la commande ou sur **Annuler** pour fermer le formulaire sans soumettre de commande.
 
-Le stockage est mis à disposition en moins d'une minute et est visible sur la page **{{site.data.keyword.filestorage_short}}** du portail [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
+Le stockage est mis à disposition en moins d'une minute et est visible sur la page **{{site.data.keyword.filestorage_short}}** du portail [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
 
 
 
@@ -215,7 +217,7 @@ Avant de commencer le processus de configuration de VMware, assurez-vous que les
      8980 bytes from a.b.c.d: icmp_seq=1 ttl=128 time=3.36 ms
      ```
 
-Pour plus d'informations sur VMware et les trames Jumbo, cliquez [ici](https://kb.vmware.com/s/article/1003712){:new_window}.
+Pour plus d'informations sur VMware et les trames Jumbo, cliquez [ici ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://kb.vmware.com/s/article/1003712){:new_window}.
 {:tip}
 
 
@@ -254,7 +256,7 @@ La configuration de réseau de ce guide d'architecture utilise un nombre minimal
 
 2. Les routes statiques ne sont pas permanentes si vous effectuez des réamorçages sur ESXi 5.0 et versions antérieures. Pour garantir le caractère permanent des routes statiques ajoutées, vous devez ajouter ces commandes sur chaque hôte dans le fichier `local.sh` qui se trouve dans le répertoire `/etc/rc.local.d/`. Ouvrez le fichier `local.sh` à l'aide de l'éditeur visuel et ajoutez la seconde commande de l'étape 4.1 devant la ligne `exit 0`.
 
-Notez l'adresse IP car elle peut être utilisée pour le montage du volume lors de l'étape suivante.<br/>Vous devez procéder de la sorte pour chaque volume NFS que vous envisagez de monter sur votre hôte ESXi.<br/>Pour plus d'informations, voir l'article de la base de connaissances de VMware, [Configuring static routes for VMkernel ports on an ESXi host](https://kb.vmware.com/s/article/2001426){:new_window}.
+Notez l'adresse IP car elle peut être utilisée pour le montage du volume lors de l'étape suivante.<br/>Vous devez procéder de la sorte pour chaque volume NFS que vous envisagez de monter sur votre hôte ESXi.<br/>Pour plus d'informations, voir l'article de la base de connaissances de VMware, [Configuring static routes for VMkernel ports on an ESXi host ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://kb.vmware.com/s/article/2001426){:new_window}.
 {:tip}
 
 
@@ -265,7 +267,7 @@ Notez l'adresse IP car elle peut être utilisée pour le montage du volume lors 
 3. Cliquez sur l'icône **Create a new datastore**.
 4. Sur l'écran **New Datastore**, sélectionnez l'emplacement du magasin de données WMware (votre hôte ESXi) et cliquez sur **Next**.
 5. Sur l'écran **Type**, sélectionnez **NFS**, puis cliquez sur **Next**.
-6. Ensuite, sélectionnez la version de NFS. NFSv3 et NFSv4.1 sont pris en charge, mais le premier est recommandé. Prenez soin d'utiliser une seule version de NFS pour accéder à un magasin de données spécifique. Si vous montez un ou plusieurs hôtes sur le même magasin de données en utilisant différentes versions, les données peuvent être endommagées. 
+6. Ensuite, sélectionnez la version de NFS. NFSv3 et NFSv4.1 sont pris en charge, mais le premier est recommandé. Prenez soin d'utiliser une seule version de NFS pour accéder à un magasin de données spécifique. Si vous montez un ou plusieurs hôtes sur le même magasin de données en utilisant différentes versions, les données peuvent être endommagées.
 7. Sur l'écran **Name and configuration**, entrez le nom que vous souhaitez donner au magasin de données WMware. Indiquez également le nom d'hôte du serveur NFS. L'utilisation du nom de domaine complet du serveur NFS permet d'optimiser la répartition du trafic vers le serveur sous-jacent. L'adresse IP est également valide mais elle est moins fréquemment employée et uniquement dans des instances spécifiques. Entrez le nom de dossier au format `/foldername`.
 8. Sur l'écran **Host accessibility**, sélectionnez un ou plusieurs hôtes que vous souhaitez monter sur le magasin de données NFS WMware et cliquez sur **next**.
 9. Vérifiez les entrées sur l'écran suivant et cliquez sur **Finish**.
@@ -436,5 +438,5 @@ Lorsque vous effectuez cette modification, la carte d'interface réseau perd la 
 
    Cette action provoque une courte perte de connectivité réseau.
 
-Pour en savoir plus sur l'architecture de référence d'un environnement VMware mono-site avancé, cliquez [ici](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}.
+Pour en savoir plus sur l'architecture de référence d'un environnement VMware mono-site avancé, cliquez [ici](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}.
 {:tip}

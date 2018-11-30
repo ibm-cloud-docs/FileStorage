@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-30"
 
 ---
 {:new_window: target="_blank"}
@@ -33,7 +33,7 @@ Alcuni utilizzi comuni per un volume duplicato:
 - **Sviluppo e test (sviluppo/test)**: crea fino a quattro duplicati simultanei per volta di un volume per creare i dati duplicati per attività di sviluppo e test.
 - **Modifica delle dimensioni dell'archiviazione**: crea un volume con la nuova dimensione, il nuovo tasso di IOPS o entrambe le cose senza dover spostare i tuoi dati.  
 
-Servendoti del [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}, puoi creare un volume duplicato in un paio di modi.
+Servendoti del [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}, puoi creare un volume duplicato in un paio di modi.
 
 
 ## Creazione di un duplicato da un volume specifico nell'elenco archiviazioni

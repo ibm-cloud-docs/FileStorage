@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-30"
 
 ---
 {:new_window: target="_blank"}
@@ -34,7 +34,7 @@ Folgende Anweisungen gelten für die Bestellung von erweiterten Datenträgern/ge
 
 ### Neuen Endurance-Speicherdatenträger bestellen
 
-1. Klicken Sie im [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} auf **Speicher** > **{{site.data.keyword.filestorage_short}}** oder im Katalog von {{site.data.keyword.BluSoftlayer_full}} auf **Infrastruktur** > **Speicher** > **{{site.data.keyword.filestorage_short}}**.
+1. Klicken Sie im [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} auf **Speicher** > **{{site.data.keyword.filestorage_short}}** oder im Katalog von {{site.data.keyword.BluSoftlayer_full}} auf **Infrastruktur** > **Speicher** > **{{site.data.keyword.filestorage_short}}**.
 2. Klicken Sie auf **{{site.data.keyword.filestorage_short}} bestellen**.
 3. Wählen Sie **Endurance** in der Liste **Speichertyp auswählen** aus.
 4. Klicken Sie auf **Position** und wählen Sie Ihr Rechenzentrum aus.
@@ -48,7 +48,7 @@ Folgende Anweisungen gelten für die Bestellung von erweiterten Datenträgern/ge
 
 ### Verschlüsselten Performance-Datenträger bestellen
 
-1. Klicken Sie im [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} auf **Speicher**, **{{site.data.keyword.filestorage_short}}** oder im Katalog von {{site.data.keyword.BluSoftlayer_full}} auf **Infrastruktur** >** Speicher** > **{{site.data.keyword.filestorage_short}}**.
+1. Klicken Sie im [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} auf **Speicher**, **{{site.data.keyword.filestorage_short}}** oder im Katalog von {{site.data.keyword.BluSoftlayer_full}} auf **Infrastruktur** >** Speicher** > **{{site.data.keyword.filestorage_short}}**.
 2. Klicken Sie auf **{{site.data.keyword.filestorage_short}} bestellen**.
 3. Wählen Sie **Performance** in der Liste **Speichertyp auswählen** aus.
 4. Klicken Sie auf **Position** und wählen Sie Ihr Rechenzentrum aus.

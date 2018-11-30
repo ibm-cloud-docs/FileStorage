@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-30"
 
 ---
 {:new_window: target="_blank"}
@@ -39,7 +39,7 @@ lastupdated: "2018-10-31"
 
 您可以檢視主機可存取的磁區，包括建立連線所需的資訊 -「磁區名稱」、「儲存空間類型」、「目標位址」、容量及位置。
 
-1. 從 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} 中按一下**裝置** > **裝置清單**。
+1. 從 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} 中按一下**裝置** > **裝置清單**。
 2. 按一下適當的裝置。
 2. 選取「儲存空間」標籤。
 
@@ -62,7 +62,7 @@ lastupdated: "2018-10-31"
 
 ### 從裝置清單撤銷存取權
 
-1. 從 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} 中按一下**裝置** > **裝置清單**。
+1. 從 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} 中按一下**裝置** > **裝置清單**。
 2. 按兩下適當的裝置。
 3. 選取**儲存空間**標籤。
 4. 您會看到此特定主機可存取的儲存空間磁區清單，這些儲存空間磁區全部是依儲存空間類型（區塊、檔案、其他）分組。選取您要撤銷其存取權之磁區旁的個別**動作**功能表，然後按一下**撤銷存取權**。

@@ -12,6 +12,7 @@ lastupdated: "2018-11-30"
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 
+
 # Setting up Brocade vRouter (Vyatta) for VMware Environments with {{site.data.keyword.filestorage_short}}
 
 You can configure a Brocade vRouter (Vyatta) appliance for high availability (HA) configuration within a VMware environment that uses {{site.data.keyword.filestorage_full}}. Use the following information along with the [Advanced Single-Site VMware Reference Architecture](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} to set up one of these storage options in your VMware environment.
@@ -357,7 +358,7 @@ save
 
 When the zones and firewall rules are set up on the Brocade vRouter (Vyatta), you must associate the VLANs to it and enable routing of the VLANs through the Brocade vRouter (Vyatta).
 
-1. Log in to the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} and click **Network > Gateway Appliance** and click the Brocade vRouter (Vyatta).
+1. Log in to the [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} and click **Network > Gateway Appliance** and click the Brocade vRouter (Vyatta).
 2. Select a **VLAN** and click **Associate**.
 4. Locate the VLANs under **Associated VLANs** and check the box next to each one.
 5. Click **Bulk Actions** drop–down menu and select **Route**.

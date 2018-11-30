@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-30"
 
 ---
 {:pre: .pre}
@@ -38,7 +38,7 @@ Beachten Sie für die Bestellung von {{site.data.keyword.filestorage_short}} fol
 - NFS Version 3 und NFS Version 4.1 werden in der Umgebung von {{site.data.keyword.BluSoftlayer_full}} unterstützt. {{site.data.keyword.IBM}} empfiehlt jedoch, NFS Version 3 zu verwenden. Da NFS Version 4.1 ein Protokoll mit Zustandsüberwachung (und nicht wie NFS Version 3 ohne Zustandsüberwachung) ist, können bei Netzereignissen Probleme mit dem Protokoll auftreten. NFS Version 4.1 muss alle Operationen ruhen lassen und anschließend eine Sperrenrückforderung ausführen. Während dieser Operationen kann es zu Unterbrechungen kommen.
 
 Weitere Informationen finden Sie im Whitepaper von VMware zu [bewährten Verfahren für die Ausführung von
-VMware vSphere unter Network Attached Storage](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf).{:new_window}
+VMware vSphere unter Network Attached Storage ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf).{:new_window}
 {:tip}
 
 **Unterstützungsmatrix für das NFS-Protokoll und VMware-Funktionen**
@@ -99,17 +99,17 @@ VMware vSphere unter Network Attached Storage](https://www.vmware.com/content/da
   </tr>
  </tbody>
 </table>
-*Quelle - [VMware - NFS-Protokolle und ESXi](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){:new_window}*
+*Quelle - [VMware - NFS-Protokolle und ESXi ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){:new_window}*
 
 
 
 ### Snapshots verwenden
 
-{{site.data.keyword.filestorage_short}} gibt Administratoren die Möglichkeit, Snapshotpläne festzulegen, durch die Snapshotkopien für jeden Speicherdatenträger automatisch erstellt und gelöscht werden. Sie können darüber hinaus zusätzliche Snapshotpläne (stündlich, täglich, wöchentlich) für automatische Snapshots erstellen und manuell Ad-hoc-Snapshots für BCDR-Szenarios (BCDR – Business-Continuity/Disaster Recovery) erstellen. Automatische Alerts werden über das [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} an den Datenträgereigner in Bezug auf die aufbewahrten Snapshots und den belegten Speicherplatz zugestellt.
+{{site.data.keyword.filestorage_short}} gibt Administratoren die Möglichkeit, Snapshotpläne festzulegen, durch die Snapshotkopien für jeden Speicherdatenträger automatisch erstellt und gelöscht werden. Sie können darüber hinaus zusätzliche Snapshotpläne (stündlich, täglich, wöchentlich) für automatische Snapshots erstellen und manuell Ad-hoc-Snapshots für BCDR-Szenarios (BCDR – Business-Continuity/Disaster Recovery) erstellen. Automatische Alerts werden über das [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} an den Datenträgereigner in Bezug auf die aufbewahrten Snapshots und den belegten Speicherplatz zugestellt.
 
 Zur Verwendung von Snapshots ist ein Snapshotbereich erforderlich. Der Speicherbereich kann bei der ersten Datenträgerbestellung oder nach der Erstbereitstellung über die Seite **Datenträgerdetails** durch Klicken auf **Aktionen** und Auswählen der Option **Snapshotbereich hinzufügen** gekauft werden.
 
-Es ist wichtig zu beachten, dass VMware-Umgebungen Snapshots nicht erkennen. Die Endurance {{site.data.keyword.filestorage_short}}-Snapshotfunktionalität darf nicht mit VMware-Snapshots verwechselt werden. Jede Wiederherstellung mithilfe der {{site.data.keyword.filestorage_short}}-Snapshotfunktion muss über das [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} durchgeführt werden.
+Es ist wichtig zu beachten, dass VMware-Umgebungen Snapshots nicht erkennen. Die Endurance {{site.data.keyword.filestorage_short}}-Snapshotfunktionalität darf nicht mit VMware-Snapshots verwechselt werden. Jede Wiederherstellung mithilfe der {{site.data.keyword.filestorage_short}}-Snapshotfunktion muss über das [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} durchgeführt werden.
 
 Zur Wiederherstellung des {{site.data.keyword.filestorage_short}}-Datenträgers ist es erforderlich, alle VMs auf {{site.data.keyword.filestorage_short}} auszuschalten. Der Datenträger muss vorübergehend von den ESXi-Hosts abgehängt werden, um eine Beschädigung von Daten während des Prozesses zu vermeiden.
 
@@ -144,13 +144,13 @@ Ungültige Daten, seien es beschädigte, gehackte oder infizierte, werden dem Sn
 
 Sie können {{site.data.keyword.filestorage_short}} für eine VMware ESXi 5-Umgebung bestellen und konfigurieren. Verwenden Sie folgende Informationen zusammen mit [Advanced Single-Site VMware Reference Architecture](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}, um eine dieser Speicheroptionen in Ihrer VMware-Umgebung einzurichten.
 
-{{site.data.keyword.filestorage_short}} kann über das [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} bestellt werden. Greifen Sie zu diesem Zweck auf die {{site.data.keyword.filestorage_short}}-Seite über die Optionen **Speicher** > **{{site.data.keyword.filestorage_short}}** zu.
+{{site.data.keyword.filestorage_short}} kann über das [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} bestellt werden. Greifen Sie zu diesem Zweck auf die {{site.data.keyword.filestorage_short}}-Seite über die Optionen **Speicher** > **{{site.data.keyword.filestorage_short}}** zu.
 
 
-### 1. 
+### 1.
 
  bestellenFühren Sie die folgenden Schritte aus, um {{site.data.keyword.filestorage_short}} zu bestellen:
-1. Klicken Sie auf **Speicher** > **{{site.data.keyword.filestorage_short}}** auf der [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}-Startseite.
+1. Klicken Sie auf **Speicher** > **{{site.data.keyword.filestorage_short}}** auf der [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}-Startseite.
 2. Klicken Sie auf **{{site.data.keyword.filestorage_short}} bestellen** auf der Seite **{{site.data.keyword.filestorage_short}}**.
 3. Wählen Sie **Endurance**/**Performance** in der Liste **Speichertyp auswählen** aus.
 4. Wählen Sie die Position aus. Datenzentren mit verbesserten Funktionen sind mit einem Stern gekennzeichnet. Stellen Sie sicher, dass der neue Speicher an derselben Position wie der zuvor bestellte ESXi-Host hinzugefügt wird.
@@ -164,7 +164,7 @@ Sie können {{site.data.keyword.filestorage_short}} für eine VMware ESXi 5-Umge
 12. Wählen Sie das Kontrollkästchen **Ich habe die Rahmenvereinbarung gelesen und bin mit den darin genannten Bedingungen einverstanden** aus.
 13. Klicken Sie auf **Bestellung abschicken**, um die Bestellung abzuschicken, oder auf **Abbrechen**, um das Formular zu schließen, ohne die Bestellung abzuschicken.
 
-Der Speicher wird in weniger als einer Minute bereitgestellt und auf der Seite **{{site.data.keyword.filestorage_short}}** im [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} angezeigt.
+Der Speicher wird in weniger als einer Minute bereitgestellt und auf der Seite **{{site.data.keyword.filestorage_short}}** im [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} angezeigt.
 
 
 
@@ -215,7 +215,7 @@ Stellen Sie vor Beginn des VMware-Konfigurationsprozesses sicher, dass die folge
      8980 bytes from a.b.c.d: icmp_seq=1 ttl=128 time=3.36 ms
      ```
 
-Weitere Informationen zu VMware und Jumbo-Frames finden Sie [hier](https://kb.vmware.com/s/article/1003712){:new_window}.
+Weitere Informationen zu VMware und Jumbo-Frames finden Sie [hier ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://kb.vmware.com/s/article/1003712){:new_window}.
 {:tip}
 
 
@@ -254,7 +254,7 @@ Die Netzkonfiguration für diesen Architekturleitfaden arbeitet mit einer minima
 
 2. Statische Routen bleiben unter ESXi 5.0 und früheren Versionen nicht über Neustarts hinweg bestehen. Zur Sicherstellung, dass alle hinzugefügten statischen Routen persistent bestehen bleiben, muss dieser Befehl in der Datei `local.sh` auf jedem Host im Verzeichnis `/etc/rc.local.d/` hinzugefügt werden. Öffnen Sie die Datei `local.sh` mit dem visuellen Editor und fügen Sie den zweiten Befehl in Schritt 4.1 vor der Zeile `exit 0` hinzu.
 
-Notieren Sie die IP-Adresse, da sie zum Anhängen des Datenträgers im nächsten Schritt verwendet werden kann. <br/>Dies muss für jeden NFS-Datenträger ausgeführt werden, der an Ihren ESXi-Host angehängt werden soll.<br/>Weitere Informationen finden Sie im folgend Artikel zu VMware KB: [Statische Routen für VMkernel-Ports auf einem ESXi-Host konfigurieren (englisch)](https://kb.vmware.com/s/article/2001426){:new_window}.
+Notieren Sie die IP-Adresse, da sie zum Anhängen des Datenträgers im nächsten Schritt verwendet werden kann. <br/>Dies muss für jeden NFS-Datenträger ausgeführt werden, der an Ihren ESXi-Host angehängt werden soll.<br/>Weitere Informationen finden Sie im folgend Artikel zu VMware KB: [Statische Routen für VMkernel-Ports auf einem ESXi-Host konfigurieren (englisch) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://kb.vmware.com/s/article/2001426){:new_window}.
 {:tip}
 
 

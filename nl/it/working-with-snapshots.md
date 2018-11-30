@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-30"
 
 ---
 {:new_window: target="_blank"}
@@ -15,7 +15,7 @@ lastupdated: "2018-10-31"
 
 ## Stai creando una pianificazione delle istantanee?
 
-Puoi decidere con che frequenza e quando vuoi creare un riferimento ad un punto nel tempo del tuo volume di archiviazione creando le pianificazioni delle istantanee. Puoi avere un massimo di 50 istantanee per volume di archiviazione. Le pianificazioni sono gestite tramite la scheda **Storage** > **{{site.data.keyword.filestorage_short}}** del [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
+Puoi decidere con che frequenza e quando vuoi creare un riferimento ad un punto nel tempo del tuo volume di archiviazione creando le pianificazioni delle istantanee. Puoi avere un massimo di 50 istantanee per volume di archiviazione. Le pianificazioni sono gestite tramite la scheda **Storage** > **{{site.data.keyword.filestorage_short}}** del [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
 
 
 Prima di poter configurare la tua pianificazione iniziale, devi procedere all'acquisto di spazio per le istantanee, se non lo hai fatto durante il provisioning iniziale del volume di archiviazione.
@@ -23,7 +23,7 @@ Prima di poter configurare la tua pianificazione iniziale, devi procedere all'ac
 
 ### Aggiunta di una pianificazione delle istantanee
 
-Le pianificazioni delle istantanee possono essere configurate per intervalli orari, giornalieri e settimanali, ciascuno con un distinto ciclo di conservazione. C'è un limite massimo di 50 istantanee pianificate, che può essere una combinazione di pianificazioni orarie, giornaliere e settimanali e di istantanee manuali per volume di archiviazione. 
+Le pianificazioni delle istantanee possono essere configurate per intervalli orari, giornalieri e settimanali, ciascuno con un distinto ciclo di conservazione. C'è un limite massimo di 50 istantanee pianificate, che può essere una combinazione di pianificazioni orarie, giornaliere e settimanali e di istantanee manuali per volume di archiviazione.
 
 1. Fai clic sul volume di archiviazione, fai clic su **Actions** e fai clic su **Schedule Snapshot**.
 2. Nella casella New Schedule Snapshot, ci sono tre diverse frequenze di istantanea da cui scegliere. Usa qualsiasi combinazione di queste tre frequenze per creare una pianificazione delle istantanee completa.
@@ -44,7 +44,7 @@ l'elenco delle istantanee viene visualizzato man mano che vengono eseguite nella
 
 Le istantanee manuali possono essere acquisite a vari punti durante un upgrade o una manutenzione dell'applicazione. Puoi anche acquisire le istantanee su più server che erano stati temporaneamente disattivati a livello dell'applicazione.
 
-C'è un limite massimo di 50 istantanee manuali per volume di archiviazione. 
+C'è un limite massimo di 50 istantanee manuali per volume di archiviazione.
 
 1. Fai clic sul tuo volume di archiviazione.
 2. Fai clic su **Actions**.
@@ -111,7 +111,7 @@ Potresti dover riportare il tuo volume di archiviazione a uno specifico punto te
 
 1. Smonta e scollega il tuo volume di archiviazione dall'host.
    - Fai clic [qui ](accessing-file-storage-linux.html) per le istruzioni di {{site.data.keyword.filestorage_short}} su Linux.
-2. Fai clic su **Storage**, **{{site.data.keyword.filestorage_short}}** nel [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
+2. Fai clic su **Storage**, **{{site.data.keyword.filestorage_short}}** nel [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
 3. Scorri verso il basso e fai clic sul tuo volume da ripristinare. La sezione **Snapshots** della pagina **Detail** visualizza l'elenco di tutte le istantanee salvate insieme alla loro dimensione e alla loro data di creazione.
 4. Fai clic su **Actions** accanto all'istantanea da utilizzare e fai clic su **Restore**. <br/>
 

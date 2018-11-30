@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-30"
 
 ---
 {:new_window: target="_blank"}
@@ -35,7 +35,7 @@ API を使用して注文する場合は、「Storage as a Service」パッケ�
 
 ### 新規エンデュランス・ストレージ・ボリュームの注文
 
-1. [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}で**「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**をクリックするか、または {{site.data.keyword.BluSoftlayer_full}} カタログで**「インフラストラクチャー」** > **「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**をクリックします。
+1. [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}で**「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**をクリックするか、または {{site.data.keyword.BluSoftlayer_full}} カタログで**「インフラストラクチャー」** > **「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**をクリックします。
 2. **「{{site.data.keyword.filestorage_short}} を注文」**をクリックします。
 3. **「ストレージ・タイプの選択」**リストで**「エンデュランス」**を選択します。
 4. **「ロケーション」**をクリックし、使用するデータ・センターを選択します。
@@ -49,7 +49,7 @@ API を使用して注文する場合は、「Storage as a Service」パッケ�
 
 ### 暗号化パフォーマンス・ストレージ・ボリュームの注文
 
-1. [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}で**「ストレージ」**、**「{{site.data.keyword.filestorage_short}}」**をクリックするか、または {{site.data.keyword.BluSoftlayer_full}} カタログで**「インフラストラクチャー」** > **「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**をクリックします。
+1. [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}で**「ストレージ」**、**「{{site.data.keyword.filestorage_short}}」**をクリックするか、または {{site.data.keyword.BluSoftlayer_full}} カタログで**「インフラストラクチャー」** > **「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**をクリックします。
 2. **「{{site.data.keyword.filestorage_short}} を注文」**をクリックします。
 3. **「ストレージ・タイプの選択」**リストで**「パフォーマンス」**を選択します。
 4. **「ロケーション」**をクリックし、使用するデータ・センターを選択します。

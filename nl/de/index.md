@@ -2,13 +2,15 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-29"
+lastupdated: "2018-11-30"
 
 ---
 {:new_window: target="_blank"}
-{:tip: .tip} 
-{:note: .note} 
+{:tip: .tip}
+{:note: .note}
 {:important: .important}
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
 
 # Einführung in {{site.data.keyword.filestorage_short}}
 
@@ -43,13 +45,13 @@ Nutzen Sie die folgenden Kernfunktionen von {{site.data.keyword.filestorage_shor
 
 ## Rechnungsstellung
 
-Sie können stündliche oder monatliche Rechnungsstellung für einen Dateidatenträger auswählen. Der Typ der Rechnungsstellung, der für eine LUN ausgewählt wird, gilt für den zugehörigen Snapshotbereich und für Replikate. Wenn Sie zum Beispiel eine LUN mit stündlicher Rechnungsstellung bereitstellen, werden alle Gebühren für Snapshots oder Replikate stündlich in Rechnung gestellt. Wenn Sie eine LUN mit monatlicher Rechnungsstellung bereitstellen, werden Gebühren für Snapshots oder Replikate monatlich in Rechnung gestellt. 
+Sie können stündliche oder monatliche Rechnungsstellung für einen Dateidatenträger auswählen. Der Typ der Rechnungsstellung, der für eine LUN ausgewählt wird, gilt für den zugehörigen Snapshotbereich und für Replikate. Wenn Sie zum Beispiel eine LUN mit stündlicher Rechnungsstellung bereitstellen, werden alle Gebühren für Snapshots oder Replikate stündlich in Rechnung gestellt. Wenn Sie eine LUN mit monatlicher Rechnungsstellung bereitstellen, werden Gebühren für Snapshots oder Replikate monatlich in Rechnung gestellt.
 
-Bei der **stündlichen Rechnungsstellung** wird die Stundenzahl, die der Dateidatenträger auf dem Konto vorhanden war, zu dem Zeitpunkt berechnet, an dem die LUN gelöscht wird oder der Rechnungsstellungszyklus endet, je nachdem, welcher Zeitpunkt zuerst kommt. Die stündliche Rechnungsstellung ist eine gute Wahl für Speicher, der für einige wenige Tage oder weniger als einen ganzen Monat lang genutzt wird. Die Abrechnung nach Stunden ist nur für Speicher verfügbar, der in [ausgewählten Rechenzentren](new-ibm-block-and-file-storage-location-and-features.html) bereitgestellt wird. 
+Bei der **stündlichen Rechnungsstellung** wird die Stundenzahl, die der Dateidatenträger auf dem Konto vorhanden war, zu dem Zeitpunkt berechnet, an dem die LUN gelöscht wird oder der Rechnungsstellungszyklus endet, je nachdem, welcher Zeitpunkt zuerst kommt. Die stündliche Rechnungsstellung ist eine gute Wahl für Speicher, der für einige wenige Tage oder weniger als einen ganzen Monat lang genutzt wird. Die Abrechnung nach Stunden ist nur für Speicher verfügbar, der in [ausgewählten Rechenzentren](new-ibm-block-and-file-storage-location-and-features.html) bereitgestellt wird.
 
-Bei der **monatlichen Rechnungsstellung** erfolgt die Berechnung für den Preis anteilmäßig ab dem Erstellungsdatum bis zum Ende des Rechnungsstellungszyklus und die Rechnung wird unverzüglich gestellt. Es erfolgt keine Rückerstattung, wenn ein Datenträger vor dem Ende des Rechnungsstellungszyklus gelöscht wird. Die monatliche Rechnungsstellung ist eine gute Wahl für Speicher, der für Auslastungen im Produktionsbetrieb genutzt wird, die Daten verwenden, die über längere Zeiträume (einen Monat oder länger) gespeichert werden und zugänglich sein müssen. 
+Bei der **monatlichen Rechnungsstellung** erfolgt die Berechnung für den Preis anteilmäßig ab dem Erstellungsdatum bis zum Ende des Rechnungsstellungszyklus und die Rechnung wird unverzüglich gestellt. Es erfolgt keine Rückerstattung, wenn ein Datenträger vor dem Ende des Rechnungsstellungszyklus gelöscht wird. Die monatliche Rechnungsstellung ist eine gute Wahl für Speicher, der für Auslastungen im Produktionsbetrieb genutzt wird, die Daten verwenden, die über längere Zeiträume (einen Monat oder länger) gespeichert werden und zugänglich sein müssen.
 
- 
+
 **Performance**
 <table>
   <caption>Tabelle 1 enthält die Preise für Performance-Speicher mit monatlicher und stündlicher Rechnungsstellung.</caption>
@@ -62,7 +64,7 @@ Bei der **monatlichen Rechnungsstellung** erfolgt die Berechnung für den Preis 
    <td>$0,0001/GB + $0,0002/IOPS</td>
   </tr>
 </table>
- 
+
 **Endurance**
 <table>
   <caption>Tabelle 2 enthält die Preise für Endurance-Speicher für die einzelnen Stufen mit den Optionen für monatliche und stündliche Rechnungsstellung.</caption>
@@ -89,15 +91,15 @@ Bei der **monatlichen Rechnungsstellung** erfolgt die Berechnung für den Preis 
   </tr>
 </table>
 
- 
+
 
 ## Bereitstellung
 
 {{site.data.keyword.filestorage_short}}-Datenträger können von 20 GB bis 12 TB mit zwei Optionen bereitgestellt werden: <br/>
 - Sie können **Endurance**-Stufen bereitstellen, die über vordefinierte Leistungsstufen und andere Funktionen wie Snapshots und Replikation verfügen.
-- Sie können eine hochleistungsfähige **Performance-Umgebung** mit einer zugeordneten Kapazität an E/A-Operationen pro Sekunde (IOPS) erstellen. 
+- Sie können eine hochleistungsfähige **Performance-Umgebung** mit einer zugeordneten Kapazität an E/A-Operationen pro Sekunde (IOPS) erstellen.
 
- 
+
 ### Bereitstellung mit Endurance-Stufen
 
 Endurance {{site.data.keyword.filestorage_short}} ist in vier IOPS-Leistungsstufen zur Unterstützung verschiedener Anwendungsanforderungen verfügbar. <br />
@@ -111,9 +113,9 @@ Endurance {{site.data.keyword.filestorage_short}} ist in vier IOPS-Leistungsstuf
 - **10 IOPS pro GB** sind für anspruchsvollste Workloads vorgesehen, wie zum Beispiel für die von NoSQL-Datenbanken generierten Workloads und für die Datenverarbeitung von Analysen (Analytics). Diese Stufe ist nur für Speicher verfügbar, der in [ausgewählten Rechenzentren](new-ibm-block-and-file-storage-location-and-features.html) mit einer Größe von bis zu 4 TB bereitgestellt wird.
 
 Bis zu 48.000 E/A-Operationen pro Sekunde sind mit einem Endurance-Datenträger in der Größe von 12 TB verfügbar.
- 
+
 Die Auswahl der richtigen Endurance-Stufe für Ihre Workload spielt eine wichtige Rolle. Ebenso wichtig ist die Verwendung der richtigen Blockgröße, der Ethernet-Verbindungsgeschwindigkeit sowie der Anzahl der Hosts, die zur Erzielung der maximalen Leistung erforderlich sind. Wenn einer dieser Aspekte nicht mit den anderen im Einklang steht, kann dies erhebliche Auswirkungen auf den resultierenden Durchsatz haben.
- 
+
 ### Bereitstellung mit Performance
 
 Performance ist eine Klasse von {{site.data.keyword.filestorage_short}}, die auf die Unterstützung von Anwendungen mit hohen E/A-Raten mit bekannten Leistungsanforderungen ausgerichtet ist, die sich nicht geeignet mit einer Endurance-Stufe darstellen lassen. Eine vorhersagbare Leistung wird durch die Zuordnung einer IOPS-Kapazität auf Protokollebene zu einzelnen Datenträgern erzielt. Verschiedene IOPS-Raten (100-48.000) können mit Speichergrößen von 20 GB bis 12 TB bereitgestellt werden.
@@ -262,9 +264,9 @@ Ein weitere Faktor, der zu beachten ist, ist die Anzahl der Hosts, die Ihren Dat
 
 Die Geschwindigkeit Ihrer Ethernet-Verbindung muss höher als der erwartete maximale Durchsatz von Ihrem Datenträger sein. Grundsätzlich dürfte Ihre Ethernet-Verbindung nicht über 70% der verfügbaren Bandbreite hinaus ausgelastet werden. Wenn Sie zum Beispiel 6.000 IOPS haben und eine Blockgröße von 16 KB verwenden, kann der Datenträger einen Durchsatz von annähernd 94 MB pro Sekunde verarbeiten. Wenn Sie eine 1-Gb/s-Ethernet-Verbindung zu Ihrer LUN haben, wird diese zu einem Engpass, wenn Ihre Server versuchen, den maximal verfügbaren Durchsatz zu nutzen. Das liegt daran, dass 70 Prozent der theoretischen Begrenzung einer 1-Gb/s-Ethernet-Verbindung (125 MB pro Sekunde) nur 88 MB pro Sekunde zulassen würden.
 
-Zur Erzielung der maximalen E/A-Operationen pro Sekunde müssen geeignete Netzressourcen eingesetzt werden. Außerdem sind die Nutzung privater Netze außerhalb des Speichers sowie hostseitige und anwendungsspezifische Optimierungen (zum Beispiel IP-Stack oder [Warteschlangenlängen](set-host-queue-depth-settings-performance-and-endurance-storage.html) und andere Einstellungen) zu berücksichtigen. 
+Zur Erzielung der maximalen E/A-Operationen pro Sekunde müssen geeignete Netzressourcen eingesetzt werden. Außerdem sind die Nutzung privater Netze außerhalb des Speichers sowie hostseitige und anwendungsspezifische Optimierungen (zum Beispiel IP-Stack oder [Warteschlangenlängen](set-host-queue-depth-settings-performance-and-endurance-storage.html) und andere Einstellungen) zu berücksichtigen.
 
-Der Speicherdatenverkehr ist in der gesamten Netznutzung von öffentlichen virtuellen Servern enthalten. Die [Dokumentation zu virtuellen Servern](https://console.bluemix.net/docs/vsi/vsi_public.html#public-virtual-servers) enthält Informationen zu den möglichen Einschränkungen im Zusammenhang mit dem Service.
+Der Speicherdatenverkehr ist in der gesamten Netznutzung von öffentlichen virtuellen Servern enthalten. Die [Dokumentation zu virtuellen Servern](https://{DomainName}/docs/vsi/vsi_public.html#public-virtual-servers) enthält Informationen zu den möglichen Einschränkungen im Zusammenhang mit dem Service.
 
 **NFS-Version**
 

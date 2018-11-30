@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-30"
 
 ---
 {:new_window: target="_blank"}
@@ -355,7 +355,7 @@ save
 
 在 Brocade vRouter (Vyatta) 上设置区域和防火墙规则后，必须将 VLAN 与其相关联，并通过 Brocade vRouter (Vyatta) 启用这些 VLAN 的路由。
 
-1. 登录到 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} 并单击**网络 > 网关设备**，然后单击 Brocade vRouter (Vyatta)。
+1. 登录到 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} 并单击**网络 > 网关设备**，然后单击 Brocade vRouter (Vyatta)。
 2. 选择 **VLAN**，然后单击**关联**。
 4. 在**关联的 VLAN** 下找到所需 VLAN，并选中每个 VLAN 旁边的框。
 5. 单击**批量操作**下拉菜单，然后选择**路由**。

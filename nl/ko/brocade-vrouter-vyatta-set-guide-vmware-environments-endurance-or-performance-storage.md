@@ -2,17 +2,19 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-30"
 
 ---
 {:new_window: target="_blank"}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
 
 # {{site.data.keyword.filestorage_short}}를 사용하는 VMware 환경에 대한 Brocade vRouter(Vyatta) 설정
 
-{{site.data.keyword.filestorage_full}}를 사용하는 VMware 환경 내에서 고가용성(HA) 구성을 위해 Brocade vRouter(Vyatta) 어플라이언스를 구성할 수 있습니다. 다음 정보를 [고급 단일 사이트 VMware 참조 아키텍처](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}와 함께 사용하면 VMware 환경에서 이러한 스토리지 옵션 중 하나를 설정할 수 있습니다.
+{{site.data.keyword.filestorage_full}}를 사용하는 VMware 환경 내에서 고가용성(HA) 구성을 위해 Brocade vRouter(Vyatta) 어플라이언스를 구성할 수 있습니다. 다음 정보를 [고급 단일 사이트 VMware 참조 아키텍처](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}와 함께 사용하면 VMware 환경에서 이러한 스토리지 옵션 중 하나를 설정할 수 있습니다.
 
 Brocade vRouter(Vyatta) 게이트웨이는 사용자 환경의 게이트웨이 및 라우터 역할을 수행하며 서브넷으로 구성된 구역을 포함합니다. 구역 간에 서로 통신할 수 있도록 방화벽 규칙이 설정됩니다. 다른 구역과 통신할 필요가 없는 구역의 경우에는 방화벽 규칙이 필요하지 않습니다.
 
@@ -355,7 +357,7 @@ save
 
 구역 및 방화벽 규칙이 Brocade vRouter(Vyatta)에 설정되고 나면, 여기에 VLAN을 연관시키고 Brocade vRouter(Vyatta)를 통한 VLAN 라우팅을 사용으로 설정해야 합니다.
 
-1. [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}에 로그인하고 **네트워크 > 게이트웨이 어플라이언스**를 클릭한 후 Brocade vRouter(Vyatta)를 클릭하십시오.
+1. [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}에 로그인하고 **네트워크 > 게이트웨이 어플라이언스**를 클릭한 후 Brocade vRouter(Vyatta)를 클릭하십시오.
 2. **VLAN**을 선택하고 **연관**을 클릭하십시오.
 4. **연관된 VLAN** 아래에서 VLAN을 찾고 각각의 옆에 있는 상자를 선택하십시오.
 5. **대량 조치** 드롭 다운 메뉴를 클릭하고 **라우트**를 선택하십시오.

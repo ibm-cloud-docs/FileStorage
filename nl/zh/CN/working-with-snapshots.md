@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-30"
 
 ---
 {:new_window: target="_blank"}
@@ -15,7 +15,7 @@ lastupdated: "2018-10-31"
 
 ## 创建快照安排？
 
-通过创建快照安排，您可以决定创建存储卷的时间点引用的频率和时间。每个存储卷最多可以有 50 个快照。安排可通过 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} 中的**存储** > **{{site.data.keyword.filestorage_short}}** 选项卡进行管理。
+通过创建快照安排，您可以决定创建存储卷的时间点引用的频率和时间。每个存储卷最多可以有 50 个快照。安排可通过 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} 中的**存储** > **{{site.data.keyword.filestorage_short}}** 选项卡进行管理。
 
 
 如果在初始供应存储卷期间未购买快照空间，那么必须首先购买快照空间，然后才能设置初始安排。
@@ -111,7 +111,7 @@ lastupdated: "2018-10-31"
 
 1. 从主机卸装并拆离存储卷。
    - 单击[此处](accessing-file-storage-linux.html)以获取有关 Linux 上 {{site.data.keyword.filestorage_short}} 的指示信息。
-2. 单击 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} 中的**存储** > **{{site.data.keyword.filestorage_short}}**。
+2. 单击 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} 中的**存储** > **{{site.data.keyword.filestorage_short}}**。
 3. 向下滚动并单击要复原的卷。**详细信息**页面的**快照**部分将显示所有保存的快照及其大小和创建日期的列表。
 4. 单击要使用的快照旁边的**操作**，然后单击**复原**。<br/>
 

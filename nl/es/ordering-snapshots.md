@@ -2,21 +2,23 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-30"
 
 ---
 {:new_window: target="_blank"}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
 
 # Realizar pedidos de instantáneas
 
 Para crear instantáneas de su volumen de almacenamiento, automática o manualmente, necesita adquirir espacio para mantenerlas. Puede adquirir capacidad hasta la cantidad de su volumen de almacenamiento (durante la adquisición del volumen inicial o posteriormente siguiendo estos pasos).
 
-1. Inicie sesión en la [consola de IBM Cloud](https://console.bluemix.net/catalog/){:new_window} y pulse en el icono **Menú** en la parte superior izquierda. Seleccione **Infraestructura clásica**. 
+1. Inicie sesión en la [consola de IBM Cloud](https://{DomainName}/catalog/){:new_window} y pulse en el icono **Menú** en la parte superior izquierda. Seleccione **Infraestructura clásica**.
 
-   Alternativamente, puede iniciar sesión en el [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
+   Alternativamente, puede iniciar sesión en el [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
 2. Acceda al almacenamiento mediante **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**.
 3. Pulse en **Cambiar espacio de la instantánea** en el marco Instantáneas.
 4. Seleccione la cantidad de espacio que necesita y el método de pago.

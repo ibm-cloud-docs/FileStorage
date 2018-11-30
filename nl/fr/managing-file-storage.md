@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-30"
 
 ---
 {:new_window: target="_blank"}
@@ -38,7 +38,7 @@ Cette section affiche la liste des hôtes actuellement autorisés à accéder au
 
 Vous pouvez afficher les volumes auxquels un hôte peut accéder, y compris les informations nécessaires pour l'établissement d'une connexion (Nom du volume, Type de stockage, Adresse cible, Capacité et Emplacement).
 
-1. Cliquez sur **Unités** > **Liste des unités** dans le portail [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
+1. Cliquez sur **Unités** > **Liste des unités** dans le portail [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
 2. Cliquez sur l'unité appropriée.
 2. Sélectionnez l'onglet Stockage.
 
@@ -60,7 +60,7 @@ Vous pouvez révoquer l'accès à partir de Stockage dans la Liste des unités o
 
 ### Révocation de l'accès à partir de la liste des unités
 
-1. Cliquez sur **Unités** > **Liste des unités** dans le portail [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
+1. Cliquez sur **Unités** > **Liste des unités** dans le portail [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
 2. Cliquez deux fois sur l'unité appropriée.
 3. Sélectionnez l'onglet **Stockage**.
 4. La liste des volumes de stockage auxquels cet hôte particulier a accès s'affiche (les volumes sont regroupés par type de stockage : bloc, fichier, autre). Sélectionnez le menu **Action** adéquat en regard du volume pour lequel vous souhaitez révoquer l'accès et cliquez sur **Révoquer le droit d'accès**.

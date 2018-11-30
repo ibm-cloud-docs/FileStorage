@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-30"
 
 ---
 {:pre: .pre}
@@ -10,6 +10,8 @@ lastupdated: "2018-10-31"
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
 
 # Provisionando  {{site.data.keyword.filestorage_short}}  com VMware
 
@@ -104,11 +106,11 @@ Para obter mais informações, veja o White Paper do VMware em [Best Practices f
 
 ### Usando capturas instantâneas
 
-O {{site.data.keyword.filestorage_short}} permite que os administradores configurem programações de capturas instantâneas que criam e excluem cópias de capturas instantânea automaticamente para cada volume de armazenamento. Eles também podem criar planejamentos de captura instantânea extra (por hora, diário, semanal) para capturas instantâneas automáticas e criar capturas instantâneas ad hoc manualmente para cenários de business continuity and disaster recovery (BCDR). Os alertas automáticos são entregues por meio do [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} ao proprietário do volume para as capturas instantâneas retidas e o espaço usado.
+O {{site.data.keyword.filestorage_short}} permite que os administradores configurem programações de capturas instantâneas que criam e excluem cópias de capturas instantânea automaticamente para cada volume de armazenamento. Eles também podem criar planejamentos de captura instantânea extra (por hora, diário, semanal) para capturas instantâneas automáticas e criar capturas instantâneas ad hoc manualmente para cenários de business continuity and disaster recovery (BCDR). Os alertas automáticos são entregues por meio do [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} ao proprietário do volume para as capturas instantâneas retidas e o espaço usado.
 
 O espaço de captura instantânea é necessário para usar capturas instantâneas. O espaço pode ser comprado no pedido de volume inicial ou após o fornecimento inicial por meio da página **Detalhes do volume** clicando em **Ações** e selecionando **Incluir espaço de captura instantânea**.
 
-É importante observar que os ambientes VMware não estão cientes de capturas instantâneas. O recurso de captura instantânea do Endurance {{site.data.keyword.filestorage_short}} não deve ser confundido com capturas instantâneas do VMware. Qualquer recuperação que use o recurso de captura instantânea do {{site.data.keyword.filestorage_short}} deve ser manipulada por meio do [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
+É importante observar que os ambientes VMware não estão cientes de capturas instantâneas. O recurso de captura instantânea do Endurance {{site.data.keyword.filestorage_short}} não deve ser confundido com capturas instantâneas do VMware. Qualquer recuperação que use o recurso de captura instantânea do {{site.data.keyword.filestorage_short}} deve ser manipulada por meio do [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
 
 A restauração do volume do {{site.data.keyword.filestorage_short}} requer o desligamento de todas as MVs do {{site.data.keyword.filestorage_short}}. O volume precisa ser temporariamente desmontado dos hosts ESXi para evitar qualquer distorção de dados durante o processo.
 
@@ -141,15 +143,15 @@ Dados inválidos, quer estejam corrompidos, hackeados ou infectados, devem ser r
 
 ## Solicitando o {{site.data.keyword.filestorage_short}}
 
-É possível pedir e configurar o {{site.data.keyword.filestorage_short}} para um ambiente VMware ESXi 5. Use as informações a seguir junto com a [Arquitetura de referência do Advanced Single-Site VMware](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} para configurar uma dessas opções de armazenamento em seu ambiente VMware.
+É possível pedir e configurar o {{site.data.keyword.filestorage_short}} para um ambiente VMware ESXi 5. Use as informações a seguir junto com a [Arquitetura de referência do Advanced Single-Site VMware](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} para configurar uma dessas opções de armazenamento em seu ambiente VMware.
 
-O {{site.data.keyword.filestorage_short}} pode ser pedido por meio do [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} acessando a página {{site.data.keyword.filestorage_short}} por meio de **Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
+O {{site.data.keyword.filestorage_short}} pode ser pedido por meio do [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} acessando a página {{site.data.keyword.filestorage_short}} por meio de **Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
 
 
-### 1. Pedindo o 
+### 1. Pedindo o
 
 Use as etapas a seguir para pedir o {{site.data.keyword.filestorage_short}}:
-1. Clique em **Armazenamento** > **{{site.data.keyword.filestorage_short}}** na página inicial do [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
+1. Clique em **Armazenamento** > **{{site.data.keyword.filestorage_short}}** na página inicial do [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
 2. Clique em **Pedir o {{site.data.keyword.filestorage_short}}** na página **{{site.data.keyword.filestorage_short}}**.
 3. Selecione **Endurance**/**Performance** na lista **Selecionar tipo de armazenamento**.
 4. Selecione o local. Os data centers com recursos melhorados são denotados com um asterisco. Assegure-se de que o novo Armazenamento seja incluído no mesmo local que o host ESXi pedido anteriormente.
@@ -163,7 +165,7 @@ Use as etapas a seguir para pedir o {{site.data.keyword.filestorage_short}}:
 12. Marque a caixa de seleção **Eu li o contrato de prestação de serviços principal e concordo com os termos nesse documento**.
 13. Clique em **Colocar ordem** para enviar a ordem ou **Cancelar** para fechar o formulário sem enviar uma ordem.
 
-O armazenamento é provisionado em menos de um minuto e torna-se visível na página **{{site.data.keyword.filestorage_short}}** do [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
+O armazenamento é provisionado em menos de um minuto e torna-se visível na página **{{site.data.keyword.filestorage_short}}** do [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
 
 
 
@@ -440,5 +442,5 @@ Quando você faz a mudança, a NIC perde a conectividade de rede por alguns segu
 
    Essa ação causa uma breve perda de conectividade de rede.
 
-Saiba mais sobre a arquitetura de referência do Advanced Single-Site VMware [aqui](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}.
+Saiba mais sobre a arquitetura de referência do Advanced Single-Site VMware [aqui](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}.
 {:tip}

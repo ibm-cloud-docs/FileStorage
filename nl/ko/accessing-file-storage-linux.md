@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-30"
 
 ---
 {:new_window: target="_blank"}
@@ -13,7 +13,7 @@ lastupdated: "2018-10-31"
 
 # Linux에서 {{site.data.keyword.filestorage_short}} 마운트
 
-먼저 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}을 통해 {{site.data.keyword.filestorage_full}} 볼륨에 액세스할 호스트에 권한이 부여되었는지 확인하십시오.
+먼저 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}을 통해 {{site.data.keyword.filestorage_full}} 볼륨에 액세스할 호스트에 권한이 부여되었는지 확인하십시오.
 
 1. {{site.data.keyword.filestorage_short}} 목록 페이지에서 새 공유와 연관된 **조치**를 클릭하고 **호스트 권한 부여**를 클릭하십시오.
 2. 목록에서 호스트를 선택하고 **제출**을 클릭하십시오. 이 조치는 공유에 액세스할 수 있도록 호스트에 권한을 부여합니다.

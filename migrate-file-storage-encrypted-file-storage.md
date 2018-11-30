@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-30"
 
 ---
 {:new_window: target="_blank"}
@@ -35,7 +35,7 @@ The following instructions are for ordering an enhanced file share through the {
 
 ### Ordering an Endurance Storage volume
 
-1. From the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}, click **Storage** > **{{site.data.keyword.filestorage_short}}** OR from {{site.data.keyword.BluSoftlayer_full}} catalog, click **Infrastructure** > **Storage** > **{{site.data.keyword.filestorage_short}}**.
+1. From the [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}, click **Storage** > **{{site.data.keyword.filestorage_short}}** OR from {{site.data.keyword.BluSoftlayer_full}} catalog, click **Infrastructure** > **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Click **Order {{site.data.keyword.filestorage_short}}**.
 3. Select **Endurance** from the **Select Storage Type** list.
 4. Click **Location** and select your data center.
@@ -51,7 +51,7 @@ The following instructions are for ordering an enhanced file share through the {
 
 ### Ordering a Performance Storage Volume
 
-1. From the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}, click **Storage**, **{{site.data.keyword.filestorage_short}}** OR from {{site.data.keyword.BluSoftlayer_full}} catalog click **Infrastructure** >** Storage** > **{{site.data.keyword.filestorage_short}}**.
+1. From the [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}, click **Storage**, **{{site.data.keyword.filestorage_short}}** OR from {{site.data.keyword.BluSoftlayer_full}} catalog click **Infrastructure** >** Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Click **Order {{site.data.keyword.filestorage_short}}**.
 3. Select **Performance** from the **Select Storage Type** list.
 4. Click **Location** and select your data center.

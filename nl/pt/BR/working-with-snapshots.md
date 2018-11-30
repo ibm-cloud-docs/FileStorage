@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-30"
 
 ---
 {:new_window: target="_blank"}
@@ -16,7 +16,7 @@ lastupdated: "2018-10-31"
 ## Criando um Planejamento de Captura Instantânea?
 
 É possível decidir com que frequência e quando você deseja criar uma referência de momento de seu volume de armazenamento criando planejamentos de captura instantânea. É possível ter um máximo de 50 capturas
-instantâneas por volume de armazenamento. Os planejamentos são gerenciados por meio da guia **Armazenamento** > **{{site.data.keyword.filestorage_short}}** do [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
+instantâneas por volume de armazenamento. Os planejamentos são gerenciados por meio da guia **Armazenamento** > **{{site.data.keyword.filestorage_short}}** do [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
 
 
 Para poder configurar seu planejamento inicial, deve-se primeiramente comprar um espaço de captura instantânea, caso você não tenha comprado durante o fornecimento inicial do volume de armazenamento.
@@ -47,7 +47,7 @@ A lista de capturas instantâneas é exibida conforme elas são tomadas na seç�
 Capturas instantâneas manuais podem ser obtidas em vários pontos durante um upgrade ou
 manutenção do aplicativo. Também é possível tirar capturas instantâneas em múltiplos servidores que tenham sido desativados temporariamente no nível do aplicativo.
 
-É possível ter um limite máximo de 50 capturas instantâneas manuais por volume de armazenamento. 
+É possível ter um limite máximo de 50 capturas instantâneas manuais por volume de armazenamento.
 
 1. Clique em seu volume de armazenamento.
 2. Clique em ** Ações**.
@@ -118,7 +118,7 @@ Talvez seja necessário retornar o seu volume de armazenamento para um momento e
 
 1. Desmonte e separe seu volume de armazenamento do host.
    - Clique [aqui](accessing-file-storage-linux.html) para obter instruções do {{site.data.keyword.filestorage_short}} no Linux.
-2. Clique em **Armazenamento**, **{{site.data.keyword.filestorage_short}}**, no [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
+2. Clique em **Armazenamento**, **{{site.data.keyword.filestorage_short}}**, no [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
 3. Role para baixo e clique no seu volume a ser restaurado. A seção **Capturas instantâneas** da página **Detalhes** exibe a lista de todas as capturas instantâneas salvas juntamente com seu tamanho e data de criação.
 4. Clique em **Ações** próximo à captura instantânea a ser usada e clique em **Restaurar**. <br/>
 

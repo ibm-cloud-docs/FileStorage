@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-30"
 
 ---
 {:new_window: target="_blank"}
@@ -35,7 +35,7 @@ Les instructions ci-après s'appliquent lors de la commande d'un volume/partage 
 
 ### Commande d'un nouveau volume de stockage Endurance
 
-1. Sur le portail [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}, cliquez sur **Stockage** > **{{site.data.keyword.filestorage_short}}** OU, dans le catalogue {{site.data.keyword.BluSoftlayer_full}}, cliquez sur **Infrastructure** > **Stockage** > **{{site.data.keyword.filestorage_short}}**.
+1. Sur le portail [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}, cliquez sur **Stockage** > **{{site.data.keyword.filestorage_short}}** OU, dans le catalogue {{site.data.keyword.BluSoftlayer_full}}, cliquez sur **Infrastructure** > **Stockage** > **{{site.data.keyword.filestorage_short}}**.
 2. Cliquez sur **Commander {{site.data.keyword.filestorage_short}}**.
 3. Sélectionnez **Endurance** dans la liste **Sélectionner le type de stockage**.
 4. Cliquez sur **Emplacement** et sélectionnez votre centre de données.
@@ -49,7 +49,7 @@ Les instructions ci-après s'appliquent lors de la commande d'un volume/partage 
 
 ### Commande d'un volume de stockage Performance chiffré
 
-1. Sur le portail [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}, cliquez sur **Stockage**, **{{site.data.keyword.filestorage_short}}** OU, dans le catalogue {{site.data.keyword.BluSoftlayer_full}}, cliquez sur **Infrastructure** >** Stockage** > **{{site.data.keyword.filestorage_short}}**.
+1. Sur le portail [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}, cliquez sur **Stockage**, **{{site.data.keyword.filestorage_short}}** OU, dans le catalogue {{site.data.keyword.BluSoftlayer_full}}, cliquez sur **Infrastructure** >** Stockage** > **{{site.data.keyword.filestorage_short}}**.
 2. Cliquez sur **Commander {{site.data.keyword.filestorage_short}}**.
 3. Sélectionnez **Performance** dans la liste **Sélectionner le type de stockage**.
 4. Cliquez sur **Emplacement** et sélectionnez votre centre de données.

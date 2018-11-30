@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-30"
 
 ---
 {:new_window: target="_blank"}
@@ -35,7 +35,7 @@ Las siguientes instrucciones son para solicitar un volumen/compartición de arch
 
 ### Realización del pedido de un nuevo volumen de almacenamiento de Resistencia
 
-1. En el [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}, pulse **Almacenamiento** > **{{site.data.keyword.filestorage_short}}** O desde el catálogo de {{site.data.keyword.BluSoftlayer_full}}, pulse **Infraestructura** > **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**.
+1. En el [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}, pulse **Almacenamiento** > **{{site.data.keyword.filestorage_short}}** O desde el catálogo de {{site.data.keyword.BluSoftlayer_full}}, pulse **Infraestructura** > **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**.
 2. Pulse **Realizar pedido de {{site.data.keyword.filestorage_short}}**.
 3. Seleccione **Resistencia** en la lista **Seleccionar tipo de almacenamiento**.
 4. Pulse **Ubicación** y seleccione el centro de datos.
@@ -49,7 +49,7 @@ Las siguientes instrucciones son para solicitar un volumen/compartición de arch
 
 ### Realización del pedido de un volumen de almacenamiento de Rendimiento cifrado
 
-1. En el [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}, pulse **Almacenamiento**, **{{site.data.keyword.filestorage_short}}** O desde el catálogo de {{site.data.keyword.BluSoftlayer_full}}, pulse **Infraestructura** >** Almacenamiento** > **{{site.data.keyword.filestorage_short}}**.
+1. En el [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}, pulse **Almacenamiento**, **{{site.data.keyword.filestorage_short}}** O desde el catálogo de {{site.data.keyword.BluSoftlayer_full}}, pulse **Infraestructura** >** Almacenamiento** > **{{site.data.keyword.filestorage_short}}**.
 2. Pulse **Realizar pedido de {{site.data.keyword.filestorage_short}}**.
 3. Seleccione **Rendimiento** en la lista **Seleccionar tipo de almacenamiento**.
 4. Pulse **Ubicación** y seleccione el centro de datos.

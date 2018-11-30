@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-30"
 
 ---
 {:new_window: target="_blank"}
@@ -33,7 +33,7 @@ Algunos usos comunes para un volumen duplicado:
 - **Desarrollo y prueba (dev/test)**: Cree hasta cuatro duplicados simultáneos de un volumen a la vez para crear datos duplicados para desarrollo y pruebas.
 - **Redimensionamiento del almacenamiento**: Cree un volumen con el nuevo tamaño, tasa de IOPS o ambos sin necesidad de mover los datos.  
 
-Puede crear un volumen duplicado a través del [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} de un par de maneras.
+Puede crear un volumen duplicado a través del [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} de un par de maneras.
 
 
 ## Creación de un duplicado a partir de un volumen específico en la lista de almacenamiento

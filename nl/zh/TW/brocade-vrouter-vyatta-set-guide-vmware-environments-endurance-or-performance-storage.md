@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-30"
 
 ---
 {:new_window: target="_blank"}
@@ -355,7 +355,7 @@ save
 
 在 Brocade vRouter (Vyatta) 上設定區域及防火牆規則時，您必須將 VLAN 與其相關聯，並啟用透過 Brocade vRouter (Vyatta) 遞送 VLAN。
 
-1. 登入 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}，按一下**網路 > 閘道應用裝置**，然後按一下 Brocade vRouter (Vyatta)。
+1. 登入 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}，按一下**網路 > 閘道應用裝置**，然後按一下 Brocade vRouter (Vyatta)。
 2. 選取 **VLAN**，然後按一下**關聯**。
 4. 在**關聯的 VLAN** 下找出 VLAN，然後勾選每一個 VLAN 旁的勾選框。
 5. 按一下**大量動作**下拉功能表，然後選取**遞送**。

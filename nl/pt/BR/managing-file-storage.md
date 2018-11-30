@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-30"
 
 ---
 {:new_window: target="_blank"}
@@ -39,7 +39,7 @@ Aqui é possível ver a lista de hosts que estão atualmente autorizados a acess
 
 É possível visualizar os volumes aos quais um host tem acesso, incluindo as informações necessárias para fazer uma conexão - Nome do volume, Tipo de armazenamento, Endereço de destino, capacidade e local.
 
-1. Clique em **Dispositivos** > **Lista de dispositivos** no [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}
+1. Clique em **Dispositivos** > **Lista de dispositivos** no [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}
 2. Clique no dispositivo apropriado.
 2. Selecione a guia Armazenamento.
 
@@ -62,7 +62,7 @@ Para evitar problemas do lado do host, desmonte o volume de armazenamento de seu
 
 ### Revogando o acesso a partir da Lista de Dis
 
-1. Clique em **Dispositivos** > **Lista de dispositivos** no [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}
+1. Clique em **Dispositivos** > **Lista de dispositivos** no [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}
 2. Clique duas vezes no dispositivo apropriado.
 3. Selecione a guia **Armazenamento**.
 4. É apresentada uma lista de volumes de armazenamento aos quais esse host específico tem acesso, todos agrupados por tipo de armazenamento (bloco, arquivo, outro). Selecione o respectivo menu **Ação** próximo ao volume do qual você deseja revogar o acesso e clique em **Revogar acesso**.

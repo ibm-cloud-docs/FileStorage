@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-30"
 
 ---
 {:new_window: target="_blank"}
@@ -35,7 +35,7 @@ Le seguenti istruzioni sono per ordinare un volume/una condivisione file avanzat
 
 ### Ordinazione di un nuovo volume di archiviazione Endurance
 
-1. Dal [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}, fai clic su **Storage** > **{{site.data.keyword.filestorage_short}}** OPPURE, dal catalogo di {{site.data.keyword.BluSoftlayer_full}}, fai clic su **Infrastructure** > **Storage** > **{{site.data.keyword.filestorage_short}}**.
+1. Dal [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}, fai clic su **Storage** > **{{site.data.keyword.filestorage_short}}** OPPURE, dal catalogo di {{site.data.keyword.BluSoftlayer_full}}, fai clic su **Infrastructure** > **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Fai clic su **Order{{site.data.keyword.filestorage_short}}**.
 3. Seleziona **Endurance** dall'elenco **Select Storage Type**.
 4. Fai clic su **Location** e seleziona il tuo data center.
@@ -49,7 +49,7 @@ Le seguenti istruzioni sono per ordinare un volume/una condivisione file avanzat
 
 ### Ordinazione di un volume di archiviazione Performance crittografato
 
-1. Dal [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}, fai clic su **Storage**, **{{site.data.keyword.filestorage_short}}** OPPURE, dal catalogo di {{site.data.keyword.BluSoftlayer_full}}, fai clic su **Infrastructure** >** Storage** > **{{site.data.keyword.filestorage_short}}**.
+1. Dal [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}, fai clic su **Storage**, **{{site.data.keyword.filestorage_short}}** OPPURE, dal catalogo di {{site.data.keyword.BluSoftlayer_full}}, fai clic su **Infrastructure** >** Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Fai clic su **Order{{site.data.keyword.filestorage_short}}**.
 3. Seleziona **Performance** dall'elenco **Select Storage Type**.
 4. Fai clic su **Location** e seleziona il tuo data center.

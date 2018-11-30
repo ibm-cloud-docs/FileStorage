@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-30"
 
 ---
 
@@ -16,7 +16,7 @@ lastupdated: "2018-10-31"
 
 복제는 스냅샷 스케줄 중 하나를 사용하여 스냅샷을 원격 데이터 센터의 대상 볼륨으로 자동으로 복사합니다. 중대한 문제가 발생하거나 데이터가 손상되는 경우에는 원격 사이트로부터 사본을 복구할 수 있습니다.
 
-복제본을 사용하면 사이트 장애와 기타 재해로부터 빠르게 복구할 수 있습니다. 긴급한 상황에서는 대상 볼륨으로 장애 복구하여 DR 사본의 특정 시점에서 데이터에 액세스할 수 있습니다. 자세한 정보는 [재해 복구를 위한 복제본 볼륨 복제](disaster-recovery.html)를 참조하십시오. 
+복제본을 사용하면 사이트 장애와 기타 재해로부터 빠르게 복구할 수 있습니다. 긴급한 상황에서는 대상 볼륨으로 장애 복구하여 DR 사본의 특정 시점에서 데이터에 액세스할 수 있습니다. 자세한 정보는 [재해 복구를 위한 복제본 볼륨 복제](disaster-recovery.html)를 참조하십시오.
 
 복제는 서로 다른 두 위치에 동기화된 데이터를 보관합니다. 단지 볼륨을 복제한 후에 이를 원래 볼륨과 독립적으로 사용하려면 [중복 파일 볼륨 작성](how-to-create-duplicate-volume.html)을 참조하십시오.
 {:tip}
@@ -106,7 +106,7 @@ SYD04<br />
 
 ## 초기 복제본 작성
 
-복제는 스냅샷 스케줄에 따라 이뤄집니다. 복제하려면 먼저 스냅샷 영역과 소스 볼륨에 대한 스냅샷 스케줄이 있어야 합니다. 복제를 설정하려는데 두 가지 중 하나가 없는 경우에는 추가 영역을 구매하거나 스케줄을 설정하라는 프롬프트가 표시됩니다. 복제는 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}의 **스토리지** > **{{site.data.keyword.filestorage_short}}** 아래에서 관리됩니다.
+복제는 스냅샷 스케줄에 따라 이뤄집니다. 복제하려면 먼저 스냅샷 영역과 소스 볼륨에 대한 스냅샷 스케줄이 있어야 합니다. 복제를 설정하려는데 두 가지 중 하나가 없는 경우에는 추가 영역을 구매하거나 스케줄을 설정하라는 프롬프트가 표시됩니다. 복제는 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}의 **스토리지** > **{{site.data.keyword.filestorage_short}}** 아래에서 관리됩니다.
 
 1. 스토리지 볼륨을 클릭하십시오.
 2. **복제본**을 클릭하고 **복제 구매**를 클릭하십시오.
@@ -122,7 +122,7 @@ SYD04<br />
 
 ## 기존 복제 편집
 
-[{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}의 **스토리지** > **{{site.data.keyword.filestorage_short}}**에 있는 **기본** 또는 **복제본** 탭에서 복제 스케줄을 편집하고 복제 영역을 변경할 수 있습니다.
+[{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}의 **스토리지** > **{{site.data.keyword.filestorage_short}}**에 있는 **기본** 또는 **복제본** 탭에서 복제 스케줄을 편집하고 복제 영역을 변경할 수 있습니다.
 
 
 ## 복제 스케줄 편집
@@ -174,14 +174,14 @@ SYD04<br />
 
 볼륨 크기는 기본 스토리지 볼륨과 복제본 스토리지 볼륨 간에 동일해야 합니다. 한 쪽이 다른 쪽보다 커서는 안 됩니다. 기본 볼륨의 스냅샷 영역을 늘리면 복제본 영역이 자동으로 늘어납니다. 스냅샷 영역을 늘리면 즉각적 복제 업데이트가 트리거됩니다. 두 볼륨의 증가는 청구서에 품목명으로 표시되며 필요에 따라 비례 배분됩니다.
 
-스냅샷 영역 늘리기에 대한 자세한 정보는 [스냅샷](snapshots.html)을 참조하십시오. 
+스냅샷 영역 늘리기에 대한 자세한 정보는 [스냅샷](snapshots.html)을 참조하십시오.
 
 
 ## 볼륨에서 해당 복제본으로 장애 복구 시작
 
 장애가 발생하는 경우에는 대상 볼륨으로 **장애 복구**를 시작할 수 있습니다. 대상 볼륨이 활성이 됩니다. 마지막으로 복제된 스냅샷이 활성화되며 볼륨이 마운트를 위해 활성화됩니다. 이전 복제 주기 이후 소스 볼륨에 기록된 데이터는 유실됩니다. 장애 복구가 시작되면 복제 관계가 반전됩니다. 대상 볼륨이 소스 볼륨이 되고, 이전 소스 볼륨은 **REP**가 뒤따르는 **LUN 이름**으로 표시되는 대상이 됩니다.
 
-장애 복구는 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}의 **스토리지**, **{{site.data.keyword.filestorage_short}}**에서 시작됩니다.
+장애 복구는 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}의 **스토리지**, **{{site.data.keyword.filestorage_short}}**에서 시작됩니다.
 
 이러한 단계를 진행하기 전에 볼륨의 연결을 끊으십시오. 그렇게 하지 못하면 손상 및 데이터 유실이 발생합니다.
 {:important}
@@ -209,7 +209,7 @@ SYD04<br />
 
 장애 조치가 시작되면 복제 관계가 다시 반전됩니다. 소스 볼륨이 소스 볼륨으로 복원되고, 대상 볼륨이 다시 **REP**가 뒤따르는 **LUN 이름**으로 표시되는 대상 볼륨이 됩니다.
 
-장애 조치는 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}의 **스토리지**, **{{site.data.keyword.filestorage_short}}**에서 시작됩니다.
+장애 조치는 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}의 **스토리지**, **{{site.data.keyword.filestorage_short}}**에서 시작됩니다.
 
 1. 활성 볼륨("대상")을 클릭하십시오.
 2. 오른쪽 상단에서 **복제본**을 클릭하고 **조치**를 클릭하십시오.

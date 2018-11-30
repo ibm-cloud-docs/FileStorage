@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-30"
 
 ---
 {:pre: .pre}
@@ -10,6 +10,8 @@ lastupdated: "2018-10-31"
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
 
 # VMware에서의 {{site.data.keyword.filestorage_short}} 프로비저닝
 
@@ -38,7 +40,7 @@ Endurance 및 Performance {{site.data.keyword.filestorage_short}}의 가격 및 
 - NFSv3 및 NFSv4.1이 둘 다 {{site.data.keyword.BluSoftlayer_full}} 환경에서 지원됩니다. 그러나 {{site.data.keyword.IBM}}에서는 NFSv3을 사용하도록 권장합니다. NFSv4.1이 Stateful 프로토콜이므로(NFSv3과 같이 Stateless가 아님), 네트워크 이벤트 중에 프로토콜 문제가 발생할 수 있습니다. NFSv4.1은 모든 오퍼레이션을 중지한 후에 잠금 교정을 완료해야 합니다. 이러한 오퍼레이션이 실행되는 동안 장애가 발생할 수 있습니다.
 
 자세한 정보는 [네트워크 연결 스토리지에서
-VMware vSphere 실행에 대한 우수 사례](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf)의 VMware 백서를 참조하십시오.{:new_window}
+VMware vSphere 실행에 대한 우수 사례 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf)의 VMware 백서를 참조하십시오.{:new_window}
 {:tip}
 
 **NFS 프로토콜 VMware 기능 지원 표**
@@ -99,17 +101,17 @@ VMware vSphere 실행에 대한 우수 사례](https://www.vmware.com/content/da
   </tr>
  </tbody>
 </table>
-*소스 - [VMware - NFS 프로토콜 및 ESXi](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){:new_window}*
+*소스 - [VMware - NFS 프로토콜 및 ESXi ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){:new_window}*
 
 
 
 ### 스냅샷 사용
 
-{{site.data.keyword.filestorage_short}}를 통해 관리자는 각 스토리지 볼륨에 대해 자동으로 스냅샷 사본을 작성 및 삭제하는 스냅샷 스케줄을 설정할 수 있습니다. 또한 관리자는 자동 스냅샷에 대해 추가로 스냅샷 스케줄(시간별, 일별, 주별)을 작성하고 비즈니스 연속성 및 재해 복구(BCDR) 시나리오에 대한 임시 스냅샷을 수동으로 작성할 수도 있습니다. 자동 경보는 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}을 통해 보유 중인 스냅샷과 사용된 영역의 볼륨 소유자에게 전달됩니다.
+{{site.data.keyword.filestorage_short}}를 통해 관리자는 각 스토리지 볼륨에 대해 자동으로 스냅샷 사본을 작성 및 삭제하는 스냅샷 스케줄을 설정할 수 있습니다. 또한 관리자는 자동 스냅샷에 대해 추가로 스냅샷 스케줄(시간별, 일별, 주별)을 작성하고 비즈니스 연속성 및 재해 복구(BCDR) 시나리오에 대한 임시 스냅샷을 수동으로 작성할 수도 있습니다. 자동 경보는 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}을 통해 보유 중인 스냅샷과 사용된 영역의 볼륨 소유자에게 전달됩니다.
 
 스냅샷을 사용하려면 스냅샷 영역이 필요합니다. 영역은 초기 볼륨 주문 중에 구매하거나, 초기 프로비저닝 후 **볼륨 세부사항** 페이지를 통해(**조치**를 클릭하고 **스냅샷 영역 추가**를 선택) 구매할 수 있습니다.
 
-VMware 환경은 스냅샷을 인지하지 않음을 유념하십시오. Endurance {{site.data.keyword.filestorage_short}} 스냅샷 기능을 VMware 스냅샷과 혼동하지 않아야 합니다. {{site.data.keyword.filestorage_short}} 스냅샷 기능을 사용하는 복구는 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}에서 처리되어야 합니다.
+VMware 환경은 스냅샷을 인지하지 않음을 유념하십시오. Endurance {{site.data.keyword.filestorage_short}} 스냅샷 기능을 VMware 스냅샷과 혼동하지 않아야 합니다. {{site.data.keyword.filestorage_short}} 스냅샷 기능을 사용하는 복구는 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}에서 처리되어야 합니다.
 
 {{site.data.keyword.filestorage_short}} 볼륨을 복원하려면 {{site.data.keyword.filestorage_short}}의 모든 VM을 꺼야 합니다. 프로세스 중에 데이터 손상을 방지하기 위해 ESXi 호스트의 볼륨을 임시로 마운트 해제해야 합니다.
 
@@ -142,15 +144,15 @@ VMware 환경은 스냅샷을 인지하지 않음을 유념하십시오. Enduran
 
 ## {{site.data.keyword.filestorage_short}} 주문
 
-VMware ESXi 5 환경에 맞는 {{site.data.keyword.filestorage_short}}를 주문하고 구성할 수 있습니다. 다음 정보를 [고급 단일 사이트 VMware 참조 아키텍처](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}와 함께 사용하면 VMware 환경에서 이러한 스토리지 옵션 중 하나를 설정할 수 있습니다.
+VMware ESXi 5 환경에 맞는 {{site.data.keyword.filestorage_short}}를 주문하고 구성할 수 있습니다. 다음 정보를 [고급 단일 사이트 VMware 참조 아키텍처](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}와 함께 사용하면 VMware 환경에서 이러한 스토리지 옵션 중 하나를 설정할 수 있습니다.
 
-{{site.data.keyword.filestorage_short}}는 **스토리지** > **{{site.data.keyword.filestorage_short}}**를 통해 {{site.data.keyword.filestorage_short}} 페이지에 액세스하여 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}을 통해 주문이 가능합니다.
+{{site.data.keyword.filestorage_short}}는 **스토리지** > **{{site.data.keyword.filestorage_short}}**를 통해 {{site.data.keyword.filestorage_short}} 페이지에 액세스하여 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}을 통해 주문이 가능합니다.
 
 
-### 1. 
+### 1.
 
  주문다음 단계를 사용하여 {{site.data.keyword.filestorage_short}}를 주문할 수 있습니다.
-1. [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} 홈 페이지에서 **스토리지** > **{{site.data.keyword.filestorage_short}}**를 클릭하십시오.
+1. [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} 홈 페이지에서 **스토리지** > **{{site.data.keyword.filestorage_short}}**를 클릭하십시오.
 2. **{{site.data.keyword.filestorage_short}}** 페이지에서 **{{site.data.keyword.filestorage_short}} 주문**을 클릭하십시오.
 3. **스토리지 유형 선택** 목록에서 **Endurance**/**Performance**를 선택하십시오.
 4. 위치를 선택하십시오. 개선된 기능이 있는 데이터 센터는 별표로 표시됩니다. 이전에 주문된 ESXi 호스트와 동일한 위치에 새 스토리지가 추가되는지 확인하십시오.
@@ -164,7 +166,7 @@ VMware ESXi 5 환경에 맞는 {{site.data.keyword.filestorage_short}}를 주문
 12. **마스터 서비스 계약을 읽었으며 해당 이용 약관에 동의합니다** 선택란을 선택하십시오.
 13. **주문하기**를 클릭하여 주문을 제출하거나 **취소**를 클릭하여 주문을 제출하지 않고 양식을 닫으십시오.
 
-스토리지가 1분 내에 프로비저닝되며 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}의 **{{site.data.keyword.filestorage_short}}** 페이지에 표시됩니다.
+스토리지가 1분 내에 프로비저닝되며 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}의 **{{site.data.keyword.filestorage_short}}** 페이지에 표시됩니다.
 
 
 
@@ -216,7 +218,7 @@ VMware 구성 프로세스를 시작하기 전에, 다음 전제조건을 만족
         8980 bytes from a.b.c.d: icmp_seq=1 ttl=128 time=3.36 ms
      ```
 
-VMware 및 Jumbo 프레임에 대한 자세한 정보를 보려면 [여기](https://kb.vmware.com/s/article/1003712){:new_window}를 클릭하십시오.
+VMware 및 Jumbo 프레임에 대한 자세한 정보를 보려면 [여기 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://kb.vmware.com/s/article/1003712){:new_window}를 클릭하십시오.
 {:tip}
 
 
@@ -266,7 +268,7 @@ VMware 및 Jumbo 프레임에 대한 자세한 정보를 보려면 [여기](http
 3. **새 데이터 저장소 작성** 아이콘을 클릭하십시오.
 4. **새 데이터 저장소** 화면에서 WMware 데이터 저장소(ESXi 호스트)의 위치를 선택하고 **다음**을 클릭하십시오.
 5. **유형** 화면에서 **NFS**를 선택하고 **다음**을 클릭하십시오.
-6. 그리고 NFS 버전을 선택하십시오. NFSv3 및 NFSv4.1이 둘 다 지원되지만, NFSv3이 선호됩니다. 제공된 데이터 저장소에 액세스하려면 반드시 하나의 NFS 버전만 사용하십시오. 서로 다른 버전을 사용하여 동일한 데이터 저장소에 하나 이상의 호스트를 마운트하면 데이터가 손상될 수 있습니다. 
+6. 그리고 NFS 버전을 선택하십시오. NFSv3 및 NFSv4.1이 둘 다 지원되지만, NFSv3이 선호됩니다. 제공된 데이터 저장소에 액세스하려면 반드시 하나의 NFS 버전만 사용하십시오. 서로 다른 버전을 사용하여 동일한 데이터 저장소에 하나 이상의 호스트를 마운트하면 데이터가 손상될 수 있습니다.
 7. **이름 및 구성** 화면에서 WMware 데이터 저장소에 지정할 이름을 입력하십시오. NFS 서버의 호스트 이름도 입력하십시오. NFS 서버에 대해 FQDN을 사용하면 기반 서버에 대한 최상의 트래픽 분배가 이루어집니다. IP 주소도 유효하지만 FQDN보다는 덜 사용되며 특정한 경우에서만 사용됩니다. `/foldername` 양식으로 폴더 이름을 입력하십시오.
 8. **호스트 접근성** 화면에서 NFS WMware 데이터 저장소를 마운트할 호스트를 하나 이상 선택하고 **다음**을 클릭하십시오.
 9. 다음 화면에서 입력을 검토하고 **완료**를 클릭하십시오.
@@ -439,5 +441,5 @@ Jumbo 프레임은 소스 디바이스 <-> 스위치 <-> 라우터 <-> 스위치
 
    이 조치를 수행하면 네트워크 연결이 잠시 끊어집니다.
 
-[여기서](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} 고급 단일 사이트 VMware 참조 아키텍처에 대해 자세히 알아보십시오.
+[여기서](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} 고급 단일 사이트 VMware 참조 아키텍처에 대해 자세히 알아보십시오.
 {:tip}

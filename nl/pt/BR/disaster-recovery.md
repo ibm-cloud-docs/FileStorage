@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-01"
+lastupdated: "2018-11-30"
 
 ---
 
@@ -10,19 +10,21 @@ lastupdated: "2018-11-01"
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
 
 
 # Duplicando volumes de réplicas para Recuperação de desastre
 
-No caso de uma falha catastrófica ou de um desastre que cause uma indisponibilidade no site primário, os clientes podem executar as ações a seguir para acessar rapidamente seus dados no site secundário. 
+No caso de uma falha catastrófica ou de um desastre que cause uma indisponibilidade no site primário, os clientes podem executar as ações a seguir para acessar rapidamente seus dados no site secundário.
 
 ## Failover com uma duplicata de um volume de réplica no site secundário
 
-1. Efetue login no [Console do IBM Cloud](https://console.bluemix.net/catalog/){:new_window} e clique no ícone **Menu** na parte superior esquerda. Selecione **Infraestrutura clássica**. 
+1. Efetue login no [Console do IBM Cloud](https://{DomainName}/catalog/){:new_window} e clique no ícone **Menu** na parte superior esquerda. Selecione **Infraestrutura clássica**.
 
-   Como alternativa, é possível efetuar login no [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
+   Como alternativa, é possível efetuar login no [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
 2. Clique em **Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
-3. Clique na réplica do compartilhamento de arquivo na lista para visualizar sua página **Detalhes**. 
+3. Clique na réplica do compartilhamento de arquivo na lista para visualizar sua página **Detalhes**.
 4. Na página **Detalhes**, role para baixo e selecione uma captura instantânea existente e, em seguida, clique em **Ações** > **Duplicar**.
 5. Faça quaisquer atualizações necessárias na capacidade (para aumentar o tamanho) ou na IOPS para o novo volume.
 6. É possível atualizar o espaço de captura instantânea para o novo volume, se necessário.
@@ -34,16 +36,16 @@ Assim que o volume for criado, será possível anexá-lo a um host e executar op
 
 Se você desejar retornar a produção para o site primário original, as etapas a seguir deverão ser executadas.
 
-1. Efetue login no [Console do IBM Cloud](https://console.bluemix.net/catalog/){:new_window} e clique no ícone **Menu** na parte superior esquerda. Selecione **Infraestrutura clássica**. 
+1. Efetue login no [Console do IBM Cloud](https://{DomainName}/catalog/){:new_window} e clique no ícone **Menu** na parte superior esquerda. Selecione **Infraestrutura clássica**.
 
-   Como alternativa, é possível efetuar login no [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
+   Como alternativa, é possível efetuar login no [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
 2. Clique em **Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
-3. Clique no nome do LUN e crie um planejamento de captura instantânea (se ainda não existir). 
+3. Clique no nome do LUN e crie um planejamento de captura instantânea (se ainda não existir).
 
    Para obter mais informações sobre planejamentos de captura instantânea, consulte [Gerenciando capturas instantâneas](working-with-snapshots.html#adding-a-snapshot-schedule).
    {:tip}
 4. Clique em **Réplica** e em **Comprar uma replicação**.
-5. Selecione o planejamento de captura instantânea existente que você deseja que a replicação siga. A lista contém todos os planejamentos de captura instantânea ativos. 
+5. Selecione o planejamento de captura instantânea existente que você deseja que a replicação siga. A lista contém todos os planejamentos de captura instantânea ativos.
 6. Clique em **Local** e selecione o data center que era o site de produção original.
 7. Clique em **Continuar**.
 8. Clique na caixa de seleção **Eu li o Contrato de prestação de serviços principal…** e clique em **Colocar ordem**.
