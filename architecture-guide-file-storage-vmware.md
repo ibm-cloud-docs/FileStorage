@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-11-12"
+lastupdated: "2018-11-30"
 
 ---
 {:pre: .pre}
@@ -10,6 +10,8 @@ lastupdated: "2018-11-12"
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
 
 # Provisioning {{site.data.keyword.filestorage_short}} with VMware
 
@@ -142,7 +144,7 @@ Invalid data, whether corrupted, hacked, or infected replicate according to the 
 
 ## Ordering {{site.data.keyword.filestorage_short}}
 
-You can order and configure {{site.data.keyword.filestorage_short}} for a VMware ESXi 5 environment. Use the following information along with the [Advanced Single-Site VMware Reference Architecture](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} to set up one of these storage options in your VMware environment.
+You can order and configure {{site.data.keyword.filestorage_short}} for a VMware ESXi 5 environment. Use the following information along with the [Advanced Single-Site VMware Reference Architecture](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} to set up one of these storage options in your VMware environment.
 
 {{site.data.keyword.filestorage_short}} can be ordered through the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} by accessing the {{site.data.keyword.filestorage_short}} page through **Storage** > **{{site.data.keyword.filestorage_short}}**.
 
@@ -450,5 +452,5 @@ When you make the change, the NIC loses network connectivity for a few seconds. 
 
    This action causes a brief loss of network connectivity.
 
-Learn more about Advanced Single-Site VMware Reference Architecture [here](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}.
+Learn more about Advanced Single-Site VMware Reference Architecture [here](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}.
 {:tip}

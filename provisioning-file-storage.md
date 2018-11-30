@@ -2,13 +2,15 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-11-12"
+lastupdated: "2018-11-30"
 
 ---
 {:new_window: target="_blank"}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
 
 # Ordering {{site.data.keyword.filestorage_short}}
 
@@ -19,7 +21,7 @@ You can provision {{site.data.keyword.filestorage_short}} and fine-tune to meet 
 
 ## Ordering {{site.data.keyword.filestorage_short}} with pre-defined IOPS Tiers (Endurance)
 
-1. Log in to [The IBM Cloud catalog](https://console.bluemix.net/catalog/){:new_window} and click **Storage**. Then, select {{site.data.keyword.filestorage_short}}. Click **Create**.
+1. Log in to [The IBM Cloud catalog](https://{DomainName}/catalog/){:new_window} and click **Storage**. Then, select {{site.data.keyword.filestorage_short}}. Click **Create**.
 
    Alternatively, you can log in to the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}, click **Storage** > **{{site.data.keyword.filestorage_short}}**. In the upper right, click **Order {{site.data.keyword.filestorage_short}}**.
 2. Select your deployment **Location** (data center).
@@ -47,7 +49,7 @@ By default, you can provision a combined total of 250 {{site.data.keyword.blocks
 
 ## Ordering {{site.data.keyword.filestorage_short}} with Custom IOPS (Performance)
 
-1. Log in to [The IBM Cloud catalog](https://console.bluemix.net/catalog/){:new_window} and click **Storage**. Then, select {{site.data.keyword.filestorage_short}}. Click **Create**.
+1. Log in to [The IBM Cloud catalog](https://{DomainName}/catalog/){:new_window} and click **Storage**. Then, select {{site.data.keyword.filestorage_short}}. Click **Create**.
 
    Alternatively, you can log in to the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window} }, click **Storage** > **{{site.data.keyword.filestorage_short}}**. In the upper right, click **Order {{site.data.keyword.filestorage_short}}**.
 2. Click **Location** and select your data center.
