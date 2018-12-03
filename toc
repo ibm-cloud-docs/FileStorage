@@ -28,10 +28,11 @@ IBM Cloud Storage - File Storage
         set-host-queue-depth-settings-performance-and-endurance-storage.md
         configure-backup-cpanel.md
         configure-backup-plesk.md
-
+        
     {: .topicgroup}
     Replication
         replication.md
+        disaster-recovery.md
 
     {: .topicgroup}
     Security
