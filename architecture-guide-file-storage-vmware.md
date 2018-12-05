@@ -216,7 +216,7 @@ Before you begin the VMware configuration process, make sure that the following 
      ```
      {:pre}
 
-   - Unix
+   - UNIX
      ```
      ping -s 8972 a.b.c.d
      ```
@@ -424,22 +424,22 @@ When you make the change, the NIC loses network connectivity for a few seconds. 
 ### Enabling Jumbo Frames in Linux
 
 1. Edit the network configuration file for eth0 interface.
-   - CentOS/RHEL/Fedora Linux users edit `/etc/sysconfig/network-script/ifcfg-eth0`
+   - CentOS, RHEL, Fedora Linux users edit `/etc/sysconfig/network-script/ifcfg-eth0`
      ```
      # vi /etc/sysconfig/network-script/ifcfg-eth0
      ```
      {: pre}
 
-   - Debian/Ubuntu Linux users edit `/etc/network/interfaces`.
+   - Debian and Ubuntu Linux users edit `/etc/network/interfaces`.
 
 2. Append the following configuration directive, which specifies the size of the frame in bytes.
-   - CentOS/RHEL/Fedora Linux
+   - CentOS, RHEL, Fedora Linux
      ```
      MTU 9000
      ```
      {: pre}
 
-   - Debian/Ubuntu Linux
+   - Debian and Ubuntu Linux
      ```
      MTU=9000
      ```
