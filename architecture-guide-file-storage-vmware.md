@@ -20,7 +20,7 @@ The following steps can help you order and configure {{site.data.keyword.filesto
 
 The {{site.data.keyword.filestorage_short}} is designed to support high I/O applications that require predictable levels of performance. The predictable performance is achieved through the allocation of protocol-level input/output operations per second (IOPS) to individual volumes.
 
-If you require more than eight hosts to access your datastore then choosing NFS {{site.data.keyword.filestorage_short}} is the best practice.
+If you require more than eight hosts to access your VMware datastore then choosing NFS {{site.data.keyword.filestorage_short}} is the best practice.
 {:tip}
 
 The {{site.data.keyword.filestorage_short}} offering is accessed and mounted through an NFS connection. In a VMware deployment, a single volume can be mounted to up to 64 ESXi hosts as shared storage. You can also mount multiple volumes to create a storage cluster to use vSphere Storage Distributed Resource Scheduler (DRS).
