@@ -16,7 +16,7 @@ lastupdated: "2018-12-11"
 
 Replication uses one of your snapshot schedules to automatically copy snapshots to a destination volume in a remote data center. The copies can be recovered in the remote site if a catastrophic event occurs or your data becomes corrupted.
 
-Replication keeps your data in sync in two different locations. If you just want to clone your volume and use it independently from the original volume, see [Creating a duplicate File Volume](how-to-create-duplicate-volume.html).
+Replication keeps your data in sync in two different locations. If you want to clone your volume and use it independently from the original volume, see [Creating a duplicate File Volume](how-to-create-duplicate-volume.html).
 {:tip}
 
 Before you can replicate, you must create a snapshot schedule.
@@ -176,7 +176,7 @@ Replication history is viewed on the **Audit Log** on the **Account** tab under 
 
 ## Creating a duplicate of a replica
 
-You can create a duplicate of an existing {{site.data.keyword.BluSoftlayer_full}} {{site.data.keyword.filestorage_full}}. The duplicate volume inherits the capacity and performance options of the original LUN/volume by default and has a copy of the data up to the point-in-time of a snapshot.
+You can create a duplicate of an existing {{site.data.keyword.BluSoftlayer_full}} {{site.data.keyword.filestorage_full}}. The duplicate volume inherits the capacity and performance options of the original storage volume by default and has a copy of the data up to the point-in-time of a snapshot.
 
 Duplicates can be created from both primary and replica volumes. The new duplicate is created in the same data center as the original volume. If you create a duplicate from a replica volume, the new volume is created in the same data center as the replica volume.
 
@@ -184,12 +184,12 @@ Duplicate volumes can be accessed by a host for read/write as soon as the storag
 
 For more information, see [Creating a duplicate File Volume](how-to-create-duplicate-volume.html)
 
-## Using replicas to failover when disaster strikes
+## Using replicas to fail over when disaster strikes
 
 When you fail over, you’re "flipping the switch" from your storage volume in your primary data center to the destination volume in your remote data center. For example, your primary data center is London and your secondary data center is Amsterdam. If a failure event occurs, you’d fail over to Amsterdam – connecting to the now-primary volume from a compute instance in Amsterdam. After your volume in London is repaired, a snapshot is taken of the Amsterdam volume to fail back to London and the once-again primary volume from a compute instance in London.
 
-* If the primary location is in imminent danger, see [Failover with an accessible Primary volume](dr-accessible-primary.html).
-* If the primary location is completely down, see [Failover with an inaccessible Primary volume](disaster-recovery.html).
+* If the primary location is experiencing problem but the storage and host are still online, see [Fail over with an accessible Primary volume](dr-accessible-primary.html).
+* If the primary location is down, see [Fail over with an inaccessible Primary volume](disaster-recovery.html).
 
 ## Canceling an existing replication
 
