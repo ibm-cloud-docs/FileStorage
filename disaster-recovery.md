@@ -13,7 +13,7 @@ lastupdated: "2018-12-10"
 {:important: .important}
 
 
-# Disaster Recovery - Failover with an inaccessible Primary volume
+# Disaster Recovery - Fail over with an inaccessible Primary volume
 
 If a catastrophic failure or disaster causes an outage on the primary site, customers can perform the following actions to quickly access their data on the secondary site.
 
