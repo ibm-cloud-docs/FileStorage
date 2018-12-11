@@ -25,7 +25,7 @@ Duplicate volumes can be accessed by a host for read/write as soon as the storag
 
 This feature is available in most locations. Click [here](new-ibm-block-and-file-storage-location-and-features.html) for the list of available data centers.
 
-Some common uses for a duplicate volume:
+Some common uses for a duplicate volume include the following examples.
 - **Disaster Recovery Testing**. Create a duplicate of your replica volume to verify that the data is intact and can be used if a disaster occurs, without interrupting the replication.
 - **Golden Copy**. Use a storage volume as golden copy that you can create multiple instances from for various uses.
 - **Data refreshes**. Create a copy of your production data to mount to your non-production environment for testing.
@@ -40,7 +40,7 @@ You can create a duplicate volume through the [{{site.data.keyword.slportal}} ![
 
 1. Go to your list of {{site.data.keyword.filestorage_short}}
     - From the customer portal, click **Storage** > **{{site.data.keyword.filestorage_short}}** OR
-    - From the {{site.data.keyword.BluSoftlayer_full}} catalog click **Infrastructure** > **Storage** > **{{site.data.keyword.filestorage_short}}**.
+    - From the {{site.data.keyword.BluSoftlayer_full}} catalog, click **Infrastructure** > **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Select a LUN from the list and click **Actions** > **Duplicate LUN (Volume)**
 3. Choose your snapshot option.
     - If you order from a non-replica volume,
