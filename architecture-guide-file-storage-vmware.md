@@ -183,7 +183,6 @@ When a volume is provisioned, the {{site.data.keyword.BluBareMetServers_full}} o
    The subnets that are displayed are subscribed subnets in the same data center as the storage volume.
    {:note}
 
-
 After the subnets are authorized, make note of the host name of the Endurance or Performance storage server you want to use when you mount the volume. This information can be found on the {{site.data.keyword.filestorage_short}} detail page by clicking a specific volume.
 
 
@@ -280,11 +279,11 @@ Make note of the IP address as it can be used for mounting the volume in the nex
 3. Click the **Create a new datastore** icon.
 4. On the **New Datastore** screen, select the location of the VMware datastore and click **Next**.
 5. On the **Type** screen, select **NFS**, and click **next**.
-6. Then, select the NFS version. Both NFSv3 and NFSv4.1 are supported, but NFSv3 is preferred. 
+6. Then, select the NFS version. Both NFSv3 and NFSv4.1 are supported, but NFSv3 is preferred.
 
    Make sure that you use only one NFS version to access the datastore. Consequences of mounting one or more hosts to the same datastore by using different versions can result in data corruption.
    {:important}
-   
+
 7. On the **Name and configuration** screen, enter the name that you want to call the VMware datastore. Additionally, enter the host name of the NFS server. Using the FQDN for the NFS server produces the best traffic distribution to the underlying server. IP address is also valid but is used less frequently and only in specific instances. Enter the folder name in the form of `/foldername`.
 8. On the **Host accessibility** screen, select one or more hosts that you want to mount the NFS VMware datastore on and click **next**.
 9. Review the inputs on the next screen and click **Finish**.
