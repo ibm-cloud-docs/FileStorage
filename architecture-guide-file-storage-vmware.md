@@ -315,7 +315,7 @@ Incorrectly configuring SIOC for a VMware datastore or for a VMDK can significan
 {:important}
 
 
-### Configuring Storage I/O Control For a VMware datastore
+### Configuring Storage I/O Control for a VMware datastore
 
 Use the following steps to enable SIOC with recommended values for Endurance and Performance Storage:
 
@@ -331,7 +331,7 @@ This setting is specific to the VMware datastore and not to the host.
 {:note}
 
 
-### Configuring Storage I/O Control For {{site.data.keyword.BluVirtServers_short}}
+### Configuring Storage I/O Control for {{site.data.keyword.BluVirtServers_short}}
 
 You can also limit individual virtual disks for individual VMs or grant them different shares with SIOC. By limiting the disks and granting different shares, you can match and align the environment to the workload with the acquired {{site.data.keyword.filestorage_short}} volume IOPS number. The limit is set by IOPS and it is possible to set a different weight or "Shares." Virtual disks with shares set to High (2,000 shares) receive twice as much I/O as a disk set to Normal (1,000 shares) and four times as much as one set to Low (500 shares). Normal is the default value for all the VMs, so you need to adjust the values to High or Low for the VMs that require it.
 
