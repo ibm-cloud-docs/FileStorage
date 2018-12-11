@@ -26,7 +26,7 @@ If a catastrophic failure or disaster causes an outage on the primary site, cust
 3. Click the replica of the file share in the list to view its **Details** page.
 4. On the **Details** page, scroll down and select an existing snapshot, then click **Actions** > **Duplicate**.
 5. Make any necessary updates to the capacity (to increase size) or IOPs for the new volume.
-6. You can update the snapshot space for the new new volume if needed.
+6. You can update the snapshot space for the new volume if needed.
 7. Click **Continue** to place your order for the duplicate.
 
 As soon as the volume is created, you can attach it to a host and perform read/write operations on that volume. While data is being copied from the original volume to the duplicate, you can see a status on the details page that shows the duplication is in progress. When the duplication process is complete, the new volume becomes independent from the original and can be managed with snapshots and replication as normal.
@@ -35,7 +35,7 @@ As soon as the volume is created, you can attach it to a host and perform read/w
 
 If you want to return production to the original primary site, you must perform the following steps.
 
-1. Log in to [The IBM Cloud console](https://{DomainName}/catalog/){:new_window} and click the **menu** icon on the top left. Select **Classic Infrastructure**.
+1. Log in to [The IBM Cloud console](https://{DomainName}/catalog/){:new_window} and click the **menu** icon on the upper left. Select **Classic Infrastructure**.
 
    Alternatively, you can log in to the [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
 2. Click **Storage** > **{{site.data.keyword.filestorage_short}}**.
