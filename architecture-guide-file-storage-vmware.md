@@ -27,7 +27,7 @@ The {{site.data.keyword.filestorage_short}} offering is accessed and mounted thr
 
 Pricing and configuration options for Endurance and Performance {{site.data.keyword.filestorage_short}} are charged based on a combination of the reserved space and the offered IOPS.
 
-## Ordering Considerations
+## Ordering considerations
 
 When you order {{site.data.keyword.filestorage_short}}, consider the following information:
 
@@ -119,7 +119,7 @@ Restoring the {{site.data.keyword.filestorage_short}} volume requires powering o
 For more information, see the [snapshots](snapshots.html) article.
 
 
-### Using Replication
+### Using replication
 
 Replication uses one of your snapshot schedules to automatically copy snapshots to a destination volume in a remote data center. The copies can be recovered in the remote site if a catastrophic event or data corruption occurs.
 
@@ -315,7 +315,7 @@ Incorrectly configuring SIOC for a VMware datastore or for a VMDK can significan
 {:important}
 
 
-### Configuring Storage I/O Control For A VMware Datastore
+### Configuring Storage I/O Control For a VMware datastore
 
 Use the following steps to enable SIOC with recommended values for Endurance and Performance Storage:
 
@@ -324,7 +324,7 @@ Use the following steps to enable SIOC with recommended values for Endurance and
 3. Click **Settings** and click **General**.
 4. Click **Edit** for **Datastore Capabilities**.
 5. Select the **Enable Storage I/O Control** check box.<br/>
-   ![NSF VMware Datastore](/images/3_0.png)
+   ![NSF VMware datastore](/images/3_0.png)
 6. Click **OK**.
 
 This setting is specific to the VMware datastore and not to the host.
