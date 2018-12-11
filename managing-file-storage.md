@@ -46,7 +46,7 @@ You can view the volumes to which a host has access to, including information th
 You are presented with a list of storage volumes that this particular host has access to, all are grouped by storage type (block, file, other). From the respective **Action** menus, you can authorize more storage or remove access.
 
 
-## Mounting and Unmounting {{site.data.keyword.filestorage_short}}
+## Mounting and unmounting {{site.data.keyword.filestorage_short}}
 
 You can use the mount point information that is provided in the **Volume Details** view to mount {{site.data.keyword.filestorage_short}} from a host. See [Accessing {{site.data.keyword.filestorage_short}} on Linux](accessing-file-storage-linux.html)
 
@@ -85,7 +85,7 @@ If you want to disconnect multiple hosts from a specific volume, you need to rep
 
 ## Canceling a storage volume
 
-If you no longer need a specific volume, you can cancel it. To cancel a storage volume, you need to revoke access from any hosts first.
+If you no longer need a specific volume, you can cancel that storage. To cancel a storage volume, you need to revoke access from any hosts first.
 
 1. Click **Storage**>**{{site.data.keyword.filestorage_short}}**.
 2. Click **Actions** for the volume to be canceled, and select **Cancel {{site.data.keyword.filestorage_short}}**.

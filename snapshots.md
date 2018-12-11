@@ -49,9 +49,9 @@ All snapshots and replicas of encrypted {{site.data.keyword.filestorage_short}} 
 
 ## How Snapshots affect the disk space
 
-Snapshot copies minimize disk consumption by preserving individual blocks rather than whole files. Snapshot copies use extra space only when files in the active file system are changed or deleted. When files are changed or deleted, the original file blocks are still preserved as part of one or more Snapshot copies.
+Snapshot copies minimize disk consumption by preserving individual blocks rather than whole files. Snapshot copies use extra space only when files in the active file system are changed or deleted.
 
-In the active file system, the changed blocks are rewritten to different locations on the disk or removed as active file blocks entirely. As a result, in addition to the disk space that is used by blocks in the modified active file system, disk space that is used by the original blocks is still reserved to reflect the status of the active file system before the change.
+In the active file system, the changed blocks are rewritten to different locations on the disk or removed as active file blocks entirely. When files are changed or deleted, the original file blocks are preserved as part of one or more Snapshot copies. As a result, disk space that is used by the original blocks is still reserved to reflect the status of the active file system before the change. This space is reserved in addition to the disk space that is used by blocks in the modified active file system.
 
 <table>
     <colgroup>
