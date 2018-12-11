@@ -32,6 +32,7 @@ IBM Cloud Storage - File Storage
     {: .topicgroup}
     Replication
         replication.md
+        dr-accessible-primary.md
         disaster-recovery.md
 
     {: .topicgroup}

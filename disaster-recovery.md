@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-30"
+lastupdated: "2018-12-10"
 
 ---
 {:DomainName: data-hd-keyref="APPDomain"}
@@ -13,7 +13,7 @@ lastupdated: "2018-11-30"
 {:important: .important}
 
 
-# Duplicating Replica Volumes for Disaster Recovery
+# Disaster Recovery - Failover with an inaccessible Primary volume
 
 If a catastrophic failure or disaster causes an outage on the primary site, customers can perform the following actions to quickly access their data on the secondary site.
 
