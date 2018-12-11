@@ -14,7 +14,7 @@ lastupdated: "2018-12-11"
 
 # Mounting {{site.data.keyword.filestorage_short}} on Container Linux
 
-Container Linux by CoreOS is an open-source lightweight operating system based on the Linux kernel. It is designed for providing infrastructure to clustered deployments. As an operating system, Container Linux provides only the minimal functionality that is required for deploying applications inside software containers, together with built-in mechanisms for service discovery and configuration sharing. For more information, see the [Container Linux documentation: Mounting storage ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://coreos.com/os/docs/latest/mounting-storage.html)
+Container Linux by CoreOS is an open source, lightweight operating system based on the Linux kernel. It is designed for providing infrastructure to clustered deployments. As an operating system, Container Linux provides only the minimal functionality that is required for deploying applications inside software containers, together with built-in mechanisms for service discovery and configuration sharing. For more information, see the [Container Linux documentation: Mounting storage ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://coreos.com/os/docs/latest/mounting-storage.html)
 
 ## Mounting Portable Storage
 
