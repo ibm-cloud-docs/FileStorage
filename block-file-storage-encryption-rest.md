@@ -24,7 +24,7 @@ The provider-managed encryption-at-rest feature uses the following industry stan
     - Payment Card Industry (PCI),
     - Basel II,
     - California Security Breach Information Act (SB 1386), and
-    - EU Data Protection Directive 95/46/EC compliance.
+    - EU Data Protection Directive (95/46/EC) compliance.
 
 ## Securing your snapshots or replicated storage  
 

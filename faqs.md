@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-11-13"
+lastupdated: "2018-12-11"
 
 ---
 {:new_window: target="_blank"}
@@ -18,7 +18,7 @@ Look at your list of {{site.data.keyword.filestorage_short}} in the customer por
 ## If I purchased non-encrypted {{site.data.keyword.filestorage_short}} in a data center that was upgraded for encryption, can I encrypt my {{site.data.keyword.filestorage_short}}?
 {: faq}
 
-{{site.data.keyword.filestorage_short}} that was provisioned before a data center upgrade can't be encrypted. New {{site.data.keyword.filestorage_short}} that was provisioned in upgraded data centers is automatically encrypted. There's no encryption setting to choose from, it’s automatic. Data on non-encrypted storage can be encrypted by creating a new volume, then copying the data to the new encrypted volume with host-based migration. For more information, see [Migrating File Storage](migrate-file-storage-encrypted-file-storage.html).
+{{site.data.keyword.filestorage_short}} that was provisioned before a data center upgrade can't be encrypted. New {{site.data.keyword.filestorage_short}} that was provisioned in upgraded data centers is automatically encrypted. It's automatic, not a provisioning setting that can be selected or left out. Data on non-encrypted storage can be encrypted by creating a new volume, then copying the data to the new encrypted volume with host-based migration. For more information, see [Migrating File Storage](migrate-file-storage-encrypted-file-storage.html).
 
 ## How do I know whether I'm provisioning {{site.data.keyword.filestorage_short}} in an upgraded data center?
 {: faq}
@@ -135,7 +135,7 @@ There's no need for pre-warming. You can observe the specified throughput immedi
 ## Can more throughput be achieved if a faster Ethernet connection is used?
 {: faq}
 
-Throughput limits are set at a per-volume level so using a faster Ethernet connection doesn't increase that set limit. However, with a slower Ethernet connection, your bandwidth can be a potential bottleneck.
+Throughput limits are set at a per-volume level. That limit cannot be increased by using a faster Ethernet connection. However, with a slower Ethernet connection, your bandwidth can be a potential bottleneck.
 
 ## Do firewalls and security groups impact performance?
 {: faq}
@@ -145,7 +145,7 @@ It's best to run storage traffic on a VLAN, which bypasses the firewall. Running
 ## What performance latency can be expected from the {{site.data.keyword.filestorage_short}}?   
 {: faq}
 
-Target latency within the storage is  less than 1 ms. The storage is connected to compute instances on a shared network, so the exact performance latency depends on the network traffic during the operation.
+Target latency within the storage is  less than one ms. The storage is connected to compute instances on a shared network, so the exact performance latency depends on the network traffic during the operation.
 
 ## What happens to the data when {{site.data.keyword.filestorage_short}} Volumes are deleted?
 {: faq}

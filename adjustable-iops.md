@@ -22,7 +22,7 @@ Billing for the storage is updated to add the pro-rated difference of the new pr
 
 This feature is only available in [select data centers](new-ibm-block-and-file-storage-location-and-features.html).
 
-Clients can’t switch between Endurance and Performance when they adjust their IOPS. Users can specify a new IOPS tier or IOPS level for their storage based on the following criteria/restrictions.
+Clients can’t switch between Endurance and Performance when they adjust their IOPS. Users can specify a new IOPS tier or IOPS level for their storage based on the following criteria and restrictions.
 
 - If original volume is Endurance 0.25 tier, IOPS tier can’t be updated.
 - If original volume is Performance with less than or equal to 0.30 IOPS/GB, options available include only the size and IOPS combinations that result in less than or equal to 0.30 IOPS/GB.
