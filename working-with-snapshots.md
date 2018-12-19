@@ -15,8 +15,7 @@ lastupdated: "2018-11-30"
 
 ## Creating a Snapshot Schedule?
 
-You can decide how often and when you want to create a point-in-time reference of your storage volume by creating snapshot schedules. You can have a maximum of 50 snapshots per storage volume. Schedules are managed through the **Storage** > **{{site.data.keyword.filestorage_short}}** tab of the [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
-
+You decide how often and when you want to create a point-in-time reference of your storage volume with Snapshot schedules. You can have a maximum of 50 snapshots per storage volume. Schedules are managed through the **Storage** > **{{site.data.keyword.filestorage_short}}** tab of the [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
 
 Before you can set up your initial schedule, you must first purchase snapshot space if you didn't purchase it during the initial provisioning of the storage volume.
 {:important}
@@ -110,7 +109,7 @@ Manual snapshots that aren't deleted in the portal manually, are automatically d
 You might need to take your storage volume back to a specific point-in-time because of user-error or data corruption.
 
 1. Unmount and detach your storage volume from the host.
-   - Click [here](accessing-file-storage-linux.html) for {{site.data.keyword.filestorage_short}} on Linux instructions.
+   - Click [here](accessing-file-storage-linux.html) for instructions.
 2. Click **Storage**, **{{site.data.keyword.filestorage_short}}** in the [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
 3. Scroll down and click your volume to be restored. The **Snapshots** section of the **Detail** page displays the list of all saved snapshots along with their size and creation date.
 4. Click **Actions** next to the snapshot to be used and click **Restore**. <br/>
@@ -122,7 +121,7 @@ You might need to take your storage volume back to a specific point-in-time beca
    Expect a message across the page that states that the volume is being restored by using the selected snapshot. Additionally, an icon appears next to your volume on the {{site.data.keyword.filestorage_short}} that indicates that an active transaction is in progress. Hovering over the icon produces a window that shows the transaction. The icon disappears when the transaction is complete.
    {:note}
 6. Mount and reattach your storage volume to the host.
-  - Click [here](accessing-file-storage-linux.html) for {{site.data.keyword.filestorage_short}} on Linux instructions.
+  - Click [here](accessing-file-storage-linux.html) for instructions.
 
 Restoring a volume results in deleting all snapshots that were taken after the snapshot that was used for the restore.
 {:important}
