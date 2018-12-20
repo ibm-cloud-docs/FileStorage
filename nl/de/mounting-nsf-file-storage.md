@@ -16,7 +16,8 @@ lastupdated: "2018-10-31"
 
 Der Prozess zum Anhängen von {{site.data.keyword.filestorage_full}} in CentOS 7 ähnelt dem Prozess zum [Anhängen von {{site.data.keyword.filestorage_short}} unter RHEL 6](accessing-file-storage-linux.html). Da das Anhängen (Mount) jedoch mit NFS erfolgt, können einige weitere Optionen in der Zeile `Options=` in der Mountdatei angegeben werden. Im folgenden Beispiel wird für NFS festgelegt, dass das Anhängen an `/data/www` erfolgt.
 
-Der NFS-Mountpunkt der {{site.data.keyword.filestorage_short}}-Instanz kann auf der {{site.data.keyword.filestorage_short}}-Listenseite oder über den API-Aufruf `SoftLayer_Network_Storage::getNetworkMountAddress()` abgerufen werden.{:tip}
+Der NFS-Mountpunkt der {{site.data.keyword.filestorage_short}}-Instanz kann auf der {{site.data.keyword.filestorage_short}}-Listenseite oder über den API-Aufruf `SoftLayer_Network_Storage::getNetworkMountAddress()` abgerufen werden.
+{:tip}
 
 ```
 $ cat data-www.mount

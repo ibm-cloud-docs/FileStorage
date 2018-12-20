@@ -12,6 +12,7 @@ lastupdated: "2018-11-30"
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 
+
 # {{site.data.keyword.filestorage_short}} を使用する VMware 環境の Brocade vRouter (Vyatta) のセットアップ
 
 {{site.data.keyword.filestorage_full}} を使用する VMware 環境内で、Brocade vRouter (Vyatta) アプライアンスを高可用性 (HA) 構成にすることができます。 以下の情報と[拡張単一サイト VMware のリファレンス・アーキテクチャー](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}を使用して、これらのストレージ・オプションのいずれかをVMware 環境にセットアップできます。
@@ -20,7 +21,7 @@ Brocade vRouter (Vyatta) ゲートウェイは、お客様の環境のゲート�
 
 この構成例では、Brocade vRouter (Vyatta) 内に以下の 5 つのゾーンを作成します。
 
-- SLSERVICE – {{site.data.keyword.BluSoftlayer_full}} サービス
+- SLSERVICE – {{site.data.keyword.cloud_notm}} サービス
 - VMACCESS – キャパシティー・クラスター上の {{site.data.keyword.BluVirtServers_short}} (VM)
 - MGMT – 管理クラスターとキャパシティー・クラスター、および管理 VM
 - STORAGE – ストレージ・サーバー
@@ -357,7 +358,7 @@ save
 
 Brocade vRouter (Vyatta) でゾーンとファイアウォール・ルールがセットアップされたら、VLAN をそれに関連付け、Brocade vRouter (Vyatta) を経由した VLAN のルーティングを有効にする必要があります。
 
-1. [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}にログインして、**「ネットワーク」>「ゲートウェイ・アプライアンス」**をクリックし、Brocade vRouter (Vyatta) をクリックします。
+1. [{{site.data.keyword.slportal}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://control.softlayer.com/){:new_window} にログインして、**「ネットワーク」>「ゲートウェイ・アプライアンス」**をクリックし、Brocade vRouter (Vyatta) をクリックします。
 2. **「VLAN」**を選択し、**「関連付け」**をクリックします。
 4. **「関連付けられた VLAN」**で VLAN を見つけ、それぞれの横にあるボックスにチェック・マークを付けます。
 5. **「一括アクション」**ドロップダウン・メニューをクリックし、**「経路」**を選択します。

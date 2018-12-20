@@ -12,13 +12,14 @@ lastupdated: "2018-11-30"
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 
+
 # Ordinazione di istantanee
 
 Per creare le istantanee del tuo volume di archiviazione, in modo automatizzato o manualmente, devi acquistare dello spazio per contenerle. Puoi acquistare capacità fino alla tua quantità di volume di archiviazione (durante l'acquisto di volume iniziale e successivamente attenendoti a questa procedura).
 
-1. Accedi alla [Console IBM Cloud](https://{DomainName}/catalog/){:new_window} e fai clic sull'icona **Menu** in alto a sinistra. Seleziona **Infrastruttura classica**.
+1. Accedi alla [console IBM Cloud](https://{DomainName}/catalog/){:new_window} e fai clic sull'icona menu nell'angolo superiore sinistro. Seleziona **Infrastruttura classica**.
 
-   In alternativa, puoi accedere al [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
+   In alternativa, puoi accedere al [{{site.data.keyword.slportal}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://control.softlayer.com/){:new_window}.
 2. Accedi alla tua archiviazione tramite **Storage** > **{{site.data.keyword.filestorage_short}}**.
 3. Fai clic su **Change Snapshot Space** nel frame Snapshots.
 4. Seleziona la quantità di spazio che ti serve e il metodo di pagamento.
@@ -41,12 +42,12 @@ Un volume con numerose modifiche e un lungo periodo di conservazione richiede pi
 
 Se acquisisci 12 istantanee orarie di 500 GB di dati reali e c'è l'1 percento di modifica tra ciascuna istantanea, ti ritrovi alla fine con 60 GB per le istantanee.
 
-*(Frequenza di modifica di 5 G) x (12 istantanee orarie) = (60 GB di spazio utilizzato)*
+*(Frequenza di modifica di 5-GB) x (12 istantanee orarie) = (60 GB di spazio utilizzato)*
 
 Se invece per tali 500 GB di dati effettivi, con 12 istantanee orarie, si verifica il 10 percento di modifica ogni ora, lo spazio per le istantanee utilizzato è 600 GB.
 
-*(Frequenza di modifica di 50 GB) x (12 istantanee orarie) = (600 GB di spazio utilizzato)*
+*(Frequenza di modifica di 50-GB) x (12 istantanee orarie) = (600 GB di spazio utilizzato)*
 
-Pertanto, quando determini la quantità di spazio di istantanea di cui hai bisogno, considera attentamente la frequenza di modifica. È un fattore che ha un enorme impatto sulla quantità di spazio di istantanea di cui hai bisogno. Un volume più grande è più probabile che subisca modifiche più spesso. Tuttavia, un volume di 500 GB con 5 GB di modifica e un volume di 10 TB con 5 GB di modifica utilizzano la stessa quantità di spazio per le istantanee.
+Pertanto, quando determini la quantità di spazio di istantanea di cui hai bisogno, considera attentamente la frequenza di modifica. È un fattore che ha un enorme impatto sulla quantità di spazio di istantanea di cui hai bisogno. Un volume più grande è più probabile che subisca modifiche più spesso. Tuttavia, un volume di 500-GB con 5 GB di modifica e un volume di 10-TB con 5 GB di modifica utilizzano la stessa quantità di spazio per le istantanee.
 
 Inoltre, per la maggior parte dei carichi di lavoro, più grande è un volume e minore è lo spazio da mettere da parte inizialmente. Ciò è dovuto principalmente all'efficienza dei dati sottostanti e alla natura della modalità di funzionamento delle istantanee nell'ambiente.

@@ -11,37 +11,42 @@ lastupdated: "2018-11-30"
 {:note: .note}
 {:important: .important}
 
-# 使用 cPanel 配置 {{site.data.keyword.filestorage_short}} 以進行備份
+# Configurando o {{site.data.keyword.filestorage_short}} para backup com o cPanel
 
-您可以使用這些指示，透過 cPanel 配置將您的備份儲存至 {{site.data.keyword.filestorage_full}}。我們假設可以使用 root 或 sudo SSH 及完整 WebHost Manager (WHM) 存取權。此範例以 **CentOS 7** 主機為基礎。
+É possível usar essas instruções para configurar seus backups para serem armazenados no {{site.data.keyword.filestorage_full}} por cPanel. A suposição é que o SSH
+raiz ou sudo e o acesso completo ao WebHost Manager (WHM) estejam disponíveis. Esse exemplo se baseia em um
+host do **CentOS 7**.
 
-如需供應商的相關資訊，請參閱 [cPanel - Configuring Backup Directory ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.cpanel.net/display/68Docs/Backup+Configuration#BackupConfiguration-ConfigureBackupDirectory){:new_window}。
+Para obter mais informações, consulte [cPanel: configurando o diretório de backup ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://docs.cpanel.net/display/68Docs/Backup+Configuration#BackupConfiguration-ConfigureBackupDirectory){:new_window}.
 {:tip}
 
-1. 透過 SSH 連接至主機。
-2. 確定裝載點目標已存在。<br />
+1. Conecte-se ao host por meio de SSH.
+2. Assegure-se de que um destino de ponto de montagem exista. <br />
 
-   依預設，cPanel 系統會在本端將備份檔儲存至 `/backup` 目錄。在本文件中，假設 `/backup` 資料夾已存在且包含備份，而且可以使用 `/backup2` 作為新的裝載點。{:note}
+   Por padrão, o sistema cPanel salva os arquivos de backup localmente, no diretório `/backup`. Nesse documento, a suposição é que a pasta `/backup` existe e contém backups, e `/backup2` pode ser usado como o novo ponto de montagem.
+   {:note}
 
-3. 配置 {{site.data.keyword.filestorage_short}}，如[在 Red Hat Enterprise Linux 上存取 {{site.data.keyword.filestorage_short}}](accessing-file-storage-linux.html) 及[在 CentOS 中裝載 NFS/{{site.data.keyword.filestorage_short}}](mounting-nsf-file-storage.html)/[在 CoreOS 上裝載 NFS/{{site.data.keyword.filestorage_short}}](mounting-storage-coreos.html) 中所述。將磁區裝載至 `/backup2`，並在檔案系統表格 (`/etc/fstab`) 中進行配置，以啟用啟動時裝載。<br />
+3. Configure seu {{site.data.keyword.filestorage_short}} conforme descrito em [Acessando o {{site.data.keyword.filestorage_short}} no Red Hat Enterprise Linux](accessing-file-storage-linux.html) e [Montando o NFS/{{site.data.keyword.filestorage_short}} no CentOS](mounting-nsf-file-storage.html)/[Montando o NFS/{{site.data.keyword.filestorage_short}} no CoreOS](mounting-storage-coreos.html). Monte o volume em `/backup2` e configure-o na tabela do sistema de arquivos (`/etc/fstab`) para ativar a montagem no início. <br />
 
-   依預設，NFS 會將使用 root 使用者許可權建立的任何檔案降級成 nobody 使用者。若要容許 root 用戶端保留對 NFS 共用的 root 使用者許可權，則需要將 `no_root_squash` 新增至 `/etc/exports`。{:tip}
+   Por padrão, o NFS faz downgrade de quaisquer arquivos que foram criados com as permissões raiz para o usuário nobody. Para permitir que os clientes raiz retenham as permissões raiz no compartilhamento NFS, `no_root_squash` precisa ser incluído em `/etc/exports`.
+   {:tip}
 
-4. **選用**。將現有備份複製到新的儲存空間。例如，您可以使用 `rsync`。
+4. **Opcional**. Copie os backups existentes para o novo armazenamento. É possível usar  ` rsync ` , por exemplo.
    ```
    rsync -azv /backup/* /backup2/
    ```
    {: pre}
 
-    這個指令會壓縮並傳輸您的資料，並儘可能保留越多內容（但固定鏈結除外）。此外，還會提供要傳送哪些檔案的相關資訊，並在尾端附上簡短摘要。
+    Esse comando compacta e transmite seus dados e os preserva o máximo possível, exceto links físicos. Ele também fornece informações sobre quais arquivos estão sendo transferidos, além de um breve resumo no final.
     {:tip}
 
-5. 登入 WebHost Manager，然後透過**首頁** > **備份** > **備份配置**移至備份配置。
+5. Efetue login no WebHost Manager e acesse a configuração de backup por meio de **Página inicial** > **Backup** > **Configuração de backup**.
 
-6. 編輯配置，以將備份儲存在新的裝載點中。
-    - 輸入新位置的絕對路徑來取代 `/backup/` 目錄，以變更預設備份目錄。
-    - 選取**啟用以裝載備份磁碟機**。此設定會導致配置處理程序檢查 `/etc/fstab` 檔案來尋找備份裝載 (`/backup2`)。<br />
+6. Edite a configuração para salvar os backups no novo ponto de montagem.
+    - Mude o diretório de backup padrão inserindo o caminho absoluto para o novo local no lugar do diretório `/backup/`.
+    - Selecione **Ativar para montar uma unidade de backup**. Essa configuração faz com que o processo de configuração verifique o arquivo `/etc/fstab` quanto a uma montagem de backup (`/backup2`). <br />
 
-      如果存在的裝載名稱與暫置目錄相同，則備份配置處理程序會裝載該磁碟機，並將資訊備份至該處。在備份處理程序完成之後，它會卸載磁碟機。{:note}
-7. 按一下**儲存配置**，以套用變更。
-8. **選用**。根據您的特定使用案例和商業需要，移除伺服器中的舊儲存空間，並從帳戶中予以取消。
+      Se existir uma montagem com o mesmo nome que o diretório temporário, o processo de configuração de backup montará a unidade e fará backup das informações ali. Depois que o processo de backup é concluído, ele desmonta a unidade.
+      {:note}
+7. Aplique as mudanças clicando em **Salvar configuração**.
+8. **Opcional**. Conforme determinado por seu caso de uso específico e necessidades de negócios, remova o armazenamento antigo do servidor e cancele-o da conta.

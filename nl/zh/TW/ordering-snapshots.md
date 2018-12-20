@@ -12,41 +12,42 @@ lastupdated: "2018-11-30"
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 
-# 訂購 Snapshot
 
-若要自動或手動建立儲存空間磁區的 Snapshot，您需要購買空間來存放它們。您可以購買最多達到儲存空間磁區量的容量（在起始磁區購買期間購買，或之後使用以下步驟購買）。
+# Solicitando capturas instantâneas
 
-1. 登入 [IBM Cloud 主控台](https://{DomainName}/catalog/){:new_window}，然後按一下左上方的**功能表**圖示。選取**典型基礎架構**。
+Para criar capturas instantâneas de seu volume de armazenamento, seja automaticamente ou manualmente, é necessário comprar espaço para mantê-las. É possível comprar capacidade até a sua quantia de volume de armazenamento (durante a compra de volume inicial ou posteriormente usando essas etapas).
 
-   或者，您可以登入 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}。
-2. 透過**儲存空間** > **{{site.data.keyword.filestorage_short}}** 來存取「儲存空間」。
-3. 按一下 Snapshot 頁框中的**變更 Snapshot 空間**。
-4. 選取您需要的空間量和付款方法。
-5. 按一下**繼續**。
-6. 輸入您有的任何「促銷代碼」，然後按一下**重新計算**。**此訂單的計費**及**訂單檢閱**具有預設值。
-7. 勾選**我已閱讀主要服務合約，並同意其中的條款**勾選框，然後按**下訂單**。在幾分鐘之後，即會佈建您的 Snapshot 空間。
+1. Efetue login no [Console do IBM Cloud](https://{DomainName}/catalog/){:new_window} e clique no ícone Menu na parte superior esquerda. Selecione **Infraestrutura clássica**.
 
-## 決定要訂購多少 Snapshot 空間
+   Como alternativa, é possível efetuar login no [{{site.data.keyword.slportal}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://control.softlayer.com/){:new_window}.
+2. Acesse seu Armazenamento por meio de **Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
+3. Clique em **Mudar espaço de captura instantânea** no quadro Capturas instantâneas.
+4. Selecione a quantidade de espaço que você precisa e o método de pagamento.
+5. Clique em **Continuar**.
+6. Insira qualquer código promocional que você tenha e clique em **Recalcular**. **Encargos para este pedido** e **Revisão do pedido** têm valores padrão.
+7. Marque a caixa **Eu li o Contrato de Prestação de Serviços Principal e concorde com os termos contidos nele** e clique em **Fazer pedido**. Seu espaço de captura instantânea será provisionado em alguns minutos.
 
-一般來說，Snapshot 會根據兩項重要因素來使用 Snapshot 空間：
-- 您的作用中檔案系統隨著時間的變更程度、
-- 您計劃保留 Snapshot 的時間長度。  
+## Determinando a quantidade de espaço de captura instantânea a ser pedido
 
-計算所需空間量的方式為**（變更率）**x**（保留的時數/天數/週數/月數資料）**。  
+Genericamente falando, o espaço de captura instantânea é usado por capturas instantâneas com base em dois fatores principais:
+- Quanto seu sistema de arquivos ativo muda ao longo do tempo,
+- Quanto tempo você planeja reter capturas instantâneas.  
 
-第一個 Snapshot 所使用的空間量微不足道，因為它只是指出作用中檔案系統區塊的 meta 資料（指標）副本。
+A maneira de calcular a quantia de espaço necessário é **(Taxa de mudança)** x **(número de horas/dias/semanas/meses em que os dados são retidos)**.  
+
+A primeira captura instantânea usa uma quantidade insignificante de espaço, pois é apenas uma cópia dos metadados (ponteiros) que indica os blocos do sistema de arquivos ativo.
 {:note}
 
-具有許多變更及冗長保留期間的磁區，比起具有適度變更及適度保留排程的磁區，會需要更多的空間。第一種類型的範例是高變更率資料庫。第二種類型的範例是 VMware 資料儲存庫。
+Um volume com várias mudanças e um período de retenção longo precisa de mais espaço do que um volume com mudança moderada e um planejamento de retenção moderado. Um exemplo para o primeiro tipo é um banco de dados com uma alta taxa de mudança. Um exemplo para o segundo tipo é um armazenamento de dados do VMware.
 
-如果您擷取 500 GB 實際資料的 12 個每小時 Snapshot，並且在每個 Snapshot 之間有 1% 的變更，則 Snapshot 最終會使用 60 GB。
+Se você usar 12 capturas instantâneas por hora de 500 GB de dados reais e houver 1 por cento de mudança entre cada captura instantânea, você terminará com 60 GB para capturas instantâneas.
 
-*（5 GB 變更率）x（12 個每小時 Snapshots）= （60 GB 已使用空間）*
+*(Taxa de mudança de 5 GB) x (12 capturas instantâneas por hora) = (60 GB de espaço usado)*
 
-反之，如果情況為 500 GB 實際資料，加上 12 個每小時 Snapshot，而且每小時看到 10% 的變更，則使用的 Snapshot 空間是 600 GB。
+Por outro lado, se esses 500 GB de dados reais, com 12 capturas instantâneas por hora, vissem 10 por cento de mudança a cada hora, o espaço de captura instantânea usado seria de 600 GB.
 
-*（50 GB 變更率）x（12 個每小時 Snapshot）=（600 GB 已使用空間）*
+*(Taxa de mudança de 50 GB) x (12 capturas instantâneas por hora) = (600 GB de espaço usado)*
 
-因此，當您決定需要多少 Snapshot 空間時，請仔細考慮變更率。它對您需要多少 Snapshot 空間有巨大影響。較大的磁區較有可能頻繁地變更。不過，具有 5 GB 變更的 500 GB 磁區，與具有 5 GB 變更的 10 TB 磁區，兩者都使用相同的 Snapshot 空間量。
+Portanto, quando você determinar quanto espaço de Captura instantânea precisará, considere a taxa de mudança atentamente. Isso influencia enormemente a quantia de espaço de captura instantânea necessária. É mais provável que um volume maior mude mais vezes. No entanto, um volume de 500 GB com 5 GB de mudança e um volume de 10 TB com 5 GB de mudança usam a mesma quantia de espaço de captura instantânea.
 
-此外，對於大部分工作負載而言，磁區越大，一開始需要預留的空間就越少。這主要是因為基礎資料效率，以及 Snapshot 在環境中如何運作的本質所致。
+Além disso, para a maioria das cargas de trabalho, quanto maior for um volume, menos espaço precisará ser reservado inicialmente. É principalmente devido às eficiências de dados subjacentes e à natureza de como as capturas instantâneas funcionam no ambiente.

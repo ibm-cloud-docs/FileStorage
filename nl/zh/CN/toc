@@ -28,10 +28,12 @@ IBM Cloud 存储 - File Storage
         set-host-queue-depth-settings-performance-and-endurance-storage.md
         configure-backup-cpanel.md
         configure-backup-plesk.md
-        
+        jumboframes.md
+
     {: .topicgroup}
     复制
         replication.md
+        dr-accessible-primary.md
         disaster-recovery.md
 
     {: .topicgroup}

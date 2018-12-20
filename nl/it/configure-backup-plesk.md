@@ -15,13 +15,13 @@ lastupdated: "2018-11-30"
 
 Puoi utilizzare queste istruzioni per configurare {{site.data.keyword.filestorage_full}} per i tuoi backup in Plesk. Il presupposto è che siano disponibili SSH root o sudo e un accesso a Plesk a livello di amministrazione completo. Questo esempio è basato su un host CentOS7.
 
-Per ulteriori informazioni dal fornitore, consulta [Plesk's documentation for backing up and restoration ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.plesk.com/en-US/12.5/administrator-guide/backing-up-and-restoration.59256/){:new_window}.
+Per ulteriori informazioni, vedi la [documentazione di Plesk relativa al backup e al ripristino ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://docs.plesk.com/en-US/12.5/administrator-guide/backing-up-and-restoration.59256/){:new_window}.
 {:tip}
 
 1. Connettiti all'host tramite SSH.
 2. Assicurati che esista una destinazione di punto di montaggio. <br />
 
-   Plesk ha due opzioni per l'archiviazione dei backup. Una è l'archiviazione Plesk interna, che è l'archiviazione sul tuo server Plesk. L'altra è l'archiviazione FTP esterna , che è l'archiviazione su qualche server esterno nel web o nella tua rete locale. Di norma, sui box Plesk, i backup interni sono archiviati in `/var/lib/psa/dumps` e utilizzano `/tmp` come directory temporanea. In questo esempio, la directory temporanea viene conservata in locale ma la directory `dumps` viene spostata alla destinazione STaaS (`/backup/psa/dumps`). Non sono necessarie credenziali utente FTP.
+   Plesk ha due opzioni per l'archiviazione dei backup. Una è l'archiviazione Plesk interna, che è l'archiviazione sul tuo server Plesk. L'altra è l'archiviazione FTP esterna , che è l'archiviazione su qualche server esterno nel web o nella tua rete locale. Di norma, sui box Plesk, i backup interni sono archiviati in `/var/lib/psa/dumps` e utilizzano `/tmp` come directory temporanea. In questo esempio, la directory temporanea viene conservata in locale ma la directory `dumps` viene spostata alla destinazione {{site.data.keyword.filestorage_short}} (`/backup/psa/dumps`). Non sono necessarie credenziali utente FTP.
    {:note}
 3. Configura il tuo {{site.data.keyword.filestorage_short}} come descritto in [Accesso a {{site.data.keyword.filestorage_short}} su Red Hat Enterprise Linux](accessing-file-storage-linux.html) e [Montaggio di NFS/{{site.data.keyword.filestorage_short}} in CentOS](mounting-nsf-file-storage.html) oppure [Montaggio di NFS/{{site.data.keyword.filestorage_short}} su CoreOS](mounting-storage-coreos.html). Monta il volume in `/backup` e configuralo nella tabella del file system (`/etc/fstab`) per abilitare il montaggio all'avvio. <br />
 

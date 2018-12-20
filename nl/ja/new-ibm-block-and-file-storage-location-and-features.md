@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-12-11"
 
 ---
 {:new_window: target="_blank"}
@@ -17,7 +17,7 @@ lastupdated: "2018-10-31"
 新しいボリュームの NFS マウント・ポイントは変更されています。 詳しくは、『[拡張{{site.data.keyword.filestorage_short}}・ボリュームの新しいマウント・ポイント](#new-mount-point-for-enhanced-file-storage-volumes)』セクションを参照してください。
 {:important}
 
-新しい{{site.data.keyword.filestorage_short}}は、以下の地域/データ・センターで提供されています。今後さらに多くのデータ・センターで提供される予定です。
+新しい{{site.data.keyword.filestorage_short}}は、以下の地域およびデータ・センターで提供されています。今後さらに多くのデータ・センターで提供される予定です。
 
 <table role="presentation">
   <tr>
@@ -56,7 +56,7 @@ lastupdated: "2018-10-31"
     <td>MEL01<br />
         SYD01<br />
         SYD04<br />
-	<br /><br /><br /><br /><br /><br /><br /><br /><br />
+        SYD05<br /><br /><br /><br /><br /><br /><br /><br /><br />
     </td>
     <td>MON01<br />
         TOR01<br />
@@ -78,7 +78,7 @@ lastupdated: "2018-10-31"
   </tr>
 </table>
 
-*表 1 は、使用可能なデータ・センターを示しています。 地域ごとに列を分けています。 ダラス、サンホセ、ワシントン DC、アムステルダム、フランクフルト、ロンドン、シドニーなどのいくつかの都市には、複数のデータ・センターがあります。*
+*表 1 は、使用可能なデータ・センターを示しています。 地域ごとに列を分けています。 一部の都市 (ダラス、サンノゼ、ワシントン DC、アムステルダム、フランクフルト、ロンドン、シドニーなど) には複数のデータ・センターがあります。*
 
 新しいストレージの機能と性能を次に示します。
 
@@ -94,7 +94,10 @@ lastupdated: "2018-10-31"
 
 ## 拡張{{site.data.keyword.filestorage_short}}・ボリュームの新しいマウント・ポイント
 
-これらのデータ・センターでプロビジョンされる拡張{{site.data.keyword.filestorage_short}}・ボリュームはすべて、非暗号化ボリュームとは異なるマウント・ポイントになります。 両方のストレージ・ボリュームに正しいマウント・ポイントを使用するために、UI の**「ボリュームの詳細 (Volume Details)」**ページでマウント・ポイント情報を確認することができます。 API 呼び出し `SoftLayer_Network_Storage::getNetworkMountAddress()` を使用して正しいマウント・ポイントを取得することもできます。
+これらのデータ・センターでプロビジョンされる拡張{{site.data.keyword.filestorage_short}}・ボリュームはすべて、非暗号化ボリュームとは異なるマウント・ポイントになります。 両方のストレージ・ボリュームに正しいマウント・ポイントを使用するために、コンソールの**「ボリュームの詳細 (Volume Details)」**ページでマウント・ポイント情報を確認することができます。 API 呼び出し `SoftLayer_Network_Storage::getNetworkMountAddress()` を使用して正しいマウント・ポイントを取得することもできます。
+
+すべての新機能にアクセスできるようにするには、API で注文する際に `Storage-as-a-Service Package 759` を選択します。API で {{site.data.keyword.filestorage_short}} を注文する方法について詳しくは、[order_file_volume ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://softlayer-python.readthedocs.io/en/latest/api/managers/file.html#SoftLayer.managers.file.FileStorageManager.order_file_volume){:new_window} を参照してください。
+{:important}
 
 追加のデータ・センターがアップグレードされていないか確認したり、新しいフィーチャーや機能が{{site.data.keyword.filestorage_short}}に追加されていないか確認したりするには、このページをもう一度参照してください。
 {:tip}

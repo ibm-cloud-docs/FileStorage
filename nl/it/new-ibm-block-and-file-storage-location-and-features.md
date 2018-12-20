@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-12-11"
 
 ---
 {:new_window: target="_blank"}
@@ -10,14 +10,14 @@ lastupdated: "2018-10-31"
  {:note: .note}
  {:important: .important}
 
-# Nuove ubicazioni e funzioni dell'{{site.data.keyword.filestorage_short}}
+# Nuove ubicazioni e funzioni di {{site.data.keyword.filestorage_short}}
 
-{{site.data.keyword.BluSoftlayer_full}} sta introducendo una nuova versione dell'{{site.data.keyword.filestorage_full}}! La nuova archiviazione è disponibile in data center selezionati ed è supportata da una archiviazione flash a livelli IOPS più elevati con la crittografia a livello di disco per i dati non attivi. Di tutta l'archiviazione ordinata in data center selezionati, viene automaticamente creata con la nuova versione di {{site.data.keyword.filestorage_short}}.
+{{site.data.keyword.BluSoftlayer_full}} sta introducendo una nuova versione di {{site.data.keyword.filestorage_full}}! La nuova archiviazione è disponibile in data center selezionati ed è supportata da una archiviazione flash a livelli IOPS più elevati con la crittografia a livello di disco per i dati non attivi. Di tutta l'archiviazione ordinata in data center selezionati, viene automaticamente creata con la nuova versione di {{site.data.keyword.filestorage_short}}.
 
 Il punto di montaggio NFS per i nuovi volumi è cambiato. Per i dettagli, consulta la sezione [Nuovo punto di montaggio per i volumi di {{site.data.keyword.filestorage_short}} avanzato](#new-mount-point-for-enhanced-file-storage-volumes).
 {:important}
 
-La nuova {{site.data.keyword.filestorage_short}} è disponibile nelle seguenti regioni/nei seguenti data center e a breve verrà aggiunta la disponibilità di ulteriori data center.
+La nuova {{site.data.keyword.filestorage_short}} è disponibile nelle seguenti regioni e nei seguenti data center e a breve verrà aggiunta la disponibilità di ulteriori data center.
 
 <table role="presentation">
   <tr>
@@ -56,7 +56,7 @@ La nuova {{site.data.keyword.filestorage_short}} è disponibile nelle seguenti r
     <td>MEL01<br />
         SYD01<br />
         SYD04<br />
-	<br /><br /><br /><br /><br /><br /><br /><br /><br />
+        SYD05<br /><br /><br /><br /><br /><br /><br /><br /><br />
     </td>
     <td>MON01<br />
         TOR01<br />
@@ -78,7 +78,7 @@ La nuova {{site.data.keyword.filestorage_short}} è disponibile nelle seguenti r
   </tr>
 </table>
 
-*La tabella 1 mostra la nostra disponibilità di data center. Ogni regione ha la propria colonna. Alcune città, come Dallas, San Jose, Washington DC, Amsterdam, Francoforte, Londra e Sydney hanno più data center.*
+*La tabella 1 mostra la nostra disponibilità di data center. Ogni regione ha la propria colonna. Alcune città, come Dallas, San Jose, Washington DC, Amsterdam, Francoforte, Londra e Sydney, hanno più data center.*
 
 La nuova archiviazione ha le seguenti funzioni e capacità:
 
@@ -94,7 +94,10 @@ La nuova archiviazione ha le seguenti funzioni e capacità:
 
 ## Nuovo punto di montaggio per i volumi di {{site.data.keyword.filestorage_short}} avanzato
 
-Tutti i volumi di {{site.data.keyword.filestorage_short}} avanzato di cui viene eseguito il provisioning in questi data center hanno un punto di montaggio diverso rispetto ai volumi non crittografati. Per assicurarti che stai usando il punto di montaggio corretto per entrambi i tuoi volumi, puoi visualizzare le informazioni sul punto di montaggio nella pagina **Volume Details** nell'IU. Puoi inoltre accedere al punto di montaggio corrente tramite una chiamata API: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
+Tutti i volumi di {{site.data.keyword.filestorage_short}} avanzato di cui viene eseguito il provisioning in questi data center hanno un punto di montaggio diverso rispetto ai volumi non crittografati. Per assicurarti che stai usando il punto di montaggio corretto per entrambi i volumi di archiviazione, puoi visualizzare le informazioni sul punto di montaggio nella pagina **Volume Details** nella console. Puoi inoltre accedere al punto di montaggio corrente tramite una chiamata API: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 
-Ritorna qui a controllare quando viene eseguito l'upgrade di ulteriori data center e per vedere le nuove funzioni e funzionalità che vengono aggiunte per l'{{site.data.keyword.filestorage_short}}.
+Per poter accedere a tutte le nuove funzioni, seleziona `Storage-as-a-Service Package 759` quando effettui il tuo ordine tramite l'API. Per ulteriori informazioni sull'ordinazione di {{site.data.keyword.filestorage_short}} tramite l'API, vedi [order_file_volume ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://softlayer-python.readthedocs.io/en/latest/api/managers/file.html#SoftLayer.managers.file.FileStorageManager.order_file_volume){:new_window}.
+{:important}
+
+Ritorna qui a controllare quando viene eseguito l'upgrade di ulteriori data center e per vedere le nuove funzioni e funzionalità che vengono aggiunte per {{site.data.keyword.filestorage_short}}.
 {:tip}

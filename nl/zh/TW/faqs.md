@@ -2,157 +2,157 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-09-18"
+lastupdated: "2018-12-11"
 
 ---
 {:new_window: target="_blank"}
 {:faq: data-hd-content-type='faq'}
 
-# 常見問題
+# Perguntas mais frequentes
 
-## 如何分辨哪些 {{site.data.keyword.filestorage_short}} 磁區已加密？
+## Como posso saber quais dos meus volumes do {{site.data.keyword.filestorage_short}} são criptografados?
 {: faq}
 
-請查看客戶入口網站中的 {{site.data.keyword.filestorage_short}} 清單。您會看到已加密磁區的 LUN/磁區名稱右側有一個鎖定圖示。
+Veja a sua lista de {{site.data.keyword.filestorage_short}} no portal do cliente. É possível ver um ícone de bloqueio à direita do nome de volume para os volumes que estão criptografados.
 
-## 如果我在已升級進行加密的資料中心內購買了未加密的 {{site.data.keyword.filestorage_short}}，則是否可以加密我的 {{site.data.keyword.filestorage_short}}？
+## Se eu comprei um {{site.data.keyword.filestorage_short}} não criptografado em um data center que foi submetido a upgrade para criptografia, posso criptografar meu {{site.data.keyword.filestorage_short}}?
 {: faq}
 
-在資料中心升級之前所佈建的 {{site.data.keyword.filestorage_short}} 無法加密。在已升級的資料中心內佈建的新 {{site.data.keyword.filestorage_short}} 則會自動加密。由於是自動，因此沒有任何加密設定可供選擇。未加密儲存空間上的資料加密，可以藉由建立新磁區，然後透過主機型移轉將資料複製到新的已加密磁區來進行。如需相關資訊，請參閱[移轉檔案儲存空間](/docs/infrastructure/FileStorage/migrate-file-storage-encrypted-file-storage.html)。
+O {{site.data.keyword.filestorage_short}} que foi provisionado antes de um upgrade do data center não pode ser criptografado. O novo {{site.data.keyword.filestorage_short}} que foi fornecido em data centers com upgrade é criptografado automaticamente. Ele é automático, não uma configuração de fornecimento que pode ser selecionada ou deixada de fora. Os dados no armazenamento não criptografado podem ser criptografados criando um novo volume e, em seguida, copiando os dados para o novo volume criptografado com migração baseada em host. Para obter mais informações, consulte [Migrando o File Storage](migrate-file-storage-encrypted-file-storage.html).
 
-## 如何知道是否在已升級資料中心內佈建 {{site.data.keyword.filestorage_short}}？
+## Como eu sei se estou provisionando o {{site.data.keyword.filestorage_short}} em um data center submetido a upgrade?
 {: faq}
 
-在 {{site.data.keyword.filestorage_short}} 訂單表格中，所有已升級的資料中心都會註記星號 (`*`)。在訂購程序期間，會提供您指示，指出您正在佈建加密的儲存空間。佈建儲存空間時，您可以看到儲存空間清單中有一個圖示，顯示該磁區已加密。 
+No formulário de pedido do {{site.data.keyword.filestorage_short}}, todos os data centers submetidos a upgrade são denotados com um asterisco (`*`). Durante o processo de pedido, você recebe uma indicação de que está provisionando armazenamento com criptografia. Quando o armazenamento é provisionado, é possível ver um ícone na lista de armazenamento que mostra esse volume como criptografado.
 
-所有加密磁區及檔案共用都只會佈建在已升級的資料中心內。您可以在[這裡](/docs//infrastructure/BlockStorage/new-ibm-block-and-file-storage-location-and-features.html)找到完整的已升級資料中心及可用特性清單。
+Todos os volumes criptografados e os compartilhamentos de arquivo são provisionados somente em data centers submetidos a upgrade. É possível localizar uma lista completa de data centers submetidos a upgrade e recursos disponíveis [aqui](new-ibm-block-and-file-storage-location-and-features.html).
 
-## 為什麼可以在某些資料中心內佈建具有「耐久性 10 IOPS」層級的 {{site.data.keyword.filestorage_short}}，但不能在其他資料中心內進行？
+## Por que o {{site.data.keyword.filestorage_short}} com uma camada de 10 IOPS do Endurance é provisionado em alguns data centers e em outros não?
 {: faq}
 
-「{{site.data.keyword.filestorage_short}} 耐久性類型 10 IOPS/GB」層級僅適用於精選資料中心，並且很快會新增資料中心。您可以在[這裡](/docs//infrastructure/BlockStorage/new-ibm-block-and-file-storage-location-and-features.html)找到完整的已升級資料中心及可用特性清單。
+A camada de 10 IOPS/GB do tipo Endurance do {{site.data.keyword.filestorage_short}} está disponível somente em data centers selecionados e novos data centers serão incluídos em breve. É possível localizar uma lista completa de data centers submetidos a upgrade e recursos disponíveis [aqui](new-ibm-block-and-file-storage-location-and-features.html).
 
-## 如何找到 {{site.data.keyword.filestorage_short}} 的正確裝載點？
+## Como posso localizar o ponto de montagem correto para o meu {{site.data.keyword.filestorage_short}}?
 {: faq}
 
-加強型資料中心內佈建的所有加密 {{site.data.keyword.filestorage_short}} 磁區都具有與未加密磁區不同的裝載點。為確保您使用正確的裝載點，請檢視使用者介面中**磁區詳細資料**頁面上的裝載點資訊。您也可以透過 API 呼叫來存取正確的裝載點：`SoftLayer_Network_Storage::getNetworkMountAddress()`。
+Todos os volumes criptografados do {{site.data.keyword.filestorage_short}} que são provisionados nos data centers aprimorados têm um ponto de montagem diferente de volumes não criptografados. Para assegurar que você esteja usando o ponto de montagem correto, visualize as informações do ponto de montagem na página **Detalhes do volume** na IU. Também é possível acessar o ponto de montagem correto por meio de uma chamada API: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 
-## 可以佈建多少個磁區？
+## Quantos volumes posso provisionar?
 {: faq}
 
-依預設，您可以佈建總計 250 個區塊及檔案儲存空間磁區。若要增加限制，請與業務代表聯絡。如需相關資訊，請參閱[管理儲存空間限制](managing-storage-limits.html)。
+Por padrão, é possível provisionar um total combinado de 250 volumes de armazenamento de arquivo e bloco. Para aumentar o limite, entre em contato com seu representante de vendas. Para obter mais informações, veja [Gerenciando limites de armazenamento](managing-storage-limits.html).
 
-## 有多少實例可以共用已佈建的 {{site.data.keyword.filestorage_short}} 磁區？
+## Quantas instâncias podem compartilhar o uso de um volume fornecido do {{site.data.keyword.filestorage_short}}?
 {: faq}
 
-每個檔案磁區的預設授權數目限制是 64。若要增加此限制，請與業務代表聯絡。
+O limite padrão para o número de autorizações por volume de arquivo é 64. Para aumentar esse limite, entre em contato com seu representante de vendas.
 
-## 可以將多少個 {{site.data.keyword.filestorage_short}} 磁區連接至單一主機？
+## Quantos volumes do {{site.data.keyword.filestorage_short}} podem ser anexados a um único host?
 {: faq}
 
-這取決於主機作業系統可處理的項目，而不是由 {{site.data.keyword.BluSoftlayer_full}} 所限制。如需可裝載的檔案共用數目限制，請參閱 OS 文件。
+Isso depende do que o sistema operacional do host é capaz de manipular, não é algo limitado pelo {{site.data.keyword.BluSoftlayer_full}}. Consulte a documentação do S.O. para conhecer os limites com relação ao número de compartilhamentos de arquivo que podem ser montados.
 
-## 每個檔案磁區大小容許多少個檔案共用？每個磁區大小容許的檔案共用上限為何？
+## Quantos compartilhamentos de arquivo são permitidos por tamanho do volume de arquivo? Quais são os compartilhamentos máximos de arquivo permitidos por tamanho do volume?
 {: faq}
 
 <table>
-  <caption>表 1 顯示根據磁區大小而容許的 Inode 數目上限。磁區大小在左直欄中。Inode/檔案共用數目在右側。</caption>
+  <caption>A Tabela 1 mostra o número máximo de nós-i permitidos com base no tamanho do volume. Os tamanhos dos volumes estão na coluna à esquerda. O número de inodes e compartilhamentos de arquivo estão à direita.</caption>
   <thead>
     <tr>
-      <th>磁區大小</th>
-      <th>Inode/檔案共用</th>
+      <th>Tamanho do volume</th>
+      <th>Inodes e compartilhamentos de arquivo</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>20 GB - 39 GB</td>
-      <td>622,484</td>
+      <td>622.484</td>
     </tr>
     <tr>
       <td>40 GB - 79 GB</td>
-      <td>1,245,084</td>
+      <td>1.245.084</td>
     </tr>          
     <tr>
       <td>80 GB - 99 GB</td>
-      <td>2,490,263</td>
+      <td>2.490.263</td>
     </tr>          
     <tr>
       <td>100 GB - 249 GB</td>
-      <td>3,112,863</td>
+      <td>3.112.863</td>
     </tr>          
     <tr>
       <td>250 GB - 499 GB</td>
-      <td>7,782,300</td>
+      <td>7.782.300</td>
     </tr>          
     <tr>
       <td>500 GB - 999 GB</td>
-      <td>15,564,695</td>
+      <td>15.564.695</td>
     </tr>
     <tr>
       <td>1 TB</td>
-      <td>31,876,593</td>
+      <td>31.876.593</td>
     </tr>
     <tr>
       <td>2 TB</td>
-      <td>63,753,186</td>
+      <td>63.753.186</td>
     </tr>
     <tr>
       <td>3 TB</td>
-      <td>95,629,970</td>
+      <td>95.629.970</td>
     </tr>
     <tr>
       <td>4 TB - 12 TB</td>
-      <td>127,506,359</td>
+      <td>127.506.359</td>
     </tr>
    </tbody>
 </table>
 
-## 測量 IOPS
+## Medindo IOPS
 {: faq}
 
-IOPS 的測量基礎是具有隨機百分之 50 讀取及百分之 50 寫入之 16 KB 區塊的負載設定檔。與此設定檔不同的工作負載可能會經歷效能降低。
+O IOPS é medido com base em um perfil de carregamento de blocos de 16 KB com 50 por cento de leitura e 50 por cento de gravações aleatórias. As cargas de trabalho que diferirem desse perfil poderão enfrentar desempenho insatisfatório.
 
-## 如果我在測量效能時使用較小的區塊大小，會發生什麼情況？
+## O que acontece quando eu uso um tamanho de bloco menor para medir o desempenho?
 {: faq}
 
-即使您使用較小的區塊大小，也可以取得 IOPS 的最大數目。不過，在此情況下，傳輸量較少。例如，具有 6000 IOPS 的磁區具有下列各種區塊大小的傳輸量：
+O máximo de IOPS poderá ser obtido mesmo se você usar tamanhos de blocos menores. No entanto, o rendimento será menor nesse caso. Por exemplo, um volume com 6.000 IOPS tem o rendimento a seguir em vários tamanhos de bloco:
 
-- 16 KB * 6000 IOPS == ~93.75 MB/秒
-- 8 KB * 6000 IOPS == ~46.88 MB/秒
-- 4 KB * 6000 IOPS == ~23.44 MB/秒
+- 16 KB * 6.000 IOPS == ~93,75 MB/s
+- 8 KB * 6.000 IOPS == ~46,88 MB/s
+- 4 KB * 6.000 IOPS == ~23,44 MB/s
 
 
-## 是依實例還是依磁區施行已配置的 IOPS？
+## O IOPS alocado é cumprido por instância ou por volume?
 {: faq}
 
-IOPS 是在磁區層次上施行。換句話說，連接至具有 6000 IOPS 之磁區的兩台主機會共用該 6000 IOPS。
+O IOPS é cumprido no nível de volume. Dito de forma diferente, dois hosts conectados a um volume com 6.000 IOPS compartilham esses 6.000 IOPS.
 
-## 磁區是否需要預先暖機，才能達到預期的傳輸量？
+## O volume precisa ser pré-aquecido para alcançar o rendimento esperado?
 {: faq}
 
-不需要預先暖機。佈建磁區時，您可以立即觀察到指定的傳輸量。
+Não há necessidade de pré-aquecimento. É possível observar o rendimento especificado imediatamente ao provisionar o volume.
 
-## 如果使用速度更快的乙太網路連線，可以達到更多的傳輸量嗎？
+## É possível ter mais rendimento caso uma conexão Ethernet mais rápida seja usada?
 {: faq}
 
-傳輸量限制是依每個磁區/LUN 的層次而設定，因此，使用速度更快的乙太網路連線並不會提高該項已設定的限制。不過，乙太網路連線較慢時，您的頻寬可能是潛在瓶頸。
+Os limites de rendimento são definidos em um nível por volume. Esse limite não pode ser aumentado usando uma conexão Ethernet mais rápida. No entanto, com uma conexão Ethernet mais lenta, sua largura da banda pode ser um gargalo potencial.
 
-## 防火牆/安全群組是否會影響效能？
+## Os firewalls e os grupos de segurança afetam o desempenho?
 {: faq}
 
-最好是在 VLAN 上執行儲存空間資料流量，這樣會略過防火牆。透過軟體防火牆執行儲存空間資料流量，會增加延遲，而且會對儲存空間效能造成不利的影響。
+É melhor executar o tráfego de armazenamento em uma VLAN, que efetua bypass do firewall. A execução do tráfego de armazenamento por meio de firewalls de software aumenta a latência e prejudica o desempenho do armazenamento.
 
-## {{site.data.keyword.filestorage_short}} 的預期效能延遲為何？   
+## Qual latência de desempenho pode ser esperada do {{site.data.keyword.filestorage_short}}?   
 {: faq}
 
-儲存空間內的目標延遲為 < 1 毫秒。儲存空間會連接至共用網路上的運算實例，因此，確切的效能延遲取決於該作業期間的網路資料流量。
+A latência de destino dentro do armazenamento é menor que um ms. O armazenamento é conectado a instâncias de cálculo em uma rede compartilhada, portanto, a latência exata de desempenho depende do tráfego de rede durante a operação.
 
-## 刪除 {{site.data.keyword.filestorage_short}} 磁區時，資料會發生什麼情況？
+## O que acontece com os dados quando os Volumes do {{site.data.keyword.filestorage_short}} são excluídos?
 {: faq}
 
-{{site.data.keyword.filestorage_full}} 會向客戶呈現在任何重複使用之前抹除的實體儲存空間上的檔案共用。具有特殊規範需求的客戶（例如 NIST 800-88 媒體資料安全清除準則）必須先執行資料安全清除程序，再刪除其儲存空間。
+O {{site.data.keyword.filestorage_full}} apresenta compartilhamentos de arquivo para clientes no armazenamento físico que é limpo antes de qualquer reutilização. Os clientes com necessidades especiais de conformidade, como NIST 800-88 Diretrizes de Sanitização de Mídias, precisam executar o procedimento de sanitização de dados antes de excluir seu armazenamento.
 
-## 從雲端資料中心解除任務的磁碟機會發生什麼情況？
+## O que acontece com as unidades que são desatribuídas do data center de nuvem?
 {: faq}
 
-磁碟機解除任務時，IBM 會先破壞它們再進行處理。磁碟機會變成無法使用。已寫入該磁碟機的任何資料都會變成無法存取。
+Quando as unidades são desatribuídas, a IBM as destrói antes de elas serem descartadas. As unidades se tornam inutilizáveis. Quaisquer dados que foram gravados nessa unidade se tornam inacessíveis.

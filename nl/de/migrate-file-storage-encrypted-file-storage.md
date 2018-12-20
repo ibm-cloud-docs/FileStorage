@@ -12,7 +12,7 @@ lastupdated: "2018-11-30"
 
 # {{site.data.keyword.filestorage_short}}-Speicher auf erweiterten {{site.data.keyword.filestorage_short}}-Speicher migrieren
 
-In ausgewählten Rechenzentren ist nun erweiterter {{site.data.keyword.filestorage_full}}-Speicher verfügbar. Sie können die Liste der aktualisierten Rechenzentren und verfügbaren Features wie beispielsweise anpassbare IOPS-Raten und erweiterbare Datenträger anzeigen, indem Sie [hier klicken](new-ibm-block-and-file-storage-location-and-features.html). Weitere Informationen zum vom Provider verwalteten verschlüsselten Speicher finden Sie im Artikel [{{site.data.keyword.filestorage_short}}-Verschlüsselung ruhender Daten](block-file-storage-encryption-rest.html).
+In ausgewählten Rechenzentren ist nun erweiterter {{site.data.keyword.filestorage_full}}-Speicher verfügbar. Wenn Sie eine Liste der aktualisierten Rechenzentren und verfügbaren Funktionen anzeigen möchten, zum Beispiel konfigurierbare IOPS-Raten und erweiterbare Datenträger, klicken Sie [hier](new-ibm-block-and-file-storage-location-and-features.html). Weitere Informationen zur vom Provider verwalteten Verschlüsselung finden Sie unter [{{site.data.keyword.filestorage_short}}-Verschlüsselung ruhender Daten](block-file-storage-encryption-rest.html).
 
 Der bevorzugte Migrationspfad besteht darin, beide Datenträger gleichzeitig zu verbinden und Daten direkt von einer LUN auf die andere zu übertragen. Die jeweiligen Details hängen dabei vom Betriebssystem ab sowie davon, ob erwartet wird, dass sich die Daten während der Kopieroperation ändern.
 
@@ -22,23 +22,25 @@ Dabei wird davon ausgegangen, dass Sie Ihre nicht verschlüsselte LUN bereits an
 - [NFS/{{site.data.keyword.filestorage_short}} in CentOS anhängen](mounting-nsf-file-storage.html)
 - [{{site.data.keyword.filestorage_short}} unter CoreOS anhängen](mounting-storage-coreos.html)
 
-Alle erweiterten {{site.data.keyword.filestorage_short}}-Datenträger haben einen anderen Mountpunkt als nicht verschlüsselte Datenträger. Um sicherzustellen, dass Sie für beide {{site.data.keyword.filestorage_short}}-Datenträger den richtigen Mountpunkt verwenden, können Sie die Mountpunktinformationen auf der Seite **Datenträgerdetails** im {{site.data.keyword.slportal}} anzeigen. Sie können auch über einen API-Aufruf auf den richtigen Mountpunkt zugreifen: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
-{:tip}
+Alle erweiterten {{site.data.keyword.filestorage_short}}-Datenträger, die in diesen Rechenzentren bereitgestellt werden, haben einen anderen Mountpunkt als nicht verschlüsselte Datenträger. Um sicherzustellen, dass Sie für beide Speicherdatenträger den richtigen Mountpunkt verwenden, können Sie die Mountpunktinformationen auf der Seite **Datenträgerdetails** in der Konsole anzeigen. Sie können auch über einen API-Aufruf auf den richtigen Mountpunkt zugreifen: `SoftLayer_Network_Storage::getNetworkMountAddress()`.{:tip}
 
 
-## Neuen {{site.data.keyword.filestorage_short}}-Speicher erstellen
+## {{site.data.keyword.filestorage_short}} erstellen
 
-Wenn Sie einen Auftrag mit einer API erteilen, geben Sie das Paket 'Storage as a Service' an, um sicherzustellen, dass Sie die aktualisierten Funktionen mit dem neuen Speicher erhalten.{:important}
+Wenn Sie einen Auftrag mit einer API erteilen, geben Sie das Paket 'Storage as a Service' an, um sicherzustellen, dass Sie die aktualisierten Funktionen mit dem neuen Speicher erhalten.
+{:important}
 
-Folgende Anweisungen gelten für die Bestellung von erweiterten Datenträgern/gemeinsam genutzten Dateispeichern über den {{site.data.keyword.slportal}}/{{site.data.keyword.BluSoftlayer_full}}-Katalog. Damit die Migration ermöglicht wird, muss Ihr neuer Datenträger dieselbe Größe wie der ursprüngliche haben oder größer sein.
+Die folgenden Anweisungen gelten für die Bestellung einer erweiterten Dateifreigabe über das {{site.data.keyword.slportal}} oder den {{site.data.keyword.BluSoftlayer_full}}-Katalog. Damit die Migration ermöglicht wird, muss Ihr neuer Datenträger dieselbe Größe wie der ursprüngliche haben oder größer sein.
 
-### Neuen Endurance-Speicherdatenträger bestellen
+### Endurance-Speicherdatenträger bestellen
 
-1. Klicken Sie im [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} auf **Speicher** > **{{site.data.keyword.filestorage_short}}** oder im Katalog von {{site.data.keyword.BluSoftlayer_full}} auf **Infrastruktur** > **Speicher** > **{{site.data.keyword.filestorage_short}}**.
+1. Klicken Sie im [{{site.data.keyword.slportal}} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/){:new_window} auf **Speicher** > **{{site.data.keyword.filestorage_short}}** ODER im Katalog von {{site.data.keyword.BluSoftlayer_full}} auf **Infrastrukture** > **Speicher** > **{{site.data.keyword.filestorage_short}}**.
 2. Klicken Sie auf **{{site.data.keyword.filestorage_short}} bestellen**.
 3. Wählen Sie **Endurance** in der Liste **Speichertyp auswählen** aus.
 4. Klicken Sie auf **Position** und wählen Sie Ihr Rechenzentrum aus.
-   - Stellen Sie sicher, dass der neue Speicher an derselben Position hinzugefügt wird, an der sich auch der ursprüngliche Speicher befunden hat.
+
+   Stellen Sie sicher, dass der neue Speicher an derselben Position hinzugefügt wird, an der sich auch der ursprüngliche Speicher befunden hat.
+   {:important}
 5. Wählen Sie die Abrechnungsoption aus. Sie können zwischen monatlicher und stündlicher Abrechnung wählen.
 6. Klicken Sie auf **Endurance** und wählen Sie die IOPS-Stufe aus.
 6. Wählen Sie die Option **Nutzbare Speichergröße** in der Liste aus. Ihr neuer Datenträger muss dieselbe Größe wie der ursprüngliche haben oder größer sein.
@@ -46,13 +48,15 @@ Folgende Anweisungen gelten für die Bestellung von erweiterten Datenträgern/ge
 8. Klicken Sie auf **Weiter**. Es werden die monatlichen und anteilmäßig eingerechneten Gebühren mit einer letzten Gelegenheit zur Prüfung der Bestelldetails angezeigt. Klicken Sie auf **Zurück**, wenn Sie Ihre Bestellung ändern möchten.
 9. Klicken Sie auf das Kontrollkästchen **Ich habe die Rahmenvereinbarung gelesen** und klicken Sie auf **Bestellung abschicken**.
 
-### Verschlüsselten Performance-Datenträger bestellen
+### Performance-Datenträger bestellen
 
-1. Klicken Sie im [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} auf **Speicher**, **{{site.data.keyword.filestorage_short}}** oder im Katalog von {{site.data.keyword.BluSoftlayer_full}} auf **Infrastruktur** >** Speicher** > **{{site.data.keyword.filestorage_short}}**.
+1. Klicken Sie im [{{site.data.keyword.slportal}} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/){:new_window} auf **Speicher**, **{{site.data.keyword.filestorage_short}}** ODER im Katalog von {{site.data.keyword.BluSoftlayer_full}} auf **Infrastrukture** >** Speicher** > **{{site.data.keyword.filestorage_short}}**.
 2. Klicken Sie auf **{{site.data.keyword.filestorage_short}} bestellen**.
 3. Wählen Sie **Performance** in der Liste **Speichertyp auswählen** aus.
 4. Klicken Sie auf **Position** und wählen Sie Ihr Rechenzentrum aus.
-    -  Stellen Sie sicher, dass der neue Speicher an derselben Position hinzugefügt wird, an der sich auch der ursprüngliche Speicher befunden hat.
+
+   Stellen Sie sicher, dass der neue Speicher an derselben Position hinzugefügt wird, an der sich auch der ursprüngliche Speicher befunden hat.
+   {:important}
 5. Wählen Sie die Abrechnungsoptionen aus. Sie können zwischen stündlicher und monatlicher Abrechnung wählen.
 6. Wählen Sie das Optionsfeld neben der entsprechenden **Speichergröße** aus.
 6. Geben Sie die E/A-Operationen pro Sekunde (IOPS) in das Feld **IOPS angeben** ein.

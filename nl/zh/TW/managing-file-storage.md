@@ -11,87 +11,87 @@ lastupdated: "2018-11-30"
 {:important: .important}
 
 
-# 管理 {{site.data.keyword.filestorage_short}}
+# Gerenciando o {{site.data.keyword.filestorage_short}}
 
-您可以透過 {{site.data.keyword.slportal}} 管理 {{site.data.keyword.filestorage_full}} 磁區。
+É possível gerenciar seus volumes do  {{site.data.keyword.filestorage_full}}  por meio do  {{site.data.keyword.slportal}}.
 
-## 授權主機存取 {{site.data.keyword.filestorage_short}}
+## Autorizando hosts a acessar o  {{site.data.keyword.filestorage_short}}
 
-「授權」主機是已獲得特定磁區存取權的主機。如果沒有主機授權，則無法從系統中存取或使用儲存空間。授權主機存取您的磁區，會產生使用者名稱及密碼。
+Hosts "Autorizados" são aqueles que receberam acesso a um volume específico. Sem a autorização do host, não é possível acessar ou usar o armazenamento de seu sistema. Autorizar um host a acessar seu volume gera o nome do usuário e a senha.
 
-您可以授權及連接與儲存空間位於相同資料中心的主機。您可以有多個帳戶，但無法授權某個帳戶的主機存取您在另一個帳戶上的儲存空間。
+É possível autorizar e conectar hosts localizados no mesmo data center que seu armazenamento. É possível ter diversas contas, mas não é possível autorizar que um host de uma conta acesse seu armazenamento em outra conta.
 {:important}
 
-1. 按一下**儲存空間** > **{{site.data.keyword.filestorage_short}}**，然後按一下**磁區名稱**。
-2. 捲動至頁面的**授權主機**區段。
-3. 按一下右側的**授權主機**。選取可存取該特定磁區的主機。
+1. Clique em **Armazenamento** > **{{site.data.keyword.filestorage_short}}** e clique em seu **Nome do volume**.
+2. Role para a seção **Hosts autorizados** da página.
+3. Clique em  ** Autorizar host **  à direita. Selecione os hosts que podem acessar esse volume específico.
 
 
-## 檢視獲授權存取 {{site.data.keyword.filestorage_short}} 磁區的主機清單
+## Visualizando a lista de hosts que estão autorizados a acessar um volume do {{site.data.keyword.filestorage_short}}
 
-1. 按一下**儲存空間 > {{site.data.keyword.filestorage_short}}**，然後按一下**磁區名稱**。
-2. 將頁面向下捲動至**授權主機**區段。
+1. Clique em **Armazenamento > {{site.data.keyword.filestorage_short}}** e clique em seu **Nome do volume**.
+2. Role para baixo na página para a seção **Hosts autorizados**.
 
-在這裡，您可以看到目前已獲授權存取磁區的主機清單。
-
-
-## 檢視已授權主機存取的 {{site.data.keyword.filestorage_short}} 磁區
-
-您可以檢視主機可存取的磁區，包括建立連線所需的資訊 -「磁區名稱」、「儲存空間類型」、「目標位址」、容量及位置。
-
-1. 從 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} 中按一下**裝置** > **裝置清單**。
-2. 按一下適當的裝置。
-2. 選取「儲存空間」標籤。
-
-您會看到此特定主機可存取的儲存空間磁區清單，這些儲存空間磁區全部是依儲存空間類型（區塊、檔案、其他）分組。從個別的**動作**功能表中，您可以授權更多的儲存空間或移除存取權。
+Aqui é possível ver a lista de hosts que estão atualmente autorizados a acessar o volume.
 
 
-## 裝載及卸載 {{site.data.keyword.filestorage_short}}
+## Visualizando os volumes do {{site.data.keyword.filestorage_short}} para os quais um host está autorizado
 
-您可以使用**磁區詳細資料**視圖中所提供的裝載點資訊，從主機裝載 {{site.data.keyword.filestorage_short}}。請參閱[存取 Linux 上的 {{site.data.keyword.filestorage_short}}](accessing-file-storage-linux.html)
+É possível visualizar os volumes aos quais um host tem acesso, incluindo as informações necessárias para fazer uma conexão - Nome do volume, Tipo de armazenamento, Endereço de destino, capacidade e local.
+
+1. Clique em **Dispositivos** > **Lista de dispositivos** por meio do [{{site.data.keyword.slportal}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://control.softlayer.com/){:new_window}
+2. Clique no dispositivo apropriado.
+2. Selecione a guia Armazenamento.
+
+Você é apresentado a uma lista de volumes de armazenamento aos quais esse host específico tem acesso, todos agrupados por tipo de armazenamento (bloco, arquivo, outro). Nos respectivos menus **Ação**, é possível autorizar mais armazenamento ou remover o acesso.
 
 
-## 撤銷主機對 {{site.data.keyword.filestorage_short}} 的存取權
+## Montando e desmontando o {{site.data.keyword.filestorage_short}}
 
-如果您要停止主機對特定儲存空間磁區的存取權，則可以撤銷存取權。撤銷存取權時，會從磁區中捨棄主機連線。作業系統及應用程式無法再與磁區通訊。
+É possível usar as informações do ponto de montagem fornecidas na visualização **Detalhes do volume** para montar o {{site.data.keyword.filestorage_short}} por meio de um host. Consulte  [ Acessando o  {{site.data.keyword.filestorage_short}}  no Linux ](accessing-file-storage-linux.html)
 
-若要避免主機端問題，請先從您的作業系統卸載儲存空間磁區，然後再撤銷存取權，以避免遺漏磁碟機或資料毀損。
+
+## Revogando o acesso de um host ao  {{site.data.keyword.filestorage_short}}
+
+Se você deseja parar o acesso de um host a um volume de armazenamento específico, é possível revogar o acesso. Quando o acesso é revogado, a conexão de host é eliminada do volume. O sistema operacional e os aplicativos não podem mais se comunicar com o volume.
+
+Para evitar problemas do lado do host, desmonte o volume de armazenamento de seu sistema operacional antes de revogar o acesso para evitar unidades ausentes ou distorção de dados.
 {:important}
 
-您可以從「裝置清單」中的「儲存空間」或從「儲存空間」視圖中，撤銷存取權。
+É possível revogar o acesso do Armazenamento da Lista de dispositivos ou das visualizações de Armazenamento.
 
-### 從裝置清單撤銷存取權
+### Revogando o acesso a partir da Lista de Dis
 
-1. 從 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} 中按一下**裝置** > **裝置清單**。
-2. 按兩下適當的裝置。
-3. 選取**儲存空間**標籤。
-4. 您會看到此特定主機可存取的儲存空間磁區清單，這些儲存空間磁區全部是依儲存空間類型（區塊、檔案、其他）分組。選取您要撤銷其存取權之磁區旁的個別**動作**功能表，然後按一下**撤銷存取權**。
-5. 請確認您是否要撤銷磁區的存取權，因為此動作無法復原。按一下**是**來撤銷磁區存取權，或按一下**否**來取消動作。
+1. Clique em **Dispositivos** > **Lista de dispositivos** por meio do [{{site.data.keyword.slportal}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://control.softlayer.com/){:new_window}
+2. Clique duas vezes no dispositivo apropriado.
+3. Selecione a guia **Armazenamento**.
+4. É apresentada uma lista de volumes de armazenamento aos quais esse host específico tem acesso, todos agrupados por tipo de armazenamento (bloco, arquivo, outro). Selecione o respectivo menu **Ação** próximo ao volume do qual você deseja revogar o acesso e clique em **Revogar acesso**.
+5. Confirme se você deseja revogar o acesso para um volume porque a ação não pode ser desfeita. Clique em **Sim** para revogar o acesso ao volume ou em **Não** para cancelar a ação.
 
-如果您要中斷多個磁區與特定主機的連線，則需要對每個磁區重複「撤銷存取權」動作。
+Se você desejar desconectar vários volumes de um host específico, será necessário repetir a ação Revogar acesso para cada volume.
 {:tip}
 
 
-### 從儲存空間視圖撤銷存取權
+### Revogando o acesso por meio da Visualização de armazenamento
 
-1. 按一下**儲存空間、{{site.data.keyword.filestorage_short}}**，然後選取您要從中撤銷存取權的**磁區**。
-2. 捲動至頁面的**授權主機**區段。
-3. 按一下要撤銷其存取權之主機旁邊的**動作**，然後選取**撤銷存取權**。
-4. 請確認您是否要撤銷磁區的存取權，因為此動作無法復原。按一下**是**來撤銷磁區存取權，或按一下**否**來取消動作。
+1. Clique em **Armazenamento, {{site.data.keyword.filestorage_short}}** e selecione o **Volume** do qual você deseja revogar o acesso.
+2. Role para a seção **Hosts autorizados** da página.
+3. Clique em **Ações** ao lado do host cujo acesso deve ser revogado e selecione **Revogar acesso**.
+4. Confirme se você deseja revogar o acesso para um volume porque a ação não pode ser desfeita. Clique em **Sim** para revogar o acesso ao volume ou em **Não** para cancelar a ação.
 
-如果您要中斷多個主機與特定磁區的連線，則需要對每個主機重複「撤銷存取權」動作。
+Se você desejar desconectar vários hosts de um volume específico, será necessário repetir a ação Revogar acesso para cada host.
 {:tip}
 
 
-## 取消儲存空間磁區
+## Cancelando um volume de armazenamento
 
-如果您不再需要特定磁區，則可以取消它。若要取消儲存空間磁區，您需要先撤銷任何主機的存取權。
+Se você não precisar mais de um volume específico, será possível cancelar esse armazenamento. Para cancelar um volume de armazenamento, é necessário revogar o acesso de qualquer host primeiro.
 
-1. 按一下**儲存空間** > **{{site.data.keyword.filestorage_short}}**。
-2. 按一下要取消之磁區的**動作**，然後選取**取消 {{site.data.keyword.filestorage_short}}**。
-3. 確認您是要立即取消磁區，還是在佈建磁區的週年日取消磁區。
+1. Clique em **Armazenamento**>**{{site.data.keyword.filestorage_short}}**.
+2. Clique em **Ações** para o volume a ser cancelado e selecione **Cancelar{{site.data.keyword.filestorage_short}}**.
+3. Confirme se deseja cancelar o volume imediatamente ou na data de aniversário anual de quando o volume foi provisionado.
 
-   如果您選取在磁區週年紀念日取消磁區的選項，則可以在其週年紀念日之前讓取消要求失效。
+   Se você selecionar a opção para cancelar o volume na data de aniversário dele, será possível anular a solicitação de cancelamento antes da data de aniversário.
    {:tip}
-4. 按一下**繼續**或**關閉**。
-5. 按一下確認通知勾選框，然後按一下**確認**。
+4. Clique em **Continuar** ou **Fechar**.
+5. Clique na caixa de seleção de confirmação e depois em **Confirmar**.

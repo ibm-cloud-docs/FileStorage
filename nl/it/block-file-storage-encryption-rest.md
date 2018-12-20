@@ -24,7 +24,7 @@ La funzione di crittografia dei dati inattivi gestita dal provider utilizza i se
     - PCI (Payment Card Industry),
     - Basel II,
     - California Security Breach Information Act (SB 1386) e
-    - alla direttiva sulla protezione dei dati dell'Unione europea 95/46/EC.
+    - Direttiva sulla protezione dei dati dell'Unione europea (95/46/EC).
 
 ## Protezione delle tue istantanee o della tua archiviazione replicata  
 

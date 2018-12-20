@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-09-18"
+lastupdated: "2018-12-11"
 
 ---
 {:new_window: target="_blank"}
@@ -13,24 +13,24 @@ lastupdated: "2018-09-18"
 ## Wie lässt sich erkennen, welche der {{site.data.keyword.filestorage_short}}-Datenträger verschlüsselt sind?
 {: faq}
 
-Zeigen Sie die Liste Ihrer {{site.data.keyword.filestorage_short}}-Instanzen im Kundenportal an. Bei verschlüsselten Datenträgern steht rechts vom LUN-/Datenträgernamen ein Sperrsymbol.
+Zeigen Sie die Liste Ihrer {{site.data.keyword.filestorage_short}}-Instanzen im Kundenportal an. Bei verschlüsselten Datenträgern steht rechts vom Datenträgernamen ein Sperrsymbol.
 
 ## Kann ich meinen {{site.data.keyword.filestorage_short}}-Speicher verschlüsseln, wenn ich nicht verschlüsselten {{site.data.keyword.filestorage_short}}-Speicher in einem Rechenzentrum erworben habe, das für die Verschlüsselung aktualisiert wurde?
 {: faq}
 
-{{site.data.keyword.filestorage_short}}-Speicher, der vor der Aktualisierung eines Rechenzentrums bereitgestellt wurde, kann nicht verschlüsselt werden. Neuer {{site.data.keyword.filestorage_short}}-Speicher, der in aktualisierten Rechenzentren bereitgestellt wird, ist automatisch verschlüsselt. Es gibt keine auswählbare Einstellung für die Verschlüsselung, sie erfolgt automatisch. Daten im nicht verschlüsselten Speicher können verschlüsselt werden, indem ein neuer Datenträger erstellt wird und die Daten mithilfe der hostbasierten Migration auf den neuen verschlüsselten Datenträger kopiert werden. Weitere Informationen finden Sie im Abschnitt [File Storage migrieren](/docs/infrastructure/FileStorage/migrate-file-storage-encrypted-file-storage.html).
+{{site.data.keyword.filestorage_short}}-Speicher, der vor der Aktualisierung eines Rechenzentrums bereitgestellt wurde, kann nicht verschlüsselt werden. Neuer {{site.data.keyword.filestorage_short}}, der in aktualisierten Rechenzentren bereitgestellt wird, wird automatisch verschlüsselt. Dies ist automatisch, keine Bereitstellungseinstellung, die ausgewählt oder weggelassen werden kann. Daten im nicht verschlüsselten Speicher können verschlüsselt werden, indem ein neuer Datenträger erstellt wird und die Daten mithilfe der hostbasierten Migration auf den neuen verschlüsselten Datenträger kopiert werden. Weitere Informationen finden Sie im Abschnitt [File Storage migrieren](migrate-file-storage-encrypted-file-storage.html).
 
 ## Wie lässt sich erkennen, ob {{site.data.keyword.filestorage_short}} in einem aktualisierten Rechenzentrum bereitgestellt wird?
 {: faq}
 
-Im {{site.data.keyword.filestorage_short}}-Bestellformular sind alle aktualisierten Rechenzentren mit einem Stern (`*`) gekennzeichnet. Während des Bestellablaufs erhalten Sie eine Meldung des Inhalts, dass Sie Speicher mit Verschlüsselung erwerben. Wird der Speicher bereitgestellt, gibt ein Symbol in der Speicherliste an, dass der Datenträger verschlüsselt ist. 
+Im {{site.data.keyword.filestorage_short}}-Bestellformular sind alle aktualisierten Rechenzentren mit einem Stern (`*`) gekennzeichnet. Während des Bestellablaufs erhalten Sie eine Meldung des Inhalts, dass Sie Speicher mit Verschlüsselung erwerben. Wird der Speicher bereitgestellt, gibt ein Symbol in der Speicherliste an, dass der Datenträger verschlüsselt ist.
 
-Alle verschlüsselten Datenträger und gemeinsam genutzten Dateispeicher werden nur in aktualisierten Rechenzentren bereitgestellt. Eine vollständige Liste der aktualisierten Rechenzentren und der verfügbaren Features finden Sie [hier](/docs//infrastructure/BlockStorage/new-ibm-block-and-file-storage-location-and-features.html).
+Alle verschlüsselten Datenträger und gemeinsam genutzten Dateispeicher werden nur in aktualisierten Rechenzentren bereitgestellt. Eine vollständige Liste der aktualisierten Rechenzentren und der verfügbaren Features finden Sie [hier](new-ibm-block-and-file-storage-location-and-features.html).
 
 ## Warum kann {{site.data.keyword.filestorage_short}} mit einer Endurance-Stufe von 10 IOPS in einigen Rechenzentren bereitgestellt werden, in anderen jedoch nicht?
 {: faq}
 
-Der {{site.data.keyword.filestorage_short}}-Typ Endurance mit der 10 IOPS/GB-Stufe ist nur in ausgewählten Rechenzentren verfügbar. Weitere Rechenzentren werden in Kürze hinzugefügt. Eine vollständige Liste der aktualisierten Rechenzentren und der verfügbaren Features finden Sie [hier](/docs//infrastructure/BlockStorage/new-ibm-block-and-file-storage-location-and-features.html).
+Der {{site.data.keyword.filestorage_short}}-Typ Endurance mit der 10 IOPS/GB-Stufe ist nur in ausgewählten Rechenzentren verfügbar. Weitere Rechenzentren werden in Kürze hinzugefügt. Eine vollständige Liste der aktualisierten Rechenzentren und der verfügbaren Features finden Sie [hier](new-ibm-block-and-file-storage-location-and-features.html).
 
 ## Wie wird der richtige Mountpunkt für den eigenen {{site.data.keyword.filestorage_short}}-Speicher ermittelt?
 {: faq}
@@ -56,11 +56,11 @@ Dies ist abhängig von der Kapazität des Hostbetriebssystems, nicht von {{site.
 {: faq}
 
 <table>
-  <caption>Tabelle 1 zeigt die maximale Anzahl von zulässigen I-Nodes auf der Basis der Datenträgergröße. Die Datenträgergrößen sind in der linken Spalte aufgeführt. Die Anzahl der I-Nodes/gemeinsam genutzten Dateispeicher steht auf der rechten Seite.</caption>
+  <caption>Tabelle 1 zeigt die maximale Anzahl von zulässigen I-Nodes auf der Basis der Datenträgergröße. Die Datenträgergrößen sind in der linken Spalte aufgeführt. Die Anzahl der I-Nodes und gemeinsam genutzten Dateispeicher steht auf der rechten Seite.</caption>
   <thead>
     <tr>
       <th>Datenträgergröße</th>
-      <th>I-Nodes/gemeinsam genutzte Dateispeicher</th>
+      <th>I-Nodes und Dateifreigaben</th>
     </tr>
   </thead>
   <tbody>
@@ -135,9 +135,9 @@ Ein Einlaufen des Datenträgers ist nicht erforderlich. Sie verfügen sofort nac
 ## Kann ein höherer Durchsatz erzielt werden, wenn eine schnellere Ethernet-Verbindung verwendet wird?
 {: faq}
 
-Durchsatzbegrenzungen werden auf Datenträger- bzw. LUN-Ebene festgelegt. Daher führt die Verwendung einer schnelleren Ethernet-Verbindung nicht zu einer Erhöhung dieser Begrenzung. Bei einer langsameren Ethernet-Verbindung kann Ihre Bandbreite allerdings einen Engpass verursachen.
+Durchsatzgrenzwerte werden auf Datenträgerebene festgelegt. Dieser Grenzwert kann durch eine schnellere Ethernet-Verbindung nicht erhöht werden. Bei einer langsameren Ethernet-Verbindung kann Ihre Bandbreite allerdings einen Engpass verursachen.
 
-## Wirken sich Firewalls/Sicherheitsgruppen auf die Leistung aus?
+## Beeinträchtigen Firewalls und Sicherheitsgruppen die Leistung?
 {: faq}
 
 Es ist am besten, den Speicherdatenverkehr über ein VLAN zu leiten, das die Firewall umgeht. Wenn der Speicherdatenverkehr über Software-Firewalls geleitet wird, erhöht sich dadurch die Latenz und die Speicherleistung wird beeinträchtigt.
@@ -145,7 +145,7 @@ Es ist am besten, den Speicherdatenverkehr über ein VLAN zu leiten, das die Fir
 ## Welche Leistungslatenz ist von {{site.data.keyword.filestorage_short}}-Speicher zu erwarten?   
 {: faq}
 
-Die Ziellatenz innerhalb des Speichers beträgt < 1 ms. File Storage-Speicher wird mit Compute-Instanzen in einem gemeinsam genutzten Netz verbunden, sodass die genaue Leistungslatenz vom Netzverkehr während der Operation abhängig ist.
+Die Ziellatenz im Speicher beträgt weniger als 1 ms. File Storage-Speicher wird mit Compute-Instanzen in einem gemeinsam genutzten Netz verbunden, sodass die genaue Leistungslatenz vom Netzverkehr während der Operation abhängig ist.
 
 ## Was geschieht mit den Daten, wenn {{site.data.keyword.filestorage_short}}-Datenträger gelöscht werden?
 {: faq}

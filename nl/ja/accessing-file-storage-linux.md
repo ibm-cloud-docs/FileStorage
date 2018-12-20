@@ -13,9 +13,9 @@ lastupdated: "2018-11-30"
 
 # Linux への {{site.data.keyword.filestorage_short}} のマウント
 
-まず、{{site.data.keyword.filestorage_full}} ボリュームにアクセスするホストに、[{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}で許可を与えてください。
+まず、{{site.data.keyword.filestorage_full}} ボリュームにアクセスするホストに、[{{site.data.keyword.slportal}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://control.softlayer.com/){:new_window} で許可を与えてください。
 
-1. {{site.data.keyword.filestorage_short}}のリスト・ページで、新しい共有に関連付けられている**「アクション」**をクリックし、**「ホストの許可」**をクリックします。
+1. {{site.data.keyword.filestorage_short}}のリスト・ページで、新しい共有に関連付けられている**「アクション」**リンクをクリックし、**「ホストの許可」**をクリックします。
 2. リストからホストを選択し、**「送信」**をクリックします。 このアクションにより、共有へのアクセスがホストに許可されます。
 
 ## {{site.data.keyword.filestorage_short}}の共有のマウント
@@ -25,7 +25,7 @@ Linux ベースの {{site.data.keyword.BluSoftlayer_full}} コンピューティ
 ファイル・ストレージ・インスタンスのマウント・ポイントは、{{site.data.keyword.filestorage_short}}のリスト・ページから取得できます。また、API 呼び出し `SoftLayer_Network_Storage::getNetworkMountAddress()` を使用して取得することもできます。
 {:tip}
 
-1. 必要なパッケージ/ツールをインストールします。
+1. 必要なツールをインストールします。
    ```
    # yum -y install nfs-utils nfs-utils-lib
    ```

@@ -11,114 +11,123 @@ lastupdated: "2018-11-30"
 {:important: .important}
 
 
-# 管理 Snapshot
+# Gerenciando capturas instantâneas
 
-## 要建立 Snapshot 排程嗎？
+## Criando um Planejamento de Captura Instantânea?
 
-您可以藉由建立 Snapshot 排程，來決定建立儲存空間磁區的時間點參照的頻率及時間。每個儲存空間磁區最多可以有 50 個 Snapshot。排程是透過 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} 的**儲存空間** > **{{site.data.keyword.filestorage_short}}** 標籤來管理。
+É possível decidir com que frequência e quando você deseja criar uma referência de momento de seu volume de armazenamento criando planejamentos de captura instantânea. É possível ter um máximo de 50 capturas
+instantâneas por volume de armazenamento. Os planejamentos são gerenciados por meio da guia **Armazenamento** > **{{site.data.keyword.filestorage_short}}** do [{{site.data.keyword.slportal}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://control.softlayer.com/){:new_window}.
 
 
-您必須先購買 Snapshot 空間（如果未在起始佈建儲存空間磁區期間購買的話），才能設定起始排程。
+Para poder configurar seu planejamento inicial, deve-se primeiramente comprar um espaço de captura instantânea, caso você não tenha comprado durante o fornecimento inicial do volume de armazenamento.
 {:important}
 
-### 新增 Snapshot 排程
+### Incluindo um Planejamento de Captura Instant
 
-Snapshot 排程可以設定為每小時、每日及每週間隔，且各有不同的保留週期。每個儲存空間磁區限制最多可以有 50 個已排定的 Snapshot（這可以混合使用每小時、每日及每週排程）及手動 Snapshot。
+Os planejamentos de capturas instantâneas podem ser configurados em intervalos, como por hora,
+diários e semanais, cada um com um ciclo de retenção diferente. O limite máximo de capturas instantâneas é 50 por volume de armazenamento, que pode ser uma combinação de planejamentos por hora, diários e semanais e capturas instantâneas manuais.
 
-1. 按一下儲存空間磁區，按一下**動作**，然後按一下**排程 Snapshot**。
-2. 在「新建排程 Snapshot」視窗中，有三種不同的 Snapshot 頻率可供選取。使用三者的任意組合，以建立綜合性的 Snapshot 排程。
-   - 每小時
-      - 指定要在每小時的幾分擷取 Snapshot。預設值是現行分鐘。
-      - 指定在捨棄最舊的 Snapshot 之前，要保留的每小時 Snapshot 數目。
-   - 每日
-      - 指定要在幾點幾分擷取 Snapshot。預設值是現行小時及分鐘。
-      - 選取在捨棄最舊的 Snapshot 之前，要保留的每小時 Snapshot 數目。
-   - 每週
-      - 指定要在星期幾的幾點幾分擷取 Snapshot。預設值是現行日、小時及分鐘。
-      - 選取在捨棄最舊的 Snapshot 之前，要保留的每週 Snapshot 數目。
-3. 按一下**儲存**，然後建立另一個頻率不同的排程。如果已排定的 Snapshot 總數超過 50 個，您會收到一則警告訊息，而且無法進行儲存。
+1. Clique em seu volume de armazenamento, clique em **Ações** e clique em **Planejar captura instantânea**.
+2. Na janela Nova captura instantânea de planejamento, é possível selecionar entre três frequências de captura instantânea diferentes. Use qualquer combinação das três para criar um planejamento de captura instantânea abrangente.
+   - Hora em Hora
+      - Especifique o minuto de cada hora em que uma captura instantânea deve ser tirada. O padrão é o minuto atual.
+      - Especifique o número de capturas instantâneas por hora a serem retidas antes que a mais antiga seja descartada.
+   - Diário
+      - Especifique a hora e o minuto em que uma captura instantânea deve ser tirada. O padrão é a hora e o minuto atuais.
+      - Selecione o número de capturas instantâneas por hora a serem retidas antes que a mais antiga seja descartada.
+   - Semanal
+      - Especifique o dia da semana, a hora e o minuto em que uma captura instantânea deve ser tirada. O padrão é o dia, a hora e o minuto atuais.
+      - Selecione o número de capturas instantâneas semanais a serem retidas antes que a mais antiga seja descartada.
+3. Clique em **Salvar** e crie outro planejamento com uma frequência diferente. Se o número total de capturas instantâneas programadas exceder 50, você receberá uma mensagem de aviso e não poderá salvar.
 
-所擷取 Snapshot 的清單即會顯示在**詳細資料**頁面的 **Snapshot** 區段中。
+A lista de capturas instantâneas é exibida conforme obtida na seção **Capturas instantâneas** da página **Detalhe**.
 
-## 擷取手動 Snapshot
+## Obtendo uma Captura Instantânea
 
-在應用程式升級或維護期間的各種時間點，都可以擷取手動 Snapshot。您也可以跨多部伺服器擷取 Snapshot，這些伺服器已在應用程式層次暫時予以取消啟動。
+Capturas instantâneas manuais podem ser obtidas em vários pontos durante um upgrade ou
+manutenção do aplicativo. Também é possível tirar capturas instantâneas em múltiplos servidores que tenham sido desativados temporariamente no nível do aplicativo.
 
-每個儲存空間磁區限制最多可以有 50 個手動 Snapshot。
+O limite máximo de capturas instantâneas manuais por volume de armazenamento é 50.
 
-1. 按一下儲存空間磁區。
-2. 按一下**動作**。
-3. 按一下**擷取手動 Snapshot**。即會擷取 Snapshot，並顯示在**詳細資料**頁面的 **Snapshot** 區段中。它的排程顯示為「手動」。
+1. Clique em seu volume de armazenamento.
+2. Clique em ** Ações**.
+3. Clique em **Tomar captura instantânea manual**.
+A captura instantânea é tomada e exibida na seção **Capturas instantâneas** da página **Detalhe**. Seu planejamento aparece Manual.
 
-## 列出所有具有已使用空間資訊和管理功能的 Snapshot
+## Listando todas as capturas instantâneas com informações de espaço usado e funções de gerenciamento
 
-您可以在**詳細資料**頁面（**儲存空間**、**{{site.data.keyword.filestorage_short}}**）上看到已保留 Snapshot 及已使用空間的清單。使用**動作**功能表或頁面上各種區段中的鏈結，以在「詳細資料」頁面上處理管理功能（編輯排程以及新增更多空間）。
+Uma lista de capturas instantâneas retidas e espaço usado pode ser vista na página **Detalhe** (**Armazenamento**, **{{site.data.keyword.filestorage_short}}**). As funções de gerenciamento (editando planejamentos e incluindo mais espaço) são conduzidas na página Detalhe usando o menu **Ações** ou links nas várias seções na página.
 
-## 檢視已保留 Snapshot 清單
+## Visualizando a lista de Capturas instantâneas retidas
 
-保留的 Snapshot 是根據您在設定排程時於**保留最後一個**欄位中輸入的數字。您可以在 **Snapshot** 區段下檢視所擷取的 Snapshot。Snapshot 會依排程列出。
+As capturas instantâneas retidas baseiam-se no número inserido no campo **Manter o último** ao configurar seus planejamentos. É possível visualizar as capturas instantâneas que foram tiradas na seção **Captura instantânea**. As capturas instantâneas são listadas por planejamento.
 
-## 檢視已使用的 Snapshot 空間量
+## Visualizando a quantia de espaço de Captura instantânea usado
 
-**詳細資料**頁面頂端的圓餅圖會顯示已使用的空間量，以及剩下的空間量。當您達到空間臨界值 75%、90% 及 95% 時，會收到通知。
+O gráfico de pizza na página **Detalhes** exibe quanto espaço é usado e quanto espaço resta. Você recebe notificações ao atingir limites de espaço - 75 por cento, 90 por cento e 95 por cento.
 
-## 變更磁區的 Snapshot 空間量
+## Mudando a quantia de espaço de Captura instantânea para um volume
 
-您可能需要將 Snapshot 空間新增至先前沒有任何 Snapshot 空間或可能需要額外 Snapshot 空間的磁區。您可以視需求新增 5 - 4,000 GB。
+Talvez seja necessário incluir espaço de captura instantânea em um volume que não tinha nenhum anteriormente ou que pode requerer espaço de captura instantânea extra. É possível incluir de 5 a 4.000 GB, dependendo de suas necessidades.
 
-
-Snapshot 空間只能增加。不能減少。在您確定實際需要的空間量之前，您可以選取較小的空間量。請記住，自動及手動 Snapshot 會共用空間。
+Somente o espaço de captura instantânea pode ser aumentado. Não pode ser reduzido. É possível selecionar uma quantia menor de espaço até que você determine o espaço de que precisa. Lembre-se, capturas instantâneas automatizadas e manuais compartilham o espaço.
 {:important}
 
-透過**儲存空間** > **{{site.data.keyword.filestorage_short}}** 來變更 Snapshot 空間。
+O espaço de captura instantânea é alterado por meio de  ** Armazenamento **  >  ** {{site.data.keyword.filestorage_short}} **.
 
-1. 按一下儲存空間磁區，按一下**動作**，然後按一下**新增其他 Snapshot 空間**。
-2. 從提示中，選取大小範圍。大小範圍通常是從 0 到您的磁區大小。
-3. 按一下**繼續**。
-4. 輸入您有的任何「促銷代碼」，然後按一下**重新計算**。依預設，會完成「此訂單的計費」及「訂單檢閱」欄位。
-5. 按一下**我已閱讀主要服務合約...** 勾選框，然後按一下**下訂單**。在幾分鐘之後，即會佈建您的額外 Snapshot 空間。
+1. Clique em seus volumes de armazenamento, clique em **Ações** e clique em **Incluir mais espaço de captura instantânea**.
+2. Selecione em um intervalo de tamanhos no prompt. Os tamanhos geralmente variam de 0 até o tamanho
+de seu volume.
+3. Clique em **Continuar**.
+4. Insira qualquer Código promocional que você tiver e clique em **Recalcular**. Os campos Encargos para este pedido e Revisão do pedido são concluídos por padrão.
+5. Clique na caixa de seleção **Eu li o Contrato de prestação de serviços principal…** e clique em **Colocar ordem**. Seu espaço de captura instantânea adicional é provisionado em alguns minutos.
 
-## 達到 Snapshot 空間限制及刪除 Snapshot 時收到通知
+## Recebendo notificações quando o limite de espaço de captura instantânea é atingido e as capturas instantâneas são excluídas
 
-當您達到三個不同的空間臨界值（75%、90% 及 95%）時，會透過支援問題單將通知傳送至帳戶上的「主要使用者」。
+As notificações são enviadas por meio dos chamados de suporte para o Usuário principal em sua conta quando você atinge três limites de espaço diferentes, 75 por cento, 90 por cento e 95 por cento.
 
-- **75% 容量**：Snapshot 空間使用率超過 75% 時會傳送警告。如果您注意到該警告，並手動新增空間，或刪除已保留且不需要的 Snapshot，則會註記動作，並關閉問題單。如果您未執行任何動作，則必須手動確認該問題單，然後將其關閉。
-- **90% 容量**：Snapshot 空間使用率超過 90% 時會傳送第二個警告。就像達到 75% 的容量時，如果您採取必要的動作來減少使用的空間，則會註記動作，並關閉問題單。如果您未執行任何動作，則必須手動確認該問題單，然後將其關閉。
-- **95% 容量**：傳送最終警告。如果未採取任何動作讓空間使用率低於臨界值，則會產生通知，並自動進行刪除作業，以便可以建立未來的 Snapshot。會刪除排程的 Snapshot（從最舊的 Snapshot 開始），直到使用率低於 95% 為止。每次使用率超出 95% 時都會繼續刪除 Snapshot，直到它低於臨界值為止。如果手動增加空間或刪除 Snapshot，則會重設警告，並於再次超出臨界值時重新發出。如果未採取任何動作，則此通知會是您收到的唯一警告。
+- Em **Capacidade de 75 por cento**, um aviso é enviado indicando que o uso do espaço de captura instantânea excedeu 75 por cento. Se você atender ao aviso e incluir espaço manualmente ou excluir capturas instantâneas retidas e desnecessárias, a ação será anotada e o chamado será encerrado. Caso não faça nada, deve-se reconhecer manualmente o chamado e, em seguida, ele será encerrado.
+- Em **Capacidade de 90 por cento**, um segundo aviso é enviado quando o uso do espaço de captura instantânea excede 90 por cento. Semelhante a atingir a capacidade de 75 por cento, se você tomar as ações necessárias para diminuir o espaço usado, a ação será anotada e o chamado será encerrado. Caso não faça nada, deve-se reconhecer manualmente o chamado e, em seguida, ele será encerrado.
+- Em **Capacidade de 95 por cento**, um aviso final é enviado. Se nenhuma ação for tomada para diminuir o uso de espaço para abaixo do limite, uma notificação será gerada e ocorrerá exclusão automática para que as capturas instantâneas futuras possam ser criadas. As capturas instantâneas planejadas são excluídas, iniciando com a mais antiga, até que o uso caia abaixo de 95 por cento. As capturas instantâneas continuarão sendo excluídas sempre que o uso de tempo exceder 95 por cento até cair abaixo do limite. Se o espaço for aumentado manualmente ou as capturas instantâneas forem excluídas, o aviso será reconfigurado e emitido novamente se o limite for excedido novamente. Se nenhuma ação for executada, essa notificação será o único aviso que você receberá.
 
-## 刪除 Snapshot 排程
+## Excluindo um planejamento de captura instantânea
 
-Snapshot 排程可以透過**儲存空間** > **{{site.data.keyword.filestorage_short}}** 來取消。
+Os planejamentos de captura instantânea podem ser cancelados por meio de **Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
 
-1. 在**詳細資料**頁面的 **Snapshot 排程**頁框中，按一下要刪除的排程。
-2. 按一下要刪除之排程旁的勾選框，然後按一下**儲存**。<br />
+1. Clique no planejamento a ser excluído no quadro **Planejamentos de captura instantânea** na página **Detalhes**.
+2. Clique na caixa de seleção ao lado do planejamento a ser excluído e clique em **Salvar**.<br />
 
-如果您要使用抄寫特性，請確定您要刪除的排程不是抄寫所使用的排程。如需刪除抄寫排程的相關資訊，請按一下[這裡](replication.html)。
+Se você estiver usando o recurso de replicação, certifique-se de que o planejamento que está sendo excluído não seja o planejamento usado pela replicação. Para obter mais informações sobre como excluir um planejamento de replicação, consulte [aqui](replication.html).
 {:important}
 
-## 刪除 Snapshot
+## Excluindo uma Captura Instant
 
-可以手動移除不再需要的 Snapshot，以釋放空間供未來的 Snapshot 使用。刪除作業是透過**儲存空間** > **{{site.data.keyword.filestorage_short}}** 來進行。
+As capturas instantâneas que não são mais necessárias podem ser removidas manualmente para liberar
+espaço para capturas instantâneas futuras. A exclusão é feita por meio de **Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
 
-1. 按一下儲存空間磁區，然後捲動至 **Snapshot** 區段，以查看現有 Snapshot 清單。
-2. 按一下特定 Snapshot 旁的**動作**，然後按一下**刪除**來刪除 Snapshot。這項刪除不會影響相同排程上的任何未來或過去 Snapshot，因為 Snapshot 之間沒有任何相依關係。
+1. Clique em seu volume de armazenamento e role para a seção **Captura instantânea** para ver a lista de capturas instantâneas existentes.
+2. Clique em **Ações** ao lado de uma captura instantânea específica e clique em **Excluir** para excluir a captura instantânea. Essa exclusão não afeta as capturas instantâneas futuras ou passadas no mesmo planejamento, pois não há nenhuma dependência entre elas.
 
-當您達到空間限制時，會自動刪除未依先前所述方式刪除的手動 Snapshot（最舊的最先刪除）。
+As capturas instantâneas manuais que não são excluídas manualmente no portal são excluídas automaticamente quando você atinge as limitações de espaço (a mais antiga primeiro).
 
-## 使用 Snapshot 將儲存空間磁區還原至特定時間點
+## Restaurando o volume de armazenamento para um momento específico usando uma captura instantânea
 
-因為使用者錯誤或資料毀損，所以您可能需要將儲存空間磁區還原至特定時間點。
+Talvez seja necessário retornar o seu volume de armazenamento para um momento específico devido a um erro do usuário ou a uma distorção de dados.
 
-1. 從主機中卸載並分離您的儲存空間磁區。
-   - 按一下[這裡](accessing-file-storage-linux.html)，以取得 Linux 上的 {{site.data.keyword.filestorage_short}} 指示。
-2. 按一下 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} 中的**儲存空間**、**{{site.data.keyword.filestorage_short}}**。
-3. 向下捲動並按一下要還原的磁區。**詳細資料**頁面的 **Snapshot** 區段會顯示所有已儲存 Snapshot 的清單及其大小和建立日期。
-4. 按一下要使用之 Snapshot 旁的**動作**，然後按一下**還原**。<br/>
+1. Desmonte e separe seu volume de armazenamento do host.
+   - Clique [aqui](accessing-file-storage-linux.html) para obter instruções do {{site.data.keyword.filestorage_short}} no Linux.
+2. Clique em **Armazenamento**, **{{site.data.keyword.filestorage_short}}** no [{{site.data.keyword.slportal}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://control.softlayer.com/){:new_window}.
+3. Role para baixo e clique no seu volume a ser restaurado. A seção **Capturas instantâneas** da página **Detalhes** exibe a lista de todas as capturas instantâneas salvas juntamente com seu tamanho e data de criação.
+4. Clique em **Ações** próximo à captura instantânea a ser usada e clique em **Restaurar**. <br/>
 
-   完成還原會導致流失在擷取 Snapshot 之後所建立或修改的資料。這項資料流失的原因是您的儲存空間磁區還原為 Snapshot 時所處的相同狀態。{:note}
-5. 按一下**是**，以啟動還原。預期頁面頂端會出現一則訊息，指出將使用選取的 Snapshot 還原磁區。此外，{{site.data.keyword.filestorage_short}} 上的磁區旁會出現一個圖示，指出有一個作用中交易正在進行。將游標移至圖示上方會產生一個視窗，顯示該交易。交易完成之後，圖示即會消失。
-6. 將儲存空間磁區裝載並重新連接至主機。
-  - 按一下[這裡](accessing-file-storage-linux.html)，以取得 Linux 上的 {{site.data.keyword.filestorage_short}} 指示。
+   A conclusão da restauração resulta na perda dos dados que foram criados ou modificados depois que a captura instantânea foi obtida. Essa perda de dados ocorre porque seu volume de armazenamento retorna para o mesmo estado em que estava no momento da captura instantânea.
+   {:note}
+5. Clique em  ** Sim **  para iniciar a restauração.
 
-還原磁區會導致刪除在用於還原的 Snapshot 之後擷取的所有 Snapshot。
+   Espere uma mensagem na página indicando que o volume está sendo restaurado usando a captura instantânea selecionada. Além disso, aparece um ícone próximo ao seu volume no {{site.data.keyword.filestorage_short}} indicando que uma transação ativa está em andamento. Passar o mouse sobre o ícone produz uma janela que mostra a transação. O ícone desaparece quando a transação está concluída.
+   {:note}
+6. Monte e reconecte seu volume de armazenamento ao host.
+  - Clique [aqui](accessing-file-storage-linux.html) para obter instruções do {{site.data.keyword.filestorage_short}} no Linux.
+
+A restauração de um volume resulta na exclusão de todas as capturas instantâneas que foram tiradas após a captura instantânea que foi usada para a restauração.
 {:important}

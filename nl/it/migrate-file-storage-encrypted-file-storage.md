@@ -12,34 +12,36 @@ lastupdated: "2018-11-30"
 
 # Migrazione di {{site.data.keyword.filestorage_short}} a {{site.data.keyword.filestorage_short}} avanzato
 
-{{site.data.keyword.filestorage_full}} è ora disponibile in data center selezionati. Per visualizzare l'elenco dei data center di cui è stato eseguito l'upgrade e delle funzioni disponibili come ad esempio le frequenze dell'IOPS regolabile e i volumi espandibili, fai clic [qui](new-ibm-block-and-file-storage-location-and-features.html). Per ulteriori informazioni sull'archiviazione crittografata gestita dal provider, consulta [Crittografia dei dati inattivi di {{site.data.keyword.filestorage_short}}](block-file-storage-encryption-rest.html).
+{{site.data.keyword.filestorage_full}} è ora disponibile in data center selezionati. Per visualizzare l'elenco dei data center di cui è stato eseguito l'upgrade e delle funzioni disponibili, come ad esempio le frequenze dell'IOPS regolabile e i volumi espandibili, fai clic [qui](new-ibm-block-and-file-storage-location-and-features.html). Per ulteriori informazioni sulla crittografia gestita dal provider, vedi [Crittografia dei dati inattivi di {{site.data.keyword.filestorage_short}}](block-file-storage-encryption-rest.html).
 
 Il percorso di migrazione preferito consiste nello stabilire una connessione a entrambi i volumi simultaneamente e trasferire i dati direttamente da un LUN all'altro. Le specifiche dipendono dal tuo sistema operativo e dalla previsione di possibili modifiche dei dati durante l'operazione di copia.
 
 Si presuppone che tu già abbia il tuo LUN non crittografato collegato al tuo host. In caso contrario, attieniti alle indicazioni che meglio rispondono al tuo sistema operativo per eseguire questa attività.
 
-- [Montaggio dell'{{site.data.keyword.filestorage_short}} su Linux](accessing-file-storage-linux.html)
+- [Montaggio di {{site.data.keyword.filestorage_short}} su Linux](accessing-file-storage-linux.html)
 - [Montaggio di NFS/{{site.data.keyword.filestorage_short}} in CentOS](mounting-nsf-file-storage.html)
-- [Montaggio dell'{{site.data.keyword.filestorage_short}} su CoreOS](mounting-storage-coreos.html)
+- [Montaggio di {{site.data.keyword.filestorage_short}} su CoreOS](mounting-storage-coreos.html)
 
-Tutti i volumi {{site.data.keyword.filestorage_short}} avanzati hanno un punto di montaggio diverso rispetto ai volumi non crittografati. Per assicurarti che stai usando il punto di montaggio corretto per entrambi i tuoi volumi {{site.data.keyword.filestorage_short}} crittografato e non crittografato, puoi visualizzare le informazioni sul punto di montaggio nella pagina **Volume Details** nel {{site.data.keyword.slportal}}. Puoi inoltre accedere al punto di montaggio corrente tramite una chiamata API: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
+Tutti i volumi di {{site.data.keyword.filestorage_short}} avanzato di cui viene eseguito il provisioning in questi data center hanno un punto di montaggio diverso rispetto ai volumi non crittografati. Per assicurarti che stai usando il punto di montaggio corretto per entrambi i volumi di archiviazione, puoi visualizzare le informazioni sul punto di montaggio nella pagina **Volume Details** nella console. Puoi inoltre accedere al punto di montaggio corrente tramite una chiamata API: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 {:tip}
 
 
-## Creazione di un nuovo {{site.data.keyword.filestorage_short}}
+## Creazione di una {{site.data.keyword.filestorage_short}}
 
 Quando effettui un ordine con l'API, specifica il pacchetto "Storage as a Service" per assicurarti che stai ottenendo le funzioni avanzate con la tua nuova archiviazione.
 {:important}
 
-Le seguenti istruzioni sono per ordinare un volume/una condivisione file avanzati tramite il catalogo /{{site.data.keyword.BluSoftlayer_full}} del {{site.data.keyword.slportal}}. Il tuo nuovo volume deve essere di dimensione pari o superiore a quella del volume originale per facilitare la migrazione.
+Le seguenti istruzioni sono per ordinare una condivisione file avanzata tramite il {{site.data.keyword.slportal}} o il catalogo {{site.data.keyword.BluSoftlayer_full}}. Il tuo nuovo volume deve essere di dimensione pari o superiore a quella del volume originale per facilitare la migrazione.
 
-### Ordinazione di un nuovo volume di archiviazione Endurance
+### Ordinazione di un volume Storage Endurance
 
-1. Dal [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}, fai clic su **Storage** > **{{site.data.keyword.filestorage_short}}** OPPURE, dal catalogo di {{site.data.keyword.BluSoftlayer_full}}, fai clic su **Infrastructure** > **Storage** > **{{site.data.keyword.filestorage_short}}**.
+1. Dal [{{site.data.keyword.slportal}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://control.softlayer.com/){:new_window}, fai clic su **Storage** > **{{site.data.keyword.filestorage_short}}** OPPURE, dal catalogo {{site.data.keyword.BluSoftlayer_full}}, fai clic su **Infrastruttura** > **Archiviazione** > **{{site.data.keyword.filestorage_short}}**.
 2. Fai clic su **Order{{site.data.keyword.filestorage_short}}**.
 3. Seleziona **Endurance** dall'elenco **Select Storage Type**.
 4. Fai clic su **Location** e seleziona il tuo data center.
-   - Assicurati che la nuova archiviazione venga aggiunta nella stessa ubicazione dell'originale.
+
+   Assicurati che la nuova archiviazione venga aggiunta nella stessa ubicazione dell'originale.
+   {:important}
 5. Seleziona la tua opzione di fatturazione. Puoi scegliere tra fatturazione mensile o oraria.
 6. Fai clic su **Endurance** e seleziona il livello IOPS.
 6. Seleziona **Usable Storage Size** dall'elenco. Il tuo nuovo volume deve essere di dimensione pari o superiore a quella del volume originale.
@@ -47,13 +49,16 @@ Le seguenti istruzioni sono per ordinare un volume/una condivisione file avanzat
 8. Fai clic su **Continue**. Ti vengono mostrati gli addebiti mensili e a base proporzionale con una possibilità finale di riesaminare i dettagli dell'ordine. Fai clic su **Previous** se vuoi modificare il tuo ordine.
 9. Fai clic sulla casella di spunta **I have read the Master Service Agreement** e fai clic su **Place Order**
 
-### Ordinazione di un volume di archiviazione Performance crittografato
+### Ordinazione di un volume Performance Storage
 
-1. Dal [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}, fai clic su **Storage**, **{{site.data.keyword.filestorage_short}}** OPPURE, dal catalogo di {{site.data.keyword.BluSoftlayer_full}}, fai clic su **Infrastructure** >** Storage** > **{{site.data.keyword.filestorage_short}}**.
+1. Dal [{{site.data.keyword.slportal}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://control.softlayer.com/){:new_window}, fai clic su **Storage**, **{{site.data.keyword.filestorage_short}}** OPPURE, dal
+catalogo {{site.data.keyword.BluSoftlayer_full}}, fai clic su **Infrastruttura** >** Archiviazione** > **{{site.data.keyword.filestorage_short}}**.
 2. Fai clic su **Order{{site.data.keyword.filestorage_short}}**.
 3. Seleziona **Performance** dall'elenco **Select Storage Type**.
 4. Fai clic su **Location** e seleziona il tuo data center.
-    -  Assicurati che la nuova archiviazione venga aggiunta nella stessa ubicazione dell'originale.
+
+   Assicurati che la nuova archiviazione venga aggiunta nella stessa ubicazione dell'originale.
+   {:important}
 5. Seleziona le tue opzioni di fatturazione. Puoi scegliere tra fatturazione oraria e mensile.
 6. Selezionare il pulsante di opzione accanto alla dimensione di archiviazione (**Storage Size**) appropriata.
 6. Immetti l'IOPS nel campo **Specify IOPS**.

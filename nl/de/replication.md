@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-30"
+lastupdated: "2018-12-11"
 
 ---
 
@@ -16,11 +16,11 @@ lastupdated: "2018-11-30"
 
 Bei der Replikation wird einer von vier Snapshotplänen verwendet, um Snapshots automatisch auf einen Zieldatenträger in einem fernen Rechenzentrum zu kopieren. Die Kopien können am fernen Standort wiederhergestellt werden, falls ein Elementarereignis auftritt oder Ihre Daten beschädigt werden.
 
-Mit Replikaten können Sie nach Standortausfällen und anderen Katastrophen schnell eine Wiederherstellung durchführen. Im Notfall kann der Zieldatenträger übernehmen und zu einem bestimmten Zeitpunkt in der Disaster Recovery-Kopie (DR-Kopie) auf Ihre Daten zugreifen. Weitere Informationen hierzu finden Sie unter [Replikatdatenträger für Disaster-Recovery duplizieren](disaster-recovery.html).
+Die Replikation hält Ihre Daten an zwei verschiedenen Positionen synchron. Wenn Sie Ihren Datenträger klonen und unabhängig vom ursprünglichen Datenträger verwenden möchten, lesen Sie die Informationen im Abschnitt [Duplikat eines Datenträgers erstellen](how-to-create-duplicate-volume.html).
+{:tip}
 
-Die Replikation hält Ihre Daten an zwei verschiedenen Positionen synchron. Wenn Sie Ihren Datenträger klonen und unabhängig vom ursprünglichen Datenträger verwenden möchten, lesen Sie den Abschnitt [Duplikat des Dateidatenträgers erstellen](how-to-create-duplicate-volume.html).{:tip}
-
-Bevor Sie replizieren können, müssen Sie einen Snapshotplan erstellen. Wenn Sie einen Failover durchführen, 'schalten Sie um', und zwar von Ihrem Speicherdatenträger in Ihrem primären Rechenzentrum auf den Zieldatenträger in Ihrem fernen Rechenzentrum. Ihr primäres Rechenzentrum ist zum Beispiel London und Ihr sekundäres Rechenzentrum ist Amsterdam. Wenn ein Fehlerereignis auftritt, führen Sie ein Failover auf Amsterdam durch – dazu stellen Sie zu dem jetzigen primären Datenträger eine Verbindung von einer Compute-Instanz in Amsterdam her. Nachdem Ihr Datenträger in London repariert wurde, wird ein Snapshot des Datenträgers in Amsterdam erstellt, um die Rückübertragung auf den Datenträger in London und den nun wieder primären Datenträger von einer Compute-Instanz in London durchzuführen.
+Bevor Sie replizieren können, müssen Sie einen Snapshotplan erstellen.
+{:important}
 
 
 ## Fernes Rechenzentrum für replizierten Speicherdatenträger ermitteln
@@ -96,8 +96,9 @@ In Tabelle 1 finden Sie die vollständige Liste der verfügbaren Rechenzentren u
       </td>
       <td>SYD01<br />
           SYD04<br />
-	  MEL01<br />
-	  <br /><br /><br /><br /><br /><br /><br /><br /><br />
+          SYD05<br />
+          MEL01<br />
+          <br /><br /><br /><br /><br /><br /><br /><br />
       </td>
     </tr>
   </tbody>
@@ -105,7 +106,7 @@ In Tabelle 1 finden Sie die vollständige Liste der verfügbaren Rechenzentren u
 
 ## Erstreplikat erstellen
 
-Replikationen arbeiten nach einem Snapshotplan. Sie müssen zuerst einen Snapshotbereich und einen Snapshotplan für den Quellendatenträger haben, bevor Sie replizieren können. Wenn Sie versuchen, die Replikation zu konfigurieren, und eines dieser beiden Dinge fehlt, werden Sie aufgefordert, mehr Speicherplatz zu kaufen oder einen Zeitplan einzurichten. Replikationen werden unter **Storage** > **{{site.data.keyword.filestorage_short}}** im [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} verwaltet.
+Replikationen arbeiten nach einem Snapshotplan. Sie müssen zuerst einen Snapshotbereich und einen Snapshotplan für den Quellendatenträger haben, bevor Sie replizieren können. Wenn Sie versuchen, die Replikation zu konfigurieren, und eines dieser beiden Dinge fehlt, werden Sie aufgefordert, mehr Speicherplatz zu kaufen oder einen Zeitplan einzurichten. Replikationen werden unter **Storage** > **{{site.data.keyword.filestorage_short}}** im [{{site.data.keyword.slportal}} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/){:new_window} verwaltet.
 
 1. Klicken Sie auf Ihren Speicherdatenträger.
 2. Klicken Sie auf **Replikat** und auf **Replikation kaufen**.
@@ -121,7 +122,7 @@ Replikationen arbeiten nach einem Snapshotplan. Sie müssen zuerst einen Snapsho
 
 ## Vorhandene Replikation bearbeiten
 
-Im [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} auf der Registerkarte **Primär** oder **Replikat** unter **Speicher** > **{{site.data.keyword.filestorage_short}}** können Sie Ihren Replikationsplan bearbeiten und Ihren Replikationsspeicherbereich ändern.
+Sie können entweder in der Registerkarte **Primäres** oder **Replikation** unter **Speicher** > **{{site.data.keyword.filestorage_short}}** vom [{{site.data.keyword.slportal}} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/){:new_window} Ihren Replikationsplan bearbeiten und Ihren Replikationsspeicherbereich ändern.
 
 
 ## Replikationsplan bearbeiten
@@ -147,78 +148,19 @@ Ihr primärer Snapshotbereich und Ihr Replikatbereich müssen identisch sein. We
 5. Klicken Sie auf das Kontrollkästchen **Ich habe die Rahmenvereinbarung gelesen** und klicken Sie auf **Bestellung abschicken**.
 
 
-## Replikatdatenträger in der Datenträgerliste anzeigen
-
-Sie können Ihre Replikationsdatenträger auf der {{site.data.keyword.filestorage_short}}-Seite unter **Speicher** > **{{site.data.keyword.filestorage_short}}** anzeigen. Der Datenträgername ist der Name des primären Datenträgers, gefolgt von REP. Der **Typ** ist Endurance oder Performance – Replikat. Die **Zieladresse** ist 'n/v,' da der Replikatdatenträger nicht am Replikatrechenzentrum angehängt ist, und der **Status** ist 'Inaktiv'.
-
-
-
-## Details eines replizierten Datenträgers im Replikatrechenzentrum anzeigen
-
-Sie können die Details von Replikatdatenträgern auf der Registerkarte **Replikat** unter **Speicher** > **{{site.data.keyword.filestorage_short}}** anzeigen. Eine weitere Option besteht darin, den Replikatdatenträger auf der **{{site.data.keyword.filestorage_short}}**-Seite auszuwählen und auf die Registerkarte **Replikat** zu klicken.
-
-
-## Hostberechtigungen vor Failover des Servers auf das sekundäre Rechenzentrum angeben
-
-Berechtigte (bzw. autorisierte) Hosts und Datenträger müssen sich im selben Rechenzentrum befinden. Sie können nicht den Replikatdatenträger in London und den Host in Amsterdam haben. Beide müssen entweder in London oder in Amsterdam sein.
-
-1. Klicken Sie auf Ihren Quellen- oder Zieldatenträger auf der **{{site.data.keyword.filestorage_short}}**-Seite.
-2. Klicken Sie auf **Replikat**.
-3. Blättern Sie abwärts zum Rahmen **Hosts autorisieren** und klicken Sie auf der rechten Seite auf **Hosts autorisieren**.
-4. Heben Sie den Host hervor, der für Replikationen autorisiert werden soll. Zur Auswahl mehrerer Hosts drücken Sie die Steuertaste (STRG) und klicken Sie auf die betreffenden Hosts.
-5. Klicken Sie auf **Abschicken**. Wenn Sie keine Hosts haben, werden Sie aufgefordert, Rechenressourcen im selben Rechenzentrum zu kaufen.
-
-
 ## Snapshotbereich im Replikatdatenzentrum erhöhen, wenn der Snapshotbereich im primären Rechenzentrum erhöht wird
 
 Die Datenträgergröße Ihres primären Speicherdatenträgers und Ihres Replikatspeicherdatenträgers muss übereinstimmen. Keiner der Datenträger darf größer als der andere sein. Wenn Sie Ihren Snapshotbereich für Ihren primären Datenträger vergrößern, wird der Replikatbereich automatisch vergrößert. Eine Erhöhung des Snapshotbereichs löst eine sofortige Replikationsaktualisierung aus. Die Vergrößerung beider Datenträger wird als Artikelpositionen auf Ihrer Rechnung aufgeführt und wie erforderlich anteilmäßig berechnet.
 
 Weitere Informationen zum Vergrößern des Snapschotbereichs finden Sie unter [Snapshots](snapshots.html).
+## Replikatdatenträger in der Datenträgerliste anzeigen
+
+Sie können Ihre Replikationsdatenträger auf der {{site.data.keyword.filestorage_short}}-Seite unter **Speicher** > **{{site.data.keyword.filestorage_short}}** anzeigen. Der Datenträgername ist der Name des primären Datenträgers, gefolgt von REP. Der **Typ** ist Endurance oder Performance – Replikat. Die **Zieladresse** ist 'n/v,' da der Replikatdatenträger nicht am Replikatrechenzentrum angehängt ist, und der **Status** ist 'Inaktiv'.
 
 
-## Failover von einem Datenträger auf sein Replikat starten
+## Details eines replizierten Datenträgers im Replikatrechenzentrum anzeigen
 
-Bei einem Fehlerereignis können Sie einen **Failover** auf Ihren Zieldatenträger einleiten. Der Zieldatenträger wird aktiv. Der letzte erfolgreich replizierte Snapshot wird aktiviert und der Datenträger wird zum Anhängen (Mount) aktiviert. Alle Daten, die seit dem letzten Replikationszyklus auf den Quellendatenträger geschrieben wurden, gehen verloren. Beim Start eines Failovers wird die Replikationsbeziehung umgekehrt. Ihr Zieldatenträger wird zum Quellendatenträger und Ihr früherer Quellendatenträger wird zum Zieldatenträger. Dies wird durch den **LUN-Namen** angezeigt, gefolgt von der Zeichenfolge **REP**.
-
-Failoveroperationen werden unter **Speicher** > **{{site.data.keyword.filestorage_short}}** im [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} gestartet.
-
-Bevor Sie mit den folgenden Schritten fortfahren, unterbrechen Sie die Verbindung zum Datenträger. Wenn Sie das nicht tun, sind Datenbeschädigungen und/oder Datenverlust die Folge.
-{:important}
-
-1. Klicken Sie auf Ihren aktiven Datenträger ('Quelle').
-2. Klicken Sie rechts oben auf **Replikat** und **Aktionen**.
-3. Wählen Sie die Option für **Failover** aus.
-
-   Es wird die Nachricht angezeigt, dass der Failover in Bearbeitung ist. Darüber hinaus wird neben Ihrem Datenträger auf der **{{site.data.keyword.filestorage_short}}**-Seite ein Symbol angezeigt, das darauf hinweist, dass zurzeit eine Transaktion aktiv ist. Bei Bewegen des Mauszeigers über das Symbol wird die Transaktion in einem Fenster angezeigt. Das Symbol wird ausgeblendet, sobald die Transaktion abgeschlossen ist. Während des Failover-Prozesses sind konfigurationsbezogene Aktionen schreibgeschützt. Sie können Snapshotpläne nicht bearbeiten oder Snapshotbereiche ändern. Das Ereignis wird im Replikationsprotokoll aufgezeichnet.<br/> Wenn Ihr Zieldatenträger aktiv ist, erhalten Sie eine andere Nachricht. Der LUN-Name Ihres ursprünglichen Quellendatenträgers wird so aktualisiert, dass er mit "REP" endet, und sein Status ändert sich in "Inaktiv".
-   {:note}
-4. Klicken Sie auf **Alle anzeigen ({{site.data.keyword.filestorage_short}})**.
-5. Klicken Sie auf Ihren aktiven Datenträger (früher Ihr Zieldatenträger). Dieser Datenträger hat nun den Status **Aktiv**.
-6. Hängen Sie Ihren Speicherdatenträger an den Host an und verbinden Sie ihn. Weitere Anweisungen finden Sie [hier](provisioning-file-storage.html).
-
-
-## Rückübertragung von einem Datenträger auf sein Replikat starten
-
-Wenn Ihr ursprünglicher Quellendatenträger repariert ist, können Sie eine gesteuerte Rückübertragung auf Ihren Originalquellendatenträger starten. Bei einer gesteuerten Rückübertragung geschieht Folgendes:
-
-- Der aktive Quellendatenträger wird offline geschaltet.
-- Ein Snapshot wird erfasst.
-- Der Replikationszyklus wird abgeschlossen.
-- Der soeben erfasste Datensnapshot wird aktiviert.
-- Und der Quellendatenträger wird für das Anhängen (den Mount) aktiviert.
-
-Beim Start einer Rückübertragung wird die Replikationsbeziehung wieder umgekehrt. Ihr Quellendatenträger wird als Quellendatenträger wiederhergestellt und Ihr Zieldatenträger ist wieder Ihr Zieldatenträger. Dies wird durch den **LUN-Namen** angezeigt, gefolgt von der Zeichenfolge **REP**.
-
-Rückübertragungen werden unter **Speicher** > **{{site.data.keyword.filestorage_short}}** im [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} gestartet.
-
-1. Klicken Sie auf Ihren aktiven Datenträger ("Ziel").
-2. Klicken Sie rechts oben auf **Replikat** und **Aktionen**.
-3. Wählen Sie **Rückübertragung** aus.
-
-   Es wird die Nachricht angezeigt, dass die Rückübertragung in Bearbeitung ist. Darüber hinaus wird neben Ihrem Datenträger auf der **{{site.data.keyword.filestorage_short}}**-Seite ein Symbol angezeigt, das darauf hinweist, dass zurzeit eine Transaktion aktiv ist. Bei Bewegen des Mauszeigers über das Symbol wird die Transaktion in einem Fenster angezeigt. Das Symbol wird ausgeblendet, sobald die Transaktion abgeschlossen ist. Während des Prozesses der Rückübertragung sind konfigurationsbezogene Aktionen schreibgeschützt. Sie können Snapshotpläne nicht bearbeiten oder Snapshotbereiche ändern. Das Ereignis wird im Replikationsprotokoll aufgezeichnet.
-   {:note}
-4. Klicken Sie rechts oben auf den Link **Alle {{site.data.keyword.filestorage_short}}-Instanzen anzeigen**.
-5. Klicken Sie auf Ihren aktiven Datenträger ("Quelle").
-6. Hängen Sie Ihren Speicherdatenträger an den Host an und verbinden Sie ihn. Weitere Anweisungen finden Sie [hier](provisioning-file-storage.html).
+Sie können die Details von Replikatdatenträgern auf der Registerkarte **Replikat** unter **Speicher** > **{{site.data.keyword.filestorage_short}}** anzeigen. Eine weitere Option besteht darin, den Replikatdatenträger auf der **{{site.data.keyword.filestorage_short}}**-Seite auszuwählen und auf die Registerkarte **Replikat** zu klicken.
 
 
 ## Replikationsprotokoll anzeigen
@@ -234,7 +176,7 @@ Das Replikationsprotokoll wird auf der Registerkarte **Konto** unter **Verwalten
 
 ## Duplikat eines Replikats erstellen
 
-Sie können ein Duplikat eines vorhandenen {{site.data.keyword.BluSoftlayer_full}} {{site.data.keyword.filestorage_full}}-Datenträgers erstellen. Der Duplikatdatenträger übernimmt standardmäßig die Kapazitäts- und Leistungsoptionen der ursprünglichen LUN bzw. des ursprünglichen Datenträgers und enthält eine Kopie der Daten bis zum Zeitpunkt eines Snapshots.
+Sie können ein Duplikat eines vorhandenen {{site.data.keyword.BluSoftlayer_full}} {{site.data.keyword.filestorage_full}}-Datenträgers erstellen. Das Duplikat übernimmt standardmäßig die Kapazitäts- und Leistungsoptionen des Originaldatenträgers und enthält bis zum Zeitpunkt eines Snapshots eine Kopie der Daten.
 
 Duplikate können sowohl von primären Datenträgern als auch von Replikatdatenträgern erstellt werden. Das neue Duplikat wird im selben Rechenzentrum wie der ursprüngliche Datenträger erstellt. Wenn Sie einen Duplikatdatenträger von einem Replikatdatenträger erstellen, wird der neue Datenträger im selben Rechenzentrum wie der Replikatdatenträger erstellt.
 
@@ -242,6 +184,12 @@ Auf Duplikatdatenträger kann ein Host für Lese-/Schreiboperationen zugreifen, 
 
 Weitere Informationen finden Sie im Abschnitt [Duplikat eines Datenträgers erstellen](how-to-create-duplicate-volume.html).
 
+## Verwenden von Replikaten für ein Failover bei einem Ausfall
+
+Wenn Sie einen Failover durchführen, 'schalten Sie um', und zwar von Ihrem Speicherdatenträger in Ihrem primären Rechenzentrum auf den Zieldatenträger in Ihrem fernen Rechenzentrum. Ihr primäres Rechenzentrum ist zum Beispiel London und Ihr sekundäres Rechenzentrum ist Amsterdam. Wenn ein Fehlerereignis auftritt, führen Sie ein Failover auf Amsterdam durch – dazu stellen Sie zu dem jetzigen primären Datenträger eine Verbindung von einer Compute-Instanz in Amsterdam her. Nachdem Ihr Datenträger in London repariert wurde, wird ein Snapshot des Datenträgers in Amsterdam erstellt, um die Rückübertragung auf den Datenträger in London und den nun wieder primären Datenträger von einer Compute-Instanz in London durchzuführen.
+
+* Wenn das Problem in der primäre Lokation auftritt, aber der Speicher und der Host noch online sind, finden Sie weitere Informationen unter [Failover mit einem zugänglichen Primärdatenträger](dr-accessible-primary.html).
+* Wenn die primäre Lokation inaktiv ist, lesen Sie die Informationen im Abschnitt [Failover mit einem nicht zugänglichen Primärdatenträger](disaster-recovery.html).
 
 ## Vorhandene Replikation stornieren
 

@@ -13,9 +13,9 @@ lastupdated: "2018-11-30"
 
 # Linux에서 {{site.data.keyword.filestorage_short}} 마운트
 
-먼저 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}을 통해 {{site.data.keyword.filestorage_full}} 볼륨에 액세스할 호스트에 권한이 부여되었는지 확인하십시오.
+먼저 {{site.data.keyword.filestorage_full}} 볼륨에 액세스할 호스트의 권한이 [{{site.data.keyword.slportal}} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://control.softlayer.com/){:new_window}을 통해 부여되는지 확인하십시오.
 
-1. {{site.data.keyword.filestorage_short}} 목록 페이지에서 새 공유와 연관된 **조치**를 클릭하고 **호스트 권한 부여**를 클릭하십시오.
+1. {{site.data.keyword.filestorage_short}} 목록 페이지에서 새 공유와 연관된 **조치** 링크를 클릭하고 **호스트 권한 부여**를 클릭하십시오.
 2. 목록에서 호스트를 선택하고 **제출**을 클릭하십시오. 이 조치는 공유에 액세스할 수 있도록 호스트에 권한을 부여합니다.
 
 ## {{site.data.keyword.filestorage_short}} 공유 마운트
@@ -25,7 +25,7 @@ Linux 기반 {{site.data.keyword.BluSoftlayer_full}} 컴퓨팅 인스턴스를 N
 파일 스토리지 인스턴스의 마운트 지점은 {{site.data.keyword.filestorage_short}} 목록 페이지에서 또는 API호출 - `SoftLayer_Network_Storage::getNetworkMountAddress()`를 통해 가져올 수 있습니다.
 {:tip}
 
-1. 필수 패키지/도구를 설치하십시오.
+1. 필수 도구를 설치하십시오.
    ```
    # yum -y install nfs-utils nfs-utils-lib
    ```

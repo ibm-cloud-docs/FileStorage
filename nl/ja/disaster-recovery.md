@@ -2,27 +2,26 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-30"
+lastupdated: "2018-12-10"
 
 ---
-
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
 {:new_window: target="_blank"}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
-{:DomainName: data-hd-keyref="APPDomain"}
-{:DomainName: data-hd-keyref="DomainName"}
 
 
-# 災害復旧用レプリカ・ボリュームの複製
+# 災害復旧 - プライマリー・ボリュームがアクセス不能になった場合のフェイルオーバー
 
 1 次サイトの停止を引き起こす致命的な障害または災害が発生した場合、お客様は以下の操作を実行して 2 次サイトのデータにすぐにアクセスすることができます。
 
 ## 2 次サイトにあるレプリカ・ボリュームの複製を使用するフェイルオーバー
 
-1. [IBM Cloud コンソール](https://{DomainName}/catalog/){:new_window}にログインして、左上にある**「メニュー」**アイコンをクリックします。**「クラシック・インフラストラクチャー」**を選択します。
+1. [IBM Cloud コンソール](https://console.bluemix.net/catalog/){:new_window}にログインして、左上にある**「メニュー」**アイコンをクリックします。 **「クラシック・インフラストラクチャー」**を選択します。
 
-   あるいは、[{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}にログインします。
+   または、[{{site.data.keyword.slportal}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://control.softlayer.com/){:new_window} にログインできます。
 2. **「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**をクリックします。
 3. リストからファイル共有のレプリカをクリックして、その**「詳細」**ページを表示します。
 4. **「詳細」**ページでスクロールダウンして既存のスナップショットを選択し、**「アクション」**>**「重複」**をクリックします。
@@ -30,15 +29,15 @@ lastupdated: "2018-11-30"
 6. 必要であれば、新規ボリュームのスナップショット・スペースを更新できます。
 7. **「次へ進む (Continue)」**をクリックして、複製を注文します。
 
-ボリュームを作成するとすぐに、そのボリュームにホストをアタッチして、読み取り/書き込み操作を行うことができます。元のボリュームから複製にデータがコピーされている間、複写が進行中であることを示す状況が詳細ページに表示されます。 複製処理が完了すると、新規ボリュームは元のボリュームから完全に独立するようになり、スナップショットとレプリケーションを使用して通常どおりに管理できます。
+ボリュームを作成するとすぐに、そのボリュームにホストをアタッチして、読み取り/書き込み操作を行うことができます。 元のボリュームから複製にデータがコピーされている間、複写が進行中であることを示す状況が詳細ページに表示されます。 複製処理が完了すると、新規ボリュームは元のボリュームから独立するようになり、スナップショットとレプリケーションを使用して通常どおりに管理できます。
 
 ## 元の 1 次サイトへのフェイルバック
 
 元の 1 次サイトに実動環境を戻す場合は、以下の手順を行う必要があります。
 
-1. [IBM Cloud コンソール](https://{DomainName}/catalog/){:new_window}にログインして、左上にある**「メニュー」**アイコンをクリックします。**「クラシック・インフラストラクチャー」**を選択します。
+1. [IBM Cloud コンソール](https://{DomainName}/catalog/){:new_window}にログインして、左上にある**「メニュー」**アイコンをクリックします。 **「クラシック・インフラストラクチャー」**を選択します。
 
-   あるいは、[{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}にログインします。
+   または、[{{site.data.keyword.slportal}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://control.softlayer.com/){:new_window} にログインできます。
 2. **「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**をクリックします。
 3. LUN 名をクリックし、スナップショット・スケジュールを作成します (まだ存在しない場合)。
 
@@ -60,4 +59,4 @@ lastupdated: "2018-11-30"
 5. 必要であれば、新規ボリュームのスナップショット・スペースを更新します。
 6. **「次へ進む (Continue)」**をクリックして、複製を注文します。
 
-複製処理が完了すると、元の 1 次サイトにデータを戻すために使用されたレプリケーションとボリュームを取り消すことができます。複製が 1 次ストレージになり、元の 2 次サイトへのレプリケーションを再度設定できるようになります。
+複製処理が完了すると、元の 1 次サイトにデータを戻すために使用されたレプリケーションとボリュームを取り消すことができます。 複製が 1 次ストレージになり、元の 2 次サイトへのレプリケーションを再度設定できるようになります。

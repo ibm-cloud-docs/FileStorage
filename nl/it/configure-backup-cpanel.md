@@ -15,7 +15,7 @@ lastupdated: "2018-11-30"
 
 Puoi utilizzare queste istruzioni per configurare i tuoi backup per l'archiviazione in {{site.data.keyword.filestorage_full}} da cPanel. Il presupposto è che siano disponibili SSH root o sudo e un accesso VHM (WebHost Manager) completo. Questo esempio è basato su un host **CentOS 7**.
 
-Per ulteriori informazioni dal fornitore, consulta [cPanel - Configuring Backup Directory ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.cpanel.net/display/68Docs/Backup+Configuration#BackupConfiguration-ConfigureBackupDirectory){:new_window}.
+Per ulteriori informazioni, vedi il documento di [cPanel relativo alla configurazione della directory di backup ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://docs.cpanel.net/display/68Docs/Backup+Configuration#BackupConfiguration-ConfigureBackupDirectory){:new_window}.
 {:tip}
 
 1. Connettiti all'host tramite SSH.
@@ -38,7 +38,7 @@ Per ulteriori informazioni dal fornitore, consulta [cPanel - Configuring Backup 
     Questo comando comprime e trasmette i tuoi dati e preserva tutto quanto è possibile, fatta eccezione per i collegamenti reali. Fornisce inoltre informazioni su quali file sono in fase di trasferimento, nonché un breve riepilogo finale.
     {:tip}
 
-5. Esegui l'accesso a WebHost Manager e vai alla configurazione di backup tramite **Home** > **Backup** > **Backup Configuration**.
+5. Accedi a WebHost Manager e vai alla configurazione di backup tramite **Home** > **Backup** > **Backup Configuration**.
 
 6. Modifica la configurazione per salvare i backup nel nuovo punto di montaggio.
     - Modifica la directory di backup predefinita immettendo il percorso assoluto alla nuova ubicazione al posto della directory `/backup/`.

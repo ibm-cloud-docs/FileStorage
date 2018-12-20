@@ -13,9 +13,9 @@ lastupdated: "2018-11-30"
 
 # {{site.data.keyword.filestorage_short}} unter Linux anhängen
 
-Stellen Sie zunächst sicher, dass der Host, der auf den {{site.data.keyword.filestorage_full}}-Datenträger zugreifen soll, über das [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} autorisiert ist.
+Stellen Sie zunächst sicher, dass der Host, der auf den {{site.data.keyword.filestorage_full}}-Datenträger zugreifen soll, über das [{{site.data.keyword.slportal}} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/){:new_window} autorisiert ist.
 
-1. Klicken Sie auf der {{site.data.keyword.filestorage_short}}-Listenseite auf **Aktionen**, die dem neuen gemeinsam genutzten Speicher zugeordnet sind, und klicken Sie auf **Host autorisieren**.
+1. Klicken Sie auf der {{site.data.keyword.filestorage_short}}-Listenseite auf den Link **Aktionen**, die dem neuen gemeinsam genutzten Speicher zugeordnet sind, und klicken Sie auf **Host autorisieren**.
 2. Wählen Sie mindestens einen Host in der Liste aus und klicken Sie auf **Abschicken**. Durch diese Aktion wird der Host für den Zugriff auf den gemeinsam genutzten Speicher autorisiert.
 
 ## Gemeinsam genutzten {{site.data.keyword.filestorage_short}}-Speicher anhängen
@@ -25,7 +25,7 @@ Verwenden Sie die folgenden Anweisungen, um eine Linux-basierte Instanz von {{si
 Der Mountpunkt der Dateispeicherinstanz kann von der {{site.data.keyword.filestorage_short}}-Listenseite oder über den API-Aufruf - `SoftLayer_Network_Storage::getNetworkMountAddress()` abgerufen werden.
 {:tip}
 
-1. Installieren Sie die erforderlichen Pakete/Tools.
+1. Installieren Sie die erforderlichen Tools.
    ```
    # yum -y install nfs-utils nfs-utils-lib
    ```
@@ -85,7 +85,8 @@ Der Mountpunkt der Dateispeicherinstanz kann von der {{site.data.keyword.filesto
 
    Wenn der Befehl ohne Fehler ausgeführt wird, ist Ihre Einrichtung abgeschlossen.
 
-   Bei Verwendung von NFS 4.1 fügen Sie dem Mountbefehl die Angabe `sec=sys` hinzu, um Probleme mit Dateieigentumsrechten zu vermeiden.{:tip}
+   Bei Verwendung von NFS 4.1 fügen Sie dem Mountbefehl die Angabe `sec=sys` hinzu, um Probleme mit Dateieigentumsrechten zu vermeiden.
+   {:tip}
 
 
 ## `no_root_squash` für NFS implementieren (optional)

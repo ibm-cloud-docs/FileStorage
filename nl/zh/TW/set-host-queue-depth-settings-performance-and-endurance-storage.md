@@ -2,46 +2,47 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-11-13"
 
 ---
 {:new_window: target="_blank"}
 
-# 調整主機佇列深度設定
+# Ajustando as configurações de profundidade da fila do host
 
-{{site.data.keyword.BluSoftlayer_full}} 建議針對每個效能層級使用最大主機及應用程式輸入/輸出 (I/O) 佇列深度。 
+O {{site.data.keyword.BluSoftlayer_full}} sugere uma profundidade máxima de fila de entrada/saída (E/S) do host e do aplicativo para cada camada de desempenho.
 
 <table align="center">
-  <caption>每一個 IOPS 層級的建議佇列深度</caption>
+  <caption>Profundidade da fila recomendada para cada camada de IOPS</caption>
         <thead>
 	    <tr>
-		<th>效能層級</th>
-		<th>最大主機佇列深度</th>
+		<th>Camada de desempenho</th>
+		<th>Profundidade máxima da fila do host</th>
 	    </tr>
 	</thead>
 	<tbody>
    	    <tr>
-		<td style="text-align: center; vertical-align: middle;">每 GB 0.25 IOPS</td>
+		<td style="text-align: center; vertical-align: middle;">0,25 IOPS por GB</td>
 		<td style="text-align: center; vertical-align: middle;">8</td>
 	    </tr>
 	    <tr>
-		<td style="text-align: center; vertical-align: middle;">每 GB 2 IOPS</td>
+		<td style="text-align: center; vertical-align: middle;">2 IOPS por GB</td>
 		<td style="text-align: center; vertical-align: middle;">24</td>
 	    </tr>
 	    <tr>
-		<td style="text-align: center; vertical-align: middle;">每 GB 4 IOPS</td>
+		<td style="text-align: center; vertical-align: middle;">4 IOPS por GB</td>
 		<td style="text-align: center; vertical-align: middle;">56</td>
             </tr>
          </tbody>
 </table>
 
 
-主機設定不會影響磁碟及控制器延遲。它只會影響主機及應用程式所觀察到的延遲。
+A configuração do host não afeta a latência do disco e do controlador. Ela afeta somente a latência observada pelo host e pelo aplicativo.
 
-超出所列數字的佇列深度可能會增加主機 I/O 延遲，而小於所列數字的佇列深度可能會降低主機 I/O 效能。因為每一個應用程式都不同，所以需要調整及觀察才能達到最大儲存空間效能。
+A profundidade da fila que excede os números listados pode aumentar a latência de E/S do host. A profundidade da fila menor que o número listado pode reduzir o desempenho de E/S do host. Como cada aplicativo é diferente, o ajuste e a observação são necessários para alcançar o desempenho máximo de armazenamento.
 
-主機佇列深度通常是在主機匯流排配接卡驅動程式或 Hypervisor 調整，有時是在應用程式中進行調整。標準預設值（例如 32 或 64）可能會導致過多的主機或應用程式延遲。
+A profundidade da fila do host é geralmente ajustada no driver adaptador de barramento de host ou no hypervisor e, às vezes, no aplicativo. Padrões, como 32 ou 64, podem causar latência excessiva de host ou aplicativo.
 
-如果有一台主機或 Hypervisor 正在使用多個效能層級，請在速度最快的層級使用佇列深度，然後在最慢的效能層級觀察延遲。 
+Se um host ou hypervisor estiver usando múltiplas camadas de desempenho, use a profundidade da fila para
+a camada mais rápida e observe a latência na camada de desempenho mais lenta.
 
-如果無法接受最低層級的延遲，則請調整佇列深度，直到達到所有層級的延遲與效能平衡為止。
+Se a latência na camada mais baixa for inaceitável, ajuste a profundidade da fila até que o balanceamento da latência e do desempenho seja alcançado em todas as camadas.

@@ -12,6 +12,7 @@ lastupdated: "2018-11-30"
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 
+
 # Einführung in {{site.data.keyword.filestorage_short}}
 
 {{site.data.keyword.filestorage_full}} ist ein persistenter, schneller und flexibler, NFS-basierter {{site.data.keyword.filestorage_short}}, der über ein Netz angeschlossen ist. In dieser Umgebung mit NAS-Speicher (NAS – Network-attached Storage) haben Sie vollständige Kontrolle über die Funktion und Leistung Ihrer gemeinsam genutzten Dateispeicher. Gemeinsam genutzte {{site.data.keyword.filestorage_short}}-Speicher können aus Gründen der Ausfallsicherheit mit bis zu 64 autorisierten Geräten über gesteuerte TCP/IP-Verbindungen verbunden werden.
@@ -112,7 +113,7 @@ Endurance {{site.data.keyword.filestorage_short}} ist in vier IOPS-Leistungsstuf
 
 - **10 IOPS pro GB** sind für anspruchsvollste Workloads vorgesehen, wie zum Beispiel für die von NoSQL-Datenbanken generierten Workloads und für die Datenverarbeitung von Analysen (Analytics). Diese Stufe ist nur für Speicher verfügbar, der in [ausgewählten Rechenzentren](new-ibm-block-and-file-storage-location-and-features.html) mit einer Größe von bis zu 4 TB bereitgestellt wird.
 
-Bis zu 48.000 E/A-Operationen pro Sekunde sind mit einem Endurance-Datenträger in der Größe von 12 TB verfügbar.
+Bis zu 48.000 IOPS sind bei einem 12-TB-Endurance-Datenträger verfügbar.
 
 Die Auswahl der richtigen Endurance-Stufe für Ihre Workload spielt eine wichtige Rolle. Ebenso wichtig ist die Verwendung der richtigen Blockgröße, der Ethernet-Verbindungsgeschwindigkeit sowie der Anzahl der Hosts, die zur Erzielung der maximalen Leistung erforderlich sind. Wenn einer dieser Aspekte nicht mit den anderen im Einklang steht, kann dies erhebliche Auswirkungen auf den resultierenden Durchsatz haben.
 
@@ -123,7 +124,7 @@ Performance ist eine Klasse von {{site.data.keyword.filestorage_short}}, die auf
 Der Zugriff auf Performance for {{site.data.keyword.filestorage_short}} und das Anhängen erfolgen über eine NFS-Verbindung (NFS - Network File System). {{site.data.keyword.filestorage_short}} wird in der Regel dann verwendet, wenn Zugriffe auf den Datenträger durch mehrere Server gleichzeitig stattfinden. Konsistente Performance-Datenträger können nach den Größen und E/A-Operationen pro Sekunde (IOPS) in Tabelle 1 bestellt und mit Linux-Betriebssystemen verwendet werden.
 
 <table cellpadding="1" cellspacing="1" style="width: 99%;">
- <caption>Tabelle 3 enthält die Größe und die IOPS-Kombinationen von Performance-Speicher.<br/><sup><img src="/images/numberone.png" alt="Fußnote" /></sup> In ausgewählten Rechenzentren sind mehr als 6.000 E/A-Operationen pro Sekunde (IOPS) verfügbar.</caption>
+ <caption>Tabelle 3 enthält die Größe und die IOPS-Kombinationen von Performance-Speicher.<br/><sup><img src="/images/numberone.png" alt="Footnote" /></sup> Ein IOPS-Grenzwert über 6.000 ist in ausgewählten Rechenzentren verfügbar.</caption>
         <colgroup>
           <col/>
           <col/>
@@ -198,7 +199,7 @@ Performance-Datenträger wurden dazu entwickelt, einen konsistenten Betrieb nahe
 
 **Blockgröße**
 
-IOPS für Endurance und Performance basieren auf einer Blockgröße von 16 KB und einer 50-prozentigen Zufallsworkload aus einem 50:50-Mix von Schreib- und Leseoperationen. Ein 16-KB-Block entspricht einer Schreiboperation auf dem Datenträger.
+IOPS für Endurance und Performance basiert auf einer Blockgröße von 16 KB mit einer 50/50-Lese-/Schreibworkload mit 50 Prozent Zufälligkeit. Ein 16-KB-Block entspricht einem Schreibvorgang auf dem Datenträger.
 {:important}
 
 Die Blockgröße, die von Ihrer Anwendung verwendet wird, wirkt sich direkt auf die Speicherleistung aus. Wenn die von Ihrer Anwendung verwendete Blockgröße kleiner als 16 KB ist, wird der IOPS-Grenzwert vor der Durchsatzbegrenzung erreicht. Wenn dagegen die von Ihrer Anwendung verwendete Blockgröße größer als 16 KB ist, wird die Durchsatzbegrenzung vor dem IOPS-Grenzwert erreicht.
@@ -262,15 +263,15 @@ Ein weitere Faktor, der zu beachten ist, ist die Anzahl der Hosts, die Ihren Dat
 
 **Netzverbindung**
 
-Die Geschwindigkeit Ihrer Ethernet-Verbindung muss höher als der erwartete maximale Durchsatz von Ihrem Datenträger sein. Grundsätzlich dürfte Ihre Ethernet-Verbindung nicht über 70% der verfügbaren Bandbreite hinaus ausgelastet werden. Wenn Sie zum Beispiel 6.000 IOPS haben und eine Blockgröße von 16 KB verwenden, kann der Datenträger einen Durchsatz von annähernd 94 MB pro Sekunde verarbeiten. Wenn Sie eine 1-Gb/s-Ethernet-Verbindung zu Ihrer LUN haben, wird diese zu einem Engpass, wenn Ihre Server versuchen, den maximal verfügbaren Durchsatz zu nutzen. Das liegt daran, dass 70 Prozent der theoretischen Begrenzung einer 1-Gb/s-Ethernet-Verbindung (125 MB pro Sekunde) nur 88 MB pro Sekunde zulassen würden.
+Die Geschwindigkeit Ihrer Ethernet-Verbindung muss höher als der erwartete maximale Durchsatz von Ihrem Datenträger sein. Grundsätzlich dürfte Ihre Ethernet-Verbindung nicht über 70% der verfügbaren Bandbreite hinaus ausgelastet werden. Wenn Sie beispielsweise über 6.000 IOPS verfügen und eine Blockgröße von 16 KB verwenden, sind auf dem Datenträger etwa 94 MBps möglich. Bei einer Ethernet-Verbindung von 1 Gb/s zu einer LUN wird diese Verbindung zu einem Engpass, wenn die Server versuchen, den maximal verfügbaren Durchsatz zu nutzen. Ursache hierfür ist, dass 70 Prozent des theoretischen Grenzwerts von einer Ethernet-Verbindung mit 1 Gb/s (125 MB pro Sekunde) nur 88 MB pro Sekunde zulassen würden.
 
 Zur Erzielung der maximalen E/A-Operationen pro Sekunde müssen geeignete Netzressourcen eingesetzt werden. Außerdem sind die Nutzung privater Netze außerhalb des Speichers sowie hostseitige und anwendungsspezifische Optimierungen (zum Beispiel IP-Stack oder [Warteschlangenlängen](set-host-queue-depth-settings-performance-and-endurance-storage.html) und andere Einstellungen) zu berücksichtigen.
 
-Der Speicherdatenverkehr ist in der gesamten Netznutzung von öffentlichen virtuellen Servern enthalten. Die [Dokumentation zu virtuellen Servern](https://{DomainName}/docs/vsi/vsi_public.html#public-virtual-servers) enthält Informationen zu den möglichen Einschränkungen im Zusammenhang mit dem Service.
+Der Speicherdatenverkehr ist in der gesamten Netznutzung von öffentlichen virtuellen Servern enthalten. Weitere Informationen zu den Grenzwerten, die vom Service auferlegt werden können, finden Sie in der [Dokumentation zu virtuellen Servern](https://{/docs/vsi/vsi_public.html#public-virtual-servers).
 
 **NFS-Version**
 
-NFS Version 3 und NFS Version 4.1 werden in der Umgebung von {{site.data.keyword.BluSoftlayer_full}} unterstützt. NFS Version 3 wird jedoch bevorzugt, da NFS Version 4.1 ein Protokoll mit Zustandsüberwachung (und nicht wie NFSv3 ohne Zustandsüberwachung) ist und bei Netzereignissen Probleme mit dem Protokoll auftreten können. NFS Version 4.1 muss alle Operationen ruhen lassen und anschließend eine Sperrenrückforderung ausführen. Auf einem relativ ausgelasteten NFS-Dateiserver kann die erhöhte Latenz zu Unterbrechungen führen. Die fehlende Multipath/Trunking-Funktionalität in NFS v4.1 kann darüber hinaus die Wiederherstellung des NFS-Betriebs verlängern.
+NFS Version 3 und NFS Version 4.1 werden in der Umgebung von {{site.data.keyword.BluSoftlayer_full}} unterstützt. NFS Version 3 wird jedoch bevorzugt, da NFS Version 4.1 ein Protokoll mit Zustandsüberwachung (und nicht wie NFSv3 ohne Zustandsüberwachung) ist und bei Netzereignissen Probleme mit dem Protokoll auftreten können. NFS Version 4.1 muss alle Operationen ruhen lassen und anschließend eine Sperrenrückforderung ausführen. Auf einem relativ ausgelasteten NFS-Dateiserver kann die erhöhte Latenz zu Unterbrechungen führen. Die fehlende Multipath- und Trunking-Funktionalität in NFS v4.1 kann darüber hinaus die Wiederherstellung des NFS-Betriebs verlängern.
 
 ## Bestellung abschicken
 
@@ -280,7 +281,7 @@ Wenn Sie bereit sind, Ihre Bestellung abzuschicken, führen Sie die [hier](provi
 
 Wenn Ihre Bereitstellungsanforderung abgeschlossen ist, können Sie Ihren Hosts die Berechtigung erteilen, auf den neuen Speicher zuzugreifen und die Verbindung zu konfigurieren. Folgen Sie je nach dem Betriebssystem Ihres Hosts dem entsprechenden Link.
 - [Zugriff auf {{site.data.keyword.filestorage_short}} unter Linux](accessing-file-storage-linux.html)
-- [NFS/File Storage in CentOS anhängen](mounting-nsf-file-storage.html)
+- [{{site.data.keyword.filestorage_short}} unter CentOS anhängen](mounting-nsf-file-storage.html)
 - [{{site.data.keyword.filestorage_short}} unter CoreOS anhängen](mounting-storage-coreos.html)
 - [{{site.data.keyword.filestorage_short}} für Sicherung mit cPanel konfigurieren](configure-backup-cpanel.html)
 - [{{site.data.keyword.filestorage_short}} für Sicherung mit Plesk konfigurieren](configure-backup-plesk.html)

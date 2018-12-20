@@ -15,14 +15,14 @@ lastupdated: "2018-11-30"
 
 您可以使用这些指示信息在 Plesk 中配置 {{site.data.keyword.filestorage_full}} 进行备份。假定以 root 用户或 sudo 用户身份通过 SSH 登录到系统，并且有完整的管理级别 Plesk 访问权。此示例基于 CentOS7 主机。
 
-有关来自供应商的更多信息，请参阅 [Plesk 的备份和复原文档 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.plesk.com/en-US/12.5/administrator-guide/backing-up-and-restoration.59256/){:new_window}。
+有关更多信息，请参阅 [Plesk 的备份和复原文档 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://docs.plesk.com/en-US/12.5/administrator-guide/backing-up-and-restoration.59256/){:new_window}。
 {:tip}
 
 1. 通过 SSH 连接到主机。
 2. 确保存在安装点目标。<br />
 
    Plesk 有两个备份存储选项。一个是内部 Plesk 存储器，这是 Plesk 服务器上的存储器。另一个是外部 FTP 存储器，这是 Web 或本地网络中某个外部服务器上的存储器。通常在 Plesk 框中，内部备份存储在 `/var/lib/psa/dumps` 中，并使用
-`/tmp` 作为临时目录。在此示例中，临时目录会保留为本地目录，但 `dumps` 目录会移至 STaaS 目标 (`/backup/psa/dumps`)。不需要 FTP 用户凭证。
+`/tmp` 作为临时目录。在此示例中，临时目录会保留为本地目录，但 `dumps` 目录会移至 {{site.data.keyword.filestorage_short}} 目标 (`/backup/psa/dumps`)。不需要 FTP 用户凭证。
    {:note}
 3. 如[在 Red Hat Enterprise Linux 上访问 {{site.data.keyword.filestorage_short}}](accessing-file-storage-linux.html) 和[在 CentOS 中安装 NFS/{{site.data.keyword.filestorage_short}}](mounting-nsf-file-storage.html) 或[在 CoreOS 中安装 NFS/{{site.data.keyword.filestorage_short}}](mounting-storage-coreos.html) 中所述，配置 {{site.data.keyword.filestorage_short}}。将卷安装到 `/backup` 并且在文件系统表 (`/etc/fstab`) 中将其配置为启用启动时安装。<br />
 

@@ -24,7 +24,7 @@ lastupdated: "2018-10-31"
     - Payment Card Industry (PCI)
     - バーゼル II
     - California Security Breach Information Act (SB 1386)
-    - EU データ保護指令 95/46/EC
+    - EU データ保護指令 (95/46/EC)
 
 ## スナップショットまたは複製ストレージの保護  
 

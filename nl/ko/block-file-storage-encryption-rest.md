@@ -24,7 +24,7 @@ lastupdated: "2018-10-31"
     - PCI(Payment Card Industry),
     - Basel II,
     - California Security Breach Information Act(SB 1386) 및
-    - EU Data Protection Directive 95/46/EC 준수.
+    - EU Data Protection Directive (95/46/EC) 준수.
 
 ## 스냅샷 또는 복제된 스토리지의 보안  
 

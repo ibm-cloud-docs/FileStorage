@@ -10,73 +10,76 @@ lastupdated: "2018-11-30"
 {:note: .note}
 {:important: .important}
 
-# 建立重複的 {{site.data.keyword.filestorage_short}}
+# Criando um {{site.data.keyword.filestorage_short}} duplicado
 
-您可以建立現有 {{site.data.keyword.BluSoftlayer_full}} {{site.data.keyword.filestorage_full}} 的重複磁區。依預設，重複磁區會繼承原始磁區的容量及效能選項，而且會有到達 Snapshot 中該時間點之前的資料副本。   
+É possível criar uma duplicata de um {{site.data.keyword.BluSoftlayer_full}} {{site.data.keyword.filestorage_full}} existente. O volume duplicado herda as opções de capacidade e desempenho do volume original por padrão e tem uma cópia dos dados até o momento de uma captura instantânea.   
 
-因為重複磁區的基礎是時間點 Snapshot 中的資料，所以原始磁區上需要有 Snapshot 空間，您才能建立重複磁區。若要進一步瞭解 Snapshot 以及如何訂購 Snapshot 空間，請參閱 [Snapshot 文件](snapshots.html)。  
+Como a duplicata é baseada nos dados em uma captura instantânea de um momento, o espaço de captura instantânea é necessário no volume original antes de poder criar uma duplicata. Para saber mais sobre capturas
+instantâneas e como solicitar espaço de captura instantânea, consulte [Documentação
+de captura instantânea](snapshots.html).
 
-您可以從**主要**及**抄本**磁區建立重複磁區。新的重複磁區會建立在與原始磁區相同的資料中心內。如果您建立抄本磁區的重複磁區，則新的磁區會建立在與抄本磁區相同的資料中心內。
+As duplicatas podem ser criadas de ambos os volumes, o **primário** e o de **réplica**. A nova duplicata é criada no mesmo data center que o volume original. Se você criar uma duplicata de um volume de réplica, o novo volume será criado no mesmo data center que o volume de réplica.
 
-如果您是 {{site.data.keyword.containerlong}} 的「專用」帳戶使用者，請參閱 [{{site.data.keyword.containerlong_notm}} 文件](/docs/containers/cs_storage_file.html#backup_restore)中您用於複製磁區的選項。
+Se você for um usuário da conta Dedicada do {{site.data.keyword.containerlong}}, consulte suas opções para duplicar um volume na [{{site.data.keyword.containerlong_notm}}documentação](/docs/containers/cs_storage_file.html#backup_restore).
 {:tip}
 
-佈建儲存空間之後，主機就可以存取重複磁區來進行讀寫。不過，除非從原始磁區到重複磁區的資料複製已完成，否則不容許進行 Snapshot 及抄寫。資料複製完成時，就可以管理重複磁區，並用來作為完全無關的磁區。
+Os volumes duplicados podem ser acessados por um host para leitura/gravação assim que o armazenamento é provisionado. No entanto, capturas instantâneas e replicação não são permitidas até que a cópia de dados do original para a duplicata seja concluída. Quando a cópia de dados for concluída, a duplicata poderá ser gerenciada e usada como um volume independente.
 
-此特性適用於大部分位置。如需可用的資料中心清單，請按一下[這裡](new-ibm-block-and-file-storage-location-and-features.html)。
+Esse recurso está disponível na maioria dos locais. Clique [aqui](new-ibm-block-and-file-storage-location-and-features.html) para obter a lista de data centers disponíveis.
 
-重複磁區的一些常見用途：
-- **災難回復測試**：建立抄本磁區的重複磁區，驗證資料是完整的，而且可以在發生災難時使用，而不岔斷抄寫。
-- **正式副本**：使用儲存空間磁區作為正式副本，您可以從正式副本建立多個實例以進行各種用途。
-- **重新整理資料**：建立正式作業資料副本，以裝載至非正式作業環境進行測試。
-- **從 Snapshot 還原**：從 Snapshot 還原具有特定檔案/日期之原始磁區上的資料，而不使用 Snapshot 還原功能來改寫整個原始磁區。
-- **開發及測試（開發/測試）**：一次最多可同時建立磁區的四個重複磁區，以建立重複資料來進行開發及測試。
-- **調整儲存空間大小**：建立具有新大小及（或）IOPS 速率的磁區，而不需要移動資料。  
+Alguns usos comuns para um volume duplicado incluem os exemplos a seguir.
+- **Teste de recuperação de desastre**. Crie uma duplicata de seu volume de réplica para verificar se os dados estão intactos e podem ser usados caso ocorra um desastre, sem interromper a replicação.
+- **Cópia de ouro**. Use um volume de armazenamento como uma cópia de ouro da qual é possível criar múltiplas instâncias para vários usos.
+- **Atualizações de dados**. Crie uma cópia de seus dados de produção para montar em seu ambiente de não produção para teste.
+- **Restauração por meio de captura instantânea**. Restaure dados no volume original com arquivos/data específicos de uma captura instantânea sem sobrescrever o volume original inteiro com a função de restauração de captura instantânea.
+- **Desenvolvimento e teste (dev/test)**. Crie até quatro duplicatas simultâneas de um volume ao mesmo tempo para criar dados duplicados para desenvolvimento e teste.
+- **Redimensionamento de armazenamento**. Crie um volume com novo tamanho, taxa IOPS, ou ambos, sem a necessidade de mover seus dados.  
 
-您可以利用下列幾種方法透過 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} 來建立重複磁區。
+É possível criar um volume duplicado por meio do [{{site.data.keyword.slportal}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://control.softlayer.com/){:new_window} de algumas maneiras.
 
 
-## 建立儲存空間清單中特定磁區的重複磁區
+## Criando uma duplicata de um volume específico na Lista de armazenamento
 
-1. 移至您的 {{site.data.keyword.filestorage_short}} 清單
-    - 從客戶入口網站，按一下**儲存空間** > **{{site.data.keyword.filestorage_short}}**，或者
-    - 從 {{site.data.keyword.BluSoftlayer_full}} 型錄，按一下**基礎架構** > **儲存空間** > **{{site.data.keyword.filestorage_short}}**。
-2. 從清單中選取 LUN，然後按一下**動作** > **複製 LUN（磁區）**
-3. 選擇 Snapshot 選項：
-    - 如果您從非抄本磁區訂購，請執行下列動作：
-      - 選取**從新 Snapshot 建立** – 此動作會建立要用於重複磁區的 Snapshot。如果您的磁區沒有目前 Snapshot，或您要建立該時間點的重複項目，則請使用此選項。</br>
-      - 選取**從最新 Snapshot 建立** – 此動作會從此磁區的現有最新 Snapshot 建立重複磁區。
-    - 如果您從抄本磁區訂購 – Snapshot 的唯一選項是使用可用的最新 Snapshot。
-4. 「儲存空間類型」及「位置」會維持與原始磁區相同。
-5. 按小時或按月計費 – 您可以選擇佈建按小時或按月計費的重複 LUN。會自動選取原始磁區的計費類型。如果您要為重複儲存空間選擇不同的計費類型，則可以在這裡進行該選擇。
-5. 如果您想要的話，可以指定新磁區的 IOPS 或「IOPS 層級」。依預設，會設定原始磁區的 IOPS 指定。會顯示可用的效能與大小組合。
-    - 如果您的原始磁區是 0.25 IOPS 的「耐久性」層級，則無法進行新的選擇。
-    - 如果您的原始磁區是 2、4 或 10 IOPS 的「耐久性」層級，則可以將新磁區移到這些層級之間的任何位置。
-6. 您可以更新新磁區的大小，讓它大於原始磁區。依預設，會設定原始磁區的大小。
+1. Acesse sua lista de {{site.data.keyword.filestorage_short}}
+    - No portal do cliente, clique em **Armazenamento** > **{{site.data.keyword.filestorage_short}}** OU
+    - No catálogo do {{site.data.keyword.BluSoftlayer_full}}, clique em **Infraestrutura** > **Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
+2. Selecione um LUN na lista e clique em **Ações** > **Duplicar LUN (Volume)**
+3. Escolha sua opção de captura instantânea.
+    - Se você pedir por meio de um volume que não é de réplica,
+      - Selecione **Criar de uma nova captura instantânea** - essa ação cria uma captura instantânea a ser usada para a duplicata. Use essa opção se o seu volume não tiver capturas instantâneas atuais ou se você desejar criar uma duplicata logo em seguida.</br>
+      - Selecione **Criar da captura instantânea mais recente** - essa ação cria uma duplicata da captura instantânea mais recente existente para esse volume.
+    - Se você pedir usando um volume de réplica, a única opção para a captura instantânea será usar a captura instantânea mais recente disponível.
+4. O Tipo de armazenamento e o Local permanecem iguais aos do volume original.
+5. Faturamento por hora ou mensal – é possível escolher provisionar o LUN duplicado com faturamento por hora ou mensal. O tipo de faturamento para o volume original é selecionado automaticamente. Se você deseja escolher um tipo de faturamento diferente para seu armazenamento duplicado, é possível fazer essa seleção aqui.
+5. É possível especificar o IOPS ou a Camada de IOPS para o novo volume, caso deseje. A designação de IOPS do volume original é configurada por padrão. As combinações de desempenho e tamanho disponíveis são exibidas.
+    - Se o seu volume original for a camada Endurance 0,25 IOPS, não será possível fazer uma nova seleção.
+    - Se seu volume original for a camada de 2, 4 ou 10 IOPS do Endurance, será possível se mover em qualquer lugar entre essas camadas para o novo volume.
+6. É possível atualizar o tamanho do novo volume para que seja maior que o do original. O tamanho do volume original é configurado por padrão.
 
-   {{site.data.keyword.filestorage_short}} 可以調整為磁區原始大小的 10 倍。
+   O {{site.data.keyword.filestorage_short}} pode ser redimensionado para 10 vezes o tamanho original do volume.
    {:tip}
-7. 您可以更新新磁區的 Snapshot 空間，以新增更多、更少 Snapshot 空間，或不新增 Snapshot 空間。依預設，會設定原始磁區的 Snapshot 空間。
-8. 按一下**繼續**，以下訂單。
+7. É possível atualizar o espaço de captura instantânea do novo volume para incluir mais, menos ou nenhum espaço de captura instantânea. O espaço de captura instantânea do volume original é configurado por padrão.
+8. Clique em  ** Continuar **  para fazer seu pedido.
 
 
-## 從特定 Snapshot 建立重複磁區
+## Criando uma duplicata de uma Captura instantânea específica
 
-1. 移至您的 {{site.data.keyword.filestorage_short}} 清單
-2. 按一下清單中的 **LUN/磁區**，以檢視詳細資料頁面。它可以是抄本或非抄本磁區。
-3. 向下捲動並從詳細資料頁面的清單中選取現有 Snapshot，然後按一下**動作** > **複製**。   
-4. 「儲存空間類型」（「耐久性」或「效能」）及「位置」會維持與原始磁區相同。
-5. 會顯示可用的效能與大小組合。依預設，會設定原始磁區的 IOPS 指定。您可以指定新磁區的 IOPS 或「IOPS 層級」。
-    - 如果您的原始磁區是 0.25 IOPS 的「耐久性」層級，則無法進行新的選擇。
-    - 如果您的原始磁區是 2、4 或 10 IOPS 的「耐久性」層級，則可以將新磁區移到這些層級之間的任何位置。
-6. 您可以更新新磁區的大小，讓它大於原始磁區。依預設，會設定原始磁區的大小。
+1. Acesse sua lista de {{site.data.keyword.filestorage_short}}
+2. Clique em um volume na lista para visualizar a página de detalhes. Ele
+pode ser um volume de réplica ou não réplica.
+3. Role para baixo e selecione uma captura instantânea existente na lista na página de detalhes e clique em **Ações** > **Duplicar**.   
+4. O Tipo de armazenamento (Endurance ou Performance) e o Local permanecem iguais ao do volume original.
+5. As combinações de desempenho e tamanho disponíveis são exibidas. A designação de IOPs do volume original é configurada por padrão. É possível especificar o IOPS ou a Camada de IOPS para o novo volume.
+    - Se o seu volume original for a camada Endurance 0,25 IOPS, não será possível fazer uma nova seleção.
+    - Se seu volume original for a camada de 2, 4 ou 10 IOPS do Endurance, será possível se mover em qualquer lugar entre essas camadas para o novo volume.
+6. É possível atualizar o tamanho do novo volume para que seja maior que o original. O tamanho do volume original é configurado por padrão.
 
-   {{site.data.keyword.filestorage_short}} 可以調整為磁區原始大小的 10 倍。
+   O {{site.data.keyword.filestorage_short}} pode ser redimensionado para 10 vezes o tamanho original do volume.
    {:tip}
-7. 您可以更新新磁區的 Snapshot 空間，以新增更多、更少 Snapshot 空間，或不新增 Snapshot 空間。依預設，會設定原始磁區的 Snapshot 空間。
-8. 按一下**繼續**，以訂購重複項目。
+7. É possível atualizar o espaço de captura instantânea do novo volume para incluir mais, menos ou nenhum espaço de captura instantânea. O espaço de captura instantânea do volume original é configurado por padrão.
+8. Clique em **Continuar** para fazer seu pedido para a duplicata.
 
 
-## 管理重複磁區
+## Gerenciando seu volume duplicado
 
-當資料從原始磁區複製到重複磁區時，您會在詳細資料頁面上看到一個顯示正在進行複製的狀態。在此期間，您可以連接主機，並且讀取/寫入磁區，但無法建立 Snapshot 排程。複製處理程序完成時，新的磁區即與原始磁區無關，而且可以如常使用 Snapshot 及抄寫進行管理。
+Enquanto os dados estão sendo copiados do volume original para a duplicata, é possível ver um status na página de detalhes mostrando que a duplicação está em andamento. Durante esse tempo, é possível conectar-se a um host e ler/gravar no volume, mas não é possível criar planejamentos de captura instantânea. Quando o processo de duplicação é concluído, o novo volume fica independente do original e pode ser gerenciado com capturas instantâneas e replicação normalmente.

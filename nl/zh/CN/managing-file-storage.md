@@ -39,7 +39,7 @@ lastupdated: "2018-11-30"
 
 可以查看主机有权访问的卷，包括建立连接所需的信息 - 卷名、存储类型、目标地址、容量和位置。
 
-1. 在 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} 中，单击**设备** > **设备列表**。
+1. 在 [{{site.data.keyword.slportal}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window} 中单击**设备** > **设备列表** 
 2. 单击相应的设备。
 2. 选择“存储”选项卡。
 
@@ -62,7 +62,7 @@ lastupdated: "2018-11-30"
 
 ### 通过设备列表撤销访问权
 
-1. 在 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} 中，单击**设备** > **设备列表**。
+1. 在 [{{site.data.keyword.slportal}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window} 中单击**设备** > **设备列表** 
 2. 双击相应的设备。
 3. 选择**存储**选项卡。
 4. 这将向您显示此特定主机有权访问的存储卷的列表，全部按存储类型（块、文件或其他）进行分组。选择要从中撤销访问权的卷旁边的相应**操作**菜单，然后单击**撤销访问权**。
@@ -85,7 +85,7 @@ lastupdated: "2018-11-30"
 
 ## 取消存储卷
 
-如果不再需要特定卷，可以将其取消。要取消存储卷，首先需要撤销所有主机对该卷的访问权。
+如果不再需要特定卷，可以取消该存储器。要取消存储卷，首先需要撤销所有主机对该卷的访问权。
 
 1. 单击**存储** > **{{site.data.keyword.filestorage_short}}**。
 2. 单击要取消的卷的**操作**，然后选择**取消 {{site.data.keyword.filestorage_short}}**。

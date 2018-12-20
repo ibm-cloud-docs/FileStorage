@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-13"
 
 ---
 {:new_window: target="_blank"}
@@ -12,7 +12,7 @@ lastupdated: "2018-10-31"
 
 # Istantanee
 
-Le istantanee sono una funzione di {{site.data.keyword.filestorage_full}}. Un'istantanea rappresenta il contenuto di un volume a uno specifico punto temporale. Le istantanee ti consentono di proteggere i tuoi dati senza ripercussioni sulle prestazioni, con un consumo minimo di spazio e sono considerate la prima linea di difesa per la protezione dei dati. Se un utente accidentalmente modifica o elimina dati cruciali da un volume, è possibile ripristinarli in modo facile e veloce da una copia di istantanea.
+Le istantanee sono una funzione di {{site.data.keyword.filestorage_full}}. Un'istantanea rappresenta il contenuto di un volume a uno specifico punto temporale. Con le istantanee, puoi proteggere i tuoi dati senza alcuna ripercussione sulle prestazioni e un utilizzo minimo di spazio. Le istantanee sono considerate la tua prima linea di difesa per la protezione dei dati. Se un utente accidentalmente modifica o elimina dati cruciali da un volume, è possibile ripristinarli in modo facile e veloce da una copia di istantanea.
 
 {{site.data.keyword.filestorage_short}} ti fornisce due modi per acquisire le tue istantanee.
 
@@ -45,13 +45,13 @@ Le istantanee non sono sostituzioni della replica di ripristino di emergenza (DR
 
 ## Sicurezza
 
-Per impostazione predefinita, vengono crittografate anche tutte le istantanee e le repliche di {{site.data.keyword.filestorage_short}}. Questa funzione non può essere disattivata in base ai singoli volumi.Per ulteriori informazioni sulla crittografia dei dati inattivi gestita dal provider, consulta [Come rendere sicuri i tuoi dati](block-file-storage-encryption-rest.html). 
+Per impostazione predefinita, vengono crittografate anche tutte le istantanee e le repliche di {{site.data.keyword.filestorage_short}}. Questa funzione non può essere disattivata in base ai singoli volumi. Per ulteriori informazioni sulla crittografia dei dati inattivi gestita dal provider, consulta [Come rendere sicuri i tuoi dati](block-file-storage-encryption-rest.html).
 
-## In che modo le istantanee influenzano lo spazio su disco 
+## In che modo le istantanee influenzano lo spazio su disco
 
-Le copie di istantanea riducono al minimo il consumo di disco preservando i singoli blocchi invece dei file interi. Le copie di istantanea utilizzano spazio extra solo quando i file nel file system attivo vengono modificati o eliminati. Quando ciò si verifica, i blocchi file originali continuano a essere conservati come parte di una o più copie di istantanea.
+Le copie di istantanea riducono al minimo il consumo di disco preservando i singoli blocchi invece dei file interi. Le copie di istantanea utilizzano spazio extra solo quando i file nel file system attivo vengono modificati o eliminati.
 
-Nel file system attivo, i blocchi modificati vengono riscritti in ubicazioni differenti sul disco oppure completamente rimossi come blocchi file attivi. Di conseguenza, oltre allo spazio su disco utilizzato dai blocchi nel file system attivo modificato, lo spazio su disco utilizzato dai blocchi originali continua a essere riservato per riflettere lo stato del file system attivo prima della modifica.
+Nel file system attivo, i blocchi modificati vengono riscritti in ubicazioni differenti sul disco oppure completamente rimossi come blocchi file attivi. Quando i file vengono modificati o eliminati, i blocchi file originali vengono conservati come parte di una o più copie di istantanea. Di conseguenza, lo spazio su disco utilizzato dai blocchi originali continua a essere riservato per riflettere lo stato del file system attivo prima della modifica. Questo spazio viene riservato in aggiunta allo spazio su disco utilizzato dai blocchi nel file system attivo modificato.
 
 <table>
     <colgroup>

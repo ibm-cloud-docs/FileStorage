@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-29"
+lastupdated: "2018-11-30"
 
 ---
 {:new_window: target="_blank"}
@@ -11,6 +11,7 @@ lastupdated: "2018-10-29"
 {:important: .important}
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
+
 
 # Introduzione a {{site.data.keyword.filestorage_short}}
 
@@ -47,7 +48,7 @@ Avvaliti delle seguenti funzioni principali di {{site.data.keyword.filestorage_s
 
 Puoi selezionare la fatturazione mensile o oraria per un volume di file. Il tipo di fatturazione selezionato per un LUN si applica al suo spazio per le istantanee e alle sue repliche. Ad esempio, se esegui il provisioning di un LUN con fatturazione oraria, eventuali addebiti di istantanee o replica vengono fatturati in modo orario. Se esegui il provisioning di un LUN con fatturazione mensile, eventuali addebiti di istantanee o replica vengono fatturati in modo mensile.
 
-Con la **fatturazione oraria**, il numero di ore per cui il volume di file è esistito nell'account viene calcolato quando il LUN viene eliminato oppure alla fine del ciclo di fatturazione, a seconda di quale di queste condizioni si verifichi per prima. La fatturazione oraria è una buona scelta per l'archiviazione utilizzata per qualche giorno o per meno di un mese completo. La fatturazione oraria è disponibile solo per l'archiviazione di cui viene eseguito il provisioning in [data center selezionati](new-ibm-block-and-file-storage-location-and-features.html).
+Con la **fatturazione oraria**, il numero di ore per cui il volume di file è esistito nell'account viene calcolato quando il LUN viene eliminato oppure alla fine del ciclo di fatturazione, a seconda di quale di queste condizioni si verifica per prima. La fatturazione oraria è una buona scelta per l'archiviazione utilizzata per qualche giorno o per meno di un mese completo. La fatturazione oraria è disponibile solo per l'archiviazione di cui viene eseguito il provisioning in [data center selezionati](new-ibm-block-and-file-storage-location-and-features.html).
 
 Con la **fatturazione mensile**, il calcolo per il prezzo è a base proporzionale dalla data di creazione alla fine del ciclo di fatturazione e viene fatturato immediatamente. Non è previsto alcun rimborso se un volume viene eliminato prima della fine del ciclo di fatturazione. La fatturazione mensile è una buona scelta per l'archiviazione utilizzata nei carichi di lavoro di produzione che usano dati che devono essere archiviati e a cui bisogna accedere per lunghi periodi di tempo (un mese o più).
 
@@ -112,7 +113,7 @@ Con la **fatturazione mensile**, il calcolo per il prezzo è a base proporzional
 
 - **10 IOPS per GB** è progettato per i carichi di lavoro più esigenti quali quelli creati dai database NoSQL e l'elaborazione di dati per l'analisi. Questo livello è disponibile solo per l'archiviazione di cui viene eseguito il provisioning fino a 4 TB in [data center selezionati](new-ibm-block-and-file-storage-location-and-features.html).
 
-Sono disponibili fino a 48.000 IOPS con un volume Endurance di 12 TB.
+Sono disponibili fino a 48.000 IOPS con un volume Endurance di 12-TB.
 
 La scelta del livello Endurance corretto per il tuo carico di lavoro è un fattore chiave. È ugualmente importante utilizzare la dimensione blocco, la velocità di connessione Ethernet e il numero di host necessari corretti per ottenere le prestazioni massime. Se qualcuna di queste parti non si allinea con le altre, le ripercussioni sulla velocità effettiva risultante potrebbero essere di notevole entità.
 
@@ -123,7 +124,7 @@ Performance è una classe di {{site.data.keyword.filestorage_short}} progettata 
 A Performance per {{site.data.keyword.filestorage_short}} si accede, e viene montato, tramite una connessione NFS (Network File System). {{site.data.keyword.filestorage_short}} viene di norma utilizzato quando al volume accedono più server simultaneamente. Dei volumi Performance congruenti possono essere ordinati in base alle dimensioni e all'IOPS nella Tabella 1 e possono essere utilizzati con i sistemi operativi Linux.
 
 <table cellpadding="1" cellspacing="1" style="width: 99%;">
- <caption>La tabella 3 mostra le combinazioni di dimensione e iOPS per l'archiviazione Performance.<br/><sup><img src="/images/numberone.png" alt="Nota a piè di pagina" /></sup> Un limite IOPS superiore a 6000 è disponibile in data center selezionati.</caption>
+ <caption>La tabella 3 mostra le combinazioni di dimensione e IOPS per l'archiviazione Performance.<br/><sup><img src="/images/numberone.png" alt="Nota a piè di pagina" /></sup> Dei limiti IOPS superiori a 6000 sono disponibili in data center selezionati.</caption>
         <colgroup>
           <col/>
           <col/>
@@ -198,7 +199,7 @@ I volumi Performance sono progettati per operare in modo congruentemente prossim
 
 **Dimensione blocco**
 
-IOPS sia per Endurance che per Performance è basato su una dimensione di blocco di 16 KB con un carico di lavoro casuale al 50 percento e con lettura/scrittura al 50/50. Un blocco di 16 KB è l'equivalente di una scrittura sul volume.
+IOPS sia per Endurance che per Performance è basato su una dimensione di blocco di 16-KB con un carico di lavoro casuale al 50 percento e con lettura/scrittura al 50/50. Un blocco di 16-KB è l'equivalente di una scrittura sul volume.
 {:important}
 
 La dimensione del blocco utilizzata dalla tua applicazione influisce direttamente sulle prestazioni dell'archiviazione. Se la dimensione del blocco utilizzata dalla tua applicazione è inferiore a 16 KB, il limite IOPS si realizza prima del limite di velocità effettiva. Viceversa, se la dimensione del blocco utilizzata dalla tua applicazione è superiore a 16 KB, il limite di velocità effettiva si realizza prima del limite di IOPS.
@@ -262,15 +263,15 @@ Un altro fattore da considerare è il numero di host che sta utilizzando il tuo 
 
 **Connessione di rete**
 
-La velocità della tua connessione Ethernet deve essere superiore a quella effettiva massima prevista dal tuo volume. In generale, non prevedere di saturare la tua connessione Ethernet oltre il 70% della larghezza di banda disponibile. Ad esempio, se hai 6.000 IOPS e stai utilizzando una dimensione del blocco di 16 KB, il volume può gestire una velocità effettiva di circa 94 MBps. Se hai una connessione Ethernet da 1 Gbps al tuo LUN, diventa un collo di bottiglia quando i tuoi server provano a utilizzare la velocità effettiva massima disponibile. Ciò è dovuto al fatto che il 70 percento del limite teorico di una connessione Ethernet da 1 Gbps (125 MB al secondo) consentirebbe solo 88 MB al secondo.
+La velocità della tua connessione Ethernet deve essere superiore a quella effettiva massima prevista dal tuo volume. In generale, non prevedere di saturare la tua connessione Ethernet oltre il 70% della larghezza di banda disponibile. Ad esempio, se hai 6.000 IOPS e stai utilizzando una dimensione del blocco di 16-KB, il volume può gestire una velocità effettiva di circa 94-MBps. Se hai una connessione Ethernet da 1-Gbps al tuo LUN, diventa un collo di bottiglia quando i tuoi server provano a utilizzare la velocità effettiva massima disponibile. Ciò è dovuto al fatto che il 70 percento del limite teorico di una connessione Ethernet da 1-Gbps (125 MB al secondo) consentirebbe solo 88 MB al secondo.
 
 Per raggiungere l'IOPS massimo, è necessario che siano implementate delle risorse di rete adeguate. Altre considerazioni includono l'utilizzo della rete privata esternamente al lato archiviazione e host e le regolazioni specifiche per le applicazioni (stack di IP o [profondità di coda](set-host-queue-depth-settings-performance-and-endurance-storage.html) e altre impostazioni).
 
-Il traffico di archiviazione viene incluso nell'utilizzo di rete totale dei server virtuali pubblici. Consulta la [Documentazione Virtual Server](https://{DomainName}/docs/vsi/vsi_public.html#public-virtual-servers) per conoscere i limiti che possono essere applicati dal servizio.
+Il traffico di archiviazione viene incluso nell'utilizzo di rete totale dei server virtuali pubblici. Per ulteriori informazioni sui limiti che potrebbero essere imposti dal servizio, vedi la [documentazione del Virtual Server](https://{DomainName}/docs/vsi/vsi_public.html#public-virtual-servers).
 
 **Versione NFS**
 
-Nell'ambiente {{site.data.keyword.BluSoftlayer_full}} sono supportati sia NFS v3 che NFS v4.1. Tuttavia, NFS v3 è preferito perché NFS v4.1 è un protocollo con stato (non senza stato come NFSv3) e durante gli eventi di rete potrebbero verificarsi dei problemi di protocollo. NFS v4.1 deve disattivare tutte le operazioni e quindi completare un recupero del blocco. Su un server di file NFS relativamente occupato, l'aumentata latenza può causare interruzioni del servizio. La mancanza di multipercorso/trunking NFS v4.1 può anche estendere il ripristino di uno stato normale delle operazioni NFS.
+Nell'ambiente {{site.data.keyword.BluSoftlayer_full}} sono supportati sia NFS v3 che NFS v4.1. Tuttavia, NFS v3 è preferito perché NFS v4.1 è un protocollo con stato (non senza stato come NFSv3) e durante gli eventi di rete potrebbero verificarsi dei problemi di protocollo. NFS v4.1 deve disattivare tutte le operazioni e quindi completare un recupero del blocco. Su un server di file NFS relativamente occupato, l'aumentata latenza può causare interruzioni del servizio. La mancanza di multipercorso e trunking NFS v4.1 può anche estendere il ripristino di uno stato normale delle operazioni NFS.
 
 ## Inoltro del tuo ordine
 
@@ -280,8 +281,8 @@ Quando sei pronto a inoltrare il tuo ordine, attieniti alle istruzioni riportate
 
 Dopo che la tua richiesta di provisioning è stata completata, autorizza i tuoi host ad accedere alla nuova archiviazione e configura la tua connessione. A seconda del sistema operativo del tuo host, segui il link appropriato.
 - [Accesso a {{site.data.keyword.filestorage_short}} su Linux](accessing-file-storage-linux.html)
-- [Montaggio di NFS/File Storage in CentOS](mounting-nsf-file-storage.html)
-- [Montaggio dell'{{site.data.keyword.filestorage_short}} su CoreOS](mounting-storage-coreos.html)
+- [Montaggio di {{site.data.keyword.filestorage_short}} in CentOS](mounting-nsf-file-storage.html)
+- [Montaggio di {{site.data.keyword.filestorage_short}} su CoreOS](mounting-storage-coreos.html)
 - [Configurazione di {{site.data.keyword.filestorage_short}} per il backup con cPanel](configure-backup-cpanel.html)
 - [Configurazione di {{site.data.keyword.filestorage_short}} per il backup con Plesk](configure-backup-plesk.html)
 - [Montaggio del volume {{site.data.keyword.filestorage_short}} sugli host ESXi](architecture-guide-file-storage-vmware.html)

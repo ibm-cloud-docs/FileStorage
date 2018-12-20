@@ -2,18 +2,18 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-09-12"
+lastupdated: "2018-11-12"
 
 ---
 {:new_window: target="_blank"}
 
 # 파일 공유 용량 확장
 
-현재 {{site.data.keyword.filestorage_full}} 사용자는 이 기능을 사용하여 {{site.data.keyword.filestorage_short}}의 크기를 GB 단위로 최대 12TB까지 즉시 확장할 수 있습니다. 복제본을 작성하거나 데이터를 더 큰 볼륨으로 수동으로 마이그레이션하지 않아도 됩니다. 크기 조정이 진행 중인 동안 스토리지에 대한 액세스는 중단되거나 차단되지 않습니다. 
+현재 {{site.data.keyword.filestorage_full}} 사용자는 이 기능을 사용하여 {{site.data.keyword.filestorage_short}}의 크기를 GB 단위로 최대 12TB까지 즉시 확장할 수 있습니다. 복제본을 작성하거나 데이터를 더 큰 볼륨으로 수동으로 마이그레이션하지 않아도 됩니다. 크기 조정이 진행 중인 동안 스토리지에 대한 액세스는 중단되거나 차단되지 않습니다.
 
 볼륨에 대한 비용 청구는 현재 청구 주기에 새 가격의 일할 계산된 차이를 추가하도록 자동으로 업데이트됩니다. 다음 청구 주기에는 전체 새 금액이 청구됩니다.
 
-이 기능은 [특정 데이터 센터](new-ibm-block-and-file-storage-location-and-features.html)에서만 사용 가능합니다. 
+이 기능은 [특정 데이터 센터](new-ibm-block-and-file-storage-location-and-features.html)에서만 사용 가능합니다.
 
 ## 확장 가능한 스토리지의 장점
 
@@ -27,7 +27,7 @@ lastupdated: "2018-09-12"
 
 ## 제한사항
 
-이 기능은 고급 기능이 있는 [데이터 센터](new-ibm-block-and-file-storage-location-and-features.html)에서 프로비저닝된 스토리지에만 사용 가능합니다. 이러한 데이터 센터에서 프로비저닝된 암호화된 스토리지는 최대 12TB까지 늘릴 수 있습니다. 
+이 기능은 고급 기능이 있는 [데이터 센터](new-ibm-block-and-file-storage-location-and-features.html)에서 프로비저닝된 스토리지에만 사용 가능합니다. 이러한 데이터 센터에서 프로비저닝된 암호화된 스토리지는 최대 12TB까지 늘릴 수 있습니다.
 
 Endurance로 프로비저닝된 {{site.data.keyword.filestorage_short}}에 대한 기존 크기 제한사항은 계속 적용됩니다(10IOPS 계층의 경우 최대 4TB, 기타 모든 계층의 경우 최대 12TB).
 

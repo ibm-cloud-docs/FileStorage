@@ -2,14 +2,14 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-11-13"
 
 ---
 {:new_window: target="_blank"}
 
 # Einstellungen der Länge der Hostwarteschlange anpassen
 
-{{site.data.keyword.BluSoftlayer_full}} empfiehlt für jede Leistungsstufe eine maximale Länge für die Ein-/Ausgabewarteschlangen für den Host und die Anwendung. 
+{{site.data.keyword.BluSoftlayer_full}} empfiehlt für jede Leistungsstufe eine maximale Länge für die Ein-/Ausgabewarteschlangen für den Host und die Anwendung.
 
 <table align="center">
   <caption>Empfohlene Warteschlangenlänge für die einzelnen IOPS-Stufen</caption>
@@ -42,6 +42,6 @@ Eine Warteschlangenlänge über die ausgeführten Werte hinaus kann die E/A-Late
 
 Die Warteschlangenlänge des Hosts wird in der Regel im Hostbusadaptertreiber (host bus adapter) oder im Hypervisor und manchmal auch in der Anwendung angepasst. Standardwerte wie 32 oder 64 können eine übermäßige Latenz des Hosts oder der Anwendung zur Folge haben.
 
-Wenn ein Host oder Hypervisor mehrere Leistungsstufen verwendet, verwenden Sie die Warteschlangenlänge für die schnellste Stufe und beobachten die Latenz auf der langsamsten Leistungsstufe. 
+Wenn ein Host oder Hypervisor mehrere Leistungsstufen verwendet, verwenden Sie die Warteschlangenlänge für die schnellste Stufe und beobachten die Latenz auf der langsamsten Leistungsstufe.
 
 Wenn die Latenz auf der niedrigsten Stufe nicht akzeptabel ist, passen Sie die Warteschlangenlänge an, bis eine ausgeglichene Latenz und Leistung für alle Stufen erreicht ist.

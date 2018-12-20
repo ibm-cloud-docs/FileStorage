@@ -12,7 +12,7 @@ lastupdated: "2018-11-30"
 
 # 将 {{site.data.keyword.filestorage_short}} 迁移到增强型 {{site.data.keyword.filestorage_short}}
 
-现在，增强型 {{site.data.keyword.filestorage_full}} 在精选数据中心内提供。要查看已升级的数据中心和可用功能（例如，可调整的 IOPS 速率和可扩展卷）的列表，请单击[此处](new-ibm-block-and-file-storage-location-and-features.html)。有关提供者管理的加密存储器的更多信息，请参阅 [{{site.data.keyword.filestorage_short}} 静态加密](block-file-storage-encryption-rest.html)。
+现在，增强型 {{site.data.keyword.filestorage_full}} 在精选数据中心内提供。要查看已升级的数据中心和可用功能（例如，可调整 IOPS 速率和可扩展卷）的列表，请单击[此处](new-ibm-block-and-file-storage-location-and-features.html)。有关提供者管理的加密的更多信息，请参阅 [{{site.data.keyword.filestorage_short}} 静态加密](block-file-storage-encryption-rest.html)。
 
 首选迁移路径是同时连接两个卷，并将数据从一个 LUN 直接传输到另一个 LUN。具体操作取决于您的操作系统以及在复制操作期间数据是否会更改。
 
@@ -22,24 +22,26 @@ lastupdated: "2018-11-30"
 - [在 CentOS 中安装 NFS/{{site.data.keyword.filestorage_short}}](mounting-nsf-file-storage.html)
 - [在 CoreOS 上安装 {{site.data.keyword.filestorage_short}}](mounting-storage-coreos.html)
 
-所有增强型 {{site.data.keyword.filestorage_short}} 卷的安装点都与非加密卷不同。要确保对加密和非加密 {{site.data.keyword.filestorage_short}} 卷使用正确的安装点，可以在 {{site.data.keyword.slportal}} 中的**卷详细信息**页面中查看安装点信息。还可以通过 API 调用来访问正确的安装点：`SoftLayer_Network_Storage::getNetworkMountAddress()`。
+这些数据中心内供应的所有增强型 {{site.data.keyword.filestorage_short}} 卷的安装点与非加密卷不同。要确保对两个存储卷使用正确的安装点，可以在控制台的**卷详细信息**页面中查看安装点信息。还可以通过 API 调用来访问正确的安装点：`SoftLayer_Network_Storage::getNetworkMountAddress()`。
 {:tip}
 
 
-## 创建新的 {{site.data.keyword.filestorage_short}}
+## 创建 {{site.data.keyword.filestorage_short}}
 
 使用 API 下订单时，请指定“存储即服务”包，以确保获取新存储器的更新功能。
 {:important}
 
-以下指示信息用于通过 {{site.data.keyword.slportal}}/{{site.data.keyword.BluSoftlayer_full}} 目录订购增强型卷/文件共享。新卷的大小应该等于或大于原始卷，以便于迁移。
+以下指示信息用于通过 {{site.data.keyword.slportal}} 或 {{site.data.keyword.BluSoftlayer_full}} 目录订购增强型文件共享。新卷的大小应该等于或大于原始卷，以便于迁移。
 
-### 订购新的耐久性存储卷
+### 订购耐久性存储卷
 
-1. 在 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} 中，单击**存储** > **{{site.data.keyword.filestorage_short}}**，或者在 {{site.data.keyword.BluSoftlayer_full}}“目录”中，单击**基础架构** > **存储** > **{{site.data.keyword.filestorage_short}}**。
+1. 在 [{{site.data.keyword.slportal}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window} 中，单击**存储器** > **{{site.data.keyword.filestorage_short}}**，或者在 {{site.data.keyword.BluSoftlayer_full}} 目录中单击**基础架构** > **存储器** > **{{site.data.keyword.filestorage_short}}**。
 2. 单击**订购 {{site.data.keyword.filestorage_short}}**。
 3. 从**选择存储器类型**列表中，选择**耐久性**。
 4. 单击**位置**，然后选择数据中心。
-   - 确保将新存储器添加到原始项所在的位置。
+
+   确保将新存储器添加到原始项所在的位置。
+   {:important}
 5. 选择您的记帐选项。可以选择按月计费或按小时计费。
 6. 单击**耐久性**，然后选择 IOPS 层。
 6. 从列表中选择**可用存储器大小**。新卷的大小必须等于或大于原始卷。
@@ -47,13 +49,15 @@ lastupdated: "2018-11-30"
 8. 单击**继续**。这将显示每月费用和按比例的费用，此时您还有最后一次机会复查订单详细信息。如果要更改订单，请单击**上一步**。
 9. 单击**我已阅读主服务协议**复选框，然后单击**下订单**。
 
-### 订购加密性能存储卷
+### 订购性能存储卷
 
-1. 在 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} 中，单击**存储** > **{{site.data.keyword.filestorage_short}}**，或者在 {{site.data.keyword.BluSoftlayer_full}}“目录”中，单击**基础架构** > **存储** > **{{site.data.keyword.filestorage_short}}**。
+1. 在 [{{site.data.keyword.slportal}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window} 中，单击**存储器**、**{{site.data.keyword.filestorage_short}}**，或者在 {{site.data.keyword.BluSoftlayer_full}} 目录中单击**基础架构** > **存储器** > **{{site.data.keyword.filestorage_short}}**。
 2. 单击**订购 {{site.data.keyword.filestorage_short}}**。
 3. 从**选择存储器类型**列表中，选择**性能**。
 4. 单击**位置**，然后选择数据中心。
-    -  确保将新存储器添加到原始项所在的位置。
+
+   确保将新存储器添加到原始项所在的位置。
+   {:important}
 5. 选择您的记帐选项。可以选择“每小时计费”和“每月计费”。
 6. 选择相应的**存储器大小**旁边的单选按钮。
 6. 在**指定 IOPS** 字段中，输入 IOPS。

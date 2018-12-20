@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-12-11"
 
 ---
 {:new_window: target="_blank"}
@@ -17,7 +17,7 @@ lastupdated: "2018-10-31"
 新卷的 NFS 安装点已更改。有关详细信息，请参阅[增强型 {{site.data.keyword.filestorage_short}} 卷的新安装点](#new-mount-point-for-enhanced-file-storage-volumes)。
 {:important}
 
-新的 {{site.data.keyword.filestorage_short}} 在以下区域/数据中心内提供，日后会增加更多数据中心！
+新的 {{site.data.keyword.filestorage_short}} 在以下区域和数据中心内提供，日后会增加更多数据中心！
 
 <table role="presentation">
   <tr>
@@ -56,7 +56,7 @@ AMS03<br />
     <td>MEL01<br />
 SYD01<br />
 SYD04<br />
-	<br /><br /><br /><br /><br /><br /><br /><br /><br />
+        SYD05<br /><br /><br /><br /><br /><br /><br /><br /><br />
     </td>
     <td>MON01<br />
 TOR01<br />
@@ -92,9 +92,12 @@ TOK02<br />
 - 使用 [{{site.data.keyword.filestorage_short}} 卷复制功能](how-to-create-duplicate-volume.html)创建数据的克隆。
 - 存储器可直接扩展（以 GB 为增量）到最大 12 TB，无需创建复制项或将数据手动移至更大的卷。请在[此处](expandable_file_storage.html)阅读有关此功能的更多信息。
 
-## 增强型 {{site.data.keyword.filestorage_short}} 卷的新安装点
+## 功能增强的 {{site.data.keyword.filestorage_short}} 卷的新安装点
 
-这些数据中心内供应的所有增强型 {{site.data.keyword.filestorage_short}} 卷的安装点与非加密卷不同。要确保对这两种存储卷使用正确的安装点，可以在 UI 中的**卷详细信息**页面中查看安装点信息。还可以通过 API 调用来访问正确的安装点：`SoftLayer_Network_Storage::getNetworkMountAddress()`。
+这些数据中心内供应的所有增强型 {{site.data.keyword.filestorage_short}} 卷的安装点与非加密卷不同。要确保对两个存储卷使用正确的安装点，可以在控制台的**卷详细信息**页面中查看安装点信息。还可以通过 API 调用来访问正确的安装点：`SoftLayer_Network_Storage::getNetworkMountAddress()`。
+
+要能够访问所有新功能，在通过 API 下订单时，请选择 `Storage-as-a-Service Package 759`。有关通过 API 订购 {{site.data.keyword.filestorage_short}} 的更多信息，请参阅 [order_file_volume ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://softlayer-python.readthedocs.io/en/latest/api/managers/file.html#SoftLayer.managers.file.FileStorageManager.order_file_volume){:new_window}。
+{:important}
 
 升级了更多数据中心时，可重新检查此处来查看这些数据中心，并可了解为 {{site.data.keyword.filestorage_short}} 添加的新特性和功能。
 {:tip}

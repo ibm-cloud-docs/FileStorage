@@ -2,62 +2,61 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-30"
+lastupdated: "2018-12-10"
 
 ---
-
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
 {:new_window: target="_blank"}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
-{:DomainName: data-hd-keyref="APPDomain"}
-{:DomainName: data-hd-keyref="DomainName"}
 
 
-# 複製抄本磁區供災難回復使用
+# Recuperação de desastre: failover com um volume primário inacessível
 
-萬一發生導致主要站台停電的災難性失效或災難，客戶可以執行下列動作，以便在次要站台快速存取其資料。
+No caso de uma falha catastrófica ou de um desastre que cause uma indisponibilidade no site primário, os clientes podem executar as ações a seguir para acessar rapidamente seus dados no site secundário.
 
-## 在次要站台上利用抄本磁區的副本進行失效接手
+## Failover com uma duplicata de um volume de réplica no site secundário
 
-1. 登入 [IBM Cloud 主控台](https://{DomainName}/catalog/){:new_window}，然後按一下左上方的**功能表**圖示。選取**典型基礎架構**。
+1. Efetue login no [Console do IBM Cloud](https://console.bluemix.net/catalog/){:new_window} e clique no ícone **Menu** na parte superior esquerda. Selecione **Infraestrutura clássica**.
 
-   或者，您可以登入 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}。
-2. 按一下**儲存空間** > **{{site.data.keyword.filestorage_short}}**。
-3. 按一下清單中的檔案共用抄本，以檢視其**詳細資料**頁面。
-4. 在**詳細資料**頁面上，向下捲動並選取現有的 Snapshot，然後按一下**動作** > **複製**。
-5. 針對新磁區的容量（為了增加大小）或 IOP 進行任何必要的更新。
-6. 必要的話，您可以更新新磁區的 Snapshot 空間。
-7. 按一下**繼續**，以訂購重複項目。
+   Como alternativa, é possível efetuar login no [{{site.data.keyword.slportal}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://control.softlayer.com/){:new_window}.
+2. Clique em **Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
+3. Clique na réplica do compartilhamento de arquivo na lista para visualizar sua página **Detalhes**.
+4. Na página **Detalhes**, role para baixo e selecione uma captura instantânea existente e, em seguida, clique em **Ações** > **Duplicar**.
+5. Faça quaisquer atualizações necessárias na capacidade (para aumentar o tamanho) ou na IOPS para o novo volume.
+6. É possível atualizar o espaço de captura instantânea para o novo volume, se necessário.
+7. Clique em **Continuar** para fazer seu pedido para a duplicata.
 
-建立磁區之後，您可以將它連接到主機，並在該磁區上執行讀寫作業。當資料從原始磁區複製到重複磁區時，您會在詳細資料頁面上看到一個顯示正在進行複製的狀態。複製處理程序完成之後，新的磁區即與原始磁區完全無關，您可以像平常一樣使用 Snapshot 及抄寫進行管理。
+Assim que o volume for criado, será possível anexá-lo a um host e executar operações de leitura/gravação nesse volume. Enquanto os dados estão sendo copiados do volume original para a duplicata, é possível ver um status na página de detalhes mostrando que a duplicação está em andamento. Quando o processo de duplicação for concluído, o novo volume se tornará independente do original e poderá ser gerenciado com capturas instantâneas e replicação normalmente.
 
-## 失效回復至原始主要站台
+## Failback para o site primário original
 
-如果您想要使正式作業回到原始主要站台，您必須執行下列步驟。
+Se você desejar retornar a produção para o site primário original, as etapas a seguir deverão ser executadas.
 
-1. 登入 [IBM Cloud 主控台](https://{DomainName}/catalog/){:new_window}，然後按一下左上方的**功能表**圖示。選取**典型基礎架構**。
+1. Efetue login no [Console do IBM Cloud](https://{DomainName}/catalog/){:new_window} e clique no ícone **Menu** na parte superior esquerda. Selecione **Infraestrutura clássica**.
 
-   或者，您可以登入 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}。
-2. 按一下**儲存空間** > **{{site.data.keyword.filestorage_short}}**。
-3. 按一下 LUN 名稱，並建立 Snapshot 排程（如果尚無排程）。
+   Como alternativa, é possível efetuar login no [{{site.data.keyword.slportal}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://control.softlayer.com/){:new_window}.
+2. Clique em **Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
+3. Clique no nome do LUN e crie um planejamento de captura instantânea (se ainda não existir).
 
-   如需 Snapshot 排程的相關資訊，請參閱[管理 Snapshot](working-with-snapshots.html#adding-a-snapshot-schedule)。
+   Para obter mais informações sobre planejamentos de captura instantânea, consulte [Gerenciando capturas instantâneas](working-with-snapshots.html#adding-a-snapshot-schedule).
    {:tip}
-4. 按一下**抄本**，然後按一下**購買抄寫**。
-5. 選取您要抄寫遵循的現有 Snapshot 排程。此清單包含所有作用中 Snapshot 排程。
-6. 按一下**位置**，然後選取作為原始正式作業網站的資料中心。
-7. 按一下**繼續**。
-8. 按一下**我已閱讀主要服務合約...** 勾選框，然後按一下**下訂單**。
+4. Clique em **Réplica** e em **Comprar uma replicação**.
+5. Selecione o planejamento de captura instantânea existente que você deseja que a replicação siga. A lista contém todos os planejamentos de captura instantânea ativos.
+6. Clique em **Local** e selecione o data center que era o site de produção original.
+7. Clique em **Continuar**.
+8. Clique na caixa de seleção **Eu li o Contrato de prestação de serviços principal…** e clique em **Colocar ordem**.
 
-抄寫完成之後，您需要建立新抄本的複製磁區。
+Após a replicação ser concluída, será necessário criar um volume duplicado da nova réplica.
 {:important}
 
-1. 回到**儲存空間** > **{{site.data.keyword.filestorage_short}}**。
-2. 按一下清單中的 LUN 抄本，以檢視其**詳細資料**頁面。
-3. 在**詳細資料**頁面上，向下捲動並選取現有的 Snapshot，然後按一下**動作** > **複製**。
-4. 針對新磁區的容量（為了增加大小）或 IOP 進行任何必要的更新。
-5. 必要的話，請更新新磁區的 Snapshot 空間。
-6. 按一下**繼續**，以訂購重複項目。
+1. Volte para **Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
+2. Clique na réplica da LUN na lista para visualizar sua página **Detalhes**.
+3. Na página **Detalhes**, role para baixo e selecione uma captura instantânea existente e, em seguida, clique em **Ações** > **Duplicar**.
+4. Faça quaisquer atualizações necessárias na capacidade (para aumentar o tamanho) ou na IOPS para o novo volume.
+5. Atualize o espaço de captura instantânea para o novo volume, se necessário.
+6. Clique em **Continuar** para fazer seu pedido para a duplicata.
 
-當複製處理程序完成時，您可以取消抄寫及所使用的磁區，使資料回到原始主要站台。此複製項目會變成主要儲存空間，而原始次要站台的抄寫可以重新建立。
+Quando o processo de duplicação estiver concluído, será possível cancelar a replicação e os volumes que foram usados para que os dados voltem para o site primário original. A duplicata torna-se o armazenamento primário, e a replicação para o site secundário original pode ser estabelecida novamente.

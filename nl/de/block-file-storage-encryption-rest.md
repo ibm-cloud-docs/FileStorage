@@ -39,5 +39,5 @@ Wählen Sie beim Bestellen Ihres {{site.data.keyword.filestorage_short}}-Speiche
 ![Das Sperrsymbol weist darauf hin, dass die LUN verschlüsselt ist.](/images/encryptedstorage.png)
 <caption>Abbildung 1. Beispiel für das Sperrsymbol, das die Verschlüsselung des Datenträgers angibt.</caption>
 
-Sämtlicher nicht verschlüsselter Speicher, der vor der Aktualisierung eines Rechenzentrums bereitgestellt wurde, wird **nicht** automatisch verschlüsselt.  Wenn Sie nicht verschlüsselten Speicher in einem aktualisierten Rechenzentrum besitzen und ihn verschlüsseln wollen, müssen Sie einen neuen Datenträger erstellen und eine Datenmigration durchführen. Weitere Informationen finden Sie im Abschnitt [File Storage in aktualisierten Rechenzentren migrieren](migrate-file-storage-encrypted-file-storage.html)
+Sämtlicher nicht verschlüsselter Speicher, der vor der Aktualisierung eines Rechenzentrums bereitgestellt wurde, wird **nicht** automatisch verschlüsselt. Wenn Sie nicht verschlüsselten Speicher in einem aktualisierten Rechenzentrum besitzen und ihn verschlüsseln wollen, müssen Sie einen neuen Datenträger erstellen und eine Datenmigration durchführen. Weitere Informationen finden Sie im Abschnitt [File Storage in aktualisierten Rechenzentren migrieren](migrate-file-storage-encrypted-file-storage.html)
 {:important}

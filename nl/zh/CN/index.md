@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-29"
+lastupdated: "2018-11-30"
 
 ---
 {:new_window: target="_blank"}
@@ -11,6 +11,7 @@ lastupdated: "2018-10-29"
 {:important: .important}
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
+
 
 # {{site.data.keyword.filestorage_short}} 入门
 
@@ -123,7 +124,7 @@ lastupdated: "2018-10-29"
 {{site.data.keyword.filestorage_short}} 的“性能”可通过网络文件系统 (NFS) 连接来访问和安装。在通过多个服务器同时访问卷时，通常会使用 {{site.data.keyword.filestorage_short}}。一致性性能卷可以根据表 1 中的大小和 IOPS 进行订购，并可用于 Linux 操作系统。
 
 <table cellpadding="1" cellspacing="1" style="width: 99%;">
- <caption>表 3 显示了用于性能存储器的大小和 IOPS 组合。<br/><sup><img src="/images/numberone.png" alt="脚注" /></sup> 超过 6,000 的 IOPS 限制在精选数据中心内提供。</caption>
+ <caption>表 3 显示了用于性能存储器的大小和 IOPS 组合。<br/><sup><img src="/images/numberone.png" alt="脚注" /></sup> 在精选数据中心内提供了大于 6,000 的 IOPS 限制。</caption>
         <colgroup>
           <col/>
           <col/>
@@ -266,11 +267,12 @@ lastupdated: "2018-10-29"
 
 要实现最大 IOPS，需要落实足够的网络资源。其他注意事项包括在存储器外部使用的专用网络、主机端以及特定于应用程序的调整（IP 堆栈或[队列深度](set-host-queue-depth-settings-performance-and-endurance-storage.html)以及其他设置）。
 
-存储流量包含在公共虚拟服务器的总网络使用量之内。要了解服务可能强加的限制，请参阅[虚拟服务器文档](https://{DomainName}/docs/vsi/vsi_public.html#public-virtual-servers)。
+存储流量包含在公共虚拟服务器的总网络使用量之内。有关服务可能施加的限制的更多信息，请参阅[虚拟服务器文档](https://{DomainName}/docs/vsi/vsi_public.html#public-virtual-servers)。
+
 
 **NFS 版本**
 
-{{site.data.keyword.BluSoftlayer_full}} 环境支持 NFS V3 和 NFS V4.1。但是，首选 NFS V3，因为 NFS V4.1 是有状态协议（NFS V3 是无状态协议），在网络事件期间可能会发生协议问题。NFS V4.1 必须停止所有操作，然后才能完成锁定回收。在相对繁忙的 NFS 文件服务器上，延长的等待时间可能会导致中断。缺少 NFS V4.1 多路径/中继也会延长 NFS 操作恢复时间。
+{{site.data.keyword.BluSoftlayer_full}} 环境支持 NFS V3 和 NFS V4.1。但是，首选 NFS V3，因为 NFS V4.1 是有状态协议（NFS V3 是无状态协议），在网络事件期间可能会发生协议问题。NFS V4.1 必须停止所有操作，然后才能完成锁定回收。在相对繁忙的 NFS 文件服务器上，延长的等待时间可能会导致中断。缺少 NFS V4.1 多路径和中继也会延长 NFS 操作恢复时间。
 
 ## 提交订单
 
@@ -280,7 +282,7 @@ lastupdated: "2018-10-29"
 
 完成供应请求后，授权主机来访问新存储器并配置连接。根据主机的操作系统，访问相应的链接。
 - [在 Linux 上访问 {{site.data.keyword.filestorage_short}}](accessing-file-storage-linux.html)
-- [在 CentOS 中安装 NFS/File Storage](mounting-nsf-file-storage.html)
+- [在 CentOS 上安装 {{site.data.keyword.filestorage_short}}](mounting-nsf-file-storage.html)
 - [在 CoreOS 上安装 {{site.data.keyword.filestorage_short}}](mounting-storage-coreos.html)
 - [使用 cPanel 配置 {{site.data.keyword.filestorage_short}} 进行备份](configure-backup-cpanel.html)
 - [使用 Plesk 配置 {{site.data.keyword.filestorage_short}} 进行备份](configure-backup-plesk.html)

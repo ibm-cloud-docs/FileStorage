@@ -12,7 +12,7 @@ lastupdated: "2018-11-30"
 
 # 개선된 {{site.data.keyword.filestorage_short}}로 {{site.data.keyword.filestorage_short}} 마이그레이션
 
-개선된 {{site.data.keyword.filestorage_full}}는 특정 데이터 센터에서만 사용 가능합니다. 조정 가능한 IOPS 비율 및 확장 가능한 볼륨과 같은 사용 가능한 기능 및 업그레이드된 데이터 센터의 목록을 보려면 [여기](new-ibm-block-and-file-storage-location-and-features.html)를 클릭하십시오. 제공자 관리 암호화된 스토리지에 대한 자세한 정보는 [{{site.data.keyword.filestorage_short}} 저장 암호화](block-file-storage-encryption-rest.html)를 참조하십시오.
+개선된 {{site.data.keyword.filestorage_full}}는 특정 데이터 센터에서만 사용 가능합니다. 조정 가능한 IOPS 비율 및 확장 가능한 볼륨과 같은 사용 가능한 기능 및 업그레이드된 데이터 센터의 목록을 보려면 [여기](new-ibm-block-and-file-storage-location-and-features.html)를 클릭하십시오. 제공자 관리 암호화에 관한 자세한 정보는 [{{site.data.keyword.filestorage_short}} 저장 암호화](block-file-storage-encryption-rest.html)를 참조하십시오. 
 
 선호되는 마이그레이션 경로는 두 볼륨을 동시에 연결하고 하나의 LUN에서 다른 LUN으로 직접 데이터를 전송하는 것입니다. 세부사항은 사용자의 운영 체제와 복사 오퍼레이션 중에 데이터 변경이 예상되는지 여부에 따라 다릅니다.
 
@@ -22,24 +22,26 @@ lastupdated: "2018-11-30"
 - [CentOS의 NFS/{{site.data.keyword.filestorage_short}} 마운트](mounting-nsf-file-storage.html)
 - [CoreOS의 {{site.data.keyword.filestorage_short}} 마운트](mounting-storage-coreos.html)
 
-모든 개선된 {{site.data.keyword.filestorage_short}} 볼륨에는 암호화되지 않은 볼륨과는 다른 마운트 지점이 있습니다. 암호화된, 또는 암호화되지 않은 {{site.data.keyword.filestorage_short}} 볼륨에 대해 올바른 마운트 지점을 사용 중인지 확인하려는 경우에는 {{site.data.keyword.slportal}}의 **볼륨 세부사항** 페이지에서 마운트 지점 정보를 볼 수 있습니다. 또한 API 호출 `SoftLayer_Network_Storage::getNetworkMountAddress()`를 통해 올바른 마운트 지점에 액세스할 수 있습니다.
+이러한 데이터 센터에서 프로비저닝된 모든 개선된 {{site.data.keyword.filestorage_short}} 볼륨에는 암호화되지 않은 볼륨과는 다른 마운트 지점이 있습니다. 두 스토리지 볼륨에 올바른 마운트 지점을 사용 중임을 확인하기 위해 콘솔의 **볼륨 세부사항** 페이지에서 마운트 지점 정보를 볼 수 있습니다. 또한 API 호출 `SoftLayer_Network_Storage::getNetworkMountAddress()`를 통해 올바른 마운트 지점에 액세스할 수 있습니다.
 {:tip}
 
 
-## 새 {{site.data.keyword.filestorage_short}} 작성
+## {{site.data.keyword.filestorage_short}} 작성
 
 API에서 주문하는 경우에는 새 스토리지의 업데이트된 기능을 받을 수 있도록 "SaaS(Storage as a Service)" 패키지를 지정하십시오.
 {:important}
 
-{{site.data.keyword.slportal}}/{{site.data.keyword.BluSoftlayer_full}} 카탈로그를 통해 개선된 볼륨/파일 공유를 주문하는 데 대한 지시사항은 다음과 같습니다. 마이그레이션을 용이하게 하려면 새 볼륨의 크기가 원래 볼륨 크기 이상이어야 합니다.
+{{site.data.keyword.slportal}} 또는 {{site.data.keyword.BluSoftlayer_full}} 카탈로그를 통해 개선된 파일 공유를 주문하는 데 관한 지시사항은 다음과 같습니다. 마이그레이션을 용이하게 하려면 새 볼륨의 크기가 원래 볼륨 크기 이상이어야 합니다.
 
-### 새 Endurance 스토리지 볼륨 주문
+### Endurance 스토리지 볼륨 주문
 
-1. [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}에서 **스토리지** > **{{site.data.keyword.filestorage_short}}**를 클릭하거나 {{site.data.keyword.BluSoftlayer_full}} 카탈로그에서 **인프라** > **스토리지** > **{{site.data.keyword.filestorage_short}}**를 클릭하십시오.
+1. [{{site.data.keyword.slportal}} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://control.softlayer.com/){:new_window}에서 **스토리지** > **{{site.data.keyword.filestorage_short}}**를 클릭하거나 {{site.data.keyword.BluSoftlayer_full}} 카탈로그에서 **인프라** > **스토리지** > **{{site.data.keyword.filestorage_short}}**를 클릭하십시오.
 2. **{{site.data.keyword.filestorage_short}} 주문**을 클릭하십시오.
 3. **스토리지 유형 선택** 목록에서 **Endurance**를 선택하십시오.
 4. **위치**를 클릭하고 데이터 센터를 선택하십시오.
-   - 새 스토리지가 원래 스토리지와 동일한 위치에 추가되는지 확인하십시오.
+
+   새 스토리지가 원래 스토리지와 동일한 위치에 추가되는지 확인하십시오.
+   {:important}
 5. 청구 옵션을 선택하십시오. 월별 또는 시간별 청구 중에서 선택할 수 있습니다.
 6. **Endurance**를 클릭하고 IOPS 계층을 선택하십시오.
 6. 목록에서 **사용 가능한 스토리지 크기**를 선택하십시오. 새 볼륨의 크기는 원래 볼륨 크기 이상이어야 합니다.
@@ -47,13 +49,15 @@ API에서 주문하는 경우에는 새 스토리지의 업데이트된 기능�
 8. **계속**을 클릭하십시오. 월별 및 비례 배분된 비용이 표시되며, 주문 세부사항을 검토할 마지막 기회가 제공됩니다. 주문을 변경하려면 **이전**을 클릭하십시오.
 9. **마스터 서비스 계약을 읽었습니다** 선택란을 클릭하고 **주문하기**를 클릭하십시오.
 
-### 암호화된 Performance 스토리지 볼륨 주문
+### Performance 스토리지 볼륨 주문
 
-1. [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}에서 **스토리지**, **{{site.data.keyword.filestorage_short}}**를 클릭하거나 {{site.data.keyword.BluSoftlayer_full}} 카탈로그에서 **인프라** >** 스토리지** > **{{site.data.keyword.filestorage_short}}**를 클릭하십시오.
+1. [{{site.data.keyword.slportal}} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://control.softlayer.com/){:new_window}에서 **Storage**, **{{site.data.keyword.filestorage_short}}**를 클릭하거나 {{site.data.keyword.BluSoftlayer_full}} 카탈로그에서 **인프라** >** 스토리지** > **{{site.data.keyword.filestorage_short}}**를 클릭하십시오.
 2. **{{site.data.keyword.filestorage_short}} 주문**을 클릭하십시오.
 3. **스토리지 유형 선택** 목록에서 **Performance**를 선택하십시오.
 4. **위치**를 클릭하고 데이터 센터를 선택하십시오.
-    -  새 스토리지가 원래 스토리지와 동일한 위치에 추가되는지 확인하십시오.
+
+   새 스토리지가 원래 스토리지와 동일한 위치에 추가되는지 확인하십시오.
+   {:important}
 5. 청구 옵션을 선택하십시오. 월별 또는 시간별 청구 중에서 선택할 수 있습니다.
 6. 적합한 **스토리지 크기** 옆의 단일 선택 단추를 선택하십시오.
 6. **IOPS 지정** 필드에서 IOPS를 입력하십시오.

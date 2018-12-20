@@ -15,7 +15,7 @@ lastupdated: "2018-11-30"
 
 您可以使用这些指示信息来配置要由 cPanel 存储在 {{site.data.keyword.filestorage_full}} 中的备份。假定以 root 用户或 sudo 用户身份通过 SSH 登录到系统，并且有完整的 WebHost Manager (WHM) 访问权。此示例基于 **CentOS 7** 主机。
 
-有关来自供应商的更多信息，请参阅 [cPanel - 配置备份目录 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.cpanel.net/display/68Docs/Backup+Configuration#BackupConfiguration-ConfigureBackupDirectory){:new_window}。
+有关更多信息，请参阅 [cPanel - 配置备份目录 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://docs.cpanel.net/display/68Docs/Backup+Configuration#BackupConfiguration-ConfigureBackupDirectory){:new_window}。
 {:tip}
 
 1. 通过 SSH 连接到主机。

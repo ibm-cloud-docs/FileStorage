@@ -13,9 +13,9 @@ lastupdated: "2018-11-30"
 
 # 在 Linux 上安装 {{site.data.keyword.filestorage_short}}
 
-首先，确保通过 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} 对要访问 {{site.data.keyword.filestorage_full}} 卷的主机授权。
+首先，确保通过 [{{site.data.keyword.slportal}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window} 授权访问 {{site.data.keyword.filestorage_full}} 卷。
 
-1. 在 {{site.data.keyword.filestorage_short}} 列表页面中，单击与新共享关联的**操作**，然后单击**授权主机**。
+1. 在 {{site.data.keyword.filestorage_short}} 列表页面中，单击与新共享关联的**操作**链接，然后单击**授权主机**。
 2. 从列表中选择一个或多个主机，然后单击**提交**。此操作将授权主机访问共享。
 
 ## 安装 {{site.data.keyword.filestorage_short}} 共享
@@ -25,7 +25,7 @@ lastupdated: "2018-11-30"
 文件存储器实例的安装点可以从 {{site.data.keyword.filestorage_short}} 列表页面中或通过以下 API 调用来获取：`SoftLayer_Network_Storage::getNetworkMountAddress()`。
 {:tip}
 
-1. 安装必需的软件包/工具。
+1. 安装必需的工具。
    ```
    # yum -y install nfs-utils nfs-utils-lib
    ```

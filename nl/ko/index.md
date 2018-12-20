@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-29"
+lastupdated: "2018-11-30"
 
 ---
 {:new_window: target="_blank"}
@@ -11,6 +11,7 @@ lastupdated: "2018-10-29"
 {:important: .important}
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
+
 
 # {{site.data.keyword.filestorage_short}} 시작하기
 
@@ -266,11 +267,11 @@ Endurance 및 Performance의 IOPS는 50/50 읽기/쓰기 50퍼센트 랜덤 워�
 
 최대 IOPS를 달성하려면 적절한 네트워크 리소스가 제 위치에 있어야 합니다. 그 외에도 스토리지 외부의 사설 네트워크 사용량과 호스트 측 및 애플리케이션 특정 튜닝(IP 스택 또는 [큐 깊이](set-host-queue-depth-settings-performance-and-endurance-storage.html) 및 기타 설정)도 고려해야 합니다.
 
-스토리지 트래픽은 공용 Virtual Server의 총 네트워크 사용에 포함됩니다. 서비스에서 부과할 수 있는 한계를 이해하려면 [Virtual Server 문서](https://{DomainName}/docs/vsi/vsi_public.html#public-virtual-servers)를 참조하십시오.
+스토리지 트래픽은 공용 Virtual Server의 총 네트워크 사용에 포함됩니다. 서비스에서 부과할 수 있는 한계에 관한 자세한 정보는 [Virtual Server 문서](https://{DomainName}/docs/vsi/vsi_public.html#public-virtual-servers)를 참조하십시오.
 
 **NFS 버전**
 
-NFS v3 및 NFS v4.1 모두는 {{site.data.keyword.BluSoftlayer_full}} 환경에서 지원됩니다. 그러나 NFS v4.1은 Stateful 프로토콜이며(NFS v3과 같은 Stateless가 아님) 네트워크 이벤트 중에 프로토콜 문제가 발생할 수 있으므로 NFS v3이 선호됩니다. NFS v4.1은 모든 오퍼레이션을 중지한 후에 잠금 교정을 수행해야 합니다. 상대적으로 많이 사용 중인 NFS 파일 서버에서는 대기 시간 증가로 인해 장애가 발생할 수 있습니다. 또한 NFS v4.1 다중 경로/트렁크의 부족으로 인해 NFS 오퍼레이션 복구가 확장될 수도 있습니다.
+NFS v3 및 NFS v4.1 모두는 {{site.data.keyword.BluSoftlayer_full}} 환경에서 지원됩니다. 그러나 NFS v4.1은 Stateful 프로토콜이며(NFS v3과 같은 Stateless가 아님) 네트워크 이벤트 중에 프로토콜 문제가 발생할 수 있으므로 NFS v3이 선호됩니다. NFS v4.1은 모든 오퍼레이션을 중지한 후에 잠금 교정을 수행해야 합니다. 상대적으로 많이 사용 중인 NFS 파일 서버에서는 대기 시간 증가로 인해 장애가 발생할 수 있습니다. 또한 NFS v4.1 다중 경로 및 트렁크의 부족으로 인해 NFS 오퍼레이션 복구가 확장될 수도 있습니다.
 
 ## 주문 제출
 
@@ -280,7 +281,7 @@ NFS v3 및 NFS v4.1 모두는 {{site.data.keyword.BluSoftlayer_full}} 환경에�
 
 프로비저닝 요청이 완료되면 새 스토리지에 액세스할 수 있도록 호스트에 권한을 부여하고 연결을 구성하십시오. 호스트의 운영 체제에 따라 적절한 링크를 사용하십시오.
 - [Linux에서 {{site.data.keyword.filestorage_short}} 액세스](accessing-file-storage-linux.html)
-- [CentOS에서 NFS/File Storage 마운트](mounting-nsf-file-storage.html)
+- [CentOS의 {{site.data.keyword.filestorage_short}} 마운트](mounting-nsf-file-storage.html)
 - [CoreOS의 {{site.data.keyword.filestorage_short}} 마운트](mounting-storage-coreos.html)
 - [cPanel로 백업을 위한 {{site.data.keyword.filestorage_short}} 구성](configure-backup-cpanel.html)
 - [Plesk로 백업을 위한 {{site.data.keyword.filestorage_short}} 구성](configure-backup-plesk.html)

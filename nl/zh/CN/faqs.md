@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-09-18"
+lastupdated: "2018-12-11"
 
 ---
 {:new_window: target="_blank"}
@@ -13,24 +13,24 @@ lastupdated: "2018-09-18"
 ## 如何判断哪些 {{site.data.keyword.filestorage_short}} 卷已加密？
 {: faq}
 
-查看客户门户网站中 {{site.data.keyword.filestorage_short}} 的列表。您将在 LUN/卷名右侧看到“锁定”图标，指示已对这些卷进行加密。
+查看客户门户网站中 {{site.data.keyword.filestorage_short}} 的列表。您将在卷名右侧看到“锁定”图标，指示已对这些卷进行加密。
 
 ## 如果数据中心内有在升级前供应的非加密 {{site.data.keyword.filestorage_short}}，那么在数据中心升级进行加密后我能对此 {{site.data.keyword.filestorage_short}} 进行加密吗？
 {: faq}
 
-无法对在数据中心升级之前供应的 {{site.data.keyword.filestorage_short}} 加密。在已升级的数据中心内供应的新 {{site.data.keyword.filestorage_short}} 会自动加密。没有加密设置可供选择，这是自动执行的操作。通过创建新卷，然后使用基于主机的迁移将数据复制到新的加密卷，可以对非加密存储器上的数据进行加密。有关更多信息，请参阅[迁移文件存储器](/docs/infrastructure/FileStorage/migrate-file-storage-encrypted-file-storage.html)。
+无法对在数据中心升级之前供应的 {{site.data.keyword.filestorage_short}} 加密。在已升级的数据中心内供应的新 {{site.data.keyword.filestorage_short}} 会自动加密。此过程是自动的，不是可以选择也可以留空的供应设置。通过创建新卷，然后使用基于主机的迁移将数据复制到新的加密卷，可以对非加密存储器上的数据进行加密。有关更多信息，请参阅[迁移文件存储器](migrate-file-storage-encrypted-file-storage.html)。
 
 ## 怎样知道是在已升级的数据中心内供应 {{site.data.keyword.filestorage_short}}？
 {: faq}
 
-在 {{site.data.keyword.filestorage_short}} 订单表单中，所有已升级的数据中心都会标有星号 (`*`)。在订购过程中，会向您指示您正在供应具有加密功能的存储器。供应存储器后，在存储器列表中会看到相应图标，指示该卷已加密。 
+在 {{site.data.keyword.filestorage_short}} 订单表单中，所有已升级的数据中心都会标有星号 (`*`)。在订购过程中，会向您指示您正在供应具有加密功能的存储器。供应存储器后，在存储器列表中会看到相应图标，指示该卷已加密。
 
-所有加密卷和文件共享仅在已升级的数据中心内供应。您可以在[此处](/docs//infrastructure/BlockStorage/new-ibm-block-and-file-storage-location-and-features.html)找到已升级的数据中心和可用功能的完整列表。
+所有加密卷和文件共享仅在已升级的数据中心内供应。您可以在[此处](new-ibm-block-and-file-storage-location-and-features.html)找到已升级的数据中心和可用功能的完整列表。
 
 ## 为什么一些数据中心内供应耐久性 10 IOPS 层的 {{site.data.keyword.filestorage_short}}，而其他数据中心内不供应？
 {: faq}
 
-{{site.data.keyword.filestorage_short}} 耐久性类型 10 IOPS/GB 层仅在精选数据中心内提供，很快会增加新的数据中心。您可以在[此处](/docs//infrastructure/BlockStorage/new-ibm-block-and-file-storage-location-and-features.html)找到已升级的数据中心和可用功能的完整列表。
+{{site.data.keyword.filestorage_short}} 耐久性类型 10 IOPS/GB 层仅在精选数据中心内提供，很快会增加新的数据中心。您可以在[此处](new-ibm-block-and-file-storage-location-and-features.html)找到已升级的数据中心和可用功能的完整列表。
 
 ## 如何找到 {{site.data.keyword.filestorage_short}} 的正确安装点？
 {: faq}
@@ -56,11 +56,11 @@ lastupdated: "2018-09-18"
 {: faq}
 
 <table>
-  <caption>表 1 显示了根据卷大小允许的最大索引节点数。左列是卷大小。右列是索引节点数/文件共享数。</caption>
+  <caption>表 1 显示了根据卷大小允许的最大索引节点数。左列是卷大小。右列是索引节点数和文件共享数。</caption>
   <thead>
     <tr>
       <th>卷大小</th>
-      <th>索引节点数/文件共享数</th>
+      <th>索引节点和文件共享</th>
     </tr>
   </thead>
   <tbody>
@@ -135,9 +135,9 @@ IOPS 会在卷级别强制执行。换句话说，连接到一个具有 6000 IOP
 ## 如果使用更快的以太网连接，可以实现更大的吞吐量吗？
 {: faq}
 
-吞吐量限制是在逐个卷/LUN 级别设置的，因此使用更快的以太网连接并不会增加该设定限制。但是，使用较慢的以太网连接时，带宽可能是潜在瓶颈。
+吞吐量限制是在每个卷的级别设置的。即使使用更快的以太网连接也无法提高限制。但是，使用较慢的以太网连接时，带宽可能是潜在瓶颈。
 
-## 防火墙/安全组会影响性能吗？
+## 防火墙和安全组会影响性能吗？
 {: faq}
 
 最好是在绕过防火墙的 VLAN 上运行存储流量。通过软件防火墙运行存储流量会延长等待时间，并对存储器性能产生负面影响。

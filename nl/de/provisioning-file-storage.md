@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-11-30"
+lastupdated: "2018-12-13"
 
 ---
 {:new_window: target="_blank"}
@@ -12,25 +12,27 @@ lastupdated: "2018-11-30"
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 
+
 # {{site.data.keyword.filestorage_short}} bestellen
 
 Sie können {{site.data.keyword.filestorage_short}} bereitstellen und entsprechend Ihrer Kapazität und Ihren IOPS-Anforderungen optimieren. Ihnen stehen zwei Optionen für die Angabe der Leistung zur Verfügung, um Ihren Speicher zu optimieren.
 
 - Sie können aus Endurance-IOPS-Stufen auswählen, die vordefinierte Leistungsstufen für Workloads enthalten, die nicht über definierte Leistungsanforderungen verfügen.
-- Sie können mit Performance die Gesamtzahl der E/A-Operationen pro Sekunde (IOPS) angeben, um Ihren Speicher zu optimieren und an sehr spezielle Leistungsanforderungen anzupassen.
+- Sie können mit Performance die Gesamtzahl der E/A-Operationen pro Sekunde (IOPS) angeben, um Ihren Speicher zu optimieren und an spezielle Leistungsanforderungen anzupassen.
 
 ## {{site.data.keyword.filestorage_short}} mit vordefinierten IOPS-Stufen bestellen (Endurance)
 
 1. Melden Sie sich beim [IBM Cloud-Katalog](https://{DomainName}/catalog/){:new_window} an und klicken Sie auf **Speicher**. Wählen Sie anschließend {{site.data.keyword.filestorage_short}} aus. Klicken Sie auf **Erstellen**.
 
-   Alternativ können Sie sich beim [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} anmelden. Klicken Sie auf **Speicher** > **{{site.data.keyword.filestorage_short}}**. Klicken Sie rechts oben auf **{{site.data.keyword.filestorage_short}} bestellen**.
+   Alternativ können Sie sich am [{{site.data.keyword.slportal}} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/){:new_window} anmelden und auf **Speicher** > **{{site.data.keyword.filestorage_short}}** klicken. Klicken Sie rechts oben auf **{{site.data.keyword.filestorage_short}} bestellen**.
 2. Wählen Sie Ihre Bereitstellungs**position** (Ihr Rechenzentrum) aus.
    - Stellen Sie sicher, dass der neue Speicher an derselben Position hinzugefügt wird, an der sich auch Ihre Rechenhosts befinden.
 3. Abrechnung. Wenn Sie ein Rechenzentrum mit verbesserter Funktionalität (gekennzeichnet durch einen Stern) ausgewählt haben, können Sie zwischen monatlicher und stündlicher Abrechnung wählen.
      1. Bei der **stündlichen** Abrechnung wird die Stundenzahl, die der Dateidatenträger im Konto vorhanden war, zu dem Zeitpunkt berechnet, an dem die LUN gelöscht wird oder der Rechnungsstellungszyklus endet. Dies ist abhängig davon, welches Ereignis zuerst eintritt. Die Abrechnung nach Stunden ist eine gute Wahl für Speicher, der für einige wenige Tage oder weniger als einen ganzen Monat lang genutzt wird. Die Abrechnung nach Stunden ist nur für Speicher verfügbar, der in diesen [ausgewählten Rechenzentren](new-ibm-block-and-file-storage-location-and-features.html) bereitgestellt wird.
      2. Bei der **monatlichen** Abrechnung erfolgt die Berechnung für den Preis anteilmäßig ab dem Erstellungsdatum bis zum Ende des Rechnungsstellungszyklus und die Rechnung wird unverzüglich gestellt. Es erfolgt keine Rückerstattung, wenn ein Dateidatenträger vor dem Ende des Rechnungsstellungszyklus gelöscht wird. Die monatliche Rechnungsstellung ist eine gute Wahl für Speicher, der für Auslastungen im Produktionsbetrieb genutzt wird, die Daten verwenden, die über längere Zeiträume (einen Monat oder länger) gespeichert werden und zugänglich sein müssen.
 
-     Der monatliche Abrechnungstyp wird standardmäßig für Speicher verwendet, der in Rechenzentren bereitgestellt wird, die **nicht** mit verbesserten Funktionen aktualisiert werden. {:note}
+     Der monatliche Abrechnungstyp wird standardmäßig für Speicher verwendet, der in Rechenzentren bereitgestellt wird, die **nicht** mit verbesserten Funktionen aktualisiert werden.
+     {:note}
 4. Geben Sie Ihre Speichergröße in das Feld **Neue Speichergröße** ein.
 5. Wählen Sie im Bereich **IOPS-Optionen für Speicher** die Option **Endurance (abgestufte E/A-Operationen pro Sekunde)** aus.
 6. Wählen Sie die IOPS-Stufe aus, die Ihre Anwendung benötigt.
@@ -43,21 +45,22 @@ Sie können {{site.data.keyword.filestorage_short}} bereitstellen und entspreche
 9. Danach markieren Sie das Kontrollkästchen **Die im Folgenden aufgeführten Servicevereinbarungen anderer Anbieter habe ich gelesen und stimme ihnen zu:**.
 10. Klicken Sie auf **Erstellen**. Ihre neue Speicherzuordnung steht nach wenigen Minuten zur Verfügung.
 
-Standardmäßig können Sie insgesamt 250 {{site.data.keyword.blockstorageshort}}-Datenträger bereitstellen. Wenden Sie sich an Ihren Vertriebsbeauftragten, wenn Sie die Anzahl Ihrer Datenträger erhöhen möchten. Informationen zur Erhöhung von Begrenzungen finden Sie [hier](managing-storage-limits.html). <br/><br/>Weitere Informationen zum Grenzwert für gleichzeitige Autorisierungen finden Sie im Abschnitt mit den [FAQs](File-Storage-FAQ.html#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-).
+Standardmäßig können Sie insgesamt 250 {{site.data.keyword.blockstorageshort}}-Datenträger bereitstellen. Wenden Sie sich an Ihren Vertriebsbeauftragten, wenn Sie die Anzahl Ihrer Datenträger erhöhen möchten. Informationen zur Erhöhung von Begrenzungen finden Sie [hier](managing-storage-limits.html).<br/><br/>Weitere Informationen zum Grenzwert für gleichzeitige Autorisierungen finden Sie im Abschnitt mit den [FAQs](faqs.html#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-).
 {:tip}
 
 ## {{site.data.keyword.filestorage_short}} mit angepassten IOPS bestellen (Performance)
 
 1. Melden Sie sich beim [IBM Cloud-Katalog](https://{DomainName}/catalog/){:new_window} an und klicken Sie auf **Speicher**. Wählen Sie anschließend {{site.data.keyword.filestorage_short}} aus. Klicken Sie auf **Erstellen**.
 
-   Alternativ können Sie sich beim [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} anmelden. Klicken Sie auf **Speicher** > **{{site.data.keyword.filestorage_short}}**. Klicken Sie rechts oben auf **{{site.data.keyword.filestorage_short}} bestellen**.
+   Alternativ können Sie sich am [{{site.data.keyword.slportal}} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/){:new_window} anmelden und auf **Speicher** > **{{site.data.keyword.filestorage_short}}** klicken. Klicken Sie rechts oben auf **{{site.data.keyword.filestorage_short}} bestellen**.
 2. Klicken Sie auf **Position** und wählen Sie Ihr Rechenzentrum aus.
    - Stellen Sie sicher, dass der neue Speicher an derselben Position hinzugefügt wird, an der sich auch Ihre Rechenhosts befinden.
 3. Abrechnung. Wenn Sie ein Rechenzentrum mit verbesserter Funktionalität (gekennzeichnet durch einen Stern) ausgewählt haben, können Sie zwischen monatlicher und stündlicher Abrechnung wählen.
      1. Bei der **stündlichen** Abrechnung wird die Stundenzahl, die der Dateidatenträger im Konto vorhanden war, zu dem Zeitpunkt berechnet, an dem die LUN gelöscht wird oder der Rechnungsstellungszyklus endet. Dies ist abhängig davon, welches Ereignis zuerst eintritt. Die Abrechnung nach Stunden ist eine gute Wahl für Speicher, der für einige wenige Tage oder weniger als einen ganzen Monat lang genutzt wird. Die Abrechnung nach Stunden ist nur für Speicher verfügbar, der in diesen [ausgewählten Rechenzentren](new-ibm-block-and-file-storage-location-and-features.html) bereitgestellt wird.
      2. Bei der **monatlichen** Abrechnung erfolgt die Berechnung für den Preis anteilmäßig ab dem Erstellungsdatum bis zum Ende des Rechnungsstellungszyklus und die Rechnung wird unverzüglich gestellt. Es erfolgt keine Rückerstattung, wenn ein Dateidatenträger vor dem Ende des Rechnungsstellungszyklus gelöscht wird. Die monatliche Rechnungsstellung ist eine gute Wahl für Speicher, der für Auslastungen im Produktionsbetrieb genutzt wird, die Daten verwenden, die über längere Zeiträume (einen Monat oder länger) gespeichert werden und zugänglich sein müssen.
 
-     Der monatliche Abrechnungstyp wird standardmäßig für Speicher verwendet, der in Rechenzentren bereitgestellt wird, die **nicht** mit verbesserten Funktionen aktualisiert werden. {:note}
+     Der monatliche Abrechnungstyp wird standardmäßig für Speicher verwendet, der in Rechenzentren bereitgestellt wird, die **nicht** mit verbesserten Funktionen aktualisiert werden.
+     {:note}
 4. Geben Sie Ihre Speichergröße in das Feld **Neue Speichergröße** ein.
 5. Wählen Sie im Bereich **IOPS-Optionen für Speicher** die Option **Performance (zugeordnete E/A-Operationen pro Sekunde)** aus.
 6. Geben Sie die E/A-Operationen pro Sekunde (IOPS) in das Feld **Performance (zugeordnete E/A-Operationen pro Sekunde)** ein.
@@ -66,7 +69,7 @@ Standardmäßig können Sie insgesamt 250 {{site.data.keyword.blockstorageshort}
 9. Danach markieren Sie das Kontrollkästchen **Die im Folgenden aufgeführten Servicevereinbarungen anderer Anbieter habe ich gelesen und stimme ihnen zu:**.
 10. Klicken Sie auf **Erstellen**. Ihre neue Speicherzuordnung steht nach wenigen Minuten zur Verfügung.
 
-Standardmäßig können Sie insgesamt 250 {{site.data.keyword.blockstorageshort}}-Datenträger bereitstellen. Wenden Sie sich an Ihren Vertriebsbeauftragten, wenn Sie die Anzahl Ihrer Datenträger erhöhen möchten. Informationen zur Erhöhung von Begrenzungen finden Sie [hier](managing-storage-limits.html).<br/><br/>Weitere Informationen zum Grenzwert für gleichzeitige Autorisierungen finden Sie im Abschnitt mit den [FAQs](File-Storage-FAQ.html#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-).
+Standardmäßig können Sie insgesamt 250 {{site.data.keyword.blockstorageshort}}-Datenträger bereitstellen. Wenden Sie sich an Ihren Vertriebsbeauftragten, wenn Sie die Anzahl Ihrer Datenträger erhöhen möchten. Informationen zur Erhöhung von Begrenzungen finden Sie [hier](managing-storage-limits.html).<br/><br/>Weitere Informationen zum Grenzwert für gleichzeitige Autorisierungen finden Sie im Abschnitt mit den [FAQs](faqs.html#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-).
 {:important}
 
 
@@ -80,6 +83,11 @@ Wenn Ihre Bereitstellungsanforderung abgeschlossen ist, können Sie Ihren Hosts 
 - [{{site.data.keyword.filestorage_short}} für Sicherung mit Plesk konfigurieren](configure-backup-plesk.html)
 - [{{site.data.keyword.filestorage_short}}-Datenträger an ESXi-Hosts anhängen](architecture-guide-file-storage-vmware.html)
 
+## Hinweise zur Disaster-Recovery
+
+Um Datenverluste zu vermeiden und unterbrechungsfreie Geschäftsabläufe zu gewährleisten, sollten Sie in Betracht ziehen, Ihre Server und Speicher in einem anderen Rechenzentrum zu replizieren. Die Replikation hält Ihre Daten an zwei verschiedenen Positionen je nach Snapshot-Zeitplan synchron. Weitere Informationen hierzu finden Sie im Abschnitt [Daten replizieren](replication.html).
+
+Wenn Sie Ihren Datenträger klonen und unabhängig vom ursprünglichen Datenträger verwenden möchten, lesen Sie den Abschnitt [Duplikat des Blockdatenträgers erstellen](how-to-create-duplicate-volume.html).
 
 ## {{site.data.keyword.filestorage_short}}-Datenträger auf der Rechnung angeben
 

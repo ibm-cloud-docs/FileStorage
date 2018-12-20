@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-13"
 
 ---
 {:new_window: target="_blank"}
@@ -10,48 +10,49 @@ lastupdated: "2018-10-31"
 {:note: .note}
 {:important: .important}
 
-# Snapshot
+# Captura Instantânea
 
-Snapshot 是一種 {{site.data.keyword.filestorage_full}} 特性。Snapshot 代表磁區在特定時間點的內容。Snapshot 可讓您保護資料而不影響效能、耗用最小空間，而且視為資料保護的第一線防禦。如果使用者意外修改或刪除磁區中的重要資料，則可以輕鬆且快速地從 Snapshot 副本中還原資料。
+As capturas instantâneas são um recurso do {{site.data.keyword.filestorage_full}}. Uma captura instantânea representa o conteúdo de um volume em um determinado momento. Com as capturas instantâneas, é possível proteger seus dados sem afetar o desempenho e com consumo de espaço mínimo. As capturas instantâneas são consideradas sua primeira linha de defesa para a proteção de dados. Se um usuário modifica ou exclui acidentalmente dados cruciais de um volume, os dados podem ser restaurados de forma fácil e rápida por meio de uma cópia de captura instantânea.
 
-{{site.data.keyword.filestorage_short}} 提供兩種擷取 Snapshot 的方法。
+O {{site.data.keyword.filestorage_short}} fornece duas maneiras de tomar suas capturas instantâneas.
 
-* 首先，透過可自動為每個儲存空間磁區建立及刪除 Snapshot 副本的可配置 Snapshot 排程。您也可以根據需求，建立額外 Snapshot 排程、手動刪除副本，以及管理排程。
-* 第二種方法是擷取手動 Snapshot。
+* Primeiro, por meio de um planejamento de captura instantânea configurável que cria e exclui cópias de captura instantânea automaticamente para cada volume de armazenamento. Também é possível criar planejamentos de captura instantânea extra, excluir cópias manualmente e gerenciar planejamentos com base em seus requisitos.
+* A segunda maneira é tomar uma captura instantânea manual.
 
-Snapshot 副本是 {{site.data.keyword.filestorage_short}} 磁區的唯讀映像檔，可擷取磁區某個時間點的狀態。在建立 Snapshot 副本所需的時間以及儲存空間這兩方面，Snapshot 副本都具有效率。只需要幾秒鐘就可以建立 {{site.data.keyword.filestorage_short}} Snapshot 副本。不論儲存空間上的磁區大小或活動層次為何，這通常不到 1 秒。建立 Snapshot 副本之後，對資料物件的變更即會反映在物件現行版本的更新中，就像 Snapshot 副本不存在一樣。同時，資料的副本會保持穩定。
+Uma cópia de captura instantânea é uma imagem somente leitura de um volume do {{site.data.keyword.filestorage_short}}, que captura o estado do volume em um momento. As cópias de captura instantânea são eficientes tanto no momento em que é necessário criá-las quanto no espaço de armazenamento. Uma cópia de captura instantânea do {{site.data.keyword.filestorage_short}} leva somente alguns segundos para ser criada. Normalmente menos de 1 segundo, independentemente do tamanho do volume ou do nível de atividade no armazenamento. Depois que uma cópia de captura instantânea é criada, as mudanças nos objetos de dados são refletidas em atualizações para a versão atual dos objetos, como se as cópias de Captura instantânea não existissem. Enquanto isso, a cópia dos dados permanece estável.
 
-Snapshot 副本不會造成效能降低。使用者可以輕鬆地針對每個 {{site.data.keyword.filestorage_short}} 磁區儲存最多 50 個已排定的 Snapshot 及 50 個手動 Snapshot，這全部都可以作為資料的唯讀及線上版本進行存取。
+Em uma cópia de Captura instantânea não incorre diminuição de desempenho. Os usuários podem armazenar facilmente até 50 capturas instantâneas planejadas e 50 capturas instantâneas manuais por volume do {{site.data.keyword.filestorage_short}}, todas as quais são acessíveis como versões somente leitura e on-line dos dados.
 
-您可以使用 Snapshot 來進行下列作業：
+Com capturas instantâneas, é possível:
 
-- 不中斷地建立時間點回復點、
-- 將磁區回復到前一個時間點。
+- Criar pontos de recuperação point-in-time sem interrupção,
+- Reverter os volumes para momentos anteriores.
 
-您必須先購買磁區的部分 Snapshot 空間量，才能擷取其 Snapshot。在起始訂購期間或之後可以新增 Snapshot 空間，方法是透過**磁區詳細資料**頁面。已排定及手動 Snapshot 會共用 Snapshot 空間，因此請確定您已訂購足夠的 Snapshot 空間。如需詳細資料及指引，請參閱[訂購 Snapshot](ordering-snapshots.html) 一文。
+Deve-se comprar alguma quantia de espaço de captura instantânea para seu volume primeiro para que você possa tirar capturas instantâneas dele. O espaço de captura instantânea pode ser incluído durante o pedido inicial ou mais tarde por meio da página **Detalhes do volume**. As capturas instantâneas planejadas e manuais compartilham o espaço de captura instantânea, portanto, certifique-se de pedir espaço de Captura instantânea suficiente. Consulte o artigo [Solicitando capturas instantâneas](ordering-snapshots.html) para
+obter mais detalhes e orientação.
 
-## Snapshot 最佳作法
+## Melhores práticas de captura instantânea
 
-Snapshot 設計取決於客戶環境。下列設計考量可協助您計劃及實作 Snapshot 副本：
-- 在每個磁區或 LUN 上透過排程最多可以建立 50 個 Snapshot，透過手動方式最多可以建立 50 個 Snapshot。
-- 不要過度擷取 Snapshot。請確定已排定的 Snapshot 頻率符合 RTO 及 RPO 需求，以及應用程式商業需求，方法是排定每小時、每日或每週 Snapshot。
-- Snapshot AutoDelete 可用來控制儲存空間耗用的成長。
+O design de captura instantânea depende do ambiente do cliente. As considerações de design a seguir podem ajudá-lo a planejar e implementar cópias de Captura instantânea:
+- Até 50 capturas instantâneas podem ser criadas por meio de um planejamento e até 50 manualmente em cada volume ou LUN.
+- Não crie capturas instantâneas em excesso. Certifique-se de que a frequência de captura instantânea planejada atenda às suas necessidades de RTO e RPO e às suas necessidades de negócios do aplicativo, planejando capturas instantâneas por hora, diárias ou semanais.
+- O AutoDelete da captura instantânea pode ser usado para controlar o crescimento do consumo de armazenamento.
 
-  AutoDelete 臨界值固定為 95%。
+  O limite AutoDelete é fixo em 95 por cento.
   {:note}
 
-Snapshot 不能取代實際異地「災難回復」抄寫或長時間保留備份。
+As capturas instantâneas não são substituições para replicação real de Recuperação de desastre externo ou para backup de longa retenção.
 {:important}
 
-## 安全
+## Segurança
 
-依預設，已加密的 {{site.data.keyword.filestorage_short}} 的所有 Snapshot 及抄本也會加密。無法根據磁區來關閉此特性。如需提供者管理的靜態加密的相關資訊，請參閱[保護資料的安全](block-file-storage-encryption-rest.html)。
+Todas as capturas instantâneas e réplicas do {{site.data.keyword.filestorage_short}} criptografado também são criptografadas por padrão. Esse recurso não pode ser desativado em uma base de volume. Para obter mais informações sobre criptografia em repouso gerenciada pelo provedor, consulte [Protegendo seus dados](block-file-storage-encryption-rest.html).
 
-## Snapshots 對磁碟空間的影響
+## Como as capturas instantâneas afetam o espaço em disco
 
-Snapshot 副本可使磁碟耗用量降到最低，因為它會保留個別區塊，而非整個檔案。只有在變更或刪除作用中檔案系統中的檔案時，Snapshot 副本才會使用額外空間。發生此情況時，仍會保留原始檔案區塊作為一個以上 Snapshot 副本的一部分。
+As cópias de captura instantânea minimizam o consumo de disco preservando blocos individuais em vez de arquivos inteiros. As cópias de captura instantânea usam espaço extra somente quando os arquivos no sistema de arquivos ativo são mudados ou excluídos.
 
-在作用中檔案系統中，會將已變更的區塊重新寫入至磁碟上的不同位置，或當成作用中檔案區塊完全移除。因此，除了已修改的作用中檔案系統中的區塊所使用的磁碟空間之外，仍會保留原始區塊所使用的磁碟空間，以反映作用中檔案系統在變更之前的狀態。
+No sistema de arquivos ativo, os blocos mudados são regravados para locais diferentes no disco ou removidos como blocos de arquivos ativos inteiramente. Quando os arquivos são mudados ou excluídos, os blocos de arquivos originais são preservados como parte de uma ou mais cópias de captura instantânea. Como resultado, o espaço em disco que é usado pelos blocos originais ainda está reservado para refletir o status do sistema de arquivos ativo antes da mudança. Esse espaço é reservado, além do espaço em disco que é usado por blocos no sistema de arquivos ativo modificado.
 
 <table>
     <colgroup>
@@ -60,18 +61,18 @@ Snapshot 副本可使磁碟耗用量降到最低，因為它會保留個別區�
       <col style="width: 33.3%;"/>
     </colgroup>
       <tr>
-        <th colspan="3" style="border: 0.0px;text-align: center;">Snapshot 副本前後的磁碟空間使用情形</th>
+        <th colspan="3" style="border: 0.0px;text-align: center;">Uso de espaço em disco antes e depois da cópia de captura instantânea</th>
      </tr>
      <tr>
-        <td style="border: 0.0px;text-align: center;"><img src="/images/bfcircle1.png" alt="Snapshot 副本之前"></td>
-        <td style="border: 0.0px;text-align: center;"><img src="/images/bfcircle3.png" alt="Snapshot 副本之後"></td>
-        <td style="border: 0.0px;text-align: center;"><img src="/images/bfcircle2.png" alt="Snapshot 副本之後的變更"></td>
+        <td style="border: 0.0px;text-align: center;"><img src="/images/bfcircle1.png" alt="Antes da cópia de captura instantânea"></td>
+        <td style="border: 0.0px;text-align: center;"><img src="/images/bfcircle3.png" alt="Depois da cópia de captura instantânea"></td>
+        <td style="border: 0.0px;text-align: center;"><img src="/images/bfcircle2.png" alt="Mudanças após a cópia de captura instantânea"></td>
      </tr>
      <tr>
-        <td style="border: 0.0px;">建立任何 Snapshot 副本之前，只有作用中檔案系統才會使用磁碟空間。</td>
-        <td style="border: 0.0px;">建立 Snapshot 副本之後，作用中檔案系統及 Snapshot 副本會指向相同的磁碟區塊。Snapshot 副本不會使用額外的磁碟空間。</td>
-        <td style="border: 0.0px;">從作用中檔案系統刪除 <i>myfile.txt</i> 之後，Snapshot 副本仍然會包括該檔案，並參照其磁碟區塊。這是刪除作用中檔案系統資料不一定會釋放磁碟空間的原因。</td>
+        <td style="border: 0.0px;">Antes que qualquer cópia de captura instantânea seja criada, o espaço em disco é usado somente pelo sistema de arquivos ativo.</td>
+        <td style="border: 0.0px;">Depois que uma cópia de Captura instantânea é criada, o sistema de arquivos ativo e a cópia de Captura instantânea apontam para os mesmos blocos de disco. A cópia de captura instantânea não usa espaço em disco extra.</td>
+        <td style="border: 0.0px;">Depois que <i>myfile.txt</i> é excluído do sistema de arquivos ativo, a cópia de Captura instantânea ainda inclui o arquivo e referencia seus blocos de disco. É por isso que a exclusão de dados do sistema de arquivos ativo nem sempre libera espaço em disco.</td>
       </tr>
 </table>
 
-如需 Snapshot 空間使用情形的相關資訊，請參閱[管理 Snapshot](working-with-snapshots.html)。
+Para obter mais informações sobre o uso de espaço de captura instantânea, consulte [Gerenciando capturas instantâneas](working-with-snapshots.html)

@@ -14,28 +14,30 @@ IBM Cloud Storage - File Storage
 
     {: .navgroup id="howto"}
     {: .topicgroup}
-    佈建
+    Fornecimento
         provisioning-file-storage.md
         ordering-snapshots.md
         managing-storage-limits.md
         architecture-guide-file-storage-vmware.md
 
     {: .topicgroup}
-    配置
+    Configuração
         accessing-file-storage-linux.md
         mounting-nsf-file-storage.md
         mounting-storage-coreos.md
         set-host-queue-depth-settings-performance-and-endurance-storage.md
         configure-backup-cpanel.md
         configure-backup-plesk.md
-        
+        jumboframes.md
+
     {: .topicgroup}
-    抄寫
+    Replicação
         replication.md
+        dr-accessible-primary.md
         disaster-recovery.md
 
     {: .topicgroup}
-    安全
+    Segurança
         block-file-storage-encryption-rest.md
         migrate-file-storage-encrypted-file-storage.md
 
@@ -47,5 +49,5 @@ IBM Cloud Storage - File Storage
 
     {: .navgroup id="help"}
     faqs.md
-    [Python API 用戶端資訊](https://softlayer-python.readthedocs.io/en/latest/index.html)
+    [Informações do cliente da API do Python](https://softlayer-python.readthedocs.io/en/latest/index.html)
     {: .navgroup-end}

@@ -12,19 +12,20 @@ lastupdated: "2018-11-30"
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 
+
 # 订购快照
 
 为了自动或手动创建存储卷的快照，您需要购买空间来保存快照。可以购买的最高容量等于存储卷容量（在初始卷购买期间或之后使用以下步骤）。
 
-1. 登录到 [IBM Cloud 控制台](https://{DomainName}/catalog/){:new_window}，然后单击左上方的**菜单**图标。选择**经典基础架构**。
+1. 登录到 [IBM Cloud 控制台](https://{DomainName}/catalog/){:new_window}，然后单击左上角的菜单图标。选择**经典基础架构**。
 
-   也可以登录到 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}。
+   或者，您可以登录到 [{{site.data.keyword.slportal}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window}。
 2. 通过**存储** > **{{site.data.keyword.filestorage_short}}**，访问您的存储器。
 3. 单击“快照”框架上的**更改快照空间**。
 4. 选择所需的空间量和付款方式。
 5. 单击**继续**。
 6. 输入您拥有的任何促销码，然后单击**重新计算**。**此订单的费用**和**订单复查**将具有缺省值。
-7. 选中**我已阅读主服务协议并同意其中的条款**复选项，然后单击**下订单**。快照空间将在几分钟后供应。
+7. 选中**我已阅读主服务协议并同意其中的条款**框，然后单击**下订单**。快照空间将在几分钟后供应。
 
 ## 确定要订购的快照空间量
 
@@ -41,7 +42,7 @@ lastupdated: "2018-11-30"
 
 如果有 500 GB 实际数据，要生成 12 个每小时快照，并且各快照之间的更改比率为 1%，那么得出的快照空间量为：60 GB。
 
-*（5 G 更改比率）x（12 个每小时快照）=（60 GB 已用空间）*
+*（5 GB 更改比率）x（12 个每小时快照）=（60 GB 已用空间）*
 
 反过来说，如果有 500 GB 实际数据，要生成 12 个每小时快照，看到的每小时更改比率为 10%，那么使用的快照空间量为 600 GB。
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-11-30"
+lastupdated: "2018-12-11"
 
 ---
 {:pre: .pre}
@@ -13,18 +13,19 @@ lastupdated: "2018-11-30"
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 
+
 # 通过 VMware 供应 {{site.data.keyword.filestorage_short}}
 
 以下步骤可帮助您在 vSphere 5.5 和 vSphere 6.0 环境中通过 {{site.data.keyword.BluSoftlayer_full}} 订购和配置 {{site.data.keyword.filestorage_full}}。
 
 {{site.data.keyword.filestorage_short}} 旨在支持需要可预测性能级别的高 I/O 应用程序。通过为各个卷分配协议级别每秒输入/输出操作数 (IOPS)，可实现可预测的性能。
 
-如果需要与 VMware 主机建立 8 个以上的连接，那么最好选择 NFS {{site.data.keyword.filestorage_short}}。
+如果需要访问 VMware 数据存储的主机超过八个，那么最好选择 NFS {{site.data.keyword.filestorage_short}}。
 {:tip}
 
 {{site.data.keyword.filestorage_short}} 产品可通过 NFS 连接进行访问和安装。在 VMware 部署中，单个卷最多可以安装到 64 个 ESXi 主机作为共享存储器。还可以安装多个卷来创建存储器集群，以使用 vSphere 存储器分布式资源调度程序 (DRS)。
 
-耐久性和性能 {{site.data.keyword.filestorage_short}} 的定价及配置选项根据保留的空间和所提供 IOPS 的组合收费。
+{{site.data.keyword.filestorage_short}} 的定价及配置选项根据保留的空间和所提供 IOPS 的组合收费。
 
 ## 订购注意事项
 
@@ -34,12 +35,13 @@ lastupdated: "2018-11-30"
 
   吞吐量的计算公式是 IOPS x 16 KB。IOPS 基于 16 KB 的块大小进行度量，其中读/写操作构成比例为 50/50。<br/>增加块大小会增加吞吐量，但会降低 IOPS。例如，如果使块大小翻倍为 32 KB 的块，那么将保持最大吞吐量，但 IOPS 会降低一半。
   {:note}
+
 - NFS 使用许多额外的文件控制操作，例如 `lookup`、`getattr` 和 `readdir`。这些操作可以与读/写操作一样计为 IOPS，并根据操作类型和 NFS 版本而变化。
 - {{site.data.keyword.filestorage_short}} 卷将公开给已授权的设备、子网或 IP 地址。
 - 为了避免在路径故障转移期间断开存储器连接，{{site.data.keyword.IBM}} 建议安装 VMware 工具，以用于设置适当的超时值。无需更改此值，缺省设置可足以确保 VMware 主机不会失去连接。
 - {{site.data.keyword.BluSoftlayer_full}} 环境支持 NFS V3 和 NFS V4.1。但是，{{site.data.keyword.IBM}} 建议您使用 NFS V3，因为 NFS V4.1 是有状态协议（NFSv3 是无状态协议），在网络事件期间可能会发生协议问题。NFS V4.1 必须停止所有操作，然后才能完成锁定回收。这些操作正在执行时，可能会发生中断。
 
-有关更多信息，请参阅 VMware 的白皮书 [Best Practices for running VMware vSphere on Network Attached Storage ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){:new_window}
+有关更多信息，请参阅 VMware 的白皮书 [Best Practices for running VMware vSphere on network-attached storage Storage![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){:new_window}
 {:tip}
 
 **NFS 协议与 VMware 功能支持矩阵**
@@ -100,20 +102,21 @@ lastupdated: "2018-11-30"
   </tr>
  </tbody>
 </table>
-*来源：[VMware - NFS 协议和 ESXi ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){:new_window}*
+*来源：[VMware - NFS 协议和 ESXi ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){:new_window}*
+
 
 
 ### 使用快照
 
-通过 {{site.data.keyword.filestorage_short}}，管理员可以为每个存储卷设置快照安排，以自动创建和删除快照副本。管理员还可以创建额外的快照安排（每小时、每天和每周）来自动生成快照，也可以为业务连续性和灾难恢复 (BCDR) 方案手动创建特别快照。有关保留的快照和使用的空间的自动警报通过 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} 传递给卷所有者。
+通过 {{site.data.keyword.filestorage_short}}，管理员可以为每个存储卷设置快照安排，以自动创建和删除快照副本。管理员还可以创建额外的快照安排（每小时、每天和每周）来自动生成快照，也可以为业务连续性和灾难恢复 (BCDR) 方案手动创建特别快照。有关保留的快照和使用的空间的自动警报通过 [{{site.data.keyword.slportal}}![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window} 传递给卷所有者。
 
 需要快照空间才能使用快照。可以在初始卷订购期间购买空间，也可以在初始供应后通过在**卷详细信息**页面上单击**操作**并选择**添加快照空间**来购买空间。
 
-值得注意的是，VMware 环境并不知道快照。耐久性 {{site.data.keyword.filestorage_short}} 快照功能不能与 VMware 快照相混淆。使用 {{site.data.keyword.filestorage_short}} 快照功能的任何恢复都必须在 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} 中进行处理。
+值得注意的是，VMware 环境并不知道快照。耐久性 {{site.data.keyword.filestorage_short}} 快照功能不能与 VMware 快照相混淆。使用 {{site.data.keyword.filestorage_short}} 快照功能的任何恢复都必须在 [{{site.data.keyword.slportal}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window} 中进行处理。
 
 复原 {{site.data.keyword.filestorage_short}} 卷需要关闭 {{site.data.keyword.filestorage_short}} 上所有 VM 的电源。需要暂时从 ESXi 主机卸装该卷，以避免执行该过程期间发生任何数据损坏。
 
-有关配置快照的更多详细信息，请参阅[快照](snapshots.html)文章。
+有关更多信息，请参阅[快照](snapshots.html)文章。
 
 
 ### 使用复制
@@ -130,7 +133,7 @@ lastupdated: "2018-11-30"
 
 必须创建快照安排后，才能进行复制。
 
-进行故障转移时，将“翻转开关”从主数据中心的存储卷切换到远程数据中心的目标卷。例如，主数据中心位于伦敦，辅助数据中心位于阿姆斯特丹。如果发生故障事件，将故障转移到阿姆斯特丹。这意味着从阿姆斯特丹的 vSphere 集群实例连接到现在的主卷。修复伦敦的卷之后，会生成阿姆斯特丹卷的快照。然后，可以故障恢复到伦敦，并从伦敦的计算实例连接到原先的主卷。
+进行故障转移时，将“翻转开关”从主数据中心的存储卷切换到远程数据中心的目标卷。例如，主数据中心位于伦敦，辅助数据中心位于阿姆斯特丹。如果发生故障事件，将故障转移到阿姆斯特丹。故障转移意味着从阿姆斯特丹的 vSphere 集群实例连接到现在的主卷。修复伦敦的卷之后，会生成阿姆斯特丹卷的快照。然后，可以故障恢复到伦敦，并从伦敦的计算实例连接到原先的主卷。
 
 在该卷故障恢复到主数据中心之前，需要停止远程站点上对该卷的使用。这将生成任何新信息或更改的信息的快照，并复制到主数据中心，然后才能将该卷重新安装到生产站点 ESXi 主机上。
 
@@ -142,35 +145,13 @@ lastupdated: "2018-11-30"
 
 ## 订购 {{site.data.keyword.filestorage_short}}
 
-您可以为 VMware ESXi 5 环境订购和配置 {{site.data.keyword.filestorage_short}}。将以下信息与[高级单站点 VMware 参考体系结构](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}结合使用，在 VMware 环境中设置其中一个存储器选项。
+在 VMware 环境中，使用[高级单站点 VMware 参考体系结构 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} 利用“耐久性”或“性能”选项来设置 {{site.data.keyword.filestorage_short}}。
 
-可以通过 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} 中的**存储** > **{{site.data.keyword.filestorage_short}}** 访问“{{site.data.keyword.filestorage_short}}”页面来订购 {{site.data.keyword.filestorage_short}}。
+订购 {{site.data.keyword.filestorage_short}} 的方式是通过 [IBM Cloud 目录 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://{DomainName}/catalog/){:new_window} 或 [{{site.data.keyword.slportal}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window}。有关更多信息，请参阅[订购 {{site.data.keyword.filestorage_short}}](provisioning-file-storage.html)。
 
+存储器将在不到一分钟的时间内进行供应，并且会在 [{{site.data.keyword.slportal}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window} 的 **{{site.data.keyword.filestorage_short}}** 页面上显示。
 
-### 1. 订购
-
-使用以下步骤来订购 {{site.data.keyword.filestorage_short}}：
-1. 单击 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} 主页上的**存储** > **{{site.data.keyword.filestorage_short}}**。
-2. 单击 **{{site.data.keyword.filestorage_short}}** 页面上的**订购 {{site.data.keyword.filestorage_short}}**。
-3. 从**选择存储类型**列表中，选择**耐久性**/**性能**。
-4. 选择位置。具有已改进功能的数据中心会标有星号。确保将新存储器添加到先前订购的 ESXi 主机所在的位置。
-5. 选择“计费方式”。提供了按月和按小时计费选项。
-6. 选择所需的存储空间量（以 GB 为单位）。对于 TB，1 TB 等于 1,000 GB，12 TB 等于 12,000 GB。
-7. 输入 IOPS 量（以 100 为区间），或者选择 IOPS 层。
-8. 指定“快照空间”的大小。
-9. 单击**继续**。
-10. 如果您有促销码，请输入促销码，然后单击**重新计算**。
-11. 复查订单。
-12. 选中**我已阅读主服务协议并同意其中的条款**复选框。
-13. 单击**下订单**以提交订单，或者单击**取消**以关闭表单而不提交订单。
-
-存储器将在不到一分钟的时间内进行供应，并且会在 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} 的 **{{site.data.keyword.filestorage_short}}** 页面上显示。
-
-
-
-### 2. 授权主机使用 {{site.data.keyword.filestorage_short}}
-
-供应了卷后，必须授权将使用该卷的 {{site.data.keyword.BluBareMetServers_full}} 或 {{site.data.keyword.BluVirtServers_full}} 来访问该存储器。使用以下步骤来授权使用卷：
+供应了卷后，必须授权将使用该卷的 {{site.data.keyword.BluBareMetServers_full}} 或 {{site.data.keyword.BluVirtServers_full}} 来访问该存储器。使用以下步骤来授权该卷。
 
 1. 单击**存储** > **{{site.data.keyword.filestorage_short}}**。
 2. 选择**耐久性**或**性能卷操作**菜单上的**访问主机**。
@@ -180,13 +161,10 @@ lastupdated: "2018-11-30"
    显示的子网是与存储卷位于同一数据中心的预订子网。
    {:note}
 
-
 在授权子网后，记下您希望在安装卷时使用的耐久性或性能存储服务器的主机名。可以通过在“{{site.data.keyword.filestorage_short}} 详细信息”页面上单击特定卷来找到此信息。
 
 
 ##  配置 VMware 虚拟机主机
-
-### 满足先决条件
 
 在开始 VMware 配置过程之前，请确保满足以下先决条件：
 
@@ -200,23 +178,34 @@ lastupdated: "2018-11-30"
 1. 在连接到因特网的计算机中，启动 RDP 客户机，并与安装了 vSphere vCenter 的数据中心内所供应的 {{site.data.keyword.BluVirtServers_full}} 建立 RDP 会话。
 2. 在 {{site.data.keyword.BluVirtServers_short}} 中，启动 Web 浏览器并通过 vSphere Web Client 连接到 VMware vCenter。
 3. 在**主页**屏幕中，选择**主机和集群**。展开左侧的窗格，然后选择要用于此部署的 **VMware ESXi 服务器**。
-4. 确保所有主机上都已打开用于 NFS 客户机的防火墙端口，以便可以在 vSphere 主机上配置 NFS 客户机。在更新的 vSphere 发行版中，该端口会自动打开。要检查该端口是否已打开，请转至 VMware® vCenter™ 中的 **ESXi 主机管理**选项卡，选择**设置**，然后选择**安全概要文件**。在**防火墙**部分中，单击**编辑**，然后向下滚动到 **NFS 客户机**。
+4. 确保所有主机上都已打开用于 NFS 客户机的防火墙端口，以便可以在 vSphere 主机上配置 NFS 客户机。（在更新的 vSphere 发行版中，该端口会自动打开。）要检查该端口是否已打开，请转至 VMware® vCenter™ 中的 **ESXi 主机管理**选项卡，选择**设置**，然后选择**安全概要文件**。在**防火墙**部分中，单击**编辑**，然后向下滚动到 **NFS 客户机**。
 5. 确保选中**允许来自任何 IP 地址或 IP 地址列表的连接**。<br/>
    ![允许连接](/images/1_4.png)
 6. 通过转至 **ESXi 主机管理**选项卡，选择**管理**，然后选择**网络**来配置巨型帧。
 7. 选择 **VMkernel 适配器**，突出显示 **vSwitch**，然后单击**编辑**（“画笔”图标）。
 8. 选择 **NIC 设置**，并确保 NIC MTU 设置为 9000。
 9. **可选**。验证巨型帧设置。
-   - 在 Windows 中：`ping -f -l 8972 a.b.c.d`
-   - 在 UNIX 中：`ping -s 8972 a.b.c.d`
-     其中，a.b.c.d 是相邻 {{site.data.keyword.BluVirtServers_short}} 接口。
+   - Windows
+     ```
+     ping -f -l 8972 a.b.c.d
+     ```
+     {:pre}
+
+   - UNIX
+     ```
+     ping -s 8972 a.b.c.d
+     ```
+     {:pre}
+
+     值 a.b.c.d 是相邻的 {{site.data.keyword.BluVirtServers_short}} 界面。
+
      示例
      ```
-   ping a.b.c.d (a.b.c.d) 8972(9000) bytes of data.
+        ping a.b.c.d (a.b.c.d) 8972(9000) bytes of data.
       8980 bytes from a.b.c.d: icmp_seq=1 ttl=128 time=3.36 ms
    ```
 
-有关 VMware 和巨型帧的更多信息，请单击[此处 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://kb.vmware.com/s/article/1003712){:new_window}。
+有关 VMware 和巨型帧的更多信息，请参阅[此处 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://kb.vmware.com/s/article/1003712){:new_window}。
 {:tip}
 
 
@@ -237,27 +226,27 @@ lastupdated: "2018-11-30"
 11. 验证**负载均衡**选项是否设置为**基于源虚拟端口进行路由**，然后单击**确定**。
 
 
-### 3. 配置 ESXi 静态路由（可选）
+### 3. 配置静态路由（可选）
 
-此体系结构指南的网络配置使用最少数量的端口组。如果您具有用于 NFS 存储器的 VMkernel 端口组，那么必须执行额外的步骤。缺省情况下，ESXi 将使用 NFS 卷所在子网上的 VMkernel 端口在耐久性/性能存储器上安装 NFS 卷。由于是将第 3 层路由用于安装 NFS 卷，因此必须强制 ESXi 使用配置为安装 NFS 卷的 VMkernel 端口。为此，必须创建指向耐久性/性能存储阵列的静态路由。
+此体系结构指南的网络配置使用最少数量的端口组。如果您具有用于 NFS 存储器的 VMkernel 端口组，那么必须执行额外的步骤。缺省情况下，ESXi 将使用 NFS 卷所在子网上的 VMkernel 端口安装 NFS 卷。由于是将第 3 层路由用于安装 NFS 卷，因此必须强制 ESXi 使用配置为安装 NFS 卷的 VMkernel 端口。为了使用正确的端口，必须创建指向存储阵列的静态路由。
 
 1. 要配置静态路由，请通过 SSH 登录到使用性能或耐久性存储器的每台 ESXi 主机，然后运行以下命令。记下 `ping` 命令（第一个命令）中生成的 IP 地址，并将其用于 `esxcli` network 命令。
    ```
-   ping <host name of the endurance/performance array>
+   ping <host name of the storage array>
    ```
    {: pre}
 
-   >**注** - NFS 存储器 DNS 主机名是分配有多个 IP 地址的转发区域 (FZ)。这些 IP 地址是静态的，并且属于该特定 DNS 主机名。可以使用其中任一 IP 地址来访问特定卷。
-
+   NFS 存储器 DNS 主机名是分配有多个 IP 地址的转发区域 (FZ)。这些 IP 地址是静态的，并且属于该特定 DNS 主机名。可以使用其中任一 IP 地址来访问特定卷。
+{:note}
 
    ```
    esxcli network ip route ipv4 add –gateway GATEWAYIP –network <result of ping command>/32
    ```
    {: pre}
 
-2. 在 ESXi 5.0 和更低版本上，静态路由在重新引导后不会持久存储。要确保添加的任何静态路由都是持久存储的，需要将此命令添加到每个主机上 `/etc/rc.local.d/` 目录下的 `local.sh` 文件中。使用可视编辑器来打开 `local.sh` 文件，然后将步骤 4.1 中的第二个命令添加到 `exit 0` 行前面。
+2. 在 ESXi 5.0 和更低版本上，静态路由在重新启动后不会持久存储。要确保添加的任何静态路由都是持久存储的，需要将此命令添加到每个主机上 `/etc/rc.local.d/` 目录下的 `local.sh` 文件中。使用可视编辑器来打开 `local.sh` 文件，然后将步骤 4.1 中的第二个命令添加到 `exit 0` 行前面。
 
-记下 IP 地址，因为此地址可用于在下一步中安装卷。<br/>对于计划安装到 ESXi 主机的每个 NFS 卷，都需要完成此过程。<br/>有关更多信息，请参阅 VMware 知识库文章：[Configuring static routes for VMkernel ports on an ESXi host ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://kb.vmware.com/s/article/2001426){:new_window}。
+记下 IP 地址，因为此地址可用于在下一步中安装卷。<br/>对于计划安装到 ESXi 主机的每个 NFS 卷，都需要完成此过程。<br/>有关更多信息，请参阅 VMware 知识库文章：[Configuring static routes for VMkernel ports on an ESXi host ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://kb.vmware.com/s/article/2001426){:new_window}。
 {:tip}
 
 
@@ -266,9 +255,13 @@ lastupdated: "2018-11-30"
 1. 单击**转至 vCenter** 图标，然后单击**主机和集群**。
 2. 在**相关对象**选项卡上，单击**数据存储**。
 3. 单击**新建数据存储**图标。
-4. 在**新建数据存储**屏幕上，选择 VMware 数据存储的位置（ESXi 主机），然后单击**下一步**。
+4. 在**新建数据存储**屏幕上，选择 VMware 数据存储的位置，然后单击**下一步**。
 5. 在**类型**屏幕上，选择 **NFS**，然后单击**下一步**。
-6. 然后，选择 NFS 版本。NFS V3 和 NFS V4.1 均受支持，但首选 NFS V3。确保您仅使用一个 NFS 版本来访问给定的数据存储。使用不同版本在同一数据存储上安装一个或多个主机可能会导致数据损坏。
+6. 然后，选择 NFS 版本。NFS V3 和 NFS V4.1 均受支持，但首选 NFS V3。
+
+   确保您仅使用一个 NFS 版本来访问数据存储。使用不同版本在同一数据存储上安装一个或多个主机可能会导致数据损坏。
+   {:important}
+
 7. 在**名称和配置**屏幕上，输入要对 VMware 数据存储命名的名称。此外，还请输入 NFS 服务器的主机名。使用 NFS 服务器的 FQDN 将生成至底层服务器的最佳流量分配。IP 地址也有效，但使用频率较低，并且仅在特定情况下使用。请以 `/foldername` 格式输入文件夹名称。
 8. 在**主机可访问性**屏幕上，选择要安装 NFS VMware 数据存储的一个或多个主机，然后单击**下一步**。
 9. 在下一个屏幕上复查输入内容，然后单击**完成**。
@@ -279,7 +272,7 @@ lastupdated: "2018-11-30"
 
 要使用 IP 地址而不使用 FQDN，只需对服务器执行 ping 操作即可获取 IP 地址。
 ```
-ping <host name of the endurance/performance array>
+ping <host name of the storage array>
 ```
 {: pre}
 
@@ -304,8 +297,6 @@ Storage I/O Control (SIOC) 是可用于使用 Enterprise Plus 许可证的客户
 
 
 ### 配置用于 VMware 数据存储的 Storage I/O Control
-
-使用以下步骤为耐久性和性能存储器启用具有建议值的 SIOC：
 
 1. 在 vSphere Web Client 导航器中，浏览至 VMware 数据存储。
 2. 单击**管理**选项卡。
@@ -361,10 +352,10 @@ Storage I/O Control (SIOC) 是可用于使用 Enterprise Plus 许可证的客户
 
      ```
      #esxcfg-advcfg -s 32 /Net/TcpipHeapSize
-     #esxcfg-advcfg -s 128 /Net/TcpipHeapMax（对于 vSphere 5.0/5.1）
-     #esxcfg-advcfg -s 512 /Net/TcpipHeapMax（对于 vSphere 5.5 及更高版本）
+     #esxcfg-advcfg -s 128 /Net/TcpipHeapMax(For vSphere 5.0/5.1)
+     #esxcfg-advcfg -s 512 /Net/TcpipHeapMax(For vSphere 5.5 and higher)
      #esxcfg-advcfg -s 256 /NFS/MaxVolumes
-     #esxcfg-advcfg -s 256 /NFS41/MaxVolumes（ESXi 6.0 及更高版本）
+     #esxcfg-advcfg -s 256 /NFS41/MaxVolumes (ESXi 6.0 and higher)
      #esxcfg-advcfg -s 10 /NFS/HeartbeatMaxFailures
      #esxcfg-advcfg -s 12 /NFS/HeartbeatFrequency
      #esxcfg-advcfg -s 5 /NFS/HeartbeatTimeout   
@@ -376,70 +367,16 @@ Storage I/O Control (SIOC) 是可用于使用 Enterprise Plus 许可证的客户
   - 在 ESXi 5.x CLI 中检查高级配置参数。
 
     ```
-   #esxcfg-advcfg -g /Net/TcpipHeapSize
-   #esxcfg-advcfg -g /Net/TcpipHeapMax
-   #esxcfg-advcfg -g /NFS/MaxVolumes
-   #esxcfg-advcfg -g /NFS41/MaxVolumes（ESXi 6.0 及更高版本）
-   #esxcfg-advcfg -g /NFS/HeartbeatMaxFailures
-   #esxcfg-advcfg -g /NFS/HeartbeatFrequency
-   #esxcfg-advcfg -g /NFS/HeartbeatTimeout
-   #esxcfg-advcfg -g /NFS/MaxQueueDepth
-   #esxcfg-advcfg -g /Disk/QFullSampleSize
-   #esxcfg-advcfg -g /Disk/QFullThreshold
-   ```
-
-## 在 {{site.data.keyword.BluSoftlayer_notm}} 中启用巨型帧 - Windows 和 Linux
-
-巨型帧是一种以太网帧，其有效内容大于标准的最大传输单元 (MTU) 1,500 字节。巨型帧在至少支持 1 Gbps 的局域网上使用，并且最大可达 9000 字节。
-
-需要将巨型帧配置为在从“源设备”<->“交换机”<->“路由器”<->“交换机”<->“目标设备”的整个网络路径上相同。如果未将整个链设置为相同值，那么将缺省为链上的最低设置。目前，{{site.data.keyword.BluSoftlayer_full}} 的网络设备设置为 9,000。所有客户设备都需要设置为相同的值 9,000。
-{:important}
-
-### 在 Windows 中启用巨型帧
-
-1. 打开**网络和共享中心**。
-2. 单击**更改适配器设置**。
-3.  、右键单击要为其启用巨型帧的 NIC，然后选择**属性**。
-4. 在**网络**选项卡下，单击网络适配器的**配置**。
-5. 选择**高级**选项卡。
-6. 选择**巨型帧**，然后将值从**已禁用**更改为所需的值。值（例如，9 kB 或 9014 字节）取决于 NIC。
-7. 单击所有窗口中的**确定**。
-
-在您进行更改时，NIC 会有几秒钟时间失去网络连接。重新启动设备以确认更改生效。
-{:tip}
-
-
-### 在 Linux 中启用巨型帧
-
-1. 编辑 eth0 接口的网络配置文件。
-   - CentOS/RHEL/Fedora Linux 用户编辑 `/etc/sysconfig/network-script/ifcfg-eth0`
-     ```
-     # vi /etc/sysconfig/network-script/ifcfg-eth0
-     ```
-     {: pre}
-
-   - Debian/Ubuntu Linux 用户编辑 `/etc/network/interfaces`。
-
-2. 附加以下配置伪指令，用于指定以字节为单位的帧大小。
-   - CentOS/RHEL/Fedora Linux
-     ```
-     MTU 9000
-     ```
-     {: pre}
-
-   - Debian/Ubuntu Linux
-     ```
-     MTU=9000
-     ```
-     {: pre}
-
-3. 关闭并保存文件。重新启动接口 eth0。
-   ```
-   # /etc/init.d/networking restart
-   ```
-   {: pre}
-
-   此操作会导致短暂失去网络连接。
-
+    #esxcfg-advcfg -g /Net/TcpipHeapSize
+    #esxcfg-advcfg -g /Net/TcpipHeapMax
+    #esxcfg-advcfg -g /NFS/MaxVolumes
+    #esxcfg-advcfg -g /NFS41/MaxVolumes (ESXi 6.0 and higher)
+    #esxcfg-advcfg -g /NFS/HeartbeatMaxFailures
+    #esxcfg-advcfg -g /NFS/HeartbeatFrequency
+    #esxcfg-advcfg -g /NFS/HeartbeatTimeout
+    #esxcfg-advcfg -g /NFS/MaxQueueDepth
+    #esxcfg-advcfg -g /Disk/QFullSampleSize
+    #esxcfg-advcfg -g /Disk/QFullThreshold
+    ```
 要了解有关高级单站点 VMware 参考体系结构的更多信息，请访问[此处](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}。
 {:tip}

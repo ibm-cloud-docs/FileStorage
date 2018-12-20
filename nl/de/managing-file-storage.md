@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-30"
 
 ---
 {:new_window: target="_blank"}
@@ -39,7 +39,7 @@ Hier finden Sie die Liste der Hosts, die zurzeit berechtigt sind, auf den Datent
 
 Sie können die Datenträger anzeigen, auf die ein Host Zugriff hat, sowie Informationen, die zum Herstellen einer Verbindung erforderlich sind – Datenträgername, Speichertyp, Zieladresse, Kapazität und Position.
 
-1. Klicken Sie auf **Geräte** > **Geräteliste** im [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
+1. Klicken Sie auf **Geräte** > **Geräteliste** im [{{site.data.keyword.slportal}} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/){:new_window}.
 2. Klicken Sie auf das betreffende Gerät.
 2. Wählen Sie die Registerkarte 'Speicher' aus.
 
@@ -62,7 +62,7 @@ Sie können den Zugriff über 'Speicher' in der Ansicht 'Geräteliste' oder in d
 
 ### Zugriff über die Geräteliste widerrufen
 
-1. Klicken Sie auf **Geräte** > **Geräteliste** im [{{site.data.keyword.slportal}}](https://control.softlayer.com/){:new_window}.
+1. Klicken Sie auf **Geräte** > **Geräteliste** im [{{site.data.keyword.slportal}} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/){:new_window}.
 2. Doppelklicken Sie auf das betreffende Gerät.
 3. Wählen Sie die Registerkarte **Speicher** aus.
 4. Es wird gruppiert nach Speichertyp (Block, Datei, andere) eine Liste von Speicherdatenträgern angezeigt, auf die dieser bestimmte Host Zugriff. Wählen Sie das jeweilige Menü **Aktion** neben dem Datenträger aus, für den Sie den Zugriff widerrufen möchten, und klicken Sie auf **Zugriff widerrufen**.
@@ -91,6 +91,7 @@ Wenn Sie einen bestimmten Datenträger nicht mehr benötigen, können Sie ihn st
 2. Klicken Sie für den zu stornierenden Datenträger auf **Aktionen** und wählen Sie die Option zum Stornieren der {{site.data.keyword.filestorage_short}}-Instanz aus.****
 3. Bestätigen Sie, ob der Datenträger sofort oder am Rechnungsstichtag für den Bereitstellungszeitpunkt des Datenträgers storniert werden soll.
 
-   Wenn Sie die Option auswählen, den Datenträger am Rechnungsstichtag zu stornieren, können Sie die Stornierungsanforderung vor ihrem Stichtag annullieren.{:tip}
+   Wenn Sie die Option auswählen, den Datenträger am Rechnungsstichtag zu stornieren, können Sie die Stornierungsanforderung vor ihrem Stichtag annullieren.
+   {:tip}
 4. Klicken Sie auf **Weiter** oder **Schließen**.
 5. Klicken Sie auf das Kontrollkästchen für die Bestätigung und klicken Sie auf **Bestätigen**.

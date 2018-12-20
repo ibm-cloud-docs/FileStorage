@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-11-30"
+lastupdated: "2018-12-13"
 
 ---
 {:new_window: target="_blank"}
@@ -12,18 +12,19 @@ lastupdated: "2018-11-30"
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 
+
 # {{site.data.keyword.filestorage_short}} 주문
 
 {{site.data.keyword.filestorage_short}}를 프로비저닝하고 자신의 용량 및 IOPS 요구사항에 맞게 이를 상세 조정할 수 있습니다. 성능을 지정하기 위한 두 가지 옵션을 사용하여 스토리지를 최대한으로 활용하십시오.
 
 - 적절히 정의된 성능 요구사항이 없는 워크로드를 처리할 수 있도록 사전 정의된 성능 레벨을 제공하는 Endurance IOPS 계층을 선택할 수 있습니다.
-- Performance를 사용하여 총 IOPS 수를 지정함으로써 매우 구체적인 성능 요구사항을 만족시키도록 스토리지를 상세 조정할 수 있습니다.
+- Performance를 사용하여 총 IOPS 수를 지정함으로써 구체적인 성능 요구사항을 만족시키도록 스토리지를 상세 조정할 수 있습니다.
 
 ## 사전 정의된 IOPS 계층을 사용하는 {{site.data.keyword.filestorage_short}} 주문(Endurance)
 
 1. [IBM Cloud 카탈로그](https://{DomainName}/catalog/){:new_window}에 로그인하여 **스토리지**를 클릭하십시오. 그리고 {{site.data.keyword.filestorage_short}}를 선택하십시오. **작성**을 클릭하십시오.
 
-   또는 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}에 로그인하여 **스토리지** > **{{site.data.keyword.filestorage_short}}**를 클릭할 수 있습니다. 오른쪽 상단에서 **{{site.data.keyword.filestorage_short}} 주문**을 클릭하십시오.
+   또는 [{{site.data.keyword.slportal}} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://control.softlayer.com/){:new_window} }에 로그인하고 **스토리지** > **{{site.data.keyword.filestorage_short}}**를 클릭하십시오. 오른쪽 상단에서 **{{site.data.keyword.filestorage_short}} 주문**을 클릭하십시오.
 2. 배치 **위치**(데이터 센터)를 선택하십시오.
    - 새 스토리지가 컴퓨팅 호스트 또는 보유한 호스트와 동일한 위치에 추가되었는지 확인하십시오.
 3. 비용 청구 방식을 선택하십시오. 개선된 기능의 데이터 센터(*로 표기됨)를 선택한 경우 월별 또는 시간별 청구 중에 선택할 수 있습니다.
@@ -44,14 +45,14 @@ lastupdated: "2018-11-30"
 9. 이용 약관을 검토한 후에 **서드파티 서비스 계약서를 읽었으며 이에 동의합니다** 상자를 선택하십시오.
 10. **작성**을 클릭하십시오. 몇 분 후 새 스토리지 할당이 사용 가능해집니다.
 
-기본적으로, 250개 {{site.data.keyword.blockstorageshort}} 볼륨의 통합 총계를 프로비저닝할 수 있습니다. 볼륨 수를 늘리려면 영업 담당자에게 문의하십시오. [여기서](managing-storage-limits.html) 한계 늘리기에 대해 읽으십시오.<br/><br/>동시 권한 부여의 한계에 대한 자세한 정보는 [FAQ](File-Storage-FAQ.html#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-)를 참조하십시오.
+기본적으로, 250개 {{site.data.keyword.blockstorageshort}} 볼륨의 통합 총계를 프로비저닝할 수 있습니다. 볼륨 수를 늘리려면 영업 담당자에게 문의하십시오. [여기서](managing-storage-limits.html) 한계 늘리기에 대해 읽으십시오.<br/><br/>동시 권한 부여의 한계에 대한 자세한 정보는 [FAQ](faqs.html#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-)를 참조하십시오.
 {:tip}
 
 ## 사용자 정의 IOPS를 사용하는 {{site.data.keyword.filestorage_short}} 주문(Performance)
 
 1. [IBM Cloud 카탈로그](https://{DomainName}/catalog/){:new_window}에 로그인하여 **스토리지**를 클릭하십시오. 그리고 {{site.data.keyword.filestorage_short}}를 선택하십시오. **작성**을 클릭하십시오.
 
-   또는 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}에 로그인하여 **스토리지** > **{{site.data.keyword.filestorage_short}}**를 클릭할 수 있습니다. 오른쪽 상단에서 **{{site.data.keyword.filestorage_short}} 주문**을 클릭하십시오.
+   또는 [{{site.data.keyword.slportal}} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://control.softlayer.com/){:new_window} }에 로그인하고 **스토리지** > **{{site.data.keyword.filestorage_short}}**를 클릭하십시오. 오른쪽 상단에서 **{{site.data.keyword.filestorage_short}} 주문**을 클릭하십시오.
 2. **위치**를 클릭하고 데이터 센터를 선택하십시오.
    - 새 스토리지가 컴퓨팅 호스트 또는 보유한 호스트와 동일한 위치에 추가되었는지 확인하십시오.
 3. 비용 청구 방식을 선택하십시오. 개선된 기능의 데이터 센터(*로 표기됨)를 선택한 경우 월별 또는 시간별 청구 중에 선택할 수 있습니다.
@@ -68,7 +69,7 @@ lastupdated: "2018-11-30"
 9. 이용 약관을 검토한 후에 **서드파티 서비스 계약서를 읽었으며 이에 동의합니다** 상자를 선택하십시오.
 10. **작성**을 클릭하십시오. 몇 분 후 새 스토리지 할당이 사용 가능해집니다.
 
-기본적으로, 250개 {{site.data.keyword.blockstorageshort}} 볼륨의 통합 총계를 프로비저닝할 수 있습니다. 볼륨 수를 늘리려면 영업 담당자에게 문의하십시오. [여기서](managing-storage-limits.html) 한계 늘리기에 대해 읽으십시오.<br/><br/>동시 권한 부여의 한계에 대한 자세한 정보는 [FAQ](File-Storage-FAQ.html#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-)를 참조하십시오.
+기본적으로, 250개 {{site.data.keyword.blockstorageshort}} 볼륨의 통합 총계를 프로비저닝할 수 있습니다. 볼륨 수를 늘리려면 영업 담당자에게 문의하십시오. [여기서](managing-storage-limits.html) 한계 늘리기에 대해 읽으십시오.<br/><br/>동시 권한 부여의 한계에 대한 자세한 정보는 [FAQ](faqs.html#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-)를 참조하십시오.
 {:important}
 
 
@@ -82,6 +83,11 @@ lastupdated: "2018-11-30"
 - [Plesk로 백업을 위한 {{site.data.keyword.filestorage_short}} 구성](configure-backup-plesk.html)
 - [ESXi 호스트에 {{site.data.keyword.filestorage_short}} 볼륨 마운트](architecture-guide-file-storage-vmware.html)
 
+## 재해 복구 고려사항
+
+데이터 손실을 방지하고 비즈니스 연속성을 보장하려면 다른 데이터 센터에 서버와 스토리지를 복제하십시오. 복제를 수행하면 스냅샷 스케줄에 따라 서로 다른 두 위치에 동기화된 데이터를 보관합니다. 자세한 정보는 [데이터 복제](replication.html)를 참조하십시오.
+
+볼륨을 복제한 후에 이를 원래 볼륨과 독립적으로 사용하려면 [중복 블록 볼륨 작성](how-to-create-duplicate-volume.html)을 참조하십시오.
 
 ## 청구서에서 {{site.data.keyword.filestorage_short}} 볼륨 식별
 

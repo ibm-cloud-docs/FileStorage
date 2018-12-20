@@ -9,16 +9,19 @@ lastupdated: "2018-11-30"
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+
 
 # 针对具有 {{site.data.keyword.filestorage_short}} 的 VMware 环境设置 Brocade vRouter (Vyatta)
 
-可以在使用 {{site.data.keyword.filestorage_full}} 的 VMware 环境中配置 Brocade vRouter (Vyatta) 设备，以实现高可用性 (HA) 配置。将以下信息与[高级单站点 VMware 参考体系结构](https://console.bluemix.net/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}结合使用，在 VMware 环境中设置其中一个存储器选项。
+可以在使用 {{site.data.keyword.filestorage_full}} 的 VMware 环境中配置 Brocade vRouter (Vyatta) 设备，以实现高可用性 (HA) 配置。将以下信息与[高级单站点 VMware 参考体系结构](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}结合使用，在 VMware 环境中设置其中一个存储器选项。
 
 Brocade vRouter (Vyatta) 网关将充当环境的网关和路由器，并包含由子网组成的区域。将在区域之间设置防火墙规则，以便各区域可以相互通信。对于不需要与其他区域通信的区域，无需防火墙规则。
 
 在示例配置中，将在 Brocade vRouter (Vyatta) 中创建五个区域：
 
-- SLSERVICE - {{site.data.keyword.BluSoftlayer_full}} 服务
+- SLSERVICE - {{site.data.keyword.cloud_notm}} 服务
 - VMACCESS - 容量集群上的 {{site.data.keyword.BluVirtServers_short}} (VM)
 - MGMT - 管理和容量集群以及管理 VM
 - STORAGE - 存储服务器
@@ -355,7 +358,7 @@ save
 
 在 Brocade vRouter (Vyatta) 上设置区域和防火墙规则后，必须将 VLAN 与其相关联，并通过 Brocade vRouter (Vyatta) 启用这些 VLAN 的路由。
 
-1. 登录到 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} 并单击**网络 > 网关设备**，然后单击 Brocade vRouter (Vyatta)。
+1. 登录到 [{{site.data.keyword.slportal}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window}，然后单击**网络 > 网关设备**，然后单击 Brocade vRouter (Vyatta)。
 2. 选择 **VLAN**，然后单击**关联**。
 4. 在**关联的 VLAN** 下找到所需 VLAN，并选中每个 VLAN 旁边的框。
 5. 单击**批量操作**下拉菜单，然后选择**路由**。

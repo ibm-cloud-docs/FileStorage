@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-13"
 
 ---
 {:new_window: target="_blank"}
@@ -12,7 +12,7 @@ lastupdated: "2018-10-31"
 
 # Snapshots
 
-Snapshots sind eine Funktion von {{site.data.keyword.filestorage_full}}. Ein Snapshot stellt den Inhalt eines Datenträgers zu einem bestimmten Zeitpunkt dar. Mithilfe von Snapshots können Sie Ihre Daten ohne Auswirkungen auf die Leistung unter minimalem Speicherplatzbedarf schützen. Daher sind Snapshots als erste Verteidigungslinie für den Schutz Ihrer Daten zu betrachten. Falls ein Benutzer wichtige Daten versehentlich ändert oder von einem Datenträger löscht, lassen sich diese Daten problemlos und schnell aus einer Snapshotkopie wiederherstellen.
+Snapshots sind eine Funktion von {{site.data.keyword.filestorage_full}}. Ein Snapshot stellt den Inhalt eines Datenträgers zu einem bestimmten Zeitpunkt dar. Mit Snapshots können Sie Ihre Daten ohne Leistungseinflüsse und minimalem Platzbedarf schützen. Snapshots gelten als erste Verteidigungslinie beim Datenschutz. Falls ein Benutzer wichtige Daten versehentlich ändert oder von einem Datenträger löscht, lassen sich diese Daten problemlos und schnell aus einer Snapshotkopie wiederherstellen.
 
 {{site.data.keyword.filestorage_short}} stellt zwei Möglichkeiten zur Erstellung von Snapshots bereit.
 
@@ -38,7 +38,7 @@ Die Snapshotgestaltung hängt von der Umgebung des Kunden ab. Die folgenden Gest
 - Die Funktion zum automatischen Löschen von Snapshots (Snapshot AutoDelete) kann zur Begrenzung der Speicherbelegung genutzt werden.
 
   Der Schwellenwert AutoDelete ist auf 95 Prozent festgelegt.
-{:note}
+  {:note}
 
 Snapshots sind kein Ersatz für ausgelagerte Disaster-Recovery-Replikationen oder Sicherungen mit langer Aufbewahrungsdauer.
 {:important}
@@ -49,9 +49,9 @@ Auch alle Screenshots und Replikate von verschlüsseltem {{site.data.keyword.fil
 
 ## Auswirkungen von Snapshots auf den Plattenspeicher
 
-Snapshotkopien minimieren die Plattenbelegung, indem sie einzelne Blöcke und keine ganzen Dateien beibehalten. Snapshotkopien belegen erst dann zusätzlichen Speicherbereich, wenn Dateien im aktiven Dateisystem geändert oder gelöscht werden. Wenn dies geschieht, werden die ursprünglichen Dateiblöcke in einer oder mehreren Snapshotkopien beibehalten.
+Snapshotkopien minimieren die Plattenbelegung, indem sie einzelne Blöcke und keine ganzen Dateien beibehalten. Snapshotkopien belegen erst dann zusätzlichen Speicherbereich, wenn Dateien im aktiven Dateisystem geändert oder gelöscht werden.
 
-Im aktiven Dateisystem werden die geänderten Blöcke neu an verschiedene Positionen auf der Platte geschrieben oder vollständig als aktive Dateiblöcke entfernt. Das heißt im Ergebnis, dass neben dem Plattenspeicherplatz, der von Blöcken im geänderten aktiven Dateisystem belegt wird, der Plattenspeicherplatz, der von den ursprünglichen Blöcken belegt wird, weiterhin reserviert bleibt, um den Status des aktiven Dateisystems vor der Änderungen zu behalten.
+Im aktiven Dateisystem werden die geänderten Blöcke neu an verschiedene Positionen auf der Platte geschrieben oder vollständig als aktive Dateiblöcke entfernt. Wenn Dateien geändert oder gelöscht werden, werden die ursprünglichen Dateiblöcke in einer oder mehreren Snapshotkopien beibehalten. Das heißt im Ergebnis, dass der Plattenspeicherplatz, der von den ursprünglichen Blöcken belegt wird, weiterhin reserviert bleibt, um den Status des aktiven Dateisystems vor der Änderungen zu behalten. Dieser Speicherplatz ist zusätzlich zu dem Plattenspeicherplatz reserviert, der von Blöcken im geänderten aktiven Dateisystem belegt wird. 
 
 <table>
     <colgroup>

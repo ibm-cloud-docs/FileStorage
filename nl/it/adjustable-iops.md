@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-09-12"
+lastupdated: "2018-11-13"
 
 ---
 {:new_window: target="_blank"}
@@ -36,11 +36,11 @@ Se per il volume è implementata la replica, quest'ultima viene aggiornata autom
 
 1. Vai al tuo elenco di {{site.data.keyword.filestorage_short}}
     - Dal portale clienti, fai clic su **Storage** > **{{site.data.keyword.filestorage_short}}** OPPURE
-    - Dal catalogo di {{site.data.keyword.BluSoftlayer_full}}, fai clic su **Infrastruttura** > **Archiviazione** > **{{site.data.keyword.filestorage_short}}**.
+    - Dalla console {{site.data.keyword.BluSoftlayer_full}}, fai clic su **Infrastruttura** > **Archiviazione** > **{{site.data.keyword.filestorage_short}}**.
 2. Seleziona il volume dall'elenco e fai clic su **Actions** > **Modify Volume**
 3. In **Storage IOPS Options**, effettua una nuova selezione:
-    - Endurance (IOPS a livelli): seleziona un livello IOPS superiore a 0,25 IOPS/GB della tua archiviazione. Puoi aumentare il livello IOPS in qualsiasi momento. Tuttavia, la diminuzione è disponibile solo una volta al mese.
-    - Performance (IOPS allocato): specifica la nuova opzione IOPS per la tua archiviazione immettendo un valore compreso nell'intervallo 100 - 48.000 IOPS. (Assicurati di esaminare gli eventuali limiti specifici richiesti in base alla dimensione nel modulo dell'ordine).
+    - Per Endurance (IOPS a livelli), seleziona un livello IOPS superiore a 0,25 IOPS/GB della tua archiviazione. Puoi aumentare il livello IOPS in qualsiasi momento. Tuttavia, la diminuzione è disponibile solo una volta al mese.
+    - Per Performance (IOPS allocato), specifica la nuova opzione IOPS per la tua archiviazione immettendo un valore compreso nell'intervallo 100 - 48.000 IOPS. (Assicurati di esaminare gli eventuali limiti specifici richiesti in base alla dimensione nel modulo dell'ordine).
 4. Riesamina la tua selezione e la nuova determinazione del prezzo.
 5. Fai clic sulla casella di spunta **I have read the Master Service Agreement...** e fai clic su **Place Order**.
 6. La tua nuova allocazione di archiviazione è disponibile in pochi minuti.

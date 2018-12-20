@@ -2,18 +2,18 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-09-12"
+lastupdated: "2018-11-12"
 
 ---
 {:new_window: target="_blank"}
 
 # ファイル共有容量の拡張
 
-この新機能により、{{site.data.keyword.filestorage_full}} の現行ユーザーは、{{site.data.keyword.filestorage_short}}を GB 単位で最大 12 TB までただちに拡張できます。 拡張したボリュームに複製を作成したり手動でデータをマイグレーションしたりする必要はありません。 サイズ変更中に、ストレージが停止したり、利用できなくなったりすることはありません。 
+この新機能により、{{site.data.keyword.filestorage_full}} の現行ユーザーは、{{site.data.keyword.filestorage_short}} のサイズを GB 単位で最大 12 TB まですぐに拡張することができます。拡張したボリュームに複製を作成したり手動でデータをマイグレーションしたりする必要はありません。 サイズ変更中に、ストレージが停止したり、利用できなくなったりすることはありません。
 
 ボリュームの請求方法が自動的に更新され、新しい価格の日割り額が現在の請求サイクルに加算されます。 そして、次の請求サイクルでは新しい価格が全額請求されます。
 
-この機能は、[一部のデータ・センター](new-ibm-block-and-file-storage-location-and-features.html)でのみ使用できます。 
+この機能は、[一部のデータ・センター](new-ibm-block-and-file-storage-location-and-features.html)でのみ使用できます。
 
 ## 拡張可能ストレージの利点
 
@@ -27,7 +27,7 @@ lastupdated: "2018-09-12"
 
 ## 制限
 
-この機能は、拡張機能を備えた[データ・センター](new-ibm-block-and-file-storage-location-and-features.html)でプロビジョンされたストレージにのみ使用できます。 これらのデータ・センターでプロビジョンされた暗号化ストレージは、最大 12 TB まで増やすことができます。 
+この機能は、拡張機能を備えた[データ・センター](new-ibm-block-and-file-storage-location-and-features.html)でプロビジョンされたストレージにのみ使用できます。 これらのデータ・センターでプロビジョンされた暗号化ストレージは、最大 12 TB まで増やすことができます。
 
 エンデュランスでプロビジョンされた{{site.data.keyword.filestorage_short}}の既存のサイズ制限が引き続き適用されます (10 IOPS ティアの場合は最大 4 TB、他のすべてのティアは最大 12 TB)。
 

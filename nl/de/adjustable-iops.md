@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-09-12"
+lastupdated: "2018-11-13"
 
 ---
 {:new_window: target="_blank"}
@@ -22,7 +22,7 @@ Die Abrechnung für den Speicher wird aktualisiert, um die anteilmäßige Differ
 
 Diese Funktion ist nur in [ausgewählten Rechenzentren](new-ibm-block-and-file-storage-location-and-features.html) verfügbar.
 
-Clients können nicht zwischen Endurance und Performance umschalten, wenn sie ihre IOPS-Kapazität anpassen. Benutzer können eine neue IOPS-Stufe oder IOPS-Ebene für ihren Speicher unter den folgenden Kriterien/Einschränkungen angeben.
+Clients können nicht zwischen Endurance und Performance umschalten, wenn sie ihre IOPS-Kapazität anpassen. Benutzer können eine neue IOPS-Stufe oder IOPS-Ebene für ihren Speicher unter den folgenden Kriterien und Einschränkungen angeben.
 
 - Wenn der ursprüngliche Datenträger den Typ Endurance mit der Stufe 0,25 hat, kann die IOPS-Stufe nicht aktualisiert werden.
 - Wenn der Originaldatenträger ein Performance-Tier mit kleiner-gleich 0,30 IOPS/GB ist, schließen Sie nur Größen- und IOPS-Kombinationen ein, deren Ergebnis kleiner-gleich 0,30 IOPS/GB ist.
@@ -36,11 +36,11 @@ Wenn für den Datenträger eine Replikation eingerichtet ist, wird das Replikat 
 
 1. Rufen Sie Ihre {{site.data.keyword.filestorage_short}}-Liste auf.
     - Klicken Sie im Kundenportal auf **Speicher** > **{{site.data.keyword.filestorage_short}}** ODER
-    - im Katalog von {{site.data.keyword.BluSoftlayer_full}} auf **Infrastruktur** > **Speicher** > **{{site.data.keyword.filestorage_short}}**.
+    - Klicken Sie in der {{site.data.keyword.BluSoftlayer_full}}-Konsole auf **Infrastruktur** > **Speicher** > **{{site.data.keyword.filestorage_short}}**.
 2. Wählen Sie den Datenträger in der Liste aus und klicken Sie auf **Aktionen** > **Datenträger ändern**.
 3. Treffen Sie unter **IOPS-Optionen für Speicher** eine neue Auswahl:
-    - Endurance (abgestufte E/A-Operationen pro Sekunde): Wählen Sie eine IOPS-Stufe größer als 0,25 IOPS/GB für Ihren Speicher aus. Sie können die IOPS-Stufe jederzeit erhöhen. Eine Verringerung ist jedoch nur einmal im Monat möglich.
-    - Performance (zugeordnete E/A-Operationen pro Sekunde): Geben Sie die neue IOPS-Option für Ihren Speicher an, indem Sie einen Wert im Bereich von 100 bis 48.000 IOPS eingeben. (Beachten Sie die Grenzwerte im Bestellformular, die für Größen möglicherweise gelten.)
+    - Wählen Sie für 'Endurance (Gestaffelte IOPS)' Sie ein IOPS-Tier aus, das größer als 0,25 IOPS/GB Ihres Speichers ist. Sie können die IOPS-Stufe jederzeit erhöhen. Eine Verringerung ist jedoch nur einmal im Monat möglich.
+    - Geben Sie für 'Performance (zugeordnete E/A-Operationen pro Sekunde)' die neue IOPS-Option für Ihren Speicher an, indem Sie einen Wert im Bereich von 100 bis 48.000 IOPS eingeben. (Beachten Sie die Grenzwerte im Bestellformular, die für Größen möglicherweise gelten.)
 4. Prüfen Sie Ihre Auswahl und die neue Preisgestaltung.
-5. Klicken Sie auf das Kontrollkästchen **Ich habe die Rahmenvereinbarung gelesen...** und klicken Sie auf **Bestellung abschicken**.
+5. Klicken Sie auf das Kontrollkästchen **Ich habe die Rahmenvereinbarung gelesen** und klicken Sie auf **Auftrag erteilen**.
 6. Ihre neue Speicherzuordnung steht nach wenigen Minuten zur Verfügung.

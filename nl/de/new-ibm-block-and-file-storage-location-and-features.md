@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-12-11"
 
 ---
 {:new_window: target="_blank"}
@@ -17,7 +17,7 @@ Mit {{site.data.keyword.BluSoftlayer_full}} wird eine neue Version von {{site.da
 Der NFS-Mountpunkt für neue Datenträger wurde geändert. Details finden Sie im Abschnitt [Neuer Mountpunkt für verschlüsselte {{site.data.keyword.filestorage_short}}-Datenträger](#new-mount-point-for-enhanced-file-storage-volumes).
 {:important}
 
-Die neue Version von {{site.data.keyword.filestorage_short}} steht in folgenden Regionen/Rechenzentren zur Verfügung und in Kürze werden weitere Rechenzentren hinzugefügt.
+Die neue Version von {{site.data.keyword.filestorage_short}} steht in folgenden Regionen und Rechenzentren zur Verfügung und in Kürze werden weitere Rechenzentren hinzugefügt.
 
 <table role="presentation">
   <tr>
@@ -56,7 +56,7 @@ Die neue Version von {{site.data.keyword.filestorage_short}} steht in folgenden 
     <td>MEL01<br />
         SYD01<br />
         SYD04<br />
-	<br /><br /><br /><br /><br /><br /><br /><br /><br />
+        SYD05<br /><br /><br /><br /><br /><br /><br /><br /><br />
     </td>
     <td>MON01<br />
         TOR01<br />
@@ -78,7 +78,7 @@ Die neue Version von {{site.data.keyword.filestorage_short}} steht in folgenden 
   </tr>
 </table>
 
-*Tabelle 1 zeigt die Verfügbarkeit von Rechenzentren. Jede Region hat eine eigene Spalte. Einige Städte wie beispielsweise Dallas, San Jose, Washington D.C., Amsterdam, Frankfurt, London und Sydney haben mehrere Rechenzentren.*
+*Tabelle 1 zeigt die Verfügbarkeit von Rechenzentren. Jede Region hat eine eigene Spalte. In manchen Städten, wie zum Beispiel Dallas, San Jose, Washington DC, Amsterdam, Frankfurt, London und Sydney, befinden sich mehrere Rechenzentren.*
 
 Der neue Speicher verfügt über die folgenden Features und Funktionen:
 
@@ -94,7 +94,9 @@ Der neue Speicher verfügt über die folgenden Features und Funktionen:
 
 ## Neuer Mountpunkt für erweiterte {{site.data.keyword.filestorage_short}}-Datenträger
 
-Alle erweiterten {{site.data.keyword.filestorage_short}}-Datenträger, die in diesen Rechenzentren bereitgestellt werden, haben einen anderen Mountpunkt als nicht verschlüsselte Datenträger. Um sicherzustellen, dass Sie für beide Speicherdatenträger den richtigen Mountpunkt verwenden, können Sie die Mountpunktinformationen auf der Seite **Datenträgerdetails** in der Benutzerschnittstelle anzeigen. Sie können auch über einen API-Aufruf auf den richtigen Mountpunkt zugreifen: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
+Alle erweiterten {{site.data.keyword.filestorage_short}}-Datenträger, die in diesen Rechenzentren bereitgestellt werden, haben einen anderen Mountpunkt als nicht verschlüsselte Datenträger. Um sicherzustellen, dass Sie für beide Speicherdatenträger den richtigen Mountpunkt verwenden, können Sie die Mountpunktinformationen auf der Seite **Datenträgerdetails** in der Konsole anzeigen. Sie können auch über einen API-Aufruf auf den richtigen Mountpunkt zugreifen: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
+
+Um auf alle neuen Funktionen zugreifen zu können, wählen Sie `Storage-as-a-Service Package 759` aus, wenn Sie Ihre Bestellung über die API aufgeben. Weitere Informationen zur {{site.data.keyword.filestorage_short}}-Bestellung finden über die API Sie unter [order_file_volume ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://softlayer-python.readthedocs.io/en/latest/api/managers/file.html#SoftLayer.managers.file.FileStorageManager.order_file_volume){:new_window}.{:important}
 
 Prüfen Sie diese Informationen erneut, um festzustellen, ob weitere Rechenzentren aktualisiert wurden, und um sich über neue Features und Funktionen zu informieren, die für {{site.data.keyword.filestorage_short}} hinzugefügt werden.
 {:tip}

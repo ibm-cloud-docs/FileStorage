@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-09-18"
+lastupdated: "2018-12-11"
 
 ---
 {:new_window: target="_blank"}
@@ -13,24 +13,24 @@ lastupdated: "2018-09-18"
 ## Come faccio a distinguere quali dei miei volumi {{site.data.keyword.filestorage_short}} sono crittografati?
 {: faq}
 
-Ricerca nel tuo elenco di {{site.data.keyword.filestorage_short}} nel portale clienti. Puoi vedere un'icona di blocco a destra del nome LUN/volume per i volumi che sono crittografati.
+Ricerca nel tuo elenco di {{site.data.keyword.filestorage_short}} nel portale clienti. Puoi vedere un'icona di blocco a destra del nome volume per i volumi che sono crittografati.
 
 ## Se ho acquistato {{site.data.keyword.filestorage_short}} non crittografato in un data center di cui non è stato eseguito l'upgrade per la crittografia, posso crittografare il mio {{site.data.keyword.filestorage_short}}?
 {: faq}
 
-{{site.data.keyword.filestorage_short}} di cui era stato eseguito il provisioning prima dell'upgrade a un data center non può essere crittografato. Il nuovo {{site.data.keyword.filestorage_short}} di cui è stato eseguito il provisioning in data center di cui è stato eseguito l'upgrade viene crittografato automaticamente. Non c'è alcuna impostazione di crittografia da cui scegliere, l'operazione è automatica. I dati su un'archiviazione non crittografata possono essere crittografati creando un nuovo volume e copiando quindi i dati nel nuovo volume crittografato con la migrazione basata sull'host. Per ulteriori informazioni, vedi [Migrazione dell'archiviazione file](/docs/infrastructure/FileStorage/migrate-file-storage-encrypted-file-storage.html).
+{{site.data.keyword.filestorage_short}} di cui era stato eseguito il provisioning prima dell'upgrade a un data center non può essere crittografato. Il nuovo {{site.data.keyword.filestorage_short}} di cui è stato eseguito il provisioning in data center di cui è stato eseguito l'upgrade viene crittografato automaticamente. Si tratta di un'operazione automatica, non di un'impostazione di provisioning che possa essere selezionata o esclusa. I dati su un'archiviazione non crittografata possono essere crittografati creando un nuovo volume e copiando quindi i dati nel nuovo volume crittografato con la migrazione basata sull'host. Per ulteriori informazioni, vedi [Migrazione dell'archiviazione file](migrate-file-storage-encrypted-file-storage.html).
 
 ## Come faccio a sapere se sto eseguendo il provisioning di {{site.data.keyword.filestorage_short}} in un data center di cui è stato eseguito l'upgrade?
 {: faq}
 
-Nel modulo di ordine {{site.data.keyword.filestorage_short}}, tutti i data center di cui è stato eseguito l'upgrade sono segnalati da un asterisco (`*`). Durante il processo di ordine, stai dando un'indicazione che stai eseguendo il provisioning con la crittografia. Una volta eseguito il provisioning dell'archiviazione, puoi vedere un'icona nell'elenco archiviazioni che mostra il volume come crittografato. 
+Nel modulo di ordine {{site.data.keyword.filestorage_short}}, tutti i data center di cui è stato eseguito l'upgrade sono segnalati da un asterisco (`*`). Durante il processo di ordine, stai dando un'indicazione che stai eseguendo il provisioning con la crittografia. Una volta eseguito il provisioning dell'archiviazione, puoi vedere un'icona nell'elenco archiviazioni che mostra il volume come crittografato.
 
-Il provisioning di tutte le condivisioni file e di tutti i volumi crittografati viene eseguito solo nei data center di cui è stato eseguito l'upgrade. Puoi trovare un elenco completo dei data center di cui è stato eseguito l'upgrade e delle funzioni disponibili [qui](/docs//infrastructure/BlockStorage/new-ibm-block-and-file-storage-location-and-features.html).
+Il provisioning di tutte le condivisioni file e di tutti i volumi crittografati viene eseguito solo nei data center di cui è stato eseguito l'upgrade. Puoi trovare un elenco completo dei data center di cui è stato eseguito l'upgrade e delle funzioni disponibili [qui](new-ibm-block-and-file-storage-location-and-features.html).
 
 ## Perché è possibile eseguire il provisioning di {{site.data.keyword.filestorage_short}} con un livello Endurance 10 IOPS in alcuni data center e non in altri?
 {: faq}
 
-Il livello 10 IOPS/GB del tipo Endurance di {{site.data.keyword.filestorage_short}} è disponibile solo in data center selezionati e a tale selezione verranno a breve aggiunti dei nuovi data center. Puoi trovare un elenco completo dei data center di cui è stato eseguito l'upgrade e delle funzioni disponibili [qui](/docs//infrastructure/BlockStorage/new-ibm-block-and-file-storage-location-and-features.html).
+Il livello 10 IOPS/GB del tipo Endurance di {{site.data.keyword.filestorage_short}} è disponibile solo in data center selezionati e a tale selezione verranno a breve aggiunti dei nuovi data center. Puoi trovare un elenco completo dei data center di cui è stato eseguito l'upgrade e delle funzioni disponibili [qui](new-ibm-block-and-file-storage-location-and-features.html).
 
 ## Come posso trovare il punto di montaggio corretto per il mio {{site.data.keyword.filestorage_short}}?
 {: faq}
@@ -56,11 +56,11 @@ Dipende da ciò che può gestire il sistema operativo dell'host, non riguarda i 
 {: faq}
 
 <table>
-  <caption>La tabella 1 mostra che il numero massimo di inode consentiti si basa sulla dimensione del volume. Le dimensioni del volume sono nella colonna di sinistra. Il numero di inode/condivisioni file è a destra.</caption>
+  <caption>La tabella 1 mostra che il numero massimo di inode consentiti si basa sulla dimensione del volume. Le dimensioni del volume sono nella colonna di sinistra. Il numero di inode e condivisioni file si trova a destra.</caption>
   <thead>
     <tr>
       <th>Dimensione del volume</th>
-      <th>Inode/Condivisioni file</th>
+      <th>Inode e condivisioni file</th>
     </tr>
   </thead>
   <tbody>
@@ -110,7 +110,7 @@ Dipende da ciò che può gestire il sistema operativo dell'host, non riguarda i 
 ## Misurazione degli IOPS
 {: faq}
 
-Gli IOPS vengono misurati in base a un profilo di caricamento di blocchi da 16 KB con 50 percento di letture e 50 percento di scritture casuali. I carichi di lavoro che differiscono da questo profilo potrebbero riscontrare delle prestazioni insoddisfacenti.
+L'IOPS viene misurato in base a un profilo di caricamento di blocchi da 16-KB con 50 percento di letture e 50 percento di scritture casuali. I carichi di lavoro che differiscono da questo profilo potrebbero riscontrare delle prestazioni insoddisfacenti.
 
 ## Cosa succede quando uso una dimensione blocco più piccola per la misurazione delle prestazioni?
 {: faq}
@@ -135,9 +135,9 @@ Non è necessario eseguire un preriscaldamento. Puoi osservare la velocità effe
 ## È possibile ottenere una velocità effettiva maggiore se viene utilizzata una connessione Ethernet più veloce?
 {: faq}
 
-I limiti di velocità effettiva sono impostati su un livello per volume/LUN; pertanto, l'utilizzo di una connessione Ethernet più veloce non aumenta tale limite impostato. Tuttavia, con una connessione Ethernet più lenta, la tua larghezza di banda può essere un potenziale collo di bottiglia.
+I limiti di velocità di trasmissione sono impostati a livello di ogni singolo volume. Questo limite non può essere aumentato utilizzando una connessione Ethernet più veloce. Tuttavia, con una connessione Ethernet più lenta, la tua larghezza di banda può essere un potenziale collo di bottiglia.
 
-## I firewall/gruppi di sicurezza hanno ripercussioni sulle prestazioni?
+## I firewall e i gruppi di sicurezza hanno ripercussioni sulle prestazioni?
 {: faq}
 
 È meglio eseguire il traffico di archiviazione su una VLAN che ignora il firewall. L'esecuzione del traffico di archiviazione tramite i firewall software aumenta la latenza e ha un impatto negativo sulle prestazioni dell'archiviazione.
@@ -145,12 +145,12 @@ I limiti di velocità effettiva sono impostati su un livello per volume/LUN; per
 ## Che latenza delle prestazioni ci si può aspettare da {{site.data.keyword.filestorage_short}}?   
 {: faq}
 
-La latenza di destinazione nell'archiviazione è di <1ms. L'archiviazione è connessa alle istanze di elaborazione su una rete condivisa e, pertanto, la latenza delle prestazioni esatta dipende dal traffico di rete durante l'operazione.
+La latenza di destinazione all'interno dello spazio di archiviazione è inferiore a un ms. L'archiviazione è connessa alle istanze di elaborazione su una rete condivisa e, pertanto, la latenza delle prestazioni esatta dipende dal traffico di rete durante l'operazione.
 
 ## Cosa succede ai dati quando i volumi {{site.data.keyword.filestorage_short}} vengono eliminati?
 {: faq}
 
-{{site.data.keyword.filestorage_full}} presenta le condivisioni file ai clienti sull'archiviazione fisica che viene ripulita prima di ogni riutilizzo. I clienti con requisiti speciali per la conformità come le linee guida NIST 800-88 per Media Sanitization devono eseguire la procedura di sanitizzazione dei dati prima di eliminare la propria archiviazione.
+{{site.data.keyword.filestorage_full}} presenta le condivisioni file ai clienti sull'archiviazione fisica che viene ripulita prima di qualsiasi riutilizzo. I clienti con requisiti speciali per la conformità come le linee guida NIST 800-88 per Media Sanitization devono eseguire la procedura di sanitizzazione dei dati prima di eliminare la propria archiviazione.
 
 ## Cosa succede alle unità che vengono disattivate dal data center cloud?
 {: faq}

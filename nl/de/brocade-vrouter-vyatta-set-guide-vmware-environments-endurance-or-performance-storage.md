@@ -12,6 +12,7 @@ lastupdated: "2018-11-30"
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 
+
 # Brocade vRouter (Vyatta) für VMware-Umgebungen mit {{site.data.keyword.filestorage_short}} einrichten
 
 Sie können eine Brocade vRouter-Appliance (Vyatta-Appliance) für hohe Verfügbarkeit (HA) in einer VMware-Umgebung konfigurieren, die {{site.data.keyword.filestorage_full}} verwendet. Verwenden Sie folgende Informationen zusammen mit [Advanced Single-Site VMware Reference Architecture](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}, um eine dieser Speicheroptionen in Ihrer VMware-Umgebung einzurichten.
@@ -20,7 +21,7 @@ Das Brocade vRouter-Gateway (Vyatta-Gateway) dient als Gateway und Router für I
 
 In der hier beschriebenen Beispielkonfiguration werden fünf Zonen im Brocade vRouter (Vyatta) erstellt:
 
-- SLSERVICE – Services von {{site.data.keyword.BluSoftlayer_full}}
+- SLSERVICE – Services von {{site.data.keyword.cloud_notm}}
 - VMACCESS – {{site.data.keyword.BluVirtServers_short}} (VMs) auf dem Kapazitätscluster
 - MGMT – Management- und Kapazitätscluster und Management-VMs
 - STORAGE – Speicherserver
@@ -357,7 +358,7 @@ save
 
 Wenn die Zonen und Firewallregeln auf dem Brocade vRouter (Vyatta) eingerichtet sind, müssen Sie ihm die VLANs zuordnen und das Routing der VLANs über den Brocade vRouter (Vyatta) aktivieren.
 
-1. Melden Sie sich am [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} an, klicken Sie auf **Netz > Gateway-Appliance** und klicken Sie auf Brocade vRouter (Vyatta).
+1. Melden Sie sich am [{{site.data.keyword.slportal}} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/){:new_window} an und klicken Sie auf **Netz > Gateway-Appliance** und auf 'Brocade vRouter (Vyatta)'.
 2. Wählen Sie ein **VLAN** aus und klicken Sie auf **Zuordnen**.
 4. Lokalisieren Sie die VLANs unter **Zugeordnete VLANs** und wählen Sie das Kontrollkästchen neben jedem VLAN aus.
 5. Klicken Sie auf das Dropdown–Menü **Massenaktionen** und wählen Sie **Route** aus.

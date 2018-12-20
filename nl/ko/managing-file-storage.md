@@ -39,7 +39,7 @@ lastupdated: "2018-11-30"
 
 특정 호스트에 액세스 권한이 있는 볼륨을 볼륨 이름, 스토리지 유형, 대상 주소, 용량 및 위치 등 연결하는 데 필요한 정보와 함께 볼 수 있습니다.
 
-1. [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}에서 **디바이스** > **디바이스 목록**을 클릭하십시오.
+1. [{{site.data.keyword.slportal}} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://control.softlayer.com/){:new_window}에서 **디바이스** > **디바이스 목록**을 클릭하십시오.
 2. 적절한 디바이스를 클릭하십시오.
 2. 스토리지 탭을 선택하십시오.
 
@@ -62,7 +62,7 @@ lastupdated: "2018-11-30"
 
 ### 디바이스 목록에서 액세스 권한 취소
 
-1. [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}에서 **디바이스** > **디바이스 목록**을 클릭하십시오.
+1. [{{site.data.keyword.slportal}} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://control.softlayer.com/){:new_window}에서 **디바이스** > **디바이스 목록**을 클릭하십시오.
 2. 적절한 디바이스를 두 번 클릭하십시오.
 3. **스토리지** 탭을 선택하십시오.
 4. 그러면 스토리지 유형(블록, 파일, 기타)별로 모두 그룹화되어 이 특정 호스트가 액세스할 수 있는 스토리지 볼륨의 목록이 나타납니다. 액세스를 취소할 볼륨 옆의 개별 **조치** 메뉴를 선택하고 **액세스 취소**를 클릭하십시오.
@@ -85,7 +85,7 @@ lastupdated: "2018-11-30"
 
 ## 스토리지 볼륨 취소
 
-특정 볼륨이 더 이상 필요하지 않으면 이를 취소할 수 있습니다. 스토리지 볼륨을 취소하려면 먼저 모든 호스트에서 액세스 권한을 취소해야 합니다.
+특정 볼륨이 더 이상 필요하지 않으면 해당 스토리지를 취소할 수 있습니다. 스토리지 볼륨을 취소하려면 먼저 모든 호스트에서 액세스 권한을 취소해야 합니다.
 
 1. **스토리지**>**{{site.data.keyword.filestorage_short}}**를 클릭하십시오.
 2. 취소할 볼륨에 대해 **조치**를 클릭하고 **{{site.data.keyword.filestorage_short}} 취소**를 선택하십시오.

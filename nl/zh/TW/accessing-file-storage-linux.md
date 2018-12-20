@@ -11,38 +11,38 @@ lastupdated: "2018-11-30"
 {:note: .note}
 {:important: .important}
 
-# 在 Linux 上裝載 {{site.data.keyword.filestorage_short}}
+# Montando o {{site.data.keyword.filestorage_short}} no Linux
 
-首先，請確定要存取 {{site.data.keyword.filestorage_full}} 磁區的主機已透過 [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} 獲得授權。
+Primeiro, certifique-se de que o host que acessará o volume do {{site.data.keyword.filestorage_full}} esteja autorizado por meio do [{{site.data.keyword.slportal}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://control.softlayer.com/){:new_window}.
 
-1. 從 {{site.data.keyword.filestorage_short}} 清單頁面，按一下與新共用相關聯的**動作**，然後按一下**授權主機**。
-2. 從清單中選取一台或多台主機，然後按一下**提交**。此動作會授權主機存取共用。
+1. Na página de listagem do {{site.data.keyword.filestorage_short}}, clique no link **Ações** que está associado ao novo compartilhamento e clique em **Autorizar host**.
+2. Selecione o host ou os hosts na lista e clique em **Enviar**. Essa ação autoriza o host a acessar o compartilhamento.
 
-## 裝載 {{site.data.keyword.filestorage_short}} 共用
+## Montando o compartilhamento do {{site.data.keyword.filestorage_short}}
 
-請使用下列指示，將 Linux 型「{{site.data.keyword.BluSoftlayer_full}} 運算」實例連接至「網路檔案系統 (NFS)」共用。此範例是以 Red Hat Enterprise Linux 6 為基礎。針對其他 Linux 發行套件，可以根據作業系統 (OS) 供應商文件來調整這些步驟。
+Use estas instruções para conectar uma instância de Cálculo do {{site.data.keyword.BluSoftlayer_full}} baseada em Linux a um compartilhamento do Network File System (NFS). O exemplo é baseado no Red Hat Enterprise Linux 6. As etapas podem ser ajustadas para outras distribuições do Linux de acordo com a documentação do fornecedor do sistema operacional (OS).
 
-您可以從 {{site.data.keyword.filestorage_short}} 清單頁面或透過 API 呼叫 `SoftLayer_Network_Storage::getNetworkMountAddress()`，來取得檔案儲存空間實例的裝載點。
+O ponto de montagem da instância de armazenamento de arquivo pode ser obtido por meio da página de listagem do {{site.data.keyword.filestorage_short}} ou por meio de uma chamada API - `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 {:tip}
 
-1. 安裝必要的套件/工具。
+1. Instale as ferramentas necessárias.
    ```
    # yum -y install nfs-utils nfs-utils-lib
    ```
    {:pre}
 
-2. 裝載遠端共用。
+2. Monte o compartilhamento remoto.
    ```
    # mount -t "nfs version" -o "options" <mount_point> /mnt
    ```
 
-   範例
+   Exemplo
    ```
    # mount -t nfs4 -o hard,intr
    nfsdal0501a.service.softlayer.com:/IBM01SV278685_7 /mnt
    ```
 
-3. 驗證已成功裝載。
+3. Verifique se a montagem foi bem-sucedida.
    ```
    # df -h
    Filesystem Size Used Avail Use% Mounted on
@@ -51,7 +51,7 @@ lastupdated: "2018-11-30"
    /dev/xvda1 97M 51M 42M 55%
    ```
 
-4. 移至裝載點，並讀寫檔案。
+4. Acesse o ponto de montagem e os arquivos de leitura/gravação.
    ```
    # touch /mnt/test
    # ls -la /mnt
@@ -61,42 +61,43 @@ lastupdated: "2018-11-30"
    -rw-r--r-- 1 nobody nobody 0 Sep 8 15:52 test
    ```
 
-   root 所建立的檔案具有 `nobody:nobody` 所有權。若要正確顯示所有權，必須使用正確的網域設定來更新 `idmapd.conf`。請參閱[如何實作 NFS 的 no_root_squash](#implementing-no_root_squash-for-nfs-optional-) 小節。{:tip}
+   Os arquivos criados pela raiz têm a propriedade de `nobody:nobody`. Para exibir a propriedade corretamente, o `idmapd.conf` precisa ser atualizado com as configurações de domínio corretas. Consulte a seção [Como implementar no_root_squash para o NFS](#implementing-no_root_squash-for-nfs-optional-).
+   {:tip}
 
-5. 啟動時裝載遠端共用。若要完成設定，請編輯檔案系統表格 (`/etc/fstab`)，將遠端共用新增至啟動時將自動裝載的項目清單：
+5. Monte o compartilhamento remoto no início. Para concluir a configuração, edite a tabela de sistemas de arquivos (`/etc/fstab`) para incluir o compartilhamento remoto na lista de entradas montadas automaticamente na inicialização:
 
    ```
    (hostname):/(username) /mnt "nfs version" "options" 0 0
    ```
 
-   範例
+   Exemplo
 
    ```
    nfsdal0501a.service.softlayer.com:/IBM01SV278685_7 /mnt nfs4 defaults,hard,intr 0 0
    ```
 
-6. 驗證配置檔未發生錯誤。
+6. Verifique se o arquivo de configuração não tem erros.
 
    ```
    # mount -fav
    ```
    {:pre}
 
-   如果指令完成且沒有任何錯誤，則設定已完成。
+   Se o comando for concluído sem erros, sua configuração estará completa.
 
-   如果您使用 NFS 4.1，請將 `sec=sys` 新增至 mount 指令，以防止發生檔案所有權問題。
+   Se você estiver usando o NFS 4.1, inclua `sec=sys` no comando de montagem para evitar problemas de propriedade do arquivo.
    {:tip}
 
 
-## 實作 NFS 的 `no_root_squash`（選用）
+## Implementando  ` no_root_squash `  para NFS (opcional)
 
-配置 `no_root_squash` 可讓 root 用戶端保留對 NFS 共用的 root 許可權。
-- 若為 NFSv3，用戶端不需要執行任何動作；`no_root_squash` 即會運作。
-- 若為 NFSv4，您需要將 nfsv4 網域設為：`slnfsv4.com`，並啟動 `rpcidmapd` 或 OS 所使用的類似服務。
+A configuração de `no_root_squash` permite que os clientes raiz retenham permissões raiz no compartilhamento do NFS.
+- Para o NFSv3, os clientes não precisam fazer nada; `no_root_squash` funciona.
+- Para o NFSv4, é necessário configurar o domínio nfsv4 como: `slnfsv4.com` e iniciar `rpcidmapd` ou um serviço semelhante usado por seu S.O.
 
-範例
+Exemplo
 
-1. 從主機中，在 `/etc/idmapd.conf` 中設定網域設定。
+1. No host, defina a configuração de domínio em `/etc/idmapd.conf`.
 
    ```
    #vi /etc/idmapd.conf
@@ -110,8 +111,8 @@ lastupdated: "2018-11-30"
    Nobody-Group = nobody
    ```
 
-2. 執行 `nfsidmap -c`。
-3. 啟動 `rpcidmapd`。
+2. Execute `nfsidmap -c`.
+3. Inicie o `rpcidmapd`.
    ```
    # /etc/init.d/rpcidmapd start
    Starting RPC idmapd: [ OK ]

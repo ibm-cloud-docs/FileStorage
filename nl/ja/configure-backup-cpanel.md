@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-30"
 
 ---
 {:new_window: target="_blank"}
@@ -15,7 +15,7 @@ lastupdated: "2018-10-31"
 
 これらの手順を使用することにより、バックアップが cPanel によって {{site.data.keyword.filestorage_full}} に保存されるように構成することができます。 root を使用できるか、または sudo SSH で WebHost Manager (WHM) のフル・アクセス権限を使用できる必要があります。 この例は、**CentOS 7** ホストに基づいています。
 
-ベンダーが提供する詳細情報については、[cPanel - Configuring Backup Directory](https://docs.cpanel.net/display/68Docs/Backup+Configuration#BackupConfiguration-ConfigureBackupDirectory){:new_window} を参照してください。
+詳しくは、[cPanel - Configuring backup directory ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://docs.cpanel.net/display/68Docs/Backup+Configuration#BackupConfiguration-ConfigureBackupDirectory){:new_window} を参照してください。
 {:tip}
 
 1. SSH を使用してホストに接続します。

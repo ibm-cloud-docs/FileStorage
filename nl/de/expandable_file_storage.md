@@ -2,18 +2,18 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-09-12"
+lastupdated: "2018-11-12"
 
 ---
 {:new_window: target="_blank"}
 
 # Kapazität für gemeinsam genutzte Dateispeicher erweitern
 
-Mit diesem neuen Feature können aktuelle Benutzer von {{site.data.keyword.filestorage_full}} die Größe ihres {{site.data.keyword.filestorage_short}}-Speichers in GB-Inkrementen sofort auf bis zu 12 TB erweitern. Sie müssen kein Duplikat erstellen oder Daten manuell auf größere Datenträger migrieren. Während die Größe geändert wird, tritt kein Ausfall auf und der Zugriff ist weiterhin möglich. 
+Mit diesem neuen Feature können aktuelle Benutzer von {{site.data.keyword.filestorage_full}} die Größe ihres {{site.data.keyword.filestorage_short}}-Speichers in GB-Inkrementen sofort auf bis zu 12 TB erweitern. Sie müssen kein Duplikat erstellen oder Daten manuell auf größere Datenträger migrieren. Während die Größe geändert wird, tritt kein Ausfall auf und der Zugriff ist weiterhin möglich.
 
 Die Abrechnung für den Datenträger wird automatisch aktualisiert, um die anteilmäßige Differenz des neuen Preises in den laufenden Rechnungsstellungszyklus einzuarbeiten. Anschließend wird der neue Betrag vollständig im nächsten Rechnungsstellungszyklus in Rechnung gestellt.
 
-Diese Funktion ist nur in [ausgewählten Rechenzentren](new-ibm-block-and-file-storage-location-and-features.html) verfügbar. 
+Diese Funktion ist nur in [ausgewählten Rechenzentren](new-ibm-block-and-file-storage-location-and-features.html) verfügbar.
 
 ## Vorteile des erweiterbaren Speichers
 
@@ -27,7 +27,7 @@ Die Erweiterungsaktion für den primären Speicher hat automatisch eine Größen
 
 ## Beschränkungen
 
-Dieses Feature ist nur für Speicher verfügbar, der in [Rechenzentren](new-ibm-block-and-file-storage-location-and-features.html) mit erweiterter Funktionalität bereitgestellt wird. Verschlüsselter Speicher, der in diesen Rechenzentren bereitgestellt wird, kann auf bis zu 12 TB vergrößert werden. 
+Dieses Feature ist nur für Speicher verfügbar, der in [Rechenzentren](new-ibm-block-and-file-storage-location-and-features.html) mit erweiterter Funktionalität bereitgestellt wird. Verschlüsselter Speicher, der in diesen Rechenzentren bereitgestellt wird, kann auf bis zu 12 TB vergrößert werden.
 
 Die bestehenden Größenbegrenzungen für {{site.data.keyword.filestorage_short}}-Speicher, der mit Endurance bereitgestellt wurde, gelten weiterhin (d. h. bis zu 4 TB für die 10-IOPS-Stufe und bis zu 12 TB für alle anderen Stufen).
 

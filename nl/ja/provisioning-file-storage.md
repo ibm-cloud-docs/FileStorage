@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-11-30"
+lastupdated: "2018-12-13"
 
 ---
 {:new_window: target="_blank"}
@@ -12,18 +12,19 @@ lastupdated: "2018-11-30"
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 
+
 # {{site.data.keyword.filestorage_short}}の注文
 
 容量および IOPS のニーズを満たすように、{{site.data.keyword.filestorage_short}} をプロビジョンして微調整を行うことができます。 パフォーマンスを指定する 2 つのオプションを使用して、ストレージを最大限に活用してください。
 
 - パフォーマンスの要件が適切に定義されていないワークロードに適合する事前定義済みパフォーマンス・レベルを備えたエンデュランス IOP ティアから選択することができます。
-- パフォーマンスを使用して IOPS の合計数を指定することにより、特定のパフォーマンス要件を厳密に満たすようにストレージを微調整することができます。
+- パフォーマンスを使用して IOPS の合計数を指定することにより、特定のパフォーマンス要件を満たすようにストレージを微調整することができます。
 
 ## 事前定義済み IOPS ティアによる {{site.data.keyword.filestorage_short}} の注文 (エンデュランス)
 
-1. [IBM Cloud カタログ](https://{DomainName}/catalog/){:new_window}にログインし、**「ストレージ」**をクリックします。その後、{{site.data.keyword.filestorage_short}}を選択します。**「作成」**をクリックします。
+1. [IBM Cloud カタログ](https://{DomainName}/catalog/){:new_window}にログインし、**「ストレージ」**をクリックします。 その後、{{site.data.keyword.filestorage_short}}を選択します。 **「作成」**をクリックします。
 
-   あるいは、[{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}にログインして、**「ストレージ」**>**「{{site.data.keyword.filestorage_short}}」**をクリックします。右上の**「{{site.data.keyword.filestorage_short}} を注文」**をクリックします。
+   あるいは、[{{site.data.keyword.slportal}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://control.softlayer.com/){:new_window} } にログインして、**「ストレージ」**>**「{{site.data.keyword.filestorage_short}}」**をクリックします。右上の**「{{site.data.keyword.filestorage_short}} を注文」**をクリックします。
 2. デプロイメント・**ロケーション** (データ・センター) を選択します。
    - 新規ストレージは必ず、所有するコンピュート・ホストと同じ場所に追加してください。
 3. 請求処理。 拡張機能を備えたデータ・センター (アスタリスクのマークがあるもの) を選択した場合は、月単位の請求と時間単位の請求のどちらにするかを選択できます。
@@ -44,14 +45,14 @@ lastupdated: "2018-11-30"
 9. ご使用条件を確認した後、**「サード・パーティー・サービス契約を読み、同意します」**ボックスにチェック・マークを付けます。
 10. **「作成」**をクリックします。 新しいストレージ割り振りが数分後に使用可能になります。
 
-デフォルトでは、合計 250 の {{site.data.keyword.blockstorageshort}} ボリュームをプロビジョンできます。 ご使用のボリュームの数を増やすには、営業担当員にお問い合わせください。 制限の増加については、[こちら](managing-storage-limits.html)を参照してください。<br/><br/>同時許可の制限について詳しくは、[FAQ](File-Storage-FAQ.html#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-) を参照してください。
+デフォルトでは、合計 250 の {{site.data.keyword.blockstorageshort}} ボリュームをプロビジョンできます。 ご使用のボリュームの数を増やすには、営業担当員にお問い合わせください。 制限の増加については、[こちら](managing-storage-limits.html)を参照してください。<br/><br/>同時許可の制限について詳しくは、[FAQ](faqs.html#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-) を参照してください。
 {:tip}
 
 ## カスタム IOPS による {{site.data.keyword.filestorage_short}} の注文 (パフォーマンス)
 
-1. [IBM Cloud カタログ](https://{DomainName}/catalog/){:new_window}にログインし、**「ストレージ」**をクリックします。その後、{{site.data.keyword.filestorage_short}}を選択します。**「作成」**をクリックします。
+1. [IBM Cloud カタログ](https://{DomainName}/catalog/){:new_window}にログインし、**「ストレージ」**をクリックします。 その後、{{site.data.keyword.filestorage_short}}を選択します。 **「作成」**をクリックします。
 
-   あるいは、[{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}にログインして、**「ストレージ」**>**「{{site.data.keyword.filestorage_short}}」**をクリックします。右上の**「{{site.data.keyword.filestorage_short}} を注文」**をクリックします。
+   あるいは、[{{site.data.keyword.slportal}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://control.softlayer.com/){:new_window} } にログインして、**「ストレージ」**>**「{{site.data.keyword.filestorage_short}}」**をクリックします。右上の**「{{site.data.keyword.filestorage_short}} を注文」**をクリックします。
 2. **「ロケーション」**をクリックし、使用するデータ・センターを選択します。
    - 新規ストレージは必ず、所有するコンピュート・ホストと同じ場所に追加してください。
 3. 請求処理。 拡張機能を備えたデータ・センター (アスタリスクのマークがあるもの) を選択した場合は、月単位の請求と時間単位の請求のどちらにするかを選択できます。
@@ -68,7 +69,7 @@ lastupdated: "2018-11-30"
 9. ご使用条件を確認した後、**「サード・パーティー・サービス契約を読み、同意します」**ボックスにチェック・マークを付けます。
 10. **「作成」**をクリックします。 新しいストレージ割り振りが数分後に使用可能になります。
 
-デフォルトでは、合計 250 の {{site.data.keyword.blockstorageshort}} ボリュームをプロビジョンできます。 ご使用のボリュームの数を増やすには、営業担当員にお問い合わせください。 制限の増加については、[こちら](managing-storage-limits.html)を参照してください。<br/><br/>同時許可の制限について詳しくは、[FAQ](File-Storage-FAQ.html#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-) を参照してください。
+デフォルトでは、合計 250 の {{site.data.keyword.blockstorageshort}} ボリュームをプロビジョンできます。 ご使用のボリュームの数を増やすには、営業担当員にお問い合わせください。 制限の増加については、[こちら](managing-storage-limits.html)を参照してください。<br/><br/>同時許可の制限について詳しくは、[FAQ](faqs.html#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-) を参照してください。
 {:important}
 
 
@@ -82,6 +83,11 @@ lastupdated: "2018-11-30"
 - [Plesk を使用してバックアップするための{{site.data.keyword.filestorage_short}}の構成](configure-backup-plesk.html)
 - [ESXi ホストでの {{site.data.keyword.filestorage_short}} ボリュームのマウント](architecture-guide-file-storage-vmware.html)
 
+## 災害復旧に関する考慮事項
+
+データ損失を防いで事業継続性を保つには、サーバーとストレージを別のデータ・センターに複製することを考慮してください。レプリケーションを行うと、スナップショットのスケジュールに基づいて、2 つの異なる場所にあるデータの同期を保つことができます。詳しくは、[データのレプリケーション](replication.html)を参照してください。
+
+使用しているボリュームを複製したものを元のボリュームとは独立して使用する場合は、[複製ブロック・ボリュームの作成](how-to-create-duplicate-volume.html)を参照してください。
 
 ## 請求書での {{site.data.keyword.filestorage_short}} ボリュームの識別
 

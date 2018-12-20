@@ -15,7 +15,7 @@ lastupdated: "2018-11-30"
 
 ## Snapshotzeitplan erstellen
 
-Durch Erstellen von Snapshotzeitplänen können Sie entscheiden, wie häufig und wann Sie eine zeitpunktbasierte Referenz des Speicherdatenträgers erstellen wollen. Es können maximal 50 Snapshots pro Speicherdatenträger erstellt werden. Zeitpläne werden über die Registerkarte **Speicher** > **{{site.data.keyword.filestorage_short}}** im [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} verwaltet.
+Durch Erstellen von Snapshotzeitplänen können Sie entscheiden, wie häufig und wann Sie eine zeitpunktbasierte Referenz des Speicherdatenträgers erstellen wollen. Es können maximal 50 Snapshots pro Speicherdatenträger erstellt werden. Zeitpläne werden über die Registerkarte **Speicher** > **{{site.data.keyword.filestorage_short}}** des [{{site.data.keyword.slportal}}s ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/){:new_window} verwaltet.
 
 
 Bevor Sie Ihren ersten Zeitplan einrichten können, müssen Sie zunächst Snapshotbereich kaufen, sofern Sie diesen nicht bei der Erstbereitstellung des Speicherdatenträgers gekauft haben.
@@ -23,7 +23,7 @@ Bevor Sie Ihren ersten Zeitplan einrichten können, müssen Sie zunächst Snapsh
 
 ### Snapshotzeitplan hinzufügen
 
-Snapshotzeitpläne können für stündliche, tägliche und wöchentliche Intervalle jeweils mit einem eigenen Aufbewahrungszyklus eingerichtet werden. Pro Speicherdatenträger besteht ein Grenzwert von maximal 50 geplanten (dies kann eine Mischung aus stündlichen, täglichen und wöchentlichen Zeitplänen sein) und manuellen Snapshots.
+Snapshotzeitpläne können für stündliche, tägliche und wöchentliche Intervalle jeweils mit einem eigenen Aufbewahrungszyklus eingerichtet werden. Pro Speicherdatenträger besteht ein Grenzwert von maximal 50 (kann eine Mischung aus stündlichen, täglichen und wöchentlichen Zeitplänen) und manuellen Snapshots.
 
 1. Klicken Sie auf Ihren Speicherdatenträger, klicken Sie auf **Aktionen** und klicken Sie auf die Option **Snapshot planen**.
 2. Im Fenster für den neuen Snapshotzeitplan können Sie aus drei verschiedenen Snapshothäufigkeiten wählen. Sie können eine beliebige Kombination aus diesen drei verwenden, um einen umfassenden Snapshotzeitplan zu erstellen.
@@ -61,13 +61,13 @@ Die Anzahl der aufbewahrten Snapshots richtet sich nach dem Wert, den Sie in das
 
 ## Menge des belegten Speicherbereichs anzeigen
 
-Das Kreisdiagramm oben auf der Seite **Details** zeigt an, wieviel Speicherbereich belegt ist und wieviel Speicherbereich noch verfügbar ist. Sie empfangen Benachrichtigungen, wenn Schwellenwerte für die Speicherbelegung erreicht werden – bei 75 Prozent, 90 Prozent und 95 Prozent.
+Das Kreisdiagramm auf der Seite **Details** zeigt an, wie viel Speicherbereich belegt ist und wie viel Speicherbereich noch verfügbar ist. Sie empfangen Benachrichtigungen, wenn Schwellenwerte für die Speicherbelegung erreicht werden – bei 75 Prozent, 90 Prozent und 95 Prozent.
 
 ## Menge des Snapshotbereichs für einen Datenträger ändern
 
 Sie müssen einem Datenträger, der zuvor keinen Snapshotbereich hatte oder zusätzlichen Snapshotbereich benötigt, möglicherweise Snapshotbereich hinzufügen. Sie können je nach Bedarf zwischen 5 GB und 4.000 GB hinzufügen.
 
-Der Snapshotbereich kann nur vergrößert werden. Es kann nicht verringert werden. Sie können zunächst einen kleinere Speichergröße auswählen, bis Sie ermittelt haben, wieviel Speicherbereich Sie tatsächlich benötigen. Beachten Sie, dass automatisierte und manuelle Snapshots den Speicherbereich gemeinsam nutzen.
+Der Snapshotbereich kann nur vergrößert werden. Es kann nicht verringert werden. Sie können zunächst einen kleinere Speichergröße auswählen, bis Sie ermittelt haben, wie viel Speicherbereich Sie benötigen. Beachten Sie, dass automatisierte und manuelle Snapshots den Speicherbereich gemeinsam nutzen.
 {:important}
 
 Der Snapshotbereich wird über **Speicher** > **{{site.data.keyword.filestorage_short}}** geändert.
@@ -82,9 +82,9 @@ Der Snapshotbereich wird über **Speicher** > **{{site.data.keyword.filestorage_
 
 Über Support-Tickets werden Benachrichtigungen an den Masterbenutzer auf Ihr Konto gesendet, wenn drei verschiedene Speicherschwellenwerte erreicht werden – 75 Prozent, 90 Prozent und 95 Prozent.
 
-- **75 Prozent der Kapazität**: Eine Warnung wird gesendet, dass die Belegung des Snapshotbereichs 75 Prozent überschritten hat. Wenn Sie auf die Warnung reagieren und Speicherbereich manuell hinzufügen oder aufbewahrte und unnötige Snapshots löschen, wird die Aktion vermerkt und das Ticket geschlossen. Wenn Sie nichts unternehmen, müssen Sie das Ticket manuell bestätigen und es wird anschließend geschlossen.
-- **90 Prozent der Kapazität**: Eine zweite Warnung wird gesendet, wenn die Belegung des Snapshotbereichs 90 Prozent überschritten hat. Wie bei Erreichen von 75 Prozent der Kapazität gilt auch hier: Wenn Sie die erforderlichen Aktionen ausführen, mit denen die Belegung des Speicherbereichs verringert wird, wird die Aktion vermerkt und das Ticket geschlossen. Wenn Sie nichts unternehmen, müssen Sie das Ticket manuell bestätigen und es wird anschließend geschlossen.
-- **95 Prozent der Kapazität**: Eine letzte Warnung wird gesendet. Wenn keine Aktion ausgeführt wird, um die Speicherbelegung unter den Schwellenwert zu senken, wird eine Benachrichtigung generiert und eine automatische Löschung durchgeführt, sodass zukünftige Snapshots erstellt werden können. Geplante Snapshots werden gelöscht, beginnend mit dem ältesten, bis die Belegung unter 95 Prozent liegt. Wenn die Belegung 95 Prozent überschreitet, werden Snapshots so lange gelöscht, bis die Belegung unter dem Schwellenwert liegt. Wenn der Speicherbereich manuell vergrößert oder Snapshots gelöscht werden, wird die Warnung zurückgesetzt und erneut ausgegeben, wenn der Schwellenwert wieder überschritten wird. Wenn keine Aktion ausgeführt wird, ist diese Benachrichtigung die einzige Warnung, die Sie empfangen.
+- Bei **75 Prozent der Kapazität** wird eine Warnung gesendet, dass die Belegung des Snapshotbereichs 75 Prozent überschritten hat. Wenn Sie auf die Warnung reagieren und Speicherbereich manuell hinzufügen oder aufbewahrte und unnötige Snapshots löschen, wird die Aktion vermerkt und das Ticket geschlossen. Wenn Sie nichts unternehmen, müssen Sie das Ticket manuell bestätigen und es wird anschließend geschlossen.
+- Bei **90 Prozent der Kapazität** wird eine zweite Warnung gesendet, wenn die Belegung des Snapshotbereichs 90 Prozent überschritten hat. Wie bei Erreichen von 75 Prozent der Kapazität gilt auch hier: Wenn Sie die erforderlichen Aktionen ausführen, mit denen die Belegung des Speicherbereichs verringert wird, wird die Aktion vermerkt und das Ticket geschlossen. Wenn Sie nichts unternehmen, müssen Sie das Ticket manuell bestätigen und es wird anschließend geschlossen.
+- Bei **95 Prozent der Kapazität** wird eine letzte Warnung gesendet. Wenn keine Aktion ausgeführt wird, um die Speicherbelegung unter den Schwellenwert zu senken, wird eine Benachrichtigung generiert und eine automatische Löschung durchgeführt, sodass zukünftige Snapshots erstellt werden können. Geplante Snapshots werden gelöscht, beginnend mit dem ältesten, bis die Belegung unter 95 Prozent liegt. Wenn die Belegung 95 Prozent überschreitet, werden Snapshots so lange gelöscht, bis die Belegung unter dem Schwellenwert liegt. Wenn der Speicherbereich manuell vergrößert oder Snapshots gelöscht werden, wird die Warnung zurückgesetzt und erneut ausgegeben, wenn der Schwellenwert wieder überschritten wird. Wenn keine Aktion ausgeführt wird, ist diese Benachrichtigung die einzige Warnung, die Sie empfangen.
 
 ## Snapshotzeitplan löschen
 
@@ -93,7 +93,7 @@ Snapshotzeitpläne können über **Speicher** > **{{site.data.keyword.filestorag
 1. Klicken Sie im Feld **Snapshotpläne** auf der Seite **Details** auf den zu löschenden Zeitplan.
 2. Klicken Sie auf das Kontrollkästchen neben dem zu löschenden Zeitplan und klicken Sie auf **Speichern**.<br />
 
-Wenn Sie die Replikationsfunktion verwenden, müssen Sie sicherstellen, dass der Zeitplan, den Sie löschen, nicht der von der Replikation verwendete Zeitplan ist. Klicken Sie [hier](replication.html), um weitere Informationen zum Löschen eines Replikationsplans zu erhalten.
+Wenn Sie die Replikationsfunktion verwenden, müssen Sie sicherstellen, dass der Zeitplan, den Sie löschen, nicht der von der Replikation verwendete Zeitplan ist. Weitere Informationen zum Löschen eines Replikationszeitplans finden Sie [hier](replication.html).
 {:important}
 
 ## Snapshot löschen
@@ -103,7 +103,7 @@ Snapshots, die nicht mehr benötigt werden, können manuell entfernt werden, um 
 1. Klicken Sie auf Ihren Speicherdatenträger und blättern Sie zum Abschnitt **Snapshot**, um die Liste der vorhandenen Snapshots anzuzeigen.
 2. Klicken Sie neben dem gewünschten Snapshot auf **Aktionen** und klicken Sie auf **Löschen**, um den Snapshot zu löschen. Diese Löschung hat keine Auswirkung auf zukünftige oder frühere Snapshots im selben Zeitplan, da zwischen Snapshots keine Abhängigkeit besteht.
 
-Manuelle Snapshots, die nicht mit der oben beschriebenen Methode gelöscht werden, werden automatisch (älteste zuerst) gelöscht, wenn Sie den Grenzwert des Speicherbereichs erreichen.
+Manuelle Snapshots, die nicht manuell im Portal gelöscht werden, werden automatisch (älteste zuerst) gelöscht, wenn Sie den Grenzwert des Speicherbereichs erreichen.
 
 ## Speicherdatenträger mithilfe eines Snapshots auf dem Stand eines bestimmten Zeitpunkts wiederherstellen
 
@@ -111,13 +111,16 @@ Es ist möglich, dass Sie Ihren Speicherdatenträger aufgrund eines Benutzerfehl
 
 1. Hängen Sie Ihren Speicherdatenträger vom Host ab und trennen Sie die Verbindung.
    - Klicken Sie hier [hier](accessing-file-storage-linux.html), um weitere Anweisungen für {{site.data.keyword.filestorage_short}} unter Linux anzuzeigen.
-2. Klicken Sie auf **Speicher** > **{{site.data.keyword.filestorage_short}}** im [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
+2. Klicken Sie auf **Speicher**, **{{site.data.keyword.filestorage_short}}** im [{{site.data.keyword.slportal}} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/){:new_window}.
 3. Blättern Sie nach unten und klicken Sie auf den Datenträger, der wiederhergestellt werden soll. Im Abschnitt **Snapshots** der Seite **Details** wird die Liste aller gespeicherten Snapshots mit Angabe ihrer Größe und ihres Erstellungsdatums angezeigt.
 4. Klicken Sie neben dem zu verwendenden Snapshot auf **Aktionen** und klicken Sie auf **Wiederherstellen**. <br/>
 
    Bei der Wiederherstellung gehen die Daten verloren, die nach der Erstellung des Snapshots erstellt oder geändert wurden. Dieser Datenverlust passiert, weil Ihr Speicherdatenträger in denselben Zustand wiederherstellt wird, den er zum Zeitpunkt der Snapshoterstellung hatte.
    {:note}
-5. Klicken Sie auf **Ja**, um die Wiederherstellung zu starten. Quer über den oberen Bereich der Seite wird die Nachricht angezeigt, dass der Datenträger mit dem ausgewählten Snapshot wiederhergestellt wird. Darüber hinaus wird neben Ihrem Datenträger auf der {{site.data.keyword.filestorage_short}}-Seite ein Symbol angezeigt, das darauf hinweist, dass zurzeit eine Transaktion aktiv ist. Bei Bewegen des Mauszeigers über das Symbol wird die Transaktion in einem Fenster angezeigt. Das Symbol wird ausgeblendet, sobald die Transaktion abgeschlossen ist.
+5. Klicken Sie auf **Ja**, um die Wiederherstellung zu starten.
+
+   Quer über den Bereich der Seite wird die Nachricht angezeigt, dass der Datenträger mit dem ausgewählten Snapshot wiederhergestellt wird. Darüber hinaus wird neben Ihrem Datenträger auf der {{site.data.keyword.filestorage_short}}-Seite ein Symbol angezeigt, das darauf hinweist, dass zurzeit eine Transaktion aktiv ist. Bei Bewegen des Mauszeigers über das Symbol wird die Transaktion in einem Fenster angezeigt. Das Symbol wird ausgeblendet, sobald die Transaktion abgeschlossen ist.
+   {:note}
 6. Hängen Sie Ihren Speicherdatenträger an den Host an und ordnen Sie ihn erneut zu.
   - Klicken Sie hier [hier](accessing-file-storage-linux.html), um weitere Anweisungen für {{site.data.keyword.filestorage_short}} unter Linux anzuzeigen.
 

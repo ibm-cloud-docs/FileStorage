@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-30"
 
 ---
 {:new_window: target="_blank"}
@@ -15,13 +15,13 @@ lastupdated: "2018-10-31"
 
 これらの手順を使用することにより、Plesk でのバックアップ用に{{site.data.keyword.filestorage_full}}を構成することができます。 root を使用できるか、または sudo SSH で Plesk の管理者レベルのフル・アクセス権限を使用できる必要があります。 この例は、CentOS7 ホストに基づいています。
 
-ベンダーが提供する詳細情報については、[バックアップとリストアに関する Plesk の資料](https://docs.plesk.com/en-US/12.5/administrator-guide/backing-up-and-restoration.59256/){:new_window}を参照してください。
+詳しくは、[バックアップとリストアに関する Plesk の資料 ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://docs.plesk.com/en-US/12.5/administrator-guide/backing-up-and-restoration.59256/){:new_window} を参照してください。
 {:tip}
 
 1. SSH を使用してホストに接続します。
 2. マウント・ポイント・ターゲットが存在することを確認します。 <br />
 
-   Plesk には、バックアップを保管するための 2 つのオプションがあります。 1 つは内部 Plesk ストレージであり、それは Plesk サーバー上にあるストレージです。 もう 1 つは外部 FTP ストレージであり、それは Web またはローカル・ネットワーク内のいずれかの外部サーバー上にあるストレージです。 Plesk のボックスでは一般的に、内部バックアップは `/var/lib/psa/dumps` に保管され、`/tmp` が一時ディレクトリーとして使用されます。 この例では、一時ディレクトリーはローカルに保持されますが、`dumps` ディレクトリーは STaaS ターゲット (`/backup/psa/dumps`) に移動します。 FTP ユーザー資格情報は必要ありません。
+   Plesk には、バックアップを保管するための 2 つのオプションがあります。 1 つは内部 Plesk ストレージであり、それは Plesk サーバー上にあるストレージです。 もう 1 つは外部 FTP ストレージであり、それは Web またはローカル・ネットワーク内のいずれかの外部サーバー上にあるストレージです。 Plesk のボックスでは一般的に、内部バックアップは `/var/lib/psa/dumps` に保管され、`/tmp` が一時ディレクトリーとして使用されます。 この例では、一時ディレクトリーはローカルに保持されますが、`dumps` ディレクトリーは {{site.data.keyword.filestorage_short}} ターゲット (`/backup/psa/dumps`) に移動します。 FTP ユーザー資格情報は必要ありません。
    {:note}
 3. [Red Hat Enterprise Linux での {{site.data.keyword.filestorage_short}} へのアクセス](accessing-file-storage-linux.html)および [CentOS での NFS/{{site.data.keyword.filestorage_short}} のマウント](mounting-nsf-file-storage.html)または [CoreOS での NFS/{{site.data.keyword.filestorage_short}} のマウント](mounting-storage-coreos.html)の説明に従って {{site.data.keyword.filestorage_short}} を構成します。 ボリュームを `/backup` にマウントし、始動時にマウントが有効になるようにファイル・システム・テーブル (`/etc/fstab`) で構成してください。 <br />
 

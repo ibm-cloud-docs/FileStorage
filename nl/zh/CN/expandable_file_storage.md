@@ -2,18 +2,18 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-09-12"
+lastupdated: "2018-11-12"
 
 ---
 {:new_window: target="_blank"}
 
 # 扩展文件共享容量
 
-利用此新功能，当前 {{site.data.keyword.filestorage_full}} 用户能够直接将其 {{site.data.keyword.filestorage_short}} 的大小扩展到最大 12 TB（以 GB 为增量）。用户无需创建复制项或将数据手动迁移到更大的卷。在调整大小时，不会发生针对存储器的任何中断或访问权缺乏问题。 
+利用此新功能，当前 {{site.data.keyword.filestorage_full}} 用户能够直接将其 {{site.data.keyword.filestorage_short}} 的大小扩展到最大 12 TB（以 GB 为增量）。用户无需创建复制项或将数据手动迁移到更大的卷。在调整大小时，不会发生针对存储器的任何中断或访问权缺乏问题。
 
 对卷的记帐会自动更新，以将新价格的按比例差值添加到当前计费周期。然后，在下一个计费周期中采用整个新金额记帐。
 
-此功能仅在[精选数据中心](new-ibm-block-and-file-storage-location-and-features.html)内提供。 
+此功能仅在[精选数据中心](new-ibm-block-and-file-storage-location-and-features.html)内提供。
 
 ## 可扩展存储器的优点
 
@@ -27,7 +27,7 @@ lastupdated: "2018-09-12"
 
 ## 限制
 
-此功能仅可用于在具有增强功能的[数据中心](new-ibm-block-and-file-storage-location-and-features.html)内供应的存储器。这些数据中心内供应的加密存储器可以增大到最高 12 TB。 
+此功能仅可用于在具有增强功能的[数据中心](new-ibm-block-and-file-storage-location-and-features.html)内供应的存储器。这些数据中心内供应的加密存储器可以增大到最高 12 TB。
 
 使用“耐久性”类型供应的 {{site.data.keyword.filestorage_short}} 的现有大小限制仍然适用（对于 10 IOPS 层，最高为 4 TB，对于其他所有层，最高为 12 TB）。
 
