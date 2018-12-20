@@ -28,7 +28,7 @@ With snapshots, you can:
 - Non-disruptively create point-in-time recovery points,
 - Revert volumes to previous points-in-time.
 
-You must purchase some amount of snapshot space for your volume first so you can take snapshots of it. The snapshot space can be added during the initial order or afterward through the **Volume Details** page. Scheduled and manual snapshots share the snapshot space, so make sure you order enough Snapshot space. See the [Ordering Snapshots](ordering-snapshots.html) article for more details and guidance.
+You must purchase some amount of snapshot space for your volume first so you can take snapshots of it. The snapshot space can be added during the initial order or afterward through the **Volume Details** page. Scheduled and manual snapshots share the snapshot space, so make sure you order enough Snapshot space.  For more information, see [Ordering Snapshots](ordering-snapshots.html).
 
 ## Snapshot best practices
 
