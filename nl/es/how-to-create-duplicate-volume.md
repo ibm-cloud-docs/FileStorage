@@ -21,19 +21,19 @@ Los duplicados pueden crearse a partir de volúmenes **primarios** y **de répli
 Si es un usuario de cuenta dedicada de {{site.data.keyword.containerlong}}, consulte las opciones para la deduplicación de un volumen en la [documentación de {{site.data.keyword.containerlong_notm}}](/docs/containers/cs_storage_file.html#backup_restore).
 {:tip}
 
-Se puede acceder a los volúmenes duplicados mediante un host para lectura/escritura siempre y cuando el almacenamiento esté suministrado. Sin embargo, no se permiten instantáneas ni réplicas hasta que se completa la copia de datos del original en el duplicado. Una vez completada la copia de datos, el duplicado se puede gestionar y utilizar como un volumen completamente independiente.
+Se puede acceder a los volúmenes duplicados mediante un host para lectura/escritura siempre y cuando el almacenamiento esté suministrado. Sin embargo, no se permiten instantáneas ni réplicas hasta que se completa la copia de datos del original en el duplicado. Una vez completada la copia de datos, el duplicado se puede gestionar y utilizar como un volumen independiente.
 
 Esta característica está disponible en la mayoría de las ubicaciones. Pulse [aquí](new-ibm-block-and-file-storage-location-and-features.html) para ver la lista de centros de datos disponibles.
 
-Algunos usos comunes para un volumen duplicado:
-- **Prueba de recuperación tras desastre**: Cree un duplicado de su volumen de réplica para verificar que los datos estén intactos y puedan utilizarse en caso de desastre, sin interrumpir la réplica.
-- **Copia de oro**: Utilice un volumen de almacenamiento como copia de oro desde la que puede crear múltiples instancias para varios usos.
-- **Renovaciones de datos**: Cree una copia de los datos de producción para montar en su entorno de no producción para la realización de pruebas.
-- **Restaurar desde instantánea**: Restaure datos en el volumen original con archivos/fechas específicos de una instantánea sin sobrescribir todo el volumen original con una función de restauración de instantáneas.
-- **Desarrollo y prueba (dev/test)**: Cree hasta cuatro duplicados simultáneos de un volumen a la vez para crear datos duplicados para desarrollo y pruebas.
-- **Redimensionamiento del almacenamiento**: Cree un volumen con el nuevo tamaño, tasa de IOPS o ambos sin necesidad de mover los datos.  
+Algunos de los usos comunes para un volumen duplicado incluyen los ejemplos siguientes.
+- **Prueba de recuperación tras desastre**. Cree un duplicado de su volumen de réplica para verificar que los datos estén intactos y puedan utilizarse en caso de desastre, sin interrumpir la réplica.
+- **Copia de oro**. Utilice un volumen de almacenamiento como copia de oro desde la que puede crear múltiples instancias para varios usos.
+- **Renovaciones de datos**. Cree una copia de los datos de producción para montar en su entorno de no producción para la realización de pruebas.
+- **Restaurar desde instantánea**. Restaure datos en el volumen original con archivos y fechas específicos de una instantánea sin sobrescribir todo el volumen original con una función de restauración de instantáneas.
+- **Desarrollo y prueba (dev/test)**. Cree hasta cuatro duplicados simultáneos de un volumen a la vez para crear datos duplicados para desarrollo y pruebas.
+- **Redimensionamiento del almacenamiento**. Cree un volumen con el nuevo tamaño, tasa de IOPS o ambos sin necesidad de mover los datos.  
 
-Puede crear un volumen duplicado a través del [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} de un par de maneras.
+Puede crear un volumen duplicado a través del [{{site.data.keyword.slportal}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){:new_window} de un par de maneras.
 
 
 ## Creación de un duplicado a partir de un volumen específico en la lista de almacenamiento
@@ -42,11 +42,11 @@ Puede crear un volumen duplicado a través del [{{site.data.keyword.slportal}} !
     - Desde el portal de clientes, pulse **Almacenamiento** > **{{site.data.keyword.filestorage_short}}** O
     - Desde el catálogo de {{site.data.keyword.BluSoftlayer_full}}, pulse **Infraestructura** > **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**.
 2. Seleccione un LUN de la lista y pulse **Acciones** > **Duplicar LUN (Volumen)**
-3. Elija la opción de instantánea:
+3. Elija la opción de instantánea.
     - Si solicita desde un volumen sin réplica:
       - Seleccione **Crear desde nueva instantánea**: Esta acción crea una instantánea que se utilizará para el duplicado. Utilice esta opción si actualmente el volumen no tiene instantáneas o si desea crear un duplicado inmediatamente.</br>
       - Seleccione **Crear desde la última instantánea**: Esta acción crea un duplicado desde la instantánea más reciente que exista para este volumen.
-    - Si se solicita desde un volumen de réplica: la única opción para las instantáneas es utilizar la instantánea más reciente disponible.
+    - Si se solicita desde un volumen de réplica, la única opción para las instantáneas es utilizar la instantánea más reciente disponible.
 4. El tipo de almacenamiento y la ubicación siguen siendo los mismos que el volumen original.
 5. Facturación mensual o por horas: puede elegir si suministrar el nuevo LUN duplicado con facturación mensual o por horas. El tipo de facturación para el volumen original se selecciona automáticamente. Si quiere elegir otro tipo de facturación para el almacenamiento de duplicado, puede seleccionarlo aquí.
 5. Si lo desea, puede especificar IOPS o el nivel de IOPS para el nuevo volumen. La designación de IOPS del volumen original se establece de forma predeterminada. Se mostrarán las combinaciones de tamaño y rendimiento disponibles.
@@ -63,7 +63,7 @@ Puede crear un volumen duplicado a través del [{{site.data.keyword.slportal}} !
 ## Creación de un duplicado a partir de una instantánea específica
 
 1. Vaya a su lista de {{site.data.keyword.filestorage_short}}
-2. Pulse un **LUN/volumen** de la lista para visualizar la página de detalles. Puede ser un volumen de réplica o sin réplica.
+2. Pulse un volumen de la lista para visualizar la página de detalles. Puede ser un volumen de réplica o sin réplica.
 3. Desplácese hacia abajo y seleccione una instantánea existente de la lista en la página de detalles y pulse **Acciones** > **Duplicar**.   
 4. El Tipo de almacenamiento (Resistencia o Rendimiento) y la Ubicación son los mismos que el volumen original.
 5. Se mostrarán las combinaciones de tamaño y rendimiento disponibles. La designación de IOPS del volumen original se establece de forma predeterminada. Puede especificar IOPS o el nivel de IOPS para el nuevo volumen.

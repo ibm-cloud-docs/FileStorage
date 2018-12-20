@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-11-30"
+lastupdated: "2018-12-13"
 
 ---
 {:new_window: target="_blank"}
@@ -12,18 +12,19 @@ lastupdated: "2018-11-30"
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 
+
 # Solicitud de {{site.data.keyword.filestorage_short}}
 
 Puede suministrar {{site.data.keyword.filestorage_short}} y realizar ajustes para satisfacer sus necesidades de capacidad y de IOPS. Saque el mayor partido de su almacenamiento con dos opciones para especificar el rendimiento.
 
 - Puede elegir entre los niveles de IOPS de Resistencia que incluyen los niveles de rendimiento predefinidos para que se ajusten las cargas de trabajo que no han definido bien los requisitos de rendimiento.
-- Puede ajustar el almacenamiento para que cumpla los requisitos de rendimiento muy específicos especificando el número total de IOPS con Rendimiento.
+- Puede ajustar el almacenamiento para que cumpla los requisitos de rendimiento específicos especificando el número total de IOPS con Rendimiento.
 
 ## Pedido de {{site.data.keyword.filestorage_short}} con los niveles de IOPS predefinidos (Resistencia)
 
 1. Inicie sesión en el [catálogo de IBM Cloud](https://{DomainName}/catalog/){:new_window} y pulse en **Almacenamiento**. A continuación seleccione {{site.data.keyword.filestorage_short}}. Pulse en **Crear**.
 
-   Alternativamente, puede iniciar sesión en el [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} }, pulsar **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**. En la parte superior derecha, pulse **Realizar pedido de {{site.data.keyword.filestorage_short}}**.
+   También puede iniciar la sesión en el [{{site.data.keyword.slportal}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){:new_window} }, pulse **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**. En la parte superior derecha, pulse **Realizar pedido de {{site.data.keyword.filestorage_short}}**.
 2. Seleccione la **Ubicación** (centro de datos) del despliegue.
    - Asegúrese de que el nuevo almacenamiento se añada en la misma ubicación que el host o los hosts de cálculo que tiene.
 3. Facturación. Si ha seleccionado un centro de datos con prestaciones mejoradas (marcados con un asterisco), podrá elegir entre facturación mensual o por horas.
@@ -44,14 +45,14 @@ Puede suministrar {{site.data.keyword.filestorage_short}} y realizar ajustes par
 9. Después de revisar los términos y condiciones, marque el recuadro de selección **He leído y acepto los acuerdos de servicio de terceros**.
 10. Pulse en **Crear**. La nueva asignación de almacenamiento está disponible en pocos minutos.
 
-De forma predeterminada, puede suministrar un total combinado de 250 volúmenes de {{site.data.keyword.blockstorageshort}}. Para aumentar el número de volúmenes, póngase en contacto con el representante de ventas. [Aquí](managing-storage-limits.html) puede leer más información sobre cómo aumentar los límites.<br/><br/>Para obtener información sobre el límite en autorizaciones simultáneas, consulte las [Preguntas más frecuentes](File-Storage-FAQ.html#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-).
+De forma predeterminada, puede suministrar un total combinado de 250 volúmenes de {{site.data.keyword.blockstorageshort}}. Para aumentar el número de volúmenes, póngase en contacto con el representante de ventas. [Aquí](managing-storage-limits.html) puede leer más información sobre cómo aumentar los límites.<br/><br/>Para obtener información sobre el límite en autorizaciones simultáneas, consulte las [Preguntas más frecuentes](faqs.html#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-).
 {:tip}
 
 ## Pedido de {{site.data.keyword.filestorage_short}} con IOPS personalizados (Rendimiento)
 
 1. Inicie sesión en el [catálogo de IBM Cloud](https://{DomainName}/catalog/){:new_window} y pulse en **Almacenamiento**. A continuación seleccione {{site.data.keyword.filestorage_short}}. Pulse en **Crear**.
 
-   Alternativamente, puede iniciar sesión en el [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} }, pulsar **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**. En la parte superior derecha, pulse **Realizar pedido de {{site.data.keyword.filestorage_short}}**.
+   También puede iniciar la sesión en el [{{site.data.keyword.slportal}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){:new_window} }, pulse **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**. En la parte superior derecha, pulse **Realizar pedido de {{site.data.keyword.filestorage_short}}**.
 2. Pulse **Ubicación** y seleccione el centro de datos.
    - Asegúrese de que el nuevo almacenamiento se añada en la misma ubicación que el host o los hosts de cálculo que tiene.
 3. Facturación. Si ha seleccionado un centro de datos con prestaciones mejoradas (marcados con un asterisco), podrá elegir entre facturación mensual o por horas.
@@ -68,7 +69,7 @@ De forma predeterminada, puede suministrar un total combinado de 250 volúmenes 
 9. Después de revisar los términos y condiciones, marque el recuadro de selección **He leído y acepto los acuerdos de servicio de terceros**.
 10. Pulse en **Crear**. La nueva asignación de almacenamiento está disponible en pocos minutos.
 
-De forma predeterminada, puede suministrar un total combinado de 250 volúmenes de {{site.data.keyword.blockstorageshort}}. Para aumentar el número de volúmenes, póngase en contacto con el representante de ventas. [Aquí](managing-storage-limits.html) puede leer más información sobre cómo aumentar los límites.<br/><br/>Para obtener información sobre el límite en autorizaciones simultáneas, consulte las [Preguntas más frecuentes](File-Storage-FAQ.html#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-).
+De forma predeterminada, puede suministrar un total combinado de 250 volúmenes de {{site.data.keyword.blockstorageshort}}. Para aumentar el número de volúmenes, póngase en contacto con el representante de ventas. [Aquí](managing-storage-limits.html) puede leer más información sobre cómo aumentar los límites.<br/><br/>Para obtener información sobre el límite en autorizaciones simultáneas, consulte las [Preguntas más frecuentes](faqs.html#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-).
 {:important}
 
 
@@ -82,6 +83,11 @@ Cuando se haya completado la solicitud de suministro, autorice a los hosts a acc
 - [Configuración de {{site.data.keyword.filestorage_short}} para la copia de seguridad con Plesk](configure-backup-plesk.html)
 - [Montaje de un volumen de {{site.data.keyword.filestorage_short}} en hosts de ESXi](architecture-guide-file-storage-vmware.html)
 
+## Consideraciones sobre la recuperación tras desastre
+
+Para evitar la pérdida de datos y garantizar la continuidad del negocio, considere la posibilidad de replicar los servidores y el almacenamiento en otro centro de datos. La réplica mantiene los datos en sincronización en dos ubicaciones distintas en función de la planificación de la instantánea. Para obtener más información, consulte [Réplica de datos](replication.html).
+
+Si desea clonar su volumen y utilizarlo independientemente del volumen original, consulte [Creación de un volumen de bloque duplicado](how-to-create-duplicate-volume.html).
 
 ## Identificación de los volúmenes de {{site.data.keyword.filestorage_short}} en la factura
 

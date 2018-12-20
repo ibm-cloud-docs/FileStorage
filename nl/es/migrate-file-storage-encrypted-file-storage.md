@@ -12,7 +12,7 @@ lastupdated: "2018-11-30"
 
 # Migración de {{site.data.keyword.filestorage_short}} a {{site.data.keyword.filestorage_short}} mejorado
 
-{{site.data.keyword.filestorage_full}} mejorado ya está disponible en determinados centros de datos. Para ver la lista de los centros de datos actualizados y las características disponibles, como tasas de IOPS ajustables y volúmenes ampliables, pulse [aquí](new-ibm-block-and-file-storage-location-and-features.html). Para obtener más información sobre el almacenamiento cifrado gestionado por el proveedor, consulte [Cifrado en reposo de {{site.data.keyword.filestorage_short}}](block-file-storage-encryption-rest.html).
+{{site.data.keyword.filestorage_full}} mejorado ya está disponible en determinados centros de datos. Para ver la lista de los centros de datos actualizados y las características disponibles, como tasas de IOPS ajustables y volúmenes ampliables, pulse [aquí](new-ibm-block-and-file-storage-location-and-features.html). Para obtener más información sobre el cifrado gestionado por el proveedor, consulte [Cifrado en reposo de {{site.data.keyword.filestorage_short}}](block-file-storage-encryption-rest.html).
 
 El método de migración recomendado es conectarse a ambos volúmenes simultáneamente y transferir datos directamente desde un LUN a otro. Los detalles dependen de su sistema operativo y de si se espera que los datos cambien durante la operación de copia.
 
@@ -22,24 +22,26 @@ Se supone que ya tiene su LUN no cifrado conectado al host. Si no es así, siga 
 - [Montaje de NFS/{{site.data.keyword.filestorage_short}} en CentOS](mounting-nsf-file-storage.html)
 - [Montaje de {{site.data.keyword.filestorage_short}} en CoreOS](mounting-storage-coreos.html)
 
-Todos los volúmenes de {{site.data.keyword.filestorage_short}} mejorados tienen un punto de montaje distinto que los volúmenes no cifrados. Para asegurarse de que utiliza el punto de montaje correcto para los volúmenes de {{site.data.keyword.filestorage_short}} cifrados y no cifrados, puede consultar la información de punto de montaje en la página **Detalles del volumen** en {{site.data.keyword.slportal}}. También puede acceder al punto de montaje correcto mediante una llamada de API: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
+Todos los volúmenes de {{site.data.keyword.filestorage_short}} mejorados suministrados en estos centros de datos tienen un punto de montaje distinto que los volúmenes no cifrados. Para asegurarse de que utiliza el punto de montaje correcto para los volúmenes de almacenamiento, puede consultar la información sobre el punto de montaje en la página **Detalles del volumen** en la consola. También puede acceder al punto de montaje correcto mediante una llamada de API: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 {:tip}
 
 
-## Creación de un nuevo {{site.data.keyword.filestorage_short}}
+## Creación de un {{site.data.keyword.filestorage_short}}
 
 Cuando realice un pedido con API, especifique el paquete "Almacenamiento como un servicio" para asegurarse de recibir las características actualizadas con el nuevo almacenamiento.
 {:important}
 
-Las siguientes instrucciones son para solicitar un volumen/compartición de archivos mejorado a través del catálogo de {{site.data.keyword.BluSoftlayer_full}}/{{site.data.keyword.slportal}}. El nuevo volumen debe tener el mismo tamaño o mayor que el volumen original para facilitar la migración.
+Las siguientes instrucciones son para solicitar una compartición de archivos mejorada a través del {{site.data.keyword.BluSoftlayer_full}} o del catálogo de {{site.data.keyword.slportal}}. El nuevo volumen debe tener el mismo tamaño o mayor que el volumen original para facilitar la migración.
 
-### Realización del pedido de un nuevo volumen de almacenamiento de Resistencia
+### Realización del pedido de un volumen de almacenamiento de Resistencia
 
-1. En el [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}, pulse **Almacenamiento** > **{{site.data.keyword.filestorage_short}}** O desde el catálogo de {{site.data.keyword.BluSoftlayer_full}}, pulse **Infraestructura** > **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**.
+1. En el [{{site.data.keyword.slportal}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){:new_window}, pulse **Almacenamiento** > **{{site.data.keyword.filestorage_short}}** O desde el catálogo de {{site.data.keyword.BluSoftlayer_full}}, pulse **Infraestructura** > **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**.
 2. Pulse **Realizar pedido de {{site.data.keyword.filestorage_short}}**.
 3. Seleccione **Resistencia** en la lista **Seleccionar tipo de almacenamiento**.
 4. Pulse **Ubicación** y seleccione el centro de datos.
-   - Asegúrese de que el nuevo almacenamiento se añade en la misma ubicación que el original.
+
+   Asegúrese de que el nuevo almacenamiento se añade en la misma ubicación que el original.
+   {:important}
 5. Seleccione la opción de facturación. Puede elegir entre facturación mensual o por hora.
 6. Pulse **Resistencia** y seleccione el nivel de IOPS deseado.
 6. Seleccione el **Tamaño de almacenamiento utilizable** en la lista. El nuevo volumen debe tener el mismo tamaño o mayor que el volumen original.
@@ -47,13 +49,15 @@ Las siguientes instrucciones son para solicitar un volumen/compartición de arch
 8. Pulse **Continuar**. Se muestran los cargos mensuales y prorrateados, es una última oportunidad para revisar los detalles del pedido. Pulse **Anterior** si desea cambiar el pedido.
 9. Marque el recuadro de selección **He leído el Acuerdo de servicio maestro** y pulse **Realizar pedido**.
 
-### Realización del pedido de un volumen de almacenamiento de Rendimiento cifrado
+### Realización del pedido de un volumen de almacenamiento de Rendimiento
 
-1. En el [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}, pulse **Almacenamiento**, **{{site.data.keyword.filestorage_short}}** O desde el catálogo de {{site.data.keyword.BluSoftlayer_full}}, pulse **Infraestructura** >** Almacenamiento** > **{{site.data.keyword.filestorage_short}}**.
+1. En el [{{site.data.keyword.slportal}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){:new_window}, pulse **Almacenamiento**, **{{site.data.keyword.filestorage_short}}** O desde el catálogo de {{site.data.keyword.BluSoftlayer_full}}, pulse **Infraestructura** >** Almacenamiento** > **{{site.data.keyword.filestorage_short}}**.
 2. Pulse **Realizar pedido de {{site.data.keyword.filestorage_short}}**.
 3. Seleccione **Rendimiento** en la lista **Seleccionar tipo de almacenamiento**.
 4. Pulse **Ubicación** y seleccione el centro de datos.
-    -  Asegúrese de que el nuevo almacenamiento se añade en la misma ubicación que el original.
+
+   Asegúrese de que el nuevo almacenamiento se añade en la misma ubicación que el original.
+   {:important}
 5. Seleccione las opciones de facturación. Puede elegir entre facturación por hora o mensual.
 6. Marque el botón de selección situado junto al **Tamaño de almacenamiento** adecuado.
 6. Especifique las IOPS en el campo **Especificar IOPS**.

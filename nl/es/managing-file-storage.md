@@ -39,7 +39,7 @@ Aquí puede ver la lista de hosts, que actualmente tienen autorización para acc
 
 Puede ver los volúmenes a los cuales un host tiene acceso, incluyendo la información necesaria para realizar una conexión: nombre de volumen, tipo de almacenamiento, dirección de destino, capacidad y ubicación.
 
-1. Pulse **Dispositivos** > **Lista de dispositivos** desde el [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
+1. Pulse **Dispositivos** > **Lista de dispositivos** desde el [{{site.data.keyword.slportal}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){:new_window}.
 2. Pulse el dispositivo adecuado.
 2. Seleccione el separador Almacenamiento.
 
@@ -62,7 +62,7 @@ Puede revocar el acceso desde el Almacenamiento de la Lista de Dispositivos o de
 
 ### Revocación del acceso de la lista de dispositivos
 
-1. Pulse **Dispositivos** > **Lista de dispositivos** desde el [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
+1. Pulse **Dispositivos** > **Lista de dispositivos** desde el [{{site.data.keyword.slportal}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){:new_window}.
 2. Efectúe una doble pulsación en el dispositivo adecuado.
 3. Seleccione el separador **Almacenamiento**.
 4. Se le presenta una lista de los volúmenes de almacenamiento a los cuales este host tiene acceso, todos agrupados por tipo de almacenamiento (bloque, archivo, otros). Seleccione el menú respectivo de **Acción** situado junto al volumen del que desea revocar el acceso y pulse **Revocar acceso**.
@@ -85,7 +85,7 @@ Si desea desconectar varios hosts desde un host específico, debe repetir la acc
 
 ## Cancelación de un volumen de almacenamiento
 
-Si ya no necesita un volumen específico, puede cancelarlo. Para cancelar un volumen de almacenamiento, primero debe revocar el acceso desde cualquier host.
+Si ya no necesita un volumen específico, puede cancelar ese almacenamiento. Para cancelar un volumen de almacenamiento, primero debe revocar el acceso desde cualquier host.
 
 1. Pulse **Almacenamiento**>**{{site.data.keyword.filestorage_short}}**.
 2. Pulse **Acciones** del volumen que se va a cancelar y seleccione **Cancelar {{site.data.keyword.filestorage_short}}**.

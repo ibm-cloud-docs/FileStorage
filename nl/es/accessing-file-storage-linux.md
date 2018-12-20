@@ -13,9 +13,9 @@ lastupdated: "2018-11-30"
 
 # Montaje de {{site.data.keyword.filestorage_short}} en Linux
 
-En primer lugar, asegúrese de que el host que va a acceder al volumen de {{site.data.keyword.filestorage_full}} está autorizado mediante el [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
+En primer lugar, asegúrese de que el host que va a acceder al volumen de {{site.data.keyword.filestorage_full}} está autorizado mediante el [{{site.data.keyword.slportal}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){:new_window}.
 
-1. Desde la página de listado de {{site.data.keyword.filestorage_short}}, pulse **Acciones** que está asociado a la nueva compartición y pulse **Autorizar host**.
+1. Desde la página de listado de {{site.data.keyword.filestorage_short}}, pulse el enlace **Acciones** que está asociado a la nueva compartición y pulse **Autorizar host**.
 2. Seleccione el host o hosts en la lista y pulse **Enviar**. Esta acción autoriza al host a acceder a la compartición.
 
 ## Montaje de la compartición de {{site.data.keyword.filestorage_short}}
@@ -25,7 +25,7 @@ Utilice estas instrucciones para conectar una instancia de cálculo de {{site.da
 El punto de montaje de la instancia de almacenamiento de archivos se puede obtener desde la página de listado de {{site.data.keyword.filestorage_short}} o mediante una llamada a API - `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 {:tip}
 
-1. Instale los paquetes/herramientas necesarios.
+1. Instale las herramientas necesarias.
    ```
    # yum -y install nfs-utils nfs-utils-lib
    ```

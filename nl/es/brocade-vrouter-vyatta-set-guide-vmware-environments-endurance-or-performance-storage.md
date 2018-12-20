@@ -12,6 +12,7 @@ lastupdated: "2018-11-30"
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 
+
 # Configuración de Brocade vRouter (Vyatta) para entornos de VMware con {{site.data.keyword.filestorage_short}}
 
 Puede configurar un dispositivo Brocade vRouter (Vyatta) para la configuración de alta disponibilidad (HA) en un entorno de VMware que utiliza {{site.data.keyword.filestorage_full}}. Utilice la información siguiente junto con la [Arquitectura avanzada de referencia de VMware de un solo sitio](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} para establecer una de estas opciones de almacenamiento en el entorno de VMware.
@@ -20,7 +21,7 @@ La pasarela de Brocade vRouter (Vyatta) sirve como pasarela y direccionador para
 
 En la configuración de ejemplo, se crean cinco zonas en Brocade vRouter (Vyatta):
 
-- SLSERVICE: servicios de {{site.data.keyword.BluSoftlayer_full}}
+- SLSERVICE: servicios de {{site.data.keyword.cloud_notm}}
 - VMACCESS: {{site.data.keyword.BluVirtServers_short}} (VM) en el clúster de capacidad
 - MGMT: clústeres de capacidad y gestión, así como VM de gestión
 - STORAGE: servidor o servidores de almacenamiento
@@ -357,7 +358,7 @@ save
 
 Una vez que las zonas y las reglas de cortafuegos se hayan configurado en el Brocade vRouter (Vyatta), debe asociarle las VLAN y habilitar el direccionamiento de las VLAN a través del Brocade vRouter (Vyatta).
 
-1. Inicie sesión en el [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} y pulse **Red > Dispositivo de pasarela** y pulse el Brocade vRouter (Vyatta).
+1. Inicie sesión en el [{{site.data.keyword.slportal}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){:new_window} y pulse **Red > Dispositivo de pasarela** y pulse el Brocade vRouter (Vyatta).
 2. Seleccione una **VLAN** y pulse **Asociar**.
 4. Localice las VLAN bajo **VLAN asociadas** y marque el recuadro situado junto a cada una.
 5. Pulse el menú desplegable **Acciones masivas** y seleccione **Direccionar**.

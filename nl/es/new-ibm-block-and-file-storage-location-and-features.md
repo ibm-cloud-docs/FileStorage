@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-12-11"
 
 ---
 {:new_window: target="_blank"}
@@ -56,7 +56,7 @@ El nuevo {{site.data.keyword.filestorage_short}} está disponible actualmente en
     <td>MEL01<br />
         SYD01<br />
         SYD04<br />
-	<br /><br /><br /><br /><br /><br /><br /><br /><br />
+        SYD05<br /><br /><br /><br /><br /><br /><br /><br /><br />
     </td>
     <td>MON01<br />
         TOR01<br />
@@ -92,9 +92,12 @@ El nuevo almacenamiento tiene las siguientes características y funciones:
 - Cree un clon de sus datos con la característica de [duplicación de volúmenes de {{site.data.keyword.filestorage_short}}](how-to-create-duplicate-volume.html).
 - El almacenamiento es se puede ampliar en incrementos de GB hasta un máximo de 12 TB de inmediato, sin necesidad de crear un duplicado o transferir datos manualmente a un volumen de mayor tamaño. [Aquí](expandable_file_storage.html) puede leer más información sobre esta característica.
 
-## Nuevo punto de montaje para volúmenes de {{site.data.keyword.filestorage_short}}
+## Nuevo punto de montaje para volúmenes de {{site.data.keyword.filestorage_short}} mejorado
 
-Todos los volúmenes de {{site.data.keyword.filestorage_short}} mejorado suministrados en estos centros de datos tienen un punto de montaje distinto que los volúmenes no cifrados. Para asegurarse de que está utilizando el punto de montaje correcto para ambos volúmenes de almacenamiento, puede ver la información de punto de montaje en la página **Detalles del volumen** en la interfaz de usuario. También puede acceder al punto de montaje correcto mediante una llamada de API: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
+Todos los volúmenes de {{site.data.keyword.filestorage_short}} mejorados suministrados en estos centros de datos tienen un punto de montaje distinto que los volúmenes no cifrados. Para asegurarse de que utiliza el punto de montaje correcto para los volúmenes de almacenamiento, puede consultar la información sobre el punto de montaje en la página **Detalles del volumen** en la consola. También puede acceder al punto de montaje correcto mediante una llamada de API: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
+
+Para poder acceder a todas las nuevas características, seleccione `Storage-as-a-Service Package 759` cuando realice el pedido a través de la API. Para obtener más información sobre cómo solicitar {{site.data.keyword.filestorage_short}} a través de la API, consulte [order_file_volume ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://softlayer-python.readthedocs.io/en/latest/api/managers/file.html#SoftLayer.managers.file.FileStorageManager.order_file_volume){:new_window}.
+{:important}
 
 Aquí puede consultar si se han actualizado más centros de datos y si se han añadido nuevas funciones y características a {{site.data.keyword.filestorage_short}}.
 {:tip}

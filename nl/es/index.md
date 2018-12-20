@@ -12,6 +12,7 @@ lastupdated: "2018-11-30"
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 
+
 # Iniciación a {{site.data.keyword.filestorage_short}}
 
 {{site.data.keyword.filestorage_full}} es {{site.data.keyword.filestorage_short}} conectado a red, basado en NFS, flexible, rápido y persistente. En este entorno de almacenamiento adjunto de red (NAS), tiene el control total sobre las funciones y el rendimiento de los recursos compartidos de archivos. Los recursos compartidos de {{site.data.keyword.filestorage_short}} se pueden conectar a hasta 64 dispositivos autorizados sobre conexiones TCP/IP direccionadas para aumentar la capacidad de recuperación.
@@ -266,11 +267,11 @@ La velocidad de la conexión de Ethernet debe ser más rápida que el rendimient
 
 Para alcanzar el número máximo de IOPS, es necesario disponer de los recursos de red adecuados. Otros aspectos a tener en cuenta son el uso de la red privada fuera del almacenamiento y los ajustes del lado del host y específicos de la aplicación (pila IP o [profundidades de colas](set-host-queue-depth-settings-performance-and-endurance-storage.html), y otros valores).
 
-El tráfico de almacenamiento se incluye en el uso total de la red de los servidores virtuales públicos. Consulte la [documentación de servidor virtual](https://{DomainName}/docs/vsi/vsi_public.html#public-virtual-servers) para conocer los límites que puede imponer el servicio.
+El tráfico de almacenamiento se incluye en el uso total de la red de los servidores virtuales públicos. Para obtener más información acerca de los límites que puede imponer el servicio, consulte la [Documentación de servidor virtual](https://{DomainName}/docs/vsi/vsi_public.html#public-virtual-servers).
 
 **Versión de NFS**
 
-Tanto NFS v3 como NFS v4.1 están soportados en el entorno de {{site.data.keyword.BluSoftlayer_full}}. Sin embargo, se prefiere NFS v3 porque NFS v4.1 es un protocolo con estado (no sin estado como NFSv3) y esto puede generar problemas de protocolo durante sucesos de red. NFS v4.1 debe desactivar temporalmente todas las operaciones y realizar la reclamación de bloqueo. En un servidor de archivos NFS relativamente ocupado, la latencia incrementada puede causar interrupciones. La falta de truncación/multivía de NFS v4.1 también puede alargar la recuperación de operaciones de NFS.
+Tanto NFS v3 como NFS v4.1 están soportados en el entorno de {{site.data.keyword.BluSoftlayer_full}}. Sin embargo, se prefiere NFS v3 porque NFS v4.1 es un protocolo con estado (no sin estado como NFSv3) y esto puede generar problemas de protocolo durante sucesos de red. NFS v4.1 debe desactivar temporalmente todas las operaciones y realizar la reclamación de bloqueo. En un servidor de archivos NFS relativamente ocupado, la latencia incrementada puede causar interrupciones. La falta de truncación y multivía de NFS v4.1 también puede alargar la recuperación de operaciones de NFS.
 
 ## Envío de su pedido
 
@@ -280,7 +281,7 @@ Cuando esté listo para enviar el pedido, siga las instrucciones [aquí](provisi
 
 Cuando se haya completado la solicitud de suministro, autorice a los hosts a acceder al nuevo almacenamiento y configure la conexión. En función del sistema operativo del host, siga el enlace adecuado.
 - [Acceso a {{site.data.keyword.filestorage_short}} en Linux](accessing-file-storage-linux.html)
-- [Montaje de NFS/File Storage en CentOS](mounting-nsf-file-storage.html)
+- [Montaje de {{site.data.keyword.filestorage_short}} en CentOS](mounting-nsf-file-storage.html)
 - [Montaje de {{site.data.keyword.filestorage_short}} en CoreOS](mounting-storage-coreos.html)
 - [Configuración de {{site.data.keyword.filestorage_short}} para la copia de seguridad con cPanel](configure-backup-cpanel.html)
 - [Configuración de {{site.data.keyword.filestorage_short}} para la copia de seguridad con Plesk](configure-backup-plesk.html)

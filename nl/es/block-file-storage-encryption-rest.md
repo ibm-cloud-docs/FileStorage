@@ -24,7 +24,7 @@ La característica de cifrado en reposo gestionado por proveedor utiliza los sig
     - Payment Card Industry (PCI),
     - Basel II,
     - California Security Breach Information Act (SB 1386) y
-    - Conformidad con EU Data Protection Directive 95/46/EC.
+    - Conformidad con EU Data Protection Directive (95/46/EC).
 
 ## Protección de las instantáneas o almacenamiento replicado  
 

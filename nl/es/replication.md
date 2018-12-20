@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-30"
+lastupdated: "2018-12-11"
 
 ---
 
@@ -16,12 +16,11 @@ lastupdated: "2018-11-30"
 
 La réplica utiliza una de sus planificaciones de instantáneas para copiar automáticamente las instantáneas a un volumen de destino de un centro de datos remoto. Las copias se pueden recuperar en el sitio remoto si se produce un suceso catastrófico o los datos resultan dañados.
 
-Con las réplicas puede recuperarse rápidamente de fallos del sitio y otros desastres. En caso de emergencia, puede realizar una migración tras error al volumen de destino y acceder a los datos de la copia DR desde un punto específico en el tiempo. Para obtener más información, consulte [Duplicación de volúmenes de réplica para la recuperación tras desastre](disaster-recovery.html).
-
-La réplica mantiene sus datos sincronizados entre dos ubicaciones distintas. Si solamente desea clonar el volumen y utilizarlo independientemente del volumen original, consulte [Creación de un volumen de archivos duplicado](how-to-create-duplicate-volume.html).
+La réplica mantiene sus datos sincronizados entre dos ubicaciones distintas. Si desea clonar el volumen y utilizarlo independientemente del volumen original, consulte [Creación de un volumen de archivos duplicado](how-to-create-duplicate-volume.html).
 {:tip}
 
-Antes de poder replicar, debe crear una planificación de instantáneas. Cuando realiza la migración tras error, está "cambiando el conmutador" de su volumen de almacenamiento del centro de datos primario al volumen de destino del centro de datos remoto. Por ejemplo, su centro de datos primario es Londres y el centro de datos secundario es Ámsterdam. Si se produjera un suceso de error, debería realizar la migración a Ámsterdam, conectando al ahora volumen primario desde una instancia de cálculo en Ámsterdam. Cuando su volumen de Londres se haya reparado, se realizará una instantánea del volumen de Ámsterdam para volver a Londres y al volumen primario de nuevo desde una instancia de cálculo de Londres.
+Antes de poder replicar, debe crear una planificación de instantáneas.
+{:important}
 
 
 ## Determinación del centro de datos remoto para el volumen de almacenamiento replicado
@@ -97,8 +96,9 @@ Consulte la Tabla 1 para ver la lista completa de disponibilidad de centros de d
       </td>
       <td>SYD01<br />
           SYD04<br />
-	  MEL01<br />
-	  <br /><br /><br /><br /><br /><br /><br /><br /><br />
+          SYD05<br />
+          MEL01<br />
+          <br /><br /><br /><br /><br /><br /><br /><br />
       </td>
     </tr>
   </tbody>
@@ -106,7 +106,7 @@ Consulte la Tabla 1 para ver la lista completa de disponibilidad de centros de d
 
 ## Creación de la réplica inicial
 
-Las réplicas se basan en una planificación de réplica. Primero debe tener un espacio de instantáneas y una planificación de instantáneas para el volumen de origen antes de poder replicar. Si intenta configurar la réplica y uno o el otro no está en su lugar, se le solicitará que compre más espacio o que establezca una planificación. Las réplicas se gestionan en **Almacenamiento** > **{{site.data.keyword.filestorage_short}}** en el [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
+Las réplicas se basan en una planificación de réplica. Primero debe tener un espacio de instantáneas y una planificación de instantáneas para el volumen de origen antes de poder replicar. Si intenta configurar la réplica y uno o el otro no está en su lugar, se le solicitará que compre más espacio o que establezca una planificación. Las réplicas se gestionan en **Almacenamiento** > **{{site.data.keyword.filestorage_short}}** en el [{{site.data.keyword.slportal}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){:new_window}.
 
 1. Pulse el volumen de almacenamiento.
 2. Pulse **Réplica** y pulse **Adquirir una réplica**.
@@ -122,7 +122,7 @@ Las réplicas se basan en una planificación de réplica. Primero debe tener un 
 
 ## Edición de una réplica existente
 
-Puede editar la planificación de la réplica y cambiar el espacio de réplica desde el separador **Primario** o **Réplica** de **Almacenamiento** > **{{site.data.keyword.filestorage_short}}** desde el [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
+Puede editar la planificación de la réplica y cambiar el espacio de réplica desde el separador **Primario** o **Réplica** de **Almacenamiento** > **{{site.data.keyword.filestorage_short}}** desde el [{{site.data.keyword.slportal}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){:new_window}.
 
 
 ## Edición de la planificación de réplica
@@ -148,78 +148,19 @@ El espacio de instantáneas primario y el espacio de réplica deben ser el mismo
 5. Marque el recuadro de selección **He leído el Acuerdo de servicio maestro…** y pulse **Realizar pedido**.
 
 
-## Visualización de los volúmenes de réplica en la lista de volúmenes
-
-Puede visualizar los volúmenes de réplica en la página de {{site.data.keyword.filestorage_short}}, en **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**. El nombre de volumen muestra el nombre del volumen primario seguido de REP. El **Tipo** de réplica puede ser Resistente o Rendimiento. La **Dirección de destino** es N/D porque el volumen de réplica no está montado en el centro de datos y el **Estado** es Inactivo.
-
-
-
-## Visualización de los detalles de un volumen replicado en el centro de datos de réplicas
-
-Puede visualizar los detalles de un volumen de réplica en el separador **Réplica**, en **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**. Otra opción es seleccionar el volumen de réplica desde la página de **{{site.data.keyword.filestorage_short}}** y pulsar el separador **Réplica**.
-
-
-## Especificación de las autorizaciones de host antes de que el servidor falle en el centro de datos secundario
-
-Los hosts y volúmenes autorizados deben estar en el mismo centro de datos. No puede tener un volumen de réplica en Londres ni el host en Ámsterdam. Ambos deben estar en Londres o en Ámsterdam.
-
-1. Pulse el volumen de origen o de destino en la página de **{{site.data.keyword.filestorage_short}}**.
-2. Pulse **Réplica**.
-3. Desplácese hacia abajo hasta el marco **Autorizar hosts** y pulse **Autorizar hosts** en la parte derecha.
-4. Marque el host que se va a autorizar para las réplicas. Para seleccionar varios hosts, utilice la tecla Control y pulse los hosts aplicables.
-5. Pulse **Enviar**. Si no tiene ningún host, se le solicitará comprar recursos de cálculo en el mismo centro de datos.
-
-
 ## Aumento del espacio de instantáneas en el centro de datos de réplica cuando el espacio de instantáneas se incrementa en el centro de datos primario
 
 Los tamaños de volumen deben ser los mismos para sus volúmenes de almacenamiento primario y de réplica. No puede haber uno mayor que otro. Cuando aumenta el espacio de instantáneas para su volumen primario, el espacio de réplica se aumenta automáticamente. El aumento del espacio de instantáneas desencadena una actualización de réplica inmediata. El aumento en ambos volúmenes se muestra como elementos de línea en su factura, y se prorratea en caso necesario.
 
 Para obtener más información sobre cómo incrementar el espacio para instantáneas, consulte [Instantáneas](snapshots.html).
+## Visualización de los volúmenes de réplica en la lista de volúmenes
+
+Puede visualizar los volúmenes de réplica en la página de {{site.data.keyword.filestorage_short}}, en **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**. El nombre de volumen muestra el nombre del volumen primario seguido de REP. El **Tipo** de réplica puede ser Resistente o Rendimiento. La **Dirección de destino** es N/D porque el volumen de réplica no está montado en el centro de datos y el **Estado** es Inactivo.
 
 
-## Inicio de una migración tras error desde un volumen a su réplica
+## Visualización de los detalles de un volumen replicado en el centro de datos de réplicas
 
-Si se produce un suceso de error, puede iniciar una **migración tras error** al volumen de destino. El volumen de destino se activa. Se activa la última instantánea replicada correctamente y el volumen pasa a estar disponible para su montaje. Los datos escritos en el volumen de origen desde el ciclo de réplica anterior se perderán. Cuando se inicia una migración tras error, la relación de réplica se invierte. El volumen de destino pasa a ser el volumen de origen, y el volumen de origen anterior pasa a ser el destino, como indica el **Nombre de LUN** seguido de **REP**.
-
-Las migraciones tras error se inician en **Almacenamiento**, **{{site.data.keyword.filestorage_short}}** en el [[{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
-
-Antes de continuar con estos pasos, desconecte el volumen. De lo contrario, dará lugar a la pérdida de datos o a que estos resulten dañados.
-{:important}
-
-1. Pulse el volumen activo (“origen”).
-2. En la parte superior derecha, pulse **Réplica** y pulse **Acciones**.
-3. Seleccione **Migración tras error**.
-
-   Recibirá un mensaje que indicará que la migración tras error está en curso. También aparecerá un icono junto al volumen en **{{site.data.keyword.filestorage_short}}** que indicará que hay una transacción activa en curso. Al pasar el ratón sobre el icono se abre una ventana que muestra la transacción. El icono desaparecerá una vez completada la transacción. Durante el proceso de migración tras error, las acciones relacionadas con la configuración son de solo lectura. No puede editar ninguna planificación de instantáneas ni cambiar el espacio de instantáneas. El suceso se registra en el historial de réplicas.<br/> Cuando el volumen de destino está activo, obtiene otro mensaje. El Nombre de LUN de su volumen de origen original se actualiza para finalizar en "REP" y su Estado pasa a ser Inactivo.
-   {:note}
-4. Pulse **Ver todos ({{site.data.keyword.filestorage_short}})**.
-5. Pulse el volumen activo (anteriormente volumen de destino). Este volumen tiene ahora un estado **Activo**.
-6. Monte y conecte el volumen de almacenamiento al host. Pulse [aquí](provisioning-file-storage.html) para obtener instrucciones.
-
-
-## Inicio de un restablecimiento desde un volumen a su réplica
-
-Cuando el volumen de origen original se ha reparado, puede iniciar un restablecimiento controlado a su volumen de origen original. En un restablecimiento controlado,
-
-- El volumen de origen activo se pone fuera de línea,
-- Se toma una instantánea,
-- Se completa el ciclo de réplica,
-- Se activa la instantánea de datos recién tomada,
-- Y el volumen de origen pasa a estar activo para su montaje.
-
-Cuando se inicia un restablecimiento, la relación de réplica se invierte de nuevo. El volumen de origen se restaura como el volumen de origen y el volumen de destino vuelve a ser el volumen de destino, tal como indica el **Nombre de LUN** seguido de **REP**.
-
-Los restablecimientos se inician en **Almacenamiento**, **{{site.data.keyword.filestorage_short}}** en el [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
-
-1. Pulse el volumen activo ("destino").
-2. En la parte superior derecha, pulse **Réplica** y pulse **Acciones**.
-3. Seleccione **Restablecimiento**.
-
-   Recibirá un mensaje que indicará que la migración tras error está en curso. También aparecerá un icono junto al volumen en **{{site.data.keyword.filestorage_short}}** que indicará que hay una transacción activa en curso. Al pasar el ratón sobre el icono se abre una ventana que muestra la transacción. El icono desaparecerá una vez completada la transacción. Durante el proceso de retrotracción, las acciones relacionadas con la configuración son de solo lectura. No puede editar ninguna planificación de instantáneas ni cambiar el espacio de instantáneas. El suceso se registra en el historial de réplicas.
-   {:note}
-4. En la parte superior derecha, pulse el enlace **Ver todo {{site.data.keyword.filestorage_short}}**.
-5. Pulse el volumen activo ("origen").
-6. Monte y conecte el volumen de almacenamiento al host. Pulse [aquí](provisioning-file-storage.html) para obtener instrucciones.
+Puede visualizar los detalles de un volumen de réplica en el separador **Réplica**, en **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**. Otra opción es seleccionar el volumen de réplica desde la página de **{{site.data.keyword.filestorage_short}}** y pulsar el separador **Réplica**.
 
 
 ## Visualización del historial de réplica
@@ -235,7 +176,7 @@ El historial de réplicas se visualiza en el **Registro de auditoría** en el se
 
 ## Creación de un duplicado de una réplica
 
-Puede crear un duplicado de un {{site.data.keyword.BluSoftlayer_full}} {{site.data.keyword.filestorage_full}} existente. El volumen duplicado hereda la capacidad y las opciones de rendimiento del LUN/volumen original de forma predeterminada y tiene una copia de los datos hasta el momento de la instantánea.
+Puede crear un duplicado de un {{site.data.keyword.BluSoftlayer_full}} {{site.data.keyword.filestorage_full}} existente. El volumen duplicado hereda la capacidad y las opciones de rendimiento del volumen de almacenamiento original de forma predeterminada y tiene una copia de los datos hasta el momento de la instantánea.
 
 Los duplicados pueden crearse a partir de volúmenes primarios y de réplica. El nuevo duplicado se crea en el mismo centro de datos que el volumen original. Si crea un duplicado a partir de un volumen de réplica, el nuevo volumen se crea en el mismo centro de datos que el volumen de réplica.
 
@@ -243,6 +184,12 @@ Se puede acceder a los volúmenes duplicados mediante un host para lectura/escri
 
 Para obtener más información, consulte [Creación de un volumen de archivo duplicado](how-to-create-duplicate-volume.html)
 
+## Uso de réplicas para migración tras error en caso de desastre
+
+Cuando realiza la migración tras error, está "cambiando el conmutador" de su volumen de almacenamiento del centro de datos primario al volumen de destino del centro de datos remoto. Por ejemplo, su centro de datos primario es Londres y el centro de datos secundario es Ámsterdam. Si se produjera un suceso de error, debería realizar la migración a Ámsterdam, conectando al ahora volumen primario desde una instancia de cálculo en Ámsterdam. Cuando su volumen de Londres se haya reparado, se realizará una instantánea del volumen de Ámsterdam para volver a Londres y al volumen primario de nuevo desde una instancia de cálculo de Londres.
+
+* Si la ubicación principal está experimentando problemas, pero el almacenamiento y el host siguen en línea, consulte [Migración tras error con un volumen primario accesible](dr-accessible-primary.html).
+* Si la ubicación primaria está inactiva, consulte [Migración tras error con un volumen primario inaccesible](disaster-recovery.html).
 
 ## Cancelación de una réplica existente
 

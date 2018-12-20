@@ -12,13 +12,14 @@ lastupdated: "2018-11-30"
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 
+
 # Realizar pedidos de instantáneas
 
 Para crear instantáneas de su volumen de almacenamiento, automática o manualmente, necesita adquirir espacio para mantenerlas. Puede adquirir capacidad hasta la cantidad de su volumen de almacenamiento (durante la adquisición del volumen inicial o posteriormente siguiendo estos pasos).
 
-1. Inicie sesión en la [consola de IBM Cloud](https://{DomainName}/catalog/){:new_window} y pulse en el icono **Menú** en la parte superior izquierda. Seleccione **Infraestructura clásica**.
+1. Inicie sesión en la [consola de IBM Cloud](https://{DomainName}/catalog/){:new_window} y pulse en el icono de menú en la parte superior izquierda. Seleccione **Infraestructura clásica**.
 
-   Alternativamente, puede iniciar sesión en el [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
+   También puede iniciar la sesión en el [{{site.data.keyword.slportal}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){:new_window}.
 2. Acceda al almacenamiento mediante **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**.
 3. Pulse en **Cambiar espacio de la instantánea** en el marco Instantáneas.
 4. Seleccione la cantidad de espacio que necesita y el método de pago.
@@ -41,7 +42,7 @@ Un volumen con muchos cambios y un periodo largo de retención necesita más esp
 
 Si realiza 12 instantáneas por hora de 500 GB de datos reales y hay un 1 por ciento de cambio entre cada instantánea, necesita 60 GB para instantáneas.
 
-*(5 G de tasa de cambio) x (12 instantáneas por hora) = (60 GB de espacio utilizado)*
+*(5 GB de tasa de cambio) x (12 instantáneas por hora) = (60 GB de espacio utilizado)*
 
 Por el contrario, si en estos 500 GB de datos reales, con 12 instantáneas por hora, se observara un 10 por ciento de cambios cada hora, el espacio de instantáneas que se utiliza es de 600 GB.
 
