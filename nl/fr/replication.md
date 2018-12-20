@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-30"
+lastupdated: "2018-12-11"
 
 ---
 
@@ -16,12 +16,11 @@ lastupdated: "2018-11-30"
 
 La réplication utilise l'un de vos plannings d'instantané pour copier automatiquement des instantanés sur un volume de destination dans un centre de données distant. Les copies peuvent être récupérées sur le site distant en cas de données endommagées ou de catastrophe.
 
-Les répliques vous permettent d'effectuer rapidement une reprise après un échec du site. En cas d'urgence, vous pouvez effectuer un basculement vers le volume de destination et accéder à vos données à partir d'un point de cohérence spécifique dans la copie de reprise après incident. Pour plus d'informations, voir [Duplication de volumes de réplique pour reprise après incident](disaster-recovery.html).
-
-La réplication permet de synchroniser vos données entre deux emplacements différents. Si vous souhaitez uniquement cloner votre volume et l'utiliser indépendamment de votre volume d'origine, voir [Création d'un volume de fichier en double](how-to-create-duplicate-volume.html).
+La réplication permet de synchroniser vos données entre deux emplacements différents. Si vous souhaitez cloner votre volume et l'utiliser indépendamment du volume d'origine, voir [Création d'un volume de fichier en double](how-to-create-duplicate-volume.html).
 {:tip}
 
-Avant d'effectuer une réplication, vous devez créer un planning d'instantané. Lorsque vous effectuez un basculement, vous "basculez l'interrupteur" depuis votre volume de stockage du centre de données principal vers le volume de destination du centre de données distant. Par exemple, votre centre de données principal peut se situer à Londres et votre centre de données secondaire à Amsterdam. Dans le cas d'un événement d'échec, vous basculez vers Amsterdam, en vous connectant au volume qui est désormais devenu principal à partir d'une instance de calcul à Amsterdam. Une fois votre volume de Londres réparé, un instantané du volume d'Amsterdam est pris afin de permettre le retour à Londres avec le volume de Londres à nouveau considéré comme le volume principal à partir d'une instance de traitement située à Londres.
+Avant d'effectuer une réplication, vous devez créer un planning d'instantané.
+{:important}
 
 
 ## Comment déterminer le centre de données distant du volume de stockage répliqué ?
@@ -97,8 +96,9 @@ Pour obtenir la liste complète de la disponibilité des centres de données et 
       </td>
       <td>SYD01<br />
           SYD04<br />
-	  MEL01<br />
-	  <br /><br /><br /><br /><br /><br /><br /><br /><br />
+          SYD05<br />
+          MEL01<br />
+          <br /><br /><br /><br /><br /><br /><br /><br />
       </td>
     </tr>
   </tbody>
@@ -106,7 +106,7 @@ Pour obtenir la liste complète de la disponibilité des centres de données et 
 
 ## Création de la réplique initiale
 
-Les réplications fonctionnent selon un planning d'instantané. Vous devez d'abord configurer un espace d'instantané et un planning d'instantané pour le volume source avant de pouvoir répliquer. Si vous tentez de configurer la réplication alors que l'espace d'instantané ou le planning d'instantané n'existe pas, vous serez invité à acheter davantage d'espace ou à configurer un planning. Les réplications sont gérées sous **Stockage** > **{{site.data.keyword.filestorage_short}}** dans le portail [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
+Les réplications fonctionnent selon un planning d'instantané. Vous devez d'abord configurer un espace d'instantané et un planning d'instantané pour le volume source avant de pouvoir répliquer. Si vous tentez de configurer la réplication alors que l'espace d'instantané ou le planning d'instantané n'existe pas, vous serez invité à acheter davantage d'espace ou à configurer un planning. Les réplications sont gérées sous **Stockage** > **{{site.data.keyword.filestorage_short}}** dans le portail [{{site.data.keyword.slportal}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://control.softlayer.com/){:new_window}.
 
 1. Cliquez sur votre volume de stockage.
 2. Cliquez sur **Réplique**, puis sur **Acheter une réplication**.
@@ -122,7 +122,7 @@ Les réplications fonctionnent selon un planning d'instantané. Vous devez d'abo
 
 ## Edition d'une réplication existante
 
-Vous pouvez éditer votre planning de réplication et modifier votre espace de réplication à partir de l'onglet **Principal** ou **Réplique** sous **Stockage** > **{{site.data.keyword.filestorage_short}}** dans le portail [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
+Vous pouvez éditer votre planning de réplication et modifier votre espace de réplication à partir de l'onglet **Principal** ou **Réplique** sous **Stockage** > **{{site.data.keyword.filestorage_short}}** à partir du portail [{{site.data.keyword.slportal}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://control.softlayer.com/){:new_window}.
 
 
 ## Edition du planning de réplication
@@ -148,10 +148,14 @@ Votre espace d'image instantanée principal et votre espace de réplique doivent
 5. Cochez la case **J'ai lu et j'accepte l'intégralité du Contrat cadre de service**, puis cliquez sur **Valider la commande**.
 
 
+## Augmentation de l'espace d'image instantanée dans le centre de données de réplique lorsque l'espace d'image instantanée est augmenté dans le centre de données principal.
+
+Les tailles des volumes de stockage principal et de réplique doivent être identiques. Il n'est pas possible que l'un soit plus grand que l'autre. Lorsque vous augmentez votre espace d'image instantanée dans le volume principal, l'espace de réplique est automatiquement augmenté. L'augmentation de l'espace d'image instantanée déclenche une mise à jour immédiate de la réplication. L'augmentation des deux volumes apparaît sous forme de lignes d'article dans votre facture et est calculée au prorata si nécessaire.
+
+Pour plus d'informations sur l'augmentation de l'espace d'image instantanée, voir [Instantanés](snapshots.html).
 ## Affichage des volumes de réplique dans la liste de volumes
 
 Vous pouvez afficher vos volumes de réplication sur la page {{site.data.keyword.filestorage_short}} sous **Stockage** > **{{site.data.keyword.filestorage_short}}**. La zone Nom de volume indique le nom du volume principal, suivi de REP. Le **Type** est Endurance ou Performance – Réplique. L'**Adresse cible** est Sans objet car le volume de réplique n'est pas monté sur le centre de données de réplique, et le **Statut** indique Inactif.
-
 
 
 ## Affichage des détails d'un volume répliqué dans le centre de données de la réplique
@@ -159,71 +163,9 @@ Vous pouvez afficher vos volumes de réplication sur la page {{site.data.keyword
 Vous pouvez afficher les détails du volume de réplique sur l'onglet **Réplique** sous **Stockage** > **{{site.data.keyword.filestorage_short}}**. Une autre option consiste à sélectionner le volume de réplique à partir de la page **{{site.data.keyword.filestorage_short}}** et à cliquer sur l'onglet **Réplique**.
 
 
-## Spécification des autorisations de l'hôte avant le basculement du serveur vers le centre de données secondaire
-
-Les hôtes et les volumes autorisés doivent figurer dans le même centre de données. Vous ne pouvez pas avoir un volume de réplique à Londres et un hôte à Amsterdam. ils doivent se trouver tous les deux à Londres ou à Amsterdam.
-
-1. Cliquez sur votre volume source ou cible à partir de la page **{{site.data.keyword.filestorage_short}}**.
-2. Cliquez sur **Réplique**.
-3. Faites défiler l'écran vers le bas jusqu'au cadre **Autoriser les hôtes** et cliquez sur **Autoriser les hôtes** à droite.
-4. Mettez en évidence l'hôte qui doit être autorisé pour les réplications. Pour sélectionner plusieurs hôtes, utilisez la touche ctrl et cliquez sur les hôtes concernés.
-5. Cliquez sur **Soumettre**. En l'absence d'hôte, vous êtes invité à acheter des ressources de traitement dans le même centre de données.
-
-
-## Augmentation de l'espace d'image instantanée dans le centre de données de réplique lorsque l'espace d'image instantanée est augmenté dans le centre de données principal.
-
-Les tailles des volumes de stockage principal et de réplique doivent être identiques. Il n'est pas possible que l'un soit plus grand que l'autre. Lorsque vous augmentez votre espace d'image instantanée dans le volume principal, l'espace de réplique est automatiquement augmenté. L'augmentation de l'espace d'image instantanée déclenche une mise à jour immédiate de la réplication. L'augmentation des deux volumes apparaît sous forme de lignes d'article dans votre facture et est calculée au prorata si nécessaire.
-
-Pour plus d'informations sur l'augmentation de l'espace d'image instantanée, voir [Instantanés](snapshots.html).
-
-
-## Démarrage d'un basculement depuis un volume vers sa réplique
-
-Dans le cas d'un événement d'échec, vous pouvez initier un **basculement** vers votre volume de destination, ou volume cible. Le volume cible devient actif. Le dernier instantané répliqué avec succès est activé et le volume est alors disponible pour le montage. Toutes les données écrites sur le volume source depuis le cycle de réplication précédent sont perdues. Une fois le basculement démarré, la relation de réplication est inversée. Votre volume cible devient votre volume source, et le volume source précédent devient votre cible, comme indiqué par le **Nom LUN** suivi de **REP**.
-
-Les basculements sont lancés sous **Stockage**, **{{site.data.keyword.filestorage_short}}** dans le portail [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
-
-Avant d'exécuter ces étapes, déconnectez le volume. Si vous omettez cette étape, des données seront endommagées et perdues. {:important}
-
-1. Cliquez sur votre volume actif ("source").
-2. Dans l'angle supérieur droit, cliquez sur **Réplique**, puis sur **Actions**.
-3. Sélectionnez **Basculement**.
-
-   Un message doit s'afficher pour vous indiquer que le basculement est en cours. En outre, une icône apparaît en regard de votre volume sur **{{site.data.keyword.filestorage_short}}** pour indiquer qu'une transaction active est en cours. Survolez cette icône pour ouvrir une boîte de dialogue affichant la transaction. L'icône disparaît une fois la transaction terminée. Durant le processus de basculement, les actions liées à la configuration sont accessibles en lecture seule. Vous ne pouvez pas éditer de planning d'instantané, ni modifier l'espace d'image instantanée. L'événement est consigné dans l'historique des réplications.<br/> Lorsque le volume cible est opérationnel, vous obtenez un autre message. Le nom LUN de votre volume source d'origine est mis à jour afin de se terminer par "REP" et il devient inactif.
-   {:note}
-4. Cliquez sur **Tout afficher ({{site.data.keyword.filestorage_short}})**.
-5. Cliquez sur votre volume actif (anciennement votre volume cible). Ce volume a désormais le statut **Actif**.
-6. Montez votre volume de stockage sur l'hôte et associez-les. Cliquez [ici](provisioning-file-storage.html) pour obtenir des instructions.
-
-
-## Démarrage d'une reprise par restauration depuis un volume vers sa réplique
-
-Une fois votre volume source d'origine réparé, vous pouvez démarrer une reprise par restauration contrôlée vers le volume source d'origine. Dans une reprise par restauration contrôlée,
-
-- le volume source actif est mis hors ligne ;
-- un instantané est pris ;
-- le cycle de réplication est mené à bien ;
-- l'instantané de données tout juste pris est activé ;
-- et le volume source est activé pour le montage.
-
-Une fois la reprise par restauration démarrée, la relation de réplication est inversée. Votre volume source est restauré en tant que volume source, et votre volume cible redevient le volume cible, comme indiqué par le **Nom LUN** suivi de **REP**.
-
-Les reprises par restauration sont lancées sous **Stockage**, **{{site.data.keyword.filestorage_short}}** dans le portail [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
-
-1. Cliquez sur votre volume actif ("cible").
-2. Dans l'angle supérieur droit, cliquez sur **Réplique**, puis sur **Actions**.
-3. Sélectionnez **Reprise par restauration**.
-
-   Un message doit s'afficher pour vous indiquer que la reprise par restauration est en cours. En outre, une icône apparaît en regard de votre volume sur **{{site.data.keyword.filestorage_short}}** pour indiquer qu'une transaction active est en cours. Survolez cette icône pour ouvrir une boîte de dialogue affichant la transaction. L'icône disparaît une fois la transaction terminée. Durant le processus de reprise par restauration, les actions liées à la configuration sont accessibles en lecture seule. Vous ne pouvez pas éditer de planning d'instantané, ni modifier l'espace d'image instantanée. L'événement est consigné dans l'historique des réplications.
-   {:note}
-4. Dans l'angle supérieur droit, cliquez sur le lien **Afficher tout {{site.data.keyword.filestorage_short}}**.
-5. Cliquez sur votre volume actif ("source").
-6. Montez votre volume de stockage sur l'hôte et associez-les. Cliquez [ici](provisioning-file-storage.html) pour obtenir des instructions.
-
-
 ## Affichage de l'historique des réplications
 
-L'historique des réplications s'affiche dans le **Journal d'audit** sur l'onglet **Compte** sous **Gérer**. L'historique des réplications est le même pour le volume principal et le volume de réplique. Il comprend :
+L'historique des réplications s'affiche dans le **Journal d'audit** sur l'onglet **Compte** sous **Gérer**. Les historiques des réplications sont les mêmes pour le volume principal et le volume de réplique. Ils incluent :
 
 - le type de réplication (basculement ou reprise par restauration) ;
 - le moment où la réplication a été lancée ;
@@ -234,7 +176,7 @@ L'historique des réplications s'affiche dans le **Journal d'audit** sur l'ongle
 
 ## Création d'un doublon d'un volume de réplique
 
-Vous pouvez créer un doublon d'un {{site.data.keyword.BluSoftlayer_full}} {{site.data.keyword.filestorage_full}} existant. Le volume en double hérite par défaut des options de capacité et de performance du numéro d'unité logique/volume d'origine et contient une copie des données jusqu'au moment de la prise d'un instantané.
+Vous pouvez créer un doublon d'un {{site.data.keyword.BluSoftlayer_full}} {{site.data.keyword.filestorage_full}} existant. Le volume en double hérite par défaut des options de capacité et de performance du volume de stockage d'origine et contient une copie des données jusqu'au point de cohérence d'un instantané.
 
 Vous pouvez créer des doublons à partir de volumes principaux et de volumes de réplique. Le nouveau doublon est créé dans le même centre de données que le volume d'origine. Si vous créez un doublon à partir d'un volume de réplique, le nouveau volume est créé dans le même centre de données que le volume de réplique.
 
@@ -242,6 +184,12 @@ Les volumes dupliqués sont accessibles par un hôte en lecture/écriture dès l
 
 Pour plus d'informations, voir [Création d'un volume de fichier en double](how-to-create-duplicate-volume.html)
 
+## Utilisation de répliques afin d'effectuer un basculement en cas de sinistre
+
+Lorsque vous effectuez un basculement, vous "basculez l'interrupteur" depuis votre volume de stockage du centre de données principal vers le volume de destination du centre de données distant. Par exemple, votre centre de données principal peut se situer à Londres et votre centre de données secondaire à Amsterdam. Dans le cas d'un événement d'échec, vous basculez vers Amsterdam, en vous connectant au volume qui est désormais devenu principal à partir d'une instance de calcul à Amsterdam. Une fois votre volume de Londres réparé, un instantané du volume d'Amsterdam est pris afin de permettre le retour à Londres avec le volume de Londres à nouveau considéré comme le volume principal à partir d'une instance de traitement située à Londres.
+
+* Si l'emplacement principal est confronté à un problème mais que le stockage et l'hôte sont toujours en ligne, voir [Basculement avec un volume principal accessible](dr-accessible-primary.html).
+* Si l'emplacement principal n'est plus accessible, voir [Basculement avec un volume principal inaccessible](disaster-recovery.html).
 
 ## Annulation d'une réplication existante
 

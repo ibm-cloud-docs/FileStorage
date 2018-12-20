@@ -11,17 +11,17 @@ lastupdated: "2018-11-30"
 {:note: .note}
 {:important: .important}
 
-# Configuration de {{site.data.keyword.filestorage_short}} pour une sauvegarde avec Plesk
+# Configuration de {{site.data.keyword.filestorage_short}} en vue de la sauvegarde avec Plesk
 
 Vous pouvez utiliser ces instructions afin de configurer {{site.data.keyword.filestorage_full}} pour vos sauvegardes dans Plesk. Cela suppose que vous disposiez d'un accès racine ou sudo SSH et d'un niveau d'administrateur Plesk complet. Cet exemple est basé sur un hôte CentOS7.
 
-Pour plus d'informations fournisseur, voir la [documentation relative à Plesk pour la sauvegarde et la restauration ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.plesk.com/en-US/12.5/administrator-guide/backing-up-and-restoration.59256/){:new_window}.
+Pour plus d'informations, voir la [documentation relative à Plesk pour la sauvegarde et la restauration ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.plesk.com/en-US/12.5/administrator-guide/backing-up-and-restoration.59256/){:new_window}.
 {:tip}
 
 1. Connectez-vous à l'hôte via SSH.
 2. Vérifiez qu'il existe un point de montage cible. <br />
 
-   Plesk dispose de deux options pour stocker les sauvegardes. L'une correspond au stockage Plesk interne (stockage situé sur votre serveur Plesk). L'autre correspond à un stockage FTP externe (stockage situé sur un serveur externe sur le Web ou sur votre réseau local). Dans Plesk, les sauvegardes internes sont généralement stockées dans `/var/lib/psa/dumps` et elles utilisent `/tmp` comme répertoire temporaire. Dans cet exemple, le répertoire temporaire est conservé en local, mais le répertoire `dumps` est déplacé vers le répertoire cible STaaS (`/backup/psa/dumps`). Aucune donnée d'identification d'utilisateur FTP n'est requise.
+   Plesk dispose de deux options pour stocker les sauvegardes. L'une correspond au stockage Plesk interne (stockage situé sur votre serveur Plesk). L'autre correspond à un stockage FTP externe (stockage situé sur un serveur externe sur le Web ou sur votre réseau local). Dans Plesk, les sauvegardes internes sont généralement stockées dans `/var/lib/psa/dumps` et elles utilisent `/tmp` comme répertoire temporaire. Dans cet exemple, le répertoire temporaire est conservé en local, mais le répertoire `dumps` est déplacé vers le répertoire cible {{site.data.keyword.filestorage_short}} (`/backup/psa/dumps`). Aucune donnée d'identification d'utilisateur FTP n'est requise.
    {:note}
 3. Configurez votre {{site.data.keyword.filestorage_short}} comme décrit dans [Accès à {{site.data.keyword.filestorage_short}} sur Red Hat Enterprise Linux](accessing-file-storage-linux.html) et [Montage de NFS/{{site.data.keyword.filestorage_short}} dans CentOS](mounting-nsf-file-storage.html) ou [Montage de NFS/{{site.data.keyword.filestorage_short}} sur CoreOS](mounting-storage-coreos.html). Montez le volume dans `/backup` et configurez-le dans la table du système de fichiers (`/etc/fstab`) afin d'activer le montage au moment du démarrage. <br />
 

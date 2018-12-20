@@ -15,7 +15,7 @@ lastupdated: "2018-11-30"
 
 Vous pouvez utiliser ces instructions afin de configurer le stockage de vos sauvegardes dans {{site.data.keyword.filestorage_full}} par cPanel. Cela suppose que vous disposiez d'un accès racine ou sudo SSH et WebHost Manager (WHM) complet. Cet exemple est basé sur un hôte **CentOS 7**.
 
-Pour plus d'informations fournisseur, voir [cPanel - Configuration de Backup Directory ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.cpanel.net/display/68Docs/Backup+Configuration#BackupConfiguration-ConfigureBackupDirectory){:new_window}.
+Pour plus d'informations, voir [cPanel - Configuration du répertoire de sauvegarde ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.cpanel.net/display/68Docs/Backup+Configuration#BackupConfiguration-ConfigureBackupDirectory){:new_window}.
 {:tip}
 
 1. Connectez-vous à l'hôte via SSH.
@@ -44,7 +44,7 @@ Pour plus d'informations fournisseur, voir [cPanel - Configuration de Backup Dir
     - Modifiez le répertoire de sauvegarde par défaut en saisissant le chemin d'accès absolu vers le nouvel emplacement à la place du répertoire `/backup/`.
     - Sélectionnez **Enable to mount a backup drive**. Avec ce paramètre, le processus de configuration vérifie si un montage de sauvegarde (`/backup2`) existe dans le fichier `/etc/fstab`. <br />
 
-S'il existe un montage portant le même nom que le répertoire de transfert, le processus de configuration de sauvegarde monte l'unité et sauvegarde les informations dedans. Une fois le processus de sauvegarde terminé, il démonte l'unité.
+      S'il existe un montage portant le même nom que le répertoire de transfert, le processus de configuration de sauvegarde monte l'unité et sauvegarde les informations dedans. Une fois le processus de sauvegarde terminé, il démonte l'unité.
       {:note}
 7. Appliquez les modifications en cliquant sur **Save Configuration**.
 8. **Facultatif**. En fonction de votre cas d'utilisation et de vos besoins métier spécifiques, retirez l'ancien stockage du serveur et annulez-le dans le compte.

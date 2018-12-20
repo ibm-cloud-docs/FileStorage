@@ -12,6 +12,7 @@ lastupdated: "2018-11-30"
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 
+
 # Configuration de Brocade vRouter (Vyatta) pour les environnements VMware avec {{site.data.keyword.filestorage_short}}
 
 Vous pouvez configurer un dispositif Brocade vRouter (Vyatta) pour la haute disponibilité dans un environnement VMware qui utilise {{site.data.keyword.filestorage_full}}. Utilisez les informations suivantes ainsi que celles de l'article [Advanced Single-Site VMware Reference Architecture](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} pour configurer l'une des options de stockage suivantes dans votre environnement VMware.
@@ -20,7 +21,7 @@ La passerelle Brocade vRouter (Vyatta) sert de passerelle et de routeur dans vot
 
 Dans notre exemple de configuration, cinq zones sont créées dans Brocade vRouter (Vyatta) :
 
-- SLSERVICE – services {{site.data.keyword.BluSoftlayer_full}}
+- SLSERVICE – services {{site.data.keyword.cloud_notm}}
 - VMACCESS – machines virtuelles {{site.data.keyword.BluVirtServers_short}} sur le cluster de capacité
 - MGMT – clusters de gestion et de capacité, et machines virtuelles de gestion
 - STORAGE – serveur(servers) de stockage
@@ -357,7 +358,7 @@ save
 
 Une fois que les zones et les règle de pare-feu sont configurées sur le dispositif Brocade vRouter (Vyatta), vous devez associer à ce dernier les réseaux locaux virtuels et activer le routage de ces derniers via Brocade vRouter (Vyatta).
 
-1. Connectez-vous au portail [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} et cliquez sur **Réseau > Dispositif de passerelle**, puis sur Brocade vRouter (Vyatta).
+1. Connectez-vous au portail [{{site.data.keyword.slportal}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://control.softlayer.com/){:new_window}, puis cliquez sur **Réseau > Dispositif de passerelle**, puis sur Brocade vRouter (Vyatta).
 2. Sélectionnez un **réseau local virtuel** et cliquez sur le bouton **Associer**.
 4. Localisez les réseaux locaux virtuels sous **VLAN associés** et cochez la case située en regard de chacun d'entre eux.
 5. Cliquez sur le menu déroulant **Actions groupées** et sélectionnez **Router**.

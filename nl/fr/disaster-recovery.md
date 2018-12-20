@@ -2,32 +2,31 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-30"
+lastupdated: "2018-12-10"
 
 ---
-
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
 {:new_window: target="_blank"}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
-{:DomainName: data-hd-keyref="APPDomain"}
-{:DomainName: data-hd-keyref="DomainName"}
 
 
-# Duplication de volumes de réplique pour reprise après incident
+# Reprise après incident - Basculement avec un volume principal inaccessible
 
-Dans l'éventualité d'une défaillance catastrophique ou d'un incident entraînant une indisponibilité sur le site principal, les clients peuvent effectuer les actions suivantes pour accéder rapidement à leurs données sur le site secondaire.
+En cas de défaillance catastrophique ou d'un incident entraînant une indisponibilité sur le site principal, les clients peuvent effectuer les actions suivantes pour accéder rapidement à leurs données sur le site secondaire.
 
 ## Basculement avec un doublon d'un volume de réplique sur le site secondaire
 
-1. Connectez-vous à la [console IBM Cloud](https://{DomainName}/catalog/){:new_window} et cliquez sur l'icône **Menu** dans l'angle supérieur gauche. Sélectionnez **Infrastructure classique**.
+1. Connectez-vous à la [console IBM Cloud](https://console.bluemix.net/catalog/){:new_window}, puis cliquez sur l'icône **Menu** dans l'angle supérieur gauche. Sélectionnez **Infrastructure classique**.
 
-   Sinon, vous pouvez aussi vous connecter au portail [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
+   Vous pouvez également vous connecter au portail [{{site.data.keyword.slportal}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://control.softlayer.com/){:new_window}.
 2. Cliquez sur **Stockage** > **{{site.data.keyword.filestorage_short}}**.
 3. Cliquez sur la réplique du partage de fichiers dans la liste pour afficher la page **Détails** correspondante.
 4. Sur la page **Détails**, faites défiler l'écran et sélectionnez un instantané existant, puis cliquez sur **Actions** > **Dupliquer**.
 5. Apportez les mises à jour nécessaires à la capacité (pour augmenter la taille) ou aux opérations d'entrée-sortie par seconde pour le nouveau volume.
-6. Vous pouvez mettrez à jour l'espace d'instantané pour le nouveau volume, si besoin.
+6. Vous pouvez, au besoin, mettrez à jour l'espace d'instantané pour le nouveau volume. 
 7. Cliquez sur **Continuer** pour passer votre commande du doublon.
 
 Dès que le volume est créé, vous pouvez l'associer à un hôte et effectuer des opérations d'écriture/de lecture sur ce volume. Pendant que les données sont copiées depuis le volume d'origine vers le doublon, un statut s'affiche sur la page des détails indiquant que la duplication est en cours. Une fois le processus de duplication terminé, le nouveau volume devient indépendant du volume d'origine ; il peut être géré avec des instantanés et des réplications comme un volume normal.
@@ -36,21 +35,22 @@ Dès que le volume est créé, vous pouvez l'associer à un hôte et effectuer d
 
 Si vous souhaitez renvoyer la production au site principal d'origine, vous devez effectuer les étapes ci-après.
 
-1. Connectez-vous à la [console IBM Cloud](https://{DomainName}/catalog/){:new_window} et cliquez sur l'icône **Menu** dans l'angle supérieur gauche. Sélectionnez **Infrastructure classique**.
+1. Connectez-vous à la [console IBM Cloud](https://{DomainName}/catalog/){:new_window}, puis cliquez sur l'icône **Menu** dans l'angle supérieur gauche. Sélectionnez **Infrastructure classique**.
 
-   Sinon, vous pouvez aussi vous connecter au portail [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
+   Vous pouvez également vous connecter au portail [{{site.data.keyword.slportal}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://control.softlayer.com/){:new_window}.
 2. Cliquez sur **Stockage** > **{{site.data.keyword.filestorage_short}}**.
-3. Cliquez sur le nom du numéro d'unité logique et créez un planning d'instantané (le cas échéant).  
+3. Cliquez sur le nom du numéro d'unité logique et créez un planning d'instantané (le cas échéant).
 
    Pour plus d'informations sur les plannings d'instantané, voir [Gestion des instantanés](working-with-snapshots.html#adding-a-snapshot-schedule).
    {:tip}
 4. Cliquez sur **Réplique**, puis sur **Acheter une réplication**.
-5. Sélectionnez le planning d'instantané existant que vous souhaitez que votre réplication suive. La liste contient tous les plannings d'instantané actifs.  
+5. Sélectionnez le planning d'instantané existant que vous souhaitez que votre réplication suive. La liste contient tous les plannings d'instantané actifs.
 6. Cliquez sur **Emplacement** et sélectionnez le centre de données qui était votre site de production d'origine.
 7. Cliquez sur **Continuer**.
 8. Cochez la case **J'ai lu et j'accepte l'intégralité du Contrat cadre de service**, puis cliquez sur **Valider la commande**.
 
-Une fois la réplication terminée, vous devez créer un volume dupliqué de la nouvelle réplique. {:important}
+Une fois la réplication terminée, vous devez créer un volume dupliqué de la nouvelle réplique.
+{:important}
 
 1. Revenez dans **Stockage** > **{{site.data.keyword.filestorage_short}}**.
 2. Cliquez sur la réplique du numéro d'unité logique dans la liste pour afficher la page **Détails** correspondante.

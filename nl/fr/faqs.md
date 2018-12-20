@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-09-18"
+lastupdated: "2018-12-11"
 
 ---
 {:new_window: target="_blank"}
@@ -13,24 +13,24 @@ lastupdated: "2018-09-18"
 ## Comment savoir si tel ou tel volume {{site.data.keyword.filestorage_short}} est chiffré ?
 {: faq}
 
-Consultez la liste de volumes {{site.data.keyword.filestorage_short}} dans le portail client. Une icône en forme de verrou figure à droite du numéro d'unité logique/nom de volume des volumes qui sont chiffrés.
+Consultez la liste de volumes {{site.data.keyword.filestorage_short}} dans le portail client. Une icône en forme de verrou figure à droite du nom de volume des volumes qui sont chiffrés.
 
 ## Si j'ai acquis un stockage {{site.data.keyword.filestorage_short}} non chiffré dans un centre de données qui a été mis à jour pour le chiffrement, puis-je chiffrer mon stockage {{site.data.keyword.filestorage_short}} ?
 {: faq}
 
-Le stockage {{site.data.keyword.filestorage_short}} qui a été mis à disposition avant la mise à niveau d'un centre de données ne peut pas être chiffré. Un nouveau stockage {{site.data.keyword.filestorage_short}} mis à disposition dans des centres de données mis à niveau est automatiquement chiffré. Vous n'avez aucun paramètre de chiffrement à sélectionner, car cette action est automatique. Il est possible de chiffrer les données figurant sur un stockage non chiffré en créant un nouveau volume, puis en copiant les données sur ce nouveau volume chiffré en procédant à une migration basée sur l'hôte. Pour plus d'informations, voir [Migration de stockage de fichier](/docs/infrastructure/FileStorage/migrate-file-storage-encrypted-file-storage.html).
+Le stockage {{site.data.keyword.filestorage_short}} qui a été mis à disposition avant la mise à niveau d'un centre de données ne peut pas être chiffré. Un nouveau stockage {{site.data.keyword.filestorage_short}} mis à disposition dans des centres de données mis à niveau est automatiquement chiffré. Cette opération est automatique ; ce n'est pas un paramètre de mise à disposition que vous pouvez sélectionner ou ignorer. Il est possible de chiffrer les données figurant sur un stockage non chiffré en créant un nouveau volume, puis en copiant les données sur ce nouveau volume chiffré en procédant à une migration basée sur l'hôte. Pour plus d'informations, voir [Migration de stockage de fichier](migrate-file-storage-encrypted-file-storage.html).
 
 ## Comment savoir si je mets à disposition un stockage {{site.data.keyword.filestorage_short}} dans un centre de données mis à niveau ?
 {: faq}
 
-Dans le formulaire de commande {{site.data.keyword.filestorage_short}}, tous les centres de données mis à niveau sont signalés par un astérisque (`*`). Durant la commande, le système vous indique que vous mettez à disposition du stockage avec chiffrement. Une fois le stockage mis à disposition, une icône apparaît dans la liste de stockage pour indiquer que le volume est chiffré. 
+Dans le formulaire de commande {{site.data.keyword.filestorage_short}}, tous les centres de données mis à niveau sont signalés par un astérisque (`*`). Durant la commande, le système vous indique que vous mettez à disposition du stockage avec chiffrement. Une fois le stockage mis à disposition, une icône apparaît dans la liste de stockage pour indiquer que le volume est chiffré.
 
-Tous les volumes et partages de fichiers chiffrés sont mis à disposition uniquement dans des centres de données mis à niveau. Vous trouverez la liste complète des centres de données mis à niveau et des fonctionnalités disponibles [ici](/docs//infrastructure/BlockStorage/new-ibm-block-and-file-storage-location-and-features.html).
+Tous les volumes et partages de fichiers chiffrés sont mis à disposition uniquement dans des centres de données mis à niveau. Vous trouverez la liste complète des centres de données mis à niveau et des fonctionnalités disponibles [ici](new-ibm-block-and-file-storage-location-and-features.html).
 
 ## Pourquoi un stockage {{site.data.keyword.filestorage_short}} de type Endurance avec un niveau de 10 IOPS doit-il être mise à disposition dans certains centres de données et pas dans d'autres ?
 {: faq}
 
-Le type de stockage {{site.data.keyword.filestorage_short}} Endurance avec un niveau de 10 IOPS/Go est disponible dans des centres de données sélectionnés, auxquels s'ajouteront bientôt de nouveaux centres de données. Vous trouverez la liste complète des centres de données mis à niveau et des fonctionnalités disponibles [ici](/docs//infrastructure/BlockStorage/new-ibm-block-and-file-storage-location-and-features.html).
+Le type de stockage {{site.data.keyword.filestorage_short}} Endurance avec un niveau de 10 IOPS/Go est disponible dans des centres de données sélectionnés, auxquels s'ajouteront bientôt de nouveaux centres de données. Vous trouverez la liste complète des centres de données mis à niveau et des fonctionnalités disponibles [ici](new-ibm-block-and-file-storage-location-and-features.html).
 
 ## Comment faire pour trouver le point de montage correct de mon stockage {{site.data.keyword.filestorage_short}} ?
 {: faq}
@@ -56,11 +56,11 @@ Le nombre dépend de ce que le système d'exploitation hôte est capable de gér
 {: faq}
 
 <table>
-  <caption>Le tableau 1 présente le nombre maximal d'i-nodes autorisés en fonction de la taille de volume. Les tailles de volume sont indiquées dans la colonne de gauche. Le nombre d'i-nodes/de partages de fichiers est présenté à droite.</caption>
+  <caption>Le tableau 1 présente le nombre maximal d'i-nodes autorisés en fonction de la taille de volume. Les tailles de volume sont indiquées dans la colonne de gauche. Le nombre d'i-nodes et de partages de fichiers est indiqué à droite.</caption>
   <thead>
     <tr>
       <th>Taille de volume</th>
-      <th>I-nodes/Partages de fichiers</th>
+      <th>I-nodes et partages de fichiers</th>
     </tr>
   </thead>
   <tbody>
@@ -110,7 +110,7 @@ Le nombre dépend de ce que le système d'exploitation hôte est capable de gér
 ## Mesure des IOPS
 {: faq}
 
-Les IOPS sont mesurées en fonction d'un profil de chargement de blocs de 16 ko avec une répartition aléatoire de 50 % de lectures et 50 % d'écritures. Les charges de travail qui diffèrent de ce profil sont susceptibles de connaître des performances moins élevées.
+Les IOPS sont mesurées en fonction d'un profil de chargement de blocs de 16 Ko avec une répartition aléatoire de 50 % de lectures et 50 % d'écritures. Les charges de travail qui diffèrent de ce profil sont susceptibles de connaître des performances moins élevées.
 
 ## Que se passe-t-il si j'utilise une taille de bloc plus petite pour mesurer les performances ?
 {: faq}
@@ -135,7 +135,7 @@ Il n'est pas nécessaire de préchauffer le volume. Le débit indiqué peut êtr
 ## Est-il possible d'atteindre un débit plus élevé si une connexion Ethernet plus rapide est utilisée ?
 {: faq}
 
-Les limites de débit sont configurées par volume ou par numéro d'unité logique. Par conséquent, une connexion Ethernet plus rapide ne permet pas d'augmenter la limite définie. Une connexion Ethernet plus lente risque toutefois de générer un goulot d'étranglement.
+Les limites de débit sont configurées par volume. Une connexion Ethernet plus rapide ne permet pas d'augmenter la limite définie. Une connexion Ethernet plus lente risque toutefois de générer un goulot d'étranglement.
 
 ## Les pare-feu et groupes de sécurité ont-ils un impact sur les performances ?
 {: faq}
@@ -145,7 +145,7 @@ Il est recommandé d'exécuter le trafic de stockage sur un réseau local virtue
 ## Quel temps d'attente lié aux performances puis-je attendre de mon stockage {{site.data.keyword.filestorage_short}} ?   
 {: faq}
 
-Le temps d'attente cible du stockage est < 1 ms. Le stockage est connecté à des instances de traitement sur un réseau partagé ; le temps d'attente exact des performances dépend donc du trafic réseau sur une période donnée.
+Le temps d'attente cible du stockage est inférieur à 1 ms. Le stockage est connecté à des instances de traitement sur un réseau partagé ; le temps d'attente exact des performances dépend donc du trafic réseau sur une période donnée.
 
 ## Qu'advient-il des données en cas de suppression des volumes {{site.data.keyword.filestorage_short}} ?
 {: faq}

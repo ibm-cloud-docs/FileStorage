@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-12-11"
 
 ---
 {:new_window: target="_blank"}
@@ -12,13 +12,13 @@ lastupdated: "2018-10-31"
 {:note: .note}
 {:important: .important}
 
-# Montage de {{site.data.keyword.filestorage_short}} sur CoreOS
+# Montage de {{site.data.keyword.filestorage_short}} sur Container Linux
 
-CoreOS est une distribution Linux puissante qui est conçue pour simplifier la gestion de déploiements importants et évolutifs sur des infrastructures variées. Basé sur une génération de Chrome OS, CoreOS gère un système hôte léger et utilise des conteneurs Docker pour toutes les applications.
+Container Linux by CoreOS est un système d'exploitation open source léger basé sur le noyau Linux. Il est conçu de manière à fournir une infrastructure aux déploiements en cluster. En tant que système d'exploitation, Container Linux offre uniquement la fonctionnalité minimale requise pour le déploiement d'applications au sein de conteneurs de logiciels, ainsi qu'un mécanisme intégré de reconnaissance de service et de partage de configuration. Pour plus d'informations, voir la [documentation Container Linux sur le montage de stockage![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://coreos.com/os/docs/latest/mounting-storage.html)
 
 ## Montage de stockage portable
 
-Tous les fichiers de montage secondaires sont placés dans le répertoire `/etc/systemd/system` car les montages au niveau du système sont effectués dans un répertoire en lecture seule dans CoreOS. Vous devez d'abord créer un fichier `MOUNTPOINT.mount`. La section **Where** du fichier `.mount` doit correspondre au nom de fichier. Si le point de montage comporte des barres obliques (`/`), vous devez nommer le fichier en respectant la syntaxe `chemin-de-montage.mount`. Par exemple, si vous souhaitez monter l'unité de stockage portable dans `/mnt/www`, vous devez nommer le fichier `mnt-www.mount`.
+Tous les fichiers de montage secondaires sont placés dans le répertoire `/etc/systemd/system` car les montages au niveau du système sont effectués dans un répertoire en lecture seule. Vous devez d'abord créer un fichier `MOUNTPOINT.mount`. La section **Where** du fichier `.mount` doit correspondre au nom de fichier. Si le point de montage comporte des barres obliques (`/`), vous devez nommer le fichier en respectant la syntaxe `chemin-de-montage.mount`. Par exemple, si vous souhaitez monter l'unité de stockage portable dans `/mnt/www`, vous devez nommer le fichier `mnt-www.mount`.
 
 Vous pouvez utiliser `fdisk` ou `parted` pour créer la partition. Assurez-vous que le système de fichiers que vous créez correspond à celui qui est indiqué dans le fichier `.mount`, sinon, le service ne pourra pas démarrer. 
 
@@ -38,14 +38,16 @@ WantedBy = multi-user.target
 {:codeblock}
 
 
-CoreOS utilise `systemd` ; par conséquent, vous devez activer le fichier `*.mount` pour que le point de montage survive au redémarrage. Si vous utilisez l'indicateur `--now`, la partition est montée immédiatement et est définie pour démarrer à l'amorçage.
+Etant donné que Container Linux utilise `systemd`, vous devez activer le fichier `*.mount` pour que le point de montage soit préservé au redémarrage. Si vous utilisez l'indicateur `--now`, la partition est montée immédiatement et définie pour démarrer à l'amorçage.
 
 ```
-$ systemctl enable --now mnt-www.mount
+systemctl enable --now mnt-www.mount
 ```
 {:pre}
 
-## Montage de NFS/{{site.data.keyword.filestorage_short}}
+Pour plus d'informations, voir la [documentation `systemd mount`![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www.freedesktop.org/software/systemd/man/systemd.mount.html)
+
+## Montage de {{site.data.keyword.filestorage_short}}
 
 Le processus de montage de {{site.data.keyword.filestorage_short}} est le même. Etant donné que le montage fait appel à NFS, vous pouvez indiquer davantage d'options à l'aide de la ligne `Options=` dans le fichier de montage.
 
@@ -77,37 +79,3 @@ cluster1 ~ # mount |grep data
 <nfs_mount_point> on /data/www type nfs4 (rw,relatime,vers=4.0,rsize=65536,wsize=65536,namlen=255,hard,proto=tcp,port=0,timeo=600,retrans=2,sec=sys,clientaddr=10.81.x.x,local_lock=none,addr=10.1.x.x)
 ```
 {:codeblock}
-
-## Montage de NAS/CIFS
-
-Le montage d'un partage CIFS n'est pas pris en charge nativement dans CoreOS, mais une solution de contournement très simple permet d'autoriser le système hôte pour monter des partages NAS. Vous pouvez utiliser un conteneur pour créer le module `mount.cfis`, puis le copier sur le système CoreOS.
-
-Sur le système CoreOS, exécutez la commande suivante pour télécharger et accéder à un conteneur Fedora :
-
-```
-docker run -t -i -v /tmp:/host_tmp fedora /bin/bash
-```
-{:pre}
-
-Une fois dans le conteneur, exécutez la commande suivante pour créer l'utilitaire CIFS :
-
-```
-dnf groupinstall -y "Development Tools" "Development Libraries"
-dnf install -y tar
-dnf install -y bzip2
-curl https://ftp.samba.org/pub/linux-cifs/cifs-utils/cifs-utils-6.4.tar.bz2 | bunzip2 -c - | tar -xvf -
-cd cifs-utils-6.4/
-./configure && make
-cp mount.cifs /host_tmp/
-```
-{:codeblock}
-
-A présent que le fichier `mount.cifs` est copié sur l'hôte, vous pouvez quitter le conteneur Docker à l'aide de la commande `exit` ou des touches **ctrl+d**. Une fois revenu dans le système CoreOS, vous pouvez monter le partage CIFS à l'aide de la commande suivante :
-```
-/tmp/mount.cifs //nasXXX.service.softlayer.com/USERNAME -o username=USERNAME,password=PASSWORD /path/to/mount
-```
-{:pre}
-
-## Montage d'ISCSI
-
-Ce type de montage n'est actuellement pas pris en charge dans CoreOS, mais il le sera dans une version ultérieure : - https://github.com/coreos/bugs/issues/634

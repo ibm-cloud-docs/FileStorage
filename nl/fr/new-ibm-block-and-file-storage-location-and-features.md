@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-12-11"
 
 ---
 {:new_window: target="_blank"}
@@ -17,7 +17,7 @@ lastupdated: "2018-10-31"
 Le point de montage NFS des nouveaux volumes a été modifié. Pour plus de détails, voir [Nouveau point de montage des volumes {{site.data.keyword.filestorage_short}} améliorés](#new-mount-point-for-enhanced-file-storage-volumes).
 {:important}
 
-La nouvelle fonction {{site.data.keyword.filestorage_short}} est disponible dans les régions/centres de données suivants (cette disponibilité sera bientôt étendue à d'autres centres de données) :
+La nouvelle version de {{site.data.keyword.filestorage_short}} est disponible dans les régions et centres de données suivants (cette disponibilité sera bientôt étendue à d'autres centres de données) :
 
 <table role="presentation">
   <tr>
@@ -56,7 +56,7 @@ La nouvelle fonction {{site.data.keyword.filestorage_short}} est disponible dans
     <td>MEL01<br />
         SYD01<br />
         SYD04<br />
-	<br /><br /><br /><br /><br /><br /><br /><br /><br />
+          SYD05<br /><br /><br /><br /><br /><br /><br /><br /><br />
     </td>
     <td>MON01<br />
         TOR01<br />
@@ -92,9 +92,12 @@ Le nouveau stockage inclut les nouvelles fonctions et capacités suivantes :
 - Création d'un clone de vos données avec la [fonction de duplication de volume {{site.data.keyword.filestorage_short}}](how-to-create-duplicate-volume.html).
 - Possibilité d'extension immédiate du stockage en incréments de Go jusqu'à 12 To, sans qu'il soit nécessaire de créer un doublon ou de déplacer manuellement les données vers un volume plus grand. Pour en savoir plus sur cette fonction, cliquez [ici](expandable_file_storage.html).
 
-## Nouveau Point de montage des volumes {{site.data.keyword.filestorage_short}} améliorés
+## Nouveau point de montage des volumes {{site.data.keyword.filestorage_short}} améliorés
 
-Tous les volumes {{site.data.keyword.filestorage_short}} améliorés mis à disposition dans ces centres de données ont un point de montage différent de celui des volumes non chiffrés. Pour vérifier que vous utilisez le bon point de montage pour les deux types de volume de stockage, vous pouvez afficher les informations sur le point de montage sur la page **Détails du volume** de l'interface utilisateur. Vous pouvez également accéder au point de montage correct via un appel d'API : `SoftLayer_Network_Storage::getNetworkMountAddress()`.
+Tous les volumes {{site.data.keyword.filestorage_short}} améliorés mis à disposition dans ces centres de données ont un point de montage différent de celui des volumes non chiffrés. Pour vérifier que vous utilisez le bon point de montage pour les deux types de volume de stockage, vous pouvez afficher les informations sur le point de montage sur la page **Détails du volume** de la console. Vous pouvez également accéder au point de montage correct via un appel d'API : `SoftLayer_Network_Storage::getNetworkMountAddress()`.
+
+Pour pouvoir accéder à toutes les nouvelles fonctions, sélectionnez `Storage-as-a-Service Package 759` lorsque vous passez votre commande via l'API. Pour plus d'informations sur les commandes {{site.data.keyword.filestorage_short}} via l'API, voir [order_file_volume ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://softlayer-python.readthedocs.io/en/latest/api/managers/file.html#SoftLayer.managers.file.FileStorageManager.order_file_volume){:new_window}.
+{:important}
 
 Revenez ici pour savoir si d'autres centres de données ont été mis à niveau et si de nouvelles fonctions et capacités ont été ajoutées pour {{site.data.keyword.filestorage_short}}.
 {:tip}

@@ -13,18 +13,19 @@ lastupdated: "2018-11-30"
 
 # Montage de {{site.data.keyword.filestorage_short}} sur Linux
 
-Commencez par vérifier que l'hôte qui doit accéder au volume {{site.data.keyword.filestorage_full}} dispose des droits d'accès nécessaires via le portail [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
+Commencez par vérifier que l'hôte qui doit accéder au volume {{site.data.keyword.filestorage_full}} dispose des droits d'accès nécessaires via le portail [{{site.data.keyword.slportal}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://control.softlayer.com/){:new_window}.
 
-1. Sur la page de la liste de {{site.data.keyword.filestorage_short}}, cliquez sur l'option **Actions** qui est associée au nouveau partage, puis cliquez sur **Hôte autorisé**.
+1. Sur la page de la liste de {{site.data.keyword.filestorage_short}}, cliquez sur le lien **Actions** associée au nouveau partage, puis cliquez sur **Hôte autorisé**.
 2. Sélectionnez le ou les hôtes dans la liste, puis cliquez sur **Soumettre**. L'hôte est ainsi autorisé à accéder au partage.
 
 ## Montage du partage {{site.data.keyword.filestorage_short}}
 
 Utilisez les instructions décrites ci-après pour connecter une instance de traitement {{site.data.keyword.BluSoftlayer_full}} à un partage NFS (Network File System). L'exemple repose sur Red Hat Enterprise Linux 6. Il est possible d'adapter les étapes pour d'autres distributions Linux en fonction de la documentation du fournisseur du système d'exploitation.
 
-Le point de montage de l'instance File Storage peut être obtenu sur la page de la liste de {{site.data.keyword.filestorage_short}} ou via un appel API : `SoftLayer_Network_Storage::getNetworkMountAddress()`.{:tip}
+Le point de montage de l'instance File Storage peut être obtenu sur la page de la liste de {{site.data.keyword.filestorage_short}} ou via un appel API : `SoftLayer_Network_Storage::getNetworkMountAddress()`.
+{:tip}
 
-1. Installez les packages/outils requis.
+1. Installez les outils requis.
    ```
    # yum -y install nfs-utils nfs-utils-lib
    ```
@@ -84,7 +85,8 @@ Le point de montage de l'instance File Storage peut être obtenu sur la page de 
 
    Si la commande s'exécute sans erreur, votre installation est terminée.
 
-   Si vous utilisez NFS 4.1, ajoutez `sec=sys` à la commande mount pour prévenir tout problème lié à la propriété des fichiers.{:tip}
+   Si vous utilisez NFS 4.1, ajoutez `sec=sys` à la commande mount pour prévenir tout problème lié à la propriété des fichiers.
+   {:tip}
 
 
 ## Implémentation de `no_root_squash` pour NFS (facultatif)

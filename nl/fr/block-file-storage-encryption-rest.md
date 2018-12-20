@@ -24,7 +24,7 @@ Le chiffrement au repos géré par le fournisseur utilise les protocoles suivant
     - Payment Card Industry (PCI)
     - Bâle II
     - California Security Breach Information Act (SB 1386)
-    - Conformité à la directive européenne 95/46/EC concernant la protection des données
+    - Conformité à la directive européenne concernant la protection des données (95/46/EC).
 
 ## Sécurisation de vos instantanés ou de votre stockage répliqué.  
 

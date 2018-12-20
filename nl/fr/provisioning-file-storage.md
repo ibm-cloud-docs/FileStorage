@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-11-30"
+lastupdated: "2018-12-13"
 
 ---
 {:new_window: target="_blank"}
@@ -12,25 +12,27 @@ lastupdated: "2018-11-30"
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 
+
 # Commande de {{site.data.keyword.filestorage_short}}
 
-Vous pouvez mettre à disposition {{site.data.keyword.filestorage_short}} et l'ajuster en fonction de vos besoins en termes de capacité et d'IOPS. Profitez pleinement de votre stockage grâce à deux options vous permettant de spécifier les performances.
+Vous pouvez mettre à disposition {{site.data.keyword.filestorage_short}} et l'ajuster en fonction de vos besoins en termes de capacité et d'E-S/s (IOPS). Profitez pleinement de votre stockage grâce à deux options vous permettant de spécifier les performances.
 
 - Vous pouvez effectuer une sélection parmi les niveaux d'IOPS Endurance qui proposent des niveaux de performances prédéfinis afin de prendre en charge les charges de travail pour lesquelles il n'existe aucune exigence bien définie en matière de performances.
-- Vous pouvez ajuster votre stockage en fonction d'exigences de performances très spécifiques en spécifiant le nombre total d'IOPS avec Performance.
+- Vous pouvez ajuster votre stockage en fonction d'exigences de performances spécifiques en spécifiant le nombre total d'IOPS avec Performance.
 
 ## Commande de {{site.data.keyword.filestorage_short}} avec des niveaux d'IOPS prédéfinis (Endurance)
 
 1. Connectez-vous au [catalogue IBM Cloud](https://{DomainName}/catalog/){:new_window}, puis cliquez sur **Stockage**. Ensuite, sélectionnez {{site.data.keyword.filestorage_short}}. Cliquez sur **Créer**.
 
-   Sinon, vous pouvez vous connecter au portail [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} et cliquer sur **Stockage** > **{{site.data.keyword.filestorage_short}}**. Dans l'angle supérieur droit, cliquez sur **Commander {{site.data.keyword.filestorage_short}}**.
+   Vous pouvez également vous connecter au portail [{{site.data.keyword.slportal}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://control.softlayer.com/){:new_window}, puis cliquer sur **Stockage** > **{{site.data.keyword.filestorage_short}}**. Dans l'angle supérieur droit, cliquez sur **Commander {{site.data.keyword.filestorage_short}}**.
 2. Sélectionnez l'**emplacement** de votre déploiement (centre de données).
    - Vérifiez que le nouveau stockage est ajouté au même emplacement que celui du ou des hôtes de calcul dont vous disposez.
 3. Facturation. Si vous avez sélectionné un centre de données avec des fonctionnalités améliorées (indiqué par un astérisque), vous avez le choix entre une facturation mensuelle ou horaire.
      1. Avec la facturation **horaire**, le nombre d'heures d'existence du volume de fichier sur le compte est calculé lors de la suppression du numéro d'unité logique ou à la fin du cycle de facturation, à la première occurrence de l'un de ces deux événements. La facturation horaire est un bon choix si vous avez besoin d'un stockage pour quelques jours ou pour moins d'un mois complet. La facturation horaire est disponible uniquement pour le stockage qui est mis à disposition dans des [centres de données sélectionnés](new-ibm-block-and-file-storage-location-and-features.html).
      2. Avec la facturation **mensuelle**, le calcul du prix est calculé au prorata depuis la date de création jusqu'à la fin du cycle de facturation et la facturation est immédiate. Aucun remboursement n'est possible si un volume de fichier est supprimé avant la fin du cycle de facturation. La facturation mensuelle convient si vous avez besoin d'un stockage pour des charges de travail qui utilisent des données devant être stockées et rester accessibles pour de longues périodes (un mois ou plus).
 
-La facturation mensuelle est utilisée par défaut pour le stockage fourni dans les centres de données qui n'ont **pas** été mis à jour avec les fonctionnalités améliorées.{:note}
+     La facturation mensuelle est utilisée par défaut pour le stockage fourni dans les centres de données qui n'ont **pas** été mis à jour avec les fonctionnalités améliorées.
+     {:note}
 4. Entrez votre taille de stockage dans la zone **Nouvelle taille de stockage**.
 5. Sélectionnez **Endurance (IOPS hiérarchisées)** dans la section **Options d'IOPS de stockage**.
 6. Sélectionnez le niveau d'IOPS requis par votre application.
@@ -41,32 +43,33 @@ La facturation mensuelle est utilisée par défaut pour le stockage fourni dans 
 7. Cliquez sur **Indiquer la taille de l'espace d'instantané** et sélectionnez la taille de l'image instantanée dans la liste. Cet espace vient en complément de votre espace utilisable. Pour les considérations et recommandations relatives à l'espace d'instantané, lisez la section [Commande d'instantanés](ordering-snapshots.html).
 8. Sur la droite, passez en revue votre récapitulatif de commande et appliquez votre code promo si vous en avez un.
 9. Après avoir lu les dispositions, cochez la case **J'ai lu et j'accepte les contrats de service tiers**.
-10. Cliquez sur **Créer**.Votre nouvelle allocation de stockage est disponible en quelques minutes.
+10. Cliquez sur **Créer**. Votre nouvelle allocation de stockage est disponible en quelques minutes.
 
-Par défaut, vous pouvez mettre à disposition un total combiné de 250 volumes {{site.data.keyword.blockstorageshort}}. Pour augmenter le nombre de vos volumes, contactez votre commercial. Pour en savoir plus sur l'augmentation des limites, cliquez [ici](managing-storage-limits.html).<br/><br/>Pour plus d'informations sur la limite des autorisations simultanées, voir [Foire aux questions](File-Storage-FAQ.html#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-).
+Par défaut, vous pouvez mettre à disposition un total combiné de 250 volumes {{site.data.keyword.blockstorageshort}}. Pour augmenter le nombre de vos volumes, contactez votre commercial. Pour en savoir plus sur l'augmentation des limites, cliquez [ici](managing-storage-limits.html).<br/><br/>Pour plus d'informations sur la limite des autorisations simultanées, voir [Foire aux questions](faqs.html#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-).
 {:tip}
 
 ## Commande de {{site.data.keyword.filestorage_short}} avec un nombre d'IOPS personnalisé (Performance)
 
 1. Connectez-vous au [catalogue IBM Cloud](https://{DomainName}/catalog/){:new_window}, puis cliquez sur **Stockage**. Ensuite, sélectionnez {{site.data.keyword.filestorage_short}}. Cliquez sur **Créer**.
 
-   Sinon, vous pouvez vous connecter au portail [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} et cliquer sur **Stockage** > **{{site.data.keyword.filestorage_short}}**. Dans l'angle supérieur droit, cliquez sur **Commander {{site.data.keyword.filestorage_short}}**.
+   Vous pouvez également vous connecter au portail [{{site.data.keyword.slportal}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://control.softlayer.com/){:new_window}, puis cliquer sur **Stockage** > **{{site.data.keyword.filestorage_short}}**. Dans l'angle supérieur droit, cliquez sur **Commander {{site.data.keyword.filestorage_short}}**.
 2. Cliquez sur **Emplacement** et sélectionnez votre centre de données.
    - Vérifiez que le nouveau stockage est ajouté au même emplacement que celui du ou des hôtes de calcul dont vous disposez.
 3. Facturation. Si vous avez sélectionné un centre de données avec des fonctionnalités améliorées (indiqué par un astérisque), vous avez le choix entre une facturation mensuelle ou horaire.
      1. Avec la facturation **horaire**, le nombre d'heures d'existence du volume de fichier sur le compte est calculé lors de la suppression du numéro d'unité logique ou à la fin du cycle de facturation, à la première occurrence de l'un de ces deux événements. La facturation horaire est un bon choix si vous avez besoin d'un stockage pour quelques jours ou pour moins d'un mois complet. La facturation horaire est disponible uniquement pour le stockage qui est mis à disposition dans des [centres de données sélectionnés](new-ibm-block-and-file-storage-location-and-features.html).
      2. Avec la facturation **mensuelle**, le calcul du prix est calculé au prorata depuis la date de création jusqu'à la fin du cycle de facturation et la facturation est immédiate. Aucun remboursement n'est possible si un volume de fichier est supprimé avant la fin du cycle de facturation. La facturation mensuelle convient si vous avez besoin d'un stockage pour des charges de travail qui utilisent des données devant être stockées et rester accessibles pour de longues périodes (un mois ou plus).
 
-La facturation mensuelle est utilisée par défaut pour le stockage fourni dans les centres de données qui n'ont **pas** été mis à jour avec les fonctionnalités améliorées.{:note}
+     La facturation mensuelle est utilisée par défaut pour le stockage fourni dans les centres de données qui n'ont **pas** été mis à jour avec les fonctionnalités améliorées.
+     {:note}
 4. Entrez votre taille de stockage dans la zone **Nouvelle taille de stockage**.
 5. Sélectionnez **Performance (IOPS allouées)** dans la section **Options d'IOPS de stockage**.
 6. Entrez le nombre d'IOPS dans la zone **IOPS allouées**.
 7. Cliquez sur **Indiquer la taille de l'espace d'instantané** et sélectionnez la taille de l'image instantanée dans la liste. Cet espace vient en complément de votre espace utilisable. Pour les considérations et recommandations relatives à l'espace d'instantané, lisez la section [Commande d'instantanés](ordering-snapshots.html).
 8. Sur la droite, passez en revue votre récapitulatif de commande et appliquez votre code promo si vous en avez un.
 9. Après avoir lu les dispositions, cochez la case **J'ai lu et j'accepte les contrats de service tiers**.
-10. Cliquez sur **Créer**.Votre nouvelle allocation de stockage est disponible en quelques minutes.
+10. Cliquez sur **Créer**. Votre nouvelle allocation de stockage est disponible en quelques minutes.
 
-Par défaut, vous pouvez mettre à disposition un total combiné de 250 volumes {{site.data.keyword.blockstorageshort}}. Pour augmenter le nombre de vos volumes, contactez votre commercial. Pour en savoir plus sur l'augmentation des limites, cliquez [ici](managing-storage-limits.html).<br/><br/>Pour plus d'informations sur la limite des autorisations simultanées, voir [Foire aux questions](File-Storage-FAQ.html#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-).
+Par défaut, vous pouvez mettre à disposition un total combiné de 250 volumes {{site.data.keyword.blockstorageshort}}. Pour augmenter le nombre de vos volumes, contactez votre commercial. Pour en savoir plus sur l'augmentation des limites, cliquez [ici](managing-storage-limits.html).<br/><br/>Pour plus d'informations sur la limite des autorisations simultanées, voir [Foire aux questions](faqs.html#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-).
 {:important}
 
 
@@ -76,9 +79,15 @@ Lorsque votre demande de mise à disposition est terminée, autorisez vos hôtes
 - [Montage de {{site.data.keyword.filestorage_short}} sur Linux](accessing-file-storage-linux.html)
 - [Montage de {{site.data.keyword.filestorage_short}} dans CentOS](mounting-nsf-file-storage.html)
 - [Montage de {{site.data.keyword.filestorage_short}} sur CoreOS](mounting-storage-coreos.html)
-- [Configuration de {{site.data.keyword.filestorage_short}} en vue de la sauvegarde avec cPanel](configure-backup-cpanel.html)
-- [Configuration de {{site.data.keyword.filestorage_short}} en vue de la sauvegarde avec Plesk](configure-backup-plesk.html)
+- [Configuring {{site.data.keyword.filestorage_short}} en vue de la sauvegarde avec cPanel](configure-backup-cpanel.html)
+- [Configuring {{site.data.keyword.filestorage_short}} en vue de la sauvegarde avec Plesk](configure-backup-plesk.html)
 - [Montage de volume {{site.data.keyword.filestorage_short}} sur des hôtes ESXi](architecture-guide-file-storage-vmware.html)
+
+## Considérations relatives à la reprise après incident
+
+Pour éviter toute perte de données et garantir la continuité opérationnelle, prévoyez de répliquer vos serveurs et votre stockage dans un autre centre de données. La réplication permet de synchroniser vos données entre deux emplacements différents selon votre planning d'instantané. Pour plus d'informations, voir [Réplication de données](replication.html).
+
+Si vous voulez cloner votre volume et l'utiliser indépendamment du volume d'origine, voir [Création d'un volume de blocs en double](how-to-create-duplicate-volume.html).
 
 
 ## Identification des volumes {{site.data.keyword.filestorage_short}} sur la facture

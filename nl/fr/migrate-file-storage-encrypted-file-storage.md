@@ -12,7 +12,7 @@ lastupdated: "2018-11-30"
 
 # Migration de {{site.data.keyword.filestorage_short}} vers {{site.data.keyword.filestorage_short}} amélioré
 
-La fonctionnalité {{site.data.keyword.filestorage_full}} amélioré est désormais disponible dans des centres de données sélectionnés. Pour afficher la liste des centres de données mis à niveau et des fonctionnalités disponibles, telles que les taux IPOS ajustables et les volumes pouvant être développés, cliquez [ici](new-ibm-block-and-file-storage-location-and-features.html). Pour plus d'informations sur le stockage chiffré géré par un fournisseur, voir [Chiffrement au repos pour {{site.data.keyword.filestorage_short}}](block-file-storage-encryption-rest.html).
+La fonctionnalité {{site.data.keyword.filestorage_full}} amélioré est désormais disponible dans des centres de données sélectionnés. Pour afficher la liste des centres de données mis à niveau et des fonctions disponibles telles que les débits d'E-S/s ajustables et les volumes extensibles, cliquez [ici](new-ibm-block-and-file-storage-location-and-features.html). Pour plus d'informations sur le stockage chiffré géré par un fournisseur, voir [Chiffrement au repos pour {{site.data.keyword.filestorage_short}}](block-file-storage-encryption-rest.html).
 
 Le chemin de migration préféré consiste à se connecter simultanément aux deux volumes et à transférer les données directement d'un numéro d'unité logique à un autre. Les spécificités dépendent de votre système d'exploitation et de la modification attendue ou non des données lors de la copie.
 
@@ -22,24 +22,25 @@ Nous supposons que votre numéro d'unité logique non chiffré est déjà connec
 - [Montage de NFS/{{site.data.keyword.filestorage_short}} dans CentOS](mounting-nsf-file-storage.html)
 - [Montage de {{site.data.keyword.filestorage_short}} sur CoreOS](mounting-storage-coreos.html)
 
-Tous les volumes {{site.data.keyword.filestorage_short}} améliorés ont un point de montage différent de celui des volumes non chiffrés. Pour vérifier que vous utilisez le bon point de montage pour les volumes {{site.data.keyword.filestorage_short}} chiffrés et non chiffrés, vous pouvez afficher les informations relatives au point de montage sur la page **Détails du volume** du portail {{site.data.keyword.slportal}}. Vous pouvez également accéder au point de montage correct via un appel d'API : `SoftLayer_Network_Storage::getNetworkMountAddress()`.
-{:tip}
+Tous les volumes {{site.data.keyword.filestorage_short}} améliorés mis à disposition dans ces centres de données ont un point de montage différent de celui des volumes non chiffrés. Pour vérifier que vous utilisez le bon point de montage pour les deux types de volume de stockage, vous pouvez afficher les informations sur le point de montage sur la page **Détails du volume** de la console. Vous pouvez également accéder au point de montage correct via un appel d'API : `SoftLayer_Network_Storage::getNetworkMountAddress()`.{:tip}
 
 
-## Création d'un nouveau {{site.data.keyword.filestorage_short}}
+## Création d'un {{site.data.keyword.filestorage_short}}
 
 Lorsque vous passez une commande via l'API, spécifiez le package "Storage as a Service" pour être certain d'obtenir les fonctionnalités mises à jour avec votre nouveau stockage.
 {:important}
 
-Les instructions ci-après s'appliquent lors de la commande d'un volume/partage de fichiers amélioré via le catalogue {{site.data.keyword.BluSoftlayer_full}} du portail {{site.data.keyword.slportal}}. Votre nouveau volume doit avoir une taille identique ou supérieure à celle du volume d'origine afin de faciliter la migration.
+Les instructions ci-après s'appliquent lors de la commande d'un partage de fichiers amélioré via le portail {{site.data.keyword.slportal}} ou le catalogue {{site.data.keyword.BluSoftlayer_full}}. Votre nouveau volume doit avoir une taille identique ou supérieure à celle du volume d'origine afin de faciliter la migration.
 
-### Commande d'un nouveau volume de stockage Endurance
+### Commande d'un volume de stockage Endurance
 
-1. Sur le portail [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}, cliquez sur **Stockage** > **{{site.data.keyword.filestorage_short}}** OU, dans le catalogue {{site.data.keyword.BluSoftlayer_full}}, cliquez sur **Infrastructure** > **Stockage** > **{{site.data.keyword.filestorage_short}}**.
+1. Dans le portail [{{site.data.keyword.slportal}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://control.softlayer.com/){:new_window}, cliquez sur **Stockage** > **{{site.data.keyword.filestorage_short}}** OU dans le catalogue {{site.data.keyword.BluSoftlayer_full}}, cliquez sur **Infrastructure** > **Stockage** > **{{site.data.keyword.filestorage_short}}**.
 2. Cliquez sur **Commander {{site.data.keyword.filestorage_short}}**.
 3. Sélectionnez **Endurance** dans la liste **Sélectionner le type de stockage**.
 4. Cliquez sur **Emplacement** et sélectionnez votre centre de données.
-   - Vérifiez que le nouveau stockage est ajouté au même emplacement que celui du stockage d'origine.
+
+   Vérifiez que le nouveau stockage est ajouté au même emplacement que celui du stockage d'origine.
+   {:important}
 5. Sélectionnez votre option de facturation. Vous avez le choix entre une facturation au mois et une facturation à l'heure.
 6. Cliquez sur **Endurance** et sélectionnez le niveau IOPS.
 6. Sélectionnez la **Taille de stockage utilisable** dans la liste. Votre nouveau volume doit avoir une taille identique ou supérieure à celle du volume d'origine.
@@ -47,13 +48,15 @@ Les instructions ci-après s'appliquent lors de la commande d'un volume/partage 
 8. Cliquez sur **Continuer**. Les prix mensuels et calculés au prorata s'affichent pour vous permettre de vérifier une dernière fois les détails de la commande. Cliquez sur **Précédent** si vous souhaitez modifier la commande.
 9. Cochez la case **J'ai lu et j'accepte l'intégralité du Contrat cadre de service**, puis cliquez sur **Valider la commande**.
 
-### Commande d'un volume de stockage Performance chiffré
+### Commande d'un volume de stockage Performance
 
-1. Sur le portail [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}, cliquez sur **Stockage**, **{{site.data.keyword.filestorage_short}}** OU, dans le catalogue {{site.data.keyword.BluSoftlayer_full}}, cliquez sur **Infrastructure** >** Stockage** > **{{site.data.keyword.filestorage_short}}**.
+1. Dans le portail [{{site.data.keyword.slportal}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://control.softlayer.com/){:new_window}, cliquez sur **Stockage**, **{{site.data.keyword.filestorage_short}}** OU dans le catalogue {{site.data.keyword.BluSoftlayer_full}}, cliquez sur **Infrastructure** >**Stockage** > **{{site.data.keyword.filestorage_short}}**.
 2. Cliquez sur **Commander {{site.data.keyword.filestorage_short}}**.
 3. Sélectionnez **Performance** dans la liste **Sélectionner le type de stockage**.
 4. Cliquez sur **Emplacement** et sélectionnez votre centre de données.
-    -  Vérifiez que le nouveau stockage est ajouté au même emplacement que celui du stockage d'origine.
+
+   Vérifiez que le nouveau stockage est ajouté au même emplacement que celui du stockage d'origine.
+   {:important}
 5. Sélectionnez vos options de facturation. Vous avez le choix entre une facturation à l'heure et une facturation au mois.
 6. Sélectionnez le bouton radio en regard de la **Taille de stockage** appropriée.
 6. Entrez le nombre d'IOPS dans la zone **Spécifier les IOPS**.
@@ -78,7 +81,8 @@ Une fois l'autorisation accordée à l'hôte, connectez le volume à votre hôte
 
 Si des instantanés et la réplication ont été établis pour votre volume d'origine, vous devez les configurer pour le nouveau volume. Configurez la réplication, ainsi que l'espace d'image instantanée et créez des plannings d'instantané avec les mêmes paramètres que ceux du volume d'origine.
 
-Si le chiffrement n'est pas activé pour le centre de données cible, vous ne pouvez pas établir de réplication pour le nouveau volume tant que ce centre de données n'a pas été mis à niveau.{:important}
+Si le chiffrement n'est pas activé pour le centre de données cible, vous ne pouvez pas établir de réplication pour le nouveau volume tant que ce centre de données n'a pas été mis à niveau.
+{:important}
 
 
 ## Migration de vos données
