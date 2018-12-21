@@ -16,10 +16,10 @@ Enhanced {{site.data.keyword.filestorage_full}} is now available in select data 
 
 The preferred migration path is to connect to both volumes simultaneously and transfer data directly from one LUN to another. The specifics depend on your operating system and whether the data is expected to change during the copy operation.
 
-There's an assumption that you already have your non-encrypted LUN attached to your host. If not, follow the directions that fit your operating system the best to accomplish this task.
+The assumption is that you already have your non-encrypted LUN attached to your host. If not, follow the directions that fit your operating system the best to accomplish this task.
 
 - [Mounting {{site.data.keyword.filestorage_short}} on Linux](accessing-file-storage-linux.html)
-- [Mounting NFS/{{site.data.keyword.filestorage_short}} in CentOS](mounting-nsf-file-storage.html)
+- [Mounting {{site.data.keyword.filestorage_short}} in CentOS](mounting-nsf-file-storage.html)
 - [Mounting {{site.data.keyword.filestorage_short}} on CoreOS](mounting-storage-coreos.html)
 
 All enhanced {{site.data.keyword.filestorage_short}} volumes that are provisioned in these data centers have a different mount point than non-encrypted volumes. To ensure you're using the correct mount point for both storage volumes, you can view the mount point information in the **Volume Details** page in the console. You can also access the correct mount point through an API call: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
@@ -92,10 +92,8 @@ If your target data center does not have encryption, you can't establish replica
   - If you need assistance with connecting the two files hares to your host, open a support ticket.
 
 2. Consider what type of data you have on your original {{site.data.keyword.filestorage_short}} volume and how best to copy it to your new file share
-  - If you have backups, static content, and things that aren't expected to change during the copy, you don't need to worry too much.
-  - If you're running a database or a virtual machine on your {{site.data.keyword.filestorage_short}}, make sure that the data isn't altered during the copy to avoid data corruption. 
-  - If you have any bandwidth concerns, do the migration during off peak times. 
-  - If you need assistance with these considerations, open a support case.
+  - If you have backups, static content, and things that aren't expected to change during the copy, there aren't any major concerns.
+  - If you're running a database or a virtual machine on your {{site.data.keyword.filestorage_short}}, make sure that the data isn't altered during the copy to avoid data corruption. If you have any bandwidth concerns, do the migration during off peak times. If you need assistance with these considerations, open a support ticket.
 
 3. Copy your data across.
    - **Microsoft Windows**
