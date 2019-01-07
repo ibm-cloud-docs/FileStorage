@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-01-07"
 
 ---
 {:new_window: target="_blank"}
@@ -275,7 +275,7 @@ Both NFS v3 and NFS v4.1 are supported in the {{site.data.keyword.BluSoftlayer_f
 
 ## Submitting your Order
 
-When you're ready to submit your order, follow the instructions [here](provisioning-file-storage.html). For Provisioning File Storage with VMware, click [here](architecture-guide-file-storage-vmware.html)
+When you're ready to submit your order, you can place it through the [Console](provisioning-block_storage.html) or the [SLCLI](ordering-through-cli.html). For Provisioning File Storage with VMware, click [here](architecture-guide-file-storage-vmware.html)
 
 ## Connecting your new storage
 
