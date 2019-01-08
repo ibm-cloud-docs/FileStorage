@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-01-07"
+lastupdated: "2019-01-08"
 
 ---
 {:new_window: target="_blank"}
@@ -42,13 +42,16 @@ You can provision {{site.data.keyword.filestorage_short}} and fine-tune to meet 
     - **10 IOPS per GB** is designed for the most demanding workloads such as those created by NoSQL databases, and data processing for Analytics. This tier is available in [select data centers](new-ibm-block-and-file-storage-location-and-features.html) for storage that is provisioned up to 4 TB.
 7. Click **Specify Snapshot Space Size** and select the snapshot size from the list. This space is in addition to your usable space. For snapshot space considerations and recommendation, read [Ordering Snapshots](ordering-snapshots.html).
 8. On the right, review your order summary, and apply your Promo Code if you have one.
+
+   Discounts are applied when the order is processed.
+   {:note}
 9. After you reviewed the terms and conditions, check the I** have read and agree to the Third-Party Service Agreements** box.
 10. Click **Create**. Your new storage allocation is available in a few minutes.
 
 By default, you can provision a combined total of 250 {{site.data.keyword.blockstorageshort}} volumes. To increase the number of your volumes, contact your sales representative. Read about increasing limits [here](managing-storage-limits.html).<br/><br/>For more information about the limit on simultaneous authorizations, see the [FAQs](faqs.html#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-).
 {:tip}
 
-## Ordering {{site.data.keyword.filestorage_short}} with Custom IOPS (Performance)
+## Ordering {{site.data.keyword.filestorage_short}} with custom IOPS (Performance)
 
 1. Log in to [The IBM Cloud catalog](https://{DomainName}/catalog/){:new_window} and click **Storage**. Then, select {{site.data.keyword.filestorage_short}}. Click **Create**.
 
@@ -66,6 +69,9 @@ By default, you can provision a combined total of 250 {{site.data.keyword.blocks
 6. Enter the IOPS in the **Performance (Allocated IOPS)** field.
 7. Click **Specify Snapshot Space Size** and select the snapshot size from the list. This space is in addition to your usable space. For snapshot space considerations and recommendation, read [Ordering Snapshots](ordering-snapshots.html).
 8. On the right, review your order summary, and apply your Promo Code if you have one.
+
+   Discounts are applied when the order is processed.
+   {:note}
 9. After you reviewed the terms and conditions, check the I** have read and agree to the Third-Party Service Agreements** box.
 10. Click **Create**. Your new storage allocation is available in a few minutes.
 
