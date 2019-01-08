@@ -31,40 +31,12 @@ All enhanced {{site.data.keyword.filestorage_short}} volumes that are provisione
 When you place an order with API, specify the "Storage as a Service" package to ensure you're getting the updated features with your new storage.
 {:important}
 
-The following instructions are for ordering an enhanced file share through the {{site.data.keyword.slportal}} or the {{site.data.keyword.BluSoftlayer_full}} catalog. Your new volume must be the same size or larger than the original volume to facilitate the migration.
+You can order an enhanced LUN through the {{site.data.keyword.BluSoftlayer_full}} catalog and the {{site.data.keyword.slportal}}. Your new volume must be of the same size or greater than the original fileshare to facilitate the migration.
 
-### Ordering an Endurance Storage volume
+- [Ordering {{site.data.keyword.filestorage_short}} with pre-defined IOPS Tiers (Endurance)](provisioning-file-storage.html#ordering-file-storage-with-pre-defined-iops-tiers-endurance-)
+- [Ordering {{site.data.keyword.filestorage_short}} with custom IOPS (Performance)](provisioning-file-storage.html#ordering-file-storage-with-custom-iops-performance-)
 
-1. From the [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}, click **Storage** > **{{site.data.keyword.filestorage_short}}** OR from {{site.data.keyword.BluSoftlayer_full}} catalog, click **Infrastructure** > **Storage** > **{{site.data.keyword.filestorage_short}}**.
-2. Click **Order {{site.data.keyword.filestorage_short}}**.
-3. Select **Endurance** from the **Select Storage Type** list.
-4. Click **Location** and select your data center.
-
-   Ensure that the new Storage is added in the same location as the original.
-   {:important}
-5. Select your billing option. You can choose between monthly or hourly billing.
-6. Click **Endurance** and select the IOPS tier.
-6. Select the **Usable Storage Size** from the list. Your new volume must be the same size or larger than the original volume.
-7. Choose the **Snapshot Space Size** (in addition to your usable space) from the list.
-8. Click **Continue**. You're shown the monthly and prorated charges with a final chance to review order details. Click **Previous** if you want to change your order.
-9. Click the **I have read the Master Service Agreement** check box and click **Place Order**
-
-### Ordering a Performance Storage Volume
-
-1. From the [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}, click **Storage**, **{{site.data.keyword.filestorage_short}}** OR from {{site.data.keyword.BluSoftlayer_full}} catalog click **Infrastructure** >** Storage** > **{{site.data.keyword.filestorage_short}}**.
-2. Click **Order {{site.data.keyword.filestorage_short}}**.
-3. Select **Performance** from the **Select Storage Type** list.
-4. Click **Location** and select your data center.
-
-   Ensure that the new Storage is added in the same location as the original.
-   {:important}
-5. Select your billing options. You can choose between hourly and monthly billing.
-6. Select the radio button next to the appropriate **Storage Size**.
-6. Enter the IOPS in the **Specify IOPS** field.
-7. Click **Continue**. You're shown the monthly and prorated charges with a final chance to review order details. Click **Previous** if you want to change your order.
-8. Click the **I have read the Master Service Agreement** check box and click **Place Order**.
-
-Storage is provisioned in less than a minute and is visible on the {{site.data.keyword.filestorage_short}} page of the {{site.data.keyword.slportal}}.
+Your new storage is available to mount in a few minutes. You can view it in the Resource List and in the {{site.data.keyword.blockstorageshort}} list.
 
 
 ## Authorizing host to the new {{site.data.keyword.filestorage_short}}
