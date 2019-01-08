@@ -17,7 +17,7 @@ lastupdated: "2018-11-30"
 
 To create snapshots of your storage volume, either automated or manually, you need to purchase space to hold them. You can purchase capacity up to your storage volume amount (during the initial volume purchase or later by using these steps).
 
-1. Log in to [The IBM Cloud console](https://{DomainName}/catalog/){:new_window} and click the menu icon on the upper left. Select **Classic Infrastructure**.
+1. Log in to [The IBM Cloud console](https://{DomainName}/){:new_window} and click the menu icon on the upper left. Select **Classic Infrastructure**.
 
    Alternatively, you can log in to the [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
 2. Access your Storage through **Storage** > **{{site.data.keyword.filestorage_short}}**.
@@ -25,6 +25,9 @@ To create snapshots of your storage volume, either automated or manually, you ne
 4. Select the amount of space that you need and the payment method.
 5. Click **Continue**.
 6. Enter any Promo Code that you have and click **Recalculate**. The **Charges for this order** and **Order Review** have default values.
+
+   Discounts are applied when the order is processed.
+   {:note}
 7. Check the **I have read the Master Service Agreement and agree to the terms therein** box and click **Place Order**. Your snapshot space is provisioned in a few minutes.
 
 ## Determining how much snapshot space to order
