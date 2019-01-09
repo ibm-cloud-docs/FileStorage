@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-12-05"
+lastupdated: "2018-12-11"
 
 ---
 {:pre: .pre}
@@ -20,12 +20,12 @@ The following steps can help you order and configure {{site.data.keyword.filesto
 
 The {{site.data.keyword.filestorage_short}} is designed to support high I/O applications that require predictable levels of performance. The predictable performance is achieved through the allocation of protocol-level input/output operations per second (IOPS) to individual volumes.
 
-If you require more than eight hosts to access your VMware datastore, then choosing NFS {{site.data.keyword.filestorage_short}} is the best practice.
+If you require more than eight hosts to access your VMware datastore then choosing NFS {{site.data.keyword.filestorage_short}} is the best practice.
 {:tip}
 
 The {{site.data.keyword.filestorage_short}} offering is accessed and mounted through an NFS connection. In a VMware deployment, a single volume can be mounted to up to 64 ESXi hosts as shared storage. You can also mount multiple volumes to create a storage cluster to use vSphere Storage Distributed Resource Scheduler (DRS).
 
-Pricing and configuration options for Endurance and Performance {{site.data.keyword.filestorage_short}} are charged based on a combination of the reserved space and the offered IOPS.
+Pricing and configuration options for {{site.data.keyword.filestorage_short}} are charged based on a combination of the reserved space and the offered IOPS.
 
 ## Ordering considerations
 
@@ -35,9 +35,10 @@ When you order {{site.data.keyword.filestorage_short}}, consider the following i
 
   The throughput calculation is IOPS x 16 KB. IOPS is measured based on a 16-KB block size with a 50/50 read/write mix.<br/>Increasing block size increases the throughput but decreases IOPS. For example, doubling the block size to 32-KB blocks maintains the maximum throughput but halves the IOPS.
   {:note}
+
 - NFS uses many extra file control operations such as `lookup`, `getattr`, and `readdir`. These operations in addition to read/write operations can count as IOPS and vary by operation type and NFS version.
 - {{site.data.keyword.filestorage_short}} volumes are exposed to authorized devices, subnets, or IP addresses.
-- To avoid storage disconnection during path failover {{site.data.keyword.IBM}} recommends installing VMware tools, which set an appropriate timeout value. There’s no need to change the value, the default setting is sufficient to ensure that your VMware host doesn't lose connectivity.
+- To avoid storage disconnection during path-failover {{site.data.keyword.IBM}} recommends installing VMware tools, which set an appropriate timeout value. There’s no need to change the value, the default setting is sufficient to ensure that your VMware host doesn't lose connectivity.
 - Both NFSv3 and NFSv4.1 are supported in the {{site.data.keyword.BluSoftlayer_full}} environment. However, {{site.data.keyword.IBM}} suggests that you use NFSv3. Because NFSv4.1 is a stateful protocol (not stateless like NFSv3), protocol issues can occur during network events. NFSv4.1 must quiesce all operations and then complete lock reclamation. While these operations are taking place, disruptions can occur.
 
 For more information, see VMware's white paper on [Best Practices for running
@@ -145,35 +146,13 @@ Invalid data, whether corrupted, hacked, or infected replicate according to the 
 
 ## Ordering {{site.data.keyword.filestorage_short}}
 
-You can order and configure {{site.data.keyword.filestorage_short}} for a VMware ESXi 5 environment. Use the following information along with the [Advanced Single-Site VMware Reference Architecture ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} to set up one of these storage options in your VMware environment.
+Use the [Advanced Single-Site VMware Reference Architecture ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} to set up {{site.data.keyword.filestorage_short}} with Endurance or Performance options in your VMware environment.
 
-{{site.data.keyword.filestorage_short}} can be ordered through the [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} by accessing the {{site.data.keyword.filestorage_short}} page through **Storage** > **{{site.data.keyword.filestorage_short}}**.
-
-
-### 1. Ordering
-
-Use the following steps to order {{site.data.keyword.filestorage_short}}:
-1. Click **Storage** > **{{site.data.keyword.filestorage_short}}** on the [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} home page.
-2. Click **Order {{site.data.keyword.filestorage_short}}** on the **{{site.data.keyword.filestorage_short}}** page.
-3. Select the **Endurance** or **Performance** from the **Select Storage Type** list.
-4. Select location. Data centers with improved capabilities are denoted with an asterisk. Ensure that the new Storage is added in the same location as the previously ordered ESXi host.
-5. Select Billing method. Monthly and hourly billing options are available.
-6. Select the amount of storage space in GBs. For TB, 1 TB equals 1,000 GB, and 12 TB equals 12,000 GB.
-7. Enter the amount of IOPS in intervals of 100 or select an IOPS Tier.
-8. Specify the size of Snapshot Space.
-9. Click **Continue**.
-10. Enter a promo code if you have one, and click **Recalculate**.
-11. Review your order.
-12. Check the **I have read the Master Service Agreement and agree to the terms therein** check box.
-13. Click **Place Order** to submit the order, or **Cancel** to close the form without submitting an order.
+{{site.data.keyword.filestorage_short}} can be ordered through the [The IBM Cloud catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/catalog/){:new_window} or the [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}. For more information, see [Ordering {{site.data.keyword.filestorage_short}}](provisioning-file-storage.html)
 
 Storage is provisioned in less than a minute and becomes visible on the **{{site.data.keyword.filestorage_short}}** page of the [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
 
-
-
-### 2. Authorizing hosts to use {{site.data.keyword.filestorage_short}}
-
-When a volume is provisioned, the {{site.data.keyword.BluBareMetServers_full}} or {{site.data.keyword.BluVirtServers_full}} that is going to use the volume must be authorized to access the storage. Use the following steps to authorize the volume:
+When a volume is provisioned, the {{site.data.keyword.BluBareMetServers_full}} or {{site.data.keyword.BluVirtServers_full}} that is going to use the volume must be authorized to access the storage. Use the following steps to authorize the volume.
 
 1. Click **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Select **Access Host** on the **Endurance** or **Performance Volume Actions** menu.
@@ -187,8 +166,6 @@ After the subnets are authorized, make note of the host name of the Endurance or
 
 
 ##  Configuring the VMware virtual machine host
-
-### Meeting the Prerequisites
 
 Before you begin the VMware configuration process, make sure that the following prerequisites are met:
 
@@ -249,9 +226,9 @@ For more information about VMware and Jumbo Frames, see [here ![External link ic
 11. Verify that the **Load balancing** option is set to **Route based on the originating virtual port** and click **OK**.
 
 
-### 3. Configuring ESXi static routing (Optional)
+### 3. Configuring static routing (Optional)
 
-The network configuration for this architecture guide uses a minimal number of port groups. If you have a VMkernel port group for NFS storage, extra steps must be taken. By default, ESXi uses the VMkernel port that is on the same subnet as an NFS volume to mount the NFS volume on Endurance or Performance storage. Since layer 3 routing is used to mount the NFS volume, ESXi must be forced to use the VMkernel port that was configured to mount the NFS volume. To use the correct port, a static route must be created to the storage array.
+The network configuration for this architecture guide uses a minimal number of port groups. If you have a VMkernel port group for NFS storage, extra steps must be taken. By default, ESXi uses the VMkernel port that is on the same subnet as an NFS volume to mount the NFS volume. Since layer 3 routing is used to mount the NFS volume, ESXi must be forced to use the VMkernel port that was configured to mount the NFS volume. To use the correct port, a static route must be created to the storage array.
 
 1. To configure a static route, SSH to each ESXi host that uses Performance or Endurance storage and run the following commands. Take note of the IP address that is the result of the `ping` command (first command) and use it with the `esxcli` network command.
    ```
@@ -259,7 +236,8 @@ The network configuration for this architecture guide uses a minimal number of p
    ```
    {: pre}
 
-   >**Note** - the NFS storage DNS host name is a Forwarding Zone (FZ) that is assigned multiple IP addresses. These IP addresses are static and belong to that specific DNS host name. Any of those IP addresses can be used to access a specific volume.
+   The NFS storage DNS host name is a Forwarding Zone (FZ) that is assigned multiple IP addresses. These IP addresses are static and belong to that specific DNS host name. Any of those IP addresses can be used to access a specific volume.
+   {:note}
 
    ```
    esxcli network ip route ipv4 add –gateway GATEWAYIP –network <result of ping command>/32
@@ -320,8 +298,6 @@ Incorrectly configuring SIOC for a VMware datastore or for a VMDK can significan
 
 ### Configuring Storage I/O Control for a VMware datastore
 
-Use the following steps to enable SIOC with recommended values for Endurance and Performance Storage:
-
 1. Browse to the VMware datastore in the vSphere Web Client navigator.
 2. Click the **Manage** tab.
 3. Click **Settings** and click **General**.
@@ -336,7 +312,7 @@ This setting is specific to the VMware datastore and not to the host.
 
 ### Configuring Storage I/O Control for {{site.data.keyword.BluVirtServers_short}}
 
-You can also limit individual virtual disks for individual VMs or grant them different shares with SIOC. By limiting the disks and granting different shares, you can match and align the environment to the workload with the acquired {{site.data.keyword.filestorage_short}} volume IOPS number. The limit is set by IOPS and it is possible to set a different weight or "Shares." Virtual disks with shares set to High (2,000 shares) receive twice as much I/O as a disk set to Normal (1,000 shares) and four times as much as one set to Low (500 shares). Normal is the default value for all the VMs, so you need to adjust the values to High or Low for the VMs that require it.
+You can also limit individual virtual disks for individual VMs or grant them different shares with SIOC. By limiting the disks and granting different shares, you can match and align the environment to the workload with the acquired {{site.data.keyword.filestorage_short}} volume IOPS number. The limit is set by IOPS, and it's possible to set a different weight or "Shares." Virtual disks with shares set to High (2,000 shares) receive twice as much I/O as a disk set to Normal (1,000 shares) and four times as much as one set to Low (500 shares). Normal is the default value for all the VMs, so you need to adjust the values to High or Low for the VMs that require it.
 
 Use the following steps to change the VDisk shares and limit.
 
@@ -345,7 +321,7 @@ Use the following steps to change the VDisk shares and limit.
 3. Click the **Manage** tab and click **Settings**. Click **Edit**.
 4. Expand the **hard disk** arrow. Select **Modify the Shares** or **Limit - IOPs** as is appropriate for your environment. Choose a virtual hard disk from the list and modify the Shares selection to choose the relative number of shares to allocate to the {{site.data.keyword.BluVirtServers_short}} (Low, Normal, or High). You can also click **Custom** and enter a user-defined share value.
 5. Click the **Limit - IOPS** column and enter the maximum storage resources to allocate to the virtual machine.
-6. Click **OK**
+6. Click **OK**.
 
 
 This process is used to set the resource consumption limits of individual vDisks in a {{site.data.keyword.BluVirtServers_short}} even when SIOC is not enabled. These settings are specific to the individual guest, and not the host, although they are used by SIOC.
@@ -402,59 +378,5 @@ The following examples use the CLI to set the advanced configuration parameters,
     #esxcfg-advcfg -g /Disk/QFullSampleSize
     #esxcfg-advcfg -g /Disk/QFullThreshold
     ```
-
-## Enabling Jumbo Frames in {{site.data.keyword.BluSoftlayer_notm}} for Windows and Linux
-
-A jumbo frame is an Ethernet frame with a payload greater than the standard maximum transmission unit (MTU) of 1,500 bytes. Jumbo frames are used on local area networks that support at least 1 Gbps and can be as large as 9,000 bytes.
-
-Jumbo frames need to be configured the same on the entire network path from source device <-> switch <-> router <-> switch <-> destination device. If the entire chain isn't set the same, it defaults to the lowest setting along the chain. {{site.data.keyword.BluSoftlayer_full}} has network devices set to 9,000 currently. All customer devices need to be set to the same 9,000 value.
-{:important}
-
-### Enabling Jumbo Frames in Windows
-
-1. Open the **Network and Sharing Center**.
-2. Click **Change adapter settings**.
-3. Right-click the NIC for which you want to enable jumbo frames and select **Properties**.
-4. Under the **Networking** tab, click **Configure** for the network adapter.
-5. Select the **Advanced** tab.
-6. Select **Jumbo Frame** and change the value from **disabled** to the value you want. The value, such as 9 kB or 9014 Bytes, depends on the NIC.
-7. Click **OK** in all windows.
-
-When you make the change, the NIC loses network connectivity for a few seconds. Restart the device to confirm that the change took effect.
-{:tip}
-
-
-### Enabling Jumbo Frames in Linux
-
-1. Edit the network configuration file for eth0 interface.
-   - CentOS, RHEL, Fedora Linux users edit `/etc/sysconfig/network-script/ifcfg-eth0`
-     ```
-     # vi /etc/sysconfig/network-script/ifcfg-eth0
-     ```
-     {: pre}
-
-   - Debian and Ubuntu Linux users edit `/etc/network/interfaces`.
-
-2. Append the following configuration directive, which specifies the size of the frame in bytes.
-   - CentOS, RHEL, Fedora Linux
-     ```
-     MTU 9000
-     ```
-     {: pre}
-
-   - Debian and Ubuntu Linux
-     ```
-     MTU=9000
-     ```
-     {: pre}
-
-3. Close and save the file. Restart the Interface eth0.
-   ```
-   # /etc/init.d/networking restart
-   ```
-   {: pre}
-
-   This action causes a brief loss of network connectivity.
-
 Learn more about Advanced Single-Site VMware Reference Architecture [here](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}.
 {:tip}
