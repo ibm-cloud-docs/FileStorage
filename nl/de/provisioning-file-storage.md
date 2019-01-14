@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-12-13"
+  years: 2014, 2019
+lastupdated: "2019-01-08"
 
 ---
 {:new_window: target="_blank"}
@@ -13,7 +13,7 @@ lastupdated: "2018-12-13"
 {:DomainName: data-hd-keyref="DomainName"}
 
 
-# {{site.data.keyword.filestorage_short}} bestellen
+# {{site.data.keyword.filestorage_short}} über die Konsole bestellen
 
 Sie können {{site.data.keyword.filestorage_short}} bereitstellen und entsprechend Ihrer Kapazität und Ihren IOPS-Anforderungen optimieren. Ihnen stehen zwei Optionen für die Angabe der Leistung zur Verfügung, um Ihren Speicher zu optimieren.
 
@@ -42,13 +42,16 @@ Sie können {{site.data.keyword.filestorage_short}} bereitstellen und entspreche
     - **10 IOPS pro GB** sind für anspruchsvollste Workloads vorgesehen, wie zum Beispiel für die von NoSQL-Datenbanken generierten Workloads und für die Datenverarbeitung von Analysen (Analytics). Diese Stufe ist in [ausgewählten Rechenzentren](new-ibm-block-and-file-storage-location-and-features.html) für Speicher verfügbar, der bis 4 TB bereitgestellt wird.
 7. Klicken Sie auf **Größe des Snapshotbereichs angeben** und wählen Sie in der Liste die Snapshotgröße aus. Dieser Bereich wird zusätzlich zu Ihrem nutzbaren Bereich genutzt. Hinweise und Empfehlungen zum Snapshotbereich finden Sie im Abschnitt [Snapshots bestellen](ordering-snapshots.html).
 8. Überprüfen Sie auf der rechten Seite Ihre Bestellübersicht und wenden Sie gegebenenfalls Ihren Werbeaktionscode an.
+
+   Rabatte werden bei der Verarbeitung der Bestellung angewendet.
+   {:note}
 9. Danach markieren Sie das Kontrollkästchen **Die im Folgenden aufgeführten Servicevereinbarungen anderer Anbieter habe ich gelesen und stimme ihnen zu:**.
 10. Klicken Sie auf **Erstellen**. Ihre neue Speicherzuordnung steht nach wenigen Minuten zur Verfügung.
 
 Standardmäßig können Sie insgesamt 250 {{site.data.keyword.blockstorageshort}}-Datenträger bereitstellen. Wenden Sie sich an Ihren Vertriebsbeauftragten, wenn Sie die Anzahl Ihrer Datenträger erhöhen möchten. Informationen zur Erhöhung von Begrenzungen finden Sie [hier](managing-storage-limits.html).<br/><br/>Weitere Informationen zum Grenzwert für gleichzeitige Autorisierungen finden Sie im Abschnitt mit den [FAQs](faqs.html#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-).
 {:tip}
 
-## {{site.data.keyword.filestorage_short}} mit angepassten IOPS bestellen (Performance)
+## {{site.data.keyword.filestorage_short}} mit angepassten IOPS-Raten bestellen (Performance)
 
 1. Melden Sie sich beim [IBM Cloud-Katalog](https://{DomainName}/catalog/){:new_window} an und klicken Sie auf **Speicher**. Wählen Sie anschließend {{site.data.keyword.filestorage_short}} aus. Klicken Sie auf **Erstellen**.
 
@@ -66,6 +69,9 @@ Standardmäßig können Sie insgesamt 250 {{site.data.keyword.blockstorageshort}
 6. Geben Sie die E/A-Operationen pro Sekunde (IOPS) in das Feld **Performance (zugeordnete E/A-Operationen pro Sekunde)** ein.
 7. Klicken Sie auf **Größe des Snapshotbereichs angeben** und wählen Sie in der Liste die Snapshotgröße aus. Dieser Bereich wird zusätzlich zu Ihrem nutzbaren Bereich genutzt. Hinweise und Empfehlungen zum Snapshotbereich finden Sie im Abschnitt [Snapshots bestellen](ordering-snapshots.html).
 8. Überprüfen Sie auf der rechten Seite Ihre Bestellübersicht und wenden Sie gegebenenfalls Ihren Werbeaktionscode an.
+
+   Rabatte werden bei der Verarbeitung der Bestellung angewendet.
+   {:note}
 9. Danach markieren Sie das Kontrollkästchen **Die im Folgenden aufgeführten Servicevereinbarungen anderer Anbieter habe ich gelesen und stimme ihnen zu:**.
 10. Klicken Sie auf **Erstellen**. Ihre neue Speicherzuordnung steht nach wenigen Minuten zur Verfügung.
 

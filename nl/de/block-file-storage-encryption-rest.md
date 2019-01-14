@@ -1,15 +1,15 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-10-31"
+  years: 2014, 2019
+lastupdated: "2019-01-07"
 
 ---
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
-# Daten schützen - durch providerseits verwaltete Verschlüsselung ruhender Daten
+# Vom Provider verwaltete Verschlüsselung ruhender Daten
 
 In {{site.data.keyword.BluSoftlayer_full}} werden erforderliche Sicherheitsaspekte sehr ernst genommen und die Wichtigkeit der Verschlüsselung für die Datensicherung hat einen hohen Stellenwert. Mit der durch den Provider verwalteten Verschlüsselung wird {{site.data.keyword.filestorage_full}} (bereitgestellt mit Endurance- oder Performance-Optionen) ohne zusätzliche Kosten und ohne Auswirkung auf das Leistungsverhalten standardmäßig verschlüsselt.
 

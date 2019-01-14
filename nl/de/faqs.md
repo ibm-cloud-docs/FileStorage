@@ -60,7 +60,7 @@ Dies ist abhängig von der Kapazität des Hostbetriebssystems, nicht von {{site.
   <thead>
     <tr>
       <th>Datenträgergröße</th>
-      <th>I-Nodes und Dateifreigaben</th>
+      <th>I-Nodes und gemeinsam genutzte Dateiressourcen</th>
     </tr>
   </thead>
   <tbody>

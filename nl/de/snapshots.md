@@ -28,7 +28,7 @@ Snapshots ermöglichen Folgendes:
 - Erstellung ohne Betriebsunterbrechung von zeitpunktbezogenen Recovery-Punkten
 - Zurücksetzung von Datenträgern auf frühere Zeitpunkte
 
-Sie müssen zuerst eine gewisse Menge an Snapshotbereich für Ihren Datenträger kaufen, um Snapshots des Datenträgers erstellen zu können. Der Snapshotbereich kann bei der ersten Bestellung oder im Nachhinein über die Seite für Datenträgerdetails **** hinzugefügt werden. Geplante und manuelle Snapshots nutzen den Snapshotbereich gemeinsam. Stellen Sie daher sicher, dass Sie genug Snapshotbereich bestellen. Im Artikel [Snapshots bestellen](ordering-snapshots.html) finden Sie dazu genauere Informationen und Anweisungen.
+Sie müssen zuerst eine gewisse Menge an Snapshotbereich für Ihren Datenträger kaufen, um Snapshots des Datenträgers erstellen zu können. Der Snapshotbereich kann bei der ersten Bestellung oder im Nachhinein über die Seite für Datenträgerdetails **** hinzugefügt werden. Geplante und manuelle Snapshots nutzen den Snapshotbereich gemeinsam. Stellen Sie daher sicher, dass Sie genug Snapshotbereich bestellen.  Weitere Informationen finden Sie unter [Snapshots bestellen](ordering-snapshots.html). 
 
 ## Bewährte Verfahren für Snapshots
 
@@ -51,7 +51,7 @@ Auch alle Screenshots und Replikate von verschlüsseltem {{site.data.keyword.fil
 
 Snapshotkopien minimieren die Plattenbelegung, indem sie einzelne Blöcke und keine ganzen Dateien beibehalten. Snapshotkopien belegen erst dann zusätzlichen Speicherbereich, wenn Dateien im aktiven Dateisystem geändert oder gelöscht werden.
 
-Im aktiven Dateisystem werden die geänderten Blöcke neu an verschiedene Positionen auf der Platte geschrieben oder vollständig als aktive Dateiblöcke entfernt. Wenn Dateien geändert oder gelöscht werden, werden die ursprünglichen Dateiblöcke in einer oder mehreren Snapshotkopien beibehalten. Das heißt im Ergebnis, dass der Plattenspeicherplatz, der von den ursprünglichen Blöcken belegt wird, weiterhin reserviert bleibt, um den Status des aktiven Dateisystems vor der Änderungen zu behalten. Dieser Speicherplatz ist zusätzlich zu dem Plattenspeicherplatz reserviert, der von Blöcken im geänderten aktiven Dateisystem belegt wird. 
+Im aktiven Dateisystem werden die geänderten Blöcke neu an verschiedene Positionen auf der Platte geschrieben oder vollständig als aktive Dateiblöcke entfernt. Wenn Dateien geändert oder gelöscht werden, werden die ursprünglichen Dateiblöcke in einer oder mehreren Snapshotkopien beibehalten. Das heißt im Ergebnis, dass der Plattenspeicherplatz, der von den ursprünglichen Blöcken belegt wird, weiterhin reserviert bleibt, um den Status des aktiven Dateisystems vor der Änderungen zu behalten. Dieser Speicherplatz ist zusätzlich zu dem Plattenspeicherplatz reserviert, der von Blöcken im geänderten aktiven Dateisystem belegt wird.
 
 <table>
     <colgroup>

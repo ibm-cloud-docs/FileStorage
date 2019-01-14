@@ -14,7 +14,7 @@ lastupdated: "2018-12-11"
 
 # {{site.data.keyword.filestorage_short}} unter Container Linux anhängen
 
-Container Linux von CoreOS ist ein Open-Source-Betriebssystem mit schlankerem Betriebssystem, das auf dem Linux-Kernel basiert. Es ist für die Bereitstellung der Infrastruktur für Clusterimplementierungen konzipiert. Als Betriebssystem stellt Container Linux nur eine minimale Funktionalität bereit, die für die Implementierung von Anwendungen innerhalb von Softwarecontainern erforderlich ist, sowie integrierte Mechanismen für die Serviceerkennung und die gemeinsame Konfiguration von Konfigurationen. Weitere Informationen finden Sie in der [Container Linux-Dokumentation: Speicher anhängen ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://coreos.com/os/docs/latest/mounting-storage.html)
+Container Linux von CoreOS ist ein Open-Source-Betriebssystem mit schlankerem Betriebssystem, das auf dem Linux-Kernel basiert. Es ist für die Bereitstellung der Infrastruktur für Clusterimplementierungen konzipiert. Als Betriebssystem stellt Container Linux eine minimale Funktionalität bereit, die für die Implementierung von Anwendungen innerhalb von Softwarecontainern erforderlich ist, sowie integrierte Mechanismen für die Serviceerkennung und die gemeinsame Konfiguration von Konfigurationen. Weitere Informationen finden Sie in [Speicher anhängen ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://coreos.com/os/docs/latest/mounting-storage.html)
 
 ## Portierbaren Speicher anhängen
 
@@ -38,7 +38,7 @@ WantedBy = multi-user.target
 {:codeblock}
 
 
-Da Container Linux `systemd` verwendet, müssen Sie die Datei `*.mount` aktivieren, damit der Mountpunkt auch nach einem Neustart noch verfügbar ist. Wenn Sie die Markierung `--now` verwenden, wird die Partition sofort angehängt und beim Booten gestartet.
+Da dieses Betriebssystem `systemd` verwendet, müssen Sie die Datei `*.mount` aktivieren, damit der Mountpunkt auch nach einem Neustart noch verfügbar ist. Wenn Sie die Markierung `--now` verwenden, wird die Partition sofort angehängt und beim Booten gestartet.
 
 ```
 systemctl enable --now mnt-www.mount

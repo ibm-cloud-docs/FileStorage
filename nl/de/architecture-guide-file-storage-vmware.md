@@ -33,7 +33,7 @@ Beachten Sie für die Bestellung von {{site.data.keyword.filestorage_short}} fol
 
 - Berücksichtigen Sie bei der Festlegung der Größe den Umfang der Workload und den benötigten Durchsatz. Für den Endurance-Service, der die Leistung linear in Relation zur Kapazität (IOPS/GB) skaliert, ist Größe wichtig. Der Performance-Service ermöglicht dem Administrator dagegen, Kapazität und Leistung unabhängig voneinander zu wählen. Für den Performance-Service sind wiederum Durchsatzanforderungen relevant.
 
-  Der Durchsatz wird durch IOPS x 16 KB berechnet. IOPS werden auf der Basis der Blockgröße von 16 KB und einer 50:50-Mischung von Schreib- und Leseoperationen gemessen. <br/>Eine Erhöhung der Blockgröße erhöht den Durchsatz, verringert jedoch die IOPS. Beispiel: Eine Verdoppelung der Blockgröße auf 32-KB-Blöcke behält den maximalen Durchsatz bei, halbiert jedoch die IOPS-Kapazität.
+  Der Durchsatz wird durch IOPS x 16 KB berechnet. IOPS werden auf der Basis der Blockgröße von 16 KB und einer 50:50-Mischung von Schreib- und Leseoperationen gemessen.<br/>Eine Erhöhung der Blockgröße erhöht den Durchsatz, verringert jedoch die IOPS. Beispiel: Eine Verdoppelung der Blockgröße auf 32-KB-Blöcke behält den maximalen Durchsatz bei, halbiert jedoch die IOPS-Kapazität.
   {:note}
 
 - NFS verwendet viele zusätzliche Dateisteuerungsoperationen wie `lookup`, `getattr` und `readdir`. Diese Operationen können neben Lese- und Schreiboperationen ebenfalls als IOPS gezählt werden und sind je nach Operationstyp und NFS-Version unterschiedlich.
@@ -205,7 +205,8 @@ Stellen Sie vor Beginn des VMware-Konfigurationsprozesses sicher, dass die folge
      8980 bytes from a.b.c.d: icmp_seq=1 ttl=128 time=3.36 ms
      ```
 
-Weitere Informationen zu VMware- und Jumbo-Frames finden Sie [hier ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") ](https://kb.vmware.com/s/article/1003712){:new_window}.{:tip}
+Weitere Informationen zu VMware- und Jumbo-Frames finden Sie [hier ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") ](https://kb.vmware.com/s/article/1003712){:new_window}.
+{:tip}
 
 
 ### 2. Uplink-Adapter zum virtuellen Switch hinzufügen

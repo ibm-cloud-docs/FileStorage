@@ -14,9 +14,9 @@ Mit dieser neuen Funktion können {{site.data.keyword.filestorage_full}}-Speiche
 Die Abrechnung für den Speicher wird aktualisiert, um die anteilmäßige Differenz des neuen Preises in den laufenden Rechnungsstellungszyklus einzuarbeiten. Der neue Betrag wird vollständig im nächsten Rechnungsstellungszyklus in Rechnung gestellt.
 
 
-## Vorteile von anpassbaren IOPS
+## Vorteile von anpassbaren E/A-Operationen pro Sekunde
 
-- Kostenmanagement – Einige Kunden benötigen eine hohe IOPS-Einstellung möglicherweise nur während Phasen hoher Auslastung. Ein großes Einzelhandelsgeschäft hat möglicherweise an Feiertagen hohe Auslastungen und benötigt dann höhere E/A-Operationen pro Sekunde (IOPS) für seinen Speicher als zum Beispiel in der Mitte des Sommers. Diese Funktion bietet ihnen die Möglichkeit, ihre Kosten zu verwalten und nur dann für höhere IOPS zu zahlen, wenn sie diese benötigen.
+- Kostenmanagement – Einige Kunden benötigen eine hohe Einstellung für die E/A-Operationen pro Sekunde möglicherweise nur während Phasen hoher Auslastung. Ein großes Einzelhandelsgeschäft hat möglicherweise an Feiertagen hohe Auslastungen und benötigt dann höhere E/A-Operationen pro Sekunde (IOPS) für seinen Speicher als zum Beispiel in der Mitte des Sommers. Diese Funktion bietet ihnen die Möglichkeit, ihre Kosten zu verwalten und nur dann für höhere IOPS zu zahlen, wenn sie diese benötigen.
 
 ## Beschränkungen
 

@@ -15,8 +15,7 @@ lastupdated: "2018-11-30"
 
 ## Snapshotzeitplan erstellen
 
-Durch Erstellen von Snapshotzeitplänen können Sie entscheiden, wie häufig und wann Sie eine zeitpunktbasierte Referenz des Speicherdatenträgers erstellen wollen. Es können maximal 50 Snapshots pro Speicherdatenträger erstellt werden. Zeitpläne werden über die Registerkarte **Speicher** > **{{site.data.keyword.filestorage_short}}** des [{{site.data.keyword.slportal}}s ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/){:new_window} verwaltet.
-
+Mit Snapshotzeitplänen entscheiden Sie, wie häufig und wann Sie eine zeitpunktbasierte Referenz des Speicherdatenträgers erstellen möchten. Es können maximal 50 Snapshots pro Speicherdatenträger erstellt werden. Zeitpläne werden über die Registerkarte **Speicher** > **{{site.data.keyword.filestorage_short}}** des [{{site.data.keyword.slportal}}s ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/){:new_window} verwaltet.
 
 Bevor Sie Ihren ersten Zeitplan einrichten können, müssen Sie zunächst Snapshotbereich kaufen, sofern Sie diesen nicht bei der Erstbereitstellung des Speicherdatenträgers gekauft haben.
 {:important}
@@ -110,7 +109,7 @@ Manuelle Snapshots, die nicht manuell im Portal gelöscht werden, werden automat
 Es ist möglich, dass Sie Ihren Speicherdatenträger aufgrund eines Benutzerfehlers oder einer Datenbeschädigung auf einen bestimmten Zeitpunkt zurücksetzen müssen.
 
 1. Hängen Sie Ihren Speicherdatenträger vom Host ab und trennen Sie die Verbindung.
-   - Klicken Sie hier [hier](accessing-file-storage-linux.html), um weitere Anweisungen für {{site.data.keyword.filestorage_short}} unter Linux anzuzeigen.
+   - Weitere Anweisungen finden Sie [hier](accessing-file-storage-linux.html).
 2. Klicken Sie auf **Speicher**, **{{site.data.keyword.filestorage_short}}** im [{{site.data.keyword.slportal}} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/){:new_window}.
 3. Blättern Sie nach unten und klicken Sie auf den Datenträger, der wiederhergestellt werden soll. Im Abschnitt **Snapshots** der Seite **Details** wird die Liste aller gespeicherten Snapshots mit Angabe ihrer Größe und ihres Erstellungsdatums angezeigt.
 4. Klicken Sie neben dem zu verwendenden Snapshot auf **Aktionen** und klicken Sie auf **Wiederherstellen**. <br/>
@@ -122,7 +121,7 @@ Es ist möglich, dass Sie Ihren Speicherdatenträger aufgrund eines Benutzerfehl
    Quer über den Bereich der Seite wird die Nachricht angezeigt, dass der Datenträger mit dem ausgewählten Snapshot wiederhergestellt wird. Darüber hinaus wird neben Ihrem Datenträger auf der {{site.data.keyword.filestorage_short}}-Seite ein Symbol angezeigt, das darauf hinweist, dass zurzeit eine Transaktion aktiv ist. Bei Bewegen des Mauszeigers über das Symbol wird die Transaktion in einem Fenster angezeigt. Das Symbol wird ausgeblendet, sobald die Transaktion abgeschlossen ist.
    {:note}
 6. Hängen Sie Ihren Speicherdatenträger an den Host an und ordnen Sie ihn erneut zu.
-  - Klicken Sie hier [hier](accessing-file-storage-linux.html), um weitere Anweisungen für {{site.data.keyword.filestorage_short}} unter Linux anzuzeigen.
+  - Weitere Anweisungen finden Sie [hier](accessing-file-storage-linux.html).
 
 Beim Zurücksetzen eines Datenträgers werden alle Snapshots gelöscht, die nach dem für das Zurücksetzen verwendeten Snapshot erstellt wurden.
 {:important}

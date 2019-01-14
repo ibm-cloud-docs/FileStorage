@@ -23,10 +23,10 @@ Wenn eine Betriebsunterbrechung oder eine Katastrophe einen Ausfall am primären
 
    Alternativ können Sie sich beim [{{site.data.keyword.slportal}} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/){:new_window} anmelden.
 2. Klicken Sie auf **Speicher** > **{{site.data.keyword.filestorage_short}}**.
-3. Klicken Sie in der Liste auf das Replikat der Dateifreigabe, um die zugehörige Seite **Details** anzuzeigen.
+3. Klicken Sie in der Liste auf das Replikat der gemeinsam genutzten Dateiressource, um die zugehörige Seite **Details** anzuzeigen.
 4. Blättern Sie auf der Seite **Details** nach unten und wählen Sie einen vorhandenen Snapshot aus. Klicken Sie anschießend auf **Aktionen** > **Duplikat**.
 5. Nehmen Sie die erforderlichen Aktualisierungen für die Kapazität (Größe erhöhen) oder die IOPs für den neuen Datenträger vor.
-6. Sie können den Snapshotbereich bei Bedarf für den Datenträger aktualisieren. 
+6. Sie können den Snapshotbereich bei Bedarf für den Datenträger aktualisieren.
 7. Klicken Sie auf **Weiter**, um Ihre Bestellung für das Duplikat abzuschicken.
 
 Sobald der Datenträger erstellt wurde, können Sie ihn einem Host zuordnen und Lese- und Schreiboperationen auf diesem Datenträger vornehmen. Während Daten vom ursprünglichen Datenträger auf den Duplikatdatenträger kopiert werden, wird auf der Detailseite ein Status mit der Information angezeigt, dass die Duplizierung in Bearbeitung ist. Wenn der Duplizierungsprozess abgeschlossen ist, ist der neue Datenträger unabhängig vom Original und kann mit Snapshots und Replikation normal verwaltet werden.

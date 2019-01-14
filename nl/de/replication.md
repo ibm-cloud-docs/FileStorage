@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-12-11"
+  years: 2015, 2019
+lastupdated: "2019-01-08"
 
 ---
 
@@ -117,6 +117,9 @@ Replikationen arbeiten nach einem Snapshotplan. Sie müssen zuerst einen Snapsho
 3. Klicken Sie auf **Position** und wählen Sie das Rechenzentrum (Data Center) aus, das als Ihre Disaster Recovery-Site (DR-Site) fungiert.
 4. Klicken Sie auf **Weiter**.
 5. Geben Sie einen **Werbeaktionscode** ein, falls Sie über einen verfügen, und klicken Sie auf **Neu berechnen**. Die anderen Felder im Fenster sind standardmäßig ausgefüllt.
+
+   Rabatte werden bei der Verarbeitung der Bestellung angewendet.
+   {:note}
 6. Klicken Sie auf das Kontrollkästchen **Ich habe die Rahmenvereinbarung gelesen** und klicken Sie auf **Bestellung abschicken**.
 
 

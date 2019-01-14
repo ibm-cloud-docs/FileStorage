@@ -42,8 +42,8 @@ Sie können einen duplizierten Datenträger über das [{{site.data.keyword.slpor
     - Klicken Sie im Kundenportal auf **Speicher** > **{{site.data.keyword.filestorage_short}}** ODER
     - Klicken Sie im {{site.data.keyword.BluSoftlayer_full}}-Katalog auf **Infrastruktur** > **Speicher** > **{{site.data.keyword.filestorage_short}}**.
 2. Wählen Sie eine LUN in der Liste aus und klicken Sie auf **Aktionen** > **LUN (Datenträger) duplizieren**.
-3. Wählen Sie Ihre Snapshot-Option aus. 
-    - Bei Bestellung von einem Datenträger aus, der kein Replikat ist: 
+3. Wählen Sie Ihre Snapshot-Option aus.
+    - Bei Bestellung von einem Datenträger aus, der kein Replikat ist:
       - Wählen Sie die Option **Aus neuem Snapshot erstellen** aus – mit dieser Aktion wird ein Snapshot erstellt, der für das Duplikat zu verwenden ist. Verwenden Sie diese Option, wenn Ihr Datenträger gerade keine Snapshots aufweist oder wenn Sie ein Duplikat genau zu diesem Zeitpunkt erstellen wollen.</br>
       - Wählen Sie die Option **Aus letztem Snapshot erstellen** aus – mit dieser Aktion wird ein Duplikat aus dem letzten Snapshot erstellt, der für den betreffenden Datenträger vorhanden ist.
     - Bei Bestellung von einem Replikatdatenträger aus: Hier ist nur die Snapshotoption der Verwendung des letzten Snapshots verfügbar.
