@@ -12,65 +12,65 @@ lastupdated: "2018-12-10"
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 
-# Recuperação de desastre: failover com um volume primário acessível
+# 災難回復 - 使用可存取的主要磁區進行失效接手
 
-Se uma falha catastrófica ou desastre ocorrer no site primário e o armazenamento primário ainda estiver acessível, os clientes poderão executar as ações a seguir para acessar rapidamente seus dados no site secundário.
+如果主要站台發生災難性失效或災難，而主要儲存空間仍可供存取，客戶可以執行下列動作，以在次要站台上快速存取其資料。
 
-Antes de iniciar o failover, certifique-se de que toda a autorização de host esteja estabelecida.
+開始進行失效接手之前，請確定所有代管權限都已安排妥當。
 
-Os hosts e volumes autorizados devem estar no mesmo data center. Por exemplo, não é possível ter um volume de réplica em Londres e o host em Amsterdã. Ambos devem estar em Londres ou ambos devem estar em Amsterdã.
+授權主機及磁區必須位在相同的資料中心內。例如，不能抄本磁區在「倫敦」，而主機在「阿姆斯特丹」。兩者都必須在「倫敦」，或兩者都必須在「阿姆斯特丹」。
 {:note}
 
-1. Efetue login no [console do {{site.data.keyword.cloud}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://
-{DomainName}/catalog/){:new_window} and click the **menu** icon on the upper left. Select **Classic Infrastructure**.
+1. 登入 [{{site.data.keyword.cloud}} 主控台 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://{DomainName}/catalog/){:new_window}，然後按一下左上方的**功能表**圖示。選取**標準基礎架構**。
 
-   Como alternativa, é possível efetuar login no [{{site.data.keyword.slportal}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://control.softlayer.com/){:new_window}.
-1. Clique em seu volume de origem ou de destino na página **{{site.data.keyword.filestorage_short}}**.
-2. Clique em  ** Réplica **.
-3. Role para baixo para o quadro **Autorizar hosts** e clique em **Autorizar hosts** à direita.
-4. Destaque o host que deve ser autorizado para replicações. Para selecionar múltiplos hosts, use a tecla CTRL e clique nos hosts aplicáveis.
-5. Clique em **Enviar**. Se você não tiver hosts, será solicitado que compre recursos de cálculo no mesmo data center.
+   或者，您也可以登入 [{{site.data.keyword.slportal}} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://control.softlayer.com/){:new_window}。
+2. 從 **{{site.data.keyword.blockstorageshort}}** 頁面，按一下來源或目的地磁區。
+3. 按一下**抄本**。
+4. 向下捲動至**授權主機**頁框，然後按一下右側的**授權主機**。
+5. 強調顯示要授權進行抄寫的主機。若要選取多台主機，請使用 CTRL 鍵，然後按一下適用的主機。
+6. 按一下**提交**。如果您沒有可用的主機，系統會提示您在相同的資料中心內購買運算資源。
 
-## Iniciando um failover de um volume em sua réplica
 
-Se ocorrer um evento de falha, será possível iniciar um **failover** em seu volume de destino. O volume de destino torna-se ativo. A última captura instantânea replicada com êxito é ativada e o volume é disponibilizado para montagem. Todos os dados que foram gravados no volume de origem desde que o ciclo de replicação anterior foi perdido. Quando um failover é iniciado, o relacionamento de replicação é invertido. O volume de destino torna-se o volume de origem e o volume de origem antigo torna-se o destino, conforme indicado pelo **Nome do LUN** seguido por **REP**.
+## 開始從磁區到其抄本的失效接手
 
-Os failovers são iniciados em **Armazenamento**, **{{site.data.keyword.filestorage_short}}** no [[{{site.data.keyword.slportal}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://control.softlayer.com/){:new_window}.
+如果即將發生故障事件，您可以開始**失效接手**至目的地或目標磁區。目標磁區會變成作用中。啟動前次順利抄寫的 Snapshot，而且磁區變成可用以進行裝載。將會遺失自前次抄寫週期以來寫入至來源磁區的所有資料。開始失效接手時，會翻轉抄寫關係。您的目標磁區會變成來源磁區，而先前的來源磁區會變成您的目標，並且後面接著 **REP** 的 **LUN 名稱**來表示。
 
-Antes de continuar com essas etapas, desconecte o volume. Caso não o faça, isso resultará em distorção e perda de dados.
-{:important}
+失效接手是在 [{{site.data.keyword.slportal}} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://control.softlayer.com/){:new_window} 中的**儲存空間**、**{{site.data.keyword.blockstorageshort}}** 下開始。
 
-1. Clique em seu volume ativo ("origem").
-2. Na parte superior direita, clique em **Réplica** e clique em **Ações**.
-3. Selecione **Failover**.
+**繼續執行這些步驟之前，請先中斷磁區連線。否則，會導致毀損及資料遺失。**
 
-   Espere uma mensagem indicando que o failover está em andamento. Além disso, um ícone aparece próximo ao seu volume no **{{site.data.keyword.filestorage_short}}** que indica que uma transação ativa está ocorrendo. Passar o mouse sobre o ícone produz uma janela que mostra a transação. O ícone desaparece quando a transação está concluída. Durante o processo de failover, as ações relacionadas à configuração são somente leitura. Não é possível editar qualquer planejamento de captura instantânea ou mudar o espaço de captura instantânea. O evento é registrado no histórico de replicação.<br/> Quando seu volume de destino estiver ativo, você obterá outra mensagem. O nome do LUN do volume de origem original é atualizado para terminar em "REP" e seu Status se torna Inativo.
+1. 按一下作用中 LUN（「來源」）。
+2. 按一下**抄本**，然後按一下**動作**。
+3. 選取**失效接手**。
+
+   預期頁面上會出現一則訊息，指出正在進行失效接手。此外，**{{site.data.keyword.blockstorageshort}}** 上的磁區旁會出現一個圖示，指出正在進行作用中交易。將游標移至圖示上方會產生一個視窗，顯示交易。完成交易時，圖示即會消失。在失效接手處理程序期間，配置相關動作是唯讀的。您無法編輯任何 Snapshot 排程或變更 Snapshot 空間。事件會記載在抄寫歷程中。<br/> 當您的目標磁區處於作用中時，您會收到另一則訊息。您原始來源磁區的「LUN 名稱」會更新為以 REP 結束，且其「狀態」變成「非作用中」。
    {:note}
-4. Clique em **Visualizar todos ({{site.data.keyword.filestorage_short}})**.
-5. Clique no volume ativo (anteriormente seu volume de destino). Esse volume agora tem um status **Ativo**.
-6. Montar e anexar seu volume de armazenamento ao host. Clique [aqui](provisioning-file-storage.html) para obter instruções.
+4. 按一下**檢視全部 ({{site.data.keyword.blockstorageshort}})**。
+5. 按一下作用中 LUN（先前稱為目標磁區）。
+6. 將儲存空間磁區裝載並連接至主機。如需指示，請按一下[這裡](provisioning-block_storage.html)。
 
 
-## Iniciando um failback de um volume para sua réplica
+## 開始從磁區到其抄本的失效回復
 
-Quando seu volume de origem original é reparado, é possível iniciar um Failback controlado para ele. Em um Failback controlado,
+修復原始來源磁區時，您可以開始對原始來源磁區的受管制失效回復。在受管制的失效回復中，
 
-- O volume de origem em ação é colocado off-line,
-- Uma captura instantânea é tirada,
-- O ciclo de replicação é concluído,
-- A captura instantânea de dados apenas tomada está ativada,
-- E o volume de origem torna-se ativo para montagem.
+- 作用中的來源磁區會離線，
+- 擷取 Snapshot，
+- 完成抄寫週期，
+- 啟動剛才建立的資料 Snapshot，
+- 然後，來源磁區會變成作用中以進行裝載。
 
-Quando um Failback é iniciado, o relacionamento de replicação é invertido novamente. Seu volume de origem é restaurado como seu volume de origem e seu volume de destino é o volume de destino novamente, conforme indicado pelo **Nome do LUN** seguido por **REP**.
+開始失效回復時，會再次翻轉抄寫關係。來源磁區會還原為來源磁區，而您的目標磁區會再次成為目標磁區，並且後面接著 **REP** 的 **LUN 名稱**來表示。
 
-Os failbacks são iniciados em **Armazenamento**, **{{site.data.keyword.filestorage_short}}** no [{{site.data.keyword.slportal}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://control.softlayer.com/){:new_window}.
+失效回復是在 [{{site.data.keyword.slportal}} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://control.softlayer.com/){:new_window} 中的**儲存空間**、**{{site.data.keyword.blockstorageshort}}** 下開始。
 
-1. Clique no volume ativo ("destino").
-2. Na parte superior direita, clique em **Réplica** e clique em **Ações**.
-3. Selecione  ** Failback **.
+1. 按一下作用中 LUN（「目標」）。
+2. 在右上方，按一下**抄本**，然後按一下**動作**。
+3. 選取**失效回復**。
+   
 
-   Espere uma mensagem mostrando que o failover está em andamento. Além disso, um ícone aparece próximo ao seu volume no **{{site.data.keyword.filestorage_short}}** que indica que uma transação ativa está ocorrendo. Passar o mouse sobre o ícone produz uma janela que mostra a transação. O ícone desaparece quando a transação está concluída. Durante o processo de Failback, as ações relacionadas à configuração são somente leitura. Não é possível editar qualquer planejamento de captura instantânea ou mudar o espaço de captura instantânea. O evento é registrado no histórico de replicação.
+   預期頁面上會出現一則訊息，顯示正在進行失效接手。此外，**{{site.data.keyword.blockstorageshort}}** 上的磁區旁會出現一個圖示，指出正在進行作用中交易。將游標移至圖示上方會產生一個視窗，顯示交易。完成交易時，圖示即會消失。在失效回復處理程序期間，配置相關動作是唯讀的。您無法編輯任何 Snapshot 排程或變更 Snapshot 空間。事件會記載在抄寫歷程中。
    {:note}
-4. No canto superior direito, clique em **Visualizar todo o link do {{site.data.keyword.filestorage_short}}**.
-5. Clique em seu volume ativo ("origem").
-6. Montar e anexar seu volume de armazenamento ao host. Clique [aqui](provisioning-file-storage.html) para obter instruções.
+4. 在右上方按一下**檢視所有 {{site.data.keyword.blockstorageshort}}** 鏈結。
+5. 按一下作用中 LUN（「來源」）。
+6. 將儲存空間磁區裝載並連接至主機。如需指示，請按一下[這裡](provisioning-block_storage.html)。

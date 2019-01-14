@@ -1,53 +1,52 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="FileStorage" audience="services" arm="3662725" href="/docs/infrastructure/FileStorage/index.html" path="infrastructure/FileStorage"}
-IBM Cloud Storage - File Storage
+{: .toc subcollection="BlockStorage" audience="services" arm="3662724" href="/docs/infrastructure/BlockStorage/index.html" path="infrastructure/BlockStorage"}
+IBM Cloud Storage - Block Storage
 
     {: .navgroup id="learn"}
     index.md
     new-ibm-block-and-file-storage-location-and-features.md
     snapshots.md
-    expandable_file_storage.md
+    expandable_block_storage.md
     adjustable-iops.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
     {: .topicgroup}
-    Fornecimento
-        provisioning-file-storage.md
+    佈建
+        provisioning-block_storage.md
         ordering-snapshots.md
         managing-storage-limits.md
-        architecture-guide-file-storage-vmware.md
+        migrate-block-storage-encrypted-block-storage.md
 
     {: .topicgroup}
-    Configuração
-        accessing-file-storage-linux.md
-        mounting-nsf-file-storage.md
-        mounting-storage-coreos.md
+    配置
+        accessing_block_storage_linux.md
+        configure-iscsi-cloudlinux.md
+        accessing-block-storage-windows.md
+        win12-missing-devices.md
         set-host-queue-depth-settings-performance-and-endurance-storage.md
         configure-backup-cpanel.md
         configure-backup-plesk.md
-        jumboframes.md
 
     {: .topicgroup}
-    Replicação
+    抄寫
         replication.md
         dr-accessible-primary.md
         disaster-recovery.md
 
     {: .topicgroup}
-    Segurança
+    安全
         block-file-storage-encryption-rest.md
-        migrate-file-storage-encrypted-file-storage.md
+        use-luks-red-hat-enterprise-linux-6-full-disk-encryption.md
 
-    managing-file-storage.md
+    managing-block-storage.md
     how-to-create-duplicate-volume.md
     working-with-snapshots.md
-    brocade-vrouter-vyatta-set-guide-vmware-environments-endurance-or-performance-storage.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}
     faqs.md
-    [Informações do cliente da API do Python](https://softlayer-python.readthedocs.io/en/latest/index.html)
+    [Python API 用戶端資訊](https://softlayer-python.readthedocs.io/en/latest/index.html)
     {: .navgroup-end}

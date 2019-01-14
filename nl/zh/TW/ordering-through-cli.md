@@ -10,29 +10,29 @@ lastupdated: "2018-11-30"
 {:note: .note}
 {:important: .important}
 
-# Pedindo o {{site.data.keyword.filestorage_short}} por meio da CLI do SL
+# 透過 SL CLI 訂購 {{site.data.keyword.blockstorageshort}}
 
-É possível usar a CLI do SL para fazer pedidos para produtos que normalmente são pedidos por meio do [{{site.data.keyword.slportal}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://control.softlayer.com/){:new_window}. Na API do SL, um pedido pode consistir em múltiplos contêineres de pedido. A CLI de pedido funciona com apenas um contêiner de pedido.
+您可以使用 SL CLI 來訂購通常是透過 [{{site.data.keyword.slportal}} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://control.softlayer.com/){:new_window} 來訂購的產品。在 SL API 中，一張訂單可能是由多重訂單容器所組成。訂單 CLI 只能用於一個訂單容器。
 
-Para obter mais informações sobre como instalar e usar a CLI do SL, consulte [Cliente da API da Python](https://softlayer-python.readthedocs.io/en/latest/cli.html){:new_window}.
+若要進一步瞭解如何安裝及使用 SL CLI，請參閱 [Python API 用戶端 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://softlayer-python.readthedocs.io/en/latest/cli.html){:new_window}。
 {:tip}
 
-## Procurando ofertas disponíveis do {{site.data.keyword.filestorage_short}}
+## 搜尋可用的 {{site.data.keyword.blockstorageshort}} 供應項目
 
-O primeiro componente a ser procurado quando você faz um pedido é um pacote. Os pacotes são divididos entre os diferentes produtos de nível superior que estão disponíveis para pedido no {{site.data.keyword.BluSoftlayer_full}}. Alguns pacotes de exemplo são CLOUD_SERVER para VSIs, BARE_METAL_SERVER para servidores bare metal e STORAGE_AS_A_SERVICE_STAAS para o {{site.data.keyword.filestorage_short}} e o {{site.data.keyword.blockstorageshort}}.
+當您下訂單時，所要尋找的第一個元件是套件。套件分散在 {{site.data.keyword.BluSoftlayer_full}} 中可供訂購的不同頂層產品之間。套件的部分範例包括適用於 VSI 的 CLOUD_SERVER、適用於裸機伺服器的 BARE_METAL_SERVER，以及適用於 {{site.data.keyword.blockstorageshort}} 和 {{site.data.keyword.filestorage_short}} 的 STORAGE_AS_A_SERVICE_STAAS。
 
-Dentro de um pacote, alguns itens são subdivididos em categorias. Alguns pacotes têm pré-configurações para a sua conveniência e outros requerem que os itens sejam especificados individualmente. Se a categoria de um pacote for necessária, um item dessa categoria deverá ser escolhido para pedir o pacote. Dependendo da categoria, alguns itens dentro dela podem ser mutuamente exclusivos.
+在套件中，有些項目會再細分為種類。有些套件有預設項目以方便您使用，有些套件則需要個別指定項目。如果需要套件的種類，則必須從該種類中選擇項目來訂購套件。種類中的某些項目可能會互斥，視種類而定。
 
-Cada pedido deve ter uma localização associada (data center). Ao pedir o {{site.data.keyword.filestorage_short}}, certifique-se de que ele seja fornecido na mesma localização que as suas instâncias de cálculo.
+每個訂單都必須要有相關聯的位置（資料中心）。當您訂購 {{site.data.keyword.blockstorageshort}} 時，請確定其佈建在與運算實例相同的位置。
 {:important}
 
-É possível usar o comando `slcli order package-list` para localizar o pacote que você deseja pedir. Uma opção `-keyword` é fornecida para executar procura e filtragem simples. Essa opção facilita localizar o pacote necessário.
+您可以使用 `slcli order package-list` 指令來尋找您想要訂購的套件。有提供 `–keyword` 選項來執行簡單的搜尋和過濾。此選項可讓您更容易找到所需的套件。
 
 ```
 $ slcli order package-list --help
-Uso: slcli order package-list [OPTIONS]
+Usage: slcli order package-list [OPTIONS]
 
-  Liste os pacotes que podem ser pedidos por meio da API placeOrder.
+  List packages that can be ordered via the placeOrder API.
 
   Example:
       # List out all packages for ordering
@@ -50,7 +50,7 @@ Options:
   -h, --help      Show this message and exit.
 ```
 
-*Precisa de instruções para como localizar o Storage-as-a-Service Package 759*
+*需要如何尋找 Storage-as-a-Service Package 759 的指示*
 
 ```
 $ slcli order package-list --keyword "Storage"
@@ -74,7 +74,7 @@ $ slcli order category-list STORAGE_AS_A_SERVICE_STAAS --required
 :..................................:...................:............:
 ```
 
-Selecione o restante de seus itens para o pedido usando o comando `item-list`. Normalmente, os pacotes têm vários itens para escolher, portanto, use a opção `–category` para recuperar os itens apenas da categoria na qual está interessado.
+使用 `item-list` 指令來選取訂單的其餘項目。套件通常會有許多項目可供選擇，您可以使用 `–category` 選項，只從您感興趣的種類中擷取項目。
 
 ```
 $ slcli order item-list STORAGE_AS_A_SERVICE_STAAS --category ??
@@ -88,13 +88,13 @@ $ slcli order item-list STORAGE_AS_A_SERVICE_STAAS --category ??
 :..........................:..............................................:
 ```
 
-Para obter mais informações sobre como pedir o {{site.data.keyword.filestorage_short}} por meio da API, consulte [order_file_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/file.html#SoftLayer.managers.file.FileStorageManager.order_file_volume){:new_window}.
-Para poder acessar todos os novos recursos, peça o `Storage-as-a-Service Package 759`.
+如需透過 API 來訂購 {{site.data.keyword.blockstorageshort}} 的相關資訊，請參閱 [order_block_volume ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://softlayer-python.readthedocs.io/en/latest/api/managers/block.html#SoftLayer.managers.block.BlockStorageManager.order_block_volume){:new_window}。
+若要能夠存取所有新增特性，請訂購 `Storage-as-a-Service Package 759`。
 {:tip}
 
-## Verificando o pedido
+## 驗證訂單
 
-Se você não tiver certeza das categorias necessárias que podem estar ausentes de seu pedido, será possível usar o comando `place` com o sinalizador `-verify`. Se alguma categoria estiver ausente, ela será exibida na tela.
+如果您不確定訂單中是否遺漏了必要的種類，您可以使用 `place` 指令搭配 `–verify` 旗標。若有遺漏任何種類，就會列印在畫面上。
 
 
 ```
@@ -109,40 +109,38 @@ $ slcli order place --verify blablabla
 :..............................................:.................................................:......:
 ```
 
-A saída mostra cada item que está sendo pedido, juntamente com o custo associado a ele. Se o pedido passar na verificação, isso significará que não há itens em conflito e todas as categorias necessárias têm um item que está especificado no pedido.
+輸出會顯示所訂購的每個項目，以及該項目的相關成本。如果訂單通過驗證，則表示沒有衝突的項目，且所有必要種類都有訂單中所指定的項目。
 
-## Fazendo o pedido
+## 下訂單
 
-A próxima etapa é fazer o pedido
+下一步是下訂單。
 
 ```
 $ slcli order place .....
 
-Esta ação incorrerá em encargos em sua conta. Continuar ? [s/n]: s
+This action will incur charges on your account. Continue? [y/N]: y
 
-Resposta da API
+API response
 ```
 
-Por padrão, é possível provisionar um total combinado de 250
-volumes do {{site.data.keyword.filestorage_short}}. Para aumentar o número de seus volumes, entre em contato com seu representante de vendas. Para obter mais informações sobre o aumento dos limites, consulte [Gerenciando os limites de armazenamento](managing-storage-limits.html).
+依預設，您可以佈建總計 250 個 {{site.data.keyword.blockstorageshort}} 磁區。若要增加磁區數目，請與業務代表聯絡。如需增加限制的相關資訊，請參閱[管理儲存空間限制](managing-storage-limits.html)。
 {:important}
 
-## Autorizando o acesso dos hosts ao novo armazenamento
+## 授權主機存取新的儲存空間
 
 TBD
 
-Para obter mais informações sobre como autorizar o acesso dos hosts ao {{site.data.keyword.filestorage_short}} por meio da API, consulte [authorize_host_to_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/file.html#SoftLayer.managers.file.FileStorageManager.authorize_host_to_volume){:new_window}.
+若要進一步瞭解如何授權主機透過 API 來存取 {{site.data.keyword.blockstorageshort}}，請參閱 [authorize_host_to_volume ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://softlayer-python.readthedocs.io/en/latest/api/managers/block.html#SoftLayer.managers.block.BlockStorageManager.authorize_host_to_volume){:new_window}。
 {:tip}
 
-Para obter mais informações sobre o limite de autorizações simultâneas, consulte as [Perguntas mais frequentes](faqs.html).
+如需同時授權的限制，請參閱[常見問題](faqs.html)。
 {:important}
 
-## Conectando seu novo armazenamento
+## 連接新的儲存空間
 
-Dependendo do sistema operacional de seu host, siga o link apropriado.
-- [Montando o {{site.data.keyword.filestorage_short}} no Linux](accessing-file-storage-linux.html)
-- [Montando o {{site.data.keyword.filestorage_short}} no CentOS](mounting-nsf-file-storage.html)
-- [Montando o {{site.data.keyword.filestorage_short}} no CoreOS](mounting-storage-coreos.html)
-- [Configurando o {{site.data.keyword.filestorage_short}} para backup com o cPanel](configure-backup-cpanel.html)
-- [Configurando o {{site.data.keyword.filestorage_short}} para backup com o Plesk](configure-backup-plesk.html)
-- [Montando o volume do {{site.data.keyword.filestorage_short}} em hosts ESXi](architecture-guide-file-storage-vmware.html)
+根據主機的作業系統而定，遵循適當的鏈結。
+- [在 Linux 上連接至 MPIO iSCSI LUN](accessing_block_storage_linux.html)
+- [在 CloudLinux 上連接至 MPIO iSCSI LUN](configure-iscsi-cloudlinux.html)
+- [在 Microsoft Windows 上連接至 MPIO iSCSI LUN](accessing-block-storage-windows.html)
+- [配置 Block Storage 以便使用 cPanel 進行備份](configure-backup-cpanel.html)
+- [配置 Block Storage 以便使用 Plesk 進行備份](configure-backup-plesk.html)
