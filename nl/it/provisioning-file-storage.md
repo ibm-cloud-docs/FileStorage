@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-12-13"
+  years: 2014, 2019
+lastupdated: "2019-01-08"
 
 ---
 {:new_window: target="_blank"}
@@ -13,7 +13,7 @@ lastupdated: "2018-12-13"
 {:DomainName: data-hd-keyref="DomainName"}
 
 
-# Ordinazione di {{site.data.keyword.filestorage_short}}
+# Ordinazione di {{site.data.keyword.filestorage_short}} tramite la console
 
 Puoi eseguire il provisioning di {{site.data.keyword.filestorage_short}} ed eseguire un'ottimizzazione per soddisfare le tue esigenze di capacità e IOPS. Ottieni il massimo dalla tua archiviazione con due opzioni per specificare le prestazioni.
 
@@ -42,13 +42,16 @@ Puoi eseguire il provisioning di {{site.data.keyword.filestorage_short}} ed eseg
     - **10 IOPS per GB** è progettato per i carichi di lavoro più esigenti quali quelli creati dai database NoSQL e l'elaborazione di dati per l'analisi. Questo livello è disponibile in [data center selezionati](new-ibm-block-and-file-storage-location-and-features.html) per l'archiviazione di cui viene eseguito il provisioning fino a 4 TB.
 7. Fai clic su **Specify Snapshot Space Size** e seleziona la dimensione dell'istantanea dall'elenco. Questo spazio è in aggiunta al tuo spazio utilizzabile. Per le considerazioni e i suggerimenti relativi allo spazio per le istantanee, leggi [Ordinazione di istantanee](ordering-snapshots.html).
 8. A destra, controlla il tuo riepilogo degli ordini e applica il tuo codice promozionale se ne hai uno.
+
+   Gli sconti vengono applicati quando l'ordine viene elaborato.
+   {:note}
 9. Dopo aver controllato i termini e le condizioni, seleziona la casella **I have read and agree to the Third-Party Service Agreements**.
 10. Fai clic su **Create**. La tua nuova allocazione di archiviazione è disponibile in pochi minuti.
 
 Per impostazione predefinita, puoi eseguire il provisioning di un totale combinato di 250 volumi {{site.data.keyword.blockstorageshort}}. Per aumentare il numero dei tuoi volumi, contatta il tuo rappresentante di vendita. Troverai ulteriori informazioni sull'aumento dei limiti [qui](managing-storage-limits.html).<br/><br/>Per ulteriori informazioni sul limite di autorizzazioni simultanee, consulta le [FAQ](faqs.html#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-).
 {:tip}
 
-## Ordinamento di {{site.data.keyword.filestorage_short}} con IOPS personalizzato (Performance)
+## Ordinazine di {{site.data.keyword.filestorage_short}} con IOPS personalizzato (Performance)
 
 1. Accedi al [Catalogo IBM Cloud](https://{DomainName}/catalog/){:new_window} e fai clic su **Archiviazione**. Quindi, seleziona {{site.data.keyword.filestorage_short}}. Fai clic su **Crea**.
 
@@ -66,6 +69,9 @@ Per impostazione predefinita, puoi eseguire il provisioning di un totale combina
 6. Immetti l'IOPS nel campo **Performance (Allocated IOPS)**.
 7. Fai clic su **Specify Snapshot Space Size** e seleziona la dimensione dell'istantanea dall'elenco. Questo spazio è in aggiunta al tuo spazio utilizzabile. Per le considerazioni e i suggerimenti relativi allo spazio per le istantanee, leggi [Ordinazione di istantanee](ordering-snapshots.html).
 8. A destra, controlla il tuo riepilogo degli ordini e applica il tuo codice promozionale se ne hai uno.
+
+   Gli sconti vengono applicati quando l'ordine viene elaborato.
+   {:note}
 9. Dopo aver controllato i termini e le condizioni, seleziona la casella **I have read and agree to the Third-Party Service Agreements**.
 10. Fai clic su **Create**. La tua nuova allocazione di archiviazione è disponibile in pochi minuti.
 

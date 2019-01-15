@@ -12,6 +12,7 @@ lastupdated: "2018-11-30"
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 
+
 # Configurando o Brocade vRouter (Vyatta) para Ambientes VMware com o {{site.data.keyword.filestorage_short}}
 
 É possível configurar um dispositivo Brocade vRouter (Vyatta) para configuração de alta disponibilidade (HA) em um ambiente VMware que usa o {{site.data.keyword.filestorage_full}}. Use as informações a seguir junto com a [Arquitetura de referência do Advanced Single-Site VMware](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} para configurar uma dessas opções de armazenamento em seu ambiente VMware.
@@ -20,9 +21,9 @@ O gateway Brocade vRouter (Vyatta) serve como um gateway e um roteador para seu 
 
 Em nossa configuração de exemplo, cinco zonas são criadas no Brocade vRouter (Vyatta):
 
-- SLSERVICE – Serviços do {{site.data.keyword.BluSoftlayer_full}}
-- VMACCESS – {{site.data.keyword.BluVirtServers_short}} (VMs) no cluster de capacidade
-- MGMT – Clusters de gerenciamento e capacidade, bem como VMs de gerenciamento
+- SLSERVICE – Serviços do {{site.data.keyword.cloud_notm}}
+- VMACCESS – {{site.data.keyword.BluVirtServers_short}} (MVs) no cluster de capacidade
+- MGMT – Clusters de gerenciamento e capacidade, bem como MVs de gerenciamento
 - STORAGE-Servidor de armazenamento ou servidores
 - OUTSIDE – Acesso à Internet pública
 
@@ -47,7 +48,7 @@ Use os comandos a seguir para configurar as interfaces de ligação no Brocade v
 Brocade vRouter (Vyatta) 1
 ```
 set interfaces bonding bond0 vif 1101 address ‘##.###.###.###/##’ (Insira um endereço IP da sub-rede privada primária ligada à VLAN 1101/Gerenciamento)
-set interfaces bonding bond0 vif 1101 address ‘##.###.###.###/##’ (Insira um endereço IP da sub-rede privada móvel ligada à VLAN 1101/VMs de gerenciamento)
+set interfaces bonding bond0 vif 1101 address ‘##.###.###.###/##’ (Insira um endereço IP da sub-rede privada móvel ligada à VLAN 1101/MVs de gerenciamento)
 set interfaces bonding bond0 vif 1102 address ‘##.###.###.###/##’ (Insira um endereço IP da sub-rede privada móvel ligada à VLAN 1102/Caminho de armazenamento A)
 set interfaces bonding bond0 vif 1102 address ‘##.###.###.###/##’ (Insira um endereço IP da sub-rede privada móvel ligada à VLAN 1102/Caminho de armazenamento B)
 set interfaces bonding bond0 vif 1103 address ‘##.###.###.###/##’ (Insira um endereço IP da sub-rede privada móvel ligada à VLAN 1103/Máquinas virtuais)
@@ -83,7 +84,7 @@ set interfaces bonding bond0 vif 1103 vrrp vrrp-group 4 virtual-address ‘<GATE
 ```
 ### Configurando o SNAT para Acesso Externo
 
-Nesta etapa, o SNAT é configurado para que as VMs de gerenciamento e as VMs no cluster de capacidade possam acessar a Internet. Dessa etapa em diante, a configuração precisa ser feita somente em um Brocade vRouter (Vyatta), pois a configuração será sincronizada posteriormente.
+Nesta etapa, o SNAT é configurado para que as MVs de gerenciamento e as MVs no cluster de capacidade possam acessar a Internet. Dessa etapa em diante, a configuração precisa ser feita somente em um Brocade vRouter (Vyatta), pois a configuração será sincronizada posteriormente.
 
 Use os comandos a seguir no modo de configuração:
 ```
@@ -329,7 +330,7 @@ save
 
 Quando as zonas e as regras de firewall são configuradas no Brocade vRouter (Vyatta), deve-se associar as VLANs a ele e ativar o roteamento das VLANs por meio do Brocade vRouter (Vyatta).
 
-1. Efetue login no [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} e clique em **Rede > Dispositivo de gateway** e clique no Brocade vRouter (Vyatta).
+1. Efetue login no [{{site.data.keyword.slportal}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://control.softlayer.com/){:new_window}, clique em **Rede > Dispositivo de gateway** e clique no Brocade vRouter (Vyatta).
 2. Selecione uma **VLAN** e clique em **Associar**.
 4. Localize as VLANs sob **VLANs associadas** e marque a caixa próxima a cada uma.
 5. Clique no menu suspenso **Ações em massa** e selecione **Rota**.

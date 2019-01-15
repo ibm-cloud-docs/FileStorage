@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-12-11"
+  years: 2015, 2019
+lastupdated: "2019-01-08"
 
 ---
 
@@ -106,7 +106,7 @@ MEL01<br />
 
 ## 创建初始副本
 
-复制将根据快照安排来执行。必须首先具有用于源卷的快照空间和快照安排，然后才能进行复制。如果尝试设置复制，但未设置源卷的快照空间或快照安排，那么系统将提示您购买更多空间或设置安排。复制在 [{{site.data.keyword.slportal}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window} 中的**存储器** >、**{{site.data.keyword.filestorage_short}}** 下管理。
+复制将根据快照安排来执行。必须首先具有用于源卷的快照空间和快照安排，然后才能进行复制。如果尝试设置复制，但未设置源卷的快照空间或快照安排，那么系统将提示您购买更多空间或设置安排。复制在 [{{site.data.keyword.slportal}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window} 中的**存储** >、**{{site.data.keyword.filestorage_short}}** 下管理。
 
 1. 单击存储卷。
 2. 单击**副本**，然后单击**购买复制**。
@@ -118,12 +118,15 @@ MEL01<br />
 3. 单击**位置**，然后选择将作为 DR 站点的数据中心。
 4. 单击**继续**。
 5. 如果您有促销码，请在**促销码**中进行输入，然后单击**重新计算**。缺省情况下，已填写窗口中的其他字段。
+
+   处理订单时会应用折扣。
+   {:note}
 6. 单击**我已阅读主服务协议...** 复选框，然后单击**下订单**。
 
 
 ## 编辑现有复制
 
-您可以在 [{{site.data.keyword.slportal}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window} 中的**存储器** > **{{site.data.keyword.filestorage_short}}** 下的**主**或**副本**选项卡中，编辑复制安排和更改复制空间。
+您可以在 [{{site.data.keyword.slportal}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window} 中的**存储** > **{{site.data.keyword.filestorage_short}}** 下的**主**或**副本**选项卡中，编辑复制安排和更改复制空间。
 
 
 ## 编辑复制安排

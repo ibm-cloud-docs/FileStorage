@@ -39,14 +39,14 @@ Aqui é possível ver a lista de hosts que estão atualmente autorizados a acess
 
 É possível visualizar os volumes aos quais um host tem acesso, incluindo as informações necessárias para fazer uma conexão - Nome do volume, Tipo de armazenamento, Endereço de destino, capacidade e local.
 
-1. Clique em **Dispositivos** > **Lista de dispositivos** no [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}
+1. Clique em **Dispositivos** > **Lista de dispositivos** por meio do [{{site.data.keyword.slportal}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://control.softlayer.com/){:new_window}
 2. Clique no dispositivo apropriado.
 2. Selecione a guia Armazenamento.
 
 Você é apresentado a uma lista de volumes de armazenamento aos quais esse host específico tem acesso, todos agrupados por tipo de armazenamento (bloco, arquivo, outro). Nos respectivos menus **Ação**, é possível autorizar mais armazenamento ou remover o acesso.
 
 
-## Montando e desmontando o  {{site.data.keyword.filestorage_short}}
+## Montando e desmontando o {{site.data.keyword.filestorage_short}}
 
 É possível usar as informações do ponto de montagem fornecidas na visualização **Detalhes do volume** para montar o {{site.data.keyword.filestorage_short}} por meio de um host. Consulte  [ Acessando o  {{site.data.keyword.filestorage_short}}  no Linux ](accessing-file-storage-linux.html)
 
@@ -62,7 +62,7 @@ Para evitar problemas do lado do host, desmonte o volume de armazenamento de seu
 
 ### Revogando o acesso a partir da Lista de Dis
 
-1. Clique em **Dispositivos** > **Lista de dispositivos** no [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}
+1. Clique em **Dispositivos** > **Lista de dispositivos** por meio do [{{site.data.keyword.slportal}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://control.softlayer.com/){:new_window}
 2. Clique duas vezes no dispositivo apropriado.
 3. Selecione a guia **Armazenamento**.
 4. É apresentada uma lista de volumes de armazenamento aos quais esse host específico tem acesso, todos agrupados por tipo de armazenamento (bloco, arquivo, outro). Selecione o respectivo menu **Ação** próximo ao volume do qual você deseja revogar o acesso e clique em **Revogar acesso**.
@@ -85,7 +85,7 @@ Se você desejar desconectar vários hosts de um volume específico, será neces
 
 ## Cancelando um volume de armazenamento
 
-Se você não precisar mais de um volume específico, será possível cancelá-lo. Para cancelar um volume de armazenamento, é necessário revogar o acesso de qualquer host primeiro.
+Se você não precisar mais de um volume específico, será possível cancelar esse armazenamento. Para cancelar um volume de armazenamento, é necessário revogar o acesso de qualquer host primeiro.
 
 1. Clique em **Armazenamento**>**{{site.data.keyword.filestorage_short}}**.
 2. Clique em **Ações** para o volume a ser cancelado e selecione **Cancelar{{site.data.keyword.filestorage_short}}**.

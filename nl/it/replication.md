@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-12-11"
+  years: 2015, 2019
+lastupdated: "2019-01-08"
 
 ---
 
@@ -117,6 +117,9 @@ Le repliche funzionano in base a una pianificazione delle istantanee. Prima di p
 3. Fai clic su **Location** e seleziona il data center che è il tuo sito di ripristino di emergenza (DR, disaster recovery).
 4. Fai clic su **Continue**.
 5. Immetti un codice promozionale (**Promo Code**), se ne hai uno, e fai clic su **Recalculate**. Gli altri campi nella finestra vengono completati per impostazione predefinita.
+
+   Gli sconti vengono applicati quando l'ordine viene elaborato.
+   {:note}
 6. Fai clic sulla casella di spunta **I have read the Master Service Agreement…** e fai clic su **Place Order**.
 
 

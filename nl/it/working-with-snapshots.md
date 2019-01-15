@@ -15,8 +15,7 @@ lastupdated: "2018-11-30"
 
 ## Stai creando una pianificazione delle istantanee?
 
-Puoi decidere con che frequenza e quando vuoi creare un riferimento ad un punto nel tempo del tuo volume di archiviazione creando le pianificazioni delle istantanee. Puoi avere un massimo di 50 istantanee per volume di archiviazione. Le pianificazioni sono gestite tramite la scheda **Storage** > **{{site.data.keyword.filestorage_short}}** del [{{site.data.keyword.slportal}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://control.softlayer.com/){:new_window}.
-
+Con le pianificazioni delle istantanee, decidi con che frequenza e quando vuoi creare un riferimento ad un punto nel tempo del tuo volume di archiviazione. Puoi avere un massimo di 50 istantanee per volume di archiviazione. Le pianificazioni sono gestite tramite la scheda **Storage** > **{{site.data.keyword.filestorage_short}}** del [{{site.data.keyword.slportal}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://control.softlayer.com/){:new_window}.
 
 Prima di poter configurare la tua pianificazione iniziale, devi procedere all'acquisto di spazio per le istantanee, se non lo hai fatto durante il provisioning iniziale del volume di archiviazione.
 {:important}
@@ -110,7 +109,7 @@ Le istantanee manuali che non sono eliminate nel portale manualmente sono elimin
 Potresti dover riportare il tuo volume di archiviazione a uno specifico punto temporale a causa di un errore utente o di un danneggiamento dei dati.
 
 1. Smonta e scollega il tuo volume di archiviazione dall'host.
-   - Fai clic [qui ](accessing-file-storage-linux.html) per le istruzioni di {{site.data.keyword.filestorage_short}} su Linux.
+   - Fai clic [qui](accessing-file-storage-linux.html) per le istruzioni.
 2. Fai clic su **Storage**, **{{site.data.keyword.filestorage_short}}** nel [{{site.data.keyword.slportal}} ![Icona link esterno](../../icons/launch-glyph.svg "Iconal ink esterno")](https://control.softlayer.com/){:new_window}.
 3. Scorri verso il basso e fai clic sul tuo volume da ripristinare. La sezione **Snapshots** della pagina **Detail** visualizza l'elenco di tutte le istantanee salvate insieme alla loro dimensione e alla loro data di creazione.
 4. Fai clic su **Actions** accanto all'istantanea da utilizzare e fai clic su **Restore**. <br/>
@@ -122,7 +121,7 @@ Potresti dover riportare il tuo volume di archiviazione a uno specifico punto te
    Aspettati un messaggio nella pagina che indica che è in corso il ripristino del volume utilizzando l'istantanea selezionata. Inoltre, compare un'icona accanto al tuo volume in {{site.data.keyword.filestorage_short}} che indica che è in corso una transazione attiva. Se passi il puntatore del mouse sull'icona, viene visualizzata una finestra che mostra la transazione. Una volta completata la transazione, l'icona scompare.
    {:note}
 6. Monta e ricollega il tuo volume di archiviazione all'host.
-  - Fai clic [qui ](accessing-file-storage-linux.html) per le istruzioni di {{site.data.keyword.filestorage_short}} su Linux.
+  - Fai clic [qui](accessing-file-storage-linux.html) per le istruzioni.
 
 Il ripristino di un volume comporta l'eliminazione di tutte le istantanee che erano state acquisite dopo che l'istantanea era stata utilizzata per il ripristino.
 {:important}

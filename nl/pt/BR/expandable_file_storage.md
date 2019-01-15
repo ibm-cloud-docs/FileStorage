@@ -2,18 +2,18 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-09-12"
+lastupdated: "2018-11-12"
 
 ---
 {:new_window: target="_blank"}
 
 # Expandindo Capacidade de Compartilhamento de Arquivo
 
-Com esse novo recurso, os usuários atuais do {{site.data.keyword.filestorage_full}} são capazes de expandir o tamanho de seu {{site.data.keyword.filestorage_short}} em incrementos de GB até 12 TB imediatamente. Eles não precisam criar uma duplicata nem migrar dados manualmente para um volume maior. Não há nenhuma indisponibilidade ou falta de acesso ao armazenamento enquanto o redimensionamento está ocorrendo. 
+Com esse novo recurso, os usuários atuais do {{site.data.keyword.filestorage_full}} são capazes de expandir o tamanho do {{site.data.keyword.filestorage_short}} em incrementos de GB de até 12 TB imediatamente. Eles não precisam criar uma duplicata nem migrar dados manualmente para um volume maior. Não há nenhuma indisponibilidade ou falta de acesso ao armazenamento enquanto o redimensionamento está ocorrendo.
 
 O faturamento para o volume é atualizado automaticamente para incluir a diferença rateada do novo preço no ciclo de faturamento atual. Então, a nova quantia integral será faturada no próximo ciclo de faturamento.
 
-Esse recurso está disponível somente nos [data centers de seleção](new-ibm-block-and-file-storage-location-and-features.html). 
+Esse recurso está disponível somente nos [data centers de seleção](new-ibm-block-and-file-storage-location-and-features.html).
 
 ## Vantagens de Armazenamento Expandível
 
@@ -27,7 +27,7 @@ A ação de expansão no armazenamento primário resulta no redimensionamento au
 
 ## Limitações
 
-Esse recurso está disponível somente para armazenamento que é provisionado em [data centers](new-ibm-block-and-file-storage-location-and-features.html) com recursos aprimorados. O armazenamento criptografado provisionado nesses data centers pode ser aumentado em até 12 TB. 
+Esse recurso está disponível somente para armazenamento que é provisionado em [data centers](new-ibm-block-and-file-storage-location-and-features.html) com recursos aprimorados. O armazenamento criptografado provisionado nesses data centers pode ser aumentado em até 12 TB.
 
 As limitações de tamanho existentes para o {{site.data.keyword.filestorage_short}} que foram provisionadas com o Endurance ainda se aplicam (até 4 TB para a camada de 10 IOPS e até 12 TB para todas as outras camadas).
 

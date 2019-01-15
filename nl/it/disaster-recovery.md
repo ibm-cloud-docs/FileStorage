@@ -15,7 +15,7 @@ lastupdated: "2018-12-10"
 
 # Ripristino di emergenza - Failover con un volume primario inaccessibile
 
-Se un errore catastrofico o un'emergenza causano un'interruzione sul sito primario, i clienti possono eseguire le seguenti azioni per accedere rapidamente ai loro dati sul sito secondario. 
+Se un errore catastrofico o un'emergenza causano un'interruzione sul sito primario, i clienti possono eseguire le seguenti azioni per accedere rapidamente ai loro dati sul sito secondario.
 
 ## Failover con un duplicato di un volume di replica sul sito secondario
 

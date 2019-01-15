@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-01-07"
 
 ---
 {:new_window: target="_blank"}
@@ -26,7 +26,7 @@ All'interno di un pacchetto, alcuni elementi sono suddivisi in categorie. Alcuni
 Ogni ordine deve avere un'ubicazione associata (data center). Quando ordini {{site.data.keyword.filestorage_short}}, assicurati che ne venga eseguito il provisioning nella stessa ubicazione delle tue istanze di calcolo.
 {:important}
 
-Puoi utilizzare il comando `slcli order package-list` per trovare il pacchetto che vuoi ordinare. Viene fornita un'opzione `–keyword` per eseguire semplici operazioni di ricerca e filtro. Questa opzione semplifica la ricerca del pacchetto di cui hai bisogno.
+Puoi utilizzare il comando `slcli order package-list` per trovare il pacchetto che vuoi ordinare. Viene fornita un'opzione `–keyword` per eseguire semplici operazioni di ricerca e filtro. Questa opzione semplifica la ricerca del pacchetto di cui hai bisogno. Cerca `Storage-as-a-Service Package 759`.
 
 ```
 $ slcli order package-list --help
@@ -50,84 +50,78 @@ Options:
   -h, --help      Show this message and exit.
 ```
 
-*Necessità delle istruzioni relative a come trovare il pacchetto Storage-as-a-Service 759*
+Puoi anche utilizzare il comando `slcli file volume-order`.
 
 ```
-$ slcli order package-list --keyword "Storage"
-:.....................:.....................:
-:         name        :       keyName       :
-:.....................:.....................:
-: ???                 : ???                 :
-: ???                 : ???                 :
-:.....................:.....................:
-```
+# slcli file volume-order --help
+Usage: slcli file volume-order [OPTIONS]
 
-```
-$ slcli order category-list STORAGE_AS_A_SERVICE_STAAS --required
-:..................................:...................:............:
-:               name               :    categoryCode   : isRequired :
-:..................................:...................:............:
-:              Example             :        ???        :     Y      :
-:              Example             :        ???        :     Y      :
-:              Example             :        ???        :     Y      :
-:              Example             :        ???        :     Y      :
-:..................................:...................:............:
-```
+  Order a file storage volume.
 
-Seleziona il resto dei tuoi elementi per l'ordine utilizzando il comando `item-list`. I pacchetti di norma hanno numerosi elementi da cui scegliere; utilizza pertanto l'opzione `–category` per richiamare gli elementi solo dalla categoria a cui sei interessato.
-
-```
-$ slcli order item-list STORAGE_AS_A_SERVICE_STAAS --category ??
-:..........................:..............................................:
-:         keyName          :                description                   :
-:..........................:..............................................:
-:           ???            :                    ????                      :
-:           ???            :                    ????                      :
-:           ???            :                    ????                      :
-:           ???            :                    ????                      :
-:..........................:..............................................:
+Options:
+  --storage-type [performance|endurance]
+                                  Type of file storage volume  [required]
+  --size INTEGER                  Size of file storage volume in GB
+                                  [required]
+  --iops INTEGER                  Performance Storage IOPs, between 100 and
+                                  6000 in multiples of 100  [required for
+                                  storage-type performance]
+  --tier [0.25|2|4|10]            Endurance Storage Tier (IOP per GB)
+                                  [required for storage-type endurance]
+  --location TEXT                 Datacenter short name (e.g.: dal09)
+                                  [required]
+  --snapshot-size INTEGER         Optional parameter for ordering snapshot
+                                  space along with endurance file storage;
+                                  specifies the size (in GB) of snapshot space
+                                  to order
+  --service-offering [storage_as_a_service|enterprise|performance]
+                                  The service offering package to use for
+                                  placing the order [optional, default is
+                                  'storage_as_a_service']
+  --billing [hourly|monthly]      Optional parameter for Billing rate (default
+                                  to monthly)
+  -h, --help                      Show this message and exit.
 ```
 
 Per ulteriori informazioni sull'ordinazione di {{site.data.keyword.filestorage_short}} tramite l'API, vedi [order_file_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/file.html#SoftLayer.managers.file.FileStorageManager.order_file_volume){:new_window}.
 Per poter accedere a tutte le nuove funzioni, ordina `Storage-as-a-Service Package 759`.
 {:tip}
 
-## Verifica dell'ordine
-
-Se ti capita di non essere sicuro delle categorie richieste che potrebbero mancare nel tuo ordine, puoi utilizzare il comando `place` con l'indicatore `–verify`. Se manca qualche categoria, viene visualizzata sullo schermo.
-
-
-```
-$ slcli order place --verify blablabla
-:..............................................:.................................................:......:
-:                keyName                       :                   description                   : cost :
-:..............................................:.................................................:......:
-:                  ???                         :                 yadi yadi yada                  :  0   :
-:                  ???                         :                 yadi yadi yada                  :  0   :
-:                  ???                         :                 yadi yadi yada                  :  0   :
-:                  ???                         :                 yadi yadi yada                  :  0   :
-:..............................................:.................................................:......:
-```
-
-L'output mostra ogni elemento ordinato, insieme al costo ad esso associato. Se l'ordine supera la verifica, significa che non ci sono elementi in conflitto e che tutte le categorie richieste hanno un elemento specificato nell'ordine.
 
 ## Effettuazione dell'ordine
 
-Il passo successivo consiste nell'effettuare l'ordine.
+Il seguente esempio mostra come ordinare un volume {{site.data.keyword.filestorage_short}} da 10-GB con 100 IOPS per ogni GB.
 
 ```
-$ slcli order place .....
-
-This action will incur charges on your account. Continue? [y/N]: y
-
-API response
+# slcli file volume-order --storage-type performance --size 20 --location dal10 --iops 100
+Order #32076317 placed successfully!
+> Storage as a Service
+> File Storage
+> 20 GBs
+> 100 IOPS
 ```
 
-Per impostazione predefinita, puoi eseguire il provisioning di un totale combinato di 250 volumi {{site.data.keyword.filestorage_short}}. Per aumentare il numero dei tuoi volumi, contatta il tuo rappresentante di vendita. Per ulteriori informazioni sull'aumento dei limiti, vedi [Gestione dei limiti di archiviazione](managing-storage-limits.html).{:important}
+Per impostazione predefinita, puoi eseguire il provisioning di un totale combinato di 250 volumi {{site.data.keyword.blockstorageshort}} e {{site.data.keyword.filestorage_short}}. Per aumentare il numero dei tuoi volumi, contatta il tuo rappresentante di vendita. Per ulteriori informazioni sull'aumento dei limiti, vedi [Gestione dei limiti di archiviazione](managing-storage-limits.html).
+{:important}
 
 ## Autorizzazione degli host ad accedere alla nuova archiviazione
 
-Da definire
+```
+# slcli file access-authorize --help
+Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
+
+  Authorizes hosts to access a given volume
+
+Options:
+  -h, --hardware-id TEXT    The id of one SoftLayer_Hardware to authorize
+  -v, --virtual-id TEXT     The id of one SoftLayer_Virtual_Guest to authorize
+  -i, --ip-address-id TEXT  The id of one SoftLayer_Network_Subnet_IpAddress
+                            to authorize
+  --ip-address TEXT         An IP address to authorize
+  -s, --subnet-id TEXT      The id of one SoftLayer_Network_Subnet to
+                            authorize
+  --help                    Show this message and exit.
+```
 
 Per ulteriori informazioni sull'autorizzazione degli host ad accedere al {{site.data.keyword.filestorage_short}} tramite l'API, vedi [authorize_host_to_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/file.html#SoftLayer.managers.file.FileStorageManager.authorize_host_to_volume){:new_window}.
 {:tip}
@@ -140,7 +134,7 @@ Per ulteriori informazioni sul limite di autorizzazioni simultanee, consulta le 
 A seconda del sistema operativo del tuo host, segui il link appropriato.
 - [Montaggio di {{site.data.keyword.filestorage_short}} su Linux](accessing-file-storage-linux.html)
 - [Montaggio di {{site.data.keyword.filestorage_short}} in CentOS](mounting-nsf-file-storage.html)
-- [Montaggio di {{site.data.keyword.filestorage_short}} su CoreOS](mounting-storage-coreos.html)
+- [Montaggio di {{site.data.keyword.filestorage_short}} su Container Linux](mounting-storage-coreos.html)
 - [Configurazione di {{site.data.keyword.filestorage_short}} per il backup con cPanel](configure-backup-cpanel.html)
 - [Configurazione di {{site.data.keyword.filestorage_short}} per il backup con Plesk](configure-backup-plesk.html)
 - [Montaggio del volume {{site.data.keyword.filestorage_short}} sugli host ESXi](architecture-guide-file-storage-vmware.html)

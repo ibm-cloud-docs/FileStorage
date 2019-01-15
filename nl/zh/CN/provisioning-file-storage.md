@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-12-13"
+  years: 2014, 2019
+lastupdated: "2019-01-08"
 
 ---
 {:new_window: target="_blank"}
@@ -13,18 +13,18 @@ lastupdated: "2018-12-13"
 {:DomainName: data-hd-keyref="DomainName"}
 
 
-# 订购 {{site.data.keyword.filestorage_short}}
+# 通过控制台订购 {{site.data.keyword.filestorage_short}}
 
 您可以供应 {{site.data.keyword.filestorage_short}} 并通过微调来满足您的容量和 IOPS 需求。通过两个指定性能的选项，最充分地利用存储器。
 
 - 可以从具有预定义性能级别的耐久性 IOPS 层中进行选择，以适合没有明确定义性能需求的工作负载。
 - 可以通过指定性能类型的 IOPS 总数来微调存储器，以满足具体的性能需求。
 
-## 订购使用预定义的 IOPS 层（耐久性）的 {{site.data.keyword.filestorage_short}}
+## 订购具有预定义 IOPS 层（耐久性）的 {{site.data.keyword.filestorage_short}}
 
 1. 登录到 [IBM Cloud 目录](https://{DomainName}/catalog/){:new_window}，然后单击**存储**。然后，选择 {{site.data.keyword.filestorage_short}}。单击**创建**。
 
-   或者，您可以登录到 [{{site.data.keyword.slportal}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window}，然后单击**存储器** > **{{site.data.keyword.filestorage_short}}**。单击右上角的**订购 {{site.data.keyword.filestorage_short}}**。
+   或者，您可以登录到 [{{site.data.keyword.slportal}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window}，然后单击**存储** > **{{site.data.keyword.filestorage_short}}**。单击右上角的**订购 {{site.data.keyword.filestorage_short}}**。
 2. 选择部署**位置**（数据中心）。
    - 确保将新存储器添加到您拥有的计算主机所在位置。
 3. 计费。如果选择了具有改进功能的数据中心（标记有星号），那么可以选择“按月计费”或“按小时计费”。
@@ -42,17 +42,20 @@ lastupdated: "2018-12-13"
     - **10 IOPS/GB** 适用于要求最苛刻的工作负载，例如由 NoSQL 数据库创建的工作负载以及为 Analytics 进行的数据处理。此层在[精选数据中心](new-ibm-block-and-file-storage-location-and-features.html)内提供，用于供应的最高达 4 TB 的存储器。
 7. 单击**指定快照空间大小**，然后从列表中选择快照大小。这是除了可用空间以外的空间。有关快照空间注意事项和建议，请阅读[订购快照](ordering-snapshots.html)。
 8. 在右侧，查看订单摘要，并应用促销码（如果有）。
+
+   处理订单时会应用折扣。
+   {:note}
 9. 阅读条款和条件后，选中**我已阅读并同意第三方服务协议**复选框。
 10. 单击**创建**。新的存储器分配会在几分钟后可用。
 
 缺省情况下，总共可以供应 250 个 {{site.data.keyword.blockstorageshort}} 卷。要增加卷的数量，请联系销售代表。请阅读[此处](managing-storage-limits.html)以了解有关增大限制的信息。<br/><br/>有关同时授权限制的更多信息，请参阅[常见问题](faqs.html#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-)。
 {:tip}
 
-## 订购使用定制 IOPS（性能）的 {{site.data.keyword.filestorage_short}}
+## 订购具有定制 IOPS（性能）的 {{site.data.keyword.filestorage_short}}
 
 1. 登录到 [IBM Cloud 目录](https://{DomainName}/catalog/){:new_window}，然后单击**存储**。然后，选择 {{site.data.keyword.filestorage_short}}。单击**创建**。
 
-   或者，您可以登录到 [{{site.data.keyword.slportal}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window}，然后单击**存储器** > **{{site.data.keyword.filestorage_short}}**。单击右上角的**订购 {{site.data.keyword.filestorage_short}}**。
+   或者，您可以登录到 [{{site.data.keyword.slportal}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window}，然后单击**存储** > **{{site.data.keyword.filestorage_short}}**。单击右上角的**订购 {{site.data.keyword.filestorage_short}}**。
 2. 单击**位置**，然后选择数据中心。
    - 确保将新存储器添加到您拥有的计算主机所在位置。
 3. 计费。如果选择了具有改进功能的数据中心（标记有星号），那么可以选择“按月计费”或“按小时计费”。
@@ -66,6 +69,9 @@ lastupdated: "2018-12-13"
 6. 在**性能（分配的 IOPS）**字段中，输入 IOPS。
 7. 单击**指定快照空间大小**，然后从列表中选择快照大小。这是除了可用空间以外的空间。有关快照空间注意事项和建议，请阅读[订购快照](ordering-snapshots.html)。
 8. 在右侧，查看订单摘要，并应用促销码（如果有）。
+
+   处理订单时会应用折扣。
+   {:note}
 9. 阅读条款和条件后，选中**我已阅读并同意第三方服务协议**复选框。
 10. 单击**创建**。新的存储器分配会在几分钟后可用。
 
@@ -79,8 +85,8 @@ lastupdated: "2018-12-13"
 - [在 Linux 上安装 {{site.data.keyword.filestorage_short}}](accessing-file-storage-linux.html)
 - [在 CentOS 上安装 {{site.data.keyword.filestorage_short}}](mounting-nsf-file-storage.html)
 - [在 CoreOS 上安装 {{site.data.keyword.filestorage_short}}](mounting-storage-coreos.html)
-- [使用 cPanel 配置 {{site.data.keyword.filestorage_short}} 进行备份](configure-backup-cpanel.html)
-- [使用 Plesk 配置 {{site.data.keyword.filestorage_short}} 进行备份](configure-backup-plesk.html)
+- [在 cPanel 中将 {{site.data.keyword.filestorage_short}} 配置用于备份](configure-backup-cpanel.html)
+- [在 Plesk 中将 {{site.data.keyword.filestorage_short}} 配置用于备份](configure-backup-plesk.html)
 - [在 ESXi 主机上安装 {{site.data.keyword.filestorage_short}} 卷](architecture-guide-file-storage-vmware.html)
 
 ## 灾难恢复注意事项

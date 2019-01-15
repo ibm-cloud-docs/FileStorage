@@ -19,7 +19,7 @@ Il percorso di migrazione preferito consiste nello stabilire una connessione a e
 Si presuppone che tu già abbia il tuo LUN non crittografato collegato al tuo host. In caso contrario, attieniti alle indicazioni che meglio rispondono al tuo sistema operativo per eseguire questa attività.
 
 - [Montaggio di {{site.data.keyword.filestorage_short}} su Linux](accessing-file-storage-linux.html)
-- [Montaggio di NFS/{{site.data.keyword.filestorage_short}} in CentOS](mounting-nsf-file-storage.html)
+- [Montaggio di {{site.data.keyword.filestorage_short}} in CentOS](mounting-nsf-file-storage.html)
 - [Montaggio di {{site.data.keyword.filestorage_short}} su CoreOS](mounting-storage-coreos.html)
 
 Tutti i volumi di {{site.data.keyword.filestorage_short}} avanzato di cui viene eseguito il provisioning in questi data center hanno un punto di montaggio diverso rispetto ai volumi non crittografati. Per assicurarti che stai usando il punto di montaggio corretto per entrambi i volumi di archiviazione, puoi visualizzare le informazioni sul punto di montaggio nella pagina **Volume Details** nella console. Puoi inoltre accedere al punto di montaggio corrente tramite una chiamata API: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
@@ -31,41 +31,12 @@ Tutti i volumi di {{site.data.keyword.filestorage_short}} avanzato di cui viene 
 Quando effettui un ordine con l'API, specifica il pacchetto "Storage as a Service" per assicurarti che stai ottenendo le funzioni avanzate con la tua nuova archiviazione.
 {:important}
 
-Le seguenti istruzioni sono per ordinare una condivisione file avanzata tramite il {{site.data.keyword.slportal}} o il catalogo {{site.data.keyword.BluSoftlayer_full}}. Il tuo nuovo volume deve essere di dimensione pari o superiore a quella del volume originale per facilitare la migrazione.
+Puoi ordinare un LUN migliorato tramite il catalogo {{site.data.keyword.BluSoftlayer_full}} e il {{site.data.keyword.slportal}}. Il tuo nuovo volume deve essere di dimensione pari o superiore a quella della condivisione file originale per facilitare la migrazione.
 
-### Ordinazione di un volume Storage Endurance
+- [Ordinazione di {{site.data.keyword.filestorage_short}} con livelli IOPS predefiniti (Endurance)](provisioning-file-storage.html#ordering-file-storage-with-pre-defined-iops-tiers-endurance-)
+- [Ordinazione di {{site.data.keyword.filestorage_short}} con IOPS personalizzato (Performance)](provisioning-file-storage.html#ordering-file-storage-with-custom-iops-performance-)
 
-1. Dal [{{site.data.keyword.slportal}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://control.softlayer.com/){:new_window}, fai clic su **Storage** > **{{site.data.keyword.filestorage_short}}** OPPURE, dal catalogo {{site.data.keyword.BluSoftlayer_full}}, fai clic su **Infrastruttura** > **Archiviazione** > **{{site.data.keyword.filestorage_short}}**.
-2. Fai clic su **Order{{site.data.keyword.filestorage_short}}**.
-3. Seleziona **Endurance** dall'elenco **Select Storage Type**.
-4. Fai clic su **Location** e seleziona il tuo data center.
-
-   Assicurati che la nuova archiviazione venga aggiunta nella stessa ubicazione dell'originale.
-   {:important}
-5. Seleziona la tua opzione di fatturazione. Puoi scegliere tra fatturazione mensile o oraria.
-6. Fai clic su **Endurance** e seleziona il livello IOPS.
-6. Seleziona **Usable Storage Size** dall'elenco. Il tuo nuovo volume deve essere di dimensione pari o superiore a quella del volume originale.
-7. Scegli la dimensione dello spazio per le istantanee (**Snapshot Space Size**) (oltre al tuo spazio utilizzabile) dall'elenco.
-8. Fai clic su **Continue**. Ti vengono mostrati gli addebiti mensili e a base proporzionale con una possibilità finale di riesaminare i dettagli dell'ordine. Fai clic su **Previous** se vuoi modificare il tuo ordine.
-9. Fai clic sulla casella di spunta **I have read the Master Service Agreement** e fai clic su **Place Order**
-
-### Ordinazione di un volume Performance Storage
-
-1. Dal [{{site.data.keyword.slportal}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://control.softlayer.com/){:new_window}, fai clic su **Storage**, **{{site.data.keyword.filestorage_short}}** OPPURE, dal
-catalogo {{site.data.keyword.BluSoftlayer_full}}, fai clic su **Infrastruttura** >** Archiviazione** > **{{site.data.keyword.filestorage_short}}**.
-2. Fai clic su **Order{{site.data.keyword.filestorage_short}}**.
-3. Seleziona **Performance** dall'elenco **Select Storage Type**.
-4. Fai clic su **Location** e seleziona il tuo data center.
-
-   Assicurati che la nuova archiviazione venga aggiunta nella stessa ubicazione dell'originale.
-   {:important}
-5. Seleziona le tue opzioni di fatturazione. Puoi scegliere tra fatturazione oraria e mensile.
-6. Selezionare il pulsante di opzione accanto alla dimensione di archiviazione (**Storage Size**) appropriata.
-6. Immetti l'IOPS nel campo **Specify IOPS**.
-7. Fai clic su **Continue**. Ti vengono mostrati gli addebiti mensili e a base proporzionale con una possibilità finale di riesaminare i dettagli dell'ordine. Fai clic su **Previous** se vuoi modificare il tuo ordine.
-8. Fai clic sulla casella di spunta **I have read the Master Service Agreement** e fai clic su **Place Order**.
-
-Il provisioning dell'archiviazione viene eseguito in meno di un minuto ed è visibile sulla pagina {{site.data.keyword.filestorage_short}} del {{site.data.keyword.slportal}}.
+La tua nuova archiviazione è pronta per essere montata in pochi minuti. Puoi visualizzarla nell'elenco risorse e nell'elenco {{site.data.keyword.blockstorageshort}}.
 
 
 ## Autorizzazione dell'host al nuovo {{site.data.keyword.filestorage_short}}
@@ -93,8 +64,10 @@ Se il tuo data center di destinazione non ha la crittografia, non puoi stabilire
   - Se si ha bisogno di assistenza per collegare le due condivisioni file al tuo host, apri un ticket di supporto.
 
 2. Considera quale tipo di dati hai sul tuo volume {{site.data.keyword.filestorage_short}} originale e qual è il modo migliore per copiarli nella tua nuova condivisione file.
-  - Se hai dei backup, del contenuto statico ed elementi di cui non sono previste variazioni durante la copia, non ci sono preoccupazioni di particolare importanza.
-  - Se stai eseguendo un database o una macchina virtuale sulla tua {{site.data.keyword.filestorage_short}}, assicurati che i dati non vengano modificati durante la copia per evitare un danneggiamento dei dati. Se ha qualche preoccupazione relativa alla larghezza di banda, esegui la migrazione nei periodi non di punta. Se hai bisogno di assistenza con queste considerazioni, apri un ticket di supporto.
+  - Se hai dei backup, del contenuto statico ed elementi di cui non sono previste variazioni durante la copia, non ti devi preoccupare.
+  - Se stai eseguendo un database o una macchina virtuale sulla tua {{site.data.keyword.filestorage_short}}, assicurati che i dati non vengano modificati durante la copia per evitare un danneggiamento dei dati.
+  - Se ha qualche preoccupazione relativa alla larghezza di banda, esegui la migrazione nei periodi non di punta.
+  - Se hai bisogno di assistenza con queste considerazioni, apri un ticket di supporto.
 
 3. Copia i tuoi dati.
    - **Microsoft Windows**

@@ -28,7 +28,7 @@ Con le istantanee, puoi:
 - Creare, in un modo che non interrompe le operazioni, dei punti di ripristino a un punto temporale.
 - Ripristinare i volumi a punti temporali precedenti
 
-Devi acquistare dello spazio per le istantanee per il tuo volume in modo da poterne acquisire delle istantanee. Lo spazio per le istantanee può essere aggiunto durante l'ordine iniziale o successivamente tramite la pagina **Volume Details**. Le istantanee pianificate e manuali condividono lo spazio per le istantanee; assicurati quindi di ordinare spazio per le istantanee a sufficienza. Vedi l'articolo [Ordinazione di istantanee](ordering-snapshots.html) per ulteriori dettagli e istruzioni.
+Devi acquistare dello spazio per le istantanee per il tuo volume in modo da poterne acquisire delle istantanee. Lo spazio per le istantanee può essere aggiunto durante l'ordine iniziale o successivamente tramite la pagina **Volume Details**. Le istantanee pianificate e manuali condividono lo spazio per le istantanee; assicurati quindi di ordinare spazio per le istantanee a sufficienza.  Per ulteriori informazioni, vedi [Ordinazione di istantanee](ordering-snapshots.html).
 
 ## Prassi ottimali per le istantanee
 

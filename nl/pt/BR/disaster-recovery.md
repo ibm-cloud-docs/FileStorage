@@ -2,27 +2,26 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-30"
+lastupdated: "2018-12-10"
 
 ---
-
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
 {:new_window: target="_blank"}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
-{:DomainName: data-hd-keyref="APPDomain"}
-{:DomainName: data-hd-keyref="DomainName"}
 
 
-# Duplicando volumes de réplicas para Recuperação de desastre
+# Recuperação de desastre: failover com um volume primário inacessível
 
 No caso de uma falha catastrófica ou de um desastre que cause uma indisponibilidade no site primário, os clientes podem executar as ações a seguir para acessar rapidamente seus dados no site secundário.
 
 ## Failover com uma duplicata de um volume de réplica no site secundário
 
-1. Efetue login no [Console do IBM Cloud](https://{DomainName}/catalog/){:new_window} e clique no ícone **Menu** na parte superior esquerda. Selecione **Infraestrutura clássica**.
+1. Efetue login no [Console do IBM Cloud](https://console.bluemix.net/catalog/){:new_window} e clique no ícone **Menu** na parte superior esquerda. Selecione **Infraestrutura clássica**.
 
-   Como alternativa, é possível efetuar login no [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
+   Como alternativa, é possível efetuar login no [{{site.data.keyword.slportal}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://control.softlayer.com/){:new_window}.
 2. Clique em **Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
 3. Clique na réplica do compartilhamento de arquivo na lista para visualizar sua página **Detalhes**.
 4. Na página **Detalhes**, role para baixo e selecione uma captura instantânea existente e, em seguida, clique em **Ações** > **Duplicar**.
@@ -30,7 +29,7 @@ No caso de uma falha catastrófica ou de um desastre que cause uma indisponibili
 6. É possível atualizar o espaço de captura instantânea para o novo volume, se necessário.
 7. Clique em **Continuar** para fazer seu pedido para a duplicata.
 
-Assim que o volume for criado, será possível anexá-lo a um host e executar operações de leitura/gravação nesse volume. Enquanto os dados estão sendo copiados do volume original para a duplicata, é possível ver um status na página de detalhes mostrando que a duplicação está em andamento. Quando o processo de duplicação for concluído, o novo volume se tornará completamente independente do original e poderá ser gerenciado com capturas instantâneas e replicação normalmente.
+Assim que o volume for criado, será possível anexá-lo a um host e executar operações de leitura/gravação nesse volume. Enquanto os dados estão sendo copiados do volume original para a duplicata, é possível ver um status na página de detalhes mostrando que a duplicação está em andamento. Quando o processo de duplicação for concluído, o novo volume se tornará independente do original e poderá ser gerenciado com capturas instantâneas e replicação normalmente.
 
 ## Failback para o site primário original
 
@@ -38,7 +37,7 @@ Se você desejar retornar a produção para o site primário original, as etapas
 
 1. Efetue login no [Console do IBM Cloud](https://{DomainName}/catalog/){:new_window} e clique no ícone **Menu** na parte superior esquerda. Selecione **Infraestrutura clássica**.
 
-   Como alternativa, é possível efetuar login no [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
+   Como alternativa, é possível efetuar login no [{{site.data.keyword.slportal}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://control.softlayer.com/){:new_window}.
 2. Clique em **Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
 3. Clique no nome do LUN e crie um planejamento de captura instantânea (se ainda não existir).
 

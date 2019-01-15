@@ -7,35 +7,35 @@ lastupdated: "2018-11-12"
 ---
 {:new_window: target="_blank"}
 
-# Expandindo Capacidade de Compartilhamento de Arquivo
+# 擴充檔案共用容量
 
-Com esse novo recurso, os usuários atuais do {{site.data.keyword.filestorage_full}} são capazes de expandir o tamanho do {{site.data.keyword.filestorage_short}} em incrementos de GB de até 12 TB imediatamente. Eles não precisam criar uma duplicata nem migrar dados manualmente para um volume maior. Não há nenhuma indisponibilidade ou falta de acesso ao armazenamento enquanto o redimensionamento está ocorrendo.
+使用這個新增特性，{{site.data.keyword.filestorage_full}} 的現行使用者可以立即擴充其 {{site.data.keyword.filestorage_short}} 的大小（以 GB 為增量單位，最多可到 12 TB）。他們不需要建立重複項目，或者手動將資料移轉至較大的磁區。調整大小時，不會發生中斷，也不會無法存取儲存空間。
 
-O faturamento para o volume é atualizado automaticamente para incluir a diferença rateada do novo preço no ciclo de faturamento atual. Então, a nova quantia integral será faturada no próximo ciclo de faturamento.
+會自動更新磁區的計費，以將新價格的按比例差額新增至現行計費週期。然後，即會在下一個計費週期收取新的完整金額。
 
-Esse recurso está disponível somente nos [data centers de seleção](new-ibm-block-and-file-storage-location-and-features.html).
+只有[精選資料中心](new-ibm-block-and-file-storage-location-and-features.html)內才提供此特性。
 
-## Vantagens de Armazenamento Expandível
+## 可擴充儲存空間的優點
 
-- **Gerenciamento de custo** - Talvez você saiba que há potencial para crescimento de seus dados, mas que precisa de uma quantia menor de armazenamento para iniciar. A capacidade de expandir permite que os clientes economizem em custos de armazenamento no início e, em seguida, cresçam para acomodar suas necessidades.  
+- **成本管理** - 您知道資料可能會成長，但一開始只需要較小的儲存空間量。擴充能力可讓客戶在一開始時節省儲存空間成本，然後不斷成長以因應需要。  
 
-- **Necessidades de armazenamento crescente** - os clientes que experimentam um rápido crescimento precisam de uma maneira rápida e fácil de aumentar o tamanho de seu armazenamento para gerenciar esse crescimento.
+- **成長中的儲存空間需求** - 快速成長的客戶需要一種可快速且輕鬆地增加其儲存空間大小的方式，以管理成長。
 
-## Efeitos da expansão da capacidade de armazenamento na Replicação
+## 擴充儲存空間容量對於抄寫的效果
 
-A ação de expansão no armazenamento primário resulta no redimensionamento automático da réplica.
+主要儲存空間上的擴充動作會導致自動調整抄本大小。
 
-## Limitações
+## 限制
 
-Esse recurso está disponível somente para armazenamento que é provisionado em [data centers](new-ibm-block-and-file-storage-location-and-features.html) com recursos aprimorados. O armazenamento criptografado provisionado nesses data centers pode ser aumentado em até 12 TB.
+此特性只適用於佈建在具有加強功能之[資料中心](new-ibm-block-and-file-storage-location-and-features.html)內的儲存空間。在這些資料中心內佈建的加密儲存空間最多可以增加到 12 TB。
 
-As limitações de tamanho existentes para o {{site.data.keyword.filestorage_short}} que foram provisionadas com o Endurance ainda se aplicam (até 4 TB para a camada de 10 IOPS e até 12 TB para todas as outras camadas).
+已佈建「耐久性」之 {{site.data.keyword.filestorage_short}} 的現有大小限制仍然適用（10 IOPS 層級最多為 4 TB，而所有其他層級最多為 12 TB）。
 
-## Redimensionando o
+## 調整儲存空間大小
 
-1. No {{site.data.keyword.slportal}}, clique em **Armazenamento** > **{{site.data.keyword.filestorage_short}}** OU, no catálogo do {{site.data.keyword.BluSoftlayer_full}}, clique em **Infraestrutura** > **Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
-2. Selecione o volume na lista e clique em **Ações** > **Modificar volume**
-3. Insira o novo tamanho de armazenamento em GB.
-4. Revise sua seleção e a nova precificação.
-5. Clique em **Eu li o Contrato de Prestação de Serviços Principal...** e clique em **Fazer pedido**.
-6. Sua nova alocação de armazenamento estará disponível em alguns minutos.
+1. 從 {{site.data.keyword.slportal}}，按一下**儲存空間** > **{{site.data.keyword.filestorage_short}}**，或者，從 {{site.data.keyword.BluSoftlayer_full}} 型錄，按一下**基礎架構** > **儲存空間** > **{{site.data.keyword.filestorage_short}}**。
+2. 從清單中選取磁區，然後按一下**動作** > **修改磁區**
+3. 輸入新的儲存空間大小（以 GB 為單位）。
+4. 檢閱您的選取項目及新的定價。
+5. 按一下**我已閱讀主要服務合約...**，然後按一下**下訂單**。
+6. 在幾分鐘之後，就可以使用您的新儲存空間配置。

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-13"
 
 ---
 {:new_window: target="_blank"}
@@ -12,7 +12,7 @@ lastupdated: "2018-10-31"
 
 # Captura Instantânea
 
-As capturas instantâneas são um recurso do {{site.data.keyword.filestorage_full}}. Uma captura instantânea representa o conteúdo de um volume em um determinado momento. As capturas instantâneas permitem proteger seus dados sem impacto de desempenho, com um consumo mínimo de espaço e são consideradas como a sua primeira linha de defesa para proteção de dados. Se um usuário modifica ou exclui acidentalmente dados cruciais de um volume, os dados podem ser restaurados de forma fácil e rápida por meio de uma cópia de captura instantânea.
+As capturas instantâneas são um recurso do {{site.data.keyword.filestorage_full}}. Uma captura instantânea representa o conteúdo de um volume em um determinado momento. Com as capturas instantâneas, é possível proteger seus dados sem afetar o desempenho e com consumo de espaço mínimo. As capturas instantâneas são consideradas sua primeira linha de defesa para a proteção de dados. Se um usuário modifica ou exclui acidentalmente dados cruciais de um volume, os dados podem ser restaurados de forma fácil e rápida por meio de uma cópia de captura instantânea.
 
 O {{site.data.keyword.filestorage_short}} fornece duas maneiras de tomar suas capturas instantâneas.
 
@@ -28,8 +28,7 @@ Com capturas instantâneas, é possível:
 - Criar pontos de recuperação point-in-time sem interrupção,
 - Reverter os volumes para momentos anteriores.
 
-Deve-se comprar alguma quantia de espaço de captura instantânea para seu volume primeiro para que você possa tirar capturas instantâneas dele. O espaço de captura instantânea pode ser incluído durante o pedido inicial ou mais tarde por meio da página **Detalhes do volume**. As capturas instantâneas planejadas e manuais compartilham o espaço de captura instantânea, portanto, certifique-se de pedir espaço de Captura instantânea suficiente. Consulte o artigo [Solicitando capturas instantâneas](ordering-snapshots.html) para
-obter mais detalhes e orientação.
+Deve-se comprar alguma quantia de espaço de captura instantânea para seu volume primeiro para que você possa tirar capturas instantâneas dele. O espaço de captura instantânea pode ser incluído durante o pedido inicial ou mais tarde por meio da página **Detalhes do volume**. As capturas instantâneas planejadas e manuais compartilham o espaço de captura instantânea, portanto, certifique-se de pedir espaço de Captura instantânea suficiente.  Para obter mais informações, consulte [Pedindo capturas instantâneas](ordering-snapshots.html).
 
 ## Melhores práticas de captura instantânea
 
@@ -50,9 +49,9 @@ Todas as capturas instantâneas e réplicas do {{site.data.keyword.filestorage_s
 
 ## Como as capturas instantâneas afetam o espaço em disco
 
-As cópias de captura instantânea minimizam o consumo de disco preservando blocos individuais em vez de arquivos inteiros. As cópias de captura instantânea usam espaço extra somente quando os arquivos no sistema de arquivos ativo são mudados ou excluídos. Quando isso acontece, os blocos de arquivos originais ainda são preservados como parte de uma ou mais cópias de Captura instantânea.
+As cópias de captura instantânea minimizam o consumo de disco preservando blocos individuais em vez de arquivos inteiros. As cópias de captura instantânea usam espaço extra somente quando os arquivos no sistema de arquivos ativo são mudados ou excluídos.
 
-No sistema de arquivos ativo, os blocos mudados são regravados para locais diferentes no disco ou removidos como blocos de arquivos ativos inteiramente. Como resultado, além do espaço em disco usado por blocos no sistema de arquivos ativo modificado, o espaço em disco usado pelos blocos originais ainda é reservado para refletir o status do sistema de arquivos ativo antes da mudança.
+No sistema de arquivos ativo, os blocos mudados são regravados para locais diferentes no disco ou removidos como blocos de arquivos ativos inteiramente. Quando os arquivos são mudados ou excluídos, os blocos de arquivos originais são preservados como parte de uma ou mais cópias de captura instantânea. Como resultado, o espaço em disco que é usado pelos blocos originais ainda está reservado para refletir o status do sistema de arquivos ativo antes da mudança. Esse espaço é reservado, além do espaço em disco que é usado por blocos no sistema de arquivos ativo modificado.
 
 <table>
     <colgroup>

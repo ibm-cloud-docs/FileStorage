@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-09-18"
+lastupdated: "2018-12-11"
 
 ---
 {:new_window: target="_blank"}
@@ -13,24 +13,24 @@ lastupdated: "2018-09-18"
 ## Como posso saber quais dos meus volumes do {{site.data.keyword.filestorage_short}} são criptografados?
 {: faq}
 
-Veja a sua lista de {{site.data.keyword.filestorage_short}} no portal do cliente. É possível ver um ícone de bloqueio à direita do nome do LUN/do volume para os volumes que estão criptografados.
+Veja a sua lista de {{site.data.keyword.filestorage_short}} no portal do cliente. É possível ver um ícone de bloqueio à direita do nome de volume para os volumes que estão criptografados.
 
 ## Se eu comprei um {{site.data.keyword.filestorage_short}} não criptografado em um data center que foi submetido a upgrade para criptografia, posso criptografar meu {{site.data.keyword.filestorage_short}}?
 {: faq}
 
-O {{site.data.keyword.filestorage_short}} que foi provisionado antes de um upgrade do data center não pode ser criptografado. O novo {{site.data.keyword.filestorage_short}} provisionado em data centers submetidos a upgrade é criptografado automaticamente. Não há configuração de criptografia para escolher, é automático. Os dados no armazenamento não criptografado podem ser criptografados criando um novo volume e, em seguida, copiando os dados para o novo volume criptografado com migração baseada em host. Para obter mais informações, consulte [Migrando o File Storage](/docs/infrastructure/FileStorage/migrate-file-storage-encrypted-file-storage.html).
+O {{site.data.keyword.filestorage_short}} que foi provisionado antes de um upgrade do data center não pode ser criptografado. O novo {{site.data.keyword.filestorage_short}} que foi fornecido em data centers com upgrade é criptografado automaticamente. Ele é automático, não uma configuração de fornecimento que pode ser selecionada ou deixada de fora. Os dados no armazenamento não criptografado podem ser criptografados criando um novo volume e, em seguida, copiando os dados para o novo volume criptografado com migração baseada em host. Para obter mais informações, consulte [Migrando o File Storage](migrate-file-storage-encrypted-file-storage.html).
 
 ## Como eu sei se estou provisionando o {{site.data.keyword.filestorage_short}} em um data center submetido a upgrade?
 {: faq}
 
-No formulário de pedido do {{site.data.keyword.filestorage_short}}, todos os data centers submetidos a upgrade são denotados com um asterisco (`*`). Durante o processo de pedido, você recebe uma indicação de que está provisionando armazenamento com criptografia. Quando o armazenamento é provisionado, é possível ver um ícone na lista de armazenamento que mostra esse volume como criptografado. 
+No formulário de pedido do {{site.data.keyword.filestorage_short}}, todos os data centers submetidos a upgrade são denotados com um asterisco (`*`). Durante o processo de pedido, você recebe uma indicação de que está provisionando armazenamento com criptografia. Quando o armazenamento é provisionado, é possível ver um ícone na lista de armazenamento que mostra esse volume como criptografado.
 
-Todos os volumes criptografados e os compartilhamentos de arquivo são provisionados somente em data centers submetidos a upgrade. É possível localizar uma lista completa de data centers submetidos a upgrade e recursos disponíveis [aqui](/docs//infrastructure/BlockStorage/new-ibm-block-and-file-storage-location-and-features.html).
+Todos os volumes criptografados e os compartilhamentos de arquivo são provisionados somente em data centers submetidos a upgrade. É possível localizar uma lista completa de data centers submetidos a upgrade e recursos disponíveis [aqui](new-ibm-block-and-file-storage-location-and-features.html).
 
 ## Por que o {{site.data.keyword.filestorage_short}} com uma camada de 10 IOPS do Endurance é provisionado em alguns data centers e em outros não?
 {: faq}
 
-A camada de 10 IOPS/GB do tipo Endurance do {{site.data.keyword.filestorage_short}} está disponível somente em data centers selecionados e novos data centers serão incluídos em breve. É possível localizar uma lista completa de data centers submetidos a upgrade e recursos disponíveis [aqui](/docs//infrastructure/BlockStorage/new-ibm-block-and-file-storage-location-and-features.html).
+A camada de 10 IOPS/GB do tipo Endurance do {{site.data.keyword.filestorage_short}} está disponível somente em data centers selecionados e novos data centers serão incluídos em breve. É possível localizar uma lista completa de data centers submetidos a upgrade e recursos disponíveis [aqui](new-ibm-block-and-file-storage-location-and-features.html).
 
 ## Como posso localizar o ponto de montagem correto para o meu {{site.data.keyword.filestorage_short}}?
 {: faq}
@@ -56,11 +56,11 @@ Isso depende do que o sistema operacional do host é capaz de manipular, não é
 {: faq}
 
 <table>
-  <caption>A Tabela 1 mostra o número máximo de nós-i permitidos com base no tamanho do volume. Os tamanhos dos volumes estão na coluna à esquerda. O número de nós-i/compartilhamentos de arquivo está à direita.</caption>
+  <caption>A Tabela 1 mostra o número máximo de nós-i permitidos com base no tamanho do volume. Os tamanhos dos volumes estão na coluna à esquerda. O número de inodes e compartilhamentos de arquivo estão à direita.</caption>
   <thead>
     <tr>
       <th>Tamanho do volume</th>
-      <th>Nós-i/Compartilhamentos de arquivo</th>
+      <th>Inodes e compartilhamentos de arquivo</th>
     </tr>
   </thead>
   <tbody>
@@ -110,7 +110,7 @@ Isso depende do que o sistema operacional do host é capaz de manipular, não é
 ## Medindo IOPS
 {: faq}
 
-O IOPS é medido com base em um perfil de carregamento de blocos de 16 KB com 50 por cento de leituras e 50 por cento de gravações aleatórias. As cargas de trabalho que diferirem desse perfil poderão enfrentar desempenho insatisfatório.
+O IOPS é medido com base em um perfil de carregamento de blocos de 16 KB com 50 por cento de leitura e 50 por cento de gravações aleatórias. As cargas de trabalho que diferirem desse perfil poderão enfrentar desempenho insatisfatório.
 
 ## O que acontece quando eu uso um tamanho de bloco menor para medir o desempenho?
 {: faq}
@@ -135,9 +135,9 @@ Não há necessidade de pré-aquecimento. É possível observar o rendimento esp
 ## É possível ter mais rendimento caso uma conexão Ethernet mais rápida seja usada?
 {: faq}
 
-Os limites de rendimento são configurados de acordo com o nível de volume/LUN, então, o uso de uma conexão Ethernet mais rápida não aumenta esse limite configurado. No entanto, com uma conexão Ethernet mais lenta, sua largura da banda pode ser um gargalo potencial.
+Os limites de rendimento são definidos em um nível por volume. Esse limite não pode ser aumentado usando uma conexão Ethernet mais rápida. No entanto, com uma conexão Ethernet mais lenta, sua largura da banda pode ser um gargalo potencial.
 
-## Os firewalls / grupos de segurança afetam o desempenho?
+## Os firewalls e os grupos de segurança afetam o desempenho?
 {: faq}
 
 É melhor executar o tráfego de armazenamento em uma VLAN, que efetua bypass do firewall. A execução do tráfego de armazenamento por meio de firewalls de software aumenta a latência e prejudica o desempenho do armazenamento.
@@ -145,12 +145,12 @@ Os limites de rendimento são configurados de acordo com o nível de volume/LUN,
 ## Qual latência de desempenho pode ser esperada do {{site.data.keyword.filestorage_short}}?   
 {: faq}
 
-A latência de destino dentro do armazenamento é <1 ms. O armazenamento é conectado a instâncias de cálculo em uma rede compartilhada, portanto, a latência exata de desempenho depende do tráfego de rede durante a operação.
+A latência de destino dentro do armazenamento é menor que um ms. O armazenamento é conectado a instâncias de cálculo em uma rede compartilhada, portanto, a latência exata de desempenho depende do tráfego de rede durante a operação.
 
 ## O que acontece com os dados quando os Volumes do {{site.data.keyword.filestorage_short}} são excluídos?
 {: faq}
 
-O {{site.data.keyword.filestorage_full}} apresenta compartilhamentos de arquivo para clientes em um armazenamento físico cujos dados são apagados antes da reutilização. Os clientes com necessidades especiais de conformidade, como NIST 800-88 Diretrizes de Sanitização de Mídias, precisam executar o procedimento de sanitização de dados antes de excluir seu armazenamento.
+O {{site.data.keyword.filestorage_full}} apresenta compartilhamentos de arquivo para clientes no armazenamento físico que é limpo antes de qualquer reutilização. Os clientes com necessidades especiais de conformidade, como NIST 800-88 Diretrizes de Sanitização de Mídias, precisam executar o procedimento de sanitização de dados antes de excluir seu armazenamento.
 
 ## O que acontece com as unidades que são desatribuídas do data center de nuvem?
 {: faq}

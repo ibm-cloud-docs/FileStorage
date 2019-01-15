@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-01-08"
 
 ---
 {:new_window: target="_blank"}
@@ -12,22 +12,23 @@ lastupdated: "2018-11-30"
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 
-# Solicitando o {{site.data.keyword.filestorage_short}}
 
-É possível provisionar o {{site.data.keyword.filestorage_short}} e ajustá-lo com precisão para atender às suas necessidades de capacidade e IOPS. Obtenha o máximo de seu armazenamento com duas opções para especificar desempenho.
+# Pedindo o {{site.data.keyword.filestorage_short}} por meio do Console
 
-- É possível escolher entre camadas de IOPs do Endurance que apresentam níveis de desempenho predefinidos para ajustar cargas de trabalho que não têm requisitos de desempenho bem definidos.
-- É possível ajustar com precisão seu armazenamento para atender a requisitos de desempenho muito específicos, especificando o número total de IOPS com o Performance.
+É possível fornecer o {{site.data.keyword.filestorage_short}} e ajustar com precisão para atender as suas necessidades de capacidade e de IOPS. Obtenha o máximo de seu armazenamento com duas opções para especificar desempenho.
+
+- É possível escolher entre as camadas de IOPs do Endurance que apresentam níveis de desempenho predefinidos para ajustar as cargas de trabalho que não têm requisitos de desempenho bem definidos.
+- É possível ajustar com precisão o seu armazenamento para atender a requisitos de desempenho específicos, determinando o número total de IOPS com o Performance.
 
 ## Solicitando  {{site.data.keyword.filestorage_short}}  com Camadas IOPS predefinidas (Endurance)
 
 1. Efetue login no [Catálogo do IBM Cloud](https://{DomainName}/catalog/){:new_window} e clique em **Armazenamento**. Em seguida, selecione {{site.data.keyword.filestorage_short}}. Clique em **Criar**.
 
-   Como alternativa, é possível efetuar login no [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} } e clicar em **Armazenamento** > **{{site.data.keyword.filestorage_short}}**. Na parte superior direita, clique em **Pedir {{site.data.keyword.filestorage_short}}**.
+   Como alternativa, é possível efetuar login no [{{site.data.keyword.slportal}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://control.softlayer.com/){:new_window} } e clicar em **Armazenamento** > **{{site.data.keyword.filestorage_short}}**. Na parte superior direita, clique em **Pedir {{site.data.keyword.filestorage_short}}**.
 2. Selecione sua implementação  ** Local **  (data center).
    - Assegure-se de que o novo Armazenamento seja incluído no mesmo local que o host de cálculo ou os hosts que você possui.
 3. Faturamento. Se você selecionou um data center com recursos melhorados (marcados com um asterisco), é possível escolher entre Faturamento por hora ou mensal.
-     1. Com o faturamento **por hora**, o número de horas que o volume de arquivo existiu na conta é calculado no momento em que o LUN é excluído ou ao final do ciclo de faturamento. O que vier primeiro. O faturamento por hora é uma boa opção para armazenamento usado por alguns dias ou menos de um mês completo. O faturamento por hora está disponível somente para o armazenamento provisionado nestes [data centers selecionados](new-ibm-block-and-file-storage-location-and-features.html).
+     1. Com o faturamento **por hora**, o número de horas em que o volume de arquivo existiu na conta é calculado no momento em que o LUN é excluído ou no final do ciclo de faturamento. O que vier primeiro. O faturamento por hora é uma boa opção para armazenamento usado por alguns dias ou menos de um mês completo. O faturamento por hora está disponível somente para o armazenamento provisionado nestes [data centers selecionados](new-ibm-block-and-file-storage-location-and-features.html).
      2. Com o faturamento **mensal**, o cálculo para o preço é avaliado a partir da data de criação até o término do ciclo de faturamento e faturado imediatamente. Não há reembolso se um volume de arquivo é excluído antes do término do ciclo de faturamento. O faturamento mensal é uma boa opção para armazenamento que é usado em cargas de trabalho de produção que usam dados que precisam ser armazenados e acessados por longos períodos (mês ou mais).
 
      O tipo de faturamento mensal é usado por padrão para um armazenamento que é provisionado em data centers que **não** são atualizados com recursos aprimorados.
@@ -41,22 +42,25 @@ lastupdated: "2018-11-30"
     - **10 IOPS por GB** é projetado para as cargas de trabalho mais exigentes, como aquelas criadas por bancos de dados NoSQL, e para processamento de dados para Analytics. Essa camada está disponível em [data centers selecionados](new-ibm-block-and-file-storage-location-and-features.html) para armazenamento provisionado até 4 TB.
 7. Clique em **Especificar tamanho do espaço de captura instantânea** e selecione o tamanho da captura instantânea na lista. Esse espaço é além de seu espaço utilizável. Para obter considerações e recomendações sobre espaço de captura instantânea, leia [Pedindo capturas instantâneas](ordering-snapshots.html).
 8. À direita, revise o resumo do pedido e aplique o Código promocional, se tiver um.
+
+   Os descontos são aplicados quando o pedido é processado.
+   {:note}
 9. Depois de ter revisado os termos e as condições, selecione a caixa **Eu li e concordo com os Contratos de serviço de terceiros**.
 10. Clique em **Criar**. Sua nova alocação de armazenamento estará disponível em alguns minutos.
 
 Por padrão, é possível provisionar um total combinado de 250
-volumes do {{site.data.keyword.blockstorageshort}}. Para aumentar o número de seus volumes, entre em contato com seu representante de vendas. Leia sobre como aumentar os limites [aqui](managing-storage-limits.html).<br/><br/>Para obter mais informações sobre o limite de autorizações simultâneas, consulte as [FAQs](File-Storage-FAQ.html#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-).
+volumes do {{site.data.keyword.blockstorageshort}}. Para aumentar o número de seus volumes, entre em contato com seu representante de vendas. Leia sobre como aumentar os limites [aqui](managing-storage-limits.html).<br/><br/>Para obter mais informações sobre o limite de autorizações simultâneas, consulte as [FAQs](faqs.html#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-).
 {:tip}
 
-## Solicitando  {{site.data.keyword.filestorage_short}}  com IOPS Customizado (Desempenho)
+## Pedindo o {{site.data.keyword.filestorage_short}} com IOPS customizado (Performance)
 
 1. Efetue login no [Catálogo do IBM Cloud](https://{DomainName}/catalog/){:new_window} e clique em **Armazenamento**. Em seguida, selecione {{site.data.keyword.filestorage_short}}. Clique em **Criar**.
 
-   Como alternativa, é possível efetuar login no [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} } e clicar em **Armazenamento** > **{{site.data.keyword.filestorage_short}}**. Na parte superior direita, clique em **Pedir {{site.data.keyword.filestorage_short}}**.
+   Como alternativa, é possível efetuar login no [{{site.data.keyword.slportal}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://control.softlayer.com/){:new_window} } e clicar em **Armazenamento** > **{{site.data.keyword.filestorage_short}}**. Na parte superior direita, clique em **Pedir {{site.data.keyword.filestorage_short}}**.
 2. Clique em **Local** e selecione seu data center.
    - Assegure-se de que o novo Armazenamento seja incluído no mesmo local que o host de cálculo ou os hosts que você possui.
 3. Faturamento. Se você selecionou um data center com recursos melhorados (marcados com um asterisco), é possível escolher entre Faturamento por hora ou mensal.
-     1. Com o faturamento **por hora**, o número de horas que o volume de arquivo existiu na conta é calculado no momento em que o LUN é excluído ou ao final do ciclo de faturamento. O que vier primeiro. O faturamento por hora é uma boa opção para armazenamento usado por alguns dias ou menos de um mês completo. O faturamento por hora está disponível somente para o armazenamento provisionado nestes [data centers selecionados](new-ibm-block-and-file-storage-location-and-features.html).
+     1. Com o faturamento **por hora**, o número de horas em que o volume de arquivo existiu na conta é calculado no momento em que o LUN é excluído ou no final do ciclo de faturamento. O que vier primeiro. O faturamento por hora é uma boa opção para armazenamento usado por alguns dias ou menos de um mês completo. O faturamento por hora está disponível somente para o armazenamento provisionado nestes [data centers selecionados](new-ibm-block-and-file-storage-location-and-features.html).
      2. Com o faturamento **mensal**, o cálculo para o preço é avaliado a partir da data de criação até o término do ciclo de faturamento e faturado imediatamente. Não há reembolso se um volume de arquivo é excluído antes do término do ciclo de faturamento. O faturamento mensal é uma boa opção para armazenamento que é usado em cargas de trabalho de produção que usam dados que precisam ser armazenados e acessados por longos períodos (mês ou mais).
 
      O tipo de faturamento mensal é usado por padrão para um armazenamento que é provisionado em data centers que **não** são atualizados com recursos aprimorados.
@@ -66,11 +70,14 @@ volumes do {{site.data.keyword.blockstorageshort}}. Para aumentar o número de s
 6. Insira o IOPS no campo **Performance (IOPS alocado)**.
 7. Clique em **Especificar tamanho do espaço de captura instantânea** e selecione o tamanho da captura instantânea na lista. Esse espaço é além de seu espaço utilizável. Para obter considerações e recomendações sobre espaço de captura instantânea, leia [Pedindo capturas instantâneas](ordering-snapshots.html).
 8. À direita, revise o resumo do pedido e aplique o Código promocional, se tiver um.
+
+   Os descontos são aplicados quando o pedido é processado.
+   {:note}
 9. Depois de ter revisado os termos e as condições, selecione a caixa **Eu li e concordo com os Contratos de serviço de terceiros**.
 10. Clique em **Criar**. Sua nova alocação de armazenamento estará disponível em alguns minutos.
 
 Por padrão, é possível provisionar um total combinado de 250
-volumes do {{site.data.keyword.blockstorageshort}}. Para aumentar o número de seus volumes, entre em contato com seu representante de vendas. Leia sobre como aumentar os limites [aqui](managing-storage-limits.html).<br/><br/>Para obter mais informações sobre o limite de autorizações simultâneas, consulte as [FAQs](File-Storage-FAQ.html#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-).
+volumes do {{site.data.keyword.blockstorageshort}}. Para aumentar o número de seus volumes, entre em contato com seu representante de vendas. Leia sobre como aumentar os limites [aqui](managing-storage-limits.html).<br/><br/>Para obter mais informações sobre o limite de autorizações simultâneas, consulte as [FAQs](faqs.html#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-).
 {:important}
 
 
@@ -80,10 +87,15 @@ Quando sua solicitação de fornecimento estiver concluída, autorize seus hosts
 - [Montando o {{site.data.keyword.filestorage_short}} no Linux](accessing-file-storage-linux.html)
 - [Montando o {{site.data.keyword.filestorage_short}} no CentOS](mounting-nsf-file-storage.html)
 - [Montando o {{site.data.keyword.filestorage_short}} no CoreOS](mounting-storage-coreos.html)
-- [Configurando o {{site.data.keyword.filestorage_short}} para backup com cPanel](configure-backup-cpanel.html)
-- [Configurando o {{site.data.keyword.filestorage_short}} para backup com Plesk](configure-backup-plesk.html)
+- [Configurando o {{site.data.keyword.filestorage_short}} para backup com o cPanel](configure-backup-cpanel.html)
+- [Configurando o {{site.data.keyword.filestorage_short}} para backup com o Plesk](configure-backup-plesk.html)
 - [Montando o volume do {{site.data.keyword.filestorage_short}} em hosts ESXi](architecture-guide-file-storage-vmware.html)
 
+## Considerações sobre recuperação de desastre
+
+Para evitar perda de dados e para assegurar a continuidade dos negócios, considere replicar seus servidores e armazenamento em outro data center. A replicação mantém seus dados em sincronização em dois locais diferentes com base em seu planejamento de captura instantânea. Para obter mais informações, consulte [Replicando dados](replication.html).
+
+Se desejar clonar seu volume e utilizá-lo independentemente do volume original, consulte [Criando um volume de bloco duplicado](how-to-create-duplicate-volume.html).
 
 ## Identificando  {{site.data.keyword.filestorage_short}}  volumes na fatura
 

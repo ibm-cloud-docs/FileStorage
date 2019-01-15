@@ -12,61 +12,70 @@ lastupdated: "2018-12-11"
 {:note: .note}
 {:important: .important}
 
-# Montando o {{site.data.keyword.filestorage_short}} no Container Linux
+# 在 Container Linux 上裝載 {{site.data.keyword.filestorage_short}}
 
-O Container Linux by CoreOS é um sistema operacional leve de software livre baseado no kernel do Linux. Ele foi projetado para fornecer infraestrutura para implementações em cluster. Como um sistema operacional, o Container Linux fornece apenas a funcionalidade mínima que é necessária para implementar aplicativos dentro de contêineres de software, juntamente com mecanismos integrados para descoberta de serviço e compartilhamento de configuração. Para obter mais informações, consulte a [Documentação do Container Linux: montando o armazenamento ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://coreos.com/os/docs/latest/mounting-storage.html)
+Container Linux by CoreOS 是以 Linux Kernel 為基礎的開放程式碼輕量型作業系統。其設計旨在為叢集部署提供基礎架構。作為作業系統，Container Linux 提供在軟體容器內部署應用程式所需的最基本功能，並搭配內建的機制來進行服務探索和配置共用。如需相關資訊，請參閱 [Mounting storage ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://coreos.com/os/docs/latest/mounting-storage.html)。
 
-## Montando o armazenamento móvel
+## 裝載可攜式儲存空間
 
-Todos os arquivos de montagem secundários vão no diretório `/etc/systemd/system`, pois as montagens de nível do sistema estão em um diretório que é somente leitura. Primeiro, deve-se criar um arquivo `MOUNTPOINT.mount`. A seção **Onde** do arquivo `.mount` deve corresponder ao nome do arquivo. Quando o ponto de montagem não está diretamente fora de `/`, deve-se nomear o arquivo usando a sintaxe `path-to-mount.mount`. Por exemplo, se você desejar montar a unidade de armazenamento móvel para `/mnt/www`, dê o nome `mnt-www.mount` ao arquivo.
+所有次要裝載檔都會放在 `/etc/systemd/system` 目錄中，因為系統層次裝載是位在唯讀的目錄中。首先，您必須建立 `MOUNTPOINT.mount` 檔案。`.mount` 檔案的 **Where** 區段必須符合其檔名。如果裝載點未直接在 `/` 下，您必須使用 `path-to-mount.mount` 語法來命名檔案。例如，如果您要將可攜式儲存空間磁碟裝載至 `/mnt/www`，請將檔案命名為 `mnt-www.mount`。
 
-É possível usar `fdisk` ou `parted` para criar a partição. Certifique-se de que o sistema de arquivos que você cria corresponda ao que está listado no arquivo `.mount` ou o serviço falhará ao iniciar.
+您可以使用 `fdisk` 或 `parted` 來建立分割區。請確定您建立的檔案系統符合 `.mount` 檔案中所列出的檔案系統，否則無法啟動服務。
 
 
 ```
 [Unit]
-Descrição = Montar para armazenamento móvel
+Description = Mount for Portable Storage
 
 [Mount]
 What=/dev/xvdc1
 Where=/mnt/www
 Type=ext4
 
-[Install] WantedBy = multi-user.target
+[Install]
+WantedBy = multi-user.target
 ```
 {:codeblock}
 
 
-O Container Linux usa o `systemd`, portanto, para fazer o ponto de montagem sobreviver a uma reinicialização, deve-se ativar o arquivo `*.mount`. Se você usar o sinalizador `--now`, a partição será montada imediatamente e configurada para iniciar na inicialização.
+此 OS 使用 `systemd`，因此，若要讓裝載點在重新啟動之後仍然存在，您必須啟用 `*.mount` 檔案。如果您使用 `--now` 旗標，則會立即裝載分割區，並設為在開機時啟動。
 
 ```
 systemctl enable --now mnt-www.mount
 ```
 {:pre}
 
-Para obter mais informações, consulte a documentação do [`systemd mount` ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://www.freedesktop.org/software/systemd/man/systemd.mount.html)
+如需相關資訊，請參閱 [`systemd mount` 文件 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://www.freedesktop.org/software/systemd/man/systemd.mount.html)
 
-## Montando o {{site.data.keyword.filestorage_short}}
+## 裝載 {{site.data.keyword.filestorage_short}}
 
-O processo para montagem do {{site.data.keyword.filestorage_short}} é o mesmo. Como a montagem é NFS, é possível especificar mais opções usando a linha `Options=` no arquivo de montagem.
+裝載 {{site.data.keyword.filestorage_short}} 的處理程序會相同。因為裝載是 NFS，所以您可以在裝載檔中使用 `Options=` 這一行來指定其他選項。
 
-No exemplo, NFS é configurado para montagem em `/data/www`. O ponto de montagem do NFS da instância do {{site.data.keyword.filestorage_short}} pode ser obtido na página de listagem do {{site.data.keyword.filestorage_short}} ou por meio de uma chamada API `SoftLayer_Network_Storage::getNetworkMountAddress()`.
+在此範例中，NFS 設為裝載於 `/data/www`。您可以從 {{site.data.keyword.filestorage_short}} 清單頁面或透過 API 呼叫 `SoftLayer_Network_Storage::getNetworkMountAddress()`，來取得 {{site.data.keyword.filestorage_short}} 實例的 NFS 裝載點。
 {:tip}
 
 ```
-$ cat data-www.mount [Unidade] Descrição = Montar para o armazenamento de contêiner
+$ cat data-www.mount
+[Unit]
+Description = Mount for Container Storage
 
-[Mount] What=<nfs_mount_point> Where=/data/www Type=nfs Options=vers=4,sec=sys,noauto
+[Mount]
+What=<nfs_mount_point>
+Where=/data/www
+Type=nfs
+Options=vers=4,sec=sys,noauto
 
-[Install] WantedBy = multi-user.target
+[Install]
+WantedBy = multi-user.target
 ```
 {:codeblock}
 
-Em seguida, ative a montagem e verifique se ela está montada de forma adequada.
+接下來，啟用裝載，並確認它已適當地裝載。
 
 ```
 systemctl enable --now /etc/systemd/system/data-www.mount
 
-cluster1 ~ # mount |grep data <nfs_mount_point> on /data/www type nfs4 (rw,relatime,vers=4.0,rsize=65536,wsize=65536,namlen=255,hard,proto=tcp,port=0,timeo=600,retrans=2,sec=sys,clientaddr=10.81.x.x,local_lock=none,addr=10.1.x.x)
+cluster1 ~ # mount |grep data
+<nfs_mount_point> on /data/www type nfs4 (rw,relatime,vers=4.0,rsize=65536,wsize=65536,namlen=255,hard,proto=tcp,port=0,timeo=600,retrans=2,sec=sys,clientaddr=10.81.x.x,local_lock=none,addr=10.1.x.x)
 ```
 {:codeblock}

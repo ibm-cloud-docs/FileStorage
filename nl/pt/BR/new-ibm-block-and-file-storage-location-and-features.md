@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-12-11"
 
 ---
 {:new_window: target="_blank"}
@@ -18,7 +18,7 @@ O {{site.data.keyword.BluSoftlayer_full}} está introduzindo uma nova versão do
 O ponto de montagem NFS para novos volumes foi mudado. Consulte a seção [Novo ponto de montagem para volumes aprimorados do {{site.data.keyword.filestorage_short}}](#new-mount-point-for-enhanced-file-storage-volumes) para obter detalhes.
 {:important}
 
-O novo {{site.data.keyword.filestorage_short}} está disponível nas regiões/data centers a seguir com mais disponibilidade do data center incluída em breve.
+O novo {{site.data.keyword.filestorage_short}} está disponível nas regiões e nos data centers a seguir com mais disponibilidade de data center incluída posteriormente.
 
 <table role="presentation">
   <tr>
@@ -57,7 +57,7 @@ O novo {{site.data.keyword.filestorage_short}} está disponível nas regiões/da
     <td>MEL01<br />
         SYD01<br />
         SYD04<br />
-	<br /><br /><br /><br /><br /><br /><br /><br /><br />
+        SYD05<br /><br /><br /><br /><br /><br /><br /><br /><br />
     </td>
     <td>MON01<br />
         TOR01<br />
@@ -93,9 +93,12 @@ O novo armazenamento tem os seguintes recursos e capacidades:
 - Crie um clone de seus dados com o [recurso de Duplicação de volume do {{site.data.keyword.filestorage_short}}](how-to-create-duplicate-volume.html).
 - O armazenamento é expansível em incrementos de GB até 12 TB imediatamente, sem a necessidade de criar uma duplicata ou de mover manualmente os dados para um volume maior. Leia mais sobre esse recurso [aqui](expandable_file_storage.html).
 
-## Novo Ponto de Montagem para volumes  {{site.data.keyword.filestorage_short}}  aprimorados
+## Novo ponto de montagem para volumes aprimorados do {{site.data.keyword.filestorage_short}}
 
-Todos os volumes aprimorados do {{site.data.keyword.filestorage_short}} provisionados nesses data centers têm um ponto de montagem diferente de volumes não criptografados. Para assegurar-se de que esteja usando o ponto de montagem correto para seus volumes de armazenamento, é possível visualizar as informações de ponto de montagem na página **Detalhes do volume** na IU. Também é possível acessar o ponto de montagem correto por meio de uma chamada API: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
+Todos os volumes aprimorados do {{site.data.keyword.filestorage_short}} provisionados nesses data centers têm um ponto de montagem diferente de volumes não criptografados. Para assegurar que você esteja usando o ponto de montagem correto para os volumes de armazenamento, é possível visualizar as informações do ponto de montagem na página **Detalhes do volume** no console. Também é possível acessar o ponto de montagem correto por meio de uma chamada API: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
+
+Para poder acessar todos os novos recursos, selecione `Storage-as-a-Service Package 759` ao fazer seu pedido por meio da API. Para obter mais informações sobre como pedir o {{site.data.keyword.filestorage_short}} por meio da API, consulte [order_file_volume ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://softlayer-python.readthedocs.io/en/latest/api/managers/file.html#SoftLayer.managers.file.FileStorageManager.order_file_volume){:new_window}.
+{:important}
 
 Consulte esta página novamente para ver quando mais data centers serão submetidos a upgrade e os novos recursos e capacidades que estão sendo incluídos no {{site.data.keyword.filestorage_short}}.
 {:tip}

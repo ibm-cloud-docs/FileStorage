@@ -12,13 +12,13 @@ lastupdated: "2018-11-30"
 
 # 管理儲存空間限制
 
-依預設，您可以在全球佈建總計 250 個 {{site.data.keyword.blockstorageshort}} 磁區。
+依預設，您可以在全球佈建總計 250 個 {{site.data.keyword.filestorage_short}} 磁區。
 
-您可以在 [{{site.data.keyword.slportal}} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://control.softlayer.com/){:new_window} 中提交問題單，以要求提高限制。要求經核准之後，您會得到針對特定資料中心設定的磁區限制。  
+您可以在 [{{site.data.keyword.slportal}} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://control.softlayer.com/){:new_window} 中提交問題單，以要求提高限制。要求經核准之後，您會收到針對特定資料中心所設定的磁區限制。  
 
 若要要求提高限制，請開立問題單，並將它導向給您的業務代表。
 
-在問題單中，請提供下列資訊：
+在問題單中，提供下列資訊：
 
 - **問題單主旨**：要求提高資料中心磁區計數儲存空間限制
 
@@ -32,7 +32,7 @@ lastupdated: "2018-11-30"
 *例如，您的答案可能類似於 "25x Performance 20 GB @ 10 IOPS in DAL09" 或 "50x Endurance 2 TB @ 0.25 IOPS in SJC03"。*
 
 - **提供您預期或計劃佈建所有要求磁區增加的預估時間。** <br />
- *例如，您的答案可能類似於 "90 days"。*
+ "*例如，您的答案可能類似於 "90 days"。*
 
 - **提供這些磁區的預期平均容量使用率的 90 天預測。** <br />
 *例如，您的答案可能類似於 "expect 25 percent to be used in 30 days, 50 percent to be used in 60 days and 75 percent to be used in 90 days"。*

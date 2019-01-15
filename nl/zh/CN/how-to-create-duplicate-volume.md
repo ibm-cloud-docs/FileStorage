@@ -21,7 +21,7 @@ lastupdated: "2018-11-30"
 如果您是 {{site.data.keyword.containerlong}} 的 Dedicated 帐户用户，请参阅 [{{site.data.keyword.containerlong_notm}} 文档](/docs/containers/cs_storage_file.html#backup_restore)中有关复制卷的选项。
 {:tip}
 
-供应存储器后，主机即可以访问复制卷以进行读/写。但是，在完成从原始项到复制项的数据复制之后，才允许使用快照和复制。数据复制完成后，就可以将复制项作为独立的卷进行管理和使用。
+供应存储器后，主机即可以访问复制卷以进行读/写。但是，在完成从原始项到复制项的数据复制之后，才允许使用快照和复制。数据复制完成后，就可以将复制项作为独立卷进行管理和使用。
 
 此功能在大多数位置中提供。单击[此处](new-ibm-block-and-file-storage-location-and-features.html)以获取可用数据中心的列表。
 
@@ -40,7 +40,7 @@ lastupdated: "2018-11-30"
 
 1. 转至 {{site.data.keyword.filestorage_short}} 的列表。
     - 在客户门户网站中，单击**存储** > **{{site.data.keyword.filestorage_short}}** 或
-    - 在 {{site.data.keyword.BluSoftlayer_full}} 目录中，单击**基础架构** > **存储器** > **{{site.data.keyword.filestorage_short}}**。
+    - 在 {{site.data.keyword.BluSoftlayer_full}}“目录”中，单击**基础架构** > **存储** > **{{site.data.keyword.filestorage_short}}**。
 2. 从列表中选择 LUN，然后单击**操作** > **复制 LUN（卷）**。
 3. 选择快照选项。
     - 如果是从非副本卷订购，那么

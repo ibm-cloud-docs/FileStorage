@@ -14,7 +14,7 @@ lastupdated: "2018-12-11"
 
 # 在 Container Linux 上安装 {{site.data.keyword.filestorage_short}}
 
-CoreOS 的 Container Linux 是基于 Linux 内核的开放式源代码轻量级操作系统。它的设计目的是为了给集群部署提供基础架构。作为操作系统，Container Linux 仅提供在软件容器中部署应用程序所需的最少功能，以及用于服务发现和配置共享的内置机制。有关更多信息，请参阅 [Container Linux 文档：安装存储器 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://coreos.com/os/docs/latest/mounting-storage.html)
+CoreOS 的 Container Linux 是基于 Linux 内核的开放式源代码轻量级操作系统。它的设计目的是为了给集群部署提供基础架构。作为操作系统，Container Linux 提供了在软件容器中部署应用程序所需的最少功能，以及用于服务发现和配置共享的内置机制。有关更多信息，请参阅 [Mounting storage ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://coreos.com/os/docs/latest/mounting-storage.html)
 
 ## 安装可移植存储器
 
@@ -38,7 +38,7 @@ WantedBy = multi-user.target
 {:codeblock}
 
 
-Container Linux 使用 `systemd`，因此为了使安装点在重新启动后继续有效，必须启用 `*.mount` 文件。如果使用 `--now` 标志，那么将立即安装分区，并将其设置为在引导时启动。
+此操作系统使用 `systemd`，因此为了使安装点在重新启动后继续有效，必须启用 `*.mount` 文件。如果使用 `--now` 标志，那么将立即安装分区，并将其设置为在引导时启动。
 
 ```
 systemctl enable --now mnt-www.mount

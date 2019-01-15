@@ -14,7 +14,7 @@ lastupdated: "2018-12-11"
 
 # Montaggio di {{site.data.keyword.filestorage_short}} su Container Linux
 
-Container Linux di CoreOS è un sistema operativo leggero ed open source basato sul kernel Linux. È progettato per fornire l'infrastruttura alle distribuzioni organizzate in cluster. Come sistema operativo, Container Linux fornisce solo la funzionalità minima richiesta per la distribuzione di applicazioni all'interno di contenitori software, insieme a meccanismi integrati per il rilevamento dei servizi e la condivisione della configurazione. Per ulteriori informazioni, vedi la [documentazione di Container Linux ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://coreos.com/os/docs/latest/mounting-storage.html)
+Container Linux di CoreOS è un sistema operativo leggero ed open source basato sul kernel Linux. È progettato per fornire l'infrastruttura alle distribuzioni organizzate in cluster. Come sistema operativo, Container Linux fornisce la funzionalità minima richiesta per la distribuzione di applicazioni all'interno di contenitori software, insieme a meccanismi integrati per il rilevamento dei servizi e la condivisione della configurazione. Per ulteriori informazioni, vedi [Mounting storage ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://coreos.com/os/docs/latest/mounting-storage.html)
 
 ## Montaggio di archiviazione portatile
 
@@ -38,7 +38,7 @@ WantedBy = multi-user.target
 {:codeblock}
 
 
-Container Linux utilizza `systemd` e quindi, per fare in modo che il punto di montaggio persista nel caso si verificasse un riavvio, devi abilitare il file `*.mount`. Se utilizzi l'indicatore `--now`, la partizione viene montata immediatamente e impostata per l'avvio al riavvio del computer.
+Questo sistema operativo utilizza `systemd` e quindi, per fare in modo che il punto di montaggio persista nel caso si verificasse un riavvio, devi abilitare il file `*.mount`. Se utilizzi l'indicatore `--now`, la partizione viene montata immediatamente e impostata per l'avvio al riavvio del computer.
 
 ```
 systemctl enable --now mnt-www.mount

@@ -19,7 +19,7 @@ lastupdated: "2018-11-30"
 假定您已将非加密 LUN 连接到主机。如果尚未连接，请遵循最适合您操作系统的指示信息来完成此任务。
 
 - [在 Linux 上安装 {{site.data.keyword.filestorage_short}}](accessing-file-storage-linux.html)
-- [在 CentOS 中安装 NFS/{{site.data.keyword.filestorage_short}}](mounting-nsf-file-storage.html)
+- [在 CentOS 上安装 {{site.data.keyword.filestorage_short}}](mounting-nsf-file-storage.html)
 - [在 CoreOS 上安装 {{site.data.keyword.filestorage_short}}](mounting-storage-coreos.html)
 
 这些数据中心内供应的所有增强型 {{site.data.keyword.filestorage_short}} 卷的安装点与非加密卷不同。要确保对两个存储卷使用正确的安装点，可以在控制台的**卷详细信息**页面中查看安装点信息。还可以通过 API 调用来访问正确的安装点：`SoftLayer_Network_Storage::getNetworkMountAddress()`。
@@ -31,40 +31,12 @@ lastupdated: "2018-11-30"
 使用 API 下订单时，请指定“存储即服务”包，以确保获取新存储器的更新功能。
 {:important}
 
-以下指示信息用于通过 {{site.data.keyword.slportal}} 或 {{site.data.keyword.BluSoftlayer_full}} 目录订购增强型文件共享。新卷的大小应该等于或大于原始卷，以便于迁移。
+要订购增强型 LUN，可以通过 {{site.data.keyword.BluSoftlayer_full}}“目录”和 {{site.data.keyword.slportal}} 来完成此操作。新卷的大小应该等于或大于原始文件共享的大小，以便于迁移。
 
-### 订购耐久性存储卷
+- [订购具有预定义 IOPS 层（耐久性）的 {{site.data.keyword.filestorage_short}}](provisioning-file-storage.html#ordering-file-storage-with-pre-defined-iops-tiers-endurance-)
+- [订购具有定制 IOPS（性能）的 {{site.data.keyword.filestorage_short}}](provisioning-file-storage.html#ordering-file-storage-with-custom-iops-performance-)
 
-1. 在 [{{site.data.keyword.slportal}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window} 中，单击**存储器** > **{{site.data.keyword.filestorage_short}}**，或者在 {{site.data.keyword.BluSoftlayer_full}} 目录中单击**基础架构** > **存储器** > **{{site.data.keyword.filestorage_short}}**。
-2. 单击**订购 {{site.data.keyword.filestorage_short}}**。
-3. 从**选择存储器类型**列表中，选择**耐久性**。
-4. 单击**位置**，然后选择数据中心。
-
-   确保将新存储器添加到原始项所在的位置。
-   {:important}
-5. 选择您的记帐选项。可以选择按月计费或按小时计费。
-6. 单击**耐久性**，然后选择 IOPS 层。
-6. 从列表中选择**可用存储器大小**。新卷的大小必须等于或大于原始卷。
-7. 从列表中选择**快照空间大小**（除了可用空间外）。
-8. 单击**继续**。这将显示每月费用和按比例的费用，此时您还有最后一次机会复查订单详细信息。如果要更改订单，请单击**上一步**。
-9. 单击**我已阅读主服务协议**复选框，然后单击**下订单**。
-
-### 订购性能存储卷
-
-1. 在 [{{site.data.keyword.slportal}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window} 中，单击**存储器**、**{{site.data.keyword.filestorage_short}}**，或者在 {{site.data.keyword.BluSoftlayer_full}} 目录中单击**基础架构** > **存储器** > **{{site.data.keyword.filestorage_short}}**。
-2. 单击**订购 {{site.data.keyword.filestorage_short}}**。
-3. 从**选择存储器类型**列表中，选择**性能**。
-4. 单击**位置**，然后选择数据中心。
-
-   确保将新存储器添加到原始项所在的位置。
-   {:important}
-5. 选择您的记帐选项。可以选择“每小时计费”和“每月计费”。
-6. 选择相应的**存储器大小**旁边的单选按钮。
-6. 在**指定 IOPS** 字段中，输入 IOPS。
-7. 单击**继续**。这将显示每月费用和按比例的费用，此时您还有最后一次机会复查订单详细信息。如果要更改订单，请单击**上一步**。
-8. 单击**我已阅读主服务协议**复选框，然后单击**下订单**。
-
-存储器将在不到一分钟的时间内进行供应，并且会在 {{site.data.keyword.slportal}} 的 {{site.data.keyword.filestorage_short}} 页面上显示。
+几分钟后即可安装新存储器。在资源列表和 {{site.data.keyword.blockstorageshort}} 列表中，可以查看该存储器。
 
 
 ## 授权主机访问新的 {{site.data.keyword.filestorage_short}}
@@ -92,8 +64,10 @@ lastupdated: "2018-11-30"
   - 如果在将这两个文件共享连接到主机时需要帮助，请开具支持凭单。
 
 2. 请考虑原始 {{site.data.keyword.filestorage_short}} 卷上有什么类型的数据，以及如何以最佳方式将其复制到新的文件共享。
-  - 如果您有备份、静态内容以及在复制期间不会更改的内容，那么没有任何重大注意事项。
-  - 如果是在 {{site.data.keyword.filestorage_short}} 上运行数据库或虚拟机，请确保数据在复制期间不会发生变更，以免发生数据损坏。如果您担心任何带宽问题，请在非高峰时段执行迁移。如果需要有关这些注意事项的帮助，请开具支持凭单。
+  - 如果您有备份、静态内容以及您不希望在复制期间发生更改的内容，那么无需担心。
+  - 如果是在 {{site.data.keyword.filestorage_short}} 上运行数据库或虚拟机，请确保数据在复制期间不会发生变更，以免发生数据损坏。
+  - 如果您担心任何带宽问题，请在非高峰时段执行迁移。
+  - 如果需要有关这些注意事项的帮助，请开具支持凭单。
 
 3. 复制数据。
    - **Microsoft Windows**

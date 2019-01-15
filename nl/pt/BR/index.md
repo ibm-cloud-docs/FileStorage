@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-10-29"
+  years: 2014, 2019
+lastupdated: "2019-01-07"
 
 ---
 {:new_window: target="_blank"}
@@ -11,6 +11,7 @@ lastupdated: "2018-10-29"
 {:important: .important}
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
+
 
 # Introdução ao {{site.data.keyword.filestorage_short}}
 
@@ -47,7 +48,7 @@ Tire vantagem dos recursos principais do {{site.data.keyword.filestorage_short}}
 
 É possível selecionar o faturamento por hora ou mensal para um volume de Arquivo. O tipo de faturamento selecionado para um LUN aplica-se a seu espaço de captura instantânea e réplicas. Por exemplo, se você provisionar um LUN com o faturamento por hora, quaisquer capturas instantâneas ou taxas de réplica serão faturadas por hora. Se você provisionar um LUN com faturamento mensal, quaisquer capturas instantâneas ou taxas de réplica serão faturadas mensalmente.
 
-Com o **faturamento por hora**, o número de horas que o volume de Arquivo existiu na conta é calculado no momento em que o LUN é excluído ou no término do ciclo de faturamento, o que vem primeiro. O faturamento por hora é uma boa opção para armazenamento usado por alguns dias ou menos de um mês completo. O faturamento por hora está disponível para o armazenamento provisionado em [data centers selecionados](new-ibm-block-and-file-storage-location-and-features.html) apenas.
+Com o **faturamento por hora**, o número de horas em que o volume de arquivo existiu na conta é calculado no momento em que o LUN é excluído ou no final do ciclo de faturamento, o que ocorrer primeiro. O faturamento por hora é uma boa opção para armazenamento usado por alguns dias ou menos de um mês completo. O faturamento por hora está disponível para o armazenamento provisionado em [data centers selecionados](new-ibm-block-and-file-storage-location-and-features.html) apenas.
 
 Com o **faturamento mensal**, o cálculo para o preço é rateado da data de criação ao término do ciclo de faturamento e faturado imediatamente. Se um volume for excluído antes do término do ciclo de faturamento, não haverá reembolso. O faturamento mensal é uma boa opção para o armazenamento usado em cargas de trabalho de produção que usam dados que precisam ser armazenados e acessados por longos períodos de tempo (um mês ou mais).
 
@@ -123,7 +124,7 @@ Performance é uma classe do {{site.data.keyword.filestorage_short}} projetada p
 O Performance para o {{site.data.keyword.filestorage_short}} é acessado e montado por meio de uma conexão do Network File System (NFS). O {{site.data.keyword.filestorage_short}} é usado geralmente quando o volume é acessado por múltiplos servidores simultaneamente. Os volumes consistentes do Performance podem ser pedidos de acordo com os Tamanhos e o IOPS na Tabela 1 e podem ser usados com os sistemas operacionais Linux.
 
 <table cellpadding="1" cellspacing="1" style="width: 99%;">
- <caption>A Tabela 3 está mostrando combinações de tamanho e de IOPS para armazenamento do Performance.<br/><sup><img src="/images/numberone.png" alt="Nota de rodapé" /></sup> O limite de IOPS maior que 6.000 está disponível nos data centers selecionados.</caption>
+ <caption>A Tabela 3 está mostrando combinações de tamanho e de IOPS para armazenamento do Performance.<br/><sup><img src="/images/numberone.png" alt="Nota de rodapé" /></sup> Os limites de IOPS maiores que 6.000 estão disponíveis nos data centers selecionados.</caption>
         <colgroup>
           <col/>
           <col/>
@@ -198,8 +199,7 @@ Os volumes do Performance foram projetados para operar consistentemente próximo
 
 ** Tamanho do Bloco **
 
-A IOPS para Endurance e Performance tem como base um tamanho de bloco de 16 KB com leitura/gravação de 50/50 e 50 por cento de carga de trabalho aleatória. Um bloco de 16 KB equivale a uma gravação no
-volume.
+O IOPS para o Endurance e o Performance tem como base um tamanho de bloco de 16 KB com uma carga de trabalho aleatória de 50 por cento, 50/50 de leitura/gravação. Um bloco de 16 KB equivale a uma gravação no volume.
 {:important}
 
 O tamanho do bloco usado por seu aplicativo afetará diretamente o desempenho do armazenamento. Se o tamanho do bloco usado por seu aplicativo for menor que 16 KB, o limite do IOPS será realizado antes do limite do rendimento. Por outro lado, se o tamanho do bloco usado por seu aplicativo for maior que 16 KB, o limite de rendimento será realizado antes do limite do IOPS.
@@ -263,26 +263,27 @@ Outro fator a ser considerado é o número de hosts que estão usando seu volume
 
 ** Conexão de rede **
 
-A velocidade da sua conexão Ethernet deve ser mais rápida do que o rendimento máximo esperado de seu volume. Em geral, não espere saturar sua conexão Ethernet além de 70% da largura de banda disponível. Por exemplo, se você tiver 6.000 IOPS e estiver usando um tamanho de bloco de 16 KB, o volume poderá manipular aproximadamente o rendimento de 94 MBps. Se você tiver uma conexão Ethernet de 1 Gbps para seu LUN, ela se tornará um gargalo quando seus servidores tentarem usar o rendimento máximo disponível. Isso é porque 70 por cento do limite teórico de uma conexão Ethernet de 1 Gbps (125 MB por segundo) permitiria 88 MB por segundo apenas.
+A velocidade da sua conexão Ethernet deve ser mais rápida do que o rendimento máximo esperado de seu volume. Em geral, não espere saturar sua conexão Ethernet além de 70% da largura de banda disponível. Por exemplo, se você tiver 6.000 IOPS e estiver usando um tamanho de bloco de 16 KB, o volume poderá manipular o rendimento de aproximadamente 94 MBps. Se você tiver uma conexão Ethernet de 1 Gbps com seu LUN, ela se tornará um gargalo quando seus servidores tentarem usar o rendimento máximo disponível. Isso porque 70 por cento do limite teórico de uma conexão Ethernet de 1 Gbps (125 MB por segundo) permitiria 88 MB por segundo apenas.
 
 Para alcançar o IOPS máximo, recursos de rede adequados precisam estar em vigor. Outras considerações incluem o uso de rede privada fora do armazenamento e do lado do host, além de ajustes específicos do aplicativo (pilha de IP ou [profundidades de fila](set-host-queue-depth-settings-performance-and-endurance-storage.html) e outras configurações).
 
-O tráfego de armazenamento é incluído no uso total de rede de Virtual Servers Públicos. Consulte a [documentação do Virtual Server](https://{DomainName}/docs/vsi/vsi_public.html#public-virtual-servers) para entender os limites que podem ser impostos pelo serviço.
+O tráfego de armazenamento é incluído no uso total de rede de Virtual Servers Públicos. Para obter mais informações sobre os limites que podem ser impostos pelo serviço, consulte a [Documentação do Virtual Server](https://{DomainName}/docs/vsi/vsi_public.html#public-virtual-servers).
 
 ** Versão do NFS **
 
-O NFS v3 e NFS v4.1 são suportados no ambiente do {{site.data.keyword.BluSoftlayer_full}}. No entanto, o NFS v3 é preferencial porque o NFS v4.1 é um protocolo stateful (não stateless como o NFSv3) e problemas de protocolo podem ocorrer durante eventos de rede. O NFS v4.1 deve colocar em modo quiesce todas as operações e, em seguida, concluir a recuperação de bloqueio. Em um servidor de arquivos NFS relativamente ocupado, a latência aumentada pode causar interrupções. A falta de caminhos múltiplos/entroncamento do NFS v4.1 também pode estender a recuperação de operações do NFS.
+O NFS v3 e NFS v4.1 são suportados no ambiente do {{site.data.keyword.BluSoftlayer_full}}. No entanto, o NFS v3 é preferencial porque o NFS v4.1 é um protocolo stateful (não stateless como o NFSv3) e problemas de protocolo podem ocorrer durante eventos de rede. O NFS v4.1 deve colocar em modo quiesce todas as operações e, em seguida, concluir a recuperação de bloqueio. Em um servidor de arquivos NFS relativamente ocupado, a latência aumentada pode causar interrupções. A falta de caminhos múltiplos e entroncamento do NFS v4.1 também pode estender a recuperação das operações do NFS.
 
 ## Enviando sua Ordem
 
-Quando você estiver pronto para enviar seu pedido, siga as instruções indicadas [aqui](provisioning-file-storage.html). Para ver Provisionando o File Storage com o VMware, clique [aqui](architecture-guide-file-storage-vmware.html)
+Quando você estiver pronto para enviar seu pedido, poderá fazer isso por meio
+do [Console](provisioning-block_storage.html) ou da [SLCLI](ordering-through-cli.html). Para ver Provisionando o File Storage com o VMware, clique [aqui](architecture-guide-file-storage-vmware.html)
 
 ## Conectando seu novo armazenamento
 
 Quando sua solicitação de fornecimento estiver concluída, autorize seus hosts a acessar o novo armazenamento e configurar sua conexão. Dependendo do sistema operacional de seu host, siga o link apropriado.
 - [Acessando o {{site.data.keyword.filestorage_short}} no Linux](accessing-file-storage-linux.html)
-- [ Montando o NFS/File Storage no CentOS ](mounting-nsf-file-storage.html)
+- [Montando o {{site.data.keyword.filestorage_short}} no CentOS](mounting-nsf-file-storage.html)
 - [Montando o {{site.data.keyword.filestorage_short}} no CoreOS](mounting-storage-coreos.html)
-- [Configurando o {{site.data.keyword.filestorage_short}} para backup com cPanel](configure-backup-cpanel.html)
-- [Configurando o {{site.data.keyword.filestorage_short}} para backup com Plesk](configure-backup-plesk.html)
+- [Configurando o {{site.data.keyword.filestorage_short}} para backup com o cPanel](configure-backup-cpanel.html)
+- [Configurando o {{site.data.keyword.filestorage_short}} para backup com o Plesk](configure-backup-plesk.html)
 - [Montando o volume do {{site.data.keyword.filestorage_short}} em hosts ESXi](architecture-guide-file-storage-vmware.html)

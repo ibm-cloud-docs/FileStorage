@@ -17,7 +17,7 @@ lastupdated: "2018-11-30"
 raiz ou sudo e o acesso completo ao WebHost Manager (WHM) estejam disponíveis. Esse exemplo se baseia em um
 host do **CentOS 7**.
 
-Para obter informações adicionais do fornecedor, consulte [cPanel - Configurando o diretório de backup ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.cpanel.net/display/68Docs/Backup+Configuration#BackupConfiguration-ConfigureBackupDirectory){:new_window}.
+Para obter mais informações, consulte [cPanel: configurando o diretório de backup ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://docs.cpanel.net/display/68Docs/Backup+Configuration#BackupConfiguration-ConfigureBackupDirectory){:new_window}.
 {:tip}
 
 1. Conecte-se ao host por meio de SSH.
@@ -28,7 +28,7 @@ Para obter informações adicionais do fornecedor, consulte [cPanel - Configuran
 
 3. Configure seu {{site.data.keyword.filestorage_short}} conforme descrito em [Acessando o {{site.data.keyword.filestorage_short}} no Red Hat Enterprise Linux](accessing-file-storage-linux.html) e [Montando o NFS/{{site.data.keyword.filestorage_short}} no CentOS](mounting-nsf-file-storage.html)/[Montando o NFS/{{site.data.keyword.filestorage_short}} no CoreOS](mounting-storage-coreos.html). Monte o volume em `/backup2` e configure-o na tabela do sistema de arquivos (`/etc/fstab`) para ativar a montagem no início. <br />
 
-   Por padrão, o NFS faz downgrade de quaisquer arquivos que foram criados com as permissões raiz para o usuário nobody. Para permitir que os clientes raiz retenham as permissões raiz no compartilhamento do NFS, `no_root_squash` precisa ser incluído em `/etc/exports`.
+   Por padrão, o NFS faz downgrade de quaisquer arquivos que foram criados com as permissões raiz para o usuário nobody. Para permitir que os clientes raiz retenham as permissões raiz no compartilhamento NFS, `no_root_squash` precisa ser incluído em `/etc/exports`.
    {:tip}
 
 4. **Opcional**. Copie os backups existentes para o novo armazenamento. É possível usar  ` rsync ` , por exemplo.

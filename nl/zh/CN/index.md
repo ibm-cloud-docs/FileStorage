@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-01-07"
 
 ---
 {:new_window: target="_blank"}
@@ -276,7 +276,7 @@ lastupdated: "2018-11-30"
 
 ## 提交订单
 
-准备好提交订单时，遵循[此处](provisioning-file-storage.html)的指示信息进行操作。有关通过 VMware 供应文件存储器的信息，请单击[此处](architecture-guide-file-storage-vmware.html)
+准备好提交订单时，可以通过[控制台](provisioning-block_storage.html)或 [SLCLI](ordering-through-cli.html) 来完成此操作。有关通过 VMware 供应文件存储器的信息，请单击[此处](architecture-guide-file-storage-vmware.html)
 
 ## 连接新存储器
 
@@ -284,6 +284,6 @@ lastupdated: "2018-11-30"
 - [在 Linux 上访问 {{site.data.keyword.filestorage_short}}](accessing-file-storage-linux.html)
 - [在 CentOS 上安装 {{site.data.keyword.filestorage_short}}](mounting-nsf-file-storage.html)
 - [在 CoreOS 上安装 {{site.data.keyword.filestorage_short}}](mounting-storage-coreos.html)
-- [使用 cPanel 配置 {{site.data.keyword.filestorage_short}} 进行备份](configure-backup-cpanel.html)
-- [使用 Plesk 配置 {{site.data.keyword.filestorage_short}} 进行备份](configure-backup-plesk.html)
+- [在 cPanel 中将 {{site.data.keyword.filestorage_short}} 配置用于备份](configure-backup-cpanel.html)
+- [在 Plesk 中将 {{site.data.keyword.filestorage_short}} 配置用于备份](configure-backup-plesk.html)
 - [在 ESXi 主机上安装 {{site.data.keyword.filestorage_short}} 卷](architecture-guide-file-storage-vmware.html)

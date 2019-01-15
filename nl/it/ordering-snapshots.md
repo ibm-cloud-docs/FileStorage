@@ -17,7 +17,7 @@ lastupdated: "2018-11-30"
 
 Per creare le istantanee del tuo volume di archiviazione, in modo automatizzato o manualmente, devi acquistare dello spazio per contenerle. Puoi acquistare capacità fino alla tua quantità di volume di archiviazione (durante l'acquisto di volume iniziale e successivamente attenendoti a questa procedura).
 
-1. Accedi alla [console IBM Cloud](https://{DomainName}/catalog/){:new_window} e fai clic sull'icona menu nell'angolo superiore sinistro. Seleziona **Infrastruttura classica**.
+1. Accedi alla [console IBM Cloud](https://{DomainName}/){:new_window} e fai clic sull'icona menu nell'angolo superiore sinistro. Seleziona **Infrastruttura classica**.
 
    In alternativa, puoi accedere al [{{site.data.keyword.slportal}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://control.softlayer.com/){:new_window}.
 2. Accedi alla tua archiviazione tramite **Storage** > **{{site.data.keyword.filestorage_short}}**.
@@ -25,6 +25,9 @@ Per creare le istantanee del tuo volume di archiviazione, in modo automatizzato 
 4. Seleziona la quantità di spazio che ti serve e il metodo di pagamento.
 5. Fai clic su **Continue**.
 6. Immetti l'eventuale codice promozionale (Promo Code) a tua disposizione e fai clic su **Recalculate**. Gli addebiti per quest'ordine (**Charges for this order**) e il riesame dell'ordine (**Order Review**) presentano i valori predefiniti.
+
+   Gli sconti vengono applicati quando l'ordine viene elaborato.
+   {:note}
 7. Seleziona la casella **I have read the Master Service Agreement and agree to the terms therein.** e fai clic su **Place Order**. Nel giro di pochi minuti, viene eseguito il provisioning del tuo spazio di istantanea.
 
 ## Determinazione della quantità di spazio per le istantanee da ordinare

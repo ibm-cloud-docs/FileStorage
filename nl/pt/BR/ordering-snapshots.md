@@ -12,19 +12,23 @@ lastupdated: "2018-11-30"
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 
+
 # Solicitando capturas instantâneas
 
-Para criar capturas instantâneas de seu volume de armazenamento, seja automaticamente ou manualmente, é necessário comprar espaço para mantê-las. É possível comprar capacidade até sua quantia de volume de armazenamento (durante a compra de volume inicial ou posteriormente usando estas etapas).
+Para criar capturas instantâneas de seu volume de armazenamento, seja automaticamente ou manualmente, é necessário comprar espaço para mantê-las. É possível comprar capacidade até a sua quantia de volume de armazenamento (durante a compra de volume inicial ou posteriormente usando essas etapas).
 
-1. Efetue login no [Console do IBM Cloud](https://{DomainName}/catalog/){:new_window} e clique no ícone **Menu** na parte superior esquerda. Selecione **Infraestrutura clássica**.
+1. Efetue login no [Console do IBM Cloud](https://{DomainName}/){:new_window} e clique no ícone de menu na parte superior esquerda. Selecione **Infraestrutura clássica**.
 
-   Como alternativa, é possível efetuar login no [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
+   Como alternativa, é possível efetuar login no [{{site.data.keyword.slportal}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://control.softlayer.com/){:new_window}.
 2. Acesse seu Armazenamento por meio de **Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
 3. Clique em **Mudar espaço de captura instantânea** no quadro Capturas instantâneas.
 4. Selecione a quantidade de espaço que você precisa e o método de pagamento.
 5. Clique em **Continuar**.
-6. Insira qualquer Código promocional que você tiver e clique em **Recalcular**. **Encargos para este pedido** e **Revisão do pedido** têm valores padrão.
-7. Selecione a caixa **Eu li o Contrato de serviço principal e concordo com os termos contidos nele.** e clique em **Fazer pedido**. Seu espaço de captura instantânea será provisionado em alguns minutos.
+6. Insira qualquer código promocional que você tenha e clique em **Recalcular**. **Encargos para este pedido** e **Revisão do pedido** têm valores padrão.
+
+   Os descontos são aplicados quando o pedido é processado.
+   {:note}
+7. Marque a caixa **Eu li o Contrato de Prestação de Serviços Principal e concorde com os termos contidos nele** e clique em **Fazer pedido**. Seu espaço de captura instantânea será provisionado em alguns minutos.
 
 ## Determinando a quantidade de espaço de captura instantânea a ser pedido
 
@@ -41,7 +45,7 @@ Um volume com várias mudanças e um período de retenção longo precisa de mai
 
 Se você usar 12 capturas instantâneas por hora de 500 GB de dados reais e houver 1 por cento de mudança entre cada captura instantânea, você terminará com 60 GB para capturas instantâneas.
 
-*(Taxa de mudança de 5 G) x (12 capturas instantâneas por hora) = (60 GB de espaço usado)*
+*(Taxa de mudança de 5 GB) x (12 capturas instantâneas por hora) = (60 GB de espaço usado)*
 
 Por outro lado, se esses 500 GB de dados reais, com 12 capturas instantâneas por hora, vissem 10 por cento de mudança a cada hora, o espaço de captura instantânea usado seria de 600 GB.
 

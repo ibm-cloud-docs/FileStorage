@@ -1,15 +1,15 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-10-31"
+  years: 2014, 2019
+lastupdated: "2019-01-07"
 
 ---
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
-# Protezione dei tuoi dati - Crittografia dei dati inattivi gestita dal provider
+# Crittografia dei dati inattivi gestita dal provider
 
 {{site.data.keyword.BluSoftlayer_full}} prende sul serio la sicurezza e comprende l'importanza di poter crittografare i dati per tenerli al sicuro. Con la crittografia gestita dal provider, {{site.data.keyword.filestorage_full}} di cui è stato eseguito il provisioning con le opzioni Endurance o Performance, viene crittografato per impostazione predefinita senza costi aggiuntivi e ripercussioni sulle prestazioni.
 
