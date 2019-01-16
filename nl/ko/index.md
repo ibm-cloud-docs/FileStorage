@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-01-07"
 
 ---
 {:new_window: target="_blank"}
@@ -275,7 +275,7 @@ NFS v3 및 NFS v4.1 모두는 {{site.data.keyword.BluSoftlayer_full}} 환경에�
 
 ## 주문 제출
 
-주문을 제출할 준비가 되었으면 [여기](provisioning-file-storage.html)에 있는 지시사항을 따르십시오. VMware에서의 File Storage 프로비저닝의 경우에는 [여기](architecture-guide-file-storage-vmware.html)를 클릭하십시오.
+주문을 제출할 준비가 되면 [콘솔](provisioning-block_storage.html)이나 [SLCLI](ordering-through-cli.html)를 통해 주문을 제출하십시오. VMware에서의 File Storage 프로비저닝의 경우에는 [여기](architecture-guide-file-storage-vmware.html)를 클릭하십시오.
 
 ## 새 스토리지 연결
 

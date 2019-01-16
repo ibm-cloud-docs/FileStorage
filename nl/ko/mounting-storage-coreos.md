@@ -14,7 +14,7 @@ lastupdated: "2018-12-11"
 
 # Container Linux에 {{site.data.keyword.filestorage_short}} 마운트
 
-Container Linux by CoreOS는 Linux 커널을 기반으로 하는 오픈 소스, 경량 운영 체제입니다. 인프라를 클러스터된 배치에 제공하는 데 사용하도록 디자인되었습니다. Container Linux는 운영 체제로서, 서비스 발견 및 구성 공유를 위한 기본 제공 메커니즘과 함께 소프트웨어 컨테이너 내부에 애플리케이션을 배치하는 데 필요한 최소한의 기능만을 제공합니다. 자세한 정보는 [Container Linux 문서: 스토리지 마운트 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://coreos.com/os/docs/latest/mounting-storage.html)를 참조하십시오.
+Container Linux by CoreOS는 Linux 커널을 기반으로 하는 오픈 소스, 경량 운영 체제입니다. 인프라를 클러스터된 배치에 제공하는 데 사용하도록 디자인되었습니다. Container Linux는 운영 체제로서, 서비스 발견 및 구성 공유를 위한 기본 제공 메커니즘과 함께 소프트웨어 컨테이너 내부에 애플리케이션을 배치하는 데 필요한 최소한의 기능을 제공합니다. 자세한 정보는 [스토리지 마운트 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://coreos.com/os/docs/latest/mounting-storage.html)를 참조하십시오.
 
 ## 휴대용 스토리지 마운트
 
@@ -38,7 +38,7 @@ WantedBy = multi-user.target
 {:codeblock}
 
 
-Container Linux에서는 `systemd`를 사용하므로, 마운트 지점이 다시 시작 후에도 지속되도록 하려면 `*.mount` 파일을 사용으로 설정해야 합니다. `--now` 플래그를 사용하면 파티션이 즉시 마운트되며 부팅 시 시작하도록 설정됩니다.
+이 OS에서는 `systemd`를 사용하므로, 마운트 지점이 다시 시작 후에도 지속되도록 하려면 `*.mount` 파일을 사용으로 설정해야 합니다. `--now` 플래그를 사용하면 파티션이 즉시 마운트되며 부팅 시 시작하도록 설정됩니다.
 
 ```
 systemctl enable --now mnt-www.mount

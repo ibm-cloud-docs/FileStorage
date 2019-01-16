@@ -8,17 +8,17 @@ IBM Cloud Storage - File Storage
     index.md
     new-ibm-block-and-file-storage-location-and-features.md
     snapshots.md
-    expandable_file_storage.md
-    adjustable-iops.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
     {: .topicgroup}
     프로비저닝
         provisioning-file-storage.md
+        ordering-through-cli.md
         ordering-snapshots.md
         managing-storage-limits.md
         architecture-guide-file-storage-vmware.md
+        migrate-file-storage-encrypted-file-storage.md
 
     {: .topicgroup}
     구성
@@ -28,23 +28,26 @@ IBM Cloud Storage - File Storage
         set-host-queue-depth-settings-performance-and-endurance-storage.md
         configure-backup-cpanel.md
         configure-backup-plesk.md
+        brocade-vrouter-vyatta-set-guide-vmware-environments-endurance-or-performance-storage.md
         jumboframes.md
 
     {: .topicgroup}
-    복제
+    관리
+        managing-file-storage.md
+        expandable_file_storage.md
+        adjustable-iops.md
+        how-to-create-duplicate-volume.md
+        working-with-snapshots.md
+
+    {: .topicgroup}
+    복제 및 재해 복구
         replication.md
         dr-accessible-primary.md
         disaster-recovery.md
 
     {: .topicgroup}
-    보안
+    데이터 보안
         block-file-storage-encryption-rest.md
-        migrate-file-storage-encrypted-file-storage.md
-
-    managing-file-storage.md
-    how-to-create-duplicate-volume.md
-    working-with-snapshots.md
-    brocade-vrouter-vyatta-set-guide-vmware-environments-endurance-or-performance-storage.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}
