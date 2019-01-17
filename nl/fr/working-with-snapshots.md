@@ -15,8 +15,7 @@ lastupdated: "2018-11-30"
 
 ## Création d'un planning d'instantané
 
-Vous pouvez décider de la fréquence et du moment de création d'un point de cohérence de référence dans votre volume de stockage en créant des plannings d'instantané. Vous disposez d'un maximum de 50 instantanés par volume de stockage. Les plannings sont gérés via l'onglet **Storage** > **{{site.data.keyword.filestorage_short}}** du portail [{{site.data.keyword.slportal}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://control.softlayer.com/){:new_window}.
-
+Les plannings d'instantané vous permettent de choisir la fréquence et le moment de création d'une référence ponctuelle de votre volume de stockage. Vous disposez d'un maximum de 50 instantanés par volume de stockage. Les plannings sont gérés via l'onglet **Storage** > **{{site.data.keyword.filestorage_short}}** du portail [{{site.data.keyword.slportal}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://control.softlayer.com/){:new_window}.
 
 Avant de pouvoir configurer votre planning initial, vous devez d'abord acheter de l'espace d'image instantanée si vous ne l'avez pas fait lors de la mise à disposition initiale du volume de stockage.
 {:important}
@@ -110,7 +109,7 @@ Les instantanés manuels qui ne sont pas supprimés manuellement dans le portail
 Il se peut que vous deviez ramener votre volume de stockage à un point de cohérence spécifique en raison d'une erreur d'utilisateur ou d'une altération des données.
 
 1. Démontez et déconnectez le volume de stockage de l'hôte.
-   - Cliquez [ici](accessing-file-storage-linux.html) pour obtenir les instructions liées à {{site.data.keyword.filestorage_short}} sur Linux.
+   - Cliquez [ici](accessing-file-storage-linux.html) pour obtenir des instructions.
 2. Cliquez sur **Stockage**, **{{site.data.keyword.filestorage_short}}** dans le portail [{{site.data.keyword.slportal}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://control.softlayer.com/){:new_window}.
 3. Faites défiler l'écran et cliquez sur le volume à restaurer. La section **Instantanés** de la page **Détails** affiche la liste de tous les instantanés sauvegardés, ainsi que leur taille et leur date de création.
 4. Cliquez sur **Actions** en regard de l'instantané à utiliser, puis cliquez sur **Restaurer**. <br/>
@@ -122,7 +121,7 @@ Il se peut que vous deviez ramener votre volume de stockage à un point de cohé
    Un message doit s'afficher sur la page pour vous indiquer que le volume est restauré à l'aide de l'instantané sélectionné. En outre, une icône apparaît en regard de votre volume sur {{site.data.keyword.filestorage_short}} pour indiquer qu'une transaction active est en cours. Survolez cette icône pour ouvrir une boîte de dialogue affichant la transaction. L'icône disparaît une fois la transaction terminée.
    {:note}
 6. Montez et reconnectez le volume de stockage à l'hôte.
-  - Cliquez [ici](accessing-file-storage-linux.html) pour obtenir les instructions liées à {{site.data.keyword.filestorage_short}} sur Linux.
+  - Cliquez [ici](accessing-file-storage-linux.html) pour obtenir des instructions.
 
 La restauration d'un volume entraîne la suppression de tous les instantanés qui ont été pris après celui utilisé pour la restauration.
 {:important}

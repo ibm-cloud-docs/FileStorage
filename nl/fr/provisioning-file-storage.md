@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-12-13"
+  years: 2014, 2019
+lastupdated: "2019-01-08"
 
 ---
 {:new_window: target="_blank"}
@@ -13,7 +13,7 @@ lastupdated: "2018-12-13"
 {:DomainName: data-hd-keyref="DomainName"}
 
 
-# Commande de {{site.data.keyword.filestorage_short}}
+# Commande de {{site.data.keyword.filestorage_short}} via la console
 
 Vous pouvez mettre à disposition {{site.data.keyword.filestorage_short}} et l'ajuster en fonction de vos besoins en termes de capacité et d'E-S/s (IOPS). Profitez pleinement de votre stockage grâce à deux options vous permettant de spécifier les performances.
 
@@ -42,6 +42,9 @@ Vous pouvez mettre à disposition {{site.data.keyword.filestorage_short}} et l'a
     - L'option **10 IOPS par Go** est adaptée aux charges de travail les plus intensives, telles que celles créées par les bases de données NoSQL et le traitement de données pour Analytics. Ce niveau est disponible dans des [centres de données sélectionnés](new-ibm-block-and-file-storage-location-and-features.html) pour un stockage qui est mis à disposition à hauteur de 4 To.
 7. Cliquez sur **Indiquer la taille de l'espace d'instantané** et sélectionnez la taille de l'image instantanée dans la liste. Cet espace vient en complément de votre espace utilisable. Pour les considérations et recommandations relatives à l'espace d'instantané, lisez la section [Commande d'instantanés](ordering-snapshots.html).
 8. Sur la droite, passez en revue votre récapitulatif de commande et appliquez votre code promo si vous en avez un.
+
+   Les remises sont appliquées lors du traitement de la commande.
+   {:note}
 9. Après avoir lu les dispositions, cochez la case **J'ai lu et j'accepte les contrats de service tiers**.
 10. Cliquez sur **Créer**. Votre nouvelle allocation de stockage est disponible en quelques minutes.
 
@@ -66,6 +69,9 @@ Par défaut, vous pouvez mettre à disposition un total combiné de 250 volumes 
 6. Entrez le nombre d'IOPS dans la zone **IOPS allouées**.
 7. Cliquez sur **Indiquer la taille de l'espace d'instantané** et sélectionnez la taille de l'image instantanée dans la liste. Cet espace vient en complément de votre espace utilisable. Pour les considérations et recommandations relatives à l'espace d'instantané, lisez la section [Commande d'instantanés](ordering-snapshots.html).
 8. Sur la droite, passez en revue votre récapitulatif de commande et appliquez votre code promo si vous en avez un.
+
+   Les remises sont appliquées lors du traitement de la commande.
+   {:note}
 9. Après avoir lu les dispositions, cochez la case **J'ai lu et j'accepte les contrats de service tiers**.
 10. Cliquez sur **Créer**. Votre nouvelle allocation de stockage est disponible en quelques minutes.
 
@@ -88,7 +94,6 @@ Lorsque votre demande de mise à disposition est terminée, autorisez vos hôtes
 Pour éviter toute perte de données et garantir la continuité opérationnelle, prévoyez de répliquer vos serveurs et votre stockage dans un autre centre de données. La réplication permet de synchroniser vos données entre deux emplacements différents selon votre planning d'instantané. Pour plus d'informations, voir [Réplication de données](replication.html).
 
 Si vous voulez cloner votre volume et l'utiliser indépendamment du volume d'origine, voir [Création d'un volume de blocs en double](how-to-create-duplicate-volume.html).
-
 
 ## Identification des volumes {{site.data.keyword.filestorage_short}} sur la facture
 

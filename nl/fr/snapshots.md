@@ -28,7 +28,7 @@ Les images instantanées vous permettent :
 - de créer de manière transparente des points de récupération à un point de cohérence,
 - de restaurer des volumes ponctuels antérieurs.
 
-Vous devez d'abord acheter une certaine quantité d'espace d'image instantanée pour votre volume avant de pouvoir prendre des instantanés de celui-ci. Il est possible d'ajouter de l'espace d'image instantanée lors de la commande initiale ou après via la page des **détails sur le volume**. Les images instantanées planifiées et manuelles partagent l'espace d'image instantanée ; veillez à commander l'espace en conséquence. Pour plus de détails et pour obtenir de l'aide, voir [Commande d'instantanés](ordering-snapshots.html).
+Vous devez d'abord acheter une certaine quantité d'espace d'image instantanée pour votre volume avant de pouvoir prendre des instantanés de celui-ci. Il est possible d'ajouter de l'espace d'image instantanée lors de la commande initiale ou après via la page des **détails sur le volume**. Les images instantanées planifiées et manuelles partagent l'espace d'image instantanée ; veillez à commander l'espace en conséquence.  Pour plus d'informations, voir [Commande d'instantanés](ordering-snapshots.html).
 
 ## Meilleures pratiques concernant les instantanés
 

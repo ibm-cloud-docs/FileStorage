@@ -14,13 +14,13 @@ lastupdated: "2018-12-11"
 
 # Montage de {{site.data.keyword.filestorage_short}} sur Container Linux
 
-Container Linux by CoreOS est un système d'exploitation open source léger basé sur le noyau Linux. Il est conçu de manière à fournir une infrastructure aux déploiements en cluster. En tant que système d'exploitation, Container Linux offre uniquement la fonctionnalité minimale requise pour le déploiement d'applications au sein de conteneurs de logiciels, ainsi qu'un mécanisme intégré de reconnaissance de service et de partage de configuration. Pour plus d'informations, voir la [documentation Container Linux sur le montage de stockage![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://coreos.com/os/docs/latest/mounting-storage.html)
+Container Linux by CoreOS est un système d'exploitation open source léger basé sur le noyau Linux. Il est conçu de manière à fournir une infrastructure aux déploiements en cluster. En tant que système d'exploitation, Container Linux offre la fonctionnalité minimale requise pour le déploiement d'applications au sein de conteneurs de logiciels, ainsi qu'un mécanisme intégré de reconnaissance de service et de partage de configuration. Pour plus d'informations, voir [Montage de ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://coreos.com/os/docs/latest/mounting-storage.html)
 
 ## Montage de stockage portable
 
 Tous les fichiers de montage secondaires sont placés dans le répertoire `/etc/systemd/system` car les montages au niveau du système sont effectués dans un répertoire en lecture seule. Vous devez d'abord créer un fichier `MOUNTPOINT.mount`. La section **Where** du fichier `.mount` doit correspondre au nom de fichier. Si le point de montage comporte des barres obliques (`/`), vous devez nommer le fichier en respectant la syntaxe `chemin-de-montage.mount`. Par exemple, si vous souhaitez monter l'unité de stockage portable dans `/mnt/www`, vous devez nommer le fichier `mnt-www.mount`.
 
-Vous pouvez utiliser `fdisk` ou `parted` pour créer la partition. Assurez-vous que le système de fichiers que vous créez correspond à celui qui est indiqué dans le fichier `.mount`, sinon, le service ne pourra pas démarrer. 
+Vous pouvez utiliser `fdisk` ou `parted` pour créer la partition. Assurez-vous que le système de fichiers que vous créez correspond à celui qui est indiqué dans le fichier `.mount`, sinon, le service ne pourra pas démarrer.
 
 
 ```
@@ -38,7 +38,7 @@ WantedBy = multi-user.target
 {:codeblock}
 
 
-Etant donné que Container Linux utilise `systemd`, vous devez activer le fichier `*.mount` pour que le point de montage soit préservé au redémarrage. Si vous utilisez l'indicateur `--now`, la partition est montée immédiatement et définie pour démarrer à l'amorçage.
+Etant donné que ce système d'exploitation utilise `systemd`, vous devez activer le fichier `*.mount` pour que le point de montage soit préservé au redémarrage. Si vous utilisez l'indicateur `--now`, la partition est montée immédiatement et définie pour démarrer à l'amorçage.
 
 ```
 systemctl enable --now mnt-www.mount

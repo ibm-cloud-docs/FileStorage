@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-01-07"
 
 ---
 {:new_window: target="_blank"}
@@ -276,7 +276,7 @@ NFS version 3 et NFS version 4.1 sont pris en charge dans l'environnement {{site
 
 ## Soumission de votre commande
 
-Lorsque vous êtes prêt à soumettre votre commande, suivez les instructions [décrites ici](provisioning-file-storage.html). Pour une mise à disposition de File Storage avec VMware, cliquez [ici](architecture-guide-file-storage-vmware.html)
+Lorsque vous êtes prêt à passer votre commande, utilisez la [console](provisioning-file-storage.html) ou [SLCLI](ordering-through-cli.html). Pour une mise à disposition de File Storage avec VMware, cliquez [ici](architecture-guide-file-storage-vmware.html)
 
 ## Connexion de votre nouveau stockage
 

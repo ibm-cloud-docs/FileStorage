@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-12-11"
+  years: 2015, 2019
+lastupdated: "2019-01-08"
 
 ---
 
@@ -117,6 +117,9 @@ Les réplications fonctionnent selon un planning d'instantané. Vous devez d'abo
 3. Cliquez sur **Emplacement** et sélectionnez le centre de données qui est votre site de reprise après incident.
 4. Cliquez sur **Continuer**.
 5. Entrez un **Code promo** le cas échéant et cliquez sur **Recalculer**. Les autres zones de la boîte de dialogue contiennent les valeurs par défaut.
+
+   Les remises sont appliquées lors du traitement de la commande.
+   {:note}
 6. Cochez la case **J'ai lu et j'accepte l'intégralité du Contrat cadre de service**, puis cliquez sur **Valider la commande**.
 
 

@@ -56,7 +56,7 @@ La nouvelle version de {{site.data.keyword.filestorage_short}} est disponible da
     <td>MEL01<br />
         SYD01<br />
         SYD04<br />
-          SYD05<br /><br /><br /><br /><br /><br /><br /><br /><br />
+        SYD05<br /><br /><br /><br /><br /><br /><br /><br /><br />
     </td>
     <td>MON01<br />
         TOR01<br />

@@ -1,15 +1,15 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-10-31"
+  years: 2014, 2019
+lastupdated: "2019-01-07"
 
 ---
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
-# Sécurisation de vos données - Chiffrement au repos géré par le fournisseur
+# Chiffrement au repos géré par le fournisseur
 
 {{site.data.keyword.BluSoftlayer_full}} prend au sérieux les besoins en matière de sécurité et comprend l'importance du chiffrement des données afin de les sécuriser. Grâce au chiffrement géré par le fournisseur, {{site.data.keyword.filestorage_full}}, mis à disposition avec un niveau Endurance ou Performance, est chiffré par défaut sans coût supplémentaire et sans impact sur les performances.
 

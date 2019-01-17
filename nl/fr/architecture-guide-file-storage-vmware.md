@@ -33,7 +33,7 @@ Lorsque vous commandez {{site.data.keyword.filestorage_short}}, tenez compte des
 
 - Lors du choix de la taille, tenez compte de la taille de la charge de travail et des besoins en débit. La taille est essentielle pour le service Endurance qui met à l'échelle les performances de manière linéaire par rapport à la capacité (IOPS/Go). A l'inverse, le service Performance permet à l'administrateur de choisir la capacité et la performance indépendamment l'une de l'autre. Vous devez prendre en compte les exigences en matière de débit avec le service Performance.
 
-  Le calcul du débit s'effectue comme suit : IOPS x 16 ko. Les IOPS sont mesurées sur la base d'une taille de bloc de 16 Ko avec un mélange 50/50 de lecture/écriture. <br/>L'augmentation du taille de bloc a pour conséquence d'augmenter le débit et de réduire les IOPS. Par exemple, si vous doublez la taille de bloc pour atteindre des blocs de 32 Ko, le débit maximal est conservé, mais les IOPS sont diminuées de moitié.
+  Le calcul du débit s'effectue comme suit : IOPS x 16 ko. Les IOPS sont mesurées sur la base d'une taille de bloc de 16 Ko avec un mélange 50/50 de lecture/écriture.<br/>L'augmentation du taille de bloc a pour conséquence d'augmenter le débit et de réduire les IOPS. Par exemple, si vous doublez la taille de bloc pour atteindre des blocs de 32 Ko, le débit maximal est conservé, mais les IOPS sont diminuées de moitié.
   {:note}
 
 - NFS utilise des opérations de contrôle de fichier supplémentaires, comme `lookup`, `getattr` et `readdir`. Ces opérations, en plus des opérations de lecture/écriture, peuvent compter comme des IOPS et varier selon le type d'opération et la version de NFS.
@@ -272,8 +272,8 @@ Notez l'adresse IP car elle peut être utilisée pour le montage du volume lors 
 
 Pour employer l'adresse IP au lieu du nom de domaine complet, envoyez simplement une commande ping au serveur afin d'obtenir l'adresse IP :
 ```
-   ping <host name of the storage array>
-   ```
+ping <host name of the storage array>
+```
 {: pre}
 
 Pour obtenir l'adresse IP auprès d'un hôte ESXi, utilisez la commande ci-après. Le résultat 10.2.125.80 obtenu correspond à l'adresse IP avec le nom de domaine complet.
@@ -292,7 +292,8 @@ SIOC (Storage I/O Control) est une fonctionnalité disponible pour les clients q
 Vous devez définir un seuil pour que la fonction SIOC puisse déterminer quand une unité de stockage est saturée ou contrainte. Le temps d'attente du seuil de surcharge est différent selon les types de stockage. Les sélections par défaut atteignent jusqu'à 90 % du débit en période de pic. Le pourcentage de la valeur de débit en période de pic indique le seuil de temps d'attente estimé lorsque le magasin de données VMware utilise ce pourcentage de débit estimé en période de pic.
 
 
-Une configuration incorrecte de la fonction SIOC d'un magasin de données VMware ou d'un disque de machine virtuelle (VMDK) peut affecter les performances de manière significative.{:important}
+Une configuration incorrecte de la fonction SIOC d'un magasin de données VMware ou d'un disque de machine virtuelle (VMDK) peut affecter les performances de manière significative.
+{:important}
 
 
 ### Configuration de la fonction SIOC pour un magasin de données VMware
@@ -305,7 +306,8 @@ Une configuration incorrecte de la fonction SIOC d'un magasin de données VMware
    ![Magasin de données NSF VMware](/images/3_0.png)
 6. Cliquez sur **OK**.
 
-Ce paramètre est propre au magasin de données VMware et non à l'hôte.{:note}
+Ce paramètre est propre au magasin de données VMware et non à l'hôte.
+{:note}
 
 
 ### Configuration de la fonction SIOC pour des {{site.data.keyword.BluVirtServers_short}}

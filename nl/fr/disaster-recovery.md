@@ -26,7 +26,7 @@ En cas de défaillance catastrophique ou d'un incident entraînant une indisponi
 3. Cliquez sur la réplique du partage de fichiers dans la liste pour afficher la page **Détails** correspondante.
 4. Sur la page **Détails**, faites défiler l'écran et sélectionnez un instantané existant, puis cliquez sur **Actions** > **Dupliquer**.
 5. Apportez les mises à jour nécessaires à la capacité (pour augmenter la taille) ou aux opérations d'entrée-sortie par seconde pour le nouveau volume.
-6. Vous pouvez, au besoin, mettrez à jour l'espace d'instantané pour le nouveau volume. 
+6. Vous pouvez, au besoin, mettrez à jour l'espace d'instantané pour le nouveau volume.
 7. Cliquez sur **Continuer** pour passer votre commande du doublon.
 
 Dès que le volume est créé, vous pouvez l'associer à un hôte et effectuer des opérations d'écriture/de lecture sur ce volume. Pendant que les données sont copiées depuis le volume d'origine vers le doublon, un statut s'affiche sur la page des détails indiquant que la duplication est en cours. Une fois le processus de duplication terminé, le nouveau volume devient indépendant du volume d'origine ; il peut être géré avec des instantanés et des réplications comme un volume normal.
