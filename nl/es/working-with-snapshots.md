@@ -15,8 +15,7 @@ lastupdated: "2018-11-30"
 
 ## Creación de una planificación de instantáneas
 
-Puede decidir con qué frecuencia y cuándo desea crear una referencia de un punto en el tiempo de su volumen de almacenamiento mediante la creación de planificaciones de instantáneas. Puede tener un máximo de 50 instantáneas del volumen de almacenamiento. Las planificaciones se gestionan mediante el separador **Almacenamiento** > **{{site.data.keyword.filestorage_short}}** del [{{site.data.keyword.slportal}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){:new_window}.
-
+Puede decidir con qué frecuencia y cuándo desea crear una referencia de un punto en el tiempo de su volumen de almacenamiento con planificaciones de instantáneas. Puede tener un máximo de 50 instantáneas del volumen de almacenamiento. Las planificaciones se gestionan mediante el separador **Almacenamiento** > **{{site.data.keyword.filestorage_short}}** del [{{site.data.keyword.slportal}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){:new_window}.
 
 Para poder configurar la planificación inicial, debe adquirir el espacio de instantáneas si no lo ha comprado durante el suministro inicial del volumen de almacenamiento.
 {:important}
@@ -110,7 +109,7 @@ Las instantáneas manuales que no se supriman del portal manualmente se suprimir
 Es posible que necesite recuperar el volumen de almacenamiento a un punto en el tiempo específico debido a un error de usuario o porque los datos hayan resultado dañados.
 
 1. Desmonte y desconecte el volumen de almacenamiento del host.
-   - Pulse [aquí](accessing-file-storage-linux.html) para obtener las instrucciones de {{site.data.keyword.filestorage_short}} en Linux.
+   - Pulse [aquí](accessing-file-storage-linux.html) para obtener instrucciones.
 2. Pulse **Almacenamiento**, **{{site.data.keyword.filestorage_short}}** en el [{{site.data.keyword.slportal}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){:new_window}.
 3. Desplácese y pulse el volumen que se va a restaurar. La sección **Instantáneas** de la página **Detalles** mostrará una lista de todas las instantáneas guardadas junto con su tamaño y fecha de creación.
 4. Pulse **Acciones** junto a la instantánea que se va a utilizar y pulse **Restaurar**. <br/>
@@ -122,7 +121,7 @@ Es posible que necesite recuperar el volumen de almacenamiento a un punto en el 
    Recibirá un mensaje en la página que indicará que el volumen se ha restaurado utilizando la instantánea seleccionada. También aparecerá un icono junto al volumen en {{site.data.keyword.filestorage_short}} que indicará que hay una transacción activa en curso. Al pasar el ratón sobre el icono se abre una ventana que muestra la transacción. El icono desaparecerá una vez completada la transacción.
    {:note}
 6. Monte y vuelva a conectar el volumen de almacenamiento al host.
-  - Pulse [aquí](accessing-file-storage-linux.html) para obtener las instrucciones de {{site.data.keyword.filestorage_short}} en Linux.
+  - Pulse [aquí](accessing-file-storage-linux.html) para obtener instrucciones.
 
 La restauración de un volumen da lugar a la supresión de todas las instantáneas que se tomaron después de la instantánea que se utilizó para la restauración.
 {:important}

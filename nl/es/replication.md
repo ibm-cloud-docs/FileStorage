@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-12-11"
+  years: 2015, 2019
+lastupdated: "2019-01-08"
 
 ---
 
@@ -117,6 +117,9 @@ Las réplicas se basan en una planificación de réplica. Primero debe tener un 
 3. Pulse **Ubicación** y seleccione el centro de datos que es su sitio de recuperación tras desastre.
 4. Pulse **Continuar**.
 5. Especifique un **Código promocional** si tiene uno y pulse **Recalcular**. Los otros campos de la ventana se completan de forma predeterminada.
+
+   Los descuentos se aplican cuando se procesa el pedido.
+   {:note}
 6. Marque el recuadro de selección **He leído el Acuerdo de servicio maestro…** y pulse **Realizar pedido**.
 
 

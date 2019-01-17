@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-01-07"
 
 ---
 {:new_window: target="_blank"}
@@ -275,7 +275,7 @@ Tanto NFS v3 como NFS v4.1 están soportados en el entorno de {{site.data.keywor
 
 ## Envío de su pedido
 
-Cuando esté listo para enviar el pedido, siga las instrucciones [aquí](provisioning-file-storage.html). Para suministrar almacenamiento de archivos con VMware, pulse [aquí](architecture-guide-file-storage-vmware.html)
+Cuando esté listo para enviar el pedido, puede realizarlo a través de la [consola](provisioning-file-storage.html) o de la [SLCLI](ordering-through-cli.html). Para suministrar almacenamiento de archivos con VMware, pulse [aquí](architecture-guide-file-storage-vmware.html)
 
 ## Conexión del nuevo almacenamiento
 

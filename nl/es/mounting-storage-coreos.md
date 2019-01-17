@@ -14,7 +14,7 @@ lastupdated: "2018-12-11"
 
 # Montaje de {{site.data.keyword.filestorage_short}} en Container Linux
 
-Container Linux by CoreOS es un sistema operativo de código abierto y ligero basado en el kernel de Linux. Está diseñado para proporcionar infraestructura a despliegues en clúster. Como sistema operativo, Container Linux sólo proporciona la funcionalidad mínima necesaria para desplegar aplicaciones dentro de contenedores de software, junto con mecanismos incorporados para el descubrimiento de servicios y la compartición de configuración. Para obtener más información, consulte la [Documentación de Container Linux: Montaje de almacenamiento ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo") ](https://coreos.com/os/docs/latest/mounting-storage.html)
+Container Linux by CoreOS es un sistema operativo de código abierto y ligero basado en el kernel de Linux. Está diseñado para proporcionar infraestructura a despliegues en clúster. Como sistema operativo, Container Linux proporciona la funcionalidad mínima necesaria para desplegar aplicaciones dentro de contenedores de software, junto con mecanismos incorporados para el descubrimiento de servicios y la compartición de configuración. Para obtener más información, consulte la [Montaje de almacenamiento ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://coreos.com/os/docs/latest/mounting-storage.html)
 
 ## Montaje de almacenamiento portátil
 
@@ -38,7 +38,7 @@ WantedBy = multi-user.target
 {:codeblock}
 
 
-Container Linux utiliza `systemd`, de manera que, para que el punto de montaje sobreviva a un reinicio, debe habilitar el archivo `*.mount`. Si utiliza el distintivo `--now`, la partición se monta inmediatamente y se inicia al arrancar.
+Este sistema operativo utiliza `systemd`, de manera que, para que el punto de montaje sobreviva a un reinicio, debe habilitar el archivo `*.mount`. Si utiliza el distintivo `--now`, la partición se monta inmediatamente y se inicia al arrancar.
 
 ```
 systemctl enable --now mnt-www.mount
@@ -51,7 +51,7 @@ Para obtener más información, consulte la [documentación de `systemd mount` !
 
 El proceso de montar el almacenamiento {{site.data.keyword.filestorage_short}} es el mismo. Como el montaje es NFS, puede especificar más opciones utilizando la línea `Options=` del archivo de montaje.
 
-En el ejemplo, NFS está configurado para montarse en `/data/www`. El punto de montaje de NFS de la instancia de {{site.data.keyword.filestorage_short}} se puede obtener desde la página de listado de {{site.data.keyword.filestorage_short}} o mediante una llamada a API -`SoftLayer_Network_Storage::getNetworkMountAddress()`.
+En el ejemplo, NFS está configurado para montarse en `/data/www`. El punto de montaje de NFS de la instancia de {{site.data.keyword.filestorage_short}} se puede obtener desde la página de listado de {{site.data.keyword.filestorage_short}} o mediante una llamada a API `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 {:tip}
 
 ```

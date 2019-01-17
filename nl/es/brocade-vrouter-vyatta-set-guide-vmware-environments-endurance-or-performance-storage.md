@@ -30,7 +30,7 @@ En la configuración de ejemplo, se crean cinco zonas en Brocade vRouter (Vyatta
 
 La figura 1 describe la comunicación entre cada zona. Su entorno puede ser diferente y puede necesitar diferentes zonas y reglas de cortafuegos.
 
-![Figure 1 - Configuración de zonas de Brocade vRouter (Vyatta)](/images/figure1_6.png)
+![Figura 1 - Configuración de zonas de Brocade vRouter (Vyatta)](/images/figure1_6.png)
 
 
 

@@ -1,15 +1,15 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-10-31"
+  years: 2014, 2019
+lastupdated: "2019-01-07"
 
 ---
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
-# Protección de los datos: cifrado en reposo gestionado por el proveedor
+# Cifrado en reposo gestionado por el proveedor
 
 {{site.data.keyword.BluSoftlayer_full}} se toma en serio la seguridad y comprende la importancia de cifrar los datos para mantenerlos protegidos. Mediante el cifrado gestionado por proveedor, los datos de {{site.data.keyword.filestorage_full}} suministrados con las opciones de Resistencia o de Rendimiento se cifran de forma predeterminada sin coste adicional ni impacto sobre el rendimiento.
 

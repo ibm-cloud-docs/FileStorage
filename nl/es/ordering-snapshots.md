@@ -17,7 +17,7 @@ lastupdated: "2018-11-30"
 
 Para crear instantáneas de su volumen de almacenamiento, automática o manualmente, necesita adquirir espacio para mantenerlas. Puede adquirir capacidad hasta la cantidad de su volumen de almacenamiento (durante la adquisición del volumen inicial o posteriormente siguiendo estos pasos).
 
-1. Inicie sesión en la [consola de IBM Cloud](https://{DomainName}/catalog/){:new_window} y pulse en el icono de menú en la parte superior izquierda. Seleccione **Infraestructura clásica**.
+1. Inicie sesión en la [consola de IBM Cloud](https://{DomainName}/){:new_window} y pulse en el icono de menú en la parte superior izquierda. Seleccione **Infraestructura clásica**.
 
    También puede iniciar la sesión en el [{{site.data.keyword.slportal}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){:new_window}.
 2. Acceda al almacenamiento mediante **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**.
@@ -25,6 +25,9 @@ Para crear instantáneas de su volumen de almacenamiento, automática o manualme
 4. Seleccione la cantidad de espacio que necesita y el método de pago.
 5. Pulse **Continuar**.
 6. Especifique cualquier código promocional que tenga y pulse **Recalcular**. Las opciones **Cargos para este pedido** y **Revisión del pedido** contienen valores predeterminados.
+
+   Los descuentos se aplican cuando se procesa el pedido.
+   {:note}
 7. Marque el recuadro de selección **He leído el Acuerdo de servicio maestro y acepto sus condiciones** y pulse en **Realizar pedido**. El espacio de instantáneas se suministrará en unos minutos.
 
 ## Determinación de la cantidad de espacio de instantáneas que se debe pedir

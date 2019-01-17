@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-01-07"
 
 ---
 {:new_window: target="_blank"}
@@ -10,7 +10,7 @@ lastupdated: "2018-11-30"
 {:note: .note}
 {:important: .important}
 
-# Solicitudes de {{site.data.keyword.filestorage_short}} mediante la CLI de SL
+# Solicitud de {{site.data.keyword.filestorage_short}} mediante la CLI de SL
 
 Puede utilizar la CLI de SL para realizar pedidos de productos que normalmente se solicitan a través del [{{site.data.keyword.slportal}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){:new_window}. En la API de SL, un pedido puede consistir en varios contenedores de pedidos. La CLI de pedidos funciona con un solo contenedor de pedidos.
 
@@ -26,7 +26,7 @@ Dentro de un paquete, algunos elementos se subdividen en categorías. Algunos pa
 Cada pedido debe tener una ubicación asociada (centro de datos). Cuando solicite {{site.data.keyword.filestorage_short}}, asegúrese de que se suministre en la misma ubicación que sus instancias de cálculo.
 {:important}
 
-Puede utilizar el mandato `slcli order package-list` para encontrar el paquete que desea solicitar. Se proporciona una opción `–keyword` para realizar una búsqueda y un filtrado simples. Esta opción hace que sea más fácil encontrar el paquete que necesita.
+Puede utilizar el mandato `slcli order package-list` para encontrar el paquete que desea solicitar. Se proporciona una opción `–keyword` para realizar una búsqueda y un filtrado simples. Esta opción hace que sea más fácil encontrar el paquete que necesita. Busque `Storage-as-a-Service Package 759`.
 
 ```
 $ slcli order package-list --help
@@ -49,85 +49,83 @@ Opciones:
   -h, --help      Mostrar este mensaje y salir.
 ```
 
-*Instrucciones necesarias sobre cómo encontrar el paquete 759 de almacenamiento como servicio*
+También puede utilizar el mandato `slcli file volume-order`.
 
 ```
-$ slcli order package-list --keyword "Storage"
-:.....................:.....................:
-:         name        :       keyName       :
-:.....................:.....................:
-: ???                 : ???                 :
-: ???                 : ???                 :
-:.....................:.....................:
-```
+# slcli file volume-order --help
+Uso: slcli file volume-order [OPTIONS]
 
-```
-$ slcli order category-list STORAGE_AS_A_SERVICE_STAAS --required
-:..................................:...................:............:
-:               name               :    categoryCode   : isRequired :
-:..................................:...................:............:
-:              Example             :        ???        :     Y      :
-:              Example             :        ???        :     Y      :
-:              Example             :        ???        :     Y      :
-:              Example             :        ???        :     Y      :
-:..................................:...................:............:
-```
+  Solicitar un volumen de almacenamiento en archivo.
 
-Seleccione el resto de los elementos del pedido con el mandato `item-list`. Los paquetes suelen tener diversos elementos entre los que elegir; utilice la opción `–category` para recuperar solo los elementos de la categoría en la que está interesado.
-
-```
-$ slcli order item-list STORAGE_AS_A_SERVICE_STAAS --category ??
-:..........................:..............................................:
-:         keyName          :                description                   :
-:..........................:..............................................:
-:           ???            :                    ????                      :
-:           ???            :                    ????                      :
-:           ???            :                    ????                      :
-:           ???            :                    ????                      :
-:..........................:..............................................:
+Opciones:
+  --storage-type [performance|endurance]
+                                  Tipo de volumen de almacenamiento de archivos
+                                  [obligatorio]
+  --size INTEGER                  Tamaño del volumen de almacenamiento de
+                                  archivos en GB [obligatorio]
+  --iops INTEGER                  IOP de almacenamiento de rendimiento, entre
+                                  100 y 6000 en múltiplos de 100 [obligatorio
+                                  para el tipo de almacenamiento de
+                                  rendimiento]
+  --tier [0.25|2|4|10]            Nivel de almacenamiento resistente (IOP por
+                                  GB) [obligatorio para el tipo de
+                                  almacenamiento resistente]
+  --location TEXT                 Nombre abreviado del centro de datos
+                                  (por ejemplo, dal09)  [obligatorio]
+  --snapshot-size INTEGER         Parámetro opcional para solicitar espacio de
+                                  instantáneas junto con almacenamiento de
+                                  archivos resistente; especifica el tamaño
+                                  (en GB) del espacio de instantáneas que se
+                                  debe solicitar
+  --service-offering [storage_as_a_service|enterprise|performance]
+                                  El paquete de oferta de servicio que se va
+                                  a utilizar para realizar el pedido
+                                  [opcional, el valor predeterminado es
+                                  'storage_as_a_service']
+  --billing [hourly|monthly]      Parámetro opcional para la tasa de
+                                  facturación (mensual de forma predeterminada)
+  -h, --help                      Mostrar este mensaje y salir.
 ```
 
 Para obtener más información sobre cómo solicitar {{site.data.keyword.filestorage_short}} a través de la API, consulte [order_file_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/file.html#SoftLayer.managers.file.FileStorageManager.order_file_volume){:new_window}.
 Para poder acceder a todas las nuevas características, solicite `el paquete 759 de almacenamiento como servicio`.
 {:tip}
 
-## Verificación del pedido
-
-Si alguna vez no está seguro de las categorías necesarias que puede que falten en su pedido, puede utilizar el mandato `place` con el distintivo `-verify`. Si falta alguna categoría, se imprime en la pantalla.
-
-
-```
-$ slcli order place --verify blablabla
-:..............................................:.................................................:......:
-:                keyName                       :                   description                   : cost :
-:..............................................:.................................................:......:
-:                  ???                         :                 yadi yadi yada                  :  0   :
-:                  ???                         :                 yadi yadi yada                  :  0   :
-:                  ???                         :                 yadi yadi yada                  :  0   :
-:                  ???                         :                 yadi yadi yada                  :  0   :
-:..............................................:.................................................:......:
-```
-
-La salida muestra cada elemento que se está solicitando, junto con el coste asociado a dicho elemento. Si el pedido supera la verificación, significa que no hay elementos en conflicto y que todas las categorías relacionadas tienen un elemento que está especificado en el pedido.
 
 ## Realización del pedido
 
-El siguiente paso es realizar el pedido.
+En el siguiente ejemplo se muestra cómo solicitar un volumen de {{site.data.keyword.filestorage_short}} de 10 GB con 100 IOPS por GB.
 
 ```
-$ slcli order place .....
-
-Esta acción implicará cargos en su cuenta. ¿Desea continuar? [s/N]: s
-
-Respuesta de API
+# slcli file volume-order --storage-type performance --size 20 --location dal10 --iops 100
+El pedido #32076317 se ha realizado correctamente.
+> Almacenamiento como un servicio
+> File Storage
+> 20 GB
+> 100 IOPS
 ```
 
-De forma predeterminada, puede suministrar un total combinado de 250 volúmenes de {{site.data.keyword.filestorage_short}}. Para aumentar el número de volúmenes, póngase en contacto con el representante de ventas. Para obtener más información sobre el aumento de los límites, consulte [Gestión de límites de almacenamiento](managing-storage-limits.html).
+De forma predeterminada, puede suministrar un total combinado de 250 volúmenes de {{site.data.keyword.blockstorageshort}} y {{site.data.keyword.filestorage_short}}. Para aumentar el número de volúmenes, póngase en contacto con el representante de ventas. Para obtener más información sobre el aumento de los límites, consulte [Gestión de límites de almacenamiento](managing-storage-limits.html).
 {:important}
 
 ## Autorización de los hosts para acceder al nuevo almacenamiento
 
-Por determinar
+```
+# slcli file access-authorize --help
+Uso: slcli file access-authorize [OPTIONS] VOLUME_ID
+
+  Autoriza a los hosts a acceder a un volumen determinado
+
+Opciones:
+  -h, --hardware-id TEXT    El id de un SoftLayer_Hardware que se va a autorizar
+  -v, --virtual-id TEXT     El id de un SoftLayer_Virtual_Guest que se va a autorizar
+  -i, --ip-address-id TEXT  El id de una SoftLayer_Network_Subnet_IpAddress
+                            que se va a autorizar
+  --ip-address TEXT         Una dirección IP que se va a autorizar
+  -s, --subnet-id TEXT      El id de una SoftLayer_Network_Subnet_IpAddress
+                            que se va a autorizar
+  --help                    Mostrar este mensaje y salir.
+```
 
 Para obtener más información sobre la autorización de los hosts para acceder a {{site.data.keyword.filestorage_short}} mediante la API, consulte [authorize_host_to_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/file.html#SoftLayer.managers.file.FileStorageManager.authorize_host_to_volume){:new_window}.
 {:tip}
@@ -140,7 +138,7 @@ Para obtener más información sobre el límite de autorizaciones simultáneas, 
 En función del sistema operativo del host, siga el enlace adecuado.
 - [Montaje de {{site.data.keyword.filestorage_short}} en Linux](accessing-file-storage-linux.html)
 - [Montaje de {{site.data.keyword.filestorage_short}} en CentOS](mounting-nsf-file-storage.html)
-- [Montaje de {{site.data.keyword.filestorage_short}} en CoreOS](mounting-storage-coreos.html)
+- [Montaje de {{site.data.keyword.filestorage_short}} en Container Linux](mounting-storage-coreos.html)
 - [Configuración de {{site.data.keyword.filestorage_short}} para la copia de seguridad con cPanel](configure-backup-cpanel.html)
 - [Configuración de {{site.data.keyword.filestorage_short}} para la copia de seguridad con Plesk](configure-backup-plesk.html)
 - [Montaje de un volumen de {{site.data.keyword.filestorage_short}} en hosts de ESXi](architecture-guide-file-storage-vmware.html)

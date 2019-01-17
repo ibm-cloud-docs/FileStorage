@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-12-13"
+  years: 2014, 2019
+lastupdated: "2019-01-08"
 
 ---
 {:new_window: target="_blank"}
@@ -13,14 +13,14 @@ lastupdated: "2018-12-13"
 {:DomainName: data-hd-keyref="DomainName"}
 
 
-# Solicitud de {{site.data.keyword.filestorage_short}}
+# Solicitud de {{site.data.keyword.filestorage_short}} mediante la consola
 
 Puede suministrar {{site.data.keyword.filestorage_short}} y realizar ajustes para satisfacer sus necesidades de capacidad y de IOPS. Saque el mayor partido de su almacenamiento con dos opciones para especificar el rendimiento.
 
 - Puede elegir entre los niveles de IOPS de Resistencia que incluyen los niveles de rendimiento predefinidos para que se ajusten las cargas de trabajo que no han definido bien los requisitos de rendimiento.
 - Puede ajustar el almacenamiento para que cumpla los requisitos de rendimiento específicos especificando el número total de IOPS con Rendimiento.
 
-## Pedido de {{site.data.keyword.filestorage_short}} con los niveles de IOPS predefinidos (Resistencia)
+## Solicitud de {{site.data.keyword.filestorage_short}} con los niveles de IOPS predefinidos (Resistencia)
 
 1. Inicie sesión en el [catálogo de IBM Cloud](https://{DomainName}/catalog/){:new_window} y pulse en **Almacenamiento**. A continuación seleccione {{site.data.keyword.filestorage_short}}. Pulse en **Crear**.
 
@@ -42,13 +42,16 @@ Puede suministrar {{site.data.keyword.filestorage_short}} y realizar ajustes par
     - **10 IOPS por GB** está diseñado para las cargas de trabajo más exigentes, como las creadas por bases de datos NoSQL y el proceso de datos para Analytics. Este nivel está disponible para almacenamiento suministrado de hasta 4 TB en [centros de datos seleccionados](new-ibm-block-and-file-storage-location-and-features.html).
 7. Pulse **Especificar tamaño de espacio para instantáneas** y seleccione el tamaño de instantánea en la lista. Este espacio se añade al espacio utilizable. Para consultar consideraciones y recomendaciones sobre el espacio de instantáneas, consulte [Realizar pedidos de instantáneas](ordering-snapshots.html).
 8. A la derecha, revise el resumen de su pedido y aplique el código promocional si tiene uno.
+
+   Los descuentos se aplican cuando se procesa el pedido.
+   {:note}
 9. Después de revisar los términos y condiciones, marque el recuadro de selección **He leído y acepto los acuerdos de servicio de terceros**.
 10. Pulse en **Crear**. La nueva asignación de almacenamiento está disponible en pocos minutos.
 
 De forma predeterminada, puede suministrar un total combinado de 250 volúmenes de {{site.data.keyword.blockstorageshort}}. Para aumentar el número de volúmenes, póngase en contacto con el representante de ventas. [Aquí](managing-storage-limits.html) puede leer más información sobre cómo aumentar los límites.<br/><br/>Para obtener información sobre el límite en autorizaciones simultáneas, consulte las [Preguntas más frecuentes](faqs.html#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-).
 {:tip}
 
-## Pedido de {{site.data.keyword.filestorage_short}} con IOPS personalizados (Rendimiento)
+## Solicitud de {{site.data.keyword.filestorage_short}} con IOPS personalizados (Rendimiento)
 
 1. Inicie sesión en el [catálogo de IBM Cloud](https://{DomainName}/catalog/){:new_window} y pulse en **Almacenamiento**. A continuación seleccione {{site.data.keyword.filestorage_short}}. Pulse en **Crear**.
 
@@ -66,6 +69,9 @@ De forma predeterminada, puede suministrar un total combinado de 250 volúmenes 
 6. Especifique las IOPS en el campo **Rendimiento (IOPS asignado)**.
 7. Pulse **Especificar tamaño de espacio para instantáneas** y seleccione el tamaño de instantánea en la lista. Este espacio se añade al espacio utilizable. Para consultar consideraciones y recomendaciones sobre el espacio de instantáneas, consulte [Realizar pedidos de instantáneas](ordering-snapshots.html).
 8. A la derecha, revise el resumen de su pedido y aplique el código promocional si tiene uno.
+
+   Los descuentos se aplican cuando se procesa el pedido.
+   {:note}
 9. Después de revisar los términos y condiciones, marque el recuadro de selección **He leído y acepto los acuerdos de servicio de terceros**.
 10. Pulse en **Crear**. La nueva asignación de almacenamiento está disponible en pocos minutos.
 

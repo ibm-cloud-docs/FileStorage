@@ -16,10 +16,10 @@ lastupdated: "2018-11-30"
 
 El método de migración recomendado es conectarse a ambos volúmenes simultáneamente y transferir datos directamente desde un LUN a otro. Los detalles dependen de su sistema operativo y de si se espera que los datos cambien durante la operación de copia.
 
-Se supone que ya tiene su LUN no cifrado conectado al host. Si no es así, siga las directrices correspondientes a su sistema operativo que mejor se ajusten a esta tarea.
+El supuesto es que ya tiene su LUN no cifrado conectado al host. Si no es así, siga las directrices correspondientes a su sistema operativo que mejor se ajusten a esta tarea.
 
 - [Montaje de {{site.data.keyword.filestorage_short}} en Linux](accessing-file-storage-linux.html)
-- [Montaje de NFS/{{site.data.keyword.filestorage_short}} en CentOS](mounting-nsf-file-storage.html)
+- [Montaje de {{site.data.keyword.filestorage_short}} en CentOS](mounting-nsf-file-storage.html)
 - [Montaje de {{site.data.keyword.filestorage_short}} en CoreOS](mounting-storage-coreos.html)
 
 Todos los volúmenes de {{site.data.keyword.filestorage_short}} mejorados suministrados en estos centros de datos tienen un punto de montaje distinto que los volúmenes no cifrados. Para asegurarse de que utiliza el punto de montaje correcto para los volúmenes de almacenamiento, puede consultar la información sobre el punto de montaje en la página **Detalles del volumen** en la consola. También puede acceder al punto de montaje correcto mediante una llamada de API: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
@@ -31,40 +31,12 @@ Todos los volúmenes de {{site.data.keyword.filestorage_short}} mejorados sumini
 Cuando realice un pedido con API, especifique el paquete "Almacenamiento como un servicio" para asegurarse de recibir las características actualizadas con el nuevo almacenamiento.
 {:important}
 
-Las siguientes instrucciones son para solicitar una compartición de archivos mejorada a través del {{site.data.keyword.BluSoftlayer_full}} o del catálogo de {{site.data.keyword.slportal}}. El nuevo volumen debe tener el mismo tamaño o mayor que el volumen original para facilitar la migración.
+Puede solicitar un LUN mejorado desde el catálogo de {{site.data.keyword.BluSoftlayer_full}} y el {{site.data.keyword.slportal}}. El nuevo volumen debe tener el mismo tamaño o mayor que la compartición de archivos original para facilitar la migración.
 
-### Realización del pedido de un volumen de almacenamiento de Resistencia
+- [Solicitud de {{site.data.keyword.filestorage_short}} con los niveles de IOPS predefinidos (Resistencia)](provisioning-file-storage.html#ordering-file-storage-with-pre-defined-iops-tiers-endurance-)
+- [Solicitud de {{site.data.keyword.filestorage_short}} con IOPS personalizados (Rendimiento)](provisioning-file-storage.html#ordering-file-storage-with-custom-iops-performance-)
 
-1. En el [{{site.data.keyword.slportal}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){:new_window}, pulse **Almacenamiento** > **{{site.data.keyword.filestorage_short}}** O desde el catálogo de {{site.data.keyword.BluSoftlayer_full}}, pulse **Infraestructura** > **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**.
-2. Pulse **Realizar pedido de {{site.data.keyword.filestorage_short}}**.
-3. Seleccione **Resistencia** en la lista **Seleccionar tipo de almacenamiento**.
-4. Pulse **Ubicación** y seleccione el centro de datos.
-
-   Asegúrese de que el nuevo almacenamiento se añade en la misma ubicación que el original.
-   {:important}
-5. Seleccione la opción de facturación. Puede elegir entre facturación mensual o por hora.
-6. Pulse **Resistencia** y seleccione el nivel de IOPS deseado.
-6. Seleccione el **Tamaño de almacenamiento utilizable** en la lista. El nuevo volumen debe tener el mismo tamaño o mayor que el volumen original.
-7. Elija el **Tamaño del espacio de instantáneas** (además del espacio utilizable) en la lista.
-8. Pulse **Continuar**. Se muestran los cargos mensuales y prorrateados, es una última oportunidad para revisar los detalles del pedido. Pulse **Anterior** si desea cambiar el pedido.
-9. Marque el recuadro de selección **He leído el Acuerdo de servicio maestro** y pulse **Realizar pedido**.
-
-### Realización del pedido de un volumen de almacenamiento de Rendimiento
-
-1. En el [{{site.data.keyword.slportal}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){:new_window}, pulse **Almacenamiento**, **{{site.data.keyword.filestorage_short}}** O desde el catálogo de {{site.data.keyword.BluSoftlayer_full}}, pulse **Infraestructura** >** Almacenamiento** > **{{site.data.keyword.filestorage_short}}**.
-2. Pulse **Realizar pedido de {{site.data.keyword.filestorage_short}}**.
-3. Seleccione **Rendimiento** en la lista **Seleccionar tipo de almacenamiento**.
-4. Pulse **Ubicación** y seleccione el centro de datos.
-
-   Asegúrese de que el nuevo almacenamiento se añade en la misma ubicación que el original.
-   {:important}
-5. Seleccione las opciones de facturación. Puede elegir entre facturación por hora o mensual.
-6. Marque el botón de selección situado junto al **Tamaño de almacenamiento** adecuado.
-6. Especifique las IOPS en el campo **Especificar IOPS**.
-7. Pulse **Continuar**. Se muestran los cargos mensuales y prorrateados, es una última oportunidad para revisar los detalles del pedido. Pulse **Anterior** si desea cambiar el pedido.
-8. Marque el recuadro de selección **He leído el Acuerdo de servicio maestro** y pulse **Realizar pedido**.
-
-El almacenamiento se suministra en menos de un minuto y está visible en la página de {{site.data.keyword.filestorage_short}} del {{site.data.keyword.slportal}}.
+Su nuevo almacenamiento está preparado para que se monte en pocos minutos. Puede verlo en la lista de recursos y en la lista de {{site.data.keyword.blockstorageshort}}.
 
 
 ## Autorización de un host para el nuevo {{site.data.keyword.filestorage_short}}
@@ -92,8 +64,10 @@ Si su centro de datos de destino no tiene cifrado, no puede establecer la répli
   - Si necesita ayuda para conectar las dos comparticiones de archivos a su host, abra una incidencia de soporte.
 
 2. Piense en el tipo de datos que tiene en el volumen de {{site.data.keyword.filestorage_short}} original y decida la mejor forma de copiarlos en la nueva compartición de archivos.
-  - Si tiene copias de seguridad, contenido estático y cosas que no se espera que cambien durante la copia, no hay ninguna preocupación importante.
-  - Si está ejecutando una base de datos o una máquina virtual en su {{site.data.keyword.filestorage_short}}, asegúrese de que los datos no se modifiquen durante la copia para evitar que resulten dañados. Si tiene problemas con el ancho de banda, realice la migración fuera de las horas punta. Si necesita ayuda con estas consideraciones, abra una incidencia de soporte.
+  - Si tiene copias de seguridad, contenido estático y cosas que no se espera que cambien durante la copia, no debe preocuparse.
+  - Si está ejecutando una base de datos o una máquina virtual en su {{site.data.keyword.filestorage_short}}, asegúrese de que los datos no se modifiquen durante la copia para evitar que resulten dañados.
+  - Si tiene problemas con el ancho de banda, realice la migración fuera de las horas punta.
+  - Si necesita ayuda con estas consideraciones, abra una incidencia de soporte.
 
 3. Copie los datos.
    - **Microsoft
