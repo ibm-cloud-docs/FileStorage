@@ -276,7 +276,7 @@ lastupdated: "2019-01-07"
 
 ## 提交订单
 
-准备好提交订单时，可以通过[控制台](provisioning-block_storage.html)或 [SLCLI](ordering-through-cli.html) 来完成此操作。有关通过 VMware 供应文件存储器的信息，请单击[此处](architecture-guide-file-storage-vmware.html)
+准备好提交订单时，可以通过[控制台](provisioning-file-storage.html)或 [SLCLI](ordering-through-cli.html) 来完成此操作。有关通过 VMware 供应文件存储器的信息，请单击[此处](architecture-guide-file-storage-vmware.html)
 
 ## 连接新存储器
 

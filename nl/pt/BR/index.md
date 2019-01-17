@@ -276,7 +276,7 @@ O NFS v3 e NFS v4.1 são suportados no ambiente do {{site.data.keyword.BluSoftla
 ## Enviando sua Ordem
 
 Quando você estiver pronto para enviar seu pedido, poderá fazer isso por meio
-do [Console](provisioning-block_storage.html) ou da [SLCLI](ordering-through-cli.html). Para ver Provisionando o File Storage com o VMware, clique [aqui](architecture-guide-file-storage-vmware.html)
+do [Console](provisioning-file-storage.html) ou da [SLCLI](ordering-through-cli.html). Para ver Provisionando o File Storage com o VMware, clique [aqui](architecture-guide-file-storage-vmware.html)
 
 ## Conectando seu novo armazenamento
 

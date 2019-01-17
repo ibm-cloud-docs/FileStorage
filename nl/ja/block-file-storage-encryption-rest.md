@@ -1,15 +1,15 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-10-31"
+  years: 2014, 2019
+lastupdated: "2019-01-07"
 
 ---
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
-# データの保護 - プロバイダー管理の保存データ暗号化機能
+# プロバイダー管理の保存データ暗号化
 
 {{site.data.keyword.BluSoftlayer_full}} はセキュリティーのニーズを真剣に受け止め、安全を維持するためにデータの暗号化機能が重要であることを理解しています。 プロバイダー管理の暗号化により、エンデュランスとパフォーマンスのどちらのオプションでも、プロビジョンした {{site.data.keyword.filestorage_full}} はデフォルトで暗号化されます。追加コストは不要でパフォーマンスへの影響もありません。
 

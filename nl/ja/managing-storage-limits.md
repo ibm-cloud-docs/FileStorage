@@ -37,7 +37,7 @@ lastupdated: "2018-11-30"
 - **Provide a 90-day forecast of expected average capacity usage of these volumes.** (それらのボリュームの 90 日間の推定平均使用量) <br />
 *例えば、「expect 25 percent to be used in 30 days, 50 percent to be used in 60 days and 75 percent to be used in 90 days"」のような回答を入力します。*
 
-要求内の質問と文のすべてに回答してください。処理や承認の際に必要になります。
+要求内の質問と文のすべてに回答してください。 処理や承認の際に必要になります。
 {:important}
 
 チケット・プロセスによって制限が更新されたことが通知されます。

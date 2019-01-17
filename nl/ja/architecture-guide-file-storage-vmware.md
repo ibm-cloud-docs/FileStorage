@@ -41,8 +41,7 @@ VMware データ・ストアへのアクセスに必要なホストの数が 8 �
 - パス・フェイルオーバー中のストレージの切断を避けるために、{{site.data.keyword.IBM}} は、適切なタイムアウト値を設定する VMware ツールをインストールすることをお勧めします。 値を変更する必要はありません。VMware ホストが接続を失わないようにするには、デフォルト設定で十分です。
 - {{site.data.keyword.BluSoftlayer_full}} 環境では NFSv3 と NFSv4.1 の両方がサポートされます。 しかし、{{site.data.keyword.IBM}} は NFSv3 を使用することを提案します。 NFSv4.1 は、ステートフル・プロトコルである (NFSv3 のようなステートレス・プロトコルではない) ため、ネットワーク・イベント中にプロトコルの問題が発生する可能性があります。 NFSv4.1 では、すべての操作を停止してからロック再利用を実行する必要があります。 それらの操作の実行中に、切断される可能性があります。
 
-詳しくは、VMware の次のホワイト・ペーパーを参照してください: [Best Practices for running VMware vSphere on Network Attached Storage ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf)
-{:new_window}
+詳しくは、VMware の次のホワイト・ペーパーを参照してください: [Best Practices for running VMware vSphere on Network Attached Storage ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){:new_window}
 {:tip}
 
 **NFS プロトコルと VMware 機能の対応表**
@@ -134,7 +133,7 @@ VMware 環境はスナップショットを認識しないことに注意して�
 
 レプリケーションを行うには、その前にスナップショット・スケジュールを作成する必要があります。
 
-フェイルオーバー時には、プライマリー・データ・センターのストレージ・ボリュームからリモート・データ・センターの宛先ボリュームにスイッチを「切り替え」ます。 例えば、プライマリー・データ・センターがロンドンにあり、セカンダリー・データ・センターがアムステルダムにあるとします。 障害が発生したら、アムステルダムにフェイルオーバーします。 フェイルオーバーするとは、アムステルダムの vSphere Cluster インスタンスにある新プライマリー・ボリュームに接続するということです。ロンドンのボリュームが修復されたら、アムステルダムのボリュームのスナップショットが作成されます。 その後、ロンドンにフォールバックしてロンドンのコンピューティング・インスタンスのボリュームをプライマリーに戻します。
+フェイルオーバー時には、プライマリー・データ・センターのストレージ・ボリュームからリモート・データ・センターの宛先ボリュームにスイッチを「切り替え」ます。 例えば、プライマリー・データ・センターがロンドンにあり、セカンダリー・データ・センターがアムステルダムにあるとします。 障害が発生したら、アムステルダムにフェイルオーバーします。 フェイルオーバーするとは、アムステルダムの vSphere Cluster インスタンスにある新プライマリー・ボリュームに接続するということです。 ロンドンのボリュームが修復されたら、アムステルダムのボリュームのスナップショットが作成されます。 その後、ロンドンにフォールバックしてロンドンのコンピューティング・インスタンスのボリュームをプライマリーに戻します。
 
 ボリュームをプライマリー・データ・センターにフェイルバックする前に、リモート・サイトでの使用を停止する必要があります。 新規または変更された情報のスナップショットが取得され、プライマリー・データ・センターに複製された後に、実動サイトの ESXi ホストに再度マウントできるようになります。
 
@@ -148,7 +147,7 @@ VMware 環境はスナップショットを認識しないことに注意して�
 
 [拡張単一サイト VMware リファレンス・アーキテクチャー ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} を使用して、VMware 環境でエンデュランスまたはパフォーマンスのオプションを指定して {{site.data.keyword.filestorage_short}} をセットアップします。
 
-{{site.data.keyword.filestorage_short}} は、[IBM Cloud カタログ ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://{DomainName}/catalog/){:new_window} または [{{site.data.keyword.slportal}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://control.softlayer.com/){:new_window} から注文できます。詳しくは、[{{site.data.keyword.filestorage_short}} の注文](provisioning-file-storage.html)を参照してください
+{{site.data.keyword.filestorage_short}} は、[IBM Cloud カタログ ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://{DomainName}/catalog/){:new_window} または [{{site.data.keyword.slportal}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://control.softlayer.com/){:new_window} から注文できます。 詳しくは、[{{site.data.keyword.filestorage_short}} の注文](provisioning-file-storage.html)を参照してください
 
 ストレージが 1 分もしないうちにプロビジョンされ、[{{site.data.keyword.slportal}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://control.softlayer.com/){:new_window} の「**{{site.data.keyword.filestorage_short}}**」ページに表示されます。
 
@@ -244,7 +243,7 @@ VMware およびジャンボ・フレームについて詳しくは、[ここ ![
    ```
    {: pre}
 
-2. ESXi 5.0 以前では、静的ルートは再始動を行うと保持されません。追加した静的ルートを保持するには、このコマンドを各ホストの `/etc/rc.local.d/` ディレクトリーにある `local.sh` ファイルに追加する必要があります。 ビジュアル・エディターを使用して `local.sh` ファイルを開き、ステップ 4.1 の第 2 のコマンドを、`exit 0` の行の前に追加します。
+2. ESXi 5.0 以前では、静的ルートは再始動を行うと保持されません。 追加した静的ルートを保持するには、このコマンドを各ホストの `/etc/rc.local.d/` ディレクトリーにある `local.sh` ファイルに追加する必要があります。 ビジュアル・エディターを使用して `local.sh` ファイルを開き、ステップ 4.1 の第 2 のコマンドを、`exit 0` の行の前に追加します。
 
 次の手順でボリュームをマウントする際に使用できるように、IP アドレスをメモします。<br/>このプロセスは、ESXi ホストにマウントする NFS ボリュームごとに実行する必要があります。<br/>詳しくは、VMware KB の記事、[Configuring static routes for VMkernel ports on an ESXi host ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://kb.vmware.com/s/article/2001426){:new_window} を参照してください。
 {:tip}
@@ -259,7 +258,7 @@ VMware およびジャンボ・フレームについて詳しくは、[ここ ![
 5. **「タイプ」**画面で**「NFS」**を選択し、**「次へ」**をクリックします。
 6. その後、NFS バージョンを選択します。 NFSv3 と NFSv4.1 の両方がサポートされていますが、NFSv3 をお勧めします。
 
-   データ・ストアにアクセスするときには、1 つの NFS バージョンだけを使用するようにしてください。複数の異なるバージョンを使用して 1 つ以上のホストを同じデータ・ストアにマウントすると、データ破損が発生する可能性があります。
+   データ・ストアにアクセスするときには、1 つの NFS バージョンだけを使用するようにしてください。 複数の異なるバージョンを使用して 1 つ以上のホストを同じデータ・ストアにマウントすると、データ破損が発生する可能性があります。
    {:important}
 
 7. **「名前と構成 (Name and configuration)」**画面で、VMware データ・ストアに付ける名前を入力します。 さらに、NFS サーバーのホスト名を入力します。 NFS サーバーの FQDN を使用すると、その基礎サーバーへの最適なトラフィック配信が行われます。 IP アドレスも有効ですが、特定の状況を除き、あまり使用されません。 フォルダー名を `/foldername` の形式で入力します。
@@ -312,7 +311,7 @@ VMware データ・ストアまたは VMDK にとって適切でない方法で 
 
 ### {{site.data.keyword.BluVirtServers_short}} のストレージ入出力制御の構成
 
-SIOC を使用して、個々の VM の個々の仮想ディスクを制限したり、異なる数の割り当てを付与したりすることもできます。 ディスクを制限し、異なる数の割り当てを付与することで、取得した {{site.data.keyword.filestorage_short}} ボリュームの IOPS 数のワークロードに環境を合わせることができます。この制限は IOPS の単位で設定します。異なるウェイトまたは「割り当て数」を設定できます。 割り当て数を「高 (High)」(割り当て数 2,000) に設定した仮想ディスクは、「標準 (Normal)」(割り当て数 1,000) に設定したディスクの 2 倍、また、「低 (Low)」(割り当て数 500) に設定したディスクの 4 倍の入出力を受け取ります。 「標準 (Normal)」がすべての VM のデフォルト値であるため、VM での必要に合わせて「高 (High)」または「低 (Low)」に値を調整する必要があります。
+SIOC を使用して、個々の VM の個々の仮想ディスクを制限したり、異なる数の割り当てを付与したりすることもできます。 ディスクを制限し、異なる数の割り当てを付与することで、取得した {{site.data.keyword.filestorage_short}} ボリュームの IOPS 数のワークロードに環境を合わせることができます。 この制限は IOPS の単位で設定します。異なるウェイトまたは「割り当て数」を設定できます。 割り当て数を「高 (High)」(割り当て数 2,000) に設定した仮想ディスクは、「標準 (Normal)」(割り当て数 1,000) に設定したディスクの 2 倍、また、「低 (Low)」(割り当て数 500) に設定したディスクの 4 倍の入出力を受け取ります。 「標準 (Normal)」がすべての VM のデフォルト値であるため、VM での必要に合わせて「高 (High)」または「低 (Low)」に値を調整する必要があります。
 
 VDisk の割り当て数と制限を変更するには、以下の手順を実行します。
 

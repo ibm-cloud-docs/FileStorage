@@ -27,7 +27,7 @@ Take advantage of the following core features of {{site.data.keyword.filestorage
    - Available for file-based NFS shares.
 - **Highly durable and resilient**
    - Protects the integrity of the data, and maintains availability through maintenance events and unplanned failures without the need to create and manage operating system-level redundant array of independent disk (RAID) arrays
-- **Data-At-Rest Encryption** [(Available in select data centers.)](new-ibm-block-and-file-storage-location-and-features.html)
+- **Data-At-Rest Encryption** [(Available in select data centers.)](new-ibm-and-file-storage-location-and-features.html)
    - Provider-managed encryption for data-at-rest is provided at no additional cost
 - **All Flash Backed Storage** [(Available in select data centers.)](new-ibm-block-and-file-storage-location-and-features.html)
    - All flash storage for volumes can be provisioned at 2 IOPS/GB or higher levels.
@@ -275,7 +275,7 @@ Both NFS v3 and NFS v4.1 are supported in the {{site.data.keyword.BluSoftlayer_f
 
 ## Submitting your Order
 
-When you're ready to submit your order, you can place it through the [Console](provisioning-block_storage.html) or the [SLCLI](ordering-through-cli.html). For Provisioning File Storage with VMware, click [here](architecture-guide-file-storage-vmware.html)
+When you're ready to submit your order, you can place it through the [Console](provisioning-file-storage.html) or the [SLCLI](ordering-through-cli.html). For Provisioning File Storage with VMware, click [here](architecture-guide-file-storage-vmware.html)
 
 ## Connecting your new storage
 

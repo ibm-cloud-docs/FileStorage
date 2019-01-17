@@ -14,7 +14,7 @@ lastupdated: "2018-12-11"
 
 # Container Linux への {{site.data.keyword.filestorage_short}} のマウント
 
-Container Linux by CoreOS は、Linux カーネルに基づく、オープン・ソースの軽量オペレーティング・システムです。これはクラスター化されたデプロイメントにインフラストラクチャーを提供するように設計されています。Container Linux は、オペレーティング・システムとして、ソフトウェア・コンテナー内にアプリケーションをデプロイするために必要な最小機能と、サービス・ディスカバリーと構成共有に関する組み込みメカニズムのみ備えています。詳しくは、[Container Linux の資料: Mounting storage ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://coreos.com/os/docs/latest/mounting-storage.html) を参照してください
+Container Linux by CoreOS は、Linux カーネルに基づく、オープン・ソースの軽量オペレーティング・システムです。 これはクラスター化されたデプロイメントにインフラストラクチャーを提供するように設計されています。 Container Linux は、オペレーティング・システムとして、ソフトウェア・コンテナー内にアプリケーションをデプロイするために必要な最小限の機能と、サービス・ディスカバリーと構成共有用の組み込みメカニズムを備えています。詳しくは、[Mounting storage ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://coreos.com/os/docs/latest/mounting-storage.html) を参照してください
 
 ## ポータブル・ストレージのマウント
 
@@ -38,7 +38,7 @@ WantedBy = multi-user.target
 {:codeblock}
 
 
-Container Linux は `systemd` を使用するので、再始動後もマウント・ポイントを存続させるには、`*.mount` ファイルを有効にする必要があります。`--now` フラグを使用すると、ただちにパーティションがマウントされ、ブート時に開始するように設定されます。
+この OS は `systemd` を使用するので、再始動後もマウント・ポイントを存続させるには、`*.mount` ファイルを有効にする必要があります。`--now` フラグを使用すると、ただちにパーティションがマウントされ、ブート時に開始するように設定されます。
 
 ```
 systemctl enable --now mnt-www.mount

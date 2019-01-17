@@ -275,7 +275,7 @@ NFS Version 3 und NFS Version 4.1 werden in der Umgebung von {{site.data.keyword
 
 ## Bestellung abschicken
 
-Wenn Sie bereit sind, die Bestellung aufzugeben, können Sie dies über die [Konsole](provisioning-block_storage.html) oder die [SLCLI](ordering-through-cli.html) tun. Zur Bereitstellung von File Storage mit VMware klicken Sie [hier](architecture-guide-file-storage-vmware.html).
+Wenn Sie bereit sind, die Bestellung aufzugeben, können Sie dies über die [Konsole](provisioning-file-storage.html) oder die [SLCLI](ordering-through-cli.html) tun. Zur Bereitstellung von File Storage mit VMware klicken Sie [hier](architecture-guide-file-storage-vmware.html).
 
 ## Verbindung zum neuen Speicher herstellen
 

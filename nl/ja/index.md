@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-01-07"
 
 ---
 {:new_window: target="_blank"}
@@ -275,7 +275,7 @@ lastupdated: "2018-11-30"
 
 ## 注文の送信
 
-注文を送信する準備ができたら、[ここ](provisioning-file-storage.html)に記載されている手順に従ってください。 VMware を使用したプロビジョニング・ファイル・ストレージの場合は、[ここ](architecture-guide-file-storage-vmware.html)をクリックします
+注文を送信する準備ができたら、[コンソール](provisioning-file-storage.html)または [SLCLI](ordering-through-cli.html) を使用して注文することができます。VMware を使用したプロビジョニング・ファイル・ストレージの場合は、[ここ](architecture-guide-file-storage-vmware.html)をクリックします
 
 ## 新しいストレージの接続
 

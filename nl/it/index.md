@@ -275,7 +275,7 @@ Nell'ambiente {{site.data.keyword.BluSoftlayer_full}} sono supportati sia NFS v3
 
 ## Inoltro del tuo ordine
 
-Quando sei pronto a inviare il tuo ordine, puoi effettuarlo tramite la [Console](provisioning-block_storage.html) o la [SLCLI](ordering-through-cli.html). Per il File Storage Provisioning con VMware, fai clic [qui](architecture-guide-file-storage-vmware.html)
+Quando sei pronto a inviare il tuo ordine, puoi effettuarlo tramite la [Console](provisioning-file-storage.html) o la [SLCLI](ordering-through-cli.html). Per il File Storage Provisioning con VMware, fai clic [qui](architecture-guide-file-storage-vmware.html)
 
 ## Connessione della tua nuova archiviazione
 

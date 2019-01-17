@@ -276,7 +276,7 @@ lastupdated: "2019-01-07"
 
 ## 提交訂單
 
-當您準備好提交訂單時，可以透過[主控台](provisioning-block_storage.html)或 [SLCLI](ordering-through-cli.html) 下訂單。若要使用 VMware 佈建檔案儲存空間，請按一下[這裡](architecture-guide-file-storage-vmware.html)
+當您準備好提交訂單時，可以透過[主控台](provisioning-file-storage.html)或 [SLCLI](ordering-through-cli.html) 下訂單。若要使用 VMware 佈建檔案儲存空間，請按一下[這裡](architecture-guide-file-storage-vmware.html)
 
 ## 連接新的儲存空間
 
