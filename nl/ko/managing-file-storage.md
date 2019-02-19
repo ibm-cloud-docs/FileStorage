@@ -1,17 +1,19 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 
 # {{site.data.keyword.filestorage_short}} 관리
+{: #managingstorage}
 
 {{site.data.keyword.slportal}}을 통해 {{site.data.keyword.filestorage_full}} 볼륨을 관리할 수 있습니다.
 
@@ -26,13 +28,41 @@ lastupdated: "2018-11-30"
 2. 페이지의 **권한 부여된 호스트** 섹션으로 화면을 이동하십시오.
 3. 오른쪽에 있는 **호스트 권한 부여**를 클릭하십시오. 해당 특정 볼륨에 액세스할 수 있는 호스트를 선택하십시오.
 
+또는 SL CLI에서 다음 명령을 사용할 수 있습니다.
+```
+# slcli file access-authorize --help
+Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
+
+Options:
+  -h, --hardware-id TEXT    The id of one SoftLayer_Hardware to authorize
+  -v, --virtual-id TEXT     The id of one SoftLayer_Virtual_Guest to authorize
+  -i, --ip-address-id TEXT  The id of one SoftLayer_Network_Subnet_IpAddress
+                            to authorize
+  --ip-address TEXT         An IP address to authorize
+  -s, --subnet-id TEXT      The id of one SoftLayer_Network_Subnet to
+                            authorize
+  --help                    Show this message and exit.
+```
 
 ## {{site.data.keyword.filestorage_short}} 볼륨에 액세스할 수 있도록 권한 부여된 호스트의 목록 보기
 
 1. **스토리지 > {{site.data.keyword.filestorage_short}}**를 클릭하고 **볼륨 이름**을 클릭하십시오.
 2. 페이지 아래 부분에 있는 **권한 부여된 호스트** 섹션으로 스크롤하십시오.
 
-여기서는 현재 볼륨에 액세스할 수 있도록 권한 부여된 호스트의 목록을 볼 수 있습니다.
+현재 볼륨에 액세스할 수 있는 권한 부여된 호스트의 목록을 볼 수 있습니다.
+
+또는 SL CLI에서 다음 명령을 사용할 수 있습니다.
+```
+# slcli file access-list --help
+Usage: slcli file access-list [OPTIONS] VOLUME_ID
+
+Options:
+ --sortby TEXT   Column to sort by
+ --columns TEXT  Columns to display. Options: id, name, type,
+                 private_ip_address, source_subnet, host_iqn, username,
+                 password, allowed_host_id
+ -h, --help      Show this message and exit.
+```
 
 
 ## 호스트가 권한 부여된 {{site.data.keyword.filestorage_short}} 볼륨 보기
@@ -48,7 +78,7 @@ lastupdated: "2018-11-30"
 
 ## {{site.data.keyword.filestorage_short}} 마운트 및 마운트 해제
 
-**볼륨 세부사항** 보기에 제공된 마운트 지점 정보를 사용하여 호스트에서 {{site.data.keyword.filestorage_short}}를 마운트할 수 있습니다. [Linux에서 {{site.data.keyword.filestorage_short}} 액세스](accessing-file-storage-linux.html)를 참조하십시오.
+**볼륨 세부사항** 보기에 제공된 마운트 지점 정보를 사용하여 호스트에서 {{site.data.keyword.filestorage_short}}를 마운트할 수 있습니다. [Linux에서 {{site.data.keyword.filestorage_short}} 액세스](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)를 참조하십시오.
 
 
 ## {{site.data.keyword.filestorage_short}}에 대한 호스트의 액세스 권한 취소
@@ -82,6 +112,24 @@ lastupdated: "2018-11-30"
 특정 볼륨에서 여러 호스트의 연결을 끊으려면 각 호스트에 대해 액세스 취소 조치를 반복 수행해야 합니다.
 {:tip}
 
+### SL CLI를 통해 액세스 권한 취소
+또는 SL CLI에서 다음 명령을 사용할 수 있습니다.
+```
+# slcli file access-revoke --help
+Usage: slcli file access-revoke [OPTIONS] VOLUME_ID
+
+Options:
+  -h, --hardware-id TEXT    The id of one SoftLayer_Hardware to revoke
+                            authorization
+  -v, --virtual-id TEXT     The id of one SoftLayer_Virtual_Guest to revoke
+                            authorization
+  -i, --ip-address-id TEXT  The id of one SoftLayer_Network_Subnet_IpAddress
+                            to revoke authorization
+  --ip-address TEXT         An IP address to revoke authorization
+  -s, --subnet-id TEXT      The id of one SoftLayer_Network_Subnet to revoke
+                            authorization
+  --help                    Show this message and exit.
+```
 
 ## 스토리지 볼륨 취소
 
@@ -95,3 +143,15 @@ lastupdated: "2018-11-30"
    {:tip}
 4. **계속** 또는 **닫기**를 클릭하십시오.
 5. 수신확인 선택란을 클릭하고 **확인**을 클릭하십시오.
+
+또는 SL CLI에서 다음 명령을 사용할 수 있습니다.
+```
+# slcli file volume-cancel --help
+Usage: slcli file volume-cancel [OPTIONS] VOLUME_ID
+
+Options:
+  --reason TEXT  An optional reason for cancellation
+  --immediate    Cancels the file storage volume immediately instead of on the
+                 billing anniversary
+  -h, --help     Show this message and exit.
+```

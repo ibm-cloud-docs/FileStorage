@@ -1,19 +1,21 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 
 # Managing Snapshots
+{: #managingSnapshots}
 
-## Creating a Snapshot Schedule?
+## Creating a Snapshot Schedule
 
 You decide how often and when you want to create a point-in-time reference of your storage volume with Snapshot schedules. You can have a maximum of 50 snapshots per storage volume. Schedules are managed through the **Storage** > **{{site.data.keyword.filestorage_short}}** tab of the [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
 
@@ -21,6 +23,7 @@ Before you can set up your initial schedule, you must first purchase snapshot sp
 {:important}
 
 ### Adding a Snapshot schedule
+{: #addschedule}
 
 Snapshots schedules can be set up for hourly, daily, and weekly intervals, each with a distinct retention cycle. The maximum limit of snapshots is 50  per storage volume, which can be a mix of hourly, daily, and weekly schedules, and manual snapshots.
 
@@ -39,6 +42,17 @@ Snapshots schedules can be set up for hourly, daily, and weekly intervals, each 
 
 The list of the snapshots is displayed as they're taken in the **Snapshots** section of the **Detail** page.
 
+You can also see the list of your snapshot schedules through the SLCLI with the following command.
+```
+# slcli file snapshot-schedule-list --help
+Usage: slcli file snapshot-schedule-list [OPTIONS] VOLUME_ID
+
+  Lists snapshot schedules for a given volume
+
+Options:
+  -h, --help  Show this message and exit.
+```
+
 ## Taking a manual Snapshot
 
 Manual snapshots can be taken at various points during an application upgrade or maintenance. You can also take snapshots across multiple servers that were temporarily deactivated at the application level.
@@ -50,9 +64,30 @@ The maximum limit of manual snapshots per storage volume is 50.
 3. Click **Take Manual Snapshot**.
 The snapshot is taken and displayed in the **Snapshots** section of the **Detail** page. Its schedule appears Manual.
 
+Alternatively, you can use the following command to create a snapshot through the SLCLI.
+```
+# slcli file snapshot-create --help
+Usage: slcli file snapshot-create [OPTIONS] VOLUME_ID
+
+Options:
+  -n, --notes TEXT  Notes to set on the new snapshot
+  -h, --help        Show this message and exit.
+```
+
 ## Listing all Snapshots with Space Used Information and Management functions
 
 A list of retained snapshots and space that is used can be seen on the **Detail** page (**Storage**, **{{site.data.keyword.filestorage_short}}**). Management functions (editing schedules and adding more space) are conducted on the Detail page by using the **Actions** menu or links in the various sections on the page.
+
+Alternatively, you can accomplish this task through the SL CLI.
+```
+# slcli file snapshot-list --help
+Usage: slcli file snapshot-list [OPTIONS] VOLUME_ID
+
+Options:
+  --sortby TEXT   Column to sort by
+  --columns TEXT  Columns to display. Options: id, name, created, size_bytes
+  -h, --help      Show this message and exit.
+```
 
 ## Viewing the list of retained Snapshots
 
@@ -92,7 +127,7 @@ Snapshot schedules can be canceled through **Storage** > **{{site.data.keyword.f
 1. Click the schedule to be deleted in the **Snapshot Schedules** frame on the **Details** page.
 2. Click the check box next to the schedule to be deleted and click **Save**.<br />
 
-If you're using the replication feature, be sure that the schedule you're deleting isn't the schedule that is used by replication. For more information about deleting a replication schedule, see [here](replication.html).
+If you're using the replication feature, be sure that the schedule you're deleting isn't the schedule that is used by replication. For more information about deleting a replication schedule, see [here](/docs/infrastructure/FileStorage?topic=FileStorage-replication).
 {:important}
 
 ## Deleting a snapshot
@@ -102,14 +137,24 @@ Snapshots that are no longer needed can be manually removed to free up space for
 1. Click your storage volume and scroll to the **Snapshot** section to see the list of existing snapshots.
 2. Click **Actions** next to a particular snapshot and click **Delete** to delete the snapshot. This deletion doesn't affect any future or past snapshots on the same schedule as there's no dependency between snapshots.
 
+Alternatively, you can delete a snapshot through the SL CLI.
+```
+# slcli file snapshot-delete --help
+Usage: slcli file snapshot-delete [OPTIONS] SNAPSHOT_ID
+
+Options:
+  -h, --help  Show this message and exit.
+```
+
 Manual snapshots that aren't deleted in the portal manually, are automatically deleted when you reach space limitations (oldest first).
+{:note}
 
 ## Restoring storage volume to a specific point-in-time by using a snapshot
 
 You might need to take your storage volume back to a specific point-in-time because of user-error or data corruption.
 
 1. Unmount and detach your storage volume from the host.
-   - Click [here](accessing-file-storage-linux.html) for instructions.
+   - Click [here](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux) for instructions.
 2. Click **Storage**, **{{site.data.keyword.filestorage_short}}** in the [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
 3. Scroll down and click your volume to be restored. The **Snapshots** section of the **Detail** page displays the list of all saved snapshots along with their size and creation date.
 4. Click **Actions** next to the snapshot to be used and click **Restore**. <br/>
@@ -121,7 +166,18 @@ You might need to take your storage volume back to a specific point-in-time beca
    Expect a message across the page that states that the volume is being restored by using the selected snapshot. Additionally, an icon appears next to your volume on the {{site.data.keyword.filestorage_short}} that indicates that an active transaction is in progress. Hovering over the icon produces a window that shows the transaction. The icon disappears when the transaction is complete.
    {:note}
 6. Mount and reattach your storage volume to the host.
-  - Click [here](accessing-file-storage-linux.html) for instructions.
+  - Click [here](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux) for instructions.
+
+Alternatively, you can restore the volume with a snapshot through the SLCLI.
+```
+# slcli file snapshot-restore --help
+Usage: slcli file snapshot-restore [OPTIONS] VOLUME_ID
+
+Options:
+  -s, --snapshot-id TEXT  The id of the snapshot which will be used to restore
+                          the block volume
+  -h, --help              Show this message and exit.
+```  
 
 Restoring a volume results in deleting all snapshots that were taken after the snapshot that was used for the restore.
 {:important}

@@ -1,11 +1,12 @@
 ﻿---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-12-10"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
@@ -13,6 +14,7 @@ lastupdated: "2018-12-10"
 {:DomainName: data-hd-keyref="DomainName"}
 
 # Reprise après incident - Basculement avec un volume principal accessible
+{: #dr-accessible}
 
 En cas de défaillance catastrophique ou d'un incident entraînant une indisponibilité sur le site principal avec le stockage principal toujours accessible, les clients peuvent effectuer les actions suivantes pour accéder rapidement à leurs données sur le site secondaire.
 
@@ -23,6 +25,7 @@ Les hôtes et les volumes autorisés doivent figurer dans le même centre de don
 
 1. Connectez-vous à la [console {{site.data.keyword.cloud}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://
 {DomainName}/catalog/){:new_window} et cliquez sur l'icône **Menu** dans l'angle supérieur gauche. Sélectionnez **Infrastructure classique**.
+
 
    Vous pouvez également vous connecter au portail [{{site.data.keyword.slportal}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://control.softlayer.com/){:new_window}.
 1. Cliquez sur votre volume source ou cible à partir de la page **{{site.data.keyword.filestorage_short}}**.
@@ -44,11 +47,11 @@ Avant d'exécuter ces étapes, déconnectez le volume. Si vous omettez cette ét
 2. Dans l'angle supérieur droit, cliquez sur **Réplique**, puis sur **Actions**.
 3. Sélectionnez **Basculement**.
 
-   Un message doit s'afficher pour vous indiquer que le basculement est en cours. En outre, une icône apparaît en regard de votre volume sur **{{site.data.keyword.filestorage_short}}** pour indiquer qu'une transaction active est en cours. Survolez cette icône pour ouvrir une boîte de dialogue affichant la transaction. L'icône disparaît une fois la transaction terminée. Durant le processus de basculement, les actions liées à la configuration sont accessibles en lecture seule. Vous ne pouvez pas éditer de planning d'instantané, ni modifier l'espace d'image instantanée. L'événement est consigné dans l'historique des réplications.<br/> Lorsque le volume cible est opérationnel, vous obtenez un autre message. Le nom LUN de votre volume source d'origine est mis à jour afin de se terminer par "REP" et il devient inactif.
+   Un message doit s'afficher pour vous indiquer que le basculement est en cours. En outre, une icône apparaît en regard de votre volume sur **{{site.data.keyword.filestorage_short}}** pour indiquer qu'une transaction active est en cours. Survolez cette icône pour ouvrir une boîte de dialogue affichant la transaction. L'icône disparaît une fois la transaction terminée. Durant le processus de basculement, les actions liées à la configuration sont accessibles en lecture seule. Vous ne pouvez pas éditer de planning d'instantané, ni modifier l'espace d'instantané. L'événement est consigné dans l'historique des réplications.<br/> Lorsque le volume cible est opérationnel, vous obtenez un autre message. Le nom LUN de votre volume source d'origine est mis à jour afin de se terminer par "REP" et il devient inactif.
    {:note}
 4. Cliquez sur **Tout afficher ({{site.data.keyword.filestorage_short}})**.
 5. Cliquez sur votre volume actif (anciennement votre volume cible). Ce volume a désormais le statut **Actif**.
-6. Montez votre volume de stockage sur l'hôte et associez-les. Cliquez [ici](provisioning-file-storage.html) pour obtenir des instructions.
+6. Montez votre volume de stockage sur l'hôte et associez-les. Cliquez [ici](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole) pour obtenir des instructions.
 
 
 ## Démarrage d'une reprise par restauration depuis un volume vers sa réplique
@@ -69,8 +72,8 @@ Les reprises par restauration sont lancées sous **Stockage**, **{{site.data.key
 2. Dans l'angle supérieur droit, cliquez sur **Réplique**, puis sur **Actions**.
 3. Sélectionnez **Reprise par restauration**.
 
-   Un message doit s'afficher pour vous indiquer que la reprise par restauration est en cours. En outre, une icône apparaît en regard de votre volume sur **{{site.data.keyword.filestorage_short}}** pour indiquer qu'une transaction active est en cours. Survolez cette icône pour ouvrir une boîte de dialogue affichant la transaction. L'icône disparaît une fois la transaction terminée. Durant le processus de reprise par restauration, les actions liées à la configuration sont accessibles en lecture seule. Vous ne pouvez pas éditer de planning d'instantané, ni modifier l'espace d'image instantanée. L'événement est consigné dans l'historique des réplications.
+   Un message doit s'afficher pour vous indiquer que la reprise par restauration est en cours. En outre, une icône apparaît en regard de votre volume sur **{{site.data.keyword.filestorage_short}}** pour indiquer qu'une transaction active est en cours. Survolez cette icône pour ouvrir une boîte de dialogue affichant la transaction. L'icône disparaît une fois la transaction terminée. Durant le processus de reprise par restauration, les actions liées à la configuration sont accessibles en lecture seule. Vous ne pouvez pas éditer de planning d'instantané, ni modifier l'espace d'instantané. L'événement est consigné dans l'historique des réplications.
    {:note}
 4. Dans l'angle supérieur droit, cliquez sur le lien **Afficher tout {{site.data.keyword.filestorage_short}}**.
 5. Cliquez sur votre volume actif ("source").
-6. Montez votre volume de stockage sur l'hôte et associez-les. Cliquez [ici](provisioning-file-storage.html) pour obtenir des instructions.
+6. Montez votre volume de stockage sur l'hôte et associez-les. Cliquez [ici](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole) pour obtenir des instructions.

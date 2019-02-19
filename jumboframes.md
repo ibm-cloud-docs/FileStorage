@@ -1,12 +1,12 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-12-11"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
-{:pre: .pre}
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
@@ -15,6 +15,7 @@ lastupdated: "2018-12-11"
 
 
 # Enabling Jumbo Frames in {{site.data.keyword.BluSoftlayer_notm}} for Windows and Linux
+{: #jumboframes}
 
 A jumbo frame is an Ethernet frame with a payload greater than the standard maximum transmission unit (MTU) of 1,500 bytes. Jumbo frames are used on local area networks that support at least 1 Gbps and can be as large as 9,000 bytes.
 

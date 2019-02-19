@@ -1,22 +1,23 @@
 ---
 
 copyright:
-  years: 2015, 2019
-lastupdated: "2019-01-08"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
-
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 
 # 데이터 복제
+{: #replication}
 
 복제는 스냅샷 스케줄 중 하나를 사용하여 스냅샷을 원격 데이터 센터의 대상 볼륨으로 자동으로 복사합니다. 중대한 문제가 발생하거나 데이터가 손상되는 경우에는 원격 사이트로부터 사본을 복구할 수 있습니다.
 
-복제는 서로 다른 두 위치에 동기화된 데이터를 보관합니다. 볼륨을 복제한 후에 이를 원래 볼륨과 독립적으로 사용하려면 [중복 파일 볼륨 작성](how-to-create-duplicate-volume.html)을 참조하십시오.
+복제는 서로 다른 두 위치에 동기화된 데이터를 보관합니다. 볼륨을 복제한 후에 이를 원래 볼륨과 독립적으로 사용하려면 [중복 파일 볼륨 작성](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume)을 참조하십시오.
 {:tip}
 
 복제하려면 우선 스냅샷 스케줄을 작성해야 합니다.
@@ -112,13 +113,14 @@ MEL01<br />
 2. **복제본**을 클릭하고 **복제 구매**를 클릭하십시오.
 3. 복제가 따르도록 할 기존 스냅샷 스케줄을 선택하십시오. 목록에는 모든 활성 스냅샷 스케줄이 있습니다. <br />
 
-   시간별, 일별, 주별이 혼합되어 있어도 스케줄은 하나만 선택할 수 있습니다. 이전 복제 주기 이후 캡처된 모든 스냅샷은 이를 발생시킨 스케줄에 관계없이 복제됩니다.<br />설정된 스냅샷이 없는 경우에는 복제를 주문하기 전에 이를 설정하라는 프롬프트가 표시됩니다. 자세한 정보는 [스냅샷 관련 작업](snapshots.html)을 참조하십시오.
+   시간별, 일별, 주별이 혼합되어 있어도 스케줄은 하나만 선택할 수 있습니다. 이전 복제 주기 이후 캡처된 모든 스냅샷은 이를 발생시킨 스케줄에 관계없이 복제됩니다.<br />설정된 스냅샷이 없는 경우에는 복제를 주문하기 전에 이를 설정하라는 프롬프트가 표시됩니다. 자세한 정보는 [스냅샷 관련 작업](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots)을 참조하십시오.
    {:tip}
 3. **위치**를 클릭하고 DR 사이트인 데이터 센터를 선택하십시오.
 4. **계속**을 클릭하십시오.
 5. **프로모션 코드**를 입력하고(있는 경우) **재계산**을 클릭하십시오. 창에 있는 다른 필드는 기본적으로 완료되어 있습니다.
 
-   주문을 처리할 때 할인이 적용됩니다. {:note}
+   주문을 처리할 때 할인이 적용됩니다.
+   {:note}
 6. **마스터 서비스 계약을 읽었습니다…** 선택란을 클릭하고 **주문하기**를 클릭하십시오.
 
 
@@ -154,7 +156,7 @@ MEL01<br />
 
 볼륨 크기는 기본 스토리지 볼륨과 복제본 스토리지 볼륨 간에 동일해야 합니다. 한 쪽이 다른 쪽보다 커서는 안 됩니다. 기본 볼륨의 스냅샷 영역을 늘리면 복제본 영역이 자동으로 늘어납니다. 스냅샷 영역을 늘리면 즉각적 복제 업데이트가 트리거됩니다. 두 볼륨의 증가는 청구서에 품목명으로 표시되며 필요에 따라 비례 배분됩니다.
 
-스냅샷 영역 늘리기에 대한 자세한 정보는 [스냅샷](snapshots.html)을 참조하십시오.
+스냅샷 영역 늘리기에 대한 자세한 정보는 [스냅샷](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots)을 참조하십시오.
 ## 볼륨 목록에서 복제본 볼륨 보기
 
 **스토리지** > **{{site.data.keyword.filestorage_short}}**에 있는 {{site.data.keyword.filestorage_short}} 페이지에서 복제 볼륨을 볼 수 있습니다. 이러한 볼륨의 이름에서는 기본 볼륨 이름이 있고 그 뒤에 REP가 있습니다. **유형**은 Endurance 또는 Performance - 복제본입니다. 복제본 볼륨이 복제본 데이터 센터에 마운트되지 않았으며 **상태**가 비활성이므로 **대상 주소**는 해당사항 없음입니다.
@@ -184,14 +186,14 @@ MEL01<br />
 
 복제 볼륨은 스토리지가 프로비저닝되는 순간 읽기/쓰기를 위해 호스트에 의해 액세스될 수 있습니다. 그러나 스냅샷 및 복제는 원본에서 복제본으로 데이터 복사가 완료될 때까지 허용되지 않습니다.
 
-자세한 정보는 [복제 파일 볼륨 작성](how-to-create-duplicate-volume.html)을 참조하십시오.
+자세한 정보는 [복제 파일 볼륨 작성](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume)을 참조하십시오.
 
 ## 재해 발생 시 복제본을 사용하여 장애 복구
 
 장애 복구 시에 기본 데이터 센터의 스토리지 볼륨에서 원격 데이터 센터의 대상 볼륨으로 "스위치를 전환"합니다. 예를 들어, 기본 데이터 센터는 런던이고 보조 데이터 센터는 암스테르담입니다. 장애가 발생하면 암스테르담으로의 장애 복구가 실행되어 암스테르담의 컴퓨팅 인스턴스에서 현재 기본 볼륨으로 연결됩니다. 런던의 볼륨이 복구된 후에 암스테르담 볼륨의 스냅샷을 가져와 런던으로 장애 복구하고 런던의 컴퓨팅 인스턴스의 기본 볼륨으로 다시 연결합니다.
 
-* 1차 위치에서 문제점이 발생하지만 스토리지와 호스트는 여전히 온라인이면 [액세스 가능한 1차 볼륨으로 장애 복구](dr-accessible-primary.html)를 참조하십시오.
-* 1차 위치가 작동 중지된 경우 [액세스할 수 없는 1차 볼륨으로 장애 복구](disaster-recovery.html)를 참조하십시오.
+* 1차 위치에서 문제점이 발생하지만 스토리지와 호스트는 여전히 온라인이면 [액세스 가능한 1차 볼륨으로 장애 복구](/docs/infrastructure/FileStorage?topic=FileStorage-dr-accessible)를 참조하십시오.
+* 1차 위치가 작동 중지된 경우 [액세스할 수 없는 1차 볼륨으로 장애 복구](/docs/infrastructure/FileStorage?topic=FileStorage-dr-inaccessible)를 참조하십시오.
 
 ## 기존 복제 취소
 
@@ -212,3 +214,68 @@ MEL01<br />
  2. **조치**를 클릭하고 **{{site.data.keyword.filestorage_short}} 취소**를 선택하십시오.
  3. 볼륨 취소 시점을 선택하십시오. **즉시** 또는 **주기 날짜**를 선택하고 **계속**을 클릭하십시오.
  4. **취소로 인해 데이터가 유실될 수 있음을 인지함**을 클릭하고 **취소**를 클릭하십시오.
+
+## SLCLI의 복제 관련 명령
+{: #clicommands}
+
+* 특정 볼륨에 적합한 복제 데이터 센터를 나열합니다.
+  ```
+  # slcli file replica-locations --help
+  Usage: slcli file replica-locations [OPTIONS] VOLUME_ID
+
+  Options:
+  --sortby TEXT   Column to sort by
+  --columns TEXT  Columns to display. Options: ID, Long Name, Short Name
+  -h, --help      Show this message and exit.
+  ```
+
+* 파일 스토리지 복제본 볼륨을 주문합니다.
+  ```
+  # slcli file replica-order --help
+  Usage: slcli file replica-order [OPTIONS] VOLUME_ID
+
+  Options:
+  -s, --snapshot-schedule [INTERVAL|HOURLY|DAILY|WEEKLY]
+                                  Snapshot schedule to use for replication,
+                                  (INTERVAL | HOURLY | DAILY | WEEKLY)
+                                  [required]
+  -l, --location TEXT             Short name of the data center for the
+                                  replicant (e.g.: dal09)  [required]
+  --tier [0.25|2|4|10]            Endurance Storage Tier (IOPS per GB) of the
+                                  primary volume for which a replicant is
+                                  ordered [optional]
+  -h, --help                      Show this message and exit.
+  ```
+
+* 파일 볼륨에 대한 기존의 복제 볼륨을 나열합니다.
+  ```
+  # slcli file replica-partners --help
+  Usage: slcli file replica-partners [OPTIONS] VOLUME_ID
+
+  Options:
+  --sortby TEXT   Column to sort by
+  --columns TEXT  Columns to display. Options: ID, Username, Account ID,
+                  Capacity (GB), Hardware ID, Guest ID, Host ID
+  -h, --help      Show this message and exit.
+  ```
+
+* 특정 복제 볼륨에 파일 볼륨의 장애 조치를 수행합니다.
+  ```
+  # slcli file replica-failover --help
+  Usage: slcli file replica-failover [OPTIONS] VOLUME_ID
+
+  Options:
+  --replicant-id TEXT  ID of the replicant volume
+  --immediate          Failover to replicant immediately.
+  -h, --help           Show this message and exit.
+  ```
+
+* 특정 복제 볼륨에서 파일 볼륨의 장애 조치를 수행합니다.
+  ```
+  # slcli file replica-failback --help
+  Usage: slcli file replica-failback [OPTIONS] VOLUME_ID
+
+  Options:
+  --replicant-id TEXT  ID of the replicant volume
+  -h, --help           Show this message and exit.
+  ```

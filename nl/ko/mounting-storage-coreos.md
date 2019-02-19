@@ -1,18 +1,20 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-12-11"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
+{:codeblock: .codeblock}
+
 
 # Container Linux에 {{site.data.keyword.filestorage_short}} 마운트
+{: #mountingCoreOS}
 
 Container Linux by CoreOS는 Linux 커널을 기반으로 하는 오픈 소스, 경량 운영 체제입니다. 인프라를 클러스터된 배치에 제공하는 데 사용하도록 디자인되었습니다. Container Linux는 운영 체제로서, 서비스 발견 및 구성 공유를 위한 기본 제공 메커니즘과 함께 소프트웨어 컨테이너 내부에 애플리케이션을 배치하는 데 필요한 최소한의 기능을 제공합니다. 자세한 정보는 [스토리지 마운트 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://coreos.com/os/docs/latest/mounting-storage.html)를 참조하십시오.
 

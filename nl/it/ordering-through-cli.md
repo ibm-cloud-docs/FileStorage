@@ -2,19 +2,21 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-01-07"
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 # Ordinazione di {{site.data.keyword.filestorage_short}} tramite la CLI SL
+{: #orderingSLCLI}
 
 Puoi utilizzare la CLI SL per effettuare degli ordini per prodotti che vengono normalmente ordinati tramite il [{{site.data.keyword.slportal}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://control.softlayer.com/){:new_window}. Nell'API SL, un ordine può essere costituito da più contenitori di ordine. La CLI degli ordini funziona solo con un singolo contenitore di ordine.
 
-Per ulteriori informazioni su come installare e utilizzare la CLI SL, vedi [Python API Client](https://softlayer-python.readthedocs.io/en/latest/cli.html){:new_window}.
+Per ulteriori informazioni su come installare e utilizzare la CLI SL, vedi [Python API Client ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://softlayer-python.readthedocs.io/en/latest/cli.html){:new_window}.
 {:tip}
 
 ## Ricerca di offerte di {{site.data.keyword.filestorage_short}} disponibili
@@ -83,7 +85,7 @@ Options:
   -h, --help                      Show this message and exit.
 ```
 
-Per ulteriori informazioni sull'ordinazione di {{site.data.keyword.filestorage_short}} tramite l'API, vedi [order_file_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/file.html#SoftLayer.managers.file.FileStorageManager.order_file_volume){:new_window}.
+Per ulteriori informazioni sull'ordinazione di {{site.data.keyword.filestorage_short}} tramite l'API, vedi [order_file_volume ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://softlayer-python.readthedocs.io/en/latest/api/managers/file.html#SoftLayer.managers.file.FileStorageManager.order_file_volume){:new_window}.
 Per poter accedere a tutte le nuove funzioni, ordina `Storage-as-a-Service Package 759`.
 {:tip}
 
@@ -101,7 +103,7 @@ Order #32076317 placed successfully!
 > 100 IOPS
 ```
 
-Per impostazione predefinita, puoi eseguire il provisioning di un totale combinato di 250 volumi {{site.data.keyword.blockstorageshort}} e {{site.data.keyword.filestorage_short}}. Per aumentare il numero dei tuoi volumi, contatta il tuo rappresentante di vendita. Per ulteriori informazioni sull'aumento dei limiti, vedi [Gestione dei limiti di archiviazione](managing-storage-limits.html).
+Per impostazione predefinita, puoi eseguire il provisioning di un totale combinato di 250 volumi {{site.data.keyword.blockstorageshort}} e {{site.data.keyword.filestorage_short}}. Per aumentare il numero dei tuoi volumi, contatta il tuo rappresentante di vendita. Per ulteriori informazioni sull'aumento dei limiti, vedi [Gestione dei limiti di archiviazione](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits).
 {:important}
 
 ## Autorizzazione degli host ad accedere alla nuova archiviazione
@@ -123,18 +125,18 @@ Options:
   --help                    Show this message and exit.
 ```
 
-Per ulteriori informazioni sull'autorizzazione degli host ad accedere al {{site.data.keyword.filestorage_short}} tramite l'API, vedi [authorize_host_to_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/file.html#SoftLayer.managers.file.FileStorageManager.authorize_host_to_volume){:new_window}.
+Per ulteriori informazioni sull'autorizzazione degli host ad accedere al {{site.data.keyword.filestorage_short}} tramite l'API, vedi [authorize_host_to_volume ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://softlayer-python.readthedocs.io/en/latest/api/managers/file.html#SoftLayer.managers.file.FileStorageManager.authorize_host_to_volume){:new_window}.
 {:tip}
 
-Per ulteriori informazioni sul limite di autorizzazioni simultanee, consulta le [FAQ](faqs.html).
+Per ulteriori informazioni sul limite di autorizzazioni simultanee, consulta le [FAQ](/docs/infrastructure/FileStorage?topic=FileStorage-faqs).
 {:important}
 
 ## Connessione della tua nuova archiviazione
 
 A seconda del sistema operativo del tuo host, segui il link appropriato.
-- [Montaggio di {{site.data.keyword.filestorage_short}} su Linux](accessing-file-storage-linux.html)
-- [Montaggio di {{site.data.keyword.filestorage_short}} in CentOS](mounting-nsf-file-storage.html)
-- [Montaggio di {{site.data.keyword.filestorage_short}} su Container Linux](mounting-storage-coreos.html)
-- [Configurazione di {{site.data.keyword.filestorage_short}} per il backup con cPanel](configure-backup-cpanel.html)
-- [Configurazione di {{site.data.keyword.filestorage_short}} per il backup con Plesk](configure-backup-plesk.html)
-- [Montaggio del volume {{site.data.keyword.filestorage_short}} sugli host ESXi](architecture-guide-file-storage-vmware.html)
+- [Montaggio di {{site.data.keyword.filestorage_short}} su Linux](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)
+- [Montaggio di {{site.data.keyword.filestorage_short}} in CentOS](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)
+- [Montaggio di {{site.data.keyword.filestorage_short}} su Container Linux](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCoreOS)
+- [Configurazione di {{site.data.keyword.filestorage_short}} per il backup con cPanel](/docs/infrastructure/FileStorage?topic=FileStorage-cPanelBackups)
+- [Configurazione di {{site.data.keyword.filestorage_short}} per il backup con Plesk](/docs/infrastructure/FileStorage?topic=FileStorage-PleskBackup)
+- [Montaggio del volume {{site.data.keyword.filestorage_short}} sugli host ESXi](/docs/infrastructure/FileStorage?topic=FileStorage-architectureguide)

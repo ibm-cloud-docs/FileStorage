@@ -1,18 +1,20 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-12-10"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 
-# Recuperación tras desastre - Migración tras error con un volumen primario accesible
+# Recuperación tras desastre: migración tras error con un volumen primario accesible
+{: #dr-accessible}
 
 Si se produce un error catastrófico o un desastre en el sitio primario y el almacenamiento primario todavía está disponible, los clientes pueden llevar a cabo las siguientes acciones para acceder rápidamente a sus datos en el sitio secundario.
 
@@ -21,7 +23,7 @@ Antes de iniciar la migración tras error, asegúrese de que todas las autorizac
 Los hosts y volúmenes autorizados deben estar en el mismo centro de datos. Por ejemplo, no puede tener un volumen de réplica en Londres y el host en Ámsterdam. Ambos deben estar en Londres o en Ámsterdam.
 {:note}
 
-1. Inicie sesión en [la consola de {{site.data.keyword.cloud}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://{DomainName}/catalog/){:new_window} y pulse el icono de **menú** en la parte superior izquierda. Seleccione **Infraestructura clásica**.
+1. Inicie la sesión en la [consola de {{site.data.keyword.cloud}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://{DomainName}/catalog/){:new_window} y pulse el icono de **menú** de la parte superior izquierda. Seleccione **Infraestructura clásica**.
 
 
    También puede iniciar la sesión en el [{{site.data.keyword.slportal}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){:new_window}.
@@ -48,7 +50,7 @@ Antes de continuar con estos pasos, desconecte el volumen. De lo contrario, dar�
    {:note}
 4. Pulse **Ver todos ({{site.data.keyword.filestorage_short}})**.
 5. Pulse el volumen activo (anteriormente volumen de destino). Este volumen tiene ahora un estado **Activo**.
-6. Monte y conecte el volumen de almacenamiento al host. Pulse [aquí](provisioning-file-storage.html) para obtener instrucciones.
+6. Monte y conecte el volumen de almacenamiento al host. Pulse [aquí](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole) para obtener instrucciones.
 
 
 ## Inicio de un restablecimiento desde un volumen a su réplica
@@ -73,4 +75,4 @@ Los restablecimientos se inician en **Almacenamiento**, **{{site.data.keyword.fi
    {:note}
 4. En la parte superior derecha, pulse el enlace **Ver todo {{site.data.keyword.filestorage_short}}**.
 5. Pulse el volumen activo ("origen").
-6. Monte y conecte el volumen de almacenamiento al host. Pulse [aquí](provisioning-file-storage.html) para obtener instrucciones.
+6. Monte y conecte el volumen de almacenamiento al host. Pulse [aquí](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole) para obtener instrucciones.

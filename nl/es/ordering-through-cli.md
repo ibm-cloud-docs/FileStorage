@@ -2,19 +2,21 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-01-07"
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 # Solicitud de {{site.data.keyword.filestorage_short}} mediante la CLI de SL
+{: #orderingSLCLI}
 
 Puede utilizar la CLI de SL para realizar pedidos de productos que normalmente se solicitan a través del [{{site.data.keyword.slportal}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){:new_window}. En la API de SL, un pedido puede consistir en varios contenedores de pedidos. La CLI de pedidos funciona con un solo contenedor de pedidos.
 
-Para obtener más información sobre cómo instalar y utilizar la CLI de SL, consulte [Cliente de API de Python](https://softlayer-python.readthedocs.io/en/latest/cli.html){:new_window}.
+Para obtener más información sobre cómo instalar y utilizar la CLI de SL, consulte [Cliente de API de Python ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://softlayer-python.readthedocs.io/en/latest/cli.html){:new_window}.
 {:tip}
 
 ## Búsqueda de las ofertas disponibles de {{site.data.keyword.filestorage_short}}
@@ -30,7 +32,7 @@ Puede utilizar el mandato `slcli order package-list` para encontrar el paquete q
 
 ```
 $ slcli order package-list --help
-Uso: slcli order package-list [OPTIONS]
+Uso: slcli order package-list [OPCIONES]
 
   Listar paquetes que se pueden solicitar mediante la API placeOrder.
 
@@ -45,7 +47,7 @@ Uso: slcli order package-list [OPTIONS]
       slcli order package-list --keyword server
 
 Opciones:
-  --keyword TEXT  Una palabra (o serie) que se utiliza para filtrar nombres de paquetes.
+  --keyword TEXTO  Una palabra (o serie) que se utiliza para filtrar nombres de paquetes.
   -h, --help      Mostrar este mensaje y salir.
 ```
 
@@ -53,7 +55,7 @@ También puede utilizar el mandato `slcli file volume-order`.
 
 ```
 # slcli file volume-order --help
-Uso: slcli file volume-order [OPTIONS]
+Uso: slcli file volume-order [OPCIONES]
 
   Solicitar un volumen de almacenamiento en archivo.
 
@@ -61,18 +63,18 @@ Opciones:
   --storage-type [performance|endurance]
                                   Tipo de volumen de almacenamiento de archivos
                                   [obligatorio]
-  --size INTEGER                  Tamaño del volumen de almacenamiento de
+  --size ENTERO                  Tamaño del volumen de almacenamiento de
                                   archivos en GB [obligatorio]
-  --iops INTEGER                  IOP de almacenamiento de rendimiento, entre
+  --iops ENTERO                  IOP de almacenamiento de rendimiento, entre
                                   100 y 6000 en múltiplos de 100 [obligatorio
                                   para el tipo de almacenamiento de
                                   rendimiento]
   --tier [0.25|2|4|10]            Nivel de almacenamiento resistente (IOP por
                                   GB) [obligatorio para el tipo de
                                   almacenamiento resistente]
-  --location TEXT                 Nombre abreviado del centro de datos
+  --location TEXTO                 Nombre abreviado del centro de datos
                                   (por ejemplo, dal09)  [obligatorio]
-  --snapshot-size INTEGER         Parámetro opcional para solicitar espacio de
+  --snapshot-size ENTERO         Parámetro opcional para solicitar espacio de
                                   instantáneas junto con almacenamiento de
                                   archivos resistente; especifica el tamaño
                                   (en GB) del espacio de instantáneas que se
@@ -87,7 +89,7 @@ Opciones:
   -h, --help                      Mostrar este mensaje y salir.
 ```
 
-Para obtener más información sobre cómo solicitar {{site.data.keyword.filestorage_short}} a través de la API, consulte [order_file_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/file.html#SoftLayer.managers.file.FileStorageManager.order_file_volume){:new_window}.
+Para obtener más información sobre cómo solicitar {{site.data.keyword.filestorage_short}} a través de la API, consulte [order_file_volume ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://softlayer-python.readthedocs.io/en/latest/api/managers/file.html#SoftLayer.managers.file.FileStorageManager.order_file_volume){:new_window}.
 Para poder acceder a todas las nuevas características, solicite `el paquete 759 de almacenamiento como servicio`.
 {:tip}
 
@@ -105,40 +107,40 @@ El pedido #32076317 se ha realizado correctamente.
 > 100 IOPS
 ```
 
-De forma predeterminada, puede suministrar un total combinado de 250 volúmenes de {{site.data.keyword.blockstorageshort}} y {{site.data.keyword.filestorage_short}}. Para aumentar el número de volúmenes, póngase en contacto con el representante de ventas. Para obtener más información sobre el aumento de los límites, consulte [Gestión de límites de almacenamiento](managing-storage-limits.html).
+De forma predeterminada, puede suministrar un total combinado de 250 volúmenes de {{site.data.keyword.blockstorageshort}} y de {{site.data.keyword.filestorage_short}}. Para aumentar el número de volúmenes, póngase en contacto con el representante de ventas. Para obtener más información sobre el aumento de los límites, consulte [Gestión de límites de almacenamiento](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits).
 {:important}
 
 ## Autorización de los hosts para acceder al nuevo almacenamiento
 
 ```
 # slcli file access-authorize --help
-Uso: slcli file access-authorize [OPTIONS] VOLUME_ID
+Uso: slcli file access-authorize [OPCIONES] ID_VOLUMEN
 
   Autoriza a los hosts a acceder a un volumen determinado
 
 Opciones:
-  -h, --hardware-id TEXT    El id de un SoftLayer_Hardware que se va a autorizar
-  -v, --virtual-id TEXT     El id de un SoftLayer_Virtual_Guest que se va a autorizar
-  -i, --ip-address-id TEXT  El id de una SoftLayer_Network_Subnet_IpAddress
+  -h, --hardware-id TEXTO    El id de un SoftLayer_Hardware que se va a autorizar
+  -v, --virtual-id TEXTO     El id de un SoftLayer_Virtual_Guest que se va a autorizar
+  -i, --ip-address-id TEXTO  El id de una SoftLayer_Network_Subnet_IpAddress
                             que se va a autorizar
-  --ip-address TEXT         Una dirección IP que se va a autorizar
-  -s, --subnet-id TEXT      El id de una SoftLayer_Network_Subnet_IpAddress
+  --ip-address TEXTO         Una dirección IP que se va a autorizar
+  -s, --subnet-id TEXTO      El id de una SoftLayer_Network_Subnet_IpAddress
                             que se va a autorizar
   --help                    Mostrar este mensaje y salir.
 ```
 
-Para obtener más información sobre la autorización de los hosts para acceder a {{site.data.keyword.filestorage_short}} mediante la API, consulte [authorize_host_to_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/file.html#SoftLayer.managers.file.FileStorageManager.authorize_host_to_volume){:new_window}.
+Para obtener más información sobre la autorización de los hosts para acceder a {{site.data.keyword.filestorage_short}} mediante la API, consulte [authorize_host_to_volume ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://softlayer-python.readthedocs.io/en/latest/api/managers/file.html#SoftLayer.managers.file.FileStorageManager.authorize_host_to_volume){:new_window}
 {:tip}
 
-Para obtener más información sobre el límite de autorizaciones simultáneas, consulte las [Preguntas más frecuentes](faqs.html).
+Para obtener más información sobre el límite de autorizaciones simultáneas, consulte las [Preguntas más frecuentes](/docs/infrastructure/FileStorage?topic=FileStorage-faqs).
 {:important}
 
 ## Conexión del nuevo almacenamiento
 
 En función del sistema operativo del host, siga el enlace adecuado.
-- [Montaje de {{site.data.keyword.filestorage_short}} en Linux](accessing-file-storage-linux.html)
-- [Montaje de {{site.data.keyword.filestorage_short}} en CentOS](mounting-nsf-file-storage.html)
-- [Montaje de {{site.data.keyword.filestorage_short}} en Container Linux](mounting-storage-coreos.html)
-- [Configuración de {{site.data.keyword.filestorage_short}} para la copia de seguridad con cPanel](configure-backup-cpanel.html)
-- [Configuración de {{site.data.keyword.filestorage_short}} para la copia de seguridad con Plesk](configure-backup-plesk.html)
-- [Montaje de un volumen de {{site.data.keyword.filestorage_short}} en hosts de ESXi](architecture-guide-file-storage-vmware.html)
+- [Montaje de {{site.data.keyword.filestorage_short}} en Linux](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)
+- [Montaje de {{site.data.keyword.filestorage_short}} en CentOS](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)
+- [Montaje de {{site.data.keyword.filestorage_short}} en Container Linux](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCoreOS)
+- [Configuración de {{site.data.keyword.filestorage_short}} para la copia de seguridad con cPanel](/docs/infrastructure/FileStorage?topic=FileStorage-cPanelBackups)
+- [Configuración de {{site.data.keyword.filestorage_short}} para la copia de seguridad con Plesk](/docs/infrastructure/FileStorage?topic=FileStorage-PleskBackup)
+- [Montaje de un volumen de {{site.data.keyword.filestorage_short}} en hosts de ESXi](/docs/infrastructure/FileStorage?topic=FileStorage-architectureguide)

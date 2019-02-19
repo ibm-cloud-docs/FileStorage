@@ -1,19 +1,21 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 
 # Gerenciando capturas instantâneas
+{: #managingSnapshots}
 
-## Criando um Planejamento de Captura Instantânea?
+## Criando um planejamento de captura instantânea
 
 Você decide com que frequência e quando deseja criar uma referência de momento de seu volume de armazenamento com planejamentos de Captura instantânea. É possível ter um máximo de 50 capturas
 instantâneas por volume de armazenamento. Os planejamentos são gerenciados por meio da guia **Armazenamento** > **{{site.data.keyword.filestorage_short}}** do [{{site.data.keyword.slportal}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://control.softlayer.com/){:new_window}.
@@ -22,6 +24,7 @@ Para poder configurar seu planejamento inicial, deve-se primeiramente comprar um
 {:important}
 
 ### Incluindo um Planejamento de Captura Instant
+{: #addschedule}
 
 Os planejamentos de capturas instantâneas podem ser configurados em intervalos, como por hora,
 diários e semanais, cada um com um ciclo de retenção diferente. O limite máximo de capturas instantâneas é 50 por volume de armazenamento, que pode ser uma combinação de planejamentos por hora, diários e semanais e capturas instantâneas manuais.
@@ -41,6 +44,16 @@ diários e semanais, cada um com um ciclo de retenção diferente. O limite máx
 
 A lista de capturas instantâneas é exibida conforme obtida na seção **Capturas instantâneas** da página **Detalhe**.
 
+Também é possível ver a lista de planejamentos de captura instantânea por meio do SLCLI com o comando a seguir.
+```
+# slcli file snapshot-schedule-list --help
+Usage: slcli file snapshot-schedule-list [OPTIONS] VOLUME_ID
+
+  Lists snapshot schedules for a given volume
+
+Opções: -h, --help Mostrar esta mensagem e sair.
+```
+
 ## Obtendo uma Captura Instantânea
 
 Capturas instantâneas manuais podem ser obtidas em vários pontos durante um upgrade ou
@@ -53,9 +66,28 @@ O limite máximo de capturas instantâneas manuais por volume de armazenamento �
 3. Clique em **Tomar captura instantânea manual**.
 A captura instantânea é tomada e exibida na seção **Capturas instantâneas** da página **Detalhe**. Seu planejamento aparece Manual.
 
+Como alternativa, é possível usar o comando a seguir para criar uma captura instantânea por meio do SLCLI.
+```
+# slcli file snapshot-create --help
+Usage: slcli file snapshot-create [OPTIONS] VOLUME_ID
+
+Options:
+  -n, --notes TEXT  Notes to set on the new snapshot
+  -h, --help        Show this message and exit.
+```
+
 ## Listando todas as capturas instantâneas com informações de espaço usado e funções de gerenciamento
 
 Uma lista de capturas instantâneas retidas e espaço usado pode ser vista na página **Detalhe** (**Armazenamento**, **{{site.data.keyword.filestorage_short}}**). As funções de gerenciamento (editando planejamentos e incluindo mais espaço) são conduzidas na página Detalhe usando o menu **Ações** ou links nas várias seções na página.
+
+Como alternativa, é possível realizar essa tarefa por meio da CLI do SL.
+```
+# slcli file snapshot-list --help
+Usage: slcli file snapshot-list [OPTIONS] VOLUME_ID
+
+Opções: --sortby TEXT Coluna para classificação --columns TEXT Colunas para exibição. Options: id, name, created, size_bytes
+  -h, --help      Show this message and exit.
+```
 
 ## Visualizando a lista de Capturas instantâneas retidas
 
@@ -96,7 +128,7 @@ Os planejamentos de captura instantânea podem ser cancelados por meio de **Arma
 1. Clique no planejamento a ser excluído no quadro **Planejamentos de captura instantânea** na página **Detalhes**.
 2. Clique na caixa de seleção ao lado do planejamento a ser excluído e clique em **Salvar**.<br />
 
-Se você estiver usando o recurso de replicação, certifique-se de que o planejamento que está sendo excluído não seja o planejamento usado pela replicação. Para obter mais informações sobre como excluir um planejamento de replicação, consulte [aqui](replication.html).
+Se você estiver usando o recurso de replicação, certifique-se de que o planejamento que está sendo excluído não seja o planejamento usado pela replicação. Para obter mais informações sobre como excluir um planejamento de replicação, consulte [aqui](/docs/infrastructure/FileStorage?topic=FileStorage-replication).
 {:important}
 
 ## Excluindo uma Captura Instant
@@ -107,14 +139,23 @@ espaço para capturas instantâneas futuras. A exclusão é feita por meio de **
 1. Clique em seu volume de armazenamento e role para a seção **Captura instantânea** para ver a lista de capturas instantâneas existentes.
 2. Clique em **Ações** ao lado de uma captura instantânea específica e clique em **Excluir** para excluir a captura instantânea. Essa exclusão não afeta as capturas instantâneas futuras ou passadas no mesmo planejamento, pois não há nenhuma dependência entre elas.
 
+Como alternativa, é possível excluir uma captura instantânea por meio da CLI do SL.
+```
+# slcli file snapshot-delete --help
+Usage: slcli file snapshot-delete [OPTIONS] SNAPSHOT_ID
+
+Opções: -h, --help Mostrar esta mensagem e sair.
+```
+
 As capturas instantâneas manuais que não são excluídas manualmente no portal são excluídas automaticamente quando você atinge as limitações de espaço (a mais antiga primeiro).
+{:note}
 
 ## Restaurando o volume de armazenamento para um momento específico usando uma captura instantânea
 
 Talvez seja necessário retornar o seu volume de armazenamento para um momento específico devido a um erro do usuário ou a uma distorção de dados.
 
 1. Desmonte e separe seu volume de armazenamento do host.
-   - Clique [aqui](accessing-file-storage-linux.html) para obter instruções.
+   - Clique [aqui](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux) para obter instruções.
 2. Clique em **Armazenamento**, **{{site.data.keyword.filestorage_short}}** no [{{site.data.keyword.slportal}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://control.softlayer.com/){:new_window}.
 3. Role para baixo e clique no seu volume a ser restaurado. A seção **Capturas instantâneas** da página **Detalhes** exibe a lista de todas as capturas instantâneas salvas juntamente com seu tamanho e data de criação.
 4. Clique em **Ações** próximo à captura instantânea a ser usada e clique em **Restaurar**. <br/>
@@ -126,7 +167,18 @@ Talvez seja necessário retornar o seu volume de armazenamento para um momento e
    Espere uma mensagem na página indicando que o volume está sendo restaurado usando a captura instantânea selecionada. Além disso, aparece um ícone próximo ao seu volume no {{site.data.keyword.filestorage_short}} indicando que uma transação ativa está em andamento. Passar o mouse sobre o ícone produz uma janela que mostra a transação. O ícone desaparece quando a transação está concluída.
    {:note}
 6. Monte e reconecte seu volume de armazenamento ao host.
-  - Clique [aqui](accessing-file-storage-linux.html) para obter instruções.
+  - Clique [aqui](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux) para obter instruções.
+
+Como alternativa, é possível restaurar o volume com uma captura instantânea por meio do SLCLI.
+```
+# slcli file snapshot-restore --help
+Usage: slcli file snapshot-restore [OPTIONS] VOLUME_ID
+
+Options:
+  -s, --snapshot-id TEXT  The id of the snapshot which will be used to restore
+                          the block volume
+  -h, --help              Show this message and exit.
+```  
 
 A restauração de um volume resulta na exclusão de todas as capturas instantâneas que foram tiradas após a captura instantânea que foi usada para a restauração.
 {:important}

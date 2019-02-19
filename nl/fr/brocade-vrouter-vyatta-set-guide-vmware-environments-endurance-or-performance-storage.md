@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
@@ -14,8 +15,9 @@ lastupdated: "2018-11-30"
 
 
 # Configuration de Brocade vRouter (Vyatta) pour les environnements VMware avec {{site.data.keyword.filestorage_short}}
+{: #configureVyatta}
 
-Vous pouvez configurer un dispositif Brocade vRouter (Vyatta) pour la haute disponibilité dans un environnement VMware qui utilise {{site.data.keyword.filestorage_full}}. Utilisez les informations suivantes ainsi que celles de l'article [Advanced Single-Site VMware Reference Architecture](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} pour configurer l'une des options de stockage suivantes dans votre environnement VMware.
+Vous pouvez configurer un dispositif Brocade vRouter (Vyatta) pour la haute disponibilité dans un environnement VMware qui utilise {{site.data.keyword.filestorage_full}}. Utilisez les informations suivantes ainsi que celles de l'article [Advanced Single-Site VMware Reference Architecture](/docs/infrastructure/virtualization?topic=Virtualization-advanced-single-site-vmware-reference-architecture){:new_window} pour configurer l'une des options de stockage suivantes dans votre environnement VMware.
 
 La passerelle Brocade vRouter (Vyatta) sert de passerelle et de routeur dans votre environnement et inclut des zones composées de sous-réseaux. Des règles de pare-feu sont mises en place entre les zones pour leur permettre de communiquer entre elles. Dans le cas de zones qui n'ont pas besoin de communiquer avec d'autres zones, aucune règle de pare-feu n'est nécessaire.
 

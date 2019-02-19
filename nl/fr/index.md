@@ -2,18 +2,18 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-01-07"
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
-{:DomainName: data-hd-keyref="APPDomain"}
-{:DomainName: data-hd-keyref="DomainName"}
 
 
 # Initiation à {{site.data.keyword.filestorage_short}}
+{: #GettingStarted}
 
 {{site.data.keyword.filestorage_full}} est un système de stockage de fichiers {{site.data.keyword.filestorage_short}} NAS basé sur NFS, permanent, rapide et flexible. Cet environnement NAS vous permet d'avoir un contrôle total des fonctions et des performances de vos partages de fichiers. Les partages {{site.data.keyword.filestorage_short}} peuvent être connectés à un maximum de 64 unités autorisées via des connexions TCP/IP routées pour la résilience.
 
@@ -27,14 +27,14 @@ Tirez parti des principales fonctionnalités de {{site.data.keyword.filestorage_
    - Disponible pour les partages NFS basés sur des fichiers.
 - **Durabilité et résilience élevées**
    - Protège l'intégrité des données et maintient la disponibilité lors des événements de maintenance et des défaillances imprévues sans qu'il soit nécessaire de créer et de gérer des tableaux RAID au niveau du système d'exploitation
-- **Chiffrement des données au repos** [(disponible dans des centres de données sélectionnés)](new-ibm-block-and-file-storage-location-and-features.html)
+- **Chiffrement des données au repos** [(disponible dans des centres de données sélectionnés)](/docs/infrastructure/FileStorage?topic=FileStorage-news)
    - Chiffrement géré par le fournisseur pour les données au repos, sans coût supplémentaire
-- **Stockage entièrement sécurisé par mémoire flash** [(disponible dans des centres de données sélectionnés)](new-ibm-block-and-file-storage-location-and-features.html)
+- **Stockage entièrement sécurisé par mémoire flash** [(disponible dans des centres de données sélectionnés)](/docs/infrastructure/FileStorage?topic=FileStorage-news)
    - Stockage flash pour les volumes mis à disposition à des niveaux supérieurs ou égaux à 2 IOPS/Go
-- **Instantanés** [(disponibles dans des centres de données sélectionnés)](new-ibm-block-and-file-storage-location-and-features.html).
+- **Instantanés** [(disponibles dans des centres de données sélectionnés)](/docs/infrastructure/FileStorage?topic=FileStorage-news).
    - Capture des instantanés de données ponctuels de manière transparente.
-- **Replication**  [(disponible dans des centres de données sélectionnés)](new-ibm-block-and-file-storage-location-and-features.html)
-   - Disponible uniquement pour le stockage mis à disposition dans des [centres de données sélectionnés](new-ibm-block-and-file-storage-location-and-features.html).
+- **Replication**  [(disponible dans des centres de données sélectionnés)](/docs/infrastructure/FileStorage?topic=FileStorage-news)
+   - Disponible uniquement pour le stockage mis à disposition dans des [centres de données sélectionnés](/docs/infrastructure/FileStorage?topic=FileStorage-news).
    - Copie automatiquement des instantanés vers un centre de données {{site.data.keyword.BluSoftlayer_full}} partenaire.
 - **Connectivité hautement disponible**
    - Utilise des connexions réseau redondantes pour accroître la disponibilité
@@ -46,9 +46,9 @@ Tirez parti des principales fonctionnalités de {{site.data.keyword.filestorage_
 
 ## Facturation
 
-Vous pouvez choisir une facturation horaire ou mensuelle pour un volume de fichier. Le type de facturation sélectionné pour un numéro d'unité logique s'applique à son espace d'image instantanée et à ses répliques. Par exemple, si vous mettez à disposition un numéro d'unité logique avec une facturation horaire, tous les frais liés aux instantanés ou aux répliques seront facturés à l'heure. Si vous mettez à disposition un numéro d'unité logique avec une facturation mensuelle, tous les frais liés aux instantanés ou aux répliques sont facturés au mois.
+Vous pouvez choisir une facturation horaire ou mensuelle pour un volume de fichier. Le type de facturation sélectionné pour un numéro d'unité logique s'applique à son espace d'instantané et à ses répliques. Par exemple, si vous mettez à disposition un numéro d'unité logique avec une facturation horaire, tous les frais liés aux instantanés ou aux répliques seront facturés à l'heure. Si vous mettez à disposition un numéro d'unité logique avec une facturation mensuelle, tous les frais liés aux instantanés ou aux répliques sont facturés au mois.
 
-Avec la **facturation horaire**, le nombre d'heures d'existence du volume de fichier sur le compte est calculé lors de la suppression du numéro d'unité logique ou à la fin du cycle de facturation, à la première occurrence de l'un de ces deux événements. La facturation horaire est un bon choix si vous avez besoin d'un stockage pour quelques jours ou pour moins d'un mois complet. La facturation horaire est disponible uniquement pour le stockage qui est mis à disposition dans des [centres de données sélectionnés](new-ibm-block-and-file-storage-location-and-features.html).
+Avec la **facturation horaire**, le nombre d'heures d'existence du volume de fichier sur le compte est calculé lors de la suppression du numéro d'unité logique ou à la fin du cycle de facturation, à la première occurrence de l'un de ces deux événements. La facturation horaire est un bon choix si vous avez besoin d'un stockage pour quelques jours ou pour moins d'un mois complet. La facturation horaire est disponible uniquement pour le stockage qui est mis à disposition dans des [centres de données sélectionnés](/docs/infrastructure/FileStorage?topic=FileStorage-news).
 
 Avec la **facturation mensuelle**, le calcul du prix est calculé au prorata depuis la date de création jusqu'à la fin du cycle de facturation et la facturation est immédiate. Aucun remboursement n'est possible si un volume de fichier est supprimé avant la fin du cycle de facturation. La facturation mensuelle convient si vous avez besoin d'un stockage pour des charges de travail qui utilisent des données devant être stockées et rester accessibles pour de longues périodes (un mois ou plus).
 
@@ -111,7 +111,7 @@ Les volumes {{site.data.keyword.filestorage_short}} peuvent être mis à disposi
 
 - L'option **4 IOPS par Go** est adaptée aux charges de travail plus exigeantes en E-S. Ces charges de travail sont généralement caractérisées par un pourcentage élevé de données actives à un moment donné. Exemples d'applications : bases de données transactionnelles, bases de données sensibles aux performances.
 
-- L'option **10 IOPS par Go** est adaptée aux charges de travail les plus intensives, telles que celles créées par les bases de données NoSQL et le traitement de données pour Analytics. Ce niveau est disponible pour le stockage mis à disposition jusqu'à 4 To uniquement dans des [centres de données sélectionnés](new-ibm-block-and-file-storage-location-and-features.html).
+- L'option **10 IOPS par Go** est adaptée aux charges de travail les plus intensives, telles que celles créées par les bases de données NoSQL et le traitement de données pour Analytics. Ce niveau est disponible pour le stockage mis à disposition jusqu'à 4 To uniquement dans des [centres de données sélectionnés](/docs/infrastructure/FileStorage?topic=FileStorage-news).
 
 Un volume de type Endurance de 12 To comporte un maximum de 48 000 IOPS disponibles.
 
@@ -266,9 +266,9 @@ Un autre facteur à prendre en compte est le nombre d'hôtes qui utilisent votre
 La vitesse de votre connexion Ethernet doit être supérieure au débit maximal attendu de votre volume. En règle générale, vous ne devriez pas saturer votre connexion Ethernet au-delà de 70 % de la bande passante disponible. Par exemple, si vous disposez de 6 000 IOPS et que vous utilisez une taille de bloc de 16 Ko, le volume peut traiter un débit d'environ 94 Mo par seconde. Si vous disposez d'une connexion Ethernet de 1 Gbit/s
 vers votre numéro d'unité logique, vous rencontrez un goulot d'étranglement lorsque vos serveurs tentent d'utiliser le débit maximal disponible. Cela est dû au fait que 70 % de la limite théorique d'une connexion Ethernet de 1 Gbit/s (125 Mo par seconde) n'autorisent que 88 Mo par seconde.
 
-Pour atteindre le nombre maximal d'IOPS, vous devez mettre en place les ressources réseau adéquates. Vous devez également tenir compte de l'utilisation du réseau privé en dehors du stockage, ainsi que des réglages côté hôte et spécifiques aux applications (pile IP ou [nombre de lignes de file d'attente](set-host-queue-depth-settings-performance-and-endurance-storage.html), etc.).
+Pour atteindre le nombre maximal d'IOPS, vous devez mettre en place les ressources réseau adéquates. Vous devez également tenir compte de l'utilisation du réseau privé en dehors du stockage, ainsi que des réglages côté hôte et spécifiques aux applications (pile IP ou [nombre de lignes de file d'attente](/docs/infrastructure/FileStorage?topic=FileStorage-hostqueuesettings), etc.).
 
-Le trafic de stockage est inclus dans l'utilisation réseau totale des serveurs virtuels publics. Pour plus d'informations sur les limites que peut imposer le service, voir la [documentation sur les serveurs virtuels](https://{DomainName}/docs/vsi/vsi_public.html#public-virtual-servers).
+Le trafic de stockage est inclus dans l'utilisation réseau totale des serveurs virtuels publics. Pour plus d'informations sur les limites que peut imposer le service, voir la [documentation sur les serveurs virtuels](/docs/vsi?topic=virtual-servers-about-public-virtual-servers).
 
 **Version NFS**
 
@@ -276,14 +276,14 @@ NFS version 3 et NFS version 4.1 sont pris en charge dans l'environnement {{site
 
 ## Soumission de votre commande
 
-Lorsque vous êtes prêt à passer votre commande, utilisez la [console](provisioning-file-storage.html) ou [SLCLI](ordering-through-cli.html). Pour une mise à disposition de File Storage avec VMware, cliquez [ici](architecture-guide-file-storage-vmware.html)
+Lorsque vous êtes prêt à passer votre commande, utilisez la [console](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole) ou [SLCLI](/docs/infrastructure/FileStorage?topic=FileStorage-orderingSLCLI). Pour une mise à disposition de File Storage avec VMware, cliquez [ici](/docs/infrastructure/FileStorage?topic=FileStorage-architectureguide)
 
 ## Connexion de votre nouveau stockage
 
 Lorsque votre demande de mise à disposition est terminée, autorisez vos hôtes à accéder au nouveau stockage et configurez votre connexion. Suivez le lien approprié en fonction du système d'exploitation de votre hôte.
-- [Accès à {{site.data.keyword.filestorage_short}} sur Linux](accessing-file-storage-linux.html)
-- [Montage de {{site.data.keyword.filestorage_short}} dans CentOS](mounting-nsf-file-storage.html)
-- [Montage de {{site.data.keyword.filestorage_short}} sur CoreOS](mounting-storage-coreos.html)
-- [Configuring {{site.data.keyword.filestorage_short}} en vue de la sauvegarde avec cPanel](configure-backup-cpanel.html)
-- [Configuring {{site.data.keyword.filestorage_short}} en vue de la sauvegarde avec Plesk](configure-backup-plesk.html)
-- [Montage de volume {{site.data.keyword.filestorage_short}} sur des hôtes ESXi](architecture-guide-file-storage-vmware.html)
+- [Accès à {{site.data.keyword.filestorage_short}} sur Linux](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)
+- [Montage de {{site.data.keyword.filestorage_short}} dans CentOS](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)
+- [Montage de {{site.data.keyword.filestorage_short}} sur CoreOS](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCoreOS)
+- [Configuration de {{site.data.keyword.filestorage_short}} en vue de la sauvegarde avec cPanel](/docs/infrastructure/FileStorage?topic=FileStorage-cPanelBackups)
+- [Configuration de {{site.data.keyword.filestorage_short}} en vue de la sauvegarde avec Plesk](/docs/infrastructure/FileStorage?topic=FileStorage-PleskBackup)
+- [Montage de volume {{site.data.keyword.filestorage_short}} sur des hôtes ESXi](/docs/infrastructure/FileStorage?topic=FileStorage-architectureguide)

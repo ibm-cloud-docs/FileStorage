@@ -1,19 +1,24 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-12"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 
 # ファイル共有容量の拡張
+{: #expandCapacity}
 
 この新機能により、{{site.data.keyword.filestorage_full}} の現行ユーザーは、{{site.data.keyword.filestorage_short}} のサイズを GB 単位で最大 12 TB まですぐに拡張することができます。 拡張したボリュームに複製を作成したり手動でデータをマイグレーションしたりする必要はありません。 サイズ変更中に、ストレージが停止したり、利用できなくなったりすることはありません。
 
 ボリュームの請求方法が自動的に更新され、新しい価格の日割り額が現在の請求サイクルに加算されます。 そして、次の請求サイクルでは新しい価格が全額請求されます。
 
-この機能は、[一部のデータ・センター](new-ibm-block-and-file-storage-location-and-features.html)でのみ使用できます。
+この機能は、[一部のデータ・センター](/docs/infrastructure/FileStorage?topic=FileStorage-news)でのみ使用できます。
 
 ## 拡張可能ストレージの利点
 
@@ -27,11 +32,12 @@ lastupdated: "2018-11-12"
 
 ## 制限
 
-この機能は、拡張機能を備えた[データ・センター](new-ibm-block-and-file-storage-location-and-features.html)でプロビジョンされたストレージにのみ使用できます。 これらのデータ・センターでプロビジョンされた暗号化ストレージは、最大 12 TB まで増やすことができます。
+この機能は、拡張機能を備えた[データ・センター](/docs/infrastructure/FileStorage?topic=FileStorage-news)でプロビジョンされたストレージにのみ使用できます。 これらのデータ・センターでプロビジョンされた暗号化ストレージは、最大 12 TB まで増やすことができます。
 
 エンデュランスでプロビジョンされた{{site.data.keyword.filestorage_short}}の既存のサイズ制限が引き続き適用されます (10 IOPS ティアの場合は最大 4 TB、他のすべてのティアは最大 12 TB)。
 
 ## ストレージのサイズ変更
+{: #steps}
 
 1. {{site.data.keyword.slportal}}で**「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**をクリックするか、{{site.data.keyword.BluSoftlayer_full}} カタログで**「インフラストラクチャー」** > **「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**をクリックします。
 2. リストからボリュームを選択し、**「アクション」** > **「ボリュームの変更 (Modify Volume)」**をクリックします。
@@ -39,3 +45,39 @@ lastupdated: "2018-11-12"
 4. 選択内容と新しい価格を確認します。
 5. **「マスター・サービス契約を読み...」**をクリックし、**「注文する」**をクリックします。
 6. 新しいストレージ割り振りが数分後に使用可能になります。
+
+代わりの方法として、SL CLI で以下のコマンドを使用することができます。
+```
+# slcli file volume-modify --help
+Usage: slcli file volume-modify [OPTIONS] VOLUME_ID
+
+Options:
+  -c, --new-size INTEGER        New Size of file volume in GB. ***If no size
+                                is given, the original size of volume is
+                                used.***
+                                Potential Sizes: [20, 40, 80, 100,
+                                250, 500, 1000, 2000, 4000, 8000, 12000]
+                                Minimum: [the original size of the volume]
+  -i, --new-iops INTEGER        Performance Storage IOPS, between 100 and 6000
+                                in multiples of 100 [only for performance
+                                volumes] ***If no IOPS value is specified, the
+                                original IOPS value of the volume will be
+                                used.***
+                                Requirements: [If original IOPS/GB
+                                for the volume is less than 0.3, new IOPS/GB
+                                must also be less than 0.3. If original
+                                IOPS/GB for the volume is greater than or
+                                equal to 0.3, new IOPS/GB for the volume must
+                                also be greater than or equal to 0.3.]
+  -t, --new-tier [0.25|2|4|10]  Endurance Storage Tier (IOPS per GB) [only for
+                                endurance volumes] ***If no tier is specified,
+                                the original tier of the volume will be
+                                used.***
+                                Requirements: [If original IOPS/GB
+                                for the volume is 0.25, new IOPS/GB for the
+                                volume must also be 0.25. If original IOPS/GB
+                                for the volume is greater than 0.25, new
+                                IOPS/GB for the volume must also be greater
+                                than 0.25.]
+  -h, --help      Show this message and exit.
+```

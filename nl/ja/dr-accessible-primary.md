@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-12-10"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
@@ -13,6 +14,7 @@ lastupdated: "2018-12-10"
 {:DomainName: data-hd-keyref="DomainName"}
 
 # 災害復旧 - プライマリー・ボリュームがアクセス可能である場合のフェイルオーバー
+{: #dr-accessible}
 
 1 次サイトで致命的な障害または災害が発生したものの、1 次ストレージにまだアクセスできる場合、お客様は以下の操作を実行して 2 次サイトのデータにすぐにアクセスすることができます。
 
@@ -48,7 +50,7 @@ lastupdated: "2018-12-10"
    {:note}
 4. **「すべて表示 ({{site.data.keyword.filestorage_short}})」**をクリックします。
 5. アクティブなボリューム (以前のターゲット・ボリューム) をクリックします。 これにより、このボリュームの状況が**「アクティブ」**になります。
-6. ストレージ・ボリュームをホストにマウントして接続します。 [ここ](provisioning-file-storage.html)をクリックすると説明が表示されます。
+6. ストレージ・ボリュームをホストにマウントして接続します。 [ここ](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)をクリックすると説明が表示されます。
 
 
 ## ボリュームからレプリカへのフェイルバックの開始
@@ -73,4 +75,4 @@ lastupdated: "2018-12-10"
    {:note}
 4. 右上にある**「すべての {{site.data.keyword.filestorage_short}} の表示」**リンクをクリックします。
 5. アクティブなボリューム (「ソース」) をクリックします。
-6. ストレージ・ボリュームをホストにマウントして接続します。 [ここ](provisioning-file-storage.html)をクリックすると説明が表示されます。
+6. ストレージ・ボリュームをホストにマウントして接続します。 [ここ](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)をクリックすると説明が表示されます。

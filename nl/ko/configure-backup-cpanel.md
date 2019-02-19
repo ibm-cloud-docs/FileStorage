@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
@@ -12,6 +12,7 @@ lastupdated: "2018-11-30"
 {:important: .important}
 
 # cPanel로 백업을 위한 {{site.data.keyword.filestorage_short}} 구성
+{: #cPanelBackups}
 
 다음 지시사항을 사용하여 cPanel을 통해 백업이 {{site.data.keyword.filestorage_full}}에 저장되도록 구성할 수 있습니다. 여기서는 루트 또는 sudo SSH 및 전체 WHM(WebHost Manager) 액세스가 사용 가능하다고 가정합니다. 이 예제는 **CentOS 7** 호스트를 기반으로 합니다.
 
@@ -24,7 +25,7 @@ lastupdated: "2018-11-30"
    기본적으로 cPanel 시스템은 `/backup` 디렉토리에 백업 파일을 로컬로 저장합니다. 이 문서에서는 `/backup` 폴더가 이미 있고 백업을 포함하고 있으며, `/backup2`를 새 마운트 지점으로 사용할 수 있다고 가정합니다.
    {:note}
 
-3. [Red Hat Enterprise Linux에서 {{site.data.keyword.filestorage_short}}에 액세스](accessing-file-storage-linux.html) 및 [CentOS에서 NFS/{{site.data.keyword.filestorage_short}} 마운트](mounting-nsf-file-storage.html)/[CoreOS에서 NFS/{{site.data.keyword.filestorage_short}} 마운트](mounting-storage-coreos.html)에 설명되어 있는 바와 같이 {{site.data.keyword.filestorage_short}}를 구성하십시오. 볼륨을 `/backup2`에 마운트하고 시작 시 마운트할 수 있도록 이를 파일 시스템 테이블(`/etc/fstab`)에서 구성하십시오. <br />
+3. [Red Hat Enterprise Linux에서 {{site.data.keyword.filestorage_short}}에 액세스](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux) 및 [CentOS에서 {{site.data.keyword.filestorage_short}} 마운트](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)/[CoreOS에서 NFS/{{site.data.keyword.filestorage_short}} 마운트](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCoreOS)에 설명되어 있는 바와 같이 {{site.data.keyword.filestorage_short}}를 구성하십시오. 볼륨을 `/backup2`에 마운트하고 시작 시 마운트할 수 있도록 이를 파일 시스템 테이블(`/etc/fstab`)에서 구성하십시오. <br />
 
    기본적으로 NFS는 루트 권한으로 작성된 파일을 nobody 사용자로 다운그레이드합니다. 루트 클라이언트가 NFS 공유에서 루트 권한을 유지할 수 있도록 하려면 `no_root_squash`를 `/etc/exports`에 추가해야 합니다.
    {:tip}

@@ -2,19 +2,21 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-01-07"
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 # {{site.data.keyword.filestorage_short}} über die SL-Befehlszeilenschnittstelle bestellen
+{: #orderingSLCLI}
 
 Sie können die SL-Befehlszeilenschnittstelle verwenden, um Bestellungen für Produkte zu platzieren, die normalerweise über das [ {{site.data.keyword.slportal}} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") ](https://control.softlayer.com/){:new_window} bestellt werden. In der SL-API kann eine Bestellung aus mehreren Bestellungscontainern bestehen. Die Bestell-Befehlszeilenschnittstelle funktioniert nur mit einem Bestellcontainer.
 
-Weitere Informationen zur Installation und Verwendung der SL-Befehlszeilenschnittstelle finden Sie unter [Python-API-Client](https://softlayer-python.readthedocs.io/en/latest/cli.html){:new_window}.
+Weitere Informationen zur Installation und Verwendung der SL-Befehlszeilenschnittstelle finden Sie unter [Python-API-Client ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://softlayer-python.readthedocs.io/en/latest/cli.html){:new_window}.
 {:tip}
 
 ## Nach verfügbaren {{site.data.keyword.filestorage_short}}-Angeboten suchen
@@ -26,7 +28,7 @@ Innerhalb eines Pakets werden einige Elemente in Kategorien unterteilt. Für ein
 Jede Bestellung muss eine zugeordnete Position (Rechenzentrum) haben. Stellen Sie bei der Bestellung von {{site.data.keyword.filestorage_short}} sicher, dass es an derselben Position wie Ihre Berechnungsinstanzen bereitgestellt wird.
 {:important}
 
-Sie können den Befehl `slcli order package-list` verwenden, um das Paket zu suchen, das Sie bestellen möchten. Die Option `-keyword` wird bereitgestellt, um eine einfache Such- und Filterfunktion auszuführen. Diese Option erleichtert die Suche nach dem benötigten Paket. Suchen Sie nach `Storage-as-a-Service Package 759`. 
+Sie können den Befehl `slcli order package-list` verwenden, um das Paket zu suchen, das Sie bestellen möchten. Die Option `-keyword` wird bereitgestellt, um eine einfache Such- und Filterfunktion auszuführen. Diese Option erleichtert die Suche nach dem benötigten Paket. Suchen Sie nach `Storage-as-a-Service Package 759`.
 
 ```
 $ slcli order package-list --help
@@ -83,7 +85,7 @@ Optionen:
   -h, --help                      Diese Nachricht anzeigen und Ausführung beenden.
 ```
 
-Weitere Informationen zur Bestellung von {{site.data.keyword.filestorage_short}} über die API finden Sie unter [order_file_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/file.html#SoftLayer.managers.file.FileStorageManager.order_file_volume){:new_window}.
+Weitere Informationen zur {{site.data.keyword.filestorage_short}}-Bestellung finden über die API Sie unter [order_file_volume ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://softlayer-python.readthedocs.io/en/latest/api/managers/file.html#SoftLayer.managers.file.FileStorageManager.order_file_volume){:new_window}.
 Um auf alle neuen Funktionen zugreifen zu können, müssen Sie `Storage-as-a-Service Package 759` bestellen.
 {:tip}
 
@@ -101,7 +103,7 @@ Order #32076317 placed successfully!
 > 100 IOPS
 ```
 
-Standardmäßig können Sie insgesamt 250 {{site.data.keyword.blockstorageshort}}- und {{site.data.keyword.filestorage_short}}-Datenträger bereitstellen. Wenden Sie sich an Ihren Vertriebsbeauftragten, wenn Sie die Anzahl Ihrer Datenträger erhöhen möchten. Weitere Informationen zum Erhöhen der Grenzwerte finden Sie in [Speichergrenzwerte verwalten](managing-storage-limits.html).
+Standardmäßig können Sie insgesamt 250 {{site.data.keyword.blockstorageshort}}- und {{site.data.keyword.filestorage_short}}-Datenträger bereitstellen. Wenden Sie sich an Ihren Vertriebsbeauftragten, wenn Sie die Anzahl Ihrer Datenträger erhöhen möchten. Weitere Informationen zum Erhöhen der Grenzwerte finden Sie in [Speichergrenzwerte verwalten](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits).
 {:important}
 
 ## Hosts für den Zugriff auf den neuen Speicher autorisieren
@@ -123,18 +125,18 @@ Optionen:
   --help                    Diese Nachricht anzeigen und Ausführung beenden.
 ```
 
-Weitere Informationen zum Autorisieren von Hosts für den Zugriff auf {{site.data.keyword.filestorage_short}} über die API finden Sie unter [authorize_host_to_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/file.html#SoftLayer.managers.file.FileStorageManager.authorize_host_to_volume){:new_window}.
+Weitere Informationen zum Autorisieren von Hosts für den Zugriff auf {{site.data.keyword.filestorage_short}} über die API finden Sie in [authorize_host_to_volume ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://softlayer-python.readthedocs.io/en/latest/api/managers/file.html#SoftLayer.managers.file.FileStorageManager.authorize_host_to_volume){:new_window}.
 {:tip}
 
-eitere Informationen zum Grenzwert für gleichzeitige Autorisierungen finden Sie in den [FAQs](faqs.html).
+Weitere Informationen zum Grenzwert für gleichzeitige Autorisierungen finden Sie in den [FAQs](/docs/infrastructure/FileStorage?topic=FileStorage-faqs).
 {:important}
 
 ## Verbindung zum neuen Speicher herstellen
 
 Folgen Sie je nach dem Betriebssystem Ihres Hosts dem entsprechenden Link.
-- [{{site.data.keyword.filestorage_short}} unter Linux anhängen](accessing-file-storage-linux.html)
-- [{{site.data.keyword.filestorage_short}} unter CentOS anhängen](mounting-nsf-file-storage.html)
-- [{{site.data.keyword.filestorage_short}} unter Container Linux anhängen](mounting-storage-coreos.html)
-- [{{site.data.keyword.filestorage_short}} für Sicherung mit cPanel konfigurieren](configure-backup-cpanel.html)
-- [{{site.data.keyword.filestorage_short}} für Sicherung mit Plesk konfigurieren](configure-backup-plesk.html)
-- [{{site.data.keyword.filestorage_short}}-Datenträger an ESXi-Hosts anhängen](architecture-guide-file-storage-vmware.html)
+- [{{site.data.keyword.filestorage_short}} unter Linux anhängen](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)
+- [{{site.data.keyword.filestorage_short}} unter CentOS anhängen](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)
+- [{{site.data.keyword.filestorage_short}} unter Container Linux anhängen](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCoreOS)
+- [{{site.data.keyword.filestorage_short}} für Sicherung mit cPanel konfigurieren](/docs/infrastructure/FileStorage?topic=FileStorage-cPanelBackups)
+- [{{site.data.keyword.filestorage_short}} für Sicherung mit Plesk konfigurieren](/docs/infrastructure/FileStorage?topic=FileStorage-PleskBackup)
+- [{{site.data.keyword.filestorage_short}}-Datenträger an ESXi-Hosts anhängen](/docs/infrastructure/FileStorage?topic=FileStorage-architectureguide)

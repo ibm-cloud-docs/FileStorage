@@ -1,13 +1,18 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-13"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 
 # IOPS の調整
+{: #adjustingIOPS}
 
 この新機能により、{{site.data.keyword.filestorage_full}} ストレージ・ユーザーは、既存の{{site.data.keyword.filestorage_short}}の IOPS をただちに調整できます。 新しいストレージに複製を作成したり手動でデータをコピーしたりする必要はありません。 調整中に、ストレージが停止したり、利用できなくなったりすることはありません。
 
@@ -20,7 +25,7 @@ lastupdated: "2018-11-13"
 
 ## 制限
 
-この機能は、[一部のデータ・センター](new-ibm-block-and-file-storage-location-and-features.html)でのみ使用できます。
+この機能は、[一部のデータ・センター](/docs/infrastructure/BlockStorage?topic=BlockStorage-news)でのみ使用できます。
 
 クライアントは IOPS を調整する際に、エンデュランスとパフォーマンスを切り替えることはできません。 ユーザーは、次の基準や制限に基づいて、ストレージの新しい IOPS ティアまたは IOPS レベルを指定できます。
 
@@ -33,6 +38,7 @@ lastupdated: "2018-11-13"
 ボリュームでレプリケーションが実行されている場合は、プライマリーの IOPS の選択と一致するように自動的にレプリカが更新されます。
 
 ## 実際のストレージでの IOPS の調整
+{: #steps}
 
 1. {{site.data.keyword.filestorage_short}}のリストに進みます
     - カスタマー・ポータルから、**「ストレージ」**>**「{{site.data.keyword.filestorage_short}}」**をクリックします。または
@@ -44,3 +50,39 @@ lastupdated: "2018-11-13"
 4. 選択内容と新しい価格を確認します。
 5. **「マスター・サービス契約を読み...」**チェック・ボックスをクリックし、**「注文する」**をクリックします。
 6. 新しいストレージ割り振りが数分後に使用可能になります。
+
+代わりの方法として、SLCLI で IOPS を更新することもできます。
+```
+# slcli file volume-modify --help
+Usage: slcli file volume-modify [OPTIONS] VOLUME_ID
+
+Options:
+  -c, --new-size INTEGER        New Size of file volume in GB. ***If no size
+                                is given, the original size of volume is
+                                used.***
+                                Potential Sizes: [20, 40, 80, 100,
+                                250, 500, 1000, 2000, 4000, 8000, 12000]
+                                Minimum: [the original size of the volume]
+  -i, --new-iops INTEGER        Performance Storage IOPS, between 100 and 6000
+                                in multiples of 100 [only for performance
+                                volumes] ***If no IOPS value is specified, the
+                                original IOPS value of the volume will be
+                                used.***
+                                Requirements: [If original IOPS/GB
+                                for the volume is less than 0.3, new IOPS/GB
+                                must also be less than 0.3. If original
+                                IOPS/GB for the volume is greater than or
+                                equal to 0.3, new IOPS/GB for the volume must
+                                also be greater than or equal to 0.3.]
+  -t, --new-tier [0.25|2|4|10]  Endurance Storage Tier (IOPS per GB) [only for
+                                endurance volumes] ***If no tier is specified,
+                                the original tier of the volume will be
+                                used.***
+                                Requirements: [If original IOPS/GB
+                                for the volume is 0.25, new IOPS/GB for the
+                                volume must also be 0.25. If original IOPS/GB
+                                for the volume is greater than 0.25, new
+                                IOPS/GB for the volume must also be greater
+                                than 0.25.]
+  -h, --help      Show this message and exit.
+```

@@ -1,12 +1,12 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-12-11"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
-{:pre: .pre}
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
@@ -15,6 +15,7 @@ lastupdated: "2018-12-11"
 
 
 # {{site.data.keyword.filestorage_short}} mit VMware bereitstellen
+{: #architectureguide}
 
 Folgende Schritte zeigen Ihnen, wie {{site.data.keyword.filestorage_full}} in einer Umgebung mit vSphere 5.5 und vSphere 6.0 bei {{site.data.keyword.BluSoftlayer_full}} bestellt und konfiguriert wird.
 
@@ -116,7 +117,7 @@ Es ist wichtig zu beachten, dass VMware-Umgebungen Snapshots nicht erkennen. Die
 
 Zur Wiederherstellung des {{site.data.keyword.filestorage_short}}-Datenträgers ist es erforderlich, alle VMs auf {{site.data.keyword.filestorage_short}} auszuschalten. Der Datenträger muss vorübergehend von den ESXi-Hosts abgehängt werden, um eine Beschädigung von Daten während des Prozesses zu vermeiden.
 
-Weitere Informationen finden Sie im Artikel [Snapshots](snapshots.html).
+Weitere Informationen finden Sie im Artikel [Snapshots](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots).
 
 
 ### Replikation verwenden
@@ -128,7 +129,7 @@ Replikate ermöglichen Folgendes:
 - Schnelle Wiederherstellung nach Standortausfällen oder anderen Katastrophen durch Failover auf den Zieldatenträger
 - Failover auf einen bestimmten Zeitpunkt in der Disaster Recovery-Kopie (DR-Kopie)
 
-Die Replikation hält Ihre Daten an zwei verschiedenen Positionen synchron. Wenn Sie Ihren Datenträger klonen und unabhängig vom ursprünglichen Datenträger verwenden möchten, lesen Sie die Informationen im Abschnitt [Duplikat eines Datenträgers erstellen](how-to-create-duplicate-volume.html).
+Die Replikation hält Ihre Daten an zwei verschiedenen Positionen synchron. Wenn Sie Ihren Datenträger klonen und unabhängig vom ursprünglichen Datenträger verwenden möchten, lesen Sie die Informationen im Abschnitt [Duplikat eines Datenträgers erstellen](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume).
 {:tip}
 
 Bevor Sie replizieren können, müssen Sie einen Snapshotplan erstellen.
@@ -137,7 +138,7 @@ Wenn Sie einen Failover durchführen, 'schalten Sie um', und zwar von Ihrem Spei
 
 Bevor der Datenträger wieder auf das primäre Rechenzentrum zurückübertragen wird, muss seine Verwendung am fernen Standort gestoppt werden. Ein Snapshot neuer oder geänderter Informationen wird erstellt und an das primäre Rechenzentrum repliziert, bevor der Datenträger wieder an die ESXi-Hosts am Produktionsstandort angehängt werden kann.
 
-Weitere Informationen zum Konfigurieren von Replikaten finden Sie im Abschnitt [Replikation](replication.html).
+Weitere Informationen zum Konfigurieren von Replikaten finden Sie im Abschnitt [Replikation](/docs/infrastructure/FileStorage?topic=FileStorage-replication).
 
 Ungültige Daten, seien es beschädigte, gehackte oder infizierte, werden dem Snapshotplan und der angegebenen Snapshotaufbewahrung entsprechend repliziert. Durch Verwendung der kleinsten Replikationsfenster lässt sich ein besseres Ziel in Bezug auf den maximal tolerierbaren Datenverlust bei einem Ausfall (Recovery Point Objective, RPO) realisieren. Dadurch steht möglicherweise jedoch weniger Zeit für die Reaktion auf die Replikation ungültiger Daten zur Verfügung.
 {:note}
@@ -147,7 +148,7 @@ Ungültige Daten, seien es beschädigte, gehackte oder infizierte, werden dem Sn
 
 Verwenden Sie die [Advanced Single-Site VMware Reference Architecture ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}, um {{site.data.keyword.filestorage_short}} mit Endurance- oder Performance-Optionen in Ihrer VMware-Umgebung einzurichten.
 
-{{site.data.keyword.filestorage_short}} kann über den [IBM Cloud-Katalog ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://{DomainName}/catalog/){:new_window} oder das [{{site.data.keyword.slportal}} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/){:new_window} bestellt werden. Weitere Informationen finden Sie unter [ bestellen{{site.data.keyword.filestorage_short}}](provisioning-file-storage.html).
+{{site.data.keyword.filestorage_short}} kann über den [IBM Cloud-Katalog ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://{DomainName}/catalog/){:new_window} oder das [{{site.data.keyword.slportal}} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/){:new_window} bestellt werden. Weitere Informationen finden Sie unter [ bestellen{{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole).
 
 Der Speicher wird in weniger als einer Minute bereitgestellt und wird auf der **{{site.data.keyword.filestorage_short}}**-Seite des [{{site.data.keyword.slportal}}s ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/){:new_window} angezeigt.
 
@@ -377,5 +378,5 @@ In den folgenden Beispielen werden die erweiterten Konfigurationsparameter über
     #esxcfg-advcfg -g /Disk/QFullSampleSize
     #esxcfg-advcfg -g /Disk/QFullThreshold
     ```
-Weitere Informationen zu Advanced Single-Site VMware Reference Architecture finden Sie [hier](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}.
+Weitere Informationen zu Advanced Single-Site VMware Reference Architecture finden Sie [hier](/docs/infrastructure/virtualization?topic=Virtualization-advanced-single-site-vmware-reference-architecture){:new_window}.
 {:tip}

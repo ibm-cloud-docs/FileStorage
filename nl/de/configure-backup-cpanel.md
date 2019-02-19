@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
@@ -12,6 +12,7 @@ lastupdated: "2018-11-30"
 {:important: .important}
 
 # {{site.data.keyword.filestorage_short}} für Sicherung mit cPanel konfigurieren
+{: #cPanelBackups}
 
 Sie können Ihre Sicherungen mithilfe dieser Anweisungen so konfigurieren, dass sie von cPanel in {{site.data.keyword.filestorage_full}} gespeichert werden. Dabei wird angenommen, dass root- oder sudo SSH- sowie ein vollständiger WHM-Zugriff (WHM = WebHost Manager) verfügbar ist. Das vorliegende Beispiel basiert auf einem **CentOS 7**-Host.
 
@@ -24,7 +25,7 @@ Weitere Informationen finden Sie in [cPanel - Configuring backup directory ![Sym
    Standardmäßig speichert das cPanel-System Sicherungsdateien lokal im Verzeichnis `/backup`. In diesem Dokument wird vorausgesetzt, dass `/backup` vorhanden ist und Sicherungen enthält. Daher kann als neuer Mountpunkt `/backup2` verwendet werden.
    {:note}
 
-3. Konfigurieren Sie Ihre {{site.data.keyword.filestorage_short}}-Instanz anhand der Beschreibung in [Zugriff auf {{site.data.keyword.filestorage_short}} unter Red Hat Enterprise Linux](accessing-file-storage-linux.html) und [Mount für NFS/{{site.data.keyword.filestorage_short}} in CentOS](mounting-nsf-file-storage.html)/[Mount für NFS/{{site.data.keyword.filestorage_short}} in CoreOS](mounting-storage-coreos.html). Hängen Sie den Datenträger an `/backup2` an und konfigurieren Sie ihn in der Dateisystemtabelle (`/etc/fstab`), um den Mount während des Startvorgangs zu ermöglichen. <br />
+3. Konfigurieren Sie Ihre {{site.data.keyword.filestorage_short}}-Instanz anhand der Beschreibung in [Zugriff auf {{site.data.keyword.filestorage_short}} unter Red Hat Enterprise Linux](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux) und [Mount für {{site.data.keyword.filestorage_short}} in CentOS](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)/[Mount für {{site.data.keyword.filestorage_short}} in CoreOS](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCoreOS). Hängen Sie den Datenträger an `/backup2` an und konfigurieren Sie ihn in der Dateisystemtabelle (`/etc/fstab`), um den Mount während des Startvorgangs zu ermöglichen. <br />
 
    Standardmäßig stuft NFS alle Dateien, die mit Rootberechtigung erstellt wurden, auf den Benutzer 'nobody' herab. Damit Root-Clients die Rootberechtigung für die gemeinsam genutzte NFS-Ressource behalten können, muss `no_root_squash` zu `/etc/exports` hinzugefügt werden.
    {:tip}

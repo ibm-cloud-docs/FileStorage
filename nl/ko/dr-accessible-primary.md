@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-12-10"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
@@ -13,6 +14,7 @@ lastupdated: "2018-12-10"
 {:DomainName: data-hd-keyref="DomainName"}
 
 # 재해 복구 - 액세스 가능한 1차 볼륨으로 장애 복구
+{: #dr-accessible}
 
 1차 사이트에서 파국적 장애나 재해가 발생하고 1차 스토리지에는 여전히 액세스할 수 있는 경우 고객은 다음의 조치를 취하여 2차 사이트의 데이터에 빠르게 액세스할 수 있습니다.
 
@@ -48,7 +50,7 @@ lastupdated: "2018-12-10"
    {:note}
 4. **모두 보기({{site.data.keyword.filestorage_short}})**를 클릭하십시오.
 5. 활성 볼륨(이전 대상 볼륨)을 클릭하십시오. 이제는 이 볼륨의 상태가 **활성**입니다.
-6. 스토리지 볼륨을 호스트에 마운트하고 이에 연결하십시오. 지시사항을 보려면 [여기](provisioning-file-storage.html)를 클릭하십시오.
+6. 스토리지 볼륨을 호스트에 마운트하고 이에 연결하십시오. 지시사항을 보려면 [여기](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)를 클릭하십시오.
 
 
 ## 볼륨에서 해당 복제본으로 장애 조치 시작
@@ -73,4 +75,4 @@ lastupdated: "2018-12-10"
    {:note}
 4. 오른쪽 상단에서 **모든 {{site.data.keyword.filestorage_short}} 보기** 링크를 클릭하십시오.
 5. 활성 볼륨("소스")을 클릭하십시오.
-6. 스토리지 볼륨을 호스트에 마운트하고 이에 연결하십시오. 지시사항을 보려면 [여기](provisioning-file-storage.html)를 클릭하십시오.
+6. 스토리지 볼륨을 호스트에 마운트하고 이에 연결하십시오. 지시사항을 보려면 [여기](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)를 클릭하십시오.

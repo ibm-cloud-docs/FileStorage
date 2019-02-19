@@ -1,19 +1,21 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 
 # Snapshots verwalten
+{: #managingSnapshots}
 
-## Snapshotzeitplan erstellen
+## Snapshotplan erstellen
 
 Mit Snapshotzeitplänen entscheiden Sie, wie häufig und wann Sie eine zeitpunktbasierte Referenz des Speicherdatenträgers erstellen möchten. Es können maximal 50 Snapshots pro Speicherdatenträger erstellt werden. Zeitpläne werden über die Registerkarte **Speicher** > **{{site.data.keyword.filestorage_short}}** des [{{site.data.keyword.slportal}}s ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/){:new_window} verwaltet.
 
@@ -21,6 +23,7 @@ Bevor Sie Ihren ersten Zeitplan einrichten können, müssen Sie zunächst Snapsh
 {:important}
 
 ### Snapshotzeitplan hinzufügen
+{: #addschedule}
 
 Snapshotzeitpläne können für stündliche, tägliche und wöchentliche Intervalle jeweils mit einem eigenen Aufbewahrungszyklus eingerichtet werden. Pro Speicherdatenträger besteht ein Grenzwert von maximal 50 (kann eine Mischung aus stündlichen, täglichen und wöchentlichen Zeitplänen) und manuellen Snapshots.
 
@@ -39,6 +42,17 @@ Snapshotzeitpläne können für stündliche, tägliche und wöchentliche Interva
 
 Die Liste der Snapshots wird in der Reihenfolge ihrer Ausführung im Abschnitt **Snapshots** der Seite **Details** angezeigt.
 
+Mit dem folgenden Befehl können Sie die Liste der Snapshotpläne auch über die SL-CLI anzeigen. 
+```
+# slcli file snapshot-schedule-list --help
+Syntax: slcli file snapshot-schedule-list [OPTIONEN] DATENTRÄGER-ID
+
+  Auflisten von Snapshotplänen für einen angegebenen Datenträger.
+
+Optionen:
+  -h, --help  Diese Nachricht anzeigen und Ausführung beenden.
+```
+
 ## Manuellen Snapshot erstellen
 
 Manuelle Snapshots können an verschiedenen Punkten während eines Anwendungsupgrades oder einer Wartungsoperation erfasst werden. Darüber hinaus können Sie Snapshots serverübergreifend für mehrere Server erstellen, die auf der Anwendungsebene vorübergehend inaktiviert wurden.
@@ -50,9 +64,30 @@ Die Anzahl manueller Snapshots ist auf maximal 50 pro Speicherdatenträger begre
 3. Klicken Sie auf **Manuellen Snapshot erstellen**.
 Der Snapshot wird erstellt und im Abschnitt **Snapshots** der Seite **Details** angezeigt. Als Zeitplanangabe wird 'Manuell' angezeigt.
 
+Alternativ dazu können Sie mit dem folgenden Befehl einen Snapshot über die SL-CLI erstellen. 
+```
+# slcli file snapshot-create --help
+Syntax: slcli file snapshot-create [OPTIONEN] DATENTRÄGER-ID
+
+Optionen:
+  -n, --notes TEXT  Anmerkungen für den neuen Snapshot
+  -h, --help        Diese Nachricht anzeigen und Ausführung beenden.
+```
+
 ## Alle Snapshots mit Informationen zum belegten Speicherbereich und mit Managementfunktionen auflisten
 
 Eine Liste der aufbewahrten Snapshots und des belegten Speicherbereichs wird auf der Seite **Details** (**Speicher** > **{{site.data.keyword.filestorage_short}}**) angezeigt. Managementfunktionen (Zeitplanbearbeitung und Hinzufügen weiteren Speicherbereichs) werden auf der Seite 'Details' über das Menü **Aktionen** oder über Links in den verschiedenen Abschnitten der Seite ausgeführt.
+
+Alternativ dazu können Sie diese Task über die SL-CLI ausführen. 
+```
+# slcli file snapshot-list --help
+Syntax: slcli file snapshot-list [OPTIONEN] DATENTRÄGER-ID
+
+Optionen:
+  --sortby TEXT   Spalten für die Sortierung
+  --columns TEXT  Spalten für die Anzeige. Optionen: ID, Name, Erstellungsdatum, Größe in Byte
+  -h, --help      Diese Nachricht anzeigen und Ausführung beenden.
+```
 
 ## Liste der aufbewahrten Snapshots anzeigen
 
@@ -92,7 +127,7 @@ Snapshotzeitpläne können über **Speicher** > **{{site.data.keyword.filestorag
 1. Klicken Sie im Feld **Snapshotpläne** auf der Seite **Details** auf den zu löschenden Zeitplan.
 2. Klicken Sie auf das Kontrollkästchen neben dem zu löschenden Zeitplan und klicken Sie auf **Speichern**.<br />
 
-Wenn Sie die Replikationsfunktion verwenden, müssen Sie sicherstellen, dass der Zeitplan, den Sie löschen, nicht der von der Replikation verwendete Zeitplan ist. Weitere Informationen zum Löschen eines Replikationszeitplans finden Sie [hier](replication.html).
+Wenn Sie die Replikationsfunktion verwenden, müssen Sie sicherstellen, dass der Zeitplan, den Sie löschen, nicht der von der Replikation verwendete Zeitplan ist. Weitere Informationen zum Löschen eines Replikationszeitplans finden Sie [hier](/docs/infrastructure/FileStorage?topic=FileStorage-replication).
 {:important}
 
 ## Snapshot löschen
@@ -102,14 +137,24 @@ Snapshots, die nicht mehr benötigt werden, können manuell entfernt werden, um 
 1. Klicken Sie auf Ihren Speicherdatenträger und blättern Sie zum Abschnitt **Snapshot**, um die Liste der vorhandenen Snapshots anzuzeigen.
 2. Klicken Sie neben dem gewünschten Snapshot auf **Aktionen** und klicken Sie auf **Löschen**, um den Snapshot zu löschen. Diese Löschung hat keine Auswirkung auf zukünftige oder frühere Snapshots im selben Zeitplan, da zwischen Snapshots keine Abhängigkeit besteht.
 
+Alternativ dazu können Sie einen Snapshot über die SL-CLI löschen. n
+```
+# slcli file snapshot-delete --help
+Syntax: slcli file snapshot-delete [OPTIONEN] SNAPSHOT-ID
+
+Optionen:
+  -h, --help  Diese Nachricht anzeigen und Ausführung beenden.
+```
+
 Manuelle Snapshots, die nicht manuell im Portal gelöscht werden, werden automatisch (älteste zuerst) gelöscht, wenn Sie den Grenzwert des Speicherbereichs erreichen.
+{:note}
 
 ## Speicherdatenträger mithilfe eines Snapshots auf dem Stand eines bestimmten Zeitpunkts wiederherstellen
 
 Es ist möglich, dass Sie Ihren Speicherdatenträger aufgrund eines Benutzerfehlers oder einer Datenbeschädigung auf einen bestimmten Zeitpunkt zurücksetzen müssen.
 
 1. Hängen Sie Ihren Speicherdatenträger vom Host ab und trennen Sie die Verbindung.
-   - Weitere Anweisungen finden Sie [hier](accessing-file-storage-linux.html).
+   - Weitere Anweisungen finden Sie [hier](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux).
 2. Klicken Sie auf **Speicher**, **{{site.data.keyword.filestorage_short}}** im [{{site.data.keyword.slportal}} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/){:new_window}.
 3. Blättern Sie nach unten und klicken Sie auf den Datenträger, der wiederhergestellt werden soll. Im Abschnitt **Snapshots** der Seite **Details** wird die Liste aller gespeicherten Snapshots mit Angabe ihrer Größe und ihres Erstellungsdatums angezeigt.
 4. Klicken Sie neben dem zu verwendenden Snapshot auf **Aktionen** und klicken Sie auf **Wiederherstellen**. <br/>
@@ -121,7 +166,18 @@ Es ist möglich, dass Sie Ihren Speicherdatenträger aufgrund eines Benutzerfehl
    Quer über den Bereich der Seite wird die Nachricht angezeigt, dass der Datenträger mit dem ausgewählten Snapshot wiederhergestellt wird. Darüber hinaus wird neben Ihrem Datenträger auf der {{site.data.keyword.filestorage_short}}-Seite ein Symbol angezeigt, das darauf hinweist, dass zurzeit eine Transaktion aktiv ist. Bei Bewegen des Mauszeigers über das Symbol wird die Transaktion in einem Fenster angezeigt. Das Symbol wird ausgeblendet, sobald die Transaktion abgeschlossen ist.
    {:note}
 6. Hängen Sie Ihren Speicherdatenträger an den Host an und ordnen Sie ihn erneut zu.
-  - Weitere Anweisungen finden Sie [hier](accessing-file-storage-linux.html).
+  - Weitere Anweisungen finden Sie [hier](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux).
+
+Alternativ dazu können Sie den Datenträger über die SL-CLI mit einem Snapshot wiederherstellen. 
+```
+# slcli file snapshot-restore --help
+Syntax: slcli file snapshot-restore [OPTIONEN] DATENTRÄGER-ID
+
+Optionen:
+  -s, --snapshot-id TEXT  ID des Snapshots, der zur Wiederherstellung des
+                          Dateispeicherdatenträgers verwendet werden soll.
+  -h, --help              Diese Nachricht anzeigen und Ausführung beenden.
+```  
 
 Beim Zurücksetzen eines Datenträgers werden alle Snapshots gelöscht, die nach dem für das Zurücksetzen verwendeten Snapshot erstellt wurden.
 {:important}

@@ -1,22 +1,23 @@
 ---
 
 copyright:
-  years: 2015, 2019
-lastupdated: "2019-01-08"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
-
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 
 # Réplica de datos
+{: #replication}
 
 La réplica utiliza una de sus planificaciones de instantáneas para copiar automáticamente las instantáneas a un volumen de destino de un centro de datos remoto. Las copias se pueden recuperar en el sitio remoto si se produce un suceso catastrófico o los datos resultan dañados.
 
-La réplica mantiene sus datos sincronizados entre dos ubicaciones distintas. Si desea clonar el volumen y utilizarlo independientemente del volumen original, consulte [Creación de un volumen de archivos duplicado](how-to-create-duplicate-volume.html).
+La réplica mantiene sus datos sincronizados entre dos ubicaciones distintas. Si desea clonar el volumen y utilizarlo independientemente del volumen original, consulte [Creación de un volumen de archivos duplicado](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume).
 {:tip}
 
 Antes de poder replicar, debe crear una planificación de instantáneas.
@@ -112,7 +113,7 @@ Las réplicas se basan en una planificación de réplica. Primero debe tener un 
 2. Pulse **Réplica** y pulse **Adquirir una réplica**.
 3. Seleccione la planificación de instantáneas existente que quiera que siga su réplica. La lista contiene todas las planificaciones de instantáneas activas. <br />
 
-   Solo puede seleccionar una planificación, incluso si tiene una combinación de por hora, a diario y mensual. Todas las instantáneas capturadas desde el ciclo de réplica anterior se replicarán, independientemente de la planificación que las originó.<br />Si no tiene configuradas las instantáneas, se le solicitará que lo haga para poder solicitar una réplica. Para obtener más información, consulte [Trabajar con instantáneas](snapshots.html).
+   Solo puede seleccionar una planificación, incluso si tiene una combinación de por hora, a diario y mensual. Todas las instantáneas capturadas desde el ciclo de réplica anterior se replicarán, independientemente de la planificación que las originó.<br />Si no tiene configuradas las instantáneas, se le solicitará que lo haga para poder solicitar una réplica. Para obtener más información, consulte [Trabajar con instantáneas](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots).
    {:tip}
 3. Pulse **Ubicación** y seleccione el centro de datos que es su sitio de recuperación tras desastre.
 4. Pulse **Continuar**.
@@ -155,7 +156,7 @@ El espacio de instantáneas primario y el espacio de réplica deben ser el mismo
 
 Los tamaños de volumen deben ser los mismos para sus volúmenes de almacenamiento primario y de réplica. No puede haber uno mayor que otro. Cuando aumenta el espacio de instantáneas para su volumen primario, el espacio de réplica se aumenta automáticamente. El aumento del espacio de instantáneas desencadena una actualización de réplica inmediata. El aumento en ambos volúmenes se muestra como elementos de línea en su factura, y se prorratea en caso necesario.
 
-Para obtener más información sobre cómo incrementar el espacio para instantáneas, consulte [Instantáneas](snapshots.html).
+Para obtener más información sobre cómo incrementar el espacio para instantáneas, consulte [Instantáneas](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots).
 ## Visualización de los volúmenes de réplica en la lista de volúmenes
 
 Puede visualizar los volúmenes de réplica en la página de {{site.data.keyword.filestorage_short}}, en **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**. El nombre de volumen muestra el nombre del volumen primario seguido de REP. El **Tipo** de réplica puede ser Resistente o Rendimiento. La **Dirección de destino** es N/D porque el volumen de réplica no está montado en el centro de datos y el **Estado** es Inactivo.
@@ -185,14 +186,14 @@ Los duplicados pueden crearse a partir de volúmenes primarios y de réplica. El
 
 Se puede acceder a los volúmenes duplicados mediante un host para lectura/escritura siempre y cuando el almacenamiento esté suministrado. Sin embargo, no se permiten instantáneas ni réplicas hasta que se completa la copia de datos del original en el duplicado.
 
-Para obtener más información, consulte [Creación de un volumen de archivo duplicado](how-to-create-duplicate-volume.html)
+Para obtener más información, consulte [Creación de un volumen de archivo duplicado](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume)
 
 ## Uso de réplicas para migración tras error en caso de desastre
 
 Cuando realiza la migración tras error, está "cambiando el conmutador" de su volumen de almacenamiento del centro de datos primario al volumen de destino del centro de datos remoto. Por ejemplo, su centro de datos primario es Londres y el centro de datos secundario es Ámsterdam. Si se produjera un suceso de error, debería realizar la migración a Ámsterdam, conectando al ahora volumen primario desde una instancia de cálculo en Ámsterdam. Cuando su volumen de Londres se haya reparado, se realizará una instantánea del volumen de Ámsterdam para volver a Londres y al volumen primario de nuevo desde una instancia de cálculo de Londres.
 
-* Si la ubicación principal está experimentando problemas, pero el almacenamiento y el host siguen en línea, consulte [Migración tras error con un volumen primario accesible](dr-accessible-primary.html).
-* Si la ubicación primaria está inactiva, consulte [Migración tras error con un volumen primario inaccesible](disaster-recovery.html).
+* Si la ubicación principal está experimentando problemas, pero el almacenamiento y el host siguen en línea, consulte [Migración tras error con un volumen primario accesible](/docs/infrastructure/FileStorage?topic=FileStorage-dr-accessible).
+* Si la ubicación primaria está inactiva, consulte [Migración tras error con un volumen primario inaccesible](/docs/infrastructure/FileStorage?topic=FileStorage-dr-inaccessible).
 
 ## Cancelación de una réplica existente
 
@@ -213,3 +214,68 @@ Cuando se cancela un volumen primario, la planificación de réplica y el volume
  2. Pulse **Acciones** y seleccione **Cancelar para {{site.data.keyword.filestorage_short}}**.
  3. Seleccione cuándo desea cancelar el volumen. Elija **Inmediatamente** o **Fecha de aniversario**, y pulse **Continuar**.
  4. Pulse **Reconozco que a causa de la cancelación, es posible que se pierdan datos** y pulse **Cancelar**.
+
+## Mandatos relacionados con la replicación en SLCLI
+{: #clicommands}
+
+* Listar los centros de datos de replicación disponibles para un volumen específico.
+  ```
+  # slcli file replica-locations --help
+  Uso: slcli file replica-locations [OPCIONES] ID_VOLUMEN
+
+  Opciones:
+  --sortby TEXTO  Columna por la que se debe ordenar
+  --columns TEXTO Columnas que se deben visualizar. Opciones: ID, Long Name, Short Name
+  -h, --help      Mostrar este mensaje y salir.
+  ```
+
+* Solicitar un volumen de réplica de almacenamiento en archivo.
+  ```
+  # slcli file replica-order --help
+  Uso: slcli file replica-order [OPCIONES] ID_VOLUMEN
+
+  Opciones:
+  -s, --snapshot-schedule [INTERVAL|HOURLY|DAILY|WEEKLY]
+                                  Planificación de instantáneas que usar en la réplica,
+                                  (INTERVAL | HOURLY | DAILY | WEEKLY)
+                                  [necesario]
+  -l, --location TEXTO            Nombre corto del centro de datos para el replicante
+                                  (por ejemplo, dal09)  [necesario]
+  --tier [0.25|2|4|10]            Nivel de almacenamiento resistente (IOPS por GB)
+                                  del volumen primario para el que se pide un replicante
+                                  [opcional]
+  -h, --help                      Mostrar este mensaje y salir.
+  ```
+
+* Listar volúmenes replicantes existentes de un volumen de archivo.
+  ```
+  # slcli file replica-partners --help
+  Uso: slcli file replica-partners [OPCIONES] ID_VOLUMEN
+
+  Opciones:
+  --sortby TEXTO  Columna por la que se debe ordenar
+  --columns TEXTO Columnas que se deben visualizar. Opciones: ID, Username, Account ID,
+                  Capacity (GB), Hardware ID, Guest ID, Host ID
+  -h, --help      Mostrar este mensaje y salir.
+  ```
+
+* Realizar la migración tras error de un volumen de archivo a un volumen replicante específico.
+  ```
+  # slcli file replica-failover --help
+  Uso: slcli file replica-failover [OPCIONES] ID_VOLUMEN
+
+  Opciones:
+  --replicant-id TEXTO ID del volumen replicante
+  --immediate          Migrar tras error al replicante de inmediato.
+  -h, --help      Mostrar este mensaje y salir.
+  ```
+
+* Restablecer un volumen de archivo desde un volumen replicante específico.
+  ```
+  # slcli file replica-failback --help
+  Uso: slcli file replica-failback [OPCIONES] ID_VOLUMEN
+
+  Opciones:
+  --replicant-id TEXTO ID del volumen replicante
+  -h, --help           Mostrar este mensaje y salir.
+  ```

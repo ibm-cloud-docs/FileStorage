@@ -1,18 +1,20 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-12-11"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
+{:codeblock: .codeblock}
+
 
 # Montando o {{site.data.keyword.filestorage_short}} no Container Linux
+{: #mountingCoreOS}
 
 O Container Linux by CoreOS é um sistema operacional leve de software livre baseado no kernel do Linux. Ele foi projetado para fornecer infraestrutura para implementações em cluster. Como um sistema operacional,
 o Container Linux fornece a funcionalidade mínima requerida para implementar aplicativos dentro de

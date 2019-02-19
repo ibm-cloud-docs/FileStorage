@@ -1,26 +1,28 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 # 개선된 {{site.data.keyword.filestorage_short}}로 {{site.data.keyword.filestorage_short}} 마이그레이션
+{: #migratestorage}
 
-개선된 {{site.data.keyword.filestorage_full}}는 특정 데이터 센터에서만 사용 가능합니다. 조정 가능한 IOPS 비율 및 확장 가능한 볼륨과 같은 사용 가능한 기능 및 업그레이드된 데이터 센터의 목록을 보려면 [여기](new-ibm-block-and-file-storage-location-and-features.html)를 클릭하십시오. 제공자 관리 암호화에 관한 자세한 정보는 [{{site.data.keyword.filestorage_short}} 저장 암호화](block-file-storage-encryption-rest.html)를 참조하십시오.
+개선된 {{site.data.keyword.filestorage_full}}는 특정 데이터 센터에서만 사용 가능합니다. 조정 가능한 IOPS 비율 및 확장 가능한 볼륨과 같은 사용 가능한 기능 및 업그레이드된 데이터 센터의 목록을 보려면 [여기](/docs/infrastructure/FileStorage?topic=FileStorage-news)를 클릭하십시오. 제공자 관리 암호화에 관한 자세한 정보는 [{{site.data.keyword.filestorage_short}} 저장 암호화](/docs/infrastructure/FileStorage?topic=FileStorage-encryption)를 참조하십시오.
 
 선호되는 마이그레이션 경로는 두 볼륨을 동시에 연결하고 하나의 LUN에서 다른 LUN으로 직접 데이터를 전송하는 것입니다. 세부사항은 사용자의 운영 체제와 복사 오퍼레이션 중에 데이터 변경이 예상되는지 여부에 따라 다릅니다.
 
 이 경우, 이미 호스트에 암호화되지 않은 LUN을 연결했다고 가정합니다. 그렇지 않은 경우에는 이 태스크를 완료하는 데 있어서 사용자의 운영 체제에 가장 적합한 지시사항을 따르십시오.
 
-- [Linux의 {{site.data.keyword.filestorage_short}} 마운트](accessing-file-storage-linux.html)
-- [CentOS의 {{site.data.keyword.filestorage_short}} 마운트](mounting-nsf-file-storage.html)
-- [CoreOS의 {{site.data.keyword.filestorage_short}} 마운트](mounting-storage-coreos.html)
+- [Linux의 {{site.data.keyword.filestorage_short}} 마운트](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)
+- [CentOS의 {{site.data.keyword.filestorage_short}} 마운트](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)
+- [CoreOS의 {{site.data.keyword.filestorage_short}} 마운트](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCoreOS)
 
 이러한 데이터 센터에서 프로비저닝된 모든 개선된 {{site.data.keyword.filestorage_short}} 볼륨에는 암호화되지 않은 볼륨과는 다른 마운트 지점이 있습니다. 두 스토리지 볼륨에 올바른 마운트 지점을 사용 중임을 확인하기 위해 콘솔의 **볼륨 세부사항** 페이지에서 마운트 지점 정보를 볼 수 있습니다. 또한 API 호출 `SoftLayer_Network_Storage::getNetworkMountAddress()`를 통해 올바른 마운트 지점에 액세스할 수 있습니다.
 {:tip}
@@ -33,10 +35,10 @@ API에서 주문하는 경우에는 새 스토리지의 업데이트된 기능�
 
 {{site.data.keyword.BluSoftlayer_full}} 카탈로그 및 {{site.data.keyword.slportal}}을 통해 향상된 LUN을 주문할 수 있습니다. 새 볼륨은 마이그레이션을 수행하기 위해 원본 파일 공유 크기 이상이어야 합니다.
 
-- [사전 정의된 IOPS 티어(Endurance)가 있는 {{site.data.keyword.filestorage_short}} 주문](provisioning-file-storage.html#ordering-file-storage-with-pre-defined-iops-tiers-endurance-)
-- [사용자 정의 IOPS(Performance)가 있는 {{site.data.keyword.filestorage_short}} 주문](provisioning-file-storage.html#ordering-file-storage-with-custom-iops-performance-)
+- [사전 정의된 IOPS 티어(Endurance)가 있는 {{site.data.keyword.filestorage_short}} 주문](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#endurance)
+- [사용자 정의 IOPS(Performance)가 있는 {{site.data.keyword.filestorage_short}} 주문](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#performance)
 
-몇 분 내에 새 스토리지가 마운트할 수 있게 제공됩니다. 리소스 목록과 {{site.data.keyword.blockstorageshort}} 목록에서 새 스토리지를 볼 수 있습니다. 
+몇 분 내에 새 스토리지가 마운트할 수 있게 제공됩니다. 리소스 목록과 {{site.data.keyword.blockstorageshort}} 목록에서 새 스토리지를 볼 수 있습니다.
 
 
 ## 새 {{site.data.keyword.filestorage_short}}에 대해 호스트에 권한 부여

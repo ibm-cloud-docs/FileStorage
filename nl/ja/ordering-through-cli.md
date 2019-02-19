@@ -2,19 +2,21 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-01-07"
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 # SL CLI による {{site.data.keyword.filestorage_short}} の注文
+{: #orderingSLCLI}
 
 通常は [{{site.data.keyword.slportal}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://control.softlayer.com/){:new_window} で注文する製品については、SL CLI を使用して注文することができます。 SL API では、1 つの注文を複数の注文コンテナーで処理します。 注文 CLI は、1 つの注文コンテナーのみを処理します。
 
-SL CLI のインストール方法と使用法について詳しくは、[Python API Client](https://softlayer-python.readthedocs.io/en/latest/cli.html){:new_window} を参照してください。
+SL CLI をインストールして使用する方法について詳しくは、[Python API クライアント![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://softlayer-python.readthedocs.io/en/latest/cli.html){:new_window}を参照してください。
 {:tip}
 
 ## 入手可能な {{site.data.keyword.filestorage_short}} オファーの検索
@@ -26,7 +28,7 @@ SL CLI のインストール方法と使用法について詳しくは、[Python
 各注文では場所 (データ・センター) を関連付ける必要があります。 {{site.data.keyword.filestorage_short}} を注文する際には、コンピュート・インスタンスと同じ場所でプロビジョンしてください。
 {:important}
 
-`slcli order package-list` コマンドを使用して、注文するパッケージを検索できます。 簡単な検索とフィルター操作を実行するために、`–keyword` オプションが用意されています。 このオプションにより、必要なパッケージの検索が容易になります。`Storage-as-a-Service Package 759` を探します。
+`slcli order package-list` コマンドを使用して、注文するパッケージを検索できます。 簡単な検索とフィルター操作を実行するために、`–keyword` オプションが用意されています。 このオプションにより、必要なパッケージの検索が容易になります。 `Storage-as-a-Service Package 759` を探します。
 
 ```
 $ slcli order package-list --help
@@ -83,7 +85,7 @@ Options:
   -h, --help                      Show this message and exit.
 ```
 
-API で {{site.data.keyword.filestorage_short}}を注文する方法について詳しくは、[order_file_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/file.html#SoftLayer.managers.file.FileStorageManager.order_file_volume){:new_window} を参照してください。
+API で {{site.data.keyword.filestorage_short}} を注文する方法について詳しくは、[order_file_volume ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://softlayer-python.readthedocs.io/en/latest/api/managers/file.html#SoftLayer.managers.file.FileStorageManager.order_file_volume){:new_window} を参照してください。
 すべての新機能にアクセスできるようにするには、`Storage-as-a-Service Package 759` を注文します。
 {:tip}
 
@@ -101,7 +103,7 @@ Order #32076317 placed successfully!
 > 100 IOPS
 ```
 
-デフォルトでは、{{site.data.keyword.blockstorageshort}} ボリュームと {{site.data.keyword.filestorage_short}} ボリュームを組み合わせた合計で 250 個をプロビジョンできます。ご使用のボリュームの数を増やすには、営業担当員にお問い合わせください。 限度を増やす方法について詳しくは、[ストレージ制限の管理](managing-storage-limits.html)を参照してください。
+デフォルトでは、{{site.data.keyword.blockstorageshort}} ボリュームと {{site.data.keyword.filestorage_short}} ボリュームを組み合わせた合計で 250 個をプロビジョンできます。 ご使用のボリュームの数を増やすには、営業担当員にお問い合わせください。 限度を増やす方法について詳しくは、[ストレージ制限の管理](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits)を参照してください。
 {:important}
 
 ## ホストが新しいストレージにアクセスすることの許可
@@ -123,18 +125,18 @@ Options:
   --help                    Show this message and exit.
 ```
 
-API を使用して、ホストが {{site.data.keyword.filestorage_short}} にアクセスする権限を与える方法について詳しくは、[authorize_host_to_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/file.html#SoftLayer.managers.file.FileStorageManager.authorize_host_to_volume){:new_window} を参照してください。
+API を使用して、{{site.data.keyword.filestorage_short}} へのアクセスをホストに許可する方法について詳しくは、[authorize_host_to_volume ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://softlayer-python.readthedocs.io/en/latest/api/managers/file.html#SoftLayer.managers.file.FileStorageManager.authorize_host_to_volume){:new_window} を参照してください。
 {:tip}
 
-同時許可の制限について詳しくは、[FAQ](faqs.html) を参照してください。
+同時許可の制限について詳しくは、[FAQ](/docs/infrastructure/FileStorage?topic=FileStorage-faqs) を参照してください。
 {:important}
 
 ## 新しいストレージの接続
 
 ホストのホスト・オペレーティング・システムに応じて、次のうち該当するリンクを使用します。
-- [Linux への{{site.data.keyword.filestorage_short}}のマウント](accessing-file-storage-linux.html)
-- [CentOS への{{site.data.keyword.filestorage_short}}のマウント](mounting-nsf-file-storage.html)
-- [Container Linux への {{site.data.keyword.filestorage_short}} のマウント](mounting-storage-coreos.html)
-- [cPanel を使用してバックアップするための{{site.data.keyword.filestorage_short}}の構成](configure-backup-cpanel.html)
-- [Plesk を使用してバックアップするための{{site.data.keyword.filestorage_short}}の構成](configure-backup-plesk.html)
-- [ESXi ホストでの {{site.data.keyword.filestorage_short}} ボリュームのマウント](architecture-guide-file-storage-vmware.html)
+- [Linux への{{site.data.keyword.filestorage_short}}のマウント](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)
+- [CentOS への{{site.data.keyword.filestorage_short}}のマウント](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)
+- [Container Linux への {{site.data.keyword.filestorage_short}} のマウント](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCoreOS)
+- [cPanel を使用してバックアップするための{{site.data.keyword.filestorage_short}}の構成](/docs/infrastructure/FileStorage?topic=FileStorage-cPanelBackups)
+- [Plesk を使用してバックアップするための{{site.data.keyword.filestorage_short}}の構成](/docs/infrastructure/FileStorage?topic=FileStorage-PleskBackup)
+- [ESXi ホストでの {{site.data.keyword.filestorage_short}} ボリュームのマウント](/docs/infrastructure/FileStorage?topic=FileStorage-architectureguide)

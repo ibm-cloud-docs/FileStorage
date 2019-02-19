@@ -1,20 +1,22 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-10-31"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
+{:codeblock: .codeblock}
 
-# Montaggio di NFS/{{site.data.keyword.filestorage_short}} in CentOS
 
-Il processo per montare {{site.data.keyword.filestorage_full}} in CentOS 7 è simile al processo di [montaggio di {{site.data.keyword.filestorage_short}} su RHEL 6](accessing-file-storage-linux.html). Tuttavia, poiché il montaggio è NFS, puoi specificare delle opzioni aggiuntive utilizzando la riga `Options=` nel file di montaggio. Nel seguente esempio, NFS è impostato per il montaggio a `/data/www`.
+# Montaggio di {{site.data.keyword.filestorage_short}} in CentOS
+{: #mountingCentOS}
+
+Il processo per montare {{site.data.keyword.filestorage_full}} in CentOS 7 è simile al processo di [montaggio di {{site.data.keyword.filestorage_short}} su RHEL 6](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux). Tuttavia, poiché il montaggio è NFS, puoi specificare delle opzioni aggiuntive utilizzando la riga `Options=` nel file di montaggio. Nel seguente esempio, NFS è impostato per il montaggio a `/data/www`.
 
 Il punto di montaggio dell'istanza di {{site.data.keyword.filestorage_short}} può essere ottenuto dalla pagina di elenco {{site.data.keyword.filestorage_short}} oppure tramite una chiamata API -`SoftLayer_Network_Storage::getNetworkMountAddress()`.
 {:tip}

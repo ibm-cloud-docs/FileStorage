@@ -2,18 +2,18 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-01-07"
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
-{:DomainName: data-hd-keyref="APPDomain"}
-{:DomainName: data-hd-keyref="DomainName"}
 
 
 # {{site.data.keyword.filestorage_short}}の概説
+{: #GettingStarted}
 
 {{site.data.keyword.filestorage_full}} は、永続的で高速、柔軟な、NFS ベースのネットワーク接続型の{{site.data.keyword.filestorage_short}}です。 この Network Attached Storage (NAS) 環境では、ファイル共有機能とパフォーマンスを完全に制御できます。 {{site.data.keyword.filestorage_short}}共有は、回復力のために経路指定された TCP/IP 接続を介して、最大 64 個の許可デバイスに接続できます。
 
@@ -27,14 +27,14 @@ lastupdated: "2019-01-07"
    - ファイル・ベースの NFS 共有に使用可能。
 - **高い耐久性と回復力**
    - オペレーティング・システム・レベルの RAID (Redundant Arrays of Independent Disks) アレイを作成して管理することなく、保守イベントや計画外の障害の間中、データの整合性を保護して可用性を維持します。
-- **保存データの暗号化** [(一部のデータ・センターで使用可能)](new-ibm-block-and-file-storage-location-and-features.html)
+- **保存データの暗号化** [(一部のデータ・センターで使用可能)](/docs/infrastructure/FileStorage?topic=FileStorage-news)
    - data-at-rest のためのプロバイダー管理の暗号化を追加コストなしで利用できます
-- **オール・フラッシュ・ストレージ** [(一部のデータ・センターで使用可能)](new-ibm-block-and-file-storage-location-and-features.html)
+- **オール・フラッシュ・ストレージ** [(一部のデータ・センターで使用可能)](/docs/infrastructure/FileStorage?topic=FileStorage-news)
    - ボリュームの用すべてのフラッシュ・ストレージは、2 IOPS/GB 以上のレベルでプロビジョニングできます。
-- **スナップショット** [(一部のデータ・センターで使用可能)](new-ibm-block-and-file-storage-location-and-features.html).
+- **スナップショット** [(一部のデータ・センターで使用可能)](/docs/infrastructure/FileStorage?topic=FileStorage-news).
    - 特定時点のデータ・スナップショットを、中断せずにキャプチャーします。
-- **レプリケーション**  [(一部のデータ・センターで使用可能)](new-ibm-block-and-file-storage-location-and-features.html)
-   - [一部のデータ・センター](new-ibm-block-and-file-storage-location-and-features.html)でストレージがプロビジョニングされている場合に使用可能。
+- **レプリケーション**  [(一部のデータ・センターで使用可能)](/docs/infrastructure/FileStorage?topic=FileStorage-news)
+   - [一部のデータ・センター](/docs/infrastructure/FileStorage?topic=FileStorage-news)でストレージがプロビジョニングされている場合に使用可能。
    - パートナーの {{site.data.keyword.BluSoftlayer_full}} データ・センターにスナップショットを自動的にコピーします。
 - **高可用性接続**
    - 冗長ネットワーキング接続を使用して可用性を最大限に高めます。
@@ -48,7 +48,7 @@ lastupdated: "2019-01-07"
 
 ファイル・ボリュームの請求を時間単位にするか月単位にするかを選択できます。 LUN に対して選択した請求のタイプが、そのスナップショット・スペースとレプリカに適用されます。 例えば、時間単位の請求を使用して LUN をプロビジョンした場合、スナップショットやレプリカの料金は時間単位で請求されます。 月単位の請求を使用して LUN をプロビジョンした場合、スナップショットやレプリカの料金は月単位で請求されます。
 
-**時間単位の請求**では、ファイル・ボリュームがアカウントに存在した時間数が、LUN が削除されたとき、または請求サイクルの終わりのどちらか早いほうのタイミングで計算されます。 時間単位の請求は、使用期間が数日または 1 カ月未満のストレージに適しています。 時間単位の請求は、[一部のデータ・センター](new-ibm-block-and-file-storage-location-and-features.html)でプロビジョンされたストレージにのみ使用できます。
+**時間単位の請求**では、ファイル・ボリュームがアカウントに存在した時間数が、LUN が削除されたとき、または請求サイクルの終わりのどちらか早いほうのタイミングで計算されます。 時間単位の請求は、使用期間が数日または 1 カ月未満のストレージに適しています。 時間単位の請求は、[一部のデータ・センター](/docs/infrastructure/FileStorage?topic=FileStorage-news)でプロビジョンされたストレージにのみ使用できます。
 
 **月単位の請求**では、作成日から請求サイクル終了までの日割り額が計算され、ただちに請求されます。 請求サイクルの終了前にボリュームが削除されていても、返金はされません。 月単位の請求は、長期間 (1 カ月以上) にわたって保管してアクセスする必要があるデータを使用する実動ワークロード用のストレージに適しています。
 
@@ -111,7 +111,7 @@ lastupdated: "2019-01-07"
 
 - **4 IOPS/GB** は、高負荷のワークロード用に設計されています。 これらのワークロードには通常、どの時点においてもアクティブになっているデータの割合が高いという特徴があります。 例えば、トランザクション・データベースなどのパフォーマンスが重要なデータベースなどの用途があります。
 
-- **10 IOPS/GB** は、NoSQL データベースで生成されるワークロードや、分析のためのデータ処理など、最も要求の厳しいワークロード用に設計されています。 このティアは、[一部のデータ・センター](new-ibm-block-and-file-storage-location-and-features.html)のみで最大 4 TB のプロビジョニングされるストレージにおいて使用可能です。
+- **10 IOPS/GB** は、NoSQL データベースで生成されるワークロードや、分析のためのデータ処理など、最も要求の厳しいワークロード用に設計されています。 このティアは、[一部のデータ・センター](/docs/infrastructure/FileStorage?topic=FileStorage-news)のみで最大 4 TB のプロビジョニングされるストレージにおいて使用可能です。
 
 12-TB エンデュランス・ボリュームでは、最大で 48,000 IOPS が使用可能です。
 
@@ -265,9 +265,9 @@ lastupdated: "2019-01-07"
 
 イーサネット接続の速度は、ボリュームに期待する最大スループットよりも速くなければなりません。 一般に、イーサネット接続が使用可能な帯域幅の 70% を超えることは期待ないでください。 例えば、6,000 IOPS で 16-KB のブロック・サイズを使用している場合、ボリュームは約 94-MB/秒のスループットを処理できます。 1-Gbps イーサネットが LUN に接続されている場合、使用可能な最大スループットをサーバーが使用しようとすると、その接続がボトルネックになります。 1-Gbps イーサネット接続 (125 MB/秒) の理論上の限界を 70% とすると、88 MB/秒のスループットしか得られないことになるためです。
 
-最大 IOPS を得るには、十分なネットワーク・リソースを配備する必要があります。 その他の考慮事項として、ストレージ外の専用ネットワーク使用、およびホスト・サイドおよびアプリケーション固有のチューニング (IP スタック、[キュー項目数](set-host-queue-depth-settings-performance-and-endurance-storage.html)、およびその他の設定) があります。
+最大 IOPS を得るには、十分なネットワーク・リソースを配備する必要があります。 その他の考慮事項として、ストレージ外の専用ネットワーク使用、およびホスト・サイドおよびアプリケーション固有のチューニング (IP スタック、[キュー項目数](/docs/infrastructure/FileStorage?topic=FileStorage-hostqueuesettings)、およびその他の設定) があります。
 
-パブリック Virtual Server のネットワーク使用量合計にストレージ・トラフィックが含まれます。 サービスによって課せられる可能性がある制限について詳しくは、[Virtual Server の資料](https://{DomainName}/docs/vsi/vsi_public.html#public-virtual-servers)を参照してください。
+パブリック Virtual Server のネットワーク使用量合計にストレージ・トラフィックが含まれます。 サービスによって課せられる可能性がある制限について詳しくは、[Virtual Server の資料](/docs/vsi?topic=virtual-servers-about-public-virtual-servers)を参照してください。
 
 **NFS バージョン**
 
@@ -275,14 +275,14 @@ lastupdated: "2019-01-07"
 
 ## 注文の送信
 
-注文を送信する準備ができたら、[コンソール](provisioning-file-storage.html)または [SLCLI](ordering-through-cli.html) を使用して注文することができます。VMware を使用したプロビジョニング・ファイル・ストレージの場合は、[ここ](architecture-guide-file-storage-vmware.html)をクリックします
+注文を送信する準備ができたら、[コンソール](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)または [SLCLI](/docs/infrastructure/FileStorage?topic=FileStorage-orderingSLCLI) を使用して注文することができます。 VMware を使用したプロビジョニング・ファイル・ストレージの場合は、[ここ](/docs/infrastructure/FileStorage?topic=FileStorage-architectureguide)をクリックします
 
 ## 新しいストレージの接続
 
 プロビジョニング要求が完了したら、ホストに対して、新しいストレージへのアクセスを許可し、接続を構成します。 ホストのホスト・オペレーティング・システムに応じて、次のうち該当するリンクを使用します。
-- [Linux での {{site.data.keyword.filestorage_short}} へのアクセス](accessing-file-storage-linux.html)
-- [CentOS への{{site.data.keyword.filestorage_short}}のマウント](mounting-nsf-file-storage.html)
-- [CoreOS への{{site.data.keyword.filestorage_short}}のマウント](mounting-storage-coreos.html)
-- [cPanel を使用してバックアップするための{{site.data.keyword.filestorage_short}}の構成](configure-backup-cpanel.html)
-- [Plesk を使用してバックアップするための{{site.data.keyword.filestorage_short}}の構成](configure-backup-plesk.html)
-- [ESXi ホストでの {{site.data.keyword.filestorage_short}} ボリュームのマウント](architecture-guide-file-storage-vmware.html)
+- [Linux での {{site.data.keyword.filestorage_short}} へのアクセス](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)
+- [CentOS への{{site.data.keyword.filestorage_short}}のマウント](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)
+- [CoreOS への{{site.data.keyword.filestorage_short}}のマウント](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCoreOS)
+- [cPanel を使用してバックアップするための{{site.data.keyword.filestorage_short}}の構成](/docs/infrastructure/FileStorage?topic=FileStorage-cPanelBackups)
+- [Plesk を使用してバックアップするための{{site.data.keyword.filestorage_short}}の構成](/docs/infrastructure/FileStorage?topic=FileStorage-PleskBackup)
+- [ESXi ホストでの {{site.data.keyword.filestorage_short}} ボリュームのマウント](/docs/infrastructure/FileStorage?topic=FileStorage-architectureguide)

@@ -1,18 +1,31 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 # Gestión de los límites de almacenamiento
+{: #managinglimits}
 
-De forma predeterminada, puede suministrar un total combinado de 250 volúmenes de {{site.data.keyword.filestorage_short}} globalmente.
+De forma predeterminada, puede suministrar un total combinado de 250 volúmenes de {{site.data.keyword.blockstorageshort}} y de {{site.data.keyword.filestorage_short}} globalmente.
+
+Si no está seguro de cuántos volúmenes tiene, puede listar los volúmenes de cada centro de datos utilizando el siguiente mandato de `slcli`.
+```
+# slcli file volume-count --help
+Uso: slcli file volume-count [OPCIONES]
+
+Opciones:
+  -d, --datacenter TEXTO Nombre corto del centro de datos
+  --sortby TEXTO         Columna por la que se debe ordenar
+  -h, --help             Mostrar este mensaje y salir.
+```
 
 Puede solicitar un aumento del límite enviando una incidencia en el [{{site.data.keyword.slportal}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){:new_window}. Cuando se aprueba la solicitud, se obtiene un límite de volumen que se establece para un centro de datos específico.  
 

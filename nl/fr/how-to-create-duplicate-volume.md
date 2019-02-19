@@ -1,29 +1,31 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 # Création d'un volume {{site.data.keyword.filestorage_short}} dupliqué
+{: #duplicatevolume}
 
-Vous pouvez créer un doublon d'un {{site.data.keyword.BluSoftlayer_full}} {{site.data.keyword.filestorage_full}} existant. Le volume en double hérite par défaut des options de capacité et de performance du volume d'origine et contient une copie des données jusqu'au point de cohérence d'un instantané.   
+Vous pouvez créer un doublon d'un volume {{site.data.keyword.filestorage_full}} {{site.data.keyword.BluSoftlayer_full}} existant. Le volume dupliqué hérite par défaut des options de capacité et de performance du volume d'origine et contient une copie des données jusqu'au point de cohérence d'un instantané.   
 
-Etant donné que le volume dupliqué est basé sur les données d'un instantané de point de cohérence, vous devez disposer d'un espace d'image instantanée sur le volume d'origine avant de créer un doublon. Pour en savoir plus sur les instantanés et la commande d'espace d'instantané, consultez la [documentation relative aux instantanés](snapshots.html).  
+Etant donné que le volume dupliqué est basé sur les données d'un instantané de point de cohérence, vous devez disposer d'un espace d'instantané sur le volume d'origine avant de créer un doublon. Pour en savoir plus sur les instantanés et la commande d'espace d'instantané, consultez la [documentation relative aux instantanés](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots).  
 
-Vous pouvez créer des doublons à partir de volumes **principaux** et de **réplique**. Le nouveau doublon est créé dans le même centre de données que le volume d'origine. Si vous créez un doublon à partir d'un volume de réplique, le nouveau volume est créé dans le même centre de données que le volume de réplique.
+Vous pouvez créer des doublons à partir d'un volume **principal** et d'un volume de **réplique**. Le nouveau doublon est créé dans le même centre de données que le volume d'origine. Si vous créez un doublon à partir d'un volume de réplique, le nouveau volume est créé dans le même centre de données que le volume de réplique.
 
-Si vous êtes un utilisateur de compte Dedicated d'{{site.data.keyword.containerlong}}, consultez vos options de duplication d'un volume dans la [documentation {{site.data.keyword.containerlong_notm}}](/docs/containers/cs_storage_file.html#backup_restore).
+Si vous êtes utilisateur d'un compte Dedicated d'{{site.data.keyword.containerlong}}, consultez les options de duplication d'un volume dans la [documentation d'{{site.data.keyword.containerlong_notm}}](/docs/containers?topic=containers-backup_restore#backup_restore).
 {:tip}
 
 Les volumes dupliqués sont accessibles par un hôte en lecture/écriture dès la mise à disposition du stockage. Toutefois, les instantanés et la réplication ne sont pas autorisés tant que la copie des données depuis le volume d'origine vers le doublon n'est pas terminée. Une fois la copie de données terminée, le doublon peut être géré et utilisé en tant que volume indépendant.
 
-Cette fonctionnalité est disponible dans la plupart des emplacements. Cliquez [ici](new-ibm-block-and-file-storage-location-and-features.html) pour obtenir la liste des centres de données disponibles.
+Cette fonctionnalité est disponible dans la plupart des emplacements. Cliquez [ici](/docs/infrastructure/FileStorage?topic=FileStorage-news) pour obtenir la liste des centres de données disponibles.
 
 Voici quelques exemples d'utilisation courante d'un volume dupliqué.
 - **Test de reprise après incident**. Créez un doublon de votre volume de réplique pour vérifier que les données sont intactes et qu'elles peuvent être utilisées dans le cas d'un sinistre sans interruption de la réplication.
@@ -49,7 +51,7 @@ Il existe deux manières de créer un volume dupliqué via le portail [{{site.da
     - Si vous effectuez votre commande à partir d'un volume de réplique, l'unique option d'instantané est d'utiliser le dernier instantané disponible.
 4. Le type de stockage et l'emplacement restent identiques à ce qui est indiqué pour le volume d'origine.
 5. Facturation à l'heure ou au mois - vous pouvez choisir de mettre à disposition le numéro d'unité logique du doublon avec une facturation à l'heure ou au mois. Le type de facturation pour le volume d'origine est automatiquement sélectionné. Si vous voulez en choisir un autre pour votre stockage en double, vous pouvez le sélectionner ici.
-5. Si vous le souhaitez, vous pouvez spécifier des E-S/s ou un niveau d'E-S/s pour le nouveau volume. Les IOPS du volume d'origine sont définies par défaut. Les combinaisons de performances et de taille disponibles sont affichées.
+5. Si vous le souhaitez, vous pouvez spécifier des IOPS ou un niveau d'IOPS pour le nouveau volume. Les IOPS du volume d'origine sont définies par défaut. Les combinaisons de performances et de taille disponibles sont affichées.
     - Si le volume d'origine a un niveau Endurance avec 0,25 IOPS, vous ne pourrez pas effectuer de nouvelle sélection.
     - Si le volume d'origine a un niveau Endurance avec 2, 4 ou 10 IOPS, vous pouvez indiquer n'importe lequel de ces niveaux pour le nouveau volume.
 6. Vous pouvez mettre à jour la taille du nouveau volume pour qu'elle soit supérieure à celle du volume d'origine. La taille du volume d'origine est définie par défaut.
@@ -76,7 +78,56 @@ Il existe deux manières de créer un volume dupliqué via le portail [{{site.da
 7. Vous pouvez mettre à jour l'espace d'instantané pour le nouveau volume en ajoutant plus, moins ou pas du tout d'espace d'instantané. L'espace d'instantané du volume d'origine est défini par défaut.
 8. Cliquez sur **Continuer** pour passer votre commande du doublon.
 
+## Création d'un doublon via l'interface SLCLI
+```
+# slcli file volume-duplicate --help
+Usage: slcli file volume-duplicate [OPTIONS] ORIGIN_VOLUME_ID
 
-## Gestion de votre volume en double
+Options:
+  -o, --origin-snapshot-id INTEGER
+                                  ID of an origin volume snapshot to use for
+                                  duplcation.
+  -c, --duplicate-size INTEGER    Size of duplicate file volume in GB. ***If
+                                  no size is specified, the size of the origin
+                                  volume will be used.***
+                                  Minimum: [the size
+                                  of the origin volume]
+  -i, --duplicate-iops INTEGER    Performance Storage IOPS, between 100 and
+                                  6000 in multiples of 100 [only used for
+                                  performance volumes] ***If no IOPS value is
+                                  specified, the IOPS value of the origin
+                                  volume will be used.***
+                                  Requirements: [If
+                                  IOPS/GB for the origin volume is less than
+                                  0.3, IOPS/GB for the duplicate must also be
+                                  less than 0.3. If IOPS/GB for the origin
+                                  volume is greater than or equal to 0.3,
+                                  IOPS/GB for the duplicate must also be
+                                  greater than or equal to 0.3.]
+  -t, --duplicate-tier [0.25|2|4|10]
+                                  Endurance Storage Tier (IOPS per GB) [only
+                                  used for endurance volumes] ***If no tier is
+                                  specified, the tier of the origin volume
+                                  will be used.***
+                                  Requirements: [If IOPS/GB
+                                  for the origin volume is 0.25, IOPS/GB for
+                                  the duplicate must also be 0.25. If IOPS/GB
+                                  for the origin volume is greater than 0.25,
+                                  IOPS/GB for the duplicate must also be
+                                  greater than 0.25.]
+  -s, --duplicate-snapshot-size INTEGER
+                                  The size of snapshot space to order for the
+                                  duplicate. ***If no snapshot space size is
+                                  specified, the snapshot space size of the
+                                  origin file volume will be used.***
+                                  Input
+                                  "0" for this parameter to order a duplicate
+                                  volume with no snapshot space.
+  --billing [hourly|monthly]      Optional parameter for Billing rate (default
+                                  to monthly)
+  -h, --help                      Show this message and exit.
+```
+
+## Gestion de votre volume dupliqué
 
 Pendant que les données sont copiées depuis le volume d'origine vers le doublon, un statut s'affiche sur la page des détails indiquant que la duplication est en cours. Pendant cette opération, vous pouvez vous connecter à un hôte et lire/écrire sur le volume, mais vous ne pouvez pas créer de planifications de l'image instantanée. Une fois le processus de duplication terminé, le nouveau volume est indépendant du volume d'origine ; il peut être géré avec des instantanés et des réplications comme un volume normal.

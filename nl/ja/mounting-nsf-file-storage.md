@@ -1,20 +1,22 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-10-31"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
+{:codeblock: .codeblock}
 
-# CentOS への NFS/{{site.data.keyword.filestorage_short}}のマウント
 
-CentOS 7 への {{site.data.keyword.filestorage_full}} のマウントのプロセスは、[RHEL 6 への {{site.data.keyword.filestorage_short}} のマウント](accessing-file-storage-linux.html)のプロセスと同様です。しかし、マウントが NFS なので、マウント・ファイルで `Options=` 行を使用して追加のオプションをいくつか指定できます。 次の例では、`/data/www` にマウントするように NFS を設定します。
+# CentOS への {{site.data.keyword.filestorage_short}} のマウント
+{: #mountingCentOS}
+
+CentOS 7 への {{site.data.keyword.filestorage_full}} のマウントのプロセスは、[RHEL 6 への {{site.data.keyword.filestorage_short}} のマウント](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)のプロセスと同様です。しかし、マウントが NFS なので、マウント・ファイルで `Options=` 行を使用して追加のオプションをいくつか指定できます。 次の例では、`/data/www` にマウントするように NFS を設定します。
 
 {{site.data.keyword.filestorage_short}}・インスタンスの NFS マウント・ポイントは、{{site.data.keyword.filestorage_short}}のリスト・ページから取得できます。また、API 呼び出し `SoftLayer_Network_Storage::getNetworkMountAddress()` を使用して取得することもできます。
 {:tip}

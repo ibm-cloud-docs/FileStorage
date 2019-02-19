@@ -1,18 +1,31 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 # ストレージ制限の管理
+{: #managinglimits}
 
-デフォルトでは、合計で 250 の {{site.data.keyword.filestorage_short}} ボリュームをグローバルにプロビジョンできます。
+デフォルトでは、合計 250 の {{site.data.keyword.blockstorageshort}} および {{site.data.keyword.filestorage_short}} ボリュームをグローバルにプロビジョンできます。
+
+存在するボリュームの数を確認するには、次のように `slcli` コマンドを使用して、各データ・センターのボリュームをリストすることができます。
+```
+# slcli file volume-count --help
+Usage: slcli file volume-count [OPTIONS]
+
+Options:
+ -d, --datacenter TEXT  Datacenter shortname
+ --sortby TEXT          Column to sort by
+ -h, --help             Show this message and exit.
+```
 
 [{{site.data.keyword.slportal}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://control.softlayer.com/){:new_window} でチケットを送信して、制限の拡大を要求できます。 要求が承認されると、特定のデータ・センターでボリューム制限が設定されます。  
 

@@ -2,18 +2,18 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-01-07"
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
-{:DomainName: data-hd-keyref="APPDomain"}
-{:DomainName: data-hd-keyref="DomainName"}
 
 
 # Introdução ao {{site.data.keyword.filestorage_short}}
+{: #GettingStarted}
 
 O {{site.data.keyword.filestorage_full}} é um {{site.data.keyword.filestorage_short}} baseado em NFS persistente, rápido e flexível, conectado à rede. Nesse ambiente de armazenamento conectado à rede (NAS), você tem controle total sobre sua função de compartilhamentos de arquivo e sobre o desempenho. Os compartilhamentos do {{site.data.keyword.filestorage_short}} podem ser conectados a até 64 dispositivos autorizados sobre conexões TCP/IP roteadas para resiliência.
 
@@ -27,14 +27,14 @@ Tire vantagem dos recursos principais do {{site.data.keyword.filestorage_short}}
    - Disponível para compartilhamentos de NFS baseados em arquivo.
 - **Altamente durável e resiliente**
    - Protege a integridade dos dados e mantém a disponibilidade por meio de eventos de manutenção e falhas não planejadas sem a necessidade de criar e gerenciar matrizes Redundant Array of Independent Disks (RAID) no nível de sistema operacional
-- **Criptografia de dados em repouso** [(disponível em data centers selecionados.)](new-ibm-block-and-file-storage-location-and-features.html)
+- **Criptografia de dados em repouso** [(disponível em data centers selecionados.)](/docs/infrastructure/FileStorage?topic=FileStorage-news)
    - A criptografia gerenciada por provedor para dados em repouso é fornecida sem custo adicional
-- **Todo armazenamento suportado por flash** [(disponível em data centers selecionados.)](new-ibm-block-and-file-storage-location-and-features.html)
+- **Todo armazenamento suportado por flash** [(disponível em data centers selecionados.)](/docs/infrastructure/FileStorage?topic=FileStorage-news)
    - O armazenamento totalmente em flash para volumes pode ser provisionado em 2 IOPS/GB ou níveis mais altos.
-- ** Capturas Instantâneas **  [ (Disponíveis em data centers selecionados.)](new-ibm-block-and-file-storage-location-and-features.html).
+- ** Capturas Instantâneas **  [ (Disponíveis em datacenters de seleção.)](/docs/infrastructure/FileStorage?topic=FileStorage-news).
    - Captura capturas instantâneas de dados point-in-time sem interrupções.
-- **Replicação** [(Disponível nos data centers selecionados.)](new-ibm-block-and-file-storage-location-and-features.html)
-   - Disponível quando o armazenamento é provisionado em [data centers selecionados](new-ibm-block-and-file-storage-location-and-features.html).
+- **Replicação**  [(Disponível em data centers selecionados.)](/docs/infrastructure/FileStorage?topic=FileStorage-news)
+   - Disponível quando o armazenamento é provisionado em [data centers selecionados](/docs/infrastructure/FileStorage?topic=FileStorage-news).
    - Copia capturas instantâneas automaticamente para um data center parceiro do {{site.data.keyword.BluSoftlayer_full}}.
 - **Conectividade altamente disponível**
    - Usa conexões de rede redundantes para maximizar a disponibilidade.
@@ -48,7 +48,7 @@ Tire vantagem dos recursos principais do {{site.data.keyword.filestorage_short}}
 
 É possível selecionar o faturamento por hora ou mensal para um volume de Arquivo. O tipo de faturamento selecionado para um LUN aplica-se a seu espaço de captura instantânea e réplicas. Por exemplo, se você provisionar um LUN com o faturamento por hora, quaisquer capturas instantâneas ou taxas de réplica serão faturadas por hora. Se você provisionar um LUN com faturamento mensal, quaisquer capturas instantâneas ou taxas de réplica serão faturadas mensalmente.
 
-Com o **faturamento por hora**, o número de horas em que o volume de arquivo existiu na conta é calculado no momento em que o LUN é excluído ou no final do ciclo de faturamento, o que ocorrer primeiro. O faturamento por hora é uma boa opção para armazenamento usado por alguns dias ou menos de um mês completo. O faturamento por hora está disponível para o armazenamento provisionado em [data centers selecionados](new-ibm-block-and-file-storage-location-and-features.html) apenas.
+Com o **faturamento por hora**, o número de horas em que o volume de arquivo existiu na conta é calculado no momento em que o LUN é excluído ou no final do ciclo de faturamento, o que ocorrer primeiro. O faturamento por hora é uma boa opção para armazenamento usado por alguns dias ou menos de um mês completo. O faturamento por hora está disponível para o armazenamento provisionado em [data centers selecionados](/docs/infrastructure/FileStorage?topic=FileStorage-news) apenas.
 
 Com o **faturamento mensal**, o cálculo para o preço é rateado da data de criação ao término do ciclo de faturamento e faturado imediatamente. Se um volume for excluído antes do término do ciclo de faturamento, não haverá reembolso. O faturamento mensal é uma boa opção para o armazenamento usado em cargas de trabalho de produção que usam dados que precisam ser armazenados e acessados por longos períodos de tempo (um mês ou mais).
 
@@ -111,7 +111,7 @@ O {{site.data.keyword.filestorage_short}} Endurance está disponível em quatro 
 
 - **4 IOPS por GB** foi projetado para cargas de trabalho de maior intensidade. Essas cargas de trabalho geralmente são caracterizadas por ter uma alta porcentagem de dados ativos a qualquer momento. Aplicativos de exemplo incluem bancos de dados transacionais e outros sensíveis ao desempenho.
 
-- **10 IOPS por GB** é projetado para as cargas de trabalho mais exigentes, como aquelas criadas por bancos de dados NoSQL, e para processamento de dados para Analytics. Essa camada está disponível para o armazenamento provisionado até 4 TB em [data centers selecionados](new-ibm-block-and-file-storage-location-and-features.html) apenas.
+- **10 IOPS por GB** é projetado para as cargas de trabalho mais exigentes, como aquelas criadas por bancos de dados NoSQL, e para processamento de dados para Analytics. Essa camada está disponível para o armazenamento provisionado até 4 TB em [data centers selecionados](/docs/infrastructure/FileStorage?topic=FileStorage-news) apenas.
 
 Até 48.000 IOPS estão disponíveis com um volume do Endurance de 12 TB.
 
@@ -265,9 +265,9 @@ Outro fator a ser considerado é o número de hosts que estão usando seu volume
 
 A velocidade da sua conexão Ethernet deve ser mais rápida do que o rendimento máximo esperado de seu volume. Em geral, não espere saturar sua conexão Ethernet além de 70% da largura de banda disponível. Por exemplo, se você tiver 6.000 IOPS e estiver usando um tamanho de bloco de 16 KB, o volume poderá manipular o rendimento de aproximadamente 94 MBps. Se você tiver uma conexão Ethernet de 1 Gbps com seu LUN, ela se tornará um gargalo quando seus servidores tentarem usar o rendimento máximo disponível. Isso porque 70 por cento do limite teórico de uma conexão Ethernet de 1 Gbps (125 MB por segundo) permitiria 88 MB por segundo apenas.
 
-Para alcançar o IOPS máximo, recursos de rede adequados precisam estar em vigor. Outras considerações incluem o uso de rede privada fora do armazenamento e do lado do host, além de ajustes específicos do aplicativo (pilha de IP ou [profundidades de fila](set-host-queue-depth-settings-performance-and-endurance-storage.html) e outras configurações).
+Para alcançar o IOPS máximo, recursos de rede adequados precisam estar em vigor. Outras considerações incluem o uso de rede privada fora do armazenamento e do lado do host, além de ajustes específicos do aplicativo (pilha de IP ou [profundidades de fila](/docs/infrastructure/FileStorage?topic=FileStorage-hostqueuesettings) e outras configurações).
 
-O tráfego de armazenamento é incluído no uso total de rede de Virtual Servers Públicos. Para obter mais informações sobre os limites que podem ser impostos pelo serviço, consulte a [Documentação do Virtual Server](https://{DomainName}/docs/vsi/vsi_public.html#public-virtual-servers).
+O tráfego de armazenamento é incluído no uso total de rede de Virtual Servers Públicos. Para obter mais informações sobre os limites que podem ser impostos pelo serviço, consulte a [Documentação do Virtual Server](/docs/vsi?topic=virtual-servers-about-public-virtual-servers).
 
 ** Versão do NFS **
 
@@ -276,14 +276,14 @@ O NFS v3 e NFS v4.1 são suportados no ambiente do {{site.data.keyword.BluSoftla
 ## Enviando sua Ordem
 
 Quando você estiver pronto para enviar seu pedido, poderá fazer isso por meio
-do [Console](provisioning-file-storage.html) ou da [SLCLI](ordering-through-cli.html). Para ver Provisionando o File Storage com o VMware, clique [aqui](architecture-guide-file-storage-vmware.html)
+do [Console](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole) ou da [SLCLI](/docs/infrastructure/FileStorage?topic=FileStorage-orderingSLCLI). Para ver Provisionando o File Storage com o VMware, clique [aqui](/docs/infrastructure/FileStorage?topic=FileStorage-architectureguide)
 
 ## Conectando seu novo armazenamento
 
 Quando sua solicitação de fornecimento estiver concluída, autorize seus hosts a acessar o novo armazenamento e configurar sua conexão. Dependendo do sistema operacional de seu host, siga o link apropriado.
-- [Acessando o {{site.data.keyword.filestorage_short}} no Linux](accessing-file-storage-linux.html)
-- [Montando o {{site.data.keyword.filestorage_short}} no CentOS](mounting-nsf-file-storage.html)
-- [Montando o {{site.data.keyword.filestorage_short}} no CoreOS](mounting-storage-coreos.html)
-- [Configurando o {{site.data.keyword.filestorage_short}} para backup com o cPanel](configure-backup-cpanel.html)
-- [Configurando o {{site.data.keyword.filestorage_short}} para backup com o Plesk](configure-backup-plesk.html)
-- [Montando o volume do {{site.data.keyword.filestorage_short}} em hosts ESXi](architecture-guide-file-storage-vmware.html)
+- [Acessando o {{site.data.keyword.filestorage_short}} no Linux](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)
+- [Montando o {{site.data.keyword.filestorage_short}} no CentOS](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)
+- [Montando o {{site.data.keyword.filestorage_short}} no CoreOS](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCoreOS)
+- [Configurando o {{site.data.keyword.filestorage_short}} para backup com o cPanel](/docs/infrastructure/FileStorage?topic=FileStorage-cPanelBackups)
+- [Configurando o {{site.data.keyword.filestorage_short}} para backup com o Plesk](/docs/infrastructure/FileStorage?topic=FileStorage-PleskBackup)
+- [Montando o volume do {{site.data.keyword.filestorage_short}} em hosts ESXi](/docs/infrastructure/FileStorage?topic=FileStorage-architectureguide)

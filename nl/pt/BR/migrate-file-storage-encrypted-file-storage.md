@@ -1,26 +1,28 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 # Migrando o {{site.data.keyword.filestorage_short}} para o {{site.data.keyword.filestorage_short}} aprimorado
+{: #migratestorage}
 
-O {{site.data.keyword.filestorage_full}} aprimorado está agora disponível nos data centers selecionados. Para ver a lista de data centers submetidos a upgrade e recursos disponíveis, como taxas de IOPS ajustáveis e volumes expansíveis, clique [aqui](new-ibm-block-and-file-storage-location-and-features.html). Para obter mais informações sobre criptografia gerenciada pelo provedor, consulte [Criptografia em repouso do {{site.data.keyword.filestorage_short}}](block-file-storage-encryption-rest.html).
+O {{site.data.keyword.filestorage_full}} aprimorado está agora disponível nos data centers selecionados. Para ver a lista de data centers submetidos a upgrade e recursos disponíveis, como taxas de IOPS ajustáveis e volumes expansíveis, clique [aqui](/docs/infrastructure/FileStorage?topic=FileStorage-news). Para obter mais informações sobre criptografia gerenciada pelo provedor, consulte [Criptografia em repouso do {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-encryption).
 
 O caminho de migração preferencial é conectar-se a ambos os volumes simultaneamente e transferir dados diretamente de um LUN para outro. Os detalhes dependerão de seu sistema operacional e se os dados são esperados mudar durante a operação de cópia.
 
 A suposição é que você já tem o LUN não criptografado conectado ao seu host. Caso contrário, siga as instruções que melhor se ajustem ao seu sistema operacional para realizar essa tarefa.
 
-- [Montando o {{site.data.keyword.filestorage_short}} no Linux](accessing-file-storage-linux.html)
-- [Montando o {{site.data.keyword.filestorage_short}} no CentOS](mounting-nsf-file-storage.html)
-- [Montando o {{site.data.keyword.filestorage_short}} no CoreOS](mounting-storage-coreos.html)
+- [Montando o {{site.data.keyword.filestorage_short}} no Linux](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)
+- [Montando o {{site.data.keyword.filestorage_short}} no CentOS](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)
+- [Montando o {{site.data.keyword.filestorage_short}} no CoreOS](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCoreOS)
 
 Todos os volumes aprimorados do {{site.data.keyword.filestorage_short}} provisionados nesses data centers têm um ponto de montagem diferente de volumes não criptografados. Para assegurar que você esteja usando o ponto de montagem correto para os volumes de armazenamento, é possível visualizar as informações do ponto de montagem na página **Detalhes do volume** no console. Também é possível acessar o ponto de montagem correto por meio de uma chamada API: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 {:tip}
@@ -33,8 +35,8 @@ Ao fazer um pedido com a API, especifique o pacote "Armazenamento como um servi�
 
 É possível pedir um LUN aprimorado por meio do catálogo do {{site.data.keyword.BluSoftlayer_full}} e do {{site.data.keyword.slportal}}. Seu novo volume deve ter o mesmo tamanho ou ser maior que o compartilhamento de arquivo original para facilitar a migração.
 
-- [Pedindo o {{site.data.keyword.filestorage_short}} com camadas IOPS predefinidas (Endurance)](provisioning-file-storage.html#ordering-file-storage-with-pre-defined-iops-tiers-endurance-)
-- [Pedindo o {{site.data.keyword.filestorage_short}} com IOPS customizado (Performance)](provisioning-file-storage.html#ordering-file-storage-with-custom-iops-performance-)
+- [Pedindo o {{site.data.keyword.filestorage_short}} com camadas IOPS predefinidas (Endurance)](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#endurance)
+- [Pedindo o {{site.data.keyword.filestorage_short}} com IOPS customizado (Performance)](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#performance)
 
 Seu novo armazenamento estará disponível para montagem em alguns minutos. É possível visualizá-lo na lista de recursos e na lista do {{site.data.keyword.blockstorageshort}}.
 

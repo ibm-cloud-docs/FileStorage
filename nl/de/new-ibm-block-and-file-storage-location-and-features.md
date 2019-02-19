@@ -1,21 +1,26 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-12-11"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
- {:tip: .tip}
- {:note: .note}
- {:important: .important}
+{:pre: .pre}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 
-# Neue Standorte und Features für {{site.data.keyword.filestorage_short}}
+# Neue Standorte und Features
+{: #news}
 
 Mit {{site.data.keyword.BluSoftlayer_full}} wird eine neue Version von {{site.data.keyword.filestorage_full}} eingeführt. Der neue Speicher ist in ausgewählten Rechenzentren verfügbar und wird durch Flashspeicher mit höheren IOPS-Niveaus bei der Verschlüsselung auf Plattenebene für ruhende Daten unterstützt. Sämtlicher in den ausgewählten Rechenzentren bestellter Speicher wird automatisch mit der neuen Version von {{site.data.keyword.filestorage_short}} erstellt.
 
 Der NFS-Mountpunkt für neue Datenträger wurde geändert. Details finden Sie im Abschnitt [Neuer Mountpunkt für verschlüsselte {{site.data.keyword.filestorage_short}}-Datenträger](#new-mount-point-for-enhanced-file-storage-volumes).
 {:important}
+
+## Neue Standorte
+{: #new-locations}
 
 Die neue Version von {{site.data.keyword.filestorage_short}} steht in folgenden Regionen und Rechenzentren zur Verfügung und in Kürze werden weitere Rechenzentren hinzugefügt.
 
@@ -80,17 +85,18 @@ Die neue Version von {{site.data.keyword.filestorage_short}} steht in folgenden 
 
 *Tabelle 1 zeigt die Verfügbarkeit von Rechenzentren. Jede Region hat eine eigene Spalte. In manchen Städten, wie zum Beispiel Dallas, San Jose, Washington DC, Amsterdam, Frankfurt, London und Sydney, befinden sich mehrere Rechenzentren.*
 
-Der neue Speicher verfügt über die folgenden Features und Funktionen:
+## Neue Features und Funktionen
+{: #features}
 
-- [Providerverwaltete Verschlüsselung für ruhende Daten](block-file-storage-encryption-rest.html). <br/> Alle {{site.data.keyword.filestorage_short}}-Datenträger werden automatisch ohne Aufpreis mit Verschlüsselung bereitgestellt.
+- [Providerverwaltete Verschlüsselung für ruhende Daten](/docs/infrastructure/FileStorage?topic=FileStorage-encryption). <br/> Alle {{site.data.keyword.filestorage_short}}-Datenträger werden automatisch ohne Aufpreis mit Verschlüsselung bereitgestellt.
 - Option für Stufe 10 IOPS pro GB. <br/> Zum {{site.data.keyword.filestorage_short}}-Speicher des Typs Endurance wurde eine neue Stufe hinzugefügt, sodass auch anspruchsvollste Workloads unterstützt werden.
 - Sämtlicher Speicher ist Flashspeicher. <br/> Alle {{site.data.keyword.filestorage_short}}-Speicher, bereitgestellt entweder mit Endurance- oder mit Performance-Optionen der Stufe 2 IOPS pro GB oder höher, werden ausschließlich durch Flashspeicher unterstützt.
 - Unterstützung für Snapshots und Replikation.
 - Eine stündliche Rechnungsstellungsoption wurde für Speicher hinzugefügt, dessen Verwendung für weniger als einen ganzen Monat geplant ist.
 - Bis zu 48.000 IOPS für {{site.data.keyword.filestorage_short}}-Speicher, der mit Performance bereitgestellt wird.
-- IOPS-Raten sind konfigurierbar, um die Leistung bei saisonalen Auslastungsänderungen zu verbessern. Weitere Informationen zu dieser Funktion finden Sie [hier](adjustable-iops.html).
-- Sie können einen Klon Ihrer Daten mit der [Funktion zum Duplizieren von {{site.data.keyword.filestorage_short}}-Datenträgern](how-to-create-duplicate-volume.html) erstellen.
-- Der Speicher ist in GB-Inkrementen sofort auf bis zu 12 TB erweiterbar, ohne dass ein Duplikat erstellt oder Daten manuell auf einen größeren Datenträger verschoben werden müssen. Weitere Informationen zu dieser Funktion finden Sie [hier](expandable_file_storage.html).
+- IOPS-Raten sind konfigurierbar, um die Leistung bei saisonalen Auslastungsänderungen zu verbessern. Weitere Informationen zu dieser Funktion finden Sie [hier](/docs/infrastructure/FileStorage?topic=FileStorage-adjustingIOPS).
+- Sie können einen Klon Ihrer Daten mit der [Funktion zum Duplizieren von {{site.data.keyword.filestorage_short}}-Datenträgern](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume) erstellen. 
+- Der Speicher ist in GB-Inkrementen sofort auf bis zu 12 TB erweiterbar, ohne dass ein Duplikat erstellt oder Daten manuell auf einen größeren Datenträger verschoben werden müssen. Weitere Informationen zu dieser Funktion finden Sie [hier](/docs/infrastructure/FileStorage?topic=FileStorage-expandCapacity).
 
 ## Neuer Mountpunkt für erweiterte {{site.data.keyword.filestorage_short}}-Datenträger
 

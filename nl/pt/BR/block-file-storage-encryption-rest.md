@@ -2,14 +2,17 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-01-07"
+lastupdated: "2019-02-05"
 
 ---
+{:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 # Criptografia em repouso gerenciada pelo provedor
+{: #encryption}
 
 O {{site.data.keyword.BluSoftlayer_full}} leva a necessidade de segurança a sério e entende a importância de ser capaz de criptografar dados para mantê-los seguros. Com a criptografia gerenciada por provedor, o {{site.data.keyword.filestorage_full}} provisionado com as opções Endurance ou Performance é criptografado por padrão sem nenhum custo adicional e nenhum impacto no desempenho.
 
@@ -33,12 +36,12 @@ Todas as capturas instantâneas e réplicas de armazenamento de arquivo criptogr
 
 ## Provisionando armazenamento com criptografia
 
-O recurso de criptografia em repouso gerenciado pelo provedor está disponível em data centers selecionados. Todo o armazenamento pedido nesses data centers é provisionado automaticamente com criptografia para dados em repouso. Clique [aqui](new-ibm-block-and-file-storage-location-and-features.html) para ver a lista atual de data centers nos quais a criptografia do {{site.data.keyword.filestorage_short}} está disponível.
+O recurso de criptografia em repouso gerenciado pelo provedor está disponível em data centers selecionados. Todo o armazenamento pedido nesses data centers é provisionado automaticamente com criptografia para dados em repouso. Clique [aqui](/docs/infrastructure/FileStorage?topic=FileStorage-news) para ver a lista atual de data centers nos quais a criptografia do {{site.data.keyword.filestorage_short}} está disponível.
 
 Ao pedir o {{site.data.keyword.filestorage_short}}, selecione um data center que esteja marcado com um asterisco (`*`). É possível ver um ícone de bloqueio à direita do campo Nome do LUN/Volume que indica que o volume está criptografado. Veja a Figura 1.
 
 ![O ícone de bloqueio indica que o LUN está criptografado](/images/encryptedstorage.png)
 <caption>Figura 1. Exemplo do ícone de bloqueio que indica que o volume está criptografado.</caption>
 
-Qualquer armazenamento não criptografado que foi provisionado antes de um upgrade do data center **não** é criptografado automaticamente. Se você possuir um armazenamento não criptografado em um data center submetido a upgrade e desejar tê-lo criptografado, será necessário criar um novo volume e mover seus dados. Para obter mais informações, consulte [Migração do File Storage em data centers submetidos a upgrade](migrate-file-storage-encrypted-file-storage.html).
+Qualquer armazenamento não criptografado que foi provisionado antes de um upgrade do data center **não** é criptografado automaticamente. Se você possuir um armazenamento não criptografado em um data center submetido a upgrade e desejar tê-lo criptografado, será necessário criar um novo volume e mover seus dados. Para obter mais informações, consulte [Migração do File Storage em data centers submetidos a upgrade](/docs/infrastructure/FileStorage?topic=FileStorage-migratestorage).
 {:important}

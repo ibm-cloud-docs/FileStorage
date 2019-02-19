@@ -1,26 +1,29 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 
 # スナップショットの管理
+{: #managingSnapshots}
 
-## スナップショット・スケジュールを作成しますか？
+## スナップショット・スケジュールの作成
 
-スナップショット・スケジュールを使用して、ストレージ・ボリュームのポイント・イン・タイム・リファレンスを作成する頻度と時間を決定します。ストレージ・ボリュームごとに最大 50 個のスナップショットを作成できます。 スケジュールは、[{{site.data.keyword.slportal}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://control.softlayer.com/){:new_window}の**「ストレージ」**>**「{{site.data.keyword.filestorage_short}}」**タブで管理します。
+スナップショット・スケジュールを使用して、ストレージ・ボリュームのポイント・イン・タイム・リファレンスを作成する頻度と時間を決定します。 ストレージ・ボリュームごとに最大 50 個のスナップショットを作成できます。 スケジュールは、[{{site.data.keyword.slportal}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://control.softlayer.com/){:new_window}の**「ストレージ」**>**「{{site.data.keyword.filestorage_short}}」**タブで管理します。
 
 ストレージ・ボリュームの初期プロビジョニング時にスナップショット・スペースを購入していなかった場合は、初期スケジュールをセットアップする前に、まず購入する必要があります。
 {:important}
 
 ### スナップショット・スケジュールの追加
+{: #addschedule}
 
 スナップショット・スケジュールは、時間単位、日単位、週単位の間隔で、それぞれに異なる保持サイクルを指定してセットアップできます。 スナップショットの最大限度はストレージ・ボリュームごとに 50 個で、時間単位、日単位、週単位のスケジュールや手動スナップショットを混在させることができます。
 
@@ -39,6 +42,17 @@ lastupdated: "2018-11-30"
 
 スナップショットが**「詳細」**ページの**「スナップショット」**セクションに取り込まれると、それらのリストが表示されます。
 
+SLCLI で以下のコマンドを使用してスナップショット・スケジュールのリストを表示することもできます。
+```
+# slcli file snapshot-schedule-list --help
+Usage: slcli file snapshot-schedule-list [OPTIONS] VOLUME_ID
+
+  Lists snapshot schedules for a given volume
+
+Options:
+  -h, --help  Show this message and exit.
+```
+
 ## 手動スナップショットの取得
 
 手動スナップショットは、アプリケーションのアップグレードまたは保守の際に、さまざまな時点で取得できます。 また、アプリケーション・レベルで一時的に非アクティブ化した複数のサーバーにわたってスナップショットを取得できます。
@@ -50,9 +64,30 @@ lastupdated: "2018-11-30"
 3. **「手動スナップショットの取得」**をクリックします。
 スナップショットが取得され、**「詳細」**ページの**「スナップショット」**セクションに表示されます。 そのスケジュールは手動として表示されます。
 
+代わりの方法として、SLCLI で以下のコマンドを使用してスナップショットを作成することができます。
+```
+# slcli file snapshot-create --help
+Usage: slcli file snapshot-create [OPTIONS] VOLUME_ID
+
+Options:
+  -n, --notes TEXT  Notes to set on the new snapshot
+  -h, --help        Show this message and exit.
+```
+
 ## すべてのスナップショットとそのスペース使用情報のリスト表示および管理機能
 
 保存されているスナップショットのスペース使用量のリストは、**「詳細」**ページ (**「ストレージ」**、**「{{site.data.keyword.filestorage_short}}」**) で参照できます。 管理機能 (スケジュールの編集とスペースの追加) は、この「詳細」ページのさまざまなセクションにある**「アクション」**メニューまたはリンクを使用して実行します。
+
+代わりの方法として、SL CLI でこのタスクを実行できます。
+```
+# slcli file snapshot-list --help
+Usage: slcli file snapshot-list [OPTIONS] VOLUME_ID
+
+Options:
+  --sortby TEXT   Column to sort by
+  --columns TEXT  Columns to display. Options: id, name, created, size_bytes
+  -h, --help      Show this message and exit.
+```
 
 ## 保存されているスナップショットのリスト表示
 
@@ -92,7 +127,7 @@ lastupdated: "2018-11-30"
 1. **「詳細」**ページの**「スナップショットのスケジュール」**フレームで、削除するスケジュールをクリックします。
 2. 削除するスケジュールの横にあるチェック・ボックスをクリックして、**「保存」**をクリックします。<br />
 
-レプリケーション機能を使用している場合は、削除するスケジュールがレプリケーションで使用されるスケジュールでないことを確認してください。 レプリケーション・スケジュールの削除について詳しくは、[ここ](replication.html)を参照してください。
+レプリケーション機能を使用している場合は、削除するスケジュールがレプリケーションで使用されるスケジュールでないことを確認してください。 レプリケーション・スケジュールの削除について詳しくは、[ここ](/docs/infrastructure/FileStorage?topic=FileStorage-replication)を参照してください。
 {:important}
 
 ## スナップショットの削除
@@ -102,14 +137,24 @@ lastupdated: "2018-11-30"
 1. ストレージ・ボリュームをクリックし、**「スナップショット」**セクションまでスクロールして既存のスナップショットのリストを確認します。
 2. 特定のスナップショットの隣にある**「アクション」**をクリックし、**「削除」**をクリックしてスナップショットを削除します。 スナップショット間に依存関係はないため、この削除によって同じスケジュールによる将来または過去のスナップショットが影響を受けることはありません。
 
+代わりの方法として、SL CLI でスナップショットを削除できます。
+```
+# slcli file snapshot-delete --help
+Usage: slcli file snapshot-delete [OPTIONS] SNAPSHOT_ID
+
+Options:
+  -h, --help  Show this message and exit.
+```
+
 ポータル内の手動で削除されなかった手動スナップショットは、スペースの制限に達すると自動的に (古いものから順に) 削除されます。
+{:note}
 
 ## スナップショットを使用してストレージ・ボリュームを特定時点にリストアする
 
 ユーザー・エラーやデータ破損が原因で、ストレージ・ボリュームを特定時点に戻す必要がある場合があります。
 
 1. ストレージ・ボリュームをホストからアンマウントして切り離します。
-   - [ここ](accessing-file-storage-linux.html)をクリックすると説明が表示されます。
+   - [ここ](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)をクリックすると説明が表示されます。
 2. [{{site.data.keyword.slportal}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://control.softlayer.com/){:new_window}で、**「ストレージ」**、**「{{site.data.keyword.filestorage_short}}」**をクリックします。
 3. スクロールダウンして、リストアするボリュームをクリックします。 **「詳細」**ページの**「スナップショット」**セクションに、保存されているすべてのスナップショットのサイズと作成日のリストが表示されます。
 4. 使用するスナップショットの横の**「アクション」**をクリックし、**「リストア」**をクリックします。 <br/>
@@ -121,7 +166,18 @@ lastupdated: "2018-11-30"
    選択したスナップショットを使用してボリュームがリストアされることを示すメッセージが、ページに表示されます。 また、{{site.data.keyword.filestorage_short}} のボリュームの横に、アクティブ・トランザクションが進行中であることを示すアイコンが表示されます。 アイコン上にカーソルを移動すると、トランザクションを示すウィンドウが表示されます。 トランザクションが完了すると、アイコンは消えます。
    {:note}
 6. ストレージ・ボリュームをホストにマウントして再接続します。
-  - [ここ](accessing-file-storage-linux.html)をクリックすると説明が表示されます。
+  - [ここ](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)をクリックすると説明が表示されます。
+
+代わりの方法として、SLCLI でスナップショットを使用してボリュームを復元することができます。
+```
+# slcli file snapshot-restore --help
+Usage: slcli file snapshot-restore [OPTIONS] VOLUME_ID
+
+Options:
+  -s, --snapshot-id TEXT  The id of the snapshot which will be used to restore
+                          the block volume
+  -h, --help              Show this message and exit.
+```  
 
 ボリュームを復元すると、復元に使用されたスナップショットの後に実行されたすべてのスナップショットが削除されます。
 {:important}

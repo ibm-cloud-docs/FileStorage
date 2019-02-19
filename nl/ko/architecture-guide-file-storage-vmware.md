@@ -1,12 +1,12 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-12-11"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
-{:pre: .pre}
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
@@ -15,6 +15,7 @@ lastupdated: "2018-12-11"
 
 
 # VMware에서의 {{site.data.keyword.filestorage_short}} 프로비저닝
+{: #architectureguide}
 
 다음 단계를 수행하여 {{site.data.keyword.BluSoftlayer_full}}의 vSphere 5.5 및 vSphere 6.0 환경에서 {{site.data.keyword.filestorage_full}}를 주문하고 구성할 수 있습니다.
 
@@ -117,7 +118,7 @@ VMware 환경은 스냅샷을 인지하지 않음을 유념하십시오. Enduran
 
 {{site.data.keyword.filestorage_short}} 볼륨을 복원하려면 {{site.data.keyword.filestorage_short}}의 모든 VM을 꺼야 합니다. 프로세스 중에 데이터 손상을 방지하기 위해 ESXi 호스트의 볼륨을 임시로 마운트 해제해야 합니다.
 
-자세한 정보는 [스냅샷](snapshots.html) 문서를 참조하십시오.
+자세한 정보는 [스냅샷](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots) 문서를 참조하십시오.
 
 
 ### 복제 사용
@@ -129,7 +130,7 @@ VMware 환경은 스냅샷을 인지하지 않음을 유념하십시오. Enduran
 - 대상 볼륨으로 장애 복구하여 사이트 장애와 기타 장애에서 빠르게 복구합니다.
 - DR 사본의 특정 시점으로 장애 복구합니다.
 
-복제는 서로 다른 두 위치에 동기화된 데이터를 보관합니다. 볼륨을 복제한 후에 이를 원래 볼륨과 독립적으로 사용하려면 [중복 파일 볼륨 작성](how-to-create-duplicate-volume.html)을 참조하십시오.
+복제는 서로 다른 두 위치에 동기화된 데이터를 보관합니다. 볼륨을 복제한 후에 이를 원래 볼륨과 독립적으로 사용하려면 [중복 파일 볼륨 작성](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume)을 참조하십시오.
 {:tip}
 
 복제하려면 우선 스냅샷 스케줄을 작성해야 합니다.
@@ -138,7 +139,7 @@ VMware 환경은 스냅샷을 인지하지 않음을 유념하십시오. Enduran
 
 볼륨이 기본 데이터 센터로 장애 복구되기 전에 원격 사이트에서 이의 사용을 중지해야 합니다. 신규 또는 변경된 정보의 스냅샷이 작성되며, 프로덕션 사이트 ESXi 호스트에 다시 마운트될 수 있기 전에 기본 데이터 센터로 복제됩니다.
 
-복제본 구성에 대한 자세한 정보는 [복제](replication.html)를 참조하십시오.
+복제본 구성에 대한 자세한 정보는 [복제](/docs/infrastructure/FileStorage?topic=FileStorage-replication)를 참조하십시오.
 
 손상, 해킹 또는 감염되어 올바르지 않은 데이터는 스냅샷 스케줄과 스냅샷 보유에 따라 복제됩니다. 최소 복제 창을 사용하면 보다 나은 복구 지점 목표가 제공됩니다. 하지만 이에 따라 올바르지 않은 데이터의 복제에 대해 반응하는 시간도 단축될 수 있습니다.
 {:note}
@@ -148,7 +149,7 @@ VMware 환경은 스냅샷을 인지하지 않음을 유념하십시오. Enduran
 
 [고급 단일 사이트 VMware 참조 아키텍처 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}을 사용하여 VMware 환경의 Endurance 또는 Performance 옵션으로 {{site.data.keyword.filestorage_short}}를 설정할 수 있습니다.
 
-{{site.data.keyword.filestorage_short}}는 [IBM Cloud 카탈로그 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://{DomainName}/catalog/){:new_window} 또는 [{{site.data.keyword.slportal}} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://control.softlayer.com/){:new_window}을 통해 주문할 수 있습니다. 자세한 정보는 [{{site.data.keyword.filestorage_short}} 주문](provisioning-file-storage.html)을 참조하십시오.
+{{site.data.keyword.filestorage_short}}는 [IBM Cloud 카탈로그 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://{DomainName}/catalog/){:new_window} 또는 [{{site.data.keyword.slportal}} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://control.softlayer.com/){:new_window}을 통해 주문할 수 있습니다. 자세한 정보는 [{{site.data.keyword.filestorage_short}} 주문](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)을 참조하십시오.
 
 스토리지가 1분 내에 프로비저닝되며 [{{site.data.keyword.slportal}} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://control.softlayer.com/){:new_window}의 **{{site.data.keyword.filestorage_short}}** 페이지에 표시됩니다.
 
@@ -378,5 +379,5 @@ NFS 스토리지를 위해 ESXi 5.x 호스트를 구성하려면 추가 설정�
     #esxcfg-advcfg -g /Disk/QFullSampleSize
     #esxcfg-advcfg -g /Disk/QFullThreshold
     ```
-[여기서](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} 고급 단일 사이트 VMware 참조 아키텍처에 대해 자세히 알아보십시오.
+[여기서](/docs/infrastructure/virtualization?topic=Virtualization-advanced-single-site-vmware-reference-architecture){:new_window} 고급 단일 사이트 VMware 참조 아키텍처에 대해 자세히 알아보십시오.
 {:tip}

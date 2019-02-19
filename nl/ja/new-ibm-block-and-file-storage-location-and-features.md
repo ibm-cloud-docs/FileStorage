@@ -1,21 +1,26 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-12-11"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
- {:tip: .tip}
- {:note: .note}
- {:important: .important}
+{:pre: .pre}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 
-# {{site.data.keyword.filestorage_short}}の新しいロケーションと機能
+# 新しい場所および新機能
+{: #news}
 
 {{site.data.keyword.BluSoftlayer_full}} は、新しいバージョンの {{site.data.keyword.filestorage_full}} を導入しています。 一部のデータ・センターで提供されているこの新しいストレージは、保存データをディスク・レベルで暗号化する、IOPS レベルの高いフラッシュ・ストレージを基盤としています。 これらの一部のデータ・センターで注文されたストレージはすべて、自動的に新しいバージョンの{{site.data.keyword.filestorage_short}}を使用して作成されます。
 
 新しいボリュームの NFS マウント・ポイントは変更されています。 詳しくは、『[拡張{{site.data.keyword.filestorage_short}}・ボリュームの新しいマウント・ポイント](#new-mount-point-for-enhanced-file-storage-volumes)』セクションを参照してください。
 {:important}
+
+## 新しい場所
+{: #new-locations}
 
 新しい{{site.data.keyword.filestorage_short}}は、以下の地域およびデータ・センターで提供されています。今後さらに多くのデータ・センターで提供される予定です。
 
@@ -80,17 +85,18 @@ lastupdated: "2018-12-11"
 
 *表 1 は、使用可能なデータ・センターを示しています。 地域ごとに列を分けています。 一部の都市 (ダラス、サンノゼ、ワシントン DC、アムステルダム、フランクフルト、ロンドン、シドニーなど) には複数のデータ・センターがあります。*
 
-新しいストレージの機能と性能を次に示します。
+## 新しい機能および能力
+{: #features}
 
-- [保存データのプロバイダー管理の暗号化](block-file-storage-encryption-rest.html)。 <br/> すべての{{site.data.keyword.filestorage_short}}・ボリュームは、追加料金なしで、自動的に暗号化されてプロビジョンされます。
+- [保存データのプロバイダー管理の暗号化](/docs/infrastructure/FileStorage?topic=FileStorage-encryption)。 <br/> すべての{{site.data.keyword.filestorage_short}}・ボリュームは、追加料金なしで、自動的に暗号化されてプロビジョンされます。
 - 10 IOPS/GB ティア・オプション。 <br/> 最も要求の厳しいワークロードをサポートするために、新しいティアが、エンデュランス・タイプの{{site.data.keyword.filestorage_short}}に追加されました。
 - オール・フラッシュ・ストレージ。 <br/> 2 IOPS/GB 以上のエンデュランス・オプションまたはパフォーマンス・オプションを使用してプロビジョンされる{{site.data.keyword.filestorage_short}}は、オール・フラッシュ・ストレージを基盤としています。
 - スナップショットとレプリケーションのサポート。
 - 使用予定期間が 1 カ月未満のストレージのために、時間単位の請求オプションが追加されました。
 - パフォーマンス・タイプを使用してプロビジョンされる{{site.data.keyword.filestorage_short}}の IOPS は最大 48,000 です。
-- シーズンに応じて負荷が変化する場合にパフォーマンスを向上させるために、IOPS レートを調整可能です。 この機能について詳しくは、[こちら](adjustable-iops.html)を参照してください。
-- [{{site.data.keyword.filestorage_short}}・ボリューム複製機能](how-to-create-duplicate-volume.html)を使用して、データのクローンを作成します。
-- ストレージは、GB 単位で最大 12 TB までただちに拡張できます。拡張したボリュームに複製を作成したりデータを手動で移動したりする必要はありません。 この機能について詳しくは、[こちら](expandable_file_storage.html)を参照してください。
+- シーズンに応じて負荷が変化する場合にパフォーマンスを向上させるために、IOPS レートを調整可能です。 この機能について詳しくは、[こちら](/docs/infrastructure/FileStorage?topic=FileStorage-adjustingIOPS)を参照してください。
+- [{{site.data.keyword.filestorage_short}}・ボリューム複製機能](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume)を使用して、データのクローンを作成します。
+- ストレージは、GB 単位で最大 12 TB までただちに拡張できます。拡張したボリュームに複製を作成したりデータを手動で移動したりする必要はありません。 この機能について詳しくは、[こちら](/docs/infrastructure/FileStorage?topic=FileStorage-expandCapacity)を参照してください。
 
 ## 拡張{{site.data.keyword.filestorage_short}}・ボリュームの新しいマウント・ポイント
 

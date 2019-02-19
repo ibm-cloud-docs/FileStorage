@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-12-10"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
@@ -13,6 +14,7 @@ lastupdated: "2018-12-10"
 {:DomainName: data-hd-keyref="DomainName"}
 
 # Disaster Recovery - Fail over with an accessible Primary volume
+{: #dr-accessible}
 
 If a catastrophic failure or disaster occurs on the primary site and the primary storage is still accessible, customers can perform the following actions to quickly access their data on the secondary site.
 
@@ -48,7 +50,7 @@ Before you proceed with these steps, disconnect the volume. Failure to do so, re
    {:note}
 4. Click **View All ({{site.data.keyword.filestorage_short}})**.
 5. Click your active volume (formerly your target volume). This volume now has an **Active** status.
-6. Mount and attach your storage volume to the host. Click [here](provisioning-file-storage.html) for instructions.
+6. Mount and attach your storage volume to the host. Click [here](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole) for instructions.
 
 
 ## Starting a failback from a volume to its replica
@@ -73,4 +75,4 @@ Failbacks are started under **Storage**, **{{site.data.keyword.filestorage_short
    {:note}
 4. In the upper right, click **View All {{site.data.keyword.filestorage_short}}** link.
 5. Click your active volume ("source").
-6. Mount and attach your storage volume to the host. Click [here](provisioning-file-storage.html) for instructions.
+6. Mount and attach your storage volume to the host. Click [here](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole) for instructions.

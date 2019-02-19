@@ -1,29 +1,31 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 # Duplikat eines {{site.data.keyword.filestorage_short}}-Datenträgers erstellen
+{: #duplicatevolume}
 
 Sie können ein Duplikat eines vorhandenen {{site.data.keyword.BluSoftlayer_full}} {{site.data.keyword.filestorage_full}}-Datenträgers erstellen. Der Duplikatdatenträger übernimmt standardmäßig die Kapazitäts- und Leistungsoptionen des ursprünglichen Datenträgers und enthält eine Kopie der Daten bis zum Zeitpunkt eines Snapshots.   
 
-Da der Duplikatdatenträger auf den Daten eines zeitpunktgesteuerten Snapshots basiert, ist auf dem ursprünglichen Datenträger Snapshotbereich erforderlich, bevor ein Duplikat erstellt werden kann. Weitere Informationen zu Snapshots sowie zur Bestellung von Snapshotbereich finden Sie in der [Dokumentation zu Snapshots](snapshots.html).  
+Da der Duplikatdatenträger auf den Daten eines zeitpunktgesteuerten Snapshots basiert, ist auf dem ursprünglichen Datenträger Snapshotbereich erforderlich, bevor ein Duplikat erstellt werden kann. Weitere Informationen zu Snapshots sowie zur Bestellung von Snapshotbereich finden Sie in der [Dokumentation zu Snapshots](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots).  
 
 Duplikate können sowohl von **primären** Datenträgern als auch von **Replikat**datenträgern erstellt werden. Das neue Duplikat wird im selben Rechenzentrum wie der ursprüngliche Datenträger erstellt. Wenn Sie einen Duplikatdatenträger von einem Replikatdatenträger erstellen, wird der neue Datenträger im selben Rechenzentrum wie der Replikatdatenträger erstellt.
 
-Als Benutzer mit einem dedizierten Konto für {{site.data.keyword.containerlong}} finden Sie in der [{{site.data.keyword.containerlong_notm}}-Dokumentation](/docs/containers/cs_storage_file.html#backup_restore) Informationen zu Optionen für die Duplizierung eines Datenträgers.
+Als Benutzer mit einem dedizierten Konto für {{site.data.keyword.containerlong}} finden Sie in der [{{site.data.keyword.containerlong_notm}}-Dokumentation](/docs/containers?topic=containers-backup_restore#backup_restore) Informationen zu Optionen für die Duplizierung eines Datenträgers.
 {:tip}
 
 Auf Duplikatdatenträger kann ein Host für Lese-/Schreiboperationen zugreifen, sobald der Speicher bereitgestellt ist. Allerdings sind Snapshots und die Replikation erst zulässig, wenn das Erstellen der Datenkopie vom ursprünglichen Datenträger auf den Duplikatdatenträger abgeschlossen ist. Sobald die Datenkopie abgeschlossen ist, kann das Duplikat als unabhängiger Datenträger verwaltet und verwendet werden.
 
-Diese Funktion ist an den meisten Standorten verfügbar. Klicken Sie [hier](new-ibm-block-and-file-storage-location-and-features.html), um zur Liste der verfügbaren Rechenzentren zu gelangen.
+Diese Funktion ist an den meisten Standorten verfügbar. Klicken Sie [hier](/docs/infrastructure/FileStorage?topic=FileStorage-news), um zur Liste der verfügbaren Rechenzentren zu gelangen.
 
 Einige allgemeine Verwendungen für einen duplizierten Datenträger sind die folgenden Beispiele.
 - **Disaster-Recovery-Test**: Erstellen Sie ein Duplikat des Replikatdatenträgers, um zu überprüfen, ob die Daten intakt sind und im Fall einer Katastrophe ohne Unterbrechung der Replikation verwendet werden können.
@@ -76,6 +78,54 @@ Sie können einen duplizierten Datenträger über das [{{site.data.keyword.slpor
 7. Sie können den Snapshotbereich für den neuen Datenträger aktualisieren, um mehr, weniger oder keinen Snapshotbereich hinzuzufügen. Standardmäßig wird der Snapshotbereich des ursprünglichen Datenträgers festgelegt.
 8. Klicken Sie auf **Weiter**, um Ihre Bestellung für das Duplikat abzuschicken.
 
+## Duplikat über die SL-CLI erstellen
+```
+# slcli file volume-duplicate --help
+Syntax: slcli file volume-duplicate [OPTIONEN] AUSGANGSDATENTRÄGER-ID
+
+Optionen:
+  -o, --origin-snapshot-id INTEGER
+                                  ID eines Ausgangsdatenträgersnapshots
+                                  für die Duplizierung.
+  -c, --duplicate-size INTEGER    Größe des Dateidatenträgerduplikats in GB.
+                                  ***Wird keine Größe angegeben, wird die Größe
+                                  des Ausgangsdatenträgers verwendet.***
+                                  Minimum: [Größe des Ausgangsdatenträgers]
+  -i, --duplicate-iops INTEGER    Performance-Speicher-IOPS, zwischen 100 und
+                                  6000 in Vielfachen von 100 [nur für
+                                  Performance-Datenträger] ***Wird kein IOPS-Wert
+                                  angegeben, wird der IOPS-Wert des Ausgangs-
+                                  datenträgers verwendet.**
+                                  Voraussetzungen: [Wenn der IOPS/GB-Wert für den
+                                  Ausgangsdatenträger kleiner als 0,3 ist, muss
+                                  der IOPS/GB-Wert für das Duplikat ebenfalls
+                                  kleiner als 0,3 sein. Wenn der IOPS/GB-Wert für den
+                                  Ausgangsdatenträger größer-gleich 0,3 ist,
+                                  muss der IOPS/GB-Wert für das Duplikat ebenfalls
+                                  größer-gleich 0,3 sein.]
+  -t, --duplicate-tier [0.25|2|4|10]
+                                  Endurance-Speichertier (IOPS pro GB) [nur
+                                  für Endurance-Datenträger] ***Wird kein Tier
+                                  angegeben, wird das Tier des Ausgangsdatenträgers
+                                  verwendet.***
+                                  Voraussetzungen: [Wenn der IOPS/GB-Wert für den
+                                  Ausgangsdatenträger 0,25 ist muss der IOPS/GB-
+                                  Wert für das Duplikat ebenfalls 0,25 sein. Wenn der
+                                  IOPS/GB-Wert für den Ausgangsdatenträger größer
+                                  als 0,25 ist, muss der IOPS/GB-Wert für das Duplikat
+                                  ebenfalls größer als 0,25 sein.]
+  -s, --duplicate-snapshot-size INTEGER
+                                  Größe des Snapshotbereichs, der für das
+                                  Duplikat zu bestellen ist. ***Wird keine
+                                  Größe für den Snapshotbereich angegeben,
+                                  wird die Größe des Snapshotbereichs für den
+                                  Ausgangsdateidatenträger verwendet.***
+                                  Den Wert "0" für diesen Parameter angeben, um ein
+                                  Duplikat ohne Snapshotbereich zu bestellen.
+  --billing [hourly|monthly]      Optionaler Parameter für den Abrechnungssatz
+                                  (Standardwert: monatlich)
+  -h, --help                      Diese Nachricht anzeigen und Ausführung beenden.
+```
 
 ## Duplizierten Datenträger verwalten
 

@@ -1,25 +1,27 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-12-10"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
-{:DomainName: data-hd-keyref="APPDomain"}
-{:DomainName: data-hd-keyref="DomainName"}
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
 
 
 # 재해 복구 - 액세스할 수 없는 1차 볼륨으로 장애 복구
+{: #dr-inaccessible}
 
 파국적 장애나 재해 때문에 1차 사이트에서 가동 중단이 발생하는 경우 고객은 다음의 조치를 취하여 2차 사이트의 데이터에 빠르게 액세스할 수 있습니다.
 
 ## 2차 사이트에서 복제본 볼륨의 중복으로 장애 복구
 
-1. [IBM Cloud 콘솔](https://console.bluemix.net/catalog/){:new_window}에 로그인하여 왼쪽 상단의 **메뉴** 아이콘을 클릭하십시오. **일반 인프라**를 선택하십시오.
+1. [IBM Cloud 콘솔 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://{DomainName}/){:new_window}에 로그인하고 왼쪽 상단의 **메뉴** 아이콘을 클릭하십시오. **일반 인프라**를 선택하십시오.
 
    또는 [{{site.data.keyword.slportal}} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://control.softlayer.com/){:new_window}에 로그인할 수 있습니다.
 2. **스토리지** > **{{site.data.keyword.filestorage_short}}**를 클릭하십시오.
@@ -35,13 +37,13 @@ lastupdated: "2018-12-10"
 
 프로덕션을 원래 1차 사이트로 리턴하려면 다음 단계를 수행해야 합니다.
 
-1. [IBM Cloud 콘솔](https://{DomainName}/catalog/){:new_window}에 로그인하여 왼쪽 상단의 **메뉴** 아이콘을 클릭하십시오. **일반 인프라**를 선택하십시오.
+1. [IBM Cloud 콘솔 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://{DomainName}/){:new_window}에 로그인하고 왼쪽 상단의 **메뉴** 아이콘을 클릭하십시오. **일반 인프라**를 선택하십시오.
 
    또는 [{{site.data.keyword.slportal}} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://control.softlayer.com/){:new_window}에 로그인할 수 있습니다.
 2. **스토리지** > **{{site.data.keyword.filestorage_short}}**를 클릭하십시오.
 3. LUN 이름을 클릭하고 스냅샷 스케줄을 작성하십시오(아직 존재하지 않는 경우).
 
-   스냅샷 스케줄에 대한 자세한 정보는 [스냅샷 관리](working-with-snapshots.html#adding-a-snapshot-schedule)를 참조하십시오.
+   스냅샷 스케줄에 대한 자세한 정보는 [스냅샷 관리](/docs/infrastructure/FileStorage?topic=FileStorage-managingSnapshots#addschedule)를 참조하십시오.
    {:tip}
 4. **복제본**을 클릭하고 **복제 구매**를 클릭하십시오.
 5. 복제가 따라야 할 기존 스냅샷 스케줄을 선택하십시오. 목록에는 모든 활성 스냅샷 스케줄이 포함됩니다.

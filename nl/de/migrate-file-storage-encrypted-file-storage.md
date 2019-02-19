@@ -1,26 +1,28 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 # {{site.data.keyword.filestorage_short}}-Speicher auf erweiterten {{site.data.keyword.filestorage_short}}-Speicher migrieren
+{: #migratestorage}
 
-In ausgewählten Rechenzentren ist nun erweiterter {{site.data.keyword.filestorage_full}}-Speicher verfügbar. Wenn Sie eine Liste der aktualisierten Rechenzentren und verfügbaren Funktionen anzeigen möchten, zum Beispiel konfigurierbare IOPS-Raten und erweiterbare Datenträger, klicken Sie [hier](new-ibm-block-and-file-storage-location-and-features.html). Weitere Informationen zur vom Provider verwalteten Verschlüsselung finden Sie unter [{{site.data.keyword.filestorage_short}}-Verschlüsselung ruhender Daten](block-file-storage-encryption-rest.html).
+In ausgewählten Rechenzentren ist nun erweiterter {{site.data.keyword.filestorage_full}}-Speicher verfügbar. Wenn Sie eine Liste der aktualisierten Rechenzentren und verfügbaren Funktionen anzeigen möchten, zum Beispiel konfigurierbare IOPS-Raten und erweiterbare Datenträger, klicken Sie [hier](/docs/infrastructure/FileStorage?topic=FileStorage-news). Weitere Informationen zur vom Provider verwalteten Verschlüsselung finden Sie unter [{{site.data.keyword.filestorage_short}}-Verschlüsselung ruhender Daten](/docs/infrastructure/FileStorage?topic=FileStorage-encryption).
 
 Der bevorzugte Migrationspfad besteht darin, beide Datenträger gleichzeitig zu verbinden und Daten direkt von einer LUN auf die andere zu übertragen. Die jeweiligen Details hängen dabei vom Betriebssystem ab sowie davon, ob erwartet wird, dass sich die Daten während der Kopieroperation ändern.
 
 Es wird davon ausgegangen, dass Sie bereits über eine nicht verschlüsselte LUN verfügen, die mit dem Host verbunden ist. Ist dies nicht der Fall, folgen Sie den für Ihr Betriebssystem passenden Anweisungen, um diese Task auszuführen.
 
-- [{{site.data.keyword.filestorage_short}} unter Linux anhängen](accessing-file-storage-linux.html)
-- [{{site.data.keyword.filestorage_short}} unter CentOS anhängen](mounting-nsf-file-storage.html)
-- [{{site.data.keyword.filestorage_short}} unter CoreOS anhängen](mounting-storage-coreos.html)
+- [{{site.data.keyword.filestorage_short}} unter Linux anhängen](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)
+- [{{site.data.keyword.filestorage_short}} unter CentOS anhängen](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)
+- [{{site.data.keyword.filestorage_short}} unter CoreOS anhängen](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCoreOS)
 
 Alle erweiterten {{site.data.keyword.filestorage_short}}-Datenträger, die in diesen Rechenzentren bereitgestellt werden, haben einen anderen Mountpunkt als nicht verschlüsselte Datenträger. Um sicherzustellen, dass Sie für beide Speicherdatenträger den richtigen Mountpunkt verwenden, können Sie die Mountpunktinformationen auf der Seite **Datenträgerdetails** in der Konsole anzeigen. Sie können auch über einen API-Aufruf auf den richtigen Mountpunkt zugreifen: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 {:tip}
@@ -33,10 +35,10 @@ Wenn Sie einen Auftrag mit einer API erteilen, geben Sie das Paket 'Storage as a
 
 Sie können eine erweiterte LUN über den {{site.data.keyword.BluSoftlayer_full}}-Katalog und das {{site.data.keyword.slportal}} bestellen. Der neue Datenträger muss dieselbe Größe wie die ursprüngliche gemeinsam genutzte Ressource aufweisen oder größer als diese sein, damit die Migration möglich ist.
 
-- [{{site.data.keyword.filestorage_short}} mit vordefinierten IOPS-Tiers bestellen (Endurance)](provisioning-file-storage.html#ordering-file-storage-with-pre-defined-iops-tiers-endurance-)
-- [{{site.data.keyword.filestorage_short}} mit angepassten IOPS-Raten bestellen (Performance)](provisioning-file-storage.html#ordering-file-storage-with-custom-iops-performance-)
+- [{{site.data.keyword.filestorage_short}} mit vordefinierten IOPS-Tiers (Endurance) bestellen](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#endurance)
+- [{{site.data.keyword.filestorage_short}} mit angepassten IOPS-Raten (Performance) bestellen](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#performance)
 
-Der neue Speicher ist in einigen Minuten zum Anhängen verfügbar. Er kann in der Ressourcenliste und der {{site.data.keyword.blockstorageshort}}-Liste angezeigt werden. 
+Der neue Speicher ist in einigen Minuten zum Anhängen verfügbar. Er kann in der Ressourcenliste und der {{site.data.keyword.blockstorageshort}}-Liste angezeigt werden.
 
 
 ## Host für die neue {{site.data.keyword.filestorage_short}}-Instanz autorisieren
@@ -64,7 +66,7 @@ Wenn Ihr Zieldatenzentrum keine Verschlüsselung bietet, können Sie die Replika
   - Öffnen Sie ein Support-Ticket, wenn Sie Hilfe beim Herstellen einer Verbindung zwischen den beiden gemeinsam genutzten Dateispeichern und Ihrem Host benötigen.
 
 2. Überlegen Sie, welchen Typ von Daten Sie auf Ihrem ursprünglichen {{site.data.keyword.filestorage_short}}-Datenträger haben und wie die Daten am besten in den neuen gemeinsam genutzten Dateispeicher kopiert werden könnten.
-  - Wenn Sie Sicherungsdaten, statische Inhalte und Daten haben, von denen nicht zu erwarten ist, dass sie sich während des Kopierens ändern, sind keine größeren Überlegungen erforderlich. 
+  - Wenn Sie Sicherungsdaten, statische Inhalte und Daten haben, von denen nicht zu erwarten ist, dass sie sich während des Kopierens ändern, sind keine größeren Überlegungen erforderlich.
   - Wenn Sie eine Datenbank oder eine virtuelle Maschine auf Ihrem {{site.data.keyword.filestorage_short}}-Speicher ausführen, müssen Sie sicherstellen, dass die Daten während des Kopiervorgangs nicht geändert werden, um Datenbeschädigung zu vermeiden.
   - Wenn Sie Bandbreitenprobleme befürchten, führen Sie die Migration in Zeiten geringer Systemauslastung aus.
   - Öffnen Sie ein Support-Ticket, wenn Sie Hilfe im Hinblick auf diese Aspekte benötigen.

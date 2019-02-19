@@ -1,22 +1,23 @@
 ---
 
 copyright:
-  years: 2015, 2019
-lastupdated: "2019-01-08"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
-
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 
 # Replicando dados
+{: #replication}
 
 A replicação usa um de seus planejamentos de captura instantânea para copiar automaticamente capturas instantâneas para um volume de destino em um data center remoto. As cópias poderão ser recuperadas no site remoto se ocorrer um evento catastrófico ou se os dados forem corrompidos.
 
-A replicação mantém seus dados em sincronização em dois locais diferentes. Se desejar clonar seu volume e usá-lo independentemente do volume original, consulte [Criando um volume de arquivo duplicado](how-to-create-duplicate-volume.html).
+A replicação mantém seus dados em sincronização em dois locais diferentes. Se desejar clonar seu volume e usá-lo independentemente do volume original, consulte [Criando um volume de arquivo duplicado](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume).
 {:tip}
 
 Antes de replicar, deve-se criar um planejamento de captura instantânea.
@@ -112,7 +113,7 @@ As replicações funcionam com base em um planejamento de captura instantânea. 
 2. Clique em **Réplica** e em **Comprar uma replicação**.
 3. Selecione o planejamento de captura instantânea existente que você deseja que sua replicação siga. A lista contém todos os seus planejamentos de captura instantânea ativa. <br />
 
-   É possível selecionar apenas um planejamento mesmo se você tem uma combinação de Por hora, Diário e Semanal. Todas as capturas instantâneas que foram capturadas desde o ciclo de replicação anterior são replicadas independentemente do planejamento que as originou.<br />Se você não tiver Capturas instantâneas configuradas, será solicitado que faça isso antes de poder pedir replicação. Para obter mais informações, consulte [Trabalhando com capturas instantâneas](snapshots.html).
+   É possível selecionar apenas um planejamento mesmo se você tem uma combinação de Por hora, Diário e Semanal. Todas as capturas instantâneas que foram capturadas desde o ciclo de replicação anterior são replicadas independentemente do planejamento que as originou.<br />Se você não tiver Capturas instantâneas configuradas, será solicitado que faça isso antes de poder pedir replicação. Para obter mais informações, consulte [Trabalhando com capturas instantâneas](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots).
    {:tip}
 3. Clique em **Local** e selecione o data center que é seu site de DR.
 4. Clique em **Continuar**.
@@ -157,7 +158,7 @@ Seu espaço de captura instantânea primário e seu espaço de réplica devem se
 
 Os tamanhos de volume devem ser os mesmos para os volumes de armazenamento primário e de réplica. Um não pode ser maior que o outro. Quando você aumenta seu espaço de captura instantânea para o volume primário, o espaço de réplica é aumentado automaticamente. Aumentar o espaço de captura instantânea aciona uma atualização de replicação imediata. O aumento em ambos os volumes é mostrado como itens de linha em sua fatura e é rateado conforme necessário.
 
-Para obter mais informações sobre o aumento do espaço de captura instantânea, consulte [Capturas instantâneas](snapshots.html).
+Para obter mais informações sobre o aumento do espaço de captura instantânea, consulte [Capturas instantâneas](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots).
 ## Visualizando os volumes de réplica na Lista de volumes
 
 É possível visualizar seus volumes de replicação na página {{site.data.keyword.filestorage_short}} em **Armazenamento** > **{{site.data.keyword.filestorage_short}}**. O nome do volume mostra o nome do volume primário seguido por REP. O **Tipo** é Endurance ou Performance - Réplica. O **Endereço de destino** é N/A porque o volume da réplica não está montado no data center da réplica e o **Status** mostra Inativo.
@@ -187,14 +188,14 @@ As duplicatas podem ser criadas de ambos os volumes, o primário e o de réplica
 
 Os volumes duplicados podem ser acessados por um host para leitura/gravação assim que o armazenamento é provisionado. No entanto, capturas instantâneas e replicação não são permitidas até que a cópia de dados do original para a duplicata seja concluída.
 
-Para obter mais informações, consulte [Criando um Volume de arquivo duplicado](how-to-create-duplicate-volume.html)
+Para obter mais informações, consulte [Criando um Volume de arquivo duplicado](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume)
 
 ## Usando réplicas para failover quando ocorre um desastre
 
 Ao efetuar failover, você está "invertendo o comutador" do volume de armazenamento em seu data center primário para o volume de destino em seu data center remoto. Por exemplo, seu data center primário é Londres e seu data center secundário é Amsterdã. Se um evento de falha ocorresse, você efetuaria failover para Amsterdã - conectando-se ao volume agora primário de uma instância de cálculo em Amsterdã. Depois que seu volume em Londres é reparado, uma captura instantânea é tomada do volume de Amsterdã para efetuar failback para Londres e para o volume novamente primário de uma instância de cálculo em Londres.
 
-* Se a localização primária estiver com problema, mas o armazenamento e o host ainda estiverem on-line, consulte [Failover com um volume primário acessível](dr-accessible-primary.html).
-* Se a localização primária estiver inativa, consulte [Failover com um volume primário inacessível](disaster-recovery.html).
+* Se a localização primária estiver com problema, mas o armazenamento e o host ainda estiverem on-line, consulte [Failover com um volume primário acessível](/docs/infrastructure/FileStorage?topic=FileStorage-dr-accessible).
+* Se a localização primária estiver inativa, consulte [Failover com um volume primário inacessível](/docs/infrastructure/FileStorage?topic=FileStorage-dr-inaccessible).
 
 ## Cancelando uma Replicação Existente
 
@@ -215,3 +216,64 @@ Quando um volume primário é cancelado, o planejamento de replicação e o volu
  2. Clique em **Ações** e selecione **Cancelar para o {{site.data.keyword.filestorage_short}}**.
  3. Selecione quando cancelar o volume. Escolha **Imediatamente** ou **Data de aniversário** e clique em **Continuar**.
  4. Clique em **Eu reconheço que, devido ao cancelamento, a perda de dados pode ocorrer** e clique em **Cancelar**.
+
+## Comandos Relacionados a Replicação no SLCLI
+{: #clicommands}
+
+* Listar data centers de replicação adequados para um volume específico.
+  ```
+  # slcli file replica-locations --help
+  Usage: slcli file replica-locations [OPTIONS] VOLUME_ID
+
+  Opções: --sortby TEXT Coluna para classificação --columns TEXT Colunas para exibição. Options: ID, Long Name, Short Name
+  -h, --help      Show this message and exit.
+  ```
+
+* Solicite um volume de réplica de armazenamento de arquivo.
+  ```
+  # slcli file replica-order --help
+  Usage: slcli file replica-order [OPTIONS] VOLUME_ID
+
+  Options:
+  -s, --snapshot-schedule [INTERVAL|HOURLY|DAILY|WEEKLY]
+                                  Snapshot schedule to use for replication,
+                                  (INTERVAL | HOURLY | DAILY | WEEKLY)
+                                  [required]
+  -l, --location TEXT             Short name of the data center for the
+                                  replicant (e.g.: dal09)  [required]
+  --tier [0.25|2|4|10]            Endurance Storage Tier (IOPS per GB) of the
+                                  primary volume for which a replicant is
+                                  ordered [optional]
+  -h, --help                      Show this message and exit.
+  ```
+
+* Listar volumes replicantes existentes para um volume de arquivo.
+  ```
+  # slcli file replica-partners --help
+  Usage: slcli file replica-partners [OPTIONS] VOLUME_ID
+
+  Opções: --sortby TEXT Coluna para classificação --columns TEXT Colunas para exibição. Options: ID, Username, Account ID,
+                  Capacity (GB), Hardware ID, Guest ID, Host ID
+  -h, --help      Show this message and exit.
+  ```
+
+* Executar failover de um volume de arquivo em um volume replicado específico.
+  ```
+  # slcli file replica-failover --help
+  Usage: slcli file replica-failover [OPTIONS] VOLUME_ID
+
+  Options:
+  --replicant-id TEXT  ID of the replicant volume
+  --immediate          Failover to replicant immediately.
+  -h, --help      Show this message and exit.
+  ```
+
+* Executar failback de um volume de arquivo por meio de um volume replicado específico.
+  ```
+  # slcli file replica-failback --help
+  Usage: slcli file replica-failback [OPTIONS] VOLUME_ID
+
+  Options:
+  --replicant-id TEXT  ID of the replicant volume
+  -h, --help           Show this message and exit.
+  ```

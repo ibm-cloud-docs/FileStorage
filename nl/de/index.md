@@ -2,18 +2,18 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-01-07"
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
-{:DomainName: data-hd-keyref="APPDomain"}
-{:DomainName: data-hd-keyref="DomainName"}
 
 
 # Einführung in {{site.data.keyword.filestorage_short}}
+{: #GettingStarted}
 
 {{site.data.keyword.filestorage_full}} ist ein persistenter, schneller und flexibler, NFS-basierter {{site.data.keyword.filestorage_short}}, der über ein Netz angeschlossen ist. In dieser Umgebung mit NAS-Speicher (NAS – Network-attached Storage) haben Sie vollständige Kontrolle über die Funktion und Leistung Ihrer gemeinsam genutzten Dateispeicher. Gemeinsam genutzte {{site.data.keyword.filestorage_short}}-Speicher können aus Gründen der Ausfallsicherheit mit bis zu 64 autorisierten Geräten über gesteuerte TCP/IP-Verbindungen verbunden werden.
 
@@ -27,14 +27,14 @@ Nutzen Sie die folgenden Kernfunktionen von {{site.data.keyword.filestorage_shor
    - Ist für dateibasierte, gemeinsam genutzte NFS-Speicher verfügbar.
 - **Hohe Dauerhaftigkeit und Ausfallsicherheit**
    - Schützt die Integrität der Daten und gewährleistet die Verfügbarkeit bei Wartungsereignissen und ungeplanten Ausfällen, ohne dass RAID-Arrays (Redundant Arrays of Independent Disks) auf Betriebssystemebene erstellt und verwaltet werden müssen.
-- **Verschlüsselung ruhender Daten** [(in ausgewählten Rechenzentren verfügbar)](new-ibm-block-and-file-storage-location-and-features.html)
+- **Verschlüsselung ruhender Daten** [(in ausgewählten Rechenzentren verfügbar)](/docs/infrastructure/FileStorage?topic=FileStorage-news)
    - Providerverwaltete Verschlüsselung für ruhende Daten wird ohne Zusatzkosten bereitgestellt.
-- **Gesamter Speicher Flash-gestützt** [(in ausgewählten Rechenzentren verfügbar)](new-ibm-block-and-file-storage-location-and-features.html)
+- **Gesamter Speicher Flash-gestützt** [(in ausgewählten Rechenzentren verfügbar)](/docs/infrastructure/FileStorage?topic=FileStorage-news)
    - Gesamter Speicher ist Flashspeicher für Datenträger und kann mit 2 IOPS/GB oder höher bereitgestellt werden.
-- **Snapshots** [(in ausgewählten Rechenzentren verfügbar)](new-ibm-block-and-file-storage-location-and-features.html).
+- **Snapshots** [(in ausgewählten Rechenzentren verfügbar)](/docs/infrastructure/FileStorage?topic=FileStorage-news).
    - Erfasst zeitpunktbezogene Datensnapshots ohne Betriebsunterbrechungen.
-- **Replikation**  [(in ausgewählten Rechenzentren verfügbar)](new-ibm-block-and-file-storage-location-and-features.html)
-   - Ist nur verfügbar, wenn Speicher in [ausgewählten Rechenzentren](new-ibm-block-and-file-storage-location-and-features.html) bereitgestellt wird.
+- **Replikation**  [(in ausgewählten Rechenzentren verfügbar)](/docs/infrastructure/FileStorage?topic=FileStorage-news)
+   - Ist nur verfügbar, wenn Speicher in [ausgewählten Rechenzentren](/docs/infrastructure/FileStorage?topic=FileStorage-news) bereitgestellt wird.
    - Snapshots werden automatisch in ein Partnerrechenzentrum von {{site.data.keyword.BluSoftlayer_full}} kopiert.
 - **Hoch verfügbare Konnektivität**
    - Verwendet redundante Netzverbindungen zur Maximierung der Verfügbarkeit.
@@ -48,7 +48,7 @@ Nutzen Sie die folgenden Kernfunktionen von {{site.data.keyword.filestorage_shor
 
 Sie können stündliche oder monatliche Rechnungsstellung für einen Dateidatenträger auswählen. Der Typ der Rechnungsstellung, der für eine LUN ausgewählt wird, gilt für den zugehörigen Snapshotbereich und für Replikate. Wenn Sie zum Beispiel eine LUN mit stündlicher Rechnungsstellung bereitstellen, werden alle Gebühren für Snapshots oder Replikate stündlich in Rechnung gestellt. Wenn Sie eine LUN mit monatlicher Rechnungsstellung bereitstellen, werden Gebühren für Snapshots oder Replikate monatlich in Rechnung gestellt.
 
-Bei der **stündlichen Rechnungsstellung** wird die Stundenzahl, die der Dateidatenträger auf dem Konto vorhanden war, zu dem Zeitpunkt berechnet, an dem die LUN gelöscht wird oder der Rechnungsstellungszyklus endet, je nachdem, welcher Zeitpunkt zuerst kommt. Die stündliche Rechnungsstellung ist eine gute Wahl für Speicher, der für einige wenige Tage oder weniger als einen ganzen Monat lang genutzt wird. Die Abrechnung nach Stunden ist nur für Speicher verfügbar, der in [ausgewählten Rechenzentren](new-ibm-block-and-file-storage-location-and-features.html) bereitgestellt wird.
+Bei der **stündlichen Rechnungsstellung** wird die Stundenzahl, die der Dateidatenträger auf dem Konto vorhanden war, zu dem Zeitpunkt berechnet, an dem die LUN gelöscht wird oder der Rechnungsstellungszyklus endet, je nachdem, welcher Zeitpunkt zuerst kommt. Die stündliche Rechnungsstellung ist eine gute Wahl für Speicher, der für einige wenige Tage oder weniger als einen ganzen Monat lang genutzt wird. Die Abrechnung nach Stunden ist nur für Speicher verfügbar, der in [ausgewählten Rechenzentren](/docs/infrastructure/FileStorage?topic=FileStorage-news) bereitgestellt wird.
 
 Bei der **monatlichen Rechnungsstellung** erfolgt die Berechnung für den Preis anteilmäßig ab dem Erstellungsdatum bis zum Ende des Rechnungsstellungszyklus und die Rechnung wird unverzüglich gestellt. Es erfolgt keine Rückerstattung, wenn ein Datenträger vor dem Ende des Rechnungsstellungszyklus gelöscht wird. Die monatliche Rechnungsstellung ist eine gute Wahl für Speicher, der für Auslastungen im Produktionsbetrieb genutzt wird, die Daten verwenden, die über längere Zeiträume (einen Monat oder länger) gespeichert werden und zugänglich sein müssen.
 
@@ -111,7 +111,7 @@ Endurance {{site.data.keyword.filestorage_short}} ist in vier IOPS-Leistungsstuf
 
 - **4 IOPS pro GB** sind für Workloads höherer Intensität vorgesehen. Solche Workloads sind in der Regel durch einen hohen Prozentsatz an Daten gekennzeichnet, die zu jedem Zeitpunkt aktiv sind. Beispielanwendungen sind transaktionsorientierte und andere leistungskritische Datenbanken.
 
-- **10 IOPS pro GB** sind für anspruchsvollste Workloads vorgesehen, wie zum Beispiel für die von NoSQL-Datenbanken generierten Workloads und für die Datenverarbeitung von Analysen (Analytics). Diese Stufe ist nur für Speicher verfügbar, der in [ausgewählten Rechenzentren](new-ibm-block-and-file-storage-location-and-features.html) mit einer Größe von bis zu 4 TB bereitgestellt wird.
+- **10 IOPS pro GB** sind für anspruchsvollste Workloads vorgesehen, wie zum Beispiel für die von NoSQL-Datenbanken generierten Workloads und für die Datenverarbeitung von Analysen (Analytics). Diese Stufe ist nur für Speicher verfügbar, der in [ausgewählten Rechenzentren](/docs/infrastructure/FileStorage?topic=FileStorage-news) mit einer Größe von bis zu 4 TB bereitgestellt wird.
 
 Bis zu 48.000 IOPS sind bei einem 12-TB-Endurance-Datenträger verfügbar.
 
@@ -265,9 +265,9 @@ Ein weitere Faktor, der zu beachten ist, ist die Anzahl der Hosts, die Ihren Dat
 
 Die Geschwindigkeit Ihrer Ethernet-Verbindung muss höher als der erwartete maximale Durchsatz von Ihrem Datenträger sein. Grundsätzlich dürfte Ihre Ethernet-Verbindung nicht über 70% der verfügbaren Bandbreite hinaus ausgelastet werden. Wenn Sie beispielsweise über 6.000 IOPS verfügen und eine Blockgröße von 16 KB verwenden, sind auf dem Datenträger etwa 94 MBps möglich. Bei einer Ethernet-Verbindung von 1 Gb/s zu einer LUN wird diese Verbindung zu einem Engpass, wenn die Server versuchen, den maximal verfügbaren Durchsatz zu nutzen. Ursache hierfür ist, dass 70 Prozent des theoretischen Grenzwerts von einer Ethernet-Verbindung mit 1 Gb/s (125 MB pro Sekunde) nur 88 MB pro Sekunde zulassen würden.
 
-Zur Erzielung der maximalen E/A-Operationen pro Sekunde müssen geeignete Netzressourcen eingesetzt werden. Außerdem sind die Nutzung privater Netze außerhalb des Speichers sowie hostseitige und anwendungsspezifische Optimierungen (zum Beispiel IP-Stack oder [Warteschlangenlängen](set-host-queue-depth-settings-performance-and-endurance-storage.html) und andere Einstellungen) zu berücksichtigen.
+Zur Erzielung der maximalen E/A-Operationen pro Sekunde müssen geeignete Netzressourcen eingesetzt werden. Außerdem sind die Nutzung privater Netze außerhalb des Speichers sowie hostseitige und anwendungsspezifische Optimierungen (zum Beispiel IP-Stack oder [Warteschlangenlängen](/docs/infrastructure/FileStorage?topic=FileStorage-hostqueuesettings) und andere Einstellungen) zu berücksichtigen.
 
-Der Speicherdatenverkehr ist in der gesamten Netznutzung von öffentlichen virtuellen Servern enthalten. Weitere Informationen zu den Grenzwerten, die vom Service auferlegt werden können, finden Sie in der [Dokumentation zu virtuellen Servern](https://{/docs/vsi/vsi_public.html#public-virtual-servers).
+Der Speicherdatenverkehr ist in der gesamten Netznutzung von öffentlichen virtuellen Servern enthalten. Weitere Informationen zu den Grenzwerten, die für die Verwendung des Service gelten können, finden Sie in der [Dokumentation zu virtuellen Servern](/docs/vsi?topic=virtual-servers-about-public-virtual-servers). 
 
 **NFS-Version**
 
@@ -275,14 +275,14 @@ NFS Version 3 und NFS Version 4.1 werden in der Umgebung von {{site.data.keyword
 
 ## Bestellung abschicken
 
-Wenn Sie bereit sind, die Bestellung aufzugeben, können Sie dies über die [Konsole](provisioning-file-storage.html) oder die [SLCLI](ordering-through-cli.html) tun. Zur Bereitstellung von File Storage mit VMware klicken Sie [hier](architecture-guide-file-storage-vmware.html).
+Wenn Sie bereit sind, die Bestellung aufzugeben, können Sie dies über die [Konsole](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole) oder die [SLCLI](/docs/infrastructure/FileStorage?topic=FileStorage-orderingSLCLI) tun. Zur Bereitstellung von File Storage mit VMware klicken Sie [hier](/docs/infrastructure/FileStorage?topic=FileStorage-architectureguide).
 
 ## Verbindung zum neuen Speicher herstellen
 
 Wenn Ihre Bereitstellungsanforderung abgeschlossen ist, können Sie Ihren Hosts die Berechtigung erteilen, auf den neuen Speicher zuzugreifen und die Verbindung zu konfigurieren. Folgen Sie je nach dem Betriebssystem Ihres Hosts dem entsprechenden Link.
-- [Zugriff auf {{site.data.keyword.filestorage_short}} unter Linux](accessing-file-storage-linux.html)
-- [{{site.data.keyword.filestorage_short}} unter CentOS anhängen](mounting-nsf-file-storage.html)
-- [{{site.data.keyword.filestorage_short}} unter CoreOS anhängen](mounting-storage-coreos.html)
-- [{{site.data.keyword.filestorage_short}} für Sicherung mit cPanel konfigurieren](configure-backup-cpanel.html)
-- [{{site.data.keyword.filestorage_short}} für Sicherung mit Plesk konfigurieren](configure-backup-plesk.html)
-- [{{site.data.keyword.filestorage_short}}-Datenträger an ESXi-Hosts anhängen](architecture-guide-file-storage-vmware.html)
+- [Zugriff auf {{site.data.keyword.filestorage_short}} unter Linux](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)
+- [{{site.data.keyword.filestorage_short}} unter CentOS anhängen](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)
+- [{{site.data.keyword.filestorage_short}} unter CoreOS anhängen](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCoreOS)
+- [{{site.data.keyword.filestorage_short}} für Sicherung mit cPanel konfigurieren](/docs/infrastructure/FileStorage?topic=FileStorage-cPanelBackups)
+- [{{site.data.keyword.filestorage_short}} für Sicherung mit Plesk konfigurieren](/docs/infrastructure/FileStorage?topic=FileStorage-PleskBackup)
+- [{{site.data.keyword.filestorage_short}}-Datenträger an ESXi-Hosts anhängen](/docs/infrastructure/FileStorage?topic=FileStorage-architectureguide)

@@ -1,14 +1,19 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-12-11"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 {:faq: data-hd-content-type='faq'}
 
 # FAQ
+{: #faqs}
 
 ## 암호화된 내 {{site.data.keyword.filestorage_short}} 볼륨을 어떻게 알 수 있습니까?
 {: faq}
@@ -18,19 +23,19 @@ lastupdated: "2018-12-11"
 ## 암호화를 위해 업그레이드된 데이터 센터에서 암호화되지 않은 {{site.data.keyword.filestorage_short}}를 구매한 경우, 내 {{site.data.keyword.filestorage_short}}를 암호화할 수 있습니까?
 {: faq}
 
-데이터 센터 업그레이드 전에 프로비저닝된 {{site.data.keyword.filestorage_short}}를 암호화할 수 없습니다. 업그레이드된 데이터 센터에 프로비저닝된 새 {{site.data.keyword.filestorage_short}}가 자동으로 암호화됩니다. 이는 자동이며 선택하거나 무시해도 되는 프로비저닝 설정이 아닙니다. 암호화되지 않은 스토리지의 데이터는 새 파일 볼륨을 작성한 후에 호스트 기반 마이그레이션의 암호화된 새 볼륨에 데이터를 복사하여 암호화될 수 있습니다. 자세한 정보는 [File Storage 마이그레이션](migrate-file-storage-encrypted-file-storage.html)을 참조하십시오.
+데이터 센터 업그레이드 전에 프로비저닝된 {{site.data.keyword.filestorage_short}}를 암호화할 수 없습니다. 업그레이드된 데이터 센터에 프로비저닝된 새 {{site.data.keyword.filestorage_short}}가 자동으로 암호화됩니다. 이는 자동이며 선택하거나 무시해도 되는 프로비저닝 설정이 아닙니다. 암호화되지 않은 스토리지의 데이터는 새 파일 볼륨을 작성한 후에 호스트 기반 마이그레이션의 암호화된 새 볼륨에 데이터를 복사하여 암호화될 수 있습니다. 자세한 정보는 [File Storage 마이그레이션](/docs/infrastructure/FileStorage?topic=FileStorage-migratestorage)을 참조하십시오.
 
 ## 업그레이드된 데이터 센터에서 내가 {{site.data.keyword.filestorage_short}}를 프로비저닝 중임을 어떻게 알 수 있습니까?
 {: faq}
 
 업그레이드된 모든 데이터 센터가 {{site.data.keyword.filestorage_short}} 주문 양식에 별표(`*`)와 함께 표기됩니다. 주문 프로세스 중에 암호화를 사용하는 스토리지를 프로비저닝한다고 표시됩니다. 스토리지가 프로비저닝되면 스토리지 목록에 해당 볼륨이 암호화되었음을 나타내는 아이콘이 표시됩니다.
 
-모든 암호화된 볼륨 및 파일 공유는 업그레이드된 데이터 센터에서만 프로비저닝됩니다. 사용 가능한 기능 및 업그레이드된 데이터 센터의 전체 목록은 [여기서](new-ibm-block-and-file-storage-location-and-features.html) 찾을 수 있습니다.
+모든 암호화된 볼륨 및 파일 공유는 업그레이드된 데이터 센터에서만 프로비저닝됩니다. 사용 가능한 기능 및 업그레이드된 데이터 센터의 전체 목록은 [여기서](/docs/infrastructure/FileStorage?topic=FileStorage-news) 찾을 수 있습니다.
 
 ## Endurance 10IOPS 계층의 {{site.data.keyword.filestorage_short}}를 특정 데이터 센터에서만 프로비저닝할 수 있는 이유는 무엇입니까?
 {: faq}
 
-{{site.data.keyword.filestorage_short}} Endurance 유형 10IOPS/GB 계층은 특정 데이터 센터에서만 사용 가능하며, 새 데이터 센터가 곧 추가될 예정입니다. 사용 가능한 기능 및 업그레이드된 데이터 센터의 전체 목록은 [여기서](new-ibm-block-and-file-storage-location-and-features.html) 찾을 수 있습니다.
+{{site.data.keyword.filestorage_short}} Endurance 유형 10IOPS/GB 계층은 특정 데이터 센터에서만 사용 가능하며, 새 데이터 센터가 곧 추가될 예정입니다. 사용 가능한 기능 및 업그레이드된 데이터 센터의 전체 목록은 [여기서](/docs/infrastructure/FileStorage?topic=FileStorage-news) 찾을 수 있습니다.
 
 ## 내 {{site.data.keyword.filestorage_short}}의 올바른 마운트 지점을 찾는 방법은 무엇입니까?
 {: faq}
@@ -40,7 +45,7 @@ lastupdated: "2018-12-11"
 ## 프로비저닝할 수 있는 볼륨은 몇 개입니까?
 {: faq}
 
-기본적으로, 250개 블록 및 파일 스토리지 볼륨의 통합 총계를 프로비저닝할 수 있습니다. 한계를 늘리려면 영업 담당자에게 문의하십시오. 자세한 정보는 [스토리지 한계 관리](managing-storage-limits.html)를 참조하십시오.
+기본적으로, 250개 블록 및 파일 스토리지 볼륨의 통합 총계를 프로비저닝할 수 있습니다. 한계를 늘리려면 영업 담당자에게 문의하십시오. 자세한 정보는 [스토리지 한계 관리](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits)를 참조하십시오.
 
 ## 프로비저닝된 {{site.data.keyword.filestorage_short}} 볼륨의 사용을 공유할 수 있는 인스턴스의 수는 얼마입니까?
 {: faq}

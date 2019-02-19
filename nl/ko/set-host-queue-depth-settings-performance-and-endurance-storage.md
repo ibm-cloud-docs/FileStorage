@@ -1,13 +1,18 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-13"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 
 # 호스트 큐 깊이 설정 조정
+{: #hostqueuesettings}
 
 {{site.data.keyword.BluSoftlayer_full}}에서는 각 성능 계층에 대한 최대 호스트 및 애플리케이션 입출력(I/O) 큐 깊이를 제안합니다.
 

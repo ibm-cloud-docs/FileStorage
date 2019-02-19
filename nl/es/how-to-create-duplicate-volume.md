@@ -1,29 +1,31 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 # Creación de un {{site.data.keyword.filestorage_short}} duplicado
+{: #duplicatevolume}
 
 Puede crear un duplicado de un {{site.data.keyword.BluSoftlayer_full}} {{site.data.keyword.filestorage_full}} existente. El volumen duplicado hereda la capacidad y las opciones de rendimiento del volumen original de forma predeterminada y tiene una copia de los datos hasta el momento de la instantánea.   
 
-Como el duplicado se basa en los datos en el momento específico de una instantánea, se necesita espacio de instantáneas en el volumen original antes de crear un duplicado. Para obtener más información sobre las instantáneas y cómo solicitar espacio de instantáneas, consulte la [documentación de instantáneas](snapshots.html).  
+Como el duplicado se basa en los datos en el momento específico de una instantánea, se necesita espacio de instantáneas en el volumen original antes de crear un duplicado. Para obtener más información sobre las instantáneas y cómo solicitar espacio de instantáneas, consulte la [documentación de instantáneas](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots).  
 
 Los duplicados pueden crearse a partir de volúmenes **primarios** y **de réplica**. El nuevo duplicado se crea en el mismo centro de datos que el volumen original. Si crea un duplicado a partir de un volumen de réplica, el nuevo volumen se crea en el mismo centro de datos que el volumen de réplica.
 
-Si es un usuario de cuenta dedicada de {{site.data.keyword.containerlong}}, consulte las opciones para la deduplicación de un volumen en la [documentación de {{site.data.keyword.containerlong_notm}}](/docs/containers/cs_storage_file.html#backup_restore).
+Si es un usuario de cuenta dedicada de {{site.data.keyword.containerlong}}, consulte las opciones de deduplicación de un volumen en la [documentación de {{site.data.keyword.containerlong_notm}}](/docs/containers?topic=containers-backup_restore#backup_restore).
 {:tip}
 
 Se puede acceder a los volúmenes duplicados mediante un host para lectura/escritura siempre y cuando el almacenamiento esté suministrado. Sin embargo, no se permiten instantáneas ni réplicas hasta que se completa la copia de datos del original en el duplicado. Una vez completada la copia de datos, el duplicado se puede gestionar y utilizar como un volumen independiente.
 
-Esta característica está disponible en la mayoría de las ubicaciones. Pulse [aquí](new-ibm-block-and-file-storage-location-and-features.html) para ver la lista de centros de datos disponibles.
+Esta característica está disponible en la mayoría de las ubicaciones. Pulse [aquí](/docs/infrastructure/FileStorage?topic=FileStorage-news) para ver la lista de centros de datos disponibles.
 
 Algunos de los usos comunes para un volumen duplicado incluyen los ejemplos siguientes.
 - **Prueba de recuperación tras desastre**. Cree un duplicado de su volumen de réplica para verificar que los datos estén intactos y puedan utilizarse en caso de desastre, sin interrumpir la réplica.
@@ -76,6 +78,51 @@ Puede crear un volumen duplicado a través del [{{site.data.keyword.slportal}} !
 7. Puede actualizar el espacio de instantáneas para el nuevo volumen para añadir más, menos o ningún espacio de instantáneas. El espacio de instantáneas del volumen original se establece de forma predeterminada.
 8. Pulse **Continuar** para realizar el orden de los duplicados.
 
+## Creación de un duplicado a través de la SLCLI
+```
+# slcli file volume-duplicate --help
+Uso: slcli file volume-duplicate [OPCIONES] ID_VOLUMEN_ORIGEN
+
+Opciones:
+  -o, --origin-snapshot-id ENTERO
+                                  ID de una instantánea de volumen de origen
+                                  para utilizar en la duplicación.
+  -c, --duplicate-size ENTERO     Tamaño del volumen de archivos duplicado en GB. ***Si
+                                  no se especifica tamaño, se usará el tamaño del
+                                  volumen original.***
+                                  Mínimo: [el tamaño del volumen original]
+  -i, --duplicate-iops ENTERO    IOPS del almacenamiento de rendimiento, entre
+                                  100 y 6000 en múltiplos de 100 [usado sólo para
+                                  volúmenes de rendimiento] ***Si no se ha especificado
+                                  valor de IOPS, se usará el valor de IOPS del
+                                  volumen de origen.***
+                                  Requisitos: [Si el IOPS/GB del volumen de origen es
+                                  menor que 0,3, el IOPS/GB del duplicado debe ser
+                                  también menor que 0,3. Si el IOPS/GB del volumen de
+                                  origen es menor o igual que 0,3, el IOPS/GB del
+                                  duplicado debe ser también mayor o igual que 0,3]
+  -t, --duplicate-tier [0.25|2|4|10]
+                                  Nivel de almacenamiento resistente (IOPS por
+                                  GB) [usado sólo para volúmenes de resistencia]
+                                  ***Si no se especifica nivel, se usará el nivel
+                                  del volumen de origen.***
+                                  Requisitos: [Si el IOPS/GB del volumen de
+                                  origen es 0,25, el IOPS/GB del duplicado
+                                  debe ser también 0,25. Si el IOPS/GB
+                                  del volumen original es mayor que 0,25,
+                                  el IOPS/GB del duplicado también debe ser
+                                  mayor que 0,25.]
+  -s, --duplicate-snapshot-size ENTERO
+                                  El tamaño del espacio de instantánea que pedir
+                                  para el duplicado. ***Si no se especifica el
+                                  tamaño del espacio, se usará el tamaño del
+                                  espacio del volumen de archivos original.***
+                                  Especifique "0" para este parámetro para pedir
+                                  un volumen duplicado sin espacio para instantáneas.
+  --billing [hourly|monthly]      Parámetro opcional para el tipo de facturación (el
+                                  valor predeterminado es mensual)
+  -h, --help                      Mostrar este mensaje y salir.
+```
 
 ## Gestión del volumen duplicado
 

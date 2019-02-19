@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
@@ -16,19 +17,6 @@ lastupdated: "2018-11-30"
 # Ordering Snapshots
 
 To create snapshots of your storage volume, either automated or manually, you need to purchase space to hold them. You can purchase capacity up to your storage volume amount (during the initial volume purchase or later by using these steps).
-
-1. Log in to [The IBM Cloud console](https://{DomainName}/){:new_window} and click the menu icon on the upper left. Select **Classic Infrastructure**.
-
-   Alternatively, you can log in to the [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
-2. Access your Storage through **Storage** > **{{site.data.keyword.filestorage_short}}**.
-3. Click **Change Snapshot Space** in the Snapshots frame.
-4. Select the amount of space that you need and the payment method.
-5. Click **Continue**.
-6. Enter any Promo Code that you have and click **Recalculate**. The **Charges for this order** and **Order Review** have default values.
-
-   Discounts are applied when the order is processed.
-   {:note}
-7. Check the **I have read the Master Service Agreement and agree to the terms therein** box and click **Place Order**. Your snapshot space is provisioned in a few minutes.
 
 ## Determining how much snapshot space to order
 
@@ -54,3 +42,33 @@ Conversely, if that 500 GB of actual data, with 12 hourly snapshots, saw 10 perc
 So when you determine how much Snapshot space you need, consider the rate of change carefully. It's a huge influence on how much snapshot space you need. A bigger volume is more likely to change more often. However, a 500-GB volume with 5 GB of change and a 10-TB volume with 5 GB of change use the same amount of snapshot space.
 
 Additionally, for most workloads, the larger a volume is the less space needs to be set aside initially. It's primarily due to the underlying data efficiencies, and the nature of how snapshots work in the environment.
+
+## Ordering Snapshot space through the {{site.data.keyword.cloud_notm}} console
+
+1. Log in to [The IBM Cloud console](https://{DomainName}/){:new_window} and click the menu icon on the upper left. Select **Classic Infrastructure**.
+
+   Alternatively, you can log in to the [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
+2. Access your Storage through **Storage** > **{{site.data.keyword.filestorage_short}}**.
+3. Click **Change Snapshot Space** in the Snapshots frame.
+4. Select the amount of space that you need and the payment method.
+5. Click **Continue**.
+6. Enter any Promo Code that you have and click **Recalculate**. The **Charges for this order** and **Order Review** have default values.
+
+   Discounts are applied when the order is processed.
+   {:note}
+7. Check the **I have read the Master Service Agreement and agree to the terms therein** box and click **Place Order**. Your snapshot space is provisioned in a few minutes.
+
+## Ordering Snapshot space through the SL CLI
+
+```
+# slcli file snapshot-order --help
+Usage: slcli file snapshot-order [OPTIONS] VOLUME_ID
+
+Options:
+  --capacity INTEGER    Size of snapshot space to create in GB  [required]
+  --tier [0.25|2|4|10]  Endurance Storage Tier (IOPS per GB) of the file
+                        volume for which space is ordered [optional, and only
+                        valid for endurance storage volumes]
+  --upgrade             Flag to indicate that the order is an upgrade
+  -h, --help            Show this message and exit.
+```

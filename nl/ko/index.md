@@ -2,18 +2,18 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-01-07"
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
-{:DomainName: data-hd-keyref="APPDomain"}
-{:DomainName: data-hd-keyref="DomainName"}
 
 
 # {{site.data.keyword.filestorage_short}} 시작하기
+{: #GettingStarted}
 
 {{site.data.keyword.filestorage_full}}는 지속적이고 빠르며 유연한 네트워크 연결, NFS 기반 {{site.data.keyword.filestorage_short}}입니다. 이 NAS(Network-Attached Storage) 환경에서 사용자는 파일 공유 기능과 성능을 전체적으로 제어할 수 있습니다. {{site.data.keyword.filestorage_short}} 공유는 복원성을 위해 라우트된 TCP/IP 연결 상에서 최대 64개의 권한 부여된 디바이스에 연결될 수 있습니다.
 
@@ -27,14 +27,14 @@ lastupdated: "2019-01-07"
    - 파일 기반 NFS 공유에 대해 사용 가능합니다.
 - **높은 내구성 및 복원성**
    - 운영 체제 레벨 RAID(Redundant Array of Independent Disk) 어레이를 작성하고 관리하지 않고도 유지보수 이벤트 및 예기치 않은 장애 발생 상황에서 데이터 무결성을 보호하고 가용성을 유지합니다.
-- **저장 데이터 암호화** [(특정 데이터 센터에서 사용 가능함)](new-ibm-block-and-file-storage-location-and-features.html)
+- **저장 데이터 암호화** [(특정 데이터 센터에서 사용 가능함)](/docs/infrastructure/FileStorage?topic=FileStorage-news)
    - 저장 데이터에 대한 제공자 관리 암호화가 추가 비용 없이 제공됩니다.
-- **모든 플래시 지원 스토리지** [(특정 데이터 센터에서 사용 가능함)](new-ibm-block-and-file-storage-location-and-features.html)
+- **모든 플래시 지원 스토리지** [(특정 데이터 센터에서 사용 가능함)](/docs/infrastructure/FileStorage?topic=FileStorage-news)
    - 볼륨에 대한 모든 플래시 스토리지를 2IOPS/GB 이상 레벨에서 프로비저닝할 수 있습니다.
-- **스냅샷** [(특정 데이터 센터에서 사용 가능함)](new-ibm-block-and-file-storage-location-and-features.html).
+- **스냅샷** [(특정 데이터 센터에서 사용 가능함)](/docs/infrastructure/FileStorage?topic=FileStorage-news).
    - 작업을 방해하지 않으면서 특정 시점의 데이터 스냅샷을 캡처합니다.
-- **복제** [(특정 데이터 센터에서 사용 가능함)](new-ibm-block-and-file-storage-location-and-features.html)
-   - 스토리지가 [특정 데이터 센터](new-ibm-block-and-file-storage-location-and-features.html)에서 프로비저닝되는 경우 사용 가능합니다.
+- **복제** [(특정 데이터 센터에서 사용 가능함)](/docs/infrastructure/FileStorage?topic=FileStorage-news)
+   - 스토리지가 [특정 데이터 센터](/docs/infrastructure/FileStorage?topic=FileStorage-news)에서 프로비저닝되는 경우 사용 가능합니다.
    - 스냅샷을 파트너 {{site.data.keyword.BluSoftlayer_full}} 데이터 센터에 자동으로 복사합니다.
 - **고가용성 연결**
    - 가용성을 최대화하기 위해 중복 네트워킹 연결을 사용합니다.
@@ -48,7 +48,7 @@ lastupdated: "2019-01-07"
 
 파일 볼륨에 대해 시간별 또는 월별 청구를 선택할 수 있습니다. LUN에 대해 선택된 비용 청구 유형은 해당 스냅샷 영역 및 복제본에 적용됩니다. 예를 들어, 시간별 청구로 LUN을 프로비저닝하는 경우 스냅샷 또는 복제본 비용은 시간별로 청구됩니다. 월별 청구로 LUN을 프로비저닝하는 경우에는 스냅샷 또는 복제본 비용이 월별로 청구됩니다.
 
-**시간별 청구**에서 파일 볼륨이 계정에 존재한 시간은 LUN이 삭제된 시점이나 청구 주기가 끝난 시점(둘 중에서 먼저 발생하는 시점)에 계산됩니다. 시간별 스토리지는 수 일간 또는 한달 이내에 사용되는 스토리지에 좋은 선택사항입니다. 시간별 청구는 [특정 데이터 센터](new-ibm-block-and-file-storage-location-and-features.html)에서 프로비저닝된 스토리지에만 사용 가능합니다.
+**시간별 청구**에서 파일 볼륨이 계정에 존재한 시간은 LUN이 삭제된 시점이나 청구 주기가 끝난 시점(둘 중에서 먼저 발생하는 시점)에 계산됩니다. 시간별 스토리지는 수 일간 또는 한달 이내에 사용되는 스토리지에 좋은 선택사항입니다. 시간별 청구는 [특정 데이터 센터](/docs/infrastructure/FileStorage?topic=FileStorage-news)에서 프로비저닝된 스토리지에만 사용 가능합니다.
 
 **월별 청구**에서, 가격에 대한 계산은 작성 날짜로부터 청구 주기의 끝까지 비례 배분되며 즉각적으로 청구됩니다. 볼륨이 청구 주기가 끝나기 전에 삭제된 경우에는 환불이 되지 않습니다. 월별 청구는 장기간(한달 이상) 저장하고 액세스해야 하는 데이터를 사용하는 프로덕션 워크로드에서 사용되는 스토리지에 대해 좋은 선택사항입니다.
 
@@ -111,7 +111,7 @@ Endurance {{site.data.keyword.filestorage_short}}는 다양한 애플리케이�
 
 - **4IOPS/GB**는 집약도가 높은 워크로드용으로 설계되었습니다. 이러한 워크로드는 일반적으로 대부분의 시간 동안 활성 상태인 데이터를 많이 보유하는 것이 특성입니다. 적용되는 예에는 트랜잭션 및 기타 성능에 민감한 데이터베이스가 포함되어 있습니다.
 
-- **10IOPS/GB**는 가장 수요가 많은 워크로드(예: NoSQL 데이터베이스에서 생성된 워크로드) 및 분석을 위한 데이터 처리용으로 설계되었습니다. 이 계층은 [특정 데이터 센터](new-ibm-block-and-file-storage-location-and-features.html)에서 최대 4TB 크기로 프로비저닝된 스토리지에 대해서만 사용 가능합니다.
+- **10IOPS/GB**는 가장 수요가 많은 워크로드(예: NoSQL 데이터베이스에서 생성된 워크로드) 및 분석을 위한 데이터 처리용으로 설계되었습니다. 이 계층은 [특정 데이터 센터](/docs/infrastructure/FileStorage?topic=FileStorage-news)에서 최대 4TB 크기로 프로비저닝된 스토리지에 대해서만 사용 가능합니다.
 
 12TB Endurance 볼륨으로 최대 48,000IOPS까지 사용 가능합니다.
 
@@ -265,9 +265,9 @@ Endurance 및 Performance의 IOPS는 50/50 읽기/쓰기 50퍼센트 랜덤 워�
 
 이더넷 연결 속도는 볼륨의 예상 최대 처리량보다 빨라야 합니다. 일반적으로는 이더넷 연결이 사용 가능한 대역폭의 70%를 초과하여 사용하지 않아야 합니다. 예를 들어, IOPS가 6,000이며 16KB 블록 크기를 사용하는 경우 볼륨은 약 94MBps의 처리량을 처리할 수 있습니다. LUN에 대해 1Gbps의 이더넷 연결을 보유하고 있는 경우 서버가 사용 가능한 최대 처리량을 사용하려고 시도하면 병목 현상이 발생합니다. 이는 1Gbps 이더넷 연결(초당 125MB)에 대한 70퍼센트 이론적 한계가 초당 88MB까지만 허용하기 때문입니다.
 
-최대 IOPS를 달성하려면 적절한 네트워크 리소스가 제 위치에 있어야 합니다. 그 외에도 스토리지 외부의 사설 네트워크 사용량과 호스트 측 및 애플리케이션 특정 튜닝(IP 스택 또는 [큐 깊이](set-host-queue-depth-settings-performance-and-endurance-storage.html) 및 기타 설정)도 고려해야 합니다.
+최대 IOPS를 달성하려면 적절한 네트워크 리소스가 제 위치에 있어야 합니다. 그 외에도 스토리지 외부의 사설 네트워크 사용량과 호스트 측 및 애플리케이션 특정 튜닝(IP 스택 또는 [큐 깊이](/docs/infrastructure/FileStorage?topic=FileStorage-hostqueuesettings) 및 기타 설정)도 고려해야 합니다.
 
-스토리지 트래픽은 공용 Virtual Server의 총 네트워크 사용에 포함됩니다. 서비스에서 부과할 수 있는 한계에 관한 자세한 정보는 [Virtual Server 문서](https://{DomainName}/docs/vsi/vsi_public.html#public-virtual-servers)를 참조하십시오.
+스토리지 트래픽은 공용 Virtual Server의 총 네트워크 사용에 포함됩니다. 서비스에서 부과할 수 있는 한계에 관한 자세한 정보는 [Virtual Server 문서](/docs/vsi?topic=virtual-servers-about-public-virtual-servers)를 참조하십시오.
 
 **NFS 버전**
 
@@ -275,14 +275,14 @@ NFS v3 및 NFS v4.1 모두는 {{site.data.keyword.BluSoftlayer_full}} 환경에�
 
 ## 주문 제출
 
-주문을 제출할 준비가 되면 [콘솔](provisioning-file-storage.html)이나 [SLCLI](ordering-through-cli.html)를 통해 주문을 제출하십시오. VMware에서의 File Storage 프로비저닝의 경우에는 [여기](architecture-guide-file-storage-vmware.html)를 클릭하십시오.
+주문을 제출할 준비가 되면 [콘솔](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)이나 [SLCLI](/docs/infrastructure/FileStorage?topic=FileStorage-orderingSLCLI)를 통해 주문을 제출하십시오. VMware에서의 File Storage 프로비저닝의 경우에는 [여기](/docs/infrastructure/FileStorage?topic=FileStorage-architectureguide)를 클릭하십시오.
 
 ## 새 스토리지 연결
 
 프로비저닝 요청이 완료되면 새 스토리지에 액세스할 수 있도록 호스트에 권한을 부여하고 연결을 구성하십시오. 호스트의 운영 체제에 따라 적절한 링크를 사용하십시오.
-- [Linux에서 {{site.data.keyword.filestorage_short}} 액세스](accessing-file-storage-linux.html)
-- [CentOS의 {{site.data.keyword.filestorage_short}} 마운트](mounting-nsf-file-storage.html)
-- [CoreOS의 {{site.data.keyword.filestorage_short}} 마운트](mounting-storage-coreos.html)
-- [cPanel로 백업을 위한 {{site.data.keyword.filestorage_short}} 구성](configure-backup-cpanel.html)
-- [Plesk로 백업을 위한 {{site.data.keyword.filestorage_short}} 구성](configure-backup-plesk.html)
-- [ESXi 호스트에 {{site.data.keyword.filestorage_short}} 볼륨 마운트](architecture-guide-file-storage-vmware.html)
+- [Linux에서 {{site.data.keyword.filestorage_short}} 액세스](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)
+- [CentOS의 {{site.data.keyword.filestorage_short}} 마운트](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)
+- [CoreOS의 {{site.data.keyword.filestorage_short}} 마운트](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCoreOS)
+- [cPanel로 백업을 위한 {{site.data.keyword.filestorage_short}} 구성](/docs/infrastructure/FileStorage?topic=FileStorage-cPanelBackups)
+- [Plesk로 백업을 위한 {{site.data.keyword.filestorage_short}} 구성](/docs/infrastructure/FileStorage?topic=FileStorage-PleskBackup)
+- [ESXi 호스트에 {{site.data.keyword.filestorage_short}} 볼륨 마운트](/docs/infrastructure/FileStorage?topic=FileStorage-architectureguide)

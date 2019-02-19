@@ -1,16 +1,18 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-13"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 # Snapshots
+{: #snapshots}
 
 Snapshots sind eine Funktion von {{site.data.keyword.filestorage_full}}. Ein Snapshot stellt den Inhalt eines Datenträgers zu einem bestimmten Zeitpunkt dar. Mit Snapshots können Sie Ihre Daten ohne Leistungseinflüsse und minimalem Platzbedarf schützen. Snapshots gelten als erste Verteidigungslinie beim Datenschutz. Falls ein Benutzer wichtige Daten versehentlich ändert oder von einem Datenträger löscht, lassen sich diese Daten problemlos und schnell aus einer Snapshotkopie wiederherstellen.
 
@@ -28,7 +30,7 @@ Snapshots ermöglichen Folgendes:
 - Erstellung ohne Betriebsunterbrechung von zeitpunktbezogenen Recovery-Punkten
 - Zurücksetzung von Datenträgern auf frühere Zeitpunkte
 
-Sie müssen zuerst eine gewisse Menge an Snapshotbereich für Ihren Datenträger kaufen, um Snapshots des Datenträgers erstellen zu können. Der Snapshotbereich kann bei der ersten Bestellung oder im Nachhinein über die Seite für Datenträgerdetails **** hinzugefügt werden. Geplante und manuelle Snapshots nutzen den Snapshotbereich gemeinsam. Stellen Sie daher sicher, dass Sie genug Snapshotbereich bestellen.  Weitere Informationen finden Sie unter [Snapshots bestellen](ordering-snapshots.html). 
+Sie müssen zuerst eine gewisse Menge an Snapshotbereich für Ihren Datenträger kaufen, um Snapshots des Datenträgers erstellen zu können. Der Snapshotbereich kann bei der ersten Bestellung oder im Nachhinein über die Seite für Datenträgerdetails **** hinzugefügt werden. Geplante und manuelle Snapshots nutzen den Snapshotbereich gemeinsam. Stellen Sie daher sicher, dass Sie genug Snapshotbereich bestellen. Der Artikel [Snapshots bestellen](/docs/infrastructure/FileStorage?topic=FileStorage-ordering-snapshots) enthält weitere Details sowie eine Anleitung. 
 
 ## Bewährte Verfahren für Snapshots
 
@@ -45,7 +47,7 @@ Snapshots sind kein Ersatz für ausgelagerte Disaster-Recovery-Replikationen ode
 
 ## Sicherheit
 
-Auch alle Screenshots und Replikate von verschlüsseltem {{site.data.keyword.filestorage_short}} werden standardmäßig ebenfalls verschlüsselt. Diese Funktion kann nicht auf einzelnen Datenträgern inaktiviert werden. Weitere Informationen zum vom Provider verwalteten verschlüsselten Speicher finden Sie unter [Daten schützen](block-file-storage-encryption-rest.html).
+Auch alle Screenshots und Replikate von verschlüsseltem {{site.data.keyword.filestorage_short}} werden standardmäßig ebenfalls verschlüsselt. Diese Funktion kann nicht auf einzelnen Datenträgern inaktiviert werden. Weitere Informationen zum vom Provider verwalteten verschlüsselten Speicher finden Sie unter [Daten schützen](/docs/infrastructure/FileStorage?topic=FileStorage-encryption).
 
 ## Auswirkungen von Snapshots auf den Plattenspeicher
 
@@ -74,4 +76,4 @@ Im aktiven Dateisystem werden die geänderten Blöcke neu an verschiedene Positi
       </tr>
 </table>
 
-Weitere Informationen zur Verwendung von Snapshots finden Sie unter [Snapshots verwalten](working-with-snapshots.html).
+Weitere Informationen zur Verwendung von Snapshots finden Sie unter [Snapshots verwalten](/docs/infrastructure/FileStorage?topic=FileStorage-managingSnapshots).

@@ -1,16 +1,18 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-13"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 # 스냅샷
+{: #snapshots}
 
 스냅샷은 {{site.data.keyword.filestorage_full}}의 기능입니다. 스냅샷은 특정 시점에 볼륨의 컨텐츠를 표시합니다. 스냅샷을 사용하면 성능에 영향을 미치지 않고 공간을 최소한으로 이용하면서 데이터를 보호할 수 있습니다. 스냅샷은 데이터 보호를 위한 1차 방어선으로 간주됩니다. 사용자가 실수로 볼륨에서 중요한 데이터를 수정하거나 삭제하는 경우에는 스냅샷 사본으로부터 해당 데이터를 쉽고 빠르게 복원할 수 있습니다.
 
@@ -28,7 +30,7 @@ lastupdated: "2018-11-13"
 - 작업을 방해하지 않으면서 특정 시점의 복구 지점을 작성합니다.
 - 이전의 특정 시점으로 볼륨을 되돌립니다.
 
-볼륨의 스냅샷을 작성하려면 먼저 해당 볼륨에 대해 일정량의 스냅샷 영역을 구매해야 합니다. 스냅샷 영역은 초기 주문 중에, 또는 나중에 **볼륨 세부사항** 페이지를 통해 추가할 수 있습니다. 스케줄된 스냅샷과 수동 스냅샷은 스냅샷 영역을 공유하므로 충분한 스냅샷 영역을 주문해야 합니다.  자세한 정보는 [스냅샷 주문](ordering-snapshots.html)을 참조하십시오.
+볼륨의 스냅샷을 작성하려면 먼저 해당 볼륨에 대해 일정량의 스냅샷 영역을 구매해야 합니다. 스냅샷 영역은 초기 주문 중에, 또는 나중에 **볼륨 세부사항** 페이지를 통해 추가할 수 있습니다. 스케줄된 스냅샷과 수동 스냅샷은 스냅샷 영역을 공유하므로 충분한 스냅샷 영역을 주문해야 합니다. 세부사항 및 지침은 [스냅샷 주문](/docs/infrastructure/FileStorage?topic=FileStorage-ordering-snapshots) 문서를 참조하십시오. 
 
 ## 스냅샷 우수 사례
 
@@ -45,7 +47,7 @@ lastupdated: "2018-11-13"
 
 ## 보안
 
-암호화된 {{site.data.keyword.filestorage_short}}의 모든 스냅샷 및 복제본도 기본적으로 암호화됩니다. 이 기능은 볼륨 기반으로 끄기가 불가능합니다. 제공자 관리 저장 암호화에 대한 자세한 정보는 [데이터 보안](block-file-storage-encryption-rest.html)을 참조하십시오.
+암호화된 {{site.data.keyword.filestorage_short}}의 모든 스냅샷 및 복제본도 기본적으로 암호화됩니다. 이 기능은 볼륨 기반으로 끄기가 불가능합니다. 제공자 관리 저장 암호화에 대한 자세한 정보는 [데이터 보안](/docs/infrastructure/FileStorage?topic=FileStorage-encryption)을 참조하십시오.
 
 ## 스냅샷이 디스크 영역에 미치는 영향
 
@@ -74,4 +76,4 @@ lastupdated: "2018-11-13"
       </tr>
 </table>
 
-스냅샷 영역 사용에 대한 자세한 정보는 [스냅샷 관리](working-with-snapshots.html)를 참조하십시오.
+스냅샷 영역 사용에 대한 자세한 정보는 [스냅샷 관리](/docs/infrastructure/FileStorage?topic=FileStorage-managingSnapshots)를 참조하십시오.

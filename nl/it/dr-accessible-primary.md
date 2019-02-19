@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-12-10"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
@@ -13,6 +14,7 @@ lastupdated: "2018-12-10"
 {:DomainName: data-hd-keyref="DomainName"}
 
 # Ripristino di emergenza - Failover con un volume primario accessibile
+{: #dr-accessible}
 
 Se si verifica un errore catastrofico o un'emergenza sul sito primario e l'archiviazione primaria è ancora accessibile, i clienti possono eseguire le seguenti azioni per accedere rapidamente ai loro dati sul sito secondario.
 
@@ -48,7 +50,7 @@ Prima di procedere con questa procedura, disconnetti il volume. In caso contrari
    {:note}
 4. Fai clic su **View All ({{site.data.keyword.filestorage_short}})**.
 5. Fai clic sul volume attivo (precedentemente il volume di destinazione). Questo volume ora ha uno stato attivo (**Active**).
-6. Monta o collega il tuo volume di archiviazione all'host. Fai clic [qui](provisioning-file-storage.html) per le istruzioni.
+6. Monta o collega il tuo volume di archiviazione all'host. Fai clic [qui](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole) per le istruzioni.
 
 
 ## Avvio di un failback da un volume alla sua replica
@@ -73,4 +75,4 @@ I failback vengono avviati in **Storage**, **{{site.data.keyword.filestorage_sho
    {:note}
 4. In alto a destra, fai clic sul link **View All {{site.data.keyword.filestorage_short}}**.
 5. Fai clic sul tuo volume attivo ("origine").
-6. Monta o collega il tuo volume di archiviazione all'host. Fai clic [qui](provisioning-file-storage.html) per le istruzioni.
+6. Monta o collega il tuo volume di archiviazione all'host. Fai clic [qui](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole) per le istruzioni.

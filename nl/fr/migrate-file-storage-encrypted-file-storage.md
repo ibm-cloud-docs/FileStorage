@@ -1,26 +1,28 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 # Migration de {{site.data.keyword.filestorage_short}} vers {{site.data.keyword.filestorage_short}} amélioré
+{: #migratestorage}
 
-La fonctionnalité {{site.data.keyword.filestorage_full}} amélioré est désormais disponible dans des centres de données sélectionnés. Pour afficher la liste des centres de données mis à niveau et des fonctions disponibles telles que les débits d'E-S/s ajustables et les volumes extensibles, cliquez [ici](new-ibm-block-and-file-storage-location-and-features.html). Pour plus d'informations sur le stockage chiffré géré par un fournisseur, voir [Chiffrement au repos pour {{site.data.keyword.filestorage_short}}](block-file-storage-encryption-rest.html).
+La fonctionnalité {{site.data.keyword.filestorage_full}} amélioré est désormais disponible dans des centres de données sélectionnés. Pour afficher la liste des centres de données mis à niveau et des fonctions disponibles telles que les débits d'IOPS ajustables et les volumes extensibles, cliquez [ici](/docs/infrastructure/FileStorage?topic=FileStorage-news). Pour en savoir plus sur le chiffrement géré par les fournisseurs, voir [Chiffrement au repos dans {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-encryption).
 
 Le chemin de migration préféré consiste à se connecter simultanément aux deux volumes et à transférer les données directement d'un numéro d'unité logique à un autre. Les spécificités dépendent de votre système d'exploitation et de la modification attendue ou non des données lors de la copie.
 
 Nous supposons que votre numéro d'unité logique non chiffré est déjà connecté à l'hôte. Si tel n'est pas le cas, suivez les instructions ci-dessous qui correspondent le mieux à votre système d'exploitation pour effectuer cette tâche.
 
-- [Montage de {{site.data.keyword.filestorage_short}} sur Linux](accessing-file-storage-linux.html)
-- [Montage de {{site.data.keyword.filestorage_short}} dans CentOS](mounting-nsf-file-storage.html)
-- [Montage de {{site.data.keyword.filestorage_short}} sur CoreOS](mounting-storage-coreos.html)
+- [Montage de {{site.data.keyword.filestorage_short}} sur Linux](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)
+- [Montage de {{site.data.keyword.filestorage_short}} dans CentOS](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)
+- [Montage de {{site.data.keyword.filestorage_short}} sur CoreOS](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCoreOS)
 
 Tous les volumes {{site.data.keyword.filestorage_short}} améliorés mis à disposition dans ces centres de données ont un point de montage différent de celui des volumes non chiffrés. Pour vérifier que vous utilisez le bon point de montage pour les deux types de volume de stockage, vous pouvez afficher les informations sur le point de montage sur la page **Détails du volume** de la console. Vous pouvez également accéder au point de montage correct via un appel d'API : `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 {:tip}
@@ -33,8 +35,8 @@ Lorsque vous passez une commande via l'API, spécifiez le package "Storage as a 
 
 Vous pouvez commander un numéro d'unité logique étendu via le catalogue {{site.data.keyword.BluSoftlayer_full}} et le portail {{site.data.keyword.slportal}}. Votre nouveau volume doit avoir une taille identique ou supérieure à celle du partage de fichiers d'origine afin de faciliter la migration.
 
-- [Commande de {{site.data.keyword.filestorage_short}} avec des niveaux d'IOPS prédéfinis (Endurance)](provisioning-file-storage.html#ordering-file-storage-with-pre-defined-iops-tiers-endurance-)
-- [Commande de {{site.data.keyword.filestorage_short}} avec un nombre d'IOPS personnalisé (Performance)](provisioning-file-storage.html#ordering-file-storage-with-custom-iops-performance-)
+- [Commande de {{site.data.keyword.filestorage_short}} avec des niveaux d'IOPS prédéfinis (Endurance)](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#endurance)
+- [Commande de {{site.data.keyword.filestorage_short}} avec un nombre d'IOPS personnalisé (Performance)](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#performance)
 
 Votre nouveau stockage est disponible pour montage en quelques minutes. Il figure dans la Liste de ressources et dans la liste {{site.data.keyword.blockstorageshort}}.
 
@@ -52,7 +54,7 @@ Une fois l'autorisation accordée à l'hôte, connectez le volume à votre hôte
 
 ## Configuration des instantanés et de la réplication
 
-Si des instantanés et la réplication ont été établis pour votre volume d'origine, vous devez les configurer pour le nouveau volume. Configurez la réplication, ainsi que l'espace d'image instantanée et créez des plannings d'instantané avec les mêmes paramètres que ceux du volume d'origine.
+Si des instantanés et la réplication ont été établis pour votre volume d'origine, vous devez les configurer pour le nouveau volume. Configurez la réplication, ainsi que l'espace d'instantané et créez des plannings d'instantané avec les mêmes paramètres que ceux du volume d'origine.
 
 Si le chiffrement n'est pas activé pour le centre de données cible, vous ne pouvez pas établir de réplication pour le nouveau volume tant que ce centre de données n'a pas été mis à niveau.
 {:important}

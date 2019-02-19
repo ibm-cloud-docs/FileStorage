@@ -1,13 +1,18 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-13"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 
 # ホスト・キュー項目数設定の調整
+{: #hostqueuesettings}
 
 {{site.data.keyword.BluSoftlayer_full}} では、ホストおよびアプリケーションの最大入出力 (I/O) キュー項目数をパフォーマンス・ティアごとに推奨しています。
 

@@ -1,12 +1,12 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-12-11"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
-{:pre: .pre}
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
@@ -15,6 +15,7 @@ lastupdated: "2018-12-11"
 
 
 # Mise à disposition de {{site.data.keyword.filestorage_short}} avec VMware
+{: #architectureguide}
 
 Les étapes décrites ci-après vous permettent de commander et configurer {{site.data.keyword.filestorage_full}} dans un environnement vSphere 5.5 et vSphere 6.0 sur {{site.data.keyword.BluSoftlayer_full}}.
 
@@ -111,13 +112,13 @@ VMware vSphere on network-attached storage ![Icône de lien externe](../../icons
 
 {{site.data.keyword.filestorage_short}} permet aux administrateurs de définir des plannings d'instantané qui créent et suppriment automatiquement les copies d'image instantanée pour chaque volume de stockage. Ils peuvent également créer des plannings d'instantané supplémentaires (horaire, quotidien, hebdomadaire) pour les instantanés automatiques et créer manuellement des instantanés ad hoc pour les scénarios de continuité opérationnelle et de reprise après incident (BCDR). Des alertes automatiques sont transmises via le portail [{{site.data.keyword.slportal}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://control.softlayer.com/){:new_window} au propriétaire du volume afin de lui indiquer les instantanés conservés et l'espace utilisé.
 
-Un espace d'image instantanée est requis pour l'utilisation d'instantanés. Vous pouvez acquérir de l'espace lors de la commande de volume initiale ou après la mise à disposition initiale via la page **Détails du volume** en cliquant sur **Actions** et en sélectionnant **Ajouter de l'espace d'instantané**.
+Un espace d'instantané est requis pour l'utilisation d'instantanés. Vous pouvez acquérir de l'espace lors de la commande de volume initiale ou après la mise à disposition initiale via la page **Détails du volume** en cliquant sur **Actions** et en sélectionnant **Ajouter de l'espace d'instantané**.
 
 Il est important de noter que les environnements VMware n'ont pas connaissance des instantanés. La fonctionnalité d'instantané de {{site.data.keyword.filestorage_short}} Endurance ne doit pas être confondue avec les instantanés VMware. Toute reprise effectuée avec la fonction d'instantané de {{site.data.keyword.filestorage_short}} doit être traitée à partir du portail [{{site.data.keyword.slportal}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://control.softlayer.com/){:new_window}.
 
 La restauration du volume {{site.data.keyword.filestorage_short}} requiert la mise hors tension de toutes les machines virtuelles qui se trouvent sur {{site.data.keyword.filestorage_short}}. Le volume doit être temporairement démonté depuis les hôtes ESXi afin d'éviter que les données ne soient endommagées au cours du processus.
 
-Pour plus d'informations, voir l'article sur les [instantanés](snapshots.html).
+Pour plus d'informations, voir l'article sur les [instantanés](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots).
 
 
 ### Utilisation de la réplication
@@ -129,7 +130,7 @@ Les répliques vous permettent :
 - d'effectuer rapidement une reprise après un échec du site et d'autres incidents en basculant sur le volume de destination ;
 - d'effectuer un basculement vers un point précis dans le temps dans la copie de reprise après incident.
 
-La réplication permet de synchroniser vos données entre deux emplacements différents. Si vous souhaitez cloner votre volume et l'utiliser indépendamment du volume d'origine, voir [Création d'un volume de fichier en double](how-to-create-duplicate-volume.html).
+La réplication permet de synchroniser vos données entre deux emplacements différents. Si vous souhaitez cloner votre volume et l'utiliser indépendamment du volume d'origine, voir [Création d'un volume de fichier dupliqué](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume).
 {:tip}
 
 Avant d'effectuer une réplication, vous devez créer un planning d'instantané.
@@ -138,7 +139,7 @@ Lorsque vous effectuez un basculement, vous "basculez l'interrupteur" depuis vot
 
 Vous devez arrêter le volume utilisé sur le site distant avant de reprendre par restauration le volume sur le centre de données principal. Un instantané de toute information nouvelle ou modifiée est pris et répliqué sur le centre de données principal avant le nouveau montage sur les hôtes ESXi du site de production.
 
-Pour plus d'informations sur la configuration des répliques, voir [Réplication](replication.html).
+Pour plus d'informations sur la configuration des répliques, voir [Réplication](/docs/infrastructure/FileStorage?topic=FileStorage-replication).
 
 Les données non valides, qu'il s'agisse de données endommagées, détournées ou infectées, sont répliquées conformément au planning d'instantané et à la conservation des instantanés. Des fenêtres de réplication plus petites peuvent constituer un meilleur objectif de point de reprise. Néanmoins, cela peut également réduire le temps de réaction en cas de réplication de données non valides.
 {:note}
@@ -148,7 +149,7 @@ Les données non valides, qu'il s'agisse de données endommagées, détournées 
 
 Utilisez l'[architecture de référence d'un environnement VMware mono-site avancé ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} pour configurer {{site.data.keyword.filestorage_short}} avec un niveau Endurance ou Performance dans votre environnement VMware.
 
-Vous pouvez commander {{site.data.keyword.filestorage_short}} via [le catalogue IBM Cloud ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://{DomainName}/catalog/){:new_window} ou le portail [{{site.data.keyword.slportal}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://control.softlayer.com/){:new_window}. Pour plus d'informations, voir [Commande de {{site.data.keyword.filestorage_short}}](provisioning-file-storage.html)
+Vous pouvez commander {{site.data.keyword.filestorage_short}} via [le catalogue IBM Cloud ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://{DomainName}/catalog/){:new_window} ou le portail [{{site.data.keyword.slportal}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://control.softlayer.com/){:new_window}. Pour plus d'informations, voir [Commande de {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)
 
 Le stockage est mis à disposition en moins d'une minute et est visible sur la page **{{site.data.keyword.filestorage_short}}** du portail [{{site.data.keyword.slportal}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://control.softlayer.com/){:new_window}.
 
@@ -378,5 +379,5 @@ Les exemples suivants font appel à l'interface de ligne de commande pour défin
     #esxcfg-advcfg -g /Disk/QFullSampleSize
     #esxcfg-advcfg -g /Disk/QFullThreshold
     ```
-Pour en savoir plus sur l'architecture de référence d'un environnement VMware mono-site avancé, cliquez [ici](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}.
+Pour en savoir plus sur l'architecture de référence d'un environnement VMware mono-site avancé, cliquez [ici](/docs/infrastructure/virtualization?topic=Virtualization-advanced-single-site-vmware-reference-architecture){:new_window}.
 {:tip}

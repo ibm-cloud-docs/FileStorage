@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
@@ -12,11 +12,28 @@ lastupdated: "2018-11-30"
 {:important: .important}
 
 # Mounting {{site.data.keyword.filestorage_short}} on Linux
+{: #mountingLinux}
 
 First, make sure that the host that is to access the {{site.data.keyword.filestorage_full}} volume is authorized through the [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
 
 1. From the {{site.data.keyword.filestorage_short}} listing page, click the **Actions** link that is associated with the new share and click **Authorize Host**.
 2. Select the host or hosts from the list and click **Submit**. This action authorizes the host to access the share.
+
+Alternatively, you can authorize the hosts through the SLCLI.
+```
+# slcli file access-authorize --help
+Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
+
+Options:
+  -h, --hardware-id TEXT    The id of one SoftLayer_Hardware to authorize
+  -v, --virtual-id TEXT     The id of one SoftLayer_Virtual_Guest to authorize
+  -i, --ip-address-id TEXT  The id of one SoftLayer_Network_Subnet_IpAddress
+                            to authorize
+  --ip-address TEXT         An IP address to authorize
+  -s, --subnet-id TEXT      The id of one SoftLayer_Network_Subnet to
+                            authorize
+  --help                    Show this message and exit.
+```
 
 ## Mounting the {{site.data.keyword.filestorage_short}} share
 
@@ -61,7 +78,7 @@ The mount point of the file storage instance can be obtained from the {{site.dat
    -rw-r--r-- 1 nobody nobody 0 Sep 8 15:52 test
    ```
 
-   The files that are created by root have ownership of `nobody:nobody`. To display ownership correctly, `idmapd.conf` needs to be updated with the correct domain settings. See the [How to implement no_root_squash for NFS](#implementing-no_root_squash-for-nfs-optional-) section.
+   The files that are created by root have ownership of `nobody:nobody`. To display ownership correctly, `idmapd.conf` needs to be updated with the correct domain settings. See the [How to implement no_root_squash for NFS](#norootsquash) section.
    {:tip}
 
 5. Mount the remote share on start. To complete the setup, edit the file systems table (`/etc/fstab`) to add the remote share to the list of entries that are automatically mounted on startup:
@@ -90,6 +107,7 @@ The mount point of the file storage instance can be obtained from the {{site.dat
 
 
 ## Implementing `no_root_squash` for NFS (optional)
+{: #norootsquash}
 
 Configuring `no_root_squash` allows root clients to retain root permissions on the NFS share.
 - For NFSv3, there is nothing that clients need to do; `no_root_squash` works.

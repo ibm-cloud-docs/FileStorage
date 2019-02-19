@@ -1,26 +1,28 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 # {{site.data.keyword.filestorage_short}}から拡張{{site.data.keyword.filestorage_short}}へのマイグレーション
+{: #migratestorage}
 
-現在、拡張 {{site.data.keyword.filestorage_full}} は一部のデータ・センターでのみ提供されています。 アップグレードされたデータ・センターと、調整可能な IOPS レートや拡張可能なボリュームなどの使用可能な機能のリストを確認するには、[ここ](new-ibm-block-and-file-storage-location-and-features.html)をクリックしてください。 プロバイダー管理の暗号化について詳しくは、[{{site.data.keyword.filestorage_short}} 保存データの暗号化](block-file-storage-encryption-rest.html)を参照してください。
+現在、拡張 {{site.data.keyword.filestorage_full}} は一部のデータ・センターでのみ提供されています。 アップグレードされたデータ・センターと、調整可能な IOPS レートや拡張可能なボリュームなどの使用可能な機能のリストを確認するには、[ここ](/docs/infrastructure/FileStorage?topic=FileStorage-news)をクリックしてください。 プロバイダー管理の暗号化について詳しくは、[{{site.data.keyword.filestorage_short}} 保存データの暗号化](/docs/infrastructure/FileStorage?topic=FileStorage-encryption)を参照してください。
 
 お勧めするマイグレーション・パスは、両方のボリュームに同時に接続して LUN 間で直接データを転送する方法です。 具体的な手順は、オペレーティング・システムと、コピー操作中にデータ変更が行われるかどうかによって異なります。
 
-ホストに非暗号化 LUN が既に接続されていることを想定しています。接続されていない場合は、以下の説明のうち、ご使用のオペレーティング・システムに最も該当する説明に従って、このタスクを実行してください。
+ホストに非暗号化 LUN が既に接続されていることを想定しています。 接続されていない場合は、以下の説明のうち、ご使用のオペレーティング・システムに最も該当する説明に従って、このタスクを実行してください。
 
-- [Linux への{{site.data.keyword.filestorage_short}}のマウント](accessing-file-storage-linux.html)
-- [CentOS への{{site.data.keyword.filestorage_short}}のマウント](mounting-nsf-file-storage.html)
-- [CoreOS への{{site.data.keyword.filestorage_short}}のマウント](mounting-storage-coreos.html)
+- [Linux への{{site.data.keyword.filestorage_short}}のマウント](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)
+- [CentOS への{{site.data.keyword.filestorage_short}}のマウント](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)
+- [CoreOS への{{site.data.keyword.filestorage_short}}のマウント](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCoreOS)
 
 これらのデータ・センターでプロビジョンされる拡張{{site.data.keyword.filestorage_short}}・ボリュームはすべて、非暗号化ボリュームとは異なるマウント・ポイントになります。 両方のストレージ・ボリュームに正しいマウント・ポイントを使用するために、コンソールの**「ボリュームの詳細 (Volume Details)」**ページでマウント・ポイント情報を確認することができます。 API 呼び出し `SoftLayer_Network_Storage::getNetworkMountAddress()` を使用して正しいマウント・ポイントを取得することもできます。
 {:tip}
@@ -31,12 +33,12 @@ lastupdated: "2018-11-30"
 API を使用して注文する場合は、「Storage as a Service」パッケージを指定して、更新済みの機能を新規ストレージと一緒に取得してください。
 {:important}
 
-拡張された LUN は {{site.data.keyword.BluSoftlayer_full}} カタログと {{site.data.keyword.slportal}}を通じて注文できます。簡単にマイグレーションできるようにするには、新規ボリュームのサイズを元のファイル共有のサイズ以上にする必要があります。
+拡張された LUN は {{site.data.keyword.BluSoftlayer_full}} カタログと {{site.data.keyword.slportal}}を通じて注文できます。 簡単にマイグレーションできるようにするには、新規ボリュームのサイズを元のファイル共有のサイズ以上にする必要があります。
 
-- [事前定義済み IOPS ティアによる {{site.data.keyword.filestorage_short}} の注文 (エンデュランス)](provisioning-file-storage.html#ordering-file-storage-with-pre-defined-iops-tiers-endurance-)
-- [カスタム IOPS による {{site.data.keyword.filestorage_short}} の注文 (パフォーマンス)](provisioning-file-storage.html#ordering-file-storage-with-custom-iops-performance-)
+- [事前定義済み IOPS ティアによる {{site.data.keyword.filestorage_short}} の注文 (エンデュランス)](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#endurance)
+- [カスタム IOPS による {{site.data.keyword.filestorage_short}} の注文 (パフォーマンス)](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#performance)
 
-新しいストレージのマウントが数分で可能になります。そのストレージは、「リソース・リスト」と {{site.data.keyword.blockstorageshort}} リストで確認できます。
+新しいストレージのマウントが数分で可能になります。 そのストレージは、「リソース・リスト」と {{site.data.keyword.blockstorageshort}} リストで確認できます。
 
 
 ## 新しい {{site.data.keyword.filestorage_short}} へのホストの許可

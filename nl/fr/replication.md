@@ -1,22 +1,23 @@
 ---
 
 copyright:
-  years: 2015, 2019
-lastupdated: "2019-01-08"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
-
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 
 # Réplication de données
+{: #replication}
 
-La réplication utilise l'un de vos plannings d'instantané pour copier automatiquement des instantanés sur un volume de destination dans un centre de données distant. Les copies peuvent être récupérées sur le site distant en cas de données endommagées ou de catastrophe.
+La réplication utilise l'un de vos plannings d'instantané pour copier automatiquement les instantanés sur un volume de destination situé dans un centre de données distant. Les copies peuvent être récupérées sur le site distant en cas de données endommagées ou de catastrophe.
 
-La réplication permet de synchroniser vos données entre deux emplacements différents. Si vous souhaitez cloner votre volume et l'utiliser indépendamment du volume d'origine, voir [Création d'un volume de fichier en double](how-to-create-duplicate-volume.html).
+La réplication permet de synchroniser vos données entre deux emplacements différents. Si vous souhaitez cloner votre volume et l'utiliser indépendamment du volume d'origine, voir [Création d'un volume de fichier dupliqué](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume).
 {:tip}
 
 Avant d'effectuer une réplication, vous devez créer un planning d'instantané.
@@ -29,13 +30,13 @@ Les centres de données d'{{site.data.keyword.BluSoftlayer_full}} sont appariés
 Pour obtenir la liste complète de la disponibilité des centres de données et des cibles de réplication, reportez-vous au Tableau 1.
 
 <table>
-  <caption style="text-align: left;"><p>Le tableau 1 répertorie l'ensemble des centres de données avec les fonctionnalités améliorées dans chaque région. Chaque région correspond à une colonne. Certaines villes, comme Dallas, San Jose, Washington DC, Amsterdam, Francfort, Londres et Sydney disposent de plusieurs centres de données.</p>
+  <caption style="text-align: left;"><p>Le tableau 1 répertorie l'ensemble des centres de données avec les fonctionnalités améliorées dans chaque région. Chaque région correspond à une colonne. Certaines villes, comme Dallas, San José, Washington DC, Amsterdam, Francfort, Londres et Sydney possèdent plusieurs centres de données.</p>
   <p>&#42; Les centres de données de la région EU 1 ne comportent PAS de stockage amélioré. Les hôtes des centres de données comportant des fonctionnalités de stockage améliorées <strong>ne peuvent pas</strong> démarrer la réplication avec des cibles de réplique dans les centres de données de la région EU 1.</p>
   </caption>
   <thead>
     <tr>
       <th>EU 1 &#42;</th>
-      <th>EUS 2</th>
+      <th>EU 2</th>
       <th>Amérique latine</th>
       <th>Canada</th>
       <th>Europe</th>
@@ -112,7 +113,7 @@ Les réplications fonctionnent selon un planning d'instantané. Vous devez d'abo
 2. Cliquez sur **Réplique**, puis sur **Acheter une réplication**.
 3. Sélectionnez le planning d'instantané existant que vous souhaitez que votre réplication suive. La liste contient tous vos plannings d'instantané actifs. <br />
 
-   Vous ne pouvez sélectionner qu'une seul planning, même si vous combinez des réplications horaires, quotidiennes et hebdomadaires. Tous les instantanés qui ont été capturés depuis le cycle de réplication précédent sont répliqués quel que soit leur planning d'origine.<br />Si vous n'avez pas configuré d'instantanés, vous êtes invité à le faire avant de pouvoir commander la réplication. Pour plus d'informations, voir [Gestion des instantanés](snapshots.html).
+   Vous ne pouvez sélectionner qu'un seul planning, même si vous combinez des réplications horaires, quotidiennes et hebdomadaires. Tous les instantanés qui ont été capturés depuis le cycle de réplication précédent sont répliqués quel que soit leur planning d'origine.<br />Si vous n'avez pas configuré d'instantanés, vous êtes invité à le faire avant de pouvoir commander la réplication. Pour plus d'informations, voir [Gestion des instantanés](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots).
    {:tip}
 3. Cliquez sur **Emplacement** et sélectionnez le centre de données qui est votre site de reprise après incident.
 4. Cliquez sur **Continuer**.
@@ -142,20 +143,20 @@ La modification du planning peut s'effectuer sur l'onglet Principal ou Réplique
 
 ## Modification de l'espace de réplication
 
-Votre espace d'image instantanée principal et votre espace de réplique doivent être identiques. Si vous modifiez l'espace sur l'onglet **Principal** ou **Réplique**, l'espace est automatiquement ajouté à vos centres de données source et de destination. L'augmentation de l'espace d'image instantanée déclenche également une mise à jour immédiate de la réplication.
+Votre espace d'instantané principal et votre espace de réplique doivent être identiques. Si vous modifiez l'espace sur l'onglet **Principal** ou **Réplique**, l'espace est automatiquement ajouté à vos centres de données source et de destination. L'augmentation de l'espace d'instantané déclenche également une mise à jour immédiate de la réplication.
 
 1. Cliquez sur **Actions** sur l'onglet **Principal** ou **Réplique**.
-2. Sélectionnez **Ajouter de l'espace d'image instantanée supplémentaire**.
+2. Sélectionnez **Ajouter de l'espace d'instantané supplémentaire**.
 3. Sélectionnez la taille de stockage dans la liste, puis cliquez sur **Continuer**.
 4. Entrez un **Code Promo** le cas échéant et cliquez sur **Recalculer**. Les autres zones de la boîte de dialogue contiennent les valeurs par défaut.
 5. Cochez la case **J'ai lu et j'accepte l'intégralité du Contrat cadre de service**, puis cliquez sur **Valider la commande**.
 
 
-## Augmentation de l'espace d'image instantanée dans le centre de données de réplique lorsque l'espace d'image instantanée est augmenté dans le centre de données principal.
+## Augmentation de l'espace d'instantané dans le centre de données de réplique lorsque l'espace d'instantané est augmenté dans le centre de données principal.
 
-Les tailles des volumes de stockage principal et de réplique doivent être identiques. Il n'est pas possible que l'un soit plus grand que l'autre. Lorsque vous augmentez votre espace d'image instantanée dans le volume principal, l'espace de réplique est automatiquement augmenté. L'augmentation de l'espace d'image instantanée déclenche une mise à jour immédiate de la réplication. L'augmentation des deux volumes apparaît sous forme de lignes d'article dans votre facture et est calculée au prorata si nécessaire.
+Les tailles des volumes de stockage principal et de réplique doivent être identiques. Il n'est pas possible que l'un soit plus grand que l'autre. Lorsque vous augmentez votre espace d'instantané dans le volume principal, l'espace de réplique est automatiquement augmenté. L'augmentation de l'espace d'instantané déclenche une mise à jour immédiate de la réplication. L'augmentation des deux volumes apparaît sous forme de lignes d'article dans votre facture et est calculée au prorata si nécessaire.
 
-Pour plus d'informations sur l'augmentation de l'espace d'image instantanée, voir [Instantanés](snapshots.html).
+Pour plus d'informations sur l'augmentation de l'espace d'instantané, voir [Instantanés](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots).
 ## Affichage des volumes de réplique dans la liste de volumes
 
 Vous pouvez afficher vos volumes de réplication sur la page {{site.data.keyword.filestorage_short}} sous **Stockage** > **{{site.data.keyword.filestorage_short}}**. La zone Nom de volume indique le nom du volume principal, suivi de REP. Le **Type** est Endurance ou Performance – Réplique. L'**Adresse cible** est Sans objet car le volume de réplique n'est pas monté sur le centre de données de réplique, et le **Statut** indique Inactif.
@@ -179,20 +180,20 @@ L'historique des réplications s'affiche dans le **Journal d'audit** sur l'ongle
 
 ## Création d'un doublon d'un volume de réplique
 
-Vous pouvez créer un doublon d'un {{site.data.keyword.BluSoftlayer_full}} {{site.data.keyword.filestorage_full}} existant. Le volume en double hérite par défaut des options de capacité et de performance du volume de stockage d'origine et contient une copie des données jusqu'au point de cohérence d'un instantané.
+Vous pouvez créer un doublon d'un VOLUME {{site.data.keyword.filestorage_full}} {{site.data.keyword.BluSoftlayer_full}} existant. Le volume dupliqué hérite par défaut des options de capacité et de performance du volume de stockage d'origine et contient une copie des données jusqu'au point de cohérence d'un instantané.
 
 Vous pouvez créer des doublons à partir de volumes principaux et de volumes de réplique. Le nouveau doublon est créé dans le même centre de données que le volume d'origine. Si vous créez un doublon à partir d'un volume de réplique, le nouveau volume est créé dans le même centre de données que le volume de réplique.
 
 Les volumes dupliqués sont accessibles par un hôte en lecture/écriture dès la mise à disposition du stockage. Toutefois, les instantanés et la réplication ne sont pas autorisés tant que la copie des données depuis le volume d'origine vers le doublon n'est pas terminée.
 
-Pour plus d'informations, voir [Création d'un volume de fichier en double](how-to-create-duplicate-volume.html)
+Pour plus d'informations, voir [Création d'un volume de fichier dupliqué](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume)
 
 ## Utilisation de répliques afin d'effectuer un basculement en cas de sinistre
 
 Lorsque vous effectuez un basculement, vous "basculez l'interrupteur" depuis votre volume de stockage du centre de données principal vers le volume de destination du centre de données distant. Par exemple, votre centre de données principal peut se situer à Londres et votre centre de données secondaire à Amsterdam. Dans le cas d'un événement d'échec, vous basculez vers Amsterdam, en vous connectant au volume qui est désormais devenu principal à partir d'une instance de calcul à Amsterdam. Une fois votre volume de Londres réparé, un instantané du volume d'Amsterdam est pris afin de permettre le retour à Londres avec le volume de Londres à nouveau considéré comme le volume principal à partir d'une instance de traitement située à Londres.
 
-* Si l'emplacement principal est confronté à un problème mais que le stockage et l'hôte sont toujours en ligne, voir [Basculement avec un volume principal accessible](dr-accessible-primary.html).
-* Si l'emplacement principal n'est plus accessible, voir [Basculement avec un volume principal inaccessible](disaster-recovery.html).
+* Si l'emplacement principal est confronté à un problème mais que le stockage et l'hôte sont toujours en ligne, voir [Basculement avec un volume principal accessible](/docs/infrastructure/FileStorage?topic=FileStorage-dr-accessible).
+* Si l'emplacement principal n'est plus accessible, voir [Basculement avec un volume principal inaccessible](/docs/infrastructure/FileStorage?topic=FileStorage-dr-inaccessible).
 
 ## Annulation d'une réplication existante
 
@@ -213,3 +214,68 @@ Lorsqu'un volume principal est annulé, le planning de réplication et le volume
  2. Cliquez sur **Actions** et sélectionnez **Annuler pour {{site.data.keyword.filestorage_short}}**.
  3. Choisissez le moment de l'annulation du volume. Choisissez **Immédiatement** ou **Date anniversaire**, puis cliquez sur **Continuer**.
  4. Cliquez sur **Je comprends les risques de perte de données liés à cette annulation** puis sur **Annuler**.
+
+## Commandes liées à la réplication dans SLCLI
+{: #clicommands}
+
+* Répertorier les centres de données de réplication adaptés à un volume spécifique.
+  ```
+  # slcli file replica-locations --help
+  Usage: slcli file replica-locations [OPTIONS] VOLUME_ID
+
+  Options:
+  --sortby TEXT   Column to sort by
+  --columns TEXT  Columns to display. Options: ID, Long Name, Short Name
+  -h, --help      Show this message and exit.
+  ```
+
+* Commander un volume de réplique de stockage de fichier.
+  ```
+  # slcli file replica-order --help
+  Usage: slcli file replica-order [OPTIONS] VOLUME_ID
+
+  Options:
+  -s, --snapshot-schedule [INTERVAL|HOURLY|DAILY|WEEKLY]
+                                  Snapshot schedule to use for replication,
+                                  (INTERVAL | HOURLY | DAILY | WEEKLY)
+                                  [required]
+  -l, --location TEXT             Short name of the data center for the
+                                  replicant (e.g.: dal09)  [required]
+  --tier [0.25|2|4|10]            Endurance Storage Tier (IOPS per GB) of the
+                                  primary volume for which a replicant is
+                                  ordered [optional]
+  -h, --help                      Show this message and exit.
+  ```
+
+* Répertorier les volumes réplicants existants pour un volume de fichier.
+  ```
+  # slcli file replica-partners --help
+  Usage: slcli file replica-partners [OPTIONS] VOLUME_ID
+
+  Options:
+  --sortby TEXT   Column to sort by
+  --columns TEXT  Columns to display. Options: ID, Username, Account ID,
+                  Capacity (GB), Hardware ID, Guest ID, Host ID
+  -h, --help      Show this message and exit.
+  ```
+
+* Basculer d'un volume de fichier à un volume réplicant spécifique.
+  ```
+  # slcli file replica-failover --help
+  Usage: slcli file replica-failover [OPTIONS] VOLUME_ID
+
+  Options:
+  --replicant-id TEXT  ID of the replicant volume
+  --immediate          Failover to replicant immediately.
+  -h, --help      Show this message and exit.
+  ```
+
+* Effectuer une reprise par restauration d'un volume de fichier à partir d'un volume réplicant spécifique.
+  ```
+  # slcli file replica-failback --help
+  Usage: slcli file replica-failback [OPTIONS] VOLUME_ID
+
+  Options:
+  --replicant-id TEXT  ID of the replicant volume
+  -h, --help           Show this message and exit.
+  ```

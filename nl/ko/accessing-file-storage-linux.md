@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
@@ -12,11 +12,28 @@ lastupdated: "2018-11-30"
 {:important: .important}
 
 # Linux에서 {{site.data.keyword.filestorage_short}} 마운트
+{: #mountingLinux}
 
 먼저 {{site.data.keyword.filestorage_full}} 볼륨에 액세스할 호스트의 권한이 [{{site.data.keyword.slportal}} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://control.softlayer.com/){:new_window}을 통해 부여되는지 확인하십시오.
 
 1. {{site.data.keyword.filestorage_short}} 목록 페이지에서 새 공유와 연관된 **조치** 링크를 클릭하고 **호스트 권한 부여**를 클릭하십시오.
 2. 목록에서 호스트를 선택하고 **제출**을 클릭하십시오. 이 조치는 공유에 액세스할 수 있도록 호스트에 권한을 부여합니다.
+
+또는 SLCLI를 통해 호스트에 권한을 부여할 수 있습니다.
+```
+# slcli file access-authorize --help
+Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
+
+Options:
+  -h, --hardware-id TEXT    The id of one SoftLayer_Hardware to authorize
+  -v, --virtual-id TEXT     The id of one SoftLayer_Virtual_Guest to authorize
+  -i, --ip-address-id TEXT  The id of one SoftLayer_Network_Subnet_IpAddress
+                            to authorize
+  --ip-address TEXT         An IP address to authorize
+  -s, --subnet-id TEXT      The id of one SoftLayer_Network_Subnet to
+                            authorize
+  --help                    Show this message and exit.
+```
 
 ## {{site.data.keyword.filestorage_short}} 공유 마운트
 
@@ -61,7 +78,7 @@ Linux 기반 {{site.data.keyword.BluSoftlayer_full}} 컴퓨팅 인스턴스를 N
    -rw-r--r-- 1 nobody nobody 0 Sep 8 15:52 test
    ```
 
-   루트가 작성한 파일은 `nobody:nobody`의 소유권을 갖습니다. 소유권을 올바르게 표시하려면 `idmapd.conf`를 올바른 도메인 설정으로 업데이트해야 합니다. [NFS에 대한 no_root_squash 구현 방법](#implementing-no_root_squash-for-nfs-optional-) 섹션을 참조하십시오.
+   루트가 작성한 파일은 `nobody:nobody`의 소유권을 갖습니다. 소유권을 올바르게 표시하려면 `idmapd.conf`를 올바른 도메인 설정으로 업데이트해야 합니다. [NFS에 대한 no_root_squash 구현 방법](#norootsquash) 섹션을 참조하십시오.
    {:tip}
 
 5. 시작 시 원격 공유를 마운트하십시오. 설정을 완료하려면 파일 시스템 테이블(`/etc/fstab`)을 편집하여 스타트업 시에 자동으로 마운트되는 항목의 목록에 원격 공유를 추가하십시오.
@@ -90,6 +107,7 @@ Linux 기반 {{site.data.keyword.BluSoftlayer_full}} 컴퓨팅 인스턴스를 N
 
 
 ## NFS에 대한 `no_root_squash` 구현(선택사항)
+{: #norootsquash}
 
 `no_root_squash`를 구성하면 루트 클라이언트가 NFS 공유에 대해 루트 권한을 유지합니다.
 - NFSv3의 경우에는 클라이언트가 작업을 수행하지 않아도 `no_root_squash`가 작동합니다.

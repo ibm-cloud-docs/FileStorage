@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
@@ -12,11 +12,28 @@ lastupdated: "2018-11-30"
 {:important: .important}
 
 # {{site.data.keyword.filestorage_short}} unter Linux anhängen
+{: #mountingLinux}
 
 Stellen Sie zunächst sicher, dass der Host, der auf den {{site.data.keyword.filestorage_full}}-Datenträger zugreifen soll, über das [{{site.data.keyword.slportal}} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/){:new_window} autorisiert ist.
 
 1. Klicken Sie auf der {{site.data.keyword.filestorage_short}}-Listenseite auf den Link **Aktionen**, die dem neuen gemeinsam genutzten Speicher zugeordnet sind, und klicken Sie auf **Host autorisieren**.
 2. Wählen Sie mindestens einen Host in der Liste aus und klicken Sie auf **Abschicken**. Durch diese Aktion wird der Host für den Zugriff auf den gemeinsam genutzten Speicher autorisiert.
+
+Alternativ dazu können Sie die Hosts auch über die SL-CLI berechtigen. 
+```
+# slcli file access-authorize --help
+Syntax: slcli file access-authorize [OPTIONS] VOLUME_ID
+
+Optionen:
+  -h, --hardware-id TEXT    ID einer SoftLayer-Hardware zur Berechtigung
+  -v, --virtual-id TEXT     ID eines virtuellen SoftLayer-Gastsystems zur Berechtigung
+  -i, --ip-address-id TEXT  ID der Teilnetz-IP-Adresse eines SoftLayer-Netzes
+                            zur Berechtigung
+  --ip-address TEXT         IP-Adresse zur Berechtigung
+  -s, --subnet-id TEXT      ID des Teilnetzes eines SoftLayer-Netzes
+                            zur Berechtigung
+  --help                    Diese Nachricht anzeigen und Ausführung beenden.
+```
 
 ## Gemeinsam genutzten {{site.data.keyword.filestorage_short}}-Speicher anhängen
 
@@ -61,7 +78,7 @@ Der Mountpunkt der Dateispeicherinstanz kann von der {{site.data.keyword.filesto
    -rw-r--r-- 1 nobody nobody 0 Sep 8 15:52 test
    ```
 
-   Die Dateien, die von root erstellt werden, haben das Eigentumsrecht an `nobody:nobody`. Um das Eigentumsrecht ordnungsgemäß anzuzeigen, muss die Datei `idmapd.conf` mit den richtigen Domäneneinstellungen aktualisiert werden. Informationen hierzu finden Sie im Abschnitt [Implementierung von no_root_squash für NFS](#implementing-no_root_squash-for-nfs-optional-).
+   Die Dateien, die von root erstellt werden, haben das Eigentumsrecht an `nobody:nobody`. Um das Eigentumsrecht ordnungsgemäß anzuzeigen, muss die Datei `idmapd.conf` mit den richtigen Domäneneinstellungen aktualisiert werden. Informationen hierzu finden Sie im Abschnitt [Implementierung von no_root_squash für NFS](#norootsquash).
    {:tip}
 
 5. Hängen Sie den fernen gemeinsam genutzten Speicher beim Start an. Um die Einrichtung abzuschließen, bearbeiten Sie die Dateisystemtabelle (`/etc/fstab`), um den fernen gemeinsam genutzten Speicher der Liste mit Einträgen hinzuzufügen, die beim Start automatisch angehängt wird:
@@ -90,6 +107,7 @@ Der Mountpunkt der Dateispeicherinstanz kann von der {{site.data.keyword.filesto
 
 
 ## `no_root_squash` für NFS implementieren (optional)
+{: #norootsquash}
 
 Durch die Konfiguration von `no_root_squash` können Root-Clients die Rootberechtigungen für den gemeinsam genutzten NFS-Speichern behalten.
 - Für NFSv3 sind keine besonderen Schritte für Clients erforderlich; `no_root_squash` funktioniert.

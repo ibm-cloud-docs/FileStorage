@@ -1,17 +1,19 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 
 # Gestion de {{site.data.keyword.filestorage_short}}
+{: #managingstorage}
 
 Vous pouvez gérer vos volumes {{site.data.keyword.filestorage_full}} via le portail {{site.data.keyword.slportal}}.
 
@@ -26,13 +28,41 @@ Vous pouvez autoriser et connecter des hôtes qui se trouvent dans le même cent
 2. Faites défiler l'écran jusqu'à la section **Hôtes autorisés** de la page.
 3. Cliquez sur **Hôte autorisé** sur le côté droit. Sélectionnez les hôtes qui peuvent accéder à ce volume en particulier.
 
+Vous pouvez également utiliser la commande suivante dans l'interface SLCLI.
+```
+# slcli file access-authorize --help
+Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
+
+Options:
+  -h, --hardware-id TEXT    The id of one SoftLayer_Hardware to authorize
+  -v, --virtual-id TEXT     The id of one SoftLayer_Virtual_Guest to authorize
+  -i, --ip-address-id TEXT  The id of one SoftLayer_Network_Subnet_IpAddress
+                            to authorize
+  --ip-address TEXT         An IP address to authorize
+  -s, --subnet-id TEXT      The id of one SoftLayer_Network_Subnet to
+                            authorize
+  --help                    Show this message and exit.
+```
 
 ## Affichage de la liste des hôtes autorisés à accéder à un volume {{site.data.keyword.filestorage_short}}
 
 1. Cliquez sur **Stockage > {{site.data.keyword.filestorage_short}}**, puis sur **Nom du volume**.
 2. Faites défiler la page jusqu'à la section **Hôtes autorisés**.
 
-Cette section affiche la liste des hôtes actuellement autorisés à accéder au volume.
+Vous y trouverez une liste des hôtes actuellement autorisés à accéder au volume.
+
+Vous pouvez également utiliser la commande suivante dans l'interface SLCLI.
+```
+# slcli file access-list --help
+Usage: slcli file access-list [OPTIONS] VOLUME_ID
+
+Options:
+  --sortby TEXT   Column to sort by
+  --columns TEXT  Columns to display. Options: id, name, type,
+                  private_ip_address, source_subnet, host_iqn, username,
+                  password, allowed_host_id
+  -h, --help      Show this message and exit.
+```
 
 
 ## Affichage des volumes {{site.data.keyword.filestorage_short}} auxquels un hôte est autorisé à accéder
@@ -48,7 +78,7 @@ La liste des volumes de stockage auxquels cet hôte particulier a accès s'affic
 
 ## Montage et démontage de {{site.data.keyword.filestorage_short}}
 
-Vous pouvez vous reporter aux informations relatives aux points de montage fournies dans la vue ** Détails du volume** pour monter {{site.data.keyword.filestorage_short}} à partir d'un hôte. Voir [Accès à {{site.data.keyword.filestorage_short}} sur Linux](accessing-file-storage-linux.html).
+Vous pouvez vous reporter aux informations relatives aux points de montage fournies dans la vue ** Détails du volume** pour monter {{site.data.keyword.filestorage_short}} à partir d'un hôte. Voir [Accès à {{site.data.keyword.filestorage_short}} sur Linux](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux).
 
 
 ## Révocation de l'accès d'un hôte à {{site.data.keyword.filestorage_short}}
@@ -82,6 +112,24 @@ Si vous souhaitez déconnecter plusieurs volumes d'un hôte spécifique, vous de
 Si vous souhaitez déconnecter plusieurs hôtes d'un volume spécifique, vous devez répéter l'action Révoquer le droit d'accès pour chaque hôte.
 {:tip}
 
+### Révocation de l'accès via l'interface SLCLI.
+Vous pouvez également utiliser la commande suivante dans l'interface SLCLI.
+```
+# slcli file access-revoke --help
+Usage: slcli file access-revoke [OPTIONS] VOLUME_ID
+
+Options:
+  -h, --hardware-id TEXT    The id of one SoftLayer_Hardware to revoke
+                            authorization
+  -v, --virtual-id TEXT     The id of one SoftLayer_Virtual_Guest to revoke
+                            authorization
+  -i, --ip-address-id TEXT  The id of one SoftLayer_Network_Subnet_IpAddress
+                            to revoke authorization
+  --ip-address TEXT         An IP address to revoke authorization
+  -s, --subnet-id TEXT      The id of one SoftLayer_Network_Subnet to revoke
+                            authorization
+  --help                    Show this message and exit.
+```
 
 ## Annulation d'un volume de stockage
 
@@ -95,3 +143,15 @@ Si vous n'avez plus besoin d'un volume spécifique, vous pouvez annuler ce stock
    {:tip}
 4. Cliquez sur **Continuer** ou sur **Fermer**.
 5. Cochez la case d'accusé de réception et cliquez sur **Confirmer**.
+
+Vous pouvez également utiliser la commande suivante dans l'interface SLCLI.
+```
+# slcli file volume-cancel --help
+Usage: slcli file volume-cancel [OPTIONS] VOLUME_ID
+
+Options:
+  --reason TEXT  An optional reason for cancellation
+  --immediate    Cancels the file storage volume immediately instead of on the
+                 billing anniversary
+  -h, --help     Show this message and exit.
+```

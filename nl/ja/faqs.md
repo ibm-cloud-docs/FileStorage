@@ -1,14 +1,19 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-12-11"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 {:faq: data-hd-content-type='faq'}
 
 # FAQ
+{: #faqs}
 
 ## どの{{site.data.keyword.filestorage_short}} ボリュームが暗号化されているのかはどうすればわかりますか?
 {: faq}
@@ -18,19 +23,19 @@ lastupdated: "2018-12-11"
 ## 非暗号化{{site.data.keyword.filestorage_short}}を購入したデータセンターが、暗号化できるようにアップグレードされた場合、非暗号化{{site.data.keyword.filestorage_short}}を暗号化できますか?
 {: faq}
 
-データ・センターのアップグレードの前にプロビジョンされていた{{site.data.keyword.filestorage_short}}は、暗号化できません。 アップグレードされたデータ・センターで新たにプロビジョンされた{{site.data.keyword.filestorage_short}}は、自動的に暗号化されます。 自動で行われるので、プロビジョニング設定を選択したり除外したりすることはできません。 非暗号化ストレージのデータを暗号化するには、新しいボリュームを作成し、ホスト・ベースのマイグレーションを実行した新しい暗号化ボリュームに、データをコピーします。 詳しくは、[ファイル・ストレージのマイグレーション](migrate-file-storage-encrypted-file-storage.html)を参照してください。
+データ・センターのアップグレードの前にプロビジョンされていた{{site.data.keyword.filestorage_short}}は、暗号化できません。 アップグレードされたデータ・センターで新たにプロビジョンされた{{site.data.keyword.filestorage_short}}は、自動的に暗号化されます。 自動で行われるので、プロビジョニング設定を選択したり除外したりすることはできません。 非暗号化ストレージのデータを暗号化するには、新しいボリュームを作成し、ホスト・ベースのマイグレーションを実行した新しい暗号化ボリュームに、データをコピーします。 詳しくは、[ファイル・ストレージのマイグレーション](/docs/infrastructure/FileStorage?topic=FileStorage-migratestorage)を参照してください。
 
 ## {{site.data.keyword.filestorage_short}}をプロビジョンしているのが、アップグレードされたデータ・センターかどうかはどうすればわかりますか?
 {: faq}
 
 {{site.data.keyword.filestorage_short}}の注文フォームでは、アップグレードされたすべてのデータ・センターがアスタリスク (`*`) 付きで表示されます。 注文プロセスの中で、暗号化ストレージがプロビジョンされますというメッセージも表示されます。 ストレージがプロビジョンされると、ボリュームが暗号化されていることを示すアイコンがストレージ・リストに表示されます。
 
-暗号化ボリュームおよびファイル共有はすべて、アップグレードされたデータ・センターでのみプロビジョンされます。 アップグレードされたデータ・センターと使用可能な機能の完全なリストを[ここ](new-ibm-block-and-file-storage-location-and-features.html)で見つけることができます。
+暗号化ボリュームおよびファイル共有はすべて、アップグレードされたデータ・センターでのみプロビジョンされます。 アップグレードされたデータ・センターと使用可能な機能の完全なリストについては、[こちら](/docs/infrastructure/FileStorage?topic=FileStorage-news)を参照してください。
 
 ## エンデュランスが 10 IOPS ティアの {{site.data.keyword.filestorage_short}} がプロビジョニングされるデータ・センターとそうでないセンターがあるのはなぜですか?
 {: faq}
 
-{{site.data.keyword.filestorage_short}} のエンデュランス・タイプ 10 IOPS/GB ティアは、一部のデータ・センターでのみ提供されており、近々、新しいデータ・センターが追加される予定です。 アップグレードされたデータ・センターと使用可能な機能の完全なリストを[ここ](new-ibm-block-and-file-storage-location-and-features.html)で見つけることができます。
+{{site.data.keyword.filestorage_short}} のエンデュランス・タイプ 10 IOPS/GB ティアは、一部のデータ・センターでのみ提供されており、近々、新しいデータ・センターが追加される予定です。 アップグレードされたデータ・センターと使用可能な機能の完全なリストについては、[こちら](/docs/infrastructure/FileStorage?topic=FileStorage-news)を参照してください。
 
 ## {{site.data.keyword.filestorage_short}}の正しいマウント・ポイントはどうすればわかりますか?
 {: faq}
@@ -40,7 +45,7 @@ lastupdated: "2018-12-11"
 ## ボリュームをいくつプロビジョンできますか?
 {: faq}
 
-デフォルトでは、合計 250 のブロック・ストレージ・ボリュームとファイル・ストレージ・ボリュームをプロビジョンできます。 制限を大きくするには、営業担当員にお問い合わせください。 詳しくは、[ストレージ制限の管理](managing-storage-limits.html)を参照してください。
+デフォルトでは、合計 250 のブロック・ストレージ・ボリュームとファイル・ストレージ・ボリュームをプロビジョンできます。 制限を大きくするには、営業担当員にお問い合わせください。 詳しくは、[ストレージ制限の管理](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits)を参照してください。
 
 ## プロビジョンされた{{site.data.keyword.filestorage_short}}・ボリュームの使用を共有できるインスタンス数はいくつですか?
 {: faq}

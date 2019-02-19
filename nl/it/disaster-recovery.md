@@ -1,25 +1,27 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-12-10"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
-{:DomainName: data-hd-keyref="APPDomain"}
-{:DomainName: data-hd-keyref="DomainName"}
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
 
 
 # Ripristino di emergenza - Failover con un volume primario inaccessibile
+{: #dr-inaccessible}
 
 Se un errore catastrofico o un'emergenza causano un'interruzione sul sito primario, i clienti possono eseguire le seguenti azioni per accedere rapidamente ai loro dati sul sito secondario.
 
 ## Failover con un duplicato di un volume di replica sul sito secondario
 
-1. Accedi alla [console IBM Cloud](https://console.bluemix.net/catalog/){:new_window} e fai clic sull'icona **menu** nell'angolo superiore sinistro. Seleziona **Infrastruttura classica**.
+1. Accedi [Alla console IBM Cloud ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://{DomainName}/){:new_window} e fai clic sull'icona **menu** nell'angolo superiore sinistro. Seleziona **Infrastruttura classica**.
 
    In alternativa, puoi accedere al [{{site.data.keyword.slportal}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://control.softlayer.com/){:new_window}.
 2. Fai clic su **Storage** > **{{site.data.keyword.filestorage_short}}**.
@@ -35,13 +37,13 @@ Non appena viene creato il volume, puoi collegarlo a un host ed eseguire le oper
 
 Se vuoi far tornare la produzione al sito primario originale, devi completare le seguenti istruzioni.
 
-1. Accedi alla [console IBM Cloud](https://{DomainName}/catalog/){:new_window} e fai clic sull'icona **menu** nell'angolo superiore sinistro. Seleziona **Infrastruttura classica**.
+1. Accedi [Alla console IBM Cloud ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://{DomainName}/){:new_window} e fai clic sull'icona **menu** nell'angolo superiore sinistro. Seleziona **Infrastruttura classica**.
 
    In alternativa, puoi accedere al [{{site.data.keyword.slportal}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://control.softlayer.com/){:new_window}.
 2. Fai clic su **Storage** > **{{site.data.keyword.filestorage_short}}**.
 3. Fai clic sul nome del LUN e crea una pianificazione delle istantanee (se non ne esiste già una).
 
-   Per ulteriori informazioni sulle pianificazioni delle istantanee, consulta [Gestione delle istantanee](working-with-snapshots.html#adding-a-snapshot-schedule).
+   Per ulteriori informazioni sulle pianificazioni delle istantanee, consulta [Gestione delle istantanee](/docs/infrastructure/FileStorage?topic=FileStorage-managingSnapshots#addschedule).
    {:tip}
 4. Fai clic su **Replica** e fai clic su **Purchase a replication**.
 5. Seleziona la pianificazione delle istantanee esistente che vuoi venga seguita dalla replica. L'elenco contiene tutte le pianificazioni delle istantanee attive.

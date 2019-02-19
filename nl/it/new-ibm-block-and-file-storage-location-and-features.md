@@ -1,21 +1,26 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-12-11"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
- {:tip: .tip}
- {:note: .note}
- {:important: .important}
+{:pre: .pre}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 
-# Nuove ubicazioni e funzioni di {{site.data.keyword.filestorage_short}}
+# Nuove ubicazioni e funzioni 
+{: #news}
 
 {{site.data.keyword.BluSoftlayer_full}} sta introducendo una nuova versione di {{site.data.keyword.filestorage_full}}! La nuova archiviazione è disponibile in data center selezionati ed è supportata da una archiviazione flash a livelli IOPS più elevati con la crittografia a livello di disco per i dati non attivi. Di tutta l'archiviazione ordinata in data center selezionati, viene automaticamente creata con la nuova versione di {{site.data.keyword.filestorage_short}}.
 
 Il punto di montaggio NFS per i nuovi volumi è cambiato. Per i dettagli, consulta la sezione [Nuovo punto di montaggio per i volumi di {{site.data.keyword.filestorage_short}} avanzato](#new-mount-point-for-enhanced-file-storage-volumes).
 {:important}
+
+## Nuove ubicazioni
+{: #new-locations}
 
 La nuova {{site.data.keyword.filestorage_short}} è disponibile nelle seguenti regioni e nei seguenti data center e a breve verrà aggiunta la disponibilità di ulteriori data center.
 
@@ -80,17 +85,18 @@ La nuova {{site.data.keyword.filestorage_short}} è disponibile nelle seguenti r
 
 *La tabella 1 mostra la nostra disponibilità di data center. Ogni regione ha la propria colonna. Alcune città, come Dallas, San Jose, Washington DC, Amsterdam, Francoforte, Londra e Sydney, hanno più data center.*
 
-La nuova archiviazione ha le seguenti funzioni e capacità:
+## Nuove funzioni e funzionalità
+{: #features}
 
-- [Crittografia gestita dal provider per i dati inattivi](block-file-storage-encryption-rest.html). <br/> Viene eseguito automaticamente il provisioning di tutti i volumi {{site.data.keyword.filestorage_short}} come crittografati senza costi aggiuntivi.
+- [Crittografia gestita dal provider per i dati inattivi](/docs/infrastructure/FileStorage?topic=FileStorage-encryption). <br/> Viene eseguito automaticamente il provisioning di tutti i volumi {{site.data.keyword.filestorage_short}} come crittografati senza costi aggiuntivi.
 - Opzione livello 10 IOPS per GB. <br/> Un nuovo livello è stato aggiunto a {{site.data.keyword.filestorage_short}} di tipo Endurance per supportare i carichi di lavoro più esigenti.
 - Archiviazione con supporto all-flash. <br/> {{site.data.keyword.filestorage_short}} di cui viene eseguito il provisioning con le opzioni Endurance o Performance a 2 IOPS per GB o superiore viene eseguito il backup dall'archiviazione con supporto all-flash.
 - Supporto di istantanea e replica.
 - L'opzione di fatturazione oraria aggiunta per l'archiviazione di cui è pianificato l'utilizzo per meno di un intero mese.
 - Fino a 48.000 IOPS per {{site.data.keyword.filestorage_short}} di cui viene eseguito il provisioning con il tipo Performance.
-- I tassi di IOPS sono regolabili per migliorare le prestazioni di cambiamenti del carico stagionali. Leggi ulteriori informazioni su questa funzione [qui](adjustable-iops.html).
-- Crea un clone dei tuoi dati con la [funzione di duplicazione del volume di {{site.data.keyword.filestorage_short}}](how-to-create-duplicate-volume.html).
-- L'archiviazione è espandibile in incrementi di GB fino a 12 TB immediatamente, senza dover creare un duplicato o eseguire manualmente lo spostamento dei dati a un volume più grande. Leggi ulteriori informazioni su questa funzione [qui](expandable_file_storage.html).
+- I tassi di IOPS sono regolabili per migliorare le prestazioni di cambiamenti del carico stagionali. Leggi ulteriori informazioni su questa funzione [qui](/docs/infrastructure/FileStorage?topic=FileStorage-adjustingIOPS).
+- Crea un clone dei tuoi dati con la [funzione di duplicazione del volume di {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume).
+- L'archiviazione è espandibile in incrementi di GB fino a 12 TB immediatamente, senza dover creare un duplicato o eseguire manualmente lo spostamento dei dati a un volume più grande. Leggi ulteriori informazioni su questa funzione [qui](/docs/infrastructure/FileStorage?topic=FileStorage-expandCapacity).
 
 ## Nuovo punto di montaggio per i volumi di {{site.data.keyword.filestorage_short}} avanzato
 

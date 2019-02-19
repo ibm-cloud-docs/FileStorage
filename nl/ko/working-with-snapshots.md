@@ -1,17 +1,19 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 
 # 스냅샷 관리
+{: #managingSnapshots}
 
 ## 스냅샷 스케줄 작성
 
@@ -21,6 +23,7 @@ lastupdated: "2018-11-30"
 {:important}
 
 ### 스냅샷 스케줄 추가
+{: #addschedule}
 
 스냅샷 스케줄은 시간별, 일별, 주별 간격으로 설정될 수 있으며 각각에는 별도의 보유 주기가 있습니다. 스토리지 볼륨당 스냅샷의 최대 한계는 50개이며, 이는 시간별, 일별 및 주별 스케줄을 혼합할 수 있고 수동 스냅샷입니다.
 
@@ -39,6 +42,17 @@ lastupdated: "2018-11-30"
 
 스냅샷이 작성되면 **세부사항** 페이지의 **스냅샷** 섹션에 스냅샷 목록이 표시됩니다.
 
+또한 다음 명령을 사용하여 SLCLI를 통해 스냅샷 스케줄 목록을 볼 수 있습니다.
+```
+# slcli file snapshot-schedule-list --help
+Usage: slcli file snapshot-schedule-list [OPTIONS] VOLUME_ID
+
+  Lists snapshot schedules for a given volume
+
+Options:
+  -h, --help  Show this message and exit.
+```
+
 ## 수동 스냅샷 작성
 
 애플리케이션 업그레이드 또는 유지보수 중에 다양한 위치에서 수동 스냅샷을 작성할 수 있습니다. 애플리케이션 레벨에서 임시로 비활성화된 여러 서버에서 스냅샷을 작성할 수도 있습니다.
@@ -50,9 +64,30 @@ lastupdated: "2018-11-30"
 3. **수동 스냅샷 작성**을 클릭하십시오.
 스냅샷이 작성되며 **세부사항** 페이지의 **스냅샷** 섹션에 표시됩니다. 해당 스케줄은 수동으로 표시됩니다.
 
+또는 다음 명령을 사용하여 SLCLI를 통해 스냅샷을 작성할 수 있습니다.
+```
+# slcli file snapshot-create --help
+Usage: slcli file snapshot-create [OPTIONS] VOLUME_ID
+
+Options:
+  -n, --notes TEXT  Notes to set on the new snapshot
+  -h, --help        Show this message and exit.
+```
+
 ## 모든 스냅샷을 사용 영역 정보 및 관리 기능과 함께 나열
 
 보존된 스냅샷 및 사용된 영역의 목록은 **세부사항** 페이지에서 볼 수 있습니다(**스토리지**, **{{site.data.keyword.filestorage_short}}**). 관리 기능(스케줄 편집 및 영역 추가)은 세부사항 페이지에서 이 페이지에 있는 다양한 섹션의 **조치** 메뉴 또는 링크를 사용하여 수행됩니다.
+
+또는 SL CLI를 통해 이 태스크를 완료할 수 있습니다.
+```
+# slcli file snapshot-list --help
+Usage: slcli file snapshot-list [OPTIONS] VOLUME_ID
+
+Options:
+  --sortby TEXT   Column to sort by
+  --columns TEXT  Columns to display. Options: id, name, created, size_bytes
+  -h, --help      Show this message and exit.
+```
 
 ## 보존된 스냅샷의 목록 보기
 
@@ -92,7 +127,7 @@ lastupdated: "2018-11-30"
 1. **세부사항** 페이지의 **스냅샷 스케줄** 프레임에서 삭제할 스케줄을 클릭하십시오.
 2. 삭제할 스케줄 옆에 있는 선택란을 클릭하고 **저장**을 클릭하십시오.<br />
 
-복제 기능을 사용 중인 경우에는 삭제 중인 스케줄이 복제에서 사용하는 스케줄이 아닌지 확인하십시오. 복제 스케줄을 삭제하는 데 관한 자세한 정보는 [여기](replication.html)를 참조하십시오.
+복제 기능을 사용 중인 경우에는 삭제 중인 스케줄이 복제에서 사용하는 스케줄이 아닌지 확인하십시오. 복제 스케줄을 삭제하는 데 관한 자세한 정보는 [여기](/docs/infrastructure/FileStorage?topic=FileStorage-replication)를 참조하십시오.
 {:important}
 
 ## 스냅샷 삭제
@@ -102,14 +137,24 @@ lastupdated: "2018-11-30"
 1. 스토리지 볼륨을 클릭하고 **스냅샷** 섹션으로 스크롤하여 기존 스냅샷의 목록을 보십시오.
 2. 특정 스냅샷 옆에 있는 **조치**를 클릭하고 **삭제**를 클릭하여 스냅샷을 삭제하십시오. 스냅샷 간에는 종속성이 없으므로 이 삭제는 동일한 스케줄의 향후 또는 이전 스냅샷에 영향을 주지 않습니다.
 
+또는 SL CLI를 통해 스냅샷을 삭제할 수 있습니다.
+```
+# slcli file snapshot-delete --help
+Usage: slcli file snapshot-delete [OPTIONS] SNAPSHOT_ID
+
+Options:
+  -h, --help  Show this message and exit.
+```
+
 포털에서 수동으로 삭제되지 않은 수동 스냅샷은 영역 한계에 도달하면 가장 오래된 스냅샷부터 자동으로 삭제됩니다.
+{:note}
 
 ## 스냅샷을 사용하여 스토리지 볼륨을 특정 시점으로 복원
 
 사용자 오류 또는 데이터 손상으로 인해 스토리지 볼륨을 특정 시점으로 되돌려야 할 수 있습니다.
 
 1. 호스트에서 스토리지 볼륨을 마운트 해제하고 분리하십시오.
-   - 지시사항을 보려면 [여기](accessing-file-storage-linux.html)를 클릭하십시오.
+   - 지시사항을 보려면 [여기](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)를 클릭하십시오.
 2. [{{site.data.keyword.slportal}} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://control.softlayer.com/){:new_window}의 **스토리지**, **{{site.data.keyword.filestorage_short}}**를 클릭하십시오.
 3. 아래로 화면을 이동하고 복원할 볼륨을 클릭하십시오. **세부사항** 페이지의 **스냅샷** 섹션에, 저장된 모든 스냅샷의 목록이 해당 크기 및 작성 날짜와 함께 표시됩니다.
 4. 사용할 스냅샷 옆에 있는 **조치**를 클릭하고 **복원**을 클릭하십시오. <br/>
@@ -121,7 +166,18 @@ lastupdated: "2018-11-30"
    선택된 스냅샷을 사용하여 볼륨이 복원되고 있음을 알리는 메시지가 페이지에 표시됩니다. 또한 활성 트랜잭션이 진행 중임을 나타내는 아이콘이 {{site.data.keyword.filestorage_short}}의 볼륨 옆에 표시됩니다. 아이콘 위로 마우스 커서를 이동하면 트랜잭션을 표시하는 창이 생성됩니다. 일단 트랜잭션이 완료되면 아이콘이 사라집니다.
    {:note}
 6. 스토리지 볼륨을 호스트에 마운트하고 다시 연결하십시오.
-  - 지시사항을 보려면 [여기](accessing-file-storage-linux.html)를 클릭하십시오.
+  - 지시사항을 보려면 [여기](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)를 클릭하십시오.
+
+또는 SLCLI를 통해 스냅샷으로 볼륨을 복원할 수 있습니다.
+```
+# slcli file snapshot-restore --help
+Usage: slcli file snapshot-restore [OPTIONS] VOLUME_ID
+
+Options:
+  -s, --snapshot-id TEXT  The id of the snapshot which will be used to restore
+                          the block volume
+  -h, --help              Show this message and exit.
+```  
 
 볼륨을 복원하면 복원에 사용된 스냅샷 이후 작성된 모든 스냅샷이 삭제됩니다.
 {:important}

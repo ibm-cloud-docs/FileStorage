@@ -1,12 +1,12 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-12-11"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
-{:pre: .pre}
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
@@ -15,6 +15,7 @@ lastupdated: "2018-12-11"
 
 
 # Provisioning {{site.data.keyword.filestorage_short}} with VMware
+{: #architectureguide}
 
 The following steps can help you order and configure {{site.data.keyword.filestorage_full}} in a vSphere 5.5 and vSphere 6.0 environment at {{site.data.keyword.BluSoftlayer_full}}.
 
@@ -117,7 +118,7 @@ It's important to note that VMware environments are not aware of snapshots. The 
 
 Restoring the {{site.data.keyword.filestorage_short}} volume requires powering off all the VMs on the {{site.data.keyword.filestorage_short}}. The volume needs to be temporarily unmounted from the ESXi hosts to avoid any data corruption during the process.
 
-For more information, see the [snapshots](snapshots.html) article.
+For more information, see the [snapshots](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots) article.
 
 
 ### Using replication
@@ -129,7 +130,7 @@ With replicas, you can
 - Recover from site failures and other disasters quickly by failing over to the destination volume
 - Fail over to a specific point in time in the DR copy
 
-Replication keeps your data in sync in two different locations. If you want to clone your volume and use it independently from the original volume, see [Creating a duplicate File Volume](how-to-create-duplicate-volume.html).
+Replication keeps your data in sync in two different locations. If you want to clone your volume and use it independently from the original volume, see [Creating a duplicate File Volume](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume).
 {:tip}
 
 Before you can replicate, you must create a snapshot schedule.
@@ -138,7 +139,7 @@ When you fail over, you are “flipping the switch” from your storage volume i
 
 Before the volume fails back to the primary data center, it needs to stop being used at the remote site. A snapshot of any new or changed information is taken and replicated to the primary data center before it can be mounted again on the production site ESXi hosts.
 
-For more information about configuring replicas, see [Replication](replication.html).
+For more information about configuring replicas, see [Replication](/docs/infrastructure/FileStorage?topic=FileStorage-replication).
 
 Invalid data, whether corrupted, hacked, or infected replicate according to the snapshot schedule and snapshot retention. Using the smallest replication windows can provide for a better recovery point objective. However, it also can provide less time to react to the replication of invalid data.
 {:note}
@@ -148,7 +149,7 @@ Invalid data, whether corrupted, hacked, or infected replicate according to the 
 
 Use the [Advanced Single-Site VMware Reference Architecture ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} to set up {{site.data.keyword.filestorage_short}} with Endurance or Performance options in your VMware environment.
 
-{{site.data.keyword.filestorage_short}} can be ordered through the [The IBM Cloud catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/catalog/){:new_window} or the [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}. For more information, see [Ordering {{site.data.keyword.filestorage_short}}](provisioning-file-storage.html)
+{{site.data.keyword.filestorage_short}} can be ordered through the [The IBM Cloud catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/catalog/){:new_window} or the [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}. For more information, see [Ordering {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)
 
 Storage is provisioned in less than a minute and becomes visible on the **{{site.data.keyword.filestorage_short}}** page of the [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
 
@@ -378,5 +379,5 @@ The following examples use the CLI to set the advanced configuration parameters,
     #esxcfg-advcfg -g /Disk/QFullSampleSize
     #esxcfg-advcfg -g /Disk/QFullThreshold
     ```
-Learn more about Advanced Single-Site VMware Reference Architecture [here](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}.
+Learn more about Advanced Single-Site VMware Reference Architecture [here](/docs/infrastructure/virtualization?topic=Virtualization-advanced-single-site-vmware-reference-architecture){:new_window}.
 {:tip}

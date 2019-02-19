@@ -1,14 +1,19 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-12-11"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 {:faq: data-hd-content-type='faq'}
 
 # Preguntas más frecuentes
+{: #faqs}
 
 ## ¿Cómo puedo saber cuáles de mis volúmenes de {{site.data.keyword.filestorage_short}} están cifrados?
 {: faq}
@@ -18,19 +23,19 @@ Examine su lista de {{site.data.keyword.filestorage_short}} en el portal de clie
 ## Si he adquirido {{site.data.keyword.filestorage_short}} no cifrado en un centro de datos que se ha actualizado para admitir cifrado, ¿puedo cifrar mi {{site.data.keyword.filestorage_short}}?
 {: faq}
 
-{{site.data.keyword.filestorage_short}} suministrado antes de una actualización del centro de datos no se puede cifrar. El nuevo {{site.data.keyword.filestorage_short}} que se suministra en centros de datos actualizados se cifra automáticamente. Es una característica automática, no un valor de suministro que se puede seleccionar o descartar. Para cifrar los datos que residen en almacenamiento no cifrado, hay que crear un nuevo volumen y luego copiar los datos en el nuevo volumen cifrado con una migración basada en host. Para obtener más información, consulte [Migración de File Storage](migrate-file-storage-encrypted-file-storage.html).
+{{site.data.keyword.filestorage_short}} suministrado antes de una actualización del centro de datos no se puede cifrar. El nuevo {{site.data.keyword.filestorage_short}} que se suministra en centros de datos actualizados se cifra automáticamente. Es una característica automática, no un valor de suministro que se puede seleccionar o descartar. Para cifrar los datos que residen en almacenamiento no cifrado, hay que crear un nuevo volumen y luego copiar los datos en el nuevo volumen cifrado con una migración basada en host. Para obtener más información, consulte [Migración de File Storage](/docs/infrastructure/FileStorage?topic=FileStorage-migratestorage).
 
 ## ¿Cómo sé si estoy suministrando {{site.data.keyword.filestorage_short}} en un centro de datos actualizado?
 {: faq}
 
 En el formulario de solicitud de {{site.data.keyword.filestorage_short}}, todos los centros de datos actualizados están indicados con un asterisco (`*`). Durante el proceso de solicitud se le indicará que va a suministrar almacenamiento con cifrado. Una vez suministrado el almacenamiento, puede ver un icono en la lista de almacenamiento que muestra que dicho volumen está cifrado.
 
-Todos los volúmenes y comparticiones de archivos cifrados se suministran únicamente en centros de datos actualizados. Puede consultar una lista completa de centros de datos actualizados y características disponibles [aquí](new-ibm-block-and-file-storage-location-and-features.html).
+Todos los volúmenes y comparticiones de archivos cifrados se suministran únicamente en centros de datos actualizados. Puede consultar una lista completa de centros de datos actualizados y características disponibles [aquí](/docs/infrastructure/FileStorage?topic=FileStorage-news).
 
 ## ¿Por qué {{site.data.keyword.filestorage_short}} con un nivel 10 de IOPS de Resistencia se puede suministrar en algunos centros de datos y en otros no?
 {: faq}
 
-{{site.data.keyword.filestorage_short}} de tipo Resistencia con nivel 10 IOPS/GB solo está disponible en determinados centros de datos, y pronto se añadirán nuevos centros de datos. Puede consultar una lista completa de centros de datos actualizados y características disponibles [aquí](new-ibm-block-and-file-storage-location-and-features.html).
+{{site.data.keyword.filestorage_short}} de tipo Resistencia con nivel 10 IOPS/GB solo está disponible en determinados centros de datos, y pronto se añadirán nuevos centros de datos. Puede consultar una lista completa de centros de datos actualizados y características disponibles [aquí](/docs/infrastructure/FileStorage?topic=FileStorage-news).
 
 ## ¿Cómo puedo encontrar el punto de montaje correcto para mi {{site.data.keyword.filestorage_short}}?
 {: faq}
@@ -40,7 +45,7 @@ Todos los volúmenes de {{site.data.keyword.filestorage_short}} cifrados suminis
 ## ¿Cuántos volúmenes puedo suministrar?
 {: faq}
 
-De forma predeterminada, puede suministrar un total combinado de 250 volúmenes de almacenamiento de archivos y bloques. Para aumentar el límite, póngase en contacto con el representante de ventas. Para obtener más información, consulte [Gestión de los límites de almacenamiento](managing-storage-limits.html).
+De forma predeterminada, puede suministrar un total combinado de 250 volúmenes de almacenamiento de archivos y bloques. Para aumentar el límite, póngase en contacto con el representante de ventas. Para obtener más información, consulte [Gestión de los límites de almacenamiento](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits).
 
 ## ¿Cuántas instancias pueden compartir el uso de un volumen de {{site.data.keyword.filestorage_short}} suministrado?
 {: faq}

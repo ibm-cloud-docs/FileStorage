@@ -1,19 +1,31 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 # Gerenciando limites de armazenamento
+{: #managinglimits}
 
-Por padrão, é possível provisionar um total combinado de 250
-{{site.data.keyword.filestorage_short}} volumes globalmente.
+Por padrão, é possível provisionar um total combinado de 250 volumes {{site.data.keyword.blockstorageshort}} e {{site.data.keyword.filestorage_short}} globalmente.
+
+Se não tiver certeza de quantos volumes tem, use o comando `slcli` a seguir para listá-los para cada data center.
+```
+# slcli file volume-count --help
+Usage: slcli file volume-count [OPTIONS]
+
+Options:
+ -d, --datacenter TEXT  Datacenter shortname
+ --sortby TEXT          Column to sort by
+ -h, --help             Show this message and exit.
+```
 
 É possível solicitar um aumento de limite enviando um chamado no [{{site.data.keyword.slportal}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://control.softlayer.com/){:new_window}. Quando a solicitação for aprovada, você obterá um limite de volume configurado para um data center específico.  
 

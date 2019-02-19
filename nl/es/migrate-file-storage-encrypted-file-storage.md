@@ -1,26 +1,28 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 # Migración de {{site.data.keyword.filestorage_short}} a {{site.data.keyword.filestorage_short}} mejorado
+{: #migratestorage}
 
-{{site.data.keyword.filestorage_full}} mejorado ya está disponible en determinados centros de datos. Para ver la lista de los centros de datos actualizados y las características disponibles, como tasas de IOPS ajustables y volúmenes ampliables, pulse [aquí](new-ibm-block-and-file-storage-location-and-features.html). Para obtener más información sobre el cifrado gestionado por el proveedor, consulte [Cifrado en reposo de {{site.data.keyword.filestorage_short}}](block-file-storage-encryption-rest.html).
+{{site.data.keyword.filestorage_full}} mejorado ya está disponible en determinados centros de datos. Para ver la lista de los centros de datos actualizados y las características disponibles, como tasas de IOPS ajustables y volúmenes ampliables, pulse [aquí](/docs/infrastructure/FileStorage?topic=FileStorage-news). Para obtener más información sobre el cifrado gestionado por el proveedor, consulte [Cifrado en reposo de {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-encryption).
 
 El método de migración recomendado es conectarse a ambos volúmenes simultáneamente y transferir datos directamente desde un LUN a otro. Los detalles dependen de su sistema operativo y de si se espera que los datos cambien durante la operación de copia.
 
 El supuesto es que ya tiene su LUN no cifrado conectado al host. Si no es así, siga las directrices correspondientes a su sistema operativo que mejor se ajusten a esta tarea.
 
-- [Montaje de {{site.data.keyword.filestorage_short}} en Linux](accessing-file-storage-linux.html)
-- [Montaje de {{site.data.keyword.filestorage_short}} en CentOS](mounting-nsf-file-storage.html)
-- [Montaje de {{site.data.keyword.filestorage_short}} en CoreOS](mounting-storage-coreos.html)
+- [Montaje de {{site.data.keyword.filestorage_short}} en Linux](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)
+- [Montaje de {{site.data.keyword.filestorage_short}} en CentOS](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)
+- [Montaje de {{site.data.keyword.filestorage_short}} en CoreOS](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCoreOS)
 
 Todos los volúmenes de {{site.data.keyword.filestorage_short}} mejorados suministrados en estos centros de datos tienen un punto de montaje distinto que los volúmenes no cifrados. Para asegurarse de que utiliza el punto de montaje correcto para los volúmenes de almacenamiento, puede consultar la información sobre el punto de montaje en la página **Detalles del volumen** en la consola. También puede acceder al punto de montaje correcto mediante una llamada de API: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 {:tip}
@@ -33,8 +35,8 @@ Cuando realice un pedido con API, especifique el paquete "Almacenamiento como un
 
 Puede solicitar un LUN mejorado desde el catálogo de {{site.data.keyword.BluSoftlayer_full}} y el {{site.data.keyword.slportal}}. El nuevo volumen debe tener el mismo tamaño o mayor que la compartición de archivos original para facilitar la migración.
 
-- [Solicitud de {{site.data.keyword.filestorage_short}} con los niveles de IOPS predefinidos (Resistencia)](provisioning-file-storage.html#ordering-file-storage-with-pre-defined-iops-tiers-endurance-)
-- [Solicitud de {{site.data.keyword.filestorage_short}} con IOPS personalizados (Rendimiento)](provisioning-file-storage.html#ordering-file-storage-with-custom-iops-performance-)
+- [Solicitud de {{site.data.keyword.filestorage_short}} con los niveles de IOPS predefinidos (Resistencia)](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#endurance)
+- [Solicitud de {{site.data.keyword.filestorage_short}} con IOPS personalizados (Rendimiento)](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#performance)
 
 Su nuevo almacenamiento está preparado para que se monte en pocos minutos. Puede verlo en la lista de recursos y en la lista de {{site.data.keyword.blockstorageshort}}.
 

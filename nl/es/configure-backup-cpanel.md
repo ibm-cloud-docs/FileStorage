@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
@@ -12,6 +12,7 @@ lastupdated: "2018-11-30"
 {:important: .important}
 
 # Configuración de {{site.data.keyword.filestorage_short}} para la copia de seguridad con cPanel
+{: #cPanelBackups}
 
 Puede utilizar estas instrucciones para configurar que cPanel almacene sus copias de seguridad en {{site.data.keyword.filestorage_full}}. Suponemos que está disponible el acceso de SSH sudo o root y de WebHost Manager (WHM) completo. Este ejemplo se basa en un host **CentOS 7**.
 
@@ -24,7 +25,7 @@ Para obtener más información, consulte [cPanel - Configuración del directorio
    De forma predeterminada, el sistema cPanel guarda los archivos de copia de seguridad en local, en el directorio `/backup`. En este documento, se presupone que la carpeta `/backup` ya existe y contiene copias de seguridad, de modo que se puede utilizar `/backup2` como el nuevo punto de montaje.
    {:note}
 
-3. Configure {{site.data.keyword.filestorage_short}} como se describe en [Acceso a {{site.data.keyword.filestorage_short}} en Red Hat Enterprise Linux](accessing-file-storage-linux.html) y [Montaje de NFS/{{site.data.keyword.filestorage_short}} en CentOS](mounting-nsf-file-storage.html) o [Montaje de NFS/{{site.data.keyword.filestorage_short}} en CoreOS](mounting-storage-coreos.html). Monte el volumen en `/backup2` y configúrelo en la tabla de sistema de archivos (`/etc/fstab`) para habilitar el montaje al iniciar. <br />
+3. Configure {{site.data.keyword.filestorage_short}} como se describe en [Acceso a {{site.data.keyword.filestorage_short}} en Red Hat Enterprise Linux](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux) y [Montaje de {{site.data.keyword.filestorage_short}} en CentOS](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS) o [Montaje de NFS/{{site.data.keyword.filestorage_short}} en CoreOS](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCoreOS). Monte el volumen en `/backup2` y configúrelo en la tabla de sistema de archivos (`/etc/fstab`) para habilitar el montaje al iniciar. <br />
 
    De forma predeterminada, NFS degrada los archivos creados con los permisos de root al usuario nobody. Para permitir que los clientes root retengan los permisos de root en la unidad compartida NFS, se debe añadir `no_root_squash` a `/etc/exports`.
    {:tip}

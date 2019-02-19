@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-12-10"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
@@ -13,6 +14,7 @@ lastupdated: "2018-12-10"
 {:DomainName: data-hd-keyref="DomainName"}
 
 # Disaster-Recovery - Failover mit einem zugänglichen Primärdatenträger
+{: #dr-accessible}
 
 Wenn eine Betriebsunterbrechung oder einer Katastrophe, die einen Ausfall am primären Standort verursacht, auftritt und der primäre Speicher noch zugänglich ist, können Kunden die folgenden Aktionen ausführen, um schnell am sekundären Standort auf ihre Daten zuzugreifen.
 
@@ -48,7 +50,7 @@ Bevor Sie mit den folgenden Schritten fortfahren, unterbrechen Sie die Verbindun
    {:note}
 4. Klicken Sie auf **Alle anzeigen ({{site.data.keyword.filestorage_short}})**.
 5. Klicken Sie auf Ihren aktiven Datenträger (früher Ihr Zieldatenträger). Dieser Datenträger hat nun den Status **Aktiv**.
-6. Hängen Sie Ihren Speicherdatenträger an den Host an und verbinden Sie ihn. Weitere Anweisungen finden Sie [hier](provisioning-file-storage.html).
+6. Hängen Sie Ihren Speicherdatenträger an den Host an und verbinden Sie ihn. Weitere Anweisungen finden Sie [hier](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole).
 
 
 ## Rückübertragung von einem Datenträger auf sein Replikat starten
@@ -73,4 +75,4 @@ Failbacks werden unter **Speicher** **{{site.data.keyword.filestorage_short}}** 
    {:note}
 4. Klicken Sie rechts oben auf den Link **Alle {{site.data.keyword.filestorage_short}}-Instanzen anzeigen**.
 5. Klicken Sie auf Ihren aktiven Datenträger ("Quelle").
-6. Hängen Sie Ihren Speicherdatenträger an den Host an und verbinden Sie ihn. Weitere Anweisungen finden Sie [hier](provisioning-file-storage.html).
+6. Hängen Sie Ihren Speicherdatenträger an den Host an und verbinden Sie ihn. Weitere Anweisungen finden Sie [hier](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole).

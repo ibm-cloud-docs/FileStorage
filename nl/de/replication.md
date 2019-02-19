@@ -1,22 +1,23 @@
 ---
 
 copyright:
-  years: 2015, 2019
-lastupdated: "2019-01-08"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
-
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 
 # Daten replizieren
+{: #replication}
 
 Bei der Replikation wird einer von vier Snapshotplänen verwendet, um Snapshots automatisch auf einen Zieldatenträger in einem fernen Rechenzentrum zu kopieren. Die Kopien können am fernen Standort wiederhergestellt werden, falls ein Elementarereignis auftritt oder Ihre Daten beschädigt werden.
 
-Die Replikation hält Ihre Daten an zwei verschiedenen Positionen synchron. Wenn Sie Ihren Datenträger klonen und unabhängig vom ursprünglichen Datenträger verwenden möchten, lesen Sie die Informationen im Abschnitt [Duplikat eines Datenträgers erstellen](how-to-create-duplicate-volume.html).
+Die Replikation hält Ihre Daten an zwei verschiedenen Positionen synchron. Wenn Sie Ihren Datenträger klonen und unabhängig vom ursprünglichen Datenträger verwenden möchten, lesen Sie die Informationen im Abschnitt [Duplikat eines Datenträgers erstellen](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume).
 {:tip}
 
 Bevor Sie replizieren können, müssen Sie einen Snapshotplan erstellen.
@@ -112,7 +113,7 @@ Replikationen arbeiten nach einem Snapshotplan. Sie müssen zuerst einen Snapsho
 2. Klicken Sie auf **Replikat** und auf **Replikation kaufen**.
 3. Wählen Sie einen vorhandenen Snapshotplan aus, den Ihre Replikation befolgen soll. Die Liste enthält alle Ihre aktiven Snapshotpläne. <br />
 
-   Sie können nur einen einzigen Plan auswählen, selbst wenn Sie einen Mix aus stündlicher, täglicher und wöchentlicher Rechnungsstellung haben. Alle Snapshots, die seit dem vorherigen Replikationszyklus erfasst wurden, werden unabhängig von dem Zeitplan repliziert, von dem sie stammen.<br />Wenn Sie keine Screenshots eingerichtet haben, werden Sie dazu aufgefordert, damit Sie die Replikation bestellen können. Weitere Informationen finden Sie unter [Mit Snapshots arbeiten](snapshots.html).
+   Sie können nur einen einzigen Plan auswählen, selbst wenn Sie einen Mix aus stündlicher, täglicher und wöchentlicher Rechnungsstellung haben. Alle Snapshots, die seit dem vorherigen Replikationszyklus erfasst wurden, werden unabhängig von dem Zeitplan repliziert, von dem sie stammen.<br />Wenn Sie keine Screenshots eingerichtet haben, werden Sie dazu aufgefordert, damit Sie die Replikation bestellen können. Weitere Informationen finden Sie unter [Mit Snapshots arbeiten](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots).
    {:tip}
 3. Klicken Sie auf **Position** und wählen Sie das Rechenzentrum (Data Center) aus, das als Ihre Disaster Recovery-Site (DR-Site) fungiert.
 4. Klicken Sie auf **Weiter**.
@@ -155,7 +156,7 @@ Ihr primärer Snapshotbereich und Ihr Replikatbereich müssen identisch sein. We
 
 Die Datenträgergröße Ihres primären Speicherdatenträgers und Ihres Replikatspeicherdatenträgers muss übereinstimmen. Keiner der Datenträger darf größer als der andere sein. Wenn Sie Ihren Snapshotbereich für Ihren primären Datenträger vergrößern, wird der Replikatbereich automatisch vergrößert. Eine Erhöhung des Snapshotbereichs löst eine sofortige Replikationsaktualisierung aus. Die Vergrößerung beider Datenträger wird als Artikelpositionen auf Ihrer Rechnung aufgeführt und wie erforderlich anteilmäßig berechnet.
 
-Weitere Informationen zum Vergrößern des Snapschotbereichs finden Sie unter [Snapshots](snapshots.html).
+Weitere Informationen zum Vergrößern des Snapschotbereichs finden Sie unter [Snapshots](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots).
 ## Replikatdatenträger in der Datenträgerliste anzeigen
 
 Sie können Ihre Replikationsdatenträger auf der {{site.data.keyword.filestorage_short}}-Seite unter **Speicher** > **{{site.data.keyword.filestorage_short}}** anzeigen. Der Datenträgername ist der Name des primären Datenträgers, gefolgt von REP. Der **Typ** ist Endurance oder Performance – Replikat. Die **Zieladresse** ist 'n/v,' da der Replikatdatenträger nicht am Replikatrechenzentrum angehängt ist, und der **Status** ist 'Inaktiv'.
@@ -185,14 +186,14 @@ Duplikate können sowohl von primären Datenträgern als auch von Replikatdatent
 
 Auf Duplikatdatenträger kann ein Host für Lese-/Schreiboperationen zugreifen, sobald der Speicher bereitgestellt ist. Allerdings sind Snapshots und die Replikation erst zulässig, wenn das Erstellen der Datenkopie vom ursprünglichen Datenträger auf den Duplikatdatenträger abgeschlossen ist.
 
-Weitere Informationen finden Sie im Abschnitt [Duplikat eines Datenträgers erstellen](how-to-create-duplicate-volume.html).
+Weitere Informationen finden Sie im Abschnitt [Duplikat eines Datenträgers erstellen](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume).
 
 ## Verwenden von Replikaten für ein Failover bei einem Ausfall
 
 Wenn Sie einen Failover durchführen, 'schalten Sie um', und zwar von Ihrem Speicherdatenträger in Ihrem primären Rechenzentrum auf den Zieldatenträger in Ihrem fernen Rechenzentrum. Ihr primäres Rechenzentrum ist zum Beispiel London und Ihr sekundäres Rechenzentrum ist Amsterdam. Wenn ein Fehlerereignis auftritt, führen Sie ein Failover auf Amsterdam durch – dazu stellen Sie zu dem jetzigen primären Datenträger eine Verbindung von einer Compute-Instanz in Amsterdam her. Nachdem Ihr Datenträger in London repariert wurde, wird ein Snapshot des Datenträgers in Amsterdam erstellt, um die Rückübertragung auf den Datenträger in London und den nun wieder primären Datenträger von einer Compute-Instanz in London durchzuführen.
 
-* Wenn das Problem in der primäre Lokation auftritt, aber der Speicher und der Host noch online sind, finden Sie weitere Informationen unter [Failover mit einem zugänglichen Primärdatenträger](dr-accessible-primary.html).
-* Wenn die primäre Lokation inaktiv ist, lesen Sie die Informationen im Abschnitt [Failover mit einem nicht zugänglichen Primärdatenträger](disaster-recovery.html).
+* Wenn das Problem in der primäre Lokation auftritt, aber der Speicher und der Host noch online sind, finden Sie weitere Informationen unter [Failover mit einem zugänglichen Primärdatenträger](/docs/infrastructure/FileStorage?topic=FileStorage-dr-accessible).
+* Wenn die primäre Lokation inaktiv ist, lesen Sie die Informationen im Abschnitt [Failover mit einem nicht zugänglichen Primärdatenträger](/docs/infrastructure/FileStorage?topic=FileStorage-dr-inaccessible).
 
 ## Vorhandene Replikation stornieren
 
@@ -213,3 +214,68 @@ Wenn ein primärer Datenträger storniert wurde, werden der Replikationsplan und
  2. Klicken Sie auf **Aktionen** und wählen sie **Für {{site.data.keyword.filestorage_short}} stornieren**.
  3. Wählen Sie aus, wann der Datenträger abgebrochen werden soll. Wählen Sie **Sofort** oder **Rechnungsstichtag** aus und klicken Sie auf **Weiter**.
  4. Klicken Sie auf **Ich bin mir bewusst, dass es durch den Abbruch zu Datenverlust kommen kann** und klicken Sie auf **Abbrechen**.
+
+## SL-CLI-Befehle im Zusammenhang mit der Replikation
+{: #clicommands}
+
+* Geeignete Replikationsrechenzentren für einen bestimmten Datenträger auflisten. 
+  ```
+  # slcli file replica-locations --help
+  Syntax: slcli file replica-locations [OPTIONEN] DATENTRÄGER-ID
+
+  Optionen:
+  --sortby TEXT   Spalten für die Sortierung
+  --columns TEXT  Spalten für die Anzeige. Optionen: ID, langer Name, kurzer Name
+  -h, --help      Diese Nachricht anzeigen und Ausführung beenden.
+  ```
+
+* Dateispeicherreplikatdatenträger bestellen. 
+  ```
+  # slcli file replica-order --help
+  Syntax: slcli file replica-order [OPTIONEN] DATENTRÄGER-ID
+
+  Optionen:
+  -s, --snapshot-schedule [INTERVAL|HOURLY|DAILY|WEEKLY]
+                                  Snapshotplan für die Replikation,
+                                  (INTERVAL | HOURLY | DAILY | WEEKLY)
+                                  [erforderlich]
+  -l, --location TEXT             Kurzname des Rechenzentrums für den
+                                  Replikatdatenträger (z. B. dal09)  [erforderlich]
+  --tier [0.25|2|4|10]            Endurance-Speichertier (IOPS pro GB) des primären
+                                  Datenträgers, für den ein Replikatdatenträger
+                                  bestellt wird [optional]
+  -h, --help                      Diese Nachricht anzeigen und Ausführung beenden.
+  ```
+
+* Vorhandene Replikatdatenträger für einen Dateidatenträger auflisten. 
+  ```
+  # slcli file replica-partners --help
+  Syntax: slcli file replica-partners [OPTIONEN] DATENTRÄGER-ID
+
+  Optionen:
+  --sortby TEXT   Spalten für die Sortierung
+  --columns TEXT  Spalten für die Anzeige. Optionen: ID, Benutzername, Konto-ID,
+                  Kapazität (GB), Hardware-ID, Gastsystem-ID, Host-ID
+  -h, --help      Diese Nachricht anzeigen und Ausführung beenden.
+  ```
+
+* Failover eines Dateidatenträgers auf einen bestimmten Replikatdatenträger durchführen. 
+  ```
+  # slcli file replica-failover --help
+  Syntax: slcli file replica-failover [OPTIONEN] DATENTRÄGER-ID
+
+  Optionen:
+  --replicant-id TEXT  ID des Replikatdatenträgers
+  --immediate          Sofortige Funktionsübernahme durch den Replikatdatenträger.
+  -h, --help           Diese Nachricht anzeigen und Ausführung beenden.
+  ```
+
+* Failback eines Dateidatenträgers von einem bestimmten Replikatdatenträger durchführen. 
+  ```
+  # slcli file replica-failback --help
+  Syntax: slcli file replica-failback [OPTIONEN] DATENTRÄGER-ID
+
+  Optionen:
+  --replicant-id TEXT  ID des Replikatdatenträgers
+  -h, --help           Diese Nachricht anzeigen und Ausführung beenden.
+  ```

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
@@ -12,6 +12,7 @@ lastupdated: "2018-11-30"
 {:important: .important}
 
 # Plesk로 백업을 위한 {{site.data.keyword.filestorage_short}} 구성
+{: #PleskBackup}
 
 다음 지시사항을 사용하여 Plesk에서의 백업을 위해 {{site.data.keyword.filestorage_full}}를 구성할 수 있습니다. 여기서는 루트 또는 sudo SSH 및 전체 admin 레벨 Plesk 액세스가 사용 가능하다고 가정합니다. 이 예제는 CentOS7 호스트를 기반으로 합니다.
 
@@ -23,7 +24,7 @@ lastupdated: "2018-11-30"
 
    Plesk에는 백업 저장을 위한 두 가지 옵션이 있습니다. 하나는 Plesk 서버에 있는 스토리지인 내부 Plesk 스토리지입니다. 다른 하나는 웹 또는 로컬 네트워크의 외부 서버에 있는 스토리지인 외부 FTP 스토리지입니다. 일반적으로 Plesk 상자에서 내부 백업은 `/var/lib/psa/dumps`에 저장되며 `/tmp`를 임시 디렉토리로 사용합니다. 이 예에서도 임시 디렉토리는 로컬이 사용되지만, `dumps` 디렉토리는 {{site.data.keyword.filestorage_short}} 대상(`/backup/psa/dumps`)으로 이동되었습니다. FTP 사용자 인증 정보는 필수입니다.
    {:note}
-3. [Red Hat Enterprise Linux에서 {{site.data.keyword.filestorage_short}}에 액세스](accessing-file-storage-linux.html) 및 [CentOS에서 NFS/{{site.data.keyword.filestorage_short}} 마운트](mounting-nsf-file-storage.html) 또는 [CoreOS에서 NFS/{{site.data.keyword.filestorage_short}} 마운트](mounting-storage-coreos.html)에 설명되어 있는 바와 같이 {{site.data.keyword.filestorage_short}}를 구성하십시오. 볼륨을 `/backup`에 마운트하고 시작 시 마운트할 수 있도록 이를 파일 시스템 테이블(`/etc/fstab`)에서 구성하십시오. <br />
+3. [Red Hat Enterprise Linux에서 {{site.data.keyword.filestorage_short}}에 액세스](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux) 및 [CentOS에서 NFS/{{site.data.keyword.filestorage_short}} 마운트](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS) 또는 [CoreOS에서 NFS/{{site.data.keyword.filestorage_short}} 마운트](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCoreOS)에 설명되어 있는 바와 같이 {{site.data.keyword.filestorage_short}}를 구성하십시오. 볼륨을 `/backup`에 마운트하고 시작 시 마운트할 수 있도록 이를 파일 시스템 테이블(`/etc/fstab`)에서 구성하십시오. <br />
 
    기본적으로 NFS는 루트 권한으로 작성된 파일을 nobody 사용자로 다운그레이드합니다. 루트 클라이언트가 NFS 공유에서 루트 권한을 유지할 수 있도록 하려면 `no_root_squash`를 `/etc/exports`에 추가해야 합니다.
    {:tip}

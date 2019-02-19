@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
@@ -12,6 +12,7 @@ lastupdated: "2018-11-30"
 {:important: .important}
 
 # Plesk を使用してバックアップするための{{site.data.keyword.filestorage_short}}の構成
+{: #PleskBackup}
 
 これらの手順を使用することにより、Plesk でのバックアップ用に{{site.data.keyword.filestorage_full}}を構成することができます。 root を使用できるか、または sudo SSH で Plesk の管理者レベルのフル・アクセス権限を使用できる必要があります。 この例は、CentOS7 ホストに基づいています。
 
@@ -23,7 +24,7 @@ lastupdated: "2018-11-30"
 
    Plesk には、バックアップを保管するための 2 つのオプションがあります。 1 つは内部 Plesk ストレージであり、それは Plesk サーバー上にあるストレージです。 もう 1 つは外部 FTP ストレージであり、それは Web またはローカル・ネットワーク内のいずれかの外部サーバー上にあるストレージです。 Plesk のボックスでは一般的に、内部バックアップは `/var/lib/psa/dumps` に保管され、`/tmp` が一時ディレクトリーとして使用されます。 この例では、一時ディレクトリーはローカルに保持されますが、`dumps` ディレクトリーは {{site.data.keyword.filestorage_short}} ターゲット (`/backup/psa/dumps`) に移動します。 FTP ユーザー資格情報は必要ありません。
    {:note}
-3. [Red Hat Enterprise Linux での {{site.data.keyword.filestorage_short}} へのアクセス](accessing-file-storage-linux.html)および [CentOS での NFS/{{site.data.keyword.filestorage_short}} のマウント](mounting-nsf-file-storage.html)または [CoreOS での NFS/{{site.data.keyword.filestorage_short}} のマウント](mounting-storage-coreos.html)の説明に従って {{site.data.keyword.filestorage_short}} を構成します。 ボリュームを `/backup` にマウントし、始動時にマウントが有効になるようにファイル・システム・テーブル (`/etc/fstab`) で構成してください。 <br />
+3. [Red Hat Enterprise Linux での {{site.data.keyword.filestorage_short}} へのアクセス](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)および [CentOS での NFS/{{site.data.keyword.filestorage_short}} のマウント](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)または [CoreOS での NFS/{{site.data.keyword.filestorage_short}} のマウント](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCoreOS)の説明に従って {{site.data.keyword.filestorage_short}} を構成します。 ボリュームを `/backup` にマウントし、始動時にマウントが有効になるようにファイル・システム・テーブル (`/etc/fstab`) で構成してください。 <br />
 
    デフォルトでは、NFS は、root 権限で作成されたファイルを nobody ユーザーにダウングレードします。 root クライアントが NFS 共有に対する root 権限を保持できるように、`/etc/exports` に `no_root_squash` を追加する必要があります。
    {:tip}

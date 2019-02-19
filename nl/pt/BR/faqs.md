@@ -1,14 +1,19 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-12-11"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 {:faq: data-hd-content-type='faq'}
 
 # Perguntas mais frequentes
+{: #faqs}
 
 ## Como posso saber quais dos meus volumes do {{site.data.keyword.filestorage_short}} são criptografados?
 {: faq}
@@ -18,19 +23,19 @@ Veja a sua lista de {{site.data.keyword.filestorage_short}} no portal do cliente
 ## Se eu comprei um {{site.data.keyword.filestorage_short}} não criptografado em um data center que foi submetido a upgrade para criptografia, posso criptografar meu {{site.data.keyword.filestorage_short}}?
 {: faq}
 
-O {{site.data.keyword.filestorage_short}} que foi provisionado antes de um upgrade do data center não pode ser criptografado. O novo {{site.data.keyword.filestorage_short}} que foi fornecido em data centers com upgrade é criptografado automaticamente. Ele é automático, não uma configuração de fornecimento que pode ser selecionada ou deixada de fora. Os dados no armazenamento não criptografado podem ser criptografados criando um novo volume e, em seguida, copiando os dados para o novo volume criptografado com migração baseada em host. Para obter mais informações, consulte [Migrando o File Storage](migrate-file-storage-encrypted-file-storage.html).
+O {{site.data.keyword.filestorage_short}} que foi provisionado antes de um upgrade do data center não pode ser criptografado. O novo {{site.data.keyword.filestorage_short}} que foi fornecido em data centers com upgrade é criptografado automaticamente. Ele é automático, não uma configuração de fornecimento que pode ser selecionada ou deixada de fora. Os dados no armazenamento não criptografado podem ser criptografados criando um novo volume e, em seguida, copiando os dados para o novo volume criptografado com migração baseada em host. Para obter mais informações, consulte [Migrando o File Storage](/docs/infrastructure/FileStorage?topic=FileStorage-migratestorage).
 
 ## Como eu sei se estou provisionando o {{site.data.keyword.filestorage_short}} em um data center submetido a upgrade?
 {: faq}
 
 No formulário de pedido do {{site.data.keyword.filestorage_short}}, todos os data centers submetidos a upgrade são denotados com um asterisco (`*`). Durante o processo de pedido, você recebe uma indicação de que está provisionando armazenamento com criptografia. Quando o armazenamento é provisionado, é possível ver um ícone na lista de armazenamento que mostra esse volume como criptografado.
 
-Todos os volumes criptografados e os compartilhamentos de arquivo são provisionados somente em data centers submetidos a upgrade. É possível localizar uma lista completa de data centers submetidos a upgrade e recursos disponíveis [aqui](new-ibm-block-and-file-storage-location-and-features.html).
+Todos os volumes criptografados e os compartilhamentos de arquivo são provisionados somente em data centers submetidos a upgrade. É possível localizar uma lista completa de data centers submetidos a upgrade e recursos disponíveis [aqui](/docs/infrastructure/FileStorage?topic=FileStorage-news).
 
 ## Por que o {{site.data.keyword.filestorage_short}} com uma camada de 10 IOPS do Endurance é provisionado em alguns data centers e em outros não?
 {: faq}
 
-A camada de 10 IOPS/GB do tipo Endurance do {{site.data.keyword.filestorage_short}} está disponível somente em data centers selecionados e novos data centers serão incluídos em breve. É possível localizar uma lista completa de data centers submetidos a upgrade e recursos disponíveis [aqui](new-ibm-block-and-file-storage-location-and-features.html).
+A camada de 10 IOPS/GB do tipo Endurance do {{site.data.keyword.filestorage_short}} está disponível somente em data centers selecionados e novos data centers serão incluídos em breve. É possível localizar uma lista completa de data centers submetidos a upgrade e recursos disponíveis [aqui](/docs/infrastructure/FileStorage?topic=FileStorage-news).
 
 ## Como posso localizar o ponto de montagem correto para o meu {{site.data.keyword.filestorage_short}}?
 {: faq}
@@ -40,7 +45,7 @@ Todos os volumes criptografados do {{site.data.keyword.filestorage_short}} que s
 ## Quantos volumes posso provisionar?
 {: faq}
 
-Por padrão, é possível provisionar um total combinado de 250 volumes de armazenamento de arquivo e bloco. Para aumentar o limite, entre em contato com seu representante de vendas. Para obter mais informações, veja [Gerenciando limites de armazenamento](managing-storage-limits.html).
+Por padrão, é possível provisionar um total combinado de 250 volumes de armazenamento de arquivo e bloco. Para aumentar o limite, entre em contato com seu representante de vendas. Para obter mais informações, veja [Gerenciando limites de armazenamento](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits).
 
 ## Quantas instâncias podem compartilhar o uso de um volume fornecido do {{site.data.keyword.filestorage_short}}?
 {: faq}

@@ -1,12 +1,12 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-12-11"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
-{:pre: .pre}
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
@@ -15,6 +15,7 @@ lastupdated: "2018-12-11"
 
 
 # Suministro de {{site.data.keyword.filestorage_short}} con VMware
+{: #architectureguide}
 
 Los siguientes pasos le ayudan a realizar el pedido y configurar {{site.data.keyword.filestorage_full}} en un entorno de vSphere 5.5 y vSphere 6.0 en {{site.data.keyword.BluSoftlayer_full}}.
 
@@ -117,7 +118,7 @@ Es importante señalar que los entornos de VMware no son conscientes de las inst
 
 Restaurar el volumen de {{site.data.keyword.filestorage_short}} requiere apagar todas las máquinas virtuales del {{site.data.keyword.filestorage_short}}. El volumen se debe desmontar temporalmente de los hosts de ESXi para evitar la corrupción de datos durante el proceso.
 
-Para obtener más información, consulte el artículo sobre [instantáneas](snapshots.html).
+Para obtener más información, consulte el artículo sobre [instantáneas](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots).
 
 
 ### Utilización de la réplica
@@ -129,7 +130,7 @@ Con las réplicas, puede
 - Recuperarse rápidamente de fallos del sitio y otros desastres realizando la migración al volumen de destino
 - Realizar la migración tras error a un punto específico en el tiempo en la copia de recuperación tras desastre
 
-La réplica mantiene sus datos sincronizados entre dos ubicaciones distintas. Si desea clonar el volumen y utilizarlo independientemente del volumen original, consulte [Creación de un volumen de archivos duplicado](how-to-create-duplicate-volume.html).
+La réplica mantiene sus datos sincronizados entre dos ubicaciones distintas. Si desea clonar el volumen y utilizarlo independientemente del volumen original, consulte [Creación de un volumen de archivos duplicado](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume).
 {:tip}
 
 Antes de poder replicar, debe crear una planificación de instantáneas.
@@ -138,7 +139,7 @@ Cuando realiza la migración tras error, está “cambiando el interruptor” de
 
 Antes de que el volumen vuelva al centro de datos primario, debe dejar de ser utilizado en el sitio remoto. Se realiza una instantánea de cualquier información nueva o modificada y se replica al centro de datos primario antes de poder montarse de nuevo en los hosts de ESXi del sitio de producción.
 
-Para obtener más información sobre la configuración de réplicas, consulte [Réplica](replication.html).
+Para obtener más información sobre la configuración de réplicas, consulte [Réplica](/docs/infrastructure/FileStorage?topic=FileStorage-replication).
 
 Los datos no válidos, ya estén corruptos, pirateados o infectados, se replican de acuerdo con la planificación de instantáneas y la retención de instantáneas. El uso de la ventana de réplica más pequeña puede proporcionar un mejor objetivo de punto de recuperación, pero también puede reducir el tiempo de reacción a la réplica de datos no válidos.
 {:note}
@@ -148,7 +149,7 @@ Los datos no válidos, ya estén corruptos, pirateados o infectados, se replican
 
 Utilice la [Arquitectura avanzada de referencia de VMware de un solo sitio ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} para establecer {{site.data.keyword.filestorage_short}} con opciones de Resistencia o Rendimiento en el entorno de VMware.
 
-{{site.data.keyword.filestorage_short}} se puede solicitar a través del [catálogo de IBM ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://{DomainName}/catalog/){:new_window} o del [{{site.data.keyword.slportal}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){:new_window}. Para obtener más información, consulte [Solicitud de {{site.data.keyword.filestorage_short}}](provisioning-file-storage.html)
+{{site.data.keyword.filestorage_short}} se puede solicitar a través del [catálogo de IBM ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://{DomainName}/catalog/){:new_window} o del [{{site.data.keyword.slportal}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){:new_window}. Para obtener más información, consulte [Solicitud de {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)
 
 El almacenamiento se suministra en menos de un minuto y pasa a estar visible en la página de **{{site.data.keyword.filestorage_short}}** del [{{site.data.keyword.slportal}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){:new_window}.
 
@@ -378,5 +379,5 @@ Los siguientes ejemplos utilizan la CLI para definir los parámetros de configur
     #esxcfg-advcfg -g /Disk/QFullSampleSize
     #esxcfg-advcfg -g /Disk/QFullThreshold
     ```
-Obtenga más información sobre la Arquitectura avanzada de referencia de VMware de un solo sitio [aquí](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}.
+Obtenga más información sobre la Arquitectura avanzada de referencia de VMware de un solo sitio [aquí](/docs/infrastructure/virtualization?topic=Virtualization-advanced-single-site-vmware-reference-architecture){:new_window}.
 {:tip}

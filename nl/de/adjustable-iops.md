@@ -1,13 +1,18 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-13"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 
 # IOPS anpassen
+{: #adjustingIOPS}
 
 Mit dieser neuen Funktion können {{site.data.keyword.filestorage_full}}-Speicherbenutzer die E/A-Operationen pro Sekunde (IOPS) ihrer vorhandenen {{site.data.keyword.filestorage_short}}-Instanz sofort anpassen. Sie müssen kein Duplikat erstellen oder Daten manuell in den neuen Speicher kopieren. Während der Anpassungsoperation tritt für den Benutzer kein Ausfall oder ein Verlust des Zugriffs auf den Speicher auf.
 
@@ -20,7 +25,7 @@ Die Abrechnung für den Speicher wird aktualisiert, um die anteilmäßige Differ
 
 ## Beschränkungen
 
-Diese Funktion ist nur in [ausgewählten Rechenzentren](new-ibm-block-and-file-storage-location-and-features.html) verfügbar.
+Diese Funktion ist nur in [ausgewählten Rechenzentren](/docs/infrastructure/BlockStorage?topic=BlockStorage-news) verfügbar.
 
 Clients können nicht zwischen Endurance und Performance umschalten, wenn sie ihre IOPS-Kapazität anpassen. Benutzer können eine neue IOPS-Stufe oder IOPS-Ebene für ihren Speicher unter den folgenden Kriterien und Einschränkungen angeben.
 
@@ -33,6 +38,7 @@ Clients können nicht zwischen Endurance und Performance umschalten, wenn sie ih
 Wenn für den Datenträger eine Replikation eingerichtet ist, wird das Replikat automatisch mit der IOPS-Auswahl des primären Datenträgers aktualisiert.
 
 ## IOPS in Ihrem Speicher anpassen
+{: #steps}
 
 1. Rufen Sie Ihre {{site.data.keyword.filestorage_short}}-Liste auf.
     - Klicken Sie im Kundenportal auf **Speicher** > **{{site.data.keyword.filestorage_short}}** ODER
@@ -44,3 +50,41 @@ Wenn für den Datenträger eine Replikation eingerichtet ist, wird das Replikat 
 4. Prüfen Sie Ihre Auswahl und die neue Preisgestaltung.
 5. Klicken Sie auf das Kontrollkästchen **Ich habe die Rahmenvereinbarung gelesen** und klicken Sie auf **Auftrag erteilen**.
 6. Ihre neue Speicherzuordnung steht nach wenigen Minuten zur Verfügung.
+
+Alternativ dazu können Sie die IOPS über die SL-CLI aktualisieren. 
+```
+# slcli file volume-modify --help
+Syntax: slcli file volume-modify [OPTIONEN] DATENTRÄGER-ID
+
+Optionen:
+  -c, --new-size INTEGER        Neue Größe des Dateidatenträgers in GB.
+                                ***Wird keine Größe angegeben, wird die ursprüngliche
+                                Größe des Datenträgers verwendet.***
+                                Mögliche Größen: [20, 40, 80, 100,
+                                250, 500, 1000, 2000, 4000, 8000, 12000]
+                                Minimum: [ursprüngliche Größe des Datenträgers]
+  -i, --new-iops INTEGER        Performance-Speicher-IOPS, zwischen 100 und 6000
+                                in Vielfachen von 100 [nur für Performance-
+                                Datenträger] ***Wird kein IOPS-Wert angegeben,
+                                wird der ursprüngliche IOPS-Wert des Datenträgers
+                                verwendet.***
+                                Voraussetzungen: [Wenn der ursprüngliche IOPS/GB-
+                                Wert für den Datenträger geringer als 0,3 ist, muss
+                                der neue IOPS/GB-Wert ebenfalls geringer als 0,3 sein.
+                                Wenn der ursprüngliche IOPS/GB-Wert für den
+                                Datenträger größer-gleich 0,3 ist, muss der neue
+                                IOPS/GB-Wert für den Datenträger ebenfalls
+                                größer-gleich 0,3 sein.]
+  -t, --new-tier [0.25|2|4|10]  Endurance-Speichertier (IOPS pro GB) [nur
+                                für Endurance-Datenträger] ***Wird kein Tier
+                                angegeben, wird das ursprüngliche Tier des
+                                Datenträgers verwendet.***
+                                Voraussetzungen: [Wenn der ursprüngliche IOPS/GB-
+                                Wert für den Datenträger 0,25 ist, muss der neue
+                                IOPS/GB-Wert für Datenträger ebenfalls 0,25 sein.
+                                Wenn der ursprüngliche IOPS/GB-Wert für den
+                                Datenträger größer als 0,25 ist, muss der neue
+                                IOPS/GB-Wert für den Datenträger ebenfalls
+                                größer als 0,25 sein.]
+  -h, --help                    Diese Nachricht anzeigen und Ausführung beenden.
+```

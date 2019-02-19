@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
@@ -12,11 +12,28 @@ lastupdated: "2018-11-30"
 {:important: .important}
 
 # Linux への {{site.data.keyword.filestorage_short}} のマウント
+{: #mountingLinux}
 
 まず、{{site.data.keyword.filestorage_full}} ボリュームにアクセスするホストに、[{{site.data.keyword.slportal}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://control.softlayer.com/){:new_window} で許可を与えてください。
 
 1. {{site.data.keyword.filestorage_short}}のリスト・ページで、新しい共有に関連付けられている**「アクション」**リンクをクリックし、**「ホストの許可」**をクリックします。
 2. リストからホストを選択し、**「送信」**をクリックします。 このアクションにより、共有へのアクセスがホストに許可されます。
+
+代わりの方法として、SLCLI でホストに許可を与えることもできます。
+```
+# slcli file access-authorize --help
+Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
+
+Options:
+  -h, --hardware-id TEXT    The id of one SoftLayer_Hardware to authorize
+  -v, --virtual-id TEXT     The id of one SoftLayer_Virtual_Guest to authorize
+  -i, --ip-address-id TEXT  The id of one SoftLayer_Network_Subnet_IpAddress
+                            to authorize
+  --ip-address TEXT         An IP address to authorize
+  -s, --subnet-id TEXT      The id of one SoftLayer_Network_Subnet to
+                            authorize
+  --help                    Show this message and exit.
+```
 
 ## {{site.data.keyword.filestorage_short}}の共有のマウント
 
@@ -61,7 +78,7 @@ Linux ベースの {{site.data.keyword.BluSoftlayer_full}} コンピューティ
    -rw-r--r-- 1 nobody nobody 0 Sep 8 15:52 test
    ```
 
-   root を使用して作成したファイルの所有権は `nobody:nobody` になります。 所有権を正しく表示するには、`idmapd.conf` を正しいドメイン設定に更新する必要があります。 『[NFS 用の no_root_squash の実装方法](#implementing-no_root_squash-for-nfs-optional-)』セクションを参照してください。
+   root を使用して作成したファイルの所有権は `nobody:nobody` になります。 所有権を正しく表示するには、`idmapd.conf` を正しいドメイン設定に更新する必要があります。 『[NFS 用の no_root_squash の実装方法](#norootsquash)』セクションを参照してください。
    {:tip}
 
 5. 始動時にリモート共有をマウントします。 セットアップを完了するには、ファイル・システム・テーブル (`/etc/fstab`) を編集して、始動時に自動的にマウントされるエントリーのリストにリモート共有を追加します。
@@ -90,6 +107,7 @@ Linux ベースの {{site.data.keyword.BluSoftlayer_full}} コンピューティ
 
 
 ## NFS 用の `no_root_squash` の実装 (オプション)
+{: #norootsquash}
 
 `no_root_squash` を構成すると、root クライアントが NFS 共有に対する root 権限を保持できます。
 - NFSv3 の場合は、クライアントが何もしなくても、`no_root_squash` は正常に機能します。

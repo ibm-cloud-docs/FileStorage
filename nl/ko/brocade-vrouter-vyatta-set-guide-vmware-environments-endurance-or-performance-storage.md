@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
@@ -14,8 +15,9 @@ lastupdated: "2018-11-30"
 
 
 # {{site.data.keyword.filestorage_short}}를 사용하는 VMware 환경에 대한 Brocade vRouter(Vyatta) 설정
+{: #configureVyatta}
 
-{{site.data.keyword.filestorage_full}}를 사용하는 VMware 환경 내에서 고가용성(HA) 구성을 위해 Brocade vRouter(Vyatta) 어플라이언스를 구성할 수 있습니다. 다음 정보를 [고급 단일 사이트 VMware 참조 아키텍처](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}와 함께 사용하면 VMware 환경에서 이러한 스토리지 옵션 중 하나를 설정할 수 있습니다.
+{{site.data.keyword.filestorage_full}}를 사용하는 VMware 환경 내에서 고가용성(HA) 구성을 위해 Brocade vRouter(Vyatta) 어플라이언스를 구성할 수 있습니다. 다음 정보를 [고급 단일 사이트 VMware 참조 아키텍처](/docs/infrastructure/virtualization?topic=Virtualization-advanced-single-site-vmware-reference-architecture){:new_window}와 함께 사용하면 VMware 환경에서 이러한 스토리지 옵션 중 하나를 설정할 수 있습니다.
 
 Brocade vRouter(Vyatta) 게이트웨이는 사용자 환경의 게이트웨이 및 라우터 역할을 수행하며 서브넷으로 구성된 구역을 포함합니다. 구역 간에 서로 통신할 수 있도록 방화벽 규칙이 설정됩니다. 다른 구역과 통신할 필요가 없는 구역의 경우에는 방화벽 규칙이 필요하지 않습니다.
 
@@ -319,9 +321,9 @@ commit
 save
 ```
 
-### HA 쌍의 다른 Brocade vRouter(Vyatta)와 동기화
+### HA 이중화의 다른 Brocade vRouter(Vyatta)와 동기화
 
-HA 쌍 중 한 Brocade vRouter(Vyatta)의 설정을 완료했으며, 이제 변경사항을 다른 게이트웨이 디바이스와 동기화해야 합니다.
+HA 이중화 중 한 Brocade vRouter(Vyatta)의 설정을 완료했으며, 이제 변경사항을 다른 게이트웨이 디바이스와 동기화해야 합니다.
 
 구성 모드에서 다음 명령을 사용하십시오.
 ```

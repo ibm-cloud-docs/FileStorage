@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
@@ -12,11 +12,28 @@ lastupdated: "2018-11-30"
 {:important: .important}
 
 # Montage de {{site.data.keyword.filestorage_short}} sur Linux
+{: #mountingLinux}
 
 Commencez par vérifier que l'hôte qui doit accéder au volume {{site.data.keyword.filestorage_full}} dispose des droits d'accès nécessaires via le portail [{{site.data.keyword.slportal}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://control.softlayer.com/){:new_window}.
 
 1. Sur la page de la liste de {{site.data.keyword.filestorage_short}}, cliquez sur le lien **Actions** associée au nouveau partage, puis cliquez sur **Hôte autorisé**.
 2. Sélectionnez le ou les hôtes dans la liste, puis cliquez sur **Soumettre**. L'hôte est ainsi autorisé à accéder au partage.
+
+Vous pouvez également autoriser les hôtes via l'interface SLCLI.
+```
+# slcli file access-authorize --help
+Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
+
+Options:
+  -h, --hardware-id TEXT    The id of one SoftLayer_Hardware to authorize
+  -v, --virtual-id TEXT     The id of one SoftLayer_Virtual_Guest to authorize
+  -i, --ip-address-id TEXT  The id of one SoftLayer_Network_Subnet_IpAddress
+                            to authorize
+  --ip-address TEXT         An IP address to authorize
+  -s, --subnet-id TEXT      The id of one SoftLayer_Network_Subnet to
+                            authorize
+  --help                    Show this message and exit.
+```
 
 ## Montage du partage {{site.data.keyword.filestorage_short}}
 
@@ -61,7 +78,7 @@ Le point de montage de l'instance File Storage peut être obtenu sur la page de 
    -rw-r--r-- 1 nobody nobody 0 Sep 8 15:52 test
    ```
 
-   Les fichiers créés par le superutilisateur ont pour propriété `nobody:nobody`. Pour afficher correctement la propriété, vous devez mettre à jour `idmapd.conf` avec les paramètres de domaine corrects. Voir la section [Implémentation de no_root_squash pour NFS](#implementing-no_root_squash-for-nfs-optional-).
+   Les fichiers créés par le superutilisateur ont pour propriété `nobody:nobody`. Pour afficher correctement la propriété, vous devez mettre à jour `idmapd.conf` avec les paramètres de domaine corrects. Voir la section [Implémentation de no_root_squash pour NFS](#norootsquash).
    {:tip}
 
 5. Montez le partage distant au démarrage. Pour terminer la configuration, éditez la table des systèmes de fichiers (`/etc/fstab`) et ajoutez le partage distant dans la liste des entrées qui sont automatiquement montées au démarrage :
@@ -90,6 +107,7 @@ Le point de montage de l'instance File Storage peut être obtenu sur la page de 
 
 
 ## Implémentation de `no_root_squash` pour NFS (facultatif)
+{: #norootsquash}
 
 La configuration de `no_root_squash` permet aux clients root de conserver les droits root sur le partage NFS.
 - Pour NFSv3, aucune action n'est nécessaire de la part des clients ; `no_root_squash` fonctionne.

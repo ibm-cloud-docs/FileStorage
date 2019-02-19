@@ -1,26 +1,28 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 # Migrating {{site.data.keyword.filestorage_short}} to enhanced {{site.data.keyword.filestorage_short}}
+{: #migratestorage}
 
-Enhanced {{site.data.keyword.filestorage_full}} is now available in select data centers. To see the list of upgraded data centers and available features such as adjustable IOPS rates and expandable volumes, click [here](new-ibm-block-and-file-storage-location-and-features.html). For more information about provider-managed encryption, see [{{site.data.keyword.filestorage_short}} Encryption-At-Rest](block-file-storage-encryption-rest.html).
+Enhanced {{site.data.keyword.filestorage_full}} is now available in select data centers. To see the list of upgraded data centers and available features such as adjustable IOPS rates and expandable volumes, click [here](/docs/infrastructure/FileStorage?topic=FileStorage-news). For more information about provider-managed encryption, see [{{site.data.keyword.filestorage_short}} Encryption-At-Rest](/docs/infrastructure/FileStorage?topic=FileStorage-encryption).
 
 The preferred migration path is to connect to both volumes simultaneously and transfer data directly from one LUN to another. The specifics depend on your operating system and whether the data is expected to change during the copy operation.
 
 The assumption is that you already have your non-encrypted LUN attached to your host. If not, follow the directions that fit your operating system the best to accomplish this task.
 
-- [Mounting {{site.data.keyword.filestorage_short}} on Linux](accessing-file-storage-linux.html)
-- [Mounting {{site.data.keyword.filestorage_short}} in CentOS](mounting-nsf-file-storage.html)
-- [Mounting {{site.data.keyword.filestorage_short}} on CoreOS](mounting-storage-coreos.html)
+- [Mounting {{site.data.keyword.filestorage_short}} on Linux](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)
+- [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)
+- [Mounting {{site.data.keyword.filestorage_short}} on CoreOS](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCoreOS)
 
 All enhanced {{site.data.keyword.filestorage_short}} volumes that are provisioned in these data centers have a different mount point than non-encrypted volumes. To ensure you're using the correct mount point for both storage volumes, you can view the mount point information in the **Volume Details** page in the console. You can also access the correct mount point through an API call: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 {:tip}
@@ -33,8 +35,8 @@ When you place an order with API, specify the "Storage as a Service" package to 
 
 You can order an enhanced LUN through the {{site.data.keyword.BluSoftlayer_full}} catalog and the {{site.data.keyword.slportal}}. Your new volume must be of the same size or greater than the original fileshare to facilitate the migration.
 
-- [Ordering {{site.data.keyword.filestorage_short}} with pre-defined IOPS Tiers (Endurance)](provisioning-file-storage.html#ordering-file-storage-with-pre-defined-iops-tiers-endurance-)
-- [Ordering {{site.data.keyword.filestorage_short}} with custom IOPS (Performance)](provisioning-file-storage.html#ordering-file-storage-with-custom-iops-performance-)
+- [Ordering {{site.data.keyword.filestorage_short}} with pre-defined IOPS Tiers (Endurance)](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#endurance)
+- [Ordering {{site.data.keyword.filestorage_short}} with custom IOPS (Performance)](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#performance)
 
 Your new storage is available to mount in a few minutes. You can view it in the Resource List and in the {{site.data.keyword.blockstorageshort}} list.
 

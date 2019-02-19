@@ -2,19 +2,21 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-01-07"
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
-# Commande de {{site.data.keyword.filestorage_short}} via l'interface de ligne de commande SL
+# Commande de {{site.data.keyword.filestorage_short}} via l'interface SLCLI
+{: #orderingSLCLI}
 
-Vous pouvez utiliser l'interface de ligne de commande SL pour commander des produits qui se commandent normalement via le portail [{{site.data.keyword.slportal}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://control.softlayer.com/){:new_window}. Dans l'API SL, une commande peut se composer de plusieurs conteneurs de commandes. L'interface de ligne de commande pour les commandes fonctionne avec un seul conteneur de commandes.
+Vous pouvez utiliser l'interface SLCLI pour commander des produits qui se commandent normalement via le portail [{{site.data.keyword.slportal}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://control.softlayer.com/){:new_window}. Dans l'API SL, une commande peut se composer de plusieurs conteneurs de commandes. L'interface de ligne de commande pour les commandes fonctionne avec un seul conteneur de commandes.
 
-Pour plus d'informations sur la manière d'installer et d'utiliser l'interface de ligne de commande SL, voir [Client API Python](https://softlayer-python.readthedocs.io/en/latest/cli.html){:new_window}.
+Pour plus d'informations sur l'installation et l'utilisation de l'interface SLCLI, voir [Client API Python ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://softlayer-python.readthedocs.io/en/latest/cli.html){:new_window}.
 {:tip}
 
 ## Recherche des offres {{site.data.keyword.filestorage_short}} disponibles
@@ -83,14 +85,14 @@ Options:
   -h, --help                      Show this message and exit.
 ```
 
-Pour plus d'informations sur les commandes {{site.data.keyword.filestorage_short}} via l'API, voir [order_file_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/file.html#SoftLayer.managers.file.FileStorageManager.order_file_volume){:new_window}.
+Pour plus d'informations sur les commandes {{site.data.keyword.filestorage_short}} via l'API, voir [order_file_volume ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://softlayer-python.readthedocs.io/en/latest/api/managers/file.html#SoftLayer.managers.file.FileStorageManager.order_file_volume){:new_window}.
 Pour pouvoir accéder à toutes les nouvelles fonctions, commandez `Storage-as-a-Service Package 759`.
 {:tip}
 
 
 ## Passation de la commande
 
-L'exemple suivant montre comment commander un volume {{site.data.keyword.filestorage_short}} de 10 Go avec 100 E-S/s par Go.
+L'exemple suivant montre comment commander un volume {{site.data.keyword.filestorage_short}} de 10 Go avec 100 IOPS par Go.
 
 ```
 # slcli file volume-order --storage-type performance --size 20 --location dal10 --iops 100
@@ -101,7 +103,7 @@ Order #32076317 placed successfully!
 > 100 IOPS
 ```
 
-Par défaut, vous pouvez mettre à disposition un total combiné de 250 volumes {{site.data.keyword.blockstorageshort}} et {{site.data.keyword.filestorage_short}}. Pour augmenter le nombre de vos volumes, contactez votre commercial. Pour plus d'informations sur l'augmentation des limites, voir [Gestion des limites de stockage](managing-storage-limits.html).
+Par défaut, vous pouvez mettre à disposition un total combiné de 250 volumes {{site.data.keyword.blockstorageshort}} et {{site.data.keyword.filestorage_short}}. Pour augmenter le nombre de vos volumes, contactez votre commercial. Pour plus d'informations sur l'augmentation des limites, voir [Gestion des limites de stockage](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits).
 {:important}
 
 ## Autorisation des hôtes pour l'accès au nouveau stockage
@@ -123,18 +125,18 @@ Options:
   --help                    Show this message and exit.
 ```
 
-Pour plus d'informations sur l'autorisation des hôtes à accéder à {{site.data.keyword.filestorage_short}} via l'API, voir [authorize_host_to_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/file.html#SoftLayer.managers.file.FileStorageManager.authorize_host_to_volume){:new_window}.
+Pour en savoir plus sur la manière dont vous pouvez autoriser les hôtes à accéder à {{site.data.keyword.filestorage_short}} via l'API, consultez [authorize_host_to_volume ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://softlayer-python.readthedocs.io/en/latest/api/managers/file.html#SoftLayer.managers.file.FileStorageManager.authorize_host_to_volume){:new_window}.
 {:tip}
 
-Pour plus d'informations sur la limite des autorisations simultanées, voir, voir la [Foire aux questions](faqs.html).
+Pour plus d'informations sur la limite des autorisations simultanées, voir, voir la [Foire aux questions](/docs/infrastructure/FileStorage?topic=FileStorage-faqs).
 {:important}
 
 ## Connexion de votre nouveau stockage
 
 Suivez le lien approprié en fonction du système d'exploitation de votre hôte.
-- [Montage de {{site.data.keyword.filestorage_short}} sur Linux](accessing-file-storage-linux.html)
-- [Montage de {{site.data.keyword.filestorage_short}} dans CentOS](mounting-nsf-file-storage.html)
-- [Montage de {{site.data.keyword.filestorage_short}} sur Container Linux](mounting-storage-coreos.html)
-- [Configuring {{site.data.keyword.filestorage_short}} en vue de la sauvegarde avec cPanel](configure-backup-cpanel.html)
-- [Configuring {{site.data.keyword.filestorage_short}} en vue de la sauvegarde avec Plesk](configure-backup-plesk.html)
-- [Montage de volume {{site.data.keyword.filestorage_short}} sur des hôtes ESXi](architecture-guide-file-storage-vmware.html)
+- [Montage de {{site.data.keyword.filestorage_short}} sur Linux](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)
+- [Montage de {{site.data.keyword.filestorage_short}} dans CentOS](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)
+- [Montage de {{site.data.keyword.filestorage_short}} sur Container Linux](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCoreOS)
+- [Configuration de {{site.data.keyword.filestorage_short}} en vue de la sauvegarde avec cPanel](/docs/infrastructure/FileStorage?topic=FileStorage-cPanelBackups)
+- [Configuration de {{site.data.keyword.filestorage_short}} en vue de la sauvegarde avec Plesk](/docs/infrastructure/FileStorage?topic=FileStorage-PleskBackup)
+- [Montage de volume {{site.data.keyword.filestorage_short}} sur des hôtes ESXi](/docs/infrastructure/FileStorage?topic=FileStorage-architectureguide)

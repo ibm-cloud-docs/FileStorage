@@ -1,22 +1,27 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-12-11"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
- {:tip: .tip}
- {:note: .note}
- {:important: .important}
+{:pre: .pre}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 
-# Novos locais e recursos do {{site.data.keyword.filestorage_short}}
+# Novos Locais e Recursos
+{: #news}
 
 O {{site.data.keyword.BluSoftlayer_full}} está introduzindo uma nova versão do
 {{site.data.keyword.filestorage_full}}. O novo armazenamento está disponível em data centers selecionados é suportado pelo armazenamento flash a níveis de IOPS mais altos com criptografia para dados em repouso no nível de disco. Todo o armazenamento pedido nos data centers selecionados são criados automaticamente com a nova versão do {{site.data.keyword.filestorage_short}}.
 
 O ponto de montagem NFS para novos volumes foi mudado. Consulte a seção [Novo ponto de montagem para volumes aprimorados do {{site.data.keyword.filestorage_short}}](#new-mount-point-for-enhanced-file-storage-volumes) para obter detalhes.
 {:important}
+
+## Novos Locais
+{: #new-locations}
 
 O novo {{site.data.keyword.filestorage_short}} está disponível nas regiões e nos data centers a seguir com mais disponibilidade de data center incluída posteriormente.
 
@@ -81,17 +86,18 @@ O novo {{site.data.keyword.filestorage_short}} está disponível nas regiões e 
 
 *A Tabela 1 mostra nossa Disponibilidade do Data center. Cada região possui sua própria coluna. Algumas cidades, como Dallas, São José, Washington DC, Amsterdã, Frankfurt, Londres e Sydney, têm múltiplos data centers.*
 
-O novo armazenamento tem os seguintes recursos e capacidades:
+## Novos recursos e capacidades
+{: #features}
 
-- [Criptografia gerenciada por provedor para dados em repouso](block-file-storage-encryption-rest.html). <br/> Todos os volumes {{site.data.keyword.filestorage_short}} são provisionados automaticamente como criptografados sem encargo adicional.
+- [Criptografia gerenciada por provedor para dados em repouso](/docs/infrastructure/FileStorage?topic=FileStorage-encryption). <br/> Todos os volumes {{site.data.keyword.filestorage_short}} são provisionados automaticamente como criptografados sem encargo adicional.
 - 10 IOPS por opção de camada GB. <br/> Uma nova camada foi incluída no {{site.data.keyword.filestorage_short}} de tipo Endurance para suportar as cargas de trabalho de maior demanda.
 - Armazenamento suportado todo em flash. <br/> O {{site.data.keyword.filestorage_short}} que é provisionado com as opções Endurance ou Performance em 2 IOPS por GB ou superior é suportado por armazenamento totalmente em flash.
 - Suporte de Captura instantânea e Replicação.
 - Opção de faturamento por hora incluído para armazenamento que é planejado para ser usado por menos de um mês integral.
 - Até 48.000 IOPS para o {{site.data.keyword.filestorage_short}} provisionado com o tipo Performance.
-- As taxas de IOPS são ajustáveis para melhorar o desempenho de mudanças sazonais de carga. Leia mais sobre esse recurso [aqui](adjustable-iops.html).
-- Crie um clone de seus dados com o [recurso de Duplicação de volume do {{site.data.keyword.filestorage_short}}](how-to-create-duplicate-volume.html).
-- O armazenamento é expansível em incrementos de GB até 12 TB imediatamente, sem a necessidade de criar uma duplicata ou de mover manualmente os dados para um volume maior. Leia mais sobre esse recurso [aqui](expandable_file_storage.html).
+- As taxas de IOPS são ajustáveis para melhorar o desempenho de mudanças sazonais de carga. Leia mais sobre esse recurso [aqui](/docs/infrastructure/FileStorage?topic=FileStorage-adjustingIOPS).
+- Crie um clone de seus dados com o [Recurso de duplicação de volume do {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume).
+- O armazenamento é expansível em incrementos de GB até 12 TB imediatamente, sem a necessidade de criar uma duplicata ou de mover manualmente os dados para um volume maior. Leia mais sobre esse recurso [aqui](/docs/infrastructure/FileStorage?topic=FileStorage-expandCapacity).
 
 ## Novo ponto de montagem para volumes aprimorados do {{site.data.keyword.filestorage_short}}
 

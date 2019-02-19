@@ -1,16 +1,18 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-13"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 # Istantanee
+{: #snapshots}
 
 Le istantanee sono una funzione di {{site.data.keyword.filestorage_full}}. Un'istantanea rappresenta il contenuto di un volume a uno specifico punto temporale. Con le istantanee, puoi proteggere i tuoi dati senza alcuna ripercussione sulle prestazioni e un utilizzo minimo di spazio. Le istantanee sono considerate la tua prima linea di difesa per la protezione dei dati. Se un utente accidentalmente modifica o elimina dati cruciali da un volume, è possibile ripristinarli in modo facile e veloce da una copia di istantanea.
 
@@ -28,7 +30,7 @@ Con le istantanee, puoi:
 - Creare, in un modo che non interrompe le operazioni, dei punti di ripristino a un punto temporale.
 - Ripristinare i volumi a punti temporali precedenti
 
-Devi acquistare dello spazio per le istantanee per il tuo volume in modo da poterne acquisire delle istantanee. Lo spazio per le istantanee può essere aggiunto durante l'ordine iniziale o successivamente tramite la pagina **Volume Details**. Le istantanee pianificate e manuali condividono lo spazio per le istantanee; assicurati quindi di ordinare spazio per le istantanee a sufficienza.  Per ulteriori informazioni, vedi [Ordinazione di istantanee](ordering-snapshots.html).
+Devi acquistare dello spazio per le istantanee per il tuo volume in modo da poterne acquisire delle istantanee. Lo spazio per le istantanee può essere aggiunto durante l'ordine iniziale o successivamente tramite la pagina **Volume Details**. Le istantanee pianificate e manuali condividono lo spazio per le istantanee; assicurati quindi di ordinare spazio per le istantanee a sufficienza. Vedi l'articolo [Ordinazione di istantanee](/docs/infrastructure/FileStorage?topic=FileStorage-ordering-snapshots) per ulteriori dettagli e istruzioni.
 
 ## Prassi ottimali per le istantanee
 
@@ -45,7 +47,7 @@ Le istantanee non sono sostituzioni della replica di ripristino di emergenza (DR
 
 ## Sicurezza
 
-Per impostazione predefinita, vengono crittografate anche tutte le istantanee e le repliche di {{site.data.keyword.filestorage_short}}. Questa funzione non può essere disattivata in base ai singoli volumi. Per ulteriori informazioni sulla crittografia dei dati inattivi gestita dal provider, consulta [Come rendere sicuri i tuoi dati](block-file-storage-encryption-rest.html).
+Per impostazione predefinita, vengono crittografate anche tutte le istantanee e le repliche di {{site.data.keyword.filestorage_short}}. Questa funzione non può essere disattivata in base ai singoli volumi. Per ulteriori informazioni sulla crittografia dei dati inattivi gestita dal provider, consulta [Come rendere sicuri i tuoi dati](/docs/infrastructure/FileStorage?topic=FileStorage-encryption).
 
 ## In che modo le istantanee influenzano lo spazio su disco
 
@@ -74,4 +76,4 @@ Nel file system attivo, i blocchi modificati vengono riscritti in ubicazioni dif
       </tr>
 </table>
 
-Per ulteriori informazioni sull'utilizzo dello spazio dell'istantanea, consulta [Gestione delle istantanee](working-with-snapshots.html).
+Per ulteriori informazioni sull'utilizzo dello spazio dell'istantanea, consulta [Gestione delle istantanee](/docs/infrastructure/FileStorage?topic=FileStorage-managingSnapshots).

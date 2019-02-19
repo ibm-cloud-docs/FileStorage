@@ -1,17 +1,19 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 
 # {{site.data.keyword.filestorage_short}}の管理
+{: #managingstorage}
 
 {{site.data.keyword.filestorage_full}}のボリュームは、{{site.data.keyword.slportal}}で管理できます。
 
@@ -26,13 +28,41 @@ lastupdated: "2018-11-30"
 2. ページの**「許可ホスト」**セクションまでスクロールします。
 3. 右にある**「ホストの許可」**をクリックします。 特定のボリュームにアクセスできるホストを選択します。
 
+代わりの方法として、SL CLI で以下のコマンドを使用することができます。
+```
+# slcli file access-authorize --help
+Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
+
+Options:
+  -h, --hardware-id TEXT    The id of one SoftLayer_Hardware to authorize
+  -v, --virtual-id TEXT     The id of one SoftLayer_Virtual_Guest to authorize
+  -i, --ip-address-id TEXT  The id of one SoftLayer_Network_Subnet_IpAddress
+                            to authorize
+  --ip-address TEXT         An IP address to authorize
+  -s, --subnet-id TEXT      The id of one SoftLayer_Network_Subnet to
+                            authorize
+  --help                    Show this message and exit.
+```
 
 ## {{site.data.keyword.filestorage_short}} ボリュームへのアクセスを許可されたホストのリストを表示する
 
 1. **「ストレージ」>「{{site.data.keyword.filestorage_short}}」**とクリックして、使用する**「ボリューム名」**をクリックします。
 2. ページを**「許可ホスト」**セクションまでスクロールダウンします。
 
-ここには、ボリュームへのアクセスが現在許可されているホストのリストが表示されます。
+そこには、ボリュームへのアクセスが現在許可されているホストのリストが表示されます。
+
+代わりの方法として、SL CLI で以下のコマンドを使用することができます。
+```
+# slcli file access-list --help
+Usage: slcli file access-list [OPTIONS] VOLUME_ID
+
+Options:
+ --sortby TEXT   Column to sort by
+ --columns TEXT  Columns to display. Options: id, name, type,
+                 private_ip_address, source_subnet, host_iqn, username,
+                 password, allowed_host_id
+ -h, --help      Show this message and exit.
+```
 
 
 ## ホストが許可されている {{site.data.keyword.filestorage_short}} ボリュームを表示する
@@ -48,7 +78,7 @@ lastupdated: "2018-11-30"
 
 ## {{site.data.keyword.filestorage_short}} のマウントとアンマウント
 
-**「ボリュームの詳細 (Volume Details)」**ビューに表示されるマウント・ポイント情報を使用して、ホストから{{site.data.keyword.filestorage_short}}をマウントできます。 [Linux での {{site.data.keyword.filestorage_short}} へのアクセス](accessing-file-storage-linux.html)を参照してください。
+**「ボリュームの詳細 (Volume Details)」**ビューに表示されるマウント・ポイント情報を使用して、ホストから{{site.data.keyword.filestorage_short}}をマウントできます。 [Linux での {{site.data.keyword.filestorage_short}} へのアクセス](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)を参照してください。
 
 
 ## {{site.data.keyword.filestorage_short}} に対するホストのアクセス権を取り消す
@@ -82,6 +112,24 @@ lastupdated: "2018-11-30"
 特定のボリュームから複数のホストを切断する場合は、ホストごとに「アクセス権の取り消し」アクションを繰り返す必要があります。
 {:tip}
 
+### SL CLI でのアクセス権の取り消し
+代わりの方法として、SL CLI で以下のコマンドを使用することができます。
+```
+# slcli file access-revoke --help
+Usage: slcli file access-revoke [OPTIONS] VOLUME_ID
+
+Options:
+  -h, --hardware-id TEXT    The id of one SoftLayer_Hardware to revoke
+                            authorization
+  -v, --virtual-id TEXT     The id of one SoftLayer_Virtual_Guest to revoke
+                            authorization
+  -i, --ip-address-id TEXT  The id of one SoftLayer_Network_Subnet_IpAddress
+                            to revoke authorization
+  --ip-address TEXT         An IP address to revoke authorization
+  -s, --subnet-id TEXT      The id of one SoftLayer_Network_Subnet to revoke
+                            authorization
+  --help                    Show this message and exit.
+```
 
 ## ストレージ・ボリュームをキャンセルする
 
@@ -95,3 +143,15 @@ lastupdated: "2018-11-30"
    {:tip}
 4. **「次へ進む (Continue)」**または**「閉じる」**をクリックします。
 5. 確認応答チェック・ボックスをクリックして、**「確認」**をクリックします。
+
+代わりの方法として、SL CLI で以下のコマンドを使用することができます。
+```
+# slcli file volume-cancel --help
+Usage: slcli file volume-cancel [OPTIONS] VOLUME_ID
+
+Options:
+  --reason TEXT  An optional reason for cancellation
+  --immediate    Cancels the file storage volume immediately instead of on the
+                 billing anniversary
+  -h, --help     Show this message and exit.
+```

@@ -1,21 +1,26 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-12-11"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
- {:tip: .tip}
- {:note: .note}
- {:important: .important}
+{:pre: .pre}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 
-# Nouveaux emplacements et nouvelles fonctions de {{site.data.keyword.filestorage_short}}
+# Nouveaux emplacements et fonctions
+{: #news}
 
 {{site.data.keyword.BluSoftlayer_full}} propose une nouvelle version d'{{site.data.keyword.filestorage_full}}! Le nouveau stockage est disponible dans des centres de données sélectionnés, et est sécurisé par un stockage flash à des niveaux d'IOPS plus élevés avec un chiffrement au niveau du disque pour les données au repos. La totalité du stockage commandé dans les centres de données sélectionnés est automatiquement créée avec la nouvelle version de {{site.data.keyword.filestorage_short}}.
 
 Le point de montage NFS des nouveaux volumes a été modifié. Pour plus de détails, voir [Nouveau point de montage des volumes {{site.data.keyword.filestorage_short}} améliorés](#new-mount-point-for-enhanced-file-storage-volumes).
 {:important}
+
+## Nouveaux emplacements
+{: #new-locations}
 
 La nouvelle version de {{site.data.keyword.filestorage_short}} est disponible dans les régions et centres de données suivants (cette disponibilité sera bientôt étendue à d'autres centres de données) :
 
@@ -78,19 +83,20 @@ La nouvelle version de {{site.data.keyword.filestorage_short}} est disponible da
   </tr>
 </table>
 
-Le tableau 1 répertorie la disponibilité de nos centres de données. Chaque région correspond à une colonne. Certaines villes, comme Dallas, San José, Washington DC, Amsterdam, Francfort, Londres et Sydney possèdent plusieurs centres de données.*
+*Le tableau 1 répertorie la disponibilité de nos centres de données. Chaque région correspond à une colonne. Certaines villes, comme Dallas, San José, Washington DC, Amsterdam, Francfort, Londres et Sydney possèdent plusieurs centres de données.*
 
-Le nouveau stockage inclut les nouvelles fonctions et capacités suivantes :
+## Nouvelles fonctions et fonctionnalités
+{: #features}
 
-- [Chiffrement géré par le fournisseur pour les données au repos](block-file-storage-encryption-rest.html). <br/> Tous les volumes {{site.data.keyword.filestorage_short}} sont automatiquement mis à disposition en mode chiffré sans coût supplémentaire.
+- [Chiffrement géré par le fournisseur pour les données au repos](/docs/infrastructure/FileStorage?topic=FileStorage-encryption). <br/> Tous les volumes {{site.data.keyword.filestorage_short}} sont automatiquement mis à disposition en mode chiffré sans coût supplémentaire.
 - Option de niveau de 10 IOPS par Go. <br/> Un nouveau niveau a été ajouté au stockage {{site.data.keyword.filestorage_short}} de type Endurance pour la prise en charge des charges de travail les plus exigeantes.
 - Sécurisation de la totalité du stockage par stockage flash. <br/> Le stockage {{site.data.keyword.filestorage_short}} mis à disposition avec un type Endurance ou Performance à un niveau de 2 IOPS par Go ou plus est entièrement sécurisé par un stockage flash.
 - Prise en charge des instantanés et de la réplication.
 - Options de facturation horaire ajoutée pour un stockage prévu pour une utilisation inférieure à un mois complet.
 - Jusqu'à 48 000 IOPS pour un stockage {{site.data.keyword.filestorage_short}} mis à disposition avec l'option Performance.
-- Possibilité d'ajuster les taux d'IOPS dans le but d'améliorer les performances relatives aux modifications saisonnières de la charge. Pour en savoir plus sur cette fonction, cliquez [ici](adjustable-iops.html).
-- Création d'un clone de vos données avec la [fonction de duplication de volume {{site.data.keyword.filestorage_short}}](how-to-create-duplicate-volume.html).
-- Possibilité d'extension immédiate du stockage en incréments de Go jusqu'à 12 To, sans qu'il soit nécessaire de créer un doublon ou de déplacer manuellement les données vers un volume plus grand. Pour en savoir plus sur cette fonction, cliquez [ici](expandable_file_storage.html).
+- Possibilité d'ajuster les taux d'IOPS dans le but d'améliorer les performances relatives aux modifications saisonnières de la charge. Pour en savoir plus sur cette fonction, cliquez [ici](/docs/infrastructure/FileStorage?topic=FileStorage-adjustingIOPS).
+- Possibilité de créer un clone de vos données grâce à la [fonction de duplication du volume de {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume).
+- Possibilité d'extension immédiate du stockage en incréments de Go jusqu'à 12 To, sans qu'il soit nécessaire de créer un doublon ou de déplacer manuellement les données vers un volume plus grand. Pour en savoir plus sur cette fonction, cliquez [ici](/docs/infrastructure/FileStorage?topic=FileStorage-expandCapacity).
 
 ## Nouveau point de montage des volumes {{site.data.keyword.filestorage_short}} améliorés
 

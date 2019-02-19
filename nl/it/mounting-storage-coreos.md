@@ -1,18 +1,20 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-12-11"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
+{:codeblock: .codeblock}
+
 
 # Montaggio di {{site.data.keyword.filestorage_short}} su Container Linux
+{: #mountingCoreOS}
 
 Container Linux di CoreOS è un sistema operativo leggero ed open source basato sul kernel Linux. È progettato per fornire l'infrastruttura alle distribuzioni organizzate in cluster. Come sistema operativo, Container Linux fornisce la funzionalità minima richiesta per la distribuzione di applicazioni all'interno di contenitori software, insieme a meccanismi integrati per il rilevamento dei servizi e la condivisione della configurazione. Per ulteriori informazioni, vedi [Mounting storage ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://coreos.com/os/docs/latest/mounting-storage.html)
 

@@ -1,12 +1,12 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-12-11"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
-{:pre: .pre}
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
@@ -15,6 +15,7 @@ lastupdated: "2018-12-11"
 
 
 # VMware による {{site.data.keyword.filestorage_short}} のプロビジョニング
+{: #architectureguide}
 
 {{site.data.keyword.BluSoftlayer_full}} の vSphere 5.5 と vSphere 6.0 の環境で {{site.data.keyword.filestorage_full}} を注文して構成するための手順を以下に示します。
 
@@ -116,7 +117,7 @@ VMware 環境はスナップショットを認識しないことに注意して�
 
 {{site.data.keyword.filestorage_short}} のボリュームをリストアするには、{{site.data.keyword.filestorage_short}} 上のすべての VM の電源をオフにする必要があります。 ESXi ホストから一時的にボリュームをアンマウントして、復元処理中のデータ破損を回避する必要があります。
 
-詳しくは、[スナップショット](snapshots.html)の記事を参照してください。
+詳しくは、[スナップショット](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots)の記事を参照してください。
 
 
 ### レプリケーションの使用
@@ -128,7 +129,7 @@ VMware 環境はスナップショットを認識しないことに注意して�
 - 宛先ボリュームにフェイルオーバーして、サイト障害やその他の災害から素早く復旧する
 - DR コピー内の特定の時点にフェイルオーバーする
 
-レプリケーションを行うと、2 つの異なる場所にあるデータの同期を保つことができます。 使用しているボリュームを複製したものを元のボリュームとは独立して使用する場合は、[複製ファイル・ボリュームの作成](how-to-create-duplicate-volume.html)を参照してください。
+レプリケーションを行うと、2 つの異なる場所にあるデータの同期を保つことができます。 使用しているボリュームを複製したものを元のボリュームとは独立して使用する場合は、[複製ファイル・ボリュームの作成](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume)を参照してください。
 {:tip}
 
 レプリケーションを行うには、その前にスナップショット・スケジュールを作成する必要があります。
@@ -137,7 +138,7 @@ VMware 環境はスナップショットを認識しないことに注意して�
 
 ボリュームをプライマリー・データ・センターにフェイルバックする前に、リモート・サイトでの使用を停止する必要があります。 新規または変更された情報のスナップショットが取得され、プライマリー・データ・センターに複製された後に、実動サイトの ESXi ホストに再度マウントできるようになります。
 
-レプリカの構成について詳しくは、[レプリケーション](replication.html)を参照してください。
+レプリカの構成について詳しくは、[レプリケーション](/docs/infrastructure/FileStorage?topic=FileStorage-replication)を参照してください。
 
 破損したり、ハッキングされたり、感染したりしていても、スナップショット・スケジュールとスナップショット保持設定に従って無効なデータが複製されます。 最短のレプリケーション期間にすると、より適切なリカバリー・ポイントに復旧できます。 また、これにより、無効なデータのレプリケーションにも少ない時間で対応できます。
 {:note}
@@ -147,7 +148,7 @@ VMware 環境はスナップショットを認識しないことに注意して�
 
 [拡張単一サイト VMware リファレンス・アーキテクチャー ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} を使用して、VMware 環境でエンデュランスまたはパフォーマンスのオプションを指定して {{site.data.keyword.filestorage_short}} をセットアップします。
 
-{{site.data.keyword.filestorage_short}} は、[IBM Cloud カタログ ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://{DomainName}/catalog/){:new_window} または [{{site.data.keyword.slportal}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://control.softlayer.com/){:new_window} から注文できます。 詳しくは、[{{site.data.keyword.filestorage_short}} の注文](provisioning-file-storage.html)を参照してください
+{{site.data.keyword.filestorage_short}} は、[IBM Cloud カタログ ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://{DomainName}/catalog/){:new_window} または [{{site.data.keyword.slportal}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://control.softlayer.com/){:new_window} から注文できます。 詳しくは、[{{site.data.keyword.filestorage_short}} の注文](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)を参照してください。
 
 ストレージが 1 分もしないうちにプロビジョンされ、[{{site.data.keyword.slportal}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://control.softlayer.com/){:new_window} の「**{{site.data.keyword.filestorage_short}}**」ページに表示されます。
 
@@ -377,5 +378,5 @@ NFS ストレージ用に ESXi 5.x ホストを構成するには、いくつか
     #esxcfg-advcfg -g /Disk/QFullSampleSize
     #esxcfg-advcfg -g /Disk/QFullThreshold
     ```
-拡張単一サイト VMware リファレンス・アーキテクチャーについて詳しくは、[こちら](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}を参照してください。
+拡張単一サイト VMware リファレンス・アーキテクチャーについて詳しくは、[こちら](/docs/infrastructure/virtualization?topic=Virtualization-advanced-single-site-vmware-reference-architecture){:new_window}を参照してください。
 {:tip}

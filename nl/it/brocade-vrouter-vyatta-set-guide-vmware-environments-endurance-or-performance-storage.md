@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
@@ -14,8 +15,9 @@ lastupdated: "2018-11-30"
 
 
 # Configurazione di Brocade vRouter (Vyatta) per gli ambienti VMware con {{site.data.keyword.filestorage_short}}
+{: #configureVyatta}
 
-Puoi configurare un'applicazione Brocade vRouter (Vyatta) per la configurazione ad alta disponibilità (HA, high availability)] in un ambiente VMware che utilizza {{site.data.keyword.filestorage_full}}. Utilizza le seguenti informazioni insieme alla [Advanced Single-Site VMware Reference Architecture](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} per configurare una di queste opzioni di archiviazione nel tuo ambiente VMware.
+Puoi configurare un'applicazione Brocade vRouter (Vyatta) per la configurazione ad alta disponibilità (HA, high availability)] in un ambiente VMware che utilizza {{site.data.keyword.filestorage_full}}. Utilizza le seguenti informazioni insieme alla [Advanced Single-Site VMware Reference Architecture](/docs/infrastructure/virtualization?topic=Virtualization-advanced-single-site-vmware-reference-architecture){:new_window} per configurare una di queste opzioni di archiviazione nel tuo ambiente VMware.
 
 Il gateway Brocade vRouter (Vyatta) funge da gateway e router per il tuo ambiente e contiene zone formate da sottoreti. Le regole del firewall vengono implementate tra le zone in modo che possano comunicare tra di loro. Per le zone che non devono comunicare con altre zone, non è necessaria alcuna regola del firewall.
 

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
@@ -12,6 +12,7 @@ lastupdated: "2018-11-30"
 {:important: .important}
 
 # Configurando o {{site.data.keyword.filestorage_short}} para backup com o Plesk
+{: #PleskBackup}
 
 É possível usar essas instruções para configurar o {{site.data.keyword.filestorage_full}} para seus backups no Plesk. A suposição é que o SSH
 raiz ou sudo e o acesso Plesk no nível de administrador integral estejam disponíveis. Esse exemplo se baseia
@@ -26,7 +27,7 @@ Para obter mais informações, consulte a [Documentação do Plesk para backup e
    O Plesk tem duas opções para armazenar backups. Uma é o armazenamento de Plesk interno, que é armazenamento em seu servidor Plesk. A outra é armazenamento de FTP externo, que é o armazenamento em algum servidor externo na web ou em sua rede local. Geralmente em caixas do Plesk, os backups internos são armazenados em
 `/var/lib/psa/dumps` e usam `/tmp` como um diretório temporário. Nesse exemplo, o diretório temporário é mantido local, mas o diretório `dumps` é movido para o destino do {{site.data.keyword.filestorage_short}} (`/backup/psa/dumps`). Nenhuma credencial do usuário FTP é necessária.
    {:note}
-3. Configure seu {{site.data.keyword.filestorage_short}} conforme descrito em [Acessando o {{site.data.keyword.filestorage_short}} no Red Hat Enterprise Linux](accessing-file-storage-linux.html) e [Montando o NFS/{{site.data.keyword.filestorage_short}} no CentOS](mounting-nsf-file-storage.html) ou [Montando o NFS/{{site.data.keyword.filestorage_short}} no CoreOS](mounting-storage-coreos.html). Monte o volume em `/backup` e configure-o na tabela de sistema de arquivos (`/etc/fstab`) para ativar a montagem no início. <br />
+3. Configure seu {{site.data.keyword.filestorage_short}} conforme descrito em [Acessando o {{site.data.keyword.filestorage_short}} no Red Hat Enterprise Linux](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux) e [Montando o NFS/{{site.data.keyword.filestorage_short}} no CentOS](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS) ou [Montando o NFS/{{site.data.keyword.filestorage_short}} no CoreOS](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCoreOS). Monte o volume em `/backup` e configure-o na tabela de sistema de arquivos (`/etc/fstab`) para ativar a montagem no início. <br />
 
    Por padrão, o NFS faz downgrade de quaisquer arquivos que foram criados com as permissões raiz para o usuário nobody. Para permitir que os clientes raiz retenham as permissões raiz no compartilhamento NFS, `no_root_squash` precisa ser incluído em `/etc/exports`.
    {:tip}

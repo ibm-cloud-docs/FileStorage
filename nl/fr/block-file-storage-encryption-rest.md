@@ -2,16 +2,19 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-01-07"
+lastupdated: "2019-02-05"
 
 ---
+{:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 # Chiffrement au repos géré par le fournisseur
+{: #encryption}
 
-{{site.data.keyword.BluSoftlayer_full}} prend au sérieux les besoins en matière de sécurité et comprend l'importance du chiffrement des données afin de les sécuriser. Grâce au chiffrement géré par le fournisseur, {{site.data.keyword.filestorage_full}}, mis à disposition avec un niveau Endurance ou Performance, est chiffré par défaut sans coût supplémentaire et sans impact sur les performances.
+{{site.data.keyword.BluSoftlayer_full}} prend très au sérieux la question de la sécurité et comprend l'importance du chiffrement des données pour assurer leur sécurité. Grâce au chiffrement géré par le fournisseur, {{site.data.keyword.filestorage_full}}, mis à disposition avec un niveau Endurance ou Performance, est chiffré par défaut sans coût supplémentaire et sans impact sur les performances.
 
 Le chiffrement au repos géré par le fournisseur utilise les protocoles suivants conformes aux normes de l'industrie :
 
@@ -32,12 +35,12 @@ Tous les instantanés et toutes les répliques d'un stockage de fichier chiffré
 
 ## Mise à disposition du stockage avec chiffrement
 
-La fonctionnalité de chiffrement au repos géré par le fournisseur est disponible dans des centres de données sélectionnés. La totalité du stockage commandé dans ces centres de données est automatiquement doté du chiffrement des données au repos. Cliquez [ici](new-ibm-block-and-file-storage-location-and-features.html) pour afficher la liste des centres de données dans lesquels le chiffrement {{site.data.keyword.filestorage_short}} est disponible.
+La fonctionnalité de chiffrement au repos géré par le fournisseur est disponible dans des centres de données sélectionnés. La totalité du stockage commandé dans ces centres de données est automatiquement doté du chiffrement des données au repos. Cliquez [ici](/docs/infrastructure/FileStorage?topic=FileStorage-news) pour afficher la liste des centres de données dans lesquels le chiffrement {{site.data.keyword.filestorage_short}} est disponible.
 
 Lorsque vous commandez {{site.data.keyword.filestorage_short}}, sélectionnez un centre de données signalé par un astérisque (`*`). Une icône en forme de verrou figure à droite de la zone Numéro d'unité logique/nom de volume pour indiquer que le volume est chiffré. Voir la Figure 1.
 
 ![L'icône en forme de verrou indique que le numéro d'unité logique est chiffré](/images/encryptedstorage.png)
 <caption>Figure 1. Exemple d'icône en forme de verrou indiquant que le volume est chiffré.</caption>
 
-Un stockage non chiffré mis à disposition avant la mise à niveau d'un centre de données **n'est pas** automatiquement chiffré. Si vous disposez d'un stockage non chiffré dans un centre de données mis à niveau et que vous souhaitez le chiffrer, vous devrez créer un nouveau volume et déplacer vos données. Pour plus d'informations, voir [Migration de stockage de fichier dans des centres de données mis à niveau](migrate-file-storage-encrypted-file-storage.html)
+Un stockage non chiffré mis à disposition avant la mise à niveau d'un centre de données **n'est pas** automatiquement chiffré. Si vous disposez d'un stockage non chiffré dans un centre de données mis à niveau et que vous souhaitez le chiffrer, vous devrez créer un nouveau volume et déplacer vos données. Pour plus d'informations, voir [Migration de stockage de fichier dans des centres de données mis à niveau](/docs/infrastructure/FileStorage?topic=FileStorage-migratestorage)
 {:important}

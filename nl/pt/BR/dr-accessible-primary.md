@@ -1,11 +1,12 @@
-﻿---
+---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-12-10"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
@@ -13,6 +14,7 @@ lastupdated: "2018-12-10"
 {:DomainName: data-hd-keyref="DomainName"}
 
 # Recuperação de desastre: failover com um volume primário acessível
+{: #dr-accessible}
 
 Se uma falha catastrófica ou desastre ocorrer no site primário e o armazenamento primário ainda estiver acessível, os clientes poderão executar as ações a seguir para acessar rapidamente seus dados no site secundário.
 
@@ -21,7 +23,7 @@ Antes de iniciar o failover, certifique-se de que toda a autorização de host e
 Os hosts e volumes autorizados devem estar no mesmo data center. Por exemplo, não é possível ter um volume de réplica em Londres e o host em Amsterdã. Ambos devem estar em Londres ou ambos devem estar em Amsterdã.
 {:note}
 
-1. Efetue login no [console do {{site.data.keyword.cloud}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://
+1. Efetue login no [Console do {{site.data.keyword.cloud}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://
 {DomainName}/catalog/){:new_window} e clique no ícone **Menu** na parte superior esquerda. Selecione **Infraestrutura clássica**.
 
    Como alternativa, é possível efetuar login no [{{site.data.keyword.slportal}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://control.softlayer.com/){:new_window}.
@@ -48,7 +50,7 @@ Antes de continuar com essas etapas, desconecte o volume. Caso não o faça, iss
    {:note}
 4. Clique em **Visualizar todos ({{site.data.keyword.filestorage_short}})**.
 5. Clique no volume ativo (anteriormente seu volume de destino). Esse volume agora tem um status **Ativo**.
-6. Montar e anexar seu volume de armazenamento ao host. Clique [aqui](provisioning-file-storage.html) para obter instruções.
+6. Montar e anexar seu volume de armazenamento ao host. Clique [aqui](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole) para obter instruções.
 
 
 ## Iniciando um failback de um volume para sua réplica
@@ -73,4 +75,4 @@ Os failbacks são iniciados em **Armazenamento**, **{{site.data.keyword.filestor
    {:note}
 4. No canto superior direito, clique em **Visualizar todo o link do {{site.data.keyword.filestorage_short}}**.
 5. Clique em seu volume ativo ("origem").
-6. Montar e anexar seu volume de armazenamento ao host. Clique [aqui](provisioning-file-storage.html) para obter instruções.
+6. Montar e anexar seu volume de armazenamento ao host. Clique [aqui](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole) para obter instruções.

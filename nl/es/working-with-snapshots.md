@@ -1,17 +1,19 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 
 # Gestión de instantáneas
+{: #managingSnapshots}
 
 ## Creación de una planificación de instantáneas
 
@@ -21,6 +23,7 @@ Para poder configurar la planificación inicial, debe adquirir el espacio de ins
 {:important}
 
 ### Adición de una planificación de instantáneas
+{: #addschedule}
 
 Las planificaciones de instantáneas se pueden configurar para intervalos por horas, diarios y semanales, cada uno con un ciclo de retención distinto. El límite máximo de instantáneas es de 50 por volumen de almacenamiento, que puede ser una mezcla de planificaciones por horas, diarias y semanales, e instantáneas manuales.
 
@@ -39,6 +42,17 @@ Las planificaciones de instantáneas se pueden configurar para intervalos por ho
 
 La lista de instantáneas se muestra tal como se han tomado en la sección **Instantáneas** de la página **Detalles**.
 
+Puede ver la lista de planificaciones de instantánea a través de la SLCLI con el mandato siguiente.
+```
+# slcli file snapshot-schedule-list --help
+Uso: slcli file snapshot-schedule-list [OPCIONES] ID_VOLUMEN
+
+  Lista las planificaciones de instantáneas de un volumen determinado
+
+Opciones:
+  -h, --help  Mostrar este mensaje y salir.
+```
+
 ## Toma de una instantánea manual
 
 Las instantáneas manuales se pueden realizar en distintos puntos durante una actualización o mantenimiento de la aplicación. También puede tomar instantáneas en varios servidores que se desactivaron temporalmente a nivel de aplicación.
@@ -50,9 +64,30 @@ El límite máximo de instantáneas manuales por volumen de almacenamiento es 50
 3. Pulse **Realizar instantánea manual**.
 Se realiza la instantánea y se muestra en la sección **Instantáneas** de la página **Detalles**. Su planificación es Manual.
 
+De manera alternativa, puede utilizar el mandato siguiente para crear una instantánea a través de la SLCLI.
+```
+# slcli file snapshot-create --help
+Uso: slcli file snapshot-create [OPCIONES] ID_VOLUMEN
+
+Opciones:
+  -n, --notes TEXTO Notas para colocar en la nueva instantánea
+  -h, --help        Mostrar este mensaje y salir.
+```
+
 ## Listado de todas las instantáneas con información de espacio utilizado y de funciones de gestión
 
 Se puede visualizar una lista de las instantáneas retenidas y el espacio utilizado en la página **Detalles** (**Almacenamiento**, **{{site.data.keyword.filestorage_short}}**). Las funciones de gestión (editar planificaciones y añadir más espacio) se realizan en la página Detalles utilizando el menú **Acciones** o los enlaces de las distintas secciones de la página.
+
+De manera alternativa, puede realizar esta tarea a través de la CLI SL.
+```
+# slcli file snapshot-list --help
+Uso: slcli file snapshot-list [OPCIONES] ID_VOLUMEN
+
+Opciones:
+  --sortby TEXTO  Columna por la que se debe ordenar
+  --columns TEXTO Columnas que se deben visualizar. Opciones: id, name, created, size_bytes
+  -h, --help      Mostrar este mensaje y salir.
+```
 
 ## Visualización de la lista de instantáneas retenidas
 
@@ -83,7 +118,7 @@ Las notificaciones se envían a través de incidencias de soporte al usuario mae
 
 - Al **75 % de capacidad**, se envía un aviso que indica que el uso de espacio de instantáneas ha superado el 75 %. Si presta atención al aviso y añade espacio manualmente o suprime las instantáneas retenidas innecesarias, la acción se anota y la incidencia se cierra. Si no hace nada, deberá reconocer la incidencia manualmente y se cerrará.
 - Al **90 % de capacidad**, se envía un segundo aviso que indica que el uso de espacio de instantáneas ha superado el 90 %. Al igual que sucede cuando alcanza el 75 % de capacidad, si realiza las acciones necesarias para disminuir el espacio utilizado, la acción se anota y la incidencia se cierra. Si no hace nada, deberá reconocer la incidencia manualmente y se cerrará.
-- Al **95 % de capacidad**, se envía un aviso final. Si no se realiza ninguna acción para reducir el uso del espacio por debajo del umbral, se genera una notificación y se produce la supresión automática para que se puedan crear instantáneas futuras. Se suprimen instantáneas planificadas, empezando por las más antiguas, hasta que el uso cae por debajo del 95 %. Se siguen suprimiendo instantáneas cada vez que el uso supera el 95% hasta que cae por debajo del umbral. Si el espacio se aumenta manualmente o si se suprimen instantáneas, el aviso se restablece y se volverá a enviar si se vuelve a superar el umbral. Si no se lleva a cabo ninguna acción, esta notificación es el único aviso que recibe.
+- Al **95 % de capacidad**, se envía un aviso final. Si no se realiza ninguna acción para reducir el uso del espacio por debajo del umbral, se genera una notificación y se produce la supresión automática para que se puedan crear instantáneas futuras. Se suprimen instantáneas planificadas, empezando por las más antiguas, hasta que el uso cae por debajo del 95 %. Se siguen suprimiendo instantáneas cada vez que el uso supera el 95 % hasta que cae por debajo del umbral. Si el espacio se aumenta manualmente o si se suprimen instantáneas, el aviso se restablece y se volverá a enviar si se vuelve a superar el umbral. Si no se lleva a cabo ninguna acción, esta notificación es el único aviso que recibe.
 
 ## Supresión de una planificación de instantáneas
 
@@ -92,7 +127,7 @@ Las planificaciones de instantáneas se pueden cancelar seleccionando **Almacena
 1. Pulse la planificación que se va a suprimir en el marco **Planificaciones de instantáneas** de la página **Detalles**.
 2. Marque el recuadro de selección junto a la planificación que se va a suprimir y pulse **Guardar**.<br />
 
-Si está utilizando la característica de réplica, asegúrese de que la planificación que está suprimiendo no sea la planificación utilizada por la réplica. Para obtener más información sobre la supresión de una planificación de réplica, consulte [aquí](replication.html).
+Si está utilizando la característica de réplica, asegúrese de que la planificación que está suprimiendo no sea la planificación utilizada por la réplica. Para obtener más información sobre la supresión de una planificación de réplica, consulte [aquí](/docs/infrastructure/FileStorage?topic=FileStorage-replication).
 {:important}
 
 ## Supresión de una instantánea
@@ -102,14 +137,24 @@ Las instantáneas que ya no se necesiten se pueden eliminar manualmente para lib
 1. Pulse el volumen de almacenamiento y desplácese hasta la sección **Instantánea** para ver la lista de instantáneas existentes.
 2. Pulse **Acciones** junto a una instantánea particular y pulse **Suprimir** para suprimir la instantánea. Esta supresión no afecta a ninguna instantánea anterior ni futura de la misma planificación, ya que no existe dependencia entre instantáneas.
 
+De manera alternativa, puede suprimir una instantánea a través de la CLI SL.
+```
+# slcli file snapshot-delete --help
+Uso: slcli file snapshot-delete [OPCIONES] ID_INSTANTÁNEA
+
+Opciones:
+  -h, --help  Mostrar este mensaje y salir.
+```
+
 Las instantáneas manuales que no se supriman del portal manualmente se suprimirán automáticamente cuando alcance las limitaciones de espacio (las más antiguas primero).
+{:note}
 
 ## Restauración del volumen de almacenamiento a un punto en el tiempo específico utilizando una instantánea
 
 Es posible que necesite recuperar el volumen de almacenamiento a un punto en el tiempo específico debido a un error de usuario o porque los datos hayan resultado dañados.
 
 1. Desmonte y desconecte el volumen de almacenamiento del host.
-   - Pulse [aquí](accessing-file-storage-linux.html) para obtener instrucciones.
+   - Pulse [aquí](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux) para obtener instrucciones.
 2. Pulse **Almacenamiento**, **{{site.data.keyword.filestorage_short}}** en el [{{site.data.keyword.slportal}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){:new_window}.
 3. Desplácese y pulse el volumen que se va a restaurar. La sección **Instantáneas** de la página **Detalles** mostrará una lista de todas las instantáneas guardadas junto con su tamaño y fecha de creación.
 4. Pulse **Acciones** junto a la instantánea que se va a utilizar y pulse **Restaurar**. <br/>
@@ -121,7 +166,18 @@ Es posible que necesite recuperar el volumen de almacenamiento a un punto en el 
    Recibirá un mensaje en la página que indicará que el volumen se ha restaurado utilizando la instantánea seleccionada. También aparecerá un icono junto al volumen en {{site.data.keyword.filestorage_short}} que indicará que hay una transacción activa en curso. Al pasar el ratón sobre el icono se abre una ventana que muestra la transacción. El icono desaparecerá una vez completada la transacción.
    {:note}
 6. Monte y vuelva a conectar el volumen de almacenamiento al host.
-  - Pulse [aquí](accessing-file-storage-linux.html) para obtener instrucciones.
+  - Pulse [aquí](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux) para obtener instrucciones.
+
+De manera alternativa, puede restaurar el volumen con una instantánea a través de la SLCLI.
+```
+# slcli file snapshot-restore --help
+Uso: slcli file snapshot-restore [OPCIONES] ID_VOLUMEN
+
+Opciones:
+  -s, --snapshot-id TEXTO El id de la instantánea utilizada para restaurar
+                          el volumen de bloque
+  -h, --help              Mostrar este mensaje y salir.
+```  
 
 La restauración de un volumen da lugar a la supresión de todas las instantáneas que se tomaron después de la instantánea que se utilizó para la restauración.
 {:important}

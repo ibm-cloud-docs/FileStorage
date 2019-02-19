@@ -1,21 +1,26 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-12-11"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
- {:tip: .tip}
- {:note: .note}
- {:important: .important}
+{:pre: .pre}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 
-# Nuevas ubicaciones y características de {{site.data.keyword.filestorage_short}}
+# Nuevas ubicaciones y características
+{: #news}
 
 {{site.data.keyword.BluSoftlayer_full}} presenta una nueva versión de {{site.data.keyword.filestorage_full}}. El nuevo almacenamiento está disponible en centros de datos seleccionados, y está respaldado por el almacenamiento flash a niveles de IOPS superiores con cifrado de disco para datos en reposo. Todo el almacenamiento solicitado en los centros de datos seleccionados se crea automáticamente con la nueva versión de {{site.data.keyword.filestorage_short}}.
 
 Ha cambiado el punto de montaje de NFS para los volúmenes nuevos. Consulte la sección [Nuevo punto de montaje para volúmenes de {{site.data.keyword.filestorage_short}} mejorado](#new-mount-point-for-enhanced-file-storage-volumes) que hay a continuación para ver detalles.
 {:important}
+
+## Nuevas ubicaciones
+{: #new-locations}
 
 El nuevo {{site.data.keyword.filestorage_short}} está disponible actualmente en los siguientes centros de datos y regiones, y pronto se incrementará la disponibilidad de centros de datos.
 
@@ -80,17 +85,18 @@ El nuevo {{site.data.keyword.filestorage_short}} está disponible actualmente en
 
 *La Tabla 1 muestra nuestra disponibilidad de centro de datos. Cada región tiene su propia columna. Algunas ciudades, como Dallas, San José, Washington DC, Ámsterdam, Frankfurt, Londres y Sídney, tienen varios centros de datos.*
 
-El nuevo almacenamiento tiene las siguientes características y funciones:
+## Nuevas características y prestaciones
+{: #features}
 
-- [Cifrado gestionado por el proveedor para datos en reposo](block-file-storage-encryption-rest.html). <br/> Todos los volúmenes de {{site.data.keyword.filestorage_short}} se suministran automáticamente como cifrados sin cargo adicional.
+- [Cifrado gestionado por el proveedor para datos en reposo](/docs/infrastructure/FileStorage?topic=FileStorage-encryption). <br/> Todos los volúmenes de {{site.data.keyword.filestorage_short}} se suministran automáticamente como cifrados sin cargo adicional.
 - Opción de nivel de 10 IOPS por GB. <br/> Se ha añadido un nuevo nivel al {{site.data.keyword.filestorage_short}} de tipo Resistencia para dar soporte a las cargas de trabajo más exigentes.
 - Almacenamiento respaldado por all flash. <br/> El {{site.data.keyword.filestorage_short}} que se suministra con las opciones de Resistencia o Rendimiento a 2 IOPS por GB o superior disponen del respaldo del almacenamiento de tipo all flash.
 - Soporte de instantáneas y de réplica.
 - Se ha añadido la opción de facturación por horas para el almacenamiento que se prevé utilizar menos de un mes completo.
 - Hasta 48.000 IOPS para {{site.data.keyword.filestorage_short}} suministrado con el tipo Rendimiento.
-- Las tasas de IOPS se pueden ajustar para mejorar el rendimiento en caso de cambios estacionales en la carga de trabajo. [Aquí](adjustable-iops.html) puede leer más información sobre esta característica.
-- Cree un clon de sus datos con la característica de [duplicación de volúmenes de {{site.data.keyword.filestorage_short}}](how-to-create-duplicate-volume.html).
-- El almacenamiento es se puede ampliar en incrementos de GB hasta un máximo de 12 TB de inmediato, sin necesidad de crear un duplicado o transferir datos manualmente a un volumen de mayor tamaño. [Aquí](expandable_file_storage.html) puede leer más información sobre esta característica.
+- Las tasas de IOPS se pueden ajustar para mejorar el rendimiento en caso de cambios estacionales en la carga de trabajo. [Aquí](/docs/infrastructure/FileStorage?topic=FileStorage-adjustingIOPS) puede leer más información sobre esta característica.
+- Cree un clon de sus datos con la característica de [duplicación de volúmenes de {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume).
+- El almacenamiento es se puede ampliar en incrementos de GB hasta un máximo de 12 TB de inmediato, sin necesidad de crear un duplicado o transferir datos manualmente a un volumen de mayor tamaño. [Aquí](/docs/infrastructure/FileStorage?topic=FileStorage-expandCapacity) puede leer más información sobre esta característica.
 
 ## Nuevo punto de montaje para volúmenes de {{site.data.keyword.filestorage_short}} mejorado
 

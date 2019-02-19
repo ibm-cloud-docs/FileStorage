@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
@@ -12,6 +12,7 @@ lastupdated: "2018-11-30"
 {:important: .important}
 
 # cPanel を使用してバックアップするための{{site.data.keyword.filestorage_short}}の構成
+{: #cPanelBackups}
 
 これらの手順を使用することにより、バックアップが cPanel によって {{site.data.keyword.filestorage_full}} に保存されるように構成することができます。 root を使用できるか、または sudo SSH で WebHost Manager (WHM) のフル・アクセス権限を使用できる必要があります。 この例は、**CentOS 7** ホストに基づいています。
 
@@ -24,7 +25,7 @@ lastupdated: "2018-11-30"
    デフォルトで、cPanel システムはバックアップ・ファイルを `/backup` ディレクトリーにローカルに保存します。 このドキュメントでは、`/backup` フォルダーが存在していてバックアップが含まれていることを前提としています。`/backup2` を新しいマウント・ポイントとして使用することができます。
    {:note}
 
-3. [Red Hat Enterprise Linux での {{site.data.keyword.filestorage_short}} へのアクセス](accessing-file-storage-linux.html)および [CentOS での NFS/{{site.data.keyword.filestorage_short}} のマウント](mounting-nsf-file-storage.html)/[CoreOS での NFS/{{site.data.keyword.filestorage_short}} のマウント](mounting-storage-coreos.html)の説明に従って {{site.data.keyword.filestorage_short}} を構成します。 ボリュームを `/backup2` にマウントし、始動時にマウントされるようにファイル・システム・テーブル (`/etc/fstab`) で構成してください。 <br />
+3. [Red Hat Enterprise Linux での {{site.data.keyword.filestorage_short}} へのアクセス](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)および [CentOS での {{site.data.keyword.filestorage_short}} のマウント](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)/[CoreOS での NFS/{{site.data.keyword.filestorage_short}} のマウント](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCoreOS)の説明に従って {{site.data.keyword.filestorage_short}} を構成します。ボリュームを `/backup2` にマウントし、始動時にマウントされるようにファイル・システム・テーブル (`/etc/fstab`) で構成してください。 <br />
 
    デフォルトでは、NFS は、root 権限で作成されたファイルを nobody ユーザーにダウングレードします。 root クライアントが NFS 共有に対する root 権限を保持できるように、`/etc/exports` に `no_root_squash` を追加する必要があります。
    {:tip}

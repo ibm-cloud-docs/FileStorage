@@ -1,22 +1,23 @@
 ---
 
 copyright:
-  years: 2015, 2019
-lastupdated: "2019-01-08"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
-
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 
 # Replica dei dati
+{: #replication}
 
 La replica usa una delle tue pianificazioni delle istantanee per copiare automaticamente le istantanee su un volume di destinazione in un data center remoto. Le copie possono essere ripristinate nel sito remoto nel caso si verifichi un evento catastrofico o un danneggiamento dei dati.
 
-La replica mantiene i tuoi dati sincronizzati in due diverse ubicazioni. Se vuoi clonare il tuo volume e utilizzarlo indipendentemente dal volume originale, consulta [Creazione di un volume di file duplicato](how-to-create-duplicate-volume.html).
+La replica mantiene i tuoi dati sincronizzati in due diverse ubicazioni. Se vuoi clonare il tuo volume e utilizzarlo indipendentemente dal volume originale, consulta [Creazione di un volume di file duplicato](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume).
 {:tip}
 
 Prima di poter eseguire la replica, devi creare una pianificazione delle istantanee.
@@ -112,7 +113,7 @@ Le repliche funzionano in base a una pianificazione delle istantanee. Prima di p
 2. Fai clic su **Replica** e fai clic su **Purchase a replication**.
 3. Seleziona la pianificazione delle istantanee esistente che vuoi venga seguita dalla tua replica. L'elenco contiene tutte le pianificazioni delle istantanee attive. <br />
 
-   Puoi selezionare solo una singola pianificazione, anche se hai una combinazione di orarie, giornaliere e settimanali. Tutte le istantanee che erano state acquisite a partire dal ciclo di replica precedente vengono replicate indipendentemente dalla pianificazione che ha dato loro origine.<br />Se non disponi di istantanee configurate, ti viene richiesto di procedere a farlo prima di poter ordinare la replica. Per ulteriori informazioni, vedi [Gestione delle istantanee](snapshots.html).
+   Puoi selezionare solo una singola pianificazione, anche se hai una combinazione di orarie, giornaliere e settimanali. Tutte le istantanee che erano state acquisite a partire dal ciclo di replica precedente vengono replicate indipendentemente dalla pianificazione che ha dato loro origine.<br />Se non disponi di istantanee configurate, ti viene richiesto di procedere a farlo prima di poter ordinare la replica. Per ulteriori informazioni, vedi [Gestione delle istantanee](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots).
    {:tip}
 3. Fai clic su **Location** e seleziona il data center che è il tuo sito di ripristino di emergenza (DR, disaster recovery).
 4. Fai clic su **Continue**.
@@ -155,7 +156,7 @@ Il tuo spazio per le istantanee primario e il tuo spazio di replica devono esser
 
 Le dimensioni dei tuoi volumi devono essere le stesse per i volumi di archiviazione primario e di replica. L'uno non può essere più grande dell'altro. Quando aumenti il tuo spazio per le istantanee per il tuo volume primario, lo spazio di replica viene aumentato automaticamente. L'aumento dello spazio per le istantanee attiva un aggiornamento della replica immediato. L'aumento per entrambi i volumi viene visualizzato come voci di riga nella tua fattura ed è a base proporzionale come necessario.
 
-Per ulteriori informazioni sull'aumento dello spazio dell'istantanea, consulta [Istantanee](snapshots.html).
+Per ulteriori informazioni sull'aumento dello spazio dell'istantanea, consulta [Istantanee](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots).
 ## Visualizzazione dei volumi di replica nell'elenco volumi
 
 Puoi visualizzare i tuoi volumi di replica nella pagina {{site.data.keyword.filestorage_short}} in **Storage** > **{{site.data.keyword.filestorage_short}}**. Il nome del volume mostra il nome del volume primario seguito da REP. Il tipo (**Type**) è Endurance oppure Performance – Replica. L'indirizzo di destinazione (**Target Address**) non è disponibile (N/A) perché il volume di replica non è montato nel data center di replica e lo stato (**Status**) è inattivo (Inactive).
@@ -185,14 +186,14 @@ I duplicati possono essere creati sia dai volumi primari che da quelli di replic
 
 I volumi duplicati solo accessibili da un host per la lettura/scrittura non appena viene seguito il provisioning dell'archiviazione. Tuttavia, le istantanee e le repliche sono consentite solo dopo il completamento della copia dei dati dall'originale al duplicato.
 
-Per ulteriori informazioni, vedi [Creazione di un volume di file duplicato](how-to-create-duplicate-volume.html)
+Per ulteriori informazioni, vedi [Creazione di un volume di file duplicato](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume)
 
 ## Utilizzo delle repliche per il failover in caso di emergenze
 
 Quando esegui il failover, stai passando dal tuo volume di archiviazione nel tuo data center primario al volume di destinazione nel tuo data center remoto. Ad esempio, il tuo data center primario si trova a Londra e il tuo data center secondario si trova ad Amsterdam. Se si verifica un evento di malfunzionamento, eseguirai il failover ad Amsterdam, stabilendo una connessione al volume che ora è quello primario da un'istanza di calcolo in Amsterdam. Dopo che il tuo volume a Londra è stato riparato, verrà acquisita un'istantanea del volume che si trova ad Amsterdam per eseguire il fallback a Londra e al volume che ora è nuovamente quello primario da un'istanza di elaborazione a Londra.
 
-* Se per l'ubicazione primaria si verifica un problema ma l'archiviazione e l'host sono ancora online, vedi [Failover con un volume primario accessibile](dr-accessible-primary.html).
-* Se l'ubicazione primaria è inattiva, vedi [Failover con un volume primario inaccessibile](disaster-recovery.html).
+* Se per l'ubicazione primaria si verifica un problema ma l'archiviazione e l'host sono ancora online, vedi [Failover con un volume primario accessibile](/docs/infrastructure/FileStorage?topic=FileStorage-dr-accessible).
+* Se l'ubicazione primaria è inattiva, vedi [Failover con un volume primario inaccessibile](/docs/infrastructure/FileStorage?topic=FileStorage-dr-inaccessible).
 
 ## Annullamento di una replica esistente
 
@@ -213,3 +214,68 @@ Quando un volume primario viene annullato, la pianificazione della replica e il 
  2. Fai clic su **Actions** e seleziona **Cancel for {{site.data.keyword.filestorage_short}}**.
  3. Seleziona quando annullare il volume. Scegli **Immediately** oppure **Anniversary Date** e fai clic su **Continue**.
  4. Fai clic su **I acknowledge that due to cancellation, data loss may occur** e fai clic su **Cancel**.
+
+## Comandi correlati alla replica in SLCLI
+{: #clicommands}
+
+* Elenco dei data center di replica adatti per un volume specifico.
+  ```
+  # slcli file replica-locations --help
+  Usage: slcli file replica-locations [OPTIONS] VOLUME_ID
+
+  Options:
+  --sortby TEXT   Column to sort by
+  --columns TEXT  Columns to display. Options: ID, Long Name, Short Name
+  -h, --help      Show this message and exit.
+  ```
+
+* Ordine di un volume di replica di archiviazione file.
+  ```
+  # slcli file replica-order --help
+  Usage: slcli file replica-order [OPTIONS] VOLUME_ID
+
+  Options:
+  -s, --snapshot-schedule [INTERVAL|HOURLY|DAILY|WEEKLY]
+                                  Snapshot schedule to use for replication,
+                                  (INTERVAL | HOURLY | DAILY | WEEKLY)
+                                  [required]
+  -l, --location TEXT             Short name of the data center for the
+                                  replicant (e.g.: dal09)  [required]
+  --tier [0.25|2|4|10]            Endurance Storage Tier (IOPS per GB) of the
+                                  primary volume for which a replicant is
+                                  ordered [optional]
+  -h, --help                      Show this message and exit.
+  ```
+
+* Elenco dei volumi di replica esistenti per un volume file.
+  ```
+  # slcli file replica-partners --help
+  Usage: slcli file replica-partners [OPTIONS] VOLUME_ID
+
+  Options:
+  --sortby TEXT   Column to sort by
+  --columns TEXT  Columns to display. Options: ID, Username, Account ID,
+                  Capacity (GB), Hardware ID, Guest ID, Host ID
+  -h, --help      Show this message and exit.
+  ```
+
+* Failover di un volume file a un volume di replica specifico.
+  ```
+  # slcli file replica-failover --help
+  Usage: slcli file replica-failover [OPTIONS] VOLUME_ID
+
+  Options:
+  --replicant-id TEXT  ID of the replicant volume
+  --immediate          Failover to replicant immediately.
+  -h, --help      Show this message and exit.
+  ```
+
+* Failback di un volume file da un volume di replica specifico.
+  ```
+  # slcli file replica-failback --help
+  Usage: slcli file replica-failback [OPTIONS] VOLUME_ID
+
+  Options:
+  --replicant-id TEXT  ID of the replicant volume
+  -h, --help           Show this message and exit.
+  ```

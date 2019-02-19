@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
@@ -12,11 +12,28 @@ lastupdated: "2018-11-30"
 {:important: .important}
 
 # Montando o {{site.data.keyword.filestorage_short}} no Linux
+{: #mountingLinux}
 
 Primeiro, certifique-se de que o host que acessará o volume do {{site.data.keyword.filestorage_full}} esteja autorizado por meio do [{{site.data.keyword.slportal}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://control.softlayer.com/){:new_window}.
 
 1. Na página de listagem do {{site.data.keyword.filestorage_short}}, clique no link **Ações** que está associado ao novo compartilhamento e clique em **Autorizar host**.
 2. Selecione o host ou os hosts na lista e clique em **Enviar**. Essa ação autoriza o host a acessar o compartilhamento.
+
+Como alternativa, é possível autorizar os hosts por meio do SLCLI.
+```
+# slcli file access-authorize --help
+Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
+
+Options:
+  -h, --hardware-id TEXT    The id of one SoftLayer_Hardware to authorize
+  -v, --virtual-id TEXT     The id of one SoftLayer_Virtual_Guest to authorize
+  -i, --ip-address-id TEXT  The id of one SoftLayer_Network_Subnet_IpAddress
+                            to authorize
+  --ip-address TEXT         An IP address to authorize
+  -s, --subnet-id TEXT      The id of one SoftLayer_Network_Subnet to
+                            authorize
+  --help                    Show this message and exit.
+```
 
 ## Montando o compartilhamento do {{site.data.keyword.filestorage_short}}
 
@@ -61,7 +78,7 @@ O ponto de montagem da instância de armazenamento de arquivo pode ser obtido po
    -rw-r--r-- 1 nobody nobody 0 Sep 8 15:52 test
    ```
 
-   Os arquivos criados pela raiz têm a propriedade de `nobody:nobody`. Para exibir a propriedade corretamente, o `idmapd.conf` precisa ser atualizado com as configurações de domínio corretas. Consulte a seção [Como implementar no_root_squash para o NFS](#implementing-no_root_squash-for-nfs-optional-).
+   Os arquivos criados pela raiz têm a propriedade de `nobody:nobody`. Para exibir a propriedade corretamente, o `idmapd.conf` precisa ser atualizado com as configurações de domínio corretas. Consulte a seção [Como implementar no_root_squash para o NFS](#norootsquash).
    {:tip}
 
 5. Monte o compartilhamento remoto no início. Para concluir a configuração, edite a tabela de sistemas de arquivos (`/etc/fstab`) para incluir o compartilhamento remoto na lista de entradas montadas automaticamente na inicialização:
@@ -90,6 +107,7 @@ O ponto de montagem da instância de armazenamento de arquivo pode ser obtido po
 
 
 ## Implementando  ` no_root_squash `  para NFS (opcional)
+{: #norootsquash}
 
 A configuração de `no_root_squash` permite que os clientes raiz retenham permissões raiz no compartilhamento do NFS.
 - Para o NFSv3, os clientes não precisam fazer nada; `no_root_squash` funciona.

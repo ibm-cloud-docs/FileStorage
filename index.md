@@ -2,18 +2,18 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-01-07"
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
-{:DomainName: data-hd-keyref="APPDomain"}
-{:DomainName: data-hd-keyref="DomainName"}
 
 
 # Getting Started with {{site.data.keyword.filestorage_short}}
+{: #GettingStarted}
 
 {{site.data.keyword.filestorage_full}} is persistent, fast, and flexible network-attached, NFS-based {{site.data.keyword.filestorage_short}}. In this network-attached storage (NAS) environment, you have total control over your file shares function and performance. {{site.data.keyword.filestorage_short}} shares can be connected to up to 64 authorized devices over routed TCP/IP connections for resiliency.
 
@@ -27,14 +27,14 @@ Take advantage of the following core features of {{site.data.keyword.filestorage
    - Available for file-based NFS shares.
 - **Highly durable and resilient**
    - Protects the integrity of the data, and maintains availability through maintenance events and unplanned failures without the need to create and manage operating system-level redundant array of independent disk (RAID) arrays
-- **Data-At-Rest Encryption** [(Available in select data centers.)](new-ibm-and-file-storage-location-and-features.html)
+- **Data-At-Rest Encryption** [(Available in select data centers.)](/docs/infrastructure/FileStorage?topic=FileStorage-news)
    - Provider-managed encryption for data-at-rest is provided at no additional cost
-- **All Flash Backed Storage** [(Available in select data centers.)](new-ibm-block-and-file-storage-location-and-features.html)
+- **All Flash Backed Storage** [(Available in select data centers.)](/docs/infrastructure/FileStorage?topic=FileStorage-news)
    - All flash storage for volumes can be provisioned at 2 IOPS/GB or higher levels.
-- **Snapshots** [(Available in select data centers.)](new-ibm-block-and-file-storage-location-and-features.html).
+- **Snapshots** [(Available in select data centers.)](/docs/infrastructure/FileStorage?topic=FileStorage-news).
    - Captures point-in-time data snapshots non-disruptively.
-- **Replication**  [(Available in select data centers.)](new-ibm-block-and-file-storage-location-and-features.html)
-   - Available when storage is provisioned in [select data centers](new-ibm-block-and-file-storage-location-and-features.html).
+- **Replication**  [(Available in select data centers.)](/docs/infrastructure/FileStorage?topic=FileStorage-news)
+   - Available when storage is provisioned in [select data centers](/docs/infrastructure/FileStorage?topic=FileStorage-news).
    - Automatically copies snapshots to a partner {{site.data.keyword.BluSoftlayer_full}} data center.
 - **Highly available connectivity**
    - Uses redundant networking connections to maximize availability.
@@ -48,7 +48,7 @@ Take advantage of the following core features of {{site.data.keyword.filestorage
 
 You can select hourly or monthly billing for a File volume. The type of billing that is selected for a LUN applies to its snapshot space and replicas. For example, if you provision a LUN with hourly billing, any snapshots or replica fees are billed hourly. If you provision a LUN with monthly billing, any snapshots or replica fees are billed monthly.
 
-With **hourly billing**, the number of hours that the File volume existed on the account is calculated at the time the LUN is deleted or at the end of the billing cycle, which ever comes first. Hourly billing is a good choice for storage that is used for a few days or less than a full month. Hourly billing is available for storage that is provisioned in [select data centers](new-ibm-block-and-file-storage-location-and-features.html) only.
+With **hourly billing**, the number of hours that the File volume existed on the account is calculated at the time the LUN is deleted or at the end of the billing cycle, which ever comes first. Hourly billing is a good choice for storage that is used for a few days or less than a full month. Hourly billing is available for storage that is provisioned in [select data centers](/docs/infrastructure/FileStorage?topic=FileStorage-news) only.
 
 With **monthly billing**, the calculation for the price is pro-rated from the date of creation to the end of the billing cycle and billed immediately. If a volume is deleted before the end of the billing cycle, there's no refund. Monthly billing is a good choice for storage that is used in production workloads that use data that needs to be stored and accessed for long periods of time (one month or longer).
 
@@ -111,7 +111,7 @@ Endurance {{site.data.keyword.filestorage_short}} is available in four IOPS perf
 
 - **4 IOPS per GB** is designed for higher-intensity workloads. These workloads are typically characterized by having a high percentage of data active at any time. Example applications include transactional and other performance-sensitive databases.
 
-- **10 IOPS per GB** is designed for the most demanding workloads such as those created by NoSQL databases, and data processing for Analytics. This tier is available for storage that is provisioned up to 4 TB in [select data centers](new-ibm-block-and-file-storage-location-and-features.html) only.
+- **10 IOPS per GB** is designed for the most demanding workloads such as those created by NoSQL databases, and data processing for Analytics. This tier is available for storage that is provisioned up to 4 TB in [select data centers](/docs/infrastructure/FileStorage?topic=FileStorage-news) only.
 
 Up to 48,000 IOPS are available with a 12-TB Endurance volume.
 
@@ -265,9 +265,9 @@ Another factor to consider is the number of hosts that are using your volume. If
 
 The speed of your Ethernet connection must be faster than the expected maximum throughput from your volume. Generally, don't expect to saturate your Ethernet connection beyond 70% of the available bandwidth. For example, if you have 6,000 IOPS and are using a 16-KB block size, the volume can handle approximately 94-MBps throughput. If you have a 1-Gbps Ethernet connection to your LUN, it becomes a bottleneck when your servers attempt to use the maximum available throughput. It's because 70 percent of the theoretical limit of a 1-Gbps Ethernet connection (125 MB per second) would allow for 88 MB per second only.
 
-To achieve maximum IOPS, adequate network resources need to be in place. Other considerations include private network usage outside of storage and host side and application-specific tunings (IP stack or [queue depths](set-host-queue-depth-settings-performance-and-endurance-storage.html), and other settings).
+To achieve maximum IOPS, adequate network resources need to be in place. Other considerations include private network usage outside of storage and host side and application-specific tunings (IP stack or [queue depths](/docs/infrastructure/FileStorage?topic=FileStorage-hostqueuesettings), and other settings).
 
-Storage traffic is included in the total network usage of Public Virtual Servers. For more information about the limits that might be imposed by the service, see the [Virtual Server documentation](https://{DomainName}/docs/vsi/vsi_public.html#public-virtual-servers).
+Storage traffic is included in the total network usage of Public Virtual Servers. For more information about the limits that might be imposed by the service, see the [Virtual Server documentation](/docs/vsi?topic=virtual-servers-about-public-virtual-servers).
 
 **NFS version**
 
@@ -275,14 +275,14 @@ Both NFS v3 and NFS v4.1 are supported in the {{site.data.keyword.BluSoftlayer_f
 
 ## Submitting your Order
 
-When you're ready to submit your order, you can place it through the [Console](provisioning-file-storage.html) or the [SLCLI](ordering-through-cli.html). For Provisioning File Storage with VMware, click [here](architecture-guide-file-storage-vmware.html)
+When you're ready to submit your order, you can place it through the [Console](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole) or the [SLCLI](/docs/infrastructure/FileStorage?topic=FileStorage-orderingSLCLI). For Provisioning File Storage with VMware, click [here](/docs/infrastructure/FileStorage?topic=FileStorage-architectureguide)
 
 ## Connecting your new storage
 
 When your provisioning request is complete, authorize your hosts to access the new storage and configure your connection. Depending on your host's operating system, follow the appropriate link.
-- [Accessing {{site.data.keyword.filestorage_short}} on Linux](accessing-file-storage-linux.html)
-- [Mounting {{site.data.keyword.filestorage_short}} in CentOS](mounting-nsf-file-storage.html)
-- [Mounting {{site.data.keyword.filestorage_short}} on CoreOS](mounting-storage-coreos.html)
-- [Configuring {{site.data.keyword.filestorage_short}} for backup with cPanel](configure-backup-cpanel.html)
-- [Configuring {{site.data.keyword.filestorage_short}} for backup with Plesk](configure-backup-plesk.html)
-- [Mounting {{site.data.keyword.filestorage_short}} Volume on ESXi hosts](architecture-guide-file-storage-vmware.html)
+- [Accessing {{site.data.keyword.filestorage_short}} on Linux](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)
+- [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)
+- [Mounting {{site.data.keyword.filestorage_short}} on CoreOS](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCoreOS)
+- [Configuring {{site.data.keyword.filestorage_short}} for backup with cPanel](/docs/infrastructure/FileStorage?topic=FileStorage-cPanelBackups)
+- [Configuring {{site.data.keyword.filestorage_short}} for backup with Plesk](/docs/infrastructure/FileStorage?topic=FileStorage-PleskBackup)
+- [Mounting {{site.data.keyword.filestorage_short}} Volume on ESXi hosts](/docs/infrastructure/FileStorage?topic=FileStorage-architectureguide)

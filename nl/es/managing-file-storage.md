@@ -1,17 +1,19 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 
 # Gestión de {{site.data.keyword.filestorage_short}}
+{: #managingstorage}
 
 Puede gestionar los volúmenes de {{site.data.keyword.filestorage_full}} mediante el {{site.data.keyword.slportal}}.
 
@@ -26,13 +28,41 @@ Puede autorizar y conectar hosts que estén ubicados en el mismo centro de datos
 2. Desplácese a la sección **Hosts autorizados** de la página.
 3. Pulse **Autorizar host** en la parte derecha. Seleccione los hosts que pueden acceder a ese volumen determinado.
 
+De manera alternativa, puede utilizar el mandato siguiente en la CLI SL.
+```
+# slcli file access-authorize --help
+Uso: slcli file access-authorize [OPCIONES] ID_VOLUMEN
+
+Opciones:
+  -h, --hardware-id TEXTO    El id de un SoftLayer_Hardware que se va a autorizar
+  -v, --virtual-id TEXTO     El id de un SoftLayer_Virtual_Guest que se va a autorizar
+  -i, --ip-address-id TEXTO  El id de una SoftLayer_Network_Subnet_IpAddress
+                            que se va a autorizar
+  --ip-address TEXTO         Una dirección IP que se va a autorizar
+  -s, --subnet-id TEXTO      El id de una SoftLayer_Network_Subnet_IpAddress
+                            que se va a autorizar
+  --help                    Mostrar este mensaje y salir.
+```
 
 ## Visualización de la lista de hosts que están autorizados para acceder a un volumen de {{site.data.keyword.filestorage_short}}
 
 1. Pulse **Almacenamiento > {{site.data.keyword.filestorage_short}}** y pulse el **Nombre de volumen**.
 2. Desplácese en la página hasta la sección **Hosts autorizados**.
 
-Aquí puede ver la lista de hosts, que actualmente tienen autorización para acceder al volumen.
+Allí puede ver la lista de hosts, que actualmente tienen autorización para acceder al volumen.
+
+De manera alternativa, puede utilizar el mandato siguiente en la CLI SL.
+```
+# slcli file access-list --help
+Uso: slcli file access-list [OPCIONES] ID_VOLUMEN
+
+Opciones:
+  --sortby TEXTO  Columna por la que se debe ordenar
+  --columns TEXTO Columnas que se deben visualizar. Opciones: id, name, type,
+                  private_ip_address, source_subnet, host_iqn, username,
+                  password, allowed_host_id
+  -h, --help      Mostrar este mensaje y salir.
+```
 
 
 ## Visualización de los volúmenes de {{site.data.keyword.filestorage_short}} a los cuales un host está autorizado
@@ -48,7 +78,7 @@ Se le presenta una lista de los volúmenes de almacenamiento a los cuales este h
 
 ## Montaje y desmontaje de {{site.data.keyword.filestorage_short}}
 
-Puede utilizar la información de punto de montaje proporcionada en la vista **Detalles del volumen** para montar {{site.data.keyword.filestorage_short}} desde un host. Consulte [Acceso a {{site.data.keyword.filestorage_short}} en Linux](accessing-file-storage-linux.html)
+Puede utilizar la información de punto de montaje proporcionada en la vista **Detalles del volumen** para montar {{site.data.keyword.filestorage_short}} desde un host. Consulte [Acceso a {{site.data.keyword.filestorage_short}} en Linux](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)
 
 
 ## Revocación del acceso de un host a {{site.data.keyword.filestorage_short}}
@@ -82,6 +112,22 @@ Si desea desconectar varios volúmenes desde un host específico, debe repetir l
 Si desea desconectar varios hosts desde un host específico, debe repetir la acción Revocar acceso para cada host.
 {:tip}
 
+### Revocación del acceso a través de la CLI SL.
+De manera alternativa, puede utilizar el mandato siguiente en la CLI SL.
+```
+# slcli file access-revoke --help
+Uso: slcli file access-revoke [OPCIONES] ID_VOLUMEN
+
+Opciones:
+  -h, --hardware-id TEXTO    El id de un SoftLayer_Hardware cuya autorización se va a revocar
+  -v, --virtual-id TEXTO     El id de un SoftLayer_Virtual_Guest cuya autorización se va a revocar
+  -i, --ip-address-id TEXTO  El id de una SoftLayer_Network_Subnet_IpAddress
+                            cuya autorización se va a revocar
+  --ip-address TEXTO         Una dirección IP cuya autorización se va a revocar
+  -s, --subnet-id TEXTO      El id de una SoftLayer_Network_Subnet_IpAddress
+                            cuya autorización se va a revocar
+  --help                    Mostrar este mensaje y salir.
+```
 
 ## Cancelación de un volumen de almacenamiento
 
@@ -95,3 +141,15 @@ Si ya no necesita un volumen específico, puede cancelar ese almacenamiento. Par
    {:tip}
 4. Pulse **Continuar** o **Cerrar**.
 5. Marque el recuadro de selección de acuse de recibo y pulse **Confirmar**.
+
+De manera alternativa, puede utilizar el mandato siguiente en la CLI SL.
+```
+# slcli file volume-cancel --help
+Uso: slcli file volume-cancel [OPCIONES] ID_VOLUMEN
+
+Opciones:
+  --reason TEXTO Una razón para la cancelación (opcional)
+  --immediate    Cancelar el volumen de almacenamiento de archivos inmediatamente en lugar de
+                 hacerlo en el aniversario de facturación
+  -h, --help     Mostrar este mensaje y salir.
+```

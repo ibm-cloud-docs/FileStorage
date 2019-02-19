@@ -1,19 +1,21 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 
 # Gestione delle istantanee
+{: #managingSnapshots}
 
-## Stai creando una pianificazione delle istantanee?
+## Creazione di una pianificazione delle istantanee
 
 Con le pianificazioni delle istantanee, decidi con che frequenza e quando vuoi creare un riferimento ad un punto nel tempo del tuo volume di archiviazione. Puoi avere un massimo di 50 istantanee per volume di archiviazione. Le pianificazioni sono gestite tramite la scheda **Storage** > **{{site.data.keyword.filestorage_short}}** del [{{site.data.keyword.slportal}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://control.softlayer.com/){:new_window}.
 
@@ -21,6 +23,7 @@ Prima di poter configurare la tua pianificazione iniziale, devi procedere all'ac
 {:important}
 
 ### Aggiunta di una pianificazione delle istantanee
+{: #addschedule}
 
 Le pianificazioni delle istantanee possono essere configurate per intervalli orari, giornalieri e settimanali, ciascuno con un distinto ciclo di conservazione. Il limite massimo di istantanee è 50 per ogni volume di archiviazione, che può essere una combinazione di pianificazioni orarie, giornaliere e settimanali e di istantanee manuali.
 
@@ -39,6 +42,17 @@ Le pianificazioni delle istantanee possono essere configurate per intervalli ora
 
 l'elenco delle istantanee viene visualizzato man mano che vengono eseguite nella sezione **Snapshots** della pagina **Detail**.
 
+Puoi anche visualizzare l'elenco delle tue pianificazioni delle istantanee tramite la SLCLI con il seguente comando.
+```
+# slcli file snapshot-schedule-list --help
+Usage: slcli file snapshot-schedule-list [OPTIONS] VOLUME_ID
+
+  Lists snapshot schedules for a given volume
+
+Options:
+  -h, --help  Show this message and exit.
+```
+
 ## Acquisizione di un'istantanea manuale
 
 Le istantanee manuali possono essere acquisite a vari punti durante un upgrade o una manutenzione dell'applicazione. Puoi anche acquisire le istantanee su più server che erano stati temporaneamente disattivati a livello dell'applicazione.
@@ -50,9 +64,30 @@ Il limite massimo di istantanee manuali per ogni volume di archiviazione è 50.
 3. Fai clic su **Take Manual Snapshot**.
 L'istantanea viene acquisita e viene visualizzata nella sezione **Snapshots** della pagina **Detail**. La sua pianificazione si presenta come manuale (Manual).
 
+In alternativa, puoi utilizzare il seguente comando per creare un'istantanea tramite la SLCLI.
+```
+# slcli file snapshot-create --help
+Usage: slcli file snapshot-create [OPTIONS] VOLUME_ID
+
+Options:
+  -n, --notes TEXT  Notes to set on the new snapshot
+  -h, --help        Show this message and exit.
+```
+
 ## Elenco di tutte le istanze con le funzioni di gestione e di informazioni sullo spazio utilizzato
 
 Un elenco di istantanee conservate e spazio utilizzato può essere visualizzato nella pagina **Detail** (**Storage**, **{{site.data.keyword.filestorage_short}}**). Le funzioni di gestione (modifica di pianificazioni e aggiunta di ulteriore spazio) vengono controllate nella pagina Detail utilizzando il menu **Actions** oppure i link nelle diverse sezioni della pagina.
+
+In alternativa, puoi effettuare questa attività tramite la CLI SL.
+```
+# slcli file snapshot-list --help
+Usage: slcli file snapshot-list [OPTIONS] VOLUME_ID
+
+Options:
+  --sortby TEXT   Column to sort by
+  --columns TEXT  Columns to display. Options: id, name, created, size_bytes
+  -h, --help      Show this message and exit.
+```
 
 ## Visualizzazione dell'elenco di istantanee conservate
 
@@ -92,7 +127,7 @@ Le pianificazioni delle istantanee possono essere annullate tramite **Storage** 
 1. Fai clic sulla pianificazione da eliminare nel frame **Snapshot Schedules** nella pagina **Details**.
 2. Fai clic sulla casella di spunta accanto alla pianificazione da eliminare e fai clic su **Save**.<br />
 
-Se stai utilizzando la funzione di replica, assicurati che la pianificazione che stai eliminando non sia la pianificazione utilizzata dalla replica. Per ulteriori informazioni sull'eliminazione di una pianificazione della replica, vedi [qui](replication.html).
+Se stai utilizzando la funzione di replica, assicurati che la pianificazione che stai eliminando non sia la pianificazione utilizzata dalla replica. Per ulteriori informazioni sull'eliminazione di una pianificazione della replica, vedi [qui](/docs/infrastructure/FileStorage?topic=FileStorage-replication).
 {:important}
 
 ## Eliminazione di un'istantanea
@@ -102,14 +137,24 @@ Le istantanee che non sono più necessarie possono essere rimosse manualmente pe
 1. Fai clic sul tuo volume di archiviazione e scorri alla sezione **Snapshot** per visualizzare l'elenco delle istantanee esistenti.
 2. Fai clic su **Actions** accanto a una specifica istantanea e fai clic su **Delete** per eliminare l'istantanea. Tale eliminazione non ha alcuna ripercussione sulle eventuali istantanee passate o future nella stessa pianificazione poiché le istantanee non hanno alcuna interdipendenza.
 
+In alternativa, puoi eliminare un'istantanea tramite la CLI SL.
+```
+# slcli file snapshot-delete --help
+Usage: slcli file snapshot-delete [OPTIONS] SNAPSHOT_ID
+
+Options:
+  -h, --help  Show this message and exit.
+```
+
 Le istantanee manuali che non sono eliminate nel portale manualmente sono eliminate automaticamente quando raggiungi le limitazioni di spazio (prima quella meno recente).
+{:note}
 
 ## Ripristino di un volume di archiviazione a uno specifico punto temporale utilizzando un'istantanea
 
 Potresti dover riportare il tuo volume di archiviazione a uno specifico punto temporale a causa di un errore utente o di un danneggiamento dei dati.
 
 1. Smonta e scollega il tuo volume di archiviazione dall'host.
-   - Fai clic [qui](accessing-file-storage-linux.html) per le istruzioni.
+   - Fai clic [qui](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux) per le istruzioni.
 2. Fai clic su **Storage**, **{{site.data.keyword.filestorage_short}}** nel [{{site.data.keyword.slportal}} ![Icona link esterno](../../icons/launch-glyph.svg "Iconal ink esterno")](https://control.softlayer.com/){:new_window}.
 3. Scorri verso il basso e fai clic sul tuo volume da ripristinare. La sezione **Snapshots** della pagina **Detail** visualizza l'elenco di tutte le istantanee salvate insieme alla loro dimensione e alla loro data di creazione.
 4. Fai clic su **Actions** accanto all'istantanea da utilizzare e fai clic su **Restore**. <br/>
@@ -121,7 +166,18 @@ Potresti dover riportare il tuo volume di archiviazione a uno specifico punto te
    Aspettati un messaggio nella pagina che indica che è in corso il ripristino del volume utilizzando l'istantanea selezionata. Inoltre, compare un'icona accanto al tuo volume in {{site.data.keyword.filestorage_short}} che indica che è in corso una transazione attiva. Se passi il puntatore del mouse sull'icona, viene visualizzata una finestra che mostra la transazione. Una volta completata la transazione, l'icona scompare.
    {:note}
 6. Monta e ricollega il tuo volume di archiviazione all'host.
-  - Fai clic [qui](accessing-file-storage-linux.html) per le istruzioni.
+  - Fai clic [qui](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux) per le istruzioni.
+
+In alternativa, puoi ripristinare il volume con un'istantanea tramite la SLCLI.
+```
+# slcli file snapshot-restore --help
+Usage: slcli file snapshot-restore [OPTIONS] VOLUME_ID
+
+Options:
+  -s, --snapshot-id TEXT  The id of the snapshot which will be used to restore
+                          the block volume
+  -h, --help              Show this message and exit.
+```  
 
 Il ripristino di un volume comporta l'eliminazione di tutte le istantanee che erano state acquisite dopo che l'istantanea era stata utilizzata per il ripristino.
 {:important}
