@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-02-22"
 
-keywords:
+keywords: mounting file storage, Linux, CentOS, NFS
 
 subcollection: FileStorage
 
