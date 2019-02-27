@@ -28,7 +28,7 @@ lastupdated: "2019-02-05"
 2. 페이지의 **권한 부여된 호스트** 섹션으로 화면을 이동하십시오.
 3. 오른쪽에 있는 **호스트 권한 부여**를 클릭하십시오. 해당 특정 볼륨에 액세스할 수 있는 호스트를 선택하십시오.
 
-또는 SL CLI에서 다음 명령을 사용할 수 있습니다.
+또는 SLCLI에서 다음 명령을 사용할 수 있습니다.
 ```
 # slcli file access-authorize --help
 Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
@@ -51,7 +51,7 @@ Options:
 
 현재 볼륨에 액세스할 수 있는 권한 부여된 호스트의 목록을 볼 수 있습니다.
 
-또는 SL CLI에서 다음 명령을 사용할 수 있습니다.
+또는 SLCLI에서 다음 명령을 사용할 수 있습니다.
 ```
 # slcli file access-list --help
 Usage: slcli file access-list [OPTIONS] VOLUME_ID
@@ -112,8 +112,8 @@ Options:
 특정 볼륨에서 여러 호스트의 연결을 끊으려면 각 호스트에 대해 액세스 취소 조치를 반복 수행해야 합니다.
 {:tip}
 
-### SL CLI를 통해 액세스 권한 취소
-또는 SL CLI에서 다음 명령을 사용할 수 있습니다.
+### SLCLI를 통해 액세스 권한 취소
+또는 SLCLI에서 다음 명령을 사용할 수 있습니다.
 ```
 # slcli file access-revoke --help
 Usage: slcli file access-revoke [OPTIONS] VOLUME_ID
@@ -144,7 +144,7 @@ Options:
 4. **계속** 또는 **닫기**를 클릭하십시오.
 5. 수신확인 선택란을 클릭하고 **확인**을 클릭하십시오.
 
-또는 SL CLI에서 다음 명령을 사용할 수 있습니다.
+또는 SLCLI에서 다음 명령을 사용할 수 있습니다.
 ```
 # slcli file volume-cancel --help
 Usage: slcli file volume-cancel [OPTIONS] VOLUME_ID

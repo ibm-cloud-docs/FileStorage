@@ -82,7 +82,7 @@ Options:
 
 A list of retained snapshots and space that is used can be seen on the **Detail** page (**Storage**, **{{site.data.keyword.filestorage_short}}**). Management functions (editing schedules and adding more space) are conducted on the Detail page by using the **Actions** menu or links in the various sections on the page.
 
-Alternatively, you can accomplish this task through the SL CLI.
+Alternatively, you can accomplish this task through the SLCLI.
 ```
 # slcli file snapshot-list --help
 Usage: slcli file snapshot-list [OPTIONS] VOLUME_ID
@@ -141,7 +141,7 @@ Snapshots that are no longer needed can be manually removed to free up space for
 1. Click your storage volume and scroll to the **Snapshot** section to see the list of existing snapshots.
 2. Click **Actions** next to a particular snapshot and click **Delete** to delete the snapshot. This deletion doesn't affect any future or past snapshots on the same schedule as there's no dependency between snapshots.
 
-Alternatively, you can delete a snapshot through the SL CLI.
+Alternatively, you can delete a snapshot through the SLCLI.
 ```
 # slcli file snapshot-delete --help
 Usage: slcli file snapshot-delete [OPTIONS] SNAPSHOT_ID

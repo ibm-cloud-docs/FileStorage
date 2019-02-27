@@ -46,7 +46,7 @@ Endurance로 프로비저닝된 {{site.data.keyword.filestorage_short}}에 대�
 5. **마스터 서비스 계약을 읽었습니다...** 선택란을 클릭하고 **주문하기**를 클릭하십시오.
 6. 몇 분 후 새 스토리지 할당이 사용 가능해집니다.
 
-또는 SL CLI에서 다음 명령을 사용할 수 있습니다.
+또는 SLCLI에서 다음 명령을 사용할 수 있습니다.
 ```
 # slcli file volume-modify --help
 Usage: slcli file volume-modify [OPTIONS] VOLUME_ID

@@ -41,7 +41,7 @@ This feature is only available for storage that is provisioned in [data centers]
 Existing size limitations for {{site.data.keyword.filestorage_short}} that was provisioned with Endurance still apply (up to 4 TB for 10 IOPS tier and up to 12 TB for all other tiers).
 
 ## Resizing storage
-{: #steps}
+{: #resizingsteps}
 
 1. From the {{site.data.keyword.slportal}}, click **Storage** > **{{site.data.keyword.filestorage_short}}** OR from {{site.data.keyword.BluSoftlayer_full}} catalog click **Infrastructure** > **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Select the volume from the list and click **Actions** > **Modify Volume**
@@ -50,7 +50,7 @@ Existing size limitations for {{site.data.keyword.filestorage_short}} that was p
 5. Click **I have read the Master Service Agreement...**, and click **Place Order**.
 6. Your new storage allocation is available in a few minutes.
 
-Alternatively, you can use the following command in SL CLI.
+Alternatively, you can use the following command in SLCLI.
 ```
 # slcli file volume-modify --help
 Usage: slcli file volume-modify [OPTIONS] VOLUME_ID

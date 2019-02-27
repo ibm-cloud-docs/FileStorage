@@ -46,7 +46,7 @@ lastupdated: "2019-02-05"
 5. **「マスター・サービス契約を読み...」**をクリックし、**「注文する」**をクリックします。
 6. 新しいストレージ割り振りが数分後に使用可能になります。
 
-代わりの方法として、SL CLI で以下のコマンドを使用することができます。
+代わりの方法として、SLCLI で以下のコマンドを使用することができます。
 ```
 # slcli file volume-modify --help
 Usage: slcli file volume-modify [OPTIONS] VOLUME_ID

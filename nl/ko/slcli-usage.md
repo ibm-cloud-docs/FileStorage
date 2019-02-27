@@ -12,15 +12,15 @@ lastupdated: "2019-02-05"
 {:important: .important}
 {:codeblock: .codeblock}
 
-# {{site.data.keyword.filestorage_short}}용 SL CLI 명령
+# {{site.data.keyword.filestorage_short}}용 SLCLI 명령
 {: #SLCLIcommands}
 
-SL CLI를 사용하여 새 볼륨, 스냅샷 영역 및 복제에 대한 주문, 권한 업데이트, 볼륨 취소 등 일반적으로 [{{site.data.keyword.slportal}} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://control.softlayer.com/){:new_window}을 통해 처리되는 조치를 수행할 수 있습니다.
+SLCLI를 사용하여 새 볼륨, 스냅샷 영역 및 복제에 대한 주문, 권한 업데이트, 볼륨 취소 등 일반적으로 [{{site.data.keyword.slportal}} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://control.softlayer.com/){:new_window}을 통해 처리되는 조치를 수행할 수 있습니다.
 
-SL CLI 설치 및 사용 방법에 대한 자세한 정보는 [Python API 클라이언트 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://softlayer-python.readthedocs.io/en/latest/cli.html){:new_window}를 참조하십시오.
+SLCLI 설치 및 사용 방법에 대한 자세한 정보는 [Python API 클라이언트 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://softlayer-python.readthedocs.io/en/latest/cli.html){:new_window}를 참조하십시오.
 {:tip}
 
-## 액세스 관련 SL CLI 명령
+## 액세스 관련 SLCLI 명령
 * [{{site.data.keyword.filestorage_short}} 관리](/docs/infrastructure/FileStorage?topic=FileStorage-managingstorage)  
   ```
   slcli file access-authorize
@@ -28,9 +28,9 @@ SL CLI 설치 및 사용 방법에 대한 자세한 정보는 [Python API 클라
   slcli file access-revoke
   ```
 
-## 복제 관련 SL CLI 명령
+## 복제 관련 SLCLI 명령
 
-* [복제 관련 SL CLI 명령](/docs/infrastructure/FileStorage?topic=FileStorage-replication#clicommands)
+* [복제 관련 SLCLI 명령](/docs/infrastructure/FileStorage?topic=FileStorage-replication#clicommands)
   ```
   slcli file replica-failback
   slcli file replica-failover
@@ -39,7 +39,7 @@ SL CLI 설치 및 사용 방법에 대한 자세한 정보는 [Python API 클라
   slcli file replica-partners
   ```
 
-## 스냅샷 관련 SL CLI 명령
+## 스냅샷 관련 SLCLI 명령
 
 * [스냅샷 구매](/docs/infrastructure/FileStorage?topic=FileStorage-ordering-snapshots)
   ```
@@ -57,7 +57,7 @@ SL CLI 설치 및 사용 방법에 대한 자세한 정보는 [Python API 클라
   slcli file snapshot-restore
   ```
 
-## 볼륨 관련 SL CLI 명령
+## 볼륨 관련 SLCLI 명령
 
 * [{{site.data.keyword.filestorage_short}} 볼륨 주문](/docs/infrastructure/FileStorage?topic=FileStorage-orderingSLCLI)
 * [복제 볼륨 작성](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume)

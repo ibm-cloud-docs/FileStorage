@@ -28,7 +28,7 @@ lastupdated: "2019-02-05"
 2. ページの**「許可ホスト」**セクションまでスクロールします。
 3. 右にある**「ホストの許可」**をクリックします。 特定のボリュームにアクセスできるホストを選択します。
 
-代わりの方法として、SL CLI で以下のコマンドを使用することができます。
+代わりの方法として、SLCLI で以下のコマンドを使用することができます。
 ```
 # slcli file access-authorize --help
 Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
@@ -51,7 +51,7 @@ Options:
 
 そこには、ボリュームへのアクセスが現在許可されているホストのリストが表示されます。
 
-代わりの方法として、SL CLI で以下のコマンドを使用することができます。
+代わりの方法として、SLCLI で以下のコマンドを使用することができます。
 ```
 # slcli file access-list --help
 Usage: slcli file access-list [OPTIONS] VOLUME_ID
@@ -112,8 +112,8 @@ Options:
 特定のボリュームから複数のホストを切断する場合は、ホストごとに「アクセス権の取り消し」アクションを繰り返す必要があります。
 {:tip}
 
-### SL CLI でのアクセス権の取り消し
-代わりの方法として、SL CLI で以下のコマンドを使用することができます。
+### SLCLI でのアクセス権の取り消し
+代わりの方法として、SLCLI で以下のコマンドを使用することができます。
 ```
 # slcli file access-revoke --help
 Usage: slcli file access-revoke [OPTIONS] VOLUME_ID
@@ -144,7 +144,7 @@ Options:
 4. **「次へ進む (Continue)」**または**「閉じる」**をクリックします。
 5. 確認応答チェック・ボックスをクリックして、**「確認」**をクリックします。
 
-代わりの方法として、SL CLI で以下のコマンドを使用することができます。
+代わりの方法として、SLCLI で以下のコマンドを使用することができます。
 ```
 # slcli file volume-cancel --help
 Usage: slcli file volume-cancel [OPTIONS] VOLUME_ID

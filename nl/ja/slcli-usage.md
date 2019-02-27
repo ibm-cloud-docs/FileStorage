@@ -12,15 +12,15 @@ lastupdated: "2019-02-05"
 {:important: .important}
 {:codeblock: .codeblock}
 
-# {{site.data.keyword.filestorage_short}} の SL CLI コマンド
+# {{site.data.keyword.filestorage_short}} の SLCLI コマンド
 {: #SLCLIcommands}
 
-通常は [{{site.data.keyword.slportal}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://control.softlayer.com/){:new_window} で処理する、新規ボリュームやスナップショット・スペースおよびレプリケーションの注文、許可の更新、ボリュームのキャンセルなどの操作を実行するために、SL CLI を使用できます。
+通常は [{{site.data.keyword.slportal}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://control.softlayer.com/){:new_window} で処理する、新規ボリュームやスナップショット・スペースおよびレプリケーションの注文、許可の更新、ボリュームのキャンセルなどの操作を実行するために、SLCLI を使用できます。
 
-SL CLI をインストールして使用する方法について詳しくは、[Python API クライアント![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://softlayer-python.readthedocs.io/en/latest/cli.html){:new_window}を参照してください。
+SLCLI をインストールして使用する方法について詳しくは、[Python API クライアント![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://softlayer-python.readthedocs.io/en/latest/cli.html){:new_window}を参照してください。
 {:tip}
 
-## アクセス関連の SL CLI コマンド
+## アクセス関連の SLCLI コマンド
 * [{{site.data.keyword.filestorage_short}} の管理](/docs/infrastructure/FileStorage?topic=FileStorage-managingstorage)  
   ```
   slcli file access-authorize
@@ -28,9 +28,9 @@ SL CLI をインストールして使用する方法について詳しくは、[
   slcli file access-revoke
   ```
 
-## レプリケーション関連の SL CLI コマンド
+## レプリケーション関連の SLCLI コマンド
 
-* [レプリケーション関連の SL CLI コマンド](/docs/infrastructure/FileStorage?topic=FileStorage-replication#clicommands)
+* [レプリケーション関連の SLCLI コマンド](/docs/infrastructure/FileStorage?topic=FileStorage-replication#clicommands)
   ```
   slcli file replica-failback
   slcli file replica-failover
@@ -39,7 +39,7 @@ SL CLI をインストールして使用する方法について詳しくは、[
   slcli file replica-partners
   ```
 
-## スナップショット関連の SL CLI コマンド
+## スナップショット関連の SLCLI コマンド
 
 * [スナップショットの注文](/docs/infrastructure/FileStorage?topic=FileStorage-ordering-snapshots)
   ```
@@ -57,7 +57,7 @@ SL CLI をインストールして使用する方法について詳しくは、[
   slcli file snapshot-restore
   ```
 
-## ボリューム関連の SL CLI コマンド
+## ボリューム関連の SLCLI コマンド
 
 * [{{site.data.keyword.filestorage_short}} ボリュームの注文](/docs/infrastructure/FileStorage?topic=FileStorage-orderingSLCLI)
 * [複製ボリュームの作成](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume)

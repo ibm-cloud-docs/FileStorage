@@ -78,7 +78,7 @@ Options:
 
 보존된 스냅샷 및 사용된 영역의 목록은 **세부사항** 페이지에서 볼 수 있습니다(**스토리지**, **{{site.data.keyword.filestorage_short}}**). 관리 기능(스케줄 편집 및 영역 추가)은 세부사항 페이지에서 이 페이지에 있는 다양한 섹션의 **조치** 메뉴 또는 링크를 사용하여 수행됩니다.
 
-또는 SL CLI를 통해 이 태스크를 완료할 수 있습니다.
+또는 SLCLI를 통해 이 태스크를 완료할 수 있습니다.
 ```
 # slcli file snapshot-list --help
 Usage: slcli file snapshot-list [OPTIONS] VOLUME_ID
@@ -137,7 +137,7 @@ Options:
 1. 스토리지 볼륨을 클릭하고 **스냅샷** 섹션으로 스크롤하여 기존 스냅샷의 목록을 보십시오.
 2. 특정 스냅샷 옆에 있는 **조치**를 클릭하고 **삭제**를 클릭하여 스냅샷을 삭제하십시오. 스냅샷 간에는 종속성이 없으므로 이 삭제는 동일한 스케줄의 향후 또는 이전 스냅샷에 영향을 주지 않습니다.
 
-또는 SL CLI를 통해 스냅샷을 삭제할 수 있습니다.
+또는 SLCLI를 통해 스냅샷을 삭제할 수 있습니다.
 ```
 # slcli file snapshot-delete --help
 Usage: slcli file snapshot-delete [OPTIONS] SNAPSHOT_ID

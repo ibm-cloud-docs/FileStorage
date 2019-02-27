@@ -32,7 +32,7 @@ You can authorize and connect hosts that are located in the same data center as 
 2. Scroll to the **Authorized Hosts** section of the page.
 3. Click **Authorize Host** on the right. Select the hosts that can access that particular volume.
 
-Alternatively, you can use the following command in SL CLI.
+Alternatively, you can use the following command in SLCLI.
 ```
 # slcli file access-authorize --help
 Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
@@ -55,7 +55,7 @@ Options:
 
 There you can see the list of hosts, which are currently authorized to access the volume.
 
-Alternatively, you can use the following command in SL CLI.
+Alternatively, you can use the following command in SLCLI.
 ```
 # slcli file access-list --help
 Usage: slcli file access-list [OPTIONS] VOLUME_ID
@@ -116,8 +116,8 @@ If you want to disconnect multiple volumes from a specific host, you need to rep
 If you want to disconnect multiple hosts from a specific volume, you need to repeat the Revoke Access action for each host.
 {:tip}
 
-### Revoking access through the SL CLI.
-Alternatively, you can use the following command in SL CLI.
+### Revoking access through the SLCLI.
+Alternatively, you can use the following command in SLCLI.
 ```
 # slcli file access-revoke --help
 Usage: slcli file access-revoke [OPTIONS] VOLUME_ID
@@ -148,7 +148,7 @@ If you no longer need a specific volume, you can cancel that storage. To cancel 
 4. Click **Continue** or **Close**.
 5. Click the acknowledgment check box, and click **Confirm**.
 
-Alternatively, you can use the following command in SL CLI.
+Alternatively, you can use the following command in SLCLI.
 ```
 # slcli file volume-cancel --help
 Usage: slcli file volume-cancel [OPTIONS] VOLUME_ID
