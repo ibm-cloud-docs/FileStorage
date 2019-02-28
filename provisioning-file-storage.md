@@ -88,6 +88,7 @@ By default, you can provision a combined total of 250 {{site.data.keyword.blocks
 
 
 ## Connecting your new storage
+{: #mountingvolumesPortal}
 
 When your provisioning request is complete, authorize your hosts to access the new storage and configure your connection. Depending on your host's operating system, follow the appropriate link.
 - [Mounting {{site.data.keyword.filestorage_short}} on Linux](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)

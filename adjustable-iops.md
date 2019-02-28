@@ -28,6 +28,7 @@ Billing for the storage is updated to add the pro-rated difference of the new pr
 - Cost management – Some of our clients might need high IOPS just during peak usage times. For example, a large retail store has peak usage during the holidays and might need higher IOPS on their storage then than in the middle of the summer. This feature allows them to manage their costs and pay for higher IOPs only when they need it.
 
 ## Limitations
+{: #limitsofadjustIOPS}
 
 This feature is only available in [select data centers](/docs/infrastructure/BlockStorage?topic=BlockStorage-news).
 

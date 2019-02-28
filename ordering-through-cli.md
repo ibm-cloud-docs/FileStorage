@@ -136,6 +136,7 @@ For more information about the simultaneous authorizations limit, see the [FAQs]
 {:important}
 
 ## Connecting your new storage
+{: #mountingvolumesCLI}
 
 Depending on your host's operating system, follow the appropriate link.
 - [Mounting {{site.data.keyword.filestorage_short}} on Linux](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)

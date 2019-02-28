@@ -35,6 +35,7 @@ This feature is only available in [select data centers](/docs/infrastructure/Fil
 Expand action on the primary storage results in automatic resizing of the replica.
 
 ## Limitations
+{: #limitsofextension}
 
 This feature is only available for storage that is provisioned in [data centers](/docs/infrastructure/FileStorage?topic=FileStorage-news) with enhanced capabilities. Encrypted storage that is provisioned in these data centers can be increased up to 12 TB.
 

@@ -76,7 +76,7 @@ For more information about how to install and use the SLCLI, see [Python API Cli
   ```
   slcli file volume-modify
   ```
-* [Managing {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-managingstorage)  
+* [Managing {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-managingstorage)
   ```
   slcli file volume-cancel
   slcli file volume-count
@@ -85,7 +85,7 @@ For more information about how to install and use the SLCLI, see [Python API Cli
   slcli file volume-list
   slcli file volume-order
   ```
-* [Managing storage limits](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits)  
+* [Managing storage limits](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits)
   ```
   slcli file volume-count
   ```
