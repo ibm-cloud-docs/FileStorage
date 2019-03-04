@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-27"
 
-keywords: File Storage, Endurance, Performance, IOPS, replication, billing
+keywords: File Storage, Endurance, Performance, IOPS, replication, billing, file storage, nsf,
 
 subcollection: FileStorage
 

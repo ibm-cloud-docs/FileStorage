@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-22"
 
-keywords:
+keywords: mounting File Storage, mounting storage on Linux,
 
 subcollection: FileStorage
 
@@ -108,9 +108,8 @@ The mount point of the file storage instance can be obtained from the {{site.dat
 
    If you're using NFS 4.1, add `sec=sys` to the mount command to prevent file ownership issues.
    {:tip}
-   
+
    If your host OS is CentOS, you can configure more options. For more information, see [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS).
-   {:tip}
 
 
 ## Implementing `no_root_squash` for NFS (optional)
