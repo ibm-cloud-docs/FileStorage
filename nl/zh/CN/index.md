@@ -2,18 +2,18 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-01-07"
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
-{:DomainName: data-hd-keyref="APPDomain"}
-{:DomainName: data-hd-keyref="DomainName"}
 
 
 # {{site.data.keyword.filestorage_short}} 入门
+{: #GettingStarted}
 
 {{site.data.keyword.filestorage_full}} 是一种基于 NFS 的网络连接的 {{site.data.keyword.filestorage_short}}，具有持久、快速、灵活的特点。在此网络连接的存储器 (NAS) 环境中，您对文件共享功能和性能具有完全控制权。{{site.data.keyword.filestorage_short}} 共享可通过路由 TCP/IP 连接来连接到最多 64 个已授权设备，从而实现弹性。
 
@@ -27,14 +27,14 @@ lastupdated: "2019-01-07"
    - 可用于基于文件的 NFS 共享。
 - **持久性高，弹性大**
    - 在发生维护事件和意外故障期间保护数据完整性并保持可用性，而无需创建和管理操作系统级别的独立磁盘冗余阵列 (RAID)
-- **静态数据加密**（[在精选数据中心内提供](new-ibm-block-and-file-storage-location-and-features.html)。）
+- **静态数据加密** [（在精选数据中心内提供。）](/docs/infrastructure/FileStorage?topic=FileStorage-news)
    - 免费对静态数据进行提供者管理的加密
-- **所有支持闪存的存储器**（[在精选数据中心内提供](new-ibm-block-and-file-storage-location-and-features.html)。）
+- **所有支持闪存的存储器** [（在精选数据中心内提供。）](/docs/infrastructure/FileStorage?topic=FileStorage-news)
    - 可以在 2 IOPS/GB 或更高级别供应卷的所有闪存存储器。
-- **快照**（[在精选数据中心内提供](new-ibm-block-and-file-storage-location-and-features.html)。）
+- **快照** [（在精选数据中心内提供。）](/docs/infrastructure/FileStorage?topic=FileStorage-news).
    - 以非破坏性方式捕获时间点数据快照。
-- **复制**（[在精选数据中心内提供](new-ibm-block-and-file-storage-location-and-features.html)。）
-   - 在[精选数据中心](new-ibm-block-and-file-storage-location-and-features.html)内供应存储器时可用。
+- **复制**  [（在精选数据中心内提供。）](/docs/infrastructure/FileStorage?topic=FileStorage-news)
+   - 在[精选数据中心](/docs/infrastructure/FileStorage?topic=FileStorage-news)内供应存储器时可用。
    - 自动将快照复制到合作伙伴的 {{site.data.keyword.BluSoftlayer_full}} 数据中心。
 - **高度可用的连接**
    - 使用冗余网络连接以最大限度提高可用性。
@@ -48,7 +48,7 @@ lastupdated: "2019-01-07"
 
 可以选择按小时或按月对文件卷计费。为 LUN 选择的计费类型将应用于其快照空间和副本。例如，如果供应的 LUN 按小时计费，那么任何快照或副本费用都会按小时记帐。如果供应的 LUN 按月计费，那么任何快照或副本费用都会按月记帐。
 
-对于**按小时计费**，在删除 LUN 时或在计费周期结束时（以先发生者为准），将计算文件卷在帐户上存在的小时数。对于使用了数天或不足一个月的存储器，按小时计费是不错的选择。按小时计费仅可用于在[精选数据中心](new-ibm-block-and-file-storage-location-and-features.html)内供应的存储器。
+对于**按小时计费**，在删除 LUN 时或在计费周期结束时（以先发生者为准），将计算文件卷在帐户上存在的小时数。对于使用了数天或不足一个月的存储器，按小时计费是不错的选择。按小时计费仅可用于在[精选数据中心](/docs/infrastructure/FileStorage?topic=FileStorage-news)内供应的存储器。
 
 对于**按月计费**，将从创建日期一直到记帐周期结束按比例计算价格并立即记帐。如果在计费周期结束之前删除了卷，那么不会有任何退款。对于所用数据需要长期（一个月或更长时间）存储和访问的生产工作负载，使用按月计费的存储器是不错的选择。
 
@@ -111,7 +111,7 @@ lastupdated: "2019-01-07"
 
 - **4 IOPS/GB** 适用于高强度工作负载。这些工作负载的典型特点是在任意时间都有较高比例的活动数据。示例应用包括事务型数据库和其他性能敏感型数据库。
 
-- **10 IOPS/GB** 适用于要求最苛刻的工作负载，例如由 NoSQL 数据库创建的工作负载以及为 Analytics 进行的数据处理。此层仅在[精选数据中心](new-ibm-block-and-file-storage-location-and-features.html)内提供，用于供应的最高达 4 TB 的存储器。
+- **10 IOPS/GB** 适用于要求最苛刻的工作负载，例如由 NoSQL 数据库创建的工作负载以及为 Analytics 进行的数据处理。此层仅在[精选数据中心](/docs/infrastructure/FileStorage?topic=FileStorage-news)内提供，用于供应的最高达 4 TB 的存储器。
 
 12 TB 耐久性卷最高提供 48,000 IOPS。
 
@@ -265,9 +265,9 @@ lastupdated: "2019-01-07"
 
 以太网连接速度必须快于卷的预期最大吞吐量。一般情况下，不要指望以太网连接饱和到超过可用带宽的 70%。例如，如果您有 6,000 IOPS 并且使用的是 16 KB 块大小，那么卷可以处理约 94 MBps 的吞吐量。如果与 LUN 之间存在 1 Gbps 以太网连接，那么当服务器尝试使用最大可用吞吐量时，此连接会成为瓶颈。这是因为 1 Gbps 以太网连接的理论限制（125 MB/秒）的 70% 仅允许 88 MB/秒。
 
-要实现最大 IOPS，需要落实足够的网络资源。其他注意事项包括在存储器外部使用的专用网络、主机端以及特定于应用程序的调整（IP 堆栈或[队列深度](set-host-queue-depth-settings-performance-and-endurance-storage.html)以及其他设置）。
+要实现最大 IOPS，需要落实足够的网络资源。其他注意事项包括在存储器外部使用的专用网络、主机端以及特定于应用程序的调整（IP 堆栈或[队列深度](/docs/infrastructure/FileStorage?topic=FileStorage-hostqueuesettings)以及其他设置）。
 
-存储流量包含在公共虚拟服务器的总网络使用量之内。有关服务可能施加的限制的更多信息，请参阅[虚拟服务器文档](https://{DomainName}/docs/vsi/vsi_public.html#public-virtual-servers)。
+存储流量包含在公共虚拟服务器的总网络使用量之内。有关服务可能施加的限制的更多信息，请参阅[虚拟服务器文档](/docs/vsi?topic=virtual-servers-about-public-virtual-servers)。
 
 
 **NFS 版本**
@@ -276,14 +276,14 @@ lastupdated: "2019-01-07"
 
 ## 提交订单
 
-准备好提交订单时，可以通过[控制台](provisioning-file-storage.html)或 [SLCLI](ordering-through-cli.html) 来完成此操作。有关通过 VMware 供应文件存储器的信息，请单击[此处](architecture-guide-file-storage-vmware.html)
+准备好提交订单时，可以通过[控制台](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)或 [SLCLI](/docs/infrastructure/FileStorage?topic=FileStorage-orderingSLCLI) 来完成此操作。有关通过 VMware 供应文件存储器的信息，请单击[此处](/docs/infrastructure/FileStorage?topic=FileStorage-architectureguide)
 
 ## 连接新存储器
 
 完成供应请求后，授权主机来访问新存储器并配置连接。根据主机的操作系统，访问相应的链接。
-- [在 Linux 上访问 {{site.data.keyword.filestorage_short}}](accessing-file-storage-linux.html)
-- [在 CentOS 上安装 {{site.data.keyword.filestorage_short}}](mounting-nsf-file-storage.html)
-- [在 CoreOS 上安装 {{site.data.keyword.filestorage_short}}](mounting-storage-coreos.html)
-- [在 cPanel 中将 {{site.data.keyword.filestorage_short}} 配置用于备份](configure-backup-cpanel.html)
-- [在 Plesk 中将 {{site.data.keyword.filestorage_short}} 配置用于备份](configure-backup-plesk.html)
-- [在 ESXi 主机上安装 {{site.data.keyword.filestorage_short}} 卷](architecture-guide-file-storage-vmware.html)
+- [在 Linux 上访问 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)
+- [在 CentOS 中安装 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)
+- [在 CoreOS 中安装 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCoreOS)
+- [使用 cPanel 配置 {{site.data.keyword.filestorage_short}} 进行备份](/docs/infrastructure/FileStorage?topic=FileStorage-cPanelBackups)
+- [使用 Plesk 配置 {{site.data.keyword.filestorage_short}} 进行备份](/docs/infrastructure/FileStorage?topic=FileStorage-PleskBackup)
+- [在 ESXi 主机上安装 {{site.data.keyword.filestorage_short}} 卷](/docs/infrastructure/FileStorage?topic=FileStorage-architectureguide)

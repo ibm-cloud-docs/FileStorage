@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
@@ -14,8 +15,9 @@ lastupdated: "2018-11-30"
 
 
 # 針對含 {{site.data.keyword.filestorage_short}} 的 VMware 環境設定 Brocade vRouter (Vyatta)
+{: #configureVyatta}
 
-您可以在使用 {{site.data.keyword.filestorage_full}} 的 VMware 環境內，配置 Brocade vRouter (Vyatta) 應用裝置的高可用性 (HA) 配置。請將下列資訊與[進階單一網站 VMware 參照架構](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}一起使用，以在 VMware 環境中設定其中一個儲存空間選項。
+您可以在使用 {{site.data.keyword.filestorage_full}} 的 VMware 環境內，配置 Brocade vRouter (Vyatta) 應用裝置的高可用性 (HA) 配置。請將下列資訊與[進階單一網站 VMware 參照架構](/docs/infrastructure/virtualization?topic=Virtualization-advanced-single-site-vmware-reference-architecture){:new_window}一起使用，以在 VMware 環境中設定其中一個儲存空間選項。
 
 Brocade vRouter (Vyatta) 閘道會作為環境的閘道及路由器，並包含由子網路組成的區域。在區域之間會設定防火牆規則，以彼此通訊。對於不需要與其他區域通訊的區域，不需要任何防火牆規則。
 

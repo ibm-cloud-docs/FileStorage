@@ -1,12 +1,12 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-12-11"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
-{:pre: .pre}
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
@@ -15,6 +15,7 @@ lastupdated: "2018-12-11"
 
 
 # 使用 VMware 佈建 {{site.data.keyword.filestorage_short}}
+{: #architectureguide}
 
 以下是在 {{site.data.keyword.BluSoftlayer_full}} 為 vSphere 5.5 及 vSphere 6.0 環境訂購及配置 {{site.data.keyword.filestorage_full}} 的步驟。
 
@@ -115,7 +116,7 @@ lastupdated: "2018-12-11"
 
 還原 {{site.data.keyword.filestorage_short}} 磁區時，需要關閉 {{site.data.keyword.filestorage_short}} 上所有 VM 的電源。磁區必須暫時從 ESXi 主機卸載，以避免在處理程序期間發生任何資料損毀。
 
-如需相關資訊，請參閱 [Snapshot](snapshots.html) 文章。
+如需相關資訊，請參閱 [Snapshot](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots) 文章。
 
 
 ### 使用抄寫
@@ -127,7 +128,7 @@ lastupdated: "2018-12-11"
 - 透過失效接手至目的地磁區，快速從網站故障及其他災難回復
 - 失效接手至 DR 副本中的特定時間點
 
-抄寫是將資料同步保留在兩個不同位置。如果您想要複製您的磁區，並與原始磁區分開使用，請參閱[建立重複的檔案磁區](how-to-create-duplicate-volume.html)。
+抄寫是將資料同步保留在兩個不同位置。如果您想要複製您的磁區，並與原始磁區分開使用，請參閱[建立重複的檔案磁區](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume)。
 {:tip}
 
 您必須先建立 Snapshot 排程，才能進行抄寫。
@@ -136,7 +137,7 @@ lastupdated: "2018-12-11"
 
 在磁區撤回至主要資料中心之前，需要先停止在遠端網站的使用。會先建立任何新資訊或已變更資訊的 Snapshot，並抄寫至主要資料中心，然後才能在正式作業網站 ESXi 主機上重新進行裝載。
 
-如需配置抄本的相關資訊，請參閱[抄寫](replication.html)。
+如需配置抄本的相關資訊，請參閱[抄寫](/docs/infrastructure/FileStorage?topic=FileStorage-replication)。
 
 會根據 Snapshot 排程及 Snapshot 保留，來抄寫無效的資料（不論是毀損、受到駭客入侵還是感染病毒）。使用最小的抄寫時間範圍可以提供更好的回復點目標。不過，它也提供較少的時間來對無效資料的抄寫做出反應。
 {:note}
@@ -146,7 +147,7 @@ lastupdated: "2018-12-11"
 
 使用[進階單一 VMware 參照架構 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}，在 VMWare 環境中設定採用「耐久性」或「效能」選項的 {{site.data.keyword.filestorage_short}}。
 
-{{site.data.keyword.filestorage_short}} 可透過 [IBM Cloud 型錄 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://{DomainName}/catalog/){:new_window} 或 [{{site.data.keyword.slportal}} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://control.softlayer.com/){:new_window} 來訂購。如需相關資訊，請參閱[訂購 {{site.data.keyword.filestorage_short}}](provisioning-file-storage.html)
+{{site.data.keyword.filestorage_short}} 可透過 [IBM Cloud 型錄 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://{DomainName}/catalog/){:new_window} 或 [{{site.data.keyword.slportal}} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://control.softlayer.com/){:new_window} 來訂購。如需相關資訊，請參閱[訂購 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)
 
 儲存空間不到一分鐘即可佈建完成，並顯示在 [{{site.data.keyword.slportal}} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://control.softlayer.com/){:new_window} 的 **{{site.data.keyword.filestorage_short}}** 頁面上。
 
@@ -376,5 +377,5 @@ Storage I/O Control (SIOC) 是一種特性，可供使用 Enterprise Plus 授權
     #esxcfg-advcfg -g /Disk/QFullSampleSize
     #esxcfg-advcfg -g /Disk/QFullThreshold
     ```
-在[這裡](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}進一步瞭解「進階單一網站 VMware 參照架構」。
+在[這裡](/docs/infrastructure/virtualization?topic=Virtualization-advanced-single-site-vmware-reference-architecture){:new_window}進一步瞭解「進階單一網站 VMware 參照架構」。
 {:tip}

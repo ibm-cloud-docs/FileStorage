@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-12-10"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
@@ -13,6 +14,7 @@ lastupdated: "2018-12-10"
 {:DomainName: data-hd-keyref="DomainName"}
 
 # 災難回復 - 使用可存取的主要磁區進行失效接手
+{: #dr-accessible}
 
 如果主要站台發生災難性失效或災難，而主要儲存空間仍可供存取，客戶可以執行下列動作，以在次要站台上快速存取其資料。
 
@@ -47,7 +49,7 @@ lastupdated: "2018-12-10"
    {:note}
 4. 按一下**檢視全部 ({{site.data.keyword.filestorage_short}})**。
 5. 按一下作用中磁區（先前稱為目標磁區）。此磁區現在會有**作用中**狀態。
-6. 將儲存空間磁區裝載並連接至主機。如需指示，請按一下[這裡](provisioning-file-storage.html)。
+6. 將儲存空間磁區裝載並連接至主機。如需指示，請按一下[這裡](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)。
 
 
 ## 啟動從磁區到其抄本的失效回復
@@ -72,4 +74,4 @@ lastupdated: "2018-12-10"
    {:note}
 4. 在右上方，按一下**檢視所有 {{site.data.keyword.filestorage_short}}** 鏈結。
 5. 按一下作用中磁區（「來源」）。
-6. 將儲存空間磁區裝載並連接至主機。如需指示，請按一下[這裡](provisioning-file-storage.html)。
+6. 將儲存空間磁區裝載並連接至主機。如需指示，請按一下[這裡](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)。

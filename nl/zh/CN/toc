@@ -1,8 +1,8 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="FileStorage" audience="services" arm="3662725" href="/docs/infrastructure/FileStorage/index.html" path="infrastructure/FileStorage"}
-IBM Cloud 存储 - File Storage
+{: .toc subcollection="FileStorage" audience="services" arm="3662725" href="/docs/infrastructure/FileStorage?topic=FileStorage-GettingStarted" path="infrastructure/FileStorage"}
+IBM Cloud 存储器 - File Storage
 
     {: .navgroup id="learn"}
     index.md
@@ -53,4 +53,5 @@ IBM Cloud 存储 - File Storage
     {: .navgroup id="help"}
     faqs.md
     [Python API 客户机信息](https://softlayer-python.readthedocs.io/en/latest/index.html)
+    slcli-usage.md
     {: .navgroup-end}

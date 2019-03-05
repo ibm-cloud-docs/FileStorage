@@ -1,19 +1,21 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 
 # 管理快照
+{: #managingSnapshots}
 
-## 创建快照安排？
+## 创建快照安排
 
 通过快照安排，您可以决定创建存储卷的时间点引用的频率和时间。每个存储卷最多可以有 50 个快照。安排通过 [{{site.data.keyword.slportal}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window} 的**存储** > **{{site.data.keyword.filestorage_short}}** 选项卡进行管理。
 
@@ -21,6 +23,7 @@ lastupdated: "2018-11-30"
 {:important}
 
 ### 添加快照安排
+{: #addschedule}
 
 可以将快照安排的时间间隔设置为每小时、每天和每周，每种时间间隔使用不同的保留周期。快照的最大限制为每个存储卷 50，可以是每小时、每天和每周安排以及手动快照的混合。
 
@@ -39,6 +42,17 @@ lastupdated: "2018-11-30"
 
 在生成快照时，会在**详细信息**页面的**快照**部分中显示快照列表。
 
+您还可以通过 SLCLI 使用以下命令来查看快照安排的列表。
+```
+# slcli file snapshot-schedule-list --help
+用法：slcli file snapshot-schedule-list [OPTIONS] VOLUME_ID
+
+  列出给定卷的快照安排
+
+选项：
+  -h, --help  显示此消息并退出。
+```
+
 ## 生成手动快照
 
 手动快照可以在应用程序升级或维护期间在各种时间点生成。您还可以针对在应用程序级别暂时停用的多台服务器生成快照。
@@ -50,9 +64,30 @@ lastupdated: "2018-11-30"
 3. 单击**生成手动快照**。
 这将生成快照，并且快照会显示在**详细信息**页面的**快照**部分中。其安排会显示为“手动”。
 
+或者，您可以通过 SLCLI 使用以下命令来创建快照。
+```
+# slcli file snapshot-create --help
+用法：slcli file snapshot-create [OPTIONS] VOLUME_ID
+
+选项：
+  -n, --notes TEXT  要对新快照设置的注释。
+  -h, --help        显示此消息并退出。
+```
+
 ## 列出所有带“已用空间信息”和“管理”功能的快照
 
 可以在**详细信息**页面（**存储** > **{{site.data.keyword.filestorage_short}}**）上查看保留的快照和已使用空间量的列表。管理功能（编辑安排和添加更多空间）是在“详细信息”页面上使用该页面上各部分中的**操作**菜单或链接来执行的。
+
+或者，您可以通过 SLCLI 来完成此任务。
+```
+# slcli file snapshot-list --help
+用法：slcli file snapshot-list [OPTIONS] VOLUME_ID
+
+选项：
+  --sortby TEXT   要作为排序依据的列
+  --columns TEXT  要显示的列。选项：id、name、created、size_bytes
+  -h, --help      显示此消息并退出。
+```
 
 ## 查看保留快照的列表
 
@@ -92,7 +127,7 @@ lastupdated: "2018-11-30"
 1. 单击**详细信息**页面上**快照安排**框架中要删除的安排。
 2. 单击要删除的安排旁边的复选框，然后单击**保存**。<br />
 
-如果要使用复制功能，请确保要删除的安排不是复制所使用的安排。有关删除复制安排的更多信息，请参阅[此处](replication.html)。
+如果要使用复制功能，请确保要删除的安排不是复制所使用的安排。有关删除复制安排的更多信息，请参阅[此处](/docs/infrastructure/FileStorage?topic=FileStorage-replication)。
 {:important}
 
 ## 删除快照
@@ -102,14 +137,24 @@ lastupdated: "2018-11-30"
 1. 单击存储卷，然后向下滚动到**快照**部分以查看现有快照的列表。
 2. 单击特定快照旁边的**操作**，然后单击**删除**以删除快照。此删除操作不会影响同一安排上的任何未来或过去的快照，因为快照之间不存在依赖关系。
 
+或者，您可以通过 SLCLI 来删除快照。
+```
+# slcli file snapshot-delete --help
+用法：slcli file snapshot-delete [OPTIONS] SNAPSHOT_ID
+
+选项：
+  -h, --help  显示此消息并退出。
+```
+
 未在门户网站中手动删除的手动快照会在达到空间限制时自动删除（先删除最旧的快照）。
+{:note}
 
 ## 使用快照将存储卷复原到特定时间点
 
 由于用户错误或数据损坏，您可能需要将存储卷恢复到特定时间点。
 
 1. 从主机卸装并拆离存储卷。
-   - 单击[此处](accessing-file-storage-linux.html)以获取指示信息。
+   - 单击[此处](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)以获取指示信息。
 2. 单击 [{{site.data.keyword.slportal}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window} 中的**存储**、**{{site.data.keyword.filestorage_short}}**。
 3. 向下滚动并单击要复原的卷。**详细信息**页面的**快照**部分将显示所有保存的快照及其大小和创建日期的列表。
 4. 单击要使用的快照旁边的**操作**，然后单击**复原**。<br/>
@@ -121,7 +166,17 @@ lastupdated: "2018-11-30"
    应该会在页面中收到一条消息，声明正在使用所选快照复原卷。此外，{{site.data.keyword.filestorage_short}} 上的相应卷旁边会显示一个图标，指示正在执行活动事务。将鼠标悬停在该图标上将生成一个用于显示事务的窗口。事务完成后，该图标会消失。
    {:note}
 6. 安装存储卷并将其重新连接到主机。
-  - 单击[此处](accessing-file-storage-linux.html)以获取指示信息。
+  - 单击[此处](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)以获取指示信息。
+
+或者，您可以通过 SLCLI 使用快照来复原卷。
+```
+# slcli file snapshot-restore --help
+用法：slcli file snapshot-restore [OPTIONS] VOLUME_ID
+
+选项：
+  -s, --snapshot-id TEXT  要用于复原块卷的快照的标识
+  -h, --help              显示此消息并退出。
+```  
 
 复原卷会导致所有在用于复原的快照之后拍摄的快照均会被删除。
 {:important}

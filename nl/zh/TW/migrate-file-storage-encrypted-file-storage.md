@@ -1,26 +1,28 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 # 將 {{site.data.keyword.filestorage_short}} 移轉至加強型 {{site.data.keyword.filestorage_short}}
+{: #migratestorage}
 
-目前精選資料中心內已提供加強型 {{site.data.keyword.filestorage_full}}。若要查看已升級資料中心及可用特性（例如可調整的 IOPS 速率及可擴充的磁區）的清單，請按一下[這裡](new-ibm-block-and-file-storage-location-and-features.html)。如需提供者管理的加密相關資訊，請參閱 [{{site.data.keyword.filestorage_short}}靜態加密](block-file-storage-encryption-rest.html)。
+目前精選資料中心內已提供加強型 {{site.data.keyword.filestorage_full}}。若要查看已升級資料中心及可用特性（例如可調整的 IOPS 速率及可擴充的磁區）的清單，請按一下[這裡](/docs/infrastructure/FileStorage?topic=FileStorage-news)。如需提供者管理的加密相關資訊，請參閱 [{{site.data.keyword.filestorage_short}}靜態加密](/docs/infrastructure/FileStorage?topic=FileStorage-encryption)。
 
 偏好的移轉路徑是同時連接至兩個磁區，並將資料從某個 LUN 直接傳送至另一個 LUN。細節取決於作業系統，以及是否預期在複製作業期間變更資料。
 
 我們假設您已將未加密 LUN 連接至主機。如果沒有，請遵循最適合您作業系統的指示來完成此作業。
 
-- [在 Linux 上裝載 {{site.data.keyword.filestorage_short}}](accessing-file-storage-linux.html)
-- [在 CentOS 中裝載 {{site.data.keyword.filestorage_short}}](mounting-nsf-file-storage.html)
-- [在 CoreOS 上裝載 {{site.data.keyword.filestorage_short}}](mounting-storage-coreos.html)
+- [在 Linux 上裝載 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)
+- [在 CentOS 中裝載 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)
+- [在 CoreOS 上裝載 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCoreOS)
 
 這些資料中心內佈建的所有加強型 {{site.data.keyword.filestorage_short}} 磁區都具有與未加密磁區不同的裝載點。為了確保兩個儲存空間磁區都是使用正確的裝載點，您可以在主控台的**磁區詳細資料**頁面中檢視裝載點資訊。您也可以透過 API 呼叫來存取正確的裝載點：`SoftLayer_Network_Storage::getNetworkMountAddress()`。
 {:tip}
@@ -33,8 +35,8 @@ lastupdated: "2018-11-30"
 
 您可以透過 {{site.data.keyword.BluSoftlayer_full}} 型錄及 {{site.data.keyword.slportal}} 訂購加強的 LUN。您的新磁區大小必須等於或大於原始檔案共用，以方便進行移轉。
 
-- [訂購具有預先定義 IOPS 層級（耐久性）的 {{site.data.keyword.filestorage_short}}](provisioning-file-storage.html#ordering-file-storage-with-pre-defined-iops-tiers-endurance-)
-- [訂購具有自訂 IOPS（效能）的 {{site.data.keyword.filestorage_short}}](provisioning-file-storage.html#ordering-file-storage-with-custom-iops-performance-)
+- [訂購具有預先定義 IOPS 層級（耐久性）的 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#endurance)
+- [訂購具有自訂 IOPS（效能）的 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#performance)
 
 在幾分鐘之後，您的新儲存空間就可以裝載。您可以在「資源清單」和 {{site.data.keyword.blockstorageshort}} 清單中檢視它。
 

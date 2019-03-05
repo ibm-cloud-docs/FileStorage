@@ -1,26 +1,26 @@
 ---
 
 copyright:
-  years: 2015, 2019
-lastupdated: "2019-01-08"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
-
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 
 # 抄寫資料
+{: #replication}
 
 抄寫使用您的其中一個 Snapshot 排程，自動將 Snapshot 複製到遠端資料中心內的目的地磁區。如果發生災難性事件，或者您的資料毀損，則可以在遠端網站中回復副本。
 
-抄寫是將資料同步保留在兩個不同位置。如果您想要複製您的磁區，並與原始磁區分開使用，請參閱[建立重複的檔案磁區](how-to-create-duplicate-volume.html)。
+抄寫是將資料同步保留在兩個不同位置。如果您想要複製您的磁區，並與原始磁區分開使用，請參閱[建立重複的檔案磁區](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume)。
 {:tip}
 
-您必須先建立 Snapshot 排程，才能進行抄寫。
-{:important}
+您必須先建立 Snapshot 排程，才能進行抄寫。{:important}
 
 
 ## 判斷已抄寫儲存空間磁區的遠端資料中心
@@ -111,7 +111,7 @@ MEL01<br />
 2. 按一下**抄本**，然後按一下**購買抄寫**。
 3. 選取您要抄寫遵循的現有 Snapshot 排程。清單包含所有作用中的 Snapshot 排程。<br />
 
-   您只能選取一個排程，即使是混合使用每小時、每日及每週。會抄寫自前次抄寫週期以來擷取到的所有 Snapshot，不論原始的排程為何。<br />如果您未設定 Snapshot，則會在訂購抄寫之前提示您這樣做。如需相關資訊，請參閱[使用 Snapshot](snapshots.html)。
+   您只能選取一個排程，即使是混合使用每小時、每日及每週。會抄寫自前次抄寫週期以來擷取到的所有 Snapshot，不論原始的排程為何。<br />如果您未設定 Snapshot，則會在訂購抄寫之前提示您這樣做。如需相關資訊，請參閱[使用 Snapshot](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots)。
    {:tip}
 3. 按一下**位置**，然後選取將成為您 DR 網站的資料中心。
 4. 按一下**繼續**。
@@ -154,7 +154,7 @@ MEL01<br />
 
 主要及抄本儲存空間磁區的磁區大小必須相同。其中一個不能大於另一個。當您增加主要磁區的 Snapshot 空間時，即會自動增加抄本空間。增加 Snapshot 空間會觸發立即抄寫更新。兩個磁區的增加量會在您的發票中顯示為明細行項目，並且視需要按比例分配。
 
-如需增加 Snapshot 空間的相關資訊，請參閱 [Snapshot](snapshots.html)。
+如需增加 Snapshot 空間的相關資訊，請參閱 [Snapshot](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots)。
 ## 檢視磁區清單中的抄本磁區
 
 您可以在**儲存空間** > **{{site.data.keyword.filestorage_short}}** 的 {{site.data.keyword.filestorage_short}} 頁面上，檢視抄寫磁區。磁區名稱顯示主要磁區名稱，後面接著 REP。**類型**為「耐久性或效能 - 抄本」。**目標位址**為 N/A，因為抄本磁區未裝載在抄本資料中心，且**狀態**顯示「非作用中」。
@@ -184,14 +184,14 @@ MEL01<br />
 
 佈建儲存空間之後，主機就可以存取重複磁區來進行讀寫。不過，除非從原始磁區到重複磁區的資料複製已完成，否則不容許進行 Snapshot 及抄寫。
 
-如需相關資訊，請參閱[建立重複的檔案磁區](how-to-create-duplicate-volume.html)
+如需相關資訊，請參閱[建立重複的檔案磁區](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume)
 
 ## 災難來襲時，使用抄本進行失效接手
 
 當您失效接手時，您會將「開關」從主要資料中心的儲存空間磁區快速切換到遠端資料中心的目的地磁區。例如，您的主要資料中心是「倫敦」，而次要資料中心是「阿姆斯特丹」。如果發生故障事件，您會失效接手至「阿姆斯特丹」- 從「阿姆斯特丹」的運算實例連接至現行主要磁區。修復「倫敦」中的磁區之後，會擷取「阿姆斯特丹」磁區的 Snapshot，以從「倫敦」的運算實例失效回復至「倫敦」及那個再度成為主要磁區的磁區。
 
-* 如果主要位置發生問題，但儲存空間和主機仍在線上，請參閱[使用可存取的主要磁區進行失效接手](dr-accessible-primary.html)。
-* 如果主要位置已停機，請參閱[使用無法存取的主要磁區進行失效接手](disaster-recovery.html)。
+* 如果主要位置發生問題，但儲存空間和主機仍在線上，請參閱[使用可存取的主要磁區進行失效接手](/docs/infrastructure/FileStorage?topic=FileStorage-dr-accessible)。
+* 如果主要位置已停機，請參閱[使用無法存取的主要磁區進行失效接手](/docs/infrastructure/FileStorage?topic=FileStorage-dr-inaccessible)。
 
 ## 取消現有抄寫
 
@@ -212,3 +212,68 @@ MEL01<br />
  2. 按一下**動作**，然後選取**取消 {{site.data.keyword.filestorage_short}}**。
  3. 選取要在何時取消磁區。選擇**立即**或**週年日**，然後按一下**繼續**。
  4. 按一下**我確認因為取消而可能發生資料流失**，然後按一下**取消**。
+
+## SLCLI 中的抄寫相關指令
+{: #clicommands}
+
+* 列出適合於特定磁區的抄寫資料中心。
+  ```
+  # slcli file replica-locations --help
+  Usage: slcli file replica-locations [OPTIONS] VOLUME_ID
+
+  Options:
+  --sortby TEXT   Column to sort by
+  --columns TEXT  Columns to display. Options: ID, Long Name, Short Name
+  -h, --help      Show this message and exit.
+  ```
+
+* 訂購檔案儲存空間抄本磁區。
+  ```
+  # slcli file replica-order --help
+  Usage: slcli file replica-order [OPTIONS] VOLUME_ID
+
+  Options:
+  -s, --snapshot-schedule [INTERVAL|HOURLY|DAILY|WEEKLY]
+                                  Snapshot schedule to use for replication,
+                                  (INTERVAL | HOURLY | DAILY | WEEKLY)
+                                  [required]
+  -l, --location TEXT             Short name of the data center for the
+                                  replicant (e.g.: dal09)  [required]
+  --tier [0.25|2|4|10]            Endurance Storage Tier (IOPS per GB) of the
+                                  primary volume for which a replicant is
+                                  ordered [optional]
+  -h, --help                      Show this message and exit.
+  ```
+
+* 列出檔案磁區的現有抄本磁區。
+  ```
+  # slcli file replica-partners --help
+  Usage: slcli file replica-partners [OPTIONS] VOLUME_ID
+
+  Options:
+  --sortby TEXT   Column to sort by
+  --columns TEXT  Columns to display. Options: ID, Username, Account ID,
+                  Capacity (GB), Hardware ID, Guest ID, Host ID
+  -h, --help      Show this message and exit.
+  ```
+
+* 將檔案磁區失效接手至特定的抄本磁區。
+  ```
+  # slcli file replica-failover --help
+  Usage: slcli file replica-failover [OPTIONS] VOLUME_ID
+
+  Options:
+  --replicant-id TEXT  ID of the replicant volume
+  --immediate          Failover to replicant immediately.
+  -h, --help      Show this message and exit.
+```
+
+* 從特定的抄本磁區失效回復檔案磁區。
+  ```
+  # slcli file replica-failback --help
+  Usage: slcli file replica-failback [OPTIONS] VOLUME_ID
+
+  Options:
+  --replicant-id TEXT  ID of the replicant volume
+  -h, --help           Show this message and exit.
+  ```

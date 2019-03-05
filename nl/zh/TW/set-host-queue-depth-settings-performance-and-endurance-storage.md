@@ -1,13 +1,18 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-13"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 
 # 調整主機佇列深度設定
+{: #hostqueuesettings}
 
 {{site.data.keyword.BluSoftlayer_full}} 建議針對每個效能層級使用最大主機及應用程式輸入/輸出 (I/O) 佇列深度。
 

@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
@@ -14,8 +15,9 @@ lastupdated: "2018-11-30"
 
 
 # 针对具有 {{site.data.keyword.filestorage_short}} 的 VMware 环境设置 Brocade vRouter (Vyatta)
+{: #configureVyatta}
 
-可以在使用 {{site.data.keyword.filestorage_full}} 的 VMware 环境中配置 Brocade vRouter (Vyatta) 设备，以实现高可用性 (HA) 配置。将以下信息与[高级单站点 VMware 参考体系结构](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}结合使用，在 VMware 环境中设置其中一个存储器选项。
+可以在使用 {{site.data.keyword.filestorage_full}} 的 VMware 环境中配置 Brocade vRouter (Vyatta) 设备，以实现高可用性 (HA) 配置。将以下信息与[高级单站点 VMware 参考体系结构](/docs/infrastructure/virtualization?topic=Virtualization-advanced-single-site-vmware-reference-architecture){:new_window}结合使用，在 VMware 环境中设置其中一个存储器选项。
 
 Brocade vRouter (Vyatta) 网关将充当环境的网关和路由器，并包含由子网组成的区域。将在区域之间设置防火墙规则，以便各区域可以相互通信。对于不需要与其他区域通信的区域，无需防火墙规则。
 

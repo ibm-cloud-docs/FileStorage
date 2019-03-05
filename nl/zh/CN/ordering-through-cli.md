@@ -2,19 +2,21 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-01-07"
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 # 通过 SLCLI 订购 {{site.data.keyword.filestorage_short}}
+{: #orderingSLCLI}
 
 您可以使用 SLCLI 以针对通常通过 [{{site.data.keyword.slportal}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window} 订购的产品下订单。在 SL API 中，订单可由多个订单容器组成。订单 CLI 仅使用一个订单容器。
 
-有关如何安装和使用 SLCLI 的更多信息，请参阅 [Python API 客户机 ](https://softlayer-python.readthedocs.io/en/latest/cli.html){:new_window}。
+有关如何安装和使用 SLCLI 的更多信息，请参阅 [Python API 客户机 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://softlayer-python.readthedocs.io/en/latest/cli.html){:new_window}。
 {:tip}
 
 ## 搜索可用的 {{site.data.keyword.filestorage_short}} 产品
@@ -83,7 +85,7 @@ Options:
   -h, --help                      Show this message and exit.
 ```
 
-有关通过 API 订购 {{site.data.keyword.filestorage_short}} 的更多信息，请参阅 [order_file_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/file.html#SoftLayer.managers.file.FileStorageManager.order_file_volume){:new_window}。
+有关通过 API 订购 {{site.data.keyword.filestorage_short}} 的更多信息，请参阅 [order_file_volume ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://softlayer-python.readthedocs.io/en/latest/api/managers/file.html#SoftLayer.managers.file.FileStorageManager.order_file_volume){:new_window}。
 要能够访问所有新功能，请订购 `Storage-as-a-Service Package 759`。
 {:tip}
 
@@ -101,7 +103,7 @@ Order #32076317 placed successfully!
 > 100 IOPS
 ```
 
-缺省情况下，总共可以供应 250 个 {{site.data.keyword.blockstorageshort}} 和 {{site.data.keyword.filestorage_short}} 卷。要增加卷的数量，请联系销售代表。有关提高限制的更多信息，请参阅[管理存储限制](managing-storage-limits.html)。
+缺省情况下，总共可以供应 250 个 {{site.data.keyword.blockstorageshort}} 和 {{site.data.keyword.filestorage_short}} 卷。要增加卷的数量，请联系销售代表。有关提高限制的更多信息，请参阅[管理存储限制](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits)。
 {:important}
 
 ## 授权主机访问新存储器
@@ -123,18 +125,18 @@ Options:
   --help                    Show this message and exit.
 ```
 
-有关通过 API 授权主机访问 {{site.data.keyword.filestorage_short}} 的更多信息，请参阅 [authorize_host_to_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/file.html#SoftLayer.managers.file.FileStorageManager.authorize_host_to_volume){:new_window}。
+有关通过 API 授权主机访问 {{site.data.keyword.filestorage_short}} 的更多信息，请参阅 [authorize_host_to_volume ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://softlayer-python.readthedocs.io/en/latest/api/managers/file.html#SoftLayer.managers.file.FileStorageManager.authorize_host_to_volume){:new_window}。
 {:tip}
 
-有关同时授权限制的更多信息，请参阅[常见问题](faqs.html)。
+有关同时授权限制的更多信息，请参阅[常见问题](/docs/infrastructure/FileStorage?topic=FileStorage-faqs)。
 {:important}
 
 ## 连接新存储器
 
 根据主机的操作系统，访问相应的链接。
-- [在 Linux 上安装 {{site.data.keyword.filestorage_short}}](accessing-file-storage-linux.html)
-- [在 CentOS 上安装 {{site.data.keyword.filestorage_short}}](mounting-nsf-file-storage.html)
-- [在 Container Linux 上安装 {{site.data.keyword.filestorage_short}}](mounting-storage-coreos.html)
-- [在 cPanel 中将 {{site.data.keyword.filestorage_short}} 配置用于备份](configure-backup-cpanel.html)
-- [在 Plesk 中将 {{site.data.keyword.filestorage_short}} 配置用于备份](configure-backup-plesk.html)
-- [在 ESXi 主机上安装 {{site.data.keyword.filestorage_short}} 卷](architecture-guide-file-storage-vmware.html)
+- [在 Linux 上安装 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)
+- [在 CentOS 中安装 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)
+- [在 Container Linux 上安装 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCoreOS)
+- [使用 cPanel 配置 {{site.data.keyword.filestorage_short}} 进行备份](/docs/infrastructure/FileStorage?topic=FileStorage-cPanelBackups)
+- [使用 Plesk 配置 {{site.data.keyword.filestorage_short}} 进行备份](/docs/infrastructure/FileStorage?topic=FileStorage-PleskBackup)
+- [在 ESXi 主机上安装 {{site.data.keyword.filestorage_short}} 卷](/docs/infrastructure/FileStorage?topic=FileStorage-architectureguide)

@@ -1,12 +1,12 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-12-11"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
-{:pre: .pre}
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
@@ -15,6 +15,7 @@ lastupdated: "2018-12-11"
 
 
 # 通过 VMware 供应 {{site.data.keyword.filestorage_short}}
+{: #architectureguide}
 
 以下步骤可帮助您在 vSphere 5.5 和 vSphere 6.0 环境中通过 {{site.data.keyword.BluSoftlayer_full}} 订购和配置 {{site.data.keyword.filestorage_full}}。
 
@@ -116,7 +117,7 @@ lastupdated: "2018-12-11"
 
 复原 {{site.data.keyword.filestorage_short}} 卷需要关闭 {{site.data.keyword.filestorage_short}} 上所有 VM 的电源。需要暂时从 ESXi 主机卸装该卷，以避免执行该过程期间发生任何数据损坏。
 
-有关更多信息，请参阅[快照](snapshots.html)文章。
+有关更多信息，请参阅[快照](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots)文章。
 
 
 ### 使用复制
@@ -128,7 +129,7 @@ lastupdated: "2018-12-11"
 - 通过故障转移到目标卷，快速从站点故障和其他灾难进行恢复
 - 故障转移到 DR 副本中的特定时间点
 
-复制可以使两个不同位置的数据保持同步。如果要克隆卷并独立于原始卷来使用该卷，请参阅[创建复制文件卷](how-to-create-duplicate-volume.html)。
+复制可以使两个不同位置的数据保持同步。如果要克隆卷并独立于原始卷来使用该卷，请参阅[创建复制文件卷](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume)。
 {:tip}
 
 必须创建快照安排后，才能进行复制。
@@ -137,7 +138,7 @@ lastupdated: "2018-12-11"
 
 在该卷故障恢复到主数据中心之前，需要停止远程站点上对该卷的使用。这将生成任何新信息或更改的信息的快照，并复制到主数据中心，然后才能将该卷重新安装到生产站点 ESXi 主机上。
 
-有关配置副本的更多信息，请参阅[复制](replication.html)。
+有关配置副本的更多信息，请参阅[复制](/docs/infrastructure/FileStorage?topic=FileStorage-replication)。
 
 对于无效数据（不管是损坏的数据、被黑客入侵的数据，还是被感染的数据），将根据快照安排和快照保留时间进行复制。使用最小的复制时段可提供更好的恢复点目标。不过，这还可能会缩短对无效数据的复制做出反应的时间。
 {:note}
@@ -147,7 +148,7 @@ lastupdated: "2018-12-11"
 
 在 VMware 环境中，使用[高级单站点 VMware 参考体系结构 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} 利用“耐久性”或“性能”选项来设置 {{site.data.keyword.filestorage_short}}。
 
-订购 {{site.data.keyword.filestorage_short}} 的方式是通过 [IBM Cloud 目录 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://{DomainName}/catalog/){:new_window} 或 [{{site.data.keyword.slportal}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window}。有关更多信息，请参阅[订购 {{site.data.keyword.filestorage_short}}](provisioning-file-storage.html)。
+订购 {{site.data.keyword.filestorage_short}} 的方式是通过 [IBM Cloud 目录 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://{DomainName}/catalog/){:new_window} 或 [{{site.data.keyword.slportal}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window}。有关更多信息，请参阅[订购 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)。
 
 存储器将在不到一分钟的时间内进行供应，并且会在 [{{site.data.keyword.slportal}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window} 的 **{{site.data.keyword.filestorage_short}}** 页面上显示。
 
@@ -378,5 +379,5 @@ Storage I/O Control (SIOC) 是可用于使用 Enterprise Plus 许可证的客户
     #esxcfg-advcfg -g /Disk/QFullSampleSize
     #esxcfg-advcfg -g /Disk/QFullThreshold
     ```
-要了解有关高级单站点 VMware 参考体系结构的更多信息，请访问[此处](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}。
+要了解有关高级单站点 VMware 参考体系结构的更多信息，请访问[此处](/docs/infrastructure/virtualization?topic=Virtualization-advanced-single-site-vmware-reference-architecture){:new_window}。
 {:tip}

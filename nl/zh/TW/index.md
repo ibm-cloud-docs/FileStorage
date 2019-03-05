@@ -2,18 +2,18 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-01-07"
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
-{:DomainName: data-hd-keyref="APPDomain"}
-{:DomainName: data-hd-keyref="DomainName"}
 
 
 # 開始使用 {{site.data.keyword.filestorage_short}}
+{: #GettingStarted}
 
 {{site.data.keyword.filestorage_full}} 是持續性、快速且具彈性的網路連結、NFS 型 {{site.data.keyword.filestorage_short}}。在這個網路連接儲存空間 (NAS) 環境中，您可以完全控制檔案共用功能及效能。{{site.data.keyword.filestorage_short}} 共用可以透過路由 TCP/IP 連線最多連接 64 台授權裝置，來取得備援。
 
@@ -27,14 +27,14 @@ lastupdated: "2019-01-07"
    - 可用於檔案型 NFS 共用。
 - **高度可延續且具復原力**
    - 保護資料完整性，並透過維護事件及非計劃性故障來維護可用性，而不需要建立及管理作業系統層次的獨立磁碟備用陣列 (RAID) 陣列
-- **靜態資料加密**[（適用於精選資料中心。）](new-ibm-block-and-file-storage-location-and-features.html)
+- **靜態資料加密**[（適用於精選資料中心。）](/docs/infrastructure/FileStorage?topic=FileStorage-news)
    - 提供靜態資料的提供者管理加密，不需額外付費
-- **全快閃記憶體支援的儲存空間**[（適用於精選資料中心。）](new-ibm-block-and-file-storage-location-and-features.html)
+- **全快閃記憶體支援的儲存空間**[（適用於精選資料中心。）](/docs/infrastructure/FileStorage?topic=FileStorage-news)
    - 磁區的全快閃記憶體儲存空間可以佈建於 2 IOPS/GB 或更高層次。
-- **Snapshot**[（適用於精選資料中心。）](new-ibm-block-and-file-storage-location-and-features.html).
+- **Snapshot**[（適用於精選資料中心。）](/docs/infrastructure/FileStorage?topic=FileStorage-news).
    - 以不中斷的方式擷取時間點資料 Snapshot。
-- **抄寫**[（適用於精選資料中心。）](new-ibm-block-and-file-storage-location-and-features.html)
-   - 適用於將儲存空間佈建於[精選資料中心](new-ibm-block-and-file-storage-location-and-features.html)時。
+- **抄寫**[（適用於精選資料中心。）](/docs/infrastructure/FileStorage?topic=FileStorage-news)
+   - 適用於將儲存空間佈建於[精選資料中心](/docs/infrastructure/FileStorage?topic=FileStorage-news)時。
    - 自動將 Snapshot 複製到夥伴 {{site.data.keyword.BluSoftlayer_full}} 資料中心。
 - **高度可用的連線功能**
    - 使用備用網路連線以讓可用性最大化。
@@ -48,7 +48,7 @@ lastupdated: "2019-01-07"
 
 您可以為「檔案」磁區選取按小時或按月計費。為 LUN 選取的計費類型會套用至其 Snapshot 空間及抄本。例如，如果您佈建按小時計費的 LUN，則任何 Snapshot 或抄本費用都會按小時計費。如果您佈建按月計費的 LUN，則任何 Snapshot 或抄本費用都會按月計費。
 
-使用**按小時計費**，會在刪除 LUN 或計費週期結束時（看何者為先），計算「檔案」磁區存在於帳戶上的小時數。如果儲存空間使用期間為期只有幾天或不到一整個月，則按小時計費是一個不錯的選擇。按小時計費只適用於[精選資料中心](new-ibm-block-and-file-storage-location-and-features.html)內所佈建的儲存空間。
+使用**按小時計費**，會在刪除 LUN 或計費週期結束時（看何者為先），計算「檔案」磁區存在於帳戶上的小時數。如果儲存空間使用期間為期只有幾天或不到一整個月，則按小時計費是一個不錯的選擇。按小時計費只適用於[精選資料中心](/docs/infrastructure/FileStorage?topic=FileStorage-news)內所佈建的儲存空間。
 
 使用**按月計費**，價格是從建立日期到計費週期結束為止，按比例計算，並立即計費。如果在計費週期結束之前刪除磁區，則不會退款。如果儲存空間用於正式作業工作負載，而正式作業工作負載使用需要長期（一個月或更久）儲存及存取的資料，則按月計費是一個不錯的選擇。
 
@@ -111,7 +111,7 @@ lastupdated: "2019-01-07"
 
 - **每 GB 4 IOPS** 是為了較高強度工作負載而設計。這些工作負載的特點通常是隨時都有大比例的作用中資料。應用程式範例包括交易式資料庫及其他對於效能敏感的資料庫。
 
-- **每 GB 10 IOPS** 是為了最嚴苛的工作負載（例如 NoSQL 資料庫所建立的工作負載）以及進行分析用的資料處理而設計。此層級只適用於[精選資料中心](new-ibm-block-and-file-storage-location-and-features.html)內最多佈建 4 TB 的儲存空間。
+- **每 GB 10 IOPS** 是為了最嚴苛的工作負載（例如 NoSQL 資料庫所建立的工作負載）以及進行分析用的資料處理而設計。此層級只適用於[精選資料中心](/docs/infrastructure/FileStorage?topic=FileStorage-news)內最多佈建 4 TB 的儲存空間。
 
 12 TB 耐久性磁區最多提供 48,000 IOPS。
 
@@ -265,9 +265,9 @@ lastupdated: "2019-01-07"
 
 乙太網路連線的速度必須比來自您磁區的預期最大傳輸量更快。一般而言，請不要預期乙太網路連線飽和度超過可用頻寬的 70%。例如，如果您有 6,000 IOPS 而且要使用 16 KB 區塊大小，則磁區能處理大約 94 MBps 的傳輸量。如果您的 LUN 有一條 1 Gbps 乙太網路連線，則當伺服器嘗試使用最大可用傳輸量時，它會變成瓶頸。原因是 1 Gbps 乙太網路連線理論限制（每秒 125 MB）的 70% 只容許每秒 88 MB。
 
-為達到最大 IOPS，需要有足夠的網路資源。其他考量包括儲存空間及主機端之外的專用網路使用情形，以及應用程式特定的調整（IP 堆疊或[佇列深度](set-host-queue-depth-settings-performance-and-endurance-storage.html)，以及其他設定）。
+為達到最大 IOPS，需要有足夠的網路資源。其他考量包括儲存空間及主機端之外的專用網路使用情形，以及應用程式特定的調整（IP 堆疊或[佇列深度](/docs/infrastructure/FileStorage?topic=FileStorage-hostqueuesettings)，以及其他設定）。
 
-儲存空間資料流量包含在「公用虛擬伺服器」的網路總用量中。若要進一步瞭解該服務可能強制的限制，請參閱[虛擬伺服器文件](https://{DomainName}/docs/vsi/vsi_public.html#public-virtual-servers)。
+儲存空間資料流量包含在「公用虛擬伺服器」的網路總用量中。若要進一步瞭解該服務可能強制的限制，請參閱[虛擬伺服器文件](/docs/vsi?topic=virtual-servers-about-public-virtual-servers)。
 
 
 **NFS 版本**
@@ -276,14 +276,14 @@ lastupdated: "2019-01-07"
 
 ## 提交訂單
 
-當您準備好提交訂單時，可以透過[主控台](provisioning-file-storage.html)或 [SLCLI](ordering-through-cli.html) 下訂單。若要使用 VMware 佈建檔案儲存空間，請按一下[這裡](architecture-guide-file-storage-vmware.html)
+當您準備好提交訂單時，可以透過[主控台](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)或 [SLCLI](/docs/infrastructure/FileStorage?topic=FileStorage-orderingSLCLI) 下訂單。若要使用 VMware 佈建檔案儲存空間，請按一下[這裡](/docs/infrastructure/FileStorage?topic=FileStorage-architectureguide)
 
 ## 連接新的儲存空間
 
 當您的佈建要求完成時，請授權主機存取新的儲存空間，並配置連線。請根據主機的作業系統，遵循適當的鏈結。
-- [存取 Linux 上的 {{site.data.keyword.filestorage_short}}](accessing-file-storage-linux.html)
-- [在 CentOS 中裝載 {{site.data.keyword.filestorage_short}}](mounting-nsf-file-storage.html)
-- [在 CoreOS 上裝載 {{site.data.keyword.filestorage_short}}](mounting-storage-coreos.html)
-- [配置 {{site.data.keyword.filestorage_short}} 以便使用 cPanel 進行備份](configure-backup-cpanel.html)
-- [配置 {{site.data.keyword.filestorage_short}} 以便使用 Plesk 進行備份](configure-backup-plesk.html)
-- [在 ESXi 主機上裝載 {{site.data.keyword.filestorage_short}} 磁區](architecture-guide-file-storage-vmware.html)
+- [在 Linux 上存取 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)
+- [在 CentOS 中裝載 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)
+- [在 CoreOS 上裝載 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCoreOS)
+- [配置 {{site.data.keyword.filestorage_short}} 以便使用 cPanel 進行備份](/docs/infrastructure/FileStorage?topic=FileStorage-cPanelBackups)
+- [配置 {{site.data.keyword.filestorage_short}} 以便使用 Plesk 進行備份](/docs/infrastructure/FileStorage?topic=FileStorage-PleskBackup)
+- [在 ESXi 主機上裝載 {{site.data.keyword.filestorage_short}} 磁區](/docs/infrastructure/FileStorage?topic=FileStorage-architectureguide)

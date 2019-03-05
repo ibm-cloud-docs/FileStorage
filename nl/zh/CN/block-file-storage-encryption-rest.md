@@ -2,14 +2,17 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-01-07"
+lastupdated: "2019-02-05"
 
 ---
+{:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 # 提供者管理的静态加密
+{: #encryption}
 
 {{site.data.keyword.BluSoftlayer_full}} 认真对待安全性需求，并深知能够加密数据以保证数据安全的重要性。借助提供者管理的加密，缺省情况下，会加密通过“耐久性”或“性能”选项供应的 {{site.data.keyword.filestorage_full}}，这无需任何额外费用，对性能也没有任何影响。
 
@@ -32,12 +35,12 @@ lastupdated: "2019-01-07"
 
 ## 为存储器供应加密
 
-提供者管理的静态加密功能在精选数据中心内提供。对于在这些数据中心内订购的所有存储器，都自动供应了静态数据加密。单击[此处](new-ibm-block-and-file-storage-location-and-features.html)以查看可使用 {{site.data.keyword.filestorage_short}} 加密的数据中心的当前列表。
+提供者管理的静态加密功能在精选数据中心内提供。对于在这些数据中心内订购的所有存储器，都自动供应了静态数据加密。单击[此处](/docs/infrastructure/FileStorage?topic=FileStorage-news)以查看可使用 {{site.data.keyword.filestorage_short}} 加密的数据中心的当前列表。
 
 订购 {{site.data.keyword.filestorage_short}} 时，请选择标有星号 (`*`) 的数据中心。您可以在“LUN/卷名”字段右侧看到“锁定”图标，指示已对该卷进行加密。请参阅图 1。
 
 ![“锁定”图标指示 LUN 已加密](/images/encryptedstorage.png)
 <caption>图 1. 用于指示卷已加密的“锁定”图标的示例。</caption>
 
-在升级数据中心之前供应的任何非加密存储器**不会**自动加密。如果在已升级的数据中心内拥有非加密存储器，并且希望对其进行加密，那么需要创建新卷，然后移动数据。有关更多信息，请参阅[在已升级的数据中心内进行文件存储器迁移](migrate-file-storage-encrypted-file-storage.html)
+在升级数据中心之前供应的任何非加密存储器**不会**自动加密。如果在已升级的数据中心内拥有非加密存储器，并且希望对其进行加密，那么需要创建新卷，然后移动数据。有关更多信息，请参阅[在已升级的数据中心内进行文件存储器迁移](/docs/infrastructure/FileStorage?topic=FileStorage-migratestorage)
 {:important}

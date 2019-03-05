@@ -1,29 +1,31 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 # 建立重複的 {{site.data.keyword.filestorage_short}}
+{: #duplicatevolume}
 
 您可以建立現有 {{site.data.keyword.BluSoftlayer_full}} {{site.data.keyword.filestorage_full}} 的重複磁區。依預設，重複磁區會繼承原始磁區的容量及效能選項，而且會有到達 Snapshot 中該時間點之前的資料副本。   
 
-因為重複磁區的基礎是時間點 Snapshot 中的資料，所以原始磁區上需要有 Snapshot 空間，您才能建立重複磁區。若要進一步瞭解 Snapshot 以及如何訂購 Snapshot 空間，請參閱 [Snapshot 文件](snapshots.html)。  
+因為重複磁區的基礎是時間點 Snapshot 中的資料，所以原始磁區上需要有 Snapshot 空間，您才能建立重複磁區。若要進一步瞭解 Snapshot 以及如何訂購 Snapshot 空間，請參閱 [Snapshot 文件](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots)。  
 
 您可以從**主要**及**抄本**磁區建立重複磁區。新的重複磁區會建立在與原始磁區相同的資料中心內。如果您建立抄本磁區的重複磁區，則新的磁區會建立在與抄本磁區相同的資料中心內。
 
-如果您是 {{site.data.keyword.containerlong}} 的「專用」帳戶使用者，請參閱 [{{site.data.keyword.containerlong_notm}} 文件](/docs/containers/cs_storage_file.html#backup_restore)中您用於複製磁區的選項。
+如果您是 {{site.data.keyword.containerlong}} 的「專用」帳戶使用者，請參閱 [{{site.data.keyword.containerlong_notm}} 文件](/docs/containers?topic=containers-backup_restore#backup_restore)中您用於複製磁區的選項。
 {:tip}
 
 佈建儲存空間之後，主機就可以存取重複磁區來進行讀寫。不過，除非從原始磁區到重複磁區的資料複製已完成，否則不容許進行 Snapshot 及抄寫。資料複製完成後，即可將重複磁區當作獨立的磁區來管理及使用。
 
-此特性適用於大部分位置。如需可用的資料中心清單，請按一下[這裡](new-ibm-block-and-file-storage-location-and-features.html)。
+此特性適用於大部分位置。如需可用的資料中心清單，請按一下[這裡](/docs/infrastructure/FileStorage?topic=FileStorage-news)。
 
 重複磁區的一些常見用途包括下列範例。
 - **災難回復測試**。建立抄本磁區的重複磁區，驗證資料是完整的，而且可以在發生災難時使用，而不岔斷抄寫。
@@ -74,8 +76,57 @@ lastupdated: "2018-11-30"
    {{site.data.keyword.filestorage_short}} 可以調整為磁區原始大小的 10 倍。
    {:tip}
 7. 您可以更新新磁區的 Snapshot 空間，以新增更多、更少 Snapshot 空間，或不新增 Snapshot 空間。依預設，會設定原始磁區的 Snapshot 空間。
-8. 按一下**繼續**，以訂購重複項目。
+8. 按一下**繼續**，以訂購重複磁區。
 
+## 透過 SLCLI 建立重複磁區
+```
+# slcli file volume-duplicate --help
+Usage: slcli file volume-duplicate [OPTIONS] ORIGIN_VOLUME_ID
+
+Options:
+  -o, --origin-snapshot-id INTEGER
+                                  ID of an origin volume snapshot to use for
+                                  duplcation.
+  -c, --duplicate-size INTEGER    Size of duplicate file volume in GB. ***If
+                                  no size is specified, the size of the origin
+                                  volume will be used.***
+                                  Minimum: [the size
+                                  of the origin volume]
+  -i, --duplicate-iops INTEGER    Performance Storage IOPS, between 100 and
+                                  6000 in multiples of 100 [only used for
+                                  performance volumes] ***If no IOPS value is
+                                  specified, the IOPS value of the origin
+                                  volume will be used.***
+                                  Requirements: [If
+                                  IOPS/GB for the origin volume is less than
+                                  0.3, IOPS/GB for the duplicate must also be
+                                  less than 0.3. If IOPS/GB for the origin
+                                  volume is greater than or equal to 0.3,
+                                  IOPS/GB for the duplicate must also be
+                                  greater than or equal to 0.3.]
+  -t, --duplicate-tier [0.25|2|4|10]
+                                  Endurance Storage Tier (IOPS per GB) [only
+                                  used for endurance volumes] ***If no tier is
+                                  specified, the tier of the origin volume
+                                  will be used.***
+                                  Requirements: [If IOPS/GB
+                                  for the origin volume is 0.25, IOPS/GB for
+                                  the duplicate must also be 0.25. If IOPS/GB
+                                  for the origin volume is greater than 0.25,
+                                  IOPS/GB for the duplicate must also be
+                                  greater than 0.25.]
+  -s, --duplicate-snapshot-size INTEGER
+                                  The size of snapshot space to order for the
+                                  duplicate. ***If no snapshot space size is
+                                  specified, the snapshot space size of the
+                                  origin file volume will be used.***
+                                  Input
+                                  "0" for this parameter to order a duplicate
+                                  volume with no snapshot space.
+  --billing [hourly|monthly]      Optional parameter for Billing rate (default
+                                  to monthly)
+  -h, --help                      Show this message and exit.
+```
 
 ## 管理重複磁區
 

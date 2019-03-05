@@ -1,14 +1,19 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-12-11"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 {:faq: data-hd-content-type='faq'}
 
 # 常见问题
+{: #faqs}
 
 ## 如何判断哪些 {{site.data.keyword.filestorage_short}} 卷已加密？
 {: faq}
@@ -18,19 +23,19 @@ lastupdated: "2018-12-11"
 ## 如果数据中心内有在升级前供应的非加密 {{site.data.keyword.filestorage_short}}，那么在数据中心升级进行加密后我能对此 {{site.data.keyword.filestorage_short}} 进行加密吗？
 {: faq}
 
-无法对在数据中心升级之前供应的 {{site.data.keyword.filestorage_short}} 加密。在已升级的数据中心内供应的新 {{site.data.keyword.filestorage_short}} 会自动加密。此过程是自动的，不是可以选择也可以留空的供应设置。通过创建新卷，然后使用基于主机的迁移将数据复制到新的加密卷，可以对非加密存储器上的数据进行加密。有关更多信息，请参阅[迁移文件存储器](migrate-file-storage-encrypted-file-storage.html)。
+无法对在数据中心升级之前供应的 {{site.data.keyword.filestorage_short}} 加密。在已升级的数据中心内供应的新 {{site.data.keyword.filestorage_short}} 会自动加密。此过程是自动的，不是可以选择也可以留空的供应设置。通过创建新卷，然后使用基于主机的迁移将数据复制到新的加密卷，可以对非加密存储器上的数据进行加密。有关更多信息，请参阅[迁移文件存储器](/docs/infrastructure/FileStorage?topic=FileStorage-migratestorage)。
 
 ## 怎样知道是在已升级的数据中心内供应 {{site.data.keyword.filestorage_short}}？
 {: faq}
 
-在 {{site.data.keyword.filestorage_short}} 订单表单中，所有已升级的数据中心都会标有星号 (`*`)。在订购过程中，会向您指示您正在供应具有加密功能的存储器。供应存储器后，在存储器列表中会看到相应图标，指示该卷已加密。
+在 {{site.data.keyword.filestorage_short}} 订购表单中，所有已升级的数据中心都会标有星号 (`*`)。在订购过程中，会向您指示您正在供应具有加密功能的存储器。供应存储器后，在存储器列表中会看到相应图标，指示该卷已加密。
 
-所有加密卷和文件共享仅在已升级的数据中心内供应。您可以在[此处](new-ibm-block-and-file-storage-location-and-features.html)找到已升级的数据中心和可用功能的完整列表。
+所有加密卷和文件共享仅在已升级的数据中心内供应。您可以在[此处](/docs/infrastructure/FileStorage?topic=FileStorage-news)找到已升级的数据中心和可用功能的完整列表。
 
 ## 为什么一些数据中心内供应耐久性 10 IOPS 层的 {{site.data.keyword.filestorage_short}}，而其他数据中心内不供应？
 {: faq}
 
-{{site.data.keyword.filestorage_short}} 耐久性类型 10 IOPS/GB 层仅在精选数据中心内提供，很快会增加新的数据中心。您可以在[此处](new-ibm-block-and-file-storage-location-and-features.html)找到已升级的数据中心和可用功能的完整列表。
+{{site.data.keyword.filestorage_short}} 耐久性类型 10 IOPS/GB 层仅在精选数据中心内提供，很快会增加新的数据中心。您可以在[此处](/docs/infrastructure/FileStorage?topic=FileStorage-news)找到已升级的数据中心和可用功能的完整列表。
 
 ## 如何找到 {{site.data.keyword.filestorage_short}} 的正确安装点？
 {: faq}
@@ -40,7 +45,7 @@ lastupdated: "2018-12-11"
 ## 可以供应多少个卷？
 {: faq}
 
-缺省情况下，总共可以供应 250 个块存储卷和文件存储卷。要增大限制，请联系销售代表。有关更多信息，请参阅[管理存储限制](managing-storage-limits.html)。
+缺省情况下，总共可以供应 250 个块存储卷和文件存储卷。要增大限制，请联系销售代表。有关更多信息，请参阅[管理存储限制](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits)。
 
 ## 一个供应的 {{site.data.keyword.filestorage_short}} 卷可以由多少个实例共享使用？
 {: faq}

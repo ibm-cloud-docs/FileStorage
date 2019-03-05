@@ -1,17 +1,19 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 
 # 管理 {{site.data.keyword.filestorage_short}}
+{: #managingstorage}
 
 您可以透過 {{site.data.keyword.slportal}} 管理 {{site.data.keyword.filestorage_full}} 磁區。
 
@@ -26,13 +28,41 @@ lastupdated: "2018-11-30"
 2. 捲動至頁面的**授權主機**區段。
 3. 按一下右側的**授權主機**。選取可存取該特定磁區的主機。
 
+或者，您可以在 SL CLI 中使用下列指令。
+```
+# slcli file access-authorize --help
+Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
+
+  Options:
+  -h, --hardware-id TEXT    The id of one SoftLayer_Hardware to authorize
+  -v, --virtual-id TEXT     The id of one SoftLayer_Virtual_Guest to authorize
+  -i, --ip-address-id TEXT  The id of one SoftLayer_Network_Subnet_IpAddress
+                            to authorize
+  --ip-address TEXT         An IP address to authorize
+  -s, --subnet-id TEXT      The id of one SoftLayer_Network_Subnet to
+                            authorize
+  --help                    Show this message and exit.
+```
 
 ## 檢視獲授權存取 {{site.data.keyword.filestorage_short}} 磁區的主機清單
 
 1. 按一下**儲存空間 > {{site.data.keyword.filestorage_short}}**，然後按一下**磁區名稱**。
 2. 將頁面向下捲動至**授權主機**區段。
 
-在這裡，您可以看到目前已獲授權存取磁區的主機清單。
+在那裡，您可以看到目前已獲授權存取磁區的主機清單。
+
+或者，您可以在 SL CLI 中使用下列指令。
+```
+# slcli file access-list --help
+Usage: slcli file access-list [OPTIONS] VOLUME_ID
+
+Options:
+ --sortby TEXT   Column to sort by
+ --columns TEXT  Columns to display. Options: id, name, type,
+                 private_ip_address, source_subnet, host_iqn, username,
+                 password, allowed_host_id
+ -h, --help      Show this message and exit.
+```
 
 
 ## 檢視已授權主機存取的 {{site.data.keyword.filestorage_short}} 磁區
@@ -48,7 +78,7 @@ lastupdated: "2018-11-30"
 
 ## 裝載及卸載 {{site.data.keyword.filestorage_short}}
 
-您可以使用**磁區詳細資料**視圖中所提供的裝載點資訊，從主機裝載 {{site.data.keyword.filestorage_short}}。請參閱[存取 Linux 上的 {{site.data.keyword.filestorage_short}}](accessing-file-storage-linux.html)
+您可以使用**磁區詳細資料**視圖中所提供的裝載點資訊，從主機裝載 {{site.data.keyword.filestorage_short}}。請參閱[在 Linux 上存取 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)
 
 
 ## 撤銷主機對 {{site.data.keyword.filestorage_short}} 的存取權
@@ -82,6 +112,24 @@ lastupdated: "2018-11-30"
 如果您要中斷多個主機與特定磁區的連線，則需要對每個主機重複「撤銷存取權」動作。
 {:tip}
 
+### 透過 SL CLI 撤銷存取。
+或者，您可以在 SL CLI 中使用下列指令。
+```
+# slcli file access-revoke --help
+Usage: slcli file access-revoke [OPTIONS] VOLUME_ID
+
+Options:
+  -h, --hardware-id TEXT    The id of one SoftLayer_Hardware to revoke
+                            authorization
+  -v, --virtual-id TEXT     The id of one SoftLayer_Virtual_Guest to revoke
+                            authorization
+  -i, --ip-address-id TEXT  The id of one SoftLayer_Network_Subnet_IpAddress
+                            to revoke authorization
+  --ip-address TEXT         An IP address to revoke authorization
+  -s, --subnet-id TEXT      The id of one SoftLayer_Network_Subnet to revoke
+                            authorization
+  --help                    Show this message and exit.
+```
 
 ## 取消儲存空間磁區
 
@@ -95,3 +143,15 @@ lastupdated: "2018-11-30"
    {:tip}
 4. 按一下**繼續**或**關閉**。
 5. 按一下確認通知勾選框，然後按一下**確認**。
+
+或者，您可以在 SL CLI 中使用下列指令。
+```
+# slcli file volume-cancel --help
+Usage: slcli file volume-cancel [OPTIONS] VOLUME_ID
+
+Options:
+  --reason TEXT  An optional reason for cancellation
+  --immediate    Cancels the file storage volume immediately instead of on the
+                 billing anniversary
+  -h, --help     Show this message and exit.
+```

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
@@ -12,6 +12,7 @@ lastupdated: "2018-11-30"
 {:important: .important}
 
 # 使用 cPanel 配置 {{site.data.keyword.filestorage_short}} 以進行備份
+{: #cPanelBackups}
 
 您可以使用這些指示，透過 cPanel 配置將您的備份儲存至 {{site.data.keyword.filestorage_full}}。我們假設可以使用 root 或 sudo SSH 及完整 WebHost Manager (WHM) 存取權。此範例以 **CentOS 7** 主機為基礎。
 
@@ -24,7 +25,7 @@ lastupdated: "2018-11-30"
    依預設，cPanel 系統會在本端將備份檔儲存至 `/backup` 目錄。在本文件中，假設 `/backup` 資料夾已存在且包含備份，而且可以使用 `/backup2` 作為新的裝載點。
    {:note}
 
-3. 配置 {{site.data.keyword.filestorage_short}}，如[在 Red Hat Enterprise Linux 上存取 {{site.data.keyword.filestorage_short}}](accessing-file-storage-linux.html) 及[在 CentOS 中裝載 NFS/{{site.data.keyword.filestorage_short}}](mounting-nsf-file-storage.html)/[在 CoreOS 上裝載 NFS/{{site.data.keyword.filestorage_short}}](mounting-storage-coreos.html) 中所述。將磁區裝載至 `/backup2`，並在檔案系統表格 (`/etc/fstab`) 中進行配置，以啟用啟動時裝載。<br />
+3. 配置 {{site.data.keyword.filestorage_short}}，如[在 Red Hat Enterprise Linux 上存取 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux) 及[在 CentOS 中裝載 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)/[在 CoreOS 上裝載 NFS/{{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCoreOS) 中所述。將磁區裝載至 `/backup2`，並在檔案系統表格 (`/etc/fstab`) 中進行配置，以啟用啟動時裝載。<br />
 
    依預設，NFS 會將使用 root 使用者許可權建立的任何檔案降級成 nobody 使用者。若要讓 root 用戶端保留對 NFS 共用的 root 使用者許可權，需要將 `no_root_squash` 新增至 `/etc/exports`。
 {:tip}

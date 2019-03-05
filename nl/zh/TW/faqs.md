@@ -1,14 +1,19 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-12-11"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 {:faq: data-hd-content-type='faq'}
 
 # 常見問題
+{: #faqs}
 
 ## 如何分辨哪些 {{site.data.keyword.filestorage_short}} 磁區已加密？
 {: faq}
@@ -18,19 +23,19 @@ lastupdated: "2018-12-11"
 ## 如果我在已升級進行加密的資料中心內購買了未加密的 {{site.data.keyword.filestorage_short}}，則是否可以加密我的 {{site.data.keyword.filestorage_short}}？
 {: faq}
 
-在資料中心升級之前所佈建的 {{site.data.keyword.filestorage_short}} 無法加密。佈建在已升級資料中心內的新 {{site.data.keyword.filestorage_short}} 會自動加密。這是自動作業，不是可供選取或不選取的佈建設定。未加密儲存空間上的資料加密，可以藉由建立新磁區，然後透過主機型移轉將資料複製到新的已加密磁區來進行。如需相關資訊，請參閱[移轉檔案儲存空間](migrate-file-storage-encrypted-file-storage.html)。
+在資料中心升級之前所佈建的 {{site.data.keyword.filestorage_short}} 無法加密。佈建在已升級資料中心內的新 {{site.data.keyword.filestorage_short}} 會自動加密。這是自動作業，不是可供選取或不選取的佈建設定。未加密儲存空間上的資料加密，可以藉由建立新磁區，然後透過主機型移轉將資料複製到新的已加密磁區來進行。如需相關資訊，請參閱[移轉檔案儲存空間](/docs/infrastructure/FileStorage?topic=FileStorage-migratestorage)。
 
 ## 如何知道是否在已升級資料中心內佈建 {{site.data.keyword.filestorage_short}}？
 {: faq}
 
 在 {{site.data.keyword.filestorage_short}} 訂單表格中，所有已升級的資料中心都會註記星號 (`*`)。在訂購程序期間，會提供您指示，指出您正在佈建加密的儲存空間。佈建儲存空間時，您可以看到儲存空間清單中有一個圖示，顯示該磁區已加密。
 
-所有加密磁區及檔案共用都只會佈建在已升級的資料中心內。您可以在[這裡](new-ibm-block-and-file-storage-location-and-features.html)找到完整的已升級資料中心及可用特性清單。
+所有加密磁區及檔案共用都只會佈建在已升級的資料中心內。您可以在[這裡](/docs/infrastructure/FileStorage?topic=FileStorage-news)找到完整的已升級資料中心及可用特性清單。
 
 ## 為什麼可以在某些資料中心內佈建具有「耐久性 10 IOPS」層級的 {{site.data.keyword.filestorage_short}}，但不能在其他資料中心內進行？
 {: faq}
 
-「{{site.data.keyword.filestorage_short}} 耐久性類型 10 IOPS/GB」層級僅適用於精選資料中心，並且很快會新增資料中心。您可以在[這裡](new-ibm-block-and-file-storage-location-and-features.html)找到完整的已升級資料中心及可用特性清單。
+「{{site.data.keyword.filestorage_short}} 耐久性類型 10 IOPS/GB」層級僅適用於精選資料中心，並且很快會新增資料中心。您可以在[這裡](/docs/infrastructure/FileStorage?topic=FileStorage-news)找到完整的已升級資料中心及可用特性清單。
 
 ## 如何找到 {{site.data.keyword.filestorage_short}} 的正確裝載點？
 {: faq}
@@ -40,7 +45,7 @@ lastupdated: "2018-12-11"
 ## 可以佈建多少個磁區？
 {: faq}
 
-依預設，您可以佈建總計 250 個區塊及檔案儲存空間磁區。若要增加限制，請與業務代表聯絡。如需相關資訊，請參閱[管理儲存空間限制](managing-storage-limits.html)。
+依預設，您可以佈建總計 250 個區塊及檔案儲存空間磁區。若要增加限制，請與業務代表聯絡。如需相關資訊，請參閱[管理儲存空間限制](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits)。
 
 ## 有多少實例可以共用已佈建的 {{site.data.keyword.filestorage_short}} 磁區？
 {: faq}

@@ -1,20 +1,22 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-10-31"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
+{:codeblock: .codeblock}
 
-# 在 CentOS 中安装 NFS/{{site.data.keyword.filestorage_short}}
 
-在 CentOS 7 中安装 {{site.data.keyword.filestorage_full}} 的过程，与[在 RHEL 6 上安装 {{site.data.keyword.filestorage_short}}](accessing-file-storage-linux.html) 的过程类似。但由于安装的是 NFS，因此可以在安装文件中使用 `Options=` 行来指定其他一些选项。在以下示例中，NFS 设置为安装在 `/data/www` 上。
+# 在 CentOS 中安装 {{site.data.keyword.filestorage_short}}
+{: #mountingCentOS}
+
+在 CentOS 7 中安装 {{site.data.keyword.filestorage_full}} 的过程与[在 RHEL 6 上安装 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux) 的过程类似。但由于安装的是 NFS，因此可以在安装文件中使用 `Options=` 行来指定其他一些选项。在以下示例中，NFS 设置为安装在 `/data/www` 上。
 
 {{site.data.keyword.filestorage_short}} 实例的 NFS 安装点可以从 {{site.data.keyword.filestorage_short}} 列表页面中或通过以下 API 调用来获取：`SoftLayer_Network_Storage::getNetworkMountAddress()`。
 {:tip}

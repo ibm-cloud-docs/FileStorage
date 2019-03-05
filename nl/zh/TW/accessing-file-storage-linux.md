@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
@@ -12,11 +12,28 @@ lastupdated: "2018-11-30"
 {:important: .important}
 
 # 在 Linux 上裝載 {{site.data.keyword.filestorage_short}}
+{: #mountingLinux}
 
 首先，請確定要存取 {{site.data.keyword.filestorage_full}} 磁區的主機已透過 [{{site.data.keyword.slportal}} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://control.softlayer.com/){:new_window} 獲得授權。
 
 1. 從 {{site.data.keyword.filestorage_short}} 清單頁面，按一下與新共用相關聯的**動作**鏈結，然後按一下**授權主機**。
 2. 從清單中選取一台或多台主機，然後按一下**提交**。此動作會授權主機存取共用。
+
+或者，您可以透過 SLCLI 授權主機。
+```
+# slcli file access-authorize --help
+Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
+
+  Options:
+  -h, --hardware-id TEXT    The id of one SoftLayer_Hardware to authorize
+  -v, --virtual-id TEXT     The id of one SoftLayer_Virtual_Guest to authorize
+  -i, --ip-address-id TEXT  The id of one SoftLayer_Network_Subnet_IpAddress
+                            to authorize
+  --ip-address TEXT         An IP address to authorize
+  -s, --subnet-id TEXT      The id of one SoftLayer_Network_Subnet to
+                            authorize
+  --help                    Show this message and exit.
+```
 
 ## 裝載 {{site.data.keyword.filestorage_short}} 共用
 
@@ -61,7 +78,7 @@ lastupdated: "2018-11-30"
    -rw-r--r-- 1 nobody nobody 0 Sep 8 15:52 test
    ```
 
-   root 所建立的檔案具有 `nobody:nobody` 所有權。若要正確顯示所有權，必須使用正確的網域設定來更新 `idmapd.conf`。請參閱[如何實作 NFS 的 no_root_squash](#implementing-no_root_squash-for-nfs-optional-) 小節。
+   root 所建立的檔案具有 `nobody:nobody` 所有權。若要正確顯示所有權，必須使用正確的網域設定來更新 `idmapd.conf`。請參閱[如何實作 NFS 的 no_root_squash](#norootsquash) 小節。
    {:tip}
 
 5. 啟動時裝載遠端共用。若要完成設定，請編輯檔案系統表格 (`/etc/fstab`)，將遠端共用新增至啟動時將自動裝載的項目清單：
@@ -90,6 +107,7 @@ lastupdated: "2018-11-30"
 
 
 ## 實作 NFS 的 `no_root_squash`（選用）
+{: #norootsquash}
 
 配置 `no_root_squash` 可讓 root 用戶端保留對 NFS 共用的 root 許可權。
 - 若為 NFSv3，用戶端不需要執行任何動作；`no_root_squash` 即會運作。

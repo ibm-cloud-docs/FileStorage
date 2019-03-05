@@ -1,22 +1,23 @@
 ---
 
 copyright:
-  years: 2015, 2019
-lastupdated: "2019-01-08"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
-
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 
 # 复制数据
+{: #replication}
 
 复制使用其中一个快照安排自动将快照复制到远程数据中心内的目标卷。如果发生灾难性事件，或者数据变得损坏，那么可以在远程站点中恢复副本。
 
-复制可以使两个不同位置的数据保持同步。如果要克隆卷并独立于原始卷来使用该卷，请参阅[创建复制文件卷](how-to-create-duplicate-volume.html)。
+复制可以使两个不同位置的数据保持同步。如果要克隆卷并独立于原始卷来使用该卷，请参阅[创建复制文件卷](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume)。
 {:tip}
 
 必须创建快照安排后，才能进行复制。
@@ -113,7 +114,7 @@ MEL01<br />
 3. 选择希望复制遵循的现有快照安排。此列表包含所有有效的快照安排。
   <br />
 
-   只能选择一个安排，即便有每小时、每天和每周的混合安排也是如此。将复制自上一个复制周期以来捕获到的所有快照，而不管这些快照源自哪个安排。<br />如果没有设置快照，那么系统会提示您进行设置，然后才能订购复制。有关更多信息，请参阅[使用快照](snapshots.html)。
+   只能选择一个安排，即便有每小时、每天和每周的混合安排也是如此。将复制自上一个复制周期以来捕获到的所有快照，而不管这些快照源自哪个安排。<br />如果没有设置快照，那么系统会提示您进行设置，然后才能订购复制。有关更多信息，请参阅[使用快照](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots)。
    {:tip}
 3. 单击**位置**，然后选择将作为 DR 站点的数据中心。
 4. 单击**继续**。
@@ -158,7 +159,7 @@ MEL01<br />
 
 主存储卷和副本存储卷的卷大小必须相同。不能其中一个卷大于另一个卷。增大主卷的快照空间时，副本空间也会自动增加。增大快照空间会触发立即复制更新。这两个卷的增大将在发票上显示为行项，并且将根据需要分派。
 
-有关增加快照空间的更多信息，请参阅[快照](snapshots.html)。
+有关增加快照空间的更多信息，请参阅[快照](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots)。
 ## 在卷列表中查看副本卷
 
 您可以在**存储** > **{{site.data.keyword.filestorage_short}}** 下的 {{site.data.keyword.filestorage_short}} 页面中查看复制卷。卷名将显示为主卷名称后跟 REP。**类型**为“耐久性 - 副本”或“性能 - 副本”。**目标地址**为“不适用”（因为副本卷未安装在副本数据中心上），**状态**显示为“不活动”。
@@ -189,14 +190,14 @@ MEL01<br />
 
 供应存储器后，主机即可以访问复制卷以进行读/写。但是，在完成从原始项到复制项的数据复制之后，才允许使用快照和复制。
 
-有关更多信息，请参阅[创建复制文件卷](how-to-create-duplicate-volume.html)。
+有关更多信息，请参阅[创建复制文件卷](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume)。
 
 ## 在灾难发生时使用副本进行故障转移
 
 进行故障转移时，将“翻转开关”从主数据中心的存储卷切换到远程数据中心的目标卷。例如，主数据中心是伦敦，辅助数据中心是阿姆斯特丹。如果发生故障事件，将故障转移到阿姆斯特丹 - 从阿姆斯特丹的计算实例连接到现在的主卷。修复伦敦的卷之后，会生成阿姆斯特丹卷的快照，以便故障恢复到伦敦，并从伦敦的计算实例连接到原先的主卷。
 
-* 如果主位置遇到问题，而存储器和主机仍然联机，请参阅[通过可访问的主卷进行故障转移](dr-accessible-primary.html)。
-* 如果主位置停机，请参阅[通过不可访问的主卷进行故障转移](disaster-recovery.html)。
+* 如果主位置遇到问题，而存储器和主机仍然联机，请参阅[通过可访问的主卷进行故障转移](/docs/infrastructure/FileStorage?topic=FileStorage-dr-accessible)。
+* 如果主位置停机，请参阅[通过不可访问的主卷进行故障转移](/docs/infrastructure/FileStorage?topic=FileStorage-dr-inaccessible)。
 
 ## 取消现有复制
 
@@ -217,3 +218,66 @@ MEL01<br />
  2. 单击**操作**，然后选择**取消 {{site.data.keyword.filestorage_short}}**。
  3. 选择取消卷的时间。选择**立即**或**周年日期**，然后单击**继续**。
  4. 单击**我确认取消操作可能会导致数据丢失**，然后单击**取消**。
+
+## SLCLI 中与复制相关的命令
+{: #clicommands}
+
+* 列出特定卷的适用复制数据中心。
+  ```
+  # slcli file replica-locations --help
+  用法：slcli file replica-locations [OPTIONS] VOLUME_ID
+
+  选项：
+  --sortby TEXT   要作为排序依据的列
+  --columns TEXT  要显示的列。选项：标识、长名称、短名称
+  -h, --help      显示此消息并退出。
+  ```
+
+* 订购文件存储器副本卷。
+  ```
+  # slcli file replica-order --help
+  用法：slcli file replica-order [OPTIONS] VOLUME_ID
+
+  选项：
+  -s, --snapshot-schedule [INTERVAL|HOURLY|DAILY|WEEKLY]
+                                  用于复制的快照安排，
+                                  (INTERVAL | HOURLY | DAILY | WEEKLY)
+                                  [必需]
+  -l, --location TEXT             用于副本卷的数据中心的短名称
+                                  （例如：dal09）[必需]
+  --tier [0.25|2|4|10]             为其订购了副本卷的主卷的耐久性存储器层 (IOPS/GB) [可选]
+  -h, --help                       显示此消息并退出。
+  ```
+
+* 列出文件卷的现有副本卷。
+  ```
+  # slcli file replica-partners --help
+  用法：slcli file replica-partners [OPTIONS] VOLUME_ID
+
+  选项：
+  --sortby TEXT   要作为排序依据的列
+  --columns TEXT  要显示的列。选项：标识、用户名、帐户标识、
+                  容量 (GB)、硬件标识、访客标识、主机标识
+  -h, --help      显示此消息并退出。
+```
+
+* 将文件卷故障转移到特定副本卷。
+  ```
+  # slcli file replica-failover --help
+  用法：slcli file replica-failover [OPTIONS] VOLUME_ID
+
+  选项：
+  --replicant-id TEXT 副本卷的标识
+  --immediate         立即故障转移到副本卷。
+  -h, --help      显示此消息并退出。
+```
+
+* 从特定副本卷故障恢复文件卷。
+  ```
+  # slcli file replica-failback --help
+  用法：slcli file replica-failback [OPTIONS] VOLUME_ID
+
+  选项：
+  --replicant-id TEXT  副本卷的标识
+  -h, --help           显示此消息并退出。
+  ```

@@ -1,17 +1,19 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 
 # 管理 {{site.data.keyword.filestorage_short}}
+{: #managingstorage}
 
 您可以通过 {{site.data.keyword.slportal}} 管理 {{site.data.keyword.filestorage_full}} 卷。
 
@@ -26,13 +28,41 @@ lastupdated: "2018-11-30"
 2. 滚动到页面的**已授权主机**部分。
 3. 单击右侧的**授权主机**。选择可以访问该特定卷的主机。
 
+或者，您可以在 SLCLI 中使用以下命令。
+```
+# slcli file access-authorize --help
+Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
+
+  Options:
+  -h, --hardware-id TEXT    The id of one SoftLayer_Hardware to authorize
+  -v, --virtual-id TEXT     The id of one SoftLayer_Virtual_Guest to authorize
+  -i, --ip-address-id TEXT  The id of one SoftLayer_Network_Subnet_IpAddress
+                            to authorize
+  --ip-address TEXT         An IP address to authorize
+  -s, --subnet-id TEXT      The id of one SoftLayer_Network_Subnet to
+                            authorize
+  --help                    Show this message and exit.
+```
 
 ## 查看授权访问 {{site.data.keyword.filestorage_short}} 卷的主机的列表
 
 1. 单击**存储 > {{site.data.keyword.filestorage_short}}**，然后单击**卷名**。
 2. 向下滚动到页面的**已授权主机**部分。
 
-在此，您将看到当前已授权访问该卷的主机的列表。
+在此，您可以看到当前已授权访问该卷的主机的列表。
+
+或者，您可以在 SLCLI 中使用以下命令。
+```
+# slcli file access-list --help
+用法：slcli file access-list [OPTIONS] VOLUME_ID
+
+选项：
+  --sortby TEXT   要作为排序依据的列
+  --columns TEXT  要显示的列。选项：id、name、type、
+                  private_ip_address、source_subnet、host_iqn、username、
+                  password、allowed_host_id
+  -h, --help      显示此消息并退出。
+```
 
 
 ## 查看授权主机访问的 {{site.data.keyword.filestorage_short}} 卷
@@ -48,7 +78,7 @@ lastupdated: "2018-11-30"
 
 ## 安装和卸装 {{site.data.keyword.filestorage_short}}
 
-可以使用**卷详细信息**视图中提供的安装点信息，从主机安装 {{site.data.keyword.filestorage_short}}。请参阅[在 Linux 上访问 {{site.data.keyword.filestorage_short}}](accessing-file-storage-linux.html)
+可以使用**卷详细信息**视图中提供的安装点信息，从主机安装 {{site.data.keyword.filestorage_short}}。请参阅[在 Linux 上访问 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)
 
 
 ## 撤销主机对 {{site.data.keyword.filestorage_short}} 的访问权
@@ -82,6 +112,20 @@ lastupdated: "2018-11-30"
 如果要断开一个特定卷与多个主机的连接，需要对每个主机重复“撤销访问权”操作。
 {:tip}
 
+### 通过 SLCLI 撤销访问权。
+或者，您可以在 SLCLI 中使用以下命令。
+```
+# slcli file access-revoke --help
+用法：slcli file access-revoke [OPTIONS] VOLUME_ID
+
+选项：
+  -h, --hardware-id TEXT    要撤销授权的某个 SoftLayer_Hardware 的标识
+  -v, --virtual-id TEXT     要撤销授权的某个 SoftLayer_Virtual_Guest 的标识
+  -i, --ip-address-id TEXT  要撤销授权的某个 SoftLayer_Network_Subnet_IpAddress 的标识
+  --ip-address TEXT         要撤销授权的某个 IP 地址
+  -s, --subnet-id TEXT      要撤销授权的某个 SoftLayer_Network_Subnet 的标识
+  --help                    显示此消息并退出。
+```
 
 ## 取消存储卷
 
@@ -96,3 +140,14 @@ lastupdated: "2018-11-30"
 4. 单击**继续**或**关闭**。
 
 5. 单击“确认”复选框，然后单击**确认**。
+
+或者，您可以在 SLCLI 中使用以下命令。
+```
+# slcli file volume-cancel --help
+用法：slcli file volume-cancel [OPTIONS] VOLUME_ID
+
+选项：
+  --reason TEXT  可选的取消原因
+  --immediate    立即取消文件存储卷，而不是在计费周年时取消
+  -h, --help     显示此消息并退出。
+```

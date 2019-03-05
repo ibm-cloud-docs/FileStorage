@@ -1,26 +1,28 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 # 将 {{site.data.keyword.filestorage_short}} 迁移到增强型 {{site.data.keyword.filestorage_short}}
+{: #migratestorage}
 
-现在，增强型 {{site.data.keyword.filestorage_full}} 在精选数据中心内提供。要查看已升级的数据中心和可用功能（例如，可调整 IOPS 速率和可扩展卷）的列表，请单击[此处](new-ibm-block-and-file-storage-location-and-features.html)。有关提供者管理的加密的更多信息，请参阅 [{{site.data.keyword.filestorage_short}} 静态加密](block-file-storage-encryption-rest.html)。
+现在，增强型 {{site.data.keyword.filestorage_full}} 在精选数据中心内提供。要查看已升级的数据中心和可用功能（例如，可调整 IOPS 速率和可扩展卷）的列表，请单击[此处](/docs/infrastructure/FileStorage?topic=FileStorage-news)。有关提供者管理的加密的更多信息，请参阅 [{{site.data.keyword.filestorage_short}} 静态加密](/docs/infrastructure/FileStorage?topic=FileStorage-encryption)。
 
 首选迁移路径是同时连接两个卷，并将数据从一个 LUN 直接传输到另一个 LUN。具体操作取决于您的操作系统以及在复制操作期间数据是否会更改。
 
 假定您已将非加密 LUN 连接到主机。如果尚未连接，请遵循最适合您操作系统的指示信息来完成此任务。
 
-- [在 Linux 上安装 {{site.data.keyword.filestorage_short}}](accessing-file-storage-linux.html)
-- [在 CentOS 上安装 {{site.data.keyword.filestorage_short}}](mounting-nsf-file-storage.html)
-- [在 CoreOS 上安装 {{site.data.keyword.filestorage_short}}](mounting-storage-coreos.html)
+- [在 Linux 上安装 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)
+- [在 CentOS 中安装 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)
+- [在 CoreOS 中安装 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCoreOS)
 
 这些数据中心内供应的所有增强型 {{site.data.keyword.filestorage_short}} 卷的安装点与非加密卷不同。要确保对两个存储卷使用正确的安装点，可以在控制台的**卷详细信息**页面中查看安装点信息。还可以通过 API 调用来访问正确的安装点：`SoftLayer_Network_Storage::getNetworkMountAddress()`。
 {:tip}
@@ -33,8 +35,8 @@ lastupdated: "2018-11-30"
 
 要订购增强型 LUN，可以通过 {{site.data.keyword.BluSoftlayer_full}}“目录”和 {{site.data.keyword.slportal}} 来完成此操作。新卷的大小应该等于或大于原始文件共享的大小，以便于迁移。
 
-- [订购具有预定义 IOPS 层（耐久性）的 {{site.data.keyword.filestorage_short}}](provisioning-file-storage.html#ordering-file-storage-with-pre-defined-iops-tiers-endurance-)
-- [订购具有定制 IOPS（性能）的 {{site.data.keyword.filestorage_short}}](provisioning-file-storage.html#ordering-file-storage-with-custom-iops-performance-)
+- [订购具有预定义 IOPS 层（耐久性）的 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#endurance)
+- [订购具有定制 IOPS（性能）的 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#performance)
 
 几分钟后即可安装新存储器。在资源列表和 {{site.data.keyword.blockstorageshort}} 列表中，可以查看该存储器。
 

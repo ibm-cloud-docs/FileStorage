@@ -1,12 +1,12 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-12-11"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
-{:pre: .pre}
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
@@ -15,6 +15,7 @@ lastupdated: "2018-12-11"
 
 
 # 針對 Windows 及 Linux 在 {{site.data.keyword.BluSoftlayer_notm}} 中啟用巨大訊框
+{: #jumboframes}
 
 大型訊框是有效負載大於標準最大傳輸單位 (MTU) 1,500 位元組的乙太網路訊框。大型訊框用於支援最少 1 Gbps 的區域網路，且最大可達到 9,000 個位元組。
 

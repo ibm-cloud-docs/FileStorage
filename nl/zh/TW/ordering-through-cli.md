@@ -2,19 +2,21 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-01-07"
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
-# 透過 SLCLI 訂購 {{site.data.keyword.filestorage_short}}
+# 透過 SL CLI 訂購 {{site.data.keyword.filestorage_short}}
+{: #orderingSLCLI}
 
-您可以使用 SLCLI 來訂購通常是透過 [{{site.data.keyword.slportal}} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://control.softlayer.com/){:new_window} 來訂購的產品。在 SL API 中，一張訂單可能是由多重訂單容器所組成。訂單 CLI 只能用於一個訂單容器。
+您可以使用 SL CLI 來訂購通常是透過 [{{site.data.keyword.slportal}} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://control.softlayer.com/){:new_window} 來訂購的產品。在 SL API 中，一張訂單可能是由多重訂單容器所組成。訂單 CLI 只能用於一個訂單容器。
 
-若要進一步瞭解如何安裝及使用 SLCLI，請參閱 [Python API 用戶端](https://softlayer-python.readthedocs.io/en/latest/cli.html){:new_window}。
+若要進一步瞭解如何安裝及使用 SL CLI，請參閱 [Python API 用戶端 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://softlayer-python.readthedocs.io/en/latest/cli.html){:new_window}。
 {:tip}
 
 ## 搜尋可用的 {{site.data.keyword.filestorage_short}} 供應項目
@@ -83,7 +85,8 @@ Options:
   -h, --help                      Show this message and exit.
 ```
 
-如需透過 API 來訂購 {{site.data.keyword.filestorage_short}} 的相關資訊，請參閱 [order_file_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/file.html#SoftLayer.managers.file.FileStorageManager.order_file_volume){:new_window}。若要能夠存取所有新增特性，請訂購 `Storage-as-a-Service Package 759`。
+如需透過 API 來訂購 {{site.data.keyword.filestorage_short}} 的相關資訊，請參閱 [order_file_volume ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://softlayer-python.readthedocs.io/en/latest/api/managers/file.html#SoftLayer.managers.file.FileStorageManager.order_file_volume){:new_window}。
+若要能夠存取所有新增特性，請訂購 `Storage-as-a-Service Package 759`。
 {:tip}
 
 
@@ -100,7 +103,7 @@ Order #32076317 placed successfully!
 > 100 IOPS
 ```
 
-依預設，您可以佈建總計 250 個的 {{site.data.keyword.blockstorageshort}} 和 {{site.data.keyword.filestorage_short}} 磁區。若要增加磁區數目，請與業務代表聯絡。如需增加限制的相關資訊，請參閱[管理儲存空間限制](managing-storage-limits.html)。
+依預設，您可以佈建總計 250 個的 {{site.data.keyword.blockstorageshort}} 和 {{site.data.keyword.filestorage_short}} 磁區。若要增加磁區數目，請與業務代表聯絡。如需增加限制的相關資訊，請參閱[管理儲存空間限制](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits)。
 {:important}
 
 ## 授權主機存取新的儲存空間
@@ -122,18 +125,18 @@ Options:
   --help                    Show this message and exit.
 ```
 
-若要進一步瞭解如何授權主機透過 API 來存取 {{site.data.keyword.filestorage_short}}，請參閱 [authorize_host_to_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/file.html#SoftLayer.managers.file.FileStorageManager.authorize_host_to_volume){:new_window}。
+若要進一步瞭解如何授權主機透過 API 來存取 {{site.data.keyword.filestorage_short}}，請參閱 [authorize_host_to_volume ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://softlayer-python.readthedocs.io/en/latest/api/managers/file.html#SoftLayer.managers.file.FileStorageManager.authorize_host_to_volume){:new_window}。
 {:tip}
 
-如需同時授權限制的相關資訊，請參閱[常見問題](faqs.html)。
+如需同時授權限制的相關資訊，請參閱[常見問題](/docs/infrastructure/FileStorage?topic=FileStorage-faqs)。
 {:important}
 
 ## 連接新的儲存空間
 
 請根據主機的作業系統，遵循適當的鏈結。
-- [在 Linux 上裝載 {{site.data.keyword.filestorage_short}}](accessing-file-storage-linux.html)
-- [在 CentOS 中裝載 {{site.data.keyword.filestorage_short}}](mounting-nsf-file-storage.html)
-- [在 Container Linux 上裝載 {{site.data.keyword.filestorage_short}}](mounting-storage-coreos.html)
-- [配置 {{site.data.keyword.filestorage_short}} 以便使用 cPanel 進行備份](configure-backup-cpanel.html)
-- [配置 {{site.data.keyword.filestorage_short}} 以便使用 Plesk 進行備份](configure-backup-plesk.html)
-- [在 ESXi 主機上裝載 {{site.data.keyword.filestorage_short}} 磁區](architecture-guide-file-storage-vmware.html)
+- [在 Linux 上裝載 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)
+- [在 CentOS 中裝載 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)
+- [在 Container Linux 上裝載 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCoreOS)
+- [配置 {{site.data.keyword.filestorage_short}} 以便使用 cPanel 進行備份](/docs/infrastructure/FileStorage?topic=FileStorage-cPanelBackups)
+- [配置 {{site.data.keyword.filestorage_short}} 以便使用 Plesk 進行備份](/docs/infrastructure/FileStorage?topic=FileStorage-PleskBackup)
+- [在 ESXi 主機上裝載 {{site.data.keyword.filestorage_short}} 磁區](/docs/infrastructure/FileStorage?topic=FileStorage-architectureguide)

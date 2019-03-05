@@ -1,13 +1,18 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-13"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
 
 # 调整主机队列深度设置
+{: #hostqueuesettings}
 
 {{site.data.keyword.BluSoftlayer_full}} 建议为每个性能层设置最大主机和应用程序输入/输出 (I/O) 队列深度。
 

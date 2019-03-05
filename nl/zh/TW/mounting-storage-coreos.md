@@ -1,18 +1,20 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-12-11"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
+{:codeblock: .codeblock}
+
 
 # 在 Container Linux 上裝載 {{site.data.keyword.filestorage_short}}
+{: #mountingCoreOS}
 
 Container Linux by CoreOS 是以 Linux Kernel 為基礎的開放程式碼輕量型作業系統。其設計旨在為叢集部署提供基礎架構。作為作業系統，Container Linux 提供在軟體容器內部署應用程式所需的最基本功能，並搭配內建的機制來進行服務探索和配置共用。如需相關資訊，請參閱 [Mounting storage ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://coreos.com/os/docs/latest/mounting-storage.html)。
 

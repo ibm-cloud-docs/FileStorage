@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
@@ -12,11 +12,28 @@ lastupdated: "2018-11-30"
 {:important: .important}
 
 # 在 Linux 上安装 {{site.data.keyword.filestorage_short}}
+{: #mountingLinux}
 
 首先，确保通过 [{{site.data.keyword.slportal}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window} 授权访问 {{site.data.keyword.filestorage_full}} 卷。
 
 1. 在 {{site.data.keyword.filestorage_short}} 列表页面中，单击与新共享关联的**操作**链接，然后单击**授权主机**。
 2. 从列表中选择一个或多个主机，然后单击**提交**。此操作将授权主机访问共享。
+
+或者，可以通过 SLCLI 来授权主机。
+```
+# slcli file access-authorize --help
+Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
+
+  Options:
+  -h, --hardware-id TEXT    The id of one SoftLayer_Hardware to authorize
+  -v, --virtual-id TEXT     The id of one SoftLayer_Virtual_Guest to authorize
+  -i, --ip-address-id TEXT  The id of one SoftLayer_Network_Subnet_IpAddress
+                            to authorize
+  --ip-address TEXT         An IP address to authorize
+  -s, --subnet-id TEXT      The id of one SoftLayer_Network_Subnet to
+                            authorize
+  --help                    Show this message and exit.
+```
 
 ## 安装 {{site.data.keyword.filestorage_short}} 共享
 
@@ -61,7 +78,7 @@ lastupdated: "2018-11-30"
    -rw-r--r-- 1 nobody nobody 0 Sep 8 15:52 test
    ```
 
-   由 root 用户创建的文件将具有 `nobody:nobody` 所有权。为了正确显示所有权，`idmapd.conf` 需要使用正确的域设置进行更新。请参阅[如何对 NFS 实施 no_root_squash](#implementing-no_root_squash-for-nfs-optional-) 部分。
+   由 root 用户创建的文件将具有 `nobody:nobody` 所有权。为了正确显示所有权，`idmapd.conf` 需要使用正确的域设置进行更新。请参阅[如何对 NFS 实施 no_root_squash](#norootsquash) 部分。
    {:tip}
 
 5. 在启动时安装远程共享。为了完成设置，请编辑文件系统表 (`/etc/fstab`) 以将远程共享添加到将在启动时自动安装的条目的列表：
@@ -90,6 +107,7 @@ lastupdated: "2018-11-30"
 
 
 ## 如何对 NFS 实施 `no_root_squash`（可选）
+{: #norootsquash}
 
 通过配置 `no_root_squash`，root 用户客户机可以保留对 NFS 共享的 root 用户许可权。
 - 对于 NFS V3，客户机无需执行任何操作；`no_root_squash` 会正常运作。

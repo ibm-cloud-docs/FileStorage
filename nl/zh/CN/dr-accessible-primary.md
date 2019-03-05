@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-12-10"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
@@ -13,6 +14,7 @@ lastupdated: "2018-12-10"
 {:DomainName: data-hd-keyref="DomainName"}
 
 # 灾难恢复 - 通过可访问的主卷进行故障转移
+{: #dr-accessible}
 
 如果主站点上发生灾难性故障或状况，但主存储器仍可访问，客户可以执行以下操作，以快速访问辅助站点上的数据。
 
@@ -23,7 +25,6 @@ lastupdated: "2018-12-10"
 
 1. 登录到 [{{site.data.keyword.cloud}} 控制台 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://
 {DomainName}/catalog/){:new_window}，然后单击左上角的**菜单**图标。选择**经典基础架构**。
-
 
    或者，您可以登录到 [{{site.data.keyword.slportal}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window}。
 1. 在 **{{site.data.keyword.filestorage_short}}** 页面中，单击源卷或目标卷。
@@ -51,7 +52,7 @@ lastupdated: "2018-12-10"
    {:note}
 4. 单击**查看所有 ({{site.data.keyword.filestorage_short}})**。
 5. 单击活动卷（原先的目标卷）。现在，此卷的状态为**活动**。
-6. 安装存储卷并将其连接到主机。单击[此处](provisioning-file-storage.html)以获取指示信息。
+6. 安装存储卷并将其连接到主机。单击[此处](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)以获取指示信息。
 
 
 ## 启动从卷到其副本的故障恢复
@@ -76,4 +77,4 @@ lastupdated: "2018-12-10"
    {:note}
 4. 单击右上角的**查看所有 {{site.data.keyword.filestorage_short}}** 链接。
 5. 单击活动卷（“源”）。
-6. 安装存储卷并将其连接到主机。单击[此处](provisioning-file-storage.html)以获取指示信息。
+6. 安装存储卷并将其连接到主机。单击[此处](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)以获取指示信息。

@@ -1,18 +1,31 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-11-30"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 
 # 管理儲存空間限制
+{: #managinglimits}
 
-依預設，您可以在全球佈建總計 250 個 {{site.data.keyword.filestorage_short}} 磁區。
+依預設，您可以在全球佈建總計 250 個的 {{site.data.keyword.blockstorageshort}} 和 {{site.data.keyword.filestorage_short}} 磁區。
+
+如果不確定您有多少個磁區，則您可以使用下列 `slcli` 指令，列出每一個資料中心的磁區。
+```
+# slcli file volume-count --help
+Usage: slcli file volume-count [OPTIONS]
+
+Options:
+ -d, --datacenter TEXT  Datacenter shortname
+ --sortby TEXT          Column to sort by
+ -h, --help             Show this message and exit.
+```
 
 您可以在 [{{site.data.keyword.slportal}} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://control.softlayer.com/){:new_window} 中提交問題單，以要求提高限制。要求經核准之後，您會收到針對特定資料中心所設定的磁區限制。  
 

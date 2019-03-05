@@ -1,12 +1,12 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-12-11"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
-{:pre: .pre}
 {:new_window: target="_blank"}
+{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
@@ -15,6 +15,7 @@ lastupdated: "2018-12-11"
 
 
 # 在 {{site.data.keyword.BluSoftlayer_notm}} 中启用巨型帧 - Windows 和 Linux
+{: #jumboframes}
 
 巨型帧是一种以太网帧，其有效内容大于标准的最大传输单元 (MTU) 1,500 字节。巨型帧在至少支持 1 Gbps 的局域网上使用，并且最大可达 9000 字节。
 

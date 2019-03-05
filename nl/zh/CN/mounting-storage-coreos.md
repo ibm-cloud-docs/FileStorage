@@ -1,18 +1,20 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-12-11"
+  years: 2014, 2019
+lastupdated: "2019-02-05"
 
 ---
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
+{:codeblock: .codeblock}
+
 
 # 在 Container Linux 上安装 {{site.data.keyword.filestorage_short}}
+{: #mountingCoreOS}
 
 CoreOS 的 Container Linux 是基于 Linux 内核的开放式源代码轻量级操作系统。它的设计目的是为了给集群部署提供基础架构。作为操作系统，Container Linux 提供了在软件容器中部署应用程序所需的最少功能，以及用于服务发现和配置共享的内置机制。有关更多信息，请参阅 [Mounting storage ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://coreos.com/os/docs/latest/mounting-storage.html)
 
