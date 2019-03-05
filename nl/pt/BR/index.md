@@ -121,7 +121,7 @@ A escolha da camada correta do Endurance é essencial para sua carga de trabalho
 
 Performance é uma classe do {{site.data.keyword.filestorage_short}} projetada para suportar aplicativos de alta E/S com requisitos de desempenho entendidos que não se ajustam bem em uma camada do Endurance. O desempenho previsível é alcançado por meio da alocação de IOPS de nível de protocolo para volumes individuais. Várias taxas de IOPS (100 - 48.000) podem ser provisionadas com tamanhos de armazenamento que variam de 20 GB a 12 TB.
 
-O Performance para o {{site.data.keyword.filestorage_short}} é acessado e montado por meio de uma conexão do Network File System (NFS). O {{site.data.keyword.filestorage_short}} é usado geralmente quando o volume é acessado por múltiplos servidores simultaneamente. Os volumes consistentes do Performance podem ser pedidos de acordo com os Tamanhos e o IOPS na Tabela 1 e podem ser usados com os sistemas operacionais Linux.
+O Performance para o {{site.data.keyword.filestorage_short}} é acessado e montado por meio de uma conexão do Network file system (NFS) . O {{site.data.keyword.filestorage_short}} é usado geralmente quando o volume é acessado por múltiplos servidores simultaneamente. Os volumes consistentes do Performance podem ser pedidos de acordo com os Tamanhos e o IOPS na Tabela 1 e podem ser usados com os sistemas operacionais Linux.
 
 <table cellpadding="1" cellspacing="1" style="width: 99%;">
  <caption>A Tabela 3 está mostrando combinações de tamanho e de IOPS para armazenamento do Performance.<br/><sup><img src="/images/numberone.png" alt="Nota de rodapé" /></sup> Os limites de IOPS maiores que 6.000 estão disponíveis nos data centers selecionados.</caption>

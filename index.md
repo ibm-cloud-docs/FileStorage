@@ -130,7 +130,7 @@ Choosing the right Endurance tier for your workload is key. It's equally importa
 
 Performance is a class of {{site.data.keyword.filestorage_short}} that is designed to support high I/O applications with understood performance requirements that don't fit well within an Endurance tier. Predictable performance is achieved through the allocation of protocol-level IOPS to individual volumes. Various IOPS rates (100 - 48,000) can be provisioned with storage sizes that range from 20 GB to 12 TB.
 
-Performance for {{site.data.keyword.filestorage_short}} is accessed and mounted through a Network File System (NFS) connection. {{site.data.keyword.filestorage_short}} is typically used when the volume is accessed by multiple servers simultaneously. Consistent Performance volumes can be ordered according to the Sizes and IOPS in Table 1 and can be used with Linux operating systems.
+Performance for {{site.data.keyword.filestorage_short}} is accessed and mounted through a Network file system (NFS)  connection. {{site.data.keyword.filestorage_short}} is typically used when the volume is accessed by multiple servers simultaneously. Consistent Performance volumes can be ordered according to the Sizes and IOPS in Table 1 and can be used with Linux operating systems.
 
 <table cellpadding="1" cellspacing="1" style="width: 99%;">
  <caption>Table 3 is showing size and IOPS combinations for Performance storage.<br/><sup><img src="/images/numberone.png" alt="Footnote" /></sup> IOPS Limits greater than 6,000 are available in select data centers.</caption>
