@@ -38,7 +38,7 @@ Para obter mais informações, consulte a [Documentação do Plesk para backup e
    ```
    {:pre}
 
-   Esse comando compacta e transmite seus dados e os preserva o máximo possível, exceto links físicos. Ele também fornece informações sobre quais arquivos estão sendo transferidos e um breve resumo no final.
+   Esse comando compacta e transmite seus dados e os preserva o máximo possível, exceto links físicos. Ele também fornece informações sobre quais arquivos estão sendo traNFSeridos e um breve resumo no final.
    {:tip}
 5. Edite `/etc/psa/psa.conf` para apontar o valor de `DUMP_D`
 para o novo destino.

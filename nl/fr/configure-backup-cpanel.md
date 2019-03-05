@@ -36,7 +36,7 @@ Pour plus d'informations, voir [cPanel - Configuration du répertoire de sauvega
    ```
    {: pre}
 
-    Cette commande compresse et transmet vos données tout en les conservant autant que possible (à l'exception des liens fixes). Elle fournit également des informations sur les fichiers transférés, ainsi qu'un bref résumé à la fin.
+    Cette commande compresse et transmet vos données tout en les conservant autant que possible (à l'exception des liens fixes). Elle fournit également des informations sur les fichiers traNFSérés, ainsi qu'un bref résumé à la fin.
     {:tip}
 
 5. Connectez-vous à WebHost Manager et accédez à la configuration de la sauvegarde via **Home** > **Backup** > **Backup Configuration**.
@@ -45,7 +45,7 @@ Pour plus d'informations, voir [cPanel - Configuration du répertoire de sauvega
     - Modifiez le répertoire de sauvegarde par défaut en remplaçant le chemin d'accès absolu au répertoire `/backup/` par le nouvel emplacement.
     - Sélectionnez **Enable to mount a backup drive**. Avec ce paramètre, le processus de configuration vérifie si un montage de sauvegarde (`/backup2`) existe dans le fichier `/etc/fstab`. <br />
 
-      S'il existe un montage portant le même nom que le répertoire de transfert, le processus de configuration de sauvegarde monte l'unité et sauvegarde les informations dedans. Une fois le processus de sauvegarde terminé, il démonte l'unité.
+      S'il existe un montage portant le même nom que le répertoire de traNFSert, le processus de configuration de sauvegarde monte l'unité et sauvegarde les informations dedans. Une fois le processus de sauvegarde terminé, il démonte l'unité.
       {:note}
 7. Appliquez les modifications en cliquant sur **Save Configuration**.
 8. **Facultatif**. En fonction de votre cas d'utilisation et de vos besoins métier spécifiques, retirez l'ancien stockage du serveur et annulez-le dans le compte.

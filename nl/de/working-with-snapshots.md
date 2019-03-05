@@ -127,7 +127,7 @@ Snapshotzeitpläne können über **Speicher** > **{{site.data.keyword.filestorag
 1. Klicken Sie im Feld **Snapshotpläne** auf der Seite **Details** auf den zu löschenden Zeitplan.
 2. Klicken Sie auf das Kontrollkästchen neben dem zu löschenden Zeitplan und klicken Sie auf **Speichern**.<br />
 
-Wenn Sie die Replikationsfunktion verwenden, müssen Sie sicherstellen, dass der Zeitplan, den Sie löschen, nicht der von der Replikation verwendete Zeitplan ist. Weitere Informationen zum Löschen eines Replikationszeitplans finden Sie [hier](/docs/infrastructure/FileStorage?topic=FileStorage-replication).
+Wenn Sie die ReplikatioNFSunktion verwenden, müssen Sie sicherstellen, dass der Zeitplan, den Sie löschen, nicht der von der Replikation verwendete Zeitplan ist. Weitere Informationen zum Löschen eines Replikationszeitplans finden Sie [hier](/docs/infrastructure/FileStorage?topic=FileStorage-replication).
 {:important}
 
 ## Snapshot löschen

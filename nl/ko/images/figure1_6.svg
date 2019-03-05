@@ -57,7 +57,7 @@
      id="layer3"
      inkscape:label="Background"
      style="display:inline"
-     transform="translate(0.17638448,-0.44096705)"
+     traNFSorm="translate(0.17638448,-0.44096705)"
      sodipodi:insensitive="true">
     <image
        style="display:inline"
@@ -73,7 +73,7 @@
      inkscape:label="Shade"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-116.89544,-195.81577)"
+     traNFSorm="translate(-116.89544,-195.81577)"
      style="display:inline"
      sodipodi:insensitive="true">
     <rect
@@ -137,7 +137,7 @@
      inkscape:groupmode="layer"
      id="layer4"
      inkscape:label="Text"
-     transform="translate(0.17638448,-0.44096705)">
+     traNFSorm="translate(0.17638448,-0.44096705)">
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.88055563px;line-height:1.25;font-family:'IBM Plex Sans';-inkscape-font-specification:'IBM Plex Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
@@ -258,7 +258,7 @@
        y="59.308655"
        id="text951"
        sodipodi:linespacing="125%"
-       transform="scale(0.92883439,1.0766182)"><tspan
+       traNFSorm="scale(0.92883439,1.0766182)"><tspan
          sodipodi:role="line"
          id="tspan949"
          x="27.875002"

@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
-keywords: File Storage, file storage, nsf, replication, duplication, synchronous, replica schedule, replica space, disaster recovery
+keywords: File Storage, file storage, NFS, replication, duplication, synchronous, replica schedule, replica space, disaster recovery
 
 subcollection: FileStorage
 

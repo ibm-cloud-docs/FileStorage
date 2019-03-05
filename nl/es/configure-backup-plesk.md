@@ -34,7 +34,7 @@ Para obtener más información, consulte la [documentación de Plesk sobre copia
    ```
    {:pre}
 
-   Este mandato comprime y transfiere sus datos conservando todo lo posible, excepto los enlaces fijos. También proporciona información sobre los archivos que se están transfiriendo, además de un breve resumen final.
+   Este mandato comprime y traNFSiere sus datos conservando todo lo posible, excepto los enlaces fijos. También proporciona información sobre los archivos que se están traNFSiriendo, además de un breve resumen final.
    {:tip}
 5. Edite `/etc/psa/psa.conf` para que apunte al valor de `DUMP_D` en el nuevo destino.
     - Se muestra como: `DUMP_D /backup/psa/dumps`.

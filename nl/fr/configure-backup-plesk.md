@@ -34,7 +34,7 @@ Pour plus d'informations, voir la [documentation relative à Plesk pour la sauve
    ```
    {:pre}
 
-   Cette commande compresse et transmet vos données tout en les conservant autant que possible (à l'exception des liens fixes). Elle fournit également des informations sur les fichiers transférés, ainsi qu'un bref résumé à la fin.
+   Cette commande compresse et transmet vos données tout en les conservant autant que possible (à l'exception des liens fixes). Elle fournit également des informations sur les fichiers traNFSérés, ainsi qu'un bref résumé à la fin.
    {:tip}
 5. Editez `/etc/psa/psa.conf` pour pointer vers la valeur `DUMP_D` sur la nouvelle cible.
     - Résultat : `DUMP_D /backup/psa/dumps`.

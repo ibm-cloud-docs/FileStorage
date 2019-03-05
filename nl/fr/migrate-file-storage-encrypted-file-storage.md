@@ -16,7 +16,7 @@ lastupdated: "2019-02-05"
 
 La fonctionnalité {{site.data.keyword.filestorage_full}} amélioré est désormais disponible dans des centres de données sélectionnés. Pour afficher la liste des centres de données mis à niveau et des fonctions disponibles telles que les débits d'IOPS ajustables et les volumes extensibles, cliquez [ici](/docs/infrastructure/FileStorage?topic=FileStorage-news). Pour en savoir plus sur le chiffrement géré par les fournisseurs, voir [Chiffrement au repos dans {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-encryption).
 
-Le chemin de migration préféré consiste à se connecter simultanément aux deux volumes et à transférer les données directement d'un numéro d'unité logique à un autre. Les spécificités dépendent de votre système d'exploitation et de la modification attendue ou non des données lors de la copie.
+Le chemin de migration préféré consiste à se connecter simultanément aux deux volumes et à traNFSérer les données directement d'un numéro d'unité logique à un autre. Les spécificités dépendent de votre système d'exploitation et de la modification attendue ou non des données lors de la copie.
 
 Nous supposons que votre numéro d'unité logique non chiffré est déjà connecté à l'hôte. Si tel n'est pas le cas, suivez les instructions ci-dessous qui correspondent le mieux à votre système d'exploitation pour effectuer cette tâche.
 

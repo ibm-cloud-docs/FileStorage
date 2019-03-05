@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
-keywords: File Storage, file storage, nsf, upgrade, migrate to new
+keywords: File Storage, file storage, NFS, upgrade, migrate to new
 
 subcollection: FileStorage
 
@@ -20,7 +20,7 @@ subcollection: FileStorage
 
 Enhanced {{site.data.keyword.filestorage_full}} is now available in select data centers. To see the list of upgraded data centers and available features such as adjustable IOPS rates and expandable volumes, click [here](/docs/infrastructure/FileStorage?topic=FileStorage-news). For more information about provider-managed encryption, see [{{site.data.keyword.filestorage_short}} Encryption-At-Rest](/docs/infrastructure/FileStorage?topic=FileStorage-encryption).
 
-The preferred migration path is to connect to both volumes simultaneously and transfer data directly from one LUN to another. The specifics depend on your operating system and whether the data is expected to change during the copy operation.
+The preferred migration path is to connect to both volumes simultaneously and traNFSer data directly from one LUN to another. The specifics depend on your operating system and whether the data is expected to change during the copy operation.
 
 The assumption is that you already have your non-encrypted LUN attached to your host. If not, follow the directions that fit your operating system the best to accomplish this task.
 

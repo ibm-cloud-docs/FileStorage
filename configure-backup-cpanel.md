@@ -4,7 +4,7 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-02-05"
 
-keywords: file storage, nsf, cPanel, backups
+keywords: File Storage, file storage, NFS, cPanel, backups
 
 subcollection: FileStorage
 
@@ -40,7 +40,7 @@ For more information, see [cPanel - Configuring backup directory ![External link
    ```
    {: pre}
 
-    This command compresses and transmits your data, and preserves as much as possible, except for hard links. It also provides information about what files are being transferred, plus a brief summary at the end.
+    This command compresses and transmits your data, and preserves as much as possible, except for hard links. It also provides information about what files are being traNFSerred, plus a brief summary at the end.
     {:tip}
 
 5. Log in to WebHost Manager, and go to the backup configuration through **Home** > **Backup** > **Backup Configuration**.
