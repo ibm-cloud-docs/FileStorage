@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
-keywords: File Storage, file storage, nsf, slcli, API
+keywords: File Storage, NSF, SLCLI, API
 
 subcollection: FileStorage
 
@@ -34,7 +34,7 @@ For more information about how to install and use the SLCLI, see [Python API Cli
 
 ## Replication-related SLCLI commands
 
-* [Replication related SLCLI commands](/docs/infrastructure/FileStorage?topic=FileStorage-replication#clicommands)
+* [Replication-related SLCLI commands](/docs/infrastructure/FileStorage?topic=FileStorage-replication#clicommands)
   ```
   slcli file replica-failback
   slcli file replica-failover
