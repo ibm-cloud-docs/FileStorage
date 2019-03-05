@@ -19,12 +19,12 @@ subcollection: FileStorage
 # SLCLI commands for {{site.data.keyword.filestorage_short}}
 {: #SLCLIcommands}
 
-You can use the SLCLI to take actions such as placing orders for new volumes, snapshot space and replication, updating authorizations, cancelling volumes, and so on that are normally handled through the [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
+You can use the SLCLI to take actions that are normally handled through the [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}. For example, with SLCLI you can place orders for new volumes, snapshot space and replication, update authorizations, cancel volumes, and so on.
 
 For more information about how to install and use the SLCLI, see [Python API Client ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://softlayer-python.readthedocs.io/en/latest/cli.html){:new_window}.
 {:tip}
 
-## Access related SLCLI commands
+## Access-related SLCLI commands
 * [Managing {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-managingstorage)  
   ```
   slcli file access-authorize
@@ -32,7 +32,7 @@ For more information about how to install and use the SLCLI, see [Python API Cli
   slcli file access-revoke
   ```
 
-## Replication related SLCLI commands
+## Replication-related SLCLI commands
 
 * [Replication related SLCLI commands](/docs/infrastructure/FileStorage?topic=FileStorage-replication#clicommands)
   ```
@@ -43,7 +43,7 @@ For more information about how to install and use the SLCLI, see [Python API Cli
   slcli file replica-partners
   ```
 
-## Snapshots related SLCLI commands
+## Snapshots-related SLCLI commands
 
 * [Ordering Snapshots](/docs/infrastructure/FileStorage?topic=FileStorage-ordering-snapshots)
   ```
@@ -61,7 +61,7 @@ For more information about how to install and use the SLCLI, see [Python API Cli
   slcli file snapshot-restore
   ```
 
-## Volume related SLCLI commands
+## Volume-related SLCLI commands
 
 * [Ordering a {{site.data.keyword.filestorage_short}} volume](/docs/infrastructure/FileStorage?topic=FileStorage-orderingSLCLI)
 * [Creating a duplicate volume](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume)
