@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2014, 2019
+  years: 2018, 2019
 lastupdated: "2019-02-05"
+
+keywords:
+
+subcollection: FileStorage
 
 ---
 {:new_window: target="_blank"}
@@ -31,13 +35,14 @@ Esse recurso está disponível somente nos [data centers de seleção](/docs/inf
 A ação de expansão no armazenamento primário resulta no redimensionamento automático da réplica.
 
 ## Limitações
+{: #limitsofextension}
 
 Esse recurso está disponível somente para armazenamento que é provisionado em [data centers](/docs/infrastructure/FileStorage?topic=FileStorage-news) com recursos aprimorados. O armazenamento criptografado provisionado nesses data centers pode ser aumentado em até 12 TB.
 
 As limitações de tamanho existentes para o {{site.data.keyword.filestorage_short}} que foram provisionadas com o Endurance ainda se aplicam (até 4 TB para a camada de 10 IOPS e até 12 TB para todas as outras camadas).
 
 ## Redimensionando o
-{: #steps}
+{: #resizingsteps}
 
 1. No {{site.data.keyword.slportal}}, clique em **Armazenamento** > **{{site.data.keyword.filestorage_short}}** OU, no catálogo do {{site.data.keyword.BluSoftlayer_full}}, clique em **Infraestrutura** > **Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
 2. Selecione o volume na lista e clique em **Ações** > **Modificar volume**
@@ -46,7 +51,7 @@ As limitações de tamanho existentes para o {{site.data.keyword.filestorage_sho
 5. Clique em **Eu li o Contrato de Prestação de Serviços Principal...** e clique em **Fazer pedido**.
 6. Sua nova alocação de armazenamento estará disponível em alguns minutos.
 
-Como alternativa, é possível usar o comando a seguir na CLI do SL.
+Como alternativa, é possível usar o comando a seguir no SLCLI.
 ```
 # slcli file volume-modify --help Usage: slcli file volume-modify [OPTIONS] VOLUME_ID
 

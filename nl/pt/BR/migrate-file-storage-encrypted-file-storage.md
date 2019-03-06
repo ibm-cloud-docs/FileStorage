@@ -4,6 +4,10 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
+keywords:
+
+subcollection: FileStorage
+
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
@@ -16,7 +20,7 @@ lastupdated: "2019-02-05"
 
 O {{site.data.keyword.filestorage_full}} aprimorado está agora disponível nos data centers selecionados. Para ver a lista de data centers submetidos a upgrade e recursos disponíveis, como taxas de IOPS ajustáveis e volumes expansíveis, clique [aqui](/docs/infrastructure/FileStorage?topic=FileStorage-news). Para obter mais informações sobre criptografia gerenciada pelo provedor, consulte [Criptografia em repouso do {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-encryption).
 
-O caminho de migração preferencial é conectar-se a ambos os volumes simultaneamente e traNFSerir dados diretamente de um LUN para outro. Os detalhes dependerão de seu sistema operacional e se os dados são esperados mudar durante a operação de cópia.
+O caminho de migração preferencial é conectar-se a ambos os volumes simultaneamente e transferir dados diretamente de um LUN para outro. Os detalhes dependerão de seu sistema operacional e se os dados são esperados mudar durante a operação de cópia.
 
 A suposição é que você já tem o LUN não criptografado conectado ao seu host. Caso contrário, siga as instruções que melhor se ajustem ao seu sistema operacional para realizar essa tarefa.
 

@@ -4,6 +4,10 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
+keywords:
+
+subcollection: FileStorage
+
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
@@ -28,7 +32,7 @@ Hosts "Autorizados" são aqueles que receberam acesso a um volume específico. S
 2. Role para a seção **Hosts autorizados** da página.
 3. Clique em  ** Autorizar host **  à direita. Selecione os hosts que podem acessar esse volume específico.
 
-Como alternativa, é possível usar o comando a seguir na CLI do SL.
+Como alternativa, é possível usar o comando a seguir no SLCLI.
 ```
 # slcli file access-authorize --help
 Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
@@ -51,7 +55,7 @@ Options:
 
 Ela exibe a lista de hosts que estão atualmente autorizados a acessar o volume.
 
-Como alternativa, é possível usar o comando a seguir na CLI do SL.
+Como alternativa, é possível usar o comando a seguir no SLCLI.
 ```
 # slcli file access-list --help
 Usage: slcli file access-list [OPTIONS] VOLUME_ID
@@ -110,8 +114,8 @@ Se você desejar desconectar vários volumes de um host específico, será neces
 Se você desejar desconectar vários hosts de um volume específico, será necessário repetir a ação Revogar acesso para cada host.
 {:tip}
 
-### Revogando o acesso por meio da CLI SL.
-Como alternativa, é possível usar o comando a seguir na CLI do SL.
+### Revogando o acesso por meio do SLCLI.
+Como alternativa, é possível usar o comando a seguir no SLCLI.
 ```
 # slcli file access-revoke --help
 Usage: slcli file access-revoke [OPTIONS] VOLUME_ID
@@ -142,7 +146,7 @@ Se você não precisar mais de um volume específico, será possível cancelar e
 4. Clique em **Continuar** ou **Fechar**.
 5. Clique na caixa de seleção de confirmação e depois em **Confirmar**.
 
-Como alternativa, é possível usar o comando a seguir na CLI do SL.
+Como alternativa, é possível usar o comando a seguir no SLCLI.
 ```
 # slcli file volume-cancel --help
 Usage: slcli file volume-cancel [OPTIONS] VOLUME_ID

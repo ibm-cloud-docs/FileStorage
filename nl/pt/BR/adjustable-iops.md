@@ -4,6 +4,10 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
+keywords:
+
+subcollection: FileStorage
+
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
@@ -24,8 +28,9 @@ O faturamento para o armazenamento é atualizado para incluir a diferença ratea
 - Gerenciamento de custo: alguns de nossos clientes podem precisar de IOPS alto apenas durante os horários de pico de uso. Por exemplo, uma grande loja de varejo tem pico de uso durante os feriados e pode precisar de IOPS mais alto em seu armazenamento do que no meio do verão. Esse recurso permite que eles gerenciem seus custos e paguem por IOPS mais altos somente quando precisam dele.
 
 ## Limitações
+{: #limitsofadjustIOPS}
 
-Esse recurso está disponível somente nos [data centers de seleção](/docs/infrastructure/BlockStorage?topic=BlockStorage-news).
+Esse recurso está disponível somente nos [data centers de seleção](/docs/infrastructure/FileStorage?topic=FileStorage-news).
 
 Os clientes não podem alternar entre o Endurance e o Performance quando eles ajustam seu IOPS. Os usuários podem especificar um novo nível de IOPS ou camada de IOPS para seu armazenamento com base nos critérios e nas restrições a seguir.
 
@@ -38,7 +43,7 @@ Os clientes não podem alternar entre o Endurance e o Performance quando eles aj
 Se o volume tiver a replicação em vigor, a réplica será atualizada automaticamente para corresponder à seleção de IOPS do primário.
 
 ## Ajustando o IOPS em seu Armazenamento
-{: #steps}
+{: #adjustingsteps}
 
 1. Acesse sua lista de {{site.data.keyword.filestorage_short}}
     - No portal do cliente, clique em **Armazenamento** > **{{site.data.keyword.filestorage_short}}** OU

@@ -4,6 +4,10 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
+keywords:
+
+subcollection: FileStorage
+
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
@@ -80,7 +84,7 @@ Options:
 
 Uma lista de capturas instantâneas retidas e espaço usado pode ser vista na página **Detalhe** (**Armazenamento**, **{{site.data.keyword.filestorage_short}}**). As funções de gerenciamento (editando planejamentos e incluindo mais espaço) são conduzidas na página Detalhe usando o menu **Ações** ou links nas várias seções na página.
 
-Como alternativa, é possível realizar essa tarefa por meio da CLI do SL.
+Como alternativa, é possível realizar essa tarefa por meio do SLCLI.
 ```
 # slcli file snapshot-list --help
 Usage: slcli file snapshot-list [OPTIONS] VOLUME_ID
@@ -139,7 +143,7 @@ espaço para capturas instantâneas futuras. A exclusão é feita por meio de **
 1. Clique em seu volume de armazenamento e role para a seção **Captura instantânea** para ver a lista de capturas instantâneas existentes.
 2. Clique em **Ações** ao lado de uma captura instantânea específica e clique em **Excluir** para excluir a captura instantânea. Essa exclusão não afeta as capturas instantâneas futuras ou passadas no mesmo planejamento, pois não há nenhuma dependência entre elas.
 
-Como alternativa, é possível excluir uma captura instantânea por meio da CLI do SL.
+Como alternativa, é possível excluir uma captura instantânea por meio do SLCLI.
 ```
 # slcli file snapshot-delete --help
 Usage: slcli file snapshot-delete [OPTIONS] SNAPSHOT_ID
