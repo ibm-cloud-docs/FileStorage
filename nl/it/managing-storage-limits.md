@@ -4,6 +4,10 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
+keywords:
+
+subcollection: FileStorage
+
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
@@ -14,7 +18,7 @@ lastupdated: "2019-02-05"
 # Gestione dei limiti di archiviazione
 {: #managinglimits}
 
-Per impostazione predefinita, puoi eseguire il provisioning di un totale combinato di 250 volumi {{site.data.keyword.blockstorageshort}} e {{site.data.keyword.filestorage_short}} globalmente. 
+Per impostazione predefinita, puoi eseguire il provisioning di un totale combinato di 250 volumi {{site.data.keyword.blockstorageshort}} e {{site.data.keyword.filestorage_short}} globalmente.
 
 Se non sei sicuro di quanti volumi disponi, puoi elencarli per ogni data center utilizzando il seguente comando `slcli`.
 ```

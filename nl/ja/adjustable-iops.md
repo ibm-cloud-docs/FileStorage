@@ -4,6 +4,10 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
+keywords:
+
+subcollection: FileStorage
+
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
@@ -24,8 +28,9 @@ lastupdated: "2019-02-05"
 - コスト管理 – 高い IOPS はピーク使用時にしか必要ないというクライアントがいます。 例えば、大規模な小売店はホリデー・シーズンがピーク使用になるので、この時期は真夏と比べてストレージに必要な IOPS が高くなる可能性があります。 この機能を使用すると、コストを管理し、必要なときにだけ高い IOPS を購入することができます。
 
 ## 制限
+{: #limitsofadjustIOPS}
 
-この機能は、[一部のデータ・センター](/docs/infrastructure/BlockStorage?topic=BlockStorage-news)でのみ使用できます。
+この機能は、[一部のデータ・センター](/docs/infrastructure/FileStorage?topic=FileStorage-news)でのみ使用できます。
 
 クライアントは IOPS を調整する際に、エンデュランスとパフォーマンスを切り替えることはできません。 ユーザーは、次の基準や制限に基づいて、ストレージの新しい IOPS ティアまたは IOPS レベルを指定できます。
 
@@ -38,7 +43,7 @@ lastupdated: "2019-02-05"
 ボリュームでレプリケーションが実行されている場合は、プライマリーの IOPS の選択と一致するように自動的にレプリカが更新されます。
 
 ## 実際のストレージでの IOPS の調整
-{: #steps}
+{: #adjustingsteps}
 
 1. {{site.data.keyword.filestorage_short}}のリストに進みます
     - カスタマー・ポータルから、**「ストレージ」**>**「{{site.data.keyword.filestorage_short}}」**をクリックします。または

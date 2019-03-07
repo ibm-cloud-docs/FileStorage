@@ -4,6 +4,10 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
+keywords:
+
+subcollection: FileStorage
+
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
@@ -84,6 +88,7 @@ Per impostazione predefinita, puoi eseguire il provisioning di un totale combina
 
 
 ## Connessione della tua nuova archiviazione
+{: #mountingvolumesPortal}
 
 Dopo che la tua richiesta di provisioning è stata completata, autorizza i tuoi host ad accedere alla nuova archiviazione e configura la tua connessione. A seconda del sistema operativo del tuo host, segui il link appropriato.
 - [Montaggio di {{site.data.keyword.filestorage_short}} su Linux](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)

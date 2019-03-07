@@ -4,6 +4,10 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
+keywords:
+
+subcollection: FileStorage
+
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
@@ -24,8 +28,9 @@ lastupdated: "2019-02-05"
 - 비용 관리 – 일부 클라이언트에서는 최대 사용 시간 중에만 높은 IOPS가 필요할 수 있습니다. 예를 들어, 특정 대형 소매점에서는 겨울 연휴에 사용량이 가장 많으며, 이 기간에는 스토리지에 대해 한여름보다 더 높은 IOPS를 필요로 할 수 있습니다. 이 기능은 이러한 소매점에서 비용을 관리하면서 필요할 때 더 높은 IOPS를 위해 비용을 지불할 수 있게 해 줍니다.
 
 ## 제한사항
+{: #limitsofadjustIOPS}
 
-이 기능은 [특정 데이터 센터](/docs/infrastructure/BlockStorage?topic=BlockStorage-news)에서만 사용 가능합니다.
+이 기능은 [특정 데이터 센터](/docs/infrastructure/FileStorage?topic=FileStorage-news)에서만 사용 가능합니다.
 
 클라이언트는 자체 IOPS를 조정할 때 Endurance와 Performance 간에 전환할 수 없습니다. 사용자는 다음의 기준 및 제한사항을 기반으로 스토리지에 대해 새 IOPS 계층 또는 IOPS 레벨을 지정할 수 있습니다.
 
@@ -38,7 +43,7 @@ lastupdated: "2019-02-05"
 볼륨에 복제가 있는 경우 복제본은 기본 볼륨의 IOPS 선택사항과 일치하도록 자동으로 업데이트됩니다.
 
 ## 스토리지의 IOPS 조정
-{: #steps}
+{: #adjustingsteps}
 
 1. {{site.data.keyword.filestorage_short}}의 목록으로 이동하십시오.
     - 고객 포털에서 **스토리지** > **{{site.data.keyword.filestorage_short}}**를 클릭하거나

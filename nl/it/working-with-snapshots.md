@@ -4,6 +4,10 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
+keywords:
+
+subcollection: FileStorage
+
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
@@ -78,7 +82,7 @@ Options:
 
 Un elenco di istantanee conservate e spazio utilizzato può essere visualizzato nella pagina **Detail** (**Storage**, **{{site.data.keyword.filestorage_short}}**). Le funzioni di gestione (modifica di pianificazioni e aggiunta di ulteriore spazio) vengono controllate nella pagina Detail utilizzando il menu **Actions** oppure i link nelle diverse sezioni della pagina.
 
-In alternativa, puoi effettuare questa attività tramite la CLI SL.
+In alternativa, puoi effettuare questa attività tramite la SLCLI.
 ```
 # slcli file snapshot-list --help
 Usage: slcli file snapshot-list [OPTIONS] VOLUME_ID
@@ -137,7 +141,7 @@ Le istantanee che non sono più necessarie possono essere rimosse manualmente pe
 1. Fai clic sul tuo volume di archiviazione e scorri alla sezione **Snapshot** per visualizzare l'elenco delle istantanee esistenti.
 2. Fai clic su **Actions** accanto a una specifica istantanea e fai clic su **Delete** per eliminare l'istantanea. Tale eliminazione non ha alcuna ripercussione sulle eventuali istantanee passate o future nella stessa pianificazione poiché le istantanee non hanno alcuna interdipendenza.
 
-In alternativa, puoi eliminare un'istantanea tramite la CLI SL.
+In alternativa, puoi eliminare un'istantanea tramite la SLCLI.
 ```
 # slcli file snapshot-delete --help
 Usage: slcli file snapshot-delete [OPTIONS] SNAPSHOT_ID

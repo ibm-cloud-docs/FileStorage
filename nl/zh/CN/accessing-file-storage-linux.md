@@ -2,7 +2,11 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-02-22"
+
+keywords:
+
+subcollection: FileStorage
 
 ---
 {:new_window: target="_blank"}
@@ -104,6 +108,9 @@ Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
 
    如果使用的是 NFS 4.1，请将 `sec=sys` 添加到 mount 命令中，以防止发生文件所有权问题。
    {:tip}
+   
+   如果主机操作系统是 CentOS，那么可以配置更多选项。有关更多信息，请参阅[在 CentOS 中安装 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)。
+{:tip}
 
 
 ## 如何对 NFS 实施 `no_root_squash`（可选）

@@ -4,6 +4,10 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
+keywords:
+
+subcollection: FileStorage
+
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
@@ -11,7 +15,7 @@ lastupdated: "2019-02-05"
 {:note: .note}
 {:important: .important}
 
-# Nuove ubicazioni e funzioni 
+# Nuove ubicazioni e funzioni
 {: #news}
 
 {{site.data.keyword.BluSoftlayer_full}} sta introducendo una nuova versione di {{site.data.keyword.filestorage_full}}! La nuova archiviazione è disponibile in data center selezionati ed è supportata da una archiviazione flash a livelli IOPS più elevati con la crittografia a livello di disco per i dati non attivi. Di tutta l'archiviazione ordinata in data center selezionati, viene automaticamente creata con la nuova versione di {{site.data.keyword.filestorage_short}}.

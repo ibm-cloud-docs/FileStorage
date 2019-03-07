@@ -4,6 +4,10 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
+keywords:
+
+subcollection: FileStorage
+
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
@@ -28,7 +32,7 @@ lastupdated: "2019-02-05"
 2. 捲動至頁面的**授權主機**區段。
 3. 按一下右側的**授權主機**。選取可存取該特定磁區的主機。
 
-或者，您可以在 SL CLI 中使用下列指令。
+或者，您可以在 SLCLI 中使用下列指令。
 ```
 # slcli file access-authorize --help
 Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
@@ -51,7 +55,7 @@ Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
 
 在那裡，您可以看到目前已獲授權存取磁區的主機清單。
 
-或者，您可以在 SL CLI 中使用下列指令。
+或者，您可以在 SLCLI 中使用下列指令。
 ```
 # slcli file access-list --help
 Usage: slcli file access-list [OPTIONS] VOLUME_ID
@@ -112,8 +116,8 @@ Options:
 如果您要中斷多個主機與特定磁區的連線，則需要對每個主機重複「撤銷存取權」動作。
 {:tip}
 
-### 透過 SL CLI 撤銷存取。
-或者，您可以在 SL CLI 中使用下列指令。
+### 透過 SLCLI 撤銷存取。
+或者，您可以在 SLCLI 中使用下列指令。
 ```
 # slcli file access-revoke --help
 Usage: slcli file access-revoke [OPTIONS] VOLUME_ID
@@ -144,7 +148,7 @@ Options:
 4. 按一下**繼續**或**關閉**。
 5. 按一下確認通知勾選框，然後按一下**確認**。
 
-或者，您可以在 SL CLI 中使用下列指令。
+或者，您可以在 SLCLI 中使用下列指令。
 ```
 # slcli file volume-cancel --help
 Usage: slcli file volume-cancel [OPTIONS] VOLUME_ID

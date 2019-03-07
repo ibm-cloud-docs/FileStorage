@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2014, 2019
+  years: 2018, 2019
 lastupdated: "2019-02-05"
+
+keywords:
+
+subcollection: FileStorage
 
 ---
 {:new_window: target="_blank"}
@@ -31,13 +35,14 @@ Questa funzione è disponibile solo in [data center selezionati](/docs/infrastru
 L'azione di espansione sull'archiviazione primaria determina una modifica della dimensione automatica della replica.
 
 ## Limitazioni
+{: #limitsofextension}
 
 Questa funzione è disponibile solo per l'archiviazione di cui viene eseguito il provisioning nei [data center](/docs/infrastructure/FileStorage?topic=FileStorage-news) con funzionalità migliorate. L'archiviazione crittografata di cui viene eseguito il provisioning in questi data center può essere aumentata fino a 12 TB.
 
 Le limitazioni di dimensione esistenti per {{site.data.keyword.filestorage_short}} di cui era stato eseguito il provisioning con Endurance continuano a essere valide (fino a 4 TB per il livello a 10 IOPS e fino a 12 TB per tutti gli altri livelli).
 
 ## Ridimensionamento dell'archiviazione
-{: #steps}
+{: #resizingsteps}
 
 1. Dal {{site.data.keyword.slportal}}, fai clic su **Storage** > **{{site.data.keyword.filestorage_short}}** OPPURE, dal catalogo di {{site.data.keyword.BluSoftlayer_full}}, fai clic su **Infrastruttura** > **Archiviazione** > **{{site.data.keyword.filestorage_short}}**.
 2. Seleziona il volume dall'elenco e fai clic su **Actions** > **Modify Volume**
@@ -46,7 +51,7 @@ Le limitazioni di dimensione esistenti per {{site.data.keyword.filestorage_short
 5. Fai clic su **I have read the Master Service Agreement...** e fai clic su **Place Order**.
 6. La tua nuova allocazione di archiviazione è disponibile in pochi minuti.
 
-In alternativa, puoi utilizzare il seguente comando nella CLI SL.
+In alternativa, puoi utilizzare il seguente comando nella SLCLI.
 ```
 # slcli file volume-modify --help
 Usage: slcli file volume-modify [OPTIONS] VOLUME_ID

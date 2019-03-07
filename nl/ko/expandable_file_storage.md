@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2014, 2019
+  years: 2018, 2019
 lastupdated: "2019-02-05"
+
+keywords:
+
+subcollection: FileStorage
 
 ---
 {:new_window: target="_blank"}
@@ -31,13 +35,14 @@ lastupdated: "2019-02-05"
 기본 스토리지에 대해 확장 조치를 수행하면 복제본의 크기가 자동으로 조정됩니다.
 
 ## 제한사항
+{: #limitsofextension}
 
 이 기능은 고급 기능이 있는 [데이터 센터](/docs/infrastructure/FileStorage?topic=FileStorage-news)에서 프로비저닝된 스토리지에만 사용 가능합니다. 이러한 데이터 센터에서 프로비저닝된 암호화된 스토리지는 최대 12TB까지 늘릴 수 있습니다.
 
 Endurance로 프로비저닝된 {{site.data.keyword.filestorage_short}}에 대한 기존 크기 제한사항은 계속 적용됩니다(10IOPS 계층의 경우 최대 4TB, 기타 모든 계층의 경우 최대 12TB).
 
 ## 스토리지 크기 조정
-{: #steps}
+{: #resizingsteps}
 
 1. {{site.data.keyword.slportal}}에서 **스토리지** > **{{site.data.keyword.filestorage_short}}**를 클릭하거나 {{site.data.keyword.BluSoftlayer_full}} 카탈로그에서 **인프라** > **스토리지** > **{{site.data.keyword.filestorage_short}}**를 클릭하십시오.
 2. 목록에서 볼륨을 선택하고 **조치** > **볼륨 수정**을 클릭하십시오.

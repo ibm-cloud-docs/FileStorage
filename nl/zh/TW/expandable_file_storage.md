@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2014, 2019
+  years: 2018, 2019
 lastupdated: "2019-02-05"
+
+keywords:
+
+subcollection: FileStorage
 
 ---
 {:new_window: target="_blank"}
@@ -31,13 +35,14 @@ lastupdated: "2019-02-05"
 主要儲存空間上的擴充動作會導致自動調整抄本大小。
 
 ## 限制
+{: #limitsofextension}
 
 此特性只適用於佈建在具有加強功能之[資料中心](/docs/infrastructure/FileStorage?topic=FileStorage-news)內的儲存空間。在這些資料中心內佈建的加密儲存空間最多可以增加到 12 TB。
 
 已佈建「耐久性」之 {{site.data.keyword.filestorage_short}} 的現有大小限制仍然適用（10 IOPS 層級最多為 4 TB，而所有其他層級最多為 12 TB）。
 
 ## 調整儲存空間大小
-{: #steps}
+{: #resizingsteps}
 
 1. 從 {{site.data.keyword.slportal}}，按一下**儲存空間** > **{{site.data.keyword.filestorage_short}}**，或者，從 {{site.data.keyword.BluSoftlayer_full}} 型錄，按一下**基礎架構** > **儲存空間** > **{{site.data.keyword.filestorage_short}}**。
 2. 從清單中選取磁區，然後按一下**動作** > **修改磁區**
@@ -46,7 +51,7 @@ lastupdated: "2019-02-05"
 5. 按一下**我已閱讀主要服務合約...**，然後按一下**下訂單**。
 6. 在幾分鐘之後，就可以使用您的新儲存空間配置。
 
-或者，您可以在 SL CLI 中使用下列指令。
+或者，您可以在 SLCLI 中使用下列指令。
 ```
 # slcli file volume-modify --help
 Usage: slcli file volume-modify [OPTIONS] VOLUME_ID

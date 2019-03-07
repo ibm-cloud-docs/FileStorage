@@ -4,6 +4,10 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
+keywords:
+
+subcollection: FileStorage
+
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
@@ -84,6 +88,7 @@ lastupdated: "2019-02-05"
 
 
 ## 新しいストレージの接続
+{: #mountingvolumesPortal}
 
 プロビジョニング要求が完了したら、ホストに対して、新しいストレージへのアクセスを許可し、接続を構成します。 ホストのホスト・オペレーティング・システムに応じて、次のうち該当するリンクを使用します。
 - [Linux への{{site.data.keyword.filestorage_short}}のマウント](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)

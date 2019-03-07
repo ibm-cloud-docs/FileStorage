@@ -4,6 +4,10 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
+keywords:
+
+subcollection: FileStorage
+
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
@@ -28,7 +32,7 @@ Puoi autorizzare e connettere gli host che si trovano nello stesso data center d
 2. Scorri alla sezione **Authorized Hosts** della pagina.
 3. Fai clic su **Authorize Host** sulla destra. Seleziona gli host che possono accedere allo specifico volume.
 
-In alternativa, puoi utilizzare il seguente comando nella CLI SL.
+In alternativa, puoi utilizzare il seguente comando nella SLCLI.
 ```
 # slcli file access-authorize --help
 Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
@@ -51,7 +55,7 @@ Options:
 
 Qui puoi vedere un elenco degli host attualmente autorizzati ad accedere al volume.
 
-In alternativa, puoi utilizzare il seguente comando nella CLI SL.
+In alternativa, puoi utilizzare il seguente comando nella SLCLI.
 ```
 # slcli file access-list --help
 Usage: slcli file access-list [OPTIONS] VOLUME_ID
@@ -112,8 +116,8 @@ Se vuoi disconnettere più volumi da uno specifico host, devi ripetere l'azione 
 Se vuoi disconnettere più host da uno specifico volume, devi ripetere l'azione di revoca dell'accesso per ciascun host.
 {:tip}
 
-### Revoca dell'accesso tramite la CLI SL.
-In alternativa, puoi utilizzare il seguente comando nella CLI SL.
+### Revoca dell'accesso tramite la SLCLI.
+In alternativa, puoi utilizzare il seguente comando nella SLCLI.
 ```
 # slcli file access-revoke --help
 Usage: slcli file access-revoke [OPTIONS] VOLUME_ID
@@ -144,7 +148,7 @@ Se non hai più bisogno di uno specifico volume, puoi annullare tale archiviazio
 4. Fai clic su **Continue** o su **Close**.
 5. Fai clic sulla casella di spunta di riconoscimento e fai clic su **Confirm**.
 
-In alternativa, puoi utilizzare il seguente comando nella CLI SL.
+In alternativa, puoi utilizzare il seguente comando nella SLCLI.
 ```
 # slcli file volume-cancel --help
 Usage: slcli file volume-cancel [OPTIONS] VOLUME_ID

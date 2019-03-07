@@ -4,6 +4,10 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
+keywords:
+
+subcollection: FileStorage
+
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
@@ -360,7 +364,7 @@ save
 
 구역 및 방화벽 규칙이 Brocade vRouter(Vyatta)에 설정되고 나면, 여기에 VLAN을 연관시키고 Brocade vRouter(Vyatta)를 통한 VLAN 라우팅을 사용으로 설정해야 합니다.
 
-1. [{{site.data.keyword.slportal}} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://control.softlayer.com/){:new_window}에 로그인하고 **네트워크 > 게이트웨이 어플라이언스**를 클릭한 다음 Brocade vRouter(Vyatta)를 클릭하십시오.
+1. [{{site.data.keyword.slportal}} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://control.softlayer.com/){:new_window}에 로그인하고 **네트워크 > Gateway Appliance**를 클릭한 다음 Brocade vRouter(Vyatta)를 클릭하십시오.
 2. **VLAN**을 선택하고 **연관**을 클릭하십시오.
 4. **연관된 VLAN** 아래에서 VLAN을 찾고 각각의 옆에 있는 상자를 선택하십시오.
 5. **대량 조치** 드롭 다운 메뉴를 클릭하고 **라우트**를 선택하십시오.

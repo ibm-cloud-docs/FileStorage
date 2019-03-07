@@ -4,6 +4,10 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
+keywords:
+
+subcollection: FileStorage
+
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
@@ -77,7 +81,7 @@ Options:
 
 您可以在**詳細資料**頁面（**儲存空間**、**{{site.data.keyword.filestorage_short}}**）上看到已保留 Snapshot 及已使用空間的清單。使用**動作**功能表或頁面上各種區段中的鏈結，以在「詳細資料」頁面上處理管理功能（編輯排程以及新增更多空間）。
 
-或者，您可以透過 SL CLI 完成此作業。
+或者，您可以透過 SLCLI 完成此作業。
 ```
 # slcli file snapshot-list --help
 Usage: slcli file snapshot-list [OPTIONS] VOLUME_ID
@@ -137,7 +141,7 @@ Snapshot 排程可以透過**儲存空間** > **{{site.data.keyword.filestorage_
 1. 按一下儲存空間磁區，然後捲動至 **Snapshot** 區段，以查看現有 Snapshot 清單。
 2. 按一下特定 Snapshot 旁的**動作**，然後按一下**刪除**來刪除 Snapshot。這項刪除動作不會影響相同排程上的任何未來或過去 Snapshot，因為 Snapshot 之間沒有相依關係。
 
-或者，您可以透過 SL CLI 刪除 Snapshot。
+或者，您可以透過 SLCLI 刪除 Snapshot。
 ```
 # slcli file snapshot-delete --help
 Usage: slcli file snapshot-delete [OPTIONS] SNAPSHOT_ID

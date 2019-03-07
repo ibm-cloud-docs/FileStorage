@@ -2,7 +2,11 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-02-22"
+
+keywords:
+
+subcollection: FileStorage
 
 ---
 {:new_window: target="_blank"}
@@ -103,6 +107,9 @@ Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
    如果指令完成且沒有任何錯誤，則設定已完成。
 
    如果您使用 NFS 4.1，請將 `sec=sys` 新增至 mount 指令，以防止發生檔案所有權問題。
+   {:tip}
+   
+   如果您的主機 OS 是 CentOS，可以配置其他選項。如需相關資訊，請參閱[在 CentOS 裝載 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)。
    {:tip}
 
 

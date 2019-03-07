@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2014, 2019
+  years: 2018, 2019
 lastupdated: "2019-02-05"
+
+keywords:
+
+subcollection: FileStorage
 
 ---
 {:new_window: target="_blank"}
@@ -25,6 +29,7 @@ lastupdated: "2019-02-05"
 
 1. 登录到 [{{site.data.keyword.cloud}} 控制台 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://
 {DomainName}/catalog/){:new_window}，然后单击左上角的**菜单**图标。选择**经典基础架构**。
+
 
    或者，您可以登录到 [{{site.data.keyword.slportal}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window}。
 1. 在 **{{site.data.keyword.filestorage_short}}** 页面中，单击源卷或目标卷。

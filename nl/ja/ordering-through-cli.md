@@ -4,6 +4,10 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
+keywords:
+
+subcollection: FileStorage
+
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
@@ -14,7 +18,7 @@ lastupdated: "2019-02-05"
 # SLCLI による {{site.data.keyword.filestorage_short}} の注文
 {: #orderingSLCLI}
 
-通常は [{{site.data.keyword.slportal}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://control.softlayer.com/){:new_window} で注文する製品については、SLCLI を使用して注文することができます。 SL API では、1 つの注文を複数の注文コンテナーで処理します。 注文 CLI は、1 つの注文コンテナーのみを処理します。
+通常は [{{site.data.keyword.slportal}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://control.softlayer.com/){:new_window} で注文する製品については、SLCLI を使用して注文することができます。SL API では、1 つの注文を複数の注文コンテナーで処理します。 注文 CLI は、1 つの注文コンテナーのみを処理します。
 
 SLCLI をインストールして使用する方法について詳しくは、[Python API クライアント![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://softlayer-python.readthedocs.io/en/latest/cli.html){:new_window}を参照してください。
 {:tip}
@@ -132,6 +136,7 @@ API を使用して、{{site.data.keyword.filestorage_short}} へのアクセス
 {:important}
 
 ## 新しいストレージの接続
+{: #mountingvolumesCLI}
 
 ホストのホスト・オペレーティング・システムに応じて、次のうち該当するリンクを使用します。
 - [Linux への{{site.data.keyword.filestorage_short}}のマウント](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)

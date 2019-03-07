@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2014, 2019
+  years: 2018, 2019
 lastupdated: "2019-02-05"
+
+keywords:
+
+subcollection: FileStorage
 
 ---
 {:new_window: target="_blank"}
@@ -31,13 +35,14 @@ lastupdated: "2019-02-05"
 对主存储器执行扩展操作将会自动调整副本大小。
 
 ## 限制
+{: #limitsofextension}
 
 此功能仅可用于在具有增强功能的[数据中心](/docs/infrastructure/FileStorage?topic=FileStorage-news)内供应的存储器。这些数据中心内供应的加密存储器可以增大到最高 12 TB。
 
 使用“耐久性”类型供应的 {{site.data.keyword.filestorage_short}} 的现有大小限制仍然适用（对于 10 IOPS 层，最高为 4 TB，对于其他所有层，最高为 12 TB）。
 
 ## 调整存储器大小
-{: #steps}
+{: #resizingsteps}
 
 1. 在 {{site.data.keyword.slportal}} 中，单击**存储** > **{{site.data.keyword.filestorage_short}}**，或者在 {{site.data.keyword.BluSoftlayer_full}}“目录”中，单击**基础架构** > **存储** > **{{site.data.keyword.filestorage_short}}**。
 2. 从列表中选择卷，然后单击**操作** > **修改卷**。

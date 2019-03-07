@@ -4,6 +4,10 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
+keywords:
+
+subcollection: FileStorage
+
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
@@ -86,6 +90,7 @@ lastupdated: "2019-02-05"
 
 
 ## 連接新的儲存空間
+{: #mountingvolumesPortal}
 
 當您的佈建要求完成時，請授權主機存取新的儲存空間，並配置連線。請根據主機的作業系統，遵循適當的鏈結。
 - [在 Linux 上裝載 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)

@@ -4,6 +4,10 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
+keywords:
+
+subcollection: FileStorage
+
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
@@ -12,15 +16,15 @@ lastupdated: "2019-02-05"
 {:important: .important}
 {:codeblock: .codeblock}
 
-# Comandi CLI SL per {{site.data.keyword.filestorage_short}}
+# Comandi SLCLI per {{site.data.keyword.filestorage_short}}
 {: #SLCLIcommands}
 
-Puoi utilizzare la CLI SL per effettuare delle azioni come ad esempio l'inserimento di ordini per nuovi volumi, spazio dell'istantanea e replica, l'aggiornamento delle autorizzazioni, l'annullamento dei volumi e così via in modo che venga tutto gestito normalmente tramite [{{site.data.keyword.slportal}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://control.softlayer.com/){:new_window}.
+Puoi utilizzare la SLCLI per effettuare delle azioni come ad esempio l'inserimento di ordini per nuovi volumi, spazio dell'istantanea e replica, l'aggiornamento delle autorizzazioni, l'annullamento dei volumi e così via in modo che venga tutto gestito normalmente tramite [{{site.data.keyword.slportal}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://control.softlayer.com/){:new_window}.
 
-Per ulteriori informazioni su come installare e utilizzare la CLI SL, vedi [Python API Client ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://softlayer-python.readthedocs.io/en/latest/cli.html){:new_window}.
+Per ulteriori informazioni su come installare e utilizzare la SLCLI, vedi [Python API Client ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://softlayer-python.readthedocs.io/en/latest/cli.html){:new_window}.
 {:tip}
 
-## Comandi CLI SL correlati all'accesso
+## Comandi SLCLI correlati all'accesso
 * [Gestione di {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-managingstorage)  
   ```
   slcli file access-authorize
@@ -28,9 +32,9 @@ Per ulteriori informazioni su come installare e utilizzare la CLI SL, vedi [Pyth
   slcli file access-revoke
   ```
 
-## Comandi CLI SL correlati alla replica
+## Comandi SLCLI correlati alla replica
 
-* [Comandi CLI SL correlati alla replica](/docs/infrastructure/FileStorage?topic=FileStorage-replication#clicommands)
+* [Comandi SLCLI correlati alla replica](/docs/infrastructure/FileStorage?topic=FileStorage-replication#clicommands)
   ```
   slcli file replica-failback
   slcli file replica-failover
@@ -39,7 +43,7 @@ Per ulteriori informazioni su come installare e utilizzare la CLI SL, vedi [Pyth
   slcli file replica-partners
   ```
 
-## Comandi CLI SL correlati all'istantanea
+## Comandi SLCLI correlati all'istantanea
 
 * [Ordinazione di istantanee](/docs/infrastructure/FileStorage?topic=FileStorage-ordering-snapshots)
   ```
@@ -57,22 +61,22 @@ Per ulteriori informazioni su come installare e utilizzare la CLI SL, vedi [Pyth
   slcli file snapshot-restore
   ```
 
-## Comandi CLI SL correlati al volume
+## Comandi SLCLI correlati al volume
 
 * [Ordinazione di un volume {{site.data.keyword.filestorage_short}} ](/docs/infrastructure/FileStorage?topic=FileStorage-orderingSLCLI)
 * [Creazione di un volume duplicato](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume)
   ```
   slcli file volume-duplicate
   ```
-* [Regolazione dell'IOPS](/docs/infrastructure/FileStorage?topic=FileStorage-adjustingIOPS#steps)
+* [Regolazione dell'IOPS](/docs/infrastructure/FileStorage?topic=FileStorage-adjustingIOPS#adjustingsteps)
   ```
   slcli file volume-modify
   ```
-* [Espansione della capacità](/docs/infrastructure/FileStorage?topic=FileStorage-expandCapacity#steps)
+* [Espansione della capacità](/docs/infrastructure/FileStorage?topic=FileStorage-expandCapacity#resizingsteps)
   ```
   slcli file volume-modify
   ```
-* [Gestione di {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-managingstorage)  
+* [Gestione di {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-managingstorage)
   ```
   slcli file volume-cancel
   slcli file volume-count
@@ -81,7 +85,7 @@ Per ulteriori informazioni su come installare e utilizzare la CLI SL, vedi [Pyth
   slcli file volume-list
   slcli file volume-order
   ```
-* [Gestione dei limiti di archiviazione](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits)  
+* [Gestione dei limiti di archiviazione](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits)
   ```
   slcli file volume-count
   ```

@@ -4,6 +4,10 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
+keywords:
+
+subcollection: FileStorage
+
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
@@ -11,12 +15,12 @@ lastupdated: "2019-02-05"
 {:note: .note}
 {:important: .important}
 
-# 透過 SL CLI 訂購 {{site.data.keyword.filestorage_short}}
+# 透過 SLCLI 訂購 {{site.data.keyword.filestorage_short}}
 {: #orderingSLCLI}
 
-您可以使用 SL CLI 來訂購通常是透過 [{{site.data.keyword.slportal}} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://control.softlayer.com/){:new_window} 來訂購的產品。在 SL API 中，一張訂單可能是由多重訂單容器所組成。訂單 CLI 只能用於一個訂單容器。
+您可以使用 SLCLI 來訂購通常是透過 [{{site.data.keyword.slportal}} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://control.softlayer.com/){:new_window} 來訂購的產品。在 SL API 中，一張訂單可能是由多重訂單容器所組成。訂單 CLI 只能用於一個訂單容器。
 
-若要進一步瞭解如何安裝及使用 SL CLI，請參閱 [Python API 用戶端 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://softlayer-python.readthedocs.io/en/latest/cli.html){:new_window}。
+若要進一步瞭解如何安裝及使用 SLCLI，請參閱 [Python API 用戶端 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://softlayer-python.readthedocs.io/en/latest/cli.html){:new_window}。
 {:tip}
 
 ## 搜尋可用的 {{site.data.keyword.filestorage_short}} 供應項目
@@ -132,6 +136,7 @@ Options:
 {:important}
 
 ## 連接新的儲存空間
+{: #mountingvolumesCLI}
 
 請根據主機的作業系統，遵循適當的鏈結。
 - [在 Linux 上裝載 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)

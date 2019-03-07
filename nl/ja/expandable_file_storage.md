@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2014, 2019
+  years: 2018, 2019
 lastupdated: "2019-02-05"
+
+keywords:
+
+subcollection: FileStorage
 
 ---
 {:new_window: target="_blank"}
@@ -31,13 +35,14 @@ lastupdated: "2019-02-05"
 プライマリー・ストレージで拡張アクションを実行すると、自動的にレプリカのサイズが変更されます。
 
 ## 制限
+{: #limitsofextension}
 
 この機能は、拡張機能を備えた[データ・センター](/docs/infrastructure/FileStorage?topic=FileStorage-news)でプロビジョンされたストレージにのみ使用できます。 これらのデータ・センターでプロビジョンされた暗号化ストレージは、最大 12 TB まで増やすことができます。
 
 エンデュランスでプロビジョンされた{{site.data.keyword.filestorage_short}}の既存のサイズ制限が引き続き適用されます (10 IOPS ティアの場合は最大 4 TB、他のすべてのティアは最大 12 TB)。
 
 ## ストレージのサイズ変更
-{: #steps}
+{: #resizingsteps}
 
 1. {{site.data.keyword.slportal}}で**「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**をクリックするか、{{site.data.keyword.BluSoftlayer_full}} カタログで**「インフラストラクチャー」** > **「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**をクリックします。
 2. リストからボリュームを選択し、**「アクション」** > **「ボリュームの変更 (Modify Volume)」**をクリックします。

@@ -4,6 +4,10 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
+keywords:
+
+subcollection: FileStorage
+
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
@@ -12,12 +16,12 @@ lastupdated: "2019-02-05"
 {:important: .important}
 {:codeblock: .codeblock}
 
-# {{site.data.keyword.filestorage_short}}용 SLCLI 명령
+# {{site.data.keyword.filestorage_short}}용 SLCLI CLI 명령
 {: #SLCLIcommands}
 
 SLCLI를 사용하여 새 볼륨, 스냅샷 영역 및 복제에 대한 주문, 권한 업데이트, 볼륨 취소 등 일반적으로 [{{site.data.keyword.slportal}} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://control.softlayer.com/){:new_window}을 통해 처리되는 조치를 수행할 수 있습니다.
 
-SLCLI 설치 및 사용 방법에 대한 자세한 정보는 [Python API 클라이언트 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://softlayer-python.readthedocs.io/en/latest/cli.html){:new_window}를 참조하십시오.
+SLCLI 설치 및 사용 방법에 관한 자세한 정보는 [Python API 클라이언트 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://softlayer-python.readthedocs.io/en/latest/cli.html){:new_window}를 참조하십시오.
 {:tip}
 
 ## 액세스 관련 SLCLI 명령
@@ -39,7 +43,7 @@ SLCLI 설치 및 사용 방법에 대한 자세한 정보는 [Python API 클라�
   slcli file replica-partners
   ```
 
-## 스냅샷 관련 SLCLI 명령
+## 복제 관련 SLCLI 스냅샷
 
 * [스냅샷 구매](/docs/infrastructure/FileStorage?topic=FileStorage-ordering-snapshots)
   ```
@@ -57,22 +61,22 @@ SLCLI 설치 및 사용 방법에 대한 자세한 정보는 [Python API 클라�
   slcli file snapshot-restore
   ```
 
-## 볼륨 관련 SLCLI 명령
+## 볼륨 관련 SLCLI 스냅샷
 
 * [{{site.data.keyword.filestorage_short}} 볼륨 주문](/docs/infrastructure/FileStorage?topic=FileStorage-orderingSLCLI)
 * [복제 볼륨 작성](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume)
   ```
   slcli file volume-duplicate
   ```
-* [IOPS 조정](/docs/infrastructure/FileStorage?topic=FileStorage-adjustingIOPS#steps)
+* [IOPS 조정](/docs/infrastructure/FileStorage?topic=FileStorage-adjustingIOPS#adjustingsteps)
   ```
   slcli file volume-modify
   ```
-* [용량 확장](/docs/infrastructure/FileStorage?topic=FileStorage-expandCapacity#steps)
+* [용량 확장](/docs/infrastructure/FileStorage?topic=FileStorage-expandCapacity#resizingsteps)
   ```
   slcli file volume-modify
   ```
-* [{{site.data.keyword.filestorage_short}} 관리](/docs/infrastructure/FileStorage?topic=FileStorage-managingstorage)  
+* [{{site.data.keyword.filestorage_short}} 관리](/docs/infrastructure/FileStorage?topic=FileStorage-managingstorage)
   ```
   slcli file volume-cancel
   slcli file volume-count
@@ -81,7 +85,7 @@ SLCLI 설치 및 사용 방법에 대한 자세한 정보는 [Python API 클라�
   slcli file volume-list
   slcli file volume-order
   ```
-* [스토리지 한계 관리](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits)  
+* [스토리지 한계 관리](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits)
   ```
   slcli file volume-count
   ```

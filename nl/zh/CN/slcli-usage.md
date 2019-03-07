@@ -4,6 +4,10 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
+keywords:
+
+subcollection: FileStorage
+
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
@@ -64,15 +68,15 @@ lastupdated: "2019-02-05"
   ```
   slcli file volume-duplicate
   ```
-* [调整 IOPS](/docs/infrastructure/FileStorage?topic=FileStorage-adjustingIOPS#steps)
+* [调整 IOPS](/docs/infrastructure/FileStorage?topic=FileStorage-adjustingIOPS#adjustingsteps)
   ```
   slcli file volume-modify
   ```
-* [扩展容量](/docs/infrastructure/FileStorage?topic=FileStorage-expandCapacity#steps)
+* [扩展容量](/docs/infrastructure/FileStorage?topic=FileStorage-expandCapacity#resizingsteps)
   ```
   slcli file volume-modify
   ```
-* [管理 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-managingstorage)  
+* [管理 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-managingstorage)
   ```
   slcli file volume-cancel
   slcli file volume-count
@@ -81,7 +85,7 @@ lastupdated: "2019-02-05"
   slcli file volume-list
   slcli file volume-order
   ```
-* [管理存储限制](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits)  
+* [管理存储限制](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits)
   ```
   slcli file volume-count
   ```

@@ -4,6 +4,10 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
+keywords:
+
+subcollection: FileStorage
+
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
@@ -11,12 +15,12 @@ lastupdated: "2019-02-05"
 {:note: .note}
 {:important: .important}
 
-# Ordinazione di {{site.data.keyword.filestorage_short}} tramite la CLI SL
+# Ordinazione di {{site.data.keyword.filestorage_short}} tramite la SLCLI
 {: #orderingSLCLI}
 
-Puoi utilizzare la CLI SL per effettuare degli ordini per prodotti che vengono normalmente ordinati tramite il [{{site.data.keyword.slportal}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://control.softlayer.com/){:new_window}. Nell'API SL, un ordine può essere costituito da più contenitori di ordine. La CLI degli ordini funziona solo con un singolo contenitore di ordine.
+Puoi utilizzare la SLCLI per effettuare degli ordini per prodotti che vengono normalmente ordinati tramite il [{{site.data.keyword.slportal}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://control.softlayer.com/){:new_window}. Nell'API SL, un ordine può essere costituito da più contenitori di ordine. La CLI degli ordini funziona solo con un singolo contenitore di ordine.
 
-Per ulteriori informazioni su come installare e utilizzare la CLI SL, vedi [Python API Client ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://softlayer-python.readthedocs.io/en/latest/cli.html){:new_window}.
+Per ulteriori informazioni su come installare e utilizzare la SLCLI, vedi [Python API Client ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://softlayer-python.readthedocs.io/en/latest/cli.html){:new_window}.
 {:tip}
 
 ## Ricerca di offerte di {{site.data.keyword.filestorage_short}} disponibili
@@ -132,6 +136,7 @@ Per ulteriori informazioni sul limite di autorizzazioni simultanee, consulta le 
 {:important}
 
 ## Connessione della tua nuova archiviazione
+{: #mountingvolumesCLI}
 
 A seconda del sistema operativo del tuo host, segui il link appropriato.
 - [Montaggio di {{site.data.keyword.filestorage_short}} su Linux](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)

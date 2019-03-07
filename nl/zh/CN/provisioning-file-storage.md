@@ -4,6 +4,10 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
+keywords:
+
+subcollection: FileStorage
+
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
@@ -84,6 +88,7 @@ lastupdated: "2019-02-05"
 
 
 ## 连接新存储器
+{: #mountingvolumesPortal}
 
 完成供应请求后，授权主机来访问新存储器并配置连接。根据主机的操作系统，访问相应的链接。
 - [在 Linux 上安装 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)

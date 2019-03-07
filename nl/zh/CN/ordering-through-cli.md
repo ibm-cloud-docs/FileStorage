@@ -4,6 +4,10 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
+keywords:
+
+subcollection: FileStorage
+
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
@@ -14,7 +18,7 @@ lastupdated: "2019-02-05"
 # 通过 SLCLI 订购 {{site.data.keyword.filestorage_short}}
 {: #orderingSLCLI}
 
-您可以使用 SLCLI 以针对通常通过 [{{site.data.keyword.slportal}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window} 订购的产品下订单。在 SL API 中，订单可由多个订单容器组成。订单 CLI 仅使用一个订单容器。
+可以使用 SLCLI 为通常通过 [{{site.data.keyword.slportal}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window} 订购的产品下订单。在 SL API 中，订单可由多个订单容器组成。订单 CLI 仅使用一个订单容器。
 
 有关如何安装和使用 SLCLI 的更多信息，请参阅 [Python API 客户机 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://softlayer-python.readthedocs.io/en/latest/cli.html){:new_window}。
 {:tip}
@@ -132,6 +136,7 @@ Options:
 {:important}
 
 ## 连接新存储器
+{: #mountingvolumesCLI}
 
 根据主机的操作系统，访问相应的链接。
 - [在 Linux 上安装 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)

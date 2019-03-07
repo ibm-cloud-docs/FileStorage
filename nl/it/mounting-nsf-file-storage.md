@@ -2,7 +2,11 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-02-22"
+
+keywords: mounting file storage, Linux, CentOS, NFS
+
+subcollection: FileStorage
 
 ---
 {:new_window: target="_blank"}
@@ -16,7 +20,9 @@ lastupdated: "2019-02-05"
 # Montaggio di {{site.data.keyword.filestorage_short}} in CentOS
 {: #mountingCentOS}
 
-Il processo per montare {{site.data.keyword.filestorage_full}} in CentOS 7 è simile al processo di [montaggio di {{site.data.keyword.filestorage_short}} su RHEL 6](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux). Tuttavia, poiché il montaggio è NFS, puoi specificare delle opzioni aggiuntive utilizzando la riga `Options=` nel file di montaggio. Nel seguente esempio, NFS è impostato per il montaggio a `/data/www`.
+Per montare {{site.data.keyword.filestorage_full}} in CentOS 7, devi autorizzare l'host tramite [{{site.data.keyword.slportal}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://control.softlayer.com/){:new_window} o la SLCLI. Quindi, installa i programmi di utilità NFS come descritto in [Montaggio di {{site.data.keyword.filestorage_short}} su Linux](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux).
+
+Per CentOS, puoi specificare ulteriori opzioni utilizzando la riga `Options=` nel file di montaggio. Nel seguente esempio, NFS è impostato per il montaggio a `/data/www`.
 
 Il punto di montaggio dell'istanza di {{site.data.keyword.filestorage_short}} può essere ottenuto dalla pagina di elenco {{site.data.keyword.filestorage_short}} oppure tramite una chiamata API -`SoftLayer_Network_Storage::getNetworkMountAddress()`.
 {:tip}

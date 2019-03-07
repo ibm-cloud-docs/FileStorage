@@ -2,7 +2,11 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-02-22"
+
+keywords:
+
+subcollection: FileStorage
 
 ---
 {:new_window: target="_blank"}
@@ -103,6 +107,9 @@ Linux 기반 {{site.data.keyword.BluSoftlayer_full}} 컴퓨팅 인스턴스를 N
    명령이 오류 없이 완료되면 설정이 완료됩니다.
 
    NFS 4.1을 사용 중인 경우에는 마운트 명령에 `sec=sys`를 추가하여 파일 소유권 문제를 방지하십시오.
+   {:tip}
+   
+   호스트 OS가 CentOS인 경우 추가 옵션을 구성할 수 있습니다. 자세한 정보는 [CentOS에서 {{site.data.keyword.filestorage_short}} 마운트](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)를 참조하십시오.
    {:tip}
 
 

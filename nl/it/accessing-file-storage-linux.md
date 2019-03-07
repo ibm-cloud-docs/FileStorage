@@ -2,7 +2,11 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-02-22"
+
+keywords:
+
+subcollection: FileStorage
 
 ---
 {:new_window: target="_blank"}
@@ -103,6 +107,9 @@ Il punto di montaggio dell'istanza di archiviazione file può essere ottenuto da
    Se il comando viene completato senza errori, la tua impostazione è completa.
 
    Se stai utilizzando NFS 4.1, aggiungi `sec=sys` al comando mount per evitare problemi di proprietà dei file.
+   {:tip}
+   
+   Se il tuo SO host è CentOS, puoi configurare ulteriori opzioni. Per ulteriori informazioni, consulta [Montaggio di {{site.data.keyword.filestorage_short}} in CentOS](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS).
    {:tip}
 
 

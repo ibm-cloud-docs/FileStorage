@@ -4,6 +4,10 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
+keywords:
+
+subcollection: FileStorage
+
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
@@ -64,15 +68,15 @@ SLCLI をインストールして使用する方法について詳しくは、[P
   ```
   slcli file volume-duplicate
   ```
-* [IOPS の調整](/docs/infrastructure/FileStorage?topic=FileStorage-adjustingIOPS#steps)
+* [IOPS の調整](/docs/infrastructure/FileStorage?topic=FileStorage-adjustingIOPS#adjustingsteps)
   ```
   slcli file volume-modify
   ```
-* [容量の拡張](/docs/infrastructure/FileStorage?topic=FileStorage-expandCapacity#steps)
+* [容量の拡張](/docs/infrastructure/FileStorage?topic=FileStorage-expandCapacity#resizingsteps)
   ```
   slcli file volume-modify
   ```
-* [{{site.data.keyword.filestorage_short}} の管理](/docs/infrastructure/FileStorage?topic=FileStorage-managingstorage)  
+* [{{site.data.keyword.filestorage_short}} の管理](/docs/infrastructure/FileStorage?topic=FileStorage-managingstorage)
   ```
   slcli file volume-cancel
   slcli file volume-count
@@ -81,7 +85,7 @@ SLCLI をインストールして使用する方法について詳しくは、[P
   slcli file volume-list
   slcli file volume-order
   ```
-* [ストレージ制限の管理](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits)  
+* [ストレージ制限の管理](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits)
   ```
   slcli file volume-count
   ```

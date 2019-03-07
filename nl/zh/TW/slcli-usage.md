@@ -4,6 +4,10 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
+keywords:
+
+subcollection: FileStorage
+
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
@@ -12,15 +16,15 @@ lastupdated: "2019-02-05"
 {:important: .important}
 {:codeblock: .codeblock}
 
-# {{site.data.keyword.filestorage_short}} 的 SL CLI 指令
+# {{site.data.keyword.filestorage_short}} 的 SLCLI 指令
 {: #SLCLIcommands}
 
-您可以使用 SL CLI 來採取如下動作：訂購新磁區、Snapshot 空間及抄寫、更新授權、取消磁區等等，正常情況下，這些動作是透過 [{{site.data.keyword.slportal}} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://control.softlayer.com/){:new_window} 來處理。
+您可以使用 SLCLI 來採取如下動作：訂購新磁區、Snapshot 空間及抄寫、更新授權、取消磁區等等，正常情況下，這些動作是透過 [{{site.data.keyword.slportal}} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://control.softlayer.com/){:new_window} 來處理。
 
-若要進一步瞭解如何安裝及使用 SL CLI，請參閱 [Python API 用戶端 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://softlayer-python.readthedocs.io/en/latest/cli.html){:new_window}。
+若要進一步瞭解如何安裝及使用 SLCLI，請參閱 [Python API 用戶端 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://softlayer-python.readthedocs.io/en/latest/cli.html){:new_window}。
 {:tip}
 
-## 存取相關的 SL CLI 指令
+## 存取相關的 SLCLI 指令
 * [管理 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-managingstorage)  
   ```
   slcli file access-authorize
@@ -28,9 +32,9 @@ lastupdated: "2019-02-05"
   slcli file access-revoke
   ```
 
-## 抄寫相關的 SL CLI 指令
+## 抄寫相關的 SLCLI 指令
 
-* [抄寫相關的 SL CLI 指令](/docs/infrastructure/FileStorage?topic=FileStorage-replication#clicommands)
+* [抄寫相關的 SLCLI 指令](/docs/infrastructure/FileStorage?topic=FileStorage-replication#clicommands)
   ```
   slcli file replica-failback
   slcli file replica-failover
@@ -39,7 +43,7 @@ lastupdated: "2019-02-05"
   slcli file replica-partners
   ```
 
-## Snapshot 相關的 SL CLI 指令
+## Snapshot 相關的 SLCLI 指令
 
 * [訂購 Snapshot](/docs/infrastructure/FileStorage?topic=FileStorage-ordering-snapshots)
   ```
@@ -57,22 +61,22 @@ lastupdated: "2019-02-05"
   slcli file snapshot-restore
   ```
 
-## 磁區相關的 SL CLI 指令
+## 磁區相關的 SLCLI 指令
 
 * [訂購 {{site.data.keyword.filestorage_short}} 磁區](/docs/infrastructure/FileStorage?topic=FileStorage-orderingSLCLI)
 * [建立重複磁區](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume)
   ```
   slcli file volume-duplicate
   ```
-* [調整 IOPS](/docs/infrastructure/FileStorage?topic=FileStorage-adjustingIOPS#steps)
+* [調整 IOPS](/docs/infrastructure/FileStorage?topic=FileStorage-adjustingIOPS#adjustingsteps)
   ```
   slcli file volume-modify
   ```
-* [擴充容量](/docs/infrastructure/FileStorage?topic=FileStorage-expandCapacity#steps)
+* [擴充容量](/docs/infrastructure/FileStorage?topic=FileStorage-expandCapacity#resizingsteps)
   ```
   slcli file volume-modify
   ```
-* [管理 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-managingstorage)  
+* [管理 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-managingstorage)
   ```
   slcli file volume-cancel
   slcli file volume-count
@@ -81,7 +85,7 @@ lastupdated: "2019-02-05"
   slcli file volume-list
   slcli file volume-order
   ```
-* [管理儲存空間限制](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits)  
+* [管理儲存空間限制](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits)
   ```
   slcli file volume-count
   ```

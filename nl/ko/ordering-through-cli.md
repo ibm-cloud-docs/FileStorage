@@ -4,6 +4,10 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
+keywords:
+
+subcollection: FileStorage
+
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
@@ -132,6 +136,7 @@ API를 통해 {{site.data.keyword.filestorage_short}}에 액세스하는 권한�
 {:important}
 
 ## 새 스토리지 연결
+{: #mountingvolumesCLI}
 
 호스트의 운영 체제에 따라 적절한 링크를 사용하십시오.
 - [Linux의 {{site.data.keyword.filestorage_short}} 마운트](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)

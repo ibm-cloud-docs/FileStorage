@@ -4,6 +4,10 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
+keywords:
+
+subcollection: FileStorage
+
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
@@ -43,7 +47,7 @@ Pertanto, quando determini la quantità di spazio di istantanea di cui hai bisog
 
 Inoltre, per la maggior parte dei carichi di lavoro, più grande è un volume e minore è lo spazio da mettere da parte inizialmente. Ciò è dovuto principalmente all'efficienza dei dati sottostanti e alla natura della modalità di funzionamento delle istantanee nell'ambiente.
 
-## Ordinazione di spazio dell'istantanea tramite la console {{site.data.keyword.cloud_notm}} 
+## Ordinazione di spazio dell'istantanea tramite la console {{site.data.keyword.cloud_notm}}
 
 1. Accedi alla [console IBM Cloud](https://{DomainName}/){:new_window} e fai clic sull'icona menu nell'angolo superiore sinistro. Seleziona **Infrastruttura classica**.
 
@@ -58,7 +62,7 @@ Inoltre, per la maggior parte dei carichi di lavoro, più grande è un volume e 
    {:note}
 7. Seleziona la casella **I have read the Master Service Agreement and agree to the terms therein.** e fai clic su **Place Order**. Nel giro di pochi minuti, viene eseguito il provisioning del tuo spazio di istantanea.
 
-## Ordinazione di spazio dell'istantanea tramite la CLI SL
+## Ordinazione di spazio dell'istantanea tramite la SLCLI
 
 ```
 # slcli file snapshot-order --help

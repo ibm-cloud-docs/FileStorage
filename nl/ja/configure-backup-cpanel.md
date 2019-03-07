@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2014, 2019
+  years: 2018, 2019
 lastupdated: "2019-02-05"
+
+keywords:
+
+subcollection: FileStorage
 
 ---
 {:new_window: target="_blank"}
@@ -25,7 +29,7 @@ lastupdated: "2019-02-05"
    デフォルトで、cPanel システムはバックアップ・ファイルを `/backup` ディレクトリーにローカルに保存します。 このドキュメントでは、`/backup` フォルダーが存在していてバックアップが含まれていることを前提としています。`/backup2` を新しいマウント・ポイントとして使用することができます。
    {:note}
 
-3. [Red Hat Enterprise Linux での {{site.data.keyword.filestorage_short}} へのアクセス](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)および [CentOS での {{site.data.keyword.filestorage_short}} のマウント](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)/[CoreOS での NFS/{{site.data.keyword.filestorage_short}} のマウント](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCoreOS)の説明に従って {{site.data.keyword.filestorage_short}} を構成します。ボリュームを `/backup2` にマウントし、始動時にマウントされるようにファイル・システム・テーブル (`/etc/fstab`) で構成してください。 <br />
+3. [Red Hat Enterprise Linux での {{site.data.keyword.filestorage_short}} へのアクセス](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)および [CentOS での {{site.data.keyword.filestorage_short}} のマウント](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)/[CoreOS での NFS/{{site.data.keyword.filestorage_short}} のマウント](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCoreOS)の説明に従って {{site.data.keyword.filestorage_short}} を構成します。 ボリュームを `/backup2` にマウントし、始動時にマウントされるようにファイル・システム・テーブル (`/etc/fstab`) で構成してください。 <br />
 
    デフォルトでは、NFS は、root 権限で作成されたファイルを nobody ユーザーにダウングレードします。 root クライアントが NFS 共有に対する root 権限を保持できるように、`/etc/exports` に `no_root_squash` を追加する必要があります。
    {:tip}

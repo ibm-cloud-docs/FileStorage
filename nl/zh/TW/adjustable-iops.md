@@ -4,6 +4,10 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
+keywords:
+
+subcollection: FileStorage
+
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
@@ -24,8 +28,9 @@ lastupdated: "2019-02-05"
 - 成本管理 - 有些客戶可能只有在用量尖峰期間才需要高 IOPS。例如，大型零售商店在假日期間會有用量尖峰，因此其儲存空間可能在當時比起盛夏而言會需要較高的 IOPS。此特性可讓它們管理其成本，並且只有在需要時才支付較高的 IOPS 費用。
 
 ## 限制
+{: #limitsofadjustIOPS}
 
-只有[精選資料中心](/docs/infrastructure/BlockStorage?topic=BlockStorage-news)內才提供此特性。
+只有[精選資料中心](/docs/infrastructure/FileStorage?topic=FileStorage-news)內才提供此特性。
 
 客戶在調整其 IOPS 時無法切換「耐久性」與「效能」。使用者可以根據下列準則和限制，為其儲存空間指定新的 IOPS 層級或 IOPS 層次。
 
@@ -38,7 +43,7 @@ lastupdated: "2019-02-05"
 如果磁區已有抄寫，則會自動更新抄本，以符合主要磁區的 IOPS 選取項目。
 
 ## 調整儲存空間上的 IOPS
-{: #steps}
+{: #adjustingsteps}
 
 1. 移至您的 {{site.data.keyword.filestorage_short}} 清單
     - 從客戶入口網站，按一下**儲存空間** > **{{site.data.keyword.filestorage_short}}**，或者
