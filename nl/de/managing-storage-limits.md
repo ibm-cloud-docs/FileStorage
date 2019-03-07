@@ -4,6 +4,10 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
+keywords:
+
+subcollection: FileStorage
+
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
@@ -14,9 +18,9 @@ lastupdated: "2019-02-05"
 # Speicherbegrenzungen verwalten
 {: #managinglimits}
 
-Standardmäßig können Sie global insgesamt 250 {{site.data.keyword.blockstorageshort}}- und {{site.data.keyword.filestorage_short}}-Datenträger bereitstellen. 
+Standardmäßig können Sie global insgesamt 250 {{site.data.keyword.blockstorageshort}}- und {{site.data.keyword.filestorage_short}}-Datenträger bereitstellen.
 
-Wenn Sie die Anzahl Ihrer Datenträger ermitteln möchten, können Sie mit dem folgenden `slcli`-Befehl Ihre Datenträger für die einzelnen Rechenzentren auflisten. 
+Wenn Sie die Anzahl Ihrer Datenträger ermitteln möchten, können Sie mit dem folgenden `slcli`-Befehl Ihre Datenträger für die einzelnen Rechenzentren auflisten.
 ```
 # slcli file volume-count --help
 Syntax: slcli file volume-count [OPTIONEN]

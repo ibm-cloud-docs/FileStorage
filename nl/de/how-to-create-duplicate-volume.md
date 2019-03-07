@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2014, 2019
+  years: 2017, 2019
 lastupdated: "2019-02-05"
+
+keywords:
+
+subcollection: FileStorage
 
 ---
 {:new_window: target="_blank"}
@@ -78,7 +82,7 @@ Sie können einen duplizierten Datenträger über das [{{site.data.keyword.slpor
 7. Sie können den Snapshotbereich für den neuen Datenträger aktualisieren, um mehr, weniger oder keinen Snapshotbereich hinzuzufügen. Standardmäßig wird der Snapshotbereich des ursprünglichen Datenträgers festgelegt.
 8. Klicken Sie auf **Weiter**, um Ihre Bestellung für das Duplikat abzuschicken.
 
-## Duplikat über die SL-CLI erstellen
+## Duplikat über die SLCLI erstellen
 ```
 # slcli file volume-duplicate --help
 Syntax: slcli file volume-duplicate [OPTIONEN] AUSGANGSDATENTRÄGER-ID
@@ -87,8 +91,7 @@ Optionen:
   -o, --origin-snapshot-id INTEGER
                                   ID eines Ausgangsdatenträgersnapshots
                                   für die Duplizierung.
-  -c, --duplicate-size INTEGER    Größe des Dateidatenträgerduplikats in GB.
-                                  ***Wird keine Größe angegeben, wird die Größe
+  -c, --duplicate-size INTEGER    Größe des Dateidatenträgerduplikats in GB. ***Wird keine Größe angegeben, wird die Größe
                                   des Ausgangsdatenträgers verwendet.***
                                   Minimum: [Größe des Ausgangsdatenträgers]
   -i, --duplicate-iops INTEGER    Performance-Speicher-IOPS, zwischen 100 und

@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2014, 2019
+  years: 2018, 2019
 lastupdated: "2019-02-05"
+
+keywords:
+
+subcollection: FileStorage
 
 ---
 {:new_window: target="_blank"}
@@ -36,7 +40,7 @@ Para obtener más información, consulte [cPanel - Configuración del directorio
    ```
    {: pre}
 
-    Este mandato comprime y traNFSiere los datos y conserva todo lo posible, excepto los enlaces fijos. También proporciona información sobre los archivos que se están traNFSiriendo, además de un breve resumen final.
+    Este mandato comprime y transfiere los datos y conserva todo lo posible, excepto los enlaces fijos. También proporciona información sobre los archivos que se están transfiriendo, además de un breve resumen final.
     {:tip}
 
 5. Inicie una sesión en WebHost Manager y vaya a la configuración de la copia de seguridad a través de **Inicio** > **Copia de seguridad** > **Configuración de copia de seguridad**.

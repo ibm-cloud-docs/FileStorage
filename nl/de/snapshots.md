@@ -4,6 +4,10 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
+keywords:
+
+subcollection: FileStorage
+
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
@@ -30,7 +34,7 @@ Snapshots ermöglichen Folgendes:
 - Erstellung ohne Betriebsunterbrechung von zeitpunktbezogenen Recovery-Punkten
 - Zurücksetzung von Datenträgern auf frühere Zeitpunkte
 
-Sie müssen zuerst eine gewisse Menge an Snapshotbereich für Ihren Datenträger kaufen, um Snapshots des Datenträgers erstellen zu können. Der Snapshotbereich kann bei der ersten Bestellung oder im Nachhinein über die Seite für Datenträgerdetails **** hinzugefügt werden. Geplante und manuelle Snapshots nutzen den Snapshotbereich gemeinsam. Stellen Sie daher sicher, dass Sie genug Snapshotbereich bestellen. Der Artikel [Snapshots bestellen](/docs/infrastructure/FileStorage?topic=FileStorage-ordering-snapshots) enthält weitere Details sowie eine Anleitung. 
+Sie müssen zuerst eine gewisse Menge an Snapshotbereich für Ihren Datenträger kaufen, um Snapshots des Datenträgers erstellen zu können. Der Snapshotbereich kann bei der ersten Bestellung oder im Nachhinein über die Seite für Datenträgerdetails **** hinzugefügt werden. Geplante und manuelle Snapshots nutzen den Snapshotbereich gemeinsam. Stellen Sie daher sicher, dass Sie genug Snapshotbereich bestellen. Der Artikel [Snapshots bestellen](/docs/infrastructure/FileStorage?topic=FileStorage-ordering-snapshots) enthält weitere Details sowie eine Anleitung.
 
 ## Bewährte Verfahren für Snapshots
 

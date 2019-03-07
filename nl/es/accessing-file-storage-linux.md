@@ -2,7 +2,11 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-02-22"
+
+keywords:
+
+subcollection: FileStorage
 
 ---
 {:new_window: target="_blank"}
@@ -37,7 +41,7 @@ Opciones:
 
 ## Montaje de la compartición de {{site.data.keyword.filestorage_short}}
 
-Utilice estas instrucciones para conectar una instancia de cálculo de {{site.data.keyword.BluSoftlayer_full}} basada en Linux a una compartición de Network file system (NFS) . El ejemplo se basa en Red Hat Enterprise Linux 6. Los pasos pueden ajustarse para otras distribuciones Linux de acuerdo con la documentación del proveedor del sistema operativo.
+Utilice estas instrucciones para conectar una instancia de cálculo de {{site.data.keyword.BluSoftlayer_full}} basada en Linux a una compartición de Network File System (NFS). El ejemplo se basa en Red Hat Enterprise Linux 6. Los pasos pueden ajustarse para otras distribuciones Linux de acuerdo con la documentación del proveedor del sistema operativo.
 
 El punto de montaje de la instancia de almacenamiento de archivos se puede obtener desde la página de listado de {{site.data.keyword.filestorage_short}} o mediante una llamada a API - `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 {:tip}
@@ -103,6 +107,9 @@ El punto de montaje de la instancia de almacenamiento de archivos se puede obten
    Si el mandato finaliza sin errores, la configuración se ha completado.
 
    Si utiliza NFS 4.1, añada `sec=sys` al mandato de montaje para impedir problemas de propiedad de archivos.
+   {:tip}
+   
+   Si su sistema operativo host es CentOS, puede configurar más opciones. Para obtener más información, consulte [Montaje de {{site.data.keyword.filestorage_short}} en CentOS](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS).
    {:tip}
 
 

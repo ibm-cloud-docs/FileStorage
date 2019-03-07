@@ -2,7 +2,11 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-02-22"
+
+keywords:
+
+subcollection: FileStorage
 
 ---
 {:new_window: target="_blank"}
@@ -19,7 +23,7 @@ Stellen Sie zunächst sicher, dass der Host, der auf den {{site.data.keyword.fil
 1. Klicken Sie auf der {{site.data.keyword.filestorage_short}}-Listenseite auf den Link **Aktionen**, die dem neuen gemeinsam genutzten Speicher zugeordnet sind, und klicken Sie auf **Host autorisieren**.
 2. Wählen Sie mindestens einen Host in der Liste aus und klicken Sie auf **Abschicken**. Durch diese Aktion wird der Host für den Zugriff auf den gemeinsam genutzten Speicher autorisiert.
 
-Alternativ dazu können Sie die Hosts auch über die SL-CLI berechtigen. 
+Alternativ dazu können Sie die Hosts auch über die SLCLI berechtigen.
 ```
 # slcli file access-authorize --help
 Syntax: slcli file access-authorize [OPTIONS] VOLUME_ID
@@ -103,6 +107,9 @@ Der Mountpunkt der Dateispeicherinstanz kann von der {{site.data.keyword.filesto
    Wenn der Befehl ohne Fehler ausgeführt wird, ist Ihre Einrichtung abgeschlossen.
 
    Bei Verwendung von NFS 4.1 fügen Sie dem Mountbefehl die Angabe `sec=sys` hinzu, um Probleme mit Dateieigentumsrechten zu vermeiden.
+   {:tip}
+   
+   Unter dem Hostbetriebssystem CentOS können weitere Optionen konfiguriert werden. Weitere Informationen finden Sie in [{{site.data.keyword.filestorage_short}} unter CentOS anhängen](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS).
    {:tip}
 
 

@@ -4,6 +4,10 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
+keywords:
+
+subcollection: FileStorage
+
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
@@ -96,7 +100,7 @@ El nuevo {{site.data.keyword.filestorage_short}} está disponible actualmente en
 - Hasta 48.000 IOPS para {{site.data.keyword.filestorage_short}} suministrado con el tipo Rendimiento.
 - Las tasas de IOPS se pueden ajustar para mejorar el rendimiento en caso de cambios estacionales en la carga de trabajo. [Aquí](/docs/infrastructure/FileStorage?topic=FileStorage-adjustingIOPS) puede leer más información sobre esta característica.
 - Cree un clon de sus datos con la característica de [duplicación de volúmenes de {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume).
-- El almacenamiento es se puede ampliar en incrementos de GB hasta un máximo de 12 TB de inmediato, sin necesidad de crear un duplicado o traNFSerir datos manualmente a un volumen de mayor tamaño. [Aquí](/docs/infrastructure/FileStorage?topic=FileStorage-expandCapacity) puede leer más información sobre esta característica.
+- El almacenamiento es se puede ampliar en incrementos de GB hasta un máximo de 12 TB de inmediato, sin necesidad de crear un duplicado o transferir datos manualmente a un volumen de mayor tamaño. [Aquí](/docs/infrastructure/FileStorage?topic=FileStorage-expandCapacity) puede leer más información sobre esta característica.
 
 ## Nuevo punto de montaje para volúmenes de {{site.data.keyword.filestorage_short}} mejorado
 

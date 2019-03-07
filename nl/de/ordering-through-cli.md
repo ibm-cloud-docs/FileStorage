@@ -4,6 +4,10 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
+keywords:
+
+subcollection: FileStorage
+
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
@@ -11,12 +15,12 @@ lastupdated: "2019-02-05"
 {:note: .note}
 {:important: .important}
 
-# {{site.data.keyword.filestorage_short}} über die SL-Befehlszeilenschnittstelle bestellen
+# {{site.data.keyword.filestorage_short}} über die SLCLI bestellen
 {: #orderingSLCLI}
 
-Sie können die SL-Befehlszeilenschnittstelle verwenden, um Bestellungen für Produkte zu platzieren, die normalerweise über das [ {{site.data.keyword.slportal}} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") ](https://control.softlayer.com/){:new_window} bestellt werden. In der SL-API kann eine Bestellung aus mehreren Bestellungscontainern bestehen. Die Bestell-Befehlszeilenschnittstelle funktioniert nur mit einem Bestellcontainer.
+Sie können die SLCLI verwenden, um Bestellungen für Produkte zu platzieren, die normalerweise über das [ {{site.data.keyword.slportal}} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") ](https://control.softlayer.com/){:new_window} bestellt werden. In der SL-API kann eine Bestellung aus mehreren Bestellungscontainern bestehen. Die Bestell-Befehlszeilenschnittstelle funktioniert nur mit einem Bestellcontainer.
 
-Weitere Informationen zur Installation und Verwendung der SL-Befehlszeilenschnittstelle finden Sie unter [Python-API-Client ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://softlayer-python.readthedocs.io/en/latest/cli.html){:new_window}.
+Weitere Informationen zur Installation und Verwendung der SLCLI finden Sie unter [Python-API-Client ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://softlayer-python.readthedocs.io/en/latest/cli.html){:new_window}.
 {:tip}
 
 ## Nach verfügbaren {{site.data.keyword.filestorage_short}}-Angeboten suchen
@@ -132,6 +136,7 @@ Weitere Informationen zum Grenzwert für gleichzeitige Autorisierungen finden Si
 {:important}
 
 ## Verbindung zum neuen Speicher herstellen
+{: #mountingvolumesCLI}
 
 Folgen Sie je nach dem Betriebssystem Ihres Hosts dem entsprechenden Link.
 - [{{site.data.keyword.filestorage_short}} unter Linux anhängen](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)

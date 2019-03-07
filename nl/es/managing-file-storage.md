@@ -4,6 +4,10 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
+keywords:
+
+subcollection: FileStorage
+
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
@@ -28,7 +32,7 @@ Puede autorizar y conectar hosts que estén ubicados en el mismo centro de datos
 2. Desplácese a la sección **Hosts autorizados** de la página.
 3. Pulse **Autorizar host** en la parte derecha. Seleccione los hosts que pueden acceder a ese volumen determinado.
 
-De manera alternativa, puede utilizar el mandato siguiente en la CLI SL.
+De manera alternativa, puede utilizar el mandato siguiente en SLCLI.
 ```
 # slcli file access-authorize --help
 Uso: slcli file access-authorize [OPCIONES] ID_VOLUMEN
@@ -51,7 +55,7 @@ Opciones:
 
 Allí puede ver la lista de hosts, que actualmente tienen autorización para acceder al volumen.
 
-De manera alternativa, puede utilizar el mandato siguiente en la CLI SL.
+De manera alternativa, puede utilizar el mandato siguiente en SLCLI.
 ```
 # slcli file access-list --help
 Uso: slcli file access-list [OPCIONES] ID_VOLUMEN
@@ -112,8 +116,8 @@ Si desea desconectar varios volúmenes desde un host específico, debe repetir l
 Si desea desconectar varios hosts desde un host específico, debe repetir la acción Revocar acceso para cada host.
 {:tip}
 
-### Revocación del acceso a través de la CLI SL.
-De manera alternativa, puede utilizar el mandato siguiente en la CLI SL.
+### Revocación del acceso a través de SLCLI.
+De manera alternativa, puede utilizar el mandato siguiente en SLCLI.
 ```
 # slcli file access-revoke --help
 Uso: slcli file access-revoke [OPCIONES] ID_VOLUMEN
@@ -142,7 +146,7 @@ Si ya no necesita un volumen específico, puede cancelar ese almacenamiento. Par
 4. Pulse **Continuar** o **Cerrar**.
 5. Marque el recuadro de selección de acuse de recibo y pulse **Confirmar**.
 
-De manera alternativa, puede utilizar el mandato siguiente en la CLI SL.
+De manera alternativa, puede utilizar el mandato siguiente en SLCLI.
 ```
 # slcli file volume-cancel --help
 Uso: slcli file volume-cancel [OPCIONES] ID_VOLUMEN

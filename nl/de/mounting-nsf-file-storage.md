@@ -2,7 +2,11 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-02-22"
+
+keywords: mounting file storage, Linux, CentOS, NFS
+
+subcollection: FileStorage
 
 ---
 {:new_window: target="_blank"}
@@ -16,7 +20,9 @@ lastupdated: "2019-02-05"
 # {{site.data.keyword.filestorage_short}} unter CentOS anhängen
 {: #mountingCentOS}
 
-Der Prozess zum Anhängen von {{site.data.keyword.filestorage_full}} in CentOS 7 ähnelt dem Prozess zum [Anhängen von {{site.data.keyword.filestorage_short}} unter RHEL 6](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux). Da das Anhängen (Mount) jedoch mit NFS erfolgt, können einige weitere Optionen in der Zeile `Options=` in der Mountdatei angegeben werden. Im folgenden Beispiel wird für NFS festgelegt, dass das Anhängen an `/data/www` erfolgt.
+Wenn Sie Mountoperationen für {{site.data.keyword.filestorage_full}} unter CentOS 7 durchführen möchten, müssen Sie zuerst über das [{{site.data.keyword.slportal}} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/){:new_window} oder die SLCLI die entsprechenden Berechtigungen für den Host einrichten. Installieren Sie dann die NFS-Dienstprogramme wie in [{{site.data.keyword.filestorage_short}} unter Linux anhängen](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux) beschrieben. 
+
+Für CentOS können Sie zusätzliche Optionen angeben, indem Sie die Zeile `Options=` in der Mountdatei verwenden. Im folgenden Beispiel wird für NFS festgelegt, dass das Anhängen an `/data/www` erfolgt.
 
 Der NFS-Mountpunkt der {{site.data.keyword.filestorage_short}}-Instanz kann auf der {{site.data.keyword.filestorage_short}}-Listenseite oder über den API-Aufruf `SoftLayer_Network_Storage::getNetworkMountAddress()` abgerufen werden.
 {:tip}

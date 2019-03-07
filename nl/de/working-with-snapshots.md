@@ -4,6 +4,10 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
+keywords:
+
+subcollection: FileStorage
+
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
@@ -42,7 +46,7 @@ Snapshotzeitpläne können für stündliche, tägliche und wöchentliche Interva
 
 Die Liste der Snapshots wird in der Reihenfolge ihrer Ausführung im Abschnitt **Snapshots** der Seite **Details** angezeigt.
 
-Mit dem folgenden Befehl können Sie die Liste der Snapshotpläne auch über die SL-CLI anzeigen. 
+Mit dem folgenden Befehl können Sie die Liste der Snapshotpläne auch über die SLCLI anzeigen.
 ```
 # slcli file snapshot-schedule-list --help
 Syntax: slcli file snapshot-schedule-list [OPTIONEN] DATENTRÄGER-ID
@@ -64,7 +68,7 @@ Die Anzahl manueller Snapshots ist auf maximal 50 pro Speicherdatenträger begre
 3. Klicken Sie auf **Manuellen Snapshot erstellen**.
 Der Snapshot wird erstellt und im Abschnitt **Snapshots** der Seite **Details** angezeigt. Als Zeitplanangabe wird 'Manuell' angezeigt.
 
-Alternativ dazu können Sie mit dem folgenden Befehl einen Snapshot über die SL-CLI erstellen. 
+Alternativ dazu können Sie mit dem folgenden Befehl einen Snapshot über die SLCLI erstellen.
 ```
 # slcli file snapshot-create --help
 Syntax: slcli file snapshot-create [OPTIONEN] DATENTRÄGER-ID
@@ -78,7 +82,7 @@ Optionen:
 
 Eine Liste der aufbewahrten Snapshots und des belegten Speicherbereichs wird auf der Seite **Details** (**Speicher** > **{{site.data.keyword.filestorage_short}}**) angezeigt. Managementfunktionen (Zeitplanbearbeitung und Hinzufügen weiteren Speicherbereichs) werden auf der Seite 'Details' über das Menü **Aktionen** oder über Links in den verschiedenen Abschnitten der Seite ausgeführt.
 
-Alternativ dazu können Sie diese Task über die SL-CLI ausführen. 
+Alternativ dazu können Sie diese Task über die SLCLI ausführen. 
 ```
 # slcli file snapshot-list --help
 Syntax: slcli file snapshot-list [OPTIONEN] DATENTRÄGER-ID
@@ -127,7 +131,7 @@ Snapshotzeitpläne können über **Speicher** > **{{site.data.keyword.filestorag
 1. Klicken Sie im Feld **Snapshotpläne** auf der Seite **Details** auf den zu löschenden Zeitplan.
 2. Klicken Sie auf das Kontrollkästchen neben dem zu löschenden Zeitplan und klicken Sie auf **Speichern**.<br />
 
-Wenn Sie die ReplikatioNFSunktion verwenden, müssen Sie sicherstellen, dass der Zeitplan, den Sie löschen, nicht der von der Replikation verwendete Zeitplan ist. Weitere Informationen zum Löschen eines Replikationszeitplans finden Sie [hier](/docs/infrastructure/FileStorage?topic=FileStorage-replication).
+Wenn Sie die Replikationsfunktion verwenden, müssen Sie sicherstellen, dass der Zeitplan, den Sie löschen, nicht der von der Replikation verwendete Zeitplan ist. Weitere Informationen zum Löschen eines Replikationszeitplans finden Sie [hier](/docs/infrastructure/FileStorage?topic=FileStorage-replication).
 {:important}
 
 ## Snapshot löschen
@@ -137,7 +141,7 @@ Snapshots, die nicht mehr benötigt werden, können manuell entfernt werden, um 
 1. Klicken Sie auf Ihren Speicherdatenträger und blättern Sie zum Abschnitt **Snapshot**, um die Liste der vorhandenen Snapshots anzuzeigen.
 2. Klicken Sie neben dem gewünschten Snapshot auf **Aktionen** und klicken Sie auf **Löschen**, um den Snapshot zu löschen. Diese Löschung hat keine Auswirkung auf zukünftige oder frühere Snapshots im selben Zeitplan, da zwischen Snapshots keine Abhängigkeit besteht.
 
-Alternativ dazu können Sie einen Snapshot über die SL-CLI löschen. n
+Alternativ dazu können Sie einen Snapshot über die SLCLI löschen. 
 ```
 # slcli file snapshot-delete --help
 Syntax: slcli file snapshot-delete [OPTIONEN] SNAPSHOT-ID
@@ -168,7 +172,7 @@ Es ist möglich, dass Sie Ihren Speicherdatenträger aufgrund eines Benutzerfehl
 6. Hängen Sie Ihren Speicherdatenträger an den Host an und ordnen Sie ihn erneut zu.
   - Weitere Anweisungen finden Sie [hier](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux).
 
-Alternativ dazu können Sie den Datenträger über die SL-CLI mit einem Snapshot wiederherstellen. 
+Alternativ dazu können Sie den Datenträger über die SLCLI mit einem Snapshot wiederherstellen.
 ```
 # slcli file snapshot-restore --help
 Syntax: slcli file snapshot-restore [OPTIONEN] DATENTRÄGER-ID

@@ -4,6 +4,10 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
+keywords:
+
+subcollection: FileStorage
+
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
@@ -78,7 +82,7 @@ Opciones:
 
 Se puede visualizar una lista de las instantáneas retenidas y el espacio utilizado en la página **Detalles** (**Almacenamiento**, **{{site.data.keyword.filestorage_short}}**). Las funciones de gestión (editar planificaciones y añadir más espacio) se realizan en la página Detalles utilizando el menú **Acciones** o los enlaces de las distintas secciones de la página.
 
-De manera alternativa, puede realizar esta tarea a través de la CLI SL.
+De manera alternativa, puede realizar esta tarea a través de SLCLI.
 ```
 # slcli file snapshot-list --help
 Uso: slcli file snapshot-list [OPCIONES] ID_VOLUMEN
@@ -137,7 +141,7 @@ Las instantáneas que ya no se necesiten se pueden eliminar manualmente para lib
 1. Pulse el volumen de almacenamiento y desplácese hasta la sección **Instantánea** para ver la lista de instantáneas existentes.
 2. Pulse **Acciones** junto a una instantánea particular y pulse **Suprimir** para suprimir la instantánea. Esta supresión no afecta a ninguna instantánea anterior ni futura de la misma planificación, ya que no existe dependencia entre instantáneas.
 
-De manera alternativa, puede suprimir una instantánea a través de la CLI SL.
+De manera alternativa, puede suprimir una instantánea a través de SLCLI.
 ```
 # slcli file snapshot-delete --help
 Uso: slcli file snapshot-delete [OPCIONES] ID_INSTANTÁNEA

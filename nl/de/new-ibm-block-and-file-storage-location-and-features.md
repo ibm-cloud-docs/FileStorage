@@ -4,6 +4,10 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
+keywords:
+
+subcollection: FileStorage
+
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
@@ -95,7 +99,7 @@ Die neue Version von {{site.data.keyword.filestorage_short}} steht in folgenden 
 - Eine stündliche Rechnungsstellungsoption wurde für Speicher hinzugefügt, dessen Verwendung für weniger als einen ganzen Monat geplant ist.
 - Bis zu 48.000 IOPS für {{site.data.keyword.filestorage_short}}-Speicher, der mit Performance bereitgestellt wird.
 - IOPS-Raten sind konfigurierbar, um die Leistung bei saisonalen Auslastungsänderungen zu verbessern. Weitere Informationen zu dieser Funktion finden Sie [hier](/docs/infrastructure/FileStorage?topic=FileStorage-adjustingIOPS).
-- Sie können einen Klon Ihrer Daten mit der [Funktion zum Duplizieren von {{site.data.keyword.filestorage_short}}-Datenträgern](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume) erstellen. 
+- Sie können einen Klon Ihrer Daten mit der [Funktion zum Duplizieren von {{site.data.keyword.filestorage_short}}-Datenträgern](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume) erstellen.
 - Der Speicher ist in GB-Inkrementen sofort auf bis zu 12 TB erweiterbar, ohne dass ein Duplikat erstellt oder Daten manuell auf einen größeren Datenträger verschoben werden müssen. Weitere Informationen zu dieser Funktion finden Sie [hier](/docs/infrastructure/FileStorage?topic=FileStorage-expandCapacity).
 
 ## Neuer Mountpunkt für erweiterte {{site.data.keyword.filestorage_short}}-Datenträger

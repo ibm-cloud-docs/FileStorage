@@ -4,6 +4,10 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
+keywords:
+
+subcollection: FileStorage
+
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
@@ -58,7 +62,7 @@ Además, para la mayoría de las cargas de trabajo, cuanto mayor sea un volumen,
    {:note}
 7. Seleccione el recuadro **He leído el Acuerdo de servicio maestro y acepto sus condiciones** y pulse **Realizar pedido**. El espacio de instantáneas se suministra en pocos minutos.
 
-## Realización de pedidos de espacio de instantáneas a través de la SLCLI
+## Realización de pedidos de espacio de instantáneas a través de SLCLI
 
 ```
 # slcli file snapshot-order --help

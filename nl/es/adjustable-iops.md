@@ -4,6 +4,10 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
+keywords:
+
+subcollection: FileStorage
+
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
@@ -24,8 +28,9 @@ La facturación del almacenamiento se actualiza para añadir la diferencia prorr
 - Gestión de costes – Algunos de nuestros clientes pueden necesitar IOPS altos solo durante picos de uso. Por ejemplo, un almacén de una tienda de gran tamaño tiene picos de uso durante las vacaciones y podría necesitar más IOPS en el almacenamiento en ese momento que a mediados de verano. Esta característica les permite gestionar sus costes y pagar más IOPS cuando lo necesitan.
 
 ## Limitaciones
+{: #limitsofadjustIOPS}
 
-Esta característica solo está disponible en [centros de datos seleccionados](/docs/infrastructure/BlockStorage?topic=BlockStorage-news).
+Esta característica solo está disponible en [centros de datos seleccionados](/docs/infrastructure/FileStorage?topic=FileStorage-news).
 
 Los clientes no pueden cambiar entre Resistencia y Rendimiento al ajustar su IOPS. Los usuarios pueden especificar un nuevo nivel de IOPS para su almacenamiento en función de los siguientes criterios y restricciones.
 
@@ -38,7 +43,7 @@ Los clientes no pueden cambiar entre Resistencia y Rendimiento al ajustar su IOP
 Si el volumen tiene réplica, la réplica se actualiza automáticamente para coincidir con la selección de IOPS de la primaria.
 
 ## Ajuste de IOPS en el almacenamiento
-{: #steps}
+{: #adjustingsteps}
 
 1. Vaya a su lista de {{site.data.keyword.filestorage_short}}
     - Desde el portal de clientes, pulse **Almacenamiento** > **{{site.data.keyword.filestorage_short}}** O

@@ -4,6 +4,10 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
+keywords:
+
+subcollection: FileStorage
+
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
@@ -215,10 +219,10 @@ Wenn ein primärer Datenträger storniert wurde, werden der Replikationsplan und
  3. Wählen Sie aus, wann der Datenträger abgebrochen werden soll. Wählen Sie **Sofort** oder **Rechnungsstichtag** aus und klicken Sie auf **Weiter**.
  4. Klicken Sie auf **Ich bin mir bewusst, dass es durch den Abbruch zu Datenverlust kommen kann** und klicken Sie auf **Abbrechen**.
 
-## SL-CLI-Befehle im Zusammenhang mit der Replikation
+## SLCLI-Befehle im Zusammenhang mit der Replikation
 {: #clicommands}
 
-* Geeignete Replikationsrechenzentren für einen bestimmten Datenträger auflisten. 
+* Geeignete Replikationsrechenzentren für einen bestimmten Datenträger auflisten.
   ```
   # slcli file replica-locations --help
   Syntax: slcli file replica-locations [OPTIONEN] DATENTRÄGER-ID
@@ -229,7 +233,7 @@ Wenn ein primärer Datenträger storniert wurde, werden der Replikationsplan und
   -h, --help      Diese Nachricht anzeigen und Ausführung beenden.
   ```
 
-* Dateispeicherreplikatdatenträger bestellen. 
+* Dateispeicherreplikatdatenträger bestellen.
   ```
   # slcli file replica-order --help
   Syntax: slcli file replica-order [OPTIONEN] DATENTRÄGER-ID
@@ -247,7 +251,7 @@ Wenn ein primärer Datenträger storniert wurde, werden der Replikationsplan und
   -h, --help                      Diese Nachricht anzeigen und Ausführung beenden.
   ```
 
-* Vorhandene Replikatdatenträger für einen Dateidatenträger auflisten. 
+* Vorhandene Replikatdatenträger für einen Dateidatenträger auflisten.
   ```
   # slcli file replica-partners --help
   Syntax: slcli file replica-partners [OPTIONEN] DATENTRÄGER-ID
@@ -259,7 +263,7 @@ Wenn ein primärer Datenträger storniert wurde, werden der Replikationsplan und
   -h, --help      Diese Nachricht anzeigen und Ausführung beenden.
   ```
 
-* Failover eines Dateidatenträgers auf einen bestimmten Replikatdatenträger durchführen. 
+* Failover eines Dateidatenträgers auf einen bestimmten Replikatdatenträger durchführen.
   ```
   # slcli file replica-failover --help
   Syntax: slcli file replica-failover [OPTIONEN] DATENTRÄGER-ID
@@ -270,7 +274,7 @@ Wenn ein primärer Datenträger storniert wurde, werden der Replikationsplan und
   -h, --help           Diese Nachricht anzeigen und Ausführung beenden.
   ```
 
-* Failback eines Dateidatenträgers von einem bestimmten Replikatdatenträger durchführen. 
+* Failback eines Dateidatenträgers von einem bestimmten Replikatdatenträger durchführen.
   ```
   # slcli file replica-failback --help
   Syntax: slcli file replica-failback [OPTIONEN] DATENTRÄGER-ID

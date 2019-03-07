@@ -4,6 +4,10 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
+keywords:
+
+subcollection: FileStorage
+
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
@@ -28,7 +32,7 @@ Sie können Hosts autorisieren und verbinden, die sich in demselben Rechenzentru
 2. Blättern Sie zum Abschnitt **Autorisierte Hosts** auf der Seite.
 3. Klicken Sie rechts auf **Host autorisieren**. Wählen Sie die Hosts aus, die auf diesen bestimmten Datenträger zugreifen können.
 
-Alternativ dazu können Sie den folgenden Befehl in der SL-CLI verwenden. 
+Alternativ dazu können Sie den folgenden Befehl in der SLCLI verwenden. 
 ```
 # slcli file access-authorize --help
 Syntax: slcli file access-authorize [OPTIONS] VOLUME_ID
@@ -49,9 +53,9 @@ Optionen:
 1. Klicken Sie auf **Speicher > {{site.data.keyword.filestorage_short}}** und klicken Sie auf den Namen Ihres Datenträgers im Feld **Datenträgername**.
 2. Blättern Sie auf der Seite nach unten bis zum Abschnitt **Autorisierte Hosts**.
 
-Dort wird eine Liste der Hosts angezeigt, die derzeit für den Zugriff auf den Datenträger berechtigt sind. 
+Dort wird eine Liste der Hosts angezeigt, die derzeit für den Zugriff auf den Datenträger berechtigt sind.
 
-Alternativ dazu können Sie den folgenden Befehl in der SL-CLI verwenden. 
+Alternativ dazu können Sie den folgenden Befehl in der SLCLI verwenden. 
 ```
 # slcli file access-list --help
 Syntax: slcli file access-list [OPTIONEN] DATENTRÄGER-ID
@@ -112,8 +116,8 @@ Wenn Sie die Verbindungen mehrerer Datenträger von einem bestimmten Host trenne
 Wenn Sie die Verbindung zwischen mehreren Hosts und einem bestimmten Datenträger trennen wollen, müssen Sie die Aktion 'Zugriff widerrufen' für jeden Host wiederholen.
 {:tip}
 
-### Zugriff über die SL-CLI widerrufen. 
-Alternativ dazu können Sie den folgenden Befehl in der SL-CLI verwenden. 
+### Zugriff über die SLCLI widerrufen
+Alternativ dazu können Sie den folgenden Befehl in der SLCLI verwenden. 
 ```
 # slcli file access-revoke --help
 Syntax: slcli file access-revoke [OPTIONEN] DATENTRÄGER-ID
@@ -144,7 +148,7 @@ Wenn Sie einen bestimmten Datenträger nicht mehr benötigen, können Sie ihn st
 4. Klicken Sie auf **Weiter** oder **Schließen**.
 5. Klicken Sie auf das Kontrollkästchen für die Bestätigung und klicken Sie auf **Bestätigen**.
 
-Alternativ dazu können Sie den folgenden Befehl in der SL-CLI verwenden. 
+Alternativ dazu können Sie den folgenden Befehl in der SLCLI verwenden. 
 ```
 # slcli file volume-cancel --help
 Syntax: slcli file volume-cancel [OPTIONEN] DATENTRÄGER-ID

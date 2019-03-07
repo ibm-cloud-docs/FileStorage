@@ -4,6 +4,10 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
+keywords:
+
+subcollection: FileStorage
+
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
@@ -140,7 +144,7 @@ Bevor der Datenträger wieder auf das primäre Rechenzentrum zurückübertragen 
 
 Weitere Informationen zum Konfigurieren von Replikaten finden Sie im Abschnitt [Replikation](/docs/infrastructure/FileStorage?topic=FileStorage-replication).
 
-Ungültige Daten, seien es beschädigte, gehackte oder infizierte, werden dem Snapshotplan und der angegebenen Snapshotaufbewahrung entsprechend repliziert. Durch Verwendung der kleinsten ReplikatioNFSenster lässt sich ein besseres Ziel in Bezug auf den maximal tolerierbaren Datenverlust bei einem Ausfall (Recovery Point Objective, RPO) realisieren. Dadurch steht möglicherweise jedoch weniger Zeit für die Reaktion auf die Replikation ungültiger Daten zur Verfügung.
+Ungültige Daten, seien es beschädigte, gehackte oder infizierte, werden dem Snapshotplan und der angegebenen Snapshotaufbewahrung entsprechend repliziert. Durch Verwendung der kleinsten Replikationsfenster lässt sich ein besseres Ziel in Bezug auf den maximal tolerierbaren Datenverlust bei einem Ausfall (Recovery Point Objective, RPO) realisieren. Dadurch steht möglicherweise jedoch weniger Zeit für die Reaktion auf die Replikation ungültiger Daten zur Verfügung.
 {:note}
 
 

@@ -4,6 +4,10 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
+keywords:
+
+subcollection: FileStorage
+
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
@@ -58,7 +62,7 @@ Außerdem gilt bei den meisten Workloads, das umso weniger Speicherplatz anfangs
    {:note}
 7. Wählen Sie das Kontrollkästchen **Ich habe die Rahmenvereinbarung gelesen und bin mit den darin genannten Bedingungen einverstanden** aus und klicken Sie auf **Auftrag erteilen**. Der Snapshotbereich wird in wenigen Minuten bereitgestellt.
 
-## Snapshotbereich über die SL-CLI bestellen
+## Snapshotbereich über die SLCLI bestellen
 
 ```
 # slcli file snapshot-order --help

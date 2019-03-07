@@ -4,6 +4,10 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
+keywords:
+
+subcollection: FileStorage
+
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
@@ -215,10 +219,10 @@ Cuando se cancela un volumen primario, la planificación de réplica y el volume
  3. Seleccione cuándo desea cancelar el volumen. Elija **Inmediatamente** o **Fecha de aniversario**, y pulse **Continuar**.
  4. Pulse **Reconozco que a causa de la cancelación, es posible que se pierdan datos** y pulse **Cancelar**.
 
-## Mandatos relacionados con la replicación en SLCLI
+## Mandatos relacionados con la réplica en SLCLI
 {: #clicommands}
 
-* Listar los centros de datos de replicación disponibles para un volumen específico.
+* Listar los centros de datos de réplica disponibles para un volumen específico.
   ```
   # slcli file replica-locations --help
   Uso: slcli file replica-locations [OPCIONES] ID_VOLUMEN

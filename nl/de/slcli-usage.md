@@ -4,6 +4,10 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
+keywords:
+
+subcollection: FileStorage
+
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
@@ -12,15 +16,15 @@ lastupdated: "2019-02-05"
 {:important: .important}
 {:codeblock: .codeblock}
 
-# SL-CLI-Befehle für {{site.data.keyword.filestorage_short}}
+# SLCLI-Befehle für {{site.data.keyword.filestorage_short}}
 {: #SLCLIcommands}
 
-Sie können die SL-CLI verwenden, um Aktionen, wie z. B. das Bestellen neuer Datenträger, eines Snapshotbereichs oder einer Replikation, das Aktualisieren von Berechtigungen, das Stornieren von Datenträgern usw., auszuführen, die normalerweise über das [{{site.data.keyword.slportal}} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/){:new_window} vorgenommen werden. 
+Sie können die SLCLI verwenden, um Aktionen, wie z. B. das Bestellen neuer Datenträger, eines Snapshotbereichs oder einer Replikation, das Aktualisieren von Berechtigungen, das Stornieren von Datenträgern usw., auszuführen, die normalerweise über das [{{site.data.keyword.slportal}} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/){:new_window} vorgenommen werden. 
 
-Weitere Informationen zur Installation und Verwendung der SL-Befehlszeilenschnittstelle finden Sie unter [Python-API-Client ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://softlayer-python.readthedocs.io/en/latest/cli.html){:new_window}.
+Weitere Informationen zur Installation und Verwendung der SLCLI finden Sie unter [Python-API-Client ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://softlayer-python.readthedocs.io/en/latest/cli.html){:new_window}.
 {:tip}
 
-## SL-CLI-Befehle im Zusammenhang mit der Zugriffssteuerung
+## SLCLI-Befehle im Zusammenhang mit der Zugriffssteuerung
 * [{{site.data.keyword.filestorage_short}} verwalten](/docs/infrastructure/FileStorage?topic=FileStorage-managingstorage)  
   ```
   slcli file access-authorize
@@ -28,9 +32,9 @@ Weitere Informationen zur Installation und Verwendung der SL-Befehlszeilenschnit
   slcli file access-revoke
   ```
 
-## SL-CLI-Befehle im Zusammenhang mit der Replikation
+## SLCLI-Befehle im Zusammenhang mit der Replikation
 
-* [SL-CLI-Befehle im Zusammenhang mit der Replikation](/docs/infrastructure/FileStorage?topic=FileStorage-replication#clicommands)
+* [SLCLI-Befehle im Zusammenhang mit der Replikation](/docs/infrastructure/FileStorage?topic=FileStorage-replication#clicommands)
   ```
   slcli file replica-failback
   slcli file replica-failover
@@ -39,7 +43,7 @@ Weitere Informationen zur Installation und Verwendung der SL-Befehlszeilenschnit
   slcli file replica-partners
   ```
 
-## SL-CLI-Befehle im Zusammenhang mit Snapshots
+## SLCLI-Befehle im Zusammenhang mit Snapshots
 
 * [Snapshots bestellen](/docs/infrastructure/FileStorage?topic=FileStorage-ordering-snapshots)
   ```
@@ -57,22 +61,22 @@ Weitere Informationen zur Installation und Verwendung der SL-Befehlszeilenschnit
   slcli file snapshot-restore
   ```
 
-## SL-CLI-Befehle im Zusammenhang mit Datenträgern
+## SLCLI-Befehle im Zusammenhang mit Datenträgern
 
 * [{{site.data.keyword.filestorage_short}}-Datenträger bestellen](/docs/infrastructure/FileStorage?topic=FileStorage-orderingSLCLI)
 * [Duplikat eines Datenträgers erstellen](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume)
   ```
   slcli file volume-duplicate
   ```
-* [IOPS anpassen](/docs/infrastructure/FileStorage?topic=FileStorage-adjustingIOPS#steps)
+* [IOPS anpassen](/docs/infrastructure/FileStorage?topic=FileStorage-adjustingIOPS#adjustingsteps)
   ```
   slcli file volume-modify
   ```
-* [Kapazität erweitern](/docs/infrastructure/FileStorage?topic=FileStorage-expandCapacity#steps)
+* [Kapazität erweitern](/docs/infrastructure/FileStorage?topic=FileStorage-expandCapacity#resizingsteps)
   ```
   slcli file volume-modify
   ```
-* [{{site.data.keyword.filestorage_short}} verwalten](/docs/infrastructure/FileStorage?topic=FileStorage-managingstorage)  
+* [{{site.data.keyword.filestorage_short}} verwalten](/docs/infrastructure/FileStorage?topic=FileStorage-managingstorage)
   ```
   slcli file volume-cancel
   slcli file volume-count
@@ -81,7 +85,7 @@ Weitere Informationen zur Installation und Verwendung der SL-Befehlszeilenschnit
   slcli file volume-list
   slcli file volume-order
   ```
-* [Speichergrenzwerte verwalten](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits)  
+* [Speichergrenzwerte verwalten](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits)
   ```
   slcli file volume-count
   ```

@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2014, 2019
+  years: 2018, 2019
 lastupdated: "2019-02-05"
+
+keywords:
+
+subcollection: FileStorage
 
 ---
 {:new_window: target="_blank"}
@@ -31,13 +35,14 @@ Esta característica solo está disponible en [centros de datos seleccionados](/
 La acción de ampliar el almacenamiento primario genera un redimensionamiento automático de la réplica.
 
 ## Limitaciones
+{: #limitsofextension}
 
 Esta característica solo está disponible para el almacenamiento que se suministra en [centros de datos](/docs/infrastructure/FileStorage?topic=FileStorage-news) con funciones ampliadas. El almacenamiento cifrado suministrado en estos centros de datos se puede incrementar hasta 12 TB.
 
 Las limitaciones de tamaño actuales para {{site.data.keyword.filestorage_short}} suministrado con Resistencia aún se aplican (hasta 4 TB para IOPS de nivel 10 y hasta 12 TB para los demás niveles).
 
 ## Redimensionamiento de almacenamiento
-{: #steps}
+{: #resizingsteps}
 
 1. En el {{site.data.keyword.slportal}}, pulse **Almacenamiento** > **{{site.data.keyword.filestorage_short}}** O desde el catálogo de {{site.data.keyword.BluSoftlayer_full}}, pulse **Infraestructura** > **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**.
 2. Seleccione el volumen de la lista y pulse **Acciones** > **Modificar volumen**
@@ -46,7 +51,7 @@ Las limitaciones de tamaño actuales para {{site.data.keyword.filestorage_short}
 5. Pulse **He leído el Acuerdo de servicio maestro...** y pulse **Realizar pedido**.
 6. La nueva asignación de almacenamiento está disponible en pocos minutos.
 
-De manera alternativa, puede utilizar el mandato siguiente en la CLI SL.
+De manera alternativa, puede utilizar el mandato siguiente en SLCLI.
 ```
 # slcli file volume-modify --help
 Uso: slcli file volume-modify [OPCIONES] ID_VOLUMEN
