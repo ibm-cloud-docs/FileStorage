@@ -4,6 +4,10 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
+keywords:
+
+subcollection: FileStorage
+
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
@@ -64,15 +68,15 @@ Pour plus d'informations sur l'installation et l'utilisation de l'interface SLCL
   ```
   slcli file volume-duplicate
   ```
-* [Réglage des IOPS](/docs/infrastructure/FileStorage?topic=FileStorage-adjustingIOPS#steps)
+* [Réglage des IOPS](/docs/infrastructure/FileStorage?topic=FileStorage-adjustingIOPS#adjustingsteps)
   ```
   slcli file volume-modify
   ```
-* [Augmentation de la capacité](/docs/infrastructure/FileStorage?topic=FileStorage-expandCapacity#steps)
+* [Augmentation de la capacité](/docs/infrastructure/FileStorage?topic=FileStorage-expandCapacity#resizingsteps)
   ```
   slcli file volume-modify
   ```
-* [Gestion de {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-managingstorage)  
+* [Gestion de {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-managingstorage)
   ```
   slcli file volume-cancel
   slcli file volume-count
@@ -81,7 +85,7 @@ Pour plus d'informations sur l'installation et l'utilisation de l'interface SLCL
   slcli file volume-list
   slcli file volume-order
   ```
-* [Gestion des limites de stockage](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits)  
+* [Gestion des limites de stockage](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits)
   ```
   slcli file volume-count
   ```

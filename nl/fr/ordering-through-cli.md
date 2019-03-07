@@ -4,6 +4,10 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
+keywords:
+
+subcollection: FileStorage
+
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
@@ -132,6 +136,7 @@ Pour plus d'informations sur la limite des autorisations simultanées, voir, voi
 {:important}
 
 ## Connexion de votre nouveau stockage
+{: #mountingvolumesCLI}
 
 Suivez le lien approprié en fonction du système d'exploitation de votre hôte.
 - [Montage de {{site.data.keyword.filestorage_short}} sur Linux](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)

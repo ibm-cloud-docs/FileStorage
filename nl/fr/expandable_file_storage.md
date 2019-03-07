@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2014, 2019
+  years: 2018, 2019
 lastupdated: "2019-02-05"
+
+keywords:
+
+subcollection: FileStorage
 
 ---
 {:new_window: target="_blank"}
@@ -31,13 +35,14 @@ Cette fonctionnalité est disponible uniquement dans des [centres de données s�
 L'extension du stockage principal entraîne le redimensionnement automatique de la réplique.
 
 ## Limitations
+{: #limitsofextension}
 
 Cette fonctionnalité est disponible uniquement pour un stockage mis à disposition dans des [centres de données](/docs/infrastructure/FileStorage?topic=FileStorage-news) dotés de capacités améliorées. Un stockage chiffré qui est mis à disposition dans ces centres de données peut être augmenté à hauteur de 12 To.
 
 Les limitations de taille existantes pour le stockage {{site.data.keyword.filestorage_short}} qui a été mis à disposition avec l'option Endurance sont toujours applicables (jusqu'à 4 To pour un niveau de 10 IOPS et jusqu'à 12 To pour tous les autres niveaux).
 
 ## Redimensionnement du stockage
-{: #steps}
+{: #resizingsteps}
 
 1. Sur le portail {{site.data.keyword.slportal}}, cliquez sur **Stockage** > **{{site.data.keyword.filestorage_short}}** OU, dans le catalogue {{site.data.keyword.BluSoftlayer_full}}, cliquez sur **Infrastructure** > **Stockage** > **{{site.data.keyword.filestorage_short}}**.
 2. Sélectionnez le volume dans la liste et cliquez sur **Actions** > **Modifier le volume**

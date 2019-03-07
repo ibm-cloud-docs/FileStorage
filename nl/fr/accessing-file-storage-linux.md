@@ -2,7 +2,11 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-02-22"
+
+keywords:
+
+subcollection: FileStorage
 
 ---
 {:new_window: target="_blank"}
@@ -103,6 +107,9 @@ Le point de montage de l'instance File Storage peut être obtenu sur la page de 
    Si la commande s'exécute sans erreur, votre installation est terminée.
 
    Si vous utilisez NFS 4.1, ajoutez `sec=sys` à la commande mount pour prévenir tout problème lié à la propriété des fichiers.
+   {:tip}
+   
+   Si votre système d'exploitation hôte est CentOS, vous pouvez configurer des options supplémentaires. Pour plus d'informations, voir [Montage de {{site.data.keyword.filestorage_short}} dans CentOS](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS).
    {:tip}
 
 

@@ -4,6 +4,10 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
+keywords:
+
+subcollection: FileStorage
+
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
@@ -24,8 +28,9 @@ La facturation du stockage est mise à jour : la différence calculée au prorat
 - Gestion des coûts – Certains clients ont besoin d'un nombre élevé d'IOPS uniquement pendant les pics d'utilisation. Par exemple, un grand magasin de détail connaît un pic d'utilisation pendant les jours fériés et peut alors souhaiter bénéficier d'un nombre d'IOPS plus élevé sur son stockage que par rapport au milieu de l'été. Cette fonctionnalité lui permet de gérer ses coûts et de payer pour un nombre d'IOPS plus élevé uniquement en cas de besoin.
 
 ## Limitations
+{: #limitsofadjustIOPS}
 
-Cette fonctionnalité est disponible uniquement dans des [centres de données sélectionnés](/docs/infrastructure/BlockStorage?topic=BlockStorage-news).
+Cette fonctionnalité est disponible uniquement dans des [centres de données sélectionnés](/docs/infrastructure/FileStorage?topic=FileStorage-news).
 
 Les clients ne peuvent pas basculer entre les volumes Endurance et Performance lorsqu'ils ajustent leurs IOPS. Les utilisateurs peuvent indiquer un nouveau niveau d'IOPS pour leur stockage en fonction des restrictions et critères suivants :
 
@@ -38,7 +43,7 @@ Les clients ne peuvent pas basculer entre les volumes Endurance et Performance l
 Si la réplication est activée sur le volume, la réplique est automatiquement mise à jour afin de correspondre à la sélection des IOPS du volume principal.
 
 ## Ajustement des IOPS sur votre stockage
-{: #steps}
+{: #adjustingsteps}
 
 1. Accédez à votre liste de {{site.data.keyword.filestorage_short}}
     - A partir du portail client, cliquez sur **Storage** > **{{site.data.keyword.filestorage_short}}** OU

@@ -4,6 +4,10 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
+keywords:
+
+subcollection: FileStorage
+
 ---
 {:new_window: target="_blank"}
 {:pre: .pre}
@@ -58,7 +62,7 @@ De plus, pour la plupart des charges de travail, plus le volume est grand, plus 
    {:note}
 7. Cochez la case **J'ai lu et j'accepte l'intégralité du Contrat cadre de service**, puis cliquez sur **Valider la commande**. Votre espace d'instantané est mis à disposition en quelques minutes.
 
-## Commande d'un espace d'instantané via la commande SLCLI
+## Commande d'un espace d'instantané via l'interface SLCLI
 
 ```
 # slcli file snapshot-order --help
