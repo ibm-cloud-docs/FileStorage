@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-03-07"
 
 keywords: File Storage, file storage, NFS, provisioning, setup, configuration, mounting storage
 
