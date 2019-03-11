@@ -24,7 +24,7 @@ IBM Cloud Storage - File Storage
     {: .topicgroup}
     配置
         accessing-file-storage-linux.md
-        mounting-nsf-file-storage.md
+        mounting-storage-centos.md
         mounting-storage-coreos.md
         set-host-queue-depth-settings-performance-and-endurance-storage.md
         configure-backup-cpanel.md
