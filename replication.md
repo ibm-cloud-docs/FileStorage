@@ -135,13 +135,13 @@ You can edit your replication schedule, and change your replication space from e
 
 ## Editing the Replication Schedule
 
-The replication schedule is based on an existing snapshot schedule. To change the replica schedule, for example from Hourly to Weekly, you must cancel the replica volume and set up a new one.
+The replication schedule is based on an existing snapshot schedule. To change the replica schedule from Hourly to Weekly or vice versa, you must cancel the replica volume and set up a new one.
 
-Changing the schedule can be done on the Primary or Replica tab.
+However, if you want to change the time of day when your **Daily** replication occurs, you can adjust the existing schedule on the Primary or Replica tab.
 
 1. Click **Actions** on either the **Primary** or **Replica** tab.
 2. Select **Edit Snapshot Schedule**.
-3. Look in the **Snapshot** frame under **Schedule** to determine which schedule you're using for replication. Change the schedule that you want. For example, if your replication schedule is **Daily**, you can change the time of day when replication is to take place.
+3. Look in the **Snapshot** frame under **Schedule** to determine which schedule you're using for replication. Change the schedule that you want.
 4. Click **Save**.
 
 
