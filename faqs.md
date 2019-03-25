@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-03-25"
 
-keywords: File Storage, encryption, security, provisioning, limitations
+keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
 subcollection: FileStorage
 
@@ -160,6 +160,18 @@ Target latency within the storage is  less than one ms. The storage is connected
 {: faq}
 
 {{site.data.keyword.filestorage_full}} presents file shares to customers on physical storage that is wiped before any reuse. Customers with special requirements for compliance such as NIST 800-88 Guidelines for Media Sanitization need to perform the data sanitization procedure before they delete their storage.
+
+## Which NFS versions are supported?
+{: faq}
+
+Both NFS v3 and NFS v4.1 are supported in the {{site.data.keyword.BluSoftlayer_full}} environment. 
+
+The preferred version is NFS v3, because it's a stateless protocol and more resilient when network events occur. 
+
+NFS v3 natively supports `no_root_squash` that allows root clients to retain root permissions on the NFS share. You can enable this feature in NFS v4.1, by editting the domain information and running the `rpcidmapd` or a similar service. For more information, see [Implementing no_root_squash for NFS](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux#norootsquash).
+
+In case of vSphere Solutions, NFS v3 supports more features than v4.1. Such features include Storage DRS and Site Recovery Manager.
+
 
 ## What happens to the drives that are decommissioned from the cloud data center?
 {: faq}
