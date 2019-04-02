@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-03-26"
 
-keywords:
+keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
 subcollection: FileStorage
 
@@ -160,6 +160,19 @@ IOPS 会在卷级别强制执行。换句话说，连接到一个具有 6000 IOP
 {: faq}
 
 {{site.data.keyword.filestorage_full}} 会在物理存储器上为客户提供文件共享，并且会在重复使用物理存储器之前擦除其上的数据。如果客户对合规性有特殊要求（如 NIST 800-88《存储介质清理指南》），那么在删除存储器之前，需要执行数据清理过程。
+
+## 支持哪些 NFS 版本？
+{: faq}
+
+{{site.data.keyword.BluSoftlayer_full}} 环境支持 NFS V3 和 NFS V4.1。 
+
+首选版本是 NFS V3，因为它是无状态协议，在网络事件发生时更具弹性。 
+
+NFS V3 本机支持 `no_root_squash`，通过后者，root 用户客户机可以保留对 NFS 共享的 root 用户许可权。您可以在 NFS V4.1 中启用此功能，方法是通过编辑域信息并运行 `rpcidmapd` 或类似的服务。
+有关更多信息，请参阅[为 NFS 实现 no_root_squash](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux#norootsquash)。
+
+对于 vSphere 解决方案，NFS V3 支持的功能多于 V4.1。此类功能包括 Storage DRS 和 Site Recovery Manager。
+
 
 ## 使驱动器从云数据中心退役时会发生什么情况？
 {: faq}

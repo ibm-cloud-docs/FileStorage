@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
-keywords:
+keywords: File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
 subcollection: FileStorage
 
@@ -117,7 +117,7 @@ VMware データ・ストアへのアクセスに必要なホストの数が 8 �
 
 スナップショットを使用するには、スナップショット・スペースが必要です。 スペースはボリュームを最初に注文するときに購入できます。また、最初のプロビジョニングの後で、**「ボリュームの詳細 (Volume Details)」**ページの**「アクション」**をクリックし、**「スナップショット・スペースの追加」**を選択して取得することもできます。
 
-VMware 環境はスナップショットを認識しないことに注意してください。 エンデュランス・{{site.data.keyword.filestorage_short}}のスナップショット機能を VMware のスナップショットと混同しないでください。 {{site.data.keyword.filestorage_short}} のスナップショット機能を使用したリカバリーは、[{{site.data.keyword.slportal}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://control.softlayer.com/){:new_window} から行う必要があります。
+VMware 環境はスナップショットを認識しないことに注意してください。 {{site.data.keyword.filestorage_short}}のスナップショット機能を VMware のスナップショットと混同しないでください。 {{site.data.keyword.filestorage_short}} のスナップショット機能を使用したリカバリーは、[{{site.data.keyword.slportal}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://control.softlayer.com/){:new_window} から行う必要があります。
 
 {{site.data.keyword.filestorage_short}} のボリュームをリストアするには、{{site.data.keyword.filestorage_short}} 上のすべての VM の電源をオフにする必要があります。 ESXi ホストから一時的にボリュームをアンマウントして、復元処理中のデータ破損を回避する必要があります。
 

@@ -4,7 +4,7 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-02-05"
 
-keywords:
+keywords: File Storage, file storage, NFS, cPanel, backups
 
 subcollection: FileStorage
 
@@ -40,8 +40,8 @@ subcollection: FileStorage
    ```
    {: pre}
 
-    此命令会压缩并传输数据，同时尽可能地保留信息，但硬链接除外。它还提供有关正在传输什么文件的信息并在结尾提供简短摘要。
-    {:tip}
+    此命令会压缩并传输数据，同时尽可能地保留信息，但硬链接除外。它还提供有关正在传输什么文件的信息，并在结尾提供简短摘要。
+   {:tip}
 
 5. 登录到 WebHost Manager，然后通过**主页** > **备份** > **备份配置**转至备份配置。
 

@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
-keywords:
+keywords: File Storage, NSF, SLCLI, API
 
 subcollection: FileStorage
 
@@ -19,7 +19,7 @@ subcollection: FileStorage
 # {{site.data.keyword.filestorage_short}} 的 SLCLI 指令
 {: #SLCLIcommands}
 
-您可以使用 SLCLI 來採取如下動作：訂購新磁區、Snapshot 空間及抄寫、更新授權、取消磁區等等，正常情況下，這些動作是透過 [{{site.data.keyword.slportal}} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://control.softlayer.com/){:new_window} 來處理。
+您可以使用 SLCLI 採取通常透過 [{{site.data.keyword.slportal}} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://control.softlayer.com/){:new_window} 處理的動作。例如，使用 SLCLI 您可以針對新磁區、Snapshot 空間及抄寫、更新授權、取消磁區等等而下訂單。
 
 若要進一步瞭解如何安裝及使用 SLCLI，請參閱 [Python API 用戶端 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://softlayer-python.readthedocs.io/en/latest/cli.html){:new_window}。
 {:tip}

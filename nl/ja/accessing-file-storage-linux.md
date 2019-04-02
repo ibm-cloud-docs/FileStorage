@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-22"
 
-keywords:
+keywords: File Storage, NSF, mounting File Storage, mounting storage on Linux,
 
 subcollection: FileStorage
 
@@ -108,9 +108,9 @@ Linux ベースの {{site.data.keyword.BluSoftlayer_full}} コンピューティ
 
    NFS 4.1 を使用する場合は、mount コマンドに `sec=sys` を追加して、ファイル所有権の問題を回避してください。
    {:tip}
-   
-   ホスト OS が CentOS である場合は、さらに多くのオプションを構成できます。詳しくは、[CentOS での {{site.data.keyword.filestorage_short}} のマウント](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)を参照してください。
-{:tip}
+
+   ホスト OS が CentOS である場合は、さらに多くのオプションを構成できます。 詳しくは、[CentOS での {{site.data.keyword.filestorage_short}} のマウント](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)を参照してください。
+
 
 
 ## NFS 用の `no_root_squash` の実装 (オプション)

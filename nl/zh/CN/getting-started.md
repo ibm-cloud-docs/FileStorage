@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-03-07"
 
-keywords:
+keywords: File Storage, file storage, NFS, provisioning, setup, configuration, mounting storage
 
 subcollection: FileStorage
 
@@ -32,11 +32,11 @@ subcollection: FileStorage
 
 有关 {{site.data.keyword.filestorage_short}} 产品的更多信息，请参阅[关于 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-about)
 
-### 供应注意事项
+## 供应注意事项
 
-**块大小**
+### 块大小
 
-“耐久性”和“性能”的 IOPS 基于 16 KB 的块大小，其中读/写随机工作负载的比例为 50/50。一个 16 KB 的块相当于对卷执行一次写操作。
+“耐久性”和“性能”的 IOPS 基于 16 KB 的块大小，其中读/写、随机/顺序工作负载的比例为 50/50。一个 16 KB 的块相当于对卷执行一次写操作。
 {:important}
 
 应用程序使用的块大小会直接影响存储器性能。如果应用程序使用的块大小小于 16 KB，那么在达到吞吐量限制之前，会先达到 IOPS 限制。相反，如果应用程序使用的块大小大于 16 KB，那么在达到 IOPS 限制之前，会先达到吞吐量限制。
@@ -94,11 +94,11 @@ subcollection: FileStorage
         </tbody>
 </table>
 
-**已授权主机**
+### 已授权主机
 
 另一个要考虑的因素是使用卷的主机数。如果是单个主机在访问卷，那么可能很难实现可用的最大 IOPS，尤其是在极端 IOPS 计数（10,000 以上）的情况下。如果工作负载需要高吞吐量，那么最好配置至少两台服务器来访问卷，以避免出现单服务器瓶颈。
 
-**网络连接**
+### 网络连接
 
 以太网连接速度必须快于卷的预期最大吞吐量。一般情况下，不要指望以太网连接饱和到超过可用带宽的 70%。例如，如果您有 6,000 IOPS 并且使用的是 16 KB 块大小，那么卷可以处理约 94 MBps 的吞吐量。如果与 LUN 之间存在 1 Gbps 以太网连接，那么当服务器尝试使用最大可用吞吐量时，此连接会成为瓶颈。这是因为 1 Gbps 以太网连接的理论限制（125 MB/秒）的 70% 仅允许 88 MB/秒。
 
@@ -107,7 +107,7 @@ subcollection: FileStorage
 存储流量包含在公共虚拟服务器的总网络使用量之内。有关服务可能施加的限制的更多信息，请参阅[虚拟服务器文档](/docs/vsi?topic=virtual-servers-about-public-virtual-servers)。
 
 
-**NFS 版本**
+### NFS 版本
 
 {{site.data.keyword.BluSoftlayer_full}} 环境支持 NFS V3 和 NFS V4.1。但是，首选 NFS V3，因为 NFS V4.1 是有状态协议（NFS V3 是无状态协议），在网络事件期间可能会发生协议问题。NFS V4.1 必须停止所有操作，然后才能完成锁定回收。在相对繁忙的 NFS 文件服务器上，延长的等待时间可能会导致中断。缺少 NFS V4.1 多路径和中继也会延长 NFS 操作恢复时间。
 

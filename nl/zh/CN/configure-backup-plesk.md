@@ -4,7 +4,7 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-02-05"
 
-keywords:
+keywords: File Storage, file storage, NFS, Plesk, backups
 
 subcollection: FileStorage
 
@@ -39,7 +39,7 @@ subcollection: FileStorage
    ```
    {:pre}
 
-   此命令会压缩并传输数据，同时尽可能保留信息，但硬链接除外。它提供有关正在传输什么文件的信息并在结尾提供简短摘要。
+   此命令会压缩并传输数据，同时尽可能保留信息，但硬链接除外。它提供有关正在传输什么文件的信息，并在结尾提供简短摘要。
    {:tip}
 5. 编辑 `/etc/psa/psa.conf` 以指向新目标上的 `DUMP_D` 值。
     - 它将显示为：`DUMP_D /backup/psa/dumps`。

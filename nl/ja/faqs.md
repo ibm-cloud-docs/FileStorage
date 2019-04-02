@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-03-26"
 
-keywords:
+keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
 subcollection: FileStorage
 
@@ -160,6 +160,18 @@ VLAN 上でストレージ・トラフィックを実行して、ファイアウ
 {: faq}
 
 {{site.data.keyword.filestorage_full}} では、お客様に対して物理ストレージ上のファイル共有が提供されます。この物理ストレージは再使用前にワイプされます。 NIST 800-88 Guidelines for Media Sanitization などのコンプライアンスに関して特別な要件があるお客様の場合、ストレージを削除する前にデータ・サニタイズ手順を実行する必要があります。
+
+## サポートされている NFS バージョン
+{: faq}
+
+{{site.data.keyword.BluSoftlayer_full}} 環境では、NFS v3 と NFS v4.1 の両方がサポートされています。 
+
+推奨されているバージョンは NFS v3 です。NFS v3 はステートレス・プロトコルで、ネットワーク・イベント発生時の回復力がより高いためです。 
+
+NFS v3 は、root クライアントが NFS 共有に対する root 権限を保持することを許可する `no_root_squash` をネイティブでサポートしています。NFS v4.1 では、この機能は、ドメイン情報を編集して `rpcidmapd` または類似したサービスを実行することによって有効にできます。詳しくは、[NFS 用の no_root_squash の実装](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux#norootsquash)を参照してください。
+
+vSphere ソリューションに関しては、NFS v3 は v4.1 よりも多くの機能をサポートしています。それらの機能の中には、ストレージ DRS および Site Recovery Manager があります。
+
 
 ## クラウド・データ・センターから破棄したドライブはどうなりますか?
 {: faq}

@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
-keywords:
+keywords: File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
 subcollection: FileStorage
 
@@ -117,7 +117,7 @@ subcollection: FileStorage
 
 需要快照空间才能使用快照。可以在初始卷订购期间购买空间，也可以在初始供应后通过在**卷详细信息**页面上单击**操作**并选择**添加快照空间**来购买空间。
 
-值得注意的是，VMware 环境并不知道快照。耐久性 {{site.data.keyword.filestorage_short}} 快照功能不能与 VMware 快照相混淆。使用 {{site.data.keyword.filestorage_short}} 快照功能的任何恢复都必须在 [{{site.data.keyword.slportal}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window} 中进行处理。
+值得注意的是，VMware 环境并不知道快照。{{site.data.keyword.filestorage_short}} 快照功能不能与 VMware 快照相混淆。使用 {{site.data.keyword.filestorage_short}} 快照功能的任何恢复都必须在 [{{site.data.keyword.slportal}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window} 中进行处理。
 
 复原 {{site.data.keyword.filestorage_short}} 卷需要关闭 {{site.data.keyword.filestorage_short}} 上所有 VM 的电源。需要暂时从 ESXi 主机卸装该卷，以避免执行该过程期间发生任何数据损坏。
 

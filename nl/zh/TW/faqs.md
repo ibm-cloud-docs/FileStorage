@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-03-26"
 
-keywords:
+keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
 subcollection: FileStorage
 
@@ -160,6 +160,18 @@ IOPS 是在磁區層次上施行。換句話說，連接至具有 6000 IOPS 之�
 {: faq}
 
 {{site.data.keyword.filestorage_full}} 會向客戶呈現在任何重複使用之前抹除的實體儲存空間上的檔案共用。具有特殊規範需求的客戶（例如 NIST 800-88 媒體資料安全清除準則）必須先執行資料安全清除程序，再刪除其儲存空間。
+
+## 支援哪些 NFS 版本？
+{: faq}
+
+在 {{site.data.keyword.BluSoftlayer_full}} 環境中，同時支援 NFS 第 3 版及 NFS 4.1 版。 
+
+偏好的版本是 NFS 第 3 版，因為它是無狀態的通訊協定，在發生網路事件時較具復原力。 
+
+NFS 第 3 版原本便支援 `no_root_squash`，可讓 root 用戶端保留對 NFS 共用的 root 許可權。您可以在 NFS 4.1 版中啟用此特性，方法是編輯網域資訊然後執行 `rpcidmapd` 或類似的服務。如需相關資訊，請參閱[為 NFS 實作 no_root_squash](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux#norootsquash)。
+
+在談到 vSphere Solutions 時，NFS 第 3 版比 4.1 版支援更多特性。部分特性包括儲存空間 DRS 及網站回復管理程式。
+
 
 ## 從雲端資料中心解除任務的磁碟機會發生什麼情況？
 {: faq}

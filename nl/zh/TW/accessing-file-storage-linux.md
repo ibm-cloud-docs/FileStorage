@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-22"
 
-keywords:
+keywords: File Storage, NSF, mounting File Storage, mounting storage on Linux,
 
 subcollection: FileStorage
 
@@ -41,7 +41,7 @@ Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
 
 ## 裝載 {{site.data.keyword.filestorage_short}} 共用
 
-請使用下列指示，將 Linux 型「{{site.data.keyword.BluSoftlayer_full}} 運算」實例連接至「網路檔案系統 (NFS)」共用。此範例是以 Red Hat Enterprise Linux 6 為基礎。針對其他 Linux 發行套件，可以根據作業系統 (OS) 供應商文件來調整這些步驟。
+請使用下列指示，將 Linux 型「{{site.data.keyword.BluSoftlayer_full}} 運算」實例連接至網路檔案系統 (NFS) 共用。此範例是以 Red Hat Enterprise Linux 6 為基礎。針對其他 Linux 發行套件，可以根據作業系統 (OS) 供應商文件來調整這些步驟。
 
 您可以從 {{site.data.keyword.filestorage_short}} 清單頁面或透過 API 呼叫 `SoftLayer_Network_Storage::getNetworkMountAddress()`，來取得檔案儲存空間實例的裝載點。
 {:tip}
@@ -108,9 +108,9 @@ Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
 
    如果您使用 NFS 4.1，請將 `sec=sys` 新增至 mount 指令，以防止發生檔案所有權問題。
    {:tip}
-   
+
    如果您的主機 OS 是 CentOS，可以配置其他選項。如需相關資訊，請參閱[在 CentOS 裝載 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)。
-   {:tip}
+   
 
 
 ## 實作 NFS 的 `no_root_squash`（選用）

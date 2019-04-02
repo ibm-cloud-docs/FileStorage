@@ -4,7 +4,7 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-02-05"
 
-keywords:
+keywords: File Storage, file storage, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
 subcollection: FileStorage
 
@@ -25,7 +25,7 @@ subcollection: FileStorage
 
 ## 2 次サイトにあるレプリカ・ボリュームの複製を使用するフェイルオーバー
 
-1. [IBM Cloud コンソール ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://{DomainName}/){:new_window} にログインし、左上の**「メニュー」**アイコンをクリックします。**「クラシック・インフラストラクチャー」**を選択します。
+1. [IBM Cloud コンソール ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://{DomainName}/){:new_window} にログインし、左上の**「メニュー」**アイコンをクリックします。 **「クラシック・インフラストラクチャー」**を選択します。
 
    または、[{{site.data.keyword.slportal}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://control.softlayer.com/){:new_window} にログインできます。
 2. **「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**をクリックします。
@@ -41,7 +41,7 @@ subcollection: FileStorage
 
 元の 1 次サイトに実動環境を戻す場合は、以下の手順を行う必要があります。
 
-1. [IBM Cloud コンソール ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://{DomainName}/){:new_window} にログインし、左上の**「メニュー」**アイコンをクリックします。**「クラシック・インフラストラクチャー」**を選択します。
+1. [IBM Cloud コンソール ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://{DomainName}/){:new_window} にログインし、左上の**「メニュー」**アイコンをクリックします。 **「クラシック・インフラストラクチャー」**を選択します。
 
    または、[{{site.data.keyword.slportal}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://control.softlayer.com/){:new_window} にログインできます。
 2. **「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**をクリックします。

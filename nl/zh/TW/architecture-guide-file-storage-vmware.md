@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
-keywords:
+keywords: File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
 subcollection: FileStorage
 
@@ -116,7 +116,7 @@ subcollection: FileStorage
 
 需要有「Snapshot 空間」，才能使用 Snapshot。您可以在初次訂購磁區時購買空間，或在初次佈建之後，透過**磁區詳細資料**頁面購買空間，方法是按一下**動作**然後選取**新增 Snapshot 空間**。
 
-請務必注意，VMware 環境並不知道 Snapshot。「耐久性」{{site.data.keyword.filestorage_short}} Snapshot 功能不得與 VMware Snapshot 混淆。凡是使用 {{site.data.keyword.filestorage_short}} Snapshot 特性的任何回復，都必須從 [{{site.data.keyword.slportal}} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://control.softlayer.com/){:new_window} 來處理。
+請務必注意，VMware 環境並不知道 Snapshot。{{site.data.keyword.filestorage_short}} Snapshot 功能不得與 VMware Snapshot 混淆。凡是使用 {{site.data.keyword.filestorage_short}} Snapshot 特性的任何回復，都必須從 [{{site.data.keyword.slportal}} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://control.softlayer.com/){:new_window} 來處理。
 
 還原 {{site.data.keyword.filestorage_short}} 磁區時，需要關閉 {{site.data.keyword.filestorage_short}} 上所有 VM 的電源。磁區必須暫時從 ESXi 主機卸載，以避免在處理程序期間發生任何資料損毀。
 
