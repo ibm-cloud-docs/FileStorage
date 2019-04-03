@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
-keywords:
+keywords: File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
 subcollection: FileStorage
 
@@ -118,7 +118,7 @@ VMware vSphere 실행에 대한 우수 사례 ![외부 링크 아이콘](../../i
 
 스냅샷을 사용하려면 스냅샷 영역이 필요합니다. 영역은 초기 볼륨 주문 중에 구매하거나, 초기 프로비저닝 후 **볼륨 세부사항** 페이지를 통해(**조치**를 클릭하고 **스냅샷 영역 추가**를 선택) 구매할 수 있습니다.
 
-VMware 환경은 스냅샷을 인지하지 않음을 유념하십시오. Endurance {{site.data.keyword.filestorage_short}} 스냅샷 기능을 VMware 스냅샷과 혼동하지 않아야 합니다. {{site.data.keyword.filestorage_short}} 스냅샷 기능을 사용하는 복구는 [{{site.data.keyword.slportal}} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://control.softlayer.com/){:new_window}에서 처리해야 합니다.
+VMware 환경은 스냅샷을 인지하지 않음을 유념하십시오. {{site.data.keyword.filestorage_short}} 스냅샷 기능을 VMware 스냅샷과 혼동하지 않아야 합니다. {{site.data.keyword.filestorage_short}} 스냅샷 기능을 사용하는 복구는 [{{site.data.keyword.slportal}} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://control.softlayer.com/){:new_window}에서 처리해야 합니다.
 
 {{site.data.keyword.filestorage_short}} 볼륨을 복원하려면 {{site.data.keyword.filestorage_short}}의 모든 VM을 꺼야 합니다. 프로세스 중에 데이터 손상을 방지하기 위해 ESXi 호스트의 볼륨을 임시로 마운트 해제해야 합니다.
 

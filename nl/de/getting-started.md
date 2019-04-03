@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-03-07"
 
-keywords:
+keywords: File Storage, file storage, NFS, provisioning, setup, configuration, mounting storage
 
 subcollection: FileStorage
 
@@ -18,7 +18,7 @@ subcollection: FileStorage
 
 
 # Lernprogramm zur Einführung
-{: #gettingstarted}
+{: #getting-started}
 
 {{site.data.keyword.filestorage_full}} ist ein persistenter, schneller und flexibler, NFS-basierter {{site.data.keyword.filestorage_short}}, der über ein Netz angeschlossen ist. In dieser Umgebung mit NAS-Speicher (NAS – Network-attached Storage) haben Sie vollständige Kontrolle über die Funktion und Leistung Ihrer gemeinsam genutzten Dateispeicher. Gemeinsam genutzte {{site.data.keyword.filestorage_short}}-Speicher können aus Gründen der Ausfallsicherheit mit bis zu 64 autorisierten Geräten über gesteuerte TCP/IP-Verbindungen verbunden werden.
 {:shortdesc}
@@ -30,13 +30,13 @@ subcollection: FileStorage
 - Sie können **Endurance**-Stufen bereitstellen, die über vordefinierte Leistungsstufen und andere Funktionen wie Snapshots und Replikation verfügen.
 - Sie können eine hochleistungsfähige **Performance-Umgebung** mit einer zugeordneten Kapazität an E/A-Operationen pro Sekunde (IOPS) erstellen.
 
-Weitere Informationen zum {{site.data.keyword.filestorage_short}}-Angebot finden Sie in [Informationen zu {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-about). 
+Weitere Informationen zum {{site.data.keyword.filestorage_short}}-Angebot finden Sie in [Informationen zu {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-about).
 
-### Hinweise zur Bereitstellung
+## Hinweise zur Bereitstellung
 
-**Blockgröße**
+### Blockgröße
 
-IOPS für Endurance und Performance basiert auf einer Blockgröße von 16 KB mit einer 50/50-Lese-/Schreibworkload mit 50 Prozent Zufälligkeit. Ein 16-KB-Block entspricht einem Schreibvorgang auf dem Datenträger.
+IOPS für Endurance und Performance basiert auf einer Blockgröße von 16 KB mit einer 50/50-Lese-/Schreibworkload mit 50/50 zufälliger/sequenqzieller Verarbeitung. Ein 16-KB-Block entspricht einem Schreibvorgang auf dem Datenträger.
 {:important}
 
 Die Blockgröße, die von Ihrer Anwendung verwendet wird, wirkt sich direkt auf die Speicherleistung aus. Wenn die von Ihrer Anwendung verwendete Blockgröße kleiner als 16 KB ist, wird der IOPS-Grenzwert vor der Durchsatzbegrenzung erreicht. Wenn dagegen die von Ihrer Anwendung verwendete Blockgröße größer als 16 KB ist, wird die Durchsatzbegrenzung vor dem IOPS-Grenzwert erreicht.
@@ -94,11 +94,11 @@ Die Blockgröße, die von Ihrer Anwendung verwendet wird, wirkt sich direkt auf 
         </tbody>
 </table>
 
-**Berechtigte Hosts**
+### Autorisierte Hosts
 
 Ein weitere Faktor, der zu beachten ist, ist die Anzahl der Hosts, die Ihren Datenträger nutzen. Wenn ein einzelner Host vorhanden ist, der auf den Datenträger zugreift, kann es schwierig sein, die maximal verfügbare IOPS-Kapazität zu erreichen, insbesondere bei sehr hohen IOPS-Werten (10.000). Wenn Ihre Workload einen hohen Durchsatz erfordert, wäre es am besten, mindestens einige Server für den Zugriff auf Ihren Datenträger zu konfigurieren, um den Engpass eines einzelnen Servers zu vermeiden.
 
-**Netzverbindung**
+### Netzverbindung
 
 Die Geschwindigkeit Ihrer Ethernet-Verbindung muss höher als der erwartete maximale Durchsatz von Ihrem Datenträger sein. Grundsätzlich dürfte Ihre Ethernet-Verbindung nicht über 70% der verfügbaren Bandbreite hinaus ausgelastet werden. Wenn Sie beispielsweise über 6.000 IOPS verfügen und eine Blockgröße von 16 KB verwenden, sind auf dem Datenträger etwa 94 MBps möglich. Bei einer Ethernet-Verbindung von 1 Gb/s zu einer LUN wird diese Verbindung zu einem Engpass, wenn die Server versuchen, den maximal verfügbaren Durchsatz zu nutzen. Ursache hierfür ist, dass 70 Prozent des theoretischen Grenzwerts von einer Ethernet-Verbindung mit 1 Gb/s (125 MB pro Sekunde) nur 88 MB pro Sekunde zulassen würden.
 
@@ -106,7 +106,7 @@ Zur Erzielung der maximalen E/A-Operationen pro Sekunde müssen geeignete Netzre
 
 Der Speicherdatenverkehr ist in der gesamten Netznutzung von öffentlichen virtuellen Servern enthalten. Weitere Informationen zu den Grenzwerten, die für die Verwendung des Service gelten können, finden Sie in der [Dokumentation zu virtuellen Servern](/docs/vsi?topic=virtual-servers-about-public-virtual-servers).
 
-**NFS-Version**
+### NFS-Version
 
 NFS Version 3 und NFS Version 4.1 werden in der Umgebung von {{site.data.keyword.BluSoftlayer_full}} unterstützt. NFS Version 3 wird jedoch bevorzugt, da NFS Version 4.1 ein Protokoll mit Zustandsüberwachung (und nicht wie NFSv3 ohne Zustandsüberwachung) ist und bei Netzereignissen Probleme mit dem Protokoll auftreten können. NFS Version 4.1 muss alle Operationen ruhen lassen und anschließend eine Sperrenrückforderung ausführen. Auf einem relativ ausgelasteten NFS-Dateiserver kann die erhöhte Latenz zu Unterbrechungen führen. Die fehlende Multipath- und Trunking-Funktionalität in NFS v4.1 kann darüber hinaus die Wiederherstellung des NFS-Betriebs verlängern.
 
@@ -127,4 +127,4 @@ Wenn Ihre Bereitstellungsanforderung abgeschlossen ist, können Sie Ihren Hosts 
 
 ## Den neuen Speicher verwalten
 
-Über das Portal oder die SLCLI können Sie verschiedene Aspekte Ihrer Instanz von {{site.data.keyword.filestorage_short}} verwalten, wie z. B. Hostberechtigungen und Stornierungen. Weitere Informationen finden Sie in [{{site.data.keyword.filestorage_short}} verwalten](/docs/infrastructure/FileStorage?topic=FileStorage-managingstorage). 
+Über das Portal oder die SLCLI können Sie verschiedene Aspekte Ihrer Instanz von {{site.data.keyword.filestorage_short}} verwalten, wie z. B. Hostberechtigungen und Stornierungen. Weitere Informationen finden Sie in [{{site.data.keyword.filestorage_short}} verwalten](/docs/infrastructure/FileStorage?topic=FileStorage-managingstorage).

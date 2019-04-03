@@ -4,7 +4,7 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-02-05"
 
-keywords:
+keywords: File Storage, file storage, NFS, Plesk, backups
 
 subcollection: FileStorage
 
@@ -38,7 +38,7 @@ subcollection: FileStorage
    ```
    {:pre}
 
-   이 명령은 데이터를 압축하고 전송하며, 이는 최대한 많은 양을 유지합니다(하드링크의 경우는 제외). 또한 맨 끝에 간략한 설명과 전송 중인 파일에 대한 정보를 제공합니다.
+   이 명령은 데이터를 압축하고 전송하며, 이는 최대한 많은 양을 유지합니다(하드링크의 경우는 제외). 또한 맨 끝에 전송 중인 파일에 대한 정보와 간략한 요약을 제공합니다.
    {:tip}
 5. 새 대상에서 `DUMP_D` 값을 지시하도록 `/etc/psa/psa.conf`를 편집하십시오.
     - 이는 `DUMP_D /backup/psa/dumps`와 같이 표시됩니다.

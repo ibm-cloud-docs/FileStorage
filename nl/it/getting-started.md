@@ -18,7 +18,7 @@ subcollection: FileStorage
 
 
 # Esercitazione introduttiva
-{: #gettingstarted}
+{: #getting-started}
 
 {{site.data.keyword.filestorage_full}} è {{site.data.keyword.filestorage_short}} persistente, veloce, flessibile, basato su NFS e collegato alla rete. In questo ambiente NAS (Network Attached Storage), hai il controllo totale sulle prestazioni e la funzione di condivisioni dei tuoi file. Le condivisioni di {{site.data.keyword.filestorage_short}} possono essere connesse a un massimo di 64 dispositivi autorizzati su connessioni TCP/IP instradate per la resilienza.
 {:shortdesc}

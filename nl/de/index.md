@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-27"
+lastupdated: "2019-03-14"
 
-keywords: File Storage, Endurance, Performance, IOPS, replication, billing
+keywords: File Storage, Endurance, Performance, IOPS, replication, billing, file storage, NFS,
 
 subcollection: FileStorage
 
@@ -133,7 +133,7 @@ Performance ist eine Klasse von {{site.data.keyword.filestorage_short}}, die auf
 Der Zugriff auf Performance for {{site.data.keyword.filestorage_short}} und das Anhängen erfolgen über eine NFS-Verbindung (NFS - Network File System). {{site.data.keyword.filestorage_short}} wird in der Regel dann verwendet, wenn Zugriffe auf den Datenträger durch mehrere Server gleichzeitig stattfinden. Konsistente Performance-Datenträger können nach den Größen und E/A-Operationen pro Sekunde (IOPS) in Tabelle 1 bestellt und mit Linux-Betriebssystemen verwendet werden.
 
 <table cellpadding="1" cellspacing="1" style="width: 99%;">
- <caption>Tabelle 3 enthält die Größe und die IOPS-Kombinationen von Performance-Speicher.<br/><sup><img src="/images/numberone.png" alt="Footnote" /></sup> Ein IOPS-Grenzwert über 6.000 ist in ausgewählten Rechenzentren verfügbar.</caption>
+ <caption>Tabelle 3 enthält die Größe und die IOPS-Kombinationen von Performance-Speicher.<br/><sup><img src="/images/numberone.png" alt="Fußnote" /></sup> Ein IOPS-Grenzwert über 6.000 ist in ausgewählten Rechenzentren verfügbar.</caption>
         <colgroup>
           <col/>
           <col/>
@@ -180,22 +180,22 @@ Der Zugriff auf Performance for {{site.data.keyword.filestorage_short}} und das 
             <td>6.000 oder 20.000<sup><img src="/images/numberone.png" alt="Fußnote" /></sup></td>
           </tr>
           <tr>
-            <td>2.000-3.000</td>
+            <td>2.000</td>
             <td>200</td>
             <td>6.000 oder 40.000<sup><img src="/images/numberone.png" alt="Fußnote" /></sup></td>
           </tr>
           <tr>
-            <td>4.000-7.000</td>
+            <td>3.000 - 7.000</td>
             <td>300</td>
             <td>6.000 oder 48.000<sup><img src="/images/numberone.png" alt="Fußnote" /></sup></td>
           </tr>
           <tr>
-            <td>8.000-9.000</td>
+            <td>8.000 - 9.000</td>
             <td>500</td>
             <td>6.000 oder 48.000<sup><img src="/images/numberone.png" alt="Fußnote" /></sup></td>
           </tr>
           <tr>
-            <td>10.000-12.000</td>
+            <td>10.000 - 12.000</td>
             <td>1.000</td>
             <td>6.000 oder 48.000<sup><img src="/images/numberone.png" alt="Fußnote" /></sup></td>
           </tr>

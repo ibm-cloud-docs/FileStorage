@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-22"
 
-keywords:
+keywords: File Storage, NSF, mounting File Storage, mounting storage on Linux,
 
 subcollection: FileStorage
 
@@ -108,9 +108,8 @@ Der Mountpunkt der Dateispeicherinstanz kann von der {{site.data.keyword.filesto
 
    Bei Verwendung von NFS 4.1 fügen Sie dem Mountbefehl die Angabe `sec=sys` hinzu, um Probleme mit Dateieigentumsrechten zu vermeiden.
    {:tip}
-   
+
    Unter dem Hostbetriebssystem CentOS können weitere Optionen konfiguriert werden. Weitere Informationen finden Sie in [{{site.data.keyword.filestorage_short}} unter CentOS anhängen](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS).
-   {:tip}
 
 
 ## `no_root_squash` für NFS implementieren (optional)

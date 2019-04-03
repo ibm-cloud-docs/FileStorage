@@ -18,7 +18,7 @@ subcollection: FileStorage
 
 
 # 開始のチュートリアル
-{: #gettingstarted}
+{: #getting-started}
 
 {{site.data.keyword.filestorage_full}} は、永続的で高速、柔軟な、NFS ベースのネットワーク接続型の{{site.data.keyword.filestorage_short}}です。 この Network Attached Storage (NAS) 環境では、ファイル共有機能とパフォーマンスを完全に制御できます。 {{site.data.keyword.filestorage_short}}共有は、回復力のために経路指定された TCP/IP 接続を介して、最大 64 個の許可デバイスに接続できます。
 {:shortdesc}

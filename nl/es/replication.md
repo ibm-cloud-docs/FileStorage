@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-03-11"
 
-keywords:
+keywords: File Storage, file storage, NFS, replication, duplication, synchronous, replica schedule, replica space, disaster recovery
 
 subcollection: FileStorage
 
@@ -135,13 +135,13 @@ Puede editar la planificación de la réplica y cambiar el espacio de réplica d
 
 ## Edición de la planificación de réplica
 
-La planificación de réplica se basa en una planificación de instantáneas existente. Para cambiar la planificación de réplica, por ejemplo de por hora a semanalmente, debe cancelar la planificación de réplica y configurar una nueva.
+La planificación de réplica se basa en una planificación de instantáneas existente. Para cambiar la planificación de réplica de por hora a diaria o semanal, o viceversa, debe cancelar el volumen de réplica y configurar uno nueva.
 
-Los cambios en la planificación pueden realizarse en el separador Primario o Réplica.
+Sin embargo, si desea cambiar la hora del día a la que se realiza la réplica **diaria**, puede ajustar la planificación existente en el separador Primario o Réplica.
 
 1. Pulse **Acciones** en el separador **Primario** o **Réplica**.
 2. Seleccione **Editar planificación de instantáneas**.
-3. Busque en el marco **Instantánea** bajo **Planificar** para determinar qué planificación está utilizando para la réplica. Cambie la planificación que desea. Por ejemplo, si la planificación de réplica es **Diaria**, puede cambiar la hora del día en que se realiza la réplica.
+3. Busque en el marco **Instantánea** bajo **Planificar** para determinar qué planificación está utilizando para la réplica. Cambie la planificación que desea.
 4. Pulse **Guardar**.
 
 

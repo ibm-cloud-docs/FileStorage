@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
-keywords:
+keywords: File Storage, file storage, NFS, snapshots, snapshot schedule, manual snapshot, snapshot space, snapshot quota
 
 subcollection: FileStorage
 
@@ -46,7 +46,7 @@ Las planificaciones de instantáneas se pueden configurar para intervalos por ho
 
 La lista de instantáneas se muestra tal como se han tomado en la sección **Instantáneas** de la página **Detalles**.
 
-Puede ver la lista de planificaciones de instantánea a través de la SLCLI con el mandato siguiente.
+Puede ver la lista de planificaciones de instantánea mediante SLCLI con el mandato siguiente.
 ```
 # slcli file snapshot-schedule-list --help
 Uso: slcli file snapshot-schedule-list [OPCIONES] ID_VOLUMEN
@@ -68,7 +68,7 @@ El límite máximo de instantáneas manuales por volumen de almacenamiento es 50
 3. Pulse **Realizar instantánea manual**.
 Se realiza la instantánea y se muestra en la sección **Instantáneas** de la página **Detalles**. Su planificación es Manual.
 
-De manera alternativa, puede utilizar el mandato siguiente para crear una instantánea a través de la SLCLI.
+De manera alternativa, puede utilizar el mandato siguiente para crear una instantánea mediante SLCLI.
 ```
 # slcli file snapshot-create --help
 Uso: slcli file snapshot-create [OPCIONES] ID_VOLUMEN
@@ -82,7 +82,7 @@ Opciones:
 
 Se puede visualizar una lista de las instantáneas retenidas y el espacio utilizado en la página **Detalles** (**Almacenamiento**, **{{site.data.keyword.filestorage_short}}**). Las funciones de gestión (editar planificaciones y añadir más espacio) se realizan en la página Detalles utilizando el menú **Acciones** o los enlaces de las distintas secciones de la página.
 
-De manera alternativa, puede realizar esta tarea a través de SLCLI.
+De manera alternativa, puede realizar esta tarea mediante SLCLI.
 ```
 # slcli file snapshot-list --help
 Uso: slcli file snapshot-list [OPCIONES] ID_VOLUMEN
@@ -141,7 +141,7 @@ Las instantáneas que ya no se necesiten se pueden eliminar manualmente para lib
 1. Pulse el volumen de almacenamiento y desplácese hasta la sección **Instantánea** para ver la lista de instantáneas existentes.
 2. Pulse **Acciones** junto a una instantánea particular y pulse **Suprimir** para suprimir la instantánea. Esta supresión no afecta a ninguna instantánea anterior ni futura de la misma planificación, ya que no existe dependencia entre instantáneas.
 
-De manera alternativa, puede suprimir una instantánea a través de SLCLI.
+De manera alternativa, puede suprimir una instantánea mediante SLCLI.
 ```
 # slcli file snapshot-delete --help
 Uso: slcli file snapshot-delete [OPCIONES] ID_INSTANTÁNEA
@@ -172,7 +172,7 @@ Es posible que necesite recuperar el volumen de almacenamiento a un punto en el 
 6. Monte y vuelva a conectar el volumen de almacenamiento al host.
   - Pulse [aquí](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux) para obtener instrucciones.
 
-De manera alternativa, puede restaurar el volumen con una instantánea a través de la SLCLI.
+De manera alternativa, puede restaurar el volumen con una instantánea mediante SLCLI.
 ```
 # slcli file snapshot-restore --help
 Uso: slcli file snapshot-restore [OPCIONES] ID_VOLUMEN

@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-03-11"
 
-keywords:
+keywords: File Storage, file storage, NFS, replication, duplication, synchronous, replica schedule, replica space, disaster recovery
 
 subcollection: FileStorage
 
@@ -135,13 +135,13 @@ Sie können entweder in der Registerkarte **Primäres** oder **Replikation** unt
 
 ## Replikationsplan bearbeiten
 
-Ihr Replikationsplan basiert auf einem vorhandenen Snapshotplan. Wenn Sie den Replikationsplan zum Beispiel von 'Stündlich' in 'Wöchentlich' ändern möchten, müssen Sie den Replikationsplan abbrechen und einen neuen erstellen.
+Ihr Replikationsplan basiert auf einem vorhandenen Snapshotplan. Um den Replikationsplan von 'Stündlich' in 'Täglich' oder 'Wöchentlich' zu ändern oder umgekehrt, müssen Sie den Replikatdatenträger löschen und einen neuen einrichten. 
 
-Das Ändern des Zeitplans kann über die Registerkarte "Primär" oder "Replikat" erfolgen.
+Wenn Sie jedoch die Tageszeit ändern möchten, zu der die **tägliche** Replikation stattfindet, können Sie den vorhandenen Zeitplan auf der Registerkarte des Primärdatenträgers oder des Replikatdatenträgers ändern. 
 
 1. Klicken Sie auf der Registerkarte **Primär** bzw. **Replikat** auf **Aktionen**.
 2. Wählen Sie die Option **Snapshotplan bearbeiten** aus.
-3. Prüfen Sie das Feld **Snapshot** unter **Zeitplan**, um festzustellen, welchen Zeitplan Sie für die Replikation verwenden. Ändern Sie den gewünschten Zeitplan. Wenn Ihr Replikationsplan zum Beispiel auf **Täglich** eingestellt ist, können Sie die Tageszeit ändern, zu der die Replikation stattfinden soll.
+3. Prüfen Sie das Feld **Snapshot** unter **Zeitplan**, um festzustellen, welchen Zeitplan Sie für die Replikation verwenden. Ändern Sie den gewünschten Zeitplan.
 4. Klicken Sie auf **Speichern**.
 
 

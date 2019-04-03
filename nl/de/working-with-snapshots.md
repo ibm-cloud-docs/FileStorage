@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
-keywords:
+keywords: File Storage, file storage, NFS, snapshots, snapshot schedule, manual snapshot, snapshot space, snapshot quota
 
 subcollection: FileStorage
 
@@ -82,7 +82,7 @@ Optionen:
 
 Eine Liste der aufbewahrten Snapshots und des belegten Speicherbereichs wird auf der Seite **Details** (**Speicher** > **{{site.data.keyword.filestorage_short}}**) angezeigt. Managementfunktionen (Zeitplanbearbeitung und Hinzufügen weiteren Speicherbereichs) werden auf der Seite 'Details' über das Menü **Aktionen** oder über Links in den verschiedenen Abschnitten der Seite ausgeführt.
 
-Alternativ dazu können Sie diese Task über die SLCLI ausführen. 
+Alternativ dazu können Sie diese Task über die SLCLI ausführen.
 ```
 # slcli file snapshot-list --help
 Syntax: slcli file snapshot-list [OPTIONEN] DATENTRÄGER-ID
@@ -141,7 +141,7 @@ Snapshots, die nicht mehr benötigt werden, können manuell entfernt werden, um 
 1. Klicken Sie auf Ihren Speicherdatenträger und blättern Sie zum Abschnitt **Snapshot**, um die Liste der vorhandenen Snapshots anzuzeigen.
 2. Klicken Sie neben dem gewünschten Snapshot auf **Aktionen** und klicken Sie auf **Löschen**, um den Snapshot zu löschen. Diese Löschung hat keine Auswirkung auf zukünftige oder frühere Snapshots im selben Zeitplan, da zwischen Snapshots keine Abhängigkeit besteht.
 
-Alternativ dazu können Sie einen Snapshot über die SLCLI löschen. 
+Alternativ dazu können Sie einen Snapshot über die SLCLI löschen.
 ```
 # slcli file snapshot-delete --help
 Syntax: slcli file snapshot-delete [OPTIONEN] SNAPSHOT-ID

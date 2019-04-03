@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-03-26"
 
-keywords:
+keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
 subcollection: FileStorage
 
@@ -160,6 +160,18 @@ IOPS는 볼륨 레벨에서 적용됩니다. 달리 말하면, 6000IOPS의 볼�
 {: faq}
 
 {{site.data.keyword.filestorage_full}}는 재사용 전에 삭제되는 물리적 스토리지의 고객에게 파일 공유를 표시합니다. 미디어 무결 처리에 대한 NIST 800-88 가이드라인과 같이 규제 준수에 대한 특별 요구사항이 있는 고객은 스토리지를 삭제하기 전에 데이터 무결 처리 프로시저를 수행해야 합니다.
+
+## 지원되는 NFS 버전
+{: faq}
+
+NFS v3 및 NFS v4.1 모두는 {{site.data.keyword.BluSoftlayer_full}} 환경에서 지원됩니다. 
+
+NFS v3는 stateless 프로토콜이며 네트워크 이벤트가 발생할 때 복원력이 좋으므로 선호되는 버전입니다. 
+
+NFS v3는 기본적으로 루트 클라이언트가 NFS 공유에 대해 루트 권한을 유지할 수 있게 하는 `no_root_squash`를 지원합니다. 도메인 정보를 편집하고 `rpcidmapd` 또는 유사한 서비스를 실행하여 NFS v4.1에서 이 기능을 사용할 수 있습니다. 자세한 정보는 [NFS에 대해 no_root_squash 구현](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux#norootsquash)을 참조하십시오.
+
+vSphere 솔루션에 대해 NFS v3는 v4.1보다 많은 기능을 지원합니다. 이와 같은 기능에는 스토리지 DRS 및 사이트 복구 관리자가 포함됩니다.
+
 
 ## 클라우드 데이터 센터에서 폐기된 드라이브는 어떻게 됩니까?
 {: faq}

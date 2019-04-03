@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
-keywords:
+keywords: File Storage, NSF, SLCLI, API
 
 subcollection: FileStorage
 
@@ -19,12 +19,12 @@ subcollection: FileStorage
 # Comandos SLCLI para o {{site.data.keyword.filestorage_short}}
 {: #SLCLIcommands}
 
-É possível usar o SLCLI para executar ações, como fazer pedidos de novos volumes, espaço de captura instantânea e replicação, atualizar autorizações, cancelar volumes e assim por diante, que normalmente são manipuladas por meio do [{{site.data.keyword.slportal}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://control.softlayer.com/){:new_window}.
+É possível usar o SLCLI para executar ações que normalmente são manipuladas por meio do [{{site.data.keyword.slportal}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://control.softlayer.com/){:new_window}. Por exemplo, com o SLCLI, é possível fazer pedidos de novos volumes, de espaço de captura instantânea e de replicação, atualizar autorizações, cancelar volumes e assim por diante.
 
 Para obter mais informações sobre como instalar e usar o SLCLI, consulte [Cliente da API de Python ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://softlayer-python.readthedocs.io/en/latest/cli.html){:new_window}.
 {:tip}
 
-## Acessar comandos SLCLI relacionados
+## Comandos do SLCLI relacionados ao acesso
 * [Gerenciando o {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-managingstorage)  
   ```
   slcli file access-authorize
@@ -32,9 +32,9 @@ Para obter mais informações sobre como instalar e usar o SLCLI, consulte [Clie
   slcli file access-revoke
   ```
 
-## Comandos SLCLI relacionados de replicação
+## Comandos do SLCLI relacionados à replicação
 
-* [Comandos SLCLI relacionados de replicação](/docs/infrastructure/FileStorage?topic=FileStorage-replication#clicommands)
+* [Comandos do SLCLI relacionados à replicação](/docs/infrastructure/FileStorage?topic=FileStorage-replication#clicommands)
   ```
   slcli file replica-failback
   slcli file replica-failover
@@ -43,7 +43,7 @@ Para obter mais informações sobre como instalar e usar o SLCLI, consulte [Clie
   slcli file replica-partners
   ```
 
-## Comandos SLCLI relacionados a capturas instantâneas
+## Comandos do SLCLI relacionados a capturas instantâneas
 
 * [Solicitando capturas instantâneas](/docs/infrastructure/FileStorage?topic=FileStorage-ordering-snapshots)
   ```
@@ -61,7 +61,7 @@ Para obter mais informações sobre como instalar e usar o SLCLI, consulte [Clie
   slcli file snapshot-restore
   ```
 
-## Comandos SLCLI relacionados a volume
+## Comandos do SLCLI relacionados a um volume
 
 * [ Ordenando um  {{site.data.keyword.filestorage_short}}  volume ](/docs/infrastructure/FileStorage?topic=FileStorage-orderingSLCLI)
 * [ Criando um volume duplicado ](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume)

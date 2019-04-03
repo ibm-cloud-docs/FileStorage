@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
-keywords:
+keywords: File Storage, file storage, NFS, upgrade, migrate to new
 
 subcollection: FileStorage
 
@@ -20,7 +20,7 @@ subcollection: FileStorage
 
 In ausgewählten Rechenzentren ist nun erweiterter {{site.data.keyword.filestorage_full}}-Speicher verfügbar. Wenn Sie eine Liste der aktualisierten Rechenzentren und verfügbaren Funktionen anzeigen möchten, zum Beispiel konfigurierbare IOPS-Raten und erweiterbare Datenträger, klicken Sie [hier](/docs/infrastructure/FileStorage?topic=FileStorage-news). Weitere Informationen zur vom Provider verwalteten Verschlüsselung finden Sie unter [{{site.data.keyword.filestorage_short}}-Verschlüsselung ruhender Daten](/docs/infrastructure/FileStorage?topic=FileStorage-encryption).
 
-Der bevorzugte Migrationspfad besteht darin, beide Datenträger gleichzeitig zu verbinden und Daten direkt von einer LUN auf die andere zu übertragen. Die jeweiligen Details hängen dabei vom Betriebssystem ab sowie davon, ob erwartet wird, dass sich die Daten während der Kopieroperation ändern.
+Der bevorzugte Migrationspfad besteht darin, beide Datenträger gleichzeitig zu verbinden und Daten per NFS direkt von einer LUN auf die andere zu übertragen. Die jeweiligen Details hängen dabei vom Betriebssystem ab sowie davon, ob erwartet wird, dass sich die Daten während der Kopieroperation ändern.
 
 Es wird davon ausgegangen, dass Sie bereits über eine nicht verschlüsselte LUN verfügen, die mit dem Host verbunden ist. Ist dies nicht der Fall, folgen Sie den für Ihr Betriebssystem passenden Anweisungen, um diese Task auszuführen.
 

@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
-keywords:
+keywords: File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
 subcollection: FileStorage
 
@@ -25,7 +25,7 @@ As etapas a seguir podem ajudar você a pedir e configurar o {{site.data.keyword
 
 O {{site.data.keyword.filestorage_short}} foi projetado para suportar aplicativos de alta E/S que requerem níveis previsíveis de desempenho. O desempenho previsível é alcançado por meio da alocação de input/output operations per second (IOPS) de nível de protocolo para volumes individuais.
 
-Se você precisar de mais de oito hosts para acessar o armazenamento de dados do VMware, escolher NFS {{site.data.keyword.filestorage_short}} será a melhor prática.
+Se você precisa de mais de oito hosts para acessar o armazenamento de dados do VMware, a escolha do NFS {{site.data.keyword.filestorage_short}} é a melhor prática.
 {:tip}
 
 A oferta {{site.data.keyword.filestorage_short}} é acessada e montada por meio de uma conexão NFS. Em uma implementação do VMware, um único volume pode ser montado para até 64 hosts ESXi como armazenamento compartilhado. Também é possível montar múltiplos volumes para criar um cluster de armazenamento para usar o vSphere Storage Distributed Resource Scheduler (DRS).
@@ -118,7 +118,7 @@ O {{site.data.keyword.filestorage_short}} permite que os administradores configu
 
 O espaço de captura instantânea é necessário para usar capturas instantâneas. O espaço pode ser comprado no pedido de volume inicial ou após o fornecimento inicial por meio da página **Detalhes do volume** clicando em **Ações** e selecionando **Incluir espaço de captura instantânea**.
 
-É importante observar que os ambientes VMware não estão cientes de capturas instantâneas. O recurso de captura instantânea do Endurance {{site.data.keyword.filestorage_short}} não deve ser confundido com capturas instantâneas do VMware. Qualquer recuperação que use o recurso de captura instantânea do {{site.data.keyword.filestorage_short}} deve ser manipulada por meio do [{{site.data.keyword.slportal}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://control.softlayer.com/){:new_window}.
+É importante observar que os ambientes VMware não estão cientes de capturas instantâneas. O recurso de captura instantânea do {{site.data.keyword.filestorage_short}} não deve ser confundido com as capturas instantâneas do VMware. Qualquer recuperação que use o recurso de captura instantânea do {{site.data.keyword.filestorage_short}} deve ser manipulada por meio do [{{site.data.keyword.slportal}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://control.softlayer.com/){:new_window}.
 
 A restauração do volume do {{site.data.keyword.filestorage_short}} requer o desligamento de todas as MVs do {{site.data.keyword.filestorage_short}}. O volume precisa ser temporariamente desmontado dos hosts ESXi para evitar qualquer distorção de dados durante o processo.
 

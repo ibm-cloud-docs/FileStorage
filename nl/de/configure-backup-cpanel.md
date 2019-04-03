@@ -4,7 +4,7 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-02-05"
 
-keywords:
+keywords: File Storage, file storage, NFS, cPanel, backups
 
 subcollection: FileStorage
 
@@ -40,8 +40,8 @@ Weitere Informationen finden Sie in [cPanel - Configuring backup directory ![Sym
    ```
    {: pre}
 
-    Dieser Befehl komprimiert und überträgt die Daten, wobei möglichst viel (außer festen Verbindungen) beibehalten wird. Außerdem werden Informationen zu den zu übertragenden Dateien sowie am Ende eine kurze Zusammenfassung bereitgestellt.
-    {:tip}
+    Dieser Befehl komprimiert und überträgt die Daten, wobei möglichst viel (außer festen Verbindungen) beibehalten wird. Außerdem werden Informationen zu den per NFS zu übertragenden Dateien sowie am Ende eine kurze Zusammenfassung bereitgestellt.
+   {:tip}
 
 5. Melden Sie sich bei WebHost Manager an und navigieren Sie über **Home** > **Sicherung** > **Sicherungskonfiguration** zur Sicherungskonfiguration.
 

@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
-keywords:
+keywords: File Storage, file storage, NFS, authorizing hosts, rewoke access, grant access, view authorizations
 
 subcollection: FileStorage
 
@@ -116,7 +116,7 @@ Si desea desconectar varios volúmenes desde un host específico, debe repetir l
 Si desea desconectar varios hosts desde un host específico, debe repetir la acción Revocar acceso para cada host.
 {:tip}
 
-### Revocación del acceso a través de SLCLI.
+### Revocación del acceso mediante SLCLI.
 De manera alternativa, puede utilizar el mandato siguiente en SLCLI.
 ```
 # slcli file access-revoke --help

@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
-keywords:
+keywords: File Storage, NSF, SLCLI, API
 
 subcollection: FileStorage
 
@@ -19,7 +19,7 @@ subcollection: FileStorage
 # Mandatos de SLCLI para {{site.data.keyword.filestorage_short}}
 {: #SLCLIcommands}
 
-Puede utilizar SLCLI para realizar acciones tales como pedidos de nuevos volúmenes, espacio de instantáneas y réplicas, actualización de autorizaciones, cancelación de volúmenes y otras similares que normalmente se manejan a través del [{{site.data.keyword.slportal}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){:new_window}.
+Puede utilizar SLCLI para realizar acciones que normalmente se manejan a través del [{{site.data.keyword.slportal}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){:new_window}. Por ejemplo, con SLCLI puede realizar pedidos de volúmenes, espacio de instantáneas y réplica, actualizar autorizaciones, cancelar volúmenes, etc.
 
 Para obtener más información sobre cómo instalar y utilizar SLCLI, consulte [Cliente de API de Python ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://softlayer-python.readthedocs.io/en/latest/cli.html){:new_window}.
 {:tip}
@@ -45,7 +45,7 @@ Para obtener más información sobre cómo instalar y utilizar SLCLI, consulte [
 
 ## Mandatos de SLCLI relacionados con las instantáneas
 
-* [Realizar pedidos de instantáneas](/docs/infrastructure/FileStorage?topic=FileStorage-ordering-snapshots)
+* [Solicitud de instantáneas](/docs/infrastructure/FileStorage?topic=FileStorage-ordering-snapshots)
   ```
   slcli file snapshot-order
   ```

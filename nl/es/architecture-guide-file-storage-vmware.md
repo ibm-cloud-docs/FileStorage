@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
-keywords:
+keywords: File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
 subcollection: FileStorage
 
@@ -118,7 +118,7 @@ El {{site.data.keyword.filestorage_short}} permite a los administradores estable
 
 Se necesita espacio de instantáneas para utilizar las instantáneas. El espacio se puede adquirir durante el pedido del volumen inicial o después del suministro inicial mediante la página **Detalles del volumen**, pulsando **Acciones** y seleccionando **Añadir espacio de instantáneas**.
 
-Es importante señalar que los entornos de VMware no son conscientes de las instantáneas. La capacidad de instantáneas de {{site.data.keyword.filestorage_short}} de Resistencia no debe confundirse con las instantáneas de VMware. Toda recuperación que utilice la característica de instantáneas de {{site.data.keyword.filestorage_short}} debe manejarse desde el [{{site.data.keyword.slportal}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){:new_window}.
+Es importante señalar que los entornos de VMware no son conscientes de las instantáneas. La capacidad de instantáneas de {{site.data.keyword.filestorage_short}} no debe confundirse con las instantáneas de VMware. Toda recuperación que utilice la característica de instantáneas de {{site.data.keyword.filestorage_short}} debe manejarse desde el [{{site.data.keyword.slportal}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){:new_window}.
 
 Restaurar el volumen de {{site.data.keyword.filestorage_short}} requiere apagar todas las máquinas virtuales del {{site.data.keyword.filestorage_short}}. El volumen se debe desmontar temporalmente de los hosts de ESXi para evitar la corrupción de datos durante el proceso.
 
@@ -175,7 +175,7 @@ Una vez autorizadas las subredes, anote el nombre de host del servidor de almace
 Antes de empezar el proceso de configuración de VMware, asegúrese de que se cumplen los siguientes requisitos previos:
 
 - Los {{site.data.keyword.BluBareMetServers}} con VMware ESXi se suministran con la configuración de almacenamiento adecuada y credenciales de inicio de sesión de ESXi.
-- {{site.data.keyword.BluSoftlayer_full}} Windows físico o {{site.data.keyword.virtualmachinesshort}} en el mismo centro de datos que los {{site.data.keyword.BluBareMetServers}}. Incluyendo la dirección IP pública de la máquina virtual de {{site.data.keyword.BluSoftlayer_full}} Windows y los credenciales de inicio de sesión.
+- {{site.data.keyword.BluSoftlayer_full}} Windows físico o {{site.data.keyword.virtualmachinesshort}} en el mismo centro de datos que los {{site.data.keyword.BluBareMetServers}}. Incluyendo la dirección IP pública de la máquina virtual de {{site.data.keyword.BluSoftlayer_full}} Windows y las credenciales de inicio de sesión.
 - Un sistema con acceso a Internet, y con el software de navegador web y un cliente de Remote Desktop Protocol (RDP) instalados.
 
 

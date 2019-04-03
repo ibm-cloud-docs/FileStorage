@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-22"
 
-keywords:
+keywords: File Storage, NSF, mounting File Storage, mounting storage on Linux,
 
 subcollection: FileStorage
 
@@ -23,7 +23,7 @@ En primer lugar, asegúrese de que el host que va a acceder al volumen de {{site
 1. Desde la página de listado de {{site.data.keyword.filestorage_short}}, pulse el enlace **Acciones** que está asociado a la nueva compartición y pulse **Autorizar host**.
 2. Seleccione el host o hosts en la lista y pulse **Enviar**. Esta acción autoriza al host a acceder a la compartición.
 
-De manera alternativa, puede autorizar los hosts a través de la SLCLI.
+De manera alternativa, puede autorizar los hosts mediante SLCLI.
 ```
 # slcli file access-authorize --help
 Uso: slcli file access-authorize [OPCIONES] ID_VOLUMEN
@@ -41,7 +41,7 @@ Opciones:
 
 ## Montaje de la compartición de {{site.data.keyword.filestorage_short}}
 
-Utilice estas instrucciones para conectar una instancia de cálculo de {{site.data.keyword.BluSoftlayer_full}} basada en Linux a una compartición de Network File System (NFS). El ejemplo se basa en Red Hat Enterprise Linux 6. Los pasos pueden ajustarse para otras distribuciones Linux de acuerdo con la documentación del proveedor del sistema operativo.
+Utilice estas instrucciones para conectar una instancia de cálculo de {{site.data.keyword.BluSoftlayer_full}} basada en Linux a una compartición NFS (sistema de archivos de red). El ejemplo se basa en Red Hat Enterprise Linux 6. Los pasos pueden ajustarse para otras distribuciones Linux de acuerdo con la documentación del proveedor del sistema operativo.
 
 El punto de montaje de la instancia de almacenamiento de archivos se puede obtener desde la página de listado de {{site.data.keyword.filestorage_short}} o mediante una llamada a API - `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 {:tip}
@@ -108,9 +108,8 @@ El punto de montaje de la instancia de almacenamiento de archivos se puede obten
 
    Si utiliza NFS 4.1, añada `sec=sys` al mandato de montaje para impedir problemas de propiedad de archivos.
    {:tip}
-   
+
    Si su sistema operativo host es CentOS, puede configurar más opciones. Para obtener más información, consulte [Montaje de {{site.data.keyword.filestorage_short}} en CentOS](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS).
-   {:tip}
 
 
 ## Implementación de `no_root_squash` para NFS (opcional)

@@ -18,7 +18,7 @@ subcollection: FileStorage
 
 
 # 入門指導教學
-{: #gettingstarted}
+{: #getting-started}
 
 {{site.data.keyword.filestorage_full}} 是持續性、快速且具彈性的網路連結、NFS 型 {{site.data.keyword.filestorage_short}}。在這個網路連接儲存空間 (NAS) 環境中，您可以完全控制檔案共用功能及效能。{{site.data.keyword.filestorage_short}} 共用可以透過路由 TCP/IP 連線最多連接 64 台授權裝置，來取得備援。{:shortdesc}
 

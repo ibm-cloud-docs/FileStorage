@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-03-11"
 
-keywords:
+keywords: File Storage, file storage, NFS, replication, duplication, synchronous, replica schedule, replica space, disaster recovery
 
 subcollection: FileStorage
 
@@ -135,15 +135,13 @@ As replicações funcionam com base em um planejamento de captura instantânea. 
 
 ## Editando o Planejamento de Replicação
 
-O planejamento de replicação baseia-se em um planejamento de captura instantânea existente. Para mudar o planejamento de
-réplica, por exemplo, de por hora para semanal, deve-se cancelar o planejamento de replicação e
-configurar um novo.
+O planejamento de replicação baseia-se em um planejamento de captura instantânea existente. Para mudar o planejamento de réplica de Por Hora para Diário ou Semanal ou vice-versa, deve-se cancelar o volume de réplica e configurar um novo.
 
-A mudança do planejamento pode ser feita na guia Primário ou Réplica.
+No entanto, se você deseja mudar o horário do dia em que a replicação **Diária** ocorre, é possível ajustar o planejamento existente na guia Primário ou Réplica.
 
 1. Clique em **Ações** na guia **Primário** ou **Réplica**.
 2. Selecione **Editar planejamento de captura instantânea**.
-3. Consulte o quadro **Captura instantânea** em **Planejamento** para determinar qual planejamento você está usando para replicação. Mude o planejamento que você deseja. Por exemplo, se o seu planejamento de replicação for **Diário**, será possível mudar o horário do dia em que a replicação deverá ocorrer.
+3. Consulte o quadro **Captura instantânea** em **Planejamento** para determinar qual planejamento você está usando para replicação. Mude o planejamento que você deseja.
 4. Clique em **Salvar**.
 
 

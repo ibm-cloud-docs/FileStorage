@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
-keywords:
+keywords: File Storage, NSF, SLCLI, API
 
 subcollection: FileStorage
 
@@ -19,12 +19,12 @@ subcollection: FileStorage
 # SLCLI-Befehle für {{site.data.keyword.filestorage_short}}
 {: #SLCLIcommands}
 
-Sie können die SLCLI verwenden, um Aktionen, wie z. B. das Bestellen neuer Datenträger, eines Snapshotbereichs oder einer Replikation, das Aktualisieren von Berechtigungen, das Stornieren von Datenträgern usw., auszuführen, die normalerweise über das [{{site.data.keyword.slportal}} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/){:new_window} vorgenommen werden. 
+Sie können die SLCLI verwenden, um Aktionen auszuführen, die normalerweise über das [{{site.data.keyword.slportal}} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/){:new_window} ausgeführt werden. So können Sie über die SLCLI beispielsweise neue Datenträger, Snapshotbereiche und Replikationen bestellen, Berechtigungen aktualisieren, Datenträger stornieren usw. 
 
 Weitere Informationen zur Installation und Verwendung der SLCLI finden Sie unter [Python-API-Client ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://softlayer-python.readthedocs.io/en/latest/cli.html){:new_window}.
 {:tip}
 
-## SLCLI-Befehle im Zusammenhang mit der Zugriffssteuerung
+## SLCLI-Befehle im Zusammenhang mit dem Zugriff
 * [{{site.data.keyword.filestorage_short}} verwalten](/docs/infrastructure/FileStorage?topic=FileStorage-managingstorage)  
   ```
   slcli file access-authorize

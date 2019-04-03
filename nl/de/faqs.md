@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-03-26"
 
-keywords:
+keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
 subcollection: FileStorage
 
@@ -160,6 +160,18 @@ Die Ziellatenz im Speicher beträgt weniger als 1 ms. File Storage-Speicher wird
 {: faq}
 
 {{site.data.keyword.filestorage_full}} stellt den Kunden gemeinsam genutzte Dateien auf physischem Speicher bereit, der vor der Wiederverwendung bereinigt wird. Kunden mit bestimmten Compliance-Anforderungen, z. B. hinsichtlich der Einhaltung der NIST 800-88-Richtlinien für das sichere Löschen von Datenträgern, müssen die entsprechende Bereinigungsprozedur durchführen, bevor sie den Speicher löschen.
+
+## Welche NFS-Versionen werden unterstützt?
+{: faq}
+
+NFS Version 3 und NFS Version 4.1 werden in der Umgebung von {{site.data.keyword.BluSoftlayer_full}} unterstützt. 
+
+Die bevorzugte Version ist NFS v3, da sie ein statusunabhängiges Protokoll verwendet und bei Netzereignissen eine größere Ausfallsicherheit bietet.  
+
+NFS v3 bietet native Unterstützung für `no_root_squash`; dies ermöglicht es Root-Clients, die Rootberechtigungen für den gemeinsam genutzten NFS-Speichern zu behalten. Sie können dieses Feature in NFS v4.1 aktivieren, indem Sie die Domäneninformationen bearbeiten und `rpcidmapd` oder einen ähnlichen Service ausführen. Weitere Informationen finden Sie in ['no_root_squash' für NFS implementieren](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux#norootsquash).
+
+In Bezug auf vSphere-Lösungen unterstützt NFS v3 eine größere Anzahl von Features als v4.1. Zu diesen Features gehören z. B. Storage DRS und Site Recovery Manager.
+
 
 ## Was passiert mit den Laufwerken, die über das Cloud-Rechenzentrum außer Betrieb gesetzt werden?
 {: faq}

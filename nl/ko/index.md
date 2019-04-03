@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-27"
+lastupdated: "2019-03-14"
 
-keywords: File Storage, Endurance, Performance, IOPS, replication, billing
+keywords: File Storage, Endurance, Performance, IOPS, replication, billing, file storage, NFS,
 
 subcollection: FileStorage
 
@@ -180,12 +180,12 @@ Performance는 Endurance 계층에는 잘 맞지 않는 잘 파악된 성능 요
             <td>6,000 또는 20,000<sup><img src="/images/numberone.png" alt="각주" /></sup></td>
           </tr>
           <tr>
-            <td>2,000-3,000</td>
+            <td>2,000</td>
             <td>200</td>
             <td>6,000 또는 40,000<sup><img src="/images/numberone.png" alt="각주" /></sup></td>
           </tr>
           <tr>
-            <td>4,000-7,000</td>
+            <td>3,000 - 7,000</td>
             <td>300</td>
             <td>6,000 또는 48,000<sup><img src="/images/numberone.png" alt="각주" /></sup></td>
           </tr>

@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
-keywords:
+keywords: File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
 subcollection: FileStorage
 
@@ -25,7 +25,7 @@ Folgende Schritte zeigen Ihnen, wie {{site.data.keyword.filestorage_full}} in ei
 
 {{site.data.keyword.filestorage_short}} wurde zur Unterstützung von Anwendungen mit hoher E/A-Aktivität entwickelt, die vorhersagbare Leistungsniveaus erfordern. Die vorhersagbare Leistung wird durch Zuordnung von E/A-Operationen pro Sekunde (IOPS) zu einzelnen Datenträgern auf Protokollebene erzielt.
 
-Wenn Sie mehr als acht Hosts zu Ihrem VMware-Datenspeicher benötigen, stellt die Auswahl von NFS {{site.data.keyword.filestorage_short}} das beste Verfahren dar.
+Wenn Sie mehr als acht Hosts für den Zugriff auf Ihren VMware-Datenspeicher benötigen, stellt die Auswahl von NFS {{site.data.keyword.filestorage_short}} das beste Verfahren dar.
 {:tip}
 
 Das {{site.data.keyword.filestorage_short}}-Angebot wird über eine NFS-Verbindung angehängt und zugänglich gemacht. In einer VMware-Bereitstellung kann ein einzelner Datenträger mit bis zu 64 ESXi-Hosts als gemeinsam genutzter Speicher durch Mounts verbunden werden. Sie können auch mehrere Datenträger anhängen, um zur Verwendung von vSphere Storage Distributed Resource Scheduler (DRS) einen Speichercluster zu erstellen.
@@ -117,7 +117,7 @@ Weitere Informationen finden Sie im Whitepaper von VMware zu [bewährten Verfahr
 
 Zur Verwendung von Snapshots ist ein Snapshotbereich erforderlich. Der Speicherbereich kann bei der ersten Datenträgerbestellung oder nach der Erstbereitstellung über die Seite **Datenträgerdetails** durch Klicken auf **Aktionen** und Auswählen der Option **Snapshotbereich hinzufügen** gekauft werden.
 
-Es ist wichtig zu beachten, dass VMware-Umgebungen Snapshots nicht erkennen. Die Endurance {{site.data.keyword.filestorage_short}}-Snapshotfunktionalität darf nicht mit VMware-Snapshots verwechselt werden. Jede Wiederherstellung mithilfe der {{site.data.keyword.filestorage_short}}-Snapshotfunktion muss über das [{{site.data.keyword.slportal}} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/){:new_window} durchgeführt werden.
+Es ist wichtig zu beachten, dass VMware-Umgebungen Snapshots nicht erkennen. Die {{site.data.keyword.filestorage_short}}-Snapshotfunktionalität darf nicht mit VMware-Snapshots verwechselt werden. Jede Wiederherstellung mithilfe der {{site.data.keyword.filestorage_short}}-Snapshotfunktion muss über das [{{site.data.keyword.slportal}} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/){:new_window} durchgeführt werden.
 
 Zur Wiederherstellung des {{site.data.keyword.filestorage_short}}-Datenträgers ist es erforderlich, alle VMs auf {{site.data.keyword.filestorage_short}} auszuschalten. Der Datenträger muss vorübergehend von den ESXi-Hosts abgehängt werden, um eine Beschädigung von Daten während des Prozesses zu vermeiden.
 

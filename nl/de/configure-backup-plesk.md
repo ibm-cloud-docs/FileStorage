@@ -4,7 +4,7 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-02-05"
 
-keywords:
+keywords: File Storage, file storage, NFS, Plesk, backups
 
 subcollection: FileStorage
 
@@ -38,7 +38,7 @@ Weitere Informationen finden Sie in der Dokumentation von Plesk zum Thema Sicher
    ```
    {:pre}
 
-   Dieser Befehl komprimiert und überträgt Ihre Daten und behält möglichst viel bei (außer festen Verbindungen). Außerdem werden Informationen zu den zu übertragenden Dateien sowie am Ende eine kurze Zusammenfassung bereitgestellt.
+   Dieser Befehl komprimiert und überträgt Ihre Daten und behält möglichst viel bei (außer festen Verbindungen). Außerdem werden Informationen zu den per NFS zu übertragenden Dateien sowie am Ende eine kurze Zusammenfassung bereitgestellt.
    {:tip}
 5. Bearbeiten Sie `/etc/psa/psa.conf` so, dass der Wert für `DUMP_D` auf das neue Ziel verweist.
     - Es sieht wie folgt aus: `DUMP_D /backup/psa/dumps`.

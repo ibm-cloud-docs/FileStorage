@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-03-08"
 
-keywords:
+keywords: File Storage, file storage, NFS, mounting volume in Container Linux, CoreOS
 
 subcollection: FileStorage
 
@@ -22,42 +22,11 @@ subcollection: FileStorage
 
 Container Linux by CoreOS es un sistema operativo de código abierto y ligero basado en el kernel de Linux. Está diseñado para proporcionar infraestructura a despliegues en clúster. Como sistema operativo, Container Linux proporciona la funcionalidad mínima necesaria para desplegar aplicaciones dentro de contenedores de software, junto con mecanismos incorporados para el descubrimiento de servicios y la compartición de configuración. Para obtener más información, consulte la [Montaje de almacenamiento ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://coreos.com/os/docs/latest/mounting-storage.html)
 
-## Montaje de almacenamiento portátil
-
 Todos los archivos de montaje secundario van al directorio `/etc/systemd/system` ya que los montajes de nivel de sistema están en un directorio que es solo de lectura. Primero, cree un archivo `MOUNTPOINT.mount`. La sección **Where** del archivo `.mount` debe coincidir con el nombre de archivo. Si el punto de montaje no está directamente fuera de `/`, debe nombrar el archivo utilizando la sintaxis `path-to-mount.mount`. Por ejemplo, si desea montar la unidad de almacenamiento portátil en `/mnt/www`, nombre el archivo `mnt-www.mount`.
 
-Puede utilizar `fdisk` o `parted` para crear la partición. Asegúrese de que el sistema de archivos que crea coincide con el listado en el archivo `.mount`; si no, el servicio no se inicia.
+Puede utilizar `fdisk` o `parted` para crear la partición. Asegúrese de que el sistema de archivos que crea coincide con el listado en el archivo `.mount`; si no, el servicio no se inicia. Como el montaje es NFS, puede especificar más opciones utilizando la línea `Options=` del archivo de montaje.
 
-
-```
-[Unit]
-Description = Mount for Portable Storage
-
-[Mount]
-What=/dev/xvdc1
-Where=/mnt/www
-Type=ext4
-
-[Install]
-WantedBy = multi-user.target
-```
-{:codeblock}
-
-
-Este sistema operativo utiliza `systemd`, de manera que, para que el punto de montaje sobreviva a un reinicio, debe habilitar el archivo `*.mount`. Si utiliza el distintivo `--now`, la partición se monta inmediatamente y se inicia al arrancar.
-
-```
-systemctl enable --now mnt-www.mount
-```
-{:pre}
-
-Para obtener más información, consulte la [documentación de `systemd mount` ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.freedesktop.org/software/systemd/man/systemd.mount.html)
-
-## Montaje de {{site.data.keyword.filestorage_short}}
-
-El proceso de montar el almacenamiento {{site.data.keyword.filestorage_short}} es el mismo. Como el montaje es NFS, puede especificar más opciones utilizando la línea `Options=` del archivo de montaje.
-
-En el ejemplo, NFS está configurado para montarse en `/data/www`. El punto de montaje de NFS de la instancia de {{site.data.keyword.filestorage_short}} se puede obtener desde la página de listado de {{site.data.keyword.filestorage_short}} o mediante una llamada a API `SoftLayer_Network_Storage::getNetworkMountAddress()`.
+En el siguiente ejemplo, NFS está configurado para montarse en `/data/www`. El punto de montaje de NFS de la instancia de {{site.data.keyword.filestorage_short}} se puede obtener desde la página de listado de {{site.data.keyword.filestorage_short}} o mediante una llamada a API `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 {:tip}
 
 ```
@@ -69,7 +38,7 @@ Description = Mount for Container Storage
 What=<nfs_mount_point>
 Where=/data/www
 Type=nfs
-Options=vers=4,sec=sys,noauto
+Options=vers=3,sec=sys,noauto
 
 [Install]
 WantedBy = multi-user.target
@@ -82,6 +51,8 @@ A continuación, habilite el montaje y compruebe que se haya montado correctamen
 systemctl enable --now /etc/systemd/system/data-www.mount
 
 cluster1 ~ # mount |grep data
-<nfs_mount_point> on /data/www type nfs4 (rw,relatime,vers=4.0,rsize=65536,wsize=65536,namlen=255,hard,proto=tcp,port=0,timeo=600,retrans=2,sec=sys,clientaddr=10.81.x.x,local_lock=none,addr=10.1.x.x)
+<nfs_mount_point> on /data/www type nfs3 (rw,relatime,vers=3.0,rsize=65536,wsize=65536,namlen=255,hard,proto=tcp,port=0,timeo=600,retrans=2,sec=sys,clientaddr=10.81.x.x,local_lock=none,addr=10.1.x.x)
 ```
 {:codeblock}
+
+Para obtener más información, consulte la [documentación de `systemd mount` ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.freedesktop.org/software/systemd/man/systemd.mount.html)

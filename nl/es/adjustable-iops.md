@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
-keywords:
+keywords: File Storage, adjusting IOPS, increase IOPS, decrease IOPS, modify IOPS
 
 subcollection: FileStorage
 
@@ -56,7 +56,7 @@ Si el volumen tiene réplica, la réplica se actualiza automáticamente para coi
 5. Marque el recuadro de selección **He leído el Acuerdo de servicio maestro...** y pulse **Realizar pedido**.
 6. La nueva asignación de almacenamiento estará disponible en pocos minutos.
 
-De manera alternativa, puede actualizar el IOPS a través de la SLCLI.
+De manera alternativa, puede actualizar el IOPS mediante SLCLI.
 ```
 # slcli file volume-modify --help
 Uso: slcli file volume-modify [OPCIONES] ID_VOLUMEN

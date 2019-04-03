@@ -18,7 +18,7 @@ subcollection: FileStorage
 
 
 # 入门教程
-{: #gettingstarted}
+{: #getting-started}
 
 {{site.data.keyword.filestorage_full}} 是一种基于 NFS 的网络连接的 {{site.data.keyword.filestorage_short}}，具有持久、快速、灵活的特点。在此网络连接的存储器 (NAS) 环境中，您对文件共享功能和性能具有完全控制权。{{site.data.keyword.filestorage_short}} 共享可通过路由 TCP/IP 连接来连接到最多 64 个已授权设备，从而实现弹性。
 {:shortdesc}

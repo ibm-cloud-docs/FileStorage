@@ -4,7 +4,7 @@ copyright:
   years: 2017, 2019
 lastupdated: "2019-02-05"
 
-keywords:
+keywords: File Storage, file storage, NFS, duplicate volume
 
 subcollection: FileStorage
 
@@ -82,7 +82,7 @@ Puede crear un volumen duplicado a través del [{{site.data.keyword.slportal}} !
 7. Puede actualizar el espacio de instantáneas para el nuevo volumen para añadir más, menos o ningún espacio de instantáneas. El espacio de instantáneas del volumen original se establece de forma predeterminada.
 8. Pulse **Continuar** para realizar el orden de los duplicados.
 
-## Creación de un duplicado a través de la SLCLI
+## Creación de un duplicado mediante SLCLI
 ```
 # slcli file volume-duplicate --help
 Uso: slcli file volume-duplicate [OPCIONES] ID_VOLUMEN_ORIGEN

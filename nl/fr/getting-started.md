@@ -18,7 +18,7 @@ subcollection: FileStorage
 
 
 # Tutoriel d'initiation 
-{: #gettingstarted}
+{: #getting-started}
 
 {{site.data.keyword.filestorage_full}} est un système de stockage de fichiers {{site.data.keyword.filestorage_short}} NAS basé sur NFS, permanent, rapide et flexible. Cet environnement NAS vous permet d'avoir un contrôle total des fonctions et des performances de vos partages de fichiers. Les partages {{site.data.keyword.filestorage_short}} peuvent être connectés à un maximum de 64 unités autorisées via des connexions TCP/IP routées pour la résilience.
 {:shortdesc}

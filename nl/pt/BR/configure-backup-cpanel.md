@@ -4,7 +4,7 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-02-05"
 
-keywords:
+keywords: File Storage, file storage, NFS, cPanel, backups
 
 subcollection: FileStorage
 
@@ -42,8 +42,8 @@ Para obter mais informações, consulte [cPanel: configurando o diretório de ba
    ```
    {: pre}
 
-    Esse comando compacta e transmite seus dados e os preserva o máximo possível, exceto links físicos. Ele também fornece informações sobre quais arquivos estão sendo transferidos, além de um breve resumo no final.
-    {:tip}
+    Esse comando compacta e transmite seus dados e os preserva o máximo possível, exceto links físicos. Ele também fornece informações sobre quais arquivos estão sendo transferidos via NFS, além de um breve resumo no final.
+{:tip}
 
 5. Efetue login no WebHost Manager e acesse a configuração de backup por meio de **Página inicial** > **Backup** > **Configuração de backup**.
 

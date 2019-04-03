@@ -4,7 +4,7 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-02-05"
 
-keywords:
+keywords: File Storage, modify volume, NFS, file storage, expand capacity
 
 subcollection: FileStorage
 
@@ -51,7 +51,7 @@ Die bestehenden Größenbegrenzungen für {{site.data.keyword.filestorage_short}
 5. Klicken Sie auf **Ich habe die Rahmenvereinbarung gelesen** und auf **Bestellung abschicken**.
 6. Ihre neue Speicherzuordnung steht nach wenigen Minuten zur Verfügung.
 
-Alternativ dazu können Sie den folgenden Befehl in der SLCLI verwenden. 
+Alternativ dazu können Sie den folgenden Befehl in der SLCLI verwenden.
 ```
 # slcli file volume-modify --help
 Syntax: slcli file volume-modify [OPTIONEN] DATENTRÄGER-ID

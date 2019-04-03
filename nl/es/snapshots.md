@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
-keywords:
+keywords: File Storage, file storage, NFS, snapshots
 
 subcollection: FileStorage
 
@@ -34,7 +34,7 @@ Con las instantáneas, puede:
 - Crear puntos de recuperación de un punto en el tiempo sin interrupciones.
 - Revertir los volúmenes a puntos en el tiempo anteriores.
 
-Debe adquirir cierta cantidad de espacio de instantáneas para su volumen para poder realizar instantáneas. El espacio de instantáneas se puede añadir durante el pedido inicial o posteriormente, a través de la página **Detalles del volumen**. Las instantáneas planificadas y manuales comparten el espacio de instantáneas, por lo tanto, asegúrese de solicitar suficiente espacio de instantáneas. Consulte el artículo [Realizar pedido de instantáneas](/docs/infrastructure/FileStorage?topic=FileStorage-ordering-snapshots) para obtener más detalles y orientación.
+Debe adquirir cierta cantidad de espacio de instantáneas para su volumen para poder realizar instantáneas. El espacio de instantáneas se puede añadir durante el pedido inicial o posteriormente, a través de la página **Detalles del volumen**. Las instantáneas planificadas y manuales comparten el espacio de instantáneas, por lo tanto, asegúrese de solicitar suficiente espacio de instantáneas. Consulte el artículo [Solicitud de instantáneas](/docs/infrastructure/FileStorage?topic=FileStorage-ordering-snapshots) para obtener más detalles y orientación.
 
 ## Prácticas recomendadas en torno a las instantáneas
 
