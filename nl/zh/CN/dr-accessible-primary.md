@@ -27,8 +27,7 @@ subcollection: FileStorage
 已授权的主机和卷必须位于同一数据中心内。例如，您不能使副本卷位于伦敦，而使主机位于阿姆斯特丹。副本卷和主机必须都位于伦敦，或者都位于阿姆斯特丹。
 {:note}
 
-1. 登录到 [{{site.data.keyword.cloud}} 控制台 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://
-{DomainName}/catalog/){:new_window}，然后单击左上角的**菜单**图标。选择**经典基础架构**。
+1. 登录到 [{{site.data.keyword.cloud}} 控制台 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://{DomainName}/catalog/){:new_window}，然后单击左上角的**菜单**图标。选择**经典基础架构**。
 
 
    或者，您可以登录到 [{{site.data.keyword.slportal}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window}。
@@ -50,7 +49,7 @@ subcollection: FileStorage
 1. 单击活动卷（“源”）。
 2. 单击右上角的**副本**，然后单击**操作**。
 3. 选择**故障转移**。
-   
+
 
    应该会收到一条消息，声明正在进行故障转移。此外，**{{site.data.keyword.filestorage_short}}** 上的相应卷旁边会显示一个图标，指示正在执行活动事务。将鼠标悬停在该图标上将生成一个用于显示事务的窗口。事务完成后，该图标会消失。在故障转移过程中，与配置相关的操作为只读。无法编辑任何快照安排，也无法更改快照空间。该事件将记录在复制历史记录中。
    <br/> 目标卷处于活动状态时，您将收到另一条消息。原始源卷的“LUN 名称”更新为以“REP”结尾，并且其状态将变为“不活动”。
