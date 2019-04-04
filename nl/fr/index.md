@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-27"
+lastupdated: "2019-03-14"
 
-keywords: File Storage, Endurance, Performance, IOPS, replication, billing
+keywords: File Storage, Endurance, Performance, IOPS, replication, billing, file storage, NFS,
 
 subcollection: FileStorage
 
@@ -130,7 +130,7 @@ Il est essentiel de choisir le niveau d'endurance adapté pour votre charge de t
 
 Performance est une classe de {{site.data.keyword.filestorage_short}} conçue pour prendre en charge des applications avec un niveau élevé d'entrée/sortie et nécessitant un niveau de performance bien établi qui ne correspond pas à un niveau Endurance. Pour atteindre la performance prévue, il suffit d'allouer les IOPS au niveau du protocole à des volumes individuels. Des IOPS allant de 100 à 48 000 peuvent être mis à disposition avec des tailles de stockage de 20 Go à 12 To.
 
-{{site.data.keyword.filestorage_short}} Performance est accessible et monté via une connexion NFS. {{site.data.keyword.filestorage_short}} est généralement utilisé lorsque le volume fait l'objet d'un accès simultané par plusieurs serveurs. Il est possible de commander des volumes avec des performances cohérentes en fonction des tailles et du nombre d'IOPS figurant dans le tableau 1 ; ces volumes peuvent être utilisés avec des systèmes d'exploitation Linux.
+Pour {{site.data.keyword.filestorage_short}}, Performance est accessible et monté via une connexion NFS. {{site.data.keyword.filestorage_short}} est généralement utilisé lorsque le volume fait l'objet d'un accès simultané par plusieurs serveurs. Il est possible de commander des volumes avec des performances cohérentes en fonction des tailles et du nombre d'IOPS figurant dans le tableau 1 ; ces volumes peuvent être utilisés avec des systèmes d'exploitation Linux.
 
 <table cellpadding="1" cellspacing="1" style="width: 99%;">
  <caption>Le tableau 3 présente les combinaisons de taille et d'IOPS possibles pour le stockage Performance.<br/><sup><img src="/images/numberone.png" alt="Note de bas de page" /></sup> Vous pouvez opter pour un nombre d'IOPS supérieur à 6 000 dans des centres de données sélectionnés.</caption>
@@ -180,22 +180,22 @@ Performance est une classe de {{site.data.keyword.filestorage_short}} conçue po
             <td>6 000 ou 20 000<sup><img src="/images/numberone.png" alt="Footnote" /></sup></td>
           </tr>
           <tr>
-            <td>2 000-3 000</td>
+            <td>2 000</td>
             <td>200</td>
             <td>6 000 ou 40 000<sup><img src="/images/numberone.png" alt="Footnote" /></sup></td>
           </tr>
           <tr>
-            <td>4 000-7 000</td>
+            <td>3 000 à 7 000</td>
             <td>300</td>
             <td>6 000 ou 48 000<sup><img src="/images/numberone.png" alt="Footnote" /></sup></td>
           </tr>
           <tr>
-            <td>8 000-9 000</td>
+            <td>8 000 à 9 000</td>
             <td>500</td>
             <td>6 000 ou 48 000<sup><img src="/images/numberone.png" alt="Footnote" /></sup></td>
           </tr>
           <tr>
-            <td>10 000-12 000</td>
+            <td>10 000 à 12 000</td>
             <td>1 000</td>
             <td>6 000 ou 48 000<sup><img src="/images/numberone.png" alt="Footnote" /></sup></td>
           </tr>

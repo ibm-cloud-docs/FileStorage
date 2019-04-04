@@ -152,7 +152,7 @@ subcollection: FileStorage
 
 在 VMware 环境中，使用[高级单站点 VMware 参考体系结构 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} 利用“耐久性”或“性能”选项来设置 {{site.data.keyword.filestorage_short}}。
 
-订购 {{site.data.keyword.filestorage_short}} 的方式是通过 [IBM Cloud 目录 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://{DomainName}/catalog/){:new_window} 或 [{{site.data.keyword.slportal}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window}。有关更多信息，请参阅[订购 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)。
+订购 {{site.data.keyword.filestorage_short}} 的方式是通过 [IBM Cloud 目录 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://{DomainName}/catalog){:new_window} 或 [{{site.data.keyword.slportal}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window}。有关更多信息，请参阅[订购 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)。
 
 存储器将在不到一分钟的时间内进行供应，并且会在 [{{site.data.keyword.slportal}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window} 的 **{{site.data.keyword.filestorage_short}}** 页面上显示。
 

@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
-keywords:
+keywords: File Storage, file storage, NFS, SLCLI, provisioning, API
 
 subcollection: FileStorage
 
@@ -29,7 +29,7 @@ Lorsque vous passez une commande, vous devez commencer par rechercher est un pac
 
 Dans un package, certains éléments sont subdivisés en catégories. Certains packages disposent de préréglages pour votre commodité et d'autres nécessitent que des éléments soient spécifiés individuellement. Si une catégorie de package est requise, un élément de cette catégorie doit être sélectionné pour commander le package. Selon la catégorie, certains éléments de la catégorie s'excluent mutuellement.
 
-A chaque commande doit être associé un emplacement (centre de données). Lorsque vous commandez {{site.data.keyword.filestorage_short}}, veillez à ce que sa mise disposition s'effectue dans le même emplacement que vos instances de traitement.
+A chaque commande doit être associé un emplacement (centre de données). Lorsque vous commandez {{site.data.keyword.filestorage_short}}, veillez à ce que sa mise disposition s'effectue dans le même emplacement que vos instances de calcul.
 {:important}
 
 Vous pouvez utiliser la commande `slcli order package-list` pour rechercher le package que vous voulez commander. Une option `–keyword` est fournie pour effectuer une recherche et un filtrage simples. Cette option facilite la recherche du package dont vous avez besoin. Recherchez `Storage-as-a-Service Package 759`.

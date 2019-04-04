@@ -27,7 +27,7 @@ Antes de iniciar o failover, certifique-se de que toda a autorização de host e
 Os hosts e volumes autorizados devem estar no mesmo data center. Por exemplo, não é possível ter um volume de réplica em Londres e o host em Amsterdã. Ambos devem estar em Londres ou ambos devem estar em Amsterdã.
 {:note}
 
-1. Efetue login no [Console do {{site.data.keyword.cloud}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://{DomainName}/catalog/){:new_window} e clique no ícone **Menu** na parte superior esquerda. Selecione **Infraestrutura clássica**.
+1. Efetue login no [Console do {{site.data.keyword.cloud}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://{DomainName}/catalog){:new_window} e clique no ícone **Menu** na parte superior esquerda. Selecione **Infraestrutura clássica**.
 
    Como alternativa, é possível efetuar login no [{{site.data.keyword.slportal}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://control.softlayer.com/){:new_window}.
 1. Clique em seu volume de origem ou de destino na página **{{site.data.keyword.filestorage_short}}**.

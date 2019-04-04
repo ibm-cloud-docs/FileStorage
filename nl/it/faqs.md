@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-03-26"
 
-keywords:
+keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
 subcollection: FileStorage
 
@@ -160,6 +160,18 @@ La latenza di destinazione all'interno dello spazio di archiviazione è inferior
 {: faq}
 
 {{site.data.keyword.filestorage_full}} presenta le condivisioni file ai clienti sull'archiviazione fisica che viene ripulita prima di qualsiasi riutilizzo. I clienti con requisiti speciali per la conformità come le linee guida NIST 800-88 per Media Sanitization devono eseguire la procedura di sanitizzazione dei dati prima di eliminare la propria archiviazione.
+
+## Quali versioni NFS sono supportate? 
+{: faq}
+
+Nell'ambiente {{site.data.keyword.BluSoftlayer_full}} sono supportati sia NFS v3 che NFS v4.1. 
+
+La versione preferita è NFS v3 perché è un protocollo senza stato e più resiliente quando si verificano degli eventi di rete. 
+
+NFS v3 supporta in modo nativo `no_root_squash` che consente ai client root di conservare le autorizzazioni root sulla condivisione NFS. Puoi abilitare questa funzione in NFS v4.1, modificando le informazioni sul dominio ed eseguendo `rpcidmapd` o un servizio simile. Per ulteriori informazioni, vedi [Implementazione di no_root_squash per NFS](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux#norootsquash).
+
+Quando viene fornito alle soluzioni vSphere, NFS v3 supporta più funzioni rispetto alla v4.1. Tali funzioni includono Storage DRS e Site Recovery Manager.
+
 
 ## Cosa succede alle unità che vengono disattivate dal data center cloud?
 {: faq}

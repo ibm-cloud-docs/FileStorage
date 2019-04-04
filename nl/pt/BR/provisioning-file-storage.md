@@ -29,7 +29,7 @@ subcollection: FileStorage
 ## Solicitando  {{site.data.keyword.filestorage_short}}  com Camadas IOPS predefinidas (Endurance)
 {: #endurance}
 
-1. Efetue login no [Catálogo do IBM Cloud](https://{DomainName}/catalog/){:new_window} e clique em **Armazenamento**. Em seguida, selecione {{site.data.keyword.filestorage_short}}. Clique em **Criar**.
+1. Efetue login no [Catálogo do IBM Cloud](https://{DomainName}/catalog){:new_window} e clique em **Armazenamento**. Em seguida, selecione {{site.data.keyword.filestorage_short}}. Clique em **Criar**.
 
    Como alternativa, é possível efetuar login no [{{site.data.keyword.slportal}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://control.softlayer.com/){:new_window} } e clicar em **Armazenamento** > **{{site.data.keyword.filestorage_short}}**. Na parte superior direita, clique em **Pedir {{site.data.keyword.filestorage_short}}**.
 2. Selecione sua implementação  ** Local **  (data center).
@@ -62,7 +62,7 @@ volumes do {{site.data.keyword.blockstorageshort}}. Para aumentar o número de s
 ## Pedindo o {{site.data.keyword.filestorage_short}} com IOPS customizado (Performance)
 {: #performance}
 
-1. Efetue login no [Catálogo do IBM Cloud](https://{DomainName}/catalog/){:new_window} e clique em **Armazenamento**. Em seguida, selecione {{site.data.keyword.filestorage_short}}. Clique em **Criar**.
+1. Efetue login no [Catálogo do IBM Cloud](https://{DomainName}/catalog){:new_window} e clique em **Armazenamento**. Em seguida, selecione {{site.data.keyword.filestorage_short}}. Clique em **Criar**.
 
    Como alternativa, é possível efetuar login no [{{site.data.keyword.slportal}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://control.softlayer.com/){:new_window} } e clicar em **Armazenamento** > **{{site.data.keyword.filestorage_short}}**. Na parte superior direita, clique em **Pedir {{site.data.keyword.filestorage_short}}**.
 2. Clique em **Local** e selecione seu data center.

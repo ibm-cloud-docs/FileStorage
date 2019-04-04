@@ -153,7 +153,7 @@ VMware 환경은 스냅샷을 인지하지 않음을 유념하십시오. {{site.
 
 [고급 단일 사이트 VMware 참조 아키텍처 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}을 사용하여 VMware 환경의 Endurance 또는 Performance 옵션으로 {{site.data.keyword.filestorage_short}}를 설정할 수 있습니다.
 
-{{site.data.keyword.filestorage_short}}는 [IBM Cloud 카탈로그 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://{DomainName}/catalog/){:new_window} 또는 [{{site.data.keyword.slportal}} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://control.softlayer.com/){:new_window}을 통해 주문할 수 있습니다. 자세한 정보는 [{{site.data.keyword.filestorage_short}} 주문](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)을 참조하십시오.
+{{site.data.keyword.filestorage_short}}는 [IBM Cloud 카탈로그 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://{DomainName}/catalog){:new_window} 또는 [{{site.data.keyword.slportal}} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://control.softlayer.com/){:new_window}을 통해 주문할 수 있습니다. 자세한 정보는 [{{site.data.keyword.filestorage_short}} 주문](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)을 참조하십시오.
 
 스토리지가 1분 내에 프로비저닝되며 [{{site.data.keyword.slportal}} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://control.softlayer.com/){:new_window}의 **{{site.data.keyword.filestorage_short}}** 페이지에 표시됩니다.
 

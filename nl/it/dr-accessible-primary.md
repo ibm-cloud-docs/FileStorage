@@ -4,7 +4,7 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-02-05"
 
-keywords:
+keywords: File Storage, file storage, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
 subcollection: FileStorage
 
@@ -27,7 +27,7 @@ Prima di avviare il failover, assicurati che tutta l'autorizzazione di host sia 
 Gli host autorizzati e i volumi si devono trovare nello stesso data center. Ad esempio, non puoi avere un volume di replica a Londra e l'host ad Amsterdam. Devono trovarsi entrambi a Londra oppure devono trovarsi entrambi ad Amsterdam.
 {:note}
 
-1. Accedi alla [console {{site.data.keyword.cloud}}![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://{DomainName}/catalog/){:new_window} e fai clic sull'icona **menu** nell'angolo superiore sinistro. Seleziona **Infrastruttura classica**.
+1. Accedi alla [console {{site.data.keyword.cloud}}![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://{DomainName}/catalog){:new_window} e fai clic sull'icona **menu** nell'angolo superiore sinistro. Seleziona **Infrastruttura classica**.
 
 
    In alternativa, puoi accedere al [{{site.data.keyword.slportal}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://control.softlayer.com/){:new_window}.

@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
-keywords:
+keywords: File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
 subcollection: FileStorage
 
@@ -118,7 +118,7 @@ VMware vSphere on network-attached storage ![Icône de lien externe](../../icons
 
 Un espace d'instantané est requis pour l'utilisation d'instantanés. Vous pouvez acquérir de l'espace lors de la commande de volume initiale ou après la mise à disposition initiale via la page **Détails du volume** en cliquant sur **Actions** et en sélectionnant **Ajouter de l'espace d'instantané**.
 
-Il est important de noter que les environnements VMware n'ont pas connaissance des instantanés. La fonctionnalité d'instantané de {{site.data.keyword.filestorage_short}} Endurance ne doit pas être confondue avec les instantanés VMware. Toute reprise effectuée avec la fonction d'instantané de {{site.data.keyword.filestorage_short}} doit être traitée à partir du portail [{{site.data.keyword.slportal}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://control.softlayer.com/){:new_window}.
+Il est important de noter que les environnements VMware n'ont pas connaissance des instantanés. La fonctionnalité d'instantané de {{site.data.keyword.filestorage_short}} ne doit pas être confondue avec les instantanés VMware. Toute reprise effectuée avec la fonction d'instantané de {{site.data.keyword.filestorage_short}} doit être traitée à partir du portail [{{site.data.keyword.slportal}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://control.softlayer.com/){:new_window}.
 
 La restauration du volume {{site.data.keyword.filestorage_short}} requiert la mise hors tension de toutes les machines virtuelles qui se trouvent sur {{site.data.keyword.filestorage_short}}. Le volume doit être temporairement démonté depuis les hôtes ESXi afin d'éviter que les données ne soient endommagées au cours du processus.
 
@@ -139,7 +139,7 @@ La réplication permet de synchroniser vos données entre deux emplacements diff
 
 Avant d'effectuer une réplication, vous devez créer un planning d'instantané.
 
-Lorsque vous effectuez un basculement, vous "basculez l'interrupteur" depuis votre volume de stockage du centre de données principal vers le volume de destination du centre de données distant. Par exemple, votre centre de données principal peut se situer à Londres et votre centre de données secondaire à Amsterdam. Dans le cas d'un événement d'échec, vous basculez vers Amsterdam. Cela signifie que vous vous connectez au volume qui est désormais devenu principal à partir d'une instance de cluster vSphere à Amsterdam. Une fois votre volume de Londres réparé, un instantané du volume d'Amsterdam est pris. Vous pouvez ensuite effectuer une reprise par restauration à Londres avec le volume de Londres à nouveau considéré comme le volume principal à partir d'une instance de traitement située à Londres.
+Lorsque vous effectuez un basculement, vous "basculez l'interrupteur" depuis votre volume de stockage du centre de données principal vers le volume de destination du centre de données distant. Par exemple, votre centre de données principal peut se situer à Londres et votre centre de données secondaire à Amsterdam. Dans le cas d'un événement d'échec, vous basculez vers Amsterdam. Cela signifie que vous vous connectez au volume qui est désormais devenu principal à partir d'une instance de cluster vSphere à Amsterdam. Une fois votre volume de Londres réparé, un instantané du volume d'Amsterdam est pris. Vous pouvez ensuite effectuer une reprise par restauration à Londres avec le volume de Londres à nouveau considéré comme le volume principal à partir d'une instance de calcul située à Londres.
 
 Vous devez arrêter le volume utilisé sur le site distant avant de reprendre par restauration le volume sur le centre de données principal. Un instantané de toute information nouvelle ou modifiée est pris et répliqué sur le centre de données principal avant le nouveau montage sur les hôtes ESXi du site de production.
 
@@ -153,7 +153,7 @@ Les données non valides, qu'il s'agisse de données endommagées, détournées 
 
 Utilisez l'[architecture de référence d'un environnement VMware mono-site avancé ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} pour configurer {{site.data.keyword.filestorage_short}} avec un niveau Endurance ou Performance dans votre environnement VMware.
 
-Vous pouvez commander {{site.data.keyword.filestorage_short}} via [le catalogue IBM Cloud ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://{DomainName}/catalog/){:new_window} ou le portail [{{site.data.keyword.slportal}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://control.softlayer.com/){:new_window}. Pour plus d'informations, voir [Commande de {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)
+Vous pouvez commander {{site.data.keyword.filestorage_short}} via [le catalogue IBM Cloud ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://{DomainName}/catalog){:new_window} ou le portail [{{site.data.keyword.slportal}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://control.softlayer.com/){:new_window}. Pour plus d'informations, voir [Commande de {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)
 
 Le stockage est mis à disposition en moins d'une minute et est visible sur la page **{{site.data.keyword.filestorage_short}}** du portail [{{site.data.keyword.slportal}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://control.softlayer.com/){:new_window}.
 

@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-03-26"
 
-keywords:
+keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
 subcollection: FileStorage
 
@@ -36,7 +36,7 @@ Dans le formulaire de commande {{site.data.keyword.filestorage_short}}, tous les
 
 Tous les volumes et partages de fichiers chiffrés sont mis à disposition uniquement dans des centres de données mis à niveau. Vous trouverez la liste complète des centres de données mis à niveau et des fonctionnalités disponibles [ici](/docs/infrastructure/FileStorage?topic=FileStorage-news).
 
-## Pourquoi un stockage {{site.data.keyword.filestorage_short}} de type Endurance avec un niveau de 10 IOPS doit-il être mise à disposition dans certains centres de données et pas dans d'autres ?
+## Pourquoi un stockage {{site.data.keyword.filestorage_short}} de type Endurance avec un niveau de 10 IOPS doit-il être mis à disposition dans certains centres de données et pas dans d'autres ?
 {: faq}
 
 Le type de stockage {{site.data.keyword.filestorage_short}} Endurance avec un niveau de 10 IOPS/Go est disponible dans des centres de données sélectionnés, auxquels s'ajouteront bientôt de nouveaux centres de données. Vous trouverez la liste complète des centres de données mis à niveau et des fonctionnalités disponibles [ici](/docs/infrastructure/FileStorage?topic=FileStorage-news).
@@ -131,7 +131,7 @@ Le nombre maximal d'IOPS peut être obtenu même si vous utilisez des tailles de
 - 4 ko * 6 000 IOPS == ~23,44 Mo/sec
 
 
-## Les opérations d'entrées-sorties par seconde (IOPS) sont-elle allouées par instance ou par volume ?
+## Les opérations d'entrées-sorties par seconde (IOPS) sont-elles allouées par instance ou par volume ?
 {: faq}
 
 Les IOPS sont appliquées au niveau volume. Autrement dit, deux hôtes connectés à un volume doté de 6 000 IOPS partagent ces 6 000 IOPS.
@@ -154,12 +154,24 @@ Il est recommandé d'exécuter le trafic de stockage sur un réseau local virtue
 ## Quel temps d'attente lié aux performances puis-je attendre de mon stockage {{site.data.keyword.filestorage_short}} ?   
 {: faq}
 
-Le temps d'attente cible du stockage est inférieur à 1 ms. Le stockage est connecté à des instances de traitement sur un réseau partagé ; le temps d'attente exact des performances dépend donc du trafic réseau sur une période donnée.
+Le temps d'attente cible du stockage est inférieur à 1 ms. Le stockage est connecté à des instances de calcul sur un réseau partagé ; le temps d'attente exact des performances dépend donc du trafic réseau sur une période donnée.
 
 ## Qu'advient-il des données en cas de suppression des volumes {{site.data.keyword.filestorage_short}} ?
 {: faq}
 
 {{site.data.keyword.filestorage_full}} présente des partages de fichiers aux clients sur un stockage physique avant toute réutilisation. Les clients ayant des exigences particulières en matière de conformité (par exemple, NIST 800-88 Guidelines for Media Sanitization) doivent exécuter une procédure d'expurgation des données avant de supprimer leur stockage.
+
+## Quelles sont les versions NFS prises en charge ?
+{: faq}
+
+NFS version 3 et NFS version 4.1 sont pris en charge dans l'environnement {{site.data.keyword.BluSoftlayer_full}}. 
+
+NFS version 3 est recommandé car il s'agit d'un protocole sans état plus résilient lorsque des événements de réseau se produisent. 
+
+NFS v3 prend en charge en natif `no_root_squash` qui permet aux clients root de conserver les droits root sur le partage NFS. Vous pouvez activer cette fonctionnalité dans NFS v4.1 en éditant les informations sur le domaine et en exécutant `rpcidmapd` ou un service similaire. Pour plus d'informations, voir [Implémentation de no_root_squash pour NFS](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux#norootsquash).
+
+Lorsqu'il s'agit de vSphere Solutions, NFS version 3 prend en charge plus de fonctionnalités que la version 4.1. Par exemple, Storage DRS et Site Recovery Manager.
+
 
 ## Qu'advient-il des unités déclassées du centre de données de cloud ?
 {: faq}

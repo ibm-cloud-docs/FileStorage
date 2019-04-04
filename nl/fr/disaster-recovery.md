@@ -1,10 +1,10 @@
----
+﻿---
 
 copyright:
   years: 2018, 2019
 lastupdated: "2019-02-05"
 
-keywords:
+keywords: File Storage, file storage, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
 subcollection: FileStorage
 

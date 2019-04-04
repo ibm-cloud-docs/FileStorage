@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-03-11"
 
-keywords:
+keywords: File Storage, file storage, NFS, replication, duplication, synchronous, replica schedule, replica space, disaster recovery
 
 subcollection: FileStorage
 
@@ -135,13 +135,13 @@ Vous pouvez éditer votre planning de réplication et modifier votre espace de r
 
 ## Edition du planning de réplication
 
-Le planning de réplication est basé sur un planning d'instantané existant. Pour modifier le planning de réplication, par exemple d'Horaire en Hebdomadaire, vous devez annuler le planning de réplication et en configurer un nouveau.
+Le planning de réplication est basé sur un planning d'instantané existant. Pour modifier le planning de réplication, par exemple d'Horaire en Quotidien ou Hebdomadaire, ou inversement, vous devez annuler le volume de réplication et en configurer un nouveau.
 
-La modification du planning peut s'effectuer sur l'onglet Principal ou Réplique.
+Cependant, si vous voulez modifier l'heure à laquelle la réplication selon un planning **Quotidien** s'effectue, vous devez ajuster le planning existant dans l'onglet Principal ou Réplique.
 
 1. Cliquez sur **Actions** sur l'onglet **Principal** ou **Réplique**.
 2. Sélectionnez **Modifier le planning d'instantané**.
-3. Regardez dans le cadre **Instantané** sous **Planning** pour déterminer le planning que vous utilisez pour la réplication. Modifiez le planning de votre choix. Par exemple, si votre planning de réplication est **Quotidien**, vous pouvez modifier l'heure de la journée à laquelle la réplication doit avoir lieu.
+3. Regardez dans le cadre **Instantané** sous **Planning** pour déterminer le planning que vous utilisez pour la réplication. Modifiez le planning de votre choix.
 4. Cliquez sur **Enregistrer**.
 
 
@@ -194,7 +194,7 @@ Pour plus d'informations, voir [Création d'un volume de fichier dupliqué](/doc
 
 ## Utilisation de répliques afin d'effectuer un basculement en cas de sinistre
 
-Lorsque vous effectuez un basculement, vous "basculez l'interrupteur" depuis votre volume de stockage du centre de données principal vers le volume de destination du centre de données distant. Par exemple, votre centre de données principal peut se situer à Londres et votre centre de données secondaire à Amsterdam. Dans le cas d'un événement d'échec, vous basculez vers Amsterdam, en vous connectant au volume qui est désormais devenu principal à partir d'une instance de calcul à Amsterdam. Une fois votre volume de Londres réparé, un instantané du volume d'Amsterdam est pris afin de permettre le retour à Londres avec le volume de Londres à nouveau considéré comme le volume principal à partir d'une instance de traitement située à Londres.
+Lorsque vous effectuez un basculement, vous "basculez l'interrupteur" depuis votre volume de stockage du centre de données principal vers le volume de destination du centre de données distant. Par exemple, votre centre de données principal peut se situer à Londres et votre centre de données secondaire à Amsterdam. Dans le cas d'un événement d'échec, vous basculez vers Amsterdam, en vous connectant au volume qui est désormais devenu principal à partir d'une instance de calcul à Amsterdam. Une fois votre volume de Londres réparé, un instantané du volume d'Amsterdam est pris afin de permettre le retour à Londres avec le volume de Londres à nouveau considéré comme le volume principal à partir d'une instance de calcul située à Londres.
 
 * Si l'emplacement principal est confronté à un problème mais que le stockage et l'hôte sont toujours en ligne, voir [Basculement avec un volume principal accessible](/docs/infrastructure/FileStorage?topic=FileStorage-dr-accessible).
 * Si l'emplacement principal n'est plus accessible, voir [Basculement avec un volume principal inaccessible](/docs/infrastructure/FileStorage?topic=FileStorage-dr-inaccessible).

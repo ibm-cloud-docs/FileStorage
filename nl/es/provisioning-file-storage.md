@@ -29,7 +29,7 @@ Puede suministrar {{site.data.keyword.filestorage_short}} y realizar ajustes par
 ## Solicitud de {{site.data.keyword.filestorage_short}} con los niveles de IOPS predefinidos (Resistencia)
 {: #endurance}
 
-1. Inicie la sesión en el [catálogo de IBM Cloud](https://{DomainName}/catalog/){:new_window} y pulse **Almacenamiento**. A continuación seleccione {{site.data.keyword.filestorage_short}}. Pulse **Crear**.
+1. Inicie la sesión en el [catálogo de IBM Cloud](https://{DomainName}/catalog){:new_window} y pulse **Almacenamiento**. A continuación seleccione {{site.data.keyword.filestorage_short}}. Pulse **Crear**.
 
    También puede iniciar la sesión en el [{{site.data.keyword.slportal}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){:new_window} }, pulse **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**. En la parte superior derecha, pulse **Realizar pedido de {{site.data.keyword.filestorage_short}}**.
 2. Seleccione la **Ubicación** (centro de datos) del despliegue.
@@ -61,7 +61,7 @@ De forma predeterminada, puede suministrar un total combinado de 250 volúmenes 
 ## Solicitud de {{site.data.keyword.filestorage_short}} con IOPS personalizados (Rendimiento)
 {: #performance}
 
-1. Inicie la sesión en el [catálogo de IBM Cloud](https://{DomainName}/catalog/){:new_window} y pulse **Almacenamiento**. A continuación seleccione {{site.data.keyword.filestorage_short}}. Pulse **Crear**.
+1. Inicie la sesión en el [catálogo de IBM Cloud](https://{DomainName}/catalog){:new_window} y pulse **Almacenamiento**. A continuación seleccione {{site.data.keyword.filestorage_short}}. Pulse **Crear**.
 
    También puede iniciar la sesión en el [{{site.data.keyword.slportal}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){:new_window} }, pulse **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**. En la parte superior derecha, pulse **Realizar pedido de {{site.data.keyword.filestorage_short}}**.
 2. Pulse **Ubicación** y seleccione el centro de datos.

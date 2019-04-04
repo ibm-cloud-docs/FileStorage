@@ -29,7 +29,7 @@ subcollection: FileStorage
 ## 事前定義済み IOPS ティアによる {{site.data.keyword.filestorage_short}} の注文 (エンデュランス)
 {: #endurance}
 
-1. [IBM Cloud カタログ](https://{DomainName}/catalog/){:new_window}にログインし、**「ストレージ」**をクリックします。 その後、{{site.data.keyword.filestorage_short}}を選択します。 **「作成」**をクリックします。
+1. [IBM Cloud カタログ](https://{DomainName}/catalog){:new_window}にログインし、**「ストレージ」**をクリックします。 その後、{{site.data.keyword.filestorage_short}}を選択します。 **「作成」**をクリックします。
 
    あるいは、[{{site.data.keyword.slportal}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://control.softlayer.com/){:new_window} } にログインして、**「ストレージ」**>**「{{site.data.keyword.filestorage_short}}」**をクリックします。 右上の**「{{site.data.keyword.filestorage_short}} を注文」**をクリックします。
 2. デプロイメント・**ロケーション** (データ・センター) を選択します。
@@ -61,7 +61,7 @@ subcollection: FileStorage
 ## カスタム IOPS による {{site.data.keyword.filestorage_short}} の注文 (パフォーマンス)
 {: #performance}
 
-1. [IBM Cloud カタログ](https://{DomainName}/catalog/){:new_window}にログインし、**「ストレージ」**をクリックします。 その後、{{site.data.keyword.filestorage_short}}を選択します。 **「作成」**をクリックします。
+1. [IBM Cloud カタログ](https://{DomainName}/catalog){:new_window}にログインし、**「ストレージ」**をクリックします。 その後、{{site.data.keyword.filestorage_short}}を選択します。 **「作成」**をクリックします。
 
    あるいは、[{{site.data.keyword.slportal}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://control.softlayer.com/){:new_window} } にログインして、**「ストレージ」**>**「{{site.data.keyword.filestorage_short}}」**をクリックします。 右上の**「{{site.data.keyword.filestorage_short}} を注文」**をクリックします。
 2. **「ロケーション」**をクリックし、使用するデータ・センターを選択します。

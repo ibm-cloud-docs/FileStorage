@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-03-11"
 
-keywords:
+keywords: File Storage, file storage, NFS, replication, duplication, synchronous, replica schedule, replica space, disaster recovery
 
 subcollection: FileStorage
 
@@ -135,13 +135,13 @@ Puoi modificare la tua pianificazione della replica e modificare il tuo spazio d
 
 ## Modifica della pianificazione della replica
 
-La pianificazione della replica è basata su una pianificazione delle istantanee esistente. Per modificare la pianificazione della replica, ad esempio da Hourly a Weekly, devi annullare la pianificazione della replica e configurarne una nuova.
+La pianificazione della replica è basata su una pianificazione delle istantanee esistente. Per modificare la pianificazione della replica da Hourly a Daily o Weekly o viceversa, devi annullare il volume di replica e configurarne uno nuovo. 
 
-La modifica della pianificazione può essere effettuata nella scheda Primary o in quella Replica.
+Tuttavia, se vuoi modificare l'ora del giorno di quando si verifica la replica **Daily**, puoi modificare la pianificazione esistente sulla scheda Primary o Replica. 
 
 1. Fai clic su **Actions** nella scheda **Primary** o in quella **Replica**.
 2. Seleziona **Edit Snapshot Schedule**.
-3. Guarda nel frame **Snapshot** sotto **Schedule** per determinare quale pianificazione stai usando per la replica. Modifica la pianificazione che desideri. Ad esempio, se la tua pianificazione della replica è **Daily**, puoi modificare l'ora del giorno in cui deve essere eseguita la replica.
+3. Guarda nel frame **Snapshot** sotto **Schedule** per determinare quale pianificazione stai usando per la replica. Modifica la pianificazione che desideri.
 4. Fai clic su **Save**.
 
 

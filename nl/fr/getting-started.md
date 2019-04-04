@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-03-07"
 
-keywords:
+keywords: File Storage, file storage, NFS, provisioning, setup, configuration, mounting storage
 
 subcollection: FileStorage
 
@@ -17,7 +17,7 @@ subcollection: FileStorage
  {:shortdesc: .shortdesc}
 
 
-# Tutoriel d'initiation 
+# Tutoriel d'initiation
 {: #getting-started}
 
 {{site.data.keyword.filestorage_full}} est un système de stockage de fichiers {{site.data.keyword.filestorage_short}} NAS basé sur NFS, permanent, rapide et flexible. Cet environnement NAS vous permet d'avoir un contrôle total des fonctions et des performances de vos partages de fichiers. Les partages {{site.data.keyword.filestorage_short}} peuvent être connectés à un maximum de 64 unités autorisées via des connexions TCP/IP routées pour la résilience.
@@ -32,11 +32,11 @@ Les volumes {{site.data.keyword.filestorage_short}} peuvent être mis à disposi
 
 Pour en savoir plus sur l'offre {{site.data.keyword.filestorage_short}}, voir [A propos de {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-about)
 
-### Remarques sur la mise à disposition
+## Remarques sur la mise à disposition
 
-**Taille de bloc**
+### Taille de bloc
 
-Les IOPS pour les niveaux Endurance et Performance se fondent sur une taille de bloc de 16 Ko avec une charge de travail aléatoire de 50 % de lectures/écritures. Un bloc de 16 Ko équivaut à une écriture sur le volume.
+Les IOPS pour les niveaux Endurance et Performance se fondent sur une taille de bloc de 16 Ko avec une charge de travail aléatoire/séquentielle de 50/50 et de lecture/écriture de 50/50. Un bloc de 16 Ko équivaut à une écriture sur le volume.
 {:important}
 
 La taille de bloc utilisée par votre application a une incidence directe sur les performances de stockage. Si la taille de bloc employée par votre application est inférieure à 16 Ko, la limite des opérations d'entrée-sortie par seconde est atteinte avant la limite de débit. A l'inverse, si la taille de bloc qui est utilisée par votre application est supérieure à 16 Ko, la limite de débit est atteinte avant la limite des opérations d'entrée-sortie par seconde.
@@ -94,11 +94,11 @@ La taille de bloc utilisée par votre application a une incidence directe sur le
         </tbody>
 </table>
 
-**Hôtes autorisés**
+### Hôtes autorisés
 
 Un autre facteur à prendre en compte est le nombre d'hôtes qui utilisent votre volume. Si un seul hôte accède au volume, il peut s'avérer difficile de réaliser le nombre maximal d'IOPS disponible, surtout avec des nombres d'IOPS extrêmes (10 000). Si votre charge de travail requiert un débit élevé, il est préférable de configurer au moins deux serveurs pour accéder à votre volume afin d'éviter un goulot d'étranglement dû à un seul serveur.
 
-**Connexion réseau**
+### Connexion réseau
 
 La vitesse de votre connexion Ethernet doit être supérieure au débit maximal attendu de votre volume. En règle générale, vous ne devriez pas saturer votre connexion Ethernet au-delà de 70 % de la bande passante disponible. Par exemple, si vous disposez de 6 000 IOPS et que vous utilisez une taille de bloc de 16 Ko, le volume peut traiter un débit d'environ 94 Mo par seconde. Si vous disposez d'une connexion Ethernet de 1 Gbit/s
 vers votre numéro d'unité logique, vous rencontrez un goulot d'étranglement lorsque vos serveurs tentent d'utiliser le débit maximal disponible. Cela est dû au fait que 70 % de la limite théorique d'une connexion Ethernet de 1 Gbit/s (125 Mo par seconde) n'autorisent que 88 Mo par seconde.
@@ -107,7 +107,7 @@ Pour atteindre le nombre maximal d'IOPS, vous devez mettre en place les ressourc
 
 Le trafic de stockage est inclus dans l'utilisation réseau totale des serveurs virtuels publics. Pour plus d'informations sur les limites que peut imposer le service, voir la [documentation sur les serveurs virtuels](/docs/vsi?topic=virtual-servers-about-public-virtual-servers).
 
-**Version NFS**
+### Version NFS
 
 NFS version 3 et NFS version 4.1 sont pris en charge dans l'environnement {{site.data.keyword.BluSoftlayer_full}}. Toutefois, NFS version 3 est recommandé car NFS v4.1 est un protocole avec état (et non sans état comme NFS version 3) et des anomalies peuvent survenir lors des événements de réseau. NFS v4.1 doit mettre au repos toutes les opérations, puis effectuer la réclamation de verrou. Sur un serveur de fichiers relativement occupé, l'augmentation du temps d'attente peut entraîner une interruption. L'absence de fonctions de multi-accès et d'établissement de liaison dans NFS version 4.1 peut également allonger la reprise des opérations NFS.
 
@@ -128,4 +128,4 @@ Lorsque votre demande de mise à disposition est terminée, autorisez vos hôtes
 
 ## Gestion de votre nouveau stockage
 
-Via le portail ou l'interface SLCLI, vous pouvez gérer différents aspects de {{site.data.keyword.filestorage_short}} tels que les autorisations et annulations d'hôtes. Pour plus d'informations, voir [Gestion de {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-managingstorage).
+Via le portail ou l'interface SLCLI, vous pouvez gérer différents aspects de {{site.data.keyword.filestorage_short}}, tels que les autorisations et annulations d'hôtes. Pour plus d'informations, voir [Gestion de {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-managingstorage).

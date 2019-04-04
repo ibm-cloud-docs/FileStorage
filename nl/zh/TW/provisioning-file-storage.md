@@ -29,7 +29,7 @@ subcollection: FileStorage
 ## 訂購具有預先定義 IOPS 層級（耐久性）的 {{site.data.keyword.filestorage_short}}
 {: #endurance}
 
-1. 登入 [IBM Cloud 型錄](https://{DomainName}/catalog/){:new_window}，並按一下**儲存空間**。然後，選取 {{site.data.keyword.filestorage_short}}。按一下**建立**。
+1. 登入 [IBM Cloud 型錄](https://{DomainName}/catalog){:new_window}，並按一下**儲存空間**。然後，選取 {{site.data.keyword.filestorage_short}}。按一下**建立**。
 
    或者，您也可以登入 [{{site.data.keyword.slportal}} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://control.softlayer.com/){:new_window}，按一下**儲存空間** > **{{site.data.keyword.filestorage_short}}**。在右上方，按一下**訂購 {{site.data.keyword.filestorage_short}}**。
 2. 選取您的部署**位置**（資料中心）。
@@ -62,7 +62,7 @@ subcollection: FileStorage
 ## 訂購具有自訂 IOPS（效能）的 {{site.data.keyword.filestorage_short}}
 {: #performance}
 
-1. 登入 [IBM Cloud 型錄](https://{DomainName}/catalog/){:new_window}，並按一下**儲存空間**。然後，選取 {{site.data.keyword.filestorage_short}}。按一下**建立**。
+1. 登入 [IBM Cloud 型錄](https://{DomainName}/catalog){:new_window}，並按一下**儲存空間**。然後，選取 {{site.data.keyword.filestorage_short}}。按一下**建立**。
 
    或者，您也可以登入 [{{site.data.keyword.slportal}} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://control.softlayer.com/){:new_window}，按一下**儲存空間** > **{{site.data.keyword.filestorage_short}}**。在右上方，按一下**訂購 {{site.data.keyword.filestorage_short}}**。
 2. 按一下**位置**，然後選取資料中心。

@@ -27,7 +27,7 @@ subcollection: FileStorage
 권한 부여된 호스트 및 볼륨은 동일한 데이터 센터에 있어야 합니다. 예를 들어 복제본 볼륨은 런던에 두고 호스트는 암스테르담에 둘 수는 없습니다. 둘 다 런던에 있거나 둘 다 암스테르담에 있어야 합니다.
 {:note}
 
-1. [{{site.data.keyword.cloud}} 콘솔 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://{DomainName}/catalog/){:new_window}에 로그인하고 왼쪽 상단에서 **메뉴** 아이콘을 클릭하십시오. **일반 인프라**를 선택하십시오.
+1. [{{site.data.keyword.cloud}} 콘솔 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://{DomainName}/catalog){:new_window}에 로그인하고 왼쪽 상단에서 **메뉴** 아이콘을 클릭하십시오. **일반 인프라**를 선택하십시오.
 
    또는 [{{site.data.keyword.slportal}} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://control.softlayer.com/){:new_window}에 로그인할 수 있습니다.
 1. **{{site.data.keyword.filestorage_short}}** 페이지에서 소스 또는 대상 볼륨을 클릭하십시오.

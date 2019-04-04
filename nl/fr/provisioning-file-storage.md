@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
-keywords:
+keywords: File Storage, file storage, NFS, provisioning, ordering,
 
 subcollection: FileStorage
 
@@ -29,7 +29,7 @@ Vous pouvez mettre à disposition {{site.data.keyword.filestorage_short}} et l'a
 ## Commande de {{site.data.keyword.filestorage_short}} avec des niveaux d'IOPS prédéfinis (Endurance)
 {: #endurance}
 
-1. Connectez-vous au [catalogue IBM Cloud](https://{DomainName}/catalog/){:new_window}, puis cliquez sur **Stockage**. Ensuite, sélectionnez {{site.data.keyword.filestorage_short}}. Cliquez sur **Créer**.
+1. Connectez-vous au [catalogue IBM Cloud](https://{DomainName}/catalog){:new_window}, puis cliquez sur **Stockage**. Ensuite, sélectionnez {{site.data.keyword.filestorage_short}}. Cliquez sur **Créer**.
 
    Vous pouvez également vous connecter au portail [{{site.data.keyword.slportal}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://control.softlayer.com/){:new_window}, puis cliquer sur **Stockage** > **{{site.data.keyword.filestorage_short}}**. Dans l'angle supérieur droit, cliquez sur **Commander {{site.data.keyword.filestorage_short}}**.
 2. Sélectionnez l'**emplacement** de votre déploiement (centre de données).
@@ -61,7 +61,7 @@ Par défaut, vous pouvez mettre à disposition un total combiné de 250 volumes 
 ## Commande de {{site.data.keyword.filestorage_short}} avec un nombre d'IOPS personnalisé (Performance)
 {: #performance}
 
-1. Connectez-vous au [catalogue IBM Cloud](https://{DomainName}/catalog/){:new_window}, puis cliquez sur **Stockage**. Ensuite, sélectionnez {{site.data.keyword.filestorage_short}}. Cliquez sur **Créer**.
+1. Connectez-vous au [catalogue IBM Cloud](https://{DomainName}/catalog){:new_window}, puis cliquez sur **Stockage**. Ensuite, sélectionnez {{site.data.keyword.filestorage_short}}. Cliquez sur **Créer**.
 
    Vous pouvez également vous connecter au portail [{{site.data.keyword.slportal}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://control.softlayer.com/){:new_window}, puis cliquer sur **Stockage** > **{{site.data.keyword.filestorage_short}}**. Dans l'angle supérieur droit, cliquez sur **Commander {{site.data.keyword.filestorage_short}}**.
 2. Cliquez sur **Emplacement** et sélectionnez votre centre de données.

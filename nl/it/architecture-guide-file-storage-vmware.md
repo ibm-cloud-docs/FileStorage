@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
-keywords:
+keywords: File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
 subcollection: FileStorage
 
@@ -118,7 +118,7 @@ VMware vSphere on Network Attached Storage ![Icona link esterno](../../icons/lau
 
 Per utilizzare le istantanee è necessario lo spazio per le istantanee. Lo spazio può essere acquistato durante l'ordine dei volumi iniziale e dopo il provisioning iniziale tramite la pagina **Volume Details** facendo clic su **Actions** e selezionando **Add Snapshot Space**.
 
-È importare notare che gli ambienti VMware non rilevano le istantanee. La funzionalità di istantanea di {{site.data.keyword.filestorage_short}} Endurance non deve essere confusa con le istantanee VMware. Qualsiasi ripristino che utilizza la funzione di istantanea di {{site.data.keyword.filestorage_short}} deve essere gestito dal [{{site.data.keyword.slportal}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://control.softlayer.com/){:new_window}.
+È importare notare che gli ambienti VMware non rilevano le istantanee. La funzionalità di istantanea di {{site.data.keyword.filestorage_short}} non deve essere confusa con le istantanee VMware. Qualsiasi ripristino che utilizza la funzione di istantanea di {{site.data.keyword.filestorage_short}} deve essere gestito dal [{{site.data.keyword.slportal}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://control.softlayer.com/){:new_window}.
 
 Il ripristino del volume di {{site.data.keyword.filestorage_short}} richiede lo spegnimento di tutte le macchine virtuali (VM, Virtual Machine) in {{site.data.keyword.filestorage_short}}. Il volume deve essere temporaneamente smontato dagli host ESXi per evitare eventuali danneggiamenti di dati durante il processo.
 
@@ -153,7 +153,7 @@ I dati non validi, non importa se danneggiati, oggetto di attacchi o infettati, 
 
 Utilizza la [Advanced Single-Site VMware Reference Architecture ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} per configurare {{site.data.keyword.filestorage_short}} con le opzioni Endurance o Performance nel tuo ambiente VMware.
 
-{{site.data.keyword.filestorage_short}} può essere ordinato tramite il [catalogo IBM Cloud ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://{DomainName}/catalog/){:new_window} oppure il [{{site.data.keyword.slportal}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://control.softlayer.com/){:new_window}. Per ulteriori informazioni, vedi [Ordinazione di {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)
+{{site.data.keyword.filestorage_short}} può essere ordinato tramite il [catalogo IBM Cloud ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://{DomainName}/catalog){:new_window} oppure il [{{site.data.keyword.slportal}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://control.softlayer.com/){:new_window}. Per ulteriori informazioni, vedi [Ordinazione di {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)
 
 Il provisioning dell'archiviazione viene eseguito in meno di un minuto e diventa visibile nella pagina **{{site.data.keyword.filestorage_short}}** del [{{site.data.keyword.slportal}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://control.softlayer.com/){:new_window}.
 

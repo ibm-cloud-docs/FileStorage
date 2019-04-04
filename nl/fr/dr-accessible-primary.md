@@ -4,7 +4,7 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-02-05"
 
-keywords:
+keywords: File Storage, file storage, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
 subcollection: FileStorage
 
@@ -27,7 +27,7 @@ Avant de lancer le basculement, vérifiez que toutes les autorisations d'hôte s
 Les hôtes et les volumes autorisés doivent figurer dans le même centre de données. Par exemple, vous ne pouvez pas avoir un volume de réplique à Londres et un hôte à Amsterdam. Ils doivent se trouver tous les deux à Londres ou à Amsterdam.
 {:note}
 
-1. Connectez-vous à la [console {{site.data.keyword.cloud}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://{DomainName}/catalog/){:new_window} et cliquez sur l'icône **Menu** dans l'angle supérieur gauche. Sélectionnez **Infrastructure classique**.
+1. Connectez-vous à la [console {{site.data.keyword.cloud}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://{DomainName}/catalog){:new_window} et cliquez sur l'icône **Menu** dans l'angle supérieur gauche. Sélectionnez **Infrastructure classique**.
 
 
    Vous pouvez également vous connecter au portail [{{site.data.keyword.slportal}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://control.softlayer.com/){:new_window}.
@@ -35,7 +35,7 @@ Les hôtes et les volumes autorisés doivent figurer dans le même centre de don
 2. Cliquez sur **Réplique**.
 3. Faites défiler l'écran vers le bas jusqu'au cadre **Autoriser les hôtes** et cliquez sur **Autoriser les hôtes** à droite.
 4. Mettez en évidence l'hôte qui doit être autorisé pour les réplications. Pour sélectionner plusieurs hôtes, utilisez la touche ctrl et cliquez sur les hôtes concernés.
-5. Cliquez sur **Soumettre**. En l'absence d'hôte, vous êtes invité à acheter des ressources de traitement dans le même centre de données.
+5. Cliquez sur **Soumettre**. En l'absence d'hôte, vous êtes invité à acheter des ressources de calcul dans le même centre de données.
 
 ## Démarrage d'un basculement depuis un volume vers sa réplique
 

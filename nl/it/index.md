@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-27"
+lastupdated: "2019-03-14"
 
-keywords: File Storage, Endurance, Performance, IOPS, replication, billing
+keywords: File Storage, Endurance, Performance, IOPS, replication, billing, file storage, NFS,
 
 subcollection: FileStorage
 
@@ -130,7 +130,7 @@ La scelta del livello Endurance corretto per il tuo carico di lavoro è un fatto
 
 Performance è una classe di {{site.data.keyword.filestorage_short}} progettata per supportare applicazioni a elevato I/O con requisiti di prestazioni chiari che mal si adattano in un livello Endurance. Delle prestazioni prevedibili si raggiungono tramite l'allocazione di IOPS a livello di protocollo ai singoli volumi. È possibile eseguire il provisioning di diversi tassi di IOPS (da 100 a 48.000) con delle dimensioni dell'archiviazione che vanno da 20 GB a 12 TB.
 
-A Performance per {{site.data.keyword.filestorage_short}} si accede, e viene montato, tramite una connessione NFS (Network File System). {{site.data.keyword.filestorage_short}} viene di norma utilizzato quando al volume accedono più server simultaneamente. Dei volumi Performance congruenti possono essere ordinati in base alle dimensioni e all'IOPS nella Tabella 1 e possono essere utilizzati con i sistemi operativi Linux.
+A Performance per {{site.data.keyword.filestorage_short}} si accede, e viene montato, tramite una connessione NFS (Network file system). {{site.data.keyword.filestorage_short}} viene di norma utilizzato quando al volume accedono più server simultaneamente. Dei volumi Performance congruenti possono essere ordinati in base alle dimensioni e all'IOPS nella Tabella 1 e possono essere utilizzati con i sistemi operativi Linux.
 
 <table cellpadding="1" cellspacing="1" style="width: 99%;">
  <caption>La tabella 3 mostra le combinazioni di dimensione e IOPS per l'archiviazione Performance.<br/><sup><img src="/images/numberone.png" alt="Nota a piè di pagina" /></sup> Dei limiti IOPS superiori a 6000 sono disponibili in data center selezionati.</caption>
@@ -177,27 +177,27 @@ A Performance per {{site.data.keyword.filestorage_short}} si accede, e viene mon
           <tr>
             <td>1.000</td>
             <td>100</td>
-            <td>6,000 o 20,000<sup><img src="/images/numberone.png" alt="Nota a piè di pagina" /></sup></td>
+            <td>6.000 o 20.000<sup><img src="/images/numberone.png" alt="Nota a piè di pagina" /></sup></td>
           </tr>
           <tr>
-            <td>2.000-3.000</td>
+            <td>2.000</td>
             <td>200</td>
-            <td>6,000 o 40,000<sup><img src="/images/numberone.png" alt="Nota a piè di pagina" /></sup></td>
+            <td>6.000 o 40.000<sup><img src="/images/numberone.png" alt="Nota a piè di pagina" /></sup></td>
           </tr>
           <tr>
-            <td>4.000-7.000</td>
+            <td>3.000-7.000</td>
             <td>300</td>
-            <td>6,000 o 48,000<sup><img src="/images/numberone.png" alt="Nota a piè di pagina" /></sup></td>
+            <td>6.000 o 48.000<sup><img src="/images/numberone.png" alt="Nota a piè di pagina" /></sup></td>
           </tr>
           <tr>
             <td>8.000-9.000</td>
             <td>500</td>
-            <td>6,000 o 48,000<sup><img src="/images/numberone.png" alt="Nota a piè di pagina" /></sup></td>
+            <td>6.000 o 48.000<sup><img src="/images/numberone.png" alt="Nota a piè di pagina" /></sup></td>
           </tr>
           <tr>
             <td>10.000-12.000</td>
             <td>1.000</td>
-            <td>6,000 o 48,000<sup><img src="/images/numberone.png" alt="Nota a piè di pagina" /></sup></td>
+            <td>6.000 o 48.000<sup><img src="/images/numberone.png" alt="Nota a piè di pagina" /></sup></td>
           </tr>
 </table>
 

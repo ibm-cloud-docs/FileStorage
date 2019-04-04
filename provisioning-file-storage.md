@@ -29,7 +29,7 @@ You can provision {{site.data.keyword.filestorage_short}} and fine-tune to meet 
 ## Ordering {{site.data.keyword.filestorage_short}} with pre-defined IOPS Tiers (Endurance)
 {: #endurance}
 
-1. Log in to [The IBM Cloud catalog](https://{DomainName}/catalog/){:new_window} and click **Storage**. Then, select {{site.data.keyword.filestorage_short}}. Click **Create**.
+1. Log in to [The IBM Cloud catalog](https://{DomainName}/catalog){:new_window} and click **Storage**. Then, select {{site.data.keyword.filestorage_short}}. Click **Create**.
 
    Alternatively, you can log in to the [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} }, click **Storage** > **{{site.data.keyword.filestorage_short}}**. In the upper right, click **Order {{site.data.keyword.filestorage_short}}**.
 2. Select your deployment **Location** (data center).
@@ -61,7 +61,7 @@ By default, you can provision a combined total of 250 {{site.data.keyword.blocks
 ## Ordering {{site.data.keyword.filestorage_short}} with custom IOPS (Performance)
 {: #performance}
 
-1. Log in to [The IBM Cloud catalog](https://{DomainName}/catalog/){:new_window} and click **Storage**. Then, select {{site.data.keyword.filestorage_short}}. Click **Create**.
+1. Log in to [The IBM Cloud catalog](https://{DomainName}/catalog){:new_window} and click **Storage**. Then, select {{site.data.keyword.filestorage_short}}. Click **Create**.
 
    Alternatively, you can log in to the [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} }, click **Storage** > **{{site.data.keyword.filestorage_short}}**. In the upper right, click **Order {{site.data.keyword.filestorage_short}}**.
 2. Click **Location** and select your data center.

@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-05"
 
-keywords:
+keywords: File Storage, NSF, SLCLI, API
 
 subcollection: FileStorage
 
@@ -19,12 +19,12 @@ subcollection: FileStorage
 # Comandi SLCLI per {{site.data.keyword.filestorage_short}}
 {: #SLCLIcommands}
 
-Puoi utilizzare la SLCLI per effettuare delle azioni come ad esempio l'inserimento di ordini per nuovi volumi, spazio dell'istantanea e replica, l'aggiornamento delle autorizzazioni, l'annullamento dei volumi e così via in modo che venga tutto gestito normalmente tramite [{{site.data.keyword.slportal}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://control.softlayer.com/){:new_window}.
+Puoi utilizzare la SLCLI per eseguire delle azioni che vengono normalmente gestite tramite il [{{site.data.keyword.slportal}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://control.softlayer.com/){:new_window}. Ad esempio, con la SLCLI puoi inserire degli ordini per nuovi volumi, replica e spazio di instantanea, aggiornare le autorizzazioni, eliminare i volumi e così via.
 
 Per ulteriori informazioni su come installare e utilizzare la SLCLI, vedi [Python API Client ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://softlayer-python.readthedocs.io/en/latest/cli.html){:new_window}.
 {:tip}
 
-## Comandi SLCLI correlati all'accesso
+## Comandi SLCLI correlati all'accesso 
 * [Gestione di {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-managingstorage)  
   ```
   slcli file access-authorize
@@ -32,9 +32,9 @@ Per ulteriori informazioni su come installare e utilizzare la SLCLI, vedi [Pytho
   slcli file access-revoke
   ```
 
-## Comandi SLCLI correlati alla replica
+## Comandi SLCLI correlati alla replica 
 
-* [Comandi SLCLI correlati alla replica](/docs/infrastructure/FileStorage?topic=FileStorage-replication#clicommands)
+* [Comandi SLCLI correlati alla replica ](/docs/infrastructure/FileStorage?topic=FileStorage-replication#clicommands)
   ```
   slcli file replica-failback
   slcli file replica-failover
@@ -43,7 +43,7 @@ Per ulteriori informazioni su come installare e utilizzare la SLCLI, vedi [Pytho
   slcli file replica-partners
   ```
 
-## Comandi SLCLI correlati all'istantanea
+## Comandi SLCLI correlati alle istantanee 
 
 * [Ordinazione di istantanee](/docs/infrastructure/FileStorage?topic=FileStorage-ordering-snapshots)
   ```
@@ -61,7 +61,7 @@ Per ulteriori informazioni su come installare e utilizzare la SLCLI, vedi [Pytho
   slcli file snapshot-restore
   ```
 
-## Comandi SLCLI correlati al volume
+## Comandi SLCLI correlati al volume 
 
 * [Ordinazione di un volume {{site.data.keyword.filestorage_short}} ](/docs/infrastructure/FileStorage?topic=FileStorage-orderingSLCLI)
 * [Creazione di un volume duplicato](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume)

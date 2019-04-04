@@ -27,7 +27,7 @@ subcollection: FileStorage
 已授权的主机和卷必须位于同一数据中心内。例如，您不能使副本卷位于伦敦，而使主机位于阿姆斯特丹。副本卷和主机必须都位于伦敦，或者都位于阿姆斯特丹。
 {:note}
 
-1. 登录到 [{{site.data.keyword.cloud}} 控制台 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://{DomainName}/catalog/){:new_window}，然后单击左上角的**菜单**图标。选择**经典基础架构**。
+1. 登录到 [{{site.data.keyword.cloud}} 控制台 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://{DomainName}/catalog){:new_window}，然后单击左上角的**菜单**图标。选择**经典基础架构**。
 
 
    或者，您可以登录到 [{{site.data.keyword.slportal}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window}。

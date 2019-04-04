@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-02-22"
 
-keywords:
+keywords: File Storage, NSF, mounting File Storage, mounting storage on Linux,
 
 subcollection: FileStorage
 
@@ -41,7 +41,7 @@ Options:
 
 ## Montage du partage {{site.data.keyword.filestorage_short}}
 
-Utilisez les instructions décrites ci-après pour connecter une instance de traitement {{site.data.keyword.BluSoftlayer_full}} à un partage NFS (Network File System). L'exemple repose sur Red Hat Enterprise Linux 6. Il est possible d'adapter les étapes pour d'autres distributions Linux en fonction de la documentation du fournisseur du système d'exploitation.
+Utilisez les instructions décrites ci-après pour connecter une instance de calcul {{site.data.keyword.BluSoftlayer_full}} basée sur Linux à un partage NFS (Network File System). L'exemple repose sur Red Hat Enterprise Linux 6. Il est possible d'adapter les étapes pour d'autres distributions Linux en fonction de la documentation du fournisseur du système d'exploitation.
 
 Le point de montage de l'instance File Storage peut être obtenu sur la page de la liste de {{site.data.keyword.filestorage_short}} ou via un appel API : `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 {:tip}
@@ -108,9 +108,8 @@ Le point de montage de l'instance File Storage peut être obtenu sur la page de 
 
    Si vous utilisez NFS 4.1, ajoutez `sec=sys` à la commande mount pour prévenir tout problème lié à la propriété des fichiers.
    {:tip}
-   
+
    Si votre système d'exploitation hôte est CentOS, vous pouvez configurer des options supplémentaires. Pour plus d'informations, voir [Montage de {{site.data.keyword.filestorage_short}} dans CentOS](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS).
-   {:tip}
 
 
 ## Implémentation de `no_root_squash` pour NFS (facultatif)

@@ -151,7 +151,7 @@ subcollection: FileStorage
 
 使用[進階單一 VMware 參照架構 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}，在 VMWare 環境中設定採用「耐久性」或「效能」選項的 {{site.data.keyword.filestorage_short}}。
 
-{{site.data.keyword.filestorage_short}} 可透過 [IBM Cloud 型錄 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://{DomainName}/catalog/){:new_window} 或 [{{site.data.keyword.slportal}} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://control.softlayer.com/){:new_window} 來訂購。如需相關資訊，請參閱[訂購 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)
+{{site.data.keyword.filestorage_short}} 可透過 [IBM Cloud 型錄 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://{DomainName}/catalog){:new_window} 或 [{{site.data.keyword.slportal}} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://control.softlayer.com/){:new_window} 來訂購。如需相關資訊，請參閱[訂購 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)
 
 儲存空間不到一分鐘即可佈建完成，並顯示在 [{{site.data.keyword.slportal}} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://control.softlayer.com/){:new_window} 的 **{{site.data.keyword.filestorage_short}}** 頁面上。
 
