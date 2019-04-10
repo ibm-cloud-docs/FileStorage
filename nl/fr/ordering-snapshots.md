@@ -19,6 +19,7 @@ subcollection: FileStorage
 
 
 # Commande d'instantanés
+{: #ordering-snapshots}
 
 Pour créer des instantanés de votre volume de stockage, que ce soit de manière automatisée ou manuelle, vous devez acheter de l'espace dans lequel les conserver. Vous pouvez acquérir une capacité maximale pouvant atteindre la quantité de votre volume de stockage (lors de l'achat initial du volume ou ultérieurement en suivant les étapes ci-après).
 

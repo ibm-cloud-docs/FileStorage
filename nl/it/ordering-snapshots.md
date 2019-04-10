@@ -19,6 +19,7 @@ subcollection: FileStorage
 
 
 # Ordinazione di istantanee
+{: #ordering-snapshots}
 
 Per creare le istantanee del tuo volume di archiviazione, in modo automatizzato o manualmente, devi acquistare dello spazio per contenerle. Puoi acquistare capacità fino alla tua quantità di volume di archiviazione (durante l'acquisto di volume iniziale e successivamente attenendoti a questa procedura).
 

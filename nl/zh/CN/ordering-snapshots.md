@@ -19,6 +19,7 @@ subcollection: FileStorage
 
 
 # 订购快照
+{: #ordering-snapshots}
 
 为了自动或手动创建存储卷的快照，您需要购买空间来保存快照。可以购买的最高容量等于存储卷容量（在初始卷购买期间或之后使用以下步骤）。
 

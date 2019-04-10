@@ -19,6 +19,7 @@ subcollection: FileStorage
 
 
 # 訂購 Snapshot
+{: #ordering-snapshots}
 
 若要自動或手動建立儲存空間磁區的 Snapshot，您需要購買空間來存放它們。您可以購買最多達到儲存空間磁區量的容量（在起始磁區購買期間或之後使用以下步驟購買）。
 

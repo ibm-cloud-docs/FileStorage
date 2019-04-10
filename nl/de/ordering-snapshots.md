@@ -19,6 +19,7 @@ subcollection: FileStorage
 
 
 # Snapshots bestellen
+{: #ordering-snapshots}
 
 Zum automatischen oder manuellen Erstellen von Snapshots Ihres Speicherdatenträgers müssen Sie Speicherbereich kaufen, um diese Snapshots aufzubewahren. Sie können Kapazität bis zur Größe Ihres Speicherdatenträgers kaufen (beim Erstkauf des Datenträgers oder später mithilfe der folgenden Schritte).
 

@@ -19,6 +19,7 @@ subcollection: FileStorage
 
 
 # Solicitando capturas instantâneas
+{: #ordering-snapshots}
 
 Para criar capturas instantâneas de seu volume de armazenamento, seja automaticamente ou manualmente, é necessário comprar espaço para mantê-las. É possível comprar capacidade até a sua quantia de volume de armazenamento (durante a compra de volume inicial ou posteriormente usando essas etapas).
 

@@ -19,6 +19,7 @@ subcollection: FileStorage
 
 
 # Solicitud de instantáneas
+{: #ordering-snapshots}
 
 Para crear instantáneas de su volumen de almacenamiento, automática o manualmente, necesita adquirir espacio para mantenerlas. Puede adquirir capacidad hasta la cantidad de su volumen de almacenamiento (durante la adquisición del volumen inicial o posteriormente siguiendo estos pasos).
 
