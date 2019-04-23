@@ -42,7 +42,7 @@ IOPS for both Endurance and Performance is based on a 16-KB block size with a 50
 The block size that is used by your application directly impacts the storage performance. If the block size that is used by your application is smaller than 16 KB, the IOPS limit is realized before the throughput limit. Conversely, if the block size that is used by your application is larger than 16 KB, the throughput limit is realized before to the IOPS limit.
 
 <table>
-  <caption>Table 4 shows examples of how block size and IOPS affect the throughput.</caption>
+  <caption>Table 1 shows examples of how block size and IOPS affect the throughput.</caption>
         <colgroup>
           <col/>
           <col/>
