@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-03-07"
+lastupdated: "2019-05-02"
 
 keywords: File Storage, file storage, NFS, provisioning, setup, configuration, mounting storage
 
@@ -89,6 +89,11 @@ O tamanho do bloco usado por seu aplicativo afetará diretamente o desempenho do
           <tr>
             <td>512</td>
             <td>32</td>
+            <td>16</td>
+          </tr>
+          <tr>
+            <td>1024</td>
+            <td>16</td>
             <td>16</td>
           </tr>
         </tbody>

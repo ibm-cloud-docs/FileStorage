@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-03-07"
+lastupdated: "2019-05-02"
 
 keywords: File Storage, file storage, NFS, provisioning, setup, configuration, mounting storage
 
@@ -34,7 +34,7 @@ Per ulteriori informazioni sull'offerta {{site.data.keyword.filestorage_short}},
 
 ## Considerazioni sul provisioning
 
-### Dimensione blocco 
+### Dimensione blocco
 
 IOPS sia per Endurance che per Performance è basato su una dimensione di blocco di 16-KB con un carico di lavoro casuale/sequenziale al 50/50 e con lettura/scrittura al 50/50. Un blocco di 16-KB è l'equivalente di una scrittura sul volume.
 {:important}
@@ -91,14 +91,19 @@ La dimensione del blocco utilizzata dalla tua applicazione influisce direttament
             <td>32</td>
             <td>16</td>
           </tr>
+          <tr>
+            <td>1024</td>
+            <td>16</td>
+            <td>16</td>
+          </tr>
         </tbody>
 </table>
 
-### Host autorizzati 
+### Host autorizzati
 
 Un altro fattore da considerare è il numero di host che sta utilizzando il tuo volume. Se c'è un singolo host che sta accedendo al volume, potrebbe essere difficile realizzare l'IOPS massimo disponibile, soprattutto a conteggi IOPS estremi (nell'ordine delle decine di migliaia). Se il tuo carico di lavoro richiede una velocità effettiva elevata, sarebbe meglio configurare almeno un paio di server che accedono al tuo volume per evitare un collo di bottiglia di un singolo server.
 
-### Connessione di rete 
+### Connessione di rete
 
 La velocità della tua connessione Ethernet deve essere superiore a quella effettiva massima prevista dal tuo volume. In generale, non prevedere di saturare la tua connessione Ethernet oltre il 70% della larghezza di banda disponibile. Ad esempio, se hai 6.000 IOPS e stai utilizzando una dimensione del blocco di 16-KB, il volume può gestire una velocità effettiva di circa 94-MBps. Se hai una connessione Ethernet da 1-Gbps al tuo LUN, diventa un collo di bottiglia quando i tuoi server provano a utilizzare la velocità effettiva massima disponibile. Ciò è dovuto al fatto che il 70 percento del limite teorico di una connessione Ethernet da 1-Gbps (125 MB al secondo) consentirebbe solo 88 MB al secondo.
 
@@ -106,7 +111,7 @@ Per raggiungere l'IOPS massimo, è necessario che siano implementate delle risor
 
 Il traffico di archiviazione viene incluso nell'utilizzo di rete totale dei server virtuali pubblici. Per ulteriori informazioni sui limiti che potrebbero essere imposti dal servizio, vedi la [documentazione del Virtual Server](/docs/vsi?topic=virtual-servers-about-public-virtual-servers).
 
-### Versione NFS 
+### Versione NFS
 
 Nell'ambiente {{site.data.keyword.BluSoftlayer_full}} sono supportati sia NFS v3 che NFS v4.1. Tuttavia, NFS v3 è preferito perché NFS v4.1 è un protocollo con stato (non senza stato come NFSv3) e durante gli eventi di rete potrebbero verificarsi dei problemi di protocollo. NFS v4.1 deve disattivare tutte le operazioni e quindi completare un recupero del blocco. Su un server di file NFS relativamente occupato, l'aumentata latenza può causare interruzioni del servizio. La mancanza di multipercorso e trunking NFS v4.1 può anche estendere il ripristino di uno stato normale delle operazioni NFS.
 
