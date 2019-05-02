@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-03-07"
+lastupdated: "2019-05-02"
 
 keywords: File Storage, file storage, NFS, provisioning, setup, configuration, mounting storage
 
@@ -36,13 +36,13 @@ For more information about the {{site.data.keyword.filestorage_short}} offering,
 
 ### Block size
 
-IOPS for both Endurance and Performance is based on a 16-KB block size with a 50/50 read/write 50/50 random/sequential workload. A 16-KB block is the equivalent of one write to the volume.
+The IOPS value for both Endurance and Performance is based on a 16-KB block size with a 50/50 read/write 50/50 random/sequential workload. A 16-KB block is the equivalent of one write to the volume.
 {:important}
 
 The block size that is used by your application directly impacts the storage performance. If the block size that is used by your application is smaller than 16 KB, the IOPS limit is realized before the throughput limit. Conversely, if the block size that is used by your application is larger than 16 KB, the throughput limit is realized before to the IOPS limit.
 
 <table>
-  <caption>Table 1 shows examples of how block size and IOPS affect the throughput.</caption>
+  <caption>Table 1 shows examples of how block size and IOPS affect the throughput.<br/>Average IO size x IOPS = Throughput in MB/s</caption>
         <colgroup>
           <col/>
           <col/>
@@ -89,6 +89,11 @@ The block size that is used by your application directly impacts the storage per
           <tr>
             <td>512</td>
             <td>32</td>
+            <td>16</td>
+          </tr>
+          <tr>
+            <td>1024</td>
+            <td>16</td>
             <td>16</td>
           </tr>
         </tbody>
