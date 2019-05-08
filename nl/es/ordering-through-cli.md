@@ -20,7 +20,7 @@ subcollection: FileStorage
 
 Puede utilizar SLCLI para realizar pedidos de productos que normalmente se solicitan a través del [{{site.data.keyword.slportal}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){:new_window}. En la API de SL, un pedido puede consistir en varios contenedores de pedidos. La CLI de pedidos funciona con un solo contenedor de pedidos.
 
-Para obtener más información sobre cómo instalar y utilizar SLCLI, consulte [Cliente de API de Python ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://softlayer-python.readthedocs.io/en/latest/cli.html){:new_window}.
+Para obtener más información sobre cómo instalar y utilizar SLCLI, consulte [Cliente de API de Python ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://softlayer-python.readthedocs.io/en/latest/cli/){:new_window}.
 {:tip}
 
 ## Búsqueda de las ofertas disponibles de {{site.data.keyword.filestorage_short}}
@@ -93,7 +93,7 @@ Opciones:
   -h, --help                      Mostrar este mensaje y salir.
 ```
 
-Para obtener más información sobre cómo solicitar {{site.data.keyword.filestorage_short}} a través de la API, consulte [order_file_volume ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://softlayer-python.readthedocs.io/en/latest/api/managers/file.html#SoftLayer.managers.file.FileStorageManager.order_file_volume){:new_window}.
+Para obtener más información sobre cómo solicitar {{site.data.keyword.filestorage_short}} a través de la API, consulte [order_file_volume ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://softlayer-python.readthedocs.io/en/latest/api/managers/file/#SoftLayer.managers.file.FileStorageManager.order_file_volume){:new_window}.
 Para poder acceder a todas las nuevas características, solicite `el paquete 759 de almacenamiento como servicio`.
 {:tip}
 
@@ -133,7 +133,7 @@ Opciones:
   --help                    Mostrar este mensaje y salir.
 ```
 
-Para obtener más información sobre la autorización de los hosts para acceder a {{site.data.keyword.filestorage_short}} mediante la API, consulte [authorize_host_to_volume ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://softlayer-python.readthedocs.io/en/latest/api/managers/file.html#SoftLayer.managers.file.FileStorageManager.authorize_host_to_volume){:new_window}
+Para obtener más información sobre la autorización de los hosts para acceder a {{site.data.keyword.filestorage_short}} mediante la API, consulte [authorize_host_to_volume ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://softlayer-python.readthedocs.io/en/latest/api/managers/file/#SoftLayer.managers.file.FileStorageManager.authorize_host_to_volume){:new_window}
 {:tip}
 
 Para obtener más información sobre el límite de autorizaciones simultáneas, consulte las [Preguntas más frecuentes](/docs/infrastructure/FileStorage?topic=FileStorage-faqs).

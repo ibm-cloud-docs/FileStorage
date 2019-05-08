@@ -21,7 +21,7 @@ subcollection: FileStorage
 
 您可以使用 SLCLI 来执行通常通过 [{{site.data.keyword.slportal}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window} 处理的操作。例如，您可以使用 SLCLI 为新卷、快照空间和复制、更新授权、取消卷等下订单。
 
-有关如何安装和使用 SLCLI 的更多信息，请参阅 [Python API 客户机 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://softlayer-python.readthedocs.io/en/latest/cli.html){:new_window}。
+有关如何安装和使用 SLCLI 的更多信息，请参阅 [Python API 客户机 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://softlayer-python.readthedocs.io/en/latest/cli/){:new_window}。
 {:tip}
 
 ## 访问相关的 SLCLI 命令

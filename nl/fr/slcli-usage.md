@@ -21,7 +21,7 @@ subcollection: FileStorage
 
 Vous pouvez utiliser l'interface SLCLI pour effectuer des actions normalement gérées via le portail [{{site.data.keyword.slportal}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://control.softlayer.com/){:new_window}. Par exemple, avec l'interface SLCLI vous pouvez passer des commandes de nouveaux volumes, d'espace d'instantané et de réplication, mettre à jour des autorisations, annuler des volumes, etc.
 
-Pour plus d'informations sur l'installation et l'utilisation de l'interface SLCLI, voir [Client API Python ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://softlayer-python.readthedocs.io/en/latest/cli.html){:new_window}.
+Pour plus d'informations sur l'installation et l'utilisation de l'interface SLCLI, voir [Client API Python ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://softlayer-python.readthedocs.io/en/latest/cli/){:new_window}.
 {:tip}
 
 ## Commandes SLCLI liées aux accès

@@ -106,7 +106,7 @@ The new {{site.data.keyword.filestorage_short}} is available in following region
 
 All enhanced {{site.data.keyword.filestorage_short}} volumes that are provisioned in these data centers have a different mount point than non-encrypted volumes. To ensure you're using the correct mount point for both storage volumes, you can view the mount point information in the **Volume Details** page in the console. You can also access the correct mount point through an API call: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 
-To be able to access all the new features, select `Storage-as-a-Service Package 759` when you place your order through the API. For more information about ordering {{site.data.keyword.filestorage_short}} through the API, see [order_file_volume ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://softlayer-python.readthedocs.io/en/latest/api/managers/file.html#SoftLayer.managers.file.FileStorageManager.order_file_volume){:new_window}.
+To be able to access all the new features, select `Storage-as-a-Service Package 759` when you place your order through the API. For more information about ordering {{site.data.keyword.filestorage_short}} through the API, see [order_file_volume ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://softlayer-python.readthedocs.io/en/latest/api/managers/file/#SoftLayer.managers.file.FileStorageManager.order_file_volume){:new_window}.
 {:important}
 
 Check back here to see when more data centers are upgraded and for new features and capabilities that are being added for {{site.data.keyword.filestorage_short}}.

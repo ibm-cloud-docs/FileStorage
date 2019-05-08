@@ -21,7 +21,7 @@ subcollection: FileStorage
 
 You can use the SLCLI to take actions that are normally handled through the [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}. For example, with SLCLI you can place orders for new volumes, snapshot space and replication, update authorizations, cancel volumes, and so on.
 
-For more information about how to install and use the SLCLI, see [Python API Client ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://softlayer-python.readthedocs.io/en/latest/cli.html){:new_window}.
+For more information about how to install and use the SLCLI, see [Python API Client ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://softlayer-python.readthedocs.io/en/latest/cli/){:new_window}.
 {:tip}
 
 ## Access-related SLCLI commands

@@ -106,7 +106,7 @@ TOK02<br />
 
 这些数据中心内供应的所有增强型 {{site.data.keyword.filestorage_short}} 卷的安装点与非加密卷不同。要确保对两个存储卷使用正确的安装点，可以在控制台的**卷详细信息**页面中查看安装点信息。还可以通过 API 调用来访问正确的安装点：`SoftLayer_Network_Storage::getNetworkMountAddress()`。
 
-要能够访问所有新功能，在通过 API 下订单时，请选择 `Storage-as-a-Service Package 759`。有关通过 API 订购 {{site.data.keyword.filestorage_short}} 的更多信息，请参阅 [order_file_volume ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://softlayer-python.readthedocs.io/en/latest/api/managers/file.html#SoftLayer.managers.file.FileStorageManager.order_file_volume){:new_window}。
+要能够访问所有新功能，在通过 API 下订单时，请选择 `Storage-as-a-Service Package 759`。有关通过 API 订购 {{site.data.keyword.filestorage_short}} 的更多信息，请参阅 [order_file_volume ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://softlayer-python.readthedocs.io/en/latest/api/managers/file/#SoftLayer.managers.file.FileStorageManager.order_file_volume){:new_window}。
 {:important}
 
 升级了更多数据中心时，可重新检查此处来查看这些数据中心，并可了解为 {{site.data.keyword.filestorage_short}} 添加的新特性和功能。
