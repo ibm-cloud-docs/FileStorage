@@ -147,6 +147,7 @@ There's no need for pre-warming. You can observe the specified throughput immedi
 Throughput limits are set at a per-volume level. That limit cannot be increased by using a faster Ethernet connection. However, with a slower Ethernet connection, your bandwidth can be a potential bottleneck.
 
 ## Do firewalls and security groups impact performance?
+{: #isolatedstoragetraffic}
 {: faq}
 
 It's best to run storage traffic on a VLAN, which bypasses the firewall. Running storage traffic through software firewalls increases latency and adversely affects storage performance.
@@ -164,9 +165,9 @@ Target latency within the storage is  less than one ms. The storage is connected
 ## Which NFS versions are supported?
 {: faq}
 
-Both NFS v3 and NFS v4.1 are supported in the {{site.data.keyword.BluSoftlayer_full}} environment. 
+Both NFS v3 and NFS v4.1 are supported in the {{site.data.keyword.BluSoftlayer_full}} environment.
 
-The preferred version is NFS v3 because it's a stateless protocol and more resilient when network events occur. 
+The preferred version is NFS v3 because it's a stateless protocol and more resilient when network events occur.
 
 NFS v3 natively supports `no_root_squash` that allows root clients to retain root permissions on the NFS share. You can enable this feature in NFS v4.1, by editing the domain information and running the `rpcidmapd` or a similar service. For more information, see [Implementing no_root_squash for NFS](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux#norootsquash).
 
