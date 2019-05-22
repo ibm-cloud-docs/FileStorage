@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, disaster recovery, duplicate volume, 
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -25,9 +25,9 @@ No caso de uma falha catastrófica ou de um desastre que cause uma indisponibili
 
 ## Failover com uma duplicata de um volume de réplica no site secundário
 
-1. Efetue login no [console do IBM Cloud ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://{DomainName}/){:new_window} e clique no ícone **Menu** na parte superior esquerda. Selecione **Infraestrutura clássica**.
+1. Efetue login no [console do IBM Cloud](https://{DomainName}/){: external} e clique no ícone **Menu** na parte superior esquerda. Selecione **Infraestrutura clássica**.
 
-   Como alternativa, é possível efetuar login no [{{site.data.keyword.slportal}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://control.softlayer.com/){:new_window}.
+   Como alternativa, é possível efetuar login no [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
 2. Clique em **Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
 3. Clique na réplica do compartilhamento de arquivo na lista para visualizar sua página **Detalhes**.
 4. Na página **Detalhes**, role para baixo e selecione uma captura instantânea existente e, em seguida, clique em **Ações** > **Duplicar**.
@@ -41,9 +41,9 @@ Assim que o volume for criado, será possível anexá-lo a um host e executar op
 
 Se você desejar retornar a produção para o site primário original, as etapas a seguir deverão ser executadas.
 
-1. Efetue login no [console do IBM Cloud ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://{DomainName}/){:new_window} e clique no ícone **Menu** na parte superior esquerda. Selecione **Infraestrutura clássica**.
+1. Efetue login no [console do IBM Cloud](https://{DomainName}/){: external} e clique no ícone **Menu** na parte superior esquerda. Selecione **Infraestrutura clássica**.
 
-   Como alternativa, é possível efetuar login no [{{site.data.keyword.slportal}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://control.softlayer.com/){:new_window}.
+   Como alternativa, é possível efetuar login no [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
 2. Clique em **Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
 3. Clique no nome do LUN e crie um planejamento de captura instantânea (se ainda não existir).
 

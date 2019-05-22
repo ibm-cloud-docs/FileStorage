@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, provisioning, ordering,
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -29,9 +29,9 @@ Puoi eseguire il provisioning di {{site.data.keyword.filestorage_short}} ed eseg
 ## Ordinazione di {{site.data.keyword.filestorage_short}} con livelli IOPS predefiniti (Endurance)
 {: #endurance}
 
-1. Accedi al [Catalogo IBM Cloud](https://{DomainName}/catalog){:new_window} e fai clic su **Archiviazione**. Quindi, seleziona {{site.data.keyword.filestorage_short}}. Fai clic su **Crea**.
+1. Accedi al [Catalogo IBM Cloud](https://{DomainName}/catalog){: external} e fai clic su **Archiviazione**. Quindi, seleziona {{site.data.keyword.filestorage_short}}. Fai clic su **Crea**.
 
-   In alternativa, puoi accedere al [{{site.data.keyword.slportal}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://control.softlayer.com/){:new_window} } e fare clic su **Storage** > **{{site.data.keyword.filestorage_short}}**. In alto a destra, fai clic su **Order {{site.data.keyword.filestorage_short}}**.
+   In alternativa, puoi accedere al [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} } e fare clic su **Storage** > **{{site.data.keyword.filestorage_short}}**. In alto a destra, fai clic su **Order {{site.data.keyword.filestorage_short}}**.
 2. Seleziona l'ubicazione (**Location**) della tua distribuzione (data center).
    - Assicurati che la nuova archiviazione venga aggiunta nella stessa ubicazione dell'host o degli host di calcolo di cui disponi.
 3. Fatturazione. Se hai selezionato un data center con funzionalità migliorate (contrassegnato con un asterisco), puoi scegliere tra fatturazione mensile od oraria.
@@ -61,9 +61,9 @@ Per impostazione predefinita, puoi eseguire il provisioning di un totale combina
 ## Ordinazine di {{site.data.keyword.filestorage_short}} con IOPS personalizzato (Performance)
 {: #performance}
 
-1. Accedi al [Catalogo IBM Cloud](https://{DomainName}/catalog){:new_window} e fai clic su **Archiviazione**. Quindi, seleziona {{site.data.keyword.filestorage_short}}. Fai clic su **Crea**.
+1. Accedi al [Catalogo IBM Cloud](https://{DomainName}/catalog){: external} e fai clic su **Archiviazione**. Quindi, seleziona {{site.data.keyword.filestorage_short}}. Fai clic su **Crea**.
 
-   In alternativa, puoi accedere al [{{site.data.keyword.slportal}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://control.softlayer.com/){:new_window} } e fare clic su **Storage** > **{{site.data.keyword.filestorage_short}}**. In alto a destra, fai clic su **Order {{site.data.keyword.filestorage_short}}**.
+   In alternativa, puoi accedere al [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} } e fare clic su **Storage** > **{{site.data.keyword.filestorage_short}}**. In alto a destra, fai clic su **Order {{site.data.keyword.filestorage_short}}**.
 2. Fai clic su **Location** e seleziona il tuo data center.
    - Assicurati che la nuova archiviazione venga aggiunta nella stessa ubicazione dell'host o degli host di calcolo di cui disponi.
 3. Fatturazione. Se hai selezionato un data center con funzionalità migliorate (contrassegnato con un asterisco), puoi scegliere tra fatturazione mensile od oraria.

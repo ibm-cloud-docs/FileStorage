@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, locations, data centers
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -106,7 +106,7 @@ TOK02<br />
 
 這些資料中心內佈建的所有加強型 {{site.data.keyword.filestorage_short}} 磁區都具有與未加密磁區不同的裝載點。為了確保兩個儲存空間磁區都是使用正確的裝載點，您可以在主控台的**磁區詳細資料**頁面中檢視裝載點資訊。您也可以透過 API 呼叫來存取正確的裝載點：`SoftLayer_Network_Storage::getNetworkMountAddress()`。
 
-若要能夠存取所有新增特性，請在透過 API 下訂單時，選取 `Storage-as-a-Service Package 759`。如需透過 API 來訂購 {{site.data.keyword.filestorage_short}} 的相關資訊，請參閱 [order_file_volume ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://softlayer-python.readthedocs.io/en/latest/api/managers/file/#SoftLayer.managers.file.FileStorageManager.order_file_volume){:new_window}。
+若要能夠存取所有新增特性，請在透過 API 下訂單時，選取 `Storage-as-a-Service Package 759`。如需透過 API 來訂購 {{site.data.keyword.filestorage_short}} 的相關資訊，請參閱 [order_file_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/file/#SoftLayer.managers.file.FileStorageManager.order_file_volume){: external}。
 {:important}
 
 請在這裡再次確認，以查看其他資料中心何時升級以及針對 {{site.data.keyword.filestorage_short}} 新增的特性及功能。

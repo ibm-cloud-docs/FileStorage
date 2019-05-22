@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, snapshot, ordering snapshot, snapshot
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -50,9 +50,9 @@ Además, para la mayoría de las cargas de trabajo, cuanto mayor sea un volumen,
 
 ## Solicitud de espacio de instantáneas mediante la consola de {{site.data.keyword.cloud_notm}}
 
-1. Inicie la sesión en la [consola de IBM Cloud](https://{DomainName}/){:new_window} y pulse el icono de menú de la parte superior izquierda. Seleccione **Infraestructura clásica**.
+1. Inicie la sesión en la [consola de IBM Cloud](https://{DomainName}/){: external} y pulse el icono de menú de la parte superior izquierda. Seleccione **Infraestructura clásica**.
 
-   También puede iniciar la sesión en el [{{site.data.keyword.slportal}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){:new_window}.
+   También puede iniciar la sesión en el [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
 2. Acceda al almacenamiento mediante **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**.
 3. Pulse **Cambiar espacio de instantáneas** en el marco Instantáneas.
 4. Seleccione la cantidad de espacio que necesita y el método de pago.

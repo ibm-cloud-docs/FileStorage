@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, replication, duplication, synchronous
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -111,7 +111,7 @@ In Tabelle 1 finden Sie die vollständige Liste der verfügbaren Rechenzentren u
 
 ## Erstreplikat erstellen
 
-Replikationen arbeiten nach einem Snapshotplan. Sie müssen zuerst einen Snapshotbereich und einen Snapshotplan für den Quellendatenträger haben, bevor Sie replizieren können. Wenn Sie versuchen, die Replikation zu konfigurieren, und eines dieser beiden Dinge fehlt, werden Sie aufgefordert, mehr Speicherplatz zu kaufen oder einen Zeitplan einzurichten. Replikationen werden unter **Storage** > **{{site.data.keyword.filestorage_short}}** im [{{site.data.keyword.slportal}} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/){:new_window} verwaltet.
+Replikationen arbeiten nach einem Snapshotplan. Sie müssen zuerst einen Snapshotbereich und einen Snapshotplan für den Quellendatenträger haben, bevor Sie replizieren können. Wenn Sie versuchen, die Replikation zu konfigurieren, und eines dieser beiden Dinge fehlt, werden Sie aufgefordert, mehr Speicherplatz zu kaufen oder einen Zeitplan einzurichten. Replikationen werden unter **Storage** > **{{site.data.keyword.filestorage_short}}** im [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} verwaltet.
 
 1. Klicken Sie auf Ihren Speicherdatenträger.
 2. Klicken Sie auf **Replikat** und auf **Replikation kaufen**.
@@ -130,7 +130,7 @@ Replikationen arbeiten nach einem Snapshotplan. Sie müssen zuerst einen Snapsho
 
 ## Vorhandene Replikation bearbeiten
 
-Sie können entweder in der Registerkarte **Primäres** oder **Replikation** unter **Speicher** > **{{site.data.keyword.filestorage_short}}** vom [{{site.data.keyword.slportal}} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/){:new_window} Ihren Replikationsplan bearbeiten und Ihren Replikationsspeicherbereich ändern.
+Sie können entweder in der Registerkarte **Primäres** oder **Replikation** unter **Speicher** > **{{site.data.keyword.filestorage_short}}** vom [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} Ihren Replikationsplan bearbeiten und Ihren Replikationsspeicherbereich ändern.
 
 
 ## Replikationsplan bearbeiten

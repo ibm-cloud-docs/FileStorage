@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, mounting volume in Container Linux, C
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -20,7 +20,7 @@ subcollection: FileStorage
 # Montage de {{site.data.keyword.filestorage_short}} sur Container Linux
 {: #mountingCoreOS}
 
-Container Linux by CoreOS est un système d'exploitation open source léger basé sur le noyau Linux. Il est conçu de manière à fournir une infrastructure aux déploiements en cluster. En tant que système d'exploitation, Container Linux offre la fonctionnalité minimale requise pour le déploiement d'applications au sein de conteneurs de logiciels, ainsi qu'un mécanisme intégré de reconnaissance de service et de partage de configuration. Pour plus d'informations, voir [Montage de ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://coreos.com/os/docs/latest/mounting-storage.html)
+Container Linux by CoreOS est un système d'exploitation open source léger basé sur le noyau Linux. Il est conçu de manière à fournir une infrastructure aux déploiements en cluster. En tant que système d'exploitation, Container Linux offre la fonctionnalité minimale requise pour le déploiement d'applications au sein de conteneurs de logiciels, ainsi qu'un mécanisme intégré de reconnaissance de service et de partage de configuration. Pour plus d'informations, voir [Montage de](https://coreos.com/os/docs/latest/mounting-storage.html)
 
 Tous les fichiers de montage secondaires sont placés dans le répertoire `/etc/systemd/system` car les montages au niveau du système sont effectués dans un répertoire en lecture seule. Vous devez d'abord créer un fichier `MOUNTPOINT.mount`. La section **Where** du fichier `.mount` doit correspondre au nom de fichier. Si le point de montage comporte des barres obliques (`/`), vous devez nommer le fichier en respectant la syntaxe `chemin-de-montage.mount`. Par exemple, si vous souhaitez monter l'unité de stockage portable dans `/mnt/www`, vous devez nommer le fichier `mnt-www.mount`.
 

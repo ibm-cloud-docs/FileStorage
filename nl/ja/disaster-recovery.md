@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, disaster recovery, duplicate volume, 
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -25,9 +25,9 @@ subcollection: FileStorage
 
 ## 2 次サイトにあるレプリカ・ボリュームの複製を使用するフェイルオーバー
 
-1. [IBM Cloud コンソール ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://{DomainName}/){:new_window} にログインし、左上の**「メニュー」**アイコンをクリックします。 **「クラシック・インフラストラクチャー」**を選択します。
+1. [IBM Cloud コンソール](https://{DomainName}/){: external} にログインし、左上の**「メニュー」**アイコンをクリックします。 **「クラシック・インフラストラクチャー」**を選択します。
 
-   または、[{{site.data.keyword.slportal}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://control.softlayer.com/){:new_window} にログインできます。
+   または、[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} にログインできます。
 2. **「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**をクリックします。
 3. リストからファイル共有のレプリカをクリックして、その**「詳細」**ページを表示します。
 4. **「詳細」**ページでスクロールダウンして既存のスナップショットを選択し、**「アクション」**>**「重複」**をクリックします。
@@ -41,9 +41,9 @@ subcollection: FileStorage
 
 元の 1 次サイトに実動環境を戻す場合は、以下の手順を行う必要があります。
 
-1. [IBM Cloud コンソール ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://{DomainName}/){:new_window} にログインし、左上の**「メニュー」**アイコンをクリックします。 **「クラシック・インフラストラクチャー」**を選択します。
+1. [IBM Cloud コンソール](https://{DomainName}/){: external} にログインし、左上の**「メニュー」**アイコンをクリックします。 **「クラシック・インフラストラクチャー」**を選択します。
 
-   または、[{{site.data.keyword.slportal}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://control.softlayer.com/){:new_window} にログインできます。
+   または、[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} にログインできます。
 2. **「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**をクリックします。
 3. LUN 名をクリックし、スナップショット・スケジュールを作成します (まだ存在しない場合)。
 

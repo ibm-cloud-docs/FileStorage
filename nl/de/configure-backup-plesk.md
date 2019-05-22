@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, Plesk, backups
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -20,7 +20,7 @@ subcollection: FileStorage
 
 Mithilfe dieser Anweisungen können Sie {{site.data.keyword.filestorage_full}} für Ihre Sicherungen in Plesk konfigurieren. Dabei wird angenommen, dass root- oder sudo SSH- sowie ein vollständiger Plesk-Zugriff auf Administratorebene verfügbar ist. Das vorliegende Beispiel basiert auf einem CentOS 7-Host.
 
-Weitere Informationen finden Sie in der Dokumentation von Plesk zum Thema Sicherheit und Wiederherstellung unter [Plesk's documentation for backing up and restoration ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.plesk.com/en-US/12.5/administrator-guide/backing-up-and-restoration.59256/){:new_window}.
+Weitere Informationen finden Sie in der Dokumentation von Plesk zum Thema Sicherheit und Wiederherstellung unter [Plesk's documentation for backing up and restoration](https://docs.plesk.com/en-US/12.5/administrator-guide/backing-up-and-restoration.59256/){: external}.
 {:tip}
 
 1. Stellen Sie über SSH eine Verbindung zum Host her.

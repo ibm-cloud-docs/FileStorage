@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, disaster recovery, duplicate volume, 
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -27,10 +27,10 @@ Prima di avviare il failover, assicurati che tutta l'autorizzazione di host sia 
 Gli host autorizzati e i volumi si devono trovare nello stesso data center. Ad esempio, non puoi avere un volume di replica a Londra e l'host ad Amsterdam. Devono trovarsi entrambi a Londra oppure devono trovarsi entrambi ad Amsterdam.
 {:note}
 
-1. Accedi alla [console {{site.data.keyword.cloud}}![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://{DomainName}/catalog){:new_window} e fai clic sull'icona **menu** nell'angolo superiore sinistro. Seleziona **Infrastruttura classica**.
+1. Accedi alla [console {{site.data.keyword.cloud}}![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://{DomainName}/catalog){: external} e fai clic sull'icona **menu** nell'angolo superiore sinistro. Seleziona **Infrastruttura classica**.
 
 
-   In alternativa, puoi accedere al [{{site.data.keyword.slportal}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://control.softlayer.com/){:new_window}.
+   In alternativa, puoi accedere al [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
 1. Fai clic sul tuo volume di origine o di destinazione dalla pagina **{{site.data.keyword.filestorage_short}}**.
 2. Fai clic su **Replica**.
 3. Scorri giù al frame **Autorizza host** e fai clic su **Authorize host** sulla destra.
@@ -41,7 +41,7 @@ Gli host autorizzati e i volumi si devono trovare nello stesso data center. Ad e
 
 Se si verifica un evento di errore, puoi avviare un **failover** al tuo volume di destinazione. Il volume di destinazione diventa attivo. L'ultima istantanea replicata correttamente viene attivata e il volume viene reso disponibile per il montaggio. Tutti i dati che erano stati scritti nel volume di origine a partire dal ciclo di replica precedente vanno perduti. Quando viene avviato un failover, la relazione di replica si inverte. Il tuo volume di destinazione diventa il tuo volume di origine e il tuo precedente volume di origine diventa la tua destinazione, come indicato dal nome LUN (**LUN Name**) seguito da **REP**.
 
-I failover vengono avviati in **Storage**, **{{site.data.keyword.filestorage_short}}** nel [[{{site.data.keyword.slportal}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://control.softlayer.com/){:new_window}.
+I failover vengono avviati in **Storage**, **{{site.data.keyword.filestorage_short}}** nel [[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
 
 Prima di procedere con questa procedura, disconnetti il volume. In caso contrario, si verifica un danneggiamento e una perdita di dati.
 {:important}
@@ -69,7 +69,7 @@ Dopo che il tuo volume di origine originale è stato riparato, puoi avviare un F
 
 Quando viene avviato un Failback, la relazione di replica si inverte nuovamente. Il tuo volume di origine viene ripristinato come tuo volume di origine e il tuo volume di destinazione è nuovamente il volume di destinazione, come indicato dal nome LUN (**LUN Name**) seguito da **REP**.
 
-I failback vengono avviati in **Storage**, **{{site.data.keyword.filestorage_short}}** nel [[{{site.data.keyword.slportal}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://control.softlayer.com/){:new_window}.
+I failback vengono avviati in **Storage**, **{{site.data.keyword.filestorage_short}}** nel [[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
 
 1. Fai clic sul volume attivo ("destinazione").
 2. In alto a destra, fai clic su **Replica** e fai clic su **Actions**.

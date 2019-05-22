@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, Plesk, backups
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -20,7 +20,7 @@ subcollection: FileStorage
 
 您可以使用這些指示，以在 Plesk 中配置 {{site.data.keyword.filestorage_full}} 作為您的備份。我們假設可以使用 root 或 sudo SSH 及完整管理層次 Plesk 存取權。此範例以 CentOS7 主機為基礎。
 
-如需相關資訊，請參閱 [Plesk 的備份及還原文件 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://docs.plesk.com/en-US/12.5/administrator-guide/backing-up-and-restoration.59256/){:new_window}。
+如需相關資訊，請參閱 [Plesk 的備份及還原文件](https://docs.plesk.com/en-US/12.5/administrator-guide/backing-up-and-restoration.59256/){: external}。
 {:tip}
 
 1. 透過 SSH 連接至主機。

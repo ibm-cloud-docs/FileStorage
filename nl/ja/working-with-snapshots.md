@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, snapshots, snapshot schedule, manual 
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -21,7 +21,7 @@ subcollection: FileStorage
 
 ## スナップショット・スケジュールの作成
 
-スナップショット・スケジュールを使用して、ストレージ・ボリュームのポイント・イン・タイム・リファレンスを作成する頻度と時間を決定します。 ストレージ・ボリュームごとに最大 50 個のスナップショットを作成できます。 スケジュールは、[{{site.data.keyword.slportal}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://control.softlayer.com/){:new_window}の**「ストレージ」**>**「{{site.data.keyword.filestorage_short}}」**タブで管理します。
+スナップショット・スケジュールを使用して、ストレージ・ボリュームのポイント・イン・タイム・リファレンスを作成する頻度と時間を決定します。 ストレージ・ボリュームごとに最大 50 個のスナップショットを作成できます。 スケジュールは、[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}の**「ストレージ」**>**「{{site.data.keyword.filestorage_short}}」**タブで管理します。
 
 ストレージ・ボリュームの初期プロビジョニング時にスナップショット・スペースを購入していなかった場合は、初期スケジュールをセットアップする前に、まず購入する必要があります。
 {:important}
@@ -159,7 +159,7 @@ Options:
 
 1. ストレージ・ボリュームをホストからアンマウントして切り離します。
    - [ここ](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)をクリックすると説明が表示されます。
-2. [{{site.data.keyword.slportal}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://control.softlayer.com/){:new_window}で、**「ストレージ」**、**「{{site.data.keyword.filestorage_short}}」**をクリックします。
+2. [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}で、**「ストレージ」**、**「{{site.data.keyword.filestorage_short}}」**をクリックします。
 3. スクロールダウンして、リストアするボリュームをクリックします。 **「詳細」**ページの**「スナップショット」**セクションに、保存されているすべてのスナップショットのサイズと作成日のリストが表示されます。
 4. 使用するスナップショットの横の**「アクション」**をクリックし、**「リストア」**をクリックします。 <br/>
 

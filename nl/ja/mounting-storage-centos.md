@@ -9,7 +9,7 @@ keywords: File Storage, mounting file storage, Linux, CentOS, NFS
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -20,7 +20,7 @@ subcollection: FileStorage
 # CentOS への {{site.data.keyword.filestorage_short}} のマウント
 {: #mountingCentOS}
 
-{{site.data.keyword.filestorage_full}} を CentOS 7 にマウントするには、まず [{{site.data.keyword.slportal}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://control.softlayer.com/){:new_window} または SLCLI によってホストを認可する必要があります。 その後、[Linux への {{site.data.keyword.filestorage_short}} のマウント](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)の説明のとおりに、NFS ユーティリティーをインストールします。
+{{site.data.keyword.filestorage_full}} を CentOS 7 にマウントするには、まず [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} または SLCLI によってホストを認可する必要があります。 その後、[Linux への {{site.data.keyword.filestorage_short}} のマウント](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)の説明のとおりに、NFS ユーティリティーをインストールします。
 
 CentOS の場合、マウント・ファイルの `Options=` 行を使用していくつかの追加のオプションを指定できます。次の例では、`/data/www` にマウントするように NFS を設定します。
 

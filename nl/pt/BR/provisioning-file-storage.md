@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, provisioning, ordering,
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -29,9 +29,9 @@ subcollection: FileStorage
 ## Solicitando  {{site.data.keyword.filestorage_short}}  com Camadas IOPS predefinidas (Endurance)
 {: #endurance}
 
-1. Efetue login no [Catálogo do IBM Cloud](https://{DomainName}/catalog){:new_window} e clique em **Armazenamento**. Em seguida, selecione {{site.data.keyword.filestorage_short}}. Clique em **Criar**.
+1. Efetue login no [Catálogo do IBM Cloud](https://{DomainName}/catalog){: external} e clique em **Armazenamento**. Em seguida, selecione {{site.data.keyword.filestorage_short}}. Clique em **Criar**.
 
-   Como alternativa, é possível efetuar login no [{{site.data.keyword.slportal}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://control.softlayer.com/){:new_window} } e clicar em **Armazenamento** > **{{site.data.keyword.filestorage_short}}**. Na parte superior direita, clique em **Pedir {{site.data.keyword.filestorage_short}}**.
+   Como alternativa, é possível efetuar login no [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} } e clicar em **Armazenamento** > **{{site.data.keyword.filestorage_short}}**. Na parte superior direita, clique em **Pedir {{site.data.keyword.filestorage_short}}**.
 2. Selecione sua implementação  ** Local **  (data center).
    - Assegure-se de que o novo Armazenamento seja incluído no mesmo local que o host de cálculo ou os hosts que você possui.
 3. Faturamento. Se você selecionou um data center com recursos melhorados (marcados com um asterisco), é possível escolher entre Faturamento por hora ou mensal.
@@ -62,9 +62,9 @@ volumes do {{site.data.keyword.blockstorageshort}}. Para aumentar o número de s
 ## Pedindo o {{site.data.keyword.filestorage_short}} com IOPS customizado (Performance)
 {: #performance}
 
-1. Efetue login no [Catálogo do IBM Cloud](https://{DomainName}/catalog){:new_window} e clique em **Armazenamento**. Em seguida, selecione {{site.data.keyword.filestorage_short}}. Clique em **Criar**.
+1. Efetue login no [Catálogo do IBM Cloud](https://{DomainName}/catalog){: external} e clique em **Armazenamento**. Em seguida, selecione {{site.data.keyword.filestorage_short}}. Clique em **Criar**.
 
-   Como alternativa, é possível efetuar login no [{{site.data.keyword.slportal}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://control.softlayer.com/){:new_window} } e clicar em **Armazenamento** > **{{site.data.keyword.filestorage_short}}**. Na parte superior direita, clique em **Pedir {{site.data.keyword.filestorage_short}}**.
+   Como alternativa, é possível efetuar login no [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} } e clicar em **Armazenamento** > **{{site.data.keyword.filestorage_short}}**. Na parte superior direita, clique em **Pedir {{site.data.keyword.filestorage_short}}**.
 2. Clique em **Local** e selecione seu data center.
    - Assegure-se de que o novo Armazenamento seja incluído no mesmo local que o host de cálculo ou os hosts que você possui.
 3. Faturamento. Se você selecionou um data center com recursos melhorados (marcados com um asterisco), é possível escolher entre Faturamento por hora ou mensal.

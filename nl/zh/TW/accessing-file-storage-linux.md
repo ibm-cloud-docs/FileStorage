@@ -9,7 +9,7 @@ keywords: File Storage, NSF, mounting File Storage, mounting storage on Linux,
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -18,7 +18,7 @@ subcollection: FileStorage
 # 在 Linux 上裝載 {{site.data.keyword.filestorage_short}}
 {: #mountingLinux}
 
-首先，請確定要存取 {{site.data.keyword.filestorage_full}} 磁區的主機已透過 [{{site.data.keyword.slportal}} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://control.softlayer.com/){:new_window} 獲得授權。
+首先，請確定要存取 {{site.data.keyword.filestorage_full}} 磁區的主機已透過 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 獲得授權。
 
 1. 從 {{site.data.keyword.filestorage_short}} 清單頁面，按一下與新共用相關聯的**動作**鏈結，然後按一下**授權主機**。
 2. 從清單中選取一台或多台主機，然後按一下**提交**。此動作會授權主機存取共用。
@@ -110,7 +110,7 @@ Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
    {:tip}
 
    如果您的主機 OS 是 CentOS，可以配置其他選項。如需相關資訊，請參閱[在 CentOS 裝載 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)。
-   
+
 
 
 ## 實作 NFS 的 `no_root_squash`（選用）

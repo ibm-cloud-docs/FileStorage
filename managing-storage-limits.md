@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS,
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -31,7 +31,7 @@ Options:
  -h, --help             Show this message and exit.
 ```
 
-You can request a limit increase by submitting a ticket in the [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}. When the request is approved, you get a volume limit that is set for a specific data center.  
+You can request a limit increase by submitting a ticket in the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}. When the request is approved, you get a volume limit that is set for a specific data center.  
 
 To request a limit increase, open a ticket and direct it to your sales representative.
 

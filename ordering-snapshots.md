@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, snapshot, ordering snapshot, snapshot
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -50,9 +50,9 @@ Additionally, for most workloads, the larger a volume is the less space needs to
 
 ## Ordering Snapshot space through the {{site.data.keyword.cloud_notm}} console
 
-1. Log in to [The IBM Cloud console](https://{DomainName}/){:new_window} and click the menu icon on the upper left. Select **Classic Infrastructure**.
+1. Log in to [The IBM Cloud console](https://{DomainName}/){: external} and click the menu icon on the upper left. Select **Classic Infrastructure**.
 
-   Alternatively, you can log in to the [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
+   Alternatively, you can log in to the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
 2. Access your Storage through **Storage** > **{{site.data.keyword.filestorage_short}}**.
 3. Click **Change Snapshot Space** in the Snapshots frame.
 4. Select the amount of space that you need and the payment method.

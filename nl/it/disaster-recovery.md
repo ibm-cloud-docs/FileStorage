@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, disaster recovery, duplicate volume, 
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -25,9 +25,9 @@ Se un errore catastrofico o un'emergenza causano un'interruzione sul sito primar
 
 ## Failover con un duplicato di un volume di replica sul sito secondario
 
-1. Accedi [Alla console IBM Cloud ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://{DomainName}/){:new_window} e fai clic sull'icona **menu** nell'angolo superiore sinistro. Seleziona **Infrastruttura classica**.
+1. Accedi [Alla console IBM Cloud](https://{DomainName}/){: external} e fai clic sull'icona **menu** nell'angolo superiore sinistro. Seleziona **Infrastruttura classica**.
 
-   In alternativa, puoi accedere al [{{site.data.keyword.slportal}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://control.softlayer.com/){:new_window}.
+   In alternativa, puoi accedere al [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
 2. Fai clic su **Storage** > **{{site.data.keyword.filestorage_short}}**.
 3. Fai clic sulla replica della condivisione file per visualizzarne la pagina **Details**.
 4. Nella pagina **Details**, scorri verso il basso, seleziona un'istantanea esistente e fai clic su **Actions** > **Duplicate**.
@@ -41,9 +41,9 @@ Non appena viene creato il volume, puoi collegarlo a un host ed eseguire le oper
 
 Se vuoi far tornare la produzione al sito primario originale, devi completare le seguenti istruzioni.
 
-1. Accedi [Alla console IBM Cloud ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://{DomainName}/){:new_window} e fai clic sull'icona **menu** nell'angolo superiore sinistro. Seleziona **Infrastruttura classica**.
+1. Accedi [Alla console IBM Cloud](https://{DomainName}/){: external} e fai clic sull'icona **menu** nell'angolo superiore sinistro. Seleziona **Infrastruttura classica**.
 
-   In alternativa, puoi accedere al [{{site.data.keyword.slportal}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://control.softlayer.com/){:new_window}.
+   In alternativa, puoi accedere al [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
 2. Fai clic su **Storage** > **{{site.data.keyword.filestorage_short}}**.
 3. Fai clic sul nome del LUN e crea una pianificazione delle istantanee (se non ne esiste già una).
 

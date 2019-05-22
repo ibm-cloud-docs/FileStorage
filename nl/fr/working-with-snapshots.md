@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, snapshots, snapshot schedule, manual 
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -21,7 +21,7 @@ subcollection: FileStorage
 
 ## Création d'un planning d'instantané
 
-Les plannings d'instantané vous permettent de choisir la fréquence et le moment de création d'une référence ponctuelle de votre volume de stockage. Vous disposez d'un maximum de 50 instantanés par volume de stockage. Les plannings sont gérés via l'onglet **Storage** > **{{site.data.keyword.filestorage_short}}** du portail [{{site.data.keyword.slportal}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://control.softlayer.com/){:new_window}.
+Les plannings d'instantané vous permettent de choisir la fréquence et le moment de création d'une référence ponctuelle de votre volume de stockage. Vous disposez d'un maximum de 50 instantanés par volume de stockage. Les plannings sont gérés via l'onglet **Storage** > **{{site.data.keyword.filestorage_short}}** du portail [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
 
 Avant de pouvoir configurer votre planning initial, vous devez d'abord acheter de l'espace d'instantané si vous ne l'avez pas fait lors de la mise à disposition initiale du volume de stockage.
 {:important}
@@ -159,7 +159,7 @@ Il se peut que vous deviez ramener votre volume de stockage à un point de cohé
 
 1. Démontez et déconnectez le volume de stockage de l'hôte.
    - Cliquez [ici](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux) pour obtenir des instructions.
-2. Cliquez sur **Stockage**, **{{site.data.keyword.filestorage_short}}** dans le portail [{{site.data.keyword.slportal}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://control.softlayer.com/){:new_window}.
+2. Cliquez sur **Stockage**, **{{site.data.keyword.filestorage_short}}** dans le portail [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
 3. Faites défiler l'écran et cliquez sur le volume à restaurer. La section **Instantanés** de la page **Détails** affiche la liste de tous les instantanés sauvegardés, ainsi que leur taille et leur date de création.
 4. Cliquez sur **Actions** en regard de l'instantané à utiliser, puis cliquez sur **Restaurer**. <br/>
 

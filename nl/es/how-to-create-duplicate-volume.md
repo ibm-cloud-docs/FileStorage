@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, duplicate volume
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -39,7 +39,7 @@ Algunos de los usos comunes para un volumen duplicado incluyen los ejemplos sigu
 - **Desarrollo y prueba (dev/test)**. Cree hasta cuatro duplicados simultáneos de un volumen a la vez para crear datos duplicados para desarrollo y pruebas.
 - **Redimensionamiento del almacenamiento**. Cree un volumen con el nuevo tamaño, tasa de IOPS o ambos sin necesidad de mover los datos.  
 
-Puede crear un volumen duplicado a través del [{{site.data.keyword.slportal}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){:new_window} de un par de maneras.
+Puede crear un volumen duplicado a través del [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} de un par de maneras.
 
 
 ## Creación de un duplicado a partir de un volumen específico en la lista de almacenamiento

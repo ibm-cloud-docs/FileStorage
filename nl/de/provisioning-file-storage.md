@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, provisioning, ordering,
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -29,9 +29,9 @@ Sie können {{site.data.keyword.filestorage_short}} bereitstellen und entspreche
 ## {{site.data.keyword.filestorage_short}} mit vordefinierten IOPS-Stufen bestellen (Endurance)
 {: #endurance}
 
-1. Melden Sie sich beim [IBM Cloud-Katalog](https://{DomainName}/catalog){:new_window} an und klicken Sie auf **Speicher**. Wählen Sie anschließend {{site.data.keyword.filestorage_short}} aus. Klicken Sie auf **Erstellen**.
+1. Melden Sie sich beim [IBM Cloud-Katalog](https://{DomainName}/catalog){: external} an und klicken Sie auf **Speicher**. Wählen Sie anschließend {{site.data.keyword.filestorage_short}} aus. Klicken Sie auf **Erstellen**.
 
-   Alternativ können Sie sich am [{{site.data.keyword.slportal}} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/){:new_window} anmelden und auf **Speicher** > **{{site.data.keyword.filestorage_short}}** klicken. Klicken Sie rechts oben auf **{{site.data.keyword.filestorage_short}} bestellen**.
+   Alternativ können Sie sich am [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} anmelden und auf **Speicher** > **{{site.data.keyword.filestorage_short}}** klicken. Klicken Sie rechts oben auf **{{site.data.keyword.filestorage_short}} bestellen**.
 2. Wählen Sie Ihre Bereitstellungs**position** (Ihr Rechenzentrum) aus.
    - Stellen Sie sicher, dass der neue Speicher an derselben Position hinzugefügt wird, an der sich auch Ihre Rechenhosts befinden.
 3. Abrechnung. Wenn Sie ein Rechenzentrum mit verbesserter Funktionalität (gekennzeichnet durch einen Stern) ausgewählt haben, können Sie zwischen monatlicher und stündlicher Abrechnung wählen.
@@ -61,9 +61,9 @@ Standardmäßig können Sie insgesamt 250 {{site.data.keyword.blockstorageshort}
 ## {{site.data.keyword.filestorage_short}} mit angepassten IOPS-Raten bestellen (Performance)
 {: #performance}
 
-1. Melden Sie sich beim [IBM Cloud-Katalog](https://{DomainName}/catalog){:new_window} an und klicken Sie auf **Speicher**. Wählen Sie anschließend {{site.data.keyword.filestorage_short}} aus. Klicken Sie auf **Erstellen**.
+1. Melden Sie sich beim [IBM Cloud-Katalog](https://{DomainName}/catalog){: external} an und klicken Sie auf **Speicher**. Wählen Sie anschließend {{site.data.keyword.filestorage_short}} aus. Klicken Sie auf **Erstellen**.
 
-   Alternativ können Sie sich am [{{site.data.keyword.slportal}} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/){:new_window} anmelden und auf **Speicher** > **{{site.data.keyword.filestorage_short}}** klicken. Klicken Sie rechts oben auf **{{site.data.keyword.filestorage_short}} bestellen**.
+   Alternativ können Sie sich am [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} anmelden und auf **Speicher** > **{{site.data.keyword.filestorage_short}}** klicken. Klicken Sie rechts oben auf **{{site.data.keyword.filestorage_short}} bestellen**.
 2. Klicken Sie auf **Position** und wählen Sie Ihr Rechenzentrum aus.
    - Stellen Sie sicher, dass der neue Speicher an derselben Position hinzugefügt wird, an der sich auch Ihre Rechenhosts befinden.
 3. Abrechnung. Wenn Sie ein Rechenzentrum mit verbesserter Funktionalität (gekennzeichnet durch einen Stern) ausgewählt haben, können Sie zwischen monatlicher und stündlicher Abrechnung wählen.

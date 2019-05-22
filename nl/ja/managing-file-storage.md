@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, authorizing hosts, rewoke access, gra
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -73,7 +73,7 @@ Options:
 
 ホストがアクセス権を持っているボリュームを表示できます。接続の確立に必要な情報 (ボリューム名、ストレージ・タイプ、ターゲット・アドレス、容量、ロケーション) も表示されます。
 
-1. [{{site.data.keyword.slportal}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://control.softlayer.com/){:new_window}で、**「デバイス」** > **「デバイス・リスト」**をクリックします。
+1. [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}で、**「デバイス」** > **「デバイス・リスト」**をクリックします。
 2. 目的のデバイスをクリックします。
 2. 「ストレージ」タブを選択します。
 
@@ -96,7 +96,7 @@ Options:
 
 ### デバイス・リストからのアクセス権の取り消し
 
-1. [{{site.data.keyword.slportal}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://control.softlayer.com/){:new_window}で、**「デバイス」** > **「デバイス・リスト」**をクリックします。
+1. [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}で、**「デバイス」** > **「デバイス・リスト」**をクリックします。
 2. 該当するデバイスをダブルクリックします。
 3. **「ストレージ」**タブを選択します。
 4. この特定のホストがアクセス権を持っているストレージ・ボリュームのリストが表示されます。いずれも、ストレージ・タイプ (ブロック、ファイル、その他) ごとにグループ化されています。 アクセス権を取り消すボリュームの隣にある、それぞれの**「アクション」**メニューを選択して、**「アクセス権の取り消し」**をクリックします。

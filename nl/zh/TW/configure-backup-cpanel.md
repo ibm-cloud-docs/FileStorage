@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, cPanel, backups
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -20,7 +20,7 @@ subcollection: FileStorage
 
 您可以使用這些指示，透過 cPanel 配置將您的備份儲存至 {{site.data.keyword.filestorage_full}}。我們假設可以使用 root 或 sudo SSH 及完整 WebHost Manager (WHM) 存取權。此範例以 **CentOS 7** 主機為基礎。
 
-如需相關資訊，請參閱 [cPanel - 配置備份目錄 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://docs.cpanel.net/display/68Docs/Backup+Configuration#BackupConfiguration-ConfigureBackupDirectory){:new_window}。
+如需相關資訊，請參閱 [cPanel - 配置備份目錄](https://docs.cpanel.net/display/68Docs/Backup+Configuration#BackupConfiguration-ConfigureBackupDirectory){: external}。
 {:tip}
 
 1. 透過 SSH 連接至主機。

@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, replication, duplication, synchronous
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -111,7 +111,7 @@ Consulte la Tabla 1 para ver la lista completa de disponibilidad de centros de d
 
 ## Creación de la réplica inicial
 
-Las réplicas se basan en una planificación de réplica. Primero debe tener un espacio de instantáneas y una planificación de instantáneas para el volumen de origen antes de poder replicar. Si intenta configurar la réplica y uno o el otro no está en su lugar, se le solicitará que compre más espacio o que establezca una planificación. Las réplicas se gestionan en **Almacenamiento** > **{{site.data.keyword.filestorage_short}}** en el [{{site.data.keyword.slportal}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){:new_window}.
+Las réplicas se basan en una planificación de réplica. Primero debe tener un espacio de instantáneas y una planificación de instantáneas para el volumen de origen antes de poder replicar. Si intenta configurar la réplica y uno o el otro no está en su lugar, se le solicitará que compre más espacio o que establezca una planificación. Las réplicas se gestionan en **Almacenamiento** > **{{site.data.keyword.filestorage_short}}** en el [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
 
 1. Pulse el volumen de almacenamiento.
 2. Pulse **Réplica** y pulse **Adquirir una réplica**.
@@ -130,7 +130,7 @@ Las réplicas se basan en una planificación de réplica. Primero debe tener un 
 
 ## Edición de una réplica existente
 
-Puede editar la planificación de la réplica y cambiar el espacio de réplica desde el separador **Primario** o **Réplica** de **Almacenamiento** > **{{site.data.keyword.filestorage_short}}** desde el [{{site.data.keyword.slportal}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){:new_window}.
+Puede editar la planificación de la réplica y cambiar el espacio de réplica desde el separador **Primario** o **Réplica** de **Almacenamiento** > **{{site.data.keyword.filestorage_short}}** desde el [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
 
 
 ## Edición de la planificación de réplica

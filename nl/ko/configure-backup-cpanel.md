@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, cPanel, backups
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -20,7 +20,7 @@ subcollection: FileStorage
 
 다음 지시사항을 사용하여 cPanel을 통해 백업이 {{site.data.keyword.filestorage_full}}에 저장되도록 구성할 수 있습니다. 여기서는 루트 또는 sudo SSH 및 전체 WHM(WebHost Manager) 액세스가 사용 가능하다고 가정합니다. 이 예제는 **CentOS 7** 호스트를 기반으로 합니다.
 
-자세한 정보는 [cPanel - 백업 디렉토리 구성 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://docs.cpanel.net/display/68Docs/Backup+Configuration#BackupConfiguration-ConfigureBackupDirectory){:new_window}을 참조하십시오.
+자세한 정보는 [cPanel - 백업 디렉토리 구성](https://docs.cpanel.net/display/68Docs/Backup+Configuration#BackupConfiguration-ConfigureBackupDirectory){: external}을 참조하십시오.
 {:tip}
 
 1. SSH를 통해 호스트에 연결하십시오.

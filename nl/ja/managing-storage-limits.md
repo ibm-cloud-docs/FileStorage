@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS,
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -31,7 +31,7 @@ Options:
  -h, --help             Show this message and exit.
 ```
 
-[{{site.data.keyword.slportal}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://control.softlayer.com/){:new_window} でチケットを送信して、制限の拡大を要求できます。 要求が承認されると、特定のデータ・センターでボリューム制限が設定されます。  
+[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} でチケットを送信して、制限の拡大を要求できます。 要求が承認されると、特定のデータ・センターでボリューム制限が設定されます。  
 
 制限の拡大を要求するには、チケットを開いて、営業担当員に送信します。
 

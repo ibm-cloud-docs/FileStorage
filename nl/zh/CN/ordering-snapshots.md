@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, snapshot, ordering snapshot, snapshot
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -50,9 +50,9 @@ subcollection: FileStorage
 
 ## 通过 {{site.data.keyword.cloud_notm}} 控制台来订购快照空间
 
-1. 登录到 [IBM Cloud 控制台](https://{DomainName}/){:new_window}，然后单击左上角的菜单图标。选择**经典基础架构**。
+1. 登录到 [IBM Cloud 控制台](https://{DomainName}/){: external}，然后单击左上角的菜单图标。选择**经典基础架构**。
 
-   或者，您可以登录到 [{{site.data.keyword.slportal}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window}。
+   或者，您可以登录到 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}。
 2. 通过**存储** > **{{site.data.keyword.filestorage_short}}**，访问您的存储器。
 3. 单击“快照”框架上的**更改快照空间**。
 4. 选择所需的空间量和付款方式。

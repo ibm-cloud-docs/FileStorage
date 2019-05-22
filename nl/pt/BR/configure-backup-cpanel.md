@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, cPanel, backups
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -22,7 +22,7 @@ subcollection: FileStorage
 raiz ou sudo e o acesso completo ao WebHost Manager (WHM) estejam disponíveis. Esse exemplo se baseia em um
 host do **CentOS 7**.
 
-Para obter mais informações, consulte [cPanel: configurando o diretório de backup ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://docs.cpanel.net/display/68Docs/Backup+Configuration#BackupConfiguration-ConfigureBackupDirectory){:new_window}.
+Para obter mais informações, consulte [cPanel: configurando o diretório de backup](https://docs.cpanel.net/display/68Docs/Backup+Configuration#BackupConfiguration-ConfigureBackupDirectory){: external}.
 {:tip}
 
 1. Conecte-se ao host por meio de SSH.

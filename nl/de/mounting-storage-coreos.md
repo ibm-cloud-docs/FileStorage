@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, mounting volume in Container Linux, C
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -20,7 +20,7 @@ subcollection: FileStorage
 # {{site.data.keyword.filestorage_short}} unter Container Linux anhängen
 {: #mountingCoreOS}
 
-Container Linux von CoreOS ist ein Open-Source-Betriebssystem mit schlankerem Betriebssystem, das auf dem Linux-Kernel basiert. Es ist für die Bereitstellung der Infrastruktur für Clusterimplementierungen konzipiert. Als Betriebssystem stellt Container Linux eine minimale Funktionalität bereit, die für die Implementierung von Anwendungen innerhalb von Softwarecontainern erforderlich ist, sowie integrierte Mechanismen für die Serviceerkennung und die gemeinsame Konfiguration von Konfigurationen. Weitere Informationen finden Sie in [Speicher anhängen ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://coreos.com/os/docs/latest/mounting-storage.html)
+Container Linux von CoreOS ist ein Open-Source-Betriebssystem mit schlankerem Betriebssystem, das auf dem Linux-Kernel basiert. Es ist für die Bereitstellung der Infrastruktur für Clusterimplementierungen konzipiert. Als Betriebssystem stellt Container Linux eine minimale Funktionalität bereit, die für die Implementierung von Anwendungen innerhalb von Softwarecontainern erforderlich ist, sowie integrierte Mechanismen für die Serviceerkennung und die gemeinsame Konfiguration von Konfigurationen. Weitere Informationen finden Sie in [Speicher anhängen](https://coreos.com/os/docs/latest/mounting-storage.html)
 
 Alle sekundären Mountdateien werden in das Verzeichnis `/etc/systemd/system` gestellt, da sich die Mounts auf Systemebene in einem Verzeichnis befinden, das in CoreOS schreibgeschützt ist. Als Erstes müssen Sie die Datei `MOUNTPOINT.mount` erstellen. Der **Where**-Abschnitt in der Mountdatei (`.mount`) muss mit dem Dateinamen übereinstimmen. Wenn der Mountpunkt nicht direkt an `/` anschließt, müssen Sie die Datei mithilfe der Syntax `pfad-zum-mount.mount` angeben. Wenn Sie beispielsweise das portierbare Speicherlaufwerk an `/mnt/www` anhängen wollen, geben Sie der Datei den Namen `mnt-www.mount`.
 
@@ -55,4 +55,4 @@ cluster1 ~ # mount |grep data
 ```
 {:codeblock}
 
-Weitere Informationen finden Sie in der Dokumentation für [`systemd mount` ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.freedesktop.org/software/systemd/man/systemd.mount.html).
+Weitere Informationen finden Sie in der Dokumentation für [`systemd mount`](https://www.freedesktop.org/software/systemd/man/systemd.mount.html).

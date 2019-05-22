@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NSF, networking, jumbo frames
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}

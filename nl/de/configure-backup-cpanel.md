@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, cPanel, backups
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -20,7 +20,7 @@ subcollection: FileStorage
 
 Sie können Ihre Sicherungen mithilfe dieser Anweisungen so konfigurieren, dass sie von cPanel in {{site.data.keyword.filestorage_full}} gespeichert werden. Dabei wird angenommen, dass root- oder sudo SSH- sowie ein vollständiger WHM-Zugriff (WHM = WebHost Manager) verfügbar ist. Das vorliegende Beispiel basiert auf einem **CentOS 7**-Host.
 
-Weitere Informationen finden Sie in [cPanel - Configuring backup directory ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.cpanel.net/display/68Docs/Backup+Configuration#BackupConfiguration-ConfigureBackupDirectory){:new_window}.
+Weitere Informationen finden Sie in [cPanel - Configuring backup directory](https://docs.cpanel.net/display/68Docs/Backup+Configuration#BackupConfiguration-ConfigureBackupDirectory){: external}.
 {:tip}
 
 1. Stellen Sie über SSH eine Verbindung zum Host her.

@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, SLCLI, provisioning, API
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -18,9 +18,9 @@ subcollection: FileStorage
 # SLCLI による {{site.data.keyword.filestorage_short}} の注文
 {: #orderingSLCLI}
 
-通常は [{{site.data.keyword.slportal}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://control.softlayer.com/){:new_window} で注文する製品については、SLCLI を使用して注文することができます。 SL API では、1 つの注文を複数の注文コンテナーで処理します。 注文 CLI は、1 つの注文コンテナーのみを処理します。
+通常は [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} で注文する製品については、SLCLI を使用して注文することができます。 SL API では、1 つの注文を複数の注文コンテナーで処理します。 注文 CLI は、1 つの注文コンテナーのみを処理します。
 
-SLCLI をインストールして使用する方法について詳しくは、[Python API クライアント![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://softlayer-python.readthedocs.io/en/latest/cli/){:new_window}を参照してください。
+SLCLI をインストールして使用する方法について詳しくは、[Python API クライアント![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}を参照してください。
 {:tip}
 
 ## 入手可能な {{site.data.keyword.filestorage_short}} オファーの検索
@@ -89,7 +89,7 @@ Options:
   -h, --help                      Show this message and exit.
 ```
 
-API で {{site.data.keyword.filestorage_short}} を注文する方法について詳しくは、[order_file_volume ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://softlayer-python.readthedocs.io/en/latest/api/managers/file/#SoftLayer.managers.file.FileStorageManager.order_file_volume){:new_window} を参照してください。
+API で {{site.data.keyword.filestorage_short}} を注文する方法について詳しくは、[order_file_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/file/#SoftLayer.managers.file.FileStorageManager.order_file_volume){: external} を参照してください。
 すべての新機能にアクセスできるようにするには、`Storage-as-a-Service Package 759` を注文します。
 {:tip}
 
@@ -129,7 +129,7 @@ Options:
   --help                    Show this message and exit.
 ```
 
-API を使用して、{{site.data.keyword.filestorage_short}} へのアクセスをホストに許可する方法について詳しくは、[authorize_host_to_volume ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://softlayer-python.readthedocs.io/en/latest/api/managers/file/#SoftLayer.managers.file.FileStorageManager.authorize_host_to_volume){:new_window} を参照してください。
+API を使用して、{{site.data.keyword.filestorage_short}} へのアクセスをホストに許可する方法について詳しくは、[authorize_host_to_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/file/#SoftLayer.managers.file.FileStorageManager.authorize_host_to_volume){: external} を参照してください。
 {:tip}
 
 同時許可の制限について詳しくは、[FAQ](/docs/infrastructure/FileStorage?topic=FileStorage-faqs) を参照してください。

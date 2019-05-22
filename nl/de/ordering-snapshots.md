@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, snapshot, ordering snapshot, snapshot
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -50,9 +50,9 @@ Außerdem gilt bei den meisten Workloads, das umso weniger Speicherplatz anfangs
 
 ## Snapshotbereich über die {{site.data.keyword.cloud_notm}}-Konsole bestellen
 
-1. Melden Sie sich an der [The IBM Cloud-Konsole](https://{DomainName}/){:new_window} an und klicken Sie oben links auf das Menüsymbol. Wählen Sie **Klassische Infrastruktur** aus.
+1. Melden Sie sich an der [The IBM Cloud-Konsole](https://{DomainName}/){: external} an und klicken Sie oben links auf das Menüsymbol. Wählen Sie **Klassische Infrastruktur** aus.
 
-   Alternativ können Sie sich beim [{{site.data.keyword.slportal}} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/){:new_window} anmelden.
+   Alternativ können Sie sich beim [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} anmelden.
 2. Greifen Sie über **Speicher** > **{{site.data.keyword.filestorage_short}}** auf Ihren Speicher zu.
 3. Klicken Sie im Rahmen 'Snapshots' auf die Option zum Ändern des Snapshotbereichs.
 4. Wählen Sie die Menge an benötigtem Speicherplatz und die Zahlungsmethode aus.

@@ -9,7 +9,7 @@ keywords: File Storage, provisioning File Storage for VMware, NFS, File Storage,
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -46,7 +46,7 @@ Al realizar el pedido de {{site.data.keyword.filestorage_short}}, tenga en cuent
 - Para evitar la desconexión del almacenamiento durante una migración tras error de vía de acceso, {{site.data.keyword.IBM}} recomienda la instalación de herramientas VMware, que establecen un valor de tiempo de espera adecuado. No es necesario cambiar el valor, el valor predeterminado es suficiente para garantizar que el host de VMware no pierda la conectividad.
 - Tanto NFSv3 como NFSv4.1 están soportados en el entorno de {{site.data.keyword.BluSoftlayer_full}}. Sin embargo, {{site.data.keyword.IBM}} sugiere que utilice NFSv3. Como NFSv4.1 es un protocolo con estado (no sin estado como NFSv3), se pueden producir problemas de protocolo durante sucesos de red. NFSv4.1 debe desactivar temporalmente todas las operaciones y realizar la reclamación de bloqueo. Durante estas operaciones, pueden producirse interrupciones.
 
-Para obtener más información, consulte el documento técnico de VMware en [Mejores prácticas para ejecutar VMware vSphere en almacenamiento adjunto de red ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){:new_window}
+Para obtener más información, consulte el documento técnico de VMware en [Mejores prácticas para ejecutar VMware vSphere en almacenamiento adjunto de red](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){: external}
 {:tip}
 
 **Matriz de soporte de características VMware de protocolo NFS**
@@ -108,17 +108,17 @@ Volumes</td>
   </tr>
  </tbody>
 </table>
-*Fuente - [VMware - NFS Protocols and ESXi ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){:new_window}*
+*Fuente - [VMware - NFS Protocols and ESXi](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){: external}*
 
 
 
 ### Uso de instantáneas
 
-El {{site.data.keyword.filestorage_short}} permite a los administradores establecer planificaciones de instantáneas que crean y suprimen copias de instantáneas automáticamente para cada volumen de almacenamiento. También pueden crear planificaciones de instantáneas adicionales (cada hora, diariamente, semanalmente) para instantáneas automáticas y crear instantáneas ad manualmente para casos de continuidad del negocio y recuperación tras desastre (BCDR). Las alertas automáticas se envían a través del [{{site.data.keyword.slportal}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){:new_window} al propietario del volumen para las instantáneas retenidas y el espacio utilizado.
+El {{site.data.keyword.filestorage_short}} permite a los administradores establecer planificaciones de instantáneas que crean y suprimen copias de instantáneas automáticamente para cada volumen de almacenamiento. También pueden crear planificaciones de instantáneas adicionales (cada hora, diariamente, semanalmente) para instantáneas automáticas y crear instantáneas ad manualmente para casos de continuidad del negocio y recuperación tras desastre (BCDR). Las alertas automáticas se envían a través del [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} al propietario del volumen para las instantáneas retenidas y el espacio utilizado.
 
 Se necesita espacio de instantáneas para utilizar las instantáneas. El espacio se puede adquirir durante el pedido del volumen inicial o después del suministro inicial mediante la página **Detalles del volumen**, pulsando **Acciones** y seleccionando **Añadir espacio de instantáneas**.
 
-Es importante señalar que los entornos de VMware no son conscientes de las instantáneas. La capacidad de instantáneas de {{site.data.keyword.filestorage_short}} no debe confundirse con las instantáneas de VMware. Toda recuperación que utilice la característica de instantáneas de {{site.data.keyword.filestorage_short}} debe manejarse desde el [{{site.data.keyword.slportal}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){:new_window}.
+Es importante señalar que los entornos de VMware no son conscientes de las instantáneas. La capacidad de instantáneas de {{site.data.keyword.filestorage_short}} no debe confundirse con las instantáneas de VMware. Toda recuperación que utilice la característica de instantáneas de {{site.data.keyword.filestorage_short}} debe manejarse desde el [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
 
 Restaurar el volumen de {{site.data.keyword.filestorage_short}} requiere apagar todas las máquinas virtuales del {{site.data.keyword.filestorage_short}}. El volumen se debe desmontar temporalmente de los hosts de ESXi para evitar la corrupción de datos durante el proceso.
 
@@ -151,11 +151,11 @@ Los datos no válidos, ya estén corruptos, pirateados o infectados, se replican
 
 ## Solicitud de {{site.data.keyword.filestorage_short}}
 
-Utilice la [Arquitectura avanzada de referencia de VMware de un solo sitio ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} para establecer {{site.data.keyword.filestorage_short}} con opciones de Resistencia o Rendimiento en el entorno de VMware.
+Utilice la [Arquitectura avanzada de referencia de VMware de un solo sitio](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){: external} para establecer {{site.data.keyword.filestorage_short}} con opciones de Resistencia o Rendimiento en el entorno de VMware.
 
-{{site.data.keyword.filestorage_short}} se puede solicitar a través del [catálogo de IBM ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://{DomainName}/catalog){:new_window} o del [{{site.data.keyword.slportal}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){:new_window}. Para obtener más información, consulte [Solicitud de {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)
+{{site.data.keyword.filestorage_short}} se puede solicitar a través del [catálogo de IBM](https://{DomainName}/catalog){: external} o del [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}. Para obtener más información, consulte [Solicitud de {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)
 
-El almacenamiento se suministra en menos de un minuto y pasa a estar visible en la página de **{{site.data.keyword.filestorage_short}}** del [{{site.data.keyword.slportal}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){:new_window}.
+El almacenamiento se suministra en menos de un minuto y pasa a estar visible en la página de **{{site.data.keyword.filestorage_short}}** del [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
 
 Una vez suministrado el volumen, los {{site.data.keyword.BluBareMetServers_full}} o {{site.data.keyword.BluVirtServers_full}} que utilizarán el volumen necesitarán autorización para acceder al almacenamiento. Utilice los siguientes pasos para autorizar el volumen.
 
@@ -211,7 +211,7 @@ Antes de empezar el proceso de configuración de VMware, asegúrese de que se cu
      8980 bytes from a.b.c.d: icmp_seq=1 ttl=128 time=3.36 ms
      ```
 
-Para obtener más información sobre VMware y las tramas Jumbo, consulte [aquí ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://kb.vmware.com/s/article/1003712){:new_window}.
+Para obtener más información sobre VMware y las tramas Jumbo, consulte [aquí](https://kb.vmware.com/s/article/1003712){: external}.
 {:tip}
 
 
@@ -251,7 +251,7 @@ La configuración de red para esta guía de arquitectura utiliza un número mín
 
 2. Las rutas estáticas no son persistentes entre reinicios en ESXi 5.0 y versiones anteriores. Para asegurarse de que todas las rutas estáticas añadidas sigan siendo persistentes, debe añadirse este mandato al archivo `local.sh` de cada host, que está ubicado en el directorio `/etc/rc.local.d/`. Abra el archivo `local.sh` con el editor visual y añada el segundo mandato del Paso 4.1., delante de la línea `exit 0`.
 
-Tome nota de la dirección IP, ya que puede utilizarse para montar el volumen en el siguiente paso.<br/>Este proceso debe realizarse para cada volumen NFS que tenga previsto montar en el host de ESXi.<br/>Para obtener más información, consulte el artículo de VMware KB [Configuring static routes for VMkernel ports on an ESXi host ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://kb.vmware.com/s/article/2001426){:new_window}.
+Tome nota de la dirección IP, ya que puede utilizarse para montar el volumen en el siguiente paso.<br/>Este proceso debe realizarse para cada volumen NFS que tenga previsto montar en el host de ESXi.<br/>Para obtener más información, consulte el artículo de VMware KB [Configuring static routes for VMkernel ports on an ESXi host](https://kb.vmware.com/s/article/2001426){: external}.
 {:tip}
 
 
@@ -383,5 +383,5 @@ Los siguientes ejemplos utilizan la CLI para definir los parámetros de configur
     #esxcfg-advcfg -g /Disk/QFullSampleSize
     #esxcfg-advcfg -g /Disk/QFullThreshold
     ```
-Obtenga más información sobre la Arquitectura avanzada de referencia de VMware de un solo sitio [aquí](/docs/infrastructure/virtualization?topic=Virtualization-advanced-single-site-vmware-reference-architecture){:new_window}.
+Obtenga más información sobre la Arquitectura avanzada de referencia de VMware de un solo sitio [aquí](/docs/infrastructure/virtualization?topic=Virtualization-advanced-single-site-vmware-reference-architecture){: external}.
 {:tip}

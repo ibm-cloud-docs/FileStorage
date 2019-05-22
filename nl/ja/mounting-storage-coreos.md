@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, mounting volume in Container Linux, C
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -20,7 +20,7 @@ subcollection: FileStorage
 # Container Linux への {{site.data.keyword.filestorage_short}} のマウント
 {: #mountingCoreOS}
 
-Container Linux by CoreOS は、Linux カーネルに基づく、オープン・ソースの軽量オペレーティング・システムです。 これはクラスター化されたデプロイメントにインフラストラクチャーを提供するように設計されています。 Container Linux は、オペレーティング・システムとして、ソフトウェア・コンテナー内にアプリケーションをデプロイするために必要な最小限の機能と、サービス・ディスカバリーと構成共有用の組み込みメカニズムを備えています。 詳しくは、[Mounting storage ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://coreos.com/os/docs/latest/mounting-storage.html) を参照してください
+Container Linux by CoreOS は、Linux カーネルに基づく、オープン・ソースの軽量オペレーティング・システムです。 これはクラスター化されたデプロイメントにインフラストラクチャーを提供するように設計されています。 Container Linux は、オペレーティング・システムとして、ソフトウェア・コンテナー内にアプリケーションをデプロイするために必要な最小限の機能と、サービス・ディスカバリーと構成共有用の組み込みメカニズムを備えています。 詳しくは、[Mounting storage](https://coreos.com/os/docs/latest/mounting-storage.html) を参照してください
 
 システム・レベルのマウントは読み取り専用のディレクトリーに入っているため、2 次マウント・ファイルはすべて `/etc/systemd/system` ディレクトリーに入れます。 まず、`MOUNTPOINT.mount` ファイルを作成する必要があります。 この `.mount` ファイルの **Where** セクションはファイル名と一致しなければなりません。 マウント・ポイントが `/` の直下にない場合は、`path-to-mount.mount` という構文を使用してファイルに名前を付ける必要があります。 例えば、ポータブル・ストレージ・ドライブを `/mnt/www` にマウントする場合は、`mnt-www.mount` という名前をファイルに付けます。
 
@@ -55,4 +55,4 @@ cluster1 ~ # mount |grep data
 ```
 {:codeblock}
 
-詳しくは、[`systemd mount` の資料 ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://www.freedesktop.org/software/systemd/man/systemd.mount.html) を参照してください
+詳しくは、[`systemd mount` の資料](https://www.freedesktop.org/software/systemd/man/systemd.mount.html) を参照してください

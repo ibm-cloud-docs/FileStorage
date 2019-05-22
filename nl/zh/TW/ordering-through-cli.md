@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, SLCLI, provisioning, API
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -18,9 +18,9 @@ subcollection: FileStorage
 # 透過 SLCLI 訂購 {{site.data.keyword.filestorage_short}}
 {: #orderingSLCLI}
 
-您可以使用 SLCLI 來訂購通常是透過 [{{site.data.keyword.slportal}} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://control.softlayer.com/){:new_window} 來訂購的產品。在 SL API 中，一張訂單可能是由多重訂單容器所組成。訂單 CLI 只能用於一個訂單容器。
+您可以使用 SLCLI 來訂購通常是透過 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 來訂購的產品。在 SL API 中，一張訂單可能是由多重訂單容器所組成。訂單 CLI 只能用於一個訂單容器。
 
-若要進一步瞭解如何安裝及使用 SLCLI，請參閱 [Python API 用戶端 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://softlayer-python.readthedocs.io/en/latest/cli/){:new_window}。
+若要進一步瞭解如何安裝及使用 SLCLI，請參閱 [Python API 用戶端](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}。
 {:tip}
 
 ## 搜尋可用的 {{site.data.keyword.filestorage_short}} 供應項目
@@ -89,7 +89,7 @@ Options:
   -h, --help                      Show this message and exit.
 ```
 
-如需透過 API 來訂購 {{site.data.keyword.filestorage_short}} 的相關資訊，請參閱 [order_file_volume ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://softlayer-python.readthedocs.io/en/latest/api/managers/file/#SoftLayer.managers.file.FileStorageManager.order_file_volume){:new_window}。
+如需透過 API 來訂購 {{site.data.keyword.filestorage_short}} 的相關資訊，請參閱 [order_file_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/file/#SoftLayer.managers.file.FileStorageManager.order_file_volume){: external}。
 若要能夠存取所有新增特性，請訂購 `Storage-as-a-Service Package 759`。
 {:tip}
 
@@ -129,7 +129,7 @@ Options:
   --help                    Show this message and exit.
 ```
 
-若要進一步瞭解如何授權主機透過 API 來存取 {{site.data.keyword.filestorage_short}}，請參閱 [authorize_host_to_volume ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://softlayer-python.readthedocs.io/en/latest/api/managers/file/#SoftLayer.managers.file.FileStorageManager.authorize_host_to_volume){:new_window}。
+若要進一步瞭解如何授權主機透過 API 來存取 {{site.data.keyword.filestorage_short}}，請參閱 [authorize_host_to_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/file/#SoftLayer.managers.file.FileStorageManager.authorize_host_to_volume){: external}。
 {:tip}
 
 如需同時授權限制的相關資訊，請參閱[常見問題](/docs/infrastructure/FileStorage?topic=FileStorage-faqs)。

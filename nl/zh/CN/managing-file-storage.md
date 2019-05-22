@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, authorizing hosts, rewoke access, gra
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -73,7 +73,7 @@ Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
 
 可以查看主机有权访问的卷，包括建立连接所需的信息 - 卷名、存储类型、目标地址、容量和位置。
 
-1. 在 [{{site.data.keyword.slportal}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window} 中单击**设备** > **设备列表** 
+1. 在 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 中单击**设备** > **设备列表** 
 2. 单击相应的设备。
 2. 选择“存储”选项卡。
 
@@ -96,7 +96,7 @@ Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
 
 ### 通过设备列表撤销访问权
 
-1. 在 [{{site.data.keyword.slportal}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window} 中单击**设备** > **设备列表** 
+1. 在 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 中单击**设备** > **设备列表** 
 2. 双击相应的设备。
 3. 选择**存储**选项卡。
 4. 这将向您显示此特定主机有权访问的存储卷的列表，全部按存储类型（块、文件或其他）进行分组。选择要从中撤销访问权的卷旁边的相应**操作**菜单，然后单击**撤销访问权**。

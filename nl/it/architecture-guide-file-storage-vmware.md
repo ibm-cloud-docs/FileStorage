@@ -9,7 +9,7 @@ keywords: File Storage, provisioning File Storage for VMware, NFS, File Storage,
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -47,7 +47,7 @@ Quando ordini {{site.data.keyword.filestorage_short}}, tieni conto delle seguent
 - Nell'ambiente {{site.data.keyword.BluSoftlayer_full}} sono supportati sia NFSv3 che NFSv4.1. Tuttavia, {{site.data.keyword.IBM}} consiglia di utilizzare NFSv3. Poiché NFSv4.1 è un protocollo con stato (non senza stato come NFSv3), durante gli eventi di rete potrebbero verificarsi dei problemi di protocollo. NFSv4.1 deve disattivare tutte le operazioni e quindi completare un recupero del blocco. Mentre sono in corso tali operazioni, possono verificarsi delle interruzioni del servizio.
 
 Per ulteriori informazioni, consulta il white paper di VMware [Best Practices for running
-VMware vSphere on Network Attached Storage ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){:new_window}
+VMware vSphere on Network Attached Storage](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){: external}
 {:tip}
 
 **Matrice di supporto delle funzioni VMware del protocollo NFS**
@@ -108,17 +108,17 @@ VMware vSphere on Network Attached Storage ![Icona link esterno](../../icons/lau
   </tr>
  </tbody>
 </table>
-*Origine - [VMware - NFS Protocols and ESXi ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){:new_window}*
+*Origine - [VMware - NFS Protocols and ESXi](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){: external}*
 
 
 
 ### Utilizzo delle istantanee
 
-{{site.data.keyword.filestorage_short}} consente agli amministratori di impostare le pianificazioni delle istantanee che creano ed eliminano copie di istantanea automaticamente per ciascun volume di archiviazione. Possono anche creare delle pianificazioni delle istantanee aggiuntive (orarie, giornaliere, settimanali) per le istantanee automatiche e creare manualmente delle istantanee ad hoc per gli scenari di continuità aziendale e ripristino di emergenza (BCDR, business continuity and disaster recovery). Gli avvisi automatici vengono recapitati tramite il [{{site.data.keyword.slportal}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://control.softlayer.com/){:new_window} al proprietario del volume per le istantanee conservate e lo spazio utilizzato.
+{{site.data.keyword.filestorage_short}} consente agli amministratori di impostare le pianificazioni delle istantanee che creano ed eliminano copie di istantanea automaticamente per ciascun volume di archiviazione. Possono anche creare delle pianificazioni delle istantanee aggiuntive (orarie, giornaliere, settimanali) per le istantanee automatiche e creare manualmente delle istantanee ad hoc per gli scenari di continuità aziendale e ripristino di emergenza (BCDR, business continuity and disaster recovery). Gli avvisi automatici vengono recapitati tramite il [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} al proprietario del volume per le istantanee conservate e lo spazio utilizzato.
 
 Per utilizzare le istantanee è necessario lo spazio per le istantanee. Lo spazio può essere acquistato durante l'ordine dei volumi iniziale e dopo il provisioning iniziale tramite la pagina **Volume Details** facendo clic su **Actions** e selezionando **Add Snapshot Space**.
 
-È importare notare che gli ambienti VMware non rilevano le istantanee. La funzionalità di istantanea di {{site.data.keyword.filestorage_short}} non deve essere confusa con le istantanee VMware. Qualsiasi ripristino che utilizza la funzione di istantanea di {{site.data.keyword.filestorage_short}} deve essere gestito dal [{{site.data.keyword.slportal}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://control.softlayer.com/){:new_window}.
+È importare notare che gli ambienti VMware non rilevano le istantanee. La funzionalità di istantanea di {{site.data.keyword.filestorage_short}} non deve essere confusa con le istantanee VMware. Qualsiasi ripristino che utilizza la funzione di istantanea di {{site.data.keyword.filestorage_short}} deve essere gestito dal [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
 
 Il ripristino del volume di {{site.data.keyword.filestorage_short}} richiede lo spegnimento di tutte le macchine virtuali (VM, Virtual Machine) in {{site.data.keyword.filestorage_short}}. Il volume deve essere temporaneamente smontato dagli host ESXi per evitare eventuali danneggiamenti di dati durante il processo.
 
@@ -151,11 +151,11 @@ I dati non validi, non importa se danneggiati, oggetto di attacchi o infettati, 
 
 ## Ordinazione di {{site.data.keyword.filestorage_short}}
 
-Utilizza la [Advanced Single-Site VMware Reference Architecture ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} per configurare {{site.data.keyword.filestorage_short}} con le opzioni Endurance o Performance nel tuo ambiente VMware.
+Utilizza la [Advanced Single-Site VMware Reference Architecture](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){: external} per configurare {{site.data.keyword.filestorage_short}} con le opzioni Endurance o Performance nel tuo ambiente VMware.
 
-{{site.data.keyword.filestorage_short}} può essere ordinato tramite il [catalogo IBM Cloud ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://{DomainName}/catalog){:new_window} oppure il [{{site.data.keyword.slportal}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://control.softlayer.com/){:new_window}. Per ulteriori informazioni, vedi [Ordinazione di {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)
+{{site.data.keyword.filestorage_short}} può essere ordinato tramite il [catalogo IBM Cloud](https://{DomainName}/catalog){: external} oppure il [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}. Per ulteriori informazioni, vedi [Ordinazione di {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)
 
-Il provisioning dell'archiviazione viene eseguito in meno di un minuto e diventa visibile nella pagina **{{site.data.keyword.filestorage_short}}** del [{{site.data.keyword.slportal}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://control.softlayer.com/){:new_window}.
+Il provisioning dell'archiviazione viene eseguito in meno di un minuto e diventa visibile nella pagina **{{site.data.keyword.filestorage_short}}** del [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
 
 Dopo che è stato eseguito il provisioning di un volume, i {{site.data.keyword.BluBareMetServers_full}} o i {{site.data.keyword.BluVirtServers_full}} che utilizzano il volume devono essere autorizzati ad accedere all'archiviazione. Utilizza la seguente procedura per autorizzare il volume.
 
@@ -211,7 +211,7 @@ Prima di iniziare il processo di configurazione di VMware, assicurati che siano 
      8980 bytes from a.b.c.d: icmp_seq=1 ttl=128 time=3.36 ms
      ```
 
-Per ulteriori informazioni su VMware e frame Jumbo, vedi [qui ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://kb.vmware.com/s/article/1003712){:new_window}.
+Per ulteriori informazioni su VMware e frame Jumbo, vedi [qui](https://kb.vmware.com/s/article/1003712){: external}.
 {:tip}
 
 
@@ -251,7 +251,7 @@ La configurazione di rete per questa guida all'architettura utilizza un numero m
 
 2. Gli instradamenti statici non sono persistenti tra i riavvii su ESXi 5.0 e antecedenti. Per garantire che eventuali instradamenti statici aggiunti rimangano persistenti, questo comando deve essere aggiunto al file `local.sh` file su ciascun host, che si trova nella directory `/etc/rc.local.d/`. Apri il file `local.sh` utilizzando l'editor visivo e aggiungi il secondo comando nel passo 4.1. davanti alla riga `exit 0`.
 
-Annota l'indirizzo IP poiché può essere utilizzato per montare il volume nel passo successivo.<br/>Questo processo deve essere eseguito per ciascun volume NFS che intendi montare al tuo host ESXi.<br/>Per ulteriori informazioni, vedi l'articolo della Knowledge Base di VMware KB, [Configuring static routes for VMkernel ports on an ESXi host ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://kb.vmware.com/s/article/2001426){:new_window}.
+Annota l'indirizzo IP poiché può essere utilizzato per montare il volume nel passo successivo.<br/>Questo processo deve essere eseguito per ciascun volume NFS che intendi montare al tuo host ESXi.<br/>Per ulteriori informazioni, vedi l'articolo della Knowledge Base di VMware KB, [Configuring static routes for VMkernel ports on an ESXi host](https://kb.vmware.com/s/article/2001426){: external}.
 {:tip}
 
 
@@ -383,5 +383,5 @@ I seguenti esempi utilizzano la CLI per impostare i parametri di configurazione 
     #esxcfg-advcfg -g /Disk/QFullSampleSize
     #esxcfg-advcfg -g /Disk/QFullThreshold
     ```
-Trova ulteriori informazioni su Advanced Single-Site VMware Reference Architecture [qui](/docs/infrastructure/virtualization?topic=Virtualization-advanced-single-site-vmware-reference-architecture){:new_window}.
+Trova ulteriori informazioni su Advanced Single-Site VMware Reference Architecture [qui](/docs/infrastructure/virtualization?topic=Virtualization-advanced-single-site-vmware-reference-architecture){: external}.
 {:tip}

@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, duplicate volume
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -39,7 +39,7 @@ subcollection: FileStorage
 - **개발 및 테스트(개발/테스트)**. 한 번에 최대 4개의 동시 볼륨 복제를 작성하여 개발 및 테스트용 복제 데이터를 작성합니다.
 - **스토리지 크기 조정**. 데이터를 이동할 필요 없이 크기 또는 IOPS 비율(또는 둘 다)이 새로운 볼륨을 작성합니다.  
 
-몇 가지 방법으로 [{{site.data.keyword.slportal}} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://control.softlayer.com/){:new_window}을 통해 중복 볼륨을 작성할 수 있습니다.
+몇 가지 방법으로 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}을 통해 중복 볼륨을 작성할 수 있습니다.
 
 
 ## 스토리지 목록의 특정 볼륨에서 복제 작성

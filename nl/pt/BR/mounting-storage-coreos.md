@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, mounting volume in Container Linux, C
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -22,7 +22,7 @@ subcollection: FileStorage
 
 O Container Linux by CoreOS é um sistema operacional leve de software livre baseado no kernel do Linux. Ele foi projetado para fornecer infraestrutura para implementações em cluster. Como um sistema operacional,
 o Container Linux fornece a funcionalidade mínima requerida para implementar aplicativos dentro de
-contêineres de software, juntamente com mecanismos integrados para descoberta de serviço e compartilhamento de configuração. Para obter mais informações, veja [Montando o armazenamento ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://coreos.com/os/docs/latest/mounting-storage.html)
+contêineres de software, juntamente com mecanismos integrados para descoberta de serviço e compartilhamento de configuração. Para obter mais informações, veja [Montando o armazenamento](https://coreos.com/os/docs/latest/mounting-storage.html)
 
 Todos os arquivos de montagem secundários vão no diretório `/etc/systemd/system`, pois as montagens de nível do sistema estão em um diretório que é somente leitura. Primeiro, deve-se criar um arquivo `MOUNTPOINT.mount`. A seção **Onde** do arquivo `.mount` deve corresponder ao nome do arquivo. Quando o ponto de montagem não está diretamente fora de `/`, deve-se nomear o arquivo usando a sintaxe `path-to-mount.mount`. Por exemplo, se você desejar montar a unidade de armazenamento móvel para `/mnt/www`, dê o nome `mnt-www.mount` ao arquivo.
 
@@ -54,4 +54,4 @@ cluster1 ~ # mount |grep data
 ```
 {:codeblock}
 
-Para obter mais informações, consulte a documentação do [`systemd mount` ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://www.freedesktop.org/software/systemd/man/systemd.mount.html)
+Para obter mais informações, consulte a documentação do [`systemd mount`](https://www.freedesktop.org/software/systemd/man/systemd.mount.html)

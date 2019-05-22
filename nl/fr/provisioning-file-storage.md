@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, provisioning, ordering,
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -29,9 +29,9 @@ Vous pouvez mettre à disposition {{site.data.keyword.filestorage_short}} et l'a
 ## Commande de {{site.data.keyword.filestorage_short}} avec des niveaux d'IOPS prédéfinis (Endurance)
 {: #endurance}
 
-1. Connectez-vous au [catalogue IBM Cloud](https://{DomainName}/catalog){:new_window}, puis cliquez sur **Stockage**. Ensuite, sélectionnez {{site.data.keyword.filestorage_short}}. Cliquez sur **Créer**.
+1. Connectez-vous au [catalogue IBM Cloud](https://{DomainName}/catalog){: external}, puis cliquez sur **Stockage**. Ensuite, sélectionnez {{site.data.keyword.filestorage_short}}. Cliquez sur **Créer**.
 
-   Vous pouvez également vous connecter au portail [{{site.data.keyword.slportal}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://control.softlayer.com/){:new_window}, puis cliquer sur **Stockage** > **{{site.data.keyword.filestorage_short}}**. Dans l'angle supérieur droit, cliquez sur **Commander {{site.data.keyword.filestorage_short}}**.
+   Vous pouvez également vous connecter au portail [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}, puis cliquer sur **Stockage** > **{{site.data.keyword.filestorage_short}}**. Dans l'angle supérieur droit, cliquez sur **Commander {{site.data.keyword.filestorage_short}}**.
 2. Sélectionnez l'**emplacement** de votre déploiement (centre de données).
    - Vérifiez que le nouveau stockage est ajouté au même emplacement que celui du ou des hôtes de calcul dont vous disposez.
 3. Facturation. Si vous avez sélectionné un centre de données avec des fonctionnalités améliorées (indiqué par un astérisque), vous avez le choix entre une facturation mensuelle ou horaire.
@@ -61,9 +61,9 @@ Par défaut, vous pouvez mettre à disposition un total combiné de 250 volumes 
 ## Commande de {{site.data.keyword.filestorage_short}} avec un nombre d'IOPS personnalisé (Performance)
 {: #performance}
 
-1. Connectez-vous au [catalogue IBM Cloud](https://{DomainName}/catalog){:new_window}, puis cliquez sur **Stockage**. Ensuite, sélectionnez {{site.data.keyword.filestorage_short}}. Cliquez sur **Créer**.
+1. Connectez-vous au [catalogue IBM Cloud](https://{DomainName}/catalog){: external}, puis cliquez sur **Stockage**. Ensuite, sélectionnez {{site.data.keyword.filestorage_short}}. Cliquez sur **Créer**.
 
-   Vous pouvez également vous connecter au portail [{{site.data.keyword.slportal}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://control.softlayer.com/){:new_window}, puis cliquer sur **Stockage** > **{{site.data.keyword.filestorage_short}}**. Dans l'angle supérieur droit, cliquez sur **Commander {{site.data.keyword.filestorage_short}}**.
+   Vous pouvez également vous connecter au portail [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}, puis cliquer sur **Stockage** > **{{site.data.keyword.filestorage_short}}**. Dans l'angle supérieur droit, cliquez sur **Commander {{site.data.keyword.filestorage_short}}**.
 2. Cliquez sur **Emplacement** et sélectionnez votre centre de données.
    - Vérifiez que le nouveau stockage est ajouté au même emplacement que celui du ou des hôtes de calcul dont vous disposez.
 3. Facturation. Si vous avez sélectionné un centre de données avec des fonctionnalités améliorées (indiqué par un astérisque), vous avez le choix entre une facturation mensuelle ou horaire.

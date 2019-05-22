@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, disaster recovery, duplicate volume, 
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -25,9 +25,9 @@ Si un error catastrófico o un desastre ocasionan la caída del sitio principal,
 
 ## Migración tras error con un duplicado de un volumen de réplica en el sitio secundario
 
-1. Inicie la sesión en la [consola de IBM Cloud ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://{DomainName}/){:new_window} y pulse el icono de **menú** de la parte superior izquierda. Seleccione **Infraestructura clásica**.
+1. Inicie la sesión en la [consola de IBM Cloud](https://{DomainName}/){: external} y pulse el icono de **menú** de la parte superior izquierda. Seleccione **Infraestructura clásica**.
 
-   También puede iniciar la sesión en el [{{site.data.keyword.slportal}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){:new_window}.
+   También puede iniciar la sesión en el [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
 2. Pulse **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**.
 3. Pulse en la réplica de la compartición de archivos de la lista para visualizar su página de **Detalles**.
 4. En la página **Detalles**, desplácese hacia abajo y seleccione una instantánea existente; luego pulse **Acciones** > **Duplicar**.
@@ -41,9 +41,9 @@ Tan pronto como se haya creado el volumen podrá adjuntarlo a un host y realizar
 
 Si desea devolver la producción al sitio primario original, debe seguir los pasos siguientes.
 
-1. Inicie la sesión en la [consola de IBM Cloud ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://{DomainName}/){:new_window} y pulse el icono de **menú** de la parte superior izquierda. Seleccione **Infraestructura clásica**.
+1. Inicie la sesión en la [consola de IBM Cloud](https://{DomainName}/){: external} y pulse el icono de **menú** de la parte superior izquierda. Seleccione **Infraestructura clásica**.
 
-   También puede iniciar la sesión en el [{{site.data.keyword.slportal}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){:new_window}.
+   También puede iniciar la sesión en el [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
 2. Pulse **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**.
 3. Pulse el nombre de la LUN y cree una planificación de instantánea (si no hay ya una).
 

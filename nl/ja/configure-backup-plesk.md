@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, Plesk, backups
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -20,7 +20,7 @@ subcollection: FileStorage
 
 これらの手順を使用することにより、Plesk でのバックアップ用に{{site.data.keyword.filestorage_full}}を構成することができます。 root を使用できるか、または sudo SSH で Plesk の管理者レベルのフル・アクセス権限を使用できる必要があります。 この例は、CentOS7 ホストに基づいています。
 
-詳しくは、[バックアップとリストアに関する Plesk の資料 ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://docs.plesk.com/en-US/12.5/administrator-guide/backing-up-and-restoration.59256/){:new_window} を参照してください。
+詳しくは、[バックアップとリストアに関する Plesk の資料](https://docs.plesk.com/en-US/12.5/administrator-guide/backing-up-and-restoration.59256/){: external} を参照してください。
 {:tip}
 
 1. SSH を使用してホストに接続します。

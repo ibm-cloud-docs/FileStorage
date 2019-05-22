@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, upgrade, migrate to new
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}

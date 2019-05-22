@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS,
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -31,7 +31,7 @@ Optionen:
   -h, --help             Diese Nachricht anzeigen und Ausführung beenden.
 ```
 
-Sie können eine Erhöhung der Begrenzung anfordern, indem Sie ein Ticket beim [{{site.data.keyword.slportal}} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/){:new_window} einreichen. Wenn die Anforderung genehmigt ist, wird eine Datenträgerbegrenzung für ein bestimmtes Rechenzentrum festgelegt.  
+Sie können eine Erhöhung der Begrenzung anfordern, indem Sie ein Ticket beim [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} einreichen. Wenn die Anforderung genehmigt ist, wird eine Datenträgerbegrenzung für ein bestimmtes Rechenzentrum festgelegt.  
 
 Zum Anfordern einer Erhöhung einer Begrenzung öffnen Sie ein Ticket und richten es an Ihren Vertriebsbeauftragten.
 

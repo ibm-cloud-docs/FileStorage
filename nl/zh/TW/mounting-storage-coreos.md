@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, mounting volume in Container Linux, C
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -20,7 +20,7 @@ subcollection: FileStorage
 # 在 Container Linux 上裝載 {{site.data.keyword.filestorage_short}}
 {: #mountingCoreOS}
 
-Container Linux by CoreOS 是以 Linux Kernel 為基礎的開放程式碼輕量型作業系統。其設計旨在為叢集部署提供基礎架構。作為作業系統，Container Linux 提供在軟體容器內部署應用程式所需的最基本功能，並搭配內建的機制來進行服務探索和配置共用。如需相關資訊，請參閱 [Mounting storage ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://coreos.com/os/docs/latest/mounting-storage.html)。
+Container Linux by CoreOS 是以 Linux Kernel 為基礎的開放程式碼輕量型作業系統。其設計旨在為叢集部署提供基礎架構。作為作業系統，Container Linux 提供在軟體容器內部署應用程式所需的最基本功能，並搭配內建的機制來進行服務探索和配置共用。如需相關資訊，請參閱 [Mounting storage](https://coreos.com/os/docs/latest/mounting-storage.html)。
 
 所有次要裝載檔都會放在 `/etc/systemd/system` 目錄中，因為系統層次裝載是位在唯讀的目錄中。首先，您必須建立 `MOUNTPOINT.mount` 檔案。`.mount` 檔案的 **Where** 區段必須符合其檔名。如果裝載點未直接在 `/` 下，您必須使用 `path-to-mount.mount` 語法來命名檔案。例如，如果您要將可攜式儲存空間磁碟裝載至 `/mnt/www`，請將檔案命名為 `mnt-www.mount`。
 
@@ -55,4 +55,4 @@ cluster1 ~ # mount |grep data
 ```
 {:codeblock}
 
-如需相關資訊，請參閱 [`systemd mount` 文件 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://www.freedesktop.org/software/systemd/man/systemd.mount.html)
+如需相關資訊，請參閱 [`systemd mount` 文件](https://www.freedesktop.org/software/systemd/man/systemd.mount.html)

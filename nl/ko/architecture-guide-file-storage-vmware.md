@@ -9,7 +9,7 @@ keywords: File Storage, provisioning File Storage for VMware, NFS, File Storage,
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -47,7 +47,7 @@ subcollection: FileStorage
 - NFSv3 및 NFSv4.1이 둘 다 {{site.data.keyword.BluSoftlayer_full}} 환경에서 지원됩니다. 그러나 {{site.data.keyword.IBM}}에서는 NFSv3을 사용하도록 권장합니다. NFSv4.1이 Stateful 프로토콜이므로(NFSv3과 같이 Stateless가 아님), 네트워크 이벤트 중에 프로토콜 문제가 발생할 수 있습니다. NFSv4.1은 모든 오퍼레이션을 중지한 후에 잠금 교정을 완료해야 합니다. 이러한 오퍼레이션이 실행되는 동안 장애가 발생할 수 있습니다.
 
 자세한 정보는 [네트워크 연결 스토리지에서
-VMware vSphere 실행에 대한 우수 사례 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf)의 VMware 백서를 참조하십시오.{:new_window}
+VMware vSphere 실행에 대한 우수 사례](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf)의 VMware 백서를 참조하십시오.{: external}
 {:tip}
 
 **NFS 프로토콜 VMware 기능 지원 표**
@@ -108,17 +108,17 @@ VMware vSphere 실행에 대한 우수 사례 ![외부 링크 아이콘](../../i
   </tr>
  </tbody>
 </table>
-*소스 - [VMware - NFS 프로토콜 및 ESXi ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){:new_window}*
+*소스 - [VMware - NFS 프로토콜 및 ESXi](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){: external}*
 
 
 
 ### 스냅샷 사용
 
-{{site.data.keyword.filestorage_short}}를 통해 관리자는 각 스토리지 볼륨에 대해 자동으로 스냅샷 사본을 작성 및 삭제하는 스냅샷 스케줄을 설정할 수 있습니다. 또한 관리자는 자동 스냅샷에 대해 추가로 스냅샷 스케줄(시간별, 일별, 주별)을 작성하고 비즈니스 연속성 및 재해 복구(BCDR) 시나리오에 대한 임시 스냅샷을 수동으로 작성할 수도 있습니다. 자동 경보는 [{{site.data.keyword.slportal}} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://control.softlayer.com/){:new_window}을 통해 보유 중인 스냅샷과 사용된 영역의 볼륨 소유자에게 전달됩니다.
+{{site.data.keyword.filestorage_short}}를 통해 관리자는 각 스토리지 볼륨에 대해 자동으로 스냅샷 사본을 작성 및 삭제하는 스냅샷 스케줄을 설정할 수 있습니다. 또한 관리자는 자동 스냅샷에 대해 추가로 스냅샷 스케줄(시간별, 일별, 주별)을 작성하고 비즈니스 연속성 및 재해 복구(BCDR) 시나리오에 대한 임시 스냅샷을 수동으로 작성할 수도 있습니다. 자동 경보는 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}을 통해 보유 중인 스냅샷과 사용된 영역의 볼륨 소유자에게 전달됩니다.
 
 스냅샷을 사용하려면 스냅샷 영역이 필요합니다. 영역은 초기 볼륨 주문 중에 구매하거나, 초기 프로비저닝 후 **볼륨 세부사항** 페이지를 통해(**조치**를 클릭하고 **스냅샷 영역 추가**를 선택) 구매할 수 있습니다.
 
-VMware 환경은 스냅샷을 인지하지 않음을 유념하십시오. {{site.data.keyword.filestorage_short}} 스냅샷 기능을 VMware 스냅샷과 혼동하지 않아야 합니다. {{site.data.keyword.filestorage_short}} 스냅샷 기능을 사용하는 복구는 [{{site.data.keyword.slportal}} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://control.softlayer.com/){:new_window}에서 처리해야 합니다.
+VMware 환경은 스냅샷을 인지하지 않음을 유념하십시오. {{site.data.keyword.filestorage_short}} 스냅샷 기능을 VMware 스냅샷과 혼동하지 않아야 합니다. {{site.data.keyword.filestorage_short}} 스냅샷 기능을 사용하는 복구는 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}에서 처리해야 합니다.
 
 {{site.data.keyword.filestorage_short}} 볼륨을 복원하려면 {{site.data.keyword.filestorage_short}}의 모든 VM을 꺼야 합니다. 프로세스 중에 데이터 손상을 방지하기 위해 ESXi 호스트의 볼륨을 임시로 마운트 해제해야 합니다.
 
@@ -151,11 +151,11 @@ VMware 환경은 스냅샷을 인지하지 않음을 유념하십시오. {{site.
 
 ## {{site.data.keyword.filestorage_short}} 주문
 
-[고급 단일 사이트 VMware 참조 아키텍처 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}을 사용하여 VMware 환경의 Endurance 또는 Performance 옵션으로 {{site.data.keyword.filestorage_short}}를 설정할 수 있습니다.
+[고급 단일 사이트 VMware 참조 아키텍처](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){: external}을 사용하여 VMware 환경의 Endurance 또는 Performance 옵션으로 {{site.data.keyword.filestorage_short}}를 설정할 수 있습니다.
 
-{{site.data.keyword.filestorage_short}}는 [IBM Cloud 카탈로그 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://{DomainName}/catalog){:new_window} 또는 [{{site.data.keyword.slportal}} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://control.softlayer.com/){:new_window}을 통해 주문할 수 있습니다. 자세한 정보는 [{{site.data.keyword.filestorage_short}} 주문](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)을 참조하십시오.
+{{site.data.keyword.filestorage_short}}는 [IBM Cloud 카탈로그](https://{DomainName}/catalog){: external} 또는 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}을 통해 주문할 수 있습니다. 자세한 정보는 [{{site.data.keyword.filestorage_short}} 주문](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)을 참조하십시오.
 
-스토리지가 1분 내에 프로비저닝되며 [{{site.data.keyword.slportal}} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://control.softlayer.com/){:new_window}의 **{{site.data.keyword.filestorage_short}}** 페이지에 표시됩니다.
+스토리지가 1분 내에 프로비저닝되며 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}의 **{{site.data.keyword.filestorage_short}}** 페이지에 표시됩니다.
 
 볼륨이 프로비저닝되고 나면 볼륨을 사용할 {{site.data.keyword.BluBareMetServers_full}} 또는 {{site.data.keyword.BluVirtServers_full}}에 스토리지 액세스 권한이 부여되어야 합니다. 다음 단계를 사용하여 볼륨에 권한을 부여할 수 있습니다.
 
@@ -211,7 +211,7 @@ VMware 구성 프로세스를 시작하기 전에, 다음 전제조건을 만족
         8980 bytes from a.b.c.d: icmp_seq=1 ttl=128 time=3.36 ms
      ```
 
-VMware 및 Jumbo 프레임에 관한 자세한 정보는 [여기 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://kb.vmware.com/s/article/1003712){:new_window}을 참조하십시오.
+VMware 및 Jumbo 프레임에 관한 자세한 정보는 [여기](https://kb.vmware.com/s/article/1003712){: external}을 참조하십시오.
 {:tip}
 
 
@@ -251,7 +251,7 @@ VMware 및 Jumbo 프레임에 관한 자세한 정보는 [여기 ![외부 링크
 
 2. ESXi 5.0 이전에서는 정적 라우트가 다시 시작 간에 지속되지 않습니다. 추가된 정적 라우트가 지속되도록 하려면 이 명령을 각 호스트의 `/etc/rc.local.d/` 디렉토리에 있는 `local.sh` 파일에 추가해야 합니다. Visual Editor를 사용하여 `local.sh` 파일을 열고 `exit 0` 행 앞에 4.1단계의 두 번째 명령을 추가하십시오.
 
-다음 단계에서 볼륨을 마운트하는 데 사용될 수 있으므로 IP 주소를 기록해 두십시오.<br/>ESXi 호스트에 마운트할 각각의 NFS 볼륨마다 이 프로세스를 수행해야 합니다.<br/>자세한 정보는 VMware KB 문서인 [Configuring static routes for VMkernel ports on an ESXi host ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://kb.vmware.com/s/article/2001426){:new_window}를 참조하십시오.
+다음 단계에서 볼륨을 마운트하는 데 사용될 수 있으므로 IP 주소를 기록해 두십시오.<br/>ESXi 호스트에 마운트할 각각의 NFS 볼륨마다 이 프로세스를 수행해야 합니다.<br/>자세한 정보는 VMware KB 문서인 [Configuring static routes for VMkernel ports on an ESXi host](https://kb.vmware.com/s/article/2001426){: external}를 참조하십시오.
 {:tip}
 
 
@@ -383,5 +383,5 @@ NFS 스토리지를 위해 ESXi 5.x 호스트를 구성하려면 추가 설정�
     #esxcfg-advcfg -g /Disk/QFullSampleSize
     #esxcfg-advcfg -g /Disk/QFullThreshold
     ```
-[여기서](/docs/infrastructure/virtualization?topic=Virtualization-advanced-single-site-vmware-reference-architecture){:new_window} 고급 단일 사이트 VMware 참조 아키텍처에 대해 자세히 알아보십시오.
+[여기서](/docs/infrastructure/virtualization?topic=Virtualization-advanced-single-site-vmware-reference-architecture){: external} 고급 단일 사이트 VMware 참조 아키텍처에 대해 자세히 알아보십시오.
 {:tip}

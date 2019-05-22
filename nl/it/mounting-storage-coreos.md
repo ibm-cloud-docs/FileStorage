@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, mounting volume in Container Linux, C
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -20,7 +20,7 @@ subcollection: FileStorage
 # Montaggio di {{site.data.keyword.filestorage_short}} su Container Linux
 {: #mountingCoreOS}
 
-Container Linux di CoreOS è un sistema operativo leggero ed open source basato sul kernel Linux. È progettato per fornire l'infrastruttura alle distribuzioni organizzate in cluster. Come sistema operativo, Container Linux fornisce la funzionalità minima richiesta per la distribuzione di applicazioni all'interno di contenitori software, insieme a meccanismi integrati per il rilevamento dei servizi e la condivisione della configurazione. Per ulteriori informazioni, vedi [Mounting storage ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://coreos.com/os/docs/latest/mounting-storage.html)
+Container Linux di CoreOS è un sistema operativo leggero ed open source basato sul kernel Linux. È progettato per fornire l'infrastruttura alle distribuzioni organizzate in cluster. Come sistema operativo, Container Linux fornisce la funzionalità minima richiesta per la distribuzione di applicazioni all'interno di contenitori software, insieme a meccanismi integrati per il rilevamento dei servizi e la condivisione della configurazione. Per ulteriori informazioni, vedi [Mounting storage](https://coreos.com/os/docs/latest/mounting-storage.html)
 
 Tutti i file di montaggio secondari vanno nella directory `/etc/systemd/system` poiché i montaggi a livello di sistema si trovano n una directory che è di sola lettura. Per prima cosa, devi creare un file `MOUNTPOINT.mount`. La sezione **Where** del file `.mount` deve corrispondere al nome file. Se il punto di montaggio non è direttamente a partire da `/` devi denominare il file utilizzando la sintassi: `percorso-al-montaggio.mount`. Ad esempio, se vuoi montare l'unità di archiviazione portatile a `/mnt/www`, denomina il file `mnt-www.mount`.
 
@@ -55,4 +55,4 @@ cluster1 ~ # mount |grep data
 ```
 {:codeblock}
 
-Per ulteriori informazioni, vedi la [documentazione di `systemd mount` ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://www.freedesktop.org/software/systemd/man/systemd.mount.html)
+Per ulteriori informazioni, vedi la [documentazione di `systemd mount`](https://www.freedesktop.org/software/systemd/man/systemd.mount.html)

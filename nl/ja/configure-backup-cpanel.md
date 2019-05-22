@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, cPanel, backups
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -20,7 +20,7 @@ subcollection: FileStorage
 
 これらの手順を使用することにより、バックアップが cPanel によって {{site.data.keyword.filestorage_full}} に保存されるように構成することができます。 root を使用できるか、または sudo SSH で WebHost Manager (WHM) のフル・アクセス権限を使用できる必要があります。 この例は、**CentOS 7** ホストに基づいています。
 
-詳しくは、[cPanel - Configuring backup directory ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://docs.cpanel.net/display/68Docs/Backup+Configuration#BackupConfiguration-ConfigureBackupDirectory){:new_window} を参照してください。
+詳しくは、[cPanel - Configuring backup directory](https://docs.cpanel.net/display/68Docs/Backup+Configuration#BackupConfiguration-ConfigureBackupDirectory){: external} を参照してください。
 {:tip}
 
 1. SSH を使用してホストに接続します。

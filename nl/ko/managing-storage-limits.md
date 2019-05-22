@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS,
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -31,7 +31,7 @@ Options:
  -h, --help             Show this message and exit.
 ```
 
-[{{site.data.keyword.slportal}} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://control.softlayer.com/){:new_window}에서 티켓을 제출하여 한계 늘리기를 요청할 수 있습니다. 요청이 승인되면 특정 데이터 센터에 대해 설정된 볼륨 한계를 받습니다.  
+[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}에서 티켓을 제출하여 한계 늘리기를 요청할 수 있습니다. 요청이 승인되면 특정 데이터 센터에 대해 설정된 볼륨 한계를 받습니다.  
 
 한계 늘리기를 요청하려면 티켓을 열고 이를 영업 담당자에게 보내십시오.
 

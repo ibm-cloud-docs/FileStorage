@@ -9,7 +9,7 @@ keywords: File Storage, mounting file storage, Linux, CentOS, NFS
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -20,7 +20,7 @@ subcollection: FileStorage
 # Montaje de {{site.data.keyword.filestorage_short}} en CentOS
 {: #mountingCentOS}
 
-Para montar {{site.data.keyword.filestorage_full}} en CentOS 7, primero debe autorizar el host mediante el [{{site.data.keyword.slportal}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){:new_window} o mediante SLCLI. A continuación, instale los programas de utilidad de NFS como se describe en [Montaje de {{site.data.keyword.filestorage_short}} en Linux](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux).
+Para montar {{site.data.keyword.filestorage_full}} en CentOS 7, primero debe autorizar el host mediante el [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} o mediante SLCLI. A continuación, instale los programas de utilidad de NFS como se describe en [Montaje de {{site.data.keyword.filestorage_short}} en Linux](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux).
 
 Para CentOS, puede especificar opciones adicionales utilizando la línea `Options=` en el archivo de montaje. En el siguiente ejemplo, NFS está configurado para montarse en `/data/www`.
 

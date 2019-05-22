@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, replication, duplication, synchronous
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -111,7 +111,7 @@ subcollection: FileStorage
 
 ## 初期レプリカの作成
 
-レプリケーションは、スナップショット・スケジュールに基づいて作動します。 レプリケーションを実行するには、その前にまずソース・ボリューム用のスナップショット・スペースとスナップショット・スケジュールを準備する必要があります。 レプリケーションをセットアップしようとして、そのいずれかが準備されていない場合には、より多くのスペースを購入するか、スケジュールをセットアップするようプロンプトが出されます。 レプリケーションは、[{{site.data.keyword.slportal}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://control.softlayer.com/){:new_window}の**「ストレージ」 ** > **「{{site.data.keyword.filestorage_short}}」**で管理されます。
+レプリケーションは、スナップショット・スケジュールに基づいて作動します。 レプリケーションを実行するには、その前にまずソース・ボリューム用のスナップショット・スペースとスナップショット・スケジュールを準備する必要があります。 レプリケーションをセットアップしようとして、そのいずれかが準備されていない場合には、より多くのスペースを購入するか、スケジュールをセットアップするようプロンプトが出されます。 レプリケーションは、[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}の**「ストレージ」 ** > **「{{site.data.keyword.filestorage_short}}」**で管理されます。
 
 1. ストレージ・ボリュームをクリックします。
 2. **「レプリカ」**をクリックし、**「レプリケーションの購入 (Purchase a replication)」**をクリックします。
@@ -130,7 +130,7 @@ subcollection: FileStorage
 
 ## 既存のレプリケーションの編集
 
-[{{site.data.keyword.slportal}}![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://control.softlayer.com/){:new_window}から、**「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**の下にある**「プライマリー」**または**「レプリカ」**タブで、レプリケーション・スケジュールを編集してレプリケーション・スペースを変更できます。
+[{{site.data.keyword.slportal}}![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://control.softlayer.com/){: external}から、**「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**の下にある**「プライマリー」**または**「レプリカ」**タブで、レプリケーション・スケジュールを編集してレプリケーション・スペースを変更できます。
 
 
 ## レプリケーション・スケジュールの編集

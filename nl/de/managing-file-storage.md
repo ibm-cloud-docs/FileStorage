@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, authorizing hosts, rewoke access, gra
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -73,7 +73,7 @@ Optionen:
 
 Sie können die Datenträger anzeigen, auf die ein Host Zugriff hat, sowie Informationen, die zum Herstellen einer Verbindung erforderlich sind – Datenträgername, Speichertyp, Zieladresse, Kapazität und Position.
 
-1. Klicken Sie auf **Geräte** > **Geräteliste** im [{{site.data.keyword.slportal}} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/){:new_window}.
+1. Klicken Sie auf **Geräte** > **Geräteliste** im [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
 2. Klicken Sie auf das betreffende Gerät.
 2. Wählen Sie die Registerkarte 'Speicher' aus.
 
@@ -96,7 +96,7 @@ Sie können den Zugriff über 'Speicher' in der Ansicht 'Geräteliste' oder in d
 
 ### Zugriff über die Geräteliste widerrufen
 
-1. Klicken Sie auf **Geräte** > **Geräteliste** im [{{site.data.keyword.slportal}} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/){:new_window}.
+1. Klicken Sie auf **Geräte** > **Geräteliste** im [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
 2. Doppelklicken Sie auf das betreffende Gerät.
 3. Wählen Sie die Registerkarte **Speicher** aus.
 4. Es wird gruppiert nach Speichertyp (Block, Datei, andere) eine Liste von Speicherdatenträgern angezeigt, auf die dieser bestimmte Host Zugriff. Wählen Sie das jeweilige Menü **Aktion** neben dem Datenträger aus, für den Sie den Zugriff widerrufen möchten, und klicken Sie auf **Zugriff widerrufen**.

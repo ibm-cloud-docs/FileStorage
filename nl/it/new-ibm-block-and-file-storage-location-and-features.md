@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, locations, data centers
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -106,7 +106,7 @@ La nuova {{site.data.keyword.filestorage_short}} è disponibile nelle seguenti r
 
 Tutti i volumi di {{site.data.keyword.filestorage_short}} avanzato di cui viene eseguito il provisioning in questi data center hanno un punto di montaggio diverso rispetto ai volumi non crittografati. Per assicurarti che stai usando il punto di montaggio corretto per entrambi i volumi di archiviazione, puoi visualizzare le informazioni sul punto di montaggio nella pagina **Volume Details** nella console. Puoi inoltre accedere al punto di montaggio corrente tramite una chiamata API: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 
-Per poter accedere a tutte le nuove funzioni, seleziona `Storage-as-a-Service Package 759` quando effettui il tuo ordine tramite l'API. Per ulteriori informazioni sull'ordinazione di {{site.data.keyword.filestorage_short}} tramite l'API, vedi [order_file_volume ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://softlayer-python.readthedocs.io/en/latest/api/managers/file/#SoftLayer.managers.file.FileStorageManager.order_file_volume){:new_window}.
+Per poter accedere a tutte le nuove funzioni, seleziona `Storage-as-a-Service Package 759` quando effettui il tuo ordine tramite l'API. Per ulteriori informazioni sull'ordinazione di {{site.data.keyword.filestorage_short}} tramite l'API, vedi [order_file_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/file/#SoftLayer.managers.file.FileStorageManager.order_file_volume){: external}.
 {:important}
 
 Ritorna qui a controllare quando viene eseguito l'upgrade di ulteriori data center e per vedere le nuove funzioni e funzionalità che vengono aggiunte per {{site.data.keyword.filestorage_short}}.

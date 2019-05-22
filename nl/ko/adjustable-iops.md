@@ -9,7 +9,7 @@ keywords: File Storage, adjusting IOPS, increase IOPS, decrease IOPS, modify IOP
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}

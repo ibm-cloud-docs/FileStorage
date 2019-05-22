@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, disaster recovery, duplicate volume, 
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -27,10 +27,10 @@ Avant de lancer le basculement, vérifiez que toutes les autorisations d'hôte s
 Les hôtes et les volumes autorisés doivent figurer dans le même centre de données. Par exemple, vous ne pouvez pas avoir un volume de réplique à Londres et un hôte à Amsterdam. Ils doivent se trouver tous les deux à Londres ou à Amsterdam.
 {:note}
 
-1. Connectez-vous à la [console {{site.data.keyword.cloud}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://{DomainName}/catalog){:new_window} et cliquez sur l'icône **Menu** dans l'angle supérieur gauche. Sélectionnez **Infrastructure classique**.
+1. Connectez-vous à la [console {{site.data.keyword.cloud}}](https://{DomainName}/catalog){: external} et cliquez sur l'icône **Menu** dans l'angle supérieur gauche. Sélectionnez **Infrastructure classique**.
 
 
-   Vous pouvez également vous connecter au portail [{{site.data.keyword.slportal}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://control.softlayer.com/){:new_window}.
+   Vous pouvez également vous connecter au portail [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
 1. Cliquez sur votre volume source ou cible à partir de la page **{{site.data.keyword.filestorage_short}}**.
 2. Cliquez sur **Réplique**.
 3. Faites défiler l'écran vers le bas jusqu'au cadre **Autoriser les hôtes** et cliquez sur **Autoriser les hôtes** à droite.
@@ -41,7 +41,7 @@ Les hôtes et les volumes autorisés doivent figurer dans le même centre de don
 
 Dans le cas d'un événement d'échec, vous pouvez initier un **basculement** vers votre volume de destination, ou volume cible. Le volume cible devient actif. Le dernier instantané répliqué avec succès est activé et le volume est alors disponible pour le montage. Toutes les données écrites sur le volume source depuis le cycle de réplication précédent sont perdues. Une fois le basculement démarré, la relation de réplication est inversée. Votre volume cible devient votre volume source, et le volume source précédent devient votre cible, comme indiqué par le **Nom LUN** suivi de **REP**.
 
-Les basculements sont lancés sous **Stockage**, **{{site.data.keyword.filestorage_short}}** dans le portail [[{{site.data.keyword.slportal}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://control.softlayer.com/){:new_window}.
+Les basculements sont lancés sous **Stockage**, **{{site.data.keyword.filestorage_short}}** dans le portail [[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
 
 Avant d'exécuter ces étapes, déconnectez le volume. Si vous omettez cette étape, des données seront endommagées et perdues.
 {:important}
@@ -69,7 +69,7 @@ Une fois votre volume source d'origine réparé, vous pouvez démarrer une repri
 
 Une fois la reprise par restauration démarrée, la relation de réplication est inversée. Votre volume source est restauré en tant que volume source, et votre volume cible redevient le volume cible, comme indiqué par le **Nom LUN** suivi de **REP**.
 
-Les reprises par restauration sont lancées sous **Stockage**, **{{site.data.keyword.filestorage_short}}** dans le portail [{{site.data.keyword.slportal}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://control.softlayer.com/){:new_window}.
+Les reprises par restauration sont lancées sous **Stockage**, **{{site.data.keyword.filestorage_short}}** dans le portail [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
 
 1. Cliquez sur votre volume actif ("cible").
 2. Dans l'angle supérieur droit, cliquez sur **Réplique**, puis sur **Actions**.

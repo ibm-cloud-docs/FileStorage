@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, authorizing hosts, rewoke access, gra
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -73,7 +73,7 @@ Options:
 
 특정 호스트에 액세스 권한이 있는 볼륨을 볼륨 이름, 스토리지 유형, 대상 주소, 용량 및 위치 등 연결하는 데 필요한 정보와 함께 볼 수 있습니다.
 
-1. [{{site.data.keyword.slportal}} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://control.softlayer.com/){:new_window}에서 **디바이스** > **디바이스 목록**을 클릭하십시오.
+1. [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}에서 **디바이스** > **디바이스 목록**을 클릭하십시오.
 2. 적절한 디바이스를 클릭하십시오.
 2. 스토리지 탭을 선택하십시오.
 
@@ -96,7 +96,7 @@ Options:
 
 ### 디바이스 목록에서 액세스 권한 취소
 
-1. [{{site.data.keyword.slportal}} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://control.softlayer.com/){:new_window}에서 **디바이스** > **디바이스 목록**을 클릭하십시오.
+1. [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}에서 **디바이스** > **디바이스 목록**을 클릭하십시오.
 2. 적절한 디바이스를 두 번 클릭하십시오.
 3. **스토리지** 탭을 선택하십시오.
 4. 그러면 스토리지 유형(블록, 파일, 기타)별로 모두 그룹화되어 이 특정 호스트가 액세스할 수 있는 스토리지 볼륨의 목록이 나타납니다. 액세스를 취소할 볼륨 옆의 개별 **조치** 메뉴를 선택하고 **액세스 취소**를 클릭하십시오.

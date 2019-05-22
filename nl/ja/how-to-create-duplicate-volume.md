@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, duplicate volume
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -39,7 +39,7 @@ subcollection: FileStorage
 - **開発とテスト (dev/test)**。 1 つのボリュームから一度に最大 4 つの複製を同時作成して、開発とテスト用の複製データを作成する。
 - **ストレージのサイズ変更**。 データを移動することなく、新しいサイズまたは IOPS レート (あるいはその両方) を指定したボリュームを作成する。  
 
-[{{site.data.keyword.slportal}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://control.softlayer.com/){:new_window} で重複ボリュームを作成するには、いくつかの方法があります。
+[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} で重複ボリュームを作成するには、いくつかの方法があります。
 
 
 ## ストレージ・リスト内の特定のボリュームから複製を作成する

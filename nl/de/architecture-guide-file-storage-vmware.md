@@ -9,7 +9,7 @@ keywords: File Storage, provisioning File Storage for VMware, NFS, File Storage,
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -46,7 +46,7 @@ Beachten Sie für die Bestellung von {{site.data.keyword.filestorage_short}} fol
 - Zur Vermeidung einer Speicherverbindungsunterbrechung während des Pfadfailovers empfiehlt {{site.data.keyword.IBM}}, VMware-Tools zu installieren, die einen angemessenen Zeitlimitwert festlegen. Der Wert muss nicht geändert werden; die Standardeinstellung reicht aus, um sicherzustellen, dass Ihr VMware-Host die Konnektivität nicht verliert.
 - NFS Version 3 und NFS Version 4.1 werden in der Umgebung von {{site.data.keyword.BluSoftlayer_full}} unterstützt. {{site.data.keyword.IBM}} empfiehlt jedoch, NFS Version 3 zu verwenden. Da NFS Version 4.1 ein Protokoll mit Zustandsüberwachung (und nicht wie NFS Version 3 ohne Zustandsüberwachung) ist, können bei Netzereignissen Probleme mit dem Protokoll auftreten. NFS Version 4.1 muss alle Operationen ruhen lassen und anschließend eine Sperrenrückforderung ausführen. Während dieser Operationen kann es zu Unterbrechungen kommen.
 
-Weitere Informationen finden Sie im Whitepaper von VMware zu [bewährten Verfahren für die Ausführung von VMware vSphere unter network-attached storage Storage ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){:new_window}
+Weitere Informationen finden Sie im Whitepaper von VMware zu [bewährten Verfahren für die Ausführung von VMware vSphere unter network-attached storage Storage](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){: external}
 {:tip}
 
 **Unterstützungsmatrix für das NFS-Protokoll und VMware-Funktionen**
@@ -107,17 +107,17 @@ Weitere Informationen finden Sie im Whitepaper von VMware zu [bewährten Verfahr
   </tr>
  </tbody>
 </table>
-*Quelle - [VMware - NFS-Protokolle und ESXi ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){:new_window}*
+*Quelle - [VMware - NFS-Protokolle und ESXi](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){: external}*
 
 
 
 ### Snapshots verwenden
 
-{{site.data.keyword.filestorage_short}} gibt Administratoren die Möglichkeit, Snapshotpläne festzulegen, durch die Snapshotkopien für jeden Speicherdatenträger automatisch erstellt und gelöscht werden. Sie können darüber hinaus zusätzliche Snapshotpläne (stündlich, täglich, wöchentlich) für automatische Snapshots erstellen und manuell Ad-hoc-Snapshots für BCDR-Szenarios (BCDR – Business-Continuity/Disaster Recovery) erstellen. Automatische Alerts werden über das [{{site.data.keyword.slportal}} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/){:new_window} an den Datenträgereigner in Bezug auf die aufbewahrten Snapshots und den belegten Speicherplatz zugestellt.
+{{site.data.keyword.filestorage_short}} gibt Administratoren die Möglichkeit, Snapshotpläne festzulegen, durch die Snapshotkopien für jeden Speicherdatenträger automatisch erstellt und gelöscht werden. Sie können darüber hinaus zusätzliche Snapshotpläne (stündlich, täglich, wöchentlich) für automatische Snapshots erstellen und manuell Ad-hoc-Snapshots für BCDR-Szenarios (BCDR – Business-Continuity/Disaster Recovery) erstellen. Automatische Alerts werden über das [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} an den Datenträgereigner in Bezug auf die aufbewahrten Snapshots und den belegten Speicherplatz zugestellt.
 
 Zur Verwendung von Snapshots ist ein Snapshotbereich erforderlich. Der Speicherbereich kann bei der ersten Datenträgerbestellung oder nach der Erstbereitstellung über die Seite **Datenträgerdetails** durch Klicken auf **Aktionen** und Auswählen der Option **Snapshotbereich hinzufügen** gekauft werden.
 
-Es ist wichtig zu beachten, dass VMware-Umgebungen Snapshots nicht erkennen. Die {{site.data.keyword.filestorage_short}}-Snapshotfunktionalität darf nicht mit VMware-Snapshots verwechselt werden. Jede Wiederherstellung mithilfe der {{site.data.keyword.filestorage_short}}-Snapshotfunktion muss über das [{{site.data.keyword.slportal}} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/){:new_window} durchgeführt werden.
+Es ist wichtig zu beachten, dass VMware-Umgebungen Snapshots nicht erkennen. Die {{site.data.keyword.filestorage_short}}-Snapshotfunktionalität darf nicht mit VMware-Snapshots verwechselt werden. Jede Wiederherstellung mithilfe der {{site.data.keyword.filestorage_short}}-Snapshotfunktion muss über das [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} durchgeführt werden.
 
 Zur Wiederherstellung des {{site.data.keyword.filestorage_short}}-Datenträgers ist es erforderlich, alle VMs auf {{site.data.keyword.filestorage_short}} auszuschalten. Der Datenträger muss vorübergehend von den ESXi-Hosts abgehängt werden, um eine Beschädigung von Daten während des Prozesses zu vermeiden.
 
@@ -150,11 +150,11 @@ Ungültige Daten, seien es beschädigte, gehackte oder infizierte, werden dem Sn
 
 ## {{site.data.keyword.filestorage_short}} bestellen
 
-Verwenden Sie die [Advanced Single-Site VMware Reference Architecture ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window}, um {{site.data.keyword.filestorage_short}} mit Endurance- oder Performance-Optionen in Ihrer VMware-Umgebung einzurichten.
+Verwenden Sie die [Advanced Single-Site VMware Reference Architecture](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){: external}, um {{site.data.keyword.filestorage_short}} mit Endurance- oder Performance-Optionen in Ihrer VMware-Umgebung einzurichten.
 
-{{site.data.keyword.filestorage_short}} kann über den [IBM Cloud-Katalog ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://{DomainName}/catalog){:new_window} oder das [{{site.data.keyword.slportal}} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/){:new_window} bestellt werden. Weitere Informationen finden Sie unter [ bestellen{{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole).
+{{site.data.keyword.filestorage_short}} kann über den [IBM Cloud-Katalog](https://{DomainName}/catalog){: external} oder das [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} bestellt werden. Weitere Informationen finden Sie unter [ bestellen{{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole).
 
-Der Speicher wird in weniger als einer Minute bereitgestellt und wird auf der **{{site.data.keyword.filestorage_short}}**-Seite des [{{site.data.keyword.slportal}}s ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/){:new_window} angezeigt.
+Der Speicher wird in weniger als einer Minute bereitgestellt und wird auf der **{{site.data.keyword.filestorage_short}}**-Seite des [{{site.data.keyword.slportal}}s](https://control.softlayer.com/){: external} angezeigt.
 
 Wenn ein Datenträger bereitgestellt wird, müssen {{site.data.keyword.BluBareMetServers_full}} oder {{site.data.keyword.BluVirtServers_full}}, die den Datenträger verwenden sollen, für den Zugriff auf den Speicher autorisiert werden. Führen Sie die folgenden Schritte aus, um den Datenträger zu autorisieren.
 
@@ -210,7 +210,7 @@ Stellen Sie vor Beginn des VMware-Konfigurationsprozesses sicher, dass die folge
      8980 bytes from a.b.c.d: icmp_seq=1 ttl=128 time=3.36 ms
      ```
 
-Weitere Informationen zu VMware- und Jumbo-Frames finden Sie [hier ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") ](https://kb.vmware.com/s/article/1003712){:new_window}.
+Weitere Informationen zu VMware- und Jumbo-Frames finden Sie [hier ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") ](https://kb.vmware.com/s/article/1003712){: external}.
 {:tip}
 
 
@@ -250,7 +250,7 @@ Die Netzkonfiguration für diesen Architekturleitfaden arbeitet mit einer minima
 
 2. Statische Routen bleiben unter ESXi 5.0 und früheren Versionen nicht über Neustarts hinweg bestehen. Zur Sicherstellung, dass alle hinzugefügten statischen Routen persistent bestehen bleiben, muss dieser Befehl in der Datei `local.sh` auf jedem Host im Verzeichnis `/etc/rc.local.d/` hinzugefügt werden. Öffnen Sie die Datei `local.sh` mit dem visuellen Editor und fügen Sie den zweiten Befehl in Schritt 4.1 vor der Zeile `exit 0` hinzu.
 
-Notieren Sie die IP-Adresse, da sie zum Anhängen des Datenträgers im nächsten Schritt verwendet werden kann.<br/>Dies muss für jeden NFS-Datenträger ausgeführt werden, der an Ihren ESXi-Host angehängt werden soll.<br/>Weitere Informationen finden Sie im VMware-KB-Artikel [Statische Routen für VMkernel-Ports auf einem ESXi-Host konfigurieren ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://kb.vmware.com/s/article/2001426){:new_window}.
+Notieren Sie die IP-Adresse, da sie zum Anhängen des Datenträgers im nächsten Schritt verwendet werden kann.<br/>Dies muss für jeden NFS-Datenträger ausgeführt werden, der an Ihren ESXi-Host angehängt werden soll.<br/>Weitere Informationen finden Sie im VMware-KB-Artikel [Statische Routen für VMkernel-Ports auf einem ESXi-Host konfigurieren](https://kb.vmware.com/s/article/2001426){: external}.
 {:tip}
 
 
@@ -382,5 +382,5 @@ In den folgenden Beispielen werden die erweiterten Konfigurationsparameter über
     #esxcfg-advcfg -g /Disk/QFullSampleSize
     #esxcfg-advcfg -g /Disk/QFullThreshold
     ```
-Weitere Informationen zu Advanced Single-Site VMware Reference Architecture finden Sie [hier](/docs/infrastructure/virtualization?topic=Virtualization-advanced-single-site-vmware-reference-architecture){:new_window}.
+Weitere Informationen zu Advanced Single-Site VMware Reference Architecture finden Sie [hier](/docs/infrastructure/virtualization?topic=Virtualization-advanced-single-site-vmware-reference-architecture){: external}.
 {:tip}

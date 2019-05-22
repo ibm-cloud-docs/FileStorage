@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, snapshots, snapshot schedule, manual 
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -21,7 +21,7 @@ subcollection: FileStorage
 
 ## Snapshotplan erstellen
 
-Mit Snapshotzeitplänen entscheiden Sie, wie häufig und wann Sie eine zeitpunktbasierte Referenz des Speicherdatenträgers erstellen möchten. Es können maximal 50 Snapshots pro Speicherdatenträger erstellt werden. Zeitpläne werden über die Registerkarte **Speicher** > **{{site.data.keyword.filestorage_short}}** des [{{site.data.keyword.slportal}}s ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/){:new_window} verwaltet.
+Mit Snapshotzeitplänen entscheiden Sie, wie häufig und wann Sie eine zeitpunktbasierte Referenz des Speicherdatenträgers erstellen möchten. Es können maximal 50 Snapshots pro Speicherdatenträger erstellt werden. Zeitpläne werden über die Registerkarte **Speicher** > **{{site.data.keyword.filestorage_short}}** des [{{site.data.keyword.slportal}}s](https://control.softlayer.com/){: external} verwaltet.
 
 Bevor Sie Ihren ersten Zeitplan einrichten können, müssen Sie zunächst Snapshotbereich kaufen, sofern Sie diesen nicht bei der Erstbereitstellung des Speicherdatenträgers gekauft haben.
 {:important}
@@ -159,7 +159,7 @@ Es ist möglich, dass Sie Ihren Speicherdatenträger aufgrund eines Benutzerfehl
 
 1. Hängen Sie Ihren Speicherdatenträger vom Host ab und trennen Sie die Verbindung.
    - Weitere Anweisungen finden Sie [hier](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux).
-2. Klicken Sie auf **Speicher**, **{{site.data.keyword.filestorage_short}}** im [{{site.data.keyword.slportal}} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/){:new_window}.
+2. Klicken Sie auf **Speicher**, **{{site.data.keyword.filestorage_short}}** im [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
 3. Blättern Sie nach unten und klicken Sie auf den Datenträger, der wiederhergestellt werden soll. Im Abschnitt **Snapshots** der Seite **Details** wird die Liste aller gespeicherten Snapshots mit Angabe ihrer Größe und ihres Erstellungsdatums angezeigt.
 4. Klicken Sie neben dem zu verwendenden Snapshot auf **Aktionen** und klicken Sie auf **Wiederherstellen**. <br/>
 

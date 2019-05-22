@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, snapshot, ordering snapshot, snapshot
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -50,9 +50,9 @@ subcollection: FileStorage
 
 ## {{site.data.keyword.cloud_notm}} コンソールによるスナップショット・スペースの注文
 
-1. [IBM Cloud コンソール](https://{DomainName}/){:new_window}にログインして、左上にあるメニュー・アイコンをクリックします。 **「クラシック・インフラストラクチャー」**を選択します。
+1. [IBM Cloud コンソール](https://{DomainName}/){: external}にログインして、左上にあるメニュー・アイコンをクリックします。 **「クラシック・インフラストラクチャー」**を選択します。
 
-   または、[{{site.data.keyword.slportal}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://control.softlayer.com/){:new_window} にログインできます。
+   または、[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} にログインできます。
 2. **「ストレージ」**>**「{{site.data.keyword.filestorage_short}}」**の手順でストレージにアクセスします。
 3. 「スナップショット」フレームで**「スナップショット・スペースの変更」**をクリックします。
 4. 必要なスペース量と支払方法を選択します。

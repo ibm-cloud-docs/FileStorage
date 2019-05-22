@@ -9,7 +9,7 @@ keywords: File Storage, NSF, mounting File Storage, mounting storage on Linux,
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -18,7 +18,7 @@ subcollection: FileStorage
 # {{site.data.keyword.filestorage_short}} unter Linux anhängen
 {: #mountingLinux}
 
-Stellen Sie zunächst sicher, dass der Host, der auf den {{site.data.keyword.filestorage_full}}-Datenträger zugreifen soll, über das [{{site.data.keyword.slportal}} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/){:new_window} autorisiert ist.
+Stellen Sie zunächst sicher, dass der Host, der auf den {{site.data.keyword.filestorage_full}}-Datenträger zugreifen soll, über das [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} autorisiert ist.
 
 1. Klicken Sie auf der {{site.data.keyword.filestorage_short}}-Listenseite auf den Link **Aktionen**, die dem neuen gemeinsam genutzten Speicher zugeordnet sind, und klicken Sie auf **Host autorisieren**.
 2. Wählen Sie mindestens einen Host in der Liste aus und klicken Sie auf **Abschicken**. Durch diese Aktion wird der Host für den Zugriff auf den gemeinsam genutzten Speicher autorisiert.

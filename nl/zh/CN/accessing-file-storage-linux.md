@@ -9,7 +9,7 @@ keywords: File Storage, NSF, mounting File Storage, mounting storage on Linux,
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -18,7 +18,7 @@ subcollection: FileStorage
 # 在 Linux 上安装 {{site.data.keyword.filestorage_short}}
 {: #mountingLinux}
 
-首先，确保通过 [{{site.data.keyword.slportal}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window} 授权访问 {{site.data.keyword.filestorage_full}} 卷。
+首先，确保通过 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 授权访问 {{site.data.keyword.filestorage_full}} 卷。
 
 1. 在 {{site.data.keyword.filestorage_short}} 列表页面中，单击与新共享关联的**操作**链接，然后单击**授权主机**。
 2. 从列表中选择一个或多个主机，然后单击**提交**。此操作将授权主机访问共享。

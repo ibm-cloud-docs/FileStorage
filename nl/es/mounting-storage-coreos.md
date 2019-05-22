@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, mounting volume in Container Linux, C
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -20,7 +20,7 @@ subcollection: FileStorage
 # Montaje de {{site.data.keyword.filestorage_short}} en Container Linux
 {: #mountingCoreOS}
 
-Container Linux by CoreOS es un sistema operativo de código abierto y ligero basado en el kernel de Linux. Está diseñado para proporcionar infraestructura a despliegues en clúster. Como sistema operativo, Container Linux proporciona la funcionalidad mínima necesaria para desplegar aplicaciones dentro de contenedores de software, junto con mecanismos incorporados para el descubrimiento de servicios y la compartición de configuración. Para obtener más información, consulte la [Montaje de almacenamiento ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://coreos.com/os/docs/latest/mounting-storage.html)
+Container Linux by CoreOS es un sistema operativo de código abierto y ligero basado en el kernel de Linux. Está diseñado para proporcionar infraestructura a despliegues en clúster. Como sistema operativo, Container Linux proporciona la funcionalidad mínima necesaria para desplegar aplicaciones dentro de contenedores de software, junto con mecanismos incorporados para el descubrimiento de servicios y la compartición de configuración. Para obtener más información, consulte la [Montaje de almacenamiento](https://coreos.com/os/docs/latest/mounting-storage.html)
 
 Todos los archivos de montaje secundario van al directorio `/etc/systemd/system` ya que los montajes de nivel de sistema están en un directorio que es solo de lectura. Primero, cree un archivo `MOUNTPOINT.mount`. La sección **Where** del archivo `.mount` debe coincidir con el nombre de archivo. Si el punto de montaje no está directamente fuera de `/`, debe nombrar el archivo utilizando la sintaxis `path-to-mount.mount`. Por ejemplo, si desea montar la unidad de almacenamiento portátil en `/mnt/www`, nombre el archivo `mnt-www.mount`.
 
@@ -55,4 +55,4 @@ cluster1 ~ # mount |grep data
 ```
 {:codeblock}
 
-Para obtener más información, consulte la [documentación de `systemd mount` ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.freedesktop.org/software/systemd/man/systemd.mount.html)
+Para obtener más información, consulte la [documentación de `systemd mount`](https://www.freedesktop.org/software/systemd/man/systemd.mount.html)

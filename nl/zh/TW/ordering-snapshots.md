@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, snapshot, ordering snapshot, snapshot
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -50,9 +50,9 @@ subcollection: FileStorage
 
 ## 透過 {{site.data.keyword.cloud_notm}} 主控台訂購 Snapshot 空間
 
-1. 登入 [IBM Cloud 主控台](https://{DomainName}/){:new_window}，然後按一下左上方的功能表圖示。選取**標準基礎架構**。
+1. 登入 [IBM Cloud 主控台](https://{DomainName}/){: external}，然後按一下左上方的功能表圖示。選取**標準基礎架構**。
 
-   或者，您也可以登入 [{{site.data.keyword.slportal}} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://control.softlayer.com/){:new_window}。
+   或者，您也可以登入 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}。
 2. 透過**儲存空間** > **{{site.data.keyword.filestorage_short}}** 來存取「儲存空間」。
 3. 按一下 Snapshot 頁框中的**變更 Snapshot 空間**。
 4. 選取您需要的空間量和付款方法。

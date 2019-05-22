@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, authorizing hosts, rewoke access, gra
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -73,7 +73,7 @@ Options:
 
 Puoi visualizzare i volumi a cui ha accesso un host, comprese le informazioni necessarie per stabilire una connessione, il nome volume, il tipo di archiviazione, l'indirizzo di destinazione, la capacità e l'ubicazione.
 
-1. Fai clic su **Devices** > **Device List** dal [{{site.data.keyword.slportal}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://control.softlayer.com/){:new_window}
+1. Fai clic su **Devices** > **Device List** dal [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}
 2. Fai clic sul dispositivo appropriato.
 2. Seleziona la scheda Storage.
 
@@ -96,7 +96,7 @@ Puoi revocare l'accesso dall'una o dall'altra archiviazione dalle viste Device L
 
 ### Revoca dell'accesso da Device List
 
-1. Fai clic su **Devices** > **Device List** dal [{{site.data.keyword.slportal}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://control.softlayer.com/){:new_window}
+1. Fai clic su **Devices** > **Device List** dal [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}
 2. Fai doppio clic sul dispositivo appropriato.
 3. Seleziona la scheda **Storage**.
 4. Ti viene presentato un elenco dei volumi di archiviazione a cui questo specifico host ha accesso, tutti raggruppati in base al tipo di archiviazione (blocco, file, altro). Seleziona il menu **Action** rispettivo accanto al volume dal quale vuoi revocare l'accesso e fai clic su **Revoke Access**.

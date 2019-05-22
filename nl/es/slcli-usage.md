@@ -9,7 +9,7 @@ keywords: File Storage, NSF, SLCLI, API
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -19,9 +19,9 @@ subcollection: FileStorage
 # Mandatos de SLCLI para {{site.data.keyword.filestorage_short}}
 {: #SLCLIcommands}
 
-Puede utilizar SLCLI para realizar acciones que normalmente se manejan a través del [{{site.data.keyword.slportal}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){:new_window}. Por ejemplo, con SLCLI puede realizar pedidos de volúmenes, espacio de instantáneas y réplica, actualizar autorizaciones, cancelar volúmenes, etc.
+Puede utilizar SLCLI para realizar acciones que normalmente se manejan a través del [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}. Por ejemplo, con SLCLI puede realizar pedidos de volúmenes, espacio de instantáneas y réplica, actualizar autorizaciones, cancelar volúmenes, etc.
 
-Para obtener más información sobre cómo instalar y utilizar SLCLI, consulte [Cliente de API de Python ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://softlayer-python.readthedocs.io/en/latest/cli/){:new_window}.
+Para obtener más información sobre cómo instalar y utilizar SLCLI, consulte [Cliente de API de Python](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}.
 {:tip}
 
 ## Mandatos de SLCLI relacionados con el acceso

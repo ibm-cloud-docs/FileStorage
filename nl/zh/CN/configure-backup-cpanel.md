@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, cPanel, backups
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -20,7 +20,7 @@ subcollection: FileStorage
 
 使用以下指示信息，可以在 cPanel 中配置您的备份，以将其存储在 {{site.data.keyword.filestorage_full}} 中。假定以 root 用户或 sudo 用户身份通过 SSH 登录到系统，并且有完整的 WebHost Manager (WHM) 访问权。此示例基于 **CentOS 7** 主机。
 
-有关更多信息，请参阅 [cPanel - 配置备份目录 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://docs.cpanel.net/display/68Docs/Backup+Configuration#BackupConfiguration-ConfigureBackupDirectory){:new_window}。
+有关更多信息，请参阅 [cPanel - 配置备份目录](https://docs.cpanel.net/display/68Docs/Backup+Configuration#BackupConfiguration-ConfigureBackupDirectory){: external}。
 {:tip}
 
 1. 通过 SSH 连接到主机。

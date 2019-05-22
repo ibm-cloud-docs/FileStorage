@@ -9,7 +9,7 @@ keywords: File Storage, NSF, mounting File Storage, mounting storage on Linux,
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -18,7 +18,7 @@ subcollection: FileStorage
 # Linux への {{site.data.keyword.filestorage_short}} のマウント
 {: #mountingLinux}
 
-まず、{{site.data.keyword.filestorage_full}} ボリュームにアクセスするホストに、[{{site.data.keyword.slportal}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://control.softlayer.com/){:new_window} で許可を与えてください。
+まず、{{site.data.keyword.filestorage_full}} ボリュームにアクセスするホストに、[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} で許可を与えてください。
 
 1. {{site.data.keyword.filestorage_short}}のリスト・ページで、新しい共有に関連付けられている**「アクション」**リンクをクリックし、**「ホストの許可」**をクリックします。
 2. リストからホストを選択し、**「送信」**をクリックします。 このアクションにより、共有へのアクセスがホストに許可されます。

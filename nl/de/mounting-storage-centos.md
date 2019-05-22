@@ -9,7 +9,7 @@ keywords: File Storage, mounting file storage, Linux, CentOS, NFS
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -20,7 +20,7 @@ subcollection: FileStorage
 # {{site.data.keyword.filestorage_short}} unter CentOS anhängen
 {: #mountingCentOS}
 
-Wenn Sie Mountoperationen für {{site.data.keyword.filestorage_full}} unter CentOS 7 durchführen möchten, müssen Sie zuerst über das [{{site.data.keyword.slportal}} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/){:new_window} oder die SLCLI die entsprechenden Berechtigungen für den Host einrichten. Installieren Sie dann die NFS-Dienstprogramme wie in [{{site.data.keyword.filestorage_short}} unter Linux anhängen](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux) beschrieben. 
+Wenn Sie Mountoperationen für {{site.data.keyword.filestorage_full}} unter CentOS 7 durchführen möchten, müssen Sie zuerst über das [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} oder die SLCLI die entsprechenden Berechtigungen für den Host einrichten. Installieren Sie dann die NFS-Dienstprogramme wie in [{{site.data.keyword.filestorage_short}} unter Linux anhängen](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux) beschrieben. 
 
 Für CentOS können Sie zusätzliche Optionen angeben, indem Sie die Zeile `Options=` in der Mountdatei verwenden. Im folgenden Beispiel wird für NFS festgelegt, dass das Anhängen an `/data/www` erfolgt.
 

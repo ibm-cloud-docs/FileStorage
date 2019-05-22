@@ -9,7 +9,7 @@ keywords: File Storage, provisioning File Storage for VMware, NFS, File Storage,
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -46,7 +46,7 @@ VMware データ・ストアへのアクセスに必要なホストの数が 8 �
 - パス・フェイルオーバー中のストレージの切断を避けるために、{{site.data.keyword.IBM}} は、適切なタイムアウト値を設定する VMware ツールをインストールすることをお勧めします。 値を変更する必要はありません。VMware ホストが接続を失わないようにするには、デフォルト設定で十分です。
 - {{site.data.keyword.BluSoftlayer_full}} 環境では NFSv3 と NFSv4.1 の両方がサポートされます。 しかし、{{site.data.keyword.IBM}} は NFSv3 を使用することを提案します。 NFSv4.1 は、ステートフル・プロトコルである (NFSv3 のようなステートレス・プロトコルではない) ため、ネットワーク・イベント中にプロトコルの問題が発生する可能性があります。 NFSv4.1 では、すべての操作を停止してからロック再利用を実行する必要があります。 それらの操作の実行中に、切断される可能性があります。
 
-詳しくは、VMware の次のホワイト・ペーパーを参照してください: [Best Practices for running VMware vSphere on Network Attached Storage ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){:new_window}
+詳しくは、VMware の次のホワイト・ペーパーを参照してください: [Best Practices for running VMware vSphere on Network Attached Storage](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){: external}
 {:tip}
 
 **NFS プロトコルと VMware 機能の対応表**
@@ -107,17 +107,17 @@ VMware データ・ストアへのアクセスに必要なホストの数が 8 �
   </tr>
  </tbody>
 </table>
-*出典 - [VMware - NFS Protocols and ESXi ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){:new_window}*
+*出典 - [VMware - NFS Protocols and ESXi](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){: external}*
 
 
 
 ### スナップショットの使用
 
-{{site.data.keyword.filestorage_short}} を使用すると、管理者は、各ストレージ・ボリュームのスナップショット・コピーを自動的に作成および削除するスナップショット・スケジュールを設定できます。 また、自動スナップショットのスナップショット・スケジュール (毎時、日次、週次) を追加で作成したり、事業継続と災害復旧 (BCDR) のシナリオのスナップショットを随時手動で作成したりすることもできます。 ボリューム所有者に、[{{site.data.keyword.slportal}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://control.softlayer.com/){:new_window} を介して、保存されたスナップショットと使用されたスペースについての自動アラートが送信されます。
+{{site.data.keyword.filestorage_short}} を使用すると、管理者は、各ストレージ・ボリュームのスナップショット・コピーを自動的に作成および削除するスナップショット・スケジュールを設定できます。 また、自動スナップショットのスナップショット・スケジュール (毎時、日次、週次) を追加で作成したり、事業継続と災害復旧 (BCDR) のシナリオのスナップショットを随時手動で作成したりすることもできます。 ボリューム所有者に、[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} を介して、保存されたスナップショットと使用されたスペースについての自動アラートが送信されます。
 
 スナップショットを使用するには、スナップショット・スペースが必要です。 スペースはボリュームを最初に注文するときに購入できます。また、最初のプロビジョニングの後で、**「ボリュームの詳細 (Volume Details)」**ページの**「アクション」**をクリックし、**「スナップショット・スペースの追加」**を選択して取得することもできます。
 
-VMware 環境はスナップショットを認識しないことに注意してください。 {{site.data.keyword.filestorage_short}}のスナップショット機能を VMware のスナップショットと混同しないでください。 {{site.data.keyword.filestorage_short}} のスナップショット機能を使用したリカバリーは、[{{site.data.keyword.slportal}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://control.softlayer.com/){:new_window} から行う必要があります。
+VMware 環境はスナップショットを認識しないことに注意してください。 {{site.data.keyword.filestorage_short}}のスナップショット機能を VMware のスナップショットと混同しないでください。 {{site.data.keyword.filestorage_short}} のスナップショット機能を使用したリカバリーは、[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} から行う必要があります。
 
 {{site.data.keyword.filestorage_short}} のボリュームをリストアするには、{{site.data.keyword.filestorage_short}} 上のすべての VM の電源をオフにする必要があります。 ESXi ホストから一時的にボリュームをアンマウントして、復元処理中のデータ破損を回避する必要があります。
 
@@ -150,11 +150,11 @@ VMware 環境はスナップショットを認識しないことに注意して�
 
 ## {{site.data.keyword.filestorage_short}}の注文
 
-[拡張単一サイト VMware リファレンス・アーキテクチャー ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} を使用して、VMware 環境でエンデュランスまたはパフォーマンスのオプションを指定して {{site.data.keyword.filestorage_short}} をセットアップします。
+[拡張単一サイト VMware リファレンス・アーキテクチャー](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){: external} を使用して、VMware 環境でエンデュランスまたはパフォーマンスのオプションを指定して {{site.data.keyword.filestorage_short}} をセットアップします。
 
-{{site.data.keyword.filestorage_short}} は、[IBM Cloud カタログ ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://{DomainName}/catalog){:new_window} または [{{site.data.keyword.slportal}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://control.softlayer.com/){:new_window} から注文できます。 詳しくは、[{{site.data.keyword.filestorage_short}} の注文](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)を参照してください。
+{{site.data.keyword.filestorage_short}} は、[IBM Cloud カタログ](https://{DomainName}/catalog){: external} または [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} から注文できます。 詳しくは、[{{site.data.keyword.filestorage_short}} の注文](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)を参照してください。
 
-ストレージが 1 分もしないうちにプロビジョンされ、[{{site.data.keyword.slportal}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://control.softlayer.com/){:new_window} の「**{{site.data.keyword.filestorage_short}}**」ページに表示されます。
+ストレージが 1 分もしないうちにプロビジョンされ、[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} の「**{{site.data.keyword.filestorage_short}}**」ページに表示されます。
 
 ボリュームがプロビジョンされたら、そのボリュームを使用する {{site.data.keyword.BluBareMetServers_full}} または {{site.data.keyword.BluVirtServers_full}} に、ストレージへのアクセスを許可する必要があります。 ボリュームを許可するには、以下の手順を実行します。
 
@@ -210,7 +210,7 @@ VMware 構成プロセスを開始する前に、以下の前提条件が満た�
      8980 bytes from a.b.c.d: icmp_seq=1 ttl=128 time=3.36 ms
      ```
 
-VMware およびジャンボ・フレームについて詳しくは、[ここ ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://kb.vmware.com/s/article/1003712){:new_window} を参照してください。
+VMware およびジャンボ・フレームについて詳しくは、[ここ](https://kb.vmware.com/s/article/1003712){: external} を参照してください。
 {:tip}
 
 
@@ -250,7 +250,7 @@ VMware およびジャンボ・フレームについて詳しくは、[ここ ![
 
 2. ESXi 5.0 以前では、静的ルートは再始動を行うと保持されません。 追加した静的ルートを保持するには、このコマンドを各ホストの `/etc/rc.local.d/` ディレクトリーにある `local.sh` ファイルに追加する必要があります。 ビジュアル・エディターを使用して `local.sh` ファイルを開き、ステップ 4.1 の第 2 のコマンドを、`exit 0` の行の前に追加します。
 
-次の手順でボリュームをマウントする際に使用できるように、IP アドレスをメモします。<br/>このプロセスは、ESXi ホストにマウントする NFS ボリュームごとに実行する必要があります。<br/>詳しくは、VMware KB の記事、[Configuring static routes for VMkernel ports on an ESXi host ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://kb.vmware.com/s/article/2001426){:new_window} を参照してください。
+次の手順でボリュームをマウントする際に使用できるように、IP アドレスをメモします。<br/>このプロセスは、ESXi ホストにマウントする NFS ボリュームごとに実行する必要があります。<br/>詳しくは、VMware KB の記事、[Configuring static routes for VMkernel ports on an ESXi host](https://kb.vmware.com/s/article/2001426){: external} を参照してください。
 {:tip}
 
 
@@ -382,5 +382,5 @@ NFS ストレージ用に ESXi 5.x ホストを構成するには、いくつか
     #esxcfg-advcfg -g /Disk/QFullSampleSize
     #esxcfg-advcfg -g /Disk/QFullThreshold
     ```
-拡張単一サイト VMware リファレンス・アーキテクチャーについて詳しくは、[こちら](/docs/infrastructure/virtualization?topic=Virtualization-advanced-single-site-vmware-reference-architecture){:new_window}を参照してください。
+拡張単一サイト VMware リファレンス・アーキテクチャーについて詳しくは、[こちら](/docs/infrastructure/virtualization?topic=Virtualization-advanced-single-site-vmware-reference-architecture){: external}を参照してください。
 {:tip}

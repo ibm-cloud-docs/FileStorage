@@ -9,7 +9,7 @@ keywords: File Storage, NSF, mounting File Storage, mounting storage on Linux,
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -18,7 +18,7 @@ subcollection: FileStorage
 # Montage de {{site.data.keyword.filestorage_short}} sur Linux
 {: #mountingLinux}
 
-Commencez par vérifier que l'hôte qui doit accéder au volume {{site.data.keyword.filestorage_full}} dispose des droits d'accès nécessaires via le portail [{{site.data.keyword.slportal}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://control.softlayer.com/){:new_window}.
+Commencez par vérifier que l'hôte qui doit accéder au volume {{site.data.keyword.filestorage_full}} dispose des droits d'accès nécessaires via le portail [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
 
 1. Sur la page de la liste de {{site.data.keyword.filestorage_short}}, cliquez sur le lien **Actions** associée au nouveau partage, puis cliquez sur **Hôte autorisé**.
 2. Sélectionnez le ou les hôtes dans la liste, puis cliquez sur **Soumettre**. L'hôte est ainsi autorisé à accéder au partage.

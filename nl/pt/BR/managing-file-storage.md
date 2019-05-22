@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, authorizing hosts, rewoke access, gra
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -71,7 +71,7 @@ Opções: --sortby TEXT Coluna para classificação --columns TEXT Colunas para 
 
 É possível visualizar os volumes aos quais um host tem acesso, incluindo as informações necessárias para fazer uma conexão - Nome do volume, Tipo de armazenamento, Endereço de destino, capacidade e local.
 
-1. Clique em **Dispositivos** > **Lista de dispositivos** por meio do [{{site.data.keyword.slportal}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://control.softlayer.com/){:new_window}
+1. Clique em **Dispositivos** > **Lista de dispositivos** por meio do [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}
 2. Clique no dispositivo apropriado.
 2. Selecione a guia Armazenamento.
 
@@ -94,7 +94,7 @@ Para evitar problemas do lado do host, desmonte o volume de armazenamento de seu
 
 ### Revogando o acesso a partir da Lista de Dis
 
-1. Clique em **Dispositivos** > **Lista de dispositivos** por meio do [{{site.data.keyword.slportal}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://control.softlayer.com/){:new_window}
+1. Clique em **Dispositivos** > **Lista de dispositivos** por meio do [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}
 2. Clique duas vezes no dispositivo apropriado.
 3. Selecione a guia **Armazenamento**.
 4. É apresentada uma lista de volumes de armazenamento aos quais esse host específico tem acesso, todos agrupados por tipo de armazenamento (bloco, arquivo, outro). Selecione o respectivo menu **Ação** próximo ao volume do qual você deseja revogar o acesso e clique em **Revogar acesso**.

@@ -9,7 +9,7 @@ keywords: File Storage, NSF, SLCLI, API
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -19,9 +19,9 @@ subcollection: FileStorage
 # {{site.data.keyword.filestorage_short}} の SLCLI コマンド
 {: #SLCLIcommands}
 
-通常 [{{site.data.keyword.slportal}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://control.softlayer.com/){:new_window} で処理する操作を、SLCLI を使用して実行することができます。 例えば、新規ボリュームやスナップショット・スペースおよびレプリケーションの注文、許可の更新、ボリュームのキャンセルなどを、SLCLI で行うことができます。
+通常 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} で処理する操作を、SLCLI を使用して実行することができます。 例えば、新規ボリュームやスナップショット・スペースおよびレプリケーションの注文、許可の更新、ボリュームのキャンセルなどを、SLCLI で行うことができます。
 
-SLCLI をインストールして使用する方法について詳しくは、[Python API クライアント![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://softlayer-python.readthedocs.io/en/latest/cli/){:new_window}を参照してください。
+SLCLI をインストールして使用する方法について詳しくは、[Python API クライアント![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}を参照してください。
 {:tip}
 
 ## アクセス関連の SLCLI コマンド

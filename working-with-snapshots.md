@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, snapshots, snapshot schedule, manual 
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -21,7 +21,7 @@ subcollection: FileStorage
 
 ## Creating a Snapshot Schedule
 
-You decide how often and when you want to create a point-in-time reference of your storage volume with Snapshot schedules. You can have a maximum of 50 snapshots per storage volume. Schedules are managed through the **Storage** > **{{site.data.keyword.filestorage_short}}** tab of the [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
+You decide how often and when you want to create a point-in-time reference of your storage volume with Snapshot schedules. You can have a maximum of 50 snapshots per storage volume. Schedules are managed through the **Storage** > **{{site.data.keyword.filestorage_short}}** tab of the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
 
 Before you can set up your initial schedule, you must first purchase snapshot space if you didn't purchase it during the initial provisioning of the storage volume.
 {:important}
@@ -159,7 +159,7 @@ You might need to take your storage volume back to a specific point-in-time beca
 
 1. Unmount and detach your storage volume from the host.
    - Click [here](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux) for instructions.
-2. Click **Storage**, **{{site.data.keyword.filestorage_short}}** in the [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window}.
+2. Click **Storage**, **{{site.data.keyword.filestorage_short}}** in the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
 3. Scroll down and click your volume to be restored. The **Snapshots** section of the **Detail** page displays the list of all saved snapshots along with their size and creation date.
 4. Click **Actions** next to the snapshot to be used and click **Restore**. <br/>
 

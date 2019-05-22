@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, replication, duplication, synchronous
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -111,7 +111,7 @@ Pour obtenir la liste complète de la disponibilité des centres de données et 
 
 ## Création de la réplique initiale
 
-Les réplications fonctionnent selon un planning d'instantané. Vous devez d'abord configurer un espace d'instantané et un planning d'instantané pour le volume source avant de pouvoir répliquer. Si vous tentez de configurer la réplication alors que l'espace d'instantané ou le planning d'instantané n'existe pas, vous serez invité à acheter davantage d'espace ou à configurer un planning. Les réplications sont gérées sous **Stockage** > **{{site.data.keyword.filestorage_short}}** dans le portail [{{site.data.keyword.slportal}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://control.softlayer.com/){:new_window}.
+Les réplications fonctionnent selon un planning d'instantané. Vous devez d'abord configurer un espace d'instantané et un planning d'instantané pour le volume source avant de pouvoir répliquer. Si vous tentez de configurer la réplication alors que l'espace d'instantané ou le planning d'instantané n'existe pas, vous serez invité à acheter davantage d'espace ou à configurer un planning. Les réplications sont gérées sous **Stockage** > **{{site.data.keyword.filestorage_short}}** dans le portail [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
 
 1. Cliquez sur votre volume de stockage.
 2. Cliquez sur **Réplique**, puis sur **Acheter une réplication**.
@@ -130,7 +130,7 @@ Les réplications fonctionnent selon un planning d'instantané. Vous devez d'abo
 
 ## Edition d'une réplication existante
 
-Vous pouvez éditer votre planning de réplication et modifier votre espace de réplication à partir de l'onglet **Principal** ou **Réplique** sous **Stockage** > **{{site.data.keyword.filestorage_short}}** à partir du portail [{{site.data.keyword.slportal}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://control.softlayer.com/){:new_window}.
+Vous pouvez éditer votre planning de réplication et modifier votre espace de réplication à partir de l'onglet **Principal** ou **Réplique** sous **Stockage** > **{{site.data.keyword.filestorage_short}}** à partir du portail [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
 
 
 ## Edition du planning de réplication

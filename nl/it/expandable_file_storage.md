@@ -9,7 +9,7 @@ keywords: File Storage, modify volume, NFS, file storage, expand capacity
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}

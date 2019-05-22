@@ -9,7 +9,7 @@ keywords: File Storage, provisioning File Storage for VMware, NFS, File Storage,
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -46,7 +46,7 @@ subcollection: FileStorage
 - 为了避免在路径故障转移期间断开存储器连接，{{site.data.keyword.IBM}} 建议安装 VMware 工具，以用于设置适当的超时值。无需更改此值，缺省设置可足以确保 VMware 主机不会失去连接。
 - {{site.data.keyword.BluSoftlayer_full}} 环境支持 NFS V3 和 NFS V4.1。但是，{{site.data.keyword.IBM}} 建议您使用 NFS V3，因为 NFS V4.1 是有状态协议（NFSv3 是无状态协议），在网络事件期间可能会发生协议问题。NFS V4.1 必须停止所有操作，然后才能完成锁定回收。这些操作正在执行时，可能会发生中断。
 
-有关更多信息，请参阅 VMware 的白皮书 [Best Practices for running VMware vSphere on network-attached storage Storage![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){:new_window}
+有关更多信息，请参阅 VMware 的白皮书 [Best Practices for running VMware vSphere on network-attached storage Storage![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){: external}
 {:tip}
 
 **NFS 协议与 VMware 功能支持矩阵**
@@ -107,17 +107,17 @@ subcollection: FileStorage
   </tr>
  </tbody>
 </table>
-*来源：[VMware - NFS 协议和 ESXi ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){:new_window}*
+*来源：[VMware - NFS 协议和 ESXi](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){: external}*
 
 
 
 ### 使用快照
 
-通过 {{site.data.keyword.filestorage_short}}，管理员可以为每个存储卷设置快照安排，以自动创建和删除快照副本。管理员还可以创建额外的快照安排（每小时、每天和每周）来自动生成快照，也可以为业务连续性和灾难恢复 (BCDR) 方案手动创建特别快照。有关保留的快照和使用的空间的自动警报通过 [{{site.data.keyword.slportal}}![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window} 传递给卷所有者。
+通过 {{site.data.keyword.filestorage_short}}，管理员可以为每个存储卷设置快照安排，以自动创建和删除快照副本。管理员还可以创建额外的快照安排（每小时、每天和每周）来自动生成快照，也可以为业务连续性和灾难恢复 (BCDR) 方案手动创建特别快照。有关保留的快照和使用的空间的自动警报通过 [{{site.data.keyword.slportal}}![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){: external} 传递给卷所有者。
 
 需要快照空间才能使用快照。可以在初始卷订购期间购买空间，也可以在初始供应后通过在**卷详细信息**页面上单击**操作**并选择**添加快照空间**来购买空间。
 
-值得注意的是，VMware 环境并不知道快照。{{site.data.keyword.filestorage_short}} 快照功能不能与 VMware 快照相混淆。使用 {{site.data.keyword.filestorage_short}} 快照功能的任何恢复都必须在 [{{site.data.keyword.slportal}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window} 中进行处理。
+值得注意的是，VMware 环境并不知道快照。{{site.data.keyword.filestorage_short}} 快照功能不能与 VMware 快照相混淆。使用 {{site.data.keyword.filestorage_short}} 快照功能的任何恢复都必须在 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 中进行处理。
 
 复原 {{site.data.keyword.filestorage_short}} 卷需要关闭 {{site.data.keyword.filestorage_short}} 上所有 VM 的电源。需要暂时从 ESXi 主机卸装该卷，以避免执行该过程期间发生任何数据损坏。
 
@@ -150,11 +150,11 @@ subcollection: FileStorage
 
 ## 订购 {{site.data.keyword.filestorage_short}}
 
-在 VMware 环境中，使用[高级单站点 VMware 参考体系结构 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){:new_window} 利用“耐久性”或“性能”选项来设置 {{site.data.keyword.filestorage_short}}。
+在 VMware 环境中，使用[高级单站点 VMware 参考体系结构](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){: external} 利用“耐久性”或“性能”选项来设置 {{site.data.keyword.filestorage_short}}。
 
-订购 {{site.data.keyword.filestorage_short}} 的方式是通过 [IBM Cloud 目录 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://{DomainName}/catalog){:new_window} 或 [{{site.data.keyword.slportal}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window}。有关更多信息，请参阅[订购 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)。
+订购 {{site.data.keyword.filestorage_short}} 的方式是通过 [IBM Cloud 目录](https://{DomainName}/catalog){: external} 或 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}。有关更多信息，请参阅[订购 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)。
 
-存储器将在不到一分钟的时间内进行供应，并且会在 [{{site.data.keyword.slportal}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window} 的 **{{site.data.keyword.filestorage_short}}** 页面上显示。
+存储器将在不到一分钟的时间内进行供应，并且会在 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 的 **{{site.data.keyword.filestorage_short}}** 页面上显示。
 
 供应了卷后，必须授权将使用该卷的 {{site.data.keyword.BluBareMetServers_full}} 或 {{site.data.keyword.BluVirtServers_full}} 来访问该存储器。使用以下步骤来授权该卷。
 
@@ -210,7 +210,7 @@ subcollection: FileStorage
       8980 bytes from a.b.c.d: icmp_seq=1 ttl=128 time=3.36 ms
    ```
 
-有关 VMware 和巨型帧的更多信息，请参阅[此处 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://kb.vmware.com/s/article/1003712){:new_window}。
+有关 VMware 和巨型帧的更多信息，请参阅[此处](https://kb.vmware.com/s/article/1003712){: external}。
 {:tip}
 
 
@@ -251,7 +251,7 @@ subcollection: FileStorage
 
 2. 在 ESXi 5.0 和更低版本上，静态路由在重新启动后不会持久存储。要确保添加的任何静态路由都是持久存储的，需要将此命令添加到每个主机上 `/etc/rc.local.d/` 目录下的 `local.sh` 文件中。使用可视编辑器来打开 `local.sh` 文件，然后将步骤 4.1 中的第二个命令添加到 `exit 0` 行前面。
 
-记下 IP 地址，因为此地址可用于在下一步中安装卷。<br/>对于计划安装到 ESXi 主机的每个 NFS 卷，都需要完成此过程。<br/>有关更多信息，请参阅 VMware 知识库文章：[Configuring static routes for VMkernel ports on an ESXi host ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://kb.vmware.com/s/article/2001426){:new_window}。
+记下 IP 地址，因为此地址可用于在下一步中安装卷。<br/>对于计划安装到 ESXi 主机的每个 NFS 卷，都需要完成此过程。<br/>有关更多信息，请参阅 VMware 知识库文章：[Configuring static routes for VMkernel ports on an ESXi host](https://kb.vmware.com/s/article/2001426){: external}。
 {:tip}
 
 
@@ -383,5 +383,5 @@ Storage I/O Control (SIOC) 是可用于使用 Enterprise Plus 许可证的客户
     #esxcfg-advcfg -g /Disk/QFullSampleSize
     #esxcfg-advcfg -g /Disk/QFullThreshold
     ```
-要了解有关高级单站点 VMware 参考体系结构的更多信息，请访问[此处](/docs/infrastructure/virtualization?topic=Virtualization-advanced-single-site-vmware-reference-architecture){:new_window}。
+要了解有关高级单站点 VMware 参考体系结构的更多信息，请访问[此处](/docs/infrastructure/virtualization?topic=Virtualization-advanced-single-site-vmware-reference-architecture){: external}。
 {:tip}

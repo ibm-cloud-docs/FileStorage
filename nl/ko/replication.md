@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, replication, duplication, synchronous
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -111,7 +111,7 @@ MEL01<br />
 
 ## 초기 복제본 작성
 
-복제는 스냅샷 스케줄에 따라 이뤄집니다. 복제하려면 먼저 스냅샷 영역과 소스 볼륨에 대한 스냅샷 스케줄이 있어야 합니다. 복제를 설정하려는데 두 가지 중 하나가 없는 경우에는 추가 영역을 구매하거나 스케줄을 설정하라는 프롬프트가 표시됩니다. 복제는 [[{{site.data.keyword.slportal}} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://control.softlayer.com/){:new_window}의 **스토리지** > **{{site.data.keyword.filestorage_short}}**에서 관리합니다.
+복제는 스냅샷 스케줄에 따라 이뤄집니다. 복제하려면 먼저 스냅샷 영역과 소스 볼륨에 대한 스냅샷 스케줄이 있어야 합니다. 복제를 설정하려는데 두 가지 중 하나가 없는 경우에는 추가 영역을 구매하거나 스케줄을 설정하라는 프롬프트가 표시됩니다. 복제는 [[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}의 **스토리지** > **{{site.data.keyword.filestorage_short}}**에서 관리합니다.
 
 1. 스토리지 볼륨을 클릭하십시오.
 2. **복제본**을 클릭하고 **복제 구매**를 클릭하십시오.
@@ -130,7 +130,7 @@ MEL01<br />
 
 ## 기존 복제 편집
 
-[{{site.data.keyword.slportal}} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://control.softlayer.com/){:new_window}의 **스토리지** > **{{site.data.keyword.filestorage_short}}**에 있는 **1차** 또는 **복제본**에서 복제 스케줄을 편집하고 복제본 영역을 변경할 수 있습니다.
+[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}의 **스토리지** > **{{site.data.keyword.filestorage_short}}**에 있는 **1차** 또는 **복제본**에서 복제 스케줄을 편집하고 복제본 영역을 변경할 수 있습니다.
 
 
 ## 복제 스케줄 편집

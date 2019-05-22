@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, provisioning, ordering,
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -29,9 +29,9 @@ subcollection: FileStorage
 ## 订购具有预定义 IOPS 层（耐久性）的 {{site.data.keyword.filestorage_short}}
 {: #endurance}
 
-1. 登录到 [IBM Cloud 目录](https://{DomainName}/catalog){:new_window}，然后单击**存储**。然后，选择 {{site.data.keyword.filestorage_short}}。单击**创建**。
+1. 登录到 [IBM Cloud 目录](https://{DomainName}/catalog){: external}，然后单击**存储**。然后，选择 {{site.data.keyword.filestorage_short}}。单击**创建**。
 
-   或者，您可以登录到 [{{site.data.keyword.slportal}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window}，然后单击**存储** > **{{site.data.keyword.filestorage_short}}**。单击右上角的**订购 {{site.data.keyword.filestorage_short}}**。
+   或者，您可以登录到 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}，然后单击**存储** > **{{site.data.keyword.filestorage_short}}**。单击右上角的**订购 {{site.data.keyword.filestorage_short}}**。
 2. 选择部署**位置**（数据中心）。
    - 确保将新存储器添加到您拥有的计算主机所在位置。
 3. 计费。如果选择了具有改进功能的数据中心（标记有星号），那么可以选择“按月计费”或“按小时计费”。
@@ -61,9 +61,9 @@ subcollection: FileStorage
 ## 订购具有定制 IOPS（性能）的 {{site.data.keyword.filestorage_short}}
 {: #performance}
 
-1. 登录到 [IBM Cloud 目录](https://{DomainName}/catalog){:new_window}，然后单击**存储**。然后，选择 {{site.data.keyword.filestorage_short}}。单击**创建**。
+1. 登录到 [IBM Cloud 目录](https://{DomainName}/catalog){: external}，然后单击**存储**。然后，选择 {{site.data.keyword.filestorage_short}}。单击**创建**。
 
-   或者，您可以登录到 [{{site.data.keyword.slportal}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){:new_window}，然后单击**存储** > **{{site.data.keyword.filestorage_short}}**。单击右上角的**订购 {{site.data.keyword.filestorage_short}}**。
+   或者，您可以登录到 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}，然后单击**存储** > **{{site.data.keyword.filestorage_short}}**。单击右上角的**订购 {{site.data.keyword.filestorage_short}}**。
 2. 单击**位置**，然后选择数据中心。
    - 确保将新存储器添加到您拥有的计算主机所在位置。
 3. 计费。如果选择了具有改进功能的数据中心（标记有星号），那么可以选择“按月计费”或“按小时计费”。

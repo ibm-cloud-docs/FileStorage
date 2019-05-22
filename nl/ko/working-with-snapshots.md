@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, snapshots, snapshot schedule, manual 
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -21,7 +21,7 @@ subcollection: FileStorage
 
 ## 스냅샷 스케줄 작성
 
-스냅샷 스케줄을 사용하여 스토리지 볼륨에 대한 특정 시점의 참조를 작성하는 빈도 및 시기를 결정합니다. 스토리지 볼륨당 최대 50개의 스냅샷을 보유할 수 있습니다. 스케줄은 [{{site.data.keyword.slportal}} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://control.softlayer.com/){:new_window}의 **스토리지** > **{{site.data.keyword.filestorage_short}}** 탭을 통해 관리합니다.
+스냅샷 스케줄을 사용하여 스토리지 볼륨에 대한 특정 시점의 참조를 작성하는 빈도 및 시기를 결정합니다. 스토리지 볼륨당 최대 50개의 스냅샷을 보유할 수 있습니다. 스케줄은 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}의 **스토리지** > **{{site.data.keyword.filestorage_short}}** 탭을 통해 관리합니다.
 
 스토리지 볼륨의 초기 프로비저닝 중에 스냅샷 영역을 구매하지 않았으면, 우선 스냅샷 영역을 구매해야 초기 스케줄을 설정할 수 있습니다.
 {:important}
@@ -159,7 +159,7 @@ Options:
 
 1. 호스트에서 스토리지 볼륨을 마운트 해제하고 분리하십시오.
    - 지시사항을 보려면 [여기](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)를 클릭하십시오.
-2. [{{site.data.keyword.slportal}} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://control.softlayer.com/){:new_window}의 **스토리지**, **{{site.data.keyword.filestorage_short}}**를 클릭하십시오.
+2. [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}의 **스토리지**, **{{site.data.keyword.filestorage_short}}**를 클릭하십시오.
 3. 아래로 화면을 이동하고 복원할 볼륨을 클릭하십시오. **세부사항** 페이지의 **스냅샷** 섹션에, 저장된 모든 스냅샷의 목록이 해당 크기 및 작성 날짜와 함께 표시됩니다.
 4. 사용할 스냅샷 옆에 있는 **조치**를 클릭하고 **복원**을 클릭하십시오. <br/>
 

@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, mounting volume in Container Linux, C
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -20,7 +20,7 @@ subcollection: FileStorage
 # Container Linux에 {{site.data.keyword.filestorage_short}} 마운트
 {: #mountingCoreOS}
 
-Container Linux by CoreOS는 Linux 커널을 기반으로 하는 오픈 소스, 경량 운영 체제입니다. 인프라를 클러스터된 배치에 제공하는 데 사용하도록 디자인되었습니다. Container Linux는 운영 체제로서, 서비스 발견 및 구성 공유를 위한 기본 제공 메커니즘과 함께 소프트웨어 컨테이너 내부에 애플리케이션을 배치하는 데 필요한 최소한의 기능을 제공합니다. 자세한 정보는 [스토리지 마운트 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://coreos.com/os/docs/latest/mounting-storage.html)를 참조하십시오.
+Container Linux by CoreOS는 Linux 커널을 기반으로 하는 오픈 소스, 경량 운영 체제입니다. 인프라를 클러스터된 배치에 제공하는 데 사용하도록 디자인되었습니다. Container Linux는 운영 체제로서, 서비스 발견 및 구성 공유를 위한 기본 제공 메커니즘과 함께 소프트웨어 컨테이너 내부에 애플리케이션을 배치하는 데 필요한 최소한의 기능을 제공합니다. 자세한 정보는 [스토리지 마운트](https://coreos.com/os/docs/latest/mounting-storage.html)를 참조하십시오.
 
 시스템 레벨 마운트가 읽기 전용 디렉토리에 있으므로, 모든 2차 마운트 파일은 `/etc/systemd/system` 디렉토리로 이동됩니다. 먼저 `MOUNTPOINT.mount` 파일을 작성해야 합니다. `.mount` 파일의 **Where** 섹션은 파일 이름과 일치해야 합니다. 마운트 지점이 `/` 바로 아래가 아닌 경우에는 `path-to-mount.mount` 구문을 사용하여 파일 이름을 지정해야 합니다. 예를 들어, `/mnt/www`에 휴대용 스토리지 드라이브를 마운트하려는 경우에는 파일 이름을 `mnt-www.mount`로 지정하십시오.
 
@@ -55,4 +55,4 @@ cluster1 ~ # mount |grep data
 ```
 {:codeblock}
 
-자세한 정보는 [`systemd mount` 문서 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://www.freedesktop.org/software/systemd/man/systemd.mount.html)를 참조하십시오.
+자세한 정보는 [`systemd mount` 문서](https://www.freedesktop.org/software/systemd/man/systemd.mount.html)를 참조하십시오.

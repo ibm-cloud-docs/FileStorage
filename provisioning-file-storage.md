@@ -9,7 +9,7 @@ keywords: File Storage, file storage, NFS, provisioning, ordering,
 subcollection: FileStorage
 
 ---
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -29,9 +29,9 @@ You can provision {{site.data.keyword.filestorage_short}} and fine-tune to meet 
 ## Ordering {{site.data.keyword.filestorage_short}} with pre-defined IOPS Tiers (Endurance)
 {: #endurance}
 
-1. Log in to [The IBM Cloud catalog](https://{DomainName}/catalog){:new_window} and click **Storage**. Then, select {{site.data.keyword.filestorage_short}}. Click **Create**.
+1. Log in to [The IBM Cloud catalog](https://{DomainName}/catalog){: external} and click **Storage**. Then, select {{site.data.keyword.filestorage_short}}. Click **Create**.
 
-   Alternatively, you can log in to the [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} }, click **Storage** > **{{site.data.keyword.filestorage_short}}**. In the upper right, click **Order {{site.data.keyword.filestorage_short}}**.
+   Alternatively, you can log in to the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} }, click **Storage** > **{{site.data.keyword.filestorage_short}}**. In the upper right, click **Order {{site.data.keyword.filestorage_short}}**.
 2. Select your deployment **Location** (data center).
    - Ensure that the new Storage is added in the same location as the compute host or hosts that you have.
 3. Billing. If you selected a data center with improved capabilities (marked with an asterisk), you can choose between Monthly or Hourly Billing.
@@ -61,9 +61,9 @@ By default, you can provision a combined total of 250 {{site.data.keyword.blocks
 ## Ordering {{site.data.keyword.filestorage_short}} with custom IOPS (Performance)
 {: #performance}
 
-1. Log in to [The IBM Cloud catalog](https://{DomainName}/catalog){:new_window} and click **Storage**. Then, select {{site.data.keyword.filestorage_short}}. Click **Create**.
+1. Log in to [The IBM Cloud catalog](https://{DomainName}/catalog){: external} and click **Storage**. Then, select {{site.data.keyword.filestorage_short}}. Click **Create**.
 
-   Alternatively, you can log in to the [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){:new_window} }, click **Storage** > **{{site.data.keyword.filestorage_short}}**. In the upper right, click **Order {{site.data.keyword.filestorage_short}}**.
+   Alternatively, you can log in to the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} }, click **Storage** > **{{site.data.keyword.filestorage_short}}**. In the upper right, click **Order {{site.data.keyword.filestorage_short}}**.
 2. Click **Location** and select your data center.
    - Ensure that the new Storage is added in the same location as the compute host or hosts that you have.
 3. Billing. If you selected a data center with improved capabilities (marked with an asterisk), you can choose between Monthly or Hourly Billing.
