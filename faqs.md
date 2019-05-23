@@ -62,59 +62,25 @@ The default limit for number of authorizations per file volume is 64. To increas
 That depends on what the host operating system can handle, it’s not something that {{site.data.keyword.BluSoftlayer_full}} limits. Refer to your OS documentation for limits on the number of file shares that can be mounted.
 
 ## How many file shares are allowed per file volume size? What are the maximum file shares allowed per volume size?
+{: #maxfilevolume}
 {: faq}
 
-<table>
-  <caption>Table 1 shows the maximum number of inodes that are allowed based on the volume size. Volume sizes are in the left column. The number of inodes and file shares are on the right.</caption>
-  <thead>
-    <tr>
-      <th>Volume Size</th>
-      <th>Inodes and File shares</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>20 GB - 39 GB</td>
-      <td>622,484</td>
-    </tr>
-    <tr>
-      <td>40 GB - 79 GB</td>
-      <td>1,245,084</td>
-    </tr>          
-    <tr>
-      <td>80 GB - 99 GB</td>
-      <td>2,490,263</td>
-    </tr>          
-    <tr>
-      <td>100 GB - 249 GB</td>
-      <td>3,112,863</td>
-    </tr>          
-    <tr>
-      <td>250 GB - 499 GB</td>
-      <td>7,782,300</td>
-    </tr>          
-    <tr>
-      <td>500 GB - 999 GB</td>
-      <td>15,564,695</td>
-    </tr>
-    <tr>
-      <td>1 TB</td>
-      <td>31,876,593</td>
-    </tr>
-    <tr>
-      <td>2 TB</td>
-      <td>63,753,186</td>
-    </tr>
-    <tr>
-      <td>3 TB</td>
-      <td>95,629,970</td>
-    </tr>
-    <tr>
-      <td>4 TB - 12 TB</td>
-      <td>127,506,359</td>
-    </tr>
-   </tbody>
-</table>
+| Volume Size | Inodes and File shares |
+|-----|-----|
+| 20 GB - 39 GB | 622,484 |
+| 40 GB - 79 GB | 1,245,084 |
+| 80 GB - 99 GB | 2,490,263 |
+| 100 GB - 249 GB | 3,112,863 |
+| 250 GB - 499 GB | 7,782,300 |
+| 500 GB - 999 GB | 15,564,695 |
+| 1 TB | 31,876,593 |
+| 2 TB | 63,753,186 |
+| 3 TB | 95,629,970 |
+| 4 TB | 127,506,359 |
+{: row-headers}
+{: class="comparison-table"}
+{: caption="Table comparison" caption-side="top"}
+{: summary="Table 1 shows the maximum number of inodes that are allowed based on the volume size. Volume sizes are in the left column. The number of inodes and file shares are on the right."}
 
 ## Measuring IOPS
 {: faq}
