@@ -41,63 +41,17 @@ The IOPS value for both Endurance and Performance is based on a 16-KB block size
 
 The block size that is used by your application directly impacts the storage performance. If the block size that is used by your application is smaller than 16 KB, the IOPS limit is realized before the throughput limit. Conversely, if the block size that is used by your application is larger than 16 KB, the throughput limit is realized before to the IOPS limit.
 
-<table>
-  <caption>Table 1 shows examples of how block size and IOPS affect the throughput.<br/>Average IO size x IOPS = Throughput in MB/s</caption>
-        <colgroup>
-          <col/>
-          <col/>
-          <col/>
-        </colgroup>
-        <thead>
-          <tr>
-            <th>Block Size (KB)</th>
-            <th>IOPS</th>
-            <th>Throughput (MB/s)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>4 (typical for Linux)</td>
-            <td>1,000</td>
-            <td>4</td>
-          </tr>
-          <tr>
-            <td>8 (typical for Oracle)</td>
-            <td>1,000</td>
-            <td>8</td>
-          </tr>
-          <tr>
-            <td>16</td>
-            <td>1,000</td>
-            <td>16</td>
-          </tr>
-          <tr>
-            <td>32 (typical for SQL Server)</td>
-            <td>500</td>
-            <td>16</td>
-          </tr>          
-          <tr>
-            <td>64</td>
-            <td>250</td>
-            <td>16</td>
-          </tr>
-          <tr>
-            <td>128</td>
-            <td>128</td>
-            <td>16</td>
-          </tr>
-          <tr>
-            <td>512</td>
-            <td>32</td>
-            <td>16</td>
-          </tr>
-          <tr>
-            <td>1024</td>
-            <td>16</td>
-            <td>16</td>
-          </tr>
-        </tbody>
-</table>
+| Block Size (KB) | IOPS | Throughput (MB/s) |
+|-----|-----|-----|
+| 4 | 1,000 | 16 |
+| 8 | 1,000 | 16 |
+| 16 | 1,000 | 16 |
+| 32 | 500 | 16 |
+| 64 | 250 | 16 |
+| 128 | 128 | 16 |
+| 512 | 32 | 16 |
+| 1024 | 16 | 16 |
+{: caption="Table 1 shows examples of how block size and IOPS affect the throughput.<br/>Average IO size x IOPS = Throughput in MB/s." caption-side="top"}
 
 ### Authorized hosts
 
@@ -115,7 +69,7 @@ Storage traffic is included in the total network usage of Public Virtual Servers
 
 ### NFS version
 
-Both NFS v3 and NFS v4.1 are supported in the {{site.data.keyword.BluSoftlayer_full}} environment. However, NFS v3 is preferred because NFS v4.1 is a stateful protocol (not stateless like NFSv3) and protocol issues can occur during network events. NFS v4.1 must quiesce all operations and then complete lock reclamation. On a relatively busy NFS file server, the increased latency can cause disruptions. The lack of NFS v4.1 multipath and trunking can also extend NFS operations recovery.
+Both NFS v3 and NFS v4.1 are supported in the {{site.data.keyword.cloud}} environment. However, NFS v3 is preferred because NFS v4.1 is a stateful protocol (not stateless like NFSv3) and protocol issues can occur during network events. NFS v4.1 must quiesce all operations and then complete lock reclamation. On a relatively busy NFS file server, the increased latency can cause disruptions. The lack of NFS v4.1 multipath and trunking can also extend NFS operations recovery.
 
 ## Submitting your Order
 
