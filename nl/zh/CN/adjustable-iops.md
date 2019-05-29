@@ -47,7 +47,7 @@ subcollection: FileStorage
 
 1. 转至 {{site.data.keyword.filestorage_short}} 的列表。
     - 在客户门户网站中，单击**存储** > **{{site.data.keyword.filestorage_short}}** 或
-    - 在 {{site.data.keyword.BluSoftlayer_full}} 控制台中，单击**基础架构** > **存储** > **{{site.data.keyword.filestorage_short}}**。
+    - 在 {{site.data.keyword.cloud}} 控制台中，单击**基础架构** > **存储** > **{{site.data.keyword.filestorage_short}}**。
 2. 从列表中选择卷，然后单击**操作** > **修改卷**。
 3. 在**存储器 IOPS 选项**下，进行新的选择：
     - 对于耐久性（分层 IOPS），选择存储器中大于 0.25 IOPS/GB 的 IOPS 层。可以随时增大 IOPS 层。但是，一个月只能减小一次。

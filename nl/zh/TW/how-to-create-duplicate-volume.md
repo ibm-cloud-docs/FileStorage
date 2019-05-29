@@ -18,7 +18,7 @@ subcollection: FileStorage
 # 建立重複的 {{site.data.keyword.filestorage_short}}
 {: #duplicatevolume}
 
-您可以建立現有 {{site.data.keyword.BluSoftlayer_full}} {{site.data.keyword.filestorage_full}} 的重複磁區。依預設，重複磁區會繼承原始磁區的容量及效能選項，而且會有到達 Snapshot 中該時間點之前的資料副本。   
+您可以建立現有 {{site.data.keyword.cloud}} {{site.data.keyword.filestorage_full}} 的重複磁區。依預設，重複磁區會繼承原始磁區的容量及效能選項，而且會有到達 Snapshot 中該時間點之前的資料副本。   
 
 因為重複磁區的基礎是時間點 Snapshot 中的資料，所以原始磁區上需要有 Snapshot 空間，您才能建立重複磁區。若要進一步瞭解 Snapshot 以及如何訂購 Snapshot 空間，請參閱 [Snapshot 文件](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots)。  
 
@@ -46,7 +46,7 @@ subcollection: FileStorage
 
 1. 移至您的 {{site.data.keyword.filestorage_short}} 清單
     - 從客戶入口網站，按一下**儲存空間** > **{{site.data.keyword.filestorage_short}}**，或者
-    - 從 {{site.data.keyword.BluSoftlayer_full}} 型錄按一下**基礎架構** > **儲存空間** > **{{site.data.keyword.filestorage_short}}**。
+    - 從 {{site.data.keyword.cloud}} 型錄按一下**基礎架構** > **儲存空間** > **{{site.data.keyword.filestorage_short}}**。
 2. 從清單中選取 LUN，然後按一下**動作** > **複製 LUN（磁區）**
 3. 選擇 Snapshot 選項。
     - 如果您從非抄本磁區訂購，請執行下列動作：

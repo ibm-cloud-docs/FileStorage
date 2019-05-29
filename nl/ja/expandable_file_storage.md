@@ -44,7 +44,7 @@ subcollection: FileStorage
 ## ストレージのサイズ変更
 {: #resizingsteps}
 
-1. {{site.data.keyword.slportal}}で**「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**をクリックするか、{{site.data.keyword.BluSoftlayer_full}} カタログで**「インフラストラクチャー」** > **「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**をクリックします。
+1. {{site.data.keyword.slportal}}で**「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**をクリックするか、{{site.data.keyword.cloud}} カタログで**「インフラストラクチャー」** > **「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**をクリックします。
 2. リストからボリュームを選択し、**「アクション」** > **「ボリュームの変更 (Modify Volume)」**をクリックします。
 3. 新しいストレージ・サイズを GB 単位で入力します。
 4. 選択内容と新しい価格を確認します。

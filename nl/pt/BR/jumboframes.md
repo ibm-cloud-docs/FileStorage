@@ -23,7 +23,7 @@ subcollection: FileStorage
 
 Um quadro gigante é um quadro Ethernet com uma carga útil maior que a unidade máxima de transmissão (MTU) padrão de 1.500 bytes. Os quadros gigantes são usados em redes locais que suportam pelo menos 1 Gbps e podem ser tão grandes quanto 9.000 bytes.
 
-Os quadros gigantes precisam ser configurados da mesma maneira em todo o caminho de rede do dispositivo de origem <-> comutador <-> roteador <-> comutador <-> dispositivo de destino. Se a cadeia inteira não for configurada da mesma maneira, ela será padronizada para a configuração mais baixa ao longo da cadeia. O {{site.data.keyword.BluSoftlayer_full}} tem dispositivos de rede configurados para 9.000 atualmente. Todos os dispositivos do cliente precisam ser configurados com o mesmo valor 9.000.
+Os quadros gigantes precisam ser configurados da mesma maneira em todo o caminho de rede do dispositivo de origem <-> comutador <-> roteador <-> comutador <-> dispositivo de destino. Se a cadeia inteira não for configurada da mesma maneira, ela será padronizada para a configuração mais baixa ao longo da cadeia. O {{site.data.keyword.cloud}} tem dispositivos de rede configurados para 9.000 atualmente. Todos os dispositivos do cliente precisam ser configurados com o mesmo valor 9.000.
 {:important}
 
 ## Ativando Quadros Jumbo no Windows

@@ -18,7 +18,7 @@ subcollection: FileStorage
 # Ajustement des paramètres de nombre de lignes de file d'attente de l'hôte
 {: #hostqueuesettings}
 
-{{site.data.keyword.BluSoftlayer_full}} suggère un nombre de lignes de file d'attente d'E-S maximal pour l'hôte et l'application pour chaque niveau de performance.
+{{site.data.keyword.cloud}} suggère un nombre de lignes de file d'attente d'E-S maximal pour l'hôte et l'application pour chaque niveau de performance.
 
 <table align="center">
   <caption>Nombre de lignes de file d'attente recommandée pour chaque niveau IOPS</caption>

@@ -59,7 +59,7 @@ The default limit for number of authorizations per file volume is 64. To increas
 ## How many {{site.data.keyword.filestorage_short}} volumes can be attached to a single host?
 {: faq}
 
-That depends on what the host operating system can handle, it’s not something that {{site.data.keyword.BluSoftlayer_full}} limits. Refer to your OS documentation for limits on the number of file shares that can be mounted.
+That depends on what the host operating system can handle, it’s not something that {{site.data.keyword.cloud}} limits. Refer to your OS documentation for limits on the number of file shares that can be mounted.
 
 ## How many file shares are allowed per file volume size? What are the maximum file shares allowed per volume size?
 {: #maxfilevolume}
@@ -131,7 +131,7 @@ Target latency within the storage is  less than one ms. The storage is connected
 ## Which NFS versions are supported?
 {: faq}
 
-Both NFS v3 and NFS v4.1 are supported in the {{site.data.keyword.BluSoftlayer_full}} environment.
+Both NFS v3 and NFS v4.1 are supported in the {{site.data.keyword.cloud}} environment.
 
 The preferred version is NFS v3 because it's a stateless protocol and more resilient when network events occur.
 

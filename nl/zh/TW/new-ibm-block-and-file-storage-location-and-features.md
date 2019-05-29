@@ -18,7 +18,7 @@ subcollection: FileStorage
 # 新位置及特性
 {: #news}
 
-{{site.data.keyword.BluSoftlayer_full}} 將引進新版的 {{site.data.keyword.filestorage_full}}！新的儲存空間會提供在精選資料中心內，並且由更高 IOPS 層次的快閃記憶體儲存空間支援，且具有靜態資料的磁碟層次加密。在精選資料中心訂購的所有儲存空間，都會自動使用新版本的 {{site.data.keyword.filestorage_short}} 建立。
+{{site.data.keyword.cloud}} 將引進新版的 {{site.data.keyword.filestorage_full}}！新的儲存空間會提供在精選資料中心內，並且由更高 IOPS 層次的快閃記憶體儲存空間支援，且具有靜態資料的磁碟層次加密。在精選資料中心訂購的所有儲存空間，都會自動使用新版本的 {{site.data.keyword.filestorage_short}} 建立。
 
 新磁區的 NFS 裝載點已變更。如需詳細資料，請參閱[加強型 {{site.data.keyword.filestorage_short}} 磁區的新裝載點](#new-mount-point-for-enhanced-file-storage-volumes)區段。
 {:important}

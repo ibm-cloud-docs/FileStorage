@@ -44,7 +44,7 @@ Aproveche las siguientes características básicas de {{site.data.keyword.filest
    - Captura instantáneas de datos en un momento específico sin interrupción.
 - **Réplica**  [(disponible en centros de datos seleccionados)](/docs/infrastructure/FileStorage?topic=FileStorage-news)
    - Disponible al suministrar almacenamiento en [centros de datos seleccionados](/docs/infrastructure/FileStorage?topic=FileStorage-news).
-   - Copia automáticamente instantáneas a un centro de datos de {{site.data.keyword.BluSoftlayer_full}} asociado.
+   - Copia automáticamente instantáneas a un centro de datos de {{site.data.keyword.cloud}} asociado.
 - **Conectividad de alta disponibilidad**
    - Utiliza conexiones de red redundantes para maximizar la disponibilidad.
    - Conexiones TCP/IP direccionadas de {{site.data.keyword.filestorage_short}} basado en NFS.

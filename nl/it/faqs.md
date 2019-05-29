@@ -164,7 +164,7 @@ La latenza di destinazione all'interno dello spazio di archiviazione è inferior
 ## Quali versioni NFS sono supportate? 
 {: faq}
 
-Nell'ambiente {{site.data.keyword.BluSoftlayer_full}} sono supportati sia NFS v3 che NFS v4.1. 
+Nell'ambiente {{site.data.keyword.cloud}} sono supportati sia NFS v3 che NFS v4.1. 
 
 La versione preferita è NFS v3 perché è un protocollo senza stato e più resiliente quando si verificano degli eventi di rete. 
 

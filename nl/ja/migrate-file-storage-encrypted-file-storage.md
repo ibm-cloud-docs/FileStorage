@@ -37,7 +37,7 @@ subcollection: FileStorage
 API を使用して注文する場合は、「Storage as a Service」パッケージを指定して、更新済みの機能を新規ストレージと一緒に取得してください。
 {:important}
 
-拡張された LUN は {{site.data.keyword.BluSoftlayer_full}} カタログと {{site.data.keyword.slportal}}を通じて注文できます。 簡単にマイグレーションできるようにするには、新規ボリュームのサイズを元のファイル共有のサイズ以上にする必要があります。
+拡張された LUN は {{site.data.keyword.cloud}} カタログと {{site.data.keyword.slportal}}を通じて注文できます。 簡単にマイグレーションできるようにするには、新規ボリュームのサイズを元のファイル共有のサイズ以上にする必要があります。
 
 - [事前定義済み IOPS ティアによる {{site.data.keyword.filestorage_short}} の注文 (エンデュランス)](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#endurance)
 - [カスタム IOPS による {{site.data.keyword.filestorage_short}} の注文 (パフォーマンス)](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#performance)

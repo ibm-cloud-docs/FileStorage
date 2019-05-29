@@ -25,7 +25,7 @@ SLCLI をインストールして使用する方法について詳しくは、[P
 
 ## 入手可能な {{site.data.keyword.filestorage_short}} オファーの検索
 
-注文の際には、最初のコンポーネントとしてパッケージを検索します。 パッケージは、{{site.data.keyword.BluSoftlayer_full}} での注文時に入手できるさまざまなトップレベルの製品に分かれています。 パッケージの例として、VSI の CLOUD_SERVER、ベアメタル・サーバーの BARE_METAL_SERVER、{{site.data.keyword.filestorage_short}}と {{site.data.keyword.blockstorageshort}} の STORAGE_AS_A_SERVICE_STAAS があります。
+注文の際には、最初のコンポーネントとしてパッケージを検索します。 パッケージは、{{site.data.keyword.cloud}} での注文時に入手できるさまざまなトップレベルの製品に分かれています。 パッケージの例として、VSI の CLOUD_SERVER、ベアメタル・サーバーの BARE_METAL_SERVER、{{site.data.keyword.filestorage_short}}と {{site.data.keyword.blockstorageshort}} の STORAGE_AS_A_SERVICE_STAAS があります。
 
 パッケージ内では、いくつかの項目がカテゴリーに細分化されています。 利便性を考えて事前設定されているパッケージもあれば、項目を個別に指定する必要があるパッケージもあります。 あるパッケージの 1 つのカテゴリーが必須である場合、そのパッケージを注文するにはそのカテゴリーから項目を選択する必要があります。 カテゴリーによっては、カテゴリー内の一部の項目は同時に選択できない場合があります。
 

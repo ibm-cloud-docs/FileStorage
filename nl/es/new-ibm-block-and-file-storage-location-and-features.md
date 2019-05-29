@@ -18,7 +18,7 @@ subcollection: FileStorage
 # Nuevas ubicaciones y características
 {: #news}
 
-{{site.data.keyword.BluSoftlayer_full}} presenta una nueva versión de {{site.data.keyword.filestorage_full}}. El nuevo almacenamiento está disponible en centros de datos seleccionados, y está respaldado por el almacenamiento flash a niveles de IOPS superiores con cifrado de disco para datos en reposo. Todo el almacenamiento solicitado en los centros de datos seleccionados se crea automáticamente con la nueva versión de {{site.data.keyword.filestorage_short}}.
+{{site.data.keyword.cloud}} presenta una nueva versión de {{site.data.keyword.filestorage_full}}. El nuevo almacenamiento está disponible en centros de datos seleccionados, y está respaldado por el almacenamiento flash a niveles de IOPS superiores con cifrado de disco para datos en reposo. Todo el almacenamiento solicitado en los centros de datos seleccionados se crea automáticamente con la nueva versión de {{site.data.keyword.filestorage_short}}.
 
 Ha cambiado el punto de montaje de NFS para los volúmenes nuevos. Consulte la sección [Nuevo punto de montaje para volúmenes de {{site.data.keyword.filestorage_short}} mejorado](#new-mount-point-for-enhanced-file-storage-volumes) que hay a continuación para ver detalles.
 {:important}

@@ -164,7 +164,7 @@ IOPS는 볼륨 레벨에서 적용됩니다. 달리 말하면, 6000IOPS의 볼�
 ## 지원되는 NFS 버전
 {: faq}
 
-NFS v3 및 NFS v4.1 모두는 {{site.data.keyword.BluSoftlayer_full}} 환경에서 지원됩니다. 
+NFS v3 및 NFS v4.1 모두는 {{site.data.keyword.cloud}} 환경에서 지원됩니다. 
 
 NFS v3는 stateless 프로토콜이며 네트워크 이벤트가 발생할 때 복원력이 좋으므로 선호되는 버전입니다. 
 

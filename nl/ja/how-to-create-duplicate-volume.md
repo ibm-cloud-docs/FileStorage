@@ -18,7 +18,7 @@ subcollection: FileStorage
 # 複製{{site.data.keyword.filestorage_short}}の作成
 {: #duplicatevolume}
 
-既存の {{site.data.keyword.BluSoftlayer_full}} {{site.data.keyword.filestorage_full}} の複製を作成できます。 複製ボリュームは元のボリュームの容量とパフォーマンスのオプションをデフォルトで継承し、スナップショットの時点までのデータの複製を保管します。   
+既存の {{site.data.keyword.cloud}} {{site.data.keyword.filestorage_full}} の複製を作成できます。 複製ボリュームは元のボリュームの容量とパフォーマンスのオプションをデフォルトで継承し、スナップショットの時点までのデータの複製を保管します。   
 
 複製はポイントインタイム・スナップショットのデータに基づくため、複製を作成するためには、元のボリューム上にスナップショット・スペースが必要です。 スナップショットについて、およびスナップショット・スペースの注文方法について詳しくは、[スナップショットの説明](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots)を参照してください。  
 
@@ -46,7 +46,7 @@ subcollection: FileStorage
 
 1. {{site.data.keyword.filestorage_short}}のリストに進みます
     - カスタマー・ポータルから、**「ストレージ」**>**「{{site.data.keyword.filestorage_short}}」**をクリックします。または
-    - {{site.data.keyword.BluSoftlayer_full}} カタログで、**「インフラストラクチャー」** > **「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**をクリックします。
+    - {{site.data.keyword.cloud}} カタログで、**「インフラストラクチャー」** > **「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**をクリックします。
 2. リストから LUN を選択し、**「アクション」** > **「LUN (ボリューム) の複製 (Duplicate LUN (Volume))」**をクリックします。
 3. スナップショット・オプションを選択します。
     - 非レプリカ・ボリュームから注文する場合は、次のようにします。

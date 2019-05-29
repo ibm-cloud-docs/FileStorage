@@ -30,7 +30,7 @@ Bevor Sie replizieren können, müssen Sie einen Snapshotplan erstellen.
 
 ## Fernes Rechenzentrum für replizierten Speicherdatenträger ermitteln
 
-Die verfügbaren Rechenzentren von {{site.data.keyword.BluSoftlayer_full}} wurden weltweit zu Paaren aus primären und fernen Rechenzentren kombiniert.
+Die verfügbaren Rechenzentren von {{site.data.keyword.cloud}} wurden weltweit zu Paaren aus primären und fernen Rechenzentren kombiniert.
 In Tabelle 1 finden Sie die vollständige Liste der verfügbaren Rechenzentren und Replikationsziele.
 
 <table>
@@ -184,7 +184,7 @@ Das Replikationsprotokoll wird auf der Registerkarte **Konto** unter **Verwalten
 
 ## Duplikat eines Replikats erstellen
 
-Sie können ein Duplikat eines vorhandenen {{site.data.keyword.BluSoftlayer_full}} {{site.data.keyword.filestorage_full}}-Datenträgers erstellen. Das Duplikat übernimmt standardmäßig die Kapazitäts- und Leistungsoptionen des Originaldatenträgers und enthält bis zum Zeitpunkt eines Snapshots eine Kopie der Daten.
+Sie können ein Duplikat eines vorhandenen {{site.data.keyword.cloud}} {{site.data.keyword.filestorage_full}}-Datenträgers erstellen. Das Duplikat übernimmt standardmäßig die Kapazitäts- und Leistungsoptionen des Originaldatenträgers und enthält bis zum Zeitpunkt eines Snapshots eine Kopie der Daten.
 
 Duplikate können sowohl von primären Datenträgern als auch von Replikatdatenträgern erstellt werden. Das neue Duplikat wird im selben Rechenzentrum wie der ursprüngliche Datenträger erstellt. Wenn Sie einen Duplikatdatenträger von einem Replikatdatenträger erstellen, wird der neue Datenträger im selben Rechenzentrum wie der Replikatdatenträger erstellt.
 

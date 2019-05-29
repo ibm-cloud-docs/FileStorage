@@ -41,7 +41,7 @@ Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
 
 ## 裝載 {{site.data.keyword.filestorage_short}} 共用
 
-請使用下列指示，將 Linux 型「{{site.data.keyword.BluSoftlayer_full}} 運算」實例連接至網路檔案系統 (NFS) 共用。此範例是以 Red Hat Enterprise Linux 6 為基礎。針對其他 Linux 發行套件，可以根據作業系統 (OS) 供應商文件來調整這些步驟。
+請使用下列指示，將 Linux 型「{{site.data.keyword.cloud}} 運算」實例連接至網路檔案系統 (NFS) 共用。此範例是以 Red Hat Enterprise Linux 6 為基礎。針對其他 Linux 發行套件，可以根據作業系統 (OS) 供應商文件來調整這些步驟。
 
 您可以從 {{site.data.keyword.filestorage_short}} 清單頁面或透過 API 呼叫 `SoftLayer_Network_Storage::getNetworkMountAddress()`，來取得檔案儲存空間實例的裝載點。
 {:tip}

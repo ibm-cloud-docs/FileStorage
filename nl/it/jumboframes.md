@@ -23,7 +23,7 @@ subcollection: FileStorage
 
 Un frame jumbo è un frame Ethernet con un payload più grande della MTU (maximum transmission unit) standard di 1.500 byte. I frame jumbo sono utilizzati sulle LAN (local area network) che supportano almeno 1 Gbps e possono arrivare a una dimensione di 9.000 byte.
 
-I frame Jumbo devono essere configurati nello stesso modo nell'intero percorso di rete dal dispositivo di origine <-> switch <-> router <-> switch <-> dispositivo di destinazione. Se l'intera catena non è impostata nello stesso modo, viene per impostazione predefinita utilizzata l'impostazione più bassa lungo la catena. {{site.data.keyword.BluSoftlayer_full}} ha i dispositivi di rete impostati su 9.000, attualmente. Tutti i dispositivi cliente devono essere impostati sullo stesso valore di 9.000.
+I frame Jumbo devono essere configurati nello stesso modo nell'intero percorso di rete dal dispositivo di origine <-> switch <-> router <-> switch <-> dispositivo di destinazione. Se l'intera catena non è impostata nello stesso modo, viene per impostazione predefinita utilizzata l'impostazione più bassa lungo la catena. {{site.data.keyword.cloud}} ha i dispositivi di rete impostati su 9.000, attualmente. Tutti i dispositivi cliente devono essere impostati sullo stesso valore di 9.000.
 {:important}
 
 ## Abilitazione di frame Jumbo in Windows

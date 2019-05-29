@@ -18,7 +18,7 @@ subcollection: FileStorage
 # 调整主机队列深度设置
 {: #hostqueuesettings}
 
-{{site.data.keyword.BluSoftlayer_full}} 建议为每个性能层设置最大主机和应用程序输入/输出 (I/O) 队列深度。
+{{site.data.keyword.cloud}} 建议为每个性能层设置最大主机和应用程序输入/输出 (I/O) 队列深度。
 
 <table align="center">
   <caption>每个 IOPS 层的建议队列深度</caption>

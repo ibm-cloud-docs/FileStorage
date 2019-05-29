@@ -18,7 +18,7 @@ subcollection: FileStorage
 # Einstellungen der Länge der Hostwarteschlange anpassen
 {: #hostqueuesettings}
 
-{{site.data.keyword.BluSoftlayer_full}} empfiehlt für jede Leistungsstufe eine maximale Länge für die Ein-/Ausgabewarteschlangen für den Host und die Anwendung.
+{{site.data.keyword.cloud}} empfiehlt für jede Leistungsstufe eine maximale Länge für die Ein-/Ausgabewarteschlangen für den Host und die Anwendung.
 
 <table align="center">
   <caption>Empfohlene Warteschlangenlänge für die einzelnen IOPS-Stufen</caption>

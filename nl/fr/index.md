@@ -44,7 +44,7 @@ Tirez parti des principales fonctionnalités de {{site.data.keyword.filestorage_
    - Capture des instantanés de données ponctuels de manière transparente.
 - **Replication**  [(disponible dans des centres de données sélectionnés)](/docs/infrastructure/FileStorage?topic=FileStorage-news)
    - Disponible uniquement pour le stockage mis à disposition dans des [centres de données sélectionnés](/docs/infrastructure/FileStorage?topic=FileStorage-news).
-   - Copie automatiquement des instantanés vers un centre de données {{site.data.keyword.BluSoftlayer_full}} partenaire.
+   - Copie automatiquement des instantanés vers un centre de données {{site.data.keyword.cloud}} partenaire.
 - **Connectivité hautement disponible**
    - Utilise des connexions réseau redondantes pour accroître la disponibilité
    - Connexions TCP/IP routées par {{site.data.keyword.filestorage_short}} basé sur NFS

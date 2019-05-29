@@ -18,7 +18,7 @@ subcollection: FileStorage
 # 중복 {{site.data.keyword.filestorage_short}} 작성
 {: #duplicatevolume}
 
-기존 {{site.data.keyword.BluSoftlayer_full}} {{site.data.keyword.filestorage_full}}의 복제를 작성할 수 있습니다. 복제 볼륨은 기본적으로 원래 볼륨의 용량 및 성능 옵션을 상속하며 스냅샷의 특정 시점까지의 데이터 사본을 보유합니다.   
+기존 {{site.data.keyword.cloud}} {{site.data.keyword.filestorage_full}}의 복제를 작성할 수 있습니다. 복제 볼륨은 기본적으로 원래 볼륨의 용량 및 성능 옵션을 상속하며 스냅샷의 특정 시점까지의 데이터 사본을 보유합니다.   
 
 복제가 특정 시점 스냅샷의 데이터를 기반으로 하므로, 복제를 작성하려면 우선 스냅샷 영역이 원래 볼륨에서 필요합니다. 스냅샷 및 스냅샷 영역 주문 방법에 대해 자세히 알아보려면 [스냅샷 문서](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots)를 참조하십시오.  
 
@@ -46,7 +46,7 @@ subcollection: FileStorage
 
 1. {{site.data.keyword.filestorage_short}}의 목록으로 이동하십시오.
     - 고객 포털에서 **스토리지** > **{{site.data.keyword.filestorage_short}}**를 클릭하거나
-    - {{site.data.keyword.BluSoftlayer_full}} 카탈로그에서 **인프라** > **스토리지** > **{{site.data.keyword.filestorage_short}}**를 클릭하십시오.
+    - {{site.data.keyword.cloud}} 카탈로그에서 **인프라** > **스토리지** > **{{site.data.keyword.filestorage_short}}**를 클릭하십시오.
 2. 목록에서 LUN을 선택하고 **조치** > **LUN(볼륨) 복제**를 클릭하십시오.
 3. 스냅샷 옵션을 선택하십시오.
     - 비복제본 볼륨에서 주문하는 경우,

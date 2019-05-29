@@ -21,7 +21,7 @@ subcollection: FileStorage
 # {{site.data.keyword.filestorage_short}} mit VMware bereitstellen
 {: #architectureguide}
 
-Folgende Schritte zeigen Ihnen, wie {{site.data.keyword.filestorage_full}} in einer Umgebung mit vSphere 5.5 und vSphere 6.0 bei {{site.data.keyword.BluSoftlayer_full}} bestellt und konfiguriert wird.
+Folgende Schritte zeigen Ihnen, wie {{site.data.keyword.filestorage_full}} in einer Umgebung mit vSphere 5.5 und vSphere 6.0 bei {{site.data.keyword.cloud}} bestellt und konfiguriert wird.
 
 {{site.data.keyword.filestorage_short}} wurde zur Unterstützung von Anwendungen mit hoher E/A-Aktivität entwickelt, die vorhersagbare Leistungsniveaus erfordern. Die vorhersagbare Leistung wird durch Zuordnung von E/A-Operationen pro Sekunde (IOPS) zu einzelnen Datenträgern auf Protokollebene erzielt.
 
@@ -44,7 +44,7 @@ Beachten Sie für die Bestellung von {{site.data.keyword.filestorage_short}} fol
 - NFS verwendet viele zusätzliche Dateisteuerungsoperationen wie `lookup`, `getattr` und `readdir`. Diese Operationen können neben Lese- und Schreiboperationen ebenfalls als IOPS gezählt werden und sind je nach Operationstyp und NFS-Version unterschiedlich.
 - {{site.data.keyword.filestorage_short}}-Datenträger werden autorisierten Einheiten (Geräten), Teilnetzen oder IP-Adressen zugänglich gemacht.
 - Zur Vermeidung einer Speicherverbindungsunterbrechung während des Pfadfailovers empfiehlt {{site.data.keyword.IBM}}, VMware-Tools zu installieren, die einen angemessenen Zeitlimitwert festlegen. Der Wert muss nicht geändert werden; die Standardeinstellung reicht aus, um sicherzustellen, dass Ihr VMware-Host die Konnektivität nicht verliert.
-- NFS Version 3 und NFS Version 4.1 werden in der Umgebung von {{site.data.keyword.BluSoftlayer_full}} unterstützt. {{site.data.keyword.IBM}} empfiehlt jedoch, NFS Version 3 zu verwenden. Da NFS Version 4.1 ein Protokoll mit Zustandsüberwachung (und nicht wie NFS Version 3 ohne Zustandsüberwachung) ist, können bei Netzereignissen Probleme mit dem Protokoll auftreten. NFS Version 4.1 muss alle Operationen ruhen lassen und anschließend eine Sperrenrückforderung ausführen. Während dieser Operationen kann es zu Unterbrechungen kommen.
+- NFS Version 3 und NFS Version 4.1 werden in der Umgebung von {{site.data.keyword.cloud}} unterstützt. {{site.data.keyword.IBM}} empfiehlt jedoch, NFS Version 3 zu verwenden. Da NFS Version 4.1 ein Protokoll mit Zustandsüberwachung (und nicht wie NFS Version 3 ohne Zustandsüberwachung) ist, können bei Netzereignissen Probleme mit dem Protokoll auftreten. NFS Version 4.1 muss alle Operationen ruhen lassen und anschließend eine Sperrenrückforderung ausführen. Während dieser Operationen kann es zu Unterbrechungen kommen.
 
 Weitere Informationen finden Sie im Whitepaper von VMware zu [bewährten Verfahren für die Ausführung von VMware vSphere unter network-attached storage Storage](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){: external}
 {:tip}
@@ -174,7 +174,7 @@ Wenn die Teilnetze autorisiert sind, notieren Sie den Hostnamen des Endurance- o
 Stellen Sie vor Beginn des VMware-Konfigurationsprozesses sicher, dass die folgenden Voraussetzungen erfüllt sind:
 
 - {{site.data.keyword.BluBareMetServers}} mit VMware ESXi wurde mit der entsprechenden Konfiguration und den ESXi-Anmeldeberechtigungsnachweisen bereitgestellt.
-- {{site.data.keyword.BluSoftlayer_full}} Windows ist physisch vorhanden oder {{site.data.keyword.virtualmachinesshort}} im selben Rechenzentrum wie die {{site.data.keyword.BluBareMetServers}}. Dies schließt die öffentliche IP-Adresse der {{site.data.keyword.BluSoftlayer_full}} Windows VM und die Anmeldeberechtigungsnachweise ein.
+- {{site.data.keyword.cloud}} Windows ist physisch vorhanden oder {{site.data.keyword.virtualmachinesshort}} im selben Rechenzentrum wie die {{site.data.keyword.BluBareMetServers}}. Dies schließt die öffentliche IP-Adresse der {{site.data.keyword.cloud}} Windows VM und die Anmeldeberechtigungsnachweise ein.
 - Ein Computer mit Internetzugang und mit der Web-Browser-Software sowie mit einem installierten RDP-Client (RDP - Remote Desktop Protocol) ist verfügbar.
 
 
@@ -271,7 +271,7 @@ Notieren Sie die IP-Adresse, da sie zum Anhängen des Datenträgers im nächsten
 9. Prüfen Sie die Eingaben auf der nächsten Anzeige und klicken Sie auf **Finish** (Fertigstellen).
 10. Wiederholen Sie diese Schritte für alle weiteren {{site.data.keyword.filestorage_short}}-Datenträger.
 
-Von {{site.data.keyword.BluSoftlayer_full}} wird empfohlen, FQDN-Namen für die Verbindung zum WMware-Datenspeicher zu verwenden. Durch die direkte Verwendung von IP-Adressen könnte der Lastausgleichsmechanismus, der durch die Verwendung von FQDN-Namen bereitgestellt wird, umgangen werden.
+Von {{site.data.keyword.cloud}} wird empfohlen, FQDN-Namen für die Verbindung zum WMware-Datenspeicher zu verwenden. Durch die direkte Verwendung von IP-Adressen könnte der Lastausgleichsmechanismus, der durch die Verwendung von FQDN-Namen bereitgestellt wird, umgangen werden.
 {:important}
 
 Setzen Sie zur Verwendung der IP-Adresse anstelle des FQDN einfach einen Pingbefehl an den Server ab, um die IP-Adresse abzurufen.

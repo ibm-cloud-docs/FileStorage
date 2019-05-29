@@ -30,7 +30,7 @@ subcollection: FileStorage
 
 ## 确定复制的存储卷的远程数据中心
 
-{{site.data.keyword.BluSoftlayer_full}} 在世界各地的数据中心已成对编成主数据中心和远程数据中心组合。
+{{site.data.keyword.cloud}} 在世界各地的数据中心已成对编成主数据中心和远程数据中心组合。
 请参阅表 1，以获取数据中心可用性和复制目标的完整列表。
 
 <table>
@@ -188,7 +188,7 @@ MEL01<br />
 
 ## 创建副本的复制项
 
-您可以创建现有 {{site.data.keyword.BluSoftlayer_full}} {{site.data.keyword.filestorage_full}} 的副本。缺省情况下，复制卷将继承原始存储卷的容量和性能选项，并且会包含截至快照时间点的数据的副本。
+您可以创建现有 {{site.data.keyword.cloud}} {{site.data.keyword.filestorage_full}} 的副本。缺省情况下，复制卷将继承原始存储卷的容量和性能选项，并且会包含截至快照时间点的数据的副本。
 
 复制项可以基于主卷和副本卷创建。新复制项会在原始卷所在的数据中心内创建。如果基于副本卷创建复制项，那么新卷将在副本卷所在的数据中心内创建。
 

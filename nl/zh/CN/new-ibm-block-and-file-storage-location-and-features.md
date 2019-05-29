@@ -18,7 +18,7 @@ subcollection: FileStorage
 # 新位置和功能
 {: #news}
 
-{{site.data.keyword.BluSoftlayer_full}} 将推出新版本的 {{site.data.keyword.filestorage_full}}！新的存储器在精选数据中心内提供，是更高 IOPS 级别的闪存支持的存储器，具有针对静态数据的磁盘级别加密。在精选数据中心内订购的所有存储器都将自动通过新版本的 {{site.data.keyword.filestorage_short}} 创建。
+{{site.data.keyword.cloud}} 将推出新版本的 {{site.data.keyword.filestorage_full}}！新的存储器在精选数据中心内提供，是更高 IOPS 级别的闪存支持的存储器，具有针对静态数据的磁盘级别加密。在精选数据中心内订购的所有存储器都将自动通过新版本的 {{site.data.keyword.filestorage_short}} 创建。
 
 新卷的 NFS 安装点已更改。有关详细信息，请参阅[增强型 {{site.data.keyword.filestorage_short}} 卷的新安装点](#new-mount-point-for-enhanced-file-storage-volumes)。
 {:important}

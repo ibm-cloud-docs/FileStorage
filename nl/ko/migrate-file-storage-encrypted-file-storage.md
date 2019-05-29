@@ -37,7 +37,7 @@ subcollection: FileStorage
 API에서 주문하는 경우에는 새 스토리지의 업데이트된 기능을 받을 수 있도록 "SaaS(Storage as a Service)" 패키지를 지정하십시오.
 {:important}
 
-{{site.data.keyword.BluSoftlayer_full}} 카탈로그 및 {{site.data.keyword.slportal}}을 통해 향상된 LUN을 주문할 수 있습니다. 새 볼륨은 마이그레이션을 수행하기 위해 원본 파일 공유 크기 이상이어야 합니다.
+{{site.data.keyword.cloud}} 카탈로그 및 {{site.data.keyword.slportal}}을 통해 향상된 LUN을 주문할 수 있습니다. 새 볼륨은 마이그레이션을 수행하기 위해 원본 파일 공유 크기 이상이어야 합니다.
 
 - [사전 정의된 IOPS 티어(Endurance)가 있는 {{site.data.keyword.filestorage_short}} 주문](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#endurance)
 - [사용자 정의 IOPS(Performance)가 있는 {{site.data.keyword.filestorage_short}} 주문](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#performance)

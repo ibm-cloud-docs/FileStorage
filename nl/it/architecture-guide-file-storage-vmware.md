@@ -44,7 +44,7 @@ Quando ordini {{site.data.keyword.filestorage_short}}, tieni conto delle seguent
 - NFS utilizza molte ulteriori operazioni di controllo file come `lookup`, `getattr` e `readdir`. Queste operazioni, in aggiunta alle operazioni di lettura/scrittura, possono contare come IOPS e variare in base al tipo di operazione e alla versione NFS.
 - I volumi {{site.data.keyword.filestorage_short}} sono presentati agli indirizzi IP, alle sottoreti o ai dispositivi autorizzati.
 - Per evitare una disconnessione dell'archiviazione durante il failover del percorso, {{site.data.keyword.IBM}} consiglia di installare gli strumenti VMware che impostano un valore di timeout appropriato. Non è necessario modificare il valore; l'impostazione predefinita è sufficiente per garantire che il tuo host VMware non perda la connettività.
-- Nell'ambiente {{site.data.keyword.BluSoftlayer_full}} sono supportati sia NFSv3 che NFSv4.1. Tuttavia, {{site.data.keyword.IBM}} consiglia di utilizzare NFSv3. Poiché NFSv4.1 è un protocollo con stato (non senza stato come NFSv3), durante gli eventi di rete potrebbero verificarsi dei problemi di protocollo. NFSv4.1 deve disattivare tutte le operazioni e quindi completare un recupero del blocco. Mentre sono in corso tali operazioni, possono verificarsi delle interruzioni del servizio.
+- Nell'ambiente {{site.data.keyword.cloud}} sono supportati sia NFSv3 che NFSv4.1. Tuttavia, {{site.data.keyword.IBM}} consiglia di utilizzare NFSv3. Poiché NFSv4.1 è un protocollo con stato (non senza stato come NFSv3), durante gli eventi di rete potrebbero verificarsi dei problemi di protocollo. NFSv4.1 deve disattivare tutte le operazioni e quindi completare un recupero del blocco. Mentre sono in corso tali operazioni, possono verificarsi delle interruzioni del servizio.
 
 Per ulteriori informazioni, consulta il white paper di VMware [Best Practices for running
 VMware vSphere on Network Attached Storage](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){: external}
@@ -175,7 +175,7 @@ Dopo che le sottoreti sono state autorizzate, annota il nome host del server di 
 Prima di iniziare il processo di configurazione di VMware, assicurati che siano soddisfatti i seguenti prerequisiti:
 
 - Il provisioning dei {{site.data.keyword.BluBareMetServers}} con VMware ESXi viene eseguito con la corretta configurazione dell'archiviazione e le corrette credenziali di accesso ESXi.
-- {{site.data.keyword.BluSoftlayer_full}} Windows fisico o {{site.data.keyword.virtualmachinesshort}} nello stesso data center dei {{site.data.keyword.BluBareMetServers}}. Devono essere inclusi l'indirizzo IP pubblico della macchina virtuale (VM, Virtual Machine) {{site.data.keyword.BluSoftlayer_full}} e le credenziali di accesso.
+- {{site.data.keyword.cloud}} Windows fisico o {{site.data.keyword.virtualmachinesshort}} nello stesso data center dei {{site.data.keyword.BluBareMetServers}}. Devono essere inclusi l'indirizzo IP pubblico della macchina virtuale (VM, Virtual Machine) {{site.data.keyword.cloud}} e le credenziali di accesso.
 - Un computer con accesso a internet e con il software di browser web e un client RDP (Remote Desktop Protocol) installati.
 
 
@@ -272,7 +272,7 @@ Annota l'indirizzo IP poiché può essere utilizzato per montare il volume nel p
 9. Riesamina gli input nella schermata successiva e fai clic su **Finish**.
 10. Ripeti per qualsiasi volume {{site.data.keyword.filestorage_short}} aggiuntivo.
 
-{{site.data.keyword.BluSoftlayer_full}} consiglia di utilizzare i nomi FQDN per stabilire una connessione all'archivio dati VMware. L'utilizzo dell'indirizzamento IP diretto potrebbe ignorare il meccanismo di bilanciamento del carico fornito utilizzando l'FQDN.
+{{site.data.keyword.cloud}} consiglia di utilizzare i nomi FQDN per stabilire una connessione all'archivio dati VMware. L'utilizzo dell'indirizzamento IP diretto potrebbe ignorare il meccanismo di bilanciamento del carico fornito utilizzando l'FQDN.
 {:important}
 
 Per utilizzare l'indirizzo IP invece dell'FQDN, esegui semplicemente il ping del server per ottenere l'indirizzo IP.

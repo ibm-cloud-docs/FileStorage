@@ -41,7 +41,7 @@ Options:
 
 ## {{site.data.keyword.filestorage_short}} 공유 마운트
 
-Linux 기반 {{site.data.keyword.BluSoftlayer_full}} 컴퓨팅 인스턴스를 NFS(Network File System) 공유에 연결하려면 다음 지시사항을 사용하십시오. 이 예제는 Red Hat Enterprise Linux 6를 기반으로 합니다. 운영 체제(OS) 공급업체 문서에 따라 기타 Linux 배포의 경우에는 단계가 조정될 수 있습니다.
+Linux 기반 {{site.data.keyword.cloud}} 컴퓨팅 인스턴스를 NFS(Network File System) 공유에 연결하려면 다음 지시사항을 사용하십시오. 이 예제는 Red Hat Enterprise Linux 6를 기반으로 합니다. 운영 체제(OS) 공급업체 문서에 따라 기타 Linux 배포의 경우에는 단계가 조정될 수 있습니다.
 
 파일 스토리지 인스턴스의 마운트 지점은 {{site.data.keyword.filestorage_short}} 목록 페이지에서 또는 API호출 - `SoftLayer_Network_Storage::getNetworkMountAddress()`를 통해 가져올 수 있습니다.
 {:tip}

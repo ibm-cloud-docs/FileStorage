@@ -44,7 +44,7 @@ Avvaliti delle seguenti funzioni principali di {{site.data.keyword.filestorage_s
    - Acquisisce istantanee di dati con punto temporale senza causare interruzioni del servizio.
 - **Replica**  [(disponibile in data center selezionati).](/docs/infrastructure/FileStorage?topic=FileStorage-news)
    - Disponibile quando viene eseguito il provisioning dell'archiviazione in [data center selezionati](/docs/infrastructure/FileStorage?topic=FileStorage-news).
-   - Copia automaticamente le istantanee in un data center {{site.data.keyword.BluSoftlayer_full}} partner.
+   - Copia automaticamente le istantanee in un data center {{site.data.keyword.cloud}} partner.
 - **Connettività altamente disponibile**
    - Utilizza le connessioni di rete ridonanti per massimizzare la disponibilità.
    - Connessioni TCP/IP instradate a {{site.data.keyword.filestorage_short}} basato su NFS.

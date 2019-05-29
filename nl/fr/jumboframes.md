@@ -23,7 +23,7 @@ subcollection: FileStorage
 
 Une trame Jumbo est une trame Ethernet dotée d'un contenu supérieur à l'unité de transmission maximale (MTU) standard de 1 500 octets. Les trames Jumbo sont utilisées sur des réseaux locaux pouvant prendre en charge au moins 1 Gbps et atteindre 9 000 octets.
 
-Les trames Jumbo doivent être configurées de manière identique sur la totalité du chemin réseau depuis l'unité source <-> commutateur <-> routeur <-> commutateur <-> jusqu'à l'unité de destination. Si la définition n'est pas identique sur la totalité de la chaîne, elle prend par défaut le paramètre le moins élevé sur l'ensemble de la chaîne. Actuellement, la valeur définie pour les périphériques réseau d'{{site.data.keyword.BluSoftlayer_full}} est 9 000. Tous les périphériques de client doivent être définis de manière identique.
+Les trames Jumbo doivent être configurées de manière identique sur la totalité du chemin réseau depuis l'unité source <-> commutateur <-> routeur <-> commutateur <-> jusqu'à l'unité de destination. Si la définition n'est pas identique sur la totalité de la chaîne, elle prend par défaut le paramètre le moins élevé sur l'ensemble de la chaîne. Actuellement, la valeur définie pour les périphériques réseau d'{{site.data.keyword.cloud}} est 9 000. Tous les périphériques de client doivent être définis de manière identique.
 {:important}
 
 ## Activation des trames Jumbo dans Windows

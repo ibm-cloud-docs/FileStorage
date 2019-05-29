@@ -18,7 +18,7 @@ subcollection: FileStorage
 # Regolazione delle impostazioni della profondità della coda host
 {: #hostqueuesettings}
 
-{{site.data.keyword.BluSoftlayer_full}} consiglia una profondità massima della coda di I/O (input/output) di applicazione e host per ogni livello prestazioni.
+{{site.data.keyword.cloud}} consiglia una profondità massima della coda di I/O (input/output) di applicazione e host per ogni livello prestazioni.
 
 <table align="center">
   <caption>Profondità coda consigliata per ogni livello IOPS</caption>

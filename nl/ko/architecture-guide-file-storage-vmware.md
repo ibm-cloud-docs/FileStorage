@@ -44,7 +44,7 @@ subcollection: FileStorage
 - NFS는 `lookup`, `getattr` 및 `readdir`과 같은 여러 추가 파일 제어 오퍼레이션을 사용합니다. 읽기/쓰기 오퍼레이션에 추가하여 이러한 오퍼레이션은 IOPS로 계수될 수 있으며, 이는 오퍼레이션 유형 및 NFS 버전에 따라 다양할 수 있습니다.
 - {{site.data.keyword.filestorage_short}} 볼륨은 권한 부여된 디바이스, 서브넷 또는 IP 주소에 노출됩니다.
 - 경로 장애 복구 중에 스토리지 연결이 끊김을 방지하기 위해 {{site.data.keyword.IBM}}에서는 적절한 제한시간 값을 설정하는 VMWare 도구를 설치하는 것을 권장합니다. 값을 변경할 필요는 없으며, 기본 설정은 VMWare 호스트의 연결이 끊어지지 않도록 하기에 충분합니다.
-- NFSv3 및 NFSv4.1이 둘 다 {{site.data.keyword.BluSoftlayer_full}} 환경에서 지원됩니다. 그러나 {{site.data.keyword.IBM}}에서는 NFSv3을 사용하도록 권장합니다. NFSv4.1이 Stateful 프로토콜이므로(NFSv3과 같이 Stateless가 아님), 네트워크 이벤트 중에 프로토콜 문제가 발생할 수 있습니다. NFSv4.1은 모든 오퍼레이션을 중지한 후에 잠금 교정을 완료해야 합니다. 이러한 오퍼레이션이 실행되는 동안 장애가 발생할 수 있습니다.
+- NFSv3 및 NFSv4.1이 둘 다 {{site.data.keyword.cloud}} 환경에서 지원됩니다. 그러나 {{site.data.keyword.IBM}}에서는 NFSv3을 사용하도록 권장합니다. NFSv4.1이 Stateful 프로토콜이므로(NFSv3과 같이 Stateless가 아님), 네트워크 이벤트 중에 프로토콜 문제가 발생할 수 있습니다. NFSv4.1은 모든 오퍼레이션을 중지한 후에 잠금 교정을 완료해야 합니다. 이러한 오퍼레이션이 실행되는 동안 장애가 발생할 수 있습니다.
 
 자세한 정보는 [네트워크 연결 스토리지에서
 VMware vSphere 실행에 대한 우수 사례](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf)의 VMware 백서를 참조하십시오.{: external}
@@ -175,7 +175,7 @@ VMware 환경은 스냅샷을 인지하지 않음을 유념하십시오. {{site.
 VMware 구성 프로세스를 시작하기 전에, 다음 전제조건을 만족하는지 확인하십시오.
 
 - VMware ESXi의 {{site.data.keyword.BluBareMetServers}}가 적절한 스토리지 구성과 ESXi 로그인 인증 정보로 프로비저닝되었습니다.
-- {{site.data.keyword.BluBareMetServers}}와 동일한 데이터 센터의 {{site.data.keyword.BluSoftlayer_full}} Windows 실제 또는 {{site.data.keyword.virtualmachinesshort}}. 로그인 인증 정보 및 {{site.data.keyword.BluSoftlayer_full}} Windows VM의 공인 IP 주소가 포함됩니다.
+- {{site.data.keyword.BluBareMetServers}}와 동일한 데이터 센터의 {{site.data.keyword.cloud}} Windows 실제 또는 {{site.data.keyword.virtualmachinesshort}}. 로그인 인증 정보 및 {{site.data.keyword.cloud}} Windows VM의 공인 IP 주소가 포함됩니다.
 - 인터넷 액세스가 가능하며 웹 브라우저 소프트웨어와 RDP(Remote Desktop Protocol) 클라이언트가 설치된 컴퓨터가 있습니다.
 
 

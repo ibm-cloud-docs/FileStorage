@@ -47,7 +47,7 @@ subcollection: FileStorage
 
 1. {{site.data.keyword.filestorage_short}}のリストに進みます
     - カスタマー・ポータルから、**「ストレージ」**>**「{{site.data.keyword.filestorage_short}}」**をクリックします。または
-    - {{site.data.keyword.BluSoftlayer_full}} コンソールで、**「インフラストラクチャー」** > **「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**をクリックします。
+    - {{site.data.keyword.cloud}} コンソールで、**「インフラストラクチャー」** > **「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**をクリックします。
 2. リストからボリュームを選択し、**「アクション」** > **「ボリュームの変更 (Modify Volume)」**をクリックします。
 3. **「ストレージ IOPS オプション (Storage IOPS Options)」**で、新しい選択を行います。
     - 「エンデュランス (IOPS ティア) (Endurance (Tiered IOPS))」の場合、0.25 IOPS/GB より大きいストレージの IOPS ティアを選択します。 IOPS ティアはいつでも上げることができます。 ただし、下げることができるのは、月に 1 回のみです。

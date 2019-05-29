@@ -18,7 +18,7 @@ subcollection: FileStorage
 # Ajuste de los valores de profundidad de cola de host
 {: #hostqueuesettings}
 
-{{site.data.keyword.BluSoftlayer_full}} sugiere una profundidad de cola máxima de entrada/salida (E/S) de la aplicación y el host para cada nivel de rendimiento.
+{{site.data.keyword.cloud}} sugiere una profundidad de cola máxima de entrada/salida (E/S) de la aplicación y el host para cada nivel de rendimiento.
 
 <table align="center">
   <caption>Profundidad de cola recomendada para cada nivel de IOPS</caption>

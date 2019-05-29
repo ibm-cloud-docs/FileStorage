@@ -44,7 +44,7 @@ Die bestehenden Größenbegrenzungen für {{site.data.keyword.filestorage_short}
 ## Größe des Speichers ändern
 {: #resizingsteps}
 
-1. Klicken Sie im {{site.data.keyword.slportal}} auf **Speicher** > **{{site.data.keyword.filestorage_short}}** oder im Katalog von {{site.data.keyword.BluSoftlayer_full}} auf **Infrastruktur** > **Speicher** > **{{site.data.keyword.filestorage_short}}**.
+1. Klicken Sie im {{site.data.keyword.slportal}} auf **Speicher** > **{{site.data.keyword.filestorage_short}}** oder im Katalog von {{site.data.keyword.cloud}} auf **Infrastruktur** > **Speicher** > **{{site.data.keyword.filestorage_short}}**.
 2. Wählen Sie den Datenträger in der Liste aus und klicken Sie auf **Aktionen** > **Datenträger ändern**.
 3. Geben Sie die neue Speichergröße in GB ein.
 4. Prüfen Sie Ihre Auswahl und die neue Preisgestaltung.

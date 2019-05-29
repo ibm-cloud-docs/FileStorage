@@ -30,7 +30,7 @@ Prima di poter eseguire la replica, devi creare una pianificazione delle istanta
 
 ## Determinazione del data center remoto per il volume di archiviazione replicato
 
-I data center in tutto il mondo di {{site.data.keyword.BluSoftlayer_full}} sono accoppiati in combinazioni di primario e secondario.
+I data center in tutto il mondo di {{site.data.keyword.cloud}} sono accoppiati in combinazioni di primario e secondario.
 Vedi la Tabella 1 per l'elenco completo della disponibilità dei data center e delle destinazioni di replica.
 
 <table>
@@ -184,7 +184,7 @@ La cronologia replica viene visualizzata in **Audit Log** nella scheda **Account
 
 ## Creazione di un duplicato di una replica
 
-Puoi creare un duplicato di un {{site.data.keyword.BluSoftlayer_full}} {{site.data.keyword.filestorage_full}} esistente. Il volume duplicato eredita per impostazione predefinita le opzioni di capacità e prestazioni del volume di archiviazione originale e ha una copia dei dati che arriva fino al punto temporale di un'istantanea.
+Puoi creare un duplicato di un {{site.data.keyword.cloud}} {{site.data.keyword.filestorage_full}} esistente. Il volume duplicato eredita per impostazione predefinita le opzioni di capacità e prestazioni del volume di archiviazione originale e ha una copia dei dati che arriva fino al punto temporale di un'istantanea.
 
 I duplicati possono essere creati sia dai volumi primari che da quelli di replica. Il nuovo duplicato viene creato nello stesso data center del volume originale. Se crei un duplicato da un volume di replica, il nuovo volume viene creato nello stesso data center del volume di replica.
 

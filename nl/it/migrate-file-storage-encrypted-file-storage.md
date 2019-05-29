@@ -37,7 +37,7 @@ Tutti i volumi di {{site.data.keyword.filestorage_short}} avanzato di cui viene 
 Quando effettui un ordine con l'API, specifica il pacchetto "Storage as a Service" per assicurarti che stai ottenendo le funzioni avanzate con la tua nuova archiviazione.
 {:important}
 
-Puoi ordinare un LUN migliorato tramite il catalogo {{site.data.keyword.BluSoftlayer_full}} e il {{site.data.keyword.slportal}}. Il tuo nuovo volume deve essere di dimensione pari o superiore a quella della condivisione file originale per facilitare la migrazione.
+Puoi ordinare un LUN migliorato tramite il catalogo {{site.data.keyword.cloud}} e il {{site.data.keyword.slportal}}. Il tuo nuovo volume deve essere di dimensione pari o superiore a quella della condivisione file originale per facilitare la migrazione.
 
 - [Ordinazione di {{site.data.keyword.filestorage_short}} con livelli IOPS predefiniti (Endurance)](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#endurance)
 - [Ordinazione di {{site.data.keyword.filestorage_short}} con IOPS personalizzato (Performance)](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#performance)

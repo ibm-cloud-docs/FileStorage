@@ -175,7 +175,7 @@ Una vez autorizadas las subredes, anote el nombre de host del servidor de almace
 Antes de empezar el proceso de configuración de VMware, asegúrese de que se cumplen los siguientes requisitos previos:
 
 - Los {{site.data.keyword.BluBareMetServers}} con VMware ESXi se suministran con la configuración de almacenamiento adecuada y credenciales de inicio de sesión de ESXi.
-- {{site.data.keyword.BluSoftlayer_full}} Windows físico o {{site.data.keyword.virtualmachinesshort}} en el mismo centro de datos que los {{site.data.keyword.BluBareMetServers}}. Incluyendo la dirección IP pública de la máquina virtual de {{site.data.keyword.BluSoftlayer_full}} Windows y las credenciales de inicio de sesión.
+- {{site.data.keyword.cloud}} Windows físico o {{site.data.keyword.virtualmachinesshort}} en el mismo centro de datos que los {{site.data.keyword.BluBareMetServers}}. Incluyendo la dirección IP pública de la máquina virtual de {{site.data.keyword.cloud}} Windows y las credenciales de inicio de sesión.
 - Un sistema con acceso a Internet, y con el software de navegador web y un cliente de Remote Desktop Protocol (RDP) instalados.
 
 
@@ -272,7 +272,7 @@ Tome nota de la dirección IP, ya que puede utilizarse para montar el volumen en
 9. Revise las entradas en la siguiente pantalla y pulse **Finalizar**.
 10. Repítalo para cada volumen de {{site.data.keyword.filestorage_short}} adicional.
 
-{{site.data.keyword.BluSoftlayer_full}} recomienda utilizar los nombres FQDN para conectar al almacén de datos de VMware. La utilización de direcciones IP podría ignorar el mecanismo de equilibrio de carga que se proporciona utilizando FQDN.
+{{site.data.keyword.cloud}} recomienda utilizar los nombres FQDN para conectar al almacén de datos de VMware. La utilización de direcciones IP podría ignorar el mecanismo de equilibrio de carga que se proporciona utilizando FQDN.
 {:important}
 
 Para utilizar la dirección IP en lugar de FQDN, ejecute un ping al servidor para obtener la dirección IP.

@@ -23,7 +23,7 @@ subcollection: FileStorage
 
 Una trama Jumbo es una trama de Ethernet con una carga útil superior a la unidad de transmisión máxima (MTU) estándar de 1.500 bytes. Las tramas Jumbo se utilizan en redes de área local que dan soporte como mínimo a 1 Gbps y pueden alcanzar un tamaño de 9.000 bytes.
 
-Las tramas Jumbo deben configurarse igual en toda la vía de acceso de la red desde el dispositivo de origen <-> conmutador <-> direccionador <-> conmutador <-> dispositivo de destino. Si toda la cadena no se define igual, se establece el valor predeterminado más bajo en toda la cadena. {{site.data.keyword.BluSoftlayer_full}} tiene los dispositivos de red establecidos en 9.000. Todos los dispositivos del cliente deben establecerse en el mismo valor de 9.000.
+Las tramas Jumbo deben configurarse igual en toda la vía de acceso de la red desde el dispositivo de origen <-> conmutador <-> direccionador <-> conmutador <-> dispositivo de destino. Si toda la cadena no se define igual, se establece el valor predeterminado más bajo en toda la cadena. {{site.data.keyword.cloud}} tiene los dispositivos de red establecidos en 9.000. Todos los dispositivos del cliente deben establecerse en el mismo valor de 9.000.
 {:important}
 
 ## Habilitación de tramas Jumbo en Windows

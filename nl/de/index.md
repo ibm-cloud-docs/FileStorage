@@ -44,7 +44,7 @@ Nutzen Sie die folgenden Kernfunktionen von {{site.data.keyword.filestorage_shor
    - Erfasst zeitpunktbezogene Datensnapshots ohne Betriebsunterbrechungen.
 - **Replikation**  [(in ausgewählten Rechenzentren verfügbar)](/docs/infrastructure/FileStorage?topic=FileStorage-news)
    - Ist nur verfügbar, wenn Speicher in [ausgewählten Rechenzentren](/docs/infrastructure/FileStorage?topic=FileStorage-news) bereitgestellt wird.
-   - Snapshots werden automatisch in ein Partnerrechenzentrum von {{site.data.keyword.BluSoftlayer_full}} kopiert.
+   - Snapshots werden automatisch in ein Partnerrechenzentrum von {{site.data.keyword.cloud}} kopiert.
 - **Hoch verfügbare Konnektivität**
    - Verwendet redundante Netzverbindungen zur Maximierung der Verfügbarkeit.
    - Durch NFS-basierten {{site.data.keyword.filestorage_short}} geleitete TCP/IP-Verbindungen.

@@ -44,7 +44,7 @@ When you order {{site.data.keyword.filestorage_short}}, consider the following i
 - NFS uses many extra file control operations such as `lookup`, `getattr`, and `readdir`. These operations in addition to read/write operations can count as IOPS and vary by operation type and NFS version.
 - {{site.data.keyword.filestorage_short}} volumes are exposed to authorized devices, subnets, or IP addresses.
 - To avoid storage disconnection during path-failover {{site.data.keyword.IBM}} recommends installing VMware tools, which set an appropriate timeout value. There’s no need to change the value, the default setting is sufficient to ensure that your VMware host doesn't lose connectivity.
-- Both NFSv3 and NFSv4.1 are supported in the {{site.data.keyword.BluSoftlayer_full}} environment. However, {{site.data.keyword.IBM}} suggests that you use NFSv3. Because NFSv4.1 is a stateful protocol (not stateless like NFSv3), protocol issues can occur during network events. NFSv4.1 must quiesce all operations and then complete lock reclamation. While these operations are taking place, disruptions can occur.
+- Both NFSv3 and NFSv4.1 are supported in the {{site.data.keyword.cloud}} environment. However, {{site.data.keyword.IBM}} suggests that you use NFSv3. Because NFSv4.1 is a stateful protocol (not stateless like NFSv3), protocol issues can occur during network events. NFSv4.1 must quiesce all operations and then complete lock reclamation. While these operations are taking place, disruptions can occur.
 
 For more information, see VMware's white paper on [Best Practices for running
 VMware vSphere on network-attached storage](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){: external}
@@ -175,7 +175,7 @@ After the subnets are authorized, make note of the host name of the Endurance or
 Before you begin the VMware configuration process, make sure that the following prerequisites are met:
 
 - {{site.data.keyword.BluBareMetServers}} with VMware ESXi are provisioned with proper storage configuration and ESXi login credentials.
-- {{site.data.keyword.BluSoftlayer_full}} Windows physical or {{site.data.keyword.virtualmachinesshort}} in the same data center as the {{site.data.keyword.BluBareMetServers}}. Including Public IP address of the {{site.data.keyword.BluSoftlayer_full}} Windows VM and login credentials.
+- {{site.data.keyword.cloud}} Windows physical or {{site.data.keyword.virtualmachinesshort}} in the same data center as the {{site.data.keyword.BluBareMetServers}}. Including Public IP address of the {{site.data.keyword.cloud}} Windows VM and login credentials.
 - A computer with internet access, and with the web browser software and a Remote Desktop Protocol (RDP) client installed.
 
 

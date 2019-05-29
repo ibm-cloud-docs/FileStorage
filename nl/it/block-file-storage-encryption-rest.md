@@ -18,7 +18,7 @@ subcollection: FileStorage
 # Crittografia dei dati inattivi gestita dal provider
 {: #encryption}
 
-{{site.data.keyword.BluSoftlayer_full}} prende sul serio la sicurezza e comprende l'importanza di poter crittografare i dati per tenerli al sicuro. Con la crittografia gestita dal provider, {{site.data.keyword.filestorage_full}} di cui è stato eseguito il provisioning con le opzioni Endurance o Performance, viene crittografato per impostazione predefinita senza costi aggiuntivi e ripercussioni sulle prestazioni.
+{{site.data.keyword.cloud}} prende sul serio la sicurezza e comprende l'importanza di poter crittografare i dati per tenerli al sicuro. Con la crittografia gestita dal provider, {{site.data.keyword.filestorage_full}} di cui è stato eseguito il provisioning con le opzioni Endurance o Performance, viene crittografato per impostazione predefinita senza costi aggiuntivi e ripercussioni sulle prestazioni.
 
 La funzione di crittografia dei dati inattivi gestita dal provider utilizza i seguenti protocolli standard del settore:
 

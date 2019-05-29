@@ -18,7 +18,7 @@ subcollection: FileStorage
 # 調整主機佇列深度設定
 {: #hostqueuesettings}
 
-{{site.data.keyword.BluSoftlayer_full}} 建議針對每個效能層級使用最大主機及應用程式輸入/輸出 (I/O) 佇列深度。
+{{site.data.keyword.cloud}} 建議針對每個效能層級使用最大主機及應用程式輸入/輸出 (I/O) 佇列深度。
 
 <table align="center">
   <caption>每一個 IOPS 層級的建議佇列深度</caption>

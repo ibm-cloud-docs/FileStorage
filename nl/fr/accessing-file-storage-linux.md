@@ -41,7 +41,7 @@ Options:
 
 ## Montage du partage {{site.data.keyword.filestorage_short}}
 
-Utilisez les instructions décrites ci-après pour connecter une instance de calcul {{site.data.keyword.BluSoftlayer_full}} basée sur Linux à un partage NFS (Network File System). L'exemple repose sur Red Hat Enterprise Linux 6. Il est possible d'adapter les étapes pour d'autres distributions Linux en fonction de la documentation du fournisseur du système d'exploitation.
+Utilisez les instructions décrites ci-après pour connecter une instance de calcul {{site.data.keyword.cloud}} basée sur Linux à un partage NFS (Network File System). L'exemple repose sur Red Hat Enterprise Linux 6. Il est possible d'adapter les étapes pour d'autres distributions Linux en fonction de la documentation du fournisseur du système d'exploitation.
 
 Le point de montage de l'instance File Storage peut être obtenu sur la page de la liste de {{site.data.keyword.filestorage_short}} ou via un appel API : `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 {:tip}

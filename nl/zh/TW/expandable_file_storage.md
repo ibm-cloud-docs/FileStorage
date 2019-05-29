@@ -44,7 +44,7 @@ subcollection: FileStorage
 ## 調整儲存空間大小
 {: #resizingsteps}
 
-1. 從 {{site.data.keyword.slportal}}，按一下**儲存空間** > **{{site.data.keyword.filestorage_short}}**，或者，從 {{site.data.keyword.BluSoftlayer_full}} 型錄，按一下**基礎架構** > **儲存空間** > **{{site.data.keyword.filestorage_short}}**。
+1. 從 {{site.data.keyword.slportal}}，按一下**儲存空間** > **{{site.data.keyword.filestorage_short}}**，或者，從 {{site.data.keyword.cloud}} 型錄，按一下**基礎架構** > **儲存空間** > **{{site.data.keyword.filestorage_short}}**。
 2. 從清單中選取磁區，然後按一下**動作** > **修改磁區**
 3. 輸入新的儲存空間大小（以 GB 為單位）。
 4. 檢閱您的選取項目及新的定價。

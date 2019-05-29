@@ -44,7 +44,7 @@ subcollection: FileStorage
    - 작업을 방해하지 않으면서 특정 시점의 데이터 스냅샷을 캡처합니다.
 - **복제** [(특정 데이터 센터에서 사용 가능함)](/docs/infrastructure/FileStorage?topic=FileStorage-news)
    - 스토리지가 [특정 데이터 센터](/docs/infrastructure/FileStorage?topic=FileStorage-news)에서 프로비저닝되는 경우 사용 가능합니다.
-   - 스냅샷을 파트너 {{site.data.keyword.BluSoftlayer_full}} 데이터 센터에 자동으로 복사합니다.
+   - 스냅샷을 파트너 {{site.data.keyword.cloud}} 데이터 센터에 자동으로 복사합니다.
 - **고가용성 연결**
    - 가용성을 최대화하기 위해 중복 네트워킹 연결을 사용합니다.
    - NFS 기반 {{site.data.keyword.filestorage_short}} 라우팅된 TCP/IP 연결입니다.

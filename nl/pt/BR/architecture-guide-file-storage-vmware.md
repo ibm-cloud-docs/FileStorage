@@ -175,7 +175,7 @@ Depois que as sub-redes forem autorizadas, anote o nome do host do servidor de a
 Antes de iniciar o processo de configuração do VMware, certifique-se de que os pré-requisitos a seguir sejam atendidos:
 
 - Os {{site.data.keyword.BluBareMetServers}} com VMware ESXi são provisionados com a configuração de armazenamento adequada e as credenciais de login do ESXi.
-- Os {{site.data.keyword.virtualmachinesshort}} ou físicos do Windows do {{site.data.keyword.BluSoftlayer_full}} no mesmo data center que o {{site.data.keyword.BluBareMetServers}}. Incluindo o endereço IP público da VM do Windows do {{site.data.keyword.BluSoftlayer_full}} e credenciais de login.
+- Os {{site.data.keyword.virtualmachinesshort}} ou físicos do Windows do {{site.data.keyword.cloud}} no mesmo data center que o {{site.data.keyword.BluBareMetServers}}. Incluindo o endereço IP público da VM do Windows do {{site.data.keyword.cloud}} e credenciais de login.
 - Um computador com acesso à Internet e com o software de navegador da web e um cliente Remote Desktop Protocol (RDP) instalados.
 
 
@@ -272,7 +272,7 @@ Anote o endereço IP, pois ele poderá ser usado para montar o volume na próxim
 9. Revise as entradas na próxima tela e clique em **Concluir**.
 10. Repita para quaisquer volumes adicionais do {{site.data.keyword.filestorage_short}}.
 
-É recomendação do {{site.data.keyword.BluSoftlayer_full}} que os nomes FQDN sejam usados para a conexão com o armazenamento de dados do VMware. O uso do endereçamento IP direto pode efetuar bypass do mecanismo de balanceamento de carga fornecido com o uso do FQDN.
+É recomendação do {{site.data.keyword.cloud}} que os nomes FQDN sejam usados para a conexão com o armazenamento de dados do VMware. O uso do endereçamento IP direto pode efetuar bypass do mecanismo de balanceamento de carga fornecido com o uso do FQDN.
 {:important}
 
 Para usar o endereço IP no lugar do FQDN, basta executar ping do servidor para obter o endereço IP.

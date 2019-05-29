@@ -21,7 +21,7 @@ subcollection: FileStorage
 # VMware による {{site.data.keyword.filestorage_short}} のプロビジョニング
 {: #architectureguide}
 
-{{site.data.keyword.BluSoftlayer_full}} の vSphere 5.5 と vSphere 6.0 の環境で {{site.data.keyword.filestorage_full}} を注文して構成するための手順を以下に示します。
+{{site.data.keyword.cloud}} の vSphere 5.5 と vSphere 6.0 の環境で {{site.data.keyword.filestorage_full}} を注文して構成するための手順を以下に示します。
 
 {{site.data.keyword.filestorage_short}}は、予測可能なレベルのパフォーマンスが求められる、入出力負荷の高いアプリケーションをサポートできるように設計されています。 プロトコル・レベルの IOPS (1 秒あたりの入出力操作数) を個々のボリュームに割り振ることで、予測可能なパフォーマンスを実現しています。
 
@@ -44,7 +44,7 @@ VMware データ・ストアへのアクセスに必要なホストの数が 8 �
 - NFS は、例えば `lookup`、`getattr`、`readdir` など、他の多くのファイル制御操作を使用します。 読み取り/書き込み操作に加えて、これらの操作も IOPS と見なされ、操作のタイプや NFS のバージョンに応じて異なります。
 - {{site.data.keyword.filestorage_short}}のボリュームは、許可されたデバイス、サブネット、または IP アドレスに公開されます。
 - パス・フェイルオーバー中のストレージの切断を避けるために、{{site.data.keyword.IBM}} は、適切なタイムアウト値を設定する VMware ツールをインストールすることをお勧めします。 値を変更する必要はありません。VMware ホストが接続を失わないようにするには、デフォルト設定で十分です。
-- {{site.data.keyword.BluSoftlayer_full}} 環境では NFSv3 と NFSv4.1 の両方がサポートされます。 しかし、{{site.data.keyword.IBM}} は NFSv3 を使用することを提案します。 NFSv4.1 は、ステートフル・プロトコルである (NFSv3 のようなステートレス・プロトコルではない) ため、ネットワーク・イベント中にプロトコルの問題が発生する可能性があります。 NFSv4.1 では、すべての操作を停止してからロック再利用を実行する必要があります。 それらの操作の実行中に、切断される可能性があります。
+- {{site.data.keyword.cloud}} 環境では NFSv3 と NFSv4.1 の両方がサポートされます。 しかし、{{site.data.keyword.IBM}} は NFSv3 を使用することを提案します。 NFSv4.1 は、ステートフル・プロトコルである (NFSv3 のようなステートレス・プロトコルではない) ため、ネットワーク・イベント中にプロトコルの問題が発生する可能性があります。 NFSv4.1 では、すべての操作を停止してからロック再利用を実行する必要があります。 それらの操作の実行中に、切断される可能性があります。
 
 詳しくは、VMware の次のホワイト・ペーパーを参照してください: [Best Practices for running VMware vSphere on Network Attached Storage](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){: external}
 {:tip}
@@ -174,7 +174,7 @@ VMware 環境はスナップショットを認識しないことに注意して�
 VMware 構成プロセスを開始する前に、以下の前提条件が満たされていることを確認してください。
 
 - VMware ESXi を搭載した {{site.data.keyword.BluBareMetServers}} が、適切なストレージ構成と ESXi ログイン資格情報を使用してプロビジョンされている。
-- {{site.data.keyword.BluSoftlayer_full}} Windows 物理サーバーまたは{{site.data.keyword.virtualmachinesshort}}が、{{site.data.keyword.BluBareMetServers}} と同じデータ・センター内にある。 {{site.data.keyword.BluSoftlayer_full}} Windows VM のパブリック IP アドレスおよびログイン資格情報を含む。
+- {{site.data.keyword.cloud}} Windows 物理サーバーまたは{{site.data.keyword.virtualmachinesshort}}が、{{site.data.keyword.BluBareMetServers}} と同じデータ・センター内にある。 {{site.data.keyword.cloud}} Windows VM のパブリック IP アドレスおよびログイン資格情報を含む。
 - インターネットにアクセスできるコンピューターがあり、Web ブラウザー・ソフトウェアとリモート・デスクトップ・プロトコル (RDP) クライアントがインストールされている。
 
 
@@ -271,7 +271,7 @@ VMware およびジャンボ・フレームについて詳しくは、[ここ](h
 9. 次の画面で入力を確認し、**「完了」**をクリックします。
 10. 他の{{site.data.keyword.filestorage_short}}・ボリュームについても同じ手順を繰り返します。
 
-{{site.data.keyword.BluSoftlayer_full}} は VMware データ・ストアへの接続に FQDN 名を使用することをお勧めします。 直接 IP アドレッシングを使用すると、FQDN を使用することにより提供されるロード・バランシング・メカニズムが迂回される可能性があります。
+{{site.data.keyword.cloud}} は VMware データ・ストアへの接続に FQDN 名を使用することをお勧めします。 直接 IP アドレッシングを使用すると、FQDN を使用することにより提供されるロード・バランシング・メカニズムが迂回される可能性があります。
 {:important}
 
 FQDN の代わりに IP アドレスを使用するには、単に、サーバーに対して ping を実行して IP アドレスを取得します。

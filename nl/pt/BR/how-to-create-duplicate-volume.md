@@ -18,7 +18,7 @@ subcollection: FileStorage
 # Criando um {{site.data.keyword.filestorage_short}} duplicado
 {: #duplicatevolume}
 
-É possível criar uma duplicata de um {{site.data.keyword.BluSoftlayer_full}} {{site.data.keyword.filestorage_full}} existente. O volume duplicado herda as opções de capacidade e desempenho do volume original por padrão e tem uma cópia dos dados até o momento de uma captura instantânea.   
+É possível criar uma duplicata de um {{site.data.keyword.cloud}} {{site.data.keyword.filestorage_full}} existente. O volume duplicado herda as opções de capacidade e desempenho do volume original por padrão e tem uma cópia dos dados até o momento de uma captura instantânea.   
 
 Como a duplicata é baseada nos dados em uma captura instantânea de um momento, o espaço de captura instantânea é necessário no volume original antes de poder criar uma duplicata. Para saber mais sobre capturas
 instantâneas e como solicitar espaço de captura instantânea, consulte [Documentação

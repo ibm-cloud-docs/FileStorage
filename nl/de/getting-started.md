@@ -113,7 +113,7 @@ Der Speicherdatenverkehr ist in der gesamten Netznutzung von öffentlichen virtu
 
 ### NFS-Version
 
-NFS Version 3 und NFS Version 4.1 werden in der Umgebung von {{site.data.keyword.BluSoftlayer_full}} unterstützt. NFS Version 3 wird jedoch bevorzugt, da NFS Version 4.1 ein Protokoll mit Zustandsüberwachung (und nicht wie NFSv3 ohne Zustandsüberwachung) ist und bei Netzereignissen Probleme mit dem Protokoll auftreten können. NFS Version 4.1 muss alle Operationen ruhen lassen und anschließend eine Sperrenrückforderung ausführen. Auf einem relativ ausgelasteten NFS-Dateiserver kann die erhöhte Latenz zu Unterbrechungen führen. Die fehlende Multipath- und Trunking-Funktionalität in NFS v4.1 kann darüber hinaus die Wiederherstellung des NFS-Betriebs verlängern.
+NFS Version 3 und NFS Version 4.1 werden in der Umgebung von {{site.data.keyword.cloud}} unterstützt. NFS Version 3 wird jedoch bevorzugt, da NFS Version 4.1 ein Protokoll mit Zustandsüberwachung (und nicht wie NFSv3 ohne Zustandsüberwachung) ist und bei Netzereignissen Probleme mit dem Protokoll auftreten können. NFS Version 4.1 muss alle Operationen ruhen lassen und anschließend eine Sperrenrückforderung ausführen. Auf einem relativ ausgelasteten NFS-Dateiserver kann die erhöhte Latenz zu Unterbrechungen führen. Die fehlende Multipath- und Trunking-Funktionalität in NFS v4.1 kann darüber hinaus die Wiederherstellung des NFS-Betriebs verlängern.
 
 ## Bestellung abschicken
 

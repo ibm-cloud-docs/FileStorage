@@ -21,7 +21,7 @@ subcollection: FileStorage
 # 使用 VMware 佈建 {{site.data.keyword.filestorage_short}}
 {: #architectureguide}
 
-以下是在 {{site.data.keyword.BluSoftlayer_full}} 為 vSphere 5.5 及 vSphere 6.0 環境訂購及配置 {{site.data.keyword.filestorage_full}} 的步驟。
+以下是在 {{site.data.keyword.cloud}} 為 vSphere 5.5 及 vSphere 6.0 環境訂購及配置 {{site.data.keyword.filestorage_full}} 的步驟。
 
 {{site.data.keyword.filestorage_short}} 的設計旨在支援需要可預測效能層次的高 I/O 應用程式。透過將通訊協定層次的每秒輸入/輸出作業數 (IOPS) 配置給個別磁區，即可達成可預測效能。
 
@@ -44,7 +44,7 @@ subcollection: FileStorage
 - NFS 使用許多額外的檔案控制作業（例如 `lookup`、`getattr` 及 `readdir`）。除了讀/寫作業之外，這些作業也可以計算為 IOPS，而且會依作業類型及 NFS 版本而不同。
 - {{site.data.keyword.filestorage_short}} 磁區會向授權裝置、子網路或 IP 位址公開。
 - 為避免在路徑失效接手期間發生儲存空間斷線，{{site.data.keyword.IBM}} 建議安裝 VMware 工具，以設定適當的逾時值。不需要變更值，預設值就足以確保 VMware 主機不會中斷連線。
-- 在 {{site.data.keyword.BluSoftlayer_full}} 環境中，同時支援 NFS 第 3 版及 NFS 4.1 版。不過，{{site.data.keyword.IBM}} 建議您使用 NFS 第 3 版。因為 NFS 4.1 版是有狀態的通訊協定（不像 NFS 第 3 版是無狀態的通訊協定），所以在網路事件期間可能會發生通訊協定問題。NFS 4.1 版必須靜止所有作業，然後完成鎖定收回。進行這些作業時，可能會發生中斷。
+- 在 {{site.data.keyword.cloud}} 環境中，同時支援 NFS 第 3 版及 NFS 4.1 版。不過，{{site.data.keyword.IBM}} 建議您使用 NFS 第 3 版。因為 NFS 4.1 版是有狀態的通訊協定（不像 NFS 第 3 版是無狀態的通訊協定），所以在網路事件期間可能會發生通訊協定問題。NFS 4.1 版必須靜止所有作業，然後完成鎖定收回。進行這些作業時，可能會發生中斷。
 
 如需相關資訊，請參閱 VMware 的白皮書：[Best Practices for running VMware vSphere on network-attached storage](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){: external}
 {:tip}
@@ -173,7 +173,7 @@ subcollection: FileStorage
 開始 VMware 配置處理程序之前，請確定符合下列必要條件：
 
 - 具有 VMware ESXi 的 {{site.data.keyword.BluBareMetServers}} 是使用適當的儲存空間配置及 ESXi 登入認證所佈建。
-- {{site.data.keyword.BluSoftlayer_full}} Windows 實體或 {{site.data.keyword.virtualmachinesshort}}，位於與 {{site.data.keyword.BluBareMetServers}} 相同的資料中心內。包括 {{site.data.keyword.BluSoftlayer_full}} Windows VM 的「公用 IP 位址」及登入認證。
+- {{site.data.keyword.cloud}} Windows 實體或 {{site.data.keyword.virtualmachinesshort}}，位於與 {{site.data.keyword.BluBareMetServers}} 相同的資料中心內。包括 {{site.data.keyword.cloud}} Windows VM 的「公用 IP 位址」及登入認證。
 - 具有網際網路存取的電腦，並且已安裝 Web 瀏覽器軟體及「遠端桌面通訊協定 (RDP)」用戶端。
 
 
@@ -270,7 +270,7 @@ subcollection: FileStorage
 9. 檢閱下一個畫面上的輸入，然後按一下**完成**。
 10. 針對任何其他 {{site.data.keyword.filestorage_short}} 磁區重複進行。
 
-{{site.data.keyword.BluSoftlayer_full}} 建議使用 FQDN 名稱來連接至 VMware 資料儲存庫。使用直接 IP 定址可能會略過使用 FQDN 所提供的負載平衡機制。
+{{site.data.keyword.cloud}} 建議使用 FQDN 名稱來連接至 VMware 資料儲存庫。使用直接 IP 定址可能會略過使用 FQDN 所提供的負載平衡機制。
 {:important}
 
 若要使用 IP 位址，而非 FQDN，只要 ping 伺服器即可取得 IP 位址。

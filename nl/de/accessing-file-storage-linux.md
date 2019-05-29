@@ -41,7 +41,7 @@ Optionen:
 
 ## Gemeinsam genutzten {{site.data.keyword.filestorage_short}}-Speicher anhängen
 
-Verwenden Sie die folgenden Anweisungen, um eine Linux-basierte Instanz von {{site.data.keyword.BluSoftlayer_full}} Compute mit einem gemeinsam genutzten NFS-Speicher (NFS – Network File System) zu verbinden. Das Beispiel basiert auf Red Hat Enterprise Linux 6. Die Schritte können für andere Linux-Distributionen entsprechend der Dokumentation zum Betriebssystem (OS) des Anbieters angepasst werden.
+Verwenden Sie die folgenden Anweisungen, um eine Linux-basierte Instanz von {{site.data.keyword.cloud}} Compute mit einem gemeinsam genutzten NFS-Speicher (NFS – Network File System) zu verbinden. Das Beispiel basiert auf Red Hat Enterprise Linux 6. Die Schritte können für andere Linux-Distributionen entsprechend der Dokumentation zum Betriebssystem (OS) des Anbieters angepasst werden.
 
 Der Mountpunkt der Dateispeicherinstanz kann von der {{site.data.keyword.filestorage_short}}-Listenseite oder über den API-Aufruf - `SoftLayer_Network_Storage::getNetworkMountAddress()` abgerufen werden.
 {:tip}

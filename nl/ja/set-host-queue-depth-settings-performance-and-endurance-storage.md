@@ -18,7 +18,7 @@ subcollection: FileStorage
 # ホスト・キュー項目数設定の調整
 {: #hostqueuesettings}
 
-{{site.data.keyword.BluSoftlayer_full}} では、ホストおよびアプリケーションの最大入出力 (I/O) キュー項目数をパフォーマンス・ティアごとに推奨しています。
+{{site.data.keyword.cloud}} では、ホストおよびアプリケーションの最大入出力 (I/O) キュー項目数をパフォーマンス・ティアごとに推奨しています。
 
 <table align="center">
   <caption>各 IOPS ティアの推奨キュー長</caption>

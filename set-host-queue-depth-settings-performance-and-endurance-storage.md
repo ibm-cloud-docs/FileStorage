@@ -18,7 +18,7 @@ subcollection: FileStorage
 # Adjusting host queue depth settings
 {: #hostqueuesettings}
 
-{{site.data.keyword.BluSoftlayer_full}} suggests a maximum host and application input/output (I/O) queue depth for each performance tier.
+{{site.data.keyword.cloud}} suggests a maximum host and application input/output (I/O) queue depth for each performance tier.
 
 <table align="center">
   <caption>Recommended queue depth for each IOPS tier</caption>

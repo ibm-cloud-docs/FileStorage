@@ -18,7 +18,7 @@ subcollection: FileStorage
 # Ajustando as configurações de profundidade da fila do host
 {: #hostqueuesettings}
 
-O {{site.data.keyword.BluSoftlayer_full}} sugere uma profundidade máxima de fila de entrada/saída (E/S) do host e do aplicativo para cada camada de desempenho.
+O {{site.data.keyword.cloud}} sugere uma profundidade máxima de fila de entrada/saída (E/S) do host e do aplicativo para cada camada de desempenho.
 
 <table align="center">
   <caption>Profundidade da fila recomendada para cada camada de IOPS</caption>

@@ -37,7 +37,7 @@ Tous les volumes {{site.data.keyword.filestorage_short}} améliorés mis à disp
 Lorsque vous passez une commande via l'API, spécifiez le package "Storage as a Service" pour être certain d'obtenir les fonctionnalités mises à jour avec votre nouveau stockage.
 {:important}
 
-Vous pouvez commander un numéro d'unité logique étendu via le catalogue {{site.data.keyword.BluSoftlayer_full}} et le portail {{site.data.keyword.slportal}}. Votre nouveau volume doit avoir une taille identique ou supérieure à celle du partage de fichiers d'origine afin de faciliter la migration.
+Vous pouvez commander un numéro d'unité logique étendu via le catalogue {{site.data.keyword.cloud}} et le portail {{site.data.keyword.slportal}}. Votre nouveau volume doit avoir une taille identique ou supérieure à celle du partage de fichiers d'origine afin de faciliter la migration.
 
 - [Commande de {{site.data.keyword.filestorage_short}} avec des niveaux d'IOPS prédéfinis (Endurance)](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#endurance)
 - [Commande de {{site.data.keyword.filestorage_short}} avec un nombre d'IOPS personnalisé (Performance)](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#performance)

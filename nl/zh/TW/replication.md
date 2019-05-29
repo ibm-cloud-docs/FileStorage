@@ -29,7 +29,7 @@ subcollection: FileStorage
 
 ## 判斷已抄寫儲存空間磁區的遠端資料中心
 
-{{site.data.keyword.BluSoftlayer_full}} 的資料中心已配對成全球主要與遠端組合。如需完整的資料中心可用性及抄寫目標清單，請參閱「表 1」。
+{{site.data.keyword.cloud}} 的資料中心已配對成全球主要與遠端組合。如需完整的資料中心可用性及抄寫目標清單，請參閱「表 1」。
 
 <table>
   <caption style="text-align: left;"><p>表 1 - 此表格顯示每一個地區中具有加強功能的資料中心完整清單。每個地區都是一個個別的直欄。有些城市（例如「達拉斯」、「聖荷西」、「華盛頓特區」、「阿姆斯特丹」、「法蘭克福」、「倫敦」及「雪梨」）會有多個資料中心。</p>
@@ -182,7 +182,7 @@ MEL01<br />
 
 ## 建立抄本的重複磁區
 
-您可以建立現有 {{site.data.keyword.BluSoftlayer_full}} {{site.data.keyword.filestorage_full}} 的重複磁區。依預設，重複磁區會繼承原始儲存空間磁區的容量及效能選項，而且會有到達 Snapshot 中該時間點之前的資料副本。
+您可以建立現有 {{site.data.keyword.cloud}} {{site.data.keyword.filestorage_full}} 的重複磁區。依預設，重複磁區會繼承原始儲存空間磁區的容量及效能選項，而且會有到達 Snapshot 中該時間點之前的資料副本。
 
 您可以建立主要及抄本磁區的重複磁區。新的重複磁區會建立在與原始磁區相同的資料中心內。如果您建立抄本磁區的重複磁區，則新的磁區會建立在與抄本磁區相同的資料中心內。
 

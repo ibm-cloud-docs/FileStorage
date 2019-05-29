@@ -18,7 +18,7 @@ subcollection: FileStorage
 # 新しい場所および新機能
 {: #news}
 
-{{site.data.keyword.BluSoftlayer_full}} は、新しいバージョンの {{site.data.keyword.filestorage_full}} を導入しています。 一部のデータ・センターで提供されているこの新しいストレージは、保存データをディスク・レベルで暗号化する、IOPS レベルの高いフラッシュ・ストレージを基盤としています。 これらの一部のデータ・センターで注文されたストレージはすべて、自動的に新しいバージョンの{{site.data.keyword.filestorage_short}}を使用して作成されます。
+{{site.data.keyword.cloud}} は、新しいバージョンの {{site.data.keyword.filestorage_full}} を導入しています。 一部のデータ・センターで提供されているこの新しいストレージは、保存データをディスク・レベルで暗号化する、IOPS レベルの高いフラッシュ・ストレージを基盤としています。 これらの一部のデータ・センターで注文されたストレージはすべて、自動的に新しいバージョンの{{site.data.keyword.filestorage_short}}を使用して作成されます。
 
 新しいボリュームの NFS マウント・ポイントは変更されています。 詳しくは、『[拡張{{site.data.keyword.filestorage_short}}・ボリュームの新しいマウント・ポイント](#new-mount-point-for-enhanced-file-storage-volumes)』セクションを参照してください。
 {:important}

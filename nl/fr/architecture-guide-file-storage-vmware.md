@@ -175,7 +175,7 @@ Une fois les sous-réseaux autorisés, notez le nom d'hôte du serveur de stocka
 Avant de commencer le processus de configuration de VMware, assurez-vous que les conditions requises suivantes sont remplies :
 
 - Les serveurs {{site.data.keyword.BluBareMetServers}} dotés de VMware ESXi sont mis à disposition avec une configuration de stockage adéquate et des données d'identification ESXi.
-- Une instance {{site.data.keyword.BluSoftlayer_full}} Windows physique ou des serveurs {{site.data.keyword.virtualmachinesshort}} se trouvent dans le même centre de données que les serveurs {{site.data.keyword.BluBareMetServers}}, avec l'adresse IP publique de la machine virtuelle {{site.data.keyword.BluSoftlayer_full}} Windows et les données d'identification associées.
+- Une instance {{site.data.keyword.cloud}} Windows physique ou des serveurs {{site.data.keyword.virtualmachinesshort}} se trouvent dans le même centre de données que les serveurs {{site.data.keyword.BluBareMetServers}}, avec l'adresse IP publique de la machine virtuelle {{site.data.keyword.cloud}} Windows et les données d'identification associées.
 - Vous possédez un ordinateur disposant d'un accès internet, d'un navigateur Web et d'un client Remote Desktop Protocol (RDP).
 
 
@@ -272,7 +272,7 @@ Notez l'adresse IP car elle peut être utilisée pour le montage du volume lors 
 9. Vérifiez les entrées sur l'écran suivant et cliquez sur **Finish**.
 10. Répétez ces étapes pour tous les volumes {{site.data.keyword.filestorage_short}} supplémentaires.
 
-{{site.data.keyword.BluSoftlayer_full}} recommande d'utiliser les noms de domaine complets pour la connexion au magasin de données VMware. L'utilisation de l'adressage IP direct est susceptible d'ignorer le mécanisme d'équilibrage de charge qui est fourni par le nom de domaine complet.
+{{site.data.keyword.cloud}} recommande d'utiliser les noms de domaine complets pour la connexion au magasin de données VMware. L'utilisation de l'adressage IP direct est susceptible d'ignorer le mécanisme d'équilibrage de charge qui est fourni par le nom de domaine complet.
 {:important}
 
 Pour employer l'adresse IP au lieu du nom de domaine complet, envoyez simplement une commande ping au serveur afin d'obtenir l'adresse IP :

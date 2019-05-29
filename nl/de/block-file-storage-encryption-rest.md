@@ -18,7 +18,7 @@ subcollection: FileStorage
 # Vom Provider verwaltete Verschlüsselung ruhender Daten
 {: #encryption}
 
-In {{site.data.keyword.BluSoftlayer_full}} werden erforderliche Sicherheitsaspekte sehr ernst genommen und die Wichtigkeit der Verschlüsselung für die Datensicherung hat einen hohen Stellenwert. Mit der durch den Provider verwalteten Verschlüsselung wird {{site.data.keyword.filestorage_full}} (bereitgestellt mit Endurance- oder Performance-Optionen) ohne zusätzliche Kosten und ohne Auswirkung auf das Leistungsverhalten standardmäßig verschlüsselt.
+In {{site.data.keyword.cloud}} werden erforderliche Sicherheitsaspekte sehr ernst genommen und die Wichtigkeit der Verschlüsselung für die Datensicherung hat einen hohen Stellenwert. Mit der durch den Provider verwalteten Verschlüsselung wird {{site.data.keyword.filestorage_full}} (bereitgestellt mit Endurance- oder Performance-Optionen) ohne zusätzliche Kosten und ohne Auswirkung auf das Leistungsverhalten standardmäßig verschlüsselt.
 
 Die vom Provider verwaltete Verschlüsselungsfunktion für ruhende Daten (Encryption-at-rest) verwendet folgende Standardprotokolle:
 

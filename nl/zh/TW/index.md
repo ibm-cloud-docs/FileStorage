@@ -43,7 +43,7 @@ subcollection: FileStorage
    - 以不中斷的方式擷取時間點資料 Snapshot。
 - **抄寫**[（適用於精選資料中心。）](/docs/infrastructure/FileStorage?topic=FileStorage-news)
    - 適用於將儲存空間佈建於[精選資料中心](/docs/infrastructure/FileStorage?topic=FileStorage-news)時。
-   - 自動將 Snapshot 複製到夥伴 {{site.data.keyword.BluSoftlayer_full}} 資料中心。
+   - 自動將 Snapshot 複製到夥伴 {{site.data.keyword.cloud}} 資料中心。
 - **高度可用的連線功能**
    - 使用備用網路連線以讓可用性最大化。
    - NFS 型 {{site.data.keyword.filestorage_short}} 已遞送的 TCP/IP 連線。

@@ -59,7 +59,7 @@ subcollection: FileStorage
 ## 一个主机可连接多少个 {{site.data.keyword.filestorage_short}} 卷？
 {: faq}
 
-这取决于主机操作系统的处理能力，而不受 {{site.data.keyword.BluSoftlayer_full}} 的限制。有关可安装的文件共享数的限制，请参阅操作系统文档。
+这取决于主机操作系统的处理能力，而不受 {{site.data.keyword.cloud}} 的限制。有关可安装的文件共享数的限制，请参阅操作系统文档。
 
 ## 每种文件卷大小允许多少个文件共享？每种卷大小允许的最大文件共享数是多少？
 {: faq}
@@ -164,7 +164,7 @@ IOPS 会在卷级别强制执行。换句话说，连接到一个具有 6000 IOP
 ## 支持哪些 NFS 版本？
 {: faq}
 
-{{site.data.keyword.BluSoftlayer_full}} 环境支持 NFS V3 和 NFS V4.1。 
+{{site.data.keyword.cloud}} 环境支持 NFS V3 和 NFS V4.1。 
 
 首选版本是 NFS V3，因为它是无状态协议，在网络事件发生时更具弹性。 
 

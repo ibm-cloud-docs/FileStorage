@@ -18,7 +18,7 @@ subcollection: FileStorage
 # Neue Standorte und Features
 {: #news}
 
-Mit {{site.data.keyword.BluSoftlayer_full}} wird eine neue Version von {{site.data.keyword.filestorage_full}} eingeführt. Der neue Speicher ist in ausgewählten Rechenzentren verfügbar und wird durch Flashspeicher mit höheren IOPS-Niveaus bei der Verschlüsselung auf Plattenebene für ruhende Daten unterstützt. Sämtlicher in den ausgewählten Rechenzentren bestellter Speicher wird automatisch mit der neuen Version von {{site.data.keyword.filestorage_short}} erstellt.
+Mit {{site.data.keyword.cloud}} wird eine neue Version von {{site.data.keyword.filestorage_full}} eingeführt. Der neue Speicher ist in ausgewählten Rechenzentren verfügbar und wird durch Flashspeicher mit höheren IOPS-Niveaus bei der Verschlüsselung auf Plattenebene für ruhende Daten unterstützt. Sämtlicher in den ausgewählten Rechenzentren bestellter Speicher wird automatisch mit der neuen Version von {{site.data.keyword.filestorage_short}} erstellt.
 
 Der NFS-Mountpunkt für neue Datenträger wurde geändert. Details finden Sie im Abschnitt [Neuer Mountpunkt für verschlüsselte {{site.data.keyword.filestorage_short}}-Datenträger](#new-mount-point-for-enhanced-file-storage-volumes).
 {:important}

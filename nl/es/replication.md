@@ -30,7 +30,7 @@ Antes de poder replicar, debe crear una planificación de instantáneas.
 
 ## Determinación del centro de datos remoto para el volumen de almacenamiento replicado
 
-Los centros de datos de {{site.data.keyword.BluSoftlayer_full}} están emparejados en combinaciones de centros primarios y remotos.
+Los centros de datos de {{site.data.keyword.cloud}} están emparejados en combinaciones de centros primarios y remotos.
 Consulte la Tabla 1 para ver la lista completa de disponibilidad de centros de datos y destinos de réplica.
 
 <table>
@@ -184,7 +184,7 @@ El historial de réplicas se visualiza en el **Registro de auditoría** en el se
 
 ## Creación de un duplicado de una réplica
 
-Puede crear un duplicado de un {{site.data.keyword.BluSoftlayer_full}} {{site.data.keyword.filestorage_full}} existente. El volumen duplicado hereda la capacidad y las opciones de rendimiento del volumen de almacenamiento original de forma predeterminada y tiene una copia de los datos hasta el momento de la instantánea.
+Puede crear un duplicado de un {{site.data.keyword.cloud}} {{site.data.keyword.filestorage_full}} existente. El volumen duplicado hereda la capacidad y las opciones de rendimiento del volumen de almacenamiento original de forma predeterminada y tiene una copia de los datos hasta el momento de la instantánea.
 
 Los duplicados pueden crearse a partir de volúmenes primarios y de réplica. El nuevo duplicado se crea en el mismo centro de datos que el volumen original. Si crea un duplicado a partir de un volumen de réplica, el nuevo volumen se crea en el mismo centro de datos que el volumen de réplica.
 

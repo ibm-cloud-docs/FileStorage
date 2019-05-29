@@ -27,7 +27,7 @@ subcollection: FileStorage
 授權主機及磁區必須位在相同的資料中心內。例如，不能抄本磁區在「倫敦」，而主機在「阿姆斯特丹」。兩者都必須在「倫敦」，或兩者都必須在「阿姆斯特丹」。
 {:note}
 
-1. 登入 [{{site.data.keyword.cloud}} 主控台](https://{DomainName}/catalog){: external}，然後按一下左上方的**功能表**圖示。選取**標準基礎架構**。
+1. 登入 [{{site.data.keyword.cloud}}  主控台](https://{DomainName}/catalog){: external}，然後按一下左上方的**功能表**圖示。選取**標準基礎架構**。
 
    或者，您也可以登入 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}。
 1. 從 **{{site.data.keyword.filestorage_short}}** 頁面，按一下來源或目的地磁區。

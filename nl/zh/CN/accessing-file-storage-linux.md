@@ -41,7 +41,7 @@ Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
 
 ## 安装 {{site.data.keyword.filestorage_short}} 共享
 
-使用以下指示信息将基于 Linux 的 {{site.data.keyword.BluSoftlayer_full}} 计算实例连接到网络文件系统 (NFS) 共享。示例基于 Red Hat Enterprise Linux 6。对于其他 Linux 分发版，可以根据相应操作系统 (OS) 供应商文档来调整这些步骤。
+使用以下指示信息将基于 Linux 的 {{site.data.keyword.cloud}} 计算实例连接到网络文件系统 (NFS) 共享。示例基于 Red Hat Enterprise Linux 6。对于其他 Linux 分发版，可以根据相应操作系统 (OS) 供应商文档来调整这些步骤。
 
 文件存储器实例的安装点可以从 {{site.data.keyword.filestorage_short}} 列表页面中或通过以下 API 调用来获取：`SoftLayer_Network_Storage::getNetworkMountAddress()`。
 {:tip}

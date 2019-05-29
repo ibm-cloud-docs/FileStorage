@@ -113,7 +113,7 @@ Il traffico di archiviazione viene incluso nell'utilizzo di rete totale dei serv
 
 ### Versione NFS
 
-Nell'ambiente {{site.data.keyword.BluSoftlayer_full}} sono supportati sia NFS v3 che NFS v4.1. Tuttavia, NFS v3 è preferito perché NFS v4.1 è un protocollo con stato (non senza stato come NFSv3) e durante gli eventi di rete potrebbero verificarsi dei problemi di protocollo. NFS v4.1 deve disattivare tutte le operazioni e quindi completare un recupero del blocco. Su un server di file NFS relativamente occupato, l'aumentata latenza può causare interruzioni del servizio. La mancanza di multipercorso e trunking NFS v4.1 può anche estendere il ripristino di uno stato normale delle operazioni NFS.
+Nell'ambiente {{site.data.keyword.cloud}} sono supportati sia NFS v3 che NFS v4.1. Tuttavia, NFS v3 è preferito perché NFS v4.1 è un protocollo con stato (non senza stato come NFSv3) e durante gli eventi di rete potrebbero verificarsi dei problemi di protocollo. NFS v4.1 deve disattivare tutte le operazioni e quindi completare un recupero del blocco. Su un server di file NFS relativamente occupato, l'aumentata latenza può causare interruzioni del servizio. La mancanza di multipercorso e trunking NFS v4.1 può anche estendere il ripristino di uno stato normale delle operazioni NFS.
 
 ## Inoltro del tuo ordine
 

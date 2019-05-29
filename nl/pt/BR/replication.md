@@ -30,7 +30,7 @@ Antes de replicar, deve-se criar um planejamento de captura instantânea.
 
 ## Determinando o data center remoto para o volume de armazenamento replicado
 
-Os data centers do {{site.data.keyword.BluSoftlayer_full}} são emparelhados em combinações primárias e remotas no mundo todo.
+Os data centers do {{site.data.keyword.cloud}} são emparelhados em combinações primárias e remotas no mundo todo.
 Veja a Tabela 1 para a lista completa de disponibilidade de data center e destinos de replicação.
 
 <table>
@@ -184,7 +184,7 @@ O histórico de replicação é visualizado no **Log de auditoria** na guia **Co
 
 ## Criando uma duplicata de uma réplica
 
-É possível criar uma duplicata de um {{site.data.keyword.BluSoftlayer_full}} {{site.data.keyword.filestorage_full}} existente. O volume duplicado herda a capacidade e as opções de desempenho do volume de armazenamento original por padrão e tem uma cópia dos dados até o momento de uma captura instantânea.
+É possível criar uma duplicata de um {{site.data.keyword.cloud}} {{site.data.keyword.filestorage_full}} existente. O volume duplicado herda a capacidade e as opções de desempenho do volume de armazenamento original por padrão e tem uma cópia dos dados até o momento de uma captura instantânea.
 
 As duplicatas podem ser criadas de ambos os volumes, o primário e o de réplica. A nova duplicata é criada no mesmo data center que o volume original. Se você criar uma duplicata de um volume de réplica, o novo volume será criado no mesmo data center que o volume de réplica.
 

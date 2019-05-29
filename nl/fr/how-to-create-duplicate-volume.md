@@ -18,7 +18,7 @@ subcollection: FileStorage
 # Création d'un volume {{site.data.keyword.filestorage_short}} dupliqué
 {: #duplicatevolume}
 
-Vous pouvez créer un doublon d'un volume {{site.data.keyword.filestorage_full}} {{site.data.keyword.BluSoftlayer_full}} existant. Le volume dupliqué hérite par défaut des options de capacité et de performance du volume d'origine et contient une copie des données jusqu'au point de cohérence d'un instantané.   
+Vous pouvez créer un doublon d'un volume {{site.data.keyword.filestorage_full}} {{site.data.keyword.cloud}} existant. Le volume dupliqué hérite par défaut des options de capacité et de performance du volume d'origine et contient une copie des données jusqu'au point de cohérence d'un instantané.   
 
 Etant donné que le volume dupliqué est basé sur les données d'un instantané de point de cohérence, vous devez disposer d'un espace d'instantané sur le volume d'origine avant de créer un doublon. Pour en savoir plus sur les instantanés et la commande d'espace d'instantané, consultez la [documentation relative aux instantanés](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots).  
 

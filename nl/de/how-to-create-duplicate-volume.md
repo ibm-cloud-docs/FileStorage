@@ -18,7 +18,7 @@ subcollection: FileStorage
 # Duplikat eines {{site.data.keyword.filestorage_short}}-Datenträgers erstellen
 {: #duplicatevolume}
 
-Sie können ein Duplikat eines vorhandenen {{site.data.keyword.BluSoftlayer_full}} {{site.data.keyword.filestorage_full}}-Datenträgers erstellen. Der Duplikatdatenträger übernimmt standardmäßig die Kapazitäts- und Leistungsoptionen des ursprünglichen Datenträgers und enthält eine Kopie der Daten bis zum Zeitpunkt eines Snapshots.   
+Sie können ein Duplikat eines vorhandenen {{site.data.keyword.cloud}} {{site.data.keyword.filestorage_full}}-Datenträgers erstellen. Der Duplikatdatenträger übernimmt standardmäßig die Kapazitäts- und Leistungsoptionen des ursprünglichen Datenträgers und enthält eine Kopie der Daten bis zum Zeitpunkt eines Snapshots.   
 
 Da der Duplikatdatenträger auf den Daten eines zeitpunktgesteuerten Snapshots basiert, ist auf dem ursprünglichen Datenträger Snapshotbereich erforderlich, bevor ein Duplikat erstellt werden kann. Weitere Informationen zu Snapshots sowie zur Bestellung von Snapshotbereich finden Sie in der [Dokumentation zu Snapshots](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots).  
 

@@ -41,7 +41,7 @@ Options:
 
 ## Montaggio della condivisione {{site.data.keyword.filestorage_short}}
 
-Utilizza queste istruzioni per collegare un'istanza di elaborazione {{site.data.keyword.BluSoftlayer_full}} basata su Linux a una condivisione NFS (Network file system). L'esempio è basato su Red Hat Enterprise Linux 6. La procedura può essere regolata per altre distribuzioni Linux in base alla documentazione del fornitore del sistema operativo.
+Utilizza queste istruzioni per collegare un'istanza di elaborazione {{site.data.keyword.cloud}} basata su Linux a una condivisione NFS (Network file system). L'esempio è basato su Red Hat Enterprise Linux 6. La procedura può essere regolata per altre distribuzioni Linux in base alla documentazione del fornitore del sistema operativo.
 
 Il punto di montaggio dell'istanza di archiviazione file può essere ottenuto dalla pagina di elenco {{site.data.keyword.filestorage_short}} oppure tramite una chiamata API - `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 {:tip}

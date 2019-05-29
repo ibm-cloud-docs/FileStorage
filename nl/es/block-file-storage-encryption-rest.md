@@ -18,7 +18,7 @@ subcollection: FileStorage
 # Cifrado en reposo gestionado por el proveedor
 {: #encryption}
 
-{{site.data.keyword.BluSoftlayer_full}} se toma en serio la seguridad y comprende la importancia de cifrar los datos para mantenerlos protegidos. Mediante el cifrado gestionado por proveedor, los datos de {{site.data.keyword.filestorage_full}} suministrados con las opciones de Resistencia o de Rendimiento se cifran de forma predeterminada sin coste adicional ni impacto sobre el rendimiento.
+{{site.data.keyword.cloud}} se toma en serio la seguridad y comprende la importancia de cifrar los datos para mantenerlos protegidos. Mediante el cifrado gestionado por proveedor, los datos de {{site.data.keyword.filestorage_full}} suministrados con las opciones de Resistencia o de Rendimiento se cifran de forma predeterminada sin coste adicional ni impacto sobre el rendimiento.
 
 La característica de cifrado en reposo gestionado por proveedor utiliza los siguientes protocolos estándar del sector:
 

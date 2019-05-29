@@ -37,7 +37,7 @@ subcollection: FileStorage
 使用 API 下訂單時，請指定「儲存空間即服務」套件，以確保使用新的儲存空間來取得已更新的特性。
 {:important}
 
-您可以透過 {{site.data.keyword.BluSoftlayer_full}} 型錄及 {{site.data.keyword.slportal}} 訂購加強的 LUN。您的新磁區大小必須等於或大於原始檔案共用，以方便進行移轉。
+您可以透過 {{site.data.keyword.cloud}} 型錄及 {{site.data.keyword.slportal}} 訂購加強的 LUN。您的新磁區大小必須等於或大於原始檔案共用，以方便進行移轉。
 
 - [訂購具有預先定義 IOPS 層級（耐久性）的 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#endurance)
 - [訂購具有自訂 IOPS（效能）的 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#performance)

@@ -47,7 +47,7 @@ subcollection: FileStorage
 
 1. {{site.data.keyword.filestorage_short}}의 목록으로 이동하십시오.
     - 고객 포털에서 **스토리지** > **{{site.data.keyword.filestorage_short}}**를 클릭하거나
-    - {{site.data.keyword.BluSoftlayer_full}} 콘솔에서 **인프라** > **스토리지** > **{{site.data.keyword.filestorage_short}}**를 클릭하십시오.
+    - {{site.data.keyword.cloud}} 콘솔에서 **인프라** > **스토리지** > **{{site.data.keyword.filestorage_short}}**를 클릭하십시오.
 2. 목록에서 볼륨을 선택하고 **조치** > **볼륨 수정**을 클릭하십시오.
 3. **스토리지 IOPS 옵션** 아래에서 새로 선택하십시오.
     - Endurance(계층 IOPS)의 경우 스토리지의 0.25IOPS/GB보다 큰 IOPS 계층을 선택하십시오. 언제든지 IOPS 계층을 늘릴 수 있습니다. 그러나 줄이기는 한 달에 한 번만 가능합니다.

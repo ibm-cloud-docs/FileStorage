@@ -18,7 +18,7 @@ subcollection: FileStorage
 # Chiffrement au repos géré par le fournisseur
 {: #encryption}
 
-{{site.data.keyword.BluSoftlayer_full}} prend très au sérieux la question de la sécurité et comprend l'importance du chiffrement des données pour assurer leur sécurité. Grâce au chiffrement géré par le fournisseur, {{site.data.keyword.filestorage_full}}, mis à disposition avec un niveau Endurance ou Performance, est chiffré par défaut sans coût supplémentaire et sans impact sur les performances.
+{{site.data.keyword.cloud}} prend très au sérieux la question de la sécurité et comprend l'importance du chiffrement des données pour assurer leur sécurité. Grâce au chiffrement géré par le fournisseur, {{site.data.keyword.filestorage_full}}, mis à disposition avec un niveau Endurance ou Performance, est chiffré par défaut sans coût supplémentaire et sans impact sur les performances.
 
 Le chiffrement au repos géré par le fournisseur utilise les protocoles suivants conformes aux normes de l'industrie :
 

@@ -44,7 +44,7 @@ subcollection: FileStorage
    - 特定時点のデータ・スナップショットを、中断せずにキャプチャーします。
 - **レプリケーション**  [(一部のデータ・センターで使用可能)](/docs/infrastructure/FileStorage?topic=FileStorage-news)
    - [一部のデータ・センター](/docs/infrastructure/FileStorage?topic=FileStorage-news)でストレージがプロビジョニングされている場合に使用可能。
-   - パートナーの {{site.data.keyword.BluSoftlayer_full}} データ・センターにスナップショットを自動的にコピーします。
+   - パートナーの {{site.data.keyword.cloud}} データ・センターにスナップショットを自動的にコピーします。
 - **高可用性接続**
    - 冗長ネットワーキング接続を使用して可用性を最大限に高めます。
    - NFS ベースの{{site.data.keyword.filestorage_short}}の経路指定 TCP/IP 接続。

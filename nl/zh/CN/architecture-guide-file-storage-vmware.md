@@ -21,7 +21,7 @@ subcollection: FileStorage
 # 通过 VMware 供应 {{site.data.keyword.filestorage_short}}
 {: #architectureguide}
 
-以下步骤可帮助您在 vSphere 5.5 和 vSphere 6.0 环境中通过 {{site.data.keyword.BluSoftlayer_full}} 订购和配置 {{site.data.keyword.filestorage_full}}。
+以下步骤可帮助您在 vSphere 5.5 和 vSphere 6.0 环境中通过 {{site.data.keyword.cloud}} 订购和配置 {{site.data.keyword.filestorage_full}}。
 
 {{site.data.keyword.filestorage_short}} 旨在支持需要可预测性能级别的高 I/O 应用程序。通过为各个卷分配协议级别每秒输入/输出操作数 (IOPS)，可实现可预测的性能。
 
@@ -44,7 +44,7 @@ subcollection: FileStorage
 - NFS 使用许多额外的文件控制操作，例如 `lookup`、`getattr` 和 `readdir`。这些操作可以与读/写操作一样计为 IOPS，并根据操作类型和 NFS 版本而变化。
 - {{site.data.keyword.filestorage_short}} 卷将公开给已授权的设备、子网或 IP 地址。
 - 为了避免在路径故障转移期间断开存储器连接，{{site.data.keyword.IBM}} 建议安装 VMware 工具，以用于设置适当的超时值。无需更改此值，缺省设置可足以确保 VMware 主机不会失去连接。
-- {{site.data.keyword.BluSoftlayer_full}} 环境支持 NFS V3 和 NFS V4.1。但是，{{site.data.keyword.IBM}} 建议您使用 NFS V3，因为 NFS V4.1 是有状态协议（NFSv3 是无状态协议），在网络事件期间可能会发生协议问题。NFS V4.1 必须停止所有操作，然后才能完成锁定回收。这些操作正在执行时，可能会发生中断。
+- {{site.data.keyword.cloud}} 环境支持 NFS V3 和 NFS V4.1。但是，{{site.data.keyword.IBM}} 建议您使用 NFS V3，因为 NFS V4.1 是有状态协议（NFSv3 是无状态协议），在网络事件期间可能会发生协议问题。NFS V4.1 必须停止所有操作，然后才能完成锁定回收。这些操作正在执行时，可能会发生中断。
 
 有关更多信息，请参阅 VMware 的白皮书 [Best Practices for running VMware vSphere on network-attached storage Storage![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){: external}
 {:tip}
@@ -174,7 +174,7 @@ subcollection: FileStorage
 在开始 VMware 配置过程之前，请确保满足以下先决条件：
 
 - 为 VMware ESXi 的 {{site.data.keyword.BluBareMetServers}} 供应了适当的存储器配置和 ESXi 登录凭证。
-- {{site.data.keyword.BluSoftlayer_full}} Windows 物理计算机或 {{site.data.keyword.virtualmachinesshort}} 与 {{site.data.keyword.BluBareMetServers}} 位于同一数据中心。包含 {{site.data.keyword.BluSoftlayer_full}} Windows VM 的公共 IP 地址和登录凭证。
+- {{site.data.keyword.cloud}} Windows 物理计算机或 {{site.data.keyword.virtualmachinesshort}} 与 {{site.data.keyword.BluBareMetServers}} 位于同一数据中心。包含 {{site.data.keyword.cloud}} Windows VM 的公共 IP 地址和登录凭证。
 - 有一台计算机具有因特网访问权，并且安装了 Web 浏览器软件和远程桌面协议 (RDP) 客户机。
 
 
@@ -272,7 +272,7 @@ subcollection: FileStorage
 9. 在下一个屏幕上复查输入内容，然后单击**完成**。
 10. 对其他任何 {{site.data.keyword.filestorage_short}} 卷重复此操作。
 
-{{site.data.keyword.BluSoftlayer_full}} 建议使用 FQDN 名称来连接到 VMware 数据存储。使用直接 IP 寻址可能会绕过使用 FQDN 提供的负载均衡机制。
+{{site.data.keyword.cloud}} 建议使用 FQDN 名称来连接到 VMware 数据存储。使用直接 IP 寻址可能会绕过使用 FQDN 提供的负载均衡机制。
 {:important}
 
 要使用 IP 地址而不使用 FQDN，只需对服务器执行 ping 操作即可获取 IP 地址。

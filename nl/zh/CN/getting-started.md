@@ -114,7 +114,7 @@ subcollection: FileStorage
 
 ### NFS 版本
 
-{{site.data.keyword.BluSoftlayer_full}} 环境支持 NFS V3 和 NFS V4.1。但是，首选 NFS V3，因为 NFS V4.1 是有状态协议（NFS V3 是无状态协议），在网络事件期间可能会发生协议问题。NFS V4.1 必须停止所有操作，然后才能完成锁定回收。在相对繁忙的 NFS 文件服务器上，延长的等待时间可能会导致中断。缺少 NFS V4.1 多路径和中继也会延长 NFS 操作恢复时间。
+{{site.data.keyword.cloud}} 环境支持 NFS V3 和 NFS V4.1。但是，首选 NFS V3，因为 NFS V4.1 是有状态协议（NFS V3 是无状态协议），在网络事件期间可能会发生协议问题。NFS V4.1 必须停止所有操作，然后才能完成锁定回收。在相对繁忙的 NFS 文件服务器上，延长的等待时间可能会导致中断。缺少 NFS V4.1 多路径和中继也会延长 NFS 操作恢复时间。
 
 ## 提交订单
 

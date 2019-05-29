@@ -23,7 +23,7 @@ subcollection: FileStorage
 
 Ein Jumbo-Frame ist ein Ethernet-Rahmen mit einem Nutzdatenvolumen, das größer als die standardmäßig maximale Übertragungseinheit (MTU - Maximum Transmission Unit) von 1.500 Byte ist. Jumbo-Frames werden in LAN-Netzen verwendet, die mindestens 1 Gb/s unterstützen, und können eine Größe von bis zu 9.000 Byte haben.
 
-Jumbo-Frames müssen im gesamten Netzpfad von der Quelleneinheit <-> Switch <-> Router <-> Switch <-> Zieleinheit identisch konfiguriert werden. Wenn die Kette nicht insgesamt identisch konfiguriert ist, wird standardmäßig die niedrigste Einstellung innerhalb der Kette verwendet. {{site.data.keyword.BluSoftlayer_full}} hat die Netzeinheiten derzeit auf 9.000 eingestellt. Alle Kundeneinheiten müssen auf denselben Wert eingestellt werden: 9.000.
+Jumbo-Frames müssen im gesamten Netzpfad von der Quelleneinheit <-> Switch <-> Router <-> Switch <-> Zieleinheit identisch konfiguriert werden. Wenn die Kette nicht insgesamt identisch konfiguriert ist, wird standardmäßig die niedrigste Einstellung innerhalb der Kette verwendet. {{site.data.keyword.cloud}} hat die Netzeinheiten derzeit auf 9.000 eingestellt. Alle Kundeneinheiten müssen auf denselben Wert eingestellt werden: 9.000.
 {:important}
 
 ## Jumbo-Frames in Windows aktivieren

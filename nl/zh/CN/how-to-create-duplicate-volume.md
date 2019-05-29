@@ -18,7 +18,7 @@ subcollection: FileStorage
 # 创建复制 {{site.data.keyword.filestorage_short}}
 {: #duplicatevolume}
 
-您可以创建现有 {{site.data.keyword.BluSoftlayer_full}} {{site.data.keyword.filestorage_full}} 的副本。缺省情况下，复制卷将继承原始卷的容量和性能选项，并且会包含截至快照时间点的数据的副本。   
+您可以创建现有 {{site.data.keyword.cloud}} {{site.data.keyword.filestorage_full}} 的副本。缺省情况下，复制卷将继承原始卷的容量和性能选项，并且会包含截至快照时间点的数据的副本。   
 
 因为复制项基于时间点快照中的数据，所以原始卷上需要有快照空间，然后您才能创建复制项。要了解有关快照以及如何订购快照空间的更多信息，请参阅[快照文档](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots)。  
 

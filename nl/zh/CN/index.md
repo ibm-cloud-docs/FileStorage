@@ -44,7 +44,7 @@ subcollection: FileStorage
    - 以非破坏性方式捕获时间点数据快照。
 - **复制**  [（在精选数据中心内提供。）](/docs/infrastructure/FileStorage?topic=FileStorage-news)
    - 在[精选数据中心](/docs/infrastructure/FileStorage?topic=FileStorage-news)内供应存储器时可用。
-   - 自动将快照复制到合作伙伴的 {{site.data.keyword.BluSoftlayer_full}} 数据中心。
+   - 自动将快照复制到合作伙伴的 {{site.data.keyword.cloud}} 数据中心。
 - **高度可用的连接**
    - 使用冗余网络连接以最大限度提高可用性。
    - 基于 NFS 的 {{site.data.keyword.filestorage_short}} 路由的是 TCP/IP 连接。

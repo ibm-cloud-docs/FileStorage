@@ -27,7 +27,7 @@ subcollection: FileStorage
 許可ホストとボリュームは同じデータ・センターになければなりません。 例えば、レプリカ・ボリュームをロンドンに置いて、ホストをアムステルダムに置くことはできません。 両方がロンドンに、または両方がアムステルダムになければなりません。
 {:note}
 
-1. [{{site.data.keyword.cloud}} コンソール](https://{DomainName}/catalog){: external} にログインして、左上にある**「メニュー」**アイコンをクリックします。 **「クラシック・インフラストラクチャー」**を選択します。
+1. [{{site.data.keyword.cloud}}  コンソール](https://{DomainName}/catalog){: external} にログインして、左上にある**「メニュー」**アイコンをクリックします。 **「クラシック・インフラストラクチャー」**を選択します。
 
 
    または、[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} にログインできます。

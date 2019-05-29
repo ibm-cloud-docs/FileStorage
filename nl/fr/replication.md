@@ -30,7 +30,7 @@ Avant d'effectuer une réplication, vous devez créer un planning d'instantané.
 
 ## Comment déterminer le centre de données distant du volume de stockage répliqué ?
 
-Les centres de données d'{{site.data.keyword.BluSoftlayer_full}} sont appariés en combinaisons principal-distant dans le monde entier.
+Les centres de données d'{{site.data.keyword.cloud}} sont appariés en combinaisons principal-distant dans le monde entier.
 Pour obtenir la liste complète de la disponibilité des centres de données et des cibles de réplication, reportez-vous au Tableau 1.
 
 <table>
@@ -184,7 +184,7 @@ L'historique des réplications s'affiche dans le **Journal d'audit** sur l'ongle
 
 ## Création d'un doublon d'un volume de réplique
 
-Vous pouvez créer un doublon d'un VOLUME {{site.data.keyword.filestorage_full}} {{site.data.keyword.BluSoftlayer_full}} existant. Le volume dupliqué hérite par défaut des options de capacité et de performance du volume de stockage d'origine et contient une copie des données jusqu'au point de cohérence d'un instantané.
+Vous pouvez créer un doublon d'un VOLUME {{site.data.keyword.filestorage_full}} {{site.data.keyword.cloud}} existant. Le volume dupliqué hérite par défaut des options de capacité et de performance du volume de stockage d'origine et contient une copie des données jusqu'au point de cohérence d'un instantané.
 
 Vous pouvez créer des doublons à partir de volumes principaux et de volumes de réplique. Le nouveau doublon est créé dans le même centre de données que le volume d'origine. Si vous créez un doublon à partir d'un volume de réplique, le nouveau volume est créé dans le même centre de données que le volume de réplique.
 

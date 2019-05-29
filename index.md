@@ -20,7 +20,7 @@ subcollection: FileStorage
 # About {{site.data.keyword.filestorage_short}}
 {: #about}
 
-{{site.data.keyword.cloud}} {{site.data.keyword.filestorage_short}} is persistent, fast, and flexible network-attached, NFS-based {{site.data.keyword.filestorage_short}}. In this network-attached storage (NAS) environment, you have total control over your file shares function and performance. {{site.data.keyword.filestorage_short}} shares can be connected to up to 64 authorized devices over routed TCP/IP connections for resiliency.
+{{site.data.keyword.cloud}}  {{site.data.keyword.filestorage_short}} is persistent, fast, and flexible network-attached, NFS-based {{site.data.keyword.filestorage_short}}. In this network-attached storage (NAS) environment, you have total control over your file shares function and performance. {{site.data.keyword.filestorage_short}} shares can be connected to up to 64 authorized devices over routed TCP/IP connections for resiliency.
 {:shortdesc}
 
 ## Features
@@ -44,7 +44,7 @@ Take advantage of the following core features of {{site.data.keyword.filestorage
    - Captures point-in-time data snapshots non-disruptively.
 - **Replication**  [(Available in select data centers.)](/docs/infrastructure/FileStorage?topic=FileStorage-news)
    - Available when storage is provisioned in [select data centers](/docs/infrastructure/FileStorage?topic=FileStorage-news).
-   - Automatically copies snapshots to a partner {{site.data.keyword.BluSoftlayer_full}} data center.
+   - Automatically copies snapshots to a partner {{site.data.keyword.cloud}} data center.
 - **Highly available connectivity**
    - Uses redundant networking connections to maximize availability.
    - NFS-based {{site.data.keyword.filestorage_short}} routed TCP/IP connections.

@@ -164,7 +164,7 @@ Die Ziellatenz im Speicher beträgt weniger als 1 ms. File Storage-Speicher wird
 ## Welche NFS-Versionen werden unterstützt?
 {: faq}
 
-NFS Version 3 und NFS Version 4.1 werden in der Umgebung von {{site.data.keyword.BluSoftlayer_full}} unterstützt. 
+NFS Version 3 und NFS Version 4.1 werden in der Umgebung von {{site.data.keyword.cloud}} unterstützt. 
 
 Die bevorzugte Version ist NFS v3, da sie ein statusunabhängiges Protokoll verwendet und bei Netzereignissen eine größere Ausfallsicherheit bietet.  
 

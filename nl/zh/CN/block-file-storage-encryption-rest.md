@@ -18,7 +18,7 @@ subcollection: FileStorage
 # 提供者管理的静态加密
 {: #encryption}
 
-{{site.data.keyword.BluSoftlayer_full}} 认真对待安全性需求，并深知能够加密数据以保证数据安全的重要性。借助提供者管理的加密，缺省情况下，会加密通过“耐久性”或“性能”选项供应的 {{site.data.keyword.filestorage_full}}，这无需任何额外费用，对性能也没有任何影响。
+{{site.data.keyword.cloud}} 认真对待安全性需求，并深知能够加密数据以保证数据安全的重要性。借助提供者管理的加密，缺省情况下，会加密通过“耐久性”或“性能”选项供应的 {{site.data.keyword.filestorage_full}}，这无需任何额外费用，对性能也没有任何影响。
 
 提供者管理的静态加密功能使用以下业界标准协议：
 

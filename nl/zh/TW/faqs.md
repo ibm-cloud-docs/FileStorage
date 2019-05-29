@@ -59,7 +59,7 @@ subcollection: FileStorage
 ## 可以將多少個 {{site.data.keyword.filestorage_short}} 磁區連接至單一主機？
 {: faq}
 
-這取決於主機作業系統可處理的項目，而不是由 {{site.data.keyword.BluSoftlayer_full}} 所限制。如需可裝載的檔案共用數目限制，請參閱 OS 文件。
+這取決於主機作業系統可處理的項目，而不是由 {{site.data.keyword.cloud}} 所限制。如需可裝載的檔案共用數目限制，請參閱 OS 文件。
 
 ## 每個檔案磁區大小容許多少個檔案共用？每個磁區大小容許的檔案共用上限為何？
 {: faq}
@@ -164,7 +164,7 @@ IOPS 是在磁區層次上施行。換句話說，連接至具有 6000 IOPS 之�
 ## 支援哪些 NFS 版本？
 {: faq}
 
-在 {{site.data.keyword.BluSoftlayer_full}} 環境中，同時支援 NFS 第 3 版及 NFS 4.1 版。 
+在 {{site.data.keyword.cloud}} 環境中，同時支援 NFS 第 3 版及 NFS 4.1 版。 
 
 偏好的版本是 NFS 第 3 版，因為它是無狀態的通訊協定，在發生網路事件時較具復原力。 
 

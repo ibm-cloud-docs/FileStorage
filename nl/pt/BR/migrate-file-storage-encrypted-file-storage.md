@@ -37,7 +37,7 @@ Todos os volumes aprimorados do {{site.data.keyword.filestorage_short}} provisio
 Ao fazer um pedido com a API, especifique o pacote "Armazenamento como um serviço" para assegurar-se de que esteja obtendo os recursos atualizados com seu novo armazenamento.
 {:important}
 
-É possível pedir um LUN aprimorado por meio do catálogo do {{site.data.keyword.BluSoftlayer_full}} e do {{site.data.keyword.slportal}}. Seu novo volume deve ter o mesmo tamanho ou ser maior que o compartilhamento de arquivo original para facilitar a migração.
+É possível pedir um LUN aprimorado por meio do catálogo do {{site.data.keyword.cloud}} e do {{site.data.keyword.slportal}}. Seu novo volume deve ter o mesmo tamanho ou ser maior que o compartilhamento de arquivo original para facilitar a migração.
 
 - [Pedindo o {{site.data.keyword.filestorage_short}} com camadas IOPS predefinidas (Endurance)](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#endurance)
 - [Pedindo o {{site.data.keyword.filestorage_short}} com IOPS customizado (Performance)](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#performance)

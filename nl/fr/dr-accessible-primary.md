@@ -27,7 +27,7 @@ Avant de lancer le basculement, vérifiez que toutes les autorisations d'hôte s
 Les hôtes et les volumes autorisés doivent figurer dans le même centre de données. Par exemple, vous ne pouvez pas avoir un volume de réplique à Londres et un hôte à Amsterdam. Ils doivent se trouver tous les deux à Londres ou à Amsterdam.
 {:note}
 
-1. Connectez-vous à la [console {{site.data.keyword.cloud}}](https://{DomainName}/catalog){: external} et cliquez sur l'icône **Menu** dans l'angle supérieur gauche. Sélectionnez **Infrastructure classique**.
+1. Connectez-vous à la [console {{site.data.keyword.cloud}} ](https://{DomainName}/catalog){: external} et cliquez sur l'icône **Menu** dans l'angle supérieur gauche. Sélectionnez **Infrastructure classique**.
 
 
    Vous pouvez également vous connecter au portail [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
