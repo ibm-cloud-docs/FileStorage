@@ -21,7 +21,7 @@ subcollection: FileStorage
 # Provisioning {{site.data.keyword.filestorage_short}} with VMware
 {: #architectureguide}
 
-The following steps can help you order and configure {{site.data.keyword.filestorage_full}} in a vSphere 5.5 and vSphere 6.0 environment at {{site.data.keyword.BluSoftlayer_full}}.
+The following steps can help you order and configure {{site.data.keyword.filestorage_full}} in a vSphere 5.5 and vSphere 6.0 environment at {{site.data.keyword.cloud}}.
 
 The {{site.data.keyword.filestorage_short}} is designed to support high I/O applications that require predictable levels of performance. The predictable performance is achieved through the allocation of protocol-level input/output operations per second (IOPS) to individual volumes.
 
@@ -50,66 +50,25 @@ For more information, see VMware's white paper on [Best Practices for running
 VMware vSphere on network-attached storage](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){: external}
 {:tip}
 
-**NFS Protocol VMware feature support matrix**
-<table>
-  <caption>Table 1 shows the vSphere features as they apply to the two different versions of NFS.</caption>
- <thead>
-  <tr>
-   <th>vSphere Features</th>
-   <th>NFS version 3</th>
-   <th>NFS version 4.1</th>
-  </tr>
- </thead>
- <tbody>
-  <tr>
-   <td>vMotion and Storage vMotion</td>
-   <td>Yes</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>High Availability (HA)</td>
-   <td>Yes</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Fault Tolerance (FT)</td>
-   <td>Yes</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Distributed Resource Scheduler (DRS)</td>
-   <td>Yes</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Host Profiles</td>
-   <td>Yes</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Storage DRS</td>
-   <td>Yes</td>
-   <td>No</td>
-  </tr>
-  <tr>
-   <td>Storage I/O Control</td>
-   <td>Yes</td>
-   <td>No</td>
-  </tr>
-  <tr>
-   <td>Site Recovery Manager</td>
-   <td>Yes</td>
-   <td>No</td>
-  </tr>
-  <tr>
-   <td>Virtual Volumes</td>
-   <td>Yes</td>
-   <td>No</td>
-  </tr>
- </tbody>
-</table>
-*Source - [VMware - NFS Protocols and ESXi](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){: external}*
+### NFS Protocol VMware feature support matrix
 
+| vSphere Features | NFS version 3 | NFS version 4.1 |
+|-----|-----|-----|
+| vMotion and Storage vMotion | Yes | Yes |
+| High Availability (HA) | Yes | Yes |
+| Fault Tolerance (FT) | Yes | Yes |
+| Distributed Resource Scheduler (DRS) | Yes< | Yes |
+| Host Profiles | Yes | Yes |
+| Storage DRS | Yes | No |
+| Storage I/O Control | Yes | No |
+| Site Recovery Manager | Yes | No |
+| Virtual Volumes | Yes | No |
+{: row-headers}
+{: class="comparison-table"}
+{: caption="Table 1 - NFS Protocol VMware feature support matrix." caption-side="top"}
+{: summary="This table has row and column headers. The row headers identify the vSphere features. The column headers identify the NSF version. To see if a feature is enabled navigate to the row of the feature and look at the column that is associated with the NFS version you use."}
+
+*Source - [VMware - NFS Protocols and ESXi](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){: external}*
 
 
 ### Using Snapshots
@@ -272,7 +231,7 @@ Make note of the IP address as it can be used for mounting the volume in the nex
 9. Review the inputs on the next screen and click **Finish**.
 10. Repeat for any additional {{site.data.keyword.filestorage_short}} volumes.
 
-It is {{site.data.keyword.BluSoftlayer_full}}’s recommendation that FQDN names be used to connect to the VMware datastore. Using direct IP addressing might bypass the load-balancing mechanism that is provided by using FQDN.
+It is {{site.data.keyword.cloud}}’s recommendation that FQDN names be used to connect to the VMware datastore. Using direct IP addressing might bypass the load-balancing mechanism that is provided by using FQDN.
 {:important}
 
 To use the IP address instead of the FQDN, simply ping the server to obtain the IP address.
@@ -347,7 +306,7 @@ Extra settings are required for configuring ESXi 5.x hosts for NFS storage. This
 |NFS.HeartbeatFrequency |	12 |
 |NFS.HeartbeatTimeout |	5 |
 |NFS.MaxQueueDepth|	64 |
-
+{: caption="Table 2 - Host side settings" caption-side="top"}
 
 ### Updating advanced configuration parameters on ESXi 5.x host by using the CLI
 
