@@ -133,7 +133,7 @@ Opciones:
   --help                    Mostrar este mensaje y salir.
 ```
 
-Para obtener más información sobre la autorización de los hosts para acceder a {{site.data.keyword.filestorage_short}} mediante la API, consulte [authorize_host_to_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/file/#SoftLayer.managers.file.FileStorageManager.authorize_host_to_volume){: external}
+Para obtener más información sobre la autorización de los hosts para acceder a {{site.data.keyword.filestorage_short}} mediante la API, consulte [authorize_host_to_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/file/#SoftLayer.managers.file.FileStorageManager.authorize_host_to_volume){: external}.
 {:tip}
 
 Para obtener más información sobre el límite de autorizaciones simultáneas, consulte las [Preguntas más frecuentes](/docs/infrastructure/FileStorage?topic=FileStorage-faqs).

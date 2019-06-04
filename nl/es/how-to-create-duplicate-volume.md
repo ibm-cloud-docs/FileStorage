@@ -24,7 +24,7 @@ Como el duplicado se basa en los datos en el momento específico de una instant�
 
 Los duplicados pueden crearse a partir de volúmenes **primarios** y **de réplica**. El nuevo duplicado se crea en el mismo centro de datos que el volumen original. Si crea un duplicado a partir de un volumen de réplica, el nuevo volumen se crea en el mismo centro de datos que el volumen de réplica.
 
-Si es un usuario de cuenta dedicada de {{site.data.keyword.containerlong}}, consulte las opciones de deduplicación de un volumen en la [documentación de {{site.data.keyword.containerlong_notm}}](/docs/containers?topic=containers-backup_restore#backup_restore).
+Si es un usuario de cuenta dedicada de {{site.data.keyword.containerlong}}, consulte las opciones de deduplicación de un volumen en la [documentación de {{site.data.keyword.containerlong_notm}}](/docs/containers?topic=containers-file_storage#file_backup_restore).
 {:tip}
 
 Se puede acceder a los volúmenes duplicados mediante un host para lectura/escritura siempre y cuando el almacenamiento esté suministrado. Sin embargo, no se permiten instantáneas ni réplicas hasta que se completa la copia de datos del original en el duplicado. Una vez completada la copia de datos, el duplicado se puede gestionar y utilizar como un volumen independiente.
@@ -46,7 +46,7 @@ Puede crear un volumen duplicado a través del [{{site.data.keyword.slportal}}](
 
 1. Vaya a su lista de {{site.data.keyword.filestorage_short}}
     - Desde el portal de clientes, pulse **Almacenamiento** > **{{site.data.keyword.filestorage_short}}** O
-    - Desde el catálogo de {{site.data.keyword.BluSoftlayer_full}}, pulse **Infraestructura** > **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**.
+    - Desde el catálogo de {{site.data.keyword.cloud}}, pulse **Infraestructura** > **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**.
 2. Seleccione un LUN de la lista y pulse **Acciones** > **Duplicar LUN (Volumen)**
 3. Elija la opción de instantánea.
     - Si solicita desde un volumen sin réplica:

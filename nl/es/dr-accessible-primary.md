@@ -27,8 +27,7 @@ Antes de iniciar la migración tras error, asegúrese de que todas las autorizac
 Los hosts y volúmenes autorizados deben estar en el mismo centro de datos. Por ejemplo, no puede tener un volumen de réplica en Londres y el host en Ámsterdam. Ambos deben estar en Londres o en Ámsterdam.
 {:note}
 
-1. Inicie la sesión en la [consola de {{site.data.keyword.cloud}} ](https://{DomainName}/catalog){: external} y pulse el icono de **menú** de la parte superior izquierda. Seleccione **Infraestructura clásica**.
-
+1. Inicie la sesión en la [consola de {{site.data.keyword.cloud}}](https://{DomainName}/catalog){: external} y pulse el icono de **menú** de la parte superior izquierda. Seleccione **Infraestructura clásica**.
 
    También puede iniciar la sesión en el [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
 1. Pulse el volumen de origen o de destino en la página de **{{site.data.keyword.filestorage_short}}**.

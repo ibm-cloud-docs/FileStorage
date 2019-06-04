@@ -54,4 +54,6 @@ IBM Cloud Storage - Almacenamiento de archivos
     faqs.md
     [Información del cliente de API de Python](https://softlayer-python.readthedocs.io/en/latest/index.html)
     slcli-usage.md
+    [CLI y herramientas de desarrollador de IBM Cloud](https://cloud.ibm.com/docs/cli/reference/ibmcloud?topic=cloud-cli-sl-file-storage-service)
+    [Gestión de identidad y acceso](https://cloud.ibm.com/docs/iam?topic=iam-infrapermission)
     {: .navgroup-end}

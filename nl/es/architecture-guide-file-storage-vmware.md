@@ -21,7 +21,7 @@ subcollection: FileStorage
 # Suministro de {{site.data.keyword.filestorage_short}} con VMware
 {: #architectureguide}
 
-Los siguientes pasos le ayudan a realizar el pedido y configurar {{site.data.keyword.filestorage_full}} en un entorno de vSphere 5.5 y vSphere 6.0 en {{site.data.keyword.BluSoftlayer_full}}.
+Los siguientes pasos le ayudan a realizar el pedido y configurar {{site.data.keyword.filestorage_full}} en un entorno de vSphere 5.5 y vSphere 6.0 en {{site.data.keyword.cloud}}.
 
 {{site.data.keyword.filestorage_short}} está diseñado para dar soporte a aplicaciones de entrada/salida alta que requieren niveles de rendimiento previsibles. El rendimiento previsible se consigue mediante la asignación de operaciones de entrada/salida a nivel de protocolo por segundo (IOPS) para volúmenes individuales.
 
@@ -44,72 +44,31 @@ Al realizar el pedido de {{site.data.keyword.filestorage_short}}, tenga en cuent
 - NFS utiliza muchas operaciones de control de archivos adicionales, como `lookup`, `getattr` y `readdir`. Estas operaciones, junto con las operaciones de lectura/escritura, pueden contar como IOPS y varían según el tipo de operación y la versión de NFS.
 - Los volúmenes de {{site.data.keyword.filestorage_short}} están expuestos a dispositivos autorizados, subredes o direcciones IP.
 - Para evitar la desconexión del almacenamiento durante una migración tras error de vía de acceso, {{site.data.keyword.IBM}} recomienda la instalación de herramientas VMware, que establecen un valor de tiempo de espera adecuado. No es necesario cambiar el valor, el valor predeterminado es suficiente para garantizar que el host de VMware no pierda la conectividad.
-- Tanto NFSv3 como NFSv4.1 están soportados en el entorno de {{site.data.keyword.BluSoftlayer_full}}. Sin embargo, {{site.data.keyword.IBM}} sugiere que utilice NFSv3. Como NFSv4.1 es un protocolo con estado (no sin estado como NFSv3), se pueden producir problemas de protocolo durante sucesos de red. NFSv4.1 debe desactivar temporalmente todas las operaciones y realizar la reclamación de bloqueo. Durante estas operaciones, pueden producirse interrupciones.
+- Tanto NFSv3 como NFSv4.1 están soportados en el entorno de {{site.data.keyword.cloud}}. Sin embargo, {{site.data.keyword.IBM}} sugiere que utilice NFSv3. Como NFSv4.1 es un protocolo con estado (no sin estado como NFSv3), se pueden producir problemas de protocolo durante sucesos de red. NFSv4.1 debe desactivar temporalmente todas las operaciones y realizar la reclamación de bloqueo. Durante estas operaciones, pueden producirse interrupciones.
 
 Para obtener más información, consulte el documento técnico de VMware en [Mejores prácticas para ejecutar VMware vSphere en almacenamiento adjunto de red](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){: external}
 {:tip}
 
-**Matriz de soporte de características VMware de protocolo NFS**
-<table>
-  <caption>La Tabla 1 muestra cómo se aplican las características de vSphere a las dos versiones diferentes de NFS.</caption>
- <thead>
-  <tr>
-   <th>Características de vSphere</th>
-   <th>NFS versión 3</th>
-   <th>NFS versión 4.1</th>
-  </tr>
- </thead>
- <tbody>
-  <tr>
-   <td>vMotion y Storage vMotion</td>
-   <td>Sí</td>
-   <td>Sí</td>
-  </tr>
-  <tr>
-   <td>Alta disponibilidad (HA)</td>
-   <td>Sí</td>
-   <td>Sí</td>
-  </tr>
-  <tr>
-   <td>Tolerancia al error (FT)</td>
-   <td>Sí</td>
-   <td>Sí</td>
-  </tr>
-  <tr>
-   <td>DRS (planificador de recursos distribuidos)</td>
-   <td>Sí</td>
-   <td>Sí</td>
-  </tr>
-  <tr>
-   <td>Perfiles de host</td>
-   <td>Sí</td>
-   <td>Sí</td>
-  </tr>
-  <tr>
-   <td>DRS de almacenamiento</td>
-   <td>Sí</td>
-   <td>No</td>
-  </tr>
-  <tr>
-   <td>Control de E/S de almacenamiento</td>
-   <td>Sí</td>
-   <td>No</td>
-  </tr>
-  <tr>
-   <td>Site Recovery Manager</td>
-   <td>Sí</td>
-   <td>No</td>
-  </tr>
-  <tr>
-   <td>Virtual
-Volumes</td>
-   <td>Sí</td>
-   <td>No</td>
-  </tr>
- </tbody>
-</table>
-*Fuente - [VMware - NFS Protocols and ESXi](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){: external}*
+### Matriz de soporte de características VMware de protocolo NFS
 
+| Características de vSphere | NFS versión 3 | NFS versión 4.1 |
+|-----|-----|-----|
+| vMotion y Storage vMotion | Sí | Sí |
+| Alta disponibilidad (HA) | Sí | Sí |
+| Tolerancia al error (FT) | Sí | Sí |
+| DRS (planificador de recursos distribuidos) | Sí< | Sí |
+| Perfiles de host | Sí | Sí |
+| DRS de almacenamiento | Sí | No |
+| Control de E/S de almacenamiento | Sí | No |
+| Site Recovery Manager | Sí | No |
+| Virtual
+Volumes | Sí | No |
+{: row-headers}
+{: class="comparison-table"}
+{: caption="Tabla 1 - Matriz de soporte de características VMware de protocolo NFS." caption-side="top"}
+{: summary="This table has row and column headers. The row headers identify the vSphere features. The column headers identify the NSF version. To see if a feature is enabled navigate to the row of the feature and look at the column that is associated with the NFS version you use."}
+
+*Fuente - [VMware - NFS Protocols and ESXi](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){: external}*
 
 
 ### Uso de instantáneas
@@ -151,7 +110,7 @@ Los datos no válidos, ya estén corruptos, pirateados o infectados, se replican
 
 ## Solicitud de {{site.data.keyword.filestorage_short}}
 
-Utilice la [Arquitectura avanzada de referencia de VMware de un solo sitio](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){: external} para establecer {{site.data.keyword.filestorage_short}} con opciones de Resistencia o Rendimiento en el entorno de VMware.
+Utilice la [Arquitectura avanzada de referencia de VMware de un solo sitio](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){: external} para configurar {{site.data.keyword.filestorage_short}} con opciones de Resistencia o Rendimiento en el entorno de VMware.
 
 {{site.data.keyword.filestorage_short}} se puede solicitar a través del [catálogo de IBM](https://{DomainName}/catalog){: external} o del [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}. Para obtener más información, consulte [Solicitud de {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)
 
@@ -347,7 +306,7 @@ Se requieren valores adicionales para configurar los hosts de ESXi 5.x para el a
 |NFS.HeartbeatFrequency |	12 |
 |NFS.HeartbeatTimeout |	5 |
 |NFS.MaxQueueDepth|	64 |
-
+{: caption="Tabla 2 - Valores del lado del host" caption-side="top"}
 
 ### Actualización de los parámetros de configuración avanzada en un host de ESXi 5.x utilizando la CLI
 
