@@ -28,66 +28,10 @@ subcollection: FileStorage
 
 下列地區和資料中心已提供新的 {{site.data.keyword.filestorage_short}}，後續將有更多資料中心加入此陣容！
 
-<table role="presentation">
-  <tr>
-    <td><strong>美國 2</strong></td>
-    <td><strong>歐盟</strong></td>
-    <td><strong>澳大利亞</strong></td>
-    <td><strong>加拿大</strong></td>
-    <td><strong>拉丁美洲</strong></td>
-    <td><strong>亞太</strong></td>
-  </tr>
-  <tr>
-    <td>DAL09<br />
-	DAL10<br />
-	DAL12<br />
-	DAL13<br />
-	SJC03<br />
-SJC04<br />
-	WDC04<br />
-	WDC06<br />
-	WDC07<br />
-	<br /><br /><br />
-    </td>
-    <td>AMS01<br />
-AMS03<br />
-	FRA02<br />
-	FRA04<br />
-	FRA05<br />
-	LON02<br />
-	LON04<br />
-	LON05<br />
-	LON06<br />
-	MIL01<br />
-	OSLO1<br />
-	PAR01<br />
-    </td>
-    <td>MEL01<br />
-SYD01<br />
-SYD04<br />
-        SYD05<br /><br /><br /><br /><br /><br /><br /><br /><br />
-    </td>
-    <td>MON01<br />
-TOR01<br />
-	<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-    </td>
-    <td>MEX01<br />
-SAO01<br />
-	<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-    </td>
-    <td>CHE01<br />
-HKG02<br />
-	SEO01<br />
-	SNG01<br />
-TOK02<br />
-	TOK04<br />
-	TOK05<br />
-	<br /><br /><br /><br /><br />
-    </td>
-  </tr>
-</table>
-
-*表 1 顯示「資料中心可用性」。每一個地區都有自己的直欄。有些城市（例如「達拉斯」、「聖荷西」、「華盛頓特區」、「阿姆斯特丹」、「法蘭克福」、「倫敦」及「雪梨」）會有多個資料中心。*
+|美國 2|拉丁美洲|加拿大|歐盟|亞太|澳洲|
+|-----|-----|-----|-----|-----|------|
+|DAL09<br >DAL10<br />DAL12<br />DAL13<br />SJC03<br />SJC04<br />WDC04<br />WDC06<br />WDC07|MEX01<br />SAO01|MON01<br />TOR01|AMS01<br />AMS03<br />FRA02<br />FRA04<br />FRA05<br />LON02<br />LON04<br />LON05<br />LON06<br />MIL01<br />OSLO1<br />PAR01|CHE01<br />HKG02<br />SEO01<br />SNG01<br />TOK02<br />TOK04<br />TOK05|MEL01<br />SYD01<br />SYD04<br />        SYD05|
+{: caption="表 1 顯示資料中心可用性。每一個地區都有自己的直欄。有些城市（例如「達拉斯」、「聖荷西」、「華盛頓特區」、「阿姆斯特丹」、「法蘭克福」、「倫敦」及「雪梨」）會有多個資料中心。" caption-side="top"}
 
 ## 新特性及功能
 {: #features}
@@ -106,8 +50,7 @@ TOK02<br />
 
 這些資料中心內佈建的所有加強型 {{site.data.keyword.filestorage_short}} 磁區都具有與未加密磁區不同的裝載點。為了確保兩個儲存空間磁區都是使用正確的裝載點，您可以在主控台的**磁區詳細資料**頁面中檢視裝載點資訊。您也可以透過 API 呼叫來存取正確的裝載點：`SoftLayer_Network_Storage::getNetworkMountAddress()`。
 
-若要能夠存取所有新增特性，請在透過 API 下訂單時，選取 `Storage-as-a-Service Package 759`。如需透過 API 來訂購 {{site.data.keyword.filestorage_short}} 的相關資訊，請參閱 [order_file_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/file/#SoftLayer.managers.file.FileStorageManager.order_file_volume){: external}。
-{:important}
+若要能夠存取所有新增特性，請在透過 API 下訂單時，選取 `Storage-as-a-Service Package 759`。如需透過 API 來訂購 {{site.data.keyword.filestorage_short}} 的相關資訊，請參閱 [order_file_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/file/#SoftLayer.managers.file.FileStorageManager.order_file_volume){: external}。{:important}
 
 請在這裡再次確認，以查看其他資料中心何時升級以及針對 {{site.data.keyword.filestorage_short}} 新增的特性及功能。
 {:tip}

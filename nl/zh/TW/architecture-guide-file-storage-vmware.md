@@ -46,77 +46,37 @@ subcollection: FileStorage
 - 為避免在路徑失效接手期間發生儲存空間斷線，{{site.data.keyword.IBM}} 建議安裝 VMware 工具，以設定適當的逾時值。不需要變更值，預設值就足以確保 VMware 主機不會中斷連線。
 - 在 {{site.data.keyword.cloud}} 環境中，同時支援 NFS 第 3 版及 NFS 4.1 版。不過，{{site.data.keyword.IBM}} 建議您使用 NFS 第 3 版。因為 NFS 4.1 版是有狀態的通訊協定（不像 NFS 第 3 版是無狀態的通訊協定），所以在網路事件期間可能會發生通訊協定問題。NFS 4.1 版必須靜止所有作業，然後完成鎖定收回。進行這些作業時，可能會發生中斷。
 
-如需相關資訊，請參閱 VMware 的白皮書：[Best Practices for running VMware vSphere on network-attached storage](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){: external}
-{:tip}
+如需相關資訊，請參閱 VMware 的白皮書：[Best Practices for running VMware vSphere on network-attached storage](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){: external}{:tip}
 
-**NFS 通訊協定 VMware 特性支援矩陣**
-<table>
-  <caption>「表 1」顯示適用於兩個不同版本 NFS 的 vSphere 特性。</caption>
- <thead>
-  <tr>
-   <th>vSphere 特性</th>
-   <th>NFS 第 3 版</th>
-   <th>NFS 4.1 版</th>
-  </tr>
- </thead>
- <tbody>
-  <tr>
-   <td>vMotion 及 Storage vMotion</td>
-   <td>是</td>
-   <td>是</td>
-  </tr>
-  <tr>
-   <td>High Availability (HA)</td>
-   <td>是</td>
-   <td>是</td>
-  </tr>
-  <tr>
-   <td>Fault Tolerance (FT)</td>
-   <td>是</td>
-   <td>是</td>
-  </tr>
-  <tr>
-   <td>Distributed Resource Scheduler (DRS)</td>
-   <td>是</td>
-   <td>是</td>
-  </tr>
-  <tr>
-   <td>Host Profiles</td>
-   <td>是</td>
-   <td>是</td>
-  </tr>
-  <tr>
-   <td>Storage DRS</td>
-   <td>是</td>
-   <td>否</td>
-  </tr>
-  <tr>
-   <td>Storage I/O Control</td>
-   <td>是</td>
-   <td>否</td>
-  </tr>
-  <tr>
-   <td>Site Recovery Manager</td>
-   <td>是</td>
-   <td>否</td>
-  </tr>
-  <tr>
-   <td>Virtual Volumes</td>
-   <td>是</td>
-   <td>否</td>
-  </tr>
- </tbody>
-</table>
+### NFS 通訊協定 VMware 特性支援矩陣
+
+|vSphere 特性|NFS 第 3 版|NFS 4.1 版|
+|-----|-----|-----|
+|vMotion 及 Storage vMotion|是|是|
+|High Availability (HA)|是|是|
+|Fault Tolerance (FT)|是|是|
+|Distributed Resource Scheduler (DRS)| 是< |是|
+|Host Profiles|是|是|
+|Storage DRS|是|否|
+|Storage I/O Control|是|否|
+|Site Recovery Manager|是|否|
+|Virtual Volumes|是|否|
+{: row-headers}
+{: class="comparison-table"}
+{: caption="表 1 - NFS 通訊協定 VMware 特性支援矩陣" caption-side="top"}
+{: summary="這個表格有列和欄標頭。列標頭識別 vSphere 特性。欄標頭識別 NSF 版本。若要查看特性是否已啟用，請導覽至特性的列，然後查看與您使用之 NFS 版本相關聯的欄。"}
+
 *來源 - [VMware - NFS 通訊協定及 ESXi](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){: external}*
+
 
 
 ### 使用 Snapshot
 
-{{site.data.keyword.filestorage_short}} 容許管理者設定 Snapshot 排程，以自動建立及刪除每個儲存空間磁區的 Snapshot 副本。他們也可以建立額外的 Snapshot 排程（每小時、每日、每週）來自動擷取 Snapshot，以及針對企業永續及災難回復 (BCDR) 情境手動建立特定 Snapshot。將會針對已保留的 Snapshot 和已使用的空間，透過 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 傳遞自動警示給磁區擁有者。
+{{site.data.keyword.filestorage_short}} 容許管理者設定 Snapshot 排程，以自動建立及刪除每個儲存空間磁區的 Snapshot 副本。他們也可以建立額外的 Snapshot 排程（每小時、每日、每週）來自動擷取 Snapshot，以及針對企業永續及災難回復 (BCDR) 情境手動建立特定 Snapshot。已保留 Snapshot 及使用空間，會透過 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 將自動警示傳遞給磁區擁有者。
 
 需要有「Snapshot 空間」，才能使用 Snapshot。您可以在初次訂購磁區時購買空間，或在初次佈建之後，透過**磁區詳細資料**頁面購買空間，方法是按一下**動作**然後選取**新增 Snapshot 空間**。
 
-請務必注意，VMware 環境並不知道 Snapshot。{{site.data.keyword.filestorage_short}} Snapshot 功能不得與 VMware Snapshot 混淆。凡是使用 {{site.data.keyword.filestorage_short}} Snapshot 特性的任何回復，都必須從 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 來處理。
+請務必注意，VMware 環境並不知道 Snapshot。{{site.data.keyword.filestorage_short}} Snapshot 功能不得與 VMware Snapshot 混淆。必須從 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 處理任何使用 {{site.data.keyword.filestorage_short}} Snapshot 特性的回復。
 
 還原 {{site.data.keyword.filestorage_short}} 磁區時，需要關閉 {{site.data.keyword.filestorage_short}} 上所有 VM 的電源。磁區必須暫時從 ESXi 主機卸載，以避免在處理程序期間發生任何資料損毀。
 
@@ -151,9 +111,9 @@ subcollection: FileStorage
 
 使用[進階單一 VMware 參照架構](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){: external}，在 VMWare 環境中設定採用「耐久性」或「效能」選項的 {{site.data.keyword.filestorage_short}}。
 
-{{site.data.keyword.filestorage_short}} 可透過 [IBM Cloud 型錄](https://{DomainName}/catalog){: external} 或 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 來訂購。如需相關資訊，請參閱[訂購 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)
+{{site.data.keyword.filestorage_short}} 可透過 [IBM Cloud 型錄](https://{DomainName}/catalog){: external}或 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}訂購。如需相關資訊，請參閱[訂購 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)
 
-儲存空間不到一分鐘即可佈建完成，並顯示在 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 的 **{{site.data.keyword.filestorage_short}}** 頁面上。
+在一分鐘以內即會佈建儲存空間，並且它會顯示在 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 的 **{{site.data.keyword.filestorage_short}}** 頁面上。
 
 佈建磁區後，必須授權將使用磁區的 {{site.data.keyword.BluBareMetServers_full}} 或 {{site.data.keyword.BluVirtServers_full}} 來存取儲存空間。請使用下列步驟來授權磁區。
 
@@ -249,8 +209,7 @@ subcollection: FileStorage
 
 2. 在 ESXi 5.0 及更早版本上，靜態路由在各次重新啟動之間無法持續保存。為了確定任何已新增的靜態路由都能持續保存，需要將此指令新增至每台主機上的 `local.sh` 檔案，該檔案位於 `/etc/rc.local.d/` 目錄中。請使用視覺化編輯器開啟 `local.sh` 檔案，並且在步驟 4.1 中新增第二個指令。位置是在 `exit 0` 這一行前面。
 
-記下 IP 位址，因為它可以在下一步中用於裝載磁區。<br/>需要對計劃要裝載至 ESXi 主機的每一個 NFS 磁區執行此處理程序。<br/>如需相關資訊，請參閱 VMware KB 文章：[在 ESXi 主機上配置 VMkernel 埠的靜態路由](https://kb.vmware.com/s/article/2001426){: external}。
-{:tip}
+記下 IP 位址，因為它可以在下一步中用於裝載磁區。<br/>需要對計劃要裝載至 ESXi 主機的每一個 NFS 磁區執行此處理程序。<br/>如需相關資訊，請參閱 VMware KB 文章：[在 ESXi 主機上配置 VMkernel 埠的靜態路由](https://kb.vmware.com/s/article/2001426){: external}。{:tip}
 
 
 ##  在 ESXi 主機上建立及裝載 {{site.data.keyword.filestorage_short}} 磁區
@@ -345,7 +304,7 @@ Storage I/O Control (SIOC) 是一種特性，可供使用 Enterprise Plus 授權
 |NFS.HeartbeatFrequency |	12 |
 |NFS.HeartbeatTimeout |	5 |
 |NFS.MaxQueueDepth|	64 |
-
+{: caption="表 2 - 主機端設定" caption-side="top"}
 
 ### 使用 CLI 來更新 ESXi 5.x 主機上的進階配置參數
 

@@ -47,7 +47,7 @@ Se o volume tiver a replicação em vigor, a réplica será atualizada automatic
 
 1. Acesse sua lista de {{site.data.keyword.filestorage_short}}
     - No portal do cliente, clique em **Armazenamento** > **{{site.data.keyword.filestorage_short}}** OU
-    - No console do {{site.data.keyword.BluSoftlayer_full}}, clique em **Infraestrutura** > **Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
+    - No console do {{site.data.keyword.cloud}}, clique em **Infraestrutura** > **Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
 2. Selecione o volume na lista e clique em **Ações** > **Modificar volume**
 3. Em **Opções de IOPS de armazenamento**, faça uma nova seleção:
     - Para o Endurance (IOPS em camadas), selecione uma camada de IOPS maior que 0,25 IOPS/GB de seu armazenamento. É possível aumentar a camada de IOPS a qualquer momento. No entanto, o decréscimo está disponível somente uma vez por mês.

@@ -25,7 +25,7 @@ No caso de uma falha catastrófica ou de um desastre que cause uma indisponibili
 
 ## Failover com uma duplicata de um volume de réplica no site secundário
 
-1. Efetue login no [console do IBM Cloud](https://{DomainName}/){: external} e clique no ícone **Menu** na parte superior esquerda. Selecione **Infraestrutura clássica**.
+1. Efetue login no [Console do IBM Cloud](https://{DomainName}/){: external} e clique no ícone **Menu** na parte superior esquerda. Selecione **Infraestrutura clássica**.
 
    Como alternativa, é possível efetuar login no [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
 2. Clique em **Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
@@ -41,7 +41,7 @@ Assim que o volume for criado, será possível anexá-lo a um host e executar op
 
 Se você desejar retornar a produção para o site primário original, as etapas a seguir deverão ser executadas.
 
-1. Efetue login no [console do IBM Cloud](https://{DomainName}/){: external} e clique no ícone **Menu** na parte superior esquerda. Selecione **Infraestrutura clássica**.
+1. Efetue login no [Console do IBM Cloud](https://{DomainName}/){: external} e clique no ícone **Menu** na parte superior esquerda. Selecione **Infraestrutura clássica**.
 
    Como alternativa, é possível efetuar login no [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
 2. Clique em **Armazenamento** > **{{site.data.keyword.filestorage_short}}**.

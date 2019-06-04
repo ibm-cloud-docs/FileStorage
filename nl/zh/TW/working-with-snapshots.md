@@ -158,7 +158,7 @@ Options:
 
 1. 從主機中卸載並分離您的儲存空間磁區。
    - 如需指示，請按一下[這裡](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)。
-2. 按一下 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 中的**儲存空間**、**{{site.data.keyword.filestorage_short}}**。
+2. 按一下 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 的**儲存空間**、**{{site.data.keyword.filestorage_short}}**。
 3. 向下捲動並按一下要還原的磁區。**詳細資料**頁面的 **Snapshot** 區段會顯示所有已儲存 Snapshot 的清單及其大小和建立日期。
 4. 按一下要使用之 Snapshot 旁的**動作**，然後按一下**還原**。<br/>
 

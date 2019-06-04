@@ -44,7 +44,7 @@ As limitações de tamanho existentes para o {{site.data.keyword.filestorage_sho
 ## Redimensionando o
 {: #resizingsteps}
 
-1. No {{site.data.keyword.slportal}}, clique em **Armazenamento** > **{{site.data.keyword.filestorage_short}}** OU, no catálogo do {{site.data.keyword.BluSoftlayer_full}}, clique em **Infraestrutura** > **Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
+1. No {{site.data.keyword.slportal}}, clique em **Armazenamento** > **{{site.data.keyword.filestorage_short}}** OU, no catálogo do {{site.data.keyword.cloud}}, clique em **Infraestrutura** > **Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
 2. Selecione o volume na lista e clique em **Ações** > **Modificar volume**
 3. Insira o novo tamanho de armazenamento em GB.
 4. Revise sua seleção e a nova precificação.

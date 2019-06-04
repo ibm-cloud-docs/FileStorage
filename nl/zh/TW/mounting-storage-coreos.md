@@ -55,4 +55,4 @@ cluster1 ~ # mount |grep data
 ```
 {:codeblock}
 
-如需相關資訊，請參閱 [`systemd mount` 文件](https://www.freedesktop.org/software/systemd/man/systemd.mount.html)
+如需相關資訊，請參閱 [`systemd mount` 文件](https://www.freedesktop.org/software/systemd/man/systemd.mount.html)。

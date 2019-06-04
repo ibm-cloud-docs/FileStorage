@@ -62,59 +62,25 @@ subcollection: FileStorage
 這取決於主機作業系統可處理的項目，而不是由 {{site.data.keyword.cloud}} 所限制。如需可裝載的檔案共用數目限制，請參閱 OS 文件。
 
 ## 每個檔案磁區大小容許多少個檔案共用？每個磁區大小容許的檔案共用上限為何？
+{: #maxfilevolume}
 {: faq}
 
-<table>
-  <caption>表 1 顯示根據磁區大小而容許的 Inode 數目上限。磁區大小在左直欄中。Inode 和檔案共用數目在右側。</caption>
-  <thead>
-    <tr>
-      <th>磁區大小</th>
-      <th>Inode 和檔案共用</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>20 GB - 39 GB</td>
-      <td>622,484</td>
-    </tr>
-    <tr>
-      <td>40 GB - 79 GB</td>
-      <td>1,245,084</td>
-    </tr>          
-    <tr>
-      <td>80 GB - 99 GB</td>
-      <td>2,490,263</td>
-    </tr>          
-    <tr>
-      <td>100 GB - 249 GB</td>
-      <td>3,112,863</td>
-    </tr>          
-    <tr>
-      <td>250 GB - 499 GB</td>
-      <td>7,782,300</td>
-    </tr>          
-    <tr>
-      <td>500 GB - 999 GB</td>
-      <td>15,564,695</td>
-    </tr>
-    <tr>
-      <td>1 TB</td>
-      <td>31,876,593</td>
-    </tr>
-    <tr>
-      <td>2 TB</td>
-      <td>63,753,186</td>
-    </tr>
-    <tr>
-      <td>3 TB</td>
-      <td>95,629,970</td>
-    </tr>
-    <tr>
-      <td>4 TB - 12 TB</td>
-      <td>127,506,359</td>
-    </tr>
-   </tbody>
-</table>
+|磁區大小|Inode 和檔案共用|
+|-----|-----|
+|20 GB - 39 GB|622,484|
+|40 GB - 79 GB|1,245,084|
+|80 GB - 99 GB|2,490,263|
+|100 GB - 249 GB|3,112,863|
+|250 GB - 499 GB|7,782,300|
+|500 GB - 999 GB|15,564,695|
+|1 TB|31,876,593|
+|2 TB|63,753,186|
+|3 TB|95,629,970|
+| 4 TB |127,506,359|
+{: row-headers}
+{: class="comparison-table"}
+{: caption="表格比較" caption-side="top"}
+{: summary="表 1 顯示根據磁區大小而容許的 Inode 數目上限。磁區大小在左邊直欄。Inode 和檔案共用的數目在右邊直欄。"}
 
 ## 測量 IOPS
 {: faq}
@@ -147,6 +113,7 @@ IOPS 是在磁區層次上施行。換句話說，連接至具有 6000 IOPS 之�
 傳輸量限制是依每個磁區層次設定。無法藉由使用更快的乙太網路來提高該限制。不過，乙太網路連線較慢時，您的頻寬可能是潛在瓶頸。
 
 ## 防火牆和安全群組是否會影響效能？
+{: #isolatedstoragetraffic}
 {: faq}
 
 最好是在 VLAN 上執行儲存空間資料流量，這樣會略過防火牆。透過軟體防火牆執行儲存空間資料流量，會增加延遲，而且會對儲存空間效能造成不利的影響。
@@ -164,9 +131,9 @@ IOPS 是在磁區層次上施行。換句話說，連接至具有 6000 IOPS 之�
 ## 支援哪些 NFS 版本？
 {: faq}
 
-在 {{site.data.keyword.cloud}} 環境中，同時支援 NFS 第 3 版及 NFS 4.1 版。 
+在 {{site.data.keyword.cloud}} 環境中，同時支援 NFS 第 3 版及 NFS 4.1 版。
 
-偏好的版本是 NFS 第 3 版，因為它是無狀態的通訊協定，在發生網路事件時較具復原力。 
+偏好的版本是 NFS 第 3 版，因為它是無狀態的通訊協定，在發生網路事件時較具復原力。
 
 NFS 第 3 版原本便支援 `no_root_squash`，可讓 root 用戶端保留對 NFS 共用的 root 許可權。您可以在 NFS 4.1 版中啟用此特性，方法是編輯網域資訊然後執行 `rpcidmapd` 或類似的服務。如需相關資訊，請參閱[為 NFS 實作 no_root_squash](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux#norootsquash)。
 

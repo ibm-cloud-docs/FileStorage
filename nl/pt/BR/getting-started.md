@@ -26,7 +26,7 @@ O {{site.data.keyword.filestorage_full}} é um {{site.data.keyword.filestorage_s
 ## Antes de Iniciar
 {: #prereqs}
 
-Os volumes do {{site.data.keyword.filestorage_short}} podem ser provisionados de 20 GB a 12 TB com duas opções: <br/>
+Os volumes do {{site.data.keyword.filestorage_short}} podem ser fornecidos de 20 GB a 12 TB com duas opções: <br/>
 - Provisiona camadas do **Endurance** que apresentam níveis de desempenho predefinidos e outros recursos, como capturas instantâneas e replicação.
 - Construa um ambiente **Performance** de alta potência com input/output operations per second (IOPS) alocado.
 
@@ -34,86 +34,42 @@ Para obter mais informações sobre a oferta do {{site.data.keyword.filestorage_
 
 ## Considerações de fornecimento
 
-### Tamanho do Bloco
+### Tamanho do bloco
 
-O IOPS para Endurance e Performance se baseia em um tamanho de bloco de 16 KB com uma carga de trabalho aleatória/sequencial 50/50 de leitura/gravação 50/50. Um bloco de 16 KB equivale a uma gravação no volume.
+O valor de IOPS para o Endurance e o Performance se baseia em um tamanho de bloco de 16 KB com uma carga de trabalho aleatória/sequencial 50/50 de leitura/gravação 50/50. Um bloco de 16 KB equivale a uma gravação no volume.
 {:important}
 
 O tamanho do bloco usado por seu aplicativo afetará diretamente o desempenho do armazenamento. Se o tamanho do bloco usado por seu aplicativo for menor que 16 KB, o limite do IOPS será realizado antes do limite do rendimento. Por outro lado, se o tamanho do bloco usado por seu aplicativo for maior que 16 KB, o limite de rendimento será realizado antes do limite do IOPS.
 
-<table>
-  <caption>A Tabela 4 mostra exemplos de como o tamanho do bloco e o IOPS afetam o rendimento.</caption>
-        <colgroup>
-          <col/>
-          <col/>
-          <col/>
-        </colgroup>
-        <thead>
-          <tr>
-            <th>Tamanho de bloco (KB)</th>
-            <th>IOPS</th>
-            <th>Rendimento (MB/s)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>4 (típico para Linux)</td>
-            <td>1.000</td>
-            <td>4</td>
-          </tr>
-          <tr>
-            <td>8 (típico para Oracle)</td>
-            <td>1.000</td>
-            <td>8</td>
-          </tr>
-          <tr>
-            <td>16</td>
-            <td>1.000</td>
-            <td>16</td>
-          </tr>
-          <tr>
-            <td>32 (típico para o SQL Server)</td>
-            <td>500</td>
-            <td>16</td>
-          </tr>          
-          <tr>
-            <td>64</td>
-            <td>250</td>
-            <td>16</td>
-          </tr>
-          <tr>
-            <td>128</td>
-            <td>128</td>
-            <td>16</td>
-          </tr>
-          <tr>
-            <td>512</td>
-            <td>32</td>
-            <td>16</td>
-          </tr>
-          <tr>
-            <td>1024</td>
-            <td>16</td>
-            <td>16</td>
-          </tr>
-        </tbody>
-</table>
+| Tamanho de bloco (KB) | IOPS | Rendimento (MB/s) |
+|-----|-----|-----|
+| 4 | 1.000 | 16 |
+| 8 | 1.000 | 16 |
+| 16 | 1.000 | 16 |
+| 32 | 500 | 16 |
+| 64 | 250 | 16 |
+| 128 | 128 | 16 |
+| 512 | 32 | 16 |
+| 1024 | 16 | 16 |
+{: caption="A Tabela 1 mostra exemplos de como o tamanho do bloco e o IOPS afetam o rendimento.<br/>Tamanho médio de IO x IOPS = rendimento em MB/s." caption-side="top"}
 
 ### Hosts autorizados
 
 Outro fator a ser considerado é o número de hosts que estão usando seu volume. Se houver um único host acessando o volume, poderá ser difícil realizar o IOPS máximo disponível, especialmente em contagens extremas de IOPS (10.000s). Se a sua carga de trabalho requerer alto rendimento, será melhor configurar pelo menos alguns servidores para acessar seu volume para evitar um gargalo de servidor único.
 
-### Conexão da rede
+### Conexão de rede
 
 A velocidade da sua conexão Ethernet deve ser mais rápida do que o rendimento máximo esperado de seu volume. Em geral, não espere saturar sua conexão Ethernet além de 70% da largura de banda disponível. Por exemplo, se você tiver 6.000 IOPS e estiver usando um tamanho de bloco de 16 KB, o volume poderá manipular o rendimento de aproximadamente 94 MBps. Se você tiver uma conexão Ethernet de 1 Gbps com seu LUN, ela se tornará um gargalo quando seus servidores tentarem usar o rendimento máximo disponível. Isso porque 70 por cento do limite teórico de uma conexão Ethernet de 1 Gbps (125 MB por segundo) permitiria 88 MB por segundo apenas.
 
 Para alcançar o IOPS máximo, recursos de rede adequados precisam estar em vigor. Outras considerações incluem o uso de rede privada fora do armazenamento e do lado do host, além de ajustes específicos do aplicativo (pilha de IP ou [profundidades de fila](/docs/infrastructure/FileStorage?topic=FileStorage-hostqueuesettings) e outras configurações).
 
+O tráfego de armazenamento deve ser isolado de outros tipos de tráfego e não direcionado por meio de firewalls e roteadores. Manter o tráfego de armazenamento em uma VLAN dedicada também ajuda a evitar a incompatibilidade de MTU quando quadros gigantes são ativados. Para obter mais informações, consulte [Quadros gigantes no IBM Cloud ](/docs/FileStorage?topic=FileStorage-jumboframes).
+
 O tráfego de armazenamento é incluído no uso total de rede de Virtual Servers Públicos. Para obter mais informações sobre os limites que podem ser impostos pelo serviço, consulte a [Documentação do Virtual Server](/docs/vsi?topic=virtual-servers-about-public-virtual-servers).
 
-### Versão de NFS
+### Versão do NFS
 
-O NFS v3 e NFS v4.1 são suportados no ambiente do {{site.data.keyword.BluSoftlayer_full}}. No entanto, o NFS v3 é preferencial porque o NFS v4.1 é um protocolo stateful (não stateless como o NFSv3) e problemas de protocolo podem ocorrer durante eventos de rede. O NFS v4.1 deve colocar em modo quiesce todas as operações e, em seguida, concluir a recuperação de bloqueio. Em um servidor de arquivos NFS relativamente ocupado, a latência aumentada pode causar interrupções. A falta de caminhos múltiplos e entroncamento do NFS v4.1 também pode estender a recuperação das operações do NFS.
+O NFS v3 e NFS v4.1 são suportados no ambiente do {{site.data.keyword.cloud}}. No entanto, o NFS v3 é preferencial porque o NFS v4.1 é um protocolo stateful (não stateless como o NFSv3) e problemas de protocolo podem ocorrer durante eventos de rede. O NFS v4.1 deve colocar em modo quiesce todas as operações e, em seguida, concluir a recuperação de bloqueio. Em um servidor de arquivos NFS relativamente ocupado, a latência aumentada pode causar interrupções. A falta de caminhos múltiplos e entroncamento do NFS v4.1 também pode estender a recuperação das operações do NFS.
 
 ## Enviando sua Ordem
 

@@ -21,7 +21,7 @@ subcollection: FileStorage
 # Provisionando  {{site.data.keyword.filestorage_short}}  com VMware
 {: #architectureguide}
 
-As etapas a seguir podem ajudar você a pedir e configurar o {{site.data.keyword.filestorage_full}} em um ambiente do vSphere 5.5 e vSphere 6.0 no {{site.data.keyword.BluSoftlayer_full}}.
+As etapas a seguir podem ajudar você a pedir e configurar o {{site.data.keyword.filestorage_full}} em um ambiente do vSphere 5.5 e vSphere 6.0 no {{site.data.keyword.cloud}}.
 
 O {{site.data.keyword.filestorage_short}} foi projetado para suportar aplicativos de alta E/S que requerem níveis previsíveis de desempenho. O desempenho previsível é alcançado por meio da alocação de input/output operations per second (IOPS) de nível de protocolo para volumes individuais.
 
@@ -38,83 +38,42 @@ Ao pedir o {{site.data.keyword.filestorage_short}}, considere as informações a
 
 - Quando você decidir sobre o tamanho, considere o tamanho da carga de trabalho e o rendimento necessário. O tamanho é importante com o serviço Endurance, que escala o desempenho linearmente em relação à capacidade (IOPS/GB). Por outro lado, o serviço Performance permite que o administrador escolha a capacidade e o desempenho independentemente. Os requisitos de rendimento são importantes com o Performance.
 
-  O cálculo de rendimento é IOPS x 16 KB. O IOPS é medido com base em um tamanho de bloco de 16 KB com uma combinação de leitura/gravação de 50/50.<br/>Aumentar o tamanho do bloco aumenta o rendimento, mas diminui o IOPS. Por exemplo, dobrar o tamanho do bloco para blocos de 32 KB mantém o rendimento máximo, mas diminui pela metade o IOPS.
+  O cálculo de rendimento é IOPS x 16 KB. O IOPS é medido com base em um tamanho de bloco de 16 KB com uma combinação de leitura/gravação de 50/50.<br/>Aumentar o tamanho de bloco aumenta o rendimento, mas diminui o IOPS. Por exemplo, dobrar o tamanho do bloco para blocos de 32 KB mantém o rendimento máximo, mas diminui pela metade o IOPS.
   {:note}
 
 - O NFS usa muitas operações de controle de arquivo extras, como `lookup`, `getattr` e `readdir`. Essas operações, além das operações de leitura/gravação, podem contar como IOPS e variam por tipo de operação e versão do NFS.
 - Os volumes do {{site.data.keyword.filestorage_short}} são expostos a dispositivos, sub-redes ou endereços IP autorizados.
 - Para evitar a desconexão de armazenamento durante o failover do caminho, a {{site.data.keyword.IBM}} recomenda a instalação de ferramentas do VMware, as quais configuram um valor de tempo limite apropriado. Não há necessidade de mudar o valor, a configuração padrão é suficiente para assegurar que o host do VMware não perca a conectividade.
-- Tanto o NFSv3 quanto o NFSv4.1 são suportados no ambiente do {{site.data.keyword.BluSoftlayer_full}}. No entanto, a {{site.data.keyword.IBM}} sugere que você use o NFSv3. Como o NFSv4.1 é um protocolo stateful (não um protocolo sem preservação de estado, como o NFSv3), podem ocorrer problemas de protocolo durante eventos de rede. O NFSv4.1 deve colocar em modo quiesce todas as operações e, em seguida, concluir a solicitação de bloqueio. Enquanto essas operações estão acontecendo, interrupções podem ocorrer.
+- Tanto o NFSv3 quanto o NFSv4.1 são suportados no ambiente do {{site.data.keyword.cloud}}. No entanto, a {{site.data.keyword.IBM}} sugere que você use o NFSv3. Como o NFSv4.1 é um protocolo stateful (não um protocolo sem preservação de estado, como o NFSv3), podem ocorrer problemas de protocolo durante eventos de rede. O NFSv4.1 deve colocar em modo quiesce todas as operações e, em seguida, concluir a solicitação de bloqueio. Enquanto essas operações estão acontecendo, interrupções podem ocorrer.
 
 Para obter mais informações, consulte o White Paper do VMware em [Melhores práticas para executar
-o VMware vSphere em um armazenamento conectado à rede](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){: external}
+o VMware vSphere em armazenamento conectado à rede](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){: external}
 {:tip}
 
-** Matriz de suporte do recurso do VMware Protocol VMware **
-<table>
-  <caption>A Tabela 1 mostra os recursos do vSphere conforme se aplicam às duas versões diferentes do NFS.</caption>
- <thead>
-  <tr>
-   <th>Recursos do vSphere</th>
-   <th>NFS versão 3</th>
-   <th>NFS versão 4.1</th>
-  </tr>
- </thead>
- <tbody>
-  <tr>
-   <td>vMotion e Storage vMotion</td>
-   <td>Sim</td>
-   <td>Sim</td>
-  </tr>
-  <tr>
-   <td>Alta Disponibilidade (HA)</td>
-   <td>Sim</td>
-   <td>Sim</td>
-  </tr>
-  <tr>
-   <td>Fault Tolerance (FT)</td>
-   <td>Sim</td>
-   <td>Sim</td>
-  </tr>
-  <tr>
-   <td>Distributed Resource Scheduler (DRS)</td>
-   <td>Sim</td>
-   <td>Sim</td>
-  </tr>
-  <tr>
-   <td>Host Profiles</td>
-   <td>Sim</td>
-   <td>Sim</td>
-  </tr>
-  <tr>
-   <td>Storage DRS</td>
-   <td>Sim</td>
-   <td>Nenhuma</td>
-  </tr>
-  <tr>
-   <td>Storage I/O Control</td>
-   <td>Sim</td>
-   <td>Nenhuma</td>
-  </tr>
-  <tr>
-   <td>Site Recovery Manager</td>
-   <td>Sim</td>
-   <td>Nenhuma</td>
-  </tr>
-  <tr>
-   <td>Virtual Volumes</td>
-   <td>Sim</td>
-   <td>Nenhuma</td>
-  </tr>
- </tbody>
-</table>
-*Fonte - [VMware: protocolos NFS e ESXi](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){: external}*
+### Matriz de suporte do recurso VMware do protocolo NFS
 
+| Recursos do vSphere | NFS versão 3 | NFS versão 4.1 |
+|-----|-----|-----|
+| vMotion e Storage vMotion | Sim | Sim |
+| Alta Disponibilidade (HA) | Sim | Sim |
+| Fault Tolerance (FT) | Sim | Sim |
+| Distributed Resource Scheduler (DRS) | Sim< | Sim |
+| Host Profiles | Sim | Sim |
+| Storage DRS | Sim | Nenhuma |
+| Storage I/O Control | Sim | Nenhuma |
+| Site Recovery Manager | Sim | Nenhuma |
+| Virtual Volumes | Sim | Nenhuma |
+{: row-headers}
+{: class="comparison-table"}
+{: caption="Tabela 1 - Matriz de suporte do recurso VMware do protocolo NFS." caption-side="top"}
+{: summary="This table has row and column headers. The row headers identify the vSphere features. The column headers identify the NSF version. To see if a feature is enabled navigate to the row of the feature and look at the column that is associated with the NFS version you use."}
+
+*Fonte - [VMware - Protocolos NFS e ESXi](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){: external}*
 
 
 ### Usando capturas instantâneas
 
-O {{site.data.keyword.filestorage_short}} permite que os administradores configurem programações de capturas instantâneas que criam e excluem cópias de capturas instantânea automaticamente para cada volume de armazenamento. Eles também podem criar planejamentos de captura instantânea extra (por hora, diário, semanal) para capturas instantâneas automáticas e criar capturas instantâneas ad hoc manualmente para cenários de business continuity and disaster recovery (BCDR). Alertas automáticos são entregues por meio do [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} ao proprietário do volume para as capturas instantâneas retidas e o espaço usado.
+O {{site.data.keyword.filestorage_short}} permite que os administradores configurem programações de capturas instantâneas que criam e excluem cópias de capturas instantânea automaticamente para cada volume de armazenamento. Eles também podem criar planejamentos de captura instantânea extra (por hora, diário, semanal) para capturas instantâneas automáticas e criar capturas instantâneas ad hoc manualmente para cenários de business continuity and disaster recovery (BCDR). Os alertas automáticos são entregues por meio do [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} ao proprietário do volume para as capturas instantâneas retidas e o espaço usado.
 
 O espaço de captura instantânea é necessário para usar capturas instantâneas. O espaço pode ser comprado no pedido de volume inicial ou após o fornecimento inicial por meio da página **Detalhes do volume** clicando em **Ações** e selecionando **Incluir espaço de captura instantânea**.
 
@@ -155,14 +114,14 @@ Use a [Arquitetura de referência do Advanced Single-Site VMware](https://{Domai
 
 O {{site.data.keyword.filestorage_short}} pode ser pedido por meio do [Catálogo do IBM Cloud](https://{DomainName}/catalog){: external} ou do [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}. Para obter mais informações, consulte [Pedindo o {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)
 
-O armazenamento é fornecido em menos de um minuto e fica visível na página **{{site.data.keyword.filestorage_short}}** do [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
+O armazenamento é provisionado em menos de um minuto e torna-se visível na página **{{site.data.keyword.filestorage_short}}** do [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
 
 Quando um volume é provisionado, o {{site.data.keyword.BluBareMetServers_full}} ou o {{site.data.keyword.BluVirtServers_full}} que usará o volume deve estar autorizado a acessar o armazenamento. Use as etapas a seguir para autorizar o volume.
 
 1. Clique em **Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
 2. Selecione **Acessar host** no menu **Ações de volume do Performance** ou **Endurance**.
 3. Clique em  **Subnets**.
-4. Escolha na lista de sub-redes disponíveis que estão designadas às portas do VMkernel nos hosts ESXi e clique em **Enviar**.<br/>
+4. Escolha na lista de sub-redes disponíveis designadas às portas do VMkernel nos hosts ESXi e clique em **Enviar**.<br/>
 
    As sub-redes que são exibidas são sub-redes inscritas no mesmo data center que o volume de armazenamento.
    {:note}
@@ -175,7 +134,7 @@ Depois que as sub-redes forem autorizadas, anote o nome do host do servidor de a
 Antes de iniciar o processo de configuração do VMware, certifique-se de que os pré-requisitos a seguir sejam atendidos:
 
 - Os {{site.data.keyword.BluBareMetServers}} com VMware ESXi são provisionados com a configuração de armazenamento adequada e as credenciais de login do ESXi.
-- Os {{site.data.keyword.virtualmachinesshort}} ou físicos do Windows do {{site.data.keyword.cloud}} no mesmo data center que o {{site.data.keyword.BluBareMetServers}}. Incluindo o endereço IP público da VM do Windows do {{site.data.keyword.cloud}} e credenciais de login.
+- {{site.data.keyword.cloud}} Windows físico ou {{site.data.keyword.virtualmachinesshort}} no mesmo data center que o {{site.data.keyword.BluBareMetServers}}. Incluindo o endereço IP público da VM do Windows do {{site.data.keyword.cloud}} e credenciais de login.
 - Um computador com acesso à Internet e com o software de navegador da web e um cliente Remote Desktop Protocol (RDP) instalados.
 
 
@@ -185,7 +144,7 @@ Antes de iniciar o processo de configuração do VMware, certifique-se de que os
 2. No {{site.data.keyword.BluVirtServers_short}}, inicie um navegador da web e conecte-se ao VMware vCenter por meio do vSphere Web Client.
 3. Na tela **INÍCIO**, selecione **Hosts e clusters**. Expanda a área de janela à esquerda e selecione o **Servidor VMware ESXi** que deve ser usado para esta implementação.
 4. Certifique-se de que a porta de firewall do cliente NFS esteja aberta em todos os hosts para que seja possível configurar o cliente NFS no host vSphere. (A porta é aberta automaticamente nas liberações mais recentes do vSphere.) Para verificar se a porta está aberta, acesse a guia **Gerenciamento do host ESXi** no VMware® vCenter™, selecione **Configurações** e, em seguida, selecione **Perfil de segurança**. Na seção **Firewall**, clique em **Editar** e role para baixo para **Cliente NFS**.
-5. Certifique-se de que **Permitir conexão de qualquer endereço IP ou uma lista de endereços IP** seja fornecido. <br/>
+5. Certifique-se de que **Permitir conexão de qualquer endereço IP ou de uma lista de endereços IP** seja fornecido. <br/>
    ![Permitir conexão](/images/1_4.png)
 6. Configure quadros gigantes acessando a guia **Gerenciar do host ESXi**, selecione **Gerenciar** e, em seguida, **Rede**.
 7. Selecione **Adaptadores VMkernel**, destaque o **vSwitch** e, em seguida, clique em **Editar** (Ícone de lápis).
@@ -224,7 +183,7 @@ Para obter mais informações sobre o VMware e os quadros gigantes, clique [aqui
 5. Selecione o **vSwitch** existente e clique em **Avançar**.
 6. Selecione **Adaptadores não usados** e clique em **Incluir adaptadores** (Sinal de mais).
 7. Clique no outro adaptador "Conectado" e clique em **OK**. <br/>
-   ![Add physical adapters to switch](/images/2_3.png)
+   ![Incluir adaptadores físicos no comutador](/images/2_3.png)
 8. Clique em **Avançar** e **Concluir**.
 9. Volte para a guia **Comutadores virtuais** e selecione a **Configuração de edição** (Ícone de lápis) sob o título **Comutadores virtuais**.
 10. À esquerda, selecione a entrada **Equipe e failover** do vSwitch.
@@ -251,7 +210,7 @@ A configuração de rede para este guia de arquitetura usa um número mínimo de
 
 2. As rotas estáticas não são persistentes nas reinicializações no ESXi 5.0 e anteriores. Para assegurar-se de que quaisquer rotas estáticas incluídas permaneçam persistentes, esse comando precisará ser incluído no arquivo `local.sh` em cada host, que está localizado no diretório `/etc/rc.local.d/`. Abra o arquivo `local.sh` usando o editor visual e inclua o segundo comando na Etapa 4.1. na frente da linha `exit 0`.
 
-Anote o endereço IP, pois ele poderá ser usado para montar o volume na próxima etapa.<br/>Esse processo precisa ser feito para cada volume NFS que você planeja montar em seu host ESXi.<br/>Para obter mais informações, consulte o artigo da Base de conhecimento do VMware, [Configurando rotas estáticas para as portas do VMkernel em um host do ESXi](https://kb.vmware.com/s/article/2001426){: external}.
+Anote o endereço IP, pois ele pode ser usado para montar o volume na próxima etapa.<br/>Esse processo precisar ser feito para cada volume NFS que você planeja montar em seu host ESXi.<br/>Para obter mais informações, consulte o artigo VMware KB, [Configurando rotas estáticas para portas VMkernel em um host ESXi](https://kb.vmware.com/s/article/2001426){: external}.
 {:tip}
 
 
@@ -307,7 +266,7 @@ A configuração incorreta do SIOC para um armazenamento de dados do VMware ou p
 2. Clique na guia **Gerenciar**.
 3. Clique em **Configurações** e clique em **Geral**.
 4. Clique em **Editar** para **Recursos de armazenamento de dados**.
-5. Marque a caixa de seleção **Ativar Storage I/O Control**.<br/>
+5. Marque a caixa de seleção **Ativar controle de E/S de armazenamento**.<br/>
    ![Armazenamento de dados do NSF VMware](/images/3_0.png)
 6. Clique em **OK**.
 
@@ -342,14 +301,14 @@ Configurações extras são necessárias para configurar hosts ESXi 5.x para arm
 |Parâmetro | Configure para... |
 |----------|------------|
 |Net.TcpipHeapSize |	32 |
-|Net.TcpipHeapMax |	Para vSphere 5.0/5.1, configure 128 <br/> Para o vSphere 5.5 ou mais recente, configure 512 |
+|Net.TcpipHeapMax |	Para o vSphere 5.0/5.1, configure 128 <br/> Para o vSphere 5.5 ou mais recente, configure 512 |
 |NFS.MaxVolumes |	256 |
 |NFS41.MaxVolumes |	256 (somente vSphere 6.0 ou mais recente) |
 |NFS.HeartbeatMaxFailures |	10 |
 |NFS.HeartbeatFrequency |	12 |
 |NFS.HeartbeatTimeout |	5 |
 |NFS.MaxQueueDepth|	64 |
-
+{: caption="Tabela 2 - Configurações do lado do host" caption-side="top"}
 
 ### Atualizando parâmetros de configuração avançada no host ESXi 5.x usando o CLI
 

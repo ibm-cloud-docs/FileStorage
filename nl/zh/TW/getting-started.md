@@ -35,68 +35,22 @@ subcollection: FileStorage
 
 ### 區塊大小
 
-「耐久性」及「效能」的 IOPS 都是根據 16 KB 區塊大小（具有 50/50 讀寫 50/50 隨機/循序工作負載）。16 KB 區塊相當於寫入一次磁區。
+「耐久性」及「效能」的 IOPS 值都是根據 16 KB 區塊大小（具有 50/50 讀寫 50/50 隨機/循序工作負載）。16 KB 區塊相當於寫入一次磁區。
 {:important}
 
 應用程式所使用的區塊大小會直接影響儲存空間效能。如果應用程式所使用的區塊大小小於 16 KB，則 IOPS 限制會比傳輸量限制更早實現。反之，如果應用程式所使用的區塊大小大於 16 KB，則傳輸量限制會比 IOPS 限制更早實現。
 
-<table>
-  <caption>表 4 顯示區塊大小及 IOPS 如何影響傳輸量的範例。</caption>
-        <colgroup>
-          <col/>
-          <col/>
-          <col/>
-        </colgroup>
-        <thead>
-          <tr>
-            <th>區塊大小 (KB)</th>
-            <th>IOPS</th>
-            <th>傳輸量（MB/秒）</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>4（一般用於 Linux）</td>
-            <td>1,000</td>
-            <td>4</td>
-          </tr>
-          <tr>
-            <td>8（一般用於 Oracle）</td>
-            <td>1,000</td>
-            <td>8</td>
-          </tr>
-          <tr>
-            <td>16</td>
-            <td>1,000</td>
-            <td>16</td>
-          </tr>
-          <tr>
-            <td>32（一般用於 SQL Server）</td>
-            <td>500</td>
-            <td>16</td>
-          </tr>          
-          <tr>
-            <td>64</td>
-            <td>250</td>
-            <td>16</td>
-          </tr>
-          <tr>
-            <td>128</td>
-            <td>128</td>
-            <td>16</td>
-          </tr>
-          <tr>
-            <td>512</td>
-            <td>32</td>
-            <td>16</td>
-          </tr>
-          <tr>
-            <td>1024</td>
-            <td>16</td>
-            <td>16</td>
-          </tr>
-        </tbody>
-</table>
+|區塊大小 (KB)|IOPS|傳輸量（MB/秒）|
+|-----|-----|-----|
+|4|1,000|16|
+|8|1,000|16|
+|16|1,000|16|
+|32 |500|16|
+|64 |250|16|
+|128|128|16|
+|512|32 |16|
+| 1024 |16|16|
+{: caption="表 1 顯示區塊大小及 IOPS 如何影響傳輸量的範例。<br/>平均 IO 大小 x IOPS = 傳輸量（以 MB/s 為單位）。" caption-side="top"}
 
 ### 授權主機
 
@@ -107,6 +61,8 @@ subcollection: FileStorage
 乙太網路連線的速度必須比來自您磁區的預期最大傳輸量更快。一般而言，請不要預期乙太網路連線飽和度超過可用頻寬的 70%。例如，如果您有 6,000 IOPS 而且要使用 16 KB 區塊大小，則磁區能處理大約 94 MBps 的傳輸量。如果您的 LUN 有一條 1 Gbps 乙太網路連線，則當伺服器嘗試使用最大可用傳輸量時，它會變成瓶頸。原因是 1 Gbps 乙太網路連線理論限制（每秒 125 MB）的 70% 只容許每秒 88 MB。
 
 為達到最大 IOPS，需要有足夠的網路資源。其他考量包括儲存空間及主機端之外的專用網路使用情形，以及應用程式特定的調整（IP 堆疊或[佇列深度](/docs/infrastructure/FileStorage?topic=FileStorage-hostqueuesettings)，以及其他設定）。
+
+儲存空間資料流量應該與其他資料流量類型隔離，且不應該透過防火牆和路由器導向。將儲存空間資料流量保留在專用的 VLAN 中也有助於避免當啟用巨大訊框時 MTU 不符。如需相關資訊，請參閱 [IBM Cloud 中的巨大訊框](/docs/FileStorage?topic=FileStorage-jumboframes)。
 
 儲存空間資料流量包含在「公用虛擬伺服器」的網路總用量中。若要進一步瞭解該服務可能強制的限制，請參閱[虛擬伺服器文件](/docs/vsi?topic=virtual-servers-about-public-virtual-servers)。
 

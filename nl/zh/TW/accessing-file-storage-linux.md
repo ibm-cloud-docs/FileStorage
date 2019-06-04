@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-22"
+lastupdated: "2019-05-06"
 
 keywords: File Storage, NSF, mounting File Storage, mounting storage on Linux,
 
@@ -110,7 +110,7 @@ Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
    {:tip}
 
    如果您的主機 OS 是 CentOS，可以配置其他選項。如需相關資訊，請參閱[在 CentOS 裝載 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)。
-
+   
 
 
 ## 實作 NFS 的 `no_root_squash`（選用）
@@ -142,3 +142,16 @@ Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
    # /etc/init.d/rpcidmapd start
    Starting RPC idmapd: [ OK ]
    ```
+## 解除裝載檔案系統
+
+若要在您的主機上解除裝載任何目前已裝載的檔案系統，請用磁碟名稱或裝載點名稱執行 `umount` 指令。
+
+```
+umount /dev/sdb
+```
+{:pre}
+
+```
+umount /mnt
+```
+{:pre}

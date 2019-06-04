@@ -24,7 +24,7 @@ subcollection: FileStorage
 
 您可以從**主要**及**抄本**磁區建立重複磁區。新的重複磁區會建立在與原始磁區相同的資料中心內。如果您建立抄本磁區的重複磁區，則新的磁區會建立在與抄本磁區相同的資料中心內。
 
-如果您是 {{site.data.keyword.containerlong}} 的「專用」帳戶使用者，請參閱 [{{site.data.keyword.containerlong_notm}} 文件](/docs/containers?topic=containers-backup_restore#backup_restore)中您用於複製磁區的選項。
+如果您是 {{site.data.keyword.containerlong}} 的「專用」帳戶使用者，請參閱 [{{site.data.keyword.containerlong_notm}} 文件](/docs/containers?topic=containers-file_storage#file_backup_restore)中您用於複製磁區的選項。
 {:tip}
 
 佈建儲存空間之後，主機就可以存取重複磁區來進行讀寫。不過，除非從原始磁區到重複磁區的資料複製已完成，否則不容許進行 Snapshot 及抄寫。資料複製完成後，即可將重複磁區當作獨立的磁區來管理及使用。
@@ -39,7 +39,7 @@ subcollection: FileStorage
 - **開發及測試 (dev/test)**。一次最多可同時建立磁區的四個重複磁區，以建立重複資料來進行開發及測試。
 - **調整儲存空間大小**。建立具有新大小及（或）IOPS 速率的磁區，而不需要移動資料。  
 
-有幾種方法可讓您透過 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 來建立重複磁區。
+您可以利用下列幾種方法透過 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 來建立重複磁區。
 
 
 ## 建立儲存空間清單中特定磁區的重複磁區
@@ -50,7 +50,7 @@ subcollection: FileStorage
 2. 從清單中選取 LUN，然後按一下**動作** > **複製 LUN（磁區）**
 3. 選擇 Snapshot 選項。
     - 如果您從非抄本磁區訂購，請執行下列動作：
-      - 選取**從新 Snapshot 建立** – 此動作會建立要用於重複磁區的 Snapshot。如果您的磁區沒有目前 Snapshot，或您要建立該時間點的重複項目，則請使用此選項。</br>
+      - 選取**從新 Snapshot 建立** – 此動作會建立要用於重複磁區的 Snapshot。如果您的磁區沒有目前 Snapshot，或您要建立該時間點的重複項目，則請使用此選項。
       - 選取**從最新 Snapshot 建立** – 此動作會從此磁區的現有最新 Snapshot 建立重複磁區。
     - 如果您從抄本磁區訂購，Snapshot 的唯一選項是使用可用的最新 Snapshot。
 4. 「儲存空間類型」及「位置」會維持與原始磁區相同。

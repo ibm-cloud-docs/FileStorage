@@ -26,7 +26,7 @@ de captura instantânea](/docs/infrastructure/FileStorage?topic=FileStorage-snap
 
 As duplicatas podem ser criadas de ambos os volumes, o **primário** e o de **réplica**. A nova duplicata é criada no mesmo data center que o volume original. Se você criar uma duplicata de um volume de réplica, o novo volume será criado no mesmo data center que o volume de réplica.
 
-Se você for um usuário da conta Dedicada do {{site.data.keyword.containerlong}}, consulte suas opções para duplicar um volume na [{{site.data.keyword.containerlong_notm}}documentação](/docs/containers?topic=containers-backup_restore#backup_restore).
+Se você for um usuário da conta Dedicada do {{site.data.keyword.containerlong}}, consulte suas opções para duplicar um volume na [{{site.data.keyword.containerlong_notm}}documentação](/docs/containers?topic=containers-file_storage#file_backup_restore).
 {:tip}
 
 Os volumes duplicados podem ser acessados por um host para leitura/gravação assim que o armazenamento é provisionado. No entanto, capturas instantâneas e replicação não são permitidas até que a cópia de dados do original para a duplicata seja concluída. Quando a cópia de dados for concluída, a duplicata poderá ser gerenciada e usada como um volume independente.
@@ -41,18 +41,18 @@ Alguns usos comuns para um volume duplicado incluem os exemplos a seguir.
 - **Desenvolvimento e teste (dev/test)**. Crie até quatro duplicatas simultâneas de um volume ao mesmo tempo para criar dados duplicados para desenvolvimento e teste.
 - **Redimensionamento de armazenamento**. Crie um volume com novo tamanho, taxa IOPS, ou ambos, sem a necessidade de mover seus dados.  
 
-É possível criar um volume duplicado por meio do [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} de algumas maneiras.
+É possível criar um volume duplicado por meio do [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} de duas maneiras.
 
 
 ## Criando uma duplicata de um volume específico na Lista de armazenamento
 
 1. Acesse sua lista de {{site.data.keyword.filestorage_short}}
     - No portal do cliente, clique em **Armazenamento** > **{{site.data.keyword.filestorage_short}}** OU
-    - No catálogo do {{site.data.keyword.BluSoftlayer_full}}, clique em **Infraestrutura** > **Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
+    - No catálogo do {{site.data.keyword.cloud}}, clique em **Infraestrutura** > **Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
 2. Selecione um LUN na lista e clique em **Ações** > **Duplicar LUN (Volume)**
 3. Escolha sua opção de captura instantânea.
     - Se você pedir por meio de um volume que não é de réplica,
-      - Selecione **Criar de uma nova captura instantânea** - essa ação cria uma captura instantânea a ser usada para a duplicata. Use essa opção se o seu volume não tiver capturas instantâneas atuais ou se você desejar criar uma duplicata logo em seguida.</br>
+      - Selecione **Criar de uma nova captura instantânea** - essa ação cria uma captura instantânea a ser usada para a duplicata. Use essa opção se o seu volume não tem capturas instantâneas atuais ou se você deseja criar uma duplicata logo em seguida.</br>
       - Selecione **Criar da captura instantânea mais recente** - essa ação cria uma duplicata da captura instantânea mais recente existente para esse volume.
     - Se você pedir usando um volume de réplica, a única opção para a captura instantânea será usar a captura instantânea mais recente disponível.
 4. O Tipo de armazenamento e o Local permanecem iguais aos do volume original.

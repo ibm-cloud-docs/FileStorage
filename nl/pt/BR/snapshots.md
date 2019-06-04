@@ -60,25 +60,12 @@ As cópias de captura instantânea minimizam o consumo de disco preservando bloc
 
 No sistema de arquivos ativo, os blocos mudados são regravados para locais diferentes no disco ou removidos como blocos de arquivos ativos inteiramente. Quando os arquivos são mudados ou excluídos, os blocos de arquivos originais são preservados como parte de uma ou mais cópias de captura instantânea. Como resultado, o espaço em disco que é usado pelos blocos originais ainda está reservado para refletir o status do sistema de arquivos ativo antes da mudança. Esse espaço é reservado, além do espaço em disco que é usado por blocos no sistema de arquivos ativo modificado.
 
-<table>
-    <colgroup>
-      <col style="width: 33.3%;"/>
-      <col style="width: 33.3%;"/>
-      <col style="width: 33.3%;"/>
-    </colgroup>
-      <tr>
-        <th colspan="3" style="border: 0.0px;text-align: center;">Uso de espaço em disco antes e depois da cópia de captura instantânea</th>
-     </tr>
-     <tr>
-        <td style="border: 0.0px;text-align: center;"><img src="/images/bfcircle1.png" alt="Antes da cópia de captura instantânea"></td>
-        <td style="border: 0.0px;text-align: center;"><img src="/images/bfcircle3.png" alt="Depois da cópia de captura instantânea"></td>
-        <td style="border: 0.0px;text-align: center;"><img src="/images/bfcircle2.png" alt="Mudanças após a cópia de captura instantânea"></td>
-     </tr>
-     <tr>
-        <td style="border: 0.0px;">Antes que qualquer cópia de captura instantânea seja criada, o espaço em disco é usado somente pelo sistema de arquivos ativo.</td>
-        <td style="border: 0.0px;">Depois que uma cópia de Captura instantânea é criada, o sistema de arquivos ativo e a cópia de Captura instantânea apontam para os mesmos blocos de disco. A cópia de captura instantânea não usa espaço em disco extra.</td>
-        <td style="border: 0.0px;">Depois que <i>myfile.txt</i> é excluído do sistema de arquivos ativo, a cópia de Captura instantânea ainda inclui o arquivo e referencia seus blocos de disco. É por isso que a exclusão de dados do sistema de arquivos ativo nem sempre libera espaço em disco.</td>
-      </tr>
-</table>
+| Uso de espaço em disco |   |
+|-----|-----|
+| ![O espaço que é usado antes da obtenção da cópia de captura instantânea](/images/bfcircle1.png "Antes da cópia de captura instantânea") | Antes que qualquer cópia de captura instantânea seja criada, o espaço em disco é usado somente pelo sistema de arquivos ativo. |
+| ![O espaço que é usado quando uma cópia de captura instantânea é obtida](/images/bfcircle3.png "Depois da cópia de captura instantânea") | Depois que uma cópia de Captura instantânea é criada, o sistema de arquivos ativo e a cópia de Captura instantânea apontam para os mesmos blocos de disco. A cópia de captura instantânea não usa espaço em disco extra.  |
+| ![O espaço que é usado quando algo muda depois que uma cópia de captura instantânea é obtida](/images/bfcircle2.png "Mudanças depois da cópia de captura instantânea") | Depois que `myfile.txt` é excluído do sistema de arquivos ativo, a cópia de Captura instantânea ainda inclui o arquivo e referencia seus blocos de disco. É por isso que a exclusão de dados do sistema de arquivos ativo nem sempre libera espaço em disco. |
+{: caption="A Tabela 1 mostra como as capturas instantâneas afetam o uso de espaço no armazenamento." caption-side="top"}
+
 
 Para obter mais informações sobre o uso de espaço de captura instantânea, consulte [Gerenciando capturas instantâneas](/docs/infrastructure/FileStorage?topic=FileStorage-managingSnapshots)

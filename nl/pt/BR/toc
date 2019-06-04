@@ -52,6 +52,8 @@ IBM Cloud Storage - File Storage
 
     {: .navgroup id="help"}
     faqs.md
-    [Informações do cliente de API do Python](https://softlayer-python.readthedocs.io/en/latest/index.html)
+    [Informações do cliente da API do Python](https://softlayer-python.readthedocs.io/en/latest/index.html)
     slcli-usage.md
+    [IBM Cloud CLI and Developer Tools](https://cloud.ibm.com/docs/cli/reference/ibmcloud?topic=cloud-cli-sl-file-storage-service)
+    [Identity and Access Management](https://cloud.ibm.com/docs/iam?topic=iam-infrapermission)
     {: .navgroup-end}

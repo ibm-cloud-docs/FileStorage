@@ -160,9 +160,9 @@ Talvez seja necessário retornar o seu volume de armazenamento para um momento e
 
 1. Desmonte e separe seu volume de armazenamento do host.
    - Clique [aqui](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux) para obter instruções.
-2. Clique em **Armazenamento**, **{{site.data.keyword.filestorage_short}}** no [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
+2. Clique em **Armazenamento**, **{{site.data.keyword.filestorage_short}}**, no [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
 3. Role para baixo e clique no seu volume a ser restaurado. A seção **Capturas instantâneas** da página **Detalhes** exibe a lista de todas as capturas instantâneas salvas juntamente com seu tamanho e data de criação.
-4. Clique em **Ações** próximo à captura instantânea a ser usada e clique em **Restaurar**. <br/>
+4. Clique em **Ações** ao lado da captura instantânea a ser usada e clique em **Restaurar**. <br/>
 
    A conclusão da restauração resulta na perda dos dados que foram criados ou modificados depois que a captura instantânea foi obtida. Essa perda de dados ocorre porque seu volume de armazenamento retorna para o mesmo estado em que estava no momento da captura instantânea.
    {:note}

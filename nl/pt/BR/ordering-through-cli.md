@@ -18,9 +18,9 @@ subcollection: FileStorage
 # Pedindo o {{site.data.keyword.filestorage_short}} por meio do SLCLI
 {: #orderingSLCLI}
 
-É possível usar o SLCLI para fazer pedidos de produtos que normalmente são pedidos por meio do [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}. Na API do SL, um pedido pode consistir em múltiplos contêineres de pedido. A CLI de pedido funciona com apenas um contêiner de pedido.
+É possível usar o SLCLI para fazer pedidos para produtos que normalmente são pedidos por meio do [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}. Na API do SL, um pedido pode consistir em múltiplos contêineres de pedido. A CLI de pedido funciona com apenas um contêiner de pedido.
 
-Para obter mais informações sobre como instalar e usar o SLCLI, consulte [Cliente da API de Python](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}.
+Para obter mais informações sobre como instalar e usar o SLCLI, consulte [Cliente da API do Python](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}.
 {:tip}
 
 ## Procurando ofertas disponíveis do {{site.data.keyword.filestorage_short}}
@@ -130,7 +130,7 @@ Options:
   --help                    Show this message and exit.
 ```
 
-Para obter mais informações sobre como autorizar hosts para acessar o {{site.data.keyword.filestorage_short}} por meio da API, consulte [authorize_host_to_volume![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://softlayer-python.readthedocs.io/en/latest/api/managers/file/#SoftLayer.managers.file.FileStorageManager.authorize_host_to_volume){: external}.
+Para obter mais informações sobre como autorizar o acesso dos hosts ao {{site.data.keyword.filestorage_short}} por meio da API, consulte [authorize_host_to_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/file/#SoftLayer.managers.file.FileStorageManager.authorize_host_to_volume){: external}.
 {:tip}
 
 Para obter mais informações sobre o limite de autorizações simultâneas, consulte as [Perguntas mais frequentes](/docs/infrastructure/FileStorage?topic=FileStorage-faqs).

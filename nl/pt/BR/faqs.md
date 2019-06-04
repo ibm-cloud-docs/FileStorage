@@ -59,62 +59,28 @@ O limite padrão para o número de autorizações por volume de arquivo é 64. P
 ## Quantos volumes do {{site.data.keyword.filestorage_short}} podem ser anexados a um único host?
 {: faq}
 
-Isso depende do que o sistema operacional do host é capaz de manipular, não é algo limitado pelo {{site.data.keyword.BluSoftlayer_full}}. Consulte a documentação do S.O. para conhecer os limites com relação ao número de compartilhamentos de arquivo que podem ser montados.
+Isso depende do que o sistema operacional do host é capaz de manipular, não é algo limitado pelo {{site.data.keyword.cloud}}. Consulte a documentação do S.O. para conhecer os limites com relação ao número de compartilhamentos de arquivo que podem ser montados.
 
 ## Quantos compartilhamentos de arquivo são permitidos por tamanho do volume de arquivo? Quais são os compartilhamentos máximos de arquivo permitidos por tamanho do volume?
+{: #maxfilevolume}
 {: faq}
 
-<table>
-  <caption>A Tabela 1 mostra o número máximo de nós-i permitidos com base no tamanho do volume. Os tamanhos dos volumes estão na coluna à esquerda. O número de inodes e compartilhamentos de arquivo estão à direita.</caption>
-  <thead>
-    <tr>
-      <th>Tamanho do volume</th>
-      <th>Inodes e compartilhamentos de arquivo</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>20 GB - 39 GB</td>
-      <td>622.484</td>
-    </tr>
-    <tr>
-      <td>40 GB - 79 GB</td>
-      <td>1.245.084</td>
-    </tr>          
-    <tr>
-      <td>80 GB - 99 GB</td>
-      <td>2.490.263</td>
-    </tr>          
-    <tr>
-      <td>100 GB - 249 GB</td>
-      <td>3.112.863</td>
-    </tr>          
-    <tr>
-      <td>250 GB - 499 GB</td>
-      <td>7.782.300</td>
-    </tr>          
-    <tr>
-      <td>500 GB - 999 GB</td>
-      <td>15.564.695</td>
-    </tr>
-    <tr>
-      <td>1 TB</td>
-      <td>31.876.593</td>
-    </tr>
-    <tr>
-      <td>2 TB</td>
-      <td>63.753.186</td>
-    </tr>
-    <tr>
-      <td>3 TB</td>
-      <td>95.629.970</td>
-    </tr>
-    <tr>
-      <td>4 TB - 12 TB</td>
-      <td>127.506.359</td>
-    </tr>
-   </tbody>
-</table>
+| Tamanho do volume | Inodes e compartilhamentos de arquivo |
+|-----|-----|
+| 20 GB - 39 GB | 622.484 |
+| 40 GB - 79 GB | 1.245.084 |
+| 80 GB - 99 GB | 2.490.263 |
+| 100 GB - 249 GB | 3.112.863 |
+| 250 GB - 499 GB | 7.782.300 |
+| 500 GB - 999 GB | 15.564.695 |
+| 1 TB | 31.876.593 |
+| 2 TB | 63.753.186 |
+| 3 TB | 95.629.970 |
+| 4 TB | 127.506.359 |
+{: row-headers}
+{: class="comparison-table"}
+{: caption="Comparação de tabela" caption-side="top"}
+{: summary="Table 1 shows the maximum number of inodes that are allowed based on the volume size. Volume sizes are in the left column. The number of inodes and file shares are on the right."}
 
 ## Medindo IOPS
 {: faq}
@@ -147,6 +113,7 @@ Não há necessidade de pré-aquecimento. É possível observar o rendimento esp
 Os limites de rendimento são definidos em um nível por volume. Esse limite não pode ser aumentado usando uma conexão Ethernet mais rápida. No entanto, com uma conexão Ethernet mais lenta, sua largura da banda pode ser um gargalo potencial.
 
 ## Os firewalls e os grupos de segurança afetam o desempenho?
+{: #isolatedstoragetraffic}
 {: faq}
 
 É melhor executar o tráfego de armazenamento em uma VLAN, que efetua bypass do firewall. A execução do tráfego de armazenamento por meio de firewalls de software aumenta a latência e prejudica o desempenho do armazenamento.
@@ -164,9 +131,9 @@ O {{site.data.keyword.filestorage_full}} apresenta compartilhamentos de arquivo 
 ## Quais versões do NFS são suportadas?
 {: faq}
 
-O NFS v3 e NFS v4.1 são suportados no ambiente do {{site.data.keyword.BluSoftlayer_full}}. 
+O NFS v3 e NFS v4.1 são suportados no ambiente do {{site.data.keyword.cloud}}.
 
-O NFS v3 é a versão preferencial, pois é um protocolo sem preservação de estado e mais resiliente quando ocorrem eventos de rede. 
+O NFS v3 é a versão preferencial, pois é um protocolo sem preservação de estado e mais resiliente quando ocorrem eventos de rede.
 
 O NFS v3 suporta nativamente `no_root_squash`, o qual permite que os clientes raiz retenham as permissões raiz no compartilhamento do NFS. É possível ativar esse recurso no NFS v4.1 editando as informações de domínio e executando o `rpcidmapd` ou um serviço semelhante. Para obter mais informações, veja [Implementando no_root_squash para o NFS](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux#norootsquash).
 

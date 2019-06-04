@@ -22,7 +22,7 @@ subcollection: FileStorage
 raiz ou sudo e o acesso Plesk no nível de administrador integral estejam disponíveis. Esse exemplo se baseia
 em um host do CentOS7.
 
-Para obter mais informações, consulte a [Documentação do Plesk para backup e restauração](https://docs.plesk.com/en-US/12.5/administrator-guide/backing-up-and-restoration.59256/){: external}.
+Para obter mais informações, consulte a [documentação do Plesk para backup e restauração](https://docs.plesk.com/en-US/12.5/administrator-guide/backing-up-and-restoration.59256/){: external}.
 {:tip}
 
 1. Conecte-se ao host por meio de SSH.
@@ -43,7 +43,7 @@ Para obter mais informações, consulte a [Documentação do Plesk para backup e
    {:pre}
 
    Esse comando compacta e transmite seus dados e os preserva o máximo possível, exceto links físicos. Ele também fornece informações sobre quais arquivos estão sendo transferidos via NFS, além de um breve resumo no final.
-{:tip}
+   {:tip}
 5. Edite `/etc/psa/psa.conf` para apontar o valor de `DUMP_D`
 para o novo destino.
     - Ele aparece como:  ` DUMP_D /backup/psa/dumps `.

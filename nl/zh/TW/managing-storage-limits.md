@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-05-24"
 
 keywords: File Storage, file storage, NFS,
 
@@ -31,7 +31,7 @@ Options:
  -h, --help             Show this message and exit.
 ```
 
-您可以在 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 中提交問題單，以要求提高限制。要求經核准之後，您會收到針對特定資料中心所設定的磁區限制。  
+您可以在 [入口網站](https://cloud.ibm.com/unifiedsupport/cases/add){: external} 中提交支援案例，以要求提高限制。要求經核准之後，您會收到針對特定資料中心所設定的磁區限制。
 
 若要要求提高限制，請開立問題單，並將它導向給您的業務代表。
 

@@ -29,73 +29,17 @@ O ponto de montagem NFS para novos volumes foi mudado. Consulte a seção [Novo 
 
 O novo {{site.data.keyword.filestorage_short}} está disponível nas regiões e nos data centers a seguir com mais disponibilidade de data center incluída posteriormente.
 
-<table role="presentation">
-  <tr>
-    <td><strong>EUA 2</strong></td>
-    <td><strong>UE</strong></td>
-    <td><strong>Austrália</strong></td>
-    <td><strong>Canadá</strong></td>
-    <td><strong>América Latina</strong></td>
-    <td><strong>Ásia-Pacífico</strong></td>
-  </tr>
-  <tr>
-    <td>DAL09<br />
-	DAL10<br />
-	DAL12<br />
-	DAL13<br />
-	SJC03<br />
-        SJC04<br />
-	WDC04<br />
-	WDC06<br />
-	WDC07<br />
-	<br /><br /><br />
-    </td>
-    <td>AMS01<br />
-        AMS03<br />
-	FRA02<br />
-	FRA04<br />
-	FRA05<br />
-	LON02<br />
-	LON04<br />
-	LON05<br />
-	LON06<br />
-	MIL01<br />
-	OSLO1<br />
-	PAR01<br />
-    </td>
-    <td>MEL01<br />
-        SYD01<br />
-        SYD04<br />
-        SYD05<br /><br /><br /><br /><br /><br /><br /><br /><br />
-    </td>
-    <td>MON01<br />
-        TOR01<br />
-	<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-    </td>
-    <td>MEX01<br />
-        SAO01<br />
-	<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-    </td>
-    <td>CHE01<br />
-        HKG02<br />
-	SEO01<br />
-	SNG01<br />
-        TOK02<br />
-	TOK04<br />
-	TOK05<br />
-	<br /><br /><br /><br /><br />
-    </td>
-  </tr>
-</table>
-
-*A Tabela 1 mostra nossa Disponibilidade do Data center. Cada região possui sua própria coluna. Algumas cidades, como Dallas, São José, Washington DC, Amsterdã, Frankfurt, Londres e Sydney, têm múltiplos data centers.*
+|EUA 2|América Latina|Canadá|usuário final|Ásia e Pacífico|Austrália|
+|-----|-----|-----|-----|-----|------|
+| DAL09<br >DAL10<br />DAL12<br />DAL13<br />SJC03<br />SJC04<br />WDC04<br />WDC06<br />WDC07 | MEX01<br />SAO01 | MON01<br />TOR01  | AMS01<br />AMS03<br />FRA02<br />FRA04<br />FRA05<br />LON02<br />LON04<br />LON05<br />LON06<br />MIL01<br />OSLO1<br />PAR01 | CHE01<br />HKG02<br />SEO01<br />SNG01<br />TOK02<br />TOK04<br />TOK05 | MEL01<br />SYD01<br />SYD04<br />SYD05 |
+{: caption="A Tabela 1 mostra a disponibilidade do data center. Cada região possui sua própria coluna. Algumas cidades, como Dallas, San Jose, Washington DC, Amsterdã, Frankfurt, Londres e Sydney, têm múltiplos data centers." caption-side="top"}
 
 ## Novos recursos e capacidades
 {: #features}
 
-- [Criptografia gerenciada por provedor para dados em repouso](/docs/infrastructure/FileStorage?topic=FileStorage-encryption). <br/> Todos os volumes {{site.data.keyword.filestorage_short}} são provisionados automaticamente como criptografados sem encargo adicional.
-- 10 IOPS por opção de camada GB. <br/> Uma nova camada foi incluída no {{site.data.keyword.filestorage_short}} de tipo Endurance para suportar as cargas de trabalho de maior demanda.
-- Armazenamento suportado todo em flash. <br/> O {{site.data.keyword.filestorage_short}} que é provisionado com as opções Endurance ou Performance em 2 IOPS por GB ou superior é suportado por armazenamento totalmente em flash.
+- [Criptografia gerenciada pelo provedor para dados em repouso](/docs/infrastructure/FileStorage?topic=FileStorage-encryption). <br/> Todos os volumes {{site.data.keyword.filestorage_short}} são provisionados automaticamente como criptografados sem encargo adicional.
+- Opção de camada de 10 IOPS por GB. <br/> Uma nova camada foi incluída no {{site.data.keyword.filestorage_short}} de tipo Endurance para suportar as cargas de trabalho de maior demanda.
+- Todo o armazenamento suportado para atualização. <br/> O {{site.data.keyword.filestorage_short}} que é provisionado com as opções Endurance ou Performance em 2 IOPS por GB ou superior é suportado por armazenamento totalmente em flash.
 - Suporte de Captura instantânea e Replicação.
 - Opção de faturamento por hora incluído para armazenamento que é planejado para ser usado por menos de um mês integral.
 - Até 48.000 IOPS para o {{site.data.keyword.filestorage_short}} provisionado com o tipo Performance.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-22"
+lastupdated: "2019-05-06"
 
 keywords: File Storage, NSF, mounting File Storage, mounting storage on Linux,
 
@@ -141,3 +141,16 @@ Exemplo
    # /etc/init.d/rpcidmapd start
    Starting RPC idmapd: [ OK ]
    ```
+## Desmontando o sistema de arquivos
+
+Para desmontar qualquer sistema de arquivos montado atualmente em seu host, execute o comando `umount` com o nome do disco ou o nome do ponto de montagem.
+
+```
+umount /dev/sdb
+```
+{:pre}
+
+```
+umount /mnt
+```
+{:pre}
