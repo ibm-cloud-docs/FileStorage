@@ -36,68 +36,22 @@ subcollection: FileStorage
 
 ### ブロック・サイズ
 
-エンデュランスとパフォーマンスの IOPS はどちらも、16-KB のブロック・サイズと、読み取り/書き込みの比率が 50/50 でランダム/順次の比率が 50/50 のワークロードに基づいています。 16-KB のブロックは、ボリュームへの 1 回の書き込みに相当します。
+エンデュランスとパフォーマンスの IOPS 値はどちらも、16-KB のブロック・サイズと、読み取り/書き込みの比率が 50/50 でランダム/順次の比率が 50/50 のワークロードに基づいています。16-KB のブロックは、ボリュームへの 1 回の書き込みに相当します。
 {:important}
 
 アプリケーションで使用されるブロック・サイズは、ストレージのパフォーマンスに直接影響を及ぼします。 アプリケーションが使用するブロック・サイズが 16 KB よりも小さい場合、スループット制限の前に IOPS 制限が適用されます。 アプリケーションが使用するブロック・サイズが 16 KB よりも小さい場合、スループット制限の前に IOPS 制限が適用されます。
 
-<table>
-  <caption>表 4 は、ブロック・サイズと IOPS がスループット与える影響の例を示しています。</caption>
-        <colgroup>
-          <col/>
-          <col/>
-          <col/>
-        </colgroup>
-        <thead>
-          <tr>
-            <th>ブロック・サイズ (KB)</th>
-            <th>IOPS</th>
-            <th>スループット (MB/秒)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>4 (Linux の場合の標準)</td>
-            <td>1,000</td>
-            <td>4</td>
-          </tr>
-          <tr>
-            <td>8 (Oracle の場合の標準)</td>
-            <td>1,000</td>
-            <td>8</td>
-          </tr>
-          <tr>
-            <td>16</td>
-            <td>1,000</td>
-            <td>16</td>
-          </tr>
-          <tr>
-            <td>32 (SQL Server の場合の標準)</td>
-            <td>500</td>
-            <td>16</td>
-          </tr>          
-          <tr>
-            <td>64</td>
-            <td>250</td>
-            <td>16</td>
-          </tr>
-          <tr>
-            <td>128</td>
-            <td>128</td>
-            <td>16</td>
-          </tr>
-          <tr>
-            <td>512</td>
-            <td>32</td>
-            <td>16</td>
-          </tr>
-          <tr>
-            <td>1024</td>
-            <td>16</td>
-            <td>16</td>
-          </tr>
-        </tbody>
-</table>
+| ブロック・サイズ (KB) | IOPS | スループット (MB/秒) |
+|-----|-----|-----|
+| 4 | 1,000 | 16 |
+| 8 | 1,000 | 16 |
+| 16 | 1,000 | 16 |
+| 32 | 500 | 16 |
+| 64 | 250 | 16 |
+| 128 | 128 | 16 |
+| 512 | 32 | 16 |
+| 1024 | 16 | 16 |
+{: caption="表 1 は、ブロック・サイズと IOPS がスループット与える影響の例を示しています。<br/>平均 IO サイズ x IOPS = スループット (MB/秒)。" caption-side="top"}
 
 ### 許可ホスト
 
@@ -109,11 +63,13 @@ subcollection: FileStorage
 
 最大 IOPS を得るには、十分なネットワーク・リソースを配備する必要があります。 その他の考慮事項として、ストレージ外の専用ネットワーク使用、およびホスト・サイドおよびアプリケーション固有のチューニング (IP スタック、[キュー項目数](/docs/infrastructure/FileStorage?topic=FileStorage-hostqueuesettings)、およびその他の設定) があります。
 
+ストレージ・トラフィックは他のトラフィック・タイプから分離する必要があり、ファイアウォールおよびルーターを介して送信されてはなりません。ストレージ・トラフィックを専用 VLAN 内にとどめておくことは、ジャンボ・フレームを有効にした場合の MTU 不一致を防ぐことにも役立ちます。詳しくは、[IBM Cloud でのジャンボ・フレーム](/docs/FileStorage?topic=FileStorage-jumboframes)を参照してください。
+
 パブリック Virtual Server のネットワーク使用量合計にストレージ・トラフィックが含まれます。 サービスによって課せられる可能性がある制限について詳しくは、[Virtual Server の資料](/docs/vsi?topic=virtual-servers-about-public-virtual-servers)を参照してください。
 
 ### NFS バージョン
 
-{{site.data.keyword.cloud}} 環境では、NFS v3 と NFS v4.1 の両方がサポートされています。しかし、NFS v4.1 はステートフル・プロトコルであり (NFSv3 のようなステートレスではなく)、ネットワーク・イベント中にプロトコルの問題が発生する可能性があるため、望ましいのは NFS v3 です。 NFS v4.1 では、すべての操作を停止してからロック再利用を実行する必要があります。 比較的ビジーな NFS ファイル・サーバーでは、待ち時間が長くなって中断が生じる可能性があります。 また、NFS v4.1 のマルチパスおよびトランキングがないため、NFS 操作のリカバリー範囲が広くなる可能性があります。
+{{site.data.keyword.cloud}} 環境では、NFS v3 と NFS v4.1 の両方がサポートされています。 しかし、NFS v4.1 はステートフル・プロトコルであり (NFSv3 のようなステートレスではなく)、ネットワーク・イベント中にプロトコルの問題が発生する可能性があるため、望ましいのは NFS v3 です。 NFS v4.1 では、すべての操作を停止してからロック再利用を実行する必要があります。 比較的ビジーな NFS ファイル・サーバーでは、待ち時間が長くなって中断が生じる可能性があります。 また、NFS v4.1 のマルチパスおよびトランキングがないため、NFS 操作のリカバリー範囲が広くなる可能性があります。
 
 ## 注文の送信
 
@@ -132,4 +88,4 @@ subcollection: FileStorage
 
 ## 新しいストレージの管理
 
-ポータルまたは SLCLI により、ホストの許可や取り消しなど、{{site.data.keyword.filestorage_short}} のさまざまな側面を管理できます。詳しくは、[{{site.data.keyword.filestorage_short}} の管理](/docs/infrastructure/FileStorage?topic=FileStorage-managingstorage)を参照してください。
+ポータルまたは SLCLI により、ホストの許可や取り消しなど、{{site.data.keyword.filestorage_short}} のさまざまな側面を管理できます。 詳しくは、[{{site.data.keyword.filestorage_short}} の管理](/docs/infrastructure/FileStorage?topic=FileStorage-managingstorage)を参照してください。

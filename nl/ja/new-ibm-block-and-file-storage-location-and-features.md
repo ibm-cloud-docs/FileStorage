@@ -28,66 +28,10 @@ subcollection: FileStorage
 
 新しい{{site.data.keyword.filestorage_short}}は、以下の地域およびデータ・センターで提供されています。今後さらに多くのデータ・センターで提供される予定です。
 
-<table role="presentation">
-  <tr>
-    <td><strong>米国 2</strong></td>
-    <td><strong>EU</strong></td>
-    <td><strong>オーストラリア</strong></td>
-    <td><strong>カナダ</strong></td>
-    <td><strong>ラテンアメリカ</strong></td>
-    <td><strong>アジア太平洋</strong></td>
-  </tr>
-  <tr>
-    <td>DAL09<br />
-	DAL10<br />
-	DAL12<br />
-	DAL13<br />
-	SJC03<br />
-        SJC04<br />
-	WDC04<br />
-	WDC06<br />
-	WDC07<br />
-	<br /><br /><br />
-    </td>
-    <td>AMS01<br />
-        AMS03<br />
-	FRA02<br />
-	FRA04<br />
-	FRA05<br />
-	LON02<br />
-	LON04<br />
-	LON05<br />
-	LON06<br />
-	MIL01<br />
-	OSLO1<br />
-	PAR01<br />
-    </td>
-    <td>MEL01<br />
-        SYD01<br />
-        SYD04<br />
-        SYD05<br /><br /><br /><br /><br /><br /><br /><br /><br />
-    </td>
-    <td>MON01<br />
-        TOR01<br />
-	<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-    </td>
-    <td>MEX01<br />
-        SAO01<br />
-	<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-    </td>
-    <td>CHE01<br />
-        HKG02<br />
-	SEO01<br />
-	SNG01<br />
-        TOK02<br />
-	TOK04<br />
-	TOK05<br />
-	<br /><br /><br /><br /><br />
-    </td>
-  </tr>
-</table>
-
-*表 1 は、使用可能なデータ・センターを示しています。 地域ごとに列を分けています。 一部の都市 (ダラス、サンノゼ、ワシントン DC、アムステルダム、フランクフルト、ロンドン、シドニーなど) には複数のデータ・センターがあります。*
+|米国 2|ラテンアメリカ|カナダ|EU|アジア太平洋|オーストラリア|
+|-----|-----|-----|-----|-----|------|
+|DAL09<br >DAL10<br />DAL12<br />DAL13<br />SJC03<br />SJC04<br />WDC04<br />WDC06<br />WDC07|MEX01<br />        SAO01|MON01<br />        TOR01|AMS01<br />AMS03<br />FRA02<br />FRA04<br />FRA05<br />LON02<br />LON04<br />LON05<br />LON06<br />MIL01<br />OSLO1<br />PAR01|CHE01<br />HKG02<br />SEO01<br />SNG01<br />        TOK02<br />TOK04<br />TOK05|MEL01<br />SYD01<br />        SYD04<br />        SYD05|
+{: caption="表 1 は、使用可能なデータ・センターを示しています。地域ごとに列を分けています。 ダラス、サンホセ、ワシントン DC、アムステルダム、フランクフルト、ロンドン、シドニーなどのいくつかの都市には、複数のデータ・センターがあります。" caption-side="top"}
 
 ## 新しい機能および能力
 {: #features}
@@ -106,7 +50,7 @@ subcollection: FileStorage
 
 これらのデータ・センターでプロビジョンされる拡張{{site.data.keyword.filestorage_short}}・ボリュームはすべて、非暗号化ボリュームとは異なるマウント・ポイントになります。 両方のストレージ・ボリュームに正しいマウント・ポイントを使用するために、コンソールの**「ボリュームの詳細 (Volume Details)」**ページでマウント・ポイント情報を確認することができます。 API 呼び出し `SoftLayer_Network_Storage::getNetworkMountAddress()` を使用して正しいマウント・ポイントを取得することもできます。
 
-すべての新機能にアクセスできるようにするには、API で注文する際に `Storage-as-a-Service Package 759` を選択します。 API で {{site.data.keyword.filestorage_short}} を注文する方法について詳しくは、[order_file_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/file/#SoftLayer.managers.file.FileStorageManager.order_file_volume){: external} を参照してください。
+すべての新機能にアクセスできるようにするには、API で注文する際に `Storage-as-a-Service Package 759` を選択します。 API で {{site.data.keyword.filestorage_short}}を注文する方法について詳しくは、[order_file_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/file/#SoftLayer.managers.file.FileStorageManager.order_file_volume){: external} を参照してください。
 {:important}
 
 追加のデータ・センターがアップグレードされていないか確認したり、新しいフィーチャーや機能が{{site.data.keyword.filestorage_short}}に追加されていないか確認したりするには、このページをもう一度参照してください。

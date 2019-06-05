@@ -24,7 +24,7 @@ subcollection: FileStorage
 
 複製は**プライマリー**・ボリュームからでも**レプリカ**・ボリュームからでも作成できます。 新しい複製は元のボリュームと同じデータ・センターに作成されます。 レプリカ・ボリュームから複製を作成した場合、新規ボリュームはレプリカ・ボリュームと同じデータ・センターに作成されます。
 
-{{site.data.keyword.containerlong}} の「専用」アカウント・ユーザーである場合は、[{{site.data.keyword.containerlong_notm}} 資料](/docs/containers?topic=containers-backup_restore#backup_restore)にある、ボリュームを複製するためのオプションを参照してください。
+{{site.data.keyword.containerlong}} の「専用」アカウント・ユーザーである場合は、[{{site.data.keyword.containerlong_notm}} 資料](/docs/containers?topic=containers-file_storage#file_backup_restore)にある、ボリュームを複製するためのオプションを参照してください。
 {:tip}
 
 ストレージがプロビジョンされたら、ただちに複製ボリュームに対してホストから読み取り/書き込みアクセスを行えます。 ただし、元のボリュームから複製へのデータ・コピーが完了するまで、スナップショットおよびレプリケーションは許可されません。 データ・コピーが完了したら、複製は独立したボリュームとして管理、使用できます。
@@ -39,7 +39,7 @@ subcollection: FileStorage
 - **開発とテスト (dev/test)**。 1 つのボリュームから一度に最大 4 つの複製を同時作成して、開発とテスト用の複製データを作成する。
 - **ストレージのサイズ変更**。 データを移動することなく、新しいサイズまたは IOPS レート (あるいはその両方) を指定したボリュームを作成する。  
 
-[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} で重複ボリュームを作成するには、いくつかの方法があります。
+[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}で重複ボリュームを作成するには、いくつかの方法があります。
 
 
 ## ストレージ・リスト内の特定のボリュームから複製を作成する

@@ -49,75 +49,34 @@ VMware データ・ストアへのアクセスに必要なホストの数が 8 �
 詳しくは、VMware の次のホワイト・ペーパーを参照してください: [Best Practices for running VMware vSphere on Network Attached Storage](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){: external}
 {:tip}
 
-**NFS プロトコルと VMware 機能の対応表**
-<table>
-  <caption>表 1 は、2 種類のバージョンの NFS に適用される vSphere 機能を示しています。</caption>
- <thead>
-  <tr>
-   <th>vSphere の機能</th>
-   <th>NFS バージョン 3</th>
-   <th>NFS バージョン 4.1</th>
-  </tr>
- </thead>
- <tbody>
-  <tr>
-   <td>vMotion および Storage vMotion</td>
-   <td>○</td>
-   <td>○</td>
-  </tr>
-  <tr>
-   <td>高可用性 (HA)</td>
-   <td>○</td>
-   <td>○</td>
-  </tr>
-  <tr>
-   <td>フォールト・トレランス (FT)</td>
-   <td>○</td>
-   <td>○</td>
-  </tr>
-  <tr>
-   <td>分散リソース・スケジューラー (DRS)</td>
-   <td>○</td>
-   <td>○</td>
-  </tr>
-  <tr>
-   <td>ホスト・プロファイル</td>
-   <td>○</td>
-   <td>○</td>
-  </tr>
-  <tr>
-   <td>ストレージ DRS</td>
-   <td>○</td>
-   <td>×</td>
-  </tr>
-  <tr>
-   <td>ストレージ入出力制御</td>
-   <td>○</td>
-   <td>×</td>
-  </tr>
-  <tr>
-   <td>サイト・リカバリー・マネージャー</td>
-   <td>○</td>
-   <td>×</td>
-  </tr>
-  <tr>
-   <td>仮想ボリューム</td>
-   <td>○</td>
-   <td>×</td>
-  </tr>
- </tbody>
-</table>
-*出典 - [VMware - NFS Protocols and ESXi](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){: external}*
+### NFS プロトコルと VMware 機能の対応表
 
+| vSphere の機能 | NFS バージョン 3 | NFS バージョン 4.1 |
+|-----|-----|-----|
+| vMotion および Storage vMotion | ○ | ○ |
+| 高可用性 (HA) | ○ | ○ |
+| フォールト・トレランス (FT) | ○ | ○ |
+| 分散リソース・スケジューラー (DRS) | ○< | ○ |
+| ホスト・プロファイル | ○ | ○ |
+| ストレージ DRS | ○ | × |
+| ストレージ入出力制御 | ○ | × |
+| サイト・リカバリー・マネージャー | ○ | × |
+| 仮想ボリューム | ○ | × |
+{: row-headers}
+{: class="comparison-table"}
+{: caption="表 1 - NFS プロトコルと VMware 機能の対応表。" caption-side="top"}
+{: summary="This table has row and column headers. The row headers identify the vSphere features. The column headers identify the NSF version. To see if a feature is enabled navigate to the row of the feature and look at the column that is associated with the NFS version you use."}
+
+*出典 - [VMware - NFS Protocols and ESXi](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){: external}*
 
 
 ### スナップショットの使用
 
-{{site.data.keyword.filestorage_short}} を使用すると、管理者は、各ストレージ・ボリュームのスナップショット・コピーを自動的に作成および削除するスナップショット・スケジュールを設定できます。 また、自動スナップショットのスナップショット・スケジュール (毎時、日次、週次) を追加で作成したり、事業継続と災害復旧 (BCDR) のシナリオのスナップショットを随時手動で作成したりすることもできます。 ボリューム所有者に、[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} を介して、保存されたスナップショットと使用されたスペースについての自動アラートが送信されます。
+{{site.data.keyword.filestorage_short}} を使用すると、管理者は、各ストレージ・ボリュームのスナップショット・コピーを自動的に作成および削除するスナップショット・スケジュールを設定できます。 また、自動スナップショットのスナップショット・スケジュール (毎時、日次、週次) を追加で作成したり、事業継続と災害復旧 (BCDR) のシナリオのスナップショットを随時手動で作成したりすることもできます。 ボリューム所有者に、[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}を介して、保存されたスナップショットと使用されたスペースについての自動アラートが送信されます。
 
 スナップショットを使用するには、スナップショット・スペースが必要です。 スペースはボリュームを最初に注文するときに購入できます。また、最初のプロビジョニングの後で、**「ボリュームの詳細 (Volume Details)」**ページの**「アクション」**をクリックし、**「スナップショット・スペースの追加」**を選択して取得することもできます。
 
-VMware 環境はスナップショットを認識しないことに注意してください。 {{site.data.keyword.filestorage_short}}のスナップショット機能を VMware のスナップショットと混同しないでください。 {{site.data.keyword.filestorage_short}} のスナップショット機能を使用したリカバリーは、[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} から行う必要があります。
+VMware 環境はスナップショットを認識しないことに注意してください。 {{site.data.keyword.filestorage_short}}のスナップショット機能を VMware のスナップショットと混同しないでください。 {{site.data.keyword.filestorage_short}} のスナップショット機能を使用したリカバリーは、[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}から行う必要があります。
 
 {{site.data.keyword.filestorage_short}} のボリュームをリストアするには、{{site.data.keyword.filestorage_short}} 上のすべての VM の電源をオフにする必要があります。 ESXi ホストから一時的にボリュームをアンマウントして、復元処理中のデータ破損を回避する必要があります。
 
@@ -150,11 +109,11 @@ VMware 環境はスナップショットを認識しないことに注意して�
 
 ## {{site.data.keyword.filestorage_short}}の注文
 
-[拡張単一サイト VMware リファレンス・アーキテクチャー](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){: external} を使用して、VMware 環境でエンデュランスまたはパフォーマンスのオプションを指定して {{site.data.keyword.filestorage_short}} をセットアップします。
+[拡張単一サイト VMware リファレンス・アーキテクチャー](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){: external}を使用して、VMware 環境でエンデュランスまたはパフォーマンスのオプションを指定して {{site.data.keyword.filestorage_short}} をセットアップします。
 
-{{site.data.keyword.filestorage_short}} は、[IBM Cloud カタログ](https://{DomainName}/catalog){: external} または [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} から注文できます。 詳しくは、[{{site.data.keyword.filestorage_short}} の注文](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)を参照してください。
+{{site.data.keyword.filestorage_short}} は、[IBM Cloud カタログ](https://{DomainName}/catalog){: external}または [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}から注文できます。詳しくは、[{{site.data.keyword.filestorage_short}} の注文](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)を参照してください。
 
-ストレージが 1 分もしないうちにプロビジョンされ、[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} の「**{{site.data.keyword.filestorage_short}}**」ページに表示されます。
+ストレージが 1 分もしないうちにプロビジョンされ、[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}の「**{{site.data.keyword.filestorage_short}}**」ページに表示されます。
 
 ボリュームがプロビジョンされたら、そのボリュームを使用する {{site.data.keyword.BluBareMetServers_full}} または {{site.data.keyword.BluVirtServers_full}} に、ストレージへのアクセスを許可する必要があります。 ボリュームを許可するには、以下の手順を実行します。
 
@@ -210,7 +169,7 @@ VMware 構成プロセスを開始する前に、以下の前提条件が満た�
      8980 bytes from a.b.c.d: icmp_seq=1 ttl=128 time=3.36 ms
      ```
 
-VMware およびジャンボ・フレームについて詳しくは、[ここ](https://kb.vmware.com/s/article/1003712){: external} を参照してください。
+VMware およびジャンボ・フレームについて詳しくは、[ここ](https://kb.vmware.com/s/article/1003712){: external}を参照してください。
 {:tip}
 
 
@@ -346,7 +305,7 @@ NFS ストレージ用に ESXi 5.x ホストを構成するには、いくつか
 |NFS.HeartbeatFrequency |	12 |
 |NFS.HeartbeatTimeout |	5 |
 |NFS.MaxQueueDepth|	64 |
-
+{: caption="表 2 - ホスト・サイドの設定" caption-side="top"}
 
 ### CLI を使用することによって ESXi 5.x ホスト上で拡張構成パラメーターを更新する
 

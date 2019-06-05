@@ -62,59 +62,25 @@ subcollection: FileStorage
 {{site.data.keyword.cloud}} 制限ではなく、ホスト・オペレーティング・システムが処理できる内容によって異なります。 マウントできるファイル共有数に関する制限については、ご使用の OS の資料を参照してください。
 
 ## ファイル・ボリューム・サイズに応じて許可されるファイル共有数はいくつですか? ボリューム・サイズに応じて許可される最大ファイル共有数はいくつですか?
+{: #maxfilevolume}
 {: faq}
 
-<table>
-  <caption>表 1 は、ボリューム・サイズに基づいて許可される i ノードの最大数を示しています。 左側の列はボリューム・サイズです。 右側は i ノードおよびファイル共有の数です。</caption>
-  <thead>
-    <tr>
-      <th>ボリューム・サイズ</th>
-      <th>i ノードとファイル共有の数</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>20 GB - 39 GB</td>
-      <td>622,484</td>
-    </tr>
-    <tr>
-      <td>40 GB - 79 GB</td>
-      <td>1,245,084</td>
-    </tr>          
-    <tr>
-      <td>80 GB - 99 GB</td>
-      <td>2,490,263</td>
-    </tr>          
-    <tr>
-      <td>100 GB - 249 GB</td>
-      <td>3,112,863</td>
-    </tr>          
-    <tr>
-      <td>250 GB - 499 GB</td>
-      <td>7,782,300</td>
-    </tr>          
-    <tr>
-      <td>500 GB - 999 GB</td>
-      <td>15,564,695</td>
-    </tr>
-    <tr>
-      <td>1 TB</td>
-      <td>31,876,593</td>
-    </tr>
-    <tr>
-      <td>2 TB</td>
-      <td>63,753,186</td>
-    </tr>
-    <tr>
-      <td>3 TB</td>
-      <td>95,629,970</td>
-    </tr>
-    <tr>
-      <td>4 TB - 12 TB</td>
-      <td>127,506,359</td>
-    </tr>
-   </tbody>
-</table>
+| ボリューム・サイズ | i ノードとファイル共有の数 |
+|-----|-----|
+| 20 GB から 39 GB | 622,484 |
+| 40 GB から 79 GB | 1,245,084 |
+| 80 GB から 99 GB | 2,490,263 |
+| 100 GB から 249 GB | 3,112,863 |
+| 250 GB から 499 GB | 7,782,300 |
+| 500 GB から 999 GB | 15,564,695 |
+| 1 TB | 31,876,593 |
+| 2 TB | 63,753,186 |
+| 3 TB | 95,629,970 |
+| 4 TB | 127,506,359 |
+{: row-headers}
+{: class="comparison-table"}
+{: caption="表による比較" caption-side="top"}
+{: summary="Table 1 shows the maximum number of inodes that are allowed based on the volume size. Volume sizes are in the left column. The number of inodes and file shares are on the right."}
 
 ## IOPS の測定
 {: faq}
@@ -147,6 +113,7 @@ IOPS はボリューム・レベルで適用されます。 言い換えると�
 スループットの限度はボリューム単位のレベルで設定されます。 より高速なイーサネット接続を使用しても、この限度は増えません。 一方、低速イーサネット接続を使用すると、帯域幅がボトルネックになる可能性があります。
 
 ## ファイアウォールやセキュリティー・グループはパフォーマンスに影響を与えますか?
+{: #isolatedstoragetraffic}
 {: faq}
 
 VLAN 上でストレージ・トラフィックを実行して、ファイアウォールをバイパスするのが最善です。 ソフトウェア・ファイアウォールを介してストレージ・トラフィックを実行すると、待ち時間が長くなり、ストレージ・パフォーマンスに悪影響を与えます。
@@ -164,13 +131,13 @@ VLAN 上でストレージ・トラフィックを実行して、ファイアウ
 ## サポートされている NFS バージョン
 {: faq}
 
-{{site.data.keyword.cloud}} 環境では、NFS v3 と NFS v4.1 の両方がサポートされています。 
+{{site.data.keyword.cloud}} 環境では、NFS v3 と NFS v4.1 の両方がサポートされています。
 
-推奨されているバージョンは NFS v3 です。NFS v3 はステートレス・プロトコルで、ネットワーク・イベント発生時の回復力がより高いためです。 
+推奨されているバージョンは NFS v3 です。NFS v3 はステートレス・プロトコルで、ネットワーク・イベント発生時の回復力がより高いためです。
 
-NFS v3 は、root クライアントが NFS 共有に対する root 権限を保持することを許可する `no_root_squash` をネイティブでサポートしています。NFS v4.1 では、この機能は、ドメイン情報を編集して `rpcidmapd` または類似したサービスを実行することによって有効にできます。詳しくは、[NFS 用の no_root_squash の実装](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux#norootsquash)を参照してください。
+NFS v3 は、root クライアントが NFS 共有に対する root 権限を保持することを許可する `no_root_squash` をネイティブでサポートしています。 NFS v4.1 では、この機能は、ドメイン情報を編集して `rpcidmapd` または類似したサービスを実行することによって有効にできます。 詳しくは、[NFS 用の no_root_squash の実装](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux#norootsquash)を参照してください。
 
-vSphere ソリューションに関しては、NFS v3 は v4.1 よりも多くの機能をサポートしています。それらの機能の中には、ストレージ DRS および Site Recovery Manager があります。
+vSphere ソリューションに関しては、NFS v3 は v4.1 よりも多くの機能をサポートしています。 それらの機能の中には、ストレージ DRS および Site Recovery Manager があります。
 
 
 ## クラウド・データ・センターから破棄したドライブはどうなりますか?

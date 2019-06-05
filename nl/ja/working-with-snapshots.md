@@ -159,7 +159,7 @@ Options:
 
 1. ストレージ・ボリュームをホストからアンマウントして切り離します。
    - [ここ](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)をクリックすると説明が表示されます。
-2. [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}で、**「ストレージ」**、**「{{site.data.keyword.filestorage_short}}」**をクリックします。
+2. [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}で、**「ストレージ」**の**「{{site.data.keyword.filestorage_short}}」**をクリックします。
 3. スクロールダウンして、リストアするボリュームをクリックします。 **「詳細」**ページの**「スナップショット」**セクションに、保存されているすべてのスナップショットのサイズと作成日のリストが表示されます。
 4. 使用するスナップショットの横の**「アクション」**をクリックし、**「リストア」**をクリックします。 <br/>
 

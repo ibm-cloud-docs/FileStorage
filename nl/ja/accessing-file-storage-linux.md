@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-22"
+lastupdated: "2019-05-06"
 
 keywords: File Storage, NSF, mounting File Storage, mounting storage on Linux,
 
@@ -18,7 +18,7 @@ subcollection: FileStorage
 # Linux への {{site.data.keyword.filestorage_short}} のマウント
 {: #mountingLinux}
 
-まず、{{site.data.keyword.filestorage_full}} ボリュームにアクセスするホストに、[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} で許可を与えてください。
+まず、{{site.data.keyword.filestorage_full}} ボリュームにアクセスするホストに、[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}で許可を与えてください。
 
 1. {{site.data.keyword.filestorage_short}}のリスト・ページで、新しい共有に関連付けられている**「アクション」**リンクをクリックし、**「ホストの許可」**をクリックします。
 2. リストからホストを選択し、**「送信」**をクリックします。 このアクションにより、共有へのアクセスがホストに許可されます。
@@ -67,8 +67,8 @@ Linux ベースの {{site.data.keyword.cloud}} コンピューティング・イ
    ```
    # df -h
    Filesystem Size Used Avail Use% Mounted on
-   /dev/xvda2 25G 1.4G 22G 6% /
-   tmpfs 1.9G 0 1.9G 0% /dev/shm
+   /dev/xvda2 25G 1.4G 22G 6%
+   /tmpfs 1.9G 0 1.9G 0%   /dev/shm
    /dev/xvda1 97M 51M 42M 55%
    ```
 
@@ -112,7 +112,6 @@ Linux ベースの {{site.data.keyword.cloud}} コンピューティング・イ
    ホスト OS が CentOS である場合は、さらに多くのオプションを構成できます。 詳しくは、[CentOS での {{site.data.keyword.filestorage_short}} のマウント](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)を参照してください。
 
 
-
 ## NFS 用の `no_root_squash` の実装 (オプション)
 {: #norootsquash}
 
@@ -142,3 +141,16 @@ Linux ベースの {{site.data.keyword.cloud}} コンピューティング・イ
    # /etc/init.d/rpcidmapd start
    Starting RPC idmapd: [ OK ]
    ```
+## ファイル・システムのアンマウント
+
+ホストに現在マウントされているファイル・システムをアンマウントするには、ディスク名またはマウント・ポイント名を指定して `umount` コマンドを実行します。
+
+```
+umount /dev/sdb
+```
+{:pre}
+
+```
+umount /mnt
+```
+{:pre}

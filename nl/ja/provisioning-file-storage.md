@@ -31,7 +31,7 @@ subcollection: FileStorage
 
 1. [IBM Cloud カタログ](https://{DomainName}/catalog){: external}にログインし、**「ストレージ」**をクリックします。 その後、{{site.data.keyword.filestorage_short}}を選択します。 **「作成」**をクリックします。
 
-   あるいは、[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} } にログインして、**「ストレージ」**>**「{{site.data.keyword.filestorage_short}}」**をクリックします。 右上の**「{{site.data.keyword.filestorage_short}} を注文」**をクリックします。
+   あるいは、[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} } にログインして、**「ストレージ」**>**「{{site.data.keyword.filestorage_short}}」**をクリックします。右上の**「{{site.data.keyword.filestorage_short}} を注文」**をクリックします。
 2. デプロイメント・**ロケーション** (データ・センター) を選択します。
    - 新規ストレージは必ず、所有するコンピュート・ホストと同じ場所に追加してください。
 3. 請求処理。 拡張機能を備えたデータ・センター (アスタリスクのマークがあるもの) を選択した場合は、月単位の請求と時間単位の請求のどちらにするかを選択できます。
@@ -63,7 +63,7 @@ subcollection: FileStorage
 
 1. [IBM Cloud カタログ](https://{DomainName}/catalog){: external}にログインし、**「ストレージ」**をクリックします。 その後、{{site.data.keyword.filestorage_short}}を選択します。 **「作成」**をクリックします。
 
-   あるいは、[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} } にログインして、**「ストレージ」**>**「{{site.data.keyword.filestorage_short}}」**をクリックします。 右上の**「{{site.data.keyword.filestorage_short}} を注文」**をクリックします。
+   あるいは、[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} } にログインして、**「ストレージ」**>**「{{site.data.keyword.filestorage_short}}」**をクリックします。右上の**「{{site.data.keyword.filestorage_short}} を注文」**をクリックします。
 2. **「ロケーション」**をクリックし、使用するデータ・センターを選択します。
    - 新規ストレージは必ず、所有するコンピュート・ホストと同じ場所に追加してください。
 3. 請求処理。 拡張機能を備えたデータ・センター (アスタリスクのマークがあるもの) を選択した場合は、月単位の請求と時間単位の請求のどちらにするかを選択できます。

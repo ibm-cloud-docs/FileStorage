@@ -52,7 +52,7 @@ subcollection: FileStorage
 
 1. [IBM Cloud コンソール](https://{DomainName}/){: external}にログインして、左上にあるメニュー・アイコンをクリックします。 **「クラシック・インフラストラクチャー」**を選択します。
 
-   または、[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} にログインできます。
+   または、[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}にログインできます。
 2. **「ストレージ」**>**「{{site.data.keyword.filestorage_short}}」**の手順でストレージにアクセスします。
 3. 「スナップショット」フレームで**「スナップショット・スペースの変更」**をクリックします。
 4. 必要なスペース量と支払方法を選択します。

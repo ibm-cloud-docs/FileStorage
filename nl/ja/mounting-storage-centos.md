@@ -20,9 +20,9 @@ subcollection: FileStorage
 # CentOS への {{site.data.keyword.filestorage_short}} のマウント
 {: #mountingCentOS}
 
-{{site.data.keyword.filestorage_full}} を CentOS 7 にマウントするには、まず [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} または SLCLI によってホストを認可する必要があります。 その後、[Linux への {{site.data.keyword.filestorage_short}} のマウント](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)の説明のとおりに、NFS ユーティリティーをインストールします。
+{{site.data.keyword.filestorage_full}} を CentOS 7 にマウントするには、まず [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}または SLCLI によってホストを認可する必要があります。その後、[Linux への {{site.data.keyword.filestorage_short}} のマウント](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)の説明のとおりに、NFS ユーティリティーをインストールします。
 
-CentOS の場合、マウント・ファイルの `Options=` 行を使用していくつかの追加のオプションを指定できます。次の例では、`/data/www` にマウントするように NFS を設定します。
+CentOS の場合、マウント・ファイルの `Options=` 行を使用していくつかの追加のオプションを指定できます。 次の例では、`/data/www` にマウントするように NFS を設定します。
 
 {{site.data.keyword.filestorage_short}}・インスタンスの NFS マウント・ポイントは、{{site.data.keyword.filestorage_short}}のリスト・ページから取得できます。また、API 呼び出し `SoftLayer_Network_Storage::getNetworkMountAddress()` を使用して取得することもできます。
 {:tip}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-05-22"
 
 keywords: File Storage, Endurance, Performance, IOPS, replication, billing, file storage, NFS,
 
@@ -20,7 +20,7 @@ subcollection: FileStorage
 # {{site.data.keyword.filestorage_short}} について
 {: #about}
 
-{{site.data.keyword.filestorage_full}} は、永続的で高速、柔軟な、NFS ベースのネットワーク接続型の{{site.data.keyword.filestorage_short}}です。 この Network Attached Storage (NAS) 環境では、ファイル共有機能とパフォーマンスを完全に制御できます。 {{site.data.keyword.filestorage_short}}共有は、回復力のために経路指定された TCP/IP 接続を介して、最大 64 個の許可デバイスに接続できます。
+{{site.data.keyword.cloud}}  {{site.data.keyword.filestorage_short}} は、永続的で高速、柔軟な、NFS ベースのネットワーク接続型の{{site.data.keyword.filestorage_short}}です。 この Network Attached Storage (NAS) 環境では、ファイル共有機能とパフォーマンスを完全に制御できます。 {{site.data.keyword.filestorage_short}}共有は、回復力のために経路指定された TCP/IP 接続を介して、最大 64 個の許可デバイスに接続できます。
 {:shortdesc}
 
 ## 機能
@@ -53,55 +53,6 @@ subcollection: FileStorage
 - **クラスター・データベース**
    - クラスター・データベースなど、高度なユース・ケースをサポートします。
 
-## 請求処理
-
-ファイル・ボリュームの請求を時間単位にするか月単位にするかを選択できます。 LUN に対して選択した請求のタイプが、そのスナップショット・スペースとレプリカに適用されます。 例えば、時間単位の請求を使用して LUN をプロビジョンした場合、スナップショットやレプリカの料金は時間単位で請求されます。 月単位の請求を使用して LUN をプロビジョンした場合、スナップショットやレプリカの料金は月単位で請求されます。
-
-**時間単位の請求**では、ファイル・ボリュームがアカウントに存在した時間数が、LUN が削除されたとき、または請求サイクルの終わりのどちらか早いほうのタイミングで計算されます。 時間単位の請求は、使用期間が数日または 1 カ月未満のストレージに適しています。 時間単位の請求は、[一部のデータ・センター](/docs/infrastructure/FileStorage?topic=FileStorage-news)でプロビジョンされたストレージにのみ使用できます。
-
-**月単位の請求**では、作成日から請求サイクル終了までの日割り額が計算され、ただちに請求されます。 請求サイクルの終了前にボリュームが削除されていても、返金はされません。 月単位の請求は、長期間 (1 カ月以上) にわたって保管してアクセスする必要があるデータを使用する実動ワークロード用のストレージに適しています。
-
-
-**パフォーマンス**
-<table>
-  <caption>表 1 は、月ごとおよび時間ごとの請求によるパフォーマンス・ストレージの価格を示しています。</caption>
-  <tr>
-   <th>月額料金</th>
-   <td>$0.10/GB + $0.07/IOP</td>
-  </tr>
-  <tr>
-   <th>時間料金</th>
-   <td>$0.0001/GB + $0.0002/IOP</td>
-  </tr>
-</table>
-
-**エンデュランス**
-<table>
-  <caption>表 2 は、月ごとおよび時間ごとの請求オプションによる各ティアのエンデュランス・ストレージの価格を示しています。</caption>
-  <tr>
-   <th>IOPS ティア</th>
-   <th>0.25 IOPS/GB</th>
-   <th>2 IOPS/GB</th>
-   <th>4 IOPS/GB</th>
-   <th>10 IOPS/GB</th>
-  </tr>
-  <tr>
-   <th>月額料金</th>
-   <td>$0.06/GB</td>
-   <td>$0.15/GB</td>
-   <td>$0.20/GB</td>
-   <td>$0.58/GB</td>
-  </tr>
-  <tr>
-   <th>時間料金</th>
-   <td>$0.0001/GB</td>
-   <td>$0.0002/GB</td>
-   <td>$0.0003/GB</td>
-   <td>$0.0009/GB</td>
-  </tr>
-</table>
-
-
 
 ## プロビジョニング
 
@@ -132,74 +83,58 @@ subcollection: FileStorage
 
 {{site.data.keyword.filestorage_short}}のパフォーマンスは、ネットワーク・ファイル・システム (NFS) 接続を介してアクセスされ、マウントされます。 {{site.data.keyword.filestorage_short}}は通常、複数のサーバーが同時にボリュームにアクセスする場合に使用されます。 表 1 のサイズと IOPS に従って一貫したパフォーマンス・ボリュームを注文できます。それらのボリュームは Linux オペレーティング・システムで使用できます。
 
-<table cellpadding="1" cellspacing="1" style="width: 99%;">
- <caption>表 3 は、パフォーマンス・ストレージのためのサイズと IOPS のさまざまな組み合わせを示しています。<br/><sup><img src="/images/numberone.png" alt="脚注" /></sup> 一部のデータ・センターでは、6,000 を超える IOPS 制限が使用可能です。</caption>
-        <colgroup>
-          <col/>
-          <col/>
-          <col/>
-        </colgroup>
-          <tr>
-            <th>サイズ (GB)</th>
-            <th>最小 IOPS</th>
-            <th>最大 IOPS</th>
-          </tr>
-          <tr>
-            <td>20</td>
-            <td>100</td>
-            <td>1,000</td>
-          </tr>
-          <tr>
-            <td>40</td>
-            <td>100</td>
-            <td>2,000</td>
-          </tr>
-          <tr>
-            <td>80</td>
-            <td>100</td>
-            <td>4,000</td>
-          </tr>
-          <tr>
-            <td>100</td>
-            <td>100</td>
-            <td>6,000</td>
-          </tr>
-          <tr>
-            <td>250</td>
-            <td>100</td>
-            <td>6,000</td>
-          </tr>
-          <tr>
-            <td>500</td>
-            <td>100</td>
-            <td>6,000 または 10,000<sup><img src="/images/numberone.png" alt="脚注" /></sup></td>
-          </tr>
-          <tr>
-            <td>1,000</td>
-            <td>100</td>
-            <td>6,000 または 20,000<sup><img src="/images/numberone.png" alt="脚注" /></sup></td>
-          </tr>
-          <tr>
-            <td>2,000</td>
-            <td>200</td>
-            <td>6,000 または 40,000<sup><img src="/images/numberone.png" alt="脚注" /></sup></td>
-          </tr>
-          <tr>
-            <td>3,000 から 7,000</td>
-            <td>300</td>
-            <td>6,000 または 48,000<sup><img src="/images/numberone.png" alt="脚注" /></sup></td>
-          </tr>
-          <tr>
-            <td>8,000 から 9,000</td>
-            <td>500</td>
-            <td>6,000 または 48,000<sup><img src="/images/numberone.png" alt="脚注" /></sup></td>
-          </tr>
-          <tr>
-            <td>10,000 から 12,000</td>
-            <td>1,000</td>
-            <td>6,000 または 48,000<sup><img src="/images/numberone.png" alt="脚注" /></sup></td>
-          </tr>
-</table>
+| サイズ (GB) | 最小 IOPS | 最大 IOPS
+|-----|-----|-----|
+| 20 | 100 | 1,000 |
+| 40 | 100 | 2,000  |
+| 80 | 100 | 4,000 |
+| 100 | 100 | 6,000 |
+| 250 | 100 | 6,000 |
+| 500 | 100  | 6,000 または 10,000 |
+| 1,000 | 100 | 6,000 または 20,000 ![脚注](/images/numberone.png) |
+| 2,000 | 200 | 6,000 または 40,000 ![脚注](/images/numberone.png) |
+| 3,000 から 7,000 | 300 | 6,000 または 48,000 ![脚注](/images/numberone.png) |
+| 8,000 から 9,000 | 500 | 6,000 または 48,000 ![脚注](/images/numberone.png) |
+| 10,000 から 12,000 | 1,000 | 6,000 または 48,000 ![脚注](/images/numberone.png) |
+{: row-headers}
+{: class="comparison-table"}
+{: caption="表による比較" caption-side="top"}
+{: summary="Table 1 is showing the possible minimum and maximum IOPS rates based of the volume size. This table has row and column headers. The row headers identify the volume size range. The column headers identify the minimum and maximum IOPS levels. To understand what IOPS rates you can expect from your Storage, navigate to the row and review the two options."}
 
+
+![脚注](/images/numberone.png) *一部のデータ・センターでは、6,000 を超える IOPS 制限が使用可能です。*
 
 パフォーマンス・ボリュームは、プロビジョニングされた IOPS レベルに一貫して近いレベルで動作するように設計されています。 この整合性により、特定レベルのパフォーマンスのアプリケーション環境のサイズ変更やスケーリングが容易になります。 さらに、価格対パフォーマンスの割合が理想的であるボリュームを構築して環境を最適化することができます。
+
+## 請求処理
+
+ファイル・ボリュームの請求を時間単位にするか月単位にするかを選択できます。 LUN に対して選択した請求のタイプが、そのスナップショット・スペースとレプリカに適用されます。 例えば、時間単位の請求を使用して LUN をプロビジョンした場合、スナップショットやレプリカの料金は時間単位で請求されます。 月単位の請求を使用して LUN をプロビジョンした場合、スナップショットやレプリカの料金は月単位で請求されます。
+
+ * **時間単位の請求**では、ファイル・ボリュームがアカウントに存在した時間数が、LUN が削除されたとき、または請求サイクルの終わりのどちらか早いほうのタイミングで計算されます。 時間単位の請求は、使用期間が数日または 1 カ月未満のストレージに適しています。 時間単位の請求は、[一部のデータ・センター](/docs/infrastructure/FileStorage?topic=FileStorage-news)でプロビジョンされたストレージにのみ使用できます。
+
+ * **月単位の請求**では、作成日から請求サイクル終了までの日割り額が計算され、ただちに請求されます。 請求サイクルの終了前にボリュームが削除されていても、返金はされません。 月単位の請求は、長期間 (1 カ月以上) にわたって保管してアクセスする必要があるデータを使用する実動ワークロード用のストレージに適しています。
+
+
+### エンデュランス
+{: #pricing-comparison-endurance}
+
+| 定義済み IOPS ティアの料金オプション | 0.25 IOPS | 2 IOPS/GB | 4 IOPS/GB | 10 IOPS/GB |
+|-----|-----|-----|-----|-----|
+| 月額料金 | $0.06/GB | $0.15/GB | $0.20/GB | $0.58/GB |
+| 時間料金 | $0.0001/GB | $0.0002/GB | $0.0003/GB | $0.0009/GB |
+{: row-headers}
+{: class="comparison-table"}
+{: caption="表による比較" caption-side="top"}
+{: summary="Table 2 is showing the prices for Endurance Storage for each tier with monthly and hourly billing options. This table has row and column headers. The row headers identify the billing options. The column headers identify the IOPS level that is chosen for the service. To understand what your price is located in the table, navigate to the column and review the two different billing options for that IOPS tier."}
+
+### パフォーマンス
+{: #pricing-comparison-performance}
+
+| カスタム IOPS の料金オプション | 料金計算 |
+|-----|-----|
+| 月額料金 | $0.10/GB + $0.07/IOP |
+| 時間料金 | $0.0001/GB + $0.0002/IOP |
+{: row-headers}
+{: class="comparison-table"}
+{: caption="表による比較" caption-side="top"}
+{: summary="Table 3 is showing the prices for Performance Storage with monthly and hourly billing. This table has row and column headers. The row headers identify the billing options. To see what your cost for Storage is, navigate to the row of the billing option you are interested in."}

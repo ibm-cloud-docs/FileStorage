@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-05-24"
 
 keywords: File Storage, file storage, NFS,
 
@@ -31,7 +31,7 @@ Options:
  -h, --help             Show this message and exit.
 ```
 
-[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} でチケットを送信して、制限の拡大を要求できます。 要求が承認されると、特定のデータ・センターでボリューム制限が設定されます。  
+[ポータル](https://cloud.ibm.com/unifiedsupport/cases/add){: external}でサポート Case を送信して、制限の拡大を要求できます。要求が承認されると、特定のデータ・センターでボリューム制限が設定されます。
 
 制限の拡大を要求するには、チケットを開いて、営業担当員に送信します。
 

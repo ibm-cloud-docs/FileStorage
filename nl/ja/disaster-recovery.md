@@ -25,9 +25,9 @@ subcollection: FileStorage
 
 ## 2 次サイトにあるレプリカ・ボリュームの複製を使用するフェイルオーバー
 
-1. [IBM Cloud コンソール](https://{DomainName}/){: external} にログインし、左上の**「メニュー」**アイコンをクリックします。 **「クラシック・インフラストラクチャー」**を選択します。
+1. [IBM Cloud コンソール](https://{DomainName}/){: external}にログインして、左上にある**「メニュー」**アイコンをクリックします。 **「クラシック・インフラストラクチャー」**を選択します。
 
-   または、[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} にログインできます。
+   または、[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}にログインできます。
 2. **「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**をクリックします。
 3. リストからファイル共有のレプリカをクリックして、その**「詳細」**ページを表示します。
 4. **「詳細」**ページでスクロールダウンして既存のスナップショットを選択し、**「アクション」**>**「重複」**をクリックします。
@@ -41,9 +41,9 @@ subcollection: FileStorage
 
 元の 1 次サイトに実動環境を戻す場合は、以下の手順を行う必要があります。
 
-1. [IBM Cloud コンソール](https://{DomainName}/){: external} にログインし、左上の**「メニュー」**アイコンをクリックします。 **「クラシック・インフラストラクチャー」**を選択します。
+1. [IBM Cloud コンソール](https://{DomainName}/){: external}にログインして、左上にある**「メニュー」**アイコンをクリックします。 **「クラシック・インフラストラクチャー」**を選択します。
 
-   または、[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} にログインできます。
+   または、[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}にログインできます。
 2. **「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**をクリックします。
 3. LUN 名をクリックし、スナップショット・スケジュールを作成します (まだ存在しない場合)。
 
