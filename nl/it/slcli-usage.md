@@ -24,7 +24,7 @@ Puoi utilizzare la SLCLI per eseguire delle azioni che vengono normalmente gesti
 Per ulteriori informazioni su come installare e utilizzare la SLCLI, vedi [Python API Client](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}.
 {:tip}
 
-## Comandi SLCLI correlati all'accesso 
+## Comandi SLCLI correlati all'accesso
 * [Gestione di {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-managingstorage)  
   ```
   slcli file access-authorize
@@ -32,7 +32,7 @@ Per ulteriori informazioni su come installare e utilizzare la SLCLI, vedi [Pytho
   slcli file access-revoke
   ```
 
-## Comandi SLCLI correlati alla replica 
+## Comandi SLCLI correlati alla replica
 
 * [Comandi SLCLI correlati alla replica ](/docs/infrastructure/FileStorage?topic=FileStorage-replication#clicommands)
   ```
@@ -43,7 +43,7 @@ Per ulteriori informazioni su come installare e utilizzare la SLCLI, vedi [Pytho
   slcli file replica-partners
   ```
 
-## Comandi SLCLI correlati alle istantanee 
+## Comandi SLCLI correlati alle istantanee
 
 * [Ordinazione di istantanee](/docs/infrastructure/FileStorage?topic=FileStorage-ordering-snapshots)
   ```
@@ -61,7 +61,7 @@ Per ulteriori informazioni su come installare e utilizzare la SLCLI, vedi [Pytho
   slcli file snapshot-restore
   ```
 
-## Comandi SLCLI correlati al volume 
+## Comandi SLCLI correlati al volume
 
 * [Ordinazione di un volume {{site.data.keyword.filestorage_short}} ](/docs/infrastructure/FileStorage?topic=FileStorage-orderingSLCLI)
 * [Creazione di un volume duplicato](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume)

@@ -59,25 +59,12 @@ Le copie di istantanea riducono al minimo il consumo di disco preservando i sing
 
 Nel file system attivo, i blocchi modificati vengono riscritti in ubicazioni differenti sul disco oppure completamente rimossi come blocchi file attivi. Quando i file vengono modificati o eliminati, i blocchi file originali vengono conservati come parte di una o più copie di istantanea. Di conseguenza, lo spazio su disco utilizzato dai blocchi originali continua a essere riservato per riflettere lo stato del file system attivo prima della modifica. Questo spazio viene riservato in aggiunta allo spazio su disco utilizzato dai blocchi nel file system attivo modificato.
 
-<table>
-    <colgroup>
-      <col style="width: 33.3%;"/>
-      <col style="width: 33.3%;"/>
-      <col style="width: 33.3%;"/>
-    </colgroup>
-      <tr>
-        <th colspan="3" style="border: 0.0px;text-align: center;">Utilizzo dello spazio su disco prima e dopo la copia di istantanea</th>
-     </tr>
-     <tr>
-        <td style="border: 0.0px;text-align: center;"><img src="/images/bfcircle1.png" alt="Prima della copia di istantanea"></td>
-        <td style="border: 0.0px;text-align: center;"><img src="/images/bfcircle3.png" alt="Dopo la copia di istantanea"></td>
-        <td style="border: 0.0px;text-align: center;"><img src="/images/bfcircle2.png" alt="Modifiche dopo la copia di istantanea"></td>
-     </tr>
-     <tr>
-        <td style="border: 0.0px;">Prima che venga creata qualsiasi copia di istantanea, lo spazio su disco è utilizzato solo dal file system attivo.</td>
-        <td style="border: 0.0px;">Dopo la creazione di una copia di istantanea, il file system attivo e la copia di istantanea puntano agli stessi blocchi disco. La copia di istantanea non usa spazio su disco extra.</td>
-        <td style="border: 0.0px;">Dopo che <i>myfile.txt</i> è stato eliminato dal file system attivo, la copia di istantanea continua a includere il file e i riferimenti ai suoi blocchi disco. Per tale motivo l'eliminazione dei dati del file system attivo non sempre libera spazio su disco.</td>
-      </tr>
-</table>
+|Utilizzo spazio disco |   |
+|-----|-----|
+| ![Lo spazio utilizzato prima di effettuare una copia di istantanea](/images/bfcircle1.png "Prima della copia di istantanea") | Prima che venga creata qualsiasi copia di istantanea, lo spazio su disco è utilizzato solo dal file system attivo. |
+| ![Lo spazio utilizzato quando viene effettuata una copia di istantanea](/images/bfcircle3.png "Dopo la copia di istantanea") | Dopo la creazione di una copia di istantanea, il file system attivo e la copia di istantanea puntano agli stessi blocchi disco. La copia di istantanea non usa spazio su disco extra.  |
+| ![Lo spazio utilizzato quando vengono apportate alcune modifiche dopo una copia di istantanea](/images/bfcircle2.png "Modifiche dopo la copia di istantanea") | Dopo che `myfile.txt` è stato eliminato dal file system attivo, la copia di istantanea continua a includere il file e i riferimenti ai suoi blocchi disco. Per tale motivo l'eliminazione dei dati del file system attivo non sempre libera spazio su disco. |
+{: caption="La tabella 1 mostra come le istantanee influenzano l'utilizzo di spazio sull'archiviazione. " caption-side="top"}
+
 
 Per ulteriori informazioni sull'utilizzo dello spazio dell'istantanea, consulta [Gestione delle istantanee](/docs/infrastructure/FileStorage?topic=FileStorage-managingSnapshots).

@@ -159,9 +159,9 @@ Potresti dover riportare il tuo volume di archiviazione a uno specifico punto te
 
 1. Smonta e scollega il tuo volume di archiviazione dall'host.
    - Fai clic [qui](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux) per le istruzioni.
-2. Fai clic su **Storage**, **{{site.data.keyword.filestorage_short}}** nel [{{site.data.keyword.slportal}} ![Icona link esterno](../../icons/launch-glyph.svg "Iconal ink esterno")](https://control.softlayer.com/){: external}.
+2. Fai clic su **Storage**, **{{site.data.keyword.filestorage_short}}** nel [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
 3. Scorri verso il basso e fai clic sul tuo volume da ripristinare. La sezione **Snapshots** della pagina **Detail** visualizza l'elenco di tutte le istantanee salvate insieme alla loro dimensione e alla loro data di creazione.
-4. Fai clic su **Actions** accanto all'istantanea da utilizzare e fai clic su **Restore**. <br/>
+4. Fai clic su **Actions** accanto all'istantanea da utilizzare e fai clic su **Restore**. <br/> 
 
    Il completamento del ripristino comporta la perdita dei dati che erano stati creati o modificati dopo l'esecuzione dell'istantanea. Questa perdita di dati si verifica perché il tuo volume di archiviazione torna allo stesso stato in cui si trovava al momento dell'istantanea.
    {:note}

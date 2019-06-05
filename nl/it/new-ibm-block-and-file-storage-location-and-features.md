@@ -28,66 +28,10 @@ Il punto di montaggio NFS per i nuovi volumi è cambiato. Per i dettagli, consul
 
 La nuova {{site.data.keyword.filestorage_short}} è disponibile nelle seguenti regioni e nei seguenti data center e a breve verrà aggiunta la disponibilità di ulteriori data center.
 
-<table role="presentation">
-  <tr>
-    <td><strong>US 2</strong></td>
-    <td><strong>UE</strong></td>
-    <td><strong>Australia</strong></td>
-    <td><strong>Canada</strong></td>
-    <td><strong>America Latina</strong></td>
-    <td><strong>Asia Pacifico</strong></td>
-  </tr>
-  <tr>
-    <td>DAL09<br />
-	DAL10<br />
-	DAL12<br />
-	DAL13<br />
-	SJC03<br />
-        SJC04<br />
-	WDC04<br />
-	WDC06<br />
-	WDC07<br />
-	<br /><br /><br />
-    </td>
-    <td>AMS01<br />
-        AMS03<br />
-	FRA02<br />
-	FRA04<br />
-	FRA05<br />
-	LON02<br />
-	LON04<br />
-	LON05<br />
-	LON06<br />
-	MIL01<br />
-	OSLO1<br />
-	PAR01<br />
-    </td>
-    <td>MEL01<br />
-        SYD01<br />
-        SYD04<br />
-        SYD05<br /><br /><br /><br /><br /><br /><br /><br /><br />
-    </td>
-    <td>MON01<br />
-        TOR01<br />
-	<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-    </td>
-    <td>MEX01<br />
-        SAO01<br />
-	<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-    </td>
-    <td>CHE01<br />
-        HKG02<br />
-	SEO01<br />
-	SNG01<br />
-        TOK02<br />
-	TOK04<br />
-	TOK05<br />
-	<br /><br /><br /><br /><br />
-    </td>
-  </tr>
-</table>
-
-*La tabella 1 mostra la nostra disponibilità di data center. Ogni regione ha la propria colonna. Alcune città, come Dallas, San Jose, Washington DC, Amsterdam, Francoforte, Londra e Sydney, hanno più data center.*
+|US 2|America latina|Canada|UE|Asia Pacifico|Australia|
+|-----|-----|-----|-----|-----|------|
+| DAL09<br >DAL10<br />DAL12<br />DAL13<br />SJC03<br />SJC04<br />WDC04<br />WDC06<br />WDC07 | MEX01<br />SAO01 | MON01<br />TOR01  | AMS01<br />AMS03<br />FRA02<br />FRA04<br />FRA05<br />LON02<br />LON04<br />LON05<br />LON06<br />MIL01<br />OSLO1<br />PAR01 | CHE01<br />HKG02<br />SEO01<br />SNG01<br />TOK02<br />TOK04<br />TOK05 | MEL01<br />SYD01<br />SYD04<br />SYD05 |
+{: caption="La Tabella 1 mostra la disponibilità di data center. Ogni regione ha la propria colonna. Alcune città, come Dallas, San Jose, Washington DC, Amsterdam, Francoforte, Londra e Sydney, hanno più data center." caption-side="top"}
 
 ## Nuove funzioni e funzionalità
 {: #features}

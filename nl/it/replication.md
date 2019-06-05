@@ -33,85 +33,15 @@ Prima di poter eseguire la replica, devi creare una pianificazione delle istanta
 I data center in tutto il mondo di {{site.data.keyword.cloud}} sono accoppiati in combinazioni di primario e secondario.
 Vedi la Tabella 1 per l'elenco completo della disponibilità dei data center e delle destinazioni di replica.
 
-<table>
-  <caption style="text-align: left;"><p>Tabella 1 - Questa tabella mostra l'elenco completo dei data center con funzionalità avanzate in ogni regione. Ogni regione è una colonna separata. Alcune città, come Dallas, San Jose, Washington DC, Amsterdam, Francoforte, Londra e Sydney, hanno più data center.</p>
-  <p>&#42; I data center nella regione US 1 NON dispongono dell'archiviazione avanzata. Gli host nei data center con le funzionalità di archiviazione avanzata <strong>non possono</strong> avviare la replica con destinazioni della replica nei data center US 1.</p>
-  </caption>
-  <thead>
-    <tr>
-      <th>US 1 &#42;</th>
-      <th>US 2</th>
-      <th>America latina</th>
-      <th>Canada</th>
-      <th>Europa</th>
-      <th>Asia-Pacifico</th>
-      <th>Australia</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>DAL01<br />
-          DAL05<br />
-	  DAL06<br />
-	  HOU02<br />
-	  SJC01<br />
-	  WDC01<br />
-	  <br /><br /><br /><br /><br /><br />
-      </td>
-      <td>SJC03<br />
-	  SJC04<br />
-	  WDC04<br />
-	  WDC06<br />
-	  WDC07<br />
-	  DAL09<br />
-	  DAL10<br />
-	  DAL12<br />
-	  DAL13<br />
-	  <br /><br /><br />
-      </td>
-      <td>MEX01<br />
-	  SAO01<br />
-	  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-      </td>
-      <td>TOR01<br />
-          MON01<br />
-	  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-      </td>
-      <td>AMS01<br />
-	  AMS03<br />
-	  FRA02<br />
-	  FRA04<br />
-	  FRA05<br />
-	  LON02<br />
-	  LON04<br />
-	  LON05<br />
-	  LON06<br />
-	  OSL01<br />
-	  PAR01<br />
-	  MIL01<br />
-      </td>
-      <td>HKG02<br />
-          TOK02<br />
-	  TOK04<br />
-	  TOK05<br />
-	  SNG01<br />
-	  SEO01<br />
-          CHE01<br />
-	  <br /><br /><br /><br /><br />
-      </td>
-      <td>SYD01<br />
-          SYD04<br />
-          SYD05<br />
-          MEL01<br />
-          <br /><br /><br /><br /><br /><br /><br /><br />
-      </td>
-    </tr>
-  </tbody>
-</table>
+| US 1 | US 2 | America latina | Canada  | Europa  | Asia-Pacifico  | Australia  |
+|-----|-----|-----|-----|-----|-----|-----|
+| DAL01<br />DAL05<br />DAL06<br />HOU02<br />SJC01<br />WDC01 | SJC03<br />SJC04<br />WDC04<br />WDC06<br />WDC07<br />DAL09<br />DAL10<br />DAL12<br />DAL13 | MEX01<br />SAO01 | TOR01<br />MON01 | AMS01<br />AMS03<br />FRA02<br />FRA04<br />FRA05<br />LON02<br />LON04<br />LON05<br />LON06<br />OSL01<br />PAR01<br />MIL01 | HKG02<br />TOK02<br />TOK04<br />TOK05<br />SNG01<br />SEO01<br />CHE01 | SYD01<br />SYD04<br />SYD05<br />MEL01 |
+{: caption="Tabella 1 - Questa tabella mostra l'elenco completo dei data center con funzionalità avanzate in ogni regione. Ogni regione è una colonna separata. Alcune città, come Dallas, San Jose, Washington DC, Amsterdam, Francoforte, Londra e Sydney, hanno più data center. I data center nella regione US 1 NON dispongono dell'archiviazione avanzata. Gli host nei data center con le funzionalità di archiviazione avanzata non possono avviare la replica con destinazioni della replica nei data center US 1." caption-side="top"}
+
 
 ## Creazione della replica iniziale
 
-Le repliche funzionano in base a una pianificazione delle istantanee. Prima di poter eseguire la replica, devi già disporre dello spazio per le istantanee e di una pianificazione delle istantanee per il volume di origine. Se provi a configurare una replica e non disponi di uno di questi due elementi, ti verrà richiesto di acquistare ulteriore spazio o di configurare una pianificazione. Le repliche sono gestite in **Storage** > **{{site.data.keyword.filestorage_short}}** nel [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
+Le repliche funzionano in base a una pianificazione delle istantanee. Prima di poter eseguire la replica, devi già disporre dello spazio per le istantanee e di una pianificazione delle istantanee per il volume di origine. Se provi a configurare una replica e non disponi di uno di questi due elementi, ti verrà richiesto di acquistare ulteriore spazio o di configurare una pianificazione. Le repliche sono gestite in **Storage** > **{{site.data.keyword.filestorage_short}}** nel [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} .
 
 1. Fai clic sul tuo volume di archiviazione.
 2. Fai clic su **Replica** e fai clic su **Purchase a replication**.
@@ -130,14 +60,14 @@ Le repliche funzionano in base a una pianificazione delle istantanee. Prima di p
 
 ## Modifica di una replica esistente
 
-Puoi modificare la tua pianificazione della replica e modificare il tuo spazio di replica dalla scheda **Primary** o **Replica** in **Storage** > **{{site.data.keyword.filestorage_short}}** dal [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
+Puoi modificare la tua pianificazione della replica e modificare il tuo spazio di replica dalla scheda **Primary** o da quella **Replica** in **Storage** > **{{site.data.keyword.filestorage_short}}** dal [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
 
 
 ## Modifica della pianificazione della replica
 
-La pianificazione della replica è basata su una pianificazione delle istantanee esistente. Per modificare la pianificazione della replica da Hourly a Daily o Weekly o viceversa, devi annullare il volume di replica e configurarne uno nuovo. 
+La pianificazione della replica è basata su una pianificazione delle istantanee esistente. Per modificare la pianificazione della replica da Hourly a Daily o Weekly o viceversa, devi annullare il volume di replica e configurarne uno nuovo.
 
-Tuttavia, se vuoi modificare l'ora del giorno di quando si verifica la replica **Daily**, puoi modificare la pianificazione esistente sulla scheda Primary o Replica. 
+Tuttavia, se vuoi modificare l'ora del giorno di quando si verifica la replica **Daily**, puoi modificare la pianificazione esistente sulla scheda Primary o Replica.
 
 1. Fai clic su **Actions** nella scheda **Primary** o in quella **Replica**.
 2. Seleziona **Edit Snapshot Schedule**.
@@ -184,7 +114,7 @@ La cronologia replica viene visualizzata in **Audit Log** nella scheda **Account
 
 ## Creazione di un duplicato di una replica
 
-Puoi creare un duplicato di un {{site.data.keyword.cloud}} {{site.data.keyword.filestorage_full}} esistente. Il volume duplicato eredita per impostazione predefinita le opzioni di capacità e prestazioni del volume di archiviazione originale e ha una copia dei dati che arriva fino al punto temporale di un'istantanea.
+Puoi creare un duplicato di un {{site.data.keyword.cloud}}  {{site.data.keyword.filestorage_full}} esistente. Il volume duplicato eredita per impostazione predefinita le opzioni di capacità e prestazioni del volume di archiviazione originale e ha una copia dei dati che arriva fino al punto temporale di un'istantanea.
 
 I duplicati possono essere creati sia dai volumi primari che da quelli di replica. Il nuovo duplicato viene creato nello stesso data center del volume originale. Se crei un duplicato da un volume di replica, il nuovo volume viene creato nello stesso data center del volume di replica.
 

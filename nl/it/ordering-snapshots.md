@@ -52,7 +52,7 @@ Inoltre, per la maggior parte dei carichi di lavoro, più grande è un volume e 
 
 1. Accedi alla [console IBM Cloud](https://{DomainName}/){: external} e fai clic sull'icona menu nell'angolo superiore sinistro. Seleziona **Infrastruttura classica**.
 
-   In alternativa, puoi accedere al [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
+   In alternativa, puoi accedere al [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}. 
 2. Accedi alla tua archiviazione tramite **Storage** > **{{site.data.keyword.filestorage_short}}**.
 3. Fai clic su **Change Snapshot Space** nel frame Snapshots.
 4. Seleziona la quantità di spazio che ti serve e il metodo di pagamento.

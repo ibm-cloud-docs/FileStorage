@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-22"
+lastupdated: "2019-05-06"
 
 keywords: File Storage, NSF, mounting File Storage, mounting storage on Linux,
 
@@ -18,7 +18,7 @@ subcollection: FileStorage
 # Montaggio di {{site.data.keyword.filestorage_short}} su Linux
 {: #mountingLinux}
 
-Innanzitutto, assicurati che l'host che deve accedere al volume {{site.data.keyword.filestorage_full}} sia autorizzato tramite il [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
+Per prima cosa, assicurati che l'host per accedere al volume {{site.data.keyword.filestorage_full}} sia autorizzato tramite [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
 
 1. Dalla pagina di elenco {{site.data.keyword.filestorage_short}}, fai clic sul link **Actions** associato alla nuova condivisione e fai clic su **Authorize Host**.
 2. Seleziona l'host o gli host dall'elenco e fai clic su **Submit**. Questa azione autorizza l'host ad accedere alla condivisione.
@@ -141,3 +141,16 @@ Esempio
    # /etc/init.d/rpcidmapd start
    Starting RPC idmapd: [ OK ]
    ```
+## Smontaggio del file system 
+
+Per smontare un qualsiasi file system al momento montato sul tuo host, esegui il comando `umount` con il nome del disco o il nome di un punto di montaggio.
+
+```
+umount /dev/sdb
+```
+{:pre}
+
+```
+umount /mnt
+```
+{:pre}

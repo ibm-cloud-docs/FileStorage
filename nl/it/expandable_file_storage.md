@@ -44,7 +44,7 @@ Le limitazioni di dimensione esistenti per {{site.data.keyword.filestorage_short
 ## Ridimensionamento dell'archiviazione
 {: #resizingsteps}
 
-1. Dal {{site.data.keyword.slportal}}, fai clic su **Storage** > **{{site.data.keyword.filestorage_short}}** OPPURE, dal catalogo di {{site.data.keyword.BluSoftlayer_full}}, fai clic su **Infrastruttura** > **Archiviazione** > **{{site.data.keyword.filestorage_short}}**.
+1. Dal {{site.data.keyword.slportal}}, fai clic su **Storage** > **{{site.data.keyword.filestorage_short}}** OPPURE, dal catalogo di {{site.data.keyword.cloud}}, fai clic su **Infrastruttura** > **Archiviazione** > **{{site.data.keyword.filestorage_short}}**.
 2. Seleziona il volume dall'elenco e fai clic su **Actions** > **Modify Volume**
 3. Immetti la nuova dimensione dell'archiviazione in GB.
 4. Riesamina la tua selezione e la nuova determinazione del prezzo.

@@ -31,7 +31,7 @@ Puoi eseguire il provisioning di {{site.data.keyword.filestorage_short}} ed eseg
 
 1. Accedi al [Catalogo IBM Cloud](https://{DomainName}/catalog){: external} e fai clic su **Archiviazione**. Quindi, seleziona {{site.data.keyword.filestorage_short}}. Fai clic su **Crea**.
 
-   In alternativa, puoi accedere al [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} } e fare clic su **Storage** > **{{site.data.keyword.filestorage_short}}**. In alto a destra, fai clic su **Order {{site.data.keyword.filestorage_short}}**.
+   In alternativa, puoi accedere al [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} }, fare clic su **Storage** > **{{site.data.keyword.filestorage_short}}**. In alto a destra, fai clic su **Order {{site.data.keyword.filestorage_short}}**.
 2. Seleziona l'ubicazione (**Location**) della tua distribuzione (data center).
    - Assicurati che la nuova archiviazione venga aggiunta nella stessa ubicazione dell'host o degli host di calcolo di cui disponi.
 3. Fatturazione. Se hai selezionato un data center con funzionalità migliorate (contrassegnato con un asterisco), puoi scegliere tra fatturazione mensile od oraria.
@@ -63,7 +63,7 @@ Per impostazione predefinita, puoi eseguire il provisioning di un totale combina
 
 1. Accedi al [Catalogo IBM Cloud](https://{DomainName}/catalog){: external} e fai clic su **Archiviazione**. Quindi, seleziona {{site.data.keyword.filestorage_short}}. Fai clic su **Crea**.
 
-   In alternativa, puoi accedere al [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} } e fare clic su **Storage** > **{{site.data.keyword.filestorage_short}}**. In alto a destra, fai clic su **Order {{site.data.keyword.filestorage_short}}**.
+   In alternativa, puoi accedere al [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} }, fare clic su **Storage** > **{{site.data.keyword.filestorage_short}}**. In alto a destra, fai clic su **Order {{site.data.keyword.filestorage_short}}**.
 2. Fai clic su **Location** e seleziona il tuo data center.
    - Assicurati che la nuova archiviazione venga aggiunta nella stessa ubicazione dell'host o degli host di calcolo di cui disponi.
 3. Fatturazione. Se hai selezionato un data center con funzionalità migliorate (contrassegnato con un asterisco), puoi scegliere tra fatturazione mensile od oraria.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-05-24"
 
 keywords: File Storage, file storage, NFS,
 
@@ -31,7 +31,7 @@ Options:
  -h, --help             Show this message and exit.
 ```
 
-Puoi richiedere un aumento del limite inoltrando un ticket nel [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}. Una volta approvata la richiesta, ottieni un limite dei volumi che è impostato per uno specifico data center.  
+Puoi richiedere un aumento del limite inoltrando un caso di supporto nel [portale](https://cloud.ibm.com/unifiedsupport/cases/add){: external}. Una volta approvata la richiesta, ottieni un limite dei volumi che è impostato per uno specifico data center.
 
 Per richiedere un aumento del limite, apri un ticket e indirizzalo al tuo rappresentante di vendita.
 

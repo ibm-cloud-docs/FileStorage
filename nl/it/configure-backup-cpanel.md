@@ -20,7 +20,7 @@ subcollection: FileStorage
 
 Puoi utilizzare queste istruzioni per configurare i tuoi backup per l'archiviazione in {{site.data.keyword.filestorage_full}} da cPanel. Il presupposto è che siano disponibili SSH root o sudo e un accesso VHM (WebHost Manager) completo. Questo esempio è basato su un host **CentOS 7**.
 
-Per ulteriori informazioni, vedi il documento di [cPanel relativo alla configurazione della directory di backup](https://docs.cpanel.net/display/68Docs/Backup+Configuration#BackupConfiguration-ConfigureBackupDirectory){: external}.
+Per ulteriori informazioni, vedi [cPanel - Configuring backup directory](https://docs.cpanel.net/display/68Docs/Backup+Configuration#BackupConfiguration-ConfigureBackupDirectory){: external}.
 {:tip}
 
 1. Connettiti all'host tramite SSH.

@@ -24,7 +24,7 @@ Poiché il duplicato è basato sui dati in un'istantanea a un punto temporale, �
 
 I duplicati possono essere creati sia dai volumi **primari** che da quelli di **replica**. Il nuovo duplicato viene creato nello stesso data center del volume originale. Se crei un duplicato da un volume di replica, il nuovo volume viene creato nello stesso data center del volume di replica.
 
-Se sei un utente di un account dedicato di {{site.data.keyword.containerlong}}, consulta le tue opzioni per la duplicazione di un volume nella [Documentazione {{site.data.keyword.containerlong_notm}}](/docs/containers?topic=containers-backup_restore#backup_restore).
+Se sei un utente di un account dedicato di {{site.data.keyword.containerlong}}, consulta le tue opzioni per la duplicazione di un volume nella [Documentazione {{site.data.keyword.containerlong_notm}}](/docs/containers?topic=containers-file_storage#file_backup_restore).
 {:tip}
 
 I volumi duplicati solo accessibili da un host per la lettura/scrittura non appena viene seguito il provisioning dell'archiviazione. Tuttavia, le istantanee e le repliche sono consentite solo dopo il completamento della copia dei dati dall'originale al duplicato. Una volta completata la copia dei dati, il duplicato può essere gestito e utilizzato come un volume indipendente.
@@ -39,18 +39,18 @@ Alcuni usi comuni per un volume duplicato includono i seguenti esempi.
 - **Sviluppo e test (dev/test)**. Crea fino a quattro duplicati simultanei per volta di un volume per creare i dati duplicati per attività di sviluppo e test.
 - **Modifica delle dimensioni dell'archiviazione**. Crea un volume con la nuova dimensione, il nuovo tasso di IOPS o entrambe le cose senza dover spostare i tuoi dati.  
 
-Puoi creare un volume duplicato tramite il [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} in un paio di modi.
+Servendoti del [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}, puoi creare un volume duplicato in un paio di modi.
 
 
 ## Creazione di un duplicato da un volume specifico nell'elenco archiviazioni
 
 1. Vai al tuo elenco di {{site.data.keyword.filestorage_short}}
     - Dal portale clienti, fai clic su **Storage** > **{{site.data.keyword.filestorage_short}}** OPPURE
-    - Dal catalogo {{site.data.keyword.BluSoftlayer_full}}, fai clic su **Infrastruttura** > **Archiviazione** > **{{site.data.keyword.filestorage_short}}**.
+    - Dal catalogo {{site.data.keyword.cloud}}, fai clic su **Infrastruttura** > **Archiviazione** > **{{site.data.keyword.filestorage_short}}**.
 2. Seleziona un LUN dall'elenco e fai clic su **Actions** > **Duplicate LUN (Volume)**
 3. Scegli la tua opzione di istantanea.
     - Se ordini da un volume non di replica,
-      - Seleziona **Create from new snapshot** – questa azione crea un'istantanea da utilizzare per il duplicato. Utilizza questa opzione se il tuo volume non ha delle istantanee correnti o se vuoi creare un duplicato in questo momento.</br>
+      - Seleziona **Create from new snapshot** – questa azione crea un'istantanea da utilizzare per il duplicato. Utilizza questa opzione se il tuo volume non ha delle istantanee correnti o se vuoi creare un duplicato in questo momento.</br>  
       - Seleziona **Create from latest snapshot** - questa azione crea un duplicato dall'istantanea più recente che esiste per questo volume.
     - Se ordini da un volume di replica, la sola opzione per l'istantanea consiste nell'utilizzare l'istantanea più recente disponibile.
 4. Il tipo di archiviazione e l'ubicazione rimangono gli stessi del volume originale.

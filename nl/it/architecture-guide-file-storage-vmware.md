@@ -21,7 +21,7 @@ subcollection: FileStorage
 # Provisioning di {{site.data.keyword.filestorage_short}} con VMware
 {: #architectureguide}
 
-La seguente procedura può aiutarti a ordinare e configurare {{site.data.keyword.filestorage_full}} in un ambiente vSphere 5.5 e vSphere 6.0 a {{site.data.keyword.BluSoftlayer_full}}.
+La seguente procedura può aiutarti a ordinare e configurare {{site.data.keyword.filestorage_full}} in un ambiente vSphere 5.5 e vSphere 6.0 a {{site.data.keyword.cloud}}.
 
 {{site.data.keyword.filestorage_short}} è progettato per supportare applicazioni ad elevato I/O che richiedono dei livelli di prestazioni prevedibili. Le prestazioni prevedibili si raggiungono tramite l'allocazione di IOPS (input/output operations per second) a livello di protocollo ai singoli volumi.
 
@@ -50,75 +50,34 @@ Per ulteriori informazioni, consulta il white paper di VMware [Best Practices fo
 VMware vSphere on Network Attached Storage](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){: external}
 {:tip}
 
-**Matrice di supporto delle funzioni VMware del protocollo NFS**
-<table>
-  <caption>La tabella 1 illustra le funzioni vSphere come vengono applicate a due versioni differenti di NFS.</caption>
- <thead>
-  <tr>
-   <th>Funzioni vSphere</th>
-   <th>NFS versione 3</th>
-   <th>NFS versione 4.1</th>
-  </tr>
- </thead>
- <tbody>
-  <tr>
-   <td>vMotion e Storage vMotion</td>
-   <td>Sì</td>
-   <td>Sì</td>
-  </tr>
-  <tr>
-   <td>Elevata disponibilità (HA, High Availability)</td>
-   <td>Sì</td>
-   <td>Sì</td>
-  </tr>
-  <tr>
-   <td>Tolleranza ai guasti (FT, Fault Tolerance)</td>
-   <td>Sì</td>
-   <td>Sì</td>
-  </tr>
-  <tr>
-   <td>DRS (Distributed Resource Scheduler)</td>
-   <td>Sì</td>
-   <td>Sì</td>
-  </tr>
-  <tr>
-   <td>Profili host</td>
-   <td>Sì</td>
-   <td>Sì</td>
-  </tr>
-  <tr>
-   <td>DRS di archiviazione</td>
-   <td>Sì</td>
-   <td>No</td>
-  </tr>
-  <tr>
-   <td>SIOC (Storage I/O Control)</td>
-   <td>Sì</td>
-   <td>No</td>
-  </tr>
-  <tr>
-   <td>Site Recovery Manager</td>
-   <td>Sì</td>
-   <td>No</td>
-  </tr>
-  <tr>
-   <td>Volumi virtuali</td>
-   <td>Sì</td>
-   <td>No</td>
-  </tr>
- </tbody>
-</table>
-*Origine - [VMware - NFS Protocols and ESXi](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){: external}*
+### Matrice di supporto delle funzioni VMware del protocollo NFS
 
+| Funzioni vSphere | NFS versione 3 | NFS versione 4.1 |
+|-----|-----|-----|
+| vMotion e Storage vMotion | Sì | Sì |
+| Elevata disponibilità (HA, High Availability) | Sì | Sì |
+| Tolleranza ai guasti (FT, Fault Tolerance) | Sì | Sì |
+| DRS (Distributed Resource Scheduler) |Sì| Sì |
+| Profili host | Sì | Sì |
+| DRS di archiviazione | Sì | No |
+| SIOC (Storage I/O Control) | Sì | No |
+| Site Recovery Manager | Sì | No |
+| Volumi virtuali | Sì | No |
+{: row-headers}
+{: class="comparison-table"}
+{: caption="Tabella 1 - Matrice di supporto delle funzioni VMware del protocollo NFS" caption-side="top"}
+{: summary="This table has row and column headers. The row headers identify the vSphere features. The column headers identify the NSF version. To see if a feature is enabled navigate to the row of the feature and look at the column that is associated with the NFS version you use."}
+
+*Origine - [VMware - Protocolli NFS e ESXi](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){: external}*
 
 
 ### Utilizzo delle istantanee
 
-{{site.data.keyword.filestorage_short}} consente agli amministratori di impostare le pianificazioni delle istantanee che creano ed eliminano copie di istantanea automaticamente per ciascun volume di archiviazione. Possono anche creare delle pianificazioni delle istantanee aggiuntive (orarie, giornaliere, settimanali) per le istantanee automatiche e creare manualmente delle istantanee ad hoc per gli scenari di continuità aziendale e ripristino di emergenza (BCDR, business continuity and disaster recovery). Gli avvisi automatici vengono recapitati tramite il [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} al proprietario del volume per le istantanee conservate e lo spazio utilizzato.
+{{site.data.keyword.filestorage_short}} consente agli amministratori di impostare le pianificazioni delle istantanee che creano ed eliminano copie di istantanea automaticamente per ciascun volume di archiviazione. Possono anche creare delle pianificazioni delle istantanee aggiuntive (orarie, giornaliere, settimanali) per le istantanee automatiche e creare manualmente delle istantanee ad hoc per gli scenari di continuità aziendale e ripristino di emergenza (BCDR, business continuity and disaster recovery). Gli avvisi automatici vengono consegnati tramite il [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} al proprietario del volume per le istantanee conservate e lo spazio utilizzato.
 
 Per utilizzare le istantanee è necessario lo spazio per le istantanee. Lo spazio può essere acquistato durante l'ordine dei volumi iniziale e dopo il provisioning iniziale tramite la pagina **Volume Details** facendo clic su **Actions** e selezionando **Add Snapshot Space**.
 
-È importare notare che gli ambienti VMware non rilevano le istantanee. La funzionalità di istantanea di {{site.data.keyword.filestorage_short}} non deve essere confusa con le istantanee VMware. Qualsiasi ripristino che utilizza la funzione di istantanea di {{site.data.keyword.filestorage_short}} deve essere gestito dal [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
+È importare notare che gli ambienti VMware non rilevano le istantanee. La funzionalità di istantanea di {{site.data.keyword.filestorage_short}} non deve essere confusa con le istantanee VMware. Qualsiasi ripristino che utilizza la funzione di istantanea dell'{{site.data.keyword.filestorage_short}} deve essere gestita dal [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
 
 Il ripristino del volume di {{site.data.keyword.filestorage_short}} richiede lo spegnimento di tutte le macchine virtuali (VM, Virtual Machine) in {{site.data.keyword.filestorage_short}}. Il volume deve essere temporaneamente smontato dagli host ESXi per evitare eventuali danneggiamenti di dati durante il processo.
 
@@ -153,16 +112,16 @@ I dati non validi, non importa se danneggiati, oggetto di attacchi o infettati, 
 
 Utilizza la [Advanced Single-Site VMware Reference Architecture](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){: external} per configurare {{site.data.keyword.filestorage_short}} con le opzioni Endurance o Performance nel tuo ambiente VMware.
 
-{{site.data.keyword.filestorage_short}} può essere ordinato tramite il [catalogo IBM Cloud](https://{DomainName}/catalog){: external} oppure il [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}. Per ulteriori informazioni, vedi [Ordinazione di {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)
+{{site.data.keyword.filestorage_short}} può essere ordinato tramite [Il catalogo IBM Cloud](https://{DomainName}/catalog){: external} o il [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}. Per ulteriori informazioni, vedi [Ordinazione di {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)
 
-Il provisioning dell'archiviazione viene eseguito in meno di un minuto e diventa visibile nella pagina **{{site.data.keyword.filestorage_short}}** del [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
+Il provisioning dell'archiviazione viene eseguito in meno di un minuto ed è visibile sulla pagina **{{site.data.keyword.filestorage_short}}** del [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
 
 Dopo che è stato eseguito il provisioning di un volume, i {{site.data.keyword.BluBareMetServers_full}} o i {{site.data.keyword.BluVirtServers_full}} che utilizzano il volume devono essere autorizzati ad accedere all'archiviazione. Utilizza la seguente procedura per autorizzare il volume.
 
 1. Fai clic su **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Seleziona **Access Host** nel menu **Endurance** o **Performance Volume Actions**.
 3. Fai clic su **Subnets**.
-4. Scegli dall'elenco di sottoreti disponibili assegnate alle porte VMkernel sugli host ESXi e fai clic su **Submit**.<br/>
+4. Scegli dall'elenco di sottoreti disponibili assegnate alle porte VMkernel sugli host ESXi e fai clic su **Submit**.<br/> 
 
    Le sottoreti visualizzate sono sottoreti sottoscritte nello stesso data center del volume di archiviazione.
    {:note}
@@ -211,7 +170,7 @@ Prima di iniziare il processo di configurazione di VMware, assicurati che siano 
      8980 bytes from a.b.c.d: icmp_seq=1 ttl=128 time=3.36 ms
      ```
 
-Per ulteriori informazioni su VMware e frame Jumbo, vedi [qui](https://kb.vmware.com/s/article/1003712){: external}.
+Per ulteriori informazioni su VMware e i frame Jumbo, vedi [qui](https://kb.vmware.com/s/article/1003712){: external}.
 {:tip}
 
 
@@ -251,7 +210,7 @@ La configurazione di rete per questa guida all'architettura utilizza un numero m
 
 2. Gli instradamenti statici non sono persistenti tra i riavvii su ESXi 5.0 e antecedenti. Per garantire che eventuali instradamenti statici aggiunti rimangano persistenti, questo comando deve essere aggiunto al file `local.sh` file su ciascun host, che si trova nella directory `/etc/rc.local.d/`. Apri il file `local.sh` utilizzando l'editor visivo e aggiungi il secondo comando nel passo 4.1. davanti alla riga `exit 0`.
 
-Annota l'indirizzo IP poiché può essere utilizzato per montare il volume nel passo successivo.<br/>Questo processo deve essere eseguito per ciascun volume NFS che intendi montare al tuo host ESXi.<br/>Per ulteriori informazioni, vedi l'articolo della Knowledge Base di VMware KB, [Configuring static routes for VMkernel ports on an ESXi host](https://kb.vmware.com/s/article/2001426){: external}.
+Annota l'indirizzo IP poiché può essere utilizzato per montare il volume nel passo successivo.<br/>Questo processo deve essere eseguito per ciascun volume NFS che intendi montare al tuo host ESXi.<br/>Per ulteriori informazioni, vedi l'articolo della Knowledge Base di VMware, [Configuring static routes for VMkernel ports on an ESXi host](https://kb.vmware.com/s/article/2001426){: external}.
 {:tip}
 
 
@@ -347,7 +306,7 @@ Sono richieste delle impostazioni aggiuntive per la configurazione degli host ES
 |NFS.HeartbeatFrequency |	12 |
 |NFS.HeartbeatTimeout |	5 |
 |NFS.MaxQueueDepth|	64 |
-
+{: caption="Tabella 2 - Impostazioni lato host" caption-side="top"}
 
 ### Aggiornamento dei parametri di configurazione avanzati sull'host ESXi 5.x utilizzando la CLI
 

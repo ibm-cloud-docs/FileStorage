@@ -26,7 +26,7 @@ subcollection: FileStorage
 ## Prima di iniziare
 {: #prereqs}
 
-È possibile eseguire il provisioning di volumi {{site.data.keyword.filestorage_short}} da 20 GB a 12 TB con due opzioni: <br/>
+È possibile eseguire il provisioning di volumi {{site.data.keyword.filestorage_short}} da 20 GB a 12 TB con due opzioni: <br/> 
 - Esegui il provisioning di livelli **Endurance** che offrono livelli di prestazioni predefiniti e funzioni quali le istantanee e la replica.
 - Crea un ambiente **Performance** molto potente con IOPS (input/output operations per second) allocato.
 
@@ -36,68 +36,22 @@ Per ulteriori informazioni sull'offerta {{site.data.keyword.filestorage_short}},
 
 ### Dimensione blocco
 
-IOPS sia per Endurance che per Performance è basato su una dimensione di blocco di 16-KB con un carico di lavoro casuale/sequenziale al 50/50 e con lettura/scrittura al 50/50. Un blocco di 16-KB è l'equivalente di una scrittura sul volume.
+Il valore IOPS sia per Endurance che per Performance è basato su una dimensione di blocco di 16-KB con un carico di lavoro casuale/sequenziale al 50/50 e con lettura/scrittura al 50/50. Un blocco di 16-KB è l'equivalente di una scrittura sul volume.
 {:important}
 
 La dimensione del blocco utilizzata dalla tua applicazione influisce direttamente sulle prestazioni dell'archiviazione. Se la dimensione del blocco utilizzata dalla tua applicazione è inferiore a 16 KB, il limite IOPS si realizza prima del limite di velocità effettiva. Viceversa, se la dimensione del blocco utilizzata dalla tua applicazione è superiore a 16 KB, il limite di velocità effettiva si realizza prima del limite di IOPS.
 
-<table>
-  <caption>La tabella 4 mostra degli esempi di come la dimensione del blocco e IOPS influiscono sulla velocità effettiva.</caption>
-        <colgroup>
-          <col/>
-          <col/>
-          <col/>
-        </colgroup>
-        <thead>
-          <tr>
-            <th>Dimensione blocco (KB)</th>
-            <th>IOPS</th>
-            <th>Velocità effettiva (MB/s)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>4 (tipica per Linux)</td>
-            <td>1.000</td>
-            <td>4</td>
-          </tr>
-          <tr>
-            <td>8 (tipica per Oracle)</td>
-            <td>1.000</td>
-            <td>8</td>
-          </tr>
-          <tr>
-            <td>16</td>
-            <td>1.000</td>
-            <td>16</td>
-          </tr>
-          <tr>
-            <td>32 (tipica per SQL Server)</td>
-            <td>500</td>
-            <td>16</td>
-          </tr>          
-          <tr>
-            <td>64</td>
-            <td>250</td>
-            <td>16</td>
-          </tr>
-          <tr>
-            <td>128</td>
-            <td>128</td>
-            <td>16</td>
-          </tr>
-          <tr>
-            <td>512</td>
-            <td>32</td>
-            <td>16</td>
-          </tr>
-          <tr>
-            <td>1024</td>
-            <td>16</td>
-            <td>16</td>
-          </tr>
-        </tbody>
-</table>
+| Dimensione blocco (KB) | IOPS | Velocità effettiva (MB/s) |
+|-----|-----|-----|
+| 4 | 1.000 | 16 |
+| 8 | 1.000 | 16 |
+| 16 | 1.000 | 16 |
+| 32 | 500 | 16 |
+| 64 | 250 | 16 |
+| 128 | 128 | 16 |
+| 512 | 32 | 16 |
+| 1024 | 16 | 16 |
+{: caption="La tabella 1 mostra degli esempi su come la dimensione blocco e IOPS influisce sulla velocità effettiva.<br/Dimensione IO media x IOPS = Velocità effettiva in MB/s. " caption-side="top"}>
 
 ### Host autorizzati
 
@@ -108,6 +62,8 @@ Un altro fattore da considerare è il numero di host che sta utilizzando il tuo 
 La velocità della tua connessione Ethernet deve essere superiore a quella effettiva massima prevista dal tuo volume. In generale, non prevedere di saturare la tua connessione Ethernet oltre il 70% della larghezza di banda disponibile. Ad esempio, se hai 6.000 IOPS e stai utilizzando una dimensione del blocco di 16-KB, il volume può gestire una velocità effettiva di circa 94-MBps. Se hai una connessione Ethernet da 1-Gbps al tuo LUN, diventa un collo di bottiglia quando i tuoi server provano a utilizzare la velocità effettiva massima disponibile. Ciò è dovuto al fatto che il 70 percento del limite teorico di una connessione Ethernet da 1-Gbps (125 MB al secondo) consentirebbe solo 88 MB al secondo.
 
 Per raggiungere l'IOPS massimo, è necessario che siano implementate delle risorse di rete adeguate. Altre considerazioni includono l'utilizzo della rete privata esternamente al lato archiviazione e host e le regolazioni specifiche per le applicazioni (stack di IP o [profondità di coda](/docs/infrastructure/FileStorage?topic=FileStorage-hostqueuesettings) e altre impostazioni).
+
+Il traffico di archiviazione dovrebbe essere isolato dagli altri tipi di traffico e non essere indirizzato tramite firewall e router. Il mantenere il traffico di archiviazione su una VLAN dedicata permette di evitare una mancata corrispondenza MTU quando vengono abilitati i frame Jumbo. Per ulteriori informazioni, vedi [Frame Jumbo in IBM Cloud ](/docs/FileStorage?topic=FileStorage-jumboframes).
 
 Il traffico di archiviazione viene incluso nell'utilizzo di rete totale dei server virtuali pubblici. Per ulteriori informazioni sui limiti che potrebbero essere imposti dal servizio, vedi la [documentazione del Virtual Server](/docs/vsi?topic=virtual-servers-about-public-virtual-servers).
 

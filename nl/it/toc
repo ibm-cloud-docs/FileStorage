@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="FileStorage" audience="services" arm="3662725" href="/docs/infrastructure/FileStorage?topic=FileStorage-GettingStarted" path="infrastructure/FileStorage"}
+{: .toc subcollection="FileStorage" audience="services" arm="3662725" href="/docs/infrastructure/FileStorage?topic=FileStorage-getting-started" path="infrastructure/FileStorage"}
 IBM Cloud Storage - File Storage
 
     {: .navgroup id="learn"}
@@ -54,4 +54,6 @@ IBM Cloud Storage - File Storage
     faqs.md
     [Python API Client Information](https://softlayer-python.readthedocs.io/en/latest/index.html)
     slcli-usage.md
+    [CLI IBM Cloud e Developer Tools](https://cloud.ibm.com/docs/cli/reference/ibmcloud?topic=cloud-cli-sl-file-storage-service)
+    [Identity and Access Management](https://cloud.ibm.com/docs/iam?topic=iam-infrapermission)
     {: .navgroup-end}
