@@ -59,25 +59,12 @@ subcollection: FileStorage
 
 활성 파일 시스템에서는 변경된 블록이 디스크의 상이한 위치에 다시 쓰여지거나 전체적으로 활성 파일 블록으로서 제거됩니다. 파일이 변경되거나 삭제되면 원래 파일 블록이 하나 이상의 스냅샷 사본의 일부로서 계속 보관됩니다. 따라서 원래 블록이 사용하는 디스크 영역 또한 변경 전의 활성 파일 시스템 상태를 반영하기 위해 여전히 예약되어 있습니다. 이 영역은 수정된 활성 파일 시스템의 블록이 사용하는 디스크 영역에 더하여 예약됩니다.
 
-<table>
-    <colgroup>
-      <col style="width: 33.3%;"/>
-      <col style="width: 33.3%;"/>
-      <col style="width: 33.3%;"/>
-    </colgroup>
-      <tr>
-        <th colspan="3" style="border: 0.0px;text-align: center;">스냅샷 복사 전후의 디스크 영역 사용량</th>
-     </tr>
-     <tr>
-        <td style="border: 0.0px;text-align: center;"><img src="/images/bfcircle1.png" alt="스냅샷 복사 전"></td>
-        <td style="border: 0.0px;text-align: center;"><img src="/images/bfcircle3.png" alt="스냅샷 복사 후"></td>
-        <td style="border: 0.0px;text-align: center;"><img src="/images/bfcircle2.png" alt="스냅샷 복사 후 변경사항"></td>
-     </tr>
-     <tr>
-        <td style="border: 0.0px;">스냅샷 사본이 작성되기 전에는 디스크 영역을 활성 파일 시스템만 사용합니다.</td>
-        <td style="border: 0.0px;">스냅샷 사본이 작성된 후에는 활성 파일 시스템과 스냅샷 사본이 동일한 디스크 블록을 지시합니다. 스냅샷 사본은 추가 디스크 영역을 사용하지 않습니다.</td>
-        <td style="border: 0.0px;"><i>myfile.txt</i>가 활성 파일 시스템에서 삭제된 후에도 스냅샷 사본에는 여전히 해당 파일이 포함되어 있으며 해당 디스크 블록을 참조합니다. 이것이 활성 파일 시스템 데이터를 삭제해도 디스크 영역이 확보되지 않는 경우가 있는 이유입니다.</td>
-      </tr>
-</table>
+| 디스크 공간 사용량 |   |
+|-----|-----|
+| ![스냅샷 사본을 작성하기 전에 사용되는 공간](/images/bfcircle1.png "스냅샷 복사 전") |스냅샷 사본이 작성되기 전에는 디스크 영역을 활성 파일 시스템만 사용합니다. |
+| ![스냅샷 사본을 작성한 경우 사용되는 공간](/images/bfcircle3.png "스냅샷 복사 후") |스냅샷 사본이 작성된 후에는 활성 파일 시스템과 스냅샷 사본이 동일한 디스크 블록을 지시합니다. 스냅샷 사본은 추가 디스크 영역을 사용하지 않습니다.  |
+| ![스냅샷 사본을 작성한 후 변경사항이 있는 경우 사용되는 공간](/images/bfcircle2.png "스냅샷 복사 후 변경") |`myfile.txt`가 활성 파일 시스템에서 삭제된 후에도 스냅샷 사본에는 여전히 해당 파일이 포함되어 있으며 해당 디스크 블록을 참조합니다. 이것이 활성 파일 시스템 데이터를 삭제해도 디스크 영역이 확보되지 않는 경우가 있는 이유입니다. |
+{: caption="표 1은 스냅샷이 스토리지의 공간 사용량에 어떤 영향을 주는지 보여줍니다." caption-side="top"}
+
 
 스냅샷 영역 사용에 대한 자세한 정보는 [스냅샷 관리](/docs/infrastructure/FileStorage?topic=FileStorage-managingSnapshots)를 참조하십시오.

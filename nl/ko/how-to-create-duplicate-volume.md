@@ -24,7 +24,7 @@ subcollection: FileStorage
 
 복제는 **기본** 및 **복제본** 볼륨으로부터 작성될 수 있습니다. 새 복제는 원래 볼륨과 동일한 데이터 센터에 작성됩니다. 복제본 볼륨에서 복제를 작성하는 경우에는 새 볼륨이 복제본 볼륨과 동일한 데이터 센터에 작성됩니다.
 
-{{site.data.keyword.containerlong}}의 데디케이티드 계정 사용자인 경우에는 [{{site.data.keyword.containerlong_notm}} 문서](/docs/containers?topic=containers-backup_restore#backup_restore)에서 볼륨 복제에 대한 옵션을 참조하십시오.
+{{site.data.keyword.containerlong}}의 데디케이티드 계정 사용자인 경우에는 [{{site.data.keyword.containerlong_notm}} 문서](/docs/containers?topic=containers-file_storage#file_backup_restore)에서 볼륨 복제에 대한 옵션을 참조하십시오.
 {:tip}
 
 복제 볼륨은 스토리지가 프로비저닝되는 순간 읽기/쓰기를 위해 호스트에 의해 액세스될 수 있습니다. 그러나 스냅샷 및 복제는 원본에서 복제본으로 데이터 복사가 완료될 때까지 허용되지 않습니다. 데이터 복사가 완료되면 복제본을 독립적인 볼륨으로서 관리하고 사용할 수 있습니다.

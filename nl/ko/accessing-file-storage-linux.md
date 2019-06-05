@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-22"
+lastupdated: "2019-05-06"
 
 keywords: File Storage, NSF, mounting File Storage, mounting storage on Linux,
 
@@ -141,3 +141,16 @@ Linux 기반 {{site.data.keyword.cloud}} 컴퓨팅 인스턴스를 NFS(Network F
    # /etc/init.d/rpcidmapd start
    Starting RPC idmapd: [ OK ]
    ```
+## 파일 시스템 마운트 해제
+
+호스트에서 현재 마운트된 파일 시스템을 마운트 해제하려면 `umount` 명령을 디스크 이름 또는 마운트 지점 이름과 함께 실행하십시오. 
+
+```
+umount /dev/sdb
+```
+{:pre}
+
+```
+umount /mnt
+```
+{:pre}

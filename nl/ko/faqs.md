@@ -59,62 +59,28 @@ subcollection: FileStorage
 ## 단일 호스트에 연결할 수 있는 {{site.data.keyword.filestorage_short}} 볼륨은 몇 개입니까?
 {: faq}
 
-호스트 운영 체제에서 처리할 수 있는 항목에 따라 달라지며 {{site.data.keyword.BluSoftlayer_full}}에서 제한하는 것은 아닙니다. 마운트할 수 있는 파일 공유 수에 대한 한계는 OS 문서를 참조하십시오.
+호스트 운영 체제에서 처리할 수 있는 항목에 따라 달라지며 {{site.data.keyword.cloud}}에서 제한하는 것은 아닙니다. 마운트할 수 있는 파일 공유 수에 대한 한계는 OS 문서를 참조하십시오.
 
 ## 파일 볼륨 크기당 허용되는 파일 공유의 수는 얼마입니까? 볼륨 크기당 허용된 최대 파일 공유의 수는 얼마입니까?
+{: #maxfilevolume}
 {: faq}
 
-<table>
-  <caption>표 1에서는 볼륨 크기에 따라 허용되는 최대 Inode 수를 표시합니다. 볼륨 크기는 왼쪽 열에 있습니다. Inode 및 파일 공유의 수는 오른쪽에 있습니다.</caption>
-  <thead>
-    <tr>
-      <th>볼륨 크기</th>
-      <th>Inodes 및 파일 공유</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>20GB - 39GB</td>
-      <td>622,484</td>
-    </tr>
-    <tr>
-      <td>40GB - 79GB</td>
-      <td>1,245,084</td>
-    </tr>          
-    <tr>
-      <td>80GB - 99GB</td>
-      <td>2,490,263</td>
-    </tr>          
-    <tr>
-      <td>100GB - 249GB</td>
-      <td>3,112,863</td>
-    </tr>          
-    <tr>
-      <td>250GB - 499GB</td>
-      <td>7,782,300</td>
-    </tr>          
-    <tr>
-      <td>500GB - 999GB</td>
-      <td>15,564,695</td>
-    </tr>
-    <tr>
-      <td>1TB</td>
-      <td>31,876,593</td>
-    </tr>
-    <tr>
-      <td>2TB</td>
-      <td>63,753,186</td>
-    </tr>
-    <tr>
-      <td>3TB</td>
-      <td>95,629,970</td>
-    </tr>
-    <tr>
-      <td>4TB - 12TB</td>
-      <td>127,506,359</td>
-    </tr>
-   </tbody>
-</table>
+|볼륨 크기 |Inodes 및 파일 공유 |
+|-----|-----|
+|20GB - 39GB |622,484 |
+|40GB - 79GB |1,245,084 |
+|80GB - 99GB |2,490,263 |
+|100GB - 249GB |3,112,863 |
+|250GB - 499GB |7,782,300 |
+|500GB - 999GB |15,564,695 |
+|1TB |31,876,593 |
+|2TB |63,753,186 |
+|3TB |95,629,970 |
+|4TB |127,506,359 |
+{: row-headers}
+{: class="comparison-table"}
+{: caption="표 비교" caption-side="top"}
+{: summary="Table 1 shows the maximum number of inodes that are allowed based on the volume size. Volume sizes are in the left column. The number of inodes and file shares are on the right."}
 
 ## IOPS 측정
 {: faq}
@@ -147,6 +113,7 @@ IOPS는 볼륨 레벨에서 적용됩니다. 달리 말하면, 6000IOPS의 볼�
 처리량 한계는 볼륨당 레벨에서 설정됩니다. 이 한계는 더 빠른 이더넷 연결을 사용하여 늘릴 수 없습니다. 그러나 보다 느린 이더넷 연결을 사용하면 대역폭에서 잠재적으로 병목 현상이 발생할 수 있습니다.
 
 ## 방화벽과 보안 그룹이 성능에 영향을 줍니까?
+{: #isolatedstoragetraffic}
 {: faq}
 
 스토리지 트래픽은 방화벽을 우회하는 VLAN을 통해 전송하는 것이 좋습니다. 소프트웨어 방화벽을 통해 스토리지 트래픽을 전송하면 대기 시간이 늘어나며 스토리지 성능에 악영향을 줍니다.
@@ -164,9 +131,9 @@ IOPS는 볼륨 레벨에서 적용됩니다. 달리 말하면, 6000IOPS의 볼�
 ## 지원되는 NFS 버전
 {: faq}
 
-NFS v3 및 NFS v4.1 모두는 {{site.data.keyword.cloud}} 환경에서 지원됩니다. 
+NFS v3 및 NFS v4.1 모두는 {{site.data.keyword.cloud}} 환경에서 지원됩니다.
 
-NFS v3는 stateless 프로토콜이며 네트워크 이벤트가 발생할 때 복원력이 좋으므로 선호되는 버전입니다. 
+NFS v3는 stateless 프로토콜이며 네트워크 이벤트가 발생할 때 복원력이 좋으므로 선호되는 버전입니다.
 
 NFS v3는 기본적으로 루트 클라이언트가 NFS 공유에 대해 루트 권한을 유지할 수 있게 하는 `no_root_squash`를 지원합니다. 도메인 정보를 편집하고 `rpcidmapd` 또는 유사한 서비스를 실행하여 NFS v4.1에서 이 기능을 사용할 수 있습니다. 자세한 정보는 [NFS에 대해 no_root_squash 구현](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux#norootsquash)을 참조하십시오.
 

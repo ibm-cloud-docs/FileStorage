@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-05-24"
 
 keywords: File Storage, file storage, NFS,
 
@@ -31,7 +31,7 @@ Options:
  -h, --help             Show this message and exit.
 ```
 
-[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}에서 티켓을 제출하여 한계 늘리기를 요청할 수 있습니다. 요청이 승인되면 특정 데이터 센터에 대해 설정된 볼륨 한계를 받습니다.  
+[포털](https://cloud.ibm.com/unifiedsupport/cases/add){: external}에서 지원 케이스를 제출하여 한계 늘리기를 요청할 수 있습니다. 요청이 승인되면 특정 데이터 센터에 대해 설정된 볼륨 한계를 받습니다.
 
 한계 늘리기를 요청하려면 티켓을 열고 이를 영업 담당자에게 보내십시오.
 

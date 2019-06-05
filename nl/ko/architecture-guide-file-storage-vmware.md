@@ -21,7 +21,7 @@ subcollection: FileStorage
 # VMware에서의 {{site.data.keyword.filestorage_short}} 프로비저닝
 {: #architectureguide}
 
-다음 단계를 수행하여 {{site.data.keyword.BluSoftlayer_full}}의 vSphere 5.5 및 vSphere 6.0 환경에서 {{site.data.keyword.filestorage_full}}를 주문하고 구성할 수 있습니다.
+다음 단계를 수행하여 {{site.data.keyword.cloud}}의 vSphere 5.5 및 vSphere 6.0 환경에서 {{site.data.keyword.filestorage_full}}를 주문하고 구성할 수 있습니다.
 
 {{site.data.keyword.filestorage_short}}는 예측 가능한 성능 레벨을 필요로 하는, I/O 양이 많은 애플리케이션을 지원하기 위해 디자인되었습니다. 예측 가능한 성능은 개별 볼륨에 대한 프로토콜 레벨 IOPS(Input/Output Operations Per Second)의 할당을 통해 얻을 수 있습니다.
 
@@ -46,70 +46,29 @@ subcollection: FileStorage
 - 경로 장애 복구 중에 스토리지 연결이 끊김을 방지하기 위해 {{site.data.keyword.IBM}}에서는 적절한 제한시간 값을 설정하는 VMWare 도구를 설치하는 것을 권장합니다. 값을 변경할 필요는 없으며, 기본 설정은 VMWare 호스트의 연결이 끊어지지 않도록 하기에 충분합니다.
 - NFSv3 및 NFSv4.1이 둘 다 {{site.data.keyword.cloud}} 환경에서 지원됩니다. 그러나 {{site.data.keyword.IBM}}에서는 NFSv3을 사용하도록 권장합니다. NFSv4.1이 Stateful 프로토콜이므로(NFSv3과 같이 Stateless가 아님), 네트워크 이벤트 중에 프로토콜 문제가 발생할 수 있습니다. NFSv4.1은 모든 오퍼레이션을 중지한 후에 잠금 교정을 완료해야 합니다. 이러한 오퍼레이션이 실행되는 동안 장애가 발생할 수 있습니다.
 
-자세한 정보는 [네트워크 연결 스토리지에서
-VMware vSphere 실행에 대한 우수 사례](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf)의 VMware 백서를 참조하십시오.{: external}
+자세한 정보는 다음에서 VMware 백서를 참조하십시오. [네트워크 연결 스토리지에서 VMware vSphere 실행에 대한
+우수 사례](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){: external}
 {:tip}
 
-**NFS 프로토콜 VMware 기능 지원 표**
-<table>
-  <caption>표 1은 서로 다른 두 NFS 버전에 적용되는 vSphere 기능을 보여줍니다.</caption>
- <thead>
-  <tr>
-   <th>vSphere 기능</th>
-   <th>NFS 버전 3</th>
-   <th>NFS 버전 4.1</th>
-  </tr>
- </thead>
- <tbody>
-  <tr>
-   <td>vMotion 및 스토리지 vMotion</td>
-   <td>예</td>
-   <td>예</td>
-  </tr>
-  <tr>
-   <td>고가용성(HA)</td>
-   <td>예</td>
-   <td>예</td>
-  </tr>
-  <tr>
-   <td>FT(Fault Tolerance)</td>
-   <td>예</td>
-   <td>예</td>
-  </tr>
-  <tr>
-   <td>DRS(Distributed Resource Scheduler)</td>
-   <td>예</td>
-   <td>예</td>
-  </tr>
-  <tr>
-   <td>호스트 프로파일</td>
-   <td>예</td>
-   <td>예</td>
-  </tr>
-  <tr>
-   <td>스토리지 DRS</td>
-   <td>예</td>
-   <td>아니오</td>
-  </tr>
-  <tr>
-   <td>스토리지 I/O 제어</td>
-   <td>예</td>
-   <td>아니오</td>
-  </tr>
-  <tr>
-   <td>사이트 복구 관리자</td>
-   <td>예</td>
-   <td>아니오</td>
-  </tr>
-  <tr>
-   <td>가상 볼륨</td>
-   <td>예</td>
-   <td>아니오</td>
-  </tr>
- </tbody>
-</table>
-*소스 - [VMware - NFS 프로토콜 및 ESXi](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){: external}*
+### NFS 프로토콜 VMware 기능 지원 표
 
+|vSphere 기능 |NFS 버전 3 |NFS 버전 4.1 |
+|-----|-----|-----|
+|vMotion 및 스토리지 vMotion |예 |예 |
+|고가용성(HA) |예 |예 |
+|FT(Fault Tolerance) |예 |예 |
+|DRS(Distributed Resource Scheduler) |예< |예 |
+|호스트 프로파일 |예 |예 |
+|스토리지 DRS |예 |아니오 |
+|스토리지 I/O 제어 |예 |아니오 |
+|사이트 복구 관리자 |예 |아니오 |
+|가상 볼륨 |예 |아니오 |
+{: row-headers}
+{: class="comparison-table"}
+{: caption="표 1 - NFS 프로토콜 VMware 기능 지원 표" caption-side="top"}
+{: summary="This table has row and column headers. The row headers identify the vSphere features. The column headers identify the NSF version. To see if a feature is enabled navigate to the row of the feature and look at the column that is associated with the NFS version you use."}
+
+*소스 - [VMware - NFS 프로토콜 및 ESXi](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){: external}*
 
 
 ### 스냅샷 사용
@@ -151,7 +110,7 @@ VMware 환경은 스냅샷을 인지하지 않음을 유념하십시오. {{site.
 
 ## {{site.data.keyword.filestorage_short}} 주문
 
-[고급 단일 사이트 VMware 참조 아키텍처](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){: external}을 사용하여 VMware 환경의 Endurance 또는 Performance 옵션으로 {{site.data.keyword.filestorage_short}}를 설정할 수 있습니다.
+[고급 단일 사이트 VMware 참조 아키텍처 ](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){: external}을 사용하여 VMware 환경의 Endurance 또는 Performance 옵션으로 {{site.data.keyword.filestorage_short}}를 설정할 수 있습니다.
 
 {{site.data.keyword.filestorage_short}}는 [IBM Cloud 카탈로그](https://{DomainName}/catalog){: external} 또는 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}을 통해 주문할 수 있습니다. 자세한 정보는 [{{site.data.keyword.filestorage_short}} 주문](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)을 참조하십시오.
 
@@ -211,7 +170,7 @@ VMware 구성 프로세스를 시작하기 전에, 다음 전제조건을 만족
         8980 bytes from a.b.c.d: icmp_seq=1 ttl=128 time=3.36 ms
      ```
 
-VMware 및 Jumbo 프레임에 관한 자세한 정보는 [여기](https://kb.vmware.com/s/article/1003712){: external}을 참조하십시오.
+VMware 및 Jumbo 프레임에 대한 자세한 정보는 [여기](https://kb.vmware.com/s/article/1003712){: external}를 참조하십시오.
 {:tip}
 
 
@@ -272,7 +231,7 @@ VMware 및 Jumbo 프레임에 관한 자세한 정보는 [여기](https://kb.vmw
 9. 다음 화면에서 입력을 검토하고 **완료**를 클릭하십시오.
 10. 추가 {{site.data.keyword.filestorage_short}} 볼륨에 대해 반복 실행하십시오.
 
-{{site.data.keyword.BluSoftlayer_full}}에서는 FQDN 이름을 사용하여 VMware 데이터 저장소에 연결하도록 권장합니다. 직접 IP 주소 지정을 사용하면 FQDN을 사용하여 제공되는 로드 밸런싱 메커니즘이 무시될 수 있습니다.
+{{site.data.keyword.cloud}}에서는 FQDN 이름을 사용하여 VMware 데이터 저장소에 연결하도록 권장합니다. 직접 IP 주소 지정을 사용하면 FQDN을 사용하여 제공되는 로드 밸런싱 메커니즘이 무시될 수 있습니다.
 {:important}
 
 FQDN이 아니라 IP 주소를 사용하려면 서버에 대해 ping을 실행하여 IP 주소를 얻으십시오.
@@ -347,7 +306,7 @@ NFS 스토리지를 위해 ESXi 5.x 호스트를 구성하려면 추가 설정�
 |NFS.HeartbeatFrequency |	12 |
 |NFS.HeartbeatTimeout |	5 |
 |NFS.MaxQueueDepth|	64 |
-
+{: caption="표 2 - 호스트 측 설정" caption-side="top"}
 
 ### CLI를 사용하여 ESXi 5.x 호스트의 고급 구성 매개변수 업데이트
 

@@ -18,7 +18,7 @@ subcollection: FileStorage
 # 제공자 관리 저장 시 암호화
 {: #encryption}
 
-{{site.data.keyword.BluSoftlayer_full}}에서는 보안에 대한 필요성을 심각하게 받아들이며 데이터의 보안을 유지하기 위한 데이터 암호화의 중요성을 이해하고 있습니다. 제공자 관리 암호화를 사용하면 Endurance또는 Performance 옵션이 프로비저닝된 {{site.data.keyword.filestorage_full}}가 추가 비용 없이 성능에 영향을 주지 않고 기본적으로 암호화됩니다.
+{{site.data.keyword.cloud}}에서는 보안에 대한 필요성을 심각하게 받아들이며 데이터의 보안을 유지하기 위한 데이터 암호화의 중요성을 이해하고 있습니다. 제공자 관리 암호화를 사용하면 Endurance또는 Performance 옵션이 프로비저닝된 {{site.data.keyword.filestorage_full}}가 추가 비용 없이 성능에 영향을 주지 않고 기본적으로 암호화됩니다.
 
 제공자 관리 저장 암호화 기능은 다음의 산업 표준 프로토콜을 사용합니다.
 

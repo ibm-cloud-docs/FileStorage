@@ -20,7 +20,7 @@ subcollection: FileStorage
 
 일반적으로 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}을 통해 주문하는 제품을 주문하는 데 SLCLI를 사용할 수 있습니다. SL API에서, 주문은 여러 주문 컨테이너로 구성됩니다. 주문 CLI는 하나의 주문 컨테이너와만 작동합니다.
 
-SLCLI 설치 및 사용 방법에 관한 자세한 정보는 [Python API 클라이언트](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}를 참조하십시오.
+SLCLI 설치 및 사용 방법에 대한 자세한 정보는 [Python API 클라이언트](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}를 참조하십시오.
 {:tip}
 
 ## 사용 가능한 {{site.data.keyword.filestorage_short}} 오퍼 검색
@@ -129,7 +129,7 @@ Options:
   --help                    Show this message and exit.
 ```
 
-API를 통해 {{site.data.keyword.filestorage_short}}에 액세스하는 권한을 호스트에 부여하는 데 대한 자세한 정보는 [authorize_host_to_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/file/#SoftLayer.managers.file.FileStorageManager.authorize_host_to_volume){: external}을 참조하십시오.
+호스트에서 API를 통해 {{site.data.keyword.filestorage_short}}에 액세스하는 권한을 부여하는 데 관한 자세한 정보는 [authorize_host_to_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/file/#SoftLayer.managers.file.FileStorageManager.authorize_host_to_volume){: external}을 참조하십시오.
 {:tip}
 
 동시 권한 부여 한계에 관한 자세한 정보는 [FAQ](/docs/infrastructure/FileStorage?topic=FileStorage-faqs)를 참조하십시오.
