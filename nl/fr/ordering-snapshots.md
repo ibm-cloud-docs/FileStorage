@@ -23,7 +23,7 @@ subcollection: FileStorage
 
 Pour créer des instantanés de votre volume de stockage, que ce soit de manière automatisée ou manuelle, vous devez acheter de l'espace dans lequel les conserver. Vous pouvez acquérir une capacité maximale pouvant atteindre la quantité de votre volume de stockage (lors de l'achat initial du volume ou ultérieurement en suivant les étapes ci-après).
 
-## Calcul de la quantité d'espace d'instantané à commander
+## Calcul de la quantité d'espace d'image instantanée à commander
 
 En règle générale, l'espace d'instantané est utilisé par les instantanés en fonction de deux critères essentiels :
 - la quantité de modifications apportées à votre système de fichiers actif ;
@@ -52,7 +52,7 @@ De plus, pour la plupart des charges de travail, plus le volume est grand, plus 
 
 1. Connectez-vous à la [console IBM Cloud](https://{DomainName}/){: external}, puis cliquez sur l'icône de menu dans l'angle supérieur gauche. Sélectionnez **Infrastructure classique**.
 
-   Vous pouvez également vous connecter au portail [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
+   Sinon, vous pouvez vous connecter au portail [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
 2. Accédez à votre stockage via **Stockage** > **{{site.data.keyword.filestorage_short}}**.
 3. Cliquez sur **Modifier l'espace d'instantané** dans le cadre Instantanés.
 4. Sélectionnez la quantité d'espace dont vous avez besoin et la méthode de paiement.

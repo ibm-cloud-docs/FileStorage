@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-05-22"
 
 keywords: File Storage, Endurance, Performance, IOPS, replication, billing, file storage, NFS,
 
@@ -20,7 +20,7 @@ subcollection: FileStorage
 # A propos de {{site.data.keyword.filestorage_short}}
 {: #about}
 
-{{site.data.keyword.filestorage_full}} est un système de stockage de fichiers {{site.data.keyword.filestorage_short}} NAS basé sur NFS, permanent, rapide et flexible. Cet environnement NAS vous permet d'avoir un contrôle total des fonctions et des performances de vos partages de fichiers. Les partages {{site.data.keyword.filestorage_short}} peuvent être connectés à un maximum de 64 unités autorisées via des connexions TCP/IP routées pour la résilience.
+{{site.data.keyword.cloud}}  {{site.data.keyword.filestorage_short}} est un système de stockage de fichiers {{site.data.keyword.filestorage_short}} NAS basé sur NFS, permanent, rapide et flexible. Cet environnement NAS vous permet d'avoir un contrôle total des fonctions et des performances de vos partages de fichiers. Les partages {{site.data.keyword.filestorage_short}} peuvent être connectés à un maximum de 64 unités autorisées via des connexions TCP/IP routées pour la résilience.
 {:shortdesc}
 
 ## Fonctions
@@ -53,55 +53,6 @@ Tirez parti des principales fonctionnalités de {{site.data.keyword.filestorage_
 - **Cluster de bases de données**
    - Prend en charge des cas d'utilisation avancés, tels que des bases de données en clusters.
 
-## Facturation
-
-Vous pouvez choisir une facturation horaire ou mensuelle pour un volume de fichier. Le type de facturation sélectionné pour un numéro d'unité logique s'applique à son espace d'instantané et à ses répliques. Par exemple, si vous mettez à disposition un numéro d'unité logique avec une facturation horaire, tous les frais liés aux instantanés ou aux répliques seront facturés à l'heure. Si vous mettez à disposition un numéro d'unité logique avec une facturation mensuelle, tous les frais liés aux instantanés ou aux répliques sont facturés au mois.
-
-Avec la **facturation horaire**, le nombre d'heures d'existence du volume de fichier sur le compte est calculé lors de la suppression du numéro d'unité logique ou à la fin du cycle de facturation, à la première occurrence de l'un de ces deux événements. La facturation horaire est un bon choix si vous avez besoin d'un stockage pour quelques jours ou pour moins d'un mois complet. La facturation horaire est disponible uniquement pour le stockage qui est mis à disposition dans des [centres de données sélectionnés](/docs/infrastructure/FileStorage?topic=FileStorage-news).
-
-Avec la **facturation mensuelle**, le calcul du prix est calculé au prorata depuis la date de création jusqu'à la fin du cycle de facturation et la facturation est immédiate. Aucun remboursement n'est possible si un volume de fichier est supprimé avant la fin du cycle de facturation. La facturation mensuelle convient si vous avez besoin d'un stockage pour des charges de travail qui utilisent des données devant être stockées et rester accessibles pour de longues périodes (un mois ou plus).
-
-
-**Performance**
-<table>
-  <caption>Le tableau 1 contient les prix du stockage Performance avec une facturation mensuelle et horaire.</caption>
-  <tr>
-   <th>Prix mensuel</th>
-   <td>0,10 $/Go + 0,07 $/IOP</td>
-  </tr>
-  <tr>
-   <th>Prix horaire</th>
-   <td>0,0001 $/Go + 0,0002 $/IOP</td>
-  </tr>
-</table>
-
-**Endurance**
-<table>
-  <caption>Le tableau 2 contient les prix du stockage Endurance avec chaque niveau avec des options de facturation mensuelle et horaire.</caption>
-  <tr>
-   <th>Niveau d'IOPS</th>
-   <th>0,25 IOPS/Go</th>
-   <th>2 IOPS/Go</th>
-   <th>4 IOPS/Go</th>
-   <th>10 IOPS/Go</th>
-  </tr>
-  <tr>
-   <th>Prix mensuel</th>
-   <td>0,06 $/Go</td>
-   <td>0,15 $/Go</td>
-   <td>0,20 $/Go</td>
-   <td>0,58 $/Go</td>
-  </tr>
-  <tr>
-   <th>Prix horaire</th>
-   <td>0,0001 $/Go</td>
-   <td>0,0002 $/Go</td>
-   <td>0,0003 $/Go</td>
-   <td>0,0009 $/Go</td>
-  </tr>
-</table>
-
-
 
 ## Mise à disposition
 
@@ -132,74 +83,58 @@ Performance est une classe de {{site.data.keyword.filestorage_short}} conçue po
 
 Pour {{site.data.keyword.filestorage_short}}, Performance est accessible et monté via une connexion NFS. {{site.data.keyword.filestorage_short}} est généralement utilisé lorsque le volume fait l'objet d'un accès simultané par plusieurs serveurs. Il est possible de commander des volumes avec des performances cohérentes en fonction des tailles et du nombre d'IOPS figurant dans le tableau 1 ; ces volumes peuvent être utilisés avec des systèmes d'exploitation Linux.
 
-<table cellpadding="1" cellspacing="1" style="width: 99%;">
- <caption>Le tableau 3 présente les combinaisons de taille et d'IOPS possibles pour le stockage Performance.<br/><sup><img src="/images/numberone.png" alt="Note de bas de page" /></sup> Vous pouvez opter pour un nombre d'IOPS supérieur à 6 000 dans des centres de données sélectionnés.</caption>
-        <colgroup>
-          <col/>
-          <col/>
-          <col/>
-        </colgroup>
-          <tr>
-            <th>Taille (Go)</th>
-            <th>Nb min d'IOPS</th>
-            <th>Nb max d'IOPS</th>
-          </tr>
-          <tr>
-            <td>20</td>
-            <td>100</td>
-            <td>1 000</td>
-          </tr>
-          <tr>
-            <td>40</td>
-            <td>100</td>
-            <td>2 000</td>
-          </tr>
-          <tr>
-            <td>80</td>
-            <td>100</td>
-            <td>4 000</td>
-          </tr>
-          <tr>
-            <td>100</td>
-            <td>100</td>
-            <td>6 000</td>
-          </tr>
-          <tr>
-            <td>250</td>
-            <td>100</td>
-            <td>6 000</td>
-          </tr>
-          <tr>
-            <td>500</td>
-            <td>100</td>
-            <td>6 000 ou 10 000<sup><img src="/images/numberone.png" alt="footnote" /></sup></td>
-          </tr>
-          <tr>
-            <td>1 000</td>
-            <td>100</td>
-            <td>6 000 ou 20 000<sup><img src="/images/numberone.png" alt="Footnote" /></sup></td>
-          </tr>
-          <tr>
-            <td>2 000</td>
-            <td>200</td>
-            <td>6 000 ou 40 000<sup><img src="/images/numberone.png" alt="Footnote" /></sup></td>
-          </tr>
-          <tr>
-            <td>3 000 à 7 000</td>
-            <td>300</td>
-            <td>6 000 ou 48 000<sup><img src="/images/numberone.png" alt="Footnote" /></sup></td>
-          </tr>
-          <tr>
-            <td>8 000 à 9 000</td>
-            <td>500</td>
-            <td>6 000 ou 48 000<sup><img src="/images/numberone.png" alt="Footnote" /></sup></td>
-          </tr>
-          <tr>
-            <td>10 000 à 12 000</td>
-            <td>1 000</td>
-            <td>6 000 ou 48 000<sup><img src="/images/numberone.png" alt="Footnote" /></sup></td>
-          </tr>
-</table>
+| Taille (Go) | Nb min d'IOPS | Nb max d'IOPS
+|-----|-----|-----|
+| 20 | 100 | 1 000 |
+| 40 | 100 | 2 000  |
+| 80 | 100 | 4 000 |
+| 100 | 100 | 6 000 |
+| 250 | 100 | 6 000 |
+| 500 | 100  | 6 000 ou 10 000 |
+| 1 000 | 100 | 6 000 ou 20 000 ![note de bas de page](/images/numberone.png) |
+| 2 000 | 200 | 6 000 ou 40 000 ![note de bas de page](/images/numberone.png) |
+| 3 000 à 7 000 | 300 | 6 000 ou 48 000 ![note de bas de page](/images/numberone.png) |
+| 8 000 à 9 000 | 500 | 6 000 ou 48 000 ![note de bas de page](/images/numberone.png) |
+| 10 000 à 12 000 | 1 000 | 6 000 ou 48 000 ![note de bas de page](/images/numberone.png) |
+{: row-headers}
+{: class="comparison-table"}
+{: caption="Comparaison de tableaux" caption-side="top"}
+{: summary="Table 1 is showing the possible minimum and maximum IOPS rates based of the volume size. This table has row and column headers. The row headers identify the volume size range. The column headers identify the minimum and maximum IOPS levels. To understand what IOPS rates you can expect from your Storage, navigate to the row and review the two options."}
 
+
+![note de bas de page](/images/numberone.png) *Vous pouvez opter pour un nombre d'IOPS supérieur à 6 000 dans des centres de données sélectionnés.*
 
 Les volumes Performance sont conçus pour fonctionner d'une manière cohérente proche du niveau d'IOPS mis à disposition. La cohérence facilite le dimensionnement et la mise à l'échelle des environnements d'application avec un niveau de performance donné. De plus, il est possible d'optimiser un environnement en créant un volume avec le rapport idéal prix/performance.
+
+## Facturation
+
+Vous pouvez choisir une facturation horaire ou mensuelle pour un volume de fichier. Le type de facturation sélectionné pour un numéro d'unité logique s'applique à son espace d'instantané et à ses répliques. Par exemple, si vous mettez à disposition un numéro d'unité logique avec une facturation horaire, tous les frais liés aux instantanés ou aux répliques seront facturés à l'heure. Si vous mettez à disposition un numéro d'unité logique avec une facturation mensuelle, tous les frais liés aux instantanés ou aux répliques sont facturés au mois.
+
+ * Avec la **facturation horaire**, le nombre d'heures d'existence du volume de fichier sur le compte est calculé lors de la suppression du numéro d'unité logique ou à la fin du cycle de facturation, à la première occurrence de l'un de ces deux événements. La facturation horaire est un bon choix si vous avez besoin d'un stockage pour quelques jours ou pour moins d'un mois complet. La facturation horaire est disponible uniquement pour le stockage qui est mis à disposition dans des [centres de données sélectionnés](/docs/infrastructure/FileStorage?topic=FileStorage-news).
+
+ * Avec la **facturation mensuelle**, le calcul du prix est calculé au prorata depuis la date de création jusqu'à la fin du cycle de facturation et la facturation est immédiate. Aucun remboursement n'est possible si un volume de fichier est supprimé avant la fin du cycle de facturation. La facturation mensuelle convient si vous avez besoin d'un stockage pour des charges de travail qui utilisent des données devant être stockées et rester accessibles pour de longues périodes (un mois ou plus).
+
+
+### Endurance
+{: #pricing-comparison-endurance}
+
+| Options de tarification pour niveaux d'IOPS prédéfinis | 0,25 IOPS | 2 IOPS/Go | 4 IOPS/Go | 10 IOPS/Go |
+|-----|-----|-----|-----|-----|
+| Prix mensuel | 0,06 $/Go | 0,15 $/Go | 0,20 $/Go | 0,58 $/Go |
+| Prix horaire | 0,0001 $/Go | 0,0002 $/Go | 0,0003 $/Go | 0,0009 $/Go |
+{: row-headers}
+{: class="comparison-table"}
+{: caption="Comparaison de tableaux" caption-side="top"}
+{: summary="Table 2 is showing the prices for Endurance Storage for each tier with monthly and hourly billing options. This table has row and column headers. The row headers identify the billing options. The column headers identify the IOPS level that is chosen for the service. To understand what your price is located in the table, navigate to the column and review the two different billing options for that IOPS tier."}
+
+### Performances
+{: #pricing-comparison-performance}
+
+| Options de tarification pour IOPS personnalisé | Calcul de tarification |
+|-----|-----|
+| Prix mensuel | 0,10 $/Go + 0,07 $/IOP |
+| Prix horaire | 0,0001 $/Go + 0,0002 $/IOP |
+{: row-headers}
+{: class="comparison-table"}
+{: caption="Comparaison de tableaux" caption-side="top"}
+{: summary="Table 3 is showing the prices for Performance Storage with monthly and hourly billing. This table has row and column headers. The row headers identify the billing options. To see what your cost for Storage is, navigate to the row of the billing option you are interested in."}

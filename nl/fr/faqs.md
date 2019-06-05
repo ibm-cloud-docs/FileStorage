@@ -59,62 +59,28 @@ Le nombre d'autorisations par volume de fichier est limité par défaut à 64. P
 ## Combien de volumes {{site.data.keyword.filestorage_short}} peuvent être connectés à un seul hôte ?
 {: faq}
 
-Le nombre dépend de ce que le système d'exploitation hôte est capable de gérer, il ne s'agit pas d'un paramètre limité par {{site.data.keyword.BluSoftlayer_full}}. Consultez la documentation de votre système d'exploitation pour connaître les limites relatives au nombre de partages de fichiers pouvant être montés.
+Cela dépend de ce que peut gérer le système d'exploitation de l'hôte. Ce n'est pas {{site.data.keyword.cloud}} qui fixe une limite. Consultez la documentation de votre système d'exploitation pour connaître les limites relatives au nombre de partages de fichiers pouvant être montés.
 
 ## Combien de partages de fichiers sont-ils autorisés par taille de volume de fichier ? Quelle est la taille maximale de partage de fichiers autorisée par taille de volume ?
+{: #maxfilevolume}
 {: faq}
 
-<table>
-  <caption>Le tableau 1 présente le nombre maximal d'i-nodes autorisés en fonction de la taille de volume. Les tailles de volume sont indiquées dans la colonne de gauche. Le nombre d'i-nodes et de partages de fichiers est indiqué à droite.</caption>
-  <thead>
-    <tr>
-      <th>Taille de volume</th>
-      <th>I-nodes et partages de fichiers</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>20 Go - 39 Go</td>
-      <td>622 484</td>
-    </tr>
-    <tr>
-      <td>40 Go - 79 Go</td>
-      <td>1 245 084</td>
-    </tr>          
-    <tr>
-      <td>80 Go - 99 Go</td>
-      <td>2 490 263</td>
-    </tr>          
-    <tr>
-      <td>100 Go - 249 Go</td>
-      <td>3 112 863</td>
-    </tr>          
-    <tr>
-      <td>250 Go - 499 Go</td>
-      <td>7 782 300</td>
-    </tr>          
-    <tr>
-      <td>500 Go - 999 Go</td>
-      <td>15 564 695</td>
-    </tr>
-    <tr>
-      <td>1 To</td>
-      <td>31 876 593</td>
-    </tr>
-    <tr>
-      <td>2 To</td>
-      <td>63,753,186</td>
-    </tr>
-    <tr>
-      <td>3 To</td>
-      <td>95,629,970</td>
-    </tr>
-    <tr>
-      <td>4 To - 12 To</td>
-      <td>127,506,359</td>
-    </tr>
-   </tbody>
-</table>
+| Taille de volume | I-nodes et partages de fichiers |
+|-----|-----|
+| 20 Go - 39 Go | 622 484 |
+| 40 Go - 79 Go | 1 245 084 |
+| 80 Go - 99 Go | 2 490 263 |
+| 100 Go - 249 Go | 3 112 863 |
+| 250 Go - 499 Go | 7 782 300 |
+| 500 Go - 999 Go | 15 564 695 |
+| 1 To | 31 876 593 |
+| 2 To | 63,753,186 |
+| 3 To | 95,629,970 |
+| 4 To | 127,506,359 |
+{: row-headers}
+{: class="comparison-table"}
+{: caption="Comparaison de tableaux" caption-side="top"}
+{: summary="Table 1 shows the maximum number of inodes that are allowed based on the volume size. Volume sizes are in the left column. The number of inodes and file shares are on the right."}
 
 ## Mesure des IOPS
 {: faq}
@@ -134,19 +100,20 @@ Le nombre maximal d'IOPS peut être obtenu même si vous utilisez des tailles de
 ## Les opérations d'entrées-sorties par seconde (IOPS) sont-elles allouées par instance ou par volume ?
 {: faq}
 
-Les IOPS sont appliquées au niveau volume. Autrement dit, deux hôtes connectés à un volume doté de 6 000 IOPS partagent ces 6 000 IOPS.
+Les IOPS sont imposées au niveau du volume. En d'autres termes, deux hôtes connectés à un volume avec 6 000 IOPS partagent ces 6 000 IOPS.
 
 ## Le volume doit-il être préchauffé pour obtenir le débit prévu ?
 {: faq}
 
-Il n'est pas nécessaire de préchauffer le volume. Le débit indiqué peut être observé immédiatement après la mise à disposition du volume.
+Aucun préchauffage n'est nécessaire. Le débit indiqué peut être observé immédiatement après la mise à disposition du volume.
 
 ## Est-il possible d'atteindre un débit plus élevé si une connexion Ethernet plus rapide est utilisée ?
 {: faq}
 
-Les limites de débit sont configurées par volume. Une connexion Ethernet plus rapide ne permet pas d'augmenter la limite définie. Une connexion Ethernet plus lente risque toutefois de générer un goulot d'étranglement.
+Les limites de débit sont configurées par volume. Une connexion Ethernet plus rapide ne permet pas d'augmenter la limite définie. Toutefois, avec une connexion Ethernet plus lente, votre bande passante peut éventuellement créer un goulot d'étranglement.
 
 ## Les pare-feu et groupes de sécurité ont-ils un impact sur les performances ?
+{: #isolatedstoragetraffic}
 {: faq}
 
 Il est recommandé d'exécuter le trafic de stockage sur un réseau local virtuel qui ignore le pare-feu. L'exécution du trafic de stockage via des pare-feu logiciels augmente le temps d'attente et a un impact négatif sur les performances de stockage.
@@ -154,7 +121,7 @@ Il est recommandé d'exécuter le trafic de stockage sur un réseau local virtue
 ## Quel temps d'attente lié aux performances puis-je attendre de mon stockage {{site.data.keyword.filestorage_short}} ?   
 {: faq}
 
-Le temps d'attente cible du stockage est inférieur à 1 ms. Le stockage est connecté à des instances de calcul sur un réseau partagé ; le temps d'attente exact des performances dépend donc du trafic réseau sur une période donnée.
+Le temps d'attente cible du stockage est inférieur à 1 ms. Le stockage est connecté à des instances de traitement sur un réseau partagé ; le temps d'attente exact des performances dépend donc du trafic réseau sur une période donnée.
 
 ## Qu'advient-il des données en cas de suppression des volumes {{site.data.keyword.filestorage_short}} ?
 {: faq}
@@ -164,16 +131,16 @@ Le temps d'attente cible du stockage est inférieur à 1 ms. Le stockage est con
 ## Quelles sont les versions NFS prises en charge ?
 {: faq}
 
-NFS version 3 et NFS version 4.1 sont pris en charge dans l'environnement {{site.data.keyword.BluSoftlayer_full}}. 
+NFS version 3 et NFS version 4.1 sont pris en charge dans l'environnement {{site.data.keyword.cloud}}.
 
-NFS version 3 est recommandé car il s'agit d'un protocole sans état plus résilient lorsque des événements de réseau se produisent. 
+NFS version 3 est recommandé car il s'agit d'un protocole sans état plus résilient lorsque des événements de réseau se produisent.
 
 NFS v3 prend en charge en natif `no_root_squash` qui permet aux clients root de conserver les droits root sur le partage NFS. Vous pouvez activer cette fonctionnalité dans NFS v4.1 en éditant les informations sur le domaine et en exécutant `rpcidmapd` ou un service similaire. Pour plus d'informations, voir [Implémentation de no_root_squash pour NFS](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux#norootsquash).
 
 Lorsqu'il s'agit de vSphere Solutions, NFS version 3 prend en charge plus de fonctionnalités que la version 4.1. Par exemple, Storage DRS et Site Recovery Manager.
 
 
-## Qu'advient-il des unités déclassées du centre de données de cloud ?
+## Que deviennent les unités qui sont déclassées du centre de données cloud ?
 {: faq}
 
-Lorsque des unités sont déclassées, IBM les détruit avant de les supprimer. Elles sont ainsi inutilisables. Toutes les données écrites sur ces unités deviennent inaccessibles.
+Lorsque des unités sont déclassées, IBM les détruit avant de les supprimer. Elles sont ainsi inutilisables. Toutes les données qui étaient écrites sur ces unités deviennent inaccessibles.

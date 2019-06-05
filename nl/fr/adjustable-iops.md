@@ -47,7 +47,7 @@ Si la réplication est activée sur le volume, la réplique est automatiquement 
 
 1. Accédez à votre liste de {{site.data.keyword.filestorage_short}}
     - A partir du portail client, cliquez sur **Storage** > **{{site.data.keyword.filestorage_short}}** OU
-    - A partir de la console {{site.data.keyword.BluSoftlayer_full}}, cliquez sur **Infrastructure** > **Stockage** > **{{site.data.keyword.filestorage_short}}**.
+    - A partir de la console {{site.data.keyword.cloud}}, cliquez sur **Infrastructure** > **Stockage** > **{{site.data.keyword.filestorage_short}}**.
 2. Sélectionnez le volume dans la liste et cliquez sur **Actions** > **Modifier le volume**
 3. Sous les options d'IOPS de stockage, effectuez une nouvelle sélection :
     - Pour Endurance (IOPS hiérarchisées), sélectionnez un niveau d'IOPS supérieur à 0,25 IOPS/Go de votre stockage. Vous pouvez augmenter le niveau d'IOPS à tout moment. Toutefois, vous ne pouvez le diminuer qu'une seule fois par mois.

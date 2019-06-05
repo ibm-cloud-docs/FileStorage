@@ -21,7 +21,7 @@ subcollection: FileStorage
 # Mise à disposition de {{site.data.keyword.filestorage_short}} avec VMware
 {: #architectureguide}
 
-Les étapes décrites ci-après vous permettent de commander et configurer {{site.data.keyword.filestorage_full}} dans un environnement vSphere 5.5 et vSphere 6.0 sur {{site.data.keyword.BluSoftlayer_full}}.
+Les étapes décrites ci-après vous permettent de commander et configurer {{site.data.keyword.filestorage_full}} dans un environnement vSphere 5.5 et vSphere 6.0 sur {{site.data.keyword.cloud}}.
 
 {{site.data.keyword.filestorage_short}} est conçu pour prendre en charge des applications avec un volume élevé d'entrées-sorties nécessitant des niveaux prévisibles de performance. La performance prévisible est atteinte grâce à l'allocation d'opérations d'entrée-sortie par seconde (IOPS) au niveau du protocole à des volumes individuels.
 
@@ -44,72 +44,31 @@ Lorsque vous commandez {{site.data.keyword.filestorage_short}}, tenez compte des
 - NFS utilise des opérations de contrôle de fichier supplémentaires, comme `lookup`, `getattr` et `readdir`. Ces opérations, en plus des opérations de lecture/écriture, peuvent compter comme des IOPS et varier selon le type d'opération et la version de NFS.
 - Les volumes {{site.data.keyword.filestorage_short}} sont exposés aux unités, aux sous-réseaux ou aux adresse IP autorisés.
 - Pour éviter toute déconnexion du stockage lors du basculement du chemin, {{site.data.keyword.IBM}} recommande d'installer des outils VMware qui définissent une valeur de délai appropriée. Il n'est pas nécessaire de modifier la valeur, le paramètre par défaut est suffisant pour garantir le maintien de la connectivité de l'hôte VMware.
-- NFSv3 et NFSv4.1 sont pris en charge dans l'environnement {{site.data.keyword.BluSoftlayer_full}}. Toutefois, {{site.data.keyword.IBM}} recommande d'utiliser NFSv3. En effet, NFSv4.1 est un protocole avec état (et non sans état comme NFSv3) et donc susceptible de générer des anomalies lors des événements de réseau. NFSv4.1 doit mettre au repos toutes les opérations, puis effectuer la réclamation de verrou. Des interruptions peuvent survenir lors de telles opérations.
+- NFSv3 et NFSv4.1 sont pris en charge dans l'environnement {{site.data.keyword.cloud}}. Toutefois, {{site.data.keyword.IBM}} recommande d'utiliser NFSv3. En effet, NFSv4.1 est un protocole avec état (et non sans état comme NFSv3) et donc susceptible de générer des anomalies lors des événements de réseau. NFSv4.1 doit mettre au repos toutes les opérations, puis effectuer la réclamation de verrou. Des interruptions peuvent survenir lors de telles opérations.
 
 Pour plus d'informations, consultez le livre blanc sur VMware [Best Practices for running
 VMware vSphere on network-attached storage](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){: external}
 {:tip}
 
-**Matrice de prise en charge des fonctions VMware avec le protocole NFS**
-<table>
-  <caption>Le tableau 1 présente les fonctions vSphere spécifiques des deux versions de NFS.</caption>
- <thead>
-  <tr>
-   <th>Fonctions vSphere</th>
-   <th>NFS version 3</th>
-   <th>NFS version 4.1</th>
-  </tr>
- </thead>
- <tbody>
-  <tr>
-   <td>vMotion et Storage vMotion</td>
-   <td>Oui</td>
-   <td>Oui</td>
-  </tr>
-  <tr>
-   <td>Haute disponibilité (HA)</td>
-   <td>Oui</td>
-   <td>Oui</td>
-  </tr>
-  <tr>
-   <td>Tolérance aux pannes (FT)</td>
-   <td>Oui</td>
-   <td>Oui</td>
-  </tr>
-  <tr>
-   <td>Planificateur de ressources distribuées (DRS)</td>
-   <td>Oui</td>
-   <td>Oui</td>
-  </tr>
-  <tr>
-   <td>Profils d'hôte</td>
-   <td>Oui</td>
-   <td>Oui</td>
-  </tr>
-  <tr>
-   <td>DRS de stockage</td>
-   <td>Oui</td>
-   <td>Non</td>
-  </tr>
-  <tr>
-   <td>SIOC (Storage I/O Control)</td>
-   <td>Oui</td>
-   <td>Non</td>
-  </tr>
-  <tr>
-   <td>Site Recovery Manager</td>
-   <td>Oui</td>
-   <td>Non</td>
-  </tr>
-  <tr>
-   <td>Volumes virtuels</td>
-   <td>Oui</td>
-   <td>Non</td>
-  </tr>
- </tbody>
-</table>
-*Source - [VMware - NFS Protocols and ESXi](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){: external}*
+### Matrice de prise en charge des fonctions VMware avec le protocole NFS
 
+| Fonctions vSphere | NFS version 3 | NFS version 4.1 |
+|-----|-----|-----|
+| vMotion et Storage vMotion | Oui | Oui |
+| Haute disponibilité (HA) | Oui | Oui |
+| Tolérance aux pannes (FT) | Oui | Oui |
+| Planificateur de ressources distribuées (DRS) | Oui< | Oui |
+| Profils d'hôte | Oui | Oui |
+| DRS de stockage | Oui | Non |
+| SIOC (Storage I/O Control) | Oui | Non |
+| Site Recovery Manager | Oui | Non |
+| Volumes virtuels | Oui | Non |
+{: row-headers}
+{: class="comparison-table"}
+{: caption="Tableau 1 - Matrice de prise en charge des fonctions VMware avec le protocole NFS" caption-side="top"}
+{: summary="This table has row and column headers. The row headers identify the vSphere features. The column headers identify the NSF version. To see if a feature is enabled navigate to the row of the feature and look at the column that is associated with the NFS version you use."}
+
+*Source - [VMware - NFS Protocols and ESXi](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){: external}*
 
 
 ### Utilisation d'instantanés
@@ -186,7 +145,7 @@ Avant de commencer le processus de configuration de VMware, assurez-vous que les
 3. A partir de l'écran **HOME**, sélectionnez **Hosts and Clusters**. Développez le panneau sur la gauche et sélectionnez le**serveur VMware ESXi** qui doit être utilisé pour ce déploiement.
 4. Vérifiez que le port de pare-feu du client NFS est ouvert sur tous les hôtes pour pouvoir configurer le client NFS sur l'hôte vSphere. (Le port est ouvert automatiquement dans les versions les plus récentes de vSphere.) Pour vérifier qu'il est bien ouvert, accédez à l'onglet **ESXi host Manage** dans VMware® vCenter™ et sélectionnez **Settings**, puis **Security Profile**. Dans la section **Firewall**, cliquez sur **Edit** et faites défiler l'écran jusqu'à **NFS Client**.
 5. Vérifiez que l'option **Allow connection from any IP address or a list of IP addresses** est bien sélectionnée. <br/>
-   ![Autorisation de la connexion](/images/1_4.png)
+   ![Allow Connection](/images/1_4.png)
 6. Configurez les trames Jumbo en accédant à l'onglet **ESXi host Manage** et en sélectionnant **Manage**, puis **Networking**.
 7. Sélectionnez **VMkernel adapters**, mettez en évidence **vSwitch** et cliquez sur **Edit** (icône en forme de crayon).
 8. Sélectionnez **NIC setting** et vérifiez que NIC MTU a pour valeur 9000.
@@ -224,7 +183,7 @@ Pour plus d'informations sur VMware et les trames Jumbo, cliquez [ici](https://k
 5. Sélectionnez le **vSwitch** existant et cliquez sur **Next**.
 6. Sélectionnez **Unused adapters** et cliquez sur **Add adapters** (signe Plus).
 7. Cliquez sur l'autre adaptateur "Connected", puis sur **OK**. <br/>
-   ![Ajout d'adaptateurs physiques à un commutateur](/images/2_3.png)
+   ![Add physical adapters to switch](/images/2_3.png)
 8. Cliquez sur **Next**, puis sur **Finish**.
 9. Revenez à l'onglet **Virtual switches** et sélectionnez **Edit setting** (icône en forme de crayon) sous l'en-tête **Virtual Switches**.
 10. Sur la gauche, sélectionnez l'entrée vSwitch **Teaming and failover**.
@@ -251,7 +210,7 @@ La configuration de réseau de ce guide d'architecture utilise un nombre minimal
 
 2. Les routes statiques ne sont pas permanentes si vous effectuez des redémarrages sur ESXi 5.0 et versions antérieures. Pour garantir le caractère permanent des routes statiques ajoutées, vous devez ajouter ces commandes sur chaque hôte dans le fichier `local.sh` qui se trouve dans le répertoire `/etc/rc.local.d/`. Ouvrez le fichier `local.sh` à l'aide de l'éditeur visuel et ajoutez la seconde commande de l'étape 4.1 devant la ligne `exit 0`.
 
-Notez l'adresse IP car elle peut être utilisée pour le montage du volume lors de l'étape suivante.<br/>Vous devez procéder de la sorte pour chaque volume NFS que vous envisagez de monter sur votre hôte ESXi.<br/>Pour plus d'informations, voir l'article de la base de connaissances de VMware, [Configuring static routes for VMkernel ports on an ESXi host![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://kb.vmware.com/s/article/2001426){: external}.
+Notez l'adresse IP car elle peut être utilisée pour le montage du volume lors de l'étape suivante.<br/>Vous devez procéder de la sorte pour chaque volume NFS que vous envisagez de monter sur votre hôte ESXi.<br/>Pour plus d'informations, voir l'article de la base de connaissances de VMware, [Configuring static routes for VMkernel ports on an ESXi host](https://kb.vmware.com/s/article/2001426){: external}.
 {:tip}
 
 
@@ -308,7 +267,7 @@ Une configuration incorrecte de la fonction SIOC d'un magasin de données VMware
 3. Cliquez sur **Settings**, puis sur **General**.
 4. Cliquez sur **Edit** pour **Datastore Capabilities**.
 5. Cochez la case **Enable Storage I/O Control**.<br/>
-   ![Magasin de données NSF VMware](/images/3_0.png)
+   ![NSF VMware datastore](/images/3_0.png)
 6. Cliquez sur **OK**.
 
 Ce paramètre est propre au magasin de données VMware et non à l'hôte.
@@ -340,14 +299,14 @@ Certains paramètres supplémentaires sont requis pour la configuration d'hôtes
 |Paramètre | A définir sur... |
 |----------|------------|
 |Net.TcpipHeapSize |	32 |
-|Net.TcpipHeapMax |	Pour vSphere 5.0/5.1, définir sur 128 <br/> Pour vSphere 5.5 ou version ultérieure, définir sur 512 |
+|Net.TcpipHeapMax |	Pour vSphere 5.0/5.1 définir sur 128 <br/> Pour vSphere 5.5 ou version ultérieure, définir sur 512 |
 |NFS.MaxVolumes |	256 |
 |NFS41.MaxVolumes |	256 (vSphere 6.0 ou version ultérieure uniquement) |
 |NFS.HeartbeatMaxFailures |	10 |
 |NFS.HeartbeatFrequency |	12 |
 |NFS.HeartbeatTimeout |	5 |
 |NFS.MaxQueueDepth|	64 |
-
+{: caption="Tableau 2 - Paramètres côté hôte" caption-side="top"}
 
 ### Mise à jour des paramètres de configuration avancée sur un hôte ESXi 5.x à l'aide de l'interface de ligne de commande
 

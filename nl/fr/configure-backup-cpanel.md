@@ -41,7 +41,7 @@ Pour plus d'informations, voir [cPanel - Configuration du répertoire de sauvega
    {: pre}
 
     Cette commande compresse et transmet vos données tout en les conservant autant que possible (à l'exception des liens fixes). Elle fournit également des informations sur les fichiers transférés via NFS, ainsi qu'un bref résumé à la fin.
-   {:tip}
+    {:tip}
 
 5. Connectez-vous à WebHost Manager et accédez à la configuration de la sauvegarde via **Home** > **Backup** > **Backup Configuration**.
 

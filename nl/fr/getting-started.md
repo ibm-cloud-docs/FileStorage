@@ -36,68 +36,22 @@ Pour en savoir plus sur l'offre {{site.data.keyword.filestorage_short}}, voir [A
 
 ### Taille de bloc
 
-Les IOPS pour les niveaux Endurance et Performance se fondent sur une taille de bloc de 16 Ko avec une charge de travail aléatoire/séquentielle de 50/50 et de lecture/écriture de 50/50. Un bloc de 16 Ko équivaut à une écriture sur le volume.
+La valeur IOPS pour les niveaux Endurance et Performance se fonde sur une taille de bloc de 16 Ko avec une charge de travail aléatoire/séquentielle de 50/50 et de lecture/écriture de 50/50. Un bloc de 16 Ko équivaut à une écriture sur le volume.
 {:important}
 
 La taille de bloc utilisée par votre application a une incidence directe sur les performances de stockage. Si la taille de bloc employée par votre application est inférieure à 16 Ko, la limite des opérations d'entrée-sortie par seconde est atteinte avant la limite de débit. A l'inverse, si la taille de bloc qui est utilisée par votre application est supérieure à 16 Ko, la limite de débit est atteinte avant la limite des opérations d'entrée-sortie par seconde.
 
-<table>
-  <caption>Le tableau 4 présente des exemples de l'impact de la taille de bloc et des opérations d'entrée-sortie par seconde sur le débit.</caption>
-        <colgroup>
-          <col/>
-          <col/>
-          <col/>
-        </colgroup>
-        <thead>
-          <tr>
-            <th>Taille de bloc (ko)</th>
-            <th>IOPS</th>
-            <th>Débit (Mo/s)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>4 (standard pour Linux)</td>
-            <td>1 000</td>
-            <td>4</td>
-          </tr>
-          <tr>
-            <td>8 (standard pour Oracle)</td>
-            <td>1 000</td>
-            <td>8</td>
-          </tr>
-          <tr>
-            <td>16</td>
-            <td>1 000</td>
-            <td>16</td>
-          </tr>
-          <tr>
-            <td>32 (standard pour SQL Server)</td>
-            <td>500</td>
-            <td>16</td>
-          </tr>          
-          <tr>
-            <td>64</td>
-            <td>250</td>
-            <td>16</td>
-          </tr>
-          <tr>
-            <td>128</td>
-            <td>128</td>
-            <td>16</td>
-          </tr>
-          <tr>
-            <td>512</td>
-            <td>32</td>
-            <td>16</td>
-          </tr>
-          <tr>
-            <td>1024</td>
-            <td>16</td>
-            <td>16</td>
-          </tr>
-        </tbody>
-</table>
+| Taille de bloc (ko) | IOPS | Débit (Mo/s) |
+|-----|-----|-----|
+| 4 | 1 000 | 16 |
+| 8 | 1 000 | 16 |
+| 16 | 1 000 | 16 |
+| 32 | 500 | 16 |
+| 64 | 250 | 16 |
+| 128 | 128 | 16 |
+| 512 | 32 | 16 |
+| 1024 | 16 | 16 |
+{: caption="Le tableau 1 présente des exemples de l'impact de la taille de bloc et des opérations d'entrée-sortie par seconde sur le débit.<br/Taille E-S moyennes x IOPS = Débit en Mo/s." caption-side="top"}
 
 ### Hôtes autorisés
 
@@ -110,11 +64,13 @@ vers votre numéro d'unité logique, vous rencontrez un goulot d'étranglement l
 
 Pour atteindre le nombre maximal d'IOPS, vous devez mettre en place les ressources réseau adéquates. Vous devez également tenir compte de l'utilisation du réseau privé en dehors du stockage, ainsi que des réglages côté hôte et spécifiques aux applications (pile IP ou [nombre de lignes de file d'attente](/docs/infrastructure/FileStorage?topic=FileStorage-hostqueuesettings), etc.).
 
+Le trafic de stockage doit être isolé des autres types de trafic et il ne doit pas être dirigé via des pare-feu et des routeurs. La conservation du trafic de stockage sur un réseau local virtuel (VLAN) dédié permet également d'éviter une non concordance MTU lorsque des trames jumbo sont activées. Pour plus d'informations, voir [Jumbo Frames in IBM Cloud ](/docs/FileStorage?topic=FileStorage-jumboframes).
+
 Le trafic de stockage est inclus dans l'utilisation réseau totale des serveurs virtuels publics. Pour plus d'informations sur les limites que peut imposer le service, voir la [documentation sur les serveurs virtuels](/docs/vsi?topic=virtual-servers-about-public-virtual-servers).
 
 ### Version NFS
 
-NFS version 3 et NFS version 4.1 sont pris en charge dans l'environnement {{site.data.keyword.BluSoftlayer_full}}. Toutefois, NFS version 3 est recommandé car NFS v4.1 est un protocole avec état (et non sans état comme NFS version 3) et des anomalies peuvent survenir lors des événements de réseau. NFS v4.1 doit mettre au repos toutes les opérations, puis effectuer la réclamation de verrou. Sur un serveur de fichiers relativement occupé, l'augmentation du temps d'attente peut entraîner une interruption. L'absence de fonctions de multi-accès et d'établissement de liaison dans NFS version 4.1 peut également allonger la reprise des opérations NFS.
+NFS version 3 et NFS version 4.1 sont pris en charge dans l'environnement {{site.data.keyword.cloud}}. Toutefois, NFS version 3 est recommandé car NFS v4.1 est un protocole avec état (et non sans état comme NFS version 3) et des anomalies peuvent survenir lors des événements de réseau. NFS v4.1 doit mettre au repos toutes les opérations, puis effectuer la réclamation de verrou. Sur un serveur de fichiers relativement occupé, l'augmentation du temps d'attente peut entraîner une interruption. L'absence de fonctions de multi-accès et d'établissement de liaison dans NFS version 4.1 peut également allonger la reprise des opérations NFS.
 
 ## Soumission de votre commande
 

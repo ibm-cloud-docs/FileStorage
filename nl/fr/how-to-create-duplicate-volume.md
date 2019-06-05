@@ -18,13 +18,13 @@ subcollection: FileStorage
 # Création d'un volume {{site.data.keyword.filestorage_short}} dupliqué
 {: #duplicatevolume}
 
-Vous pouvez créer un doublon d'un volume {{site.data.keyword.filestorage_full}} {{site.data.keyword.cloud}} existant. Le volume dupliqué hérite par défaut des options de capacité et de performance du volume d'origine et contient une copie des données jusqu'au point de cohérence d'un instantané.   
+Vous pouvez créer un doublon d'un {{site.data.keyword.cloud}} {{site.data.keyword.filestorage_full}} existant. Le volume dupliqué hérite par défaut des options de capacité et de performance du volume d'origine et contient une copie des données jusqu'au point de cohérence d'un instantané.   
 
 Etant donné que le volume dupliqué est basé sur les données d'un instantané de point de cohérence, vous devez disposer d'un espace d'instantané sur le volume d'origine avant de créer un doublon. Pour en savoir plus sur les instantanés et la commande d'espace d'instantané, consultez la [documentation relative aux instantanés](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots).  
 
 Vous pouvez créer des doublons à partir d'un volume **principal** et d'un volume de **réplique**. Le nouveau doublon est créé dans le même centre de données que le volume d'origine. Si vous créez un doublon à partir d'un volume de réplique, le nouveau volume est créé dans le même centre de données que le volume de réplique.
 
-Si vous êtes utilisateur d'un compte Dedicated d'{{site.data.keyword.containerlong}}, consultez les options de duplication d'un volume dans la [documentation d'{{site.data.keyword.containerlong_notm}}](/docs/containers?topic=containers-backup_restore#backup_restore).
+Si vous êtes un utilisateur de compte Dedicated d'{{site.data.keyword.containerlong}}, consultez vos options de duplication d'un volume dans la [{{site.data.keyword.containerlong_notm}}documentation ](/docs/containers?topic=containers-file_storage#file_backup_restore).
 {:tip}
 
 Les volumes dupliqués sont accessibles par un hôte en lecture/écriture dès la mise à disposition du stockage. Toutefois, les instantanés et la réplication ne sont pas autorisés tant que la copie des données depuis le volume d'origine vers le doublon n'est pas terminée. Une fois la copie de données terminée, le doublon peut être géré et utilisé en tant que volume indépendant.
@@ -46,7 +46,7 @@ Il existe deux manières de créer un volume dupliqué via le portail [{{site.da
 
 1. Accédez à votre liste de {{site.data.keyword.filestorage_short}}
     - A partir du portail client, cliquez sur **Storage** > **{{site.data.keyword.filestorage_short}}** OU
-    - A partir du catalogue {{site.data.keyword.BluSoftlayer_full}}, cliquez sur **Infrastructure** > **Stockage** > **{{site.data.keyword.filestorage_short}}**.
+    - A partir du catalogue {{site.data.keyword.cloud}}, cliquez sur **Infrastructure** > **Stockage** > **{{site.data.keyword.filestorage_short}}**.
 2. Sélectionnez un numéro d'unité logique dans la liste et cliquez sur **Actions** > **Dupliquer LUN (volume)**
 3. Sélectionnez une option d'instantané.
     - Si vous effectuez votre commande à partir d'un volume qui n'est pas un volume de réplique, procédez comme suit :

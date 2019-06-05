@@ -44,7 +44,7 @@ Les limitations de taille existantes pour le stockage {{site.data.keyword.filest
 ## Redimensionnement du stockage
 {: #resizingsteps}
 
-1. Sur le portail {{site.data.keyword.slportal}}, cliquez sur **Stockage** > **{{site.data.keyword.filestorage_short}}** OU, dans le catalogue {{site.data.keyword.BluSoftlayer_full}}, cliquez sur **Infrastructure** > **Stockage** > **{{site.data.keyword.filestorage_short}}**.
+1. Sur le portail {{site.data.keyword.slportal}}, cliquez sur **Stockage** > **{{site.data.keyword.filestorage_short}}** OU, dans le catalogue {{site.data.keyword.cloud}}, cliquez sur **Infrastructure** > **Stockage** > **{{site.data.keyword.filestorage_short}}**.
 2. Sélectionnez le volume dans la liste et cliquez sur **Actions** > **Modifier le volume**
 3. Entrez la nouvelle taille de stockage en Go.
 4. Vérifiez votre sélection et la nouvelle tarification.

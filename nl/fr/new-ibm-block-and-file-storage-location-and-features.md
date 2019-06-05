@@ -28,73 +28,17 @@ Le point de montage NFS des nouveaux volumes a été modifié. Pour plus de dét
 
 La nouvelle version de {{site.data.keyword.filestorage_short}} est disponible dans les régions et centres de données suivants (cette disponibilité sera bientôt étendue à d'autres centres de données) :
 
-<table role="presentation">
-  <tr>
-    <td><strong>EU 2</strong></td>
-    <td><strong>UE</strong></td>
-    <td><strong>Australie</strong></td>
-    <td><strong>Canada</strong></td>
-    <td><strong>Amérique latine</strong></td>
-    <td><strong>Asie Pacifique</strong></td>
-  </tr>
-  <tr>
-    <td>DAL09<br />
-	DAL10<br />
-	DAL12<br />
-	DAL13<br />
-	SJC03<br />
-        SJC04<br />
-	WDC04<br />
-	WDC06<br />
-	WDC07<br />
-	<br /><br /><br />
-    </td>
-    <td>AMS01<br />
-        AMS03<br />
-	FRA02<br />
-	FRA04<br />
-	FRA05<br />
-	LON02<br />
-	LON04<br />
-	LON05<br />
-	LON06<br />
-	MIL01<br />
-	OSLO1<br />
-	PAR01<br />
-    </td>
-    <td>MEL01<br />
-        SYD01<br />
-        SYD04<br />
-        SYD05<br /><br /><br /><br /><br /><br /><br /><br /><br />
-    </td>
-    <td>MON01<br />
-        TOR01<br />
-	<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-    </td>
-    <td>MEX01<br />
-        SAO01<br />
-	<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-    </td>
-    <td>CHE01<br />
-        HKG02<br />
-	SEO01<br />
-	SNG01<br />
-        TOK02<br />
-	TOK04<br />
-	TOK05<br />
-	<br /><br /><br /><br /><br />
-    </td>
-  </tr>
-</table>
-
-*Le tableau 1 répertorie la disponibilité de nos centres de données. Chaque région correspond à une colonne. Certaines villes, comme Dallas, San José, Washington DC, Amsterdam, Francfort, Londres et Sydney possèdent plusieurs centres de données.*
+|EU 2|Amérique latine|Canada|UE|Asie-Pacifique|Australie|
+|-----|-----|-----|-----|-----|------|
+| DAL09<br >DAL10<br />DAL12<br />DAL13<br />SJC03<br />SJC04<br />WDC04<br />WDC06<br />WDC07 | MEX01<br />SAO01 | MON01<br />TOR01  | AMS01<br />AMS03<br />FRA02<br />FRA04<br />FRA05<br />LON02<br />LON04<br />LON05<br />LON06<br />MIL01<br />OSLO1<br />PAR01 | CHE01<br />HKG02<br />SEO01<br />SNG01<br />TOK02<br />TOK04<br />TOK05 | MEL01<br />SYD01<br />SYD04<br />SYD05 |
+{: caption="Le tableau 1 indique la disponibilité des centres de données. Chaque région correspond à une colonne. Certaines villes, comme Dallas, San José, Washington DC, Amsterdam, Francfort, Londres et Sydney possèdent plusieurs centres de données." caption-side="top"}
 
 ## Nouvelles fonctions et fonctionnalités
 {: #features}
 
 - [Chiffrement géré par le fournisseur pour les données au repos](/docs/infrastructure/FileStorage?topic=FileStorage-encryption). <br/> Tous les volumes {{site.data.keyword.filestorage_short}} sont automatiquement mis à disposition en mode chiffré sans coût supplémentaire.
 - Option de niveau de 10 IOPS par Go. <br/> Un nouveau niveau a été ajouté au stockage {{site.data.keyword.filestorage_short}} de type Endurance pour la prise en charge des charges de travail les plus exigeantes.
-- Sécurisation de la totalité du stockage par stockage flash. <br/> Le stockage {{site.data.keyword.filestorage_short}} mis à disposition avec un type Endurance ou Performance à un niveau de 2 IOPS par Go ou plus est entièrement sécurisé par un stockage flash.
+- Stockage entièrement sécurisé par mémoire flash. <br/> Le stockage {{site.data.keyword.filestorage_short}} mis à disposition avec un type Endurance ou Performance à un niveau de 2 IOPS par Go ou plus est entièrement sécurisé par un stockage flash.
 - Prise en charge des instantanés et de la réplication.
 - Options de facturation horaire ajoutée pour un stockage prévu pour une utilisation inférieure à un mois complet.
 - Jusqu'à 48 000 IOPS pour un stockage {{site.data.keyword.filestorage_short}} mis à disposition avec l'option Performance.
