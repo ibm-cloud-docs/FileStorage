@@ -36,68 +36,22 @@ Weitere Informationen zum {{site.data.keyword.filestorage_short}}-Angebot finden
 
 ### Blockgröße
 
-IOPS für Endurance und Performance basiert auf einer Blockgröße von 16 KB mit einer 50/50-Lese-/Schreibworkload mit 50/50 zufälliger/sequenqzieller Verarbeitung. Ein 16-KB-Block entspricht einem Schreibvorgang auf dem Datenträger.
+Der IOPS-Wert für Endurance und Performance basiert auf einer Blockgröße von 16 KB mit einer 50/50-Lese-/Schreibworkload mit 50/50 zufälliger/sequenqzieller Verarbeitung. Ein 16-KB-Block entspricht einem Schreibvorgang auf dem Datenträger.
 {:important}
 
 Die Blockgröße, die von Ihrer Anwendung verwendet wird, wirkt sich direkt auf die Speicherleistung aus. Wenn die von Ihrer Anwendung verwendete Blockgröße kleiner als 16 KB ist, wird der IOPS-Grenzwert vor der Durchsatzbegrenzung erreicht. Wenn dagegen die von Ihrer Anwendung verwendete Blockgröße größer als 16 KB ist, wird die Durchsatzbegrenzung vor dem IOPS-Grenzwert erreicht.
 
-<table>
-  <caption>Tabelle 4 enthält Beispiele für die Auswirkung von Blockgröße und IOPS auf den Durchsatz.</caption>
-        <colgroup>
-          <col/>
-          <col/>
-          <col/>
-        </colgroup>
-        <thead>
-          <tr>
-            <th>Blockgröße (KB)</th>
-            <th>IOPS</th>
-            <th>Durchsatz (MB/s)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>4 (typisch für Linux)</td>
-            <td>1.000</td>
-            <td>4</td>
-          </tr>
-          <tr>
-            <td>8 (typisch für Oracle)</td>
-            <td>1.000</td>
-            <td>8</td>
-          </tr>
-          <tr>
-            <td>16</td>
-            <td>1.000</td>
-            <td>16</td>
-          </tr>
-          <tr>
-            <td>32 (typisch für SQL Server)</td>
-            <td>500</td>
-            <td>16</td>
-          </tr>          
-          <tr>
-            <td>64</td>
-            <td>250</td>
-            <td>16</td>
-          </tr>
-          <tr>
-            <td>128</td>
-            <td>128</td>
-            <td>16</td>
-          </tr>
-          <tr>
-            <td>512</td>
-            <td>32</td>
-            <td>16</td>
-          </tr>
-          <tr>
-            <td>1024</td>
-            <td>16</td>
-            <td>16</td>
-          </tr>
-        </tbody>
-</table>
+| Blockgröße (KB) | IOPS | Durchsatz (MB/s) |
+|-----|-----|-----|
+| 4 | 1.000 | 16 |
+| 8 | 1.000 | 16 |
+| 16 | 1.000 | 16 |
+| 32 | 500 | 16 |
+| 64 | 250 | 16 |
+| 128 | 128 | 16 |
+| 512 | 32 | 16 |
+| 1024 | 16 | 16 |
+{: caption="In Tabelle 1 werden Beispiele für die Beeinflussung des Durchsatzes durch Blockgröße und IOPS-Rate aufgeführt.<br/Durchschnittliche IO-Größe x IOPS = Durchsatz in MB/s." caption-side="top"}>
 
 ### Autorisierte Hosts
 
@@ -108,6 +62,8 @@ Ein weitere Faktor, der zu beachten ist, ist die Anzahl der Hosts, die Ihren Dat
 Die Geschwindigkeit Ihrer Ethernet-Verbindung muss höher als der erwartete maximale Durchsatz von Ihrem Datenträger sein. Grundsätzlich dürfte Ihre Ethernet-Verbindung nicht über 70% der verfügbaren Bandbreite hinaus ausgelastet werden. Wenn Sie beispielsweise über 6.000 IOPS verfügen und eine Blockgröße von 16 KB verwenden, sind auf dem Datenträger etwa 94 MBps möglich. Bei einer Ethernet-Verbindung von 1 Gb/s zu einer LUN wird diese Verbindung zu einem Engpass, wenn die Server versuchen, den maximal verfügbaren Durchsatz zu nutzen. Ursache hierfür ist, dass 70 Prozent des theoretischen Grenzwerts von einer Ethernet-Verbindung mit 1 Gb/s (125 MB pro Sekunde) nur 88 MB pro Sekunde zulassen würden.
 
 Zur Erzielung der maximalen E/A-Operationen pro Sekunde müssen geeignete Netzressourcen eingesetzt werden. Außerdem sind die Nutzung privater Netze außerhalb des Speichers sowie hostseitige und anwendungsspezifische Optimierungen (zum Beispiel IP-Stack oder [Warteschlangenlängen](/docs/infrastructure/FileStorage?topic=FileStorage-hostqueuesettings) und andere Einstellungen) zu berücksichtigen.
+
+Der Speicherverkehr muss von anderen Datenverkehrstypen isoliert werden und darf nicht über Firewalls und Router übertragen werden. Den Speicherdatenverkehr in einem dedizierten VLAN zu belassen vermeidet MTU-Abweichungen bei aktivierten Jumbo-Frames. Weitere Informationen finden Sie im Thema zu [Jumbo-Frames in IBM Cloud](/docs/FileStorage?topic=FileStorage-jumboframes).
 
 Der Speicherdatenverkehr ist in der gesamten Netznutzung von öffentlichen virtuellen Servern enthalten. Weitere Informationen zu den Grenzwerten, die für die Verwendung des Service gelten können, finden Sie in der [Dokumentation zu virtuellen Servern](/docs/vsi?topic=virtual-servers-about-public-virtual-servers).
 

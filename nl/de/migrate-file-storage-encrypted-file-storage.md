@@ -37,7 +37,7 @@ Alle erweiterten {{site.data.keyword.filestorage_short}}-Datenträger, die in di
 Wenn Sie einen Auftrag mit einer API erteilen, geben Sie das Paket 'Storage as a Service' an, um sicherzustellen, dass Sie die aktualisierten Funktionen mit dem neuen Speicher erhalten.
 {:important}
 
-Sie können eine erweiterte LUN über den {{site.data.keyword.BluSoftlayer_full}}-Katalog und das {{site.data.keyword.slportal}} bestellen. Der neue Datenträger muss dieselbe Größe wie die ursprüngliche gemeinsam genutzte Ressource aufweisen oder größer als diese sein, damit die Migration möglich ist.
+Sie können eine erweiterte LUN über den {{site.data.keyword.cloud}}-Katalog und das {{site.data.keyword.slportal}} bestellen. Der neue Datenträger muss dieselbe Größe wie die ursprüngliche gemeinsam genutzte Ressource aufweisen oder größer als diese sein, damit die Migration möglich ist.
 
 - [{{site.data.keyword.filestorage_short}} mit vordefinierten IOPS-Tiers (Endurance) bestellen](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#endurance)
 - [{{site.data.keyword.filestorage_short}} mit angepassten IOPS-Raten (Performance) bestellen](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#performance)

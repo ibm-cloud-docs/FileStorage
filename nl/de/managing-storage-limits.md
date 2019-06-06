@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-05-24"
 
 keywords: File Storage, file storage, NFS,
 
@@ -15,7 +15,7 @@ subcollection: FileStorage
 {:note: .note}
 {:important: .important}
 
-# Speicherbegrenzungen verwalten
+# Speichergrenzwerte verwalten
 {: #managinglimits}
 
 Standardmäßig können Sie global insgesamt 250 {{site.data.keyword.blockstorageshort}}- und {{site.data.keyword.filestorage_short}}-Datenträger bereitstellen.
@@ -31,7 +31,7 @@ Optionen:
   -h, --help             Diese Nachricht anzeigen und Ausführung beenden.
 ```
 
-Sie können eine Erhöhung der Begrenzung anfordern, indem Sie ein Ticket beim [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} einreichen. Wenn die Anforderung genehmigt ist, wird eine Datenträgerbegrenzung für ein bestimmtes Rechenzentrum festgelegt.  
+Sie können eine Erhöhung des Grenzwerts anfordern, indem Sie einen Supportfall beim [Portal](https://cloud.ibm.com/unifiedsupport/cases/add){: external} einreichen. Wenn die Anforderung genehmigt ist, wird eine Datenträgerbegrenzung für ein bestimmtes Rechenzentrum festgelegt.
 
 Zum Anfordern einer Erhöhung einer Begrenzung öffnen Sie ein Ticket und richten es an Ihren Vertriebsbeauftragten.
 

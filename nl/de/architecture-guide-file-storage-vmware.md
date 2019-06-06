@@ -38,7 +38,7 @@ Beachten Sie für die Bestellung von {{site.data.keyword.filestorage_short}} fol
 
 - Berücksichtigen Sie bei der Festlegung der Größe den Umfang der Workload und den benötigten Durchsatz. Für den Endurance-Service, der die Leistung linear in Relation zur Kapazität (IOPS/GB) skaliert, ist Größe wichtig. Der Performance-Service ermöglicht dem Administrator dagegen, Kapazität und Leistung unabhängig voneinander zu wählen. Für den Performance-Service sind wiederum Durchsatzanforderungen relevant.
 
-  Der Durchsatz wird durch IOPS x 16 KB berechnet. IOPS werden auf der Basis der Blockgröße von 16 KB und einer 50:50-Mischung von Schreib- und Leseoperationen gemessen.<br/>Eine Erhöhung der Blockgröße erhöht den Durchsatz, verringert jedoch die IOPS. Beispiel: Eine Verdoppelung der Blockgröße auf 32-KB-Blöcke behält den maximalen Durchsatz bei, halbiert jedoch die IOPS-Kapazität.
+  Der Durchsatz wird durch IOPS x 16 KB berechnet. IOPS werden auf der Basis der Blockgröße von 16 KB und einer 50:50-Mischung von Schreib- und Leseoperationen gemessen.<br/>Das Erhöhen der Blockgröße erhöht auch den Durchsatz, verringert aber den IOPS-Wert. Beispiel: Eine Verdoppelung der Blockgröße auf 32-KB-Blöcke behält den maximalen Durchsatz bei, halbiert jedoch die IOPS-Kapazität.
   {:note}
 
 - NFS verwendet viele zusätzliche Dateisteuerungsoperationen wie `lookup`, `getattr` und `readdir`. Diese Operationen können neben Lese- und Schreiboperationen ebenfalls als IOPS gezählt werden und sind je nach Operationstyp und NFS-Version unterschiedlich.
@@ -46,69 +46,29 @@ Beachten Sie für die Bestellung von {{site.data.keyword.filestorage_short}} fol
 - Zur Vermeidung einer Speicherverbindungsunterbrechung während des Pfadfailovers empfiehlt {{site.data.keyword.IBM}}, VMware-Tools zu installieren, die einen angemessenen Zeitlimitwert festlegen. Der Wert muss nicht geändert werden; die Standardeinstellung reicht aus, um sicherzustellen, dass Ihr VMware-Host die Konnektivität nicht verliert.
 - NFS Version 3 und NFS Version 4.1 werden in der Umgebung von {{site.data.keyword.cloud}} unterstützt. {{site.data.keyword.IBM}} empfiehlt jedoch, NFS Version 3 zu verwenden. Da NFS Version 4.1 ein Protokoll mit Zustandsüberwachung (und nicht wie NFS Version 3 ohne Zustandsüberwachung) ist, können bei Netzereignissen Probleme mit dem Protokoll auftreten. NFS Version 4.1 muss alle Operationen ruhen lassen und anschließend eine Sperrenrückforderung ausführen. Während dieser Operationen kann es zu Unterbrechungen kommen.
 
-Weitere Informationen finden Sie im Whitepaper von VMware zu [bewährten Verfahren für die Ausführung von VMware vSphere unter network-attached storage Storage](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){: external}
+Weitere Informationen finden Sie im Whitepaper von VMware zu den bewährten Verfahren für die Ausführung
+von VMware vSphere unter Network-attached Storage (https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){: external}
 {:tip}
 
-**Unterstützungsmatrix für das NFS-Protokoll und VMware-Funktionen**
-<table>
-  <caption>Tabelle 1 zeigt, welche vSphere-Funktionen für die beiden unterschiedlichen Versionen von NFS gelten.</caption>
- <thead>
-  <tr>
-   <th>vSphere-Funktionen</th>
-   <th>NFS Version 3</th>
-   <th>NFS Version 4.1</th>
-  </tr>
- </thead>
- <tbody>
-  <tr>
-   <td>vMotion und Storage vMotion</td>
-   <td>Ja</td>
-   <td>Ja</td>
-  </tr>
-  <tr>
-   <td>Hochverfügbarkeit (HA - High Availability)</td>
-   <td>Ja</td>
-   <td>Ja</td>
-  </tr>
-  <tr>
-   <td>Fehlertoleranz (FT)</td>
-   <td>Ja</td>
-   <td>Ja</td>
-  </tr>
-  <tr>
-   <td>Distributed Resource Scheduler (DRS)</td>
-   <td>Ja</td>
-   <td>Ja</td>
-  </tr>
-  <tr>
-   <td>Hostprofile</td>
-   <td>Ja</td>
-   <td>Ja</td>
-  </tr>
-  <tr>
-   <td>Speicher-DRS</td>
-   <td>Ja</td>
-   <td>Nein</td>
-  </tr>
-  <tr>
-   <td>Storage I/O Control (SIOC)</td>
-   <td>Ja</td>
-   <td>Nein</td>
-  </tr>
-  <tr>
-   <td>Sitewiederherstellungsmanager (Site Recovery Manager)</td>
-   <td>Ja</td>
-   <td>Nein</td>
-  </tr>
-  <tr>
-   <td>Virtuelle Datenträger</td>
-   <td>Ja</td>
-   <td>Nein</td>
-  </tr>
- </tbody>
-</table>
-*Quelle - [VMware - NFS-Protokolle und ESXi](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){: external}*
+### Unterstützungsmatrix für das VMware-Feature für NFS-Protokolle
 
+| vSphere-Funktionen | NFS Version 3 | NFS Version 4.1 |
+|-----|-----|-----|
+| vMotion und Storage vMotion | Ja | Ja |
+| Hochverfügbarkeit (HA - High Availability) | Ja | Ja |
+| Fehlertoleranz (FT) | Ja | Ja |
+| Distributed Resource Scheduler (DRS) | Ja< | Ja |
+| Hostprofile | Ja | Ja |
+| Speicher-DRS | Ja | Nein |
+| Storage I/O Control (SIOC) | Ja | Nein |
+| Sitewiederherstellungsmanager (Site Recovery Manager) | Ja | Nein |
+| Virtuelle Datenträger | Ja | Nein |
+{: row-headers}
+{: class="comparison-table"}
+{: caption="Tabelle 1 - Unterstützungsmatrix für das VMware-Feature für NFS-Protokolle." caption-side="top"}
+{: summary="This table has row and column headers. The row headers identify the vSphere features. The column headers identify the NSF version. To see if a feature is enabled navigate to the row of the feature and look at the column that is associated with the NFS version you use."}
+
+*Quelle - [VMware - NFS-Protokolle und ESXi](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){: external}*
 
 
 ### Snapshots verwenden
@@ -154,14 +114,14 @@ Verwenden Sie die [Advanced Single-Site VMware Reference Architecture](https://{
 
 {{site.data.keyword.filestorage_short}} kann über den [IBM Cloud-Katalog](https://{DomainName}/catalog){: external} oder das [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} bestellt werden. Weitere Informationen finden Sie unter [ bestellen{{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole).
 
-Der Speicher wird in weniger als einer Minute bereitgestellt und wird auf der **{{site.data.keyword.filestorage_short}}**-Seite des [{{site.data.keyword.slportal}}s](https://control.softlayer.com/){: external} angezeigt.
+Der Speicher wird in weniger als einer Minute bereitgestellt und wird auf der **{{site.data.keyword.filestorage_short}}**-Seite des [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}s angezeigt.
 
 Wenn ein Datenträger bereitgestellt wird, müssen {{site.data.keyword.BluBareMetServers_full}} oder {{site.data.keyword.BluVirtServers_full}}, die den Datenträger verwenden sollen, für den Zugriff auf den Speicher autorisiert werden. Führen Sie die folgenden Schritte aus, um den Datenträger zu autorisieren.
 
 1. Klicken Sie auf **Speicher** > **{{site.data.keyword.filestorage_short}}**.
 2. Wählen Sie die Option **Auf Host zugreifen** im Menü **Aktionen für Endurance-Datenträger** bzw. **Aktionen für Performance-Datenträger** aus.
 3. Klicken Sie auf **Teilnetze**.
-4. Wählen Sie in der Liste der verfügbaren Teilnetze, die den VMkernel-Ports auf den ESXi-Hosts zugeordnet sind, aus und klicken Sie auf **Abschicken**.<br/>
+4. Nehmen Sie eine Auswahl in der Liste der verfügbaren Teilnetze, die den VMkernel-Ports auf den ESXi-Hosts zugeordnet sind, vor und klicken Sie auf **Abschicken**.<br/>
 
    Die angezeigten Teilnetze sind abonnierte Teilnetze in demselben Rechenzentrum wie der Speicherdatenträger.
    {:note}
@@ -184,7 +144,7 @@ Stellen Sie vor Beginn des VMware-Konfigurationsprozesses sicher, dass die folge
 2. Starten Sie in {{site.data.keyword.BluVirtServers_short}} einen Web-Browser und stellen Sie eine Verbindung zu VMware vCenter über den vSphere Web Client her.
 3. Wählen Sie auf der Hauptanzeige (**HOME**) die Option für Hosts und Cluster (**Hosts and Clusters**) aus. Erweitern Sie das Teilfenster auf der linken Seite und wählen Sie den **VMware-ESXi-Server** aus, der für diese Bereitstellung verwendet werden soll.
 4. Stellen Sie sicher, dass der Firewall-Port für den NFS-Client auf allen Hosts geöffnet ist, damit Sie den NFS-Client auf dem vSphere-Host konfigurieren können. (Dieser Port wird in den zuletzt veröffentlichen Releases von vSphere automatisch geöffnet.) Wechseln Sie zum Prüfen, ob der Port geöffnet ist, zur Registerkarte für die ESXi-Hostverwaltung (**ESXi host Manage**) in VMware® vCenter™, wählen Sie **Settings** (Einstellungen) und anschließend **Security Profile** (Sicherheitsprofil) aus. Klicken Sie im Abschnitt **Firewall** auf **Edit** (Bearbeiten) und blättern Sie nach unten zu **NFS Client**.
-5. Stellen Sie sicher, dass **eine Verbindung über eine beliebige IP-Adresse oder aus einer angegebenen Liste von IP-Adressen** zugelassen wird. <br/>
+5. Stellen Sie sicher, dass **eine Verbindung über eine beliebige IP-Adresse oder über eine Reihe von IP-Adressen** zugelassen wird. <br/>
    ![Verbindung zulassen](/images/1_4.png)
 6. Konfigurieren Sie Jumbo-Frames, indem Sie zur Registerkarte **ESXi host Manage** wechseln und die Optionen **Manage** (Verwalten) und **Networking** (Netz) auswählen.
 7. Wählen Sie **VMkernel adapters** (VM-Kernel-Adapter) aus, heben Sie den Eintrag **vSwitch** hervor und klicken Sie auf **Edit** (Bearbeiten - Stiftsymbol).
@@ -210,7 +170,7 @@ Stellen Sie vor Beginn des VMware-Konfigurationsprozesses sicher, dass die folge
      8980 bytes from a.b.c.d: icmp_seq=1 ttl=128 time=3.36 ms
      ```
 
-Weitere Informationen zu VMware- und Jumbo-Frames finden Sie [hier ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") ](https://kb.vmware.com/s/article/1003712){: external}.
+Weitere Informationen zu VMware- und Jumbo-Frames finden Sie [hier](https://kb.vmware.com/s/article/1003712){: external}.
 {:tip}
 
 
@@ -218,7 +178,7 @@ Weitere Informationen zu VMware- und Jumbo-Frames finden Sie [hier ![Symbol für
 
 1. Konfigurieren Sie einen neuen Uplink-Adapter, indem Sie zur Registerkarte **ESXi host Manage** wechseln und die Optionen **Manage** und **Networking** auswählen.
 2. Wählen Sie die Registerkarte **Physical adapters** (Physische Adapter) aus.
-3. Klicken Sie auf die Option **Add host networking** (Hostnetz hinzufügen - Globussymbol mit Pluszeichen).
+3. Klicken Sie auf die Option 
 4. Wählen Sie für den Verbindungstyp die Option **Physical Network Adapter** (Physischer Netzadapter) und klicken Sie auf **Next** (Weiter).
 5. Wählen Sie den vorhandenen **vSwitch** aus und klicken Sie auf **Next**.
 6. Wählen Sie **Unused adapters** (Nicht verwendete Adapter) aus und klicken Sie auf **Add adapters** (Adapter hinzufügen - Pluszeichen).
@@ -259,19 +219,19 @@ Notieren Sie die IP-Adresse, da sie zum Anhängen des Datenträgers im nächsten
 1. Klicken Sie auf das Symbol **Go to vCenter** (Zu vCenter wechseln) und anschließend auf **Hosts and Clusters** (Hosts und Cluster).
 2. Klicken Sie auf der Registerkarte **Related Object** (Zugehöriges Objekt) auf **Datastores** (Datenspeicher).
 3. Klicken Sie auf das Symbol **Create a new datastore** (Neuen Datenspeicher erstellen).
-4. Wählen Sie auf der Anzeige **New Datastore** (Neuer Datenspeicher) die Position des WMware-Datenspeichers (Ihren ESXi-Host) aus und klicken Sie auf **Next** (Weiter).
+4. Wählen Sie auf der Anzeige **New Datastore** (Neuer Datenspeicher) die Position des VMware-Datenspeichers (Ihren ESXi-Host) aus und klicken Sie auf **Next** (Weiter).
 5. Wählen Sie auf der Anzeige **Type** (Typ) die Option **NFS** aus und klicken Sie auf **Next** (Weiter).
 6. Wählen Sie dann die NFS-Version aus. Es werden sowohl NFS Version 3 als auch NFS Version 4.1 unterstützt. Aber NFS Version 3 wird bevorzugt.
 
    Stellen Sie sicher, dass nur eine NFS-Version für den Zugriff auf den Datenspeicher verwendet wird. Durch die Verwendung unterschiedlicher Versionen kann es zu Datenverlust kommen, wenn ein oder mehrere Hosts in denselben Datenspeicher installiert werden.
    {:important}
 
-7. Geben Sie auf der Anzeige **Name and configuration** (Name und Konfiguration) den Namen ein, den Sie dem WMware-Datenspeicher geben möchten. Geben Sie außerdem den Hostnamen des NFS-Servers ein. Die Verwendung des FQDN für den NFS-Server sorgt für die beste Datenverkehrsverteilung an den zugrunde liegenden Server. Die IP-Adresse ist ebenfalls gültig, wird jedoch weniger häufig und nur in bestimmten Instanzen verwendet. Geben Sie den Ordnernamen in der Form `/foldername` ein.
-8. Wählen Sie auf der Anzeige **Host accessibility** (Hostzugänglichkeit) einen oder mehrere Hosts aus, an die Sie den NFS-WMware-Datenspeicher anhängen wollen, und klicken Sie auf **Next** (Weiter).
+7. Geben Sie auf der Anzeige **Name and configuration** (Name und Konfiguration) den Namen ein, den Sie dem VMware-Datenspeicher geben möchten. Geben Sie außerdem den Hostnamen des NFS-Servers ein. Die Verwendung des FQDN für den NFS-Server sorgt für die beste Datenverkehrsverteilung an den zugrunde liegenden Server. Die IP-Adresse ist ebenfalls gültig, wird jedoch weniger häufig und nur in bestimmten Instanzen verwendet. Geben Sie den Ordnernamen in der Form `/foldername` ein.
+8. Wählen Sie auf der Anzeige **Host accessibility** (Hostzugänglichkeit) einen oder mehrere Hosts aus, an die Sie den NFS-VMware-Datenspeicher anhängen wollen, und klicken Sie auf **Next** (Weiter).
 9. Prüfen Sie die Eingaben auf der nächsten Anzeige und klicken Sie auf **Finish** (Fertigstellen).
 10. Wiederholen Sie diese Schritte für alle weiteren {{site.data.keyword.filestorage_short}}-Datenträger.
 
-Von {{site.data.keyword.cloud}} wird empfohlen, FQDN-Namen für die Verbindung zum WMware-Datenspeicher zu verwenden. Durch die direkte Verwendung von IP-Adressen könnte der Lastausgleichsmechanismus, der durch die Verwendung von FQDN-Namen bereitgestellt wird, umgangen werden.
+Von {{site.data.keyword.cloud}} wird empfohlen, FQDN-Namen für die Verbindung zum VMware-Datenspeicher zu verwenden. Durch die direkte Verwendung von IP-Adressen könnte der Lastausgleichsmechanismus, der durch die Verwendung von FQDN-Namen bereitgestellt wird, umgangen werden.
 {:important}
 
 Setzen Sie zur Verwendung der IP-Adresse anstelle des FQDN einfach einen Pingbefehl an den Server ab, um die IP-Adresse abzurufen.
@@ -293,16 +253,16 @@ PING nfsdal0902a-fz.service.softlayer.com (10.2.125.80): 56 data bytes
 Storage I/O Control (SIOC) ist ein Feature, das für Kunden mit einer Enterprise Plus-Lizenz verfügbar ist. Wenn SIOC in der Umgebung aktiviert wird, ändert sich dadurch die Einheitenwarteschlangenlänge für die einzelne VM. Die Änderung der Einheitenwarteschlangenlänge verkleinert die Speicherarray-Warteschlange für alle VMs auf einen gleichen Anteil. SIOC greift nur ein, wenn Ressourcen beschränkt sind und die E/A-Latenz des Speichers über einem definierten Schwellenwert liegt.
 
 
-Zur Feststellung, wann eine Speichereinheit ausgelastet oder eingeschränkt ist, benötigt SIOC einen definierten Schwellenwert. Die Latenz für den Überlastungsschwellenwert ist für verschiedene Speichertypen unterschiedlich. Die Standardauswahl gibt 90% des Spitzendurchsatzes an. Der Prozentsatz des Spitzendurchsatzwerts gibt den geschätzten Latenzschwellenwert an, wenn der WMware-Datenspeicher diesen Prozentsatz seines geschätzten Spitzendurchsatzes verwendet.
+Zur Feststellung, wann eine Speichereinheit ausgelastet oder eingeschränkt ist, benötigt SIOC einen definierten Schwellenwert. Die Latenz für den Überlastungsschwellenwert ist für verschiedene Speichertypen unterschiedlich. Die Standardauswahl gibt 90% des Spitzendurchsatzes an. Der Prozentsatz des Spitzendurchsatzwerts gibt den geschätzten Latenzschwellenwert an, wenn der VMware-Datenspeicher diesen Prozentsatz seines geschätzten Spitzendurchsatzes verwendet.
 
 
-Eine falsche Konfiguration von SIOC für einen WMware-Datenspeicher oder für eine VMDK kann die Leistung erheblich beeinträchtigen.
+Eine falsche Konfiguration von SIOC für einen VMware-Datenspeicher oder für eine VMDK kann die Leistung erheblich beeinträchtigen.
 {:important}
 
 
 ### Storage I/O Control für einen VMware-Datenspeicher konfigurieren
 
-1. Navigieren Sie zu dem WMware-Datenspeicher im vSphere Web Client-Navigator.
+1. Navigieren Sie zu dem VMware-Datenspeicher im vSphere Web Client-Navigator.
 2. Klicken Sie auf die Registerkarte **Manage** (Verwalten).
 3. Klicken Sie auf **Settings** (Einstellungen) und dann auf **General** (Allgemein).
 4. Klicken Sie für **Datastore Capabilities** (Datenspeicherfunktionen) auf **Edit** (Bearbeiten).
@@ -310,7 +270,7 @@ Eine falsche Konfiguration von SIOC für einen WMware-Datenspeicher oder für ei
    ![NSF-VMware-Datenspeicher](/images/3_0.png)
 6. Klicken Sie auf **OK**.
 
-Diese Einstellung ist für den WMware-Datenspeicher, nicht für den Host spezifisch.
+Diese Einstellung ist für den VMware-Datenspeicher, nicht für den Host spezifisch.
 {:note}
 
 
@@ -339,14 +299,14 @@ Zum Konfigurieren von ESXi 5.x-Hosts für NFS-Speicher sind einige zusätzliche 
 |Parameter | Einstellung... |
 |----------|------------|
 |Net.TcpipHeapSize |	32 |
-|Net.TcpipHeapMax |	Für vSphere 5.0/5.1: 128 <br/> Für vSphere 5.5 oder höher ist 512 definiert. |
+|Net.TcpipHeapMax |	Für vSphere 5.0/5.1 ist 128 definiert.<br/> Für vSphere 5.5 oder höher ist 512 definiert. |
 |NFS.MaxVolumes |	256 |
 |NFS41.MaxVolumes |	256 (nur vSphere 6.0 oder höher) |
 |NFS.HeartbeatMaxFailures |	10 |
 |NFS.HeartbeatFrequency |	12 |
 |NFS.HeartbeatTimeout |	5 |
 |NFS.MaxQueueDepth|	64 |
-
+{: caption="Tabelle 2 - Einstellungen auf Hostseite" caption-side="top"}
 
 ### Erweiterte Konfigurationsparameter auf dem ESXi 5.x-Host über die CLI aktualisieren
 

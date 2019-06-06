@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-22"
+lastupdated: "2019-05-06"
 
 keywords: File Storage, NSF, mounting File Storage, mounting storage on Linux,
 
@@ -141,3 +141,16 @@ Beispiel
    # /etc/init.d/rpcidmapd start
    Starting RPC idmapd: [ OK ]
    ```
+## Dateisystem abhängen
+
+Um momentan angehängte Dateisysteme auf Ihrem Host abzuhängen, müssen Sie den Befehl `umount` mit dem Plattennamen oder dem Mountpunktnamen ausführen.
+
+```
+umount /dev/sdb
+```
+{:pre}
+
+```
+umount /mnt
+```
+{:pre}

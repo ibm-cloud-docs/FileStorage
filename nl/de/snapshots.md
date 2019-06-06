@@ -59,25 +59,12 @@ Snapshotkopien minimieren die Plattenbelegung, indem sie einzelne Blöcke und ke
 
 Im aktiven Dateisystem werden die geänderten Blöcke neu an verschiedene Positionen auf der Platte geschrieben oder vollständig als aktive Dateiblöcke entfernt. Wenn Dateien geändert oder gelöscht werden, werden die ursprünglichen Dateiblöcke in einer oder mehreren Snapshotkopien beibehalten. Das heißt im Ergebnis, dass der Plattenspeicherplatz, der von den ursprünglichen Blöcken belegt wird, weiterhin reserviert bleibt, um den Status des aktiven Dateisystems vor der Änderungen zu behalten. Dieser Speicherplatz ist zusätzlich zu dem Plattenspeicherplatz reserviert, der von Blöcken im geänderten aktiven Dateisystem belegt wird.
 
-<table>
-    <colgroup>
-      <col style="width: 33.3%;"/>
-      <col style="width: 33.3%;"/>
-      <col style="width: 33.3%;"/>
-    </colgroup>
-      <tr>
-        <th colspan="3" style="border: 0.0px;text-align: center;">Plattenspeicherplatzbelegung vor und nach einer Snapshotkopie</th>
-     </tr>
-     <tr>
-        <td style="border: 0.0px;text-align: center;"><img src="/images/bfcircle1.png" alt="Vor der Snapshotkopie"></td>
-        <td style="border: 0.0px;text-align: center;"><img src="/images/bfcircle3.png" alt="Nach der Snapshotkopie"></td>
-        <td style="border: 0.0px;text-align: center;"><img src="/images/bfcircle2.png" alt="Änderungen nach der Snapshotkopie"></td>
-     </tr>
-     <tr>
-        <td style="border: 0.0px;">Vor der Erstellung einer Snapshotkopie wird der Plattenspeicher nur vom aktiven Dateisystem verwendet.</td>
-        <td style="border: 0.0px;">Wenn eine Snapshotkopie erstellt ist, verweisen das aktive Dateisystem und die Snapshotkopie auf dieselben Plattenblöcke. Die Snapshotkopie belegt keinen zusätzlichen Plattenspeicher.</td>
-        <td style="border: 0.0px;">Nach dem Löschen der Datei <i>myfile.txt</i> aus dem aktiven Dateisystem schließt die Snapshotkopie die Datei weiterhin ein und verweist auf ihre Plattenblöcke. Deshalb führt das Löschen von Daten des aktiven Dateisystems nicht immer zur Freigabe von Plattenspeicher.</td>
-      </tr>
-</table>
+| Belegung des Plattenspeichers |   |
+|-----|-----|
+| ![Der Speicherplatz, der vor der Erstellung einer Snapshotkopie verwendet wird](/images/bfcircle1.png "Vor Snapshotkopie") | Vor der Erstellung einer Snapshotkopie wird der Plattenspeicher nur vom aktiven Dateisystem verwendet. |
+| ![Der Speicherplatz, der nach der Erstellung einer Snapshotkopie verwendet wird](/images/bfcircle3.png "Nach Snapshotkopie") | Wenn eine Snapshotkopie erstellt ist, verweisen das aktive Dateisystem und die Snapshotkopie auf dieselben Plattenblöcke. Die Snapshotkopie belegt keinen zusätzlichen Plattenspeicher.  |
+| ![Der Speicherplatz, der bei Änderungen nach der Erstellung einer Snapshotkopie verwendet wird](/images/bfcircle2.png "Änderungen nach Snapshotkopie") | Nach dem Löschen der Datei `myfile.txt` aus dem aktiven Dateisystem schließt die Snapshotkopie die Datei weiterhin ein und verweist auf ihre Plattenblöcke. Deshalb führt das Löschen von Daten des aktiven Dateisystems nicht immer zur Freigabe von Plattenspeicher. |
+{: caption="In Tabelle 1 ist zu sehen, wie sich Snapshots auf die Speicherbelegung im Speicher auswirken." caption-side="top"}
+
 
 Weitere Informationen zur Verwendung von Snapshots finden Sie unter [Snapshots verwalten](/docs/infrastructure/FileStorage?topic=FileStorage-managingSnapshots).

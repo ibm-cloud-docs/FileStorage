@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-05-22"
 
 keywords: File Storage, Endurance, Performance, IOPS, replication, billing, file storage, NFS,
 
@@ -20,7 +20,7 @@ subcollection: FileStorage
 # Informationen zu {{site.data.keyword.filestorage_short}}
 {: #about}
 
-{{site.data.keyword.filestorage_full}} ist ein persistenter, schneller und flexibler, NFS-basierter {{site.data.keyword.filestorage_short}}, der über ein Netz angeschlossen ist. In dieser Umgebung mit NAS-Speicher (NAS – Network-attached Storage) haben Sie vollständige Kontrolle über die Funktion und Leistung Ihrer gemeinsam genutzten Dateispeicher. Gemeinsam genutzte {{site.data.keyword.filestorage_short}}-Speicher können aus Gründen der Ausfallsicherheit mit bis zu 64 autorisierten Geräten über gesteuerte TCP/IP-Verbindungen verbunden werden.
+{{site.data.keyword.cloud}}  {{site.data.keyword.filestorage_short}} ist ein persistenter, schneller und flexibler, NFS-basierter {{site.data.keyword.filestorage_short}}, der über ein Netz angeschlossen ist. In dieser Umgebung mit NAS-Speicher (NAS – Network-attached Storage) haben Sie vollständige Kontrolle über die Funktion und Leistung Ihrer gemeinsam genutzten Dateispeicher. Gemeinsam genutzte {{site.data.keyword.filestorage_short}}-Speicher können aus Gründen der Ausfallsicherheit mit bis zu 64 autorisierten Geräten über gesteuerte TCP/IP-Verbindungen verbunden werden.
 {:shortdesc}
 
 ## Features
@@ -53,55 +53,6 @@ Nutzen Sie die folgenden Kernfunktionen von {{site.data.keyword.filestorage_shor
 - **Datenbanken in Clusterkonfiguration**
    - Unterstützt erweiterte Anwendungsfälle wie Datenbanken mit Clusterkonfiguration.
 
-## Rechnungsstellung
-
-Sie können stündliche oder monatliche Rechnungsstellung für einen Dateidatenträger auswählen. Der Typ der Rechnungsstellung, der für eine LUN ausgewählt wird, gilt für den zugehörigen Snapshotbereich und für Replikate. Wenn Sie zum Beispiel eine LUN mit stündlicher Rechnungsstellung bereitstellen, werden alle Gebühren für Snapshots oder Replikate stündlich in Rechnung gestellt. Wenn Sie eine LUN mit monatlicher Rechnungsstellung bereitstellen, werden Gebühren für Snapshots oder Replikate monatlich in Rechnung gestellt.
-
-Bei der **stündlichen Rechnungsstellung** wird die Stundenzahl, die der Dateidatenträger auf dem Konto vorhanden war, zu dem Zeitpunkt berechnet, an dem die LUN gelöscht wird oder der Rechnungsstellungszyklus endet, je nachdem, welcher Zeitpunkt zuerst kommt. Die stündliche Rechnungsstellung ist eine gute Wahl für Speicher, der für einige wenige Tage oder weniger als einen ganzen Monat lang genutzt wird. Die Abrechnung nach Stunden ist nur für Speicher verfügbar, der in [ausgewählten Rechenzentren](/docs/infrastructure/FileStorage?topic=FileStorage-news) bereitgestellt wird.
-
-Bei der **monatlichen Rechnungsstellung** erfolgt die Berechnung für den Preis anteilmäßig ab dem Erstellungsdatum bis zum Ende des Rechnungsstellungszyklus und die Rechnung wird unverzüglich gestellt. Es erfolgt keine Rückerstattung, wenn ein Datenträger vor dem Ende des Rechnungsstellungszyklus gelöscht wird. Die monatliche Rechnungsstellung ist eine gute Wahl für Speicher, der für Auslastungen im Produktionsbetrieb genutzt wird, die Daten verwenden, die über längere Zeiträume (einen Monat oder länger) gespeichert werden und zugänglich sein müssen.
-
-
-**Performance**
-<table>
-  <caption>Tabelle 1 enthält die Preise für Performance-Speicher mit monatlicher und stündlicher Rechnungsstellung.</caption>
-  <tr>
-   <th>Monatlicher Preis</th>
-   <td>$0,10/GB + $0,07/IOPS</td>
-  </tr>
-  <tr>
-   <th>Stündlicher Preis</th>
-   <td>$0,0001/GB + $0,0002/IOPS</td>
-  </tr>
-</table>
-
-**Endurance**
-<table>
-  <caption>Tabelle 2 enthält die Preise für Endurance-Speicher für die einzelnen Stufen mit den Optionen für monatliche und stündliche Rechnungsstellung.</caption>
-  <tr>
-   <th>IOPS-Stufe</th>
-   <th>0,25 IOPS/GB</th>
-   <th>2 IOPS/GB</th>
-   <th>4 IOPS/GB</th>
-   <th>10 IOPS/GB</th>
-  </tr>
-  <tr>
-   <th>Monatlicher Preis</th>
-   <td>$0,06/GB</td>
-   <td>$0,15/GB</td>
-   <td>$0,20/GB</td>
-   <td>$0,58/GB</td>
-  </tr>
-  <tr>
-   <th>Stündlicher Preis</th>
-   <td>$0,0001/GB</td>
-   <td>$0,0002/GB</td>
-   <td>$0,0003/GB</td>
-   <td>$0,0009/GB</td>
-  </tr>
-</table>
-
-
 
 ## Bereitstellung
 
@@ -132,74 +83,58 @@ Performance ist eine Klasse von {{site.data.keyword.filestorage_short}}, die auf
 
 Der Zugriff auf Performance for {{site.data.keyword.filestorage_short}} und das Anhängen erfolgen über eine NFS-Verbindung (NFS - Network File System). {{site.data.keyword.filestorage_short}} wird in der Regel dann verwendet, wenn Zugriffe auf den Datenträger durch mehrere Server gleichzeitig stattfinden. Konsistente Performance-Datenträger können nach den Größen und E/A-Operationen pro Sekunde (IOPS) in Tabelle 1 bestellt und mit Linux-Betriebssystemen verwendet werden.
 
-<table cellpadding="1" cellspacing="1" style="width: 99%;">
- <caption>Tabelle 3 enthält die Größe und die IOPS-Kombinationen von Performance-Speicher.<br/><sup><img src="/images/numberone.png" alt="Fußnote" /></sup> Ein IOPS-Grenzwert über 6.000 ist in ausgewählten Rechenzentren verfügbar.</caption>
-        <colgroup>
-          <col/>
-          <col/>
-          <col/>
-        </colgroup>
-          <tr>
-            <th>Größe (GB)</th>
-            <th>Min. IOPS</th>
-            <th>Max. IOPS</th>
-          </tr>
-          <tr>
-            <td>20</td>
-            <td>100</td>
-            <td>1.000</td>
-          </tr>
-          <tr>
-            <td>40</td>
-            <td>100</td>
-            <td>2.000</td>
-          </tr>
-          <tr>
-            <td>80</td>
-            <td>100</td>
-            <td>4.000</td>
-          </tr>
-          <tr>
-            <td>100</td>
-            <td>100</td>
-            <td>6.000</td>
-          </tr>
-          <tr>
-            <td>250</td>
-            <td>100</td>
-            <td>6.000</td>
-          </tr>
-          <tr>
-            <td>500</td>
-            <td>100</td>
-            <td>6.000 oder 10.,000<sup><img src="/images/numberone.png" alt="Fußnote" /></sup></td>
-          </tr>
-          <tr>
-            <td>1.000</td>
-            <td>100</td>
-            <td>6.000 oder 20.000<sup><img src="/images/numberone.png" alt="Fußnote" /></sup></td>
-          </tr>
-          <tr>
-            <td>2.000</td>
-            <td>200</td>
-            <td>6.000 oder 40.000<sup><img src="/images/numberone.png" alt="Fußnote" /></sup></td>
-          </tr>
-          <tr>
-            <td>3.000 - 7.000</td>
-            <td>300</td>
-            <td>6.000 oder 48.000<sup><img src="/images/numberone.png" alt="Fußnote" /></sup></td>
-          </tr>
-          <tr>
-            <td>8.000 - 9.000</td>
-            <td>500</td>
-            <td>6.000 oder 48.000<sup><img src="/images/numberone.png" alt="Fußnote" /></sup></td>
-          </tr>
-          <tr>
-            <td>10.000 - 12.000</td>
-            <td>1.000</td>
-            <td>6.000 oder 48.000<sup><img src="/images/numberone.png" alt="Fußnote" /></sup></td>
-          </tr>
-</table>
+| Größe (GB) | Min. IOPS | Max. IOPS
+|-----|-----|-----|
+| 20 | 100 | 1.000 |
+| 40 | 100 | 2.000  |
+| 80 | 100 | 4.000 |
+| 100 | 100 | 6.000 |
+| 250 | 100 | 6.000 |
+| 500 | 100  | 6.000 oder 10.000 |
+| 1.000 | 100 | 6.000 oder 20.000 ![Fußnote](/images/numberone.png) |
+| 2.000 | 200 | 6.000 oder 40.000 ![Fußnote](/images/numberone.png) |
+| 3.000 - 7.000 | 300 | 6.000 oder 48.000 ![Fußnote](/images/numberone.png) |
+| 8.000 - 9.000 | 500 | 6.000 oder 48.000 ![Fußnote](/images/numberone.png) |
+| 10.000 - 12.000 | 1.000 | 6.000 oder 48.000 ![Fußnote](/images/numberone.png) |
+{: row-headers}
+{: class="comparison-table"}
+{: caption="Tabellenvergleich" caption-side="top"}
+{: summary="Table 1 is showing the possible minimum and maximum IOPS rates based of the volume size. This table has row and column headers. The row headers identify the volume size range. The column headers identify the minimum and maximum IOPS levels. To understand what IOPS rates you can expect from your Storage, navigate to the row and review the two options."}
 
+
+![Fußnote](/images/numberone.png) * IOPS-Grenzwerte über 6.000 sind in ausgewählten Rechenzentren verfügbar.*
 
 Performance-Datenträger wurden dazu entwickelt, einen konsistenten Betrieb nahe am bereitgestellten IOPS-Niveau zu gewährleisten. Die Konsistenz erleichtert die Dimensionierung und Skalierung von Anwendungsumgebungen auf einem bestimmten Leistungsniveau. Darüber hinaus ist es möglich, eine Umgebung durch die Erstellung eines Datenträgers mit idealem Preis-/Leistungsverhältnis zu optimieren.
+
+## Rechnungsstellung
+
+Sie können stündliche oder monatliche Rechnungsstellung für einen Dateidatenträger auswählen. Der Typ der Rechnungsstellung, der für eine LUN ausgewählt wird, gilt für den zugehörigen Snapshotbereich und für Replikate. Wenn Sie zum Beispiel eine LUN mit stündlicher Rechnungsstellung bereitstellen, werden alle Gebühren für Snapshots oder Replikate stündlich in Rechnung gestellt. Wenn Sie eine LUN mit monatlicher Rechnungsstellung bereitstellen, werden Gebühren für Snapshots oder Replikate monatlich in Rechnung gestellt.
+
+ * Bei der **stündlichen Rechnungsstellung** wird die Stundenzahl, die der Dateidatenträger auf dem Konto vorhanden war, zu dem Zeitpunkt berechnet, an dem die LUN gelöscht wird oder der Rechnungsstellungszyklus endet, je nachdem, welcher Zeitpunkt zuerst kommt. Die stündliche Rechnungsstellung ist eine gute Wahl für Speicher, der für einige wenige Tage oder weniger als einen ganzen Monat lang genutzt wird. Die Abrechnung nach Stunden ist nur für Speicher verfügbar, der in [ausgewählten Rechenzentren](/docs/infrastructure/FileStorage?topic=FileStorage-news) bereitgestellt wird.
+
+ * Bei der **monatlichen Rechnungsstellung** erfolgt die Berechnung für den Preis anteilmäßig ab dem Erstellungsdatum bis zum Ende des Rechnungsstellungszyklus und die Rechnung wird unverzüglich gestellt. Es erfolgt keine Rückerstattung, wenn ein Datenträger vor dem Ende des Rechnungsstellungszyklus gelöscht wird. Die monatliche Rechnungsstellung ist eine gute Wahl für Speicher, der für Auslastungen im Produktionsbetrieb genutzt wird, die Daten verwenden, die über längere Zeiträume (einen Monat oder länger) gespeichert werden und zugänglich sein müssen.
+
+
+### Endurance
+{: #pricing-comparison-endurance}
+
+| Preisoptionen für vordefinierte IOPS-Tiers | 0,25 IOPS | 2 IOPS/GB | 4 IOPS/GB | 10 IOPS/GB |
+|-----|-----|-----|-----|-----|
+| Monatlicher Preis | $0,06/GB | $0,15/GB | $0,20/GB | $0,58/GB |
+| Stündlicher Preis | $0,0001/GB | $0,0002/GB | $0,0003/GB | $0,0009/GB |
+{: row-headers}
+{: class="comparison-table"}
+{: caption="Tabellenvergleich" caption-side="top"}
+{: summary="Table 2 is showing the prices for Endurance Storage for each tier with monthly and hourly billing options. This table has row and column headers. The row headers identify the billing options. The column headers identify the IOPS level that is chosen for the service. To understand what your price is located in the table, navigate to the column and review the two different billing options for that IOPS tier."}
+
+### Performance
+{: #pricing-comparison-performance}
+
+| Preisoptionen für angepasste IOPS | Preisberechnung |
+|-----|-----|
+| Monatlicher Preis | $0,10/GB + $0,07/IOPS |
+| Stündlicher Preis | $0,0001/GB + $0,0002/IOPS |
+{: row-headers}
+{: class="comparison-table"}
+{: caption="Tabellenvergleich" caption-side="top"}
+{: summary="Table 3 is showing the prices for Performance Storage with monthly and hourly billing. This table has row and column headers. The row headers identify the billing options. To see what your cost for Storage is, navigate to the row of the billing option you are interested in."}

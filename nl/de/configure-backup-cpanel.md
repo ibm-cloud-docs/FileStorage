@@ -41,7 +41,7 @@ Weitere Informationen finden Sie in [cPanel - Configuring backup directory](http
    {: pre}
 
     Dieser Befehl komprimiert und überträgt die Daten, wobei möglichst viel (außer festen Verbindungen) beibehalten wird. Außerdem werden Informationen zu den per NFS zu übertragenden Dateien sowie am Ende eine kurze Zusammenfassung bereitgestellt.
-   {:tip}
+    {:tip}
 
 5. Melden Sie sich bei WebHost Manager an und navigieren Sie über **Home** > **Sicherung** > **Sicherungskonfiguration** zur Sicherungskonfiguration.
 

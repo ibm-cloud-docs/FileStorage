@@ -59,62 +59,28 @@ Die Standardbegrenzung für die Anzahl von Autorisierungen pro Datenträger ist 
 ## Wie viele {{site.data.keyword.filestorage_short}}-Datenträger können einem einzelnen Host zugeordnet werden?
 {: faq}
 
-Dies ist abhängig von der Kapazität des Hostbetriebssystems, nicht von {{site.data.keyword.BluSoftlayer_full}}-Grenzwerten. Die Dokumentation des jeweiligen Betriebssystems enthält Informationen zu den Grenzwerten für die Anzahl der gemeinsam genutzten Dateisysteme, die angehängt werden können.
+Dies ist abhängig von der Kapazität des Hostbetriebssystems, nicht von {{site.data.keyword.cloud}}-Grenzwerten. Die Dokumentation des jeweiligen Betriebssystems enthält Informationen zu den Grenzwerten für die Anzahl der gemeinsam genutzten Dateisysteme, die angehängt werden können.
 
 ## Wie viele gemeinsam genutzte Dateisysteme sind pro Dateidatenträgergröße zulässig? Wie viele gemeinsam genutzte Dateisysteme sind pro Datenträgergröße maximal zulässig?
+{: #maxfilevolume}
 {: faq}
 
-<table>
-  <caption>Tabelle 1 zeigt die maximale Anzahl von zulässigen I-Nodes auf der Basis der Datenträgergröße. Die Datenträgergrößen sind in der linken Spalte aufgeführt. Die Anzahl der I-Nodes und gemeinsam genutzten Dateispeicher steht auf der rechten Seite.</caption>
-  <thead>
-    <tr>
-      <th>Datenträgergröße</th>
-      <th>I-Nodes und gemeinsam genutzte Dateiressourcen</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>20 GB - 39 GB</td>
-      <td>622.484</td>
-    </tr>
-    <tr>
-      <td>40 GB - 79 GB</td>
-      <td>1.245.084</td>
-    </tr>          
-    <tr>
-      <td>80 GB - 99 GB</td>
-      <td>2.490.263</td>
-    </tr>          
-    <tr>
-      <td>100 GB - 249 GB</td>
-      <td>3.112.863</td>
-    </tr>          
-    <tr>
-      <td>250 GB - 499 GB</td>
-      <td>7.782.300</td>
-    </tr>          
-    <tr>
-      <td>500 GB - 999 GB</td>
-      <td>15.564.695</td>
-    </tr>
-    <tr>
-      <td>1 TB</td>
-      <td>31.876.593</td>
-    </tr>
-    <tr>
-      <td>2 TB</td>
-      <td>63.753.186</td>
-    </tr>
-    <tr>
-      <td>3 TB</td>
-      <td>95.629.970</td>
-    </tr>
-    <tr>
-      <td>4 TB - 12 TB</td>
-      <td>127.506.359</td>
-    </tr>
-   </tbody>
-</table>
+| Datenträgergröße | I-Nodes und gemeinsam genutzte Dateiressourcen |
+|-----|-----|
+| 20 GB - 39 GB | 622.484 |
+| 40 GB - 79 GB | 1.245.084 |
+| 80 GB - 99 GB | 2.490.263 |
+| 100 GB - 249 GB | 3.112.863 |
+| 250 GB - 499 GB | 7.782.300 |
+| 500 GB - 999 GB | 15.564.695 |
+| 1 TB | 31.876.593 |
+| 2 TB | 63.753.186 |
+| 3 TB | 95.629.970 |
+| 4 TB | 127.506.359 |
+{: row-headers}
+{: class="comparison-table"}
+{: caption="Tabellenvergleich" caption-side="top"}
+{: summary="Table 1 shows the maximum number of inodes that are allowed based on the volume size. Volume sizes are in the left column. The number of inodes and file shares are on the right."}
 
 ## IOPS messen
 {: faq}
@@ -147,6 +113,7 @@ Ein Einlaufen des Datenträgers ist nicht erforderlich. Sie verfügen sofort nac
 Durchsatzgrenzwerte werden auf Datenträgerebene festgelegt. Dieser Grenzwert kann durch eine schnellere Ethernet-Verbindung nicht erhöht werden. Bei einer langsameren Ethernet-Verbindung kann Ihre Bandbreite allerdings einen Engpass verursachen.
 
 ## Beeinträchtigen Firewalls und Sicherheitsgruppen die Leistung?
+{: #isolatedstoragetraffic}
 {: faq}
 
 Es ist am besten, den Speicherdatenverkehr über ein VLAN zu leiten, das die Firewall umgeht. Wenn der Speicherdatenverkehr über Software-Firewalls geleitet wird, erhöht sich dadurch die Latenz und die Speicherleistung wird beeinträchtigt.
@@ -164,9 +131,9 @@ Die Ziellatenz im Speicher beträgt weniger als 1 ms. File Storage-Speicher wird
 ## Welche NFS-Versionen werden unterstützt?
 {: faq}
 
-NFS Version 3 und NFS Version 4.1 werden in der Umgebung von {{site.data.keyword.cloud}} unterstützt. 
+NFS Version 3 und NFS Version 4.1 werden in der Umgebung von {{site.data.keyword.cloud}} unterstützt.
 
-Die bevorzugte Version ist NFS v3, da sie ein statusunabhängiges Protokoll verwendet und bei Netzereignissen eine größere Ausfallsicherheit bietet.  
+Die bevorzugte Version ist NFS v3, da sie ein statusunabhängiges Protokoll verwendet und bei Netzereignissen eine größere Ausfallsicherheit bietet.
 
 NFS v3 bietet native Unterstützung für `no_root_squash`; dies ermöglicht es Root-Clients, die Rootberechtigungen für den gemeinsam genutzten NFS-Speichern zu behalten. Sie können dieses Feature in NFS v4.1 aktivieren, indem Sie die Domäneninformationen bearbeiten und `rpcidmapd` oder einen ähnlichen Service ausführen. Weitere Informationen finden Sie in ['no_root_squash' für NFS implementieren](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux#norootsquash).
 

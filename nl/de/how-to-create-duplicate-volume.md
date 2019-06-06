@@ -24,7 +24,7 @@ Da der Duplikatdatenträger auf den Daten eines zeitpunktgesteuerten Snapshots b
 
 Duplikate können sowohl von **primären** Datenträgern als auch von **Replikat**datenträgern erstellt werden. Das neue Duplikat wird im selben Rechenzentrum wie der ursprüngliche Datenträger erstellt. Wenn Sie einen Duplikatdatenträger von einem Replikatdatenträger erstellen, wird der neue Datenträger im selben Rechenzentrum wie der Replikatdatenträger erstellt.
 
-Als Benutzer mit einem dedizierten Konto für {{site.data.keyword.containerlong}} finden Sie in der [{{site.data.keyword.containerlong_notm}}-Dokumentation](/docs/containers?topic=containers-backup_restore#backup_restore) Informationen zu Optionen für die Duplizierung eines Datenträgers.
+Als Benutzer mit einem dedizierten Konto für {{site.data.keyword.containerlong}} finden Sie in der [{{site.data.keyword.containerlong_notm}}-Dokumentation](/docs/containers?topic=containers-file_storage#file_backup_restore) Informationen zu Optionen für die Duplizierung eines Datenträgers.
 {:tip}
 
 Auf Duplikatdatenträger kann ein Host für Lese-/Schreiboperationen zugreifen, sobald der Speicher bereitgestellt ist. Allerdings sind Snapshots und die Replikation erst zulässig, wenn das Erstellen der Datenkopie vom ursprünglichen Datenträger auf den Duplikatdatenträger abgeschlossen ist. Sobald die Datenkopie abgeschlossen ist, kann das Duplikat als unabhängiger Datenträger verwaltet und verwendet werden.
@@ -39,18 +39,18 @@ Einige allgemeine Verwendungen für einen duplizierten Datenträger sind die fol
 - **Entwicklung und Test**: Erstellen Sie gleichzeitig bis zu vier simultane Duplikate eines Datenträgers, um duplizierte Daten zu Entwicklungs- und Testzwecken zu erstellen.
 - **Größenänderung des Speichers**: Erstellen Sie einen Datenträger mit der neuen Größe und/oder den IOPS-Raten, ohne die Daten verschieben zu müssen.  
 
-Sie können einen duplizierten Datenträger über das [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} erstellen.
+Es gibt mehrere Möglichkeiten zur Erstellung eines duplizierten Datenträgers über das [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
 
 
 ## Duplikat von einem bestimmten Datenträger in der Speicherliste erstellen
 
 1. Rufen Sie Ihre {{site.data.keyword.filestorage_short}}-Liste auf.
     - Klicken Sie im Kundenportal auf **Speicher** > **{{site.data.keyword.filestorage_short}}** ODER
-    - Klicken Sie im {{site.data.keyword.BluSoftlayer_full}}-Katalog auf **Infrastruktur** > **Speicher** > **{{site.data.keyword.filestorage_short}}**.
+    - Klicken Sie im {{site.data.keyword.cloud}}-Katalog auf **Infrastruktur** > **Speicher** > **{{site.data.keyword.filestorage_short}}**.
 2. Wählen Sie eine LUN in der Liste aus und klicken Sie auf **Aktionen** > **LUN (Datenträger) duplizieren**.
 3. Wählen Sie Ihre Snapshot-Option aus.
     - Bei Bestellung von einem Datenträger aus, der kein Replikat ist:
-      - Wählen Sie die Option **Aus neuem Snapshot erstellen** aus – mit dieser Aktion wird ein Snapshot erstellt, der für das Duplikat zu verwenden ist. Verwenden Sie diese Option, wenn Ihr Datenträger gerade keine Snapshots aufweist oder wenn Sie ein Duplikat genau zu diesem Zeitpunkt erstellen wollen.</br>
+      - Wählen Sie die Option **Aus neuem Snapshot erstellen** aus – mit dieser Aktion wird ein Snapshot erstellt, der für das Duplikat zu verwenden ist. Verwenden Sie diese Option, wenn der Datenträger keine aktuellen Snapshots aufweist oder wenn Sie zu diesem Zeitpunkt ein Duplikat erstellen wollen. </br>
       - Wählen Sie die Option **Aus letztem Snapshot erstellen** aus – mit dieser Aktion wird ein Duplikat aus dem letzten Snapshot erstellt, der für den betreffenden Datenträger vorhanden ist.
     - Bei Bestellung von einem Replikatdatenträger aus: Hier ist nur die Snapshotoption der Verwendung des letzten Snapshots verfügbar.
 4. Speichertyp und Position bleiben die gleichen wie beim ursprünglichen Datenträger.
