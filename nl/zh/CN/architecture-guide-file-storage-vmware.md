@@ -38,7 +38,7 @@ subcollection: FileStorage
 
 - 确定大小时，请考虑所需的工作负载和吞吐量的大小。对于“耐久性”服务，大小很重要，该服务的性能扩展与容量 (IOPS/GB) 呈线性关系。“性能”服务则不同，它允许管理员独立地选择容量和性能。对于“性能”服务，吞吐量需求很重要。
 
-  吞吐量的计算公式是 IOPS x 16 KB。IOPS 基于 16 KB 的块大小进行度量，其中读/写操作构成比例为 50/50。<br/>增加块大小会增加吞吐量，但会降低 IOPS。例如，如果使块大小翻倍为 32 KB 的块，那么将保持最大吞吐量，但 IOPS 会降低一半。
+  吞吐量的计算公式是 IOPS x 16 KB。IOPS 基于 16 KB 的块大小进行度量，其中读/写操作的比例为 50/50。<br/>增加块大小会增加吞吐量，但会降低 IOPS。例如，如果使块大小翻倍为 32 KB 的块，那么将保持最大吞吐量，但 IOPS 会降低一半。
   {:note}
 
 - NFS 使用许多额外的文件控制操作，例如 `lookup`、`getattr` 和 `readdir`。这些操作可以与读/写操作一样计为 IOPS，并根据操作类型和 NFS 版本而变化。
@@ -46,74 +46,34 @@ subcollection: FileStorage
 - 为了避免在路径故障转移期间断开存储器连接，{{site.data.keyword.IBM}} 建议安装 VMware 工具，以用于设置适当的超时值。无需更改此值，缺省设置可足以确保 VMware 主机不会失去连接。
 - {{site.data.keyword.cloud}} 环境支持 NFS V3 和 NFS V4.1。但是，{{site.data.keyword.IBM}} 建议您使用 NFS V3，因为 NFS V4.1 是有状态协议（NFSv3 是无状态协议），在网络事件期间可能会发生协议问题。NFS V4.1 必须停止所有操作，然后才能完成锁定回收。这些操作正在执行时，可能会发生中断。
 
-有关更多信息，请参阅 VMware 的白皮书 [Best Practices for running VMware vSphere on network-attached storage Storage![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){: external}
+有关更多信息，请参阅 VMware 的白皮书 [Best Practices for running
+VMware vSphere on network-attached storage](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){: external}
 {:tip}
 
-**NFS 协议与 VMware 功能支持矩阵**
-<table>
-  <caption>表 1 显示了适用于两个不同版本 NFS 的 vSphere 功能。</caption>
- <thead>
-  <tr>
-   <th>vSphere 功能</th>
-   <th>NFS V3</th>
-   <th>NFS V4.1</th>
-  </tr>
- </thead>
- <tbody>
-  <tr>
-   <td>vMotion 和 Storage vMotion</td>
-   <td>是</td>
-   <td>是</td>
-  </tr>
-  <tr>
-   <td>高可用性 (HA)</td>
-   <td>是</td>
-   <td>是</td>
-  </tr>
-  <tr>
-   <td>容错 (FT)</td>
-   <td>是</td>
-   <td>是</td>
-  </tr>
-  <tr>
-   <td>分布式资源调度程序 (DRS)</td>
-   <td>是</td>
-   <td>是</td>
-  </tr>
-  <tr>
-   <td>主机概要文件</td>
-   <td>是</td>
-   <td>是</td>
-  </tr>
-  <tr>
-   <td>Storage DRS</td>
-   <td>是</td>
-   <td>否</td>
-  </tr>
-  <tr>
-   <td>Storage I/O Control</td>
-   <td>是</td>
-   <td>否</td>
-  </tr>
-  <tr>
-   <td>站点恢复管理器</td>
-   <td>是</td>
-   <td>否</td>
-  </tr>
-  <tr>
-   <td>虚拟卷</td>
-   <td>是</td>
-   <td>否</td>
-  </tr>
- </tbody>
-</table>
-*来源：[VMware - NFS 协议和 ESXi](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){: external}*
+### NFS 协议 VMware 功能支持矩阵
 
+|vSphere 功能|NFS V3|NFS V4.1|
+|-----|-----|-----|
+|vMotion 和 Storage vMotion|是|是|
+|高可用性 (HA)|是|是|
+|容错 (FT)|是|是|
+|分布式资源调度程序 (DRS)| 是< |是|
+|主机概要文件|是|是|
+|Storage DRS|是|否|
+|Storage I/O Control|是|否|
+|站点恢复管理器|是|否|
+|虚拟卷|是|否|
+{: row-headers}
+{: class="comparison-table"}
+{: caption="表 1 - NFS 协议 VMware 功能支持矩阵。" caption-side="top"}
+{: summary="This table has row and column headers. The row headers identify the vSphere features. The column headers identify the NSF version. To see if a feature is enabled navigate to the row of the feature and look at the column that is associated with the NFS version you use."}
+
+*来源 - [VMware - NFS Protocols and ESXi](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){: external}*
 
 
 ### 使用快照
 
-通过 {{site.data.keyword.filestorage_short}}，管理员可以为每个存储卷设置快照安排，以自动创建和删除快照副本。管理员还可以创建额外的快照安排（每小时、每天和每周）来自动生成快照，也可以为业务连续性和灾难恢复 (BCDR) 方案手动创建特别快照。有关保留的快照和使用的空间的自动警报通过 [{{site.data.keyword.slportal}}![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/){: external} 传递给卷所有者。
+通过 {{site.data.keyword.filestorage_short}}，管理员可以为每个存储卷设置快照安排，以自动创建和删除快照副本。管理员还可以创建额外的快照安排（每小时、每天和每周）来自动生成快照，也可以为业务连续性和灾难恢复 (BCDR) 方案手动创建特别快照。有关保留的快照和使用的空间的自动警报通过 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 传递给卷所有者。
 
 需要快照空间才能使用快照。可以在初始卷订购期间购买空间，也可以在初始供应后通过在**卷详细信息**页面上单击**操作**并选择**添加快照空间**来购买空间。
 
@@ -150,18 +110,18 @@ subcollection: FileStorage
 
 ## 订购 {{site.data.keyword.filestorage_short}}
 
-在 VMware 环境中，使用[高级单站点 VMware 参考体系结构](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){: external} 利用“耐久性”或“性能”选项来设置 {{site.data.keyword.filestorage_short}}。
+使用[高级单站点 VMware 参考体系结构](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){: external}在 VMware 环境中通过“耐久性”或“性能”选项来设置 {{site.data.keyword.filestorage_short}}。
 
-订购 {{site.data.keyword.filestorage_short}} 的方式是通过 [IBM Cloud 目录](https://{DomainName}/catalog){: external} 或 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}。有关更多信息，请参阅[订购 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)。
+可通过 [IBM Cloud 目录](https://{DomainName}/catalog){: external}或 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 订购 {{site.data.keyword.filestorage_short}}。有关更多信息，请参阅[订购 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)。
 
-存储器将在不到一分钟的时间内进行供应，并且会在 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 的 **{{site.data.keyword.filestorage_short}}** 页面上显示。
+存储器将在不到一分钟的时间内进行供应，并会显示在 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 的 **{{site.data.keyword.filestorage_short}}** 页面上。
 
 供应了卷后，必须授权将使用该卷的 {{site.data.keyword.BluBareMetServers_full}} 或 {{site.data.keyword.BluVirtServers_full}} 来访问该存储器。使用以下步骤来授权该卷。
 
 1. 单击**存储** > **{{site.data.keyword.filestorage_short}}**。
 2. 选择**耐久性**或**性能卷操作**菜单上的**访问主机**。
 3. 单击**子网**。
-4. 从分配给 ESXi 主机上 VMkernel 端口的可用子网的列表中进行选择，然后单击**提交**。<br/>
+4. 从分配给 ESXi 主机上 VMkernel 端口的可用子网列表中进行选择，然后单击**提交**。<br/>
 
    显示的子网是与存储卷位于同一数据中心的预订子网。
    {:note}
@@ -251,7 +211,7 @@ subcollection: FileStorage
 
 2. 在 ESXi 5.0 和更低版本上，静态路由在重新启动后不会持久存储。要确保添加的任何静态路由都是持久存储的，需要将此命令添加到每个主机上 `/etc/rc.local.d/` 目录下的 `local.sh` 文件中。使用可视编辑器来打开 `local.sh` 文件，然后将步骤 4.1 中的第二个命令添加到 `exit 0` 行前面。
 
-记下 IP 地址，因为此地址可用于在下一步中安装卷。<br/>对于计划安装到 ESXi 主机的每个 NFS 卷，都需要完成此过程。<br/>有关更多信息，请参阅 VMware 知识库文章：[Configuring static routes for VMkernel ports on an ESXi host](https://kb.vmware.com/s/article/2001426){: external}。
+记下 IP 地址，因为在下一步中安装卷时可使用此地址。<br/>对于计划安装到 ESXi 主机的每个 NFS 卷，都需要完成此过程。<br/>有关更多信息，请参阅 VMware 知识库文章 [Configuring static routes for VMkernel ports on an ESXi host](https://kb.vmware.com/s/article/2001426){: external}。
 {:tip}
 
 
@@ -340,14 +300,14 @@ Storage I/O Control (SIOC) 是可用于使用 Enterprise Plus 许可证的客户
 |参数|设置为...|
 |----------|------------|
 |Net.TcpipHeapSize|	32|
-|Net.TcpipHeapMax|	对于 vSphere 5.0/5.1，设置为 128<br/> 对于 vSphere 5.5 或更高版本，设置为 512|
-|NFS.MaxVolumes|	256|
+|Net.TcpipHeapMax|	对于 vSphere 5.0/5.1，设置为 128 <br/> 对于 vSphere 5.5 或更高版本，设置为 512 |
+|NFS.MaxVolumes |	256|
 |NFS41.MaxVolumes|	256（仅限 vSphere 6.0 或更高版本）|
 |NFS.HeartbeatMaxFailures|	10|
 |NFS.HeartbeatFrequency|	12|
 |NFS.HeartbeatTimeout|	5|
 |NFS.MaxQueueDepth|	64|
-
+{: caption="表 2 - 主机端设置" caption-side="top"}
 
 ### 在 ESXi 5.x 主机上使用 CLI 更新高级配置参数
 

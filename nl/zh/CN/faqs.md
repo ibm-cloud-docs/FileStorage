@@ -62,59 +62,25 @@ subcollection: FileStorage
 这取决于主机操作系统的处理能力，而不受 {{site.data.keyword.cloud}} 的限制。有关可安装的文件共享数的限制，请参阅操作系统文档。
 
 ## 每种文件卷大小允许多少个文件共享？每种卷大小允许的最大文件共享数是多少？
+{: #maxfilevolume}
 {: faq}
 
-<table>
-  <caption>表 1 显示了根据卷大小允许的最大索引节点数。左列是卷大小。右列是索引节点数和文件共享数。</caption>
-  <thead>
-    <tr>
-      <th>卷大小</th>
-      <th>索引节点和文件共享</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>20 GB - 39 GB</td>
-      <td>622,484</td>
-    </tr>
-    <tr>
-      <td>40 GB - 79 GB</td>
-      <td>1,245,084</td>
-    </tr>          
-    <tr>
-      <td>80 GB - 99 GB</td>
-      <td>2,490,263</td>
-    </tr>          
-    <tr>
-      <td>100 GB - 249 GB</td>
-      <td>3,112,863</td>
-    </tr>          
-    <tr>
-      <td>250 GB - 499 GB</td>
-      <td>7,782,300</td>
-    </tr>          
-    <tr>
-      <td>500 GB - 999 GB</td>
-      <td>15,564,695</td>
-    </tr>
-    <tr>
-      <td>1 TB</td>
-      <td>31,876,593</td>
-    </tr>
-    <tr>
-      <td>2 TB</td>
-      <td>63,753,186</td>
-    </tr>
-    <tr>
-      <td>3 TB</td>
-      <td>95,629,970</td>
-    </tr>
-    <tr>
-      <td>4 TB - 12 TB</td>
-      <td>127,506,359</td>
-    </tr>
-   </tbody>
-</table>
+|卷大小|索引节点和文件共享|
+|-----|-----|
+|20 GB - 39 GB|622,484|
+|40 GB - 79 GB|1,245,084|
+|80 GB - 99 GB|2,490,263|
+|100 GB - 249 GB|3,112,863|
+|250 GB - 499 GB|7,782,300|
+|500 GB - 999 GB|15,564,695|
+|1 TB|31,876,593|
+|2 TB|63,753,186|
+|3 TB|95,629,970|
+| 4 TB |127,506,359|
+{: row-headers}
+{: class="comparison-table"}
+{: caption="表比较" caption-side="top"}
+{: summary="Table 1 shows the maximum number of inodes that are allowed based on the volume size. Volume sizes are in the left column. The number of inodes and file shares are on the right."}
 
 ## 度量 IOPS
 {: faq}
@@ -147,6 +113,7 @@ IOPS 会在卷级别强制执行。换句话说，连接到一个具有 6000 IOP
 吞吐量限制是在每个卷的级别设置的。即使使用更快的以太网连接也无法提高限制。但是，使用较慢的以太网连接时，带宽可能是潜在瓶颈。
 
 ## 防火墙和安全组会影响性能吗？
+{: #isolatedstoragetraffic}
 {: faq}
 
 最好是在绕过防火墙的 VLAN 上运行存储流量。通过软件防火墙运行存储流量会延长等待时间，并对存储器性能产生负面影响。
@@ -164,9 +131,9 @@ IOPS 会在卷级别强制执行。换句话说，连接到一个具有 6000 IOP
 ## 支持哪些 NFS 版本？
 {: faq}
 
-{{site.data.keyword.cloud}} 环境支持 NFS V3 和 NFS V4.1。 
+{{site.data.keyword.cloud}} 环境支持 NFS V3 和 NFS V4.1。
 
-首选版本是 NFS V3，因为它是无状态协议，在网络事件发生时更具弹性。 
+首选版本是 NFS V3，因为它是无状态协议，在网络事件发生时更具弹性。
 
 NFS V3 本机支持 `no_root_squash`，通过后者，root 用户客户机可以保留对 NFS 共享的 root 用户许可权。您可以在 NFS V4.1 中启用此功能，方法是通过编辑域信息并运行 `rpcidmapd` 或类似的服务。
 有关更多信息，请参阅[为 NFS 实现 no_root_squash](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux#norootsquash)。

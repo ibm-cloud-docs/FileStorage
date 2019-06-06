@@ -30,93 +30,21 @@ subcollection: FileStorage
 
 ## 确定复制的存储卷的远程数据中心
 
-{{site.data.keyword.cloud}} 在世界各地的数据中心已成对编成主数据中心和远程数据中心组合。
-请参阅表 1，以获取数据中心可用性和复制目标的完整列表。
+在世界各地的 {{site.data.keyword.cloud}} 数据中心组成了多个主数据中心和远程数据中心组合。请参阅表 1，以获取数据中心可用性和复制目标的完整列表。
 
-<table>
-  <caption style="text-align: left;"><p>表 1 - 下表显示每个区域中具有增强功能的数据中心的完整列表。每个区域单独一列。某些城市（例如，达拉斯、圣何塞、华盛顿特区、阿姆斯特丹、法兰克福、伦敦和悉尼）有多个数据中心。</p>
-  <p>&#42; “美国 1”区域中的数据中心没有增强型存储器。具有增强存储功能的数据中心内的主机<strong>无法</strong>启动与“美国 1”数据中心内副本目标的复制。</p>
-  </caption>
-  <thead>
-    <tr>
-      <th>美国 1 &#42;</th>
-      <th>美国 2</th>
-      <th>拉丁美洲</th>
-      <th>加拿大</th>
-      <th>欧洲</th>
-      <th>亚太地区</th>
-      <th>澳大利亚</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>DAL01<br />
-DAL05<br />
-	  DAL06<br />
-	  HOU02<br />
-	  SJC01<br />
-	  WDC01<br />
-	  <br /><br /><br /><br /><br /><br />
-      </td>
-      <td>SJC03<br />
-	  SJC04<br />
-	  WDC04<br />
-	  WDC06<br />
-	  WDC07<br />
-	  DAL09<br />
-	  DAL10<br />
-	  DAL12<br />
-	  DAL13<br />
-	  <br /><br /><br />
-      </td>
-      <td>MEX01<br />
-	  SAO01<br />
-	  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-      </td>
-      <td>TOR01<br />
-MON01<br />
-	  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-      </td>
-      <td>AMS01<br />
-	  AMS03<br />
-	  FRA02<br />
-	  FRA04<br />
-	  FRA05<br />
-	  LON02<br />
-	  LON04<br />
-	  LON05<br />
-	  LON06<br />
-	  OSL01<br />
-	  PAR01<br />
-	  MIL01<br />
-      </td>
-      <td>HKG02<br />
-TOK02<br />
-	  TOK04<br />
-	  TOK05<br />
-	  SNG01<br />
-	  SEO01<br />
-                                CHE01<br />
-	  <br /><br /><br /><br /><br />
-      </td>
-      <td>SYD01<br />
-SYD04<br />
-          SYD05<br />
-MEL01<br />
-          <br /><br /><br /><br /><br /><br /><br /><br />
-      </td>
-    </tr>
-  </tbody>
-</table>
+|美国 1|美国 2|拉丁美洲|加拿大|欧洲|亚太地区|澳大利亚|
+|-----|-----|-----|-----|-----|-----|-----|
+|DAL01<br />DAL05<br />DAL06<br />HOU02<br />SJC01<br />WDC01|SJC03<br />SJC04<br />WDC04<br />WDC06<br />WDC07<br />DAL09<br />DAL10<br />DAL12<br />DAL13|MEX01<br />SAO01|TOR01<br />MON01|AMS01<br />AMS03<br />FRA02<br />FRA04<br />FRA05<br />LON02<br />LON04<br />LON05<br />LON06<br />OSL01<br />PAR01<br />MIL01|HKG02<br />TOK02<br />TOK04<br />TOK05<br />SNG01<br />SEO01<br />                                CHE01|SYD01<br />SYD04<br />          SYD05<br />MEL01|
+{: caption="表 1 - 下表显示每个区域中具有增强功能的数据中心的完整列表。每个区域单独一列。某些城市（例如，达拉斯、圣何塞、华盛顿特区、阿姆斯特丹、法兰克福、伦敦和悉尼）有多个数据中心。“美国 1”区域中的数据中心没有增强型存储器。具有增强存储功能的数据中心内的主机无法启动与“美国 1”数据中心内副本目标的复制。" caption-side="top"}
+
 
 ## 创建初始副本
 
-复制将根据快照安排来执行。必须首先具有用于源卷的快照空间和快照安排，然后才能进行复制。如果尝试设置复制，但未设置源卷的快照空间或快照安排，那么系统将提示您购买更多空间或设置安排。复制在 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 中的**存储** >、**{{site.data.keyword.filestorage_short}}** 下管理。
+复制将根据快照安排来执行。必须先有可用于源卷的快照空间和快照安排，然后才能进行复制。如果尝试设置复制，但未设置源卷的快照空间或快照安排，那么系统将提示您购买更多空间或设置安排。在 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 中的**存储** > **{{site.data.keyword.filestorage_short}}** 下管理复制。
 
 1. 单击存储卷。
 2. 单击**副本**，然后单击**购买复制**。
-3. 选择希望复制遵循的现有快照安排。此列表包含所有有效的快照安排。
-  <br />
+3. 选择希望复制遵循的现有快照安排。此列表包含所有有效的快照安排。<br />
 
    只能选择一个安排，即便有每小时、每天和每周的混合安排也是如此。将复制自上一个复制周期以来捕获到的所有快照，而不管这些快照源自哪个安排。<br />如果没有设置快照，那么系统会提示您进行设置，然后才能订购复制。有关更多信息，请参阅[使用快照](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots)。
    {:tip}
@@ -131,14 +59,14 @@ MEL01<br />
 
 ## 编辑现有复制
 
-您可以在 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 中的**存储** > **{{site.data.keyword.filestorage_short}}** 下的**主**或**副本**选项卡中，编辑复制安排和更改复制空间。
+在 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 中**存储** > **{{site.data.keyword.filestorage_short}}** 下的**主**或**副本**选项卡中，可以编辑复制安排和更改复制空间。
 
 
 ## 编辑复制安排
 
-复制安排基于现有快照安排。要将复制安排从每小时更改为每日或每周，或者反之，则必须取消该副本卷并设置一个新的副本卷。
+复制安排基于现有快照安排。要将复制安排从每小时更改为每天或每周，或者反之，必须取消该副本卷并设置一个新的副本卷。
 
-但是，如果要更改 **Daily** 复制发生的时间，可以对“主”或“副本”选项卡上的现有安排进行调整。
+但是，如果要更改**每天**复制发生的时间，可以对“主”或“副本”选项卡上的现有安排进行调整。
 
 1. 单击**主**或**副本**选项卡上的**操作**。
 2. 选择**编辑快照安排**。
@@ -188,7 +116,7 @@ MEL01<br />
 
 ## 创建副本的复制项
 
-您可以创建现有 {{site.data.keyword.cloud}} {{site.data.keyword.filestorage_full}} 的副本。缺省情况下，复制卷将继承原始存储卷的容量和性能选项，并且会包含截至快照时间点的数据的副本。
+您可以创建现有 {{site.data.keyword.cloud}} {{site.data.keyword.filestorage_full}} 的复制项。缺省情况下，复制卷将继承原始存储卷的容量和性能选项，并且会包含截至快照时间点的数据的副本。
 
 复制项可以基于主卷和副本卷创建。新复制项会在原始卷所在的数据中心内创建。如果基于副本卷创建复制项，那么新卷将在副本卷所在的数据中心内创建。
 

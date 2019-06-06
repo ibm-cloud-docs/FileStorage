@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-05-24"
 
 keywords: File Storage, file storage, NFS,
 
@@ -20,18 +20,18 @@ subcollection: FileStorage
 
 缺省情况下，总共可以全局供应 250 个 {{site.data.keyword.blockstorageshort}} 和 {{site.data.keyword.filestorage_short}} 卷。
 
-如果您不确定拥有多少卷，可以使用以下 `slcli` 命令以列出每个数据中心的卷。
+如果您不确定拥有多少卷，可以使用以下 `slcli` 命令列出每个数据中心的卷。
 ```
 # slcli file volume-count --help
 用法：slcli file volume-count [OPTIONS]
 
 选项：
   -d, --datacenter TEXT  数据中心短名称
-  --sortby TEXT          要排序的列
+  --sortby TEXT          要作为排序依据的列
   -h, --help             显示此消息并退出。
 ```
 
-您可以通过在 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 中提交凭单来请求增大限制。请求得到核准后，您将获得针对特定数据中心设置的卷限制。  
+您可以通过在[门户网站](https://cloud.ibm.com/unifiedsupport/cases/add){: external}中提交支持案例来请求增大限制。请求得到核准后，您将获得针对特定数据中心设置的卷限制。
 
 要请求增大限制，请开具凭单并将其提交给销售代表。
 

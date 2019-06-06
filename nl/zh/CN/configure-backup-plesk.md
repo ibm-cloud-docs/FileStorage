@@ -26,8 +26,7 @@ subcollection: FileStorage
 1. 通过 SSH 连接到主机。
 2. 确保存在安装点目标。<br />
 
-   Plesk 有两个备份存储选项。一个是内部 Plesk 存储器，这是 Plesk 服务器上的存储器。另一个是外部 FTP 存储器，这是 Web 或本地网络中某个外部服务器上的存储器。通常在 Plesk 框中，内部备份存储在 `/var/lib/psa/dumps` 中，并使用
-`/tmp` 作为临时目录。在此示例中，临时目录会保留为本地目录，但 `dumps` 目录会移至 {{site.data.keyword.filestorage_short}} 目标 (`/backup/psa/dumps`)。不需要 FTP 用户凭证。
+   Plesk 有两个备份存储选项。一个是内部 Plesk 存储器，这是 Plesk 服务器上的存储器。另一个是外部 FTP 存储器，这是 Web 或本地网络中某个外部服务器上的存储器。通常在 Plesk 框中，内部备份存储在 `/var/lib/psa/dumps` 中，并使用 `/tmp` 作为临时目录。在此示例中，临时目录会保留为本地目录，但 `dumps` 目录会移至 {{site.data.keyword.filestorage_short}} 目标 (`/backup/psa/dumps`)。不需要 FTP 用户凭证。
    {:note}
 3. 如[在 Red Hat Enterprise Linux 上访问 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux) 和[在 CentOS 中安装 NFS/{{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS) 或[在 CoreOS 上安装 NFS/{{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCoreOS) 中所述，配置 {{site.data.keyword.filestorage_short}}。将卷安装到 `/backup` 并且在文件系统表 (`/etc/fstab`) 中将其配置为启用启动时安装。<br />
 

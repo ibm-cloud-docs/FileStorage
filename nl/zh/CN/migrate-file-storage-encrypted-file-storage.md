@@ -37,7 +37,7 @@ subcollection: FileStorage
 使用 API 下订单时，请指定“存储即服务”包，以确保获取新存储器的更新功能。
 {:important}
 
-要订购增强型 LUN，可以通过 {{site.data.keyword.BluSoftlayer_full}}“目录”和 {{site.data.keyword.slportal}} 来完成此操作。新卷的大小应该等于或大于原始文件共享的大小，以便于迁移。
+要订购增强型 LUN，可以通过 {{site.data.keyword.cloud}}“目录”和 {{site.data.keyword.slportal}} 来完成此操作。新卷的大小应该等于或大于原始文件共享的大小，以便于迁移。
 
 - [订购具有预定义 IOPS 层（耐久性）的 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#endurance)
 - [订购具有定制 IOPS（性能）的 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#performance)

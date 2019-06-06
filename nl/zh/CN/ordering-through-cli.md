@@ -18,14 +18,14 @@ subcollection: FileStorage
 # 通过 SLCLI 订购 {{site.data.keyword.filestorage_short}}
 {: #orderingSLCLI}
 
-可以使用 SLCLI 为通常通过 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 订购的产品下订单。在 SL API 中，订单可由多个订单容器组成。订单 CLI 仅使用一个订单容器。
+您可以使用 SLCLI 以针对通常通过 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 订购的产品下订单。在 SL API 中，订单可由多个订单容器组成。订单 CLI 仅使用一个订单容器。
 
 有关如何安装和使用 SLCLI 的更多信息，请参阅 [Python API 客户机](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}。
 {:tip}
 
 ## 搜索可用的 {{site.data.keyword.filestorage_short}} 产品
 
-下订单时要查找的第一个组件是包。在可供在 {{site.data.keyword.cloud}} 中进行订购的不同顶级产品之间拆分包。一些示例包为 CLOUD_SERVER（用于 VSI）、BARE_METAL_SERVER（用于裸机服务器）和 STORAGE_AS_A_SERVICE_STAAS（用于 {{site.data.keyword.blockstorageshort}} 和 {{site.data.keyword.filestorage_short}}）。
+下订单时要查找的第一个组件是包。在可供在 {{site.data.keyword.BluSoftlayer_full}} 中进行订购的不同顶级产品之间拆分包。一些示例包为 CLOUD_SERVER（用于 VSI）、BARE_METAL_SERVER（用于裸机服务器）和 STORAGE_AS_A_SERVICE_STAAS（用于 {{site.data.keyword.blockstorageshort}} 和 {{site.data.keyword.filestorage_short}}）。
 
 利用包，可将某些项细分到类别。为方便起见，某些包有预设项，而其他包需要单独指定项。如果包的类别是必需的，那么必须选择该类别的项来订购包。根据类别，类别中的某些项可能互斥。
 
@@ -89,8 +89,7 @@ Options:
   -h, --help                      Show this message and exit.
 ```
 
-有关通过 API 订购 {{site.data.keyword.filestorage_short}} 的更多信息，请参阅 [order_file_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/file/#SoftLayer.managers.file.FileStorageManager.order_file_volume){: external}。
-要能够访问所有新功能，请订购 `Storage-as-a-Service Package 759`。
+有关通过 API 订购 {{site.data.keyword.filestorage_short}} 的更多信息，请参阅 [order_file_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/file/#SoftLayer.managers.file.FileStorageManager.order_file_volume){: external}。要能够访问所有新功能，请订购 `Storage-as-a-Service Package 759`。
 {:tip}
 
 

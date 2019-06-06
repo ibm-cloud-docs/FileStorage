@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-05-22"
 
 keywords: File Storage, Endurance, Performance, IOPS, replication, billing, file storage, NFS,
 
@@ -20,7 +20,7 @@ subcollection: FileStorage
 # 关于 {{site.data.keyword.filestorage_short}}
 {: #about}
 
-{{site.data.keyword.filestorage_full}} 是一种基于 NFS 的网络连接的 {{site.data.keyword.filestorage_short}}，具有持久、快速、灵活的特点。在此网络连接的存储器 (NAS) 环境中，您对文件共享功能和性能具有完全控制权。{{site.data.keyword.filestorage_short}} 共享可通过路由 TCP/IP 连接来连接到最多 64 个已授权设备，从而实现弹性。
+{{site.data.keyword.cloud}}  {{site.data.keyword.filestorage_short}} 是一种基于 NFS 的网络连接的 {{site.data.keyword.filestorage_short}}，具有持久、快速、灵活的特点。在此网络连接的存储器 (NAS) 环境中，您对文件共享功能和性能具有完全控制权。{{site.data.keyword.filestorage_short}} 共享可通过路由 TCP/IP 连接来连接到最多 64 个已授权设备，从而实现弹性。
 {:shortdesc}
 
 ## 功能
@@ -53,59 +53,10 @@ subcollection: FileStorage
 - **集群数据库**
    - 支持高级用例，例如集群数据库。
 
-## 计费
-
-可以选择按小时或按月对文件卷计费。为 LUN 选择的计费类型将应用于其快照空间和副本。例如，如果供应的 LUN 按小时计费，那么任何快照或副本费用都会按小时记帐。如果供应的 LUN 按月计费，那么任何快照或副本费用都会按月记帐。
-
-对于**按小时计费**，在删除 LUN 时或在计费周期结束时（以先发生者为准），将计算文件卷在帐户上存在的小时数。对于使用了数天或不足一个月的存储器，按小时计费是不错的选择。按小时计费仅可用于在[精选数据中心](/docs/infrastructure/FileStorage?topic=FileStorage-news)内供应的存储器。
-
-对于**按月计费**，将从创建日期一直到记帐周期结束按比例计算价格并立即记帐。如果在计费周期结束之前删除了卷，那么不会有任何退款。对于所用数据需要长期（一个月或更长时间）存储和访问的生产工作负载，使用按月计费的存储器是不错的选择。
-
-
-**性能**
-<table>
-  <caption>表 1 显示了按月计费和按小时计费的性能存储器的价格。</caption>
-  <tr>
-   <th>每月价格</th>
-   <td>0.10 美元/GB + 0.07 美元/IOP</td>
-  </tr>
-  <tr>
-   <th>每小时价格</th>
-   <td>0.0001 美元/GB + 0.0002 美元/IOP</td>
-  </tr>
-</table>
-
-**耐久性**
-<table>
-  <caption>表 2 显示了使用按月和按小时计费选项时每个层的耐久性存储器的价格。</caption>
-  <tr>
-   <th>IOPS 层</th>
-   <th>0.25 IOPS/GB</th>
-   <th>2 IOPS/GB</th>
-   <th>4 IOPS/GB</th>
-   <th>10 IOPS/GB</th>
-  </tr>
-  <tr>
-   <th>每月价格</th>
-   <td>0.06 美元/GB</td>
-   <td>0.15 美元/GB</td>
-   <td>0.20 美元/GB</td>
-   <td>0.58 美元/GB</td>
-  </tr>
-  <tr>
-   <th>每小时价格</th>
-   <td>0.0001 美元/GB</td>
-   <td>0.0002 美元/GB</td>
-   <td>0.0003 美元/GB</td>
-   <td>0.0009 美元/GB</td>
-  </tr>
-</table>
-
-
 
 ## 供应
 
-通过以下两个选项，可以供应从 20 GB 到 12 TB 的 {{site.data.keyword.filestorage_short}} 卷：<br/>
+使用以下两个选项，可以供应从 20 GB 到 12 TB 的 {{site.data.keyword.filestorage_short}} 卷：<br/>
 - 供应**耐久性**层，具有预定义的性能级别和功能，如快照和复制。
 - 通过分配的每秒输入/输出操作数 (IOPS) 来构建强大的**性能**环境。
 
@@ -132,74 +83,58 @@ subcollection: FileStorage
 
 {{site.data.keyword.filestorage_short}} 的“性能”可通过网络文件系统 (NFS) 连接来访问和安装。在通过多个服务器同时访问卷时，通常会使用 {{site.data.keyword.filestorage_short}}。一致性性能卷可以根据表 1 中的大小和 IOPS 进行订购，并可用于 Linux 操作系统。
 
-<table cellpadding="1" cellspacing="1" style="width: 99%;">
- <caption>表 3 显示了用于性能存储器的大小和 IOPS 组合。<br/><sup><img src="/images/numberone.png" alt="脚注" /></sup> 在精选数据中心内提供了大于 6,000 的 IOPS 限制。</caption>
-        <colgroup>
-          <col/>
-          <col/>
-          <col/>
-        </colgroup>
-          <tr>
-            <th>大小 (GB)</th>
-            <th>最小 IOPS</th>
-            <th>最大 IOPS</th>
-          </tr>
-          <tr>
-            <td>20</td>
-            <td>100</td>
-            <td>1,000</td>
-          </tr>
-          <tr>
-            <td>40</td>
-            <td>100</td>
-            <td>2,000</td>
-          </tr>
-          <tr>
-            <td>80</td>
-            <td>100</td>
-            <td>4,000</td>
-          </tr>
-          <tr>
-            <td>100</td>
-            <td>100</td>
-            <td>6,000</td>
-          </tr>
-          <tr>
-            <td>250</td>
-            <td>100</td>
-            <td>6,000</td>
-          </tr>
-          <tr>
-            <td>500</td>
-            <td>100</td>
-            <td>6,000 或 10,000<sup><img src="/images/numberone.png" alt="脚注" /></sup></td>
-          </tr>
-          <tr>
-            <td>1,000</td>
-            <td>100</td>
-            <td>6,000 或 20,000<sup><img src="/images/numberone.png" alt="脚注" /></sup></td>
-          </tr>
-          <tr>
-            <td>2,000</td>
-            <td>200</td>
-            <td>6,000 或 40,000<sup><img src="/images/numberone.png" alt="脚注" /></sup></td>
-          </tr>
-          <tr>
-            <td>3,000-7,000</td>
-            <td>300</td>
-            <td>6,000 或 48,000<sup><img src="/images/numberone.png" alt="脚注" /></sup></td>
-          </tr>
-          <tr>
-            <td>8,000-9,000</td>
-            <td>500</td>
-            <td>6,000 或 48,000<sup><img src="/images/numberone.png" alt="脚注" /></sup></td>
-          </tr>
-          <tr>
-            <td>10,000-12,000</td>
-            <td>1,000</td>
-            <td>6,000 或 48,000<sup><img src="/images/numberone.png" alt="脚注" /></sup></td>
-          </tr>
-</table>
+|大小 (GB)|最小 IOPS|最大 IOPS
+|-----|-----|-----|
+|20|100|1,000|
+|40|100|2,000|
+|80|100|4,000|
+|100|100|6,000|
+|250|100|6,000|
+|500|100|6,000 或 10,000 |
+|1,000|100|6,000 或 20,000 ![脚注](/images/numberone.png) |
+|2,000|200|6,000 或 40,000 ![脚注](/images/numberone.png) |
+|3,000-7,000|300|6,000 或 48,000 ![脚注](/images/numberone.png) |
+|8,000-9,000|500|6,000 或 48,000 ![脚注](/images/numberone.png) |
+|10,000-12,000|1,000|6,000 或 48,000 ![脚注](/images/numberone.png) |
+{: row-headers}
+{: class="comparison-table"}
+{: caption="表比较" caption-side="top"}
+{: summary="Table 1 is showing the possible minimum and maximum IOPS rates based of the volume size. This table has row and column headers. The row headers identify the volume size range. The column headers identify the minimum and maximum IOPS levels. To understand what IOPS rates you can expect from your Storage, navigate to the row and review the two options."}
 
+
+![脚注](/images/numberone.png) *在精选数据中心内提供了大于 6,000 的 IOPS 限制。*
 
 性能卷旨在以一致地接近所供应 IOPS 级别的方式来运行。通过一致性，能更轻松地调整特定性能级别的应用程序环境的大小和扩展此环境。此外，通过构建具有理想的价格/性能比率的卷，可以优化环境。
+
+## 计费
+
+可以选择按小时或按月对文件卷计费。为 LUN 选择的计费类型将应用于其快照空间和副本。例如，如果供应的 LUN 按小时计费，那么任何快照或副本费用都会按小时记帐。如果供应的 LUN 按月计费，那么任何快照或副本费用都会按月记帐。
+
+ * 对于**按小时计费**，在删除 LUN 时或在计费周期结束时（以先发生者为准），将计算文件卷在帐户上存在的小时数。对于使用了数天或不足一个月的存储器，按小时计费是不错的选择。按小时计费仅可用于在[精选数据中心](/docs/infrastructure/FileStorage?topic=FileStorage-news)内供应的存储器。
+
+ * 对于**按月计费**，将从创建日期一直到记帐周期结束按比例计算价格并立即记帐。如果在计费周期结束之前删除了卷，那么不会有任何退款。对于所用数据需要长期（一个月或更长时间）存储和访问的生产工作负载，使用按月计费的存储器是不错的选择。
+
+
+### 耐久性
+{: #pricing-comparison-endurance}
+
+|预定义 IOPS 层的定价选项|0.25 IOPS|2 IOPS/GB|4 IOPS/GB|10 IOPS/GB|
+|-----|-----|-----|-----|-----|
+|每月价格|0.06 美元/GB|0.15 美元/GB|0.20 美元/GB|0.58 美元/GB|
+|每小时价格|0.0001 美元/GB|0.0002 美元/GB|0.0003 美元/GB|0.0009 美元/GB|
+{: row-headers}
+{: class="comparison-table"}
+{: caption="表比较" caption-side="top"}
+{: summary="Table 2 is showing the prices for Endurance Storage for each tier with monthly and hourly billing options. This table has row and column headers. The row headers identify the billing options. The column headers identify the IOPS level that is chosen for the service. To understand what your price is located in the table, navigate to the column and review the two different billing options for that IOPS tier."}
+
+### 性能
+{: #pricing-comparison-performance}
+
+|定制 IOPS 的定价选项|定价计算|
+|-----|-----|
+|每月价格|0.10 美元/GB + 0.07 美元/IOP|
+|每小时价格|0.0001 美元/GB + 0.0002 美元/IOP|
+{: row-headers}
+{: class="comparison-table"}
+{: caption="表比较" caption-side="top"}
+{: summary="Table 3 is showing the prices for Performance Storage with monthly and hourly billing. This table has row and column headers. The row headers identify the billing options. To see what your cost for Storage is, navigate to the row of the billing option you are interested in."}

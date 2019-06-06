@@ -52,7 +52,7 @@ subcollection: FileStorage
 
 1. 登录到 [IBM Cloud 控制台](https://{DomainName}/){: external}，然后单击左上角的菜单图标。选择**经典基础架构**。
 
-   或者，您可以登录到 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}。
+   或者，可以登录到 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}。
 2. 通过**存储** > **{{site.data.keyword.filestorage_short}}**，访问您的存储器。
 3. 单击“快照”框架上的**更改快照空间**。
 4. 选择所需的空间量和付款方式。
