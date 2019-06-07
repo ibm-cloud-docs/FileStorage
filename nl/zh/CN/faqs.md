@@ -17,7 +17,7 @@ subcollection: FileStorage
 {:faq: data-hd-content-type='faq'}
 
 # 常见问题
-{: #faqs}
+{: #file-storage-faqs}
 
 ## 如何判断哪些 {{site.data.keyword.filestorage_short}} 卷已加密？
 {: faq}

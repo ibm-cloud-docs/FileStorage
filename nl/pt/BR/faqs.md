@@ -17,7 +17,7 @@ subcollection: FileStorage
 {:faq: data-hd-content-type='faq'}
 
 # Perguntas mais frequentes
-{: #faqs}
+{: #file-storage-faqs}
 
 ## Como posso saber quais dos meus volumes do {{site.data.keyword.filestorage_short}} são criptografados?
 {: faq}

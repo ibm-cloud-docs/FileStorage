@@ -17,7 +17,7 @@ subcollection: FileStorage
 {:faq: data-hd-content-type='faq'}
 
 # Häufig gestellte Fragen
-{: #faqs}
+{: #file-storage-faqs}
 
 ## Wie lässt sich erkennen, welche der {{site.data.keyword.filestorage_short}}-Datenträger verschlüsselt sind?
 {: faq}

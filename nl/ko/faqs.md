@@ -17,7 +17,7 @@ subcollection: FileStorage
 {:faq: data-hd-content-type='faq'}
 
 # FAQ
-{: #faqs}
+{: #file-storage-faqs}
 
 ## 암호화된 내 {{site.data.keyword.filestorage_short}} 볼륨을 어떻게 알 수 있습니까?
 {: faq}

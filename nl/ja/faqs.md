@@ -17,7 +17,7 @@ subcollection: FileStorage
 {:faq: data-hd-content-type='faq'}
 
 # FAQ
-{: #faqs}
+{: #file-storage-faqs}
 
 ## どの{{site.data.keyword.filestorage_short}} ボリュームが暗号化されているのかはどうすればわかりますか?
 {: faq}

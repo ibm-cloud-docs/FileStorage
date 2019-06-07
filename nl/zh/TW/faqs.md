@@ -17,7 +17,7 @@ subcollection: FileStorage
 {:faq: data-hd-content-type='faq'}
 
 # 常見問題
-{: #faqs}
+{: #file-storage-faqs}
 
 ## 如何分辨哪些 {{site.data.keyword.filestorage_short}} 磁區已加密？
 {: faq}

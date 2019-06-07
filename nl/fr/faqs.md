@@ -17,7 +17,7 @@ subcollection: FileStorage
 {:faq: data-hd-content-type='faq'}
 
 # FAQ (Foire aux questions)
-{: #faqs}
+{: #file-storage-faqs}
 
 ## Comment savoir si tel ou tel volume {{site.data.keyword.filestorage_short}} est chiffré ?
 {: faq}

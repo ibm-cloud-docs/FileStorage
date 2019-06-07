@@ -17,7 +17,7 @@ subcollection: FileStorage
 {:faq: data-hd-content-type='faq'}
 
 # FAQs
-{: #faqs}
+{: #file-storage-faqs}
 
 ## How can I tell which of my {{site.data.keyword.filestorage_short}} volumes are encrypted?
 {: faq}
