@@ -20,29 +20,12 @@ subcollection: FileStorage
 
 {{site.data.keyword.cloud}} consiglia una profondità massima della coda di I/O (input/output) di applicazione e host per ogni livello prestazioni.
 
-<table align="center">
-  <caption>Profondità coda consigliata per ogni livello IOPS</caption>
-        <thead>
-	    <tr>
-		<th>Livello prestazioni</th>
-		<th>Profondità massima della coda host</th>
-	    </tr>
-	</thead>
-	<tbody>
-   	    <tr>
-		<td style="text-align: center; vertical-align: middle;">0,25 IOPS per GB</td>
-		<td style="text-align: center; vertical-align: middle;">8</td>
-	    </tr>
-	    <tr>
-		<td style="text-align: center; vertical-align: middle;">2 IOPS per GB</td>
-		<td style="text-align: center; vertical-align: middle;">24</td>
-	    </tr>
-	    <tr>
-		<td style="text-align: center; vertical-align: middle;">4 IOPS per GB</td>
-		<td style="text-align: center; vertical-align: middle;">56</td>
-            </tr>
-         </tbody>
-</table>
+| Livello Performance | Profondità massima della coda host |
+|:------:|:------:|
+| 0,25 IOPS per GB | 8 |
+| 2 IOPS per GB | 24 |
+| 4 IOPS per GB | 56 |
+{: caption="Profondità della coda consigliata per ciascun livello IOPS" caption-side="top"}
 
 
 L'impostazione host non influenza la latenza di disco e controller. Influenza solo la latenza osservata dall'host e dall'applicazione.

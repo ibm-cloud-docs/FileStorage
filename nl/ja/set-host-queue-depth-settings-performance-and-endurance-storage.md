@@ -20,29 +20,12 @@ subcollection: FileStorage
 
 {{site.data.keyword.cloud}} では、ホストおよびアプリケーションの最大入出力 (I/O) キュー項目数をパフォーマンス・ティアごとに推奨しています。
 
-<table align="center">
-  <caption>各 IOPS ティアの推奨キュー長</caption>
-        <thead>
-	    <tr>
-		<th>パフォーマンス・ティア</th>
-		<th>ホストのキューの最大長</th>
-	    </tr>
-	</thead>
-	<tbody>
-   	    <tr>
-		<td style="text-align: center; vertical-align: middle;">GB あたり 0.25 IOPS</td>
-		<td style="text-align: center; vertical-align: middle;">8</td>
-	    </tr>
-	    <tr>
-		<td style="text-align: center; vertical-align: middle;">GB あたり 2 IOPS</td>
-		<td style="text-align: center; vertical-align: middle;">24</td>
-	    </tr>
-	    <tr>
-		<td style="text-align: center; vertical-align: middle;">GB あたり 4 IOPS</td>
-		<td style="text-align: center; vertical-align: middle;">56</td>
-            </tr>
-         </tbody>
-</table>
+| パフォーマンス層 | 最大ホスト・キュー項目数 |
+|:------:|:------:|
+| GB 当たり 0.25 IOPS | 8 |
+| GB 当たり 2 IOPS | 24 |
+| GB 当たり 4 IOPS | 56 |
+{: caption="各 IOPS 層の推奨キュー項目数" caption-side="top"}
 
 
 ホストの設定は、ディスクとコントローラーの待ち時間には影響しません。 ホストとアプリケーションで見られる待ち時間にだけ影響します。

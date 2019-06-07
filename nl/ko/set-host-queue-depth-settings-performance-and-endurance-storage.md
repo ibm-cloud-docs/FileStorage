@@ -20,29 +20,13 @@ subcollection: FileStorage
 
 {{site.data.keyword.cloud}}에서는 각 성능 계층에 대한 최대 호스트 및 애플리케이션 입출력(I/O) 큐 깊이를 제안합니다.
 
-<table align="center">
-  <caption>각 IOPS 계층에 권장되는 큐 깊이</caption>
-        <thead>
-	    <tr>
-		<th>성능 계층</th>
-		<th>최대 호스트 큐 깊이</th>
-	    </tr>
-	</thead>
-	<tbody>
-   	    <tr>
-		<td style="text-align: center; vertical-align: middle;">0.25IOPS/GB</td>
-		<td style="text-align: center; vertical-align: middle;">8</td>
-	    </tr>
-	    <tr>
-		<td style="text-align: center; vertical-align: middle;">2IOPS/GB</td>
-		<td style="text-align: center; vertical-align: middle;">24</td>
-	    </tr>
-	    <tr>
-		<td style="text-align: center; vertical-align: middle;">4IOPS/GB</td>
-		<td style="text-align: center; vertical-align: middle;">56</td>
-            </tr>
-         </tbody>
-</table>
+|Performance 티어 |최대 호스트 큐 깊이 |
+|:------:|:------:|
+|0.25 IOPS/GB |8 |
+|2 IOPS/GB |24 |
+|4 IOPS/GB |56 |
+{: caption="각 IOPS 티어의 권장되는 큐 깊이" caption-side="top"}
+
 
 
 호스트 설정은 디스크 및 제어기 대기 시간에 영향을 주지 않습니다. 호스트와 애플리케이션이 관찰하는 대기 시간에만 영향을 줍니다.
