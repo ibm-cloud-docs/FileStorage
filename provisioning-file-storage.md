@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, provisioning, ordering,
 
@@ -29,9 +29,7 @@ You can provision {{site.data.keyword.filestorage_short}} and fine-tune to meet 
 ## Ordering {{site.data.keyword.filestorage_short}} with pre-defined IOPS Tiers (Endurance)
 {: #endurance}
 
-1. Log in to [The IBM Cloud catalog](https://{DomainName}/catalog){: external} and click **Storage**. Then, select {{site.data.keyword.filestorage_short}}. Click **Create**.
-
-   Alternatively, you can log in to the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} }, click **Storage** > **{{site.data.keyword.filestorage_short}}**. In the upper right, click **Order {{site.data.keyword.filestorage_short}}**.
+1. Log in to the [{{site.data.keyword.cloud}} catalog](https://{DomainName}/catalog){: external} and click **Storage**. Then, select {{site.data.keyword.filestorage_short}}. Click **Create**.
 2. Select your deployment **Location** (data center).
    - Ensure that the new Storage is added in the same location as the compute host or hosts that you have.
 3. Billing. If you selected a data center with improved capabilities (marked with an asterisk), you can choose between Monthly or Hourly Billing.
@@ -55,15 +53,13 @@ You can provision {{site.data.keyword.filestorage_short}} and fine-tune to meet 
 9. After you reviewed the terms and conditions, check the I** have read and agree to the Third-Party Service Agreements** box.
 10. Click **Create**. Your new storage allocation is available in a few minutes.
 
-By default, you can provision a combined total of 250 {{site.data.keyword.blockstorageshort}} volumes. To increase the number of your volumes, contact your sales representative. Read about increasing limits [here](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits).<br/><br/>For more information about the limit on simultaneous authorizations, see the [FAQs](/docs/infrastructure/FileStorage?topic=FileStorage-faqs#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-).
+By default, you can provision a combined total of 250 {{site.data.keyword.blockstorageshort}} volumes. To increase the number of your volumes, contact your sales representative. Read about increasing limits [here](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits).<br/><br/>For more information about the limit on simultaneous authorizations, see the [FAQs](/docs/infrastructure/FileStorage?topic=file-storage-faqs#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-).
 {:tip}
 
 ## Ordering {{site.data.keyword.filestorage_short}} with custom IOPS (Performance)
 {: #performance}
 
-1. Log in to [The IBM Cloud catalog](https://{DomainName}/catalog){: external} and click **Storage**. Then, select {{site.data.keyword.filestorage_short}}. Click **Create**.
-
-   Alternatively, you can log in to the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} }, click **Storage** > **{{site.data.keyword.filestorage_short}}**. In the upper right, click **Order {{site.data.keyword.filestorage_short}}**.
+1. Log in to the [{{site.data.keyword.cloud}} catalog](https://{DomainName}/catalog){: external} and click **Storage**. Then, select {{site.data.keyword.filestorage_short}}. Click **Create**.
 2. Click **Location** and select your data center.
    - Ensure that the new Storage is added in the same location as the compute host or hosts that you have.
 3. Billing. If you selected a data center with improved capabilities (marked with an asterisk), you can choose between Monthly or Hourly Billing.
@@ -83,7 +79,7 @@ By default, you can provision a combined total of 250 {{site.data.keyword.blocks
 9. After you reviewed the terms and conditions, check the I** have read and agree to the Third-Party Service Agreements** box.
 10. Click **Create**. Your new storage allocation is available in a few minutes.
 
-By default, you can provision a combined total of 250 {{site.data.keyword.blockstorageshort}} volumes. To increase the number of your volumes, contact your sales representative. Read about increasing limits [here](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits).<br/><br/>For more information about the limit on simultaneous authorizations, see the [FAQs](/docs/infrastructure/FileStorage?topic=FileStorage-faqs#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-).
+By default, you can provision a combined total of 250 {{site.data.keyword.blockstorageshort}} volumes. To increase the number of your volumes, contact your sales representative. Read about increasing limits [here](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits).<br/><br/>For more information about the limit on simultaneous authorizations, see the [FAQs](/docs/infrastructure/FileStorage?topic=file-storage-faqs#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-).
 {:important}
 
 

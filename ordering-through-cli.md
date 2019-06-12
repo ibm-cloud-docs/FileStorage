@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, SLCLI, provisioning, API
 
@@ -18,14 +18,14 @@ subcollection: FileStorage
 # Ordering {{site.data.keyword.filestorage_short}} through the SLCLI
 {: #orderingSLCLI}
 
-You can use the SLCLI to place orders for products that are normally ordered through the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}. In the SL API, an order can consist of multiple order containers. The order CLI works with one order container only.
+You can use the SLCLI to place orders for products that are normally ordered through the [{{site.data.keyword.cloud}} catalog](https://{DomainName}/catalog){: external}. In the SL API, an order can consist of multiple order containers. The order CLI works with one order container only.
 
 For more information about how to install and use the SLCLI, see [Python API Client](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}.
 {:tip}
 
 ## Searching for available {{site.data.keyword.filestorage_short}} offers
 
-The first component to look for when you place an order is a package. Packages are divided among the different top-level products that are available for ordering in the {{site.data.keyword.BluSoftlayer_full}}. Some example packages are CLOUD_SERVER for VSIs, BARE_METAL_SERVER for bare metal servers, and STORAGE_AS_A_SERVICE_STAAS for {{site.data.keyword.filestorage_short}} and {{site.data.keyword.blockstorageshort}}.
+The first component to look for when you place an order is a package. Packages are divided among the different top-level products that are available for ordering in the {{site.data.keyword.cloud}}. Some example packages are CLOUD_SERVER for VSIs, BARE_METAL_SERVER for bare metal servers, and STORAGE_AS_A_SERVICE_STAAS for {{site.data.keyword.filestorage_short}} and {{site.data.keyword.blockstorageshort}}.
 
 Within a package, some items are subdivided into categories. Some packages have presets for your convenience and others require items to be specified individually. If a package's category is required, an item from that category must be chosen to order the package. Depending on the category, some items within the category can be mutually exclusive.
 
@@ -119,20 +119,18 @@ Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
   Authorizes hosts to access a given volume
 
 Options:
-  -h, --hardware-id TEXT    The id of one SoftLayer_Hardware to authorize
-  -v, --virtual-id TEXT     The id of one SoftLayer_Virtual_Guest to authorize
-  -i, --ip-address-id TEXT  The id of one SoftLayer_Network_Subnet_IpAddress
-                            to authorize
-  --ip-address TEXT         An IP address to authorize
-  -s, --subnet-id TEXT      The id of one SoftLayer_Network_Subnet to
-                            authorize
+  -h, --hardware-id TEXT    The ID of one hardware server to authorize.
+  -v, --virtual-id TEXT     The ID of one virtual server to authorize.
+  -i, --ip-address-id TEXT  The ID of one IP address to authorize.
+  -p, --ip-address TEXT     An IP address to authorize.
+  -s, --subnet-id TEXT      An ID of one subnet to authorize.
   --help                    Show this message and exit.
 ```
 
 For more information about authorizing hosts to access the {{site.data.keyword.filestorage_short}} through the API, see [authorize_host_to_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/file/#SoftLayer.managers.file.FileStorageManager.authorize_host_to_volume){: external}.
 {:tip}
 
-For more information about the simultaneous authorizations limit, see the [FAQs](/docs/infrastructure/FileStorage?topic=FileStorage-faqs).
+For more information about the simultaneous authorizations limit, see the [FAQs](/docs/infrastructure/FileStorage?topic=file-storage-faqs).
 {:important}
 
 ## Connecting your new storage
