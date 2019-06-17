@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, NSF, SLCLI, API
 
@@ -19,7 +19,7 @@ subcollection: FileStorage
 # {{site.data.keyword.filestorage_short}} の SLCLI コマンド
 {: #SLCLIcommands}
 
-通常 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}で処理する操作を、SLCLI を使用して実行することができます。例えば、新規ボリュームやスナップショット・スペースおよびレプリケーションの注文、許可の更新、ボリュームのキャンセルなどを、SLCLI で行うことができます。
+通常 [{{site.data.keyword.cloud}} コンソール](https://{DomainName}/classic){: external}で処理する操作を、SLCLI を使用して実行することができます。例えば、新規ボリュームやスナップショット・スペースおよびレプリケーションの注文、許可の更新、ボリュームのキャンセルなどを、SLCLI で行うことができます。
 
 SLCLI のインストール方法と使用法について詳しくは、[Python API Client](https://softlayer-python.readthedocs.io/en/latest/cli/){: external} を参照してください。
 {:tip}

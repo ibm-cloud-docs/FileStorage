@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-05-22"
+lastupdated: "2019-06-07"
 
 keywords: File Storage, Endurance, Performance, IOPS, replication, billing, file storage, NFS,
 
@@ -17,7 +17,7 @@ subcollection: FileStorage
  {:shortdesc: .shortdesc}
 
 
-# {{site.data.keyword.filestorage_short}} について
+# {{site.data.keyword.filestorage_short}} についての説明
 {: #about}
 
 {{site.data.keyword.cloud}}  {{site.data.keyword.filestorage_short}} は、永続的で高速、柔軟な、NFS ベースのネットワーク接続型の{{site.data.keyword.filestorage_short}}です。 この Network Attached Storage (NAS) 環境では、ファイル共有機能とパフォーマンスを完全に制御できます。 {{site.data.keyword.filestorage_short}}共有は、回復力のために経路指定された TCP/IP 接続を介して、最大 64 個の許可デバイスに接続できます。

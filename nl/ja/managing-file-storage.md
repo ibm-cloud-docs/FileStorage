@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, authorizing hosts, rewoke access, grant access, view authorizations
 
@@ -19,7 +19,7 @@ subcollection: FileStorage
 # {{site.data.keyword.filestorage_short}}の管理
 {: #managingstorage}
 
-{{site.data.keyword.filestorage_full}}のボリュームは、{{site.data.keyword.slportal}}で管理できます。
+{{site.data.keyword.filestorage_full}} のボリュームは、{{site.data.keyword.cloud}} コンソールで管理できます。
 
 ## {{site.data.keyword.filestorage_short}} へのアクセスをホストに許可する
 
@@ -28,9 +28,10 @@ subcollection: FileStorage
 ご使用のストレージと同じデータ・センターにあるホストを許可および接続できます。 複数のアカウントを使用できますが、あるアカウントのホストから別のアカウントのストレージへのアクセスを許可することはできません。
 {:important}
 
-1. **「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**とクリックして、使用する**「ボリューム名」**をクリックします。
-2. ページの**「許可ホスト」**セクションまでスクロールします。
-3. 右にある**「ホストの許可」**をクリックします。 特定のボリュームにアクセスできるホストを選択します。
+1. [{{site.data.keyword.cloud}} コンソール](https://{DomainName}/){: external}に移動します。メニューから**「クラシック・インフラストラクチャー」**を選択します。
+2. **「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**とクリックして、使用する**「ボリューム名」**をクリックします。
+3. ページの**「許可ホスト」**セクションまでスクロールします。
+4. 右にある**「ホストの許可」**をクリックします。 特定のボリュームにアクセスできるホストを選択します。
 
 代わりの方法として、SLCLI で以下のコマンドを使用することができます。
 ```
@@ -38,20 +39,19 @@ subcollection: FileStorage
 Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
 
 Options:
-  -h, --hardware-id TEXT    The id of one SoftLayer_Hardware to authorize
-  -v, --virtual-id TEXT     The id of one SoftLayer_Virtual_Guest to authorize
-  -i, --ip-address-id TEXT  The id of one SoftLayer_Network_Subnet_IpAddress
-                            to authorize
-  --ip-address TEXT         An IP address to authorize
-  -s, --subnet-id TEXT      The id of one SoftLayer_Network_Subnet to
-                            authorize
+  -h, --hardware-id TEXT    The ID of one hardware server to authorize.
+  -v, --virtual-id TEXT     The ID of one virtual server to authorize.
+  -i, --ip-address-id TEXT  The ID of one IP address to authorize.
+  -p, --ip-address TEXT     An IP address to authorize.
+  -s, --subnet-id TEXT      An ID of one subnet to authorize.
   --help                    Show this message and exit.
 ```
 
 ## {{site.data.keyword.filestorage_short}} ボリュームへのアクセスを許可されたホストのリストを表示する
 
-1. **「ストレージ」>「{{site.data.keyword.filestorage_short}}」**とクリックして、使用する**「ボリューム名」**をクリックします。
-2. ページを**「許可ホスト」**セクションまでスクロールダウンします。
+1. [{{site.data.keyword.cloud}} コンソール](https://{DomainName}/){: external}に移動します。メニューから**「クラシック・インフラストラクチャー」**を選択します。
+2. **「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**とクリックして、使用する**「ボリューム名」**をクリックします。
+3. ページを**「許可ホスト」**セクションまでスクロールダウンします。
 
 そこには、ボリュームへのアクセスが現在許可されているホストのリストが表示されます。
 
@@ -73,9 +73,11 @@ Options:
 
 ホストがアクセス権を持っているボリュームを表示できます。接続の確立に必要な情報 (ボリューム名、ストレージ・タイプ、ターゲット・アドレス、容量、ロケーション) も表示されます。
 
-1. [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}で、**「デバイス」** > **「デバイス・リスト」**をクリックします。
-2. 目的のデバイスをクリックします。
-2. 「ストレージ」タブを選択します。
+1. [{{site.data.keyword.cloud}} コンソール](https://{DomainName}/){: external}に移動します
+2. メニューから**「クラシック・インフラストラクチャー」**を選択します。
+3. **「デバイス」** > **「デバイス・リスト」**をクリックします。
+4. 目的のデバイスをクリックします。
+5. 「ストレージ」タブを選択します。
 
 この特定のホストがアクセス権を持っているストレージ・ボリュームのリストが表示されます。いずれも、ストレージ・タイプ (ブロック、ファイル、その他) ごとにグループ化されています。 それぞれの**「アクション」**メニューから、他のストレージを許可したり、アクセス権を削除したりできます。
 
@@ -87,7 +89,7 @@ Options:
 
 ## {{site.data.keyword.filestorage_short}} に対するホストのアクセス権を取り消す
 
-ホストから特定のストレージ・ボリュームへのアクセスを停止する場合は、アクセス権を取り消すことができます。 アクセス権が取り消されると、ホスト接続はボリュームから除去されます。 オペレーティング・システムやアプリケーションがボリュームと通信できなくなります。
+ホストから特定のストレージ・ボリュームへのアクセスを停止する場合は、アクセス権を取り消すことができます。 アクセス権が取り消されると、ホスト接続はボリュームから除去されます。 オペレーティング・システムとアプリケーションはそのボリュームと通信できなくなります。
 
 ホスト側の問題を防止するために、アクセス権を取り消す前にオペレーティング・システムからストレージ・ボリュームをアンマウントして、ドライブの欠落やデータ破損を回避してください。
 {:important}
@@ -96,10 +98,12 @@ Options:
 
 ### デバイス・リストからのアクセス権の取り消し
 
-1. [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}で、**「デバイス」** > **「デバイス・リスト」**をクリックします。
+1. [{{site.data.keyword.cloud}} コンソール](https://{DomainName}/){: external}に移動します。
+2. メニューから**「クラシック・インフラストラクチャー」**を選択します。
+3. **「デバイス」** > **「デバイス・リスト」**をクリックします。
 2. 該当するデバイスをダブルクリックします。
 3. **「ストレージ」**タブを選択します。
-4. この特定のホストがアクセス権を持っているストレージ・ボリュームのリストが表示されます。いずれも、ストレージ・タイプ (ブロック、ファイル、その他) ごとにグループ化されています。 アクセス権を取り消すボリュームの隣にある、それぞれの**「アクション」**メニューを選択して、**「アクセス権の取り消し」**をクリックします。
+4. この特定のホストがアクセス権を持っているストレージ・ボリュームのリストが表示されます。いずれも、ストレージ・タイプ (ブロック、ファイル、その他) ごとにグループ化されています。 アクセス権を取り消すボリュームの隣にある、それぞれの**「アクション」**メニューを選択して、**「アクセスの取り消し」**をクリックします。
 5. このアクションは元に戻せないので、ボリュームのアクセス権を取り消してよいかどうかを確認します。 ボリュームへのアクセス権を取り消すには**「はい (Yes)」**を、アクションをキャンセルするには**「いいえ (No)」**をクリックします。
 
 特定のホストから複数のボリュームを切断する場合は、各ボリュームに対して「アクセス権の取り消し」アクションを繰り返す必要があります。
@@ -108,30 +112,28 @@ Options:
 
 ### ストレージ・ビューからのアクセス権の取り消し
 
-1. **「ストレージ」、「{{site.data.keyword.filestorage_short}}」**とクリックして、アクセス権を取り消す**ボリューム**を選択します。
-2. ページの**「許可ホスト」**セクションまでスクロールします。
-3. アクセス権を取り消すホストの隣にある**「アクション」**をクリックして、**「アクセス権の取り消し」**を選択します。
-4. このアクションは元に戻せないので、ボリュームのアクセス権を取り消してよいかどうかを確認します。 ボリュームへのアクセス権を取り消すには**「はい (Yes)」**を、アクションをキャンセルするには**「いいえ (No)」**をクリックします。
+1. [{{site.data.keyword.cloud}} コンソール](https://{DomainName}/){: external}に移動します。
+2. メニューから**「クラシック・インフラストラクチャー」**を選択します。
+3. **「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**とクリックし、アクセス権を取り消す**「ボリューム」**を選択します。
+4. ページの**「許可ホスト」**セクションまでスクロールします。
+5. アクセス権を取り消すホストの隣にある**「アクション」**をクリックして、**「アクセス権の取り消し」**を選択します。
+6. このアクションは元に戻せないので、ボリュームのアクセス権を取り消してよいかどうかを確認します。 ボリュームへのアクセス権を取り消すには**「はい (Yes)」**を、アクションをキャンセルするには**「いいえ (No)」**をクリックします。
 
 特定のボリュームから複数のホストを切断する場合は、ホストごとに「アクセス権の取り消し」アクションを繰り返す必要があります。
 {:tip}
 
 ### SLCLI でのアクセス権の取り消し
-代わりの方法として、SLCLI で以下のコマンドを使用することができます。
+SLCLI で次のコマンドを使用します。
 ```
 # slcli file access-revoke --help
 Usage: slcli file access-revoke [OPTIONS] VOLUME_ID
 
 Options:
-  -h, --hardware-id TEXT    The id of one SoftLayer_Hardware to revoke
-                            authorization
-  -v, --virtual-id TEXT     The id of one SoftLayer_Virtual_Guest to revoke
-                            authorization
-  -i, --ip-address-id TEXT  The id of one SoftLayer_Network_Subnet_IpAddress
-                            to revoke authorization
-  --ip-address TEXT         An IP address to revoke authorization
-  -s, --subnet-id TEXT      The id of one SoftLayer_Network_Subnet to revoke
-                            authorization
+  -h, --hardware-id TEXT    The ID of one hardware server to revoke authorization.
+  -v, --virtual-id TEXT     The ID of one virtual server to revoke authorization.
+  -i, --ip-address-id TEXT  The ID of one IP address to revoke authorization.
+  -p, --ip-address TEXT     An IP address to revoke authorization.
+  -s, --subnet-id TEXT      An ID of one subnet to revoke authorization.
   --help                    Show this message and exit.
 ```
 
@@ -139,14 +141,15 @@ Options:
 
 特定のボリュームが不要になった場合は、そのストレージをキャンセルできます。 ストレージ・ボリュームをキャンセルするには、最初にすべてのホストのアクセス権を取り消す必要があります。
 
-1. **「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**とクリックします。
-2. キャンセルするボリュームの**「アクション」**をクリックし、**「{{site.data.keyword.filestorage_short}}のキャンセル」**を選択します。
-3. ボリュームをただちにキャンセルするか、ボリュームがプロビジョンされた日の応当日にキャンセルするかを確認します。
+1. [{{site.data.keyword.cloud}} コンソール](https://{DomainName}/){: external}に移動します。メニューから**「クラシック・インフラストラクチャー」**を選択します。
+2. **「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**をクリックします。
+3. キャンセルするボリュームの**「アクション」**をクリックし、**「{{site.data.keyword.filestorage_short}}のキャンセル」**を選択します。
+4. ボリュームをただちにキャンセルするか、ボリュームがプロビジョンされた日の応当日にキャンセルするかを確認します。
 
    応当日にボリュームをキャンセルするオプションを選択した場合は、応当日の前にキャンセル要求を無効にすることができます。
    {:tip}
-4. **「次へ進む (Continue)」**または**「閉じる」**をクリックします。
-5. 確認応答チェック・ボックスをクリックして、**「確認」**をクリックします。
+5. **「次へ進む (Continue)」**または**「閉じる」**をクリックします。
+6. 確認応答チェック・ボックスをクリックして、**「確認」**をクリックします。
 
 代わりの方法として、SLCLI で以下のコマンドを使用することができます。
 ```

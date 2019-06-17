@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, duplicate volume
 
@@ -39,13 +39,13 @@ subcollection: FileStorage
 - **開発とテスト (dev/test)**。 1 つのボリュームから一度に最大 4 つの複製を同時作成して、開発とテスト用の複製データを作成する。
 - **ストレージのサイズ変更**。 データを移動することなく、新しいサイズまたは IOPS レート (あるいはその両方) を指定したボリュームを作成する。  
 
-[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}で重複ボリュームを作成するには、いくつかの方法があります。
+[{{site.data.keyword.cloud}} コンソール](https://{DomainName}/){: external}で重複ボリュームを作成するには、いくつかの方法があります。
 
 
 ## ストレージ・リスト内の特定のボリュームから複製を作成する
 
 1. {{site.data.keyword.filestorage_short}}のリストに進みます
-    - カスタマー・ポータルから、**「ストレージ」**>**「{{site.data.keyword.filestorage_short}}」**をクリックします。または
+    - 「クラシック・インフラストラクチャー」メニューで、**「ストレージ」**>**「{{site.data.keyword.filestorage_short}}」**をクリックします。または
     - {{site.data.keyword.cloud}} カタログで、**「インフラストラクチャー」** > **「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**をクリックします。
 2. リストから LUN を選択し、**「アクション」** > **「LUN (ボリューム) の複製 (Duplicate LUN (Volume))」**をクリックします。
 3. スナップショット・オプションを選択します。

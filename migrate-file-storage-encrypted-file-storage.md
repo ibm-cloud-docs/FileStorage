@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, upgrade, migrate to new
 
@@ -37,7 +37,7 @@ All enhanced {{site.data.keyword.filestorage_short}} volumes that are provisione
 When you place an order with API, specify the "Storage as a Service" package to ensure you're getting the updated features with your new storage.
 {:important}
 
-You can order an enhanced LUN through the {{site.data.keyword.cloud}} catalog and the {{site.data.keyword.slportal}}. Your new volume must be of the same size or greater than the original fileshare to facilitate the migration.
+You can order an enhanced LUN through the {{site.data.keyword.cloud}} catalog. Your new volume must be of the same size or greater than the original fileshare to facilitate the migration.
 
 - [Ordering {{site.data.keyword.filestorage_short}} with pre-defined IOPS Tiers (Endurance)](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#endurance)
 - [Ordering {{site.data.keyword.filestorage_short}} with custom IOPS (Performance)](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#performance)

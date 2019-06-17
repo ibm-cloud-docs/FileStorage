@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-22"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, mounting file storage, Linux, CentOS, NFS
 
@@ -20,7 +20,7 @@ subcollection: FileStorage
 # Mounting {{site.data.keyword.filestorage_short}} in CentOS
 {: #mountingCentOS}
 
-To mount {{site.data.keyword.filestorage_full}} in CentOS 7, you must authorize the host first through the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} or through the SLCLI. Then, install the NFS utilities as described in [Mounting {{site.data.keyword.filestorage_short}} on Linux](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux).
+To mount {{site.data.keyword.filestorage_full}} in CentOS 7, you must authorize the host first through the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic){: external} or through the SLCLI. Then, install the NFS utilities as described in [Mounting {{site.data.keyword.filestorage_short}} on Linux](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux).
 
 For CentOS, you can specify some additional options by using the `Options=` line in the mount file. In the following example, the NFS is set to mount at `/data/www`.
 

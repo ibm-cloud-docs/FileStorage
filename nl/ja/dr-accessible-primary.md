@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
@@ -28,19 +28,17 @@ subcollection: FileStorage
 {:note}
 
 1. [{{site.data.keyword.cloud}} コンソール](https://{DomainName}/catalog){: external}にログインして、左上にある**「メニュー」**アイコンをクリックします。**「クラシック・インフラストラクチャー」**を選択します。
-
-   または、[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}にログインできます。
-1. **「{{site.data.keyword.filestorage_short}}」**ページからソース・ボリュームまたは宛先ボリュームをクリックします。
-2. **「レプリカ」**をクリックします。
-3. **「ホストの許可」**フレームまでスクロールダウンして、右にある**「ホストの許可」**をクリックします。
-4. レプリケーションを許可するホストを強調表示します。 複数のホストを選択するには、Ctrl キーを使用して目的のホストをクリックします。
-5. **「送信」**をクリックします。 ホストがない場合は、同じデータ・センターでコンピュート・リソースを購入するよう求めるプロンプトが出されます。
+2. **「{{site.data.keyword.filestorage_short}}」**ページからソース・ボリュームまたは宛先ボリュームをクリックします。
+3. **「レプリカ」**をクリックします。
+4. **「ホストの許可」**フレームまでスクロールダウンして、右にある**「ホストの許可」**をクリックします。
+5. レプリケーションを許可するホストを強調表示します。 複数のホストを選択するには、Ctrl キーを使用して目的のホストをクリックします。
+6. **「送信」**をクリックします。 ホストがない場合は、同じデータ・センターでコンピュート・リソースを購入するよう求めるプロンプトが出されます。
 
 ## ボリュームからレプリカへのフェイルオーバーの開始
 
 障害が発生した場合、宛先 (つまりターゲット) ボリュームへの**フェイルオーバー**を開始できます。 ターゲット・ボリュームがアクティブになります。 最後に正常に複製されたスナップショットがアクティブになり、ボリュームがマウント可能になります。 前回のレプリケーション・サイクル以降にソース・ボリュームに書き込まれたデータは、すべて失われます。 フェイルオーバーが開始すると、レプリケーションの関係が反転します。 ターゲット・ボリュームがソース・ボリュームになり、以前のソース・ボリュームは、**「LUN 名」**の後に **REP** を付けて示されるターゲットになります。
 
-フェイルオーバーは、[[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}の**「ストレージ」**の**「{{site.data.keyword.filestorage_short}}」**で開始されます。
+フェイルオーバーは、[{{site.data.keyword.cloud}} コンソール](https://{DomainName}/classic){: external}の**「ストレージ」**の**「{{site.data.keyword.filestorage_short}}」**で開始されます。
 
 これらのステップを続行する前に、ボリュームを切り離します。 そうしないと、破損やデータ損失が発生します。
 {:important}
@@ -68,7 +66,7 @@ subcollection: FileStorage
 
 フェイルバックが開始すると、レプリケーションの関係が再度反転します。 ソース・ボリュームがソース・ボリュームとしてリストアされ、ターゲット・ボリュームは、再度、**「LUN 名」**の後に **REP** を付けて示されるターゲット・ボリュームになります。
 
-フェイルバックは、[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}の**「ストレージ」**の**「{{site.data.keyword.filestorage_short}}」**で開始されます。
+フェイルバックは、[{{site.data.keyword.cloud}} コンソール](https://{DomainName}/classic){: external}の**「ストレージ」**の**「{{site.data.keyword.filestorage_short}}」**で開始されます。
 
 1. アクティブなボリューム (「ターゲット」) をクリックします。
 2. 右上の**「レプリカ」**をクリックし、**「アクション」**をクリックします。

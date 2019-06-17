@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, SLCLI, provisioning, API
 
@@ -18,14 +18,14 @@ subcollection: FileStorage
 # SLCLI による {{site.data.keyword.filestorage_short}} の注文
 {: #orderingSLCLI}
 
-通常は [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}で注文する製品については、SLCLI を使用して注文することができます。SL API では、1 つの注文を複数の注文コンテナーで処理します。 注文 CLI は、1 つの注文コンテナーのみを処理します。
+通常は [{{site.data.keyword.cloud}} カタログ](https://{DomainName}/catalog){: external}で注文する製品については、SLCLI を使用して注文することができます。SL API では、1 つの注文を複数の注文コンテナーで処理します。 注文 CLI は、1 つの注文コンテナーのみを処理します。
 
 SLCLI のインストール方法と使用法について詳しくは、[Python API Client](https://softlayer-python.readthedocs.io/en/latest/cli/){: external} を参照してください。
 {:tip}
 
 ## 入手可能な {{site.data.keyword.filestorage_short}} オファーの検索
 
-注文の際には、最初のコンポーネントとしてパッケージを検索します。 パッケージは、{{site.data.keyword.BluSoftlayer_full}} での注文時に入手できるさまざまなトップレベルの製品に分かれています。 パッケージの例として、VSI の CLOUD_SERVER、ベアメタル・サーバーの BARE_METAL_SERVER、{{site.data.keyword.filestorage_short}}と {{site.data.keyword.blockstorageshort}} の STORAGE_AS_A_SERVICE_STAAS があります。
+注文の際には、最初のコンポーネントとしてパッケージを検索します。 パッケージは、{{site.data.keyword.cloud}} での注文時に入手できるさまざまなトップレベルの製品に分かれています。 パッケージの例として、VSI の CLOUD_SERVER、ベアメタル・サーバーの BARE_METAL_SERVER、{{site.data.keyword.filestorage_short}}と {{site.data.keyword.blockstorageshort}} の STORAGE_AS_A_SERVICE_STAAS があります。
 
 パッケージ内では、いくつかの項目がカテゴリーに細分化されています。 利便性を考えて事前設定されているパッケージもあれば、項目を個別に指定する必要があるパッケージもあります。 あるパッケージの 1 つのカテゴリーが必須である場合、そのパッケージを注文するにはそのカテゴリーから項目を選択する必要があります。 カテゴリーによっては、カテゴリー内の一部の項目は同時に選択できない場合があります。
 
@@ -119,20 +119,18 @@ Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
   Authorizes hosts to access a given volume
 
 Options:
-  -h, --hardware-id TEXT    The id of one SoftLayer_Hardware to authorize
-  -v, --virtual-id TEXT     The id of one SoftLayer_Virtual_Guest to authorize
-  -i, --ip-address-id TEXT  The id of one SoftLayer_Network_Subnet_IpAddress
-                            to authorize
-  --ip-address TEXT         An IP address to authorize
-  -s, --subnet-id TEXT      The id of one SoftLayer_Network_Subnet to
-                            authorize
+  -h, --hardware-id TEXT    The ID of one hardware server to authorize.
+  -v, --virtual-id TEXT     The ID of one virtual server to authorize.
+  -i, --ip-address-id TEXT  The ID of one IP address to authorize.
+  -p, --ip-address TEXT     An IP address to authorize.
+  -s, --subnet-id TEXT      An ID of one subnet to authorize.
   --help                    Show this message and exit.
 ```
 
 API を使用して、ホストが {{site.data.keyword.filestorage_short}} にアクセスする権限を与える方法について詳しくは、[authorize_host_to_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/file/#SoftLayer.managers.file.FileStorageManager.authorize_host_to_volume){: external} を参照してください。
 {:tip}
 
-同時許可の制限について詳しくは、[FAQ](/docs/infrastructure/FileStorage?topic=FileStorage-faqs) を参照してください。
+同時許可の制限について詳しくは、[FAQ](/docs/infrastructure/FileStorage?topic=file-storage-faqs) を参照してください。
 {:important}
 
 ## 新しいストレージの接続

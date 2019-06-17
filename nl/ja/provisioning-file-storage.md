@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, provisioning, ordering,
 
@@ -29,9 +29,7 @@ subcollection: FileStorage
 ## 事前定義済み IOPS ティアによる {{site.data.keyword.filestorage_short}} の注文 (エンデュランス)
 {: #endurance}
 
-1. [IBM Cloud カタログ](https://{DomainName}/catalog){: external}にログインし、**「ストレージ」**をクリックします。 その後、{{site.data.keyword.filestorage_short}}を選択します。 **「作成」**をクリックします。
-
-   あるいは、[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} } にログインして、**「ストレージ」**>**「{{site.data.keyword.filestorage_short}}」**をクリックします。右上の**「{{site.data.keyword.filestorage_short}} を注文」**をクリックします。
+1. [{{site.data.keyword.cloud}} カタログ](https://{DomainName}/catalog){: external}にログインし、**「ストレージ」**をクリックします。その後、{{site.data.keyword.filestorage_short}}を選択します。 **「作成」**をクリックします。
 2. デプロイメント・**ロケーション** (データ・センター) を選択します。
    - 新規ストレージは必ず、所有するコンピュート・ホストと同じ場所に追加してください。
 3. 請求処理。 拡張機能を備えたデータ・センター (アスタリスクのマークがあるもの) を選択した場合は、月単位の請求と時間単位の請求のどちらにするかを選択できます。
@@ -55,15 +53,13 @@ subcollection: FileStorage
 9. ご使用条件を確認した後、**「サード・パーティー・サービス契約を読み、同意します」**ボックスにチェック・マークを付けます。
 10. **「作成」**をクリックします。 新しいストレージ割り振りが数分後に使用可能になります。
 
-デフォルトでは、合計 250 の {{site.data.keyword.blockstorageshort}} ボリュームをプロビジョンできます。 ご使用のボリュームの数を増やすには、営業担当員にお問い合わせください。 制限の増加については、[こちら](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits)を参照してください。<br/><br/>同時許可の制限について詳しくは、[FAQ](/docs/infrastructure/FileStorage?topic=FileStorage-faqs#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-) を参照してください。
+デフォルトでは、合計 250 の {{site.data.keyword.blockstorageshort}} ボリュームをプロビジョンできます。 ご使用のボリュームの数を増やすには、営業担当員にお問い合わせください。 制限の増加については、[こちら](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits)を参照してください。<br/><br/>同時許可の制限について詳しくは、[FAQ](/docs/infrastructure/FileStorage?topic=file-storage-faqs#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-) を参照してください。
 {:tip}
 
 ## カスタム IOPS による {{site.data.keyword.filestorage_short}} の注文 (パフォーマンス)
 {: #performance}
 
-1. [IBM Cloud カタログ](https://{DomainName}/catalog){: external}にログインし、**「ストレージ」**をクリックします。 その後、{{site.data.keyword.filestorage_short}}を選択します。 **「作成」**をクリックします。
-
-   あるいは、[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} } にログインして、**「ストレージ」**>**「{{site.data.keyword.filestorage_short}}」**をクリックします。右上の**「{{site.data.keyword.filestorage_short}} を注文」**をクリックします。
+1. [{{site.data.keyword.cloud}} カタログ](https://{DomainName}/catalog){: external}にログインし、**「ストレージ」**をクリックします。その後、{{site.data.keyword.filestorage_short}}を選択します。 **「作成」**をクリックします。
 2. **「ロケーション」**をクリックし、使用するデータ・センターを選択します。
    - 新規ストレージは必ず、所有するコンピュート・ホストと同じ場所に追加してください。
 3. 請求処理。 拡張機能を備えたデータ・センター (アスタリスクのマークがあるもの) を選択した場合は、月単位の請求と時間単位の請求のどちらにするかを選択できます。
@@ -83,7 +79,7 @@ subcollection: FileStorage
 9. ご使用条件を確認した後、**「サード・パーティー・サービス契約を読み、同意します」**ボックスにチェック・マークを付けます。
 10. **「作成」**をクリックします。 新しいストレージ割り振りが数分後に使用可能になります。
 
-デフォルトでは、合計 250 の {{site.data.keyword.blockstorageshort}} ボリュームをプロビジョンできます。 ご使用のボリュームの数を増やすには、営業担当員にお問い合わせください。 制限の増加については、[こちら](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits)を参照してください。<br/><br/>同時許可の制限について詳しくは、[FAQ](/docs/infrastructure/FileStorage?topic=FileStorage-faqs#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-) を参照してください。
+デフォルトでは、合計 250 の {{site.data.keyword.blockstorageshort}} ボリュームをプロビジョンできます。 ご使用のボリュームの数を増やすには、営業担当員にお問い合わせください。 制限の増加については、[こちら](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits)を参照してください。<br/><br/>同時許可の制限について詳しくは、[FAQ](/docs/infrastructure/FileStorage?topic=file-storage-faqs#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-) を参照してください。
 {:important}
 
 

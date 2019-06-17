@@ -30,8 +30,9 @@ subcollection: FileStorage
 
 |米国 2|ラテンアメリカ|カナダ|EU|アジア太平洋|オーストラリア|
 |-----|-----|-----|-----|-----|------|
-|DAL09<br >DAL10<br />DAL12<br />DAL13<br />SJC03<br />SJC04<br />WDC04<br />WDC06<br />WDC07|MEX01<br />        SAO01|MON01<br />        TOR01|AMS01<br />AMS03<br />FRA02<br />FRA04<br />FRA05<br />LON02<br />LON04<br />LON05<br />LON06<br />MIL01<br />OSLO1<br />PAR01|CHE01<br />HKG02<br />SEO01<br />SNG01<br />        TOK02<br />TOK04<br />TOK05|MEL01<br />SYD01<br />        SYD04<br />        SYD05|
-{: caption="表 1 は、使用可能なデータ・センターを示しています。地域ごとに列を分けています。 ダラス、サンホセ、ワシントン DC、アムステルダム、フランクフルト、ロンドン、シドニーなどのいくつかの都市には、複数のデータ・センターがあります。" caption-side="top"}
+| DAL09<br >DAL10<br />DAL12<br />DAL13<br />SJC03<br />SJC04<br />WDC04<br />WDC06<br />WDC07 | MEX01<br />SAO01 | MON01<br />TOR01  | AMS01<br />AMS03<br />FRA02<br />FRA04<br />FRA05<br />LON02<br />LON04<br />LON05<br />LON06<br />MIL01<br />OSLO1<br />PAR01 | CHE01<br />HKG02<br />SEO01<br />SNG01<br />TOK02<br />TOK04<br />TOK05 | MEL01<br />SYD01<br />SYD04<br />SYD05 |
+{: caption="表 1 は、使用可能なデータ・センターを示しています。 地域ごとに列を分けています。 ダラス、サンホセ、ワシントン DC、アムステルダム、フランクフルト、ロンドン、シドニーなどのいくつかの都市には、複数のデータ・センターがあります。" caption-side="top"}
+
 
 ## 新しい機能および能力
 {: #features}

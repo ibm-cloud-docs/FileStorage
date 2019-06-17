@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
@@ -27,20 +27,18 @@ Before you start the failover, make sure that all host-authorization is in place
 Authorized hosts and volumes must be in the same data center. For example, you can't have a replica volume in London and the host in Amsterdam. Both must be in London or both must be in Amsterdam.
 {:note}
 
-1. Log in to [The {{site.data.keyword.cloud}} console](https://{DomainName}/catalog){: external} and click the **menu** icon on the upper left. Select **Classic Infrastructure**.
-
-   Alternatively, you can log in to the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
-1. Click your source or destination volume from the **{{site.data.keyword.filestorage_short}}** page.
-2. Click **Replica**.
-3. Scroll down to the **Authorize Hosts** frame and click **Authorize Hosts** on the right.
-4. Highlight the host that is to be authorized for replications. To select multiple hosts, use the CTRL-key and click the applicable hosts.
-5. Click **Submit**. If you have no hosts, you are prompted to purchase compute resources in the same data center.
+1. Log in to the [{{site.data.keyword.cloud}} console](https://{DomainName}/catalog){: external} and click the **menu** icon on the upper left. Select **Classic Infrastructure**.
+2. Click your source or destination volume from the **{{site.data.keyword.filestorage_short}}** page.
+3. Click **Replica**.
+4. Scroll down to the **Authorize Hosts** frame and click **Authorize Hosts** on the right.
+5. Highlight the host that is to be authorized for replications. To select multiple hosts, use the CTRL-key and click the applicable hosts.
+6. Click **Submit**. If you have no hosts, you are prompted to purchase compute resources in the same data center.
 
 ## Starting a failover from a volume to its replica
 
 If a failure event occurs, you can start a **failover** to your destination, or target, volume. The target volume becomes active. The last successfully replicated snapshot is activated, and the volume is made available for mounting. Any data that was written to the source volume since the previous replication cycle is lost. When a failover is started, the replication relationship is flipped. Your target volume becomes your source volume, and your former source volume becomes your target as indicated by the **LUN Name** followed by **REP**.
 
-Failovers are started under **Storage**, **{{site.data.keyword.filestorage_short}}** in the [[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
+Failovers are started under **Storage**, **{{site.data.keyword.filestorage_short}}** in the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic){: external}.
 
 Before you proceed with these steps, disconnect the volume. Failure to do so, results in corruption and data loss.
 {:important}
@@ -68,7 +66,7 @@ When your original source volume is repaired, you can start a controlled Failbac
 
 When a Failback is started, the replication relationship is flipped again. Your source volume is restored as your source volume, and your target volume is the target volume again as indicated by the **LUN Name** followed by **REP**.
 
-Failbacks are started under **Storage**, **{{site.data.keyword.filestorage_short}}** in the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
+Failbacks are started under **Storage**, **{{site.data.keyword.filestorage_short}}** in the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic){: external}.
 
 1. Click your active volume ("target").
 2. In the upper right, click **Replica** and click **Actions**.

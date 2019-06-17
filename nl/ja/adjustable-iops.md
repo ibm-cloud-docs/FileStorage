@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, adjusting IOPS, increase IOPS, decrease IOPS, modify IOPS
 
@@ -45,9 +45,7 @@ subcollection: FileStorage
 ## 実際のストレージでの IOPS の調整
 {: #adjustingsteps}
 
-1. {{site.data.keyword.filestorage_short}}のリストに進みます
-    - カスタマー・ポータルから、**「ストレージ」**>**「{{site.data.keyword.filestorage_short}}」**をクリックします。または
-    - {{site.data.keyword.cloud}} コンソールで、**「インフラストラクチャー」** > **「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**をクリックします。
+1. {{site.data.keyword.filestorage_short}} のリストに進みます。{{site.data.keyword.cloud}} コンソールで、**「クラシック・インフラストラクチャー」** > **「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**をクリックします。
 2. リストからボリュームを選択し、**「アクション」** > **「ボリュームの変更 (Modify Volume)」**をクリックします。
 3. **「ストレージ IOPS オプション (Storage IOPS Options)」**で、新しい選択を行います。
     - 「エンデュランス (IOPS ティア) (Endurance (Tiered IOPS))」の場合、0.25 IOPS/GB より大きいストレージの IOPS ティアを選択します。 IOPS ティアはいつでも上げることができます。 ただし、下げることができるのは、月に 1 回のみです。

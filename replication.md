@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-03-11"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, replication, duplication, synchronous, replica schedule, replica space, disaster recovery
 
@@ -41,7 +41,7 @@ See Table 1 for the complete list of data center availability and replication ta
 
 ## Creating the initial replica
 
-Replications work based on a snapshot schedule. You must first have snapshot space and a snapshot schedule for the source volume before you can replicate. If you try to set up replication and one or the other isn't in place, you are going to be prompted to purchase more space or set up a schedule. Replications are managed under **Storage** > **{{site.data.keyword.filestorage_short}}** in the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
+Replications work based on a snapshot schedule. You must first have snapshot space and a snapshot schedule for the source volume before you can replicate. If you try to set up replication and one or the other isn't in place, you are going to be prompted to purchase more space or set up a schedule. Replications are managed under **Storage** > **{{site.data.keyword.filestorage_short}}** in the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic){: external}.
 
 1. Click your storage volume.
 2. Click **Replica** and click **Purchase a replication**.
@@ -60,7 +60,7 @@ Replications work based on a snapshot schedule. You must first have snapshot spa
 
 ## Editing an existing replication
 
-You can edit your replication schedule, and change your replication space from either the **Primary** or **Replica** tab under **Storage** > **{{site.data.keyword.filestorage_short}}** from the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
+You can edit your replication schedule, and change your replication space from either the **Primary** or **Replica** tab under **Storage** > **{{site.data.keyword.filestorage_short}}** from the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic){: external}.
 
 
 ## Editing the Replication Schedule
@@ -114,7 +114,7 @@ Replication history is viewed on the **Audit Log** on the **Account** tab under 
 
 ## Creating a duplicate of a replica
 
-You can create a duplicate of an existing {{site.data.keyword.cloud}}  {{site.data.keyword.filestorage_full}}. The duplicate volume inherits the capacity and performance options of the original storage volume by default and has a copy of the data up to the point-in-time of a snapshot.
+You can create a duplicate of an existing {{site.data.keyword.cloud}} {{site.data.keyword.filestorage_full}}. The duplicate volume inherits the capacity and performance options of the original storage volume by default and has a copy of the data up to the point-in-time of a snapshot.
 
 Duplicates can be created from both primary and replica volumes. The new duplicate is created in the same data center as the original volume. If you create a duplicate from a replica volume, the new volume is created in the same data center as the replica volume.
 

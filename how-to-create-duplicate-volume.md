@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, duplicate volume
 
@@ -39,13 +39,13 @@ Some common uses for a duplicate volume include the following examples.
 - **Development and Testing (dev/test)**. Create up to four simultaneous duplicates of a volume at one time to create duplicate data for development and testing.
 - **Storage Resize**. Create a volume with new size, IOPS rate or both without needing to move your data.  
 
-You can create a duplicate volume through the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} in a couple of ways.
+You can create a duplicate volume through the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external} in a couple of ways.
 
 
 ## Creating a duplicate from a specific volume in the Storage List
 
 1. Go to your list of {{site.data.keyword.filestorage_short}}
-    - From the customer portal, click **Storage** > **{{site.data.keyword.filestorage_short}}** OR
+    - From the Classic Infrastructure menu, click **Storage** > **{{site.data.keyword.filestorage_short}}** OR
     - From the {{site.data.keyword.cloud}} catalog, click **Infrastructure** > **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Select a LUN from the list and click **Actions** > **Duplicate LUN (Volume)**
 3. Choose your snapshot option.

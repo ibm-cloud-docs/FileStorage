@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, snapshots, snapshot schedule, manual snapshot, snapshot space, snapshot quota
 
@@ -21,7 +21,7 @@ subcollection: FileStorage
 
 ## Creating a Snapshot Schedule
 
-You decide how often and when you want to create a point-in-time reference of your storage volume with Snapshot schedules. You can have a maximum of 50 snapshots per storage volume. Schedules are managed through the **Storage** > **{{site.data.keyword.filestorage_short}}** tab of the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
+You decide how often and when you want to create a point-in-time reference of your storage volume with Snapshot schedules. You can have a maximum of 50 snapshots per storage volume. Schedules are managed through the **Storage** > **{{site.data.keyword.filestorage_short}}** tab of the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external} .
 
 Before you can set up your initial schedule, you must first purchase snapshot space if you didn't purchase it during the initial provisioning of the storage volume.
 {:important}
@@ -159,17 +159,18 @@ You might need to take your storage volume back to a specific point-in-time beca
 
 1. Unmount and detach your storage volume from the host.
    - Click [here](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux) for instructions.
-2. Click **Storage**, **{{site.data.keyword.filestorage_short}}** in the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
-3. Scroll down and click your volume to be restored. The **Snapshots** section of the **Detail** page displays the list of all saved snapshots along with their size and creation date.
-4. Click **Actions** next to the snapshot to be used and click **Restore**. <br/>
+2. Go to the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}. From the menu, select **Classic Infrastructure**.
+3. Click **Storage**, **{{site.data.keyword.filestorage_short}}**.
+4. Scroll down, and click your volume to be restored. The **Snapshots** section of the **Detail** page displays the list of all saved snapshots along with their size and creation date.
+5. Click **Actions** next to the snapshot to be used and click **Restore**. <br/>
 
    Completing the restore results in the loss of the data that was created or modified after the snapshot was taken. This data loss occurs because your storage volume returns to the same state it was in of the time of the snapshot.
    {:note}
-5. Click **Yes** to start the restore.
+6. Click **Yes** to start the restore.
 
    Expect a message across the page that states that the volume is being restored by using the selected snapshot. Additionally, an icon appears next to your volume on the {{site.data.keyword.filestorage_short}} that indicates that an active transaction is in progress. Hovering over the icon produces a window that shows the transaction. The icon disappears when the transaction is complete.
    {:note}
-6. Mount and reattach your storage volume to the host.
+7. Mount and reattach your storage volume to the host.
   - Click [here](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux) for instructions.
 
 Alternatively, you can restore the volume with a snapshot through the SLCLI.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
@@ -72,11 +72,11 @@ VMware データ・ストアへのアクセスに必要なホストの数が 8 �
 
 ### スナップショットの使用
 
-{{site.data.keyword.filestorage_short}} を使用すると、管理者は、各ストレージ・ボリュームのスナップショット・コピーを自動的に作成および削除するスナップショット・スケジュールを設定できます。 また、自動スナップショットのスナップショット・スケジュール (毎時、日次、週次) を追加で作成したり、事業継続と災害復旧 (BCDR) のシナリオのスナップショットを随時手動で作成したりすることもできます。 ボリューム所有者に、[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}を介して、保存されたスナップショットと使用されたスペースについての自動アラートが送信されます。
+{{site.data.keyword.filestorage_short}} を使用すると、管理者は、各ストレージ・ボリュームのスナップショット・コピーを自動的に作成および削除するスナップショット・スケジュールを設定できます。 また、自動スナップショットのスナップショット・スケジュール (毎時、日次、週次) を追加で作成したり、事業継続と災害復旧 (BCDR) のシナリオのスナップショットを随時手動で作成したりすることもできます。 ボリューム所有者に、[{{site.data.keyword.cloud}} コンソール](https://{DomainName}/){: external}を介して、保存されたスナップショットと使用されたスペースについての自動アラートが送信されます。
 
 スナップショットを使用するには、スナップショット・スペースが必要です。 スペースはボリュームを最初に注文するときに購入できます。また、最初のプロビジョニングの後で、**「ボリュームの詳細 (Volume Details)」**ページの**「アクション」**をクリックし、**「スナップショット・スペースの追加」**を選択して取得することもできます。
 
-VMware 環境はスナップショットを認識しないことに注意してください。 {{site.data.keyword.filestorage_short}}のスナップショット機能を VMware のスナップショットと混同しないでください。 {{site.data.keyword.filestorage_short}} のスナップショット機能を使用したリカバリーは、[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}から行う必要があります。
+VMware 環境はスナップショットを認識しないことに注意してください。 {{site.data.keyword.filestorage_short}}のスナップショット機能を VMware のスナップショットと混同しないでください。 {{site.data.keyword.filestorage_short}} のスナップショット機能を使用するリカバリーは、[{{site.data.keyword.cloud}} コンソール](https://{DomainName}/){: external}から操作する必要があります。
 
 {{site.data.keyword.filestorage_short}} のボリュームをリストアするには、{{site.data.keyword.filestorage_short}} 上のすべての VM の電源をオフにする必要があります。 ESXi ホストから一時的にボリュームをアンマウントして、復元処理中のデータ破損を回避する必要があります。
 
@@ -111,9 +111,9 @@ VMware 環境はスナップショットを認識しないことに注意して�
 
 [拡張単一サイト VMware リファレンス・アーキテクチャー](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){: external}を使用して、VMware 環境でエンデュランスまたはパフォーマンスのオプションを指定して {{site.data.keyword.filestorage_short}} をセットアップします。
 
-{{site.data.keyword.filestorage_short}} は、[IBM Cloud カタログ](https://{DomainName}/catalog){: external}または [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}から注文できます。詳しくは、[{{site.data.keyword.filestorage_short}} の注文](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)を参照してください。
+{{site.data.keyword.filestorage_short}} は、[{{site.data.keyword.cloud}} カタログ](https://{DomainName}/catalog){: external}または CLI から注文できます。詳しくは、[{{site.data.keyword.filestorage_short}} の注文](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)を参照してください。
 
-ストレージが 1 分もしないうちにプロビジョンされ、[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}の「**{{site.data.keyword.filestorage_short}}**」ページに表示されます。
+ストレージが 1 分もしないうちにプロビジョンされ、[{{site.data.keyword.cloud}} コンソール](https://{DomainName}/classic){: external}の**「{{site.data.keyword.filestorage_short}}」**ページに表示されます。
 
 ボリュームがプロビジョンされたら、そのボリュームを使用する {{site.data.keyword.BluBareMetServers_full}} または {{site.data.keyword.BluVirtServers_full}} に、ストレージへのアクセスを許可する必要があります。 ボリュームを許可するには、以下の手順を実行します。
 

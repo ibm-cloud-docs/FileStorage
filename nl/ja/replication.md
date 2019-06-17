@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-03-11"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, replication, duplication, synchronous, replica schedule, replica space, disaster recovery
 
@@ -33,15 +33,15 @@ subcollection: FileStorage
 {{site.data.keyword.cloud}} データ・センターは、世界的規模でプライマリーとリモートの組み合わせのペアを構成しています。
 データ・センターの可用性とレプリケーションのターゲットの完全なリストについては、表 1 を参照してください。
 
-|米国 1|米国 2|ラテンアメリカ|カナダ|ヨーロッパ|アジア太平洋|オーストラリア|
+| 米国 1 | 米国 2 | ラテンアメリカ | カナダ  | ヨーロッパ  | アジア太平洋  | オーストラリア  |
 |-----|-----|-----|-----|-----|-----|-----|
-|DAL01<br />          DAL05<br />DAL06<br />HOU02<br />SJC01<br />WDC01|SJC03<br />SJC04<br />WDC04<br />WDC06<br />WDC07<br />DAL09<br />DAL10<br />DAL12<br />DAL13|MEX01<br />        SAO01|TOR01<br />          MON01|AMS01<br />AMS03<br />FRA02<br />FRA04<br />FRA05<br />LON02<br />LON04<br />LON05<br />LON06<br />OSL01<br />PAR01<br />MIL01|HKG02<br />        TOK02<br />TOK04<br />TOK05<br />SNG01<br />SEO01<br />          CHE01|SYD01<br />        SYD04<br />          SYD05<br />          MEL01|
-{: caption="表 1 - この表には、拡張機能を備えているすべてのデータ・センターを地域別にリストしています。 地域ごとに列を分けています。 ダラス、サンホセ、ワシントン DC、アムステルダム、フランクフルト、ロンドン、シドニーなどのいくつかの都市には、複数のデータ・センターがあります。米国 1 地域のデータ・センターには、拡張ストレージがありません。拡張ストレージ機能を備えたデータ・センターのホストは、米国 1 のデータ・センター内をレプリカ・ターゲットとするレプリケーションを開始できません。" caption-side="top"}
+| DAL01<br />DAL05<br />DAL06<br />HOU02<br />SJC01<br />WDC01 | SJC03<br />SJC04<br />WDC04<br />WDC06<br />WDC07<br />DAL09<br />DAL10<br />DAL12<br />DAL13 | MEX01<br />SAO01 | TOR01<br />MON01 | AMS01<br />AMS03<br />FRA02<br />FRA04<br />FRA05<br />LON02<br />LON04<br />LON05<br />LON06<br />OSL01<br />PAR01<br />MIL01 | HKG02<br />TOK02<br />TOK04<br />TOK05<br />SNG01<br />SEO01<br />CHE01 | SYD01<br />SYD04<br />SYD05<br />MEL01 |
+{: caption="表 1 - この表には、拡張機能を備えているすべてのデータ・センターを地域別にリストしています。 地域ごとに列を分けています。 ダラス、サンホセ、ワシントン DC、アムステルダム、フランクフルト、ロンドン、シドニーなどのいくつかの都市には、複数のデータ・センターがあります。 米国 1 地域のデータ・センターには、拡張ストレージがありません。 拡張ストレージ機能を備えたデータ・センターのホストは、米国 1 のデータ・センター内をレプリカ・ターゲットとするレプリケーションを開始できません。" caption-side="top"}
 
 
 ## 初期レプリカの作成
 
-レプリケーションは、スナップショット・スケジュールに基づいて作動します。 レプリケーションを実行するには、その前にまずソース・ボリューム用のスナップショット・スペースとスナップショット・スケジュールを準備する必要があります。 レプリケーションをセットアップしようとして、そのいずれかが準備されていない場合には、より多くのスペースを購入するか、スケジュールをセットアップするようプロンプトが出されます。 レプリケーションは、[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}の**「ストレージ」 ** > **「{{site.data.keyword.filestorage_short}}」**で管理されます。
+レプリケーションは、スナップショット・スケジュールに基づいて作動します。 レプリケーションを実行するには、その前にまずソース・ボリューム用のスナップショット・スペースとスナップショット・スケジュールを準備する必要があります。 レプリケーションをセットアップしようとして、そのいずれかが準備されていない場合には、より多くのスペースを購入するか、スケジュールをセットアップするようプロンプトが出されます。 レプリケーションは、[{{site.data.keyword.cloud}} コンソール](https://{DomainName}/classic){: external}の**「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**で管理されます。
 
 1. ストレージ・ボリュームをクリックします。
 2. **「レプリカ」**をクリックし、**「レプリケーションの購入 (Purchase a replication)」**をクリックします。
@@ -60,7 +60,7 @@ subcollection: FileStorage
 
 ## 既存のレプリケーションの編集
 
-[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}の**「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**にある**「プライマリー」**タブまたは**「レプリカ」**タブで、レプリケーション・スケジュールを編集し、レプリケーション・スペースを変更できます。
+レプリケーション・スケジュールの編集とレプリケーション・スペースの変更は、[{{site.data.keyword.cloud}} コンソール](https://{DomainName}/classic){: external}の**「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**にある**「プライマリー」**タブまたは**「レプリカ」**タブで行えます。
 
 
 ## レプリケーション・スケジュールの編集

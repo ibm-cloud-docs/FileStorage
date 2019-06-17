@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
@@ -25,9 +25,7 @@ If a catastrophic failure or disaster causes an outage on the primary site, cust
 
 ## Fail over with a duplicate of a replica volume on the secondary site
 
-1. Log in to [The IBM Cloud console](https://{DomainName}/){: external} and click the **menu** icon on the upper left. Select **Classic Infrastructure**.
-
-   Alternatively, you can log in to the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
+1. Log in to [The {{site.data.keyword.cloud}} console](https://{DomainName}/){: external} and click the **menu** icon on the upper left. Select **Classic Infrastructure**.
 2. Click **Storage** > **{{site.data.keyword.filestorage_short}}**.
 3. Click the replica of the file share in the list to view its **Details** page.
 4. On the **Details** page, scroll down and select an existing snapshot, then click **Actions** > **Duplicate**.
@@ -41,9 +39,7 @@ As soon as the volume is created, you can attach it to a host and perform read/w
 
 If you want to return production to the original primary site, you must perform the following steps.
 
-1. Log in to [The IBM Cloud console](https://{DomainName}/){: external} and click the **menu** icon on the upper left. Select **Classic Infrastructure**.
-
-   Alternatively, you can log in to the [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
+1. Log in to [The {{site.data.keyword.cloud}} console](https://{DomainName}/){: external} and click the **menu** icon on the upper left. Select **Classic Infrastructure**.
 2. Click **Storage** > **{{site.data.keyword.filestorage_short}}**.
 3. Click the LUN name and create a snapshot schedule (if one does not exist already).
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, modify volume, NFS, file storage, expand capacity
 
@@ -44,7 +44,7 @@ subcollection: FileStorage
 ## ストレージのサイズ変更
 {: #resizingsteps}
 
-1. {{site.data.keyword.slportal}}で**「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**をクリックするか、{{site.data.keyword.cloud}} カタログで**「インフラストラクチャー」** > **「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**をクリックします。
+1. [{{site.data.keyword.cloud}} コンソール](https://{DomainName}/){: external}に移動します。メニューから**「クラシック・インフラストラクチャー」**を選択します。**「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**をクリックします。
 2. リストからボリュームを選択し、**「アクション」** > **「ボリュームの変更 (Modify Volume)」**をクリックします。
 3. 新しいストレージ・サイズを GB 単位で入力します。
 4. 選択内容と新しい価格を確認します。
