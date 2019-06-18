@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-18'"
 
 keywords: File Storage, file storage, NFS, security, encryption
 
@@ -39,7 +39,7 @@ All snapshots and replicas of encrypted file storage are also encrypted by defau
 
 ## Provisioning storage with encryption
 
-The provider-managed encryption-at-rest feature is available in select data centers. All storage that is ordered in these data centers is automatically provisioned with encryption for data-at-rest. Click [here](/docs/infrastructure/FileStorage?topic=FileStorage-news) to see the current list of data centers where {{site.data.keyword.filestorage_short}} encryption is available.
+The provider-managed encryption-at-rest feature is available in [select data centers](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC). All storage that is ordered in these data centers is automatically provisioned with encryption for data-at-rest.
 
 When you order {{site.data.keyword.filestorage_short}}, select a data center that is marked with an asterisk (`*`). You can see a lock icon to the right of the LUN/Volume Name field that indicates that the volume is encrypted. See Figure 1.
 

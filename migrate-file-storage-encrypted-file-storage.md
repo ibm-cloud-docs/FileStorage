@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, file storage, NFS, upgrade, migrate to new
 
@@ -18,7 +18,7 @@ subcollection: FileStorage
 # Migrating {{site.data.keyword.filestorage_short}} to enhanced {{site.data.keyword.filestorage_short}}
 {: #migratestorage}
 
-Enhanced {{site.data.keyword.filestorage_full}} is now available in select data centers. To see the list of upgraded data centers and available features such as adjustable IOPS rates and expandable volumes, click [here](/docs/infrastructure/FileStorage?topic=FileStorage-news). For more information about provider-managed encryption, see [{{site.data.keyword.filestorage_short}} Encryption-At-Rest](/docs/infrastructure/FileStorage?topic=FileStorage-encryption).
+Enhanced {{site.data.keyword.filestorage_full}} is now available in most [data centers](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
 
 The preferred migration path is to connect to both volumes simultaneously and traNFSer data directly from one LUN to another. The specifics depend on your operating system and whether the data is expected to change during the copy operation.
 

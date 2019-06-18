@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, modify volume, NFS, file storage, expand capacity
 
@@ -22,7 +22,7 @@ With this new feature, current users of {{site.data.keyword.filestorage_full}} a
 
 Billing for the volume is automatically updated to add the pro-rated difference of the new price to the current billing cycle. Then, the full new amount is billed in the next billing cycle.
 
-This feature is only available in [select data centers](/docs/infrastructure/FileStorage?topic=FileStorage-news).
+This feature is only available in [select data centers](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
 
 ## Advantages of Expandable Storage
 
@@ -37,7 +37,7 @@ Expand action on the primary storage results in automatic resizing of the replic
 ## Limitations
 {: #limitsofextension}
 
-This feature is only available for storage that is provisioned in [data centers](/docs/infrastructure/FileStorage?topic=FileStorage-news) with enhanced capabilities. Encrypted storage that is provisioned in these data centers can be increased up to 12 TB.
+This feature is only available for storage that is provisioned in [data centers](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC) with enhanced capabilities. Encrypted storage that is provisioned in these data centers can be increased up to 12 TB.
 
 Existing size limitations for {{site.data.keyword.filestorage_short}} that was provisioned with Endurance still apply (up to 4 TB for 10 IOPS tier and up to 12 TB for all other tiers).
 
