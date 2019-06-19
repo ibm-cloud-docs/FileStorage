@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, duplicate volume
 
@@ -39,13 +39,13 @@ subcollection: FileStorage
 - **开发和测试（开发/测试）**。一次最多可同时创建卷的 4 个复制项，以创建重复数据用于开发和测试。
 - **存储器大小调整**。创建具有新大小和/或 IOPS 速率的卷，而无需移动数据。  
 
-您可以采用多种方式通过 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 来创建复制卷。
+您可以采用多种方式通过 [{{site.data.keyword.cloud}} 控制台](https://{DomainName}/){: external}来创建复制卷。
 
 
 ## 基于存储器列表中的特定卷创建复制项
 
 1. 转至 {{site.data.keyword.filestorage_short}} 的列表。
-    - 在客户门户网站中，单击**存储** > **{{site.data.keyword.filestorage_short}}** 或
+    - 在“经典基础架构”菜单中，单击**存储** > **{{site.data.keyword.filestorage_short}}** 或
     - 在 {{site.data.keyword.cloud}}“目录”中，单击**基础架构** > **存储** > **{{site.data.keyword.filestorage_short}}**。
 2. 从列表中选择 LUN，然后单击**操作** > **复制 LUN（卷）**。
 3. 选择快照选项。

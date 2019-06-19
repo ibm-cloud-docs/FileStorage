@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, authorizing hosts, rewoke access, grant access, view authorizations
 
@@ -19,7 +19,7 @@ subcollection: FileStorage
 # 管理 {{site.data.keyword.filestorage_short}}
 {: #managingstorage}
 
-您可以通过 {{site.data.keyword.slportal}} 管理 {{site.data.keyword.filestorage_full}} 卷。
+您可以通过 {{site.data.keyword.cloud}} 控制台管理 {{site.data.keyword.filestorage_full}} 卷。
 
 ## 授权主机访问 {{site.data.keyword.filestorage_short}}
 
@@ -28,9 +28,10 @@ subcollection: FileStorage
 您可以授权和连接与存储器位于同一数据中心的主机。您可以有多个帐户，但不能授权一个帐户中的主机来访问其他帐户上的存储器。
 {:important}
 
-1. 单击**存储** > **{{site.data.keyword.filestorage_short}}**，然后单击**卷名**。
-2. 滚动到页面的**已授权主机**部分。
-3. 单击右侧的**授权主机**。选择可以访问该特定卷的主机。
+1. 转至 [{{site.data.keyword.cloud}} 控制台](https://{DomainName}/){: external}。在菜单中，选择**经典基础架构**。
+2. 单击**存储** > **{{site.data.keyword.filestorage_short}}**，然后单击**卷名**。
+3. 滚动到页面的**已授权主机**部分。
+4. 单击右侧的**授权主机**。选择可以访问该特定卷的主机。
 
 或者，您可以在 SLCLI 中使用以下命令。
 ```
@@ -38,20 +39,19 @@ subcollection: FileStorage
 Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
 
   Options:
-  -h, --hardware-id TEXT    The id of one SoftLayer_Hardware to authorize
-  -v, --virtual-id TEXT     The id of one SoftLayer_Virtual_Guest to authorize
-  -i, --ip-address-id TEXT  The id of one SoftLayer_Network_Subnet_IpAddress
-                            to authorize
-  --ip-address TEXT         An IP address to authorize
-  -s, --subnet-id TEXT      The id of one SoftLayer_Network_Subnet to
-                            authorize
+  -h, --hardware-id TEXT    The ID of one hardware server to authorize.
+  -v, --virtual-id TEXT     The ID of one virtual server to authorize.
+  -i, --ip-address-id TEXT  The ID of one IP address to authorize.
+  -p, --ip-address TEXT     An IP address to authorize.
+  -s, --subnet-id TEXT      An ID of one subnet to authorize.
   --help                    Show this message and exit.
 ```
 
 ## 查看授权访问 {{site.data.keyword.filestorage_short}} 卷的主机的列表
 
-1. 单击**存储 > {{site.data.keyword.filestorage_short}}**，然后单击**卷名**。
-2. 向下滚动到页面的**已授权主机**部分。
+1. 转至 [{{site.data.keyword.cloud}} 控制台](https://{DomainName}/){: external}。在菜单中，选择**经典基础架构**。
+2. 单击**存储** > **{{site.data.keyword.filestorage_short}}**，然后单击**卷名**。
+3. 向下滚动到页面的**已授权主机**部分。
 
 在此，您可以看到当前已授权访问该卷的主机的列表。
 
@@ -73,9 +73,11 @@ Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
 
 可以查看主机有权访问的卷，包括建立连接所需的信息 - 卷名、存储类型、目标地址、容量和位置。
 
-1. 在 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 中单击**设备** > **设备列表**。
-2. 单击相应的设备。
-2. 选择“存储”选项卡。
+1. 转至 [{{site.data.keyword.cloud}} 控制台](https://{DomainName}/){: external}
+2. 在菜单中，选择**经典基础架构**。
+3. 单击**设备** > **设备列表**。
+4. 单击相应的设备。
+5. 选择“存储”选项卡。
 
 这将向您显示此特定主机有权访问的存储卷的列表，全部按存储类型（块、文件或其他）进行分组。通过相应的**操作**菜单，可以授权更多存储器访问权或除去访问权。
 
@@ -96,7 +98,9 @@ Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
 
 ### 通过设备列表撤销访问权
 
-1. 在 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 中单击**设备** > **设备列表**。
+1. 转至 [{{site.data.keyword.cloud}} 控制台](https://{DomainName}/){: external}。
+2. 在菜单中，选择**经典基础架构**。
+3. 单击**设备** > **设备列表**。
 2. 双击相应的设备。
 3. 选择**存储**选项卡。
 4. 这将向您显示此特定主机有权访问的存储卷的列表，全部按存储类型（块、文件或其他）进行分组。选择要从中撤销访问权的卷旁边的相应**操作**菜单，然后单击**撤销访问权**。
@@ -108,42 +112,45 @@ Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
 
 ### 通过存储视图撤销访问权
 
-1. 单击**存储 > {{site.data.keyword.filestorage_short}}**，然后选择要从中撤销访问权的**卷**。
-2. 滚动到页面的**已授权主机**部分。
-3. 单击要撤销其访问权的主机旁边的**操作**，然后选择**撤销访问权**。
-4. 确认是否要撤销对卷的访问权，因为该操作无法撤销。单击**是**以撤销卷访问权，或单击**否**以取消该操作。
+1. 转至 [{{site.data.keyword.cloud}} 控制台](https://{DomainName}/){: external}。
+2. 在菜单中，选择**经典基础架构**。
+3. 单击**存储** > **{{site.data.keyword.filestorage_short}}**，然后选择要从中撤销访问权的**卷**。
+4. 滚动到页面的**已授权主机**部分。
+5. 单击要撤销其访问权的主机旁边的**操作**，然后选择**撤销访问权**。
+6. 确认是否要撤销对卷的访问权，因为该操作无法撤销。单击**是**以撤销卷访问权，或单击**否**以取消该操作。
 
 如果要断开一个特定卷与多个主机的连接，需要对每个主机重复“撤销访问权”操作。
 {:tip}
 
 ### 通过 SLCLI 撤销访问权。
-或者，您可以在 SLCLI 中使用以下命令。
+您可以在 SLCLI 中使用以下命令。
 ```
 # slcli file access-revoke --help
-用法：slcli file access-revoke [OPTIONS] VOLUME_ID
+Usage: slcli file access-revoke [OPTIONS] VOLUME_ID
 
-选项：
-  -h, --hardware-id TEXT    要撤销授权的某个 SoftLayer_Hardware 的标识
-  -v, --virtual-id TEXT     要撤销授权的某个 SoftLayer_Virtual_Guest 的标识
-  -i, --ip-address-id TEXT  要撤销授权的某个 SoftLayer_Network_Subnet_IpAddress 的标识
-  --ip-address TEXT         要撤销授权的某个 IP 地址
-  -s, --subnet-id TEXT      要撤销授权的某个 SoftLayer_Network_Subnet 的标识
-  --help                    显示此消息并退出。
+Options:
+  -h, --hardware-id TEXT    The ID of one hardware server to revoke authorization.
+  -v, --virtual-id TEXT     The ID of one virtual server to revoke authorization.
+  -i, --ip-address-id TEXT  The ID of one IP address to revoke authorization.
+  -p, --ip-address TEXT     An IP address to revoke authorization.
+  -s, --subnet-id TEXT      An ID of one subnet to revoke authorization.
+  --help                    Show this message and exit.
 ```
 
 ## 取消存储卷
 
 如果不再需要特定卷，可以取消该存储器。要取消存储卷，首先需要撤销所有主机对该卷的访问权。
 
-1. 单击**存储** > **{{site.data.keyword.filestorage_short}}**。
-2. 单击要取消的卷的**操作**，然后选择**取消 {{site.data.keyword.filestorage_short}}**。
-3. 确认是要立即取消卷，还是在供应卷的周年日期取消。
+1. 转至 [{{site.data.keyword.cloud}} 控制台](https://{DomainName}/){: external}。在菜单中，选择**经典基础架构**。
+2. 单击**存储** > **{{site.data.keyword.filestorage_short}}**。
+3. 单击要取消的卷的**操作**，然后选择**取消 {{site.data.keyword.filestorage_short}}**。
+4. 确认是要立即取消卷，还是在供应卷的周年日期取消。
 
    如果选择在卷的周年日期取消卷的选项，那么可以在卷的周年日期之前使取消请求失效。
    {:tip}
-4. 单击**继续**或**关闭**。
+5. 单击**继续**或**关闭**。
 
-5. 单击“确认”复选框，然后单击**确认**。
+6. 单击“确认”复选框，然后单击**确认**。
 
 或者，您可以在 SLCLI 中使用以下命令。
 ```

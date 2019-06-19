@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, provisioning, ordering,
 
@@ -29,9 +29,7 @@ subcollection: FileStorage
 ## 订购具有预定义 IOPS 层（耐久性）的 {{site.data.keyword.filestorage_short}}
 {: #endurance}
 
-1. 登录到 [IBM Cloud 目录](https://{DomainName}/catalog){: external}，然后单击**存储**。然后，选择 {{site.data.keyword.filestorage_short}}。单击**创建**。
-
-   或者，您可以登录 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}，然后单击**存储** > **{{site.data.keyword.filestorage_short}}**。单击右上角的**订购 {{site.data.keyword.filestorage_short}}**。
+1. 登录到 [{{site.data.keyword.cloud}} 目录](https://{DomainName}/catalog){: external}，然后单击**存储**。然后，选择 {{site.data.keyword.filestorage_short}}。单击**创建**。
 2. 选择部署**位置**（数据中心）。
    - 确保将新存储器添加到您拥有的计算主机所在位置。
 3. 计费。如果选择了具有改进功能的数据中心（标记有星号），那么可以选择“按月计费”或“按小时计费”。
@@ -55,15 +53,13 @@ subcollection: FileStorage
 9. 阅读条款和条件后，选中**我已阅读并同意第三方服务协议**复选框。
 10. 单击**创建**。新的存储器分配会在几分钟后可用。
 
-缺省情况下，总共可以供应 250 个 {{site.data.keyword.blockstorageshort}} 卷。要增加卷的数量，请联系销售代表。请阅读[此处](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits)以了解有关增大限制的信息。<br/><br/>有关同时授权限制的更多信息，请参阅[常见问题](/docs/infrastructure/FileStorage?topic=FileStorage-faqs#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-)。
+缺省情况下，总共可以供应 250 个 {{site.data.keyword.blockstorageshort}} 卷。要增加卷的数量，请联系销售代表。请阅读[此处](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits)以了解有关增大限制的信息。<br/><br/>有关同时授权限制的更多信息，请参阅[常见问题](/docs/infrastructure/FileStorage?topic=file-storage-faqs#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-)。
 {:tip}
 
 ## 订购具有定制 IOPS（性能）的 {{site.data.keyword.filestorage_short}}
 {: #performance}
 
-1. 登录到 [IBM Cloud 目录](https://{DomainName}/catalog){: external}，然后单击**存储**。然后，选择 {{site.data.keyword.filestorage_short}}。单击**创建**。
-
-   或者，您可以登录 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}，然后单击**存储** > **{{site.data.keyword.filestorage_short}}**。单击右上角的**订购 {{site.data.keyword.filestorage_short}}**。
+1. 登录到 [{{site.data.keyword.cloud}} 目录](https://{DomainName}/catalog){: external}，然后单击**存储**。然后，选择 {{site.data.keyword.filestorage_short}}。单击**创建**。
 2. 单击**位置**，然后选择数据中心。
    - 确保将新存储器添加到您拥有的计算主机所在位置。
 3. 计费。如果选择了具有改进功能的数据中心（标记有星号），那么可以选择“按月计费”或“按小时计费”。
@@ -83,7 +79,7 @@ subcollection: FileStorage
 9. 阅读条款和条件后，选中**我已阅读并同意第三方服务协议**复选框。
 10. 单击**创建**。新的存储器分配会在几分钟后可用。
 
-缺省情况下，总共可以供应 250 个 {{site.data.keyword.blockstorageshort}} 卷。要增加卷的数量，请联系销售代表。请阅读[此处](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits)以了解有关增大限制的信息。<br/><br/>有关同时授权限制的更多信息，请参阅[常见问题](/docs/infrastructure/FileStorage?topic=FileStorage-faqs#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-)。
+缺省情况下，总共可以供应 250 个 {{site.data.keyword.blockstorageshort}} 卷。要增加卷的数量，请联系销售代表。请阅读[此处](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits)以了解有关增大限制的信息。<br/><br/>有关同时授权限制的更多信息，请参阅[常见问题](/docs/infrastructure/FileStorage?topic=file-storage-faqs#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-)。
 {:important}
 
 

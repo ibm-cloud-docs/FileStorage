@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, snapshot, ordering snapshot, snapshot space
 
@@ -50,18 +50,17 @@ subcollection: FileStorage
 
 ## 通过 {{site.data.keyword.cloud_notm}} 控制台来订购快照空间
 
-1. 登录到 [IBM Cloud 控制台](https://{DomainName}/){: external}，然后单击左上角的菜单图标。选择**经典基础架构**。
-
-   或者，可以登录到 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}。
-2. 通过**存储** > **{{site.data.keyword.filestorage_short}}**，访问您的存储器。
-3. 单击“快照”框架上的**更改快照空间**。
-4. 选择所需的空间量和付款方式。
-5. 单击**继续**。
-6. 输入您拥有的任何促销码，然后单击**重新计算**。**此订单的费用**和**订单复查**将具有缺省值。
+1. 登录到 [{{site.data.keyword.cloud}} 控制台](https://{DomainName}/){: external}，然后单击左上角的菜单图标。
+2. 选择**经典基础架构**。
+3. 通过**存储** > **{{site.data.keyword.filestorage_short}}**，访问您的存储器。
+4. 单击“快照”框架上的**更改快照空间**。
+5. 选择所需的空间量和付款方式。
+6. 单击**继续**。
+7. 输入您拥有的任何促销码，然后单击**重新计算**。**此订单的费用**和**订单复查**将具有缺省值。
 
    处理订单时会应用折扣。
    {:note}
-7. 选中**我已阅读主服务协议并同意其中的条款**框，然后单击**下订单**。快照空间将在几分钟后供应。
+8. 选中**我已阅读主服务协议并同意其中的条款**框，然后单击**下订单**。快照空间将在几分钟后供应。
 
 ## 通过 SLCLI 来订购快照空间
 

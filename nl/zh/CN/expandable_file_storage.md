@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, modify volume, NFS, file storage, expand capacity
 
@@ -44,7 +44,7 @@ subcollection: FileStorage
 ## 调整存储器大小
 {: #resizingsteps}
 
-1. 在 {{site.data.keyword.slportal}} 中，单击**存储** > **{{site.data.keyword.filestorage_short}}**，或者在 {{site.data.keyword.cloud}}“目录”中，单击**基础架构** > **存储** > **{{site.data.keyword.filestorage_short}}**。
+1. 转至 [{{site.data.keyword.cloud}} 控制台](https://{DomainName}/){: external}。在菜单中，选择**经典基础架构**。单击**存储** > **{{site.data.keyword.filestorage_short}}**。
 2. 从列表中选择卷，然后单击**操作** > **修改卷**。
 3. 输入新的存储器大小（以 GB 为单位）。
 4. 复查您的选择和新的定价。

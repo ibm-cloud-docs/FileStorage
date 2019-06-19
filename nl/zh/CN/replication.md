@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-03-11"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, replication, duplication, synchronous, replica schedule, replica space, disaster recovery
 
@@ -40,7 +40,7 @@ subcollection: FileStorage
 
 ## 创建初始副本
 
-复制将根据快照安排来执行。必须先有可用于源卷的快照空间和快照安排，然后才能进行复制。如果尝试设置复制，但未设置源卷的快照空间或快照安排，那么系统将提示您购买更多空间或设置安排。在 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 中的**存储** > **{{site.data.keyword.filestorage_short}}** 下管理复制。
+复制将根据快照安排来执行。必须先有可用于源卷的快照空间和快照安排，然后才能进行复制。如果尝试设置复制，但未设置源卷的快照空间或快照安排，那么系统将提示您购买更多空间或设置安排。在 [{{site.data.keyword.cloud}} 控制台](https://{DomainName}/classic){: external}中的**存储** > **{{site.data.keyword.filestorage_short}}** 下管理复制。
 
 1. 单击存储卷。
 2. 单击**副本**，然后单击**购买复制**。
@@ -59,7 +59,7 @@ subcollection: FileStorage
 
 ## 编辑现有复制
 
-在 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 中**存储** > **{{site.data.keyword.filestorage_short}}** 下的**主**或**副本**选项卡中，可以编辑复制安排和更改复制空间。
+在 [{{site.data.keyword.cloud}} 控制台](https://{DomainName}/classic){: external}中**存储** > **{{site.data.keyword.filestorage_short}}** 下的**主**或**副本**选项卡中，可以编辑复制安排和更改复制空间。
 
 
 ## 编辑复制安排

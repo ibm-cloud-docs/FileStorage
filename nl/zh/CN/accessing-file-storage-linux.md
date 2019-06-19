@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-05-06"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, NSF, mounting File Storage, mounting storage on Linux,
 
@@ -18,7 +18,7 @@ subcollection: FileStorage
 # 在 Linux 上安装 {{site.data.keyword.filestorage_short}}
 {: #mountingLinux}
 
-首先，请确保已通过 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 对要访问 {{site.data.keyword.filestorage_full}} 卷的主机授权。
+首先，请确保已通过 [{{site.data.keyword.cloud}} 控制台](https://{DomainName}/classic){: external}对要访问 {{site.data.keyword.filestorage_full}} 卷的主机授权。
 
 1. 在 {{site.data.keyword.filestorage_short}} 列表页面中，单击与新共享关联的**操作**链接，然后单击**授权主机**。
 2. 从列表中选择一个或多个主机，然后单击**提交**。此操作将授权主机访问共享。
@@ -29,13 +29,11 @@ subcollection: FileStorage
 Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
 
   Options:
-  -h, --hardware-id TEXT    The id of one SoftLayer_Hardware to authorize
-  -v, --virtual-id TEXT     The id of one SoftLayer_Virtual_Guest to authorize
-  -i, --ip-address-id TEXT  The id of one SoftLayer_Network_Subnet_IpAddress
-                            to authorize
-  --ip-address TEXT         An IP address to authorize
-  -s, --subnet-id TEXT      The id of one SoftLayer_Network_Subnet to
-                            authorize
+  -h, --hardware-id TEXT    The ID of one hardware server to authorize.
+  -v, --virtual-id TEXT     The ID of one virtual server to authorize.
+  -i, --ip-address-id TEXT  The ID of one IP address to authorize.
+  -p, --ip-address TEXT     An IP address to authorize.
+  -s, --subnet-id TEXT      An ID of one subnet to authorize.
   --help                    Show this message and exit.
 ```
 

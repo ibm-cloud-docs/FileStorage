@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
@@ -73,11 +73,11 @@ VMware vSphere on network-attached storage](https://www.vmware.com/content/dam/d
 
 ### 使用快照
 
-通过 {{site.data.keyword.filestorage_short}}，管理员可以为每个存储卷设置快照安排，以自动创建和删除快照副本。管理员还可以创建额外的快照安排（每小时、每天和每周）来自动生成快照，也可以为业务连续性和灾难恢复 (BCDR) 方案手动创建特别快照。有关保留的快照和使用的空间的自动警报通过 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 传递给卷所有者。
+通过 {{site.data.keyword.filestorage_short}}，管理员可以为每个存储卷设置快照安排，以自动创建和删除快照副本。管理员还可以创建额外的快照安排（每小时、每天和每周）来自动生成快照，也可以为业务连续性和灾难恢复 (BCDR) 方案手动创建特别快照。有关保留的快照和使用的空间的自动警报通过 [{{site.data.keyword.cloud}} 控制台](https://{DomainName}/){: external}传递给卷所有者。
 
 需要快照空间才能使用快照。可以在初始卷订购期间购买空间，也可以在初始供应后通过在**卷详细信息**页面上单击**操作**并选择**添加快照空间**来购买空间。
 
-值得注意的是，VMware 环境并不知道快照。{{site.data.keyword.filestorage_short}} 快照功能不能与 VMware 快照相混淆。使用 {{site.data.keyword.filestorage_short}} 快照功能的任何恢复都必须在 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 中进行处理。
+值得注意的是，VMware 环境并不知道快照。{{site.data.keyword.filestorage_short}} 快照功能不应与 VMware 快照混淆。使用 {{site.data.keyword.filestorage_short}} 快照功能的任何恢复都必须在 [{{site.data.keyword.cloud}} 控制台](https://{DomainName}/){: external}中进行处理。
 
 复原 {{site.data.keyword.filestorage_short}} 卷需要关闭 {{site.data.keyword.filestorage_short}} 上所有 VM 的电源。需要暂时从 ESXi 主机卸装该卷，以避免执行该过程期间发生任何数据损坏。
 
@@ -112,9 +112,9 @@ VMware vSphere on network-attached storage](https://www.vmware.com/content/dam/d
 
 使用[高级单站点 VMware 参考体系结构](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){: external}在 VMware 环境中通过“耐久性”或“性能”选项来设置 {{site.data.keyword.filestorage_short}}。
 
-可通过 [IBM Cloud 目录](https://{DomainName}/catalog){: external}或 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 订购 {{site.data.keyword.filestorage_short}}。有关更多信息，请参阅[订购 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)。
+可通过 [{{site.data.keyword.cloud}} 目录](https://{DomainName}/catalog){: external}或 CLI 订购 {{site.data.keyword.filestorage_short}}。有关更多信息，请参阅[订购 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)。
 
-存储器将在不到一分钟的时间内进行供应，并会显示在 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 的 **{{site.data.keyword.filestorage_short}}** 页面上。
+存储器将在不到一分钟的时间内进行供应，并会显示在 [{{site.data.keyword.cloud}} 控制台](https://{DomainName}/classic){: external}的 **{{site.data.keyword.filestorage_short}}** 页面上。
 
 供应了卷后，必须授权将使用该卷的 {{site.data.keyword.BluBareMetServers_full}} 或 {{site.data.keyword.BluVirtServers_full}} 来访问该存储器。使用以下步骤来授权该卷。
 
