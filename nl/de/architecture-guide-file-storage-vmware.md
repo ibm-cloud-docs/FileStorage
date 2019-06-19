@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
@@ -73,11 +73,11 @@ von VMware vSphere unter Network-attached Storage (https://www.vmware.com/conten
 
 ### Snapshots verwenden
 
-{{site.data.keyword.filestorage_short}} gibt Administratoren die Möglichkeit, Snapshotpläne festzulegen, durch die Snapshotkopien für jeden Speicherdatenträger automatisch erstellt und gelöscht werden. Sie können darüber hinaus zusätzliche Snapshotpläne (stündlich, täglich, wöchentlich) für automatische Snapshots erstellen und manuell Ad-hoc-Snapshots für BCDR-Szenarios (BCDR – Business-Continuity/Disaster Recovery) erstellen. Automatische Alerts werden über das [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} an den Datenträgereigner in Bezug auf die aufbewahrten Snapshots und den belegten Speicherplatz zugestellt.
+{{site.data.keyword.filestorage_short}} gibt Administratoren die Möglichkeit, Snapshotpläne festzulegen, durch die Snapshotkopien für jeden Speicherdatenträger automatisch erstellt und gelöscht werden. Sie können darüber hinaus zusätzliche Snapshotpläne (stündlich, täglich, wöchentlich) für automatische Snapshots erstellen und manuell Ad-hoc-Snapshots für BCDR-Szenarios (BCDR – Business-Continuity/Disaster Recovery) erstellen. Automatische Alerts werden über die [{{site.data.keyword.cloud}}-Konsole](https://{DomainName}/){: external} an den Datenträgereigner in Bezug auf die aufbewahrten Snapshots und den belegten Speicherplatz zugestellt.
 
 Zur Verwendung von Snapshots ist ein Snapshotbereich erforderlich. Der Speicherbereich kann bei der ersten Datenträgerbestellung oder nach der Erstbereitstellung über die Seite **Datenträgerdetails** durch Klicken auf **Aktionen** und Auswählen der Option **Snapshotbereich hinzufügen** gekauft werden.
 
-Es ist wichtig zu beachten, dass VMware-Umgebungen Snapshots nicht erkennen. Die {{site.data.keyword.filestorage_short}}-Snapshotfunktionalität darf nicht mit VMware-Snapshots verwechselt werden. Jede Wiederherstellung mithilfe der {{site.data.keyword.filestorage_short}}-Snapshotfunktion muss über das [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} durchgeführt werden.
+Es ist wichtig zu beachten, dass VMware-Umgebungen Snapshots nicht erkennen. Die {{site.data.keyword.filestorage_short}}-Snapshotfunktionalität darf nicht mit VMware-Snapshots verwechselt werden. Jede Wiederherstellung mithilfe der {{site.data.keyword.filestorage_short}}-Snapshotfunktion muss über die [{{site.data.keyword.cloud}}-Konsole](https://{DomainName}/){: external} durchgeführt werden.
 
 Zur Wiederherstellung des {{site.data.keyword.filestorage_short}}-Datenträgers ist es erforderlich, alle VMs auf {{site.data.keyword.filestorage_short}} auszuschalten. Der Datenträger muss vorübergehend von den ESXi-Hosts abgehängt werden, um eine Beschädigung von Daten während des Prozesses zu vermeiden.
 
@@ -112,9 +112,9 @@ Ungültige Daten, seien es beschädigte, gehackte oder infizierte, werden dem Sn
 
 Verwenden Sie die [Advanced Single-Site VMware Reference Architecture](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){: external}, um {{site.data.keyword.filestorage_short}} mit Endurance- oder Performance-Optionen in Ihrer VMware-Umgebung einzurichten.
 
-{{site.data.keyword.filestorage_short}} kann über den [IBM Cloud-Katalog](https://{DomainName}/catalog){: external} oder das [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} bestellt werden. Weitere Informationen finden Sie unter [ bestellen{{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole).
+{{site.data.keyword.filestorage_short}} kann über den [The {{site.data.keyword.cloud}}-Katalog](https://{DomainName}/catalog){: external} oder die Befehlszeilenschnittstelle bestellt werden. Weitere Informationen finden Sie in [{{site.data.keyword.filestorage_short}} bestellen](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole) .
 
-Der Speicher wird in weniger als einer Minute bereitgestellt und wird auf der **{{site.data.keyword.filestorage_short}}**-Seite des [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}s angezeigt.
+Der Speicher wird in weniger als einer Minute bereitgestellt und wird auf der Seite **{{site.data.keyword.filestorage_short}}** der [{{site.data.keyword.cloud}}-Konsole](https://{DomainName}/classic){: external} angezeigt.
 
 Wenn ein Datenträger bereitgestellt wird, müssen {{site.data.keyword.BluBareMetServers_full}} oder {{site.data.keyword.BluVirtServers_full}}, die den Datenträger verwenden sollen, für den Zugriff auf den Speicher autorisiert werden. Führen Sie die folgenden Schritte aus, um den Datenträger zu autorisieren.
 
@@ -178,7 +178,7 @@ Weitere Informationen zu VMware- und Jumbo-Frames finden Sie [hier](https://kb.v
 
 1. Konfigurieren Sie einen neuen Uplink-Adapter, indem Sie zur Registerkarte **ESXi host Manage** wechseln und die Optionen **Manage** und **Networking** auswählen.
 2. Wählen Sie die Registerkarte **Physical adapters** (Physische Adapter) aus.
-3. Klicken Sie auf die Option 
+3. Klicken Sie auf die Option
 4. Wählen Sie für den Verbindungstyp die Option **Physical Network Adapter** (Physischer Netzadapter) und klicken Sie auf **Next** (Weiter).
 5. Wählen Sie den vorhandenen **vSwitch** aus und klicken Sie auf **Next**.
 6. Wählen Sie **Unused adapters** (Nicht verwendete Adapter) aus und klicken Sie auf **Add adapters** (Adapter hinzufügen - Pluszeichen).

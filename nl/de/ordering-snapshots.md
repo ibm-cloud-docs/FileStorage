@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, snapshot, ordering snapshot, snapshot space
 
@@ -50,18 +50,17 @@ Außerdem gilt bei den meisten Workloads, das umso weniger Speicherplatz anfangs
 
 ## Snapshotbereich über die {{site.data.keyword.cloud_notm}}-Konsole bestellen
 
-1. Melden Sie sich an der [The IBM Cloud-Konsole](https://{DomainName}/){: external} an und klicken Sie oben links auf das Menüsymbol. Wählen Sie **Klassische Infrastruktur** aus.
-
-   Alternativ können Sie sich beim [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} anmelden.
-2. Greifen Sie über **Speicher** > **{{site.data.keyword.filestorage_short}}** auf Ihren Speicher zu.
-3. Klicken Sie im Rahmen 'Snapshots' auf die Option zum Ändern des Snapshotbereichs.
-4. Wählen Sie die Menge an benötigtem Speicherplatz und die Zahlungsmethode aus.
-5. Klicken Sie auf **Weiter**.
-6. Geben Sie gegebenenfalls den Werbeaktionscode ein und klicken Sie auf **Neu berechnen**. Die Felder **Gebühren für diese Bestellung** und **Bestellprüfung** enthalten Standardwerte.
+1. Melden Sie sich bei der [{{site.data.keyword.cloud}}-Konsole](https://{DomainName}/){: external} an und klicken Sie auf das Menüsymbol links oben.
+2. Wählen Sie **Klassische Infrastruktur** aus.
+3. Greifen Sie über **Speicher** > **{{site.data.keyword.filestorage_short}}** auf Ihren Speicher zu.
+4. Klicken Sie im Rahmen 'Snapshots' auf die Option zum Ändern des Snapshotbereichs.
+5. Wählen Sie die Menge an benötigtem Speicherplatz und die Zahlungsmethode aus.
+6. Klicken Sie auf **Weiter**.
+7. Geben Sie gegebenenfalls den Werbeaktionscode ein und klicken Sie auf **Neu berechnen**. Die Felder **Gebühren für diese Bestellung** und **Bestellprüfung** enthalten Standardwerte.
 
    Rabatte werden bei der Verarbeitung der Bestellung angewendet.
    {:note}
-7. Wählen Sie das Kontrollkästchen **Ich habe die Rahmenvereinbarung gelesen und bin mit den darin genannten Bedingungen einverstanden** aus und klicken Sie auf **Auftrag erteilen**. Der Snapshotbereich wird in wenigen Minuten bereitgestellt.
+8. Wählen Sie das Kontrollkästchen **Ich habe die Rahmenvereinbarung gelesen und bin mit den darin genannten Bedingungen einverstanden** aus und klicken Sie auf **Auftrag erteilen**. Der Snapshotbereich wird in wenigen Minuten bereitgestellt.
 
 ## Snapshotbereich über die SLCLI bestellen
 

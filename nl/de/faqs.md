@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-03-26"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
@@ -34,12 +34,12 @@ Zeigen Sie die Liste Ihrer {{site.data.keyword.filestorage_short}}-Instanzen im 
 
 Im {{site.data.keyword.filestorage_short}}-Bestellformular sind alle aktualisierten Rechenzentren mit einem Stern (`*`) gekennzeichnet. Während des Bestellablaufs erhalten Sie eine Meldung des Inhalts, dass Sie Speicher mit Verschlüsselung erwerben. Wird der Speicher bereitgestellt, gibt ein Symbol in der Speicherliste an, dass der Datenträger verschlüsselt ist.
 
-Alle verschlüsselten Datenträger und gemeinsam genutzten Dateispeicher werden nur in aktualisierten Rechenzentren bereitgestellt. Eine vollständige Liste der aktualisierten Rechenzentren und der verfügbaren Features finden Sie [hier](/docs/infrastructure/FileStorage?topic=FileStorage-news).
+Alle verschlüsselten Datenträger und gemeinsam genutzten Dateispeicher werden nur in aktualisierten Rechenzentren bereitgestellt. Eine vollständige Liste der aktualisierten Rechenzentren und der verfügbaren Features finden Sie [hier](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
 
 ## Warum kann {{site.data.keyword.filestorage_short}} mit einer Endurance-Stufe von 10 IOPS in einigen Rechenzentren bereitgestellt werden, in anderen jedoch nicht?
 {: faq}
 
-Der {{site.data.keyword.filestorage_short}}-Typ Endurance mit der 10 IOPS/GB-Stufe ist nur in ausgewählten Rechenzentren verfügbar. Weitere Rechenzentren werden in Kürze hinzugefügt. Eine vollständige Liste der aktualisierten Rechenzentren und der verfügbaren Features finden Sie [hier](/docs/infrastructure/FileStorage?topic=FileStorage-news).
+Der {{site.data.keyword.filestorage_short}}-Typ Endurance mit der 10 IOPS/GB-Stufe ist nur in ausgewählten Rechenzentren verfügbar. Weitere Rechenzentren werden in Kürze hinzugefügt. Eine vollständige Liste der aktualisierten Rechenzentren und der verfügbaren Features finden Sie [hier](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
 
 ## Wie wird der richtige Mountpunkt für den eigenen {{site.data.keyword.filestorage_short}}-Speicher ermittelt?
 {: faq}

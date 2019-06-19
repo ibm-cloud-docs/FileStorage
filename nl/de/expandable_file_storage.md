@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, modify volume, NFS, file storage, expand capacity
 
@@ -22,7 +22,7 @@ Mit diesem neuen Feature können aktuelle Benutzer von {{site.data.keyword.files
 
 Die Abrechnung für den Datenträger wird automatisch aktualisiert, um die anteilmäßige Differenz des neuen Preises in den laufenden Rechnungsstellungszyklus einzuarbeiten. Anschließend wird der neue Betrag vollständig im nächsten Rechnungsstellungszyklus in Rechnung gestellt.
 
-Diese Funktion ist nur in [ausgewählten Rechenzentren](/docs/infrastructure/FileStorage?topic=FileStorage-news) verfügbar.
+Diese Funktion ist nur in [ausgewählten Rechenzentren](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC) verfügbar.
 
 ## Vorteile des erweiterbaren Speichers
 
@@ -37,14 +37,14 @@ Die Erweiterungsaktion für den primären Speicher hat automatisch eine Größen
 ## Beschränkungen
 {: #limitsofextension}
 
-Dieses Feature ist nur für Speicher verfügbar, der in [Rechenzentren](/docs/infrastructure/FileStorage?topic=FileStorage-news) mit erweiterter Funktionalität bereitgestellt wird. Verschlüsselter Speicher, der in diesen Rechenzentren bereitgestellt wird, kann auf bis zu 12 TB vergrößert werden.
+Dieses Feature ist nur für Speicher verfügbar, der in [Rechenzentren](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC) mit erweiterter Funktionalität bereitgestellt wird. Verschlüsselter Speicher, der in diesen Rechenzentren bereitgestellt wird, kann auf bis zu 12 TB vergrößert werden.
 
 Die bestehenden Größenbegrenzungen für {{site.data.keyword.filestorage_short}}-Speicher, der mit Endurance bereitgestellt wurde, gelten weiterhin (d. h. bis zu 4 TB für die 10-IOPS-Stufe und bis zu 12 TB für alle anderen Stufen).
 
 ## Größe des Speichers ändern
 {: #resizingsteps}
 
-1. Klicken Sie im {{site.data.keyword.slportal}} auf **Speicher** > **{{site.data.keyword.filestorage_short}}** oder im Katalog von {{site.data.keyword.cloud}} auf **Infrastruktur** > **Speicher** > **{{site.data.keyword.filestorage_short}}**.
+1. Rufen Sie die [{{site.data.keyword.cloud}}-Konsole](https://{DomainName}/){: external} auf. Wählen Sie im Menü **Klassische Infrastruktur** aus. Klicken Sie auf **Speicher** > **{{site.data.keyword.filestorage_short}}**.
 2. Wählen Sie den Datenträger in der Liste aus und klicken Sie auf **Aktionen** > **Datenträger ändern**.
 3. Geben Sie die neue Speichergröße in GB ein.
 4. Prüfen Sie Ihre Auswahl und die neue Preisgestaltung.

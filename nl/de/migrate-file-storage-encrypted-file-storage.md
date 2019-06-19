@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, file storage, NFS, upgrade, migrate to new
 
@@ -15,10 +15,10 @@ subcollection: FileStorage
 {:note: .note}
 {:important: .important}
 
-# {{site.data.keyword.filestorage_short}}-Speicher auf erweiterten {{site.data.keyword.filestorage_short}}-Speicher migrieren
+# {{site.data.keyword.filestorage_short}} auf erweiterten {{site.data.keyword.filestorage_short}}-Service migrieren
 {: #migratestorage}
 
-In ausgewählten Rechenzentren ist nun erweiterter {{site.data.keyword.filestorage_full}}-Speicher verfügbar. Wenn Sie eine Liste der aktualisierten Rechenzentren und verfügbaren Funktionen anzeigen möchten, zum Beispiel konfigurierbare IOPS-Raten und erweiterbare Datenträger, klicken Sie [hier](/docs/infrastructure/FileStorage?topic=FileStorage-news). Weitere Informationen zur vom Provider verwalteten Verschlüsselung finden Sie unter [{{site.data.keyword.filestorage_short}}-Verschlüsselung ruhender Daten](/docs/infrastructure/FileStorage?topic=FileStorage-encryption).
+Erweiterter {{site.data.keyword.filestorage_full}}-Service ist nun in den meisten [Rechenzentren](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC) verfügbar.
 
 Der bevorzugte Migrationspfad besteht darin, beide Datenträger gleichzeitig zu verbinden und Daten per NFS direkt von einer LUN auf die andere zu übertragen. Die jeweiligen Details hängen dabei vom Betriebssystem ab sowie davon, ob erwartet wird, dass sich die Daten während der Kopieroperation ändern.
 
@@ -37,7 +37,7 @@ Alle erweiterten {{site.data.keyword.filestorage_short}}-Datenträger, die in di
 Wenn Sie einen Auftrag mit einer API erteilen, geben Sie das Paket 'Storage as a Service' an, um sicherzustellen, dass Sie die aktualisierten Funktionen mit dem neuen Speicher erhalten.
 {:important}
 
-Sie können eine erweiterte LUN über den {{site.data.keyword.cloud}}-Katalog und das {{site.data.keyword.slportal}} bestellen. Der neue Datenträger muss dieselbe Größe wie die ursprüngliche gemeinsam genutzte Ressource aufweisen oder größer als diese sein, damit die Migration möglich ist.
+Sie können eine erweiterte LUN über den {{site.data.keyword.cloud}}-Katalog bestellen. Der neue Datenträger muss dieselbe Größe wie die ursprüngliche gemeinsam genutzte Ressource aufweisen oder größer als diese sein, damit die Migration möglich ist.
 
 - [{{site.data.keyword.filestorage_short}} mit vordefinierten IOPS-Tiers (Endurance) bestellen](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#endurance)
 - [{{site.data.keyword.filestorage_short}} mit angepassten IOPS-Raten (Performance) bestellen](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#performance)

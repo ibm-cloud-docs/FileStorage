@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, authorizing hosts, rewoke access, grant access, view authorizations
 
@@ -19,7 +19,7 @@ subcollection: FileStorage
 # {{site.data.keyword.filestorage_short}} verwalten
 {: #managingstorage}
 
-Sie können Ihre {{site.data.keyword.filestorage_full}}-Datenträger über {{site.data.keyword.slportal}} verwalten.
+Sie können Ihre {{site.data.keyword.filestorage_full}}-Datenträger über die {{site.data.keyword.cloud}}-Konsole verwalten.
 
 ## Hosts für den Zugriff auf {{site.data.keyword.filestorage_short}} berechtigen
 
@@ -28,9 +28,10 @@ Berechtigte (“autorisierte”) Hosts sind Hosts, denen Zugriff auf einen besti
 Sie können Hosts autorisieren und verbinden, die sich in demselben Rechenzentrum wie Ihr Speicher befinden. Sie können mehrere Konten haben, Sie können jedoch nicht einen Host über das eine Konto für den Zugriff auf Ihren Speicher in einem anderen Konto berechtigen.
 {:important}
 
-1. Klicken Sie auf **Speicher** > **{{site.data.keyword.filestorage_short}}** und klicken Sie auf den Namen Ihres Datenträgers im Feld **Datenträgername**.
-2. Blättern Sie zum Abschnitt **Autorisierte Hosts** auf der Seite.
-3. Klicken Sie rechts auf **Host autorisieren**. Wählen Sie die Hosts aus, die auf diesen bestimmten Datenträger zugreifen können.
+1. Rufen Sie die [{{site.data.keyword.cloud}}-Konsole](https://{DomainName}/){: external} auf. Wählen Sie im Menü **Klassische Infrastruktur** aus.
+2. Klicken Sie auf **Speicher** > **{{site.data.keyword.filestorage_short}}** und klicken Sie auf den Namen Ihres Datenträgers im Feld **Datenträgername**.
+3. Blättern Sie zum Abschnitt **Autorisierte Hosts** auf der Seite.
+4. Klicken Sie rechts auf **Host autorisieren**. Wählen Sie die Hosts aus, die auf diesen bestimmten Datenträger zugreifen können.
 
 Alternativ dazu können Sie den folgenden Befehl in der SLCLI verwenden.
 ```
@@ -38,20 +39,19 @@ Alternativ dazu können Sie den folgenden Befehl in der SLCLI verwenden.
 Syntax: slcli file access-authorize [OPTIONS] VOLUME_ID
 
 Optionen:
-  -h, --hardware-id TEXT    ID einer SoftLayer-Hardware zur Berechtigung
-  -v, --virtual-id TEXT     ID eines virtuellen SoftLayer-Gastsystems zur Berechtigung
-  -i, --ip-address-id TEXT  ID der Teilnetz-IP-Adresse eines SoftLayer-Netzes
-                            zur Berechtigung
-  --ip-address TEXT         IP-Adresse zur Berechtigung
-  -s, --subnet-id TEXT      ID des Teilnetzes eines SoftLayer-Netzes
-                            zur Berechtigung
+  -h, --hardware-id TEXT    ID eines einzelnen Hardware-Servers für die Autorisierung.
+  -v, --virtual-id TEXT     ID eines virtuellen Servers für die Autorisierung.
+  -i, --ip-address-id TEXT  ID einer einzelnen IP-Adresse für die Autorisierung.
+  -p, --ip-address TEXT     IP-Adresse für die Autorisierung.
+  -s, --subnet-id TEXT      ID eines einzelnen Teilnetzes für die Autorisierung.
   --help                    Diese Nachricht anzeigen und Ausführung beenden.
 ```
 
 ## Liste der Hosts anzeigen, die zum Zugriff auf einen {{site.data.keyword.filestorage_short}}-Datenträger berechtigt sind
 
-1. Klicken Sie auf **Speicher > {{site.data.keyword.filestorage_short}}** und klicken Sie auf den Namen Ihres Datenträgers im Feld **Datenträgername**.
-2. Blättern Sie auf der Seite nach unten bis zum Abschnitt **Autorisierte Hosts**.
+1. Rufen Sie die [{{site.data.keyword.cloud}}-Konsole](https://{DomainName}/){: external} auf. Wählen Sie im Menü **Klassische Infrastruktur** aus.
+2. Klicken Sie auf **Speicher** > **{{site.data.keyword.filestorage_short}}** und klicken Sie auf den Namen Ihres Datenträgers im Feld **Datenträgername**.
+3. Blättern Sie auf der Seite nach unten bis zum Abschnitt **Autorisierte Hosts**.
 
 Dort wird eine Liste der Hosts angezeigt, die derzeit für den Zugriff auf den Datenträger berechtigt sind.
 
@@ -73,9 +73,11 @@ Optionen:
 
 Sie können die Datenträger anzeigen, auf die ein Host Zugriff hat, sowie Informationen, die zum Herstellen einer Verbindung erforderlich sind – Datenträgername, Speichertyp, Zieladresse, Kapazität und Position.
 
-1. Klicken Sie auf **Geräte** > **Geräteliste** im [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
-2. Klicken Sie auf das betreffende Gerät.
-2. Wählen Sie die Registerkarte 'Speicher' aus.
+1. Rufen Sie die [{{site.data.keyword.cloud}}-Konsole](https://{DomainName}/){: external} auf.
+2. Wählen Sie im Menü **Klassische Infrastruktur** aus.
+3. Klicken Sie auf **Geräte** > **Geräteliste**.
+4. Klicken Sie auf das betreffende Gerät.
+5. Wählen Sie die Registerkarte 'Speicher' aus.
 
 Es wird eine Liste von Speicherdatenträgern angezeigt, auf die dieser bestimmte Host Zugriff hat. Die Datenträger werden nach Speichertyp (Block, Datei, andere) gruppiert. Über die jeweiligen **Aktion**-Menüs können Sie zusätzlichen Speicher autorisieren oder Zugriffsberechtigungen entfernen.
 
@@ -96,7 +98,9 @@ Sie können den Zugriff über 'Speicher' in der Ansicht 'Geräteliste' oder in d
 
 ### Zugriff über die Geräteliste widerrufen
 
-1. Klicken Sie auf **Geräte** > **Geräteliste** im [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
+1. Rufen Sie die [{{site.data.keyword.cloud}}-Konsole](https://{DomainName}/){: external} auf.
+2. Wählen Sie im Menü **Klassische Infrastruktur** aus.
+3. Klicken Sie auf **Geräte** > **Geräteliste**.
 2. Doppelklicken Sie auf das betreffende Gerät.
 3. Wählen Sie die Registerkarte **Speicher** aus.
 4. Es wird gruppiert nach Speichertyp (Block, Datei, andere) eine Liste von Speicherdatenträgern angezeigt, auf die dieser bestimmte Host Zugriff. Wählen Sie das jeweilige Menü **Aktion** neben dem Datenträger aus, für den Sie den Zugriff widerrufen möchten, und klicken Sie auf **Zugriff widerrufen**.
@@ -108,30 +112,28 @@ Wenn Sie die Verbindungen mehrerer Datenträger von einem bestimmten Host trenne
 
 ### Zugriff über die Speicheransicht widerrufen
 
-1. Klicken Sie auf **Speicher > {{site.data.keyword.filestorage_short}}** und wählen Sie den **Datenträger** aus, für den Sie den Zugriff widerrufen wollen.
-2. Blättern Sie zum Abschnitt **Autorisierte Hosts** auf der Seite.
-3. Klicken Sie neben dem Host, dessen Zugriff widerrufen werden soll, auf **Aktionen** und wählen Sie **Zugriff widerrufen** aus.
-4. Bestätigen Sie, dass Sie den Zugriff auf einen Datenträger widerrufen möchten, da die Aktion nicht rückgängig gemacht werden kann. Klicken Sie auf **Ja**, um den Datenträgerzugriff zu widerrufen, oder auf **Nein**, um die Aktion abzubrechen.
+1. Rufen Sie die [{{site.data.keyword.cloud}}-Konsole](https://{DomainName}/){: external} auf.
+2. Wählen Sie im Menü **Klassische Infrastruktur** aus.
+3. Klicken Sie auf **Speicher** > **{{site.data.keyword.filestorage_short}}** und wählen Sie den **Datenträger** aus, für den die Zugriffsberechtigung widerrufen werden soll.
+4. Blättern Sie zum Abschnitt **Autorisierte Hosts** auf der Seite.
+5. Klicken Sie neben dem Host, dessen Zugriff widerrufen werden soll, auf **Aktionen** und wählen Sie **Zugriff widerrufen** aus.
+6. Bestätigen Sie, dass Sie den Zugriff auf einen Datenträger widerrufen möchten, da die Aktion nicht rückgängig gemacht werden kann. Klicken Sie auf **Ja**, um den Datenträgerzugriff zu widerrufen, oder auf **Nein**, um die Aktion abzubrechen.
 
 Wenn Sie die Verbindung zwischen mehreren Hosts und einem bestimmten Datenträger trennen wollen, müssen Sie die Aktion 'Zugriff widerrufen' für jeden Host wiederholen.
 {:tip}
 
 ### Zugriff über die SLCLI widerrufen
-Alternativ dazu können Sie den folgenden Befehl in der SLCLI verwenden.
+Sie können den folgenden Befehl in der SLCLI verwenden.
 ```
 # slcli file access-revoke --help
 Syntax: slcli file access-revoke [OPTIONEN] DATENTRÄGER-ID
 
 Optionen:
-  -h, --hardware-id TEXT    ID einer SoftLayer-Hardware zum Widerrufen der
-                            Berechtigung
-  -v, --virtual-id TEXT     ID eines virtuellen SoftLayer-Gastsystems zum
-                            Widerrufen der Berechtigung
-  -i, --ip-address-id TEXT  ID der Teilnetz-IP-Adresse eines SoftLayer-Netzes
-                            zum Widerrufen der Berechtigung
-  --ip-address TEXT         IP-Adresse zum Widerrufen der Berechtigung
-  -s, --subnet-id TEXT      ID des Teilnetzes eines SoftLayer-Netzes zum
-                            Widerrufen der Berechtigung
+  -h, --hardware-id TEXT    ID eines einzelnen Hardware-Servers für das Widerrufen der Autorisierung.
+  -v, --virtual-id TEXT     ID eines einzelnen virtuellen Servers für das Widerrufen der Autorisierung.
+  -i, --ip-address-id TEXT  ID einer einzelnen IP-Adresse für das Widerrufen der Autorisierung.
+  -p, --ip-address TEXT     IP-Adresse für das Widerrufen der Autorisierung.
+  -s, --subnet-id TEXT      ID eines einzelnen Teilnetzes für das Widerrufen der Autorisierung.
   --help                    Diese Nachricht anzeigen und Ausführung beenden.
 ```
 
@@ -139,14 +141,15 @@ Optionen:
 
 Wenn Sie einen bestimmten Datenträger nicht mehr benötigen, können Sie ihn stornieren. Zur Stornierung eines Speicherdatenträgers müssen Sie zunächst den Zugriff für alle Hosts widerrufen.
 
-1. Klicken Sie auf **Speicher**>**{{site.data.keyword.filestorage_short}}**.
-2. Klicken Sie für den zu stornierenden Datenträger auf **Aktionen** und wählen Sie die Option zum Stornieren der {{site.data.keyword.filestorage_short}}-Instanz aus.****
-3. Bestätigen Sie, ob der Datenträger sofort oder am Rechnungsstichtag für den Bereitstellungszeitpunkt des Datenträgers storniert werden soll.
+1. Rufen Sie die [{{site.data.keyword.cloud}}-Konsole](https://{DomainName}/){: external} auf. Wählen Sie im Menü **Klassische Infrastruktur** aus.
+2. Klicken Sie auf **Speicher** > **{{site.data.keyword.filestorage_short}}**.
+3. Klicken Sie für den zu stornierenden Datenträger auf **Aktionen** und wählen Sie die Option zum Stornieren der {{site.data.keyword.filestorage_short}}-Instanz aus.****
+4. Bestätigen Sie, ob der Datenträger sofort oder am Rechnungsstichtag für den Bereitstellungszeitpunkt des Datenträgers storniert werden soll.
 
    Wenn Sie die Option auswählen, den Datenträger am Rechnungsstichtag zu stornieren, können Sie die Stornierungsanforderung vor ihrem Stichtag annullieren.
    {:tip}
-4. Klicken Sie auf **Weiter** oder **Schließen**.
-5. Klicken Sie auf das Kontrollkästchen für die Bestätigung und klicken Sie auf **Bestätigen**.
+5. Klicken Sie auf **Weiter** oder **Schließen**.
+6. Klicken Sie auf das Kontrollkästchen für die Bestätigung und klicken Sie auf **Bestätigen**.
 
 Alternativ dazu können Sie den folgenden Befehl in der SLCLI verwenden.
 ```

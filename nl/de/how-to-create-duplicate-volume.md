@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, file storage, NFS, duplicate volume
 
@@ -29,7 +29,7 @@ Als Benutzer mit einem dedizierten Konto für {{site.data.keyword.containerlong}
 
 Auf Duplikatdatenträger kann ein Host für Lese-/Schreiboperationen zugreifen, sobald der Speicher bereitgestellt ist. Allerdings sind Snapshots und die Replikation erst zulässig, wenn das Erstellen der Datenkopie vom ursprünglichen Datenträger auf den Duplikatdatenträger abgeschlossen ist. Sobald die Datenkopie abgeschlossen ist, kann das Duplikat als unabhängiger Datenträger verwaltet und verwendet werden.
 
-Diese Funktion ist an den meisten Standorten verfügbar. Klicken Sie [hier](/docs/infrastructure/FileStorage?topic=FileStorage-news), um zur Liste der verfügbaren Rechenzentren zu gelangen.
+Dieses Feature ist an den meisten [Standorten](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC) verfügbar. 
 
 Einige allgemeine Verwendungen für einen duplizierten Datenträger sind die folgenden Beispiele.
 - **Disaster-Recovery-Test**: Erstellen Sie ein Duplikat des Replikatdatenträgers, um zu überprüfen, ob die Daten intakt sind und im Fall einer Katastrophe ohne Unterbrechung der Replikation verwendet werden können.
@@ -39,13 +39,13 @@ Einige allgemeine Verwendungen für einen duplizierten Datenträger sind die fol
 - **Entwicklung und Test**: Erstellen Sie gleichzeitig bis zu vier simultane Duplikate eines Datenträgers, um duplizierte Daten zu Entwicklungs- und Testzwecken zu erstellen.
 - **Größenänderung des Speichers**: Erstellen Sie einen Datenträger mit der neuen Größe und/oder den IOPS-Raten, ohne die Daten verschieben zu müssen.  
 
-Es gibt mehrere Möglichkeiten zur Erstellung eines duplizierten Datenträgers über das [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
+Es gibt mehrere Möglichkeiten zur Erstellung eines duplizierten Datenträgers über die [{{site.data.keyword.cloud}}-Konsole](https://{DomainName}/){: external}.
 
 
 ## Duplikat von einem bestimmten Datenträger in der Speicherliste erstellen
 
 1. Rufen Sie Ihre {{site.data.keyword.filestorage_short}}-Liste auf.
-    - Klicken Sie im Kundenportal auf **Speicher** > **{{site.data.keyword.filestorage_short}}** ODER
+    - Klicken Sie im Menü der klassischen Infrastruktur auf **Speicher** > **{{site.data.keyword.filestorage_short}}** ODER
     - Klicken Sie im {{site.data.keyword.cloud}}-Katalog auf **Infrastruktur** > **Speicher** > **{{site.data.keyword.filestorage_short}}**.
 2. Wählen Sie eine LUN in der Liste aus und klicken Sie auf **Aktionen** > **LUN (Datenträger) duplizieren**.
 3. Wählen Sie Ihre Snapshot-Option aus.

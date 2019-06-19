@@ -20,13 +20,12 @@ subcollection: FileStorage
 
 {{site.data.keyword.cloud}} empfiehlt für jede Leistungsstufe eine maximale Länge für die Ein-/Ausgabewarteschlangen für den Host und die Anwendung.
 
-| Performance-Tier | Maximale Hostwarteschlangenlänge |
-|:------:|:------:|
+| Leistungsstufe | Maximale Länge der Hostwarteschlange |
+|------|------|
 | 0,25 IOPS pro GB | 8 |
 | 2 IOPS pro GB | 24 |
 | 4 IOPS pro GB | 56 |
-{: caption="Empfohlene Warteschlangenlänge für jedes IOPS-Tier" caption-side="top"}
-
+{: caption="Empfohlene Warteschlangenlänge für die einzelnen IOPS-Stufen" caption-side="top"}
 
 Die Hosteinstellung wirkt sich nicht auf die Platten- und Controllerlatenz aus. Sie wirkt sich nur auf die Latenz aus, die für den Host und die Anwendung beobachtet wird.
 

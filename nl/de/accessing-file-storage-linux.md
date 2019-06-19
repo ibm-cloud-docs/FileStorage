@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-05-06"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, NSF, mounting File Storage, mounting storage on Linux,
 
@@ -18,7 +18,7 @@ subcollection: FileStorage
 # {{site.data.keyword.filestorage_short}} unter Linux anhängen
 {: #mountingLinux}
 
-Stellen Sie zunächst sicher, dass der Host, der auf den {{site.data.keyword.filestorage_full}}-Datenträger zugreifen soll, über das [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} autorisiert ist.
+Stellen Sie zuerst sicher, dass der Host, über den auf den {{site.data.keyword.filestorage_full}}-Datenträger zugegriffen werden soll, über die [{{site.data.keyword.cloud}}-Konsole](https://{DomainName}/classic){: external} autorisiert wird.
 
 1. Klicken Sie auf der {{site.data.keyword.filestorage_short}}-Listenseite auf den Link **Aktionen**, die dem neuen gemeinsam genutzten Speicher zugeordnet sind, und klicken Sie auf **Host autorisieren**.
 2. Wählen Sie mindestens einen Host in der Liste aus und klicken Sie auf **Abschicken**. Durch diese Aktion wird der Host für den Zugriff auf den gemeinsam genutzten Speicher autorisiert.
@@ -29,13 +29,11 @@ Alternativ dazu können Sie die Hosts auch über die SLCLI berechtigen.
 Syntax: slcli file access-authorize [OPTIONS] VOLUME_ID
 
 Optionen:
-  -h, --hardware-id TEXT    ID einer SoftLayer-Hardware zur Berechtigung
-  -v, --virtual-id TEXT     ID eines virtuellen SoftLayer-Gastsystems zur Berechtigung
-  -i, --ip-address-id TEXT  ID der Teilnetz-IP-Adresse eines SoftLayer-Netzes
-                            zur Berechtigung
-  --ip-address TEXT         IP-Adresse zur Berechtigung
-  -s, --subnet-id TEXT      ID des Teilnetzes eines SoftLayer-Netzes
-                            zur Berechtigung
+  -h, --hardware-id TEXT    ID eines einzelnen Hardware-Servers für die Autorisierung.
+  -v, --virtual-id TEXT     ID eines virtuellen Servers für die Autorisierung.
+  -i, --ip-address-id TEXT  ID einer einzelnen IP-Adresse für die Autorisierung.
+  -p, --ip-address TEXT     IP-Adresse für die Autorisierung.
+  -s, --subnet-id TEXT      ID eines einzelnen Teilnetzes für die Autorisierung.
   --help                    Diese Nachricht anzeigen und Ausführung beenden.
 ```
 

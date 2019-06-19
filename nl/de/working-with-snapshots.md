@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, file storage, NFS, snapshots, snapshot schedule, manual snapshot, snapshot space, snapshot quota
 
@@ -21,7 +21,7 @@ subcollection: FileStorage
 
 ## Snapshotplan erstellen
 
-Mit Snapshotzeitplänen entscheiden Sie, wie häufig und wann Sie eine zeitpunktbasierte Referenz des Speicherdatenträgers erstellen möchten. Es können maximal 50 Snapshots pro Speicherdatenträger erstellt werden. Zeitpläne werden über die Registerkarte **Speicher** > **{{site.data.keyword.filestorage_short}}** im [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} verwaltet.
+Mit Snapshotzeitplänen entscheiden Sie, wie häufig und wann Sie eine zeitpunktbasierte Referenz des Speicherdatenträgers erstellen möchten. Es können maximal 50 Snapshots pro Speicherdatenträger erstellt werden. Zeitpläne werden über die Registerkarte **Speicher** > **{{site.data.keyword.filestorage_short}}** in der [{{site.data.keyword.cloud}}-Konsole](https://{DomainName}/){: external} verwaltet.
 
 Bevor Sie Ihren ersten Zeitplan einrichten können, müssen Sie zunächst Snapshotbereich kaufen, sofern Sie diesen nicht bei der Erstbereitstellung des Speicherdatenträgers gekauft haben.
 {:important}
@@ -158,19 +158,20 @@ Manuelle Snapshots, die nicht manuell im Portal gelöscht werden, werden automat
 Es ist möglich, dass Sie Ihren Speicherdatenträger aufgrund eines Benutzerfehlers oder einer Datenbeschädigung auf einen bestimmten Zeitpunkt zurücksetzen müssen.
 
 1. Hängen Sie Ihren Speicherdatenträger vom Host ab und trennen Sie die Verbindung.
-   - Weitere Anweisungen finden Sie [hier](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux).
-2. Klicken Sie im [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} auf **Speicher**, **{{site.data.keyword.filestorage_short}}**.
-3. Blättern Sie nach unten und klicken Sie auf den Datenträger, der wiederhergestellt werden soll. Im Abschnitt **Snapshots** der Seite **Details** wird die Liste aller gespeicherten Snapshots mit Angabe ihrer Größe und ihres Erstellungsdatums angezeigt.
-4. Klicken Sie neben dem zu verwendenden Snapshot auf **Aktionen** und klicken Sie auf **Wiederherstellen**. <br/>
+   - Weitere Informationen zum Anhängen und Abhängen von Speicherdatenträgern finden Sie in [Verbindung zum neuen Speicher herstellen](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux).
+2. Rufen Sie die [{{site.data.keyword.cloud}}-Konsole](https://{DomainName}/){: external} auf. Wählen Sie im Menü **Klassische Infrastruktur** aus.
+3. Klicken Sie auf **Speicher**, **{{site.data.keyword.filestorage_short}}**.
+4. Blättern Sie nach unten und klicken Sie auf den Datenträger, der wiederhergestellt werden soll. Im Abschnitt **Snapshots** der Seite **Details** wird die Liste aller gespeicherten Snapshots mit Angabe ihrer Größe und ihres Erstellungsdatums angezeigt.
+5. Klicken Sie neben dem zu verwendenden Snapshot auf **Aktionen** und klicken Sie auf **Wiederherstellen**. <br/>
 
    Bei der Wiederherstellung gehen die Daten verloren, die nach der Erstellung des Snapshots erstellt oder geändert wurden. Dieser Datenverlust passiert, weil Ihr Speicherdatenträger in denselben Zustand wiederherstellt wird, den er zum Zeitpunkt der Snapshoterstellung hatte.
    {:note}
-5. Klicken Sie auf **Ja**, um die Wiederherstellung zu starten.
+6. Klicken Sie auf **Ja**, um die Wiederherstellung zu starten.
 
    Quer über den Bereich der Seite wird die Nachricht angezeigt, dass der Datenträger mit dem ausgewählten Snapshot wiederhergestellt wird. Darüber hinaus wird neben Ihrem Datenträger auf der {{site.data.keyword.filestorage_short}}-Seite ein Symbol angezeigt, das darauf hinweist, dass zurzeit eine Transaktion aktiv ist. Bei Bewegen des Mauszeigers über das Symbol wird die Transaktion in einem Fenster angezeigt. Das Symbol wird ausgeblendet, sobald die Transaktion abgeschlossen ist.
    {:note}
-6. Hängen Sie Ihren Speicherdatenträger an den Host an und ordnen Sie ihn erneut zu.
-  - Weitere Anweisungen finden Sie [hier](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux).
+7. Hängen Sie Ihren Speicherdatenträger an den Host an und ordnen Sie ihn erneut zu.
+  - Weitere Informationen zum Anhängen und Abhängen von Speicherdatenträgern finden Sie in [Verbindung zum neuen Speicher herstellen](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux).
 
 Alternativ dazu können Sie den Datenträger über die SLCLI mit einem Snapshot wiederherstellen.
 ```

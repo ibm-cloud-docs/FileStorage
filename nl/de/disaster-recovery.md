@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
@@ -25,9 +25,7 @@ Wenn eine Betriebsunterbrechung oder eine Katastrophe einen Ausfall am primären
 
 ## Failover mit dem Duplikat eines Replikatdatenträgers am sekundären Standort
 
-1. Melden Sie sich bei der [IBM Cloud-Konsole](https://{DomainName}/){: external} an und klicken Sie auf das **Menüsymbol** oben links. Wählen Sie **Klassische Infrastruktur** aus.
-
-   Alternativ können Sie sich beim [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} anmelden.
+1. Melden Sie sich bei der [{{site.data.keyword.cloud}}-Konsole](https://{DomainName}/){: external} an und klicken Sie auf das **Menüsymbol** links oben. Wählen Sie **Klassische Infrastruktur** aus.
 2. Klicken Sie auf **Speicher** > **{{site.data.keyword.filestorage_short}}**.
 3. Klicken Sie in der Liste auf das Replikat der gemeinsam genutzten Dateiressource, um die zugehörige Seite **Details** anzuzeigen.
 4. Blättern Sie auf der Seite **Details** nach unten und wählen Sie einen vorhandenen Snapshot aus. Klicken Sie anschießend auf **Aktionen** > **Duplikat**.
@@ -41,9 +39,7 @@ Sobald der Datenträger erstellt wurde, können Sie ihn einem Host zuordnen und 
 
 Wenn Sie die Produktion an den ursprünglichen primären Standort zurückgeben möchten, müssen Sie die folgenden Schritte ausführen.
 
-1. Melden Sie sich bei der [IBM Cloud-Konsole](https://{DomainName}/){: external} an und klicken Sie auf das **Menüsymbol** oben links. Wählen Sie **Klassische Infrastruktur** aus.
-
-   Alternativ können Sie sich beim [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} anmelden.
+1. Melden Sie sich bei der [{{site.data.keyword.cloud}}-Konsole](https://{DomainName}/){: external} an und klicken Sie auf das **Menüsymbol** links oben. Wählen Sie **Klassische Infrastruktur** aus.
 2. Klicken Sie auf **Speicher** > **{{site.data.keyword.filestorage_short}}**.
 3. Klicken Sie auf den LUN-Namen und erstellen Sie einen Snapshotplan (falls noch keiner vorhanden ist).
 

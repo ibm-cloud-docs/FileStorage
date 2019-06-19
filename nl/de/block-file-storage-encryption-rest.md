@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-18'"
 
 keywords: File Storage, file storage, NFS, security, encryption
 
@@ -39,7 +39,7 @@ Alle Snapshots und Replikate verschlüsselter Dateispeicher werden standardmäß
 
 ## Speicher mit Verschlüsselung bereitstellen
 
-Die vom Provider verwaltete Funktion für die Verschlüsselung ruhender Daten ist in ausgewählten Rechenzentren verfügbar. Aller Speicher, der in diesen Rechenzentren bestellt wird, wird automatisch mit Verschlüsselung für ruhende Daten bereitgestellt. Klicken Sie [hier](/docs/infrastructure/FileStorage?topic=FileStorage-news), um die aktuelle Liste der Rechenzentren anzuzeigen, in denen die {{site.data.keyword.filestorage_short}}-Verschlüsselung verfügbar ist.
+Das vom Provider verwaltete Feature für die Verschlüsselung ruhender Daten ist in [ausgewählten Rechenzentren](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC) verfügbar. Aller Speicher, der in diesen Rechenzentren bestellt wird, wird automatisch mit Verschlüsselung für ruhende Daten bereitgestellt.
 
 Wählen Sie beim Bestellen Ihres {{site.data.keyword.filestorage_short}}-Speichers ein Rechenzentrum, das mit einem Stern (`*`) markiert ist. Das rechts neben dem Feld 'LUN/Datenträgername' angezeigte Sperrsymbol gibt an, dass der Datenträger verschlüsselt wird. Siehe Abbildung 1.
 

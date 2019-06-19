@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-05-22"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, Endurance, Performance, IOPS, replication, billing, file storage, NFS,
 
@@ -36,14 +36,14 @@ Nutzen Sie die folgenden Kernfunktionen von {{site.data.keyword.filestorage_shor
    - Ist für dateibasierte, gemeinsam genutzte NFS-Speicher verfügbar.
 - **Hohe Dauerhaftigkeit und Ausfallsicherheit**
    - Schützt die Integrität der Daten und gewährleistet die Verfügbarkeit bei Wartungsereignissen und ungeplanten Ausfällen, ohne dass RAID-Arrays (Redundant Arrays of Independent Disks) auf Betriebssystemebene erstellt und verwaltet werden müssen.
-- **Verschlüsselung ruhender Daten** [(in ausgewählten Rechenzentren verfügbar)](/docs/infrastructure/FileStorage?topic=FileStorage-news)
+- **Verschlüsselung ruhender Daten** [(in ausgewählten Rechenzentren verfügbar)](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)
    - Providerverwaltete Verschlüsselung für ruhende Daten wird ohne Zusatzkosten bereitgestellt.
-- **Gesamter Speicher Flash-gestützt** [(in ausgewählten Rechenzentren verfügbar)](/docs/infrastructure/FileStorage?topic=FileStorage-news)
+- **Gesamter Speicher Flash-gestützt** [(in ausgewählten Rechenzentren verfügbar)](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)
    - Gesamter Speicher ist Flashspeicher für Datenträger und kann mit 2 IOPS/GB oder höher bereitgestellt werden.
-- **Snapshots** [(in ausgewählten Rechenzentren verfügbar)](/docs/infrastructure/FileStorage?topic=FileStorage-news).
+- **Snapshots** [(in ausgewählten Rechenzentren verfügbar)](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
    - Erfasst zeitpunktbezogene Datensnapshots ohne Betriebsunterbrechungen.
-- **Replikation**  [(in ausgewählten Rechenzentren verfügbar)](/docs/infrastructure/FileStorage?topic=FileStorage-news)
-   - Ist nur verfügbar, wenn Speicher in [ausgewählten Rechenzentren](/docs/infrastructure/FileStorage?topic=FileStorage-news) bereitgestellt wird.
+- **Replikation**  [(in ausgewählten Rechenzentren verfügbar)](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)
+   - Ist nur verfügbar, wenn Speicher in [ausgewählten Rechenzentren](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC) bereitgestellt wird.
    - Snapshots werden automatisch in ein Partnerrechenzentrum von {{site.data.keyword.cloud}} kopiert.
 - **Hoch verfügbare Konnektivität**
    - Verwendet redundante Netzverbindungen zur Maximierung der Verfügbarkeit.
@@ -71,7 +71,7 @@ Endurance {{site.data.keyword.filestorage_short}} ist in vier IOPS-Leistungsstuf
 
 - **4 IOPS pro GB** sind für Workloads höherer Intensität vorgesehen. Solche Workloads sind in der Regel durch einen hohen Prozentsatz an Daten gekennzeichnet, die zu jedem Zeitpunkt aktiv sind. Beispielanwendungen sind transaktionsorientierte und andere leistungskritische Datenbanken.
 
-- **10 IOPS pro GB** sind für anspruchsvollste Workloads vorgesehen, wie zum Beispiel für die von NoSQL-Datenbanken generierten Workloads und für die Datenverarbeitung von Analysen (Analytics). Diese Stufe ist nur für Speicher verfügbar, der in [ausgewählten Rechenzentren](/docs/infrastructure/FileStorage?topic=FileStorage-news) mit einer Größe von bis zu 4 TB bereitgestellt wird.
+- **10 IOPS pro GB** sind für anspruchsvollste Workloads vorgesehen, wie zum Beispiel für die von NoSQL-Datenbanken generierten Workloads und für die Datenverarbeitung von Analysen (Analytics). Diese Stufe ist nur für Speicher verfügbar, der in [ausgewählten Rechenzentren](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC) mit einer Größe von bis zu 4 TB bereitgestellt wird.
 
 Bis zu 48.000 IOPS sind bei einem 12-TB-Endurance-Datenträger verfügbar.
 
@@ -110,7 +110,7 @@ Performance-Datenträger wurden dazu entwickelt, einen konsistenten Betrieb nahe
 
 Sie können stündliche oder monatliche Rechnungsstellung für einen Dateidatenträger auswählen. Der Typ der Rechnungsstellung, der für eine LUN ausgewählt wird, gilt für den zugehörigen Snapshotbereich und für Replikate. Wenn Sie zum Beispiel eine LUN mit stündlicher Rechnungsstellung bereitstellen, werden alle Gebühren für Snapshots oder Replikate stündlich in Rechnung gestellt. Wenn Sie eine LUN mit monatlicher Rechnungsstellung bereitstellen, werden Gebühren für Snapshots oder Replikate monatlich in Rechnung gestellt.
 
- * Bei der **stündlichen Rechnungsstellung** wird die Stundenzahl, die der Dateidatenträger auf dem Konto vorhanden war, zu dem Zeitpunkt berechnet, an dem die LUN gelöscht wird oder der Rechnungsstellungszyklus endet, je nachdem, welcher Zeitpunkt zuerst kommt. Die stündliche Rechnungsstellung ist eine gute Wahl für Speicher, der für einige wenige Tage oder weniger als einen ganzen Monat lang genutzt wird. Die Abrechnung nach Stunden ist nur für Speicher verfügbar, der in [ausgewählten Rechenzentren](/docs/infrastructure/FileStorage?topic=FileStorage-news) bereitgestellt wird.
+ * Bei der **stündlichen Rechnungsstellung** wird die Stundenzahl, die der Dateidatenträger auf dem Konto vorhanden war, zu dem Zeitpunkt berechnet, an dem die LUN gelöscht wird oder der Rechnungsstellungszyklus endet, je nachdem, welcher Zeitpunkt zuerst kommt. Die stündliche Rechnungsstellung ist eine gute Wahl für Speicher, der für einige wenige Tage oder weniger als einen ganzen Monat lang genutzt wird. Die Abrechnung nach Stunden ist nur für Speicher verfügbar, der in [ausgewählten Rechenzentren](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC) bereitgestellt wird.
 
  * Bei der **monatlichen Rechnungsstellung** erfolgt die Berechnung für den Preis anteilmäßig ab dem Erstellungsdatum bis zum Ende des Rechnungsstellungszyklus und die Rechnung wird unverzüglich gestellt. Es erfolgt keine Rückerstattung, wenn ein Datenträger vor dem Ende des Rechnungsstellungszyklus gelöscht wird. Die monatliche Rechnungsstellung ist eine gute Wahl für Speicher, der für Auslastungen im Produktionsbetrieb genutzt wird, die Daten verwenden, die über längere Zeiträume (einen Monat oder länger) gespeichert werden und zugänglich sein müssen.
 

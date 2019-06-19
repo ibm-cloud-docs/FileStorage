@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, file storage, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
@@ -27,20 +27,18 @@ Bevor Sie mit dem Failover beginnen, stellen Sie sicher, dass die gesamte Hostbe
 Berechtigte (bzw. autorisierte) Hosts und Datenträger müssen sich im selben Rechenzentrum befinden. Wenn sich der Replikatdatenträger beispielsweise in London befindet, kann sich der zugehörige Host nicht in Amsterdam befinden. Beide müssen entweder in London oder in Amsterdam sein.
 {:note}
 
-1. Melden Sie sich bei der [{{site.data.keyword.cloud}}-Konsole](https://{DomainName}/catalog){: external} an und klicken Sie auf das **Menüsymbol** oben links. Wählen Sie **Klassische Infrastruktur** aus.
-
-   Alternativ können Sie sich beim [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} anmelden.
-1. Klicken Sie auf Ihren Quellen- oder Zieldatenträger auf der **{{site.data.keyword.filestorage_short}}**-Seite.
-2. Klicken Sie auf **Replikat**.
-3. Blättern Sie abwärts zum Rahmen **Hosts autorisieren** und klicken Sie auf der rechten Seite auf **Hosts autorisieren**.
-4. Heben Sie den Host hervor, der für Replikationen autorisiert werden soll. Zur Auswahl mehrerer Hosts drücken Sie die Steuertaste (STRG) und klicken Sie auf die betreffenden Hosts.
-5. Klicken Sie auf **Abschicken**. Wenn Sie keine Hosts haben, werden Sie aufgefordert, Rechenressourcen im selben Rechenzentrum zu kaufen.
+1. Melden Sie sich bei der [{{site.data.keyword.cloud}}-Konsole](https://{DomainName}/catalog){: external} an und klicken Sie auf das **Menüsymbol** links oben. Wählen Sie **Klassische Infrastruktur** aus.
+2. Klicken Sie auf Ihren Quellen- oder Zieldatenträger auf der **{{site.data.keyword.filestorage_short}}**-Seite.
+3. Klicken Sie auf **Replikat**.
+4. Blättern Sie abwärts zum Rahmen **Hosts autorisieren** und klicken Sie auf der rechten Seite auf **Hosts autorisieren**.
+5. Heben Sie den Host hervor, der für Replikationen autorisiert werden soll. Zur Auswahl mehrerer Hosts drücken Sie die Steuertaste (STRG) und klicken Sie auf die betreffenden Hosts.
+6. Klicken Sie auf **Abschicken**. Wenn Sie keine Hosts haben, werden Sie aufgefordert, Rechenressourcen im selben Rechenzentrum zu kaufen.
 
 ## Failover von einem Datenträger auf sein Replikat starten
 
 Bei einem Fehlerereignis können Sie einen **Failover** auf Ihren Zieldatenträger einleiten. Der Zieldatenträger wird aktiv. Der letzte erfolgreich replizierte Snapshot wird aktiviert und der Datenträger wird zum Anhängen (Mount) aktiviert. Alle Daten, die seit dem letzten Replikationszyklus auf den Quellendatenträger geschrieben wurden, gehen verloren. Beim Start eines Failovers wird die Replikationsbeziehung umgekehrt. Ihr Zieldatenträger wird zum Quellendatenträger und Ihr früherer Quellendatenträger wird zum Zieldatenträger. Dies wird durch den **LUN-Namen** angezeigt, gefolgt von der Zeichenfolge **REP**.
 
-Failovers werden unter **Speicher**, **{{site.data.keyword.filestorage_short}}** im [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} gestartet.
+Failovers werden unter **Speicher**, **{{site.data.keyword.filestorage_short}}** in der [{{site.data.keyword.cloud}}-Konsole](https://{DomainName}/classic){: external} gestartet.
 
 Bevor Sie mit den folgenden Schritten fortfahren, unterbrechen Sie die Verbindung zum Datenträger. Wenn Sie das nicht tun, sind Datenbeschädigungen und/oder Datenverlust die Folge.
 {:important}
@@ -53,7 +51,7 @@ Bevor Sie mit den folgenden Schritten fortfahren, unterbrechen Sie die Verbindun
    {:note}
 4. Klicken Sie auf **Alle anzeigen ({{site.data.keyword.filestorage_short}})**.
 5. Klicken Sie auf Ihren aktiven Datenträger (früher Ihr Zieldatenträger). Dieser Datenträger hat nun den Status **Aktiv**.
-6. Hängen Sie Ihren Speicherdatenträger an den Host an und verbinden Sie ihn. Weitere Anweisungen finden Sie [hier](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole).
+6. Hängen Sie Ihren Speicherdatenträger an den Host an und verbinden Sie ihn. Weitere Informationen finden Sie in [Verbindung zum neuen Speicher herstellen](/docs/infrastructure/FileStorage?topic=FileStorage-getting-started#mountingstorage). 
 
 
 ## Rückübertragung von einem Datenträger auf sein Replikat starten
@@ -68,7 +66,7 @@ Wenn Ihr ursprünglicher Quellendatenträger repariert ist, können Sie eine ges
 
 Beim Start einer Rückübertragung wird die Replikationsbeziehung wieder umgekehrt. Ihr Quellendatenträger wird als Quellendatenträger wiederhergestellt und Ihr Zieldatenträger ist wieder Ihr Zieldatenträger. Dies wird durch den **LUN-Namen** angezeigt, gefolgt von der Zeichenfolge **REP**.
 
-Failbacks werden unter **Speicher**, **{{site.data.keyword.filestorage_short}}** im [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} gestartet.
+Failbacks werden unter **Speicher**, **{{site.data.keyword.filestorage_short}}** in der [{{site.data.keyword.cloud}}-Konsole](https://{DomainName}/classic){: external} gestartet.
 
 1. Klicken Sie auf Ihren aktiven Datenträger ("Ziel").
 2. Klicken Sie rechts oben auf **Replikat** und **Aktionen**.
@@ -78,4 +76,4 @@ Failbacks werden unter **Speicher**, **{{site.data.keyword.filestorage_short}}**
    {:note}
 4. Klicken Sie rechts oben auf den Link **Alle {{site.data.keyword.filestorage_short}}-Instanzen anzeigen**.
 5. Klicken Sie auf Ihren aktiven Datenträger ("Quelle").
-6. Hängen Sie Ihren Speicherdatenträger an den Host an und verbinden Sie ihn. Weitere Anweisungen finden Sie [hier](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole).
+6. Hängen Sie Ihren Speicherdatenträger an den Host an und verbinden Sie ihn. Weitere Informationen finden Sie in [Verbindung zum neuen Speicher herstellen](/docs/infrastructure/FileStorage?topic=FileStorage-getting-started#mountingstorage). 

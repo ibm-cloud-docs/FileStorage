@@ -33,6 +33,7 @@ Die neue Version von {{site.data.keyword.filestorage_short}} steht in folgenden 
 | DAL09<br >DAL10<br />DAL12<br />DAL13<br />SJC03<br />SJC04<br />WDC04<br />WDC06<br />WDC07 | MEX01<br />SAO01 | MON01<br />TOR01  | AMS01<br />AMS03<br />FRA02<br />FRA04<br />FRA05<br />LON02<br />LON04<br />LON05<br />LON06<br />MIL01<br />OSLO1<br />PAR01 | CHE01<br />HKG02<br />SEO01<br />SNG01<br />TOK02<br />TOK04<br />TOK05 | MEL01<br />SYD01<br />SYD04<br />SYD05 |
 {: caption="In Tabelle 1 wird die Verfügbarkeit von Rechenzentren aufgeführt. Jede Region hat eine eigene Spalte. Einige Städte wie beispielsweise Dallas, San Jose, Washington D.C., Amsterdam, Frankfurt, London und Sydney haben mehrere Rechenzentren." caption-side="top"}
 
+
 ## Neue Features und Funktionen
 {: #features}
 

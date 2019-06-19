@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-05-02"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, file storage, NFS, provisioning, setup, configuration, mounting storage
 
@@ -73,7 +73,7 @@ NFS Version 3 und NFS Version 4.1 werden in der Umgebung von {{site.data.keyword
 
 ## Bestellung abschicken
 
-Wenn Sie bereit sind, die Bestellung aufzugeben, können Sie dies über die [Konsole](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole) oder die [SLCLI](/docs/infrastructure/FileStorage?topic=FileStorage-orderingSLCLI) tun. Zur Bereitstellung von File Storage mit VMware klicken Sie [hier](/docs/infrastructure/FileStorage?topic=FileStorage-architectureguide).
+Wenn Sie bereit sind, die Bestellung aufzugeben, können Sie dies über die [Konsole](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole), die [SLCLI](/docs/infrastructure/FileStorage?topic=FileStorage-orderingSLCLI) oder die IBMCLOUD-Befehlszeilenschnittstelle tun. Weitere Informationen zum Einrichten von File Storage für VMware-Bereitstellungen finden Sie im [Architekturhandbuch](/docs/infrastructure/FileStorage?topic=FileStorage-architectureguide).
 
 ## Verbindung zum neuen Speicher herstellen
 {: #mountingstorage}

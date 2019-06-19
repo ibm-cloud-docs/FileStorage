@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-03-11"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, replication, duplication, synchronous, replica schedule, replica space, disaster recovery
 
@@ -41,7 +41,7 @@ In Tabelle 1 finden Sie die vollständige Liste der verfügbaren Rechenzentren u
 
 ## Erstreplikat erstellen
 
-Replikationen arbeiten nach einem Snapshotplan. Sie müssen zuerst einen Snapshotbereich und einen Snapshotplan für den Quellendatenträger haben, bevor Sie replizieren können. Wenn Sie versuchen, die Replikation zu konfigurieren, und eines dieser beiden Dinge fehlt, werden Sie aufgefordert, mehr Speicherplatz zu kaufen oder einen Zeitplan einzurichten. Replikationen werden unter **Speicher** > **{{site.data.keyword.filestorage_short}}** im [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} verwaltet.
+Replikationen arbeiten nach einem Snapshotplan. Sie müssen zuerst einen Snapshotbereich und einen Snapshotplan für den Quellendatenträger haben, bevor Sie replizieren können. Wenn Sie versuchen, die Replikation zu konfigurieren, und eines dieser beiden Dinge fehlt, werden Sie aufgefordert, mehr Speicherplatz zu kaufen oder einen Zeitplan einzurichten. Replikationen werden unter **Speicher** > **{{site.data.keyword.filestorage_short}}** in der [{{site.data.keyword.cloud}}-Konsole](https://{DomainName}/classic){: external} gestartet.
 
 1. Klicken Sie auf Ihren Speicherdatenträger.
 2. Klicken Sie auf **Replikat** und auf **Replikation kaufen**.
@@ -60,7 +60,7 @@ Replikationen arbeiten nach einem Snapshotplan. Sie müssen zuerst einen Snapsho
 
 ## Vorhandene Replikation bearbeiten
 
-Sie können im [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} entweder auf der Registerkarte **Primär** oder auf der Registerkarte **Replikat** unter **Speicher** > **{{site.data.keyword.filestorage_short}}** Ihren Replikationsplan bearbeiten und Ihren Replikationsspeicherbereich ändern.
+Sie können in der [{{site.data.keyword.cloud}}-Konsole](https://{DomainName}/classic){: external} entweder auf der Registerkarte **Primär** oder auf der Registerkarte **Replikat** unter **Speicher** > **{{site.data.keyword.filestorage_short}}** Ihren Replikationsplan bearbeiten und Ihren Replikationsspeicherbereich ändern.
 
 
 ## Replikationsplan bearbeiten
