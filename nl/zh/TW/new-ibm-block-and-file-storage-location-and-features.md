@@ -33,6 +33,7 @@ subcollection: FileStorage
 |DAL09<br >DAL10<br />DAL12<br />DAL13<br />SJC03<br />SJC04<br />WDC04<br />WDC06<br />WDC07|MEX01<br />SAO01|MON01<br />TOR01|AMS01<br />AMS03<br />FRA02<br />FRA04<br />FRA05<br />LON02<br />LON04<br />LON05<br />LON06<br />MIL01<br />OSLO1<br />PAR01|CHE01<br />HKG02<br />SEO01<br />SNG01<br />TOK02<br />TOK04<br />TOK05|MEL01<br />SYD01<br />SYD04<br />        SYD05|
 {: caption="表 1 顯示資料中心可用性。每一個地區都有自己的直欄。有些城市（例如「達拉斯」、「聖荷西」、「華盛頓特區」、「阿姆斯特丹」、「法蘭克福」、「倫敦」及「雪梨」）會有多個資料中心。" caption-side="top"}
 
+
 ## 新特性及功能
 {: #features}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, provisioning, ordering,
 
@@ -29,9 +29,7 @@ subcollection: FileStorage
 ## 訂購具有預先定義 IOPS 層級（耐久性）的 {{site.data.keyword.filestorage_short}}
 {: #endurance}
 
-1. 登入 [IBM Cloud 型錄](https://{DomainName}/catalog){: external}，並按一下**儲存空間**。然後，選取 {{site.data.keyword.filestorage_short}}。按一下**建立**。
-
-   或者，您也可以登入 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}，按一下**儲存空間** > **{{site.data.keyword.filestorage_short}}**。在右上方，按一下**訂購 {{site.data.keyword.filestorage_short}}**。
+1. 登入 [{{site.data.keyword.cloud}} 型錄](https://{DomainName}/catalog){: external}，並按一下**儲存空間**。然後，選取 {{site.data.keyword.filestorage_short}}。按一下**建立**。
 2. 選取您的部署**位置**（資料中心）。
    - 確定將新的「儲存空間」新增至與您的運算主機相同的位置。
 3. 計費。如果您已選取具有改良功能的資料中心（以星號標示），則可以選擇「按月計費」或「按小時計費」。
@@ -56,15 +54,13 @@ subcollection: FileStorage
 9. 在檢閱條款之後，勾選**我已閱讀並同義協力廠商服務合約**方框。
 10. 按一下**建立**。在幾分鐘之後，就可以使用您的新儲存空間配置。
 
-依預設，您可以佈建總計 250 個 {{site.data.keyword.blockstorageshort}} 磁區。若要增加磁區數目，請與業務代表聯絡。請在[這裡](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits)閱讀提高限制的相關資訊。<br/><br/>如需同時授權之限制的相關資訊，請參閱[常見問題](/docs/infrastructure/FileStorage?topic=FileStorage-faqs#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-)。
+依預設，您可以佈建總計 250 個 {{site.data.keyword.blockstorageshort}} 磁區。若要增加磁區數目，請與業務代表聯絡。請在[這裡](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits)閱讀提高限制的相關資訊。<br/><br/>如需同時授權之限制的相關資訊，請參閱[常見問題](/docs/infrastructure/FileStorage?topic=file-storage-faqs#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-)。
 {:tip}
 
 ## 訂購具有自訂 IOPS（效能）的 {{site.data.keyword.filestorage_short}}
 {: #performance}
 
-1. 登入 [IBM Cloud 型錄](https://{DomainName}/catalog){: external}，並按一下**儲存空間**。然後，選取 {{site.data.keyword.filestorage_short}}。按一下**建立**。
-
-   或者，您也可以登入 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}，按一下**儲存空間** > **{{site.data.keyword.filestorage_short}}**。在右上方，按一下**訂購 {{site.data.keyword.filestorage_short}}**。
+1. 登入 [{{site.data.keyword.cloud}} 型錄](https://{DomainName}/catalog){: external}，並按一下**儲存空間**。然後，選取 {{site.data.keyword.filestorage_short}}。按一下**建立**。
 2. 按一下**位置**，然後選取資料中心。
    - 確定將新的「儲存空間」新增至與您的運算主機相同的位置。
 3. 計費。如果您已選取具有改良功能的資料中心（以星號標示），則可以選擇「按月計費」或「按小時計費」。
@@ -85,7 +81,7 @@ subcollection: FileStorage
 9. 在檢閱條款之後，勾選**我已閱讀並同義協力廠商服務合約**方框。
 10. 按一下**建立**。在幾分鐘之後，就可以使用您的新儲存空間配置。
 
-依預設，您可以佈建總計 250 個 {{site.data.keyword.blockstorageshort}} 磁區。若要增加磁區數目，請與業務代表聯絡。請在[這裡](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits)閱讀提高限制的相關資訊。<br/><br/>如需同時授權之限制的相關資訊，請參閱[常見問題](/docs/infrastructure/FileStorage?topic=FileStorage-faqs#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-)。
+依預設，您可以佈建總計 250 個 {{site.data.keyword.blockstorageshort}} 磁區。若要增加磁區數目，請與業務代表聯絡。請在[這裡](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits)閱讀提高限制的相關資訊。<br/><br/>如需同時授權之限制的相關資訊，請參閱[常見問題](/docs/infrastructure/FileStorage?topic=file-storage-faqs#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-)。
 {:important}
 
 

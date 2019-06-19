@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-05-06"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, NSF, mounting File Storage, mounting storage on Linux,
 
@@ -18,7 +18,7 @@ subcollection: FileStorage
 # 在 Linux 上裝載 {{site.data.keyword.filestorage_short}}
 {: #mountingLinux}
 
-首先，請確定要存取 {{site.data.keyword.filestorage_full}} 磁區的主機已透過 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 獲得授權。
+首先，請確定要存取 {{site.data.keyword.filestorage_full}} 磁區的主機已透過 [{{site.data.keyword.cloud}} 主控台](https://{DomainName}/classic){: external}獲得授權。
 
 1. 從 {{site.data.keyword.filestorage_short}} 清單頁面，按一下與新共用相關聯的**動作**鏈結，然後按一下**授權主機**。
 2. 從清單中選取一台或多台主機，然後按一下**提交**。此動作會授權主機存取共用。
@@ -29,13 +29,11 @@ subcollection: FileStorage
 Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
 
   Options:
-  -h, --hardware-id TEXT    The id of one SoftLayer_Hardware to authorize
-  -v, --virtual-id TEXT     The id of one SoftLayer_Virtual_Guest to authorize
-  -i, --ip-address-id TEXT  The id of one SoftLayer_Network_Subnet_IpAddress
-                            to authorize
-  --ip-address TEXT         An IP address to authorize
-  -s, --subnet-id TEXT      The id of one SoftLayer_Network_Subnet to
-                            authorize
+  -h, --hardware-id TEXT    The ID of one hardware server to authorize.
+  -v, --virtual-id TEXT     The ID of one virtual server to authorize.
+  -i, --ip-address-id TEXT  The ID of one IP address to authorize.
+  -p, --ip-address TEXT     An IP address to authorize.
+  -s, --subnet-id TEXT      An ID of one subnet to authorize.
   --help                    Show this message and exit.
 ```
 

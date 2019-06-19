@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-03-11"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, replication, duplication, synchronous, replica schedule, replica space, disaster recovery
 
@@ -39,7 +39,7 @@ subcollection: FileStorage
 
 ## 建立起始抄本
 
-抄寫是根據 Snapshot 排程運作。您必須先有來源磁區的 Snapshot 空間及 Snapshot 排程，才能進行抄寫。如果您嘗試設定抄寫，但沒有適當的空間或排程，則系統會提示您購買更多空間，或設定排程。抄寫是在 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 的**儲存空間** > **{{site.data.keyword.filestorage_short}}** 下進行管理。
+抄寫是根據 Snapshot 排程運作。您必須先有來源磁區的 Snapshot 空間及 Snapshot 排程，才能進行抄寫。如果您嘗試設定抄寫，但沒有適當的空間或排程，則系統會提示您購買更多空間，或設定排程。抄寫是在 [{{site.data.keyword.cloud}} 主控台](https://{DomainName}/classic){: external}的**儲存空間** > **{{site.data.keyword.filestorage_short}}** 下進行管理。
 
 1. 按一下儲存空間磁區。
 2. 按一下**抄本**，然後按一下**購買抄寫**。
@@ -58,7 +58,7 @@ subcollection: FileStorage
 
 ## 編輯現有抄寫
 
-您可以從 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 之**儲存空間** > **{{site.data.keyword.filestorage_short}}** 下的**主要**或**抄本**標籤中，編輯抄寫排程，以及變更抄寫空間。
+您可以從 [{{site.data.keyword.cloud}} 主控台](https://{DomainName}/classic){: external}之**儲存空間** > **{{site.data.keyword.filestorage_short}}** 下的**主要**或**抄本**標籤中，編輯抄寫排程，以及變更抄寫空間。
 
 
 ## 編輯抄寫排程

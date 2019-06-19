@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-22"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, mounting file storage, Linux, CentOS, NFS
 
@@ -20,7 +20,7 @@ subcollection: FileStorage
 # 在 CentOS 中裝載 {{site.data.keyword.filestorage_short}}
 {: #mountingCentOS}
 
-若要在 CentOS 7 裝載 {{site.data.keyword.filestorage_full}}，您必須先透過 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 或透過 SLCLI 授權主機。然後安裝 NFS 公用程式，如[在 Linux 上裝載 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux) 中所述。
+若要在 CentOS 7 裝載 {{site.data.keyword.filestorage_full}}，您必須先透過 [{{site.data.keyword.cloud}} 主控台](https://{DomainName}/classic){: external}或透過 SLCLI 授權主機。然後安裝 NFS 公用程式，如[在 Linux 上裝載 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux) 中所述。
 
 若為 CentOS，您可以在裝載檔中使用 `Options=` 這一行來指定額外的選項。在下列範例中，NFS 設為裝載於 `/data/www`。
 

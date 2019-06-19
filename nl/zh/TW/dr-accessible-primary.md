@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
@@ -28,19 +28,17 @@ subcollection: FileStorage
 {:note}
 
 1. 登入 [{{site.data.keyword.cloud}} 主控台](https://{DomainName}/catalog){: external}，然後按一下左上方的**功能表**圖示。選取**標準基礎架構**。
-
-   或者，您也可以登入 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}。
-1. 從 **{{site.data.keyword.filestorage_short}}** 頁面，按一下來源或目的地磁區。
-2. 按一下**抄本**。
-3. 向下捲動至**授權主機**頁框，然後按一下右側的**授權主機**。
-4. 強調顯示要授權進行抄寫的主機。若要選取多台主機，請使用 CTRL 鍵，然後按一下適用的主機。
-5. 按一下**提交**。如果您沒有主機，則系統會提示您購買相同資料中心內的運算資源。
+2. 從 **{{site.data.keyword.filestorage_short}}** 頁面，按一下來源或目的地磁區。
+3. 按一下**抄本**。
+4. 向下捲動至**授權主機**頁框，然後按一下右側的**授權主機**。
+5. 強調顯示要授權進行抄寫的主機。若要選取多台主機，請使用 CTRL 鍵，然後按一下適用的主機。
+6. 按一下**提交**。如果您沒有主機，則系統會提示您購買相同資料中心內的運算資源。
 
 ## 啟動從磁區到其抄本的失效接手
 
 如果發生故障事件，您可以啟動**失效接手**至您的目的地（或目標）磁區。目標磁區會變成作用中。啟動前次順利抄寫的 Snapshot，而且磁區會變成可進行裝載。會遺失自前次抄寫週期以來寫入至來源磁區的所有資料。失效接手啟動後，會翻轉抄寫關係。您的目標磁區會變成來源磁區，而先前的來源磁區會變成您的目標，並且以後面接著 **REP** 的 **LUN 名稱**來表示。
 
-在 [[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 的**儲存空間**、**{{site.data.keyword.filestorage_short}}** 下，啟動失效接手。
+在 [{{site.data.keyword.cloud}} 主控台](https://{DomainName}/classic){: external}的**儲存空間**、**{{site.data.keyword.filestorage_short}}** 下，啟動失效接手。
 
 繼續執行這些步驟之前，請先中斷磁區連線。否則，會導致毀損及資料遺失。
 {:important}
@@ -68,7 +66,7 @@ subcollection: FileStorage
 
 「失效回復」啟動後，會再度翻轉抄寫關係。來源磁區會還原為來源磁區，而您的目標磁區會再次成為目標磁區，並且以後面接著 **REP** 的 **LUN 名稱**來表示。
 
-在 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 的**儲存空間**、**{{site.data.keyword.filestorage_short}}** 下，啟動失效回復。
+在 [{{site.data.keyword.cloud}} 主控台](https://{DomainName}/classic){: external}的**儲存空間**、**{{site.data.keyword.filestorage_short}}** 下，啟動失效回復。
 
 1. 按一下作用中磁區（「目標」）。
 2. 在右上方，按一下**抄本**，然後按一下**動作**。

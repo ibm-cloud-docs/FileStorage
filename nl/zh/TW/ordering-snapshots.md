@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, snapshot, ordering snapshot, snapshot space
 
@@ -50,18 +50,17 @@ subcollection: FileStorage
 
 ## 透過 {{site.data.keyword.cloud_notm}} 主控台訂購 Snapshot 空間
 
-1. 登入 [IBM Cloud 主控台](https://{DomainName}/){: external}，然後按一下左上方的功能表圖示。選取**標準基礎架構**。
-
-   或者，您也可以登入 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}。
-2. 透過**儲存空間** > **{{site.data.keyword.filestorage_short}}** 來存取「儲存空間」。
-3. 按一下 Snapshot 頁框中的**變更 Snapshot 空間**。
-4. 選取您需要的空間量和付款方法。
-5. 按一下**繼續**。
-6. 輸入您有的任何「促銷代碼」，然後按一下**重新計算**。**此訂單的計費**及**訂單檢閱**具有預設值。
+1. 登入 [{{site.data.keyword.cloud}} 主控台](https://{DomainName}/){: external}，然後按一下左上方的功能表圖示。
+2. 選取**標準基礎架構**。
+3. 透過**儲存空間** > **{{site.data.keyword.filestorage_short}}** 來存取「儲存空間」。
+4. 按一下 Snapshot 頁框中的**變更 Snapshot 空間**。
+5. 選取您需要的空間量和付款方法。
+6. 按一下**繼續**。
+7. 輸入您有的任何「促銷代碼」，然後按一下**重新計算**。**此訂單的計費**及**訂單檢閱**具有預設值。
 
    折扣會在處理訂單時套用。
    {:note}
-7. 勾選**我已閱讀主要服務合約，並同意其中的條款**勾選框，然後按**下訂單**。在幾分鐘之後，即會佈建您的 Snapshot 空間。
+8. 勾選**我已閱讀主要服務合約，並同意其中的條款**勾選框，然後按**下訂單**。在幾分鐘之後，即會佈建您的 Snapshot 空間。
 
 ## 透過 SLCLI 訂購 Snapshot 空間
 

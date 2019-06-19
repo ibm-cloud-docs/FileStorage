@@ -80,7 +80,7 @@ subcollection: FileStorage
 {: row-headers}
 {: class="comparison-table"}
 {: caption="表格比較" caption-side="top"}
-{: summary="表 1 顯示根據磁區大小而容許的 Inode 數目上限。磁區大小在左邊直欄。Inode 和檔案共用的數目在右邊直欄。"}
+{: summary="Table 1 shows the maximum number of inodes that are allowed based on the volume size. Volume sizes are in the left column. The number of inodes and file shares are on the right."}
 
 ## 測量 IOPS
 {: faq}

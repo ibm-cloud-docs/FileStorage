@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, snapshots, snapshot schedule, manual snapshot, snapshot space, snapshot quota
 
@@ -21,7 +21,7 @@ subcollection: FileStorage
 
 ## 建立 Snapshot 排程
 
-您可以使用 Snapshot 排程決定要建立儲存空間磁區之時間點參照的頻率及時間。每個儲存空間磁區最多可以有 50 個 Snapshot。排程是透過 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 的**儲存空間** > **{{site.data.keyword.filestorage_short}}** 標籤來管理。
+您可以使用 Snapshot 排程決定要建立儲存空間磁區之時間點參照的頻率及時間。每個儲存空間磁區最多可以有 50 個 Snapshot。排程是透過 [{{site.data.keyword.cloud}} 主控台](https://{DomainName}/){: external}的**儲存空間** > **{{site.data.keyword.filestorage_short}}** 標籤來管理。
 
 您必須先購買 Snapshot 空間（如果未在起始佈建儲存空間磁區期間購買的話），才能設定起始排程。
 {:important}
@@ -158,17 +158,18 @@ Options:
 
 1. 從主機中卸載並分離您的儲存空間磁區。
    - 如需指示，請按一下[這裡](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)。
-2. 按一下 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 的**儲存空間**、**{{site.data.keyword.filestorage_short}}**。
-3. 向下捲動並按一下要還原的磁區。**詳細資料**頁面的 **Snapshot** 區段會顯示所有已儲存 Snapshot 的清單及其大小和建立日期。
-4. 按一下要使用之 Snapshot 旁的**動作**，然後按一下**還原**。<br/>
+2. 移至 [{{site.data.keyword.cloud}} 主控台](https://{DomainName}/){: external}。從功能表中選取**標準基礎架構**。
+3. 按一下**儲存空間**、**{{site.data.keyword.filestorage_short}}**。
+4. 向下捲動，並按一下要還原的磁區。**詳細資料**頁面的 **Snapshot** 區段會顯示所有已儲存 Snapshot 的清單及其大小和建立日期。
+5. 按一下要使用之 Snapshot 旁的**動作**，然後按一下**還原**。<br/>
 
    完成還原會導致流失在擷取 Snapshot 之後所建立或修改的資料。這項資料流失的原因是您的儲存空間磁區還原為 Snapshot 時所處的相同狀態。
    {:note}
-5. 按一下**是**，以啟動還原。
+6. 按一下**是**，以啟動還原。
 
    預期頁面上會出現一則訊息，指出正在使用所選取的 Snapshot 來還原磁區。此外，{{site.data.keyword.filestorage_short}} 上的磁區旁會出現一個圖示，指出有一個作用中交易正在進行。將游標移至圖示上方會產生一個視窗，顯示該交易。交易完成之後，圖示即會消失。
    {:note}
-6. 將儲存空間磁區裝載並重新連接至主機。
+7. 將儲存空間磁區裝載並重新連接至主機。
   - 如需指示，請按一下[這裡](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)。
 
 或者，您可以透過 SLCLI 搭配 Snapshot 還原磁區。

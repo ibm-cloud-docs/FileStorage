@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
@@ -64,7 +64,7 @@ subcollection: FileStorage
 {: row-headers}
 {: class="comparison-table"}
 {: caption="表 1 - NFS 通訊協定 VMware 特性支援矩陣" caption-side="top"}
-{: summary="這個表格有列和欄標頭。列標頭識別 vSphere 特性。欄標頭識別 NSF 版本。若要查看特性是否已啟用，請導覽至特性的列，然後查看與您使用之 NFS 版本相關聯的欄。"}
+{: summary="This table has row and column headers. The row headers identify the vSphere features. The column headers identify the NSF version. To see if a feature is enabled navigate to the row of the feature and look at the column that is associated with the NFS version you use."}
 
 *來源 - [VMware - NFS 通訊協定及 ESXi](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){: external}*
 
@@ -72,11 +72,11 @@ subcollection: FileStorage
 
 ### 使用 Snapshot
 
-{{site.data.keyword.filestorage_short}} 容許管理者設定 Snapshot 排程，以自動建立及刪除每個儲存空間磁區的 Snapshot 副本。他們也可以建立額外的 Snapshot 排程（每小時、每日、每週）來自動擷取 Snapshot，以及針對企業永續及災難回復 (BCDR) 情境手動建立特定 Snapshot。已保留 Snapshot 及使用空間，會透過 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 將自動警示傳遞給磁區擁有者。
+{{site.data.keyword.filestorage_short}} 容許管理者設定 Snapshot 排程，以自動建立及刪除每個儲存空間磁區的 Snapshot 副本。他們也可以建立額外的 Snapshot 排程（每小時、每日、每週）來自動擷取 Snapshot，以及針對企業永續及災難回復 (BCDR) 情境手動建立特定 Snapshot。已保留 Snapshot 及使用空間，會透過 [{{site.data.keyword.cloud}} 主控台](https://{DomainName}/){: external}將自動警示傳遞給磁區擁有者。
 
 需要有「Snapshot 空間」，才能使用 Snapshot。您可以在初次訂購磁區時購買空間，或在初次佈建之後，透過**磁區詳細資料**頁面購買空間，方法是按一下**動作**然後選取**新增 Snapshot 空間**。
 
-請務必注意，VMware 環境並不知道 Snapshot。{{site.data.keyword.filestorage_short}} Snapshot 功能不得與 VMware Snapshot 混淆。必須從 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 處理任何使用 {{site.data.keyword.filestorage_short}} Snapshot 特性的回復。
+請務必注意，VMware 環境並不知道 Snapshot。{{site.data.keyword.filestorage_short}} Snapshot 功能不得與 VMware Snapshot 混淆。必須從 [{{site.data.keyword.cloud}} 主控台](https://{DomainName}/){: external}處理任何使用 {{site.data.keyword.filestorage_short}} Snapshot 特性的回復。
 
 還原 {{site.data.keyword.filestorage_short}} 磁區時，需要關閉 {{site.data.keyword.filestorage_short}} 上所有 VM 的電源。磁區必須暫時從 ESXi 主機卸載，以避免在處理程序期間發生任何資料損毀。
 
@@ -111,9 +111,9 @@ subcollection: FileStorage
 
 使用[進階單一 VMware 參照架構](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){: external}，在 VMWare 環境中設定採用「耐久性」或「效能」選項的 {{site.data.keyword.filestorage_short}}。
 
-{{site.data.keyword.filestorage_short}} 可透過 [IBM Cloud 型錄](https://{DomainName}/catalog){: external}或 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}訂購。如需相關資訊，請參閱[訂購 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)
+{{site.data.keyword.filestorage_short}} 可透過 [{{site.data.keyword.cloud}} 型錄](https://{DomainName}/catalog){: external} 或 CLI 訂購。如需相關資訊，請參閱[訂購 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)。
 
-在一分鐘以內即會佈建儲存空間，並且它會顯示在 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 的 **{{site.data.keyword.filestorage_short}}** 頁面上。
+在一分鐘以內即會佈建儲存空間，而且它會顯示在 [{{site.data.keyword.cloud}} 主控台](https://{DomainName}/classic){: external}的 **{{site.data.keyword.filestorage_short}}** 頁面上。
 
 佈建磁區後，必須授權將使用磁區的 {{site.data.keyword.BluBareMetServers_full}} 或 {{site.data.keyword.BluVirtServers_full}} 來存取儲存空間。請使用下列步驟來授權磁區。
 

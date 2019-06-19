@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, SLCLI, provisioning, API
 
@@ -18,14 +18,14 @@ subcollection: FileStorage
 # 透過 SLCLI 訂購 {{site.data.keyword.filestorage_short}}
 {: #orderingSLCLI}
 
-您可以使用 SLCLI 來訂購通常是透過 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 來訂購的產品。在 SL API 中，一張訂單可能是由多重訂單容器所組成。訂單 CLI 只能用於一個訂單容器。
+您可以使用 SLCLI 來訂購通常是透過 [{{site.data.keyword.cloud}} 型錄](https://{DomainName}/catalog){: external}來訂購的產品。在 SL API 中，一張訂單可能是由多重訂單容器所組成。訂單 CLI 只能用於一個訂單容器。
 
 若要進一步瞭解如何安裝及使用 SLCLI，請參閱 [Python API 用戶端](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}。
 {:tip}
 
 ## 搜尋可用的 {{site.data.keyword.filestorage_short}} 供應項目
 
-當您下訂單時，所要尋找的第一個元件是套件。套件分散在 {{site.data.keyword.BluSoftlayer_full}} 中可供訂購的不同頂層產品之間。套件的部分範例包括適用於 VSI 的 CLOUD_SERVER、適用於裸機伺服器的 BARE_METAL_SERVER，以及適用於 {{site.data.keyword.filestorage_short}} 和 {{site.data.keyword.blockstorageshort}} 的 STORAGE_AS_A_SERVICE_STAAS。
+當您下訂單時，所要尋找的第一個元件是套件。套件分散在 {{site.data.keyword.cloud}} 中可供訂購的不同頂層產品之間。套件的部分範例包括適用於 VSI 的 CLOUD_SERVER、適用於裸機伺服器的 BARE_METAL_SERVER，以及適用於 {{site.data.keyword.filestorage_short}} 和 {{site.data.keyword.blockstorageshort}} 的 STORAGE_AS_A_SERVICE_STAAS。
 
 在套件中，有些項目會再細分為種類。有些套件有預設項目以方便您使用，有些套件則需要個別指定項目。如果需要套件的種類，則必須從該種類中選擇項目來訂購套件。種類中的某些項目可能會互斥，視種類而定。
 
@@ -118,20 +118,18 @@ Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
   Authorizes hosts to access a given volume
 
 Options:
-  -h, --hardware-id TEXT    The id of one SoftLayer_Hardware to authorize
-  -v, --virtual-id TEXT     The id of one SoftLayer_Virtual_Guest to authorize
-  -i, --ip-address-id TEXT  The id of one SoftLayer_Network_Subnet_IpAddress
-                            to authorize
-  --ip-address TEXT         An IP address to authorize
-  -s, --subnet-id TEXT      The id of one SoftLayer_Network_Subnet to
-                            authorize
+  -h, --hardware-id TEXT    The ID of one hardware server to authorize.
+  -v, --virtual-id TEXT     The ID of one virtual server to authorize.
+  -i, --ip-address-id TEXT  The ID of one IP address to authorize.
+  -p, --ip-address TEXT     An IP address to authorize.
+  -s, --subnet-id TEXT      An ID of one subnet to authorize.
   --help                    Show this message and exit.
 ```
 
 若要進一步瞭解如何授權主機透過 API 來存取 {{site.data.keyword.filestorage_short}}，請參閱 [authorize_host_to_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/file/#SoftLayer.managers.file.FileStorageManager.authorize_host_to_volume){: external}。
 {:tip}
 
-如需同時授權限制的相關資訊，請參閱[常見問題](/docs/infrastructure/FileStorage?topic=FileStorage-faqs)。
+如需同時授權限制的相關資訊，請參閱[常見問題](/docs/infrastructure/FileStorage?topic=file-storage-faqs)。
 {:important}
 
 ## 連接新的儲存空間

@@ -21,12 +21,11 @@ subcollection: FileStorage
 {{site.data.keyword.cloud}} 建議針對每個效能層級使用最大主機及應用程式輸入/輸出 (I/O) 佇列深度。
 
 |效能層級|最大主機佇列深度|
-|:------:|:------:|
+|------|------|
 |每 GB 0.25 IOPS|8|
 |每 GB 2 IOPS|24|
 |每 GB 4 IOPS|56|
 {: caption="每一個 IOPS 層級的建議佇列深度" caption-side="top"}
-
 
 主機設定不會影響磁碟及控制器延遲。它只會影響主機及應用程式所觀察到的延遲。
 
