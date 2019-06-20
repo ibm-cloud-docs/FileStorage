@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-03-11"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, replication, duplication, synchronous, replica schedule, replica space, disaster recovery
 
@@ -41,7 +41,7 @@ Consulte la Tabla 1 para ver la lista completa de disponibilidad de centros de d
 
 ## Creación de la réplica inicial
 
-Las réplicas se basan en una planificación de réplica. Primero debe tener un espacio de instantáneas y una planificación de instantáneas para el volumen de origen antes de poder replicar. Si intenta configurar la réplica y uno o el otro no está en su lugar, se le solicitará que compre más espacio o que establezca una planificación. Las réplicas se gestionan en **Almacenamiento** > **{{site.data.keyword.filestorage_short}}** en el [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
+Las réplicas se basan en una planificación de réplica. Primero debe tener un espacio de instantáneas y una planificación de instantáneas para el volumen de origen antes de poder replicar. Si intenta configurar la réplica y uno o el otro no está en su lugar, se le solicitará que compre más espacio o que establezca una planificación. Las réplicas se gestionan en **Almacenamiento** > **{{site.data.keyword.filestorage_short}}** en la [consola de {{site.data.keyword.cloud}}](https://{DomainName}/classic){: external}.
 
 1. Pulse el volumen de almacenamiento.
 2. Pulse **Réplica** y pulse **Adquirir una réplica**.
@@ -60,7 +60,7 @@ Las réplicas se basan en una planificación de réplica. Primero debe tener un 
 
 ## Edición de una réplica existente
 
-Puede editar la planificación de la réplica y cambiar el espacio de réplica desde el separador **Primario** o **Réplica** de **Almacenamiento** > **{{site.data.keyword.filestorage_short}}** desde el [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
+Puede editar la planificación de la réplica y cambiar el espacio de réplica desde el separador **Primario** o **Réplica** de **Almacenamiento** > **{{site.data.keyword.filestorage_short}}** desde la [consola de {{site.data.keyword.cloud}}](https://{DomainName}/classic){: external}.
 
 
 ## Edición de la planificación de réplica
@@ -114,7 +114,7 @@ El historial de réplicas se visualiza en el **Registro de auditoría** en el se
 
 ## Creación de un duplicado de una réplica
 
-Puede crear un duplicado de un {{site.data.keyword.cloud}}  {{site.data.keyword.filestorage_full}} existente. El volumen duplicado hereda la capacidad y las opciones de rendimiento del volumen de almacenamiento original de forma predeterminada y tiene una copia de los datos hasta el momento de la instantánea.
+Puede crear un duplicado de un {{site.data.keyword.cloud}} {{site.data.keyword.filestorage_full}} existente. El volumen duplicado hereda la capacidad y las opciones de rendimiento del volumen de almacenamiento original de forma predeterminada y tiene una copia de los datos hasta el momento de la instantánea.
 
 Los duplicados pueden crearse a partir de volúmenes primarios y de réplica. El nuevo duplicado se crea en el mismo centro de datos que el volumen original. Si crea un duplicado a partir de un volumen de réplica, el nuevo volumen se crea en el mismo centro de datos que el volumen de réplica.
 
@@ -201,7 +201,7 @@ Cuando se cancela un volumen primario, la planificación de réplica y el volume
   Opciones:
   --replicant-id TEXTO ID del volumen replicante
   --immediate          Migrar tras error al replicante de inmediato.
-  -h, --help      Mostrar este mensaje y salir.
+  -h, --help           Mostrar este mensaje y salir.
   ```
 
 * Restablecer un volumen de archivo desde un volumen replicante específico.

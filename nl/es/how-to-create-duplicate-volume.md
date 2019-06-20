@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, duplicate volume
 
@@ -39,13 +39,13 @@ Algunos de los usos comunes para un volumen duplicado incluyen los ejemplos sigu
 - **Desarrollo y prueba (dev/test)**. Cree hasta cuatro duplicados simultáneos de un volumen a la vez para crear datos duplicados para desarrollo y pruebas.
 - **Redimensionamiento del almacenamiento**. Cree un volumen con el nuevo tamaño, tasa de IOPS o ambos sin necesidad de mover los datos.  
 
-Puede crear un volumen duplicado a través del [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} de un par de maneras.
+Puede crear un volumen duplicado a través de la [consola de {{site.data.keyword.cloud}}](https://{DomainName}/){: external} de un par de maneras.
 
 
 ## Creación de un duplicado a partir de un volumen específico en la lista de almacenamiento
 
 1. Vaya a su lista de {{site.data.keyword.filestorage_short}}
-    - Desde el portal de clientes, pulse **Almacenamiento** > **{{site.data.keyword.filestorage_short}}** O
+    - Desde el menú de Infraestructura clásica, pulse **Almacenamiento** > **{{site.data.keyword.filestorage_short}}** O BIEN
     - Desde el catálogo de {{site.data.keyword.cloud}}, pulse **Infraestructura** > **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**.
 2. Seleccione un LUN de la lista y pulse **Acciones** > **Duplicar LUN (Volumen)**
 3. Elija la opción de instantánea.

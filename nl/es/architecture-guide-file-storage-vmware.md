@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
@@ -73,11 +73,11 @@ Volumes | Sí | No |
 
 ### Uso de instantáneas
 
-El {{site.data.keyword.filestorage_short}} permite a los administradores establecer planificaciones de instantáneas que crean y suprimen copias de instantáneas automáticamente para cada volumen de almacenamiento. También pueden crear planificaciones de instantáneas adicionales (cada hora, diariamente, semanalmente) para instantáneas automáticas y crear instantáneas ad manualmente para casos de continuidad del negocio y recuperación tras desastre (BCDR). Las alertas automáticas se envían a través del [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} al propietario del volumen para las instantáneas retenidas y el espacio utilizado.
+El {{site.data.keyword.filestorage_short}} permite a los administradores establecer planificaciones de instantáneas que crean y suprimen copias de instantáneas automáticamente para cada volumen de almacenamiento. También pueden crear planificaciones de instantáneas adicionales (cada hora, diariamente, semanalmente) para instantáneas automáticas y crear instantáneas ad manualmente para casos de continuidad del negocio y recuperación tras desastre (BCDR). Las alertas automáticas se envían a través de la [consola de {{site.data.keyword.cloud}}](https://{DomainName}/){: external} al propietario del volumen para las instantáneas retenidas y el espacio utilizado.
 
 Se necesita espacio de instantáneas para utilizar las instantáneas. El espacio se puede adquirir durante el pedido del volumen inicial o después del suministro inicial mediante la página **Detalles del volumen**, pulsando **Acciones** y seleccionando **Añadir espacio de instantáneas**.
 
-Es importante señalar que los entornos de VMware no son conscientes de las instantáneas. La capacidad de instantáneas de {{site.data.keyword.filestorage_short}} no debe confundirse con las instantáneas de VMware. Toda recuperación que utilice la característica de instantáneas de {{site.data.keyword.filestorage_short}} debe manejarse desde el [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
+Es importante señalar que los entornos de VMware no son conscientes de las instantáneas. La capacidad de instantáneas de {{site.data.keyword.filestorage_short}} no debe confundirse con las instantáneas de VMware. Toda recuperación que utilice la característica de instantáneas de {{site.data.keyword.filestorage_short}} debe manejarse desde la [consola de {{site.data.keyword.cloud}}](https://{DomainName}/){: external}.
 
 Restaurar el volumen de {{site.data.keyword.filestorage_short}} requiere apagar todas las máquinas virtuales del {{site.data.keyword.filestorage_short}}. El volumen se debe desmontar temporalmente de los hosts de ESXi para evitar la corrupción de datos durante el proceso.
 
@@ -112,9 +112,9 @@ Los datos no válidos, ya estén corruptos, pirateados o infectados, se replican
 
 Utilice la [Arquitectura avanzada de referencia de VMware de un solo sitio](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){: external} para configurar {{site.data.keyword.filestorage_short}} con opciones de Resistencia o Rendimiento en el entorno de VMware.
 
-{{site.data.keyword.filestorage_short}} se puede solicitar a través del [catálogo de IBM](https://{DomainName}/catalog){: external} o del [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}. Para obtener más información, consulte [Solicitud de {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)
+{{site.data.keyword.filestorage_short}} se puede solicitar a través del [catálogo de {{site.data.keyword.cloud}}](https://{DomainName}/catalog){: external} o la CLI. Para obtener más información, consulte [Solicitud de {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole).
 
-El almacenamiento se suministra en menos de un minuto y pasa a estar visible en la página de **{{site.data.keyword.filestorage_short}}** del [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
+El almacenamiento se suministra en menos de un minuto y pasa a estar visible en la página de **{{site.data.keyword.filestorage_short}}** de la [consola de {{site.data.keyword.cloud}}](https://{DomainName}/classic){: external}.
 
 Una vez suministrado el volumen, los {{site.data.keyword.BluBareMetServers_full}} o {{site.data.keyword.BluVirtServers_full}} que utilizarán el volumen necesitarán autorización para acceder al almacenamiento. Utilice los siguientes pasos para autorizar el volumen.
 

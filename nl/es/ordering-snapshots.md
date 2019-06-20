@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, snapshot, ordering snapshot, snapshot space
 
@@ -50,18 +50,17 @@ Además, para la mayoría de las cargas de trabajo, cuanto mayor sea un volumen,
 
 ## Solicitud de espacio de instantáneas mediante la consola de {{site.data.keyword.cloud_notm}}
 
-1. Inicie la sesión en la [consola de IBM Cloud](https://{DomainName}/){: external} y pulse el icono de menú de la parte superior izquierda. Seleccione **Infraestructura clásica**.
-
-   También puede iniciar la sesión en el [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
-2. Acceda al almacenamiento mediante **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**.
-3. Pulse **Cambiar espacio de instantáneas** en el marco Instantáneas.
-4. Seleccione la cantidad de espacio que necesita y el método de pago.
-5. Pulse **Continuar**.
-6. Especifique cualquier código promocional que tenga y pulse **Recalcular**. Las opciones **Cargos para este pedido** y **Revisión del pedido** contienen valores predeterminados.
+1. Inicie la sesión en la [consola de {{site.data.keyword.cloud}}](https://{DomainName}/){: external} y pulse el icono de menú de la parte superior izquierda.
+2. Seleccione **Infraestructura clásica**.
+3. Acceda al almacenamiento mediante **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**.
+4. Pulse **Cambiar espacio de instantáneas** en el marco Instantáneas.
+5. Seleccione la cantidad de espacio que necesita y el método de pago.
+6. Pulse **Continuar**.
+7. Especifique cualquier código promocional que tenga y pulse **Recalcular**. Las opciones **Cargos para este pedido** y **Revisión del pedido** contienen valores predeterminados.
 
    Los descuentos se aplican cuando se procesa el pedido.
    {:note}
-7. Seleccione el recuadro **He leído el Acuerdo de servicio maestro y acepto sus condiciones** y pulse **Realizar pedido**. El espacio de instantáneas se suministra en pocos minutos.
+8. Seleccione el recuadro **He leído el Acuerdo de servicio maestro y acepto sus condiciones** y pulse **Realizar pedido**. El espacio de instantáneas se suministra en pocos minutos.
 
 ## Solicitud de espacio de instantáneas mediante SLCLI
 

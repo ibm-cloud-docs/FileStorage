@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, upgrade, migrate to new
 
@@ -37,7 +37,7 @@ Todos los volúmenes de {{site.data.keyword.filestorage_short}} mejorados sumini
 Cuando realice un pedido con API, especifique el paquete "Almacenamiento como un servicio" para asegurarse de recibir las características actualizadas con el nuevo almacenamiento.
 {:important}
 
-Puede solicitar un LUN mejorado desde el catálogo de {{site.data.keyword.cloud}} y el {{site.data.keyword.slportal}}. El nuevo volumen debe tener el mismo tamaño o mayor que la compartición de archivos original para facilitar la migración.
+Puede solicitar un LUN mejorado desde el catálogo de {{site.data.keyword.cloud}}. El nuevo volumen debe tener el mismo tamaño o mayor que la compartición de archivos original para facilitar la migración.
 
 - [Solicitud de {{site.data.keyword.filestorage_short}} con los niveles de IOPS predefinidos (Resistencia)](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#endurance)
 - [Solicitud de {{site.data.keyword.filestorage_short}} con IOPS personalizados (Rendimiento)](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#performance)

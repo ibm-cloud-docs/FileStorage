@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, snapshots, snapshot schedule, manual snapshot, snapshot space, snapshot quota
 
@@ -21,7 +21,7 @@ subcollection: FileStorage
 
 ## Creación de una planificación de instantáneas
 
-Puede decidir con qué frecuencia y cuándo desea crear una referencia de un punto en el tiempo de su volumen de almacenamiento con planificaciones de instantáneas. Puede tener un máximo de 50 instantáneas del volumen de almacenamiento. Las planificaciones se gestionan mediante el separador **Almacenamiento** > **{{site.data.keyword.filestorage_short}}** del [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
+Puede decidir con qué frecuencia y cuándo desea crear una referencia de un punto en el tiempo de su volumen de almacenamiento con planificaciones de instantáneas. Puede tener un máximo de 50 instantáneas del volumen de almacenamiento. Las planificaciones se gestionan mediante el separador **Almacenamiento** > **{{site.data.keyword.filestorage_short}}** de la [consola de {{site.data.keyword.cloud}}](https://{DomainName}/){: external}.
 
 Para poder configurar la planificación inicial, debe adquirir el espacio de instantáneas si no lo ha comprado durante el suministro inicial del volumen de almacenamiento.
 {:important}
@@ -159,17 +159,18 @@ Es posible que necesite recuperar el volumen de almacenamiento a un punto en el 
 
 1. Desmonte y desconecte el volumen de almacenamiento del host.
    - Pulse [aquí](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux) para obtener instrucciones.
-2. Pulse **Almacenamiento**, **{{site.data.keyword.filestorage_short}}** en el [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
-3. Desplácese y pulse el volumen que se va a restaurar. La sección **Instantáneas** de la página **Detalles** mostrará una lista de todas las instantáneas guardadas junto con su tamaño y fecha de creación.
-4. Pulse **Acciones** junto a la instantánea que se va a utilizar y pulse **Restaurar**. <br/>
+2. Vaya a la [consola de {{site.data.keyword.cloud}}](https://{DomainName}/){: external}. En el menú, seleccione **Infraestructura clásica**.
+3. Pulse **Almacenamiento**, **{{site.data.keyword.filestorage_short}}**.
+4. Desplácese y pulse el volumen que se va a restaurar. La sección **Instantáneas** de la página **Detalles** mostrará una lista de todas las instantáneas guardadas junto con su tamaño y fecha de creación.
+5. Pulse **Acciones** junto a la instantánea que se va a utilizar y pulse **Restaurar**. <br/>
 
    La restauración de los resultados da como resultado la pérdida de los datos que se han creado o modificado después de que la instantánea se haya realizado. Esta pérdida de datos se produce porque el volumen de almacenamiento vuelve al mismo estado en el que se encontraba en el momento de la instantánea.
    {:note}
-5. Pulse **Sí** para iniciar la restauración.
+6. Pulse **Sí** para iniciar la restauración.
 
    Recibirá un mensaje en la página que indicará que el volumen se ha restaurado utilizando la instantánea seleccionada. También aparecerá un icono junto al volumen en {{site.data.keyword.filestorage_short}} que indicará que hay una transacción activa en curso. Al pasar el ratón sobre el icono se abre una ventana que muestra la transacción. El icono desaparecerá una vez completada la transacción.
    {:note}
-6. Monte y vuelva a conectar el volumen de almacenamiento al host.
+7. Monte y vuelva a conectar el volumen de almacenamiento al host.
   - Pulse [aquí](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux) para obtener instrucciones.
 
 De manera alternativa, puede restaurar el volumen con una instantánea mediante SLCLI.

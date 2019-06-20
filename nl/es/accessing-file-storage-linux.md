@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-05-06"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, NSF, mounting File Storage, mounting storage on Linux,
 
@@ -18,7 +18,7 @@ subcollection: FileStorage
 # Montaje de {{site.data.keyword.filestorage_short}} en Linux
 {: #mountingLinux}
 
-En primer lugar, asegúrese de que el host que va a acceder al volumen de {{site.data.keyword.filestorage_full}} está autorizado mediante el [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
+En primer lugar, asegúrese de que el host que va a acceder al volumen de {{site.data.keyword.filestorage_full}} está autorizado mediante la [consola de {{site.data.keyword.cloud}}](https://{DomainName}/classic){: external}.
 
 1. Desde la página de listado de {{site.data.keyword.filestorage_short}}, pulse el enlace **Acciones** que está asociado a la nueva compartición y pulse **Autorizar host**.
 2. Seleccione el host o hosts en la lista y pulse **Enviar**. Esta acción autoriza al host a acceder a la compartición.
@@ -29,13 +29,11 @@ De manera alternativa, puede autorizar los hosts mediante SLCLI.
 Uso: slcli file access-authorize [OPCIONES] ID_VOLUMEN
 
 Opciones:
-  -h, --hardware-id TEXTO    El id de un SoftLayer_Hardware que se va a autorizar
-  -v, --virtual-id TEXTO     El id de un SoftLayer_Virtual_Guest que se va a autorizar
-  -i, --ip-address-id TEXTO  El id de una SoftLayer_Network_Subnet_IpAddress
-                            que se va a autorizar
-  --ip-address TEXTO         Una dirección IP que se va a autorizar
-  -s, --subnet-id TEXTO      El id de una SoftLayer_Network_Subnet_IpAddress
-                            que se va a autorizar
+  -h, --hardware-id TEXTO   El ID de un servidor de hardware que se va a autorizar.
+  -v, --virtual-id TEXTO    El ID de un servidor virtual que se va a autorizar.
+  -i, --ip-address-id TEXTO El ID de una dirección IP que se va a autorizar.
+  -p, --ip-address TEXTO    Una dirección IP que se va a autorizar.
+  -s, --subnet-id TEXTO     ID de una subred que se va a autorizar.
   --help                    Mostrar este mensaje y salir.
 ```
 

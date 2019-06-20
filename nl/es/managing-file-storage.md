@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, authorizing hosts, rewoke access, grant access, view authorizations
 
@@ -19,7 +19,7 @@ subcollection: FileStorage
 # Gestión de {{site.data.keyword.filestorage_short}}
 {: #managingstorage}
 
-Puede gestionar los volúmenes de {{site.data.keyword.filestorage_full}} mediante el {{site.data.keyword.slportal}}.
+Puede gestionar los volúmenes de {{site.data.keyword.filestorage_full}} mediante la consola de {{site.data.keyword.cloud}}.
 
 ## Autorización de hosts para acceder a {{site.data.keyword.filestorage_short}}
 
@@ -28,9 +28,10 @@ Los hosts “autorizados” son los hosts a los que se les ha otorgado acceso a 
 Puede autorizar y conectar hosts que estén ubicados en el mismo centro de datos que su almacenamiento. Puede tener varias cuentas, pero no puede autorizar a un host de una cuenta a que acceda a su almacenamiento en otra cuenta.
 {:important}
 
-1. Pulse **Almacenamiento** > **{{site.data.keyword.filestorage_short}}** y pulse el **Nombre de volumen**.
-2. Desplácese a la sección **Hosts autorizados** de la página.
-3. Pulse **Autorizar host** en la parte derecha. Seleccione los hosts que pueden acceder a ese volumen determinado.
+1. Vaya a la [consola de {{site.data.keyword.cloud}}](https://{DomainName}/){: external}. En el menú, seleccione **Infraestructura clásica**.
+2. Pulse **Almacenamiento** > **{{site.data.keyword.filestorage_short}}** y pulse el **Nombre de volumen**.
+3. Desplácese a la sección **Hosts autorizados** de la página.
+4. Pulse **Autorizar host** en la parte derecha. Seleccione los hosts que pueden acceder a ese volumen determinado.
 
 De manera alternativa, puede utilizar el mandato siguiente en SLCLI.
 ```
@@ -38,20 +39,19 @@ De manera alternativa, puede utilizar el mandato siguiente en SLCLI.
 Uso: slcli file access-authorize [OPCIONES] ID_VOLUMEN
 
 Opciones:
-  -h, --hardware-id TEXTO    El id de un SoftLayer_Hardware que se va a autorizar
-  -v, --virtual-id TEXTO     El id de un SoftLayer_Virtual_Guest que se va a autorizar
-  -i, --ip-address-id TEXTO  El id de una SoftLayer_Network_Subnet_IpAddress
-                            que se va a autorizar
-  --ip-address TEXTO         Una dirección IP que se va a autorizar
-  -s, --subnet-id TEXTO      El id de una SoftLayer_Network_Subnet_IpAddress
-                            que se va a autorizar
+  -h, --hardware-id TEXTO   El ID de un servidor de hardware que se va a autorizar.
+  -v, --virtual-id TEXTO    El ID de un servidor virtual que se va a autorizar.
+  -i, --ip-address-id TEXTO El ID de una dirección IP que se va a autorizar.
+  -p, --ip-address TEXTO    Una dirección IP que se va a autorizar.
+  -s, --subnet-id TEXTO     ID de una subred que se va a autorizar.
   --help                    Mostrar este mensaje y salir.
 ```
 
 ## Visualización de la lista de hosts que están autorizados para acceder a un volumen de {{site.data.keyword.filestorage_short}}
 
-1. Pulse **Almacenamiento > {{site.data.keyword.filestorage_short}}** y pulse el **Nombre de volumen**.
-2. Desplácese en la página hasta la sección **Hosts autorizados**.
+1. Vaya a la [consola de {{site.data.keyword.cloud}}](https://{DomainName}/){: external}. En el menú, seleccione **Infraestructura clásica**.
+2. Pulse **Almacenamiento** > **{{site.data.keyword.filestorage_short}}** y pulse el **Nombre de volumen**.
+3. Desplácese en la página hasta la sección **Hosts autorizados**.
 
 Allí puede ver la lista de hosts, que actualmente tienen autorización para acceder al volumen.
 
@@ -73,9 +73,11 @@ Opciones:
 
 Puede ver los volúmenes a los cuales un host tiene acceso, incluyendo la información necesaria para realizar una conexión: nombre de volumen, tipo de almacenamiento, dirección de destino, capacidad y ubicación.
 
-1. Pulse **Dispositivos** > **Lista de dispositivos** desde el [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
-2. Pulse el dispositivo adecuado.
-2. Seleccione el separador Almacenamiento.
+1. Vaya a la [consola de {{site.data.keyword.cloud}}](https://{DomainName}/){: external}.
+2. En el menú, seleccione **Infraestructura clásica**.
+3. Pulse **Dispositivos** > **Lista de dispositivos**.
+4. Pulse el dispositivo adecuado.
+5. Seleccione el separador Almacenamiento.
 
 Se le presenta una lista de los volúmenes de almacenamiento a los cuales este host tiene acceso, todos están agrupados por tipo de almacenamiento (bloque, archivo, otros). Desde los menús respectivos de **Acción**, puede autorizar almacenamiento adicional o eliminar el acceso.
 
@@ -96,7 +98,9 @@ Puede revocar el acceso desde el Almacenamiento de la Lista de Dispositivos o de
 
 ### Revocación del acceso de la lista de dispositivos
 
-1. Pulse **Dispositivos** > **Lista de dispositivos** desde el [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
+1. Vaya a la [consola de {{site.data.keyword.cloud}}](https://{DomainName}/){: external}.
+2. En el menú, seleccione **Infraestructura clásica**.
+3. Pulse **Dispositivos** > **Lista de dispositivos**.
 2. Efectúe una doble pulsación en el dispositivo adecuado.
 3. Seleccione el separador **Almacenamiento**.
 4. Se le presenta una lista de los volúmenes de almacenamiento a los cuales este host tiene acceso, todos agrupados por tipo de almacenamiento (bloque, archivo, otros). Seleccione el menú respectivo de **Acción** situado junto al volumen del que desea revocar el acceso y pulse **Revocar acceso**.
@@ -108,28 +112,28 @@ Si desea desconectar varios volúmenes desde un host específico, debe repetir l
 
 ### Revocación del acceso de la vista de almacenamiento
 
-1. Pulse **Almacenamiento, {{site.data.keyword.filestorage_short}}**, y seleccione el **Volumen** desde el cual desea revocar el acceso.
-2. Desplácese a la sección **Hosts autorizados** de la página.
-3. Pulse **Acciones** junto al host cuyo acceso se va a revocar y seleccione **Revocar acceso**.
-4. Confirme si desea revocar el acceso al volumen, porque la acción no puede deshacerse. Pulse **Sí** para revocar el acceso al volumen o **No** para cancelar la acción.
+1. Vaya a la [consola de {{site.data.keyword.cloud}}](https://{DomainName}/){: external}.
+2. En el menú, seleccione **Infraestructura clásica**.
+3. Pulse **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**, y seleccione el **Volumen** desde el cual desea revocar el acceso.
+4. Desplácese a la sección **Hosts autorizados** de la página.
+5. Pulse **Acciones** junto al host cuyo acceso se va a revocar y seleccione **Revocar acceso**.
+6. Confirme si desea revocar el acceso al volumen, porque la acción no puede deshacerse. Pulse **Sí** para revocar el acceso al volumen o **No** para cancelar la acción.
 
 Si desea desconectar varios hosts desde un host específico, debe repetir la acción Revocar acceso para cada host.
 {:tip}
 
 ### Revocación del acceso mediante SLCLI.
-De manera alternativa, puede utilizar el mandato siguiente en SLCLI.
+Puede utilizar el mandato siguiente en SLCLI.
 ```
 # slcli file access-revoke --help
 Uso: slcli file access-revoke [OPCIONES] ID_VOLUMEN
 
 Opciones:
-  -h, --hardware-id TEXTO    El id de un SoftLayer_Hardware cuya autorización se va a revocar
-  -v, --virtual-id TEXTO     El id de un SoftLayer_Virtual_Guest cuya autorización se va a revocar
-  -i, --ip-address-id TEXTO  El id de una SoftLayer_Network_Subnet_IpAddress
-                            cuya autorización se va a revocar
-  --ip-address TEXTO         Una dirección IP cuya autorización se va a revocar
-  -s, --subnet-id TEXTO      El id de una SoftLayer_Network_Subnet_IpAddress
-                            cuya autorización se va a revocar
+  -h, --hardware-id TEXTO   El ID del servidor de hardware cuya autorización se va a revocar.
+  -v, --virtual-id TEXTO    El ID de un servidor virtual cuya autorización se va a revocar.
+  -i, --ip-address-id TEXTO El ID de una dirección IP cuya autorización se va a revocar.
+  -p, --ip-address-id TEXTO Una dirección IP cuya autorización se va a revocar.
+  -s, --subnet-id TEXTO     ID de una subred cuya autorización se va a revocar.
   --help                    Mostrar este mensaje y salir.
 ```
 
@@ -137,14 +141,15 @@ Opciones:
 
 Si ya no necesita un volumen específico, puede cancelar ese almacenamiento. Para cancelar un volumen de almacenamiento, primero debe revocar el acceso desde cualquier host.
 
-1. Pulse **Almacenamiento**>**{{site.data.keyword.filestorage_short}}**.
-2. Pulse **Acciones** del volumen que se va a cancelar y seleccione **Cancelar {{site.data.keyword.filestorage_short}}**.
-3. Confirme si desea cancelar el volumen inmediatamente o en la fecha de aniversario en la que se suministró el volumen.
+1. Vaya a la [consola de {{site.data.keyword.cloud}}](https://{DomainName}/){: external}. En el menú, seleccione **Infraestructura clásica**.
+2. Pulse **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**.
+3. Pulse **Acciones** del volumen que se va a cancelar y seleccione **Cancelar {{site.data.keyword.filestorage_short}}**.
+4. Confirme si desea cancelar el volumen inmediatamente o en la fecha de aniversario en la que se suministró el volumen.
 
    Si selecciona la opción de cancelar el volumen en su fecha de aniversario, puede anular la solicitud de cancelación antes de su fecha de aniversario.
    {:tip}
-4. Pulse **Continuar** o **Cerrar**.
-5. Marque el recuadro de selección de acuse de recibo y pulse **Confirmar**.
+5. Pulse **Continuar** o **Cerrar**.
+6. Marque el recuadro de selección de acuse de recibo y pulse **Confirmar**.
 
 De manera alternativa, puede utilizar el mandato siguiente en SLCLI.
 ```

@@ -26,9 +26,9 @@ Si no está seguro de cuántos volúmenes tiene, puede listar los volúmenes de 
 Uso: slcli file volume-count [OPCIONES]
 
 Opciones:
-  -d, --datacenter TEXTO Nombre corto del centro de datos
-  --sortby TEXTO         Columna por la que se debe ordenar
-  -h, --help             Mostrar este mensaje y salir.
+ -d, --datacenter TEXTO Nombre corto del centro de datos
+ --sortby TEXTO         Columna por la que se debe ordenar
+ -h, --help             Mostrar este mensaje y salir.
 ```
 
 Puede solicitar un aumento del límite enviando un caso de soporte en el [portal](https://cloud.ibm.com/unifiedsupport/cases/add){: external}. Cuando se aprueba la solicitud, se obtiene un límite de volumen que se establece para un centro de datos específico.

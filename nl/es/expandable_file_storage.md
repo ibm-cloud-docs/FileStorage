@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, modify volume, NFS, file storage, expand capacity
 
@@ -44,7 +44,7 @@ Las limitaciones de tamaño actuales para {{site.data.keyword.filestorage_short}
 ## Redimensionamiento de almacenamiento
 {: #resizingsteps}
 
-1. En el {{site.data.keyword.slportal}}, pulse **Almacenamiento** > **{{site.data.keyword.filestorage_short}}** O desde el catálogo de {{site.data.keyword.cloud}}, pulse **Infraestructura** > **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**.
+1. Vaya a la [consola de {{site.data.keyword.cloud}}](https://{DomainName}/){: external}. En el menú, seleccione **Infraestructura clásica**. Pulse **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**.
 2. Seleccione el volumen de la lista y pulse **Acciones** > **Modificar volumen**
 3. Especifique el nuevo tamaño de almacenamiento en GB.
 4. Revise su selección y el nuevo precio.
