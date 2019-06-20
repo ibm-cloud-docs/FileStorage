@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-05-06"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, NSF, mounting File Storage, mounting storage on Linux,
 
@@ -18,7 +18,7 @@ subcollection: FileStorage
 # Montaggio di {{site.data.keyword.filestorage_short}} su Linux
 {: #mountingLinux}
 
-Per prima cosa, assicurati che l'host per accedere al volume {{site.data.keyword.filestorage_full}} sia autorizzato tramite [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
+Per prima cosa, assicurati che l'host per accedere al volume {{site.data.keyword.filestorage_full}} sia autorizzato tramite la [console {{site.data.keyword.cloud}}](https://{DomainName}/classic){: external}.
 
 1. Dalla pagina di elenco {{site.data.keyword.filestorage_short}}, fai clic sul link **Actions** associato alla nuova condivisione e fai clic su **Authorize Host**.
 2. Seleziona l'host o gli host dall'elenco e fai clic su **Submit**. Questa azione autorizza l'host ad accedere alla condivisione.
@@ -29,13 +29,11 @@ In alternativa, puoi autorizzare gli host tramite la SLCLI.
 Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
 
 Options:
-  -h, --hardware-id TEXT    The id of one SoftLayer_Hardware to authorize
-  -v, --virtual-id TEXT     The id of one SoftLayer_Virtual_Guest to authorize
-  -i, --ip-address-id TEXT  The id of one SoftLayer_Network_Subnet_IpAddress
-                            to authorize
-  --ip-address TEXT         An IP address to authorize
-  -s, --subnet-id TEXT      The id of one SoftLayer_Network_Subnet to
-                            authorize
+  -h, --hardware-id TEXT    The ID of one hardware server to authorize.
+  -v, --virtual-id TEXT     The ID of one virtual server to authorize.
+  -i, --ip-address-id TEXT  The ID of one IP address to authorize.
+  -p, --ip-address TEXT     An IP address to authorize.
+  -s, --subnet-id TEXT      An ID of one subnet to authorize.
   --help                    Show this message and exit.
 ```
 
@@ -141,7 +139,7 @@ Esempio
    # /etc/init.d/rpcidmapd start
    Starting RPC idmapd: [ OK ]
    ```
-## Smontaggio del file system 
+## Smontaggio del file system
 
 Per smontare un qualsiasi file system al momento montato sul tuo host, esegui il comando `umount` con il nome del disco o il nome di un punto di montaggio.
 

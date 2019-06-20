@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, modify volume, NFS, file storage, expand capacity
 
@@ -22,7 +22,7 @@ Con questa nuova funzione, gli utenti correnti di {{site.data.keyword.filestorag
 
 La fatturazione per il volume viene aggiornata per aggiungere la differenza calcolata proporzionalmente del nuovo prezzo al ciclo di fatturazione corrente. Successivamente, la nuova quantità completa viene fatturata nel ciclo di fatturazione successivo.
 
-Questa funzione è disponibile solo in [data center selezionati](/docs/infrastructure/FileStorage?topic=FileStorage-news).
+Questa funzione è disponibile solo in [data center selezionati](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
 
 ## Vantaggi dell'archiviazione espandibile
 
@@ -37,14 +37,14 @@ L'azione di espansione sull'archiviazione primaria determina una modifica della 
 ## Limitazioni
 {: #limitsofextension}
 
-Questa funzione è disponibile solo per l'archiviazione di cui viene eseguito il provisioning nei [data center](/docs/infrastructure/FileStorage?topic=FileStorage-news) con funzionalità migliorate. L'archiviazione crittografata di cui viene eseguito il provisioning in questi data center può essere aumentata fino a 12 TB.
+Questa funzione è disponibile solo per l'archiviazione di cui viene eseguito il provisioning nei [data center](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC) con funzionalità migliorate. L'archiviazione crittografata di cui viene eseguito il provisioning in questi data center può essere aumentata fino a 12 TB.
 
 Le limitazioni di dimensione esistenti per {{site.data.keyword.filestorage_short}} di cui era stato eseguito il provisioning con Endurance continuano a essere valide (fino a 4 TB per il livello a 10 IOPS e fino a 12 TB per tutti gli altri livelli).
 
 ## Ridimensionamento dell'archiviazione
 {: #resizingsteps}
 
-1. Dal {{site.data.keyword.slportal}}, fai clic su **Storage** > **{{site.data.keyword.filestorage_short}}** OPPURE, dal catalogo di {{site.data.keyword.cloud}}, fai clic su **Infrastruttura** > **Archiviazione** > **{{site.data.keyword.filestorage_short}}**.
+1. Vai alla [console {{site.data.keyword.cloud}}](https://{DomainName}/){: external}. Dal menu, seleziona **Classic Infrastructure**. Fai clic su **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Seleziona il volume dall'elenco e fai clic su **Actions** > **Modify Volume**
 3. Immetti la nuova dimensione dell'archiviazione in GB.
 4. Riesamina la tua selezione e la nuova determinazione del prezzo.

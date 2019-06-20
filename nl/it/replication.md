@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-03-11"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, replication, duplication, synchronous, replica schedule, replica space, disaster recovery
 
@@ -41,7 +41,7 @@ Vedi la Tabella 1 per l'elenco completo della disponibilità dei data center e d
 
 ## Creazione della replica iniziale
 
-Le repliche funzionano in base a una pianificazione delle istantanee. Prima di poter eseguire la replica, devi già disporre dello spazio per le istantanee e di una pianificazione delle istantanee per il volume di origine. Se provi a configurare una replica e non disponi di uno di questi due elementi, ti verrà richiesto di acquistare ulteriore spazio o di configurare una pianificazione. Le repliche sono gestite in **Storage** > **{{site.data.keyword.filestorage_short}}** nel [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} .
+Le repliche funzionano in base a una pianificazione delle istantanee. Prima di poter eseguire la replica, devi già disporre dello spazio per le istantanee e di una pianificazione delle istantanee per il volume di origine. Se provi a configurare una replica e non disponi di uno di questi due elementi, ti verrà richiesto di acquistare ulteriore spazio o di configurare una pianificazione. Le repliche sono gestite in **Storage** > **{{site.data.keyword.filestorage_short}}** nella [console {{site.data.keyword.cloud}}](https://{DomainName}/classic){: external}.
 
 1. Fai clic sul tuo volume di archiviazione.
 2. Fai clic su **Replica** e fai clic su **Purchase a replication**.
@@ -60,7 +60,7 @@ Le repliche funzionano in base a una pianificazione delle istantanee. Prima di p
 
 ## Modifica di una replica esistente
 
-Puoi modificare la tua pianificazione della replica e modificare il tuo spazio di replica dalla scheda **Primary** o da quella **Replica** in **Storage** > **{{site.data.keyword.filestorage_short}}** dal [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
+Puoi modificare la tua pianificazione della replica e modificare il tuo spazio di replica dalla scheda **Primary** o da quella **Replica** in **Storage** > **{{site.data.keyword.filestorage_short}}** dalla [console {{site.data.keyword.cloud}}](https://{DomainName}/classic){: external}.
 
 
 ## Modifica della pianificazione della replica

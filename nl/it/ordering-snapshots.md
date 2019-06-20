@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, snapshot, ordering snapshot, snapshot space
 
@@ -50,18 +50,17 @@ Inoltre, per la maggior parte dei carichi di lavoro, più grande è un volume e 
 
 ## Ordinazione di spazio dell'istantanea tramite la console {{site.data.keyword.cloud_notm}}
 
-1. Accedi alla [console IBM Cloud](https://{DomainName}/){: external} e fai clic sull'icona menu nell'angolo superiore sinistro. Seleziona **Infrastruttura classica**.
-
-   In alternativa, puoi accedere al [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}. 
-2. Accedi alla tua archiviazione tramite **Storage** > **{{site.data.keyword.filestorage_short}}**.
-3. Fai clic su **Change Snapshot Space** nel frame Snapshots.
-4. Seleziona la quantità di spazio che ti serve e il metodo di pagamento.
-5. Fai clic su **Continue**.
-6. Immetti l'eventuale codice promozionale (Promo Code) a tua disposizione e fai clic su **Recalculate**. Gli addebiti per quest'ordine (**Charges for this order**) e il riesame dell'ordine (**Order Review**) presentano i valori predefiniti.
+1. Accedi alla [console {{site.data.keyword.cloud}}](https://{DomainName}/){: external} e fai clic sull'icona menu nell'angolo superiore sinistro.
+2. Seleziona **Infrastruttura classica**.
+3. Accedi alla tua archiviazione tramite **Storage** > **{{site.data.keyword.filestorage_short}}**.
+4. Fai clic su **Change Snapshot Space** nel frame Snapshots.
+5. Seleziona la quantità di spazio che ti serve e il metodo di pagamento.
+6. Fai clic su **Continue**.
+7. Immetti l'eventuale codice promozionale (Promo Code) a tua disposizione e fai clic su **Recalculate**. Gli addebiti per quest'ordine (**Charges for this order**) e il riesame dell'ordine (**Order Review**) presentano i valori predefiniti.
 
    Gli sconti vengono applicati quando l'ordine viene elaborato.
    {:note}
-7. Seleziona la casella **I have read the Master Service Agreement and agree to the terms therein.** e fai clic su **Place Order**. Nel giro di pochi minuti, viene eseguito il provisioning del tuo spazio di istantanea.
+8. Seleziona la casella **I have read the Master Service Agreement and agree to the terms therein.** e fai clic su **Place Order**. Nel giro di pochi minuti, viene eseguito il provisioning del tuo spazio di istantanea.
 
 ## Ordinazione di spazio dell'istantanea tramite la SLCLI
 

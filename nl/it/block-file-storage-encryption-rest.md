@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-18'"
 
 keywords: File Storage, file storage, NFS, security, encryption
 
@@ -39,7 +39,7 @@ Per impostazione predefinita, vengono crittografate anche tutte le istantanee e 
 
 ## Provisioning di archiviazione con la crittografia
 
-La funzione di crittografia dei dati inattivi gestita dal provider è disponibile in data center selezionati. Tutta l'archiviazione ordinata in questi data center è automaticamente dotata della crittografia per i dati inattivi. Fai clic [qui](/docs/infrastructure/FileStorage?topic=FileStorage-news) per visualizzare l'elenco corrente di data center dove è disponibile la crittografia di {{site.data.keyword.filestorage_short}}.
+La funzione di crittografia dei dati inattivi gestita dal provider è disponibile in [data center selezionati](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC). Tutta l'archiviazione ordinata in questi data center è automaticamente dotata della crittografia per i dati inattivi.
 
 Quando ordini {{site.data.keyword.filestorage_short}}, seleziona un data center indicato con un asterisco (`*`). Puoi vedere un'icona di blocco a destra del campo LUN/Volume Name che indica che il volume è crittografato. Vedi la Figura 1.
 

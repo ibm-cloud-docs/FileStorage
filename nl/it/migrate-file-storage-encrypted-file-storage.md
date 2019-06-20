@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, file storage, NFS, upgrade, migrate to new
 
@@ -18,7 +18,7 @@ subcollection: FileStorage
 # Migrazione di {{site.data.keyword.filestorage_short}} a {{site.data.keyword.filestorage_short}} avanzato
 {: #migratestorage}
 
-{{site.data.keyword.filestorage_full}} è ora disponibile in data center selezionati. Per visualizzare l'elenco dei data center di cui è stato eseguito l'upgrade e delle funzioni disponibili, come ad esempio le frequenze dell'IOPS regolabile e i volumi espandibili, fai clic [qui](/docs/infrastructure/FileStorage?topic=FileStorage-news). Per ulteriori informazioni sulla crittografia gestita dal provider, vedi [Crittografia dei dati inattivi di {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-encryption).
+Enhanced {{site.data.keyword.filestorage_full}} è ora disponibile nella maggior parte dei [data center](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
 
 Il percorso di migrazione preferito consiste nello stabilire una connessione a entrambi i volumi simultaneamente e trasferire i dati direttamente da un LUN all'altro. Le specifiche dipendono dal tuo sistema operativo e dalla previsione di possibili modifiche dei dati durante l'operazione di copia.
 
@@ -37,7 +37,7 @@ Tutti i volumi di {{site.data.keyword.filestorage_short}} avanzato di cui viene 
 Quando effettui un ordine con l'API, specifica il pacchetto "Storage as a Service" per assicurarti che stai ottenendo le funzioni avanzate con la tua nuova archiviazione.
 {:important}
 
-Puoi ordinare un LUN migliorato tramite il catalogo {{site.data.keyword.cloud}} e il {{site.data.keyword.slportal}}. Il tuo nuovo volume deve essere di dimensione pari o superiore a quella della condivisione file originale per facilitare la migrazione.
+Puoi ordinare un LUN migliorato tramite il catalogo {{site.data.keyword.cloud}}. Il tuo nuovo volume deve essere di dimensione pari o superiore a quella della condivisione file originale per facilitare la migrazione.
 
 - [Ordinazione di {{site.data.keyword.filestorage_short}} con livelli IOPS predefiniti (Endurance)](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#endurance)
 - [Ordinazione di {{site.data.keyword.filestorage_short}} con IOPS personalizzato (Performance)](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#performance)

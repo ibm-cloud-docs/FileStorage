@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-05-22"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, Endurance, Performance, IOPS, replication, billing, file storage, NFS,
 
@@ -36,14 +36,14 @@ Avvaliti delle seguenti funzioni principali di {{site.data.keyword.filestorage_s
    - Disponibile per le condivisioni NFS basate su file.
 - **Altamente durevole e resiliente**
    - Protegge l'integrità dei dati e mantiene la disponibilità durante gli eventi di manutenzione e i malfunzionamenti non pianificati senza che occorra creare e gestire un array ridondante a livello di sistema operativo di array di dischi indipendenti (RAID)
-- **Crittografia dei dati inattivi** [(Disponibile in data center selezionati).](/docs/infrastructure/FileStorage?topic=FileStorage-news)
+- **Crittografia dei dati inattivi** [(Disponibile in data center selezionati).](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)
    - La crittografia gestita dal provider per i dati inattivi viene fornita senza costi aggiuntivi
-- **Archiviazione con supporto All-Flash** [(Disponibile in data center selezionati).](/docs/infrastructure/FileStorage?topic=FileStorage-news)
+- **Archiviazione con supporto All-Flash** [(Disponibile in data center selezionati).](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)
    - È possibile eseguire il provisioning dell'archiviazione All-Flash a 2 IOPS/GB o a livelli più elevati.
-- **Istantanee** [(disponibile in data center selezionati).](/docs/infrastructure/FileStorage?topic=FileStorage-news).
+- **Istantanee** [(disponibile in data center selezionati).](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
    - Acquisisce istantanee di dati con punto temporale senza causare interruzioni del servizio.
-- **Replica**  [(disponibile in data center selezionati).](/docs/infrastructure/FileStorage?topic=FileStorage-news)
-   - Disponibile quando viene eseguito il provisioning dell'archiviazione in [data center selezionati](/docs/infrastructure/FileStorage?topic=FileStorage-news).
+- **Replica**  [(disponibile in data center selezionati).](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)
+   - Disponibile quando viene eseguito il provisioning dell'archiviazione in [data center selezionati](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
    - Copia automaticamente le istantanee in un data center {{site.data.keyword.cloud}} partner.
 - **Connettività altamente disponibile**
    - Utilizza le connessioni di rete ridonanti per massimizzare la disponibilità.
@@ -56,7 +56,7 @@ Avvaliti delle seguenti funzioni principali di {{site.data.keyword.filestorage_s
 
 ## Provisioning
 
-È possibile eseguire il provisioning di volumi {{site.data.keyword.filestorage_short}} da 20 GB a 12 TB con due opzioni: <br/> 
+È possibile eseguire il provisioning di volumi {{site.data.keyword.filestorage_short}} da 20 GB a 12 TB con due opzioni: <br/>
 - Esegui il provisioning di livelli **Endurance** che offrono livelli di prestazioni predefiniti e funzioni quali le istantanee e la replica.
 - Crea un ambiente **Performance** molto potente con IOPS (input/output operations per second) allocato.
 
@@ -71,7 +71,7 @@ Avvaliti delle seguenti funzioni principali di {{site.data.keyword.filestorage_s
 
 - **4 IOPS per GB** è progettato per i carichi di lavoro a maggiore intensità. Questi carichi di lavoro sono di norma caratterizzati dall'avere un'elevata percentuale di dati attivi in un dato momento. Delle applicazioni di esempio includono i database transazionali e altri database sensibili alle prestazioni.
 
-- **10 IOPS per GB** è progettato per i carichi di lavoro più esigenti quali quelli creati dai database NoSQL e l'elaborazione di dati per l'analisi. Questo livello è disponibile solo per l'archiviazione di cui viene eseguito il provisioning fino a 4 TB in [data center selezionati](/docs/infrastructure/FileStorage?topic=FileStorage-news).
+- **10 IOPS per GB** è progettato per i carichi di lavoro più esigenti quali quelli creati dai database NoSQL e l'elaborazione di dati per l'analisi. Questo livello è disponibile solo per l'archiviazione di cui viene eseguito il provisioning fino a 4 TB in [data center selezionati](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
 
 Sono disponibili fino a 48.000 IOPS con un volume Endurance di 12-TB.
 
@@ -102,7 +102,7 @@ A Performance per {{site.data.keyword.filestorage_short}} si accede, e viene mon
 {: summary="Table 1 is showing the possible minimum and maximum IOPS rates based of the volume size. This table has row and column headers. The row headers identify the volume size range. The column headers identify the minimum and maximum IOPS levels. To understand what IOPS rates you can expect from your Storage, navigate to the row and review the two options."}
 
 
-![Nota a piè di pagina](/images/numberone.png) * Dei limiti IOPS superiori a 6000 sono disponibili in data center selezionati.*  
+![Nota a piè di pagina](/images/numberone.png) * Dei limiti IOPS superiori a 6000 sono disponibili in data center selezionati.*
 
 I volumi Performance sono progettati per operare in modo congruentemente prossimo al livello IOPS di cui viene eseguito il provisioning. La congruenza semplifica l'impostazione della dimensione e del ridimensionamento degli ambienti applicativi a uno specifico livello di prestazioni. È inoltre possibile ottimizzare un ambiente creando un volume con un rapporto ideale prezzo/prestazioni.
 
@@ -110,7 +110,7 @@ I volumi Performance sono progettati per operare in modo congruentemente prossim
 
 Puoi selezionare la fatturazione mensile o oraria per un volume di file. Il tipo di fatturazione selezionato per un LUN si applica al suo spazio per le istantanee e alle sue repliche. Ad esempio, se esegui il provisioning di un LUN con fatturazione oraria, eventuali addebiti di istantanee o replica vengono fatturati in modo orario. Se esegui il provisioning di un LUN con fatturazione mensile, eventuali addebiti di istantanee o replica vengono fatturati in modo mensile.
 
- * Con la **fatturazione oraria**, il numero di ore per cui il volume di file è esistito nell'account viene calcolato quando il LUN viene eliminato oppure alla fine del ciclo di fatturazione, a seconda di quale di queste condizioni si verifica per prima. La fatturazione oraria è una buona scelta per l'archiviazione utilizzata per qualche giorno o per meno di un mese completo. La fatturazione oraria è disponibile solo per l'archiviazione di cui viene eseguito il provisioning in [data center selezionati](/docs/infrastructure/FileStorage?topic=FileStorage-news).
+ * Con la **fatturazione oraria**, il numero di ore per cui il volume di file è esistito nell'account viene calcolato quando il LUN viene eliminato oppure alla fine del ciclo di fatturazione, a seconda di quale di queste condizioni si verifica per prima. La fatturazione oraria è una buona scelta per l'archiviazione utilizzata per qualche giorno o per meno di un mese completo. La fatturazione oraria è disponibile solo per l'archiviazione di cui viene eseguito il provisioning in [data center selezionati](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
 
  * Con la **fatturazione mensile**, il calcolo per il prezzo è a base proporzionale dalla data di creazione alla fine del ciclo di fatturazione e viene fatturato immediatamente. Non è previsto alcun rimborso se un volume viene eliminato prima della fine del ciclo di fatturazione. La fatturazione mensile è una buona scelta per l'archiviazione utilizzata nei carichi di lavoro di produzione che usano dati che devono essere archiviati e a cui bisogna accedere per lunghi periodi di tempo (un mese o più).
 
@@ -118,7 +118,7 @@ Puoi selezionare la fatturazione mensile o oraria per un volume di file. Il tipo
 ### Endurance
 {: #pricing-comparison-endurance}
 
-|Opzioni di prezzi per i livelli IOPS predefiniti | 0,25 IOPS | 2 IOPS/GB | 4 IOPS/GB | 10 IOPS/GB |
+| Opzioni di prezzi per i livelli IOPS predefiniti | 0,25 IOPS | 2 IOPS/GB | 4 IOPS/GB | 10 IOPS/GB |
 |-----|-----|-----|-----|-----|
 | Prezzo mensile | $0.06/GB | $0.15/GB | $0,20/GB | $0,58/GB |
 | Prezzo orario | $0.0001/GB | $0.0002/GB | $0,0003/GB | $0,0009/GB |
@@ -130,7 +130,7 @@ Puoi selezionare la fatturazione mensile o oraria per un volume di file. Il tipo
 ### Performance
 {: #pricing-comparison-performance}
 
-|Opzioni di prezzi di IOPS personalizzati |Calcolo dei prezzi |
+| Opzioni di prezzi di IOPS personalizzati | Calcolo dei prezzi |
 |-----|-----|
 | Prezzo mensile | $0,10/GB + $0,07/IOP |
 | Prezzo orario | $0,0001/GB + $0,0002/IOP |

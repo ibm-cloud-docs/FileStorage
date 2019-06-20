@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, file storage, NFS, snapshots, snapshot schedule, manual snapshot, snapshot space, snapshot quota
 
@@ -21,7 +21,7 @@ subcollection: FileStorage
 
 ## Creazione di una pianificazione delle istantanee
 
-Con le pianificazioni delle istantanee, decidi con che frequenza e quando vuoi creare un riferimento ad un punto nel tempo del tuo volume di archiviazione. Puoi avere un massimo di 50 istantanee per volume di archiviazione. Le pianificazioni sono gestite tramite la scheda **Storage** > **{{site.data.keyword.filestorage_short}}** del [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
+Con le pianificazioni delle istantanee, decidi con che frequenza e quando vuoi creare un riferimento ad un punto nel tempo del tuo volume di archiviazione. Puoi avere un massimo di 50 istantanee per volume di archiviazione. Le pianificazioni sono gestite tramite la scheda **Storage** > **{{site.data.keyword.filestorage_short}}** della [console {{site.data.keyword.cloud}}](https://{DomainName}/){: external}.
 
 Prima di poter configurare la tua pianificazione iniziale, devi procedere all'acquisto di spazio per le istantanee, se non lo hai fatto durante il provisioning iniziale del volume di archiviazione.
 {:important}
@@ -158,19 +158,20 @@ Le istantanee manuali che non sono eliminate nel portale manualmente sono elimin
 Potresti dover riportare il tuo volume di archiviazione a uno specifico punto temporale a causa di un errore utente o di un danneggiamento dei dati.
 
 1. Smonta e scollega il tuo volume di archiviazione dall'host.
-   - Fai clic [qui](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux) per le istruzioni.
-2. Fai clic su **Storage**, **{{site.data.keyword.filestorage_short}}** nel [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
-3. Scorri verso il basso e fai clic sul tuo volume da ripristinare. La sezione **Snapshots** della pagina **Detail** visualizza l'elenco di tutte le istantanee salvate insieme alla loro dimensione e alla loro data di creazione.
-4. Fai clic su **Actions** accanto all'istantanea da utilizzare e fai clic su **Restore**. <br/> 
+   - Per ulteriori informazioni sul montaggio e lo smontaggio dell'archiviazione, vedi [Connessione alla tua nuova archiviazione](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux).
+2. Vai alla [console {{site.data.keyword.cloud}}](https://{DomainName}/){: external}. Dal menu, seleziona **Classic Infrastructure**.
+3. Fai clic su **Storage**, **{{site.data.keyword.filestorage_short}}**.
+4. Scorri verso il basso e fai clic sul tuo volume da ripristinare. La sezione **Snapshots** della pagina **Detail** visualizza l'elenco di tutte le istantanee salvate insieme alla loro dimensione e alla loro data di creazione.
+5. Fai clic su **Actions** accanto all'istantanea da utilizzare e fai clic su **Restore**. <br/>
 
    Il completamento del ripristino comporta la perdita dei dati che erano stati creati o modificati dopo l'esecuzione dell'istantanea. Questa perdita di dati si verifica perché il tuo volume di archiviazione torna allo stesso stato in cui si trovava al momento dell'istantanea.
    {:note}
-5. Fai clic su **Yes** per avviare il ripristino.
+6. Fai clic su **Yes** per avviare il ripristino.
 
    Aspettati un messaggio nella pagina che indica che è in corso il ripristino del volume utilizzando l'istantanea selezionata. Inoltre, compare un'icona accanto al tuo volume in {{site.data.keyword.filestorage_short}} che indica che è in corso una transazione attiva. Se passi il puntatore del mouse sull'icona, viene visualizzata una finestra che mostra la transazione. Una volta completata la transazione, l'icona scompare.
    {:note}
-6. Monta e ricollega il tuo volume di archiviazione all'host.
-  - Fai clic [qui](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux) per le istruzioni.
+7. Monta e ricollega il tuo volume di archiviazione all'host.
+  - Per ulteriori informazioni sul montaggio e lo smontaggio dell'archiviazione, vedi [Connessione alla tua nuova archiviazione](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux).
 
 In alternativa, puoi ripristinare il volume con un'istantanea tramite la SLCLI.
 ```

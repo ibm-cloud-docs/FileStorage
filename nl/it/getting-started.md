@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-05-02"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, file storage, NFS, provisioning, setup, configuration, mounting storage
 
@@ -26,7 +26,7 @@ subcollection: FileStorage
 ## Prima di iniziare
 {: #prereqs}
 
-È possibile eseguire il provisioning di volumi {{site.data.keyword.filestorage_short}} da 20 GB a 12 TB con due opzioni: <br/> 
+È possibile eseguire il provisioning di volumi {{site.data.keyword.filestorage_short}} da 20 GB a 12 TB con due opzioni: <br/>
 - Esegui il provisioning di livelli **Endurance** che offrono livelli di prestazioni predefiniti e funzioni quali le istantanee e la replica.
 - Crea un ambiente **Performance** molto potente con IOPS (input/output operations per second) allocato.
 
@@ -51,7 +51,7 @@ La dimensione del blocco utilizzata dalla tua applicazione influisce direttament
 | 128 | 128 | 16 |
 | 512 | 32 | 16 |
 | 1024 | 16 | 16 |
-{: caption="La tabella 1 mostra degli esempi su come la dimensione blocco e IOPS influisce sulla velocità effettiva.<br/Dimensione IO media x IOPS = Velocità effettiva in MB/s. " caption-side="top"}>
+{: caption="La tabella 1 mostra degli esempi su come la dimensione blocco e IOPS influisce sulla velocità effettiva.<br/Dimensione IO media x IOPS = Velocità effettiva in MB/s." caption-side="top"}>
 
 ### Host autorizzati
 
@@ -73,7 +73,7 @@ Nell'ambiente {{site.data.keyword.cloud}} sono supportati sia NFS v3 che NFS v4.
 
 ## Inoltro del tuo ordine
 
-Quando sei pronto a inviare il tuo ordine, puoi effettuarlo tramite la [Console](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole) o la [SLCLI](/docs/infrastructure/FileStorage?topic=FileStorage-orderingSLCLI). Per il File Storage Provisioning con VMware, fai clic [qui](/docs/infrastructure/FileStorage?topic=FileStorage-architectureguide)
+Quando sei pronto a inviare il tuo ordine, puoi effettuarlo tramite la [Console](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole), la [SLCLI](/docs/infrastructure/FileStorage?topic=FileStorage-orderingSLCLI) o la CLI IBMCLOUD. Per ulteriori informazioni sul provisioning di File Storage per le distribuzioni VMware, vedi la [guida all'architettura](/docs/infrastructure/FileStorage?topic=FileStorage-architectureguide).
 
 ## Connessione della tua nuova archiviazione
 {: #mountingstorage}

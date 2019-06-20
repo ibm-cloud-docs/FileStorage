@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, adjusting IOPS, increase IOPS, decrease IOPS, modify IOPS
 
@@ -30,7 +30,7 @@ La fatturazione per l'archiviazione viene aggiornata per aggiungere la differenz
 ## Limitazioni
 {: #limitsofadjustIOPS}
 
-Questa funzione è disponibile solo in [data center selezionati](/docs/infrastructure/FileStorage?topic=FileStorage-news).
+Questa funzione è disponibile solo in [data center selezionati](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
 
 I clienti non possono passare da Endurance a Performance e viceversa quando regolano il loro IOPS. Gli utenti possono specificare un nuovo livello IOPS o un livello IOPS per la loro archiviazione sulla base dei seguenti criteri e delle seguenti limitazioni.
 
@@ -45,9 +45,7 @@ Se per il volume è implementata la replica, quest'ultima viene aggiornata autom
 ## Regolazione dell'IOPS sulla tua archiviazione
 {: #adjustingsteps}
 
-1. Vai al tuo elenco di {{site.data.keyword.filestorage_short}}
-    - Dal portale clienti, fai clic su **Storage** > **{{site.data.keyword.filestorage_short}}** OPPURE
-    - Dalla console {{site.data.keyword.cloud}}, fai clic su **Infrastruttura** > **Archiviazione** > **{{site.data.keyword.filestorage_short}}**.
+1. Vai al tuo elenco di {{site.data.keyword.filestorage_short}}. Dalla console {{site.data.keyword.cloud}}, fai clic su **Classic Infrastructure** > **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Seleziona il volume dall'elenco e fai clic su **Actions** > **Modify Volume**
 3. In **Storage IOPS Options**, effettua una nuova selezione:
     - Per Endurance (IOPS a livelli), seleziona un livello IOPS superiore a 0,25 IOPS/GB della tua archiviazione. Puoi aumentare il livello IOPS in qualsiasi momento. Tuttavia, la diminuzione è disponibile solo una volta al mese.

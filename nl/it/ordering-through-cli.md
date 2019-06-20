@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, SLCLI, provisioning, API
 
@@ -18,14 +18,14 @@ subcollection: FileStorage
 # Ordinazione di {{site.data.keyword.filestorage_short}} tramite la SLCLI
 {: #orderingSLCLI}
 
-Puoi utilizzare la SLCLI per effettuare degli ordini per prodotti che vengono normalmente ordinati tramite il [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}. Nell'API SL, un ordine può essere costituito da più contenitori di ordine. La CLI degli ordini funziona solo con un singolo contenitore di ordine.
+Puoi utilizzare la SLCLI per effettuare degli ordini per prodotti che vengono normalmente ordinati tramite la [console {{site.data.keyword.cloud}}](https://{DomainName}/catalog){: external}. Nell'API SL, un ordine può essere costituito da più contenitori di ordine. La CLI degli ordini funziona solo con un singolo contenitore di ordine.
 
 Per ulteriori informazioni su come installare e utilizzare la SLCLI, vedi [Python API Client](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}.
 {:tip}
 
 ## Ricerca di offerte di {{site.data.keyword.filestorage_short}} disponibili
 
-Il primo componente da cercare quando effettui un ordine è un pacchetto. I pacchetti sono divisi tra i diversi prodotti di livello superiore disponibili per l'ordinazione in {{site.data.keyword.BluSoftlayer_full}}. Alcuni pacchetti di esempio sono CLOUD_SERVER per le VSI, BARE_METAL_SERVER per i server bare metal e STORAGE_AS_A_SERVICE_STAAS per {{site.data.keyword.filestorage_short}} e {{site.data.keyword.blockstorageshort}}.
+Il primo componente da cercare quando effettui un ordine è un pacchetto. I pacchetti sono divisi tra i diversi prodotti di livello superiore disponibili per l'ordinazione in {{site.data.keyword.cloud}}. Alcuni pacchetti di esempio sono CLOUD_SERVER per le VSI, BARE_METAL_SERVER per i server bare metal e STORAGE_AS_A_SERVICE_STAAS per {{site.data.keyword.filestorage_short}} e {{site.data.keyword.blockstorageshort}}.
 
 All'interno di un pacchetto, alcuni elementi sono suddivisi in categorie. Alcuni pacchetti hanno delle preimpostazioni per tua comodità e altri richiedono che gli elementi vengano specificati singolarmente. Se la categoria di un pacchetto è richiesta, per ordinare il pacchetto è necessario che venga scelto un elemento da tale categoria. A seconda della categoria, alcuni elementi all'interno della categoria potrebbero escludersi a vicenda.
 
@@ -119,20 +119,18 @@ Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
   Authorizes hosts to access a given volume
 
 Options:
-  -h, --hardware-id TEXT    The id of one SoftLayer_Hardware to authorize
-  -v, --virtual-id TEXT     The id of one SoftLayer_Virtual_Guest to authorize
-  -i, --ip-address-id TEXT  The id of one SoftLayer_Network_Subnet_IpAddress
-                            to authorize
-  --ip-address TEXT         An IP address to authorize
-  -s, --subnet-id TEXT      The id of one SoftLayer_Network_Subnet to
-                            authorize
+  -h, --hardware-id TEXT    The ID of one hardware server to authorize.
+  -v, --virtual-id TEXT     The ID of one virtual server to authorize.
+  -i, --ip-address-id TEXT  The ID of one IP address to authorize.
+  -p, --ip-address TEXT     An IP address to authorize.
+  -s, --subnet-id TEXT      An ID of one subnet to authorize.
   --help                    Show this message and exit.
 ```
 
 Per ulteriori informazioni sull'autorizzazione degli host ad accedere al {{site.data.keyword.filestorage_short}} tramite l'API, vedi [authorize_host_to_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/file/#SoftLayer.managers.file.FileStorageManager.authorize_host_to_volume){: external}.
 {:tip}
 
-Per ulteriori informazioni sul limite di autorizzazioni simultanee, consulta le [FAQ](/docs/infrastructure/FileStorage?topic=FileStorage-faqs).
+Per ulteriori informazioni sul limite di autorizzazioni simultanee, consulta le [FAQ](/docs/infrastructure/FileStorage?topic=file-storage-faqs).
 {:important}
 
 ## Connessione della tua nuova archiviazione

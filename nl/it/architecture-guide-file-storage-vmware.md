@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
@@ -57,7 +57,7 @@ VMware vSphere on Network Attached Storage](https://www.vmware.com/content/dam/d
 | vMotion e Storage vMotion | Sì | Sì |
 | Elevata disponibilità (HA, High Availability) | Sì | Sì |
 | Tolleranza ai guasti (FT, Fault Tolerance) | Sì | Sì |
-| DRS (Distributed Resource Scheduler) |Sì| Sì |
+| DRS (Distributed Resource Scheduler) | Sì | Sì |
 | Profili host | Sì | Sì |
 | DRS di archiviazione | Sì | No |
 | SIOC (Storage I/O Control) | Sì | No |
@@ -73,11 +73,11 @@ VMware vSphere on Network Attached Storage](https://www.vmware.com/content/dam/d
 
 ### Utilizzo delle istantanee
 
-{{site.data.keyword.filestorage_short}} consente agli amministratori di impostare le pianificazioni delle istantanee che creano ed eliminano copie di istantanea automaticamente per ciascun volume di archiviazione. Possono anche creare delle pianificazioni delle istantanee aggiuntive (orarie, giornaliere, settimanali) per le istantanee automatiche e creare manualmente delle istantanee ad hoc per gli scenari di continuità aziendale e ripristino di emergenza (BCDR, business continuity and disaster recovery). Gli avvisi automatici vengono consegnati tramite il [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} al proprietario del volume per le istantanee conservate e lo spazio utilizzato.
+{{site.data.keyword.filestorage_short}} consente agli amministratori di impostare le pianificazioni delle istantanee che creano ed eliminano copie di istantanea automaticamente per ciascun volume di archiviazione. Possono anche creare delle pianificazioni delle istantanee aggiuntive (orarie, giornaliere, settimanali) per le istantanee automatiche e creare manualmente delle istantanee ad hoc per gli scenari di continuità aziendale e ripristino di emergenza (BCDR, business continuity and disaster recovery). Gli avvisi automatici vengono consegnati tramite la [console {{site.data.keyword.cloud}}](https://{DomainName}/){: external} al proprietario del volume per le istantanee conservate e lo spazio utilizzato.
 
 Per utilizzare le istantanee è necessario lo spazio per le istantanee. Lo spazio può essere acquistato durante l'ordine dei volumi iniziale e dopo il provisioning iniziale tramite la pagina **Volume Details** facendo clic su **Actions** e selezionando **Add Snapshot Space**.
 
-È importare notare che gli ambienti VMware non rilevano le istantanee. La funzionalità di istantanea di {{site.data.keyword.filestorage_short}} non deve essere confusa con le istantanee VMware. Qualsiasi ripristino che utilizza la funzione di istantanea dell'{{site.data.keyword.filestorage_short}} deve essere gestita dal [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
+È importare notare che gli ambienti VMware non rilevano le istantanee. La funzionalità di istantanea di {{site.data.keyword.filestorage_short}} non deve essere confusa con le istantanee VMware. Qualsiasi ripristino che utilizza la funzione di istantanea di {{site.data.keyword.filestorage_short}} deve essere gestito dalla [console {{site.data.keyword.cloud}}](https://{DomainName}/){: external} .
 
 Il ripristino del volume di {{site.data.keyword.filestorage_short}} richiede lo spegnimento di tutte le macchine virtuali (VM, Virtual Machine) in {{site.data.keyword.filestorage_short}}. Il volume deve essere temporaneamente smontato dagli host ESXi per evitare eventuali danneggiamenti di dati durante il processo.
 
@@ -112,16 +112,16 @@ I dati non validi, non importa se danneggiati, oggetto di attacchi o infettati, 
 
 Utilizza la [Advanced Single-Site VMware Reference Architecture](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){: external} per configurare {{site.data.keyword.filestorage_short}} con le opzioni Endurance o Performance nel tuo ambiente VMware.
 
-{{site.data.keyword.filestorage_short}} può essere ordinato tramite [Il catalogo IBM Cloud](https://{DomainName}/catalog){: external} o il [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}. Per ulteriori informazioni, vedi [Ordinazione di {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)
+{{site.data.keyword.filestorage_short}} può essere ordinato tramite [Il catalogo {{site.data.keyword.cloud}}](https://{DomainName}/catalog){: external} o la CLI. Per ulteriori informazioni, consulta [Ordinazione di {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole).
 
-Il provisioning dell'archiviazione viene eseguito in meno di un minuto ed è visibile sulla pagina **{{site.data.keyword.filestorage_short}}** del [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
+Il provisioning dell'archiviazione viene eseguito in meno di un minuto ed è visibile sulla pagina **{{site.data.keyword.filestorage_short}}** della [console {{site.data.keyword.cloud}}](https://{DomainName}/classic){: external}.
 
 Dopo che è stato eseguito il provisioning di un volume, i {{site.data.keyword.BluBareMetServers_full}} o i {{site.data.keyword.BluVirtServers_full}} che utilizzano il volume devono essere autorizzati ad accedere all'archiviazione. Utilizza la seguente procedura per autorizzare il volume.
 
 1. Fai clic su **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Seleziona **Access Host** nel menu **Endurance** o **Performance Volume Actions**.
 3. Fai clic su **Subnets**.
-4. Scegli dall'elenco di sottoreti disponibili assegnate alle porte VMkernel sugli host ESXi e fai clic su **Submit**.<br/> 
+4. Scegli dall'elenco di sottoreti disponibili assegnate alle porte VMkernel sugli host ESXi e fai clic su **Submit**.<br/>
 
    Le sottoreti visualizzate sono sottoreti sottoscritte nello stesso data center del volume di archiviazione.
    {:note}
