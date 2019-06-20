@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, modify volume, NFS, file storage, expand capacity
 
@@ -44,7 +44,7 @@ Endurance로 프로비저닝된 {{site.data.keyword.filestorage_short}}에 대�
 ## 스토리지 크기 조정
 {: #resizingsteps}
 
-1. {{site.data.keyword.slportal}}에서 **스토리지** > **{{site.data.keyword.filestorage_short}}**를 클릭하거나 {{site.data.keyword.cloud}} 카탈로그에서 **인프라** > **스토리지** > **{{site.data.keyword.filestorage_short}}**를 클릭하십시오.
+1. [{{site.data.keyword.cloud}} 콘솔](https://{DomainName}/){: external}로 이동하십시오. 메뉴에서 **클래식 인프라**를 선택하십시오. **스토리지** > **{{site.data.keyword.filestorage_short}}**를 클릭하십시오.
 2. 목록에서 볼륨을 선택하고 **조치** > **볼륨 수정**을 클릭하십시오.
 3. 새 스토리지 크기(GB)를 입력하십시오.
 4. 선택사항과 새 가격을 검토하십시오.

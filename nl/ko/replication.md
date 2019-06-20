@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-03-11"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, replication, duplication, synchronous, replica schedule, replica space, disaster recovery
 
@@ -41,11 +41,10 @@ subcollection: FileStorage
 
 ## 초기 복제본 작성
 
-복제는 스냅샷 스케줄에 따라 이뤄집니다. 복제하려면 먼저 스냅샷 영역과 소스 볼륨에 대한 스냅샷 스케줄이 있어야 합니다. 복제를 설정하려는데 두 가지 중 하나가 없는 경우에는 추가 영역을 구매하거나 스케줄을 설정하라는 프롬프트가 표시됩니다. 
-복제는 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}의 **스토리지** > **{{site.data.keyword.filestorage_short}}**에서 관리합니다.
+복제는 스냅샷 스케줄에 따라 이뤄집니다. 복제하려면 먼저 스냅샷 영역과 소스 볼륨에 대한 스냅샷 스케줄이 있어야 합니다. 복제를 설정하려는데 두 가지 중 하나가 없는 경우에는 추가 영역을 구매하거나 스케줄을 설정하라는 프롬프트가 표시됩니다. 복제는 [{{site.data.keyword.cloud}} 콘솔](https://{DomainName}/classic){: external}의 **스토리지** > **{{site.data.keyword.filestorage_short}}**에서 관리합니다.
 
 1. 스토리지 볼륨을 클릭하십시오.
-2. **복제본**을 클릭하고 **복제 구매**를 클릭하십시오.
+2. **복제본**을 클릭하고 **복제본 구매**를 클릭하십시오.
 3. 복제가 따르도록 할 기존 스냅샷 스케줄을 선택하십시오. 목록에는 모든 활성 스냅샷 스케줄이 있습니다. <br />
 
    시간별, 일별, 주별이 혼합되어 있어도 스케줄은 하나만 선택할 수 있습니다. 이전 복제 주기 이후 캡처된 모든 스냅샷은 이를 발생시킨 스케줄에 관계없이 복제됩니다.<br />설정된 스냅샷이 없는 경우에는 복제를 주문하기 전에 이를 설정하라는 프롬프트가 표시됩니다. 자세한 정보는 [스냅샷 관련 작업](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots)을 참조하십시오.
@@ -61,7 +60,7 @@ subcollection: FileStorage
 
 ## 기존 복제 편집
 
-[{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}의 **스토리지** > **{{site.data.keyword.filestorage_short}}**에 있는 **1차** 또는 **복제본** 탭에서 복제 스케줄을 편집하고 복제본 영역을 변경할 수 있습니다.
+[{{site.data.keyword.cloud}} 콘솔](https://{DomainName}/classic){: external}의 **스토리지** > **{{site.data.keyword.filestorage_short}}** 아래에 있는 **기본** 또는 **복제본** 탭에서 복제 스케줄을 편집하고 복제 영역을 변경할 수 있습니다.
 
 
 ## 복제 스케줄 편집
@@ -115,7 +114,7 @@ subcollection: FileStorage
 
 ## 복제본의 복제 작성
 
-기존 {{site.data.keyword.cloud}}  {{site.data.keyword.filestorage_full}}의 복제를 작성할 수 있습니다. 복제 볼륨은 기본적으로 원래 스토리지 볼륨의 용량 및 성능 옵션을 상속하며 스냅샷의 특정 시점까지의 데이터 사본을 보유합니다.
+기존 {{site.data.keyword.cloud}} {{site.data.keyword.filestorage_full}}의 복제를 작성할 수 있습니다. 복제 볼륨은 기본적으로 원래 스토리지 볼륨의 용량 및 성능 옵션을 상속하며 스냅샷의 특정 시점까지의 데이터 사본을 보유합니다.
 
 복제는 기본 및 복제본 볼륨으로부터 작성될 수 있습니다. 새 복제는 원래 볼륨과 동일한 데이터 센터에 작성됩니다. 복제본 볼륨에서 복제를 작성하는 경우에는 새 볼륨이 복제본 볼륨과 동일한 데이터 센터에 작성됩니다.
 

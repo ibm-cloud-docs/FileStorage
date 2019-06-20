@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-05-06"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, NSF, mounting File Storage, mounting storage on Linux,
 
@@ -18,7 +18,7 @@ subcollection: FileStorage
 # Linux에서 {{site.data.keyword.filestorage_short}} 마운트
 {: #mountingLinux}
 
-먼저 {{site.data.keyword.filestorage_full}} 볼륨에 액세스할 호스트의 권한이 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}을 통해 부여되는지 확인하십시오.
+먼저 {{site.data.keyword.filestorage_full}} 볼륨에 액세스할 호스트의 권한이 [{{site.data.keyword.cloud}} 콘솔](https://{DomainName}/classic){: external}을 통해 부여되는지 확인하십시오.
 
 1. {{site.data.keyword.filestorage_short}} 목록 페이지에서 새 공유와 연관된 **조치** 링크를 클릭하고 **호스트 권한 부여**를 클릭하십시오.
 2. 목록에서 호스트를 선택하고 **제출**을 클릭하십시오. 이 조치는 공유에 액세스할 수 있도록 호스트에 권한을 부여합니다.
@@ -29,13 +29,11 @@ subcollection: FileStorage
 Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
 
 Options:
-  -h, --hardware-id TEXT    The id of one SoftLayer_Hardware to authorize
-  -v, --virtual-id TEXT     The id of one SoftLayer_Virtual_Guest to authorize
-  -i, --ip-address-id TEXT  The id of one SoftLayer_Network_Subnet_IpAddress
-                            to authorize
-  --ip-address TEXT         An IP address to authorize
-  -s, --subnet-id TEXT      The id of one SoftLayer_Network_Subnet to
-                            authorize
+  -h, --hardware-id TEXT    The ID of one hardware server to authorize.
+  -v, --virtual-id TEXT     The ID of one virtual server to authorize.
+  -i, --ip-address-id TEXT  The ID of one IP address to authorize.
+  -p, --ip-address TEXT     An IP address to authorize.
+  -s, --subnet-id TEXT      An ID of one subnet to authorize.
   --help                    Show this message and exit.
 ```
 
@@ -143,7 +141,7 @@ Linux 기반 {{site.data.keyword.cloud}} 컴퓨팅 인스턴스를 NFS(Network F
    ```
 ## 파일 시스템 마운트 해제
 
-호스트에서 현재 마운트된 파일 시스템을 마운트 해제하려면 `umount` 명령을 디스크 이름 또는 마운트 지점 이름과 함께 실행하십시오. 
+호스트에서 현재 마운트된 파일 시스템을 마운트 해제하려면 `umount` 명령을 디스크 이름 또는 마운트 지점 이름과 함께 실행하십시오.
 
 ```
 umount /dev/sdb

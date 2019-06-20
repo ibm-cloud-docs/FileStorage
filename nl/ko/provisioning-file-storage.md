@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, provisioning, ordering,
 
@@ -29,9 +29,7 @@ subcollection: FileStorage
 ## 사전 정의된 IOPS 계층을 사용하는 {{site.data.keyword.filestorage_short}} 주문(Endurance)
 {: #endurance}
 
-1. [IBM Cloud 카탈로그](https://{DomainName}/catalog){: external}에 로그인하여 **스토리지**를 클릭하십시오. 그리고 {{site.data.keyword.filestorage_short}}를 선택하십시오. **작성**을 클릭하십시오.
-
-   또는 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} }에 로그인하고 **스토리지** > **{{site.data.keyword.filestorage_short}}**를 클릭하십시오. 오른쪽 상단에서 **{{site.data.keyword.filestorage_short}} 주문**을 클릭하십시오.
+1. [{{site.data.keyword.cloud}} 카탈로그](https://{DomainName}/catalog){: external}에 로그인하고 **스토리지**를 클릭하십시오. 그리고 {{site.data.keyword.filestorage_short}}를 선택하십시오. **작성**을 클릭하십시오.
 2. 배치 **위치**(데이터 센터)를 선택하십시오.
    - 새 스토리지가 컴퓨팅 호스트 또는 보유한 호스트와 동일한 위치에 추가되었는지 확인하십시오.
 3. 비용 청구 방식을 선택하십시오. 개선된 기능의 데이터 센터(*로 표기됨)를 선택한 경우 월별 또는 시간별 청구 중에 선택할 수 있습니다.
@@ -55,15 +53,13 @@ subcollection: FileStorage
 9. 이용 약관을 검토한 후에 **서드파티 서비스 계약서를 읽었으며 이에 동의합니다** 상자를 선택하십시오.
 10. **작성**을 클릭하십시오. 몇 분 후 새 스토리지 할당이 사용 가능해집니다.
 
-기본적으로, 250개 {{site.data.keyword.blockstorageshort}} 볼륨의 통합 총계를 프로비저닝할 수 있습니다. 볼륨 수를 늘리려면 영업 담당자에게 문의하십시오. [여기서](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits) 한계 늘리기에 대해 읽으십시오.<br/><br/>동시 권한 부여의 한계에 대한 자세한 정보는 [FAQ](/docs/infrastructure/FileStorage?topic=FileStorage-faqs#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-)를 참조하십시오.
+기본적으로, 250개 {{site.data.keyword.blockstorageshort}} 볼륨의 통합 총계를 프로비저닝할 수 있습니다. 볼륨 수를 늘리려면 영업 담당자에게 문의하십시오. [여기서](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits) 한계 늘리기에 대해 읽으십시오.<br/><br/>동시 권한 부여의 한계에 대한 자세한 정보는 [FAQ](/docs/infrastructure/FileStorage?topic=file-storage-faqs#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-)를 참조하십시오.
 {:tip}
 
 ## 사용자 정의 IOPS를 사용하는 {{site.data.keyword.filestorage_short}} 주문(Performance)
 {: #performance}
 
-1. [IBM Cloud 카탈로그](https://{DomainName}/catalog){: external}에 로그인하여 **스토리지**를 클릭하십시오. 그리고 {{site.data.keyword.filestorage_short}}를 선택하십시오. **작성**을 클릭하십시오.
-
-   또는 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} }에 로그인하고 **스토리지** > **{{site.data.keyword.filestorage_short}}**를 클릭하십시오. 오른쪽 상단에서 **{{site.data.keyword.filestorage_short}} 주문**을 클릭하십시오.
+1. [{{site.data.keyword.cloud}} 카탈로그](https://{DomainName}/catalog){: external}에 로그인하고 **스토리지**를 클릭하십시오. 그리고 {{site.data.keyword.filestorage_short}}를 선택하십시오. **작성**을 클릭하십시오.
 2. **위치**를 클릭하고 데이터 센터를 선택하십시오.
    - 새 스토리지가 컴퓨팅 호스트 또는 보유한 호스트와 동일한 위치에 추가되었는지 확인하십시오.
 3. 비용 청구 방식을 선택하십시오. 개선된 기능의 데이터 센터(*로 표기됨)를 선택한 경우 월별 또는 시간별 청구 중에 선택할 수 있습니다.
@@ -83,7 +79,7 @@ subcollection: FileStorage
 9. 이용 약관을 검토한 후에 **서드파티 서비스 계약서를 읽었으며 이에 동의합니다** 상자를 선택하십시오.
 10. **작성**을 클릭하십시오. 몇 분 후 새 스토리지 할당이 사용 가능해집니다.
 
-기본적으로, 250개 {{site.data.keyword.blockstorageshort}} 볼륨의 통합 총계를 프로비저닝할 수 있습니다. 볼륨 수를 늘리려면 영업 담당자에게 문의하십시오. [여기서](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits) 한계 늘리기에 대해 읽으십시오.<br/><br/>동시 권한 부여의 한계에 대한 자세한 정보는 [FAQ](/docs/infrastructure/FileStorage?topic=FileStorage-faqs#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-)를 참조하십시오.
+기본적으로, 250개 {{site.data.keyword.blockstorageshort}} 볼륨의 통합 총계를 프로비저닝할 수 있습니다. 볼륨 수를 늘리려면 영업 담당자에게 문의하십시오. [여기서](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits) 한계 늘리기에 대해 읽으십시오.<br/><br/>동시 권한 부여의 한계에 대한 자세한 정보는 [FAQ](/docs/infrastructure/FileStorage?topic=file-storage-faqs#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-)를 참조하십시오.
 {:important}
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, snapshot, ordering snapshot, snapshot space
 
@@ -50,18 +50,17 @@ subcollection: FileStorage
 
 ## {{site.data.keyword.cloud_notm}} 콘솔을 통해 스냅샷 영역 주문
 
-1. [IBM Cloud 콘솔](https://{DomainName}/){: external}에 로그인하여 왼쪽 상단의 메뉴 아이콘을 클릭하십시오. **일반 인프라**를 선택하십시오.
-
-   또는 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}에 로그인할 수 있습니다.
-2. **스토리지** > **{{site.data.keyword.filestorage_short}}**를 통해 스토리지에 액세스하십시오.
-3. 스냅샷 프레임에서 **스냅샷 영역 변경**을 클릭하십시오.
-4. 필요한 영역의 양과 지불 방법을 선택하십시오.
-5. **계속**을 클릭하십시오.
-6. 보유한 프로모션 코드를 입력하고 **재계산**을 클릭하십시오. **이 주문의 비용** 및 **주문 검토**에는 기본값이 있습니다.
+1. [{{site.data.keyword.cloud}} 콘솔](https://{DomainName}/){: external}에 로그인하고 왼쪽 상단에서 메뉴 아이콘을 클릭하십시오.
+2. **클래식 인프라**를 선택하십시오.
+3. **스토리지** > **{{site.data.keyword.filestorage_short}}**를 통해 스토리지에 액세스하십시오.
+4. 스냅샷 프레임에서 **스냅샷 영역 변경**을 클릭하십시오.
+5. 필요한 영역의 양과 지불 방법을 선택하십시오.
+6. **계속**을 클릭하십시오.
+7. 보유한 프로모션 코드를 입력하고 **재계산**을 클릭하십시오. **이 주문의 비용** 및 **주문 검토**에는 기본값이 있습니다.
 
    주문을 처리할 때 할인이 적용됩니다.
    {:note}
-7. **마스터 서비스 계약을 읽었으며 해당 이용 약관에 동의합니다** 상자를 선택하고 **주문하기**를 클릭하십시오. 잠시 후에 스냅샷 영역이 프로비저닝됩니다.
+8. **마스터 서비스 계약을 읽었으며 해당 이용 약관에 동의합니다** 상자를 선택하고 **주문하기**를 클릭하십시오. 잠시 후에 스냅샷 영역이 프로비저닝됩니다.
 
 ## SLCLI를 통해 스냅샷 영역 주문
 

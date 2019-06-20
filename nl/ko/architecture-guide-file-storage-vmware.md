@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
@@ -73,11 +73,11 @@ subcollection: FileStorage
 
 ### 스냅샷 사용
 
-{{site.data.keyword.filestorage_short}}를 통해 관리자는 각 스토리지 볼륨에 대해 자동으로 스냅샷 사본을 작성 및 삭제하는 스냅샷 스케줄을 설정할 수 있습니다. 또한 관리자는 자동 스냅샷에 대해 추가로 스냅샷 스케줄(시간별, 일별, 주별)을 작성하고 비즈니스 연속성 및 재해 복구(BCDR) 시나리오에 대한 임시 스냅샷을 수동으로 작성할 수도 있습니다. 자동 경보는 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}을 통해 보유 중인 스냅샷과 사용된 영역의 볼륨 소유자에게 전달됩니다.
+{{site.data.keyword.filestorage_short}}를 통해 관리자는 각 스토리지 볼륨에 대해 자동으로 스냅샷 사본을 작성 및 삭제하는 스냅샷 스케줄을 설정할 수 있습니다. 또한 관리자는 자동 스냅샷에 대해 추가로 스냅샷 스케줄(시간별, 일별, 주별)을 작성하고 비즈니스 연속성 및 재해 복구(BCDR) 시나리오에 대한 임시 스냅샷을 수동으로 작성할 수도 있습니다. 자동 경보는 [{{site.data.keyword.cloud}} 콘솔](https://{DomainName}/){: external}을 통해 보유 중인 스냅샷과 사용된 영역의 볼륨 소유자에게 전달됩니다.
 
 스냅샷을 사용하려면 스냅샷 영역이 필요합니다. 영역은 초기 볼륨 주문 중에 구매하거나, 초기 프로비저닝 후 **볼륨 세부사항** 페이지를 통해(**조치**를 클릭하고 **스냅샷 영역 추가**를 선택) 구매할 수 있습니다.
 
-VMware 환경은 스냅샷을 인지하지 않음을 유념하십시오. {{site.data.keyword.filestorage_short}} 스냅샷 기능을 VMware 스냅샷과 혼동하지 않아야 합니다. {{site.data.keyword.filestorage_short}} 스냅샷 기능을 사용하는 복구는 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}에서 처리해야 합니다.
+VMware 환경은 스냅샷을 인지하지 않음을 유념하십시오. {{site.data.keyword.filestorage_short}} 스냅샷 기능을 VMware 스냅샷과 혼동하지 않아야 합니다. {{site.data.keyword.filestorage_short}} 스냅샷 기능을 사용하는 복구는 [{{site.data.keyword.cloud}} 콘솔](https://{DomainName}/){: external}에서 처리해야 합니다.
 
 {{site.data.keyword.filestorage_short}} 볼륨을 복원하려면 {{site.data.keyword.filestorage_short}}의 모든 VM을 꺼야 합니다. 프로세스 중에 데이터 손상을 방지하기 위해 ESXi 호스트의 볼륨을 임시로 마운트 해제해야 합니다.
 
@@ -112,9 +112,9 @@ VMware 환경은 스냅샷을 인지하지 않음을 유념하십시오. {{site.
 
 [고급 단일 사이트 VMware 참조 아키텍처 ](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){: external}을 사용하여 VMware 환경의 Endurance 또는 Performance 옵션으로 {{site.data.keyword.filestorage_short}}를 설정할 수 있습니다.
 
-{{site.data.keyword.filestorage_short}}는 [IBM Cloud 카탈로그](https://{DomainName}/catalog){: external} 또는 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}을 통해 주문할 수 있습니다. 자세한 정보는 [{{site.data.keyword.filestorage_short}} 주문](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)을 참조하십시오.
+{{site.data.keyword.filestorage_short}}는 [{{site.data.keyword.cloud}} 카탈로그](https://{DomainName}/catalog){: external} 또는 CLI를 통해 주문할 수 있습니다. 자세한 정보는 [{{site.data.keyword.filestorage_short}} 주문](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)을 참조하십시오.
 
-스토리지가 1분 내에 프로비저닝되며 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}의 **{{site.data.keyword.filestorage_short}}** 페이지에 표시됩니다.
+스토리지가 1분 내에 프로비저닝되며 [{{site.data.keyword.cloud}} 콘솔](https://{DomainName}/classic){: external}의 **{{site.data.keyword.filestorage_short}}** 페이지에 표시됩니다.
 
 볼륨이 프로비저닝되고 나면 볼륨을 사용할 {{site.data.keyword.BluBareMetServers_full}} 또는 {{site.data.keyword.BluVirtServers_full}}에 스토리지 액세스 권한이 부여되어야 합니다. 다음 단계를 사용하여 볼륨에 권한을 부여할 수 있습니다.
 

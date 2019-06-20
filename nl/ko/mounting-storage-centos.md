@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-22"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, mounting file storage, Linux, CentOS, NFS
 
@@ -20,7 +20,7 @@ subcollection: FileStorage
 # CentOS에서 {{site.data.keyword.filestorage_short}} 마운트
 {: #mountingCentOS}
 
-CentOS 7에서 {{site.data.keyword.filestorage_full}}를 마운트하려면 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} 또는 SLCLI를 통해 호스트에 먼저 권한을 부여해야 합니다. 그런 다음 [Linux에 {{site.data.keyword.filestorage_short}} 마운트](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)에 설명된 대로 NFS 유틸리티를 설치하십시오.
+CentOS 7에 {{site.data.keyword.filestorage_full}}를 마운트하려면 [{{site.data.keyword.cloud}} 콘솔](https://{DomainName}/classic){: external}을 통해 또는 SLCLI를 통해 먼저 호스트에 권한을 부여해야 합니다. 그런 다음 [Linux에 {{site.data.keyword.filestorage_short}} 마운트](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)에 설명된 대로 NFS 유틸리티를 설치하십시오.
 
 CentOS의 경우 마운트 파일에 `Options=` 행을 사용하여 추가 옵션을 지정할 수 있습니다. 다음 예에서는 NFS가 `/data/www`에 마운트되도록 설정되어 있습니다.
 

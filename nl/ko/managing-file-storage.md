@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, authorizing hosts, rewoke access, grant access, view authorizations
 
@@ -19,7 +19,7 @@ subcollection: FileStorage
 # {{site.data.keyword.filestorage_short}} 관리
 {: #managingstorage}
 
-{{site.data.keyword.slportal}}을 통해 {{site.data.keyword.filestorage_full}} 볼륨을 관리할 수 있습니다.
+{{site.data.keyword.cloud}} 콘솔을 통해 {{site.data.keyword.filestorage_full}} 볼륨을 관리할 수 있습니다.
 
 ## {{site.data.keyword.filestorage_short}}에 액세스할 수 있도록 호스트에 권한 부여
 
@@ -28,9 +28,10 @@ subcollection: FileStorage
 사용자의 스토리지와 동일한 데이터 센터에 있는 호스트에 권한 부여하고 연결할 수 있습니다. 다수의 계정을 보유할 수는 있지만, 한 계정의 호스트에 권한 부여하여 다른 계정의 스토리지에 액세스할 수는 없습니다.
 {:important}
 
-1. **스토리지** > **{{site.data.keyword.filestorage_short}}**를 클릭하고 **볼륨 이름**을 클릭하십시오.
-2. 페이지의 **권한 부여된 호스트** 섹션으로 화면을 이동하십시오.
-3. 오른쪽에 있는 **호스트 권한 부여**를 클릭하십시오. 해당 특정 볼륨에 액세스할 수 있는 호스트를 선택하십시오.
+1. [{{site.data.keyword.cloud}} 콘솔](https://{DomainName}/){: external}로 이동하십시오. 메뉴에서 **클래식 인프라**를 선택하십시오.
+2. **스토리지** > **{{site.data.keyword.filestorage_short}}**를 클릭하고 **볼륨 이름**을 클릭하십시오.
+3. 페이지의 **권한 부여된 호스트** 섹션으로 화면을 이동하십시오.
+4. 오른쪽에 있는 **호스트 권한 부여**를 클릭하십시오. 해당 특정 볼륨에 액세스할 수 있는 호스트를 선택하십시오.
 
 또는 SLCLI에서 다음 명령을 사용할 수 있습니다.
 ```
@@ -38,20 +39,19 @@ subcollection: FileStorage
 Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
 
 Options:
-  -h, --hardware-id TEXT    The id of one SoftLayer_Hardware to authorize
-  -v, --virtual-id TEXT     The id of one SoftLayer_Virtual_Guest to authorize
-  -i, --ip-address-id TEXT  The id of one SoftLayer_Network_Subnet_IpAddress
-                            to authorize
-  --ip-address TEXT         An IP address to authorize
-  -s, --subnet-id TEXT      The id of one SoftLayer_Network_Subnet to
-                            authorize
+  -h, --hardware-id TEXT    The ID of one hardware server to authorize.
+  -v, --virtual-id TEXT     The ID of one virtual server to authorize.
+  -i, --ip-address-id TEXT  The ID of one IP address to authorize.
+  -p, --ip-address TEXT     An IP address to authorize.
+  -s, --subnet-id TEXT      An ID of one subnet to authorize.
   --help                    Show this message and exit.
 ```
 
 ## {{site.data.keyword.filestorage_short}} 볼륨에 액세스할 수 있도록 권한 부여된 호스트의 목록 보기
 
-1. **스토리지 > {{site.data.keyword.filestorage_short}}**를 클릭하고 **볼륨 이름**을 클릭하십시오.
-2. 페이지 아래 부분에 있는 **권한 부여된 호스트** 섹션으로 스크롤하십시오.
+1. [{{site.data.keyword.cloud}} 콘솔](https://{DomainName}/){: external}로 이동하십시오. 메뉴에서 **클래식 인프라**를 선택하십시오.
+2. **스토리지** > **{{site.data.keyword.filestorage_short}}**를 클릭하고 **볼륨 이름**을 클릭하십시오.
+3. 페이지 아래 부분에 있는 **권한 부여된 호스트** 섹션으로 스크롤하십시오.
 
 현재 볼륨에 액세스할 수 있는 권한 부여된 호스트의 목록을 볼 수 있습니다.
 
@@ -73,9 +73,11 @@ Options:
 
 특정 호스트에 액세스 권한이 있는 볼륨을 볼륨 이름, 스토리지 유형, 대상 주소, 용량 및 위치 등 연결하는 데 필요한 정보와 함께 볼 수 있습니다.
 
-1. [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}에서 **디바이스** > **디바이스 목록**을 클릭하십시오.
-2. 적절한 디바이스를 클릭하십시오.
-2. 스토리지 탭을 선택하십시오.
+1. [{{site.data.keyword.cloud}} 콘솔](https://{DomainName}/){: external}로 이동하십시오.
+2. 메뉴에서 **클래식 인프라**를 선택하십시오.
+3. **디바이스** > **디바이스 목록**을 클릭하십시오.
+4. 적절한 디바이스를 클릭하십시오.
+5. 스토리지 탭을 선택하십시오.
 
 스토리지 유형(블록, 파일, 기타)별로 모두 그룹화된, 이 특정 호스트가 액세스할 수 있는 스토리지 볼륨의 목록이 표시됩니다. 각각의 **조치** 메뉴에서 추가 스토리지에 권한을 부여하거나 액세스를 제거할 수 있습니다.
 
@@ -96,7 +98,9 @@ Options:
 
 ### 디바이스 목록에서 액세스 권한 취소
 
-1. [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}에서 **디바이스** > **디바이스 목록**을 클릭하십시오.
+1. [{{site.data.keyword.cloud}} 콘솔](https://{DomainName}/){: external}로 이동하십시오.
+2. 메뉴에서 **클래식 인프라**를 선택하십시오.
+3. **디바이스** > **디바이스 목록**을 클릭하십시오.
 2. 적절한 디바이스를 두 번 클릭하십시오.
 3. **스토리지** 탭을 선택하십시오.
 4. 그러면 스토리지 유형(블록, 파일, 기타)별로 모두 그룹화되어 이 특정 호스트가 액세스할 수 있는 스토리지 볼륨의 목록이 나타납니다. 액세스를 취소할 볼륨 옆의 개별 **조치** 메뉴를 선택하고 **액세스 취소**를 클릭하십시오.
@@ -108,30 +112,28 @@ Options:
 
 ### 스토리지 보기에서 액세스 권한 취소
 
-1. **스토리지, {{site.data.keyword.filestorage_short}}**를 클릭하고 액세스가 취소될 **볼륨**을 선택하십시오.
-2. 페이지의 **권한 부여된 호스트** 섹션으로 화면을 이동하십시오.
-3. 해당 액세스를 취소할 호스트 옆의 **조치**를 클릭하고 **액세스 취소**를 선택하십시오.
-4. 조치를 취소할 수 없으므로 볼륨에 대한 액세스를 취소하는지 여부를 확인하십시오. 볼륨 액세스 권한을 취소하려면 **예**를 클릭하고, 조치를 취소하려면 **아니오**를 클릭하십시오.
+1. [{{site.data.keyword.cloud}} 콘솔](https://{DomainName}/){: external}로 이동하십시오.
+2. 메뉴에서 **클래식 인프라**를 선택하십시오.
+3. **스토리지** > **{{site.data.keyword.filestorage_short}}**를 클릭하고 액세스를 취소할 **볼륨**을 선택하십시오.
+4. 페이지의 **권한 부여된 호스트** 섹션으로 화면을 이동하십시오.
+5. 해당 액세스를 취소할 호스트 옆의 **조치**를 클릭하고 **액세스 취소**를 선택하십시오.
+6. 조치를 취소할 수 없으므로 볼륨에 대한 액세스를 취소하는지 여부를 확인하십시오. 볼륨 액세스 권한을 취소하려면 **예**를 클릭하고, 조치를 취소하려면 **아니오**를 클릭하십시오.
 
 특정 볼륨에서 여러 호스트의 연결을 끊으려면 각 호스트에 대해 액세스 취소 조치를 반복 수행해야 합니다.
 {:tip}
 
 ### SLCLI를 통해 액세스 권한 취소
-또는 SLCLI에서 다음 명령을 사용할 수 있습니다.
+SLCLI에서 다음 명령을 사용할 수 있습니다.
 ```
 # slcli file access-revoke --help
 Usage: slcli file access-revoke [OPTIONS] VOLUME_ID
 
 Options:
-  -h, --hardware-id TEXT    The id of one SoftLayer_Hardware to revoke
-                            authorization
-  -v, --virtual-id TEXT     The id of one SoftLayer_Virtual_Guest to revoke
-                            authorization
-  -i, --ip-address-id TEXT  The id of one SoftLayer_Network_Subnet_IpAddress
-                            to revoke authorization
-  --ip-address TEXT         An IP address to revoke authorization
-  -s, --subnet-id TEXT      The id of one SoftLayer_Network_Subnet to revoke
-                            authorization
+  -h, --hardware-id TEXT    The ID of one hardware server to revoke authorization.
+  -v, --virtual-id TEXT     The ID of one virtual server to revoke authorization.
+  -i, --ip-address-id TEXT  The ID of one IP address to revoke authorization.
+  -p, --ip-address TEXT     An IP address to revoke authorization.
+  -s, --subnet-id TEXT      An ID of one subnet to revoke authorization.
   --help                    Show this message and exit.
 ```
 
@@ -139,14 +141,15 @@ Options:
 
 특정 볼륨이 더 이상 필요하지 않으면 해당 스토리지를 취소할 수 있습니다. 스토리지 볼륨을 취소하려면 먼저 모든 호스트에서 액세스 권한을 취소해야 합니다.
 
-1. **스토리지**>**{{site.data.keyword.filestorage_short}}**를 클릭하십시오.
-2. 취소할 볼륨에 대해 **조치**를 클릭하고 **{{site.data.keyword.filestorage_short}} 취소**를 선택하십시오.
-3. 즉시 볼륨을 취소하는지 또는 볼륨이 프로비저닝된 기념일에 취소하는지를 확인하십시오.
+1. [{{site.data.keyword.cloud}} 콘솔](https://{DomainName}/){: external}로 이동하십시오. 메뉴에서 **클래식 인프라**를 선택하십시오.
+2. **스토리지** > **{{site.data.keyword.filestorage_short}}**를 클릭하십시오.
+3. 취소할 볼륨에 대해 **조치**를 클릭하고 **{{site.data.keyword.filestorage_short}} 취소**를 선택하십시오.
+4. 즉시 볼륨을 취소하는지 또는 볼륨이 프로비저닝된 기념일에 취소하는지를 확인하십시오.
 
    지정일에 볼륨을 취소하는 옵션을 선택하는 경우, 해당 지정일 이전에 취소 요청을 무효화할 수 있습니다.
    {:tip}
-4. **계속** 또는 **닫기**를 클릭하십시오.
-5. 수신확인 선택란을 클릭하고 **확인**을 클릭하십시오.
+5. **계속** 또는 **닫기**를 클릭하십시오.
+6. 수신확인 선택란을 클릭하고 **확인**을 클릭하십시오.
 
 또는 SLCLI에서 다음 명령을 사용할 수 있습니다.
 ```

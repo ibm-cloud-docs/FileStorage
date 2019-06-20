@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, duplicate volume
 
@@ -39,13 +39,13 @@ subcollection: FileStorage
 - **개발 및 테스트(개발/테스트)**. 한 번에 최대 4개의 동시 볼륨 복제를 작성하여 개발 및 테스트용 복제 데이터를 작성합니다.
 - **스토리지 크기 조정**. 데이터를 이동할 필요 없이 크기 또는 IOPS 비율(또는 둘 다)이 새로운 볼륨을 작성합니다.  
 
-몇 가지 방법으로 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}을 통해 중복 볼륨을 작성할 수 있습니다.
+몇 가지 방법으로 [{{site.data.keyword.cloud}} 콘솔](https://{DomainName}/){: external}을 통해 중복 볼륨을 작성할 수 있습니다.
 
 
 ## 스토리지 목록의 특정 볼륨에서 복제 작성
 
 1. {{site.data.keyword.filestorage_short}}의 목록으로 이동하십시오.
-    - 고객 포털에서 **스토리지** > **{{site.data.keyword.filestorage_short}}**를 클릭하거나
+    - 클래식 인프라 메뉴에서 **스토리지** > **{{site.data.keyword.filestorage_short}}**를 클릭하십시오. 또는
     - {{site.data.keyword.cloud}} 카탈로그에서 **인프라** > **스토리지** > **{{site.data.keyword.filestorage_short}}**를 클릭하십시오.
 2. 목록에서 LUN을 선택하고 **조치** > **LUN(볼륨) 복제**를 클릭하십시오.
 3. 스냅샷 옵션을 선택하십시오.

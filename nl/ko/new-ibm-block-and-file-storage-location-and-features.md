@@ -33,6 +33,7 @@ subcollection: FileStorage
 |DAL09<br >DAL10<br />DAL12<br />DAL13<br />SJC03<br />SJC04<br />WDC04<br />WDC06<br />WDC07 |MEX01<br />SAO01 |MON01<br />TOR01  |AMS01<br />AMS03<br />FRA02<br />FRA04<br />FRA05<br />LON02<br />LON04<br />LON05<br />LON06<br />MIL01<br />OSLO1<br />PAR01 |CHE01<br />HKG02<br />SEO01<br />SNG01<br />TOK02<br />TOK04<br />TOK05 |MEL01<br />SYD01<br />SYD04<br />        SYD05 |
 {: caption="표 1에는 데이터 센터 가용성이 표시되어 있습니다. 각 지역에는 고유 열이 있습니다. 일부 도시(예: 댈러스, 산호세, 워싱턴 DC, 암스테르담, 프랑크푸르트, 런던 및 시드니)에는 다수의 데이터 센터가 있습니다." caption-side="top"}
 
+
 ## 새 기능
 {: #features}
 

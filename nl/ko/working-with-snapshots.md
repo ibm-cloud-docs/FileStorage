@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, snapshots, snapshot schedule, manual snapshot, snapshot space, snapshot quota
 
@@ -21,7 +21,7 @@ subcollection: FileStorage
 
 ## 스냅샷 스케줄 작성
 
-스냅샷 스케줄을 사용하여 스토리지 볼륨에 대한 특정 시점의 참조를 작성하는 빈도 및 시기를 결정합니다. 스토리지 볼륨당 최대 50개의 스냅샷을 보유할 수 있습니다. 스케줄은 [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}의 **스토리지** > **{{site.data.keyword.filestorage_short}}** 탭을 통해 관리합니다.
+스냅샷 스케줄을 사용하여 스토리지 볼륨에 대한 특정 시점의 참조를 작성하는 빈도 및 시기를 결정합니다. 스토리지 볼륨당 최대 50개의 스냅샷을 보유할 수 있습니다. 스케줄은 [{{site.data.keyword.cloud}} 콘솔](https://{DomainName}/){: external}의 **스토리지** > **{{site.data.keyword.filestorage_short}}** 탭을 통해 관리합니다.
 
 스토리지 볼륨의 초기 프로비저닝 중에 스냅샷 영역을 구매하지 않았으면, 우선 스냅샷 영역을 구매해야 초기 스케줄을 설정할 수 있습니다.
 {:important}
@@ -159,17 +159,18 @@ Options:
 
 1. 호스트에서 스토리지 볼륨을 마운트 해제하고 분리하십시오.
    - 지시사항을 보려면 [여기](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)를 클릭하십시오.
-2. [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}의 **스토리지**, **{{site.data.keyword.filestorage_short}}**를 클릭하십시오.
-3. 아래로 화면을 이동하고 복원할 볼륨을 클릭하십시오. **세부사항** 페이지의 **스냅샷** 섹션에, 저장된 모든 스냅샷의 목록이 해당 크기 및 작성 날짜와 함께 표시됩니다.
-4. 사용할 스냅샷 옆에 있는 **조치**를 클릭하고 **복원**을 클릭하십시오. <br/>
+2. [{{site.data.keyword.cloud}} 콘솔](https://{DomainName}/){: external}로 이동하십시오. 메뉴에서 **클래식 인프라**를 선택하십시오.
+3. **스토리지**, **{{site.data.keyword.filestorage_short}}**를 클릭하십시오.
+4. 아래로 스크롤하여 복원할 볼륨을 클릭하십시오. **세부사항** 페이지의 **스냅샷** 섹션에, 저장된 모든 스냅샷의 목록이 해당 크기 및 작성 날짜와 함께 표시됩니다.
+5. 사용할 스냅샷 옆에 있는 **조치**를 클릭하고 **복원**을 클릭하십시오. <br/>
 
    복원을 완료하면 스냅샷을 작성한 이후 수정되거나 작성된 데이터가 유실됩니다. 이 데이터 손실은 스토리지 볼륨이 스냅샷 작성 시와 동일한 상태로 돌아가기 때문에 발생합니다.
    {:note}
-5. **예**를 클릭하여 복원을 시작하십시오.
+6. **예**를 클릭하여 복원을 시작하십시오.
 
    선택된 스냅샷을 사용하여 볼륨이 복원되고 있음을 알리는 메시지가 페이지에 표시됩니다. 또한 활성 트랜잭션이 진행 중임을 나타내는 아이콘이 {{site.data.keyword.filestorage_short}}의 볼륨 옆에 표시됩니다. 아이콘 위로 마우스 커서를 이동하면 트랜잭션을 표시하는 창이 생성됩니다. 일단 트랜잭션이 완료되면 아이콘이 사라집니다.
    {:note}
-6. 스토리지 볼륨을 호스트에 마운트하고 다시 연결하십시오.
+7. 스토리지 볼륨을 호스트에 마운트하고 다시 연결하십시오.
   - 지시사항을 보려면 [여기](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)를 클릭하십시오.
 
 또는 SLCLI를 통해 스냅샷으로 볼륨을 복원할 수 있습니다.
