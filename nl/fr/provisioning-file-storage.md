@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, provisioning, ordering,
 
@@ -29,9 +29,7 @@ Vous pouvez mettre à disposition {{site.data.keyword.filestorage_short}} et l'a
 ## Commande de {{site.data.keyword.filestorage_short}} avec des niveaux d'IOPS prédéfinis (Endurance)
 {: #endurance}
 
-1. Connectez-vous au [catalogue IBM Cloud](https://{DomainName}/catalog){: external}, puis cliquez sur **Stockage**. Ensuite, sélectionnez {{site.data.keyword.filestorage_short}}. Cliquez sur **Créer**.
-
-   Sinon, vous pouvez vous connecter au portail [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} }, cliquer sur **Stockage** > **{{site.data.keyword.filestorage_short}}**. Dans l'angle supérieur droit, cliquez sur **Commander {{site.data.keyword.filestorage_short}}**.
+1. Connectez-vous au [catalogue {{site.data.keyword.cloud}}](https://{DomainName}/catalog){: external} et cliquez sur **Stockage**. Ensuite, sélectionnez {{site.data.keyword.filestorage_short}}. Cliquez sur **Créer**.
 2. Sélectionnez l'**emplacement** de votre déploiement (centre de données).
    - Vérifiez que le nouveau stockage est ajouté au même emplacement que celui du ou des hôtes de calcul dont vous disposez.
 3. Facturation. Si vous avez sélectionné un centre de données avec des fonctionnalités améliorées (indiqué par un astérisque), vous avez le choix entre une facturation mensuelle ou horaire.
@@ -55,15 +53,13 @@ Vous pouvez mettre à disposition {{site.data.keyword.filestorage_short}} et l'a
 9. Après avoir lu les dispositions, cochez la case **J'ai lu et j'accepte les contrats de service tiers**.
 10. Cliquez sur **Créer**. Votre nouvelle allocation de stockage est disponible en quelques minutes.
 
-Par défaut, vous pouvez mettre à disposition un total combiné de 250 volumes {{site.data.keyword.blockstorageshort}}. Pour augmenter le nombre de vos volumes, contactez votre commercial. Pour en savoir plus sur l'augmentation des limites, cliquez [ici](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits).<br/><br/>Pour en savoir plus sur la limite sur les autorisations simultanées, voir la [Foire aux questions](/docs/infrastructure/FileStorage?topic=FileStorage-faqs#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-).
+Par défaut, vous pouvez mettre à disposition un total combiné de 250 volumes {{site.data.keyword.blockstorageshort}}. Pour augmenter le nombre de vos volumes, contactez votre commercial. Pour en savoir plus sur l'augmentation des limites, cliquez [ici](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits).<br/><br/>Pour en savoir plus sur la limite sur les autorisations simultanées, voir la [Foire aux questions](/docs/infrastructure/FileStorage?topic=file-storage-faqs#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-).
 {:tip}
 
 ## Commande de {{site.data.keyword.filestorage_short}} avec un nombre d'IOPS personnalisé (Performance)
 {: #performance}
 
-1. Connectez-vous au [catalogue IBM Cloud](https://{DomainName}/catalog){: external}, puis cliquez sur **Stockage**. Ensuite, sélectionnez {{site.data.keyword.filestorage_short}}. Cliquez sur **Créer**.
-
-   Sinon, vous pouvez vous connecter au portail [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} }, cliquer sur **Stockage** > **{{site.data.keyword.filestorage_short}}**. Dans l'angle supérieur droit, cliquez sur **Commander {{site.data.keyword.filestorage_short}}**.
+1. Connectez-vous au [catalogue {{site.data.keyword.cloud}}](https://{DomainName}/catalog){: external} et cliquez sur **Stockage**. Ensuite, sélectionnez {{site.data.keyword.filestorage_short}}. Cliquez sur **Créer**.
 2. Cliquez sur **Emplacement** et sélectionnez votre centre de données.
    - Vérifiez que le nouveau stockage est ajouté au même emplacement que celui du ou des hôtes de calcul dont vous disposez.
 3. Facturation. Si vous avez sélectionné un centre de données avec des fonctionnalités améliorées (indiqué par un astérisque), vous avez le choix entre une facturation mensuelle ou horaire.
@@ -83,7 +79,7 @@ Par défaut, vous pouvez mettre à disposition un total combiné de 250 volumes 
 9. Après avoir lu les dispositions, cochez la case **J'ai lu et j'accepte les contrats de service tiers**.
 10. Cliquez sur **Créer**. Votre nouvelle allocation de stockage est disponible en quelques minutes.
 
-Par défaut, vous pouvez mettre à disposition un total combiné de 250 volumes {{site.data.keyword.blockstorageshort}}. Pour augmenter le nombre de vos volumes, contactez votre commercial. Pour en savoir plus sur l'augmentation des limites, cliquez [ici](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits).<br/><br/>Pour en savoir plus sur la limite sur les autorisations simultanées, voir la [Foire aux questions](/docs/infrastructure/FileStorage?topic=FileStorage-faqs#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-).
+Par défaut, vous pouvez mettre à disposition un total combiné de 250 volumes {{site.data.keyword.blockstorageshort}}. Pour augmenter le nombre de vos volumes, contactez votre commercial. Pour en savoir plus sur l'augmentation des limites, cliquez [ici](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits).<br/><br/>Pour en savoir plus sur la limite sur les autorisations simultanées, voir la [Foire aux questions](/docs/infrastructure/FileStorage?topic=file-storage-faqs#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-).
 {:important}
 
 

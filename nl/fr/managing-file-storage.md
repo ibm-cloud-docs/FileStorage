@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, authorizing hosts, rewoke access, grant access, view authorizations
 
@@ -19,7 +19,7 @@ subcollection: FileStorage
 # Gestion de {{site.data.keyword.filestorage_short}}
 {: #managingstorage}
 
-Vous pouvez gérer vos volumes {{site.data.keyword.filestorage_full}} via le portail {{site.data.keyword.slportal}}.
+Vous pouvez gérer vos volumes {{site.data.keyword.filestorage_full}} via la console {{site.data.keyword.cloud}}.
 
 ## Autorisation des hôtes pour l'accès à {{site.data.keyword.filestorage_short}}
 
@@ -28,9 +28,10 @@ Les hôtes "autorisés" sont des hôtes auxquels des droits d'accès à un volum
 Vous pouvez autoriser et connecter des hôtes qui se trouvent dans le même centre de données que votre stockage. Si vous pouvez disposer de plusieurs comptes, vous ne pouvez pas autoriser un hôte à partir d'un compte à accéder à votre stockage sur un autre compte.
 {:important}
 
-1. Cliquez sur **Stockage** > **{{site.data.keyword.filestorage_short}}**, puis sur **Nom de volume**.
-2. Faites défiler l'écran jusqu'à la section **Hôtes autorisés** de la page.
-3. Cliquez sur **Hôte autorisé** sur le côté droit. Sélectionnez les hôtes qui peuvent accéder à ce volume en particulier.
+1. Accédez à la [console {{site.data.keyword.cloud}}](https://{DomainName}/){: external}. Dans le menu, sélectionnez **Infrastructure classique**.
+2. Cliquez sur **Stockage** > **{{site.data.keyword.filestorage_short}}**, puis sur **Nom de volume**.
+3. Faites défiler l'écran jusqu'à la section **Hôtes autorisés** de la page.
+4. Cliquez sur **Hôte autorisé** sur le côté droit. Sélectionnez les hôtes qui peuvent accéder à ce volume en particulier.
 
 Vous pouvez également utiliser la commande suivante dans l'interface SLCLI.
 ```
@@ -38,20 +39,19 @@ Vous pouvez également utiliser la commande suivante dans l'interface SLCLI.
 Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
 
 Options:
-  -h, --hardware-id TEXT    The id of one SoftLayer_Hardware to authorize
-  -v, --virtual-id TEXT     The id of one SoftLayer_Virtual_Guest to authorize
-  -i, --ip-address-id TEXT  The id of one SoftLayer_Network_Subnet_IpAddress
-                            to authorize
-  --ip-address TEXT         An IP address to authorize
-  -s, --subnet-id TEXT      The id of one SoftLayer_Network_Subnet to
-                            authorize
+  -h, --hardware-id TEXT    The ID of one hardware server to authorize.
+  -v, --virtual-id TEXT     The ID of one virtual server to authorize.
+  -i, --ip-address-id TEXT  The ID of one IP address to authorize.
+  -p, --ip-address TEXT     An IP address to authorize.
+  -s, --subnet-id TEXT      An ID of one subnet to authorize.
   --help                    Show this message and exit.
 ```
 
 ## Affichage de la liste des hôtes autorisés à accéder à un volume {{site.data.keyword.filestorage_short}}
 
-1. Cliquez sur **Stockage > {{site.data.keyword.filestorage_short}}**, puis sur **Nom du volume**.
-2. Faites défiler la page jusqu'à la section **Hôtes autorisés**.
+1. Accédez à la [console {{site.data.keyword.cloud}}](https://{DomainName}/){: external}. Dans le menu, sélectionnez **Infrastructure classique**.
+2. Cliquez sur **Stockage** > **{{site.data.keyword.filestorage_short}}**, puis sur **Nom de volume**.
+3. Faites défiler la page jusqu'à la section **Hôtes autorisés**.
 
 Vous y trouverez une liste des hôtes actuellement autorisés à accéder au volume.
 
@@ -73,9 +73,11 @@ Options:
 
 Vous pouvez afficher les volumes auxquels un hôte peut accéder, y compris les informations nécessaires pour l'établissement d'une connexion (Nom du volume, Type de stockage, Adresse cible, Capacité et Emplacement).
 
-1. Cliquez sur **Unités** > **Liste des unités** depuis le portail [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}
-2. Cliquez sur l'unité appropriée.
-2. Sélectionnez l'onglet Stockage.
+1. Accédez à la [console {{site.data.keyword.cloud}}](https://{DomainName}/){: external}.
+2. Dans le menu, sélectionnez **Infrastructure classique**.
+3. Cliquez sur **Unités** > **Liste des unités**.
+4. Cliquez sur l'unité appropriée.
+5. Sélectionnez l'onglet Stockage.
 
 La liste des volumes de stockage auxquels cet hôte particulier a accès s'affiche (les volumes sont regroupés par type de stockage : bloc, fichier, autre). Les menus **Action** respectifs vous permettent d'autoriser davantage de stockage ou de retirer l'accès.
 
@@ -96,10 +98,12 @@ Vous pouvez révoquer l'accès à partir de Stockage dans la Liste des unités o
 
 ### Révocation de l'accès à partir de la liste des unités
 
-1. Cliquez sur **Unités** > **Liste des unités** depuis le portail [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}
+1. Accédez à la [console {{site.data.keyword.cloud}}](https://{DomainName}/){: external}. 
+2. Dans le menu, sélectionnez **Infrastructure classique**.
+3. Cliquez sur **Unités** > **Liste des unités**.
 2. Cliquez deux fois sur l'unité appropriée.
 3. Sélectionnez l'onglet **Stockage**.
-4. La liste des volumes de stockage auxquels cet hôte particulier a accès s'affiche (les volumes sont regroupés par type de stockage : bloc, fichier, autre). Sélectionnez le menu **Action** adéquat en regard du volume pour lequel vous souhaitez révoquer l'accès et cliquez sur **Révoquer le droit d'accès**.
+4. La liste des volumes de stockage auxquels cet hôte particulier a accès s'affiche (les volumes sont regroupés par type de stockage : bloc, fichier, autre). Sélectionnez le menu **Action** adéquat en regard du volume pour lequel vous souhaitez révoquer l'accès puis cliquez sur **Révoquer le droit d'accès**.
 5. Confirmez que vous souhaitez révoquer l'accès à un volume car cette action ne peut pas être annulée. Cliquez sur **Oui** pour révoquer l'accès au volume ou sur **Non** pour annuler l'action.
 
 Si vous souhaitez déconnecter plusieurs volumes d'un hôte spécifique, vous devez répéter l'action Révoquer le droit d'accès pour chaque volume.
@@ -108,30 +112,28 @@ Si vous souhaitez déconnecter plusieurs volumes d'un hôte spécifique, vous de
 
 ### Révocation de l'accès à partir de la vue Stockage
 
-1. Cliquez sur **Stockage, {{site.data.keyword.filestorage_short}}** et sélectionnez le **Volume** pour lequel vous souhaitez révoquer l'accès.
-2. Faites défiler l'écran jusqu'à la section **Hôtes autorisés** de la page.
-3. Cliquez sur **Actions** en regard de l'hôte dont l'accès doit être révoqué et sélectionnez **Révoquer le droit d'accès**.
-4. Confirmez que vous souhaitez révoquer l'accès à un volume car cette action ne peut pas être annulée. Cliquez sur **Oui** pour révoquer l'accès au volume ou sur **Non** pour annuler l'action.
+1. Accédez à la [console {{site.data.keyword.cloud}}](https://{DomainName}/){: external}. 
+2. Dans le menu, sélectionnez **Infrastructure classique**.
+3. Cliquez sur **Stockage** > **{{site.data.keyword.filestorage_short}}**, puis sélectionnez le **Volume** depuis lequel vous souhaitez révoquer l'accès.
+4. Faites défiler l'écran jusqu'à la section **Hôtes autorisés** de la page.
+5. Cliquez sur **Actions** en regard de l'hôte dont l'accès doit être révoqué et sélectionnez **Révoquer le droit d'accès**.
+6. Confirmez que vous souhaitez révoquer l'accès à un volume car cette action ne peut pas être annulée. Cliquez sur **Oui** pour révoquer l'accès au volume ou sur **Non** pour annuler l'action.
 
 Si vous souhaitez déconnecter plusieurs hôtes d'un volume spécifique, vous devez répéter l'action Révoquer le droit d'accès pour chaque hôte.
 {:tip}
 
 ### Révocation de l'accès via l'interface SLCLI.
-Vous pouvez également utiliser la commande suivante dans l'interface SLCLI.
+Vous pouvez utiliser la commande suivante dans l'interface SLCLI.
 ```
 # slcli file access-revoke --help
 Usage: slcli file access-revoke [OPTIONS] VOLUME_ID
 
 Options:
-  -h, --hardware-id TEXT    The id of one SoftLayer_Hardware to revoke
-                            authorization
-  -v, --virtual-id TEXT     The id of one SoftLayer_Virtual_Guest to revoke
-                            authorization
-  -i, --ip-address-id TEXT  The id of one SoftLayer_Network_Subnet_IpAddress
-                            to revoke authorization
-  --ip-address TEXT         An IP address to revoke authorization
-  -s, --subnet-id TEXT      The id of one SoftLayer_Network_Subnet to revoke
-                            authorization
+  -h, --hardware-id TEXT    The ID of one hardware server to revoke authorization.
+  -v, --virtual-id TEXT     The ID of one virtual server to revoke authorization.
+  -i, --ip-address-id TEXT  The ID of one IP address to revoke authorization.
+  -p, --ip-address TEXT     An IP address to revoke authorization.
+  -s, --subnet-id TEXT      An ID of one subnet to revoke authorization.
   --help                    Show this message and exit.
 ```
 
@@ -139,14 +141,15 @@ Options:
 
 Si vous n'avez plus besoin d'un volume spécifique, vous pouvez annuler ce stockage. Pour ce faire, vous devez d'abord révoquer l'accès à partir de tous les hôtes.
 
-1. Cliquez sur **Stockage**>**{{site.data.keyword.filestorage_short}}**.
-2. Cliquez sur **Actions** correspondant au volume à annuler et sélectionnez **Annuler {{site.data.keyword.filestorage_short}}**.
-3. Confirmez l'annulation du volume de manière immédiate ou à la date anniversaire de la mise à disposition du volume.
+1. Accédez à la [console {{site.data.keyword.cloud}}](https://{DomainName}/){: external}. Dans le menu, sélectionnez **Infrastructure classique**.
+2. Cliquez sur **Stockage** > **{{site.data.keyword.filestorage_short}}**.
+3. Cliquez sur **Actions** correspondant au volume à annuler et sélectionnez **Annuler {{site.data.keyword.filestorage_short}}**.
+4. Confirmez l'annulation du volume de manière immédiate ou à la date anniversaire de la mise à disposition du volume.
 
    Si vous sélectionnez l'option d'annulation du volume à sa date anniversaire, vous pouvez annuler la demande d'annulation avant sa date anniversaire.
    {:tip}
-4. Cliquez sur **Continuer** ou sur **Fermer**.
-5. Cochez la case d'accusé de réception et cliquez sur **Confirmer**.
+5. Cliquez sur **Continuer** ou sur **Fermer**.
+6. Cochez la case d'accusé de réception et cliquez sur **Confirmer**.
 
 Vous pouvez également utiliser la commande suivante dans l'interface SLCLI.
 ```

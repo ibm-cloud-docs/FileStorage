@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-05-06"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, NSF, mounting File Storage, mounting storage on Linux,
 
@@ -18,7 +18,7 @@ subcollection: FileStorage
 # Montage de {{site.data.keyword.filestorage_short}} sur Linux
 {: #mountingLinux}
 
-Commencez par vérifier que l'hôte qui doit accéder au volume {{site.data.keyword.filestorage_full}} dispose des droits d'accès nécessaires via le portail [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
+Commencez par vérifier que l'hôte qui doit accéder au volume {{site.data.keyword.filestorage_full}} est autorisé via la [console {{site.data.keyword.cloud}}](https://{DomainName}/classic){: external}.
 
 1. Sur la page de la liste de {{site.data.keyword.filestorage_short}}, cliquez sur le lien **Actions** associée au nouveau partage, puis cliquez sur **Hôte autorisé**.
 2. Sélectionnez le ou les hôtes dans la liste, puis cliquez sur **Soumettre**. L'hôte est ainsi autorisé à accéder au partage.
@@ -29,13 +29,11 @@ Vous pouvez également autoriser les hôtes via l'interface SLCLI.
 Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
 
 Options:
-  -h, --hardware-id TEXT    The id of one SoftLayer_Hardware to authorize
-  -v, --virtual-id TEXT     The id of one SoftLayer_Virtual_Guest to authorize
-  -i, --ip-address-id TEXT  The id of one SoftLayer_Network_Subnet_IpAddress
-                            to authorize
-  --ip-address TEXT         An IP address to authorize
-  -s, --subnet-id TEXT      The id of one SoftLayer_Network_Subnet to
-                            authorize
+  -h, --hardware-id TEXT    The ID of one hardware server to authorize.
+  -v, --virtual-id TEXT     The ID of one virtual server to authorize.
+  -i, --ip-address-id TEXT  The ID of one IP address to authorize.
+  -p, --ip-address TEXT     An IP address to authorize.
+  -s, --subnet-id TEXT      An ID of one subnet to authorize.
   --help                    Show this message and exit.
 ```
 
@@ -143,7 +141,7 @@ Exemple
    ```
 ## Démontage du système de fichiers
 
-Pour démonter un système de fichiers actuellement monté sur votre hôte, exécutez la commande `umount` avec le nom de disque ou le nom de point de montage. 
+Pour démonter un système de fichiers actuellement monté sur votre hôte, exécutez la commande `umount` avec le nom de disque ou le nom de point de montage.
 
 ```
 umount /dev/sdb

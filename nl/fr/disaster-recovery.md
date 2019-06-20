@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
@@ -25,9 +25,7 @@ En cas de défaillance catastrophique ou d'un incident entraînant une indisponi
 
 ## Basculement avec un doublon d'un volume de réplique sur le site secondaire
 
-1. Connectez-vous à la [console IBM Cloud](https://{DomainName}/){: external}, puis cliquez sur l'icône **Menu** dans l'angle supérieur gauche. Sélectionnez **Infrastructure classique**.
-
-   Sinon, vous pouvez vous connecter au portail [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
+1. Connectez-vous à la [console {{site.data.keyword.cloud}}](https://{DomainName}/){: external} et cliquez sur l'icône de **menu** dans l'angle supérieur gauche. Sélectionnez **Infrastructure classique**.
 2. Cliquez sur **Stockage** > **{{site.data.keyword.filestorage_short}}**.
 3. Cliquez sur la réplique du partage de fichiers dans la liste pour afficher la page **Détails** correspondante.
 4. Sur la page **Détails**, faites défiler l'écran et sélectionnez un instantané existant, puis cliquez sur **Actions** > **Dupliquer**.
@@ -41,9 +39,7 @@ Dès que le volume est créé, vous pouvez l'associer à un hôte et effectuer d
 
 Si vous souhaitez renvoyer la production au site principal d'origine, vous devez effectuer les étapes ci-après.
 
-1. Connectez-vous à la [console IBM Cloud](https://{DomainName}/){: external}, puis cliquez sur l'icône **Menu** dans l'angle supérieur gauche. Sélectionnez **Infrastructure classique**.
-
-   Sinon, vous pouvez vous connecter au portail [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
+1. Connectez-vous à la [console {{site.data.keyword.cloud}}](https://{DomainName}/){: external} et cliquez sur l'icône de **menu** dans l'angle supérieur gauche. Sélectionnez **Infrastructure classique**.
 2. Cliquez sur **Stockage** > **{{site.data.keyword.filestorage_short}}**.
 3. Cliquez sur le nom du numéro d'unité logique et créez un planning d'instantané (le cas échéant).
 

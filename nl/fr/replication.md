@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-03-11"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, replication, duplication, synchronous, replica schedule, replica space, disaster recovery
 
@@ -42,7 +42,7 @@ Pour obtenir la liste complète de la disponibilité des centres de données et 
 
 ## Création de la réplique initiale
 
-Les réplications fonctionnent selon un planning d'instantané. Vous devez d'abord configurer un espace d'instantané et un planning d'instantané pour le volume source avant de pouvoir répliquer. Si vous tentez de configurer la réplication alors que l'espace d'instantané ou le planning d'instantané n'existe pas, vous serez invité à acheter davantage d'espace ou à configurer un planning. Les réplications sont gérées sous **Stockage** > **{{site.data.keyword.filestorage_short}}** sur le portail [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
+Les réplications fonctionnent selon un planning d'instantané. Vous devez d'abord configurer un espace d'instantané et un planning d'instantané pour le volume source avant de pouvoir répliquer. Si vous tentez de configurer la réplication alors que l'espace d'instantané ou le planning d'instantané n'existe pas, vous serez invité à acheter davantage d'espace ou à configurer un planning. Les réplications sont gérées sous **Stockage** > **{{site.data.keyword.filestorage_short}}** dans la [console {{site.data.keyword.cloud}}](https://{DomainName}/classic){: external}.
 
 1. Cliquez sur votre volume de stockage.
 2. Cliquez sur **Réplique**, puis sur **Acheter une réplication**.
@@ -61,7 +61,7 @@ Les réplications fonctionnent selon un planning d'instantané. Vous devez d'abo
 
 ## Edition d'une réplication existante
 
-Vous pouvez éditer votre planning de réplication et modifier votre espace de réplication à partir de l'onglet **Principal** ou **Réplique** sous **Stockage** > **{{site.data.keyword.filestorage_short}}** depuis le portail [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
+Vous pouvez éditer votre planning de réplication et modifier votre espace de réplication à partir de l'onglet **Principal** or **Réplique** sous **Stockage** > **{{site.data.keyword.filestorage_short}}** depuis la [console {{site.data.keyword.cloud}}](https://{DomainName}/classic){: external}.
 
 
 ## Edition du planning de réplication

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
@@ -27,20 +27,18 @@ Avant de lancer le basculement, vérifiez que toutes les autorisations d'hôte s
 Les hôtes et les volumes autorisés doivent figurer dans le même centre de données. Par exemple, vous ne pouvez pas avoir un volume de réplique à Londres et un hôte à Amsterdam. ils doivent se trouver tous les deux à Londres ou à Amsterdam.
 {:note}
 
-1. Connectez-vous à la [console {{site.data.keyword.cloud}}](https://{DomainName}/catalog){: external} et cliquez sur l'icône de **menu** dans l'angle supérieur gauche. Sélectionnez **Infrastructure classique**.
-
-   Sinon, vous pouvez vous connecter au portail [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
-1. Cliquez sur votre volume source ou cible à partir de la page **{{site.data.keyword.filestorage_short}}**.
-2. Cliquez sur **Réplique**.
-3. Faites défiler l'écran vers le bas jusqu'au cadre **Autoriser les hôtes** et cliquez sur **Autoriser les hôtes** à droite.
-4. Mettez en évidence l'hôte qui doit être autorisé pour les réplications. Pour sélectionner plusieurs hôtes, utilisez la touche ctrl et cliquez sur les hôtes concernés.
-5. Cliquez sur **Soumettre**. En l'absence d'hôte, vous êtes invité à acheter des ressources de calcul dans le même centre de données.
+1. Connectez-vous à la [console {{site.data.keyword.cloud}}](https://{DomainName}/catalog){: external} et cliquez sur l'icône **menu** dans l'angle supérieur gauche. Sélectionnez **Infrastructure classique**.
+2. Cliquez sur votre volume source ou cible à partir de la page **{{site.data.keyword.filestorage_short}}**.
+3. Cliquez sur **Réplique**.
+4. Faites défiler l'écran vers le bas jusqu'au cadre **Autoriser les hôtes** et cliquez sur **Autoriser les hôtes** à droite.
+5. Mettez en évidence l'hôte qui doit être autorisé pour les réplications. Pour sélectionner plusieurs hôtes, utilisez la touche ctrl et cliquez sur les hôtes concernés.
+6. Cliquez sur **Soumettre**. En l'absence d'hôte, vous êtes invité à acheter des ressources de calcul dans le même centre de données.
 
 ## Démarrage d'un basculement depuis un volume vers sa réplique
 
 Dans le cas d'un événement d'échec, vous pouvez initier un **basculement** vers votre volume de destination, ou volume cible. Le volume cible devient actif. Le dernier instantané répliqué avec succès est activé et le volume est alors disponible pour le montage. Toutes les données écrites sur le volume source depuis le cycle de réplication précédent sont perdues. Une fois le basculement démarré, la relation de réplication est inversée. Votre volume cible devient votre volume source, et le volume source précédent devient votre cible, comme indiqué par le **Nom LUN** suivi de **REP**.
 
-Les basculements sont lancés sous **Stockage**, **{{site.data.keyword.filestorage_short}}** dans le portail [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
+Les basculements sont démarrés sous **Stockage**, **{{site.data.keyword.filestorage_short}}** dans la [console {{site.data.keyword.cloud}}](https://{DomainName}/classic){: external}.
 
 Avant d'exécuter ces étapes, déconnectez le volume. Si vous omettez cette étape, des données seront endommagées et perdues.
 {:important}
@@ -68,7 +66,7 @@ Une fois votre volume source d'origine réparé, vous pouvez démarrer une repri
 
 Une fois la reprise par restauration démarrée, la relation de réplication est inversée. Votre volume source est restauré en tant que volume source, et votre volume cible redevient le volume cible, comme indiqué par le **Nom LUN** suivi de **REP**.
 
-Les reprises par restauration sont lancées sous **Stockage**, **{{site.data.keyword.filestorage_short}}** dans le portail [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
+Les reprises par restauration sont démarrées sous **Stockage**, **{{site.data.keyword.filestorage_short}}** dans la [console {{site.data.keyword.cloud}}](https://{DomainName}/classic){: external}.
 
 1. Cliquez sur votre volume actif ("cible").
 2. Dans l'angle supérieur droit, cliquez sur **Réplique**, puis sur **Actions**.

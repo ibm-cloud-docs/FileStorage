@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, snapshot, ordering snapshot, snapshot space
 
@@ -50,18 +50,17 @@ De plus, pour la plupart des charges de travail, plus le volume est grand, plus 
 
 ## Commande d'un espace d'instantané via la console {{site.data.keyword.cloud_notm}}
 
-1. Connectez-vous à la [console IBM Cloud](https://{DomainName}/){: external}, puis cliquez sur l'icône de menu dans l'angle supérieur gauche. Sélectionnez **Infrastructure classique**.
-
-   Sinon, vous pouvez vous connecter au portail [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
-2. Accédez à votre stockage via **Stockage** > **{{site.data.keyword.filestorage_short}}**.
-3. Cliquez sur **Modifier l'espace d'instantané** dans le cadre Instantanés.
-4. Sélectionnez la quantité d'espace dont vous avez besoin et la méthode de paiement.
-5. Cliquez sur **Continuer**.
-6. Entrez un code promo le cas échéant, puis cliquez sur **Recalculer**. Les zones **Prix pour cette commande** et **Vérification de la commande** indiquent les valeurs par défaut.
+1. Connectez-vous à la [console {{site.data.keyword.cloud}}](https://{DomainName}/){: external} puis cliquez sur l'icône de menu l'angle supérieur gauche. 
+2. Sélectionnez **Infrastructure classique**.
+3. Accédez à votre stockage via **Stockage** > **{{site.data.keyword.filestorage_short}}**.
+4. Cliquez sur **Modifier l'espace d'instantané** dans le cadre Instantanés.
+5. Sélectionnez la quantité d'espace dont vous avez besoin et la méthode de paiement.
+6. Cliquez sur **Continuer**.
+7. Entrez un code promo le cas échéant, puis cliquez sur **Recalculer**. Les zones **Prix pour cette commande** et **Vérification de la commande** indiquent les valeurs par défaut.
 
    Les remises sont appliquées lors du traitement de la commande.
    {:note}
-7. Cochez la case **J'ai lu et j'accepte l'intégralité du Contrat cadre de service**, puis cliquez sur **Valider la commande**. Votre espace d'instantané est mis à disposition en quelques minutes.
+8. Cochez la case **J'ai lu et j'accepte l'intégralité du Contrat cadre de service**, puis cliquez sur **Valider la commande**. Votre espace d'instantané est mis à disposition en quelques minutes.
 
 ## Commande d'un espace d'instantané via l'interface SLCLI
 

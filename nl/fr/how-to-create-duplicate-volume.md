@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, duplicate volume
 
@@ -39,13 +39,13 @@ Voici quelques exemples d'utilisation courante d'un volume dupliqué.
 - **Développement/Test**. Créez jusqu'à quatre doublons simultanés d'un volume en même temps pour créer des données dupliquées à des fins de développement et de test.
 - **Redimensionnement de stockage**. Créez un volume avec une nouvelle taille et/ou un nouveau nombre d'IOPS sans avoir à effectuer une migration de vos données.  
 
-Il existe deux manières de créer un volume dupliqué via le portail [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
+Il existe deux manières de créer un volume dupliqué via la [console {{site.data.keyword.cloud}}](https://{DomainName}/){: external} :
 
 
 ## Création d'un doublon à partir d'un volume spécifique dans la liste de stockage
 
 1. Accédez à votre liste de {{site.data.keyword.filestorage_short}}
-    - A partir du portail client, cliquez sur **Storage** > **{{site.data.keyword.filestorage_short}}** OU
+    - Depuis le menu Infrastructure classique, cliquez sur **Stockage** > **{{site.data.keyword.filestorage_short}}** OU
     - A partir du catalogue {{site.data.keyword.cloud}}, cliquez sur **Infrastructure** > **Stockage** > **{{site.data.keyword.filestorage_short}}**.
 2. Sélectionnez un numéro d'unité logique dans la liste et cliquez sur **Actions** > **Dupliquer LUN (volume)**
 3. Sélectionnez une option d'instantané.
