@@ -21,12 +21,11 @@ subcollection: FileStorage
 O {{site.data.keyword.cloud}} sugere uma profundidade máxima de fila de entrada/saída (E/S) do host e do aplicativo para cada camada de desempenho.
 
 | Camada de desempenho | Profundidade máxima da fila do host |
-|:------:|:------:|
+|------|------|
 | 0,25 IOPS por GB | 8 |
 | 2 IOPS por GB | 24 |
 | 4 IOPS por GB | 56 |
 {: caption="Profundidade da fila recomendada para cada camada de IOPS" caption-side="top"}
-
 
 A configuração do host não afeta a latência do disco e do controlador. Ela afeta somente a latência observada pelo host e pelo aplicativo.
 

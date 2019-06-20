@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-03-11"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, replication, duplication, synchronous, replica schedule, replica space, disaster recovery
 
@@ -41,7 +41,7 @@ Veja a Tabela 1 para a lista completa de disponibilidade de data center e destin
 
 ## Criando a réplica inicial
 
-As replicações funcionam com base em um planejamento de captura instantânea. Deve-se primeiro ter espaço de captura instantânea e um planejamento de captura instantânea para o volume de origem antes de poder replicar. Se você tentar configurar a replicação e uma ou a outra não estiver em vigor, será solicitado que compre mais espaço ou configure um planejamento. As replicações são gerenciadas em **Armazenamento** > **{{site.data.keyword.filestorage_short}}** no [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
+As replicações funcionam com base em um planejamento de captura instantânea. Deve-se primeiro ter espaço de captura instantânea e um planejamento de captura instantânea para o volume de origem antes de poder replicar. Se você tentar configurar a replicação e uma ou a outra não estiver em vigor, será solicitado que compre mais espaço ou configure um planejamento. As replicações são gerenciadas em **Armazenamento** > **{{site.data.keyword.filestorage_short}}** no [console do {{site.data.keyword.cloud}}](https://{DomainName}/classic){: external}.
 
 1. Clique em seu volume de armazenamento.
 2. Clique em **Réplica** e em **Comprar uma replicação**.
@@ -60,7 +60,7 @@ As replicações funcionam com base em um planejamento de captura instantânea. 
 
 ## Editando uma replicação existente
 
-É possível editar seu planejamento de replicação e mudar o espaço de replicação na guia **Primário** ou **Réplica** em **Armazenamento** > **{{site.data.keyword.filestorage_short}}** no [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
+É possível editar seu planejamento de replicação e mudar seu espaço de replicação na guia **Primário** ou **Réplica** em **Armazenamento** > **{{site.data.keyword.filestorage_short}}** do [console do {{site.data.keyword.cloud}}](https://{DomainName}/classic){: external}.
 
 
 ## Editando o Planejamento de Replicação

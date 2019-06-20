@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, snapshot, ordering snapshot, snapshot space
 
@@ -50,18 +50,17 @@ Além disso, para a maioria das cargas de trabalho, quanto maior for um volume, 
 
 ## Ordenando o espaço de captura instantânea por meio do console do  {{site.data.keyword.cloud_notm}}
 
-1. Efetue login no [Console do IBM Cloud](https://{DomainName}/){: external} e clique no ícone de menu na parte superior esquerda. Selecione **Infraestrutura clássica**.
-
-   Como alternativa, é possível efetuar login no [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
-2. Acesse seu Armazenamento por meio de **Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
-3. Clique em **Mudar espaço de captura instantânea** no quadro Capturas instantâneas.
-4. Selecione a quantidade de espaço que você precisa e o método de pagamento.
-5. Clique em **Continuar**.
-6. Insira qualquer código promocional que você tenha e clique em **Recalcular**. **Encargos para este pedido** e **Revisão do pedido** têm valores padrão.
+1. Efetue login no [console do {{site.data.keyword.cloud}}](https://{DomainName}/){: external} e clique no ícone menu na parte superior esquerda.
+2. Selecione **Infraestrutura clássica**.
+3. Acesse seu Armazenamento por meio de **Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
+4. Clique em **Mudar espaço de captura instantânea** no quadro Capturas instantâneas.
+5. Selecione a quantidade de espaço que você precisa e o método de pagamento.
+6. Clique em **Continuar**.
+7. Insira qualquer código promocional que você tenha e clique em **Recalcular**. **Encargos para este pedido** e **Revisão do pedido** têm valores padrão.
 
    Os descontos são aplicados quando o pedido é processado.
    {:note}
-7. Marque a caixa **Eu li o Contrato de Prestação de Serviços Principal e concorde com os termos contidos nele** e clique em **Fazer pedido**. Seu espaço de captura instantânea será provisionado em alguns minutos.
+8. Marque a caixa **Eu li o Contrato de Prestação de Serviços Principal e concorde com os termos contidos nele** e clique em **Fazer pedido**. Seu espaço de captura instantânea será provisionado em alguns minutos.
 
 ## Pedindo Espaço de captura instantânea por meio do SLCLI
 

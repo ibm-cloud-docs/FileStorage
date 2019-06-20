@@ -29,10 +29,11 @@ O ponto de montagem NFS para novos volumes foi mudado. Consulte a seção [Novo 
 
 O novo {{site.data.keyword.filestorage_short}} está disponível nas regiões e nos data centers a seguir com mais disponibilidade de data center incluída posteriormente.
 
-|EUA 2|América Latina|Canadá|usuário final|Ásia e Pacífico|Austrália|
+|EUA 2|América Latina|Canadá|usuário final|Pacífico Asiático|Austrália|
 |-----|-----|-----|-----|-----|------|
 | DAL09<br >DAL10<br />DAL12<br />DAL13<br />SJC03<br />SJC04<br />WDC04<br />WDC06<br />WDC07 | MEX01<br />SAO01 | MON01<br />TOR01  | AMS01<br />AMS03<br />FRA02<br />FRA04<br />FRA05<br />LON02<br />LON04<br />LON05<br />LON06<br />MIL01<br />OSLO1<br />PAR01 | CHE01<br />HKG02<br />SEO01<br />SNG01<br />TOK02<br />TOK04<br />TOK05 | MEL01<br />SYD01<br />SYD04<br />SYD05 |
 {: caption="A Tabela 1 mostra a disponibilidade do data center. Cada região possui sua própria coluna. Algumas cidades, como Dallas, San Jose, Washington DC, Amsterdã, Frankfurt, Londres e Sydney, têm múltiplos data centers." caption-side="top"}
+
 
 ## Novos recursos e capacidades
 {: #features}

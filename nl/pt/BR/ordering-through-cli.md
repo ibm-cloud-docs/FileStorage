@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, SLCLI, provisioning, API
 
@@ -18,14 +18,14 @@ subcollection: FileStorage
 # Pedindo o {{site.data.keyword.filestorage_short}} por meio do SLCLI
 {: #orderingSLCLI}
 
-É possível usar o SLCLI para fazer pedidos para produtos que normalmente são pedidos por meio do [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}. Na API do SL, um pedido pode consistir em múltiplos contêineres de pedido. A CLI de pedido funciona com apenas um contêiner de pedido.
+É possível usar o SLCLI para fazer pedidos de produtos que normalmente são solicitados por meio do [catálogo do {{site.data.keyword.cloud}}](https://{DomainName}/catalog){: external}. Na API do SL, um pedido pode consistir em múltiplos contêineres de pedido. A CLI de pedido funciona com apenas um contêiner de pedido.
 
 Para obter mais informações sobre como instalar e usar o SLCLI, consulte [Cliente da API do Python](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}.
 {:tip}
 
 ## Procurando ofertas disponíveis do {{site.data.keyword.filestorage_short}}
 
-O primeiro componente a ser procurado quando você faz um pedido é um pacote. Os pacotes são divididos entre os diferentes produtos de nível superior que estão disponíveis para pedido no {{site.data.keyword.BluSoftlayer_full}}. Alguns pacotes de exemplo são CLOUD_SERVER para VSIs, BARE_METAL_SERVER para servidores bare metal e STORAGE_AS_A_SERVICE_STAAS para o {{site.data.keyword.filestorage_short}} e o {{site.data.keyword.blockstorageshort}}.
+O primeiro componente a ser procurado quando você faz um pedido é um pacote. Os pacotes são divididos entre os diferentes produtos de nível superior que estão disponíveis para pedido no {{site.data.keyword.cloud}}. Alguns pacotes de exemplo são CLOUD_SERVER para VSIs, BARE_METAL_SERVER para servidores bare metal e STORAGE_AS_A_SERVICE_STAAS para o {{site.data.keyword.filestorage_short}} e o {{site.data.keyword.blockstorageshort}}.
 
 Dentro de um pacote, alguns itens são subdivididos em categorias. Alguns pacotes têm pré-configurações para a sua conveniência e outros requerem que os itens sejam especificados individualmente. Se a categoria de um pacote for necessária, um item dessa categoria deverá ser escolhido para pedir o pacote. Dependendo da categoria, alguns itens dentro dela podem ser mutuamente exclusivos.
 
@@ -119,21 +119,19 @@ Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
 
   Authorizes hosts to access a given volume
 
-Options:
-  -h, --hardware-id TEXT    The id of one SoftLayer_Hardware to authorize
-  -v, --virtual-id TEXT     The id of one SoftLayer_Virtual_Guest to authorize
-  -i, --ip-address-id TEXT  The id of one SoftLayer_Network_Subnet_IpAddress
-                            to authorize
-  --ip-address TEXT         An IP address to authorize
-  -s, --subnet-id TEXT      The id of one SoftLayer_Network_Subnet to
-                            authorize
-  --help                    Show this message and exit.
+Opções:
+  -h, --hardware-id TEXT    O ID de um servidor de hardware a ser autorizado.
+  -v, --virtual-id TEXT     O ID de um servidor virtual a ser autorizado.
+  -i, --ip-address-id TEXT  O ID de um endereço IP a ser autorizado.
+  -p, --ip-address TEXT     Um endereço IP a ser autorizado.
+  -s, --subnet-id TEXT      Um ID de uma sub-rede a ser autorizada.
+  --help                    Mostrar essa mensagem e sair.
 ```
 
 Para obter mais informações sobre como autorizar o acesso dos hosts ao {{site.data.keyword.filestorage_short}} por meio da API, consulte [authorize_host_to_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/file/#SoftLayer.managers.file.FileStorageManager.authorize_host_to_volume){: external}.
 {:tip}
 
-Para obter mais informações sobre o limite de autorizações simultâneas, consulte as [Perguntas mais frequentes](/docs/infrastructure/FileStorage?topic=FileStorage-faqs).
+Para obter mais informações sobre o limite de autorizações simultâneas, consulte as [Perguntas mais frequentes](/docs/infrastructure/FileStorage?topic=file-storage-faqs).
 {:important}
 
 ## Conectando seu novo armazenamento

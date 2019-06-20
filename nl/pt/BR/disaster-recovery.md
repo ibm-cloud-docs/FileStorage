@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
@@ -25,9 +25,7 @@ No caso de uma falha catastrófica ou de um desastre que cause uma indisponibili
 
 ## Failover com uma duplicata de um volume de réplica no site secundário
 
-1. Efetue login no [Console do IBM Cloud](https://{DomainName}/){: external} e clique no ícone **Menu** na parte superior esquerda. Selecione **Infraestrutura clássica**.
-
-   Como alternativa, é possível efetuar login no [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
+1. Efetue login no [Console do {{site.data.keyword.cloud}}](https://{DomainName}/){: external} e clique no ícone **menu** na parte superior esquerda. Selecione **Infraestrutura clássica**.
 2. Clique em **Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
 3. Clique na réplica do compartilhamento de arquivo na lista para visualizar sua página **Detalhes**.
 4. Na página **Detalhes**, role para baixo e selecione uma captura instantânea existente e, em seguida, clique em **Ações** > **Duplicar**.
@@ -41,9 +39,7 @@ Assim que o volume for criado, será possível anexá-lo a um host e executar op
 
 Se você desejar retornar a produção para o site primário original, as etapas a seguir deverão ser executadas.
 
-1. Efetue login no [Console do IBM Cloud](https://{DomainName}/){: external} e clique no ícone **Menu** na parte superior esquerda. Selecione **Infraestrutura clássica**.
-
-   Como alternativa, é possível efetuar login no [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
+1. Efetue login no [Console do {{site.data.keyword.cloud}}](https://{DomainName}/){: external} e clique no ícone **menu** na parte superior esquerda. Selecione **Infraestrutura clássica**.
 2. Clique em **Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
 3. Clique no nome do LUN e crie um planejamento de captura instantânea (se ainda não existir).
 

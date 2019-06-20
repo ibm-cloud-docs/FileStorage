@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
@@ -73,11 +73,11 @@ o VMware vSphere em armazenamento conectado à rede](https://www.vmware.com/cont
 
 ### Usando capturas instantâneas
 
-O {{site.data.keyword.filestorage_short}} permite que os administradores configurem programações de capturas instantâneas que criam e excluem cópias de capturas instantânea automaticamente para cada volume de armazenamento. Eles também podem criar planejamentos de captura instantânea extra (por hora, diário, semanal) para capturas instantâneas automáticas e criar capturas instantâneas ad hoc manualmente para cenários de business continuity and disaster recovery (BCDR). Os alertas automáticos são entregues por meio do [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} ao proprietário do volume para as capturas instantâneas retidas e o espaço usado.
+O {{site.data.keyword.filestorage_short}} permite que os administradores configurem programações de capturas instantâneas que criam e excluem cópias de capturas instantânea automaticamente para cada volume de armazenamento. Eles também podem criar planejamentos de captura instantânea extra (por hora, diário, semanal) para capturas instantâneas automáticas e criar capturas instantâneas ad hoc manualmente para cenários de business continuity and disaster recovery (BCDR). Os alertas automáticos são entregues por meio do [console do {{site.data.keyword.cloud}}](https://{DomainName}/){: external} para o proprietário do volume para as capturas instantâneas retidas e o espaço usado.
 
 O espaço de captura instantânea é necessário para usar capturas instantâneas. O espaço pode ser comprado no pedido de volume inicial ou após o fornecimento inicial por meio da página **Detalhes do volume** clicando em **Ações** e selecionando **Incluir espaço de captura instantânea**.
 
-É importante observar que os ambientes VMware não estão cientes de capturas instantâneas. O recurso de captura instantânea do {{site.data.keyword.filestorage_short}} não deve ser confundido com as capturas instantâneas do VMware. Qualquer recuperação que use o recurso de captura instantânea do {{site.data.keyword.filestorage_short}} deve ser manipulada por meio do [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
+É importante observar que os ambientes VMware não estão cientes de capturas instantâneas. O recurso de captura instantânea do {{site.data.keyword.filestorage_short}} não deve ser confundido com as capturas instantâneas do VMware. Qualquer recuperação que use o recurso de captura instantânea do {{site.data.keyword.filestorage_short}} deve ser manipulada por meio do [console do {{site.data.keyword.cloud}}](https://{DomainName}/){: external}.
 
 A restauração do volume do {{site.data.keyword.filestorage_short}} requer o desligamento de todas as MVs do {{site.data.keyword.filestorage_short}}. O volume precisa ser temporariamente desmontado dos hosts ESXi para evitar qualquer distorção de dados durante o processo.
 
@@ -112,9 +112,9 @@ Dados inválidos, quer estejam corrompidos, hackeados ou infectados, devem ser r
 
 Use a [Arquitetura de referência do Advanced Single-Site VMware](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){: external} para configurar o {{site.data.keyword.filestorage_short}} com as opções Endurance ou Performance em seu ambiente VMware.
 
-O {{site.data.keyword.filestorage_short}} pode ser pedido por meio do [Catálogo do IBM Cloud](https://{DomainName}/catalog){: external} ou do [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}. Para obter mais informações, consulte [Pedindo o {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)
+O {{site.data.keyword.filestorage_short}} pode ser solicitado por meio do [Catálogo do {{site.data.keyword.cloud}}](https://{DomainName}/catalog){: external} ou da CLI. Para obter mais informações, consulte [Solicitando o {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole).
 
-O armazenamento é provisionado em menos de um minuto e torna-se visível na página **{{site.data.keyword.filestorage_short}}** do [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
+O armazenamento é provisionado em menos de um minuto e se torna visível na página do **{{site.data.keyword.filestorage_short}}** do [console do {{site.data.keyword.cloud}}](https://{DomainName}/classic){: external}.
 
 Quando um volume é provisionado, o {{site.data.keyword.BluBareMetServers_full}} ou o {{site.data.keyword.BluVirtServers_full}} que usará o volume deve estar autorizado a acessar o armazenamento. Use as etapas a seguir para autorizar o volume.
 

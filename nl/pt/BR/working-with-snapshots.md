@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, snapshots, snapshot schedule, manual snapshot, snapshot space, snapshot quota
 
@@ -22,7 +22,7 @@ subcollection: FileStorage
 ## Criando um planejamento de captura instantânea
 
 Você decide com que frequência e quando deseja criar uma referência de momento de seu volume de armazenamento com planejamentos de Captura instantânea. É possível ter um máximo de 50 capturas
-instantâneas por volume de armazenamento. Os planejamentos são gerenciados por meio da guia **Armazenamento** > **{{site.data.keyword.filestorage_short}}** do [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
+instantâneas por volume de armazenamento. Os planejamentos são gerenciados por meio da guia **Armazenamento** > **{{site.data.keyword.filestorage_short}}** do [console do {{site.data.keyword.cloud}}](https://{DomainName}/){: external}.
 
 Para poder configurar seu planejamento inicial, deve-se primeiramente comprar um espaço de captura instantânea, caso você não tenha comprado durante o fornecimento inicial do volume de armazenamento.
 {:important}
@@ -160,17 +160,18 @@ Talvez seja necessário retornar o seu volume de armazenamento para um momento e
 
 1. Desmonte e separe seu volume de armazenamento do host.
    - Clique [aqui](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux) para obter instruções.
-2. Clique em **Armazenamento**, **{{site.data.keyword.filestorage_short}}**, no [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
-3. Role para baixo e clique no seu volume a ser restaurado. A seção **Capturas instantâneas** da página **Detalhes** exibe a lista de todas as capturas instantâneas salvas juntamente com seu tamanho e data de criação.
-4. Clique em **Ações** ao lado da captura instantânea a ser usada e clique em **Restaurar**. <br/>
+2. Acesse o [console do {{site.data.keyword.cloud}}](https://{DomainName}/){: external}. No menu, selecione **Infraestrutura clássica**.
+3. Clique em **Armazenamento**, **{{site.data.keyword.filestorage_short}}**.
+4. Role para baixo e clique em seu volume a ser restaurado. A seção **Capturas instantâneas** da página **Detalhes** exibe a lista de todas as capturas instantâneas salvas juntamente com seu tamanho e data de criação.
+5. Clique em **Ações** ao lado da captura instantânea a ser usada e clique em **Restaurar**. <br/>
 
    A conclusão da restauração resulta na perda dos dados que foram criados ou modificados depois que a captura instantânea foi obtida. Essa perda de dados ocorre porque seu volume de armazenamento retorna para o mesmo estado em que estava no momento da captura instantânea.
    {:note}
-5. Clique em  ** Sim **  para iniciar a restauração.
+6. Clique em  ** Sim **  para iniciar a restauração.
 
    Espere uma mensagem na página indicando que o volume está sendo restaurado usando a captura instantânea selecionada. Além disso, aparece um ícone próximo ao seu volume no {{site.data.keyword.filestorage_short}} indicando que uma transação ativa está em andamento. Passar o mouse sobre o ícone produz uma janela que mostra a transação. O ícone desaparece quando a transação está concluída.
    {:note}
-6. Monte e reconecte seu volume de armazenamento ao host.
+7. Monte e reconecte seu volume de armazenamento ao host.
   - Clique [aqui](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux) para obter instruções.
 
 Como alternativa, é possível restaurar o volume com uma captura instantânea por meio do SLCLI.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-05-06"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, NSF, mounting File Storage, mounting storage on Linux,
 
@@ -18,7 +18,7 @@ subcollection: FileStorage
 # Montando o {{site.data.keyword.filestorage_short}} no Linux
 {: #mountingLinux}
 
-Primeiro, certifique-se de que o host que acessará o volume do {{site.data.keyword.filestorage_full}} esteja autorizado por meio do [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
+Primeiro, certifique-se de que o host que deve acessar o volume do {{site.data.keyword.filestorage_full}} esteja autorizado por meio do [console do {{site.data.keyword.cloud}}](https://{DomainName}/classic){: external}.
 
 1. Na página de listagem do {{site.data.keyword.filestorage_short}}, clique no link **Ações** que está associado ao novo compartilhamento e clique em **Autorizar host**.
 2. Selecione o host ou os hosts na lista e clique em **Enviar**. Essa ação autoriza o host a acessar o compartilhamento.
@@ -28,15 +28,13 @@ Como alternativa, é possível autorizar os hosts por meio do SLCLI.
 # slcli file access-authorize --help
 Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
 
-Options:
-  -h, --hardware-id TEXT    The id of one SoftLayer_Hardware to authorize
-  -v, --virtual-id TEXT     The id of one SoftLayer_Virtual_Guest to authorize
-  -i, --ip-address-id TEXT  The id of one SoftLayer_Network_Subnet_IpAddress
-                            to authorize
-  --ip-address TEXT         An IP address to authorize
-  -s, --subnet-id TEXT      The id of one SoftLayer_Network_Subnet to
-                            authorize
-  --help                    Show this message and exit.
+Opções:
+  -h, --hardware-id TEXT    O ID de um servidor de hardware a ser autorizado.
+  -v, --virtual-id TEXT     O ID de um servidor virtual a ser autorizado.
+  -i, --ip-address-id TEXT  O ID de um endereço IP a ser autorizado.
+  -p, --ip-address TEXT     Um endereço IP a ser autorizado.
+  -s, --subnet-id TEXT      Um ID de uma sub-rede a ser autorizada.
+  --help                    Mostrar essa mensagem e sair.
 ```
 
 ## Montando o compartilhamento do {{site.data.keyword.filestorage_short}}

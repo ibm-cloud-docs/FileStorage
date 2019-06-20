@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, duplicate volume
 
@@ -18,7 +18,7 @@ subcollection: FileStorage
 # Criando um {{site.data.keyword.filestorage_short}} duplicado
 {: #duplicatevolume}
 
-É possível criar uma duplicata de um {{site.data.keyword.cloud}} {{site.data.keyword.filestorage_full}} existente. O volume duplicado herda as opções de capacidade e desempenho do volume original por padrão e tem uma cópia dos dados até o momento de uma captura instantânea.   
+É possível criar uma duplicata de um {{site.data.keyword.cloud}}  {{site.data.keyword.filestorage_full}} existente. O volume duplicado herda as opções de capacidade e desempenho do volume original por padrão e tem uma cópia dos dados até o momento de uma captura instantânea.   
 
 Como a duplicata é baseada nos dados em uma captura instantânea de um momento, o espaço de captura instantânea é necessário no volume original antes de poder criar uma duplicata. Para saber mais sobre capturas
 instantâneas e como solicitar espaço de captura instantânea, consulte [Documentação
@@ -41,13 +41,13 @@ Alguns usos comuns para um volume duplicado incluem os exemplos a seguir.
 - **Desenvolvimento e teste (dev/test)**. Crie até quatro duplicatas simultâneas de um volume ao mesmo tempo para criar dados duplicados para desenvolvimento e teste.
 - **Redimensionamento de armazenamento**. Crie um volume com novo tamanho, taxa IOPS, ou ambos, sem a necessidade de mover seus dados.  
 
-É possível criar um volume duplicado por meio do [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external} de duas maneiras.
+É possível criar um volume duplicado por meio do [console do {{site.data.keyword.cloud}}](https://{DomainName}/){: external} de algumas maneiras.
 
 
 ## Criando uma duplicata de um volume específico na Lista de armazenamento
 
 1. Acesse sua lista de {{site.data.keyword.filestorage_short}}
-    - No portal do cliente, clique em **Armazenamento** > **{{site.data.keyword.filestorage_short}}** OU
+    - No menu Infraestrutura clássica, clique em **Armazenamento** > **{{site.data.keyword.filestorage_short}}** OU
     - No catálogo do {{site.data.keyword.cloud}}, clique em **Infraestrutura** > **Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
 2. Selecione um LUN na lista e clique em **Ações** > **Duplicar LUN (Volume)**
 3. Escolha sua opção de captura instantânea.

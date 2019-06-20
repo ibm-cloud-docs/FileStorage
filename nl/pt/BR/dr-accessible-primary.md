@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
@@ -27,20 +27,18 @@ Antes de iniciar o failover, certifique-se de que toda a autorização de host e
 Os hosts e volumes autorizados devem estar no mesmo data center. Por exemplo, não é possível ter um volume de réplica em Londres e o host em Amsterdã. Ambos devem estar em Londres ou ambos devem estar em Amsterdã.
 {:note}
 
-1. Efetue login no [console do {{site.data.keyword.cloud}} ](https://{DomainName}/catalog){: external} e clique no ícone de **menu** no canto superior esquerdo. Selecione **Infraestrutura clássica**.
-
-   Como alternativa, é possível efetuar login no [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
-1. Clique em seu volume de origem ou de destino na página **{{site.data.keyword.filestorage_short}}**.
-2. Clique em  ** Réplica **.
-3. Role para baixo para o quadro **Autorizar hosts** e clique em **Autorizar hosts** à direita.
-4. Destaque o host que deve ser autorizado para replicações. Para selecionar múltiplos hosts, use a tecla CTRL e clique nos hosts aplicáveis.
-5. Clique em **Enviar**. Se você não tiver hosts, será solicitado que compre recursos de cálculo no mesmo data center.
+1. Efetue login no [console do {{site.data.keyword.cloud}}](https://{DomainName}/catalog){: external} e clique no ícone **menu** na parte superior esquerda. Selecione **Infraestrutura clássica**.
+2. Clique em seu volume de origem ou de destino na página **{{site.data.keyword.filestorage_short}}**.
+3. Clique em  ** Réplica **.
+4. Role para baixo para o quadro **Autorizar hosts** e clique em **Autorizar hosts** à direita.
+5. Destaque o host que deve ser autorizado para replicações. Para selecionar múltiplos hosts, use a tecla CTRL e clique nos hosts aplicáveis.
+6. Clique em **Enviar**. Se você não tiver hosts, será solicitado que compre recursos de cálculo no mesmo data center.
 
 ## Iniciando um failover de um volume em sua réplica
 
 Se ocorrer um evento de falha, será possível iniciar um **failover** em seu volume de destino. O volume de destino torna-se ativo. A última captura instantânea replicada com êxito é ativada e o volume é disponibilizado para montagem. Todos os dados que foram gravados no volume de origem desde que o ciclo de replicação anterior foi perdido. Quando um failover é iniciado, o relacionamento de replicação é invertido. O volume de destino torna-se o volume de origem e o volume de origem antigo torna-se o destino, conforme indicado pelo **Nome do LUN** seguido por **REP**.
 
-Os failovers são iniciados em **Armazenamento**, **{{site.data.keyword.filestorage_short}}** no [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
+Os failovers são iniciados em **Armazenamento**, **{{site.data.keyword.filestorage_short}}** no [console do {{site.data.keyword.cloud}}](https://{DomainName}/classic){: external}.
 
 Antes de continuar com essas etapas, desconecte o volume. Caso não o faça, isso resultará em distorção e perda de dados.
 {:important}
@@ -68,7 +66,7 @@ Quando seu volume de origem original é reparado, é possível iniciar um Failba
 
 Quando um Failback é iniciado, o relacionamento de replicação é invertido novamente. Seu volume de origem é restaurado como seu volume de origem e seu volume de destino é o volume de destino novamente, conforme indicado pelo **Nome do LUN** seguido por **REP**.
 
-Os failbacks são iniciados em **Armazenamento**, **{{site.data.keyword.filestorage_short}}** no [{{site.data.keyword.slportal}}](https://control.softlayer.com/){: external}.
+Os failbacks são iniciados em **Armazenamento**, **{{site.data.keyword.filestorage_short}}** no [console do {{site.data.keyword.cloud}}](https://{DomainName}/classic){: external}.
 
 1. Clique no volume ativo ("destino").
 2. Na parte superior direita, clique em **Réplica** e clique em **Ações**.

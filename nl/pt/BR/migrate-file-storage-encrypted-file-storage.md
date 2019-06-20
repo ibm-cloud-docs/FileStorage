@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-10"
 
 keywords: File Storage, file storage, NFS, upgrade, migrate to new
 
@@ -37,7 +37,7 @@ Todos os volumes aprimorados do {{site.data.keyword.filestorage_short}} provisio
 Ao fazer um pedido com a API, especifique o pacote "Armazenamento como um serviço" para assegurar-se de que esteja obtendo os recursos atualizados com seu novo armazenamento.
 {:important}
 
-É possível pedir um LUN aprimorado por meio do catálogo do {{site.data.keyword.cloud}} e do {{site.data.keyword.slportal}}. Seu novo volume deve ter o mesmo tamanho ou ser maior que o compartilhamento de arquivo original para facilitar a migração.
+É possível solicitar um LUN aprimorado por meio do catálogo do {{site.data.keyword.cloud}}. Seu novo volume deve ter o mesmo tamanho ou ser maior que o compartilhamento de arquivo original para facilitar a migração.
 
 - [Pedindo o {{site.data.keyword.filestorage_short}} com camadas IOPS predefinidas (Endurance)](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#endurance)
 - [Pedindo o {{site.data.keyword.filestorage_short}} com IOPS customizado (Performance)](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#performance)
