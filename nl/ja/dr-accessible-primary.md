@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, file storage, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
@@ -27,7 +27,7 @@ subcollection: FileStorage
 許可ホストとボリュームは同じデータ・センターになければなりません。 例えば、レプリカ・ボリュームをロンドンに置いて、ホストをアムステルダムに置くことはできません。 両方がロンドンに、または両方がアムステルダムになければなりません。
 {:note}
 
-1. [{{site.data.keyword.cloud}} コンソール](https://{DomainName}/catalog){: external}にログインして、左上にある**「メニュー」**アイコンをクリックします。**「クラシック・インフラストラクチャー」**を選択します。
+1. [{{site.data.keyword.cloud}} コンソール](https://{DomainName}/catalog){: external}にログインして、左上にある**「メニュー」**アイコンをクリックします。 **「クラシック・インフラストラクチャー」**を選択します。
 2. **「{{site.data.keyword.filestorage_short}}」**ページからソース・ボリュームまたは宛先ボリュームをクリックします。
 3. **「レプリカ」**をクリックします。
 4. **「ホストの許可」**フレームまでスクロールダウンして、右にある**「ホストの許可」**をクリックします。
@@ -51,7 +51,7 @@ subcollection: FileStorage
    {:note}
 4. **「すべて表示 ({{site.data.keyword.filestorage_short}})」**をクリックします。
 5. アクティブなボリューム (以前のターゲット・ボリューム) をクリックします。 これにより、このボリュームの状況が**「アクティブ」**になります。
-6. ストレージ・ボリュームをホストにマウントして接続します。 [ここ](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)をクリックすると説明が表示されます。
+6. ストレージ・ボリュームをホストにマウントして接続します。 詳しくは、[新しいストレージの接続](/docs/infrastructure/FileStorage?topic=FileStorage-getting-started#mountingstorage)を参照してください。
 
 
 ## ボリュームからレプリカへのフェイルバックの開始
@@ -76,4 +76,4 @@ subcollection: FileStorage
    {:note}
 4. 右上にある**「すべての {{site.data.keyword.filestorage_short}} の表示」**リンクをクリックします。
 5. アクティブなボリューム (「ソース」) をクリックします。
-6. ストレージ・ボリュームをホストにマウントして接続します。 [ここ](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)をクリックすると説明が表示されます。
+6. ストレージ・ボリュームをホストにマウントして接続します。 詳しくは、[新しいストレージの接続](/docs/infrastructure/FileStorage?topic=FileStorage-getting-started#mountingstorage)を参照してください。

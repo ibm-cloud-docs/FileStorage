@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-05-02"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, file storage, NFS, provisioning, setup, configuration, mounting storage
 
@@ -30,7 +30,7 @@ subcollection: FileStorage
 - 事前定義されたパフォーマンス・レベルとスナップショットやレプリケーションなどの他の機能を備えた**エンデュランス**・ティアをプロビジョニングする。
 - IOPS (1 秒あたりの入出力操作数) の割り振りを指定して強力な**パフォーマンス**環境を構築する。
 
-{{site.data.keyword.filestorage_short}} のオファリングについて詳しくは、[{{site.data.keyword.filestorage_short}} について](/docs/infrastructure/FileStorage?topic=FileStorage-about)を参照してください。
+{{site.data.keyword.filestorage_short}} のオファリングについて詳しくは、[{{site.data.keyword.filestorage_short}} についての説明](/docs/infrastructure/FileStorage?topic=FileStorage-about)を参照してください。
 
 ## プロビジョニングの考慮事項
 
@@ -51,7 +51,7 @@ subcollection: FileStorage
 | 128 | 128 | 16 |
 | 512 | 32 | 16 |
 | 1024 | 16 | 16 |
-{: caption="表 1 は、ブロック・サイズと IOPS がスループット与える影響の例を示しています。<br/>平均 IO サイズ x IOPS = スループット (MB/秒)。" caption-side="top"}
+{: caption="表 1 は、ブロック・サイズと IOPS がスループット与える影響の例を示しています。<br>/平均 IO サイズ x IOPS = スループット (MB/秒)。" caption-side="top"}
 
 ### 許可ホスト
 
@@ -73,7 +73,7 @@ subcollection: FileStorage
 
 ## 注文の送信
 
-注文を送信する準備ができたら、[コンソール](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)または [SLCLI](/docs/infrastructure/FileStorage?topic=FileStorage-orderingSLCLI) を使用して注文することができます。 VMware を使用したプロビジョニング・ファイル・ストレージの場合は、[ここ](/docs/infrastructure/FileStorage?topic=FileStorage-architectureguide)をクリックします
+注文を送信する準備ができたら、[コンソール](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)、[SLCLI](/docs/infrastructure/FileStorage?topic=FileStorage-orderingSLCLI) または IBMCLOUD CLI を使用して注文することができます。VMware デプロイメントへの File Storage のプロビジョニングについて詳しくは、[アーキテクチャー・ガイド](/docs/infrastructure/FileStorage?topic=FileStorage-architectureguide)を参照してください。
 
 ## 新しいストレージの接続
 {: #mountingstorage}

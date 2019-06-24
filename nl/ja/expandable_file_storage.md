@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, modify volume, NFS, file storage, expand capacity
 
@@ -22,7 +22,7 @@ subcollection: FileStorage
 
 ボリュームの請求方法が自動的に更新され、新しい価格の日割り額が現在の請求サイクルに加算されます。 そして、次の請求サイクルでは新しい価格が全額請求されます。
 
-この機能は、[一部のデータ・センター](/docs/infrastructure/FileStorage?topic=FileStorage-news)でのみ使用できます。
+この機能は、[一部のデータ・センター](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)でのみ使用できます。
 
 ## 拡張可能ストレージの利点
 
@@ -37,14 +37,14 @@ subcollection: FileStorage
 ## 制限
 {: #limitsofextension}
 
-この機能は、拡張機能を備えた[データ・センター](/docs/infrastructure/FileStorage?topic=FileStorage-news)でプロビジョンされたストレージにのみ使用できます。 これらのデータ・センターでプロビジョンされた暗号化ストレージは、最大 12 TB まで増やすことができます。
+この機能は、拡張機能を備えた[データ・センター](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)でプロビジョンされたストレージにのみ使用できます。 これらのデータ・センターでプロビジョンされた暗号化ストレージは、最大 12 TB まで増やすことができます。
 
 エンデュランスでプロビジョンされた{{site.data.keyword.filestorage_short}}の既存のサイズ制限が引き続き適用されます (10 IOPS ティアの場合は最大 4 TB、他のすべてのティアは最大 12 TB)。
 
 ## ストレージのサイズ変更
 {: #resizingsteps}
 
-1. [{{site.data.keyword.cloud}} コンソール](https://{DomainName}/){: external}に移動します。メニューから**「クラシック・インフラストラクチャー」**を選択します。**「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**をクリックします。
+1. [{{site.data.keyword.cloud}} コンソール](https://{DomainName}/){: external}に移動します。 メニューから**「クラシック・インフラストラクチャー」**を選択します。 **「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**をクリックします。
 2. リストからボリュームを選択し、**「アクション」** > **「ボリュームの変更 (Modify Volume)」**をクリックします。
 3. 新しいストレージ・サイズを GB 単位で入力します。
 4. 選択内容と新しい価格を確認します。

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, file storage, NFS, duplicate volume
 
@@ -29,7 +29,7 @@ subcollection: FileStorage
 
 ストレージがプロビジョンされたら、ただちに複製ボリュームに対してホストから読み取り/書き込みアクセスを行えます。 ただし、元のボリュームから複製へのデータ・コピーが完了するまで、スナップショットおよびレプリケーションは許可されません。 データ・コピーが完了したら、複製は独立したボリュームとして管理、使用できます。
 
-この機能は、ほとんどの場所で使用可能です。 使用可能なデータ・センターのリストについては、[ここ](/docs/infrastructure/FileStorage?topic=FileStorage-news)をクリックしてください。
+この機能は、ほとんどの[ロケーション](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)で使用できます。
 
 重複ボリュームの一般的な使用法の例を以下に示します。
 - **災害復旧テスト**。 災害が発生してもデータが損なわれることなく使用できることを検証するため、レプリケーションを中断せずにレプリカ・ボリュームの複製を作成する。

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, file storage, NFS, snapshots, snapshot schedule, manual snapshot, snapshot space, snapshot quota
 
@@ -158,10 +158,10 @@ Options:
 ユーザー・エラーやデータ破損が原因で、ストレージ・ボリュームを特定時点に戻す必要がある場合があります。
 
 1. ストレージ・ボリュームをホストからアンマウントして切り離します。
-   - [ここ](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)をクリックすると説明が表示されます。
-2. [{{site.data.keyword.cloud}} コンソール](https://{DomainName}/){: external}に移動します。メニューから**「クラシック・インフラストラクチャー」**を選択します。
+   - ストレージのマウントとアンマウントについて詳しくは、[新しいストレージの接続](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)を参照してください。
+2. [{{site.data.keyword.cloud}} コンソール](https://{DomainName}/){: external}に移動します。 メニューから**「クラシック・インフラストラクチャー」**を選択します。
 3. **「ストレージ」**、**「{{site.data.keyword.filestorage_short}}」**とクリックします。
-4. スクロールダウンして、リストアするボリュームをクリックします。**「詳細」**ページの**「スナップショット」**セクションに、保存されているすべてのスナップショットのサイズと作成日のリストが表示されます。
+4. スクロールダウンして、リストアするボリュームをクリックします。 **「詳細」**ページの**「スナップショット」**セクションに、保存されているすべてのスナップショットのサイズと作成日のリストが表示されます。
 5. 使用するスナップショットの横の**「アクション」**をクリックし、**「リストア」**をクリックします。 <br/>
 
    復元を完了すると、スナップショットが作成された後に作成または変更されたデータは失われます。 このデータ損失は、ストレージ・ボリュームがスナップショット取得時と同じ状態に戻るために発生します。
@@ -171,7 +171,7 @@ Options:
    選択したスナップショットを使用してボリュームがリストアされることを示すメッセージが、ページに表示されます。 また、{{site.data.keyword.filestorage_short}} のボリュームの横に、アクティブ・トランザクションが進行中であることを示すアイコンが表示されます。 アイコン上にカーソルを移動すると、トランザクションを示すウィンドウが表示されます。 トランザクションが完了すると、アイコンは消えます。
    {:note}
 7. ストレージ・ボリュームをホストにマウントして再接続します。
-  - [ここ](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)をクリックすると説明が表示されます。
+  - ストレージのマウントとアンマウントについて詳しくは、[新しいストレージの接続](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)を参照してください。
 
 代わりの方法として、SLCLI でスナップショットを使用してボリュームを復元することができます。
 ```

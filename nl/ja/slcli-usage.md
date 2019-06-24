@@ -19,7 +19,7 @@ subcollection: FileStorage
 # {{site.data.keyword.filestorage_short}} の SLCLI コマンド
 {: #SLCLIcommands}
 
-通常 [{{site.data.keyword.cloud}} コンソール](https://{DomainName}/classic){: external}で処理する操作を、SLCLI を使用して実行することができます。例えば、新規ボリュームやスナップショット・スペースおよびレプリケーションの注文、許可の更新、ボリュームのキャンセルなどを、SLCLI で行うことができます。
+通常 [{{site.data.keyword.cloud}} コンソール](https://{DomainName}/classic){: external}で処理する操作を、SLCLI を使用して実行することができます。 例えば、新規ボリュームやスナップショット・スペースおよびレプリケーションの注文、許可の更新、ボリュームのキャンセルなどを、SLCLI で行うことができます。
 
 SLCLI のインストール方法と使用法について詳しくは、[Python API Client](https://softlayer-python.readthedocs.io/en/latest/cli/){: external} を参照してください。
 {:tip}

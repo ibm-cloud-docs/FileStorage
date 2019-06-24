@@ -18,7 +18,7 @@ subcollection: FileStorage
 # SLCLI による {{site.data.keyword.filestorage_short}} の注文
 {: #orderingSLCLI}
 
-通常は [{{site.data.keyword.cloud}} カタログ](https://{DomainName}/catalog){: external}で注文する製品については、SLCLI を使用して注文することができます。SL API では、1 つの注文を複数の注文コンテナーで処理します。 注文 CLI は、1 つの注文コンテナーのみを処理します。
+通常は [{{site.data.keyword.cloud}} カタログ](https://{DomainName}/catalog){: external}で注文する製品については、SLCLI を使用して注文することができます。 SL API では、1 つの注文を複数の注文コンテナーで処理します。 注文 CLI は、1 つの注文コンテナーのみを処理します。
 
 SLCLI のインストール方法と使用法について詳しくは、[Python API Client](https://softlayer-python.readthedocs.io/en/latest/cli/){: external} を参照してください。
 {:tip}

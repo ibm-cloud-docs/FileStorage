@@ -111,7 +111,7 @@ VMware 環境はスナップショットを認識しないことに注意して�
 
 [拡張単一サイト VMware リファレンス・アーキテクチャー](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){: external}を使用して、VMware 環境でエンデュランスまたはパフォーマンスのオプションを指定して {{site.data.keyword.filestorage_short}} をセットアップします。
 
-{{site.data.keyword.filestorage_short}} は、[{{site.data.keyword.cloud}} カタログ](https://{DomainName}/catalog){: external}または CLI から注文できます。詳しくは、[{{site.data.keyword.filestorage_short}} の注文](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)を参照してください。
+{{site.data.keyword.filestorage_short}} は、[{{site.data.keyword.cloud}} カタログ](https://{DomainName}/catalog){: external}または CLI から注文できます。 詳しくは、[{{site.data.keyword.filestorage_short}} の注文](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)を参照してください。
 
 ストレージが 1 分もしないうちにプロビジョンされ、[{{site.data.keyword.cloud}} コンソール](https://{DomainName}/classic){: external}の**「{{site.data.keyword.filestorage_short}}」**ページに表示されます。
 

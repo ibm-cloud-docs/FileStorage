@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-07"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, Endurance, Performance, IOPS, replication, billing, file storage, NFS,
 
@@ -36,14 +36,14 @@ subcollection: FileStorage
    - ファイル・ベースの NFS 共有に使用可能。
 - **高い耐久性と回復力**
    - オペレーティング・システム・レベルの RAID (Redundant Arrays of Independent Disks) アレイを作成して管理することなく、保守イベントや計画外の障害の間中、データの整合性を保護して可用性を維持します。
-- **保存データの暗号化** [(一部のデータ・センターで使用可能)](/docs/infrastructure/FileStorage?topic=FileStorage-news)
+- **保存データの暗号化** [(一部のデータ・センターで使用可能)](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)
    - data-at-rest のためのプロバイダー管理の暗号化を追加コストなしで利用できます
-- **オール・フラッシュ・ストレージ** [(一部のデータ・センターで使用可能)](/docs/infrastructure/FileStorage?topic=FileStorage-news)
+- **オール・フラッシュ・ストレージ** [(一部のデータ・センターで使用可能)](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)
    - ボリュームの用すべてのフラッシュ・ストレージは、2 IOPS/GB 以上のレベルでプロビジョニングできます。
-- **スナップショット** [(一部のデータ・センターで使用可能)](/docs/infrastructure/FileStorage?topic=FileStorage-news).
+- **スナップショット** [(一部のデータ・センターで使用可能)](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
    - 特定時点のデータ・スナップショットを、中断せずにキャプチャーします。
-- **レプリケーション**  [(一部のデータ・センターで使用可能)](/docs/infrastructure/FileStorage?topic=FileStorage-news)
-   - [一部のデータ・センター](/docs/infrastructure/FileStorage?topic=FileStorage-news)でストレージがプロビジョニングされている場合に使用可能。
+- **レプリケーション**  [(一部のデータ・センターで使用可能)](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)
+   - [一部のデータ・センター](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)でストレージがプロビジョニングされている場合に使用可能。
    - パートナーの {{site.data.keyword.cloud}} データ・センターにスナップショットを自動的にコピーします。
 - **高可用性接続**
    - 冗長ネットワーキング接続を使用して可用性を最大限に高めます。
@@ -71,7 +71,7 @@ subcollection: FileStorage
 
 - **4 IOPS/GB** は、高負荷のワークロード用に設計されています。 これらのワークロードには通常、どの時点においてもアクティブになっているデータの割合が高いという特徴があります。 例えば、トランザクション・データベースなどのパフォーマンスが重要なデータベースなどの用途があります。
 
-- **10 IOPS/GB** は、NoSQL データベースで生成されるワークロードや、分析のためのデータ処理など、最も要求の厳しいワークロード用に設計されています。 このティアは、[一部のデータ・センター](/docs/infrastructure/FileStorage?topic=FileStorage-news)のみで最大 4 TB のプロビジョニングされるストレージにおいて使用可能です。
+- **10 IOPS/GB** は、NoSQL データベースで生成されるワークロードや、分析のためのデータ処理など、最も要求の厳しいワークロード用に設計されています。 このティアは、[一部のデータ・センター](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)のみで最大 4 TB のプロビジョニングされるストレージにおいて使用可能です。
 
 12-TB エンデュランス・ボリュームでは、最大で 48,000 IOPS が使用可能です。
 
@@ -110,7 +110,7 @@ subcollection: FileStorage
 
 ファイル・ボリュームの請求を時間単位にするか月単位にするかを選択できます。 LUN に対して選択した請求のタイプが、そのスナップショット・スペースとレプリカに適用されます。 例えば、時間単位の請求を使用して LUN をプロビジョンした場合、スナップショットやレプリカの料金は時間単位で請求されます。 月単位の請求を使用して LUN をプロビジョンした場合、スナップショットやレプリカの料金は月単位で請求されます。
 
- * **時間単位の請求**では、ファイル・ボリュームがアカウントに存在した時間数が、LUN が削除されたとき、または請求サイクルの終わりのどちらか早いほうのタイミングで計算されます。 時間単位の請求は、使用期間が数日または 1 カ月未満のストレージに適しています。 時間単位の請求は、[一部のデータ・センター](/docs/infrastructure/FileStorage?topic=FileStorage-news)でプロビジョンされたストレージにのみ使用できます。
+ * **時間単位の請求**では、ファイル・ボリュームがアカウントに存在した時間数が、LUN が削除されたとき、または請求サイクルの終わりのどちらか早いほうのタイミングで計算されます。 時間単位の請求は、使用期間が数日または 1 カ月未満のストレージに適しています。 時間単位の請求は、[一部のデータ・センター](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)でプロビジョンされたストレージにのみ使用できます。
 
  * **月単位の請求**では、作成日から請求サイクル終了までの日割り額が計算され、ただちに請求されます。 請求サイクルの終了前にボリュームが削除されていても、返金はされません。 月単位の請求は、長期間 (1 カ月以上) にわたって保管してアクセスする必要があるデータを使用する実動ワークロード用のストレージに適しています。
 

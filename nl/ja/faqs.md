@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-03-26"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
@@ -34,12 +34,12 @@ subcollection: FileStorage
 
 {{site.data.keyword.filestorage_short}}の注文フォームでは、アップグレードされたすべてのデータ・センターがアスタリスク (`*`) 付きで表示されます。 注文プロセスの中で、暗号化ストレージがプロビジョンされますというメッセージも表示されます。 ストレージがプロビジョンされると、ボリュームが暗号化されていることを示すアイコンがストレージ・リストに表示されます。
 
-暗号化ボリュームおよびファイル共有はすべて、アップグレードされたデータ・センターでのみプロビジョンされます。 アップグレードされたデータ・センターと使用可能な機能の完全なリストについては、[こちら](/docs/infrastructure/FileStorage?topic=FileStorage-news)を参照してください。
+暗号化ボリュームおよびファイル共有はすべて、アップグレードされたデータ・センターでのみプロビジョンされます。 アップグレードされたデータ・センターと使用可能な機能の完全なリストについては、[こちら](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)を参照してください。
 
 ## エンデュランスが 10 IOPS ティアの {{site.data.keyword.filestorage_short}} がプロビジョニングされるデータ・センターとそうでないセンターがあるのはなぜですか?
 {: faq}
 
-{{site.data.keyword.filestorage_short}} のエンデュランス・タイプ 10 IOPS/GB ティアは、一部のデータ・センターでのみ提供されており、近々、新しいデータ・センターが追加される予定です。 アップグレードされたデータ・センターと使用可能な機能の完全なリストについては、[こちら](/docs/infrastructure/FileStorage?topic=FileStorage-news)を参照してください。
+{{site.data.keyword.filestorage_short}} のエンデュランス・タイプ 10 IOPS/GB ティアは、一部のデータ・センターでのみ提供されており、近々、新しいデータ・センターが追加される予定です。 アップグレードされたデータ・センターと使用可能な機能の完全なリストについては、[こちら](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)を参照してください。
 
 ## {{site.data.keyword.filestorage_short}}の正しいマウント・ポイントはどうすればわかりますか?
 {: faq}

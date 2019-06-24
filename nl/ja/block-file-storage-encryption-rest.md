@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-18'"
 
 keywords: File Storage, file storage, NFS, security, encryption
 
@@ -39,7 +39,7 @@ subcollection: FileStorage
 
 ## 暗号化を使用するストレージのプロビジョニング
 
-プロバイダー管理の保存データ暗号化機能は、一部のデータ・センターで使用できます。 それらのデータ・センターで注文されたすべてのストレージは、自動的に保存データ暗号化機能を使用してプロビジョンされます。 {{site.data.keyword.filestorage_short}}暗号化を使用できるデータ・センターの現在のリストを参照するには、[ここ](/docs/infrastructure/FileStorage?topic=FileStorage-news)をクリックしてください。
+プロバイダー管理の保存データ暗号化機能は、[一部のデータ・センター](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)で使用できます。それらのデータ・センターで注文されたすべてのストレージは、保存データに対する暗号化を使用して自動的にプロビジョンされます。
 
 {{site.data.keyword.filestorage_short}}の注文時に、アスタリスク (`*`) が付いているデータ・センターを選択してください。 「LUN/ボリューム名」フィールドの右に、ボリュームが暗号化されていることを示す鍵のアイコンが表示されます。 図 1 を参照してください。
 

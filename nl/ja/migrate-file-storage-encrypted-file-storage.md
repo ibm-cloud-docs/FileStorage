@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, file storage, NFS, upgrade, migrate to new
 
@@ -18,7 +18,7 @@ subcollection: FileStorage
 # {{site.data.keyword.filestorage_short}}から拡張{{site.data.keyword.filestorage_short}}へのマイグレーション
 {: #migratestorage}
 
-現在、拡張 {{site.data.keyword.filestorage_full}} は一部のデータ・センターでのみ提供されています。 アップグレードされたデータ・センターと、調整可能な IOPS レートや拡張可能なボリュームなどの使用可能な機能のリストを確認するには、[ここ](/docs/infrastructure/FileStorage?topic=FileStorage-news)をクリックしてください。 プロバイダー管理の暗号化について詳しくは、[{{site.data.keyword.filestorage_short}} 保存データの暗号化](/docs/infrastructure/FileStorage?topic=FileStorage-encryption)を参照してください。
+拡張 {{site.data.keyword.filestorage_full}} はほとんどの [データ・センター](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)で利用できるようになりました。
 
 お勧めするマイグレーション・パスは、両方のボリュームに同時に接続して LUN 間で直接データを転送する方法です。 具体的な手順は、オペレーティング・システムと、コピー操作中にデータ変更が行われるかどうかによって異なります。
 
@@ -37,7 +37,7 @@ subcollection: FileStorage
 API を使用して注文する場合は、「Storage as a Service」パッケージを指定して、更新済みの機能を新規ストレージと一緒に取得してください。
 {:important}
 
-拡張された LUN は {{site.data.keyword.cloud}} カタログと  を通じて注文できます。簡単にマイグレーションできるようにするには、新規ボリュームのサイズを元のファイル共有のサイズ以上にする必要があります。
+拡張された LUN は、{{site.data.keyword.cloud}} カタログを通じて注文できます。簡単にマイグレーションできるようにするには、新規ボリュームのサイズを元のファイル共有のサイズ以上にする必要があります。
 
 - [事前定義済み IOPS ティアによる {{site.data.keyword.filestorage_short}} の注文 (エンデュランス)](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#endurance)
 - [カスタム IOPS による {{site.data.keyword.filestorage_short}} の注文 (パフォーマンス)](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#performance)
