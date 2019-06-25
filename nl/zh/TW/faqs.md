@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-03-26"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
@@ -34,12 +34,12 @@ subcollection: FileStorage
 
 在 {{site.data.keyword.filestorage_short}} 訂單表格中，所有已升級的資料中心都會註記星號 (`*`)。在訂購程序期間，會提供您指示，指出您正在佈建加密的儲存空間。佈建儲存空間時，您可以看到儲存空間清單中有一個圖示，顯示該磁區已加密。
 
-所有加密磁區及檔案共用都只會佈建在已升級的資料中心內。您可以在[這裡](/docs/infrastructure/FileStorage?topic=FileStorage-news)找到完整的已升級資料中心及可用特性清單。
+所有加密磁區及檔案共用都只會佈建在已升級的資料中心內。您可以在[這裡](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)找到完整的已升級資料中心及可用特性清單。
 
 ## 為什麼可以在某些資料中心內佈建具有「耐久性 10 IOPS」層級的 {{site.data.keyword.filestorage_short}}，但不能在其他資料中心內進行？
 {: faq}
 
-「{{site.data.keyword.filestorage_short}} 耐久性類型 10 IOPS/GB」層級僅適用於精選資料中心，並且很快會新增資料中心。您可以在[這裡](/docs/infrastructure/FileStorage?topic=FileStorage-news)找到完整的已升級資料中心及可用特性清單。
+「{{site.data.keyword.filestorage_short}} 耐久性類型 10 IOPS/GB」層級僅適用於精選資料中心，並且很快會新增資料中心。您可以在[這裡](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)找到完整的已升級資料中心及可用特性清單。
 
 ## 如何找到 {{site.data.keyword.filestorage_short}} 的正確裝載點？
 {: faq}
@@ -80,7 +80,7 @@ subcollection: FileStorage
 {: row-headers}
 {: class="comparison-table"}
 {: caption="表格比較" caption-side="top"}
-{: summary="Table 1 shows the maximum number of inodes that are allowed based on the volume size. Volume sizes are in the left column. The number of inodes and file shares are on the right."}
+{: summary="表 1 顯示根據磁區大小而容許的 Inode 數目上限。磁區大小在左邊直欄。Inode 和檔案共用的數目在右邊直欄。"}
 
 ## 測量 IOPS
 {: faq}

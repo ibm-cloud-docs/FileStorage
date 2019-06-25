@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-18'"
 
 keywords: File Storage, file storage, NFS, security, encryption
 
@@ -39,7 +39,7 @@ subcollection: FileStorage
 
 ## 佈建具有加密的儲存空間
 
-精選資料中心內已提供提供者管理的靜態加密特性。在這些資料中心訂購的所有儲存空間，佈建時都會自動具有靜態資料的加密。按一下[這裡](/docs/infrastructure/FileStorage?topic=FileStorage-news)，以查看提供 {{site.data.keyword.filestorage_short}} 加密的現行資料中心清單。
+提供者管理的靜態加密特性適用於[精選資料中心](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)。在這些資料中心訂購的所有儲存空間，佈建時都會自動具有靜態資料的加密。
 
 訂購 {{site.data.keyword.filestorage_short}} 時，請選取已標示星號 (`*`) 的資料中心。您可以看到「LUN/磁區名稱」欄位的右側有一個鎖定圖示，這表示磁區已加密。請參閱圖 1。
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, file storage, NFS, upgrade, migrate to new
 
@@ -18,7 +18,7 @@ subcollection: FileStorage
 # 將 {{site.data.keyword.filestorage_short}} 移轉至加強型 {{site.data.keyword.filestorage_short}}
 {: #migratestorage}
 
-目前精選資料中心內已提供加強型 {{site.data.keyword.filestorage_full}}。若要查看已升級資料中心及可用特性（例如可調整的 IOPS 速率及可擴充的磁區）的清單，請按一下[這裡](/docs/infrastructure/FileStorage?topic=FileStorage-news)。如需提供者管理的加密相關資訊，請參閱 [{{site.data.keyword.filestorage_short}}靜態加密](/docs/infrastructure/FileStorage?topic=FileStorage-encryption)。
+大部分[資料中心](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)內現在提供加強型 {{site.data.keyword.filestorage_full}}。
 
 偏好的移轉路徑是同時連接至兩個磁區，並將資料從某個 LUN 直接傳送至另一個 LUN。細節取決於作業系統，以及是否預期在複製作業期間變更資料。
 

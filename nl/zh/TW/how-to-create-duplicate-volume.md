@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, file storage, NFS, duplicate volume
 
@@ -29,7 +29,7 @@ subcollection: FileStorage
 
 佈建儲存空間之後，主機就可以存取重複磁區來進行讀寫。不過，除非從原始磁區到重複磁區的資料複製已完成，否則不容許進行 Snapshot 及抄寫。資料複製完成後，即可將重複磁區當作獨立的磁區來管理及使用。
 
-此特性適用於大部分位置。如需可用的資料中心清單，請按一下[這裡](/docs/infrastructure/FileStorage?topic=FileStorage-news)。
+大部分[位置](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)都提供此特性。
 
 重複磁區的一些常見用途包括下列範例。
 - **災難回復測試**。建立抄本磁區的重複磁區，驗證資料是完整的，而且可以在發生災難時使用，而不岔斷抄寫。

@@ -64,10 +64,9 @@ subcollection: FileStorage
 {: row-headers}
 {: class="comparison-table"}
 {: caption="表 1 - NFS 通訊協定 VMware 特性支援矩陣" caption-side="top"}
-{: summary="This table has row and column headers. The row headers identify the vSphere features. The column headers identify the NSF version. To see if a feature is enabled navigate to the row of the feature and look at the column that is associated with the NFS version you use."}
+{: summary="這個表格有列和欄標頭。列標頭識別 vSphere 特性。欄標頭識別 NSF 版本。若要查看特性是否已啟用，請導覽至特性的列，然後查看與您使用之 NFS 版本相關聯的欄。"}
 
 *來源 - [VMware - NFS 通訊協定及 ESXi](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){: external}*
-
 
 
 ### 使用 Snapshot

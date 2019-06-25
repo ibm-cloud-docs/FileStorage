@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-05-02"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, file storage, NFS, provisioning, setup, configuration, mounting storage
 
@@ -29,7 +29,7 @@ subcollection: FileStorage
 - 佈建**耐久性**層級，其特色是預先定義的效能層次，以及 Snapshot 及抄寫這類其他特性。
 - 建置具有已配置每秒輸入/輸出作業 (IOPS) 的高功率**效能**環境。
 
-如需 {{site.data.keyword.filestorage_short}} 供應項目的相關資訊，請參閱[關於 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-about)
+如需 {{site.data.keyword.filestorage_short}} 供應項目的相關資訊，請參閱[瞭解 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-about)
 
 ## 佈建考量
 
@@ -73,7 +73,7 @@ subcollection: FileStorage
 
 ## 提交訂單
 
-當您準備好提交訂單時，可以透過[主控台](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)或 [SLCLI](/docs/infrastructure/FileStorage?topic=FileStorage-orderingSLCLI) 下訂單。若要使用 VMware 佈建檔案儲存空間，請按一下[這裡](/docs/infrastructure/FileStorage?topic=FileStorage-architectureguide)
+當您準備好提交訂單時，可以透過[主控台](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)、[SLCLI](/docs/infrastructure/FileStorage?topic=FileStorage-orderingSLCLI) 或 IBMCLOUD CLI 下訂單。如需佈建 File Storage for VMware 部署的相關資訊，請參閱[架構手冊](/docs/infrastructure/FileStorage?topic=FileStorage-architectureguide)。
 
 ## 連接新的儲存空間
 {: #mountingstorage}

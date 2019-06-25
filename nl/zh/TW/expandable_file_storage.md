@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, modify volume, NFS, file storage, expand capacity
 
@@ -22,7 +22,7 @@ subcollection: FileStorage
 
 會自動更新磁區的計費，以將新價格的按比例差額新增至現行計費週期。然後，即會在下一個計費週期收取新的完整金額。
 
-只有[精選資料中心](/docs/infrastructure/FileStorage?topic=FileStorage-news)內才提供此特性。
+只有[精選資料中心](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)內才提供此特性。
 
 ## 可擴充儲存空間的優點
 
@@ -37,7 +37,7 @@ subcollection: FileStorage
 ## 限制
 {: #limitsofextension}
 
-此特性只適用於佈建在具有加強功能之[資料中心](/docs/infrastructure/FileStorage?topic=FileStorage-news)內的儲存空間。在這些資料中心內佈建的加密儲存空間最多可以增加到 12 TB。
+此特性只適用於佈建在具有加強功能之[資料中心](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)內的儲存空間。在這些資料中心內佈建的加密儲存空間最多可以增加到 12 TB。
 
 已佈建「耐久性」之 {{site.data.keyword.filestorage_short}} 的現有大小限制仍然適用（10 IOPS 層級最多為 4 TB，而所有其他層級最多為 12 TB）。
 

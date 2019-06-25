@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, file storage, NFS, snapshots, snapshot schedule, manual snapshot, snapshot space, snapshot quota
 
@@ -157,7 +157,7 @@ Options:
 因為使用者錯誤或資料毀損，所以您可能需要將儲存空間磁區還原至特定時間點。
 
 1. 從主機中卸載並分離您的儲存空間磁區。
-   - 如需指示，請按一下[這裡](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)。
+   - 如需裝載及卸載儲存空間的相關資訊，請參閱[連接新的儲存空間](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)。
 2. 移至 [{{site.data.keyword.cloud}} 主控台](https://{DomainName}/){: external}。從功能表中選取**標準基礎架構**。
 3. 按一下**儲存空間**、**{{site.data.keyword.filestorage_short}}**。
 4. 向下捲動，並按一下要還原的磁區。**詳細資料**頁面的 **Snapshot** 區段會顯示所有已儲存 Snapshot 的清單及其大小和建立日期。
@@ -170,7 +170,7 @@ Options:
    預期頁面上會出現一則訊息，指出正在使用所選取的 Snapshot 來還原磁區。此外，{{site.data.keyword.filestorage_short}} 上的磁區旁會出現一個圖示，指出有一個作用中交易正在進行。將游標移至圖示上方會產生一個視窗，顯示該交易。交易完成之後，圖示即會消失。
    {:note}
 7. 將儲存空間磁區裝載並重新連接至主機。
-  - 如需指示，請按一下[這裡](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)。
+  - 如需裝載及卸載儲存空間的相關資訊，請參閱[連接新的儲存空間](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)。
 
 或者，您可以透過 SLCLI 搭配 Snapshot 還原磁區。
 ```

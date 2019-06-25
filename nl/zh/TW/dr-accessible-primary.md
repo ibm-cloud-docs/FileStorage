@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, file storage, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
@@ -51,7 +51,7 @@ subcollection: FileStorage
    {:note}
 4. 按一下**檢視全部 ({{site.data.keyword.filestorage_short}})**。
 5. 按一下作用中磁區（先前稱為目標磁區）。此磁區現在會有**作用中**狀態。
-6. 將儲存空間磁區裝載並連接至主機。如需指示，請按一下[這裡](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)。
+6. 將儲存空間磁區裝載並連接至主機。如需相關資訊，請參閱[連接新的儲存空間](/docs/infrastructure/FileStorage?topic=FileStorage-getting-started#mountingstorage)。
 
 
 ## 啟動從磁區到其抄本的失效回復
@@ -76,4 +76,4 @@ subcollection: FileStorage
    {:note}
 4. 在右上方，按一下**檢視所有 {{site.data.keyword.filestorage_short}}** 鏈結。
 5. 按一下作用中磁區（「來源」）。
-6. 將儲存空間磁區裝載並連接至主機。如需指示，請按一下[這裡](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)。
+6. 將儲存空間磁區裝載並連接至主機。如需相關資訊，請參閱[連接新的儲存空間](/docs/infrastructure/FileStorage?topic=FileStorage-getting-started#mountingstorage)。

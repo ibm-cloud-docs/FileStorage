@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, adjusting IOPS, increase IOPS, decrease IOPS, modify IOPS
 
@@ -30,7 +30,7 @@ subcollection: FileStorage
 ## 限制
 {: #limitsofadjustIOPS}
 
-只有[精選資料中心](/docs/infrastructure/FileStorage?topic=FileStorage-news)內才提供此特性。
+只有[精選資料中心](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)內才提供此特性。
 
 客戶在調整其 IOPS 時無法切換「耐久性」與「效能」。使用者可以根據下列準則和限制，為其儲存空間指定新的 IOPS 層級或 IOPS 層次。
 

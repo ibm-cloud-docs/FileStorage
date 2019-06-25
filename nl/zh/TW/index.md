@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-07"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, Endurance, Performance, IOPS, replication, billing, file storage, NFS,
 
@@ -20,7 +20,7 @@ subcollection: FileStorage
 # 瞭解 {{site.data.keyword.filestorage_short}}
 {: #about}
 
-{{site.data.keyword.cloud}}  {{site.data.keyword.filestorage_short}} 是持續性、快速且具彈性的網路連結、NFS 型 {{site.data.keyword.filestorage_short}}。在這個網路連接儲存空間 (NAS) 環境中，您可以完全控制檔案共用功能及效能。{{site.data.keyword.filestorage_short}} 共用可以透過路由 TCP/IP 連線最多連接 64 台授權裝置，來取得備援。{:shortdesc}
+{{site.data.keyword.filestorage_full}} 是持續性、快速且具彈性的網路連結、NFS 型 {{site.data.keyword.filestorage_short}}。在這個網路連接儲存空間 (NAS) 環境中，您可以完全控制檔案共用功能及效能。{{site.data.keyword.filestorage_short}} 共用可以透過路由 TCP/IP 連線最多連接 64 台授權裝置，來取得備援。{:shortdesc}
 
 ## 特性
 {: #FileStorageFeatures}
@@ -35,14 +35,14 @@ subcollection: FileStorage
    - 可用於檔案型 NFS 共用。
 - **高度可延續且具復原力**
    - 保護資料完整性，並透過維護事件及非計劃性故障來維護可用性，而不需要建立及管理作業系統層次的獨立磁碟備用陣列 (RAID) 陣列
-- **靜態資料加密**[（適用於精選資料中心。）](/docs/infrastructure/FileStorage?topic=FileStorage-news)
+- **靜態資料加密**[（適用於精選資料中心。）](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)
    - 提供靜態資料的提供者管理加密，不需額外付費
-- **全快閃記憶體支援的儲存空間**[（適用於精選資料中心。）](/docs/infrastructure/FileStorage?topic=FileStorage-news)
+- **全快閃記憶體支援的儲存空間**[（適用於精選資料中心。）](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)
    - 磁區的全快閃記憶體儲存空間可以佈建於 2 IOPS/GB 或更高層次。
-- **Snapshot**[（適用於精選資料中心。）](/docs/infrastructure/FileStorage?topic=FileStorage-news).
+- **Snapshot**[（適用於精選資料中心。）](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
    - 以不中斷的方式擷取時間點資料 Snapshot。
-- **抄寫**[（適用於精選資料中心。）](/docs/infrastructure/FileStorage?topic=FileStorage-news)
-   - 適用於將儲存空間佈建於[精選資料中心](/docs/infrastructure/FileStorage?topic=FileStorage-news)時。
+- **抄寫**[（適用於精選資料中心。）](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)
+   - 適用於將儲存空間佈建於[精選資料中心](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)時。
    - 自動將 Snapshot 複製到夥伴 {{site.data.keyword.cloud}} 資料中心。
 - **高度可用的連線功能**
    - 使用備用網路連線以讓可用性最大化。
@@ -70,7 +70,7 @@ subcollection: FileStorage
 
 - **每 GB 4 IOPS** 是為了較高強度工作負載而設計。這些工作負載的特點通常是隨時都有大比例的作用中資料。應用程式範例包括交易式資料庫及其他對於效能敏感的資料庫。
 
-- **每 GB 10 IOPS** 是為了最嚴苛的工作負載（例如 NoSQL 資料庫所建立的工作負載）以及進行分析用的資料處理而設計。此層級只適用於[精選資料中心](/docs/infrastructure/FileStorage?topic=FileStorage-news)內最多佈建 4 TB 的儲存空間。
+- **每 GB 10 IOPS** 是為了最嚴苛的工作負載（例如 NoSQL 資料庫所建立的工作負載）以及進行分析用的資料處理而設計。此層級只適用於[精選資料中心](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)內最多佈建 4 TB 的儲存空間。
 
 12 TB 耐久性磁區最多提供 48,000 IOPS。
 
@@ -108,7 +108,7 @@ subcollection: FileStorage
 
 您可以為「檔案」磁區選取按小時或按月計費。為 LUN 選取的計費類型會套用至其 Snapshot 空間及抄本。例如，如果您佈建按小時計費的 LUN，則任何 Snapshot 或抄本費用都會按小時計費。如果您佈建按月計費的 LUN，則任何 Snapshot 或抄本費用都會按月計費。
 
- * 使用**按小時計費**，會在刪除 LUN 或計費週期結束時（看何者為先），計算「檔案」磁區存在於帳戶上的小時數。如果儲存空間使用期間為期只有幾天或不到一整個月，則按小時計費是一個不錯的選擇。按小時計費只適用於[精選資料中心](/docs/infrastructure/FileStorage?topic=FileStorage-news)內所佈建的儲存空間。
+ * 使用**按小時計費**，會在刪除 LUN 或計費週期結束時（看何者為先），計算「檔案」磁區存在於帳戶上的小時數。如果儲存空間使用期間為期只有幾天或不到一整個月，則按小時計費是一個不錯的選擇。按小時計費只適用於[精選資料中心](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)內所佈建的儲存空間。
 
  * 使用**按月計費**，價格是從建立日期到計費週期結束為止，按比例計算，並立即計費。如果在計費週期結束之前刪除磁區，則不會退款。如果儲存空間用於正式作業工作負載，而正式作業工作負載使用需要長期（一個月或更久）儲存及存取的資料，則按月計費是一個不錯的選擇。
 
