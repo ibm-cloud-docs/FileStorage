@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, modify volume, NFS, file storage, expand capacity
 
@@ -22,7 +22,7 @@ subcollection: FileStorage
 
 对卷的记帐会自动更新，以将新价格的按比例差值添加到当前计费周期。然后，在下一个计费周期中采用整个新金额记帐。
 
-此功能仅在[精选数据中心](/docs/infrastructure/FileStorage?topic=FileStorage-news)内提供。
+此功能仅在[精选数据中心](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)内提供。
 
 ## 可扩展存储器的优点
 
@@ -37,7 +37,7 @@ subcollection: FileStorage
 ## 限制
 {: #limitsofextension}
 
-此功能仅可用于在具有增强功能的[数据中心](/docs/infrastructure/FileStorage?topic=FileStorage-news)内供应的存储器。这些数据中心内供应的加密存储器可以增大到最高 12 TB。
+此功能仅可用于在具有增强功能的[数据中心](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)内供应的存储器。这些数据中心内供应的加密存储器可以增大到最高 12 TB。
 
 使用“耐久性”类型供应的 {{site.data.keyword.filestorage_short}} 的现有大小限制仍然适用（对于 10 IOPS 层，最高为 4 TB，对于其他所有层，最高为 12 TB）。
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-07"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, Endurance, Performance, IOPS, replication, billing, file storage, NFS,
 
@@ -20,7 +20,7 @@ subcollection: FileStorage
 # 了解 {{site.data.keyword.filestorage_short}}
 {: #about}
 
-{{site.data.keyword.cloud}}  {{site.data.keyword.filestorage_short}} 是一种基于 NFS 的网络连接的 {{site.data.keyword.filestorage_short}}，具有持久、快速、灵活的特点。在此网络连接的存储器 (NAS) 环境中，您对文件共享功能和性能具有完全控制权。{{site.data.keyword.filestorage_short}} 共享可通过路由 TCP/IP 连接来连接到最多 64 个已授权设备，从而实现弹性。
+{{site.data.keyword.filestorage_full}} 是一种基于 NFS 的网络连接的 {{site.data.keyword.filestorage_short}}，具有持久、快速、灵活的特点。在此网络连接的存储器 (NAS) 环境中，您对文件共享功能和性能具有完全控制权。{{site.data.keyword.filestorage_short}} 共享可通过路由 TCP/IP 连接来连接到最多 64 个已授权设备，从而实现弹性。
 {:shortdesc}
 
 ## 功能
@@ -36,14 +36,14 @@ subcollection: FileStorage
    - 可用于基于文件的 NFS 共享。
 - **持久性高，弹性大**
    - 在发生维护事件和意外故障期间保护数据完整性并保持可用性，而无需创建和管理操作系统级别的独立磁盘冗余阵列 (RAID)
-- **静态数据加密** [（在精选数据中心内提供。）](/docs/infrastructure/FileStorage?topic=FileStorage-news)
+- **静态数据加密** [（在精选数据中心内提供。）](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)
    - 免费对静态数据进行提供者管理的加密
-- **所有支持闪存的存储器** [（在精选数据中心内提供。）](/docs/infrastructure/FileStorage?topic=FileStorage-news)
+- **所有支持闪存的存储器** [（在精选数据中心内提供。）](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)
    - 可以在 2 IOPS/GB 或更高级别供应卷的所有闪存存储器。
-- **快照** [（在精选数据中心内提供。）](/docs/infrastructure/FileStorage?topic=FileStorage-news).
+- **快照** [（在精选数据中心内提供。）](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
    - 以非破坏性方式捕获时间点数据快照。
-- **复制**  [（在精选数据中心内提供。）](/docs/infrastructure/FileStorage?topic=FileStorage-news)
-   - 在[精选数据中心](/docs/infrastructure/FileStorage?topic=FileStorage-news)内供应存储器时可用。
+- **复制**  [（在精选数据中心内提供。）](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)
+   - 在[精选数据中心](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)内供应存储器时可用。
    - 自动将快照复制到合作伙伴的 {{site.data.keyword.cloud}} 数据中心。
 - **高度可用的连接**
    - 使用冗余网络连接以最大限度提高可用性。
@@ -71,7 +71,7 @@ subcollection: FileStorage
 
 - **4 IOPS/GB** 适用于高强度工作负载。这些工作负载的典型特点是在任意时间都有较高比例的活动数据。示例应用包括事务型数据库和其他性能敏感型数据库。
 
-- **10 IOPS/GB** 适用于要求最苛刻的工作负载，例如由 NoSQL 数据库创建的工作负载以及为 Analytics 进行的数据处理。此层仅在[精选数据中心](/docs/infrastructure/FileStorage?topic=FileStorage-news)内提供，用于供应的最高达 4 TB 的存储器。
+- **10 IOPS/GB** 适用于要求最苛刻的工作负载，例如由 NoSQL 数据库创建的工作负载以及为 Analytics 进行的数据处理。此层仅在[精选数据中心](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)内提供，用于供应的最高达 4 TB 的存储器。
 
 12 TB 耐久性卷最高提供 48,000 IOPS。
 
@@ -110,7 +110,7 @@ subcollection: FileStorage
 
 可以选择按小时或按月对文件卷计费。为 LUN 选择的计费类型将应用于其快照空间和副本。例如，如果供应的 LUN 按小时计费，那么任何快照或副本费用都会按小时记帐。如果供应的 LUN 按月计费，那么任何快照或副本费用都会按月记帐。
 
- * 对于**按小时计费**，在删除 LUN 时或在计费周期结束时（以先发生者为准），将计算文件卷在帐户上存在的小时数。对于使用了数天或不足一个月的存储器，按小时计费是不错的选择。按小时计费仅可用于在[精选数据中心](/docs/infrastructure/FileStorage?topic=FileStorage-news)内供应的存储器。
+ * 对于**按小时计费**，在删除 LUN 时或在计费周期结束时（以先发生者为准），将计算文件卷在帐户上存在的小时数。对于使用了数天或不足一个月的存储器，按小时计费是不错的选择。按小时计费仅可用于在[精选数据中心](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)内供应的存储器。
 
  * 对于**按月计费**，将从创建日期一直到记帐周期结束按比例计算价格并立即记帐。如果在计费周期结束之前删除了卷，那么不会有任何退款。对于所用数据需要长期（一个月或更长时间）存储和访问的生产工作负载，使用按月计费的存储器是不错的选择。
 

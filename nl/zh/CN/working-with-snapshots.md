@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, file storage, NFS, snapshots, snapshot schedule, manual snapshot, snapshot space, snapshot quota
 
@@ -158,7 +158,7 @@ subcollection: FileStorage
 由于用户错误或数据损坏，您可能需要将存储卷恢复到特定时间点。
 
 1. 从主机卸装并拆离存储卷。
-   - 单击[此处](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)以获取指示信息。
+   - 有关安装和卸装存储器的更多信息，请参阅[连接新的存储器](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)。
 2. 转至 [{{site.data.keyword.cloud}} 控制台](https://{DomainName}/){: external}。在菜单中，选择**经典基础架构**。
 3. 单击**存储** > **{{site.data.keyword.filestorage_short}}**。
 4. 向下滚动，然后单击要复原的卷。**详细信息**页面的**快照**部分将显示所有保存的快照及其大小和创建日期的列表。
@@ -171,7 +171,7 @@ subcollection: FileStorage
    应该会在页面中收到一条消息，声明正在使用所选快照复原卷。此外，{{site.data.keyword.filestorage_short}} 上的相应卷旁边会显示一个图标，指示正在执行活动事务。将鼠标悬停在该图标上将生成一个用于显示事务的窗口。事务完成后，该图标会消失。
    {:note}
 7. 安装存储卷并将其重新连接到主机。
-  - 单击[此处](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)以获取指示信息。
+  - 有关安装和卸装存储器的更多信息，请参阅[连接新的存储器](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)。
 
 或者，您可以通过 SLCLI 使用快照来复原卷。
 ```

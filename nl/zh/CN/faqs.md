@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-03-26"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
@@ -34,12 +34,12 @@ subcollection: FileStorage
 
 在 {{site.data.keyword.filestorage_short}} 订购表单中，所有已升级的数据中心都会标有星号 (`*`)。在订购过程中，会向您指示您正在供应具有加密功能的存储器。供应存储器后，在存储器列表中会看到相应图标，指示该卷已加密。
 
-所有加密卷和文件共享仅在已升级的数据中心内供应。您可以在[此处](/docs/infrastructure/FileStorage?topic=FileStorage-news)找到已升级的数据中心和可用功能的完整列表。
+所有加密卷和文件共享仅在已升级的数据中心内供应。您可以在[此处](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)找到已升级的数据中心和可用功能的完整列表。
 
 ## 为什么一些数据中心内供应耐久性 10 IOPS 层的 {{site.data.keyword.filestorage_short}}，而其他数据中心内不供应？
 {: faq}
 
-{{site.data.keyword.filestorage_short}} 耐久性类型 10 IOPS/GB 层仅在精选数据中心内提供，很快会增加新的数据中心。您可以在[此处](/docs/infrastructure/FileStorage?topic=FileStorage-news)找到已升级的数据中心和可用功能的完整列表。
+{{site.data.keyword.filestorage_short}} 耐久性类型 10 IOPS/GB 层仅在精选数据中心内提供，很快会增加新的数据中心。您可以在[此处](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)找到已升级的数据中心和可用功能的完整列表。
 
 ## 如何找到 {{site.data.keyword.filestorage_short}} 的正确安装点？
 {: faq}

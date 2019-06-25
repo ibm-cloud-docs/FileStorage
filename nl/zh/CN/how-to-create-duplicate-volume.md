@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, file storage, NFS, duplicate volume
 
@@ -29,7 +29,7 @@ subcollection: FileStorage
 
 供应存储器后，主机即可以访问复制卷以进行读/写。但是，在完成从原始项到复制项的数据复制之后，才允许使用快照和复制。数据复制完成后，就可以将复制项作为独立卷进行管理和使用。
 
-此功能在大多数位置中提供。单击[此处](/docs/infrastructure/FileStorage?topic=FileStorage-news)以获取可用数据中心的列表。
+在大多数[位置](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)提供了此功能。
 
 复制卷的一些常见用途包括以下示例。
 - **灾难恢复测试**。创建副本卷的复制项，以验证数据是否完整并可以在发生灾难时使用，而不中断复制。

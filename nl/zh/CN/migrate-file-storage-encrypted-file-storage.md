@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, file storage, NFS, upgrade, migrate to new
 
@@ -18,7 +18,7 @@ subcollection: FileStorage
 # 将 {{site.data.keyword.filestorage_short}} 迁移到增强型 {{site.data.keyword.filestorage_short}}
 {: #migratestorage}
 
-现在，增强型 {{site.data.keyword.filestorage_full}} 在精选数据中心内提供。要查看已升级的数据中心和可用功能（例如，可调整 IOPS 速率和可扩展卷）的列表，请单击[此处](/docs/infrastructure/FileStorage?topic=FileStorage-news)。有关提供者管理的加密的更多信息，请参阅 [{{site.data.keyword.filestorage_short}} 静态加密](/docs/infrastructure/FileStorage?topic=FileStorage-encryption)。
+现在，增强型 {{site.data.keyword.filestorage_full}} 在大多数[数据中心](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)内提供。
 
 首选迁移路径是同时连接两个卷，并将数据从一个 LUN 直接传输到另一个 LUN。具体操作取决于您的操作系统以及在复制操作期间数据是否会更改。
 
@@ -37,7 +37,7 @@ subcollection: FileStorage
 使用 API 下订单时，请指定“存储即服务”包，以确保获取新存储器的更新功能。
 {:important}
 
-通过 {{site.data.keyword.cloud}}“目录”可以订购增强型 LUN。新卷的大小应该等于或大于原始文件共享的大小，以便于迁移。
+您可以通过 {{site.data.keyword.cloud}}“目录”订购增强型 LUN。新卷的大小应该等于或大于原始文件共享的大小，以便于迁移。
 
 - [订购具有预定义 IOPS 层（耐久性）的 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#endurance)
 - [订购具有定制 IOPS（性能）的 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#performance)

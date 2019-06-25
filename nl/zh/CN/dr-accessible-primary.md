@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, file storage, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
@@ -52,7 +52,7 @@ subcollection: FileStorage
    {:note}
 4. 单击**查看所有 ({{site.data.keyword.filestorage_short}})**。
 5. 单击活动卷（原先的目标卷）。现在，此卷的状态为**活动**。
-6. 安装存储卷并将其连接到主机。单击[此处](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)以获取指示信息。
+6. 安装存储卷并将其连接到主机。有关更多信息，请参阅[连接新的存储器](/docs/infrastructure/FileStorage?topic=FileStorage-getting-started#mountingstorage)。
 
 
 ## 启动从卷到其副本的故障恢复
@@ -77,4 +77,4 @@ subcollection: FileStorage
    {:note}
 4. 单击右上角的**查看所有 {{site.data.keyword.filestorage_short}}** 链接。
 5. 单击活动卷（“源”）。
-6. 安装存储卷并将其连接到主机。单击[此处](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)以获取指示信息。
+6. 安装存储卷并将其连接到主机。有关更多信息，请参阅[连接新的存储器](/docs/infrastructure/FileStorage?topic=FileStorage-getting-started#mountingstorage)。

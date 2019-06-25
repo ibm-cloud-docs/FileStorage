@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-18'"
 
 keywords: File Storage, file storage, NFS, security, encryption
 
@@ -39,7 +39,7 @@ subcollection: FileStorage
 
 ## 为存储器供应加密
 
-提供者管理的静态加密功能在精选数据中心内提供。对于在这些数据中心内订购的所有存储器，都自动供应了静态数据加密。单击[此处](/docs/infrastructure/FileStorage?topic=FileStorage-news)以查看可使用 {{site.data.keyword.filestorage_short}} 加密的数据中心的当前列表。
+在[精选数据中心](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)内提供了提供者管理的静态加密功能。对于在这些数据中心内订购的所有存储器，都自动供应了静态数据加密。
 
 订购 {{site.data.keyword.filestorage_short}} 时，请选择标有星号 (`*`) 的数据中心。您可以在“LUN/卷名”字段右侧看到“锁定”图标，指示已对该卷进行加密。请参阅图 1。
 

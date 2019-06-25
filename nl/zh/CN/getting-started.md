@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-05-02"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, file storage, NFS, provisioning, setup, configuration, mounting storage
 
@@ -30,7 +30,7 @@ subcollection: FileStorage
 - 供应**耐久性**层，具有预定义的性能级别和功能，如快照和复制。
 - 通过分配的每秒输入/输出操作数 (IOPS) 来构建强大的**性能**环境。
 
-有关 {{site.data.keyword.filestorage_short}} 产品的更多信息，请参阅[关于 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-about)
+有关 {{site.data.keyword.filestorage_short}} 产品的更多信息，请参阅[了解 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-about)。
 
 ## 供应注意事项
 
@@ -74,9 +74,9 @@ subcollection: FileStorage
 
 ## 提交订单
 
-准备好提交订单时，可以通过[控制台](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)或 [SLCLI](/docs/infrastructure/FileStorage?topic=FileStorage-orderingSLCLI) 来完成此操作。有关通过 VMware 供应文件存储器的信息，请单击[此处](/docs/infrastructure/FileStorage?topic=FileStorage-architectureguide)
+准备好提交订单时，可以通过[控制台](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)、[SLCLI](/docs/infrastructure/FileStorage?topic=FileStorage-orderingSLCLI) 或 IBMCLOUD CLI 来下订单。有关供应  File Storage for VMware 部署的更多信息，请参阅[体系结构指南](/docs/infrastructure/FileStorage?topic=FileStorage-architectureguide)。
 
-## 连接新存储器
+## 连接新的存储器
 {: #mountingstorage}
 
 完成供应请求后，授权主机来访问新存储器并配置连接。根据主机的操作系统，访问相应的链接。

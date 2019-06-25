@@ -132,7 +132,7 @@ Options:
 有关同时授权限制的更多信息，请参阅[常见问题](/docs/infrastructure/FileStorage?topic=file-storage-faqs)。
 {:important}
 
-## 连接新存储器
+## 连接新的存储器
 {: #mountingvolumesCLI}
 
 根据主机的操作系统，访问相应的链接。

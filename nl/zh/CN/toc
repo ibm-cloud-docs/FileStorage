@@ -1,13 +1,13 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="FileStorage" audience="services" arm="3662725" href="/docs/infrastructure/FileStorage?topic=FileStorage-getting-started" path="infrastructure/FileStorage"}
+{: .toc subcollection="FileStorage" category="storage" audience="services" arm="3662725" href="/docs/infrastructure/FileStorage?topic=FileStorage-getting-started" path="infrastructure/FileStorage"}
 IBM Cloud 存储器 - File Storage
 
     {: .navgroup id="learn"}
     getting-started.md
     index.md
-    new-ibm-block-and-file-storage-location-and-features.md
+    selectdatacenters.md
     snapshots.md
     {: .navgroup-end}
 
