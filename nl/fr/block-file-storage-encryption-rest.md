@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-18'"
 
 keywords: File Storage, file storage, NFS, security, encryption
 
@@ -39,7 +39,7 @@ Tous les instantanés et toutes les répliques d'un stockage de fichier chiffré
 
 ## Mise à disposition du stockage avec chiffrement
 
-La fonctionnalité de chiffrement au repos géré par le fournisseur est disponible dans des centres de données sélectionnés. La totalité du stockage commandé dans ces centres de données est automatiquement doté du chiffrement des données au repos. Cliquez [ici](/docs/infrastructure/FileStorage?topic=FileStorage-news) pour afficher la liste des centres de données dans lesquels le chiffrement {{site.data.keyword.filestorage_short}} est disponible.
+La fonction de chiffrement au repos géré par le fournisseur est disponible dans des [centres de données sélectionnés](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC). La totalité du stockage commandé dans ces centres de données est automatiquement doté du chiffrement des données au repos.
 
 Lorsque vous commandez {{site.data.keyword.filestorage_short}}, sélectionnez un centre de données signalé par un astérisque (`*`). Une icône en forme de verrou figure à droite de la zone Numéro d'unité logique/nom de volume pour indiquer que le volume est chiffré. Voir la Figure 1.
 

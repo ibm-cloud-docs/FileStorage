@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, modify volume, NFS, file storage, expand capacity
 
@@ -22,7 +22,7 @@ Cette nouvelle fonctionnalité permet aux utilisateurs de {{site.data.keyword.fi
 
 La facturation du volume est automatiquement mise à jour : la différence calculée au prorata du nouveau prix est ajoutée au cycle de facturation en cours. Ensuite, le nouveau montant total est facturé au cours du cycle de facturation suivant.
 
-Cette fonctionnalité est disponible uniquement dans des [centres de données sélectionnés](/docs/infrastructure/FileStorage?topic=FileStorage-news).
+Cette fonctionnalité est disponible uniquement dans des [centres de données sélectionnés](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
 
 ## Avantages du stockage extensible
 
@@ -37,14 +37,14 @@ L'extension du stockage principal entraîne le redimensionnement automatique de 
 ## Limitations
 {: #limitsofextension}
 
-Cette fonctionnalité est disponible uniquement pour un stockage mis à disposition dans des [centres de données](/docs/infrastructure/FileStorage?topic=FileStorage-news) dotés de capacités améliorées. Un stockage chiffré qui est mis à disposition dans ces centres de données peut être augmenté à hauteur de 12 To.
+Cette fonctionnalité est disponible uniquement pour un stockage mis à disposition dans des [centres de données](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC) dotés de capacités améliorées. Un stockage chiffré qui est mis à disposition dans ces centres de données peut être augmenté à hauteur de 12 To.
 
 Les limitations de taille existantes pour le stockage {{site.data.keyword.filestorage_short}} qui a été mis à disposition avec l'option Endurance sont toujours applicables (jusqu'à 4 To pour un niveau de 10 IOPS et jusqu'à 12 To pour tous les autres niveaux).
 
 ## Redimensionnement du stockage
 {: #resizingsteps}
 
-1. Accédez à la [console {{site.data.keyword.cloud}}](https://{DomainName}/){: external}. Dans le menu, sélectionnez **Infrastructure classique**.Cliquez sur **Stockage** > **{{site.data.keyword.filestorage_short}}**.
+1. Accédez à la [console {{site.data.keyword.cloud}}](https://{DomainName}/){: external}. Dans le menu, sélectionnez **Infrastructure classique**. Cliquez sur **Stockage** > **{{site.data.keyword.filestorage_short}}**.
 2. Sélectionnez le volume dans la liste et cliquez sur **Actions** > **Modifier le volume**
 3. Entrez la nouvelle taille de stockage en Go.
 4. Vérifiez votre sélection et la nouvelle tarification.

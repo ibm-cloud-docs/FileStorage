@@ -23,7 +23,7 @@ subcollection: FileStorage
 
 Pour créer des instantanés de votre volume de stockage, que ce soit de manière automatisée ou manuelle, vous devez acheter de l'espace dans lequel les conserver. Vous pouvez acquérir une capacité maximale pouvant atteindre la quantité de votre volume de stockage (lors de l'achat initial du volume ou ultérieurement en suivant les étapes ci-après).
 
-## Calcul de la quantité d'espace d'image instantanée à commander
+## Calcul de la quantité d'espace d'instantané à commander
 
 En règle générale, l'espace d'instantané est utilisé par les instantanés en fonction de deux critères essentiels :
 - la quantité de modifications apportées à votre système de fichiers actif ;
@@ -50,7 +50,7 @@ De plus, pour la plupart des charges de travail, plus le volume est grand, plus 
 
 ## Commande d'un espace d'instantané via la console {{site.data.keyword.cloud_notm}}
 
-1. Connectez-vous à la [console {{site.data.keyword.cloud}}](https://{DomainName}/){: external} puis cliquez sur l'icône de menu l'angle supérieur gauche. 
+1. Connectez-vous à la [console {{site.data.keyword.cloud}}](https://{DomainName}/){: external} puis cliquez sur l'icône de menu l'angle supérieur gauche.
 2. Sélectionnez **Infrastructure classique**.
 3. Accédez à votre stockage via **Stockage** > **{{site.data.keyword.filestorage_short}}**.
 4. Cliquez sur **Modifier l'espace d'instantané** dans le cadre Instantanés.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, file storage, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
@@ -51,7 +51,7 @@ Avant d'exécuter ces étapes, déconnectez le volume. Si vous omettez cette ét
    {:note}
 4. Cliquez sur **Tout afficher ({{site.data.keyword.filestorage_short}})**.
 5. Cliquez sur votre volume actif (anciennement votre volume cible). Ce volume a désormais le statut **Actif**.
-6. Montez votre volume de stockage sur l'hôte et associez-les. Cliquez [ici](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole) pour obtenir des instructions.
+6. Montez votre volume de stockage sur l'hôte et associez-les. Pour plus d'informations, voir [Connexion de votre nouveau stockage](/docs/infrastructure/FileStorage?topic=FileStorage-getting-started#mountingstorage).
 
 
 ## Démarrage d'une reprise par restauration depuis un volume vers sa réplique
@@ -76,4 +76,4 @@ Les reprises par restauration sont démarrées sous **Stockage**, **{{site.data.
    {:note}
 4. Dans l'angle supérieur droit, cliquez sur le lien **Afficher tout {{site.data.keyword.filestorage_short}}**.
 5. Cliquez sur votre volume actif ("source").
-6. Montez votre volume de stockage sur l'hôte et associez-les. Cliquez [ici](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole) pour obtenir des instructions.
+6. Montez votre volume de stockage sur l'hôte et associez-les. Pour plus d'informations, voir [Connexion de votre nouveau stockage](/docs/infrastructure/FileStorage?topic=FileStorage-getting-started#mountingstorage).

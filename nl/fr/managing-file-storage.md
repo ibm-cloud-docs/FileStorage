@@ -98,7 +98,7 @@ Vous pouvez révoquer l'accès à partir de Stockage dans la Liste des unités o
 
 ### Révocation de l'accès à partir de la liste des unités
 
-1. Accédez à la [console {{site.data.keyword.cloud}}](https://{DomainName}/){: external}. 
+1. Accédez à la [console {{site.data.keyword.cloud}}](https://{DomainName}/){: external}.
 2. Dans le menu, sélectionnez **Infrastructure classique**.
 3. Cliquez sur **Unités** > **Liste des unités**.
 2. Cliquez deux fois sur l'unité appropriée.
@@ -112,7 +112,7 @@ Si vous souhaitez déconnecter plusieurs volumes d'un hôte spécifique, vous de
 
 ### Révocation de l'accès à partir de la vue Stockage
 
-1. Accédez à la [console {{site.data.keyword.cloud}}](https://{DomainName}/){: external}. 
+1. Accédez à la [console {{site.data.keyword.cloud}}](https://{DomainName}/){: external}.
 2. Dans le menu, sélectionnez **Infrastructure classique**.
 3. Cliquez sur **Stockage** > **{{site.data.keyword.filestorage_short}}**, puis sélectionnez le **Volume** depuis lequel vous souhaitez révoquer l'accès.
 4. Faites défiler l'écran jusqu'à la section **Hôtes autorisés** de la page.

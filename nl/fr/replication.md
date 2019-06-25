@@ -78,18 +78,18 @@ Cependant, si vous voulez modifier l'heure à laquelle la réplication selon un 
 
 ## Modification de l'espace de réplication
 
-Votre espace d'image instantanée principal et votre espace de réplique doivent être identiques. Si vous modifiez l'espace sur l'onglet **Principal** ou **Réplique**, l'espace est automatiquement ajouté à vos centres de données source et de destination. L'augmentation de l'espace d'image instantanée déclenche également une mise à jour immédiate de la réplication.
+Votre espace d'instantané principal et votre espace de réplique doivent être identiques. Si vous modifiez l'espace sur l'onglet **Principal** ou **Réplique**, l'espace est automatiquement ajouté à vos centres de données source et de destination. L'augmentation de l'espace d'instantané déclenche également une mise à jour immédiate de la réplication.
 
 1. Cliquez sur **Actions** sur l'onglet **Principal** ou **Réplique**.
-2. Sélectionnez **Ajouter de l'espace d'image instantanée supplémentaire**.
+2. Sélectionnez **Ajouter de l'espace d'instantané supplémentaire**.
 3. Sélectionnez la taille de stockage dans la liste, puis cliquez sur **Continuer**.
 4. Entrez un **Code Promo** le cas échéant et cliquez sur **Recalculer**. Les autres zones de la boîte de dialogue contiennent les valeurs par défaut.
 5. Cochez la case **J'ai lu et j'accepte l'intégralité du Contrat cadre de service**, puis cliquez sur **Valider la commande**.
 
 
-## Augmentation de l'espace d'image instantanée dans le centre de données de réplique lorsque l'espace d'image instantanée est augmenté dans le centre de données principal.
+## Augmentation de l'espace d'instantané dans le centre de données de réplique lorsque l'espace d'instantané est augmenté dans le centre de données principal.
 
-Les tailles des volumes de stockage principal et de réplique doivent être identiques. Il n'est pas possible que l'un soit plus grand que l'autre. Lorsque vous augmentez votre espace d'image instantanée dans le volume principal, l'espace de réplique est automatiquement augmenté. L'augmentation de l'espace d'image instantanée déclenche une mise à jour immédiate de la réplication. L'augmentation des deux volumes apparaît sous forme de lignes d'article dans votre facture et est calculée au prorata si nécessaire.
+Les tailles des volumes de stockage principal et de réplique doivent être identiques. Il n'est pas possible que l'un soit plus grand que l'autre. Lorsque vous augmentez votre espace d'instantané dans le volume principal, l'espace de réplique est automatiquement augmenté. L'augmentation de l'espace d'instantané déclenche une mise à jour immédiate de la réplication. L'augmentation des deux volumes apparaît sous forme de lignes d'article dans votre facture et est calculée au prorata si nécessaire.
 
 Pour plus d'informations sur l'augmentation de l'espace d'instantané, voir [Instantanés](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots).
 ## Affichage des volumes de réplique dans la liste de volumes
@@ -115,7 +115,7 @@ L'historique des réplications s'affiche dans le **Journal d'audit** sur l'ongle
 
 ## Création d'un doublon d'un volume de réplique
 
-Vous pouvez créer un doublon d'un {{site.data.keyword.cloud}}  {{site.data.keyword.filestorage_full}} existant. Le volume dupliqué hérite par défaut des options de capacité et de performance du volume de stockage d'origine et contient une copie des données jusqu'au point de cohérence d'un instantané.
+Vous pouvez créer un doublon d'un {{site.data.keyword.cloud}} {{site.data.keyword.filestorage_full}} existant. Le volume dupliqué hérite par défaut des options de capacité et de performance du volume de stockage d'origine et contient une copie des données jusqu'au point de cohérence d'un instantané.
 
 Vous pouvez créer des doublons à partir de volumes principaux et de volumes de réplique. Le nouveau doublon est créé dans le même centre de données que le volume d'origine. Si vous créez un doublon à partir d'un volume de réplique, le nouveau volume est créé dans le même centre de données que le volume de réplique.
 

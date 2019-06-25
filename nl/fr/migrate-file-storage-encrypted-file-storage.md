@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, file storage, NFS, upgrade, migrate to new
 
@@ -18,7 +18,7 @@ subcollection: FileStorage
 # Migration de {{site.data.keyword.filestorage_short}} vers {{site.data.keyword.filestorage_short}} amélioré
 {: #migratestorage}
 
-La fonctionnalité {{site.data.keyword.filestorage_full}} amélioré est désormais disponible dans des centres de données sélectionnés. Pour afficher la liste des centres de données mis à niveau et des fonctions disponibles telles que les débits d'IOPS ajustables et les volumes extensibles, cliquez [ici](/docs/infrastructure/FileStorage?topic=FileStorage-news). Pour en savoir plus sur le chiffrement géré par les fournisseurs, voir [Chiffrement au repos dans {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-encryption).
+Enhanced {{site.data.keyword.filestorage_full}} est désormais disponible dans la plupart des [centre de données](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
 
 Le chemin de migration recommandé consiste à se connecter simultanément aux deux volumes et à transférer les données via NFS directement d'un numéro d'unité logique à un autre. Les spécificités dépendent de votre système d'exploitation et de la modification attendue ou non des données lors de la copie.
 

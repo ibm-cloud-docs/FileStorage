@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, file storage, NFS, duplicate volume
 
@@ -29,7 +29,7 @@ Si vous êtes un utilisateur de compte Dedicated d'{{site.data.keyword.container
 
 Les volumes dupliqués sont accessibles par un hôte en lecture/écriture dès la mise à disposition du stockage. Toutefois, les instantanés et la réplication ne sont pas autorisés tant que la copie des données depuis le volume d'origine vers le doublon n'est pas terminée. Une fois la copie de données terminée, le doublon peut être géré et utilisé en tant que volume indépendant.
 
-Cette fonctionnalité est disponible dans la plupart des emplacements. Cliquez [ici](/docs/infrastructure/FileStorage?topic=FileStorage-news) pour obtenir la liste des centres de données disponibles.
+Cette fonction est disponible dans la plupart des [sites](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
 
 Voici quelques exemples d'utilisation courante d'un volume dupliqué.
 - **Test de reprise après incident**. Créez un doublon de votre volume de réplique pour vérifier que les données sont intactes et qu'elles peuvent être utilisées dans le cas d'un sinistre sans interruption de la réplication.
@@ -132,6 +132,6 @@ Options:
   -h, --help                      Show this message and exit.
 ```
 
-## Gestion de votre volume dupliqué
+## Gestion de votre volume en double
 
-Pendant que les données sont copiées depuis le volume d'origine vers le doublon, un statut s'affiche sur la page des détails indiquant que la duplication est en cours. Pendant cette opération, vous pouvez vous connecter à un hôte et lire/écrire sur le volume, mais vous ne pouvez pas créer de planifications de l'image instantanée. Une fois le processus de duplication terminé, le nouveau volume est indépendant du volume d'origine ; il peut être géré avec des instantanés et des réplications comme un volume normal.
+Pendant que les données sont copiées depuis le volume d'origine vers le doublon, un statut s'affiche sur la page des détails indiquant que la duplication est en cours. Pendant cette opération, vous pouvez vous connecter à un hôte et lire/écrire sur le volume, mais vous ne pouvez pas créer de planifications de l'instantané. Une fois le processus de duplication terminé, le nouveau volume est indépendant du volume d'origine ; il peut être géré avec des instantanés et des réplications comme un volume normal.

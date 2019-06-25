@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, file storage, NFS, snapshots, snapshot schedule, manual snapshot, snapshot space, snapshot quota
 
@@ -23,7 +23,7 @@ subcollection: FileStorage
 
 Les plannings d'instantané vous permettent de choisir la fréquence et le moment de création d'une référence ponctuelle de votre volume de stockage. Vous disposez d'un maximum de 50 instantanés par volume de stockage. Les plannings sont gérés via l'onglet **Stockage** > **{{site.data.keyword.filestorage_short}}** de la [console {{site.data.keyword.cloud}}](https://{DomainName}/){: external}.
 
-Avant de pouvoir configurer votre planning initial, vous devez d'abord acheter de l'espace d'image instantanée si vous ne l'avez pas fait lors de la mise à disposition initiale du volume de stockage.
+Avant de pouvoir configurer votre planning initial, vous devez d'abord acheter de l'espace d'instantané si vous ne l'avez pas fait lors de la mise à disposition initiale du volume de stockage.
 {:important}
 
 ### Ajout d'un planning d'instantané
@@ -158,7 +158,7 @@ Les instantanés manuels qui ne sont pas supprimés manuellement dans le portail
 Il se peut que vous deviez ramener votre volume de stockage à un point de cohérence spécifique en raison d'une erreur d'utilisateur ou d'une altération des données.
 
 1. Démontez et déconnectez le volume de stockage de l'hôte.
-   - Cliquez [ici](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux) pour obtenir des instructions.
+   - Pour plus d'informations sur le montage et le démontage de stockage, voir [Connexion de votre nouveau stockage](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux).
 2. Accédez à la [console {{site.data.keyword.cloud}}](https://{DomainName}/){: external}. Dans le menu, sélectionnez **Infrastructure classique**.
 3. Cliquez sur **Stockage**, **{{site.data.keyword.filestorage_short}}**.
 4. Faites défiler l'écran et cliquez sur le volume à restaurer. La section **Instantanés** de la page **Détails** affiche la liste de tous les instantanés sauvegardés, ainsi que leur taille et leur date de création.
@@ -171,7 +171,7 @@ Il se peut que vous deviez ramener votre volume de stockage à un point de cohé
    Un message doit s'afficher sur la page pour vous indiquer que le volume est restauré à l'aide de l'instantané sélectionné. En outre, une icône apparaît en regard de votre volume sur {{site.data.keyword.filestorage_short}} pour indiquer qu'une transaction active est en cours. Survolez cette icône pour ouvrir une boîte de dialogue affichant la transaction. L'icône disparaît une fois la transaction terminée.
    {:note}
 7. Montez et reconnectez le volume de stockage à l'hôte.
-  - Cliquez [ici](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux) pour obtenir des instructions.
+  - Pour plus d'informations sur le montage et le démontage de stockage, voir [Connexion de votre nouveau stockage](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux).
 
 Vous pouvez également restaurer le volume à l'aide d'un instantané via l'interface SLCLI.
 ```

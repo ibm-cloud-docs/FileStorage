@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-07"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, Endurance, Performance, IOPS, replication, billing, file storage, NFS,
 
@@ -20,7 +20,7 @@ subcollection: FileStorage
 # En savoir plus sur {{site.data.keyword.filestorage_short}}
 {: #about}
 
-{{site.data.keyword.cloud}}  {{site.data.keyword.filestorage_short}} est un système de stockage de fichiers {{site.data.keyword.filestorage_short}} NAS basé sur NFS, permanent, rapide et flexible. Cet environnement NAS vous permet d'avoir un contrôle total des fonctions et des performances de vos partages de fichiers. Les partages {{site.data.keyword.filestorage_short}} peuvent être connectés à un maximum de 64 unités autorisées via des connexions TCP/IP routées pour la résilience.
+{{site.data.keyword.filestorage_full}} est un système de stockage de fichiers {{site.data.keyword.filestorage_short}} NAS basé sur NFS, permanent, rapide et flexible. Cet environnement NAS vous permet d'avoir un contrôle total des fonctions et des performances de vos partages de fichiers. Les partages {{site.data.keyword.filestorage_short}} peuvent être connectés à un maximum de 64 unités autorisées via des connexions TCP/IP routées pour la résilience.
 {:shortdesc}
 
 ## Fonctions
@@ -36,14 +36,14 @@ Tirez parti des principales fonctionnalités de {{site.data.keyword.filestorage_
    - Disponible pour les partages NFS basés sur des fichiers.
 - **Durabilité et résilience élevées**
    - Protège l'intégrité des données et maintient la disponibilité lors des événements de maintenance et des défaillances imprévues sans qu'il soit nécessaire de créer et de gérer des tableaux RAID au niveau du système d'exploitation
-- **Chiffrement des données au repos** [(disponible dans des centres de données sélectionnés)](/docs/infrastructure/FileStorage?topic=FileStorage-news)
+- **Chiffrement des données au repos** [(disponible dans des centres de données sélectionnés)](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)
    - Chiffrement géré par le fournisseur pour les données au repos, sans coût supplémentaire
-- **Stockage entièrement sécurisé par mémoire flash** [(disponible dans des centres de données sélectionnés)](/docs/infrastructure/FileStorage?topic=FileStorage-news)
+- **Stockage entièrement sécurisé par mémoire flash** [(disponible dans des centres de données sélectionnés)](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)
    - Stockage flash pour les volumes mis à disposition à des niveaux supérieurs ou égaux à 2 IOPS/Go
-- **Instantanés** [(disponibles dans des centres de données sélectionnés)](/docs/infrastructure/FileStorage?topic=FileStorage-news).
+- **Instantanés** [(disponibles dans des centres de données sélectionnés)](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
    - Capture des instantanés de données ponctuels de manière transparente.
-- **Replication**  [(disponible dans des centres de données sélectionnés)](/docs/infrastructure/FileStorage?topic=FileStorage-news)
-   - Disponible uniquement pour le stockage mis à disposition dans des [centres de données sélectionnés](/docs/infrastructure/FileStorage?topic=FileStorage-news).
+- **Replication**  [(disponible dans des centres de données sélectionnés)](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)
+   - Disponible uniquement pour le stockage mis à disposition dans des [centres de données sélectionnés](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
    - Copie automatiquement des instantanés vers un centre de données {{site.data.keyword.cloud}} partenaire.
 - **Connectivité hautement disponible**
    - Utilise des connexions réseau redondantes pour accroître la disponibilité
@@ -71,7 +71,7 @@ Les volumes {{site.data.keyword.filestorage_short}} peuvent être mis à disposi
 
 - L'option **4 IOPS par Go** est adaptée aux charges de travail plus exigeantes en E-S. Ces charges de travail sont généralement caractérisées par un pourcentage élevé de données actives à un moment donné. Exemples d'applications : bases de données transactionnelles, bases de données sensibles aux performances.
 
-- L'option **10 IOPS par Go** est adaptée aux charges de travail les plus intensives, telles que celles créées par les bases de données NoSQL et le traitement de données pour Analytics. Ce niveau est disponible pour le stockage mis à disposition jusqu'à 4 To uniquement dans des [centres de données sélectionnés](/docs/infrastructure/FileStorage?topic=FileStorage-news).
+- L'option **10 IOPS par Go** est adaptée aux charges de travail les plus intensives, telles que celles créées par les bases de données NoSQL et le traitement de données pour Analytics. Ce niveau est disponible pour le stockage mis à disposition jusqu'à 4 To uniquement dans des [centres de données sélectionnés](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
 
 Un volume de type Endurance de 12 To comporte un maximum de 48 000 IOPS disponibles.
 
@@ -110,7 +110,7 @@ Les volumes Performance sont conçus pour fonctionner d'une manière cohérente 
 
 Vous pouvez choisir une facturation horaire ou mensuelle pour un volume de fichier. Le type de facturation sélectionné pour un numéro d'unité logique s'applique à son espace d'instantané et à ses répliques. Par exemple, si vous mettez à disposition un numéro d'unité logique avec une facturation horaire, tous les frais liés aux instantanés ou aux répliques seront facturés à l'heure. Si vous mettez à disposition un numéro d'unité logique avec une facturation mensuelle, tous les frais liés aux instantanés ou aux répliques sont facturés au mois.
 
- * Avec la **facturation horaire**, le nombre d'heures d'existence du volume de fichier sur le compte est calculé lors de la suppression du numéro d'unité logique ou à la fin du cycle de facturation, à la première occurrence de l'un de ces deux événements. La facturation horaire est un bon choix si vous avez besoin d'un stockage pour quelques jours ou pour moins d'un mois complet. La facturation horaire est disponible uniquement pour le stockage qui est mis à disposition dans des [centres de données sélectionnés](/docs/infrastructure/FileStorage?topic=FileStorage-news).
+ * Avec la **facturation horaire**, le nombre d'heures d'existence du volume de fichier sur le compte est calculé lors de la suppression du numéro d'unité logique ou à la fin du cycle de facturation, à la première occurrence de l'un de ces deux événements. La facturation horaire est un bon choix si vous avez besoin d'un stockage pour quelques jours ou pour moins d'un mois complet. La facturation horaire est disponible uniquement pour le stockage qui est mis à disposition dans des [centres de données sélectionnés](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
 
  * Avec la **facturation mensuelle**, le calcul du prix est calculé au prorata depuis la date de création jusqu'à la fin du cycle de facturation et la facturation est immédiate. Aucun remboursement n'est possible si un volume de fichier est supprimé avant la fin du cycle de facturation. La facturation mensuelle convient si vous avez besoin d'un stockage pour des charges de travail qui utilisent des données devant être stockées et rester accessibles pour de longues périodes (un mois ou plus).
 
