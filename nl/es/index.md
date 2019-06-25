@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-07"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, Endurance, Performance, IOPS, replication, billing, file storage, NFS,
 
@@ -20,7 +20,7 @@ subcollection: FileStorage
 # Información sobre {{site.data.keyword.filestorage_short}}
 {: #about}
 
-{{site.data.keyword.cloud}} {{site.data.keyword.filestorage_short}} es {{site.data.keyword.filestorage_short}} conectado a red, basado en NFS, flexible, rápido y persistente. En este entorno de almacenamiento adjunto de red (NAS), tiene el control total sobre las funciones y el rendimiento de los recursos compartidos de archivos. Los recursos compartidos de {{site.data.keyword.filestorage_short}} se pueden conectar a hasta 64 dispositivos autorizados sobre conexiones TCP/IP direccionadas para aumentar la capacidad de recuperación.
+{{site.data.keyword.filestorage_full}} es {{site.data.keyword.filestorage_short}} conectado a red, basado en NFS, flexible, rápido y persistente. En este entorno de almacenamiento adjunto de red (NAS), tiene el control total sobre las funciones y el rendimiento de los recursos compartidos de archivos. Los recursos compartidos de {{site.data.keyword.filestorage_short}} se pueden conectar a hasta 64 dispositivos autorizados sobre conexiones TCP/IP direccionadas para aumentar la capacidad de recuperación.
 {:shortdesc}
 
 ## Características
@@ -36,14 +36,14 @@ Aproveche las siguientes características básicas de {{site.data.keyword.filest
    - Disponible para recursos compartidos de NFS basados en archivos.
 - **Muy duradero y resistente**
    - Protege la integridad de los datos y mantiene la disponibilidad en sucesos de mantenimiento y fallos imprevistos sin la necesidad de crear y gestionar una matriz redundante a nivel de sistema operativo de matrices de discos independientes (RAID)
-- **Cifrado de datos en reposo** [(disponible en centros de datos seleccionados)](/docs/infrastructure/FileStorage?topic=FileStorage-news)
+- **Cifrado de datos en reposo** [(disponible en centros de datos seleccionados)](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)
    - Se proporciona cifrado gestionado por el proveedor de datos en reposo sin ningún coste adicional
-- **Almacenamiento All Flash respaldado** [(disponible en centros de datos seleccionados)](/docs/infrastructure/FileStorage?topic=FileStorage-news)
+- **Almacenamiento respaldado por All Flash** [(disponible en centros de datos seleccionados)](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)
    - Se puede suministrar almacenamiento all flash para volúmenes a 2 IOPS/GB o niveles superiores.
-- **Instantáneas** [(disponible en centros de datos seleccionados).](/docs/infrastructure/FileStorage?topic=FileStorage-news).
+- **Instantáneas** [(disponible en centros de datos seleccionados).](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
    - Captura instantáneas de datos en un momento específico sin interrupción.
-- **Réplica**  [(disponible en centros de datos seleccionados)](/docs/infrastructure/FileStorage?topic=FileStorage-news)
-   - Disponible al suministrar almacenamiento en [centros de datos seleccionados](/docs/infrastructure/FileStorage?topic=FileStorage-news).
+- **Réplica**  [(disponible en centros de datos seleccionados)](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)
+   - Disponible al suministrar almacenamiento en [centros de datos seleccionados](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
    - Copia automáticamente instantáneas a un centro de datos de {{site.data.keyword.cloud}} asociado.
 - **Conectividad de alta disponibilidad**
    - Utiliza conexiones de red redundantes para maximizar la disponibilidad.
@@ -72,7 +72,7 @@ Los volúmenes de {{site.data.keyword.filestorage_short}} se pueden suministrar 
 
 - **4 IOPS por GB** está diseñado para cargas de trabajo de mayor intensidad. Estas cargas de trabajo se suelen caracterizar por tener un porcentaje alto de datos activos en cualquier momento. Entre las aplicaciones de ejemplo, se incluyen las bases de datos transaccionales y otras bases de datos que dependen del rendimiento.
 
-- **10 IOPS por GB** está diseñado para las cargas de trabajo más exigentes, como las creadas por bases de datos NoSQL y el proceso de datos para Analytics. Este nivel está disponible para almacenamiento suministrado de hasta 4 TB solo en [centros de datos seleccionados](/docs/infrastructure/FileStorage?topic=FileStorage-news).
+- **10 IOPS por GB** está diseñado para las cargas de trabajo más exigentes, como las creadas por bases de datos NoSQL y el proceso de datos para Analytics. Este nivel está disponible para almacenamiento suministrado de hasta 4 TB solo en [centros de datos seleccionados](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
 
 Hay disponibles hasta 48.000 IOPS con el volumen de Resistencia de 12 TB.
 
@@ -111,7 +111,7 @@ Los volúmenes de rendimiento están diseñados para funcionar constantemente ce
 
 Puede elegir entre facturación por horas o mensual para un volumen de archivos. El tipo de facturación seleccionado para un LUN se aplica a su espacio de instantáneas y réplicas. Por ejemplo, si suministra un LUN con facturación por horas, todas las tasas de instantáneas o réplicas se facturan por horas. Si suministra un LUN con facturación mensual, todas las tasas de instantáneas o réplicas se facturan mensualmente.
 
- * Con la **facturación por horas**, el número de horas que el volumen de archivos ha existido en la cuenta se calcula en el momento en que se suprime el LUN o al final del ciclo de facturación, lo que se produzca primero. La facturación por horas es una buena opción para el almacenamiento que se utiliza unos pocos días o menos de un mes completo. La facturación por horas está disponible para el almacenamiento suministrado solo en [centros de datos seleccionados](/docs/infrastructure/FileStorage?topic=FileStorage-news).
+ * Con la **facturación por horas**, el número de horas que el volumen de archivos ha existido en la cuenta se calcula en el momento en que se suprime el LUN o al final del ciclo de facturación, lo que se produzca primero. La facturación por horas es una buena opción para el almacenamiento que se utiliza unos pocos días o menos de un mes completo. La facturación por horas está disponible para el almacenamiento suministrado solo en [centros de datos seleccionados](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
 
  * Con la **facturación mensual**, el cálculo del precio se prorratea desde la fecha de creación hasta la finalización del ciclo de facturación y se factura al momento. Si un volumen se suprime antes de finalizar el ciclo de facturación, no se reembolsará. La facturación mensual es una buena opción para el almacenamiento utilizado en cargas de trabajo de producción que utilizan datos que tienen que almacenarse, y por tanto acceder a ellos, durante largo periodos de tiempo (un mes o más).
 

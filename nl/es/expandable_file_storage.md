@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, modify volume, NFS, file storage, expand capacity
 
@@ -22,7 +22,7 @@ Con esta nueva característica, los usuarios actuales de {{site.data.keyword.fil
 
 La facturación del volumen se actualizará automáticamente para añadir la diferencia prorrateada del nuevo precio en el ciclo de facturación actual. Entonces, el nuevo importe completo se factura en el siguiente ciclo de facturación.
 
-Esta característica solo está disponible en [centros de datos seleccionados](/docs/infrastructure/FileStorage?topic=FileStorage-news).
+Esta característica solo está disponible en [centros de datos seleccionados](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
 
 ## Ventajas de almacenamiento expandible
 
@@ -37,7 +37,7 @@ La acción de ampliar el almacenamiento primario genera un redimensionamiento au
 ## Limitaciones
 {: #limitsofextension}
 
-Esta característica solo está disponible para el almacenamiento que se suministra en [centros de datos](/docs/infrastructure/FileStorage?topic=FileStorage-news) con funciones ampliadas. El almacenamiento cifrado suministrado en estos centros de datos se puede incrementar hasta 12 TB.
+Esta característica solo está disponible para el almacenamiento que se suministra en [centros de datos](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC) con funciones mejoradas. El almacenamiento cifrado suministrado en estos centros de datos se puede incrementar hasta 12 TB.
 
 Las limitaciones de tamaño actuales para {{site.data.keyword.filestorage_short}} suministrado con Resistencia aún se aplican (hasta 4 TB para IOPS de nivel 10 y hasta 12 TB para los demás niveles).
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, adjusting IOPS, increase IOPS, decrease IOPS, modify IOPS
 
@@ -30,7 +30,7 @@ La facturación del almacenamiento se actualiza para añadir la diferencia prorr
 ## Limitaciones
 {: #limitsofadjustIOPS}
 
-Esta característica solo está disponible en [centros de datos seleccionados](/docs/infrastructure/FileStorage?topic=FileStorage-news).
+Esta característica solo está disponible en [centros de datos seleccionados](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
 
 Los clientes no pueden cambiar entre Resistencia y Rendimiento al ajustar su IOPS. Los usuarios pueden especificar un nuevo nivel de IOPS para su almacenamiento en función de los siguientes criterios y restricciones.
 

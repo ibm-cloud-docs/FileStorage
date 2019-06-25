@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, file storage, NFS, upgrade, migrate to new
 
@@ -18,7 +18,7 @@ subcollection: FileStorage
 # Migración de {{site.data.keyword.filestorage_short}} a {{site.data.keyword.filestorage_short}} mejorado
 {: #migratestorage}
 
-{{site.data.keyword.filestorage_full}} mejorado ya está disponible en determinados centros de datos. Para ver la lista de los centros de datos actualizados y las características disponibles, como tasas de IOPS ajustables y volúmenes ampliables, pulse [aquí](/docs/infrastructure/FileStorage?topic=FileStorage-news). Para obtener más información sobre el cifrado gestionado por el proveedor, consulte [Cifrado en reposo de {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-encryption).
+Ahora {{site.data.keyword.filestorage_full}} mejorado está disponible en la mayoría de los [centros de datos](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
 
 El método de migración recomendado es conectarse a ambos volúmenes simultáneamente y transferir datos directamente desde un LUN a otro. Los detalles dependen de su sistema operativo y de si se espera que los datos cambien durante la operación de copia.
 

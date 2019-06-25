@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-18'"
 
 keywords: File Storage, file storage, NFS, security, encryption
 
@@ -39,7 +39,7 @@ Todas las instantáneas y réplicas de almacenamiento de archivos cifrados tambi
 
 ## Suministro del almacenamiento con cifrado
 
-La característica de cifrado en reposo gestionado por el proveedor está disponible en determinados centros de datos. Todo el almacenamiento que se solicita en estos centros de datos se suministra automáticamente con el cifrado de datos en reposo. Pulse [aquí](/docs/infrastructure/FileStorage?topic=FileStorage-news) para ver la lista actual de los centros de datos donde está disponible el cifrado de {{site.data.keyword.filestorage_short}}.
+La característica de cifrado en reposo gestionado por el proveedor está disponible en [determinados centros de datos](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC). Todo el almacenamiento que se solicita en estos centros de datos se suministra automáticamente con el cifrado de datos en reposo.
 
 Al realizar el pedido de {{site.data.keyword.filestorage_short}}, seleccione un centro de datos marcado con un asterisco (*) (`*`). Puede ver un icono de bloqueo a la derecha del campo Nombre de volumen/LUN, que indica que el volumen está cifrado. Consulte
 la Figura 1.

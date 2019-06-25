@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-03-26"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
@@ -34,12 +34,12 @@ Examine su lista de {{site.data.keyword.filestorage_short}} en el portal de clie
 
 En el formulario de solicitud de {{site.data.keyword.filestorage_short}}, todos los centros de datos actualizados están indicados con un asterisco (`*`). Durante el proceso de solicitud se le indicará que va a suministrar almacenamiento con cifrado. Una vez suministrado el almacenamiento, puede ver un icono en la lista de almacenamiento que muestra que dicho volumen está cifrado.
 
-Todos los volúmenes y comparticiones de archivos cifrados se suministran únicamente en centros de datos actualizados. Puede consultar una lista completa de centros de datos actualizados y características disponibles [aquí](/docs/infrastructure/FileStorage?topic=FileStorage-news).
+Todos los volúmenes y comparticiones de archivos cifrados se suministran únicamente en centros de datos actualizados. Puede consultar una lista completa de centros de datos actualizados y características disponibles [aquí](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
 
 ## ¿Por qué {{site.data.keyword.filestorage_short}} con un nivel 10 de IOPS de Resistencia se puede suministrar en algunos centros de datos y en otros no?
 {: faq}
 
-{{site.data.keyword.filestorage_short}} de tipo Resistencia con nivel 10 IOPS/GB solo está disponible en determinados centros de datos, y pronto se añadirán nuevos centros de datos. Puede consultar una lista completa de centros de datos actualizados y características disponibles [aquí](/docs/infrastructure/FileStorage?topic=FileStorage-news).
+{{site.data.keyword.filestorage_short}} de tipo Resistencia con nivel 10 IOPS/GB solo está disponible en determinados centros de datos, y pronto se añadirán nuevos centros de datos. Puede consultar una lista completa de centros de datos actualizados y características disponibles [aquí](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
 
 ## ¿Cómo puedo encontrar el punto de montaje correcto para mi {{site.data.keyword.filestorage_short}}?
 {: faq}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-05-02"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, file storage, NFS, provisioning, setup, configuration, mounting storage
 
@@ -31,7 +31,7 @@ Los volúmenes de {{site.data.keyword.filestorage_short}} se pueden suministrar 
 - Suministro de niveles de **Resistencia** que presentan niveles de rendimiento predefinidos y otras características como instantáneas y réplica.
 - Crear un entorno de **Rendimiento** de alta potencia con operaciones de entrada/salida asignadas por segundo (IOPS).
 
-Para obtener más información sobre la oferta de {{site.data.keyword.filestorage_short}}, consulta [Acerca de {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-about)
+Para obtener más información sobre la oferta de {{site.data.keyword.filestorage_short}}, consulte [Información sobre {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-about)
 
 ## Consideraciones sobre el suministro
 
@@ -74,7 +74,7 @@ Tanto NFS v3 como NFS v4.1 están soportados en el entorno de {{site.data.keywor
 
 ## Envío de su pedido
 
-Cuando esté listo para enviar el pedido, puede realizarlo a través de la [consola](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole) o de la [SLCLI](/docs/infrastructure/FileStorage?topic=FileStorage-orderingSLCLI). Para suministrar almacenamiento de archivos con VMware, pulse [aquí](/docs/infrastructure/FileStorage?topic=FileStorage-architectureguide)
+Cuando esté listo para enviar el pedido, puede realizarlo mediante la [consola](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole), la [SLCLI](/docs/infrastructure/FileStorage?topic=FileStorage-orderingSLCLI) o la CLI de IBMCLOUD. Para obtener más información sobre el suministro de almacenamiento de archivos para despliegues de VMware, consulte la [guía de arquitectura](/docs/infrastructure/FileStorage?topic=FileStorage-architectureguide).
 
 ## Conexión del nuevo almacenamiento
 {: #mountingstorage}

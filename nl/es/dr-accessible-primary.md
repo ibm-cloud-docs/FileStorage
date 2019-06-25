@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, file storage, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
@@ -51,7 +51,7 @@ Antes de continuar con estos pasos, desconecte el volumen. De lo contrario, dar�
    {:note}
 4. Pulse **Ver todos ({{site.data.keyword.filestorage_short}})**.
 5. Pulse el volumen activo (anteriormente volumen de destino). Este volumen tiene ahora un estado **Activo**.
-6. Monte y conecte el volumen de almacenamiento al host. Pulse [aquí](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole) para obtener instrucciones.
+6. Monte y conecte el volumen de almacenamiento al host. Para obtener más información, consulte [Conexión del nuevo almacenamiento](/docs/infrastructure/FileStorage?topic=FileStorage-getting-started#mountingstorage).
 
 
 ## Inicio de un restablecimiento desde un volumen a su réplica
@@ -76,4 +76,4 @@ Los restablecimientos se inician en **Almacenamiento**, **{{site.data.keyword.fi
    {:note}
 4. En la parte superior derecha, pulse el enlace **Ver todo {{site.data.keyword.filestorage_short}}**.
 5. Pulse el volumen activo ("origen").
-6. Monte y conecte el volumen de almacenamiento al host. Pulse [aquí](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole) para obtener instrucciones.
+6. Monte y conecte el volumen de almacenamiento al host. Para obtener más información, consulte [Conexión del nuevo almacenamiento](/docs/infrastructure/FileStorage?topic=FileStorage-getting-started#mountingstorage).
