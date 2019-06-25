@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, file storage, NFS, snapshots, snapshot schedule, manual snapshot, snapshot space, snapshot quota
 
@@ -158,7 +158,7 @@ Options:
 사용자 오류 또는 데이터 손상으로 인해 스토리지 볼륨을 특정 시점으로 되돌려야 할 수 있습니다.
 
 1. 호스트에서 스토리지 볼륨을 마운트 해제하고 분리하십시오.
-   - 지시사항을 보려면 [여기](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)를 클릭하십시오.
+   - 스토리지 마운트 및 마운트 해제에 관한 자세한 정보는 [새 스토리지 연결](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)을 참조하십시오.
 2. [{{site.data.keyword.cloud}} 콘솔](https://{DomainName}/){: external}로 이동하십시오. 메뉴에서 **클래식 인프라**를 선택하십시오.
 3. **스토리지**, **{{site.data.keyword.filestorage_short}}**를 클릭하십시오.
 4. 아래로 스크롤하여 복원할 볼륨을 클릭하십시오. **세부사항** 페이지의 **스냅샷** 섹션에, 저장된 모든 스냅샷의 목록이 해당 크기 및 작성 날짜와 함께 표시됩니다.
@@ -171,7 +171,7 @@ Options:
    선택된 스냅샷을 사용하여 볼륨이 복원되고 있음을 알리는 메시지가 페이지에 표시됩니다. 또한 활성 트랜잭션이 진행 중임을 나타내는 아이콘이 {{site.data.keyword.filestorage_short}}의 볼륨 옆에 표시됩니다. 아이콘 위로 마우스 커서를 이동하면 트랜잭션을 표시하는 창이 생성됩니다. 일단 트랜잭션이 완료되면 아이콘이 사라집니다.
    {:note}
 7. 스토리지 볼륨을 호스트에 마운트하고 다시 연결하십시오.
-  - 지시사항을 보려면 [여기](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)를 클릭하십시오.
+  - 스토리지 마운트 및 마운트 해제에 관한 자세한 정보는 [새 스토리지 연결](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)을 참조하십시오.
 
 또는 SLCLI를 통해 스냅샷으로 볼륨을 복원할 수 있습니다.
 ```

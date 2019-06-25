@@ -51,7 +51,7 @@ subcollection: FileStorage
 
 ## 보안
 
-암호화된 {{site.data.keyword.filestorage_short}}의 모든 스냅샷 및 복제본도 기본적으로 암호화됩니다. 이 기능은 볼륨 기반으로 끄기가 불가능합니다. 제공자 관리 저장 암호화에 대한 자세한 정보는 [데이터 보안](/docs/infrastructure/FileStorage?topic=FileStorage-encryption)을 참조하십시오.
+암호화된 {{site.data.keyword.filestorage_short}}의 모든 스냅샷 및 복제본도 기본적으로 암호화됩니다. 이 기능은 볼륨 기반으로 끄기가 불가능합니다. 제공자 관리 저장 시 암호화에 대한 자세한 정보는 [데이터 보안](/docs/infrastructure/FileStorage?topic=FileStorage-encryption)을 참조하십시오.
 
 ## 스냅샷이 디스크 영역에 미치는 영향
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, modify volume, NFS, file storage, expand capacity
 
@@ -22,7 +22,7 @@ subcollection: FileStorage
 
 볼륨에 대한 비용 청구는 현재 청구 주기에 새 가격의 일할 계산된 차이를 추가하도록 자동으로 업데이트됩니다. 다음 청구 주기에는 전체 새 금액이 청구됩니다.
 
-이 기능은 [특정 데이터 센터](/docs/infrastructure/FileStorage?topic=FileStorage-news)에서만 사용 가능합니다.
+이 기능은 [데이터 센터 선택](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)에서만 사용 가능합니다.
 
 ## 확장 가능한 스토리지의 장점
 
@@ -37,7 +37,7 @@ subcollection: FileStorage
 ## 제한사항
 {: #limitsofextension}
 
-이 기능은 고급 기능이 있는 [데이터 센터](/docs/infrastructure/FileStorage?topic=FileStorage-news)에서 프로비저닝된 스토리지에만 사용 가능합니다. 이러한 데이터 센터에서 프로비저닝된 암호화된 스토리지는 최대 12TB까지 늘릴 수 있습니다.
+이 기능은 고급 기능이 있는 [데이터 센터](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)에서 프로비저닝된 스토리지에만 사용 가능합니다. 이러한 데이터 센터에서 프로비저닝된 암호화된 스토리지는 최대 12TB까지 늘릴 수 있습니다.
 
 Endurance로 프로비저닝된 {{site.data.keyword.filestorage_short}}에 대한 기존 크기 제한사항은 계속 적용됩니다(10IOPS 계층의 경우 최대 4TB, 기타 모든 계층의 경우 최대 12TB).
 

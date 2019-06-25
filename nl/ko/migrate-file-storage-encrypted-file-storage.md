@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, file storage, NFS, upgrade, migrate to new
 
@@ -18,7 +18,7 @@ subcollection: FileStorage
 # 개선된 {{site.data.keyword.filestorage_short}}로 {{site.data.keyword.filestorage_short}} 마이그레이션
 {: #migratestorage}
 
-개선된 {{site.data.keyword.filestorage_full}}는 특정 데이터 센터에서만 사용 가능합니다. 조정 가능한 IOPS 비율 및 확장 가능한 볼륨과 같은 사용 가능한 기능 및 업그레이드된 데이터 센터의 목록을 보려면 [여기](/docs/infrastructure/FileStorage?topic=FileStorage-news)를 클릭하십시오. 제공자 관리 암호화에 관한 자세한 정보는 [{{site.data.keyword.filestorage_short}} 저장 암호화](/docs/infrastructure/FileStorage?topic=FileStorage-encryption)를 참조하십시오.
+고급 {{site.data.keyword.filestorage_full}}는 이제 대부분의 [데이터 센터](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)에서 사용할 수 있습니다.
 
 선호되는 마이그레이션 경로는 두 볼륨을 동시에 연결하고 하나의 LUN에서 다른 LUN으로 직접 데이터를 전송하는 것입니다. 세부사항은 사용자의 운영 체제와 복사 오퍼레이션 중에 데이터 변경이 예상되는지 여부에 따라 다릅니다.
 
@@ -37,7 +37,7 @@ subcollection: FileStorage
 API에서 주문하는 경우에는 새 스토리지의 업데이트된 기능을 받을 수 있도록 "SaaS(Storage as a Service)" 패키지를 지정하십시오.
 {:important}
 
-{{site.data.keyword.cloud}} 카탈로그를 통해 개선된 LUN을 주문할 수 있습니다. 새 볼륨은 마이그레이션을 수행하기 위해 원본 파일 공유 크기 이상이어야 합니다.
+{{site.data.keyword.cloud}} 카탈로그를 통해 고급 LUN을 주문할 수 있습니다. 새 볼륨은 마이그레이션을 수행하기 위해 원본 파일 공유 크기 이상이어야 합니다.
 
 - [사전 정의된 IOPS 티어(Endurance)가 있는 {{site.data.keyword.filestorage_short}} 주문](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#endurance)
 - [사용자 정의 IOPS(Performance)가 있는 {{site.data.keyword.filestorage_short}} 주문](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#performance)

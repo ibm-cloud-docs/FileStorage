@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, adjusting IOPS, increase IOPS, decrease IOPS, modify IOPS
 
@@ -30,7 +30,7 @@ subcollection: FileStorage
 ## 제한사항
 {: #limitsofadjustIOPS}
 
-이 기능은 [특정 데이터 센터](/docs/infrastructure/FileStorage?topic=FileStorage-news)에서만 사용 가능합니다.
+이 기능은 [데이터 센터 선택](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)에서만 사용 가능합니다.
 
 클라이언트는 자체 IOPS를 조정할 때 Endurance와 Performance 간에 전환할 수 없습니다. 사용자는 다음의 기준 및 제한사항을 기반으로 스토리지에 대해 새 IOPS 계층 또는 IOPS 레벨을 지정할 수 있습니다.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, file storage, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
@@ -51,7 +51,7 @@ subcollection: FileStorage
    {:note}
 4. **모두 보기({{site.data.keyword.filestorage_short}})**를 클릭하십시오.
 5. 활성 볼륨(이전 대상 볼륨)을 클릭하십시오. 이제는 이 볼륨의 상태가 **활성**입니다.
-6. 스토리지 볼륨을 호스트에 마운트하고 이에 연결하십시오. 지시사항을 보려면 [여기](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)를 클릭하십시오.
+6. 스토리지 볼륨을 호스트에 마운트하고 이에 연결하십시오. 자세한 정보는 [새 스토리지에 연결](/docs/infrastructure/FileStorage?topic=FileStorage-getting-started#mountingstorage)을 참조하십시오.
 
 
 ## 볼륨에서 해당 복제본으로 장애 조치 시작
@@ -76,4 +76,4 @@ subcollection: FileStorage
    {:note}
 4. 오른쪽 상단에서 **모든 {{site.data.keyword.filestorage_short}} 보기** 링크를 클릭하십시오.
 5. 활성 볼륨("소스")을 클릭하십시오.
-6. 스토리지 볼륨을 호스트에 마운트하고 이에 연결하십시오. 지시사항을 보려면 [여기](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)를 클릭하십시오.
+6. 스토리지 볼륨을 호스트에 마운트하고 이에 연결하십시오. 자세한 정보는 [새 스토리지에 연결](/docs/infrastructure/FileStorage?topic=FileStorage-getting-started#mountingstorage)을 참조하십시오.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, file storage, NFS, duplicate volume
 
@@ -29,7 +29,7 @@ subcollection: FileStorage
 
 복제 볼륨은 스토리지가 프로비저닝되는 순간 읽기/쓰기를 위해 호스트에 의해 액세스될 수 있습니다. 그러나 스냅샷 및 복제는 원본에서 복제본으로 데이터 복사가 완료될 때까지 허용되지 않습니다. 데이터 복사가 완료되면 복제본을 독립적인 볼륨으로서 관리하고 사용할 수 있습니다.
 
-이 기능은 대부분의 위치에서 사용 가능합니다. 사용 가능한 데이터 센터의 목록을 보려면 [여기](/docs/infrastructure/FileStorage?topic=FileStorage-news)를 클릭하십시오.
+이 기능은 대부분의 [위치](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)에서 사용할 수 있습니다.
 
 다음은 중복 볼륨의 일반적인 용도를 보여주는 몇 가지 예입니다.
 - **재해 복구 테스트**. 복제를 인터럽트하지 않으면서, 복제본 볼륨의 복제를 작성하여 재해가 발생하는 경우에도 데이터가 온전하며 사용 가능한지 확인합니다.

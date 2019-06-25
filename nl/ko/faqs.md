@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-03-26"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
@@ -34,12 +34,12 @@ subcollection: FileStorage
 
 업그레이드된 모든 데이터 센터가 {{site.data.keyword.filestorage_short}} 주문 양식에 별표(`*`)와 함께 표기됩니다. 주문 프로세스 중에 암호화를 사용하는 스토리지를 프로비저닝한다고 표시됩니다. 스토리지가 프로비저닝되면 스토리지 목록에 해당 볼륨이 암호화되었음을 나타내는 아이콘이 표시됩니다.
 
-모든 암호화된 볼륨 및 파일 공유는 업그레이드된 데이터 센터에서만 프로비저닝됩니다. 사용 가능한 기능 및 업그레이드된 데이터 센터의 전체 목록은 [여기서](/docs/infrastructure/FileStorage?topic=FileStorage-news) 찾을 수 있습니다.
+모든 암호화된 볼륨 및 파일 공유는 업그레이드된 데이터 센터에서만 프로비저닝됩니다. 사용 가능한 기능 및 업그레이드된 데이터 센터의 전체 목록은 [여기서](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC) 찾을 수 있습니다.
 
-## Endurance 10IOPS 계층의 {{site.data.keyword.filestorage_short}}를 특정 데이터 센터에서만 프로비저닝할 수 있는 이유는 무엇입니까?
+## Endurance 10IOPS 계층의 {{site.data.keyword.filestorage_short}}를 데이터 센터 선택에서만 프로비저닝할 수 있는 이유는 무엇입니까?
 {: faq}
 
-{{site.data.keyword.filestorage_short}} Endurance 유형 10IOPS/GB 계층은 특정 데이터 센터에서만 사용 가능하며, 새 데이터 센터가 곧 추가될 예정입니다. 사용 가능한 기능 및 업그레이드된 데이터 센터의 전체 목록은 [여기서](/docs/infrastructure/FileStorage?topic=FileStorage-news) 찾을 수 있습니다.
+{{site.data.keyword.filestorage_short}} Endurance 유형 10IOPS/GB 계층은 데이터 센터 선택에서만 사용 가능하며, 새 데이터 센터가 곧 추가될 예정입니다. 사용 가능한 기능 및 업그레이드된 데이터 센터의 전체 목록은 [여기서](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC) 찾을 수 있습니다.
 
 ## 내 {{site.data.keyword.filestorage_short}}의 올바른 마운트 지점을 찾는 방법은 무엇입니까?
 {: faq}

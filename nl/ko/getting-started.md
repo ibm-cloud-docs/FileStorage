@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-05-02"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, file storage, NFS, provisioning, setup, configuration, mounting storage
 
@@ -30,7 +30,7 @@ subcollection: FileStorage
 - 사전 정의된 성능 레벨 및 기타 기능(스냅샷 및 복제 등)을 제공하는 **Endurance** 계층으로 프로비저닝합니다.
 - 할당된 IOPS(Input/Output Operations Per Second)의 고성능 **Performance** 환경을 빌드합니다.
 
-{{site.data.keyword.filestorage_short}} 오퍼링에 대한 자세한 정보는 [{{site.data.keyword.filestorage_short}} 정보](/docs/infrastructure/FileStorage?topic=FileStorage-about)를 참조하십시오.
+{{site.data.keyword.filestorage_short}} 오퍼링에 대한 자세한 정보는 [{{site.data.keyword.filestorage_short}}에 관해 알아보기](/docs/infrastructure/FileStorage?topic=FileStorage-about)를 참조하십시오.
 
 ## 프로비저닝 고려사항
 
@@ -73,7 +73,7 @@ NFS v3 및 NFS v4.1 모두는 {{site.data.keyword.cloud}} 환경에서 지원됩
 
 ## 주문 제출
 
-주문을 제출할 준비가 되면 [콘솔](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)이나 [SLCLI](/docs/infrastructure/FileStorage?topic=FileStorage-orderingSLCLI)를 통해 주문을 제출하십시오. VMware에서의 File Storage 프로비저닝의 경우에는 [여기](/docs/infrastructure/FileStorage?topic=FileStorage-architectureguide)를 클릭하십시오.
+주문을 제출할 준비가 되면 [콘솔](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole), [SLCLI](/docs/infrastructure/FileStorage?topic=FileStorage-orderingSLCLI) 또는 IBMCLOUD CLI를 통해 주문을 제출하십시오. File Storage for VMware 배치를 프로비저닝하는 데 관한 자세한 정보는 [아키텍처 안내서](/docs/infrastructure/FileStorage?topic=FileStorage-architectureguide)를 참조하십시오.
 
 ## 새 스토리지 연결
 {: #mountingstorage}

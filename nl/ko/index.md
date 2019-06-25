@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-07"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, Endurance, Performance, IOPS, replication, billing, file storage, NFS,
 
@@ -20,7 +20,7 @@ subcollection: FileStorage
 # {{site.data.keyword.filestorage_short}}에 대해 알아보기
 {: #about}
 
-{{site.data.keyword.cloud}} {{site.data.keyword.filestorage_short}}는 지속적이고 빠르며 유연한 네트워크 연결, NFS 기반 {{site.data.keyword.filestorage_short}}입니다. 이 NAS(Network-Attached Storage) 환경에서 사용자는 파일 공유 기능과 성능을 전체적으로 제어할 수 있습니다. {{site.data.keyword.filestorage_short}} 공유는 복원성을 위해 라우트된 TCP/IP 연결 상에서 최대 64개의 권한 부여된 디바이스에 연결될 수 있습니다.
+{{site.data.keyword.filestorage_full}}는 지속적이고 빠르며 유연한 네트워크 연결, NFS 기반 {{site.data.keyword.filestorage_short}}입니다. 이 NAS(Network-Attached Storage) 환경에서 사용자는 파일 공유 기능과 성능을 전체적으로 제어할 수 있습니다. {{site.data.keyword.filestorage_short}} 공유는 복원성을 위해 라우트된 TCP/IP 연결 상에서 최대 64개의 권한 부여된 디바이스에 연결될 수 있습니다.
 {:shortdesc}
 
 ## 기능
@@ -36,14 +36,14 @@ subcollection: FileStorage
    - 파일 기반 NFS 공유에 대해 사용 가능합니다.
 - **높은 내구성 및 복원성**
    - 운영 체제 레벨 RAID(Redundant Array of Independent Disk) 어레이를 작성하고 관리하지 않고도 유지보수 이벤트 및 예기치 않은 장애 발생 상황에서 데이터 무결성을 보호하고 가용성을 유지합니다.
-- **저장 데이터 암호화** [(특정 데이터 센터에서 사용 가능함)](/docs/infrastructure/FileStorage?topic=FileStorage-news)
+- **저장 데이터 암호화** [(데이터 센터 선택에서 사용 가능함)](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)
    - 저장 데이터에 대한 제공자 관리 암호화가 추가 비용 없이 제공됩니다.
-- **모든 플래시 지원 스토리지** [(특정 데이터 센터에서 사용 가능함)](/docs/infrastructure/FileStorage?topic=FileStorage-news)
+- **모든 플래시 지원 스토리지** [(데이터 센터 선택에서 사용 가능함)](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)
    - 볼륨에 대한 모든 플래시 스토리지를 2IOPS/GB 이상 레벨에서 프로비저닝할 수 있습니다.
-- **스냅샷** [(특정 데이터 센터에서 사용 가능함)](/docs/infrastructure/FileStorage?topic=FileStorage-news).
+- **스냅샷** [(데이터 센터 선택에서 사용 가능함)](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
    - 작업을 방해하지 않으면서 특정 시점의 데이터 스냅샷을 캡처합니다.
-- **복제** [(특정 데이터 센터에서 사용 가능함)](/docs/infrastructure/FileStorage?topic=FileStorage-news)
-   - 스토리지가 [특정 데이터 센터](/docs/infrastructure/FileStorage?topic=FileStorage-news)에서 프로비저닝되는 경우 사용 가능합니다.
+- **복제**  [(데이터 센터 선택에서 사용 가능함).](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)
+   - 스토리지가 [데이터 센터 선택](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)에서 프로비저닝되는 경우 사용 가능합니다.
    - 스냅샷을 파트너 {{site.data.keyword.cloud}} 데이터 센터에 자동으로 복사합니다.
 - **고가용성 연결**
    - 가용성을 최대화하기 위해 중복 네트워킹 연결을 사용합니다.
@@ -71,7 +71,7 @@ Endurance {{site.data.keyword.filestorage_short}}는 다양한 애플리케이�
 
 - **4IOPS/GB**는 집약도가 높은 워크로드용으로 설계되었습니다. 이러한 워크로드는 일반적으로 대부분의 시간 동안 활성 상태인 데이터를 많이 보유하는 것이 특성입니다. 적용되는 예에는 트랜잭션 및 기타 성능에 민감한 데이터베이스가 포함되어 있습니다.
 
-- **10IOPS/GB**는 가장 수요가 많은 워크로드(예: NoSQL 데이터베이스에서 생성된 워크로드) 및 분석을 위한 데이터 처리용으로 설계되었습니다. 이 계층은 [특정 데이터 센터](/docs/infrastructure/FileStorage?topic=FileStorage-news)에서 최대 4TB 크기로 프로비저닝된 스토리지에 대해서만 사용 가능합니다.
+- **10IOPS/GB**는 가장 수요가 많은 워크로드(예: NoSQL 데이터베이스에서 생성된 워크로드) 및 분석을 위한 데이터 처리용으로 설계되었습니다. 이 계층은 [데이터 센터 선택](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)에서 최대 4TB 크기로 프로비저닝된 스토리지에 대해서만 사용 가능합니다.
 
 12TB Endurance 볼륨으로 최대 48,000IOPS까지 사용 가능합니다.
 
@@ -102,7 +102,7 @@ Performance는 Endurance 계층에는 잘 맞지 않는 잘 파악된 성능 요
 {: summary="Table 1 is showing the possible minimum and maximum IOPS rates based of the volume size. This table has row and column headers. The row headers identify the volume size range. The column headers identify the minimum and maximum IOPS levels. To understand what IOPS rates you can expect from your Storage, navigate to the row and review the two options."}
 
 
-![각주](/images/numberone.png) *6,000보다 큰 IOPS 한계는 특정 데이터 센터에서 사용 가능합니다.*
+![각주](/images/numberone.png) *6,000보다 큰 IOPS 한계는 데이터 센터 선택에서 사용 가능합니다.*
 
 Performance 볼륨은 일관적으로 프로비저닝된 IOPS 레벨에 가깝게 작동하도록 디자인되었습니다. 일관성은 애플리케이션 환경을 특정 성능 레벨로 크기 조정하고 스케일링하기 쉽게 해 줍니다. 또한 이상적인 가성비로 볼륨을 빌드하여 환경을 최적화할 수 있게 해 줍니다.
 
@@ -110,7 +110,7 @@ Performance 볼륨은 일관적으로 프로비저닝된 IOPS 레벨에 가깝�
 
 파일 볼륨에 대해 시간별 또는 월별 청구를 선택할 수 있습니다. LUN에 대해 선택된 비용 청구 유형은 해당 스냅샷 영역 및 복제본에 적용됩니다. 예를 들어, 시간별 청구로 LUN을 프로비저닝하는 경우 스냅샷 또는 복제본 비용은 시간별로 청구됩니다. 월별 청구로 LUN을 프로비저닝하는 경우에는 스냅샷 또는 복제본 비용이 월별로 청구됩니다.
 
- * **시간별 청구**에서 파일 볼륨이 계정에 존재한 시간은 LUN이 삭제된 시점이나 청구 주기가 끝난 시점(둘 중에서 먼저 발생하는 시점)에 계산됩니다. 시간별 스토리지는 수 일간 또는 한달 이내에 사용되는 스토리지에 좋은 선택사항입니다. 시간별 청구는 [특정 데이터 센터](/docs/infrastructure/FileStorage?topic=FileStorage-news)에서 프로비저닝된 스토리지에만 사용 가능합니다.
+ * **시간별 청구**에서 파일 볼륨이 계정에 존재한 시간은 LUN이 삭제된 시점이나 청구 주기가 끝난 시점(둘 중에서 먼저 발생하는 시점)에 계산됩니다. 시간별 스토리지는 수 일간 또는 한달 이내에 사용되는 스토리지에 좋은 선택사항입니다. 시간별 청구는 [데이터 센터 선택](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)에서 프로비저닝된 스토리지에만 사용 가능합니다.
 
  * **월별 청구**에서, 가격에 대한 계산은 작성 날짜로부터 청구 주기의 끝까지 비례 배분되며 즉각적으로 청구됩니다. 볼륨이 청구 주기가 끝나기 전에 삭제된 경우에는 환불이 되지 않습니다. 월별 청구는 장기간(한달 이상) 저장하고 액세스해야 하는 데이터를 사용하는 프로덕션 워크로드에서 사용되는 스토리지에 대해 좋은 선택사항입니다.
 
