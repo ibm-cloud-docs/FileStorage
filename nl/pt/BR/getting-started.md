@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-05-02"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, file storage, NFS, provisioning, setup, configuration, mounting storage
 
@@ -17,7 +17,7 @@ subcollection: FileStorage
  {:shortdesc: .shortdesc}
 
 
-# Tutorial de introdução
+# Tutorial de Introdução
 {: #getting-started}
 
 O {{site.data.keyword.filestorage_full}} é um {{site.data.keyword.filestorage_short}} baseado em NFS persistente, rápido e flexível, conectado à rede. Nesse ambiente de armazenamento conectado à rede (NAS), você tem controle total sobre sua função de compartilhamentos de arquivo e sobre o desempenho. Os compartilhamentos do {{site.data.keyword.filestorage_short}} podem ser conectados a até 64 dispositivos autorizados sobre conexões TCP/IP roteadas para resiliência.
@@ -30,7 +30,7 @@ Os volumes do {{site.data.keyword.filestorage_short}} podem ser fornecidos de 20
 - Provisiona camadas do **Endurance** que apresentam níveis de desempenho predefinidos e outros recursos, como capturas instantâneas e replicação.
 - Construa um ambiente **Performance** de alta potência com input/output operations per second (IOPS) alocado.
 
-Para obter mais informações sobre a oferta do {{site.data.keyword.filestorage_short}}, consulte [Sobre o {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-about)
+Para obter mais informações sobre a oferta do {{site.data.keyword.filestorage_short}}, consulte [Saiba mais sobre o {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-about)
 
 ## Considerações de fornecimento
 
@@ -73,8 +73,7 @@ O NFS v3 e NFS v4.1 são suportados no ambiente do {{site.data.keyword.cloud}}. 
 
 ## Enviando sua Ordem
 
-Quando você estiver pronto para enviar seu pedido, poderá fazer isso por meio
-do [Console](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole) ou da [SLCLI](/docs/infrastructure/FileStorage?topic=FileStorage-orderingSLCLI). Para ver Provisionando o File Storage com o VMware, clique [aqui](/docs/infrastructure/FileStorage?topic=FileStorage-architectureguide)
+Quando você estiver pronto para enviar seu pedido, será possível fazê-lo por meio do [Console](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole), do [SLCLI](/docs/infrastructure/FileStorage?topic=FileStorage-orderingSLCLI) ou da CLI do IBMCLOUD. Para obter mais informações sobre o fornecimento de implementações do File Storage for VMware, consulte o [Guia de arquitetura](/docs/infrastructure/FileStorage?topic=FileStorage-architectureguide).
 
 ## Conectando seu novo armazenamento
 {: #mountingstorage}

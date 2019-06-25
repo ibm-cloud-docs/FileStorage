@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, file storage, NFS, duplicate volume
 
@@ -31,7 +31,7 @@ Se você for um usuário da conta Dedicada do {{site.data.keyword.containerlong}
 
 Os volumes duplicados podem ser acessados por um host para leitura/gravação assim que o armazenamento é provisionado. No entanto, capturas instantâneas e replicação não são permitidas até que a cópia de dados do original para a duplicata seja concluída. Quando a cópia de dados for concluída, a duplicata poderá ser gerenciada e usada como um volume independente.
 
-Esse recurso está disponível na maioria dos locais. Clique [aqui](/docs/infrastructure/FileStorage?topic=FileStorage-news) para obter a lista de data centers disponíveis.
+Esse recurso está disponível na maioria dos [locais](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
 
 Alguns usos comuns para um volume duplicado incluem os exemplos a seguir.
 - **Teste de recuperação de desastre**. Crie uma duplicata de seu volume de réplica para verificar se os dados estão intactos e podem ser usados caso ocorra um desastre, sem interromper a replicação.

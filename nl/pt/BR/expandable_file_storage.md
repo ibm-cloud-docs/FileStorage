@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, modify volume, NFS, file storage, expand capacity
 
@@ -22,7 +22,7 @@ Com esse novo recurso, os usuários atuais do {{site.data.keyword.filestorage_fu
 
 O faturamento para o volume é atualizado automaticamente para incluir a diferença rateada do novo preço no ciclo de faturamento atual. Então, a nova quantia integral será faturada no próximo ciclo de faturamento.
 
-Esse recurso está disponível somente nos [data centers de seleção](/docs/infrastructure/FileStorage?topic=FileStorage-news).
+Esse recurso está disponível somente nos [data centers de seleção](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
 
 ## Vantagens de Armazenamento Expandível
 
@@ -37,7 +37,7 @@ A ação de expansão no armazenamento primário resulta no redimensionamento au
 ## Limitações
 {: #limitsofextension}
 
-Esse recurso está disponível somente para armazenamento que é provisionado em [data centers](/docs/infrastructure/FileStorage?topic=FileStorage-news) com recursos aprimorados. O armazenamento criptografado provisionado nesses data centers pode ser aumentado em até 12 TB.
+Esse recurso está disponível somente para armazenamento que é provisionado em [data centers](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC) com recursos aprimorados. O armazenamento criptografado provisionado nesses data centers pode ser aumentado em até 12 TB.
 
 As limitações de tamanho existentes para o {{site.data.keyword.filestorage_short}} que foram provisionadas com o Endurance ainda se aplicam (até 4 TB para a camada de 10 IOPS e até 12 TB para todas as outras camadas).
 

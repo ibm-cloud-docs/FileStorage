@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, file storage, NFS, snapshots, snapshot schedule, manual snapshot, snapshot space, snapshot quota
 
@@ -159,7 +159,7 @@ As capturas instantâneas manuais que não são excluídas manualmente no portal
 Talvez seja necessário retornar o seu volume de armazenamento para um momento específico devido a um erro do usuário ou a uma distorção de dados.
 
 1. Desmonte e separe seu volume de armazenamento do host.
-   - Clique [aqui](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux) para obter instruções.
+   - Para obter mais informações sobre montagem e desmontagem do armazenamento, consulte [Conectando seu novo armazenamento](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux).
 2. Acesse o [console do {{site.data.keyword.cloud}}](https://{DomainName}/){: external}. No menu, selecione **Infraestrutura clássica**.
 3. Clique em **Armazenamento**, **{{site.data.keyword.filestorage_short}}**.
 4. Role para baixo e clique em seu volume a ser restaurado. A seção **Capturas instantâneas** da página **Detalhes** exibe a lista de todas as capturas instantâneas salvas juntamente com seu tamanho e data de criação.
@@ -172,7 +172,7 @@ Talvez seja necessário retornar o seu volume de armazenamento para um momento e
    Espere uma mensagem na página indicando que o volume está sendo restaurado usando a captura instantânea selecionada. Além disso, aparece um ícone próximo ao seu volume no {{site.data.keyword.filestorage_short}} indicando que uma transação ativa está em andamento. Passar o mouse sobre o ícone produz uma janela que mostra a transação. O ícone desaparece quando a transação está concluída.
    {:note}
 7. Monte e reconecte seu volume de armazenamento ao host.
-  - Clique [aqui](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux) para obter instruções.
+  - Para obter mais informações sobre montagem e desmontagem do armazenamento, consulte [Conectando seu novo armazenamento](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux).
 
 Como alternativa, é possível restaurar o volume com uma captura instantânea por meio do SLCLI.
 ```

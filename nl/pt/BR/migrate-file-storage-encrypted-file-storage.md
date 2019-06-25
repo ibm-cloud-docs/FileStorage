@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, file storage, NFS, upgrade, migrate to new
 
@@ -18,7 +18,7 @@ subcollection: FileStorage
 # Migrando o {{site.data.keyword.filestorage_short}} para o {{site.data.keyword.filestorage_short}} aprimorado
 {: #migratestorage}
 
-O {{site.data.keyword.filestorage_full}} aprimorado está agora disponível nos data centers selecionados. Para ver a lista de data centers submetidos a upgrade e recursos disponíveis, como taxas de IOPS ajustáveis e volumes expansíveis, clique [aqui](/docs/infrastructure/FileStorage?topic=FileStorage-news). Para obter mais informações sobre criptografia gerenciada pelo provedor, consulte [Criptografia em repouso do {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-encryption).
+O {{site.data.keyword.filestorage_full}} aprimorado está disponível agora na maioria dos [data centers](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
 
 O caminho de migração preferencial é se conectar a ambos os volumes simultaneamente e transferir dados via NFS diretamente de um LUN para outro. Os detalhes dependerão de seu sistema operacional e se os dados são esperados mudar durante a operação de cópia.
 
@@ -37,7 +37,7 @@ Todos os volumes aprimorados do {{site.data.keyword.filestorage_short}} provisio
 Ao fazer um pedido com a API, especifique o pacote "Armazenamento como um serviço" para assegurar-se de que esteja obtendo os recursos atualizados com seu novo armazenamento.
 {:important}
 
-É possível solicitar um LUN aprimorado por meio do catálogo do {{site.data.keyword.cloud}}. Seu novo volume deve ter o mesmo tamanho ou ser maior que o compartilhamento de arquivo original para facilitar a migração.
+É possível solicitar um LUN aprimorado por meio do catálogo {{site.data.keyword.cloud}}. Seu novo volume deve ter o mesmo tamanho ou ser maior que o compartilhamento de arquivo original para facilitar a migração.
 
 - [Pedindo o {{site.data.keyword.filestorage_short}} com camadas IOPS predefinidas (Endurance)](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#endurance)
 - [Pedindo o {{site.data.keyword.filestorage_short}} com IOPS customizado (Performance)](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#performance)

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-06-18'"
 
 keywords: File Storage, file storage, NFS, security, encryption
 
@@ -40,7 +40,7 @@ Todas as capturas instantâneas e réplicas de armazenamento de arquivo criptogr
 
 ## Provisionando armazenamento com criptografia
 
-O recurso de criptografia em repouso gerenciado pelo provedor está disponível em data centers selecionados. Todo o armazenamento pedido nesses data centers é provisionado automaticamente com criptografia para dados em repouso. Clique [aqui](/docs/infrastructure/FileStorage?topic=FileStorage-news) para ver a lista atual de data centers nos quais a criptografia do {{site.data.keyword.filestorage_short}} está disponível.
+O recurso de criptografia em repouso gerenciado pelo provedor está disponível em [Data centers selecionados](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC). Todo o armazenamento pedido nesses data centers é provisionado automaticamente com criptografia para dados em repouso.
 
 Ao pedir o {{site.data.keyword.filestorage_short}}, selecione um data center que esteja marcado com um asterisco (`*`). É possível ver um ícone de bloqueio à direita do campo Nome do LUN/Volume que indica que o volume está criptografado. Veja a Figura 1.
 

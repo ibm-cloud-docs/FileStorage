@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-03-26"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
@@ -34,12 +34,12 @@ O {{site.data.keyword.filestorage_short}} que foi provisionado antes de um upgra
 
 No formulário de pedido do {{site.data.keyword.filestorage_short}}, todos os data centers submetidos a upgrade são denotados com um asterisco (`*`). Durante o processo de pedido, você recebe uma indicação de que está provisionando armazenamento com criptografia. Quando o armazenamento é provisionado, é possível ver um ícone na lista de armazenamento que mostra esse volume como criptografado.
 
-Todos os volumes criptografados e os compartilhamentos de arquivo são provisionados somente em data centers submetidos a upgrade. É possível localizar uma lista completa de data centers submetidos a upgrade e recursos disponíveis [aqui](/docs/infrastructure/FileStorage?topic=FileStorage-news).
+Todos os volumes criptografados e os compartilhamentos de arquivo são provisionados somente em data centers submetidos a upgrade. É possível localizar uma lista completa de data centers submetidos a upgrade e recursos disponíveis [aqui](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
 
 ## Por que o {{site.data.keyword.filestorage_short}} com uma camada de 10 IOPS do Endurance é provisionado em alguns data centers e em outros não?
 {: faq}
 
-A camada de 10 IOPS/GB do tipo Endurance do {{site.data.keyword.filestorage_short}} está disponível somente em data centers selecionados e novos data centers serão incluídos em breve. É possível localizar uma lista completa de data centers submetidos a upgrade e recursos disponíveis [aqui](/docs/infrastructure/FileStorage?topic=FileStorage-news).
+A camada de 10 IOPS/GB do tipo Endurance do {{site.data.keyword.filestorage_short}} está disponível somente em data centers selecionados e novos data centers serão incluídos em breve. É possível localizar uma lista completa de data centers submetidos a upgrade e recursos disponíveis [aqui](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
 
 ## Como posso localizar o ponto de montagem correto para o meu {{site.data.keyword.filestorage_short}}?
 {: faq}

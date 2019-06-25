@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, file storage, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
@@ -51,7 +51,7 @@ Antes de continuar com essas etapas, desconecte o volume. Caso não o faça, iss
    {:note}
 4. Clique em **Visualizar todos ({{site.data.keyword.filestorage_short}})**.
 5. Clique no volume ativo (anteriormente seu volume de destino). Esse volume agora tem um status **Ativo**.
-6. Montar e anexar seu volume de armazenamento ao host. Clique [aqui](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole) para obter instruções.
+6. Montar e anexar seu volume de armazenamento ao host. Para obter mais informações, consulte [Conectando seu novo armazenamento](/docs/infrastructure/FileStorage?topic=FileStorage-getting-started#mountingstorage).
 
 
 ## Iniciando um failback de um volume para sua réplica
@@ -76,4 +76,4 @@ Os failbacks são iniciados em **Armazenamento**, **{{site.data.keyword.filestor
    {:note}
 4. No canto superior direito, clique em **Visualizar todo o link do {{site.data.keyword.filestorage_short}}**.
 5. Clique em seu volume ativo ("origem").
-6. Montar e anexar seu volume de armazenamento ao host. Clique [aqui](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole) para obter instruções.
+6. Montar e anexar seu volume de armazenamento ao host. Para obter mais informações, consulte [Conectando seu novo armazenamento](/docs/infrastructure/FileStorage?topic=FileStorage-getting-started#mountingstorage).
