@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-07-01"
 
 keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
@@ -139,6 +139,11 @@ NFS v3 natively supports `no_root_squash` that allows root clients to retain roo
 
 When it comes to vSphere Solutions, NFS v3 supports more features than v4.1. Such features include Storage DRS and Site Recovery Manager.
 
+## Can VAAI and HW acceleration be enabled in our VMware deployments?
+{: #isVAAIsupported}
+{: faq}
+
+No. Currently, vStorage for API Array Integration and Hardware acceleration are not supported.
 
 ## What happens to the drives that are decommissioned from the cloud data center?
 {: faq}
