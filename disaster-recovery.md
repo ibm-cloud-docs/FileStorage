@@ -41,7 +41,7 @@ If you want to return production to the original primary site, you must perform 
 
 1. Log in to [The {{site.data.keyword.cloud}} console](https://{DomainName}/){: external} and click the **menu** icon on the upper left. Select **Classic Infrastructure**.
 2. Click **Storage** > **{{site.data.keyword.filestorage_short}}**.
-3. Click the LUN name and create a snapshot schedule (if one does not exist already).
+3. Click the volume name and create a snapshot schedule (if one does not exist already).
 
    For more information about snapshot schedules, see [Managing Snapshots](/docs/infrastructure/FileStorage?topic=FileStorage-managingSnapshots#addschedule).
    {:tip}
@@ -55,7 +55,7 @@ After replication is complete, you need to create a duplicate volume of the new 
 {:important}
 
 1. Go back to **Storage** > **{{site.data.keyword.filestorage_short}}**.
-2. Click the replica of the LUN in the list to view its **Details** page.
+2. Click the replica of the volume in the list to view its **Details** page.
 3. On the **Details** page, scroll down and select an existing snapshot, then click **Actions** > **Duplicate**.
 4. Make any necessary updates to the capacity (to increase size) or IOPs for the new volume.
 5. Update the snapshot space for the new volume if needed.

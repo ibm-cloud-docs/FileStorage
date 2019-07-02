@@ -47,14 +47,14 @@ You can create a duplicate volume through the [{{site.data.keyword.cloud}} conso
 1. Go to your list of {{site.data.keyword.filestorage_short}}
     - From the Classic Infrastructure menu, click **Storage** > **{{site.data.keyword.filestorage_short}}** OR
     - From the {{site.data.keyword.cloud}} catalog, click **Infrastructure** > **Storage** > **{{site.data.keyword.filestorage_short}}**.
-2. Select a LUN from the list and click **Actions** > **Duplicate LUN (Volume)**
+2. Select a volume from the list and click **Actions** > **Duplicate volume (Volume)**
 3. Choose your snapshot option.
     - If you order from a non-replica volume,
       - Select **Create from new snapshot** – this action creates a snapshot to be used for the duplicate. Use this option if your volume doesn't have current snapshots or if you want to create a duplicate right then.</br>
       - Select **Create from latest snapshot** – this action creates a duplicate from the most recent snapshot that exists for this volume.
     - If you order from a replica volume, the only option for snapshot is to use the most recent snapshot available.
 4. Storage Type and Location remain the same as the original volume.
-5. Hourly or Monthly Billing – you can choose to provision the duplicate LUN with hourly or monthly billing. The billing type for the original volume is automatically selected. If you want to choose a different billing type for your duplicate storage, you can make that selection here.
+5. Hourly or Monthly Billing – you can choose to provision the duplicate volume with hourly or monthly billing. The billing type for the original volume is automatically selected. If you want to choose a different billing type for your duplicate storage, you can make that selection here.
 5. You can specify IOPS or IOPS Tier for the new volume if you want to. The IOPS designation of the original volume is set by default. Available Performance and size combinations are displayed.
     - If your original volume is 0.25 IOPS Endurance tier, you can't make a new selection.
     - If your original volume is 2, 4, or 10 IOPS Endurance tier, you can move anywhere between those tiers for the new volume.

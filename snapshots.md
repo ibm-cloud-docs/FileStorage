@@ -39,7 +39,7 @@ You must purchase some amount of snapshot space for your volume first so you can
 ## Snapshot best practices
 
 Snapshot design depends on the customer’s environment. The following design considerations can help you to plan and implement Snapshot copies:
-- Up to 50 snapshots can be created through a schedule and up to 50 manually on each volume or LUN.
+- Up to 50 snapshots can be created through a schedule and up to 50 manually on each volume.
 - Don't over snap. Make sure that your scheduled snapshot frequency meets your RTO and RPO needs and your application business requirements by scheduling hourly, daily, or weekly snapshots.
 - Snapshot AutoDelete can be used to control the growth of storage consumption.
 

@@ -36,7 +36,7 @@ Authorized hosts and volumes must be in the same data center. For example, you c
 
 ## Starting a failover from a volume to its replica
 
-If a failure event occurs, you can start a **failover** to your destination, or target, volume. The target volume becomes active. The last successfully replicated snapshot is activated, and the volume is made available for mounting. Any data that was written to the source volume since the previous replication cycle is lost. When a failover is started, the replication relationship is flipped. Your target volume becomes your source volume, and your former source volume becomes your target as indicated by the **LUN Name** followed by **REP**.
+If a failure event occurs, you can start a **failover** to your destination, or target, volume. The target volume becomes active. The last successfully replicated snapshot is activated, and the volume is made available for mounting. Any data that was written to the source volume since the previous replication cycle is lost. When a failover is started, the replication relationship is flipped. Your target volume becomes your source volume, and your former source volume becomes your target as indicated by the **Volume Name** followed by **REP**.
 
 Failovers are started under **Storage**, **{{site.data.keyword.filestorage_short}}** in the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic){: external}.
 
@@ -47,7 +47,7 @@ Before you proceed with these steps, disconnect the volume. Failure to do so, re
 2. In the upper right, click **Replica** and click **Actions**.
 3. Select **Failover**.
 
-   Expect a message that states that the failover is in progress. Additionally, an icon appears next to your volume on the **{{site.data.keyword.filestorage_short}}** that indicates that an active transaction is occurring. Hovering over the icon produces a window that shows the transaction. The icon disappears when the transaction is complete. During the failover process, configuration-related actions are read-only. You can't edit any snapshot schedule or change snapshot space. The event is logged in replication history.<br/> When your target volume is live, you get another message. Your original source volume's LUN Name updates to end in "REP" and its Status becomes Inactive.
+   Expect a message that states that the failover is in progress. Additionally, an icon appears next to your volume on the **{{site.data.keyword.filestorage_short}}** that indicates that an active transaction is occurring. Hovering over the icon produces a window that shows the transaction. The icon disappears when the transaction is complete. During the failover process, configuration-related actions are read-only. You can't edit any snapshot schedule or change snapshot space. The event is logged in replication history.<br/> When your target volume is live, you get another message. Your original source volume's Volume Name updates to end in "REP" and its Status becomes Inactive.
    {:note}
 4. Click **View All ({{site.data.keyword.filestorage_short}})**.
 5. Click your active volume (formerly your target volume). This volume now has an **Active** status.
@@ -64,7 +64,7 @@ When your original source volume is repaired, you can start a controlled Failbac
 - The just-taken data snapshot is activated,
 - And the source volume becomes active for mounting.
 
-When a Failback is started, the replication relationship is flipped again. Your source volume is restored as your source volume, and your target volume is the target volume again as indicated by the **LUN Name** followed by **REP**.
+When a Failback is started, the replication relationship is flipped again. Your source volume is restored as your source volume, and your target volume is the target volume again as indicated by the **Volume Name** followed by **REP**.
 
 Failbacks are started under **Storage**, **{{site.data.keyword.filestorage_short}}** in the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic){: external}.
 
@@ -74,6 +74,6 @@ Failbacks are started under **Storage**, **{{site.data.keyword.filestorage_short
 
    Expect a message that shows the failover is in progress. Additionally, an icon appears next to your volume on the **{{site.data.keyword.filestorage_short}}** that indicates that an active transaction is occurring. Hovering over the icon produces a window that shows the transaction. The icon disappears when the transaction is complete. During the Failback process, configuration-related actions are read-only. You can't edit any snapshot schedule or change snapshot space. The event is logged in replication history.
    {:note}
-4. In the upper right, click **View All {{site.data.keyword.filestorage_short}}** link.
+4. In the upper right, click **View All {{site.data.keyword.filestorage_short}}**.
 5. Click your active volume ("source").
 6. Mount and attach your storage volume to the host. For more information, see [connecting your new storage](/docs/infrastructure/FileStorage?topic=FileStorage-getting-started#mountingstorage).
