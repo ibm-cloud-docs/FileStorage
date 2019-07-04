@@ -20,15 +20,15 @@ subcollection: FileStorage
 
 拡張 {{site.data.keyword.filestorage_full}} はほとんどの [データ・センター](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)で利用できるようになりました。
 
-お勧めするマイグレーション・パスは、両方のボリュームに同時に接続して LUN 間で直接データを転送する方法です。 具体的な手順は、オペレーティング・システムと、コピー操作中にデータ変更が行われるかどうかによって異なります。
+お勧めするマイグレーション・パスは、両方のボリュームに同時に接続してボリューム間で直接データを転送する方法です。具体的な手順は、オペレーティング・システムと、コピー操作中にデータ変更が行われるかどうかによって異なります。
 
-ホストに非暗号化 LUN が既に接続されていることを想定しています。 接続されていない場合は、以下の説明のうち、ご使用のオペレーティング・システムに最も該当する説明に従って、このタスクを実行してください。
+ホストに非暗号化ボリュームが既に接続されていることを想定しています。接続されていない場合は、以下の説明のうち、ご使用のオペレーティング・システムに最も該当する説明に従って、このタスクを実行してください。
 
 - [Linux への{{site.data.keyword.filestorage_short}}のマウント](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)
 - [CentOS への{{site.data.keyword.filestorage_short}}のマウント](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)
 - [CoreOS への{{site.data.keyword.filestorage_short}}のマウント](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCoreOS)
 
-これらのデータ・センターでプロビジョンされる拡張{{site.data.keyword.filestorage_short}}・ボリュームはすべて、非暗号化ボリュームとは異なるマウント・ポイントになります。 両方のストレージ・ボリュームに正しいマウント・ポイントを使用するために、コンソールの**「ボリュームの詳細 (Volume Details)」**ページでマウント・ポイント情報を確認することができます。 API 呼び出し `SoftLayer_Network_Storage::getNetworkMountAddress()` を使用して正しいマウント・ポイントを取得することもできます。
+これらのデータ・センターでプロビジョンされる拡張 {{site.data.keyword.filestorage_short}} ボリュームはすべて、非暗号化ボリュームとは異なるマウント・ポイントになります。 両方のストレージ・ボリュームに正しいマウント・ポイントを使用するために、コンソールの**「ボリュームの詳細 (Volume Details)」**ページでマウント・ポイント情報を確認することができます。 API 呼び出し `SoftLayer_Network_Storage::getNetworkMountAddress()` を使用して正しいマウント・ポイントを取得することもできます。
 {:tip}
 
 
@@ -37,7 +37,7 @@ subcollection: FileStorage
 API を使用して注文する場合は、「Storage as a Service」パッケージを指定して、更新済みの機能を新規ストレージと一緒に取得してください。
 {:important}
 
-拡張された LUN は、{{site.data.keyword.cloud}} カタログを通じて注文できます。簡単にマイグレーションできるようにするには、新規ボリュームのサイズを元のファイル共有のサイズ以上にする必要があります。
+拡張されたボリュームは、{{site.data.keyword.cloud}} カタログを通じて注文できます。簡単にマイグレーションできるようにするには、新規ボリュームのサイズを元のファイル共有のサイズ以上にする必要があります。
 
 - [事前定義済み IOPS ティアによる {{site.data.keyword.filestorage_short}} の注文 (エンデュランス)](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#endurance)
 - [カスタム IOPS による {{site.data.keyword.filestorage_short}} の注文 (パフォーマンス)](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#performance)
@@ -77,7 +77,7 @@ API を使用して注文する場合は、「Storage as a Service」パッケ�
 
 3. データを新しいロケーションにコピーします。
    - **Microsoft Windows**
-     - 元の {{site.data.keyword.filestorage_short}} の LUN から新しい LUN にデータをコピーするには、新しいストレージをフォーマット設定してから、Windows エクスプローラーを使用してファイルをコピーします。
+     - 元の {{site.data.keyword.filestorage_short}} のボリュームから新規ボリュームにデータをコピーするには、新規ストレージをフォーマット設定してから、Windows エクスプローラーを使用してファイルをコピーします。
    - **Linux**
      - `rsync` を使用してデータをコピーできます。
        ```
@@ -88,4 +88,4 @@ API を使用して注文する場合は、「Storage as a Service」パッケ�
 
    `--dry-run` フラグなしでこのコマンドが完了すると、データは新しい {{site.data.keyword.filestorage_short}} ボリュームにコピーされます。 コマンドを再度実行して、何も欠落していないことを確認します。 両方のロケーションを手動で確認して、欠落しているものがないか探すこともできます。
 
-   マイグレーションが完了したら、実動環境を新しい LUN に移動することができます。 その後、構成から元のボリュームを切り離して削除できます。 削除により、元のボリュームに関連付けられていたターゲット・サイト上のスナップショットやレプリカも除去されます。
+   マイグレーションが完了したら、実動環境を新規ボリュームに移動することができます。その後、構成から元のボリュームを切り離して削除できます。 削除により、元のボリュームに関連付けられていたターゲット・サイト上のスナップショットやレプリカも除去されます。

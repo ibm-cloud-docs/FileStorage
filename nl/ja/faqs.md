@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-07-01"
 
 keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
@@ -22,17 +22,17 @@ subcollection: FileStorage
 ## どの{{site.data.keyword.filestorage_short}} ボリュームが暗号化されているのかはどうすればわかりますか?
 {: faq}
 
-カスタマー・ポータルで{{site.data.keyword.filestorage_short}}のリストを参照してください。 ボリューム名の右に、ボリュームが暗号化されていることを示す鍵のアイコンが表示されます。
+カスタマー・ポータルで {{site.data.keyword.filestorage_short}} のリストを参照してください。 ボリューム名の右に、ボリュームが暗号化されていることを示す鍵のアイコンが表示されます。
 
-## 非暗号化{{site.data.keyword.filestorage_short}}を購入したデータセンターが、暗号化できるようにアップグレードされた場合、非暗号化{{site.data.keyword.filestorage_short}}を暗号化できますか?
+## 非暗号化 {{site.data.keyword.filestorage_short}} を購入したデータセンターが、暗号化できるようにアップグレードされた場合、非暗号化 {{site.data.keyword.filestorage_short}} を暗号化できますか?
 {: faq}
 
-データ・センターのアップグレードの前にプロビジョンされていた{{site.data.keyword.filestorage_short}}は、暗号化できません。 アップグレードされたデータ・センターで新たにプロビジョンされた{{site.data.keyword.filestorage_short}}は、自動的に暗号化されます。 自動で行われるので、プロビジョニング設定を選択したり除外したりすることはできません。 非暗号化ストレージのデータを暗号化するには、新しいボリュームを作成し、ホスト・ベースのマイグレーションを実行した新しい暗号化ボリュームに、データをコピーします。 詳しくは、[ファイル・ストレージのマイグレーション](/docs/infrastructure/FileStorage?topic=FileStorage-migratestorage)を参照してください。
+データ・センターのアップグレードの前にプロビジョンされていた {{site.data.keyword.filestorage_short}} は、暗号化できません。 アップグレードされたデータ・センターで新たにプロビジョンされた {{site.data.keyword.filestorage_short}} は、自動的に暗号化されます。 自動で行われるので、プロビジョニング設定を選択したり除外したりすることはできません。 非暗号化ストレージのデータを暗号化するには、新しいボリュームを作成し、ホスト・ベースのマイグレーションを実行した新しい暗号化ボリュームに、データをコピーします。 詳しくは、[ ファイル・ストレージのマイグレーション](/docs/infrastructure/FileStorage?topic=FileStorage-migratestorage)を参照してください。
 
-## {{site.data.keyword.filestorage_short}}をプロビジョンしているのが、アップグレードされたデータ・センターかどうかはどうすればわかりますか?
+## {{site.data.keyword.filestorage_short}} をプロビジョンしているのが、アップグレードされたデータ・センターかどうかはどうすればわかりますか?
 {: faq}
 
-{{site.data.keyword.filestorage_short}}の注文フォームでは、アップグレードされたすべてのデータ・センターがアスタリスク (`*`) 付きで表示されます。 注文プロセスの中で、暗号化ストレージがプロビジョンされますというメッセージも表示されます。 ストレージがプロビジョンされると、ボリュームが暗号化されていることを示すアイコンがストレージ・リストに表示されます。
+{{site.data.keyword.filestorage_short}} の注文フォームでは、アップグレードされたすべてのデータ・センターがアスタリスク (`*`) 付きで表示されます。 注文プロセスの中で、暗号化ストレージがプロビジョンされますというメッセージも表示されます。 ストレージがプロビジョンされると、ボリュームが暗号化されていることを示すアイコンがストレージ・リストに表示されます。
 
 暗号化ボリュームおよびファイル共有はすべて、アップグレードされたデータ・センターでのみプロビジョンされます。 アップグレードされたデータ・センターと使用可能な機能の完全なリストについては、[こちら](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)を参照してください。
 
@@ -44,14 +44,14 @@ subcollection: FileStorage
 ## {{site.data.keyword.filestorage_short}}の正しいマウント・ポイントはどうすればわかりますか?
 {: faq}
 
-拡張されたデータ・センターでプロビジョンされるすべての暗号化{{site.data.keyword.filestorage_short}}・ボリュームは、非暗号化ボリュームとは異なるマウント・ポイントになります。 正しいマウント・ポイントを使用するには、UI の**「ボリュームの詳細 (Volume Details)」**ページでマウント・ポイント情報を参照してください。 API 呼び出し `SoftLayer_Network_Storage::getNetworkMountAddress()` を使用して正しいマウント・ポイントを取得することもできます。
+拡張されたデータ・センターでプロビジョンされるすべての暗号化 {{site.data.keyword.filestorage_short}} ボリュームは、非暗号化ボリュームとは異なるマウント・ポイントになります。 正しいマウント・ポイントを使用するには、UI の**「ボリュームの詳細 (Volume Details)」**ページでマウント・ポイント情報を参照してください。 API 呼び出し `SoftLayer_Network_Storage::getNetworkMountAddress()` を使用して正しいマウント・ポイントを取得することもできます。
 
 ## ボリュームをいくつプロビジョンできますか?
 {: faq}
 
 デフォルトでは、合計 250 のブロック・ストレージ・ボリュームとファイル・ストレージ・ボリュームをプロビジョンできます。 制限を大きくするには、営業担当員にお問い合わせください。 詳しくは、[ストレージ制限の管理](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits)を参照してください。
 
-## プロビジョンされた{{site.data.keyword.filestorage_short}}・ボリュームの使用を共有できるインスタンス数はいくつですか?
+## プロビジョンされた {{site.data.keyword.filestorage_short}} ボリュームの使用を共有できるインスタンス数はいくつですか?
 {: faq}
 
 ファイル・ボリュームあたりの許可数のデフォルトの制限は 64 です。 この制限を大きくするには、営業担当員にお問い合わせください。
@@ -123,7 +123,7 @@ VLAN 上でストレージ・トラフィックを実行して、ファイアウ
 
 ストレージ内の目標待ち時間は 1 ms 未満です。 ストレージは共有ネットワーク上のコンピューティング・インスタンスに接続されるため、正確なパフォーマンス待ち時間は、操作時のネットワーク・トラフィックに依存します。
 
-## {{site.data.keyword.filestorage_short}}・ボリュームが削除されるとデータはどうなりますか?
+## {{site.data.keyword.filestorage_short}} ボリュームが削除されるとデータはどうなりますか?
 {: faq}
 
 {{site.data.keyword.filestorage_full}} では、お客様に対して物理ストレージ上のファイル共有が提供されます。この物理ストレージは再使用前にワイプされます。 NIST 800-88 Guidelines for Media Sanitization などのコンプライアンスに関して特別な要件があるお客様の場合、ストレージを削除する前にデータ・サニタイズ手順を実行する必要があります。
@@ -139,6 +139,11 @@ NFS v3 は、root クライアントが NFS 共有に対する root 権限を保
 
 vSphere ソリューションに関しては、NFS v3 は v4.1 よりも多くの機能をサポートしています。 それらの機能の中には、ストレージ DRS および Site Recovery Manager があります。
 
+## VMware デプロイメントで VAAI および HW アクセラレーションを有効にできますか?
+{: #isVAAIsupported}
+{: faq}
+
+いいえ。現時点では、vStorage for API Array Integration および Hardware アクセラレーションはサポートされていません。
 
 ## クラウド・データ・センターから破棄したドライブはどうなりますか?
 {: faq}

@@ -16,7 +16,7 @@ subcollection: FileStorage
 {:important: .important}
 
 
-# {{site.data.keyword.filestorage_short}}の管理
+# {{site.data.keyword.filestorage_short}} の管理
 {: #managingstorage}
 
 {{site.data.keyword.filestorage_full}} のボリュームは、{{site.data.keyword.cloud}} コンソールで管理できます。

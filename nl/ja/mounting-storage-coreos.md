@@ -26,7 +26,7 @@ Container Linux by CoreOS は、Linux カーネルに基づく、オープン・
 
 パーティションを作成するときには、`fdisk` または `parted` を使用できます。 作成するファイル・システムは、`.mount` ファイルにリストされているものと一致するようにしてください。そうしないと、サービスは開始に失敗します。 マウントが NFS なので、マウント・ファイルで `Options=` 行を使用して追加のオプションを指定できます。
 
-次の例では、`/data/www` にマウントするように NFS を設定します。 {{site.data.keyword.filestorage_short}}・インスタンスの NFS マウント・ポイントは、{{site.data.keyword.filestorage_short}}のリスト・ページから取得できます。また、API 呼び出し `SoftLayer_Network_Storage::getNetworkMountAddress()` を使用して取得することもできます。
+次の例では、`/data/www` にマウントするように NFS を設定します。 {{site.data.keyword.filestorage_short}} インスタンスの NFS マウント・ポイントは、{{site.data.keyword.filestorage_short}} のリスト・ページから取得できます。また、API 呼び出し `SoftLayer_Network_Storage::getNetworkMountAddress()` を使用して取得することもできます。
 {:tip}
 
 ```

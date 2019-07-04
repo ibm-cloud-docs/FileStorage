@@ -15,7 +15,7 @@ subcollection: FileStorage
 {:note: .note}
 {:important: .important}
 
-# cPanel を使用してバックアップするための{{site.data.keyword.filestorage_short}}の構成
+# cPanel を使用してバックアップするための {{site.data.keyword.filestorage_short}} の構成
 {: #cPanelBackups}
 
 これらの手順を使用することにより、バックアップが cPanel によって {{site.data.keyword.filestorage_full}} に保存されるように構成することができます。 root を使用できるか、または sudo SSH で WebHost Manager (WHM) のフル・アクセス権限を使用できる必要があります。 この例は、**CentOS 7** ホストに基づいています。

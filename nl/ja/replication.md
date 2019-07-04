@@ -145,7 +145,7 @@ subcollection: FileStorage
 　プライマリー・ボリュームがキャンセルされると、レプリカ・データ・センターのレプリケーション・スケジュールとボリュームは削除されます。 レプリカは、**「{{site.data.keyword.filestorage_short}}」**ページからキャンセルされます。
 
  1. **「{{site.data.keyword.filestorage_short}}」**ページでボリュームを強調表示します。
- 2. **「アクション」**をクリックし、**「{{site.data.keyword.filestorage_short}}のキャンセル (Cancel for {{site.data.keyword.filestorage_short}})」**を選択します。
+ 2. **「アクション」**をクリックし、**「{{site.data.keyword.filestorage_short}} のキャンセル (Cancel for {{site.data.keyword.filestorage_short}})」**を選択します。
  3. ボリュームをキャンセルするタイミングを選択します。 **「即時」**または**「請求料金の確定日」**を選択し、**「続行」**をクリックしてください。
  4. **「私は、キャンセルによりデータ損失が生じる可能性があることを了解します」**をクリックして、**「キャンセル」**をクリックします。
 

@@ -15,18 +15,19 @@ subcollection: FileStorage
 {:note: .note}
 {:important: .important}
  {:shortdesc: .shortdesc}
+ {:ui-linked}
 
 
 # 入門チュートリアル
 {: #getting-started}
 
-{{site.data.keyword.filestorage_full}} は、永続的で高速、柔軟な、NFS ベースのネットワーク接続型の{{site.data.keyword.filestorage_short}}です。 この Network Attached Storage (NAS) 環境では、ファイル共有機能とパフォーマンスを完全に制御できます。 {{site.data.keyword.filestorage_short}}共有は、回復力のために経路指定された TCP/IP 接続を介して、最大 64 個の許可デバイスに接続できます。
+{{site.data.keyword.filestorage_full}} は、永続的で高速、柔軟な、NFS ベースのネットワーク接続型の {{site.data.keyword.filestorage_short}} です。 この Network Attached Storage (NAS) 環境では、ファイル共有機能とパフォーマンスを完全に制御できます。{{site.data.keyword.filestorage_short}} 共有は、レジリエンシーのために経路指定された TCP/IP 接続を介して、最大 64 個の許可デバイスに接続できます。
 {:shortdesc}
 
 ## 始めに
 {: #prereqs}
 
-{{site.data.keyword.filestorage_short}}・ボリュームは 20 GB から 12 TB までプロビジョンできます。次の 2 つのオプションがあります。 <br/>
+{{site.data.keyword.filestorage_short}} ボリュームは 20 GB から 12 TB までプロビジョンできます。次の 2 つのオプションがあります。 <br/>
 - 事前定義されたパフォーマンス・レベルとスナップショットやレプリケーションなどの他の機能を備えた**エンデュランス**・ティアをプロビジョニングする。
 - IOPS (1 秒あたりの入出力操作数) の割り振りを指定して強力な**パフォーマンス**環境を構築する。
 
@@ -51,7 +52,7 @@ subcollection: FileStorage
 | 128 | 128 | 16 |
 | 512 | 32 | 16 |
 | 1024 | 16 | 16 |
-{: caption="表 1 は、ブロック・サイズと IOPS がスループット与える影響の例を示しています。<br>/平均 IO サイズ x IOPS = スループット (MB/秒)。" caption-side="top"}
+{: caption="表 1 は、ブロック・サイズと IOPS がスループット与える影響の例を示しています。<br/>平均 IO サイズ x IOPS = スループット (MB/秒)。" caption-side="top"}
 
 ### 許可ホスト
 
@@ -59,7 +60,7 @@ subcollection: FileStorage
 
 ### ネットワーク接続
 
-イーサネット接続の速度は、ボリュームに期待する最大スループットよりも速くなければなりません。 一般に、イーサネット接続が使用可能な帯域幅の 70% を超えることは期待ないでください。 例えば、6,000 IOPS で 16-KB のブロック・サイズを使用している場合、ボリュームは約 94-MB/秒のスループットを処理できます。 1-Gbps イーサネットが LUN に接続されている場合、使用可能な最大スループットをサーバーが使用しようとすると、その接続がボトルネックになります。 1-Gbps イーサネット接続 (125 MB/秒) の理論上の限界を 70% とすると、88 MB/秒のスループットしか得られないことになるためです。
+イーサネット接続の速度は、ボリュームに期待する最大スループットよりも速くなければなりません。 一般に、イーサネット接続が使用可能な帯域幅の 70% を超えることは期待ないでください。 例えば、6,000 IOPS で 16-KB のブロック・サイズを使用している場合、ボリュームは約 94-MB/秒のスループットを処理できます。 1-Gbps イーサネットがボリュームに接続されている場合、使用可能な最大スループットをサーバーが使用しようとすると、その接続がボトルネックになります。1-Gbps イーサネット接続 (125 MB/秒) の理論上の限界を 70% とすると、88 MB/秒のスループットしか得られないことになるためです。
 
 最大 IOPS を得るには、十分なネットワーク・リソースを配備する必要があります。 その他の考慮事項として、ストレージ外の専用ネットワーク使用、およびホスト・サイドおよびアプリケーション固有のチューニング (IP スタック、[キュー項目数](/docs/infrastructure/FileStorage?topic=FileStorage-hostqueuesettings)、およびその他の設定) があります。
 
@@ -73,7 +74,7 @@ subcollection: FileStorage
 
 ## 注文の送信
 
-注文を送信する準備ができたら、[コンソール](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)、[SLCLI](/docs/infrastructure/FileStorage?topic=FileStorage-orderingSLCLI) または IBMCLOUD CLI を使用して注文することができます。VMware デプロイメントへの File Storage のプロビジョニングについて詳しくは、[アーキテクチャー・ガイド](/docs/infrastructure/FileStorage?topic=FileStorage-architectureguide)を参照してください。
+注文を送信する準備ができたら、[コンソール](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole)、[SLCLI](/docs/infrastructure/FileStorage?topic=FileStorage-orderingSLCLI) または IBMCLOUD CLI を使用して注文することができます。 VMware デプロイメントへの File Storage のプロビジョニングについて詳しくは、[アーキテクチャー・ガイド](/docs/infrastructure/FileStorage?topic=FileStorage-architectureguide)を参照してください。
 
 ## 新しいストレージの接続
 {: #mountingstorage}

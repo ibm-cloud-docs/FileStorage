@@ -23,18 +23,18 @@ subcollection: FileStorage
 
 {{site.data.keyword.cloud}} の vSphere 5.5 と vSphere 6.0 の環境で {{site.data.keyword.filestorage_full}} を注文して構成するための手順を以下に示します。
 
-{{site.data.keyword.filestorage_short}}は、予測可能なレベルのパフォーマンスが求められる、入出力負荷の高いアプリケーションをサポートできるように設計されています。 プロトコル・レベルの IOPS (1 秒あたりの入出力操作数) を個々のボリュームに割り振ることで、予測可能なパフォーマンスを実現しています。
+{{site.data.keyword.filestorage_short}} は、予測可能なレベルのパフォーマンスが求められる、入出力負荷の高いアプリケーションをサポートできるように設計されています。 プロトコル・レベルの IOPS (1 秒あたりの入出力操作数) を個々のボリュームに割り振ることで、予測可能なパフォーマンスを実現しています。
 
 VMware データ・ストアへのアクセスに必要なホストの数が 8 を超える場合は、NFS {{site.data.keyword.filestorage_short}} を選択することがベスト・プラクティスです。
 {:tip}
 
-{{site.data.keyword.filestorage_short}}のオファリングの利用とマウントは、NFS 接続を使用して行います。 VMware デプロイメントでは、単一ボリュームを最大 64 台の ESXi ホストに共有ストレージとしてマウントすることができます。 複数のボリュームをマウントしてストレージ・クラスターを作成し、vSphere Storage Distributed Resource Scheduler (DRS) を使用することもできます。
+{{site.data.keyword.filestorage_short}} のオファリングの利用とマウントは、NFS 接続を使用して行います。 VMware デプロイメントでは、単一ボリュームを最大 64 台の ESXi ホストに共有ストレージとしてマウントすることができます。 複数のボリュームをマウントしてストレージ・クラスターを作成し、vSphere Storage Distributed Resource Scheduler (DRS) を使用することもできます。
 
 {{site.data.keyword.filestorage_short}} の価格オプションと構成オプションは、予約したスペースと提供される IOPS の組み合わせに基づいて課金されます。
 
 ## 注文に関する考慮事項
 
-{{site.data.keyword.filestorage_short}}を注文するときは、次の情報を考慮してください。
+{{site.data.keyword.filestorage_short}} を注文するときは、次の情報を考慮してください。
 
 - サイズを決定する際には、必要なワークロードのサイズとスループットを考慮してください。 容量 (IOPS/GB) に応じて性能が直線的に高くなるエンデュランス・サービスにとっては、サイズが重要になります。 一方、パフォーマンス・サービスでは、管理者が容量と性能を個別に選択できます。 性能はスループット要件によって決まります。
 
@@ -228,7 +228,7 @@ VMware およびジャンボ・フレームについて詳しくは、[ここ](h
 7. **「名前と構成 (Name and configuration)」**画面で、VMware データ・ストアに付ける名前を入力します。 さらに、NFS サーバーのホスト名を入力します。 NFS サーバーの FQDN を使用すると、その基礎サーバーへの最適なトラフィック配信が行われます。 IP アドレスも有効ですが、特定の状況を除き、あまり使用されません。 フォルダー名を `/foldername` の形式で入力します。
 8. **「ホストのアクセス可能性 (Host accessibility)」**画面で、NFS VMware データ・ストアをマウントするホストを 1 つ以上選択し、**「次へ」**をクリックします。
 9. 次の画面で入力を確認し、**「完了」**をクリックします。
-10. 他の{{site.data.keyword.filestorage_short}}・ボリュームについても同じ手順を繰り返します。
+10. 他の {{site.data.keyword.filestorage_short}} ボリュームについても同じ手順を繰り返します。
 
 {{site.data.keyword.cloud}} は VMware データ・ストアへの接続に FQDN 名を使用することをお勧めします。 直接 IP アドレッシングを使用すると、FQDN を使用することにより提供されるロード・バランシング・メカニズムが迂回される可能性があります。
 {:important}
