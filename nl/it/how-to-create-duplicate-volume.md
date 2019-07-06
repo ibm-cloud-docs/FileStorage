@@ -47,14 +47,14 @@ Puoi creare un volume duplicato tramite la [console {{site.data.keyword.cloud}}]
 1. Vai al tuo elenco di {{site.data.keyword.filestorage_short}}
     - Dal menu Classic Infrastructure, fai clic su **Storage** > **{{site.data.keyword.filestorage_short}}** OR
     - Dal catalogo {{site.data.keyword.cloud}}, fai clic su **Infrastructure** > **Storage** > **{{site.data.keyword.filestorage_short}}**.
-2. Seleziona un LUN dall'elenco e fai clic su **Actions** > **Duplicate LUN (Volume)**
+2. Seleziona un volume dall'elenco e fai clic su **Actions** > **Duplicate volume (Volume)**
 3. Scegli la tua opzione di istantanea.
     - Se ordini da un volume non di replica,
       - Seleziona **Create from new snapshot** – questa azione crea un'istantanea da utilizzare per il duplicato. Utilizza questa opzione se il tuo volume non ha delle istantanee correnti o se vuoi creare un duplicato in questo momento.</br>
       - Seleziona **Create from latest snapshot** - questa azione crea un duplicato dall'istantanea più recente che esiste per questo volume.
     - Se ordini da un volume di replica, la sola opzione per l'istantanea consiste nell'utilizzare l'istantanea più recente disponibile.
 4. Il tipo di archiviazione e l'ubicazione rimangono gli stessi del volume originale.
-5. Fatturazione oraria o mensile – puoi scegliere di eseguire il provisioning del LUN duplicato con la fatturazione oraria o mensile. Il tipo di fatturazione per il volume originale viene automaticamente selezionato. Se vuoi scegliere un tipo di fatturazione differente per la tua archiviazione duplicata, puoi operare tale selezione qui.
+5. Fatturazione oraria o mensile – puoi scegliere di eseguire il provisioning del volume duplicato con la fatturazione oraria o mensile. Il tipo di fatturazione per il volume originale viene automaticamente selezionato. Se vuoi scegliere un tipo di fatturazione differente per la tua archiviazione duplicata, puoi operare tale selezione qui.
 5. Volendo, puoi specificare gli IOPS o il livello IOPS per il nuovo volume. La designazione degli IOPS del volume originale è impostata per impostazione predefinita. Vengono visualizzate le combinazioni di Performance e dimensioni disponibili.
     - Se il tuo volume originale è al livello Endurance 0,25 IOPS, non puoi operare una nuova selezione.
     - Se il tuo volume originale è al livello Endurance 2, 4 o 10 IOPS, puoi spostarti dovunque tra questi livelli per il nuovo volume.

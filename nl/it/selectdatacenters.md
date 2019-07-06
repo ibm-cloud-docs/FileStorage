@@ -14,6 +14,7 @@ subcollection: FileStorage
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
+{:ui-linked}
 
 # Ubicazioni {{site.data.keyword.filestorage_short}}
 {: #selectDC}
@@ -47,9 +48,9 @@ subcollection: FileStorage
 | [Crittografia dei dati inattivi](/docs/infrastructure/FileStorage?topic=FileStorage-encryption) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) |
 | [Archiviazione espandibile](/docs/infrastructure/FileStorage?topic=FileStorage-expandCapacity) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) |
 | [Fatturazione oraria](/docs/infrastructure/FileStorage?topic=FileStorage-about#billing) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) |
-|[Replica](/docs/infrastructure/FileStorage?topic=FileStorage-replication) e [Istantanee](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) |
+| [Replica](/docs/infrastructure/FileStorage?topic=FileStorage-replication) e [Istantanee](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) |
 | [Duplicazione volume](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) |
-{: caption="Tabella 2. Disponibilità infrastruttura America latina " caption-side="top"}
+{: caption="Tabella 2. Disponibilità infrastruttura America latina" caption-side="top"}
 {: summary="This table has row and column headers. The row headers identify the capability. The column headers identify where that capability is located. To understand where a capability is located in the table, navigate to the row, and look for the location you are interested in."}
 {: #table2}
 {: tab-title="Latin America"}
@@ -67,7 +68,7 @@ subcollection: FileStorage
 | [Fatturazione oraria](/docs/infrastructure/FileStorage?topic=FileStorage-about#billing) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) |
 | [Replica](/docs/infrastructure/FileStorage?topic=FileStorage-replication) e [Istantanee](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots)| ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) |
 | [Duplicazione volume](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume) |  ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) |
-{: caption="Tabella 3. Disponibilità infrastruttura Canada " caption-side="top"}
+{: caption="Tabella 3. Disponibilità infrastruttura Canada" caption-side="top"}
 {: summary="This table has row and column headers. The row headers identify the capability. The column headers identify where that capability is located. To understand where a capability is located in the table, navigate to the row, and look for the location you are interested in."}
 {: #table3}
 {: tab-title="Canada"}
@@ -85,7 +86,7 @@ subcollection: FileStorage
 | [Fatturazione oraria](/docs/infrastructure/FileStorage?topic=FileStorage-about#billing) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) |
 | [Replica](/docs/infrastructure/FileStorage?topic=FileStorage-replication) e [Istantanee](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots)| ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) |
 | [Duplicazione volume](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume) |  ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) |
-{: caption="Tabella 4. Disponibilità infrastruttura Canada " caption-side="top"}
+{: caption="Tabella 4. Disponibilità infrastruttura Canada" caption-side="top"}
 {: summary="This table has row and column headers. The row headers identify the capability. The column headers identify where that capability is located. To understand where a capability is located in the table, navigate to the row, and look for the location you are interested in."}
 {: #table4}
 {: tab-title="Europe"}
@@ -103,7 +104,7 @@ subcollection: FileStorage
 | [Fatturazione oraria](/docs/infrastructure/FileStorage?topic=FileStorage-about#billing) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) |
 | [Replica](/docs/infrastructure/FileStorage?topic=FileStorage-replication) e [Istantanee](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots)| ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) |
 | [Duplicazione volume](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume) |  ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) |
-{: caption="Tabella 5. Disponibilità infrastruttura Asia e Pacifico " caption-side="top"}
+{: caption="Tabella 5. Disponibilità infrastruttura Asia e Pacifico" caption-side="top"}
 {: summary="This table has row and column headers. The row headers identify the capability. The column headers identify where that capability is located. To understand where a capability is located in the table, navigate to the row, and look for the location you are interested in."}
 {: #table5}
 {: tab-title="Asia-Pacific"}
@@ -121,7 +122,7 @@ subcollection: FileStorage
 | [Fatturazione oraria](/docs/infrastructure/FileStorage?topic=FileStorage-about#billing) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) |
 | [Replica](/docs/infrastructure/FileStorage?topic=FileStorage-replication) e [Istantanee](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots)| ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) |
 | [Duplicazione volume](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume) |  ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) | ![Icona di casella di spunta](../../icons/checkmark-icon.svg) |
-{: caption="Tabella 6. Disponibilità infrastruttura Australia " caption-side="top"}
+{: caption="Tabella 6. Disponibilità infrastruttura Australia" caption-side="top"}
 {: summary="This table has row and column headers. The row headers identify the capability. The column headers identify where that capability is located. To understand where a capability is located in the table, navigate to the row, and look for the location you are interested in."}
 {: #table6}
 {: tab-title="Australia"}

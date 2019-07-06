@@ -20,9 +20,9 @@ subcollection: FileStorage
 
 Enhanced {{site.data.keyword.filestorage_full}} è ora disponibile nella maggior parte dei [data center](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
 
-Il percorso di migrazione preferito consiste nello stabilire una connessione a entrambi i volumi simultaneamente e trasferire i dati direttamente da un LUN all'altro. Le specifiche dipendono dal tuo sistema operativo e dalla previsione di possibili modifiche dei dati durante l'operazione di copia.
+Il percorso di migrazione preferito consiste nello stabilire una connessione a entrambi i volumi simultaneamente e trasferire i dati direttamente da un volume all'altro. Le specifiche dipendono dal tuo sistema operativo e dalla previsione di possibili modifiche dei dati durante l'operazione di copia.
 
-Si presuppone che tu già abbia il tuo LUN non crittografato collegato al tuo host. In caso contrario, attieniti alle indicazioni che meglio rispondono al tuo sistema operativo per eseguire questa attività.
+Si presuppone che tu già abbia il tuo volume non crittografato collegato al tuo host. In caso contrario, attieniti alle indicazioni che meglio rispondono al tuo sistema operativo per eseguire questa attività.
 
 - [Montaggio di {{site.data.keyword.filestorage_short}} su Linux](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)
 - [Montaggio di {{site.data.keyword.filestorage_short}} in CentOS](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)
@@ -37,7 +37,7 @@ Tutti i volumi di {{site.data.keyword.filestorage_short}} avanzato di cui viene 
 Quando effettui un ordine con l'API, specifica il pacchetto "Storage as a Service" per assicurarti che stai ottenendo le funzioni avanzate con la tua nuova archiviazione.
 {:important}
 
-Puoi ordinare un LUN migliorato tramite il catalogo {{site.data.keyword.cloud}}. Il tuo nuovo volume deve essere di dimensione pari o superiore a quella della condivisione file originale per facilitare la migrazione.
+Puoi ordinare un volume migliorato tramite il catalogo {{site.data.keyword.cloud}}. Il tuo nuovo volume deve essere di dimensione pari o superiore a quella della condivisione file originale per facilitare la migrazione.
 
 - [Ordinazione di {{site.data.keyword.filestorage_short}} con livelli IOPS predefiniti (Endurance)](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#endurance)
 - [Ordinazione di {{site.data.keyword.filestorage_short}} con IOPS personalizzato (Performance)](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#performance)
@@ -77,7 +77,7 @@ Se il tuo data center di destinazione non ha la crittografia, non puoi stabilire
 
 3. Copia i tuoi dati.
    - **Microsoft Windows**
-     - Per copiare i dati dal tuo LUN {{site.data.keyword.filestorage_short}} originale al nuovo LUN, formatta la nuova archiviazione e copia i file utilizzando Esplora risorse di Windows.
+     - Per copiare i dati dal tuo volume {{site.data.keyword.filestorage_short}} originale al nuovo volume, formatta la nuova archiviazione e copia i file utilizzando Esplora risorse di Windows.
    - **Linux**
      - Puoi utilizzare `rsync` per copiare i dati.
        ```
@@ -88,4 +88,4 @@ Se il tuo data center di destinazione non ha la crittografia, non puoi stabilire
 
    Dopo che questo comando è stato completato senza l'indicatore `--dry-run`, i tuoi dati vengono copiati nel nuovo volume {{site.data.keyword.filestorage_short}}. Esegui nuovamente il comando per assicurarti che non sia sfuggito niente. Puoi anche riesaminare manualmente entrambe le ubicazioni per cercare eventuali elementi che potrebbero essere sfuggiti.
 
-   Dopo che la tua migrazione è stata completata, puoi trasferire la produzione al nuovo LUN. Puoi quindi scollegare ed eliminare il tuo volume originale dalla tua configurazione. L'eliminazione rimuove anche le eventuali istantanee o repliche sul sito di destinazione che era associato al volume originale.
+   Dopo che la tua migrazione è stata completata, puoi trasferire la produzione al nuovo volume. Puoi quindi scollegare ed eliminare il tuo volume originale dalla tua configurazione. L'eliminazione rimuove anche le eventuali istantanee o repliche sul sito di destinazione che era associato al volume originale.

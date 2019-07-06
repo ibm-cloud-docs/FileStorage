@@ -41,7 +41,7 @@ Se vuoi far tornare la produzione al sito primario originale, devi completare le
 
 1. Accedi alla [Console {{site.data.keyword.cloud}}](https://{DomainName}/){: external} e fai clic sull'icona **menu** in alto a sinistra. Seleziona **Infrastruttura classica**.
 2. Fai clic su **Storage** > **{{site.data.keyword.filestorage_short}}**.
-3. Fai clic sul nome del LUN e crea una pianificazione delle istantanee (se non ne esiste già una).
+3. Fai clic sul nome del volume e crea una pianificazione delle istantanee (se non ne esiste già una).
 
    Per ulteriori informazioni sulle pianificazioni delle istantanee, consulta [Gestione delle istantanee](/docs/infrastructure/FileStorage?topic=FileStorage-managingSnapshots#addschedule).
    {:tip}
@@ -55,7 +55,7 @@ Dopo che la replica è completa, devi creare un volume duplicato della nuova rep
 {:important}
 
 1. Torna a **Storage** > **{{site.data.keyword.filestorage_short}}**.
-2. Fai clic sulla replica del LUN nell'elenco per visualizzare la relativa pagina **Details**.
+2. Fai clic sulla replica del volume nell'elenco per visualizzare la relativa pagina **Details**.
 3. Nella pagina **Details**, scorri verso il basso, seleziona un'istantanea esistente e fai clic su **Actions** > **Duplicate**.
 4. Apporta tutti gli aggiornamenti necessari alla capacità (per aumentare la dimensione) o IOPs per il nuovo volume.
 5. Aggiorna lo spazio di istantanea per il nuovo volume se necessario.
