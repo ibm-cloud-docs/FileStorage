@@ -20,9 +20,9 @@ subcollection: FileStorage
 
 现在，增强型 {{site.data.keyword.filestorage_full}} 在大多数[数据中心](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)内提供。
 
-首选迁移路径是同时连接两个卷，并将数据从一个 LUN 直接传输到另一个 LUN。具体操作取决于您的操作系统以及在复制操作期间数据是否会更改。
+首选迁移路径是同时连接两个卷，并将数据从一个卷直接传输到另一个卷。具体操作取决于您的操作系统以及在复制操作期间数据是否会更改。
 
-假定您已将非加密 LUN 连接到主机。如果尚未连接，请遵循最适合您操作系统的指示信息来完成此任务。
+假定您已将非加密卷连接到主机。如果尚未连接，请遵循最适合您操作系统的指示信息来完成此任务。
 
 - [在 Linux 上安装 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)
 - [在 CentOS 中安装 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)
@@ -37,7 +37,7 @@ subcollection: FileStorage
 使用 API 下订单时，请指定“存储即服务”包，以确保获取新存储器的更新功能。
 {:important}
 
-您可以通过 {{site.data.keyword.cloud}}“目录”订购增强型 LUN。新卷的大小应该等于或大于原始文件共享的大小，以便于迁移。
+您可以通过 {{site.data.keyword.cloud}}“目录”订购增强型卷。新卷的大小应该等于或大于原始文件共享的大小，以便于迁移。
 
 - [订购具有预定义 IOPS 层（耐久性）的 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#endurance)
 - [订购具有定制 IOPS（性能）的 {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#performance)
@@ -77,7 +77,7 @@ subcollection: FileStorage
 
 3. 复制数据。
    - **Microsoft Windows**
-     - 要将数据从原始 {{site.data.keyword.filestorage_short}} LUN 复制到新 LUN，请设置新存储器的格式并使用 Windows 资源管理器复制文件。
+     - 要将数据从原始 {{site.data.keyword.filestorage_short}} 卷复制到新卷，请设置新存储器的格式并使用 Windows 资源管理器复制文件。
    - **Linux**
      - 可以使用 `rsync` 来复制数据。
        ```
@@ -88,4 +88,4 @@ subcollection: FileStorage
 
       完成不带 `--dry-run` 标志的此命令后，数据应该会复制到新的 {{site.data.keyword.filestorage_short}} 卷。再次运行此命令，以确保没有漏掉任何内容。您还可以手动复查这两个位置，以查找是否有任何可能漏掉的内容。
 
-      迁移完成后，您可以将生产移至新的 LUN。然后，可以从配置中拆离原始卷并将其删除。删除操作还将除去目标站点上与原始卷关联的任何快照或副本。
+   迁移完成后，您可以将生产移至新的卷。然后，可以从配置中拆离原始卷并将其删除。删除操作还将除去目标站点上与原始卷关联的任何快照或副本。

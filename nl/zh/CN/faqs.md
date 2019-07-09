@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-07-01"
 
 keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
@@ -140,6 +140,11 @@ NFS V3 本机支持 `no_root_squash`，通过后者，root 用户客户机可以
 
 对于 vSphere 解决方案，NFS V3 支持的功能多于 V4.1。此类功能包括 Storage DRS 和 Site Recovery Manager。
 
+## 可以在 VMware 部署中启用 VAAI 和硬件加速吗？
+{: #isVAAIsupported}
+{: faq}
+
+不能。目前不支持 vStorage for API Array Integration 和硬件加速。
 
 ## 使驱动器从云数据中心退役时会发生什么情况？
 {: faq}

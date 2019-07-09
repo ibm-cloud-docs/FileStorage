@@ -33,7 +33,7 @@ subcollection: FileStorage
 
 您可以通过在[门户网站](https://cloud.ibm.com/unifiedsupport/cases/add){: external}中提交支持案例来请求增大限制。请求得到核准后，您将获得针对特定数据中心设置的卷限制。
 
-要请求增大限制，请开具凭单并将其提交给销售代表。
+要请求增大限制，请打开一个支持案例并将其提交给销售代表。
 
 在凭单中，请提供以下信息：
 

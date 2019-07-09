@@ -41,7 +41,7 @@ subcollection: FileStorage
 
 1. 登录到 [{{site.data.keyword.cloud}} 控制台](https://{DomainName}/){: external}，然后单击左上角的**菜单**图标。选择**经典基础架构**。
 2. 单击**存储** > **{{site.data.keyword.filestorage_short}}**。
-3. 单击 LUN 名称，然后创建快照安排（如果尚不存在）。
+3. 单击卷名，然后创建快照安排（如果尚不存在）。
 
    有关快照安排的更多信息，请参阅[管理快照](/docs/infrastructure/FileStorage?topic=FileStorage-managingSnapshots#addschedule)。
    {:tip}
@@ -55,7 +55,7 @@ subcollection: FileStorage
 {:important}
 
 1. 返回到**存储** > **{{site.data.keyword.filestorage_short}}**。
-2. 单击列表中 LUN 的副本，以查看其**详细信息**页面。
+2. 单击列表中卷的副本，以查看其**详细信息**页面。
 3. 向下滚动**详细信息**页面，选择现有快照，然后单击**操作** > **复制**。
 4. 对新卷的容量（增加大小）或 IOP 进行必要的更新。
 5. 根据需要，更新新卷的快照空间。
