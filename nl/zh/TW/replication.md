@@ -24,7 +24,8 @@ subcollection: FileStorage
 抄寫是將資料同步保留在兩個不同位置。如果您想要複製您的磁區，並與原始磁區分開使用，請參閱[建立重複的檔案磁區](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume)。
 {:tip}
 
-您必須先建立 Snapshot 排程，才能進行抄寫。{:important}
+您必須先建立 Snapshot 排程，才能進行抄寫。
+{:important}
 
 
 ## 判斷已抄寫儲存空間磁區的遠端資料中心

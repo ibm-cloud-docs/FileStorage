@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-07-01"
 
 keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
@@ -80,7 +80,7 @@ subcollection: FileStorage
 {: row-headers}
 {: class="comparison-table"}
 {: caption="表格比較" caption-side="top"}
-{: summary="表 1 顯示根據磁區大小而容許的 Inode 數目上限。磁區大小在左邊直欄。Inode 和檔案共用的數目在右邊直欄。"}
+{: summary="Table 1 shows the maximum number of inodes that are allowed based on the volume size. Volume sizes are in the left column. The number of inodes and file shares are on the right."}
 
 ## 測量 IOPS
 {: faq}
@@ -139,6 +139,11 @@ NFS 第 3 版原本便支援 `no_root_squash`，可讓 root 用戶端保留對 N
 
 在談到 vSphere Solutions 時，NFS 第 3 版比 4.1 版支援更多特性。部分特性包括儲存空間 DRS 及網站回復管理程式。
 
+## 可以在 VMware 部署中啟用 VAAI 和 HW 加速嗎？
+{: #isVAAIsupported}
+{: faq}
+
+否。目前不支援 vStorage for API Array Integration 和硬體加速。
 
 ## 從雲端資料中心解除任務的磁碟機會發生什麼情況？
 {: faq}

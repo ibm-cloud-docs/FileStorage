@@ -14,6 +14,7 @@ subcollection: FileStorage
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
+{:ui-linked}
 
 # {{site.data.keyword.filestorage_short}} 位置
 {: #selectDC}
@@ -32,7 +33,7 @@ subcollection: FileStorage
 | [抄寫](/docs/infrastructure/FileStorage?topic=FileStorage-replication)及 [Snapshot](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots)| ![勾號圖示](../../icons/checkmark-icon.svg)|![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) |
 | [磁區複製](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume) |  |  | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) | | | ![勾號圖示](../../icons/checkmark-icon.svg) |![勾號圖示](../../icons/checkmark-icon.svg) | | ![勾號圖示](../../icons/checkmark-icon.svg) |![勾號圖示](../../icons/checkmark-icon.svg) |![勾號圖示](../../icons/checkmark-icon.svg) |
 {: caption="表 1. 美國基礎架構可用性" caption-side="top"}
-{: summary="這個表格有列和欄標頭。列標頭識別功能。欄標頭識別該功能所在位置。若要瞭解功能在表格中位於何處，請導覽至列，然後尋找您有興趣的位置。"}
+{: summary="This table has row and column headers. The row headers identify the capability. The column headers identify where that capability is located. To understand where a capability is located in the table, navigate to the row, and look for the location you are interested in."}
 {: #table1}
 {: tab-title="United States"}
 {: tab-group="Regions"}
@@ -50,7 +51,7 @@ subcollection: FileStorage
 | [抄寫](/docs/infrastructure/FileStorage?topic=FileStorage-replication)及 [Snapshot](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots) | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) |
 | [磁區複製](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume) | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) |
 {: caption="表 2. 拉丁美洲基礎架構可用性" caption-side="top"}
-{: summary="這個表格有列和欄標頭。列標頭識別功能。欄標頭識別該功能所在位置。若要瞭解功能在表格中位於何處，請導覽至列，然後尋找您有興趣的位置。"}
+{: summary="This table has row and column headers. The row headers identify the capability. The column headers identify where that capability is located. To understand where a capability is located in the table, navigate to the row, and look for the location you are interested in."}
 {: #table2}
 {: tab-title="Latin America"}
 {: tab-group="Regions"}
@@ -68,7 +69,7 @@ subcollection: FileStorage
 | [抄寫](/docs/infrastructure/FileStorage?topic=FileStorage-replication)及 [Snapshot](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots)| ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) |
 | [磁區複製](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume) |  ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) |
 {: caption="表 3. 加拿大基礎架構可用性" caption-side="top"}
-{: summary="這個表格有列和欄標頭。列標頭識別功能。欄標頭識別該功能所在位置。若要瞭解功能在表格中位於何處，請導覽至列，然後尋找您有興趣的位置。"}
+{: summary="This table has row and column headers. The row headers identify the capability. The column headers identify where that capability is located. To understand where a capability is located in the table, navigate to the row, and look for the location you are interested in."}
 {: #table3}
 {: tab-title="Canada"}
 {: tab-group="Regions"}
@@ -86,7 +87,7 @@ subcollection: FileStorage
 | [抄寫](/docs/infrastructure/FileStorage?topic=FileStorage-replication)及 [Snapshot](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots)| ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) |
 | [磁區複製](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume) |  ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) |
 {: caption="表 4. 加拿大基礎架構可用性" caption-side="top"}
-{: summary="這個表格有列和欄標頭。列標頭識別功能。欄標頭識別該功能所在位置。若要瞭解功能在表格中位於何處，請導覽至列，然後尋找您有興趣的位置。"}
+{: summary="This table has row and column headers. The row headers identify the capability. The column headers identify where that capability is located. To understand where a capability is located in the table, navigate to the row, and look for the location you are interested in."}
 {: #table4}
 {: tab-title="Europe"}
 {: tab-group="Regions"}
@@ -104,7 +105,7 @@ subcollection: FileStorage
 | [抄寫](/docs/infrastructure/FileStorage?topic=FileStorage-replication)及 [Snapshot](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots)| ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) |
 | [磁區複製](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume) |  ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) |
 {: caption="表 5. 亞太地區基礎架構可用性" caption-side="top"}
-{: summary="這個表格有列和欄標頭。列標頭識別功能。欄標頭識別該功能所在位置。若要瞭解功能在表格中位於何處，請導覽至列，然後尋找您有興趣的位置。"}
+{: summary="This table has row and column headers. The row headers identify the capability. The column headers identify where that capability is located. To understand where a capability is located in the table, navigate to the row, and look for the location you are interested in."}
 {: #table5}
 {: tab-title="Asia-Pacific"}
 {: tab-group="Regions"}
@@ -122,7 +123,7 @@ subcollection: FileStorage
 | [抄寫](/docs/infrastructure/FileStorage?topic=FileStorage-replication)及 [Snapshot](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots)| ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) |
 | [磁區複製](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume) |  ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) | ![勾號圖示](../../icons/checkmark-icon.svg) |
 {: caption="表 6. 澳大利亞基礎架構可用性" caption-side="top"}
-{: summary="這個表格有列和欄標頭。列標頭識別功能。欄標頭識別該功能所在位置。若要瞭解功能在表格中位於何處，請導覽至列，然後尋找您有興趣的位置。"}
+{: summary="This table has row and column headers. The row headers identify the capability. The column headers identify where that capability is located. To understand where a capability is located in the table, navigate to the row, and look for the location you are interested in."}
 {: #table6}
 {: tab-title="Australia"}
 {: tab-group="Regions"}

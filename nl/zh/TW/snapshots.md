@@ -39,7 +39,7 @@ Snapshot 副本不會造成效能降低。使用者可以輕鬆地針對每個 {
 ## Snapshot 最佳作法
 
 Snapshot 設計取決於客戶環境。下列設計考量可協助您計劃及實作 Snapshot 副本：
-- 在每個磁區或 LUN 上透過排程最多可以建立 50 個 Snapshot，透過手動方式最多可以建立 50 個 Snapshot。
+- 在每個磁區上透過排程最多可以建立 50 個 Snapshot，透過手動方式最多可以建立 50 個 Snapshot。
 - 不要過度擷取 Snapshot。請確定已排定的 Snapshot 頻率符合 RTO 及 RPO 需求，以及應用程式商業需求，方法是排定每小時、每日或每週 Snapshot。
 - Snapshot AutoDelete 可用來控制儲存空間耗用的成長。
 

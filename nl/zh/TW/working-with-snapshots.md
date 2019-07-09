@@ -150,7 +150,8 @@ Options:
   -h, --help  Show this message and exit.
 ```
 
-當您達到空間限制時，會自動刪除入口網站中未手動刪除的手動 Snapshot（最舊的最先刪除）。{:note}
+當您達到空間限制時，會自動刪除入口網站中未手動刪除的手動 Snapshot（最舊的最先刪除）。
+{:note}
 
 ## 使用 Snapshot 將儲存空間磁區還原至特定時間點
 

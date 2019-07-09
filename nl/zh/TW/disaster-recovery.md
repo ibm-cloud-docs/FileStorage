@@ -41,7 +41,7 @@ subcollection: FileStorage
 
 1. 登入 [{{site.data.keyword.cloud}} 主控台](https://{DomainName}/){: external}，然後按一下左上方的**功能表**圖示。選取**標準基礎架構**。
 2. 按一下**儲存空間** > **{{site.data.keyword.filestorage_short}}**。
-3. 按一下 LUN 名稱，並建立 Snapshot 排程（如果尚無排程）。
+3. 按一下磁區名稱，並建立 Snapshot 排程（如果尚無排程）。
 
    如需 Snapshot 排程的相關資訊，請參閱[管理 Snapshot](/docs/infrastructure/FileStorage?topic=FileStorage-managingSnapshots#addschedule)。
    {:tip}
@@ -55,7 +55,7 @@ subcollection: FileStorage
 {:important}
 
 1. 回到**儲存空間** > **{{site.data.keyword.filestorage_short}}**。
-2. 按一下清單中的 LUN 抄本，以檢視其**詳細資料**頁面。
+2. 按一下清單中的磁區抄本，以檢視其**詳細資料**頁面。
 3. 在**詳細資料**頁面上，向下捲動並選取現有的 Snapshot，然後按一下**動作** > **複製**。
 4. 針對新磁區的容量（為了增加大小）或 IOP 進行任何必要的更新。
 5. 必要的話，請更新新磁區的 Snapshot 空間。
