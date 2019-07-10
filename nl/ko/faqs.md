@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-07-01"
 
 keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
@@ -116,7 +116,7 @@ IOPS는 볼륨 레벨에서 적용됩니다. 달리 말하면, 6000IOPS의 볼�
 {: #isolatedstoragetraffic}
 {: faq}
 
-방화벽을 우회하는 VLAN을 통해 스토리지 트래픽을 실행하는 것이 가장 좋습니다. 소프트웨어 방화벽을 통해 스토리지 트래픽을 전송하면 대기 시간이 늘어나며 스토리지 성능에 악영향을 줍니다.
+방화벽을 우회하는 VLAN을 통해 스토리지 트래픽을 실행하는 것이 가장 좋습니다. 소프트웨어 방화벽을 통해 스토리지 트래픽을 실행하면 대기 시간이 늘어나서 결국 스토리지 성능이 저하됩니다.
 
 ## {{site.data.keyword.filestorage_short}}의 예상 성능 대기 시간은 얼마입니까?   
 {: faq}
@@ -139,6 +139,11 @@ NFS v3는 기본적으로 루트 클라이언트가 NFS 공유에 대해 루트 
 
 vSphere 솔루션에 대해 NFS v3는 v4.1보다 많은 기능을 지원합니다. 이와 같은 기능에는 스토리지 DRS 및 사이트 복구 관리자가 포함됩니다.
 
+## VMware 배치에서 VAAI 및 HW 가속화를 사용으로 설정할 수 있습니까?
+{: #isVAAIsupported}
+{: faq}
+
+아니오. 현재 vStorage for API Array Integration 및 하드웨어 가속화는 지원되지 않습니다. 
 
 ## 클라우드 데이터 센터에서 폐기된 드라이브는 어떻게 됩니까?
 {: faq}

@@ -41,7 +41,7 @@ subcollection: FileStorage
 
 1. [{{site.data.keyword.cloud}} 콘솔](https://{DomainName}/){: external}에 로그인하고 왼쪽 상단에서 **메뉴** 아이콘을 클릭하십시오. **클래식 인프라**를 선택하십시오.
 2. **스토리지** > **{{site.data.keyword.filestorage_short}}**를 클릭하십시오.
-3. LUN 이름을 클릭하고 스냅샷 스케줄을 작성하십시오(아직 존재하지 않는 경우).
+3. 볼륨 이름을 클릭하고 스냅샷 스케줄을 작성하십시오(아직 존재하지 않는 경우).
 
    스냅샷 스케줄에 대한 자세한 정보는 [스냅샷 관리](/docs/infrastructure/FileStorage?topic=FileStorage-managingSnapshots#addschedule)를 참조하십시오.
    {:tip}
@@ -55,7 +55,7 @@ subcollection: FileStorage
 {:important}
 
 1. **스토리지** > **{{site.data.keyword.filestorage_short}}**로 되돌아가십시오.
-2. 목록에서 LUN의 복제본을 클릭하여 해당 **세부사항** 페이지를 보십시오.
+2. 목록에서 볼륨의 복제본을 클릭하여 해당 **세부사항** 페이지를 보십시오.
 3. **세부사항** 페이지에서 아래로 스크롤하여 기존 스냅샷을 선택한 후에 **조치** > **중복**을 클릭하십시오.
 4. 필요한 대로 새 볼륨의 IOP 또는 용량(크기 늘리기)을 업데이트하십시오.
 5. 필요하면 새 볼륨의 스냅샷 영역을 업데이트하십시오.

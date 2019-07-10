@@ -20,9 +20,9 @@ subcollection: FileStorage
 
 고급 {{site.data.keyword.filestorage_full}}는 이제 대부분의 [데이터 센터](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)에서 사용할 수 있습니다.
 
-선호되는 마이그레이션 경로는 두 볼륨을 동시에 연결하고 하나의 LUN에서 다른 LUN으로 직접 데이터를 전송하는 것입니다. 세부사항은 사용자의 운영 체제와 복사 오퍼레이션 중에 데이터 변경이 예상되는지 여부에 따라 다릅니다.
+선호되는 마이그레이션 경로는 두 볼륨을 동시에 연결하고 하나의 볼륨에서 다른 볼륨으로 직접 데이터를 전송하는 것입니다. 세부사항은 사용자의 운영 체제와 복사 오퍼레이션 중에 데이터 변경이 예상되는지 여부에 따라 다릅니다.
 
-이 경우, 이미 호스트에 암호화되지 않은 LUN을 연결했다고 가정합니다. 그렇지 않은 경우에는 이 태스크를 완료하는 데 있어서 사용자의 운영 체제에 가장 적합한 지시사항을 따르십시오.
+이 경우, 이미 호스트에 암호화되지 않은 볼륨을 연결했다고 가정합니다. 그렇지 않은 경우에는 이 태스크를 완료하는 데 있어서 사용자의 운영 체제에 가장 적합한 지시사항을 따르십시오.
 
 - [Linux의 {{site.data.keyword.filestorage_short}} 마운트](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)
 - [CentOS의 {{site.data.keyword.filestorage_short}} 마운트](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)
@@ -37,7 +37,7 @@ subcollection: FileStorage
 API에서 주문하는 경우에는 새 스토리지의 업데이트된 기능을 받을 수 있도록 "SaaS(Storage as a Service)" 패키지를 지정하십시오.
 {:important}
 
-{{site.data.keyword.cloud}} 카탈로그를 통해 고급 LUN을 주문할 수 있습니다. 새 볼륨은 마이그레이션을 수행하기 위해 원본 파일 공유 크기 이상이어야 합니다.
+{{site.data.keyword.cloud}} 카탈로그를 통해 고급 볼륨을 주문할 수 있습니다. 새 볼륨은 마이그레이션을 수행하기 위해 원본 파일 공유 크기 이상이어야 합니다.
 
 - [사전 정의된 IOPS 티어(Endurance)가 있는 {{site.data.keyword.filestorage_short}} 주문](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#endurance)
 - [사용자 정의 IOPS(Performance)가 있는 {{site.data.keyword.filestorage_short}} 주문](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#performance)
@@ -77,7 +77,7 @@ API에서 주문하는 경우에는 새 스토리지의 업데이트된 기능�
 
 3. 데이터를 복사하십시오.
    - **Microsoft Windows**
-     - 원래 {{site.data.keyword.filestorage_short}} LUN에서 새 LUN으로 데이터를 복사하려면 새 스토리지를 포맷하고 Windows 탐색기를 사용하여 파일을 복사하십시오.
+     - 원래 {{site.data.keyword.filestorage_short}} 볼륨에서 새 볼륨으로 데이터를 복사하려면 새 스토리지를 포맷하고 Windows 탐색기를 사용하여 파일을 복사하십시오.
    - **Linux**
      - `rsync`를 사용하여 데이터를 복사할 수 있습니다.
        ```
@@ -88,4 +88,4 @@ API에서 주문하는 경우에는 새 스토리지의 업데이트된 기능�
 
       이 명령이 `--dry-run` 플래그 없이 완료된 경우에는 데이터가 새 {{site.data.keyword.filestorage_short}} 볼륨으로 복사된 것입니다. 명령을 다시 실행하여 누락된 항목이 없는지 확인하십시오. 두 위치를 수동으로 검토하여 누락된 항목이 없는지 살펴볼 수도 있습니다.
 
-      마이그레이션이 완료되면 프로덕션을 새 LUN으로 이동할 수 있습니다. 그 후에는 구성에서 원래 볼륨을 분리하고 삭제할 수 있습니다. 이 삭제 작업은 대상 사이트에 있는, 원래 볼륨과 연관된 모든 스냅샷 또는 복제본 또한 제거합니다.
+   마이그레이션이 완료되면 프로덕션을 새 볼륨으로 이동할 수 있습니다. 그 후에는 구성에서 원래 볼륨을 분리하고 삭제할 수 있습니다. 이 삭제 작업은 대상 사이트에 있는, 원래 볼륨과 연관된 모든 스냅샷 또는 복제본 또한 제거합니다.

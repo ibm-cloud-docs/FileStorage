@@ -47,7 +47,7 @@ IBM Cloud Storage - File Storage
 
     {: .topicgroup}
     데이터 보안
-        block-file-storage-encryption-rest.md
+        encryption-rest.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}
