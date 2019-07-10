@@ -36,7 +36,7 @@ Les hôtes et les volumes autorisés doivent figurer dans le même centre de don
 
 ## Démarrage d'un basculement depuis un volume vers sa réplique
 
-Dans le cas d'un événement d'échec, vous pouvez initier un **basculement** vers votre volume de destination, ou volume cible. Le volume cible devient actif. Le dernier instantané répliqué avec succès est activé et le volume est alors disponible pour le montage. Toutes les données écrites sur le volume source depuis le cycle de réplication précédent sont perdues. Une fois le basculement démarré, la relation de réplication est inversée. Votre volume cible devient votre volume source, et le volume source précédent devient votre cible, comme indiqué par le **Nom LUN** suivi de **REP**.
+Dans le cas d'un événement d'échec, vous pouvez initier un **basculement** vers votre volume de destination, ou volume cible. Le volume cible devient actif. Le dernier instantané répliqué avec succès est activé et le volume est alors disponible pour le montage. Toutes les données écrites sur le volume source depuis le cycle de réplication précédent sont perdues. Une fois le basculement démarré, la relation de réplication est inversée. Votre volume cible devient votre volume source, et le volume source précédent devient votre cible, comme indiqué par le **Nom du volume** suivi de **REP**.
 
 Les basculements sont démarrés sous **Stockage**, **{{site.data.keyword.filestorage_short}}** dans la [console {{site.data.keyword.cloud}}](https://{DomainName}/classic){: external}.
 
@@ -47,7 +47,7 @@ Avant d'exécuter ces étapes, déconnectez le volume. Si vous omettez cette ét
 2. Dans l'angle supérieur droit, cliquez sur **Réplique**, puis sur **Actions**.
 3. Sélectionnez **Basculement**.
 
-   Un message doit s'afficher pour vous indiquer que le basculement est en cours. En outre, une icône apparaît en regard de votre volume sur **{{site.data.keyword.filestorage_short}}** pour indiquer qu'une transaction active est en cours. Survolez cette icône pour ouvrir une boîte de dialogue affichant la transaction. L'icône disparaît une fois la transaction terminée. Durant le processus de basculement, les actions liées à la configuration sont accessibles en lecture seule. Vous ne pouvez pas éditer de planning d'instantané, ni modifier l'espace d'instantané. L'événement est consigné dans l'historique des réplications.<br/> Lorsque le volume cible est opérationnel, vous obtenez un autre message. Le nom LUN de votre volume source d'origine est mis à jour afin de se terminer par "REP" et il devient inactif.
+   Un message doit s'afficher pour vous indiquer que le basculement est en cours. En outre, une icône apparaît en regard de votre volume sur **{{site.data.keyword.filestorage_short}}** pour indiquer qu'une transaction active est en cours. Survolez cette icône pour ouvrir une boîte de dialogue affichant la transaction. L'icône disparaît une fois la transaction terminée. Durant le processus de basculement, les actions liées à la configuration sont accessibles en lecture seule. Vous ne pouvez pas éditer de planning d'instantané, ni modifier l'espace d'instantané. L'événement est consigné dans l'historique des réplications.<br/> Lorsque le volume cible est opérationnel, vous obtenez un autre message. Le nom de volume de votre volume source d'origine est mis à jour afin de se terminer par "REP" et son statut passe à Inactif.
    {:note}
 4. Cliquez sur **Tout afficher ({{site.data.keyword.filestorage_short}})**.
 5. Cliquez sur votre volume actif (anciennement votre volume cible). Ce volume a désormais le statut **Actif**.
@@ -64,7 +64,7 @@ Une fois votre volume source d'origine réparé, vous pouvez démarrer une repri
 - l'instantané de données tout juste pris est activé ;
 - et le volume source est activé pour le montage.
 
-Une fois la reprise par restauration démarrée, la relation de réplication est inversée. Votre volume source est restauré en tant que volume source, et votre volume cible redevient le volume cible, comme indiqué par le **Nom LUN** suivi de **REP**.
+Une fois la reprise par restauration démarrée, la relation de réplication est inversée. Votre volume source est restauré en tant que volume source, et votre volume cible redevient le volume cible, comme indiqué par le **Nom du volume** suivi de **REP**.
 
 Les reprises par restauration sont démarrées sous **Stockage**, **{{site.data.keyword.filestorage_short}}** dans la [console {{site.data.keyword.cloud}}](https://{DomainName}/classic){: external}.
 
@@ -74,6 +74,6 @@ Les reprises par restauration sont démarrées sous **Stockage**, **{{site.data.
 
    Un message doit s'afficher pour vous indiquer que la reprise par restauration est en cours. En outre, une icône apparaît en regard de votre volume sur **{{site.data.keyword.filestorage_short}}** pour indiquer qu'une transaction active est en cours. Survolez cette icône pour ouvrir une boîte de dialogue affichant la transaction. L'icône disparaît une fois la transaction terminée. Durant le processus de reprise par restauration, les actions liées à la configuration sont accessibles en lecture seule. Vous ne pouvez pas éditer de planning d'instantané, ni modifier l'espace d'instantané. L'événement est consigné dans l'historique des réplications.
    {:note}
-4. Dans l'angle supérieur droit, cliquez sur le lien **Afficher tout {{site.data.keyword.filestorage_short}}**.
+4. Dans l'angle supérieur droit, cliquez sur **Afficher tout {{site.data.keyword.filestorage_short}}**.
 5. Cliquez sur votre volume actif ("source").
 6. Montez votre volume de stockage sur l'hôte et associez-les. Pour plus d'informations, voir [Connexion de votre nouveau stockage](/docs/infrastructure/FileStorage?topic=FileStorage-getting-started#mountingstorage).

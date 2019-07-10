@@ -41,7 +41,7 @@ Si vous souhaitez renvoyer la production au site principal d'origine, vous devez
 
 1. Connectez-vous à la [console {{site.data.keyword.cloud}}](https://{DomainName}/){: external} et cliquez sur l'icône de **menu** dans l'angle supérieur gauche. Sélectionnez **Infrastructure classique**.
 2. Cliquez sur **Stockage** > **{{site.data.keyword.filestorage_short}}**.
-3. Cliquez sur le nom du numéro d'unité logique et créez un planning d'instantané (le cas échéant).
+3. Cliquez sur le nom du volume et créez un planning d'instantané (le cas échéant).
 
    Pour plus d'informations sur les plannings d'instantané, voir [Gestion des instantanés](/docs/infrastructure/FileStorage?topic=FileStorage-managingSnapshots#addschedule).
    {:tip}
@@ -55,7 +55,7 @@ Une fois la réplication terminée, vous devez créer un volume dupliqué de la 
 {:important}
 
 1. Revenez dans **Stockage** > **{{site.data.keyword.filestorage_short}}**.
-2. Cliquez sur la réplique du numéro d'unité logique dans la liste pour afficher la page **Détails** correspondante.
+2. Cliquez sur la réplique du volume dans la liste pour afficher la page **Détails** correspondante.
 3. Sur la page **Détails**, faites défiler l'écran et sélectionnez un instantané existant, puis cliquez sur **Actions** > **Dupliquer**.
 4. Apportez les mises à jour nécessaires à la capacité (pour augmenter la taille) ou aux opérations d'entrée-sortie par seconde pour le nouveau volume.
 5. Mettez à jour l'espace d'instantané pour le nouveau volume, si besoin.

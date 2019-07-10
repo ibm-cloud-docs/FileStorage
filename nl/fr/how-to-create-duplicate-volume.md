@@ -47,14 +47,14 @@ Il existe deux manières de créer un volume dupliqué via la [console {{site.da
 1. Accédez à votre liste de {{site.data.keyword.filestorage_short}}
     - Depuis le menu Infrastructure classique, cliquez sur **Stockage** > **{{site.data.keyword.filestorage_short}}** OU
     - A partir du catalogue {{site.data.keyword.cloud}}, cliquez sur **Infrastructure** > **Stockage** > **{{site.data.keyword.filestorage_short}}**.
-2. Sélectionnez un numéro d'unité logique dans la liste et cliquez sur **Actions** > **Dupliquer LUN (volume)**
+2. Sélectionnez un volume dans la liste et cliquez sur **Actions** > **Dupliquer volume (volume)**
 3. Sélectionnez une option d'instantané.
     - Si vous effectuez votre commande à partir d'un volume qui n'est pas un volume de réplique, procédez comme suit :
       - Sélectionnez **Créer à partir d'un nouvel instantané** pour créer un nouvel instantané qui sera utilisé pour le volume dupliqué. Utilisez cette option s'il n'existe aucun instantané pour votre volume ou si vous souhaitez créer un doublon à ce point de cohérence.</br>
       - Sélectionnez **Créer à partir du dernier instantané** pour créer un doublon à partir du dernier instantané existant pour ce volume.
     - Si vous effectuez votre commande à partir d'un volume de réplique, l'unique option d'instantané est d'utiliser le dernier instantané disponible.
 4. Le type de stockage et l'emplacement restent identiques à ce qui est indiqué pour le volume d'origine.
-5. Facturation à l'heure ou au mois - vous pouvez choisir de mettre à disposition le numéro d'unité logique du doublon avec une facturation à l'heure ou au mois. Le type de facturation pour le volume d'origine est automatiquement sélectionné. Si vous voulez en choisir un autre pour votre stockage en double, vous pouvez le sélectionner ici.
+5. Facturation à l'heure ou au mois - vous pouvez choisir de mettre à disposition le volume dupliqué avec une facturation à l'heure ou au mois. Le type de facturation pour le volume d'origine est automatiquement sélectionné. Si vous voulez en choisir un autre pour votre stockage en double, vous pouvez le sélectionner ici.
 5. Si vous le souhaitez, vous pouvez spécifier des IOPS ou un niveau d'IOPS pour le nouveau volume. Les IOPS du volume d'origine sont définies par défaut. Les combinaisons de performances et de taille disponibles sont affichées.
     - Si le volume d'origine a un niveau Endurance avec 0,25 IOPS, vous ne pourrez pas effectuer de nouvelle sélection.
     - Si le volume d'origine a un niveau Endurance avec 2, 4 ou 10 IOPS, vous pouvez indiquer n'importe lequel de ces niveaux pour le nouveau volume.

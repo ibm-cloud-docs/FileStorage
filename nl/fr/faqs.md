@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-07-01"
 
 keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
@@ -139,6 +139,11 @@ NFS v3 prend en charge en natif `no_root_squash` qui permet aux clients root de 
 
 Lorsqu'il s'agit de vSphere Solutions, NFS version 3 prend en charge plus de fonctionnalités que la version 4.1. Par exemple, Storage DRS et Site Recovery Manager.
 
+## Est-ce que VAAI (vStorage for API Array Integration) et l'accélération matérielle sont activées dans nos déploiements VMware ?
+{: #isVAAIsupported}
+{: faq}
+
+Non. Actuellement, vStorage for API Array Integration (VAAI) et l'accélération matérielle (HW) ne sont pas prises en charge.
 
 ## Que deviennent les unités qui sont déclassées du centre de données cloud ?
 {: faq}

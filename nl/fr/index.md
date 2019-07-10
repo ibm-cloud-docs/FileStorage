@@ -42,7 +42,7 @@ Tirez parti des principales fonctionnalités de {{site.data.keyword.filestorage_
    - Stockage flash pour les volumes mis à disposition à des niveaux supérieurs ou égaux à 2 IOPS/Go
 - **Instantanés** [(disponibles dans des centres de données sélectionnés)](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
    - Capture des instantanés de données ponctuels de manière transparente.
-- **Replication**  [(disponible dans des centres de données sélectionnés)](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)
+- **Réplication**  [(disponible dans des centres de données sélectionnés)](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)
    - Disponible uniquement pour le stockage mis à disposition dans des [centres de données sélectionnés](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
    - Copie automatiquement des instantanés vers un centre de données {{site.data.keyword.cloud}} partenaire.
 - **Connectivité hautement disponible**
@@ -108,9 +108,9 @@ Les volumes Performance sont conçus pour fonctionner d'une manière cohérente 
 
 ## Facturation
 
-Vous pouvez choisir une facturation horaire ou mensuelle pour un volume de fichier. Le type de facturation sélectionné pour un numéro d'unité logique s'applique à son espace d'instantané et à ses répliques. Par exemple, si vous mettez à disposition un numéro d'unité logique avec une facturation horaire, tous les frais liés aux instantanés ou aux répliques seront facturés à l'heure. Si vous mettez à disposition un numéro d'unité logique avec une facturation mensuelle, tous les frais liés aux instantanés ou aux répliques sont facturés au mois.
+Vous pouvez choisir une facturation horaire ou mensuelle pour un volume de fichier. Le type de facturation sélectionné pour un volume s'applique à son espace d'instantané et à ses répliques. Par exemple, si vous mettez à disposition un volume avec une facturation horaire, tous les frais liés aux instantanés ou aux répliques seront facturés à l'heure. Si vous mettez à disposition un volume avec une facturation mensuelle, tous les frais liés aux instantanés ou aux répliques sont facturés au mois.
 
- * Avec la **facturation horaire**, le nombre d'heures d'existence du volume de fichier sur le compte est calculé lors de la suppression du numéro d'unité logique ou à la fin du cycle de facturation, à la première occurrence de l'un de ces deux événements. La facturation horaire est un bon choix si vous avez besoin d'un stockage pour quelques jours ou pour moins d'un mois complet. La facturation horaire est disponible uniquement pour le stockage qui est mis à disposition dans des [centres de données sélectionnés](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
+ * Avec la **facturation horaire**, le nombre d'heures d'existence du volume de fichier sur le compte est calculé lors de la suppression du volume ou à la fin du cycle de facturation, à la première occurrence de l'un de ces deux événements. La facturation horaire est un bon choix si vous avez besoin d'un stockage pour quelques jours ou pour moins d'un mois complet. La facturation horaire est disponible uniquement pour le stockage qui est mis à disposition dans des [centres de données sélectionnés](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
 
  * Avec la **facturation mensuelle**, le calcul du prix est calculé au prorata depuis la date de création jusqu'à la fin du cycle de facturation et la facturation est immédiate. Aucun remboursement n'est possible si un volume de fichier est supprimé avant la fin du cycle de facturation. La facturation mensuelle convient si vous avez besoin d'un stockage pour des charges de travail qui utilisent des données devant être stockées et rester accessibles pour de longues périodes (un mois ou plus).
 
@@ -127,7 +127,7 @@ Vous pouvez choisir une facturation horaire ou mensuelle pour un volume de fichi
 {: caption="Comparaison de tableaux" caption-side="top"}
 {: summary="Table 2 is showing the prices for Endurance Storage for each tier with monthly and hourly billing options. This table has row and column headers. The row headers identify the billing options. The column headers identify the IOPS level that is chosen for the service. To understand what your price is located in the table, navigate to the column and review the two different billing options for that IOPS tier."}
 
-### Performances
+### Performance
 {: #pricing-comparison-performance}
 
 | Options de tarification pour IOPS personnalisé | Calcul de tarification |

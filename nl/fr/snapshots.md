@@ -39,7 +39,7 @@ Vous devez d'abord acheter une certaine quantité d'espace d'instantané pour vo
 ## Meilleures pratiques concernant les instantanés
 
 La conception des instantanés dépend de l'environnement du client. Prenez en compte les remarques de conception suivantes pour planifier et implémenter les copies d'instantané :
-- Vous pouvez créer jusqu'à 50 instantanés grâce à la planification et jusqu'à 50 instantanés manuellement sur chaque volume ou numéro d'unité logique.
+- Vous pouvez créer jusqu'à 50 instantanés grâce à la planification et jusqu'à 50 instantanés manuellement sur chaque volume.
 - Ne prenez pas trop d'instantanés. Veillez à ce que la fréquence des instantanés planifiés corresponde à vos besoins en termes d'objectif de temps de reprise et d'objectif de point de reprise, ainsi qu'à vos exigences professionnelles liées aux applications et planifiez des instantanés à un rythme horaire, quotidien ou hebdomadaire.
 - La fonction de suppression automatique des instantanés permet de contrôler la croissance de la consommation d'espace de stockage.
 

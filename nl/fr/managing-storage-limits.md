@@ -33,7 +33,7 @@ Options:
 
 Vous pouvez demander une augmentation de la limite en soumettant un cas de support sur le portail [](https://cloud.ibm.com/unifiedsupport/cases/add){: external}. Lorsque la demande est approuvée, une limite de volume est définie pour un centre de données spécifique.
 
-Pour demander une augmentation de la limite, ouvrez un ticket et envoyez-le à votre ingénieur commercial.
+Pour demander une augmentation de la limite, ouvrez un cas de support et envoyez-le à votre ingénieur commercial.
 
 Dans le ticket, indiquez les informations suivantes :
 
@@ -49,7 +49,7 @@ Dans le ticket, indiquez les informations suivantes :
 *Exemple de réponse : "25x Performance 20 Go @ 10 IOPS dans DAL09" ou "50x Endurance 2 To @ 0,25 IOPS dans SJC03".*
 
 - **Indiquez une estimation du délai au terme duquel vous escomptez ou planifiez que la totalité de l'augmentation de volume demandée soit mise à disposition.** <br />
- *Exemple de réponse : "90 jours".*
+*Exemple de réponse : "90 jours".*
 
 - **Indiquez une prévision à 90 jours de l'utilisation moyenne de la capacité attendue de ces volumes.** <br />
 *Exemple de réponse : "prévision de 25 % d'utilisation dans 30 jours, de 50 % d'utilisation dans 60 jours et de 75 % d'utilisation dans 90 jours".*

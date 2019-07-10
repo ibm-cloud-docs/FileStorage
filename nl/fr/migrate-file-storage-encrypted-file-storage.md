@@ -18,11 +18,11 @@ subcollection: FileStorage
 # Migration de {{site.data.keyword.filestorage_short}} vers {{site.data.keyword.filestorage_short}} amélioré
 {: #migratestorage}
 
-Enhanced {{site.data.keyword.filestorage_full}} est désormais disponible dans la plupart des [centre de données](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
+Une version améliorée d'{{site.data.keyword.filestorage_full}} est désormais disponible dans la plupart des [centres de données](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
 
-Le chemin de migration recommandé consiste à se connecter simultanément aux deux volumes et à transférer les données via NFS directement d'un numéro d'unité logique à un autre. Les spécificités dépendent de votre système d'exploitation et de la modification attendue ou non des données lors de la copie.
+Le chemin de migration recommandé consiste à se connecter simultanément aux deux volumes et à transférer les données via NFS directement d'un volume à un autre. Les spécificités dépendent de votre système d'exploitation et de la modification attendue ou non des données lors de la copie.
 
-Nous supposons que votre numéro d'unité logique non chiffré est déjà connecté à l'hôte. Si tel n'est pas le cas, suivez les instructions ci-dessous qui correspondent le mieux à votre système d'exploitation pour effectuer cette tâche.
+Nous supposons que votre volume non chiffré est déjà connecté à l'hôte. Si tel n'est pas le cas, suivez les instructions ci-dessous qui correspondent le mieux à votre système d'exploitation pour effectuer cette tâche.
 
 - [Montage de {{site.data.keyword.filestorage_short}} sur Linux](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)
 - [Montage de {{site.data.keyword.filestorage_short}} dans CentOS](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)
@@ -37,7 +37,7 @@ Tous les volumes {{site.data.keyword.filestorage_short}} améliorés mis à disp
 Lorsque vous passez une commande via l'API, spécifiez le package "Storage as a Service" pour être certain d'obtenir les fonctionnalités mises à jour avec votre nouveau stockage.
 {:important}
 
-Vous pouvez commander un numéro d'unité logique étendu via le catalogue {{site.data.keyword.cloud}}. Votre nouveau volume doit avoir une taille identique ou supérieure à celle du partage de fichiers d'origine afin de faciliter la migration.
+Vous pouvez commander un volume étendu via le catalogue {{site.data.keyword.cloud}}. Votre nouveau volume doit avoir une taille identique ou supérieure à celle du partage de fichiers d'origine afin de faciliter la migration.
 
 - [Commande de {{site.data.keyword.filestorage_short}} avec des niveaux d'IOPS prédéfinis (Endurance)](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#endurance)
 - [Commande de {{site.data.keyword.filestorage_short}} avec un nombre d'IOPS personnalisé (Performance)](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#performance)
@@ -77,7 +77,7 @@ Si le chiffrement n'est pas activé pour le centre de données cible, vous ne po
 
 3. Copiez vos données.
    - **Microsoft Windows**
-     - Pour copier des données depuis votre numéro d'unité logique {{site.data.keyword.filestorage_short}} d'origine vers le nouveau numéro d'unité logique chiffré, formatez le nouveau stockage et copiez les fichiers à l'aide de l'Explorateur Windows.
+     - Pour copier des données depuis votre volume {{site.data.keyword.filestorage_short}} d'origine vers votre nouveau volume, formatez le nouveau stockage et copiez les fichiers à l'aide de l'Explorateur Windows.
    - **Linux**
      - Vous pouvez utiliser `rsync` pour copier les données.
        ```
@@ -88,4 +88,4 @@ Si le chiffrement n'est pas activé pour le centre de données cible, vous ne po
 
    Une fois cette commande terminée sans l'indicateur `--dry-run`, vos données sont copiées sur le nouveau volume {{site.data.keyword.filestorage_short}}. Exécutez la commande une nouvelle fois pour être sûr qu'il ne manque aucun élément. Vous pouvez également vérifier manuellement les deux emplacements et rechercher d'éventuels éléments manquants.
 
-   Une fois la migration terminée, vous pouvez déplacer la production vers le nouveau numéro d'unité logique. Ensuite, vous pouvez détacher et supprimer votre volume d'origine de votre configuration. Cette suppression entraîne également la suppression de tous les instantanés ou répliques du site cible qui étaient associés au volume d'origine.
+   Une fois la migration terminée, vous pouvez déplacer la production vers le nouveau volume. Ensuite, vous pouvez détacher et supprimer votre volume d'origine de votre configuration. Cette suppression entraîne également la suppression de tous les instantanés ou répliques du site cible qui étaient associés au volume d'origine.
