@@ -49,14 +49,14 @@ Alguns usos comuns para um volume duplicado incluem os exemplos a seguir.
 1. Acesse sua lista de {{site.data.keyword.filestorage_short}}
     - No menu Infraestrutura clássica, clique em **Armazenamento** > **{{site.data.keyword.filestorage_short}}** OU
     - No catálogo do {{site.data.keyword.cloud}}, clique em **Infraestrutura** > **Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
-2. Selecione um LUN na lista e clique em **Ações** > **Duplicar LUN (Volume)**
+2. Selecione um volume na lista e clique em **Ações** > **Duplicar volume (volume)**
 3. Escolha sua opção de captura instantânea.
     - Se você pedir por meio de um volume que não é de réplica,
       - Selecione **Criar de uma nova captura instantânea** - essa ação cria uma captura instantânea a ser usada para a duplicata. Use essa opção se o seu volume não tem capturas instantâneas atuais ou se você deseja criar uma duplicata logo em seguida.</br>
       - Selecione **Criar da captura instantânea mais recente** - essa ação cria uma duplicata da captura instantânea mais recente existente para esse volume.
     - Se você pedir usando um volume de réplica, a única opção para a captura instantânea será usar a captura instantânea mais recente disponível.
 4. O Tipo de armazenamento e o Local permanecem iguais aos do volume original.
-5. Faturamento por hora ou mensal – é possível escolher provisionar o LUN duplicado com faturamento por hora ou mensal. O tipo de faturamento para o volume original é selecionado automaticamente. Se você deseja escolher um tipo de faturamento diferente para seu armazenamento duplicado, é possível fazer essa seleção aqui.
+5. Faturamento por hora ou mensal – é possível escolher provisionar o volume duplicado com faturamento por hora ou mensal. O tipo de faturamento para o volume original é selecionado automaticamente. Se você deseja escolher um tipo de faturamento diferente para seu armazenamento duplicado, é possível fazer essa seleção aqui.
 5. É possível especificar o IOPS ou a Camada de IOPS para o novo volume, caso deseje. A designação de IOPS do volume original é configurada por padrão. As combinações de desempenho e tamanho disponíveis são exibidas.
     - Se o seu volume original for a camada Endurance 0,25 IOPS, não será possível fazer uma nova seleção.
     - Se seu volume original for a camada de 2, 4 ou 10 IOPS do Endurance, será possível se mover em qualquer lugar entre essas camadas para o novo volume.

@@ -38,7 +38,7 @@ Ao pedir o {{site.data.keyword.filestorage_short}}, considere as informações a
 
 - Quando você decidir sobre o tamanho, considere o tamanho da carga de trabalho e o rendimento necessário. O tamanho é importante com o serviço Endurance, que escala o desempenho linearmente em relação à capacidade (IOPS/GB). Por outro lado, o serviço Performance permite que o administrador escolha a capacidade e o desempenho independentemente. Os requisitos de rendimento são importantes com o Performance.
 
-  O cálculo de rendimento é IOPS x 16 KB. O IOPS é medido com base em um tamanho de bloco de 16 KB com uma combinação de leitura/gravação de 50/50.<br/>Aumentar o tamanho de bloco aumenta o rendimento, mas diminui o IOPS. Por exemplo, dobrar o tamanho do bloco para blocos de 32 KB mantém o rendimento máximo, mas diminui pela metade o IOPS.
+  O cálculo de rendimento é IOPS x 16 KB. O IOPS é medido com base em um tamanho de bloco de 16 KB com uma combinação de leitura/gravação de 50/50.<br/>Aumentar o tamanho do bloco aumenta o rendimento, mas diminui o IOPS. Por exemplo, dobrar o tamanho do bloco para blocos de 32 KB mantém o rendimento máximo, mas diminui pela metade o IOPS.
   {:note}
 
 - O NFS usa muitas operações de controle de arquivo extras, como `lookup`, `getattr` e `readdir`. Essas operações, além das operações de leitura/gravação, podem contar como IOPS e variam por tipo de operação e versão do NFS.
@@ -121,7 +121,7 @@ Quando um volume é provisionado, o {{site.data.keyword.BluBareMetServers_full}}
 1. Clique em **Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
 2. Selecione **Acessar host** no menu **Ações de volume do Performance** ou **Endurance**.
 3. Clique em  **Subnets**.
-4. Escolha na lista de sub-redes disponíveis designadas às portas do VMkernel nos hosts ESXi e clique em **Enviar**.<br/>
+4. Escolha na lista de sub-redes disponíveis que estão designadas às portas do VMkernel nos hosts ESXi e clique em **Enviar**.<br/>
 
    As sub-redes que são exibidas são sub-redes inscritas no mesmo data center que o volume de armazenamento.
    {:note}
@@ -144,7 +144,7 @@ Antes de iniciar o processo de configuração do VMware, certifique-se de que os
 2. No {{site.data.keyword.BluVirtServers_short}}, inicie um navegador da web e conecte-se ao VMware vCenter por meio do vSphere Web Client.
 3. Na tela **INÍCIO**, selecione **Hosts e clusters**. Expanda a área de janela à esquerda e selecione o **Servidor VMware ESXi** que deve ser usado para esta implementação.
 4. Certifique-se de que a porta de firewall do cliente NFS esteja aberta em todos os hosts para que seja possível configurar o cliente NFS no host vSphere. (A porta é aberta automaticamente nas liberações mais recentes do vSphere.) Para verificar se a porta está aberta, acesse a guia **Gerenciamento do host ESXi** no VMware® vCenter™, selecione **Configurações** e, em seguida, selecione **Perfil de segurança**. Na seção **Firewall**, clique em **Editar** e role para baixo para **Cliente NFS**.
-5. Certifique-se de que **Permitir conexão de qualquer endereço IP ou de uma lista de endereços IP** seja fornecido. <br/>
+5. Certifique-se de que **Permitir conexão de qualquer endereço IP ou uma lista de endereços IP** seja fornecido. <br/>
    ![Permitir conexão](/images/1_4.png)
 6. Configure quadros gigantes acessando a guia **Gerenciar do host ESXi**, selecione **Gerenciar** e, em seguida, **Rede**.
 7. Selecione **Adaptadores VMkernel**, destaque o **vSwitch** e, em seguida, clique em **Editar** (Ícone de lápis).
@@ -183,7 +183,7 @@ Para obter mais informações sobre o VMware e os quadros gigantes, clique [aqui
 5. Selecione o **vSwitch** existente e clique em **Avançar**.
 6. Selecione **Adaptadores não usados** e clique em **Incluir adaptadores** (Sinal de mais).
 7. Clique no outro adaptador "Conectado" e clique em **OK**. <br/>
-   ![Incluir adaptadores físicos no comutador](/images/2_3.png)
+   ![Add physical adapters to switch](/images/2_3.png)
 8. Clique em **Avançar** e **Concluir**.
 9. Volte para a guia **Comutadores virtuais** e selecione a **Configuração de edição** (Ícone de lápis) sob o título **Comutadores virtuais**.
 10. À esquerda, selecione a entrada **Equipe e failover** do vSwitch.
@@ -210,7 +210,7 @@ A configuração de rede para este guia de arquitetura usa um número mínimo de
 
 2. As rotas estáticas não são persistentes nas reinicializações no ESXi 5.0 e anteriores. Para assegurar-se de que quaisquer rotas estáticas incluídas permaneçam persistentes, esse comando precisará ser incluído no arquivo `local.sh` em cada host, que está localizado no diretório `/etc/rc.local.d/`. Abra o arquivo `local.sh` usando o editor visual e inclua o segundo comando na Etapa 4.1. na frente da linha `exit 0`.
 
-Anote o endereço IP, pois ele pode ser usado para montar o volume na próxima etapa.<br/>Esse processo precisar ser feito para cada volume NFS que você planeja montar em seu host ESXi.<br/>Para obter mais informações, consulte o artigo VMware KB, [Configurando rotas estáticas para portas VMkernel em um host ESXi](https://kb.vmware.com/s/article/2001426){: external}.
+Anote o endereço IP, pois ele poderá ser usado para montar o volume na próxima etapa.<br/>Esse processo precisa ser feito para cada volume NFS que você planeja montar em seu host ESXi.<br/>Para obter mais informações, veja o artigo do VMware KB, [Configurando rotas estáticas para portas do VMkernel em um host ESXi](https://kb.vmware.com/s/article/2001426){: external}.
 {:tip}
 
 
@@ -266,7 +266,7 @@ A configuração incorreta do SIOC para um armazenamento de dados do VMware ou p
 2. Clique na guia **Gerenciar**.
 3. Clique em **Configurações** e clique em **Geral**.
 4. Clique em **Editar** para **Recursos de armazenamento de dados**.
-5. Marque a caixa de seleção **Ativar controle de E/S de armazenamento**.<br/>
+5. Marque a caixa de seleção **Ativar Storage I/O Control**.<br/>
    ![Armazenamento de dados do NSF VMware](/images/3_0.png)
 6. Clique em **OK**.
 
@@ -301,7 +301,7 @@ Configurações extras são necessárias para configurar hosts ESXi 5.x para arm
 |Parâmetro | Configure para... |
 |----------|------------|
 |Net.TcpipHeapSize |	32 |
-|Net.TcpipHeapMax |	Para o vSphere 5.0/5.1, configure 128 <br/> Para o vSphere 5.5 ou mais recente, configure 512 |
+|Net.TcpipHeapMax |	Para vSphere 5.0/5.1, configure 128 <br/> Para o vSphere 5.5 ou mais recente, configure 512 |
 |NFS.MaxVolumes |	256 |
 |NFS41.MaxVolumes |	256 (somente vSphere 6.0 ou mais recente) |
 |NFS.HeartbeatMaxFailures |	10 |

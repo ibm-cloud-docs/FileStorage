@@ -41,7 +41,7 @@ Se você desejar retornar a produção para o site primário original, as etapas
 
 1. Efetue login no [Console do {{site.data.keyword.cloud}}](https://{DomainName}/){: external} e clique no ícone **menu** na parte superior esquerda. Selecione **Infraestrutura clássica**.
 2. Clique em **Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
-3. Clique no nome do LUN e crie um planejamento de captura instantânea (se ainda não existir).
+3. Clique no nome do volume e crie um planejamento de captura instantânea (se um ainda não existir).
 
    Para obter mais informações sobre planejamentos de captura instantânea, consulte [Gerenciando capturas instantâneas](/docs/infrastructure/FileStorage?topic=FileStorage-managingSnapshots#addschedule).
    {:tip}
@@ -55,7 +55,7 @@ Após a replicação ser concluída, será necessário criar um volume duplicado
 {:important}
 
 1. Volte para **Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
-2. Clique na réplica da LUN na lista para visualizar sua página **Detalhes**.
+2. Clique na réplica do volume na lista para visualizar sua página **Detalhes**.
 3. Na página **Detalhes**, role para baixo e selecione uma captura instantânea existente e, em seguida, clique em **Ações** > **Duplicar**.
 4. Faça quaisquer atualizações necessárias na capacidade (para aumentar o tamanho) ou na IOPS para o novo volume.
 5. Atualize o espaço de captura instantânea para o novo volume, se necessário.

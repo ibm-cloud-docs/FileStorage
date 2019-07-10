@@ -33,7 +33,7 @@ subcollection: FileStorage
 2. Selecione sua implementação  ** Local **  (data center).
    - Assegure-se de que o novo Armazenamento seja incluído no mesmo local que o host de cálculo ou os hosts que você possui.
 3. Faturamento. Se você selecionou um data center com recursos melhorados (marcados com um asterisco), é possível escolher entre Faturamento por hora ou mensal.
-     1. Com o faturamento **por hora**, o número de horas em que o volume de arquivo existiu na conta é calculado no momento em que o LUN é excluído ou no final do ciclo de faturamento. O que vier primeiro. O faturamento por hora é uma boa opção para armazenamento usado por alguns dias ou menos de um mês completo. O faturamento por hora está disponível somente para o armazenamento provisionado nestes [data centers selecionados](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
+     1. Com o faturamento **por hora**, o número de horas nas quais o volume de arquivo existiu na conta é calculado no momento em que o volume é excluído ou no término do ciclo de faturamento. O que vier primeiro. O faturamento por hora é uma boa opção para armazenamento usado por alguns dias ou menos de um mês completo. O faturamento por hora está disponível somente para o armazenamento provisionado nestes [data centers selecionados](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
      2. Com o faturamento **mensal**, o cálculo para o preço é avaliado a partir da data de criação até o término do ciclo de faturamento e faturado imediatamente. Não há reembolso se um volume de arquivo é excluído antes do término do ciclo de faturamento. O faturamento mensal é uma boa opção para armazenamento que é usado em cargas de trabalho de produção que usam dados que precisam ser armazenados e acessados por longos períodos (mês ou mais).
 
      O tipo de faturamento mensal é usado por padrão para um armazenamento que é provisionado em data centers que **não** são atualizados com recursos aprimorados.
@@ -54,7 +54,7 @@ subcollection: FileStorage
 10. Clique em **Criar**. Sua nova alocação de armazenamento estará disponível em alguns minutos.
 
 Por padrão, é possível provisionar um total combinado de 250
-volumes do {{site.data.keyword.blockstorageshort}}. Para aumentar o número de seus volumes, entre em contato com seu representante de vendas. Leia sobre o aumento dos limites [aqui](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits).<br/><br/>Para obter mais informações sobre o limite em autorizações simultâneas, consulte as [Perguntas mais frequentes](/docs/infrastructure/FileStorage?topic=file-storage-faqs#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-).
+volumes do {{site.data.keyword.blockstorageshort}}. Para aumentar o número de seus volumes, entre em contato com seu representante de vendas. Leia sobre como aumentar os limites [aqui](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits).<br/><br/>Para obter mais informações sobre o limite de autorizações simultâneas, consulte as [FAQs](/docs/infrastructure/FileStorage?topic=file-storage-faqs#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-).
 {:tip}
 
 ## Pedindo o {{site.data.keyword.filestorage_short}} com IOPS customizado (Performance)
@@ -64,7 +64,7 @@ volumes do {{site.data.keyword.blockstorageshort}}. Para aumentar o número de s
 2. Clique em **Local** e selecione seu data center.
    - Assegure-se de que o novo Armazenamento seja incluído no mesmo local que o host de cálculo ou os hosts que você possui.
 3. Faturamento. Se você selecionou um data center com recursos melhorados (marcados com um asterisco), é possível escolher entre Faturamento por hora ou mensal.
-     1. Com o faturamento **por hora**, o número de horas em que o volume de arquivo existiu na conta é calculado no momento em que o LUN é excluído ou no final do ciclo de faturamento. O que vier primeiro. O faturamento por hora é uma boa opção para armazenamento usado por alguns dias ou menos de um mês completo. O faturamento por hora está disponível somente para o armazenamento provisionado nestes [data centers selecionados](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
+     1. Com o faturamento **por hora**, o número de horas nas quais o volume de arquivo existiu na conta é calculado no momento em que o volume é excluído ou no término do ciclo de faturamento. O que vier primeiro. O faturamento por hora é uma boa opção para armazenamento usado por alguns dias ou menos de um mês completo. O faturamento por hora está disponível somente para o armazenamento provisionado nestes [data centers selecionados](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
      2. Com o faturamento **mensal**, o cálculo para o preço é avaliado a partir da data de criação até o término do ciclo de faturamento e faturado imediatamente. Não há reembolso se um volume de arquivo é excluído antes do término do ciclo de faturamento. O faturamento mensal é uma boa opção para armazenamento que é usado em cargas de trabalho de produção que usam dados que precisam ser armazenados e acessados por longos períodos (mês ou mais).
 
      O tipo de faturamento mensal é usado por padrão para um armazenamento que é provisionado em data centers que **não** são atualizados com recursos aprimorados.
@@ -81,7 +81,7 @@ volumes do {{site.data.keyword.blockstorageshort}}. Para aumentar o número de s
 10. Clique em **Criar**. Sua nova alocação de armazenamento estará disponível em alguns minutos.
 
 Por padrão, é possível provisionar um total combinado de 250
-volumes do {{site.data.keyword.blockstorageshort}}. Para aumentar o número de seus volumes, entre em contato com seu representante de vendas. Leia sobre o aumento dos limites [aqui](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits).<br/><br/>Para obter mais informações sobre o limite em autorizações simultâneas, consulte as [Perguntas mais frequentes](/docs/infrastructure/FileStorage?topic=file-storage-faqs#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-).
+volumes do {{site.data.keyword.blockstorageshort}}. Para aumentar o número de seus volumes, entre em contato com seu representante de vendas. Leia sobre como aumentar os limites [aqui](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits).<br/><br/>Para obter mais informações sobre o limite de autorizações simultâneas, consulte as [FAQs](/docs/infrastructure/FileStorage?topic=file-storage-faqs#how-many-instances-can-share-the-use-of-a-provisioned-file-storage-volume-).
 {:important}
 
 

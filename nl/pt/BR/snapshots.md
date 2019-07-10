@@ -40,7 +40,7 @@ obter mais detalhes e orientação.
 ## Melhores práticas de captura instantânea
 
 O design de captura instantânea depende do ambiente do cliente. As considerações de design a seguir podem ajudá-lo a planejar e implementar cópias de Captura instantânea:
-- Até 50 capturas instantâneas podem ser criadas por meio de um planejamento e até 50 manualmente em cada volume ou LUN.
+- Até 50 capturas instantâneas podem ser criadas por meio de um planejamento e até 50 manualmente em cada volume.
 - Não crie capturas instantâneas em excesso. Certifique-se de que a frequência de captura instantânea planejada atenda às suas necessidades de RTO e RPO e às suas necessidades de negócios do aplicativo, planejando capturas instantâneas por hora, diárias ou semanais.
 - O AutoDelete da captura instantânea pode ser usado para controlar o crescimento do consumo de armazenamento.
 

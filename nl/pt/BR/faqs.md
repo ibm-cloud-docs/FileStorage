@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-07-01"
 
 keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
@@ -139,6 +139,11 @@ O NFS v3 suporta nativamente `no_root_squash`, o qual permite que os clientes ra
 
 Quando se trata das Soluções vSphere, o NFS v3 suporta mais recursos do que a v4.1. Esses recursos incluem o Storage DRS e o Site Recovery Manager.
 
+## A VAAI e a aceleração de HW podem ser ativadas em nossas implementações do VMware?
+{: #isVAAIsupported}
+{: faq}
+
+Não. Atualmente, o vStorage para a Integração de Matrizes de API e a aceleração de Hardware não são suportados.
 
 ## O que acontece com as unidades que são desatribuídas do data center de nuvem?
 {: faq}

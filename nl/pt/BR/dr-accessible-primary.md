@@ -36,7 +36,8 @@ Os hosts e volumes autorizados devem estar no mesmo data center. Por exemplo, n�
 
 ## Iniciando um failover de um volume em sua réplica
 
-Se ocorrer um evento de falha, será possível iniciar um **failover** em seu volume de destino. O volume de destino torna-se ativo. A última captura instantânea replicada com êxito é ativada e o volume é disponibilizado para montagem. Todos os dados que foram gravados no volume de origem desde que o ciclo de replicação anterior foi perdido. Quando um failover é iniciado, o relacionamento de replicação é invertido. O volume de destino torna-se o volume de origem e o volume de origem antigo torna-se o destino, conforme indicado pelo **Nome do LUN** seguido por **REP**.
+Se ocorrer um evento de falha, será possível iniciar um **failover** em seu volume de destino. O volume de destino torna-se ativo. A última captura instantânea replicada com êxito é ativada e o volume é disponibilizado para montagem. Todos os dados que foram gravados no volume de origem desde que o ciclo de replicação anterior foi perdido. Quando um failover é iniciado, o relacionamento de replicação é invertido. O volume de destino torna-se o volume de origem e o volume de origem antigo se torna o volume de destino, conforme indicado pelo **Nome do volume** seguido por
+**REP**.
 
 Os failovers são iniciados em **Armazenamento**, **{{site.data.keyword.filestorage_short}}** no [console do {{site.data.keyword.cloud}}](https://{DomainName}/classic){: external}.
 
@@ -47,7 +48,7 @@ Antes de continuar com essas etapas, desconecte o volume. Caso não o faça, iss
 2. Na parte superior direita, clique em **Réplica** e clique em **Ações**.
 3. Selecione **Failover**.
 
-   Espere uma mensagem indicando que o failover está em andamento. Além disso, um ícone aparece próximo ao seu volume no **{{site.data.keyword.filestorage_short}}** que indica que uma transação ativa está ocorrendo. Passar o mouse sobre o ícone produz uma janela que mostra a transação. O ícone desaparece quando a transação está concluída. Durante o processo de failover, as ações relacionadas à configuração são somente leitura. Não é possível editar qualquer planejamento de captura instantânea ou mudar o espaço de captura instantânea. O evento é registrado no histórico de replicação.<br/> Quando seu volume de destino estiver ativo, você obterá outra mensagem. O nome do LUN do volume de origem original é atualizado para terminar em "REP" e seu Status se torna Inativo.
+   Espere uma mensagem indicando que o failover está em andamento. Além disso, um ícone aparece próximo ao seu volume no **{{site.data.keyword.filestorage_short}}** que indica que uma transação ativa está ocorrendo. Passar o mouse sobre o ícone produz uma janela que mostra a transação. O ícone desaparece quando a transação está concluída. Durante o processo de failover, as ações relacionadas à configuração são somente leitura. Não é possível editar qualquer planejamento de captura instantânea ou mudar o espaço de captura instantânea. O evento é registrado no histórico de replicação.<br/> Quando seu volume de destino estiver ativo, você obterá outra mensagem. O Nome do Volume do volume de origem original é atualizado para terminar em "REP" e seu Status se torna Inativo.
    {:note}
 4. Clique em **Visualizar todos ({{site.data.keyword.filestorage_short}})**.
 5. Clique no volume ativo (anteriormente seu volume de destino). Esse volume agora tem um status **Ativo**.
@@ -64,7 +65,8 @@ Quando seu volume de origem original é reparado, é possível iniciar um Failba
 - A captura instantânea de dados apenas tomada está ativada,
 - E o volume de origem torna-se ativo para montagem.
 
-Quando um Failback é iniciado, o relacionamento de replicação é invertido novamente. Seu volume de origem é restaurado como seu volume de origem e seu volume de destino é o volume de destino novamente, conforme indicado pelo **Nome do LUN** seguido por **REP**.
+Quando um Failback é iniciado, o relacionamento de replicação é invertido novamente. O volume de origem é restaurado como o volume de origem e o volume de destino é o volume de destino novamente, conforme indicado pelo **Nome do volume** seguido por
+**REP**.
 
 Os failbacks são iniciados em **Armazenamento**, **{{site.data.keyword.filestorage_short}}** no [console do {{site.data.keyword.cloud}}](https://{DomainName}/classic){: external}.
 
@@ -74,6 +76,6 @@ Os failbacks são iniciados em **Armazenamento**, **{{site.data.keyword.filestor
 
    Espere uma mensagem mostrando que o failover está em andamento. Além disso, um ícone aparece próximo ao seu volume no **{{site.data.keyword.filestorage_short}}** que indica que uma transação ativa está ocorrendo. Passar o mouse sobre o ícone produz uma janela que mostra a transação. O ícone desaparece quando a transação está concluída. Durante o processo de Failback, as ações relacionadas à configuração são somente leitura. Não é possível editar qualquer planejamento de captura instantânea ou mudar o espaço de captura instantânea. O evento é registrado no histórico de replicação.
    {:note}
-4. No canto superior direito, clique em **Visualizar todo o link do {{site.data.keyword.filestorage_short}}**.
+4. Na parte superior direita, clique em **Visualizar todos os {{site.data.keyword.filestorage_short}}**.
 5. Clique em seu volume ativo ("origem").
 6. Montar e anexar seu volume de armazenamento ao host. Para obter mais informações, consulte [Conectando seu novo armazenamento](/docs/infrastructure/FileStorage?topic=FileStorage-getting-started#mountingstorage).

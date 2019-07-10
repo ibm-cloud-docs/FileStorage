@@ -56,7 +56,7 @@ Tire vantagem dos recursos principais do {{site.data.keyword.filestorage_short}}
 
 ## Fornecimento
 
-Os volumes do {{site.data.keyword.filestorage_short}} podem ser fornecidos de 20 GB a 12 TB com duas opções: <br/>
+Os volumes do {{site.data.keyword.filestorage_short}} podem ser provisionados de 20 GB a 12 TB com duas opções: <br/>
 - Provisiona camadas do **Endurance** que apresentam níveis de desempenho predefinidos e outros recursos, como capturas instantâneas e replicação.
 - Construa um ambiente **Performance** de alta potência com input/output operations per second (IOPS) alocado.
 
@@ -108,9 +108,9 @@ Os volumes do Performance foram projetados para operar consistentemente próximo
 
 ## Faturamento
 
-É possível selecionar o faturamento por hora ou mensal para um volume de Arquivo. O tipo de faturamento selecionado para um LUN aplica-se a seu espaço de captura instantânea e réplicas. Por exemplo, se você provisionar um LUN com o faturamento por hora, quaisquer capturas instantâneas ou taxas de réplica serão faturadas por hora. Se você provisionar um LUN com faturamento mensal, quaisquer capturas instantâneas ou taxas de réplica serão faturadas mensalmente.
+É possível selecionar o faturamento por hora ou mensal para um volume de Arquivo. O tipo de faturamento selecionado para um volume aplica-se a seu espaço de captura instantânea e réplicas. Por exemplo, se você provisionar um volume com faturamento por hora, quaisquer capturas instantâneas ou taxas de réplicas serão faturadas por hora. Se você provisionar um volume com faturamento mensal, quaisquer capturas instantâneas ou taxas de réplica serão faturadas mensalmente.
 
- * Com o **faturamento por hora**, o número de horas em que o volume de arquivo existiu na conta é calculado no momento em que o LUN é excluído ou no final do ciclo de faturamento, o que ocorrer primeiro. O faturamento por hora é uma boa opção para armazenamento usado por alguns dias ou menos de um mês completo. O faturamento por hora está disponível para o armazenamento provisionado em [data centers selecionados](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC) apenas.
+ * Com **faturamento por hora**, o número de horas nas quais o volume de Arquivo existiu na conta é calculado no momento em que o volume é excluído ou no término do ciclo de faturamento, o que vier primeiro. O faturamento por hora é uma boa opção para armazenamento usado por alguns dias ou menos de um mês completo. O faturamento por hora está disponível para o armazenamento provisionado em [data centers selecionados](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC) apenas.
 
  * Com o **faturamento mensal**, o cálculo para o preço é rateado da data de criação ao término do ciclo de faturamento e faturado imediatamente. Se um volume for excluído antes do término do ciclo de faturamento, não haverá reembolso. O faturamento mensal é uma boa opção para o armazenamento usado em cargas de trabalho de produção que usam dados que precisam ser armazenados e acessados por longos períodos de tempo (um mês ou mais).
 
