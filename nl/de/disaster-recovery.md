@@ -41,7 +41,7 @@ Wenn Sie die Produktion an den ursprünglichen primären Standort zurückgeben m
 
 1. Melden Sie sich bei der [{{site.data.keyword.cloud}}-Konsole](https://{DomainName}/){: external} an und klicken Sie auf das **Menüsymbol** links oben. Wählen Sie **Klassische Infrastruktur** aus.
 2. Klicken Sie auf **Speicher** > **{{site.data.keyword.filestorage_short}}**.
-3. Klicken Sie auf den LUN-Namen und erstellen Sie einen Snapshotplan (falls noch keiner vorhanden ist).
+3. Klicken Sie auf den Datenträgernamen und erstellen Sie einen Snapshotplan (falls noch keiner vorhanden ist).
 
    Weitere Informationen zu Snapshotplänen finden Sie unter [Snapshots verwalten](/docs/infrastructure/FileStorage?topic=FileStorage-managingSnapshots#addschedule).
    {:tip}
@@ -55,7 +55,7 @@ Nach Abschluss der Replikation müssen Sie ein Duplikat des Datenträgers des ne
 {:important}
 
 1. Gehen Sie zurück zu **Speicher** > **{{site.data.keyword.filestorage_short}}**.
-2. Klicken Sie auf das Replikat der LUN in der Liste, um die zugehörige Seite **Details** anzuzeigen.
+2. Klicken Sie auf das Replikat des Datenträgers in der Liste, um die zugehörige Seite **Details** anzuzeigen.
 3. Blättern Sie auf der Seite **Details** nach unten und wählen Sie einen vorhandenen Snapshot aus. Klicken Sie anschießend auf **Aktionen** > **Duplikat**.
 4. Nehmen Sie die erforderlichen Aktualisierungen für die Kapazität (Größe erhöhen) oder die IOPs für den neuen Datenträger vor.
 5. Aktualisieren Sie bei Bedarf den Snapshotbereich für den neuen Datenträger.

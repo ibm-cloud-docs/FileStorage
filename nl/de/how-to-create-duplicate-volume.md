@@ -29,7 +29,7 @@ Als Benutzer mit einem dedizierten Konto für {{site.data.keyword.containerlong}
 
 Auf Duplikatdatenträger kann ein Host für Lese-/Schreiboperationen zugreifen, sobald der Speicher bereitgestellt ist. Allerdings sind Snapshots und die Replikation erst zulässig, wenn das Erstellen der Datenkopie vom ursprünglichen Datenträger auf den Duplikatdatenträger abgeschlossen ist. Sobald die Datenkopie abgeschlossen ist, kann das Duplikat als unabhängiger Datenträger verwaltet und verwendet werden.
 
-Dieses Feature ist an den meisten [Standorten](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC) verfügbar. 
+Dieses Feature ist an den meisten [Standorten](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC) verfügbar.
 
 Einige allgemeine Verwendungen für einen duplizierten Datenträger sind die folgenden Beispiele.
 - **Disaster-Recovery-Test**: Erstellen Sie ein Duplikat des Replikatdatenträgers, um zu überprüfen, ob die Daten intakt sind und im Fall einer Katastrophe ohne Unterbrechung der Replikation verwendet werden können.
@@ -47,14 +47,14 @@ Es gibt mehrere Möglichkeiten zur Erstellung eines duplizierten Datenträgers �
 1. Rufen Sie Ihre {{site.data.keyword.filestorage_short}}-Liste auf.
     - Klicken Sie im Menü der klassischen Infrastruktur auf **Speicher** > **{{site.data.keyword.filestorage_short}}** ODER
     - Klicken Sie im {{site.data.keyword.cloud}}-Katalog auf **Infrastruktur** > **Speicher** > **{{site.data.keyword.filestorage_short}}**.
-2. Wählen Sie eine LUN in der Liste aus und klicken Sie auf **Aktionen** > **LUN (Datenträger) duplizieren**.
+2. Wählen Sie einen Datenträger in der Liste aus und klicken Sie auf **Aktionen** > **Datenträger (Datenträger) duplizieren**.
 3. Wählen Sie Ihre Snapshot-Option aus.
     - Bei Bestellung von einem Datenträger aus, der kein Replikat ist:
       - Wählen Sie die Option **Aus neuem Snapshot erstellen** aus – mit dieser Aktion wird ein Snapshot erstellt, der für das Duplikat zu verwenden ist. Verwenden Sie diese Option, wenn der Datenträger keine aktuellen Snapshots aufweist oder wenn Sie zu diesem Zeitpunkt ein Duplikat erstellen wollen. </br>
       - Wählen Sie die Option **Aus letztem Snapshot erstellen** aus – mit dieser Aktion wird ein Duplikat aus dem letzten Snapshot erstellt, der für den betreffenden Datenträger vorhanden ist.
     - Bei Bestellung von einem Replikatdatenträger aus: Hier ist nur die Snapshotoption der Verwendung des letzten Snapshots verfügbar.
 4. Speichertyp und Position bleiben die gleichen wie beim ursprünglichen Datenträger.
-5. Stündliche oder monatliche Rechnungsstellung – Sie können die duplizierte LUN mit stündlicher oder monatlicher Rechnungsstellung bereitstellen. Der Rechnungsstellungstyp für den ursprünglichen Datenträger wird automatisch ausgewählt. Wenn Sie einen anderen Rechnungsstellungstyp für Ihren Duplikatspeicher auswählen möchten, können Sie diese Auswahl hier treffen.
+5. Stündliche oder monatliche Rechnungsstellung – Sie können den duplizierten Datenträger mit stündlicher oder monatlicher Rechnungsstellung bereitstellen. Der Rechnungsstellungstyp für den ursprünglichen Datenträger wird automatisch ausgewählt. Wenn Sie einen anderen Rechnungsstellungstyp für Ihren Duplikatspeicher auswählen möchten, können Sie diese Auswahl hier treffen.
 5. Wenn Sie möchten, können Sie die E/A-Operationen pro Sekunde (IOPS) oder die IOPS-Stufe für den neuen Datenträger angeben. Standardmäßig wird der IOPS-Wert des ursprünglichen Datenträgers festgelegt. Die verfügbaren Performance- und Größenkombinationen werden angezeigt.
     - Wenn der ursprüngliche Datenträger die Endurance-Stufe von 0,25 IOPS hat, können Sie keine neue Auswahl angeben.
     - Wenn der ursprüngliche Datenträger die Endurance-Stufe von 2, 4 oder 10 IOPS hat, können Sie für den neuen Datenträger einen beliebigen Wert zwischen diesen Stufen angeben.

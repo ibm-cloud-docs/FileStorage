@@ -20,9 +20,9 @@ subcollection: FileStorage
 
 Erweiterter {{site.data.keyword.filestorage_full}}-Service ist nun in den meisten [Rechenzentren](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC) verfügbar.
 
-Der bevorzugte Migrationspfad besteht darin, beide Datenträger gleichzeitig zu verbinden und Daten per NFS direkt von einer LUN auf die andere zu übertragen. Die jeweiligen Details hängen dabei vom Betriebssystem ab sowie davon, ob erwartet wird, dass sich die Daten während der Kopieroperation ändern.
+Der bevorzugte Migrationspfad besteht darin, beide Datenträger gleichzeitig zu verbinden und Daten per NFS direkt von einem Datenträger auf den anderen zu übertragen. Die jeweiligen Details hängen dabei vom Betriebssystem ab sowie davon, ob erwartet wird, dass sich die Daten während der Kopieroperation ändern.
 
-Es wird davon ausgegangen, dass Sie bereits über eine nicht verschlüsselte LUN verfügen, die mit dem Host verbunden ist. Ist dies nicht der Fall, folgen Sie den für Ihr Betriebssystem passenden Anweisungen, um diese Task auszuführen.
+Es wird davon ausgegangen, dass Sie bereits über einen nicht verschlüsselten Datenträger verfügen, die mit dem Host verbunden ist. Ist dies nicht der Fall, folgen Sie den für Ihr Betriebssystem passenden Anweisungen, um diese Task auszuführen.
 
 - [{{site.data.keyword.filestorage_short}} unter Linux anhängen](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)
 - [{{site.data.keyword.filestorage_short}} unter CentOS anhängen](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)
@@ -37,7 +37,7 @@ Alle erweiterten {{site.data.keyword.filestorage_short}}-Datenträger, die in di
 Wenn Sie einen Auftrag mit einer API erteilen, geben Sie das Paket 'Storage as a Service' an, um sicherzustellen, dass Sie die aktualisierten Funktionen mit dem neuen Speicher erhalten.
 {:important}
 
-Sie können eine erweiterte LUN über den {{site.data.keyword.cloud}}-Katalog bestellen. Der neue Datenträger muss dieselbe Größe wie die ursprüngliche gemeinsam genutzte Ressource aufweisen oder größer als diese sein, damit die Migration möglich ist.
+Sie können einen erweiterten Datenträger über den {{site.data.keyword.cloud}}-Katalog bestellen. Der neue Datenträger muss dieselbe Größe wie die ursprüngliche gemeinsam genutzte Ressource aufweisen oder größer als diese sein, damit die Migration möglich ist.
 
 - [{{site.data.keyword.filestorage_short}} mit vordefinierten IOPS-Tiers (Endurance) bestellen](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#endurance)
 - [{{site.data.keyword.filestorage_short}} mit angepassten IOPS-Raten (Performance) bestellen](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#performance)
@@ -77,7 +77,7 @@ Wenn Ihr Zieldatenzentrum keine Verschlüsselung bietet, können Sie die Replika
 
 3. Kopieren Sie Ihre Daten.
    - **Microsoft Windows**
-     - Zum Kopieren von Daten von Ihrer ursprünglichen {{site.data.keyword.filestorage_short}}-LUN auf Ihre neue LUN formatieren Sie den neuen Datenträger und kopieren die Dateien mithilfe von Windows Explorer hinüber.
+     - Zum Kopieren von Daten von Ihrem ursprünglichen {{site.data.keyword.filestorage_short}}-Datenträger auf Ihren neuen Datenträger formatieren Sie den neuen Datenträger und kopieren die Dateien mithilfe von Windows Explorer hinüber.
    - **Linux**
      - Sie können die Daten mit `rsync` kopieren.
        ```
@@ -88,4 +88,4 @@ Wenn Ihr Zieldatenzentrum keine Verschlüsselung bietet, können Sie die Replika
 
    Wenn dieser Befehl ohne das Flag `--dry-run` ausgeführt wird, werden Ihre Daten auf den neuen {{site.data.keyword.filestorage_short}}-Datenträger kopiert. Führen Sie den Befehl erneut aus, um sicherzustellen, dass keine Daten ausgelassen wurden. Sie können außerdem beide Position manuell prüfen, um nach möglicherweise fehlenden Daten zu suchen.
 
-   Nach Abschluss der Migration können Sie die Produktion auf die neue LUN verlegen. Anschließend können Sie Ihren ursprünglichen Datenträger abhängen und ihn aus der Konfiguration löschen. Durch das Löschen werden auf der Zielseite auch alle Snapshots oder Replikate gelöscht, die dem ursprünglichen Datenträger zugeordnet waren.
+   Nach Abschluss der Migration können Sie die Produktion auf den neuen Datenträger verlegen. Anschließend können Sie Ihren ursprünglichen Datenträger abhängen und ihn aus der Konfiguration löschen. Durch das Löschen werden auf der Zielseite auch alle Snapshots oder Replikate gelöscht, die dem ursprünglichen Datenträger zugeordnet waren.

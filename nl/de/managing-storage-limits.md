@@ -33,7 +33,7 @@ Optionen:
 
 Sie können eine Erhöhung des Grenzwerts anfordern, indem Sie einen Supportfall beim [Portal](https://cloud.ibm.com/unifiedsupport/cases/add){: external} einreichen. Wenn die Anforderung genehmigt ist, wird eine Datenträgerbegrenzung für ein bestimmtes Rechenzentrum festgelegt.
 
-Zum Anfordern einer Erhöhung einer Begrenzung öffnen Sie ein Ticket und richten es an Ihren Vertriebsbeauftragten.
+Zum Anfordern einer Erhöhung einer Begrenzung öffnen Sie einen Supportfall und richten ihn an Ihren Vertriebsbeauftragten.
 
 Geben Sie in diesem Ticket die folgenden Informationen an:
 
@@ -49,12 +49,12 @@ Geben Sie in diesem Ticket die folgenden Informationen an:
 *Ihre Antwort könnte zum Beispiel ähnlich wie folgt lauten: "25x Performance 20 GB @ 10 IOPS in DAL09" oder "50x Endurance 2 TB @ 0,25 IOPS in SJC03".*
 
 - **Geben Sie einen geschätzten Zeitpunkt an, zu dem Sie erwarten, dass alle angeforderten Datenträgervergrößerungen bereitgestellt oder geplant sind.** <br />
- *Ihre Antwort könnte zum Beispiel ähnlich wie folgt lauten: "90 Tage".*
+*Ihre Antwort könnte zum Beispiel ähnlich wie folgt lauten: "90 Tage".*
 
 - **Geben Sie eine 90-Tage-Vorhersage für die erwartete durchschnittliche Kapazitätsnutzung dieser Datenträger an.** <br />
 *Ihre Antwort könnte zum Beispiel ähnlich wie folgt lauten: "Erwarte 25 Prozent belegt in 30 Tagen, 50 Prozent belegt in 60 Tagen und 75 Prozent belegt in 90 Tagen".*
 
-Beantworten Sie alle Fragen und Aussagen in Ihrer Anfrage. ie sind für die Verarbeitung und Genehmigung erforderlich.
+Beantworten Sie alle Fragen und Aussagen in Ihrer Anfrage. Sie sind für die Verarbeitung und Genehmigung erforderlich.
 {:important}
 
 Sie werden von der Aktualisierung Ihrer Begrenzungen durch den Ticket-Prozess benachrichtigt.

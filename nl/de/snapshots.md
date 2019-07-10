@@ -39,7 +39,7 @@ Sie müssen zuerst eine gewisse Menge an Snapshotbereich für Ihren Datenträger
 ## Bewährte Verfahren für Snapshots
 
 Die Snapshotgestaltung hängt von der Umgebung des Kunden ab. Die folgenden Gestaltungsaspekte können Ihnen bei der Planung und Implementierung von Snapshotkopien helfen:
-- Bis zu 50 Snapshots können durch einen Zeitplan und bis zu 50 Snapshots können manuell auf jedem Datenträger bzw. jeder LUN erstellt werden.
+- Bis zu 50 Snapshots können durch einen Zeitplan und bis zu 50 Snapshots können manuell auf jedem Datenträger erstellt werden.
 - Erstellen Sie nicht zu viele Snapshots. Stellen Sie sicher, dass die geplante Snapshothäufigkeit Ihren RTO- und RPO-Anforderungen und Ihren Geschäftsanforderungen für Anwendungen entspricht, indem Sie stündliche, tägliche oder wöchentliche Snapshots planen.
 - Die Funktion zum automatischen Löschen von Snapshots (Snapshot AutoDelete) kann zur Begrenzung der Speicherbelegung genutzt werden.
 
