@@ -20,9 +20,9 @@ subcollection: FileStorage
 
 Ahora {{site.data.keyword.filestorage_full}} mejorado está disponible en la mayoría de los [centros de datos](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
 
-El método de migración recomendado es conectarse a ambos volúmenes simultáneamente y transferir datos directamente desde un LUN a otro. Los detalles dependen de su sistema operativo y de si se espera que los datos cambien durante la operación de copia.
+El método de migración recomendado es conectarse a ambos volúmenes simultáneamente y transferir datos directamente desde un volumen a otro. Los detalles dependen de su sistema operativo y de si se espera que los datos cambien durante la operación de copia.
 
-El supuesto es que ya tiene su LUN no cifrado conectado al host. Si no es así, siga las directrices correspondientes a su sistema operativo que mejor se ajusten a esta tarea.
+El supuesto es que ya tiene su volumen no cifrado conectado al host. Si no es así, siga las directrices correspondientes a su sistema operativo que mejor se ajusten a esta tarea.
 
 - [Montaje de {{site.data.keyword.filestorage_short}} en Linux](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)
 - [Montaje de {{site.data.keyword.filestorage_short}} en CentOS](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)
@@ -37,7 +37,7 @@ Todos los volúmenes de {{site.data.keyword.filestorage_short}} mejorados sumini
 Cuando realice un pedido con API, especifique el paquete "Almacenamiento como un servicio" para asegurarse de recibir las características actualizadas con el nuevo almacenamiento.
 {:important}
 
-Puede solicitar un LUN mejorado desde el catálogo de {{site.data.keyword.cloud}}. El nuevo volumen debe tener el mismo tamaño o mayor que la compartición de archivos original para facilitar la migración.
+Puede solicitar un volumen mejorado desde el catálogo de {{site.data.keyword.cloud}}. El nuevo volumen debe tener el mismo tamaño o mayor que la compartición de archivos original para facilitar la migración.
 
 - [Solicitud de {{site.data.keyword.filestorage_short}} con los niveles de IOPS predefinidos (Resistencia)](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#endurance)
 - [Solicitud de {{site.data.keyword.filestorage_short}} con IOPS personalizados (Rendimiento)](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#performance)
@@ -78,7 +78,7 @@ Si su centro de datos de destino no tiene cifrado, no puede establecer la répli
 3. Copie los datos.
    - **Microsoft
 Windows**
-     - Para copiar los datos de su LUN de {{site.data.keyword.filestorage_short}} original en el nuevo LUN, formatee el nuevo almacenamiento y copie los archivos encima utilizando Windows Explorer.
+     - Para copiar los datos de su volumen de {{site.data.keyword.filestorage_short}} original en el nuevo volumen, formatee el nuevo almacenamiento y copie los archivos encima utilizando Windows Explorer.
    - **Linux**
      - Puede utilizar `rsync` para copiar los datos.
        ```
@@ -89,4 +89,4 @@ Windows**
 
    Cuando este mandato finaliza sin el distintivo `--dry-run`, los datos se copian en el nuevo volumen de {{site.data.keyword.filestorage_short}}. Ejecute el mandato de nuevo para asegurarse de que no hace falta nada. También puede revisar manualmente ambas ubicaciones por si se ha omitido algo.
 
-   Una vez completada la migración, puede pasar el entorno de producción al nuevo LUN. A continuación, puede desconectar y suprimir el volumen original de la configuración. La supresión también elimina cualquier instantánea o réplica en el sitio de destino que estuviera asociada al volumen original.
+   Una vez completada la migración, puede pasar el entorno de producción al nuevo volumen. A continuación, puede desconectar y suprimir el volumen original de la configuración. La supresión también elimina cualquier instantánea o réplica en el sitio de destino que estuviera asociada al volumen original.

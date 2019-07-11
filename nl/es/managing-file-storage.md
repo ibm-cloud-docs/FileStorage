@@ -132,7 +132,7 @@ Opciones:
   -h, --hardware-id TEXTO   El ID del servidor de hardware cuya autorización se va a revocar.
   -v, --virtual-id TEXTO    El ID de un servidor virtual cuya autorización se va a revocar.
   -i, --ip-address-id TEXTO El ID de una dirección IP cuya autorización se va a revocar.
-  -p, --ip-address-id TEXTO Una dirección IP cuya autorización se va a revocar.
+  -p, --ip-address TEXTO    Una dirección IP cuya autorización se va a revocar.
   -s, --subnet-id TEXTO     ID de una subred cuya autorización se va a revocar.
   --help                    Mostrar este mensaje y salir.
 ```

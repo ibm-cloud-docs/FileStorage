@@ -14,6 +14,7 @@ subcollection: FileStorage
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
+{:ui-linked}
 
 # Ubicaciones de {{site.data.keyword.filestorage_short}}
 {: #selectDC}

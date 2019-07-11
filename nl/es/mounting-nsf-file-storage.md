@@ -2,14 +2,14 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-02-22"
 
-keywords: File Storage, mounting file storage, Linux, CentOS, NFS
+keywords: mounting file storage, Linux, CentOS, NFS
 
 subcollection: FileStorage
 
 ---
-{:external: target="_blank" .external}
+{:new_window: target="_blank"}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -20,9 +20,9 @@ subcollection: FileStorage
 # Montaje de {{site.data.keyword.filestorage_short}} en CentOS
 {: #mountingCentOS}
 
-Para montar {{site.data.keyword.filestorage_full}} en CentOS 7, primero debe autorizar el host mediante la [consola de {{site.data.keyword.cloud}}](https://{DomainName}/classic){: external} o mediante SLCLI. A continuación, instale los programas de utilidad de NFS como se describe en [Montaje de {{site.data.keyword.filestorage_short}} en Linux](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux).
+Para montar {{site.data.keyword.filestorage_full}} en CentOS 7, primero debe autorizar el host mediante el [{{site.data.keyword.slportal}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){:new_window} o mediante SLCLI. A continuación, instale los programas de utilidad de NFS como se describe en [Montaje de {{site.data.keyword.filestorage_short}} en Linux](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux).
 
-Para CentOS, puede especificar opciones adicionales utilizando la línea `Options=` en el archivo de montaje. En el siguiente ejemplo, NFS está configurado para montarse en `/data/www`.
+Para CentOS, puede especificar opciones adicionales utilizando la línea `Options=` del archivo de montaje. En el siguiente ejemplo, NFS está configurado para montarse en `/data/www`.
 
 El punto de montaje de NFS de la instancia de {{site.data.keyword.filestorage_short}} se puede obtener desde la página de listado de {{site.data.keyword.filestorage_short}} o mediante una llamada a API -`SoftLayer_Network_Storage::getNetworkMountAddress()`.
 {:tip}

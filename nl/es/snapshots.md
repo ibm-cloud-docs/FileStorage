@@ -39,7 +39,7 @@ Debe adquirir cierta cantidad de espacio de instantáneas para su volumen para p
 ## Prácticas recomendadas en torno a las instantáneas
 
 El diseño de instantáneas depende del entorno del cliente. Las siguientes consideraciones sobre diseño le ayudarán a planificar e implementar copias de instantáneas:
-- Pueden crearse hasta 50 instantáneas a través de una planificación y hasta 50 manualmente en cada volumen o LUN.
+- Pueden crearse hasta 50 instantáneas a través de una planificación y hasta 50 manualmente en cada volumen.
 - No cree más instantáneas de las necesarias. Asegúrese de que la frecuencia de instantáneas planificadas cumpla sus necesidades de objetivo de tiempo de recuperación (RTO) y objetivo de punto de recuperación (RPO), así como los requisitos empresariales de las aplicaciones planificando las instantáneas por hora, a diario o semanalmente.
 - La opción de supresión automática de instantáneas puede utilizarse para controlar el crecimiento del consumo de almacenamiento.
 

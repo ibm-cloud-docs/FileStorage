@@ -47,14 +47,14 @@ Puede crear un volumen duplicado a través de la [consola de {{site.data.keyword
 1. Vaya a su lista de {{site.data.keyword.filestorage_short}}
     - Desde el menú de Infraestructura clásica, pulse **Almacenamiento** > **{{site.data.keyword.filestorage_short}}** O BIEN
     - Desde el catálogo de {{site.data.keyword.cloud}}, pulse **Infraestructura** > **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**.
-2. Seleccione un LUN de la lista y pulse **Acciones** > **Duplicar LUN (Volumen)**
+2. Seleccione un volumen de la lista y pulse **Acciones** > **Duplicar volumen (Volumen)**
 3. Elija la opción de instantánea.
     - Si solicita desde un volumen sin réplica:
       - Seleccione **Crear desde nueva instantánea**: Esta acción crea una instantánea que se utilizará para el duplicado. Utilice esta opción si actualmente el volumen no tiene instantáneas o si desea crear un duplicado inmediatamente.</br>
       - Seleccione **Crear desde la última instantánea**: Esta acción crea un duplicado desde la instantánea más reciente que exista para este volumen.
     - Si se solicita desde un volumen de réplica, la única opción para las instantáneas es utilizar la instantánea más reciente disponible.
 4. El tipo de almacenamiento y la ubicación siguen siendo los mismos que el volumen original.
-5. Facturación mensual o por horas: puede elegir si suministrar el nuevo LUN duplicado con facturación mensual o por horas. El tipo de facturación para el volumen original se selecciona automáticamente. Si quiere elegir otro tipo de facturación para el almacenamiento de duplicado, puede seleccionarlo aquí.
+5. Facturación mensual o por horas: puede elegir si suministrar el nuevo volumen duplicado con facturación mensual o por horas. El tipo de facturación para el volumen original se selecciona automáticamente. Si quiere elegir otro tipo de facturación para el almacenamiento de duplicado, puede seleccionarlo aquí.
 5. Si lo desea, puede especificar IOPS o el nivel de IOPS para el nuevo volumen. La designación de IOPS del volumen original se establece de forma predeterminada. Se mostrarán las combinaciones de tamaño y rendimiento disponibles.
     - Si su volumen original es de nivel de Resistencia de IOPS 0,25, no se puede realizar una nueva selección.
     - Si el volumen original es de nivel de Resistencia de IOPS 2, 4 o 10, puede moverse entre estos niveles para el nuevo volumen.

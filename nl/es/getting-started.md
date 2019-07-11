@@ -15,6 +15,7 @@ subcollection: FileStorage
 {:note: .note}
 {:important: .important}
  {:shortdesc: .shortdesc}
+ {:ui-linked}
 
 
 # Guía de aprendizaje de iniciación
@@ -52,7 +53,7 @@ El tamaño de bloque que utiliza la aplicación afecta directamente al rendimien
 | 128 | 128 | 16 |
 | 512 | 32 | 16 |
 | 1024 | 16 | 16 |
-{: caption="En la Tabla 1 se muestran ejemplos de cómo el tamaño de bloque e IOPS afectan al rendimiento.<br/Tamaño promedio de E/S x IOPS = Rendimiento en MB/s." caption-side="top"}>
+{: caption="En la Tabla 1 se muestran ejemplos de cómo el tamaño de bloque e IOPS afectan al rendimiento.<br/>Tamaño promedio de E/S x IOPS = Rendimiento en MB/s." caption-side="top"}
 
 ### Hosts autorizados
 
@@ -60,7 +61,7 @@ Otro factor a tener en cuenta es el número de hosts que están utilizando el vo
 
 ### Conexión de red
 
-La velocidad de la conexión de Ethernet debe ser más rápida que el rendimiento máximo previsto de su volumen. Generalmente, no espere que se sature la conexión de Ethernet más allá del 70 % del ancho de banda disponible. Por ejemplo, si tiene 6.000 IOPS y está utilizando un tamaño de bloque de 16 KB, el volumen puede manejar aproximadamente un rendimiento de 94 MBps. Si tiene una conexión de Ethernet de 1 Gbps para el LUN, se genera un cuello de botella cuando los servidores intenten utilizar el máximo rendimiento disponible. Esto se debe a que el 70 % del límite teórico de una conexión de Ethernet de 1 Gbps (125 MB por segundo) solo permitiría 88 MB por segundo.
+La velocidad de la conexión de Ethernet debe ser más rápida que el rendimiento máximo previsto de su volumen. Generalmente, no espere que se sature la conexión de Ethernet más allá del 70 % del ancho de banda disponible. Por ejemplo, si tiene 6.000 IOPS y está utilizando un tamaño de bloque de 16 KB, el volumen puede manejar aproximadamente un rendimiento de 94 MBps. Si tiene una conexión de Ethernet de 1 Gbps para el volumen, se genera un cuello de botella cuando los servidores intenten utilizar el máximo rendimiento disponible. Esto se debe a que el 70 % del límite teórico de una conexión de Ethernet de 1 Gbps (125 MB por segundo) solo permitiría 88 MB por segundo.
 
 Para alcanzar el número máximo de IOPS, es necesario disponer de los recursos de red adecuados. Otros aspectos a tener en cuenta son el uso de la red privada fuera del almacenamiento y los ajustes del lado del host y específicos de la aplicación (pila IP o [profundidades de colas](/docs/infrastructure/FileStorage?topic=FileStorage-hostqueuesettings), y otros valores).
 
