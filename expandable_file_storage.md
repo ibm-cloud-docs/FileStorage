@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-07-19"
 
 keywords: File Storage, modify volume, NFS, file storage, expand capacity
 
@@ -50,6 +50,9 @@ Existing size limitations for {{site.data.keyword.filestorage_short}} that was p
 4. Review your selection and the new pricing.
 5. Click **I have read the Master Service Agreement...**, and click **Place Order**.
 6. Your new storage allocation is available in a few minutes.
+
+For the OS to recognize the extra storage space, unmount and mount the modified volume again.
+{:tip}
 
 Alternatively, you can use the following command in SLCLI.
 ```
