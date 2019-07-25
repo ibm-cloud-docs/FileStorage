@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, authorizing hosts, rewoke access, grant access, view authorizations
 
@@ -31,7 +31,12 @@ You can authorize and connect hosts that are located in the same data center as 
 1. Go to the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}. From the menu, select **Classic Infrastructure**.
 2. Click **Storage** > **{{site.data.keyword.filestorage_short}}**, and click your **Volume Name**.
 3. Scroll to the **Authorized Hosts** section of the page.
-4. Click **Authorize Host** on the right. Select the hosts that can access that particular volume.
+4. Click **Authorize Host** on the right.
+5. Filter the available host list by selecting the device type, subnet or IP address.
+
+   When the list is filtered by subnet, the subnets that are displayed are subscribed subnets in the same data center as the storage volume.
+   {:note}
+6. Select one or more hosts from the list and click **Save**.
 
 Alternatively, you can use the following command in SLCLI.
 ```
@@ -144,7 +149,7 @@ If you no longer need a specific volume, you can cancel that storage. To cancel 
 1. Go to the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}. From the menu, select **Classic Infrastructure**.
 2. Click **Storage** > **{{site.data.keyword.filestorage_short}}**.
 3. Click **Actions** for the volume to be canceled, and select **Cancel {{site.data.keyword.filestorage_short}}**.
-4. Confirm if want to cancel the volume immediately or on the yearly anniversary date of when the volume was provisioned.
+4. Confirm if want to cancel the volume immediately or on the anniversary date of when the volume was provisioned.
 
    If you select the option to cancel the volume on its anniversary date, you can void the cancellation request before its anniversary date.
    {:tip}

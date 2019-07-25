@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, snapshot, ordering snapshot, snapshot space
 
@@ -53,7 +53,7 @@ Additionally, for most workloads, the larger a volume is the less space needs to
 1. Log in to the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external} and click the menu icon on the upper left.
 2. Select **Classic Infrastructure**.
 3. Access your Storage through **Storage** > **{{site.data.keyword.filestorage_short}}**.
-4. Click **Change Snapshot Space** in the Snapshots frame.
+4. Click **Add Snapshot Space** in the Snapshots frame.
 5. Select the amount of space that you need and the payment method.
 6. Click **Continue**.
 7. Enter any Promo Code that you have and click **Recalculate**. The **Charges for this order** and **Order Review** have default values.

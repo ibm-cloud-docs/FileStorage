@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-07-19"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, modify volume, NFS, file storage, expand capacity
 
@@ -45,7 +45,7 @@ Existing size limitations for {{site.data.keyword.filestorage_short}} that was p
 {: #resizingsteps}
 
 1. Go to the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}. From the menu, select **Classic Infrastructure**. Click **Storage** > **{{site.data.keyword.filestorage_short}}**.
-2. Select the volume from the list and click **Actions** > **Modify Volume**
+2. Select the volume from the list and click **...** > **Modify Share**
 3. Enter the new storage size in GB.
 4. Review your selection and the new pricing.
 5. Click **I have read the Master Service Agreement...**, and click **Place Order**.

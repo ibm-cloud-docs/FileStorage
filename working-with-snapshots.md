@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, snapshots, snapshot schedule, manual snapshot, snapshot space, snapshot quota
 
@@ -21,7 +21,7 @@ subcollection: FileStorage
 
 ## Creating a Snapshot Schedule
 
-You decide how often and when you want to create a point-in-time reference of your storage volume with Snapshot schedules. You can have a maximum of 50 snapshots per storage volume. Schedules are managed through the **Storage** > **{{site.data.keyword.filestorage_short}}** tab of the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external} .
+You decide how often and when you want to create a point-in-time reference of your storage volume with Snapshot schedules. You can have a maximum of 50 snapshots per storage volume. Schedules are managed through the **Storage** > **{{site.data.keyword.filestorage_short}}** tab of the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}.
 
 Before you can set up your initial schedule, you must first purchase snapshot space if you didn't purchase it during the initial provisioning of the storage volume.
 {:important}
@@ -80,7 +80,7 @@ Options:
 
 ## Listing all Snapshots with Space Used Information and Management functions
 
-A list of retained snapshots and space that is used can be seen on the **Detail** page (**Storage**, **{{site.data.keyword.filestorage_short}}**). Management functions (editing schedules and adding more space) are conducted on the Detail page by using the **Actions** menu or links in the various sections on the page.
+A list of retained snapshots and space that is used can be seen on the **Detail** page (**Storage**, **{{site.data.keyword.filestorage_short}}**). Management functions (editing schedules and adding more space) are conducted on the **Detail** page by using the **Actions** menu or links in the various sections on the page.
 
 Alternatively, you can accomplish this task through the SLCLI.
 ```
@@ -110,7 +110,7 @@ Snapshot space can be increased only. It can't be reduced. You can select a smal
 
 Snapshot space is changed through **Storage** > **{{site.data.keyword.filestorage_short}}**.
 
-1. Click your storage volumes, click **Actions**, and click **Add More Snapshot Space**.
+1. Click your storage volumes, click **Actions**, and click **Change Snapshot Space**.
 2. Select from a range of sizes from the prompt. Sizes typically range from 0 to the size of your volume.
 3. Click **Continue**.
 4. Enter any Promo Code that you have, and click **Recalculate**. The Charges for this order and Order Review fields are completed by default.
@@ -150,7 +150,7 @@ Options:
   -h, --help  Show this message and exit.
 ```
 
-Manual snapshots that aren't deleted in the portal manually, are automatically deleted when you reach space limitations (oldest first).
+Manual snapshots that aren't deleted in the portal manually, are automatically deleted when you reach space limitations. The oldest snapshot is deleted first.
 {:note}
 
 ## Restoring storage volume to a specific point-in-time by using a snapshot

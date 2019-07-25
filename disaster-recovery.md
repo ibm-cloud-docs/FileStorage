@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
@@ -27,11 +27,11 @@ If a catastrophic failure or disaster causes an outage on the primary site, cust
 
 1. Log in to [The {{site.data.keyword.cloud}} console](https://{DomainName}/){: external} and click the **menu** icon on the upper left. Select **Classic Infrastructure**.
 2. Click **Storage** > **{{site.data.keyword.filestorage_short}}**.
-3. Click the replica of the file share in the list to view its **Details** page.
-4. On the **Details** page, scroll down and select an existing snapshot, then click **Actions** > **Duplicate**.
+3. Click the name of the replica of the file share in the list.
+4. On the **Detail** page, scroll down and select an existing snapshot, then click **Actions** > **Duplicate**.
 5. Make any necessary updates to the capacity (to increase size) or IOPs for the new volume.
 6. You can update the snapshot space for the new volume if needed.
-7. Click **Continue** to place your order for the duplicate.
+7. Click **Place Order** to provision the duplicate.
 
 As soon as the volume is created, you can attach it to a host and perform read/write operations on that volume. While data is being copied from the original volume to the duplicate, you can see a status on the details page that shows the duplication is in progress. When the duplication process is complete, the new volume becomes independent from the original and can be managed with snapshots and replication as normal.
 
@@ -59,6 +59,6 @@ After replication is complete, you need to create a duplicate volume of the new 
 3. On the **Details** page, scroll down and select an existing snapshot, then click **Actions** > **Duplicate**.
 4. Make any necessary updates to the capacity (to increase size) or IOPs for the new volume.
 5. Update the snapshot space for the new volume if needed.
-6. Click **Continue** to place your order for the duplicate.
+6. Click **Place Order** to provision the duplicate.
 
 When the duplication process is complete, you can cancel the replication and the volumes that were used to get the data back to the original primary site. The duplicate becomes the primary storage, and replication to the original secondary site can be established again.

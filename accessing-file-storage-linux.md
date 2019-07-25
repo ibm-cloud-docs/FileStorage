@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, NSF, mounting File Storage, mounting storage on Linux,
 
@@ -20,8 +20,13 @@ subcollection: FileStorage
 
 First, make sure that the host that is to access the {{site.data.keyword.filestorage_full}} volume is authorized through the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic){: external}.
 
-1. From the {{site.data.keyword.filestorage_short}} listing page, click the **Actions** link that is associated with the new share and click **Authorize Host**.
-2. Select the host or hosts from the list and click **Submit**. This action authorizes the host to access the share.
+1. In the console, go to **Classic Infrastructure**  > **Storage** > **{{site.data.keyword.filestorage_short}}**
+2. Scroll to the File share you want to mount, and click **...** (Actions). Then, select **Authorize Host**.
+3. Filter the available host list by selecting the device type, subnet or IP address.
+
+   When the list is filtered by subnet, the subnets that are displayed are subscribed subnets in the same data center as the storage volume.
+   {:note}
+4. Select one or more hosts from the list and click **Save**.
 
 Alternatively, you can authorize the hosts through the SLCLI.
 ```

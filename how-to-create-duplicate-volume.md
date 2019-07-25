@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, duplicate volume
 
@@ -21,6 +21,7 @@ subcollection: FileStorage
 You can create a duplicate of an existing {{site.data.keyword.cloud}} {{site.data.keyword.filestorage_full}}. The duplicate volume inherits the capacity and performance options of the original volume by default and has a copy of the data up to the point-in-time of a snapshot.   
 
 Because the duplicate is based on the data in a point-in-time snapshot, snapshot space is required on the original volume before you can create a duplicate. To learn more about snapshots and how to order snapshot space, refer to [Snapshot documentation](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots).  
+{:important}
 
 Duplicates can be created from both **primary** and **replica** volumes. The new duplicate is created in the same data center as the original volume. If you create a duplicate from a replica volume, the new volume is created in the same data center as the replica volume.
 
@@ -44,14 +45,13 @@ You can create a duplicate volume through the [{{site.data.keyword.cloud}} conso
 
 ## Creating a duplicate from a specific volume in the Storage List
 
-1. Go to your list of {{site.data.keyword.filestorage_short}}
-    - From the Classic Infrastructure menu, click **Storage** > **{{site.data.keyword.filestorage_short}}** OR
-    - From the {{site.data.keyword.cloud}} catalog, click **Infrastructure** > **Storage** > **{{site.data.keyword.filestorage_short}}**.
-2. Select a volume from the list and click **Actions** > **Duplicate volume**
+1. Go to your list of {{site.data.keyword.filestorage_short}}. From the **Classic Infrastructure** menu, click **Storage** > **{{site.data.keyword.filestorage_short}}**.
+2. Locate and click the volume name.
+3. Click **Actions** > **Duplicate Volume**
 3. Choose your snapshot option.
     - If you order from a non-replica volume,
-      - Select **Create from new snapshot** – this action creates a snapshot to be used for the duplicate. Use this option if your volume doesn't have current snapshots or if you want to create a duplicate right then.</br>
-      - Select **Create from latest snapshot** – this action creates a duplicate from the most recent snapshot that exists for this volume.
+      - Select **Create a new snapshot to clone** – this action creates a snapshot to be used for the duplicate. Use this option if your volume doesn't have current snapshots or if you want to create a duplicate right then.</br>
+      - Select **Use the latest snapshot to clone the volume** – this action creates a duplicate from the most recent snapshot that exists for this volume.
     - If you order from a replica volume, the only option for snapshot is to use the most recent snapshot available.
 4. Storage Type and Location remain the same as the original volume.
 5. Hourly or Monthly Billing – you can choose to provision the duplicate volume with hourly or monthly billing. The billing type for the original volume is automatically selected. If you want to choose a different billing type for your duplicate storage, you can make that selection here.
@@ -80,7 +80,7 @@ You can create a duplicate volume through the [{{site.data.keyword.cloud}} conso
    {{site.data.keyword.filestorage_short}} can be resized to 10 times the original size of the volume.
    {:tip}
 7. You can update the snapshot space for the new volume to add more, less, or no snapshot space. The snapshot space of the original volume is set by default.
-8. Click **Continue** to place your order for the duplicate.
+8. Click **Place Order** to provision the duplicate.
 
 ## Creating a duplicate through the SLCLI
 ```

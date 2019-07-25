@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
@@ -28,11 +28,15 @@ Authorized hosts and volumes must be in the same data center. For example, you c
 {:note}
 
 1. Log in to the [{{site.data.keyword.cloud}} console](https://{DomainName}/catalog){: external} and click the **menu** icon on the upper left. Select **Classic Infrastructure**.
-2. Click your source or destination volume from the **{{site.data.keyword.filestorage_short}}** page.
+2. Locate the source or destination volume in the **{{site.data.keyword.filestorage_short}}** list.
 3. Click **Replica**.
-4. Scroll down to the **Authorize Hosts** frame and click **Authorize Hosts** on the right.
-5. Highlight the host that is to be authorized for replications. To select multiple hosts, use the CTRL-key and click the applicable hosts.
-6. Click **Submit**. If you have no hosts, you are prompted to purchase compute resources in the same data center.
+4. Scroll down to the **Authorize Hosts** frame and click **Authorize Host** on the right.
+5. Filter the available host list by selecting the device type, subnet or IP address.
+
+   When the list is filtered by subnet, the subnets that are displayed are subscribed subnets in the same data center as the storage volume.
+   {:note}
+6. Highlight the host that is to be authorized for replications. To select multiple hosts, use the CTRL-key and click the applicable hosts.
+6. Click **Save**. If you have no hosts, you are prompted to purchase compute resources in the same data center.
 
 ## Starting a failover from a volume to its replica
 
@@ -44,10 +48,10 @@ Before you proceed with these steps, disconnect the volume. Failure to do so, re
 {:important}
 
 1. Click your active volume (“source”).
-2. In the upper right, click **Replica** and click **Actions**.
-3. Select **Failover**.
+2. In the upper right, click **Actions**.
+3. Select **Controlled Failover**.
 
-   Expect a message that states that the failover is in progress. Additionally, an icon appears next to your volume on the **{{site.data.keyword.filestorage_short}}** that indicates that an active transaction is occurring. Hovering over the icon produces a window that shows the transaction. The icon disappears when the transaction is complete. During the failover process, configuration-related actions are read-only. You can't edit any snapshot schedule or change snapshot space. The event is logged in replication history.<br/> When your target volume is live, you get another message. Your original source volume's Volume Name updates to end in "REP" and its Status becomes Inactive.
+   Expect a message that states that the failover is in progress. Additionally, an icon appears next to your volume on the **{{site.data.keyword.filestorage_short}}** that indicates that an active transaction is occurring. Hovering over the icon produces a window that shows the transaction. The icon disappears when the transaction is complete. During the failover process, configuration-related actions are read-only. You can't edit any snapshot schedule or change snapshot space. The event is logged in replication history.<br/> When your target volume is live, you get another message. Your original source volume's Status becomes Inactive.
    {:note}
 4. Click **View All ({{site.data.keyword.filestorage_short}})**.
 5. Click your active volume (formerly your target volume). This volume now has an **Active** status.
@@ -70,10 +74,10 @@ Failbacks are started under **Storage**, **{{site.data.keyword.filestorage_short
 
 1. Click your active volume ("target").
 2. In the upper right, click **Replica** and click **Actions**.
-3. Select **Failback**.
+3. Select **Controlled Failback**.
 
    Expect a message that shows the failover is in progress. Additionally, an icon appears next to your volume on the **{{site.data.keyword.filestorage_short}}** that indicates that an active transaction is occurring. Hovering over the icon produces a window that shows the transaction. The icon disappears when the transaction is complete. During the Failback process, configuration-related actions are read-only. You can't edit any snapshot schedule or change snapshot space. The event is logged in replication history.
    {:note}
 4. In the upper right, click **View All {{site.data.keyword.filestorage_short}}**.
-5. Click your active volume ("source").
+5. Click your active volume ("source"). This volume now has an **Inactive** status.
 6. Mount and attach your storage volume to the host. For more information, see [connecting your new storage](/docs/infrastructure/FileStorage?topic=FileStorage-getting-started#mountingstorage).

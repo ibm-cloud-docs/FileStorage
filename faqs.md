@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
@@ -149,3 +149,8 @@ No. Currently, vStorage for API Array Integration and Hardware acceleration are 
 {: faq}
 
 When drives are decommissioned, IBM destroys them before they are disposed of. The drives become unusable. Any data that was written to that drive becomes inaccessible.
+
+## What is the difference between Controlled Failover and Immediate Failover?
+{: faq}
+
+Controlled Failover does one last sync before breaking the mirror. The Immediate Failover immediately breaks the mirror and activates the replica volume.

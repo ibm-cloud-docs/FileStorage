@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
@@ -118,15 +118,15 @@ Storage is provisioned in less than a minute and becomes visible on the **{{site
 
 When a volume is provisioned, the {{site.data.keyword.BluBareMetServers_full}} or {{site.data.keyword.BluVirtServers_full}} that is going to use the volume must be authorized to access the storage. Use the following steps to authorize the volume.
 
-1. Click **Storage** > **{{site.data.keyword.filestorage_short}}**.
-2. Select **Access Host** on the **Endurance** or **Performance Volume Actions** menu.
+1. In the console, go to **Classic Infrastructure**  > **Storage** > **{{site.data.keyword.filestorage_short}}**
+2. Scroll to the File share you want to mount, and click **...** (Actions). Then, select **Authorize Host**.
 3. Click **Subnets**.
-4. Choose from the list of available subnets that are assigned to the VMkernel ports on the ESXi hosts, and click **Submit**.<br/>
+4. Choose from the list of available subnets that are assigned to the VMkernel ports on the ESXi hosts, and click **Save**.<br/>
 
    The subnets that are displayed are subscribed subnets in the same data center as the storage volume.
    {:note}
 
-After the subnets are authorized, make note of the host name of the Endurance or Performance storage server you want to use when you mount the volume. This information can be found on the {{site.data.keyword.filestorage_short}} detail page by clicking a specific volume.
+After the subnets are authorized, make note of the host name of the storage server. The host name can be found on the {{site.data.keyword.filestorage_short}} detail page of the volume.
 
 
 ##  Configuring the VMware virtual machine host
