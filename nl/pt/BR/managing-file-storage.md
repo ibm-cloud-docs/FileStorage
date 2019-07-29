@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-25"
 
 keywords: File Storage, file storage, NFS, authorizing hosts, rewoke access, grant access, view authorizations
 
@@ -31,7 +31,12 @@ Hosts "Autorizados" são aqueles que receberam acesso a um volume específico. S
 1. Acesse o [console do {{site.data.keyword.cloud}}](https://{DomainName}/){: external}. No menu, selecione **Infraestrutura clássica**.
 2. Clique em **Armazenamento** > **{{site.data.keyword.filestorage_short}}** e clique em seu **Nome do volume**.
 3. Role para a seção **Hosts autorizados** da página.
-4. Clique em  ** Autorizar host **  à direita. Selecione os hosts que podem acessar esse volume específico.
+4. Clique em  ** Autorizar host **  à direita.
+5. Filtre a lista de hosts disponíveis selecionando o tipo de dispositivo, a sub-rede ou o endereço IP.
+
+   Quando a lista é filtrada por sub-rede, as sub-redes exibidas são sub-redes inscritas no mesmo data center que o volume de armazenamento.
+   {:note}
+6. Selecione um ou mais hosts na lista e clique em **Salvar**.
 
 Como alternativa, é possível usar o comando a seguir no SLCLI.
 ```
@@ -142,7 +147,7 @@ Se você não precisar mais de um volume específico, será possível cancelar e
 1. Acesse o [console do {{site.data.keyword.cloud}}](https://{DomainName}/){: external}. No menu, selecione **Infraestrutura clássica**.
 2. Clique em **Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
 3. Clique em **Ações** para o volume a ser cancelado e selecione **Cancelar{{site.data.keyword.filestorage_short}}**.
-4. Confirme se deseja cancelar o volume imediatamente ou na data de aniversário anual de quando o volume foi provisionado.
+4. Confirme se deseja cancelar o volume imediatamente ou na data de aniversário do provisionamento do volume.
 
    Se você selecionar a opção para cancelar o volume na data de aniversário dele, será possível anular a solicitação de cancelamento antes da data de aniversário.
    {:tip}
@@ -160,3 +165,10 @@ Options:
                  billing anniversary
   -h, --help     Show this message and exit.
 ```
+
+Quando o volume for cancelado, haverá um período de espera de recuperação de 24 horas. Ainda será possível ver o volume no console durante essas 24 horas. Quando o período de recuperação expirar, os dados serão destruídos e o volume também será removido do console. No entanto, o faturamento para o volume parará imediatamente. Para obter mais informações, consulte as [Perguntas mais frequentes](/docs/infrastructure/FileStorage?topic=FileStorage-file-storage-faqs).
+{:note}
+
+ As réplicas ativas podem bloquear a recuperação do volume de armazenamento. Certifique-se de que
+o volume não esteja mais montado, as autorizações de host sejam revogadas e a replicação seja cancelada
+antes de tentar cancelar o volume original.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
@@ -149,3 +149,8 @@ Não. Atualmente, o vStorage para a Integração de Matrizes de API e a acelera�
 {: faq}
 
 Quando as unidades são desatribuídas, a IBM as destrói antes de elas serem descartadas. As unidades se tornam inutilizáveis. Quaisquer dados que foram gravados nessa unidade se tornam inacessíveis.
+
+## Qual a diferença entre failover controlado e failover imediato?
+{: faq}
+
+O failover controlado faz uma última sincronização antes de quebrar o espelho. O failover imediato quebra imediatamente o espelho e ativa o volume de réplica.

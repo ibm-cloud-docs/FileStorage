@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
@@ -27,11 +27,11 @@ No caso de uma falha catastrófica ou de um desastre que cause uma indisponibili
 
 1. Efetue login no [Console do {{site.data.keyword.cloud}}](https://{DomainName}/){: external} e clique no ícone **menu** na parte superior esquerda. Selecione **Infraestrutura clássica**.
 2. Clique em **Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
-3. Clique na réplica do compartilhamento de arquivo na lista para visualizar sua página **Detalhes**.
+3. Clique no nome da réplica do compartilhamento de arquivo na lista.
 4. Na página **Detalhes**, role para baixo e selecione uma captura instantânea existente e, em seguida, clique em **Ações** > **Duplicar**.
 5. Faça quaisquer atualizações necessárias na capacidade (para aumentar o tamanho) ou na IOPS para o novo volume.
 6. É possível atualizar o espaço de captura instantânea para o novo volume, se necessário.
-7. Clique em **Continuar** para fazer seu pedido para a duplicata.
+7. Clique em **Fazer pedido** para provisionar a duplicata.
 
 Assim que o volume for criado, será possível anexá-lo a um host e executar operações de leitura/gravação nesse volume. Enquanto os dados estão sendo copiados do volume original para a duplicata, é possível ver um status na página de detalhes mostrando que a duplicação está em andamento. Quando o processo de duplicação for concluído, o novo volume se tornará independente do original e poderá ser gerenciado com capturas instantâneas e replicação normalmente.
 
@@ -59,6 +59,6 @@ Após a replicação ser concluída, será necessário criar um volume duplicado
 3. Na página **Detalhes**, role para baixo e selecione uma captura instantânea existente e, em seguida, clique em **Ações** > **Duplicar**.
 4. Faça quaisquer atualizações necessárias na capacidade (para aumentar o tamanho) ou na IOPS para o novo volume.
 5. Atualize o espaço de captura instantânea para o novo volume, se necessário.
-6. Clique em **Continuar** para fazer seu pedido para a duplicata.
+6. Clique em **Fazer pedido** para provisionar a duplicata.
 
 Quando o processo de duplicação estiver concluído, será possível cancelar a replicação e os volumes que foram usados para que os dados voltem para o site primário original. A duplicata torna-se o armazenamento primário, e a replicação para o site secundário original pode ser estabelecida novamente.

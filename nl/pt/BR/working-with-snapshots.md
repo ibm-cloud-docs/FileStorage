@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, snapshots, snapshot schedule, manual snapshot, snapshot space, snapshot quota
 
@@ -82,7 +82,7 @@ Options:
 
 ## Listando todas as capturas instantâneas com informações de espaço usado e funções de gerenciamento
 
-Uma lista de capturas instantâneas retidas e espaço usado pode ser vista na página **Detalhe** (**Armazenamento**, **{{site.data.keyword.filestorage_short}}**). As funções de gerenciamento (editando planejamentos e incluindo mais espaço) são conduzidas na página Detalhe usando o menu **Ações** ou links nas várias seções na página.
+Uma lista de capturas instantâneas retidas e espaço usado pode ser vista na página **Detalhe** (**Armazenamento**, **{{site.data.keyword.filestorage_short}}**). As funções de gerenciamento (edição de planejamentos e inclusão de mais espaço) são conduzidas na página de **Detalhes** usando o menu **Ações** ou os links nas várias seções da página.
 
 Como alternativa, é possível realizar essa tarefa por meio do SLCLI.
 ```
@@ -110,7 +110,7 @@ Somente o espaço de captura instantânea pode ser aumentado. Não pode ser redu
 
 O espaço de captura instantânea é alterado por meio de  ** Armazenamento **  >  ** {{site.data.keyword.filestorage_short}} **.
 
-1. Clique em seus volumes de armazenamento, clique em **Ações** e clique em **Incluir mais espaço de captura instantânea**.
+1. Clique em seus volumes de armazenamento, clique em **Ações** e clique em **Mudar espaço de captura instantânea**.
 2. Selecione em um intervalo de tamanhos no prompt. Os tamanhos geralmente variam de 0 até o tamanho
 de seu volume.
 3. Clique em **Continuar**.
@@ -151,7 +151,7 @@ Usage: slcli file snapshot-delete [OPTIONS] SNAPSHOT_ID
 Opções: -h, --help Mostrar esta mensagem e sair.
 ```
 
-As capturas instantâneas manuais que não são excluídas manualmente no portal são excluídas automaticamente quando você atinge as limitações de espaço (a mais antiga primeiro).
+As capturas instantâneas manuais que não são excluídas no portal manualmente são excluídas automaticamente quando você atinge as limitações de espaço. A captura instantânea mais antiga é excluída primeiro.
 {:note}
 
 ## Restaurando o volume de armazenamento para um momento específico usando uma captura instantânea

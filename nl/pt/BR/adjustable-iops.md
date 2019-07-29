@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, adjusting IOPS, increase IOPS, decrease IOPS, modify IOPS
 
@@ -46,7 +46,7 @@ Se o volume tiver a replicação em vigor, a réplica será atualizada automatic
 {: #adjustingsteps}
 
 1. Acesse a sua lista de {{site.data.keyword.filestorage_short}}. No console do {{site.data.keyword.cloud}}, clique em **Infraestrutura clássica** > **Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
-2. Selecione o volume na lista e clique em **Ações** > **Modificar volume**
+2. Selecione o volume na lista e clique em **...** > **Modificar compartilhamento**
 3. Em **Opções de IOPS de armazenamento**, faça uma nova seleção:
     - Para o Endurance (IOPS em camadas), selecione uma camada de IOPS maior que 0,25 IOPS/GB de seu armazenamento. É possível aumentar a camada de IOPS a qualquer momento. No entanto, o decréscimo está disponível somente uma vez por mês.
     - Para o Performance (IOPS alocado), especifique a nova opção de IOPS para seu armazenamento inserindo um valor no intervalo de 100 a 48.000 IOPS. (Certifique-se de olhar quaisquer limites específicos que são requeridos por tamanho no formulário de ordem.)

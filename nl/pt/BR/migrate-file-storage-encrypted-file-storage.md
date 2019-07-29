@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, upgrade, migrate to new
 
@@ -49,9 +49,13 @@ Seu novo armazenamento estará disponível para montagem em alguns minutos. É p
 
 Hosts "autorizados" são aqueles que receberam acesso a um volume. Sem a autorização do host, não é possível acessar ou usar o armazenamento de seu sistema.
 
-1. Clique no nome de seu novo volume.
-2. Role para a seção  ** Hosts Autorizados ** .
-3. Clique no link **Autorizar host** à direita. Selecione os hosts que podem acessar o volume.
+1. No console, acesse **Infraestrutura clássica** > **Armazenamento** > **{{site.data.keyword.filestorage_short}}**
+2. Role até o compartilhamento de arquivo que você deseja montar e clique em **...** (Ações). Em seguida, selecione **Autorizar host**.
+3. Filtre a lista de hosts disponíveis selecionando o tipo de dispositivo, a sub-rede ou o endereço IP.
+
+   Quando a lista é filtrada por sub-rede, as sub-redes exibidas são sub-redes inscritas no mesmo data center que o volume de armazenamento.
+   {:note}
+4. Selecione um ou mais hosts na lista e clique em **Salvar**.
 
 Quando o host estiver autorizado, conecte o volume ao host.
 
@@ -67,7 +71,7 @@ Se o data center de destino não tiver criptografia, não será possível estabe
 ## Migrando seus dados
 
 1. Conecte-se a ambos os volumes do {{site.data.keyword.filestorage_short}}, originais e novos.
-  - Se precisar de assistência com a conexão dos dois compartilhamentos de arquivo a seu host, abra um chamado de suporte.
+  - Se você precisar de assistência para conectar os dois compartilhamentos de arquivo ao seu host, abra um chamado de suporte.
 
 2. Considere qual tipo de dados você tem no volume original do {{site.data.keyword.filestorage_short}} e como melhor copiá-lo para o novo compartilhamento de arquivo
   - Se você tem backups, conteúdo estático e coisas que não se espera que sejam mudadas
@@ -85,7 +89,7 @@ durante a cópia, não precisa se preocupar.
        [root@server ~]# rsync -Pavzu /path/to/original/file/storage/* /path/to/encrypted/file/storage
        ```
 
-   É uma boa ideia usar o comando anterior com a sinalização `--dry-run` uma vez para certificar-se de que os caminhos sejam alinhados corretamente. Se esse processo for interrompido, será possível excluir o último arquivo de destino que estava sendo copiado para certificar-se de que ele seja copiado para o novo local do início.
+   É aconselhável usar o comando anterior com a sinalização `--dry-run` uma vez para certificar-se de que os caminhos sejam alinhados corretamente. Se esse processo for interrompido, será possível excluir o último arquivo de destino que estava sendo copiado para certificar-se de que ele seja copiado para o novo local do início.
 
    Quando esse comando for concluído sem a sinalização `--dry-run`, seus dados serão copiados para o novo volume do {{site.data.keyword.filestorage_short}}. Execute o comando novamente para certificar-se de que nada foi perdido. Também é possível revisar manualmente ambos os locais para procurar qualquer coisa que possa estar ausente.
 

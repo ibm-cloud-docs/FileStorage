@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, replication, duplication, synchronous, replica schedule, replica space, disaster recovery
 
@@ -44,7 +44,7 @@ Veja a Tabela 1 para a lista completa de disponibilidade de data center e destin
 As replicações funcionam com base em um planejamento de captura instantânea. Deve-se primeiro ter espaço de captura instantânea e um planejamento de captura instantânea para o volume de origem antes de poder replicar. Se você tentar configurar a replicação e uma ou a outra não estiver em vigor, será solicitado que compre mais espaço ou configure um planejamento. As replicações são gerenciadas em **Armazenamento** > **{{site.data.keyword.filestorage_short}}** no [console do {{site.data.keyword.cloud}}](https://{DomainName}/classic){: external}.
 
 1. Clique em seu volume de armazenamento.
-2. Clique em **Réplica** e em **Comprar uma replicação**.
+2. Clique em **Réplica** e clique em **Comprar replicação**.
 3. Selecione o planejamento de captura instantânea existente que você deseja que sua replicação siga. A lista contém todos os seus planejamentos de captura instantânea ativa. <br />
 
    É possível selecionar apenas um planejamento mesmo se você tem uma combinação de Por hora, Diário e Semanal. Todas as capturas instantâneas que foram capturadas desde o ciclo de replicação anterior são replicadas independentemente do planejamento que as originou.<br />Se você não tiver Capturas instantâneas configuradas, será solicitado que faça isso antes de poder pedir replicação. Para obter mais informações, consulte [Trabalhando com capturas instantâneas](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots).
@@ -91,9 +91,10 @@ Seu espaço de captura instantânea primário e seu espaço de réplica devem se
 Os tamanhos de volume devem ser os mesmos para os volumes de armazenamento primário e de réplica. Um não pode ser maior que o outro. Quando você aumenta seu espaço de captura instantânea para o volume primário, o espaço de réplica é aumentado automaticamente. Aumentar o espaço de captura instantânea aciona uma atualização de replicação imediata. O aumento em ambos os volumes é mostrado como itens de linha em sua fatura e é rateado conforme necessário.
 
 Para obter mais informações sobre o aumento do espaço de captura instantânea, consulte [Capturas instantâneas](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots).
+
 ## Visualizando os volumes de réplica na Lista de volumes
 
-É possível visualizar seus volumes de replicação na página {{site.data.keyword.filestorage_short}} em **Armazenamento** > **{{site.data.keyword.filestorage_short}}**. O nome do volume mostra o nome do volume primário seguido por REP. O **Tipo** é Endurance ou Performance - Réplica. O **Endereço de destino** é N/A porque o volume da réplica não está montado no data center da réplica e o **Status** mostra Inativo.
+É possível visualizar seus volumes de replicação na página {{site.data.keyword.filestorage_short}} em **Armazenamento** > **{{site.data.keyword.filestorage_short}}**. O nome do volume mostra o nome do volume primário seguido por REP. O **Tipo** é Endurance ou Performance - Réplica.
 
 
 ## Visualizando os detalhes de um volume replicado no data center de réplica

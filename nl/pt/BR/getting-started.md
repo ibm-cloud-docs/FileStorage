@@ -52,7 +52,7 @@ O tamanho do bloco usado por seu aplicativo afetará diretamente o desempenho do
 | 128 | 128 | 16 |
 | 512 | 32 | 16 |
 | 1024 | 16 | 16 |
-{: caption="A Tabela 1 mostra exemplos de como o tamanho do bloco e o IOPS afetam o rendimento.<br/>Tamanho médio de IO x IOPS = rendimento em MB/s." caption-side="top"}
+{: caption="A Tabela 1 mostra exemplos de como o tamanho de bloco e o IOPS afetam o rendimento.<br/>Tamanho médio de E/S x IOPS = Rendimento em MB/s." caption-side="top"}
 
 ### Hosts autorizados
 

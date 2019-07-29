@@ -32,20 +32,20 @@ subcollection: FileStorage
 1. Efetue login no [catálogo do {{site.data.keyword.cloud}}](https://{DomainName}/catalog){: external} e clique em **Armazenamento**. Em seguida, selecione {{site.data.keyword.filestorage_short}}. Clique em **Criar**.
 2. Selecione sua implementação  ** Local **  (data center).
    - Assegure-se de que o novo Armazenamento seja incluído no mesmo local que o host de cálculo ou os hosts que você possui.
-3. Faturamento. Se você selecionou um data center com recursos melhorados (marcados com um asterisco), é possível escolher entre Faturamento por hora ou mensal.
+3. Método de Faturamento. Se você selecionou um data center com recursos melhorados (marcados com um asterisco), é possível escolher entre Faturamento por hora ou mensal.
      1. Com o faturamento **por hora**, o número de horas nas quais o volume de arquivo existiu na conta é calculado no momento em que o volume é excluído ou no término do ciclo de faturamento. O que vier primeiro. O faturamento por hora é uma boa opção para armazenamento usado por alguns dias ou menos de um mês completo. O faturamento por hora está disponível somente para o armazenamento provisionado nestes [data centers selecionados](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
      2. Com o faturamento **mensal**, o cálculo para o preço é avaliado a partir da data de criação até o término do ciclo de faturamento e faturado imediatamente. Não há reembolso se um volume de arquivo é excluído antes do término do ciclo de faturamento. O faturamento mensal é uma boa opção para armazenamento que é usado em cargas de trabalho de produção que usam dados que precisam ser armazenados e acessados por longos períodos (mês ou mais).
 
      O tipo de faturamento mensal é usado por padrão para um armazenamento que é provisionado em data centers que **não** são atualizados com recursos aprimorados.
      {:note}
-4. Insira seu tamanho de armazenamento no campo **Novo tamanho de armazenamento**.
-5. Selecione **Endurance (IOPS em camadas)** na seção **Opções de IOPS de armazenamento**.
+4. Insira o seu tamanho de armazenamento no campo **Tamanho**.
+5. Selecione **Resistência (IOPS em camadas)**.
 6. Selecione a camada IOPS que seu aplicativo precisa.
     - **0,25 IOPS por GB** foi projetado para cargas de trabalho com baixa intensidade de E/S. Essas cargas de trabalho geralmente são caracterizadas por ter uma grande porcentagem de dados inativos de cada vez. Aplicativos de exemplo incluem o armazenamento de caixas de correio ou compartilhamentos de arquivos de nível departamental.
     - **2 IOPS por GB** é projetado para uso de propósito geral. Os aplicativos de exemplo incluem a hospedagem de bancos de dados pequenos que estão suportando aplicativos da web ou imagens de disco de máquina virtual para um hypervisor.
     - **4 IOPS por GB** foi projetado para cargas de trabalho de maior intensidade. Essas cargas de trabalho geralmente são caracterizadas por ter uma alta porcentagem de dados ativos de cada vez. Aplicativos de exemplo incluem bancos de dados transacionais e outros sensíveis ao desempenho.
     - **10 IOPS por GB** é projetado para as cargas de trabalho mais exigentes, como aquelas criadas por bancos de dados NoSQL, e para processamento de dados para Analytics. Essa camada está disponível em [data centers selecionados](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC) para armazenamento provisionado até 4 TB.
-7. Clique em **Especificar tamanho do espaço de captura instantânea** e selecione o tamanho da captura instantânea na lista. Esse espaço é além de seu espaço utilizável. Para obter considerações e recomendações sobre espaço de captura instantânea, leia [Pedindo capturas instantâneas](/docs/infrastructure/FileStorage?topic=FileStorage-ordering-snapshots).
+7. Clique no campo em **Espaço de captura instantânea** e selecione o tamanho da captura instantânea na lista. Esse espaço é além de seu espaço utilizável. Para obter considerações e recomendações sobre espaço de captura instantânea, leia [Pedindo capturas instantâneas](/docs/infrastructure/FileStorage?topic=FileStorage-ordering-snapshots).
 8. À direita, revise o resumo do pedido e aplique o Código promocional, se tiver um.
 
    Os descontos são aplicados quando o pedido é processado.
@@ -63,16 +63,16 @@ volumes do {{site.data.keyword.blockstorageshort}}. Para aumentar o número de s
 1. Efetue login no [catálogo do {{site.data.keyword.cloud}}](https://{DomainName}/catalog){: external} e clique em **Armazenamento**. Em seguida, selecione {{site.data.keyword.filestorage_short}}. Clique em **Criar**.
 2. Clique em **Local** e selecione seu data center.
    - Assegure-se de que o novo Armazenamento seja incluído no mesmo local que o host de cálculo ou os hosts que você possui.
-3. Faturamento. Se você selecionou um data center com recursos melhorados (marcados com um asterisco), é possível escolher entre Faturamento por hora ou mensal.
+3. Método de Faturamento. Se você selecionou um data center com recursos melhorados (marcados com um asterisco), é possível escolher entre Faturamento por hora ou mensal.
      1. Com o faturamento **por hora**, o número de horas nas quais o volume de arquivo existiu na conta é calculado no momento em que o volume é excluído ou no término do ciclo de faturamento. O que vier primeiro. O faturamento por hora é uma boa opção para armazenamento usado por alguns dias ou menos de um mês completo. O faturamento por hora está disponível somente para o armazenamento provisionado nestes [data centers selecionados](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
      2. Com o faturamento **mensal**, o cálculo para o preço é avaliado a partir da data de criação até o término do ciclo de faturamento e faturado imediatamente. Não há reembolso se um volume de arquivo é excluído antes do término do ciclo de faturamento. O faturamento mensal é uma boa opção para armazenamento que é usado em cargas de trabalho de produção que usam dados que precisam ser armazenados e acessados por longos períodos (mês ou mais).
 
      O tipo de faturamento mensal é usado por padrão para um armazenamento que é provisionado em data centers que **não** são atualizados com recursos aprimorados.
      {:note}
-4. Insira seu tamanho de armazenamento no campo **Novo tamanho de armazenamento**.
-5. Selecione **Performance (IOPS alocado)** na seção **Opções de IOPS de armazenamento**.
+4. Insira o seu tamanho de armazenamento no campo **Tamanho**.
+5. Selecione **Desempenho (IOPS alocado)**.
 6. Insira o IOPS no campo **Performance (IOPS alocado)**.
-7. Clique em **Especificar tamanho do espaço de captura instantânea** e selecione o tamanho da captura instantânea na lista. Esse espaço é além de seu espaço utilizável. Para obter considerações e recomendações sobre espaço de captura instantânea, leia [Pedindo capturas instantâneas](/docs/infrastructure/FileStorage?topic=FileStorage-ordering-snapshots).
+7. Clique no campo em **Espaço de captura instantânea** e selecione o tamanho da captura instantânea na lista. Esse espaço é além de seu espaço utilizável. Para obter considerações e recomendações sobre espaço de captura instantânea, leia [Pedindo capturas instantâneas](/docs/infrastructure/FileStorage?topic=FileStorage-ordering-snapshots).
 8. À direita, revise o resumo do pedido e aplique o Código promocional, se tiver um.
 
    Os descontos são aplicados quando o pedido é processado.

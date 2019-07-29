@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, duplicate volume
 
@@ -23,6 +23,7 @@ subcollection: FileStorage
 Como a duplicata é baseada nos dados em uma captura instantânea de um momento, o espaço de captura instantânea é necessário no volume original antes de poder criar uma duplicata. Para saber mais sobre capturas
 instantâneas e como solicitar espaço de captura instantânea, consulte [Documentação
 de captura instantânea](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots).
+{:important}
 
 As duplicatas podem ser criadas de ambos os volumes, o **primário** e o de **réplica**. A nova duplicata é criada no mesmo data center que o volume original. Se você criar uma duplicata de um volume de réplica, o novo volume será criado no mesmo data center que o volume de réplica.
 
@@ -46,14 +47,13 @@ Alguns usos comuns para um volume duplicado incluem os exemplos a seguir.
 
 ## Criando uma duplicata de um volume específico na Lista de armazenamento
 
-1. Acesse sua lista de {{site.data.keyword.filestorage_short}}
-    - No menu Infraestrutura clássica, clique em **Armazenamento** > **{{site.data.keyword.filestorage_short}}** OU
-    - No catálogo do {{site.data.keyword.cloud}}, clique em **Infraestrutura** > **Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
-2. Selecione um volume na lista e clique em **Ações** > **Duplicar volume (volume)**
+1. Acesse a sua lista de {{site.data.keyword.filestorage_short}}. No menu **Infraestrutura clássica**, clique em **Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
+2. Localize e clique no nome do volume.
+3. Clique em **Ações** > **Duplicar volume**
 3. Escolha sua opção de captura instantânea.
     - Se você pedir por meio de um volume que não é de réplica,
-      - Selecione **Criar de uma nova captura instantânea** - essa ação cria uma captura instantânea a ser usada para a duplicata. Use essa opção se o seu volume não tem capturas instantâneas atuais ou se você deseja criar uma duplicata logo em seguida.</br>
-      - Selecione **Criar da captura instantânea mais recente** - essa ação cria uma duplicata da captura instantânea mais recente existente para esse volume.
+      - Selecione **Criar uma nova captura instantânea para clonar** - essa ação cria uma captura instantânea a ser usada para a duplicata. Use essa opção se o seu volume não tem capturas instantâneas atuais ou se você deseja criar uma duplicata logo em seguida.</br>
+      - Selecione **Usar a captura instantânea mais recente para clonar o volume** - essa ação cria uma duplicata da captura instantânea mais recente que existe para esse volume.
     - Se você pedir usando um volume de réplica, a única opção para a captura instantânea será usar a captura instantânea mais recente disponível.
 4. O Tipo de armazenamento e o Local permanecem iguais aos do volume original.
 5. Faturamento por hora ou mensal – é possível escolher provisionar o volume duplicado com faturamento por hora ou mensal. O tipo de faturamento para o volume original é selecionado automaticamente. Se você deseja escolher um tipo de faturamento diferente para seu armazenamento duplicado, é possível fazer essa seleção aqui.
@@ -83,7 +83,7 @@ pode ser um volume de réplica ou não réplica.
    O {{site.data.keyword.filestorage_short}} pode ser redimensionado para 10 vezes o tamanho original do volume.
    {:tip}
 7. É possível atualizar o espaço de captura instantânea do novo volume para incluir mais, menos ou nenhum espaço de captura instantânea. O espaço de captura instantânea do volume original é configurado por padrão.
-8. Clique em **Continuar** para fazer seu pedido para a duplicata.
+8. Clique em **Fazer pedido** para provisionar a duplicata.
 
 ## Criando uma duplicata por meio do SLCLI
 ```

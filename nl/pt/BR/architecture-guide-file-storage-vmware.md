@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
@@ -118,15 +118,15 @@ O armazenamento é provisionado em menos de um minuto e se torna visível na pá
 
 Quando um volume é provisionado, o {{site.data.keyword.BluBareMetServers_full}} ou o {{site.data.keyword.BluVirtServers_full}} que usará o volume deve estar autorizado a acessar o armazenamento. Use as etapas a seguir para autorizar o volume.
 
-1. Clique em **Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
-2. Selecione **Acessar host** no menu **Ações de volume do Performance** ou **Endurance**.
+1. No console, acesse **Infraestrutura clássica** > **Armazenamento** > **{{site.data.keyword.filestorage_short}}**
+2. Role até o compartilhamento de arquivo que você deseja montar e clique em **...** (Ações). Em seguida, selecione **Autorizar host**.
 3. Clique em  **Subnets**.
-4. Escolha na lista de sub-redes disponíveis que estão designadas às portas do VMkernel nos hosts ESXi e clique em **Enviar**.<br/>
+4. Escolha na lista de sub-redes disponíveis designadas às portas do VMkernel nos hosts ESXi e clique em **Salvar**.<br/>
 
    As sub-redes que são exibidas são sub-redes inscritas no mesmo data center que o volume de armazenamento.
    {:note}
 
-Depois que as sub-redes forem autorizadas, anote o nome do host do servidor de armazenamento do Endurance ou do Performance que você deseja usar quando montar o volume. Essas informações podem ser localizadas na página de detalhes do {{site.data.keyword.filestorage_short}} clicando em um volume específico.
+Depois que as sub-redes são autorizadas, anote o nome do host do servidor de armazenamento. O nome do host pode ser localizado na página de detalhes do {{site.data.keyword.filestorage_short}} do volume.
 
 
 ##  Configurando o host da máquina virtual do VMware

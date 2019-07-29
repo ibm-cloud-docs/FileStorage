@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, snapshot, ordering snapshot, snapshot space
 
@@ -53,7 +53,7 @@ Além disso, para a maioria das cargas de trabalho, quanto maior for um volume, 
 1. Efetue login no [console do {{site.data.keyword.cloud}}](https://{DomainName}/){: external} e clique no ícone menu na parte superior esquerda.
 2. Selecione **Infraestrutura clássica**.
 3. Acesse seu Armazenamento por meio de **Armazenamento** > **{{site.data.keyword.filestorage_short}}**.
-4. Clique em **Mudar espaço de captura instantânea** no quadro Capturas instantâneas.
+4. Clique em **Incluir espaço de captura instantânea** no quadro Capturas instantâneas.
 5. Selecione a quantidade de espaço que você precisa e o método de pagamento.
 6. Clique em **Continuar**.
 7. Insira qualquer código promocional que você tenha e clique em **Recalcular**. **Encargos para este pedido** e **Revisão do pedido** têm valores padrão.
