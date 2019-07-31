@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, upgrade, migrate to new
 
@@ -49,9 +49,13 @@ subcollection: FileStorage
 
 「授權」主機是已獲得磁區存取權的主機。如果沒有主機授權，則無法從系統中存取或使用儲存空間。
 
-1. 按一下新磁區的名稱。
-2. 捲動至**授權主機**區段。
-3. 按一下右側的**授權主機**鏈結。選取可存取磁區的主機。
+1. 在主控台中，移至**標準基礎架構**  > **儲存空間** > **{{site.data.keyword.filestorage_short}}**。
+2. 捲動至您要裝載的檔案共用，然後按一下 **...**（動作）。接著選取**授權主機**。
+3. 選取裝置類型、子網路或 IP 位址，以過濾可用的主機清單。
+
+   當清單依子網路過濾時，顯示的子網路就是與儲存空間磁區位於相同資料中心內的已訂閱子網路。
+   {:note}
+4. 從清單選取一台或多台主機，然後按一下**儲存**。
 
 授權主機之後，請將磁區連接至主機。
 
@@ -84,7 +88,7 @@ subcollection: FileStorage
        [root@server ~]# rsync -Pavzu /path/to/original/file/storage/* /path/to/encrypted/file/storage
        ```
 
-   最好搭配使用前一個指令與 `--dry-run` 旗標一次，以確保正確地排列路徑。如果此處理程序遭到岔斷，您可以刪除最後一個正在複製的目的地檔案，以確定從頭將它複製到新位置。
+   建議您搭配使用先前的指令與 `--dry-run` 旗標一次，以確定正確地排列路徑。如果此處理程序遭到岔斷，您可以刪除最後一個正在複製的目的地檔案，以確定從頭將它複製到新位置。
 
    這個指令在沒有 `--dry-run` 旗標的情況下完成時，會將資料複製到新的 {{site.data.keyword.filestorage_short}} 磁區。重新執行指令，以確定未遺漏任何項目。您也可以手動檢閱這兩個位置，以尋找任何可能遺漏的項目。
 

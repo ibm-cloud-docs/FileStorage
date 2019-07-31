@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, snapshots, snapshot schedule, manual snapshot, snapshot space, snapshot quota
 
@@ -79,7 +79,7 @@ Options:
 
 ## 列出所有具有已使用空間資訊和管理功能的 Snapshot
 
-您可以在**詳細資料**頁面（**儲存空間**、**{{site.data.keyword.filestorage_short}}**）上看到已保留 Snapshot 及已使用空間的清單。使用**動作**功能表或頁面上各種區段中的鏈結，以在「詳細資料」頁面上處理管理功能（編輯排程以及新增更多空間）。
+您可以在**詳細資料**頁面（**儲存空間**、**{{site.data.keyword.filestorage_short}}**）上看到已保留 Snapshot 及已使用空間的清單。使用**動作**功能表或頁面上各種區段中的鏈結，以在**詳細資料**頁面上處理管理功能（編輯排程以及新增更多空間）。
 
 或者，您可以透過 SLCLI 完成此作業。
 ```
@@ -110,7 +110,7 @@ Snapshot 空間只能增加。不能減少。在您確定所需的空間量之�
 
 透過**儲存空間** > **{{site.data.keyword.filestorage_short}}** 來變更 Snapshot 空間。
 
-1. 按一下儲存空間磁區，按一下**動作**，然後按一下**新增其他 Snapshot 空間**。
+1. 按一下儲存空間磁區，按一下**動作**，然後按一下**變更 Snapshot 空間**。
 2. 從提示中，選取大小範圍。大小範圍通常是從 0 到您的磁區大小。
 3. 按一下**繼續**。
 4. 輸入您有的任何「促銷代碼」，然後按一下**重新計算**。依預設，會完成「此訂單的計費」及「訂單檢閱」欄位。
@@ -150,7 +150,7 @@ Options:
   -h, --help  Show this message and exit.
 ```
 
-當您達到空間限制時，會自動刪除入口網站中未手動刪除的手動 Snapshot（最舊的最先刪除）。
+當您達到空間限制時，會自動刪除入口網站中未手動刪除的手動 Snapshot。最舊的 Snapshot 最先刪除。
 {:note}
 
 ## 使用 Snapshot 將儲存空間磁區還原至特定時間點

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, NSF, mounting File Storage, mounting storage on Linux,
 
@@ -20,8 +20,13 @@ subcollection: FileStorage
 
 首先，請確定要存取 {{site.data.keyword.filestorage_full}} 磁區的主機已透過 [{{site.data.keyword.cloud}} 主控台](https://{DomainName}/classic){: external}獲得授權。
 
-1. 從 {{site.data.keyword.filestorage_short}} 清單頁面，按一下與新共用相關聯的**動作**鏈結，然後按一下**授權主機**。
-2. 從清單中選取一台或多台主機，然後按一下**提交**。此動作會授權主機存取共用。
+1. 在主控台中，移至**標準基礎架構**  > **儲存空間** > **{{site.data.keyword.filestorage_short}}**。
+2. 捲動至您要裝載的檔案共用，然後按一下 **...**（動作）。接著選取**授權主機**。
+3. 選取裝置類型、子網路或 IP 位址，以過濾可用的主機清單。
+
+   當清單依子網路過濾時，顯示的子網路就是與儲存空間磁區位於相同資料中心內的已訂閱子網路。
+   {:note}
+4. 從清單選取一台或多台主機，然後按一下**儲存**。
 
 或者，您可以透過 SLCLI 授權主機。
 ```

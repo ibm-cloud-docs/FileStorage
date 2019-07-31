@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, snapshot, ordering snapshot, snapshot space
 
@@ -53,7 +53,7 @@ subcollection: FileStorage
 1. 登入 [{{site.data.keyword.cloud}} 主控台](https://{DomainName}/){: external}，然後按一下左上方的功能表圖示。
 2. 選取**標準基礎架構**。
 3. 透過**儲存空間** > **{{site.data.keyword.filestorage_short}}** 來存取「儲存空間」。
-4. 按一下 Snapshot 頁框中的**變更 Snapshot 空間**。
+4. 按一下 Snapshot 頁框中的**新增 Snapshot 空間**。
 5. 選取您需要的空間量和付款方法。
 6. 按一下**繼續**。
 7. 輸入您有的任何「促銷代碼」，然後按一下**重新計算**。**此訂單的計費**及**訂單檢閱**具有預設值。

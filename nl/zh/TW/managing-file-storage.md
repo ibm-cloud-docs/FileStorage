@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-25"
 
 keywords: File Storage, file storage, NFS, authorizing hosts, rewoke access, grant access, view authorizations
 
@@ -31,7 +31,12 @@ subcollection: FileStorage
 1. 移至 [{{site.data.keyword.cloud}} 主控台](https://{DomainName}/){: external}。從功能表中選取**標準基礎架構**。
 2. 按一下**儲存空間** > **{{site.data.keyword.filestorage_short}}**，然後按一下**磁區名稱**。
 3. 捲動至頁面的**授權主機**區段。
-4. 按一下右側的**授權主機**。選取可存取該特定磁區的主機。
+4. 按一下右側的**授權主機**。
+5. 選取裝置類型、子網路或 IP 位址，以過濾可用的主機清單。
+
+   當清單依子網路過濾時，顯示的子網路就是與儲存空間磁區位於相同資料中心內的已訂閱子網路。
+   {:note}
+6. 從清單選取一台或多台主機，然後按一下**儲存**。
 
 或者，您可以在 SLCLI 中使用下列指令。
 ```
@@ -146,7 +151,7 @@ Options:
 3. 按一下要取消之磁區的**動作**，然後選取**取消 {{site.data.keyword.filestorage_short}}**。
 4. 確認您是要立即取消磁區，還是在佈建磁區的週年日取消磁區。
 
-   如果您選取在磁區週年紀念日取消磁區的選項，則可以在其週年紀念日之前讓取消要求失效。
+   如果您選取在磁區週年日取消磁區的選項，則可以在其週年日之前讓取消要求失效。
    {:tip}
 5. 按一下**繼續**或**關閉**。
 6. 按一下確認通知勾選框，然後按一下**確認**。
@@ -162,3 +167,8 @@ Options:
                  billing anniversary
   -h, --help     Show this message and exit.
 ```
+
+取消磁區時，會有 24 小時的收回等待期間。在那 24 小時內，您仍可以在主控台看到磁區。收回期間到期時，會破壞資料，並且也會從主控台移除磁區。不過，磁區的計費會立即停止。如需相關資訊，請參閱[常見問題](/docs/infrastructure/FileStorage?topic=FileStorage-file-storage-faqs)。
+{:note}
+
+ 作用中的抄本可能會阻擋儲存空間磁區的收回。請確定磁區已不再裝載、主機授權已撤銷，且抄寫已取消，然後才試圖取消原始磁區。

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
@@ -27,11 +27,11 @@ subcollection: FileStorage
 
 1. 登入 [{{site.data.keyword.cloud}} 主控台](https://{DomainName}/){: external}，然後按一下左上方的**功能表**圖示。選取**標準基礎架構**。
 2. 按一下**儲存空間** > **{{site.data.keyword.filestorage_short}}**。
-3. 按一下清單中的檔案共用抄本，以檢視其**詳細資料**頁面。
+3. 按一下清單中的檔案共用抄本名稱。
 4. 在**詳細資料**頁面上，向下捲動並選取現有的 Snapshot，然後按一下**動作** > **複製**。
 5. 針對新磁區的容量（為了增加大小）或 IOP 進行任何必要的更新。
 6. 必要的話，可以將新磁區的 Snapshot 空間更新。
-7. 按一下**繼續**，以訂購重複項目。
+7. 按一下**下訂單**，以佈建重複磁區。
 
 建立磁區之後，您可以將它連接到主機，並在該磁區上執行讀寫作業。當資料從原始磁區複製到重複磁區時，您會在詳細資料頁面上看到一個顯示正在進行複製的狀態。複製處理程序完成之後，新的磁區即與原始磁區無關，您可以像平常一樣使用 Snapshot 和抄寫進行管理。
 
@@ -59,6 +59,6 @@ subcollection: FileStorage
 3. 在**詳細資料**頁面上，向下捲動並選取現有的 Snapshot，然後按一下**動作** > **複製**。
 4. 針對新磁區的容量（為了增加大小）或 IOP 進行任何必要的更新。
 5. 必要的話，請更新新磁區的 Snapshot 空間。
-6. 按一下**繼續**，以訂購重複項目。
+6. 按一下**下訂單**，以佈建重複磁區。
 
 當複製處理程序完成時，您可以取消抄寫及所使用的磁區，使資料回到原始主要站台。此複製項目會變成主要儲存空間，而原始次要站台的抄寫可以重新建立。

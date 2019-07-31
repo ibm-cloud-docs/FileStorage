@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, adjusting IOPS, increase IOPS, decrease IOPS, modify IOPS
 
@@ -46,7 +46,7 @@ subcollection: FileStorage
 {: #adjustingsteps}
 
 1. 移至您的 {{site.data.keyword.filestorage_short}} 清單。從 {{site.data.keyword.cloud}} 主控台，按一下**標準基礎架構** > **儲存空間** > **{{site.data.keyword.filestorage_short}}**。
-2. 從清單中選取磁區，然後按一下**動作** > **修改磁區**
+2. 從清單中選取磁區，然後按一下 **...** > **修改共用**。
 3. 在**儲存空間 IOPS 選項**下，進行新的選取：
     - 針對「耐久性」（分層 IOPS），請為您的儲存空間選取大於 0.25 IOPS/GB 的「IOPS 層級」。您隨時可以增加 IOPS 層級。不過，一個月只能減少一次。
     - 針對「效能」（已配置的 IOPS），請為您的儲存空間指定新的 IOPS 選項，輸入範圍在 100 到 48,000 IOPS 的值。（請務必在訂單表格中查看大小所需的任何特定界限）。

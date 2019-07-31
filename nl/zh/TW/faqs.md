@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
@@ -149,3 +149,8 @@ NFS 第 3 版原本便支援 `no_root_squash`，可讓 root 用戶端保留對 N
 {: faq}
 
 磁碟機解除任務時，IBM 會先破壞它們再進行處理。磁碟機會變成無法使用。已寫入該磁碟機的任何資料都會變成無法存取。
+
+## 受管制的失效接手與立即失效接手之間有什麼差異？
+{: faq}
+
+受管制的失效接手在岔斷鏡映之前會進行最後的一次同步。立即失效接手則會立即岔斷鏡映，然後啟動抄本磁區。

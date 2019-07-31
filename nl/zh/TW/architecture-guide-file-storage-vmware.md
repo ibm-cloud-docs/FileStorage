@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
@@ -117,15 +117,15 @@ subcollection: FileStorage
 
 佈建磁區後，必須授權將使用磁區的 {{site.data.keyword.BluBareMetServers_full}} 或 {{site.data.keyword.BluVirtServers_full}} 來存取儲存空間。請使用下列步驟來授權磁區。
 
-1. 按一下**儲存空間** > **{{site.data.keyword.filestorage_short}}**。
-2. 在**耐久性**或**效能磁區動作**功能表上，選取**存取主機**。
+1. 在主控台中，移至**標準基礎架構**  > **儲存空間** > **{{site.data.keyword.filestorage_short}}**。
+2. 捲動至您要裝載的檔案共用，然後按一下 **...**（動作）。接著選取**授權主機**。
 3. 按一下**子網路**。
-4. 從指派給 ESXi 主機上 VMkernel 埠的可用子網路清單中進行選擇，然後按一下**提交**。<br/>
+4. 從指派給 ESXi 主機上 VMkernel 埠的可用子網路清單中進行選擇，然後按一下**儲存**。<br/>
 
    顯示的子網路就是與儲存空間磁區位於相同資料中心內的已訂閱子網路。
    {:note}
 
-授權子網路之後，請記下您在裝載磁區時想要使用之「耐久性」或「效能」儲存空間伺服器的主機名稱。按一下特定磁區，即可在 {{site.data.keyword.filestorage_short}} 詳細資料頁面上找到這項資訊。
+授權子網路之後，請記下儲存空間伺服器的主機名稱。主機名稱可在磁區的 {{site.data.keyword.filestorage_short}} 詳細資料頁面上找到。
 
 
 ##  配置 VMware 虛擬機器主機

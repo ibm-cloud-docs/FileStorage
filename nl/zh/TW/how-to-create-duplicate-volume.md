@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, duplicate volume
 
@@ -21,6 +21,7 @@ subcollection: FileStorage
 您可以建立現有 {{site.data.keyword.cloud}} {{site.data.keyword.filestorage_full}} 的重複磁區。依預設，重複磁區會繼承原始磁區的容量及效能選項，而且會有到達 Snapshot 中該時間點之前的資料副本。   
 
 因為重複磁區的基礎是時間點 Snapshot 中的資料，所以原始磁區上需要有 Snapshot 空間，您才能建立重複磁區。若要進一步瞭解 Snapshot 以及如何訂購 Snapshot 空間，請參閱 [Snapshot 文件](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots)。  
+{:important}
 
 您可以從**主要**及**抄本**磁區建立重複磁區。新的重複磁區會建立在與原始磁區相同的資料中心內。如果您建立抄本磁區的重複磁區，則新的磁區會建立在與抄本磁區相同的資料中心內。
 
@@ -44,14 +45,13 @@ subcollection: FileStorage
 
 ## 建立儲存空間清單中特定磁區的重複磁區
 
-1. 移至您的 {{site.data.keyword.filestorage_short}} 清單
-    - 從「標準基礎架構」功能表中，按一下**儲存空間** > **{{site.data.keyword.filestorage_short}}**，或者
-    - 從 {{site.data.keyword.cloud}} 型錄按一下**基礎架構** > **儲存空間** > **{{site.data.keyword.filestorage_short}}**。
-2. 從清單中選取磁區，然後按一下**動作** > **複製磁區（磁區）**
+1. 移至您的 {{site.data.keyword.filestorage_short}} 清單。從**標準基礎架構**功能表中，按一下**儲存空間** > **{{site.data.keyword.filestorage_short}}**。
+2. 找到並按一下磁區名稱。
+3. 按一下**動作** > **重複的磁區**。
 3. 選擇 Snapshot 選項。
     - 如果您從非抄本磁區訂購，請執行下列動作：
-      - 選取**從新 Snapshot 建立** – 此動作會建立要用於重複磁區的 Snapshot。如果您的磁區沒有目前 Snapshot，或您要建立該時間點的重複項目，則請使用此選項。
-      - 選取**從最新 Snapshot 建立** – 此動作會從此磁區的現有最新 Snapshot 建立重複磁區。
+      - 選取**建立要複製的新 Snapshot** - 此動作會建立將用於重複磁區的 Snapshot。如果您的磁區沒有目前 Snapshot，或您要建立該時間點的重複項目，則請使用此選項。
+      - 選取**使用最新 Snapshot 來複製磁區** - 此動作會從此磁區的現有最新 Snapshot 建立重複磁區。
     - 如果您從抄本磁區訂購，Snapshot 的唯一選項是使用可用的最新 Snapshot。
 4. 「儲存空間類型」及「位置」會維持與原始磁區相同。
 5. 按小時或按月計費 – 您可以選擇佈建按小時或按月計費的重複磁區。會自動選取原始磁區的計費類型。如果您要為重複儲存空間選擇不同的計費類型，則可以在這裡進行該選擇。
@@ -80,7 +80,7 @@ subcollection: FileStorage
    {{site.data.keyword.filestorage_short}} 可以調整為磁區原始大小的 10 倍。
    {:tip}
 7. 您可以更新新磁區的 Snapshot 空間，以新增更多、更少 Snapshot 空間，或不新增 Snapshot 空間。依預設，會設定原始磁區的 Snapshot 空間。
-8. 按一下**繼續**，以訂購重複磁區。
+8. 按一下**下訂單**，以佈建重複磁區。
 
 ## 透過 SLCLI 建立重複磁區
 ```

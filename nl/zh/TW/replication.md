@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, replication, duplication, synchronous, replica schedule, replica space, disaster recovery
 
@@ -90,9 +90,10 @@ subcollection: FileStorage
 主要及抄本儲存空間磁區的磁區大小必須相同。其中一個不能大於另一個。當您增加主要磁區的 Snapshot 空間時，即會自動增加抄本空間。增加 Snapshot 空間會觸發立即抄寫更新。兩個磁區的增加量會在您的發票中顯示為明細行項目，並且視需要按比例分配。
 
 如需增加 Snapshot 空間的相關資訊，請參閱 [Snapshot](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots)。
+
 ## 檢視磁區清單中的抄本磁區
 
-您可以在**儲存空間** > **{{site.data.keyword.filestorage_short}}** 的 {{site.data.keyword.filestorage_short}} 頁面上，檢視抄寫磁區。磁區名稱顯示主要磁區名稱，後面接著 REP。**類型**為「耐久性或效能 - 抄本」。**目標位址**為 N/A，因為抄本磁區未裝載在抄本資料中心，且**狀態**顯示「非作用中」。
+您可以在**儲存空間** > **{{site.data.keyword.filestorage_short}}** 的 {{site.data.keyword.filestorage_short}} 頁面上，檢視抄寫磁區。磁區名稱顯示主要磁區名稱，後面接著 REP。**類型**為「耐久性或效能 - 抄本」。
 
 
 ## 在抄本資料中心檢視已抄寫磁區的詳細資料

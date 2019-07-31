@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, modify volume, NFS, file storage, expand capacity
 
@@ -45,11 +45,14 @@ subcollection: FileStorage
 {: #resizingsteps}
 
 1. 移至 [{{site.data.keyword.cloud}} 主控台](https://{DomainName}/){: external}。從功能表中選取**標準基礎架構**。按一下**儲存空間** > **{{site.data.keyword.filestorage_short}}**。
-2. 從清單中選取磁區，然後按一下**動作** > **修改磁區**
+2. 從清單中選取磁區，然後按一下 **...** > **修改共用**。
 3. 輸入新的儲存空間大小（以 GB 為單位）。
 4. 檢閱您的選取項目及新的定價。
 5. 按一下**我已閱讀主要服務合約...**，然後按一下**下訂單**。
 6. 在幾分鐘之後，就可以使用您的新儲存空間配置。
+
+若要讓 OS 辨識額外的儲存空間，請解除裝載然後重新裝載已修改的磁區。
+{:tip}
 
 或者，您可以在 SLCLI 中使用下列指令。
 ```
