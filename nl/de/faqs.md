@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
@@ -149,3 +149,8 @@ Nein. Momentan wird die VAAI- und Hardwarebeschleunigung (VAAI = vStorage for AP
 {: faq}
 
 Wenn Laufwerke außer Betrieb gesetzt werden, werden sie vor dem Entsorgen durch IBM zerstört. Die Laufwerke werden unbrauchbar. Auf Daten, die auf diesem Laufwerk gespeichert waren, kann nicht mehr zugegriffen werden.
+
+## Was ist der Unterschied zwischen einem kontrollierten Failover und einem sofortigen Failover? 
+{: faq}
+
+Bei einem kontrollierten Failover wird eine letzte Synchronisierung durchgeführt, bevor die Verbindung zum Spiegelsystem unterbrochen wird. Bei einem sofortigen Failover wird die Verbindung zum Spiegelsystem sofort unterbrochen und der Replikatdatenträger wird aktiviert. 

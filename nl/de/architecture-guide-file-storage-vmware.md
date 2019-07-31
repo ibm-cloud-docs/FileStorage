@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
@@ -118,15 +118,15 @@ Der Speicher wird in weniger als einer Minute bereitgestellt und wird auf der Se
 
 Wenn ein Datenträger bereitgestellt wird, müssen {{site.data.keyword.BluBareMetServers_full}} oder {{site.data.keyword.BluVirtServers_full}}, die den Datenträger verwenden sollen, für den Zugriff auf den Speicher autorisiert werden. Führen Sie die folgenden Schritte aus, um den Datenträger zu autorisieren.
 
-1. Klicken Sie auf **Speicher** > **{{site.data.keyword.filestorage_short}}**.
-2. Wählen Sie die Option **Auf Host zugreifen** im Menü **Aktionen für Endurance-Datenträger** bzw. **Aktionen für Performance-Datenträger** aus.
+1. Rufen Sie in der Konsole **Klassische Infrastruktur**  > **Speicher** > **{{site.data.keyword.filestorage_short}}** auf. 
+2. Blättern Sie zu der gemeinsam genutzten Dateiressource, die angehängt werden soll, und klicken Sie auf **...** (Aktionen). Wählen Sie dann **Host autorisieren** aus.
 3. Klicken Sie auf **Teilnetze**.
-4. Nehmen Sie eine Auswahl in der Liste der verfügbaren Teilnetze, die den VMkernel-Ports auf den ESXi-Hosts zugeordnet sind, vor und klicken Sie auf **Abschicken**.<br/>
+4. Nehmen Sie in der Liste der verfügbaren Teilnetze, die den VMkernel-Ports auf den ESXi-Hosts zugewiesen sind, eine Auswahl vor und klicken Sie auf **Speichern**. <br/>
 
    Die angezeigten Teilnetze sind abonnierte Teilnetze in demselben Rechenzentrum wie der Speicherdatenträger.
    {:note}
 
-Wenn die Teilnetze autorisiert sind, notieren Sie den Hostnamen des Endurance- oder Performance-Speicherservers, den Sie beim Anhängen des Datenträgers verwenden wollen. Diese Information ist auf der {{site.data.keyword.filestorage_short}}-Detailseite durch Klicken auf einen bestimmten Datenträger zu finden.
+Notieren Sie sich nach der Autorisierung der Teilnetze den Hostnamen des Speicherservers. Den Hostnamen können Sie auf der Seite mit den Details zu {{site.data.keyword.filestorage_short}} abrufen. 
 
 
 ##  Host für virtuelle VMware-Maschinen konfigurieren

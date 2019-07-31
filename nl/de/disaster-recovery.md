@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
@@ -27,11 +27,11 @@ Wenn eine Betriebsunterbrechung oder eine Katastrophe einen Ausfall am primären
 
 1. Melden Sie sich bei der [{{site.data.keyword.cloud}}-Konsole](https://{DomainName}/){: external} an und klicken Sie auf das **Menüsymbol** links oben. Wählen Sie **Klassische Infrastruktur** aus.
 2. Klicken Sie auf **Speicher** > **{{site.data.keyword.filestorage_short}}**.
-3. Klicken Sie in der Liste auf das Replikat der gemeinsam genutzten Dateiressource, um die zugehörige Seite **Details** anzuzeigen.
-4. Blättern Sie auf der Seite **Details** nach unten und wählen Sie einen vorhandenen Snapshot aus. Klicken Sie anschießend auf **Aktionen** > **Duplikat**.
+3. Klicken Sie auf den in der Liste aufgeführten Namen des Replikats der gemeinsam genutzten Dateiressource. 
+4. Blättern Sie auf der Seite **Detail** nach unten und wählen Sie einen vorhandenen Snapshot aus. Klicken Sie anschießend auf **Aktionen** > **Duplikat**.
 5. Nehmen Sie die erforderlichen Aktualisierungen für die Kapazität (Größe erhöhen) oder die IOPs für den neuen Datenträger vor.
 6. Sie können den Snapshotbereich bei Bedarf für den Datenträger aktualisieren.
-7. Klicken Sie auf **Weiter**, um Ihre Bestellung für das Duplikat abzuschicken.
+7. Klicken Sie auf **Bestellen**, um das Duplikat bereitzustellen. 
 
 Sobald der Datenträger erstellt wurde, können Sie ihn einem Host zuordnen und Lese- und Schreiboperationen auf diesem Datenträger vornehmen. Während Daten vom ursprünglichen Datenträger auf den Duplikatdatenträger kopiert werden, wird auf der Detailseite ein Status mit der Information angezeigt, dass die Duplizierung in Bearbeitung ist. Wenn der Duplizierungsprozess abgeschlossen ist, ist der neue Datenträger unabhängig vom Original und kann mit Snapshots und Replikation normal verwaltet werden.
 
@@ -59,6 +59,6 @@ Nach Abschluss der Replikation müssen Sie ein Duplikat des Datenträgers des ne
 3. Blättern Sie auf der Seite **Details** nach unten und wählen Sie einen vorhandenen Snapshot aus. Klicken Sie anschießend auf **Aktionen** > **Duplikat**.
 4. Nehmen Sie die erforderlichen Aktualisierungen für die Kapazität (Größe erhöhen) oder die IOPs für den neuen Datenträger vor.
 5. Aktualisieren Sie bei Bedarf den Snapshotbereich für den neuen Datenträger.
-6. Klicken Sie auf **Weiter**, um Ihre Bestellung für das Duplikat abzuschicken.
+6. Klicken Sie auf **Bestellen**, um das Duplikat bereitzustellen. 
 
 Wenn der Duplizierungsprozess abgeschlossen ist, können Sie die Replikation und die Datenträger stornieren, die verwendet wurden, um die Daten wieder an den ursprünglichen primären Standort zu bringen. Das Duplikat wird zum primären Speicher, und die Replikation auf den ursprünglichen sekundären Standort kann wieder eingerichtet werden.

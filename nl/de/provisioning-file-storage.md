@@ -32,20 +32,20 @@ Sie können {{site.data.keyword.filestorage_short}} bereitstellen und entspreche
 1. Melden Sie sich beim [{{site.data.keyword.cloud}}-Katalog](https://{DomainName}/catalog){: external} an und klicken Sie auf **Speicher**. Wählen Sie anschließend {{site.data.keyword.filestorage_short}} aus. Klicken Sie auf **Erstellen**.
 2. Wählen Sie Ihre Bereitstellungs**position** (Ihr Rechenzentrum) aus.
    - Stellen Sie sicher, dass der neue Speicher an derselben Position hinzugefügt wird, an der sich auch Ihre Rechenhosts befinden.
-3. Abrechnung. Wenn Sie ein Rechenzentrum mit verbesserter Funktionalität (gekennzeichnet durch einen Stern) ausgewählt haben, können Sie zwischen monatlicher und stündlicher Abrechnung wählen.
+3. Abrechnungsmethode. Wenn Sie ein Rechenzentrum mit verbesserter Funktionalität (gekennzeichnet durch einen Stern) ausgewählt haben, können Sie zwischen monatlicher und stündlicher Abrechnung wählen.
      1. Bei der **stündlichen** Abrechnung wird die Stundenzahl, die der Dateidatenträger im Konto vorhanden war, zu dem Zeitpunkt berechnet, an dem der Datenträger gelöscht wird oder der Rechnungsstellungszyklus endet. Dies ist abhängig davon, welches Ereignis zuerst eintritt. Die Abrechnung nach Stunden ist eine gute Wahl für Speicher, der für einige wenige Tage oder weniger als einen ganzen Monat lang genutzt wird. Die Abrechnung nach Stunden ist nur für Speicher verfügbar, der in diesen [ausgewählten Rechenzentren](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC) bereitgestellt wird.
      2. Bei der **monatlichen** Abrechnung erfolgt die Berechnung für den Preis anteilmäßig ab dem Erstellungsdatum bis zum Ende des Rechnungsstellungszyklus und die Rechnung wird unverzüglich gestellt. Es erfolgt keine Rückerstattung, wenn ein Dateidatenträger vor dem Ende des Rechnungsstellungszyklus gelöscht wird. Die monatliche Rechnungsstellung ist eine gute Wahl für Speicher, der für Auslastungen im Produktionsbetrieb genutzt wird, die Daten verwenden, die über längere Zeiträume (einen Monat oder länger) gespeichert werden und zugänglich sein müssen.
 
      Der monatliche Abrechnungstyp wird standardmäßig für Speicher verwendet, der in Rechenzentren bereitgestellt wird, die **nicht** mit verbesserten Funktionen aktualisiert werden.
      {:note}
-4. Geben Sie Ihre Speichergröße in das Feld **Neue Speichergröße** ein.
-5. Wählen Sie im Bereich **IOPS-Optionen für Speicher** die Option **Endurance (abgestufte E/A-Operationen pro Sekunde)** aus.
+4. Geben Sie die Speichergröße in das Feld **Größe** ein.
+5. Wählen Sie **Endurance (abgestufte E/A-Operationen pro Sekunde)** aus. 
 6. Wählen Sie die IOPS-Stufe aus, die Ihre Anwendung benötigt.
     - **0,25 IOPS pro GB** sind für Workloads mit niedriger E/A-Intensität gedacht. Solche Workloads sind in der Regel durch einen hohen Prozentsatz an Daten gekennzeichnet, die zu jedem Zeitpunkt inaktiv sind. Beispiele für Anwendungen sind das Speichern von Mailboxen oder das Speichern von gemeinsam genutzten Dateien auf Abteilungsebene.
     - **2 IOPS pro GB** sind für die meisten Fälle allgemeiner Nutzung vorgesehen. Beispiele für Anwendungen sind das Hosting kleiner Datenbanken zur Unterstützung von Webanwendungen oder VM-Plattenimages für einen Hypervisor.
     - **4 IOPS pro GB** sind für Workloads höherer Intensität vorgesehen. Solche Workloads sind in der Regel durch einen hohen Prozentsatz an Daten gekennzeichnet, die zu jedem Zeitpunkt aktiv sind. Beispielanwendungen sind transaktionsorientierte und andere leistungskritische Datenbanken.
     - **10 IOPS pro GB** sind für anspruchsvollste Workloads vorgesehen, wie zum Beispiel für die von NoSQL-Datenbanken generierten Workloads und für die Datenverarbeitung von Analysen (Analytics). Diese Stufe ist in [ausgewählten Rechenzentren](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC) für Speicher verfügbar, der bis 4 TB bereitgestellt wird.
-7. Klicken Sie auf **Größe des Snapshotbereichs angeben** und wählen Sie in der Liste die Snapshotgröße aus. Dieser Bereich wird zusätzlich zu Ihrem nutzbaren Bereich genutzt. Hinweise und Empfehlungen zum Snapshotbereich finden Sie im Abschnitt [Snapshots bestellen](/docs/infrastructure/FileStorage?topic=FileStorage-ordering-snapshots).
+7. Klicken Sie in das Feld unter **Snapshotbereich** und wählen Sie die Snapshotgröße in der Liste aus. Dieser Bereich wird zusätzlich zu Ihrem nutzbaren Bereich genutzt. Hinweise und Empfehlungen zum Snapshotbereich finden Sie im Abschnitt [Snapshots bestellen](/docs/infrastructure/FileStorage?topic=FileStorage-ordering-snapshots).
 8. Überprüfen Sie auf der rechten Seite Ihre Bestellübersicht und wenden Sie gegebenenfalls Ihren Werbeaktionscode an.
 
    Rabatte werden bei der Verarbeitung der Bestellung angewendet.
@@ -62,16 +62,16 @@ Standardmäßig können Sie insgesamt 250 {{site.data.keyword.blockstorageshort}
 1. Melden Sie sich beim [{{site.data.keyword.cloud}}-Katalog](https://{DomainName}/catalog){: external} an und klicken Sie auf **Speicher**. Wählen Sie anschließend {{site.data.keyword.filestorage_short}} aus. Klicken Sie auf **Erstellen**.
 2. Klicken Sie auf **Position** und wählen Sie Ihr Rechenzentrum aus.
    - Stellen Sie sicher, dass der neue Speicher an derselben Position hinzugefügt wird, an der sich auch Ihre Rechenhosts befinden.
-3. Abrechnung. Wenn Sie ein Rechenzentrum mit verbesserter Funktionalität (gekennzeichnet durch einen Stern) ausgewählt haben, können Sie zwischen monatlicher und stündlicher Abrechnung wählen.
+3. Abrechnungsmethode. Wenn Sie ein Rechenzentrum mit verbesserter Funktionalität (gekennzeichnet durch einen Stern) ausgewählt haben, können Sie zwischen monatlicher und stündlicher Abrechnung wählen.
      1. Bei der **stündlichen** Abrechnung wird die Stundenzahl, die der Dateidatenträger im Konto vorhanden war, zu dem Zeitpunkt berechnet, an dem der Datenträger gelöscht wird oder der Rechnungsstellungszyklus endet. Dies ist abhängig davon, welches Ereignis zuerst eintritt. Die Abrechnung nach Stunden ist eine gute Wahl für Speicher, der für einige wenige Tage oder weniger als einen ganzen Monat lang genutzt wird. Die Abrechnung nach Stunden ist nur für Speicher verfügbar, der in diesen [ausgewählten Rechenzentren](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC) bereitgestellt wird.
      2. Bei der **monatlichen** Abrechnung erfolgt die Berechnung für den Preis anteilmäßig ab dem Erstellungsdatum bis zum Ende des Rechnungsstellungszyklus und die Rechnung wird unverzüglich gestellt. Es erfolgt keine Rückerstattung, wenn ein Dateidatenträger vor dem Ende des Rechnungsstellungszyklus gelöscht wird. Die monatliche Rechnungsstellung ist eine gute Wahl für Speicher, der für Auslastungen im Produktionsbetrieb genutzt wird, die Daten verwenden, die über längere Zeiträume (einen Monat oder länger) gespeichert werden und zugänglich sein müssen.
 
      Der monatliche Abrechnungstyp wird standardmäßig für Speicher verwendet, der in Rechenzentren bereitgestellt wird, die **nicht** mit verbesserten Funktionen aktualisiert werden.
      {:note}
-4. Geben Sie Ihre Speichergröße in das Feld **Neue Speichergröße** ein.
-5. Wählen Sie im Bereich **IOPS-Optionen für Speicher** die Option **Performance (zugeordnete E/A-Operationen pro Sekunde)** aus.
+4. Geben Sie die Speichergröße in das Feld **Größe** ein.
+5. Wählen Sie **Performance (zugeordnete E/A-Operationen pro Sekunde)** aus. 
 6. Geben Sie die E/A-Operationen pro Sekunde (IOPS) in das Feld **Performance (zugeordnete E/A-Operationen pro Sekunde)** ein.
-7. Klicken Sie auf **Größe des Snapshotbereichs angeben** und wählen Sie in der Liste die Snapshotgröße aus. Dieser Bereich wird zusätzlich zu Ihrem nutzbaren Bereich genutzt. Hinweise und Empfehlungen zum Snapshotbereich finden Sie im Abschnitt [Snapshots bestellen](/docs/infrastructure/FileStorage?topic=FileStorage-ordering-snapshots).
+7. Klicken Sie in das Feld unter **Snapshotbereich** und wählen Sie die Snapshotgröße in der Liste aus. Dieser Bereich wird zusätzlich zu Ihrem nutzbaren Bereich genutzt. Hinweise und Empfehlungen zum Snapshotbereich finden Sie im Abschnitt [Snapshots bestellen](/docs/infrastructure/FileStorage?topic=FileStorage-ordering-snapshots).
 8. Überprüfen Sie auf der rechten Seite Ihre Bestellübersicht und wenden Sie gegebenenfalls Ihren Werbeaktionscode an.
 
    Rabatte werden bei der Verarbeitung der Bestellung angewendet.
@@ -102,4 +102,4 @@ Wenn Sie Ihren Datenträger klonen und unabhängig vom ursprünglichen Datenträ
 
 ## {{site.data.keyword.filestorage_short}}-Datenträger auf der Rechnung angeben
 
-Alle gemeinsam genutzten Dateispeicher werden auf Ihrer Rechnung als Artikelpositionen aufgeführt. Endurance-Datenträger werden als 'Endurance Storage Service' und Performance-Datenträger als 'Performance Storage Service' aufgeführt. Die Rate variiert je nach Speicherebene. Sie können Endurance oder Performance erweitern, um anzuzeigen, dass es sich um {{site.data.keyword.filestorage_short}} handelt.
+Alle gemeinsam genutzten Dateiressourcen werden auf Ihrer Rechnung als Artikelpositionen aufgeführt. Endurance-Datenträger werden als 'Endurance Storage Service' und Performance-Datenträger als 'Performance Storage Service' aufgeführt. Die Rate variiert je nach Speicherebene. Sie können Endurance oder Performance erweitern, um anzuzeigen, dass es sich um {{site.data.keyword.filestorage_short}} handelt.

@@ -49,7 +49,7 @@ Geben Sie in diesem Ticket die folgenden Informationen an:
 *Ihre Antwort könnte zum Beispiel ähnlich wie folgt lauten: "25x Performance 20 GB @ 10 IOPS in DAL09" oder "50x Endurance 2 TB @ 0,25 IOPS in SJC03".*
 
 - **Geben Sie einen geschätzten Zeitpunkt an, zu dem Sie erwarten, dass alle angeforderten Datenträgervergrößerungen bereitgestellt oder geplant sind.** <br />
-*Ihre Antwort könnte zum Beispiel ähnlich wie folgt lauten: "90 Tage".*
+ *Ihre Antwort könnte zum Beispiel ähnlich wie folgt lauten: "90 Tage".*
 
 - **Geben Sie eine 90-Tage-Vorhersage für die erwartete durchschnittliche Kapazitätsnutzung dieser Datenträger an.** <br />
 *Ihre Antwort könnte zum Beispiel ähnlich wie folgt lauten: "Erwarte 25 Prozent belegt in 30 Tagen, 50 Prozent belegt in 60 Tagen und 75 Prozent belegt in 90 Tagen".*

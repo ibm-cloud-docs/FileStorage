@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, replication, duplication, synchronous, replica schedule, replica space, disaster recovery
 
@@ -91,9 +91,10 @@ Ihr primärer Snapshotbereich und Ihr Replikatbereich müssen identisch sein. We
 Die Datenträgergröße Ihres primären Speicherdatenträgers und Ihres Replikatspeicherdatenträgers muss übereinstimmen. Keiner der Datenträger darf größer als der andere sein. Wenn Sie Ihren Snapshotbereich für Ihren primären Datenträger vergrößern, wird der Replikatbereich automatisch vergrößert. Eine Erhöhung des Snapshotbereichs löst eine sofortige Replikationsaktualisierung aus. Die Vergrößerung beider Datenträger wird als Artikelpositionen auf Ihrer Rechnung aufgeführt und wie erforderlich anteilmäßig berechnet.
 
 Weitere Informationen zum Vergrößern des Snapschotbereichs finden Sie unter [Snapshots](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots).
+
 ## Replikatdatenträger in der Datenträgerliste anzeigen
 
-Sie können Ihre Replikationsdatenträger auf der {{site.data.keyword.filestorage_short}}-Seite unter **Speicher** > **{{site.data.keyword.filestorage_short}}** anzeigen. Der Datenträgername ist der Name des primären Datenträgers, gefolgt von REP. Der **Typ** ist Endurance oder Performance – Replikat. Die **Zieladresse** ist 'n/v,' da der Replikatdatenträger nicht am Replikatrechenzentrum angehängt ist, und der **Status** ist 'Inaktiv'.
+Sie können Ihre Replikationsdatenträger auf der {{site.data.keyword.filestorage_short}}-Seite unter **Speicher** > **{{site.data.keyword.filestorage_short}}** anzeigen. Der Datenträgername ist der Name des primären Datenträgers, gefolgt von REP. Der **Typ** ist Endurance oder Performance – Replikat.
 
 
 ## Details eines replizierten Datenträgers im Replikatrechenzentrum anzeigen

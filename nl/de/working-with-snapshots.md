@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, snapshots, snapshot schedule, manual snapshot, snapshot space, snapshot quota
 
@@ -80,7 +80,7 @@ Optionen:
 
 ## Alle Snapshots mit Informationen zum belegten Speicherbereich und mit Managementfunktionen auflisten
 
-Eine Liste der aufbewahrten Snapshots und des belegten Speicherbereichs wird auf der Seite **Details** (**Speicher** > **{{site.data.keyword.filestorage_short}}**) angezeigt. Managementfunktionen (Zeitplanbearbeitung und Hinzufügen weiteren Speicherbereichs) werden auf der Seite 'Details' über das Menü **Aktionen** oder über Links in den verschiedenen Abschnitten der Seite ausgeführt.
+Eine Liste der aufbewahrten Snapshots und des belegten Speicherbereichs wird auf der Seite **Details** (**Speicher** > **{{site.data.keyword.filestorage_short}}**) angezeigt. Managementfunktionen (Zeitplanbearbeitung und Hinzufügen weiteren Speicherbereichs) werden auf der Seite **Details** über das Menü **Aktionen** oder über Links in den verschiedenen Abschnitten der Seite ausgeführt.
 
 Alternativ dazu können Sie diese Task über die SLCLI ausführen.
 ```
@@ -110,7 +110,7 @@ Der Snapshotbereich kann nur vergrößert werden. Es kann nicht verringert werde
 
 Der Snapshotbereich wird über **Speicher** > **{{site.data.keyword.filestorage_short}}** geändert.
 
-1. Klicken Sie auf Ihren Speicherdatenträger, klicken Sie auf **Aktionen** und klicken Sie auf die Option **Snapshot planen**.
+1. Klicken Sie auf Ihren Speicherdatenträger, klicken Sie auf **Aktionen** und klicken Sie auf die Option **Snapshotbereich ändern**.
 2. Wählen Sie in der Eingabeaufforderung unter eine Reihe von Größe die gewünschte Größe aus. Größen reichen in der Regel von 0 bis zur Größe Ihres Datenträgers.
 3. Klicken Sie auf **Weiter**.
 4. Geben Sie einen Werbeaktionscode ein, wenn Sie einen haben, und klicken Sie auf **Neu berechnen**. Die Felder 'Gebühren für diese Bestellung' und 'Bestellprüfung' sind standardmäßig ausgefüllt.
@@ -150,7 +150,7 @@ Optionen:
   -h, --help  Diese Nachricht anzeigen und Ausführung beenden.
 ```
 
-Manuelle Snapshots, die nicht manuell im Portal gelöscht werden, werden automatisch (älteste zuerst) gelöscht, wenn Sie den Grenzwert des Speicherbereichs erreichen.
+Manuelle Snapshots, die nicht manuell im Portal gelöscht werden, werden automatisch gelöscht, wenn Sie den Grenzwert des Speicherbereichs erreichen. Der älteste Snapshot wird zuerst gelöscht.
 {:note}
 
 ## Speicherdatenträger mithilfe eines Snapshots auf dem Stand eines bestimmten Zeitpunkts wiederherstellen

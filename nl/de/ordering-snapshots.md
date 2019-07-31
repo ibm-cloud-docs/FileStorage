@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, snapshot, ordering snapshot, snapshot space
 
@@ -53,7 +53,7 @@ Außerdem gilt bei den meisten Workloads, das umso weniger Speicherplatz anfangs
 1. Melden Sie sich bei der [{{site.data.keyword.cloud}}-Konsole](https://{DomainName}/){: external} an und klicken Sie auf das Menüsymbol links oben.
 2. Wählen Sie **Klassische Infrastruktur** aus.
 3. Greifen Sie über **Speicher** > **{{site.data.keyword.filestorage_short}}** auf Ihren Speicher zu.
-4. Klicken Sie im Rahmen 'Snapshots' auf die Option zum Ändern des Snapshotbereichs.
+4. Klicken Sie im Fensterbereich 'Snapshots' auf **Snapshotbereich hinzufügen**. 
 5. Wählen Sie die Menge an benötigtem Speicherplatz und die Zahlungsmethode aus.
 6. Klicken Sie auf **Weiter**.
 7. Geben Sie gegebenenfalls den Werbeaktionscode ein und klicken Sie auf **Neu berechnen**. Die Felder **Gebühren für diese Bestellung** und **Bestellprüfung** enthalten Standardwerte.

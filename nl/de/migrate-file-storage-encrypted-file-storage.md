@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, upgrade, migrate to new
 
@@ -49,9 +49,13 @@ Der neue Speicher ist in einigen Minuten zum Anhängen verfügbar. Er kann in de
 
 Berechtigte ("autorisierte") Hosts sind Hosts, denen Zugriff auf einen bestimmten Datenträger erteilt wurde. Ohne die Hostberechtigung können Sie nicht über Ihr System auf den Speicher zugreifen oder ihn verwenden.
 
-1. Klicken Sie auf den Namen des neuen Datenträgers.
-2. Blättern Sie zum Abschnitt **Autorisierte Hosts**.
-3. Klicken Sie rechts auf den Link **Host autorisieren**. Wählen Sie die Hosts aus, die auf den Datenträger zugreifen können sollen.
+1. Rufen Sie in der Konsole **Klassische Infrastruktur**  > **Speicher** > **{{site.data.keyword.filestorage_short}}** auf. 
+2. Blättern Sie zu der gemeinsam genutzten Dateiressource, die angehängt werden soll, und klicken Sie auf **...** (Aktionen). Wählen Sie dann **Host autorisieren** aus.
+3. Filtern Sie die Liste der verfügbaren Hosts, indem Sie den Gerätetyp, das Teilnetz oder die IP-Adresse auswählen. 
+
+   Wenn die Liste nach Teilnetzen gefiltert wird, handelt es sich bei den angezeigten Teilnetzen um abonnierte Teilnetze, die sich im selben Rechenzentrum befinden wie der Speicherdatenträger.
+   {:note}
+4. Wählen Sie einen oder mehrere Hosts in der Liste aus und klicken Sie auf **Speichern**.
 
 Verbinden Sie den Datenträger mit Ihrem Host, nachdem diesem die Berechtigung erteilt wurde.
 
@@ -67,7 +71,7 @@ Wenn Ihr Zieldatenzentrum keine Verschlüsselung bietet, können Sie die Replika
 ## Daten migrieren
 
 1. Stellen Sie eine Verbindung zu Ihren ursprünglichen und neuen {{site.data.keyword.filestorage_short}}-Datenträgern her.
-  - Öffnen Sie ein Support-Ticket, wenn Sie Hilfe beim Herstellen einer Verbindung zwischen den beiden gemeinsam genutzten Dateispeichern und Ihrem Host benötigen.
+  - Wenn Sie Unterstützung beim Herstellen der Verbindung für die beiden gemeinsam genutzten Dateiressourcen zum Host benötigen, öffnen Sie ein Support-Ticket. 
 
 2. Überlegen Sie, welchen Typ von Daten Sie auf Ihrem ursprünglichen {{site.data.keyword.filestorage_short}}-Datenträger haben und wie die Daten am besten in den neuen gemeinsam genutzten Dateispeicher kopiert werden könnten.
   - Wenn Sie Sicherungsdaten, statische Inhalte und Daten haben, von denen nicht zu erwarten ist, dass sie sich während des Kopierens ändern, sind keine größeren Überlegungen erforderlich.
@@ -84,7 +88,7 @@ Wenn Ihr Zieldatenzentrum keine Verschlüsselung bietet, können Sie die Replika
        [root@server ~]# rsync -Pavzu /path/to/original/file/storage/* /path/to/encrypted/file/storage
        ```
 
-   Es ist sinnvoll, den vorigen Befehl einmal mit dem Flag `--dry-run` zu verwenden, um die korrekte Zusammenstellung der Pfade sicherzustellen. Wenn dieser Prozess unterbrochen wird, können Sie die letzte zu kopierende Zieldatei löschen, um sicherzustellen, dass sie von Anfang an an die neue Position kopiert wird.
+   Es empfiehlt sich, den oben angeführten Befehl einmal mit dem Flag `--dry-run` auszuführen, um sicherzustellen, dass die Pfade korrekt angeordnet sind. Wenn dieser Prozess unterbrochen wird, können Sie die letzte zu kopierende Zieldatei löschen, um sicherzustellen, dass sie von Anfang an an die neue Position kopiert wird.
 
    Wenn dieser Befehl ohne das Flag `--dry-run` ausgeführt wird, werden Ihre Daten auf den neuen {{site.data.keyword.filestorage_short}}-Datenträger kopiert. Führen Sie den Befehl erneut aus, um sicherzustellen, dass keine Daten ausgelassen wurden. Sie können außerdem beide Position manuell prüfen, um nach möglicherweise fehlenden Daten zu suchen.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-25"
 
 keywords: File Storage, file storage, NFS, authorizing hosts, rewoke access, grant access, view authorizations
 
@@ -31,7 +31,12 @@ Sie können Hosts autorisieren und verbinden, die sich in demselben Rechenzentru
 1. Rufen Sie die [{{site.data.keyword.cloud}}-Konsole](https://{DomainName}/){: external} auf. Wählen Sie im Menü **Klassische Infrastruktur** aus.
 2. Klicken Sie auf **Speicher** > **{{site.data.keyword.filestorage_short}}** und klicken Sie auf den Namen Ihres Datenträgers im Feld **Datenträgername**.
 3. Blättern Sie zum Abschnitt **Autorisierte Hosts** auf der Seite.
-4. Klicken Sie rechts auf **Host autorisieren**. Wählen Sie die Hosts aus, die auf diesen bestimmten Datenträger zugreifen können.
+4. Klicken Sie rechts auf **Host autorisieren**.
+5. Filtern Sie die Liste der verfügbaren Hosts, indem Sie den Gerätetyp, das Teilnetz oder die IP-Adresse auswählen. 
+
+   Wenn die Liste nach Teilnetzen gefiltert wird, handelt es sich bei den angezeigten Teilnetzen um abonnierte Teilnetze, die sich im selben Rechenzentrum befinden wie der Speicherdatenträger.
+   {:note}
+6. Wählen Sie einen oder mehrere Hosts in der Liste aus und klicken Sie auf **Speichern**.
 
 Alternativ dazu können Sie den folgenden Befehl in der SLCLI verwenden.
 ```
@@ -162,3 +167,8 @@ Optionen:
                  am Abrechnungsstichtag.
   -h, --help     Diese Nachricht anzeigen und Ausführung beenden.
 ```
+
+Wenn der Datenträger storniert wird, gilt eine Wartezeit von 24 für die Freigabe. Während dieses 24-stündigen Zeitraums wird der Datenträger weiterhin in der Konsole angezeigt. Nach Ablauf des Freigabezeitraums werden die Daten gelöscht und der Datenträger wird auch aus der Konsole entfernt. Die Abrechnung für den Datenträger wird jedoch sofort gestoppt. Weitere Informationen finden Sie in [Häufig gestellte Fragen](/docs/infrastructure/FileStorage?topic=FileStorage-file-storage-faqs).
+{:note}
+
+ Aktive Replikate können die Freigabe des Speicherdatenträgers blockieren. Stellen Sie sicher, dass der Datenträger nicht mehr angehängt ist, dass die Hostberechtigungen widerrufen wurden und das die Replikation abgebrochen wurde, bevor Sie den ursprünglichen Datenträger stornieren. 

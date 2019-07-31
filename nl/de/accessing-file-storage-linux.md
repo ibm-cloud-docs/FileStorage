@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, NSF, mounting File Storage, mounting storage on Linux,
 
@@ -20,8 +20,13 @@ subcollection: FileStorage
 
 Stellen Sie zuerst sicher, dass der Host, über den auf den {{site.data.keyword.filestorage_full}}-Datenträger zugegriffen werden soll, über die [{{site.data.keyword.cloud}}-Konsole](https://{DomainName}/classic){: external} autorisiert wird.
 
-1. Klicken Sie auf der {{site.data.keyword.filestorage_short}}-Listenseite auf den Link **Aktionen**, die dem neuen gemeinsam genutzten Speicher zugeordnet sind, und klicken Sie auf **Host autorisieren**.
-2. Wählen Sie mindestens einen Host in der Liste aus und klicken Sie auf **Abschicken**. Durch diese Aktion wird der Host für den Zugriff auf den gemeinsam genutzten Speicher autorisiert.
+1. Rufen Sie in der Konsole **Klassische Infrastruktur**  > **Speicher** > **{{site.data.keyword.filestorage_short}}** auf. 
+2. Blättern Sie zu der gemeinsam genutzten Dateiressource, die angehängt werden soll, und klicken Sie auf **...** (Aktionen). Wählen Sie dann **Host autorisieren** aus.
+3. Filtern Sie die Liste der verfügbaren Hosts, indem Sie den Gerätetyp, das Teilnetz oder die IP-Adresse auswählen. 
+
+   Wenn die Liste nach Teilnetzen gefiltert wird, handelt es sich bei den angezeigten Teilnetzen um abonnierte Teilnetze, die sich im selben Rechenzentrum befinden wie der Speicherdatenträger.
+   {:note}
+4. Wählen Sie einen oder mehrere Hosts in der Liste aus und klicken Sie auf **Speichern**.
 
 Alternativ dazu können Sie die Hosts auch über die SLCLI berechtigen.
 ```

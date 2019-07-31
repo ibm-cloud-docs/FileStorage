@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, duplicate volume
 
@@ -21,6 +21,7 @@ subcollection: FileStorage
 Sie können ein Duplikat eines vorhandenen {{site.data.keyword.cloud}} {{site.data.keyword.filestorage_full}}-Datenträgers erstellen. Der Duplikatdatenträger übernimmt standardmäßig die Kapazitäts- und Leistungsoptionen des ursprünglichen Datenträgers und enthält eine Kopie der Daten bis zum Zeitpunkt eines Snapshots.   
 
 Da der Duplikatdatenträger auf den Daten eines zeitpunktgesteuerten Snapshots basiert, ist auf dem ursprünglichen Datenträger Snapshotbereich erforderlich, bevor ein Duplikat erstellt werden kann. Weitere Informationen zu Snapshots sowie zur Bestellung von Snapshotbereich finden Sie in der [Dokumentation zu Snapshots](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots).  
+{:important}
 
 Duplikate können sowohl von **primären** Datenträgern als auch von **Replikat**datenträgern erstellt werden. Das neue Duplikat wird im selben Rechenzentrum wie der ursprüngliche Datenträger erstellt. Wenn Sie einen Duplikatdatenträger von einem Replikatdatenträger erstellen, wird der neue Datenträger im selben Rechenzentrum wie der Replikatdatenträger erstellt.
 
@@ -44,14 +45,13 @@ Es gibt mehrere Möglichkeiten zur Erstellung eines duplizierten Datenträgers �
 
 ## Duplikat von einem bestimmten Datenträger in der Speicherliste erstellen
 
-1. Rufen Sie Ihre {{site.data.keyword.filestorage_short}}-Liste auf.
-    - Klicken Sie im Menü der klassischen Infrastruktur auf **Speicher** > **{{site.data.keyword.filestorage_short}}** ODER
-    - Klicken Sie im {{site.data.keyword.cloud}}-Katalog auf **Infrastruktur** > **Speicher** > **{{site.data.keyword.filestorage_short}}**.
-2. Wählen Sie einen Datenträger in der Liste aus und klicken Sie auf **Aktionen** > **Datenträger (Datenträger) duplizieren**.
+1. Rufen Sie Ihre {{site.data.keyword.filestorage_short}}-Liste auf. Klicken Sie im Menü **Klassische Infrastruktur** auf **Speicher** > **{{site.data.keyword.filestorage_short}}**.
+2. Suchen Sie den Datenträgernamen und klicken Sie darauf. 
+3. Klicken Sie auf **Aktionen** > **Datenträger duplizieren**. 
 3. Wählen Sie Ihre Snapshot-Option aus.
     - Bei Bestellung von einem Datenträger aus, der kein Replikat ist:
-      - Wählen Sie die Option **Aus neuem Snapshot erstellen** aus – mit dieser Aktion wird ein Snapshot erstellt, der für das Duplikat zu verwenden ist. Verwenden Sie diese Option, wenn der Datenträger keine aktuellen Snapshots aufweist oder wenn Sie zu diesem Zeitpunkt ein Duplikat erstellen wollen. </br>
-      - Wählen Sie die Option **Aus letztem Snapshot erstellen** aus – mit dieser Aktion wird ein Duplikat aus dem letzten Snapshot erstellt, der für den betreffenden Datenträger vorhanden ist.
+      - Wählen Sie **Neuen Snapshot zum Klonen erstellen** aus. Mit dieser Aktion wird ein Snapshot erstellt, der für das Duplikat zu verwenden ist. Verwenden Sie diese Option, wenn der Datenträger keine aktuellen Snapshots aufweist oder wenn Sie zu diesem Zeitpunkt ein Duplikat erstellen wollen. </br>
+      - Wählen Sie **Neuesten Snapshot zum Klonen des Datenträgers verwenden** – Mit dieser Aktion wird ein Duplikat aus dem neuesten Snapshot erstellt, der für den betreffenden Datenträger vorhanden ist.
     - Bei Bestellung von einem Replikatdatenträger aus: Hier ist nur die Snapshotoption der Verwendung des letzten Snapshots verfügbar.
 4. Speichertyp und Position bleiben die gleichen wie beim ursprünglichen Datenträger.
 5. Stündliche oder monatliche Rechnungsstellung – Sie können den duplizierten Datenträger mit stündlicher oder monatlicher Rechnungsstellung bereitstellen. Der Rechnungsstellungstyp für den ursprünglichen Datenträger wird automatisch ausgewählt. Wenn Sie einen anderen Rechnungsstellungstyp für Ihren Duplikatspeicher auswählen möchten, können Sie diese Auswahl hier treffen.
@@ -80,7 +80,7 @@ Es gibt mehrere Möglichkeiten zur Erstellung eines duplizierten Datenträgers �
    {{site.data.keyword.filestorage_short}} kann bis auf das Zehnfache der ursprünglichen Größe des Datenträgers erhöht werden.
    {:tip}
 7. Sie können den Snapshotbereich für den neuen Datenträger aktualisieren, um mehr, weniger oder keinen Snapshotbereich hinzuzufügen. Standardmäßig wird der Snapshotbereich des ursprünglichen Datenträgers festgelegt.
-8. Klicken Sie auf **Weiter**, um Ihre Bestellung für das Duplikat abzuschicken.
+8. Klicken Sie auf **Bestellen**, um das Duplikat bereitzustellen. 
 
 ## Duplikat über die SLCLI erstellen
 ```

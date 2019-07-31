@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
@@ -28,11 +28,15 @@ Berechtigte (bzw. autorisierte) Hosts und Datenträger müssen sich im selben Re
 {:note}
 
 1. Melden Sie sich bei der [{{site.data.keyword.cloud}}-Konsole](https://{DomainName}/catalog){: external} an und klicken Sie auf das **Menüsymbol** links oben. Wählen Sie **Klassische Infrastruktur** aus.
-2. Klicken Sie auf Ihren Quellen- oder Zieldatenträger auf der **{{site.data.keyword.filestorage_short}}**-Seite.
+2. Suchen Sie den Quellen- oder Zieldatenträger in der **{{site.data.keyword.filestorage_short}}**-Liste. 
 3. Klicken Sie auf **Replikat**.
-4. Blättern Sie abwärts zum Rahmen **Hosts autorisieren** und klicken Sie auf der rechten Seite auf **Hosts autorisieren**.
-5. Heben Sie den Host hervor, der für Replikationen autorisiert werden soll. Zur Auswahl mehrerer Hosts drücken Sie die Steuertaste (STRG) und klicken Sie auf die betreffenden Hosts.
-6. Klicken Sie auf **Abschicken**. Wenn Sie keine Hosts haben, werden Sie aufgefordert, Rechenressourcen im selben Rechenzentrum zu kaufen.
+4. Blättern Sie abwärts zum Rahmen **Hosts autorisieren** und klicken Sie auf der rechten Seite auf **Host autorisieren**.
+5. Filtern Sie die Liste der verfügbaren Hosts, indem Sie den Gerätetyp, das Teilnetz oder die IP-Adresse auswählen. 
+
+   Wenn die Liste nach Teilnetzen gefiltert wird, handelt es sich bei den angezeigten Teilnetzen um abonnierte Teilnetze, die sich im selben Rechenzentrum befinden wie der Speicherdatenträger.
+   {:note}
+6. Heben Sie den Host hervor, der für Replikationen autorisiert werden soll. Zur Auswahl mehrerer Hosts drücken Sie die Steuertaste (STRG) und klicken Sie auf die betreffenden Hosts.
+6. Klicken Sie auf **Speichern**. Wenn Sie keine Hosts haben, werden Sie aufgefordert, Rechenressourcen im selben Rechenzentrum zu kaufen.
 
 ## Failover von einem Datenträger auf sein Replikat starten
 
@@ -44,10 +48,10 @@ Bevor Sie mit den folgenden Schritten fortfahren, unterbrechen Sie die Verbindun
 {:important}
 
 1. Klicken Sie auf Ihren aktiven Datenträger ('Quelle').
-2. Klicken Sie rechts oben auf **Replikat** und **Aktionen**.
-3. Wählen Sie die Option für **Failover** aus.
+2. Klicken Sie rechts oben auf **Aktionen**. 
+3. Wählen Sie **Kontrollierter Failover** aus.
 
-   Es wird die Nachricht angezeigt, dass der Failover in Bearbeitung ist. Darüber hinaus wird neben Ihrem Datenträger auf der **{{site.data.keyword.filestorage_short}}**-Seite ein Symbol angezeigt, das darauf hinweist, dass zurzeit eine Transaktion aktiv ist. Bei Bewegen des Mauszeigers über das Symbol wird die Transaktion in einem Fenster angezeigt. Das Symbol wird ausgeblendet, sobald die Transaktion abgeschlossen ist. Während des Failover-Prozesses sind konfigurationsbezogene Aktionen schreibgeschützt. Sie können Snapshotpläne nicht bearbeiten oder Snapshotbereiche ändern. Das Ereignis wird im Replikationsprotokoll aufgezeichnet.<br/> Wenn der Zieldatenträger aktiv ist, wird eine andere Nachricht angezeigt. Der Datenträgername Ihres ursprünglichen Quellendatenträgers wird so aktualisiert, dass er mit "REP" endet, und sein Status ändert sich in "Inaktiv".
+   Es wird die Nachricht angezeigt, dass der Failover in Bearbeitung ist. Darüber hinaus wird neben Ihrem Datenträger auf der **{{site.data.keyword.filestorage_short}}**-Seite ein Symbol angezeigt, das darauf hinweist, dass zurzeit eine Transaktion aktiv ist. Bei Bewegen des Mauszeigers über das Symbol wird die Transaktion in einem Fenster angezeigt. Das Symbol wird ausgeblendet, sobald die Transaktion abgeschlossen ist. Während des Failover-Prozesses sind konfigurationsbezogene Aktionen schreibgeschützt. Sie können Snapshotpläne nicht bearbeiten oder Snapshotbereiche ändern. Das Ereignis wird im Replikationsprotokoll aufgezeichnet.<br/> Wenn der Zieldatenträger aktiv ist, wird eine andere Nachricht angezeigt. Der Status des ursprünglichen Quellendatenträgers ändert sich in 'inaktiv'.
    {:note}
 4. Klicken Sie auf **Alle anzeigen ({{site.data.keyword.filestorage_short}})**.
 5. Klicken Sie auf Ihren aktiven Datenträger (früher Ihr Zieldatenträger). Dieser Datenträger hat nun den Status **Aktiv**.
@@ -70,10 +74,10 @@ Failbacks werden unter **Speicher**, **{{site.data.keyword.filestorage_short}}**
 
 1. Klicken Sie auf Ihren aktiven Datenträger ("Ziel").
 2. Klicken Sie rechts oben auf **Replikat** und **Aktionen**.
-3. Wählen Sie **Rückübertragung** aus.
+3. Wählen Sie **Kontrollierter Failback** aus. 
 
    Es wird die Nachricht angezeigt, dass die Rückübertragung in Bearbeitung ist. Darüber hinaus wird neben Ihrem Datenträger auf der **{{site.data.keyword.filestorage_short}}**-Seite ein Symbol angezeigt, das darauf hinweist, dass zurzeit eine Transaktion aktiv ist. Bei Bewegen des Mauszeigers über das Symbol wird die Transaktion in einem Fenster angezeigt. Das Symbol wird ausgeblendet, sobald die Transaktion abgeschlossen ist. Während des Prozesses der Rückübertragung sind konfigurationsbezogene Aktionen schreibgeschützt. Sie können Snapshotpläne nicht bearbeiten oder Snapshotbereiche ändern. Das Ereignis wird im Replikationsprotokoll aufgezeichnet.
    {:note}
 4. Klicken Sie rechts oben auf **Alle {{site.data.keyword.filestorage_short}}-Instanzen anzeigen**.
-5. Klicken Sie auf Ihren aktiven Datenträger ("Quelle").
+5. Klicken Sie auf Ihren aktiven Datenträger ("Quelle"). Dieser Datenträger weist nun den Status **Inaktiv** auf.
 6. Hängen Sie Ihren Speicherdatenträger an den Host an und verbinden Sie ihn. Weitere Informationen finden Sie in [Verbindung zum neuen Speicher herstellen](/docs/infrastructure/FileStorage?topic=FileStorage-getting-started#mountingstorage).

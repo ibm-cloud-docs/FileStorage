@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, modify volume, NFS, file storage, expand capacity
 
@@ -45,11 +45,14 @@ Die bestehenden Größenbegrenzungen für {{site.data.keyword.filestorage_short}
 {: #resizingsteps}
 
 1. Rufen Sie die [{{site.data.keyword.cloud}}-Konsole](https://{DomainName}/){: external} auf. Wählen Sie im Menü **Klassische Infrastruktur** aus. Klicken Sie auf **Speicher** > **{{site.data.keyword.filestorage_short}}**.
-2. Wählen Sie den Datenträger in der Liste aus und klicken Sie auf **Aktionen** > **Datenträger ändern**.
+2. Wählen Sie den Datenträger in der Liste aus und klicken Sie auf **...** > **Gemeinsam genutzte Ressource ändern**. 
 3. Geben Sie die neue Speichergröße in GB ein.
 4. Prüfen Sie Ihre Auswahl und die neue Preisgestaltung.
 5. Klicken Sie auf **Ich habe die Rahmenvereinbarung gelesen** und auf **Bestellung abschicken**.
 6. Ihre neue Speicherzuordnung steht nach wenigen Minuten zur Verfügung.
+
+Damit das Betriebssystem den zusätzlichen Speicherbereich erkennt, hängen Sie den geänderten Datenträger ab und anschließend erneut an.
+{:tip}
 
 Alternativ dazu können Sie den folgenden Befehl in der SLCLI verwenden.
 ```
