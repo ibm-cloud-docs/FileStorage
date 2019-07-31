@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, upgrade, migrate to new
 
@@ -49,9 +49,13 @@ subcollection: FileStorage
 
 “已授权”主机是已向其授予卷访问权的主机。如果没有对主机授权，那么您将无法从系统访问或使用该存储器。
 
-1. 单击新卷的名称。
-2. 滚动到**已授权主机**部分。
-3. 单击右侧的**授权主机**链接。选择可以访问该卷的主机。
+1. 在控制台中，转至**经典基础架构** > **存储** > **{{site.data.keyword.filestorage_short}}**
+2. 滚动到希望安装的文件共享，并单击 **...** （操作）。然后选择**授权主机**。
+3. 通过选择设备类型、子网或 IP 地址来过滤可用的主机列表。
+
+   列表按子网过滤时，显示的子网是存储卷所在数据中心内已预订的子网。
+   {:note}
+4. 从列表中选择一个或多个主机，然后单击**保存**。
 
 授权主机后，将卷连接到主机。
 
@@ -84,7 +88,7 @@ subcollection: FileStorage
 [root@server ~]# rsync -Pavzu /path/to/original/file/storage/* /path/to/encrypted/file/storage
 ```
 
-   最好将上一个命令与 `--dry-run` 标志一起使用一次，以确保路径正确排列。如果此过程中断，您可以删除正在复制的最后一个目标文件，以确保该文件从头开始复制到新位置。
+   建议将上一个命令与 `--dry-run` 标志一起使用一次，以确保路径正确排列。如果此过程中断，您可以删除正在复制的最后一个目标文件，以确保该文件从头开始复制到新位置。
 
       完成不带 `--dry-run` 标志的此命令后，数据应该会复制到新的 {{site.data.keyword.filestorage_short}} 卷。再次运行此命令，以确保没有漏掉任何内容。您还可以手动复查这两个位置，以查找是否有任何可能漏掉的内容。
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, modify volume, NFS, file storage, expand capacity
 
@@ -45,11 +45,14 @@ subcollection: FileStorage
 {: #resizingsteps}
 
 1. 转至 [{{site.data.keyword.cloud}} 控制台](https://{DomainName}/){: external}。在菜单中，选择**经典基础架构**。单击**存储** > **{{site.data.keyword.filestorage_short}}**。
-2. 从列表中选择卷，然后单击**操作** > **修改卷**。
+2. 从列表中选择卷，然后单击 **...** > **修改共享**。
 3. 输入新的存储器大小（以 GB 为单位）。
 4. 复查您的选择和新的定价。
 5. 单击**我已阅读主服务协议...**，然后单击**下订单**。
 6. 新的存储器分配会在几分钟后可用。
+
+要使操作系统能够识别额外的存储空间，请卸装并重新安装修改的卷。
+{:tip}
 
 或者，您可以在 SLCLI 中使用以下命令。
 ```

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, snapshot, ordering snapshot, snapshot space
 
@@ -53,7 +53,7 @@ subcollection: FileStorage
 1. 登录到 [{{site.data.keyword.cloud}} 控制台](https://{DomainName}/){: external}，然后单击左上角的菜单图标。
 2. 选择**经典基础架构**。
 3. 通过**存储** > **{{site.data.keyword.filestorage_short}}**，访问您的存储器。
-4. 单击“快照”框架上的**更改快照空间**。
+4. 单击“快照”框架上的**添加快照空间**。
 5. 选择所需的空间量和付款方式。
 6. 单击**继续**。
 7. 输入您拥有的任何促销码，然后单击**重新计算**。**此订单的费用**和**订单复查**将具有缺省值。

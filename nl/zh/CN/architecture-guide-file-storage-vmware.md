@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
@@ -118,15 +118,15 @@ VMware vSphere on network-attached storage](https://www.vmware.com/content/dam/d
 
 供应了卷后，必须授权将使用该卷的 {{site.data.keyword.BluBareMetServers_full}} 或 {{site.data.keyword.BluVirtServers_full}} 来访问该存储器。使用以下步骤来授权该卷。
 
-1. 单击**存储** > **{{site.data.keyword.filestorage_short}}**。
-2. 选择**耐久性**或**性能卷操作**菜单上的**访问主机**。
+1. 在控制台中，转至**经典基础架构** > **存储** > **{{site.data.keyword.filestorage_short}}**
+2. 滚动到希望安装的文件共享，并单击 **...** （操作）。然后选择**授权主机**。
 3. 单击**子网**。
-4. 从分配给 ESXi 主机上 VMkernel 端口的可用子网列表中进行选择，然后单击**提交**。<br/>
+4. 从分配给 ESXi 主机上 VMkernel 端口的可用子网的列表中进行选择，然后单击**保存**。<br/>
 
    显示的子网是与存储卷位于同一数据中心的预订子网。
    {:note}
 
-在授权子网后，记下您希望在安装卷时使用的耐久性或性能存储服务器的主机名。可以通过在“{{site.data.keyword.filestorage_short}} 详细信息”页面上单击特定卷来找到此信息。
+在授权子网后，记下存储服务器的主机名。可以在卷的“{{site.data.keyword.filestorage_short}} 详细信息”页面上找到此主机名。
 
 
 ##  配置 VMware 虚拟机主机

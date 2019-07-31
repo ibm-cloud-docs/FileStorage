@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, snapshots, snapshot schedule, manual snapshot, snapshot space, snapshot quota
 
@@ -80,7 +80,7 @@ subcollection: FileStorage
 
 ## 列出所有带“已用空间信息”和“管理”功能的快照
 
-可以在**详细信息**页面（**存储** > **{{site.data.keyword.filestorage_short}}**）上查看保留的快照和已使用空间量的列表。管理功能（编辑安排和添加更多空间）是在“详细信息”页面上使用该页面上各部分中的**操作**菜单或链接来执行的。
+可以在**详细信息**页面（**存储** > **{{site.data.keyword.filestorage_short}}**）上查看保留的快照和已使用空间量的列表。管理功能（编辑安排和添加更多空间）是在 ** 详细信息**页面上使用该页面上各部分中的**操作**菜单或链接来执行的。
 
 或者，您可以通过 SLCLI 来完成此任务。
 ```
@@ -110,7 +110,7 @@ subcollection: FileStorage
 
 通过**存储** > **{{site.data.keyword.filestorage_short}}**，可更改快照空间。
 
-1. 单击存储卷，单击**操作**，然后单击**添加更多快照空间**。
+1. 单击存储卷，单击**操作**，然后单击**更改快照空间**。
 2. 从提示中的各种大小中进行选择。大小范围通常从 0 到卷大小。
 3. 单击**继续**。
 4. 输入您拥有的任何促销码，然后单击**重新计算**。缺省情况下，已填写“此订单的费用”和“订单复查”字段。
@@ -150,7 +150,7 @@ subcollection: FileStorage
   -h, --help  显示此消息并退出。
 ```
 
-未在门户网站中手动删除的手动快照会在达到空间限制时自动删除（先删除最旧的快照）。
+未在门户网站中手动删除的手动快照会在达到空间限制时自动删除。先删除最旧的快照。
 {:note}
 
 ## 使用快照将存储卷复原到特定时间点

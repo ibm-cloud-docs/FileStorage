@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
@@ -150,3 +150,8 @@ NFS V3 本机支持 `no_root_squash`，通过后者，root 用户客户机可以
 {: faq}
 
 使驱动器退役后，IBM 会在处置前先销毁驱动器。驱动器将变为无法使用。写入该驱动器的任何数据都将变得无法访问。
+
+## 受控故障转移与即时故障转移有何区别？
+{: faq}
+
+受控故障转移在执行最后一次同步后中断镜像。即时故障转移会立即中断镜像，并激活副本卷。

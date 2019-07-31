@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-25"
 
 keywords: File Storage, file storage, NFS, authorizing hosts, rewoke access, grant access, view authorizations
 
@@ -31,7 +31,12 @@ subcollection: FileStorage
 1. 转至 [{{site.data.keyword.cloud}} 控制台](https://{DomainName}/){: external}。在菜单中，选择**经典基础架构**。
 2. 单击**存储** > **{{site.data.keyword.filestorage_short}}**，然后单击**卷名**。
 3. 滚动到页面的**已授权主机**部分。
-4. 单击右侧的**授权主机**。选择可以访问该特定卷的主机。
+4. 单击右侧的**授权主机**。
+5. 通过选择设备类型、子网或 IP 地址来过滤可用的主机列表。
+
+   列表按子网过滤时，显示的子网是存储卷所在数据中心内已预订的子网。
+   {:note}
+6. 从列表中选择一个或多个主机，然后单击**保存**。
 
 或者，您可以在 SLCLI 中使用以下命令。
 ```
@@ -162,3 +167,8 @@ Options:
   --immediate    立即取消文件存储卷，而不是在计费周年时取消
   -h, --help     显示此消息并退出。
 ```
+
+取消卷后，存在 24 小时的回收等待期。在这 24 小时期间，您仍会在控制台中看到该卷。回收期到期后，将销毁相应数据，该卷也会从控制台除去。但是，该卷的计费会立即停止。有关更多信息，请参阅[常见问题](/docs/infrastructure/FileStorage?topic=FileStorage-file-storage-faqs)。
+{:note}
+
+ 活动副本可能会阻止回收存储卷。请确保该卷不再处于安装状态，已撤销主机授权，并已取消复制，然后再尝试取消原始卷。

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, NSF, mounting File Storage, mounting storage on Linux,
 
@@ -20,8 +20,13 @@ subcollection: FileStorage
 
 首先，请确保已通过 [{{site.data.keyword.cloud}} 控制台](https://{DomainName}/classic){: external}对要访问 {{site.data.keyword.filestorage_full}} 卷的主机授权。
 
-1. 在 {{site.data.keyword.filestorage_short}} 列表页面中，单击与新共享关联的**操作**链接，然后单击**授权主机**。
-2. 从列表中选择一个或多个主机，然后单击**提交**。此操作将授权主机访问共享。
+1. 在控制台中，转至**经典基础架构** > **存储** > **{{site.data.keyword.filestorage_short}}**
+2. 滚动到希望安装的文件共享，并单击 **...** （操作）。然后选择**授权主机**。
+3. 通过选择设备类型、子网或 IP 地址来过滤可用的主机列表。
+
+   列表按子网过滤时，显示的子网是存储卷所在数据中心内已预订的子网。
+   {:note}
+4. 从列表中选择一个或多个主机，然后单击**保存**。
 
 或者，可以通过 SLCLI 来授权主机。
 ```

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
@@ -28,11 +28,15 @@ subcollection: FileStorage
 {:note}
 
 1. 登录到 [{{site.data.keyword.cloud}} 控制台](https://{DomainName}/catalog){: external}，然后单击左上角的**菜单**图标。选择**经典基础架构**。
-2. 在 **{{site.data.keyword.filestorage_short}}** 页面中，单击源卷或目标卷。
+2. 在 **{{site.data.keyword.filestorage_short}}** 列表中找到源或目标卷。
 3. 单击**副本**。
 4. 向下滚动到**授权主机**框架，然后单击右侧的**授权主机**。
-5. 突出显示要授权执行复制的主机。要选择多个主机，请按住 CTRL 键的同时单击适用的主机。
-6. 单击**提交**。如果您没有主机，那么系统将提示您购买同一数据中心内的计算资源。
+5. 通过选择设备类型、子网或 IP 地址来过滤可用的主机列表。
+
+   列表按子网过滤时，显示的子网是存储卷所在数据中心内已预订的子网。
+   {:note}
+6. 突出显示要授权执行复制的主机。要选择多个主机，请按住 CTRL 键的同时单击适用的主机。
+6. 单击**保存**。如果您没有主机，那么系统将提示您购买同一数据中心内的计算资源。
 
 ## 启动从卷到其副本的故障转移
 
@@ -44,12 +48,11 @@ subcollection: FileStorage
 {:important}
 
 1. 单击活动卷（“源”）。
-2. 单击右上角的**副本**，然后单击**操作**。
-3. 选择**故障转移**。
-   
+2. 单击右上角的**操作**。
+3. 选择**受控故障转移**。
 
    应该会收到一条消息，声明正在进行故障转移。此外，**{{site.data.keyword.filestorage_short}}** 上的相应卷旁边会显示一个图标，指示正在执行活动事务。将鼠标悬停在该图标上将生成一个用于显示事务的窗口。事务完成后，该图标会消失。在故障转移过程中，与配置相关的操作为只读。无法编辑任何快照安排，也无法更改快照空间。该事件将记录在复制历史记录中。
-   <br/> 目标卷处于活动状态时，您将收到另一条消息。原始源卷的“卷名”更新为以“REP”结尾，并且其状态将变为“不活动”。
+   <br/> 目标卷处于活动状态时，您将收到另一条消息。原始源卷的状态变为“不活动”。
    {:note}
 4. 单击**查看所有 ({{site.data.keyword.filestorage_short}})**。
 5. 单击活动卷（原先的目标卷）。现在，此卷的状态为**活动**。
@@ -72,10 +75,10 @@ subcollection: FileStorage
 
 1. 单击活动卷（“目标”）。
 2. 单击右上角的**副本**，然后单击**操作**。
-3. 选择**故障恢复**。
+3. 选择**受控故障恢复**。
 
    应该会收到一条消息，说明正在进行故障恢复。此外，**{{site.data.keyword.filestorage_short}}** 上的相应卷旁边会显示一个图标，指示正在执行活动事务。将鼠标悬停在该图标上将生成一个用于显示事务的窗口。事务完成后，该图标会消失。在故障恢复过程中，与配置相关的操作为只读。无法编辑任何快照安排，也无法更改快照空间。该事件将记录在复制历史记录中。
    {:note}
 4. 单击右上角的**查看所有 {{site.data.keyword.filestorage_short}}**。
-5. 单击活动卷（“源”）。
+5. 单击活动卷（“源”）。现在，此卷的状态为**不活动**。
 6. 安装存储卷并将其连接到主机。有关更多信息，请参阅[连接新的存储器](/docs/infrastructure/FileStorage?topic=FileStorage-getting-started#mountingstorage)。

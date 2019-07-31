@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, replication, duplication, synchronous, replica schedule, replica space, disaster recovery
 
@@ -92,9 +92,10 @@ subcollection: FileStorage
 主存储卷和副本存储卷的卷大小必须相同。不能其中一个卷大于另一个卷。增大主卷的快照空间时，副本空间也会自动增加。增大快照空间会触发立即复制更新。这两个卷的增大将在发票上显示为行项，并且将根据需要分派。
 
 有关增加快照空间的更多信息，请参阅[快照](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots)。
+
 ## 在卷列表中查看副本卷
 
-您可以在**存储** > **{{site.data.keyword.filestorage_short}}** 下的 {{site.data.keyword.filestorage_short}} 页面中查看复制卷。卷名将显示为主卷名称后跟 REP。**类型**为“耐久性 - 副本”或“性能 - 副本”。**目标地址**为“不适用”（因为副本卷未安装在副本数据中心上），**状态**显示为“不活动”。
+您可以在**存储** > **{{site.data.keyword.filestorage_short}}** 下的 {{site.data.keyword.filestorage_short}} 页面中查看复制卷。卷名将显示为主卷名称后跟 REP。**类型**为“耐久性 - 副本”或“性能 - 副本”。
 
 
 ## 在副本数据中心查看复制卷的详细信息

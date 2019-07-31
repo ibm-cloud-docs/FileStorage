@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, duplicate volume
 
@@ -21,6 +21,7 @@ subcollection: FileStorage
 您可以创建现有 {{site.data.keyword.cloud}} {{site.data.keyword.filestorage_full}} 的复制项。缺省情况下，复制卷将继承原始卷的容量和性能选项，并且会包含截至快照时间点的数据的副本。   
 
 因为复制项基于时间点快照中的数据，所以原始卷上需要有快照空间，然后您才能创建复制项。要了解有关快照以及如何订购快照空间的更多信息，请参阅[快照文档](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots)。  
+{:important}
 
 复制项可以基于**主卷**和**副本卷**创建。新复制项会在原始卷所在的数据中心内创建。如果基于副本卷创建复制项，那么新卷将在副本卷所在的数据中心内创建。
 
@@ -44,14 +45,13 @@ subcollection: FileStorage
 
 ## 基于存储器列表中的特定卷创建复制项
 
-1. 转至 {{site.data.keyword.filestorage_short}} 的列表。
-    - 在“经典基础架构”菜单中，单击**存储** > **{{site.data.keyword.filestorage_short}}** 或
-    - 在 {{site.data.keyword.cloud}}“目录”中，单击**基础架构** > **存储** > **{{site.data.keyword.filestorage_short}}**。
-2. 从列表中选择卷，然后单击**操作** > **复制卷（卷）**。
+1. 转至 {{site.data.keyword.filestorage_short}} 的列表。在**经典基础架构**菜单中，单击**存储** > **{{site.data.keyword.filestorage_short}}**。
+2. 找到并单击卷名。
+3. 单击**操作** > **复制卷**。
 3. 选择快照选项。
     - 如果是从非副本卷订购，那么
-      - 选择**基于新快照创建** - 此操作将创建要用于复制项的快照。如果卷当前没有快照，或者如果要创建该时间点的复制项，请使用此选项。</br>
-      - 选择**基于最新快照创建** - 此操作将基于此卷存在的最近快照创建复制项。
+      - 选择**创建要克隆的新快照** - 此操作将创建要用于复制卷的快照。如果卷当前没有快照，或者如果要创建该时间点的复制项，请使用此选项。</br>
+      - 选择**使用要克隆卷的最新快照** - 此操作将基于此卷存在的最近快照创建复制卷。
     - 如果从副本卷订购，那么唯一的快照选项是使用最近的可用快照。
 4. “存储类型”和“位置”保持与原始卷相同。
 5. 按小时或按月计费 - 您可以选择以按小时或按月计费方式来供应复制卷。系统会自动选择原始卷的记帐类型。如果您希望为复制存储器选择其他计费类型，那么可以在此进行选择。
@@ -80,7 +80,7 @@ subcollection: FileStorage
    {{site.data.keyword.filestorage_short}} 的大小可以调整为卷原始大小的 10 倍。
    {:tip}
 7. 可以更新新卷的快照空间，以添加更多或更少的快照空间，或者不添加快照空间。缺省情况下设置了原始卷的快照空间。
-8. 单击**继续**，以下订单购买复制卷。
+8. 单击**下订单**以供应复制卷。
 
 ## 通过 SLCLI 创建副本
 ```
