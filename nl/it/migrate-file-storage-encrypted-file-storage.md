@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, upgrade, migrate to new
 
@@ -49,9 +49,13 @@ La tua nuova archiviazione è pronta per essere montata in pochi minuti. Puoi vi
 
 Gli host "autorizzati" sono host a cui è stato concesso l'accesso a un volume. Senza l'autorizzazione host, non puoi accedere all'archiviazione dal tuo sistema o utilizzarla.
 
-1. Fai clic sul nome del nuovo volume.
-2. Scorri alla sezione **Authorized Hosts**.
-3. Fai clic sul link **Authorize Host** sulla destra. Seleziona gli host che possono accedere al volume.
+1. Nella console, vai a **Classic Infrastructure**  > **Storage** > **{{site.data.keyword.filestorage_short}}**
+2. Scorri fino alla condivisione file che vuoi montare e fai clic su **...** (Actions). Quindi, seleziona **Authorize Host**.
+3. Filtra l'elenco di host disponibili selezionando il tipo di dispositivo, la sottorete o l'indirizzo IP.
+
+   Quando l'elenco viene filtrato, le sottoreti visualizzate sono sottoreti sottoscritte nello stesso data center del volume di archiviazione.
+   {:note}
+4. Seleziona uno o più host dall'elenco e fai clic su **Save**.
 
 Quando l'host è autorizzato, collega il volume al tuo host.
 
@@ -67,7 +71,7 @@ Se il tuo data center di destinazione non ha la crittografia, non puoi stabilire
 ## Migrazione dei tuoi dati
 
 1. Stabilisci una connessione a entrambi i tuoi volumi {{site.data.keyword.filestorage_short}}, quello originale e quello nuovo.
-  - Se si ha bisogno di assistenza per collegare le due condivisioni file al tuo host, apri un ticket di supporto.
+  - Se hai bisogno di assistenza per collegare le due condivisioni file al tuo host, apri un ticket di supporto.
 
 2. Considera quale tipo di dati hai sul tuo volume {{site.data.keyword.filestorage_short}} originale e qual è il modo migliore per copiarli nella tua nuova condivisione file.
   - Se hai dei backup, del contenuto statico ed elementi di cui non sono previste variazioni durante la copia, non ti devi preoccupare.
@@ -84,7 +88,7 @@ Se il tuo data center di destinazione non ha la crittografia, non puoi stabilire
        [root@server ~]# rsync -Pavzu /path/to/original/file/storage/* /path/to/encrypted/file/storage
        ```
 
-   È una buona idea usare il comando precedente con l'indicatore `--dry-run` una volta per assicurarti che l'allineamento dei percorsi sia corretto. Se questo processo viene interrotto, puoi eliminare l'ultimo file di destinazione di cui era in corso la copia per assicurarti che venga copiato dall'inizio nella nuova ubicazione.
+   Ti consigliamo di usare il comando precedente con l'indicatore `--dry-run` una volta per assicurarti che l'allineamento dei percorsi sia corretto. Se questo processo viene interrotto, puoi eliminare l'ultimo file di destinazione di cui era in corso la copia per assicurarti che venga copiato dall'inizio nella nuova ubicazione.
 
    Dopo che questo comando è stato completato senza l'indicatore `--dry-run`, i tuoi dati vengono copiati nel nuovo volume {{site.data.keyword.filestorage_short}}. Esegui nuovamente il comando per assicurarti che non sia sfuggito niente. Puoi anche riesaminare manualmente entrambe le ubicazioni per cercare eventuali elementi che potrebbero essere sfuggiti.
 

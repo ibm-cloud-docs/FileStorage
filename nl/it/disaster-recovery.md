@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
@@ -27,11 +27,11 @@ Se un errore catastrofico o un'emergenza causano un'interruzione sul sito primar
 
 1. Accedi alla [Console {{site.data.keyword.cloud}}](https://{DomainName}/){: external} e fai clic sull'icona **menu** in alto a sinistra. Seleziona **Infrastruttura classica**.
 2. Fai clic su **Storage** > **{{site.data.keyword.filestorage_short}}**.
-3. Fai clic sulla replica della condivisione file per visualizzarne la pagina **Details**.
-4. Nella pagina **Details**, scorri verso il basso, seleziona un'istantanea esistente e fai clic su **Actions** > **Duplicate**.
+3. Fai clic sul nome della replica della condivisione file nell'elenco.
+4. Nella pagina **Detail**, scorri verso il basso, seleziona un'istantanea esistente e fai clic su **Actions** > **Duplicate**.
 5. Apporta tutti gli aggiornamenti necessari alla capacità (per aumentare la dimensione) o IOPs per il nuovo volume.
 6. Puoi aggiornare lo spazio di istantanea per il nuovo volume, se necessario.
-7. Fai clic su **Continue** per effettuare il tuo ordine per il duplicato.
+7. Fai clic su **Place Order** per eseguire il provisioning del duplicato.
 
 Non appena viene creato il volume, puoi collegarlo a un host ed eseguire le operazioni di lettura/scrittura su tale volume. Mentre i dati vengono copiati dal volume originale al duplicato, vedi un stato nella pagina dei dettagli che mostra che la duplicazione è in corso. Una volta completato il processo di duplicazione, il nuovo volume diventa indipendente dall'originale e può essere gestito con le istantanee e la replica normalmente.
 
@@ -59,6 +59,6 @@ Dopo che la replica è completa, devi creare un volume duplicato della nuova rep
 3. Nella pagina **Details**, scorri verso il basso, seleziona un'istantanea esistente e fai clic su **Actions** > **Duplicate**.
 4. Apporta tutti gli aggiornamenti necessari alla capacità (per aumentare la dimensione) o IOPs per il nuovo volume.
 5. Aggiorna lo spazio di istantanea per il nuovo volume se necessario.
-6. Fai clic su **Continue** per effettuare il tuo ordine per il duplicato.
+6. Fai clic su **Place Order** per eseguire il provisioning del duplicato.
 
 Quando il processo di duplicazione è completo, puoi eliminare la replica e i volumi che sono stati utilizzati per richiamare i dati al sito primario originale. Il duplicato diventa l'archiviazione primaria e la replica al sito secondario originale può essere ristabilita.

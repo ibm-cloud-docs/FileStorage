@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, snapshots, snapshot schedule, manual snapshot, snapshot space, snapshot quota
 
@@ -80,7 +80,7 @@ Options:
 
 ## Elenco di tutte le istanze con le funzioni di gestione e di informazioni sullo spazio utilizzato
 
-Un elenco di istantanee conservate e spazio utilizzato può essere visualizzato nella pagina **Detail** (**Storage**, **{{site.data.keyword.filestorage_short}}**). Le funzioni di gestione (modifica di pianificazioni e aggiunta di ulteriore spazio) vengono controllate nella pagina Detail utilizzando il menu **Actions** oppure i link nelle diverse sezioni della pagina.
+Un elenco di istantanee conservate e spazio utilizzato può essere visualizzato nella pagina **Detail** (**Storage**, **{{site.data.keyword.filestorage_short}}**). Le funzioni di gestione (modifica di pianificazioni e aggiunta di ulteriore spazio) vengono controllate nella pagina **Detail** utilizzando il menu **Actions** oppure i link nelle diverse sezioni della pagina.
 
 In alternativa, puoi effettuare questa attività tramite la SLCLI.
 ```
@@ -110,7 +110,7 @@ Lo spazio per le istantanee può essere solo aumentato. Non può essere ridotto.
 
 Lo spazio per le istantanee viene modificato tramite **Storage** > **{{site.data.keyword.filestorage_short}}**.
 
-1. Fai clic sui tuoi volumi di archiviazione, fai clic su **Actions** e fai clic su **Add More Snapshot Space**.
+1. Fai clic sui tuoi volumi di archiviazione, fai clic su **Actions** e fai clic su **Change Snapshot Space**.
 2. Seleziona da un intervallo di dimensioni dal prompt. Le dimensioni di norma vanno da 0 alla dimensione del tuo volume.
 3. Fai clic su **Continue**.
 4. Immetti l'eventuale codice promozionale (Promo Code) a tua disposizione e fai clic su **Recalculate**. Gli addebiti per questo ordine (Charges for this order) e il riesame dell'ordine (Order Review) sono completati per impostazione predefinita.
@@ -150,7 +150,7 @@ Options:
   -h, --help  Show this message and exit.
 ```
 
-Le istantanee manuali che non sono eliminate nel portale manualmente sono eliminate automaticamente quando raggiungi le limitazioni di spazio (prima quella meno recente).
+Le istantanee manuali che non sono eliminate nel portale manualmente sono eliminate automaticamente quando raggiungi le limitazioni di spazio. L'istantanea più vecchia viene eliminata per prima.
 {:note}
 
 ## Ripristino di un volume di archiviazione a uno specifico punto temporale utilizzando un'istantanea

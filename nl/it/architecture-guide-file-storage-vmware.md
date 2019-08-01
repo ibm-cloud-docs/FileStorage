@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
@@ -118,15 +118,15 @@ Il provisioning dell'archiviazione viene eseguito in meno di un minuto ed è vis
 
 Dopo che è stato eseguito il provisioning di un volume, i {{site.data.keyword.BluBareMetServers_full}} o i {{site.data.keyword.BluVirtServers_full}} che utilizzano il volume devono essere autorizzati ad accedere all'archiviazione. Utilizza la seguente procedura per autorizzare il volume.
 
-1. Fai clic su **Storage** > **{{site.data.keyword.filestorage_short}}**.
-2. Seleziona **Access Host** nel menu **Endurance** o **Performance Volume Actions**.
+1. Nella console, vai a **Classic Infrastructure**  > **Storage** > **{{site.data.keyword.filestorage_short}}**
+2. Scorri fino alla condivisione file che vuoi montare e fai clic su **...** (Actions). Quindi, seleziona **Authorize Host**.
 3. Fai clic su **Subnets**.
-4. Scegli dall'elenco di sottoreti disponibili assegnate alle porte VMkernel sugli host ESXi e fai clic su **Submit**.<br/>
+4. Scegli dall'elenco di sottoreti disponibili assegnate alle porte VMkernel sugli host ESXi e fai clic su **Save**.<br/>
 
    Le sottoreti visualizzate sono sottoreti sottoscritte nello stesso data center del volume di archiviazione.
    {:note}
 
-Dopo che le sottoreti sono state autorizzate, annota il nome host del server di archiviazione Endurance o Performance che desideri utilizzare quando monti il volume. Queste informazioni sono disponibili nella pagina dei dettagli di {{site.data.keyword.filestorage_short}} facendo clic su uno specifico volume.
+Dopo che le sottoreti sono state autorizzate, annota il nome host del server di archiviazione. Il nome host può essere trovato nella pagina dei dettagli di {{site.data.keyword.filestorage_short}} del volume.
 
 
 ##  Configurazione dell'host della macchina virtuale VMware
@@ -210,7 +210,7 @@ La configurazione di rete per questa guida all'architettura utilizza un numero m
 
 2. Gli instradamenti statici non sono persistenti tra i riavvii su ESXi 5.0 e antecedenti. Per garantire che eventuali instradamenti statici aggiunti rimangano persistenti, questo comando deve essere aggiunto al file `local.sh` file su ciascun host, che si trova nella directory `/etc/rc.local.d/`. Apri il file `local.sh` utilizzando l'editor visivo e aggiungi il secondo comando nel passo 4.1. davanti alla riga `exit 0`.
 
-Annota l'indirizzo IP poiché può essere utilizzato per montare il volume nel passo successivo.<br/>Questo processo deve essere eseguito per ciascun volume NFS che intendi montare al tuo host ESXi.<br/>Per ulteriori informazioni, vedi l'articolo della Knowledge Base di VMware, [Configuring static routes for VMkernel ports on an ESXi host](https://kb.vmware.com/s/article/2001426){: external}.
+Annota l'indirizzo IP poiché può essere utilizzato per montare il volume nel passo successivo.<br/>Questo processo deve essere eseguito per ciascun volume NFS che intendi montare al tuo host ESXi.<br/>Per ulteriori informazioni, vedi l'articolo della Knowledge Base di VMware KB , [Configuring static routes for VMkernel ports on an ESXi host](https://kb.vmware.com/s/article/2001426){: external}.
 {:tip}
 
 

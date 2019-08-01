@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
@@ -28,11 +28,15 @@ Gli host autorizzati e i volumi si devono trovare nello stesso data center. Ad e
 {:note}
 
 1. Accedi alla [console {{site.data.keyword.cloud}}](https://{DomainName}/catalog){: external} e fai clic sull'icona **menu** in alto a sinistra. Seleziona **Infrastruttura classica**.
-2. Fai clic sul tuo volume di origine o di destinazione dalla pagina **{{site.data.keyword.filestorage_short}}**.
+2. Individua il volume di origine o di destinazione nell'elenco **{{site.data.keyword.filestorage_short}}**.
 3. Fai clic su **Replica**.
-4. Scorri giù al frame **Autorizza host** e fai clic su **Authorize host** sulla destra.
-5. Evidenzia l'host che deve essere autorizzato per le repliche. Per selezionare più host, utilizza il tasto CTRL e fai clic sugli host applicabili.
-6. Fai clic su **Submit**. Se non hai alcun host, ti viene richiesto di acquistare delle risorse di calcolo nello stesso data center.
+4. Scorri verso il basso fino al frame **Authorize Hosts** e fai clic su **Authorize Host** alla destra.
+5. Filtra l'elenco di host disponibili selezionando il tipo di dispositivo, la sottorete o l'indirizzo IP.
+
+   Quando l'elenco viene filtrato, le sottoreti visualizzate sono sottoreti sottoscritte nello stesso data center del volume di archiviazione.
+   {:note}
+6. Evidenzia l'host che deve essere autorizzato per le repliche. Per selezionare più host, utilizza il tasto CTRL e fai clic sugli host applicabili.
+6. Fai clic su **Save**. Se non hai alcun host, ti viene richiesto di acquistare delle risorse di calcolo nello stesso data center.
 
 ## Avvio di un failover da un volume alla sua replica
 
@@ -44,10 +48,10 @@ Prima di procedere con questa procedura, disconnetti il volume. In caso contrari
 {:important}
 
 1. Fai clic sul volume attivo (“origine”).
-2. In alto a destra, fai clic su **Replica** e fai clic su **Actions**.
-3. Seleziona **Failover**.
+2. In alto a destra, fai clic su **Actions**.
+3. Seleziona **Controlled Failover**.
 
-   Aspettati un messaggio che indica che il failover è in corso. Inoltre, compare un'icona accanto al tuo volume in **{{site.data.keyword.filestorage_short}}** che indica che è in corso una transazione attiva. Se passi il puntatore del mouse sull'icona, viene visualizzata una finestra che mostra la transazione. Una volta completata la transazione, l'icona scompare. Durante il processo di failover, le azioni correlate alla configurazione sono di sola lettura. Non puoi modificare le pianificazioni delle istantanee o modificare lo spazio per le istantanee. L'evento viene registrato nella cronologia replica.<br/> Quando il tuo volume di destinazione è attivo, ricevi un altro messaggio. Il nome volume (Volume Name) del tuo volume di origine originale viene aggiornato in modo da terminare con "REP" e il suo stato (Status) diventa inattivo (Inactive).
+   Aspettati un messaggio che indica che il failover è in corso. Inoltre, compare un'icona accanto al tuo volume in **{{site.data.keyword.filestorage_short}}** che indica che è in corso una transazione attiva. Se passi il puntatore del mouse sull'icona, viene visualizzata una finestra che mostra la transazione. Una volta completata la transazione, l'icona scompare. Durante il processo di failover, le azioni correlate alla configurazione sono di sola lettura. Non puoi modificare le pianificazioni delle istantanee o modificare lo spazio per le istantanee. L'evento viene registrato nella cronologia replica.<br/> Quando il tuo volume di destinazione è attivo, ricevi un altro messaggio. Lo stato del tuo volume di origine iniziale diventa Inactive.
    {:note}
 4. Fai clic su **View All ({{site.data.keyword.filestorage_short}})**.
 5. Fai clic sul volume attivo (precedentemente il volume di destinazione). Questo volume ora ha uno stato attivo (**Active**).
@@ -70,10 +74,10 @@ I failback vengono avviati in **Storage**, **{{site.data.keyword.filestorage_sho
 
 1. Fai clic sul volume attivo ("destinazione").
 2. In alto a destra, fai clic su **Replica** e fai clic su **Actions**.
-3. Seleziona **Failback**.
+3. Seleziona **Controlled Failback**.
 
    Aspettati un messaggio che mostra che il failover è in corso. Inoltre, compare un'icona accanto al tuo volume in **{{site.data.keyword.filestorage_short}}** che indica che è in corso una transazione attiva. Se passi il puntatore del mouse sull'icona, viene visualizzata una finestra che mostra la transazione. Una volta completata la transazione, l'icona scompare. Durante il processo di Failback, le azioni correlate alla configurazione sono di sola lettura. Non puoi modificare le pianificazioni delle istantanee o modificare lo spazio per le istantanee. L'evento viene registrato nella cronologia replica.
    {:note}
 4. In alto a destra, fai clic su **View All {{site.data.keyword.filestorage_short}}**.
-5. Fai clic sul tuo volume attivo ("origine").
+5. Fai clic sul tuo volume attivo ("origine"). Questo volume ora ha uno stato non attivo (**Inactive**).
 6. Monta o collega il tuo volume di archiviazione all'host. Per ulteriori informazioni, vedi [Connessione alla tua nuova archiviazione](/docs/infrastructure/FileStorage?topic=FileStorage-getting-started#mountingstorage).

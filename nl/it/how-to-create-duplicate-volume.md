@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, duplicate volume
 
@@ -21,6 +21,7 @@ subcollection: FileStorage
 Puoi creare un duplicato di un {{site.data.keyword.cloud}} {{site.data.keyword.filestorage_full}} esistente. Il volume duplicato eredita per impostazione predefinita le opzioni di capacità e prestazioni del volume originale e ha una copia dei dati che arriva fino al punto temporale di un'istantanea.   
 
 Poiché il duplicato è basato sui dati in un'istantanea a un punto temporale, è necessario lo spazio per le istantanee sul volume originale prima che tu possa creare un duplicato. Per ulteriori informazioni sulle istantanee e su come ordinare lo spazio per le istantanee, consulta la [documentazione delle istantanee](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots).  
+{:important}
 
 I duplicati possono essere creati sia dai volumi **primari** che da quelli di **replica**. Il nuovo duplicato viene creato nello stesso data center del volume originale. Se crei un duplicato da un volume di replica, il nuovo volume viene creato nello stesso data center del volume di replica.
 
@@ -44,14 +45,13 @@ Puoi creare un volume duplicato tramite la [console {{site.data.keyword.cloud}}]
 
 ## Creazione di un duplicato da un volume specifico nell'elenco archiviazioni
 
-1. Vai al tuo elenco di {{site.data.keyword.filestorage_short}}
-    - Dal menu Classic Infrastructure, fai clic su **Storage** > **{{site.data.keyword.filestorage_short}}** OR
-    - Dal catalogo {{site.data.keyword.cloud}}, fai clic su **Infrastructure** > **Storage** > **{{site.data.keyword.filestorage_short}}**.
-2. Seleziona un volume dall'elenco e fai clic su **Actions** > **Duplicate volume (Volume)**
+1. Vai al tuo elenco di {{site.data.keyword.filestorage_short}}. Dal menu **Classic Infrastructure**, fai clic su **Storage** > **{{site.data.keyword.filestorage_short}}**.
+2. Individua e fai clic sul nome del volume.
+3. Fai clic su **Actions** > **Duplicate Volume**
 3. Scegli la tua opzione di istantanea.
     - Se ordini da un volume non di replica,
-      - Seleziona **Create from new snapshot** – questa azione crea un'istantanea da utilizzare per il duplicato. Utilizza questa opzione se il tuo volume non ha delle istantanee correnti o se vuoi creare un duplicato in questo momento.</br>
-      - Seleziona **Create from latest snapshot** - questa azione crea un duplicato dall'istantanea più recente che esiste per questo volume.
+      - Seleziona **Create a new snapshot to clone** – questa azione crea un'istantanea da utilizzare per il duplicato. Utilizza questa opzione se il tuo volume non ha delle istantanee correnti o se vuoi creare un duplicato in questo momento.</br>
+      - Seleziona **Use the latest snapshot to clone the volume** - questa azione crea un duplicato dall'istantanea più recente che esiste per questo volume.
     - Se ordini da un volume di replica, la sola opzione per l'istantanea consiste nell'utilizzare l'istantanea più recente disponibile.
 4. Il tipo di archiviazione e l'ubicazione rimangono gli stessi del volume originale.
 5. Fatturazione oraria o mensile – puoi scegliere di eseguire il provisioning del volume duplicato con la fatturazione oraria o mensile. Il tipo di fatturazione per il volume originale viene automaticamente selezionato. Se vuoi scegliere un tipo di fatturazione differente per la tua archiviazione duplicata, puoi operare tale selezione qui.
@@ -80,7 +80,7 @@ Puoi creare un volume duplicato tramite la [console {{site.data.keyword.cloud}}]
    {{site.data.keyword.filestorage_short}} può essere ridimensionato fino a 10 volte la dimensione originale del volume.
    {:tip}
 7. Puoi aggiornare lo spazio per le istantanee per il nuovo volume per aggiungere più, meno o zero spazio per le istantanee. Lo spazio per le istantanee del volume originale viene impostato per impostazione predefinita.
-8. Fai clic su **Continue** per effettuare il tuo ordine per il duplicato.
+8. Fai clic su **Place Order** per eseguire il provisioning del duplicato.
 
 ## Creazione di un duplicato tramite la SLCLI
 ```

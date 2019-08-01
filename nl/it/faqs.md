@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
@@ -149,3 +149,8 @@ No. Attualmente l'accelerazione hardware e VAAI (vStorage for API Array Integrat
 {: faq}
 
 Quando le unità vengono disattivate, IBM le distrugge prima del loro smaltimento. Le unità diventano inutilizzabili. Tutti i dati scritti in queste unità diventano inaccessibili.
+
+## Qual è la differenza tra Controlled Failover e Immediate Failover?
+{: faq}
+
+Il Controlled Failover effettua un'ultima sincronizzazione prima di separare il mirror. L'Immediate Failover separa immediatamente il mirror e attiva il volume di replica.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-25"
 
 keywords: File Storage, file storage, NFS, authorizing hosts, rewoke access, grant access, view authorizations
 
@@ -31,7 +31,12 @@ Puoi autorizzare e connettere gli host che si trovano nello stesso data center d
 1. Vai alla [console {{site.data.keyword.cloud}}](https://{DomainName}/){: external}. Dal menu, seleziona **Classic Infrastructure**.
 2. Fai clic su **Storage** > **{{site.data.keyword.filestorage_short}}** e fai clic sul tuo nome volume (**Volume Name**).
 3. Scorri alla sezione **Authorized Hosts** della pagina.
-4. Fai clic su **Authorize Host** sulla destra. Seleziona gli host che possono accedere allo specifico volume.
+4. Fai clic su **Authorize Host** sulla destra.
+5. Filtra l'elenco di host disponibili selezionando il tipo di dispositivo, la sottorete o l'indirizzo IP.
+
+   Quando l'elenco viene filtrato, le sottoreti visualizzate sono sottoreti sottoscritte nello stesso data center del volume di archiviazione.
+   {:note}
+6. Seleziona uno o più host dall'elenco e fai clic su **Save**.
 
 In alternativa, puoi utilizzare il seguente comando nella SLCLI.
 ```
@@ -162,3 +167,8 @@ Options:
                  billing anniversary
   -h, --help     Show this message and exit.
 ```
+
+Una volta che è stato annullato il volume, esiste un periodo di attesa per il recupero di 24 ore. Puoi ancora visualizzare il volume nella console durante queste 24 ore. Quando il periodo di recupero scade, i dati vengono eliminati permanentemente e il volume viene rimosso dalla console. Tuttavia, la fatturazione per il volume viene interrotta immediatamente. Per ulteriori informazioni, vedi le [Domande frequenti](/docs/infrastructure/FileStorage?topic=FileStorage-file-storage-faqs).
+{:note}
+
+ Le repliche attive possono bloccare il recupero del volume di archiviazione. Assicurati che il volume non sia più montato, che le autorizzazioni host siano state revocate e che la replica sia stata annullata prima di tentare di annullare il volume originale.

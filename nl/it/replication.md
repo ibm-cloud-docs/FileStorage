@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, replication, duplication, synchronous, replica schedule, replica space, disaster recovery
 
@@ -44,7 +44,7 @@ Vedi la Tabella 1 per l'elenco completo della disponibilità dei data center e d
 Le repliche funzionano in base a una pianificazione delle istantanee. Prima di poter eseguire la replica, devi già disporre dello spazio per le istantanee e di una pianificazione delle istantanee per il volume di origine. Se provi a configurare una replica e non disponi di uno di questi due elementi, ti verrà richiesto di acquistare ulteriore spazio o di configurare una pianificazione. Le repliche sono gestite in **Storage** > **{{site.data.keyword.filestorage_short}}** nella [console {{site.data.keyword.cloud}}](https://{DomainName}/classic){: external}.
 
 1. Fai clic sul tuo volume di archiviazione.
-2. Fai clic su **Replica** e fai clic su **Purchase a replication**.
+2. Fai clic su **Replica** e fai clic su **Purchase replication**.
 3. Seleziona la pianificazione delle istantanee esistente che vuoi venga seguita dalla tua replica. L'elenco contiene tutte le pianificazioni delle istantanee attive. <br />
 
    Puoi selezionare solo una singola pianificazione, anche se hai una combinazione di orarie, giornaliere e settimanali. Tutte le istantanee che erano state acquisite a partire dal ciclo di replica precedente vengono replicate indipendentemente dalla pianificazione che ha dato loro origine.<br />Se non disponi di istantanee configurate, ti viene richiesto di procedere a farlo prima di poter ordinare la replica. Per ulteriori informazioni, vedi [Gestione delle istantanee](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots).
@@ -91,9 +91,10 @@ Il tuo spazio per le istantanee primario e il tuo spazio di replica devono esser
 Le dimensioni dei tuoi volumi devono essere le stesse per i volumi di archiviazione primario e di replica. L'uno non può essere più grande dell'altro. Quando aumenti il tuo spazio per le istantanee per il tuo volume primario, lo spazio di replica viene aumentato automaticamente. L'aumento dello spazio per le istantanee attiva un aggiornamento della replica immediato. L'aumento per entrambi i volumi viene visualizzato come voci di riga nella tua fattura ed è a base proporzionale come necessario.
 
 Per ulteriori informazioni sull'aumento dello spazio dell'istantanea, consulta [Istantanee](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots).
+
 ## Visualizzazione dei volumi di replica nell'elenco volumi
 
-Puoi visualizzare i tuoi volumi di replica nella pagina {{site.data.keyword.filestorage_short}} in **Storage** > **{{site.data.keyword.filestorage_short}}**. Il nome del volume mostra il nome del volume primario seguito da REP. Il tipo (**Type**) è Endurance oppure Performance – Replica. L'indirizzo di destinazione (**Target Address**) non è disponibile (N/A) perché il volume di replica non è montato nel data center di replica e lo stato (**Status**) è inattivo (Inactive).
+Puoi visualizzare i tuoi volumi di replica nella pagina {{site.data.keyword.filestorage_short}} in **Storage** > **{{site.data.keyword.filestorage_short}}**. Il nome del volume mostra il nome del volume primario seguito da REP. Il tipo (**Type**) è Endurance oppure Performance – Replica.
 
 
 ## Visualizzazione dei dettagli di un volume replicato nel data center di replica
