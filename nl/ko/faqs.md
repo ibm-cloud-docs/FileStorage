@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
@@ -143,9 +143,14 @@ vSphere 솔루션에 대해 NFS v3는 v4.1보다 많은 기능을 지원합니�
 {: #isVAAIsupported}
 {: faq}
 
-아니오. 현재 vStorage for API Array Integration 및 하드웨어 가속화는 지원되지 않습니다. 
+아니오. 현재 vStorage for API Array Integration 및 하드웨어 가속화는 지원되지 않습니다.
 
 ## 클라우드 데이터 센터에서 폐기된 드라이브는 어떻게 됩니까?
 {: faq}
 
 드라이브가 폐기되는 경우 IBM은 이를 처분하기 전에 파기합니다. 해당 드라이브는 사용할 수 없는 상태가 됩니다. 해당 드라이브에 쓰여진 데이터는 더 이상 액세스할 수 없습니다.
+
+## 제어된 장애 복구와 즉시 장애 복구 간의 차이점은 무엇입니까?
+{: faq}
+
+제어된 장애 복구는 미러를 중단하기 전에 마지막으로 한 번 동기화를 수행합니다. 즉시 장애 복구는 즉시 미러를 중단하고 복제본 볼륨을 활성화합니다.

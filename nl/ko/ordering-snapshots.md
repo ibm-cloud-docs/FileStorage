@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, snapshot, ordering snapshot, snapshot space
 
@@ -53,7 +53,7 @@ subcollection: FileStorage
 1. [{{site.data.keyword.cloud}} 콘솔](https://{DomainName}/){: external}에 로그인하고 왼쪽 상단에서 메뉴 아이콘을 클릭하십시오.
 2. **클래식 인프라**를 선택하십시오.
 3. **스토리지** > **{{site.data.keyword.filestorage_short}}**를 통해 스토리지에 액세스하십시오.
-4. 스냅샷 프레임에서 **스냅샷 영역 변경**을 클릭하십시오.
+4. 스냅샷 프레임에서 **스냅샷 영역 추가**를 클릭하십시오.
 5. 필요한 영역의 양과 지불 방법을 선택하십시오.
 6. **계속**을 클릭하십시오.
 7. 보유한 프로모션 코드를 입력하고 **재계산**을 클릭하십시오. **이 주문의 비용** 및 **주문 검토**에는 기본값이 있습니다.

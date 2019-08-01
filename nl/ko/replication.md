@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, replication, duplication, synchronous, replica schedule, replica space, disaster recovery
 
@@ -44,7 +44,7 @@ subcollection: FileStorage
 복제는 스냅샷 스케줄에 따라 이뤄집니다. 복제하려면 먼저 스냅샷 영역과 소스 볼륨에 대한 스냅샷 스케줄이 있어야 합니다. 복제를 설정하려는데 두 가지 중 하나가 없는 경우에는 추가 영역을 구매하거나 스케줄을 설정하라는 프롬프트가 표시됩니다. 복제는 [{{site.data.keyword.cloud}} 콘솔](https://{DomainName}/classic){: external}의 **스토리지** > **{{site.data.keyword.filestorage_short}}**에서 관리합니다.
 
 1. 스토리지 볼륨을 클릭하십시오.
-2. **복제본**을 클릭하고 **복제본 구매**를 클릭하십시오.
+2. **복제본**을 클릭한 후 **복제본 구매**를 클릭하십시오.
 3. 복제가 따르도록 할 기존 스냅샷 스케줄을 선택하십시오. 목록에는 모든 활성 스냅샷 스케줄이 있습니다. <br />
 
    시간별, 일별, 주별이 혼합되어 있어도 스케줄은 하나만 선택할 수 있습니다. 이전 복제 주기 이후 캡처된 모든 스냅샷은 이를 발생시킨 스케줄에 관계없이 복제됩니다.<br />설정된 스냅샷이 없는 경우에는 복제를 주문하기 전에 이를 설정하라는 프롬프트가 표시됩니다. 자세한 정보는 [스냅샷 관련 작업](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots)을 참조하십시오.
@@ -91,9 +91,10 @@ subcollection: FileStorage
 볼륨 크기는 기본 스토리지 볼륨과 복제본 스토리지 볼륨 간에 동일해야 합니다. 한 쪽이 다른 쪽보다 커서는 안 됩니다. 기본 볼륨의 스냅샷 영역을 늘리면 복제본 영역이 자동으로 늘어납니다. 스냅샷 영역을 늘리면 즉각적 복제 업데이트가 트리거됩니다. 두 볼륨의 증가는 청구서에 품목명으로 표시되며 필요에 따라 비례 배분됩니다.
 
 스냅샷 영역 늘리기에 대한 자세한 정보는 [스냅샷](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots)을 참조하십시오.
+
 ## 볼륨 목록에서 복제본 볼륨 보기
 
-**스토리지** > **{{site.data.keyword.filestorage_short}}**에 있는 {{site.data.keyword.filestorage_short}} 페이지에서 복제 볼륨을 볼 수 있습니다. 이러한 볼륨의 이름에서는 기본 볼륨 이름이 있고 그 뒤에 REP가 있습니다. **유형**은 Endurance 또는 Performance - 복제본입니다. 복제본 볼륨이 복제본 데이터 센터에 마운트되지 않았으며 **상태**가 비활성이므로 **대상 주소**는 해당사항 없음입니다.
+**스토리지** > **{{site.data.keyword.filestorage_short}}**에 있는 {{site.data.keyword.filestorage_short}} 페이지에서 복제 볼륨을 볼 수 있습니다. 이러한 볼륨의 이름에서는 기본 볼륨 이름이 있고 그 뒤에 REP가 있습니다. **유형**은 Endurance 또는 Performance - 복제본입니다.
 
 
 ## 복제본 데이터 센터에서 복제된 볼륨의 세부사항 보기

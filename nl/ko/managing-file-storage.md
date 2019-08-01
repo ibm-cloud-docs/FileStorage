@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-25"
 
 keywords: File Storage, file storage, NFS, authorizing hosts, rewoke access, grant access, view authorizations
 
@@ -31,7 +31,12 @@ subcollection: FileStorage
 1. [{{site.data.keyword.cloud}} 콘솔](https://{DomainName}/){: external}로 이동하십시오. 메뉴에서 **클래식 인프라**를 선택하십시오.
 2. **스토리지** > **{{site.data.keyword.filestorage_short}}**를 클릭하고 **볼륨 이름**을 클릭하십시오.
 3. 페이지의 **권한 부여된 호스트** 섹션으로 화면을 이동하십시오.
-4. 오른쪽에 있는 **호스트 권한 부여**를 클릭하십시오. 해당 특정 볼륨에 액세스할 수 있는 호스트를 선택하십시오.
+4. 오른쪽에 있는 **호스트 권한 부여**를 클릭하십시오.
+5. 디바이스 유형, 서브넷 또는 IP 주소를 선택하여 사용 가능한 호스트 목록을 필터링하십시오.
+
+   서브넷으로 목록을 필터링하는 경우 표시되는 서브넷은 스토리지 볼륨과 동일한 데이터 센터에서 구독하는 서브넷입니다.
+   {:note}
+6. 목록에서 하나 이상의 호스트를 선택하고 **저장**을 클릭하십시오.
 
 또는 SLCLI에서 다음 명령을 사용할 수 있습니다.
 ```
@@ -144,7 +149,7 @@ Options:
 1. [{{site.data.keyword.cloud}} 콘솔](https://{DomainName}/){: external}로 이동하십시오. 메뉴에서 **클래식 인프라**를 선택하십시오.
 2. **스토리지** > **{{site.data.keyword.filestorage_short}}**를 클릭하십시오.
 3. 취소할 볼륨에 대해 **조치**를 클릭하고 **{{site.data.keyword.filestorage_short}} 취소**를 선택하십시오.
-4. 즉시 볼륨을 취소하는지 또는 볼륨이 프로비저닝된 기념일에 취소하는지를 확인하십시오.
+4. 볼륨을 즉시 취소할 것인지 또는 볼륨이 프로비저닝된 지정일에 취소할 것인지 확인하십시오.
 
    지정일에 볼륨을 취소하는 옵션을 선택하는 경우, 해당 지정일 이전에 취소 요청을 무효화할 수 있습니다.
    {:tip}
@@ -162,3 +167,8 @@ Options:
                  billing anniversary
   -h, --help     Show this message and exit.
 ```
+
+볼륨이 취소되는 경우 24시간의 재확보 대기 기간이 존재합니다. 이 24시간 동안에는 콘솔에서 해당 볼륨을 계속 확인할 수 있습니다. 재확보 기간이 만료되면 데이터가 영구 삭제되고 콘솔에서 볼륨이 제거됩니다. 하지만 볼륨에 대한 청구는 즉시 중지됩니다. 자세한 정보는 [FAQ](/docs/infrastructure/FileStorage?topic=FileStorage-file-storage-faqs)를 참조하십시오.
+{:note}
+
+ 활성 복제본은 스토리지 볼륨의 재확보를 차단할 수 있습니다. 원래 볼륨을 취소하기 전에 볼륨이 더 이상 마운트되어 있지 않고, 호스트 권한이 취소되었으며, 복제가 취소되었는지 확인하십시오.

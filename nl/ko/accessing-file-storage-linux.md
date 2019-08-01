@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, NSF, mounting File Storage, mounting storage on Linux,
 
@@ -20,8 +20,13 @@ subcollection: FileStorage
 
 먼저 {{site.data.keyword.filestorage_full}} 볼륨에 액세스할 호스트의 권한이 [{{site.data.keyword.cloud}} 콘솔](https://{DomainName}/classic){: external}을 통해 부여되는지 확인하십시오.
 
-1. {{site.data.keyword.filestorage_short}} 목록 페이지에서 새 공유와 연관된 **조치** 링크를 클릭하고 **호스트 권한 부여**를 클릭하십시오.
-2. 목록에서 호스트를 선택하고 **제출**을 클릭하십시오. 이 조치는 공유에 액세스할 수 있도록 호스트에 권한을 부여합니다.
+1. 콘솔에서 **클래식 인프라**  > **스토리지** > **{{site.data.keyword.filestorage_short}}**로 이동하십시오.
+2. 마운트할 파일 공유로 스크롤한 후 **...**(조치)를 클릭하십시오. 그런 다음 **호스트 권한 부여**를 선택하십시오.
+3. 디바이스 유형, 서브넷 또는 IP 주소를 선택하여 사용 가능한 호스트 목록을 필터링하십시오.
+
+   서브넷으로 목록을 필터링하는 경우 표시되는 서브넷은 스토리지 볼륨과 동일한 데이터 센터에서 구독하는 서브넷입니다.
+   {:note}
+4. 목록에서 하나 이상의 호스트를 선택하고 **저장**을 클릭하십시오.
 
 또는 SLCLI를 통해 호스트에 권한을 부여할 수 있습니다.
 ```

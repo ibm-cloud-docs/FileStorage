@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
@@ -118,15 +118,15 @@ VMware 환경은 스냅샷을 인지하지 않음을 유념하십시오. {{site.
 
 볼륨이 프로비저닝되고 나면 볼륨을 사용할 {{site.data.keyword.BluBareMetServers_full}} 또는 {{site.data.keyword.BluVirtServers_full}}에 스토리지 액세스 권한이 부여되어야 합니다. 다음 단계를 사용하여 볼륨에 권한을 부여할 수 있습니다.
 
-1. **스토리지** > **{{site.data.keyword.filestorage_short}}**를 클릭하십시오.
-2. **Endurance** 또는 **Performance 볼륨 조치** 메뉴에서 **호스트 액세스**를 선택하십시오.
+1. 콘솔에서 **클래식 인프라**  > **스토리지** > **{{site.data.keyword.filestorage_short}}**로 이동하십시오.
+2. 마운트할 파일 공유로 스크롤한 후 **...**(조치)를 클릭하십시오. 그런 다음 **호스트 권한 부여**를 선택하십시오.
 3. **서브넷**을 클릭하십시오.
-4. ESXi 호스트의 VMkernel 포트에 지정된 사용 가능한 서브넷의 목록에서 선택하고 **제출**을 클릭하십시오.<br/>
+4. ESXi 호스트의 VMkernel 포트에 지정된 사용 가능한 서브넷 목록에서 선택한 후 **저장**을 클릭하십시오.<br/>
 
    표시되는 서브넷은 스토리지 볼륨과 동일한 데이터 센터의 구독된 서브넷입니다.
    {:note}
 
-서브넷에 권한이 부여된 후에는 볼륨을 마운트할 때 사용할 Endurance 또는 Performance 스토리지 서버의 호스트 이름을 기록하십시오. 이 정보는 특정 볼륨을 클릭하여 {{site.data.keyword.filestorage_short}} 세부사항 페이지에서 찾을 수 있습니다.
+서브넷에 권한이 부여된 후 스토리지 서버의 호스트 이름을 기록해 두십시오. 호스트 이름은 볼륨의 {{site.data.keyword.filestorage_short}} 세부사항 페이지에서 찾을 수 있습니다.
 
 
 ##  VMware 가상 머신 호스트 구성

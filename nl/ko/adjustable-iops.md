@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, adjusting IOPS, increase IOPS, decrease IOPS, modify IOPS
 
@@ -46,7 +46,7 @@ subcollection: FileStorage
 {: #adjustingsteps}
 
 1. {{site.data.keyword.filestorage_short}}의 목록으로 이동하십시오. {{site.data.keyword.cloud}} 콘솔에서 **클래식 인프라** > **스토리지** > **{{site.data.keyword.filestorage_short}}**를 클릭하십시오.
-2. 목록에서 볼륨을 선택하고 **조치** > **볼륨 수정**을 클릭하십시오.
+2. 목록에서 볼륨을 선택하고 **...** > **공유 수정**을 클릭하십시오.
 3. **스토리지 IOPS 옵션** 아래에서 새로 선택하십시오.
     - Endurance(계층 IOPS)의 경우 스토리지의 0.25IOPS/GB보다 큰 IOPS 계층을 선택하십시오. 언제든지 IOPS 계층을 늘릴 수 있습니다. 그러나 줄이기는 한 달에 한 번만 가능합니다.
     - Performance(할당된 IOPS)의 경우 100 - 48,000IOPS 범위의 값을 입력하여 스토리지에 대한 새 IOPS 옵션을 지정하십시오. (주문 양식에서 크기별로 필요한 특정 경계를 반드시 살펴보십시오.)
