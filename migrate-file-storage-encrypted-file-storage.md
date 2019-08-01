@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-24"
+lastupdated: "2019-08-01"
 
 keywords: File Storage, file storage, NFS, upgrade, migrate to new
 
@@ -79,14 +79,10 @@ If your target data center does not have encryption, you can't establish replica
   - If you have any bandwidth concerns, do the migration during off peak times.
   - If you need assistance with these considerations, open a support ticket.
 
-3. Copy your data across.
-   - **Microsoft Windows**
-     - To copy data from your original {{site.data.keyword.filestorage_short}} volume to your new volume, format the new storage, and copy the files over by using Windows Explorer.
-   - **Linux**
-     - You can use `rsync` to copy over the data.
-       ```
-       [root@server ~]# rsync -Pavzu /path/to/original/file/storage/* /path/to/encrypted/file/storage
-       ```
+3. Copy your data across. For example, you can use `rsync` to copy over the data.
+   ```
+   [root@server ~]# rsync -Pavzu /path/to/original/file/storage/* /path/to/encrypted/file/storage
+   ```
 
    It's advisable to use the previous command with the `--dry-run` flag once to make sure that the paths line up correctly. If this process is interrupted, you can delete the last destination file that was being copied to make sure that it is copied to the new location from the beginning.
 
