@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-25"
 
 keywords: File Storage, file storage, NFS, authorizing hosts, rewoke access, grant access, view authorizations
 
@@ -31,7 +31,12 @@ Puede autorizar y conectar hosts que estén ubicados en el mismo centro de datos
 1. Vaya a la [consola de {{site.data.keyword.cloud}}](https://{DomainName}/){: external}. En el menú, seleccione **Infraestructura clásica**.
 2. Pulse **Almacenamiento** > **{{site.data.keyword.filestorage_short}}** y pulse el **Nombre de volumen**.
 3. Desplácese a la sección **Hosts autorizados** de la página.
-4. Pulse **Autorizar host** en la parte derecha. Seleccione los hosts que pueden acceder a ese volumen determinado.
+4. Pulse **Autorizar host** en la parte derecha.
+5. Filtre la lista de hosts disponibles seleccionando el tipo de dispositivo, la subred o la dirección IP.
+
+   Cuando la lista está filtrada por subred, las subredes que se muestran son subredes suscritas al mismo centro de datos que el volumen de almacenamiento.
+   {:note}
+6. Seleccione uno o más hosts en la lista y pulse **Guardar**.
 
 De manera alternativa, puede utilizar el mandato siguiente en SLCLI.
 ```
@@ -162,3 +167,8 @@ Opciones:
                  hacerlo en el aniversario de facturación
   -h, --help     Mostrar este mensaje y salir.
 ```
+
+Cuando se cancela el volumen, hay un periodo de espera de reclamación de 24 horas. El volumen se sigue viendo en la consola durante esas 24 horas. Al caducar el periodo de reclamación, los datos se destruyen y el volumen también se elimina de la consola. Sin embargo, la facturación correspondiente al volumen se detiene inmediatamente. Para obtener más información, consulte las [Preguntas más frecuentes](/docs/infrastructure/FileStorage?topic=FileStorage-file-storage-faqs).
+{:note}
+
+ Las réplicas activas pueden bloquear la reclamación del volumen de almacenamiento. Asegúrese de que el volumen ya no esté montado, de que las autorizaciones de host se hayan revocado y de que la réplica se haya cancelado antes de intentar cancelar el volumen original.

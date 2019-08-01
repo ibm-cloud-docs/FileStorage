@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
@@ -28,11 +28,15 @@ Los hosts y volúmenes autorizados deben estar en el mismo centro de datos. Por 
 {:note}
 
 1. Inicie la sesión en la [consola de {{site.data.keyword.cloud}}](https://{DomainName}/catalog){: external} y pulse el icono de **menú** de la parte superior izquierda. Seleccione **Infraestructura clásica**.
-2. Pulse el volumen de origen o de destino en la página de **{{site.data.keyword.filestorage_short}}**.
+2. Localice el volumen de origen o destino en la lista de **{{site.data.keyword.filestorage_short}}**.
 3. Pulse **Réplica**.
-4. Desplácese hacia abajo hasta el marco **Autorizar hosts** y pulse **Autorizar hosts** en la parte derecha.
-5. Marque el host que se va a autorizar para las réplicas. Para seleccionar varios hosts, utilice la tecla Control y pulse los hosts aplicables.
-6. Pulse **Enviar**. Si no tiene ningún host, se le solicitará comprar recursos de cálculo en el mismo centro de datos.
+4. Desplácese hacia abajo hasta el marco **Autorizar hosts** y pulse **Autorizar host** en la parte derecha.
+5. Filtre la lista de hosts disponibles seleccionando el tipo de dispositivo, la subred o la dirección IP.
+
+   Cuando la lista está filtrada por subred, las subredes que se muestran son subredes suscritas al mismo centro de datos que el volumen de almacenamiento.
+   {:note}
+6. Marque el host que se va a autorizar para las réplicas. Para seleccionar varios hosts, utilice la tecla Control y pulse los hosts aplicables.
+6. Pulse **Guardar**. Si no tiene ningún host, se le solicitará comprar recursos de cálculo en el mismo centro de datos.
 
 ## Inicio de una migración tras error desde un volumen a su réplica
 
@@ -44,10 +48,10 @@ Antes de continuar con estos pasos, desconecte el volumen. De lo contrario, dar�
 {:important}
 
 1. Pulse el volumen activo (“origen”).
-2. En la parte superior derecha, pulse **Réplica** y pulse **Acciones**.
-3. Seleccione **Migración tras error**.
+2. En la parte superior derecha, pulse **Acciones**.
+3. Seleccione **Migración tras error controlada**.
 
-   Recibirá un mensaje que indicará que la migración tras error está en curso. También aparecerá un icono junto al volumen en **{{site.data.keyword.filestorage_short}}** que indicará que hay una transacción activa en curso. Al pasar el ratón sobre el icono se abre una ventana que muestra la transacción. El icono desaparecerá una vez completada la transacción. Durante el proceso de migración tras error, las acciones relacionadas con la configuración son de solo lectura. No puede editar ninguna planificación de instantáneas ni cambiar el espacio de instantáneas. El suceso se registra en el historial de réplicas.<br/> Cuando el volumen de destino está activo, obtiene otro mensaje. El Nombre de volumen de su volumen de origen original se actualiza para finalizar en "REP" y su Estado pasa a ser Inactivo.
+   Recibirá un mensaje que indicará que la migración tras error está en curso. También aparecerá un icono junto al volumen en **{{site.data.keyword.filestorage_short}}** que indicará que hay una transacción activa en curso. Al pasar el ratón sobre el icono se abre una ventana que muestra la transacción. El icono desaparecerá una vez completada la transacción. Durante el proceso de migración tras error, las acciones relacionadas con la configuración son de solo lectura. No puede editar ninguna planificación de instantáneas ni cambiar el espacio de instantáneas. El suceso se registra en el historial de réplicas.<br/> Cuando el volumen de destino está activo, obtiene otro mensaje. El estado del volumen de origen original pasa a Inactivo.
    {:note}
 4. Pulse **Ver todos ({{site.data.keyword.filestorage_short}})**.
 5. Pulse el volumen activo (anteriormente volumen de destino). Este volumen tiene ahora un estado **Activo**.
@@ -70,10 +74,10 @@ Los restablecimientos se inician en **Almacenamiento**, **{{site.data.keyword.fi
 
 1. Pulse el volumen activo ("destino").
 2. En la parte superior derecha, pulse **Réplica** y pulse **Acciones**.
-3. Seleccione **Restablecimiento**.
+3. Seleccione **Restablecimiento controlado**.
 
    Recibirá un mensaje que indicará que la migración tras error está en curso. También aparecerá un icono junto al volumen en **{{site.data.keyword.filestorage_short}}** que indicará que hay una transacción activa en curso. Al pasar el ratón sobre el icono se abre una ventana que muestra la transacción. El icono desaparecerá una vez completada la transacción. Durante el proceso de retrotracción, las acciones relacionadas con la configuración son de solo lectura. No puede editar ninguna planificación de instantáneas ni cambiar el espacio de instantáneas. El suceso se registra en el historial de réplicas.
    {:note}
 4. En la parte superior derecha, pulse **Ver todo {{site.data.keyword.filestorage_short}}**.
-5. Pulse el volumen activo ("origen").
+5. Pulse el volumen activo ("origen"). Este volumen tiene ahora un estado **Inactivo**.
 6. Monte y conecte el volumen de almacenamiento al host. Para obtener más información, consulte [Conexión del nuevo almacenamiento](/docs/infrastructure/FileStorage?topic=FileStorage-getting-started#mountingstorage).

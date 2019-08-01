@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, modify volume, NFS, file storage, expand capacity
 
@@ -45,11 +45,14 @@ Las limitaciones de tamaño actuales para {{site.data.keyword.filestorage_short}
 {: #resizingsteps}
 
 1. Vaya a la [consola de {{site.data.keyword.cloud}}](https://{DomainName}/){: external}. En el menú, seleccione **Infraestructura clásica**. Pulse **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**.
-2. Seleccione el volumen de la lista y pulse **Acciones** > **Modificar volumen**
+2. Seleccione el volumen de la lista y pulse **...** > **Modificar compartición**
 3. Especifique el nuevo tamaño de almacenamiento en GB.
 4. Revise su selección y el nuevo precio.
 5. Pulse **He leído el Acuerdo de servicio maestro...** y pulse **Realizar pedido**.
 6. La nueva asignación de almacenamiento está disponible en pocos minutos.
+
+Para que el sistema operativo reconozca el espacio de almacenamiento adicional, desmonte el volumen modificado y móntelo de nuevo.
+{:tip}
 
 De manera alternativa, puede utilizar el mandato siguiente en SLCLI.
 ```

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
@@ -118,15 +118,15 @@ El almacenamiento se suministra en menos de un minuto y pasa a estar visible en 
 
 Una vez suministrado el volumen, los {{site.data.keyword.BluBareMetServers_full}} o {{site.data.keyword.BluVirtServers_full}} que utilizarán el volumen necesitarán autorización para acceder al almacenamiento. Utilice los siguientes pasos para autorizar el volumen.
 
-1. Pulse **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**.
-2. Seleccione **Acceder a host** en el menú **Acciones de volumen de rendimiento** o **Resistencia**.
+1. En la consola, vaya a **Infraestructura clásica**  > **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**.
+2. Desplácese hasta la compartición de archivo que desea montar y pulse **...** (Acciones). A continuación, seleccione **Autorizar host**.
 3. Pulse **Subredes**.
-4. Elija de la lista de subredes disponibles que están asignadas a los puertos VMkernel en los hosts de ESXi y pulse **Enviar**.<br/>
+4. Elija de la lista de subredes disponibles que están asignadas a los puertos VMkernel en los hosts de ESXi y pulse **Guardar**.<br/>
 
    Las subredes que se muestran son subredes suscritas al mismo centro de datos que el volumen de almacenamiento.
    {:note}
 
-Una vez autorizadas las subredes, anote el nombre de host del servidor de almacenamiento de Resistencia o Rendimiento que desea utilizar al montar el volumen. Esta información puede encontrarse en la página de detalles de {{site.data.keyword.filestorage_short}} pulsando sobre un volumen específico.
+Una vez autorizadas las subredes, anote el nombre de host del servidor de almacenamiento. El nombre de host puede encontrarse en la página de detalle de {{site.data.keyword.filestorage_short}} del volumen.
 
 
 ##  Configuración del host de la máquina virtual de VMware

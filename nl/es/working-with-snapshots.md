@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, snapshots, snapshot schedule, manual snapshot, snapshot space, snapshot quota
 
@@ -80,7 +80,7 @@ Opciones:
 
 ## Listado de todas las instantáneas con información de espacio utilizado y de funciones de gestión
 
-Se puede visualizar una lista de las instantáneas retenidas y el espacio utilizado en la página **Detalles** (**Almacenamiento**, **{{site.data.keyword.filestorage_short}}**). Las funciones de gestión (editar planificaciones y añadir más espacio) se realizan en la página Detalles utilizando el menú **Acciones** o los enlaces de las distintas secciones de la página.
+Se puede visualizar una lista de las instantáneas retenidas y el espacio utilizado en la página **Detalles** (**Almacenamiento**, **{{site.data.keyword.filestorage_short}}**). Las funciones de gestión (editar planificaciones y añadir más espacio) se realizan en la página **Detalle** utilizando el menú **Acciones** o los enlaces de las distintas secciones de la página.
 
 De manera alternativa, puede realizar esta tarea mediante SLCLI.
 ```
@@ -110,7 +110,7 @@ El espacio de instantáneas solo se puede aumentar. No se puede reducir. Puede s
 
 El espacio de instantáneas se cambia seleccionando **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**.
 
-1. Pulse los volúmenes de almacenamiento, pulse **Acciones** y luego pulse **Añadir más espacio de instantáneas**.
+1. Pulse los volúmenes de almacenamiento, pulse **Acciones** y luego pulse **Cambiar espacio de instantáneas**.
 2. Seleccione entre un rango de tamaños que se le ofrece. Los tamaños normalmente oscilan entre 0 y el tamaño de su volumen.
 3. Pulse **Continuar**.
 4. Especifique cualquier código promocional que tenga y pulse **Recalcular**. Los campos Cargos para este pedido y Revisión de pedido contienen información de forma predeterminada.
@@ -150,7 +150,7 @@ Opciones:
   -h, --help  Mostrar este mensaje y salir.
 ```
 
-Las instantáneas manuales que no se supriman del portal manualmente se suprimirán automáticamente cuando alcance las limitaciones de espacio (las más antiguas primero).
+Las instantáneas manuales que no se supriman del portal manualmente se suprimirán automáticamente cuando alcance las limitaciones de espacio. La instantánea más antigua se suprime primero.
 {:note}
 
 ## Restauración del volumen de almacenamiento a un punto en el tiempo específico utilizando una instantánea

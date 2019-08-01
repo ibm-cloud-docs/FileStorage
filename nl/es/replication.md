@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, replication, duplication, synchronous, replica schedule, replica space, disaster recovery
 
@@ -44,7 +44,7 @@ Consulte la Tabla 1 para ver la lista completa de disponibilidad de centros de d
 Las réplicas se basan en una planificación de réplica. Primero debe tener un espacio de instantáneas y una planificación de instantáneas para el volumen de origen antes de poder replicar. Si intenta configurar la réplica y uno o el otro no está en su lugar, se le solicitará que compre más espacio o que establezca una planificación. Las réplicas se gestionan en **Almacenamiento** > **{{site.data.keyword.filestorage_short}}** en la [consola de {{site.data.keyword.cloud}}](https://{DomainName}/classic){: external}.
 
 1. Pulse el volumen de almacenamiento.
-2. Pulse **Réplica** y pulse **Adquirir una réplica**.
+2. Pulse **Réplica** y pulse **Adquirir réplica**.
 3. Seleccione la planificación de instantáneas existente que quiera que siga su réplica. La lista contiene todas las planificaciones de instantáneas activas. <br />
 
    Solo puede seleccionar una planificación, incluso si tiene una combinación de por hora, a diario y mensual. Todas las instantáneas capturadas desde el ciclo de réplica anterior se replicarán, independientemente de la planificación que las originó.<br />Si no tiene configuradas las instantáneas, se le solicitará que lo haga para poder solicitar una réplica. Para obtener más información, consulte [Trabajar con instantáneas](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots).
@@ -91,9 +91,10 @@ El espacio de instantáneas primario y el espacio de réplica deben ser el mismo
 Los tamaños de volumen deben ser los mismos para sus volúmenes de almacenamiento primario y de réplica. No puede haber uno mayor que otro. Cuando aumenta el espacio de instantáneas para su volumen primario, el espacio de réplica se aumenta automáticamente. El aumento del espacio de instantáneas desencadena una actualización de réplica inmediata. El aumento en ambos volúmenes se muestra como elementos de línea en su factura, y se prorratea en caso necesario.
 
 Para obtener más información sobre cómo incrementar el espacio para instantáneas, consulte [Instantáneas](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots).
+
 ## Visualización de los volúmenes de réplica en la lista de volúmenes
 
-Puede visualizar los volúmenes de réplica en la página de {{site.data.keyword.filestorage_short}}, en **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**. El nombre de volumen muestra el nombre del volumen primario seguido de REP. El **Tipo** de réplica puede ser Resistente o Rendimiento. La **Dirección de destino** es N/D porque el volumen de réplica no está montado en el centro de datos y el **Estado** es Inactivo.
+Puede visualizar los volúmenes de réplica en la página de {{site.data.keyword.filestorage_short}}, en **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**. El nombre de volumen muestra el nombre del volumen primario seguido de REP. El **Tipo** de réplica puede ser Resistente o Rendimiento.
 
 
 ## Visualización de los detalles de un volumen replicado en el centro de datos de réplicas

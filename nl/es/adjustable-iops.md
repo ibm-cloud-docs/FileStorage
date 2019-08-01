@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, adjusting IOPS, increase IOPS, decrease IOPS, modify IOPS
 
@@ -46,7 +46,7 @@ Si el volumen tiene réplica, la réplica se actualiza automáticamente para coi
 {: #adjustingsteps}
 
 1. Vaya a su lista de {{site.data.keyword.filestorage_short}}. Desde la consola de {{site.data.keyword.cloud}}, pulse **Infraestructura clásica** > **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**.
-2. Seleccione el volumen de la lista y pulse **Acciones** > **Modificar volumen**
+2. Seleccione el volumen de la lista y pulse **...** > **Modificar compartición**
 3. En las **Opciones IOPS de almacenamiento**, realice una nueva selección:
     - En Resistencia (IOPS por niveles), seleccione un nivel de IOPS superior a 0,25 IOPS/GB de su almacenamiento. Puede aumentar el nivel de IOPS en cualquier momento. Sin embargo, la disminución solo está disponible una vez al mes.
     - En Rendimiento (IOPS asignado), especifique la nueva opción de IOPS para su almacenamiento especificando un valor comprendido entre 100 y 48.000 IOPS. (Asegúrese de comprobar los límites específicos requeridos por tamaño en el formulario de pedido).

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, NSF, mounting File Storage, mounting storage on Linux,
 
@@ -20,8 +20,13 @@ subcollection: FileStorage
 
 En primer lugar, asegúrese de que el host que va a acceder al volumen de {{site.data.keyword.filestorage_full}} está autorizado mediante la [consola de {{site.data.keyword.cloud}}](https://{DomainName}/classic){: external}.
 
-1. Desde la página de listado de {{site.data.keyword.filestorage_short}}, pulse el enlace **Acciones** que está asociado a la nueva compartición y pulse **Autorizar host**.
-2. Seleccione el host o hosts en la lista y pulse **Enviar**. Esta acción autoriza al host a acceder a la compartición.
+1. En la consola, vaya a **Infraestructura clásica**  > **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**.
+2. Desplácese hasta la compartición de archivo que desea montar y pulse **...** (Acciones). A continuación, seleccione **Autorizar host**.
+3. Filtre la lista de hosts disponibles seleccionando el tipo de dispositivo, la subred o la dirección IP.
+
+   Cuando la lista está filtrada por subred, las subredes que se muestran son subredes suscritas al mismo centro de datos que el volumen de almacenamiento.
+   {:note}
+4. Seleccione uno o más hosts en la lista y pulse **Guardar**.
 
 De manera alternativa, puede autorizar los hosts mediante SLCLI.
 ```

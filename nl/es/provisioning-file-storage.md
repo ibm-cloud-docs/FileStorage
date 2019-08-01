@@ -32,20 +32,20 @@ Puede suministrar {{site.data.keyword.filestorage_short}} y realizar ajustes par
 1. Inicie la sesión en el [catálogo de {{site.data.keyword.cloud}}](https://{DomainName}/catalog){: external} y pulse **Almacenamiento**. A continuación seleccione {{site.data.keyword.filestorage_short}}. Pulse **Crear**.
 2. Seleccione la **Ubicación** (centro de datos) del despliegue.
    - Asegúrese de que el nuevo almacenamiento se añada en la misma ubicación que el host o los hosts de cálculo que tiene.
-3. Facturación. Si ha seleccionado un centro de datos con prestaciones mejoradas (marcados con un asterisco), podrá elegir entre facturación mensual o por horas.
+3. Método de facturación. Si ha seleccionado un centro de datos con prestaciones mejoradas (marcados con un asterisco), podrá elegir entre facturación mensual o por horas.
      1. Con la facturación **por hora**, el número de horas que el volumen de bloque ha existido en la cuenta se calcula en el momento en que se suprime el LUN o al final del ciclo de facturación. Lo que se produzca primero. La facturación por horas es una buena opción para el almacenamiento que se utiliza unos pocos días o menos de un mes completo. La facturación por horas solo está disponible para el almacenamiento suministrado en estos [centros de datos seleccionados](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
      2. Con la **facturación mensual**, el cálculo del precio se prorratea desde la fecha de creación hasta la finalización del ciclo de facturación y se factura al momento. No se reembolsará si un LUN de bloque se suprime antes de finalizar el ciclo de facturación. La facturación mensual es una buena opción para el almacenamiento utilizado en cargas de trabajo de producción que utilizan datos que tienen que almacenarse, y por tanto acceder a ellos, durante largo periodos de tiempo (un mes o más).
 
      El tipo de facturación mensual se utiliza de forma predeterminada para el almacenamiento suministrado en centros de datos que **no** están actualizados con prestaciones mejoradas.
      {:note}
-4. Especifique el tamaño de almacenamiento en el campo **Nuevo tamaño de almacenamiento**.
-5. Seleccione **Resistencia (IOPS en niveles)** en la sección **Opciones de IOPS de almacenamiento**.
+4. Especifique el tamaño de almacenamiento en el campo **Tamaño**.
+5. Seleccione **Resistencia (IOPS en niveles)**.
 6. Seleccione el nivel de IOPS que necesita la aplicación.
     - **0,25 IOPS por GB** está diseñado para cargas de trabajo con intensidad baja de E/S. Estas cargas de trabajo se suelen caracterizar por tener un porcentaje elevado de datos inactivos en un momento. Aplicaciones de ejemplo incluyen el almacenamiento de buzones o el uso compartido de archivos a nivel departamental.
     - **2 IOPS por GB** está diseñado para usos de finalidad más general. Entre las aplicaciones de ejemplo, se incluye el alojamiento de bases de datos pequeñas que respaldan aplicaciones web o imágenes de disco de máquinas virtuales para un hipervisor.
     - **4 IOPS por GB** está diseñado para cargas de trabajo de mayor intensidad. Estas cargas de trabajo se suelen caracterizar por tener un porcentaje alto de datos activos en un momento. Entre las aplicaciones de ejemplo, se incluyen las bases de datos transaccionales y otras bases de datos que dependen del rendimiento.
     - **10 IOPS por GB** está diseñado para las cargas de trabajo más exigentes, como las creadas por bases de datos NoSQL y el proceso de datos para Analytics. Este nivel está disponible para almacenamiento suministrado de hasta 4 TB en [centros de datos seleccionados](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
-7. Pulse **Especificar tamaño de espacio para instantáneas** y seleccione el tamaño de instantánea en la lista. Este espacio se añade al espacio utilizable. Para consultar consideraciones y recomendaciones sobre el espacio de instantáneas, consulte [Solicitud de instantáneas](/docs/infrastructure/FileStorage?topic=FileStorage-ordering-snapshots).
+7. Pulse el campo debajo de **Espacio de instantáneas** y seleccione el tamaño de la instantánea en la lista. Este espacio se añade al espacio utilizable. Para consultar consideraciones y recomendaciones sobre el espacio de instantáneas, consulte [Solicitud de instantáneas](/docs/infrastructure/FileStorage?topic=FileStorage-ordering-snapshots).
 8. A la derecha, revise el resumen de su pedido y aplique el código promocional si tiene uno.
 
    Los descuentos se aplican cuando se procesa el pedido.
@@ -62,16 +62,16 @@ De forma predeterminada, puede suministrar un total combinado de 250 volúmenes 
 1. Inicie la sesión en el [catálogo de {{site.data.keyword.cloud}}](https://{DomainName}/catalog){: external} y pulse **Almacenamiento**. A continuación seleccione {{site.data.keyword.filestorage_short}}. Pulse **Crear**.
 2. Pulse **Ubicación** y seleccione el centro de datos.
    - Asegúrese de que el nuevo almacenamiento se añada en la misma ubicación que el host o los hosts de cálculo que tiene.
-3. Facturación. Si ha seleccionado un centro de datos con prestaciones mejoradas (marcados con un asterisco), podrá elegir entre facturación mensual o por horas.
+3. Método de facturación. Si ha seleccionado un centro de datos con prestaciones mejoradas (marcados con un asterisco), podrá elegir entre facturación mensual o por horas.
      1. Con la facturación **por hora**, el número de horas que el volumen de bloque ha existido en la cuenta se calcula en el momento en que se suprime el LUN o al final del ciclo de facturación. Lo que se produzca primero. La facturación por horas es una buena opción para el almacenamiento que se utiliza unos pocos días o menos de un mes completo. La facturación por horas solo está disponible para el almacenamiento suministrado en estos [centros de datos seleccionados](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
      2. Con la **facturación mensual**, el cálculo del precio se prorratea desde la fecha de creación hasta la finalización del ciclo de facturación y se factura al momento. No se reembolsará si un LUN de bloque se suprime antes de finalizar el ciclo de facturación. La facturación mensual es una buena opción para el almacenamiento utilizado en cargas de trabajo de producción que utilizan datos que tienen que almacenarse, y por tanto acceder a ellos, durante largo periodos de tiempo (un mes o más).
 
      El tipo de facturación mensual se utiliza de forma predeterminada para el almacenamiento suministrado en centros de datos que **no** están actualizados con prestaciones mejoradas.
      {:note}
-4. Especifique el tamaño de almacenamiento en el campo **Nuevo tamaño de almacenamiento**.
-5. Seleccione **Rendimiento (IOPS asignados)** en la sección **Opciones de IOPS de almacenamiento**.
+4. Especifique el tamaño de almacenamiento en el campo **Tamaño**.
+5. Seleccione **Rendimiento (IOPS asignado)**.
 6. Especifique las IOPS en el campo **Rendimiento (IOPS asignado)**.
-7. Pulse **Especificar tamaño de espacio para instantáneas** y seleccione el tamaño de instantánea en la lista. Este espacio se añade al espacio utilizable. Para consultar consideraciones y recomendaciones sobre el espacio de instantáneas, consulte [Solicitud de instantáneas](/docs/infrastructure/FileStorage?topic=FileStorage-ordering-snapshots).
+7. Pulse el campo debajo de **Espacio de instantáneas** y seleccione el tamaño de la instantánea en la lista. Este espacio se añade al espacio utilizable. Para consultar consideraciones y recomendaciones sobre el espacio de instantáneas, consulte [Solicitud de instantáneas](/docs/infrastructure/FileStorage?topic=FileStorage-ordering-snapshots).
 8. A la derecha, revise el resumen de su pedido y aplique el código promocional si tiene uno.
 
    Los descuentos se aplican cuando se procesa el pedido.

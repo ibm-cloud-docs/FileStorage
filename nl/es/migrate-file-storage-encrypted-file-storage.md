@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, upgrade, migrate to new
 
@@ -49,9 +49,13 @@ Su nuevo almacenamiento está preparado para que se monte en pocos minutos. Pued
 
 Los hosts "autorizados" son hosts a los que se les ha otorgado acceso a un volumen. Sin la autorización del host, no puede acceder ni utilizar el almacenamiento de su sistema.
 
-1. Pulse el nombre del nuevo volumen.
-2. Desplácese hasta la sección **Hosts autorizados**.
-3. Pulse el enlace **Autorizar host** en la parte derecha. Seleccione los hosts que pueden acceder al volumen.
+1. En la consola, vaya a **Infraestructura clásica**  > **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**.
+2. Desplácese hasta la compartición de archivo que desea montar y pulse **...** (Acciones). A continuación, seleccione **Autorizar host**.
+3. Filtre la lista de hosts disponibles seleccionando el tipo de dispositivo, la subred o la dirección IP.
+
+   Cuando la lista está filtrada por subred, las subredes que se muestran son subredes suscritas al mismo centro de datos que el volumen de almacenamiento.
+   {:note}
+4. Seleccione uno o más hosts en la lista y pulse **Guardar**.
 
 Una vez autorizado el host, conecte el volumen al host.
 
@@ -85,7 +89,7 @@ Windows**
        [root@server ~]# rsync -Pavzu /path/to/original/file/storage/* /path/to/encrypted/file/storage
        ```
 
-   Es una buena idea utilizar el mandato anterior con el distintivo `--dry-run` una vez para asegurarse de que las vías de acceso se alinean correctamente. Si este proceso se interrumpe, puede suprimir el último archivo de destino que se ha copiado para asegurarse de que se copie en la nueva ubicación desde el principio.
+   Es recomendable utilizar el mandato anterior con el distintivo `--dry-run` una vez para asegurarse de que las vías de acceso se alinean correctamente. Si este proceso se interrumpe, puede suprimir el último archivo de destino que se ha copiado para asegurarse de que se copie en la nueva ubicación desde el principio.
 
    Cuando este mandato finaliza sin el distintivo `--dry-run`, los datos se copian en el nuevo volumen de {{site.data.keyword.filestorage_short}}. Ejecute el mandato de nuevo para asegurarse de que no hace falta nada. También puede revisar manualmente ambas ubicaciones por si se ha omitido algo.
 

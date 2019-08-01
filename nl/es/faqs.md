@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
@@ -149,3 +149,8 @@ No. Actualmente no se da soporte a la aceleración por hardware ni a vStorage fo
 {: faq}
 
 Cuando las unidades quedan fuera de servicio, IBM las destruye antes de desecharlas. Las unidades se vuelven inutilizables. Los datos escritos en dicha unidad se vuelven inaccesibles.
+
+## ¿Cuál es la diferencia entre Migración tras error controlada y Migración tras error inmediata?
+{: faq}
+
+La Migración tras error controlada realiza una última sincronización antes de romper el duplicado. La Migración tras error inmediata rompe el duplicado y activa el volumen de réplica.

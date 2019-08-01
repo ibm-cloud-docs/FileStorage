@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
@@ -27,11 +27,11 @@ Si un error catastrófico o un desastre ocasionan la caída del sitio principal,
 
 1. Inicie la sesión en la [consola de {{site.data.keyword.cloud}}](https://{DomainName}/){: external} y pulse el icono de **menú** de la parte superior izquierda. Seleccione **Infraestructura clásica**.
 2. Pulse **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**.
-3. Pulse en la réplica de la compartición de archivos de la lista para visualizar su página de **Detalles**.
-4. En la página **Detalles**, desplácese hacia abajo y seleccione una instantánea existente; luego pulse **Acciones** > **Duplicar**.
+3. Pulse el nombre de la réplica de la compartición de archivos de la lista.
+4. En la página **Detalle**, desplácese hacia abajo y seleccione una instantánea existente; luego pulse **Acciones** > **Duplicar**.
 5. Realice las actualizaciones necesarias en la capacidad (para aumentar el tamaño) o en IOPS para el nuevo volumen.
 6. Puede actualizar el espacio de instantáneas para el nuevo volumen si es necesario.
-7. Pulse **Continuar** para realizar el orden de los duplicados.
+7. Pulse **Realizar pedido** para suministrar el duplicado.
 
 Tan pronto como se haya creado el volumen podrá adjuntarlo a un host y realizar operaciones de lectura/escritura sobre dicho volumen. Mientras los datos se estén copiando desde el volumen original en el duplicado, puede ver un estado en la página de detalles que muestra que la duplicación está en curso. Cuando se complete el proceso de duplicación, el nuevo volumen pasa a ser independiente del original y se puede gestionar con instantáneas y réplica, como es habitual.
 
@@ -59,6 +59,6 @@ Una vez finalizada la réplica, tiene que crear un volumen duplicado de la nueva
 3. En la página **Detalles**, desplácese hacia abajo y seleccione una instantánea existente; luego pulse **Acciones** > **Duplicar**.
 4. Realice las actualizaciones necesarias en la capacidad (para aumentar el tamaño) o en IOPS para el nuevo volumen.
 5. Actualice el espacio de instantánea para el nuevo volumen si es necesario.
-6. Pulse **Continuar** para realizar el orden de los duplicados.
+6. Pulse **Realizar pedido** para suministrar el duplicado.
 
 Cuando finalice el proceso de duplicación, puede cancelar la réplica y los volúmenes utilizados para devolver los datos al sitio primario original. El duplicado se convierte en el almacenamiento primario y se puede volver a establecer la réplica en el sitio secundario original.

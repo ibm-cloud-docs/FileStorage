@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, duplicate volume
 
@@ -21,6 +21,7 @@ subcollection: FileStorage
 Puede crear un duplicado de un {{site.data.keyword.cloud}} {{site.data.keyword.filestorage_full}} existente. El volumen duplicado hereda la capacidad y las opciones de rendimiento del volumen original de forma predeterminada y tiene una copia de los datos hasta el momento de la instantánea.   
 
 Como el duplicado se basa en los datos en el momento específico de una instantánea, se necesita espacio de instantáneas en el volumen original antes de crear un duplicado. Para obtener más información sobre las instantáneas y cómo solicitar espacio de instantáneas, consulte la [documentación de instantáneas](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots).  
+{:important}
 
 Los duplicados pueden crearse a partir de volúmenes **primarios** y **de réplica**. El nuevo duplicado se crea en el mismo centro de datos que el volumen original. Si crea un duplicado a partir de un volumen de réplica, el nuevo volumen se crea en el mismo centro de datos que el volumen de réplica.
 
@@ -44,14 +45,13 @@ Puede crear un volumen duplicado a través de la [consola de {{site.data.keyword
 
 ## Creación de un duplicado a partir de un volumen específico en la lista de almacenamiento
 
-1. Vaya a su lista de {{site.data.keyword.filestorage_short}}
-    - Desde el menú de Infraestructura clásica, pulse **Almacenamiento** > **{{site.data.keyword.filestorage_short}}** O BIEN
-    - Desde el catálogo de {{site.data.keyword.cloud}}, pulse **Infraestructura** > **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**.
-2. Seleccione un volumen de la lista y pulse **Acciones** > **Duplicar volumen (Volumen)**
+1. Vaya a su lista de {{site.data.keyword.filestorage_short}}. Desde el menú **Infraestructura clásica**, pulse **Almacenamiento** > **{{site.data.keyword.filestorage_short}}**.
+2. Localice y pulse el nombre de volumen.
+3. Pulse **Acciones** > **Duplicar volumen**
 3. Elija la opción de instantánea.
     - Si solicita desde un volumen sin réplica:
-      - Seleccione **Crear desde nueva instantánea**: Esta acción crea una instantánea que se utilizará para el duplicado. Utilice esta opción si actualmente el volumen no tiene instantáneas o si desea crear un duplicado inmediatamente.</br>
-      - Seleccione **Crear desde la última instantánea**: Esta acción crea un duplicado desde la instantánea más reciente que exista para este volumen.
+      - Seleccione **Crear una nueva instantánea para clonar**: Esta acción crea una instantánea que se utilizará para el duplicado. Utilice esta opción si actualmente el volumen no tiene instantáneas o si desea crear un duplicado inmediatamente.</br>
+      - Seleccione **Utilizar la última instantánea para clonar LUN**: Esta acción crea un duplicado desde la instantánea más reciente que exista para este volumen.
     - Si se solicita desde un volumen de réplica, la única opción para las instantáneas es utilizar la instantánea más reciente disponible.
 4. El tipo de almacenamiento y la ubicación siguen siendo los mismos que el volumen original.
 5. Facturación mensual o por horas: puede elegir si suministrar el nuevo volumen duplicado con facturación mensual o por horas. El tipo de facturación para el volumen original se selecciona automáticamente. Si quiere elegir otro tipo de facturación para el almacenamiento de duplicado, puede seleccionarlo aquí.
@@ -80,7 +80,7 @@ Puede crear un volumen duplicado a través de la [consola de {{site.data.keyword
    {{site.data.keyword.filestorage_short}} se puede redimensionar hasta 10 veces el tamaño original del volumen.
    {:tip}
 7. Puede actualizar el espacio de instantáneas para el nuevo volumen para añadir más, menos o ningún espacio de instantáneas. El espacio de instantáneas del volumen original se establece de forma predeterminada.
-8. Pulse **Continuar** para realizar el orden de los duplicados.
+8. Pulse **Realizar pedido** para suministrar el duplicado.
 
 ## Creación de un duplicado mediante SLCLI
 ```
