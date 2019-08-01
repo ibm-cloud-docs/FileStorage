@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, modify volume, NFS, file storage, expand capacity
 
@@ -45,11 +45,14 @@ Les limitations de taille existantes pour le stockage {{site.data.keyword.filest
 {: #resizingsteps}
 
 1. Accédez à la [console {{site.data.keyword.cloud}}](https://{DomainName}/){: external}. Dans le menu, sélectionnez **Infrastructure classique**. Cliquez sur **Stockage** > **{{site.data.keyword.filestorage_short}}**.
-2. Sélectionnez le volume dans la liste et cliquez sur **Actions** > **Modifier le volume**
+2. Sélectionnez le volume dans la liste, cliquez sur **...** puis sélectionnez l'option de modification de partage****
 3. Entrez la nouvelle taille de stockage en Go.
 4. Vérifiez votre sélection et la nouvelle tarification.
 5. Cliquez sur **J'ai lu et j'accepte l'intégralité du Contrat cadre de service**, puis sur **Passer une commande**.
 6. Votre nouvelle allocation de stockage est disponible en quelques minutes.
+
+Pour que le système d'exploitation reconnaisse l'espace de stockage supplémentaire, démontez et montez à nouveau le volume modifié.
+{:tip}
 
 Vous pouvez également utiliser la commande suivante dans l'interface SLCLI.
 ```

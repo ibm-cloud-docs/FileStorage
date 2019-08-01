@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
@@ -28,11 +28,15 @@ Les hôtes et les volumes autorisés doivent figurer dans le même centre de don
 {:note}
 
 1. Connectez-vous à la [console {{site.data.keyword.cloud}}](https://{DomainName}/catalog){: external} et cliquez sur l'icône **menu** dans l'angle supérieur gauche. Sélectionnez **Infrastructure classique**.
-2. Cliquez sur votre volume source ou cible à partir de la page **{{site.data.keyword.filestorage_short}}**.
+2. Recherchez le volume source ou cible dans la liste **{{site.data.keyword.filestorage_short}}**.
 3. Cliquez sur **Réplique**.
-4. Faites défiler l'écran vers le bas jusqu'au cadre **Autoriser les hôtes** et cliquez sur **Autoriser les hôtes** à droite.
-5. Mettez en évidence l'hôte qui doit être autorisé pour les réplications. Pour sélectionner plusieurs hôtes, utilisez la touche ctrl et cliquez sur les hôtes concernés.
-6. Cliquez sur **Soumettre**. En l'absence d'hôte, vous êtes invité à acheter des ressources de calcul dans le même centre de données.
+4. Faites défiler l'écran jusqu'au cadre **Autoriser les hôtes** puis cliquez sur **Hôte autorisé** à droite.
+5. Filtrez la liste des hôtes disponibles en sélectionnant le type de périphérique, le sous-réseau ou l'adresse IP.
+
+   Lorsque la liste est filtrée par sous-réseau, les sous-réseaux affichés sont souscrits dans le même centre de données que le volume de stockage.
+   {:note}
+6. Mettez en évidence l'hôte qui doit être autorisé pour les réplications. Pour sélectionner plusieurs hôtes, utilisez la touche ctrl et cliquez sur les hôtes concernés.
+6. Cliquez sur **Enregistrer**. En l'absence d'hôte, vous êtes invité à acheter des ressources de calcul dans le même centre de données.
 
 ## Démarrage d'un basculement depuis un volume vers sa réplique
 
@@ -44,10 +48,10 @@ Avant d'exécuter ces étapes, déconnectez le volume. Si vous omettez cette ét
 {:important}
 
 1. Cliquez sur votre volume actif ("source").
-2. Dans l'angle supérieur droit, cliquez sur **Réplique**, puis sur **Actions**.
-3. Sélectionnez **Basculement**.
+2. Dans la partie supérieure droite, cliquez sur **Actions**.
+3. Sélectionnez **Basculement contrôlé**.
 
-   Un message doit s'afficher pour vous indiquer que le basculement est en cours. En outre, une icône apparaît en regard de votre volume sur **{{site.data.keyword.filestorage_short}}** pour indiquer qu'une transaction active est en cours. Survolez cette icône pour ouvrir une boîte de dialogue affichant la transaction. L'icône disparaît une fois la transaction terminée. Durant le processus de basculement, les actions liées à la configuration sont accessibles en lecture seule. Vous ne pouvez pas éditer de planning d'instantané, ni modifier l'espace d'instantané. L'événement est consigné dans l'historique des réplications.<br/> Lorsque le volume cible est opérationnel, vous obtenez un autre message. Le nom de volume de votre volume source d'origine est mis à jour afin de se terminer par "REP" et son statut passe à Inactif.
+   Un message doit s'afficher pour vous indiquer que le basculement est en cours. En outre, une icône apparaît en regard de votre volume sur **{{site.data.keyword.filestorage_short}}** pour indiquer qu'une transaction active est en cours. Survolez cette icône pour ouvrir une boîte de dialogue affichant la transaction. L'icône disparaît une fois la transaction terminée. Durant le processus de basculement, les actions liées à la configuration sont accessibles en lecture seule. Vous ne pouvez pas éditer de planning d'instantané, ni modifier l'espace d'instantané. L'événement est consigné dans l'historique des réplications.<br/> Lorsque le volume cible est opérationnel, vous obtenez un autre message. Le statut du volume source d'origine devient Inactif.
    {:note}
 4. Cliquez sur **Tout afficher ({{site.data.keyword.filestorage_short}})**.
 5. Cliquez sur votre volume actif (anciennement votre volume cible). Ce volume a désormais le statut **Actif**.
@@ -70,10 +74,10 @@ Les reprises par restauration sont démarrées sous **Stockage**, **{{site.data.
 
 1. Cliquez sur votre volume actif ("cible").
 2. Dans l'angle supérieur droit, cliquez sur **Réplique**, puis sur **Actions**.
-3. Sélectionnez **Reprise par restauration**.
+3. Sélectionnez **Basculement contrôlé**.
 
    Un message doit s'afficher pour vous indiquer que la reprise par restauration est en cours. En outre, une icône apparaît en regard de votre volume sur **{{site.data.keyword.filestorage_short}}** pour indiquer qu'une transaction active est en cours. Survolez cette icône pour ouvrir une boîte de dialogue affichant la transaction. L'icône disparaît une fois la transaction terminée. Durant le processus de reprise par restauration, les actions liées à la configuration sont accessibles en lecture seule. Vous ne pouvez pas éditer de planning d'instantané, ni modifier l'espace d'instantané. L'événement est consigné dans l'historique des réplications.
    {:note}
 4. Dans l'angle supérieur droit, cliquez sur **Afficher tout {{site.data.keyword.filestorage_short}}**.
-5. Cliquez sur votre volume actif ("source").
+5. Cliquez sur votre volume actif ("source"). Ce volume a désormais le statut **Inactif**.
 6. Montez votre volume de stockage sur l'hôte et associez-les. Pour plus d'informations, voir [Connexion de votre nouveau stockage](/docs/infrastructure/FileStorage?topic=FileStorage-getting-started#mountingstorage).

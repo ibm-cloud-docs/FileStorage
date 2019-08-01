@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, upgrade, migrate to new
 
@@ -49,9 +49,13 @@ Votre nouveau stockage est disponible pour montage en quelques minutes. Il figur
 
 Les hôtes "autorisés" sont des hôtes auxquels des droits d'accès à un volume ont été accordés. Sans autorisation d'hôte, vous ne pouvez pas accéder au stockage ni l'utiliser depuis votre système.
 
-1. Cliquez sur le nom de votre nouveau volume.
-2. Faites défiler l'écran jusqu'à la section **Hôtes autorisés**.
-3. Cliquez sur le lien **Hôte autorisé** sur le côté droit. Sélectionnez les hôtes qui peuvent accéder à ce volume.
+1. Dans la console, sélectionnez **Infrastructure classique**  > **Stockage** > **{{site.data.keyword.filestorage_short}}**
+2. Faites défiler l'écran jusqu'au partage de fichiers à monter puis cliquez sur **...** (Actions). Sélectionnez ensuite **Hôte autorisé**.
+3. Filtrez la liste des hôtes disponibles en sélectionnant le type de périphérique, le sous-réseau ou l'adresse IP.
+
+   Lorsque la liste est filtrée par sous-réseau, les sous-réseaux affichés sont souscrits dans le même centre de données que le volume de stockage.
+   {:note}
+4. Sélectionnez un ou plusieurs hôtes dans la liste puis cliquez sur **Sauvegarder**.
 
 Une fois l'autorisation accordée à l'hôte, connectez le volume à votre hôte.
 

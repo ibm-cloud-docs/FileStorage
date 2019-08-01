@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, duplicate volume
 
@@ -21,6 +21,7 @@ subcollection: FileStorage
 Vous pouvez créer un doublon d'un {{site.data.keyword.cloud}} {{site.data.keyword.filestorage_full}} existant. Le volume dupliqué hérite par défaut des options de capacité et de performance du volume d'origine et contient une copie des données jusqu'au point de cohérence d'un instantané.   
 
 Etant donné que le volume dupliqué est basé sur les données d'un instantané de point de cohérence, vous devez disposer d'un espace d'instantané sur le volume d'origine avant de créer un doublon. Pour en savoir plus sur les instantanés et la commande d'espace d'instantané, consultez la [documentation relative aux instantanés](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots).  
+{:important}
 
 Vous pouvez créer des doublons à partir d'un volume **principal** et d'un volume de **réplique**. Le nouveau doublon est créé dans le même centre de données que le volume d'origine. Si vous créez un doublon à partir d'un volume de réplique, le nouveau volume est créé dans le même centre de données que le volume de réplique.
 
@@ -44,14 +45,13 @@ Il existe deux manières de créer un volume dupliqué via la [console {{site.da
 
 ## Création d'un doublon à partir d'un volume spécifique dans la liste de stockage
 
-1. Accédez à votre liste de {{site.data.keyword.filestorage_short}}
-    - Depuis le menu Infrastructure classique, cliquez sur **Stockage** > **{{site.data.keyword.filestorage_short}}** OU
-    - A partir du catalogue {{site.data.keyword.cloud}}, cliquez sur **Infrastructure** > **Stockage** > **{{site.data.keyword.filestorage_short}}**.
-2. Sélectionnez un volume dans la liste et cliquez sur **Actions** > **Dupliquer volume (volume)**
+1. Accédez à votre liste de {{site.data.keyword.filestorage_short}}. Dans le menu **Infrastructure classique**, cliquez sur **Stockage** > **{{site.data.keyword.filestorage_short}}**.
+2. Recherchez le nom du volume et cliquez dessus.
+3. Cliquez sur **Actions** puis sélectionnez l'option de duplication de volume****
 3. Sélectionnez une option d'instantané.
     - Si vous effectuez votre commande à partir d'un volume qui n'est pas un volume de réplique, procédez comme suit :
-      - Sélectionnez **Créer à partir d'un nouvel instantané** pour créer un nouvel instantané qui sera utilisé pour le volume dupliqué. Utilisez cette option s'il n'existe aucun instantané pour votre volume ou si vous souhaitez créer un doublon à ce point de cohérence.</br>
-      - Sélectionnez **Créer à partir du dernier instantané** pour créer un doublon à partir du dernier instantané existant pour ce volume.
+      - Sélectionnez l'option permettant de créer un instantané à cloner**** – Cette action crée un instantané à utiliser pour le doublon. Utilisez cette option s'il n'existe aucun instantané pour votre volume ou si vous souhaitez créer un doublon à ce point de cohérence.</br>
+      - Sélectionnez l'option d'utilisation du dernier instantané pour cloner le volume**** – Cette action crée un doublon à partir du dernier instantané de ce volume.
     - Si vous effectuez votre commande à partir d'un volume de réplique, l'unique option d'instantané est d'utiliser le dernier instantané disponible.
 4. Le type de stockage et l'emplacement restent identiques à ce qui est indiqué pour le volume d'origine.
 5. Facturation à l'heure ou au mois - vous pouvez choisir de mettre à disposition le volume dupliqué avec une facturation à l'heure ou au mois. Le type de facturation pour le volume d'origine est automatiquement sélectionné. Si vous voulez en choisir un autre pour votre stockage en double, vous pouvez le sélectionner ici.
@@ -80,7 +80,7 @@ Il existe deux manières de créer un volume dupliqué via la [console {{site.da
    Le redimensionnement de {{site.data.keyword.filestorage_short}} est soumis à la limite de 10 fois la taille du volume d'origine.
    {:tip}
 7. Vous pouvez mettre à jour l'espace d'instantané pour le nouveau volume en ajoutant plus, moins ou pas du tout d'espace d'instantané. L'espace d'instantané du volume d'origine est défini par défaut.
-8. Cliquez sur **Continuer** pour passer votre commande du doublon.
+8. Cliquez sur **Passer une commande** pour mettre le doublon à disposition.
 
 ## Création d'un doublon via l'interface SLCLI
 ```

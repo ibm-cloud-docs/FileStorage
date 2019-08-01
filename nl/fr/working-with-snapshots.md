@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, snapshots, snapshot schedule, manual snapshot, snapshot space, snapshot quota
 
@@ -80,7 +80,7 @@ Options:
 
 ## Affichage de la liste de tous les instantanés avec les informations relatives à l'espace utilisé et les fonctions de gestion
 
-La liste des instantanés conservés et l'espace qui est utilisé figurent sur la page **Détails** (**Stockage** **{{site.data.keyword.filestorage_short}}**). Les fonctions de gestion (édition des plannings et ajout d'espace supplémentaire) sont réalisées sur la page Détail à l'aide du menu **Actions** ou des liens qui figurent dans les différentes sections de la page.
+La liste des instantanés conservés et l'espace qui est utilisé figurent sur la page **Détails** (**Stockage** **{{site.data.keyword.filestorage_short}}**). Les fonctions de gestion (édition des plannings et ajout d'espace supplémentaire) sont réalisées sur la page **Détails** à l'aide du menu **Actions** ou des liens qui figurent dans les différentes sections de la page.
 
 Vous pouvez également réaliser cette tâche via l'interface SLCLI.
 ```
@@ -110,7 +110,7 @@ L'espace d'instantané peut uniquement être augmenté. Il est impossible de le 
 
 L'espace d'instantané est modifié via **Stockage** > **{{site.data.keyword.filestorage_short}}**.
 
-1. Cliquez sur vos volumes de stockage, cliquez sur **Actions**, puis sur **Ajouter de l'espace d'instantané supplémentaire**.
+1. Cliquez sur vos volumes de stockage, sur **Actions** puis sur **Modifier l'espace d'instantané**.
 2. Effectuez votre choix dans la plage de tailles présentée par l'invite. Les tailles vont généralement de 0 à la taille de votre volume.
 3. Cliquez sur **Continuer**.
 4. Entrez un code promo le cas échéant et cliquez sur **Recalculer**. Les zones Prix pour cette commande et Vérification de la commande sont renseignées par défaut.
@@ -150,7 +150,7 @@ Options:
   -h, --help  Show this message and exit.
 ```
 
-Les instantanés manuels qui ne sont pas supprimés manuellement dans le portail sont automatiquement supprimés lorsque vous atteignez les limites en termes d'espace (le plus ancien d'abord).
+Les instantanés manuels qui ne sont pas supprimés manuellement dans le portail sont automatiquement supprimés lorsque vous atteignez les limites en termes d'espace. L'instantané le plus ancien est supprimé en premier.
 {:note}
 
 ## Restauration de volume de stockage à un point de cohérence spécifique à l'aide d'un instantané

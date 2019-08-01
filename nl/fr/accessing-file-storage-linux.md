@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, NSF, mounting File Storage, mounting storage on Linux,
 
@@ -20,8 +20,13 @@ subcollection: FileStorage
 
 Commencez par vérifier que l'hôte qui doit accéder au volume {{site.data.keyword.filestorage_full}} est autorisé via la [console {{site.data.keyword.cloud}}](https://{DomainName}/classic){: external}.
 
-1. Sur la page de la liste de {{site.data.keyword.filestorage_short}}, cliquez sur le lien **Actions** associée au nouveau partage, puis cliquez sur **Hôte autorisé**.
-2. Sélectionnez le ou les hôtes dans la liste, puis cliquez sur **Soumettre**. L'hôte est ainsi autorisé à accéder au partage.
+1. Dans la console, sélectionnez **Infrastructure classique**  > **Stockage** > **{{site.data.keyword.filestorage_short}}**
+2. Faites défiler l'écran jusqu'au partage de fichiers à monter puis cliquez sur **...** (Actions). Sélectionnez ensuite **Hôte autorisé**.
+3. Filtrez la liste des hôtes disponibles en sélectionnant le type de périphérique, le sous-réseau ou l'adresse IP.
+
+   Lorsque la liste est filtrée par sous-réseau, les sous-réseaux affichés sont souscrits dans le même centre de données que le volume de stockage.
+   {:note}
+4. Sélectionnez un ou plusieurs hôtes dans la liste puis cliquez sur **Sauvegarder**.
 
 Vous pouvez également autoriser les hôtes via l'interface SLCLI.
 ```

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
@@ -118,15 +118,15 @@ Le stockage est mis à disposition en moins d'une minute et devient visible sur 
 
 Une fois qu'un volume est mis à disposition, les serveurs {{site.data.keyword.BluBareMetServers_full}} ou {{site.data.keyword.BluVirtServers_full}} qui vont utiliser le volume doivent être autorisés à accéder au stockage. Pour autoriser le volume, procédez comme suit :
 
-1. Cliquez sur **Stockage** > **{{site.data.keyword.filestorage_short}}**.
-2. Sélectionnez **Accès à l'hôte** dans le menu Actions du volume **Endurance** ou **Performance**.
+1. Dans la console, sélectionnez **Infrastructure classique**  > **Stockage** > **{{site.data.keyword.filestorage_short}}**
+2. Faites défiler l'écran jusqu'au partage de fichiers à monter puis cliquez sur **...** (Actions). Sélectionnez ensuite **Hôte autorisé**.
 3. Cliquez sur **Sous-réseaux**.
-4. Effectuez votre choix dans la liste des sous-réseaux disponibles affectés aux ports VMkernel sur les hôtes ESXi, puis cliquez sur **Soumettre**.<br/>
+4. Effectuez votre choix dans la liste des sous-réseaux disponibles affectés aux ports VMkernel sur les hôtes ESXi, puis cliquez sur **Sauvegarder**.<br/>
 
    Les sous-réseaux affichés sont des sous-réseaux souscrits dans le même centre de données que le volume de stockage.
    {:note}
 
-Une fois les sous-réseaux autorisés, notez le nom d'hôte du serveur de stockage Endurance ou Performance que vous souhaitez utiliser lors du montage du volume. Vous pouvez trouver ces informations sur la page de détails de {{site.data.keyword.filestorage_short}} en cliquant sur un volume spécifique.
+Une fois les sous-réseaux autorisés, notez le nom d'hôte du serveur de stockage. Cette information est disponible sur la page de détails de {{site.data.keyword.filestorage_short}} du volume.
 
 
 ##  Configuration de l'hôte de machine virtuelle VMware

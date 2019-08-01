@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
@@ -149,3 +149,8 @@ Non. Actuellement, vStorage for API Array Integration (VAAI) et l'accélération
 {: faq}
 
 Lorsque des unités sont déclassées, IBM les détruit avant de les supprimer. Elles sont ainsi inutilisables. Toutes les données qui étaient écrites sur ces unités deviennent inaccessibles.
+
+## Quelle est la différence entre le basculement contrôlé et le basculement immédiat ?
+{: faq}
+
+Le basculement contrôlé effectue une dernière synchronisation avant d'interrompre la fonction miroir. Le basculement immédiat interrompt immédiatement la fonction miroir et active le volume de réplique.

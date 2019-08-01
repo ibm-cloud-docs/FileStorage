@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, replication, duplication, synchronous, replica schedule, replica space, disaster recovery
 
@@ -45,7 +45,7 @@ Pour obtenir la liste complète de la disponibilité des centres de données et 
 Les réplications fonctionnent selon un planning d'instantané. Vous devez d'abord configurer un espace d'instantané et un planning d'instantané pour le volume source avant de pouvoir répliquer. Si vous tentez de configurer la réplication alors que l'espace d'instantané ou le planning d'instantané n'existe pas, vous serez invité à acheter davantage d'espace ou à configurer un planning. Les réplications sont gérées sous **Stockage** > **{{site.data.keyword.filestorage_short}}** dans la [console {{site.data.keyword.cloud}}](https://{DomainName}/classic){: external}.
 
 1. Cliquez sur votre volume de stockage.
-2. Cliquez sur **Réplique**, puis sur **Acheter une réplication**.
+2. Cliquez sur **Réplique** puis sur l'option permettant d'acheter une réplication****.
 3. Sélectionnez le planning d'instantané existant que vous souhaitez que votre réplication suive. La liste contient tous vos plannings d'instantané actifs. <br />
 
    Vous ne pouvez sélectionner qu'un seul planning, même si vous combinez des réplications horaires, quotidiennes et hebdomadaires. Tous les instantanés qui ont été capturés depuis le cycle de réplication précédent sont répliqués quel que soit leur planning d'origine.<br />Si vous n'avez pas configuré d'instantanés, vous êtes invité à le faire avant de pouvoir commander la réplication. Pour plus d'informations, voir [Gestion des instantanés](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots).
@@ -92,9 +92,10 @@ Votre espace d'instantané principal et votre espace de réplique doivent être 
 Les tailles des volumes de stockage principal et de réplique doivent être identiques. Il n'est pas possible que l'un soit plus grand que l'autre. Lorsque vous augmentez votre espace d'instantané dans le volume principal, l'espace de réplique est automatiquement augmenté. L'augmentation de l'espace d'instantané déclenche une mise à jour immédiate de la réplication. L'augmentation des deux volumes apparaît sous forme de lignes d'article dans votre facture et est calculée au prorata si nécessaire.
 
 Pour plus d'informations sur l'augmentation de l'espace d'instantané, voir [Instantanés](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots).
+
 ## Affichage des volumes de réplique dans la liste de volumes
 
-Vous pouvez afficher vos volumes de réplication sur la page {{site.data.keyword.filestorage_short}} sous **Stockage** > **{{site.data.keyword.filestorage_short}}**. La zone Nom de volume indique le nom du volume principal, suivi de REP. Le **Type** est Endurance ou Performance – Réplique. L'**Adresse cible** est Sans objet car le volume de réplique n'est pas monté sur le centre de données de réplique, et le **Statut** indique Inactif.
+Vous pouvez afficher vos volumes de réplication sur la page {{site.data.keyword.filestorage_short}} sous **Stockage** > **{{site.data.keyword.filestorage_short}}**. La zone Nom de volume indique le nom du volume principal, suivi de REP. Le **Type** est Endurance ou Performance – Réplique.
 
 
 ## Affichage des détails d'un volume répliqué dans le centre de données de la réplique

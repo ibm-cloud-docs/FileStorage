@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-25"
 
 keywords: File Storage, file storage, NFS, authorizing hosts, rewoke access, grant access, view authorizations
 
@@ -31,7 +31,12 @@ Vous pouvez autoriser et connecter des hôtes qui se trouvent dans le même cent
 1. Accédez à la [console {{site.data.keyword.cloud}}](https://{DomainName}/){: external}. Dans le menu, sélectionnez **Infrastructure classique**.
 2. Cliquez sur **Stockage** > **{{site.data.keyword.filestorage_short}}**, puis sur **Nom de volume**.
 3. Faites défiler l'écran jusqu'à la section **Hôtes autorisés** de la page.
-4. Cliquez sur **Hôte autorisé** sur le côté droit. Sélectionnez les hôtes qui peuvent accéder à ce volume en particulier.
+4. Cliquez sur **Hôte autorisé** sur le côté droit.
+5. Filtrez la liste des hôtes disponibles en sélectionnant le type de périphérique, le sous-réseau ou l'adresse IP.
+
+   Lorsque la liste est filtrée par sous-réseau, les sous-réseaux affichés sont souscrits dans le même centre de données que le volume de stockage.
+   {:note}
+6. Sélectionnez un ou plusieurs hôtes dans la liste puis cliquez sur **Sauvegarder**.
 
 Vous pouvez également utiliser la commande suivante dans l'interface SLCLI.
 ```
@@ -144,7 +149,7 @@ Si vous n'avez plus besoin d'un volume spécifique, vous pouvez annuler ce stock
 1. Accédez à la [console {{site.data.keyword.cloud}}](https://{DomainName}/){: external}. Dans le menu, sélectionnez **Infrastructure classique**.
 2. Cliquez sur **Stockage** > **{{site.data.keyword.filestorage_short}}**.
 3. Cliquez sur **Actions** correspondant au volume à annuler et sélectionnez **Annuler {{site.data.keyword.filestorage_short}}**.
-4. Confirmez l'annulation du volume de manière immédiate ou à la date anniversaire de la mise à disposition du volume.
+4. Indiquez si vous souhaitez que le volume soit annulé immédiatement ou à la date anniversaire de sa mise à disposition.
 
    Si vous sélectionnez l'option d'annulation du volume à sa date anniversaire, vous pouvez annuler la demande d'annulation avant sa date anniversaire.
    {:tip}
@@ -162,3 +167,8 @@ Options:
                  billing anniversary
   -h, --help     Show this message and exit.
 ```
+
+Une fois le volume annulé, vous disposez de 24 heures pour effectuer une réclamation. Le volume est toujours visible dans la console pendant cette période. Une fois que cette dernière arrive à expiration, les données sont détruites et le volume est retiré de la console. La facturation du volume s'arrête alors immédiatement. Pour plus d'informations, consultez la [foire aux questions](/docs/infrastructure/FileStorage?topic=FileStorage-file-storage-faqs).
+{:note}
+
+ Les répliques actives peuvent bloquer la réclamation du volume de stockage. Assurez-vous que le volume n'est plus monté, que les autorisations d'hôte sont révoquées, et que la réplication a été annulée avant de tenter d'annuler le volume d'origine.
