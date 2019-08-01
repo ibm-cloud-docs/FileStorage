@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-08-01"
 
 keywords: File Storage, file storage, NSF, networking, jumbo frames
 
@@ -18,26 +18,13 @@ subcollection: FileStorage
 {:DomainName: data-hd-keyref="DomainName"}
 
 
-# Habilitación de tramas Jumbo en {{site.data.keyword.BluSoftlayer_notm}} para Windows y Linux
+# Habilitación de tramas Jumbo en {{site.data.keyword.BluSoftlayer_notm}}
 {: #jumboframes}
 
 Una trama Jumbo es una trama de Ethernet con una carga útil superior a la unidad de transmisión máxima (MTU) estándar de 1.500 bytes. Las tramas Jumbo se utilizan en redes de área local que dan soporte como mínimo a 1 Gbps y pueden alcanzar un tamaño de 9.000 bytes.
 
 Las tramas Jumbo deben configurarse igual en toda la vía de acceso de la red desde el dispositivo de origen <-> conmutador <-> direccionador <-> conmutador <-> dispositivo de destino. Si toda la cadena no se define igual, se establece el valor predeterminado más bajo en toda la cadena. {{site.data.keyword.cloud}} tiene los dispositivos de red establecidos en 9.000. Todos los dispositivos del cliente deben establecerse en el mismo valor de 9.000.
 {:important}
-
-## Habilitación de tramas Jumbo en Windows
-
-1. Abra el **Centro de redes y recursos compartidos**.
-2. Pulse **Cambiar configuración del adaptador**.
-3. Pulse con el botón derecho del ratón el NIC para el cual desea habilitar las tramas Jumbo y seleccione **Propiedades**.
-4. En el separador **Redes**, pulse **Configurar** para el adaptador de red.
-5. Seleccione el separador **Avanzado**.
-6. Seleccione **Trama Jumbo** y cambie el valor de **inhabilitado** al valor que desee. El valor, como 9 kB o 9014 Bytes, depende del NIC.
-7. Pulse **Aceptar** en todas las ventanas.
-
-Cuando realice el cambio, el NIC pierde la conectividad de red durante unos segundos. Reinicie el dispositivo para confirmar que el cambio ha entrado en vigor.
-{:tip}
 
 
 ## Habilitación de tramas Jumbo en Linux
@@ -71,3 +58,4 @@ Cuando realice el cambio, el NIC pierde la conectividad de red durante unos segu
    {: pre}
 
    Esta acción causa una breve pérdida de conexión de red.
+   {:important}
