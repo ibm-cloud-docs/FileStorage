@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
@@ -117,15 +117,15 @@ VMware 環境はスナップショットを認識しないことに注意して�
 
 ボリュームがプロビジョンされたら、そのボリュームを使用する {{site.data.keyword.BluBareMetServers_full}} または {{site.data.keyword.BluVirtServers_full}} に、ストレージへのアクセスを許可する必要があります。 ボリュームを許可するには、以下の手順を実行します。
 
-1. **「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**をクリックします。
-2. **「エンデュランス・ボリューム・アクション (Endurance Volume Actions)」**または**「パフォーマンス・ボリューム・アクション (Performance Volume Actions)」**メニューで**「アクセス・ホスト (Access Host)」**を選択します。
+1. コンソールで、**「クラシック・インフラストラクチャー」**>**「ストレージ」**>**「{{site.data.keyword.filestorage_short}}」**に移動します。
+2. マウントするファイル共有にスクロールして、**「...」**(アクション) をクリックします。その後、**「ホストの許可」**を選択します。
 3. **「サブネット」**をクリックします。
-4. ESXi ホスト上の VMkernel ポートに割り当てられている使用可能なサブネットのリストからサブネットを選択し、**「送信」**をクリックします。<br/>
+4. ESXi ホスト上の VMkernel ポートに割り当てられている使用可能なサブネットのリストからサブネットを選択し、**「保存」**をクリックします。<br/>
 
    表示されるサブネットは、ストレージ・ボリュームと同じデータ・センター内のサブスクライブ・サブネットです。
    {:note}
 
-サブネットが許可されたら、ボリュームのマウント時に使用するエンデュランス・ストレージ・サーバーまたはパフォーマンス・ストレージ・サーバーのホスト名をメモします。 この情報は、特定のボリュームをクリックすると、{{site.data.keyword.filestorage_short}}の詳細ページに表示されます。
+サブネットが許可されたら、ストレージ・サーバーのホスト名をメモします。ホスト名は、ボリュームの {{site.data.keyword.filestorage_short}} 詳細ページに示されています。
 
 
 ##  VMware 仮想マシン・ホストの構成

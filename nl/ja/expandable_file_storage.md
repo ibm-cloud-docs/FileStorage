@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, modify volume, NFS, file storage, expand capacity
 
@@ -45,11 +45,14 @@ subcollection: FileStorage
 {: #resizingsteps}
 
 1. [{{site.data.keyword.cloud}} コンソール](https://{DomainName}/){: external}に移動します。 メニューから**「クラシック・インフラストラクチャー」**を選択します。 **「ストレージ」** > **「{{site.data.keyword.filestorage_short}}」**をクリックします。
-2. リストからボリュームを選択し、**「アクション」** > **「ボリュームの変更 (Modify Volume)」**をクリックします。
+2. リストからボリュームを選択し、**「...」** > **「共有の変更 (Modify Share)」**をクリックします。
 3. 新しいストレージ・サイズを GB 単位で入力します。
 4. 選択内容と新しい価格を確認します。
 5. **「マスター・サービス契約を読み...」**をクリックし、**「注文する」**をクリックします。
 6. 新しいストレージ割り振りが数分後に使用可能になります。
+
+OS が追加のストレージ・スペースを認識するようにするためには、ボリュームをアンマウントしてから、変更されたボリュームを再びマウントします。
+{:tip}
 
 代わりの方法として、SLCLI で以下のコマンドを使用することができます。
 ```

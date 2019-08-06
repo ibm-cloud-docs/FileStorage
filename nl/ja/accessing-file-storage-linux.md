@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, NSF, mounting File Storage, mounting storage on Linux,
 
@@ -20,8 +20,13 @@ subcollection: FileStorage
 
 まず、{{site.data.keyword.filestorage_full}} ボリュームにアクセスする予定のホストに、[{{site.data.keyword.cloud}} コンソール](https://{DomainName}/classic){: external}で必ず許可を与えてください。
 
-1. {{site.data.keyword.filestorage_short}}のリスト・ページで、新しい共有に関連付けられている**「アクション」**リンクをクリックし、**「ホストの許可」**をクリックします。
-2. リストからホストを選択し、**「送信」**をクリックします。 このアクションにより、共有へのアクセスがホストに許可されます。
+1. コンソールで、**「クラシック・インフラストラクチャー」**>**「ストレージ」**>**「{{site.data.keyword.filestorage_short}}」**に移動します。
+2. マウントするファイル共有にスクロールして、**「...」**(アクション) をクリックします。その後、**「ホストの許可」**を選択します。
+3. デバイス・タイプ、サブネット、または IP アドレスを選択して、使用可能なホスト・リストにフィルターを掛けます。
+
+   サブネットに基づいてリストにフィルターを掛けた場合、表示されるサブネットは、ストレージ・ボリュームと同じデータ・センター内のサブスクライブ・サブネットです。
+   {:note}
+4. リストから 1 つ以上のホストを選択して、**「保存」**をクリックします。
 
 代わりの方法として、SLCLI でホストに許可を与えることもできます。
 ```

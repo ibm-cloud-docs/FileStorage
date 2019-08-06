@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-24"
 
 keywords: File Storage, file storage, NFS, snapshot, ordering snapshot, snapshot space
 
@@ -53,7 +53,7 @@ subcollection: FileStorage
 1. [{{site.data.keyword.cloud}} コンソール](https://{DomainName}/){: external}にログインして、左上にある「メニュー」アイコンをクリックします。
 2. **「クラシック・インフラストラクチャー」**を選択します。
 3. **「ストレージ」**>**「{{site.data.keyword.filestorage_short}}」**の手順でストレージにアクセスします。
-4. 「スナップショット」フレームで**「スナップショット・スペースの変更」**をクリックします。
+4. 「スナップショット」フレームで**「スナップショット・スペースの追加」**をクリックします。
 5. 必要なスペース量と支払方法を選択します。
 6. **「次へ進む (Continue)」**をクリックします。
 7. プロモーション・コードがある場合は入力し、**「再計算」**をクリックします。 **「この注文の課金」**と**「注文の検討」**には、デフォルト値が表示されます。
