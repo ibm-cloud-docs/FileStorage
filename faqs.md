@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-24"
+lastupdated: "2019-08-08"
 
 keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
@@ -61,11 +61,11 @@ The default limit for number of authorizations per file volume is 64. To increas
 
 That depends on what the host operating system can handle, it’s not something that {{site.data.keyword.cloud}} limits. Refer to your OS documentation for limits on the number of file shares that can be mounted.
 
-## How many file shares are allowed per file volume size? What are the maximum file shares allowed per volume size?
+## How many files/directories are allowed for specific file volume sizes? What is the maximum number of inodes allowed per volume size?
 {: #maxfilevolume}
 {: faq}
 
-| Volume Size | Inodes and File shares |
+| Volume Size | Inodes |
 |-----|-----|
 | 20 GB - 39 GB | 622,484 |
 | 40 GB - 79 GB | 1,245,084 |
@@ -80,7 +80,7 @@ That depends on what the host operating system can handle, it’s not something 
 {: row-headers}
 {: class="comparison-table"}
 {: caption="Table comparison" caption-side="top"}
-{: summary="Table 1 shows the maximum number of inodes that are allowed based on the volume size. Volume sizes are in the left column. The number of inodes and file shares are on the right."}
+{: summary="Table 1 shows the maximum number of inodes that are allowed based on the volume size. Volume sizes are in the left column. The number of inodes (files and directories) are on the right."}
 
 ## Measuring IOPS
 {: faq}
