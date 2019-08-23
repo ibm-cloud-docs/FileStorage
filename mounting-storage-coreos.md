@@ -15,12 +15,14 @@ subcollection: FileStorage
 {:note: .note}
 {:important: .important}
 {:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 
 
 # Mounting {{site.data.keyword.filestorage_short}} on Container Linux
 {: #mountingCoreOS}
 
 Container Linux by CoreOS is an open source, lightweight operating system based on the Linux kernel. It is designed for providing infrastructure to clustered deployments. As an operating system, Container Linux provides the minimal functionality that is required for deploying applications inside software containers, together with built-in mechanisms for service discovery and configuration sharing. For more information, see the [Mounting storage](https://coreos.com/os/docs/latest/mounting-storage.html)
+{:shortdesc}
 
 All secondary mount files go in the `/etc/systemd/system` directory as the system level mounts are in a directory that is read-only. First, you must create a `MOUNTPOINT.mount` file. The **Where** section of the `.mount` file must match the file name. If the mount point is not directly off the `/`, you must name the file by using the syntax `path-to-mount.mount`. For example, if you want to mount the portable storage drive to `/mnt/www`, name the file `mnt-www.mount`.
 

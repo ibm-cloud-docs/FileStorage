@@ -14,12 +14,14 @@ subcollection: FileStorage
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
+{:shortdesc: .shortdesc}
 {:ui-linked}
 
 # {{site.data.keyword.filestorage_short}} locations
 {: #selectDC}
 
 {{site.data.keyword.filestorage_full}} with enhanced capabilities is available in the following regions and data centers.
+{:shortdesc}
 
 
 | Capabilities | DAL01 | DAL05 | DAL09 | DAL10 | DAL12 | DAL13 | HOU02 | SJC01 | SJC03 | SJC04 | WDC01 | WDC04 | WDC06 | WDC07 |

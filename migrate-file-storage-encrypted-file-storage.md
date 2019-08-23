@@ -14,13 +14,13 @@ subcollection: FileStorage
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
+{:shortdesc: .shortdesc}
 
 # Migrating {{site.data.keyword.filestorage_short}} to enhanced {{site.data.keyword.filestorage_short}}
 {: #migratestorage}
 
-Enhanced {{site.data.keyword.filestorage_full}} is now available in most [data centers](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
-
-The preferred migration path is to connect to both volumes simultaneously and traNFSer data directly from one volume to another. The specifics depend on your operating system and whether the data is expected to change during the copy operation.
+Enhanced {{site.data.keyword.filestorage_full}} is now available in most [data centers](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC). The preferred migration path is to connect to both volumes simultaneously and traNFSer data directly from one volume to another. The specifics depend on your operating system and whether the data is expected to change during the copy operation.
+{:shortdesc}
 
 The assumption is that you already have your non-encrypted volume attached to your host. If not, follow the directions that fit your operating system the best to accomplish this task.
 

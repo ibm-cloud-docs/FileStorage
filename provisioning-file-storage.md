@@ -16,12 +16,14 @@ subcollection: FileStorage
 {:important: .important}
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
+{:shortdesc: .shortdesc}
 
 
 # Ordering {{site.data.keyword.filestorage_short}} through the Console
 {: #orderingConsole}
 
 You can provision {{site.data.keyword.filestorage_short}} and fine-tune to meet your capacity and IOPS needs. Get the most out of your storage with two options for specifying performance.
+{:shortdesc}
 
 - You can choose from Endurance IOPs tiers that feature pre-defined performance levels to fit workloads that don't have well-defined performance requirements.
 - You can fine-tune your storage to meet specific performance requirements by specifying the total number of IOPS with Performance.

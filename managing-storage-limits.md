@@ -14,6 +14,7 @@ subcollection: FileStorage
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
+{:shortdesc: .shortdesc}
 
 # Managing storage limits
 {: #managinglimits}
@@ -32,6 +33,7 @@ Options:
 ```
 
 You can request a limit increase by submitting a support case in the [portal](https://cloud.ibm.com/unifiedsupport/cases/add){: external}. When the request is approved, you get a volume limit that is set for a specific data center.
+{:shortdesc}
 
 To request a limit increase, open a support case and direct it to your sales representative.
 

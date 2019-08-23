@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-08-23"
 
 keywords: File Storage, file storage, NFS, provisioning, setup, configuration, mounting storage
 
@@ -14,11 +14,11 @@ subcollection: FileStorage
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
- {:shortdesc: .shortdesc}
- {:ui-linked}
+{:shortdesc: .shortdesc}
+{:ui-linked}
 
 
-# Getting started tutorial
+# Getting started with {{site.data.keyword.filestorage_short}}
 {: #getting-started}
 
 {{site.data.keyword.filestorage_full}} is persistent, fast, and flexible network-attached, NFS-based {{site.data.keyword.filestorage_short}}. In this network-attached storage (NAS) environment, you have total control over your file shares function and performance. {{site.data.keyword.filestorage_short}} shares can be connected to up to 64 authorized devices over routed TCP/IP connections for resiliency.

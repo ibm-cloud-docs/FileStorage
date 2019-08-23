@@ -14,11 +14,13 @@ subcollection: FileStorage
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
+{:shortdesc: .shortdesc}
 
 # Adjusting host queue depth settings
 {: #hostqueuesettings}
 
 {{site.data.keyword.cloud}} suggests a maximum host and application input/output (I/O) queue depth for each performance tier.
+{:shortdesc}
 
 | Performance tier | Maximum host queue depth |
 |------|------|

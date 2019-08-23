@@ -16,12 +16,13 @@ subcollection: FileStorage
 {:important: .important}
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
-
+{:shortdesc: .shortdesc}
 
 # Disaster Recovery - Fail over with an inaccessible Primary volume
 {: #dr-inaccessible}
 
-If a catastrophic failure or disaster causes an outage on the primary site, customers can perform the following actions to quickly access their data on the secondary site.
+If a catastrophic failure or disaster causes an outage on the primary site, customers can perform the following actions to quickly access their data on the secondary site. When the primary volume is inaccessible, you can't failover to the replica volume, but you can create a duplicate of the replica volume in the secondary site and failover operations to that clone volume.
+{:shortdesc}
 
 ## Fail over with a duplicate of a replica volume on the secondary site
 

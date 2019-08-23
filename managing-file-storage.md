@@ -14,12 +14,14 @@ subcollection: FileStorage
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
+{:shortdesc: .shortdesc}
 
 
 # Managing {{site.data.keyword.filestorage_short}}
 {: #managingstorage}
 
 You can manage your {{site.data.keyword.filestorage_full}} volumes through {{site.data.keyword.cloud}} console.
+{:shortdesc}
 
 ## Authorizing hosts to access {{site.data.keyword.filestorage_short}}
 

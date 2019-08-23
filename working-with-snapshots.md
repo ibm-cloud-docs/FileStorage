@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-24"
+lastupdated: "2019-08-23"
 
 keywords: File Storage, file storage, NFS, snapshots, snapshot schedule, manual snapshot, snapshot space, snapshot quota
 
@@ -14,10 +14,13 @@ subcollection: FileStorage
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
-
+{:shortdesc: .shortdesc}
 
 # Managing Snapshots
 {: #managingSnapshots}
+
+Snapshots are a feature of {{site.data.keyword.blockstoragefull}}. A snapshot represents a volume's contents at a particular point in time. With snapshots, you can protect your data with no performance impact and minimal consumption of space. Learn more about how to manage snapshots by reading the following instructions.
+{:shortdesc}
 
 ## Creating a Snapshot Schedule
 

@@ -14,7 +14,7 @@ subcollection: FileStorage
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
- {:shortdesc: .shortdesc}
+{:shortdesc: .shortdesc}
 
 
 # Learn about {{site.data.keyword.filestorage_short}}

@@ -14,6 +14,7 @@ subcollection: FileStorage
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
+{:shortdesc: .shortdesc}
 
 # Mounting {{site.data.keyword.filestorage_short}} on Linux
 {: #mountingLinux}
@@ -44,10 +45,8 @@ Options:
 
 ## Mounting the {{site.data.keyword.filestorage_short}} share
 
-Use these instructions to connect a Linux-based {{site.data.keyword.cloud}} Compute instance to a Network file system (NFS)  share. The example is based on Red Hat Enterprise Linux 6. The steps can be adjusted for other Linux distributions according to the operating system (OS) vendor documentation.
-
-The mount point of the file storage instance can be obtained from the {{site.data.keyword.filestorage_short}} listing page or through an API call - `SoftLayer_Network_Storage::getNetworkMountAddress()`.
-{:tip}
+Use these instructions to connect a Linux-based {{site.data.keyword.cloud}} Compute instance to a Network file system (NFS) share. The example is based on Red Hat Enterprise Linux 6. The steps can be adjusted for other Linux distributions according to the operating system's (OS) vendor documentation.
+{:shortdesc}
 
 1. Install the required tools.
    ```
@@ -65,6 +64,9 @@ The mount point of the file storage instance can be obtained from the {{site.dat
    # mount -t nfs4 -o hard,intr
    nfsdal0501a.service.softlayer.com:/IBM01SV278685_7 /mnt
    ```
+
+   The mount point of the file storage instance can be obtained from the {{site.data.keyword.filestorage_short}} listing page or through an API call - `SoftLayer_Network_Storage::getNetworkMountAddress()`.
+   {:tip}
 
 3. Verify that the mount was successful.
    ```

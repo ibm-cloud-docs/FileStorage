@@ -14,11 +14,13 @@ subcollection: FileStorage
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
+{:shortdesc: .shortdesc}
 
 # Provider-managed encryption-at-rest
 {: #encryption}
 
 {{site.data.keyword.cloud}} takes the need for security seriously, and understands the importance of being able to encrypt data to keep it safe. With provider-managed encryption, {{site.data.keyword.filestorage_full}} that is provisioned with either Endurance or Performance options, is encrypted by default at no additional cost and no impact on performance.
+{:shortdesc}
 
 The provider-managed encryption-at-rest feature uses the following industry standard protocols:
 
