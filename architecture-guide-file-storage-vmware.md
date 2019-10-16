@@ -114,7 +114,7 @@ Use the [Advanced Single-Site VMware Reference Architecture](https://{DomainName
 
 {{site.data.keyword.filestorage_short}} can be ordered through the [The {{site.data.keyword.cloud}} catalog](https://{DomainName}/catalog){: external} or the CLI. For more information, see [Ordering {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole).
 
-Storage is provisioned in less than a minute and becomes visible on the **{{site.data.keyword.filestorage_short}}** page of the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic){: external}.
+Storage is provisioned in less than a minute and becomes visible on the **{{site.data.keyword.filestorage_short}}** page of the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic/storage/file){: external}.
 
 When a volume is provisioned, the {{site.data.keyword.BluBareMetServers_full}} or {{site.data.keyword.BluVirtServers_full}} that is going to use the volume must be authorized to access the storage. Use the following steps to authorize the volume.
 

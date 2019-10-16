@@ -19,7 +19,7 @@ subcollection: FileStorage
 # Mounting {{site.data.keyword.filestorage_short}} on Linux
 {: #mountingLinux}
 
-First, make sure that the host that is to access the {{site.data.keyword.filestorage_full}} volume is authorized through the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic){: external}.
+First, make sure that the host that is to access the {{site.data.keyword.filestorage_full}} volume is authorized through the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic/storage/file){: external}.
 
 1. In the console, go to **Classic Infrastructure**  > **Storage** > **{{site.data.keyword.filestorage_short}}**
 2. Scroll to the File share you want to mount, and click **...** (Actions). Then, select **Authorize Host**.
