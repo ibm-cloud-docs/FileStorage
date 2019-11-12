@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-07"
+lastupdated: "2019-11-11"
 
 keywords: File Storage, mounting file storage, Linux, CentOS, NFS
 
@@ -29,7 +29,7 @@ To mount {{site.data.keyword.filestorage_full}} in CentOS 7, you must authorize 
 You can authorize a host to access the {{site.data.keyword.filestorage_full}} volume through the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic/storage/file){: external}.
 
 1. In the console, go to **Classic Infrastructure**  > **Storage** > **{{site.data.keyword.filestorage_short}}**
-2. Scroll to the File share you want to mount, and click **...** (Actions). Then, select **Authorize Host**.
+2. Scroll to the File share you want to mount, and click the ellipsis (**...**) for Actions. Then, select **Authorize Host**.
 3. Filter the available host list by selecting the device type, subnet or IP address.
 
    When the list is filtered by subnet, the subnets that are displayed are subscribed subnets in the same data center as the storage volume.

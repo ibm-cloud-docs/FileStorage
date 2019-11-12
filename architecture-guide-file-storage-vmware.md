@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-24"
+lastupdated: "2019-11-11"
 
 keywords: File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
@@ -119,7 +119,7 @@ Storage is provisioned in less than a minute and becomes visible on the **{{site
 When a volume is provisioned, the {{site.data.keyword.BluBareMetServers_full}} or {{site.data.keyword.BluVirtServers_full}} that is going to use the volume must be authorized to access the storage. Use the following steps to authorize the volume.
 
 1. In the console, go to **Classic Infrastructure**  > **Storage** > **{{site.data.keyword.filestorage_short}}**
-2. Scroll to the File share you want to mount, and click **...** (Actions). Then, select **Authorize Host**.
+2. Scroll to the File share you want to mount, and click the ellipsis (**...**) for Actions. Then, select **Authorize Host**.
 3. Click **Subnets**.
 4. Choose from the list of available subnets that are assigned to the VMkernel ports on the ESXi hosts, and click **Save**.<br/>
 

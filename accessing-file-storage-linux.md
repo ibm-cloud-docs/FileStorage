@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-24"
+lastupdated: "2019-11-11"
 
 keywords: File Storage, NSF, mounting File Storage, mounting storage on Linux,
 
@@ -15,21 +15,22 @@ subcollection: FileStorage
 {:note: .note}
 {:important: .important}
 {:shortdesc: .shortdesc}
+{:term: .term}
 
 # Mounting {{site.data.keyword.filestorage_short}} on Linux
 {: #mountingLinux}
 
-First, make sure that the host that is to access the {{site.data.keyword.filestorage_full}} volume is authorized through the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic/storage/file){: external}.
+First, make sure that the [host](#x2002243){:term} that is to access the {{site.data.keyword.filestorage_full}} volume is authorized through the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic/storage/file){: external}.
 
 1. In the console, go to **Classic Infrastructure**  > **Storage** > **{{site.data.keyword.filestorage_short}}**
-2. Scroll to the File share you want to mount, and click **...** (Actions). Then, select **Authorize Host**.
-3. Filter the available host list by selecting the device type, subnet or IP address.
+2. Scroll to the File share you want to mount, and click the ellipsis (**...**) for Actions. Then, select **Authorize Host**.
+3. Filter the available host list by selecting the device type, [subnet](#x2040149){:term} or IP address.
 
-   When the list is filtered by subnet, the subnets that are displayed are subscribed subnets in the same data center as the storage volume.
+   When the list is filtered by subnet, the subnets that are displayed are subscribed subnets in the same [data center](#x2052913){:term} as the storage volume.
    {:note}
 4. Select one or more hosts from the list and click **Save**.
 
-Alternatively, you can authorize the hosts through the SLCLI.
+Alternatively, you can authorize the hosts through the SL [CLI](#x2051424){: term}.
 ```
 # slcli file access-authorize --help
 Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
@@ -65,7 +66,7 @@ Use these instructions to connect a Linux-based {{site.data.keyword.cloud}} Comp
    nfsdal0501a.service.softlayer.com:/IBM01SV278685_7 /mnt
    ```
 
-   The mount point of the file storage instance can be obtained from the {{site.data.keyword.filestorage_short}} listing page or through an API call - `SoftLayer_Network_Storage::getNetworkMountAddress()`.
+   The mount point of the file storage instance can be obtained from the {{site.data.keyword.filestorage_short}} listing page or through an [API](#x2000186){: term} call - `SoftLayer_Network_Storage::getNetworkMountAddress()`.
    {:tip}
 
 3. Verify that the mount was successful.
@@ -87,7 +88,7 @@ Use these instructions to connect a Linux-based {{site.data.keyword.cloud}} Comp
    -rw-r--r-- 1 nobody nobody 0 Sep 8 15:52 test
    ```
 
-   The files that are created by root have ownership of `nobody:nobody`. To display ownership correctly, `idmapd.conf` needs to be updated with the correct domain settings. See the [How to implement no_root_squash for NFS](#norootsquash) section.
+   The files that are created by root have ownership of `nobody:nobody`. To display ownership correctly, `idmapd.conf` needs to be updated with the correct domain settings. For more information, see the [How to implement no_root_squash for NFS](#norootsquash) section.
    {:tip}
 
 5. Mount the remote share on start. To complete the setup, edit the file systems table (`/etc/fstab`) to add the remote share to the list of entries that are automatically mounted on startup:

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-01"
+lastupdated: "2019-11-11"
 
 keywords: File Storage, file storage, NFS, upgrade, migrate to new
 
@@ -50,7 +50,7 @@ Your new storage is available to mount in a few minutes. You can view it in the 
 "Authorized" hosts are hosts that were given access to a volume. Without host authorization, you can't access or use the storage from your system.
 
 1. In the console, go to **Classic Infrastructure**  > **Storage** > **{{site.data.keyword.filestorage_short}}**
-2. Scroll to the File share you want to mount, and click **...** (Actions). Then, select **Authorize Host**.
+2. Scroll to the File share you want to mount, and click the ellipsis (**...**) for Actions. Then, select **Authorize Host**.
 3. Filter the available host list by selecting the device type, subnet or IP address.
 
    When the list is filtered by subnet, the subnets that are displayed are subscribed subnets in the same data center as the storage volume.
@@ -79,13 +79,16 @@ If your target data center does not have encryption, you can't establish replica
   - If you have any bandwidth concerns, do the migration during off peak times.
   - If you need assistance with these considerations, open a support ticket.
 
-3. Copy your data across. For example, you can use `rsync` to copy over the data.
+3. Copy your data across. </br>For example, you can use `rsync` to copy over the data.
    ```
    [root@server ~]# rsync -Pavzu /path/to/original/file/storage/* /path/to/encrypted/file/storage
    ```
 
    It's advisable to use the previous command with the `--dry-run` flag once to make sure that the paths line up correctly. If this process is interrupted, you can delete the last destination file that was being copied to make sure that it is copied to the new location from the beginning.
+   {:tip}
 
    When this command completes without the `--dry-run` flag, your data is copied to the new {{site.data.keyword.filestorage_short}} volume. Run the command again to make sure that nothing was missed. You can also manually review both locations to look for anything that might be missing.
 
-   When your migration is complete, you can move production to the new volume. Then, you can detach and delete your original volume from your configuration. The deletion also removes any snapshot or replica on the target site that was associated with the original volume.
+   For more information about `rsync`, see the [rsync man page](https://download.samba.org/pub/rsync/rsync.html){: external}.{:note}
+
+4. When your migration is complete, you can move production to the new volume. Then, you can detach and delete your original volume from your configuration. The deletion also removes any snapshot or replica on the target site that was associated with the original volume.
