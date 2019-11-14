@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-07-24"
+lastupdated: "2019-11-14"
 
 keywords: File Storage, file storage, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
@@ -31,7 +31,7 @@ Authorized hosts and volumes must be in the same data center. For example, you c
 2. Locate the source or destination volume in the **{{site.data.keyword.filestorage_short}}** list.
 3. Click **Replica**.
 4. Scroll down to the **Authorize Hosts** frame and click **Authorize Host** on the right.
-5. Filter the available host list by selecting the device type, subnet or IP address.
+5. Filter the available host list by selecting the device type, subnet, or IP address.
 
    When the list is filtered by subnet, the subnets that are displayed are subscribed subnets in the same data center as the storage volume.
    {:note}

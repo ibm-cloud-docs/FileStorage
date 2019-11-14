@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-11"
+lastupdated: "2019-11-14"
 
 keywords: File Storage, NSF, mounting File Storage, mounting storage on Linux,
 
@@ -20,17 +20,17 @@ subcollection: FileStorage
 # Mounting {{site.data.keyword.filestorage_short}} on Linux
 {: #mountingLinux}
 
-First, make sure that the [host](#x2002243){:term} that is to access the {{site.data.keyword.filestorage_full}} volume is authorized through the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic/storage/file){: external}.
+First, make sure that the host that is to access the {{site.data.keyword.filestorage_full}} volume is authorized through the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic/storage/file){: external}.
 
 1. In the console, go to **Classic Infrastructure**  > **Storage** > **{{site.data.keyword.filestorage_short}}**
 2. Scroll to the File share you want to mount, and click the ellipsis (**...**) for Actions. Then, select **Authorize Host**.
-3. Filter the available host list by selecting the device type, [subnet](#x2040149){:term} or IP address.
+3. Filter the available host list by selecting the device type, subnet, or IP address.
 
-   When the list is filtered by subnet, the subnets that are displayed are subscribed subnets in the same [data center](#x2052913){:term} as the storage volume.
+   When the list is filtered by subnet, the subnets that are displayed are subscribed subnets in the same data center as the storage volume.
    {:note}
 4. Select one or more hosts from the list and click **Save**.
 
-Alternatively, you can authorize the hosts through the SL [CLI](#x2051424){: term}.
+Alternatively, you can authorize the hosts through the SLCLI.
 ```
 # slcli file access-authorize --help
 Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
@@ -66,7 +66,7 @@ Use these instructions to connect a Linux-based {{site.data.keyword.cloud}} Comp
    nfsdal0501a.service.softlayer.com:/IBM01SV278685_7 /mnt
    ```
 
-   The mount point of the file storage instance can be obtained from the {{site.data.keyword.filestorage_short}} listing page or through an [API](#x2000186){: term} call - `SoftLayer_Network_Storage::getNetworkMountAddress()`.
+   The mount point of the file storage instance can be obtained from the {{site.data.keyword.filestorage_short}} listing page or through an API call - `SoftLayer_Network_Storage::getNetworkMountAddress()`.
    {:tip}
 
 3. Verify that the mount was successful.
@@ -147,9 +147,9 @@ Example
    # /etc/init.d/rpcidmapd start
    Starting RPC idmapd: [ OK ]
    ```
-## Unmounting the Filesystem
+## Unmounting the file system
 
-To unmount any currently mounted filesystem on your host, run the `umount` command with disk name or mount point name.
+To unmount any currently mounted file system on your host, run the `umount` command with disk name or mount point name.
 
 ```
 umount /dev/sdb

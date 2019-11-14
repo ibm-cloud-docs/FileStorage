@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-23"
+lastupdated: "2019-11-14"
 
 keywords: File Storage, file storage, NFS, provisioning, setup, configuration, mounting storage
 
@@ -31,7 +31,7 @@ subcollection: FileStorage
 - Provision **Endurance** tiers that feature pre-defined performance levels and other features like snapshots and replication.
 - Build a high-powered **Performance** environment with allocated input/output operations per second (IOPS).
 
-For more information about the {{site.data.keyword.filestorage_short}} offering, see [Learn about {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-about)
+For more information about the {{site.data.keyword.filestorage_short}} offering, see [Learn about {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-about).
 
 ## Provisioning considerations
 
@@ -64,7 +64,7 @@ The speed of your Ethernet connection must be faster than the expected maximum t
 
 To achieve maximum IOPS, adequate network resources need to be in place. Other considerations include private network usage outside of storage and host side and application-specific tunings (IP stack or [queue depths](/docs/infrastructure/FileStorage?topic=FileStorage-hostqueuesettings), and other settings).
 
-Storage traffic should be isolated from other traffic types, and not be directed through firewalls and routers. Keeping the storage traffic in a dedicated VLAN also helps preventing MTU mismatch when Jumbo frames are enabled. For more information, see [Jumbo Frames in IBM Cloud ](/docs/FileStorage?topic=FileStorage-jumboframes).
+Storage traffic should be isolated from other traffic types, and not be directed through firewalls and routers. Keeping the storage traffic in a dedicated VLAN also helps preventing MTU mismatch when Jumbo frames are enabled. For more information, see [Jumbo Frames in IBM Cloud](/docs/FileStorage?topic=FileStorage-jumboframes).
 
 Storage traffic is included in the total network usage of Public Virtual Servers. For more information about the limits that might be imposed by the service, see the [Virtual Server documentation](/docs/vsi?topic=virtual-servers-about-public-virtual-servers).
 
@@ -74,7 +74,7 @@ Both NFS v3 and NFS v4.1 are supported in the {{site.data.keyword.cloud}} enviro
 
 ## Submitting your Order
 
-When you're ready to submit your order, you can place it through the [Console](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole), the [SLCLI](/docs/infrastructure/FileStorage?topic=FileStorage-orderingSLCLI) or the IBMCLOUD CLI. For more information about provisioning File Storage for VMware deployments, see the [architecture guide](/docs/infrastructure/FileStorage?topic=FileStorage-architectureguide).
+When you're ready to submit your order, you can place it through the [Console](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole), the [SLCLI](/docs/infrastructure/FileStorage?topic=FileStorage-orderingSLCLI), or the IBMCLOUD CLI. For more information about provisioning File Storage for VMware deployments, see the [architecture guide](/docs/infrastructure/FileStorage?topic=FileStorage-architectureguide).
 
 ## Connecting your new storage
 {: #mountingstorage}

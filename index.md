@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-10"
+lastupdated: "2019-11-14"
 
 keywords: File Storage, Endurance, Performance, IOPS, replication, billing, file storage, NFS,
 
@@ -81,7 +81,7 @@ Choosing the right Endurance tier for your workload is key. It's equally importa
 
 Performance is a class of {{site.data.keyword.filestorage_short}} that is designed to support high I/O applications with understood performance requirements that don't fit well within an Endurance tier. Predictable performance is achieved through the allocation of protocol-level IOPS to individual volumes. Various IOPS rates (100 - 48,000) can be provisioned with storage sizes that range from 20 GB to 12 TB.
 
-Performance for {{site.data.keyword.filestorage_short}} is accessed and mounted through a Network file system (NFS)  connection. {{site.data.keyword.filestorage_short}} is typically used when the volume is accessed by multiple servers simultaneously. Consistent Performance volumes can be ordered according to the Sizes and IOPS in Table 1 and can be used with Linux operating systems.
+Performance for {{site.data.keyword.filestorage_short}} is accessed and mounted through a Network file system (NFS) connection. {{site.data.keyword.filestorage_short}} is typically used when the volume is accessed by multiple servers simultaneously. Consistent Performance volumes can be ordered according to the Sizes and IOPS in Table 1 and can be used with Linux operating systems.
 
 | Size (GB) | Min IOPS | Max IOPS
 |-----|-----|-----|
@@ -99,7 +99,7 @@ Performance for {{site.data.keyword.filestorage_short}} is accessed and mounted 
 {: row-headers}
 {: class="comparison-table"}
 {: caption="Table comparison" caption-side="top"}
-{: summary="Table 1 is showing the possible minimum and maximum IOPS rates based of the volume size. This table has row and column headers. The row headers identify the volume size range. The column headers identify the minimum and maximum IOPS levels. To understand what IOPS rates you can expect from your Storage, navigate to the row and review the two options."}
+{: summary="Table 1 is showing the possible minimum and maximum IOPS rates that are available based on the volume size. This table has row and column headers. The row headers identify the volume size range. The column headers identify the minimum and maximum IOPS levels. To understand what IOPS rates you can expect from your Storage, navigate to the row and review the two options."}
 
 
 ![Footnote](/images/numberone.png) *IOPS limits that are greater than 6,000 are available in select data centers.*

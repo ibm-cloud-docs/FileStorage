@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-08"
+lastupdated: "2019-11-14"
 
 keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
@@ -80,7 +80,7 @@ That depends on what the host operating system can handle, it’s not something 
 {: row-headers}
 {: class="comparison-table"}
 {: caption="Table comparison" caption-side="top"}
-{: summary="Table 1 shows the maximum number of inodes that are allowed based on the volume size. Volume sizes are in the left column. The number of inodes (files and directories) are on the right."}
+{: summary="Table 1 shows the maximum number of inodes that are allowed based on the volume size. Volume sizes are in the left column. The numbers of inodes (files and directories) are on the right."}
 
 ## Measuring IOPS
 {: faq}
@@ -153,4 +153,4 @@ When drives are decommissioned, IBM destroys them before they are disposed of. T
 ## What is the difference between Controlled Failover and Immediate Failover?
 {: faq}
 
-Controlled Failover does one last sync before breaking the mirror. The Immediate Failover immediately breaks the mirror and activates the replica volume.
+Controlled Failover does one last sync before it breaks the mirror process. The Immediate Failover immediately breaks the mirror and activates the replica volume.
