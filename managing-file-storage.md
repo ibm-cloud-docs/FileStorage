@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-25"
+lastupdated: "2019-11-14"
 
 keywords: File Storage, file storage, NFS, authorizing hosts, rewoke access, grant access, view authorizations
 
@@ -34,7 +34,7 @@ You can authorize and connect hosts that are located in the same data center as 
 2. Click **Storage** > **{{site.data.keyword.filestorage_short}}**, and click your **Volume Name**.
 3. Scroll to the **Authorized Hosts** section of the page.
 4. Click **Authorize Host** on the right.
-5. Filter the available host list by selecting the device type, subnet or IP address.
+5. Filter the available host list by selecting the device type, subnet, or IP address.
 
    When the list is filtered by subnet, the subnets that are displayed are subscribed subnets in the same data center as the storage volume.
    {:note}

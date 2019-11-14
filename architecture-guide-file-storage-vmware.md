@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-11"
+lastupdated: "2019-11-14"
 
 keywords: File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
@@ -77,7 +77,7 @@ VMware vSphere on network-attached storage](https://www.vmware.com/content/dam/d
 
 Snapshot space is required to use snapshots. Space can be purchased on the initial volume order or after the initial provisioning through the **Volume Details** page by clicking **Actions** and selecting **Add Snapshot Space**.
 
-It's important to note that VMware environments are not aware of snapshots. The {{site.data.keyword.filestorage_short}} snapshot capability must not be confused with VMware snapshots. Any recovery that uses the {{site.data.keyword.filestorage_short}} snapshot feature must be handled from the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external} .
+It's important to note that VMware environments are not aware of snapshots. The {{site.data.keyword.filestorage_short}} snapshot capability must not be confused with VMware snapshots. Any recovery that uses the {{site.data.keyword.filestorage_short}} snapshot feature must be handled from the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}.
 
 Restoring the {{site.data.keyword.filestorage_short}} volume requires powering off all the VMs on the {{site.data.keyword.filestorage_short}}. The volume needs to be temporarily unmounted from the ESXi hosts to avoid any data corruption during the process.
 
@@ -112,11 +112,11 @@ Invalid data, whether corrupted, hacked, or infected replicate according to the 
 
 Use the [Advanced Single-Site VMware Reference Architecture](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){: external} to set up {{site.data.keyword.filestorage_short}} with Endurance or Performance options in your VMware environment.
 
-{{site.data.keyword.filestorage_short}} can be ordered through the [The {{site.data.keyword.cloud}} catalog](https://{DomainName}/catalog){: external} or the CLI. For more information, see [Ordering {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole).
+{{site.data.keyword.filestorage_short}} can be ordered through [The {{site.data.keyword.cloud}} catalog](https://{DomainName}/catalog){: external} or the CLI. For more information, see [Ordering {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole).
 
 Storage is provisioned in less than a minute and becomes visible on the **{{site.data.keyword.filestorage_short}}** page of the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic/storage/file){: external}.
 
-When a volume is provisioned, the {{site.data.keyword.BluBareMetServers_full}} or {{site.data.keyword.BluVirtServers_full}} that is going to use the volume must be authorized to access the storage. Use the following steps to authorize the volume.
+When a volume is provisioned, the {{site.data.keyword.BluBareMetServers_full}} or {{site.data.keyword.BluVirtServers_full}} that are going to use the volume must be authorized to access the storage. Use the following steps to authorize the host.
 
 1. In the console, go to **Classic Infrastructure**  > **Storage** > **{{site.data.keyword.filestorage_short}}**
 2. Scroll to the File share you want to mount, and click the ellipsis (**...**) for Actions. Then, select **Authorize Host**.
@@ -140,7 +140,7 @@ Before you begin the VMware configuration process, make sure that the following 
 
 ### 1. Configuring the VMware Host.
 
-1. From an internet connected computer, start an RDP client and establish an RDP session to the {{site.data.keyword.BluVirtServers_full}} that is provisioned in the same data center where vSphere vCenter is installed.
+1. From an internet connected computer, start an RDP client and establish an RDP session to the {{site.data.keyword.BluVirtServers_full}} that are provisioned in the same data center where vSphere vCenter is installed.
 2. From the {{site.data.keyword.BluVirtServers_short}}, start a web browser and connect to VMware vCenter through the vSphere Web Client.
 3. From the **HOME** screen, select **Hosts and Clusters**. Expand the pane on the left and select the **VMware ESXi server** that is to be used for this deployment.
 4. Make sure that the firewall port for the NFS client is open on all hosts so that you can configure the NFS client on the vSphere host. (The port is automatically opened in the more recent releases of vSphere.) To check whether the port is open, go to the **ESXi host Manage** tab in VMware® vCenter™, select **Settings**, and then select **Security Profile**. In the **Firewall** section, click **Edit** and scroll down to **NFS Client**.

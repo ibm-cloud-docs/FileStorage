@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-07-24"
+lastupdated: "2019-11-14"
 
 keywords: File Storage, file storage, NFS, duplicate volume
 
@@ -74,7 +74,7 @@ You can create a duplicate volume through the [{{site.data.keyword.cloud}} conso
 2. Click a volume from the list to view the details page. It can either be a replica or non-replica volume.
 3. Scroll down and select an existing snapshot from the list on the details page and click **Actions** > **Duplicate**.   
 4. Storage Type (Endurance or Performance) and Location remain the same as the original volume.
-5. Available Performance and size combinations are displayed. The IOPs designation of the original volume is set by default. You can specify IOPS or IOPS Tier for the new volume.
+5. Available Performance and size combinations are displayed. The IOPS designation of the original volume is set by default. You can specify IOPS or IOPS Tier for the new volume.
     - If your original volume is 0.25 IOPS Endurance tier, you can't make a new selection.
     - If your original volume is 2, 4, or 10 IOPS Endurance tier, you can move anywhere between those tiers for the new volume.
 6. You can update the size of the new volume so that it is larger than the original. The size of the original volume is set by default.

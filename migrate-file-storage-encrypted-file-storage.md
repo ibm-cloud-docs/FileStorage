@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-11"
+lastupdated: "2019-11-14"
 
 keywords: File Storage, file storage, NFS, upgrade, migrate to new
 
@@ -19,10 +19,10 @@ subcollection: FileStorage
 # Migrating {{site.data.keyword.filestorage_short}} to enhanced {{site.data.keyword.filestorage_short}}
 {: #migratestorage}
 
-Enhanced {{site.data.keyword.filestorage_full}} is now available in most [data centers](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC). The preferred migration path is to connect to both volumes simultaneously and traNFSer data directly from one volume to another. The specifics depend on your operating system and whether the data is expected to change during the copy operation.
+Enhanced {{site.data.keyword.filestorage_full}} is now available in most [data centers](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC). The preferred migration path is to connect to both volumes simultaneously and transfer data directly from one volume to another. The specifics depend on your operating system and whether the data is expected to change during the copy operation.
 {:shortdesc}
 
-The assumption is that you already have your non-encrypted volume attached to your host. If not, follow the directions that fit your operating system the best to accomplish this task.
+The assumption is that you already attached your non-encrypted volume to your host. If not, follow the directions that fit your operating system the best to accomplish this task.
 
 - [Mounting {{site.data.keyword.filestorage_short}} on Linux](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)
 - [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)
@@ -37,7 +37,7 @@ All enhanced {{site.data.keyword.filestorage_short}} volumes that are provisione
 When you place an order with API, specify the "Storage as a Service" package to ensure you're getting the updated features with your new storage.
 {:important}
 
-You can order an enhanced volume through the {{site.data.keyword.cloud}} catalog. Your new volume must be of the same size or greater than the original fileshare to facilitate the migration.
+You can order an enhanced volume through the {{site.data.keyword.cloud}} catalog. Your new volume must be of the same size or greater than the original file share to facilitate the migration.
 
 - [Ordering {{site.data.keyword.filestorage_short}} with pre-defined IOPS Tiers (Endurance)](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#endurance)
 - [Ordering {{site.data.keyword.filestorage_short}} with custom IOPS (Performance)](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole#performance)
@@ -51,7 +51,7 @@ Your new storage is available to mount in a few minutes. You can view it in the 
 
 1. In the console, go to **Classic Infrastructure**  > **Storage** > **{{site.data.keyword.filestorage_short}}**
 2. Scroll to the File share you want to mount, and click the ellipsis (**...**) for Actions. Then, select **Authorize Host**.
-3. Filter the available host list by selecting the device type, subnet or IP address.
+3. Filter the available host list by selecting the device type, subnet, or IP address.
 
    When the list is filtered by subnet, the subnets that are displayed are subscribed subnets in the same data center as the storage volume.
    {:note}
@@ -89,6 +89,6 @@ If your target data center does not have encryption, you can't establish replica
 
    When this command completes without the `--dry-run` flag, your data is copied to the new {{site.data.keyword.filestorage_short}} volume. Run the command again to make sure that nothing was missed. You can also manually review both locations to look for anything that might be missing.
 
-   For more information about `rsync`, see the [rsync man page](https://download.samba.org/pub/rsync/rsync.html){: external}.{:note}
+   For more information about `rsync`, see the [`rsync` man page](https://download.samba.org/pub/rsync/rsync.html){: external}.{:note}
 
 4. When your migration is complete, you can move production to the new volume. Then, you can detach and delete your original volume from your configuration. The deletion also removes any snapshot or replica on the target site that was associated with the original volume.

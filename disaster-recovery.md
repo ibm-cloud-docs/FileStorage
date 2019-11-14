@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-07-24"
+lastupdated: "2019-11-14"
 
 keywords: File Storage, file storage, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
@@ -21,7 +21,7 @@ subcollection: FileStorage
 # Disaster Recovery - Fail over with an inaccessible Primary volume
 {: #dr-inaccessible}
 
-If a catastrophic failure or disaster causes an outage on the primary site, customers can perform the following actions to quickly access their data on the secondary site. When the primary volume is inaccessible, you can't failover to the replica volume, but you can create a duplicate of the replica volume in the secondary site and failover operations to that clone volume.
+If a catastrophic failure or disaster causes an outage on the primary site, customers can perform the following actions to quickly access their data on the secondary site. When the primary volume is inaccessible, you can't fail over to the replica volume. However, you can create a duplicate of the replica volume in the secondary site and fail over operations to that clone volume.
 {:shortdesc}
 
 ## Fail over with a duplicate of a replica volume on the secondary site

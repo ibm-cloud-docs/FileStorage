@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-24"
+lastupdated: "2019-11-14"
 
 keywords: File Storage, file storage, NFS, replication, duplication, synchronous, replica schedule, replica space, disaster recovery
 
@@ -152,10 +152,10 @@ When a primary volume is canceled, the replication schedule and the volume in th
  3. Select when to cancel the volume. Choose **Immediately** or **Anniversary Date**, and click **Continue**.
  4. Click **I acknowledge that due to cancellation, data loss may occur**, and click **Cancel**.
 
-## Replication related commands in SLCLI
+## Replication-related commands in SLCLI
 {: #clicommands}
 
-* List suitable replication datacenters for a specific volume.
+* List suitable replication data centers for a specific volume.
   ```
   # slcli file replica-locations --help
   Usage: slcli file replica-locations [OPTIONS] VOLUME_ID
@@ -196,7 +196,7 @@ When a primary volume is canceled, the replication schedule and the volume in th
   -h, --help      Show this message and exit.
   ```
 
-* Failover a file volume to a specific replicant volume.
+* Fail over a file volume to a specific replicant volume.
   ```
   # slcli file replica-failover --help
   Usage: slcli file replica-failover [OPTIONS] VOLUME_ID
@@ -207,7 +207,7 @@ When a primary volume is canceled, the replication schedule and the volume in th
   -h, --help           Show this message and exit.
   ```
 
-* Failback a file volume from a specific replicant volume.
+* Fail back a file volume from a specific replicant volume.
   ```
   # slcli file replica-failback --help
   Usage: slcli file replica-failback [OPTIONS] VOLUME_ID
