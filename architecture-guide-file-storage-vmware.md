@@ -299,8 +299,7 @@ Other settings are required for configuring ESXi hosts for NFS storage. This tab
 |Parameter | Set to ... |
 |----------|------------|
 |Net.TcpipHeapSize | 32 for vSphere 5.0 and later versions |
-|Net.TcpipHeapMax |	 1536 for vSphere 6.0 and later versions,<br/>512 for vSphere 5.5,<br/>128 for
-vSphere 5.0 and 5.1 |
+|Net.TcpipHeapMax |	 1536 for vSphere 6.0 and later versions,<br/>512 for vSphere 5.5,<br/>128 for vSphere 5.0 and 5.1 |
 |NFS.MaxVolumes |	256 for vSphere 5.0 and later versions |
 |NFS41.MaxVolumes |	256 for vSphere 6.0 and later versions |
 |NFS.HeartbeatMaxFailures |	10 for all NFS configurations |
