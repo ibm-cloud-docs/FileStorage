@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-14"
+lastupdated: "2019-11-22"
 
 keywords: File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
@@ -294,25 +294,26 @@ This process is used to set the resource consumption limits of individual vDisks
 
 ## Configuring ESXi host side settings
 
-Extra settings are required for configuring ESXi 5.x hosts for NFS storage. This table shows what each setting needs to be.
+Other settings are required for configuring ESXi hosts for NFS storage. This table shows what each setting needs to be.
 
 |Parameter | Set to ... |
 |----------|------------|
-|Net.TcpipHeapSize |	32 |
-|Net.TcpipHeapMax |	For vSphere 5.0/5.1 set 128 <br/> For vSphere 5.5 or higher, set 512 |
-|NFS.MaxVolumes |	256 |
-|NFS41.MaxVolumes |	256 (vSphere 6.0 or later only) |
-|NFS.HeartbeatMaxFailures |	10 |
-|NFS.HeartbeatFrequency |	12 |
-|NFS.HeartbeatTimeout |	5 |
-|NFS.MaxQueueDepth|	64 |
+|Net.TcpipHeapSize | 32 for vSphere 5.0 and later versions |
+|Net.TcpipHeapMax |	 1536 for vSphere 6.0 and later versions,<br/>512 for vSphere 5.5,<br/>128 for
+vSphere 5.0 and 5.1 |
+|NFS.MaxVolumes |	256 for vSphere 5.0 and later versions |
+|NFS41.MaxVolumes |	256 for vSphere 6.0 and later versions |
+|NFS.HeartbeatMaxFailures |	10 for all NFS configurations |
+|NFS.HeartbeatFrequency |	12 for all NFS configurations|
+|NFS.HeartbeatTimeout |	5 for all NFS configurations|
+|NFS.MaxQueueDepth|	64 for vSphere 5.0 and later versions |
 {: caption="Table 2 - Host side settings" caption-side="top"}
 
-### Updating advanced configuration parameters on ESXi 5.x host by using the CLI
+### Updating advanced configuration parameters on ESXi host by using the CLI
 
-The following examples use the CLI to set the advanced configuration parameters, and then, check them. The `esxcfg-advcfg` tool that is used in the examples can be found in the `/usr/sbin` directory on the ESXi 5.x hosts.
+The following examples use the CLI to set the advanced configuration parameters, and then, check them. The `esxcfg-advcfg` tool that is used in the examples can be found in the `/usr/sbin` directory on the ESXi hosts.
 
-   - Setting the advanced configuration parameters from the ESXi 5.x CLI.
+   - Setting the advanced configuration parameters from the ESXi CLI.
 
      ```
      #esxcfg-advcfg -s 32 /Net/TcpipHeapSize
@@ -328,7 +329,7 @@ The following examples use the CLI to set the advanced configuration parameters,
      #esxcfg-advcfg -s 8 /Disk/QFullThreshold
      ```
 
-  - Checking the advanced configuration parameters from the ESXi 5.x CLI.
+  - Checking the advanced configuration parameters from the ESXi CLI.
 
     ```
     #esxcfg-advcfg -g /Net/TcpipHeapSize
