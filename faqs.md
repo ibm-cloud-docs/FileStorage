@@ -155,12 +155,12 @@ When drives are decommissioned, IBM destroys them before they are disposed of. T
 
 Controlled Failover does one last sync before it breaks the mirror process. The Immediate Failover immediately breaks the mirror and activates the replica volume.
 
-## My storage appears offline/read-only. Why did this happen and how do I fix it?
+## My storage appears offline or read-only. Why did it happen and how do I fix it?
 {: faq}
 
-There are a couple of scenarios where a host (bare metal or VM) loses connection to the storage however briefly and as a result, the host considers that storage read-only to avoid data corruption. Most of the time the loss of connectivity is network related but the status of the storage remains read-only from the host's perspective even when the network connection is restored.
+There are a couple of scenarios where a host (bare metal or VM) loses connection to the storage however briefly and as a result, the host considers that storage read-only to avoid data corruption. Most of the time the loss of connectivity is network-related but the status of the storage remains read-only from the host's perspective even when the network connection is restored.
 
-This issue can be observed with virtual drives of VMs on a network-attached datastore (NFS protocol). To resolve, confirm that the network path between the Storage and the Host is clear, and that there's no maintenance/outage currently in progress. Then, unmount and mount the storage volume. If the volume is still read-only, restart the host.
+This issue can be observed with virtual drives of VMs on a network-attached datastore (NFS protocol). To resolve, confirm that the network path between the Storage and the Host is clear, and that there's no maintenance or outage currently in progress. Then, unmount and mount the storage volume. If the volume is still read-only, restart the host.
 
 For mounting instructions, see the following topics.
 - [Accessing {{site.data.keyword.filestorage_short}} on Linux](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)
@@ -168,8 +168,8 @@ For mounting instructions, see the following topics.
 - [Mounting {{site.data.keyword.filestorage_short}} on CoreOS](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCoreOS)
 - [Mounting {{site.data.keyword.filestorage_short}} Volume on ESXi hosts](/docs/infrastructure/FileStorage?topic=FileStorage-architectureguide)
 
-To prevent this situation from re-occurring, the customer might consider the following:
+To prevent this situation from recurring, the customer might consider the following:
 - Increasing disk timeout values. For more information, see [VMware KB - Increasing the disk timeout values for a Linux 2.6 virtual machine](https://kb.vmware.com/s/article/1009465){: external}.
 - Adding guest OS tunings. For more information, see [NetApp's recommendations for guest OS tunings for a VMware vSphere deployment](https://kb.netapp.com/app/answers/answer_view/a_id/1001979){: external}.
-- Reconfiguring Host systems that utilize NFSv4.1 for NFSv3 for increased resilience during maintenance operations.
+- Reconfiguring Host systems that use NFSv4.1 for NFSv3 for increased resilience during maintenance operations.
 - Discontinuing session trunking on host systems that run VMware ESXi. Session trunking is not supported and is known to cause disruptions.
