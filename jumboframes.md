@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-01"
+lastupdated: "2019-12-13"
 
 keywords: File Storage, file storage, NSF, networking, jumbo frames
 
@@ -31,22 +31,22 @@ Jumbo frames need to be configured the same on the entire network path from sour
 ## Enabling Jumbo Frames
 
 1. Edit the network configuration file for eth0 interface.
-   - CentOS, RHEL, Fedora Linux users edit `/etc/sysconfig/network-script/ifcfg-eth0`
+   - CentOS, RHEL, Fedora users edit `/etc/sysconfig/network-script/ifcfg-eth0`.
      ```
      # vi /etc/sysconfig/network-script/ifcfg-eth0
      ```
      {: pre}
 
-   - Debian and Ubuntu Linux users edit `/etc/network/interfaces`.
+   - Debian and Ubuntu users edit `/etc/network/interfaces`.
 
 2. Append the following configuration directive, which specifies the size of the frame in bytes.
-   - CentOS, RHEL, Fedora Linux
+   - CentOS, RHEL, Fedora
      ```
      MTU 9000
      ```
      {: pre}
 
-   - Debian and Ubuntu Linux
+   - Debian and Ubuntu
      ```
      MTU=9000
      ```

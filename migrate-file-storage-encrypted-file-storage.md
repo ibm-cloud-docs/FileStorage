@@ -49,7 +49,7 @@ Your new storage is available to mount in a few minutes. You can view it in the 
 
 "Authorized" hosts are hosts that were given access to a volume. Without host authorization, you can't access or use the storage from your system.
 
-1. In the console, go to **Classic Infrastructure**  > **Storage** > **{{site.data.keyword.filestorage_short}}**
+1. In the console, go to **Classic Infrastructure**  > **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Scroll to the File share you want to mount, and click the ellipsis (**...**) for Actions. Then, select **Authorize Host**.
 3. Filter the available host list by selecting the device type, subnet, or IP address.
 
@@ -73,7 +73,7 @@ If your target data center does not have encryption, you can't establish replica
 1. Connect to both your original and new {{site.data.keyword.filestorage_short}} volumes.
   - If you need assistance with connecting the two file shares to your host, open a support ticket.
 
-2. Consider what type of data you have on your original {{site.data.keyword.filestorage_short}} volume and how best to copy it to your new file share
+2. Consider what type of data you have on your original {{site.data.keyword.filestorage_short}} volume and how best to copy it to your new file share.
   - If you have backups, static content, and things that aren't expected to change during the copy, you don't have to worry.
   - If you're running a database or a virtual machine on your {{site.data.keyword.filestorage_short}}, make sure that the data isn't altered during the copy to avoid data corruption.
   - If you have any bandwidth concerns, do the migration during off peak times.

@@ -90,8 +90,8 @@ Replication uses one of your snapshot schedules to automatically copy snapshots 
 
 With replicas, you can
 
-- Recover from site failures and other disasters quickly by failing over to the destination volume
-- Fail over to a specific point in time in the DR copy
+- Recover from site failures and other disasters quickly by failing over to the destination volume,
+- Fail over to a specific point in time in the DR copy.
 
 Replication keeps your data in sync in two different locations. If you want to clone your volume and use it independently from the original volume, see [Creating a duplicate File Volume](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume).
 {:tip}
@@ -118,7 +118,7 @@ Storage is provisioned in less than a minute and becomes visible on the **{{site
 
 When a volume is provisioned, the {{site.data.keyword.BluBareMetServers_full}} or {{site.data.keyword.BluVirtServers_full}} that are going to use the volume must be authorized to access the storage. Use the following steps to authorize the host.
 
-1. In the console, go to **Classic Infrastructure**  > **Storage** > **{{site.data.keyword.filestorage_short}}**
+1. In the console, go to **Classic Infrastructure**  > **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Scroll to the File share you want to mount, and click the ellipsis (**...**) for Actions. Then, select **Authorize Host**.
 3. Click **Subnets**.
 4. Choose from the list of available subnets that are assigned to the VMkernel ports on the ESXi hosts, and click **Save**.<br/>
@@ -145,7 +145,7 @@ Before you begin the VMware configuration process, make sure that the following 
 3. From the **HOME** screen, select **Hosts and Clusters**. Expand the pane on the left and select the **VMware ESXi server** that is to be used for this deployment.
 4. Make sure that the firewall port for the NFS client is open on all hosts so that you can configure the NFS client on the vSphere host. (The port is automatically opened in the more recent releases of vSphere.) To check whether the port is open, go to the **ESXi host Manage** tab in VMware® vCenter™, select **Settings**, and then select **Security Profile**. In the **Firewall** section, click **Edit** and scroll down to **NFS Client**.
 5. Make sure **Allow connection from any IP address or a list of IP addresses** is provided. <br/>
-   ![Allow Connection](/images/1_4.png)
+   ![Allow Connection.](/images/1_4.png)
 6. Configure Jumbo Frames by going to the **ESXi host Manage** tab, select **Manage** and then **Networking**.
 7. Select **VMkernel adapters**, highlight the **vSwitch** and the click **Edit** (Pencil icon).
 8. Select **NIC setting**, and ensure that the NIC MTU is set to 9000.
@@ -177,13 +177,13 @@ For more information about VMware and Jumbo Frames, see [here](https://kb.vmware
 ### 2. Adding an uplink adapter to a virtual switch
 
 1. Configure a new uplink adapter by going to the **ESXi host Manage** tab, select **Manage** and then **Networking**.
-2. Select the **Physical adapters** tab
+2. Select the **Physical adapters** tab.
 3. Click **Add host networking** (Globe icon with a plus sign).
 4. Select connection type as **Physical Network Adapter** and click **Next**.
 5. Select the existing **vSwitch** and click **Next**.
 6. Select **Unused adapters** and click **Add adapters** (Plus sign).
 7. Click the other "Connected" adapter and click **OK**. <br/>
-   ![Add physical adapters to switch](/images/2_3.png)
+   ![Add physical adapters to switch.](/images/2_3.png)
 8. Click **Next** and the **Finish**.
 9. Go back to the **Virtual switches** tab and select the **Edit setting** (Pencil icon) under the **Virtual Switches** heading.
 10. On the left, select the vSwitch **Teaming and failover** entry.
@@ -267,7 +267,7 @@ Incorrectly configuring SIOC for a VMware datastore or for a VMDK can significan
 3. Click **Settings** and click **General**.
 4. Click **Edit** for **Datastore Capabilities**.
 5. Select the **Enable Storage I/O Control** check box.<br/>
-   ![NSF VMware datastore](/images/3_0.png)
+   ![NSF VMware datastore.](/images/3_0.png)
 6. Click **OK**.
 
 This setting is specific to the VMware datastore and not to the host.
@@ -306,7 +306,7 @@ Other settings are required for configuring ESXi hosts for NFS storage. This tab
 |NFS.HeartbeatFrequency |	12 for all NFS configurations|
 |NFS.HeartbeatTimeout |	5 for all NFS configurations|
 |NFS.MaxQueueDepth|	64 for vSphere 5.0 and later versions |
-{: caption="Table 2 - Host side settings" caption-side="top"}
+{: caption="Table 2 - Host side settings." caption-side="top"}
 
 ### Updating advanced configuration parameters on ESXi host by using the CLI
 
