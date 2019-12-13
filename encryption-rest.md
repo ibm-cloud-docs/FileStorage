@@ -45,8 +45,8 @@ The provider-managed encryption-at-rest feature is available in [select data cen
 
 When you order {{site.data.keyword.filestorage_short}}, select a data center that is marked with an asterisk (`*`). You can see a lock icon to the right of the Volume Name field that indicates that the volume is encrypted. See Figure 1.
 
-![The lock icon indicates that the volume is encrypted](/images/encryptedstorage.png)
+![The lock icon indicates that the volume is encrypted.](/images/encryptedstorage.png)
 <caption>Figure 1. Example of the lock icon that indicates that the volume is encrypted.</caption>
 
-Any non-encrypted storage that was provisioned before a data center upgrade is **not** automatically encrypted. If you own non-encrypted storage in an upgraded data center and you want to have it encrypted, you need to create a volume, and move your data. For more information, see [File Storage Migration in Upgraded Data Centers](/docs/infrastructure/FileStorage?topic=FileStorage-migratestorage)
+Any non-encrypted storage that was provisioned before a data center upgrade is **not** automatically encrypted. If you own non-encrypted storage in an upgraded data center and you want to have it encrypted, you need to create a volume, and move your data. For more information, see [File Storage Migration in Upgraded Data Centers](/docs/infrastructure/FileStorage?topic=FileStorage-migratestorage).
 {:important}
