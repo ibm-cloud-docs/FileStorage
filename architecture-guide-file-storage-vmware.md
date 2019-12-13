@@ -47,7 +47,7 @@ When you order {{site.data.keyword.filestorage_short}}, consider the following i
 - Both NFSv3 and NFSv4.1 are supported in the {{site.data.keyword.cloud}} environment. However, {{site.data.keyword.IBM}} suggests that you use NFSv3. Because NFSv4.1 is a stateful protocol (not stateless like NFSv3), protocol issues can occur during network events. NFSv4.1 must quiesce all operations and then complete lock reclamation. While these operations are taking place, disruptions can occur.
 
 For more information, see VMware's white paper on [Best Practices for running
-VMware vSphere on network-attached storage](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){: external}
+VMware vSphere on network-attached storage](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){: external}.
 {:tip}
 
 ### NFS Protocol VMware feature support matrix
@@ -68,7 +68,7 @@ VMware vSphere on network-attached storage](https://www.vmware.com/content/dam/d
 {: caption="Table 1 - NFS Protocol VMware feature support matrix." caption-side="top"}
 {: summary="This table has row and column headers. The row headers identify the vSphere features. The column headers identify the NSF version. To see if a feature is enabled navigate to the row of the feature and look at the column that is associated with the NFS version you use."}
 
-*Source - [VMware - NFS Protocols and ESXi](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){: external}*
+*Source - [VMware - NFS Protocols and ESXi](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){: external}*.
 
 
 ### Using Snapshots

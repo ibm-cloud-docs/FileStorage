@@ -58,7 +58,7 @@ Additionally, for most workloads, the larger a volume is the less space needs to
 4. Click **Add Snapshot Space** in the Snapshots frame.
 5. Select the amount of space that you need and the payment method.
 6. Click **Continue**.
-7. Enter any Promo Code that you have and click **Recalculate**. The **Charges for this order** and **Order Review** have default values.
+7. Enter any Promo Codes that you have and click **Recalculate**. The **Charges for this order** and **Order Review** have default values.
 
    Discounts are applied when the order is processed.
    {:note}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-14"
+lastupdated: "2019-12-13"
 
 keywords: File Storage, NSF, SLCLI, API
 
@@ -20,7 +20,7 @@ subcollection: FileStorage
 # SLCLI commands for {{site.data.keyword.filestorage_short}}
 {: #SLCLIcommands}
 
-You can use the SLCLI to take actions that are normally handled through the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic/storage/file){: external}. For example, with SLCLI you can place orders for new volumes, snapshot space and replication, update authorizations, and cancel volumes.
+You can use the SLCLI to perform operations that are normally handled through the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic/storage/file){: external}. For example, with SLCLI you can place orders for new volumes, snapshot space and replication, update authorizations, and cancel volumes.
 {:shortdesc}
 
 For more information about how to install and use the SLCLI, see [Python API Client](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}.
