@@ -106,13 +106,13 @@ You can view the replica volume details on the **Replica** tab under **Storage**
 
 ## Viewing the replication history
 
-Replication history is viewed on the **Audit Log** on the **Account** tab under **Manage**. Both the primary and replica volumes display identical replication histories, which include
+Replication history is viewed on the **Audit Log** on the **Account** tab under **Manage**. Both the primary and replica volumes display identical replication histories, which include the following information.
 
 - Type for replication (failover or failback),
-- When it was initiated,
+- When the replication was initiated,
 - Snapshot that was used for the replication,
 - Size of the replication,
-- When it completed.
+- When the replication completed.
 
 
 ## Creating a duplicate of a replica
@@ -123,7 +123,7 @@ Duplicates can be created from both primary and replica volumes. The new duplica
 
 Duplicate volumes can be accessed by a host for read/write as soon as the storage is provisioned. However, snapshots and replication aren't allowed until the data copy from the original to the duplicate is complete.
 
-For more information, see [Creating a duplicate File Volume](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume)
+For more information, see [Creating a duplicate File Volume](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume).
 
 ## Using replicas to fail over when disaster strikes
 

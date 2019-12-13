@@ -49,7 +49,7 @@ You can create a duplicate volume through the [{{site.data.keyword.cloud}} conso
 
 1. Go to your list of {{site.data.keyword.filestorage_short}}. From the **Classic Infrastructure** menu, click **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Locate and click the volume name.
-3. Click **Actions** > **Duplicate Volume**
+3. Click **Actions** > **Duplicate Volume**.
 3. Choose your snapshot option.
     - If you order from a non-replica volume,
       - Select **Create a new snapshot to clone** – this action creates a snapshot to be used for the duplicate. Use this option if your volume doesn't have current snapshots or if you want to create a duplicate right then.</br>
@@ -70,7 +70,7 @@ You can create a duplicate volume through the [{{site.data.keyword.cloud}} conso
 
 ## Creating a duplicate from a specific Snapshot
 
-1. Go to your list of {{site.data.keyword.filestorage_short}}
+1. Go to your list of {{site.data.keyword.filestorage_short}}.
 2. Click a volume from the list to view the details page. It can either be a replica or non-replica volume.
 3. Scroll down and select an existing snapshot from the list on the details page and click **Actions** > **Duplicate**.   
 4. Storage Type (Endurance or Performance) and Location remain the same as the original volume.
