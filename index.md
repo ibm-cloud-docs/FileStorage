@@ -35,9 +35,9 @@ Take advantage of the following core features of {{site.data.keyword.filestorage
 - **{{site.data.keyword.filestorage_short}}**
    - Available for file-based NFS shares.
 - **Highly durable and resilient**
-   - Protects the integrity of the data, and maintains availability through maintenance events and unplanned failures without the need to create and manage operating system-level redundant array of independent disk (RAID) arrays
+   - Protects the integrity of the data, and maintains availability through maintenance events and unplanned failures without the need to create and manage operating system-level redundant array of independent disk (RAID) arrays.
 - **Data-At-Rest Encryption** [(Available in select data centers.)](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)
-   - Provider-managed encryption for data-at-rest is provided at no additional cost
+   - Provider-managed encryption for data-at-rest is provided at no additional cost.
 - **All Flash Backed Storage** [(Available in select data centers.)](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC)
    - All flash storage for volumes can be provisioned at 2 IOPS/GB or higher levels.
 - **Snapshots** [(Available in select data centers.)](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).

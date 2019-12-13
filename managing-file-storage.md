@@ -80,7 +80,7 @@ Options:
 
 You can view the volumes to which a host has access to, including information that is needed to make a connection – Volume Name, Storage Type, Target Address, capacity, and location.
 
-1. Go to the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}
+1. Go to the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}.
 2. From the menu, select **Classic Infrastructure**.
 3. Click **Devices** > **Device List**.
 4. Click the appropriate device.
@@ -91,7 +91,7 @@ You are presented with a list of storage volumes that this particular host has a
 
 ## Mounting and unmounting {{site.data.keyword.filestorage_short}}
 
-You can use the mount point information that is provided in the **Volume Details** view to mount {{site.data.keyword.filestorage_short}} from a host. See [Accessing {{site.data.keyword.filestorage_short}} on Linux](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)
+You can use the mount point information that is provided in the **Volume Details** view to mount {{site.data.keyword.filestorage_short}} from a host. For more information, see [Accessing {{site.data.keyword.filestorage_short}} on Linux](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux).
 
 
 ## Revoking a host's access to {{site.data.keyword.filestorage_short}}
@@ -164,9 +164,9 @@ Alternatively, you can use the following command in SLCLI.
 Usage: slcli file volume-cancel [OPTIONS] VOLUME_ID
 
 Options:
-  --reason TEXT  An optional reason for cancellation
+  --reason TEXT  An optional reason for cancellation.
   --immediate    Cancels the file storage volume immediately instead of on the
-                 billing anniversary
+                 billing anniversary.
   -h, --help     Show this message and exit.
 ```
 
