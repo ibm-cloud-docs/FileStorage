@@ -15,6 +15,8 @@ subcollection: FileStorage
 {:note: .note}
 {:important: .important}
 {:shortdesc: .shortdesc}
+{:support: data-reuse='support'}
+{:help: data-hd-content-type='help'}
 
 
 # Managing {{site.data.keyword.filestorage_short}}
@@ -24,6 +26,9 @@ You can manage your {{site.data.keyword.filestorage_full}} volumes through {{sit
 {:shortdesc}
 
 ## Authorizing hosts to access {{site.data.keyword.filestorage_short}}
+{: #authhostUI}
+{: help}
+{: support}
 
 “Authorized” hosts are hosts that were given access to a particular volume. Without host authorization, you can't access or use the storage from your system. Authorizing a host to access your volume generates the user name and password.
 
@@ -55,6 +60,9 @@ Options:
 ```
 
 ## Viewing the list of hosts that are authorized to access a {{site.data.keyword.filestorage_short}} volume
+{: #viewhostUI}
+{: help}
+{: support}
 
 1. Go to the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}. From the menu, select **Classic Infrastructure**.
 2. Click **Storage** > **{{site.data.keyword.filestorage_short}}**, and click your **Volume Name**.
@@ -77,6 +85,9 @@ Options:
 
 
 ## Viewing the {{site.data.keyword.filestorage_short}} volumes to which a host is authorized
+{: #viewvolUI}
+{: help}
+{: support}
 
 You can view the volumes to which a host has access to, including information that is needed to make a connection – Volume Name, Storage Type, Target Address, capacity, and location.
 
@@ -90,6 +101,9 @@ You are presented with a list of storage volumes that this particular host has a
 
 
 ## Mounting and unmounting {{site.data.keyword.filestorage_short}}
+{: #mounthostUI}
+{: help}
+{: support}
 
 You can use the mount point information that is provided in the **Volume Details** view to mount {{site.data.keyword.filestorage_short}} from a host. For more information, see [Accessing {{site.data.keyword.filestorage_short}} on Linux](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux).
 
@@ -104,6 +118,9 @@ To avoid host side issues, unmount the storage volume from your operating system
 You can revoke access from either Storage from the Device List or the Storage views.
 
 ### Revoking access from the Device List
+{: #revokeauthDeviceUI}
+{: help}
+{: support}
 
 1. Go to the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}.
 2. From the menu, select **Classic Infrastructure**.
@@ -118,6 +135,9 @@ If you want to disconnect multiple volumes from a specific host, you need to rep
 
 
 ### Revoking access from the Storage View
+{: #revokeauthStorageUI}
+{: help}
+{: support}
 
 1. Go to the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}.
 2. From the menu, select **Classic Infrastructure**.
@@ -130,6 +150,10 @@ If you want to disconnect multiple hosts from a specific volume, you need to rep
 {:tip}
 
 ### Revoking access through the SLCLI.
+{: #revokeauthslcli}
+{: help}
+{: support}
+
 You can use the following command in SLCLI.
 ```
 # slcli file access-revoke --help
@@ -145,6 +169,9 @@ Options:
 ```
 
 ## Canceling a storage volume
+{: #cancelvolUI}
+{: help}
+{: support}
 
 If you no longer need a specific volume, you can cancel that storage. To cancel a storage volume, you need to revoke access from any hosts first.
 
