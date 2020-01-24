@@ -1,15 +1,15 @@
 ---
 
 copyright:
-  years: 2014, 2019
-lastupdated: "2019-11-14"
+  years: 2014, 2020
+lastupdated: "2020-01-24"
 
 keywords: File Storage, NSF, mounting File Storage, mounting storage on Linux,
 
 subcollection: FileStorage
 
 ---
-{:external: target="_blank" .external}
+{:external: target="_blank" .external}_
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -46,36 +46,37 @@ Options:
 
 ## Mounting the {{site.data.keyword.filestorage_short}} share
 
-Use these instructions to connect a Linux-based {{site.data.keyword.cloud}} Compute instance to a Network file system (NFS) share. The example is based on Red Hat Enterprise Linux 6. The steps can be adjusted for other Linux distributions according to the operating system's (OS) vendor documentation.
+Use these instructions to connect a Linux-based {{site.data.keyword.cloud}} Compute instance to a Network file system (NFS) share. The example is based on Red Hat Enterprise Linux 8. The steps can be adjusted for other Linux distributions according to the operating system's (OS) vendor documentation.
 {:shortdesc}
 
 1. Install the required tools.
    ```
-   # yum -y install nfs-utils nfs-utils-lib
+   # yum install nfs-utils
    ```
    {:pre}
 
 2. Mount the remote share.
    ```
-   # mount -t "nfs version" -o "options" <mount_point> /mnt
+   # mount -t nfs -o <options> <host:mount_point> /mnt
    ```
 
    Example
    ```
-   # mount -t nfs4 -o hard,intr
-   nfsdal0501a.service.softlayer.com:/IBM01SV278685_7 /mnt
+   # mount -t nsf -o nfsvers=3 nfsdal0501a.service.softlayer.com:/IBM01SV278685_7 /mnt
    ```
 
    The mount point of the file storage instance can be obtained from the {{site.data.keyword.filestorage_short}} listing page or through an API call - `SoftLayer_Network_Storage::getNetworkMountAddress()`.
    {:tip}
 
-3. Verify that the mount was successful.
+   For more information, about common NFS mount options, see the [Product Documentation for Red Hat Enterprise Linux 8](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/managing_file_systems/mounting-nfs-shares_managing-file-systems){: external}.
+
+3. Verify that the mount was successful by using the disk filesystem command.
    ```
    # df -h
    Filesystem Size Used Avail Use% Mounted on
-   /dev/xvda2 25G 1.4G 22G 6%
-   /tmpfs 1.9G 0 1.9G 0%   /dev/shm
-   /dev/xvda1 97M 51M 42M 55%
+   /dev/xvda2  25G  1.4G  22G    6%   /
+   /tmpfs     1.9G     0 1.9G    0%   /dev/shm
+   /dev/xvda1 97M    51M  42M   55%
    ```
 
 4. Go to the mount point, and read/write files.
@@ -83,9 +84,9 @@ Use these instructions to connect a Linux-based {{site.data.keyword.cloud}} Comp
    # touch /mnt/test
    # ls -la /mnt
    total 12
-   drwxr-xr-x 2 nobody nobody 4096 Sep 8 15:52 .
-   dr-xr-xr-x. 22 root root 4096 Sep 8 14:30 ..
-   -rw-r--r-- 1 nobody nobody 0 Sep 8 15:52 test
+   drwxr-xr-x   2 nobody nobody 4096 Sep 8 15:52 .
+   dr-xr-xr-x. 22 root   root   4096 Sep 8 14:30 ..
+   -rw-r--r--   1 nobody nobody    0 Sep 8 15:52 test
    ```
 
    The files that are created by root have ownership of `nobody:nobody`. To display ownership correctly, `idmapd.conf` needs to be updated with the correct domain settings. For more information, see the [How to implement no_root_squash for NFS](#norootsquash) section.
@@ -94,13 +95,13 @@ Use these instructions to connect a Linux-based {{site.data.keyword.cloud}} Comp
 5. Mount the remote share on start. To complete the setup, edit the file systems table (`/etc/fstab`) to add the remote share to the list of entries that are automatically mounted on startup:
 
    ```
-   (hostname):/(username) /mnt "nfs version" "options" 0 0
+   (hostname):/(username) /mnt nfs_version options 0 0
    ```
 
    Example
 
    ```
-   nfsdal0501a.service.softlayer.com:/IBM01SV278685_7 /mnt nfs4 defaults,hard,intr 0 0
+   nfsdal0501a.service.softlayer.com:/IBM01SV278685_7 /mnt nfsvers=3 defaults 0 0
    ```
 
 6. Verify that the configuration file has no errors.
@@ -121,9 +122,11 @@ Use these instructions to connect a Linux-based {{site.data.keyword.cloud}} Comp
 ## Implementing `no_root_squash` for NFS (optional)
 {: #norootsquash}
 
-Configuring `no_root_squash` allows root clients to retain root permissions on the NFS share.
+By default, NFS downgrades any files that were created with the root permissions to the nobody user. This is a security feature that prevents privileges from being shared unless specifically requested.
+
+Configuring `no_root_squash` allows root clients to retain root permissions on the remote NFS share.
 - For NFSv3, there is nothing that clients need to do; `no_root_squash` works.
-- For NFSv4, you need to set the nfsv4 domain to: `slnfsv4.com` and start `rpcidmapd`, or a similar service that is used by your OS.
+- For NFSv4.1, you need to set the nfsv4 domain to: `slnfsv4.com` and start `rpcidmapd`, or a similar service that is used by your OS.
 
 Example
 
