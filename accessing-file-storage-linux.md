@@ -2,14 +2,14 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-24"
+lastupdated: "2020-01-27"
 
 keywords: File Storage, NSF, mounting File Storage, mounting storage on Linux,
 
 subcollection: FileStorage
 
 ---
-{:external: target="_blank" .external}_
+{:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
@@ -46,7 +46,7 @@ Options:
 
 ## Mounting the {{site.data.keyword.filestorage_short}} share
 
-Use these instructions to connect a Linux-based {{site.data.keyword.cloud}} Compute instance to a Network file system (NFS) share. The example is based on Red Hat Enterprise Linux 8. The steps can be adjusted for other Linux distributions according to the operating system's (OS) vendor documentation.
+Use these instructions to connect a Linux-based {{site.data.keyword.cloud}} Compute instance to a Network file system (NFS) share. The example is based on RHEL 7. The steps can be adjusted for other Linux distributions according to the operating system's (OS) vendor documentation.
 {:shortdesc}
 
 1. Install the required tools.
@@ -68,7 +68,6 @@ Use these instructions to connect a Linux-based {{site.data.keyword.cloud}} Comp
    The mount point of the file storage instance can be obtained from the {{site.data.keyword.filestorage_short}} listing page or through an API call - `SoftLayer_Network_Storage::getNetworkMountAddress()`.
    {:tip}
 
-   For more information, about common NFS mount options, see the [Product Documentation for Red Hat Enterprise Linux 8](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/managing_file_systems/mounting-nfs-shares_managing-file-systems){: external}.
 
 3. Verify that the mount was successful by using the disk filesystem command.
    ```
