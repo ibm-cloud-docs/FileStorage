@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2019
-lastupdated: "2019-12-13"
+  years: 2014, 2020
+lastupdated: "2020-01-27"
 
 keywords: File Storage, NSF, SLCLI, API
 
@@ -89,5 +89,6 @@ For more information about how to install and use the SLCLI, see [Python API Cli
   ```
 * [Managing storage limits](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits)
   ```
+  slcli file volume-limit
   slcli file volume-count
   ```
