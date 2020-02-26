@@ -2,7 +2,7 @@
 {:topicgroup: .topicgroup}
 
 {: .toc subcollection="FileStorage" category="storage" audience="services" href="/docs/FileStorage?topic=FileStorage-getting-started" path="FileStorage"}
-IBM Cloud Storage - File Storage
+IBM Cloud File Storage - Classic
 
     {: .navgroup id="learn"}
     getting-started.md
