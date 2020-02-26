@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="FileStorage" category="storage" audience="services" href="/docs/FileStorage?topic=FileStorage-getting-started" path="FileStorage"}
+{: .toc subcollection="FileStorage" category="storage" audience="services" href="/docs/FileStorage?topic=FileStorage-getting-started" path="/docs/FileStorage"}
 IBM Cloud File Storage - Classic
 
     {: .navgroup id="learn"}
