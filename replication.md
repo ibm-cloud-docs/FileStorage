@@ -23,7 +23,7 @@ subcollection: FileStorage
 Replication uses one of your snapshot schedules to automatically copy snapshots to a destination volume in a remote data center. The copies can be recovered in the remote site if a catastrophic event occurs or your data becomes corrupted.
 {:shortdesc}
 
-Replication keeps your data in sync in two different locations. If you want to clone your volume and use it independently from the original volume, see [Creating a duplicate File Volume](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume).
+Replication keeps your data in sync in two different locations. If you want to clone your volume and use it independently from the original volume, see [Creating a duplicate File Volume](/docs/FileStorage?topic=FileStorage-duplicatevolume).
 {:tip}
 
 Before you can replicate, you must create a snapshot schedule. The option to **Order Replica** does not appear until this condition is met.
@@ -49,7 +49,7 @@ Replications work based on a snapshot schedule. You must first have snapshot spa
 2. Click **Actions** and click **Order Replica**.
 3. Select the existing snapshot schedule that you want your replication to follow. The list contains all of your active snapshot schedules. <br />
 
-   You can select only one schedule even if you have a mix of hourly, daily, and weekly. All snapshots that were captured since the previous replication cycle, are replicated regardless of the schedule that originated them.<br />For more information, see [Working with Snapshots](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots).
+   You can select only one schedule even if you have a mix of hourly, daily, and weekly. All snapshots that were captured since the previous replication cycle, are replicated regardless of the schedule that originated them.<br />For more information, see [Working with Snapshots](/docs/FileStorage?topic=FileStorage-snapshots).
    {:tip}
 3. Select a **Location** for the replica volume.
 4. Click **Continue**.
@@ -93,7 +93,7 @@ Your primary snapshot space and your replica space must be the same. If you chan
 
 Your volume sizes must be the same for your primary and replica storage volumes. One can't be larger than the other. When you increase your snapshot space for your primary volume, the replica space is automatically increased. Increasing snapshot space triggers an immediate replication update. The increase to both volumes shows as line items on your invoice and is prorated as necessary.
 
-For more information about increasing snapshot space, see [Snapshots](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots).
+For more information about increasing snapshot space, see [Snapshots](/docs/FileStorage?topic=FileStorage-snapshots).
 
 ## Viewing the replica volumes in the Volume List
 
@@ -124,14 +124,14 @@ Duplicates can be created from both primary and replica volumes. The new duplica
 
 Duplicate volumes can be accessed by a host for read/write as soon as the storage is provisioned. However, snapshots and replication aren't allowed until the data copy from the original to the duplicate is complete.
 
-For more information, see [Creating a duplicate File Volume](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume).
+For more information, see [Creating a duplicate File Volume](/docs/FileStorage?topic=FileStorage-duplicatevolume).
 
 ## Using replicas to fail over when disaster strikes
 
 When you fail over, you’re "flipping the switch" from your storage volume in your primary data center to the destination volume in your remote data center. For example, your primary data center is London and your secondary data center is Amsterdam. If a failure event occurs, you’d fail over to Amsterdam – connecting to the now-primary volume from a compute instance in Amsterdam. After your volume in London is repaired, a snapshot is taken of the Amsterdam volume to fail back to London and the once-again primary volume from a compute instance in London.
 
-* If the primary location is experiencing problem but the storage and host are still online, see [Fail over with an accessible Primary volume](/docs/infrastructure/FileStorage?topic=FileStorage-dr-accessible).
-* If the primary location is down, see [Fail over with an inaccessible Primary volume](/docs/infrastructure/FileStorage?topic=FileStorage-dr-inaccessible).
+* If the primary location is experiencing problem but the storage and host are still online, see [Fail over with an accessible Primary volume](/docs/FileStorage?topic=FileStorage-dr-accessible).
+* If the primary location is down, see [Fail over with an inaccessible Primary volume](/docs/FileStorage?topic=FileStorage-dr-inaccessible).
 
 ## Canceling an existing replication
 

@@ -134,7 +134,7 @@ Snapshot schedules can be canceled through **Storage** > **{{site.data.keyword.f
 1. Click the schedule to be deleted in the **Snapshot Schedules** frame on the **Details** page.
 2. Click the check box next to the schedule to be deleted and click **Save**.<br />
 
-If you're using the replication feature, be sure that the schedule you're deleting isn't the schedule that is used by replication. For more information about deleting a replication schedule, see [here](/docs/infrastructure/FileStorage?topic=FileStorage-replication).
+If you're using the replication feature, be sure that the schedule you're deleting isn't the schedule that is used by replication. For more information about deleting a replication schedule, see [here](/docs/FileStorage?topic=FileStorage-replication).
 {:important}
 
 ## Deleting a snapshot
@@ -161,7 +161,7 @@ Manual snapshots that aren't deleted in the portal manually, are automatically d
 You might need to take your storage volume back to a specific point-in-time because of user-error or data corruption.
 
 1. Unmount and detach your storage volume from the host.
-   - For more information about mounting and unmounting storage, see [connecting your new storage](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux).
+   - For more information about mounting and unmounting storage, see [connecting your new storage](/docs/FileStorage?topic=FileStorage-mountingLinux).
 2. Go to the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}. From the menu, select **Classic Infrastructure**.
 3. Click **Storage**, **{{site.data.keyword.filestorage_short}}**.
 4. Scroll down, and click your volume to be restored. The **Snapshots** section of the **Detail** page displays the list of all saved snapshots along with their size and creation date.
@@ -174,7 +174,7 @@ You might need to take your storage volume back to a specific point-in-time beca
    Expect a message across the page that states that the volume is being restored by using the selected snapshot. Additionally, an icon appears next to your volume on the {{site.data.keyword.filestorage_short}} that indicates that an active transaction is in progress. Hovering over the icon produces a window that shows the transaction. The icon disappears when the transaction is complete.
    {:note}
 7. Mount and reattach your storage volume to the host.
-  - For more information about mounting and unmounting storage, see [connecting your new storage](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux).
+  - For more information about mounting and unmounting storage, see [connecting your new storage](/docs/FileStorage?topic=FileStorage-mountingLinux).
 
 Alternatively, you can restore the volume with a snapshot through the SLCLI.
 ```

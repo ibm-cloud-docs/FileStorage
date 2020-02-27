@@ -115,7 +115,7 @@ Use these instructions to connect a Linux-based {{site.data.keyword.cloud}} Comp
    If you're using NFS 4.1, add `sec=sys` to the mount command to prevent file ownership issues.
    {:tip}
 
-   If your host OS is CentOS, you can configure more options. For more information, see [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS).
+   If your host OS is CentOS, you can configure more options. For more information, see [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/FileStorage?topic=FileStorage-mountingCentOS).
 
 
 ## Implementing `no_root_squash` for NFS (optional)

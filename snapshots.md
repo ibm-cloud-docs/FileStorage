@@ -36,7 +36,7 @@ With snapshots, you can:
 - Non-disruptively create point-in-time recovery points,
 - Revert volumes to previous points-in-time.
 
-You must purchase some amount of snapshot space for your volume first so you can take snapshots of it. The snapshot space can be added during the initial order or afterward through the **Volume Details** page. Scheduled and manual snapshots share the snapshot space, so make sure you order enough Snapshot space. See the [Ordering Snapshots](/docs/infrastructure/FileStorage?topic=FileStorage-ordering-snapshots) article for more details and guidance.
+You must purchase some amount of snapshot space for your volume first so you can take snapshots of it. The snapshot space can be added during the initial order or afterward through the **Volume Details** page. Scheduled and manual snapshots share the snapshot space, so make sure you order enough Snapshot space. See the [Ordering Snapshots](/docs/FileStorage?topic=FileStorage-ordering-snapshots) article for more details and guidance.
 
 ## Snapshot best practices
 
@@ -53,7 +53,7 @@ Snapshots are not replacements for actual off-site Disaster Recovery replication
 
 ## Security
 
-All snapshots and replicas of encrypted {{site.data.keyword.filestorage_short}} are also encrypted by default. This feature can't be turned off on a volume basis. For more information about provider-managed encryption-at-rest, see [Securing your data](/docs/infrastructure/FileStorage?topic=FileStorage-encryption).
+All snapshots and replicas of encrypted {{site.data.keyword.filestorage_short}} are also encrypted by default. This feature can't be turned off on a volume basis. For more information about provider-managed encryption-at-rest, see [Securing your data](/docs/FileStorage?topic=FileStorage-encryption).
 
 ## How Snapshots affect the disk space
 
@@ -69,4 +69,4 @@ In the active file system, the changed blocks are rewritten to different locatio
 {: caption="Table 1 shows how snapshots affect the space usage on the Storage." caption-side="top"}
 
 
-For more information about snapshot space usage, see [Managing Snapshots](/docs/infrastructure/FileStorage?topic=FileStorage-managingSnapshots).
+For more information about snapshot space usage, see [Managing Snapshots](/docs/FileStorage?topic=FileStorage-managingSnapshots).
