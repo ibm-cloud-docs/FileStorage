@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2019
-lastupdated: "2019-11-14"
+  years: 2014, 2020
+lastupdated: "2020-02-27"
 
 keywords: File Storage, file storage, NFS, authorizing hosts, rewoke access, grant access, view authorizations
 
@@ -200,4 +200,4 @@ Options:
 When the volume is canceled, there's a 24-hour reclaim wait period. You can still see the volume in the console during those 24 hours. When the reclaim-period expires, the data is destroyed and the volume is removed from the console, too. However, billing for the volume stops immediately. For more information, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs).
 {:note}
 
- Active replicas can block reclamation of the storage volume. Make sure that the volume is no longer mounted, host authorizations are revoked, and replication is canceled before you attempt to cancel the original volume.
+Active replicas and dependent duplicates can block reclamation of the Storage volume. Make sure that the volume is no longer mounted, host authorizations are revoked, replication is canceled, and no dependent duplicates exist before you attempt to cancel the original volume.
