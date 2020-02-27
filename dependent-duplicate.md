@@ -24,6 +24,7 @@ With the new dependent volume feature, {{site.data.keyword.cloud}} customers are
 {:shortdesc}
 
 If you would like to know about creating a duplicate volume that is independent from the original volume, see [Creating and managing independent duplicate volumes](/docs/FileStorage?topic=FileStorage-duplicatevolume).
+{:note}
 
 ## Ordering a dependent volume
 {: #orderdependentvol}

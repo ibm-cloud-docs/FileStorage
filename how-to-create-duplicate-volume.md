@@ -23,6 +23,7 @@ You can create a duplicate of an existing {{site.data.keyword.cloud}} {{site.dat
 {:shortdesc}  
 
 For information about dependent duplicates that can be refreshed from the original, primary volume, see [Creating and managing dependent duplicate volumes](/docs/FileStorage?topic=FileStorage-dependentduplicate).
+{:note}
 
 Because the duplicate is based on the data in a point-in-time snapshot, snapshot space is required on the original volume before you can create a duplicate. To learn more about snapshots and how to order snapshot space, refer to [Snapshot documentation](/docs/FileStorage?topic=FileStorage-snapshots).  
 {:important}
