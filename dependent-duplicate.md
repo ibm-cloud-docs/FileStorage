@@ -17,10 +17,13 @@ subcollection: FileStorage
 {:shortdesc: .shortdesc}
 
 
-# Dependent volumes
+# Dependent duplicate volumes
 {: #dependentduplicate}
 
 With the new dependent volume feature, {{site.data.keyword.cloud}} customers are able to create volume duplicates without incurring downtime on the primary volume and refresh the data on the dependent volume by using a snapshot from the primary volume whenever they want to.
+{:shortdesc}
+
+If you would like to know about creating a duplicate volume that is independent from the original volume, see [Creating a duplicate {{site.data.keyword.filestorage_short}} volume](/docs/FileStorage?topic=FileStorage-duplicatevolume).
 
 ## Ordering a dependent volume
 {: #orderdependentvol}

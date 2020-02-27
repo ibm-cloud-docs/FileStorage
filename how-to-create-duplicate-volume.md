@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2019
-lastupdated: "2019-11-14"
+  years: 2017, 2020
+lastupdated: "2020-02-27"
 
 keywords: File Storage, file storage, NFS, duplicate volume
 
@@ -16,13 +16,15 @@ subcollection: FileStorage
 {:important: .important}
 {:shortdesc: .shortdesc}
 
-# Creating a Duplicate {{site.data.keyword.filestorage_short}}
+# Creating a duplicate {{site.data.keyword.filestorage_short}} volume
 {: #duplicatevolume}
 
-You can create a duplicate of an existing {{site.data.keyword.cloud}} {{site.data.keyword.filestorage_full}}. The duplicate volume inherits the capacity and performance options of the original volume by default and has a copy of the data up to the point-in-time of a snapshot.
+You can create a duplicate of an existing {{site.data.keyword.cloud}} {{site.data.keyword.filestorage_full}}. The duplicate volume inherits the capacity and performance options of the original volume by default and has a copy of the data up to the point-in-time of a snapshot. The duplicate volume is completely independent from the original volume.
 {:shortdesc}  
 
-Because the duplicate is based on the data in a point-in-time snapshot, snapshot space is required on the original volume before you can create a duplicate. To learn more about snapshots and how to order snapshot space, refer to [Snapshot documentation](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots).  
+For information about dependent duplicates that can be refreshed from the original, primary volume, see [Dependent duplicate volumes](/docs/FileStorage?topic=FileStorage-dependentduplicate)
+
+Because the duplicate is based on the data in a point-in-time snapshot, snapshot space is required on the original volume before you can create a duplicate. To learn more about snapshots and how to order snapshot space, refer to [Snapshot documentation](/docs/FileStorage?topic=FileStorage-snapshots).  
 {:important}
 
 Duplicates can be created from both **primary** and **replica** volumes. The new duplicate is created in the same data center as the original volume. If you create a duplicate from a replica volume, the new volume is created in the same data center as the replica volume.
