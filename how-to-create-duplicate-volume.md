@@ -16,13 +16,13 @@ subcollection: FileStorage
 {:important: .important}
 {:shortdesc: .shortdesc}
 
-# Creating a duplicate {{site.data.keyword.filestorage_short}} volume
+# Creating and managing independent duplicate volumes
 {: #duplicatevolume}
 
 You can create a duplicate of an existing {{site.data.keyword.cloud}} {{site.data.keyword.filestorage_full}}. The duplicate volume inherits the capacity and performance options of the original volume by default and has a copy of the data up to the point-in-time of a snapshot. The duplicate volume is completely independent from the original volume.
 {:shortdesc}  
 
-For information about dependent duplicates that can be refreshed from the original, primary volume, see [Dependent duplicate volumes](/docs/FileStorage?topic=FileStorage-dependentduplicate)
+For information about dependent duplicates that can be refreshed from the original, primary volume, see [Creating and managing dependent duplicate volumes](/docs/FileStorage?topic=FileStorage-dependentduplicate)
 
 Because the duplicate is based on the data in a point-in-time snapshot, snapshot space is required on the original volume before you can create a duplicate. To learn more about snapshots and how to order snapshot space, refer to [Snapshot documentation](/docs/FileStorage?topic=FileStorage-snapshots).  
 {:important}
