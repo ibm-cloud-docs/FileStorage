@@ -132,7 +132,7 @@ Options:
 For more information about authorizing hosts to access the {{site.data.keyword.filestorage_short}} through the API, see [authorize_host_to_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/file/#SoftLayer.managers.file.FileStorageManager.authorize_host_to_volume){: external}.
 {:tip}
 
-For more information about the simultaneous authorizations limit, see the [FAQs](/docs/FileStorage?topic=file-storage-faqs).
+For more information about the simultaneous authorizations limit, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqss).
 {:important}
 
 ## Connecting your new storage
