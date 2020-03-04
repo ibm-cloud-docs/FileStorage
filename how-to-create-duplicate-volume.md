@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-02-27"
+lastupdated: "2020-03-04"
 
 keywords: File Storage, file storage, NFS, duplicate volume
 
