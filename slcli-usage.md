@@ -27,7 +27,7 @@ For more information about how to install and use the SLCLI, see [Python API Cli
 {:tip}
 
 ## Access-related SLCLI commands
-* [Managing {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-managingstorage)  
+* [Managing {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-managingstorage)  
   ```
   slcli file access-authorize
   slcli file access-list
@@ -36,7 +36,7 @@ For more information about how to install and use the SLCLI, see [Python API Cli
 
 ## Replication-related SLCLI commands
 
-* [Replication-related SLCLI commands](/docs/infrastructure/FileStorage?topic=FileStorage-replication#clicommands)
+* [Replication-related SLCLI commands](/docs/FileStorage?topic=FileStorage-replication#clicommands)
   ```
   slcli file replica-failback
   slcli file replica-failover
@@ -47,12 +47,12 @@ For more information about how to install and use the SLCLI, see [Python API Cli
 
 ## Snapshots-related SLCLI commands
 
-* [Ordering Snapshots](/docs/infrastructure/FileStorage?topic=FileStorage-ordering-snapshots)
+* [Ordering Snapshots](/docs/FileStorage?topic=FileStorage-ordering-snapshots)
   ```
   slcli file snapshot-order
   ```
 
-* [Managing Snapshots](/docs/infrastructure/FileStorage?topic=FileStorage-managingSnapshots)
+* [Managing Snapshots](/docs/FileStorage?topic=FileStorage-managingSnapshots)
   ```
   slcli file snapshot-cancel
   slcli file snapshot-create
@@ -65,20 +65,20 @@ For more information about how to install and use the SLCLI, see [Python API Cli
 
 ## Volume-related SLCLI commands
 
-* [Ordering a {{site.data.keyword.filestorage_short}} volume](/docs/infrastructure/FileStorage?topic=FileStorage-orderingSLCLI)
-* [Creating a duplicate volume](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume)
+* [Ordering a {{site.data.keyword.filestorage_short}} volume](/docs/FileStorage?topic=FileStorage-orderingSLCLI)
+* [Creating a duplicate volume](/docs/FileStorage?topic=FileStorage-duplicatevolume)
   ```
   slcli file volume-duplicate
   ```
-* [Adjusting the IOPS](/docs/infrastructure/FileStorage?topic=FileStorage-adjustingIOPS#adjustingsteps)
+* [Adjusting the IOPS](/docs/FileStorage?topic=FileStorage-adjustingIOPS#adjustingsteps)
   ```
   slcli file volume-modify
   ```
-* [Expanding the capacity](/docs/infrastructure/FileStorage?topic=FileStorage-expandCapacity#resizingsteps)
+* [Expanding the capacity](/docs/FileStorage?topic=FileStorage-expandCapacity#resizingsteps)
   ```
   slcli file volume-modify
   ```
-* [Managing {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-managingstorage)
+* [Managing {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-managingstorage)
   ```
   slcli file volume-cancel
   slcli file volume-count
@@ -87,7 +87,7 @@ For more information about how to install and use the SLCLI, see [Python API Cli
   slcli file volume-list
   slcli file volume-order
   ```
-* [Managing storage limits](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits)
+* [Managing storage limits](/docs/FileStorage?topic=FileStorage-managinglimits)
   ```
   slcli file volume-limit
   slcli file volume-count

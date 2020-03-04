@@ -31,7 +31,7 @@ Look at your list of {{site.data.keyword.filestorage_short}} in the customer por
 {: faq}
 {: support}
 
-{{site.data.keyword.filestorage_short}} that was provisioned before a data center upgrade can't be encrypted. New {{site.data.keyword.filestorage_short}} that was provisioned in upgraded data centers is automatically encrypted. It's automatic, not a provisioning setting that can be selected or left out. Data on non-encrypted storage can be encrypted by creating a new volume, then copying the data to the new encrypted volume with host-based migration. For more information, see [Migrating File Storage](/docs/infrastructure/FileStorage?topic=FileStorage-migratestorage).
+{{site.data.keyword.filestorage_short}} that was provisioned before a data center upgrade can't be encrypted. New {{site.data.keyword.filestorage_short}} that was provisioned in upgraded data centers is automatically encrypted. It's automatic, not a provisioning setting that can be selected or left out. Data on non-encrypted storage can be encrypted by creating a new volume, then copying the data to the new encrypted volume with host-based migration. For more information, see [Migrating File Storage](/docs/FileStorage?topic=FileStorage-migratestorage).
 
 ## How do I know whether I'm provisioning {{site.data.keyword.filestorage_short}} in an upgraded data center?
 {: faq}
@@ -39,13 +39,13 @@ Look at your list of {{site.data.keyword.filestorage_short}} in the customer por
 
 In the {{site.data.keyword.filestorage_short}} order form, all upgraded data centers are denoted with an asterisk (`*`). During the ordering process, you're given an indication that you're provisioning storage with encryption. When the storage is provisioned, you can see an icon in the storage list that shows that volume as encrypted.
 
-All encrypted volumes and file shares are provisioned in upgraded data centers only. You can find a full list of upgraded data centers and available features [here](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
+All encrypted volumes and file shares are provisioned in upgraded data centers only. You can find a full list of upgraded data centers and available features [here](/docs/FileStorage?topic=FileStorage-selectDC).
 
 ## Why {{site.data.keyword.filestorage_short}} with an Endurance 10 IOPS tier be provisioned in some data centers and not in others?
 {: faq}
 {: support}
 
-The {{site.data.keyword.filestorage_short}} Endurance type 10 IOPS/GB tier is available in select data centers only, and new data centers are going to be added soon. You can find a full list of upgraded data centers and available features [here](/docs/infrastructure/FileStorage?topic=FileStorage-selectDC).
+The {{site.data.keyword.filestorage_short}} Endurance type 10 IOPS/GB tier is available in select data centers only, and new data centers are going to be added soon. You can find a full list of upgraded data centers and available features [here](/docs/FileStorage?topic=FileStorage-selectDC).
 
 ## How can I find the correct mount point for my {{site.data.keyword.filestorage_short}}?
 {: faq}
@@ -57,7 +57,7 @@ All encrypted {{site.data.keyword.filestorage_short}} volumes that are provision
 {: faq}
 {: support}
 
-By default, you can provision a combined total of 250 block and file storage volumes. To increase your limit, contact your sales representative. For more information, see [Managing storage limits](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits).
+By default, you can provision a combined total of 250 block and file storage volumes. To increase your limit, contact your sales representative. For more information, see [Managing storage limits](/docs/FileStorage?topic=FileStorage-managinglimits).
 
 ## How many instances can share the use of a provisioned {{site.data.keyword.filestorage_short}} volume?
 {: faq}
@@ -155,7 +155,7 @@ Both NFS v3 and NFS v4.1 are supported in the {{site.data.keyword.cloud}} enviro
 
 The preferred version is NFS v3 because it's a stateless protocol and more resilient when network events occur.
 
-NFS v3 natively supports `no_root_squash` that allows root clients to retain root permissions on the NFS share. You can enable this feature in NFS v4.1, by editing the domain information and running the `rpcidmapd` or a similar service. For more information, see [Implementing no_root_squash for NFS](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux#norootsquash).
+NFS v3 natively supports `no_root_squash` that allows root clients to retain root permissions on the NFS share. You can enable this feature in NFS v4.1, by editing the domain information and running the `rpcidmapd` or a similar service. For more information, see [Implementing no_root_squash for NFS](/docs/FileStorage?topic=FileStorage-mountingLinux#norootsquash).
 
 When it comes to vSphere Solutions, NFS v3 supports more features than v4.1. Such features include Storage DRS and Site Recovery Manager.
 
@@ -187,10 +187,10 @@ There are a couple of scenarios where a host (bare metal or VM) loses connection
 This issue can be observed with virtual drives of VMs on a network-attached datastore (NFS protocol). To resolve, confirm that the network path between the Storage and the Host is clear, and that there's no maintenance or outage currently in progress. Then, unmount and mount the storage volume. If the volume is still read-only, restart the host.
 
 For mounting instructions, see the following topics.
-- [Accessing {{site.data.keyword.filestorage_short}} on Linux](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)
-- [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)
-- [Mounting {{site.data.keyword.filestorage_short}} on CoreOS](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCoreOS)
-- [Mounting {{site.data.keyword.filestorage_short}} Volume on ESXi hosts](/docs/infrastructure/FileStorage?topic=FileStorage-architectureguide)
+- [Accessing {{site.data.keyword.filestorage_short}} on Linux](/docs/FileStorage?topic=FileStorage-mountingLinux)
+- [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/FileStorage?topic=FileStorage-mountingCentOS)
+- [Mounting {{site.data.keyword.filestorage_short}} on CoreOS](/docs/FileStorage?topic=FileStorage-mountingCoreOS)
+- [Mounting {{site.data.keyword.filestorage_short}} Volume on ESXi hosts](/docs/FileStorage?topic=FileStorage-architectureguide)
 
 To prevent this situation from recurring, the customer might consider the following:
 - Increasing disk timeout values. For more information, see [VMware KB - Increasing the disk timeout values for a Linux 2.6 virtual machine](https://kb.vmware.com/s/article/1009465){: external}.

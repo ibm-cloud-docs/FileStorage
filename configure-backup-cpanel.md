@@ -31,7 +31,7 @@ For more information, see [cPanel Docs - Backup](https://docs.cpanel.net/knowled
    By default, the cPanel system saves backup files locally, to the `/backup` directory. In this document, the assumption is that `/backup` folder exists and contains backups, and `/backup2` can be used as the new mount point.
    {:note}
 
-3. Configure your {{site.data.keyword.filestorage_short}} as described in [Accessing {{site.data.keyword.filestorage_short}} on Red Hat Enterprise Linux](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux) and [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)/[Mounting NFS/{{site.data.keyword.filestorage_short}} on CoreOS](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCoreOS). Mount the volume to `/backup2` and configure it in file system table (`/etc/fstab`) to enable mounting on start. <br />
+3. Configure your {{site.data.keyword.filestorage_short}} as described in [Accessing {{site.data.keyword.filestorage_short}} on Red Hat Enterprise Linux](/docs/FileStorage?topic=FileStorage-mountingLinux) and [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/FileStorage?topic=FileStorage-mountingCentOS)/[Mounting NFS/{{site.data.keyword.filestorage_short}} on CoreOS](/docs/FileStorage?topic=FileStorage-mountingCoreOS). Mount the volume to `/backup2` and configure it in file system table (`/etc/fstab`) to enable mounting on start. <br />
 
    By default, NFS downgrades any files that were created with the root permissions to the nobody user. To allow root clients to retain the root permissions on the NFS share, `no_root_squash`needs to be added to `/etc/exports`.
    {:tip}

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2019
-lastupdated: "2019-11-14"
+  years: 2014, 2020
+lastupdated: "2020-02-27"
 
 keywords: File Storage, file storage, NFS, authorizing hosts, rewoke access, grant access, view authorizations
 
@@ -105,7 +105,7 @@ You are presented with a list of storage volumes that this particular host has a
 {: help}
 {: support}
 
-You can use the mount point information that is provided in the **Volume Details** view to mount {{site.data.keyword.filestorage_short}} from a host. For more information, see [Accessing {{site.data.keyword.filestorage_short}} on Linux](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux).
+You can use the mount point information that is provided in the **Volume Details** view to mount {{site.data.keyword.filestorage_short}} from a host. For more information, see [Accessing {{site.data.keyword.filestorage_short}} on Linux](/docs/FileStorage?topic=FileStorage-mountingLinux).
 
 
 ## Revoking a host's access to {{site.data.keyword.filestorage_short}}
@@ -197,7 +197,7 @@ Options:
   -h, --help     Show this message and exit.
 ```
 
-When the volume is canceled, there's a 24-hour reclaim wait period. You can still see the volume in the console during those 24 hours. When the reclaim-period expires, the data is destroyed and the volume is removed from the console, too. However, billing for the volume stops immediately. For more information, see the [FAQs](/docs/infrastructure/FileStorage?topic=FileStorage-file-storage-faqs).
+When the volume is canceled, there's a 24-hour reclaim wait period. You can still see the volume in the console during those 24 hours. When the reclaim-period expires, the data is destroyed and the volume is removed from the console, too. However, billing for the volume stops immediately. For more information, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs).
 {:note}
 
- Active replicas can block reclamation of the storage volume. Make sure that the volume is no longer mounted, host authorizations are revoked, and replication is canceled before you attempt to cancel the original volume.
+Active replicas and dependent duplicates can block reclamation of the Storage volume. Make sure that the volume is no longer mounted, host authorizations are revoked, replication is canceled, and no dependent duplicates exist before you attempt to cancel the original volume.

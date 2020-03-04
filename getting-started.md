@@ -31,7 +31,7 @@ subcollection: FileStorage
 - Provision **Endurance** tiers that feature pre-defined performance levels and other features like snapshots and replication.
 - Build a high-powered **Performance** environment with allocated input/output operations per second (IOPS).
 
-For more information about the {{site.data.keyword.filestorage_short}} offering, see [Learn about {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-about).
+For more information about the {{site.data.keyword.filestorage_short}} offering, see [Learn about {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-about).
 
 ## Provisioning considerations
 
@@ -62,7 +62,7 @@ Another factor to consider is the number of hosts that are using your volume. If
 
 The speed of your Ethernet connection must be faster than the expected maximum throughput from your volume. Generally, don't expect to saturate your Ethernet connection beyond 70% of the available bandwidth. For example, if you have 6,000 IOPS and are using a 16-KB block size, the volume can handle approximately 94-MBps throughput. If you have a 1-Gbps Ethernet connection to your volume, it becomes a bottleneck when your servers attempt to use the maximum available throughput. It's because 70 percent of the theoretical limit of a 1-Gbps Ethernet connection (125 MB per second) would allow for 88 MB per second only.
 
-To achieve maximum IOPS, adequate network resources need to be in place. Other considerations include private network usage outside of storage and host side and application-specific tunings (IP stack or [queue depths](/docs/infrastructure/FileStorage?topic=FileStorage-hostqueuesettings), and other settings).
+To achieve maximum IOPS, adequate network resources need to be in place. Other considerations include private network usage outside of storage and host side and application-specific tunings (IP stack or [queue depths](/docs/FileStorage?topic=FileStorage-hostqueuesettings), and other settings).
 
 Storage traffic should be isolated from other traffic types, and not be directed through firewalls and routers. Keeping the storage traffic in a dedicated VLAN also helps preventing MTU mismatch when Jumbo frames are enabled. For more information, see [Jumbo Frames in IBM Cloud](/docs/FileStorage?topic=FileStorage-jumboframes).
 
@@ -74,19 +74,19 @@ Both NFS v3 and NFS v4.1 are supported in the {{site.data.keyword.cloud}} enviro
 
 ## Submitting your Order
 
-When you're ready to submit your order, you can place it through the [Console](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole), the [SLCLI](/docs/infrastructure/FileStorage?topic=FileStorage-orderingSLCLI), or the IBMCLOUD CLI. For more information about provisioning File Storage for VMware deployments, see the [architecture guide](/docs/infrastructure/FileStorage?topic=FileStorage-architectureguide).
+When you're ready to submit your order, you can place it through the [Console](/docs/FileStorage?topic=FileStorage-orderingConsole), the [SLCLI](/docs/FileStorage?topic=FileStorage-orderingSLCLI), or the IBMCLOUD CLI. For more information about provisioning File Storage for VMware deployments, see the [architecture guide](/docs/FileStorage?topic=FileStorage-architectureguide).
 
 ## Connecting your new storage
 {: #mountingstorage}
 
 When your provisioning request is complete, authorize your hosts to access the new storage and configure your connection. Depending on your host's operating system, follow the appropriate link.
-- [Accessing {{site.data.keyword.filestorage_short}} on Linux](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)
-- [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)
-- [Mounting {{site.data.keyword.filestorage_short}} on CoreOS](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCoreOS)
-- [Configuring {{site.data.keyword.filestorage_short}} for backup with cPanel](/docs/infrastructure/FileStorage?topic=FileStorage-cPanelBackups)
-- [Configuring {{site.data.keyword.filestorage_short}} for backup with Plesk](/docs/infrastructure/FileStorage?topic=FileStorage-PleskBackup)
-- [Mounting {{site.data.keyword.filestorage_short}} Volume on ESXi hosts](/docs/infrastructure/FileStorage?topic=FileStorage-architectureguide)
+- [Accessing {{site.data.keyword.filestorage_short}} on Linux](/docs/FileStorage?topic=FileStorage-mountingLinux)
+- [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/FileStorage?topic=FileStorage-mountingCentOS)
+- [Mounting {{site.data.keyword.filestorage_short}} on CoreOS](/docs/FileStorage?topic=FileStorage-mountingCoreOS)
+- [Configuring {{site.data.keyword.filestorage_short}} for backup with cPanel](/docs/FileStorage?topic=FileStorage-cPanelBackups)
+- [Configuring {{site.data.keyword.filestorage_short}} for backup with Plesk](/docs/FileStorage?topic=FileStorage-PleskBackup)
+- [Mounting {{site.data.keyword.filestorage_short}} Volume on ESXi hosts](/docs/FileStorage?topic=FileStorage-architectureguide)
 
 ## Managing your new Storage
 
-Through the portal or the SLCLI, you can manage various aspects of your {{site.data.keyword.filestorage_short}} such as host authorizations and cancellations. For more information, see [Managing {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-managingstorage).
+Through the portal or the SLCLI, you can manage various aspects of your {{site.data.keyword.filestorage_short}} such as host authorizations and cancellations. For more information, see [Managing {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-managingstorage).

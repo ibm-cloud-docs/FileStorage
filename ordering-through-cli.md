@@ -109,7 +109,7 @@ Order #32076317 placed successfully!
 > 100 IOPS
 ```
 
-By default, you can provision a combined total of 250 {{site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_short}} volumes. To increase the number of your volumes, contact your sales representative. For more information about increasing limits, see [Managing Storage limits](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits).
+By default, you can provision a combined total of 250 {{site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_short}} volumes. To increase the number of your volumes, contact your sales representative. For more information about increasing limits, see [Managing Storage limits](/docs/FileStorage?topic=FileStorage-managinglimits).
 {:important}
 
 ## Authorizing the hosts to access the new storage
@@ -132,16 +132,16 @@ Options:
 For more information about authorizing hosts to access the {{site.data.keyword.filestorage_short}} through the API, see [authorize_host_to_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/file/#SoftLayer.managers.file.FileStorageManager.authorize_host_to_volume){: external}.
 {:tip}
 
-For more information about the simultaneous authorizations limit, see the [FAQs](/docs/infrastructure/FileStorage?topic=file-storage-faqs).
+For more information about the simultaneous authorizations limit, see the [FAQs](/docs/FileStorage?topic=file-storage-faqs).
 {:important}
 
 ## Connecting your new storage
 {: #mountingvolumesCLI}
 
 Depending on your host's operating system, follow the appropriate link.
-- [Mounting {{site.data.keyword.filestorage_short}} on Linux](/docs/infrastructure/FileStorage?topic=FileStorage-mountingLinux)
-- [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCentOS)
-- [Mounting {{site.data.keyword.filestorage_short}} on Container Linux](/docs/infrastructure/FileStorage?topic=FileStorage-mountingCoreOS)
-- [Configuring {{site.data.keyword.filestorage_short}} for backup with cPanel](/docs/infrastructure/FileStorage?topic=FileStorage-cPanelBackups)
-- [Configuring {{site.data.keyword.filestorage_short}} for backup with Plesk](/docs/infrastructure/FileStorage?topic=FileStorage-PleskBackup)
-- [Mounting {{site.data.keyword.filestorage_short}} Volume on ESXi hosts](/docs/infrastructure/FileStorage?topic=FileStorage-architectureguide)
+- [Mounting {{site.data.keyword.filestorage_short}} on Linux](/docs/FileStorage?topic=FileStorage-mountingLinux)
+- [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/FileStorage?topic=FileStorage-mountingCentOS)
+- [Mounting {{site.data.keyword.filestorage_short}} on Container Linux](/docs/FileStorage?topic=FileStorage-mountingCoreOS)
+- [Configuring {{site.data.keyword.filestorage_short}} for backup with cPanel](/docs/FileStorage?topic=FileStorage-cPanelBackups)
+- [Configuring {{site.data.keyword.filestorage_short}} for backup with Plesk](/docs/FileStorage?topic=FileStorage-PleskBackup)
+- [Mounting {{site.data.keyword.filestorage_short}} Volume on ESXi hosts](/docs/FileStorage?topic=FileStorage-architectureguide)

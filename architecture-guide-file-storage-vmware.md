@@ -81,7 +81,7 @@ It's important to note that VMware environments are not aware of snapshots. The 
 
 Restoring the {{site.data.keyword.filestorage_short}} volume requires powering off all the VMs on the {{site.data.keyword.filestorage_short}}. The volume needs to be temporarily unmounted from the ESXi hosts to avoid any data corruption during the process.
 
-For more information, see the [snapshots](/docs/infrastructure/FileStorage?topic=FileStorage-snapshots) article.
+For more information, see the [snapshots](/docs/FileStorage?topic=FileStorage-snapshots) article.
 
 
 ### Using replication
@@ -93,7 +93,7 @@ With replicas, you can
 - Recover from site failures and other disasters quickly by failing over to the destination volume,
 - Fail over to a specific point in time in the DR copy.
 
-Replication keeps your data in sync in two different locations. If you want to clone your volume and use it independently from the original volume, see [Creating a duplicate File Volume](/docs/infrastructure/FileStorage?topic=FileStorage-duplicatevolume).
+Replication keeps your data in sync in two different locations. If you want to clone your volume and use it independently from the original volume, see [Creating a duplicate File Volume](/docs/FileStorage?topic=FileStorage-duplicatevolume).
 {:tip}
 
 Before you can replicate, you must create a snapshot schedule.
@@ -102,7 +102,7 @@ When you fail over, you are “flipping the switch” from your storage volume i
 
 Before the volume fails back to the primary data center, it needs to stop being used at the remote site. A snapshot of any new or changed information is taken and replicated to the primary data center before it can be mounted again on the production site ESXi hosts.
 
-For more information about configuring replicas, see [Replication](/docs/infrastructure/FileStorage?topic=FileStorage-replication).
+For more information about configuring replicas, see [Replication](/docs/FileStorage?topic=FileStorage-replication).
 
 Invalid data, whether corrupted, hacked, or infected replicate according to the snapshot schedule and snapshot retention. Using the smallest replication windows can provide for a better recovery point objective. However, it also can provide less time to react to the replication of invalid data.
 {:note}
@@ -112,7 +112,7 @@ Invalid data, whether corrupted, hacked, or infected replicate according to the 
 
 Use the [Advanced Single-Site VMware Reference Architecture](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){: external} to set up {{site.data.keyword.filestorage_short}} with Endurance or Performance options in your VMware environment.
 
-{{site.data.keyword.filestorage_short}} can be ordered through [The {{site.data.keyword.cloud}} catalog](https://{DomainName}/catalog){: external} or the CLI. For more information, see [Ordering {{site.data.keyword.filestorage_short}}](/docs/infrastructure/FileStorage?topic=FileStorage-orderingConsole).
+{{site.data.keyword.filestorage_short}} can be ordered through [The {{site.data.keyword.cloud}} catalog](https://{DomainName}/catalog){: external} or the CLI. For more information, see [Ordering {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-orderingConsole).
 
 Storage is provisioned in less than a minute and becomes visible on the **{{site.data.keyword.filestorage_short}}** page of the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic/storage/file){: external}.
 

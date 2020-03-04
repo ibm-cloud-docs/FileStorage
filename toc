@@ -37,6 +37,7 @@ IBM Cloud File Storage - Classic
         expandable_file_storage.md
         adjustable-iops.md
         how-to-create-duplicate-volume.md
+        dependent-duplicate.md
         working-with-snapshots.md
 
     {: .topicgroup}

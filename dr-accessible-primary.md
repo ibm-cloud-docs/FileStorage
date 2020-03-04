@@ -55,7 +55,7 @@ Before you proceed with these steps, disconnect the volume. Failure to do so, re
    {:note}
 4. Click **View All ({{site.data.keyword.filestorage_short}})**.
 5. Click your active volume (formerly your target volume). This volume now has an **Active** status.
-6. Mount and attach your storage volume to the host. For more information, see [connecting your new storage](/docs/infrastructure/FileStorage?topic=FileStorage-getting-started#mountingstorage).
+6. Mount and attach your storage volume to the host. For more information, see [connecting your new storage](/docs/FileStorage?topic=FileStorage-getting-started#mountingstorage).
 
 
 ## Starting a failback from a volume to its replica
@@ -80,4 +80,4 @@ Failbacks are started under **Storage**, **{{site.data.keyword.filestorage_short
    {:note}
 4. In the upper right, click **View All {{site.data.keyword.filestorage_short}}**.
 5. Click your active volume ("source"). This volume now has an **Inactive** status.
-6. Mount and attach your storage volume to the host. For more information, see [connecting your new storage](/docs/infrastructure/FileStorage?topic=FileStorage-getting-started#mountingstorage).
+6. Mount and attach your storage volume to the host. For more information, see [connecting your new storage](/docs/FileStorage?topic=FileStorage-getting-started#mountingstorage).
