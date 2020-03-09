@@ -1,12 +1,13 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="FileStorage" category="storage" audience="services" href="/docs/FileStorage?topic=FileStorage-getting-started" product-page="https://ibm.com/cloud/file-storage" path="FileStorage"}
+{: .toc subcollection="FileStorage" category="storage" audience="services" href="/docs/FileStorage?topic=FileStorage-getting-started" path="FileStorage"}
 IBM Cloud File Storage - Classic
 
     {: .navgroup id="learn"}
     getting-started.md
     index.md
+    [What is File storage?](https://www.ibm.com/cloud/learn/file-storage)
     selectdatacenters.md
     snapshots.md
     {: .navgroup-end}
