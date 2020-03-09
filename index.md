@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2019
-lastupdated: "2019-11-14"
+  years: 2014, 2020
+lastupdated: "2020-03-09"
 
 keywords: File Storage, Endurance, Performance, IOPS, replication, billing, file storage, NFS,
 
@@ -114,27 +114,4 @@ You can select hourly or monthly billing for a File volume. The type of billing 
 
  * With **monthly billing**, the calculation for the price is pro-rated from the date of creation to the end of the billing cycle and billed immediately. If a volume is deleted before the end of the billing cycle, there's no refund. Monthly billing is a good choice for storage that is used in production workloads that use data that needs to be stored and accessed for long periods of time (one month or longer).
 
-
-### Endurance
-{: #pricing-comparison-endurance}
-
-| Pricing options for predefined IOPS tiers | 0.25 IOPS | 2 IOPS/GB | 4 IOPS/GB | 10 IOPS/GB |
-|-----|-----|-----|-----|-----|
-| Monthly Price | $0.05/GB | $0.12/GB | $0.16/GB | $0.48/GB |
-| Hourly Price | $0.0001/GB | $0.0002/GB | $0.0003/GB | $0.0009/GB |
-{: row-headers}
-{: class="comparison-table"}
-{: caption="Table comparison" caption-side="top"}
-{: summary="Table 2 is showing the prices for Endurance Storage for each tier with monthly and hourly billing options. This table has row and column headers. The row headers identify the billing options. The column headers identify the IOPS level that is chosen for the service. To understand what your price is located in the table, navigate to the column and review the two different billing options for that IOPS tier."}
-
-### Performance
-{: #pricing-comparison-performance}
-
-| Pricing options for custom IOPS | Pricing calculation |
-|-----|-----|
-| Monthly Price | $0.10/GB + $0.07/IOP |
-| Hourly Price | $0.0001/GB + $0.0002/IOP |
-{: row-headers}
-{: class="comparison-table"}
-{: caption="Table comparison" caption-side="top"}
-{: summary="Table 3 is showing the prices for Performance Storage with monthly and hourly billing. This table has row and column headers. The row headers identify the billing options. To see what your cost for Storage is, navigate to the row of the billing option you are interested in."}
+For more information, see [Pricing options](https://www.ibm.com/cloud/file-storage/pricing){:external}.
