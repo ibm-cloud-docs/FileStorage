@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2020
 lastupdated: "2020-01-27"
 
-keywords: File Storage, NSF, mounting File Storage, mounting storage on Linux,
+keywords: File Storage, NFS, mounting File Storage, mounting storage on Linux,
 
 subcollection: FileStorage
 
@@ -62,7 +62,7 @@ Use these instructions to connect a Linux-based {{site.data.keyword.cloud}} Comp
 
    Example
    ```
-   # mount -t nsf -o nfsvers=3 nfsdal0501a.service.softlayer.com:/IBM01SV278685_7 /mnt
+   # mount -t nfs -o nfsvers=3 nfsdal0501a.service.softlayer.com:/IBM01SV278685_7 /mnt
    ```
 
    The mount point of the file storage instance can be obtained from the {{site.data.keyword.filestorage_short}} listing page or through an API call - `SoftLayer_Network_Storage::getNetworkMountAddress()`.
