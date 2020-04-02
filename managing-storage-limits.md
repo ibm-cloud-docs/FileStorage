@@ -66,7 +66,7 @@ curl -u $SL_USER:$SL_APIKEY 'https://api.softlayer.com/rest/v3.1/SoftLayer_Netwo
 [{"datacenterName":"global","maximumAvailableCount":300,"provisionedCount":99}]
 ```
 
-The API call shows the combined number of {site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_short}}.
+The API call shows the combined number of {{site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_short}}.
 {:tip}
 
 ## Requesting limit increase
