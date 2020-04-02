@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2020-01-27"
+lastupdated: "2020-04-02"
 
 keywords: File Storage, file storage, NFS,
 
@@ -25,9 +25,15 @@ subcollection: FileStorage
 
 By default, you can provision a combined total of 250 {{site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_short}} volumes globally.
 
-If you're unsure how many volumes you have, you can list the number of your volumes by using the following `slcli` command.
+## Confirming your current limit and provisioning count.
+
+If you're unsure how many volumes you have, you can confirm the numbers by using multiple methods.
+
+### SLCLI
+
+You can list the number of your volumes by using the [volume-limits](https://softlayer-python.readthedocs.io/en/latest/cli/file/#file-volume-limits){: external} command in `slcli` (version 5.8.5 or higher).
 ```
-# slcli file volume-limit
+# slcli file volume-limits
 ```
 
 Example output:
@@ -40,8 +46,29 @@ Example output:
 :............:.......................:..................:
 ```
 
+### IBMCLOUD CLI
+
+The volume-limits command is also available in the `sl` plugin for ibmcloud cli (v1.0 or higher).
+
+```
+# ibmcloud sl file volume-limits
+Datacenter   MaximumAvailableCount   ProvisionedCount
+global       300                     99
+```
+
+### REST API CALL
+
+To directly get this information from the API, use the following method: [SoftLayer_Network_Storage/getVolumeCountLimits](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Storage/getVolumeCountLimits/){: external}.
+
+```
+curl -u $SL_USER:$SL_APIKEY 'https://api.softlayer.com/rest/v3.1/SoftLayer_Network_Storage/getVolumeCountLimits.json'
+[{"datacenterName":"global","maximumAvailableCount":300,"provisionedCount":99}]
+```
+
 The API call shows the combined number of {site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_short}}.
 {:tip}
+
+## Requesting limit increase
 
 You can request a limit increase by submitting a support case in the [portal](https://cloud.ibm.com/unifiedsupport/cases/add){: external}. When the request is approved, you get a volume limit that is set for a specific data center.
 {:shortdesc}
