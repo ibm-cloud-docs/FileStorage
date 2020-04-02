@@ -46,9 +46,9 @@ Example output:
 :............:.......................:..................:
 ```
 
-### IBMCLOUD CLI
+### IBM Cloud CLI
 
-The volume-limits command is also available in the `sl` plugin for ibmcloud cli (v1.0 or higher).
+The volume-limits command is also available in the `sl` plugin for IBM Cloud CLI (v1.0 or higher).
 
 ```
 # ibmcloud sl file volume-limits
@@ -56,7 +56,7 @@ Datacenter   MaximumAvailableCount   ProvisionedCount
 global       300                     99
 ```
 
-### REST API CALL
+### REST API call
 
 To directly get this information from the API, use the following method: [SoftLayer_Network_Storage/getVolumeCountLimits](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Storage/getVolumeCountLimits/){: external}.
 
