@@ -26,6 +26,7 @@ subcollection: FileStorage
 By default, you can provision a combined total of 250 {{site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_short}} volumes globally.
 
 ## Confirming your current limit and provisioning count.
+{: #confirmfilelimits}
 
 If you're unsure how many volumes you have, you can confirm the numbers by using multiple methods.
 
@@ -69,6 +70,7 @@ The API call shows the combined number of {site.data.keyword.blockstorageshort}}
 {:tip}
 
 ## Requesting limit increase
+{: #increasefilelimits}
 
 You can request a limit increase by submitting a support case in the [portal](https://cloud.ibm.com/unifiedsupport/cases/add){: external}. When the request is approved, you get a volume limit that is set for a specific data center.
 {:shortdesc}
