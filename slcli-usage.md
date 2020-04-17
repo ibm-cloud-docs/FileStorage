@@ -66,6 +66,9 @@ For more information about how to install and use the SLCLI, see [Python API Cli
 ## Volume-related SLCLI commands
 
 * [Ordering a {{site.data.keyword.filestorage_short}} volume](/docs/FileStorage?topic=FileStorage-orderingSLCLI)
+  ```
+  slcli file volume-order
+  ```
 * [Creating an independent duplicate volume](/docs/FileStorage?topic=FileStorage-duplicatevolume)
   ```
   slcli file volume-duplicate
