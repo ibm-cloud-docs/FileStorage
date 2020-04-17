@@ -29,7 +29,6 @@ If you would like to know about creating a duplicate volume that is independent 
 The commands described in the article belong to the SLCLI. For more information about how to install and use the SLCLI, see [Python API Client](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}.
 {:tip}
 
-
 ## Ordering a dependent volume
 {: #orderdependentvol}
 
