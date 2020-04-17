@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-27"
+lastupdated: "2020-04-17"
 
 keywords: File Storage, NSF, SLCLI, API
 
@@ -66,10 +66,17 @@ For more information about how to install and use the SLCLI, see [Python API Cli
 ## Volume-related SLCLI commands
 
 * [Ordering a {{site.data.keyword.filestorage_short}} volume](/docs/FileStorage?topic=FileStorage-orderingSLCLI)
-* [Creating a duplicate volume](/docs/FileStorage?topic=FileStorage-duplicatevolume)
+* [Creating an independent duplicate volume](/docs/FileStorage?topic=FileStorage-duplicatevolume)
   ```
   slcli file volume-duplicate
   ```
+* [Creating and managing a dependent duplicate volume](/docs/FileStorage?topic=FileStorage-dependentduplicate)
+  ```
+  slcli file  volume-duplicate --dependent-duplicate TRUE <independent-vol-id>|
+  slcli file  volume-refresh <dependent-vol-id> <independent-snapshot-id>
+  slcli file  volume-convert <dependent-vol-id>
+  ```
+
 * [Adjusting the IOPS](/docs/FileStorage?topic=FileStorage-adjustingIOPS#adjustingsteps)
   ```
   slcli file volume-modify
