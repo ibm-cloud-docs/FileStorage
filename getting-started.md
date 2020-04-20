@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-14"
+lastupdated: "2020-04-20"
 
 keywords: File Storage, file storage, NFS, provisioning, setup, configuration, mounting storage
 
@@ -70,7 +70,7 @@ Storage traffic is included in the total network usage of Public Virtual Servers
 
 ### NFS version
 
-Both NFS v3 and NFS v4.1 are supported in the {{site.data.keyword.cloud}} environment. However, NFS v3 is preferred because NFS v4.1 is a stateful protocol (not stateless like NFSv3) and protocol issues can occur during network events. NFS v4.1 must quiesce all operations and then complete lock reclamation. On a relatively busy NFS file server, the increased latency can cause disruptions. The lack of NFS v4.1 multipath and trunking can also extend NFS operations recovery.
+Both NFS v3 and NFS v4.1 are supported in the {{site.data.keyword.cloud}} environment. However, NFS v3 is preferred because NFS v4.1 is a stateful protocol (not stateless like NFSv3) and protocol issues can occur during network events. NFS v4.1 must quiesce all operations and then complete lock reclamation. On a relatively busy NFS file server, the increased latency can cause disruptions.
 
 ## Submitting your Order
 
