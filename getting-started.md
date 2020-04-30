@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2020-04-20"
+lastupdated: "2020-04-30"
 
 keywords: File Storage, file storage, NFS, provisioning, setup, configuration, mounting storage
 
@@ -76,11 +76,11 @@ Both NFS v3 and NFS v4.1 are supported in the {{site.data.keyword.cloud}} enviro
 
 When you're ready to submit your order, you can place it through the [Console](/docs/FileStorage?topic=FileStorage-orderingConsole), the [SLCLI](/docs/FileStorage?topic=FileStorage-orderingSLCLI), or the IBMCLOUD CLI. For more information about provisioning File Storage for VMware deployments, see the [architecture guide](/docs/FileStorage?topic=FileStorage-architectureguide).
 
-## Connecting your new storage
+## Connecting and configuring your new storage
 {: #mountingstorage}
 
 When your provisioning request is complete, authorize your hosts to access the new storage and configure your connection. Depending on your host's operating system, follow the appropriate link.
-- [Accessing {{site.data.keyword.filestorage_short}} on Linux](/docs/FileStorage?topic=FileStorage-mountingLinux)
+- [Mounting {{site.data.keyword.filestorage_short}} on Linux](/docs/FileStorage?topic=FileStorage-mountingLinux)
 - [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/FileStorage?topic=FileStorage-mountingCentOS)
 - [Mounting {{site.data.keyword.filestorage_short}} on CoreOS](/docs/FileStorage?topic=FileStorage-mountingCoreOS)
 - [Configuring {{site.data.keyword.filestorage_short}} for backup with cPanel](/docs/FileStorage?topic=FileStorage-cPanelBackups)
