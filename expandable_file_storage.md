@@ -1,20 +1,23 @@
 ---
 
 copyright:
-  years: 2018, 2019
-lastupdated: "2019-11-11"
+  years: 2018, 2020
+lastupdated: "2020-05-19"
 
 keywords: File Storage, modify volume, NFS, file storage, expand capacity
 
 subcollection: FileStorage
 
 ---
-{:external: target="_blank" .external}
-{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
 {:shortdesc: .shortdesc}
+{:external: target="_blank" .external}
+{:support: data-reuse='support'}
+{:help: data-hd-content-type='help'}
 
 # Expanding File Share Capacity
 {: #expandCapacity}
@@ -91,3 +94,10 @@ Options:
                                 than 0.25.]
   -h, --help                    Show this message and exit.
 ```
+
+## Expanding Storage over 12 TB
+{: #increasecapacity}
+{: help}
+{: support}
+
+If you need to increase your Storage volume capacity beyond 12 TB, you can request to be added to the whitelist by submitting a [support case](https://{DomainName}/unifiedsupport/cases/add){: external}. When the request is approved by the Offering Manager, you're going to be notified of the update to your limits through the case process and see the option to increase your storage to 16 TB, 20 TB, 24 TB in the console.
