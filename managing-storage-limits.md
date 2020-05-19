@@ -25,7 +25,7 @@ subcollection: FileStorage
 
 By default, you can provision a combined total of 250 {{site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_short}} volumes globally.By following this process you can increase the number of volumes you can provision.
 
-For more information about increasing your storage volume capacity beyond 12 TB, see (Expanding Block Storage Capacity)[/docs/FileStorage?topic=FileStorage-expandingcapacity#increasecapacity].
+For more information about increasing your storage volume capacity beyond 12 TB, see [Expanding Block Storage Capacity](/docs/FileStorage?topic=FileStorage-expandingcapacity#increasecapacity).
 
 ## Confirming your current limit and provisioning count.
 {: #confirmfilelimits}
