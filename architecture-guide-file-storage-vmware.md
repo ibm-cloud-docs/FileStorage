@@ -342,5 +342,5 @@ The following examples use the CLI to set the advanced configuration parameters,
     #esxcfg-advcfg -g /Disk/QFullSampleSize
     #esxcfg-advcfg -g /Disk/QFullThreshold
     ```
-Learn more about Advanced Single-Site VMware Reference Architecture [here](/docs/virtualization?topic=Virtualization-advanced-single-site-vmware-reference-architecture){: external}.
+Learn more about Advanced Single-Site VMware Reference Architecture [here](/docs/virtualization?topic=virtualization-advanced-single-site-vmware-reference-architecture){: external}.
 {:tip}
