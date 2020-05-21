@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-05-19"
+lastupdated: "2020-05-21"
 
 keywords: File Storage, modify volume, NFS, file storage, expand capacity
 
@@ -100,4 +100,4 @@ Options:
 {: help}
 {: support}
 
-If you need to increase your Storage volume capacity beyond 12 TB, you can request to be added to the whitelist by submitting a [support case](https://{DomainName}/unifiedsupport/cases/add){: external}. When the request is approved by the Offering Manager, you're going to be notified of the update to your limits through the case process and see the option to increase your storage to 16 TB, 20 TB, 24 TB in the console.
+If you need to increase your Storage volume capacity beyond 12 TB, you can request to be added to the whitelist by submitting a [support case](https://{DomainName}/unifiedsupport/cases/add){: external}. When the request is approved by the Offering Manager, you're going to be notified of the update to your limits through the case process and see the option to increase your storage up to 24 TB. However, there is a limit to how many operations can be performed on the storage and it's 180K IOPS. So if you want to provision a volume with 10 IOPS, your maximum volume size is 18 TB. If you want to provision the maximum size of 24 TB, then your maximum number of reads and writes to the volume is 4 IOPS per GB.

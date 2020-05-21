@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2019
-lastupdated: "2019-12-06"
+  years: 2014, 2020
+lastupdated: "2020-05-21"
 
 keywords: File Storage, encryption, security, provisioning, limitations, NFS
 

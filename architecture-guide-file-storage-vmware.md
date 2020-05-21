@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2019
-lastupdated: "2019-11-22"
+  years: 2014, 2020
+lastupdated: "2020-05-21"
 
 keywords: File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
