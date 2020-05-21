@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2019
-lastupdated: "2019-11-22"
+  years: 2014, 2020
+lastupdated: "2020-05-21"
 
 keywords: File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
@@ -342,5 +342,5 @@ The following examples use the CLI to set the advanced configuration parameters,
     #esxcfg-advcfg -g /Disk/QFullSampleSize
     #esxcfg-advcfg -g /Disk/QFullThreshold
     ```
-Learn more about Advanced Single-Site VMware Reference Architecture [here](/docs/virtualization?topic=Virtualization-advanced-single-site-vmware-reference-architecture){: external}.
+Learn more about Advanced Single-Site VMware Reference Architecture [here](/docs/virtualization?topic=virtualization-advanced-single-site-vmware-reference-architecture){: external}.
 {:tip}
