@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-21"
+lastupdated: "2020-06-04"
 
 keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
@@ -23,18 +23,21 @@ subcollection: FileStorage
 
 ## How can I tell which of my {{site.data.keyword.filestorage_short}} volumes are encrypted?
 {: faq}
+{: #volumeencrypt}
 {: support}
 
 Look at your list of {{site.data.keyword.filestorage_short}} in the customer portal. You can see a lock icon to the right of the volume name for the volumes that are encrypted.
 
 ## If I purchased non-encrypted {{site.data.keyword.filestorage_short}} in a data center that was upgraded for encryption, can I encrypt my {{site.data.keyword.filestorage_short}}?
 {: faq}
+{: #encryptupgrade}
 {: support}
 
 {{site.data.keyword.filestorage_short}} that was provisioned before a data center upgrade can't be encrypted. New {{site.data.keyword.filestorage_short}} that was provisioned in upgraded data centers is automatically encrypted. It's automatic, not a provisioning setting that can be selected or left out. Data on non-encrypted storage can be encrypted by creating a new volume, then copying the data to the new encrypted volume with host-based migration. For more information, see [Migrating File Storage](/docs/FileStorage?topic=FileStorage-migratestorage).
 
 ## How do I know whether I'm provisioning {{site.data.keyword.filestorage_short}} in an upgraded data center?
 {: faq}
+{: #upgradedcenter}
 {: support}
 
 In the {{site.data.keyword.filestorage_short}} order form, all upgraded data centers are denoted with an asterisk (`*`). During the ordering process, you're given an indication that you're provisioning storage with encryption. When the storage is provisioned, you can see an icon in the storage list that shows that volume as encrypted.
@@ -43,11 +46,13 @@ All encrypted volumes and file shares are provisioned in upgraded data centers o
 
 ## Why {{site.data.keyword.filestorage_short}} with an Endurance 10 IOPS tier be provisioned in some data centers and not in others?
 {: faq}
+{: #orderendurance}
 {: support}
 
 The {{site.data.keyword.filestorage_short}} Endurance type 10 IOPS/GB tier is available in select data centers only, and new data centers are going to be added soon. You can find a full list of upgraded data centers and available features [here](/docs/FileStorage?topic=FileStorage-selectDC).
 
 ## How can I find the correct mount point for my {{site.data.keyword.filestorage_short}}?
+{: #mountpoint}
 {: faq}
 {: support}
 
@@ -55,18 +60,21 @@ All encrypted {{site.data.keyword.filestorage_short}} volumes that are provision
 
 ## How many volumes can I provision?
 {: faq}
+{: #provision}
 {: support}
 
 By default, you can provision a combined total of 250 block and file storage volumes. To increase your limit, contact your sales representative. For more information, see [Managing storage limits](/docs/FileStorage?topic=FileStorage-managinglimits).
 
 ## How many instances can share the use of a provisioned {{site.data.keyword.filestorage_short}} volume?
 {: faq}
+{: #authlimit}
 {: support}
 
 The default limit for number of authorizations per file volume is 64. To increase this limit, contact your sales representative.
 
 ## How many {{site.data.keyword.filestorage_short}} volumes can be attached to a single host?
 {: faq}
+{: #hostlimit}
 {: support}
 
 That depends on what the host operating system can handle, it’s not something that {{site.data.keyword.cloud}} limits. Refer to your OS documentation for limits on the number of file shares that can be mounted.
@@ -93,14 +101,22 @@ That depends on what the host operating system can handle, it’s not something 
 {: caption="Table comparison" caption-side="top"}
 {: summary="Table 1 shows the maximum number of inodes that are allowed based on the volume size. Volume sizes are in the left column. The numbers of inodes (files and directories) are on the right."}
 
+## I ordered a {{site.data.keyword.filestorage_short}} volume in the wrong data center. Is it possible to move or migrate it to another data center? 
+{: faq}
+{: #movedatacenter}
+
+You need to order new {{site.data.keyword.filestorage_short}} in the right data center, and then cancel the {{site.data.keyword.filestorage_short}} device you ordered in the incorrect location.
+
 ## Measuring IOPS
 {: faq}
+{: #iopsmeasure}
 {: support}
 
 IOPS is measured based on a load profile of 16-KB blocks with random 50 percent reads and 50 percent writes. Workloads that differ from this profile might experience poor performance.
 
 ## What happens when I use a smaller block size for measuring performance?
 {: faq}
+{: #smallblock}
 {: support}
 
 Maximum IOPS can be obtained even if you use smaller block sizes. However, the throughput is less in this case. For example, a volume with 6000 IOPS has the following throughput at various block sizes:
@@ -111,6 +127,7 @@ Maximum IOPS can be obtained even if you use smaller block sizes. However, the t
 
 
 ## Is the allocated IOPS enforced by instance or by volume?
+{: #iopslimit}
 {: faq}
 {: support}
 
@@ -118,12 +135,14 @@ IOPS is enforced at the volume level. Said differently, two hosts connected to a
 
 ## Does the volume need to be pre-warmed to achieve expected throughput?
 {: faq}
+{: #prewarm}
 {: support}
 
 There's no need for pre-warming. You can observe the specified throughput immediately upon provisioning the volume.
 
 ## Can more throughput be achieved if a faster Ethernet connection is used?
 {: faq}
+{: #ethernet}
 {: support}
 
 Throughput limits are set at a per-volume level. That limit cannot be increased by using a faster Ethernet connection. However, with a slower Ethernet connection, your bandwidth can be a potential bottleneck.
@@ -135,20 +154,46 @@ Throughput limits are set at a per-volume level. That limit cannot be increased 
 
 It's best to run storage traffic on a VLAN, which bypasses the firewall. Running storage traffic through software firewalls increases latency and adversely affects storage performance.
 
+## How do I route file storage traffic to its own VLAN interface and bypass a firewall?
+{: faq}
+{: #howtoisolatedstorage}
+
+To enact this good practice, complete the following steps.
+1. Provision a VLAN in the same data center as the host and the {{site.data.keyword.filestorage_short}} device.
+2. Provision a secondary private subnet to the new VLAN.
+3. Trunk the new VLAN to the private interface of the host.  
+   This action momentarily disrupts the network traffic on the host while the VLAN is being trunked to the host.
+   {:note}
+4. Create a new network interface.
+   * On the Linux or Windows host, create a 802.11q interface. Choose one of the unused secondary IP address from the newly trunked VLAN and assign that IP address, subnet mask, and gateway to a new 802.11q interface on the Linux or Windows host.
+   * In VMware, create a new VMkernel network interface (vmk) and assign the unused secondary IP address, subnet mask, and gateway IP from the newly trunked VLAN to the new vmk interface.
+5. Add a new persistent static route on the host to the target NFS subnet.
+
+See also [Provisioning File Storage with VMware](/docs/FileStorage?topic=FileStorage-architectureguide).
+
 ## What performance latency can be expected from the {{site.data.keyword.filestorage_short}}?   
 {: faq}
+{: #latency}
 {: support}
 
 Target latency within the storage is  less than one ms. The storage is connected to compute instances on a shared network, so the exact performance latency depends on the network traffic during the operation.
 
 ## What happens to the data when {{site.data.keyword.filestorage_short}} Volumes are deleted?
 {: faq}
+{: #deleted}
 {: support}
 
 {{site.data.keyword.filestorage_full}} presents file shares to customers on physical storage that is wiped before any reuse. Customers with special requirements for compliance such as NIST 800-88 Guidelines for Media Sanitization need to perform the data sanitization procedure before they delete their storage.
 
+## I cannot cancel a {{site.data.keyword.filestorage_short}} volume because the Cancel action in the Cloud console is unavailable or grayed out. What’s happening?
+{: faq}
+{: #cancelstorage}
+
+The cancellation process for this storage device is in progress so the Cancel action is no longer available. The volume remains visible for at least 24 hours until it’s reclaimed, with an hourglass or clock icon next to the device name to indicate that it’s in a waiting period.  The minimum 24-hour waiting period gives you a chance to void the cancel request if needed.
+
 ## Which NFS versions are supported?
 {: faq}
+{: #nfs}
 {: support}
 
 Both NFS v3 and NFS v4.1 are supported in the {{site.data.keyword.cloud}} environment.
@@ -168,17 +213,20 @@ No. Currently, vStorage for API Array Integration and Hardware acceleration are 
 
 ## What happens to the drives that are decommissioned from the cloud data center?
 {: faq}
+{: #decommission}
 {: support}
 
 When drives are decommissioned, IBM destroys them before they are disposed of. The drives become unusable. Any data that was written to that drive becomes inaccessible.
 
 ## What is the difference between Controlled Failover and Immediate Failover?
 {: faq}
+{: #failover}
 {: support}
 
 Controlled Failover does one last sync before it breaks the mirror process. The Immediate Failover immediately breaks the mirror and activates the replica volume.
 
 ## My storage appears offline or read-only. Why did it happen and how do I fix it?
+{: #StorageOffline}
 {: faq}
 {: support}
 
@@ -197,3 +245,9 @@ To prevent this situation from recurring, the customer might consider the follow
 - Adding guest OS tunings. For more information, see [NetApp's recommendations for guest OS tunings for a VMware vSphere deployment](https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Virtual_Storage_Console_for_VMware_vSphere/What_are_the_guest_OS_tunings_needed_for_a_VMware_vSphere_deployment%3F){: external}.
 - Reconfiguring Host systems that use NFSv4.1 for NFSv3 for increased resilience during maintenance operations.
 - Discontinuing session trunking on host systems that run VMware ESXi. Session trunking is not supported and is known to cause disruptions.
+
+## I expanded the volume size of my {{site.data.keyword.filestorage_short}} by using the Cloud console, but the size on my server is still the same. How do I fix it?
+{: faq}
+{: #expandsize}
+
+To see the expanded volume size, mount and remount your existing file storage disk on your server. In VMware, rescan storage to refresh the datastore and show the new volume size.
