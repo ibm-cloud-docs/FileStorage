@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-18'"
+lastupdated: "2019-06-18"
 
 keywords: File Storage, file storage, NFS, security, encryption
 
