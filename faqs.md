@@ -22,6 +22,7 @@ subcollection: FileStorage
 {: #file-storage-faqs}
 
 ## How can I tell which of my {{site.data.keyword.filestorage_short}} volumes are encrypted?
+{: #storageencryption}
 {: faq}
 {: support}
 
@@ -42,30 +43,35 @@ In the {{site.data.keyword.filestorage_short}} order form, all upgraded data cen
 All encrypted volumes and file shares are provisioned in upgraded data centers only. You can find a full list of upgraded data centers and available features [here](/docs/FileStorage?topic=FileStorage-selectDC).
 
 ## Why {{site.data.keyword.filestorage_short}} with an Endurance 10 IOPS tier be provisioned in some data centers and not in others?
+{: #storagelocations}
 {: faq}
 {: support}
 
 The {{site.data.keyword.filestorage_short}} Endurance type 10 IOPS/GB tier is available in select data centers only, and new data centers are going to be added soon. You can find a full list of upgraded data centers and available features [here](/docs/FileStorage?topic=FileStorage-selectDC).
 
 ## How can I find the correct mount point for my {{site.data.keyword.filestorage_short}}?
+{: #mountpoint}
 {: faq}
 {: support}
 
 All encrypted {{site.data.keyword.filestorage_short}} volumes that are provisioned in the enhanced data centers have a different mount point than non-encrypted volumes. To ensure that you're using the correct mount point, view the mount point information in the **Volume Details** page in the UI. You can also access the correct mount point through an API call: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 
 ## How many volumes can I provision?
+{: #provisioninglimit}
 {: faq}
 {: support}
 
 By default, you can provision a combined total of 250 block and file storage volumes. To increase your limit, contact your sales representative. For more information, see [Managing storage limits](/docs/FileStorage?topic=FileStorage-managinglimits).
 
 ## How many instances can share the use of a provisioned {{site.data.keyword.filestorage_short}} volume?
+{: #authorizationlimit}
 {: faq}
 {: support}
 
 The default limit for number of authorizations per file volume is 64. To increase this limit, contact your sales representative.
 
 ## How many {{site.data.keyword.filestorage_short}} volumes can be attached to a single host?
+{: #mountinglimit}
 {: faq}
 {: support}
 
@@ -94,6 +100,7 @@ That depends on what the host operating system can handle, it’s not something 
 {: summary="Table 1 shows the maximum number of inodes that are allowed based on the volume size. Volume sizes are in the left column. The numbers of inodes (files and directories) are on the right."}
 
 ## Measuring IOPS
+{: #measuringIOPS}
 {: faq}
 {: support}
 
@@ -111,6 +118,7 @@ Maximum IOPS can be obtained even if you use smaller block sizes. However, the t
 
 
 ## Is the allocated IOPS enforced by instance or by volume?
+{: #iopslimit}
 {: faq}
 {: support}
 
@@ -123,6 +131,7 @@ IOPS is enforced at the volume level. Said differently, two hosts connected to a
 There's no need for pre-warming. You can observe the specified throughput immediately upon provisioning the volume.
 
 ## Can more throughput be achieved if a faster Ethernet connection is used?
+{: #bandwidthIOPS}
 {: faq}
 {: support}
 
@@ -135,19 +144,22 @@ Throughput limits are set at a per-volume level. That limit cannot be increased 
 
 It's best to run storage traffic on a VLAN, which bypasses the firewall. Running storage traffic through software firewalls increases latency and adversely affects storage performance.
 
-## What performance latency can be expected from the {{site.data.keyword.filestorage_short}}?   
+## What performance latency can be expected from the {{site.data.keyword.filestorage_short}}?
+{: #storagelatency}
 {: faq}
 {: support}
 
 Target latency within the storage is  less than one ms. The storage is connected to compute instances on a shared network, so the exact performance latency depends on the network traffic during the operation.
 
 ## What happens to the data when {{site.data.keyword.filestorage_short}} Volumes are deleted?
+{: #datadeletion}
 {: faq}
 {: support}
 
 {{site.data.keyword.filestorage_full}} presents file shares to customers on physical storage that is wiped before any reuse. Customers with special requirements for compliance such as NIST 800-88 Guidelines for Media Sanitization need to perform the data sanitization procedure before they delete their storage.
 
 ## Which NFS versions are supported?
+{: #NFSversions}
 {: faq}
 {: support}
 
@@ -167,6 +179,7 @@ When it comes to vSphere Solutions, NFS v3 supports more features than v4.1. Suc
 No. Currently, vStorage for API Array Integration and Hardware acceleration are not supported.
 
 ## What happens to the drives that are decommissioned from the cloud data center?
+{: #drivedecommission}
 {: faq}
 {: support}
 
@@ -179,6 +192,7 @@ When drives are decommissioned, IBM destroys them before they are disposed of. T
 Controlled Failover does one last sync before it breaks the mirror process. The Immediate Failover immediately breaks the mirror and activates the replica volume.
 
 ## My storage appears offline or read-only. Why did it happen and how do I fix it?
+{: #StorageOffline}
 {: faq}
 {: support}
 
