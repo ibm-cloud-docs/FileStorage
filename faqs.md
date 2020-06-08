@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-04"
+lastupdated: "2020-06-08"
 
 keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
@@ -44,12 +44,12 @@ In the {{site.data.keyword.filestorage_short}} order form, all upgraded data cen
 
 All encrypted volumes and file shares are provisioned in upgraded data centers only. You can find a full list of upgraded data centers and available features [here](/docs/FileStorage?topic=FileStorage-selectDC).
 
-## Why {{site.data.keyword.filestorage_short}} with an Endurance 10 IOPS tier be provisioned in some data centers and not in others?
+## Why can {{site.data.keyword.filestorage_short}} with an Endurance 10 IOPS tier be provisioned in some data centers and not in others?
 {: faq}
 {: #orderendurance}
 {: support}
 
-The {{site.data.keyword.filestorage_short}} Endurance type 10 IOPS/GB tier is available in select data centers only, and new data centers are going to be added soon. You can find a full list of upgraded data centers and available features [here](/docs/FileStorage?topic=FileStorage-selectDC).
+The {{site.data.keyword.filestorage_short}} Endurance type 10 IOPS/GB tier is available in most data centers, and new data centers are going to be added soon. You can find a full list of upgraded data centers and available features [here](/docs/FileStorage?topic=FileStorage-selectDC).
 
 ## How can I find the correct mount point for my {{site.data.keyword.filestorage_short}}?
 {: #mountpoint}
@@ -101,7 +101,7 @@ That depends on what the host operating system can handle, it’s not something 
 {: caption="Table comparison" caption-side="top"}
 {: summary="Table 1 shows the maximum number of inodes that are allowed based on the volume size. Volume sizes are in the left column. The numbers of inodes (files and directories) are on the right."}
 
-## I ordered a {{site.data.keyword.filestorage_short}} volume in the wrong data center. Is it possible to move or migrate it to another data center? 
+## I ordered a {{site.data.keyword.filestorage_short}} volume in the wrong data center. Is it possible to move or migrate it to another data center?
 {: faq}
 {: #movedatacenter}
 
@@ -169,7 +169,7 @@ To enact this good practice, complete the following steps.
    * In VMware, create a new VMkernel network interface (vmk) and assign the unused secondary IP address, subnet mask, and gateway IP from the newly trunked VLAN to the new vmk interface.
 5. Add a new persistent static route on the host to the target NFS subnet.
 
-See also [Provisioning File Storage with VMware](/docs/FileStorage?topic=FileStorage-architectureguide).
+For more information, see [Provisioning File Storage with VMware](/docs/FileStorage?topic=FileStorage-architectureguide).
 
 ## What performance latency can be expected from the {{site.data.keyword.filestorage_short}}?   
 {: faq}
