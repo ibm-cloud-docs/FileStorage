@@ -165,7 +165,7 @@ To enact this good practice, complete the following steps.
    This action momentarily disrupts the network traffic on the host while the VLAN is being trunked to the host.
    {:note}
 4. Create a new network interface.
-   * On the Linux or Windows host, create a 802.11q interface. Choose one of the unused secondary IP address from the newly trunked VLAN and assign that IP address, subnet mask, and gateway to a new 802.11q interface on the Linux or Windows host.
+   * On the Linux host, create a 802.11q interface. Choose one of the unused secondary IP address from the newly trunked VLAN and assign that IP address, subnet mask, and gateway to a new 802.11q interface.
    * In VMware, create a new VMkernel network interface (vmk) and assign the unused secondary IP address, subnet mask, and gateway IP from the newly trunked VLAN to the new vmk interface.
 5. Add a new persistent static route on the host to the target NFS subnet.
 
