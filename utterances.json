@@ -371,5 +371,90 @@
         "file system expand file storage ",
         "extend file storage size",
         "expanded the volume size of File Storage"
+   ],
+    "chassis-swap": [    
+         "chassis swap file storage issue",
+        "file storage wont connect after chassis swap",
+        "file storage authorization chassis swap",
+        "issue with file storage after chassis swap",
+        "file storage reconnect chassis swap",
+        "reconnect file storage after chassis swap",
+        "disconnected file storage chassis swap",
+        "chassis swap nfs not permitted",
+        "chassis swap nfs error",
+        "chassis swap file storage problem"
+  ],
+    "disconnect": [  
+        "remove file storage from host",
+        "disconnect my file storage device from a host",
+        "disconnect file storage",
+        "remove file storage",
+        "unmount nfs from host",
+        "unmount file storage",
+        "remove nfs host",
+        "remove mount file storage",
+        "detach file storage"
+ ],
+       "tier-options": [  
+        "difference between endurance and performance tier file storage",
+        "iscsi tier endurance performance file storage",
+        "do endurance and performance storage differ in file storage",
+        "performance tier versus endurance tier nfs",
+        "advantage of performance versus endurance file storage",
+        "which is better endurance or performance for file storage"
+    ],
+      "connect-Windows": [  
+          "connect nfs on windows",
+          "file storage connection on windows",
+          "CIFS Windows for nfs",
+          "mount nfs on Windows",
+          "what are file storage supported OS",
+          "mount file storage on windows", 
+          "connect file storage in windows",
+          "supported OS for nfs"
+    ],      
+      "multiple-hosts": [  
+        "mount a single storage device to multiple hosts within File Storage",
+        "mounting file storage device to multiple hosts",
+        "how to mount file storage device to multiple hosts",
+        "mount a single file storage device to multiple hosts",
+        "multi host file storage device share",
+        "sharing single file storage to multi hosts",
+        "how many hosts one file storage device",
+        "how many hosts on file storage",
+        "CSV VMFS OCFS nfs"
+     ],
+      "inodes": [
+        "more inodes for nfs",
+        "max volume size nfs",
+        "number of inodes in nfs",
+        "max number inodes file storage",
+        "inodes amount in file storage",
+        "inode increase in nfs",
+        "file storage size limit for inode",
+        "max inodes for nfs",
+        "limit inodes size file storage"
+    ],
+     "expand-fail": [     
+        "am unable to upgrade file storage",
+        "Endurance 0.25 tier not upgradeable for file storage",
+        "upgrade file storage tier",
+        "can you upgrade file storage iops",
+        "can not upgrade file storage",
+        "can't upgrade file storage",
+        "how to upgrade 0.25 tier in file storage",
+        "not able to modify file storage",
+        "no option to upgrade file storage",
+        "cannot expand file storage"
+     ],
+     "thin": [    
+        "File storage volumes thin or thick provisioned", 
+        "thin or thick file storage",
+        "nfs thin or thick provisioning",
+        "thin or thick file storage",
+        "thin-provisioned file storage",
+        "thick-provisioned file storage",
+         "convert disk thick file storage",
+         "modify file storage provison disk size"
     ]
 }
