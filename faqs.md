@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-08"
+lastupdated: "2020-06-15"
 
 keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
@@ -26,14 +26,14 @@ subcollection: FileStorage
 {: #volumeencrypt}
 {: support}
 
-Look at your list of {{site.data.keyword.filestorage_short}} in the customer portal. You can see a lock icon to the right of the volume name for the volumes that are encrypted.
+Look at your list of {{site.data.keyword.filestorage_short}} in the customer portal. You can see a lock icon next to the volume name for the volumes that are encrypted.
 
 ## If I purchased non-encrypted {{site.data.keyword.filestorage_short}} in a data center that was upgraded for encryption, can I encrypt my {{site.data.keyword.filestorage_short}}?
 {: faq}
 {: #encryptupgrade}
 {: support}
 
-{{site.data.keyword.filestorage_short}} that was provisioned before a data center upgrade can't be encrypted. New {{site.data.keyword.filestorage_short}} that was provisioned in upgraded data centers is automatically encrypted. It's automatic, not a provisioning setting that can be selected or left out. Data on non-encrypted storage can be encrypted by creating a new volume, then copying the data to the new encrypted volume with host-based migration. For more information, see [Migrating File Storage](/docs/FileStorage?topic=FileStorage-migratestorage).
+{{site.data.keyword.filestorage_short}} that was provisioned before a data center upgrade can't be encrypted. New {{site.data.keyword.filestorage_short}} that was provisioned in upgraded data centers is automatically encrypted. It's automatic, not a provisioning setting that can be selected or left out. Data on non-encrypted storage can be encrypted by creating a new volume, then copying the data to the new encrypted volume with host-based migration. For more information, see [Migrating {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-migratestorage).
 
 ## How do I know whether I'm provisioning {{site.data.keyword.filestorage_short}} in an upgraded data center?
 {: faq}
@@ -63,7 +63,7 @@ All encrypted {{site.data.keyword.filestorage_short}} volumes that are provision
 {: #provision}
 {: support}
 
-By default, you can provision a combined total of 250 block and file storage volumes. To increase your limit, contact your sales representative. For more information, see [Managing storage limits](/docs/FileStorage?topic=FileStorage-managinglimits).
+By default, you can provision a combined total of 250 Block and {{site.data.keyword.filestorage_short}} volumes. To increase your limit, contact your sales representative. For more information, see [Managing storage limits](/docs/FileStorage?topic=FileStorage-managinglimits).
 
 ## How many instances can share the use of a provisioned {{site.data.keyword.filestorage_short}} volume?
 {: faq}
@@ -154,7 +154,7 @@ Throughput limits are set at a per-volume level. That limit cannot be increased 
 
 It's best to run storage traffic on a VLAN, which bypasses the firewall. Running storage traffic through software firewalls increases latency and adversely affects storage performance.
 
-## How do I route file storage traffic to its own VLAN interface and bypass a firewall?
+## How do I route {{site.data.keyword.filestorage_short}} traffic to its own VLAN interface and bypass a firewall?
 {: faq}
 {: #howtoisolatedstorage}
 
@@ -168,8 +168,12 @@ To enact this good practice, complete the following steps.
    * On the Linux host, create a 802.11q interface. Choose one of the unused secondary IP address from the newly trunked VLAN and assign that IP address, subnet mask, and gateway to a new 802.11q interface.
    * In VMware, create a new VMkernel network interface (vmk) and assign the unused secondary IP address, subnet mask, and gateway IP from the newly trunked VLAN to the new vmk interface.
 5. Add a new persistent static route on the host to the target NFS subnet.
-
-For more information, see [Provisioning File Storage with VMware](/docs/FileStorage?topic=FileStorage-architectureguide).
+6. Authorize the new IP to access the storage.
+7. For mounting instructions, depending on your host's operating system, follow the appropriate link.
+   - [Accessing {{site.data.keyword.filestorage_short}} on Linux](/docs/FileStorage?topic=FileStorage-mountingLinux)
+   - [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/FileStorage?topic=FileStorage-mountingCentOS)
+   - [Mounting {{site.data.keyword.filestorage_short}} on CoreOS](/docs/FileStorage?topic=FileStorage-mountingCoreOS)
+   - [Mounting {{site.data.keyword.filestorage_short}} Volume on ESXi hosts](/docs/FileStorage?topic=FileStorage-architectureguide)
 
 ## What performance latency can be expected from the {{site.data.keyword.filestorage_short}}?   
 {: faq}
@@ -189,7 +193,7 @@ Target latency within the storage is  less than one ms. The storage is connected
 {: faq}
 {: #cancelstorage}
 
-The cancellation process for this storage device is in progress so the Cancel action is no longer available. The volume remains visible for at least 24 hours until it’s reclaimed, with an hourglass or clock icon next to the device name to indicate that it’s in a waiting period.  The minimum 24-hour waiting period gives you a chance to void the cancel request if needed.
+The cancellation process for this storage device is in progress so the Cancel action is no longer available. The volume remains visible for at least 24 hours until it’s reclaimed, with an hourglass or clock icon next to the device name to indicate that it’s in a waiting period. The minimum 24-hour waiting period gives you a chance to void the cancel request if needed.
 
 ## Which NFS versions are supported?
 {: faq}
@@ -250,64 +254,62 @@ To prevent this situation from recurring, the customer might consider the follow
 {: faq}
 {: #expandsize}
 
-To see the expanded volume size, mount and remount your existing file storage disk on your server. In VMware, rescan storage to refresh the datastore and show the new volume size.
+To see the expanded volume size, mount and remount your existing {{site.data.keyword.filestorage_short}} disk on your server. In VMware, rescan storage to refresh the datastore and show the new volume size.
 
 ## How do I re-connect storage after a chassis swap?
 {: faq}
 {: #chassis-swap}
 
-Complete these tasks to connect storage after a swap:
+Complete the following tasks to connect storage after a swap.
 1. Remove the authorization (revoke access) from the storage devices, and then authorize the host again.
-1. Discover the storage devices again, with the new credentials gained from the re-discovery.
+2. Discover the storage devices again, with the new credentials that were gained from the re-authorization.
 
-See also [Managing File Storage](/docs/FileStorage?topic=FileStorage-managingstorage).
+For more information, see [Managing {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-managingstorage).
 
 ## How do I disconnect my storage device from a host?
 {: faq}
 {: #disconnect}
 
-Follow these steps to disconnect from a host:
+Complete the following steps to disconnect a volume from a host.
 1. Remove operating system ISCSI sessions and, if applicable, unmount the device.
 1. Revoke access for the host from the storage device in the Cloud console.
-1. Remove automatic discovery, and if applicable, remove connect database entries from the operating system for ISCSI connections.  Remove auto mounts from NFS connections.
+1. Remove auto mounts from NFS connections.
 
 ## How do endurance and performance storage differ?
 {: faq}
 {: #tier-options}
 
-Endurance and Performance are provisioning options that you can select for storage devices.  Briefly, Endurance IOPS tiers offer predefined performance levels whereas you can fine-tune those levels with the Performance tier. The same devices are used but delivered with different options. Refer to [Provisioning](/docs/FileStorage?topic=FileStorage-about#provisioning) for details.
+Endurance and Performance are provisioning options that you can select for storage devices. In short, Endurance IOPS tiers offer predefined performance levels whereas you can fine-tune those levels with the Performance tier. The same devices are used but delivered with different options. For more information, see [Provisioning](/docs/FileStorage?topic=FileStorage-about#provisioning).
 
-## Can I connect File storage to Windows?
+## Can I connect {{site.data.keyword.filestorage_short}} to Windows?
 {: faq}
 {: #connect-Windows}
 
-You cannot connect File storage on Microsoft Windows because NFS is not supported by IBM Cloud in a Windows environment.
+No. You cannot connect {{site.data.keyword.filestorage_full}} on Microsoft Windows. NFS is not supported by {{site.data.keyword.cloud}} in a Windows environment.
 
-## Can I mount a single storage device to multiple hosts within IBM Cloud?
+## Can I mount a single storage device to multiple hosts within {{site.data.keyword.cloud_notm}}?
 {: faq}
 {: #multiple-hosts}
 
-Be aware of these options when trying to mount a single storage device to multiple hosts:
-- With NFS, yes, you can use this setup because NFS is a file-aware protocol.
-- With ISCSI, no, you cannot mount to multiple hosts; the operating system must have a cluster-aware file system (CSV, VMFS, OCFS, etc.)
+Yes, you can use this setup because NFS is a file-aware protocol.
 
 ## Can I increase inodes for my NFS volume?
 {: faq}
 {: #inodes}
 
-Typically, when volumes are provisioned, they are allotted the maximum inode count for the size that you ordered.  Maximum inode count does not automatically grow as the volume grows.  Adjustments must be done manually. To increase inodes once you have expanded a volume, submit a [support case](https://cloud.ibm.com/unifiedsupport/cases/add).
+Typically, when volumes are provisioned, they are allotted the maximum inode count for the size that you ordered. Maximum inode count does not automatically grow as the volume grows. Adjustments must be done manually. To increase inodes after you expanded a volume, submit a [support case](https://cloud.ibm.com/unifiedsupport/cases/add){: external}.
 
-## What can affect the ability to upgrade or expand storage?  I am unable to upgrade storage.
+## I am unable to upgrade storage. What can affect the ability to upgrade or expand storage?
 {: faq}
 {: #expand-fail}
 
-The following situations can affect the ablity to upgrade or expand storage:
+The following situations can affect the ability to upgrade or expand storage.
 - If the original volume is the Endurance 0.25 tier, then the IOPS tier can’t be updated.
-- Older storage types cannot be upgraded.  Ensure that the storage was ordered in an upgraded Data Center that allows for [Expandable storage](docs/FileStorage?topic=FileStorage-expandCapacity).
-- The permissions that you have been granted in the Cloud console can be a factor.  Review the topics within [User roles and permissions](/docs/iam?topic=iam-userroles) for information.
+- Older storage types can't be upgraded. Ensure that the storage was ordered in an upgraded Data Center that allows for [Expandable storage](docs/FileStorage?topic=FileStorage-expandCapacity).
+- The permissions that you have in the Cloud console can be a factor. For more information, see the topics within [User roles and permissions](/docs/iam?topic=iam-userroles){: external}.
 
-## Are File storage volumes thin or thick provisioned?
+## Are {{site.data.keyword.filestorage_short}} volumes thin or thick provisioned?
 {: faq}
 {: #thin}
 
-All File and Block Storage services are thin-provisioned. This method is not modifiable.
+All Block and {{site.data.keyword.filestorage_short}} services are thin-provisioned. This method is not modifiable.
