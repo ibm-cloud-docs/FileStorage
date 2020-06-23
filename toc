@@ -59,4 +59,5 @@ IBM Cloud File Storage - Classic
     slcli-usage.md
     [IBM Cloud CLI and Developer Tools](https://cloud.ibm.com/docs/cli/reference/ibmcloud?topic=cloud-cli-sl-file-storage-service)
     [Identity and Access Management](https://cloud.ibm.com/docs/iam?topic=iam-infrapermission)
+    [Service Level Agreements (SLAs)](https://cloud.ibm.com/docs/overview?topic=overview-slas)
     {: .navgroup-end}
