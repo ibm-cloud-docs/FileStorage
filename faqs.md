@@ -271,8 +271,9 @@ For more information, see [Managing {{site.data.keyword.filestorage_short}}](/do
 {: #disconnect}
 
 Complete the following steps to disconnect a volume from a host.
-1. Revoke access for the host from the storage device in the Cloud console.
-2. Remove auto mounts from NFS connections.
+1. Unmount the device.
+2. Revoke access for the host from the storage device in the Cloud console.
+3. Remove auto mounts from NFS connections.
 
 ## How do endurance and performance storage differ?
 {: faq}
