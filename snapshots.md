@@ -53,7 +53,7 @@ Snapshots are not replacements for actual off-site Disaster Recovery replication
 
 ## Security
 
-All snapshots and replicas of encrypted {{site.data.keyword.filestorage_short}} are also encrypted by default. This feature can't be turned off on a volume basis. For more information about provider-managed encryption-at-rest, see [Securing your data](/docs/FileStorage?topic=FileStorage-encryption).
+All snapshots and replicas of encrypted {{site.data.keyword.filestorage_short}} are also encrypted by default. This feature can't be turned off on a volume basis. For more information about provider-managed encryption-at-rest, see [Securing your data](/docs/FileStorage?topic=FileStorage-mng-data).
 
 ## How Snapshots affect the disk space
 

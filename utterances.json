@@ -78,6 +78,33 @@
         "nfs volume failover",
         "volume recovery file storage",
         "difference between Controlled Failover and Immediate Failover"
-  
+],	    
+   "hostlimit": [
+        "a single host on nfs ",
+        "one host for nfs ",
+        "how many volumes on a  hosts in file storage ",
+        "only one volume per host or multiple in nfs",
+        "more than one volume on a host for nfs ",
+        "multiple file storage hosts",
+        "device multiple nfs volume",
+        "server how many file storage",
+        "how many connect file storage host",
+        "multiple volumes attached to a single host on file storage",
+        "attach file storage host number ",
+        "many File Storage volumes can be attached to a single host"
+    ],
+    "provision": [
+        "provision more file storage",
+        "provision many file storage",
+        "how many file storage provision",
+        "number nfs order",
+        "how many nfs can I order",
+        "account limit nfs order",
+        "increase file storage limit ",
+        "increase file storage order ",
+        "order more nfs storage",
+        "file storage provisioning limit",
+        "order file storage limit ",
+        "many volumes can I provision in file storage"
     ]
 }
