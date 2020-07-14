@@ -81,7 +81,7 @@ When you're ready to submit your order, you can place it through the [Console](/
 
 When your provisioning request is complete, authorize your hosts to access the new storage and configure your connection. Depending on your host's operating system, follow the appropriate link.
 - [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/FileStorage?topic=FileStorage-mountingCentOS)
-- [Mounting {{site.data.keyword.filestorage_short}} on CoreOS](/docs/FileStorage?topic=FileStorage-mountingCoreOS)
+- [Mounting {{site.data.keyword.filestorage_short}} on Container Linux](/docs/FileStorage?topic=FileStorage-mountingCoreOS)
 - [Mounting {{site.data.keyword.filestorage_short}} on Red Hat Linux](/docs/FileStorage?topic=FileStorage-mountingLinux)
 - [Mounting {{site.data.keyword.filestorage_short}} on Ubuntu](/docs/FileStorage?topic=FileStorage-mountingUbuntu)
 - [Configuring {{site.data.keyword.filestorage_short}} for backup with cPanel](/docs/FileStorage?topic=FileStorage-cPanelBackups)

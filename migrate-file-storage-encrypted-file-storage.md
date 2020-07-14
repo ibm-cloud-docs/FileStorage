@@ -25,7 +25,7 @@ Enhanced {{site.data.keyword.filestorage_full}} is now available in most [data c
 The assumption is that you already attached your non-encrypted volume to your host. If not, follow the directions that fit your operating system the best to accomplish this task.
 
 - [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/FileStorage?topic=FileStorage-mountingCentOS)
-- [Mounting {{site.data.keyword.filestorage_short}} on CoreOS](/docs/FileStorage?topic=FileStorage-mountingCoreOS)
+- [Mounting {{site.data.keyword.filestorage_short}} on Container Linux](/docs/FileStorage?topic=FileStorage-mountingCoreOS)
 - [Mounting {{site.data.keyword.filestorage_short}} on Red Hat Linux](/docs/FileStorage?topic=FileStorage-mountingLinux)
 - [Mounting {{site.data.keyword.filestorage_short}} on Ubuntu](/docs/FileStorage?topic=FileStorage-mountingUbuntu)
 

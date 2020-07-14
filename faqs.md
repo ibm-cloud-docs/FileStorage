@@ -172,7 +172,7 @@ To enact this good practice, complete the following steps.
 7. For mounting instructions, depending on your host's operating system, follow the appropriate link.
    - [Accessing {{site.data.keyword.filestorage_short}} on Linux](/docs/FileStorage?topic=FileStorage-mountingLinux)
    - [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/FileStorage?topic=FileStorage-mountingCentOS)
-   - [Mounting {{site.data.keyword.filestorage_short}} on CoreOS](/docs/FileStorage?topic=FileStorage-mountingCoreOS)
+   - [Mounting {{site.data.keyword.filestorage_short}} on Container Linux](/docs/FileStorage?topic=FileStorage-mountingCoreOS)
    - [Mounting {{site.data.keyword.filestorage_short}} Volume on ESXi hosts](/docs/FileStorage?topic=FileStorage-architectureguide)
 
 ## What performance latency can be expected from the {{site.data.keyword.filestorage_short}}?   
@@ -240,7 +240,7 @@ This issue can be observed with virtual drives of VMs on a network-attached data
 
 For mounting instructions, see the following topics.
 - [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/FileStorage?topic=FileStorage-mountingCentOS)
-- [Mounting {{site.data.keyword.filestorage_short}} on CoreOS](/docs/FileStorage?topic=FileStorage-mountingCoreOS)
+- [Mounting {{site.data.keyword.filestorage_short}} on Container Linux](/docs/FileStorage?topic=FileStorage-mountingCoreOS)
 - [Mounting {{site.data.keyword.filestorage_short}} on ESXi hosts](/docs/FileStorage?topic=FileStorage-architectureguide)
 - [Mounting {{site.data.keyword.filestorage_short}} on Red Hat Linux](/docs/FileStorage?topic=FileStorage-mountingLinux)
 - [Mounting {{site.data.keyword.filestorage_short}} on Ubuntu](/docs/FileStorage?topic=FileStorage-mountingUbuntu)
