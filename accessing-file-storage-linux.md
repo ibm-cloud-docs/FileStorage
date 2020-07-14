@@ -49,7 +49,7 @@ Options:
 
 ## Mounting the {{site.data.keyword.filestorage_short}} share
 
-The example is based on RHEL 7. The steps can be adjusted for other Linux distributions according to the operating system's (OS) vendor documentation. For more information about setting up the NSF Client in Ubuntu, see [Ubuntu Wiki NFS Howto](https://help.ubuntu.com/community/SettingUpNFSHowTo#NFS_Client){:external}.
+The example is based on RHEL 7. The steps can be adjusted for other Linux distributions according to the operating system's (OS) vendor documentation.
 {:tip}
 
 1. Install the required tools.

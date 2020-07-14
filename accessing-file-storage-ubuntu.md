@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-14"
+lastupdated: "2020-07-14"
 
 keywords: File Storage, NFS, mounting File Storage, mounting storage on Ubuntu,
 
@@ -17,8 +17,8 @@ subcollection: FileStorage
 {:shortdesc: .shortdesc}
 {:term: .term}
 
-# Mounting {{site.data.keyword.filestorage_short}} on Ubuntu Linux
-{: #mountingLinUbuntu}
+# Mounting {{site.data.keyword.filestorage_short}} on Ubuntu
+{: #mountingUbuntu}
 
 Use these instructions to connect an Ubuntu Linux-based {{site.data.keyword.cloud}} Compute instance to a Network file system (NFS) share.
 {:shortdesc}

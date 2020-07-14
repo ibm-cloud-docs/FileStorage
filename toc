@@ -25,9 +25,9 @@ IBM Cloud File Storage - Classic
 
     {: .topicgroup}
     Configuring
-        accessing-file-storage-linux.md
         mounting-storage-centos.md
         mounting-storage-coreos.md
+        accessing-file-storage-linux.md
         accessing-file-storage-ubuntu.md
         set-host-queue-depth-settings-performance-and-endurance-storage.md
         configure-backup-cpanel.md
