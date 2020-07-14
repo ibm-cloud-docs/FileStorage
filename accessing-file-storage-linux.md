@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-27"
+lastupdated: "2020-06-14"
 
 keywords: File Storage, NFS, mounting File Storage, mounting storage on Linux,
 
@@ -19,6 +19,9 @@ subcollection: FileStorage
 
 # Mounting {{site.data.keyword.filestorage_short}} on Linux
 {: #mountingLinux}
+
+Use these instructions to connect a Red Hat Enterprise Linux-based {{site.data.keyword.cloud}} Compute instance to a Network file system (NFS) share.
+{:shortdesc}
 
 First, make sure that the host that is to access the {{site.data.keyword.filestorage_full}} volume is authorized through the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic/storage/file){: external}.
 
@@ -46,8 +49,8 @@ Options:
 
 ## Mounting the {{site.data.keyword.filestorage_short}} share
 
-Use these instructions to connect a Linux-based {{site.data.keyword.cloud}} Compute instance to a Network file system (NFS) share. The example is based on RHEL 7. The steps can be adjusted for other Linux distributions according to the operating system's (OS) vendor documentation.
-{:shortdesc}
+The example is based on RHEL 7. The steps can be adjusted for other Linux distributions according to the operating system's (OS) vendor documentation. For more information about setting up the NSF Client in Ubuntu, see [Ubuntu Wiki NFS Howto](https://help.ubuntu.com/community/SettingUpNFSHowTo#NFS_Client){:external}.
+{:tip}
 
 1. Install the required tools.
    ```
