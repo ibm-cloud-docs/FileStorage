@@ -17,7 +17,7 @@ subcollection: FileStorage
 {:shortdesc: .shortdesc}
 {:term: .term}
 
-# Mounting {{site.data.keyword.filestorage_short}} on Linux
+# Mounting {{site.data.keyword.filestorage_short}} on Red Hat Linux
 {: #mountingLinux}
 
 Use these instructions to connect a Red Hat Enterprise Linux-based {{site.data.keyword.cloud}} Compute instance to a Network file system (NFS) share.
