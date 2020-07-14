@@ -57,7 +57,7 @@ Options:
 
 2. Mount the remote share.
    ```
-   # mount -t nfs -o <options> <host:mount_point> /mnt
+   # mount -t nfs -o <options> <host:/mount_point> /mnt
    ```
 
    Example
@@ -96,7 +96,7 @@ Options:
    Add a line with the following syntax to the end of file.
 
    ```
-   (hostname):/(username) /mnt nfs_version defaults 0 0
+   (hostname):/(mount_point) /mnt nfs_version defaults 0 0
    ```
 
    Example
