@@ -7,7 +7,6 @@ IBM Cloud File Storage - Classic
     {: .navgroup id="learn"}
     getting-started.md
     [What is File Storage?](https://www.ibm.com/cloud/learn/file-storage)
-    [Why File Storage?](https://www.ibm.com/cloud/file-storage)
     index.md
     selectdatacenters.md
     snapshots.md
