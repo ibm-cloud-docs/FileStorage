@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-14"
+lastupdated: "2020-07-14"
 
-keywords: File Storage, NFS, mounting File Storage, mounting storage on Linux,
+keywords: File Storage, NFS, mounting File Storage, mounting storage on Ubuntu,
 
 subcollection: FileStorage
 
@@ -17,10 +17,10 @@ subcollection: FileStorage
 {:shortdesc: .shortdesc}
 {:term: .term}
 
-# Mounting {{site.data.keyword.filestorage_short}} on Red Hat Linux
-{: #mountingLinux}
+# Mounting {{site.data.keyword.filestorage_short}} on Ubuntu
+{: #mountingUbuntu}
 
-Use these instructions to connect a Red Hat Enterprise Linux-based {{site.data.keyword.cloud}} Compute instance to a Network file system (NFS) share.
+Use these instructions to connect an Ubuntu Linux-based {{site.data.keyword.cloud}} Compute instance to a Network file system (NFS) share.
 {:shortdesc}
 
 First, make sure that the host that is to access the {{site.data.keyword.filestorage_full}} volume is authorized through the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic/storage/file){: external}.
@@ -49,18 +49,15 @@ Options:
 
 ## Mounting the {{site.data.keyword.filestorage_short}} share
 
-The example is based on RHEL 7. The steps can be adjusted for other Linux distributions according to the operating system's (OS) vendor documentation.
-{:tip}
-
 1. Install the required tools.
    ```
-   # yum install nfs-utils
+   # apt-get install nfs-common
    ```
    {:pre}
 
 2. Mount the remote share.
    ```
-   # mount -t nfs -o <options> <host:mount_point> /mnt
+   # mount -t nfs -o <options> <host:/mount_point> /mnt
    ```
 
    Example
@@ -91,13 +88,15 @@ The example is based on RHEL 7. The steps can be adjusted for other Linux distri
    -rw-r--r--   1 nobody nobody    0 Sep 8 15:52 test
    ```
 
-   The files that are created by root have ownership of `nobody:nobody`. To display ownership correctly, `idmapd.conf` needs to be updated with the correct domain settings. For more information, see the [How to implement no_root_squash for NFS](#norootsquash) section.
-   {:tip}
-
-5. Mount the remote share on start. To complete the setup, edit the file systems table (`/etc/fstab`) to add the remote share to the list of entries that are automatically mounted on startup:
+5. Make the configuration persistent by editing the file systems table (`/etc/fstab`). Add the remote share to the list of entries that are automatically mounted on startup:
 
    ```
-   (hostname):/(username) /mnt nfs_version options 0 0
+   sudo nano /etc/fstab
+   ```
+   Add a line with the following syntax to the end of file.
+
+   ```
+   (hostname):/(mount_point) /mnt nfs_version defaults 0 0
    ```
 
    Example
@@ -118,40 +117,7 @@ The example is based on RHEL 7. The steps can be adjusted for other Linux distri
    If you're using NFS 4.1, add `sec=sys` to the mount command to prevent file ownership issues.
    {:tip}
 
-   If your host OS is CentOS, you can configure more options. For more information, see [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/FileStorage?topic=FileStorage-mountingCentOS).
 
-
-## Implementing `no_root_squash` for NFS (optional)
-{: #norootsquash}
-
-By default, NFS downgrades any files that were created with the root permissions to the nobody user. This is a security feature that prevents privileges from being shared unless specifically requested.
-
-Configuring `no_root_squash` allows root clients to retain root permissions on the remote NFS share.
-- For NFSv3, there is nothing that clients need to do; `no_root_squash` works.
-- For NFSv4.1, you need to set the nfsv4 domain to: `slnfsv4.com` and start `rpcidmapd`, or a similar service that is used by your OS.
-
-Example
-
-1. From the host, set domain setting in `/etc/idmapd.conf`.
-
-   ```
-   #vi /etc/idmapd.conf
-   [General]
-   #Verbosity = 0
-   #The following should be set to the local NFSv4 domain name
-   #The default is the host's DNS domain name.
-   Domain = slnfsv4.com
-   [Mapping]
-   Nobody-User = nobody
-   Nobody-Group = nobody
-   ```
-
-2. Run `nfsidmap -c`.
-3. Start `rpcidmapd`.
-   ```
-   # /etc/init.d/rpcidmapd start
-   Starting RPC idmapd: [ OK ]
-   ```
 ## Unmounting the file system
 
 To unmount any currently mounted file system on your host, run the `umount` command with disk name or mount point name.
