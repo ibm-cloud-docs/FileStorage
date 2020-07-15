@@ -48,6 +48,7 @@ Options:
 ```
 
 ## Mounting the {{site.data.keyword.filestorage_short}} share
+{#mountRHEL}
 
 The example is based on RHEL 7. The steps can be adjusted for other Linux distributions according to the operating system's (OS) vendor documentation.
 {:tip}
@@ -153,6 +154,7 @@ Example
    Starting RPC idmapd: [ OK ]
    ```
 ## Unmounting the file system
+{#umountRHEL}
 
 To unmount any currently mounted file system on your host, run the `umount` command with disk name or mount point name.
 
