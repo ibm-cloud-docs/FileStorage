@@ -48,7 +48,7 @@ Options:
 ```
 
 ## Mounting the {{site.data.keyword.filestorage_short}} share
-{# mountUbuntu}
+{: #mountUbuntu}
 
 1. Install the required tools.
    ```
@@ -120,7 +120,7 @@ Options:
 
 
 ## Unmounting the file system
-{#umountUbuntu}
+{: #umountUbuntu}
 
 To unmount any currently mounted file system on your host, run the `umount` command with disk name or mount point name.
 
