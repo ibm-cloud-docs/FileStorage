@@ -187,7 +187,7 @@ For more information about VMware and Jumbo Frames, see [here](https://kb.vmware
 8. Click **Next** and the **Finish**.
 9. Go back to the **Virtual switches** tab and select the **Edit setting** (Pencil icon) under the **Virtual Switches** heading.
 10. On the left, select the vSwitch **Teaming and failover** entry.
-11. Verify that the **Load balancing** option is set to **Route based on the originating virtual port** and click **OK**.
+11. Verify that the **Load-balancing** option is set to **Route based on the originating virtual port** and click **OK**.
 
 
 ### 3. Configuring static routing (Optional)

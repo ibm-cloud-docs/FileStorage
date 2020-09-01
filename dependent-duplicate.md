@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-17"
+lastupdated: "2020-09-01"
 
 keywords: File Storage, file storage, NFS, replication, duplication, synchronous, replica schedule, replica space, disaster recovery
 
@@ -20,13 +20,13 @@ subcollection: FileStorage
 # Creating and managing dependent duplicate volumes
 {: #dependentduplicate}
 
-With the new dependent volume feature, {{site.data.keyword.cloud}} customers are able to create volume duplicates without incurring downtime on the primary volume and refresh the data on the dependent volume by using a snapshot from the primary volume whenever they want to. Replica volumes cannot be used to create or update dependent duplicate volumes.
+With the new dependent volume feature, {{site.data.keyword.cloud}} customers are able to create volume duplicates without incurring downtime on the primary volume. The customers can also refresh the data on the dependent volume by using a snapshot from the primary volume whenever they want to. Replica volumes cannot be used to create or update dependent duplicate volumes.
 {:shortdesc}
 
 If you would like to know about creating a duplicate volume that is independent from the original volume, see [Creating and managing independent duplicate volumes](/docs/FileStorage?topic=FileStorage-duplicatevolume).
 {:note}
 
-The commands described in the article are part of the SLCLI. For more information about how to install and use the SLCLI, see [Python API Client](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}.
+The commands that are described in the article are part of the SLCLI. For more information about how to install and use the SLCLI, see [Python API Client](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}.
 {:tip}
 
 ## Ordering a dependent volume
@@ -49,7 +49,7 @@ slcli file  volume-refresh <dependent-vol-id> <independent-snapshot-id>
 ## Converting a dependent volume to a normal, independent volume
 {: #convertdependentvol}
 
-If you want to use the dependent volume as a standalone volume in the future, you can convert it to a normal, independent {{site.data.keyword.filestorage_full}} volume through the SLCLI.
+If you want to use the dependent volume as a stand-alone volume in the future, you can convert it to a normal, independent {{site.data.keyword.filestorage_full}} volume through the SLCLI.
 
 ```
 slcli file  volume-convert <dependent-vol-id>
