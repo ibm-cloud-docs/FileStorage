@@ -138,7 +138,7 @@ Options:
 
 While data is being copied from the original volume to the duplicate, you can see a status on the details page that shows the duplication is in progress. Depending on the size of the data, the copying process can take up to several hours. During this time, you can attach to a host and read/write to the volume, but you can't create snapshot schedules or perform a refresh from the original volume. When the duplication process is complete, the new volume is independent from the original and can be managed with snapshots and replication as normal.
 
-## Updating data on the independent volume
+## Updating data on the independent duplicate volume
 {: #refreshindependentvol}
 
 As time passes and the primary volume changes, the duplicate volume can be updated with these changes to reflect the current state through the refresh action. The data on the duplicate volume can be refreshed at any time. The refresh involves taking a snapshot of the primary volume and then, updating the duplicate volume by using that snapshot. A refresh incurs no downtime on the primary volume. However, during the refresh transaction, the duplicate volume is unavailable and must be remounted after the refresh is completed.
