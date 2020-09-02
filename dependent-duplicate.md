@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-01"
+lastupdated: "2020-09-02"
 
 keywords: File Storage, file storage, NFS, replication, duplication, synchronous, replica schedule, replica space, disaster recovery
 
@@ -44,7 +44,7 @@ As time passes and the primary volume changes, the dependent volume can be updat
 
 Refreshes can be performed by using the SLCLI.
 ```
-slcli file  volume-refresh <dependent-vol-id> <independent-snapshot-id>
+slcli file  volume-refresh <dependent-vol-id> <primary-snapshot-id>
 ```
 ## Converting a dependent volume to a normal, independent volume
 {: #convertdependentvol}
