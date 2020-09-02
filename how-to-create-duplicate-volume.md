@@ -145,5 +145,5 @@ As time passes and the primary volume changes, the duplicate volume can be updat
 
 Refreshes can be performed by using the SLCLI.
 ```
-slcli file  volume-refresh <duplicate-vol-id> <primary-snapshot-id>
+slcli file volume-refresh <duplicate-vol-id> <primary-snapshot-id>
 ```
