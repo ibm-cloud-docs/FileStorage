@@ -38,8 +38,6 @@ IBM Cloud File Storage - Classic
         managing-file-storage.md
         expandable_file_storage.md
         adjustable-iops.md
-        how-to-create-duplicate-volume.md
-        dependent-duplicate.md
         working-with-snapshots.md
 
     {: .topicgroup}
@@ -47,6 +45,8 @@ IBM Cloud File Storage - Classic
         replication.md
         dr-accessible-primary.md
         disaster-recovery.md
+        how-to-create-duplicate-volume.md
+        dependent-duplicate.md
 
     {: .topicgroup}
     Enhancing security
