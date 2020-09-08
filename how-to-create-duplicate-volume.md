@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-03-04"
+lastupdated: "2020-09-10"
 
 keywords: File Storage, file storage, NFS, duplicate volume
 
@@ -22,18 +22,15 @@ subcollection: FileStorage
 You can create a duplicate of an existing {{site.data.keyword.cloud}} {{site.data.keyword.filestorage_full}}. The duplicate volume inherits the capacity and performance options of the original volume by default and has a copy of the data up to the point-in-time of a snapshot. The duplicate volume is completely independent from the original volume.
 {:shortdesc}  
 
-For information about dependent duplicates that can be refreshed from the original, primary volume, see [Creating and managing dependent duplicate volumes](/docs/FileStorage?topic=FileStorage-dependentduplicate).
-{:note}
-
 Because the duplicate is based on the data in a point-in-time snapshot, snapshot space is required on the original volume before you can create a duplicate. To learn more about snapshots and how to order snapshot space, refer to [Snapshot documentation](/docs/FileStorage?topic=FileStorage-snapshots).  
 {:important}
 
-Duplicates can be created from both **primary** and **replica** volumes. The new duplicate is created in the same data center as the original volume. If you create a duplicate from a replica volume, the new volume is created in the same data center as the replica volume.
+ Independent duplicates can be created from both **primary** and **replica** volumes. The new duplicate is created in the same data center as the original volume. If you create a duplicate from a replica volume, the new volume is created in the same data center as the replica volume.
 
 If you are a Dedicated account user of {{site.data.keyword.containerlong}}, see your options for duplicating a volume in the [{{site.data.keyword.containerlong_notm}} documentation](/docs/containers?topic=containers-file_storage#file_backup_restore).
 {:tip}
 
-Duplicate volumes can be accessed by a host for read/write as soon as the storage is provisioned. However, snapshots and replication aren't allowed until the data copy from the original to the duplicate is complete. When the data copy is complete, the duplicate can be managed and used as an independent volume.
+Duplicate volumes can be accessed by a host for read/write as soon as the storage is provisioned. However, snapshots and replication aren't allowed until the data copy from the original to the duplicate is complete. Depending on the size of the data, the copying process can take up to several hours. When the data copy is complete, the duplicate can be managed and used as an independent volume.
 
 This feature is available in most [locations](/docs/FileStorage?topic=FileStorage-selectDC).
 
@@ -139,4 +136,14 @@ Options:
 
 ## Managing your duplicate volume
 
-While data is being copied from the original volume to the duplicate, you can see a status on the details page that shows the duplication is in progress. During this time, you can attach to a host and read/write to the volume, but you can't create snapshot schedules. When the duplication process is complete, the new volume is independent from the original and can be managed with snapshots and replication as normal.
+While data is being copied from the original volume to the duplicate, you can see a status on the details page that shows the duplication is in progress. Depending on the size of the data, the copying process can take up to several hours. During this time, you can attach to a host and read/write to the volume, but you can't create snapshot schedules or perform a refresh from the original volume. When the duplication process is complete, the new volume is independent from the original and can be managed with snapshots and replication as normal.
+
+## Updating data on the independent duplicate volume
+{: #refreshindependentvol}
+
+As time passes and the primary volume changes, the duplicate volume can be updated with these changes to reflect the current state through the refresh action. The data on the duplicate volume can be refreshed at any time. The refresh involves taking a snapshot of the primary volume and then, updating the duplicate volume by using that snapshot. A refresh incurs no downtime on the primary volume. However, during the refresh transaction, the duplicate volume is unavailable and must be remounted after the refresh is completed.
+
+Refreshes can be performed by using the SLCLI.
+```
+slcli file volume-refresh <duplicate-vol-id> <primary-snapshot-id>
+```
