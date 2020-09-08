@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2019
-lastupdated: "2019-07-24"
+  years: 2014, 2020
+lastupdated: "2020-09-10"
 
 keywords: File Storage, file storage, NFS, snapshot, ordering snapshot, snapshot space
 
@@ -78,3 +78,6 @@ Options:
   --upgrade             Flag to indicate that the order is an upgrade
   -h, --help            Show this message and exit.
 ```
+
+For more information about the same function in the IBM Cloud CLI, see [bmcloud sl file snapshot-order](https://cloud.ibm.com/docs/cli?topic=cli-sl-file-storage-service#sl_file_snapshot_order){: external}.
+{:tip}
