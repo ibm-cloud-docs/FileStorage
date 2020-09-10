@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2019
-lastupdated: "2019-06-10"
+  years: 2014, 2020
+lastupdated: "2020-09-10"
 
 keywords: File Storage, file storage, NFS, SLCLI, provisioning, API
 
@@ -22,7 +22,7 @@ subcollection: FileStorage
 You can use the SLCLI to place orders for products that are normally ordered through the [{{site.data.keyword.cloud}} catalog](https://{DomainName}/catalog){: external}. In the SL API, an order can consist of multiple order containers. The order CLI works with one order container only.
 {:shortdesc}
 
-For more information about how to install and use the SLCLI, see [Python API Client](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}.
+For more information about how to install and use the SLCLI, see [Python API Client](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}
 {:tip}
 
 ## Searching for available {{site.data.keyword.filestorage_short}} offers
@@ -93,6 +93,7 @@ Options:
 
 For more information about ordering {{site.data.keyword.filestorage_short}} through the API, see [order_file_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/file/#SoftLayer.managers.file.FileStorageManager.order_file_volume){: external}.
 To be able to access all the new features, order `Storage-as-a-Service Package 759`.
+For more information about ordering through the IBM Cloud CLI, see [Working with the File Storage service (ibmcloud sl file)](https://cloud.ibm.com/docs/cli?topic=cli-sl-file-storage-service#sl_file_volume_order){: external}.
 {:tip}
 
 
@@ -113,6 +114,7 @@ By default, you can provision a combined total of 250 {{site.data.keyword.blocks
 {:important}
 
 ## Authorizing the hosts to access the new storage
+{: #auththroughSLCLI}
 
 ```
 # slcli file access-authorize --help
@@ -130,6 +132,7 @@ Options:
 ```
 
 For more information about authorizing hosts to access the {{site.data.keyword.filestorage_short}} through the API, see [authorize_host_to_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/file/#SoftLayer.managers.file.FileStorageManager.authorize_host_to_volume){: external}.
+For more information about authorizing hosts through the IBM Cloud CLI, see [Working with the File Storage service (ibmcloud sl file)](https://cloud.ibm.com/docs/cli?topic=cli-sl-file-storage-service#sl_file_access_authorize){: external}
 {:tip}
 
 For more information about the simultaneous authorizations limit, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs).
