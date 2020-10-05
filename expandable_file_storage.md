@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-05-21"
+lastupdated: "2020-10-05"
 
 keywords: File Storage, modify volume, NFS, file storage, expand capacity
 
@@ -23,12 +23,14 @@ subcollection: FileStorage
 # Expanding File Share Capacity
 {: #expandCapacity}
 
-With this feature, current users of {{site.data.keyword.filestorage_full}} are able to expand the size of their {{site.data.keyword.filestorage_short}} in GB increments up to 12 TB immediately. They don't need to create a duplicate or manually migrate data to a larger volume. There’s no outage or lack of access to the storage while the resize is taking place.
+With this feature, current users of {{site.data.keyword.filestorage_full}} are able to expand the size of their {{site.data.keyword.filestorage_short}} in GB increments up to 12 TB immediately. They don't need to create a duplicate or manually migrate data to a larger volume.
 {:shortdesc}
 
 Billing for the volume is automatically updated to add the pro-rated difference of the new price to the current billing cycle. Then, the full new amount is billed in the next billing cycle.
 
-This feature is only available in [select data centers](/docs/FileStorage?topic=FileStorage-selectDC).
+This feature is available in [most data centers](/docs/FileStorage?topic=FileStorage-selectDC).
+
+The upgrade process is not instantaneous. You can expect to see the updated size in the UI or through the API in a short while after you put in the modification request. There's no outage or lack of access to the storage while the resize is taking place, so you can continue your operations as normal.
 
 ## Advantages of Expandable Storage
 
