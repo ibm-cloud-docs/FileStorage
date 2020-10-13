@@ -20,7 +20,7 @@ subcollection: FileStorage
 # Mounting {{site.data.keyword.filestorage_short}} on Red Hat Linux
 {: #mountingLinux}
 
-Use these instructions to connect a Red Hat Enterprise Linux-based {{site.data.keyword.cloud}} Compute instance to a Network file system (NFS) share.
+Use these instructions to connect a Red Hat Enterprise Linux&reg;-based {{site.data.keyword.cloud}} Compute instance to a Network file system (NFS) share.
 {:shortdesc}
 
 First, make sure that the host that is to access the {{site.data.keyword.filestorage_full}} volume is authorized through the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic/storage/file){: external}.
@@ -50,7 +50,7 @@ Options:
 ## Mounting the {{site.data.keyword.filestorage_short}} share
 {: #mountRHEL}
 
-The example is based on RHEL 7. The steps can be adjusted for other Linux distributions according to the operating system's (OS) vendor documentation.
+The example is based on RHEL 7. The steps can be adjusted for other Linux&reg; distributions according to the operating system's (OS) vendor documentation.
 {:tip}
 
 1. Install the required tools.

@@ -105,7 +105,7 @@ You are presented with a list of storage volumes that this particular host has a
 {: help}
 {: support}
 
-You can use the mount point information that is provided in the **Volume Details** view to mount {{site.data.keyword.filestorage_short}} from a host. For more information, see [Accessing {{site.data.keyword.filestorage_short}} on Linux](/docs/FileStorage?topic=FileStorage-mountingLinux).
+You can use the mount point information that is provided in the **Volume Details** view to mount {{site.data.keyword.filestorage_short}} from a host. For more information, see [Accessing {{site.data.keyword.filestorage_short}} on Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingLinux).
 
 
 ## Revoking a host's access to {{site.data.keyword.filestorage_short}}

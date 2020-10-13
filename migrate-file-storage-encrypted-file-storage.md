@@ -25,8 +25,8 @@ Enhanced {{site.data.keyword.filestorage_full}} is now available in most [data c
 The assumption is that you already attached your non-encrypted volume to your host. If not, follow the directions that fit your operating system the best to accomplish this task.
 
 - [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/FileStorage?topic=FileStorage-mountingCentOS)
-- [Mounting {{site.data.keyword.filestorage_short}} on Container Linux](/docs/FileStorage?topic=FileStorage-mountingCoreOS)
-- [Mounting {{site.data.keyword.filestorage_short}} on Red Hat Linux](/docs/FileStorage?topic=FileStorage-mountingLinux)
+- [Mounting {{site.data.keyword.filestorage_short}} on Container Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingCoreOS)
+- [Mounting {{site.data.keyword.filestorage_short}} on Red Hat Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingLinux)
 - [Mounting {{site.data.keyword.filestorage_short}} on Ubuntu](/docs/FileStorage?topic=FileStorage-mountingUbuntu)
 
 All enhanced {{site.data.keyword.filestorage_short}} volumes that are provisioned in these data centers have a different mount point than non-encrypted volumes. To ensure you're using the correct mount point for both storage volumes, you can view the mount point information in the **Volume Details** page in the console. You can also access the correct mount point through an API call: `SoftLayer_Network_Storage::getNetworkMountAddress()`.

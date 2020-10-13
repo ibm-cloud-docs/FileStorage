@@ -165,14 +165,14 @@ To enact this good practice, complete the following steps.
    This action momentarily disrupts the network traffic on the host while the VLAN is being trunked to the host.
    {:note}
 4. Create a new network interface.
-   * On the Linux host, create a 802.11q interface. Choose one of the unused secondary IP address from the newly trunked VLAN and assign that IP address, subnet mask, and gateway to a new 802.11q interface.
+   * On the Linux&reg; host, create a 802.11q interface. Choose one of the unused secondary IP address from the newly trunked VLAN and assign that IP address, subnet mask, and gateway to a new 802.11q interface.
    * In VMware, create a new VMkernel network interface (vmk) and assign the unused secondary IP address, subnet mask, and gateway IP from the newly trunked VLAN to the new vmk interface.
 5. Add a new persistent static route on the host to the target NFS subnet.
 6. Authorize the new IP to access the storage.
 7. For mounting instructions, depending on your host's operating system, follow the appropriate link.
-   - [Accessing {{site.data.keyword.filestorage_short}} on Linux](/docs/FileStorage?topic=FileStorage-mountingLinux)
+   - [Accessing {{site.data.keyword.filestorage_short}} on Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingLinux)
    - [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/FileStorage?topic=FileStorage-mountingCentOS)
-   - [Mounting {{site.data.keyword.filestorage_short}} on Container Linux](/docs/FileStorage?topic=FileStorage-mountingCoreOS)
+   - [Mounting {{site.data.keyword.filestorage_short}} on Container Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingCoreOS)
    - [Mounting {{site.data.keyword.filestorage_short}} Volume on ESXi hosts](/docs/FileStorage?topic=FileStorage-architectureguide)
 
 ## What performance latency can be expected from the {{site.data.keyword.filestorage_short}}?   
@@ -240,13 +240,13 @@ This issue can be observed with virtual drives of VMs on a network-attached data
 
 For mounting instructions, see the following topics.
 - [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/FileStorage?topic=FileStorage-mountingCentOS)
-- [Mounting {{site.data.keyword.filestorage_short}} on Container Linux](/docs/FileStorage?topic=FileStorage-mountingCoreOS)
+- [Mounting {{site.data.keyword.filestorage_short}} on Container Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingCoreOS)
 - [Mounting {{site.data.keyword.filestorage_short}} on ESXi hosts](/docs/FileStorage?topic=FileStorage-architectureguide)
-- [Mounting {{site.data.keyword.filestorage_short}} on Red Hat Linux](/docs/FileStorage?topic=FileStorage-mountingLinux)
+- [Mounting {{site.data.keyword.filestorage_short}} on Red Hat Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingLinux)
 - [Mounting {{site.data.keyword.filestorage_short}} on Ubuntu](/docs/FileStorage?topic=FileStorage-mountingUbuntu)
 
 To prevent this situation from recurring, the customer might consider the following:
-- Increasing disk timeout values. For more information, see [VMware KB - Increasing the disk timeout values for a Linux 2.6 virtual machine](https://kb.vmware.com/s/article/1009465){: external}.
+- Increasing disk timeout values. For more information, see [VMware KB - Increasing the disk timeout values for a Linux&reg; 2.6 virtual machine](https://kb.vmware.com/s/article/1009465){: external}.
 - Adding guest OS tunings. For more information, see [NetApp's recommendations for guest OS tunings for a VMware vSphere deployment](https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Virtual_Storage_Console_for_VMware_vSphere/What_are_the_guest_OS_tunings_needed_for_a_VMware_vSphere_deployment%3F){: external}.
 - Reconfiguring Host systems that use NFSv4.1 for NFSv3 for increased resilience during maintenance operations.
 - Discontinuing session trunking on host systems that run VMware ESXi. Session trunking is not supported and is known to cause disruptions.
