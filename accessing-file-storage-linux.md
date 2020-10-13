@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-14"
+lastupdated: "2020-10-14"
 
 keywords: File Storage, NFS, mounting File Storage, mounting storage on Linux,
 
@@ -125,10 +125,10 @@ The example is based on RHEL 7. The steps can be adjusted for other Linux&reg; d
 ## Implementing `no_root_squash` for NFS (optional)
 {: #norootsquash}
 
-By default, NFS downgrades any files that were created with the root permissions to the nobody user. This is a security feature that prevents privileges from being shared unless specifically requested.
+By default, NFS downgrades any files that were created with the root permissions to the nobody user. This security feature prevents privileges from being shared unless they are specifically requested.
 
 Configuring `no_root_squash` allows root clients to retain root permissions on the remote NFS share.
-- For NFSv3, there is nothing that clients need to do; `no_root_squash` works.
+- For NFSv3, clients don't need to anything; `no_root_squash` simply works.
 - For NFSv4.1, you need to set the nfsv4 domain to: `slnfsv4.com` and start `rpcidmapd`, or a similar service that is used by your OS.
 
 Example
