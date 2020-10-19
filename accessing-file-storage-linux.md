@@ -20,7 +20,7 @@ subcollection: FileStorage
 # Mounting {{site.data.keyword.filestorage_short}} on Red Hat Linux
 {: #mountingLinux}
 
-Use these instructions to connect a Red Hat Enterprise Linux&reg;-based {{site.data.keyword.cloud}} Compute instance to a Network file system (NFS) share.
+Use these instructions to connect a Red Hat Enterprise Linux&reg;-based {{site.data.keyword.cloud}} Compute instance to a Network File System (NFS) share.
 {:shortdesc}
 
 First, make sure that the host that is to access the {{site.data.keyword.filestorage_full}} volume is authorized through the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic/storage/file){: external}.
@@ -73,7 +73,7 @@ The example is based on RHEL 7. The steps can be adjusted for other Linux&reg; d
    {:tip}
 
 
-3. Verify that the mount was successful by using the disk filesystem command.
+3. Verify that the mount was successful by using the disk file system command.
    ```
    # df -h
    Filesystem Size Used Avail Use% Mounted on
@@ -125,7 +125,7 @@ The example is based on RHEL 7. The steps can be adjusted for other Linux&reg; d
 ## Implementing `no_root_squash` for NFS (optional)
 {: #norootsquash}
 
-By default, NFS downgrades any files that were created with the root permissions to the nobody user. This security feature prevents privileges from being shared unless they are specifically requested.
+By default, NFS downgrades any files that were created with the root permissions to the nobody user. This security feature prevents privileges from being shared unless they are requested.
 
 Configuring `no_root_squash` allows root clients to retain root permissions on the remote NFS share.
 - For NFSv3, clients don't need to anything; `no_root_squash` simply works.
