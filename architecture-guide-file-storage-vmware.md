@@ -25,10 +25,10 @@ subcollection: FileStorage
 The following steps can help you order and configure {{site.data.keyword.filestorage_full}} in a vSphere 5.5 and vSphere 6.0 environment at {{site.data.keyword.cloud}}. {{site.data.keyword.filestorage_short}} is designed to support high I/O applications that require predictable levels of performance. The predictable performance is achieved through the allocation of protocol-level input/output operations per second (IOPS) to individual volumes.
 {:shortdesc}
 
-If you require more than eight hosts to access your VMware datastore, then choosing NFS {{site.data.keyword.filestorage_short}} is the best practice.
+If you require more than eight hosts to access your VMware&reg; datastore, then choosing NFS {{site.data.keyword.filestorage_short}} is the best practice.
 {:tip}
 
-The {{site.data.keyword.filestorage_short}} offering is accessed and mounted through an NFS connection. In a VMware deployment, a single volume can be mounted to up to 64 ESXi hosts as shared storage. You can also mount multiple volumes to create a storage cluster to use vSphere Storage Distributed Resource Scheduler (DRS).
+The {{site.data.keyword.filestorage_short}} offering is accessed and mounted through an NFS connection. In a VMware&reg; deployment, a single volume can be mounted to up to 64 ESXi hosts as shared storage. You can also mount multiple volumes to create a storage cluster to use vSphere Storage Distributed Resource Scheduler (DRS).
 
 Pricing and configuration options for {{site.data.keyword.filestorage_short}} are charged based on a combination of the reserved space and the offered IOPS.
 
@@ -43,11 +43,11 @@ When you order {{site.data.keyword.filestorage_short}}, consider the following i
 
 - NFS uses many extra file control operations such as `lookup`, `getattr`, and `readdir`. These operations in addition to read/write operations can count as IOPS and vary by operation type and NFS version.
 - {{site.data.keyword.filestorage_short}} volumes are exposed to authorized devices, subnets, or IP addresses.
-- To avoid storage disconnection during path-failover {{site.data.keyword.IBM}} recommends installing VMware tools, which set an appropriate timeout value. There’s no need to change the value, the default setting is sufficient to ensure that your VMware host doesn't lose connectivity.
+- To avoid storage disconnection during path-failover {{site.data.keyword.IBM}} recommends installing VMware&reg; tools, which set an appropriate timeout value. There’s no need to change the value, the default setting is sufficient to ensure that your VMware&reg; host doesn't lose connectivity.
 - Both NFSv3 and NFSv4.1 are supported in the {{site.data.keyword.cloud}} environment. However, {{site.data.keyword.IBM}} suggests that you use NFSv3. Because NFSv4.1 is a stateful protocol (not stateless like NFSv3), protocol issues can occur during network events. NFSv4.1 must quiesce all operations and then complete lock reclamation. While these operations are taking place, disruptions can occur.
 
-For more information, see VMware's white paper on [Best Practices for running
-VMware vSphere on network-attached storage](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){: external}.
+For more information, see VMware&reg;'s white paper on [Best Practices for running
+VMware&reg; vSphere on network-attached storage](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){: external}.
 {:tip}
 
 ### NFS Protocol VMware feature support matrix
@@ -65,10 +65,10 @@ VMware vSphere on network-attached storage](https://www.vmware.com/content/dam/d
 | Virtual Volumes | Yes | No |
 {: row-headers}
 {: class="comparison-table"}
-{: caption="Table 1 - NFS Protocol VMware feature support matrix." caption-side="top"}
+{: caption="Table 1 - NFS Protocol VMware&reg; feature support matrix." caption-side="top"}
 {: summary="This table has row and column headers. The row headers identify the vSphere features. The column headers identify the NSF version. To see if a feature is enabled navigate to the row of the feature and look at the column that is associated with the NFS version you use."}
 
-*Source - [VMware - NFS Protocols and ESXi](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){: external}*.
+*Source - [VMware&reg; - NFS Protocols and ESXi](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){: external}*.
 
 
 ### Using Snapshots
@@ -77,7 +77,7 @@ VMware vSphere on network-attached storage](https://www.vmware.com/content/dam/d
 
 Snapshot space is required to use snapshots. Space can be purchased on the initial volume order or after the initial provisioning through the **Volume Details** page by clicking **Actions** and selecting **Add Snapshot Space**.
 
-It's important to note that VMware environments are not aware of snapshots. The {{site.data.keyword.filestorage_short}} snapshot capability must not be confused with VMware snapshots. Any recovery that uses the {{site.data.keyword.filestorage_short}} snapshot feature must be handled from the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}.
+It's important to note that VMware&reg; environments are not aware of snapshots. The {{site.data.keyword.filestorage_short}} snapshot capability must not be confused with VMware&reg; snapshots. Any recovery that uses the {{site.data.keyword.filestorage_short}} snapshot feature must be handled from the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}.
 
 Restoring the {{site.data.keyword.filestorage_short}} volume requires powering off all the VMs on the {{site.data.keyword.filestorage_short}}. The volume needs to be temporarily unmounted from the ESXi hosts to avoid any data corruption during the process.
 
@@ -110,7 +110,7 @@ Invalid data, whether corrupted, hacked, or infected replicate according to the 
 
 ## Ordering {{site.data.keyword.filestorage_short}}
 
-Use the [Advanced Single-Site VMware Reference Architecture](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){: external} to set up {{site.data.keyword.filestorage_short}} with Endurance or Performance options in your VMware environment.
+Use the [Advanced Single-Site VMware&reg; Reference Architecture](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){: external} to set up {{site.data.keyword.filestorage_short}} with Endurance or Performance options in your VMware environment.
 
 {{site.data.keyword.filestorage_short}} can be ordered through [The {{site.data.keyword.cloud}} catalog](https://{DomainName}/catalog){: external} or the CLI. For more information, see [Ordering {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-orderingConsole).
 
@@ -131,9 +131,9 @@ After the subnets are authorized, make note of the host name of the storage serv
 
 ##  Configuring the VMware virtual machine host
 
-Before you begin the VMware configuration process, make sure that the following prerequisites are met:
+Before you begin the VMware&reg; configuration process, make sure that the following prerequisites are met:
 
-- {{site.data.keyword.BluBareMetServers}} with VMware ESXi are provisioned with proper storage configuration and ESXi login credentials.
+- {{site.data.keyword.BluBareMetServers}} with VMware&reg; ESXi are provisioned with proper storage configuration and ESXi login credentials.
 - {{site.data.keyword.cloud}} Windows physical or {{site.data.keyword.virtualmachinesshort}} in the same data center as the {{site.data.keyword.BluBareMetServers}}. Including Public IP address of the {{site.data.keyword.cloud}} Windows VM and login credentials.
 - A computer with internet access, and with the web browser software and a Remote Desktop Protocol (RDP) client installed.
 
@@ -141,8 +141,8 @@ Before you begin the VMware configuration process, make sure that the following 
 ### 1. Configuring the VMware Host.
 
 1. From an internet connected computer, start an RDP client and establish an RDP session to the {{site.data.keyword.BluVirtServers_full}} that are provisioned in the same data center where vSphere vCenter is installed.
-2. From the {{site.data.keyword.BluVirtServers_short}}, start a web browser and connect to VMware vCenter through the vSphere Web Client.
-3. From the **HOME** screen, select **Hosts and Clusters**. Expand the pane on the left and select the **VMware ESXi server** that is to be used for this deployment.
+2. From the {{site.data.keyword.BluVirtServers_short}}, start a web browser and connect to VMware&reg; vCenter through the vSphere Web Client.
+3. From the **HOME** screen, select **Hosts and Clusters**. Expand the pane on the left and select the **VMware&reg; ESXi server** that is to be used for this deployment.
 4. Make sure that the firewall port for the NFS client is open on all hosts so that you can configure the NFS client on the vSphere host. (The port is automatically opened in the more recent releases of vSphere.) To check whether the port is open, go to the **ESXi host Manage** tab in VMware® vCenter™, select **Settings**, and then select **Security Profile**. In the **Firewall** section, click **Edit** and scroll down to **NFS Client**.
 5. Make sure **Allow connection from any IP address or a list of IP addresses** is provided. <br/>
    ![Allow Connection.](/images/1_4.png)
@@ -170,7 +170,7 @@ Before you begin the VMware configuration process, make sure that the following 
      8980 bytes from a.b.c.d: icmp_seq=1 ttl=128 time=3.36 ms
      ```
 
-For more information about VMware and Jumbo Frames, see [here](https://kb.vmware.com/s/article/1003712){: external}.
+For more information about VMware&reg; and Jumbo Frames, see [here](https://kb.vmware.com/s/article/1003712){: external}.
 {:tip}
 
 
@@ -210,7 +210,7 @@ The network configuration for this architecture guide uses a minimal number of p
 
 2. Static routes are not persistent across restarts on ESXi 5.0 and earlier. To ensure that any added static routes remain persistent, this command needs to be added to the `local.sh` file on each host, which is located in the `/etc/rc.local.d/` directory. Open the `local.sh` file by using the visual editor, and add the second command in Step 4.1. in front of the `exit 0` line.
 
-Make note of the IP address as it can be used for mounting the volume in the next step.<br/>This process needs to be done for each NFS volume you plan to mount to your ESXi host.<br/>For more information, see the VMware KB article, [Configuring static routes for VMkernel ports on an ESXi host](https://kb.vmware.com/s/article/2001426){: external}.
+Make note of the IP address as it can be used for mounting the volume in the next step.<br/>This process needs to be done for each NFS volume you plan to mount to your ESXi host.<br/>For more information, see the VMware&reg; KB article, [Configuring static routes for VMkernel ports on an ESXi host](https://kb.vmware.com/s/article/2001426){: external}.
 {:tip}
 
 
@@ -219,7 +219,7 @@ Make note of the IP address as it can be used for mounting the volume in the nex
 1. Click **Go to vCenter** icon, and then **Hosts and Clusters**.
 2. On the **Related Object** tab, click **Datastores**.
 3. Click the **Create a new datastore** icon.
-4. On the **New Datastore** screen, select the location of the VMware datastore and click **Next**.
+4. On the **New Datastore** screen, select the location of the VMware&reg; datastore and click **Next**.
 5. On the **Type** screen, select **NFS**, and click **next**.
 6. Then, select the NFS version. Both NFSv3 and NFSv4.1 are supported, but NFSv3 is preferred.
 
@@ -227,11 +227,11 @@ Make note of the IP address as it can be used for mounting the volume in the nex
    {:important}
 
 7. On the **Name and configuration** screen, enter the name that you want to call the VMware datastore. Additionally, enter the host name of the NFS server. Using the FQDN for the NFS server produces the best traffic distribution to the underlying server. IP address is also valid but is used less frequently and only in specific instances. Enter the folder name in the form of `/foldername`.
-8. On the **Host accessibility** screen, select one or more hosts that you want to mount the NFS VMware datastore on and click **next**.
+8. On the **Host accessibility** screen, select one or more hosts that you want to mount the NFS VMware&reg; datastore on and click **next**.
 9. Review the inputs on the next screen and click **Finish**.
 10. Repeat for any additional {{site.data.keyword.filestorage_short}} volumes.
 
-It is {{site.data.keyword.cloud}}’s recommendation that FQDN names be used to connect to the VMware datastore. Using direct IP addressing might bypass the load-balancing mechanism that is provided by using FQDN.
+It is {{site.data.keyword.cloud}}’s recommendation that FQDN names be used to connect to the VMware&reg; datastore. Using direct IP addressing might bypass the load-balancing mechanism that is provided by using FQDN.
 {:important}
 
 To use the IP address instead of the FQDN, simply ping the server to obtain the IP address.
@@ -253,24 +253,24 @@ PING nfsdal0902a-fz.service.softlayer.com (10.2.125.80): 56 data bytes
 Storage I/O Control (SIOC) is a feature available for customers who use an Enterprise Plus license. When SIOC is enabled in the environment, it changes the device queue length for the single VM. The change to the device queue length reduces the storage array queue for all VMs to an equal share. SIOC engages only if resources are constrained and the storage I/O latency is over a defined threshold.
 
 
-In order for SIOC to determine when a storage device is congested or constrained, it requires a defined threshold. The congestion threshold latency is different for different storage types. The default selection is to 90% of peak throughput. The percentage of peak throughput value indicates the estimated latency threshold when the VMware datastore is using that percentage of its estimated peak throughput.
+In order for SIOC to determine when a storage device is congested or constrained, it requires a defined threshold. The congestion threshold latency is different for different storage types. The default selection is to 90% of peak throughput. The percentage of peak throughput value indicates the estimated latency threshold when the VMware&reg; datastore is using that percentage of its estimated peak throughput.
 
 
-Incorrectly configuring SIOC for a VMware datastore or for a VMDK can significantly impact performance.
+Incorrectly configuring SIOC for a VMware&reg; datastore or for a VMDK can significantly impact performance.
 {:important}
 
 
 ### Configuring Storage I/O Control for a VMware datastore
 
-1. Browse to the VMware datastore in the vSphere Web Client navigator.
+1. Browse to the VMware&reg; datastore in the vSphere Web Client navigator.
 2. Click the **Manage** tab.
 3. Click **Settings** and click **General**.
 4. Click **Edit** for **Datastore Capabilities**.
 5. Select the **Enable Storage I/O Control** check box.<br/>
-   ![NSF VMware datastore.](/images/3_0.png)
+   ![NSF VMware&reg; datastore.](/images/3_0.png)
 6. Click **OK**.
 
-This setting is specific to the VMware datastore and not to the host.
+This setting is specific to the VMware&reg; datastore and not to the host.
 {:note}
 
 
@@ -342,5 +342,5 @@ The following examples use the CLI to set the advanced configuration parameters,
     #esxcfg-advcfg -g /Disk/QFullSampleSize
     #esxcfg-advcfg -g /Disk/QFullThreshold
     ```
-Learn more about Advanced Single-Site VMware Reference Architecture [here](/docs/virtualization?topic=virtualization-advanced-single-site-vmware-reference-architecture){: external}.
+Learn more about Advanced Single-Site VMware&reg; Reference Architecture [here](/docs/virtualization?topic=virtualization-advanced-single-site-vmware-reference-architecture){: external}.
 {:tip}

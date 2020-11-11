@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-14"
+lastupdated: "2020-10-14"
 
 keywords: File Storage, NFS, mounting File Storage, mounting storage on Linux,
 
@@ -20,7 +20,7 @@ subcollection: FileStorage
 # Mounting {{site.data.keyword.filestorage_short}} on Red Hat Linux
 {: #mountingLinux}
 
-Use these instructions to connect a Red Hat Enterprise Linux-based {{site.data.keyword.cloud}} Compute instance to a Network file system (NFS) share.
+Use these instructions to connect a Red Hat Enterprise Linux&reg;-based {{site.data.keyword.cloud}} Compute instance to a Network File System (NFS) share.
 {:shortdesc}
 
 First, make sure that the host that is to access the {{site.data.keyword.filestorage_full}} volume is authorized through the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic/storage/file){: external}.
@@ -50,7 +50,7 @@ Options:
 ## Mounting the {{site.data.keyword.filestorage_short}} share
 {: #mountRHEL}
 
-The example is based on RHEL 7. The steps can be adjusted for other Linux distributions according to the operating system's (OS) vendor documentation.
+The example is based on RHEL 7. The steps can be adjusted for other Linux&reg; distributions according to the operating system's (OS) vendor documentation.
 {:tip}
 
 1. Install the required tools.
@@ -73,7 +73,7 @@ The example is based on RHEL 7. The steps can be adjusted for other Linux distri
    {:tip}
 
 
-3. Verify that the mount was successful by using the disk filesystem command.
+3. Verify that the mount was successful by using the disk file system command.
    ```
    # df -h
    Filesystem Size Used Avail Use% Mounted on
@@ -125,10 +125,10 @@ The example is based on RHEL 7. The steps can be adjusted for other Linux distri
 ## Implementing `no_root_squash` for NFS (optional)
 {: #norootsquash}
 
-By default, NFS downgrades any files that were created with the root permissions to the nobody user. This is a security feature that prevents privileges from being shared unless specifically requested.
+By default, NFS downgrades any files that were created with the root permissions to the nobody user. This security feature prevents privileges from being shared unless they are requested.
 
 Configuring `no_root_squash` allows root clients to retain root permissions on the remote NFS share.
-- For NFSv3, there is nothing that clients need to do; `no_root_squash` works.
+- For NFSv3, clients don't need to anything; `no_root_squash` simply works.
 - For NFSv4.1, you need to set the nfsv4 domain to: `slnfsv4.com` and start `rpcidmapd`, or a similar service that is used by your OS.
 
 Example

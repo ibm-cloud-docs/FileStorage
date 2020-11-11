@@ -29,7 +29,7 @@ For more information, see [Plesk's documentation for backing up and restoration]
 
    Plesk has two options for storing backups. One is the internal Plesk storage, which is storage on your Plesk server. The other is external FTP storage, which is storage on some external server in the web or your local network. Commonly on Plesk boxes, internal backups are stored in `/var/lib/psa/dumps` and use `/tmp` as a temporary directory. In this example, the temporary directory is kept local, but the `dumps` directory is moved to the {{site.data.keyword.filestorage_short}} target (`/backup/psa/dumps`). No FTP user credentials are required.
    {:note}
-3. Configure your {{site.data.keyword.filestorage_short}} as described in [Accessing {{site.data.keyword.filestorage_short}} on Red Hat Enterprise Linux](/docs/FileStorage?topic=FileStorage-mountingLinux) and [Mounting NFS/{{site.data.keyword.filestorage_short}} in CentOS](/docs/FileStorage?topic=FileStorage-mountingCentOS) or [Mounting NFS/{{site.data.keyword.filestorage_short}} on Container Linux](/docs/FileStorage?topic=FileStorage-mountingCoreOS). Mount the volume to `/backup` and configure it in the file system table (`/etc/fstab`) to enable mounting on start. <br />
+3. Configure your {{site.data.keyword.filestorage_short}} as described in [Accessing {{site.data.keyword.filestorage_short}} on Red Hat Enterprise Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingLinux) and [Mounting NFS/{{site.data.keyword.filestorage_short}} in CentOS](/docs/FileStorage?topic=FileStorage-mountingCentOS) or [Mounting NFS/{{site.data.keyword.filestorage_short}} on Container Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingCoreOS). Mount the volume to `/backup` and configure it in the file system table (`/etc/fstab`) to enable mounting on start. <br />
 
    By default, NFS downgrades any files that were created with the root permissions to the nobody user. To allow root clients to retain the root permissions on the NFS share, `no_root_squash`needs to be added to `/etc/exports`.
    {:tip}
@@ -39,7 +39,7 @@ For more information, see [Plesk's documentation for backing up and restoration]
    ```
    {:pre}
 
-   This command compresses and transmits your data, and it preserves as much as possible, except hard links. It also provides information about what files are being traNFSerred plus a brief summary at the end.
+   This command compresses and transmits your data, and it preserves as much as possible, except hard links. It also provides information about what files are being transferred plus a brief summary at the end.
    {:tip}
 5. Edit `/etc/psa/psa.conf` to point the `DUMP_D` value at the new target.
     - It appears as: `DUMP_D /backup/psa/dumps`.
