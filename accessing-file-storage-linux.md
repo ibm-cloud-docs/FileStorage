@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-14"
+lastupdated: "2020-12-08"
 
 keywords: File Storage, NFS, mounting File Storage, mounting storage on Linux,
 
@@ -150,9 +150,10 @@ Example
 2. Run `nfsidmap -c`.
 3. Start `rpcidmapd`.
    ```
-   # /etc/init.d/rpcidmapd start
-   Starting RPC idmapd: [ OK ]
+   systemctl start rpcidmapd
+   systemctl enable rpcidmapd
    ```
+
 ## Unmounting the file system
 {: #umountRHEL}
 
