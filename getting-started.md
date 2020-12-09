@@ -1,13 +1,17 @@
 ---
 
 copyright:
-  years: 2014, 2019
+  years: 2014, 2021
 lastupdated: "2020-07-15"
 
 keywords: File Storage, file storage, NFS, provisioning, setup, configuration, mounting storage
 
 subcollection: FileStorage
 
+content-type: tutorial
+services:
+account-plan: paid
+completion-time: 2h
 ---
 {:external: target="_blank" .external}
 {:pre: .pre}
@@ -20,6 +24,9 @@ subcollection: FileStorage
 
 # Getting started with {{site.data.keyword.filestorage_short}}
 {: #getting-started}
+{: toc-content-type="tutorial"}
+{: toc-services=""}
+{: toc-completion-time="1h"}
 
 {{site.data.keyword.filestorage_full}} is persistent, fast, and flexible network-attached, NFS-based {{site.data.keyword.filestorage_short}}. In this network-attached storage (NAS) environment, you have total control over your file shares function and performance. {{site.data.keyword.filestorage_short}} shares can be connected to up to 64 authorized devices over routed TCP/IP connections for resiliency.
 {:shortdesc}
@@ -34,6 +41,8 @@ subcollection: FileStorage
 For more information about the {{site.data.keyword.filestorage_short}} offering, see [Learn about {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-about).
 
 ## Provisioning considerations
+{: #provconsiderations}
+{: step}
 
 ### Block size
 
@@ -73,11 +82,14 @@ Storage traffic is included in the total network usage of Public Virtual Servers
 Both NFS v3 and NFS v4.1 are supported in the {{site.data.keyword.cloud}} environment. However, NFS v3 is preferred because NFS v4.1 is a stateful protocol (not stateless like NFSv3) and protocol issues can occur during network events. NFS v4.1 must quiesce all operations and then complete lock reclamation. On a relatively busy NFS file server, the increased latency can cause disruptions.
 
 ## Submitting your Order
+{: #submitFileStorOrder}
+{: step}
 
 When you're ready to submit your order, you can place it through the [Console](/docs/FileStorage?topic=FileStorage-orderingConsole), the [SLCLI](/docs/FileStorage?topic=FileStorage-orderingSLCLI), or the IBMCLOUD CLI. For more information about provisioning File Storage for VMware deployments, see the [architecture guide](/docs/FileStorage?topic=FileStorage-architectureguide).
 
 ## Connecting and configuring your new storage
 {: #mountingstorage}
+{: step}
 
 When your provisioning request is complete, authorize your hosts to access the new storage and configure your connection. Depending on your host's operating system, follow the appropriate link.
 - [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/FileStorage?topic=FileStorage-mountingCentOS)
@@ -89,5 +101,7 @@ When your provisioning request is complete, authorize your hosts to access the n
 - [Mounting {{site.data.keyword.filestorage_short}} Volume on ESXi hosts](/docs/FileStorage?topic=FileStorage-architectureguide)
 
 ## Managing your new Storage
+{: #manFileStor}
+{: step}
 
 Through the portal or the SLCLI, you can manage various aspects of your {{site.data.keyword.filestorage_short}} such as host authorizations and cancellations. For more information, see [Managing {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-managingstorage).
