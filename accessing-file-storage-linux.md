@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-12-08"
+  years: 2014, 2021
+lastupdated: "2020-12-16"
 
 keywords: File Storage, NFS, mounting File Storage, mounting storage on Linux,
 
@@ -101,10 +101,12 @@ The example is based on RHEL 7. The steps can be adjusted for other Linux&reg; d
    (hostname):/(username) /mnt nfs_version options 0 0
    ```
 
-   Example
+   Examples:
 
    ```
-   nfsdal0501a.service.softlayer.com:/IBM01SV278685_7 /mnt nfsvers=3 defaults 0 0
+   nfsdal0501a.service.softlayer.com:/IBM01SV278685_7 /mnt nfs nfsvers=3 0 0
+   nfsdal0501a.service.softlayer.com:/IBM01SV278685_7 /mnt nfs options 0 0
+   nfsdal0501a.service.softlayer.com:/IBM01SV278685_7 /mnt nfs4 options 0 0
    ```
 
 6. Verify that the configuration file has no errors.
