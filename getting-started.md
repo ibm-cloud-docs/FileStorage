@@ -38,7 +38,7 @@ completion-time: 2h
 - Provision **Endurance** tiers that feature pre-defined performance levels and other features like snapshots and replication.
 - Build a high-powered **Performance** environment with allocated input/output operations per second (IOPS).
 
-For more information about the {{site.data.keyword.filestorage_short}} offering, see [Learn about {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-about).
+For more information about the {{site.data.keyword.filestorage_short}} offering, see [What is IBM Cloud File Storage?](https://www.ibm.com/cloud/file-storage){: external}.
 
 ## Provisioning considerations
 {: #provconsiderations}

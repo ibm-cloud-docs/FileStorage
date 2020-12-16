@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-07-14"
+  years: 2014, 21
+lastupdated: "2020-12-16"
 
 keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
@@ -280,7 +280,7 @@ Complete the following steps to disconnect a volume from a host.
 {: faq}
 {: #tier-options}
 
-Endurance and Performance are provisioning options that you can select for storage devices. In short, Endurance IOPS tiers offer predefined performance levels whereas you can fine-tune those levels with the Performance tier. The same devices are used but delivered with different options. For more information, see [Provisioning](/docs/FileStorage?topic=FileStorage-about#provisioning).
+Endurance and Performance are provisioning options that you can select for storage devices. In short, Endurance IOPS tiers offer predefined performance levels whereas you can fine-tune those levels with the Performance tier. The same devices are used but delivered with different options. For more information, see [File Storage Features](https://www.ibm.com/cloud/file-storage/details){:external}.
 
 ## Can I connect {{site.data.keyword.filestorage_short}} to Windows?
 {: faq}
