@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2020-07-15"
+lastupdated: "2020-12-16"
 
 keywords: File Storage, file storage, NFS, provisioning, setup, configuration, mounting storage
 
