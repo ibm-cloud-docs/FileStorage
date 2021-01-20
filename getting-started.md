@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2020-12-16"
+lastupdated: "2021-01-20"
 
 keywords: File Storage, file storage, NFS, provisioning, setup, configuration, mounting storage
 
@@ -30,6 +30,8 @@ completion-time: 2h
 
 {{site.data.keyword.filestorage_full}} is persistent, fast, and flexible network-attached, NFS-based {{site.data.keyword.filestorage_short}}. In this network-attached storage (NAS) environment, you have total control over your file shares function and performance. {{site.data.keyword.filestorage_short}} shares can be connected to up to 64 authorized devices over routed TCP/IP connections for resiliency.
 {:shortdesc}
+
+If you're looking for information about using {{site.data.keyword.filestorage_short}} with the {{site.data.keyword.containerlong}}, see [Storing data on classic IBM Cloud File Storage](/docs/containers?topic=containers-file_storage).
 
 ## Before you begin
 {: #prereqs}
@@ -104,4 +106,4 @@ When your provisioning request is complete, authorize your hosts to access the n
 {: #manFileStor}
 {: step}
 
-Through the portal or the SLCLI, you can manage various aspects of your {{site.data.keyword.filestorage_short}} such as host authorizations and cancellations. For more information, see [Managing {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-managingstorage).
+Through the console or the CLI, you can manage various aspects of your {{site.data.keyword.filestorage_short}} such as host authorizations and cancellations. For more information, see [Managing {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-managingstorage).
