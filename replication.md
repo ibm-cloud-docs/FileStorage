@@ -80,7 +80,7 @@ However, if you want to change the time of day when your **Daily** replication o
 
 ## Changing the Replication space
 
-Your primary snapshot space and your replica space must be the same. If you change the space on the **Primary** or **Replica** volume, it automatically adds space to both your source and destination data centers. Increasing snapshot space triggers an immediate replication update also.
+Your primary snapshot space and your replica space must be the same. If you change the space on the **Primary** or **Replica** volume, it automatically adds space to both your source and destination data centers. Increasing snapshot space triggers an immediate replication update.
 
 1. Click **Actions**.
 2. Select **Change Snapshot Space**.
@@ -99,11 +99,9 @@ For more information about increasing snapshot space, see [Snapshots](/docs/File
 
 You can view your replication volumes on the {{site.data.keyword.filestorage_short}} page under **Storage** > **{{site.data.keyword.filestorage_short}}**. The volume name shows the primary volume's name followed by REP. The **Type** is Endurance or Performance – Replica.
 
-
 ## Viewing a replicated volume's details at the replica data center
 
 You can view the replica volume details on the **Storage** > **{{site.data.keyword.filestorage_short}}** list.
-
 
 ## Viewing the replication history
 
