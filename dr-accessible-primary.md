@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2019
-lastupdated: "2019-11-14"
+  years: 2018, 2021
+lastupdated: "2021-02-12"
 
 keywords: File Storage, file storage, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
@@ -47,6 +47,8 @@ Failovers are started under **Storage**, **{{site.data.keyword.filestorage_short
 Before you proceed with these steps, disconnect the volume. Failure to do so, results in corruption and data loss.
 {:important}
 
+### ### Fail over to replica through the Console
+
 1. Click your active volume (“source”).
 2. In the upper right, click **Actions**.
 3. Select **Controlled Failover**.
@@ -57,6 +59,18 @@ Before you proceed with these steps, disconnect the volume. Failure to do so, re
 5. Click your active volume (formerly your target volume). This volume now has an **Active** status.
 6. Mount and attach your storage volume to the host. For more information, see [connecting your new storage](/docs/FileStorage?topic=FileStorage-getting-started#mountingstorage).
 
+### Fail over to replica by using the CLI
+
+To fail over a file volume to a specific replicant volume, use the following command.
+  ```
+  # slcli file replica-failover --help
+  Usage: slcli file replica-failover [OPTIONS] VOLUME_ID
+
+  Options:
+  --replicant-id TEXT  ID of the replicant volume
+  --immediate          Failover to replicant immediately.
+  -h, --help           Show this message and exit.
+  ```
 
 ## Starting a failback from a volume to its replica
 
@@ -70,6 +84,8 @@ When your original source volume is repaired, you can start a controlled Failbac
 
 When a Failback is started, the replication relationship is flipped again. Your source volume is restored as your source volume, and your target volume is the target volume again as indicated by the **Volume Name** followed by **REP**.
 
+### Fail back through the Console
+
 Failbacks are started under **Storage**, **{{site.data.keyword.filestorage_short}}** in the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic/storage/file){: external}.
 
 1. Click your active volume ("target").
@@ -81,3 +97,15 @@ Failbacks are started under **Storage**, **{{site.data.keyword.filestorage_short
 4. In the upper right, click **View All {{site.data.keyword.filestorage_short}}**.
 5. Click your active volume ("source"). This volume now has an **Inactive** status.
 6. Mount and attach your storage volume to the host. For more information, see [connecting your new storage](/docs/FileStorage?topic=FileStorage-getting-started#mountingstorage).
+
+### Fail back by using the CLI 
+
+To fail back a file volume from a specific replicant volume.
+  ```
+  # slcli file replica-failback --help
+  Usage: slcli file replica-failback [OPTIONS] VOLUME_ID
+
+  Options:
+  --replicant-id TEXT  ID of the replicant volume
+  -h, --help           Show this message and exit.
+  ```
