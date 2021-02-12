@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-26"
+lastupdated: "2021-02-12"
 
 keywords: File Storage, file storage, NFS, replication, duplication, synchronous, replica schedule, replica space, disaster recovery
 
@@ -49,7 +49,7 @@ Replications work based on a snapshot schedule. You must first have snapshot spa
 2. Click **Actions** and click **Order Replica**.
 3. Select the existing snapshot schedule that you want your replication to follow. The list contains all of your active snapshot schedules. <br />
 
-   You can select only one schedule even if you have a mix of hourly, daily, and weekly. All snapshots that were captured since the previous replication cycle, are replicated regardless of the schedule that originated them.<br />For more information, see [Working with Snapshots](/docs/FileStorage?topic=FileStorage-snapshots).
+   You can select only one schedule even if you have a mix of hourly, daily, and weekly. All snapshots that were captured since the previous replication cycle, are replicated regardless of the schedule that originated them.<br />For more information, see [Working with Snapshots](/docs/FileStorage?topic=FileStorage-snapshots). Replication starts 5 minutes after the snapshot is taken to ensure the most up-to-date data is copied to the replica volume.
    {:tip}
 3. Select a **Location** for the replica volume.
 4. Click **Continue**.
@@ -105,13 +105,7 @@ You can view the replica volume details on the **Storage** > **{{site.data.keywo
 
 ## Viewing the replication history
 
-Replication history is viewed on the **Audit Log** on the **Account** section under **Manage**. Both the primary and replica volumes display identical replication histories, which include the following information.
-
-- Type for replication (failover or failback),
-- When the replication was initiated,
-- Snapshot that was used for the replication,
-- Size of the replication,
-- When the replication completed.
+To view the Replication history, click Manage on the main menu bar. Select **Account**, then scroll to the Audit Log. The Storage Replication Events list contains the names of the volume, a description of the replication event and the time stamp of the event.
 
 
 ## Creating a duplicate of a replica
