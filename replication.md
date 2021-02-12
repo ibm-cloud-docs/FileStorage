@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-08"
+lastupdated: "2021-02-12"
 
 keywords: File Storage, file storage, NFS, replication, duplication, synchronous, replica schedule, replica space, disaster recovery
 
@@ -105,13 +105,7 @@ You can view the replica volume details on the **Storage** > **{{site.data.keywo
 
 ## Viewing the replication history
 
-Replication history is viewed on the **Audit Log** on the **Account** section under **Manage**. Both the primary and replica volumes display identical replication histories, which include the following information.
-
-- Type for replication (failover or failback),
-- When the replication was initiated,
-- Snapshot that was used for the replication,
-- Size of the replication,
-- When the replication completed.
+To view the Replication history, click Manage on the main menu bar. Select **Account**, then scroll to the Audit Log. The Storage Replication Events list contains the names of the volume, a description of the replication event and the time stamp of the event.
 
 
 ## Creating a duplicate of a replica
