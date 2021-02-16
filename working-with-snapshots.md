@@ -27,7 +27,7 @@ Snapshots are a feature of {{site.data.keyword.blockstoragefull}}. A snapshot re
 
 ## Adding a Snapshot schedule in the UI
 {: #addscheduleUI}
-{:ui}
+{: ui}
 
 You decide how often and when you want to create a point-in-time reference of your storage volume with Snapshot schedules. You can have a maximum of 50 snapshots per storage volume. Schedules are managed through the **Storage** > **{{site.data.keyword.filestorage_short}}** tab of the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}.
 
@@ -155,14 +155,6 @@ Snapshot space is increased through **Storage** > **{{site.data.keyword.filestor
 4. Enter any Promo Code that you have, and click **Recalculate**. The Charges for this order and Order Review fields are completed by default.
 5. Click the **I have read the Master Service Agreement…** check box, and click **Place Order**. Your additional snapshot space is provisioned in a few minutes.
 
-## Receiving notifications when snapshot space limit is reached and snapshots are deleted
-
-Notifications are sent through the support tickets to the Master User on your account when you reach three different space thresholds – 75 percent, 90 percent, and 95 percent.
-
-- At **75 percent capacity**, a warning is sent that snapshot space usage exceeded 75 percent. If you heed the warning and manually add space or delete retained and unnecessary snapshots, the action is noted and the ticket is closed. If you do nothing, you must manually acknowledge the ticket and then it is closed.
-- At **90 percent capacity**, a second warning is sent when snapshot space usage exceeded 90 percent. Like with reaching 75 percent capacity, if you take the necessary actions to decrease the space that is used, the action is noted and the ticket is closed. If you do nothing, you must manually acknowledge the ticket and then it is closed.
-- At **95 percent capacity**, a final warning is sent. If no action is taken to bring your space usage under the threshold, a notification is generated and automatic deletion occurs so that future snapshots can be created. Scheduled snapshots are deleted, starting with the oldest, until usage drops under 95 percent. Snapshots continue to be deleted each time usage exceeds 95 percent until it drops under the threshold. If the space is manually increased or snapshots are deleted, the warning is reset and reissued if the threshold is exceeded again. If no actions are taken, this notification is the only warning that you receive.
-
 ## Deleting a snapshot schedule in the UI
 {: #cancelnapshotscheduleUI}
 {: ui}
@@ -278,3 +270,12 @@ Lastly, mount and reattach your storage volume to the host.
 
 Restoring a volume results in deleting all snapshots that were taken after the snapshot that was used for the restore.
 {:important}
+
+## Receiving notifications when snapshot space limit is reached and snapshots are deleted
+{: #usagenotification}
+
+Notifications are sent through the support tickets to the Master User on your account when you reach three different space thresholds – 75 percent, 90 percent, and 95 percent.
+
+- At **75 percent capacity**, a warning is sent that snapshot space usage exceeded 75 percent. If you heed the warning and manually add space or delete retained and unnecessary snapshots, the action is noted and the ticket is closed. If you do nothing, you must manually acknowledge the ticket and then it is closed.
+- At **90 percent capacity**, a second warning is sent when snapshot space usage exceeded 90 percent. Like with reaching 75 percent capacity, if you take the necessary actions to decrease the space that is used, the action is noted and the ticket is closed. If you do nothing, you must manually acknowledge the ticket and then it is closed.
+- At **95 percent capacity**, a final warning is sent. If no action is taken to bring your space usage under the threshold, a notification is generated and automatic deletion occurs so that future snapshots can be created. Scheduled snapshots are deleted, starting with the oldest, until usage drops under 95 percent. Snapshots continue to be deleted each time usage exceeds 95 percent until it drops under the threshold. If the space is manually increased or snapshots are deleted, the warning is reset and reissued if the threshold is exceeded again. If no actions are taken, this notification is the only warning that you receive.
