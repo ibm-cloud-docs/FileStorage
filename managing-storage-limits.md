@@ -17,6 +17,9 @@ subcollection: FileStorage
 {:shortdesc: .shortdesc}
 {:support: data-reuse='support'}
 {:help: data-hd-content-type='help'}
+{:ui: .ph data-hd-interface='ui'}
+{:cli: .ph data-hd-interface='cli'}
+{:api: .ph data-hd-interface='api'}
 
 # Managing storage limits
 {: #managinglimits}
@@ -27,10 +30,11 @@ By default, you can provision a combined total of 250 {{site.data.keyword.blocks
 
 For more information about increasing your storage volume capacity beyond 12 TB, see [Expanding Block Storage Capacity](/docs/FileStorage?topic=FileStorage-expandCapacity#increasecapacityover12TB).
 
-## Confirming your current limit and provisioning count.
-{: #confirmfilelimits}
-
 If you're unsure how many volumes you have, you can confirm the numbers by using multiple methods.
+
+## Confirming your current limit and provisioning count from the CLI
+{: #confirmprovisioncountCLI}
+{: cli}
 
 ### SLCLI
 
@@ -58,6 +62,10 @@ The volume-limits command is also available in the `sl` plug-in for IBM Cloud CL
 Datacenter   MaximumAvailableCount   ProvisionedCount
 global       300                     99
 ```
+
+## Confirming your current limit and provisioning count with the API
+{: #confirmprovisioncountAPI}
+{: api}
 
 ### REST API call
 
