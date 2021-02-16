@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2018, 2020
+  years: 2018, 2021
 lastupdated: "2020-10-05"
 
 keywords: File Storage, modify volume, NFS, file storage, expand capacity
@@ -19,6 +19,9 @@ subcollection: FileStorage
 {:external: target="_blank" .external}
 {:support: data-reuse='support'}
 {:help: data-hd-content-type='help'}
+{:ui: .ph data-hd-interface='ui'}
+{:cli: .ph data-hd-interface='cli'}
+{:api: .ph data-hd-interface='api'}
 
 # Expanding File Share Capacity
 {: #expandCapacity}
@@ -45,12 +48,13 @@ Expand action on the primary storage results in automatic resizing of the replic
 ## Limitations
 {: #limitsofextension}
 
-This feature is only available for storage that is provisioned in [data centers](/docs/FileStorage?topic=FileStorage-selectDC) with enhanced capabilities. Encrypted storage that is provisioned in these data centers can be increased up to 12 TB.
+This feature is available for storage that is provisioned in [data centers](/docs/FileStorage?topic=FileStorage-selectDC) with enhanced capabilities. Encrypted storage that is provisioned in these data centers can be increased up to 12 TB.
 
 Existing size limitations for {{site.data.keyword.filestorage_short}} that was provisioned with Endurance still apply (up to 4 TB for 10 IOPS tier and up to 12 TB for all other tiers).
 
-## Resizing storage
-{: #resizingsteps}
+## Resizing storage in the UI
+{: #resizingstepsUI}
+{:ui}
 
 1. Go to the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}. From the menu, select **Classic Infrastructure**. Click **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Select the volume from the list and click the ellipsis (**...**) > **Modify Share**.
@@ -62,7 +66,11 @@ Existing size limitations for {{site.data.keyword.filestorage_short}} that was p
 For the OS to recognize the extra storage space, unmount and mount the modified volume again.
 {:tip}
 
-Alternatively, you can use the following command in SLCLI.
+## Resizing storage in from the SLCLI
+{: #resizingstepsCLI}
+{: cli}
+
+To increase your storage volume, you can use the following command in SLCLI.
 ```
 # slcli file volume-modify --help
 Usage: slcli file volume-modify [OPTIONS] VOLUME_ID
