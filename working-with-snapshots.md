@@ -51,7 +51,7 @@ Snapshots schedules can be set up for hourly, daily, and weekly intervals, each 
 
 The list of the snapshots is displayed as they're taken in the **Snapshots** section of the **Detail** page.
 
-### Adding a Snapshot schedule from the SLCLI
+## Adding a Snapshot schedule from the SLCLI
 {: #addscheduleCLI}
 {: cli}
 
