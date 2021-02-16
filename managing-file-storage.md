@@ -17,6 +17,9 @@ subcollection: FileStorage
 {:shortdesc: .shortdesc}
 {:support: data-reuse='support'}
 {:help: data-hd-content-type='help'}
+{:ui: .ph data-hd-interface='ui'}
+{:cli: .ph data-hd-interface='cli'}
+{:api: .ph data-hd-interface='api'}
 
 
 # Managing {{site.data.keyword.filestorage_short}}
@@ -25,10 +28,11 @@ subcollection: FileStorage
 You can manage your {{site.data.keyword.filestorage_full}} volumes through {{site.data.keyword.cloud}} console.
 {:shortdesc}
 
-## Authorizing hosts to access {{site.data.keyword.filestorage_short}}
+## Authorizing hosts to access {{site.data.keyword.filestorage_short}} in the UI
 {: #authhostUI}
 {: help}
 {: support}
+{: ui}
 
 “Authorized” hosts are hosts that were given access to a particular volume. Without host authorization, you can't access or use the storage from your system. Authorizing a host to access your volume generates the user name and password.
 
@@ -45,7 +49,13 @@ You can authorize and connect hosts that are located in the same data center as 
    {:note}
 6. Select one or more hosts from the list and click **Save**.
 
-Alternatively, you can use the following command in SLCLI.
+## Authorizing hosts to access {{site.data.keyword.filestorage_short}} from the SLCLI
+{: #authhostCLI}
+{: help}
+{: support}
+{: cli}
+
+To authorize a host to access the volume, you can use the following command.
 ```
 # slcli file access-authorize --help
 Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
@@ -59,10 +69,11 @@ Options:
   --help                    Show this message and exit.
 ```
 
-## Viewing the list of hosts that are authorized to access a {{site.data.keyword.filestorage_short}} volume
+## Viewing the list of hosts that are authorized to access a {{site.data.keyword.filestorage_short}} volume in the UI
 {: #viewhostUI}
 {: help}
 {: support}
+{: ui}
 
 1. Go to the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}. From the menu, select **Classic Infrastructure**.
 2. Click **Storage** > **{{site.data.keyword.filestorage_short}}**, and click your **Volume Name**.
@@ -70,7 +81,13 @@ Options:
 
 There you can see the list of hosts, which are currently authorized to access the volume.
 
-Alternatively, you can use the following command in SLCLI.
+## Viewing the list of hosts that are authorized to access a {{site.data.keyword.filestorage_short}} volume from the SLCLI
+{: #viewhostCLI}
+{: help}
+{: support}
+{: cli}
+
+To display the lost of authorized hosts, you can use the following command.
 ```
 # slcli file access-list --help
 Usage: slcli file access-list [OPTIONS] VOLUME_ID
@@ -84,10 +101,11 @@ Options:
 ```
 
 
-## Viewing the {{site.data.keyword.filestorage_short}} volumes to which a host is authorized
+## Viewing the {{site.data.keyword.filestorage_short}} volumes to which a host is authorized in the UI
 {: #viewvolUI}
 {: help}
 {: support}
+{: ui}
 
 You can view the volumes to which a host has access to, including information that is needed to make a connection – Volume Name, Storage Type, Target Address, capacity, and location.
 
@@ -100,15 +118,18 @@ You can view the volumes to which a host has access to, including information th
 You are presented with a list of storage volumes that this particular host has access to, all are grouped by storage type (block, file, other). From the respective **Action** menus, you can authorize more storage or remove access.
 
 
-## Mounting and unmounting {{site.data.keyword.filestorage_short}}
+## Mounting and unmounting {{site.data.keyword.filestorage_short}} in the UI
 {: #mounthostUI}
 {: help}
 {: support}
+{:ui}
 
 You can use the mount point information that is provided in the **Volume Details** view to mount {{site.data.keyword.filestorage_short}} from a host. For more information, see [Accessing {{site.data.keyword.filestorage_short}} on Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingLinux).
 
 
-## Revoking a host's access to {{site.data.keyword.filestorage_short}}
+## Revoking a host's access to {{site.data.keyword.filestorage_short}} in the UI
+{: #revokehostaccessinUI}
+{:ui}
 
 If you want to stop the access from a host to a particular storage volume, you can revoke the access. When access is revoked, the host connection is dropped from the volume. The operating system and applications can't communicate with the volume anymore.
 
@@ -117,10 +138,11 @@ To avoid host side issues, unmount the storage volume from your operating system
 
 You can revoke access from either Storage from the Device List or the Storage views.
 
-### Revoking access from the Device List
+### Revoking access from the Device List in the UI
 {: #revokeauthDeviceUI}
 {: help}
 {: support}
+{:ui}
 
 1. Go to the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}.
 2. From the menu, select **Classic Infrastructure**.
@@ -134,10 +156,11 @@ If you want to disconnect multiple volumes from a specific host, you need to rep
 {:tip}
 
 
-### Revoking access from the Storage View
+### Revoking access from the Storage View in the UI
 {: #revokeauthStorageUI}
 {: help}
 {: support}
+{:ui}
 
 1. Go to the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}.
 2. From the menu, select **Classic Infrastructure**.
@@ -149,10 +172,11 @@ If you want to disconnect multiple volumes from a specific host, you need to rep
 If you want to disconnect multiple hosts from a specific volume, you need to repeat the Revoke Access action for each host.
 {:tip}
 
-### Revoking access through the SLCLI.
+## Revoking a host's access to {{site.data.keyword.filestorage_short}} from the SLCLI
 {: #revokeauthslcli}
 {: help}
 {: support}
+{:cli}
 
 You can use the following command in SLCLI.
 ```
@@ -168,10 +192,11 @@ Options:
   --help                    Show this message and exit.
 ```
 
-## Canceling a storage volume
+## Canceling a storage volume in the UI
 {: #cancelvolUI}
 {: help}
 {: support}
+{:ui}
 
 If you no longer need a specific volume, you can cancel that storage. To cancel a storage volume, you need to revoke access from any hosts first.
 
@@ -185,7 +210,19 @@ If you no longer need a specific volume, you can cancel that storage. To cancel 
 5. Click **Continue** or **Close**.
 6. Click the acknowledgment check box, and click **Confirm**.
 
-Alternatively, you can use the following command in SLCLI.
+When the volume is canceled, there's a 24-hour reclaim wait period. You can still see the volume in the console during those 24 hours. When the reclaim-period expires, the data is destroyed and the volume is removed from the console, too. However, billing for the volume stops immediately. For more information, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs).
+{:note}
+
+Active replicas and dependent duplicates can block reclamation of the Storage volume. Make sure that the volume is no longer mounted, host authorizations are revoked, replication is canceled, and no dependent duplicates exist before you attempt to cancel the original volume.
+
+
+## Canceling a storage volume from the SLCLI
+{: #cancelvolCLI}
+{: help}
+{: support}
+{:cli}
+
+To cancel a storage volume, you can use the following command.
 ```
 # slcli file volume-cancel --help
 Usage: slcli file volume-cancel [OPTIONS] VOLUME_ID
