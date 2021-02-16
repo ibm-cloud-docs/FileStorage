@@ -35,17 +35,17 @@ This action breaks the replication relationship and cannot be undone without man
 {: cli}
 
 Use the following command to fail a file volume over to a specific replicant volume.
-  ```
+```
   # slcli file disaster-recovery-failover --help
   Usage: slcli file disaster-recovery-failover [OPTIONS] VOLUME_ID
 
   Options:
   --replicant-id TEXT  ID of the replicant volume
   -h, --help           Show this message and exit.
-  ```
+```
 
-## Fail over to the replica volume by using the API
-(: #DRFailoverAPI)
+## Fail over to the replica volume with the API
+{: #DRFailoverAPI}
 {: api}
 
 ### REST API
