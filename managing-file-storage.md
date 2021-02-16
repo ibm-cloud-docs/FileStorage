@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-03-04"
+  years: 2014, 2021
+lastupdated: "2021-02-16"
 
-keywords: File Storage, file storage, NFS, authorizing hosts, rewoke access, grant access, view authorizations
+keywords: File Storage, file storage, NFS, authorizing hosts, revoke access, grant access, view authorizations
 
 subcollection: FileStorage
 
@@ -116,16 +116,6 @@ You can view the volumes to which a host has access to, including information th
 5. Select the Storage tab.
 
 You are presented with a list of storage volumes that this particular host has access to, all are grouped by storage type (block, file, other). From the respective **Action** menus, you can authorize more storage or remove access.
-
-
-## Mounting and unmounting {{site.data.keyword.filestorage_short}} in the UI
-{: #mounthostUI}
-{: help}
-{: support}
-{:ui}
-
-You can use the mount point information that is provided in the **Volume Details** view to mount {{site.data.keyword.filestorage_short}} from a host. For more information, see [Accessing {{site.data.keyword.filestorage_short}} on Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingLinux).
-
 
 ## Revoking a host's access to {{site.data.keyword.filestorage_short}} in the UI
 {: #revokehostaccessinUI}
