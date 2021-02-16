@@ -36,6 +36,7 @@ This feature is available in [most data centers](/docs/FileStorage?topic=FileSto
 The upgrade process is not instantaneous. You can expect to see the updated size in the UI or through the API in a short while after you put in the modification request. There's no outage or lack of access to the storage while the resize is taking place, so you can continue your operations as normal while you wait.
 
 ## Advantages of Expandable Storage
+{: #advantagesofresizing}
 
 - **Cost management** – You might know that there’s potential for growth of your data, but you need a smaller amount of storage to start. The ability to expand, allows customers to save on costs of storage at the start and then grow to accommodate their needs.  
 
