@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-16"
+lastupdated: "2021-02-17"
 
 keywords: File Storage, file storage, NFS, authorizing hosts, revoke access, grant access, view authorizations
 
@@ -25,7 +25,7 @@ subcollection: FileStorage
 # Managing {{site.data.keyword.filestorage_short}}
 {: #managingstorage}
 
-You can manage your {{site.data.keyword.filestorage_full}} volumes through {{site.data.keyword.cloud}} console.
+You can manage your {{site.data.keyword.filestorage_full}} volumes through the {{site.data.keyword.cloud}} console and from the CLI.
 {:shortdesc}
 
 ## Authorizing hosts to access {{site.data.keyword.filestorage_short}} in the UI
