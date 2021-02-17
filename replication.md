@@ -147,6 +147,7 @@ However, if you want to change the time of day when your **Daily** replication o
 
 ## Canceling an existing replication in the UI
 {: #cancelreplicaUI}
+{: ui}
 
 You can cancel replication either immediately or on the anniversary date, which causes billing to end.
 
@@ -157,6 +158,8 @@ You can cancel replication either immediately or on the anniversary date, which 
 5. Click **I acknowledge that due to cancellation, data loss may occur**, and click **Cancel Replica**.
 
 ## Canceling replication when the primary volume is canceled in the UI
+{: #cancelprimaryUI}
+{: ui}
 
 When a primary volume is canceled, the replication schedule and the volume in the replica data center are deleted. Replicas are canceled from the **{{site.data.keyword.filestorage_short}}** page.
 
