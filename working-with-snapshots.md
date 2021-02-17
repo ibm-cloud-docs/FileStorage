@@ -150,13 +150,13 @@ Notifications are sent through the support tickets to the Master User on your ac
 - At **90 percent capacity**, a second warning is sent when snapshot space usage exceeded 90 percent. Like with reaching 75 percent capacity, if you take the necessary actions to decrease the space that is used, the action is noted and the ticket is closed. If you do nothing, you must manually acknowledge the ticket and then it is closed.
 - At **95 percent capacity**, a final warning is sent. If no action is taken to bring your space usage under the threshold, a notification is generated and automatic deletion occurs so that future snapshots can be created. Scheduled snapshots are deleted, starting with the oldest, until usage drops under 95 percent. Snapshots continue to be deleted each time usage exceeds 95 percent until it drops under the threshold. If the space is manually increased or snapshots are deleted, the warning is reset and reissued if the threshold is exceeded again. If no actions are taken, this notification is the only warning that you receive.
 
-## Changing the amount of Snapshot space for a volume in the UI
+## Increasing the amount of Snapshot space for a volume in the UI
 {: #changesnapshotspaceUI}
 {: ui}
 
 You might need to add snapshot space to a volume that didn't previously have any or might require extra snapshot space. You can add 5 - 4,000 GB depending on your needs.
 
-Snapshot space can be increased only. It can't be reduced. You can select a smaller amount of space until you determine how much space you need. Remember, automated, and manual snapshots share the space.
+Snapshot space can be increased. It can't be reduced. You can select a smaller amount of space until you determine how much space you need. Remember, automated, and manual snapshots share the space.
 {:important}
 
 Snapshot space is increased through **Storage** > **{{site.data.keyword.filestorage_short}}**.
