@@ -129,6 +129,7 @@ List existing replicant volumes for a file volume with the following command.
 
 ## Viewing the replication history in the UI
 {: #replicationhistoryUI}
+{:ui}
 
 To view the Replication history, click Manage on the main menu bar. Select **Account**, then scroll to the Audit Log. The Storage Replication Events list contains the names of the volume, a description of the replication event and the time stamp of the event.
 
