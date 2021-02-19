@@ -49,6 +49,7 @@ Use the following command to fail a file volume over to a specific replicant vol
 {: api}
 
 ### REST API
+{: #drrestaapi}
 * URL: `https://USERNAME:APIKEY@api.softlayer.com/rest/v3/SoftLayer_Network_Storage/primaryvolumeId/disasterRecoveryFailoverToReplicant`
 * Request body
   ```
@@ -58,6 +59,7 @@ Use the following command to fail a file volume over to a specific replicant vol
   ```
 
 ### SOAP API
+{: #drsoapapi}
 * URL: `https://api.softlayer.com/soap/v3/SoftLayer_Network_Storage`
 * Request body
   ```
