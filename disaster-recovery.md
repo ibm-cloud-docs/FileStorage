@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-02-12"
+lastupdated: "2021-02-15"
 
 keywords: File Storage, file storage, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
@@ -17,6 +17,9 @@ subcollection: FileStorage
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:shortdesc: .shortdesc}
+{:ui: .ph data-hd-interface='ui'}
+{:cli: .ph data-hd-interface='cli'}
+{:api: .ph data-hd-interface='api'}
 
 # Disaster Recovery - Fail over from an inaccessible Primary volume
 {: #dr-inaccessible}
@@ -27,22 +30,27 @@ If a catastrophic failure or disaster causes an outage on the primary site, cust
 This action breaks the replication relationship and cannot be undone without manual intervention from the support team.
 {:important}
 
-## Fail over to the replica volume by using the SL CLI
+## Fail over to the replica volume from the SLCLI
+{: #DRFailoverCLI}
+{: cli}
 
 Use the following command to fail a file volume over to a specific replicant volume.
-  ```
+```
   # slcli file disaster-recovery-failover --help
   Usage: slcli file disaster-recovery-failover [OPTIONS] VOLUME_ID
 
   Options:
   --replicant-id TEXT  ID of the replicant volume
   -h, --help           Show this message and exit.
-  ```
+```
 
-## Fail over to the replica volume by using the API
+## Fail over to the replica volume with the API
+{: #DRFailoverAPI}
+{: api}
 
 ### REST API
-* URL: https://USERNAME:APIKEY@api.softlayer.com/rest/v3/SoftLayer_Network_Storage/primaryvolumeId/disasterRecoveryFailoverToReplicant
+{: #drrestaapi}
+* URL: `https://USERNAME:APIKEY@api.softlayer.com/rest/v3/SoftLayer_Network_Storage/primaryvolumeId/disasterRecoveryFailoverToReplicant`
 * Request body
   ```
   {
@@ -51,7 +59,8 @@ Use the following command to fail a file volume over to a specific replicant vol
   ```
 
 ### SOAP API
-* URL: https://api.softlayer.com/soap/v3/SoftLayer_Network_Storage
+{: #drsoapapi}
+* URL: `https://api.softlayer.com/soap/v3/SoftLayer_Network_Storage`
 * Request body
   ```
   <?xml version="1.0" encoding="UTF-8"?>
@@ -74,5 +83,6 @@ Use the following command to fail a file volume over to a specific replicant vol
   ```
 
 ## Fail back to the original primary site
+{: #DRFailback}
 
 If you want to return production to the original primary site, create a [support case](https://cloud.ibm.com/unifiedsupport/supportcenter){: external}. For more information about opening a support case or case severities and response times, see [Viewing support cases](/docs/get-support?topic=get-support-managing-support-cases) or [Escalating support cases](/docs/get-support?topic=get-support-escalation).

@@ -20,7 +20,7 @@ subcollection: FileStorage
 # SLCLI commands for {{site.data.keyword.filestorage_short}}
 {: #SLCLIcommands}
 
-You can use the SLCLI to perform operations that are normally handled through the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic/storage/file){: external}. For example, with SLCLI you can place orders for new volumes, snapshot space and replication, update authorizations, and cancel volumes.
+You can use the SLCLI to perform operations that are normally handled through the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic/storage/file){: external}. For example, from the SLCLI you can place orders for new volumes, snapshot space and replication, update authorizations, and cancel volumes.
 {:shortdesc}
 
 For more information about how to install and use the SLCLI, see [Python API Client](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}.
@@ -36,7 +36,7 @@ For more information about how to install and use the SLCLI, see [Python API Cli
 
 ## Replication-related SLCLI commands
 
-* [Replication-related SLCLI commands](/docs/FileStorage?topic=FileStorage-replication#clicommands)
+* [Replication-related SLCLI commands](/docs/FileStorage?topic=FileStorage-replication)
   ```
   slcli file replica-failback
   slcli file replica-failover
@@ -80,11 +80,11 @@ For more information about how to install and use the SLCLI, see [Python API Cli
   slcli file  volume-convert <dependent-vol-id>
   ```
 
-* [Adjusting the IOPS](/docs/FileStorage?topic=FileStorage-adjustingIOPS#adjustingsteps)
+* [Adjusting the IOPS](/docs/FileStorage?topic=FileStorage-adjustingIOPS)
   ```
   slcli file volume-modify
   ```
-* [Expanding the capacity](/docs/FileStorage?topic=FileStorage-expandCapacity#resizingsteps)
+* [Expanding the capacity](/docs/FileStorage?topic=FileStorage-expandCapacity)
   ```
   slcli file volume-modify
   ```

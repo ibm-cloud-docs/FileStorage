@@ -16,6 +16,9 @@ subcollection: FileStorage
 {:important: .important}
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
+{:ui: .ph data-hd-interface='ui'}
+{:cli: .ph data-hd-interface='cli'}
+{:api: .ph data-hd-interface='api'}
 
 # Disaster Recovery - Fail over with an accessible Primary volume
 {: #dr-accessible}
@@ -23,9 +26,16 @@ subcollection: FileStorage
 If a catastrophic failure or disaster occurs on the primary site and the primary storage is still accessible, customers can perform the following actions to quickly access their data on the secondary site.
 
 Before you start the failover, make sure that all host-authorization is in place.
+{:important}
 
 Authorized hosts and volumes must be in the same data center. For example, you can't have a replica volume in London and the host in Amsterdam. Both must be in London or both must be in Amsterdam.
 {:note}
+
+## Authorizing the host in the UI
+{: #authreplicahostUI}
+{: ui}
+
+You can authorize a host to access the {{site.data.keyword.filestorage_full}} volume through the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic/storage/file){: external}.
 
 1. Log in to the [{{site.data.keyword.cloud}} console](https://{DomainName}/catalog){: external} and click the **menu** icon on the upper left. Select **Classic Infrastructure**.
 2. Locate the source or destination volume in the **{{site.data.keyword.filestorage_short}}** list.
@@ -38,7 +48,26 @@ Authorized hosts and volumes must be in the same data center. For example, you c
 6. Highlight the host that is to be authorized for replications. To select multiple hosts, use the CTRL-key and click the applicable hosts.
 6. Click **Save**. If you have no hosts, you are prompted to purchase compute resources in the same data center.
 
+## Authorizing the host from the SLCLI
+{: #authreplicahostCLI}
+{: cli}
+
+To authorize the hosts in the replica datacenter, use the following command.
+```
+# slcli file access-authorize --help
+Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
+
+Options:
+  -h, --hardware-id TEXT    The ID of one hardware server to authorize.
+  -v, --virtual-id TEXT     The ID of one virtual server to authorize.
+  -i, --ip-address-id TEXT  The ID of one IP address to authorize.
+  -p, --ip-address TEXT     An IP address to authorize.
+  -s, --subnet-id TEXT      An ID of one subnet to authorize.
+  --help                    Show this message and exit.
+```
+
 ## Starting a failover from a volume to its replica
+{: #failovertoreplica}
 
 If a failure event occurs, you can start a **failover** to your destination, or target, volume. The target volume becomes active. The last successfully replicated snapshot is activated, and the volume is made available for mounting. Any data that was written to the source volume since the previous replication cycle is lost. When a failover is started, the replication relationship is flipped. Your target volume becomes your source volume, and your former source volume becomes your target as indicated by the **Volume Name** followed by **REP**.
 
@@ -47,7 +76,9 @@ Failovers are started under **Storage**, **{{site.data.keyword.filestorage_short
 Before you proceed with these steps, disconnect the volume. Failure to do so, results in corruption and data loss.
 {:important}
 
-### ### Fail over to replica through the Console
+## Fail over to replica in the UI
+{: #failovertoreplicaUI}
+{: ui}
 
 1. Click your active volume (“source”).
 2. In the upper right, click **Actions**.
@@ -59,7 +90,9 @@ Before you proceed with these steps, disconnect the volume. Failure to do so, re
 5. Click your active volume (formerly your target volume). This volume now has an **Active** status.
 6. Mount and attach your storage volume to the host. For more information, see [connecting your new storage](/docs/FileStorage?topic=FileStorage-getting-started#mountingstorage).
 
-### Fail over to replica by using the CLI
+## Fail over to replica from the SLCLI
+{: #failovertoreplicaCLI}
+{: cli}
 
 To fail over a file volume to a specific replicant volume, use the following command.
   ```
@@ -73,6 +106,7 @@ To fail over a file volume to a specific replicant volume, use the following com
   ```
 
 ## Starting a failback from a volume to its replica
+{: #failbackfromreplica}
 
 When your original source volume is repaired, you can start a controlled Failback to your original source volume. In a controlled Failback,
 
@@ -84,7 +118,9 @@ When your original source volume is repaired, you can start a controlled Failbac
 
 When a Failback is started, the replication relationship is flipped again. Your source volume is restored as your source volume, and your target volume is the target volume again as indicated by the **Volume Name** followed by **REP**.
 
-### Fail back through the Console
+## Fail back in the UI
+{: #failbackfromreplicaUI}
+{: ui}
 
 Failbacks are started under **Storage**, **{{site.data.keyword.filestorage_short}}** in the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic/storage/file){: external}.
 
@@ -98,7 +134,9 @@ Failbacks are started under **Storage**, **{{site.data.keyword.filestorage_short
 5. Click your active volume ("source"). This volume now has an **Inactive** status.
 6. Mount and attach your storage volume to the host. For more information, see [connecting your new storage](/docs/FileStorage?topic=FileStorage-getting-started#mountingstorage).
 
-### Fail back by using the CLI 
+### Fail back from the SLCLI
+{: #failbackfromreplicaCLI}
+{: cli}
 
 To fail back a file volume from a specific replicant volume.
   ```

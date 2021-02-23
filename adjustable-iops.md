@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2019
-lastupdated: "2019-11-11"
+  years: 2014, 2021
+lastupdated: "2021-02-16"
 
 keywords: File Storage, adjusting IOPS, increase IOPS, decrease IOPS, modify IOPS
 
@@ -15,6 +15,9 @@ subcollection: FileStorage
 {:note: .note}
 {:important: .important}
 {:shortdesc: .shortdesc}
+{:ui: .ph data-hd-interface='ui'}
+{:cli: .ph data-hd-interface='cli'}
+{:api: .ph data-hd-interface='api'}
 
 # Adjusting IOPS
 {: #adjustingIOPS}
@@ -26,13 +29,14 @@ Billing for the storage is updated to add the pro-rated difference of the new pr
 
 
 ## Advantages of adjustable IOPS
+{: #advantagesadjustableIOPS}
 
 - Cost management – Some of our clients might need high IOPS just during peak usage times. For example, a large retail store has peak usage during the holidays and might need higher IOPS on their storage then than in the middle of the summer. This feature allows them to manage their costs and pay for higher IOPs only when they need it.
 
 ## Limitations
 {: #limitsofadjustIOPS}
 
-This feature is only available in [select data centers](/docs/FileStorage?topic=FileStorage-selectDC).
+This feature is available in [most data centers](/docs/FileStorage?topic=FileStorage-selectDC).
 
 Clients can’t switch between Endurance and Performance when they adjust their IOPS. Users can specify a new IOPS tier or IOPS level for their storage based on the following criteria and restrictions.
 
@@ -41,11 +45,13 @@ Clients can’t switch between Endurance and Performance when they adjust their 
 - If original volume is Performance with more than 0.30 IOPS/GB, options available include only the size and IOPS combinations that result in more than 0.30 IOPS/GB.
 
 ## Effect of IOPS adjustment on replication
+{: #IOPSchangereplica}
 
 If the volume has replication in place, the replica is automatically updated to match the IOPS selection of the primary.
 
-## Adjusting the IOPS on your Storage
-{: #adjustingsteps}
+## Adjusting the IOPS on your Storage in the UI
+{: #adjustingstepsUI}
+{:ui}
 
 1. Go to your list of {{site.data.keyword.filestorage_short}}. From the {{site.data.keyword.cloud}} console, click **Classic Infrastructure** > **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Select the volume from the list and click the ellipsis (**...**) > **Modify Share**.
@@ -56,7 +62,13 @@ If the volume has replication in place, the replica is automatically updated to 
 5. Click the **I have read the Master Service Agreement...** check box, and click **Place Order**.
 6. Your new storage allocation is going to be available in a few minutes.
 
-Alternatively, you can update your IOPS through the SLCLI.
+
+## Adjusting the IOPS on your Storage from the CLI
+{: #adjustingstepsCLI}
+{: cli}
+
+You can update your IOPS from the SLCLI by using the following command.
+
 ```
 # slcli file volume-modify --help
 Usage: slcli file volume-modify [OPTIONS] VOLUME_ID

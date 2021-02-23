@@ -28,7 +28,7 @@ All secondary mount files go in the `/etc/systemd/system` directory as the syste
 
 You can use `fdisk` or `parted` to create the partition. Make sure that the file system that you create matches the one listed in the `.mount` file or the service fails to start. Because the mount is NFS, you can specify more options by using the `Options=` line in the mount file.
 
-In the following example, NFS is set to mount at `/data/www`. The NFS mount point of the {{site.data.keyword.filestorage_short}} instance can be obtained from the {{site.data.keyword.filestorage_short}} listing page or through an API call `SoftLayer_Network_Storage::getNetworkMountAddress()`.
+In the following example, NFS is set to mount at `/data/www`. The NFS mount point of the {{site.data.keyword.filestorage_short}} instance can be obtained from the {{site.data.keyword.filestorage_short}} Details page in the UI or through an API call `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 {:tip}
 
 ```

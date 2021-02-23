@@ -15,6 +15,9 @@ subcollection: FileStorage
 {:note: .note}
 {:important: .important}
 {:shortdesc: .shortdesc}
+{:ui: .ph data-hd-interface='ui'}
+{:cli: .ph data-hd-interface='cli'}
+{:api: .ph data-hd-interface='api'}
 
 # Creating and managing independent duplicate volumes
 {: #duplicatevolume}
@@ -45,7 +48,9 @@ Some common uses for a duplicate volume include the following examples.
 You can create a duplicate volume through the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external} in a couple of ways.
 
 
-## Creating a duplicate from a specific volume in the Storage List
+## Creating a duplicate from a specific volume in the Storage List in the UI
+{: #createdepduplicateUI}
+{: ui}
 
 1. Go to your list of {{site.data.keyword.filestorage_short}}. From the **Classic Infrastructure** menu, click **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Locate and click the volume name.
@@ -68,7 +73,9 @@ You can create a duplicate volume through the [{{site.data.keyword.cloud}} conso
 8. Click **Continue** to place your order.
 
 
-## Creating a duplicate from a specific Snapshot
+## Creating a duplicate from a specific Snapshot in the UI
+{: #createdepduplicatespecificUI}
+{: ui}
 
 1. Go to your list of {{site.data.keyword.filestorage_short}}.
 2. Click a volume from the list to view the details page. It can either be a replica or non-replica volume.
@@ -84,7 +91,12 @@ You can create a duplicate volume through the [{{site.data.keyword.cloud}} conso
 7. You can update the snapshot space for the new volume to add more, less, or no snapshot space. The snapshot space of the original volume is set by default.
 8. Click **Place Order** to provision the duplicate.
 
-## Creating a duplicate through the SLCLI
+## Creating a duplicate from the SLCLI
+{: #createindependentduplicateCLI}
+{: cli}
+
+You can create a duplicate volume from the SLCLI by using the following command.
+
 ```
 # slcli file volume-duplicate --help
 Usage: slcli file volume-duplicate [OPTIONS] ORIGIN_VOLUME_ID
@@ -135,11 +147,13 @@ Options:
 ```
 
 ## Managing your duplicate volume
+{: #manageduplicate}
 
 While data is being copied from the original volume to the duplicate, you can see a status on the details page that shows the duplication is in progress. Depending on the size of the data, the copying process can take up to several hours. During this time, you can attach to a host and read/write to the volume, but you can't create snapshot schedules or perform a refresh from the original volume. When the duplication process is complete, the new volume is independent from the original and can be managed with snapshots and replication as normal.
 
 ## Updating data on the independent duplicate volume
 {: #refreshindependentvol}
+{: cli}
 
 As time passes and the primary volume changes, the duplicate volume can be updated with these changes to reflect the current state through the refresh action. The data on the duplicate volume can be refreshed at any time. The refresh involves taking a snapshot of the primary volume and then, updating the duplicate volume by using that snapshot. A refresh incurs no downtime on the primary volume. However, during the refresh transaction, the duplicate volume is unavailable and must be remounted after the refresh is completed.
 
