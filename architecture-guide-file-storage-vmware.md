@@ -257,7 +257,7 @@ Make note of the IP address as it can be used for mounting the volume in the nex
 {:tip}
 
 
-##  Creating and mounting {{site.data.keyword.filestorage_short}} Volume on the ESXi hosts
+##  Creating the datastore
 {: #mountNFSonESXI}
 
 1. Click **Go to vCenter** icon, and then **Hosts and Clusters**.
