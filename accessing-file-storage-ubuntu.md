@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-07-14"
+  years: 2014, 2021
+lastupdated: "2021-03-18"
 
 keywords: File Storage, NFS, mounting File Storage, mounting storage on Ubuntu,
 
@@ -16,6 +16,9 @@ subcollection: FileStorage
 {:important: .important}
 {:shortdesc: .shortdesc}
 {:term: .term}
+{:ui: .ph data-hd-interface='ui'}
+{:cli: .ph data-hd-interface='cli'}
+{:api: .ph data-hd-interface='api'}
 
 # Mounting {{site.data.keyword.filestorage_short}} on Ubuntu
 {: #mountingUbuntu}
@@ -23,7 +26,13 @@ subcollection: FileStorage
 Use these instructions to connect an Ubuntu Linux&reg;-based {{site.data.keyword.cloud}} Compute instance to a Network file system (NFS) share.
 {:shortdesc}
 
-First, make sure that the host that is to access the {{site.data.keyword.filestorage_full}} volume is authorized through the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic/storage/file){: external}.
+First, make sure that the host that is to access the {{site.data.keyword.filestorage_full}} volume is authorized.
+
+## Authorizing the host in the UI
+{: #authUbuntuhostUI}
+{:ui}
+
+You can authorize a host to access the {{site.data.keyword.filestorage_short}} volume through the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic/storage/file){: external}.
 
 1. In the console, go to **Classic Infrastructure**  > **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Scroll to the File share you want to mount, and click the ellipsis (**...**) for Actions. Then, select **Authorize Host**.
@@ -33,7 +42,12 @@ First, make sure that the host that is to access the {{site.data.keyword.filesto
    {:note}
 4. Select one or more hosts from the list and click **Save**.
 
-Alternatively, you can authorize the hosts through the SLCLI.
+## Authorizing the host from the SLCLI
+{: #authUbuntuhostCLI}
+{:cli}
+
+You can authorize a host to access the {{site.data.keyword.filestorage_short}} volume by using the `file access-authorize` command.
+
 ```
 # slcli file access-authorize --help
 Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
