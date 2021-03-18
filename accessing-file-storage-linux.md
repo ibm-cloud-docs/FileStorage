@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2020-12-16"
+lastupdated: "2021-03-18"
 
 keywords: File Storage, NFS, mounting File Storage, mounting storage on Linux,
 
@@ -16,6 +16,9 @@ subcollection: FileStorage
 {:important: .important}
 {:shortdesc: .shortdesc}
 {:term: .term}
+{:ui: .ph data-hd-interface='ui'}
+{:cli: .ph data-hd-interface='cli'}
+{:api: .ph data-hd-interface='api'}
 
 # Mounting {{site.data.keyword.filestorage_short}} on Red Hat Linux
 {: #mountingLinux}
@@ -23,7 +26,13 @@ subcollection: FileStorage
 Use these instructions to connect a Red Hat Enterprise Linux&reg;-based {{site.data.keyword.cloud}} Compute instance to a Network File System (NFS) share.
 {:shortdesc}
 
-First, make sure that the host that is to access the {{site.data.keyword.filestorage_full}} volume is authorized through the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic/storage/file){: external}.
+First, make sure that the host that is to access the {{site.data.keyword.filestorage_full}} volume is authorized.
+
+## Authorizing the host in the UI
+{: #authUbuntuhostUI}
+{:ui}
+
+You can authorize a host to access the {{site.data.keyword.filestorage_short}} volume through the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic/storage/file){: external}.
 
 1. In the console, go to **Classic Infrastructure**  > **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Scroll to the File share you want to mount, and click the ellipsis (**...**) for Actions. Then, select **Authorize Host**.
@@ -33,7 +42,12 @@ First, make sure that the host that is to access the {{site.data.keyword.filesto
    {:note}
 4. Select one or more hosts from the list and click **Save**.
 
-Alternatively, you can authorize the hosts through the SLCLI.
+## Authorizing the host from the SLCLI
+{: #authUbuntuhostCLI}
+{:cli}
+
+You can authorize a host to access the {{site.data.keyword.filestorage_short}} volume by using the `file access-authorize` command.
+
 ```
 # slcli file access-authorize --help
 Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
@@ -46,6 +60,7 @@ Options:
   -s, --subnet-id TEXT      An ID of one subnet to authorize.
   --help                    Show this message and exit.
 ```
+
 
 ## Mounting the {{site.data.keyword.filestorage_short}} share
 {: #mountRHEL}
