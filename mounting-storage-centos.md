@@ -15,6 +15,9 @@ subcollection: FileStorage
 {:note: .note}
 {:important: .important}
 {:codeblock: .codeblock}
+{:ui: .ph data-hd-interface='ui'}
+{:cli: .ph data-hd-interface='cli'}
+{:api: .ph data-hd-interface='api'}
 
 
 # Mounting {{site.data.keyword.filestorage_short}} in CentOS
@@ -23,10 +26,11 @@ subcollection: FileStorage
 To mount {{site.data.keyword.filestorage_full}} in CentOS 7, you must authorize the host first. Then, install the NFS utilities as described in [Mounting {{site.data.keyword.filestorage_short}} on Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingLinux).
 {:shortdesc}
 
-## Authorizing the host
-{: #authCentOShost}
+## Authorizing the host in the UI
+{: #authCentOShostUI}
+{:ui}
 
-You can authorize a host to access the {{site.data.keyword.filestorage_full}} volume through the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic/storage/file){: external}.
+You can authorize a host to access the {{site.data.keyword.filestorage_short}} volume through the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic/storage/file){: external}.
 
 1. In the console, go to **Classic Infrastructure**  > **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Scroll to the File share you want to mount, and click the ellipsis (**...**) for Actions. Then, select **Authorize Host**.
@@ -36,7 +40,12 @@ You can authorize a host to access the {{site.data.keyword.filestorage_full}} vo
    {:note}
 4. Select one or more hosts from the list and click **Save**.
 
-Alternatively, you can authorize the hosts through the SLCLI.
+## Authorizing the host from the SLCLI
+{: #authCentOShostCLI}
+{:cli}
+
+You can authorize a host to access the {{site.data.keyword.filestorage_short}} volume by using the `file access-authorize` command.
+
 ```
 # slcli file access-authorize --help
 Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
