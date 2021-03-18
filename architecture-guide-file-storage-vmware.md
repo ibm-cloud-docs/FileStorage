@@ -1,28 +1,39 @@
 ---
 
 copyright:
-  years: 2014, 2020
+  years: 2014, 2021
 lastupdated: "2020-05-21"
 
 keywords: File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
 subcollection: FileStorage
 
+content-type: tutorial
+services:
+account-plan: paid
+completion-time: 1h
+
 ---
 {:external: target="_blank" .external}
-{:pre: .pre}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:shortdesc: .shortdesc}
+{:step: data-tutorial-type='step'}
+{:ui: .ph data-hd-interface='ui'}
+{:cli: .ph data-hd-interface='cli'}
+{:api: .ph data-hd-interface='api'}
 
 
-# Provisioning {{site.data.keyword.filestorage_short}} with VMware
+# Provisioning and configuring {{site.data.keyword.filestorage_short}} for use as VMware datastore
 {: #architectureguide}
+{: toc-content-type="tutorial"}
+{: toc-services=""}
+{: toc-completion-time="1h"}
 
-The following steps can help you order and configure {{site.data.keyword.filestorage_full}} in a vSphere 5.5 and vSphere 6.0 environment at {{site.data.keyword.cloud}}. {{site.data.keyword.filestorage_short}} is designed to support high I/O applications that require predictable levels of performance. The predictable performance is achieved through the allocation of protocol-level input/output operations per second (IOPS) to individual volumes.
+This tutorial guides you through how to order and configure {{site.data.keyword.filestorage_full}} in a **vSphere 5.5** or **vSphere 6.0** environment at {{site.data.keyword.cloud}}. {{site.data.keyword.filestorage_short}} is designed to support high I/O applications that require predictable levels of performance. The predictable performance is achieved through the allocation of protocol-level input/output operations per second (IOPS) to individual volumes.
 {:shortdesc}
 
 If you require more than eight hosts to access your VMware&reg; datastore, then choosing NFS {{site.data.keyword.filestorage_short}} is the best practice.
@@ -30,10 +41,10 @@ If you require more than eight hosts to access your VMware&reg; datastore, then 
 
 The {{site.data.keyword.filestorage_short}} offering is accessed and mounted through an NFS connection. In a VMware&reg; deployment, a single volume can be mounted to up to 64 ESXi hosts as shared storage. You can also mount multiple volumes to create a storage cluster to use vSphere Storage Distributed Resource Scheduler (DRS).
 
-Pricing and configuration options for {{site.data.keyword.filestorage_short}} are charged based on a combination of the reserved space and the offered IOPS.
-
 ## Ordering considerations
+{: #preorderconsiderationsvmware}
 
+Pricing and configuration options for {{site.data.keyword.filestorage_short}} are charged based on a combination of the reserved space and the offered IOPS.
 When you order {{site.data.keyword.filestorage_short}}, consider the following information:
 
 - When you decide on the size, consider the size of the workload and throughput needed. Size matters with the Endurance service, which scales performance linearly in relation to capacity (IOPS/GB). Conversely, the Performance service allows the administrator to choose capacity and performance independently. Throughput requirements matter with Performance.
@@ -44,13 +55,14 @@ When you order {{site.data.keyword.filestorage_short}}, consider the following i
 - NFS uses many extra file control operations such as `lookup`, `getattr`, and `readdir`. These operations in addition to read/write operations can count as IOPS and vary by operation type and NFS version.
 - {{site.data.keyword.filestorage_short}} volumes are exposed to authorized devices, subnets, or IP addresses.
 - To avoid storage disconnection during path-failover {{site.data.keyword.IBM}} recommends installing VMware&reg; tools, which set an appropriate timeout value. There’s no need to change the value, the default setting is sufficient to ensure that your VMware&reg; host doesn't lose connectivity.
-- Both NFSv3 and NFSv4.1 are supported in the {{site.data.keyword.cloud}} environment. However, {{site.data.keyword.IBM}} suggests that you use NFSv3. Because NFSv4.1 is a stateful protocol (not stateless like NFSv3), protocol issues can occur during network events. NFSv4.1 must quiesce all operations and then complete lock reclamation. While these operations are taking place, disruptions can occur.
+- Both NFSv3 and NFSv4.1 are supported in the {{site.data.keyword.cloud}} environment. However, the use NFSv3 is preferred. Because NFSv4.1 is a stateful protocol (not stateless like NFSv3), protocol issues can occur during network events. NFSv4.1 must quiesce all operations and then complete lock reclamation. While these operations are taking place, disruptions can occur.
 
 For more information, see VMware&reg;'s white paper on [Best Practices for running
 VMware&reg; vSphere on network-attached storage](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){: external}.
 {:tip}
 
 ### NFS Protocol VMware feature support matrix
+{: #NFSfeaturesVMwaresupportmatrix}
 
 | vSphere Features | NFS version 3 | NFS version 4.1 |
 |-----|-----|-----|
@@ -72,6 +84,7 @@ VMware&reg; vSphere on network-attached storage](https://www.vmware.com/content/
 
 
 ### Using Snapshots
+{: #vmwaresnapshot}
 
 {{site.data.keyword.filestorage_short}} allows administrators to set snapshot schedules that create and delete snapshot copies automatically for each storage volume. They can also create extra snapshot schedules (hourly, daily, weekly) for automatic snapshots and manually create ad hoc snapshots for business continuity and disaster recovery (BCDR) scenarios. Automatic alerts are delivered through the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}  to the volume owner for the retained snapshots and space used.
 
@@ -85,13 +98,14 @@ For more information, see the [snapshots](/docs/FileStorage?topic=FileStorage-sn
 
 
 ### Using replication
+{: #vmwarereplication}
 
 Replication uses one of your snapshot schedules to automatically copy snapshots to a destination volume in a remote data center. The copies can be recovered in the remote site if a catastrophic event or data corruption occurs.
 
 With replicas, you can
 
 - Recover from site failures and other disasters quickly by failing over to the destination volume,
-- Fail over to a specific point in time in the DR copy.
+- Fail over to a specific point in time with the DR copy.
 
 Replication keeps your data in sync in two different locations. If you want to clone your volume and use it independently from the original volume, see [Creating a duplicate File Volume](/docs/FileStorage?topic=FileStorage-duplicatevolume).
 {:tip}
@@ -108,15 +122,15 @@ Invalid data, whether corrupted, hacked, or infected replicate according to the 
 {:note}
 
 
-## Ordering {{site.data.keyword.filestorage_short}}
+## Ordering {{site.data.keyword.filestorage_short}} and authorizing hosts
+{: #orderauthvmwareui}
+{:ui}
 
-Use the [Advanced Single-Site VMware&reg; Reference Architecture](https://{DomainName}/docs/infrastructure/virtualization/advanced-single-site-vmware-reference-architecturesoftlayer.html){: external} to set up {{site.data.keyword.filestorage_short}} with Endurance or Performance options in your VMware environment.
+Follow the instructions the [Advanced Single-Site VMware&reg; Reference Architecture](/docs/virtualization?topic=virtualization-advanced-single-site-vmware-reference-architecture){: external} to set up your VMware environment.
 
 {{site.data.keyword.filestorage_short}} can be ordered through [The {{site.data.keyword.cloud}} catalog](https://{DomainName}/catalog){: external} or the CLI. For more information, see [Ordering {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-orderingConsole).
 
-Storage is provisioned in less than a minute and becomes visible on the **{{site.data.keyword.filestorage_short}}** page of the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic/storage/file){: external}.
-
-When a volume is provisioned, the {{site.data.keyword.BluBareMetServers_full}} or {{site.data.keyword.BluVirtServers_full}} that are going to use the volume must be authorized to access the storage. Use the following steps to authorize the host.
+Storage is provisioned in less than a minute and becomes visible on the **{{site.data.keyword.filestorage_short}}** page of the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic/storage/file){: external}. Next, the {{site.data.keyword.BluBareMetServers_full}} or {{site.data.keyword.BluVirtServers_full}} that are going to use the volume must be authorized to access the storage. Use the following steps to authorize the host.
 
 1. In the console, go to **Classic Infrastructure**  > **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Scroll to the File share you want to mount, and click the ellipsis (**...**) for Actions. Then, select **Authorize Host**.
@@ -128,10 +142,36 @@ When a volume is provisioned, the {{site.data.keyword.BluBareMetServers_full}} o
 
 After the subnets are authorized, make note of the host name of the storage server. The host name can be found on the {{site.data.keyword.filestorage_short}} detail page of the volume.
 
+## Ordering {{site.data.keyword.filestorage_short}} and authorizing hosts from the SLCLI
+{: #orderauthvmwareCLI}
+{:cli}
+
+Follow the instructions the [Advanced Single-Site VMware&reg; Reference Architecture](/docs/virtualization?topic=virtualization-advanced-single-site-vmware-reference-architecture){: external} to set up your VMware environment.
+
+{{site.data.keyword.filestorage_short}} can be ordered through [The {{site.data.keyword.cloud}} catalog](https://{DomainName}/catalog){: external} or the CLI. For more information, see [Ordering {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-orderingSLCLI).
+
+Storage is provisioned in less than a minute. Next, the {{site.data.keyword.BluBareMetServers_full}} or {{site.data.keyword.BluVirtServers_full}} that are going to use the volume must be authorized to access the storage. Use the following command to authorize the host.
+
+```
+# slcli file access-authorize --help
+Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
+
+Options:
+  -h, --hardware-id TEXT    The ID of one hardware server to authorize.
+  -v, --virtual-id TEXT     The ID of one virtual server to authorize.
+  -i, --ip-address-id TEXT  The ID of one IP address to authorize.
+  -p, --ip-address TEXT     An IP address to authorize.
+  -s, --subnet-id TEXT      An ID of one subnet to authorize.
+  --help                    Show this message and exit.
+```
+
+After the subnets are authorized, make note of the host name of the storage server. The host name can be found on the {{site.data.keyword.filestorage_short}} detail page of the volume.
+
 
 ##  Configuring the VMware virtual machine host
+{: #configurevmwarehost}
 
-Before you begin the VMware&reg; configuration process, make sure that the following prerequisites are met:
+Before you begin the configuration process, make sure that the following prerequisites are met:
 
 - {{site.data.keyword.BluBareMetServers}} with VMware&reg; ESXi are provisioned with proper storage configuration and ESXi login credentials.
 - {{site.data.keyword.cloud}} Windows physical or {{site.data.keyword.virtualmachinesshort}} in the same data center as the {{site.data.keyword.BluBareMetServers}}. Including Public IP address of the {{site.data.keyword.cloud}} Windows VM and login credentials.
@@ -139,6 +179,7 @@ Before you begin the VMware&reg; configuration process, make sure that the follo
 
 
 ### 1. Configuring the VMware Host.
+{: #configurevmwarehost1}
 
 1. From an internet connected computer, start an RDP client and establish an RDP session to the {{site.data.keyword.BluVirtServers_full}} that are provisioned in the same data center where vSphere vCenter is installed.
 2. From the {{site.data.keyword.BluVirtServers_short}}, start a web browser and connect to VMware&reg; vCenter through the vSphere Web Client.
@@ -175,6 +216,7 @@ For more information about VMware&reg; and Jumbo Frames, see [here](https://kb.v
 
 
 ### 2. Adding an uplink adapter to a virtual switch
+{: #configurevmwarehost2}
 
 1. Configure a new uplink adapter by going to the **ESXi host Manage** tab, select **Manage** and then **Networking**.
 2. Select the **Physical adapters** tab.
@@ -191,6 +233,7 @@ For more information about VMware&reg; and Jumbo Frames, see [here](https://kb.v
 
 
 ### 3. Configuring static routing (Optional)
+{: #configurevmwarehost3}
 
 The network configuration for this architecture guide uses a minimal number of port groups. If you have a VMkernel port group for NFS storage, extra steps must be taken. By default, ESXi uses the VMkernel port that is on the same subnet as an NFS volume to mount the NFS volume. Since layer 3 routing is used to mount the NFS volume, ESXi must be forced to use the VMkernel port that was configured to mount the NFS volume. To use the correct port, a static route must be created to the storage array.
 
@@ -215,6 +258,7 @@ Make note of the IP address as it can be used for mounting the volume in the nex
 
 
 ##  Creating and mounting {{site.data.keyword.filestorage_short}} Volume on the ESXi hosts
+{: #mountNFSonESXI}
 
 1. Click **Go to vCenter** icon, and then **Hosts and Clusters**.
 2. On the **Related Object** tab, click **Datastores**.
@@ -249,6 +293,7 @@ PING nfsdal0902a-fz.service.softlayer.com (10.2.125.80): 56 data bytes
 
 
 ## Enabling ESXi Storage I/O Control (Optional)
+{: #enableSIOC}
 
 Storage I/O Control (SIOC) is a feature available for customers who use an Enterprise Plus license. When SIOC is enabled in the environment, it changes the device queue length for the single VM. The change to the device queue length reduces the storage array queue for all VMs to an equal share. SIOC engages only if resources are constrained and the storage I/O latency is over a defined threshold.
 
@@ -261,6 +306,7 @@ Incorrectly configuring SIOC for a VMware&reg; datastore or for a VMDK can signi
 
 
 ### Configuring Storage I/O Control for a VMware datastore
+{: #configureSIOCStorage}
 
 1. Browse to the VMware&reg; datastore in the vSphere Web Client navigator.
 2. Click the **Manage** tab.
@@ -275,6 +321,7 @@ This setting is specific to the VMware&reg; datastore and not to the host.
 
 
 ### Configuring Storage I/O Control for {{site.data.keyword.BluVirtServers_short}}
+{: #configureSIOCStoragehost}
 
 You can also limit individual virtual disks for individual VMs or grant them different shares with SIOC. By limiting the disks and granting different shares, you can match and align the environment to the workload with the acquired {{site.data.keyword.filestorage_short}} volume IOPS number. The limit is set by IOPS, and it's possible to set a different weight or "Shares." Virtual disks with shares set to High (2,000 shares) receive twice as much I/O as a disk set to Normal (1,000 shares) and four times as much as one set to Low (500 shares). Normal is the default value for all the VMs, so you need to adjust the values to High or Low for the VMs that require it.
 
@@ -293,6 +340,7 @@ This process is used to set the resource consumption limits of individual vDisks
 
 
 ## Configuring ESXi host side settings
+{: #configureESXihost}
 
 Other settings are required for configuring ESXi hosts for NFS storage. This table shows what each setting needs to be.
 
@@ -308,7 +356,7 @@ Other settings are required for configuring ESXi hosts for NFS storage. This tab
 |NFS.MaxQueueDepth|	64 for vSphere 5.0 and later versions |
 {: caption="Table 2 - Host side settings." caption-side="top"}
 
-### Updating advanced configuration parameters on ESXi host by using the CLI
+### Updating advanced configuration parameters on ESXi host by using the ESXi CLI
 
 The following examples use the CLI to set the advanced configuration parameters, and then, check them. The `esxcfg-advcfg` tool that is used in the examples can be found in the `/usr/sbin` directory on the ESXi hosts.
 
