@@ -27,6 +27,9 @@ completion-time: 1h
 
 # Mounting {{site.data.keyword.filestorage_short}} on Ubuntu
 {: #mountingUbuntu}
+{: toc-content-type="tutorial"}
+{: toc-services=""}
+{: toc-completion-time="1h"}
 
 Use these instructions to connect an Ubuntu Linux&reg;-based {{site.data.keyword.cloud}} Compute instance to a Network file system (NFS) share.
 {:shortdesc}

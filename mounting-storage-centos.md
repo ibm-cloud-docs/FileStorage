@@ -24,9 +24,11 @@ completion-time: 1h
 {:cli: .ph data-hd-interface='cli'}
 {:api: .ph data-hd-interface='api'}
 
-
 # Mounting {{site.data.keyword.filestorage_short}} in CentOS
 {: #mountingCentOS}
+{: toc-content-type="tutorial"}
+{: toc-services=""}
+{: toc-completion-time="1h"}
 
 To mount {{site.data.keyword.filestorage_full}} in CentOS 7, you must authorize the host first. Then, install the NFS utilities as described in [Mounting {{site.data.keyword.filestorage_short}} on Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingLinux).
 {:shortdesc}
