@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2020-05-21"
+lastupdated: "2021-03-18"
 
 keywords: File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
@@ -165,7 +165,7 @@ Options:
   --help                    Show this message and exit.
 ```
 
-After the subnets are authorized, make note of the host name of the storage server. The host name can be found on the {{site.data.keyword.filestorage_short}} detail page of the volume.
+After the subnets are authorized, make note of the host name of the storage server.
 
 
 ##  Configuring the VMware virtual machine host
