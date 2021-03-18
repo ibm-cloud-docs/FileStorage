@@ -8,6 +8,11 @@ keywords: File Storage, NFS, mounting File Storage, mounting storage on Ubuntu,
 
 subcollection: FileStorage
 
+content-type: tutorial
+services:
+account-plan: paid
+completion-time: 1h
+
 ---
 {:external: target="_blank" .external}
 {:pre: .pre}

@@ -8,6 +8,11 @@ keywords: File Storage, mounting file storage, Linux, CentOS, NFS
 
 subcollection: FileStorage
 
+content-type: tutorial
+services:
+account-plan: paid
+completion-time: 1h
+
 ---
 {:external: target="_blank" .external}
 {:pre: .pre}

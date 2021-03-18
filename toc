@@ -12,6 +12,9 @@ File Storage - Classic
     {: .navgroup-end}
 
     {: .navgroup id="tutorial"}
+    accessing-file-storage-linux.md
+    accessing-file-storage-ubuntu.md
+    mounting-storage-centos.md
     architecture-guide-file-storage-vmware.md
     {: .navgroup-end}
 
@@ -26,10 +29,7 @@ File Storage - Classic
 
     {: .topicgroup}
     Configuring
-        mounting-storage-centos.md
         mounting-storage-coreos.md
-        accessing-file-storage-linux.md
-        accessing-file-storage-ubuntu.md
         set-host-queue-depth-settings-performance-and-endurance-storage.md
         configure-backup-cpanel.md
         configure-backup-plesk.md
