@@ -31,7 +31,7 @@ completion-time: 1h
 {: toc-services=""}
 {: toc-completion-time="1h"}
 
-Use these instructions to connect a Red Hat Enterprise Linux&reg;-based {{site.data.keyword.cloud}} Compute instance to a Network File System (NFS) share. For more information about how to order {{site.data.keyword.filestorage_full}}, see the [Getting started]/docs/FileStorage?topic=FileStorage-getting-started) tutorial.
+Use these instructions to connect a Red Hat Enterprise Linux&reg;-based {{site.data.keyword.cloud}} Compute instance to a Network File System (NFS) share. For more information about how to order {{site.data.keyword.filestorage_full}}, see the [Getting started](/docs/FileStorage?topic=FileStorage-getting-started) tutorial.
 {:shortdesc}
 
 First, make sure that the host that is to access the {{site.data.keyword.filestorage_short}} volume is authorized.
