@@ -27,7 +27,7 @@ completion-time: 1h
 {:api: .ph data-hd-interface='api'}
 
 
-# Provisioning and configuring {{site.data.keyword.filestorage_short}} for use as VMware datastore
+# Provisioning {{site.data.keyword.filestorage_short}} for use as VMware datastore
 {: #architectureguide}
 {: toc-content-type="tutorial"}
 {: toc-services=""}
