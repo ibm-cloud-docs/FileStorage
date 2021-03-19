@@ -29,10 +29,10 @@ File Storage - Classic
     {: .topicgroup}
     Configuring
         set-host-queue-depth-settings-performance-and-endurance-storage.md
-        configure-backup-cpanel.md
-        configure-backup-plesk.md
         jumboframes.md
         mounting-storage-centos.md
+        configure-backup-cpanel.md
+        configure-backup-plesk.md
 
     {: .topicgroup}
     Managing
