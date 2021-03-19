@@ -11,6 +11,12 @@ File Storage - Classic
     snapshots.md
     {: .navgroup-end}
 
+    {: .navgroup id="tutorial"}
+    accessing-file-storage-linux.md
+    accessing-file-storage-ubuntu.md
+    architecture-guide-file-storage-vmware.md
+    {: .navgroup-end}
+
     {: .navgroup id="howto"}
     {: .topicgroup}
     Provisioning
@@ -18,19 +24,15 @@ File Storage - Classic
         ordering-through-cli.md
         ordering-snapshots.md
         managing-storage-limits.md
-        architecture-guide-file-storage-vmware.md
         migrate-file-storage-encrypted-file-storage.md
 
     {: .topicgroup}
     Configuring
-        mounting-storage-centos.md
-        mounting-storage-coreos.md
-        accessing-file-storage-linux.md
-        accessing-file-storage-ubuntu.md
         set-host-queue-depth-settings-performance-and-endurance-storage.md
+        jumboframes.md
+        mounting-storage-centos.md
         configure-backup-cpanel.md
         configure-backup-plesk.md
-        jumboframes.md
 
     {: .topicgroup}
     Managing
