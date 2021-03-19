@@ -356,9 +356,9 @@ Other settings are required for configuring ESXi hosts for NFS storage. This tab
 |NFS.MaxQueueDepth|	64 for vSphere 5.0 and later versions |
 {: caption="Table 2 - Host side settings." caption-side="top"}
 
-### Updating advanced configuration parameters on ESXi host by using the ESXi CLI
+### Updating advanced configuration parameters
 
-The following examples use the CLI to set the advanced configuration parameters, and then, check them. The `esxcfg-advcfg` tool that is used in the examples can be found in the `/usr/sbin` directory on the ESXi hosts.
+The following examples use the ESXi CLI to set the advanced configuration parameters, and then, check them. The `esxcfg-advcfg` tool that is used in the examples can be found in the `/usr/sbin` directory on the ESXi hosts.
 
    - Setting the advanced configuration parameters from the ESXi CLI.
 
