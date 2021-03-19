@@ -31,10 +31,10 @@ completion-time: 1h
 {: toc-services=""}
 {: toc-completion-time="1h"}
 
-Use these instructions to connect an Ubuntu Linux&reg;-based {{site.data.keyword.cloud}} Compute instance to a Network file system (NFS) share.
+Use these instructions to connect an Ubuntu Linux&reg;-based {{site.data.keyword.cloud}} Compute instance to a Network file system (NFS) share. For more information about how to order {{site.data.keyword.filestorage_full}}, see the [Getting started]/docs/FileStorage?topic=FileStorage-getting-started) tutorial.
 {:shortdesc}
 
-First, make sure that the host that is to access the {{site.data.keyword.filestorage_full}} volume is authorized.
+First, make sure that the host that is to access the {{site.data.keyword.filestorage_short} volume is authorized.
 
 ## Authorizing the host in the UI
 {: #authUbuntuhostUI}
