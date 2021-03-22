@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-07-14"
+  years: 2014, 2021
+lastupdated: "2021-03-22"
 
 keywords: File Storage, file storage, NFS, upgrade, migrate to new
 
@@ -25,7 +25,6 @@ Enhanced {{site.data.keyword.filestorage_full}} is now available in most [data c
 The assumption is that you already attached your non-encrypted volume to your host. If not, follow the directions that fit your operating system the best to accomplish this task.
 
 - [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/FileStorage?topic=FileStorage-mountingCentOS)
-- [Mounting {{site.data.keyword.filestorage_short}} on Container Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingCoreOS)
 - [Mounting {{site.data.keyword.filestorage_short}} on Red Hat Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingLinux)
 - [Mounting {{site.data.keyword.filestorage_short}} on Ubuntu](/docs/FileStorage?topic=FileStorage-mountingUbuntu)
 
