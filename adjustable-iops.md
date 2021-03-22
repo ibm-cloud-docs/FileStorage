@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-16"
+lastupdated: "2021-03-22"
 
 keywords: File Storage, adjusting IOPS, increase IOPS, decrease IOPS, modify IOPS
 
@@ -102,4 +102,81 @@ Options:
                                 IOPS/GB for the volume must also be greater
                                 than 0.25.]
   -h, --help                    Show this message and exit.
+```
+
+## Adjusting the IOPS on your Storage with the API
+{: #adjustingstepsAPI}
+{: api}
+
+You can adjust the IOPS by using an API call to the SOAP web service. The following sample API calls can be called from the scripting language of your choice.
+
+For more information about the SLAPI, see http://sldn.softlayer.com/reference/softlayerapi.
+{:tip}
+
+* Adjust IOPS on Performance storage volume.
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://api.service.softlayer.com/soap/v3.1/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <SOAP-ENV:Header>
+    <ns1:authenticate>
+    </ns1:authenticate>
+  </SOAP-ENV:Header>
+  <SOAP-ENV:Body>
+    <ns1:placeOrder>
+      <orderData xsi:type="ns1:SoftLayer_Container_Product_Order_Network_Storage_AsAService_Upgrade">
+        <volume xsi:type="ns1:SoftLayer_Network_Storage">
+            <id xsi:type="xsd:int">XXXXXXXXX</id><!-- where XXXXXXXXX is the Volume Id -->
+        </volume>
+        <iops xsi:type="xsd:int">2007</iops> <!-- This is the upgraded amount -->
+        <packageId xsi:type="xsd:int">759</packageId>
+        <prices SOAP-ENC:arrayType="ns1:SoftLayer_Product_Item_Price[3]" xsi:type="SOAP-ENC:Array">
+            <item xsi:type="ns1:SoftLayer_Product_Item_Price">
+                <id xsi:type="xsd:int">189433</id> <!-- Top level price -->
+            </item>
+            <item xsi:type="ns1:SoftLayer_Product_Item_Price">
+                <id xsi:type="xsd:int">190233</id> <!-- 2000 - 2999 GBs storage price-->
+            </item>
+            <item xsi:type="ns1:SoftLayer_Product_Item_Price">
+                <id xsi:type="xsd:int">190293</id> <!-- 200 - 40000 IOPS price-->
+            </item>
+        </prices>
+      </orderData>
+    </ns1:placeOrder>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+```
+
+* Adjust IOPS on Endurance storage volume.
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://api.service.softlayer.com/soap/v3.1/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <SOAP-ENV:Header>
+    <ns1:authenticate>
+    </ns1:authenticate>
+  </SOAP-ENV:Header>
+  <SOAP-ENV:Body>
+    <ns1:placeOrder>
+      <orderData xsi:type="ns1:SoftLayer_Container_Product_Order_Network_Storage_AsAService_Upgrade">
+        <volume xsi:type="ns1:SoftLayer_Network_Storage">
+            <id xsi:type="xsd:int">XXXXXXXX</id> <!--Where Volume XXXXXXXX is the VolumeID -->
+        </volume>
+        <packageId xsi:type="xsd:int">759</packageId>
+        <volumeSize xsi:type="xsd:int">24</volumeSize>
+        <prices SOAP-ENC:arrayType="ns1:SoftLayer_Product_Item_Price[3]" xsi:type="SOAP-ENC:Array">
+            <item xsi:type="ns1:SoftLayer_Product_Item_Price">
+                <id xsi:type="xsd:int">189433</id> <!-- Top level price -->
+            </item>
+            <item xsi:type="ns1:SoftLayer_Product_Item_Price">
+                <id xsi:type="xsd:int">193373</id> <!-- New Performance tier price -->
+            </item>
+            <item xsi:type="ns1:SoftLayer_Product_Item_Price">
+                <id xsi:type="xsd:int">193433</id> <!-- Storage space price for the new tier -->
+            </item>
+        </prices>
+      </orderData>
+    </ns1:placeOrder>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
 ```
