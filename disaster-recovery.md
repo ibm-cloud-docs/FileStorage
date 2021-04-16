@@ -21,7 +21,7 @@ subcollection: FileStorage
 {:cli: .ph data-hd-interface='cli'}
 {:api: .ph data-hd-interface='api'}
 
-# Disaster Recovery - Fail over from an inaccessible Primary volume
+# Disaster Recovery - Fail over from an inaccessible primary volume
 {: #dr-inaccessible}
 
 If a catastrophic failure or disaster causes an outage on the primary site, customers can perform the following actions to quickly access their data on the secondary site. When the primary volume is inaccessible, you can force a failover to the remote replica.
@@ -50,7 +50,7 @@ Use the following command to fail a file volume over to a specific replicant vol
 
 ### REST API
 {: #drrestaapi}
-* URL: `https://USERNAME:APIKEY@api.softlayer.com/rest/v3/SoftLayer_Network_Storage/primaryvolumeId/disasterRecoveryFailoverToReplicant`
+* URL - `https://USERNAME:APIKEY@api.softlayer.com/rest/v3/SoftLayer_Network_Storage/primaryvolumeId/disasterRecoveryFailoverToReplicant`
 * Request body
   ```
   {
@@ -60,7 +60,7 @@ Use the following command to fail a file volume over to a specific replicant vol
 
 ### SOAP API
 {: #drsoapapi}
-* URL: `https://api.softlayer.com/soap/v3/SoftLayer_Network_Storage`
+* URL - `https://api.softlayer.com/soap/v3/SoftLayer_Network_Storage`
 * Request body
   ```
   <?xml version="1.0" encoding="UTF-8"?>
