@@ -84,7 +84,7 @@ That depends on what the host operating system can handle, it’s not something 
 {: faq}
 {: support}
 
-The number of files a volume can contain is determined by how many inodes it has. An inode is a data structure that contains information about files. The maximum possible number of files is set so there is at least 1 inode per 32 KB of volume size.
+The number of files a volume can contain is determined by how many inodes it has. An inode is a data structure that contains information about files. The maximum possible number of files is set so there is at least 1 inode per 32 KB of volume size.  Volumes have both private and public inodes. Public inodes are used for files that are visible to the customer and private inodes are used for files that are used internally by the storage system.
 
 | Volume Size |Total Usable Inodes |
 |-----|-----|
