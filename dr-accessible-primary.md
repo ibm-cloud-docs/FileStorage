@@ -40,11 +40,11 @@ You can authorize a host to access the {{site.data.keyword.filestorage_full}} vo
 1. Log in to the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external} and click the **menu** icon on the upper left. Select **Classic Infrastructure**.
 2. Locate the source or destination volume in the **{{site.data.keyword.filestorage_short}}** list. Its replica volume is listed under the source volume in the inactive status.
 3. Click the replica name and on the next screen, click **Actions**. From the menu, select **Authorize Hosts**.
-5. Select a host type and then choose a host from the dropdown that is available for the volume. Filter the available host list by the device type, subnet, or IP address.
+4. Select a host type and then choose a host from the dropdown that is available for the volume. Filter the available host list by the device type, subnet, or IP address.
 
    When the list is filtered by subnet, the subnets that are displayed are subscribed subnets in the same data center as the storage volume.
    {:note}
-6. Highlight the host that is to be authorized for replications. To select multiple hosts, use the CTRL-key and click the applicable hosts.
+5. Highlight the host that is to be authorized for replications. To select multiple hosts, use the CTRL-key and click the applicable hosts.
 6. Click **Save**. If you have no hosts, you are prompted to purchase compute resources in the same data center.
 
 ## Authorizing the host from the SLCLI
