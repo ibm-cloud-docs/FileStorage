@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2021
-lastupdated: "2021-04-22"
+  years: 2014, 21
+lastupdated: "2021-03-22"
 
 keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
@@ -84,22 +84,24 @@ That depends on what the host operating system can handle, it’s not something 
 {: faq}
 {: support}
 
+<<<<<<< HEAD
 The number of files a volume can contain is determined by how many inodes it has. An inode is a data structure that contains information about files. The maximum possible number of files is set so there is at least 1 inode per 32 KB of volume size.  Volumes have both private and public inodes. Public inodes are used for files that are visible to the customer and private inodes are used for files that are used internally by the storage system.
+=======
+The maximum possible number of files setting is 2 billion. However, this maximum value can only be configured with volumes of 7.8 TB or larger.
+The maximum number of inodes that can be configured on a volume is calculated by taking the total allocated volume size in KB and dividing it by 4. Any volume of 7.8 TB or larger reaches the maximum limit at 2,040,109,451 inodes.
+>>>>>>> parent of 9080eb58 (Update faqs.md)
 
-| Volume Size |Total Usable Inodes |
+| Volume Size | Inodes |
 |-----|-----|
-| 20 GB | 622.484 |
-| 40 GB | 1,245,084 |
-| 80 GB | 2,490,263 |
-| 100 GB | 3,112,863 |
-| 250 GB | 7,782,300 |
-| 500 GB | 15,564,695 |
-| 1 TB | 31,876,593 |
-| 2 TB | 63,753,186 |
-| 3 TB | 95,629,970 |
-| 4 TB | 127,506,359 |
-| 8 TB | 127,506,359 |
-| 12 TB| 127,506,359 |
+| 20 GB | 5,242,880 |
+| 40 GB | 10,485,760 |
+| 80 GB | 20,971,520 |
+| 100 GB | 26,214,400  |
+| 500 GB | 131,072,000 |
+| 1 TB | 268,435,456 |
+| 4 TB | 1,073,741,824 |
+| 8 TB | 2,040,109,451 |
+| 12 TB| 2,040,109,451 |
 {: row-headers}
 {: class="comparison-table"}
 {: caption="Table comparison" caption-side="top"}
