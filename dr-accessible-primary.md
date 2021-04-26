@@ -20,7 +20,7 @@ subcollection: FileStorage
 {:cli: .ph data-hd-interface='cli'}
 {:api: .ph data-hd-interface='api'}
 
-# Disaster Recovery - Fail over with an accessible Primary volume
+# Disaster Recovery - Fail over with an accessible primary volume
 {: #dr-accessible}
 
 If a catastrophic failure or disaster occurs on the primary site and the primary storage is still accessible, customers can perform the following actions to quickly access their data on the secondary site.
