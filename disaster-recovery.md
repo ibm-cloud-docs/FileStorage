@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-02-15"
+lastupdated: "2021-04-27"
 
 keywords: File Storage, file storage, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
@@ -29,6 +29,16 @@ If a catastrophic failure or disaster causes an outage on the primary site, cust
 
 This action breaks the replication relationship and cannot be undone without manual intervention from the support team.
 {:important}
+
+## Fail over to the replica volume in the UI
+{: #DRFailoverUI}
+{: ui}
+
+1. Go to your list of {{site.data.keyword.filestorage_short}}. From the **Classic Infrastructure** menu, click **Storage** > **{{site.data.keyword.filestorage_short}}**.
+2. Locate and click the volume name.
+3. Click **Actions** > **Disaster Recovery Failover**.
+4. Check the box to confirm you understand the failover cannot be undone without a support case.
+5. Click **Yes** to proceed.
 
 ## Fail over to the replica volume from the SLCLI
 {: #DRFailoverCLI}
