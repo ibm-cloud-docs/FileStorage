@@ -23,7 +23,7 @@ subcollection: FileStorage
 {:api: .ph data-hd-interface='api'}
 
 
-# Ordering {{site.data.keyword.filestorage_short}} through the Console
+# Ordering {{site.data.keyword.filestorage_short}}
 {: #orderingFileStorage}
 
 You can provision {{site.data.keyword.filestorage_short}} and fine-tune to meet your capacity and IOPS needs. Get the most out of your storage with two options for specifying performance.
