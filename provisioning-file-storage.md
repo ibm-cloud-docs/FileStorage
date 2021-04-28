@@ -138,7 +138,7 @@ By default, you can provision a combined total of 250 {{site.data.keyword.blocks
 {: #orderingthroughAPI}
 {:api}
 
-The method `order_file_volume(storage_type, location, size, iops=None, tier_level=None, snapshot_size=None, service_offering='storage_as_a_service', hourly_billing_flag=False)` places an order for a file volume.
+The method `order_file_volume` (storage_type, location, size, iops=None, tier_level=None, snapshot_size=None, service_offering='storage_as_a_service', hourly_billing_flag=False) places an order for a file volume.
 
 Parameters:
 - storage_type – ‘performance’ or ‘endurance’
