@@ -52,7 +52,7 @@ You can provision {{site.data.keyword.filestorage_short}} and fine-tune to meet 
    This space is in addition to your usable space. For snapshot space considerations and recommendation, read [Ordering Snapshots](/docs/BlockStorage?topic=BlockStorage-orderingsnapshots).
    {:tip}
 
-6. Select your IOPS profile. You can choose between the predefined values of **Endurance (Tiers)** or enter your customer IOPS value.
+6. Select your IOPS profile. You can choose between the predefined values of **Endurance (Tiers)** or enter your custom IOPS value for **Performance**.
     - **0.25 IOPS per GB** is designed for workloads with low I/O intensity. These workloads are typically characterized by having a large percentage of data inactive at a time. Example applications include storing mailboxes or departmental level file shares.
     - **2 IOPS per GB** is designed for most general-purpose usage. Example applications include hosting small databases that are backing web applications or virtual machine disk images for a hypervisor.
     - **4 IOPS per GB** is designed for higher-intensity workloads. These workloads are typically characterized by having a high percentage of data active at a time. Example applications include transactional and other performance-sensitive databases.
