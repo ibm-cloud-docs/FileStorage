@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-18"
+lastupdated: "2021-04-28"
 
 keywords: File Storage, file storage, NFS, provisioning, setup, configuration, mounting storage
 
@@ -87,7 +87,7 @@ Both NFS v3 and NFS v4.1 are supported in the {{site.data.keyword.cloud}} enviro
 {: #submitFileStorOrder}
 {: step}
 
-When you're ready to submit your order, you can place it through the [Console](/docs/FileStorage?topic=FileStorage-orderingConsole), the [SLCLI](/docs/FileStorage?topic=FileStorage-orderingSLCLI), or the IBMCLOUD CLI. For more information about provisioning File Storage for VMware deployments, see the [architecture guide](/docs/FileStorage?topic=FileStorage-architectureguide).
+When you're ready to submit your order, you can place it through the [Console](/docs/FileStorage?topic=FileStorage-orderingFileStorage#orderingFileStorageUI), the [SLCLI](/docs/FileStorage?topic=FileStorage-orderingFileStorage#orderingthroughCLI), or the [IBMCLOUD CLI](/docs/cli?topic=cli-sl-file-storage-service#sl_file_volume_order). For more information about provisioning File Storage for VMware deployments, see the [architecture guide](/docs/FileStorage?topic=FileStorage-architectureguide).
 
 ## Connecting and configuring your new storage
 {: #mountingstorage}

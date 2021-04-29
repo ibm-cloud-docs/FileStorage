@@ -21,7 +21,6 @@ File Storage - Classic
     {: .topicgroup}
     Provisioning
         provisioning-file-storage.md
-        ordering-through-cli.md
         ordering-snapshots.md
         managing-storage-limits.md
         migrate-file-storage-encrypted-file-storage.md

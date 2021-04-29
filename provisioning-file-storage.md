@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-04"
+lastupdated: "2020-04-28"
 
 keywords: File Storage, NFS, provisioning, ordering, duplicate, cloning, replication
 
@@ -23,7 +23,7 @@ subcollection: FileStorage
 {:api: .ph data-hd-interface='api'}
 
 
-# Ordering {{site.data.keyword.filestorage_short}} through the Console
+# Ordering {{site.data.keyword.filestorage_short}}
 {: #orderingFileStorage}
 
 You can provision {{site.data.keyword.filestorage_short}} and fine-tune to meet your capacity and IOPS needs. Get the most out of your storage with two options for specifying performance.
@@ -52,7 +52,7 @@ You can provision {{site.data.keyword.filestorage_short}} and fine-tune to meet 
    This space is in addition to your usable space. For snapshot space considerations and recommendation, read [Ordering Snapshots](/docs/BlockStorage?topic=BlockStorage-orderingsnapshots).
    {:tip}
 
-6. Select your IOPS profile. You can choose between the predefined values of **Endurance (Tiers)** or enter your customer IOPS value.
+6. Select your IOPS profile. You can choose between the predefined values of **Endurance (Tiers)** or enter your custom IOPS value for **Performance**.
     - **0.25 IOPS per GB** is designed for workloads with low I/O intensity. These workloads are typically characterized by having a large percentage of data inactive at a time. Example applications include storing mailboxes or departmental level file shares.
     - **2 IOPS per GB** is designed for most general-purpose usage. Example applications include hosting small databases that are backing web applications or virtual machine disk images for a hypervisor.
     - **4 IOPS per GB** is designed for higher-intensity workloads. These workloads are typically characterized by having a high percentage of data active at a time. Example applications include transactional and other performance-sensitive databases.
@@ -71,7 +71,9 @@ By default, you can provision a combined total of 250 {{site.data.keyword.blocks
 {: #orderingthroughCLI}
 {:cli}
 
-You can use the SLCLI to place orders for products that are normally ordered through the [{{site.data.keyword.cloud_notm}} console](https://{DomainName}/){: external}. Each order must have an associated location (data center). When you order {{site.data.keyword.filestorage_short}}, make sure that it is provisioned in the same location as your compute instances.
+You can use the SLCLI to place orders for products that are normally ordered through the [{{site.data.keyword.cloud_notm}} console](https://{DomainName}/){: external}.
+
+Each order must have an associated location (data center). When you order {{site.data.keyword.filestorage_short}}, make sure that it is provisioned in the same location as your compute instances.
 {:important}
 
 For more information about how to install and use the SLCLI, see [Python CLI Client](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}.
@@ -136,7 +138,7 @@ By default, you can provision a combined total of 250 {{site.data.keyword.blocks
 {: #orderingthroughAPI}
 {:api}
 
-The method `order_file_volume(storage_type, location, size, iops=None, tier_level=None, snapshot_size=None, service_offering='storage_as_a_service', hourly_billing_flag=False)` places an order for a file volume.
+The method `order_file_volume` (storage_type, location, size, iops=None, tier_level=None, snapshot_size=None, service_offering='storage_as_a_service', hourly_billing_flag=False) places an order for a file volume.
 
 Parameters:
 - storage_type – ‘performance’ or ‘endurance’
