@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2019
-lastupdated: "2019-06-25"
+  years: 2014, 2021
+lastupdated: "2021-04-30"
 
 keywords: File Storage, file storage, NFS, security, encryption
 
@@ -60,15 +60,15 @@ To cancel a storage volume, you need to revoke access from any hosts first. Acti
 
 1. Go to the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}. From the menu, select **Classic Infrastructure**.
 2. Click **Storage** > **{{site.data.keyword.filestorage_short}}**.
-3. Click **Actions** for the volume to be canceled, and select **Cancel {{site.data.keyword.filestorage_short}}**.
+3. Click **Actions** for the volume to be canceled, and select **Delete {{site.data.keyword.filestorage_short}}**.
 4. Confirm if want to cancel the volume immediately or on the anniversary date of when the volume was provisioned.
 
    If you select the option to cancel the volume on its anniversary date, you can void the cancellation request before its anniversary date.
    {:tip}
-5. Click **Continue** or **Close**.
+5. Click **Continue**.
 6. Click the acknowledgment check box, and click **Confirm**.
 
-When the volume is canceled, there's a 24-hour reclaim wait period. You can still see the volume in the console during those 24 hours. When the reclaim-period expires, the data is destroyed and the volume is removed from the console, too. However, billing for the volume stops immediately. For more information, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs).
+When the volume is deleted, there's a 24-hour reclaim wait period. You can still see the volume in the console during those 24 hours. When the reclaim-period expires, the data is destroyed and the volume is removed from the console, too. However, billing for the volume stops immediately. For more information, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs).
 
 After the Storage LUN is reclaimed, the disk is wiped and data can't be restored.
 When drives are decommissioned in a data center, IBM destroys them before they are disposed of. The drives become unusable. Any data that was written to that drive becomes inaccessible.
