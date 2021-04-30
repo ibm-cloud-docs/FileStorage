@@ -58,9 +58,8 @@ If the volume has replication in place, the replica is automatically updated to 
 3. In the **Adjust Storage IOPS** section, make a new selection:
     - For Endurance (Tiered IOPS), select an IOPS Tier greater than 0.25 IOPS/GB of your storage. You can increase the IOPS tier at any time. However, decreasing is available only once a month.
     - For Performance (Allocated IOPS), specify new IOPS option for your storage by entering a value in the range 100 - 48,000 IOPS. (Be sure to look at any specific boundaries that are required by size in the order form.)
-4. Review your selection and the new pricing.
-5. Click the **I have read the Master Service Agreement...** check box, and click **Place Order**.
-6. Your new storage allocation is going to be available in a few minutes.
+4. Review your selection and the new pricing. Click **Modify**.
+5. Your new storage allocation is going to be available in a few minutes.
 
 
 ## Adjusting the IOPS on your Storage from the CLI
