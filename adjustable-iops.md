@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-22"
+lastupdated: "2021-04-30"
 
 keywords: File Storage, adjusting IOPS, increase IOPS, decrease IOPS, modify IOPS
 
@@ -54,8 +54,8 @@ If the volume has replication in place, the replica is automatically updated to 
 {:ui}
 
 1. Go to your list of {{site.data.keyword.filestorage_short}}. From the {{site.data.keyword.cloud}} console, click **Classic Infrastructure** > **Storage** > **{{site.data.keyword.filestorage_short}}**.
-2. Select the volume from the list and click the ellipsis (**...**) > **Modify Share**.
-3. Under **Storage IOPS Options**, make a new selection:
+2. Select the volume from the list and click the ellipsis (**...**) > **Modify File Share**.
+3. In the **Adjust Storage IOPS** section, make a new selection:
     - For Endurance (Tiered IOPS), select an IOPS Tier greater than 0.25 IOPS/GB of your storage. You can increase the IOPS tier at any time. However, decreasing is available only once a month.
     - For Performance (Allocated IOPS), specify new IOPS option for your storage by entering a value in the range 100 - 48,000 IOPS. (Be sure to look at any specific boundaries that are required by size in the order form.)
 4. Review your selection and the new pricing.
