@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-22"
+lastupdated: "2021-05-03"
 
 keywords: File Storage, file storage, NFS, upgrade, migrate to new
 
@@ -37,12 +37,8 @@ All enhanced {{site.data.keyword.filestorage_short}} volumes that are provisione
 When you place an order with API, specify the "Storage as a Service" package to ensure you're getting the updated features with your new storage.
 {:important}
 
-You can order an enhanced volume through the {{site.data.keyword.cloud}} catalog. Your new volume must be of the same size or greater than the original file share to facilitate the migration.
-
-- [Ordering {{site.data.keyword.filestorage_short}} with pre-defined IOPS Tiers (Endurance)](/docs/FileStorage?topic=FileStorage-orderingConsole#endurance)
-- [Ordering {{site.data.keyword.filestorage_short}} with custom IOPS (Performance)](/docs/FileStorage?topic=FileStorage-orderingConsole#performance)
-
-Your new storage is available to mount in a few minutes. You can view it in the Resource List and in the {{site.data.keyword.blockstorageshort}} list.
+You can order an enhanced volume through the {{site.data.keyword.cloud}} catalog. Your new volume must be of the same size or greater than the original file share to facilitate the migration. For more information about provisioning a file share, see [Ordering {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-orderingFileStorage).
+When you order a file share, your new storage is available to mount in a few minutes. You can view it in the Resource List and in the {{site.data.keyword.blockstorageshort}} list.
 
 
 ## Authorizing host to the new {{site.data.keyword.filestorage_short}}
