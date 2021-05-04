@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2020
-lastupdated: "2020-09-10"
+  years: 2017, 2021
+lastupdated: "2021-05-03"
 
 keywords: File Storage, file storage, NFS, duplicate volume
 
@@ -48,21 +48,19 @@ Some common uses for a duplicate volume include the following examples.
 You can create a duplicate volume through the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external} in a couple of ways.
 
 
-## Creating a duplicate from a specific volume in the Storage List in the UI
+## Creating a duplicate from a specific volume in the UI
 {: #createdepduplicateUI}
 {: ui}
 
 1. Go to your list of {{site.data.keyword.filestorage_short}}. From the **Classic Infrastructure** menu, click **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Locate and click the volume name.
-3. Click **Actions** > **Duplicate Volume**.
+3. Click **Actions** > **Duplicate Share**.
 3. Choose your snapshot option.
-    - If you order from a non-replica volume,
-      - Select **Create a new snapshot to clone** – this action creates a snapshot to be used for the duplicate. Use this option if your volume doesn't have current snapshots or if you want to create a duplicate right then.</br>
-      - Select **Use the latest snapshot to clone the volume** – this action creates a duplicate from the most recent snapshot that exists for this volume.
-    - If you order from a replica volume, the only option for snapshot is to use the most recent snapshot available.
-4. Storage Type and Location remain the same as the original volume.
-5. Hourly or Monthly Billing – you can choose to provision the duplicate volume with hourly or monthly billing. The billing type for the original volume is automatically selected. If you want to choose a different billing type for your duplicate storage, you can make that selection here.
-5. You can specify IOPS or IOPS Tier for the new volume if you want to. The IOPS designation of the original volume is set by default. Available Performance and size combinations are displayed.
+    - Create a new snapshot for the most recent data.
+    - Use the latest snapshot.
+4. Location and IOPS Profile remain the same as the original volume.
+5. You can choose to provision the duplicate volume with hourly or monthly billing method. The billing type for the original volume is automatically selected, and you can change it if you want to.
+5. You can specify a different IOPS or IOPS Tier for the new volume if you want to. The IOPS designation of the original volume is set by default. Available Performance and size combinations are displayed.
     - If your original volume is 0.25 IOPS Endurance tier, you can't make a new selection.
     - If your original volume is 2, 4, or 10 IOPS Endurance tier, you can move anywhere between those tiers for the new volume.
 6. You can update the size of the new volume so that it's larger than the original. The size of the original volume is set by default.
@@ -70,26 +68,8 @@ You can create a duplicate volume through the [{{site.data.keyword.cloud}} conso
    {{site.data.keyword.filestorage_short}} can be resized to 10 times the original size of the volume.
    {:tip}
 7. You can update the snapshot space for the new volume to add more, less, or no snapshot space. The snapshot space of the original volume is set by default.
-8. Click **Continue** to place your order.
+8. Check the box to confirm that you read and agreed to the terms, then click **Create** to place your order.
 
-
-## Creating a duplicate from a specific Snapshot in the UI
-{: #createdepduplicatespecificUI}
-{: ui}
-
-1. Go to your list of {{site.data.keyword.filestorage_short}}.
-2. Click a volume from the list to view the details page. It can either be a replica or non-replica volume.
-3. Scroll down and select an existing snapshot from the list on the details page and click **Actions** > **Duplicate**.   
-4. Storage Type (Endurance or Performance) and Location remain the same as the original volume.
-5. Available Performance and size combinations are displayed. The IOPS designation of the original volume is set by default. You can specify IOPS or IOPS Tier for the new volume.
-    - If your original volume is 0.25 IOPS Endurance tier, you can't make a new selection.
-    - If your original volume is 2, 4, or 10 IOPS Endurance tier, you can move anywhere between those tiers for the new volume.
-6. You can update the size of the new volume so that it is larger than the original. The size of the original volume is set by default.
-
-   {{site.data.keyword.filestorage_short}} can be resized to 10 times the original size of the volume.
-   {:tip}
-7. You can update the snapshot space for the new volume to add more, less, or no snapshot space. The snapshot space of the original volume is set by default.
-8. Click **Place Order** to provision the duplicate.
 
 ## Creating a duplicate from the SLCLI
 {: #createindependentduplicateCLI}

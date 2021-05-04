@@ -33,7 +33,7 @@ completion-time: 1h
 {: toc-services=""}
 {: toc-completion-time="1h"}
 
-This tutorial guides you through how to order and configure {{site.data.keyword.filestorage_full}} in a **vSphere 5.5** or **vSphere 6.0** environment at {{site.data.keyword.cloud}}. {{site.data.keyword.filestorage_short}} is designed to support high I/O applications that require predictable levels of performance. The predictable performance is achieved through the allocation of protocol-level input/output operations per second (IOPS) to individual volumes.
+This tutorial guides you through how to order and configure {{site.data.keyword.filestorage_full}} in a **vSphere 5.5** or **vSphere 6.0** environment at {{site.data.keyword.cloud}}. {{site.data.keyword.filestorage_short}} is designed to support high I/O applications that require predictable levels of performance. The predictable performance is achieved through the allocation of protocol-level input/output operations per second (IOPS) to individual volumes. 
 {:shortdesc}
 
 If you require more than eight hosts to access your VMware&reg; datastore, then choosing NFS {{site.data.keyword.filestorage_short}} is the best practice.

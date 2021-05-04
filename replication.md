@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-16"
+lastupdated: "2021-05-03"
 
 keywords: File Storage, file storage, NFS, replication, duplication, synchronous, replica schedule, replica space, disaster recovery
 
@@ -79,7 +79,7 @@ Replications work based on a snapshot schedule. You must first have snapshot spa
 
    Discounts are applied when the order is processed.
    {:note}
-6. Review your order, and click the **I have read and agree to the terms and conditions…** check box.
+6. Review your order, and read the service agreement. If you agree with the terms, check the box.
 7. Click **Place Order**.
 
 ## Creating the initial replica from the SLCLI
@@ -146,7 +146,7 @@ However, if you want to change the time of day when your **Daily** replication o
 3. Look in the **Snapshot** frame under **Schedule** to determine which Daily schedule you're using for replication. Change the schedule that you want.
 4. Click **Save**.
 
-## Canceling an existing replication in the UI
+## Deleting an existing replica file share in the UI
 {: #cancelreplicaUI}
 {: ui}
 
@@ -154,20 +154,15 @@ You can cancel replication either immediately or on the anniversary date, which 
 
 1. Click the volume from the **{{site.data.keyword.filestorage_short}}** page.
 2. Click **Actions**.
-3. Select **Cancel Replica**.
+3. Select **Delete Replica**.
 4. Select when to cancel. Choose **Immediately** or **Anniversary Date**, and click **Continue**.
-5. Click **I acknowledge that due to cancellation, data loss may occur**, and click **Cancel Replica**.
+5. This operation deletes the replica volume with all its data. Click the check box to acknowledge this, and click **Delete**.
 
-## Canceling replication when the primary volume is canceled in the UI
+## Canceling replication when the primary volume is deleted in the UI
 {: #cancelprimaryUI}
 {: ui}
 
-When a primary volume is canceled, the replication schedule and the volume in the replica data center are deleted. Replicas are canceled from the **{{site.data.keyword.filestorage_short}}** page.
-
- 1. Select your volume on the **{{site.data.keyword.filestorage_short}}** page.
- 2. Click **Actions** and select **Cancel for {{site.data.keyword.filestorage_short}}**.
- 3. Select when to cancel the volume. Choose **Immediately** or **Anniversary Date**, and click **Continue**.
- 4. Click **I acknowledge that due to cancellation, data loss may occur**, and click **Cancel**.
+When a primary volume is deleted, the replication schedule and the volume in the replica data center are deleted, too.
 
 ## Creating a duplicate of a replica
 {: #cloneareplica}

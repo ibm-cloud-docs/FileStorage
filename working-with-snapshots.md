@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-17"
+lastupdated: "2021-05-03"
 
 keywords: File Storage, file storage, NFS, snapshots, snapshot schedule, manual snapshot, snapshot space, snapshot quota
 
@@ -47,7 +47,7 @@ Snapshots schedules can be set up for hourly, daily, and weekly intervals, each 
    - Weekly
       - Specify the day of the week, hour, and minute that a snapshot is to be taken. The default is the current day, hour, and minute.
       - Select the number of weekly snapshots to be retained before the oldest is discarded.
-3. Click **Save**, and create another schedule with a different frequency. If the total number of scheduled snapshots is over 50, you receive a warning message and can't save.
+3. Click **Save**. If the total number of scheduled snapshots is over 50, you receive a warning message and can't save.
 
 The list of the snapshots is displayed as they're taken in the **Snapshots** section of the **Detail** page.
 
@@ -154,7 +154,7 @@ Notifications are sent through the support tickets to the Master User on your ac
 {: #changesnapshotspaceUI}
 {: ui}
 
-You might need to add snapshot space to a volume that didn't previously have any or might require extra snapshot space. You can add 5 - 4,000 GB depending on your needs.
+You might need to add snapshot space to a volume that didn't previously have any or might require extra snapshot space.
 
 Snapshot space can be increased. It can't be reduced. You can select a smaller amount of space until you determine how much space you need. Remember, automated, and manual snapshots share the space.
 {:important}
@@ -165,13 +165,13 @@ Snapshot space is increased through **Storage** > **{{site.data.keyword.filestor
 2. Select from a range of sizes from the prompt. Sizes typically range from 0 to the size of your volume.
 3. Click **Continue**.
 4. Enter any Promo Code that you have, and click **Recalculate**. The Charges for this order and Order Review fields are completed by default.
-5. Click the **I have read the Master Service Agreement…** check box, and click **Place Order**. Your additional snapshot space is provisioned in a few minutes.
+5. Read the service agreement, and if you agree with the terms click check box, and click **Place Order**. Your additional snapshot space is provisioned in a few minutes.
 
 ## Deleting a snapshot schedule in the UI
 {: #cancelnapshotscheduleUI}
 {: ui}
 
-Snapshot schedules can be canceled through **Storage** > **{{site.data.keyword.filestorage_short}}**.
+Snapshot schedules can be deleted through **Storage** > **{{site.data.keyword.filestorage_short}}**.
 
 1. Click on the volume ID to display its related information.
 2. Click Snapshots.
@@ -248,10 +248,11 @@ You might need to take your storage volume back to a specific point-in-time beca
 
    Completing the restore results in the loss of the data that was created or modified after the snapshot was taken. This data loss occurs because your storage volume returns to the same state it was in of the time of the snapshot.
    {:note}
-6. Click **Yes** to start the restore.
+6. Click **Yes** to start the restore. The restore is going to take a while, and your file share is locked during the restore.
 
-   Expect a message across the page that states that the volume is being restored by using the selected snapshot. Additionally, an icon appears next to your volume on the {{site.data.keyword.filestorage_short}} that indicates that an active transaction is in progress. Hovering over the icon produces a window that shows the transaction. The icon disappears when the transaction is complete.
+   When you return to the file share list, note that a clock icon appeared next to your volume that indicates that an active transaction is in progress. Hovering over the icon produces a window that shows the transaction. The icon disappears when the transaction is complete.
    {:note}
+   
 7. Mount and reattach your storage volume to the host.
   - For more information about mounting and unmounting storage, see [connecting your new storage](/docs/FileStorage?topic=FileStorage-mountingLinux).
 
