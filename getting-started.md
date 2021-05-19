@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-28"
+lastupdated: "2021-05-19"
 
 keywords: File Storage, file storage, NFS, provisioning, setup, configuration, mounting storage
 
@@ -55,8 +55,8 @@ The block size that is used by your application directly impacts the storage per
 
 | Block Size (KB) | IOPS | Throughput (MB/s) |
 |-----|-----|-----|
-| 4 | 1,000 | 16 |
-| 8 | 1,000 | 16 |
+| 4 | 1,000 | 4 |
+| 8 | 1,000 | 8 |
 | 16 | 1,000 | 16 |
 | 32 | 500 | 16 |
 | 64 | 250 | 16 |
