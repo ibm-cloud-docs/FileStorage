@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-08-05"
+  years: 2014, 2021
+lastupdated: "2021-06-02"
 
 keywords: File Storage, file storage, NSF, networking, jumbo frames
 
@@ -31,9 +31,9 @@ Jumbo frames need to be configured the same on the entire network path from sour
 ## Enabling Jumbo Frames
 
 1. Edit the network configuration file for eth0 interface.
-   - CentOS, RHEL, Fedora users edit `/etc/sysconfig/network-script/ifcfg-eth0`.
+   - CentOS, RHEL, Fedora users edit `/etc/sysconfig/network-scripts/ifcfg-eth0`.
      ```
-     # vi /etc/sysconfig/network-script/ifcfg-eth0
+     # vi /etc/sysconfig/network-scripts/ifcfg-eth0
      ```
      {: pre}
 
