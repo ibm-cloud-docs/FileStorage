@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-04-26"
+lastupdated: "2021-06-10"
 
 keywords: File Storage, file storage, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
@@ -133,7 +133,7 @@ Failbacks are started under **Storage**, **{{site.data.keyword.filestorage_short
 5. Click your active volume ("source"). This volume now has an **Inactive** status.
 6. Mount and attach your storage volume to the host. For more information, see [connecting your new storage](/docs/FileStorage?topic=FileStorage-getting-started#mountingstorage).
 
-### Fail back from the SLCLI
+## Fail back from the SLCLI
 {: #failbackfromreplicaCLI}
 {: cli}
 
