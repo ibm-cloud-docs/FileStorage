@@ -68,7 +68,7 @@ Options:
 ## Starting a failover from a volume to its replica
 {: #failovertoreplica}
 
-If a failure event occurs, you can start an **Immediate failover** or a "Controlled Failover" to your destination, or target, volume.
+If a failure event is imminent, you can start an **Immediate failover** or a "Controlled Failover" to your destination, or target, volume.
 
 When you choose an Immediate Failover, the last successfully replicated snapshot is activated, and the volume is made available for mounting. The target volume becomes active in less time compared to a Controlled Failover. However, any data that was written to the source volume since the previous replication cycle is lost.
 
