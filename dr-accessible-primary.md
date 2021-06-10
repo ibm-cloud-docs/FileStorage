@@ -68,7 +68,13 @@ Options:
 ## Starting a failover from a volume to its replica
 {: #failovertoreplica}
 
-If a failure event occurs, you can start a **failover** to your destination, or target, volume. The target volume becomes active. The last successfully replicated snapshot is activated, and the volume is made available for mounting. Any data that was written to the source volume since the previous replication cycle is lost. When a failover is started, the replication relationship is flipped. Your target volume becomes your source volume, and your former source volume becomes your target as indicated by the **Volume Name** followed by **REP**.
+If a failure event occurs, you can start an **Immediate failover** or a "Controlled Failover" to your destination, or target, volume.
+
+When you choose an Immediate Failover, the last successfully replicated snapshot is activated, and the volume is made available for mounting. The target volume becomes active in less time compared to a Controlled Failover. However, any data that was written to the source volume since the previous replication cycle is lost.
+
+A Controlled Failover is the best choice when you want to test the failover functionality or when it’s more important to continue operations at the replica location with the most recent data. In a Controlled Failover, a new snapshot is taken and copied over to the replica location. After the data is successfully copied over, the volume is made available for mounting.
+
+When a failover is started, the replication relationship is flipped. Your target volume becomes your source volume, and your former source volume becomes your target as indicated by the **Volume Name** followed by **REP**.
 
 Failovers are started under **Storage**, **{{site.data.keyword.filestorage_short}}** in the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic/storage/file){: external}.
 
@@ -81,7 +87,7 @@ Before you proceed with these steps, disconnect the volume. Failure to do so, re
 
 1. Click your active volume (“source”).
 2. In the upper right, click **Actions**.
-3. Select **Controlled Failover**.
+3. Select **Controlled Failover** or **Immediate Failover**.
 
    Expect a message that states that the failover is in progress. Additionally, an icon appears next to your volume on the **{{site.data.keyword.filestorage_short}}** that indicates that an active transaction is occurring. Hovering over the icon produces a window that shows the transaction. The icon disappears when the transaction is complete. During the failover process, configuration-related actions are read-only. You can't edit any snapshot schedule or change snapshot space. The event is logged in replication history.<br/> When your target volume is live, you get another message. Your original source volume's Status becomes Inactive.
    {:note}
