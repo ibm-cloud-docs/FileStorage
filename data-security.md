@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-30"
+lastupdated: "2021-06-22"
 
 keywords: File Storage, file storage, NFS, security, encryption
 
@@ -24,16 +24,9 @@ subcollection: FileStorage
 
 The provider-managed encryption-at-rest feature uses the following industry standard protocols:
 
-* Industry-Standard AES-256 encryption
-* Keys are managed in-house with industry standard Key Management Interoperability Protocol (KMIP)
-* Storage is validated against the following standards:
-    - Federal Information Processing Standard (FIPS) Publication 140-2,
-    - Federal Information Security Management Act (FISMA),
-    - Health Insurance Portability and Accountability Act (HIPAA),
-    - Payment Card Industry (PCI),
-    - Basel II,
-    - California Security Breach Information Act (SB 1386), and
-    - EU Data Protection Directive (95/46/EC) compliance.
+* Industry-Standard AES-256 encryption.
+* Keys are managed in-house with industry standard Key Management Interoperability Protocol (KMIP).
+* Storage is validated for US Federal Information Processing Standard (FIPS) Publication 140-2, Federal Information Security Management Act (FISMA), Health Insurance Portability and Accountability Act (HIPAA). Storage is also validated for Payment Card Industry (PCI), Basel II, California Security Breach Information Act (SB 1386), and EU General Data Protection Regulation (GDPR) compliance.
 
 ## Securing your snapshots or replicated storage  
 
