@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-22"
+lastupdated: "2021-07-12"
 
 keywords: File Storage, file storage, NFS, security, encryption
 
@@ -31,10 +31,11 @@ The provider-managed encryption-at-rest feature uses the following industry stan
 ## Securing your snapshots or replicated storage  
 
 All snapshots and replicas of encrypted file storage are also encrypted by default. This feature can’t be turned off on a volume basis.
+All cluster-to-cluster traffic is encrypted with TLS.
 
 ## Provisioning storage with encryption
 
-The provider-managed encryption-at-rest feature is available in [select data centers](/docs/FileStorage?topic=FileStorage-selectDC). All storage that is ordered in these data centers is automatically provisioned with encryption for data-at-rest.
+The provider-managed encryption-at-rest feature is available in [most data centers](/docs/FileStorage?topic=FileStorage-selectDC). All storage that is ordered in these data centers is automatically provisioned with encryption for data-at-rest.
 
 When you order {{site.data.keyword.filestorage_short}}, select a data center that is marked with an asterisk (`*`). You can see a lock icon to the right of the Volume Name field that indicates that the volume is encrypted. See Figure 1.
 
