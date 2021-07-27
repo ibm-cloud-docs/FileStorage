@@ -47,7 +47,9 @@ Any non-encrypted storage that was provisioned before a data center upgrade is *
 
 ## Deleting {{site.data.keyword.filestorage_short}} instances
 
-If you no longer need a specific volume, you can cancel that storage. {{site.data.keyword.filestorage_short}} presents file shares to customers on physical storage that is wiped before any reuse. Customers with special requirements for compliance such as NIST 800-88 Guidelines for Media Sanitization need to perform the data sanitization procedure before they delete their storage.
+If you no longer need a specific volume, you can cancel that storage. {{site.data.keyword.filestorage_short}} presents file shares to customers on physical storage that is wiped before any reuse. For more information, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs#deleted).
+
+Customers with special requirements for compliance such as NIST 800-88 Guidelines for Media Sanitization can perform the data sanitization procedure before they delete their storage.
 
 To cancel a storage volume, you need to revoke access from any hosts first. Active replicas and dependent duplicates can also block reclamation of the Storage volume. Make sure that the volume is no longer mounted, host authorizations are revoked, replication is canceled, and no dependent duplicates exist before you attempt to cancel the original volume.
 {:important}
