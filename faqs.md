@@ -194,7 +194,7 @@ When you delete a {{site.data.keyword.filestorage_short}} volume, that data imme
 
 IBM guarantees that data deleted cannot be accessed and that deleted data is eventually overwritten and eradicated. Further, when you delete a storage volume, the share must be overwritten before the storage is made available again, either to you or to another customer.
 
-Further, when IBM decommissions a physical drive, the drive is destroyed before disposal. The decommissioned drives are unusable and any data on them is inaccessible.
+When IBM decommissions a physical drive, the drive is destroyed before disposal. The decommissioned drives are unusable and any data on them is inaccessible.
 
 Customers with special requirements for compliance such as NIST 800-88 Guidelines for Media Sanitization can perform the data sanitization procedure before they delete their storage.
 
