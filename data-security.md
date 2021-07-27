@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-12"
+lastupdated: "2021-07-27"
 
 keywords: File Storage, file storage, NFS, security, encryption
 
