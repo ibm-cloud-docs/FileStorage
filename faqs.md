@@ -181,7 +181,7 @@ To enact this good practice, complete the following steps.
 {: #latency}
 {: support}
 
-Target latency within the storage is  less than one ms. The storage is connected to compute instances on a shared network, so the exact performance latency depends on the network traffic during the operation.
+Target latency within the storage is less than one ms. The storage is connected to compute instances on a shared network, so the exact performance latency depends on the network traffic during the operation.
 
 ## What happens to the data when {{site.data.keyword.filestorage_short}} Volumes are deleted?
 {: faq}
