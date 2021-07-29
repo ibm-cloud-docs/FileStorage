@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-03"
+lastupdated: "2021-07-29"
 
 keywords: File Storage, file storage, NFS, snapshot, ordering snapshot, snapshot space
 
@@ -25,7 +25,7 @@ subcollection: FileStorage
 # Ordering Snapshots
 {: #ordering-snapshots}
 
-To create snapshots of your storage volume, either automated or manually, you need to purchase space to hold them. You can purchase capacity up to your storage volume amount (during the initial volume purchase or later by using these steps).
+To create snapshots of your storage volume, either automated or manually, you need to purchase space to hold them. You can purchase snapshot capacity during the initial volume purchase or later by using these steps.
 {:shortdesc}
 
 ## Determining how much snapshot space to order
