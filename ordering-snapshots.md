@@ -26,7 +26,7 @@ subcollection: FileStorage
 {: #ordering-snapshots}
 
 To create snapshots of your storage volume, either automated or manually, you need to purchase space to hold them. You can purchase snapshot capacity during the initial volume purchase or later by using these steps.
-{:shortdesc}
+{: shortdesc}
 
 ## Determining how much snapshot space to order
 {: #preorderdetermination}
@@ -38,7 +38,7 @@ Generically speaking, snapshot space is used by snapshots based on two key facto
 The way to calculate the amount of space that you need is **(Rate of Change)** x **(number of hours/days/weeks/months data is retained)**.  
 
 The first snapshot uses a negligible amount of space as it's just a copy of the metadata (pointers) that indicates the active file system blocks.
-{:note}
+{: note}
 
 A volume with numerous changes and a lengthy retention period needs more space than a volume with moderate change and a moderate retention schedule. An example for the first type is a high change rate database. An example for the second type is a VMware datastore.
 
@@ -67,7 +67,7 @@ Additionally, for most workloads, the larger a volume is the less space needs to
 7. Enter any Promo Codes that you have and click **Recalculate**. The **Charges for this order** and **Order Review** have default values.
 
    Discounts are applied when the order is processed.
-   {:note}
+   {: note}
 8. Check the **I have read the Master Service Agreement and agree to the terms therein** box and click **Place Order**. Your snapshot space is provisioned in a few minutes.
 
 ## Ordering Snapshot space from the SLCLI
@@ -88,4 +88,4 @@ Options:
 ```
 
 For more information about the same function in the IBM Cloud CLI, see [bmcloud sl file snapshot-order](https://cloud.ibm.com/docs/cli?topic=cli-sl-file-storage-service#sl_file_snapshot_order){: external}.
-{:tip}
+{: tip}

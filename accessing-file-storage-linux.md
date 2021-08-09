@@ -32,13 +32,13 @@ completion-time: 1h
 {: toc-completion-time="1h"}
 
 Use these instructions to connect a Red Hat Enterprise Linux&reg;-based {{site.data.keyword.cloud}} Compute instance to a Network File System (NFS) share. For more information about how to order {{site.data.keyword.filestorage_full}}, see the [Getting started](/docs/FileStorage?topic=FileStorage-getting-started) tutorial.
-{:shortdesc}
+{: shortdesc}
 
 First, make sure that the host that is to access the {{site.data.keyword.filestorage_short}} volume is authorized.
 
 ## Authorizing the host in the UI
 {: #authLinuxhostUI}
-{:ui}
+{: ui}
 
 You can authorize a host to access the {{site.data.keyword.filestorage_short}} volume through the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic/storage/file){: external}.
 
@@ -47,12 +47,12 @@ You can authorize a host to access the {{site.data.keyword.filestorage_short}} v
 3. Filter the available host list by selecting the device type, subnet, or IP address.
 
    When the list is filtered by subnet, the subnets that are displayed are subscribed subnets in the same data center as the storage volume.
-   {:note}
+   {: note}
 4. Select one or more hosts from the list and click **Save**.
 
 ## Authorizing the host from the SLCLI
 {: #authLinuxhostCLI}
-{:cli}
+{: cli}
 
 You can authorize a host to access the {{site.data.keyword.filestorage_short}} volume by using the `file access-authorize` command.
 
@@ -74,13 +74,13 @@ Options:
 {: #mountRHEL}
 
 The example is based on RHEL 7. The steps can be adjusted for other Linux&reg; distributions according to the operating system's (OS) vendor documentation.
-{:tip}
+{: tip}
 
 1. Install the required tools.
    ```
    # yum install nfs-utils
    ```
-   {:pre}
+   {: pre}
 
 2. Mount the remote share.
    ```
@@ -93,7 +93,7 @@ The example is based on RHEL 7. The steps can be adjusted for other Linux&reg; d
    ```
 
    The mount point information can be obtained from the {{site.data.keyword.filestorage_short}} Details page in the UI or through an API call - `SoftLayer_Network_Storage::getNetworkMountAddress()`.
-   {:tip}
+   {: tip}
 
 
 3. Verify that the mount was successful by using the disk file system command.
@@ -116,7 +116,7 @@ The example is based on RHEL 7. The steps can be adjusted for other Linux&reg; d
    ```
 
    The files that are created by root have ownership of `nobody:nobody`. To display ownership correctly, `idmapd.conf` needs to be updated with the correct domain settings. For more information, see the [How to implement no_root_squash for NFS](#norootsquash) section.
-   {:tip}
+   {: tip}
 
 5. Mount the remote share on start. To complete the setup, edit the file systems table (`/etc/fstab`) to add the remote share to the list of entries that are automatically mounted on startup:
 
@@ -137,12 +137,12 @@ The example is based on RHEL 7. The steps can be adjusted for other Linux&reg; d
    ```
    # mount -fav
    ```
-   {:pre}
+   {: pre}
 
    If the command completes with no errors, your setup is complete.
 
    If you're using NFS 4.1, add `sec=sys` to the mount command to prevent file ownership issues.
-   {:tip}
+   {: tip}
 
    If your host OS is CentOS, you can configure more options. For more information, see [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/FileStorage?topic=FileStorage-mountingCentOS).
 
@@ -187,9 +187,9 @@ To unmount any currently mounted file system on your host, run the `umount` comm
 ```
 umount /dev/sdb
 ```
-{:pre}
+{: pre}
 
 ```
 umount /mnt
 ```
-{:pre}
+{: pre}

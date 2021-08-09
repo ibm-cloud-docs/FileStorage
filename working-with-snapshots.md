@@ -23,7 +23,7 @@ subcollection: FileStorage
 {: #managingSnapshots}
 
 Snapshots are a feature of {{site.data.keyword.blockstoragefull}}. A snapshot represents a volume's contents at a particular point in time. With snapshots, you can protect your data with no performance impact and minimal consumption of space. Learn more about how to manage snapshots by reading the following instructions.
-{:shortdesc}
+{: shortdesc}
 
 ## Adding a Snapshot schedule in the UI
 {: #addscheduleUI}
@@ -32,7 +32,7 @@ Snapshots are a feature of {{site.data.keyword.blockstoragefull}}. A snapshot re
 You decide how often and when you want to create a point-in-time reference of your storage volume with Snapshot schedules. You can have a maximum of 50 snapshots per storage volume. Schedules are managed through the **Storage** > **{{site.data.keyword.filestorage_short}}** tab of the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}.
 
 Before you can set up your initial schedule, you must first purchase snapshot space if you didn't purchase it during the initial provisioning of the storage volume.
-{:important}
+{: important}
 
 Snapshots schedules can be set up for hourly, daily, and weekly intervals, each with a distinct retention cycle. The maximum limit of snapshots is 50  per storage volume, which can be a mix of hourly, daily, and weekly schedules, and manual snapshots.
 
@@ -58,7 +58,7 @@ The list of the snapshots is displayed as they're taken in the **Snapshots** sec
 You decide how often and when you want to create a point-in-time reference of your storage volume with Snapshot schedules. You can have a maximum of 50 snapshots per storage volume. Schedules are managed through the **Storage** > **{{site.data.keyword.filestorage_short}}** tab of the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}.
 
 Before you can set up your initial schedule, you must first purchase snapshot space if you didn't purchase it during the initial provisioning of the storage volume.
-{:important}
+{: important}
 
 To set up a snapshot schedule, use the following command
 
@@ -157,7 +157,7 @@ Notifications are sent through the support tickets to the Master User on your ac
 You might need to add snapshot space to a volume that didn't previously have any or might require extra snapshot space.
 
 Snapshot space can be increased. It can't be reduced. You can select a smaller amount of space until you determine how much space you need. Remember, automated, and manual snapshots share the space.
-{:important}
+{: important}
 
 Snapshot space is increased through **Storage** > **{{site.data.keyword.filestorage_short}}**.
 
@@ -179,7 +179,7 @@ Snapshot schedules can be deleted through **Storage** > **{{site.data.keyword.fi
 3. Click the check box next to the schedule to be deleted and click **Save**.<br />
 
 If you're using the replication feature, be sure that the schedule that you're deleting isn't the schedule that is used by replication. For more information about deleting a replication schedule, see [here](/docs/FileStorage?topic=FileStorage-replication).
-{:important}
+{: important}
 
 ## Deleting a snapshot schedule from the SLCLI
 {: #cancelnapshotscheduleCLI}
@@ -199,7 +199,7 @@ Options:
 ```
 
 If you're using the replication feature, be sure that the schedule that you're deleting isn't the schedule that is used by replication. For more information about deleting a replication schedule, see [here](/docs/FileStorage?topic=FileStorage-replication).
-{:important}
+{: important}
 
 
 ## Deleting a snapshot in the UI
@@ -212,7 +212,7 @@ Snapshots that are no longer needed can be manually removed to free up space for
 2. Click **Actions** next to a particular snapshot and click **Delete** to delete the snapshot. This deletion doesn't affect any future or past snapshots on the same schedule as there's no dependency between snapshots.
 
 Manual snapshots that aren't deleted in the portal manually, are automatically deleted when you reach space limitations. The oldest snapshot is deleted first.
-{:note}
+{: note}
 
 ## Deleting a snapshot from the SLCLI
 {: #deletesnapshotCLI}
@@ -229,7 +229,7 @@ Options:
 ```
 
 Manual snapshots that aren't deleted in the portal manually, are automatically deleted when you reach space limitations. The oldest snapshot is deleted first.
-{:note}
+{: note}
 
 ## Restoring storage volume to a specific point-in-time by using a snapshot in the UI
 {: #restorefromsnapshotUI}
@@ -240,24 +240,24 @@ You might need to take your storage volume back to a specific point-in-time beca
 1. Unmount and detach your storage volume from the host.
 
    For more information about mounting and unmounting storage, see [connecting your new storage](/docs/FileStorage?topic=FileStorage-mountingLinux).
-   {:tip}
+   {: tip}
 2. Go to the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}. From the menu, select **Classic Infrastructure**.
 3. Click **Storage**, **{{site.data.keyword.filestorage_short}}**.
 4. Scroll on the list, and click your volume to be restored. The **Snapshots** page displays the list of all saved snapshots along with their size and creation date.
 5. Click **Actions** next to the snapshot to be used and click **Restore**. <br/>
 
    Completing the restore results in the loss of the data that was created or modified after the snapshot was taken. This data loss occurs because your storage volume returns to the same state it was in of the time of the snapshot.
-   {:note}
+   {: note}
 6. Click **Yes** to start the restore. The restore is going to take a while, and your file share is locked during the restore.
 
    When you return to the file share list, note that a clock icon appeared next to your volume that indicates that an active transaction is in progress. Hovering over the icon produces a window that shows the transaction. The icon disappears when the transaction is complete.
-   {:note}
+   {: note}
    
 7. Mount and reattach your storage volume to the host.
   - For more information about mounting and unmounting storage, see [connecting your new storage](/docs/FileStorage?topic=FileStorage-mountingLinux).
 
   Restoring a volume results in deleting all snapshots that were taken after the snapshot that was used for the restore.
-  {:important}
+  {: important}
 
 ## Restoring storage volume to a specific point-in-time by using a snapshot from the SLCLI
 {: #restorefromsnapshotCLI}
@@ -266,7 +266,7 @@ You might need to take your storage volume back to a specific point-in-time beca
 You might need to take your storage volume back to a specific point-in-time because of user-error or data corruption. First, unmount your volume.
 
 For more information about mounting and unmounting storage, see [connecting your new storage](/docs/FileStorage?topic=FileStorage-mountingLinux).
-{:tip}
+{: tip}
 
 Then, you can restore the volume with a snapshot from the SLCLI by using the following command.
 ```
@@ -282,4 +282,4 @@ Options:
 Lastly, mount and reattach your storage volume to the host.
 
 Restoring a volume results in deleting all snapshots that were taken after the snapshot that was used for the restore.
-{:important}
+{: important}

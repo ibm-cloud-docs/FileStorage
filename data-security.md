@@ -20,7 +20,7 @@ subcollection: FileStorage
 {: #mng-data}
 
 {{site.data.keyword.cloud}} takes the need for security seriously, and understands the importance of being able to encrypt data to keep it safe. With provider-managed encryption, {{site.data.keyword.filestorage_full}} that is provisioned with either Endurance or Performance options, is secured by default at no additional cost and no impact on performance.
-{:shortdesc}
+{: shortdesc}
 
 The provider-managed encryption-at-rest feature uses the following industry standard protocols:
 
@@ -43,7 +43,7 @@ When you order {{site.data.keyword.filestorage_short}}, select a data center tha
 <caption>Figure 1. Example of the lock icon that indicates that the volume is encrypted.</caption>
 
 Any non-encrypted storage that was provisioned before a data center upgrade is **not** automatically encrypted. If you own non-encrypted storage in an upgraded data center and you want to have it encrypted, you need to create a volume, and move your data. For more information, see [File Storage Migration in Upgraded Data Centers](/docs/FileStorage?topic=FileStorage-migratestorage).
-{:important}
+{: important}
 
 ## Deleting {{site.data.keyword.filestorage_short}} instances
 
@@ -52,7 +52,7 @@ If you no longer need a specific volume, you can cancel that storage. {{site.dat
 Customers with special requirements for compliance such as NIST 800-88 Guidelines for Media Sanitization can perform the data sanitization procedure before they delete their storage.
 
 To cancel a storage volume, you need to revoke access from any hosts first. Active replicas and dependent duplicates can also block reclamation of the Storage volume. Make sure that the volume is no longer mounted, host authorizations are revoked, replication is canceled, and no dependent duplicates exist before you attempt to cancel the original volume.
-{:important}
+{: important}
 
 1. Go to the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}. From the menu, select **Classic Infrastructure**.
 2. Click **Storage** > **{{site.data.keyword.filestorage_short}}**.
@@ -60,7 +60,7 @@ To cancel a storage volume, you need to revoke access from any hosts first. Acti
 4. Confirm if want to cancel the volume immediately or on the anniversary date of when the volume was provisioned.
 
    If you select the option to cancel the volume on its anniversary date, you can void the cancellation request before its anniversary date.
-   {:tip}
+   {: tip}
 5. Click **Continue**.
 6. Click the acknowledgment check box, and click **Confirm**.
 

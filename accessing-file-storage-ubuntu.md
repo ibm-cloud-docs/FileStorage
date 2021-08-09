@@ -32,13 +32,13 @@ completion-time: 1h
 {: toc-completion-time="1h"}
 
 Use these instructions to connect an Ubuntu Linux&reg;-based {{site.data.keyword.cloud}} Compute instance to a Network file system (NFS) share. For more information about how to order {{site.data.keyword.filestorage_full}}, see the [Getting started](/docs/FileStorage?topic=FileStorage-getting-started) tutorial.
-{:shortdesc}
+{: shortdesc}
 
 First, make sure that the host that is to access the {{site.data.keyword.filestorage_short}} volume is authorized.
 
 ## Authorizing the host in the UI
 {: #authUbuntuhostUI}
-{:ui}
+{: ui}
 
 You can authorize a host to access the {{site.data.keyword.filestorage_short}} volume through the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic/storage/file){: external}.
 
@@ -47,12 +47,12 @@ You can authorize a host to access the {{site.data.keyword.filestorage_short}} v
 3. Filter the available host list by selecting the device type, subnet, or IP address.
 
    When the list is filtered by subnet, the subnets that are displayed are subscribed subnets in the same data center as the storage volume.
-   {:note}
+   {: note}
 4. Select one or more hosts from the list and click **Save**.
 
 ## Authorizing the host from the SLCLI
 {: #authUbuntuhostCLI}
-{:cli}
+{: cli}
 
 You can authorize a host to access the {{site.data.keyword.filestorage_short}} volume by using the `file access-authorize` command.
 
@@ -76,7 +76,7 @@ Options:
    ```
    # apt-get install nfs-common
    ```
-   {:pre}
+   {: pre}
 
 2. Mount the remote share.
    ```
@@ -89,7 +89,7 @@ Options:
    ```
 
    The mount point information can be obtained from the {{site.data.keyword.filestorage_short}} Details page in the UI or through an API call - `SoftLayer_Network_Storage::getNetworkMountAddress()`.
-   {:tip}
+   {: tip}
 
 
 3. Verify that the mount was successful by using the disk filesystem command.
@@ -133,12 +133,12 @@ Options:
    ```
    # mount -fav
    ```
-   {:pre}
+   {: pre}
 
    If the command completes with no errors, your setup is complete.
 
    If you're using NFS 4.1, add `sec=sys` to the mount command to prevent file ownership issues.
-   {:tip}
+   {: tip}
 
 
 ## Unmounting the file system
@@ -149,9 +149,9 @@ To unmount any currently mounted file system on your host, run the `umount` comm
 ```
 umount /dev/sdb
 ```
-{:pre}
+{: pre}
 
 ```
 umount /mnt
 ```
-{:pre}
+{: pre}

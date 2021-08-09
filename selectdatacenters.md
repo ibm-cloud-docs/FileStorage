@@ -14,13 +14,13 @@ subcollection: FileStorage
 {:note: .note}
 {:important: .important}
 {:shortdesc: .shortdesc}
-{:ui-linked}
+{: ui-linked}
 
 # {{site.data.keyword.filestorage_short}} locations
 {: #selectDC}
 
 {{site.data.keyword.filestorage_full}} with enhanced capabilities is available in the following regions and data centers.
-{:shortdesc}
+{: shortdesc}
 
 
 | Capabilities | DAL05 | DAL09 | DAL10 | DAL12 | DAL13 | SJC01 | SJC03 | SJC04 | WDC01 | WDC04 | WDC06 | WDC07 |
@@ -132,7 +132,7 @@ subcollection: FileStorage
 {: row-headers}
 
 To be able to access all the new features, select `Storage-as-a-Service Package 759` when you place your order through the API.
-{:important}
+{: important}
 
 Check back here to see when more data centers are upgraded and for new features and capabilities that are being added for {{site.data.keyword.filestorage_short}}.
-{:tip}
+{: tip}

@@ -26,7 +26,7 @@ subcollection: FileStorage
 {: #managingstorage}
 
 You can manage your {{site.data.keyword.filestorage_full}} volumes through the {{site.data.keyword.cloud}} console and from the CLI.
-{:shortdesc}
+{: shortdesc}
 
 ## Authorizing hosts to access {{site.data.keyword.filestorage_short}} in the UI
 {: #authhostUI}
@@ -37,7 +37,7 @@ You can manage your {{site.data.keyword.filestorage_full}} volumes through the {
 “Authorized” hosts are hosts that were given access to a particular volume. Without host authorization, you can't access or use the storage from your system. Authorizing a host to access your volume generates the user name and password.
 
 You can authorize and connect hosts that are located in the same data center as your storage. You can have multiple accounts, but you can't authorize a host from one account to access your storage on another account.
-{:important}
+{: important}
 
 1. Go to the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}. From the menu, select **Classic Infrastructure**.
 2. Click **Storage** > **{{site.data.keyword.filestorage_short}}**, and click your **Volume Name**.
@@ -46,7 +46,7 @@ You can authorize and connect hosts that are located in the same data center as 
 5. Filter the available host list by selecting the device type, subnet, or IP address.
 
    When the list is filtered by subnet, the subnets that are displayed are subscribed subnets in the same data center as the storage volume.
-   {:note}
+   {: note}
 6. Select one or more hosts from the list and click **Save**.
 
 ## Authorizing hosts to access {{site.data.keyword.filestorage_short}} from the SLCLI
@@ -119,12 +119,12 @@ You are presented with a list of storage volumes that this particular host has a
 
 ## Revoking a host's access to {{site.data.keyword.filestorage_short}} in the UI
 {: #revokehostaccessinUI}
-{:ui}
+{: ui}
 
 If you want to stop the access from a host to a particular storage volume, you can revoke the access. When access is revoked, the host connection is dropped from the volume. The operating system and applications can't communicate with the volume anymore.
 
 To avoid host side issues, unmount the storage volume from your operating system before you revoke access to avoid missing drives or data corruption.
-{:important}
+{: important}
 
 You can revoke access from either Storage from the Device List or the Storage views.
 
@@ -132,7 +132,7 @@ You can revoke access from either Storage from the Device List or the Storage vi
 {: #revokeauthDeviceUI}
 {: help}
 {: support}
-{:ui}
+{: ui}
 
 1. Go to the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}.
 2. From the menu, select **Classic Infrastructure**.
@@ -143,14 +143,14 @@ You can revoke access from either Storage from the Device List or the Storage vi
 5. Confirm if you want to revoke the access for a volume because the action can't be undone. Click **Yes** to revoke volume access, or **No** to cancel the action.
 
 If you want to disconnect multiple volumes from a specific host, you need to repeat the Revoke Access action for each volume.
-{:tip}
+{: tip}
 
 
 ### Revoking access from the Storage View in the UI
 {: #revokeauthStorageUI}
 {: help}
 {: support}
-{:ui}
+{: ui}
 
 1. Go to the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}.
 2. From the menu, select **Classic Infrastructure**.
@@ -160,13 +160,13 @@ If you want to disconnect multiple volumes from a specific host, you need to rep
 6. Confirm if you want to revoke the access for a volume because the action cannot be undone. Click **Yes** to revoke volume access, or **No** to cancel the action.
 
 If you want to disconnect multiple hosts from a specific volume, you need to repeat the Revoke Access action for each host.
-{:tip}
+{: tip}
 
 ## Revoking a host's access to {{site.data.keyword.filestorage_short}} from the SLCLI
 {: #revokeauthslcli}
 {: help}
 {: support}
-{:cli}
+{: cli}
 
 You can use the following command in SLCLI.
 ```
@@ -183,13 +183,13 @@ Options:
 ```
 
 If you want to disconnect multiple hosts from a specific volume, you need to repeat the Revoke Access action for each host.
-{:tip}
+{: tip}
 
 ## Deleting a storage volume in the UI
 {: #cancelvolUI}
 {: help}
 {: support}
-{:ui}
+{: ui}
 
 If you no longer need a specific volume, you can delete that file share. To cancel a storage volume, you need to revoke access from any hosts first.
 
@@ -199,12 +199,12 @@ If you no longer need a specific volume, you can delete that file share. To canc
 4. Confirm if want to delete the volume immediately or on the anniversary date of when the volume was provisioned.
 
    If you select the option to cancel the volume on its anniversary date, you can void the cancellation request before its anniversary date.
-   {:tip}
+   {: tip}
 5. Click **Continue** or **Close**.
 6. Click the acknowledgment check box, and click **Confirm**.
 
 When the volume is canceled, there's a 24-hour reclaim wait period. You can still see the volume in the console during those 24 hours. When the reclaim-period expires, the data is destroyed and the volume is removed from the console, too. However, billing for the volume stops immediately. For more information, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs).
-{:note}
+{: note}
 
 Active replicas and dependent duplicates can block reclamation of the Storage volume. Make sure that the volume is no longer mounted, host authorizations are revoked, replication is canceled, and no dependent duplicates exist before you attempt to delete the original volume.
 
@@ -213,7 +213,7 @@ Active replicas and dependent duplicates can block reclamation of the Storage vo
 {: #cancelvolCLI}
 {: help}
 {: support}
-{:cli}
+{: cli}
 
 To delete a storage volume, you can use the following command.
 ```
@@ -228,6 +228,6 @@ Options:
 ```
 
 When the volume is canceled, there's a 24-hour reclaim wait period. You can still see the volume in the console during those 24 hours. When the reclaim-period expires, the data is destroyed and the volume is removed from the console, too. However, billing for the volume stops immediately. For more information, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs).
-{:note}
+{: note}
 
 Active replicas and dependent duplicates can block reclamation of the Storage volume. Make sure that the volume is no longer mounted, host authorizations are revoked, replication is canceled, and no dependent duplicates exist before you attempt to delete the original volume.
