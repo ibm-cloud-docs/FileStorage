@@ -165,7 +165,7 @@ To enact this good practice, complete the following steps.
 2. Provision a secondary private subnet to the new VLAN.
 3. Trunk the new VLAN to the private interface of the host.  
    This action momentarily disrupts the network traffic on the host while the VLAN is being trunked to the host.
-   {:note}
+   {: note}
 4. Create a new network interface.
    * On the Linux&reg; host, create a 802.11q interface. Choose one of the unused secondary IP address from the newly trunked VLAN and assign that IP address, subnet mask, and gateway to a new 802.11q interface.
    * In VMware, create a new VMkernel network interface (vmk) and assign the unused secondary IP address, subnet mask, and gateway IP from the newly trunked VLAN to the new vmk interface.
@@ -288,7 +288,7 @@ Complete the following steps to disconnect a volume from a host.
 {: faq}
 {: #tier-options}
 
-Endurance and Performance are provisioning options that you can select for storage devices. In short, Endurance IOPS tiers offer predefined performance levels whereas you can fine-tune those levels with the Performance tier. The same devices are used but delivered with different options. For more information, see [File Storage Features](https://www.ibm.com/cloud/file-storage/details){:external}.
+Endurance and Performance are provisioning options that you can select for storage devices. In short, Endurance IOPS tiers offer predefined performance levels whereas you can fine-tune those levels with the Performance tier. The same devices are used but delivered with different options. For more information, see [File Storage Features](https://www.ibm.com/cloud/file-storage/details){: external}.
 
 ## Can I connect {{site.data.keyword.filestorage_short}} to Windows?
 {: faq}

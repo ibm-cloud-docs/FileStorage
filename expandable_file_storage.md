@@ -27,7 +27,7 @@ subcollection: FileStorage
 {: #expandCapacity}
 
 With this feature, current users of {{site.data.keyword.filestorage_full}} are able to expand the size of their {{site.data.keyword.filestorage_short}} in GB increments up to 12 TB immediately. They don't need to create a duplicate or manually migrate data to a larger volume.
-{:shortdesc}
+{: shortdesc}
 
 Billing for the volume is automatically updated to add the pro-rated difference of the new price to the current billing cycle. Then, the full new amount is billed in the next billing cycle.
 
@@ -55,7 +55,7 @@ Existing size limitations for {{site.data.keyword.filestorage_short}} that was p
 
 ## Resizing storage in the UI
 {: #resizingstepsUI}
-{:ui}
+{: ui}
 
 1. Go to the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}. From the menu, select **Classic Infrastructure**. Click **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Select the volume from the list and click the ellipsis (**...**) > **Modify File Share**.
@@ -64,7 +64,7 @@ Existing size limitations for {{site.data.keyword.filestorage_short}} that was p
 5. Your new storage allocation is available in a few minutes.
 
 For the OS to recognize the extra storage space, unmount and mount the modified volume again.
-{:tip}
+{: tip}
 
 ## Resizing storage from the SLCLI
 {: #resizingstepsCLI}
@@ -105,10 +105,10 @@ Options:
                                 than 0.25.]
   -h, --help                    Show this message and exit.
 ```
-{:codeblock}
+{: codeblock}
 
 For the OS to recognize the extra storage space, unmount and mount the modified volume again.
-{:tip}
+{: tip}
 
 ## Resizing storage with the API
 {: #resizingstepsAPI}
@@ -116,8 +116,8 @@ For the OS to recognize the extra storage space, unmount and mount the modified 
 
 You can increase your storage capacity by using an API call to the SOAP web service. The following sample API calls can be called from the scripting language of your choice.
 
-For more information about the SLAPI, see the [SLDN](http://sldn.softlayer.com/reference/softlayerapi){:external}.
-{:tip}
+For more information about the SLAPI, see the [SLDN](http://sldn.softlayer.com/reference/softlayerapi){: external}.
+{: tip}
 
 * Increase capacity on a Performance storage volume.
   ```
@@ -151,7 +151,7 @@ For more information about the SLAPI, see the [SLDN](http://sldn.softlayer.com/r
     </SOAP-ENV:Body>
   </SOAP-ENV:Envelope>
   ```
-  {:codeblock}
+  {: codeblock}
 
 
 * Increase capacity on an Endurance storage volume.
@@ -186,10 +186,10 @@ For more information about the SLAPI, see the [SLDN](http://sldn.softlayer.com/r
     </SOAP-ENV:Body>
   </SOAP-ENV:Envelope>
   ```
-  {:codeblock}
+  {: codeblock}
 
 For the OS to recognize the extra storage space, unmount and mount the modified volume again.
-{:tip}
+{: tip}
 
 ## Expanding Storage over 12 TB
 {: #increasecapacityover12TB}
@@ -197,7 +197,7 @@ For the OS to recognize the extra storage space, unmount and mount the modified 
 {: support}
 
 If you need to increase your Storage volume capacity beyond 12 TB, you can request to be added to the allowlist by submitting a [support case](https://{DomainName}/unifiedsupport/cases/add){: external}. When the request is approved by the Offering Manager, you're going to be notified through the case process. You're also going to see the option to increase your storage up to 24 TB in the console.
-{:preview}
+{: preview}
 
 There's a limit to how many operations can be performed on the storage. This limit is 180K IOPS. So if you want to provision a volume with 10 IOPS, your maximum volume size is 18 TB. If you want to provision the maximum size of 24 TB, then the maximum rate of reads and writes to the volume is 4 IOPS per GB.
-{:note}
+{: note}

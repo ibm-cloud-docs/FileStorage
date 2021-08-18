@@ -31,11 +31,11 @@ completion-time: 1h
 {: toc-completion-time="1h"}
 
 To mount {{site.data.keyword.filestorage_full}} in CentOS 7, you must authorize the host first. Then, install the NFS utilities as described in [Mounting {{site.data.keyword.filestorage_short}} on Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingLinux).
-{:shortdesc}
+{: shortdesc}
 
 ## Authorizing the host in the UI
 {: #authCentOShostUI}
-{:ui}
+{: ui}
 
 You can authorize a host to access the {{site.data.keyword.filestorage_short}} volume through the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic/storage/file){: external}.
 
@@ -44,12 +44,12 @@ You can authorize a host to access the {{site.data.keyword.filestorage_short}} v
 3. Filter the available host list by selecting the device type, subnet, or IP address.
 
    When the list is filtered by subnet, the subnets that are displayed are subscribed subnets in the same data center as the storage volume.
-   {:note}
+   {: note}
 4. Select one or more hosts from the list and click **Save**.
 
 ## Authorizing the host from the SLCLI
 {: #authCentOShostCLI}
-{:cli}
+{: cli}
 
 You can authorize a host to access the {{site.data.keyword.filestorage_short}} volume by using the `file access-authorize` command.
 
@@ -72,7 +72,7 @@ Options:
 Most of the steps that you need to perform to mount your {{site.data.keyword.filestorage_short}} to a CentOS host are the same as the ones that are described on [Mounting {{site.data.keyword.filestorage_short}} on Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingLinux). However, for CentOS, you can specify some additional options by using the `Options=` line in the mount file. In the following example, the NFS is set to mount at `/data/www`.
 
  The NFS mount point information can be obtained from the {{site.data.keyword.filestorage_short}} Details page in the UI or through an API call -`SoftLayer_Network_Storage::getNetworkMountAddress()`.
-{:tip}
+{: tip}
 
 ```
 $ cat data-www.mount
@@ -88,7 +88,7 @@ Options=vers=4,sec=sys,noauto
 [Install]
 WantedBy = multi-user.target
 ```
-{:codeblock}
+{: codeblock}
 
 Next, enable the mount and check that it is mounted properly.
 
@@ -98,4 +98,4 @@ systemctl enable --now /etc/systemd/system/data-www.mount
 cluster1 ~ # mount |grep data
 <nfs_mount_point> on /data/www type nfs4 (rw,relatime,vers=4.0,rsize=65536,wsize=65536,namlen=255,hard,proto=tcp,port=0,timeo=600,retrans=2,sec=sys,clientaddr=10.81.x.x,local_lock=none,addr=10.1.x.x)
 ```
-{:codeblock}
+{: codeblock}

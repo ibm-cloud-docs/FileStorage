@@ -14,17 +14,17 @@ subcollection: FileStorage
 {:note: .note}
 {:important: .important}
 {:shortdesc: .shortdesc}
-{:ui-linked}
+{: ui-linked}
 
 # {{site.data.keyword.filestorage_short}} locations
 {: #selectDC}
 
 {{site.data.keyword.filestorage_full}} with enhanced capabilities is available in the following regions and data centers.
-{:shortdesc}
+{: shortdesc}
 
 
 | Capabilities | DAL05 | DAL09 | DAL10 | DAL12 | DAL13 | SJC01 | SJC03 | SJC04 | WDC01 | WDC04 | WDC06 | WDC07 |
-|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+|--------------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|
 | 10 IOPS per GB option |  | ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) | | ![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) | | ![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |
 | [Adjustable IOPS](/docs/FileStorage?topic=FileStorage-adjustingIOPS) |   | ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) | | ![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) | | ![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |
 | All Flash Backed Storage |  | ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) | | ![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) | | ![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |
@@ -42,7 +42,7 @@ subcollection: FileStorage
 {: row-headers}
 
 | Capabilities | MEX01 | SAO01 | SAO04 | SAO05 |
-|-----|-----|-----|
+|--------------|-------|-------|-------|-------|
 | 10 IOPS per GB option |  ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |
 | [Adjustable IOPS](/docs/FileStorage?topic=FileStorage-adjustingIOPS) |  ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |
 | All Flash Backed Storage | ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |
@@ -60,7 +60,7 @@ subcollection: FileStorage
 {: row-headers}
 
 | Capabilities | TOR01 |TOR04 |TOR05 | MON01 |
-|-----|-----|-----|
+|-----|-----|-----|-----|-----|
 | 10 IOPS per GB option |  ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) |
 | [Adjustable IOPS](/docs/FileStorage?topic=FileStorage-adjustingIOPS) |  ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |
 | All Flash Backed Storage | ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |
@@ -96,7 +96,7 @@ subcollection: FileStorage
 {: row-headers}
 
 | Capabilities | HKG02 | TOK02 | TOK04 | TOK05 | OSA21 | OSA22 | OSA23 | SNG01 | SEO01 | CHE01 |
-|--------------|-------|-------|-------|-------|-------|-------|-------|
+|--------------|-------|-------|-------|-------|-------|-------|-------|-----|-----|-----|
 | 10 IOPS per GB option | ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |
 | [Adjustable IOPS](/docs/FileStorage?topic=FileStorage-adjustingIOPS) | ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |
 | All Flash Backed Storage | ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |
@@ -132,7 +132,7 @@ subcollection: FileStorage
 {: row-headers}
 
 To be able to access all the new features, select `Storage-as-a-Service Package 759` when you place your order through the API.
-{:important}
+{: important}
 
 Check back here to see when more data centers are upgraded and for new features and capabilities that are being added for {{site.data.keyword.filestorage_short}}.
-{:tip}
+{: tip}

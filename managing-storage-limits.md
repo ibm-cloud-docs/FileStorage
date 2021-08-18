@@ -77,13 +77,13 @@ curl -u $SL_USER:$SL_APIKEY 'https://api.softlayer.com/rest/v3.1/SoftLayer_Netwo
 ```
 
 The API call shows the combined number of {{site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_short}}.
-{:tip}
+{: tip}
 
 ## Requesting limit increase
 {: #increasefilelimits}
 
 You can request a limit increase by submitting a support case in the [portal](https://cloud.ibm.com/unifiedsupport/cases/add){: external}. When the request is approved, you get a volume limit that is set for a specific data center.
-{:shortdesc}
+{: shortdesc}
 
 To request a limit increase, open a support case and direct it to your sales representative.
 
@@ -107,6 +107,6 @@ In the ticket, provide the following information:
 *For example, your answer might be something similar to "expect 25 percent to be used in 30 days, 50 percent to be used in 60 days and 75 percent to be used in 90 days".*
 
 Respond to all questions and statements in your request. They are required for processing and approval.
-{:important}
+{: important}
 
 You're going to be notified of the update to your limits through the ticket process.

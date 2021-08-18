@@ -20,7 +20,7 @@ subcollection: FileStorage
 {: #snapshots}
 
 Snapshots are a feature of {{site.data.keyword.filestorage_full}}. A snapshot represents a volume's contents at a particular point in time. With snapshots, you can protect your data with no performance impact and minimal consumption of space. Snapshots are considered your first line of defense for data protection. If a user accidentally modifies or deletes crucial data from a volume, the data can be easily and quickly restored from a snapshot copy.
-{:shortdesc}
+{: shortdesc}
 
 {{site.data.keyword.filestorage_short}} provides you with two ways to take your snapshots.
 
@@ -46,10 +46,10 @@ Snapshot design depends on the customer’s environment. The following design co
 - Snapshot AutoDelete can be used to control the growth of storage consumption.
 
   The AutoDelete threshold is fixed at 95 percent.
-  {:note}
+  {: note}
 
 Snapshots are not replacements for actual off-site Disaster Recovery replication or long-retention backup.
-{:important}
+{: important}
 
 ## Security
 

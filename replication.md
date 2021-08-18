@@ -24,13 +24,13 @@ subcollection: FileStorage
 {: #replication}
 
 Replication uses one of your snapshot schedules to automatically copy snapshots to a destination volume in a remote data center. The copies can be recovered in the remote site if a catastrophic event occurs or your data becomes corrupted.
-{:shortdesc}
+{: shortdesc}
 
 Replication keeps your data in sync in two different locations. If you want to clone your volume and use it independently from the original volume, see [Creating a duplicate File Volume](/docs/FileStorage?topic=FileStorage-duplicatevolume).
-{:tip}
+{: tip}
 
 Before you can replicate, you must create a snapshot schedule. The option to **Order Replica** does not appear until this condition is met.
-{:important}
+{: important}
 
 
 ## Determining the remote data center for the replicated storage volume in the UI
@@ -72,13 +72,13 @@ Replications work based on a snapshot schedule. You must first have snapshot spa
 3. Select the existing snapshot schedule that you want your replication to follow. The list contains all of your active snapshot schedules. <br />
 
    You can select only one schedule even if you have a mix of hourly, daily, and weekly. All snapshots that were captured since the previous replication cycle, are replicated regardless of the schedule that originated them.<br />For more information, see [Working with Snapshots](/docs/FileStorage?topic=FileStorage-snapshots). Replication starts 5 minutes after the snapshot is taken to ensure the most up-to-date data is copied to the replica volume.
-   {:tip}
+   {: tip}
 3. Select a **Location** for the replica volume.
 4. Click **Continue**.
 5. Enter in a **Promo Code** if you have one, and click **Recalculate**. The other fields in the window are completed by default.
 
    Discounts are applied when the order is processed.
-   {:note}
+   {: note}
 6. Review your order, and read the service agreement. If you agree with the terms, check the box.
 7. Click **Place Order**.
 
@@ -129,7 +129,7 @@ List existing replicant volumes for a file volume with the following command.
 
 ## Viewing the replication history in the UI
 {: #replicationhistoryUI}
-{:ui}
+{: ui}
 
 To view the Replication history, click Manage on the main menu bar. Select **Account**, then scroll to the Audit Log. The Storage Replication Events list contains the names of the volume, a description of the replication event and the time stamp of the event.
 

@@ -23,15 +23,15 @@ subcollection: FileStorage
 {: #duplicatevolume}
 
 You can create a duplicate of an existing {{site.data.keyword.cloud}} {{site.data.keyword.filestorage_full}}. The duplicate volume inherits the capacity and performance options of the original volume by default and has a copy of the data up to the point-in-time of a snapshot. The duplicate volume is completely independent from the original volume.
-{:shortdesc}  
+{: shortdesc}  
 
 Because the duplicate is based on the data in a point-in-time snapshot, snapshot space is required on the original volume before you can create a duplicate. To learn more about snapshots and how to order snapshot space, refer to [Snapshot documentation](/docs/FileStorage?topic=FileStorage-snapshots).  
-{:important}
+{: important}
 
  Independent duplicates can be created from both **primary** and **replica** volumes. The new duplicate is created in the same data center as the original volume. If you create a duplicate from a replica volume, the new volume is created in the same data center as the replica volume.
 
 If you are a Dedicated account user of {{site.data.keyword.containerlong}}, see your options for duplicating a volume in the [{{site.data.keyword.containerlong_notm}} documentation](/docs/containers?topic=containers-file_storage#file_backup_restore).
-{:tip}
+{: tip}
 
 Duplicate volumes can be accessed by a host for read/write as soon as the storage is provisioned. However, snapshots and replication aren't allowed until the data copy from the original to the duplicate is complete. Depending on the size of the data, the copying process can take up to several hours. When the data copy is complete, the duplicate can be managed and used as an independent volume.
 
@@ -66,7 +66,7 @@ You can create a duplicate volume through the [{{site.data.keyword.cloud}} conso
 6. You can update the size of the new volume so that it's larger than the original. The size of the original volume is set by default.
 
    {{site.data.keyword.filestorage_short}} can be resized to 10 times the original size of the volume.
-   {:tip}
+   {: tip}
 7. You can update the snapshot space for the new volume to add more, less, or no snapshot space. The snapshot space of the original volume is set by default.
 8. Check the box to confirm that you read and agreed to the terms, then click **Create** to place your order.
 

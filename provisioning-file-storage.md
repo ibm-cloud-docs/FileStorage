@@ -17,7 +17,7 @@ subcollection: FileStorage
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:shortdesc: .shortdesc}
-{:uilinked}
+{: uilinked}
 {:ui: .ph data-hd-interface='ui'}
 {:cli: .ph data-hd-interface='cli'}
 {:api: .ph data-hd-interface='api'}
@@ -27,14 +27,14 @@ subcollection: FileStorage
 {: #orderingFileStorage}
 
 You can provision {{site.data.keyword.filestorage_short}} and fine-tune to meet your capacity and IOPS needs. Get the most out of your storage with two options for specifying performance.
-{:shortdesc}
+{: shortdesc}
 
 - You can choose from Endurance IOPs tiers that feature pre-defined performance levels to fit workloads that don't have well-defined performance requirements.
 - You can fine-tune your storage to meet specific performance requirements by specifying the total number of IOPS with Performance.
 
 ## Ordering {{site.data.keyword.filestorage_short}} in the UI
 {: #orderingFileStorageUI}
-{:ui}
+{: ui}
 
 1. Log in to the [{{site.data.keyword.cloud}} catalog](https://{DomainName}/catalog){: external} and click **Storage**. Then, select {{site.data.keyword.filestorage_short}}. Click **Create**.
 2. Select your deployment location (region, location, zone).
@@ -44,13 +44,13 @@ You can provision {{site.data.keyword.filestorage_short}} and fine-tune to meet 
    - With **monthly** billing, the calculation for the price is pro-rated from the date of creation to the end of the billing cycle and billed immediately. There's no refund if a file volume is deleted before the end of the billing cycle. Monthly billing is a good choice for storage that is used in production workloads that use data that needs to be stored and accessed for long periods of time (month or longer).
 
     Monthly billing type is used by default for storage that is provisioned in data centers that are **not** updated with improved capabilities.
-    {:note}
+    {: note}
 
 4. Enter your storage size in the **Size** field.
 5. Select the size of the Snapshot space from the list.
 
    This space is in addition to your usable space. For snapshot space considerations and recommendation, read [Ordering Snapshots](/docs/BlockStorage?topic=BlockStorage-orderingsnapshots).
-   {:tip}
+   {: tip}
 
 6. Select your IOPS profile. You can choose between the predefined values of **Endurance (Tiers)** or enter your custom IOPS value for **Performance**.
     - **0.25 IOPS per GB** is designed for workloads with low I/O intensity. These workloads are typically characterized by having a large percentage of data inactive at a time. Example applications include storing mailboxes or departmental level file shares.
@@ -60,24 +60,24 @@ You can provision {{site.data.keyword.filestorage_short}} and fine-tune to meet 
 7. On the right, review your order summary, and apply your Promo Code if you have one.
 
    Discounts are applied when the order is processed.
-   {:note}
+   {: note}
 8. After you reviewed the terms and conditions, check the I** have read and agree to the...** box.
 10. Click **Create**. Your new storage allocation is available in a few minutes.
 
 By default, you can provision a combined total of 250 {{site.data.keyword.blockstorageshort}} volumes. To increase the number of your volumes, contact your sales representative. Read about increasing limits [here](/docs/FileStorage?topic=FileStorage-managinglimits).<br/><br/>For more information about the limit on simultaneous authorizations, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs#authlimit).
-{:tip}
+{: tip}
 
 ## Ordering {{site.data.keyword.filestorage_short}} through the SLCLI
 {: #orderingthroughCLI}
-{:cli}
+{: cli}
 
 You can use the SLCLI to place orders for products that are normally ordered through the [{{site.data.keyword.cloud_notm}} console](https://{DomainName}/){: external}.
 
 Each order must have an associated location (data center). When you order {{site.data.keyword.filestorage_short}}, make sure that it is provisioned in the same location as your compute instances.
-{:important}
+{: important}
 
 For more information about how to install and use the SLCLI, see [Python CLI Client](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}.
-{:tip}
+{: tip}
 
 Use the `slcli file volume-order` command to provision the file share volume.
 
@@ -128,15 +128,15 @@ Order #32076317 placed successfully!
 ```
 
 For more information about ordering through the IBM Cloud CLI, see [Working with the File Storage service (ibmcloud sl file)](https://cloud.ibm.com/docs/cli?topic=cli-sl-file-storage-service#sl_file_volume_order){: external}.
-{:tip}
+{: tip}
 
 By default, you can provision a combined total of 250 {{site.data.keyword.blockstorageshort}} volumes. To increase the number of your volumes, contact your sales representative. Read about increasing limits [here](/docs/FileStorage?topic=FileStorage-managinglimits).<br/><br/>For more information about the limit on simultaneous authorizations, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs#authlimit).
-{:important}
+{: important}
 
 
 ## Ordering {{site.data.keyword.filestorage_short}} by using the API
 {: #orderingthroughAPI}
-{:api}
+{: api}
 
 The method `order_file_volume` (storage_type, location, size, iops=None, tier_level=None, snapshot_size=None, service_offering='storage_as_a_service', hourly_billing_flag=False) places an order for a file volume.
 
@@ -151,12 +151,12 @@ Parameters:
 - hourly_billing_flag – Billing type, monthly (False) or hourly (True), default to monthly.
 
 To be able to access all the new features, order `Storage-as-a-Service Package 759`.
-{:tip}
+{: tip}
 
 For more information about ordering {{site.data.keyword.filestorage_short}} through the API, see [order_file_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/file/#SoftLayer.managers.file.FileStorageManager.order_file_volume){: external}.
 
 By default, you can provision a combined total of 250 {{site.data.keyword.blockstorageshort}} volumes. To increase the number of your volumes, contact your sales representative. Read about increasing limits [here](/docs/FileStorage?topic=FileStorage-managinglimits).<br/><br/>For more information about the limit on simultaneous authorizations, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs#authlimit).
-{:important}
+{: important}
 
 ## Connecting your new storage
 {: #mountingvolumesPortal}

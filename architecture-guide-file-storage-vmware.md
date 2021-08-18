@@ -34,10 +34,10 @@ completion-time: 1h
 {: toc-completion-time="1h"}
 
 This tutorial guides you through how to order and configure {{site.data.keyword.filestorage_full}} in a **vSphere 5.5** or **vSphere 6.0** environment at {{site.data.keyword.cloud}}. {{site.data.keyword.filestorage_short}} is designed to support high I/O applications that require predictable levels of performance. The predictable performance is achieved through the allocation of protocol-level input/output operations per second (IOPS) to individual volumes.
-{:shortdesc}
+{: shortdesc}
 
 If you require more than eight hosts to access your VMware&reg; datastore, then choosing NFS {{site.data.keyword.filestorage_short}} is the best practice.
-{:tip}
+{: tip}
 
 The {{site.data.keyword.filestorage_short}} offering is accessed and mounted through an NFS connection. In a VMware&reg; deployment, a single volume can be mounted to up to 64 ESXi hosts as shared storage. You can also mount multiple volumes to create a storage cluster to use vSphere Storage Distributed Resource Scheduler (DRS).
 
@@ -50,7 +50,7 @@ When you order {{site.data.keyword.filestorage_short}}, consider the following i
 - When you decide on the size, consider the size of the workload and throughput needed. Size matters with the Endurance service, which scales performance linearly in relation to capacity (IOPS/GB). Conversely, the Performance service allows the administrator to choose capacity and performance independently. Throughput requirements matter with Performance.
 
   The throughput calculation is IOPS x 16 KB. IOPS is measured based on a 16-KB block size with a 50/50 read/write mix.<br/>Increasing block size increases the throughput but decreases IOPS. For example, doubling the block size to 32-KB blocks maintains the maximum throughput but halves the IOPS.
-  {:note}
+  {: note}
 
 - NFS uses many extra file control operations such as `lookup`, `getattr`, and `readdir`. These operations in addition to read/write operations can count as IOPS and vary by operation type and NFS version.
 - {{site.data.keyword.filestorage_short}} volumes are exposed to authorized devices, subnets, or IP addresses.
@@ -59,7 +59,7 @@ When you order {{site.data.keyword.filestorage_short}}, consider the following i
 
 For more information, see VMware&reg;'s white paper on [Best Practices for running
 VMware&reg; vSphere on network-attached storage](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){: external}.
-{:tip}
+{: tip}
 
 ### NFS Protocol VMware feature support matrix
 {: #NFSfeaturesVMwaresupportmatrix}
@@ -108,7 +108,7 @@ With replicas, you can
 - Fail over to a specific point in time with the DR copy.
 
 Replication keeps your data in sync in two different locations. If you want to clone your volume and use it independently from the original volume, see [Creating a duplicate File Volume](/docs/FileStorage?topic=FileStorage-duplicatevolume).
-{:tip}
+{: tip}
 
 Before you can replicate, you must create a snapshot schedule.
 
@@ -119,12 +119,12 @@ Before the volume fails back to the primary data center, it needs to stop being 
 For more information about configuring replicas, see [Replication](/docs/FileStorage?topic=FileStorage-replication).
 
 Invalid data, whether corrupted, hacked, or infected replicate according to the snapshot schedule and snapshot retention. Using the smallest replication windows can provide for a better recovery point objective. However, it also can provide less time to react to the replication of invalid data.
-{:note}
+{: note}
 
 
 ## Ordering {{site.data.keyword.filestorage_short}} and authorizing hosts
 {: #orderauthvmwareui}
-{:ui}
+{: ui}
 
 Follow the instructions the [Advanced Single-Site VMware&reg; Reference Architecture](/docs/virtualization?topic=virtualization-advanced-single-site-vmware-reference-architecture){: external} to set up your VMware environment.
 
@@ -138,13 +138,13 @@ Storage is provisioned in less than a minute and becomes visible on the **{{site
 4. Choose from the list of available subnets that are assigned to the VMkernel ports on the ESXi hosts, and click **Save**.<br/>
 
    The subnets that are displayed are subscribed subnets in the same data center as the storage volume.
-   {:note}
+   {: note}
 
 After the subnets are authorized, make note of the host name of the storage server. The host name can be found on the {{site.data.keyword.filestorage_short}} detail page of the volume.
 
 ## Ordering {{site.data.keyword.filestorage_short}} and authorizing hosts from the SLCLI
 {: #orderauthvmwareCLI}
-{:cli}
+{: cli}
 
 Follow the instructions the [Advanced Single-Site VMware&reg; Reference Architecture](/docs/virtualization?topic=virtualization-advanced-single-site-vmware-reference-architecture){: external} to set up your VMware environment.
 
@@ -195,13 +195,13 @@ Before you begin the configuration process, make sure that the following prerequ
      ```
      ping -f -l 8972 a.b.c.d
      ```
-     {:pre}
+     {: pre}
 
    - UNIX
      ```
      ping -s 8972 a.b.c.d
      ```
-     {:pre}
+     {: pre}
 
      The value a.b.c.d is the neighboring {{site.data.keyword.BluVirtServers_short}} interface.
 
@@ -212,7 +212,7 @@ Before you begin the configuration process, make sure that the following prerequ
      ```
 
 For more information about VMware&reg; and Jumbo Frames, see [here](https://kb.vmware.com/s/article/1003712){: external}.
-{:tip}
+{: tip}
 
 
 ### 2. Adding an uplink adapter to a virtual switch
@@ -244,7 +244,7 @@ The network configuration for this architecture guide uses a minimal number of p
    {: pre}
 
    The NFS storage DNS host name is a Forwarding Zone (FZ) that is assigned multiple IP addresses. These IP addresses are static and belong to that specific DNS host name. Any of those IP addresses can be used to access a specific volume.
-   {:note}
+   {: note}
 
    ```
    esxcli network ip route ipv4 add –gateway GATEWAYIP –network <result of ping command>/32
@@ -254,7 +254,7 @@ The network configuration for this architecture guide uses a minimal number of p
 2. Static routes are not persistent across restarts on ESXi 5.0 and earlier. To ensure that any added static routes remain persistent, this command needs to be added to the `local.sh` file on each host, which is located in the `/etc/rc.local.d/` directory. Open the `local.sh` file by using the visual editor, and add the second command in Step 4.1. in front of the `exit 0` line.
 
 Make note of the IP address as it can be used for mounting the volume in the next step.<br/>This process needs to be done for each NFS volume you plan to mount to your ESXi host.<br/>For more information, see the VMware&reg; KB article, [Configuring static routes for VMkernel ports on an ESXi host](https://kb.vmware.com/s/article/2001426){: external}.
-{:tip}
+{: tip}
 
 
 ##  Creating the datastore
@@ -268,7 +268,7 @@ Make note of the IP address as it can be used for mounting the volume in the nex
 6. Then, select the NFS version. Both NFSv3 and NFSv4.1 are supported, but NFSv3 is preferred.
 
    Make sure that you use only one NFS version to access the datastore. Consequences of mounting one or more hosts to the same datastore by using different versions can result in data corruption.
-   {:important}
+   {: important}
 
 7. On the **Name and configuration** screen, enter the name that you want to call the VMware datastore. Additionally, enter the host name of the NFS server. Using the FQDN for the NFS server produces the best traffic distribution to the underlying server. IP address is also valid but is used less frequently and only in specific instances. Enter the folder name in the form of `/foldername`.
 8. On the **Host accessibility** screen, select one or more hosts that you want to mount the NFS VMware&reg; datastore on and click **next**.
@@ -276,7 +276,7 @@ Make note of the IP address as it can be used for mounting the volume in the nex
 10. Repeat for any additional {{site.data.keyword.filestorage_short}} volumes.
 
 It is {{site.data.keyword.cloud}}’s recommendation that FQDN names be used to connect to the VMware&reg; datastore. Using direct IP addressing might bypass the load-balancing mechanism that is provided by using FQDN.
-{:important}
+{: important}
 
 To use the IP address instead of the FQDN, simply ping the server to obtain the IP address.
 ```
@@ -302,7 +302,7 @@ In order for SIOC to determine when a storage device is congested or constrained
 
 
 Incorrectly configuring SIOC for a VMware&reg; datastore or for a VMDK can significantly impact performance.
-{:important}
+{: important}
 
 
 ### Configuring Storage I/O Control for a VMware datastore
@@ -317,7 +317,7 @@ Incorrectly configuring SIOC for a VMware&reg; datastore or for a VMDK can signi
 6. Click **OK**.
 
 This setting is specific to the VMware&reg; datastore and not to the host.
-{:note}
+{: note}
 
 
 ### Configuring Storage I/O Control for {{site.data.keyword.BluVirtServers_short}}
@@ -336,7 +336,7 @@ Use the following steps to change the VDisk shares and limit.
 
 
 This process is used to set the resource consumption limits of individual vDisks in a {{site.data.keyword.BluVirtServers_short}} even when SIOC is not enabled. These settings are specific to the individual guest, and not the host, although they are used by SIOC.
-{:important}
+{: important}
 
 
 ## Configuring ESXi host side settings
@@ -391,4 +391,4 @@ The following examples use the ESXi CLI to set the advanced configuration parame
     #esxcfg-advcfg -g /Disk/QFullThreshold
     ```
 Learn more about Advanced Single-Site VMware&reg; Reference Architecture [here](/docs/virtualization?topic=virtualization-advanced-single-site-vmware-reference-architecture){: external}.
-{:tip}
+{: tip}

@@ -19,7 +19,7 @@ completion-time: 2h
 {:note: .note}
 {:important: .important}
 {:shortdesc: .shortdesc}
-{:ui-linked}
+{: ui-linked}
 
 
 # Getting started with {{site.data.keyword.filestorage_short}}
@@ -29,7 +29,7 @@ completion-time: 2h
 {: toc-completion-time="2h"}
 
 {{site.data.keyword.filestorage_full}} is persistent, fast, and flexible network-attached, NFS-based {{site.data.keyword.filestorage_short}}. In this network-attached storage (NAS) environment, you have total control over your file shares function and performance. {{site.data.keyword.filestorage_short}} shares can be connected to up to 64 authorized devices over routed TCP/IP connections for resiliency.
-{:shortdesc}
+{: shortdesc}
 
 If you're looking for information about using {{site.data.keyword.filestorage_short}} with the {{site.data.keyword.containerlong}}, see [Storing data on classic IBM Cloud File Storage](/docs/containers?topic=containers-file_storage).
 
@@ -49,7 +49,7 @@ For more information about the {{site.data.keyword.filestorage_short}} offering,
 ### Block size
 
 The IOPS value for both Endurance and Performance is based on a 16-KB block size with a 50/50 read/write 50/50 random/sequential workload. A 16-KB block is the equivalent of one write to the volume.
-{:important}
+{: important}
 
 The block size that is used by your application directly impacts the storage performance. If the block size that is used by your application is smaller than 16 KB, the IOPS limit is realized before the throughput limit. Conversely, if the block size that is used by your application is larger than 16 KB, the throughput limit is realized before to the IOPS limit.
 

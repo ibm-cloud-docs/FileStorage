@@ -23,7 +23,7 @@ subcollection: FileStorage
 {: #adjustingIOPS}
 
 With this feature, {{site.data.keyword.filestorage_full}} storage users can adjust the IOPS of their existing {{site.data.keyword.filestorage_short}} immediately. They don't need to create a duplicate or manually copy data to new storage. Users don't experience any kind of outage or lack of access to the storage while the adjustment is taking place.
-{:shortdesc}
+{: shortdesc}
 
 Billing for the storage is updated to add the pro-rated difference of the new price to the current billing cycle. The full new amount is billed in the next billing cycle.
 
@@ -51,7 +51,7 @@ If the volume has replication in place, the replica is automatically updated to 
 
 ## Adjusting the IOPS on your Storage in the UI
 {: #adjustingstepsUI}
-{:ui}
+{: ui}
 
 1. Go to your list of {{site.data.keyword.filestorage_short}}. From the {{site.data.keyword.cloud}} console, click **Classic Infrastructure** > **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Select the volume from the list and click the ellipsis (**...**) > **Modify File Share**.
@@ -109,8 +109,8 @@ Options:
 
 You can adjust the IOPS by using an API call to the SOAP web service. The following sample API calls can be called from the scripting language of your choice.
 
-For more information about the SLAPI, see the [SLDN](http://sldn.softlayer.com/reference/softlayerapi){:external}.
-{:tip}
+For more information about the SLAPI, see the [SLDN](http://sldn.softlayer.com/reference/softlayerapi){: external}.
+{: tip}
 
 * Adjust IOPS on Performance storage volume.
 
@@ -145,7 +145,7 @@ For more information about the SLAPI, see the [SLDN](http://sldn.softlayer.com/r
   </SOAP-ENV:Body>
 </SOAP-ENV:Envelope>
   ```
-  {:codeblock}
+  {: codeblock}
 
 * Adjust IOPS on Endurance storage volume.
 
@@ -180,4 +180,4 @@ For more information about the SLAPI, see the [SLDN](http://sldn.softlayer.com/r
   </SOAP-ENV:Body>
 </SOAP-ENV:Envelope>
   ```
-  {:codeblock}
+  {: codeblock}
