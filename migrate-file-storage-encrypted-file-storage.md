@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-03"
+lastupdated: "2021-08-18"
 
 keywords: File Storage, file storage, NFS, upgrade, migrate to new
 
@@ -19,14 +19,8 @@ subcollection: FileStorage
 # Migrating {{site.data.keyword.filestorage_short}} to enhanced {{site.data.keyword.filestorage_short}}
 {: #migratestorage}
 
-Enhanced {{site.data.keyword.filestorage_full}} is now available in most [data centers](/docs/FileStorage?topic=FileStorage-selectDC). The preferred migration path is to connect to both volumes simultaneously and transfer data directly from one volume to another. The specifics depend on your operating system and whether the data is expected to change during the copy operation.
+Enhanced {{site.data.keyword.filestorage_full}} is now available in most [data centers](/docs/FileStorage?topic=FileStorage-selectDC). The preferred migration path is to provision an enhanced {{site.data.keyword.filestorage_short}} volume, then connect to both volumes simultaneously and transfer data directly from one volume to another. The specifics depend on your operating system and whether the data is expected to change during the copy operation.
 {: shortdesc}
-
-The assumption is that you already attached your non-encrypted volume to your host. If not, follow the directions that fit your operating system the best to accomplish this task.
-
-- [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/FileStorage?topic=FileStorage-mountingCentOS)
-- [Mounting {{site.data.keyword.filestorage_short}} on Red Hat Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingLinux)
-- [Mounting {{site.data.keyword.filestorage_short}} on Ubuntu](/docs/FileStorage?topic=FileStorage-mountingUbuntu)
 
 All enhanced {{site.data.keyword.filestorage_short}} volumes that are provisioned in these data centers have a different mount point than non-encrypted volumes. To ensure you're using the correct mount point for both storage volumes, you can view the mount point information in the {{site.data.keyword.filestorage_short}} Details page in the UI. You can also access the correct mount point through an API call: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 {: tip}
@@ -34,12 +28,12 @@ All enhanced {{site.data.keyword.filestorage_short}} volumes that are provisione
 
 ## Creating a {{site.data.keyword.filestorage_short}}
 
+You can order an enhanced volume through the {{site.data.keyword.cloud}} Console UI, through the CLI or the API. Your new volume must be of the same size or greater than the original file share to facilitate the migration. For more information about provisioning a file share, see [Ordering {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-orderingFileStorage).
+
 When you place an order with API, specify the "Storage as a Service" package to ensure you're getting the updated features with your new storage.
 {: important}
 
-You can order an enhanced volume through the {{site.data.keyword.cloud}} catalog. Your new volume must be of the same size or greater than the original file share to facilitate the migration. For more information about provisioning a file share, see [Ordering {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-orderingFileStorage).
 When you order a file share, your new storage is available to mount in a few minutes. You can view it in the Resource List and in the {{site.data.keyword.blockstorageshort}} list.
-
 
 ## Authorizing host to the new {{site.data.keyword.filestorage_short}}
 
@@ -56,18 +50,15 @@ When you order a file share, your new storage is available to mount in a few min
 When the host is authorized, connect the volume to your host.
 
 
-## Setting up Snapshots and Replication
-
-If snapshots and replication were established for your original volume, then you need to set up them up for the new volume. Configure replication, snapshot space and create snapshot schedules the same settings as the original volume.
-
-If your target data center does not have encryption, you can't establish replication for the new volume until that data center is upgraded.
-{: important}
-
-
 ## Migrating your data
 
 1. Connect to both your original and new {{site.data.keyword.filestorage_short}} volumes.
-  - If you need assistance with connecting the two file shares to your host, open a support ticket.
+   - [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/FileStorage?topic=FileStorage-mountingCentOS)
+   - [Mounting {{site.data.keyword.filestorage_short}} on Red Hat Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingLinux)
+   - [Mounting {{site.data.keyword.filestorage_short}} on Ubuntu](/docs/FileStorage?topic=FileStorage-mountingUbuntu)
+
+    If you need assistance with connecting the two file shares to your host, open a support ticket
+    {: tip}
 
 2. Consider what type of data you have on your original {{site.data.keyword.filestorage_short}} volume and how best to copy it to your new file share.
   - If you have backups, static content, and things that aren't expected to change during the copy, you don't have to worry.
@@ -88,3 +79,10 @@ If your target data center does not have encryption, you can't establish replica
    For more information about `rsync`, see the [`rsync` man page](https://download.samba.org/pub/rsync/rsync.html){: external}.{: note}
 
 4. When your migration is complete, you can move production to the new volume. Then, you can detach and delete your original volume from your configuration. The deletion also removes any snapshot or replica on the target site that was associated with the original volume.
+
+## Setting up Snapshots and Replication
+
+If snapshots and replication were established for your original volume, then you need to set up them up for the new volume. Configure replication, snapshot space and create snapshot schedules the same settings as the original volume.
+
+If your target data center does not have encryption, you can't establish replication for the new volume until that data center is upgraded.
+{: important}
