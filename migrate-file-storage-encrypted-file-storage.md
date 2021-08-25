@@ -66,7 +66,7 @@ When the host is authorized, connect the volume to your host.
   - If you have any bandwidth concerns, do the migration during off peak times.
   - If you need assistance with these considerations, open a support ticket.
 
-3. Copy your data across. </br>For example, you can use `rsync` to copy over the data.
+3. Copy your data across. For example, you can use `rsync` to copy over the data.
    ```
    [root@server ~]# rsync -Pavzu /path/to/original/file/storage/* /path/to/encrypted/file/storage
    ```
