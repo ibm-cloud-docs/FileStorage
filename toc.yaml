@@ -16,96 +16,96 @@ toc:
 #  List your getting started tutorial (getting-started.md) as the first item in the Get started nav group. See https://test.cloud.ibm.com/docs/writing?topic=writing-navigation for more details on the toc design.
   entries:
     - navgroup:
-      id: learn
-      topics:
-      - getting-started.md
-      - link:
-        label: What is File Storage?
-        href: https://www.ibm.com/cloud/learn/file-storage
-      - selectdatacenters.md
-      - snapshots.md
+        id: learn
+        topics:
+        - getting-started.md
+        - link:
+            label: What is File Storage?
+            href: https://www.ibm.com/cloud/learn/file-storage
+        - selectdatacenters.md
+        - snapshots.md
 
     - navgroup:
-      id: tutorial
-      topics:
-      - accessing-file-storage-linux.md
-      - accessing-file-storage-ubuntu.md
-      - architecture-guide-file-storage-vmware.md
+        id: tutorial
+        topics:
+        - accessing-file-storage-linux.md
+        - accessing-file-storage-ubuntu.md
+        - architecture-guide-file-storage-vmware.md
 
     - navgroup:
-      id: howto
-      topics:
-      - topicgroup:
-        label: Provisioning
+        id: howto
         topics:
-        - provisioning-file-storage.md
-        - ordering-snapshots.md
-        - managing-storage-limits.md
-        - migrate-file-storage-encrypted-file-storage.md
+        - topicgroup:
+            label: Provisioning
+            topics:
+            - provisioning-file-storage.md
+            - ordering-snapshots.md
+            - managing-storage-limits.md
+            - migrate-file-storage-encrypted-file-storage.md
+        - topicgroup:
+            label: Configuring
+            topics:
+            - set-host-queue-depth-settings-performance-and-endurance-storage.md
+            - jumboframes.md
+            - mounting-storage-centos.md
+            - configure-backup-cpanel.md
+            - configure-backup-plesk.md
+        - topicgroup:
+            label: Managing
+            topics:
+            - managing-file-storage.md
+            - expandable_file_storage.md
+            - adjustable-iops.md
+            - working-with-snapshots.md
+        - topicgroup:
+            label: Replication and Disaster Recovery
+            topics:
+            - replication.md
+            - dr-accessible-primary.md
+            - disaster-recovery.md
+            - how-to-create-duplicate-volume.md
+            - dependent-duplicate.md
       - topicgroup:
-        label: Configuring
-        topics:
-        - set-host-queue-depth-settings-performance-and-endurance-storage.md
-        - jumboframes.md
-        - mounting-storage-centos.md
-        - configure-backup-cpanel.md
-        - configure-backup-plesk.md
-      - topicgroup:
-        label: Managing
-        topics:
-        - managing-file-storage.md
-        - expandable_file_storage.md
-        - adjustable-iops.md
-        - working-with-snapshots.md
-      - topicgroup:
-        label: Replication and Disaster Recovery
-        topics:
-        - replication.md
-        - dr-accessible-primary.md
-        - disaster-recovery.md
-        - how-to-create-duplicate-volume.md
-        - dependent-duplicate.md
-      - topicgroup:
-        label: Enhancing Security
-        topics:
-        - data-security.md
+          label: Enhancing Security
+          topics:
+          - data-security.md
 
     - navgroup:
-      id: reference
-      topics:
-      - link:
-        label: Identity and Access Management
-        href: https://cloud.ibm.com/docs/iam?topic=iam-infrapermission
-      - link:
-        label: Service Level Agreements (SLAs)
-        href: https://{Domainlabel}/docs/overview?topic=overview-slas
-      - topicgroup:
-        label: API reference
+        id: reference
         topics:
         - link:
-          label: Introduction to the SL API
-          href: https://sldn.softlayer.com/article/getting-started/
+            label: Identity and Access Management
+            href: https://cloud.ibm.com/docs/iam?topic=iam-infrapermission
         - link:
-          label: Python API Client Information
-          href: https://softlayer-python.readthedocs.io/en/latest/index.html
-      - topicgroup:
-        label: Command reference
-        topics:
-        - link:
-          label: IBM Cloud CLI and Developer Tools
-          href: https://cloud.ibm.com/docs/cli?topic=cli-sl-file-storage
+            label: Service Level Agreements (SLAs)
+            href: https://{Domainlabel}/docs/overview?topic=overview-slas
+        - topicgroup:
+            label: API reference
+            topics:
+            - link:
+                label: Introduction to the SL API
+                href: https://sldn.softlayer.com/article/getting-started/
+            - link:
+                label: Python API Client Information
+                href: https://softlayer-python.readthedocs.io/en/latest/index.html
+        - topicgroup:
+            label: Command reference
+            topics:
+            - link:
+                label: IBM Cloud CLI and Developer Tools
+                href: https://cloud.ibm.com/docs/cli?topic=cli-sl-file-storage
         -  slcli-usage.md
 
     - navgroup:
-      id: help
-      topics:
-      - topicgroup:
-        label: FAQs
+        id: help
         topics:
-        - faqs.md
-        - gethelp.md
-        - feedback.md
-      - topicgroup:
-        label: Troubleshooting
-        topics:
-        - win12-missing-devices.md
+        - topicgroup:
+            label: FAQs
+            topics:
+            - faqs.md
+            - gethelp.md
+            - feedback.md
+        - topicgroup:
+            label: Troubleshooting
+            topics:
+            - win12-missing-devices.md
