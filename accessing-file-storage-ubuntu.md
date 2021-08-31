@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-18"
+lastupdated: "2021-08-31"
 
 keywords: File Storage, NFS, mounting File Storage, mounting storage on Ubuntu,
 
@@ -83,9 +83,14 @@ Options:
    # mount -t nfs -o <options> <host:/mount_point> /mnt
    ```
 
-   Example
+   Example for `storage_as_a_service` volumes.
    ```
-   # mount -t nfs -o nfsvers=3 nfsdal0501a.service.softlayer.com:/IBM01SV278685_7 /mnt
+   #mount -t nfs -o nfsvers=3 fsf-wdc0403a-fz.service.softlayer.com:/IBM02SEV1414935_66/data01 /mnt
+   ```
+
+   Example for `enterprise` volumes.
+   ```
+   # mount -t nfs -o nfsvers=3 nfshou0201d-fz.service.softlayer.com:/IBM01SEV1414935_2 /mnt
    ```
 
    The mount point information can be obtained from the {{site.data.keyword.filestorage_short}} Details page in the UI or through an API call - `SoftLayer_Network_Storage::getNetworkMountAddress()`.
