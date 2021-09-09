@@ -37,8 +37,8 @@ Before you can replicate, you must create a snapshot schedule. The option to **O
 {: #determinereplicationlocUI}
 {: ui}
 
-{{site.data.keyword.cloud}}'s data centers are paired into primary and remote combinations in every region worldwide. When you replicate data, consider the local data residency laws because moving data across borders can have legal implications.
-See Table 1 for the complete list of data center availability and replication targets within each region. Replication across regions is not permitted.
+{{site.data.keyword.cloud}}'s data centers are paired into primary and remote combinations in every region worldwide. When you replicate data, consider the local data residency laws because moving data across borders can have legal implications. Replication across regions is not permitted.
+See Table 1 for the complete list of data center availability and replication targets within each region.
 
 | US 1 | US 2 | Latin America | Canada  | Europe  | Asia-Pacific  | Australia  |
 |-----|-----|-----|-----|-----|-----|-----|
@@ -52,7 +52,9 @@ See Table 1 for the complete list of data center availability and replication ta
 {: #determinereplicationlocCLI}
 {: cli}
 
-{{site.data.keyword.cloud}} data centers are paired into primary and remote combinations in every region worldwide. With the following command, you can list suitable replication data centers for a specific volume.
+{{site.data.keyword.cloud}}'s data centers are paired into primary and remote combinations in every region worldwide. When you replicate data, consider the local data residency laws because moving data across borders can have legal implications. Replication across regions is not permitted.
+
+To list suitable replication datacenters for a specific volume, use the following command.
 
   ```
   # slcli file replica-locations --help
