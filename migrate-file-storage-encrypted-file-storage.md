@@ -45,6 +45,7 @@ When you order a file share, your new storage is available to mount in a few min
 
    When the list is filtered by subnet, the subnets that are displayed are subscribed subnets in the same data center as the storage volume.
    {: note}
+
 4. Select one or more hosts from the list and click **Save**.
 
 When the host is authorized, connect the volume to your host.
@@ -76,7 +77,8 @@ When the host is authorized, connect the volume to your host.
 
    When this command completes without the `--dry-run` flag, your data is copied to the new {{site.data.keyword.filestorage_short}} volume. Run the command again to make sure that nothing was missed. You can also manually review both locations to look for anything that might be missing.
 
-   For more information about `rsync`, see the [`rsync` man page](https://download.samba.org/pub/rsync/rsync.html){: external}.{: note}
+   For more information about `rsync`, see the [`rsync` man page](https://download.samba.org/pub/rsync/rsync.html){: external}.
+   {: note}
 
 4. When your migration is complete, you can move production to the new volume. Then, you can detach and delete your original volume from your configuration. The deletion also removes any snapshot or replica on the target site that was associated with the original volume.
 

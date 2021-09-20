@@ -47,6 +47,7 @@ You can authorize and connect hosts that are located in the same data center as 
 
    When the list is filtered by subnet, the subnets that are displayed are subscribed subnets in the same data center as the storage volume.
    {: note}
+
 6. Select one or more hosts from the list and click **Save**.
 
 ## Authorizing hosts to access {{site.data.keyword.filestorage_short}} from the SLCLI
@@ -200,6 +201,7 @@ If you no longer need a specific volume, you can delete that file share. To canc
 
    If you select the option to cancel the volume on its anniversary date, you can void the cancellation request before its anniversary date.
    {: tip}
+
 5. Click **Continue** or **Close**.
 6. Click the acknowledgment check box, and click **Confirm**.
 

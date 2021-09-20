@@ -79,12 +79,14 @@ Replications work based on a snapshot schedule. You must first have snapshot spa
 
    You can select only one schedule even if you have a mix of hourly, daily, and weekly. All snapshots that were captured since the previous replication cycle, are replicated regardless of the schedule that originated them.<br />For more information, see [Working with Snapshots](/docs/FileStorage?topic=FileStorage-snapshots). Replication starts 5 minutes after the snapshot is taken to ensure the most up-to-date data is copied to the replica volume.
    {: tip}
+
 3. Select a **Location** for the replica volume.
 4. Click **Continue**.
 5. Enter in a **Promo Code** if you have one, and click **Recalculate**. The other fields in the window are completed by default.
 
    Discounts are applied when the order is processed.
    {: note}
+
 6. Review your order, and read the service agreement. If you agree with the terms, check the box.
 7. Click **Place Order**.
 

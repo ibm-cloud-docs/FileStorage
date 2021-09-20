@@ -241,6 +241,7 @@ You might need to take your storage volume back to a specific point-in-time beca
 
    For more information about mounting and unmounting storage, see [connecting your new storage](/docs/FileStorage?topic=FileStorage-mountingLinux).
    {: tip}
+
 2. Go to the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}. From the menu, select **Classic Infrastructure**.
 3. Click **Storage**, **{{site.data.keyword.filestorage_short}}**.
 4. Scroll on the list, and click your volume to be restored. The **Snapshots** page displays the list of all saved snapshots along with their size and creation date.
@@ -248,6 +249,7 @@ You might need to take your storage volume back to a specific point-in-time beca
 
    Completing the restore results in the loss of the data that was created or modified after the snapshot was taken. This data loss occurs because your storage volume returns to the same state it was in of the time of the snapshot.
    {: note}
+
 6. Click **Yes** to start the restore. The restore is going to take a while, and your file share is locked during the restore.
 
    When you return to the file share list, note that a clock icon appeared next to your volume that indicates that an active transaction is in progress. Hovering over the icon produces a window that shows the transaction. The icon disappears when the transaction is complete.

@@ -61,6 +61,7 @@ You can provision {{site.data.keyword.filestorage_short}} and fine-tune to meet 
 
    Discounts are applied when the order is processed.
    {: note}
+
 8. After you reviewed the terms and conditions, check the I** have read and agree to the...** box.
 10. Click **Create**. Your new storage allocation is available in a few minutes.
 
