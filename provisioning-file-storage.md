@@ -17,10 +17,10 @@ subcollection: FileStorage
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:shortdesc: .shortdesc}
-{: uilinked}
 {:ui: .ph data-hd-interface='ui'}
 {:cli: .ph data-hd-interface='cli'}
 {:api: .ph data-hd-interface='api'}
+{: uilinked}
 
 
 # Ordering {{site.data.keyword.filestorage_short}}

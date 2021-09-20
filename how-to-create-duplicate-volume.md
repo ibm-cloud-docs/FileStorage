@@ -67,6 +67,7 @@ You can create a duplicate volume through the [{{site.data.keyword.cloud}} conso
 
    {{site.data.keyword.filestorage_short}} can be resized to 10 times the original size of the volume.
    {: tip}
+   
 7. You can update the snapshot space for the new volume to add more, less, or no snapshot space. The snapshot space of the original volume is set by default.
 8. Check the box to confirm that you read and agreed to the terms, then click **Create** to place your order.
 
