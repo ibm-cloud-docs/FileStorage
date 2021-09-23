@@ -26,12 +26,12 @@ For more information, see [cPanel Docs - Backup](https://docs.cpanel.net/knowled
 {: tip}
 
 1. Connect to the host through SSH.
-2. Ensure that a mount point target exists. <br />
+2. Ensure that a mount point target exists.
 
    By default, the cPanel system saves backup files locally, to the `/backup` directory. In this document, the assumption is that `/backup` folder exists and contains backups, and `/backup2` can be used as the new mount point.
    {: note}
 
-3. Configure your {{site.data.keyword.filestorage_short}} as described in [Accessing {{site.data.keyword.filestorage_short}} on Red Hat Enterprise Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingLinux) or [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/FileStorage?topic=FileStorage-mountingCentOS)/[Mounting NFS/{{site.data.keyword.filestorage_short}}. Mount the volume to `/backup2` and configure it in file system table (`/etc/fstab`) to enable mounting on start. <br />
+3. Configure your {{site.data.keyword.filestorage_short}} as described in [Accessing {{site.data.keyword.filestorage_short}} on Red Hat Enterprise Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingLinux) or [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/FileStorage?topic=FileStorage-mountingCentOS)/[Mounting NFS/{{site.data.keyword.filestorage_short}}. Mount the volume to `/backup2` and configure it in file system table (`/etc/fstab`) to enable mounting on start.
 
    By default, NFS downgrades any files that were created with the root permissions to the nobody user. To allow root clients to retain the root permissions on the NFS share, `no_root_squash` needs to be added to `/etc/exports`.
    {: tip}
@@ -53,5 +53,6 @@ For more information, see [cPanel Docs - Backup](https://docs.cpanel.net/knowled
 
       If a mount exists with the same name as the staging directory, the backup configuration process mounts the drive and backs up the information there. After the backup process finishes, it dismounts the drive.
       {: note}
+
 7. Apply the changes by clicking **Save Configuration**.
 8. **Optional**. As dictated by your particular use case and business needs, remove the old storage from the server and cancel from the account.

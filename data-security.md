@@ -61,6 +61,7 @@ To cancel a storage volume, you need to revoke access from any hosts first. Acti
 
    If you select the option to cancel the volume on its anniversary date, you can void the cancellation request before its anniversary date.
    {: tip}
+
 5. Click **Continue**.
 6. Click the acknowledgment check box, and click **Confirm**.
 
