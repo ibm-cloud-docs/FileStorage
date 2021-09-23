@@ -94,7 +94,7 @@ toc:
             - link:
                 label: IBM Cloud CLI and Developer Tools
                 href: https://cloud.ibm.com/docs/cli?topic=cli-sl-file-storage
-        -  slcli-usage.md
+            -  slcli-usage.md
 
     - navgroup:
         id: help
