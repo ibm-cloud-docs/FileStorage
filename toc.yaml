@@ -105,7 +105,3 @@ toc:
             - faqs.md
             - gethelp.md
             - feedback.md
-        - topicgroup:
-            label: Troubleshooting
-            topics:
-            - win12-missing-devices.md
