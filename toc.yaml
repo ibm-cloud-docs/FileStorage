@@ -65,10 +65,10 @@ toc:
             - disaster-recovery.md
             - how-to-create-duplicate-volume.md
             - dependent-duplicate.md
-      - topicgroup:
-          label: Enhancing Security
-          topics:
-          - data-security.md
+        - topicgroup:
+            label: Enhancing Security
+            topics:
+            - data-security.md
 
     - navgroup:
         id: reference
