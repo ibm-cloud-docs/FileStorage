@@ -73,12 +73,8 @@ toc:
     - navgroup:
         id: reference
         topics:
-        - link:
-            label: Identity and Access Management
-            href: https://cloud.ibm.com/docs/account?topic=account-mngclassicinfra
-        - link:
-            label: Service Level Agreements (SLAs)
-            href: https://cloud.ibm.com/docs/overview?topic=overview-slas
+        - /account/account-mngclassicinfra
+        - /overview/overview-slas
         - topicgroup:
             label: API reference
             topics:
@@ -91,9 +87,7 @@ toc:
         - topicgroup:
             label: Command reference
             topics:
-            - link:
-                label: IBM Cloud CLI and Developer Tools
-                href: https://cloud.ibm.com/docs/cli?topic=cli-sl-file-storage
+            - /cli/cli-sl-file-storage-service
             - slcli-usage.md
 
     - navgroup:
