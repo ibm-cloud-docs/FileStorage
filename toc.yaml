@@ -65,20 +65,24 @@ toc:
             - disaster-recovery.md
             - how-to-create-duplicate-volume.md
             - dependent-duplicate.md
-      - topicgroup:
-          label: Enhancing Security
-          topics:
-          - data-security.md
+        - topicgroup:
+            label: Enhancing Security
+            topics:
+            - data-security.md
 
     - navgroup:
         id: reference
         topics:
-        - link:
+        - topicgroup:
             label: Identity and Access Management
-            href: https://cloud.ibm.com/docs/iam?topic=iam-infrapermission
-        - link:
-            label: Service Level Agreements (SLAs)
-            href: https://{Domainlabel}/docs/overview?topic=overview-slas
+            topics:
+             - /account/account-mngclassicinfra
+        - topicgroup:
+            label: Service Level Agreement
+            topics:
+              - link:
+                  label: Service Level Agreements for IBM Cloud (Public Cloud)
+                  href: https://www.ibm.com/support/customer/csol/terms
         - topicgroup:
             label: API reference
             topics:
@@ -91,10 +95,8 @@ toc:
         - topicgroup:
             label: Command reference
             topics:
-            - link:
-                label: IBM Cloud CLI and Developer Tools
-                href: https://cloud.ibm.com/docs/cli?topic=cli-sl-file-storage
-            -  slcli-usage.md
+            - /cli/cli-sl-file-storage-service
+            - slcli-usage.md
 
     - navgroup:
         id: help
@@ -105,7 +107,3 @@ toc:
             - faqs.md
             - gethelp.md
             - feedback.md
-        - topicgroup:
-            label: Troubleshooting
-            topics:
-            - win12-missing-devices.md
