@@ -37,7 +37,7 @@ For more information, see [cPanel Docs - Backup](https://docs.cpanel.net/knowled
    {: tip}
 
 4. **Optional**. Copy existing backups to the new storage. You can use `rsync` for example.
-   ```
+   ```zsh
    rsync -azv /backup/* /backup2/
    ```
    {: pre}
@@ -49,7 +49,7 @@ For more information, see [cPanel Docs - Backup](https://docs.cpanel.net/knowled
 
 6. Edit the configuration to save the backups in the new mount point.
     - Change the default backup directory by entering the absolute path to the new location in place of the `/backup/` directory.
-    - Select **Enable to mount a backup drive**. This setting causes the configuration process to check the `/etc/fstab` file for a backup mount (`/backup2`). <br />
+    - Select **Enable to mount a backup drive**. This setting causes the configuration process to check the `/etc/fstab` file for a backup mount (`/backup2`).
 
       If a mount exists with the same name as the staging directory, the backup configuration process mounts the drive and backs up the information there. After the backup process finishes, it dismounts the drive.
       {: note}

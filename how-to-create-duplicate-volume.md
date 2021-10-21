@@ -55,21 +55,21 @@ You can create a duplicate volume through the [{{site.data.keyword.cloud}} conso
 1. Go to your list of {{site.data.keyword.filestorage_short}}. From the **Classic Infrastructure** menu, click **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Locate and click the volume name.
 3. Click **Actions** > **Duplicate Share**.
-3. Choose your snapshot option.
+4. Choose your snapshot option.
     - Create a new snapshot for the most recent data.
     - Use the latest snapshot.
-4. Location and IOPS Profile remain the same as the original volume.
-5. You can choose to provision the duplicate volume with hourly or monthly billing method. The billing type for the original volume is automatically selected, and you can change it if you want to.
-5. You can specify a different IOPS or IOPS Tier for the new volume if you want to. The IOPS designation of the original volume is set by default. Available Performance and size combinations are displayed.
+5. Location and IOPS Profile remain the same as the original volume.
+6. You can choose to provision the duplicate volume with hourly or monthly billing method. The billing type for the original volume is automatically selected, and you can change it if you want to.
+7. You can specify a different IOPS or IOPS Tier for the new volume if you want to. The IOPS designation of the original volume is set by default. Available Performance and size combinations are displayed.
     - If your original volume is 0.25 IOPS Endurance tier, you can't make a new selection.
     - If your original volume is 2, 4, or 10 IOPS Endurance tier, you can move anywhere between those tiers for the new volume.
-6. You can update the size of the new volume so that it's larger than the original. The size of the original volume is set by default.
+8. You can update the size of the new volume so that it's larger than the original. The size of the original volume is set by default.
 
    {{site.data.keyword.filestorage_short}} can be resized to 10 times the original size of the volume.
    {: tip}
-   
-7. You can update the snapshot space for the new volume to add more, less, or no snapshot space. The snapshot space of the original volume is set by default.
-8. Check the box to confirm that you read and agreed to the terms, then click **Create** to place your order.
+
+9. You can update the snapshot space for the new volume to add more, less, or no snapshot space. The snapshot space of the original volume is set by default.
+10. Check the box to confirm that you read and agreed to the terms, then click **Create** to place your order.
 
 
 ## Creating a duplicate from the SLCLI
@@ -78,7 +78,7 @@ You can create a duplicate volume through the [{{site.data.keyword.cloud}} conso
 
 You can create a duplicate volume from the SLCLI by using the following command.
 
-```
+```python
 # slcli file volume-duplicate --help
 Usage: slcli file volume-duplicate [OPTIONS] ORIGIN_VOLUME_ID
 
@@ -139,6 +139,6 @@ While data is being copied from the original volume to the duplicate, you can se
 As time passes and the primary volume changes, the duplicate volume can be updated with these changes to reflect the current state through the refresh action. The data on the duplicate volume can be refreshed at any time. The refresh involves taking a snapshot of the primary volume and then, updating the duplicate volume by using that snapshot. A refresh incurs no downtime on the primary volume. However, during the refresh transaction, the duplicate volume is unavailable and must be remounted after the refresh is completed.
 
 Refreshes can be performed by using the SLCLI.
-```
+```python
 slcli file volume-refresh <duplicate-vol-id> <primary-snapshot-id>
 ```

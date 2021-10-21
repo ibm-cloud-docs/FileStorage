@@ -36,7 +36,7 @@ For more information, see [Plesk's documentation for backing up and restoration]
    {: tip}
 
 4. **Optional**. Copy existing backups to the new storage. Use `rsync` for example:
-   ```
+   ```zsh
    rsync -avz /var/lib/psa/dumps /backup/psa/dumps
    ```
    {: pre}

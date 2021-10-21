@@ -28,77 +28,77 @@ For more information about how to install and use the SLCLI, see [Python API Cli
 
 ## Access-related SLCLI commands
 * [Managing {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-managingstorage)  
-  ```
-  slcli file access-authorize
-  slcli file access-list
-  slcli file access-revoke
-  ```
+   ```python
+   slcli file access-authorize
+   slcli file access-list
+   slcli file access-revoke
+   ```
 
 ## Replication-related SLCLI commands
 
 * [Replication-related SLCLI commands](/docs/FileStorage?topic=FileStorage-replication)
-  ```
-  slcli file replica-failback
-  slcli file replica-failover
-  slcli file replica-locations
-  slcli file replica-order
-  slcli file replica-partners
-  ```
+   ```python
+   slcli file replica-failback
+   slcli file replica-failover
+   slcli file replica-locations
+   slcli file replica-order
+   slcli file replica-partners
+   ```
 
 ## Snapshots-related SLCLI commands
 
 * [Ordering Snapshots](/docs/FileStorage?topic=FileStorage-ordering-snapshots)
-  ```
-  slcli file snapshot-order
-  ```
+   ```python
+   slcli file snapshot-order
+   ```
 
 * [Managing Snapshots](/docs/FileStorage?topic=FileStorage-managingSnapshots)
-  ```
-  slcli file snapshot-cancel
-  slcli file snapshot-create
-  slcli file snapshot-delete
-  slcli file snapshot-disable
-  slcli file snapshot-enable
-  slcli file snapshot-list
-  slcli file snapshot-restore
-  ```
+   ```python
+   slcli file snapshot-cancel
+   slcli file snapshot-create
+   slcli file snapshot-delete
+   slcli file snapshot-disable
+   slcli file snapshot-enable
+   slcli file snapshot-list
+   slcli file snapshot-restore
+   ```
 
 ## Volume-related SLCLI commands
 
 * [Ordering a {{site.data.keyword.filestorage_short}} volume](/docs/FileStorage?topic=FileStorage-orderingFileStorage#orderingthroughCLI)
-  ```
-  slcli file volume-order
-  ```
+   ```python
+   slcli file volume-order
+   ```
 * [Creating an independent duplicate volume](/docs/FileStorage?topic=FileStorage-duplicatevolume)
-  ```
-  slcli file volume-duplicate
-  ```
+   ```python
+   slcli file volume-duplicate
+   ```
 * [Creating and managing a dependent duplicate volume](/docs/FileStorage?topic=FileStorage-dependentduplicate)
-  ```
-  slcli file  volume-duplicate --dependent-duplicate TRUE <independent-vol-id>|
-  slcli file  volume-refresh <dependent-vol-id> <independent-snapshot-id>
-  slcli file  volume-convert <dependent-vol-id>
-  ```
+   ```python
+   slcli file  volume-duplicate --dependent-duplicate TRUE <independent-vol-id>|
+   slcli file  volume-refresh <dependent-vol-id> <independent-snapshot-id>
+   slcli file  volume-convert <dependent-vol-id>
+   ```
 
 * [Adjusting the IOPS](/docs/FileStorage?topic=FileStorage-adjustingIOPS)
-  ```
-  slcli file volume-modify
-  ```
+   ```python
+   slcli file volume-modify
+   ```
 * [Expanding the capacity](/docs/FileStorage?topic=FileStorage-expandCapacity)
-  ```
-  slcli file volume-modify
-  ```
+   ```python
+   slcli file volume-modify
+   ```
 * [Managing {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-managingstorage)
-  ```
-  slcli file volume-cancel
-  slcli file volume-count
-  slcli file volume-detail
-  slcli file volume-duplicate
-  slcli file volume-list
-  slcli file volume-order
-  ```
+   ```python
+   slcli file volume-cancel
+   slcli file volume-count
+   slcli file volume-detail
+   slcli file volume-duplicate
+   slcli file volume-list
+   slcli file volume-order
+   ```
 * [Managing storage limits](/docs/FileStorage?topic=FileStorage-managinglimits)
-  ```
-  slcli file volume-limit
-  slcli file volume-count
-  ```
+   ```python
+   slcli file volume-limit
+   slcli file volume-count
+   ```

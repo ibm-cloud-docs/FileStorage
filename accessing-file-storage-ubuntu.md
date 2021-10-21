@@ -57,7 +57,7 @@ You can authorize a host to access the {{site.data.keyword.filestorage_short}} v
 
 You can authorize a host to access the {{site.data.keyword.filestorage_short}} volume by using the `file access-authorize` command.
 
-```
+```python
 # slcli file access-authorize --help
 Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
 
@@ -74,23 +74,23 @@ Options:
 {: #mountUbuntu}
 
 1. Install the required tools.
-   ```
+   ```zsh
    # apt-get install nfs-common
    ```
    {: pre}
 
 2. Mount the remote share.
-   ```
+   ```zsh
    # mount -t nfs -o <options> <host:/mount_point> /mnt
    ```
 
    Example for `storage_as_a_service` volumes.
-   ```
+   ```text
    #mount -t nfs -o nfsvers=3 fsf-wdc0403a-fz.service.softlayer.com:/IBM02SEV1414935_66/data01 /mnt
    ```
 
    Example for `enterprise` volumes.
-   ```
+   ```text
    # mount -t nfs -o nfsvers=3 nfshou0201d-fz.service.softlayer.com:/IBM01SEV1414935_2 /mnt
    ```
 
@@ -99,7 +99,7 @@ Options:
 
 
 3. Verify that the mount was successful by using the disk filesystem command.
-   ```
+   ```text
    # df -h
    Filesystem Size Used Avail Use% Mounted on
    /dev/xvda2  25G  1.4G  22G    6%   /
@@ -108,7 +108,7 @@ Options:
    ```
 
 4. Go to the mount point, and read/write files.
-   ```
+   ```text
    # touch /mnt/test
    # ls -la /mnt
    total 12
@@ -119,24 +119,24 @@ Options:
 
 5. Make the configuration persistent by editing the file systems table (`/etc/fstab`). Add the remote share to the list of entries that are automatically mounted on startup:
 
-   ```
+   ```zsh
    sudo nano /etc/fstab
    ```
    Add a line with the following syntax to the end of file.
 
-   ```
+   ```zsh
    (hostname):/(mount_point) /mnt nfs_version defaults 0 0
    ```
 
    Example
 
-   ```
+   ```text
    nfsdal0501a.service.softlayer.com:/IBM01SV278685_7 /mnt nfsvers=3 defaults 0 0
    ```
 
 6. Verify that the configuration file has no errors.
 
-   ```
+   ```zsh
    # mount -fav
    ```
    {: pre}
@@ -152,12 +152,12 @@ Options:
 
 To unmount any currently mounted file system on your host, run the `umount` command with disk name or mount point name.
 
-```
+```zsh
 umount /dev/sdb
 ```
 {: pre}
 
-```
+```zsh
 umount /mnt
 ```
 {: pre}

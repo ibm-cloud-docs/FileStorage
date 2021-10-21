@@ -33,7 +33,7 @@ The commands that are described in the article are part of the SLCLI. For more i
 {: #orderdependentvol}
 
 Dependent duplicate volumes can be ordered through the SLCLI.
-```
+```python
 slcli file volume-duplicate --dependent-duplicate TRUE <independent-vol-id>
 ```
 
@@ -43,15 +43,16 @@ slcli file volume-duplicate --dependent-duplicate TRUE <independent-vol-id>
 As time passes and the primary volume changes, the dependent volume can be updated with these changes to reflect the current state through the refresh action. The data on the dependent volume can be refreshed at any time. The refresh involves taking a snapshot of the primary volume and then, updating the dependent volume by using that snapshot. A refresh incurs no downtime on the primary volume. However, during the refresh transaction, the dependent volume is unavailable and must be remounted after the refresh is completed.
 
 Refreshes can be performed by using the SLCLI.
-```
+```python
 slcli file volume-refresh <dependent-vol-id> <primary-snapshot-id>
 ```
+
 ## Converting a dependent volume to a normal, independent volume
 {: #convertdependentvol}
 
 If you want to use the dependent volume as a stand-alone volume in the future, you can convert it to a normal, independent {{site.data.keyword.filestorage_full}} volume through the SLCLI.
 
-```
+```python
 slcli file volume-convert <dependent-vol-id>
 ```
 

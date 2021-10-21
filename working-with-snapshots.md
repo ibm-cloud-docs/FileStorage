@@ -62,7 +62,7 @@ Before you can set up your initial schedule, you must first purchase snapshot sp
 
 To set up a snapshot schedule, use the following command
 
-```
+```python
 # slcli file snapshot-enable --help
 Usage: slcli file snapshot-enable [OPTIONS] VOLUME_ID
 
@@ -80,7 +80,7 @@ Options:
 ```
 
 You can see the list of your snapshot schedules from the SLCLI with the following command.
-```
+```python
 # slcli file snapshot-schedule-list --help
 Usage: slcli file snapshot-schedule-list [OPTIONS] VOLUME_ID
 
@@ -108,7 +108,7 @@ The snapshot is taken and displayed in the **Snapshots** section of the **Detail
 {: cli}
 
 You can use the following command to create a snapshot from the SLCLI.
-```
+```python
 # slcli file snapshot-create --help
 Usage: slcli file snapshot-create [OPTIONS] VOLUME_ID
 
@@ -134,7 +134,7 @@ Notifications are sent through the support tickets to the Master User on your ac
 {: cli}
 
 You can accomplish this task from the SLCLI by using the following command.
-```
+```python
 # slcli file snapshot-list --help
 Usage: slcli file snapshot-list [OPTIONS] VOLUME_ID
 
@@ -176,7 +176,7 @@ Snapshot schedules can be deleted through **Storage** > **{{site.data.keyword.fi
 1. Click on the volume ID to display its related information.
 2. Click Snapshots.
 3. Click the schedule to be deleted in the **Snapshot Schedules** frame.
-3. Click the check box next to the schedule to be deleted and click **Save**.<br />
+4. Click the check box next to the schedule to be deleted and click **Save**.
 
 If you're using the replication feature, be sure that the schedule that you're deleting isn't the schedule that is used by replication. For more information about deleting a replication schedule, see [here](/docs/FileStorage?topic=FileStorage-replication).
 {: important}
@@ -186,7 +186,7 @@ If you're using the replication feature, be sure that the schedule that you're d
 {: cli}
 
 You can accomplish this task by using the following command.
-```
+```python
 # slcli file snapshot-disable --help
 Usage: slcli file snapshot-disable [OPTIONS] VOLUME_ID
 
@@ -220,7 +220,7 @@ Manual snapshots that aren't deleted in the portal manually, are automatically d
 
 Snapshots that are no longer needed can be manually removed to free up space for future snapshots. You can delete a snapshot from the SLCLI by using the following command.
 
-```
+```python
 # slcli file snapshot-delete --help
 Usage: slcli file snapshot-delete [OPTIONS] SNAPSHOT_ID
 
@@ -256,10 +256,10 @@ You might need to take your storage volume back to a specific point-in-time beca
    {: note}
 
 7. Mount and reattach your storage volume to the host.
-  - For more information about mounting and unmounting storage, see [connecting your new storage](/docs/FileStorage?topic=FileStorage-mountingLinux).
+   - For more information about mounting and unmounting storage, see [connecting your new storage](/docs/FileStorage?topic=FileStorage-mountingLinux).
 
-  Restoring a volume results in deleting all snapshots that were taken after the snapshot that was used for the restore.
-  {: important}
+   Restoring a volume results in deleting all snapshots that were taken after the snapshot that was used for the restore.
+   {: important}
 
 ## Restoring storage volume to a specific point-in-time by using a snapshot from the SLCLI
 {: #restorefromsnapshotCLI}
@@ -271,7 +271,7 @@ For more information about mounting and unmounting storage, see [connecting your
 {: tip}
 
 Then, you can restore the volume with a snapshot from the SLCLI by using the following command.
-```
+```python
 # slcli file snapshot-restore --help
 Usage: slcli file snapshot-restore [OPTIONS] VOLUME_ID
 
