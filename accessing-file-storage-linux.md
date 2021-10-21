@@ -57,7 +57,7 @@ You can authorize a host to access the {{site.data.keyword.filestorage_short}} v
 
 You can authorize a host to access the {{site.data.keyword.filestorage_short}} volume by using the `file access-authorize` command.
 
-```
+```python
 # slcli file access-authorize --help
 Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
 
@@ -78,23 +78,23 @@ The example is based on RHEL 7. The steps can be adjusted for other Linux&reg; d
 {: tip}
 
 1. Install the required tools.
-   ```
+   ```zsh
    # yum install nfs-utils
    ```
    {: pre}
 
 2. Mount the remote share.
-   ```
+   ```zsh
    # mount -t nfs -o <options> <host:mount_point> /mnt
    ```
 
    Example for `storage_as_a_service` volumes.
-   ```
+   ```text
    #mount -t nfs -o nfsvers=3 fsf-wdc0403a-fz.service.softlayer.com:/IBM02SEV1414935_66/data01 /mnt
    ```
 
    Example for `enterprise` volumes.
-   ```
+   ```text
    # mount -t nfs -o nfsvers=3 nfshou0201d-fz.service.softlayer.com:/IBM01SEV1414935_2 /mnt
    ```
 
@@ -103,7 +103,7 @@ The example is based on RHEL 7. The steps can be adjusted for other Linux&reg; d
 
 
 3. Verify that the mount was successful by using the disk file system command.
-   ```
+   ```text
    # df -h
    Filesystem Size Used Avail Use% Mounted on
    /dev/xvda2  25G  1.4G  22G    6%   /
@@ -112,7 +112,7 @@ The example is based on RHEL 7. The steps can be adjusted for other Linux&reg; d
    ```
 
 4. Go to the mount point, and read/write files.
-   ```
+   ```text
    # touch /mnt/test
    # ls -la /mnt
    total 12
@@ -126,13 +126,13 @@ The example is based on RHEL 7. The steps can be adjusted for other Linux&reg; d
 
 5. Mount the remote share on start. To complete the setup, edit the file systems table (`/etc/fstab`) to add the remote share to the list of entries that are automatically mounted on startup:
 
-   ```
+   ```text
    (hostname):/(username) /mnt nfs_version options 0 0
    ```
 
    Examples:
 
-   ```
+   ```text
    fsf-wdc0403a-fz.service.softlayer.com:/IBM02SEV1414935_66/data01 /mnt nfs nfsvers=3 0 0
    fsf-wdc0403a-fz.service.softlayer.com:/IBM02SEV1414935_66/data01 /mnt nfs options 0 0
    fsf-wdc0403a-fz.service.softlayer.com:/IBM02SEV1414935_66/data01 /mnt nfs4 options 0 0
@@ -140,7 +140,7 @@ The example is based on RHEL 7. The steps can be adjusted for other Linux&reg; d
 
 6. Verify that the configuration file has no errors.
 
-   ```
+   ```zsh
    # mount -fav
    ```
    {: pre}
@@ -166,7 +166,7 @@ Example
 
 1. From the host, set domain setting in `/etc/idmapd.conf`.
 
-   ```
+   ```text
    #vi /etc/idmapd.conf
    [General]
    #Verbosity = 0
@@ -180,7 +180,7 @@ Example
 
 2. Run `nfsidmap -c`.
 3. Start `rpcidmapd`.
-   ```
+   ```zsh
    systemctl start rpcidmapd
    systemctl enable rpcidmapd
    ```
@@ -190,12 +190,12 @@ Example
 
 To unmount any currently mounted file system on your host, run the `umount` command with disk name or mount point name.
 
-```
+```zsh
 umount /dev/sdb
 ```
 {: pre}
 
-```
+```zsh
 umount /mnt
 ```
 {: pre}

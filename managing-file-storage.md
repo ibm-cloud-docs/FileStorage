@@ -57,7 +57,7 @@ You can authorize and connect hosts that are located in the same data center as 
 {: cli}
 
 To authorize a host to access the volume, you can use the following command.
-```
+```python
 # slcli file access-authorize --help
 Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
 
@@ -89,7 +89,7 @@ There you can see the list of hosts, which are currently authorized to access th
 {: cli}
 
 To display the lost of authorized hosts, you can use the following command.
-```
+```python
 # slcli file access-list --help
 Usage: slcli file access-list [OPTIONS] VOLUME_ID
 
@@ -138,10 +138,10 @@ You can revoke access from either Storage from the Device List or the Storage vi
 1. Go to the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}.
 2. From the menu, select **Classic Infrastructure**.
 3. Click **Devices** > **Device List**.
-2. Double-click the appropriate device.
-3. Select the **Storage** tab.
-4. You are presented with a list of storage volumes that this particular host has access to, all grouped by storage type (block, file, other). Select the respective **Action** menu next to the volume that you want to revoke access from, and click **Revoke Access**.
-5. Confirm if you want to revoke the access for a volume because the action can't be undone. Click **Yes** to revoke volume access, or **No** to cancel the action.
+4. Double-click the appropriate device.
+5. Select the **Storage** tab.
+6. You are presented with a list of storage volumes that this particular host has access to, all grouped by storage type (block, file, other). Select the respective **Action** menu next to the volume that you want to revoke access from, and click **Revoke Access**.
+7. Confirm if you want to revoke the access for a volume because the action can't be undone. Click **Yes** to revoke volume access, or **No** to cancel the action.
 
 If you want to disconnect multiple volumes from a specific host, you need to repeat the Revoke Access action for each volume.
 {: tip}
@@ -170,7 +170,7 @@ If you want to disconnect multiple hosts from a specific volume, you need to rep
 {: cli}
 
 You can use the following command in SLCLI.
-```
+```python
 # slcli file access-revoke --help
 Usage: slcli file access-revoke [OPTIONS] VOLUME_ID
 
@@ -218,7 +218,7 @@ Active replicas and dependent duplicates can block reclamation of the Storage vo
 {: cli}
 
 To delete a storage volume, you can use the following command.
-```
+```python
 # slcli file volume-cancel --help
 Usage: slcli file volume-cancel [OPTIONS] VOLUME_ID
 

@@ -62,13 +62,13 @@ When the host is authorized, connect the volume to your host.
     {: tip}
 
 2. Consider what type of data you have on your original {{site.data.keyword.filestorage_short}} volume and how best to copy it to your new file share.
-  - If you have backups, static content, and things that aren't expected to change during the copy, you don't have to worry.
-  - If you're running a database or a virtual machine on your {{site.data.keyword.filestorage_short}}, make sure that the data isn't altered during the copy to avoid data corruption.
-  - If you have any bandwidth concerns, do the migration during off peak times.
-  - If you need assistance with these considerations, open a support ticket.
+   - If you have backups, static content, and things that aren't expected to change during the copy, you don't have to worry.
+   - If you're running a database or a virtual machine on your {{site.data.keyword.filestorage_short}}, make sure that the data isn't altered during the copy to avoid data corruption.
+   - If you have any bandwidth concerns, do the migration during off peak times.
+   - If you need assistance with these considerations, open a support ticket.
 
 3. Copy your data across. For example, you can use `rsync` to copy over the data.
-   ```
+   ```zsh
    [root@server ~]# rsync -Pavzu /path/to/original/file/storage/* /path/to/encrypted/file/storage
    ```
 

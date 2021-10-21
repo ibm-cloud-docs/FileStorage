@@ -48,7 +48,7 @@ This action breaks the replication relationship and cannot be undone without man
 {: cli}
 
 Use the following command to fail a file volume over to a specific replicant volume.
-```
+```python
 # slcli file disaster-recovery-failover --help
 sage: slcli file disaster-recovery-failover [OPTIONS] VOLUME_ID
 
@@ -66,36 +66,36 @@ Options:
 
 * URL - `https://USERNAME:APIKEY@api.softlayer.com/rest/v3/SoftLayer_Network_Storage/primaryvolumeId/disasterRecoveryFailoverToReplicant`
 * Request body
-  ```
+ ```python
   {
     "parameters": [replicavolumeid]
   }
-  ```
+ ```
 
 ### SOAP API
 {: #drsoapapi}
 
 * URL - `https://api.softlayer.com/soap/v3/SoftLayer_Network_Storage`
 * Request body
-  ```
-  <?xml version="1.0" encoding="UTF-8"?>
-  <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://api.service.softlayer.com/soap/v3.1/">
-   <SOAP-ENV:Header>
-    <ns1:authenticate>
+  ```python
+   <?xml version="1.0" encoding="UTF-8"?>
+   <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://api.service.softlayer.com/soap/v3.1/">
+    <SOAP-ENV:Header>
+     <ns1:authenticate>
      <username>USERNAME</username>
      <apiKey>APIKEY</apiKey>
     </ns1:authenticate>
     <ns2:SoftLayer_Network_StorageInitParameters>
      <id>primary Volume Id</id>
     </ns2:SoftLayer_Network_StorageInitParameters>
-   </SOAP-ENV:Header>
-   <SOAP-ENV:Body>
-    <ns1:disasterRecoveryFailoverToReplicant>
+    </SOAP-ENV:Header>
+    <SOAP-ENV:Body>
+     <ns1:disasterRecoveryFailoverToReplicant>
       <replicantId xsi:type="int">replica Volume ID</replicantId>
-    </ns1:disasterRecoveryFailoverToReplicant>
-   </SOAP-ENV:Body>
-  </SOAP-ENV:Envelope>
-  ```
+     </ns1:disasterRecoveryFailoverToReplicant>
+    </SOAP-ENV:Body>
+   </SOAP-ENV:Envelope>
+   ```
 
 ## Fail back to the original primary site
 {: #DRFailback}

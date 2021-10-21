@@ -49,8 +49,8 @@ When you order {{site.data.keyword.filestorage_short}}, consider the following i
 
 - When you decide on the size, consider the size of the workload and throughput needed. Size matters with the Endurance service, which scales performance linearly in relation to capacity (IOPS/GB). Conversely, the Performance service allows the administrator to choose capacity and performance independently. Throughput requirements matter with Performance.
 
-  The throughput calculation is IOPS x 16 KB. IOPS is measured based on a 16-KB block size with a 50/50 read/write mix.<br/>Increasing block size increases the throughput but decreases IOPS. For example, doubling the block size to 32-KB blocks maintains the maximum throughput but halves the IOPS.
-  {: note}
+   The throughput calculation is IOPS x 16 KB. IOPS is measured based on a 16-KB block size with a 50/50 read/write mix. Increasing block size increases the throughput but decreases IOPS. For example, doubling the block size to 32-KB blocks maintains the maximum throughput but halves the IOPS.
+   {: note}
 
 - NFS uses many extra file control operations such as `lookup`, `getattr`, and `readdir`. These operations in addition to read/write operations can count as IOPS and vary by operation type and NFS version.
 - {{site.data.keyword.filestorage_short}} volumes are exposed to authorized devices, subnets, or IP addresses.
@@ -135,7 +135,7 @@ Storage is provisioned in less than a minute and becomes visible on the **{{site
 1. In the console, go to **Classic Infrastructure**  > **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Scroll to the File share you want to mount, and click the ellipsis (**...**) for Actions. Then, select **Authorize Host**.
 3. Click **Subnets**.
-4. Choose from the list of available subnets that are assigned to the VMkernel ports on the ESXi hosts, and click **Save**.<br/>
+4. Choose from the list of available subnets that are assigned to the VMkernel ports on the ESXi hosts, and click **Save**.
 
    The subnets that are displayed are subscribed subnets in the same data center as the storage volume.
    {: note}
@@ -152,7 +152,7 @@ Follow the instructions the [Advanced Single-Site VMware&reg; Reference Architec
 
 Storage is provisioned in less than a minute. Next, the {{site.data.keyword.BluBareMetServers_full}} or {{site.data.keyword.BluVirtServers_full}} that are going to use the volume must be authorized to access the storage. Use the following command to authorize the host.
 
-```
+```python
 # slcli file access-authorize --help
 Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
 
@@ -185,20 +185,20 @@ Before you begin the configuration process, make sure that the following prerequ
 2. From the {{site.data.keyword.BluVirtServers_short}}, start a web browser and connect to VMware&reg; vCenter through the vSphere Web Client.
 3. From the **HOME** screen, select **Hosts and Clusters**. Expand the pane on the left and select the **VMware&reg; ESXi server** that is to be used for this deployment.
 4. Make sure that the firewall port for the NFS client is open on all hosts so that you can configure the NFS client on the vSphere host. (The port is automatically opened in the more recent releases of vSphere.) To check whether the port is open, go to the **ESXi host Manage** tab in VMware® vCenter™, select **Settings**, and then select **Security Profile**. In the **Firewall** section, click **Edit** and scroll down to **NFS Client**.
-5. Make sure **Allow connection from any IP address or a list of IP addresses** is provided. <br/>
+5. Make sure **Allow connection from any IP address or a list of IP addresses** is provided.
    ![Allow Connection.](/images/1_4.png)
 6. Configure Jumbo Frames by going to the **ESXi host Manage** tab, select **Manage** and then **Networking**.
 7. Select **VMkernel adapters**, highlight the **vSwitch** and the click **Edit** (Pencil icon).
 8. Select **NIC setting**, and ensure that the NIC MTU is set to 9000.
 9. **Optional**. Validate the jumbo frame settings.
    - Windows
-     ```
+     ```shell
      ping -f -l 8972 a.b.c.d
      ```
      {: pre}
 
    - UNIX
-     ```
+     ```zsh
      ping -s 8972 a.b.c.d
      ```
      {: pre}
@@ -206,7 +206,7 @@ Before you begin the configuration process, make sure that the following prerequ
      The value a.b.c.d is the neighboring {{site.data.keyword.BluVirtServers_short}} interface.
 
      Example
-     ```
+     ```text
      ping a.b.c.d (a.b.c.d) 8972(9000) bytes of data.
      8980 bytes from a.b.c.d: icmp_seq=1 ttl=128 time=3.36 ms
      ```
@@ -224,7 +224,7 @@ For more information about VMware&reg; and Jumbo Frames, see [here](https://kb.v
 4. Select connection type as **Physical Network Adapter** and click **Next**.
 5. Select the existing **vSwitch** and click **Next**.
 6. Select **Unused adapters** and click **Add adapters** (Plus sign).
-7. Click the other "Connected" adapter and click **OK**. <br/>
+7. Click the other "Connected" adapter and click **OK**.
    ![Add physical adapters to switch.](/images/2_3.png)
 8. Click **Next** and the **Finish**.
 9. Go back to the **Virtual switches** tab and select the **Edit setting** (Pencil icon) under the **Virtual Switches** heading.
@@ -238,7 +238,7 @@ For more information about VMware&reg; and Jumbo Frames, see [here](https://kb.v
 The network configuration for this architecture guide uses a minimal number of port groups. If you have a VMkernel port group for NFS storage, extra steps must be taken. By default, ESXi uses the VMkernel port that is on the same subnet as an NFS volume to mount the NFS volume. Since layer 3 routing is used to mount the NFS volume, ESXi must be forced to use the VMkernel port that was configured to mount the NFS volume. To use the correct port, a static route must be created to the storage array.
 
 1. To configure a static route, SSH to each ESXi host that uses Performance or Endurance storage and run the following commands. Take note of the IP address that is the result of the `ping` command (first command) and use it with the `esxcli` network command.
-   ```
+   ```zsh
    ping <host name of the storage array>
    ```
    {: pre}
@@ -246,14 +246,14 @@ The network configuration for this architecture guide uses a minimal number of p
    The NFS storage DNS host name is a Forwarding Zone (FZ) that is assigned multiple IP addresses. These IP addresses are static and belong to that specific DNS host name. Any of those IP addresses can be used to access a specific volume.
    {: note}
 
-   ```
+   ```zsh
    esxcli network ip route ipv4 add –gateway GATEWAYIP –network <result of ping command>/32
    ```
    {: pre}
 
 2. Static routes are not persistent across restarts on ESXi 5.0 and earlier. To ensure that any added static routes remain persistent, this command needs to be added to the `local.sh` file on each host, which is located in the `/etc/rc.local.d/` directory. Open the `local.sh` file by using the visual editor, and add the second command in Step 4.1. in front of the `exit 0` line.
 
-Make note of the IP address as it can be used for mounting the volume in the next step.<br/>This process needs to be done for each NFS volume you plan to mount to your ESXi host.<br/>For more information, see the VMware&reg; KB article, [Configuring static routes for VMkernel ports on an ESXi host](https://kb.vmware.com/s/article/2001426){: external}.
+Make note of the IP address as it can be used for mounting the volume in the next step. This process needs to be done for each NFS volume you plan to mount to your ESXi host. For more information, see the VMware&reg; KB article, [Configuring static routes for VMkernel ports on an ESXi host](https://kb.vmware.com/s/article/2001426){: external}.
 {: tip}
 
 
@@ -279,13 +279,13 @@ It is {{site.data.keyword.cloud}}’s recommendation that FQDN names be used to 
 {: important}
 
 To use the IP address instead of the FQDN, simply ping the server to obtain the IP address.
-```
+```zsh
 ping <host name of the storage array>
 ```
 {: pre}
 
 To obtain the IP address from an ESXi host, use the following command. The resulting 10.2.125.80 is the IP with the FQDN.
-```
+```text
 ~ # vmkping nfsdal0902a-fz.service.softlayer.com
 PING nfsdal0902a-fz.service.softlayer.com (10.2.125.80): 56 data bytes
 64 bytes from 10.2.125.80: icmp_seq=0 ttl=253 time=0.187 ms
@@ -312,8 +312,8 @@ Incorrectly configuring SIOC for a VMware&reg; datastore or for a VMDK can signi
 2. Click the **Manage** tab.
 3. Click **Settings** and click **General**.
 4. Click **Edit** for **Datastore Capabilities**.
-5. Select the **Enable Storage I/O Control** check box.<br/>
-   ![NSF VMware&reg; datastore.](/images/3_0.png)
+5. Select the **Enable Storage I/O Control** check box.
+    ![NSF VMware&reg; datastore.](/images/3_0.png)
 6. Click **OK**.
 
 This setting is specific to the VMware&reg; datastore and not to the host.
@@ -347,7 +347,7 @@ Other settings are required for configuring ESXi hosts for NFS storage. This tab
 |Parameter | Set to ... |
 |----------|------------|
 |Net.TcpipHeapSize | 32 for vSphere 5.0 and later versions |
-|Net.TcpipHeapMax |	 1536 for vSphere 6.0 and later versions,<br/>512 for vSphere 5.5,<br/>128 for vSphere 5.0 and 5.1 |
+|Net.TcpipHeapMax |	- 1536 for vSphere 6.0 and later versions, \n -  512 for vSphere 5.5, \n - 128 for vSphere 5.0 and 5.1 |
 |NFS.MaxVolumes |	256 for vSphere 5.0 and later versions |
 |NFS41.MaxVolumes |	256 for vSphere 6.0 and later versions |
 |NFS.HeartbeatMaxFailures |	10 for all NFS configurations |
@@ -360,35 +360,36 @@ Other settings are required for configuring ESXi hosts for NFS storage. This tab
 
 The following examples use the ESXi CLI to set the advanced configuration parameters, and then, check them. The `esxcfg-advcfg` tool that is used in the examples can be found in the `/usr/sbin` directory on the ESXi hosts.
 
-   - Setting the advanced configuration parameters from the ESXi CLI.
+- Setting the advanced configuration parameters from the ESXi CLI.
 
-     ```
-     #esxcfg-advcfg -s 32 /Net/TcpipHeapSize
-     #esxcfg-advcfg -s 128 /Net/TcpipHeapMax(For vSphere 5.0/5.1)
-     #esxcfg-advcfg -s 512 /Net/TcpipHeapMax(For vSphere 5.5 and higher)
-     #esxcfg-advcfg -s 256 /NFS/MaxVolumes
-     #esxcfg-advcfg -s 256 /NFS41/MaxVolumes (ESXi 6.0 and higher)
-     #esxcfg-advcfg -s 10 /NFS/HeartbeatMaxFailures
-     #esxcfg-advcfg -s 12 /NFS/HeartbeatFrequency
-     #esxcfg-advcfg -s 5 /NFS/HeartbeatTimeout   
-     #esxcfg-advcfg -s 64 /NFS/MaxQueueDepth
-     #esxcfg-advcfg -s 32 /Disk/QFullSampleSize
-     #esxcfg-advcfg -s 8 /Disk/QFullThreshold
-     ```
+ ```text
+ #esxcfg-advcfg -s 32 /Net/TcpipHeapSize
+ #esxcfg-advcfg -s 128 /Net/TcpipHeapMax(For vSphere 5.0/5.1)
+ #esxcfg-advcfg -s 512 /Net/TcpipHeapMax(For vSphere 5.5 and higher)
+ #esxcfg-advcfg -s 256 /NFS/MaxVolumes
+ #esxcfg-advcfg -s 256 /NFS41/MaxVolumes (ESXi 6.0 and higher)
+ #esxcfg-advcfg -s 10 /NFS/HeartbeatMaxFailures
+ #esxcfg-advcfg -s 12 /NFS/HeartbeatFrequency
+ #esxcfg-advcfg -s 5 /NFS/HeartbeatTimeout   
+ #esxcfg-advcfg -s 64 /NFS/MaxQueueDepth
+ #esxcfg-advcfg -s 32 /Disk/QFullSampleSize
+ #esxcfg-advcfg -s 8 /Disk/QFullThreshold
+ ```
 
-  - Checking the advanced configuration parameters from the ESXi CLI.
+- Checking the advanced configuration parameters from the ESXi CLI.
 
-    ```
-    #esxcfg-advcfg -g /Net/TcpipHeapSize
-    #esxcfg-advcfg -g /Net/TcpipHeapMax
-    #esxcfg-advcfg -g /NFS/MaxVolumes
-    #esxcfg-advcfg -g /NFS41/MaxVolumes (ESXi 6.0 and higher)
-    #esxcfg-advcfg -g /NFS/HeartbeatMaxFailures
-    #esxcfg-advcfg -g /NFS/HeartbeatFrequency
-    #esxcfg-advcfg -g /NFS/HeartbeatTimeout
-    #esxcfg-advcfg -g /NFS/MaxQueueDepth
-    #esxcfg-advcfg -g /Disk/QFullSampleSize
-    #esxcfg-advcfg -g /Disk/QFullThreshold
-    ```
+ ```text
+ #esxcfg-advcfg -g /Net/TcpipHeapSize
+ #esxcfg-advcfg -g /Net/TcpipHeapMax
+ #esxcfg-advcfg -g /NFS/MaxVolumes
+ #esxcfg-advcfg -g /NFS41/MaxVolumes (ESXi 6.0 and higher)
+ #esxcfg-advcfg -g /NFS/HeartbeatMaxFailures
+ #esxcfg-advcfg -g /NFS/HeartbeatFrequency
+ #esxcfg-advcfg -g /NFS/HeartbeatTimeout
+ #esxcfg-advcfg -g /NFS/MaxQueueDepth
+ #esxcfg-advcfg -g /Disk/QFullSampleSize
+ #esxcfg-advcfg -g /Disk/QFullThreshold
+ ```
+ 
 Learn more about Advanced Single-Site VMware&reg; Reference Architecture [here](/docs/virtualization?topic=virtualization-advanced-single-site-vmware-reference-architecture){: external}.
 {: tip}

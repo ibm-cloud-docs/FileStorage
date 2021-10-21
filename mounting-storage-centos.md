@@ -54,7 +54,7 @@ You can authorize a host to access the {{site.data.keyword.filestorage_short}} v
 
 You can authorize a host to access the {{site.data.keyword.filestorage_short}} volume by using the `file access-authorize` command.
 
-```
+```python
 # slcli file access-authorize --help
 Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
 
@@ -75,7 +75,7 @@ Most of the steps that you need to perform to mount your {{site.data.keyword.fil
  The NFS mount point information can be obtained from the {{site.data.keyword.filestorage_short}} Details page in the UI or through an API call -`SoftLayer_Network_Storage::getNetworkMountAddress()`.
 {: tip}
 
-```
+```text
 $ cat data-www.mount
 [Unit]
 Description = Mount for Container Storage
@@ -93,7 +93,7 @@ WantedBy = multi-user.target
 
 Next, enable the mount and check that it is mounted properly.
 
-```
+```zsh
 systemctl enable --now /etc/systemd/system/data-www.mount
 
 cluster1 ~ # mount |grep data

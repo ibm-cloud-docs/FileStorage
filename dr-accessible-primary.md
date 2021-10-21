@@ -53,7 +53,7 @@ You can authorize a host to access the {{site.data.keyword.filestorage_full}} vo
 {: cli}
 
 To authorize the hosts in the replica datacenter, use the following command.
-```
+```python
 # slcli file access-authorize --help
 Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
 
@@ -89,8 +89,8 @@ Before you proceed with these steps, disconnect the volume. Failure to do so, re
 1. Click your active volume (“source”).
 2. In the upper right, click **Actions**.
 3. Select **Controlled Failover** or **Immediate Failover**.
-
-   Expect a message that states that the failover is in progress. Additionally, an icon appears next to your volume on the **{{site.data.keyword.filestorage_short}}** that indicates that an active transaction is occurring. Hovering over the icon produces a window that shows the transaction. The icon disappears when the transaction is complete. During the failover process, configuration-related actions are read-only. You can't edit any snapshot schedule or change snapshot space. The event is logged in replication history.<br/> When your target volume is live, you get another message. Your original source volume's Status becomes Inactive.
+  
+   Expect a message that states that the failover is in progress. Additionally, an icon appears next to your volume on the **{{site.data.keyword.filestorage_short}}** that indicates that an active transaction is occurring. Hovering over the icon produces a window that shows the transaction. The icon disappears when the transaction is complete. During the failover process, configuration-related actions are read-only. You can't edit any snapshot schedule or change snapshot space. The event is logged in replication history. When your target volume is live, you get another message. Your original source volume's Status becomes Inactive.
    {: note}
 
 4. Click **View All ({{site.data.keyword.filestorage_short}})**.
@@ -102,15 +102,15 @@ Before you proceed with these steps, disconnect the volume. Failure to do so, re
 {: cli}
 
 To fail over a file volume to a specific replicant volume, use the following command.
-  ```
-  # slcli file replica-failover --help
+ ```python
+ # slcli file replica-failover --help
   Usage: slcli file replica-failover [OPTIONS] VOLUME_ID
 
   Options:
   --replicant-id TEXT  ID of the replicant volume
   --immediate          Failover to replicant immediately.
   -h, --help           Show this message and exit.
-  ```
+ ```
 
 ## Starting a failback from a volume to its replica
 {: #failbackfromreplica}
@@ -147,11 +147,11 @@ Failbacks are started under **Storage**, **{{site.data.keyword.filestorage_short
 {: cli}
 
 To fail back a file volume from a specific replicant volume.
-  ```
+ ```python
   # slcli file replica-failback --help
   Usage: slcli file replica-failback [OPTIONS] VOLUME_ID
 
   Options:
   --replicant-id TEXT  ID of the replicant volume
   -h, --help           Show this message and exit.
-  ```
+ ```

@@ -32,7 +32,7 @@ Jumbo frames need to be configured the same on the entire network path from sour
 
 1. Edit the network configuration file for eth0 interface.
    - CentOS, RHEL, Fedora users edit `/etc/sysconfig/network-scripts/ifcfg-eth0`.
-     ```
+     ```zsh
      # vi /etc/sysconfig/network-scripts/ifcfg-eth0
      ```
      {: pre}
@@ -41,19 +41,19 @@ Jumbo frames need to be configured the same on the entire network path from sour
 
 2. Append the following configuration directive, which specifies the size of the frame in bytes.
    - CentOS, RHEL, Fedora
-     ```
+     ```zsh
      MTU 9000
      ```
      {: pre}
 
    - Debian and Ubuntu
-     ```
+     ```zsh
      MTU=9000
      ```
      {: pre}
 
 3. Close and save the file. Restart the Interface eth0.
-   ```
+   ```zsh
    # /etc/init.d/networking restart
    ```
    {: pre}
