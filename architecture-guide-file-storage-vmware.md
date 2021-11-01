@@ -225,7 +225,7 @@ For more information about VMware&reg; and Jumbo Frames, see [here](https://kb.v
 5. Select the existing **vSwitch** and click **Next**.
 6. Select **Unused adapters** and click **Add adapters** (Plus sign).
 7. Click the other "Connected" adapter and click **OK**.
-   ![Add physical adapters to switch.](/images/2_3.png)
+   ![Add physical adapters to switch.](/images/2_3.png){: caption="Add the physical adapters to the switch." caption-side="bottom"}
 8. Click **Next** and the **Finish**.
 9. Go back to the **Virtual switches** tab and select the **Edit setting** (Pencil icon) under the **Virtual Switches** heading.
 10. On the left, select the vSwitch **Teaming and failover** entry.
