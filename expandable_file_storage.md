@@ -43,6 +43,7 @@ The upgrade process is not instantaneous. You can expect to see the updated size
 - **Growing Storage needs** - Customers who experience rapid growth beyond need a way to quickly and easily increase the size of their storage to manage that growth.
 
 ## Effects of expanding storage capacity on Replication
+{: #effectonreplica}
 
 Expand action on the primary storage results in automatic resizing of the replica.
 
