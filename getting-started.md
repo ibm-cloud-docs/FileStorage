@@ -67,7 +67,7 @@ The block size that is used by your application directly impacts the storage per
 {: caption="Table 1 shows examples of how block size and IOPS affect the throughput. Average IO size x IOPS = Throughput in MB/s." caption-side="top"}
 
 ### Authorized hosts
-{: numberofhosts}
+{: #numberofhosts}
 
 Another factor to consider is the number of hosts that are using your volume. If there's a single host that is accessing the volume, it can be difficult to realize the maximum IOPS available, especially at extreme IOPS counts (10,000s). If your workload requires high throughput, it would be best to configure at least a couple servers to access your volume to avoid a single-server bottleneck.
 
