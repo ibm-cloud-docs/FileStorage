@@ -37,6 +37,7 @@ If you're unsure how many volumes you have, you can confirm the numbers by using
 {: cli}
 
 ### SLCLI
+{: #slcli1}
 
 You can list the number of your volumes by using the [volume-limits](https://softlayer-python.readthedocs.io/en/latest/cli/file/#file-volume-limits){: external} command in `slcli` (version 5.8.5 or higher).
 ```python
@@ -54,6 +55,7 @@ Example output:
 ```
 
 ### IBM Cloud CLI
+{: #ibmcloudcli1}
 
 The volume-limits command is also available in the `sl` plug-in for IBM Cloud CLI (v1.0 or higher).
 
@@ -68,6 +70,7 @@ global       300                     99
 {: api}
 
 ### REST API call
+{: #restapi1}
 
 To directly get this information from the API, use the following method: [`SoftLayer_Network_Storage/getVolumeCountLimits`](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Storage/getVolumeCountLimits/){: external}.
 
