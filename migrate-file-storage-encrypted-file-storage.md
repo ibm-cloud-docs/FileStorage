@@ -27,6 +27,7 @@ All enhanced {{site.data.keyword.filestorage_short}} volumes that are provisione
 
 
 ## Creating a {{site.data.keyword.filestorage_short}}
+{: #createencryptedvol}
 
 You can order an enhanced volume through the {{site.data.keyword.cloud}} Console UI, through the CLI or the API. Your new volume must be of the same size or greater than the original file share to facilitate the migration. For more information about provisioning a file share, see [Ordering {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-orderingFileStorage).
 
@@ -36,6 +37,7 @@ When you place an order with API, specify the "Storage as a Service" package to 
 When you order a file share, your new storage is available to mount in a few minutes. You can view it in the Resource List and in the {{site.data.keyword.blockstorageshort}} list.
 
 ## Authorizing host to the new {{site.data.keyword.filestorage_short}}
+{: #authtonewvol}
 
 "Authorized" hosts are hosts that were given access to a volume. Without host authorization, you can't access or use the storage from your system.
 
@@ -52,6 +54,7 @@ When the host is authorized, connect the volume to your host.
 
 
 ## Migrating your data
+{: #copydataacross}
 
 1. Connect to both your original and new {{site.data.keyword.filestorage_short}} volumes.
    - [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/FileStorage?topic=FileStorage-mountingCentOS)
@@ -83,6 +86,7 @@ When the host is authorized, connect the volume to your host.
 4. When your migration is complete, you can move production to the new volume. Then, you can detach and delete your original volume from your configuration. The deletion also removes any snapshot or replica on the target site that was associated with the original volume.
 
 ## Setting up Snapshots and Replication
+{: #setupnewreplica}
 
 If snapshots and replication were established for your original volume, then you need to set up them up for the new volume. Configure replication, snapshot space and create snapshot schedules the same settings as the original volume.
 

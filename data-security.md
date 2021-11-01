@@ -29,22 +29,25 @@ The provider-managed encryption-at-rest feature uses the following industry stan
 * Storage is validated for US Federal Information Processing Standard (FIPS) Publication 140-2, Federal Information Security Management Act (FISMA), Health Insurance Portability and Accountability Act (HIPAA). Storage is also validated for Payment Card Industry (PCI), Basel II, California Security Breach Information Act (SB 1386), and EU General Data Protection Regulation (GDPR) compliance.
 
 ## Securing your snapshots or replicated storage  
+{: #securesnapshot}
 
 All snapshots and replicas of encrypted file storage are also encrypted by default. This feature can’t be turned off on a volume basis.
 All cluster-to-cluster traffic is encrypted with TLS.
 
 ## Provisioning storage with encryption
+{: #encryptvolume}
 
 The provider-managed encryption-at-rest feature is available in [most data centers](/docs/FileStorage?topic=FileStorage-selectDC). All storage that is ordered in these data centers is automatically provisioned with encryption for data-at-rest.
 
 When you order {{site.data.keyword.filestorage_short}}, select a data center that is marked with an asterisk (`*`). You can see a lock icon to the right of the Volume Name field that indicates that the volume is encrypted. See Figure 1.
 
-![Figure 1. Example of the lock icon that indicates that the volume is encrypted.](/images/encryptedstorage.png)
+![Figure 1. Example of the lock icon that indicates that the volume is encrypted.](/images/encryptedstorage.png){: caption="Figure 1. Example of the lock icon that indicates that the volume is encrypted." caption-side="bottom"}
 
 Any non-encrypted storage that was provisioned before a data center upgrade is **not** automatically encrypted. If you own non-encrypted storage in an upgraded data center and you want to have it encrypted, you need to create a volume, and move your data. For more information, see [File Storage Migration in Upgraded Data Centers](/docs/FileStorage?topic=FileStorage-migratestorage).
 {: important}
 
 ## Deleting {{site.data.keyword.filestorage_short}} instances
+{: #delfilevol}
 
 If you no longer need a specific volume, you can cancel that storage. {{site.data.keyword.filestorage_short}} presents file shares to customers on physical storage that is wiped before any reuse. For more information, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs#deleted).
 

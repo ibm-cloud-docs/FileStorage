@@ -172,6 +172,7 @@ When your provisioning request is complete, authorize your hosts to access the n
 - [Configuring {{site.data.keyword.filestorage_short}} for backup with Plesk](/docs/FileStorage?topic=FileStorage-PleskBackup)
 
 ## Disaster recovery considerations
+{: #DRconsider}
 
 To avoid data-loss and to ensure business continuity, consider replicating your servers and storage in another data center. Replication keeps your data in sync in two different locations based on your snapshot schedule. For more information, see [Replicating data](/docs/FileStorage?topic=FileStorage-replication).
 
@@ -180,5 +181,6 @@ If you want to clone your volume and use it independently from the original volu
 If you want to clone your volume and have the ability to refresh the duplicate on demand, see [Creating and managing dependent duplicate volumes](/docs/FileStorage?topic=FileStorage-dependentduplicate).
 
 ## Identifying {{site.data.keyword.filestorage_short}} volumes on the invoice
+{: #findstorageinvoice}
 
 All file shares appear on your invoice as a line item. Endurance volumes appear as “Endurance Storage Service” and Performance volumes appear as "Performance Storage Service". The rate varies based on your storage level. You can expand on Endurance or Performance to see that it's {{site.data.keyword.filestorage_short}}.
