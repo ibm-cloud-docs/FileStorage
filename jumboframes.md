@@ -29,6 +29,7 @@ Jumbo frames need to be configured the same on the entire network path from sour
 {: important}
 
 ## Enabling Jumbo Frames
+{: #enablejumbo}
 
 1. Edit the network configuration file for eth0 interface.
    - CentOS, RHEL, Fedora users edit `/etc/sysconfig/network-scripts/ifcfg-eth0`.
