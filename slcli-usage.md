@@ -27,6 +27,8 @@ For more information about how to install and use the SLCLI, see [Python API Cli
 {: tip}
 
 ## Access-related SLCLI commands
+{: #slcliaccess}
+
 * [Managing {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-managingstorage)  
    ```python
    slcli file access-authorize
@@ -35,6 +37,7 @@ For more information about how to install and use the SLCLI, see [Python API Cli
    ```
 
 ## Replication-related SLCLI commands
+{: #slclireplica}
 
 * [Replication-related SLCLI commands](/docs/FileStorage?topic=FileStorage-replication)
    ```python
@@ -46,6 +49,7 @@ For more information about how to install and use the SLCLI, see [Python API Cli
    ```
 
 ## Snapshots-related SLCLI commands
+{: #slclisnapshot}
 
 * [Ordering Snapshots](/docs/FileStorage?topic=FileStorage-ordering-snapshots)
    ```python
@@ -64,6 +68,7 @@ For more information about how to install and use the SLCLI, see [Python API Cli
    ```
 
 ## Volume-related SLCLI commands
+{: #slclivolume}
 
 * [Ordering a {{site.data.keyword.filestorage_short}} volume](/docs/FileStorage?topic=FileStorage-orderingFileStorage#orderingthroughCLI)
    ```python
