@@ -114,6 +114,8 @@ After a disaster event, {{site.data.keyword.cloud}} begins remediation work to r
 5. Click your replica volume ("source"). This volume now has an **Inactive** status.
 6. Mount and attach your storage volume to the host. For more information, see [connecting your storage](/docs/FileStorage?topic=FileStorage-getting-started#mountingstorage).
 
+If you need further assistance, create a [support case](https://cloud.ibm.com/unifiedsupport/supportcenter){: external}.
+
 ## Fail back from the SLCLI
 {: #DRFailbackCLI}
 {: cli}
@@ -130,4 +132,8 @@ Options:
 
 During the Disaster Recovery Failover, the system is forced to failover to the replica site and the replication relationship is severed. To be able to fail back to the original site after the site is restored to normal operations, the system has to reestablish the replication bond. This may take considerable amount of time. During the Failback process, configuration-related actions are read-only. You can't edit any snapshot schedule or change snapshot space. The event is logged in the replication history.
 {: note}
+
+When the original volume is active, you can mount and attach it to the host. For more information, see [connecting your storage](/docs/FileStorage?topic=FileStorage-getting-started#mountingstorage).
+
+If you need further assistance, create a [support case](https://cloud.ibm.com/unifiedsupport/supportcenter){: external}.
 
