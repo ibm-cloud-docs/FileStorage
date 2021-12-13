@@ -1,18 +1,11 @@
 {
-	"mountpoint": [
-        "view Volume details mount nfs",
+    "mountpoint": [
         "correct mount point for my File Storage",
         "find mount point encrypted nfs",
-        "data01 mount nfs",
         "what's the NFS address",
         "get the nfs address",
-        "want to mount NFS",
-        "encrypt nfs mount",
         "mount point for file storage",
-        "data01 file storage mount",
         "mount point address nfs",
-        "address storage mount nfs",
-        "file storage mount details",
         "find the mount point details for file storage"
     ],
     "maxfilevolume": [
