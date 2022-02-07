@@ -25,7 +25,7 @@ Enhanced {{site.data.keyword.filestorage_full}} is now available in most [data c
 All enhanced {{site.data.keyword.filestorage_short}} volumes that are provisioned in these data centers have a different mount point than non-encrypted volumes. To ensure you're using the correct mount point for both storage volumes, you can view the mount point information in the {{site.data.keyword.filestorage_short}} Details page in the UI. You can also access the correct mount point through an API call: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 {: tip}
 
-You don't need to follow this process if your Storage has recently received an upgrade to the Storage-as-a-Service Package as part of {{site.data.keyword.cloud}}'s ogoing hardware refresh process.
+You don't need to follow this process if your Storage has recently received an upgrade to the Storage-as-a-Service package as part of {{site.data.keyword.cloud}}'s ongoing hardware refresh process.
 {: note}
 
 
@@ -34,7 +34,7 @@ You don't need to follow this process if your Storage has recently received an u
 
 You can order an enhanced volume through the {{site.data.keyword.cloud}} Console UI, through the CLI or the API. Your new volume must be of the same size or greater than the original file share to facilitate the migration. For more information about provisioning a file share, see [Ordering {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-orderingFileStorage).
 
-When you place an order with API, specify the "Storage as a Service" package to ensure you're getting the updated features with your new storage.
+When you place an order with API, specify the "Storage-as-a-Service" package to ensure you're getting the updated features with your new storage.
 {: important}
 
 When you order a file share, your new storage is available to mount in a few minutes. You can view it in the Resource List and in the {{site.data.keyword.blockstorageshort}} list.
