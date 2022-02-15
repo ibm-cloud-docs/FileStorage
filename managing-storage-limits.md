@@ -26,7 +26,7 @@ subcollection: FileStorage
 {: help}
 {: support}
 
-By default, you can provision a combined total of 250 {{site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_short}} volumes globally.By following this process you can increase the number of volumes you can provision.
+By default, you can provision a combined total of 750 {{site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_short}} volumes globally.By following this process you can increase the number of volumes you can provision.
 
 For more information about increasing your storage volume capacity beyond 12 TB, see [Expanding Block Storage Capacity](/docs/FileStorage?topic=FileStorage-expandCapacity#increasecapacityover12TB).
 
@@ -46,11 +46,11 @@ You can list the number of your volumes by using the [volume-limits](https://sof
 
 Example output:
 ```text
-[{'datacenterName': 'global', 'maximumAvailableCount': 250, 'provisioned Count':117}]
+[{'datacenterName': 'global', 'maximumAvailableCount': 750, 'provisioned Count':117}]
 :............:.......................:..................:
 : Datacenter : maximumAvailableCount : ProvisionedCount :
 :............:.......................:..................:
-:   global   :           250         :         117      :
+:   global   :           750         :         117      :
 :............:.......................:..................:
 ```
 
