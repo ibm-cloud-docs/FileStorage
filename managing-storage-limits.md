@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2019
-lastupdated: "2020-05-21"
+  years: 2014, 2022
+lastupdated: "2022-02-15"
 
 keywords: File Storage, file storage, NFS,
 
