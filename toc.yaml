@@ -68,8 +68,8 @@ toc:
         - topicgroup:
             label: Enhancing Security
             topics:
-            - data-security.md
             - availability.md
+            - data-security.md
 
     - navgroup:
         id: reference
