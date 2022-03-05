@@ -37,15 +37,15 @@ Other than physical failure, a common source of data loss is accidental deletion
 
 {{site.data.keyword.filestorage_short}} is built upon best-in-class, proven, enterprise-grade hardware and software to ensure high availability and uptime. Your data is stored on High Availability pairs. Each storage node has many paths to its own Solid State Drives and its partner node's SSDs as well. This protects against path failure and if there's a controller failure, the node can still access its partner's disks for continued productivity. Redundant network ports and paths protect against network failures all the way up the stack across the cloud connections.
 
+| Storage type | Use Case | Durability | Availability |
+|--------------|----------|------------|--------------|
+| Endurance -  0.25 IOPS per GB tier  |  It's designed for workloads with low I/O intensity. These workloads are typically characterized by having a large percentage of data inactive at a time. Example applications include storing mailboxes or departmental level file shares. | 99.999999999% (11 9's) | 99.999%       |
+| Endurance - 2 IOPS per GB | It's designed for most general-purpose usage. Example applications include hosting small databases that are backing web applications or virtual machine disk images for a hypervisor.| 99.999999999% (11 9's) | 99.999% |
+| Endurance - 4 IOPS per GB| It's designed for higher-intensity workloads. These workloads are typically characterized by having a high percentage of data active at a time. Example applications include transactional and other performance-sensitive databases. | 99.999999999% (11 9's) | 99.999% |
+| Endurance - 10 IOPS per GB| It's designed for the most demanding workloads such as those created by NoSQL databases, and data processing for Analytics. | 99.999999999% (11 9's) | 99.999% |
+| Performance - a high-powered environment with custom IOPS | It's designed to manage rapid data changes with well-defined performance requirements. | 99.999999999% (11 9's) | 99.999% |
+
 ## Encryption
 {: #storencryption}
 
 {{site.data.keyword.cloud}} provides full-disk encryption without compromising storage application performance. For more information about encrypion, see [Securing your data in File Storage)](/docs/FileStorage?topic=FileStorage-mng-data).
-
-
-Add table here
-
-------------------------------------
-
-
-
