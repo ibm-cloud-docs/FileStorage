@@ -36,7 +36,7 @@ The 11 nines durability target applies to a single Availability Zone. To protect
 ## High Availability
 {: #storavailability}
 
-{{site.data.keyword.filestorage_short}} is built upon best-in-class, proven, enterprise-grade hardware and software to ensure high availability and uptime. Your data is stored on HA paired nodes. Each storage node has many paths to its own Solid State Drives and its partner node's SSDs as well. This protects against path failure and if there's a controller failure, the node can still access its partner's disks for continued productivity. Redundant network ports and paths protect against network failures all the way up the stack across the cloud connections.
+{{site.data.keyword.filestorage_short}} is built upon best-in-class, proven, enterprise-grade hardware and software to ensure high availability and uptime. Your data is stored on HA paired nodes. Each storage node has multiple paths to its own Solid State Drives and its partner node's SSDs as well. This protects against path failure and controller failure because the node can still access its partner's disks for continued productivity. Redundant network ports and paths protect against network failures across the cloud connections.
 
 | Storage type | Use Case | Durability | Availability |
 |--------------|----------|------------|--------------|
