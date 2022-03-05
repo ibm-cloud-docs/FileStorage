@@ -41,9 +41,9 @@ The 11 nines durability target applies to a single Availability Zone. To protect
 | Storage type | Use Case | Durability | Availability |
 |--------------|----------|------------|--------------|
 | Endurance -  0.25 IOPS per GB tier  |  It's designed for workloads with low I/O intensity. These workloads are typically characterized by having a large percentage of data inactive at a time. Example applications include storing mailboxes or departmental level file shares. | 99.999999999% (11 9's) | 99.999%       |
-| Endurance - 2 IOPS per GB | It's designed for most general-purpose usage. Example applications include hosting small databases that are backing web applications or virtual machine disk images for a hypervisor.| 99.999999999% (11 9's) | 99.999% |
-| Endurance - 4 IOPS per GB| It's designed for higher-intensity workloads. These workloads are typically characterized by having a high percentage of data active at a time. Example applications include transactional and other performance-sensitive databases. | 99.999999999% (11 9's) | 99.999% |
-| Endurance - 10 IOPS per GB| It's designed for the most demanding workloads such as those created by NoSQL databases, and data processing for Analytics. | 99.999999999% (11 9's) | 99.999% |
+| Endurance - 2 IOPS per GB tier | It's designed for most general-purpose usage. Example applications include hosting small databases that are backing web applications or virtual machine disk images for a hypervisor.| 99.999999999% (11 9's) | 99.999% |
+| Endurance - 4 IOPS per GB tier| It's designed for higher-intensity workloads. These workloads are typically characterized by having a high percentage of data active at a time. Example applications include transactional and other performance-sensitive databases. | 99.999999999% (11 9's) | 99.999% |
+| Endurance - 10 IOPS per GB tier| It's designed for the most demanding workloads such as those created by NoSQL databases, and data processing for Analytics. | 99.999999999% (11 9's) | 99.999% |
 | Performance - a high-powered environment with custom IOPS | It's designed to manage rapid data changes with well-defined performance requirements. | 99.999999999% (11 9's) | 99.999% |
 {: caption="Table 1. Storage durability and availability chart." caption-side="top"}
 
