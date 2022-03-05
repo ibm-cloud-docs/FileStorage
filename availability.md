@@ -25,7 +25,7 @@ When you store your data in {{site.data.keyword.filestorage_full}}, it's durable
 ## Durability
 {: #stordurability}
 
-Durability in {{site.data.keyword.filestorage_short}} means that your data is stored consistent and intact without the signs of data decay, influence of drive failures, or any other form of corruption. 99.999999999% (11 nines) durability means that if you store 10 million files, then you expect to lose one file of your data every ten thousand years.
+Think of durability as a measurement of how healthy and resilient your data is. Durability in {{site.data.keyword.filestorage_short}} means that your data is stored consistent and intact without the signs of data decay, influence of drive failures, or any other form of corruption. 99.999999999% (11 nines) durability means that if you store 10 million files, then you expect to lose one file of your data every ten thousand years.
 
 When people hear the word "durability", most of them think of hardware failures of storage, compute and network components that could cause data loss. In {{site.data.keyword.filestorage_short}}, your data is protected against multiple drive failures and numerous type of disk errors that otherwise might negatively affect data durability and data integrity.
 
