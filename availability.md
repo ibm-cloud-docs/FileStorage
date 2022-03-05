@@ -19,7 +19,7 @@ subcollection: FileStorage
 # Availability and Durability of {{site.data.keyword.filestorage_short}}
 {: #storageavailability}
 
-Data integrity is top priority for modern enterprises. When you store your data in {{site.data.keyword.filestorage_full}}, it's durable, highly available and encrypted.
+In today's high-paced economy, companies rely on data in their decision-making. They need secure and immediate access to their data on a moment's notice. Data integrity is top priority because compromised or incomplete data is of no use. Not to mention the dangers that are presented by sensitive data loss. When you store your data in {{site.data.keyword.filestorage_full}}, it's durable, highly available and encrypted.
 {: shortdesc}
 
 ## Durability
