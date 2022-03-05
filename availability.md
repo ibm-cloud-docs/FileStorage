@@ -19,7 +19,8 @@ subcollection: FileStorage
 # Availability and Durability of {{site.data.keyword.filestorage_short}}
 {: #storageavailability}
 
-When you store your data in {{site.data.keyword.filestorage_long}}, it's durable, highly available and encrypted. 
+When you store your data in {{site.data.keyword.filestorage_full}}, it's durable, highly available and encrypted.
+{: shortdesc}
 
 ## Durability
 {: #stordurability}
