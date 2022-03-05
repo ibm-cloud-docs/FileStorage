@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2022
 lastupdated: "2022-03-04"
 
-keywords: File Storage, file storage, NFS, durability, availability
+keywords: File Storage, file storage, NFS, durability, availability, HA, high-availability, data loss, data integrity, 
 
 subcollection: FileStorage
 
@@ -45,6 +45,7 @@ The 11 nines durability target applies to a single Availability Zone. To protect
 | Endurance - 4 IOPS per GB| It's designed for higher-intensity workloads. These workloads are typically characterized by having a high percentage of data active at a time. Example applications include transactional and other performance-sensitive databases. | 99.999999999% (11 9's) | 99.999% |
 | Endurance - 10 IOPS per GB| It's designed for the most demanding workloads such as those created by NoSQL databases, and data processing for Analytics. | 99.999999999% (11 9's) | 99.999% |
 | Performance - a high-powered environment with custom IOPS | It's designed to manage rapid data changes with well-defined performance requirements. | 99.999999999% (11 9's) | 99.999% |
+{: caption="Table 1. Storage durability and availability chart." caption-side="top"}
 
 ## Encryption
 {: #storencryption}
