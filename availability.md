@@ -27,7 +27,7 @@ When you store your data in {{site.data.keyword.filestorage_full}}, it's durable
 
 Durability in {{site.data.keyword.filestorage_short}} means that your data is stored consistent and intact without the signs of data decay, influence of drive failures, or any other form of corruption. 99.999999999% (11 nines) durability means that if you store 10 million files, then you expect to lose one file of your data every ten thousand years.
 
-When people hear the word "durability", most of them think of data loss that's due to hardware failures of storage, compute and network components. In {{site.data.keyword.filestorage_short}}, your data is protected against multiple drive failures and numerous type of disk errors that otherwise might negatively affect its durability and integrity.
+When people hear the word "durability", most of them think of possible data loss that's due to hardware failures of storage, compute and network components. In {{site.data.keyword.filestorage_short}}, your data is protected against multiple drive failures and numerous type of disk errors that otherwise might negatively affect its durability and integrity.
 
 Other than physical failure, a common source of data loss is accidental deletion or modifications of files by end users. {{site.data.keyword.filestorage_long}} is only accessible to authorized hosts within your network. You control who can access it. Another measure to protect against accidental deletion and modification of files by end users, is to set up periodic Snapshots. If a user accidentally modifies or deletes crucial data from a volume, the data can be easily and quickly restored from a snapshot copy. For more information about this feature, see [Snapshots](/docs/FileStorage?topic=FileStorage-snapshot).
 
