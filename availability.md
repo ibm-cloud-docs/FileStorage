@@ -22,13 +22,13 @@ subcollection: FileStorage
 In today's fast-paced economy, companies rely on data in their decision-making. They need secure and immediate access to their data on a moment's notice. Data integrity is top priority because compromised or incomplete data is of no use. Not to mention the dangers that are presented by sensitive data being lost. When you store your data in {{site.data.keyword.filestorage_full}}, it's durable, highly available and encrypted.
 {: shortdesc}
 
-| Storage type | Use Case | Durability | Availability |
-|--------------|----------|------------|--------------|
-| Endurance -  0.25 IOPS per GB tier  |  It's designed for workloads with low I/O intensity. These workloads are typically characterized by having a large percentage of data inactive at a time. Example applications include storing mailboxes or departmental level file shares. | 99.999999999%  \n (11 9's) | 99.999%  \n (5 9's) |
-| Endurance - 2 IOPS per GB tier | It's designed for most general-purpose usage. Example applications include hosting small databases that are backing web applications or virtual machine disk images for a hypervisor.| 99.999999999%  \n (11 9's) | 99.999%  \n (5 9's)  |
-| Endurance - 4 IOPS per GB tier| It's designed for higher-intensity workloads. These workloads are typically characterized by having a high percentage of data active at a time. Example applications include transactional and other performance-sensitive databases. | 99.999999999% \n (11 9's) | 99.999%  \n (5 9's) |
-| Endurance - 10 IOPS per GB tier| It's designed for the most demanding workloads such as those created by NoSQL databases, and data processing for Analytics. | 99.999999999%  \n (11 9's) | 99.999%  \n (5 9's) |
-| Performance - a high-powered environment with custom IOPS | It's designed to manage rapid data changes with well-defined performance requirements. | 99.999999999%  \n (11 9's) | 99.999%  \n (5 9's) |
+| Storage type | Use Case | Durability | Availability | Encryption |
+|--------------|----------|------------|--------------|------------|
+| Classic Endurance -  0.25 IOPS per GB tier  |  It's designed for workloads with low I/O intensity. These workloads are typically characterized by having a large percentage of data inactive at a time. Example applications include storing mailboxes or departmental level file shares. | 99.999999999%  \n (11 9's) | 99.999%  \n (5 9's) | Provider-managed AES-256 encryption |
+| Classic Endurance - 2 IOPS per GB tier | It's designed for most general-purpose usage. Example applications include hosting small databases that are backing web applications or virtual machine disk images for a hypervisor.| 99.999999999%  \n (11 9's) | 99.999%  \n (5 9's)  | Provider-managed AES-256 encryption |
+| Endurance - 4 IOPS per GB tier| It's designed for higher-intensity workloads. These workloads are typically characterized by having a high percentage of data active at a time. Example applications include transactional and other performance-sensitive databases. | 99.999999999% \n (11 9's) | 99.999%  \n (5 9's) | Provider-managed AES-256 encryption |
+| Classic Endurance - 10 IOPS per GB tier| It's designed for the most demanding workloads such as those created by NoSQL databases, and data processing for Analytics. | 99.999999999%  \n (11 9's) | 99.999%  \n (5 9's) | Provider-managed AES-256 encryption |
+| Classic Performance - a high-powered environment with custom IOPS | It's designed to manage rapid data changes with well-defined performance requirements. | 99.999999999%  \n (11 9's) | 99.999%  \n (5 9's) | Provider-managed AES-256 encryption |
 {: caption="Table 1. Storage durability and availability chart." caption-side="top"}
 
 ## Durability
