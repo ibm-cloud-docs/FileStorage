@@ -29,6 +29,9 @@ In today's fast-paced economy, companies rely on data in their decision-making. 
 | Endurance - 4 IOPS per GB tier| It's designed for higher-intensity workloads. These workloads are typically characterized by having a high percentage of data active at a time. Example applications include transactional and other performance-sensitive databases. | 99.999999999% \n (11 9's) | 99.999%  \n (5 9's) | Provider-managed AES-256 encryption |
 | Classic Endurance - 10 IOPS per GB tier| It's designed for the most demanding workloads such as those created by NoSQL databases, and data processing for Analytics. | 99.999999999%  \n (11 9's) | 99.999%  \n (5 9's) | Provider-managed AES-256 encryption |
 | Classic Performance - a high-powered environment with custom IOPS | It's designed to manage rapid data changes with well-defined performance requirements. | 99.999999999%  \n (11 9's) | 99.999%  \n (5 9's) | Provider-managed AES-256 encryption |
+| VPC Storage - 3 IOPS per GB tier| General-purpose workloads - Workloads that host small databases for web applications or store virtual machine disk images for a hypervisor. |  99.999999999% \n (11 9's) | 99.999%  \n (5 9's) | 
+| VPC Storage - 5 IOPS per GB tier| High I/O intensity workloads - Workloads characterized by a large percentage of active data, such as transactional and other performance-sensitive databases. |  99.999999999% \n (11 9's) | 99.999%  \n (5 9's) | 
+| VPC Storage - 10 IOPS per GB tier| Demanding storage workloads - Data intensive workloads created by NoSQL databases, data processing for video, machine learning, and analytics. |  99.999999999% \n (11 9's) | 99.999%  \n (5 9's) | 
 {: caption="Table 1. Storage durability and availability chart." caption-side="top"}
 
 ## Durability
