@@ -39,7 +39,7 @@ In today's fast-paced economy, companies rely on data in their decision-making. 
 
 Think of durability as a measurement of how healthy and resilient your data is. Durability in {{site.data.keyword.filestorage_short}} means that your data is stored consistent and intact without any signs of data decay, influence of drive failures, or any other form of corruption. 99.999999999% (11 nines) durability means that if you store 10 million files, then you expect to lose one file every ten thousand years.
 
-When people hear the word durability, most of them think of hardware failures of storage, compute and network components that could cause data loss. In {{site.data.keyword.filestorage_short}}, your data is protected against drive failures and numerous type of disk errors that otherwise might negatively impact data durability and data integrity.
+When people hear the word durability, most of them think of hardware failures of storage, compute and network components that could cause data loss. In {{site.data.keyword.filestorage_short}}, your data is protected against drive failures and numerous type of disk errors that otherwise might negatively impact data durability and data integrity. The data is stored redundantly across multiple physical disks in an Availability Zone to prevent data loss due to failure of any single component.
 
 Other than physical failure, a common source of data loss is accidental deletion or modifications of files by end users. {{site.data.keyword.filestorage_short}} is only accessible to authorized hosts within your network. You control who can access it. Another measure to protect against accidental deletion and modification of files by end users is a snapshot. If a user accidentally modifies or deletes crucial data from a volume, the data can be easily and quickly restored from a snapshot copy. For more information about this feature, see [Snapshots](/docs/FileStorage?topic=FileStorage-snapshot).
 
@@ -48,7 +48,7 @@ The 11 nines durability target applies to a single Availability Zone. To protect
 ## High Availability
 {: #storavailability}
 
-{{site.data.keyword.filestorage_short}} is built upon best-in-class, proven, enterprise-grade hardware and software to ensure high availability and uptime. Your data is stored on HA paired nodes. Each storage node has multiple paths to its own Solid State Drives and its partner node's SSDs as well. This protects against path failure and controller failure because the node can still access its partner's disks for continued productivity. Redundant network ports and paths protect against network failures across the cloud connections.
+{{site.data.keyword.filestorage_short}} is built upon best-in-class, proven, enterprise-grade hardware and software to ensure high availability and uptime. As mentioned previously, the data is stored redundantly across multiple physical disks on HA paired nodes. Each storage node has multiple paths to its own Solid State Drives and its partner node's SSDs as well. This protects against path failure and controller failure because the node can still access its partner's disks for continued productivity. Redundant network ports and paths protect against network failures across the cloud connections.
 
 ## Encryption
 {: #storencryption}
