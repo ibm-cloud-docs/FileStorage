@@ -53,4 +53,4 @@ The 11 nines durability target applies to a single Availability Zone. To protect
 ## Encryption
 {: #storencryption}
 
-{{site.data.keyword.cloud}} provides full-disk encryption without compromising storage application performance. For more information about encryption of {{site.data.keyword.filestorage_short}}, see [Securing your data in File Storage)](/docs/FileStorage?topic=FileStorage-mng-data). For more information about provider- and customer-managed encryption in a VPC, see [Data encryption for VPC](/vpc?topic=vpc-vpc-encryption-about#vpc-customer-managed-encryption).
+{{site.data.keyword.cloud}} provides full-disk encryption without compromising storage application performance. For more information about encryption of {{site.data.keyword.filestorage_short}}, see [Securing your data in File Storage](/docs/FileStorage?topic=FileStorage-mng-data). For more information about provider- and customer-managed encryption in a VPC, see [Data encryption for VPC](/vpc?topic=vpc-vpc-encryption-about#vpc-customer-managed-encryption).
