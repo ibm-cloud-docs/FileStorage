@@ -43,7 +43,7 @@ When people hear the word durability, most of them think of hardware failures of
 
 Other than physical failure, a common source of data loss is accidental deletion or modifications of files by end users. {{site.data.keyword.filestorage_short}} is only accessible to authorized hosts within your network. You control who can access it. Another measure to protect against accidental deletion and modification of files by end users is a snapshot. If a user accidentally modifies or deletes crucial data from a volume, the data can be easily and quickly restored from a snapshot copy. For more information about this feature, see [Snapshots](/docs/FileStorage?topic=FileStorage-snapshot).
 
-The 11 nines durability target applies to a single Availability Zone. To protect against natural or man-made disasters that could destroy an entire Availability Zone, consider storing your most important data in multiple locations. For more information about this topic, see [Replicating Data](/docs/FileStorage?topic=FileStorage-replicatio).
+The 11 nines durability target applies to a single Availability Zone. To protect against natural or man-made disasters that could destroy an entire Availability Zone, consider storing your most important data in multiple locations. For more information about this topic, see [Replicating Data](/docs/FileStorage?topic=FileStorage-replication).
 
 ## High Availability
 {: #storavailability}
