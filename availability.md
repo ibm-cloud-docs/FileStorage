@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2022
 lastupdated: "2022-03-07"
 
-keywords: File Storage, file storage, NFS, durability, availability, HA, high-availability, data loss, data integrity, 
+keywords: File Storage, file storage, NFS, durability, availability, HA, high-availability, data loss, data integrity, uptime, five 9's, eleven 9's, data health, data corruption, data decay, encryption, security, integrity
 
 subcollection: FileStorage
 
