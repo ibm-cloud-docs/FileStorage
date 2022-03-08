@@ -106,7 +106,7 @@ The maximum number of inodes that can be configured on a volume is calculated by
 {: faq}
 {: #movedatacenter}
 
-You need to order new {{site.data.keyword.filestorage_short}} in the right data center, and then cancel the {{site.data.keyword.filestorage_short}} device you ordered in the incorrect location.
+You need to order new {{site.data.keyword.filestorage_short}} in the right data center, and then cancel the {{site.data.keyword.filestorage_short}} device you ordered in the incorrect location. When the volume is canceled, there's a 24-hour reclaim wait period. You can still see the volume in the console during those 24 hours. Billing for the volume stops immediately. When the reclaim-period expires, the data is destroyed and the volume is removed from the console, too.
 
 ## Measuring IOPS
 {: faq}
