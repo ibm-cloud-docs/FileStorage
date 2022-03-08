@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2021
-lastupdated: "2021-07-27"
+  years: 2014, 2022
+lastupdated: "2022-03-07"
 
 keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
@@ -106,7 +106,7 @@ The maximum number of inodes that can be configured on a volume is calculated by
 {: faq}
 {: #movedatacenter}
 
-You need to order new {{site.data.keyword.filestorage_short}} in the right data center, and then cancel the {{site.data.keyword.filestorage_short}} device you ordered in the incorrect location.
+You need to order new {{site.data.keyword.filestorage_short}} in the right data center, and then cancel the {{site.data.keyword.filestorage_short}} device you ordered in the incorrect location. When the volume is canceled, there's a 24-hour reclaim wait period. You can still see the volume in the console during those 24 hours. Billing for the volume stops immediately. When the reclaim-period expires, the data is destroyed and the volume is removed from the console, too.
 
 ## Measuring IOPS
 {: faq}
@@ -328,3 +328,15 @@ All Block and {{site.data.keyword.filestorage_short}} services are thin-provisio
 {: faq}
 
 You might notice that your Storage volumes are now billed as "Endurance Storage Service” or "Performance Storage Service" instead of "Enterprise Storage", and you have new options in the console, such as the ability to adjust IOPS or increase capacity. {{site.data.keyword.cloud}} strives to continously improve storage capabilities. As hardware gets upgraded in the datacenters, storage volumes that reside in those datacenters are also upgraded to utilize all enhanced features. The price you pay for your Storage volume does not change with this upgrade.
+
+## How durable is {{site.data.keyword.filestorage_short}}?
+{: #stordurability}
+{: faq}
+
+When you store your data in {{site.data.keyword.filestorage_short}}, it's durable, highly available and encrypted. The durability target for a single Availability zone is 99.999999999% (11 9's). For more information, see [Availability and Durability of {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-storageavailability).
+
+## What's the average uptime for {{site.data.keyword.filestorage_short}}?
+{: #storavailability}
+{: faq}
+
+When you store your data in {{site.data.keyword.filestorage_short}}, it's durable, highly available and encrypted. File Storage is built upon best-in-class, proven, enterprise-grade hardware and software to ensure high availability and uptime. The ensure that the availability target of 99.999% (five 9's) is met, the data is stored redundantly across multiple physical disks on HA paired nodes. Each storage node has multiple paths to its own Solid State Drives and its partner node's SSDs as well. This protects against path failure, and also controller failure because the node can still access its partner's disks seamlessly. For more information, see [Availability and Durability of {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-storageavailability).

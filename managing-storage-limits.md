@@ -62,7 +62,7 @@ The volume-limits command is also available in the `sl` plug-in for IBM Cloud CL
 ```python
 # ibmcloud sl file volume-limits
 Datacenter   MaximumAvailableCount   ProvisionedCount
-global       300                     99
+global       750                     99
 ```
 
 ## Confirming your current limit and provisioning count with the API
