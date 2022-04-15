@@ -162,7 +162,7 @@ If snapshot space utilization increases too rapidly, then you might receive one 
 By default, snapshot warning notifications are enabled for every customer. However, you can choose to disable them. When this feature is disabled, all ticket generation and notifications are stopped. You can disable and enable notifications for the volume at any time.
 
 
-To check if the notifications are enabled for the storage volume, use the following command.
+To check whether the notifications are enabled for the storage volume, use the following command.
 
 ```python
 # slcli file snapshot-get-notification-status
@@ -282,7 +282,7 @@ You might need to take your storage volume back to a specific point in time beca
 4. Scroll on the list, and click your volume to be restored. The **Snapshots** page displays the list of all saved snapshots along with their size and creation date.
 5. Click **Actions** next to the snapshot to be used and click **Restore**.
 
-   Completing the restore results in the loss of the data that was created or modified after the snapshot was taken. This data loss occurs because your storage volume returns to the same state it was in of the time of the snapshot.
+   Completing the restore results in the loss of the data that was created or modified after the snapshot was taken. This data loss occurs because your storage volume returns to the same state that it was in of the time of the snapshot.
    {: note}
 
 6. Click **Yes** to start the restore. The restore is going to take a while, and your file share is locked during the restore.
