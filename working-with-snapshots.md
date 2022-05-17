@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2014, 20212
+  years: 2014, 2022
 lastupdated: "2022-04-13"
 
 keywords: File Storage, file storage, NFS, snapshots, snapshot schedule, manual snapshot, snapshot space, snapshot quota
