@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-05"
+lastupdated: "2022-06-06"
 
 keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
@@ -346,3 +346,8 @@ When you store your data in {{site.data.keyword.filestorage_short}}, it's durabl
 {: faq}
 
 {{site.data.keyword.cloud}} does not provide storage performance IOPS and latency metrics. Customers are expected to monitor their own {{site.data.keyword.filestorage_short}} devices by using their choice of third-party monitoring tools.
+
+The following examples are utilities that you could consider to use to check performance statistics.
+- [`sysstat` - System performance tools for the Linux&reg; operating system.](https://github.com/sysstat/sysstat/blob/master/README.md){: external}
+- [`typeperf` - Windows&reg; command that writes performance data to the command window or to a log file.](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/typeperf){: external}
+- [`esxtop` -  command-line tool that gives administrators real-time information about resource usage in a VMware&reg; vSphere environment. It can monitor and collect data for all system resources: CPU, memory, disk and network.](https://communities.vmware.com/t5/Storage-Performance/Interpreting-esxtop-Statistics/ta-p/2776936){: external}
