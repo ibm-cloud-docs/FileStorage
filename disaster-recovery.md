@@ -24,7 +24,7 @@ subcollection: FileStorage
 # Disaster Recovery - Fail over from an inaccessible primary volume
 {: #dr-inaccessible}
 
-If a catastrophic failure or disaster causes an outage on the primary site, customers can perform the following actions to quickly access their data on the secondary site. When the primary volume is inaccessible, you can force a failover to the remote replica. Before you start the failover, make sure that all host-authorization is in place.
+If a catastrophic failure or disaster causes an outage on the primary site, customers can perform the following actions to quickly access their data on the secondary site. When the primary volume is inaccessible, you can force a failover to the remote replica. Before you start the failover, make sure that all host authorization is in place.
 {: shortdesc}
 
 Authorized hosts and volumes must be in the same data center. For example, you can't have a replica volume in London and the host in Amsterdam. Both must be in London or both must be in Amsterdam.
@@ -107,7 +107,7 @@ After a disaster event, {{site.data.keyword.cloud}} begins remediation work to r
 2. In the upper right, click **Replica** and click **Actions**.
 3. Select **Failback**. When the primary location is marked unavailable, the option of Disaster Recovery Failback becomes active. 
 
-   During the Disaster Recovery Failover, the system is forced to failover to the replica site and the replication relationship is severed. To be able to fail back to the original site after the site is restored to normal operations, the system has to reestablish the replication bond. This may take considerable amount of time. Expect a message that shows the failover is in progress. Additionally, an icon appears next to your volume on the **{{site.data.keyword.filestorage_short}}** that indicates that an active transaction is occurring. Hovering over the icon produces a window that shows the transaction. The icon disappears when the transaction is complete. During the Failback process, configuration-related actions are read-only. You can't edit any snapshot schedule or change snapshot space. The event is logged in replication history.
+   During the Disaster Recovery Failover, the system is forced to fail over to the replica site and the replication relationship is severed. To be able to fail back to the original site after the site is restored to normal operations, the system has to reestablish the replication bond. This action can take considerable amount of time. Expect a message that shows the failover is in progress. Additionally, an icon appears next to your volume on the **{{site.data.keyword.filestorage_short}}** that indicates that an active transaction is occurring. Hovering over the icon produces a window that shows the transaction. The icon disappears when the transaction is complete. During the Failback process, configuration-related actions are read-only. You can't edit any snapshot schedule or change snapshot space. The event is logged in replication history.
    {: note}
 
 4. In the upper right, click **View All {{site.data.keyword.filestorage_short}}**.
@@ -130,7 +130,7 @@ Options:
  -h, --help           Show this message and exit.
 ```
 
-During the Disaster Recovery Failover, the system is forced to failover to the replica site and the replication relationship is severed. To be able to fail back to the original site after the site is restored to normal operations, the system has to reestablish the replication bond. This may take considerable amount of time. During the Failback process, configuration-related actions are read-only. You can't edit any snapshot schedule or change snapshot space. The event is logged in the replication history.
+During the Disaster Recovery Failover, the system is forced to fail over to the replica site and the replication relationship is severed. To be able to fail back to the original site after the site is restored to normal operations, the system has to reestablish the replication bond. This action can take considerable amount of time. During the Failback process, configuration-related actions are read-only. You can't edit any snapshot schedule or change snapshot space. The event is logged in the replication history.
 {: note}
 
 When the original volume is active, you can mount and attach it to the host. For more information, see [connecting your storage](/docs/FileStorage?topic=FileStorage-getting-started#mountingstorage).
