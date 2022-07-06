@@ -65,8 +65,15 @@ To achieve maximum IOPS, adequate network resources need to be in place. 
 
 * **VMware specific best practice for teaming**:  If you plan to use teaming to increase the availability of your network access to the storage array, you must turn off port security on the switch for the two ports on which the virtual IP address is shared. The purpose of this port security setting is to prevent spoofing of IP addresses. Thus, many network administrators enable this setting. However, if you do not change it, the port security setting prevents failover of the virtual IP from one switch port to another and teaming cannot fail over from one path to another. For most LAN switches, the port security is enabled on a port level and thus can be set on or off for each port.
 
-* **Use NFSv3** protocol when possible. 
+* **Use NFSv3** protocol when possible. Network File System (NFS) is a networking protocol for distributed file sharing. It allows remote hosts to mount file systems over a network and interact with those file systems as if they are mounted locally.
 
-NFSv3 is the preferred version because it's a stateless protocol and more resilient when network events occur. NFSv3 natively supports `no_root_squash` that allows root clients to retain root permissions on the NFS share. When it comes to vSphere Solutions, NFS v3 supports more features than v4.1. Such features include Storage DRS and Site Recovery Manager.
+NFSv3 is the preferred version because it supports safe asynchronous writes and is more robust at error handling than the previous NFSv2. It supports 64-bit file sizes and offsets, allowing clients to access more than 2 GB of file data. 
+
+NFSv4 requires the Transmission Control Protocol (TCP) running over an IP network. NFSv3 can also use the User Datagram Protocol (UDP). UDP is a stateless protocol and more resilient when network events occur because UDP clients can keep sending requests for a server when it's unavailable and reconnect without manual intervention when the path is back up.
+
+In Red Hat Enterprise Linux 9, NFS over UDP is no longer supported. The default NFS version in RHEL 8 and 9 is NFSv4.2.
+{: note}
+
+NFSv3 natively supports `no_root_squash` that allows root clients to retain root permissions on the NFS share. When it comes to vSphere Solutions, NFS v3 supports more features than v4.1. Such features include Storage DRS and Site Recovery Manager.
 
 
