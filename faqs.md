@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-06-06"
+lastupdated: "2022-07-06"
 
 keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
@@ -27,12 +27,12 @@ subcollection: FileStorage
 
 Look at your list of {{site.data.keyword.filestorage_short}} in the customer portal. You can see a lock icon next to the volume name for the volumes that are encrypted.
 
-## If I purchased non-encrypted {{site.data.keyword.filestorage_short}} in a data center that was upgraded for encryption, can I encrypt my {{site.data.keyword.filestorage_short}}?
+## If I purchased nonencrypted {{site.data.keyword.filestorage_short}} in a data center that was upgraded for encryption, can I encrypt my {{site.data.keyword.filestorage_short}}?
 {: faq}
 {: #encryptupgrade}
 {: support}
 
-{{site.data.keyword.filestorage_short}} that was provisioned before a data center upgrade can't be encrypted. New {{site.data.keyword.filestorage_short}} that was provisioned in upgraded data centers is automatically encrypted. It's automatic, not a provisioning setting that can be selected or left out. Data on non-encrypted storage can be encrypted by creating a new volume, then copying the data to the new encrypted volume with host-based migration. For more information, see [Migrating {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-migratestorage).
+{{site.data.keyword.filestorage_short}} that was provisioned before a data center upgrade can't be encrypted. New {{site.data.keyword.filestorage_short}} that was provisioned in upgraded data centers is automatically encrypted. It's automatic, not a provisioning setting that can be selected or left out. Data on nonencrypted storage can be encrypted by creating a new volume, then copying the data to the new encrypted volume with host-based migration. For more information, see [Migrating {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-migratestorage).
 
 ## How do I know whether I'm provisioning {{site.data.keyword.filestorage_short}} in an upgraded data center?
 {: faq}
@@ -55,7 +55,7 @@ The {{site.data.keyword.filestorage_short}} Endurance type 10 IOPS/GB tier is av
 {: faq}
 {: support}
 
-All encrypted {{site.data.keyword.filestorage_short}} volumes that are provisioned in the enhanced data centers have a different mount point than non-encrypted volumes. To ensure that you're using the correct mount point, view the mount point information in the **Volume Details** page in the UI. You can also access the correct mount point through an API call: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
+All encrypted {{site.data.keyword.filestorage_short}} volumes that are provisioned in the enhanced data centers have a different mount point than nonencrypted volumes. To ensure that you're using the correct mount point, view the mount point information in the **Volume Details** page in the UI. You can also access the correct mount point through an API call: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 
 ## How many volumes can I provision?
 {: faq}
@@ -83,7 +83,7 @@ That depends on what the host operating system can handle, it’s not something 
 {: faq}
 {: support}
 
-The number of files a volume can contain is determined by how many inodes it has. An inode is a data structure that contains information about files. Volumes have both private and public inodes. Public inodes are used for files that are visible to the customer and private inodes are used for files that are used internally by the storage system. The maximum possible number of files setting is 2 billion. However, this maximum value can only be configured with volumes of 7.8 TB or larger.
+The number of files a volume can contain is determined by how many inodes it has. An inode is a data structure that contains information about files. Volumes have both private and public inodes. Public inodes are used for files that are visible to the customer and private inodes are used for files that are used internally by the storage system. The maximum number of files setting is 2 billion. However, this maximum value can only be configured with volumes of 7.8 TB or larger.
 The maximum number of inodes that can be configured on a volume is calculated by taking the total allocated volume size in KB and dividing it by 4. Any volume of 7.8 TB or larger reaches the maximum limit at 2,040,109,451 inodes.
 
 | Volume Size | Inodes |
@@ -106,7 +106,7 @@ The maximum number of inodes that can be configured on a volume is calculated by
 {: faq}
 {: #movedatacenter}
 
-You need to order new {{site.data.keyword.filestorage_short}} in the right data center, and then cancel the {{site.data.keyword.filestorage_short}} device you ordered in the incorrect location. When the volume is canceled, there's a 24-hour reclaim wait period. You can still see the volume in the console during those 24 hours. Billing for the volume stops immediately. When the reclaim-period expires, the data is destroyed and the volume is removed from the console, too.
+You need to order new {{site.data.keyword.filestorage_short}} in the right data center, and then cancel the {{site.data.keyword.filestorage_short}} device that you ordered in the incorrect location. When the volume is canceled, there's a 24-hour reclaim wait period. You can still see the volume in the console during those 24 hours. Billing for the volume stops immediately. When the reclaim period expires, the data is destroyed and the volume is removed from the console, too.
 
 ## Measuring IOPS
 {: faq}
@@ -166,7 +166,7 @@ To enact this good practice, complete the following steps.
    This action momentarily disrupts the network traffic on the host while the VLAN is being trunked to the host.
    {: note}
    
-4. Create a new network interface.
+4. Create a network interface.
    * On the Linux&reg; host, create a 802.11q interface. Choose one of the unused secondary IP address from the newly trunked VLAN and assign that IP address, subnet mask, and gateway to a new 802.11q interface.
    * In VMware, create a new VMkernel network interface (vmk) and assign the unused secondary IP address, subnet mask, and gateway IP from the newly trunked VLAN to the new vmk interface.
 5. Add a new persistent static route on the host to the target NFS subnet.
@@ -198,7 +198,7 @@ When IBM decommissions a physical drive, the drive is destroyed before disposal.
 
 Customers with special requirements for compliance such as NIST 800-88 Guidelines for Media Sanitization can perform the data sanitization procedure before they delete their storage.
 
-## I cannot cancel a {{site.data.keyword.filestorage_short}} volume because the Cancel action in the Cloud console is unavailable or grayed out. What’s happening?
+## I cannot cancel a {{site.data.keyword.filestorage_short}} volume because the Cancel action in the Cloud console is unavailable or disabled. What’s happening?
 {: faq}
 {: #cancelstorage}
 
@@ -209,7 +209,7 @@ The cancellation process for this storage device is in progress so the Cancel ac
 {: #nfs}
 {: support}
 
-Both NFS v3 and NFS v4.1 are supported in the {{site.data.keyword.cloud}} environment.
+Both NFSv3 and NFSv4.1 are supported in the {{site.data.keyword.cloud}} environment. The NFSv4.2 protocol is currently not supported.
 
 The preferred version is NFS v3 because it's a stateless protocol and more resilient when network events occur.
 
@@ -265,13 +265,13 @@ To prevent this situation from recurring, the customer might consider the follow
 
 To see the expanded volume size, mount and remount your existing {{site.data.keyword.filestorage_short}} disk on your server. In VMware, rescan storage to refresh the datastore and show the new volume size.
 
-## How do I re-connect storage after a chassis swap?
+## How do I reconnect storage after a chassis swap?
 {: faq}
 {: #chassis-swap}
 
 Complete the following tasks to connect storage after a swap.
 1. Remove the authorization (revoke access) from the storage devices, and then authorize the host again.
-2. Discover the storage devices again, with the new credentials that were gained from the re-authorization.
+2. Discover the storage devices again, with the new credentials that were gained from the reauthorization.
 
 For more information, see [Managing {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-managingstorage).
 
@@ -290,11 +290,11 @@ Complete the following steps to disconnect a volume from a host.
 
 Endurance and Performance are provisioning options that you can select for storage devices. In short, Endurance IOPS tiers offer predefined performance levels whereas you can fine-tune those levels with the Performance tier. The same devices are used but delivered with different options. For more information, see [File Storage Features](https://www.ibm.com/cloud/file-storage/details){: external}.
 
-## Can I connect {{site.data.keyword.filestorage_short}} to Windows?
+## Can I connect {{site.data.keyword.filestorage_short}} to Windows&reg;?
 {: faq}
 {: #connect-Windows}
 
-No. You cannot connect {{site.data.keyword.filestorage_full}} on Microsoft Windows. NFS is not supported by {{site.data.keyword.cloud}} in a Windows environment.
+No. You cannot connect {{site.data.keyword.filestorage_full}} on Microsoft&reg; Windows&reg;. NFS is not supported by {{site.data.keyword.cloud}} in a Windows&reg; environment.
 
 ## Can I mount a single storage device to multiple hosts within {{site.data.keyword.cloud_notm}}?
 {: faq}
@@ -306,7 +306,7 @@ Yes, you can use this setup because NFS is a file-aware protocol.
 {: faq}
 {: #inodes}
 
-Typically, when volumes are provisioned, they are allotted the maximum inode count for the size that you ordered. Maximum inode count grows automatically as the volume grows. If the inodes counts does not increase after you expanded a volume, submit a [support case](https://cloud.ibm.com/unifiedsupport/cases/add){: external}.
+Typically, when volumes are provisioned, they are allotted the maximum inode count for the size that you ordered. Maximum inode count grows automatically as the volume grows. If the inodes count does not increase after you expanded a volume, submit a [support case](https://cloud.ibm.com/unifiedsupport/cases/add){: external}.
 
 ## I am unable to upgrade storage. What can affect the ability to upgrade or expand storage?
 {: faq}
@@ -323,11 +323,11 @@ The following situations can affect the ability to upgrade or expand storage.
 
 All Block and {{site.data.keyword.filestorage_short}} services are thin-provisioned. This method is not modifiable.
 
-## My billing ID has changed, what does this mean?
+## My billing ID changed, what does this mean?
 {: #staasV2migration}
 {: faq}
 
-You might notice that your Storage volumes are now billed as "Endurance Storage Service” or "Performance Storage Service" instead of "Enterprise Storage", and you have new options in the console, such as the ability to adjust IOPS or increase capacity. {{site.data.keyword.cloud}} strives to continously improve storage capabilities. As hardware gets upgraded in the datacenters, storage volumes that reside in those datacenters are also upgraded to utilize all enhanced features. The price you pay for your Storage volume does not change with this upgrade.
+You might notice that your Storage volumes are now billed as "Endurance Storage Service” or "Performance Storage Service" instead of "Enterprise Storage", and you have new options in the console, such as the ability to adjust IOPS or increase capacity. {{site.data.keyword.cloud}} strives to continuously improve storage capabilities. As hardware gets upgraded in the datacenters, storage volumes that reside in those datacenters are also upgraded to leverage all enhanced features. The price that you pay for your Storage volume does not change with this upgrade.
 
 ## How durable is {{site.data.keyword.filestorage_short}}?
 {: #stordurabilityfaq}
@@ -339,7 +339,7 @@ When you store your data in {{site.data.keyword.filestorage_short}}, it's durabl
 {: #storavailabilityfaq}
 {: faq}
 
-When you store your data in {{site.data.keyword.filestorage_short}}, it's durable, highly available, and encrypted. File Storage is built upon best-in-class, proven, enterprise-grade hardware and software to ensure high availability and uptime. The ensure that the availability target of 99.999% (five 9's) is met, the data is stored redundantly across multiple physical disks on HA paired nodes. Each storage node has multiple paths to its own Solid-State Drives and its partner node's SSDs as well. This protects against path failure, and also controller failure because the node can still access its partner's disks seamlessly. For more information, see [Availability and Durability of {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-storageavailability).
+When you store your data in {{site.data.keyword.filestorage_short}}, it's durable, highly available, and encrypted. File Storage is built upon best-in-class, proven, enterprise-grade hardware and software to ensure high availability and uptime. To ensure that the availability target of 99.999% (five 9's) is met, the data is stored redundantly across multiple physical disks on HA paired nodes. Each storage node has multiple paths to its own Solid-State Drives and its partner node's SSDs as well. This setup protects against path failure, and also controller failure because the node can still access its partner's disks seamlessly. For more information, see [Availability and Durability of {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-storageavailability).
 
 ## Can I get storage performance metrics (IOPS or latency) from the Support teams?
 {: #storagemetrics}
