@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-06-06"
+lastupdated: "2022-07-06"
 
 keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
@@ -209,7 +209,7 @@ The cancellation process for this storage device is in progress so the Cancel ac
 {: #nfs}
 {: support}
 
-Both NFS v3 and NFS v4.1 are supported in the {{site.data.keyword.cloud}} environment.
+Both NFSv3 and NFSv4.1 are supported in the {{site.data.keyword.cloud}} environment. The NFSv4.2 protocol is currently not supported.
 
 The preferred version is NFS v3 because it's a stateless protocol and more resilient when network events occur.
 
