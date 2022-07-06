@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-07-06"
 
 keywords: File Storage, file storage, NFS, durability, availability, HA, high-availability, data loss, data integrity, uptime, five 9's, eleven 9's, data health, data corruption, data decay, encryption, security, integrity
 
@@ -48,7 +48,7 @@ The 11 nines durability target applies to a single Availability Zone. To protect
 ## High Availability
 {: #storavailability}
 
-{{site.data.keyword.filestorage_short}} is built upon best-in-class, proven, enterprise-grade hardware and software to ensure high availability and uptime. As mentioned previously, the data is stored redundantly across multiple physical disks on HA paired nodes. Each storage node has multiple paths to its own Solid-State Drives and its partner node's SSDs as well. This setup protects against path failure and controller failure because the node can still access its partner's disks for continued productivity. Redundant network ports and paths protect against network failures across the cloud connections.
+{{site.data.keyword.filestorage_short}} is built upon best-in-class, proven, enterprise-grade hardware and software to ensure high availability and uptime. As mentioned previously, the data is stored redundantly across multiple physical disks on HA paired nodes. Each storage node has multiple paths to its own Solid-State Drives and its partner node's SSDs as well. This setup protects against path failure and controller failure because the node can still access its partner's disks for continued productivity. In fact, the system can lose multiple disks in the cluster simultaneously without degrading customer performance or adverse risk of data loss. Redundant network ports and paths protect against network failures across the cloud connections.
 
 ## Encryption
 {: #storencryption}
