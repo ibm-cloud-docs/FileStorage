@@ -209,7 +209,7 @@ The cancellation process for this storage device is in progress so the Cancel ac
 {: #nfs}
 {: support}
 
-Both NFSv3 and NFSv4.1 are supported in the {{site.data.keyword.cloud}} environment.
+Both NFSv3 and NFSv4.1 are supported in the {{site.data.keyword.cloud}} environment. NFSv4.2 is currently not supported
 
 The preferred version is NFS v3 because it's a stateless protocol and more resilient when network events occur.
 
