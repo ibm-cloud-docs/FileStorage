@@ -37,7 +37,7 @@ You can order an enhanced volume through the {{site.data.keyword.cloud}} Console
 When you place an order with API, specify the "Storage-as-a-Service" package to ensure you're getting the updated features with your new storage.
 {: important}
 
-When you order a file share, your new storage is available to mount in a few minutes. You can view it in the Resource List and in the {{site.data.keyword.blockstorageshort}} list.
+When you order a file share, your new storage is available to mount in a few minutes. You can view it in the Resource List and in the {{site.data.keyword.filestorage_short}} list.
 
 ## Authorizing host to the new {{site.data.keyword.filestorage_short}}
 {: #authtonewvol}
