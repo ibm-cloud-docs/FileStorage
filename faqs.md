@@ -209,13 +209,13 @@ The cancellation process for this storage device is in progress so the Cancel ac
 {: #nfs}
 {: support}
 
-Both NFS v3 and NFS v4.1 are supported in the {{site.data.keyword.cloud}} environment.
+Both NFSv3 and NFSv4.1 are supported in the {{site.data.keyword.cloud}} environment. NFSv4.2 is currently not supported
 
-The preferred version is NFS v3 because it's a stateless protocol and more resilient when network events occur.
+The preferred version is NFSv3 because it's a stateless protocol and more resilient when network events occur.
 
-NFS v3 natively supports `no_root_squash` that allows root clients to retain root permissions on the NFS share. You can enable this feature in NFS v4.1, by editing the domain information and running the `rpcidmapd` or a similar service. For more information, see [Implementing no_root_squash for NFS](/docs/FileStorage?topic=FileStorage-mountingLinux#norootsquash).
+NFSv3 natively supports `no_root_squash` that allows root clients to retain root permissions on the NFS share. You can enable this feature in NFSv4.1, by editing the domain information and running the `rpcidmapd` or a similar service. For more information, see [Implementing no_root_squash for NFS](/docs/FileStorage?topic=FileStorage-mountingLinux#norootsquash).
 
-When it comes to vSphere Solutions, NFS v3 supports more features than v4.1. Such features include Storage DRS and Site Recovery Manager.
+When it comes to vSphere Solutions, NFSv3 supports more features than v4.1. Such features include Storage DRS and Site Recovery Manager.
 
 ## Can VAAI and HW acceleration be enabled in our VMware deployments?
 {: #isVAAIsupported}

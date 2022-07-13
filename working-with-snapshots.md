@@ -122,7 +122,7 @@ Options:
 {: #listsnapshotUI}
 {: ui}
 
-A list of retained snapshots and space that is used can be seen on the **{{site.data.keyword.blockstorageshort}} Detail** page.  Management functions (editing schedules and adding more space) are conducted on the **{{site.data.keyword.blockstorageshort}} Detail** page by using the **Actions** menu or links in the various sections on the page. The Snapshot page displays how much capacity the volume has and how much of it is used. 
+A list of retained snapshots and space that is used can be seen on the **{{site.data.keyword.filestorage_short}} Detail** page.  Management functions (editing schedules and adding more space) are conducted on the **{{site.data.keyword.filestorage_short}} Detail** page by using the **Actions** menu or links in the various sections on the page. The Snapshot page displays how much capacity the volume has and how much of it is used. 
 
 You receive notifications when you reach space thresholds – 75 percent, 90 percent, and 95 percent.
 
