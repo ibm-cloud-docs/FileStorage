@@ -36,7 +36,7 @@ Before you can set up your initial schedule, you must first purchase snapshot sp
 
 Snapshots schedules can be set up for hourly, daily, and weekly intervals, each with a distinct retention cycle. The maximum limit of snapshots is 50  per storage volume, which can be a mix of hourly, daily, and weekly schedules, and manual snapshots.
 
-1. Click your storage volume, click **Actions**, and click **Schedule Snapshot**.
+1. Click your storage volume, click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions"), and click **Schedule Snapshot**.
 2. In the New Schedule Snapshot window, you can select from three different snapshot frequencies. Use any combination of the three to create a comprehensive snapshot schedule.
    - Hourly
       - Specify the minute each hour that a snapshot is to be taken. The default is the current minute.
@@ -99,7 +99,7 @@ Manual snapshots can be taken at various points during an application upgrade or
 The maximum limit of manual snapshots per storage volume is 50.
 
 1. Click your storage volume.
-2. Click **Actions**.
+2. Click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions").
 3. Click **Take Manual Snapshot**.
 
 The snapshot is taken and displayed in the **Snapshots** section of the **Detail** page. Its schedule appears Manual.
@@ -244,7 +244,7 @@ If you're using the replication feature, be sure that the schedule that you're d
 Snapshots that are no longer needed can be manually removed to free up space for future snapshots. Deletion is done through **Storage** > **{{site.data.keyword.filestorage_short}}**.
 
 1. Click your storage volume and click **Snapshot** to see the list of existing snapshots.
-2. Click **Actions** next to a particular snapshot and click **Delete** to delete the snapshot. This deletion doesn't affect any future or past snapshots on the same schedule as there's no dependency between snapshots.
+2. Click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions") next to a particular snapshot and click **Delete** to delete the snapshot. This deletion doesn't affect any future or past snapshots on the same schedule as there's no dependency between snapshots.
 
 Manual snapshots that aren't deleted in the portal manually, are automatically deleted when you reach space limitations. The oldest snapshot is deleted first.
 {: note}
@@ -280,7 +280,7 @@ You might need to take your storage volume back to a specific point in time beca
 2. Go to the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}. From the menu, select **Classic Infrastructure**.
 3. Click **Storage**, **{{site.data.keyword.filestorage_short}}**.
 4. Scroll on the list, and click your volume to be restored. The **Snapshots** page displays the list of all saved snapshots along with their size and creation date.
-5. Click **Actions** next to the snapshot to be used and click **Restore**.
+5. Click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions") next to the snapshot to be used and click **Restore**.
 
    Completing the restore results in the loss of the data that was created or modified after the snapshot was taken. This data loss occurs because your storage volume returns to the same state that it was in of the time of the snapshot.
    {: note}

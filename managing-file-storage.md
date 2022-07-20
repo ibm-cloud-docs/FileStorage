@@ -157,7 +157,7 @@ If you want to disconnect multiple volumes from a specific host, you need to rep
 2. From the menu, select **Classic Infrastructure**.
 3. Click **Storage** > **{{site.data.keyword.filestorage_short}}**, and select the **Volume** from which you want to revoke access.
 4. Click **Authorized Hosts** to display the compute instances that have access to your File share.
-5. Click **Actions** next to the host whose access is to be revoked, and select **Revoke Access**.
+5. Click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions") next to the host whose access is to be revoked, and select **Revoke Access**.
 6. Confirm if you want to revoke the access for a volume because the action cannot be undone. Click **Yes** to revoke volume access, or **No** to cancel the action.
 
 If you want to disconnect multiple hosts from a specific volume, you need to repeat the Revoke Access action for each host.
@@ -196,7 +196,7 @@ If you no longer need a specific volume, you can delete that file share. To canc
 
 1. Go to the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}. From the menu, select **Classic Infrastructure**.
 2. Click **Storage** > **{{site.data.keyword.filestorage_short}}**.
-3. Click **Actions** for the volume to be canceled, and select **Delete {{site.data.keyword.filestorage_short}}**.
+3. Click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions") for the volume to be canceled, and select **Delete {{site.data.keyword.filestorage_short}}**.
 4. Confirm if want to delete the volume immediately or on the anniversary date of when the volume was provisioned.
 
    If you select the option to cancel the volume on its anniversary date, you can void the cancellation request before its anniversary date.

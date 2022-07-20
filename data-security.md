@@ -58,7 +58,7 @@ To cancel a storage volume, you need to revoke access from any hosts first. Acti
 
 1. Go to the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}. From the menu, select **Classic Infrastructure**.
 2. Click **Storage** > **{{site.data.keyword.filestorage_short}}**.
-3. Click **Actions** for the volume to be canceled, and select **Delete {{site.data.keyword.filestorage_short}}**.
+3. Click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions") for the volume to be canceled, and select **Delete {{site.data.keyword.filestorage_short}}**.
 4. Confirm if want to cancel the volume immediately or on the anniversary date of when the volume was provisioned.
 
    If you select the option to cancel the volume on its anniversary date, you can void the cancellation request before its anniversary date.
