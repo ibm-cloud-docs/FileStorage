@@ -53,7 +53,7 @@ If the volume has replication in place, the replica is automatically updated to 
 {: #adjustingstepsUI}
 {: ui}
 
-1. Go to your list of {{site.data.keyword.filestorage_short}}. From the {{site.data.keyword.cloud}} console, click **Classic Infrastructure** > **Storage** > **{{site.data.keyword.filestorage_short}}**.
+1. Go to your list of {{site.data.keyword.filestorage_short}}. From the {{site.data.keyword.cloud}} console, click **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic") > **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Select the volume from the list and click the ellipsis (**...**) > **Modify File Share**.
 3. In the **Adjust Storage IOPS** section, make a new selection:
     - For Endurance (Tiered IOPS), select an IOPS Tier greater than 0.25 IOPS/GB of your storage. You can increase the IOPS tier at any time. However, decreasing is available only once a month.

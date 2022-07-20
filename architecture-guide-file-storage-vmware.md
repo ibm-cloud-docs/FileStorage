@@ -88,7 +88,7 @@ VMware&reg; vSphere on network-attached storage](https://www.vmware.com/content/
 
 {{site.data.keyword.filestorage_short}} allows administrators to set snapshot schedules that create and delete snapshot copies automatically for each storage volume. They can also create extra snapshot schedules (hourly, daily, weekly) for automatic snapshots and manually create ad hoc snapshots for business continuity and disaster recovery (BCDR) scenarios. Automatic alerts are delivered through the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}  to the volume owner for the retained snapshots and space used.
 
-Snapshot space is required to use snapshots. Space can be purchased on the initial volume order or after the initial provisioning through the **Volume Details** page by clicking **Actions** and selecting **Add Snapshot Space**.
+Snapshot space is required to use snapshots. Space can be purchased on the initial volume order or after the initial provisioning through the **Volume Details** page by clicking **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions") and selecting **Add Snapshot Space**.
 
 It's important to note that VMware&reg; environments are not aware of snapshots. The {{site.data.keyword.filestorage_short}} snapshot capability must not be confused with VMware&reg; snapshots. Any recovery that uses the {{site.data.keyword.filestorage_short}} snapshot feature must be handled from the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}.
 
@@ -132,8 +132,8 @@ Follow the instructions the [Advanced Single-Site VMware&reg; Reference Architec
 
 Storage is provisioned in less than a minute and becomes visible on the **{{site.data.keyword.filestorage_short}}** page of the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic/storage/file){: external}. Next, the {{site.data.keyword.BluBareMetServers_full}} or {{site.data.keyword.BluVirtServers_full}} that are going to use the volume must be authorized to access the storage. Use the following steps to authorize the host.
 
-1. In the console, go to **Classic Infrastructure**  > **Storage** > **{{site.data.keyword.filestorage_short}}**.
-2. Scroll to the File share you want to mount, and click the ellipsis (**...**) for Actions. Then, select **Authorize Host**.
+1. In the console, go to **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic") > **Storage** > **{{site.data.keyword.filestorage_short}}**.
+2. Scroll to the File share you want to mount, and click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions"). Then, select **Authorize Host**.
 3. Click **Subnets**.
 4. Choose from the list of available subnets that are assigned to the VMkernel ports on the ESXi hosts, and click **Save**.
 

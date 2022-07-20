@@ -37,9 +37,9 @@ Authorized hosts and volumes must be in the same data center. For example, you c
 
 You can authorize a host to access the {{site.data.keyword.filestorage_full}} volume through the [{{site.data.keyword.cloud}} console](https://{DomainName}/cloud-storage/file){: external}.
 
-1. Log in to the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external} and click the **menu** icon on the upper left. Select **Classic Infrastructure**.
+1. Log in to the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external} and click the **menu** icon on the upper left. Select **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic").
 2. Locate the source or destination volume in the **{{site.data.keyword.filestorage_short}}** list. Its replica volume is listed under the source volume in the inactive status.
-3. Click the replica name and on the next screen, click **Actions**. From the menu, select **Authorize Hosts**.
+3. Click the replica name and on the next screen, click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions"). From the menu, select **Authorize Hosts**.
 4. Select a host type and then choose a host from the dropdown that is available for the volume. Filter the available host list by the device type, subnet, or IP address.
 
    When the list is filtered by subnet, the subnets that are displayed are subscribed subnets in the same data center as the storage volume.
@@ -87,7 +87,7 @@ Before you proceed with these steps, disconnect the volume. Failure to do so, re
 {: ui}
 
 1. Click your active volume (“source”).
-2. In the upper right, click **Actions**.
+2. In the upper right corner, click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions").
 3. Select **Controlled Failover** or **Immediate Failover**.
   
    Expect a message that states that the failover is in progress. Additionally, an icon appears next to your volume on the **{{site.data.keyword.filestorage_short}}** that indicates that an active transaction is occurring. Hovering over the icon produces a window that shows the transaction. The icon disappears when the transaction is complete. During the failover process, configuration-related actions are read-only. You can't edit any snapshot schedule or change snapshot space. The event is logged in replication history. When your target volume is live, you get another message. Your original source volume's Status becomes Inactive.
@@ -132,7 +132,7 @@ When a Failback is started, the replication relationship is flipped again. Your 
 Failbacks are started under **Storage**, **{{site.data.keyword.filestorage_short}}** in the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic/storage/file){: external}.
 
 1. Click your active volume ("target").
-2. In the upper right, click **Replica** and click **Actions**.
+2. In the upper right, click **Replica** and click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions").
 3. Select **Controlled Failback**.
 
    Expect a message that shows the failover is in progress. Additionally, an icon appears next to your volume on the **{{site.data.keyword.filestorage_short}}** that indicates that an active transaction is occurring. Hovering over the icon produces a window that shows the transaction. The icon disappears when the transaction is complete. During the Failback process, configuration-related actions are read-only. You can't edit any snapshot schedule or change snapshot space. The event is logged in replication history.

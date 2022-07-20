@@ -74,7 +74,7 @@ To list suitable replication datacenters for a specific volume, use the followin
 Replications work based on a snapshot schedule. You must first have snapshot space and a snapshot schedule for the source volume before you can replicate. The **Order Replica** option appears when Snapshot space and Snapshot schedule are available for the source volume. Replication is managed under **Storage** > **{{site.data.keyword.filestorage_short}}** in the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic/storage/file){: external}.
 
 1. Click the name of your storage volume to display its details.
-2. Click **Actions** and click **Order Replica**.
+2. Click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions") and click **Order Replica**.
 3. Select the existing snapshot schedule that you want your replication to follow. The list contains all of your active snapshot schedules.  \n - 
 
    You can select only one schedule even if you have a mix of hourly, daily, and weekly. All snapshots that were captured since the previous replication cycle, are replicated regardless of the schedule that originated them. \n - For more information, see [Working with Snapshots](/docs/FileStorage?topic=FileStorage-snapshots). Replication starts 5 minutes after the snapshot is taken to ensure the most up-to-date data is copied to the replica volume.
@@ -149,7 +149,7 @@ The replication schedule is based on an existing snapshot schedule. To change th
 
 However, if you want to change the time of day when your **Daily** replication occurs, you can adjust the existing schedule on the active volume.
 
-1. On the active volume details page, click **Actions**.
+1. On the active volume details page, click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions").
 2. Select **Edit Snapshot Schedule**.
 3. Look in the **Snapshot** frame under **Schedule** to determine which Daily schedule you're using for replication. Change the schedule that you want.
 4. Click **Save**.
@@ -161,7 +161,7 @@ However, if you want to change the time of day when your **Daily** replication o
 You can cancel replication either immediately or on the anniversary date, which causes billing to end.
 
 1. Click the volume from the **{{site.data.keyword.filestorage_short}}** page.
-2. Click **Actions**.
+2. Click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions").
 3. Select **Delete Replica**.
 4. Select when to cancel. Choose **Immediately** or **Anniversary Date**, and click **Continue**.
 5. This operation deletes the replica volume with all its data. Click the check box to acknowledge this, and click **Delete**.

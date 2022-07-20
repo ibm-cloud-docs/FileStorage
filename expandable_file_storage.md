@@ -58,7 +58,7 @@ Existing size limitations for {{site.data.keyword.filestorage_short}} that was p
 {: #resizingstepsUI}
 {: ui}
 
-1. Go to the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}. From the menu, select **Classic Infrastructure**. Click **Storage** > **{{site.data.keyword.filestorage_short}}**.
+1. Go to the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}. From the menu, select **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic"). Click **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Select the volume from the list and click the ellipsis (**...**) > **Modify File Share**.
 3. Enter the new storage size in GB.
 4. Review your selection and the new pricing. Click **Modify**.
