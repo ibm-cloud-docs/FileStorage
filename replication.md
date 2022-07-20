@@ -149,7 +149,7 @@ The replication schedule is based on an existing snapshot schedule. To change th
 
 However, if you want to change the time of day when your **Daily** replication occurs, you can adjust the existing schedule on the active volume.
 
-1. On the active volume details page, click **Actions**.
+1. On the active volume details page, click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions").
 2. Select **Edit Snapshot Schedule**.
 3. Look in the **Snapshot** frame under **Schedule** to determine which Daily schedule you're using for replication. Change the schedule that you want.
 4. Click **Save**.
@@ -161,7 +161,7 @@ However, if you want to change the time of day when your **Daily** replication o
 You can cancel replication either immediately or on the anniversary date, which causes billing to end.
 
 1. Click the volume from the **{{site.data.keyword.filestorage_short}}** page.
-2. Click **Actions**.
+2. Click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions").
 3. Select **Delete Replica**.
 4. Select when to cancel. Choose **Immediately** or **Anniversary Date**, and click **Continue**.
 5. This operation deletes the replica volume with all its data. Click the check box to acknowledge this, and click **Delete**.
