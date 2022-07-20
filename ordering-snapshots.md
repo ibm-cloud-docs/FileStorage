@@ -59,7 +59,7 @@ Additionally, for most workloads, the larger a volume is the less space needs to
 {: ui}
 
 1. Log in to the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external} and click the menu icon ![Menu icon](../icons/icon_hamburger.svg "Menu").
-2. Select **Classic Infrastructure**.
+2. Select **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic").
 3. Access your Storage through **Storage** > **{{site.data.keyword.filestorage_short}}**.
 4. Click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions"), then click **Add Snapshot Space**.
 5. Select the amount of space that you need and the payment method.

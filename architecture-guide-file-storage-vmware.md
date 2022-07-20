@@ -132,7 +132,7 @@ Follow the instructions the [Advanced Single-Site VMware&reg; Reference Architec
 
 Storage is provisioned in less than a minute and becomes visible on the **{{site.data.keyword.filestorage_short}}** page of the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic/storage/file){: external}. Next, the {{site.data.keyword.BluBareMetServers_full}} or {{site.data.keyword.BluVirtServers_full}} that are going to use the volume must be authorized to access the storage. Use the following steps to authorize the host.
 
-1. In the console, go to **Classic Infrastructure**  > **Storage** > **{{site.data.keyword.filestorage_short}}**.
+1. In the console, go to **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic") > **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Scroll to the File share you want to mount, and click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions"). Then, select **Authorize Host**.
 3. Click **Subnets**.
 4. Choose from the list of available subnets that are assigned to the VMkernel ports on the ESXi hosts, and click **Save**.

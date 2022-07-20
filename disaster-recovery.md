@@ -37,7 +37,7 @@ This action breaks the replication relationship and restoring the connection bet
 {: #DRFailoverUI}
 {: ui}
 
-1. Go to your list of {{site.data.keyword.filestorage_short}}. From the **Classic Infrastructure** menu, click **Storage** > **{{site.data.keyword.filestorage_short}}**.
+1. Go to your list of {{site.data.keyword.filestorage_short}}. From the **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic") menu, click **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Locate and click the volume name.
 3. Click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions") > **Failover**.
 4. When the primary location is unavailable, the option of Disaster Recovery Failover becomes active. 

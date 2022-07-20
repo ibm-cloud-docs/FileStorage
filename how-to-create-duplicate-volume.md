@@ -52,7 +52,7 @@ You can create a duplicate volume through the [{{site.data.keyword.cloud}} conso
 {: #createdepduplicateUI}
 {: ui}
 
-1. Go to your list of {{site.data.keyword.filestorage_short}}. From the **Classic Infrastructure** menu, click **Storage** > **{{site.data.keyword.filestorage_short}}**.
+1. Go to your list of {{site.data.keyword.filestorage_short}}. From the **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic") menu, click **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Locate and click the volume name.
 3. Click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions") > **Duplicate Share**.
 4. Choose your snapshot option.

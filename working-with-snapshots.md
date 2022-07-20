@@ -277,7 +277,7 @@ You might need to take your storage volume back to a specific point in time beca
    For more information about mounting and unmounting storage, see [connecting your new storage](/docs/FileStorage?topic=FileStorage-mountingLinux).
    {: tip}
 
-2. Go to the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}. From the menu, select **Classic Infrastructure**.
+2. Go to the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}. From the menu, select **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic").
 3. Click **Storage**, **{{site.data.keyword.filestorage_short}}**.
 4. Scroll on the list, and click your volume to be restored. The **Snapshots** page displays the list of all saved snapshots along with their size and creation date.
 5. Click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions") next to the snapshot to be used and click **Restore**.

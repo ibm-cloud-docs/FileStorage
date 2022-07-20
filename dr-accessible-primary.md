@@ -37,7 +37,7 @@ Authorized hosts and volumes must be in the same data center. For example, you c
 
 You can authorize a host to access the {{site.data.keyword.filestorage_full}} volume through the [{{site.data.keyword.cloud}} console](https://{DomainName}/cloud-storage/file){: external}.
 
-1. Log in to the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external} and click the **menu** icon on the upper left. Select **Classic Infrastructure**.
+1. Log in to the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external} and click the **menu** icon on the upper left. Select **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic").
 2. Locate the source or destination volume in the **{{site.data.keyword.filestorage_short}}** list. Its replica volume is listed under the source volume in the inactive status.
 3. Click the replica name and on the next screen, click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions"). From the menu, select **Authorize Hosts**.
 4. Select a host type and then choose a host from the dropdown that is available for the volume. Filter the available host list by the device type, subnet, or IP address.
