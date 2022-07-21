@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2021
-lastupdated: "2021-07-29"
+  years: 2014, 2022
+lastupdated: "2022-07-21"
 
 keywords: File Storage, file storage, NFS, snapshot, ordering snapshot, snapshot space
 
@@ -69,7 +69,7 @@ Additionally, for most workloads, the larger a volume is the less space needs to
    Discounts are applied when the order is processed.
    {: note}
 
-8. Check the **I have read the Master Service Agreement and agree to the terms therein** box and click **Place Order**. Your snapshot space is provisioned in a few minutes.
+8. Check the **I have read the Service Description and agree to the terms therein** box and click **Place Order**. Your snapshot space is provisioned in a few minutes.
 
 ## Ordering Snapshot space from the SLCLI
 {: #ordersnapshotCLI}
