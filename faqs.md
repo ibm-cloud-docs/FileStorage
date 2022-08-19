@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-07-13"
+lastupdated: "2022-08-19"
 
 keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
@@ -113,7 +113,7 @@ You need to order new {{site.data.keyword.filestorage_short}} in the right data 
 {: #iopsmeasure}
 {: support}
 
-IOPS is measured based on a load profile of 16-KB blocks with random 50 percent reads and 50 percent writes. Workloads that differ from this profile might experience poor performance. To improve performance, you can try [adjusting the host queue depth settings](/docs/FileStorage?topic=FileStorage-hostqueuesettings) or [enabling Jumbo frames](/docs/FileStorage?topic=FileStorage-jumboframes).
+IOPS is measured based on a load profile of 16-KB blocks with random 50 percent reads and 50 percent writes. Workloads that differ from this profile might experience poor performance. To improve performance, you can try adjusting the host settings or [enabling Jumbo frames](/docs/FileStorage?topic=FileStorage-jumboframes).
 
 ## What happens when I use a smaller block size for measuring performance?
 {: faq}
