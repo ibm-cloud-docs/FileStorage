@@ -29,9 +29,9 @@ To achieve maximum IOPS, adequate network resources need to be in place. 
 
 * **Run storage traffic on a dedicate VLAN.** Running storage traffic through software firewalls increases latency and adversely affects storage performance. It's best to run storage traffic on a VLAN, which bypasses the firewall. For more information, see [routing storage traffic to its own VLAN interface](/docs/FileStorage?topic=FileStorage-file-storage-faqs#howtoisolatedstorage).
 
-* **Avoid routing your storage traffic to a gateway device** whenever possible. When storage traffic is routed to a gateway device, it can add latency to storage traffic, or it can cause storage traffic disruption if the firewall in the gateway device is misconfigured. The storage disruption is especially true when maintenance such as a reboot is required on a single (not clustered) gateway device. If a storage traffic must be routed through a gateway device, ensure that  the gateway device has an at least 10-Gbps interface, or the gateway device might become a network bottleneck.
+* **Avoid routing your storage traffic to a gateway device** whenever possible. When storage traffic is routed to a gateway device, it can add latency to storage traffic, or it can cause storage traffic disruption if the firewall in the gateway device is misconfigured. The storage disruption is especially true when maintenance such as a restart is required on a single (not clustered) gateway device. If a storage traffic must be routed through a gateway device, ensure that  the gateway device has an at least 10-Gbps interface, or the gateway device might become a network bottleneck.
 
-* **Use the subnet address** instead of individual IP addresses on firewalls for NFS traffic. NFS hostname serve 6 IPS, and these 6 IP addresses can change.
+* **Use the subnet address** instead of individual IP addresses on firewalls for NFS traffic. NFS hostname serves 6 IPs, and these 6 IP addresses can change.
 
 * **Use a faster NIC.** There are limits set at the LUN level and a faster interface doesn't increase that limit. However, with a slower Ethernet connection, your bandwidth can be a potential hinderance to achieving best performance levels.
 
