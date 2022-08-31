@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-15"
+lastupdated: "2022-08-31"
 
 keywords: File Storage, NFS, provisioning, ordering, duplicate, cloning, replication
 
@@ -142,14 +142,14 @@ By default, you can provision a combined total of 750 {{site.data.keyword.filest
 The method `order_file_volume` (storage_type, location, size, iops=None, tier_level=None, snapshot_size=None, service_offering='storage_as_a_service', hourly_billing_flag=False) places an order for a file volume.
 
 Parameters:
-- storage_type – ‘performance’ or ‘endurance’
-- location – Datacenter in which to order iSCSI volume
-- size – Size of the desired volume, in GB
-- iops – Number of IOPs for a “Performance” order
-- tier_level – Tier level to use for an “Endurance” order
-- snapshot_size – The size of optional snapshot space, if snapshot space should also be ordered (None if not ordered)
-- service_offering – Requested offering package to use in the order (‘storage_as_a_service’, ‘enterprise’, or ‘performance’)
-- hourly_billing_flag – Billing type, monthly (False) or hourly (True), default to monthly.
+- `storage_type` – "performance" or "endurance".
+- `location` – Datacenter in which to order iSCSI volume.
+- `size` – Size of the new volume, in GB.
+- `iops` – Number of IOPs for a “Performance” order.
+- `tier_level` – Tier level to use for an “Endurance” order.
+- `snapshot_size` – The size of optional snapshot space, if snapshot space is also to be ordered. (None if not ordered.)
+- `service_offering` – Requested offering package to use in the order ("storage_as_a_service", "enterprise", or "performance").
+- `hourly_billing_flag` – Billing type, monthly (False) or hourly (True), default to monthly.
 
 To be able to access all the new features, order `Storage-as-a-Service Package 759`.
 {: tip}
@@ -178,7 +178,7 @@ To avoid data-loss and to ensure business continuity, consider replicating your 
 
 If you want to clone your volume and use it independently from the original volume, see [Creating and managing independent duplicate volumes](/docs/FileStorage?topic=FileStorage-duplicatevolume).
 
-If you want to clone your volume and have the ability to refresh the duplicate on demand, see [Creating and managing dependent duplicate volumes](/docs/FileStorage?topic=FileStorage-dependentduplicate).
+If you want to clone your volume and be able to refresh the duplicate on demand, see [Creating and managing dependent duplicate volumes](/docs/FileStorage?topic=FileStorage-dependentduplicate).
 
 ## Identifying {{site.data.keyword.filestorage_short}} volumes on the invoice
 {: #findstorageinvoice}
