@@ -43,7 +43,7 @@ First, make sure that the host that is to access the {{site.data.keyword.filesto
 You can authorize a host to access the {{site.data.keyword.filestorage_short}} volume through the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic/storage/file){: external}.
 
 1. In the console, go to **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic") > **Storage** > **{{site.data.keyword.filestorage_short}}**.
-2. Scroll to the File share you want to mount, and click Actions ![Actions icon](../icons/action-menu-icon.svg "Actions"). Then, select **Authorize Host**.
+2. Scroll to the File share that you want to mount, and click Actions ![Actions icon](../icons/action-menu-icon.svg "Actions"). Then, select **Authorize Host**.
 3. Filter the available host list by selecting the device type, subnet, or IP address.
 
    When the list is filtered by subnet, the subnets that are displayed are subscribed subnets in the same data center as the storage volume.
@@ -101,7 +101,6 @@ The example is based on RHEL 7. The steps can be adjusted for other Linux&reg; d
    The mount point information can be obtained from the {{site.data.keyword.filestorage_short}} Details page in the UI or through an API call - `SoftLayer_Network_Storage::getNetworkMountAddress()`.
    {: tip}
 
-
 3. Verify that the mount was successful by using the disk file system command.
    ```text
    # df -h
@@ -121,7 +120,7 @@ The example is based on RHEL 7. The steps can be adjusted for other Linux&reg; d
    -rw-r--r--   1 nobody nobody    0 Sep 8 15:52 test
    ```
 
-   The files that are created by root have ownership of `nobody:nobody`. To display ownership correctly, `idmapd.conf` needs to be updated with the correct domain settings. For more information, see the [How to implement no_root_squash for NFS](#norootsquash) section.
+   The files that are created by root have ownership of `nobody:nobody`. To display ownership correctly, `idmapd.conf` needs to be updated with the correct domain settings. For more information, see the [Implementing `no_root_squash` for NFS (optional)](#norootsquash) section.
    {: tip}
 
 5. Mount the remote share on start. To complete the setup, edit the file systems table (`/etc/fstab`) to add the remote share to the list of entries that are automatically mounted on startup:

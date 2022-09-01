@@ -31,7 +31,7 @@ completion-time: 1h
 {: toc-services=""}
 {: toc-completion-time="1h"}
 
-Use these instructions to connect an Ubuntu Linux&reg;-based {{site.data.keyword.cloud}} Compute instance to a Network file system (NFS) share. For more information about how to order {{site.data.keyword.filestorage_full}}, see the [Getting started](/docs/FileStorage?topic=FileStorage-getting-started) tutorial.
+Use these instructions to connect an Ubuntu Linux&reg;-based {{site.data.keyword.cloud}} Compute instance to a Network File System (NFS) share. For more information about how to order {{site.data.keyword.filestorage_full}}, see the [Getting started](/docs/FileStorage?topic=FileStorage-getting-started) tutorial.
 {: shortdesc}
 
 First, make sure that the host that is to access the {{site.data.keyword.filestorage_short}} volume is authorized.
@@ -43,7 +43,7 @@ First, make sure that the host that is to access the {{site.data.keyword.filesto
 You can authorize a host to access the {{site.data.keyword.filestorage_short}} volume through the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic/storage/file){: external}.
 
 1. In the console, go to **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic") > **Storage** > **{{site.data.keyword.filestorage_short}}**.
-2. Scroll to the File share you want to mount, and click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions"). Then, select **Authorize Host**.
+2. Scroll to the File share that you want to mount, and click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions"). Then, select **Authorize Host**.
 3. Filter the available host list by selecting the device type, subnet, or IP address.
 
    When the list is filtered by subnet, the subnets that are displayed are subscribed subnets in the same data center as the storage volume.
@@ -98,7 +98,7 @@ Options:
    {: tip}
 
 
-3. Verify that the mount was successful by using the disk filesystem command.
+3. Verify that the mount was successful by using the disk file system command.
    ```text
    # df -h
    Filesystem Size Used Avail Use% Mounted on
