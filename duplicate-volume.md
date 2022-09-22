@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-08-29"
+lastupdated: "2022-09-22"
 
 keywords: File Storage, file storage, NFS, duplicate volume
 
@@ -22,18 +22,24 @@ subcollection: FileStorage
 # Creating and managing independent duplicate volumes
 {: #duplicatevolume}
 
-You can create a duplicate of an existing {{site.data.keyword.filestorage_full}}. The duplicate volume inherits the capacity and performance options of the original volume by default and has a copy of the data up to the point-in-time of a snapshot. The duplicate volume is completely independent from the original volume.
+You can create a duplicate of an existing {{site.data.keyword.filestorage_full}}. The duplicate volume inherits the capacity and performance options of the original volume by default and has a copy of the data up to the point-in-time of a snapshot. The duplicate volume can be dependent or independent from the original volume.
 {: shortdesc}  
 
-Because the duplicate is based on the data in a point-in-time snapshot, snapshot space is required on the original volume before you can create a duplicate. To learn more about snapshots and how to order snapshot space, refer to [Snapshot documentation](/docs/FileStorage?topic=FileStorage-snapshots).  
+Because the duplicate is based on the data in a point-in-time snapshot, snapshot space is required on the original volume before you can create a duplicate. For more information about snapshots and how to order snapshot space, see the [Snapshot documentation](/docs/FileStorage?topic=FileStorage-snapshots).  
 {: important}
 
- Independent duplicates can be created from both **primary** and **replica** volumes. The new duplicate is created in the same data center as the original volume. If you create a duplicate from a replica volume, the new volume is created in the same data center as the replica volume.
+**Independent duplicates** can be created from both **primary** and **replica** volumes. The new duplicate is created in the same data center as the original volume. If you create a duplicate from a replica volume, the duplicate volume is created in the same data center as the replica volume.
+
+**Dependent duplicate** volumes are created by using a snapshot from the primary volume. Replica volumes cannot be used to create or update dependent duplicate volumes.
 
 If you are a Dedicated account user of {{site.data.keyword.containerlong}}, see your options for duplicating a volume in the [{{site.data.keyword.containerlong_notm}} documentation](/docs/containers?topic=containers-file_storage#file_backup_restore).
 {: tip}
 
-Duplicate volumes can be accessed by a host for read/write as soon as the storage is provisioned. However, snapshots and replication aren't allowed until the data copy from the original to the duplicate is complete. Depending on the size of the data, the copying process can take up to several hours. When the data copy is complete, the duplicate can be managed and used as an independent volume.
+All duplicate volumes can be accessed by a host for read and write operations as soon as the volume is provisioned. 
+
+Dependent duplicate can be refreshed from new snapshots of the parent volume manually immediately after their creation. The dependent duplicate volume keeps the original snapshot locked so the snapshot cannot be deleted while the dependent duplicate exists.
+
+However, snapshots and replication of independent duplicate volumes aren't allowed until the data copy from the original to the duplicate is complete and the duplicate volume is fully independent from the parent volume. Depending on the size of the data, the separation process can take several hours. When it's complete, the duplicate can be managed and used as an independent volume.
 
 This feature is available in most [locations](/docs/FileStorage?topic=FileStorage-selectDC).
 
@@ -45,8 +51,7 @@ Some common uses for a duplicate volume include the following examples.
 - **Development and Testing (dev/test)**. Create up to four simultaneous duplicates of a volume at one time to create duplicate data for development and testing.
 - **Storage Resize**. Create a volume with new size, IOPS rate or both without needing to move your data.  
 
-You can create a duplicate volume through the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external} in a couple of ways.
-
+You can create an independent duplicate volume through the [{{site.data.keyword.cloud_notm}} console](https://{DomainName}/){: external} in a couple of ways. However, you can provision dependent duplicate volumes only from the CLI.
 
 ## Creating a duplicate from a specific volume in the UI
 {: #createdepduplicateUI}
@@ -76,7 +81,10 @@ You can create a duplicate volume through the [{{site.data.keyword.cloud}} conso
 {: #createindependentduplicateCLI}
 {: cli}
 
-You can create a duplicate volume from the SLCLI by using the following command.
+The commands that are described in the article are part of the SLCLI. For more information about how to install and use the SLCLI, see [Python API Client](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}.
+{: tip}
+
+To create an **independent duplicate** {{site.data.keyword.blockstorageshort}} volume, you can use the following command.
 
 ```python
 # slcli file volume-duplicate --help
@@ -126,19 +134,46 @@ Options:
                                   to monthly)
   -h, --help                      Show this message and exit.
 ```
+codeblock
+
+**Dependent duplicate** volumes can be ordered from the SLCLI, too, with the option `--dependent-duplicate TRUE`.
+
+```python
+slcli file volume-duplicate --dependent-duplicate TRUE <primary-vol-id>
+```
 
 ## Managing your duplicate volume
 {: #manageduplicate}
 
-While data is being copied from the original volume to the duplicate, you can see a status on the details page that shows the duplication is in progress. Depending on the size of the data, the copying process can take up to several hours. During this time, you can attach to a host and read/write to the volume, but you can't create snapshot schedules or perform a refresh from the original volume. When the duplication process is complete, the new volume is independent from the original and can be managed with snapshots and replication as normal.
+While data is being copied from the original volume to the independent duplicate, you can see a status on the details page that shows the duplication is in progress. During this time, you can attach to a host, and read and write to the volume, but you can't create snapshot schedules or perform a refresh. When the separation process is complete, the new volume is independent from the original and can be managed with snapshots and replication as normal, and can be manually refreshed by using a snapshot from the parent volume.
 
-## Updating data on the independent duplicate volume
+Dependent duplicates do not go through the separation process and can be refreshed manually at any time. The refresh process is initiated from the CLI.
+
+## Updating data on the duplicate from the parent volume
 {: #refreshindependentvol}
 {: cli}
 
-As time passes and the primary volume changes, the duplicate volume can be updated with these changes to reflect the current state through the refresh action. The data on the duplicate volume can be refreshed at any time. The refresh involves taking a snapshot of the primary volume and then, updating the duplicate volume by using that snapshot. A refresh incurs no downtime on the primary volume. However, during the refresh transaction, the duplicate volume is unavailable and must be remounted after the refresh is completed.
+As time passes and the primary volume changes, the duplicate volume can be updated with these changes to reflect the current state through the refresh action. The refresh involves taking a snapshot of the primary volume and then, updating the duplicate volume by using that snapshot. 
 
-Refreshes can be performed by using the SLCLI.
+Refreshes can be performed by using the following command.
 ```python
 slcli file volume-refresh <duplicate-vol-id> <primary-snapshot-id>
 ```
+
+A refresh incurs no downtime on the primary volume. However, during the refresh transaction, the duplicate volume is unavailable and must be remounted after the refresh is completed.
+{: important}
+
+## Converting a dependent volume to an independent duplicate
+{: #convertdependentvol}
+{: cli}
+
+If you want to use the dependent volume as a stand-alone volume in the future, you can convert it to a normal, independent {{site.data.keyword.filestorage_short}} volume through the SLCLI by using the following command.
+
+```python
+slcli file volume-convert <dependent-vol-id>
+```
+
+## Canceling a storage volume with a dependent duplicate
+{: #cancelvolwithdependent}
+
+Canceling a parent volume that has active dependent volumes requires canceling the dependent duplicate volumes first.
