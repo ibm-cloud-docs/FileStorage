@@ -19,7 +19,7 @@ subcollection: FileStorage
 {:cli: .ph data-hd-interface='cli'}
 {:api: .ph data-hd-interface='api'}
 
-# Creating and managing independent duplicate volumes
+# Creating and managing duplicate volumes
 {: #duplicatevolume}
 
 You can create a duplicate of an existing {{site.data.keyword.filestorage_full}}. The duplicate volume inherits the capacity and performance options of the original volume by default and has a copy of the data up to the point-in-time of a snapshot. The duplicate volume can be dependent or independent from the original volume.
