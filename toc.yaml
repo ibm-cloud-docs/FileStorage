@@ -64,8 +64,7 @@ toc:
             - replication.md
             - dr-accessible-primary.md
             - disaster-recovery.md
-            - how-to-create-duplicate-volume.md
-            - dependent-duplicate.md
+            - duplicate-volume.md
         - topicgroup:
             label: Enhancing Security
             topics:
