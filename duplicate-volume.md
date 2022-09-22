@@ -84,7 +84,7 @@ You can create an independent duplicate volume through the [{{site.data.keyword.
 The commands that are described in the article are part of the SLCLI. For more information about how to install and use the SLCLI, see [Python API Client](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}.
 {: tip}
 
-To create an **independent duplicate** {{site.data.keyword.blockstorageshort}} volume, you can use the following command.
+To create an **independent duplicate** {{site.data.keyword.filestorage_short}} volume, you can use the following command.
 
 ```python
 # slcli file volume-duplicate --help
@@ -134,7 +134,6 @@ Options:
                                   to monthly)
   -h, --help                      Show this message and exit.
 ```
-codeblock
 
 **Dependent duplicate** volumes can be ordered from the SLCLI, too, with the option `--dependent-duplicate TRUE`.
 
