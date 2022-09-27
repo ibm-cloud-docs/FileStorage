@@ -76,7 +76,8 @@ To directly get this information from the API, use the following method: [`SoftL
 
 ```curl
 curl -u $SL_USER:$SL_APIKEY 'https://api.softlayer.com/rest/v3.1/SoftLayer_Network_Storage/getVolumeCountLimits.json'
-[{"datacenterName":"global","maximumAvailableCount":300,"provisionedCount":99}]
+
+SoftLayer_Container_Network_Storage_DataCenterLimits_VolumeCountLimitContainer[{"datacenterName":"global","maximumAvailableCount":700,"provisionedCount":99}]
 ```
 
 The API call shows the combined number of {{site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_short}}.
