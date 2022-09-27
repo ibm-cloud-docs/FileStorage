@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-15"
+lastupdated: "2022-09-27"
 
 keywords: File Storage, file storage, NFS,
 
@@ -26,7 +26,7 @@ subcollection: FileStorage
 {: help}
 {: support}
 
-By default, you can provision a combined total of 750 {{site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_short}} volumes globally. By following this process, you can increase the number of volumes you can provision.
+By default, you can provision a combined total of 700 {{site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_short}} volumes globally. By following this process, you can increase the number of volumes you can provision.
 
 For more information about increasing your storage volume capacity beyond 12 TB, see [Expanding Block Storage Capacity](/docs/FileStorage?topic=FileStorage-expandCapacity#increasecapacityover12TB).
 
@@ -46,11 +46,11 @@ You can list the number of your volumes by using the [volume-limits](https://sof
 
 Example output:
 ```text
-[{'datacenterName': 'global', 'maximumAvailableCount': 750, 'provisioned Count':117}]
+[{'datacenterName': 'global', 'maximumAvailableCount': 700, 'provisioned Count':117}]
 :............:.......................:..................:
 : Datacenter : maximumAvailableCount : ProvisionedCount :
 :............:.......................:..................:
-:   global   :           750         :         117      :
+:   global   :           700         :         117      :
 :............:.......................:..................:
 ```
 
@@ -62,7 +62,7 @@ The volume-limits command is also available in the `sl` plug-in for IBM Cloud CL
 ```python
 # ibmcloud sl file volume-limits
 Datacenter   MaximumAvailableCount   ProvisionedCount
-global       750                     99
+global       700                     99
 ```
 
 ## Confirming your current limit and provisioning count with the API
