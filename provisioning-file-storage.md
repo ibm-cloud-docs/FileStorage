@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-08-31"
+lastupdated: "2022-09-27"
 
 keywords: File Storage, NFS, provisioning, ordering, duplicate, cloning, replication
 
