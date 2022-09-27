@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-09-22"
+lastupdated: "2022-09-27"
 
 keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
