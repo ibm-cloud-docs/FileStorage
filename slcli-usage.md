@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-04-17"
+  years: 2014, 2022
+lastupdated: "2022-09-30"
 
 keywords: File Storage, NSF, SLCLI, API
 
@@ -74,17 +74,6 @@ For more information about how to install and use the SLCLI, see [Python API Cli
    ```python
    slcli file volume-order
    ```
-* [Creating an independent duplicate volume](/docs/FileStorage?topic=FileStorage-duplicatevolume)
-   ```python
-   slcli file volume-duplicate
-   ```
-* [Creating and managing a dependent duplicate volume](/docs/FileStorage?topic=FileStorage-dependentduplicate)
-   ```python
-   slcli file  volume-duplicate --dependent-duplicate TRUE <independent-vol-id>|
-   slcli file  volume-refresh <dependent-vol-id> <independent-snapshot-id>
-   slcli file  volume-convert <dependent-vol-id>
-   ```
-
 * [Adjusting the IOPS](/docs/FileStorage?topic=FileStorage-adjustingIOPS)
    ```python
    slcli file volume-modify
@@ -102,6 +91,15 @@ For more information about how to install and use the SLCLI, see [Python API Cli
    slcli file volume-list
    slcli file volume-order
    ```
+* [Creating and managing duplicate volumes](/docs/FileStorage?topic=FileStorage-duplicatevolume)
+   ```python
+   slcli file volume-duplicate
+   slcli file  volume-duplicate --dependent-duplicate TRUE <independent-vol-id>|
+   slcli file  volume-refresh <dependent-vol-id> <independent-snapshot-id>
+   slcli file  volume-convert <dependent-vol-id>
+   slcli file duplicate-convert-status <dependent-vol-id>
+   ```
+
 * [Managing storage limits](/docs/FileStorage?topic=FileStorage-managinglimits)
    ```python
    slcli file volume-limit
