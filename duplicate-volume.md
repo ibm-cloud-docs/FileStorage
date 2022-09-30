@@ -174,12 +174,12 @@ slcli file volume-convert <dependent-vol-id>
 
 The conversion process can take some time to complete. The bigger the volume is, the longer it takes to convert it. Use the following command to check on the progress.
 
-```python
+```zsh
 slcli file duplicate-convert-status <dependent-vol-id>
 ```
 
 Example output:
-```python
+```zsh
 slcli file duplicate-convert-status 370597202
 Username            Active Conversion Start Timestamp   Completed Percentage
 SL02SEVC307608_74   2022-06-13 14:59:17                 90
