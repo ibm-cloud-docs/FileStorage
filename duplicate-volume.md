@@ -172,7 +172,7 @@ If you want to use the dependent volume as a stand-alone volume in the future, y
 slcli file volume-convert <dependent-vol-id>
 ```
 
-The conversion process can take some time to complete. The bigger the volume, the longer it takes to convert it. Use the following command to check on the progress.
+The conversion process can take some time to complete. The bigger the volume is, the longer it takes to convert it. Use the following command to check on the progress.
 
 ```python
 slcli file duplicate-convert-status <dependent-vol-id>
