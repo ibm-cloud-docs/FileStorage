@@ -94,9 +94,9 @@ For more information about how to install and use the SLCLI, see [Python API Cli
 * [Creating and managing duplicate volumes](/docs/FileStorage?topic=FileStorage-duplicatevolume)
    ```python
    slcli file volume-duplicate
-   slcli file  volume-duplicate --dependent-duplicate TRUE <independent-vol-id>|
-   slcli file  volume-refresh <dependent-vol-id> <independent-snapshot-id>
-   slcli file  volume-convert <dependent-vol-id>
+   slcli file volume-duplicate --dependent-duplicate TRUE <independent-vol-id>|
+   slcli file volume-refresh <duplicate-vol-id> <parent-vol-snapshot-id>
+   slcli file volume-convert <dependent-vol-id>
    slcli file duplicate-convert-status <dependent-vol-id>
    ```
 
