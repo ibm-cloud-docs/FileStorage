@@ -39,7 +39,7 @@ You can manage your {{site.data.keyword.filestorage_full}} volumes through the {
 You can authorize and connect hosts that are located in the same data center as your storage. You can have multiple accounts, but you can't authorize a host from one account to access your storage on another account.
 {: important}
 
-1. Go to the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}. From the menu, select **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic").
+1. Go to the [{{site.data.keyword.cloud}} console](/login){: external}. From the menu, select **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic").
 2. Click **Storage** > **{{site.data.keyword.filestorage_short}}**, and click your **Volume Name**.
 3. Scroll to the **Authorized Hosts** section of the page.
 4. Click **Authorize Host** on the right.
@@ -76,7 +76,7 @@ Options:
 {: support}
 {: ui}
 
-1. Go to the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}. From the menu, select **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic").
+1. Go to the [{{site.data.keyword.cloud}} console](/login){: external}. From the menu, select **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic").
 2. Click **Storage** > **{{site.data.keyword.filestorage_short}}**, and click your **Volume Name**.
 3. Click **Authorized Hosts** to display the compute instances that have access to your file share.
 
@@ -110,7 +110,7 @@ Options:
 
 You can view the volumes to which a host has access to, including information that is needed to make a connection – Volume Name, Storage Type, Target Address, capacity, and location.
 
-1. Go to the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}.
+1. Go to the [{{site.data.keyword.cloud}} console](/login){: external}.
 2. From the menu, select **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic").
 3. Click **Devices** > **Device List**.
 4. Click the appropriate device.
@@ -135,7 +135,7 @@ You can revoke access from either Storage from the Device List or the Storage vi
 {: support}
 {: ui}
 
-1. Go to the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}.
+1. Go to the [{{site.data.keyword.cloud}} console](/login){: external}.
 2. From the menu, select **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic").
 3. Click **Devices** > **Device List**.
 4. Double-click the appropriate device.
@@ -153,7 +153,7 @@ If you want to disconnect multiple volumes from a specific host, you need to rep
 {: support}
 {: ui}
 
-1. Go to the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}.
+1. Go to the [{{site.data.keyword.cloud}} console](/login){: external}.
 2. From the menu, select **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic").
 3. Click **Storage** > **{{site.data.keyword.filestorage_short}}**, and select the **Volume** from which you want to revoke access.
 4. Click **Authorized Hosts** to display the compute instances that have access to your File share.
@@ -194,7 +194,7 @@ If you want to disconnect multiple hosts from a specific volume, you need to rep
 
 If you no longer need a specific volume, you can delete that file share. To cancel a storage volume, you need to revoke access from any hosts first.
 
-1. Go to the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}. From the menu, select **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic").
+1. Go to the [{{site.data.keyword.cloud}} console](/login){: external}. From the menu, select **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic").
 2. Click **Storage** > **{{site.data.keyword.filestorage_short}}**.
 3. Click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions") for the volume to be canceled, and select **Delete {{site.data.keyword.filestorage_short}}**.
 4. Confirm if want to delete the volume immediately or on the anniversary date of when the volume was provisioned.

@@ -38,7 +38,7 @@ The upgrade process is not instantaneous. You can expect to see the updated size
 ## Advantages of Expandable Storage
 {: #advantagesofresizing}
 
-- **Cost management** – You might know that there’s potential for growth of your data, but you need a smaller amount of storage to start. The ability to expand, allows customers to save on costs of storage at the start and then grow to accommodate their needs.  
+- **Cost management** – You might know that there’s potential for growth of your data, but you need a smaller amount of storage to start. The ability to expand, allows customers to save on costs of storage at the start and then grow to accommodate their needs.
 
 - **Growing Storage needs** - Customers who experience rapid growth beyond need a way to quickly and easily increase the size of their storage to manage that growth.
 
@@ -58,7 +58,7 @@ Existing size limitations for {{site.data.keyword.filestorage_short}} that was p
 {: #resizingstepsUI}
 {: ui}
 
-1. Go to the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}. From the menu, select **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic"). Click **Storage** > **{{site.data.keyword.filestorage_short}}**.
+1. Go to the [{{site.data.keyword.cloud}} console](/login){: external}. From the menu, select **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic"). Click **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Select the volume from the list and click the ellipsis ![Actions icon](../icons/action-menu-icon.svg "Actions") > **Modify File Share**.
 3. Enter the new storage size in GB.
 4. Review your selection and the new pricing. Click **Modify**.
@@ -197,7 +197,7 @@ For the OS to recognize the extra storage space, unmount and mount the modified 
 {: help}
 {: support}
 
-If you need to increase your Storage volume capacity beyond 12 TB, you can request to be added to the allowlist by submitting a [support case](https://{DomainName}/unifiedsupport/cases/add){: external}. When the request is approved by the Offering Manager, you're going to be notified through the case process. You're also going to see the option to increase your storage up to 24 TB in the console.
+If you need to increase your Storage volume capacity beyond 12 TB, you can request to be added to the allowlist by submitting a [support case](/unifiedsupport/cases/add){: external}. When the request is approved by the Offering Manager, you're going to be notified through the case process. You're also going to see the option to increase your storage up to 24 TB in the console.
 {: preview}
 
 There's a limit to how many operations can be performed on the storage. This limit is 180K IOPS. So if you want to provision a volume with 10 IOPS, your maximum volume size is 18 TB. If you want to provision the maximum size of 24 TB, then the maximum rate of reads and writes to the volume is 4 IOPS per GB.

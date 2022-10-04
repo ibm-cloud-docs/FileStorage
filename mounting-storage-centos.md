@@ -37,7 +37,7 @@ To mount {{site.data.keyword.filestorage_full}} in CentOS 7, you must authorize 
 {: #authCentOShostUI}
 {: ui}
 
-You can authorize a host to access the {{site.data.keyword.filestorage_short}} volume through the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic/storage/file){: external}.
+You can authorize a host to access the {{site.data.keyword.filestorage_short}} volume through the [{{site.data.keyword.cloud}} console](/classic/storage/file){: external}.
 
 1. In the console, go to **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic") > **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Scroll to the File share you want to mount, and click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions"). Then, select **Authorize Host**.

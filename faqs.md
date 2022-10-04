@@ -162,10 +162,10 @@ It's best to run storage traffic on a VLAN, which bypasses the firewall. Running
 To enact this good practice, complete the following steps.
 1. Provision a VLAN in the same data center as the host and the {{site.data.keyword.filestorage_short}} device.
 2. Provision a secondary private subnet to the new VLAN.
-3. Trunk the new VLAN to the private interface of the host.  
+3. Trunk the new VLAN to the private interface of the host.
    This action momentarily disrupts the network traffic on the host while the VLAN is being trunked to the host.
    {: note}
-   
+
 4. Create a network interface.
    * On the Linux&reg; host, create a 802.11q interface. Choose one of the unused secondary IP address from the newly trunked VLAN and assign that IP address, subnet mask, and gateway to a new 802.11q interface.
    * In VMware, create a new VMkernel network interface (vmk) and assign the unused secondary IP address, subnet mask, and gateway IP from the newly trunked VLAN to the new vmk interface.
@@ -176,7 +176,7 @@ To enact this good practice, complete the following steps.
    - [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/FileStorage?topic=FileStorage-mountingCentOS)
    - [Mounting {{site.data.keyword.filestorage_short}} Volume on ESXi hosts](/docs/FileStorage?topic=FileStorage-architectureguide)
 
-## What performance latency can be expected from the {{site.data.keyword.filestorage_short}}?   
+## What performance latency can be expected from the {{site.data.keyword.filestorage_short}}?
 {: faq}
 {: #latency}
 {: support}
@@ -391,7 +391,7 @@ For more information about duplicates, see [Creating and managing duplicate volu
 
 The conversion process can take some time to complete. The bigger the volume, the longer it takes to convert it. In case of a 12-TB volume, it could take 24 hours. You can check on the progress in the UI or from the CLI.
 
-- In the UI, go to [Classic Infrastructure](https://{DomainName}/classic/devices){: external}. Click **Storage** > **{{site.data.keyword.filestorage_short}}**, then locate the volume in the list. The conversion status is displayed on the Overview page.
+- In the UI, go to [Classic Infrastructure](/classic/devices){: external}. Click **Storage** > **{{site.data.keyword.filestorage_short}}**, then locate the volume in the list. The conversion status is displayed on the Overview page.
 
 - From the CLI, use the following command.
 
@@ -405,5 +405,3 @@ The conversion process can take some time to complete. The bigger the volume, th
    Username            Active Conversion Start Timestamp   Completed Percentage
    SL02SEVC307608_74   2022-06-13 14:59:17                 90
    ```
-
-

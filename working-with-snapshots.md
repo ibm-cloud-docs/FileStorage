@@ -29,7 +29,7 @@ Snapshots are a feature of {{site.data.keyword.blockstoragefull}}. A snapshot re
 {: #addscheduleUI}
 {: ui}
 
-You decide how often and when you want to create a point in time reference of your storage volume with Snapshot schedules. You can have a maximum of 50 snapshots per storage volume. Schedules are managed through the **Storage** > **{{site.data.keyword.filestorage_short}}** tab of the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}.
+You decide how often and when you want to create a point in time reference of your storage volume with Snapshot schedules. You can have a maximum of 50 snapshots per storage volume. Schedules are managed through the **Storage** > **{{site.data.keyword.filestorage_short}}** tab of the [{{site.data.keyword.cloud}} console](/login){: external}.
 
 Before you can set up your initial schedule, you must first purchase snapshot space if you didn't purchase it during the initial provisioning of the storage volume.
 {: important}
@@ -55,7 +55,7 @@ The list of the snapshots is displayed as they're taken in the **Snapshots** sec
 {: #addscheduleCLI}
 {: cli}
 
-You decide how often and when you want to create a point in time reference of your storage volume with Snapshot schedules. You can have a maximum of 50 snapshots per storage volume. Schedules are managed through the **Storage** > **{{site.data.keyword.filestorage_short}}** tab of the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}.
+You decide how often and when you want to create a point in time reference of your storage volume with Snapshot schedules. You can have a maximum of 50 snapshots per storage volume. Schedules are managed through the **Storage** > **{{site.data.keyword.filestorage_short}}** tab of the [{{site.data.keyword.cloud}} console](/login){: external}.
 
 Before you can set up your initial schedule, you must first purchase snapshot space if you didn't purchase it during the initial provisioning of the storage volume.
 {: important}
@@ -122,7 +122,7 @@ Options:
 {: #listsnapshotUI}
 {: ui}
 
-A list of retained snapshots and space that is used can be seen on the **{{site.data.keyword.filestorage_short}} Detail** page.  Management functions (editing schedules and adding more space) are conducted on the **{{site.data.keyword.filestorage_short}} Detail** page by using the **Actions** menu or links in the various sections on the page. The Snapshot page displays how much capacity the volume has and how much of it is used. 
+A list of retained snapshots and space that is used can be seen on the **{{site.data.keyword.filestorage_short}} Detail** page.  Management functions (editing schedules and adding more space) are conducted on the **{{site.data.keyword.filestorage_short}} Detail** page by using the **Actions** menu or links in the various sections on the page. The Snapshot page displays how much capacity the volume has and how much of it is used.
 
 You receive notifications when you reach space thresholds – 75 percent, 90 percent, and 95 percent.
 
@@ -175,13 +175,13 @@ Options:
 
 To change the status of the notification setting, use the following command.
 ```python
-# slcli file snapshot-set-notification VOLUME_ID 
+# slcli file snapshot-set-notification VOLUME_ID
 Usage: slcli file snapshot-set-notification VOLUME_ID [OPTIONS]
 
 Options:
  --disable  Disable snapshot threshold warning notification for the storage volume
  --enable   Enable snapshot threshold warning notification for the storage volume
- -h, --help  Show this message and exit. 
+ -h, --help  Show this message and exit.
 ```
 
 
@@ -277,7 +277,7 @@ You might need to take your storage volume back to a specific point in time beca
    For more information about mounting and unmounting storage, see [connecting your new storage](/docs/FileStorage?topic=FileStorage-mountingLinux).
    {: tip}
 
-2. Go to the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}. From the menu, select **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic").
+2. Go to the [{{site.data.keyword.cloud}} console](/login){: external}. From the menu, select **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic").
 3. Click **Storage**, **{{site.data.keyword.filestorage_short}}**.
 4. Scroll on the list, and click your volume to be restored. The **Snapshots** page displays the list of all saved snapshots along with their size and creation date.
 5. Click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions") next to the snapshot to be used and click **Restore**.
@@ -314,7 +314,7 @@ Options:
   -s, --snapshot-id TEXT  The id of the snapshot which will be used to restore
                           the block volume
   -h, --help              Show this message and exit.
-```  
+```
 
 Lastly, mount and reattach your storage volume to the host.
 

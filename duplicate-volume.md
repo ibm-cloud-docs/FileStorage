@@ -23,9 +23,9 @@ subcollection: FileStorage
 {: #duplicatevolume}
 
 You can create a duplicate of an existing {{site.data.keyword.filestorage_full}}. The duplicate volume inherits the capacity and performance options of the original volume by default and has a copy of the data up to the point-in-time of a snapshot. The duplicate volume can be dependent or independent from the original volume.
-{: shortdesc}  
+{: shortdesc}
 
-Because the duplicate is based on the data in a point-in-time snapshot, snapshot space is required on the original volume before you can create a duplicate. For more information about snapshots and how to order snapshot space, see the [Snapshot documentation](/docs/FileStorage?topic=FileStorage-snapshots).  
+Because the duplicate is based on the data in a point-in-time snapshot, snapshot space is required on the original volume before you can create a duplicate. For more information about snapshots and how to order snapshot space, see the [Snapshot documentation](/docs/FileStorage?topic=FileStorage-snapshots).
 {: important}
 
 **Independent duplicates** can be created from both **primary** and **replica** volumes. The new duplicate is created in the same data center as the original volume. If you create a duplicate from a replica volume, the duplicate volume is created in the same data center as the replica volume.
@@ -35,7 +35,7 @@ Because the duplicate is based on the data in a point-in-time snapshot, snapshot
 If you are a Dedicated account user of {{site.data.keyword.containerlong}}, see your options for duplicating a volume in the [{{site.data.keyword.containerlong_notm}} documentation](/docs/containers?topic=containers-file_storage#file_backup_restore).
 {: tip}
 
-All duplicate volumes can be accessed by a host for read and write operations as soon as the volume is provisioned. 
+All duplicate volumes can be accessed by a host for read and write operations as soon as the volume is provisioned.
 
 Dependent duplicate can be refreshed from new snapshots of the parent volume manually immediately after their creation. The dependent duplicate volume keeps the original snapshot locked so the snapshot cannot be deleted while the dependent duplicate exists.
 
@@ -49,9 +49,9 @@ Some common uses for a duplicate volume include the following examples.
 - **Data refreshes**. Create a copy of your production data to mount to your non-production environment for testing.
 - **Restore from Snapshot**. Restore data on the original volume with specific files and date from a snapshot without overwriting the entire original volume with the snapshot restore function.
 - **Development and Testing (dev/test)**. Create up to four simultaneous duplicates of a volume at one time to create duplicate data for development and testing.
-- **Storage Resize**. Create a volume with new size, IOPS rate or both without needing to move your data.  
+- **Storage Resize**. Create a volume with new size, IOPS rate or both without needing to move your data.
 
-You can create an independent duplicate volume through the [{{site.data.keyword.cloud_notm}} console](https://{DomainName}/){: external} in a couple of ways. However, you can provision dependent duplicate volumes only from the CLI.
+You can create an independent duplicate volume through the [{{site.data.keyword.cloud_notm}} console](/login){: external} in a couple of ways. However, you can provision dependent duplicate volumes only from the CLI.
 
 ## Creating a duplicate from a specific volume in the UI
 {: #createdepduplicateUI}
@@ -152,7 +152,7 @@ Dependent duplicates do not go through the separation process and can be refresh
 {: #refreshindependentvol}
 {: cli}
 
-As time passes and the primary volume changes, the duplicate volume can be updated with these changes to reflect the current state through the refresh action. The refresh involves taking a snapshot of the primary volume and then, updating the duplicate volume by using that snapshot. 
+As time passes and the primary volume changes, the duplicate volume can be updated with these changes to reflect the current state through the refresh action. The refresh involves taking a snapshot of the primary volume and then, updating the duplicate volume by using that snapshot.
 
 Refreshes can be performed by using the following command.
 ```python
