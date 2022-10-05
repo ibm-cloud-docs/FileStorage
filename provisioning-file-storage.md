@@ -9,17 +9,7 @@ keywords: File Storage, NFS, provisioning, ordering, duplicate, cloning, replica
 subcollection: FileStorage
 
 ---
-{:external: target="_blank" .external}
-{:pre: .pre}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:DomainName: data-hd-keyref="APPDomain"}
-{:DomainName: data-hd-keyref="DomainName"}
-{:shortdesc: .shortdesc}
-{:ui: .ph data-hd-interface='ui'}
-{:cli: .ph data-hd-interface='cli'}
-{:api: .ph data-hd-interface='api'}
+{{site.data.keyword.attribute-definition-list}}
 {: uilinked}
 
 

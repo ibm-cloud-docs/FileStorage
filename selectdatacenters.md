@@ -9,11 +9,7 @@ keywords: File Storage, file storage, NFS, locations, data centers
 subcollection: FileStorage
 
 ---
-{:pre: .pre}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:shortdesc: .shortdesc}
+{{site.data.keyword.attribute-definition-list}}
 {: ui-linked}
 
 # {{site.data.keyword.filestorage_short}} locations

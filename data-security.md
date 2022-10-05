@@ -9,12 +9,7 @@ keywords: File Storage, file storage, NFS, security, encryption
 subcollection: FileStorage
 
 ---
-{:external: target="_blank" .external}
-{:pre: .pre}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:shortdesc: .shortdesc}
+{{site.data.keyword.attribute-definition-list}}
 
 # Securing your data in {{site.data.keyword.filestorage_short}}
 {: #mng-data}

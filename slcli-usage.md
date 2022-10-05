@@ -9,13 +9,7 @@ keywords: File Storage, NSF, SLCLI, API
 subcollection: FileStorage
 
 ---
-{:external: target="_blank" .external}
-{:pre: .pre}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:codeblock: .codeblock}
-{:shortdesc: .shortdesc}
+{{site.data.keyword.attribute-definition-list}}
 
 # SLCLI commands for {{site.data.keyword.filestorage_short}}
 {: #SLCLIcommands}

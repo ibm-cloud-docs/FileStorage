@@ -9,17 +9,7 @@ keywords: File Storage, file storage, NFS, disaster recovery, duplicate volume, 
 subcollection: FileStorage
 
 ---
-{:external: target="_blank" .external}
-{:pre: .pre}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:DomainName: data-hd-keyref="APPDomain"}
-{:DomainName: data-hd-keyref="DomainName"}
-{:shortdesc: .shortdesc}
-{:ui: .ph data-hd-interface='ui'}
-{:cli: .ph data-hd-interface='cli'}
-{:api: .ph data-hd-interface='api'}
+{{site.data.keyword.attribute-definition-list}}
 
 # Disaster Recovery - Fail over from an inaccessible primary volume
 {: #dr-inaccessible}
@@ -40,7 +30,7 @@ This action breaks the replication relationship and restoring the connection bet
 1. Go to your list of {{site.data.keyword.filestorage_short}}. From the **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic") menu, click **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Locate and click the volume name.
 3. Click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions") > **Failover**.
-4. When the primary location is unavailable, the option of Disaster Recovery Failover becomes active. 
+4. When the primary location is unavailable, the option of Disaster Recovery Failover becomes active.
 5. Click **Yes** to proceed.
 
 ## Fail over to the replica volume from the SLCLI
@@ -105,7 +95,7 @@ After a disaster event, {{site.data.keyword.cloud}} begins remediation work to r
 
 1. Click your active volume ("target").
 2. In the upper right, click **Replica** and click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions").
-3. Select **Failback**. When the primary location is marked unavailable, the option of Disaster Recovery Failback becomes active. 
+3. Select **Failback**. When the primary location is marked unavailable, the option of Disaster Recovery Failback becomes active.
 
    During the Disaster Recovery Failover, the system is forced to fail over to the replica site and the replication relationship is severed. To be able to fail back to the original site after the site is restored to normal operations, the system has to reestablish the replication bond. This action can take considerable amount of time. Expect a message that shows the failover is in progress. Additionally, an icon appears next to your volume on the **{{site.data.keyword.filestorage_short}}** that indicates that an active transaction is occurring. Hovering over the icon produces a window that shows the transaction. The icon disappears when the transaction is complete. During the Failback process, configuration-related actions are read-only. You can't edit any snapshot schedule or change snapshot space. The event is logged in replication history.
    {: note}
@@ -136,4 +126,3 @@ During the Disaster Recovery Failover, the system is forced to fail over to the 
 When the original volume is active, you can mount and attach it to the host. For more information, see [connecting your storage](/docs/FileStorage?topic=FileStorage-getting-started#mountingstorage).
 
 If you need further assistance, create a [support case](https://cloud.ibm.com/unifiedsupport/supportcenter){: external}.
-

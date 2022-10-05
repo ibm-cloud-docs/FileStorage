@@ -9,17 +9,7 @@ keywords: File Storage, file storage, NFS, authorizing hosts, revoke access, gra
 subcollection: FileStorage
 
 ---
-{:external: target="_blank" .external}
-{:pre: .pre}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:shortdesc: .shortdesc}
-{:support: data-reuse='support'}
-{:help: data-hd-content-type='help'}
-{:ui: .ph data-hd-interface='ui'}
-{:cli: .ph data-hd-interface='cli'}
-{:api: .ph data-hd-interface='api'}
+{{site.data.keyword.attribute-definition-list}}
 
 
 # Managing {{site.data.keyword.filestorage_short}}

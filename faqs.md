@@ -9,13 +9,7 @@ keywords: File Storage, encryption, security, provisioning, limitations, NFS
 subcollection: FileStorage
 
 ---
-{:external: target="_blank" .external}
-{:pre: .pre}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:faq: data-hd-content-type='faq'}
-{:support: data-reuse='support'}
+{{site.data.keyword.attribute-definition-list}}
 
 # FAQs
 {: #file-storage-faqs}

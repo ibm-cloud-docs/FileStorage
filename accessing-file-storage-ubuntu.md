@@ -14,16 +14,7 @@ account-plan: paid
 completion-time: 1h
 
 ---
-{:external: target="_blank" .external}
-{:pre: .pre}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:shortdesc: .shortdesc}
-{:term: .term}
-{:ui: .ph data-hd-interface='ui'}
-{:cli: .ph data-hd-interface='cli'}
-{:api: .ph data-hd-interface='api'}
+{{site.data.keyword.attribute-definition-list}}
 
 # Mounting {{site.data.keyword.filestorage_short}} on Ubuntu
 {: #mountingUbuntu}

@@ -13,12 +13,7 @@ services:
 account-plan: paid
 completion-time: 2h
 ---
-{:external: target="_blank" .external}
-{:pre: .pre}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:shortdesc: .shortdesc}
+{{site.data.keyword.attribute-definition-list}}
 {: ui-linked}
 
 

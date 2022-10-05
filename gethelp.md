@@ -9,16 +9,7 @@ keywords: File Storage, issues, get support, how to request help, open a case, o
 subcollection: FileStorage
 
 ---
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:external: target="_blank" .external}
-{:deprecated: .deprecated}
-{:important: .important}
-{:note: .note}
-{:tip: .tip}
-{:pre: .pre}
-{:codeblock: .codeblock}
-{:screen: .screen}
+{{site.data.keyword.attribute-definition-list}}
 
 # Getting help
 {: #gethelp}
