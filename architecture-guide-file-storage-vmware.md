@@ -14,18 +14,7 @@ account-plan: paid
 completion-time: 1h
 
 ---
-{:external: target="_blank" .external}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:DomainName: data-hd-keyref="APPDomain"}
-{:DomainName: data-hd-keyref="DomainName"}
-{:shortdesc: .shortdesc}
-{:step: data-tutorial-type='step'}
-{:ui: .ph data-hd-interface='ui'}
-{:cli: .ph data-hd-interface='cli'}
-{:api: .ph data-hd-interface='api'}
-
+{{site.data.keyword.attribute-definition-list}}
 
 # Provisioning {{site.data.keyword.filestorage_short}} for use as VMware datastore
 {: #architectureguide}
@@ -86,11 +75,11 @@ VMware&reg; vSphere on network-attached storage](https://www.vmware.com/content/
 ### Using Snapshots
 {: #vmwaresnapshot}
 
-{{site.data.keyword.filestorage_short}} allows administrators to set snapshot schedules that create and delete snapshot copies automatically for each storage volume. They can also create extra snapshot schedules (hourly, daily, weekly) for automatic snapshots and manually create ad hoc snapshots for business continuity and disaster recovery (BCDR) scenarios. Automatic alerts are delivered through the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}  to the volume owner for the retained snapshots and space used.
+{{site.data.keyword.filestorage_short}} allows administrators to set snapshot schedules that create and delete snapshot copies automatically for each storage volume. They can also create extra snapshot schedules (hourly, daily, weekly) for automatic snapshots and manually create ad hoc snapshots for business continuity and disaster recovery (BCDR) scenarios. Automatic alerts are delivered through the [{{site.data.keyword.cloud}} console](/login){: external}  to the volume owner for the retained snapshots and space used.
 
 Snapshot space is required to use snapshots. Space can be purchased on the initial volume order or after the initial provisioning through the **Volume Details** page by clicking **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions") and selecting **Add Snapshot Space**.
 
-It's important to note that VMware&reg; environments are not aware of snapshots. The {{site.data.keyword.filestorage_short}} snapshot capability must not be confused with VMware&reg; snapshots. Any recovery that uses the {{site.data.keyword.filestorage_short}} snapshot feature must be handled from the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}.
+It's important to note that VMware&reg; environments are not aware of snapshots. The {{site.data.keyword.filestorage_short}} snapshot capability must not be confused with VMware&reg; snapshots. Any recovery that uses the {{site.data.keyword.filestorage_short}} snapshot feature must be handled from the [{{site.data.keyword.cloud}} console](/login){: external}.
 
 Restoring the {{site.data.keyword.filestorage_short}} volume requires powering off all the VMs on the {{site.data.keyword.filestorage_short}}. The volume needs to be temporarily unmounted from the ESXi hosts to avoid any data corruption during the process.
 
@@ -128,9 +117,9 @@ Invalid data, whether corrupted, hacked, or infected replicate according to the 
 
 Follow the instructions the [Advanced Single-Site VMware&reg; Reference Architecture](/docs/virtualization?topic=virtualization-advanced-single-site-vmware-reference-architecture){: external} to set up your VMware environment.
 
-{{site.data.keyword.filestorage_short}} can be ordered through [The {{site.data.keyword.cloud}} catalog](https://{DomainName}/catalog){: external} or the [CLI](/docs/cli?topic=cli-sl-file-storage-service#sl_file_volume_order). For more information, see [Ordering {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-orderingFileStorage).
+{{site.data.keyword.filestorage_short}} can be ordered through [The {{site.data.keyword.cloud}} catalog](/catalog){: external} or the [CLI](/docs/cli?topic=cli-sl-file-storage-service#sl_file_volume_order). For more information, see [Ordering {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-orderingFileStorage).
 
-Storage is provisioned in less than a minute and becomes visible on the **{{site.data.keyword.filestorage_short}}** page of the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic/storage/file){: external}. Next, the {{site.data.keyword.BluBareMetServers_full}} or {{site.data.keyword.BluVirtServers_full}} that are going to use the volume must be authorized to access the storage. Use the following steps to authorize the host.
+Storage is provisioned in less than a minute and becomes visible on the **{{site.data.keyword.filestorage_short}}** page of the [{{site.data.keyword.cloud}} console](/classic/storage/file){: external}. Next, the {{site.data.keyword.BluBareMetServers_full}} or {{site.data.keyword.BluVirtServers_full}} that are going to use the volume must be authorized to access the storage. Use the following steps to authorize the host.
 
 1. In the console, go to **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic") > **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Scroll to the File share you want to mount, and click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions"). Then, select **Authorize Host**.
@@ -148,7 +137,7 @@ After the subnets are authorized, make note of the host name of the storage serv
 
 Follow the instructions the [Advanced Single-Site VMware&reg; Reference Architecture](/docs/virtualization?topic=virtualization-advanced-single-site-vmware-reference-architecture){: external} to set up your VMware environment.
 
-{{site.data.keyword.filestorage_short}} can be ordered through [The {{site.data.keyword.cloud}} catalog](https://{DomainName}/catalog){: external} or the [CLI](/docs/cli?topic=cli-sl-file-storage-service#sl_file_volume_order). For more information, see [Ordering {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-orderingFileStorage).
+{{site.data.keyword.filestorage_short}} can be ordered through [The {{site.data.keyword.cloud}} catalog](/catalog){: external} or the [CLI](/docs/cli?topic=cli-sl-file-storage-service#sl_file_volume_order). For more information, see [Ordering {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-orderingFileStorage).
 
 Storage is provisioned in less than a minute. Next, the {{site.data.keyword.BluBareMetServers_full}} or {{site.data.keyword.BluVirtServers_full}} that are going to use the volume must be authorized to access the storage. Use the following command to authorize the host.
 
@@ -371,7 +360,7 @@ The following examples use the ESXi CLI to set the advanced configuration parame
  #esxcfg-advcfg -s 256 /NFS41/MaxVolumes (ESXi 6.0 and higher)
  #esxcfg-advcfg -s 10 /NFS/HeartbeatMaxFailures
  #esxcfg-advcfg -s 12 /NFS/HeartbeatFrequency
- #esxcfg-advcfg -s 5 /NFS/HeartbeatTimeout   
+ #esxcfg-advcfg -s 5 /NFS/HeartbeatTimeout
  #esxcfg-advcfg -s 64 /NFS/MaxQueueDepth
  #esxcfg-advcfg -s 32 /Disk/QFullSampleSize
  #esxcfg-advcfg -s 8 /Disk/QFullThreshold
@@ -391,6 +380,6 @@ The following examples use the ESXi CLI to set the advanced configuration parame
  #esxcfg-advcfg -g /Disk/QFullSampleSize
  #esxcfg-advcfg -g /Disk/QFullThreshold
  ```
- 
+
 Learn more about Advanced Single-Site VMware&reg; Reference Architecture [here](/docs/virtualization?topic=virtualization-advanced-single-site-vmware-reference-architecture){: external}.
 {: tip}

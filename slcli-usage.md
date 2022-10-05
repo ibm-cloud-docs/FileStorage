@@ -9,18 +9,12 @@ keywords: File Storage, NSF, SLCLI, API
 subcollection: FileStorage
 
 ---
-{:external: target="_blank" .external}
-{:pre: .pre}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:codeblock: .codeblock}
-{:shortdesc: .shortdesc}
+{{site.data.keyword.attribute-definition-list}}
 
 # SLCLI commands for {{site.data.keyword.filestorage_short}}
 {: #SLCLIcommands}
 
-You can use the SLCLI to perform operations that are normally handled through the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic/storage/file){: external}. For example, from the SLCLI you can place orders for new volumes, snapshot space and replication, update authorizations, and cancel volumes.
+You can use the SLCLI to perform operations that are normally handled through the [{{site.data.keyword.cloud}} console](/classic/storage/file){: external}. For example, from the SLCLI you can place orders for new volumes, snapshot space and replication, update authorizations, and cancel volumes.
 {: shortdesc}
 
 For more information about how to install and use the SLCLI, see [Python API Client](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}.
@@ -29,7 +23,7 @@ For more information about how to install and use the SLCLI, see [Python API Cli
 ## Access-related SLCLI commands
 {: #slcliaccess}
 
-* [Managing {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-managingstorage)  
+* [Managing {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-managingstorage)
    ```python
    slcli file access-authorize
    slcli file access-list

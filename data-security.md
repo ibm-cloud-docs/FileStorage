@@ -9,12 +9,7 @@ keywords: File Storage, file storage, NFS, security, encryption
 subcollection: FileStorage
 
 ---
-{:external: target="_blank" .external}
-{:pre: .pre}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:shortdesc: .shortdesc}
+{{site.data.keyword.attribute-definition-list}}
 
 # Securing your data in {{site.data.keyword.filestorage_short}}
 {: #mng-data}
@@ -28,7 +23,7 @@ The provider-managed encryption-at-rest feature uses the following industry stan
 * Keys are managed in-house with industry standard Key Management Interoperability Protocol (KMIP).
 * Storage is validated for US Federal Information Processing Standard (FIPS) Publication 140-2, Federal Information Security Management Act (FISMA), Health Insurance Portability and Accountability Act (HIPAA). Storage is also validated for Payment Card Industry (PCI), Basel II, California Security Breach Information Act (SB 1386), and EU General Data Protection Regulation (GDPR) compliance.
 
-## Securing your snapshots or replicated storage  
+## Securing your snapshots or replicated storage
 {: #securesnapshot}
 
 All snapshots and replicas of encrypted file storage are also encrypted by default. This feature can’t be turned off on a volume basis.
@@ -56,7 +51,7 @@ Customers with special requirements for compliance such as NIST 800-88 Guideline
 To cancel a storage volume, you need to revoke access from any hosts first. Active replicas and dependent duplicates can also block reclamation of the Storage volume. Make sure that the volume is no longer mounted, host authorizations are revoked, replication is canceled, and no dependent duplicates exist before you attempt to cancel the original volume.
 {: important}
 
-1. Go to the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external}. From the menu, select **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic").
+1. Go to the [{{site.data.keyword.cloud}} console](/login){: external}. From the menu, select **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic").
 2. Click **Storage** > **{{site.data.keyword.filestorage_short}}**.
 3. Click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions") for the volume to be canceled, and select **Delete {{site.data.keyword.filestorage_short}}**.
 4. Confirm if want to cancel the volume immediately or on the anniversary date of when the volume was provisioned.

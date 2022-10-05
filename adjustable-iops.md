@@ -9,15 +9,7 @@ keywords: File Storage, adjusting IOPS, increase IOPS, decrease IOPS, modify IOP
 subcollection: FileStorage
 
 ---
-{:external: target="_blank" .external}
-{:pre: .pre}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:shortdesc: .shortdesc}
-{:ui: .ph data-hd-interface='ui'}
-{:cli: .ph data-hd-interface='cli'}
-{:api: .ph data-hd-interface='api'}
+{{site.data.keyword.attribute-definition-list}}
 
 # Adjusting IOPS
 {: #adjustingIOPS}

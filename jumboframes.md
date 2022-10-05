@@ -9,15 +9,7 @@ keywords: File Storage, file storage, NSF, networking, jumbo frames
 subcollection: FileStorage
 
 ---
-{:external: target="_blank" .external}
-{:pre: .pre}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:DomainName: data-hd-keyref="APPDomain"}
-{:DomainName: data-hd-keyref="DomainName"}
-{:shortdesc: .shortdesc}
-
+{{site.data.keyword.attribute-definition-list}}
 
 # Enabling Jumbo Frames
 {: #jumboframes}

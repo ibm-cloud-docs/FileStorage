@@ -9,12 +9,7 @@ keywords: File Storage, file storage, NFS, durability, availability, HA, high-av
 subcollection: FileStorage
 
 ---
-{:external: target="_blank" .external}
-{:pre: .pre}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:shortdesc: .shortdesc}
+{{site.data.keyword.attribute-definition-list}}
 
 # Availability and Durability of {{site.data.keyword.filestorage_short}}
 {: #storageavailability}

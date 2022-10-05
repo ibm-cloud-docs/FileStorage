@@ -9,17 +9,7 @@ keywords: File Storage, file storage, NFS,
 subcollection: FileStorage
 
 ---
-{:external: target="_blank" .external}
-{:pre: .pre}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:shortdesc: .shortdesc}
-{:support: data-reuse='support'}
-{:help: data-hd-content-type='help'}
-{:ui: .ph data-hd-interface='ui'}
-{:cli: .ph data-hd-interface='cli'}
-{:api: .ph data-hd-interface='api'}
+{{site.data.keyword.attribute-definition-list}}
 
 # Managing storage limits
 {: #managinglimits}
@@ -95,7 +85,7 @@ In the ticket, provide the following information:
 
 - **Ticket Subject**: Request to Increase Data Center Volume Count Storage Limit
 
-- **What is the use case for the additional volumes request?**  
+- **What is the use case for the additional volumes request?**
    *For example, your answer might be something similar to a new VMware&reg; datastore, a new development and testing (dev/test) environment, an SQL database, or logging.*
 
 - **How many extra Block volumes are needed by type, size, IOPS, and location?**

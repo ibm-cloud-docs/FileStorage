@@ -9,17 +9,7 @@ keywords: File Storage, file storage, NFS, snapshot, ordering snapshot, snapshot
 subcollection: FileStorage
 
 ---
-{:external: target="_blank" .external}
-{:pre: .pre}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:DomainName: data-hd-keyref="APPDomain"}
-{:DomainName: data-hd-keyref="DomainName"}
-{:shortdesc: .shortdesc}
-{:ui: .ph data-hd-interface='ui'}
-{:cli: .ph data-hd-interface='cli'}
-{:api: .ph data-hd-interface='api'}
+{{site.data.keyword.attribute-definition-list}}
 
 
 # Ordering Snapshots
@@ -33,9 +23,9 @@ To create snapshots of your storage volume, either automated or manually, you ne
 
 Generically speaking, snapshot space is used by snapshots based on two key factors:
 - How much your active file system changes over time,
-- How long you plan to retain snapshots.  
+- How long you plan to retain snapshots.
 
-The way to calculate the amount of space that you need is **(Rate of Change)** x **(number of hours/days/weeks/months data is retained)**.  
+The way to calculate the amount of space that you need is **(Rate of Change)** x **(number of hours/days/weeks/months data is retained)**.
 
 The first snapshot uses a negligible amount of space as it's just a copy of the metadata (pointers) that indicates the active file system blocks.
 {: note}
@@ -58,7 +48,7 @@ Additionally, for most workloads, the larger a volume is the less space needs to
 {: #ordersnapshotUI}
 {: ui}
 
-1. Log in to the [{{site.data.keyword.cloud}} console](https://{DomainName}/){: external} and click the menu icon ![Menu icon](../icons/icon_hamburger.svg "Menu").
+1. Log in to the [{{site.data.keyword.cloud}} console](/login){: external} and click the menu icon ![Menu icon](../icons/icon_hamburger.svg "Menu").
 2. Select **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic").
 3. Access your Storage through **Storage** > **{{site.data.keyword.filestorage_short}}**.
 4. Click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions"), then click **Add Snapshot Space**.
