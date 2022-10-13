@@ -32,7 +32,7 @@ Because the duplicate is based on the data in a point-in-time snapshot, snapshot
 ### Independent duplicate
 {: #independent}
 
-Independent duplicates can be created from both **primary** and **replica** volumes. The new duplicate is created in the same data center as the original volume. If you create a duplicate from a replica volume, the duplicate volume is created in the same data center as the replica volume.
+Independent duplicates can be created from both **primary** and **replica** volumes. The new duplicate is created in the same data center as the original volume. If you create a duplicate from a replica volume, the duplicate volume is created in the same data center as the replica.
 
 Common uses for an independent duplicate volume:
 - **Golden Copy**. Use a storage volume as golden copy that you can create multiple instances from for various uses.
@@ -56,7 +56,7 @@ Dependent duplicate can be refreshed from new snapshots of the parent volume man
 
 However, snapshots and replication of independent duplicate volumes aren't allowed until the data copy from the original to the duplicate is complete and the duplicate volume is fully independent from the parent volume. Depending on the size of the data, the separation process can take several hours. When it's complete, the duplicate can be managed and used as an independent volume.
 
-You can create an independent duplicate volume through the [{{site.data.keyword.cloud_notm}} console](/login){: external} in a couple of ways. However, you can provision dependent duplicate volumes only from the CLI.
+You can create an independent duplicate volume from the CLI and in the [{{site.data.keyword.cloud_notm}} console](/login){: external} in a couple of ways. However, you can provision dependent duplicate volumes only from the CLI.
 
 ## Creating a duplicate from a specific volume in the UI
 {: #createdepduplicateUI}
