@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-15"
+lastupdated: "2022-10-14"
 
 keywords: File Storage, file storage, NFS, replication, duplication, synchronous, replica schedule, replica space, disaster recovery
 
@@ -40,6 +40,9 @@ See Table 1 for the complete list of data center availability and replication ta
 
  Data centers in US 1 region do NOT have enhanced storage. For that reason, hosts in data centers within the US 2 region can't start replication with replica targets in US 1 data centers.
  {: note}
+
+As part of the data center modernization strategy for {{site.data.keyword.cloud}}, several data centers and PODs are scheduled to consolidate in late 2022 and early 2023. For more information, see [Data center consolidations](/docs/get-support?topic=get-support-dc-closure){: external}. Provisioning storage and snapshots in closing data centers is not allowed.
+{: note}
 
 ## Determining the remote data center for the replicated storage volume from the SLCLI
 {: #determinereplicationlocCLI}
