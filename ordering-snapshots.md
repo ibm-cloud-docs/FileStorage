@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-07-21"
+lastupdated: "2022-10-14"
 
 keywords: File Storage, file storage, NFS, snapshot, ordering snapshot, snapshot space
 
@@ -17,6 +17,9 @@ subcollection: FileStorage
 
 To create snapshots of your storage volume, either automated or manually, you need to purchase space to hold them. You can purchase snapshot capacity during the initial volume purchase or later by using these steps.
 {: shortdesc}
+
+Snapshots are available in [most data centers](/docs/FileStorage?topic=FileStorage-selectDC). As part of the data center modernization strategy for {{site.data.keyword.cloud}}, several data centers and PODs are scheduled to consolidate in late 2022 and early 2023. For more information, see [Data center consolidations](/docs/get-support?topic=get-support-dc-closure){: external}. Provisioning storage and snapshots in closing data centers is not allowed.
+{: note}
 
 ## Determining how much snapshot space to order
 {: #preorderdetermination}
