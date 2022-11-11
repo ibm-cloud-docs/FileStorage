@@ -82,6 +82,7 @@ You can create a duplicate volume from the CLI and in the [{{site.data.keyword.c
 10. You can update the snapshot space for the new volume to add more, less, or no snapshot space. The snapshot space of the original volume is set by default.
 11. Check the box to confirm that you read and agreed to the terms, then click **Create** to place your order.
 
+After you click **Create**, the order confirmation window appears. When you close the window, you return to the resources list. You can go back to your list of {{site.data.keyword.filestorage_short}} shares to click on the newly provisioned duplicate. The share details section displays information such as Duplicate Type, a link to the parent share's details page and the name of the snapshot that was used to create the duplicate.
 
 ## Creating a duplicate from the SLCLI
 {: #createindependentduplicateCLI}
