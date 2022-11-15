@@ -14,7 +14,7 @@ subcollection: FileStorage
 # Creating and managing duplicate volumes
 {: #duplicatevolume}
 
-You can create a duplicate of an existing {{site.data.keyword.filestorage_full}}. The duplicate volume inherits the capacity and performance options of the original volume by default, however both attributes can be changed. The duplicate has a copy of the data up to the point-in-time of the snapshot that was used to create it. The duplicate volume can be dependent or independent from the original volume.
+You can create a duplicate of an existing {{site.data.keyword.filestorage_full}}. The duplicate volume inherits the capacity and performance options of the original volume by default. However, both attributes can be changed. The duplicate has a copy of the data up to the point-in-time of the snapshot that was used to create it. The duplicate volume can be dependent or independent from the original volume.
 {: shortdesc}
 
 If you are a Dedicated account user of {{site.data.keyword.containerlong}}, see your options for duplicating a volume in the [{{site.data.keyword.containerlong_notm}} documentation](/docs/containers?topic=containers-file_storage#file_backup_restore).
@@ -52,7 +52,7 @@ Common uses for a dependent duplicate volume:
 
 All duplicate volumes can be accessed by a host for read and write operations as soon as the volume is provisioned.
 
-Dependent duplicate can be refreshed from new snapshots of the parent volume manually immediately after their creation. The dependent duplicate volume keeps the original snapshot locked so the snapshot cannot be deleted while the dependent duplicate exists.
+Dependent duplicate can be refreshed from new snapshots of the parent volume manually immediately after their creation. The dependent duplicate volume locks the original snapshot so the snapshot cannot be deleted while the dependent duplicate exists.
 
 However, snapshots and replication of independent duplicate volumes aren't allowed until the data copy from the original to the duplicate is complete and the duplicate volume is fully independent from the parent volume. Depending on the size of the data, the separation process can take several hours. When it's complete, the duplicate can be managed and used as an independent volume.
 
@@ -151,7 +151,7 @@ slcli file volume-duplicate --dependent-duplicate TRUE <primary-vol-id>
 ## Managing your duplicate volume
 {: #manageduplicate}
 
-While data is being copied from the original volume to the **independent** duplicate, you can see that the status indicator on the details page shows the duplication is in progress. During this time, you can attach to a host, and read and write to the volume, but you can't create snapshot schedules or perform a refresh. When the separation process is complete, the new volume is independent from the original and can be managed with snapshots and replication as normal. The independent duplicate can be manually refreshed by using a snapshot from the parent volume after the conversion is complete.
+While data is being copied from the original volume to the **independent** duplicate, you can see that the status indicator on the details page shows the duplication is in progress. During this time, you can attach to a host, and read and write to the volume, but you can't create snapshot schedules or perform a refresh. When the separation process is complete, the new volume is independent from the original, and can be managed with snapshots and replication as normal. The independent duplicate can be manually refreshed by using a snapshot from the parent volume after the conversion is complete.
 
 **Dependent** duplicates do not go through the separation process and can be refreshed manually at any time. The refresh process can be initiated from the CLI or the UI. Later, if you want to convert the dependent duplicate into an independent volume, you can initiate that process by using the UI or the CLI, too.
 
