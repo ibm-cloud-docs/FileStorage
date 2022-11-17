@@ -81,5 +81,5 @@ Options:
   -h, --help            Show this message and exit.
 ```
 
-For more information about the same function in the IBM Cloud CLI, see [bmcloud sl file snapshot-order](https://cloud.ibm.com/docs/cli?topic=cli-sl-file-storage-service#sl_file_snapshot_order){: external}.
+For more information about the same function in the IBM Cloud CLI, see [ibmcloud sl file snapshot-order](https://cloud.ibm.com/docs/cli?topic=cli-sl-file-storage-service#sl_file_snapshot_order){: external}.
 {: tip}
