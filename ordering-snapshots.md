@@ -62,7 +62,7 @@ Additionally, for most workloads, the larger a volume is the less space needs to
    Discounts are applied when the order is processed.
    {: note}
 
-8. Check the **I have read the Service Description and agree to the terms therein** box and click **Place Order**. Your snapshot space is provisioned in a few minutes.
+8. Check the box to confirm that you read and understood the terms and conditions and click **Place Order**. Your snapshot space is provisioned in a few minutes.
 
 ## Ordering Snapshot space from the SLCLI
 {: #ordersnapshotCLI}
