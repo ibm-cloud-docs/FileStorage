@@ -77,7 +77,7 @@ toc:
         - topicgroup:
             label: Identity and Access Management
             topics:
-             - /account/account-mngclassicinfra
+             - include: ../account/iam-mnginfra.md
         - topicgroup:
             label: Service Level Agreement
             topics:
@@ -96,7 +96,7 @@ toc:
         - topicgroup:
             label: Command reference
             topics:
-            - /cli/cli-sl-file-storage-service
+            - include: ../cli/reference/ibmcloud/cli_file_storage.md
             - slcli-usage.md
 
     - navgroup:
