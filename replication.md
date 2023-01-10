@@ -159,7 +159,7 @@ You can cancel replication either immediately or on the anniversary date, which 
 2. Click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions").
 3. Select **Delete Replica**.
 4. Select when to cancel. Choose **Immediately** or **Anniversary Date**, and click **Continue**.
-5. This operation deletes the replica volume with all its data. Click the check box to acknowledge this, and click **Delete**.
+5. This operation deletes the replica volume with all its data. Click the checkbox to acknowledge this, and click **Delete**.
 
 ## Canceling replication when the primary volume is deleted in the UI
 {: #cancelprimaryUI}

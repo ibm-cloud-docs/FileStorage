@@ -192,7 +192,7 @@ Snapshot space is increased through **Storage** > **{{site.data.keyword.filestor
 2. Select from a range of sizes from the prompt. Sizes typically range from 0 to the size of your volume.
 3. Click **Continue**.
 4. Enter any Promo Code that you have, and click **Recalculate**. The Charges for this order and Order Review fields are completed by default.
-5. Read the service agreement, and if you agree with the terms click check box, and click **Place Order**. Your additional snapshot space is provisioned in a few minutes.
+5. Read the service agreement, and if you agree with the terms click checkbox, and click **Place Order**. Your additional snapshot space is provisioned in a few minutes.
 
 ## Deleting a snapshot schedule in the UI
 {: #cancelnapshotscheduleUI}
@@ -203,7 +203,7 @@ Snapshot schedules can be deleted through **Storage** > **{{site.data.keyword.fi
 1. Click on the volume ID to display its related information.
 2. Click Snapshots.
 3. Click the schedule to be deleted in the **Snapshot Schedules** frame.
-4. Click the check box next to the schedule to be deleted and click **Save**.
+4. Click the checkbox next to the schedule to be deleted and click **Save**.
 
 If you're using the replication feature, be sure that the schedule that you're deleting isn't the schedule that is used by replication. For more information about deleting a replication schedule, see [here](/docs/FileStorage?topic=FileStorage-replication).
 {: important}

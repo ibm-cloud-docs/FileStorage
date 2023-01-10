@@ -60,7 +60,7 @@ To cancel a storage volume, you need to revoke access from any hosts first. Acti
    {: tip}
 
 5. Click **Continue**.
-6. Click the acknowledgment check box, and click **Confirm**.
+6. Click the acknowledgment checkbox, and click **Confirm**.
 
 When the volume is deleted, there's a 24-hour reclaim wait period. You can still see the volume in the console during those 24 hours. When the reclaim-period expires, the data is destroyed and the volume is removed from the console, too. However, billing for the volume stops immediately. For more information, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs).
 

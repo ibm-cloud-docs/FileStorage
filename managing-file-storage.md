@@ -193,7 +193,7 @@ If you no longer need a specific volume, you can delete that file share. To canc
    {: tip}
 
 5. Click **Continue** or **Close**.
-6. Click the acknowledgment check box, and click **Confirm**.
+6. Click the acknowledgment checkbox, and click **Confirm**.
 
 When the volume is canceled, there's a 24-hour reclaim wait period. You can still see the volume in the console during those 24 hours. Billing for the volume stops immediately. When the reclaim-period expires, the data is destroyed and the volume is removed from the console, too. For more information, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs).
 {: note}
