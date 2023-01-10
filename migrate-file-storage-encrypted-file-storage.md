@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2014, 2022
+  years: 2014, 2023
 lastupdated: "2022-02-07"
 
 keywords: File Storage, file storage, NFS, upgrade, migrate to new
@@ -17,12 +17,11 @@ subcollection: FileStorage
 Enhanced {{site.data.keyword.filestorage_full}} is now available in most [data centers](/docs/FileStorage?topic=FileStorage-selectDC). The preferred migration path is to provision an enhanced {{site.data.keyword.filestorage_short}} volume, then connect to both volumes simultaneously and transfer data directly from one volume to another. The specifics depend on your operating system and whether the data is expected to change during the copy operation.
 {: shortdesc}
 
-All enhanced {{site.data.keyword.filestorage_short}} volumes that are provisioned in these data centers have a different mount point than non-encrypted volumes. To ensure you're using the correct mount point for both storage volumes, you can view the mount point information in the {{site.data.keyword.filestorage_short}} Details page in the UI. You can also access the correct mount point through an API call: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
+All enhanced {{site.data.keyword.filestorage_short}} volumes that are provisioned in these data centers have a different mount point than nonencrypted volumes. To ensure you're using the correct mount point for both storage volumes, you can view the mount point information in the {{site.data.keyword.filestorage_short}} Details page in the UI. You can also access the correct mount point through an API call: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 {: tip}
 
-You don't need to follow this process if your Storage has recently received an upgrade to the Storage-as-a-Service package as part of {{site.data.keyword.cloud}}'s ongoing hardware refresh process.
-{: note}
-
+You don't need to follow this process if your Storage recently received an upgrade to the Storage-as-a-Service package as part of {{site.data.keyword.cloud}}'s ongoing hardware refresh process.
+{: tip}
 
 ## Creating a {{site.data.keyword.filestorage_short}}
 {: #createencryptedvol}
@@ -40,7 +39,7 @@ When you order a file share, your new storage is available to mount in a few min
 "Authorized" hosts are hosts that were given access to a volume. Without host authorization, you can't access or use the storage from your system.
 
 1. In the console, go to **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic") > **Storage** > **{{site.data.keyword.filestorage_short}}**.
-2. Scroll to the File share you want to mount, and click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions"). Then, select **Authorize Host**.
+2. Scroll to the File share that you want to mount, and click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions"). Then, select **Authorize Host**.
 3. Filter the available host list by selecting the device type, subnet, or IP address.
 
    When the list is filtered by subnet, the subnets that are displayed are subscribed subnets in the same data center as the storage volume.
@@ -62,8 +61,8 @@ When the host is authorized, connect the volume to your host.
     If you need assistance with connecting the two file shares to your host, open a support ticket
     {: tip}
 
-2. Consider what type of data you have on your original {{site.data.keyword.filestorage_short}} volume and how best to copy it to your new file share.
-   - If you have backups, static content, and things that aren't expected to change during the copy, you don't have to worry.
+2. Consider the type of data that you have on your original {{site.data.keyword.filestorage_short}} volume and how best to copy it to your new file share.
+   - If you have backups, static content, and things that aren't expected to change during the copy, you don't need to worry.
    - If you're running a database or a virtual machine on your {{site.data.keyword.filestorage_short}}, make sure that the data isn't altered during the copy to avoid data corruption.
    - If you have any bandwidth concerns, do the migration during off peak times.
    - If you need assistance with these considerations, open a support ticket.
@@ -73,7 +72,7 @@ When the host is authorized, connect the volume to your host.
    [root@server ~]# rsync -Pavzu /path/to/original/file/storage/* /path/to/encrypted/file/storage
    ```
 
-   It's advisable to use the previous command with the `--dry-run` flag once to make sure that the paths line up correctly. If this process is interrupted, you can delete the last destination file that was being copied to make sure that it is copied to the new location from the beginning.
+   It's advisable to use the previous command with the `--dry-run` flag first to make sure that the paths line up correctly. If this process is interrupted, you can delete the last destination file that was being copied to make sure that it is copied to the new location from the beginning.
    {: tip}
 
    When this command completes without the `--dry-run` flag, your data is copied to the new {{site.data.keyword.filestorage_short}} volume. Run the command again to make sure that nothing was missed. You can also manually review both locations to look for anything that might be missing.

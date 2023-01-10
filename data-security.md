@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2014, 2021
+  years: 2014, 2023
 lastupdated: "2021-07-27"
 
 keywords: File Storage, file storage, NFS, security, encryption
@@ -38,7 +38,7 @@ When you order {{site.data.keyword.filestorage_short}}, select a data center tha
 
 ![Figure 1. Example of the lock icon that indicates that the volume is encrypted.](/images/encryptedstorage.png){: caption="Figure 1. Example of the lock icon that indicates that the volume is encrypted." caption-side="bottom"}
 
-Any non-encrypted storage that was provisioned before a data center upgrade is **not** automatically encrypted. If you own non-encrypted storage in an upgraded data center and you want to have it encrypted, you need to create a volume, and move your data. For more information, see [File Storage Migration in Upgraded Data Centers](/docs/FileStorage?topic=FileStorage-migratestorage).
+Any nonencrypted storage that was provisioned before a data center upgrade is **not** automatically encrypted. If you own nonencrypted storage in an upgraded data center and you want to have it encrypted, you need to create a volume, and move your data. For more information, see [File Storage Migration in Upgraded Data Centers](/docs/FileStorage?topic=FileStorage-migratestorage).
 {: important}
 
 ## Deleting {{site.data.keyword.filestorage_short}} instances
@@ -64,5 +64,5 @@ To cancel a storage volume, you need to revoke access from any hosts first. Acti
 
 When the volume is deleted, there's a 24-hour reclaim wait period. You can still see the volume in the console during those 24 hours. When the reclaim-period expires, the data is destroyed and the volume is removed from the console, too. However, billing for the volume stops immediately. For more information, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs).
 
-After the Storage LUN is reclaimed, the disk is wiped and data can't be restored.
+After the Storage LUN is reclaimed, the disk is wiped, and data can't be restored.
 When drives are decommissioned in a data center, IBM destroys them before they are disposed of. The drives become unusable. Any data that was written to that drive becomes inaccessible.

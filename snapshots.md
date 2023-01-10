@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2014, 2019
+  years: 2014, 2023
 lastupdated: "2019-02-05"
 
 keywords: File Storage, file storage, NFS, snapshots
@@ -28,7 +28,7 @@ A Snapshot copy incurs no performance decrease. Users can easily store up to 50 
 
 With snapshots, you can:
 
-- Non-disruptively create point-in-time recovery points,
+- Nondisruptively create point-in-time recovery points,
 - Revert volumes to previous points-in-time.
 
 You must purchase some amount of snapshot space for your volume first so you can take snapshots of it. The snapshot space can be added during the initial order or afterward through the **Volume Details** page. Scheduled and manual snapshots share the snapshot space, so make sure you order enough Snapshot space. See the [Ordering Snapshots](/docs/FileStorage?topic=FileStorage-ordering-snapshots) article for more details and guidance.
@@ -63,8 +63,7 @@ In the active file system, the changed blocks are rewritten to different locatio
 |-----|-----|
 | ![The space that is used before a snapshot copy is taken.](/images/bfcircle1.png "Before Snapshot Copy") | Before any Snapshot copy is created, disk space is used by the active file system only. |
 | ![The space that is used when a snapshot copy is taken.](/images/bfcircle3.png "After Snapshot Copy") | After a Snapshot copy is created, the active file system and Snapshot copy point to the same disk blocks. The Snapshot copy doesn't use extra disk space.  |
-| ![The space that is used when something changes after a snapshot copy was taken.](/images/bfcircle2.png "Changes after Snapshot Copy") | After `myfile.txt` is deleted from the active file system, the Snapshot copy still includes the file, and references its disk blocks. That's why deleting active file system data doesn't always free up disk space. |
+| ![The space that is used when something changes after a snapshot copy was taken.](/images/bfcircle2.png "Changes after Snapshot Copy") | After `myfile.txt` is deleted from the active file system, the Snapshot copy still includes the file, and references its disk blocks. Thus deleting active file system data doesn't always free up disk space. |
 {: caption="Table 1 shows how snapshots affect the space usage on the Storage." caption-side="top"}
-
 
 For more information about snapshot space usage, see [Managing Snapshots](/docs/FileStorage?topic=FileStorage-managingSnapshots).

@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2014, 2022
+  years: 2014, 2023
 lastupdated: "2022-09-27"
 
 keywords: File Storage, NFS, provisioning, ordering, duplicate, cloning, replication
@@ -166,9 +166,7 @@ When your provisioning request is complete, authorize your hosts to access the n
 
 To avoid data-loss and to ensure business continuity, consider replicating your servers and storage in another data center. Replication keeps your data in sync in two different locations based on your snapshot schedule. For more information, see [Replicating data](/docs/FileStorage?topic=FileStorage-replication).
 
-If you want to clone your volume and use it independently from the original volume, see [Creating and managing independent duplicate volumes](/docs/FileStorage?topic=FileStorage-duplicatevolume).
-
-If you want to clone your volume and be able to refresh the duplicate on demand, see [Creating and managing dependent duplicate volumes](/docs/FileStorage?topic=FileStorage-dependentduplicate).
+If you want to clone your volume, see [Creating and managing independent duplicate volumes](/docs/FileStorage?topic=FileStorage-duplicatevolume). Duplicate volumes can be managed independently and refreshed with data from the original volume on demand.
 
 ## Identifying {{site.data.keyword.filestorage_short}} volumes on the invoice
 {: #findstorageinvoice}

@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2014, 2019
+  years: 2014, 2023
 lastupdated: "2019-11-14"
 
 keywords: File Storage, mounting file storage, Linux, CentOS, NFS
@@ -32,7 +32,7 @@ To mount {{site.data.keyword.filestorage_full}} in CentOS 7, you must authorize 
 You can authorize a host to access the {{site.data.keyword.filestorage_short}} volume through the [{{site.data.keyword.cloud}} console](/classic/storage/file){: external}.
 
 1. In the console, go to **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic") > **Storage** > **{{site.data.keyword.filestorage_short}}**.
-2. Scroll to the File share you want to mount, and click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions"). Then, select **Authorize Host**.
+2. Scroll to the File share that you want to mount, and click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions"). Then, select **Authorize Host**.
 3. Filter the available host list by selecting the device type, subnet, or IP address.
 
    When the list is filtered by subnet, the subnets that are displayed are subscribed subnets in the same data center as the storage volume.
@@ -62,7 +62,7 @@ Options:
 ## Mounting the storage
 {: #mountingStorageCentOS}
 
-Most of the steps that you need to perform to mount your {{site.data.keyword.filestorage_short}} to a CentOS host are the same as the ones that are described on [Mounting {{site.data.keyword.filestorage_short}} on Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingLinux). However, for CentOS, you can specify some additional options by using the `Options=` line in the mount file. In the following example, the NFS is set to mount at `/data/www`.
+Most of the steps that you need to take to mount your {{site.data.keyword.filestorage_short}} to a CentOS host are the same as the ones that are described on [Mounting {{site.data.keyword.filestorage_short}} on Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingLinux). However, for CentOS, you can specify some additional options by using the `Options=` line in the mount file. In the following example, the NFS is set to mount at `/data/www`.
 
  The NFS mount point information can be obtained from the {{site.data.keyword.filestorage_short}} Details page in the UI or through an API call -`SoftLayer_Network_Storage::getNetworkMountAddress()`.
 {: tip}

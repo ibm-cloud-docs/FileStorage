@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2014, 2022
+  years: 2014, 2023
 lastupdated: "2022-10-14"
 
 keywords: File Storage, file storage, NFS, replication, duplication, synchronous, replica schedule, replica space, disaster recovery
@@ -38,7 +38,7 @@ See Table 1 for the complete list of data center availability and replication ta
 | - DAL05 \n - SJC01 \n - WDC01 | - SJC03 \n - SJC04 \n - WDC04 \n - WDC06 \n - WDC07 \n - DAL09 \n - DAL10 \n - DAL12 \n - DAL13 | - MEX01 \n - SAO01 \n - SAO04 \n - SAO05 | - TOR01 \n - TOR04 \n - TOR05 \n - MON01 | - AMS03 \n - FRA02 \n - FRA04 \n - FRA05 \n - LON02 \n - LON04 \n - LON05 \n - LON06 \n - PAR01 \n - MIL01 | - TOK02 \n - TOK04 \n - TOK05 \n - OSA21 \n - OSA22 \n - OSA23 \n - SNG01 \n - CHE01 | - SYD01 \n - SYD04 \n - SYD05 \n |
 {: caption="Table 1 - This table shows the complete list of data centers with enhanced capabilities in each region. Every region is a separate column. Some cities, such as Dallas, San Jose, Washington DC, Amsterdam, Frankfurt, London, and Sydney have multiple data centers." caption-side="top"}
 
- Data centers in US 1 can only replicate with each other. Data centers in US 2 region cannot start replication with US 1 data centers.
+ Data centers in US 1 can replicate with only each other. Data centers in US 2 region cannot start replication with US 1 data centers.
  {: note}
 
 As part of the data center modernization strategy for {{site.data.keyword.cloud}}, several data centers and PODs are scheduled to consolidate in late 2022 and early 2023. For more information, see [Data center consolidations](/docs/get-support?topic=get-support-dc-closure){: external}. Provisioning storage and snapshots in closing data centers is not allowed.
@@ -50,7 +50,7 @@ As part of the data center modernization strategy for {{site.data.keyword.cloud}
 
 {{site.data.keyword.cloud}}'s data centers are paired into primary and remote combinations in every region worldwide. When you replicate data, consider the local data residency laws because moving data across borders can have legal implications. Replication across regions is not permitted.
 
-To list suitable replication datacenters for a specific volume, use the following command.
+To list suitable replication data centers for a specific volume, use the following command.
 
  ```python
   # slcli file replica-locations --help
@@ -134,7 +134,7 @@ List existing replicant volumes for a file volume with the following command.
 {: #replicationhistoryUI}
 {: ui}
 
-To view the Replication history, click Manage on the main menu bar. Select **Account**, then scroll to the Audit Log. The Storage Replication Events list contains the names of the volume, a description of the replication event and the time stamp of the event.
+To view the Replication history, click Manage on the main menu bar. Select **Account**, then scroll to the Audit Log. The Storage Replication Events list contains the names of the volume, a description of the replication event and the timestamp of the event.
 
 ## Editing the Replication Schedule in the UI
 {: #editreplicaschedule}
@@ -159,7 +159,7 @@ You can cancel replication either immediately or on the anniversary date, which 
 2. Click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions").
 3. Select **Delete Replica**.
 4. Select when to cancel. Choose **Immediately** or **Anniversary Date**, and click **Continue**.
-5. This operation deletes the replica volume with all its data. Click the checkbox to acknowledge this, and click **Delete**.
+5. This operation deletes the replica volume with all its data. Click the checkbox to acknowledge information, and click **Delete**.
 
 ## Canceling replication when the primary volume is deleted in the UI
 {: #cancelprimaryUI}

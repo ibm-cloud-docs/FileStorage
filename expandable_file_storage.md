@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2018, 2021
+  years: 2018, 2023
 lastupdated: "2021-04-30"
 
 keywords: File Storage, modify volume, NFS, file storage, expand capacity
@@ -52,7 +52,7 @@ Existing size limitations for {{site.data.keyword.filestorage_short}} that was p
 4. Review your selection and the new pricing. Click **Modify**.
 5. Your new storage allocation is available in a few minutes.
 
-For the OS to recognize the extra storage space, unmount and mount the modified volume again.
+Unmount, then mount the modified volume, so the OS can recognize the extra storage space.
 {: tip}
 
 ## Resizing storage from the SLCLI
@@ -96,7 +96,7 @@ Options:
 ```
 {: codeblock}
 
-For the OS to recognize the extra storage space, unmount and mount the modified volume again.
+Unmount, then mount the modified volume, so the OS can recognize the extra storage space.
 {: tip}
 
 ## Resizing storage with the API
@@ -177,7 +177,7 @@ For more information about the SLAPI, see the [SLDN](http://sldn.softlayer.com/r
    ```
    {: codeblock}
 
-For the OS to recognize the extra storage space, unmount and mount the modified volume again.
+Unmount, then mount the modified volume, so the OS can recognize the extra storage space.
 {: tip}
 
 ## Expanding Storage over 12 TB
@@ -188,5 +188,5 @@ For the OS to recognize the extra storage space, unmount and mount the modified 
 If you need to increase your Storage volume capacity beyond 12 TB, you can request to be added to the allowlist by submitting a [support case](/unifiedsupport/cases/add){: external}. When the request is approved by the Offering Manager, you're going to be notified through the case process. You're also going to see the option to increase your storage up to 24 TB in the console.
 {: preview}
 
-There's a limit to how many operations can be performed on the storage. This limit is 180K IOPS. So if you want to provision a volume with 10 IOPS, your maximum volume size is 18 TB. If you want to provision the maximum size of 24 TB, then the maximum rate of reads and writes to the volume is 4 IOPS per GB.
+There's a limit to how many operations can be performed on the storage. This limit is 180k IOPS. So if you want to provision a volume with 10 IOPS, your maximum volume size is 18 TB. If you want to provision the maximum size of 24 TB, then the maximum rate of reads and writes to the volume is 4 IOPS per GB.
 {: note}

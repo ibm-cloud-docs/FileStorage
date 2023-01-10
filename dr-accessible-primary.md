@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2018, 2021
+  years: 2018, 2023
 lastupdated: "2021-06-10"
 
 keywords: File Storage, file storage, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
@@ -14,7 +14,7 @@ subcollection: FileStorage
 # Disaster Recovery - Fail over with an accessible primary volume
 {: #dr-accessible}
 
-If a catastrophic failure or disaster occurs on the primary site and the primary storage is still accessible, customers can perform the following actions to quickly access their data on the secondary site.
+If a catastrophic failure or disaster occurs on the primary site and the primary storage is still accessible, customers can take the following steps to quickly access their data on the secondary site.
 
 Before you start the failover, make sure that all host-authorization is in place.
 {: important}
@@ -31,7 +31,7 @@ You can authorize a host to access the {{site.data.keyword.filestorage_full}} vo
 1. Log in to the [{{site.data.keyword.cloud}} console](/login){: external} and click the **menu** icon on the upper left. Select **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic").
 2. Locate the source or destination volume in the **{{site.data.keyword.filestorage_short}}** list. Its replica volume is listed under the source volume in the inactive status.
 3. Click the replica name and on the next screen, click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions"). From the menu, select **Authorize Hosts**.
-4. Select a host type and then choose a host from the dropdown that is available for the volume. Filter the available host list by the device type, subnet, or IP address.
+4. Select a host type and then choose a host from the list that is available for the volume. Filter the available host list by the device type, subnet, or IP address.
 
    When the list is filtered by subnet, the subnets that are displayed are subscribed subnets in the same data center as the storage volume.
    {: note}
@@ -43,7 +43,7 @@ You can authorize a host to access the {{site.data.keyword.filestorage_full}} vo
 {: #authreplicahostCLI}
 {: cli}
 
-To authorize the hosts in the replica datacenter, use the following command.
+To authorize the hosts in the replica data center, use the following command.
 ```python
 # slcli file access-authorize --help
 Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
@@ -64,7 +64,7 @@ If a failure event is imminent, you can start an **Immediate failover** or a "Co
 
 When you choose an Immediate Failover, the last successfully replicated snapshot is activated, and the volume is made available for mounting. The target volume becomes active in less time compared to a Controlled Failover. However, any data that was written to the source volume since the previous replication cycle is lost.
 
-A Controlled Failover is the best choice when you want to test the failover functionality or when it’s more important to continue operations at the replica location with the most recent data. In a Controlled Failover, a new snapshot is taken and copied over to the replica location. After the data is successfully copied over, the volume is made available for mounting.
+A Controlled Failover is the best choice when you want to test the failover function or when it’s more important to continue operations at the replica location with the most recent data. In a Controlled Failover, a new snapshot is taken and copied over to the replica location. After the data is successfully copied over, the volume is made available for mounting.
 
 When a failover is started, the replication relationship is flipped. Your target volume becomes your source volume, and your former source volume becomes your target as indicated by the **Volume Name** followed by **REP**.
 
@@ -78,7 +78,7 @@ Before you proceed with these steps, disconnect the volume. Failure to do so, re
 {: ui}
 
 1. Click your active volume (“source”).
-2. In the upper right corner, click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions").
+2. Click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions").
 3. Select **Controlled Failover** or **Immediate Failover**.
 
    Expect a message that states that the failover is in progress. Additionally, an icon appears next to your volume on the **{{site.data.keyword.filestorage_short}}** that indicates that an active transaction is occurring. Hovering over the icon produces a window that shows the transaction. The icon disappears when the transaction is complete. During the failover process, configuration-related actions are read-only. You can't edit any snapshot schedule or change snapshot space. The event is logged in replication history. When your target volume is live, you get another message. Your original source volume's Status becomes Inactive.
