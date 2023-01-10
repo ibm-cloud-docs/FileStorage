@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2014, 2021
+  years: 2014, 2023
 lastupdated: "2021-05-03"
 
 keywords: File Storage, file storage, NFS, authorizing hosts, revoke access, grant access, view authorizations
@@ -24,7 +24,7 @@ You can manage your {{site.data.keyword.filestorage_full}} volumes through the {
 {: support}
 {: ui}
 
-“Authorized” hosts are hosts that were given access to a particular volume. Without host authorization, you can't access or use the storage from your system. Authorizing a host to access your volume generates the user name and password.
+“Authorized” hosts are hosts that were given access to a particular volume. Without host authorization, you can't access or use the storage from your system. Authorizing a host to access your volume generates the username and password.
 
 You can authorize and connect hosts that are located in the same data center as your storage. You can have multiple accounts, but you can't authorize a host from one account to access your storage on another account.
 {: important}
@@ -78,7 +78,7 @@ There you can see the list of hosts, which are currently authorized to access th
 {: support}
 {: cli}
 
-To display the lost of authorized hosts, you can use the following command.
+To display the list of authorized hosts, you can use the following command.
 ```python
 # slcli file access-list --help
 Usage: slcli file access-list [OPTIONS] VOLUME_ID
@@ -98,7 +98,7 @@ Options:
 {: support}
 {: ui}
 
-You can view the volumes to which a host has access to, including information that is needed to make a connection – Volume Name, Storage Type, Target Address, capacity, and location.
+You can view the volumes, which a host has access to, including information that is needed to make a connection – Volume Name, Storage Type, Target Address, capacity, and location.
 
 1. Go to the [{{site.data.keyword.cloud}} console](/login){: external}.
 2. From the menu, select **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic").
@@ -193,7 +193,7 @@ If you no longer need a specific volume, you can delete that file share. To canc
    {: tip}
 
 5. Click **Continue** or **Close**.
-6. Click the acknowledgment check box, and click **Confirm**.
+6. Click the acknowledgment checkbox, and click **Confirm**.
 
 When the volume is canceled, there's a 24-hour reclaim wait period. You can still see the volume in the console during those 24 hours. Billing for the volume stops immediately. When the reclaim-period expires, the data is destroyed and the volume is removed from the console, too. For more information, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs).
 {: note}

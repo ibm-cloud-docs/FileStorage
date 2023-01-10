@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2019
-lastupdated: "2019-12-06"
+  years: 2018, 2023
+lastupdated: "2023-01-10"
 
 keywords: File Storage, file storage, NFS, cPanel, backups
 
@@ -26,7 +26,7 @@ For more information, see [cPanel Docs - Backup](https://docs.cpanel.net/knowled
    By default, the cPanel system saves backup files locally, to the `/backup` directory. In this document, the assumption is that `/backup` folder exists and contains backups, and `/backup2` can be used as the new mount point.
    {: note}
 
-3. Configure your {{site.data.keyword.filestorage_short}} as described in [Accessing {{site.data.keyword.filestorage_short}} on Red Hat Enterprise Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingLinux) or [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/FileStorage?topic=FileStorage-mountingCentOS)/[Mounting NFS/{{site.data.keyword.filestorage_short}}. Mount the volume to `/backup2` and configure it in file system table (`/etc/fstab`) to enable mounting on start.
+3. Configure your {{site.data.keyword.filestorage_short}} as described in [Accessing {{site.data.keyword.filestorage_short}} on Red Hat Enterprise Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingLinux) or [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/FileStorage?topic=FileStorage-mountingCentOS)/[Mounting {{site.data.keyword.filestorage_short}} in Ubuntu](/docs/FileStorage?topic=FileStorage-mountingUbuntu). Mount the volume to `/backup2` and configure it in file system table (`/etc/fstab`) to enable mounting on start.
 
    By default, NFS downgrades any files that were created with the root permissions to the nobody user. To allow root clients to retain the root permissions on the NFS share, `no_root_squash` needs to be added to `/etc/exports`.
    {: tip}

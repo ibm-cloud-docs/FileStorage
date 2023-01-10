@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2017, 2022
+  years: 2017, 2023
 lastupdated: "2022-11-15"
 
 keywords: File Storage, file storage, NFS, duplicate volume
@@ -82,7 +82,7 @@ You can create a duplicate volume from the CLI and in the [{{site.data.keyword.c
 10. You can update the snapshot space for the new volume to add more, less, or no snapshot space. The snapshot space of the original volume is set by default.
 11. Check the box to confirm that you read and agreed to the terms, then click **Create** to place your order.
 
-After you click **Create**, the order confirmation window appears. When you close the window, you return to the resources list. You can go back to your list of {{site.data.keyword.filestorage_short}} shares to click on the newly provisioned duplicate. The share details section displays information such as Duplicate Type, a link to the parent share's details page and the name of the snapshot that was used to create the duplicate.
+After you click **Create**, the order confirmation window appears. When you close the window, you return to the resources list. You can go back to your list of {{site.data.keyword.filestorage_short}} shares to click the newly provisioned duplicate. The share details section displays information such as Duplicate Type, a link to the parent share's details page and the name of the snapshot that was used to create the duplicate.
 
 ## Creating a duplicate from the SLCLI
 {: #createindependentduplicateCLI}
@@ -151,7 +151,7 @@ slcli file volume-duplicate --dependent-duplicate TRUE <primary-vol-id>
 ## Managing your duplicate volume
 {: #manageduplicate}
 
-While data is being copied from the original volume to the **independent** duplicate, you can see that the status indicator on the details page shows the duplication is in progress. During this time, you can attach to a host, and read and write to the volume, but you can't create snapshot schedules or perform a refresh. When the separation process is complete, the new volume is independent from the original, and can be managed with snapshots and replication as normal. The independent duplicate can be manually refreshed by using a snapshot from the parent volume after the conversion is complete.
+While data is being copied from the original volume to the **independent** duplicate, you can see that the status indicator on the details page shows the duplication is in progress. During this time, you can attach to a host, and read and write to the volume, but you can't create snapshot schedules or refresh data from the original file share. When the separation process is complete, the new volume is independent from the original, and can be managed with snapshots and replication as normal. The independent duplicate can be manually refreshed by using a snapshot from the parent volume after the conversion is complete.
 
 **Dependent** duplicates do not go through the separation process and can be refreshed manually at any time. The refresh process can be initiated from the CLI or the UI. Later, if you want to convert the dependent duplicate into an independent volume, you can initiate that process by using the UI or the CLI, too.
 
@@ -187,7 +187,7 @@ The conversion process can take some time to complete. The bigger the volume is,
 
 As time passes and the primary volume changes, the duplicate volume can be updated with these changes to reflect the current state through the refresh action. The refresh involves taking a snapshot of the primary volume and then, updating the duplicate volume by using that snapshot.
 
-Refreshes can be performed by using the following command.
+Refreshes can be initiated by using the following command.
 ```python
 slcli file volume-refresh <duplicate-vol-id> <primary-snapshot-id>
 ```

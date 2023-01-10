@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2014, 2022
+  years: 2014, 2023
 lastupdated: "2022-04-13"
 
 keywords: File Storage, file storage, NFS, snapshots, snapshot schedule, manual snapshot, snapshot space, snapshot quota
@@ -26,7 +26,7 @@ You decide how often and when you want to create a point in time reference of yo
 Before you can set up your initial schedule, you must first purchase snapshot space if you didn't purchase it during the initial provisioning of the storage volume.
 {: important}
 
-Snapshots schedules can be set up for hourly, daily, and weekly intervals, each with a distinct retention cycle. The maximum limit of snapshots is 50  per storage volume, which can be a mix of hourly, daily, and weekly schedules, and manual snapshots.
+Snapshots schedules can be set up for hourly, daily, and weekly intervals, each with a distinct retention cycle. The maximum limit of snapshots is 50 per storage volume, which can be a mix of hourly, daily, and weekly schedules, and manual snapshots.
 
 1. Click your storage volume, click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions"), and click **Schedule Snapshot**.
 2. In the New Schedule Snapshot window, you can select from three different snapshot frequencies. Use any combination of the three to create a comprehensive snapshot schedule.
@@ -114,17 +114,17 @@ Options:
 {: #listsnapshotUI}
 {: ui}
 
-A list of retained snapshots and space that is used can be seen on the **{{site.data.keyword.filestorage_short}} Detail** page.  Management functions (editing schedules and adding more space) are conducted on the **{{site.data.keyword.filestorage_short}} Detail** page by using the **Actions** menu or links in the various sections on the page. The Snapshot page displays how much capacity the volume has and how much of it is used.
+A list of retained snapshots and space that is used can be seen on the **{{site.data.keyword.filestorage_short}} Detail** page. Management functions (editing schedules and adding more space) are conducted on the **{{site.data.keyword.filestorage_short}} Detail** page by using the **Actions** menu or links in the various sections on the page. The Snapshot page displays how much capacity the volume has and how much of it is used.
 
 You receive notifications when you reach space thresholds – 75 percent, 90 percent, and 95 percent.
 
 - At **75 percent capacity**, a warning is sent that snapshot space usage exceeded 75 percent. If you heed the warning and manually add space, or delete retained and unnecessary snapshots, or reduce the number of retained snapshots in the schedule, the system is reset and no autodeletion occurs.
 - At **90 percent capacity**, a second warning is sent when snapshot space usage exceeded 90 percent. Like with reaching 75 percent capacity, if you take the necessary actions to decrease the snapshot data or increase the space, the warning system is reset and no autodeletion occurs.
-- At **95 percent capacity**, a final warning is sent. If no action is taken to bring your space usage under the threshold, automatic deletion starts so that future snapshots can be created. Scheduled snapshots are deleted, starting with the oldest, until usage drops under 95 percent. Snapshots continue to be deleted each time usage exceeds 95 percent until it drops under the threshold. If the space is manually increased or snapshots are manually deleted, the warning is reset and reissued if the threshold is exceeded again. If no actions are taken, this notification is the only warning that you receive.
+- At **95 percent capacity**, a final warning is sent. If no action is taken to bring your space usage under the threshold, automatic deletion starts so that future snapshots can be created. Scheduled snapshots are deleted, starting with the oldest, until usage drops under 95 percent. Snapshots continue to be deleted each time usage exceeds 95 percent until it drops under the threshold. If the space is manually increased or snapshots are manually deleted, the warning is reset, and reissued if the threshold is exceeded again. If no actions are taken, this notification is the only warning that you receive.
 
 By default, snapshot warning notifications are enabled for every customer. However, you can choose to disable them. When this feature is disabled, all ticket generation and notifications are stopped. You can disable and enable notifications for the volume at any time from the CLI.
 
-If snapshot space utilization increases too rapidly, then you might receive one notification before autodeletion of the oldest scheduled snapshot occurs. For example, if utilization jumps from 76% to 96% within 15 minutes, you receive one notification about exceeding 75% and one notification about exceeding 95%.
+If snapshot space usage increases too rapidly, then you might receive one notification before autodeletion of the oldest scheduled snapshot occurs. For example, if usage jumps from 76% to 96% within 15 minutes, you receive one notification about exceeding 75% and one notification about exceeding 95%.
 {: note}
 
 ## Listing all Snapshots with Space Used Information and Management functions from the SLCLI
@@ -146,9 +146,9 @@ Notifications are sent when you reach three different space thresholds – 75 pe
 
 - At **75 percent capacity**, a warning is sent that snapshot space usage exceeded 75 percent. If you heed the warning and manually add space, or delete retained and unnecessary snapshots, or reduce the number of retained snapshots in the schedule, the system is reset and no autodeletion occurs.
 - At **90 percent capacity**, a second warning is sent when snapshot space usage exceeded 90 percent. Like with reaching 75 percent capacity, if you take the necessary actions to decrease the snapshot data or increase the space, the warning system is reset and no autodeletion occurs.
-- At **95 percent capacity**, a final warning is sent. If no action is taken to bring your space usage under the threshold, automatic deletion starts so that future snapshots can be created. Scheduled snapshots are deleted, starting with the oldest, until usage drops under 95 percent. Snapshots continue to be deleted each time usage exceeds 95 percent until it drops under the threshold. If the space is manually increased or snapshots are manually deleted, the warning is reset and reissued if the threshold is exceeded again. If no actions are taken, this notification is the only warning that you receive.
+- At **95 percent capacity**, a final warning is sent. If no action is taken to bring your space usage under the threshold, automatic deletion starts so that future snapshots can be created. Scheduled snapshots are deleted, starting with the oldest, until usage drops under 95 percent. Snapshots continue to be deleted each time usage exceeds 95 percent until it drops under the threshold. If the space is manually increased or snapshots are manually deleted, the warning is reset, and reissued if the threshold is exceeded again. If no actions are taken, this notification is the only warning that you receive.
 
-If snapshot space utilization increases too rapidly, then you might receive one notification before autodeletion of the oldest scheduled snapshot occurs. For example, if utilization jumps from 76% to 96% within 15 minutes, you receive one notification about exceeding 75% and one notification about exceeding 95%. The system skips the 90%-exceeded warning.
+If snapshot space usage increases too rapidly, then you might receive one notification before autodeletion of the oldest scheduled snapshot occurs. For example, if usage jumps from 76% to 96% within 15 minutes, you receive one notification about exceeding 75% and one notification about exceeding 95%. The system skips the 90%-exceeded warning.
 {: note}
 
 By default, snapshot warning notifications are enabled for every customer. However, you can choose to disable them. When this feature is disabled, all ticket generation and notifications are stopped. You can disable and enable notifications for the volume at any time.
@@ -192,7 +192,7 @@ Snapshot space is increased through **Storage** > **{{site.data.keyword.filestor
 2. Select from a range of sizes from the prompt. Sizes typically range from 0 to the size of your volume.
 3. Click **Continue**.
 4. Enter any Promo Code that you have, and click **Recalculate**. The Charges for this order and Order Review fields are completed by default.
-5. Read the service agreement, and if you agree with the terms click check box, and click **Place Order**. Your additional snapshot space is provisioned in a few minutes.
+5. Read the service agreement, and if you agree with the terms click checkbox, and click **Place Order**. Your additional snapshot space is provisioned in a few minutes.
 
 ## Deleting a snapshot schedule in the UI
 {: #cancelnapshotscheduleUI}
@@ -200,10 +200,10 @@ Snapshot space is increased through **Storage** > **{{site.data.keyword.filestor
 
 Snapshot schedules can be deleted through **Storage** > **{{site.data.keyword.filestorage_short}}**.
 
-1. Click on the volume ID to display its related information.
+1. Click the volume ID to display its related information.
 2. Click Snapshots.
 3. Click the schedule to be deleted in the **Snapshot Schedules** frame.
-4. Click the check box next to the schedule to be deleted and click **Save**.
+4. Click the checkbox next to the schedule to be deleted and click **Save**.
 
 If you're using the replication feature, be sure that the schedule that you're deleting isn't the schedule that is used by replication. For more information about deleting a replication schedule, see [here](/docs/FileStorage?topic=FileStorage-replication).
 {: important}
@@ -279,7 +279,7 @@ You might need to take your storage volume back to a specific point in time beca
 
 6. Click **Yes** to start the restore. The restore is going to take a while, and your file share is locked during the restore.
 
-   When you return to the file share list, note that a clock icon appeared next to your volume that indicates that an active transaction is in progress. Hovering over the icon produces a window that shows the transaction. The icon disappears when the transaction is complete.
+   When you return to the file share list, a clock icon appears next to your volume that indicates that an active transaction is in progress. Hovering over the icon produces a window that shows the transaction. The icon disappears when the transaction is complete.
    {: note}
 
 7. Mount and reattach your storage volume to the host.

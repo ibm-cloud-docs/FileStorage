@@ -129,7 +129,7 @@ Storage is provisioned in less than a minute and becomes visible on the **{{site
    The subnets that are displayed are subscribed subnets in the same data center as the storage volume.
    {: note}
 
-After the subnets are authorized, make note of the host name of the storage server. The host name can be found on the {{site.data.keyword.filestorage_short}} detail page of the volume.
+After the subnets are authorized, make note of the hostname of the storage server. The hostname can be found on the {{site.data.keyword.filestorage_short}} detail page of the volume.
 
 ## Ordering {{site.data.keyword.filestorage_short}} and authorizing hosts from the SLCLI
 {: #orderauthvmwareCLI}
@@ -154,7 +154,7 @@ Options:
   --help                    Show this message and exit.
 ```
 
-After the subnets are authorized, make note of the host name of the storage server.
+After the subnets are authorized, make note of the hostname of the storage server.
 
 
 ##  Configuring the VMware virtual machine host
@@ -228,11 +228,11 @@ The network configuration for this architecture guide uses a minimal number of p
 
 1. To configure a static route, SSH to each ESXi host that uses Performance or Endurance storage and run the following commands. Take note of the IP address that is the result of the `ping` command (first command) and use it with the `esxcli` network command.
    ```zsh
-   ping <host name of the storage array>
+   ping <hostname of the storage array>
    ```
    {: pre}
 
-   The NFS storage DNS host name is a Forwarding Zone (FZ) that is assigned multiple IP addresses. These IP addresses are static and belong to that specific DNS host name. Any of those IP addresses can be used to access a specific volume.
+   The NFS storage DNS hostname is a Forwarding Zone (FZ) that is assigned multiple IP addresses. These IP addresses are static and belong to that specific DNS hostname. Any of those IP addresses can be used to access a specific volume.
    {: note}
 
    ```zsh
@@ -259,7 +259,7 @@ Make note of the IP address as it can be used for mounting the volume in the nex
    Make sure that you use only one NFS version to access the datastore. Consequences of mounting one or more hosts to the same datastore by using different versions can result in data corruption.
    {: important}
 
-7. On the **Name and configuration** screen, enter the name that you want to call the VMware datastore. Additionally, enter the host name of the NFS server. Using the FQDN for the NFS server produces the best traffic distribution to the underlying server. IP address is also valid but is used less frequently and only in specific instances. Enter the folder name in the form of `/foldername`.
+7. On the **Name and configuration** screen, enter the name that you want to call the VMware datastore. Additionally, enter the hostname of the NFS server. Using the FQDN for the NFS server produces the best traffic distribution to the underlying server. IP address is also valid but is used less frequently and only in specific instances. Enter the folder name in the form of `/foldername`.
 8. On the **Host accessibility** screen, select one or more hosts that you want to mount the NFS VMware&reg; datastore on and click **next**.
 9. Review the inputs on the next screen and click **Finish**.
 10. Repeat for any additional {{site.data.keyword.filestorage_short}} volumes.
@@ -269,7 +269,7 @@ It is {{site.data.keyword.cloud}}’s recommendation that FQDN names be used to 
 
 To use the IP address instead of the FQDN, simply ping the server to obtain the IP address.
 ```zsh
-ping <host name of the storage array>
+ping <hostname of the storage array>
 ```
 {: pre}
 
@@ -301,7 +301,7 @@ Incorrectly configuring SIOC for a VMware&reg; datastore or for a VMDK can signi
 2. Click the **Manage** tab.
 3. Click **Settings** and click **General**.
 4. Click **Edit** for **Datastore Capabilities**.
-5. Select the **Enable Storage I/O Control** check box.
+5. Select the **Enable Storage I/O Control** checkbox.
     ![NSF VMware&reg; datastore.](/images/3_0.png){: caption="Select Enable Storage I/O Control." caption-side="bottom"}
 6. Click **OK**.
 
