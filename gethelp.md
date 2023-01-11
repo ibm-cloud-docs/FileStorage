@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-08-20"
+  years: 2014, 2023
+lastupdated: "2023-01-11"
 
 keywords: File Storage, issues, get support, how to request help, open a case, open a ticket
 
@@ -17,7 +17,7 @@ subcollection: FileStorage
 Get help with solving issues that you encounter while you use the product.
 {: shortdesc}
 
-First, check the status of the {{site.data.keyword.cloud_notm}} platform and resources by going to the [Status page](https://cloud.ibm.com/status){: external} to see whether there's a known incident.
+First, check the status of the {{site.data.keyword.cloud_notm}} platform and resources by going to the [Status page](https://cloud.ibm.com/status){: external} to see whether a known incident is in progress.
 
 Review the topics in the **How to** section to see whether you can find a quick solution. For more information about frequently asked questions, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs).
 
