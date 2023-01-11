@@ -300,7 +300,7 @@ Yes, you can use this setup because NFS is a file-aware protocol.
 {: faq}
 {: #inodes}
 
-Typically, when volumes are provisioned, they are allotted the maximum inode count for the size that you ordered. Maximum inode count grows automatically as the volume grows. If the inodes count does not increase after you expanded a volume, submit a [support case](https://cloud.ibm.com/unifiedsupport/cases/add){: external}.
+Typically, when volumes are provisioned, they are allotted the maximum inode count for the size that you ordered. Maximum inode count grows automatically as the volume grows. If the inodes count does not increase after you expanded a volume, submit a [support case](/unifiedsupport/cases/add){: external}.
 
 ## I am unable to upgrade storage. What can affect the ability to upgrade or expand storage?
 {: faq}
