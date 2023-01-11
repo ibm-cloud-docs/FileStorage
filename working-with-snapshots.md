@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2022-04-13"
+lastupdated: "2023-01-11"
 
 keywords: File Storage, file storage, NFS, snapshots, snapshot schedule, manual snapshot, snapshot space, snapshot quota
 
@@ -236,7 +236,7 @@ If you're using the replication feature, be sure that the schedule that you're d
 Snapshots that are no longer needed can be manually removed to free up space for future snapshots. Deletion is done through **Storage** > **{{site.data.keyword.filestorage_short}}**.
 
 1. Click your storage volume and click **Snapshot** to see the list of existing snapshots.
-2. Click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions") next to a particular snapshot and click **Delete** to delete the snapshot. This deletion doesn't affect any future or past snapshots on the same schedule as there's no dependency between snapshots.
+2. Click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions") next to a particular snapshot and click **Delete** to delete the snapshot. This deletion doesn't affect any future or past snapshots on the same schedule as snapshots don't depend on each other.
 
 Manual snapshots that aren't deleted in the portal manually, are automatically deleted when you reach space limitations. The oldest snapshot is deleted first.
 {: note}

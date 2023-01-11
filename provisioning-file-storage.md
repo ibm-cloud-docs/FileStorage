@@ -133,7 +133,7 @@ The method `order_file_volume` (storage_type, location, size, iops=None, tier_le
 
 Parameters:
 - `storage_type` – "performance" or "endurance".
-- `location` – Datacenter in which to order iSCSI volume.
+- `location` – Data center in which to order iSCSI volume.
 - `size` – Size of the new volume, in GB.
 - `iops` – Number of IOPs for a “Performance” order.
 - `tier_level` – Tier level to use for an “Endurance” order.
