@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2021-07-27"
+lastupdated: "2023-01-11"
 
 keywords: File Storage, file storage, NFS, security, encryption
 
@@ -62,7 +62,7 @@ To cancel a storage volume, you need to revoke access from any hosts first. Acti
 5. Click **Continue**.
 6. Click the acknowledgment checkbox, and click **Confirm**.
 
-When the volume is deleted, there's a 24-hour reclaim wait period. You can still see the volume in the console during those 24 hours. When the reclaim-period expires, the data is destroyed and the volume is removed from the console, too. However, billing for the volume stops immediately. For more information, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs).
+When the volume is deleted, the request is followed by a 24-hour reclaim wait period. You can still see the volume in the console during those 24 hours. When the reclaim-period expires, the data is destroyed and the volume is removed from the console, too. However, billing for the volume stops immediately. For more information, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs).
 
 After the Storage LUN is reclaimed, the disk is wiped, and data can't be restored.
 When drives are decommissioned in a data center, IBM destroys them before they are disposed of. The drives become unusable. Any data that was written to that drive becomes inaccessible.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2022-11-15"
+lastupdated: "2023-01-11"
 
 keywords: File Storage, file storage, NFS, duplicate volume
 
@@ -37,7 +37,7 @@ Independent duplicates can be created from both **primary** and **replica** volu
 Common uses for an independent duplicate volume:
 - **Golden Copy**. Use a storage volume as golden copy that you can create multiple instances from for various uses.
 - **Data refreshes**. Create a copy of your production data to mount to your nonproduction environment for testing.
-- **Development and Testing (dev/test)**. Create up to four simultaneous duplicates of a volume at one time to create duplicate data for development and testing.
+- **Development and Testing**. Create up to four simultaneous duplicates of a volume at one time to create duplicate data for development and testing.
 
 ### Dependent duplicate
 {: #dependent}
@@ -48,7 +48,7 @@ Common uses for a dependent duplicate volume:
 - **Disaster Recovery Testing**. Create a duplicate of your replica volume to verify that the data is intact and can be used if a disaster occurs, without interrupting the replication.
 - **Restore from Snapshot**. Restore data on the original volume with specific files and date from a snapshot without overwriting the entire original volume with the snapshot restore function.
 - **Data refreshes**. Create a copy of your production data to mount to your nonproduction environment for testing.
-- **Development and Testing (dev/test)**. Create up to four simultaneous duplicates of a volume at one time to create duplicate data for development and testing.
+- **Development and Testing**. Create up to four simultaneous duplicates of a volume at one time to create duplicate data for development and testing.
 
 All duplicate volumes can be accessed by a host for read and write operations as soon as the volume is provisioned.
 
@@ -67,8 +67,8 @@ You can create a duplicate volume from the CLI and in the [{{site.data.keyword.c
 3. Click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions") > **Duplicate Share**.
 4. Select whether the duplicate is to be dependent or independent.
 5. Choose your snapshot option.
-    - Create a new snapshot for the most recent data.
-    - Use the latest snapshot.
+    - Create a snapshot for the most recent data now.
+    - Use the last snapshot that was taken previously.
 6. Location and IOPS Profile remain the same as the original volume.
 7. You can choose to provision the duplicate volume with hourly or monthly billing method. The billing type for the original volume is automatically selected, and you can change it if you want to.
 8. You can specify a different IOPS or IOPS Tier for the new volume if you want to. The IOPS designation of the original volume is set by default. Available Performance and size combinations are displayed.
@@ -163,7 +163,7 @@ While data is being copied from the original volume to the **independent** dupli
 2. Locate the duplicate volume and click its name to view the volume details.
 3. Click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions") > **Restore parent snapshot**.
 4. From the list of snapshots, select the parent snapshot that holds the data you want to restore to the duplicate volume.
-   Performing a restore results in the loss of any data that was created or modified since the selected snapshot was taken. During the refresh transaction, the duplicate volume is unavailable and must be remounted after the refresh is completed.
+   Restoring data from a snapshot results in the loss of any data that was created or modified since the selected snapshot was taken. During the refresh transaction, the duplicate volume is unavailable and must be remounted after the refresh is completed.
    {:  note}
 
 5. Check the box to confirm that you want to proceed with the refresh operation.

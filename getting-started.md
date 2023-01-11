@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2022
-lastupdated: "2022-08-31"
+  years: 2014, 2023
+lastupdated: "2023-01-11"
 
 keywords: File Storage, file storage, NFS, provisioning, setup, configuration, mounting storage
 
@@ -45,7 +45,7 @@ For more information about the {{site.data.keyword.filestorage_short}} offering,
 ### Block size
 {: #blocksize}
 
-The IOPS value for both Endurance and Performance is based on a 16-KB block size with a 50/50 read/write 50/50 random/sequential workload. A 16-KB block is the equivalent of one write to the volume.
+The IOPS value for both Endurance and Performance is based on a 16-KB block size with a 50/50 read and write, 50/50 random and sequential workload. A 16-KB block is the equivalent of one write to the volume.
 {: important}
 
 The block size that is used by your application directly impacts the storage performance. If the block size that is used by your application is smaller than 16 KB, the IOPS limit is realized before the throughput limit. Conversely, if the block size that is used by your application is larger than 16 KB, the throughput limit is realized before to the IOPS limit.
@@ -65,7 +65,7 @@ The block size that is used by your application directly impacts the storage per
 ### Authorized hosts
 {: #numberofhosts}
 
-Another factor to consider is the number of hosts that are using your volume. If there's a single host that is accessing the volume, it can be difficult to realize the maximum IOPS available, especially at extreme IOPS counts (10,000s). If your workload requires high throughput, it would be best to configure at least a couple servers to access your volume to avoid a single-server bottleneck.
+Another factor to consider is the number of hosts that are using your volume. When only a single host that is accessing the volume, it can be difficult to realize the maximum IOPS available, especially at extreme IOPS counts (10,000s). If your workload requires high throughput, it would be best to configure at least a couple servers to access your volume to avoid a single-server bottleneck.
 
 ### Network connection
 {: #networkconnection}
@@ -101,7 +101,7 @@ When your provisioning request is complete, authorize your hosts to access the n
 - [Mounting {{site.data.keyword.filestorage_short}} on Red Hat Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingLinux)
 - [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/FileStorage?topic=FileStorage-mountingCentOS)
 - [Mounting {{site.data.keyword.filestorage_short}} on Ubuntu](/docs/FileStorage?topic=FileStorage-mountingUbuntu)
-- [Mounting {{site.data.keyword.filestorage_short}} as a datastore on ESXi hosts](/docs/FileStorage?topic=FileStorage-architectureguide)
+- [Mounting {{site.data.keyword.filestorage_short}} as a VMware datastore on ESXi hosts](/docs/FileStorage?topic=FileStorage-architectureguide)
 - [Configuring {{site.data.keyword.filestorage_short}} for backup with cPanel](/docs/FileStorage?topic=FileStorage-cPanelBackups)
 - [Configuring {{site.data.keyword.filestorage_short}} for backup with Plesk](/docs/FileStorage?topic=FileStorage-PleskBackup)
 

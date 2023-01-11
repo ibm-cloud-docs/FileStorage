@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2022
-lastupdated: "2022-09-27"
+  years: 2014, 2023
+lastupdated: "2023-01-11"
 
 keywords: File Storage, file storage, NFS,
 
@@ -86,7 +86,7 @@ In the ticket, provide the following information:
 - **Ticket Subject**: Request to Increase Data Center Volume Count Storage Limit
 
 - **What is the use case for the additional volumes request?**
-   *For example, your answer might be something similar to a new VMware&reg; datastore, a new development and testing (dev/test) environment, an SQL database, or logging.*
+   *For example, your answer might be something similar to a new VMware&reg; datastore, a new development and testing environment, an SQL database, or logging.*
 
 - **How many extra Block volumes are needed by type, size, IOPS, and location?**
    *For example, your answer might be something similar to "25x Endurance 2 TB @ 4 IOPS in DAL09" or "25x Performance 4 TB @ 2 IOPS in WDC04".*

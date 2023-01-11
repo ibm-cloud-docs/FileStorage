@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2014, 2021
+  years: 2014, 2023
 lastupdated: "2021-05-03"
 
 keywords: File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
@@ -75,7 +75,7 @@ VMware&reg; vSphere on network-attached storage](https://www.vmware.com/content/
 ### Using Snapshots
 {: #vmwaresnapshot}
 
-{{site.data.keyword.filestorage_short}} allows administrators to set snapshot schedules that create and delete snapshot copies automatically for each storage volume. They can also create extra snapshot schedules (hourly, daily, weekly) for automatic snapshots and manually create ad hoc snapshots for business continuity and disaster recovery (BCDR) scenarios. Automatic alerts are delivered through the [{{site.data.keyword.cloud}} console](/login){: external}  to the volume owner for the retained snapshots and space used.
+{{site.data.keyword.filestorage_short}} allows administrators to set snapshot schedules that create and delete snapshot copies automatically for each storage volume. They can also create extra snapshot schedules (hourly, daily, weekly) for automatic snapshots and manually create ad hoc snapshots for business continuity and disaster recovery (BCDR) scenarios. Automatic alerts are delivered through the [{{site.data.keyword.cloud}} console to the volume owner for the retained snapshots and space used.
 
 Snapshot space is required to use snapshots. Space can be purchased on the initial volume order or after the initial provisioning through the **Volume Details** page by clicking **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions") and selecting **Add Snapshot Space**.
 
@@ -115,14 +115,14 @@ Invalid data, whether corrupted, hacked, or infected replicate according to the 
 {: #orderauthvmwareui}
 {: ui}
 
-Follow the instructions the [Advanced Single-Site VMware&reg; Reference Architecture](/docs/virtualization?topic=virtualization-advanced-single-site-vmware-reference-architecture){: external} to set up your VMware environment.
+Follow the instructions the [Advanced Single-Site VMware&reg; Reference Architecture](/docs/virtualization?topic=virtualization-advanced-single-site-vmware-reference-architecture){: external} to configure your VMware environment.
 
 {{site.data.keyword.filestorage_short}} can be ordered through [The {{site.data.keyword.cloud}} catalog](/catalog){: external} or the [CLI](/docs/cli?topic=cli-sl-file-storage-service#sl_file_volume_order). For more information, see [Ordering {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-orderingFileStorage).
 
 Storage is provisioned in less than a minute and becomes visible on the **{{site.data.keyword.filestorage_short}}** page of the [{{site.data.keyword.cloud}} console](/classic/storage/file){: external}. Next, the {{site.data.keyword.BluBareMetServers_full}} or {{site.data.keyword.BluVirtServers_full}} that are going to use the volume must be authorized to access the storage. Use the following steps to authorize the host.
 
 1. In the console, go to **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic") > **Storage** > **{{site.data.keyword.filestorage_short}}**.
-2. Scroll to the File share you want to mount, and click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions"). Then, select **Authorize Host**.
+2. Scroll to the File share that you want to mount, and click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions"). Then, select **Authorize Host**.
 3. Click **Subnets**.
 4. Choose from the list of available subnets that are assigned to the VMkernel ports on the ESXi hosts, and click **Save**.
 
@@ -135,7 +135,7 @@ After the subnets are authorized, make note of the hostname of the storage serve
 {: #orderauthvmwareCLI}
 {: cli}
 
-Follow the instructions the [Advanced Single-Site VMware&reg; Reference Architecture](/docs/virtualization?topic=virtualization-advanced-single-site-vmware-reference-architecture){: external} to set up your VMware environment.
+Follow the instructions the [Advanced Single-Site VMware&reg; Reference Architecture](/docs/virtualization?topic=virtualization-advanced-single-site-vmware-reference-architecture){: external} to configure your VMware environment.
 
 {{site.data.keyword.filestorage_short}} can be ordered through [The {{site.data.keyword.cloud}} catalog](/catalog){: external} or the [CLI](/docs/cli?topic=cli-sl-file-storage-service#sl_file_volume_order). For more information, see [Ordering {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-orderingFileStorage).
 
@@ -267,7 +267,7 @@ Make note of the IP address as it can be used for mounting the volume in the nex
 It is {{site.data.keyword.cloud}}’s recommendation that FQDN names be used to connect to the VMware&reg; datastore. Using direct IP addressing might bypass the load-balancing mechanism that is provided by using FQDN.
 {: important}
 
-To use the IP address instead of the FQDN, simply ping the server to obtain the IP address.
+To use the IP address instead of the FQDN, ping the server to obtain the IP address.
 ```zsh
 ping <hostname of the storage array>
 ```
