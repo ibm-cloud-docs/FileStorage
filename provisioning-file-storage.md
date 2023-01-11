@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2022-09-27"
+lastupdated: "2023-01-11"
 
 keywords: File Storage, NFS, provisioning, ordering, duplicate, cloning, replication
 
@@ -31,7 +31,7 @@ You can provision {{site.data.keyword.filestorage_short}} and fine-tune to meet 
    - Ensure that the new Storage is added in the same location as the compute host or hosts that you have.
 3. Billing. If you selected a data center with improved capabilities (marked with an asterisk), you can choose between Monthly or Hourly Billing.
    - With **hourly** billing, the number of hours that the file volume existed on the account is calculated at the time the volume is deleted or at the end of the billing cycle. Which ever comes first. Hourly billing is a good choice for storage that is used for a few days or less than a full month. Hourly billing is only available for storage that is provisioned in these [select data centers](/docs/FileStorage?topic=FileStorage-selectDC).
-   - With **monthly** billing, the calculation for the price is pro-rated from the date of creation to the end of the billing cycle and billed immediately. There's no refund if a file volume is deleted before the end of the billing cycle. Monthly billing is a good choice for storage that is used in production workloads that use data that needs to be stored and accessed for long periods of time (month or longer).
+   - With **monthly** billing, the calculation for the price is pro-rated from the date of creation to the end of the billing cycle and billed immediately. If a file volume is deleted before the end of the billing cycle, the difference is not refunded. Monthly billing is a good choice for storage that is used in production workloads that use data that needs to be stored and accessed for long periods of time (month or longer).
 
     Monthly billing type is used by default for storage that is provisioned in data centers that are **not** updated with improved capabilities.
     {: note}
@@ -107,7 +107,7 @@ Options:
 {: #exampleorder}
 {: cli}
 
-The following example shows how to order a 10-GB {{site.data.keyword.filestorage_short}} volume with 100 IOPS per GB.
+The following example shows how to order a 10 GB {{site.data.keyword.filestorage_short}} volume with 100 IOPS per GB.
 
 ```python
 # slcli file volume-order --storage-type performance --size 20 --location dal10 --iops 100
@@ -157,7 +157,7 @@ When your provisioning request is complete, authorize your hosts to access the n
 - [Mounting {{site.data.keyword.filestorage_short}} on Red Hat Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingLinux)
 - [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/FileStorage?topic=FileStorage-mountingCentOS)
 - [Mounting {{site.data.keyword.filestorage_short}} on Ubuntu](/docs/FileStorage?topic=FileStorage-mountingUbuntu)
-- [Mounting {{site.data.keyword.filestorage_short}} as a datastore on ESXi hosts](/docs/FileStorage?topic=FileStorage-architectureguide)
+- [Mounting {{site.data.keyword.filestorage_short}} as a VMware datastore on ESXi hosts](/docs/FileStorage?topic=FileStorage-architectureguide)
 - [Configuring {{site.data.keyword.filestorage_short}} for backup with cPanel](/docs/FileStorage?topic=FileStorage-cPanelBackups)
 - [Configuring {{site.data.keyword.filestorage_short}} for backup with Plesk](/docs/FileStorage?topic=FileStorage-PleskBackup)
 

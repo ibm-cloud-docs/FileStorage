@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2019-02-05"
+lastupdated: "2023-01-11"
 
 keywords: File Storage, file storage, NFS, snapshots
 
@@ -59,7 +59,7 @@ Snapshot copies minimize disk consumption by preserving individual blocks rather
 
 In the active file system, the changed blocks are rewritten to different locations on the disk or removed as active file blocks entirely. When files are changed or deleted, the original file blocks are preserved as part of one or more Snapshot copies. As a result, disk space that is used by the original blocks is still reserved to reflect the status of the active file system before the change. This space is reserved in addition to the disk space that is used by blocks in the modified active file system.
 
-| Disc space usage |   |
+| Disk space usage |   |
 |-----|-----|
 | ![The space that is used before a snapshot copy is taken.](/images/bfcircle1.png "Before Snapshot Copy") | Before any Snapshot copy is created, disk space is used by the active file system only. |
 | ![The space that is used when a snapshot copy is taken.](/images/bfcircle3.png "After Snapshot Copy") | After a Snapshot copy is created, the active file system and Snapshot copy point to the same disk blocks. The Snapshot copy doesn't use extra disk space.  |
