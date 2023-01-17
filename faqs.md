@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2022
-lastupdated: "2022-09-30"
+  years: 2014, 2023
+lastupdated: "2023-01-11"
 
 keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
@@ -77,7 +77,7 @@ That depends on what the host operating system can handle, it’s not something 
 {: faq}
 {: support}
 
-The number of files a volume can contain is determined by how many inodes it has. An inode is a data structure that contains information about files. Volumes have both private and public inodes. Public inodes are used for files that are visible to the customer and private inodes are used for files that are used internally by the storage system. The maximum number of files setting is 2 billion. However, this maximum value can only be configured with volumes of 7.8 TB or larger.
+The number of files a volume can contain is determined by how many inodes it has. An inode is a data structure that contains information about files. Volumes have both private and public inodes. Public inodes are used for files that are visible to the customer and private inodes are used for files that are used internally by the storage system. The maximum number of files setting is 2 billion. However, this maximum value can be configured only with volumes of 7.8 TB or larger.
 The maximum number of inodes that can be configured on a volume is calculated by taking the total allocated volume size in KB and dividing it by 4. Any volume of 7.8 TB or larger reaches the maximum limit at 2,040,109,451 inodes.
 
 | Volume Size | Inodes |
@@ -100,7 +100,7 @@ The maximum number of inodes that can be configured on a volume is calculated by
 {: faq}
 {: #movedatacenter}
 
-You need to order new {{site.data.keyword.filestorage_short}} in the right data center, and then cancel the {{site.data.keyword.filestorage_short}} device that you ordered in the incorrect location. When the volume is canceled, there's a 24-hour reclaim wait period. You can still see the volume in the console during those 24 hours. Billing for the volume stops immediately. When the reclaim period expires, the data is destroyed and the volume is removed from the console, too.
+You need to order new {{site.data.keyword.filestorage_short}} in the right data center, and then cancel the {{site.data.keyword.filestorage_short}} device that you ordered in the incorrect location. When the volume is canceled, the request is followed by a 24-hour reclaim wait period. You can still see the volume in the console during those 24 hours. Billing for the volume stops immediately. When the reclaim period expires, the data is destroyed and the volume is removed from the console, too.
 
 ## Measuring IOPS
 {: faq}
@@ -133,7 +133,7 @@ IOPS is enforced at the volume level. Said differently, two hosts connected to a
 {: #prewarm}
 {: support}
 
-There's no need for pre-warming. You can observe the specified throughput immediately upon provisioning the volume.
+Pre-warming is not needed. You can observe the specified throughput immediately upon provisioning the volume.
 
 ## Can more throughput be achieved if a faster Ethernet connection is used?
 {: faq}
@@ -196,14 +196,14 @@ Customers with special requirements for compliance such as NIST 800-88 Guideline
 {: faq}
 {: #cancelstorage}
 
-The cancellation process for this storage device is in progress so the Cancel action is no longer available. The volume remains visible for at least 24 hours until it’s reclaimed, with an hourglass or clock icon next to the device name to indicate that it’s in a waiting period. The minimum 24-hour waiting period gives you a chance to void the cancel request if needed.
+The cancellation process for this storage device is in progress so the Cancel action is no longer available. The volume remains visible for at least 24 hours until it is reclaimed, with an hourglass or clock icon next to the device name to indicate that it’s in a waiting period. The minimum 24-hour waiting period gives you a chance to void the cancel request if needed.
 
 ## Which NFS versions are supported?
 {: faq}
 {: #nfs}
 {: support}
 
-Both NFSv3 and NFSv4.1 are supported in the {{site.data.keyword.cloud}} environment. NFSv4.2 is currently not supported
+Both NFSv3 and NFSv4.1 are supported in the {{site.data.keyword.cloud}} environment. NFSv4.2 is not supported.
 
 The preferred version is NFSv3 because it's a stateless protocol and more resilient when network events occur.
 
@@ -237,9 +237,9 @@ Controlled Failover does one last sync before it breaks the mirror process. The 
 {: faq}
 {: support}
 
-There are a couple of scenarios where a host (bare metal or VM) loses connection to the storage however briefly and as a result, the host considers that storage read-only to avoid data corruption. Most of the time the loss of connectivity is network-related but the status of the storage remains read-only from the host's perspective even when the network connection is restored.
+In a couple of scenarios a host (bare metal or VM) might lose connection to the storage however briefly and as a result, the host considers that storage read-only to avoid data corruption. Most of the time the loss of connectivity is network-related but the status of the storage remains read-only from the host's perspective even when the network connection is restored.
 
-This issue can be observed with virtual drives of VMs on a network-attached datastore (NFS protocol). To resolve, confirm that the network path between the Storage and the Host is clear, and that there's no maintenance or outage currently in progress. Then, unmount and mount the storage volume. If the volume is still read-only, restart the host.
+This issue can be observed with virtual drives of VMs on a network-attached VMware datastore (NFS protocol). To resolve, confirm that the network path between the Storage and the Host is clear, and that no maintenance or outage is currently in progress. Then, unmount and mount the storage volume. If the volume is still read-only, restart the host.
 
 For mounting instructions, see the following topics.
 - [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/FileStorage?topic=FileStorage-mountingCentOS)
@@ -257,7 +257,7 @@ To prevent this situation from recurring, the customer might consider the follow
 {: faq}
 {: #expandsize}
 
-To see the expanded volume size, mount and remount your existing {{site.data.keyword.filestorage_short}} disk on your server. In VMware, rescan storage to refresh the datastore and show the new volume size.
+To see the expanded volume size, mount and remount your existing {{site.data.keyword.filestorage_short}} disk on your server. In a VMware implementation, rescan storage to refresh the VMware datastore and show the new volume size.
 
 ## How do I reconnect storage after a chassis swap?
 {: faq}
@@ -300,7 +300,7 @@ Yes, you can use this setup because NFS is a file-aware protocol.
 {: faq}
 {: #inodes}
 
-Typically, when volumes are provisioned, they are allotted the maximum inode count for the size that you ordered. Maximum inode count grows automatically as the volume grows. If the inodes count does not increase after you expanded a volume, submit a [support case](https://cloud.ibm.com/unifiedsupport/cases/add){: external}.
+Typically, when volumes are provisioned, they are allotted the maximum inode count for the size that you ordered. Maximum inode count grows automatically as the volume grows. If the inodes count does not increase after you expanded a volume, submit a [support case](/unifiedsupport/cases/add){: external}.
 
 ## I am unable to upgrade storage. What can affect the ability to upgrade or expand storage?
 {: faq}
@@ -321,7 +321,7 @@ All Block and {{site.data.keyword.filestorage_short}} services are thin-provisio
 {: #staasV2migration}
 {: faq}
 
-You might notice that your Storage volumes are now billed as "Endurance Storage Service” or "Performance Storage Service" instead of "Enterprise Storage", and you have new options in the console, such as the ability to adjust IOPS or increase capacity. {{site.data.keyword.cloud}} strives to continuously improve storage capabilities. As hardware gets upgraded in the datacenters, storage volumes that reside in those datacenters are also upgraded to leverage all enhanced features. The price that you pay for your Storage volume does not change with this upgrade.
+You might notice that your Storage volumes are now billed as "Endurance Storage Service” or "Performance Storage Service" instead of "Enterprise Storage", and you have new options in the console, such as the ability to adjust IOPS or increase capacity. {{site.data.keyword.cloud}} strives to continuously improve storage capabilities. As hardware gets upgraded in the data centers, storage volumes that reside in those data centers are also upgraded to leverage all enhanced features. The price that you pay for your Storage volume does not change with this upgrade.
 
 ## How durable is {{site.data.keyword.filestorage_short}}?
 {: #stordurabilityfaq}

@@ -26,7 +26,7 @@ The upgrade process is not instantaneous. You can expect to see the updated size
 ## Advantages of Expandable Storage
 {: #advantagesofresizing}
 
-- **Cost management** – You might know that there’s potential for growth of your data, but you need a smaller amount of storage to start. The ability to expand, allows customers to save on costs of storage at the start and then grow to accommodate their needs.
+- **Cost management** – You might know of a potential for growth of your data, but you need a smaller amount of storage to start. The ability to expand, allows customers to save on costs of storage at the start and then grow to accommodate their needs.
 
 - **Growing Storage needs** - Customers who experience rapid growth beyond need a way to quickly and easily increase the size of their storage to manage that growth.
 
