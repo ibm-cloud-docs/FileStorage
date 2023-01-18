@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-01-11"
+lastupdated: "2023-01-18"
 
 keywords: File Storage, file storage, NFS, provisioning, setup, configuration, mounting storage
 
@@ -81,11 +81,9 @@ Storage traffic is included in the total network usage of Public Virtual Servers
 ### NFS version
 {: #whichnfs}
 
-Both NFS v3 and NFS v4.1 are supported in the {{site.data.keyword.cloud}} environment. However, the preferred version is NFS v3 because it's a stateless protocol and more resilient when network events occur.
+Both NFS v3 and NFS v4.1 are supported in the {{site.data.keyword.cloud}} environment. However, the preferred version is NFS v3 because it's more resilient when network events occur.
 
-NFS v4.1 is a stateful protocol, and protocol issues can occur during network events. NFS v4.1 must quiesce all operations and then complete lock reclamation. On a relatively busy NFS file server, the increased latency can cause disruptions.
-
-When it comes to vSphere Solutions, NFS v3 supports more features than v4.1. Such features include Storage DRS and Site Recovery Manager.
+When {site.data.keyword.filestorage_short}} is used in a VMware deployment, NFSv4.1 might be preferable. For more information about the different features of each version and what is supported, see [NFS Protocols and ESXi](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){: external}.
 
 ## Submitting your Order
 {: #submitFileStorOrder}

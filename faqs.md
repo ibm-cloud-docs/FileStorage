@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-01-11"
+lastupdated: "2023-01-18"
 
 keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
@@ -72,7 +72,7 @@ The default limit for number of authorizations per file volume is 64. To increas
 
 That depends on what the host operating system can handle, it’s not something that {{site.data.keyword.cloud}} limits. Refer to your OS documentation for limits on the number of file shares that can be mounted.
 
-## How many files/directories are allowed for specific file volume sizes? What is the maximum number of inodes allowed per volume size?
+## How many files and directories are allowed for specific file volume sizes? What is the maximum number of inodes allowed per volume size?
 {: #maxfilevolume}
 {: faq}
 {: support}
@@ -205,11 +205,11 @@ The cancellation process for this storage device is in progress so the Cancel ac
 
 Both NFSv3 and NFSv4.1 are supported in the {{site.data.keyword.cloud}} environment. NFSv4.2 is not supported.
 
-The preferred version is NFSv3 because it's a stateless protocol and more resilient when network events occur.
+The preferred version is NFSv3 because it's more resilient when network events occur.
 
 NFSv3 natively supports `no_root_squash` that allows root clients to retain root permissions on the NFS share. You can enable this feature in NFSv4.1, by editing the domain information and running the `rpcidmapd` or a similar service. For more information, see [Implementing no_root_squash for NFS](/docs/FileStorage?topic=FileStorage-mountingLinux#norootsquash).
 
-When it comes to vSphere Solutions, NFSv3 supports more features than v4.1. Such features include Storage DRS and Site Recovery Manager.
+When {site.data.keyword.filestorage_short}} is used in a VMware deployment, NFSv4.1 might be the better choice. For more information about the different features of each version and what is supported by VMware, see [NFS Protocols and ESXi](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){: external}.
 
 ## Can VAAI and HW acceleration be enabled in our VMware deployments?
 {: #isVAAIsupported}
@@ -239,7 +239,7 @@ Controlled Failover does one last sync before it breaks the mirror process. The 
 
 In a couple of scenarios a host (bare metal or VM) might lose connection to the storage however briefly and as a result, the host considers that storage read-only to avoid data corruption. Most of the time the loss of connectivity is network-related but the status of the storage remains read-only from the host's perspective even when the network connection is restored.
 
-This issue can be observed with virtual drives of VMs on a network-attached VMware datastore (NFS protocol). To resolve, confirm that the network path between the Storage and the Host is clear, and that no maintenance or outage is currently in progress. Then, unmount and mount the storage volume. If the volume is still read-only, restart the host.
+This issue can be observed with virtual drives of VMs on a network-attached VMware datastore (NFS protocol). To resolve, confirm that the network path between the Storage and the Host is clear, and that no maintenance or outage is in progress. Then, unmount and mount the storage volume. If the volume is still read-only, restart the host.
 
 For mounting instructions, see the following topics.
 - [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/FileStorage?topic=FileStorage-mountingCentOS)
@@ -247,7 +247,7 @@ For mounting instructions, see the following topics.
 - [Mounting {{site.data.keyword.filestorage_short}} on Red Hat Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingLinux)
 - [Mounting {{site.data.keyword.filestorage_short}} on Ubuntu](/docs/FileStorage?topic=FileStorage-mountingUbuntu)
 
-To prevent this situation from recurring, the customer might consider the following:
+To prevent this situation from recurring, the customer might consider the following actions:
 - Increasing disk timeout values. For more information, see [VMware KB - Increasing the disk timeout values for a Linux&reg; 2.6 virtual machine](https://kb.vmware.com/s/article/1009465){: external}.
 - Adding guest OS tunings. For more information, see [NetApp's recommendations for guest OS tunings for a VMware vSphere deployment](https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Virtual_Storage_Console_for_VMware_vSphere/What_are_the_guest_OS_tunings_needed_for_a_VMware_vSphere_deployment%3F){: external}.
 - Reconfiguring Host systems that use NFSv4.1 for NFSv3 for increased resilience during maintenance operations.
@@ -321,7 +321,7 @@ All Block and {{site.data.keyword.filestorage_short}} services are thin-provisio
 {: #staasV2migration}
 {: faq}
 
-You might notice that your Storage volumes are now billed as "Endurance Storage Service” or "Performance Storage Service" instead of "Enterprise Storage", and you have new options in the console, such as the ability to adjust IOPS or increase capacity. {{site.data.keyword.cloud}} strives to continuously improve storage capabilities. As hardware gets upgraded in the data centers, storage volumes that reside in those data centers are also upgraded to leverage all enhanced features. The price that you pay for your Storage volume does not change with this upgrade.
+You might notice that your Storage volumes are now billed as "Endurance Storage Service” or "Performance Storage Service" instead of "Enterprise Storage", and you have new options in the console, such as the ability to adjust IOPS or increase capacity. {{site.data.keyword.cloud}} strives to continuously improve storage capabilities. As hardware gets upgraded in the data centers, storage volumes that reside in those data centers are also upgraded to use all enhanced features. The price that you pay for your Storage volume does not change with this upgrade.
 
 ## How durable is {{site.data.keyword.filestorage_short}}?
 {: #stordurabilityfaq}
@@ -341,7 +341,7 @@ When you store your data in {{site.data.keyword.filestorage_short}}, it's durabl
 
 {{site.data.keyword.cloud}} does not provide storage performance IOPS and latency metrics. Customers are expected to monitor their own {{site.data.keyword.filestorage_short}} devices by using their choice of third-party monitoring tools.
 
-The following examples are utilities that you could consider to use to check performance statistics.
+The following examples are utilities that you might consider to use to check performance statistics.
 - [`sysstat`](https://github.com/sysstat/sysstat/blob/master/README.md){: external} - System performance tools for the Linux&reg; operating system.
 - [`typeperf`](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/typeperf){: external} - Windows&reg; command that writes performance data to the command window or to a log file.
 - [`esxtop`](https://communities.vmware.com/t5/Storage-Performance/Interpreting-esxtop-Statistics/ta-p/2776936){: external} - A command-line tool that gives administrators real-time information about resource usage in a VMware&reg; vSphere environment. It can monitor and collect data for all system resources: CPU, memory, disk, and network.
@@ -356,7 +356,7 @@ Replication keeps your data in sync in two different locations. Only one of the 
 
 Duplication creates a copy of your volume based on a snapshot in the same availability zone as the parent volume. The duplicate volume inherits the capacity and performance options of the original volume by default and has a copy of the data up to the point-in-time of a snapshot. The duplicate volume can be dependent or independent from the original volume, and it can be manually refreshed with data from the parent volume. You can adjust the IOPS or increase the volume size of the duplicate without any effect on the parent volume.
 
-- A dependent duplicate volume does not go through the conversion of becoming independent, and can be refreshed at any time after it’s created. It keeps the original snapshot locked so that snapshot cannot be deleted while the dependent duplicate exists. The parent volume cannot be canceled while the dependent duplicate volume exists. If you want to cancel the parent volume, you have to either cancel the dependent duplicate first or convert it to an independent duplicate.
+- A dependent duplicate volume does not go through the conversion of becoming independent, and can be refreshed at any time after it is created. It keeps the original snapshot locked so that snapshot cannot be deleted while the dependent duplicate exists. The parent volume cannot be canceled while the dependent duplicate volume exists. If you want to cancel the parent volume, you must either cancel the dependent duplicate first or convert it to an independent duplicate.
 
 - An independent duplicate is superior to the dependent duplicate in most regards, but it cannot be refreshed immediately after creation because of the lengthy conversion process. It can take up to several hours based on the size of the volume. For example, it might take up to a day for a 12-TB volume. However, after the separation process is complete, the data can be manually refreshed by using another snapshot of the original parent volume.
 
@@ -367,7 +367,7 @@ For more information about duplicates, see [Creating and managing duplicate volu
 | Created from a snapshot | ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) |
 | Location of copied volume | Remote Availability Zone | Same Availability Zone   | Same Availability Zone |
 | Supports failover  | ![Checkmark icon.](../../icons/checkmark-icon.svg) |  |  |
-| Different Size/Iops |          | ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) |
+| Different Size and IOPS |          | ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) |
 | Auto-synced with parent volume | ![Checkmark icon.](../../icons/checkmark-icon.svg) | |  |
 | On-demand refresh from parent volume | | ![Checkmark icon.](../../icons/checkmark-icon.svg) [^depdup] | ![Checkmark icon.](../../icons/checkmark-icon.svg) [^indepdup] |
 | Separated from parent volume | | | ![Checkmark icon.](../../icons/checkmark-icon.svg) |
@@ -383,7 +383,7 @@ For more information about duplicates, see [Creating and managing duplicate volu
 {: #duplicateconversion}
 {: faq}
 
-The conversion process can take some time to complete. The bigger the volume, the longer it takes to convert it. In case of a 12-TB volume, it could take 24 hours. You can check on the progress in the UI or from the CLI.
+The conversion process can take some time to complete. The bigger the volume, the longer it takes to convert it. In a 12-TB volume, it might take 24 hours. You can check on the progress in the UI or from the CLI.
 
 - In the UI, go to [Classic Infrastructure](/classic/devices){: external}. Click **Storage** > **{{site.data.keyword.filestorage_short}}**, then locate the volume in the list. The conversion status is displayed on the Overview page.
 
