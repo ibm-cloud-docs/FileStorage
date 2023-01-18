@@ -33,7 +33,7 @@ The way to calculate the amount of space that you need is **(Rate of Change)** x
 The first snapshot uses a negligible amount of space as it's just a copy of the metadata (pointers) that indicates the active file system blocks.
 {: note}
 
-A volume with numerous changes and a lengthy retention period needs more space than a volume with moderate change and a moderate retention schedule. An example for the first type is a high change rate database. An example for the second type is a VMware datastore.
+A volume with numerous changes and a lengthy retention period needs more space than a volume with moderate change and a moderate retention schedule. An example for the first type is a high change rate database. An example for the second type is a VMware&reg; datastore.
 
 If you take 12 hourly snapshots of 500 GB of actual data, and the change rate is 1 percent between each snapshot, you end up with 60 GB for snapshots.
 
