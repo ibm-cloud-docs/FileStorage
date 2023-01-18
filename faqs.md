@@ -205,7 +205,7 @@ The cancellation process for this storage device is in progress so the Cancel ac
 
 Both NFSv3 and NFSv4.1 are supported in the {{site.data.keyword.cloud}} environment. NFSv4.2 is not supported.
 
-The preferred version is NFSv3 because it's more resilient when network events occur.
+**Use NFSv3** protocol when possible. NFSv3 supports safe asynchronous writes and is more robust at error handling than the previous NFSv2. It supports 64-bit file sizes and offsets, allowing clients to access more than 2 GB of file data. 
 
 NFSv3 natively supports `no_root_squash` that allows root clients to retain root permissions on the NFS share. You can enable this feature in NFSv4.1, by editing the domain information and running the `rpcidmapd` or a similar service. For more information, see [Implementing no_root_squash for NFS](/docs/FileStorage?topic=FileStorage-mountingLinux#norootsquash).
 
