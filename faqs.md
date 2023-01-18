@@ -162,7 +162,7 @@ To enact this good practice, complete the following steps.
 
 4. Create a network interface.
    * On the Linux&reg; host, create a 802.11q interface. Choose one of the unused secondary IP address from the newly trunked VLAN and assign that IP address, subnet mask, and gateway to a new 802.11q interface.
-   * In VMware, create a new VMkernel network interface (vmk) and assign the unused secondary IP address, subnet mask, and gateway IP from the newly trunked VLAN to the new vmk interface.
+   * In VMware&reg;, create a new VMkernel network interface (vmk) and assign the unused secondary IP address, subnet mask, and gateway IP from the newly trunked VLAN to the new vmk interface.
 5. Add a new persistent static route on the host to the target NFS subnet.
 6. Authorize the new IP to access the storage.
 7. For mounting instructions, depending on your host's operating system, follow the appropriate link.
@@ -209,7 +209,7 @@ The preferred version is NFSv3 because it's more resilient when network events o
 
 NFSv3 natively supports `no_root_squash` that allows root clients to retain root permissions on the NFS share. You can enable this feature in NFSv4.1, by editing the domain information and running the `rpcidmapd` or a similar service. For more information, see [Implementing no_root_squash for NFS](/docs/FileStorage?topic=FileStorage-mountingLinux#norootsquash).
 
-When {{site.data.keyword.filestorage_short}} is used in a VMware deployment, NFSv4.1 might be the better choice for your implementation. For more information about the different features of each version and what is supported by VMware, see [NFS Protocols and ESXi](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){: external}.
+When {{site.data.keyword.filestorage_short}} is used in a VMware&reg; deployment, NFSv4.1 might be the better choice for your implementation. For more information about the different features of each version and what is supported by VMware&reg;, see [NFS Protocols and ESXi](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){: external}.
 
 ## Can VAAI and HW acceleration be enabled in our VMware deployments?
 {: #isVAAIsupported}
@@ -239,7 +239,7 @@ Controlled Failover does one last sync before it breaks the mirror process. The 
 
 In a couple of scenarios a host (bare metal or VM) might lose connection to the storage however briefly and as a result, the host considers that storage read-only to avoid data corruption. Most of the time the loss of connectivity is network-related but the status of the storage remains read-only from the host's perspective even when the network connection is restored.
 
-This issue can be observed with virtual drives of VMs on a network-attached VMware datastore (NFS protocol). To resolve, confirm that the network path between the Storage and the Host is clear, and that no maintenance or outage is in progress. Then, unmount and mount the storage volume. If the volume is still read-only, restart the host.
+This issue can be observed with virtual drives of VMs on a network-attached VMware&reg; datastore (NFS protocol). To resolve, confirm that the network path between the Storage and the Host is clear, and that no maintenance or outage is in progress. Then, unmount and mount the storage volume. If the volume is still read-only, restart the host.
 
 For mounting instructions, see the following topics.
 - [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/FileStorage?topic=FileStorage-mountingCentOS)
@@ -248,16 +248,16 @@ For mounting instructions, see the following topics.
 - [Mounting {{site.data.keyword.filestorage_short}} on Ubuntu](/docs/FileStorage?topic=FileStorage-mountingUbuntu)
 
 To prevent this situation from recurring, the customer might consider the following actions:
-- Increasing disk timeout values. For more information, see [VMware KB - Increasing the disk timeout values for a Linux&reg; 2.6 virtual machine](https://kb.vmware.com/s/article/1009465){: external}.
-- Adding guest OS tunings. For more information, see [NetApp's recommendations for guest OS tunings for a VMware vSphere deployment](https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Virtual_Storage_Console_for_VMware_vSphere/What_are_the_guest_OS_tunings_needed_for_a_VMware_vSphere_deployment%3F){: external}.
+- Increasing disk timeout values. For more information, see [VMware&reg; KB - Increasing the disk timeout values for a Linux&reg; 2.6 virtual machine](https://kb.vmware.com/s/article/1009465){: external}.
+- Adding guest OS tunings. For more information, see [NetApp's recommendations for guest OS tunings for a VMware&reg; vSphere deployment](https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Virtual_Storage_Console_for_VMware_vSphere/What_are_the_guest_OS_tunings_needed_for_a_VMware_vSphere_deployment%3F){: external}.
 - Reconfiguring Host systems that use NFSv4.1 for NFSv3 for increased resilience during maintenance operations.
-- Discontinuing session trunking on host systems that run VMware ESXi. Session trunking is not supported and is known to cause disruptions.
+- Discontinuing session trunking on host systems that run VMware&reg; ESXi. Session trunking is not supported and is known to cause disruptions.
 
 ## I expanded the volume size of my {{site.data.keyword.filestorage_short}} by using the Cloud console, but the size on my server is still the same. How do I fix it?
 {: faq}
 {: #expandsize}
 
-To see the expanded volume size, mount and remount your existing {{site.data.keyword.filestorage_short}} disk on your server. In a VMware implementation, rescan storage to refresh the VMware datastore and show the new volume size.
+To see the expanded volume size, mount and remount your existing {{site.data.keyword.filestorage_short}} disk on your server. In a VMware&reg;implementation, rescan storage to refresh the VMware&reg; datastore and show the new volume size.
 
 ## How do I reconnect storage after a chassis swap?
 {: faq}

@@ -157,7 +157,7 @@ When your provisioning request is complete, authorize your hosts to access the n
 - [Mounting {{site.data.keyword.filestorage_short}} on Red Hat Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingLinux)
 - [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/FileStorage?topic=FileStorage-mountingCentOS)
 - [Mounting {{site.data.keyword.filestorage_short}} on Ubuntu](/docs/FileStorage?topic=FileStorage-mountingUbuntu)
-- [Mounting {{site.data.keyword.filestorage_short}} as a VMware datastore on ESXi hosts](/docs/FileStorage?topic=FileStorage-architectureguide)
+- [Mounting {{site.data.keyword.filestorage_short}} as a VMware&reg; datastore on ESXi hosts](/docs/FileStorage?topic=FileStorage-architectureguide)
 - [Configuring {{site.data.keyword.filestorage_short}} for backup with cPanel](/docs/FileStorage?topic=FileStorage-cPanelBackups)
 - [Configuring {{site.data.keyword.filestorage_short}} for backup with Plesk](/docs/FileStorage?topic=FileStorage-PleskBackup)
 

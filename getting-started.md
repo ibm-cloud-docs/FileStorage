@@ -83,13 +83,13 @@ Storage traffic is included in the total network usage of Public Virtual Servers
 
 Both NFS v3 and NFS v4.1 are supported in the {{site.data.keyword.cloud}} environment. However, the preferred version is NFS v3 because it's more resilient when network events occur.
 
-When {{site.data.keyword.filestorage_short}} is used in a VMware deployment, NFSv4.1 might be the better choice for your implementation. For more information about the different features of each version and what is supported, see [NFS Protocols and ESXi](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){: external}.
+When {{site.data.keyword.filestorage_short}} is used in a VMware&reg; deployment, NFSv4.1 might be the better choice for your implementation. For more information about the different features of each version and what is supported by VMware&reg;, see [NFS Protocols and ESXi](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){: external}.
 
 ## Submitting your Order
 {: #submitFileStorOrder}
 {: step}
 
-When you're ready to submit your order, you can place it through the [Console](/docs/FileStorage?topic=FileStorage-orderingFileStorage#orderingFileStorageUI), the [SLCLI](/docs/FileStorage?topic=FileStorage-orderingFileStorage#orderingthroughCLI), or the [IBMCLOUD CLI](/docs/cli?topic=cli-sl-file-storage-service#sl_file_volume_order). For more information about provisioning File Storage for VMware deployments, see the [architecture guide](/docs/FileStorage?topic=FileStorage-architectureguide).
+When you're ready to submit your order, you can place it through the [Console](/docs/FileStorage?topic=FileStorage-orderingFileStorage#orderingFileStorageUI), the [SLCLI](/docs/FileStorage?topic=FileStorage-orderingFileStorage#orderingthroughCLI), or the [IBMCLOUD CLI](/docs/cli?topic=cli-sl-file-storage-service#sl_file_volume_order). For more information about provisioning File Storage for VMware&reg; deployments, see the [architecture guide](/docs/FileStorage?topic=FileStorage-architectureguide).
 
 ## Connecting and configuring your new storage
 {: #mountingstorage}
@@ -99,7 +99,7 @@ When your provisioning request is complete, authorize your hosts to access the n
 - [Mounting {{site.data.keyword.filestorage_short}} on Red Hat Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingLinux)
 - [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/FileStorage?topic=FileStorage-mountingCentOS)
 - [Mounting {{site.data.keyword.filestorage_short}} on Ubuntu](/docs/FileStorage?topic=FileStorage-mountingUbuntu)
-- [Mounting {{site.data.keyword.filestorage_short}} as a VMware datastore on ESXi hosts](/docs/FileStorage?topic=FileStorage-architectureguide)
+- [Mounting {{site.data.keyword.filestorage_short}} as a VMware&reg; datastore on ESXi hosts](/docs/FileStorage?topic=FileStorage-architectureguide)
 - [Configuring {{site.data.keyword.filestorage_short}} for backup with cPanel](/docs/FileStorage?topic=FileStorage-cPanelBackups)
 - [Configuring {{site.data.keyword.filestorage_short}} for backup with Plesk](/docs/FileStorage?topic=FileStorage-PleskBackup)
 
