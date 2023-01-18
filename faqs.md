@@ -209,7 +209,7 @@ The preferred version is NFSv3 because it's more resilient when network events o
 
 NFSv3 natively supports `no_root_squash` that allows root clients to retain root permissions on the NFS share. You can enable this feature in NFSv4.1, by editing the domain information and running the `rpcidmapd` or a similar service. For more information, see [Implementing no_root_squash for NFS](/docs/FileStorage?topic=FileStorage-mountingLinux#norootsquash).
 
-When {{site.data.keyword.filestorage_short}} is used in a VMware deployment, NFSv4.1 might be the better choice. For more information about the different features of each version and what is supported by VMware, see [NFS Protocols and ESXi](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){: external}.
+When {{site.data.keyword.filestorage_short}} is used in a VMware deployment, NFSv4.1 might be the better choice for your implementation. For more information about the different features of each version and what is supported by VMware, see [NFS Protocols and ESXi](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){: external}.
 
 ## Can VAAI and HW acceleration be enabled in our VMware deployments?
 {: #isVAAIsupported}
