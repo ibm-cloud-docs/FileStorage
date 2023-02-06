@@ -150,7 +150,7 @@ slcli file volume-duplicate --dependent-duplicate TRUE <primary-vol-id>
 ```
 {: pre}
 
-For more information about available command options, see [`file volume-duplicate`](https://softlayer-python.readthedocs.io/en/latest/cli/file/#volume-duplicate){: external}.
+For more information about available command options, see [`file volume-duplicate`](https://softlayer-python.readthedocs.io/en/latest/cli/file/#file-volume-duplicate){: external}.
 
 ## Managing your duplicate volume
 {: #manageduplicate}
@@ -233,7 +233,7 @@ SL02SEVC307608_74   2022-06-13 14:59:17                 90
 ```
 {: screen}
 
-For more information about available command options, see [`file duplicate-convert-status`](https://softlayer-python.readthedocs.io/en/latest/cli/file/#duplicate-convert-status){: external}.
+For more information about available command options, see [`file duplicate-convert-status`](https://softlayer-python.readthedocs.io/en/latest/cli/file/#file-duplicate-convert-status){: external}.
 
 ## Canceling a storage volume with a dependent duplicate
 {: #cancelvolwithdependent}
