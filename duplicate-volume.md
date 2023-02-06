@@ -141,12 +141,14 @@ Options:
                                   to monthly)
   -h, --help                      Show this message and exit.
 ```
+{: screen}
 
 **Dependent duplicate** volumes can be ordered from the SLCLI, too, with the option `--dependent-duplicate TRUE`.
 
 ```python
 slcli file volume-duplicate --dependent-duplicate TRUE <primary-vol-id>
 ```
+{: pre}
 
 For more information about available command options, see [`file volume-duplicate`](https://softlayer-python.readthedocs.io/en/latest/cli/block/#volume-duplicate){: external}.
 
