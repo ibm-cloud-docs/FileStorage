@@ -200,7 +200,7 @@ slcli file volume-refresh <duplicate-vol-id> <primary-snapshot-id>
 A refresh incurs no downtime on the primary volume. However, during the refresh transaction, the duplicate volume is unavailable and must be remounted after the refresh is completed.
 {: important}
 
-The refresh process can be time-consuming. If you find that you have new data that you want to copy to the independent duplicate volume, you can issue the `slcli file volume-refresh` command with the parameter `--force-refresh` to stop all ongoing and pending refresh transactions, and initiate a new refresh. 
+The refresh process can be time-consuming. If you find that you have new data that you want to copy to the independent duplicate volume, you can issue the `slcli file volume-refresh` command with the `--force-refresh` option to stop all ongoing and pending refresh transactions, and initiate a new refresh. 
 
 The force refresh process works only on independent volumes.
 {: note}
