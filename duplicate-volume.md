@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-01-11"
+lastupdated: "2023-02-08"
 
 keywords: File Storage, file storage, NFS, duplicate volume
 
@@ -45,7 +45,7 @@ Common uses for an independent duplicate volume:
 Dependent duplicate volumes are created by using a snapshot from the primary volume. Replica volumes cannot be used to create or update dependent duplicate volumes.
 
 Common uses for a dependent duplicate volume:
-- **Disaster Recovery Testing**. Create a duplicate of your replica volume to verify that the data is intact and can be used if a disaster occurs, without interrupting the replication.
+- **Disaster Recovery Testing**. Create a duplicate of your source volume and compare it to the replica. By comparing the duplicate to the replica you can verify that the data that is being replicated is intact and can be used if a disaster occurs, without interrupting the replication.
 - **Restore from Snapshot**. Restore data on the original volume with specific files and date from a snapshot without overwriting the entire original volume with the snapshot restore function.
 - **Data refreshes**. Create a copy of your production data to mount to your nonproduction environment for testing.
 - **Development and Testing**. Create up to four simultaneous duplicates of a volume at one time to create duplicate data for development and testing.
@@ -54,7 +54,7 @@ All duplicate volumes can be accessed by a host for read and write operations as
 
 Dependent duplicate can be refreshed from new snapshots of the parent volume manually immediately after their creation. The dependent duplicate volume locks the original snapshot so the snapshot cannot be deleted while the dependent duplicate exists.
 
-However, snapshots and replication of independent duplicate volumes aren't allowed until the data copy from the original to the duplicate is complete and the duplicate volume is fully independent from the parent volume. Depending on the size of the data, the separation process can take several hours. When it's complete, the duplicate can be managed and used as an independent volume.
+However, snapshots and replication of independent duplicate volumes aren't allowed until the data copy from the original to the duplicate is complete and the duplicate volume is fully independent. Depending on the size of the data, the separation process can take several hours. When it's complete, the duplicate can be managed and used as an independent volume.
 
 You can create a duplicate volume from the CLI and in the [{{site.data.keyword.cloud_notm}} console](/login){: external}.
 
@@ -141,12 +141,16 @@ Options:
                                   to monthly)
   -h, --help                      Show this message and exit.
 ```
+{: screen}
 
 **Dependent duplicate** volumes can be ordered from the SLCLI, too, with the option `--dependent-duplicate TRUE`.
 
 ```python
 slcli file volume-duplicate --dependent-duplicate TRUE <primary-vol-id>
 ```
+{: pre}
+
+For more information about available command options, see [`file volume-duplicate`](https://softlayer-python.readthedocs.io/en/latest/cli/file/#file-volume-duplicate){: external}.
 
 ## Managing your duplicate volume
 {: #manageduplicate}
@@ -191,9 +195,17 @@ Refreshes can be initiated by using the following command.
 ```python
 slcli file volume-refresh <duplicate-vol-id> <primary-snapshot-id>
 ```
+{: pre}
 
 A refresh incurs no downtime on the primary volume. However, during the refresh transaction, the duplicate volume is unavailable and must be remounted after the refresh is completed.
 {: important}
+
+The refresh process can be time-consuming. If you find that you have new data that you want to copy to the independent duplicate volume, you can issue the `slcli file volume-refresh` command with the parameter `--force-refresh` to stop all ongoing and pending refresh transactions, and initiate a new refresh. 
+
+The force refresh process works only on independent volumes.
+{: note}
+
+For more information about available command options, see [`slcli file volume-refresh`](https://softlayer-python.readthedocs.io/en/latest/cli/file/#file-volume-refresh){: external}.
 
 ## Converting a dependent volume to an independent duplicate from the CLI
 {: #convertdependentvol}
@@ -204,19 +216,24 @@ If you want to use the dependent volume as a stand-alone volume in the future, y
 ```python
 slcli file volume-convert <dependent-vol-id>
 ```
+{: pre}
 
 The conversion process can take some time to complete. The bigger the volume is, the longer it takes to convert it. Use the following command to check on the progress.
 
 ```zsh
 slcli file duplicate-convert-status <dependent-vol-id>
 ```
+{: pre}
 
-Example output:
+The following example shows the output that you can expect.
 ```zsh
 slcli file duplicate-convert-status 370597202
 Username            Active Conversion Start Timestamp   Completed Percentage
 SL02SEVC307608_74   2022-06-13 14:59:17                 90
 ```
+{: screen}
+
+For more information about available command options, see [`file duplicate-convert-status`](https://softlayer-python.readthedocs.io/en/latest/cli/file/#file-duplicate-convert-status){: external}.
 
 ## Canceling a storage volume with a dependent duplicate
 {: #cancelvolwithdependent}
