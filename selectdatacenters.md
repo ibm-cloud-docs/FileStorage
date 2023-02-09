@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2022
-lastupdated: "2022-10-14"
+  years: 2014, 2023
+lastupdated: "2023-02-01"
 
 keywords: File Storage, file storage, NFS, locations, data centers
 
@@ -37,16 +37,16 @@ subcollection: FileStorage
 {: class="comparison-tab-table"}
 {: row-headers}
 
-| Capabilities | MEX01 | SAO01 | SAO04 | SAO05 |
+| Capabilities | SAO01 | SAO04 | SAO05 |
 |--------------|-------|-------|-------|-------|
-| 10 IOPS per GB option |  ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |
-| [Adjustable IOPS](/docs/FileStorage?topic=FileStorage-adjustingIOPS) |  ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |
-| All Flash Backed Storage | ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |
-| [Data-At-Rest Encryption](/docs/FileStorage?topic=FileStorage-mng-data) | ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |
-| [Expandable storage](/docs/FileStorage?topic=FileStorage-expandCapacity) | ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |
-| [Hourly Billing](https://www.ibm.com/cloud/file-storage/pricing) | ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |
-| [Replication](/docs/FileStorage?topic=FileStorage-replication) and [Snapshots](/docs/FileStorage?topic=FileStorage-snapshots) | ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |
-| [Volume duplication](/docs/FileStorage?topic=FileStorage-duplicatevolume) | ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |
+| 10 IOPS per GB option |  ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |
+| [Adjustable IOPS](/docs/FileStorage?topic=FileStorage-adjustingIOPS) |  ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |
+| All Flash Backed Storage | ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |
+| [Data-At-Rest Encryption](/docs/FileStorage?topic=FileStorage-mng-data) | ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |
+| [Expandable storage](/docs/FileStorage?topic=FileStorage-expandCapacity) | ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |
+| [Hourly Billing](https://www.ibm.com/cloud/file-storage/pricing) | ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |
+| [Replication](/docs/FileStorage?topic=FileStorage-replication) and [Snapshots](/docs/FileStorage?topic=FileStorage-snapshots) | ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |
+| [Volume duplication](/docs/FileStorage?topic=FileStorage-duplicatevolume) | ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |
 {: caption="Table 2. Latin America infrastructure availability" caption-side="top"}
 {: summary="This table has row and column headers. The row headers identify the capability. The column headers identify where that capability is located. To understand where a capability is located in the table, navigate to the row, and look for the location you are interested in."}
 {: #table2}
