@@ -158,47 +158,47 @@ For more information about available command options, see [`file volume-duplicat
 
 To order an **independent duplicate** {{site.data.keyword.blockstorageshort}} volume with the API, you can make a `POST` call. The following REST API example creates an independent duplicate for an Endurance (IOPS tiers) volume.
 
-URL: `https://USERNAME:APIKEY@api.softlayer.com/rest/v3.1/SoftLayer_Product_Order/placeOrder`
-Type: POST
-Request body:
-```js
- {
-    "parameters":[{
-    "complexType": "SoftLayer_Container_Product_Order_Network_Storage_AsAService",
-    "packageId": 531,
-    "duplicateOriginVolumeId":<PrimaryId>,
-    "isDependentDuplicateFlag": 1,
-    "prices": [{"id": 12207}, {"id": 10723}, {"id": 10413}, {"id": 15749}, {"id":14043}],
-    "quantity": 1,
-    "location": 2,
-    "volumeSize":23
-    }]
-}
-```
-{: codeblock}
+- URL: `https://USERNAME:APIKEY@api.softlayer.com/rest/v3.1/SoftLayer_Product_Order/placeOrder`
+- Type: POST
+- Request body:
+   ```js
+    {
+       "parameters":[{
+       "complexType": "SoftLayer_Container_Product_Order_Network_Storage_AsAService",
+       "packageId": 531,
+       "duplicateOriginVolumeId":<PrimaryId>,
+       "isDependentDuplicateFlag": 1,
+       "prices": [{"id": 12207}, {"id": 10723}, {"id": 10413}, {"id": 15749}, {"id":14043}],
+       "quantity": 1,
+       "location": 2,
+       "volumeSize":23
+       }]
+   }
+   ```
+   {: codeblock}
 
 To order a **dependent duplicate** for a Performance (custom IOPS) volume, make a call like the following REST API example.
 
-URL: `https://USERNAME:APIKEY@api.softlayer.com/rest/v3.1/SoftLayer_Product_Order/placeOrder`
-Type: POST
-Request body:
-```js
-Request body :
-{
-    "parameters":[{
-    "complexType": "SoftLayer_Container_Product_Order_Network_Storage_AsAService",
-    "packageId": 531,
-    "duplicateOriginVolumeId":<PrimaryId>,
-    "isDependentDuplicateFlag": 1,
-    "prices": [{"id": 15751}, {"id": 19487}, {"id": 18983}, {"id": 15749}, {"id":14043}],
-    "quantity": 1,
-    "iops":456,
-    "location": 2,
-    "volumeSize":23
-    }]
-}
-```
-{: codeblock}
+- URL: `https://USERNAME:APIKEY@api.softlayer.com/rest/v3.1/SoftLayer_Product_Order/placeOrder`
+- Type: POST
+- Request body:
+   ```js
+   Request body :
+   {
+       "parameters":[{
+       "complexType": "SoftLayer_Container_Product_Order_Network_Storage_AsAService",
+       "packageId": 531,
+       "duplicateOriginVolumeId":<PrimaryId>,
+       "isDependentDuplicateFlag": 1,
+       "prices": [{"id": 15751}, {"id": 19487}, {"id": 18983}, {"id": 15749}, {"id":14043}],
+       "quantity": 1,
+       "iops":456,
+       "location": 2,
+       "volumeSize":23
+       }]
+   }
+   ```
+   {: codeblock}
 
 For more information about the API commands and options, see the [API Reference](https://sldn.softlayer.com/reference/softlayerapi/){: external}.
 
@@ -207,7 +207,7 @@ For more information about the API commands and options, see the [API Reference]
 
 While data is being copied from the original volume to the **independent** duplicate, you can see that the status indicator on the details page shows the duplication is in progress. During this time, you can attach to a host, and read and write to the volume, but you can't create snapshot schedules or refresh data from the original file share. When the separation process is complete, the new volume is independent from the original, and can be managed with snapshots and replication as normal. The independent duplicate can be manually refreshed by using a snapshot from the parent volume after the conversion is complete.
 
-**Dependent** duplicates do not go through the separation process and can be refreshed manually at any time. The refresh process can be initiated from the CLI or the UI. Later, if you want to convert the dependent duplicate into an independent volume, you can initiate that process by using the UI or the CLI, too.
+**Dependent** duplicates do not go through the separation process and can be refreshed manually at any time. The refresh process can be initiated from the CLI, with the API or in the UI. Later, if you want to convert the dependent duplicate into an independent volume, you can initiate that process by using the UI, the API, or the CLI, too.
 
 ## Updating data on the duplicate from the parent volume in the UI
 {: #refreshindependentvol_ui}
@@ -302,43 +302,43 @@ The force refresh process works only on independent volumes.
 ### REST API example
 {: #refreshindependentvol_rest}
 
-URL: https://USERNAME:APIKEY@api.softlayer.com/rest/v3.1/SoftLayer_Network_Storage/duplicateVolumeId/refreshDuplicate
-Type: POST
-Request body:
-```js
-{
- "parameters": [primaryVolumeSnapshotId, true OR false]
-}
-```
-{: codeblock}
+- URL: https://USERNAME:APIKEY@api.softlayer.com/rest/v3.1/SoftLayer_Network_Storage/duplicateVolumeId/refreshDuplicate`
+- Type: POST
+- Request body:
+   ```js
+   {
+    "parameters": [primaryVolumeSnapshotId, true OR false]
+   }
+   ```
+   {: codeblock}
 
 ### SOAP API example
 {: #refreshindependentvol_soap}
 
-URL: `https://api.softlayer.com/soap/v3.1/SoftLayer_Network_Storage
-Type: POST
-Request body:
-```js
-<?xml version="1.0" encoding="UTF-8"?>
-<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://api.service.softlayer.com/soap/v3.1/">
-<SOAP-ENV:Header>
- <ns1:authenticate>
-  <username>USERNAME</username>
-  <apiKey>APIKEY</apiKey>
- </ns1:authenticate>
- <ns2:SoftLayer_Network_StorageInitParameters>
-  <id>duplicate Volume Id</id>
- </ns2:SoftLayer_Network_StorageInitParameters>
-</SOAP-ENV:Header>
-<SOAP-ENV:Body>
- <ns1:refreshDuplicate>
-   <snapshotId xsi:type="int">primary Volume Snapshot Id</snapshotId>
-   <forceRefresh xsi:type="boolean">true</forceRefresh> <-- (remove this tag for normal refresh)
- </ns1:refreshDuplicate>
-</SOAP-ENV:Body>
-</SOAP-ENV:Envelope>
-```
-{: codeblock}
+- URL: `https://api.softlayer.com/soap/v3.1/SoftLayer_Network_Storage`
+- Type: POST
+- Request body:
+   ```js
+   <?xml version="1.0" encoding="UTF-8"?>
+   <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://api.service.softlayer.com/soap/v3.1/">
+   <SOAP-ENV:Header>
+    <ns1:authenticate>
+     <username>USERNAME</username>
+     <apiKey>APIKEY</apiKey>
+    </ns1:authenticate>
+    <ns2:SoftLayer_Network_StorageInitParameters>
+     <id>duplicate Volume Id</id>
+    </ns2:SoftLayer_Network_StorageInitParameters>
+   </SOAP-ENV:Header>
+   <SOAP-ENV:Body>
+    <ns1:refreshDuplicate>
+      <snapshotId xsi:type="int">primary Volume Snapshot Id</snapshotId>
+      <forceRefresh xsi:type="boolean">true</forceRefresh> <-- (remove this tag for normal refresh)
+    </ns1:refreshDuplicate>
+   </SOAP-ENV:Body>
+   </SOAP-ENV:Envelope>
+   ```
+   {: codeblock}
 
 For more information about the API commands and options, see the [API Reference](https://sldn.softlayer.com/reference/softlayerapi/){: external} and [`SoftLayer_Network_Storage::refreshDuplicate`](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Storage/refreshDuplicate/){: external}.
 
@@ -348,9 +348,9 @@ For more information about the API commands and options, see the [API Reference]
 
 If you want to use the dependent volume as a stand-alone volume in the future, you can convert it to a normal, independent {{site.data.keyword.blockstoragefull}} volume with the API. See the following example that uses the REST API.
 
-URL: `https://USERNAME:APIKEY@api.softlayer.com/rest/v3.1/SoftLayer_Network_Storage/<storageId>/convertCloneDependentToIndependent`
-Type: POST
-Request body: blank
+- URL: `https://USERNAME:APIKEY@api.softlayer.com/rest/v3.1/SoftLayer_Network_Storage/<storageId>/convertCloneDependentToIndependent`
+- Type: POST
+- Request body: blank
 
 For more information about the API commands and options, see the [API Reference](https://sldn.softlayer.com/reference/softlayerapi/){: external}.
 
