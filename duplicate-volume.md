@@ -56,8 +56,6 @@ Dependent duplicate can be refreshed from new snapshots of the parent volume man
 
 However, snapshots and replication of independent duplicate volumes aren't allowed until the data copy from the original to the duplicate is complete and the duplicate volume is fully independent. Depending on the size of the data, the separation process can take several hours. When it's complete, the duplicate can be managed and used as an independent volume.
 
-You can create a duplicate volume from the CLI and in the [{{site.data.keyword.cloud_notm}} console](/login){: external}.
-
 ## Creating a duplicate from a specific volume in the UI
 {: #createdepduplicateUI}
 {: ui}
@@ -183,7 +181,6 @@ To order a **dependent duplicate** for a Performance (custom IOPS) volume, make 
 - Type: POST
 - Request body:
    ```js
-   Request body :
    {
        "parameters":[{
        "complexType": "SoftLayer_Container_Product_Order_Network_Storage_AsAService",
