@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-01-11"
+lastupdated: "2023-02-15"
 
 keywords: File Storage, file storage, NFS, security, encryption
 
@@ -36,7 +36,7 @@ The provider-managed encryption-at-rest feature is available in [most data cente
 
 When you order {{site.data.keyword.filestorage_short}}, select a data center that is marked with an asterisk (`*`). You can see a lock icon to the right of the Volume Name field that indicates that the volume is encrypted. See Figure 1.
 
-![Figure 1. Example of the lock icon that indicates that the volume is encrypted.](/images/encryptedstorage.png){: caption="Figure 1. Example of the lock icon that indicates that the volume is encrypted." caption-side="bottom"}
+![Figure 1. Example of the lock icon that indicates that the volume is encrypted.](/images/encryptedstorage.svg){: caption="Figure 1. Example of the lock icon that indicates that the volume is encrypted." caption-side="bottom"}
 
 Any nonencrypted storage that was provisioned before a data center upgrade is **not** automatically encrypted. If you own nonencrypted storage in an upgraded data center and you want to have it encrypted, you need to create a volume, and move your data. For more information, see [File Storage Migration in Upgraded Data Centers](/docs/FileStorage?topic=FileStorage-migratestorage).
 {: important}
