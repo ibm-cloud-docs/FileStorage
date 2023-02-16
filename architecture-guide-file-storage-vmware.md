@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2021-05-03"
+lastupdated: "2023-02-15"
 
 keywords: File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
@@ -43,10 +43,10 @@ When you order {{site.data.keyword.filestorage_short}}, consider the following i
 
 - NFS uses many extra file control operations such as `lookup`, `getattr`, and `readdir`. These operations in addition to read/write operations can count as IOPS and vary by operation type and NFS version.
 - {{site.data.keyword.filestorage_short}} volumes are exposed to authorized devices, subnets, or IP addresses.
-- To avoid storage disconnection during path-failover {{site.data.keyword.IBM}} recommends installing VMware&reg; tools, which set an appropriate timeout value. There’s no need to change the value, the default setting is sufficient to ensure that your VMware&reg; host doesn't lose connectivity.
+- To avoid storage disconnection during path-failover {{site.data.keyword.IBM}} recommends installing VMware&reg; tools, which set an appropriate timeout value. Don't change the value because the default setting is sufficient to ensure that your VMware&reg; host doesn't lose connectivity.
 - Both NFSv3 and NFSv4.1 are supported in the {{site.data.keyword.cloud}} environment. However, the use NFSv3 is preferred. Because NFSv4.1 is a stateful protocol (not stateless like NFSv3), protocol issues can occur during network events. NFSv4.1 must quiesce all operations and then complete lock reclamation. While these operations are taking place, disruptions can occur.
 
-For more information, see VMware&reg;'s white paper on [Best Practices for running
+For more information, see VMware&reg;'s white paper on [Best practices for running
 VMware&reg; vSphere on network-attached storage](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){: external}.
 {: tip}
 
@@ -175,7 +175,7 @@ Before you begin the configuration process, make sure that the following prerequ
 3. From the **HOME** screen, select **Hosts and Clusters**. Expand the pane on the left and select the **VMware&reg; ESXi server** that is to be used for this deployment.
 4. Make sure that the firewall port for the NFS client is open on all hosts so that you can configure the NFS client on the vSphere host. (The port is automatically opened in the more recent releases of vSphere.) To check whether the port is open, go to the **ESXi host Manage** tab in VMware® vCenter™, select **Settings**, and then select **Security Profile**. In the **Firewall** section, click **Edit** and scroll down to **NFS Client**.
 5. Make sure **Allow connection from any IP address or a list of IP addresses** is provided.
-   ![Allow Connection.](/images/1_4.png){: caption="Allow Connections." caption-side="bottom"}
+   ![Allow Connection.](/images/1_4.svg){: caption="Allow Connections." caption-side="bottom"}
 6. Configure Jumbo Frames by going to the **ESXi host Manage** tab, select **Manage** and then **Networking**.
 7. Select **VMkernel adapters**, highlight the **vSwitch** and the click **Edit** (Pencil icon).
 8. Select **NIC setting**, and ensure that the NIC MTU is set to 9000.
@@ -214,7 +214,7 @@ For more information about VMware&reg; and Jumbo Frames, see [here](https://kb.v
 5. Select the existing **vSwitch** and click **Next**.
 6. Select **Unused adapters** and click **Add adapters** (Plus sign).
 7. Click the other "Connected" adapter and click **OK**.
-   ![Add physical adapters to switch.](/images/2_3.png){: caption="Add the physical adapters to the switch." caption-side="bottom"}
+   ![Add physical adapters to switch.](/images/2_3.svg){: caption="Add the physical adapters to the switch." caption-side="bottom"}
 8. Click **Next** and the **Finish**.
 9. Go back to the **Virtual switches** tab and select the **Edit setting** (Pencil icon) under the **Virtual Switches** heading.
 10. On the left, select the vSwitch **Teaming and failover** entry.
@@ -302,7 +302,7 @@ Incorrectly configuring SIOC for a VMware&reg; datastore or for a VMDK can signi
 3. Click **Settings** and click **General**.
 4. Click **Edit** for **Datastore Capabilities**.
 5. Select the **Enable Storage I/O Control** checkbox.
-    ![NSF VMware&reg; datastore.](/images/3_0.png){: caption="Select Enable Storage I/O Control." caption-side="bottom"}
+    ![NSF VMware&reg; datastore.](/images/3_0.svg){: caption="Select Enable Storage I/O Control." caption-side="bottom"}
 6. Click **OK**.
 
 This setting is specific to the VMware&reg; datastore and not to the host.
