@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2021
-lastupdated: "2021-06-02"
+  years: 2014, 2023
+lastupdated: "2023-02-20"
 
 keywords: File Storage, file storage, NSF, networking, jumbo frames
 
@@ -52,4 +52,12 @@ Jumbo frames need to be configured the same on the entire network path from sour
    {: pre}
 
    This action causes a brief loss of network connectivity.
-   {: important}
+   {: attention}
+
+## Related information
+{: #related-info}
+
+For more information about MTU settings, see the following topics.
+- [Configuring virtual server settings for improved network performance](/docs/virtual-servers?topic=virtual-servers-configuring-network-performance){: external}.
+- [Tuning performance in Red Hat OpenShift on IBM Cloud](/openshift?topic=openshift-kernel&interface=ui#calico-mtu){: external}.
+- [Tuning performance in Kubernetes Service](/docs/containers?topic=containers-kernel#calico-mtu){: external}.
