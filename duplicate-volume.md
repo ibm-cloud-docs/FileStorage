@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-02-14"
+lastupdated: "2023-02-28"
 
 keywords: File Storage, file storage, NFS, duplicate volume
 
@@ -154,7 +154,7 @@ For more information about available command options, see [`file volume-duplicat
 {: #cloneinAPI}
 {: api}
 
-To order an **independent duplicate** {{site.data.keyword.blockstorageshort}} volume with the API, you can make a `POST` call. The following REST API example creates an independent duplicate for an Endurance (IOPS tiers) volume.
+To order an **independent duplicate** {{site.data.keyword.blockstorageshort}} volume with the API, you can make a `POST /SoftLayer_Product_Order/placeOrder` call. The following REST API example creates an independent duplicate for an Endurance (IOPS tiers) volume.
 
 - URL: `https://USERNAME:APIKEY@api.softlayer.com/rest/v3.1/SoftLayer_Product_Order/placeOrder`
 - Type: POST
@@ -175,7 +175,7 @@ To order an **independent duplicate** {{site.data.keyword.blockstorageshort}} vo
    ```
    {: codeblock}
 
-To order a **dependent duplicate** for a Performance (custom IOPS) volume, make a call like the following REST API example.
+To order a **dependent duplicate** for a Performance (custom IOPS) volume, make a `POST /SoftLayer_Product_Order/placeOrder` call like the following REST API example.
 
 - URL: `https://USERNAME:APIKEY@api.softlayer.com/rest/v3.1/SoftLayer_Product_Order/placeOrder`
 - Type: POST
@@ -210,15 +210,22 @@ While data is being copied from the original volume to the **independent** dupli
 {: #refreshindependentvol_ui}
 {: ui}
 
+As time passes and the primary volume changes, the duplicate volume can be updated with these changes to reflect the current state through the refresh action. The refresh involves taking a snapshot of the primary volume and then, updating the duplicate volume by using the data from that snapshot.
+
+If the duplicate volume is independent, you can stop a running refresh operation and start a new one.
+{: note}
+
 1. Go to your list of {{site.data.keyword.filestorage_short}}. From the **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic") menu, click **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Locate the duplicate volume and click its name to view the volume details.
 3. Click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions") > **Restore parent snapshot**.
-4. From the list of snapshots, select the parent snapshot that holds the data you want to restore to the duplicate volume.
-   Restoring data from a snapshot results in the loss of any data that was created or modified since the selected snapshot was taken. During the refresh transaction, the duplicate volume is unavailable and must be remounted after the refresh is completed.
-   {:  note}
+4. From the list of snapshots, select the parent snapshot that holds the data that you want to restore to the duplicate volume.
+   If the duplicate volume that you're refreshing is an independent volume, you can stop a running operation and force a new restore to start. If you want to force a current refresh process to stop, check the box before you proceed.
+   {: tip}
 
-5. Check the box to confirm that you want to proceed with the refresh operation.
-6. Click **Yes**.
+   Restoring data from a snapshot results in the loss of any data that was created or modified since the selected snapshot was taken. During the refresh transaction, the duplicate volume is disabled and must be remounted after the refresh is completed.
+   {: attention}
+
+5. Click **Yes** to start the refresh. The refresh can take a while to complete. The status bar shows the percentage of data that is copied to the volume. To see updated status, refresh the page in the browser.
 
 ## Converting a dependent volume to an independent duplicate in the UI
 {: #convertdependentvol_ui}
@@ -299,7 +306,7 @@ The force refresh process works only on independent volumes.
 ### REST API example
 {: #refreshindependentvol_rest}
 
-- URL: https://USERNAME:APIKEY@api.softlayer.com/rest/v3.1/SoftLayer_Network_Storage/duplicateVolumeId/refreshDuplicate`
+- URL: `https://USERNAME:APIKEY@api.softlayer.com/rest/v3.1/SoftLayer_Network_Storage/duplicateVolumeId/refreshDuplicate`
 - Type: POST
 - Request body:
    ```js
