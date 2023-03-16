@@ -67,7 +67,7 @@ VMware&reg; vSphere on network-attached storage](https://www.vmware.com/content/
 {: row-headers}
 {: class="comparison-table"}
 {: caption="Table 1 - NFS Protocol VMware&reg; feature support matrix." caption-side="top"}
-{: summary="This table has row and column headers. The row headers identify the vSphere features. The column headers identify the NSF version. To see if a feature is enabled navigate to the row of the feature and look at the column that is associated with the NFS version you use."}
+{: summary="This table has row and column headers. The row headers identify the vSphere features. The column headers identify the NSF version. To see if a feature is enabled navigate to the row of the feature, and look at the column that is associated with the NFS version that you use."}
 
 *Source - [VMware&reg; - NFS Protocols and ESXi](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){: external}*.
 
@@ -119,7 +119,7 @@ Follow the instructions the [Advanced Single-Site VMware&reg; Reference Architec
 
 {{site.data.keyword.filestorage_short}} can be ordered through [The {{site.data.keyword.cloud}} catalog](/catalog){: external} or the [CLI](/docs/cli?topic=cli-sl-file-storage-service#sl_file_volume_order). For more information, see [Ordering {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-orderingFileStorage).
 
-Storage is provisioned in less than a minute and becomes visible on the **{{site.data.keyword.filestorage_short}}** page of the [{{site.data.keyword.cloud}} console](/classic/storage/file){: external}. Next, the {{site.data.keyword.BluBareMetServers_full}} or {{site.data.keyword.BluVirtServers_full}} that are going to use the volume must be authorized to access the storage. Use the following steps to authorize the host.
+Storage is provisioned in less than a minute and becomes visible on the **{{site.data.keyword.filestorage_short}}** page of the [{{site.data.keyword.cloud}} console](/classic/storage/file){: external}. The {{site.data.keyword.BluBareMetServers_full}} or {{site.data.keyword.BluVirtServers_full}} that are going to use the volume must be authorized to access the storage. Use the following steps to authorize the host.
 
 1. In the console, go to **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic") > **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Scroll to the File share that you want to mount, and click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions"). Then, select **Authorize Host**.
@@ -170,12 +170,12 @@ Before you begin the configuration process, make sure that the following prerequ
 ### 1. Configuring the VMware Host.
 {: #configurevmwarehost1}
 
-1. From an internet connected computer, start an RDP client and establish an RDP session to the {{site.data.keyword.BluVirtServers_full}} that are provisioned in the same data center where vSphere vCenter is installed.
+1. From an internet connected computer, start an RDP client and establish an RDP session to the {{site.data.keyword.BluVirtServers_full}} that is provisioned in the same data center where vSphere vCenter is installed.
 2. From the {{site.data.keyword.BluVirtServers_short}}, start a web browser and connect to VMware&reg; vCenter through the vSphere Web Client.
 3. From the **HOME** screen, select **Hosts and Clusters**. Expand the pane on the left and select the **VMware&reg; ESXi server** that is to be used for this deployment.
 4. Make sure that the firewall port for the NFS client is open on all hosts so that you can configure the NFS client on the vSphere host. (The port is automatically opened in the more recent releases of vSphere.) To check whether the port is open, go to the **ESXi host Manage** tab in VMware® vCenter™, select **Settings**, and then select **Security Profile**. In the **Firewall** section, click **Edit** and scroll down to **NFS Client**.
 5. Make sure **Allow connection from any IP address or a list of IP addresses** is provided.
-   ![Allow Connection.](/images/1_4.svg){: caption="Allow Connections." caption-side="bottom"}
+    ![Allow Connection.](/images/1_4.svg){: caption="Allow Connections." caption-side="bottom"}
 6. Configure Jumbo Frames by going to the **ESXi host Manage** tab, select **Manage** and then **Networking**.
 7. Select **VMkernel adapters**, highlight the **vSwitch** and the click **Edit** (Pencil icon).
 8. Select **NIC setting**, and ensure that the NIC MTU is set to 9000.
@@ -214,7 +214,7 @@ For more information about VMware&reg; and Jumbo Frames, see [here](https://kb.v
 5. Select the existing **vSwitch** and click **Next**.
 6. Select **Unused adapters** and click **Add adapters** (Plus sign).
 7. Click the other "Connected" adapter and click **OK**.
-   ![Add physical adapters to switch.](/images/2_3.svg){: caption="Add the physical adapters to the switch." caption-side="bottom"}
+    ![Add physical adapters to switch.](/images/2_3.svg){: caption="Add the physical adapters to the switch." caption-side="bottom"}
 8. Click **Next** and the **Finish**.
 9. Go back to the **Virtual switches** tab and select the **Edit setting** (Pencil icon) under the **Virtual Switches** heading.
 10. On the left, select the vSwitch **Teaming and failover** entry.
@@ -264,7 +264,7 @@ Make note of the IP address as it can be used for mounting the volume in the nex
 9. Review the inputs on the next screen and click **Finish**.
 10. Repeat for any additional {{site.data.keyword.filestorage_short}} volumes.
 
-It is {{site.data.keyword.cloud}}’s recommendation that FQDN names be used to connect to the VMware&reg; datastore. Using direct IP addressing might bypass the load-balancing mechanism that is provided by using FQDN.
+It is {{site.data.keyword.cloud_notm}}’s recommendation that FQDN names be used to connect to the VMware&reg; datastore. Using direct IP addressing might bypass the load-balancing mechanism that is provided by using FQDN.
 {: important}
 
 To use the IP address instead of the FQDN, ping the server to obtain the IP address.
@@ -286,9 +286,7 @@ PING nfsdal0902a-fz.service.softlayer.com (10.2.125.80): 56 data bytes
 
 Storage I/O Control (SIOC) is a feature available for customers who use an Enterprise Plus license. When SIOC is enabled in the environment, it changes the device queue length for the single VM. The change to the device queue length reduces the storage array queue for all VMs to an equal share. SIOC engages only if resources are constrained and the storage I/O latency is over a defined threshold.
 
-
 In order for SIOC to determine when a storage device is congested or constrained, it requires a defined threshold. The congestion threshold latency is different for different storage types. The default selection is to 90% of peak throughput. The percentage of peak throughput value indicates the estimated latency threshold when the VMware&reg; datastore is using that percentage of its estimated peak throughput.
-
 
 Incorrectly configuring SIOC for a VMware&reg; datastore or for a VMDK can significantly impact performance.
 {: important}
@@ -312,7 +310,7 @@ This setting is specific to the VMware&reg; datastore and not to the host.
 ### Configuring Storage I/O Control for {{site.data.keyword.BluVirtServers_short}}
 {: #configureSIOCStoragehost}
 
-You can also limit individual virtual disks for individual VMs or grant them different shares with SIOC. By limiting the disks and granting different shares, you can match and align the environment to the workload with the acquired {{site.data.keyword.filestorage_short}} volume IOPS number. The limit is set by IOPS, and it's possible to set a different weight or "Shares." Virtual disks with shares set to High (2,000 shares) receive twice as much I/O as a disk set to Normal (1,000 shares) and four times as much as one set to Low (500 shares). Normal is the default value for all the VMs, so you need to adjust the values to High or Low for the VMs that require it.
+You can also limit individual virtual disks for individual VMs or grant them different shares with SIOC. By limiting the disks and granting different shares, you can match and align the environment to the workload with the acquired {{site.data.keyword.filestorage_short}} volume IOPS number. The limit is set by IOPS, and it's possible to set a different weight or "Shares." Virtual disks with shares set to High (2,000 shares) receive twice as much I/O as a disk set to Normal (1,000 shares). They receive four times as much IO as one set to Low (500 shares). Normal is the default value for all the VMs, so you need to adjust the values to High or Low for the VMs that require it.
 
 Use the following steps to change the VDisk shares and limit.
 
