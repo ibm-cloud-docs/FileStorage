@@ -48,7 +48,7 @@ As part of the data center modernization strategy for {{site.data.keyword.cloud}
 {: #determinereplicationlocCLI}
 {: cli}
 
-{{site.data.keyword.cloud}}'s data centers are paired into primary and remote combinations in every region worldwide. When you replicate data, consider the local data residency laws because moving data across borders can have legal implications. Replication across regions is not permitted.
+{{site.data.keyword.cloud_notm}}'s data centers are paired into primary and remote combinations in every region worldwide. When you replicate data, consider the local data residency laws because moving data across borders can have legal implications. Replication across regions is not permitted.
 
 To list suitable replication data centers for a specific volume, use the following command.
 
@@ -134,7 +134,7 @@ List existing replicant volumes for a file volume with the following command.
 {: #replicationhistoryUI}
 {: ui}
 
-To view the Replication history, click Manage on the main menu bar. Select **Account**, then scroll to the Audit Log. The Storage Replication Events list contains the names of the volume, a description of the replication event and the timestamp of the event.
+To view the Replication history, click Manage on the main menu bar. Select **Account**, and scroll to the Audit Log. The Storage Replication Events list contains the names of the volume, a description of the replication event and the timestamp of the event.
 
 ## Editing the Replication Schedule in the UI
 {: #editreplicaschedule}
