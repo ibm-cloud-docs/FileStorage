@@ -196,7 +196,7 @@ Customers with special requirements for compliance such as NIST 800-88 Guideline
 {: faq}
 {: #cancelstorage}
 
-The cancellation process for this storage device is in progress so the Cancel action is no longer available. The volume remains visible for at least 24 hours until it is reclaimed, with an hourglass or clock icon next to the device name to indicate that it’s in a waiting period. The minimum 24-hour waiting period gives you a chance to void the cancel request if needed.
+The cancellation process for this storage device is in progress so the Cancel action is no longer available. The volume remains visible for at least 24 hours until it is reclaimed. An hourglass or clock icon next to the device name in the UI indicates that it’s in a waiting period. The minimum 24-hour waiting period gives you a chance to void the cancel request if needed.
 
 ## Which NFS versions are supported?
 {: faq}
@@ -321,7 +321,7 @@ All Block and {{site.data.keyword.filestorage_short}} services are thin-provisio
 {: #staasV2migration}
 {: faq}
 
-You might notice that your Storage volumes are now billed as "Endurance Storage Service” or "Performance Storage Service" instead of "Enterprise Storage", and you have new options in the console, such as the ability to adjust IOPS or increase capacity. {{site.data.keyword.cloud}} strives to continuously improve storage capabilities. As hardware gets upgraded in the data centers, storage volumes that reside in those data centers are also upgraded to use all enhanced features. The price that you pay for your Storage volume does not change with this upgrade.
+You might notice that your Storage volumes are now billed as "Endurance Storage Service” or "Performance Storage Service" instead of "Enterprise Storage". You might also have new options in the console, such as the ability to adjust IOPS or increase capacity. {{site.data.keyword.cloud}} strives to continuously improve storage capabilities. As hardware gets upgraded in the data centers, storage volumes that reside in those data centers are also upgraded to use all enhanced features. The price that you pay for your Storage volume does not change with this upgrade.
 
 ## How durable is {{site.data.keyword.filestorage_short}}?
 {: #stordurabilityfaq}
@@ -356,7 +356,7 @@ Replication keeps your data in sync in two different locations. Only one of the 
 
 Duplication creates a copy of your volume based on a snapshot in the same availability zone as the parent volume. The duplicate volume inherits the capacity and performance options of the original volume by default and has a copy of the data up to the point-in-time of a snapshot. The duplicate volume can be dependent or independent from the original volume, and it can be manually refreshed with data from the parent volume. You can adjust the IOPS or increase the volume size of the duplicate without any effect on the parent volume.
 
-- A dependent duplicate volume does not go through the conversion of becoming independent, and can be refreshed at any time after it is created. It keeps the original snapshot locked so that snapshot cannot be deleted while the dependent duplicate exists. The parent volume cannot be canceled while the dependent duplicate volume exists. If you want to cancel the parent volume, you must either cancel the dependent duplicate first or convert it to an independent duplicate.
+- A dependent duplicate volume does not go through the conversion of becoming independent, and can be refreshed at any time after it is created. It locks the original snapshot so that snapshot cannot be deleted while the dependent duplicate exists. The parent volume cannot be canceled while the dependent duplicate volume exists. If you want to cancel the parent volume, you must either cancel the dependent duplicate first or convert it to an independent duplicate.
 
 - An independent duplicate is superior to the dependent duplicate in most regards, but it cannot be refreshed immediately after creation because of the lengthy conversion process. It can take up to several hours based on the size of the volume. For example, it might take up to a day for a 12-TB volume. However, after the separation process is complete, the data can be manually refreshed by using another snapshot of the original parent volume.
 
@@ -393,7 +393,7 @@ The conversion process can take some time to complete. The bigger the volume, th
    slcli file duplicate-convert-status <dependent-vol-id>
    ```
 
-   Example output:
+   The output looks similar to the following example.
    ```zsh
    slcli file duplicate-convert-status 370597202
    Username            Active Conversion Start Timestamp   Completed Percentage
