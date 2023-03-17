@@ -131,7 +131,7 @@ By default, you can provision a combined total of 700 {{site.data.keyword.filest
 
 The method `order_file_volume` (storage_type, location, size, iops=None, tier_level=None, snapshot_size=None, service_offering='storage_as_a_service', hourly_billing_flag=False) places an order for a file volume.
 
-Parameters:
+You must specify the following parameters for a successful order.
 - `storage_type` – "performance" or "endurance".
 - `location` – Data center in which to order iSCSI volume.
 - `size` – Size of the new volume, in GB.
