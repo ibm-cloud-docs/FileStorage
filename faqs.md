@@ -257,7 +257,7 @@ To prevent this situation from recurring, the customer might consider the follow
 {: faq}
 {: #expandsize}
 
-To see the expanded volume size, mount and remount your existing {{site.data.keyword.filestorage_short}} disk on your server. In a VMware&reg;implementation, rescan storage to refresh the VMware&reg; datastore and show the new volume size.
+To see the expanded volume size, mount and remount your existing {{site.data.keyword.filestorage_short}} disk on your server. In a VMware&reg; implementation, rescan storage to refresh the VMware&reg; datastore and show the new volume size.
 
 ## How do I reconnect storage after a chassis swap?
 {: faq}
