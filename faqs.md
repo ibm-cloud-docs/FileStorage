@@ -237,7 +237,7 @@ Controlled Failover does one last sync before it breaks the mirror process. The 
 {: faq}
 {: support}
 
-In a couple of scenarios a host (bare metal or VM) might lose connection to the storage however briefly and as a result, the host considers that storage read-only to avoid data corruption. Most of the time the loss of connectivity is network-related but the status of the storage remains read-only from the host's perspective even when the network connection is restored.
+In a couple of scenarios a host (bare metal or VM) might lose connection to the storage briefly and as a result, the host considers that storage read-only to avoid data corruption. Most of the time the loss of connectivity is network-related but the status of the storage remains read-only from the host's perspective even when the network connection is restored.
 
 This issue can be observed with virtual drives of VMs on a network-attached VMware&reg; datastore (NFS protocol). To resolve, confirm that the network path between the Storage and the Host is clear, and that no maintenance or outage is in progress. Then, unmount and mount the storage volume. If the volume is still read-only, restart the host.
 
