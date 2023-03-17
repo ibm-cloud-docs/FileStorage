@@ -58,7 +58,7 @@ You can provision {{site.data.keyword.filestorage_short}} and fine-tune to meet 
 By default, you can provision a combined total of 700 {{site.data.keyword.filestorage_short}} volumes. To increase the number of your volumes, contact your sales representative. Read about increasing limits [here](/docs/FileStorage?topic=FileStorage-managinglimits). For more information about the limit on simultaneous authorizations, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs#authlimit).
 {: tip}
 
-## Ordering {{site.data.keyword.filestorage_short}} through the SLCLI
+## Ordering {{site.data.keyword.filestorage_short}} from the SLCLI
 {: #orderingthroughCLI}
 {: cli}
 
@@ -125,7 +125,7 @@ By default, you can provision a combined total of 700 {{site.data.keyword.filest
 {: important}
 
 
-## Ordering {{site.data.keyword.filestorage_short}} by using the API
+## Ordering {{site.data.keyword.filestorage_short}} with the API
 {: #orderingthroughAPI}
 {: api}
 
