@@ -67,7 +67,7 @@ VMware&reg; vSphere on network-attached storage](https://www.vmware.com/content/
 {: row-headers}
 {: class="comparison-table"}
 {: caption="Table 1 - NFS Protocol VMware&reg; feature support matrix." caption-side="top"}
-{: summary="This table has row and column headers. The row headers identify the vSphere features. The column headers identify the NSF version. To see if a feature is enabled navigate to the row of the feature, and look at the column that is associated with the NFS version that you use."}
+{: summary="This table has row and column headers. The row headers identify the vSphere features. The column headers identify the NSF version. To see whether a feature is enabled navigate to the row of the feature, and look at the column that is associated with the NFS version that you use."}
 
 *Source - [VMware&reg; - NFS Protocols and ESXi](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){: external}*.
 
