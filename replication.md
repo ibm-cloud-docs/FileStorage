@@ -41,14 +41,13 @@ See Table 1 for the complete list of data center availability and replication ta
  Data centers in US 1 can replicate with only each other. Data centers in US 2 region cannot start replication with US 1 data centers.
  {: note}
 
-As part of the data center modernization strategy for {{site.data.keyword.cloud}}, several data centers and PODs are scheduled to consolidate in late 2022 and early 2023. For more information, see [Data center consolidations](/docs/get-support?topic=get-support-dc-closure){: external}. Provisioning storage and snapshots in closing data centers is not allowed.
-{: note}
+ 
 
 ## Determining the remote data center for the replicated storage volume from the SLCLI
 {: #determinereplicationlocCLI}
 {: cli}
 
-{{site.data.keyword.cloud}}'s data centers are paired into primary and remote combinations in every region worldwide. When you replicate data, consider the local data residency laws because moving data across borders can have legal implications. Replication across regions is not permitted.
+{{site.data.keyword.cloud_notm}}'s data centers are paired into primary and remote combinations in every region worldwide. When you replicate data, consider the local data residency laws because moving data across borders can have legal implications. Replication across regions is not permitted.
 
 To list suitable replication data centers for a specific volume, use the following command.
 
@@ -134,7 +133,7 @@ List existing replicant volumes for a file volume with the following command.
 {: #replicationhistoryUI}
 {: ui}
 
-To view the Replication history, click Manage on the main menu bar. Select **Account**, then scroll to the Audit Log. The Storage Replication Events list contains the names of the volume, a description of the replication event and the timestamp of the event.
+To view the Replication history, click Manage on the main menu bar. Select **Account**, and scroll to the Audit Log. The Storage Replication Events list contains the names of the volume, a description of the replication event and the timestamp of the event.
 
 ## Editing the Replication Schedule in the UI
 {: #editreplicaschedule}

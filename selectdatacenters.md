@@ -38,7 +38,7 @@ subcollection: FileStorage
 {: row-headers}
 
 | Capabilities | SAO01 | SAO04 | SAO05 |
-|--------------|-------|-------|-------|-------|
+|--------------|-------|-------|-------|
 | 10 IOPS per GB option |  ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |
 | [Adjustable IOPS](/docs/FileStorage?topic=FileStorage-adjustingIOPS) |  ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |
 | All Flash Backed Storage | ![Checkmark icon.](../../icons/checkmark-icon.svg) | ![Checkmark icon.](../../icons/checkmark-icon.svg) |![Checkmark icon.](../../icons/checkmark-icon.svg) |

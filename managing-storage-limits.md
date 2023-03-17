@@ -18,7 +18,7 @@ subcollection: FileStorage
 
 By default, you can provision a combined total of 700 {{site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_short}} volumes globally. By following this process, you can increase the number of volumes you can provision.
 
-For more information about increasing your storage volume capacity beyond 12 TB, see [Expanding Block Storage Capacity](/docs/FileStorage?topic=FileStorage-expandCapacity#increasecapacityover12TB).
+For more information about increasing your storage volume capacity beyond 12 TB, see [expanding {{site.data.keyword.filestorage_short}} capacity](/docs/FileStorage?topic=FileStorage-expandCapacity#increasecapacityover12TB).
 
 If you're unsure how many volumes you have, you can confirm the numbers by using multiple methods.
 
@@ -30,11 +30,11 @@ If you're unsure how many volumes you have, you can confirm the numbers by using
 {: #slcli1}
 
 You can list the number of your volumes by using the [volume-limits](https://softlayer-python.readthedocs.io/en/latest/cli/file/#file-volume-limits){: external} command in `slcli` (version 5.8.5 or higher).
-```python
+```sh
 # slcli file volume-limits
 ```
 
-Example output:
+The output looks similar to the following example.
 ```text
 [{'datacenterName': 'global', 'maximumAvailableCount': 700, 'provisioned Count':117}]
 :............:.......................:..................:
@@ -49,7 +49,7 @@ Example output:
 
 The volume-limits command is also available in the `sl` plug-in for IBM Cloud CLI (v1.0 or higher).
 
-```python
+```sh
 # ibmcloud sl file volume-limits
 Datacenter   MaximumAvailableCount   ProvisionedCount
 global       700                     99
@@ -89,18 +89,18 @@ In the ticket, provide the following information:
    *For example, your answer might be something similar to a new VMware&reg; datastore, a new development and testing environment, an SQL database, or logging.*
 
 - **How many extra Block volumes are needed by type, size, IOPS, and location?**
-   *For example, your answer might be something similar to "25x Endurance 2 TB @ 4 IOPS in DAL09" or "25x Performance 4 TB @ 2 IOPS in WDC04".*
+   *For example, your answer might be "25x Endurance 2 TB @ 4 IOPS in DAL09" or "25x Performance 4 TB @ 2 IOPS in WDC04".*
 
 - **How many extra File volumes are needed by type, size, IOPS, and location?**
-   *For example, your answer might be something similar to "25x Performance 20 GB @ 10 IOPS in DAL09" or "50x Endurance 2 TB @ 0.25 IOPS in SJC03".*
+   *For example, your answer might be "25x Performance 20 GB @ 10 IOPS in DAL09" or "50x Endurance 2 TB @ 0.25 IOPS in SJC03".*
 
 - **Provide an estimate of when you expect or plan to provision all of the requested volume increase.**
-   *For example, your answer might be something similar to "90 days".*
+   *For example, your answer might be "90 days".*
 
 - **Provide a 90-day forecast of expected average capacity usage of these volumes.**
-   *For example, your answer might be something similar to "expect 25 percent to be used in 30 days, 50 percent to be used in 60 days and 75 percent to be used in 90 days".*
+   *For example, your answer might be "expect 25 percent to be used in 30 days, 50 percent to be used in 60 days and 75 percent to be used in 90 days".*
 
 Respond to all questions and statements in your request. They are required for processing and approval.
 {: important}
 
-You're going to be notified of the update to your limits through the ticket process.
+You're going to be notified of the update to your limits through the case handling process.

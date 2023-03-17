@@ -52,9 +52,9 @@ You decide how often and when you want to create a point in time reference of yo
 Before you can set up your initial schedule, you must first purchase snapshot space if you didn't purchase it during the initial provisioning of the storage volume.
 {: important}
 
-To set up a snapshot schedule, use the following command
+To create a snapshot schedule, use the following command.
 
-```python
+```sh
 # slcli file snapshot-enable --help
 Usage: slcli file snapshot-enable [OPTIONS] VOLUME_ID
 
@@ -72,7 +72,7 @@ Options:
 ```
 
 You can see the list of your snapshot schedules from the SLCLI with the following command.
-```python
+```sh
 # slcli file snapshot-schedule-list --help
 Usage: slcli file snapshot-schedule-list [OPTIONS] VOLUME_ID
 
@@ -101,7 +101,7 @@ The snapshot is taken and displayed in the **Snapshots** section of the **Detail
 {: cli}
 
 You can use the following command to create a snapshot from the SLCLI.
-```python
+```sh
 # slcli file snapshot-create --help
 Usage: slcli file snapshot-create [OPTIONS] VOLUME_ID
 
@@ -118,7 +118,7 @@ A list of retained snapshots and space that is used can be seen on the **{{site.
 
 You receive notifications when you reach space thresholds – 75 percent, 90 percent, and 95 percent.
 
-- At **75 percent capacity**, a warning is sent that snapshot space usage exceeded 75 percent. If you heed the warning and manually add space, or delete retained and unnecessary snapshots, or reduce the number of retained snapshots in the schedule, the system is reset and no autodeletion occurs.
+- At **75 percent capacity**, a warning is sent that snapshot space usage exceeded 75 percent. To remediate, you can manually add space, or delete retained unnecessary snapshots. You can reduce the number of retained snapshots in the schedule. If you reduce the snapshot data or increase the space, the warning system is reset, and no autodeletion occurs.
 - At **90 percent capacity**, a second warning is sent when snapshot space usage exceeded 90 percent. Like with reaching 75 percent capacity, if you take the necessary actions to decrease the snapshot data or increase the space, the warning system is reset and no autodeletion occurs.
 - At **95 percent capacity**, a final warning is sent. If no action is taken to bring your space usage under the threshold, automatic deletion starts so that future snapshots can be created. Scheduled snapshots are deleted, starting with the oldest, until usage drops under 95 percent. Snapshots continue to be deleted each time usage exceeds 95 percent until it drops under the threshold. If the space is manually increased or snapshots are manually deleted, the warning is reset, and reissued if the threshold is exceeded again. If no actions are taken, this notification is the only warning that you receive.
 
@@ -132,7 +132,7 @@ If snapshot space usage increases too rapidly, then you might receive one notifi
 {: cli}
 
 You can accomplish this task from the SLCLI by using the following command.
-```python
+```sh
 # slcli file snapshot-list --help
 Usage: slcli file snapshot-list [OPTIONS] VOLUME_ID
 
@@ -144,7 +144,7 @@ Options:
 
 Notifications are sent when you reach three different space thresholds – 75 percent, 90 percent, and 95 percent.
 
-- At **75 percent capacity**, a warning is sent that snapshot space usage exceeded 75 percent. If you heed the warning and manually add space, or delete retained and unnecessary snapshots, or reduce the number of retained snapshots in the schedule, the system is reset and no autodeletion occurs.
+- At **75 percent capacity**, a warning is sent that snapshot space usage exceeded 75 percent. To remediate, you can manually add space, or delete retained unnecessary snapshots. You can reduce the number of retained snapshots in the schedule. If you reduce the snapshot data or increase the space, the warning system is reset, and no autodeletion occurs.
 - At **90 percent capacity**, a second warning is sent when snapshot space usage exceeded 90 percent. Like with reaching 75 percent capacity, if you take the necessary actions to decrease the snapshot data or increase the space, the warning system is reset and no autodeletion occurs.
 - At **95 percent capacity**, a final warning is sent. If no action is taken to bring your space usage under the threshold, automatic deletion starts so that future snapshots can be created. Scheduled snapshots are deleted, starting with the oldest, until usage drops under 95 percent. Snapshots continue to be deleted each time usage exceeds 95 percent until it drops under the threshold. If the space is manually increased or snapshots are manually deleted, the warning is reset, and reissued if the threshold is exceeded again. If no actions are taken, this notification is the only warning that you receive.
 
@@ -156,7 +156,7 @@ By default, snapshot warning notifications are enabled for every customer. Howev
 
 To check whether the notifications are enabled for the storage volume, use the following command.
 
-```python
+```sh
 # slcli file snapshot-get-notification-status
 Usage: slcli file snapshot-get-notification-status [OPTIONS] VOLUME_ID
   Get snapshots space usage threshold warning flag setting for a given volume
@@ -166,7 +166,7 @@ Options:
 ```
 
 To change the status of the notification setting, use the following command.
-```python
+```sh
 # slcli file snapshot-set-notification VOLUME_ID
 Usage: slcli file snapshot-set-notification VOLUME_ID [OPTIONS]
 
@@ -213,7 +213,7 @@ If you're using the replication feature, be sure that the schedule that you're d
 {: cli}
 
 You can accomplish this task by using the following command.
-```python
+```sh
 # slcli file snapshot-disable --help
 Usage: slcli file snapshot-disable [OPTIONS] VOLUME_ID
 
@@ -247,7 +247,7 @@ Manual snapshots that aren't deleted in the portal manually, are automatically d
 
 Snapshots that are no longer needed can be manually removed to free up space for future snapshots. You can delete a snapshot from the SLCLI by using the following command.
 
-```python
+```sh
 # slcli file snapshot-delete --help
 Usage: slcli file snapshot-delete [OPTIONS] SNAPSHOT_ID
 
@@ -298,7 +298,7 @@ For more information about mounting and unmounting storage, see [connecting your
 {: tip}
 
 Then, you can restore the volume with a snapshot from the SLCLI by using the following command.
-```python
+```sh
 # slcli file snapshot-restore --help
 Usage: slcli file snapshot-restore [OPTIONS] VOLUME_ID
 

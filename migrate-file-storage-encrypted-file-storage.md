@@ -20,7 +20,7 @@ Enhanced {{site.data.keyword.filestorage_full}} is now available in most [data c
 All enhanced {{site.data.keyword.filestorage_short}} volumes that are provisioned in these data centers have a different mount point than nonencrypted volumes. To ensure you're using the correct mount point for both storage volumes, you can view the mount point information in the {{site.data.keyword.filestorage_short}} Details page in the UI. You can also access the correct mount point through an API call: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 {: tip}
 
-You don't need to follow this process if your Storage recently received an upgrade to the Storage-as-a-Service package as part of {{site.data.keyword.cloud}}'s ongoing hardware refresh process.
+You don't need to follow this process if your Storage recently received an upgrade to the Storage-as-a-Service package as part of {{site.data.keyword.cloud_notm}}'s ongoing hardware refresh process.
 {: tip}
 
 ## Creating a {{site.data.keyword.filestorage_short}}
@@ -58,7 +58,7 @@ When the host is authorized, connect the volume to your host.
    - [Mounting {{site.data.keyword.filestorage_short}} on Red Hat Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingLinux)
    - [Mounting {{site.data.keyword.filestorage_short}} on Ubuntu](/docs/FileStorage?topic=FileStorage-mountingUbuntu)
 
-    If you need assistance with connecting the two file shares to your host, open a support ticket
+    If you need assistance with connecting the two file shares to your host, open a support case.
     {: tip}
 
 2. Consider the type of data that you have on your original {{site.data.keyword.filestorage_short}} volume and how best to copy it to your new file share.
@@ -68,7 +68,7 @@ When the host is authorized, connect the volume to your host.
    - If you need assistance with these considerations, open a support ticket.
 
 3. Copy your data across. For example, you can use `rsync` to copy over the data.
-   ```zsh
+   ```sh
    [root@server ~]# rsync -Pavzu /path/to/original/file/storage/* /path/to/encrypted/file/storage
    ```
 
