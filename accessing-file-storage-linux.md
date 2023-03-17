@@ -120,7 +120,7 @@ The example is based on RHEL 7. The steps can be adjusted for other Linux&reg; d
    (hostname):/(username) /mnt nfs_version options 0 0
    ```
 
-   Examples:
+   See the following examples.
 
    ```text
    fsf-wdc0403a-fz.service.softlayer.com:/IBM02SEV1414935_66/data01 /mnt nfs nfsvers=3 0 0
