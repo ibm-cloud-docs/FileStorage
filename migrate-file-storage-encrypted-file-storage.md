@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2022-02-07"
+lastupdated: "2022-03-20"
 
 keywords: File Storage, file storage, NFS, upgrade, migrate to new
 
@@ -20,7 +20,7 @@ Enhanced {{site.data.keyword.filestorage_full}} is now available in most [data c
 All enhanced {{site.data.keyword.filestorage_short}} volumes that are provisioned in these data centers have a different mount point than nonencrypted volumes. To ensure you're using the correct mount point for both storage volumes, you can view the mount point information in the {{site.data.keyword.filestorage_short}} Details page in the UI. You can also access the correct mount point through an API call: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 {: tip}
 
-You don't need to follow this process if your Storage recently received an upgrade to the Storage-as-a-Service package as part of {{site.data.keyword.cloud_notm}}'s ongoing hardware refresh process.
+You don't need to follow this process if your Storage received an upgrade to the Storage-as-a-Service package as part of the ongoing hardware refresh process.
 {: tip}
 
 ## Creating a {{site.data.keyword.filestorage_short}}
