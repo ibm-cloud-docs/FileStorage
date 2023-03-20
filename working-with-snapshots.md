@@ -294,9 +294,6 @@ You might need to take your storage volume back to a specific point in time beca
 
 You might need to take your storage volume back to a specific point in time because of user-error or data corruption. First, unmount your volume.
 
-For more information about mounting and unmounting storage, see [connecting your new storage](/docs/FileStorage?topic=FileStorage-mountingLinux).
-{: tip}
-
 Then, you can restore the volume with a snapshot from the SLCLI by using the following command.
 ```sh
 # slcli file snapshot-restore --help
