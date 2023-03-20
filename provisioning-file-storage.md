@@ -52,7 +52,7 @@ You can provision {{site.data.keyword.filestorage_short}} and fine-tune to meet 
    Discounts are applied when the order is processed.
    {: note}
 
-8. After you reviewed the terms and conditions, check the I** have read and agree to the...** box.
+8. Review your order, and read the service agreement. If you agree with the terms, check the box.
 9. Click **Create**. Your new storage allocation is available in a few minutes.
 
 By default, you can provision a combined total of 700 {{site.data.keyword.filestorage_short}} volumes. To increase the number of your volumes, contact your sales representative. Read about increasing limits [here](/docs/FileStorage?topic=FileStorage-managinglimits). For more information about the limit on simultaneous authorizations, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs#authlimit).
