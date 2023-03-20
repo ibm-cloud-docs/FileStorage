@@ -11,7 +11,6 @@ subcollection: FileStorage
 ---
 {{site.data.keyword.attribute-definition-list}}
 
-
 # Replicating Data
 {: #replication}
 
@@ -38,10 +37,8 @@ See Table 1 for the complete list of data center availability and replication ta
 | - DAL05 \n - SJC01 \n - WDC01 | - SJC03 \n - SJC04 \n - WDC04 \n - WDC06 \n - WDC07 \n - DAL09 \n - DAL10 \n - DAL12 \n - DAL13 | - SAO01 \n - SAO04 \n - SAO05 | - TOR01 \n - TOR04 \n - TOR05 \n - MON01 | - AMS03 \n - FRA02 \n - FRA04 \n - FRA05 \n - LON02 \n - LON04 \n - LON05 \n - LON06 \n - PAR01 \n - MIL01 | - TOK02 \n - TOK04 \n - TOK05 \n - OSA21 \n - OSA22 \n - OSA23 \n - SNG01 \n - CHE01 | - SYD01 \n - SYD04 \n - SYD05 \n |
 {: caption="Table 1 - This table shows the complete list of data centers with enhanced capabilities in each region. Every region is a separate column. Some cities, such as Dallas, San Jose, Washington DC, Amsterdam, Frankfurt, London, and Sydney have multiple data centers." caption-side="top"}
 
- Data centers in US 1 can replicate with only each other. Data centers in US 2 region cannot start replication with US 1 data centers.
- {: note}
-
- 
+Data centers in US 1 can replicate with only each other. Data centers in US 2 region cannot start replication with US 1 data centers.
+{: note}
 
 ## Determining the remote data center for the replicated storage volume from the SLCLI
 {: #determinereplicationlocCLI}
@@ -51,7 +48,7 @@ See Table 1 for the complete list of data center availability and replication ta
 
 To list suitable replication data centers for a specific volume, use the following command.
 
- ```python
+ ```sh
   # slcli file replica-locations --help
   Usage: slcli file replica-locations [OPTIONS] VOLUME_ID
 
@@ -90,7 +87,7 @@ Replications work based on a snapshot schedule. You must first have snapshot spa
 
 Replications work based on a snapshot schedule. You must first have snapshot space and a snapshot schedule for the source volume before you can replicate. Then, you can use the following command to order a replica volume.
 
-```python
+```sh
 # slcli file replica-order --help
 Usage: slcli file replica-order [OPTIONS] VOLUME_ID
 
@@ -118,7 +115,7 @@ You can view your replication volumes on the {{site.data.keyword.filestorage_sho
 {: cli}
 
 List existing replicant volumes for a file volume with the following command.
-```python
+```sh
   # slcli file replica-partners --help
   Usage: slcli file replica-partners [OPTIONS] VOLUME_ID
 
@@ -165,6 +162,11 @@ You can cancel replication either immediately or on the anniversary date, which 
 {: ui}
 
 When a primary volume is deleted, the replication schedule and the volume in the replica data center are deleted, too.
+
+You can expect the volume to remain visible in your Storage list for at least 24 hours (immediate cancellation) or until the anniversary date. Certain features aren't going to be available any longer, but the volume remains visible until it is reclaimed. However, billing is stopped immediately after you click Delete/Cancel Replica.
+
+Active replicas can block reclamation of the Storage volume. Make sure that the volume is no longer mounted, host authorizations are revoked, and replication is canceled before you attempt to cancel the original volume.
+{: important}
 
 ## Creating a duplicate of a replica
 {: #cloneareplica}
