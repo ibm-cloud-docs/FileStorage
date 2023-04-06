@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-03-20"
+lastupdated: "2023-04-06"
 
 keywords: File Storage, file storage, NFS, replication, duplication, synchronous, replica schedule, replica space, disaster recovery
 
@@ -40,6 +40,9 @@ See Table 1 for the complete list of data center availability and replication ta
 Data centers in US 1 can replicate with only each other. Data centers in US 2 region cannot start replication with US 1 data centers.
 {: note}
 
+As part of the data center modernization strategy for {{site.data.keyword.cloud}}, several data centers and PODs are scheduled to consolidate in 2023. For more information, see [Data center consolidations](/docs/get-support?topic=get-support-dc-closure){: external}.
+{: note}
+
 ## Determining the remote data center for the replicated storage volume from the SLCLI
 {: #determinereplicationlocCLI}
 {: cli}
@@ -57,6 +60,10 @@ To list suitable replication data centers for a specific volume, use the followi
   --columns TEXT  Columns to display. Options: ID, Long Name, Short Name
   -h, --help      Show this message and exit.
  ```
+ {: codeblock}
+
+ As part of the data center modernization strategy for {{site.data.keyword.cloud}}, several data centers and PODs are scheduled to consolidate in 2023. For more information, see [Data center consolidations](/docs/get-support?topic=get-support-dc-closure){: external}.
+{: note}
 
 ## Creating the initial replica in the UI
 {: #createrepUI}
