@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2022-03-20"
+lastupdated: "2023-04-12"
 
 keywords: File Storage, file storage, NFS, upgrade, migrate to new
 
@@ -14,7 +14,7 @@ subcollection: FileStorage
 # Migrating {{site.data.keyword.filestorage_short}} to enhanced {{site.data.keyword.filestorage_short}}
 {: #migratestorage}
 
-Enhanced {{site.data.keyword.filestorage_full}} is now available in most [data centers](/docs/FileStorage?topic=FileStorage-selectDC). The preferred migration path is to provision an enhanced {{site.data.keyword.filestorage_short}} volume, then connect to both volumes simultaneously and transfer data directly from one volume to another. The specifics depend on your operating system and whether the data is expected to change during the copy operation.
+Enhanced {{site.data.keyword.filestorage_full}} is now available in all [data centers](/docs/FileStorage?topic=FileStorage-selectDC). The preferred migration path is to provision an enhanced {{site.data.keyword.filestorage_short}} volume, then connect to both volumes simultaneously and transfer data directly from one volume to another. The specifics depend on your operating system and whether the data is expected to change during the copy operation.
 {: shortdesc}
 
 All enhanced {{site.data.keyword.filestorage_short}} volumes that are provisioned in these data centers have a different mount point than nonencrypted volumes. To ensure you're using the correct mount point for both storage volumes, you can view the mount point information in the {{site.data.keyword.filestorage_short}} Details page in the UI. You can also access the correct mount point through an API call: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
