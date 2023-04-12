@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-01-18"
+lastupdated: "2023-04-12"
 
 keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
@@ -36,13 +36,6 @@ Look at your list of {{site.data.keyword.filestorage_short}} in the customer por
 In the {{site.data.keyword.filestorage_short}} order form, all upgraded data centers are denoted with an asterisk (`*`). During the ordering process, you're given an indication that you're provisioning storage with encryption. When the storage is provisioned, you can see an icon in the storage list that shows that volume as encrypted.
 
 All encrypted volumes and file shares are provisioned in upgraded data centers only. You can find a full list of upgraded data centers and available features [here](/docs/FileStorage?topic=FileStorage-selectDC).
-
-## Why can {{site.data.keyword.filestorage_short}} with an Endurance 10 IOPS tier be provisioned in some data centers and not in others?
-{: faq}
-{: #orderendurance}
-{: support}
-
-The {{site.data.keyword.filestorage_short}} Endurance type 10 IOPS/GB tier is available in most data centers, and new data centers are going to be added soon. You can find a full list of upgraded data centers and available features [here](/docs/FileStorage?topic=FileStorage-selectDC).
 
 ## How can I find the correct mount point for my {{site.data.keyword.filestorage_short}}?
 {: #mountpoint}

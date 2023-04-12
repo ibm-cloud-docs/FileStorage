@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2021
-lastupdated: "2021-04-30"
+  years: 2014, 2023
+lastupdated: "2023-04-12"
 
 keywords: File Storage, adjusting IOPS, increase IOPS, decrease IOPS, modify IOPS
 
@@ -27,8 +27,6 @@ Billing for the storage is updated to add the pro-rated difference of the new pr
 
 ## Limitations
 {: #limitsofadjustIOPS}
-
-This feature is available in [most data centers](/docs/FileStorage?topic=FileStorage-selectDC).
 
 Clients can’t switch between Endurance and Performance when they adjust their IOPS. Users can specify a new IOPS tier or IOPS level for their storage based on the following criteria and restrictions.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-01-11"
+lastupdated: "2023-04-12"
 
 keywords: File Storage, modify volume, NFS, file storage, expand capacity
 
@@ -18,8 +18,6 @@ With this feature, current users of {{site.data.keyword.filestorage_full}} are a
 {: shortdesc}
 
 Billing for the volume is automatically updated to add the pro-rated difference of the new price to the current billing cycle. Then, the full new amount is billed in the next billing cycle.
-
-This feature is available in [most data centers](/docs/FileStorage?topic=FileStorage-selectDC).
 
 The upgrade process is not instantaneous. You can expect to see the updated size in the UI or through the API in a short while after you put in the modification request. Resizing does not cause any outage or loss of access to the storage, so you can continue your operations as normal while you wait.
 
