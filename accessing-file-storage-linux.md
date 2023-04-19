@@ -95,7 +95,7 @@ For more information about the arguments and attributes, see [ibm_storage_file](
 ## Mounting the {{site.data.keyword.filestorage_short}} share
 {: #mountRHEL}
 
-The example is based on RHEL 7. The steps can be adjusted for other Linux&reg; distributions according to the operating system's (OS) vendor documentation.
+The example is based on RHEL 7. The steps can be adjusted for other Linux&reg; distributions according to the operating system's (OS) vendor Documentation.
 {: tip}
 
 1. Install the required tools.
