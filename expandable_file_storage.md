@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-04-12"
+lastupdated: "2023-04-19"
 
 keywords: File Storage, modify volume, NFS, file storage, expand capacity
 
@@ -177,6 +177,41 @@ For more information about the SLAPI, see the [SLDN](http://sldn.softlayer.com/r
 
 Unmount, then mount the modified volume, so the OS can recognize the extra storage space.
 {: tip}
+
+
+## Resizing storage with Terraform
+{: #resizingstepsTerraform}
+{: terraform}
+
+You can increase your storage capacity by using the `ibm_storage_file` resource, and specifying a different number in the capacity argument. The following example increases the capacity of an Endurance volume to 40 GB.
+
+```terraform
+resource "ibm_storage_file" "fs_endurance" {
+  type       = "Endurance"
+  datacenter = "dal09"
+  capacity   = 40
+  iops       = 0.25
+}
+```
+{: codeblock}
+
+The following example increases the capacity of a Performance volume to 40 GB.
+
+```terraform
+resource "ibm_storage_file" "fs_performance" {
+  type       = "Performance"
+  datacenter = "dal09"
+  capacity   = 40
+  iops       = 100
+}
+```
+{: codeblock}
+
+For more information about the arguments and attributes, see [ibm_storage_file](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/storage_file){: external}.
+
+Unmount, then mount the modified volume, so the OS can recognize the extra storage space.
+{: tip}
+
 
 ## Expanding Storage over 12 TB
 {: #increasecapacityover12TB}

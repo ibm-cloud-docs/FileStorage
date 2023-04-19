@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-04-12"
+lastupdated: "2023-04-19"
 
 keywords: File Storage, adjusting IOPS, increase IOPS, decrease IOPS, modify IOPS
 
@@ -171,3 +171,34 @@ For more information about the SLAPI, see the [SLDN](http://sldn.softlayer.com/r
    </SOAP-ENV:Envelope>
    ```
    {: codeblock}
+
+## Adjusting the IOPS on your Storage with Terraform
+{: #adjustingstepsTerraform}
+{: terraform}
+
+You can adjust the IOPS by using the `ibm_storage_file` resource, and specifying a different number in the iops argument. The following example increases the performance tier of an Endurance share to the 4 IOPS/GB tier.
+
+```terraform
+resource "ibm_storage_file" "fs_endurance" {
+  type       = "Endurance"
+  datacenter = "dal09"
+  capacity   = 20
+  iops       = 4
+}
+```
+{: codeblock}
+
+The following example decreases the performance level of a Performance share to 50 IOPS.
+
+```terraform
+resource "ibm_storage_file" "fs_performance" {
+  type       = "Performance"
+  datacenter = "dal09"
+  capacity   = 20
+  iops       = 50
+}
+```
+{: codeblock}
+
+For more information about the arguments and attributes, see [ibm_storage_file](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/storage_file){: external}.
+

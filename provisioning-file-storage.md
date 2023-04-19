@@ -145,6 +145,73 @@ For more information about ordering {{site.data.keyword.filestorage_short}} thro
 By default, you can provision a combined total of 700 {{site.data.keyword.filestorage_short}} volumes. To increase the number of your volumes, contact your sales representative. Read about increasing limits [here](/docs/FileStorage?topic=FileStorage-managinglimits). For more information about the limit on simultaneous authorizations, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs#authlimit).
 {: important}
 
+## Ordering {{site.data.keyword.filestorage_short}} with Terraform
+{: #orderingthroughTerraform}
+{: terraform}
+
+To use Terraform, download the Terraform CLI and configure the {{site.data.keyword.cloud_notm}} Provider plug-in. For more information, see [Getting started with Terraform](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-getting-started).
+{: requirement}
+
+### Provision Endurance {{site.data.keyword.filestorage_short}} with Terraform
+{: #order-endurance-terraform}
+
+You can use the following example to create a 20 GB block storage volume with 10 GB snapshot capacity and 0.25 IOPS/GB performance tier in the DAL09 data center. The example also defines weekly snapshots to be created at 1:02 PM every Sunday.
+
+```terraform
+resource "ibm_storage_file" "fs_endurance" {
+  type       = "Endurance"
+  datacenter = "dal09"
+  capacity   = 20
+  iops       = 0.25
+
+  # Optional fields
+  allowed_virtual_guest_ids = ["28961689"]
+  allowed_subnets           = ["10.146.139.64/26"]
+  allowed_ip_addresses      = ["10.146.139.84"]
+  snapshot_capacity         = 10
+  hourly_billing            = true
+
+  # Optional fields for snapshot
+  snapshot_schedule {
+    schedule_type   = "WEEKLY"
+    retention_count = 20
+    minute          = 2
+    hour            = 13
+    day_of_week     = "SUNDAY"
+    enable          = true
+  }
+}
+```
+{: codeblock}
+
+For more information about the arguments and attributes, see [ibm_storage_block](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/storage_block){: external}.
+
+### Provision Performance {{site.data.keyword.filestorage_short}} with Terraform
+{: #order-performance-terraform}
+
+You can use the following example to create a 20 GB block storage volume with custom 100 IOPS performance level.
+
+```terraform
+resource "ibm_storage_file" "fs_performance" {
+  type       = "Performance"
+  datacenter = "dal09"
+  capacity   = 20
+  iops       = 100
+
+  # Optional fields
+  allowed_virtual_guest_ids = ["28961689"]
+  allowed_subnets           = ["10.146.139.64/26"]
+  allowed_ip_addresses      = ["10.146.139.84"]
+  hourly_billing            = true
+}
+```
+{: codeblock}
+
+For more information about the arguments and attributes, see [ibm_storage_file](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/storage_file){: external}.
+
+By default, you can provision a combined total of 700 {{site.data.keyword.filestorage_short}} volumes. To increase the number of your volumes, contact your sales representative. Read about increasing limits [here](/docs/FileStorage?topic=FileStorage-managinglimits). For more information about the limit on simultaneous authorizations, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs#authlimit).
+{: important}
+
 ## Connecting your new storage
 {: #mountingvolumesPortal}
 

@@ -91,7 +91,7 @@ When {{site.data.keyword.filestorage_short}} is used in a VMware&reg; deployment
 {: #submitFileStorOrder}
 {: step}
 
-When you're ready to submit your order, you can place it through the [Console](/docs/FileStorage?topic=FileStorage-orderingFileStorage#orderingFileStorageUI), the [SLCLI](/docs/FileStorage?topic=FileStorage-orderingFileStorage#orderingthroughCLI), or the [IBMCLOUD CLI](/docs/cli?topic=cli-sl-file-storage-service#sl_file_volume_order). For more information about provisioning File Storage for VMware&reg; deployments, see the [architecture guide](/docs/FileStorage?topic=FileStorage-architectureguide).
+When you're ready to submit your order, you can place it in the [Console](/docs/FileStorage?topic=FileStorage-orderingFileStorage#orderingFileStorageUI), from the [SLCLI](/docs/FileStorage?topic=FileStorage-orderingFileStorage#orderingthroughCLI), the [IBMCLOUD CLI](/docs/cli?topic=cli-sl-file-storage-service#sl_file_volume_order) or with Terraform (/docs/FileStorage?topic=FileStorage-orderingFileStorage#orderingthroughTerraform). For more information about provisioning File Storage for VMware&reg; deployments, see the [architecture guide](/docs/FileStorage?topic=FileStorage-architectureguide).
 
 ## Connecting and configuring your new storage
 {: #mountingstorage}
@@ -109,4 +109,4 @@ When your provisioning request is complete, authorize your hosts to access the n
 {: #manFileStor}
 {: step}
 
-Through the console or the CLI, you can manage various aspects of your {{site.data.keyword.filestorage_short}} such as host authorizations and cancellations. For more information, see [Managing {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-managingstorage).
+In the console, from the CLI, with the API or Terraform, you can manage various aspects of your {{site.data.keyword.filestorage_short}} such as host authorizations and cancellations. For more information, see [Managing {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-managingstorage).

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-02-15"
+lastupdated: "2023-04-19"
 
 keywords: File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
@@ -111,13 +111,16 @@ Invalid data, whether corrupted, hacked, or infected replicate according to the 
 {: note}
 
 
-## Ordering {{site.data.keyword.filestorage_short}} and authorizing hosts
-{: #orderauthvmwareui}
-{: ui}
+## Ordering {{site.data.keyword.filestorage_short}}
+{: #orderauthvmware}
 
 Follow the instructions the [Advanced Single-Site VMware&reg; Reference Architecture](/docs/virtualization?topic=virtualization-advanced-single-site-vmware-reference-architecture){: external} to configure your VMware environment.
 
-{{site.data.keyword.filestorage_short}} can be ordered through [The {{site.data.keyword.cloud}} catalog](/catalog){: external} or the [CLI](/docs/cli?topic=cli-sl-file-storage-service#sl_file_volume_order). For more information, see [Ordering {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-orderingFileStorage).
+{{site.data.keyword.filestorage_short}} can be ordered through [The {{site.data.keyword.cloud}} catalog](/catalog){: external}, from the [CLI](/docs/cli?topic=cli-sl-file-storage-service#sl_file_volume_order), with the API or Terraform. For more information, see [Ordering {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-orderingFileStorage).
+
+## Authorizing hosts in the UI
+{: #orderauthvmwareui}
+{: ui}
 
 Storage is provisioned in less than a minute and becomes visible on the **{{site.data.keyword.filestorage_short}}** page of the [{{site.data.keyword.cloud}} console](/classic/storage/file){: external}. The {{site.data.keyword.BluBareMetServers_full}} or {{site.data.keyword.BluVirtServers_full}} that are going to use the volume must be authorized to access the storage. Use the following steps to authorize the host.
 
@@ -131,13 +134,9 @@ Storage is provisioned in less than a minute and becomes visible on the **{{site
 
 After the subnets are authorized, make note of the hostname of the storage server. The hostname can be found on the {{site.data.keyword.filestorage_short}} detail page of the volume.
 
-## Ordering {{site.data.keyword.filestorage_short}} and authorizing hosts from the SLCLI
+## Authorizing hosts from the SLCLI
 {: #orderauthvmwareCLI}
 {: cli}
-
-Follow the instructions the [Advanced Single-Site VMware&reg; Reference Architecture](/docs/virtualization?topic=virtualization-advanced-single-site-vmware-reference-architecture){: external} to configure your VMware environment.
-
-{{site.data.keyword.filestorage_short}} can be ordered through [The {{site.data.keyword.cloud}} catalog](/catalog){: external} or the [CLI](/docs/cli?topic=cli-sl-file-storage-service#sl_file_volume_order). For more information, see [Ordering {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-orderingFileStorage).
 
 Storage is provisioned in less than a minute. Next, the {{site.data.keyword.BluBareMetServers_full}} or {{site.data.keyword.BluVirtServers_full}} that are going to use the volume must be authorized to access the storage. Use the following command to authorize the host.
 
@@ -156,6 +155,33 @@ Options:
 
 After the subnets are authorized, make note of the hostname of the storage server.
 
+## Authorizing hosts with Terraform
+{: #orderauthvmwareCLI}
+{: cli}
+
+To authorize a compute host to access the share, use the `ibm_storage_file` resource and specify the `allowed_virtual_guest_ids` for virtual servers, or `allowed_hardware_ids` for bare metal servers. Specify `allowed_ip_addresses` to define which IP addresses have access to the storage. 
+
+The following example defines that the Virtual Server with the ID `28961689` can access the volume from the `10.146.139.64/26` subnet, and `10.146.139.84` address.
+
+```terraform
+resource "ibm_storage_file" "fs_endurance" {
+  type       = "Endurance"
+  datacenter = "dal09"
+  capacity   = 20
+  iops       = 0.25
+
+  allowed_virtual_guest_ids = ["28961689"]
+  allowed_subnets           = ["10.146.139.64/26"]
+  allowed_ip_addresses      = ["10.146.139.84"]
+  snapshot_capacity         = 10
+  hourly_billing            = true
+}
+```
+{: codeblock}
+
+After your storage resource is created, you can access the `hostname` and `volumename` attributes, which you can use to determine the mount target later. For example, a file storage resource with the `hostname` argument set to `nfsdal0901a.service.softlayer.com` and the `volumename` argument set to `IBM01SV278685_7` has the mount point `nfsdal0901a.service.softlayer.com:-IBM01SV278685_7`.
+
+For more information about the arguments and attributes, see [ibm_storage_file](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/storage_file){: external}.
 
 ##  Configuring the VMware virtual machine host
 {: #configurevmwarehost}
@@ -165,7 +191,6 @@ Before you begin the configuration process, make sure that the following prerequ
 - {{site.data.keyword.BluBareMetServers}} with VMware&reg; ESXi are provisioned with proper storage configuration and ESXi login credentials.
 - {{site.data.keyword.cloud}} Windows physical or {{site.data.keyword.virtualmachinesshort}} in the same data center as the {{site.data.keyword.BluBareMetServers}}. Including Public IP address of the {{site.data.keyword.cloud}} Windows VM and login credentials.
 - A computer with internet access, and with the web browser software and a Remote Desktop Protocol (RDP) client installed.
-
 
 ### 1. Configuring the VMware Host.
 {: #configurevmwarehost1}
@@ -245,7 +270,6 @@ The network configuration for this architecture guide uses a minimal number of p
 Make note of the IP address as it can be used for mounting the volume in the next step. This process needs to be done for each NFS volume you plan to mount to your ESXi host. For more information, see the VMware&reg; KB article, [Configuring static routes for VMkernel ports on an ESXi host](https://kb.vmware.com/s/article/2001426){: external}.
 {: tip}
 
-
 ##  Creating the datastore
 {: #mountNFSonESXI}
 
@@ -280,7 +304,6 @@ PING nfsdal0902a-fz.service.softlayer.com (10.2.125.80): 56 data bytes
 64 bytes from 10.2.125.80: icmp_seq=0 ttl=253 time=0.187 ms
 ```
 
-
 ## Enabling ESXi Storage I/O Control (Optional)
 {: #enableSIOC}
 
@@ -290,7 +313,6 @@ In order for SIOC to determine when a storage device is congested or constrained
 
 Incorrectly configuring SIOC for a VMware&reg; datastore or for a VMDK can significantly impact performance.
 {: important}
-
 
 ### Configuring Storage I/O Control for a VMware datastore
 {: #configureSIOCStorage}
@@ -306,7 +328,6 @@ Incorrectly configuring SIOC for a VMware&reg; datastore or for a VMDK can signi
 This setting is specific to the VMware&reg; datastore and not to the host.
 {: note}
 
-
 ### Configuring Storage I/O Control for {{site.data.keyword.BluVirtServers_short}}
 {: #configureSIOCStoragehost}
 
@@ -321,10 +342,8 @@ Use the following steps to change the VDisk shares and limit.
 5. Click the **Limit - IOPS** column and enter the maximum storage resources to allocate to the virtual machine.
 6. Click **OK**.
 
-
 This process is used to set the resource consumption limits of individual vDisks in a {{site.data.keyword.BluVirtServers_short}} even when SIOC is not enabled. These settings are specific to the individual guest, and not the host, although they are used by SIOC.
 {: important}
-
 
 ## Configuring ESXi host side settings
 {: #configureESXihost}
