@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-04-12"
+lastupdated: "2023-04-20"
 
 keywords: File Storage, file storage, NFS, snapshot, ordering snapshot, snapshot space
 
@@ -80,3 +80,31 @@ Options:
 
 For more information about the same function in the IBM Cloud CLI, see [ibmcloud sl file snapshot-order](https://cloud.ibm.com/docs/cli?topic=cli-sl-file-storage-service#sl_file_snapshot_order){: external}.
 {: tip}
+
+
+## Ordering Snapshot space with Terraform
+{: #ordersnapshotTerraform}
+{: terraform}
+
+When you provision a storage volume with Terraform, use the `ibm_storage_file` resource and specify the `snapshot_capacity` argument. The following example defines 10 GB snapshot space.
+
+```terraform
+resource "ibm_storage_file" "fs_endurance" {
+  type       = "Endurance"
+  datacenter = "dal09"
+  capacity   = 20
+  iops       = 0.25
+
+  # Optional fields
+  allowed_virtual_guest_ids = ["28961689"]
+  allowed_subnets           = ["10.146.139.64/26"]
+  allowed_ip_addresses      = ["10.146.139.84"]
+  snapshot_capacity         = 10
+  hourly_billing            = true
+}
+```
+{: codeblock}
+
+If you want to increase the snapshot space, update the `snapshot_capacity` arguement with a larger number and apply the changes.
+
+For more information about the arguments and attributes, see [ibm_storage_file](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/storage_file){: external}.
