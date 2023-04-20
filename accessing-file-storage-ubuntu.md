@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2021
-lastupdated: "2021-08-31"
+  years: 2014, 2023
+lastupdated: "2023-04-19"
 
 keywords: File Storage, NFS, mounting File Storage, mounting storage on Ubuntu,
 
@@ -31,7 +31,7 @@ First, make sure that the host that is to access the {{site.data.keyword.filesto
 {: #authUbuntuhostUI}
 {: ui}
 
-You can authorize a host to access the {{site.data.keyword.filestorage_short}} volume through the [{{site.data.keyword.cloud}} console](/classic/storage/file){: external}.
+You can authorize a host to access the {{site.data.keyword.filestorage_short}} volume in the [{{site.data.keyword.cloud}} console](/classic/storage/file){: external}.
 
 1. In the console, go to **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic") > **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Scroll to the File share that you want to mount, and click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions"). Then, select **Authorize Host**.
@@ -41,6 +41,8 @@ You can authorize a host to access the {{site.data.keyword.filestorage_short}} v
    {: note}
 
 4. Select one or more hosts from the list and click **Save**.
+
+After the host is authorized, go to the {{site.data.keyword.filestorage_short}} Details page, and take note of the mountpoint information.
 
 ## Authorizing the host from the SLCLI
 {: #authUbuntuhostCLI}
@@ -60,6 +62,34 @@ Options:
   -s, --subnet-id TEXT      An ID of one subnet to authorize.
   --help                    Show this message and exit.
 ```
+
+## Authorizing the host with Terraform
+{: #authhLinuxhostterraform}
+{: terraform}
+
+To authorize a compute host to access the share, use the `ibm_storage_file` resource and specify the `allowed_virtual_guest_ids` for virtual servers, or `allowed_hardware_ids` for bare metal servers. Specify `allowed_ip_addresses` to define which IP addresses have access to the storage. 
+
+The following example defines that the Virtual Server with the ID `28961689` can access the volume from the `10.146.139.64/26` subnet, and `10.146.139.84` address.
+
+```terraform
+resource "ibm_storage_file" "fs_endurance" {
+  type       = "Endurance"
+  datacenter = "dal09"
+  capacity   = 20
+  iops       = 0.25
+
+  allowed_virtual_guest_ids = ["28961689"]
+  allowed_subnets           = ["10.146.139.64/26"]
+  allowed_ip_addresses      = ["10.146.139.84"]
+  snapshot_capacity         = 10
+  hourly_billing            = true
+}
+```
+{: codeblock}
+
+After your storage resource is created, you can access the `hostname` and `volumename` attributes, which you can use to determine the mount target later. For example, a file storage resource with the `hostname` argument set to `nfsdal0901a.service.softlayer.com` and the `volumename` argument set to `IBM01SV278685_7` has the mount point `nfsdal0901a.service.softlayer.com:-IBM01SV278685_7`.
+
+For more information about the arguments and attributes, see [ibm_storage_file](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/storage_file){: external}.
 
 ## Mounting the {{site.data.keyword.filestorage_short}} share
 {: #mountUbuntu}
@@ -85,7 +115,7 @@ Options:
    # mount -t nfs -o nfsvers=3 nfshou0201d-fz.service.softlayer.com:/IBM01SEV1414935_2 /mnt
    ```
 
-   The mount point information can be obtained from the {{site.data.keyword.filestorage_short}} Details page in the UI or through an API call - `SoftLayer_Network_Storage::getNetworkMountAddress()`.
+   The mount point information can be obtained from the {{site.data.keyword.filestorage_short}} Details page in the UI, with an API call - `SoftLayer_Network_Storage::getNetworkMountAddress()`, or by looking at the `ibm_storage_file` resource in Terraform.
    {: tip}
 
 

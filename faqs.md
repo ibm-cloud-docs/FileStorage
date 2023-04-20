@@ -63,7 +63,7 @@ The default limit for number of authorizations per file volume is 64. To increas
 {: #hostlimit}
 {: support}
 
-That depends on what the host operating system can handle, it’s not something that {{site.data.keyword.cloud}} limits. Refer to your OS documentation for limits on the number of file shares that can be mounted.
+That depends on what the host operating system can handle, it’s not something that {{site.data.keyword.cloud}} limits. Refer to your OS Documentation for limits on the number of file shares that can be mounted.
 
 ## How many files and directories are allowed for specific file volume sizes? What is the maximum number of inodes allowed per volume size?
 {: #maxfilevolume}

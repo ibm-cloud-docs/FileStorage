@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-01-18"
+lastupdated: "2023-04-20"
 
 keywords: File Storage, file storage, NFS, provisioning, setup, configuration, mounting storage
 
@@ -76,7 +76,7 @@ To achieve maximum IOPS, adequate network resources need to be in place. Other c
 
 Storage traffic is to be isolated from other traffic types, and not be directed through firewalls and routers. Keeping the storage traffic in a dedicated VLAN also helps preventing MTU mismatch when Jumbo frames are enabled. For more information, see [Enabling Jumbo Frames](/docs/FileStorage?topic=FileStorage-jumboframes).
 
-Storage traffic is included in the total network usage of Public Virtual Servers. For more information about the limits that might be imposed by the service, see the [Virtual Server documentation](/docs/virtual-servers?topic=virtual-servers-about-public-virtual-servers).
+Storage traffic is included in the total network usage of Public Virtual Servers. For more information about the limits that might be imposed by the service, see the [Virtual Server Documentation](/docs/virtual-servers?topic=virtual-servers-about-public-virtual-servers).
 
 ### NFS version
 {: #whichnfs}
@@ -91,7 +91,7 @@ When {{site.data.keyword.filestorage_short}} is used in a VMware&reg; deployment
 {: #submitFileStorOrder}
 {: step}
 
-When you're ready to submit your order, you can place it through the [Console](/docs/FileStorage?topic=FileStorage-orderingFileStorage#orderingFileStorageUI), the [SLCLI](/docs/FileStorage?topic=FileStorage-orderingFileStorage#orderingthroughCLI), or the [IBMCLOUD CLI](/docs/cli?topic=cli-sl-file-storage-service#sl_file_volume_order). For more information about provisioning File Storage for VMware&reg; deployments, see the [architecture guide](/docs/FileStorage?topic=FileStorage-architectureguide).
+When you're ready to submit your order, you can place it in the [Console](/docs/FileStorage?topic=FileStorage-orderingFileStorage#orderingFileStorageUI), from the [SLCLI](/docs/FileStorage?topic=FileStorage-orderingFileStorage#orderingthroughCLI), the [IBMCLOUD CLI](/docs/cli?topic=cli-sl-file-storage-service#sl_file_volume_order) or with [Terraform](/docs/FileStorage?topic=FileStorage-orderingFileStorage#orderingthroughTerraform). For more information about provisioning File Storage for VMware&reg; deployments, see the [architecture guide](/docs/FileStorage?topic=FileStorage-architectureguide).
 
 ## Connecting and configuring your new storage
 {: #mountingstorage}
@@ -109,4 +109,4 @@ When your provisioning request is complete, authorize your hosts to access the n
 {: #manFileStor}
 {: step}
 
-Through the console or the CLI, you can manage various aspects of your {{site.data.keyword.filestorage_short}} such as host authorizations and cancellations. For more information, see [Managing {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-managingstorage).
+In the console, from the CLI, with the API or Terraform, you can manage various aspects of your {{site.data.keyword.filestorage_short}} such as host authorizations and cancellations. For more information, see [Managing {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-managingstorage).

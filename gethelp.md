@@ -17,7 +17,7 @@ subcollection: FileStorage
 If you experience an issue or have questions when you use {{site.data.keyword.filestorage_full}}, you can use the following resources before you open a support case.
 {: shortdesc}
 
-* Review the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs) in the product documentation.
+* Review the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs) in the product Documentation.
 * Check the status of the {{site.data.keyword.cloud}} platform and resources by going to the [Status page](/status){: external}.
 * Review [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud){: external} to see whether other users experienced the same problem. When you ask a question, tag the question with `ibm-cloud` and `file-storage`, so it can be seen by the {{site.data.keyword.cloud_notm}} development teams.
 
