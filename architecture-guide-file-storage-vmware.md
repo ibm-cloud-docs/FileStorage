@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-04-19"
+lastupdated: "2023-04-20"
 
 keywords: File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
@@ -156,8 +156,8 @@ Options:
 After the subnets are authorized, make note of the hostname of the storage server.
 
 ## Authorizing hosts with Terraform
-{: #orderauthvmwareCLI}
-{: cli}
+{: #orderauthvmwareTerraform}
+{: terraform}
 
 To authorize a compute host to access the share, use the `ibm_storage_file` resource and specify the `allowed_virtual_guest_ids` for virtual servers, or `allowed_hardware_ids` for bare metal servers. Specify `allowed_ip_addresses` to define which IP addresses have access to the storage. 
 
