@@ -42,7 +42,7 @@ You can authorize a host to access the {{site.data.keyword.filestorage_short}} v
 
 4. Select one or more hosts from the list and click **Save**.
 
-After the host is authorized, go to the {{site.data.keyword.filestorage_short}} Details page, and take note of the mountpoint information.
+After the host is authorized, go to the {{site.data.keyword.filestorage_short}} Details page, and take note of the mount point information.
 
 ## Authorizing the host from the SLCLI
 {: #authUbuntuhostCLI}
