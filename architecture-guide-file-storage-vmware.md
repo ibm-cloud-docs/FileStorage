@@ -46,7 +46,7 @@ When you order {{site.data.keyword.filestorage_short}}, consider the following i
 - To avoid storage disconnection during path-failover {{site.data.keyword.IBM}} recommends installing VMware&reg; tools, which set an appropriate timeout value. Don't change the value because the default setting is sufficient to ensure that your VMware&reg; host doesn't lose connectivity.
 - Both NFSv3 and NFSv4.1 are supported in the {{site.data.keyword.cloud}} environment. However, the use NFSv3 is preferred. Because NFSv4.1 is a stateful protocol (not stateless like NFSv3), protocol issues can occur during network events. NFSv4.1 must quiesce all operations and then complete lock reclamation. While these operations are taking place, disruptions can occur.
 
-For more information, see VMware&reg;'s white paper on [Best practices for running
+For more information, see the VMware&reg; white paper on [Best practices for running
 VMware&reg; vSphere on network-attached storage](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/vmware-nfs-bestpractices-white-paper-en.pdf){: external}.
 {: tip}
 
