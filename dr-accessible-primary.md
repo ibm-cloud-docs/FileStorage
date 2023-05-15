@@ -26,7 +26,7 @@ Authorized hosts and volumes must be in the same data center. For example, you c
 {: #authreplicahostUI}
 {: ui}
 
-You can authorize a host to access the {{site.data.keyword.filestorage_full}} volume through the [{{site.data.keyword.cloud}} console](https://{DomainName}/cloud-storage/file){: external}.
+You can authorize a host to access the {{site.data.keyword.filestorage_full}} volume through the [{{site.data.keyword.cloud}} console](/cloud-storage/file){: external}.
 
 1. Log in to the [{{site.data.keyword.cloud}} console](/login){: external} and click the **menu** icon on the upper left. Select **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic").
 2. Locate the source or destination volume in the **{{site.data.keyword.filestorage_short}}** list. Its replica volume is listed under the source volume in the inactive status.
@@ -68,7 +68,7 @@ A Controlled Failover is the best choice when you want to test the failover func
 
 When a failover is started, the replication relationship is flipped. Your target volume becomes your source volume, and your former source volume becomes your target as indicated by the **Volume Name** followed by **REP**.
 
-Failovers are started under **Storage**, **{{site.data.keyword.filestorage_short}}** in the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic/storage/file){: external}.
+Failovers are started under **Storage**, **{{site.data.keyword.filestorage_short}}** in the [{{site.data.keyword.cloud}} console](/cloud-storage/file){: external}.
 
 Before you proceed with these steps, disconnect the volume. Failure to do so, results in corruption and data loss.
 {: important}
@@ -120,7 +120,7 @@ When a Failback is started, the replication relationship is flipped again. Your 
 {: #failbackfromreplicaUI}
 {: ui}
 
-Failbacks are started under **Storage**, **{{site.data.keyword.filestorage_short}}** in the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic/storage/file){: external}.
+Failbacks are started under **Storage**, **{{site.data.keyword.filestorage_short}}** in the [{{site.data.keyword.cloud}} console](/cloud-storage/file){: external}.
 
 1. Click your active volume ("target").
 2. In the upper right, click **Replica** and click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions").

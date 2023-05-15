@@ -14,7 +14,7 @@ subcollection: FileStorage
 # SLCLI commands for {{site.data.keyword.filestorage_short}}
 {: #SLCLIcommands}
 
-You can use the SLCLI to accomplish tasks that are normally handled through the [{{site.data.keyword.cloud}} console](/classic/storage/file){: external}. For example, from the SLCLI you can place orders for new volumes, snapshot space and replication, update authorizations, and cancel volumes.
+You can use the SLCLI to accomplish tasks that are normally handled through the [{{site.data.keyword.cloud}} console](/cloud-storage/file){: external}. For example, from the SLCLI you can place orders for new volumes, snapshot space and replication, update authorizations, and cancel volumes.
 {: shortdesc}
 
 For more information about how to install and use the SLCLI, see [Python API Client](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}.

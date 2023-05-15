@@ -91,7 +91,7 @@ Options:
 {: #DRFailbackUI}
 {: ui}
 
-After a disaster event, {{site.data.keyword.cloud}} begins remediation work to return the impacted locations to normal operations. When the site is restored, you can initiate a Failback to the original site by clicking **Storage**, **{{site.data.keyword.filestorage_short}}** in the [{{site.data.keyword.cloud}} console](https://{DomainName}/classic/storage/file){: external}.
+After a disaster event, {{site.data.keyword.cloud}} begins remediation work to return the impacted locations to normal operations. When the site is restored, you can initiate a Failback to the original site by clicking **Storage**, **{{site.data.keyword.filestorage_short}}** in the [{{site.data.keyword.cloud}} console](/cloud-storage/file){: external}.
 
 1. Click your active volume ("target").
 2. In the upper right, click **Replica** and click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions").
