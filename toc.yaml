@@ -8,7 +8,7 @@ toc:
     category: storage_classic
     audience: service
     href: /docs/FileStorage?topic=FileStorage-getting-started
-    console-page: /classic/storage/file
+    console-page: /cloud-storage/file
     product-page: https://www.ibm.com/cloud/file-storage
     path: FileStorage
     label: File Storage - Classic
