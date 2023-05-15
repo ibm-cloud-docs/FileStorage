@@ -122,7 +122,7 @@ Follow the instructions the [Advanced Single-Site VMware&reg; Reference Architec
 {: #orderauthvmwareui}
 {: ui}
 
-Storage is provisioned in less than a minute and becomes visible on the **{{site.data.keyword.filestorage_short}}** page of the [{{site.data.keyword.cloud}} console](/classic/storage/file){: external}. The {{site.data.keyword.BluBareMetServers_full}} or {{site.data.keyword.BluVirtServers_full}} that are going to use the volume must be authorized to access the storage. Use the following steps to authorize the host.
+Storage is provisioned in less than a minute and becomes visible on the **{{site.data.keyword.filestorage_short}}** page of the [{{site.data.keyword.cloud}} console](/cloud-storage/file){: external}. The {{site.data.keyword.BluBareMetServers_full}} or {{site.data.keyword.BluVirtServers_full}} that are going to use the volume must be authorized to access the storage. Use the following steps to authorize the host.
 
 1. In the console, go to **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic") > **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Scroll to the File share that you want to mount, and click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions"). Then, select **Authorize Host**.
