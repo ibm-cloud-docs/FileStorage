@@ -378,7 +378,7 @@ For more information about duplicates, see [Creating and managing duplicate volu
 
 The conversion process can take some time to complete. The bigger the volume, the longer it takes to convert it. In a 12-TB volume, it might take 24 hours. You can check on the progress in the UI or from the CLI.
 
-- In the UI, go to [Classic Infrastructure](/classic/devices){: external}. Click **Storage** > **{{site.data.keyword.filestorage_short}}**, then locate the volume in the list. The conversion status is displayed on the Overview page.
+- In the UI, go to [Classic Infrastructure](/gen1/infrastructure/devices){: external}. Click **Storage** > **{{site.data.keyword.filestorage_short}}**, then locate the volume in the list. The conversion status is displayed on the Overview page.
 
 - From the CLI, use the following command.
 
