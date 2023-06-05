@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2021-06-10"
+lastupdated: "2023-06-05"
 
 keywords: File Storage, file storage, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
@@ -14,13 +14,13 @@ subcollection: FileStorage
 # Disaster Recovery - Fail over with an accessible primary volume
 {: #dr-accessible}
 
-If a catastrophic failure or disaster occurs on the primary site and the primary storage is still accessible, customers can take the following steps to quickly access their data on the secondary site.
+If a catastrophic event occurs on the primary site and the primary storage is still accessible, customers can take the following steps to quickly access their data on the secondary site.
 
 Before you start the failover, make sure that all host-authorization is in place.
-{: important}
+{: requirement}
 
 Authorized hosts and volumes must be in the same data center. For example, you can't have a replica volume in London and the host in Amsterdam. Both must be in London or both must be in Amsterdam.
-{: note}
+{: important}
 
 ## Authorizing the host in the UI
 {: #authreplicahostUI}
@@ -56,17 +56,18 @@ Options:
   -s, --subnet-id TEXT      An ID of one subnet to authorize.
   --help                    Show this message and exit.
 ```
+{: codeblock}
 
 ## Starting a failover from a volume to its replica
 {: #failovertoreplica}
 
-If a failure event is imminent, you can start an **Immediate failover** or a "Controlled Failover" to your destination, or target, volume.
+If a failure event is imminent, you can start a **Controlled Failover** or an **Immediate failover** your destination, or target, volume.
 
-When you choose an Immediate Failover, the last successfully replicated snapshot is activated, and the volume is made available for mounting. The target volume becomes active in less time compared to a Controlled Failover. However, any data that was written to the source volume since the previous replication cycle is lost.
+A **Controlled Failover** is the best choice when you want to test the failover function. It's also the best choice, when it’s more important to continue operations at the replica location with the most recent data. In a Controlled Failover, a new snapshot is taken and copied over to the replica location. After the data is successfully copied over, the volume is made available for mounting.
 
-A Controlled Failover is the best choice when you want to test the failover function or when it’s more important to continue operations at the replica location with the most recent data. In a Controlled Failover, a new snapshot is taken and copied over to the replica location. After the data is successfully copied over, the volume is made available for mounting.
+When you choose an **Immediate Failover**, the last successfully replicated snapshot is activated, and the volume is made available for mounting. The target volume becomes active in less time compared to a Controlled Failover. However, any data that was written to the source volume since the previous replication cycle is lost.
 
-When a failover is started, the replication relationship is flipped. Your target volume becomes your source volume, and your former source volume becomes your target as indicated by the **Volume Name** followed by **REP**.
+When a failover is started, the replication relationship is flipped. Your original target volume becomes your active source volume, and your former source volume becomes your inactive replication target.
 
 Failovers are started under **Storage**, **{{site.data.keyword.filestorage_short}}** in the [{{site.data.keyword.cloud}} console](/cloud-storage/file){: external}.
 
@@ -79,29 +80,35 @@ Before you proceed with these steps, disconnect the volume. Failure to do so, re
 
 1. Click your active volume (“source”).
 2. Click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions").
-3. Select **Controlled Failover** or **Immediate Failover**.
+3. Select **Failover**. Select **Controlled Failover** or I**mmediate Failover**.
+4. Mark the checkbox to acknowledge pertinent information and click **Yes** to proceed. A window is displayed to confirm that the failover is in progress. Click **Close** to return the File shares list.
+5. In the list, locate your shares. If you have multiple pages, you might need to go to the next page to see the shares.
+6. The status of your source and replica shares is displayed as "Failback in progress". Additionally, an icon appears next to your volume on the **{{site.data.keyword.filestorage_short}}** that indicates that an active transaction is occurring. Hovering over the icon produces a window that shows the transaction details. The icon disappears when the transaction is complete. 
+   
+    During the failover process, configuration-related actions are read-only. You can't edit any snapshot schedule or change snapshot space. The event is logged in replication history. When your target volume is live, you get another message. Your original source volume's Status becomes Inactive.
+    {: note}
 
-   Expect a message that states that the failover is in progress. Additionally, an icon appears next to your volume on the **{{site.data.keyword.filestorage_short}}** that indicates that an active transaction is occurring. Hovering over the icon produces a window that shows the transaction. The icon disappears when the transaction is complete. During the failover process, configuration-related actions are read-only. You can't edit any snapshot schedule or change snapshot space. The event is logged in replication history. When your target volume is live, you get another message. Your original source volume's Status becomes Inactive.
-   {: note}
-
-4. Click **View All ({{site.data.keyword.filestorage_short}})**.
-5. Click your active volume (formerly your target volume). This volume now has an **Active** status.
-6. Mount and attach your storage volume to the host. For more information, see [connecting your new storage](/docs/FileStorage?topic=FileStorage-getting-started#mountingstorage).
+7. Refresh the page in your browser. When the transaction is complete, your replica volume has **Active** status, and your original source volume becomes **Inactive**.
+8. Mount and attach your storage volume to the host. For more information, see [connecting your storage](/docs/FileStorage?topic=FileStorage-getting-started#mountingstorage).
 
 ## Fail over to replica from the SLCLI
 {: #failovertoreplicaCLI}
 {: cli}
 
 To fail over a file volume to a specific replicant volume, use the following command.
- ```python
- # slcli file replica-failover --help
+```python
+# slcli file replica-failover --help
   Usage: slcli file replica-failover [OPTIONS] VOLUME_ID
 
   Options:
-  --replicant-id TEXT  ID of the replicant volume
-  --immediate          Failover to replicant immediately.
-  -h, --help           Show this message and exit.
- ```
+   --replicant-id TEXT  ID of the replicant volume
+   --immediate          Failover to replicant immediately.
+   -h, --help           Show this message and exit.
+```
+{: codeblock}
+
+During the failover process, configuration-related actions are read-only. You can't edit any snapshot schedule or change snapshot space. The event is logged in replication history. When your target volume is live, you get another message. Your original source volume's Status becomes Inactive.
+{: note}
 
 ## Starting a failback from a volume to its replica
 {: #failbackfromreplica}
@@ -114,7 +121,7 @@ When your original source volume is repaired, you can start a controlled Failbac
 - The just-taken data snapshot is activated,
 - And the source volume becomes active for mounting.
 
-When a Failback is started, the replication relationship is flipped again. Your source volume is restored as your source volume, and your target volume is the target volume again as indicated by the **Volume Name** followed by **REP**.
+When a Failback is started, the replication relationship is flipped again. Your original source volume is restored as your active source volume, and your target volume becomes the inactive target volume again.
 
 ## Fail back in the UI
 {: #failbackfromreplicaUI}
@@ -123,26 +130,33 @@ When a Failback is started, the replication relationship is flipped again. Your 
 Failbacks are started under **Storage**, **{{site.data.keyword.filestorage_short}}** in the [{{site.data.keyword.cloud}} console](/cloud-storage/file){: external}.
 
 1. Click your active volume ("target").
-2. In the upper right, click **Replica** and click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions").
-3. Select **Controlled Failback**.
+2. On Share Details page, click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions").
+3. Select **Failback**. 
+4. Mark the checkbox to acknowledge pertinent information and click Yes to proceed.
+5. A window is displayed to confirm that the failover is in progress. Click **Close** to return to the File shares list.
+6. In the list, locate your shares. If you have multiple pages, you might need to go to the next page to see the shares.
+7. The status of your source and replica shares is displayed as "Failback in progress". Additionally, an icon appears next to your volume on the **{{site.data.keyword.filestorage_short}}** that indicates that an active transaction is occurring. Hovering over the icon produces a window that shows the transaction details. The icon disappears when the transaction is complete. 
 
-   Expect a message that shows the failover is in progress. Additionally, an icon appears next to your volume on the **{{site.data.keyword.filestorage_short}}** that indicates that an active transaction is occurring. Hovering over the icon produces a window that shows the transaction. The icon disappears when the transaction is complete. During the Failback process, configuration-related actions are read-only. You can't edit any snapshot schedule or change snapshot space. The event is logged in replication history.
-   {: note}
+    During the Failback process, configuration-related actions are read-only. You can't edit any snapshot schedule or change snapshot space. The event is logged in replication history.
+    {: note}
 
-4. In the upper right, click **View All {{site.data.keyword.filestorage_short}}**.
-5. Click your active volume ("source"). This volume now has an **Inactive** status.
-6. Mount and attach your storage volume to the host. For more information, see [connecting your new storage](/docs/FileStorage?topic=FileStorage-getting-started#mountingstorage).
+8. Refresh the page in your browser. When the transaction is complete, the original source share is shown as **Active**, and the replica share has an **Inactive** status.
+9. Mount and attach your storage volume to the host. For more information, see [connecting your new storage](/docs/FileStorage?topic=FileStorage-getting-started#mountingstorage).
 
 ## Fail back from the SLCLI
 {: #failbackfromreplicaCLI}
 {: cli}
 
 To fail back a file volume from a specific replicant volume.
- ```python
-  # slcli file replica-failback --help
-  Usage: slcli file replica-failback [OPTIONS] VOLUME_ID
+```python
+# slcli file replica-failback --help
+   Usage: slcli file replica-failback [OPTIONS] VOLUME_ID
 
-  Options:
-  --replicant-id TEXT  ID of the replicant volume
-  -h, --help           Show this message and exit.
- ```
+   Options:
+    --replicant-id TEXT  ID of the replicant volume
+    -h, --help           Show this message and exit.
+```
+{: codeblock}
+
+During the Failback process, configuration-related actions are read-only. You can't edit any snapshot schedule or change snapshot space. The event is logged in replication history.
+{: note}
