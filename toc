@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="FileStorage" category="storage_classic" audience="service" href="/docs/FileStorage?topic=FileStorage-getting-started" product-page="https://ibm.com/cloud/file-storage" console-page="/cloud-storage/file" path="FileStorage"}
+{: .toc subcollection="FileStorage" category="storage_classic" audience="service" href="/docs/FileStorage?topic=FileStorage-getting-started" product-page="https://www.ibm.com/products/file-storage" console-page="/cloud-storage/file" path="FileStorage"}
 File Storage - Classic
 
     {: .navgroup id="learn"}

@@ -275,7 +275,7 @@ Complete the following steps to disconnect a volume from a host.
 {: faq}
 {: #tier-options}
 
-Endurance and Performance are provisioning options that you can select for storage devices. In short, Endurance IOPS tiers offer predefined performance levels whereas you can fine-tune those levels with the Performance tier. The same devices are used but delivered with different options. For more information, see [File Storage Features](https://www.ibm.com/cloud/file-storage/details){: external}.
+Endurance and Performance are provisioning options that you can select for storage devices. In short, Endurance IOPS tiers offer predefined performance levels whereas you can fine-tune those levels with the Performance tier. The same devices are used but delivered with different options. For more information, see [File Storage Features](https://www.ibm.com/products/file-storage/details){: external}.
 
 ## Can I connect {{site.data.keyword.filestorage_short}} to Windows&reg;?
 {: faq}
