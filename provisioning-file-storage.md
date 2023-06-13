@@ -60,7 +60,7 @@ You can provision {{site.data.keyword.filestorage_short}} and fine-tune to meet 
      | 10,000 - 12,000 | 1,000 - 48,000 |
      {: caption="Table 1. Available IOPS based on volume size" caption-side="bottom"}
 
-7. On the right, review your order summary, and apply your Promo Code if you have one.
+7. In the side panel, review your order summary, and apply your Promo Code if you have one.
 
    Discounts are applied when the order is processed.
    {: note}
