@@ -27,7 +27,8 @@ completion-time: 2h
 {: shortdesc}
 
 For more information about using {{site.data.keyword.filestorage_short}} with the {{site.data.keyword.containerlong}}, see [Storing data on classic IBM Cloud File Storage](/docs/containers?topic=containers-file_storage).
-{: tip}
+
+For more information about replicating data on IBM Cloud File Storage for Classic, see [Replication and Disaster Recovery – Replicating Data](docs/FileStorage?topic=FileStorage-replication&interface=ui).
 
 ## Before you begin
 {: #prereqs}
