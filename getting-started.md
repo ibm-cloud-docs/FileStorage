@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-04-20"
+lastupdated: "2023-08-15"
 
 keywords: File Storage, file storage, NFS, provisioning, setup, configuration, mounting storage
 
@@ -27,7 +27,6 @@ completion-time: 2h
 {: shortdesc}
 
 For more information about using {{site.data.keyword.filestorage_short}} with the {{site.data.keyword.containerlong}}, see [Storing data on classic IBM Cloud File Storage](/docs/containers?topic=containers-file_storage).
-{: tip}
 
 ## Before you begin
 {: #prereqs}
@@ -42,15 +41,15 @@ For more information about the {{site.data.keyword.filestorage_short}} offering,
 {: #provconsiderations}
 {: step}
 
-### Block size
+### IO size
 {: #blocksize}
 
 The IOPS value for both Endurance and Performance is based on a 16-KB block size with a 50/50 read and write, 50/50 random and sequential workload. A 16-KB block is the equivalent of one write to the volume.
 {: important}
 
-The block size that is used by your application directly impacts the storage performance. If the block size that is used by your application is smaller than 16 KB, the IOPS limit is realized before the throughput limit. Conversely, if the block size that is used by your application is larger than 16 KB, the throughput limit is realized before to the IOPS limit.
+The IO size that is used by your application directly impacts the storage performance. If the IO size that is used by your application is smaller than 16 KB, the IOPS limit is realized before the throughput limit. Conversely, if the block size that is used by your application is larger than 16 KB, the throughput limit is realized before to the IOPS limit.
 
-| Block Size (KB) | IOPS | Throughput (MB/s) |
+| IO Size (KB) | IOPS | Throughput (MB/s) |
 |-----------------|------|-------------------|
 | 4 | 1,000 | 4 |
 | 8 | 1,000 | 8 |
@@ -60,7 +59,7 @@ The block size that is used by your application directly impacts the storage per
 | 128 | 128 | 16 |
 | 512 | 32 | 16 |
 | 1024 | 16 | 16 |
-{: caption="Table 1 shows examples of how block size and IOPS affect the throughput. Average IO size x IOPS = Throughput in MB/s." caption-side="top"}
+{: caption="Table 1 shows examples of how IO size and IOPS affect the throughput. Average IO size x IOPS = Throughput in MB/s." caption-side="top"}
 
 ### Authorized hosts
 {: #numberofhosts}
@@ -72,7 +71,7 @@ Another factor to consider is the number of hosts that are using your volume. Wh
 
 The speed of your Ethernet connection must be faster than the expected maximum throughput from your volume. Generally, don't expect to saturate your Ethernet connection beyond 70% of the available bandwidth. For example, if you have 6,000 IOPS and are using a 16-KB block size, the volume can handle approximately 94-MBps throughput. If you have a 1-Gbps Ethernet connection to your volume, it becomes a bottleneck when your servers attempt to use the maximum available throughput. It's because 70 percent of the theoretical limit of a 1-Gbps Ethernet connection (125 MB per second) would allow for 88 MB per second only.
 
-To achieve maximum IOPS, adequate network resources need to be in place. Other considerations include private network usage outside of storage and host side and application-specific tunings, and other settings).
+To achieve maximum IOPS, adequate network resources need to be in place. Other considerations include private network usage outside of storage and host side and application-specific tunings, and other settings.
 
 Storage traffic is to be isolated from other traffic types, and not be directed through firewalls and routers. Keeping the storage traffic in a dedicated VLAN also helps preventing MTU mismatch when Jumbo frames are enabled. For more information, see [Enabling Jumbo Frames](/docs/FileStorage?topic=FileStorage-jumboframes).
 
@@ -87,7 +86,7 @@ Use **NFSv3** protocol when possible. NFSv3 supports safe asynchronous writes an
 
 When {{site.data.keyword.filestorage_short}} is used in a VMware&reg; deployment, **NFSv4.1** might be the better choice for your implementation. For more information about the different features of each version and what is supported by VMware&reg;, see [NFS Protocols and ESXi](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){: external}.
 
-## Submitting your Order
+## Submitting your order
 {: #submitFileStorOrder}
 {: step}
 
@@ -105,8 +104,10 @@ When your provisioning request is complete, authorize your hosts to access the n
 - [Configuring {{site.data.keyword.filestorage_short}} for backup with cPanel](/docs/FileStorage?topic=FileStorage-cPanelBackups)
 - [Configuring {{site.data.keyword.filestorage_short}} for backup with Plesk](/docs/FileStorage?topic=FileStorage-PleskBackup)
 
-## Managing your new Storage
+## Managing your storage
 {: #manFileStor}
 {: step}
 
 In the console, from the CLI, with the API or Terraform, you can manage various aspects of your {{site.data.keyword.filestorage_short}} such as host authorizations and cancellations. For more information, see [Managing {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-managingstorage).
+
+You can keep your data in sync in two different locations by using replication. Replication uses one of your snapshot schedules to automatically copy snapshots to a destination volume in a remote data center. The copies can be recovered in the remote site if a catastrophic event occurs or your data becomes corrupted. For more information, see [Replication and Disaster Recovery – Replicating Data](docs/FileStorage?topic=FileStorage-replication&interface=ui).
