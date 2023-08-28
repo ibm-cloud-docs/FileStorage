@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-06-05"
+lastupdated: "2023-08-28"
 
 keywords: File Storage, file storage, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
@@ -36,8 +36,8 @@ You can authorize a host to access the {{site.data.keyword.filestorage_full}} vo
    When the list is filtered by subnet, the subnets that are displayed are subscribed subnets in the same data center as the storage volume.
    {: note}
 
-5. Highlight the host that is to be authorized for replications. To select multiple hosts, use the CTRL-key and click the applicable hosts.
-6. Click **Save**. If you have no hosts, you are prompted to purchase compute resources in the same data center.
+5. Highlight the host that is to be authorized for replication. To select multiple hosts, use the CTRL-key and click the applicable hosts.
+6. Click **Save**. If you have no hosts, you are prompted to purchase Compute resources in the same data center.
 
 ## Authorizing the host from the SLCLI
 {: #authreplicahostCLI}
@@ -81,7 +81,7 @@ Before you proceed with these steps, disconnect the volume. Failure to do so, re
 1. Click your active volume (“source”).
 2. Click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions").
 3. Select **Failover**. Select **Controlled Failover** or I**mmediate Failover**.
-4. Mark the checkbox to acknowledge pertinent information and click **Yes** to proceed. A window is displayed to confirm that the failover is in progress. Click **Close** to return the File shares list.
+4. Mark the checkbox to acknowledge pertinent information and click **Yes** to proceed. A window is displayed to confirm that the failover is in progress. Click **Close** to return to the File shares list.
 5. In the list, locate your shares. If you have multiple pages, you might need to go to the next page to see the shares.
 6. The status of your source and replica shares is displayed as "Failback in progress". Additionally, an icon appears next to your volume on the **{{site.data.keyword.filestorage_short}}** that indicates that an active transaction is occurring. Hovering over the icon produces a window that shows the transaction details. The icon disappears when the transaction is complete. 
    
@@ -113,13 +113,13 @@ During the failover process, configuration-related actions are read-only. You ca
 ## Starting a failback from a volume to its replica
 {: #failbackfromreplica}
 
-When your original source volume is repaired, you can start a controlled Failback to your original source volume. In a controlled Failback,
+When your original source volume is repaired, you can start a controlled Failback to your original source volume. In a controlled failback:
 
-- The acting source volume is taken offline,
-- A snapshot is taken,
-- The replication cycle is completed,
-- The just-taken data snapshot is activated,
-- And the source volume becomes active for mounting.
+- The acting source volume is taken offline.
+- A snapshot is taken.
+- The replication cycle is completed.
+- The just-taken data snapshot is activated.
+- The source volume becomes active for mounting.
 
 When a Failback is started, the replication relationship is flipped again. Your original source volume is restored as your active source volume, and your target volume becomes the inactive target volume again.
 
@@ -130,14 +130,14 @@ When a Failback is started, the replication relationship is flipped again. Your 
 Failbacks are started under **Storage**, **{{site.data.keyword.filestorage_short}}** in the [{{site.data.keyword.cloud}} console](/cloud-storage/file){: external}.
 
 1. Click your active volume ("target").
-2. On Share Details page, click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions").
+2. On the Share Details page, click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions").
 3. Select **Failback**. 
 4. Mark the checkbox to acknowledge pertinent information and click Yes to proceed.
 5. A window is displayed to confirm that the failover is in progress. Click **Close** to return to the File shares list.
 6. In the list, locate your shares. If you have multiple pages, you might need to go to the next page to see the shares.
 7. The status of your source and replica shares is displayed as "Failback in progress". Additionally, an icon appears next to your volume on the **{{site.data.keyword.filestorage_short}}** that indicates that an active transaction is occurring. Hovering over the icon produces a window that shows the transaction details. The icon disappears when the transaction is complete. 
 
-    During the Failback process, configuration-related actions are read-only. You can't edit any snapshot schedule or change snapshot space. The event is logged in replication history.
+    During the failback process, configuration-related actions are read-only. You can't edit any snapshot schedule or change snapshot space. The event is logged in replication history.
     {: note}
 
 8. Refresh the page in your browser. When the transaction is complete, the original source share is shown as **Active**, and the replica share has an **Inactive** status.
@@ -158,5 +158,5 @@ To fail back a file volume from a specific replicant volume.
 ```
 {: codeblock}
 
-During the Failback process, configuration-related actions are read-only. You can't edit any snapshot schedule or change snapshot space. The event is logged in replication history.
+During the failback process, configuration-related actions are read-only. You can't edit any snapshot schedule or change snapshot space. The event is logged in replication history.
 {: note}

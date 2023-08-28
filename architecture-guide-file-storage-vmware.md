@@ -365,7 +365,7 @@ Other settings are required for configuring ESXi hosts for NFS storage. This tab
 ### Updating advanced configuration parameters
 {: #updateconfigparam}
 
-The following examples use the ESXi CLI to set the advanced configuration parameters, and then, check them. The `esxcfg-advcfg` tool that is used in the examples can be found in the `/usr/sbin` directory on the ESXi hosts.
+The following examples use the ESXi CLI to set the advanced configuration parameters, and check them. The `esxcfg-advcfg` tool that is used in the examples can be found in the `/usr/sbin` directory on the ESXi hosts.
 
 - Setting the advanced configuration parameters from the ESXi CLI.
 
@@ -398,5 +398,5 @@ The following examples use the ESXi CLI to set the advanced configuration parame
  #esxcfg-advcfg -g /Disk/QFullThreshold
  ```
 
-Learn more about Advanced Single-Site VMware&reg; Reference Architecture [here](/docs/virtualization?topic=virtualization-advanced-single-site-vmware-reference-architecture){: external}.
+For more information, see [Advanced Single-Site VMware&reg; Reference Architecture](/docs/virtualization?topic=virtualization-advanced-single-site-vmware-reference-architecture).
 {: tip}
