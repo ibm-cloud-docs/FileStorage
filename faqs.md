@@ -74,19 +74,21 @@ The number of files a volume can contain is determined by how many inodes it has
 The maximum number of inodes that can be configured on a volume is calculated by taking the total allocated volume size in KB and dividing it by 4. Any volume of 7.8 TB or larger reaches the maximum limit at 2,040,109,451 inodes.
 
 | Volume Size | Inodes |
-|-----|-----|
-| 20 GB | 5,242,880 |
-| 40 GB | 10,485,760 |
-| 80 GB | 20,971,520 |
-| 100 GB | 26,214,400  |
-| 500 GB | 131,072,000 |
-| 1 TB | 268,435,456 |
-| 4 TB | 1,073,741,824 |
+|------------:|-------:|
+| 20 GB    | 4,980,731 |
+| 40 GB    | 9,961,461 |
+| 80 GB   | 19,922,935 |
+| 100 GB  | 24,903,679 |
+| 250 GB  | 62,259,189 |
+| 500 GB | 124,518,391 |
+| 1 TB   | 255,013,682 |
+| 2 TB   | 510,027,363 |
+| 3 TB   | 765,041,044 |
+| 4 TB | 1,020,054,726 |
 | 8 TB | 2,040,109,451 |
 | 12 TB| 2,040,109,451 |
 {: row-headers}
-{: class="comparison-table"}
-{: caption="Table comparison" caption-side="top"}
+{: caption="Table comparison" caption-side="bottom"}
 {: summary="Table 1 shows the maximum number of inodes that are allowed based on the volume size. Volume sizes are in the left column. The numbers of inodes (files and directories) are on the right."}
 
 ## I ordered a {{site.data.keyword.filestorage_short}} volume in the wrong data center. Is it possible to move or migrate it to another data center?
