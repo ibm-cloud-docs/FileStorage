@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-04-19"
+lastupdated: "2023-08-29"
 
 keywords: File Storage, modify volume, NFS, file storage, expand capacity
 
@@ -17,14 +17,14 @@ subcollection: FileStorage
 With this feature, current users of {{site.data.keyword.filestorage_full}} are able to expand the size of their {{site.data.keyword.filestorage_short}} in GB increments up to 12 TB immediately. They don't need to create a duplicate or manually migrate data to a larger volume.
 {: shortdesc}
 
-Billing for the volume is automatically updated to add the pro-rated difference of the new price to the current billing cycle. Then, the full new amount is billed in the next billing cycle.
+Billing for the volume is automatically updated to add the prorated difference of the new price to the current billing cycle. Then, the full new amount is billed in the next billing cycle.
 
 The upgrade process is not instantaneous. You can expect to see the updated size in the UI or through the API in a short while after you put in the modification request. Resizing does not cause any outage or loss of access to the storage, so you can continue your operations as normal while you wait.
 
 ## Advantages of Expandable Storage
 {: #advantagesofresizing}
 
-- **Cost management** – You might know of a potential for growth of your data, but you need a smaller amount of storage to start. The ability to expand, allows customers to save on costs of storage at the start and then grow to accommodate their needs.
+- **Cost management** – You might know of a potential for growth of your data, but you need a smaller amount of storage to start. The ability to expand allows customers to save on the costs of storage at the start and then grow to accommodate their needs.
 
 - **Growing Storage needs** - Customers who experience rapid growth beyond need a way to quickly and easily increase the size of their storage to manage that growth.
 
@@ -36,7 +36,7 @@ Expand action on the primary storage results in automatic resizing of the replic
 ## Limitations
 {: #limitsofextension}
 
-This feature is available for storage that is provisioned in [data centers](/docs/FileStorage?topic=FileStorage-selectDC) with enhanced capabilities. Encrypted storage that is provisioned in these data centers can be increased up to 12 TB.
+This feature is available for storage that is provisioned in [data centers](/docs/FileStorage?topic=FileStorage-selectDC) with enhanced capabilities. Encrypted storage that is provisioned in these data centers can be increased to up to 12 TB.
 
 Existing size limitations for {{site.data.keyword.filestorage_short}} that was provisioned with Endurance still apply (up to 4 TB for 10 IOPS tier and up to 12 TB for all other tiers).
 

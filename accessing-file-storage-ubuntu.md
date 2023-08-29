@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-04-19"
+lastupdated: "2023-08-29"
 
 keywords: File Storage, NFS, mounting File Storage, mounting storage on Ubuntu,
 
@@ -67,7 +67,7 @@ Options:
 {: #authUbuntuhostterraform}
 {: terraform}
 
-To authorize a compute host to access the share, use the `ibm_storage_file` resource and specify the `allowed_virtual_guest_ids` for virtual servers, or `allowed_hardware_ids` for bare metal servers. Specify `allowed_ip_addresses` to define which IP addresses have access to the storage. 
+To authorize a Compute host to access the share, use the `ibm_storage_file` resource and specify the `allowed_virtual_guest_ids` for virtual servers, or `allowed_hardware_ids` for bare metal servers. Specify `allowed_ip_addresses` to define which IP addresses have access to the storage. 
 
 The following example defines that the Virtual Server with the ID `28961689` can access the volume from the `10.146.139.64/26` subnet, and `10.146.139.84` address.
 
@@ -143,7 +143,7 @@ For more information about the arguments and attributes, see [ibm_storage_file](
    ```zsh
    sudo nano /etc/fstab
    ```
-   Add a line with the following syntax to the end of file.
+   Add a line with the following syntax to the end of the file.
 
    ```zsh
    (hostname):/(mount_point) /mnt nfs_version defaults 0 0

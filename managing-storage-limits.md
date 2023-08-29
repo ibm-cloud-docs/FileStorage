@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-01-11"
+lastupdated: "2023-08-29"
 
 keywords: File Storage, file storage, NFS,
 
@@ -29,10 +29,11 @@ If you're unsure how many volumes you have, you can confirm the numbers by using
 ### SLCLI
 {: #slcli1}
 
-You can list the number of your volumes by using the [volume-limits](https://softlayer-python.readthedocs.io/en/latest/cli/file/#file-volume-limits){: external} command in `slcli` (version 5.8.5 or higher).
+You can list the number of your volumes by using the [`volume-limits`](https://softlayer-python.readthedocs.io/en/latest/cli/file/#file-volume-limits){: external} command in `slcli` (version 5.8.5 or higher).
 ```sh
 # slcli file volume-limits
 ```
+{: pre}
 
 The output looks similar to the following example.
 ```text
@@ -47,13 +48,14 @@ The output looks similar to the following example.
 ### IBM Cloud CLI
 {: #ibmcloudcli1}
 
-The volume-limits command is also available in the `sl` plug-in for IBM Cloud CLI (v1.0 or higher).
+The `volume-limits` command is also available in the `sl` plug-in for IBM Cloud CLI (v1.0 or higher).
 
 ```sh
 # ibmcloud sl file volume-limits
 Datacenter   MaximumAvailableCount   ProvisionedCount
 global       700                     99
 ```
+{: screen}
 
 ## Confirming your current limit and provisioning count with the API
 {: #confirmprovisioncountAPI}

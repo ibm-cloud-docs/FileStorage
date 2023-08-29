@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2022-07-13"
+lastupdated: "2023-08-29"
 
 keywords: File Storage, file storage, NFS, durability, availability, HA, high-availability, data loss, data integrity, uptime, five 9's, eleven 9's, data health, data corruption, data decay, encryption, security, integrity
 
@@ -34,7 +34,7 @@ In today's fast-paced economy, companies rely on data in their decision-making. 
 
 Think of durability as a measurement of how healthy and resilient your data is. Durability in {{site.data.keyword.filestorage_short}} means that your data is stored consistently and intact without any signs of data decay, influence of drive failures, or any other form of corruption. 99.999999999% (11 nines) durability means that if you store 10 million files, then you expect to lose one file every 10000 years.
 
-When people hear the word durability, most of them think of hardware failures of Storage, Compute, and Network components that might cause data loss. In {{site.data.keyword.filestorage_short}}, your data is protected against drive failures and numerous typess of disk errors that otherwise might negatively impact data durability and data integrity. The data is stored redundantly across multiple physical disks in an Availability Zone to prevent data loss due to failure of any single component.
+When people hear the word durability, most of them think of hardware failures of Storage, Compute, and Network components that might cause data loss. In {{site.data.keyword.filestorage_short}}, your data is protected against drive failures and numerous types of disk errors that otherwise might negatively impact data durability and data integrity. The data is stored redundantly across multiple physical disks in an Availability Zone to prevent data loss due to failure of any single component.
 
 Other than physical failure, a common source of data loss is accidental deletion or modifications of files by users. {{site.data.keyword.filestorage_short}} is only accessible to authorized hosts within your network. You control who can access it. Another measure to protect against accidental deletion and modification of files by users is a snapshot. If a user accidentally modifies or deletes crucial data from a volume, the data can be easily and quickly restored from a snapshot copy. For more information about this feature, see [Snapshots](/docs/FileStorage?topic=FileStorage-snapshot).
 

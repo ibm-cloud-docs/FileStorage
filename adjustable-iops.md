@@ -17,7 +17,7 @@ subcollection: FileStorage
 With this feature, {{site.data.keyword.filestorage_full}} storage users can adjust the IOPS of their existing {{site.data.keyword.filestorage_short}} immediately. They don't need to create a duplicate or manually copy data to new storage. Users don't experience any kind of outage or lack of access to the storage while the adjustment is taking place.
 {: shortdesc}
 
-Billing for the storage is updated to add the pro-rated difference of the new price to the current billing cycle. The full new amount is billed in the next billing cycle.
+Billing for the storage is updated to add the prorated difference of the new price to the current billing cycle. The full new amount is billed in the next billing cycle.
 
 
 ## Advantages of adjustable IOPS
@@ -30,7 +30,7 @@ Billing for the storage is updated to add the pro-rated difference of the new pr
 
 Clients can’t switch between Endurance and Performance when they adjust their IOPS. Users can specify a new IOPS tier or IOPS level for their storage based on the following criteria and restrictions.
 
-- If original volume is Endurance 0.25 tier, IOPS tier can’t be updated.
+- If original volume is the Endurance 0.25 tier, the IOPS tier can’t be updated.
 - If original volume is Performance with less than or equal to 0.30 IOPS/GB, options available include only the size and IOPS combinations that result in less than or equal to 0.30 IOPS/GB.
 - If original volume is Performance with more than 0.30 IOPS/GB, options available include only the size and IOPS combinations that result in more than 0.30 IOPS/GB.
 
@@ -62,7 +62,7 @@ If the volume has replication in place, the replica is automatically updated to 
 2. Select the volume from the list and click the ellipsis ![Actions icon](../icons/action-menu-icon.svg "Actions") > **Modify File Share**.
 3. In the **Adjust Storage IOPS** section, make a new selection:
     - For Endurance (Tiered IOPS), select an IOPS Tier greater than 0.25 IOPS/GB of your storage. You can increase the IOPS tier at any time. However, decreasing is available only once a month.
-    - For Performance (Allocated IOPS), specify new IOPS option for your storage by entering a value in the range 100 - 48,000 IOPS. (Be sure to look at any specific boundaries that are required by size in the order form.)
+    - For Performance (Allocated IOPS), specify a new IOPS option for your storage by entering a value in the range 100 - 48,000 IOPS. (Be sure to look at any specific boundaries that are required by size in the order form.)
 4. Review your selection and the new pricing. Click **Modify**.
 5. Your new storage allocation is going to be available in a few minutes.
 
@@ -191,7 +191,7 @@ For more information about the SLAPI, see the [SLDN](http://sldn.softlayer.com/r
 {: #adjustingstepsTerraform}
 {: terraform}
 
-You can adjust the IOPS by using the `ibm_storage_file` resource, and specifying a different number in the iops argument. The following example increases the performance tier of an Endurance share to the 4 IOPS/GB tier.
+You can adjust the IOPS by using the `ibm_storage_file` resource, and specifying a different number in the `iops` argument. The following example increases the performance tier of an Endurance share to the 4 IOPS/GB tier.
 
 ```terraform
 resource "ibm_storage_file" "fs_endurance" {

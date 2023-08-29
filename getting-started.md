@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-08-15"
+lastupdated: "2023-08-29"
 
 keywords: File Storage, file storage, NFS, provisioning, setup, configuration, mounting storage
 
@@ -73,7 +73,7 @@ The speed of your Ethernet connection must be faster than the expected maximum t
 
 To achieve maximum IOPS, adequate network resources need to be in place. Other considerations include private network usage outside of storage and host side and application-specific tunings, and other settings.
 
-Storage traffic is to be isolated from other traffic types, and not be directed through firewalls and routers. Keeping the storage traffic in a dedicated VLAN also helps preventing MTU mismatch when Jumbo frames are enabled. For more information, see [Enabling Jumbo Frames](/docs/FileStorage?topic=FileStorage-jumboframes).
+Storage traffic is to be isolated from other traffic types, and it is not to be directed through firewalls and routers. Keeping the storage traffic in a dedicated VLAN also helps preventing MTU mismatch when Jumbo frames are enabled. For more information, see [Enabling Jumbo Frames](/docs/FileStorage?topic=FileStorage-jumboframes).
 
 Storage traffic is included in the total network usage of Public Virtual Servers. For more information about the limits that might be imposed by the service, see the [Virtual Server Documentation](/docs/virtual-servers?topic=virtual-servers-about-public-virtual-servers).
 
@@ -82,7 +82,7 @@ Storage traffic is included in the total network usage of Public Virtual Servers
 
 Both NFSv3 and NFSv4.1 are supported in the {{site.data.keyword.cloud}} environment. Network File System (NFS) is a networking protocol for distributed file sharing. It allows remote hosts to mount file systems over a network and interact with those file systems as if they are mounted locally.
 
-Use **NFSv3** protocol when possible. NFSv3 supports safe asynchronous writes and is more robust at error handling than the previous NFSv2. It supports 64-bit file sizes and offsets, allowing clients to access more than 2 GB of file data. NFSv3 natively supports `no_root_squash` that allows root clients to retain root permissions on the NFS share.
+Use the **NFSv3** protocol when possible. NFSv3 supports safe asynchronous writes and is more robust at error handling than the previous NFSv2. It supports 64-bit file sizes and offsets, allowing clients to access more than 2 GB of file data. NFSv3 natively supports `no_root_squash` that allows root clients to retain root permissions on the NFS share.
 
 When {{site.data.keyword.filestorage_short}} is used in a VMware&reg; deployment, **NFSv4.1** might be the better choice for your implementation. For more information about the different features of each version and what is supported by VMware&reg;, see [NFS Protocols and ESXi](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){: external}.
 

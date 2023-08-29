@@ -257,7 +257,7 @@ The network configuration for this architecture guide uses a minimal number of p
    ```
    {: pre}
 
-   The NFS storage DNS hostname is a Forwarding Zone (FZ) that has  multiple IP addresses assigned to it. These IP addresses are static and belong to that specific DNS hostname. Any of those IP addresses can be used to access a specific volume.
+   The NFS storage DNS hostname is a Forwarding Zone (FZ) that has multiple IP addresses assigned to it. These IP addresses are static and belong to that specific DNS hostname. Any of those IP addresses can be used to access a specific volume.
    {: note}
 
    ```zsh
