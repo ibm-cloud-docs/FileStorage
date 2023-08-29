@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-01-10"
+lastupdated: "2023-08-29"
 
 keywords: File Storage, file storage, NFS, cPanel, backups
 
@@ -23,7 +23,7 @@ For more information, see [cPanel Docs - Backup](https://docs.cpanel.net/knowled
 1. Connect to the host through SSH.
 2. Ensure that a mount point target exists.
 
-   By default, the cPanel system saves backup files locally, to the `/backup` directory. In this document, the assumption is that `/backup` folder exists and contains backups, and `/backup2` can be used as the new mount point.
+   By default, the cPanel system saves backup files locally, to the `/backup` directory. In this document, the assumption is that the `/backup` folder exists and contains backups, and `/backup2` can be used as the new mount point.
    {: note}
 
 3. Configure your {{site.data.keyword.filestorage_short}} as described in [Accessing {{site.data.keyword.filestorage_short}} on Red Hat Enterprise Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingLinux), [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/FileStorage?topic=FileStorage-mountingCentOS), and [Mounting {{site.data.keyword.filestorage_short}} in Ubuntu](/docs/FileStorage?topic=FileStorage-mountingUbuntu). Mount the volume to `/backup2` and configure it in file system table (`/etc/fstab`) to enable mounting on start.

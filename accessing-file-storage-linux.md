@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-04-19"
+lastupdated: "2023-08-29"
 
 keywords: File Storage, NFS, mounting File Storage, mounting storage on Linux,
 
@@ -68,7 +68,7 @@ Options:
 {: #authhLinuxhostterraform}
 {: terraform}
 
-To authorize a compute host to access the share, use the `ibm_storage_file` resource and specify the `allowed_virtual_guest_ids` for virtual servers, or `allowed_hardware_ids` for bare metal servers. Specify `allowed_ip_addresses` to define which IP addresses have access to the storage. 
+To authorize a Compute host to access the share, use the `ibm_storage_file` resource and specify the `allowed_virtual_guest_ids` for virtual servers, or `allowed_hardware_ids` for bare metal servers. Specify `allowed_ip_addresses` to define which IP addresses have access to the storage. 
 
 The following example defines that the Virtual Server with the ID `28961689` can access the volume from the `10.146.139.64/26` subnet, and `10.146.139.84` address.
 
@@ -141,7 +141,7 @@ The example is based on RHEL 7. The steps can be adjusted for other Linux&reg; d
    -rw-r--r--   1 nobody nobody    0 Sep 8 15:52 test
    ```
 
-   The files that are created by root have ownership of `nobody:nobody`. To display ownership correctly, `idmapd.conf` needs to be updated with the correct domain settings. For more information, see the [Implementing `no_root_squash` for NFS (optional)](#norootsquash) section.
+   The files that are created by root have ownership of `nobody:nobody`. To display ownership correctly, the `idmapd.conf` needs to be updated with the correct domain settings. For more information, see the [Implementing `no_root_squash` for NFS (optional)](#norootsquash) section.
    {: tip}
 
 5. Mount the remote share on start. To complete the setup, edit the file systems table (`/etc/fstab`) to add the remote share to the list of entries that are automatically mounted on startup:
@@ -179,12 +179,12 @@ The example is based on RHEL 7. The steps can be adjusted for other Linux&reg; d
 By default, NFS downgrades any files that were created with the root permissions to the nobody user. This security feature prevents privileges from being shared unless they are requested.
 
 Configuring `no_root_squash` allows root clients to retain root permissions on the remote NFS share.
-- For NFSv3, clients don't need to anything; `no_root_squash` simply works.
+- For NFSv3, clients don't need to do anything; the `no_root_squash` simply works.
 - For NFSv4.1, you need to set the nfsv4 domain to: `slnfsv4.com` and start `rpcidmapd`, or a similar service that is used by your OS.
 
 Example
 
-1. From the host, set domain setting in `/etc/idmapd.conf`.
+1. From the host, set the domain setting in `/etc/idmapd.conf`.
 
    ```text
    #vi /etc/idmapd.conf

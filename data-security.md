@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-04-12"
+lastupdated: "2023-08-29"
 
 keywords: File Storage, file storage, NFS, security, encryption
 
@@ -38,7 +38,7 @@ When you order {{site.data.keyword.filestorage_short}}, select a data center tha
 
 ![Figure 1. Example of the lock icon that indicates that the volume is encrypted.](/images/encryptedstorage.svg){: caption="Figure 1. Example of the lock icon that indicates that the volume is encrypted." caption-side="bottom"}
 
-Any nonencrypted storage that was provisioned before a data center upgrade is **not** automatically encrypted. If you own nonencrypted storage in an upgraded data center and you want to have it encrypted, you need to create a volume, and move your data. For more information, see [File Storage Migration in Upgraded Data Centers](/docs/FileStorage?topic=FileStorage-migratestorage).
+Any nonencrypted storage that was provisioned before a data center upgrade is **not** automatically encrypted. If you own nonencrypted storage in an upgraded data center and you want to have it encrypted, you need to create a volume and move your data. For more information, see [File Storage Migration in Upgraded Data Centers](/docs/FileStorage?topic=FileStorage-migratestorage).
 {: important}
 
 ## Deleting {{site.data.keyword.filestorage_short}} instances
@@ -54,7 +54,7 @@ To cancel a storage volume, you need to revoke access from any hosts first. Acti
 1. Go to the [{{site.data.keyword.cloud}} console](/login){: external}. From the menu, select **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic").
 2. Click **Storage** > **{{site.data.keyword.filestorage_short}}**.
 3. Click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions") for the volume to be canceled, and select **Delete {{site.data.keyword.filestorage_short}}**.
-4. Confirm if want to cancel the volume immediately or on the anniversary date of when the volume was provisioned.
+4. Confirm if you want to cancel the volume immediately or on the anniversary date of when the volume was provisioned.
 
    If you select the option to cancel the volume on its anniversary date, you can void the cancellation request before its anniversary date.
    {: tip}

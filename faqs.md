@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-04-12"
+lastupdated: "2023-08-29"
 
 keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
@@ -74,26 +74,28 @@ The number of files a volume can contain is determined by how many inodes it has
 The maximum number of inodes that can be configured on a volume is calculated by taking the total allocated volume size in KB and dividing it by 4. Any volume of 7.8 TB or larger reaches the maximum limit at 2,040,109,451 inodes.
 
 | Volume Size | Inodes |
-|-----|-----|
-| 20 GB | 5,242,880 |
-| 40 GB | 10,485,760 |
-| 80 GB | 20,971,520 |
-| 100 GB | 26,214,400  |
-| 500 GB | 131,072,000 |
-| 1 TB | 268,435,456 |
-| 4 TB | 1,073,741,824 |
+|------------:|-------:|
+| 20 GB    | 4,980,731 |
+| 40 GB    | 9,961,461 |
+| 80 GB   | 19,922,935 |
+| 100 GB  | 24,903,679 |
+| 250 GB  | 62,259,189 |
+| 500 GB | 124,518,391 |
+| 1 TB   | 255,013,682 |
+| 2 TB   | 510,027,363 |
+| 3 TB   | 765,041,044 |
+| 4 TB | 1,020,054,726 |
 | 8 TB | 2,040,109,451 |
 | 12 TB| 2,040,109,451 |
 {: row-headers}
-{: class="comparison-table"}
-{: caption="Table comparison" caption-side="top"}
+{: caption="Table comparison" caption-side="bottom"}
 {: summary="Table 1 shows the maximum number of inodes that are allowed based on the volume size. Volume sizes are in the left column. The numbers of inodes (files and directories) are on the right."}
 
 ## I ordered a {{site.data.keyword.filestorage_short}} volume in the wrong data center. Is it possible to move or migrate it to another data center?
 {: faq}
 {: #movedatacenter}
 
-You need to order new {{site.data.keyword.filestorage_short}} in the right data center, and then cancel the {{site.data.keyword.filestorage_short}} device that you ordered in the incorrect location. When the volume is canceled, the request is followed by a 24-hour reclaim wait period. You can still see the volume in the console during those 24 hours. Billing for the volume stops immediately. When the reclaim period expires, the data is destroyed and the volume is removed from the console, too.
+You need to order a new {{site.data.keyword.filestorage_short}} share in the right data center, and then cancel the {{site.data.keyword.filestorage_short}} device that you ordered in the incorrect location. When the volume is canceled, the request is followed by a 24-hour reclaim wait period. You can still see the volume in the console during those 24 hours. Billing for the volume stops immediately. When the reclaim period expires, the data is destroyed and the volume is removed from the console, too.
 
 ## Measuring IOPS
 {: faq}
@@ -121,7 +123,7 @@ Maximum IOPS can be obtained even if you use smaller block sizes. However, the t
 
 IOPS is enforced at the volume level. Said differently, two hosts connected to a volume with 6000 IOPS share that 6000 IOPS.
 
-## Does the volume need to be pre-warmed to achieve expected throughput?
+## Does the volume need to be pre-warmed to achieve the expected throughput?
 {: faq}
 {: #prewarm}
 {: support}
@@ -189,7 +191,7 @@ Customers with special requirements for compliance such as NIST 800-88 Guideline
 {: faq}
 {: #cancelstorage}
 
-The cancellation process for this storage device is in progress so the Cancel action is no longer available. The volume remains visible for at least 24 hours until it is reclaimed. An hourglass or clock icon next to the device name in the UI indicates that it’s in a waiting period. The minimum 24-hour waiting period gives you a chance to void the cancel request if needed.
+The cancellation process for this storage device is in progress so the Cancel action is no longer available. The volume remains visible for at least 24 hours until it is reclaimed. The UI indicates that it’s inactive and the status "Cancellation pending" is displayed. The minimum 24-hour waiting period gives you a chance to void the cancel request if needed.
 
 ## Which NFS versions are supported?
 {: faq}
@@ -198,7 +200,7 @@ The cancellation process for this storage device is in progress so the Cancel ac
 
 Both NFSv3 and NFSv4.1 are supported in the {{site.data.keyword.cloud}} environment. NFSv4.2 is not supported.
 
-Use **NFSv3** protocol when possible. NFSv3 supports safe asynchronous writes and is more robust at error handling than the previous NFSv2. It supports 64-bit file sizes and offsets, allowing clients to access more than 2 GB of file data. 
+Use the **NFSv3** protocol when possible. NFSv3 supports safe asynchronous writes and is more robust at error handling than the previous NFSv2. It supports 64-bit file sizes and offsets, allowing clients to access more than 2 GB of file data. 
 
 NFSv3 natively supports `no_root_squash` that allows root clients to retain root permissions on the NFS share. You can enable this feature in NFSv4.1, by editing the domain information and running the `rpcidmapd` or a similar service. For more information, see [Implementing no_root_squash for NFS](/docs/FileStorage?topic=FileStorage-mountingLinux#norootsquash).
 
@@ -257,7 +259,7 @@ To see the expanded volume size, mount and remount your existing {{site.data.key
 {: #chassis-swap}
 
 Complete the following tasks to connect storage after a swap.
-1. Remove the authorization (revoke access) from the storage devices, and then authorize the host again.
+1. Remove the authorization (revoke access) from the storage device, and then authorize the host again.
 2. Discover the storage devices again, with the new credentials that were gained from the reauthorization.
 
 For more information, see [Managing {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-managingstorage).
@@ -293,7 +295,7 @@ Yes, you can use this setup because NFS is a file-aware protocol.
 {: faq}
 {: #inodes}
 
-Typically, when volumes are provisioned, they are allotted the maximum inode count for the size that you ordered. Maximum inode count grows automatically as the volume grows. If the inodes count does not increase after you expanded a volume, submit a [support case](/unifiedsupport/cases/add){: external}.
+Typically, when volumes are provisioned, they are allotted the maximum inode count for the size that you ordered. The maximum inode count grows automatically as the volume grows. If the inodes count does not increase after you expanded a volume, submit a [support case](/unifiedsupport/cases/add){: external}.
 
 ## I am unable to upgrade storage. What can affect the ability to upgrade or expand storage?
 {: faq}
@@ -328,7 +330,7 @@ When you store your data in {{site.data.keyword.filestorage_short}}, it's durabl
 
 When you store your data in {{site.data.keyword.filestorage_short}}, it's durable, highly available, and encrypted. File Storage is built upon best-in-class, proven, enterprise-grade hardware and software to ensure high availability and uptime. To ensure that the availability target of 99.999% (five 9's) is met, the data is stored redundantly across multiple physical disks on HA paired nodes. Each storage node has multiple paths to its own Solid-State Drives and its partner node's SSDs as well. This setup protects against path failure, and also controller failure because the node can still access its partner's disks seamlessly. For more information, see [Availability and Durability of {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-storageavailability).
 
-## Can I get storage performance metrics (IOPS or latency) from the Support teams?
+## Can I get storage performance metrics (IOPS or latency) from the Support team?
 {: #storagemetrics}
 {: faq}
 
@@ -345,11 +347,11 @@ The following examples are utilities that you might consider to use to check per
 
 You can create a replica or a duplicate volume by using a snapshot of your volume. Replication and cloning use one of your snapshots to copy data to a destination volume. However, that is where the similarities end.
 
-Replication keeps your data in sync in two different locations. Only one of the volume pair (primary volume and replica volume) can be active at a time. The replication process automatically copies information from the active volume to the inactive volume based on the replication schedule. For more information about replica volumes, see [Replicating data](/docs/FileStorage?topic=FileStorage-replication).
+Replication keeps your data in sync in two different locations. Only one of the volume pair (primary volume or replica volume) can be active at a time. The replication process automatically copies information from the active volume to the inactive volume based on the replication schedule. For more information about replica volumes, see [Replicating data](/docs/FileStorage?topic=FileStorage-replication).
 
 Duplication creates a copy of your volume based on a snapshot in the same availability zone as the parent volume. The duplicate volume inherits the capacity and performance options of the original volume by default and has a copy of the data up to the point-in-time of a snapshot. The duplicate volume can be dependent or independent from the original volume, and it can be manually refreshed with data from the parent volume. You can adjust the IOPS or increase the volume size of the duplicate without any effect on the parent volume.
 
-- A dependent duplicate volume does not go through the conversion of becoming independent, and can be refreshed at any time after it is created. It locks the original snapshot so that snapshot cannot be deleted while the dependent duplicate exists. The parent volume cannot be canceled while the dependent duplicate volume exists. If you want to cancel the parent volume, you must either cancel the dependent duplicate first or convert it to an independent duplicate.
+- A dependent duplicate volume does not go through the conversion of becoming independent, and can be refreshed at any time after it is created. It locks the original snapshot so that the snapshot cannot be deleted while the dependent duplicate exists. The parent volume cannot be canceled while the dependent duplicate volume exists. If you want to cancel the parent volume, you must either cancel the dependent duplicate first or convert it to an independent duplicate.
 
 - An independent duplicate is superior to the dependent duplicate in most regards, but it cannot be refreshed immediately after creation because of the lengthy conversion process. It can take up to several hours based on the size of the volume. For example, it might take up to a day for a 12-TB volume. However, after the separation process is complete, the data can be manually refreshed by using another snapshot of the original parent volume.
 

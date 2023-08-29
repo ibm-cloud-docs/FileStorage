@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-04-20"
+lastupdated: "2023-08-28"
 
-keywords: File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
+keywords: Classic File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
 subcollection: FileStorage
 
@@ -16,7 +16,7 @@ completion-time: 1h
 ---
 {{site.data.keyword.attribute-definition-list}}
 
-# Provisioning {{site.data.keyword.filestorage_short}} for use as VMware datastore
+# Provisioning {{site.data.keyword.filestorage_short}} for use as a VMware datastore
 {: #architectureguide}
 {: toc-content-type="tutorial"}
 {: toc-services=""}
@@ -36,7 +36,7 @@ The {{site.data.keyword.filestorage_short}} offering is accessed and mounted thr
 Pricing and configuration options for {{site.data.keyword.filestorage_short}} are charged based on a combination of the reserved space and the offered IOPS.
 When you order {{site.data.keyword.filestorage_short}}, consider the following information:
 
-- When you decide on the size, consider the size of the workload and throughput needed. Size matters with the Endurance service, which scales performance linearly in relation to capacity (IOPS/GB). Conversely, the Performance service allows the administrator to choose capacity and performance independently. Throughput requirements matter with Performance.
+- When you decide on the size, consider the size of the workload and the throughput needed. Size matters with the Endurance service, which scales performance linearly in relation to capacity (IOPS/GB). Conversely, the Performance service allows the administrator to choose capacity and performance independently. Throughput requirements matter with Performance.
 
    The throughput calculation is IOPS x 16 KB. IOPS is measured based on a 16-KB block size with a 50/50 read/write mix. Increasing block size increases the throughput but decreases IOPS. For example, doubling the block size to 32-KB blocks maintains the maximum throughput but halves the IOPS.
    {: note}
@@ -81,7 +81,7 @@ Snapshot space is required to use snapshots. Space can be purchased on the initi
 
 It's important to note that VMware&reg; environments are not aware of snapshots. The {{site.data.keyword.filestorage_short}} snapshot capability must not be confused with VMware&reg; snapshots. Any recovery that uses the {{site.data.keyword.filestorage_short}} snapshot feature must be handled from the [{{site.data.keyword.cloud}} console](/login){: external}.
 
-Restoring the {{site.data.keyword.filestorage_short}} volume requires powering off all the VMs on the {{site.data.keyword.filestorage_short}}. The volume needs to be temporarily unmounted from the ESXi hosts to avoid any data corruption during the process.
+Restoring the {{site.data.keyword.filestorage_short}} volume requires powering off all the VMs on the {{site.data.keyword.filestorage_short}}. The volume needs to be temporarily unmounted from the ESXi host to avoid any data corruption during the process.
 
 For more information, see the [snapshots](/docs/FileStorage?topic=FileStorage-snapshots) article.
 
@@ -93,7 +93,7 @@ Replication uses one of your snapshot schedules to automatically copy snapshots 
 
 With replicas, you can
 
-- Recover from site failures and other disasters quickly by failing over to the destination volume,
+- Recover from site failures and other disasters quickly by failing over to the destination volume.
 - Fail over to a specific point in time with the DR copy.
 
 Replication keeps your data in sync in two different locations. If you want to clone your volume and use it independently from the original volume, see [Creating a duplicate File Volume](/docs/FileStorage?topic=FileStorage-duplicatevolume).
@@ -101,20 +101,20 @@ Replication keeps your data in sync in two different locations. If you want to c
 
 Before you can replicate, you must create a snapshot schedule.
 
-When you fail over, you are “flipping the switch” from your storage volume in your primary data center to the destination volume in your remote data center. For example, your primary data center is in London and your secondary data center is in Amsterdam. If a failure event occurs, you’d fail over to Amsterdam. Failing over means connecting to the now-primary volume from a vSphere Cluster instance in Amsterdam. After your volume in London is repaired, a snapshot is taken of the Amsterdam volume. Then, you can fail back to London and the once-again primary volume from a compute instance in London.
+When you fail over, you are “flipping the switch” from your storage volume in your primary data center to the destination volume in your remote data center. For example, your primary data center is in London and your secondary data center is in Amsterdam. If a failure event occurs, you’d fail over to Amsterdam. Failing over means connecting to the now-primary volume from a vSphere Cluster instance in Amsterdam. After your volume in London is repaired, a snapshot is taken of the Amsterdam volume. Then, you can fail back to London and connect to the primary volume from a Compute instance in London.
 
 Before the volume fails back to the primary data center, it needs to stop being used at the remote site. A snapshot of any new or changed information is taken and replicated to the primary data center before it can be mounted again on the production site ESXi hosts.
 
 For more information about configuring replicas, see [Replication](/docs/FileStorage?topic=FileStorage-replication).
 
-Invalid data, whether corrupted, hacked, or infected replicate according to the snapshot schedule and snapshot retention. Using the smallest replication windows can provide for a better recovery point objective. However, it also can provide less time to react to the replication of invalid data.
+Invalid data, whether corrupted, hacked, or infected replicate according to the snapshot schedule and snapshot retention. Using the smallest replication windows can provide for a better recovery point objective. However, it can also provide less time to react to the replication of invalid data.
 {: note}
 
 
 ## Ordering {{site.data.keyword.filestorage_short}}
 {: #orderauthvmware}
 
-Follow the instructions the [Advanced Single-Site VMware&reg; Reference Architecture](/docs/virtualization?topic=virtualization-advanced-single-site-vmware-reference-architecture){: external} to configure your VMware environment.
+Follow the instructions in the [Advanced Single-Site VMware&reg; Reference Architecture](/docs/virtualization?topic=virtualization-advanced-single-site-vmware-reference-architecture){: external} to configure your VMware environment.
 
 {{site.data.keyword.filestorage_short}} can be ordered through [The {{site.data.keyword.cloud}} catalog](/catalog){: external}, from the [CLI](/docs/cli?topic=cli-sl-file-storage-service#sl_file_volume_order), with the API or Terraform. For more information, see [Ordering {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-orderingFileStorage).
 
@@ -159,7 +159,7 @@ After the subnets are authorized, make note of the hostname of the storage serve
 {: #orderauthvmwareTerraform}
 {: terraform}
 
-To authorize a compute host to access the share, use the `ibm_storage_file` resource and specify the `allowed_virtual_guest_ids` for virtual servers, or `allowed_hardware_ids` for bare metal servers. Specify `allowed_ip_addresses` to define which IP addresses have access to the storage. 
+To authorize a Compute host to access the share, use the `ibm_storage_file` resource and specify the `allowed_virtual_guest_ids` for virtual servers, or `allowed_hardware_ids` for bare metal servers. Specify `allowed_ip_addresses` to define which IP addresses have access to the storage. 
 
 The following example defines that the Virtual Server with the ID `28961689` can access the volume from the `10.146.139.64/26` subnet, and `10.146.139.84` address.
 
@@ -195,15 +195,15 @@ Before you begin the configuration process, make sure that the following prerequ
 ### 1. Configuring the VMware Host.
 {: #configurevmwarehost1}
 
-1. From an internet connected computer, start an RDP client and establish an RDP session to the {{site.data.keyword.BluVirtServers_full}} that is provisioned in the same data center where vSphere vCenter is installed.
+1. From an internet-connected computer, start an RDP client and establish an RDP session to the {{site.data.keyword.BluVirtServers_full}} that is provisioned in the same data center where vSphere vCenter is installed.
 2. From the {{site.data.keyword.BluVirtServers_short}}, start a web browser and connect to VMware&reg; vCenter through the vSphere Web Client.
 3. From the **HOME** screen, select **Hosts and Clusters**. Expand the pane on the left and select the **VMware&reg; ESXi server** that is to be used for this deployment.
 4. Make sure that the firewall port for the NFS client is open on all hosts so that you can configure the NFS client on the vSphere host. (The port is automatically opened in the more recent releases of vSphere.) To check whether the port is open, go to the **ESXi host Manage** tab in VMware® vCenter™, select **Settings**, and then select **Security Profile**. In the **Firewall** section, click **Edit** and scroll down to **NFS Client**.
 5. Make sure **Allow connection from any IP address or a list of IP addresses** is provided.
     ![Allow Connection.](/images/1_4.svg){: caption="Allow Connections." caption-side="bottom"}
 6. Configure Jumbo Frames by going to the **ESXi host Manage** tab, select **Manage** and then **Networking**.
-7. Select **VMkernel adapters**, highlight the **vSwitch** and the click **Edit** (Pencil icon).
-8. Select **NIC setting**, and ensure that the NIC MTU is set to 9000.
+7. Select the **VMkernel adapters**, highlight the **vSwitch** and the click **Edit** (Pencil icon).
+8. Select the **NIC setting**, and ensure that the NIC MTU is set to 9000.
 9. **Optional**. Validate the jumbo frame settings.
    - Windows
      ```shell
@@ -235,11 +235,11 @@ For more information about VMware&reg; and Jumbo Frames, see [here](https://kb.v
 1. Configure a new uplink adapter by going to the **ESXi host Manage** tab, select **Manage** and then **Networking**.
 2. Select the **Physical adapters** tab.
 3. Click **Add host networking** (Globe icon with a plus sign).
-4. Select connection type as **Physical Network Adapter** and click **Next**.
+4. Select the connection type as **Physical Network Adapter** and click **Next**.
 5. Select the existing **vSwitch** and click **Next**.
 6. Select **Unused adapters** and click **Add adapters** (Plus sign).
 7. Click the other "Connected" adapter and click **OK**.
-    ![Add physical adapters to switch.](/images/2_3.svg){: caption="Add the physical adapters to the switch." caption-side="bottom"}
+    ![Add physical adapters to the switch.](/images/2_3.svg){: caption="Add the physical adapters to the switch." caption-side="bottom"}
 8. Click **Next** and the **Finish**.
 9. Go back to the **Virtual switches** tab and select the **Edit setting** (Pencil icon) under the **Virtual Switches** heading.
 10. On the left, select the vSwitch **Teaming and failover** entry.
@@ -257,7 +257,7 @@ The network configuration for this architecture guide uses a minimal number of p
    ```
    {: pre}
 
-   The NFS storage DNS hostname is a Forwarding Zone (FZ) that is assigned multiple IP addresses. These IP addresses are static and belong to that specific DNS hostname. Any of those IP addresses can be used to access a specific volume.
+   The NFS storage DNS hostname is a Forwarding Zone (FZ) that has multiple IP addresses assigned to it. These IP addresses are static and belong to that specific DNS hostname. Any of those IP addresses can be used to access a specific volume.
    {: note}
 
    ```zsh
@@ -345,7 +345,7 @@ Use the following steps to change the VDisk shares and limit.
 This process is used to set the resource consumption limits of individual vDisks in a {{site.data.keyword.BluVirtServers_short}} even when SIOC is not enabled. These settings are specific to the individual guest, and not the host, although they are used by SIOC.
 {: important}
 
-## Configuring ESXi host side settings
+## Configuring ESXi host-side settings
 {: #configureESXihost}
 
 Other settings are required for configuring ESXi hosts for NFS storage. This table shows what each setting needs to be.
@@ -365,7 +365,7 @@ Other settings are required for configuring ESXi hosts for NFS storage. This tab
 ### Updating advanced configuration parameters
 {: #updateconfigparam}
 
-The following examples use the ESXi CLI to set the advanced configuration parameters, and then, check them. The `esxcfg-advcfg` tool that is used in the examples can be found in the `/usr/sbin` directory on the ESXi hosts.
+The following examples use the ESXi CLI to set the advanced configuration parameters, and check them. The `esxcfg-advcfg` tool that is used in the examples can be found in the `/usr/sbin` directory on the ESXi hosts.
 
 - Setting the advanced configuration parameters from the ESXi CLI.
 
@@ -398,5 +398,5 @@ The following examples use the ESXi CLI to set the advanced configuration parame
  #esxcfg-advcfg -g /Disk/QFullThreshold
  ```
 
-Learn more about Advanced Single-Site VMware&reg; Reference Architecture [here](/docs/virtualization?topic=virtualization-advanced-single-site-vmware-reference-architecture){: external}.
+For more information, see [Advanced Single-Site VMware&reg; Reference Architecture](/docs/virtualization?topic=virtualization-advanced-single-site-vmware-reference-architecture).
 {: tip}

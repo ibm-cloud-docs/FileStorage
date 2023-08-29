@@ -21,24 +21,25 @@ Snapshots are a feature of {{site.data.keyword.blockstoragefull}}. A snapshot re
 {: #addscheduleUI}
 {: ui}
 
-You decide how often and when you want to create a point in time reference of your storage volume with Snapshot schedules. You can have a maximum of 50 snapshots per storage volume. Schedules are managed through the **Storage** > **{{site.data.keyword.filestorage_short}}** tab of the [{{site.data.keyword.cloud}} console](/login){: external}.
+You can decide how often and when you want to create a point in time reference of your storage volume with Snapshot schedules. You can have a maximum of 50 snapshots per storage volume. Schedules are managed through the **Storage** > **{{site.data.keyword.filestorage_short}}** tab of the [{{site.data.keyword.cloud}} console](/login){: external}.
 
 Before you can set up your initial schedule, you must first purchase snapshot space if you didn't purchase it during the initial provisioning of the storage volume.
 {: important}
 
 Snapshots schedules can be set up for hourly, daily, and weekly intervals, each with a distinct retention cycle. The maximum limit of snapshots is 50 per storage volume, which can be a mix of hourly, daily, and weekly schedules, and manual snapshots.
 
-1. Click your storage volume, click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions"), and click **Schedule Snapshot**.
-2. In the New Schedule Snapshot window, you can select from three different snapshot frequencies. Use any combination of the three to create a comprehensive snapshot schedule.
+1. Click your storage volume to view its details.
+1. Click the **Snapshots** in the side navigation.
+2. In the Snapshot schedule panel, click **Edit +**. You can select from three different snapshot frequencies. Use any combination of the three to create a comprehensive snapshot schedule.
    - Hourly
       - Specify the minute each hour that a snapshot is to be taken. The default is the current minute.
       - Specify the number of hourly snapshots to be retained before the oldest is discarded.
    - Daily
       - Specify the hour and minute that a snapshot is to be taken. The default is the current hour and minute.
-      - Select the number of hourly snapshots to be retained before the oldest is discarded.
+      - Specify the number of hourly snapshots to be retained before the oldest is discarded.
    - Weekly
       - Specify the day of the week, hour, and minute that a snapshot is to be taken. The default is the current day, hour, and minute.
-      - Select the number of weekly snapshots to be retained before the oldest is discarded.
+      - Specify the number of weekly snapshots to be retained before the oldest is discarded.
 3. Click **Save**. If the total number of scheduled snapshots is over 50, you receive a warning message and can't save.
 
 The list of the snapshots is displayed as they're taken in the **Snapshots** section of the **Detail** page.
@@ -47,7 +48,7 @@ The list of the snapshots is displayed as they're taken in the **Snapshots** sec
 {: #addscheduleCLI}
 {: cli}
 
-You decide how often and when you want to create a point in time reference of your storage volume with Snapshot schedules. You can have a maximum of 50 snapshots per storage volume. Schedules are managed through the **Storage** > **{{site.data.keyword.filestorage_short}}** tab of the [{{site.data.keyword.cloud}} console](/login){: external}.
+You can decide how often and when you want to create a point in time reference of your storage volume with Snapshot schedules. You can have a maximum of 50 snapshots per storage volume. Schedules are managed through the **Storage** > **{{site.data.keyword.filestorage_short}}** tab of the [{{site.data.keyword.cloud}} console](/login){: external}.
 
 Before you can set up your initial schedule, you must first purchase snapshot space if you didn't purchase it during the initial provisioning of the storage volume.
 {: important}
@@ -87,7 +88,7 @@ Options:
 {: #addscheduleTerraform}
 {: terraform}
 
-To set up a snapshot schedule, use the `ibm_storage_file` resource and specify information in the `snapshot_schedule` argument. The following example defines two different schedules. One schedule is for weekly snapshots that are take on Sundays at 1:20 PM. 20 snapshots are kept before the oldest one is deleted to make space for a new one. The second schedule is for hourly snapshots.
+To set up a snapshot schedule, use the `ibm_storage_file` resource and specify information in the `snapshot_schedule` argument. The following example defines two different schedules. One schedule is for weekly snapshots that are taken on Sundays at 1:20 PM. 20 snapshots are kept before the oldest one is deleted to make space for a new one. The second schedule is for hourly snapshots.
 
 ```terraform
 resource "ibm_storage_file" "fs_endurance" {
@@ -123,7 +124,7 @@ resource "ibm_storage_file" "fs_endurance" {
 ```
 {: codeblock}
 
-If you want to update the schedule, just change these values and apply them to your resources. If you want to delete the schedule, remove its details from the `ibm_storage_file` resource definition, and apply your changes.
+If you want to update the schedule, change these values and apply them to your resources. If you want to delete the schedule, remove its details from the `ibm_storage_file` resource definition, and apply your changes.
 
 For more information about the arguments and attributes, see [ibm_storage_file](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/storage_file){: external}.
 
@@ -155,7 +156,7 @@ Options:
   -h, --help        Show this message and exit.
 ```
 
-## Listing all Snapshots with Space Used Information and Management functions in the UI
+## Listing all Snapshots with usage information and management functions in the UI
 {: #listsnapshotUI}
 {: ui}
 
@@ -163,7 +164,7 @@ A list of retained snapshots and space that is used can be seen on the **{{site.
 
 You receive notifications when you reach space thresholds – 75 percent, 90 percent, and 95 percent.
 
-- At **75 percent capacity**, a warning is sent that snapshot space usage exceeded 75 percent. To remediate, you can manually add space, or delete retained unnecessary snapshots. You can reduce the number of retained snapshots in the schedule. If you reduce the snapshot data or increase the space, the warning system is reset, and no autodeletion occurs.
+- At **75 percent capacity**, a warning is sent that snapshot space usage exceeded 75 percent. To remediate this situation, you can manually add space, or delete retained unnecessary snapshots. You can reduce the number of retained snapshots in the schedule. If you reduce the snapshot data or increase the space, the warning system is reset, and no autodeletion occurs.
 - At **90 percent capacity**, a second warning is sent when snapshot space usage exceeded 90 percent. Like with reaching 75 percent capacity, if you take the necessary actions to decrease the snapshot data or increase the space, the warning system is reset and no autodeletion occurs.
 - At **95 percent capacity**, a final warning is sent. If no action is taken to bring your space usage under the threshold, automatic deletion starts so that future snapshots can be created. Scheduled snapshots are deleted, starting with the oldest, until usage drops under 95 percent. Snapshots continue to be deleted each time usage exceeds 95 percent until it drops under the threshold. If the space is manually increased or snapshots are manually deleted, the warning is reset, and reissued if the threshold is exceeded again. If no actions are taken, this notification is the only warning that you receive.
 
@@ -172,7 +173,7 @@ By default, snapshot warning notifications are enabled for every customer. Howev
 If snapshot space usage increases too rapidly, then you might receive one notification before autodeletion of the oldest scheduled snapshot occurs. For example, if usage jumps from 76% to 96% within 15 minutes, you receive one notification about exceeding 75% and one notification about exceeding 95%.
 {: note}
 
-## Listing all Snapshots with Space Used Information and Management functions from the SLCLI
+## Listing all Snapshots with usage information and management functions from the SLCLI
 {: #listsnapshotCLI}
 {: cli}
 
@@ -189,7 +190,7 @@ Options:
 
 Notifications are sent when you reach three different space thresholds – 75 percent, 90 percent, and 95 percent.
 
-- At **75 percent capacity**, a warning is sent that snapshot space usage exceeded 75 percent. To remediate, you can manually add space, or delete retained unnecessary snapshots. You can reduce the number of retained snapshots in the schedule. If you reduce the snapshot data or increase the space, the warning system is reset, and no autodeletion occurs.
+- At **75 percent capacity**, a warning is sent that snapshot space usage exceeded 75 percent. To remediate this situation, you can manually add space, or delete retained unnecessary snapshots. You can reduce the number of retained snapshots in the schedule. If you reduce the snapshot data or increase the space, the warning system is reset, and no autodeletion occurs.
 - At **90 percent capacity**, a second warning is sent when snapshot space usage exceeded 90 percent. Like with reaching 75 percent capacity, if you take the necessary actions to decrease the snapshot data or increase the space, the warning system is reset and no autodeletion occurs.
 - At **95 percent capacity**, a final warning is sent. If no action is taken to bring your space usage under the threshold, automatic deletion starts so that future snapshots can be created. Scheduled snapshots are deleted, starting with the oldest, until usage drops under 95 percent. Snapshots continue to be deleted each time usage exceeds 95 percent until it drops under the threshold. If the space is manually increased or snapshots are manually deleted, the warning is reset, and reissued if the threshold is exceeded again. If no actions are taken, this notification is the only warning that you receive.
 
@@ -228,7 +229,7 @@ Options:
 
 You might need to add snapshot space to a volume that didn't previously have any or might require extra snapshot space.
 
-Snapshot space can be increased. It can't be reduced. You can select a smaller amount of space until you determine how much space you need. Remember, automated, and manual snapshots share the space.
+Snapshot space can be increased. It can't be reduced. You can select a smaller amount of space until you determine how much space you need.
 {: important}
 
 Snapshot space is increased through **Storage** > **{{site.data.keyword.filestorage_short}}**.
