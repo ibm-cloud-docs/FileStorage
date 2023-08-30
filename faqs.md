@@ -81,12 +81,13 @@ The maximum number of inodes that can be configured on a volume is calculated by
 | 100 GB  | 24,903,679 |
 | 250 GB  | 62,259,189 |
 | 500 GB | 124,518,391 |
-| 1 TB   | 255,013,682 |
-| 2 TB   | 510,027,363 |
-| 3 TB   | 765,041,044 |
-| 4 TB | 1,020,054,726 |
-| 8 TB | 2,040,109,451 |
-| 12 TB| 2,040,109,451 |
+| 1,000 GB| 249,036,795 |
+| 2,000 GB| 498,073,589 |
+| 3,000 GB| 747,110,397 |
+| 4,000 GB| 996,147,191 |
+| 8,000 GB| 1,992,294,395 |
+| 12,000 GB| 2,040,109,451 |
+| 16,000 GB| 2,040,109,451 |
 {: row-headers}
 {: caption="Table 1 shows the maximum number of inodes that are allowed based on the volume size." caption-side="bottom"}
 {: summary="Table 1 shows the maximum number of inodes that are allowed based on the volume size. Volume sizes are in the left column. The numbers of inodes (files and directories) are on the right."}
