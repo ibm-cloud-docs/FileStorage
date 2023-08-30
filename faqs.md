@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-08-29"
+lastupdated: "2023-08-30"
 
 keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
@@ -71,7 +71,7 @@ That depends on what the host operating system can handle, it’s not something 
 {: support}
 
 The number of files a volume can contain is determined by how many inodes it has. An inode is a data structure that contains information about files. Volumes have both private and public inodes. Public inodes are used for files that are visible to the customer and private inodes are used for files that are used internally by the storage system. The maximum number of files setting is 2 billion. However, this maximum value can be configured only with volumes of 7.8 TB or larger.
-The maximum number of inodes that can be configured on a volume is calculated by taking the total allocated volume size in KB and dividing it by 4. Any volume of 7.8 TB or larger reaches the maximum limit at 2,040,109,451 inodes.
+The maximum number of inodes that can be configured on a volume is calculated by taking the total allocated volume size in KB and dividing it by 4. Any volume of 7.8 TB or larger reaches the maximum limit at 1,992,294,395 inodes.
 
 | Volume Size | Inodes |
 |------------:|-------:|
@@ -81,14 +81,15 @@ The maximum number of inodes that can be configured on a volume is calculated by
 | 100 GB  | 24,903,679 |
 | 250 GB  | 62,259,189 |
 | 500 GB | 124,518,391 |
-| 1 TB   | 255,013,682 |
-| 2 TB   | 510,027,363 |
-| 3 TB   | 765,041,044 |
-| 4 TB | 1,020,054,726 |
-| 8 TB | 2,040,109,451 |
-| 12 TB| 2,040,109,451 |
+| 1,000 GB| 249,036,795 |
+| 2,000 GB| 498,073,589 |
+| 3,000 GB| 747,110,397 |
+| 4,000 GB| 996,147,191 |
+| 8,000 GB| 1,992,294,395 |
+| 12,000 TB| 1,992,294,395 |
+| 16,000 TB| 1,992,294,395 |
 {: row-headers}
-{: caption="Table comparison" caption-side="bottom"}
+{: caption="Table 1 shows the maximum number of inodes that are allowed based on the volume size." caption-side="bottom"}
 {: summary="Table 1 shows the maximum number of inodes that are allowed based on the volume size. Volume sizes are in the left column. The numbers of inodes (files and directories) are on the right."}
 
 ## I ordered a {{site.data.keyword.filestorage_short}} volume in the wrong data center. Is it possible to move or migrate it to another data center?
