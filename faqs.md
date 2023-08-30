@@ -71,7 +71,7 @@ That depends on what the host operating system can handle, it’s not something 
 {: support}
 
 The number of files a volume can contain is determined by how many inodes it has. An inode is a data structure that contains information about files. Volumes have both private and public inodes. Public inodes are used for files that are visible to the customer and private inodes are used for files that are used internally by the storage system. The maximum number of files setting is 2 billion. However, this maximum value can be configured only with volumes of 7.8 TB or larger.
-The maximum number of inodes that can be configured on a volume is calculated by taking the total allocated volume size in KB and dividing it by 4. Any volume of 7.8 TB or larger reaches the maximum limit at 1,992,294,395 inodes.
+The maximum number of inodes that can be configured on a volume is calculated by taking the total allocated volume size in KB and dividing it by 4. Any volume of 9,000 GB or larger reaches the maximum limit at 2,040,109,451 inodes.
 
 | Volume Size | Inodes |
 |------------:|-------:|
