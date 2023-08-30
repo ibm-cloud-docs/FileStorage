@@ -86,8 +86,8 @@ The maximum number of inodes that can be configured on a volume is calculated by
 | 3,000 GB| 747,110,397 |
 | 4,000 GB| 996,147,191 |
 | 8,000 GB| 1,992,294,395 |
-| 12,000 TB| 1,992,294,395 |
-| 16,000 TB| 1,992,294,395 |
+| 12,000 GB| 1,992,294,395 |
+| 16,000 GB| 1,992,294,395 |
 {: row-headers}
 {: caption="Table 1 shows the maximum number of inodes that are allowed based on the volume size." caption-side="bottom"}
 {: summary="Table 1 shows the maximum number of inodes that are allowed based on the volume size. Volume sizes are in the left column. The numbers of inodes (files and directories) are on the right."}
