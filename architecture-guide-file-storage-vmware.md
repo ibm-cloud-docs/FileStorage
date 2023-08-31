@@ -273,7 +273,7 @@ Make note of the IP address as it can be used for mounting the volume in the nex
 ##  Creating the datastore
 {: #mountNFSonESXI}
 
-1. Click **Go to vCenter** icon, and then **Hosts and Clusters**.
+1. Click the **Go to vCenter** icon, and then **Hosts and Clusters**.
 2. On the **Related Object** tab, click **Datastores**.
 3. Click the **Create a new datastore** icon.
 4. On the **New Datastore** screen, select the location of the VMware&reg; datastore and click **Next**.
@@ -288,7 +288,7 @@ Make note of the IP address as it can be used for mounting the volume in the nex
 9. Review the inputs on the next screen and click **Finish**.
 10. Repeat for any additional {{site.data.keyword.filestorage_short}} volumes.
 
-It is {{site.data.keyword.cloud_notm}}’s recommendation that FQDN names be used to connect to the VMware&reg; datastore. Using direct IP addressing might bypass the load-balancing mechanism that is provided by using FQDN.
+{{site.data.keyword.cloud_notm}} recommends that FQDN names be used to connect to the VMware&reg; datastore. Using direct IP addressing might bypass the load-balancing mechanism that is provided by using FQDN.
 {: important}
 
 To use the IP address instead of the FQDN, ping the server to obtain the IP address.
