@@ -89,12 +89,12 @@ Use the `slcli file volume-order` command to provision the file share volume.
 # slcli file volume-order --help
 Usage: slcli file volume-order [OPTIONS]
 
-  Order a file storage volume.
+  Order a File Storage volume.
 
 Options:
   --storage-type [performance|endurance]
-                                  Type of file storage volume  [required]
-  --size INTEGER                  Size of file storage volume in GB
+                                  Type of File Storage volume  [required]
+  --size INTEGER                  Size of File Storage volume in GB
                                   [required]
   --iops INTEGER                  Performance Storage IOPS, between 100 and
                                   6000 in multiples of 100  [required for
@@ -104,7 +104,7 @@ Options:
   --location TEXT                 Datacenter short name (e.g.: dal09)
                                   [required]
   --snapshot-size INTEGER         Optional parameter for ordering snapshot
-                                  space along with endurance file storage;
+                                  space along with endurance File Storage;
                                   specifies the size (in GB) of snapshot space
                                   to order
   --service-offering [storage_as_a_service|enterprise|performance]

@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2023
 lastupdated: "2023-01-11"
 
-keywords: File Storage, file storage, NFS, authorizing hosts, revoke access, grant access, view authorizations
+keywords: File Storage, NFS, authorizing hosts, revoke access, grant access, view authorizations
 
 subcollection: FileStorage
 
@@ -215,7 +215,7 @@ Usage: slcli file volume-cancel [OPTIONS] VOLUME_ID
 
 Options:
   --reason TEXT  An optional reason for cancellation.
-  --immediate    Cancels the file storage volume immediately instead of on the
+  --immediate    Cancels the File Storage volume immediately instead of on the
                  billing anniversary.
   -h, --help     Show this message and exit.
 ```

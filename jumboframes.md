@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2023
 lastupdated: "2023-02-20"
 
-keywords: File Storage, file storage, NSF, networking, jumbo frames
+keywords: File Storage, NSF, networking, jumbo frames
 
 subcollection: FileStorage
 

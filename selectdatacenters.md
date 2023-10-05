@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2023
 lastupdated: "2023-04-12"
 
-keywords: File Storage, file storage, NFS, locations, data centers
+keywords: File Storage, NFS, locations, data centers
 
 subcollection: FileStorage
 
