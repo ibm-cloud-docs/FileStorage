@@ -19,7 +19,7 @@ subcollection: FileStorage
 You can provision {{site.data.keyword.filestorage_short}} and fine-tune to meet your capacity and IOPS needs. Get the most out of your storage with two options for specifying performance.
 {: shortdesc}
 
-- You can choose from Endurance IOPs tiers that feature pre-defined performance levels to fit workloads that don't have well-defined performance requirements.
+- You can choose from Endurance IOPS tiers that feature pre-defined performance levels to fit workloads that don't have well-defined performance requirements.
 - You can fine-tune your storage to meet specific performance requirements by specifying the total number of IOPS with Performance.
 
 ## Ordering {{site.data.keyword.filestorage_short}} in the UI
@@ -96,7 +96,7 @@ Options:
                                   Type of file storage volume  [required]
   --size INTEGER                  Size of file storage volume in GB
                                   [required]
-  --iops INTEGER                  Performance Storage IOPs, between 100 and
+  --iops INTEGER                  Performance Storage IOPS, between 100 and
                                   6000 in multiples of 100  [required for
                                   storage-type performance]
   --tier [0.25|2|4|10]            Endurance Storage Tier (IOP per GB)
@@ -148,7 +148,7 @@ You must specify the following parameters for a successful order.
 - `storage_type` – "performance" or "endurance".
 - `location` – Data center in which to order iSCSI volume.
 - `size` – Size of the new volume, in GB.
-- `iops` – Number of IOPs for a “Performance” order.
+- `iops` – Number of IOPS for a “Performance” order.
 - `tier_level` – Tier level to use for an “Endurance” order.
 - `snapshot_size` – The size of optional snapshot space, if snapshot space is also to be ordered. (None if not ordered.)
 - `service_offering` – Requested offering package to use in the order ("storage_as_a_service", "enterprise", or "performance").
