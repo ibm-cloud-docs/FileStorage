@@ -179,7 +179,7 @@ resource "ibm_storage_file" "fs_endurance" {
 ```
 {: codeblock}
 
-After your storage resource is created, you can access the `hostname` and `volumename` attributes, which you can use to determine the mount target later. For example, a file storage resource with the `hostname` argument set to `nfsdal0901a.service.softlayer.com` and the `volumename` argument set to `IBM01SV278685_7` has the mount point `nfsdal0901a.service.softlayer.com:-IBM01SV278685_7`.
+After your storage resource is created, you can access the `hostname` and `volumename` attributes, which you can use to determine the mount target later. For example, a File Storage resource with the `hostname` argument set to `nfsdal0901a.service.softlayer.com` and the `volumename` argument set to `IBM01SV278685_7` has the mount point `nfsdal0901a.service.softlayer.com:-IBM01SV278685_7`.
 
 For more information about the arguments and attributes, see [ibm_storage_file](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/storage_file){: external}.
 
@@ -338,7 +338,7 @@ Use the following steps to change the VDisk shares and limit.
 1. Choose a {{site.data.keyword.BluVirtServers_short}} in the **VMs and Templates** inventory.
 2. Select the {{site.data.keyword.BluVirtServers_short}} for I/O Control.
 3. Click the **Manage** tab and click **Settings**. Click **Edit**.
-4. Expand the **hard disk** arrow. Select **Modify the Shares** or **Limit - IOPs** as is appropriate for your environment. Choose a virtual hard disk from the list and modify the Shares selection to choose the relative number of shares to allocate to the {{site.data.keyword.BluVirtServers_short}} (Low, Normal, or High). You can also click **Custom** and enter a user-defined share value.
+4. Expand the **hard disk** arrow. Select **Modify the Shares** or **Limit - IOPS** as is appropriate for your environment. Choose a virtual hard disk from the list and modify the Shares selection to choose the relative number of shares to allocate to the {{site.data.keyword.BluVirtServers_short}} (Low, Normal, or High). You can also click **Custom** and enter a user-defined share value.
 5. Click the **Limit - IOPS** column and enter the maximum storage resources to allocate to the virtual machine.
 6. Click **OK**.
 

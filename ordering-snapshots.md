@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2023
 lastupdated: "2023-08-28"
 
-keywords: File Storage, file storage, NFS, snapshot, ordering snapshot, snapshot space
+keywords: File Storage, NFS, snapshot, ordering snapshot, snapshot space
 
 subcollection: FileStorage
 

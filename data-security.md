@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2023
 lastupdated: "2023-08-29"
 
-keywords: File Storage, file storage, NFS, security, encryption
+keywords: File Storage, NFS, security, encryption
 
 subcollection: FileStorage
 
@@ -26,7 +26,7 @@ The provider-managed encryption-at-rest feature uses the following industry stan
 ## Securing your snapshots or replicated storage
 {: #securesnapshot}
 
-All snapshots and replicas of encrypted file storage are also encrypted by default. This feature can’t be turned off on a volume basis.
+All snapshots and replicas of encrypted File Storage are also encrypted by default. This feature can’t be turned off on a volume basis.
 All cluster-to-cluster traffic is encrypted with TLS.
 
 ## Provisioning storage with encryption

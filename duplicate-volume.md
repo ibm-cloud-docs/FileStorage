@@ -4,7 +4,7 @@ copyright:
   years: 2017, 2023
 lastupdated: "2023-08-29"
 
-keywords: File Storage, file storage, NFS, duplicate volume
+keywords: File Storage, NFS, duplicate volume
 
 subcollection: FileStorage
 
