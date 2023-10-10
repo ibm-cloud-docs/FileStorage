@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-08-29"
+lastupdated: "2023-10-10"
 
 keywords: File Storage, NFS, provisioning, ordering, duplicate, cloning, replication
 
@@ -20,7 +20,25 @@ You can provision {{site.data.keyword.filestorage_short}} and fine-tune to meet 
 {: shortdesc}
 
 - You can choose from Endurance IOPS tiers that feature pre-defined performance levels to fit workloads that don't have well-defined performance requirements.
-- You can fine-tune your storage to meet specific performance requirements by specifying the total number of IOPS with Performance.
+   - **0.25 IOPS per GB** is designed for workloads with low I/O intensity. These workloads are typically characterized by having a large percentage of data inactive at a time. Example applications include storing mailboxes or departmental-level file shares.
+   - **2 IOPS per GB** is designed for most general-purpose usage. Example applications include hosting small databases that are backing web applications or virtual machine disk images for a hypervisor.
+   - **4 IOPS per GB** is designed for higher-intensity workloads. These workloads are typically characterized by having a high percentage of data active at a time. Example applications include transactional and other performance-sensitive databases.
+   - **10 IOPS per GB** is designed for the most demanding workloads such as those created by NoSQL databases, and data processing for Analytics. This tier is available in [select data centers](/docs/FileStorage?topic=FileStorage-selectDC) for storage that is provisioned up to 4 TB.
+- You can fine-tune your storage to meet specific performance requirements by specifying the total number of IOPS with Performance. The available **custom** IOPS range depends on the volume capacity. The following table shows the available IOPS ranges based on volume size.
+   | Volume size (GB) | IOPS range |
+   |-------------|-----------------|
+   | 10 - 39     | 100 - 1,000 |
+   | 40 - 79     | 100 - 2,000 |
+   | 80 - 99     | 100 - 4,000 |
+   | 100 - 499   | 100 - 6,000 |
+   | 500 - 999   | 100 - 10,000|
+   | 1,000 - 1,999 | 100 - 20,000|
+   | 2,000 - 2,999 | 200 - 40,000|
+   | 3,000 - 3,999 | 200 - 48,000|
+   | 4,000 - 7,999 | 300 - 48,000|
+   | 8,000 - 9,999 | 500 - 48,000 |
+   | 10,000 - 12,000 | 1,000 - 48,000 |
+   {: caption="Table 1. Available IOPS based on volume size" caption-side="bottom"}
 
 ## Ordering {{site.data.keyword.filestorage_short}} in the UI
 {: #orderingFileStorageUI}
@@ -39,27 +57,6 @@ You can provision {{site.data.keyword.filestorage_short}} and fine-tune to meet 
    {: tip}
 
 6. Select your IOPS profile. You can choose between the predefined values of **Endurance (Tiers)** or enter your custom IOPS value for **Performance**.
-    - **0.25 IOPS per GB** is designed for workloads with low I/O intensity. These workloads are typically characterized by having a large percentage of data inactive at a time. Example applications include storing mailboxes or departmental-level file shares.
-    - **2 IOPS per GB** is designed for most general-purpose usage. Example applications include hosting small databases that are backing web applications or virtual machine disk images for a hypervisor.
-    - **4 IOPS per GB** is designed for higher-intensity workloads. These workloads are typically characterized by having a high percentage of data active at a time. Example applications include transactional and other performance-sensitive databases.
-    - **10 IOPS per GB** is designed for the most demanding workloads such as those created by NoSQL databases, and data processing for Analytics. This tier is available in [select data centers](/docs/FileStorage?topic=FileStorage-selectDC) for storage that is provisioned up to 4 TB.
-    - The available **custom** IOPS range depends on the volume capacity. The following table shows the available IOPS ranges based on volume size.
-
-     | Volume size (GB) | IOPS range |
-     |-------------|-----------------|
-     | 10 - 39     | 100 - 1,000 |
-     | 40 - 79     | 100 - 2,000 |
-     | 80 - 99     | 100 - 4,000 |
-     | 100 - 499   | 100 - 6,000 |
-     | 500 - 999   | 100 - 10,000|
-     | 1,000 - 1,999 | 100 - 20,000|
-     | 2,000 - 2,999 | 200 - 40,000|
-     | 3,000 - 3,999 | 200 - 48,000|
-     | 4,000 - 7,999 | 300 - 48,000|
-     | 8,000 - 9,999 | 500 - 48,000 |
-     | 10,000 - 12,000 | 1,000 - 48,000 |
-     {: caption="Table 1. Available IOPS based on volume size" caption-side="bottom"}
-
 7. In the side panel, review your order summary, and apply your Promo Code if you have one.
 
    Discounts are applied when the order is processed.
