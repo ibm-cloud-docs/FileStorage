@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-08-28"
+lastupdated: "2023-12-12"
 
 keywords: File Storage, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
@@ -11,7 +11,7 @@ subcollection: FileStorage
 ---
 {{site.data.keyword.attribute-definition-list}}
 
-# Disaster Recovery - Fail over with an accessible primary volume
+# Disaster Recovery - Failover with an accessible primary volume
 {: #dr-accessible}
 
 If a catastrophic event occurs on the primary site and the primary storage is still accessible, customers can take the following steps to quickly access their data on the secondary site.
