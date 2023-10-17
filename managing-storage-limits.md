@@ -34,7 +34,7 @@ Before you begin, decide on the CLI client that you want to use.
 ### IBMCLOUD CLI
 {: #ibmcloudcli1}
 
-Use the `ibmcloud sl file volume-limits` command to display what is available and what has been provisioned.
+Use the `ibmcloud sl file volume-limits` command to display what is available and what is provisioned.
 
 ```sh
 ibmcloud sl file volume-limits

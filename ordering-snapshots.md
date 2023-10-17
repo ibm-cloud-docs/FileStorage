@@ -15,7 +15,7 @@ subcollection: FileStorage
 # Ordering Snapshots
 {: #ordering-snapshots}
 
-To create snapshots of your storage volume, either automatedly or manually, you need to purchase space to hold them. You can purchase snapshot capacity during the initial volume purchase or later by using these steps.
+To create snapshots of your storage volume, either in an automated way or manually, you need to purchase space to hold them. You can purchase snapshot capacity during the initial volume purchase or later by using these steps.
 {: shortdesc}
 
 ## Determining how much snapshot space to order

@@ -25,6 +25,7 @@ You can provision {{site.data.keyword.filestorage_short}} and fine-tune to meet 
    - **4 IOPS per GB** is designed for higher-intensity workloads. These workloads are typically characterized by having a high percentage of data active at a time. Example applications include transactional and other performance-sensitive databases.
    - **10 IOPS per GB** is designed for the most demanding workloads such as those created by NoSQL databases, and data processing for Analytics. This tier is available in [select data centers](/docs/FileStorage?topic=FileStorage-selectDC) for storage that is provisioned up to 4 TB.
 - You can fine-tune your storage to meet specific performance requirements by specifying the total number of IOPS with Performance. The available **custom** IOPS range depends on the volume capacity. The following table shows the available IOPS ranges based on volume size.
+
    | Volume size (GB) | IOPS range |
    |-------------|-----------------|
    | 10 - 39     | 100 - 1,000 |

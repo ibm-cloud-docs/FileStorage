@@ -68,7 +68,7 @@ Before you begin, decide on the CLI client that you want to use.
 ### Resizing a file share from the IBMCLOUD CLI
 {: #resizingstepsICCLI}
 
-You can increase the capacity of a volume by using the `ibmcloud sl file volume-modify` command. The following example modifies a file share by specifying new, bigger capacity.
+You can increase the capacity of a volume by using the `ibmcloud sl file volume-modify` command. The following example modifies a file share by specifying a new, bigger capacity.
 
 ```sh
 ibmcloud sl file volume-modify 12345678 --new-size 1000
@@ -245,5 +245,5 @@ Unmount, then mount the modified volume, so the OS can recognize the extra stora
 If you need to increase your Storage volume capacity beyond 12 TB, you can request to be added to the allowlist by submitting a [support case](/unifiedsupport/cases/add){: external}. When the request is approved by the Offering Manager, you're going to be notified through the case process. You're also going to see the option to increase your storage up to 24 TB in the console.
 {: preview}
 
-The number of operations that can be performed on the storage is limited. This limit is 180k IOPS. So if you want to provision a volume with 10 IOPS, your maximum volume size is 18 TB. If you want to provision the maximum size of 24 TB, then the maximum rate of reads and writes to the volume is 4 IOPS per GB.
+The number of operations that can be performed on the storage is limited. This limit is 180k IOPS. So if you want to provision a volume with 10 IOPS, your maximum volume size is 18 TB. If you want to provision the maximum size of 24 TB, then the maximum rate of read and write operations to the volume is 4 IOPS per GB.
 {: note}
