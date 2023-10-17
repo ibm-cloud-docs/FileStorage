@@ -25,7 +25,7 @@ completion-time: 1h
 To mount {{site.data.keyword.filestorage_full}} in CentOS 7, you must authorize the host first. Then, install the NFS utilities as described in [Mounting {{site.data.keyword.filestorage_short}} on Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingLinux).
 {: shortdesc}
 
-Before you begin, make sure that the host that is to access the {{site.data.keyword.filestorage_short}} volume is authorized. For more information see [Authorizing the host in the UI](/docs/FileStorage?topic=FileStorage-managingstorage&interface=ui#authhostUI){: ui}[Authorizing the host from the CLI](/docs/FileStorage?topic=FileStorage-managingstorage&interface=cli#authhostCLI){: cli}[Authorizing the host with Terraform](/docs/FileStorage?topic=FileStorage-managingstorage&interface=cli#authhostterraform){: terraform}.
+Before you begin, make sure that the host that is to access the {{site.data.keyword.filestorage_short}} volume is authorized. For more information see [Authorizing the host in the UI](/docs/FileStorage?topic=FileStorage-managingstorage&interface=ui#authhostUI){: ui}[Authorizing the host from the CLI](/docs/FileStorage?topic=FileStorage-managingstorage&interface=cli#authhostCLI){: cli}[Authorizing the host with Terraform](/docs/FileStorage?topic=FileStorage-managingstorage&interface=terraform#authhostterraform){: terraform}.
 
 ## Mounting the storage
 {: #mountingStorageCentOS}
