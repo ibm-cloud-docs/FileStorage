@@ -470,7 +470,7 @@ For more information about mounting and unmounting storage, see [connecting your
 Restoring a volume results in deleting all snapshots that were taken after the snapshot that was used for the restore.
 {: important}
 
-## Restoring storage volume by using a snapshot from the IBMCLOUD CLI
+### Restoring storage volume by using a snapshot from the IBMCLOUD CLI
 {: #restorefromsnapshotICCLI}
 
 Use the `ibmcloud sl file snapshot-restore` command to return your file share to a previous state. The following example restores the volume with ID 12345678 from the snapshot with ID 87654321.
@@ -482,7 +482,7 @@ ibmcloud sl file snapshot-restore 12345678 87654321
 
 For more information about all of the parameters that are available for this command, see [ibmcloud sl file snapshot-restore](/docs/cli?topic=cli-sl-file-storage-service#sl_file_snapshot_restore){: external}.
 
-## Restoring storage volume by using a snapshot from the SLCLI
+### Restoring storage volume by using a snapshot from the SLCLI
 {: #restorefromsnapshotSLCLI}
 
 You can restore the volume with a snapshot from the CLI by using the following command.
