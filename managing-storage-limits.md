@@ -79,6 +79,7 @@ curl -u $SL_USER:$SL_APIKEY 'https://api.softlayer.com/rest/v3.1/SoftLayer_Netwo
 
 SoftLayer_Container_Network_Storage_DataCenterLimits_VolumeCountLimitContainer[{"datacenterName":"global","maximumAvailableCount":700,"provisionedCount":99}]
 ```
+{: codeblock}
 
 The API call shows the combined number of {{site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_short}}.
 {: tip}
