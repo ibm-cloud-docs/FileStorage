@@ -80,7 +80,7 @@ ibmcloud sl file snapshot-order 560156918 -s 1000 -t 4
 ```
 {: pre}
 
-For more information about all of the parameters that are available for this command, see [ibmcloud sl file snapshot-order](https://cloud.ibm.com/docs/cli?topic=cli-sl-file-storage-service#sl_file_snapshot_order){: external}.
+For more information about all of the parameters that are available for this command, see [ibmcloud sl file snapshot-order](/docs/cli?topic=cli-sl-file-storage-service#sl_file_snapshot_order){: external}.
 
 ### Provisioning from the SLCLI
 {: #orderingthroughSLCLI}
