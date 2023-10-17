@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-10-10"
+lastupdated: "2023-10-17"
 
 keywords: File Storage, NFS, provisioning, ordering, duplicate, cloning, replication
 
@@ -40,6 +40,9 @@ You can provision {{site.data.keyword.filestorage_short}} and fine-tune to meet 
    | 10,000 - 12,000 | 1,000 - 48,000 |
    {: caption="Table 1. Available IOPS based on volume size" caption-side="bottom"}
 
+By default, you can provision a combined total of 700 {{site.data.keyword.filestorage_short}} volumes. To increase the number of your volumes, contact your sales representative. Read about increasing limits [here](/docs/FileStorage?topic=FileStorage-managinglimits). For more information about the limit on simultaneous authorizations, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs#authlimit).
+{: important}   
+
 ## Ordering {{site.data.keyword.filestorage_short}} in the UI
 {: #orderingFileStorageUI}
 {: ui}
@@ -65,75 +68,53 @@ You can provision {{site.data.keyword.filestorage_short}} and fine-tune to meet 
 8. Review your order, and read the service agreement. If you agree with the terms, check the box.
 9. Click **Create**. Your new storage allocation is available in a few minutes.
 
-By default, you can provision a combined total of 700 {{site.data.keyword.filestorage_short}} volumes. To increase the number of your volumes, contact your sales representative. Read about increasing limits [here](/docs/FileStorage?topic=FileStorage-managinglimits). For more information about the limit on simultaneous authorizations, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs#authlimit).
-{: tip}
-
 ## Ordering {{site.data.keyword.filestorage_short}} from the CLI
 {: #orderingthroughCLI}
 {: cli}
 
-You can use the SLCLI to place orders for products that are normally ordered through the [{{site.data.keyword.cloud_notm}} console](/login){: external}.
-
 Each order must have an associated location (data center). When you order {{site.data.keyword.filestorage_short}}, make sure that it is provisioned in the same location as your Compute instances.
 {: important}
 
-For more information about how to install and use the SLCLI, see [Python CLI Client](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}.
+### Provisioning from the IBMCLOUD CLI
+{: #orderingthroughICCLI}
+
+Before you can begin the provisioning process, you must install the [IBM Cloud CLI](/docs/cli){: external} and install the SL plug-in with 'ibmcloud plugin install sl'. For more information, see [Extending IBM Cloud CLI with plug-ins](/docs/cli?topic=cli-plug-ins).
+
+Use the `ibmcloud sl file volume-order` command to order a new file share. The following example provisions a new 500-GB file share in the DAL13 data center with a tiered performance profile (4 IOPS per GB) with 500 GB snapshot space.
+
+```sh
+$ ibmcloud sl file volume-order --storage-type endurance --size 500 --tier 4 -d dal13 --snapshot-size 500
+This action will incur charges on your account. Continue?> y
+OK
+Order 110526870 was placed.
+ > Storage as a Service
+ > File Storage
+ > 500 GBs
+ > 4 IOPS per GB
+ > 500 GB (Snapshot Space)
+
+You may run 'ibmcloud sl file volume-list --order 110526870' to find this file volume after it is ready.
+```
+{: pre}
+
+For more information about all of the parameters that are available for this command, see [ibmcloud sl file volume-order](/docs/cli?topic=cli-sl-file-storage-service#sl_file_volume_order).
+
+### Provisioning from the SLCLI
+{: #orderingthroughSLCLI}
+
+Before you can begin the provisioning process, you must install the [SLCLI](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}.
 {: tip}
 
-Use the `slcli file volume-order` command to provision the file share volume.
+Use the `slcli file volume-order` command to provision the file share volume. The following example shows how to order a 10 GB {{site.data.keyword.filestorage_short}} volume with 100 IOPS per GB.
 
-```python
-# slcli file volume-order --help
-Usage: slcli file volume-order [OPTIONS]
-
-  Order a File Storage volume.
-
-Options:
-  --storage-type [performance|endurance]
-                                  Type of File Storage volume  [required]
-  --size INTEGER                  Size of File Storage volume in GB
-                                  [required]
-  --iops INTEGER                  Performance Storage IOPS, between 100 and
-                                  6000 in multiples of 100  [required for
-                                  storage-type performance]
-  --tier [0.25|2|4|10]            Endurance Storage Tier (IOP per GB)
-                                  [required for storage-type endurance]
-  --location TEXT                 Datacenter short name (e.g.: dal09)
-                                  [required]
-  --snapshot-size INTEGER         Optional parameter for ordering snapshot
-                                  space along with endurance File Storage;
-                                  specifies the size (in GB) of snapshot space
-                                  to order
-  --service-offering [storage_as_a_service|enterprise|performance]
-                                  The service offering package to use for
-                                  placing the order [optional, default is
-                                  'storage_as_a_service']
-  --billing [hourly|monthly]      Optional parameter for Billing rate (default
-                                  to monthly)
-  -h, --help                      Show this message and exit.
-```
-
-### Example order
-{: #exampleorder}
-{: cli}
-
-The following example shows how to order a 10 GB {{site.data.keyword.filestorage_short}} volume with 100 IOPS per GB.
-
-```python
-# slcli file volume-order --storage-type performance --size 20 --location dal10 --iops 100
+```sh
+$ slcli file volume-order --storage-type performance --size 20 --location dal10 --iops 100
 Order #32076317 placed successfully!
 > Storage as a Service
 > File Storage
 > 20 GBs
 > 100 IOPS
 ```
-
-For more information about ordering through the IBM Cloud CLI, see [Working with the File Storage service (ibmcloud sl file)](https://cloud.ibm.com/docs/cli?topic=cli-sl-file-storage-service#sl_file_volume_order){: external}.
-{: tip}
-
-By default, you can provision a combined total of 700 {{site.data.keyword.filestorage_short}} volumes. To increase the number of your volumes, contact your sales representative. Read about increasing limits [here](/docs/FileStorage?topic=FileStorage-managinglimits). For more information about the limit on simultaneous authorizations, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs#authlimit).
-{: important}
-
 
 ## Ordering {{site.data.keyword.filestorage_short}} with the API
 {: #orderingthroughAPI}
@@ -155,9 +136,6 @@ To be able to access all the new features, order `Storage-as-a-Service Package 7
 {: tip}
 
 For more information about ordering {{site.data.keyword.filestorage_short}} through the API, see [order_file_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/SoftLayer.managers.FileStorageManager/#SoftLayer.managers.FileStorageManager.order_file_volume){: external}.
-
-By default, you can provision a combined total of 700 {{site.data.keyword.filestorage_short}} volumes. To increase the number of your volumes, contact your sales representative. Read about increasing limits [here](/docs/FileStorage?topic=FileStorage-managinglimits). For more information about the limit on simultaneous authorizations, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs#authlimit).
-{: important}
 
 ## Ordering {{site.data.keyword.filestorage_short}} with Terraform
 {: #orderingthroughTerraform}
@@ -222,9 +200,6 @@ resource "ibm_storage_file" "fs_performance" {
 {: codeblock}
 
 For more information about the arguments and attributes, see [ibm_storage_file](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/storage_file){: external}.
-
-By default, you can provision a combined total of 700 {{site.data.keyword.filestorage_short}} volumes. To increase the number of your volumes, contact your sales representative. Read about increasing limits [here](/docs/FileStorage?topic=FileStorage-managinglimits). For more information about the limit on simultaneous authorizations, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs#authlimit).
-{: important}
 
 ## Connecting your new storage
 {: #mountingvolumesPortal}
