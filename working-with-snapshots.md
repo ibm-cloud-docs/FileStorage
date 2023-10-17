@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-04-20"
+lastupdated: "2023-10-17"
 
 keywords: File Storage, NFS, snapshots, snapshot schedule, manual snapshot, snapshot space, snapshot quota
 
@@ -48,10 +48,22 @@ The list of the snapshots is displayed as they're taken in the **Snapshots** sec
 {: #addscheduleCLI}
 {: cli}
 
-You can decide how often and when you want to create a point in time reference of your storage volume with Snapshot schedules. You can have a maximum of 50 snapshots per storage volume. Schedules are managed through the **Storage** > **{{site.data.keyword.filestorage_short}}** tab of the [{{site.data.keyword.cloud}} console](/login){: external}.
+You can decide how often and when you want to create a point in time reference of your storage volume with Snapshot schedules. You can have a maximum of 50 snapshots per storage volume.
 
 Before you can set up your initial schedule, you must first purchase snapshot space if you didn't purchase it during the initial provisioning of the storage volume.
 {: important}
+
+Before you begin, decide on the CLI client that you want to use.
+
+* You can either install the [IBM Cloud CLI](/docs/cli){: external} and install the SL plug-in with `ibmcloud plugin install sl`. For more information, see [Extending IBM Cloud CLI with plug-ins](/docs/cli?topic=cli-plug-ins).
+* Or, you can install the [SLCLI](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}.
+
+### Adding a schedule from the IBMCLOUD CLI
+{: #addscheduleICCLI}
+
+
+### Adding a schedule from the SLCLI
+{: #addscheduleSLCLI}
 
 To create a snapshot schedule, use the following command.
 
@@ -82,7 +94,6 @@ Usage: slcli file snapshot-schedule-list [OPTIONS] VOLUME_ID
 Options:
   -h, --help  Show this message and exit.
 ```
-
 
 ## Managing a Snapshot schedule with Terraform
 {: #addscheduleTerraform}
@@ -222,7 +233,6 @@ Options:
  -h, --help  Show this message and exit.
 ```
 
-
 ## Increasing the amount of Snapshot space for a volume in the UI
 {: #changesnapshotspaceUI}
 {: ui}
@@ -274,7 +284,6 @@ Options:
 If you're using the replication feature, be sure that the schedule that you're deleting isn't the schedule that is used by replication. For more information about deleting a replication schedule, see [here](/docs/FileStorage?topic=FileStorage-replication).
 {: important}
 
-
 ## Deleting a snapshot in the UI
 {: #deletesnapshotUI}
 {: ui}
@@ -303,6 +312,19 @@ Options:
 
 Manual snapshots that aren't deleted in the portal manually, are automatically deleted when you reach space limitations. The oldest snapshot is deleted first.
 {: note}
+
+## Deleting a snapshot with Terraform
+{: #deletesnapshotTerraform}
+{: terraform}
+
+Use the `terraform destroy` command to conveniently destroy a remote object such as a snapshot. The following example destroys the snapshot that is identified by its ID, `ibm_file_share_snapshot.example.id`.
+
+```terraform
+terraform destroy --target ibm_file_share_snapshot.example.id
+```
+{: codeblock}
+
+For more information, see [terraform destroy](https://developer.hashicorp.com/terraform/cli/commands/destroy){: external}.
 
 ## Restoring storage volume to a specific point in time by using a snapshot in the UI
 {: #restorefromsnapshotUI}

@@ -81,7 +81,7 @@ Each order must have an associated location (data center). When you order {{site
 
 Before you can begin the provisioning process, you must install the [IBM Cloud CLI](/docs/cli){: external} and install the SL plug-in with `ibmcloud plugin install sl`. For more information, see [Extending IBM Cloud CLI with plug-ins](/docs/cli?topic=cli-plug-ins).
 
-Use the `ibmcloud sl file volume-order` command to order a new file share. The following example provisions a new 500-GB file share in the DAL13 data center with a tiered performance profile (4 IOPS per GB) with 500 GB snapshot space.
+Use the `ibmcloud sl file volume-order` command to order a new file share. The following example provisions a new 500-GB file share in the DAL13 data center with a tiered performance profile (4 IOPS per GB) and 500 GB snapshot space.
 
 ```sh
 $ ibmcloud sl file volume-order --storage-type endurance --size 500 --tier 4 -d dal13 --snapshot-size 500
