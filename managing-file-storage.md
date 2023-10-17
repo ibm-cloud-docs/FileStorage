@@ -56,8 +56,14 @@ Before you begin, decide on the CLI client that you want to use.
 ### Authorizing hosts from the IBMCLOUD CLI
 {: #authhostICCLI}
 
+Use the `ibmcloud sl file access-authorize` command to authorize a host to access the file share. The following example authorizes the virtual server instance `87654321` to mount the file share `12345678`.
 
+```sh
+ibmcloud sl file access-authorize 12345678 --virtual-id 87654321
+```
+{: codeblock}
 
+For more information about all of the parameters that are available for this command, see [ibmcloud sl file access-authorize](/docs/cli?topic=cli-sl-file-storage-service#sl_file_access_authorizer){: external}.
 
 ### Authorizing hosts from the SLCLI
 {: #authhostSLCLI}
@@ -125,10 +131,17 @@ There you can see the list of hosts, which are currently authorized to access th
 {: support}
 {: cli}
 
-
 ### Viewing the list of authorized hosts from the IBMCLOUD CLI
 {: #viewhostICCLI}
 
+You can use the `ibmcloud sl file access-list` command to list the hosts that are authorized to access the file share. The following example lists the hosts that can mount the file share `12345678` and sorts them by their IDs.
+
+```sh
+ibmcloud sl file access-list 12345678 --sortby id
+```
+{: codeblock}
+
+For more information about all of the parameters that are available for this command, see [ibmcloud sl file access-list](/docs/cli?topic=cli-sl-file-storage-service#sl_file_access_list){: external}.
 
 ### Viewing the list of authorized hosts from the SLCLI
 {: #viewhostCLI}
@@ -215,7 +228,14 @@ If you want to disconnect multiple hosts from a specific volume, you need to rep
 ### Revoking host authorization from the IBMCLOUD CLI
 {: #revokeauthiccli}
 
+You can use the `ibmcloud sl file access-revoke` command to remove authorization from a host. The following command disallows the virtual server instance `87654321` to mount the file share `12345678`.
 
+```sh
+ibmcloud sl file access-revoke 12345678 --virtual-id 87654321
+```
+{: codeblock}
+
+For more information about all of the parameters that are available for this command, see [ibmcloud sl file access-revoke](/docs/cli?topic=cli-sl-file-storage-service#sl_file_access_revoke){: external}.
 
 ### Revoking host authorization from the SLCLI
 {: #revokeauthslcli}
@@ -268,9 +288,21 @@ Active replicas and dependent duplicates can block reclamation of the Storage vo
 {: support}
 {: cli}
 
+When the volume is canceled, the request is followed by a 24-hour reclaim wait period. You can still see the volume in the console during those 24 hours. Billing for the volume stops immediately. When the reclaim-period expires, the data is destroyed and the volume is removed from the console, too. For more information, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs).
+
+Active replicas and dependent duplicates can block reclamation of the Storage volume. Make sure that the volume is no longer mounted, host authorizations are revoked, replication is canceled, and no dependent duplicates exist before you attempt to delete the original volume.
+
 ### Deleting a storage volume from the IBMCLOUD CLI
 {: #cancelvolICCLI}
 
+You can use the `ibmcloud sl file volume-cancel` command to cancel the file share. The following example cancels the file share `12345678` with immediate effect.
+
+```sh
+ibmcloud sl file volume-cancel 12345678 --immediate -f
+```
+{: codeblock}
+
+For more information about all of the parameters that are available for this command, see [ibmcloud sl file volume-cancel](/docs/cli?topic=cli-sl-file-storage-service#sl_file_volume_cancel){: external}.
 
 ### Deleting a storage volume from the SLCLI
 {: #cancelvolSLCLI}
@@ -286,11 +318,6 @@ Options:
                  billing anniversary.
   -h, --help     Show this message and exit.
 ```
-
-When the volume is canceled, the request is followed by a 24-hour reclaim wait period. You can still see the volume in the console during those 24 hours. Billing for the volume stops immediately. When the reclaim-period expires, the data is destroyed and the volume is removed from the console, too. For more information, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs).
-{: note}
-
-Active replicas and dependent duplicates can block reclamation of the Storage volume. Make sure that the volume is no longer mounted, host authorizations are revoked, replication is canceled, and no dependent duplicates exist before you attempt to delete the original volume.
 
 ## Deleting a storage volume with Terraform
 {: #cancelvolTerraform}
