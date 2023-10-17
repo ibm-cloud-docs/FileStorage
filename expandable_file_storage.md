@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-08-30"
+lastupdated: "2023-10-17"
 
 keywords: File Storage, modify volume, NFS, File Storage, expand capacity
 
@@ -60,7 +60,28 @@ Unmount, then mount the modified volume, so the OS can recognize the extra stora
 {: #resizingstepsCLI}
 {: cli}
 
-To increase your storage volume, you can use the following command in SLCLI.
+Before you begin, decide on the CLI client that you want to use.
+
+* You can either install the [IBM Cloud CLI](/docs/cli){: external} and install the SL plug-in with `ibmcloud plugin install sl`. For more information, see [Extending IBM Cloud CLI with plug-ins](/docs/cli?topic=cli-plug-ins).
+* Or, you can install the [SLCLI](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}.
+
+### Resizing a file share from the IBMCLOUD CLI
+{: #resizingstepsICCLI}
+
+You can increase the capacity of a volume by using the `ibmcloud sl file volume-modify` command. The following example modifies a file share by specifying new, bigger capacity.
+
+```sh
+ibmcloud sl file volume-modify 12345678 --new-size 1000
+```
+{: codeblock}
+
+For more information about all of the parameters that are available for this command, see [ibmcloud sl file volume-modify](/docs/cli?topic=cli-sl-file-storage-service#sl_file_volume_modify){: external}.
+
+### Resizing a file share from the SLCLI
+{: #resizingstepsSLCLI}
+
+To increase your storage capacity, you can use the following command in SLCLI.
+
 ```python
 # slcli file volume-modify --help
 Usage: slcli file volume-modify [OPTIONS] VOLUME_ID

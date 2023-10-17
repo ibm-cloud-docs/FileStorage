@@ -67,23 +67,23 @@ If the volume has replication in place, the replica is automatically updated to 
 
 Before you can begin the process, decide on the CLI client that you want to use.
 
-* You you can either install the [IBM Cloud CLI](/docs/cli){: external} and install the SL plug-in with `ibmcloud plugin install sl`. For more information, see [Extending IBM Cloud CLI with plug-ins](/docs/cli?topic=cli-plug-ins).
+* You can either install the [IBM Cloud CLI](/docs/cli){: external} and install the SL plug-in with `ibmcloud plugin install sl`. For more information, see [Extending IBM Cloud CLI with plug-ins](/docs/cli?topic=cli-plug-ins).
 * Or, you can install the [SLCLI](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}.
 
 ### Adjust the IOPS from the IBMCLOUD CLI
 {: #adjustIOPSICCLI}
 
-You can update the IOPS by using the `ibmcloud sl file volume-modify` command. The following example modifies a Performance file share by specifying new capacity and new IOPS values.
+You can update the IOPS by using the `ibmcloud sl file volume-modify` command. The following example modifies a Performance file share by specifying a new IOPS value.
 
 ```sh
-ibmcloud sl file volume-modify 12345678 --new-size 1000 --new-iops 4000
+ibmcloud sl file volume-modify 12345678 --new-iops 4000
 ```
 {: codeblock}
 
-The followng example modifies an Endurance file share by specifying a new capacity value and a new IOPS tier.
+The following example modifies an Endurance file share by specifying a new IOPS tier.
 
 ```sh
-ibmcloud sl file volume-modify 12345678 --new-size 500 --new-tier 4
+ibmcloud sl file volume-modify 12345678 --new-tier 4
 ```
 {: codeblock}
 

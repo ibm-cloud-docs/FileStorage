@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-08-29"
+lastupdated: "2023-10-17"
 
 keywords: File Storage, NFS, mounting File Storage, mounting storage on Linux,
 
