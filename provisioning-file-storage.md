@@ -73,13 +73,16 @@ By default, you can provision a combined total of 700 {{site.data.keyword.filest
 {: #orderingthroughCLI}
 {: cli}
 
+efore you begin, decide on the CLI client that you want to use.
+
+* You can either install the [IBM Cloud CLI](/docs/cli){: external} and install the SL plug-in with `ibmcloud plugin install sl`. For more information, see [Extending IBM Cloud CLI with plug-ins](/docs/cli?topic=cli-plug-ins).
+* Or, you can install the [SLCLI](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}.
+
 Each order must have an associated location (data center). When you order {{site.data.keyword.filestorage_short}}, make sure that it is provisioned in the same location as your Compute instances.
 {: important}
 
 ### Provisioning from the IBMCLOUD CLI
 {: #orderingthroughICCLI}
-
-Before you can begin the provisioning process, you must install the [IBM Cloud CLI](/docs/cli){: external} and install the SL plug-in with `ibmcloud plugin install sl`. For more information, see [Extending IBM Cloud CLI with plug-ins](/docs/cli?topic=cli-plug-ins).
 
 Use the `ibmcloud sl file volume-order` command to order a new file share. The following example provisions a new 500-GB file share in the DAL13 data center with a tiered performance profile (4 IOPS per GB) and 500 GB snapshot space.
 
@@ -102,9 +105,6 @@ For more information about all of the parameters that are available for this com
 
 ### Provisioning from the SLCLI
 {: #orderingthroughSLCLI}
-
-Before you can begin the provisioning process, you must install the [SLCLI](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}.
-{: tip}
 
 Use the `slcli file volume-order` command to provision the file share volume. The following example shows how to order a 10 GB {{site.data.keyword.filestorage_short}} volume with 100 IOPS per GB.
 
