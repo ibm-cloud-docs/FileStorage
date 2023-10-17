@@ -95,7 +95,7 @@ Order 110526870 was placed.
 
 You may run 'ibmcloud sl file volume-list --order 110526870' to find this file volume after it is ready.
 ```
-{: pre}
+{: codeblock}
 
 For more information about all of the parameters that are available for this command, see [ibmcloud sl file volume-order](/docs/cli?topic=cli-sl-file-storage-service#sl_file_volume_order).
 
@@ -115,6 +115,7 @@ Order #32076317 placed successfully!
 > 20 GBs
 > 100 IOPS
 ```
+{: codeblock}
 
 ## Ordering {{site.data.keyword.filestorage_short}} with the API
 {: #orderingthroughAPI}
