@@ -44,7 +44,7 @@ You can authorize a host to access the {{site.data.keyword.filestorage_short}} v
 
 After the host is authorized, go to the {{site.data.keyword.filestorage_short}} Details page, and take note of the mount point information.
 
-## Authorizing the host from the SLCLI
+## Authorizing the host from the CLI
 {: #authLinuxhostCLI}
 {: cli}
 

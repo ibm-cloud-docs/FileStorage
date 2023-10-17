@@ -40,7 +40,7 @@ You can authorize and connect hosts that are located in the same data center as 
 
 6. Select one or more hosts from the list and click **Save**.
 
-## Authorizing hosts to access {{site.data.keyword.filestorage_short}} from the SLCLI
+## Authorizing hosts to access {{site.data.keyword.filestorage_short}} from the CLI
 {: #authhostCLI}
 {: help}
 {: support}
@@ -72,7 +72,7 @@ Options:
 
 There you can see the list of hosts, which are currently authorized to access the volume.
 
-## Viewing the list of hosts that are authorized to access a {{site.data.keyword.filestorage_short}} volume from the SLCLI
+## Viewing the list of hosts that are authorized to access a {{site.data.keyword.filestorage_short}} volume from the CLI
 {: #viewhostCLI}
 {: help}
 {: support}
@@ -153,7 +153,7 @@ If you want to disconnect multiple volumes from a specific host, you need to rep
 If you want to disconnect multiple hosts from a specific volume, you need to repeat the Revoke Access action for each host.
 {: tip}
 
-## Revoking a host's access to {{site.data.keyword.filestorage_short}} from the SLCLI
+## Revoking a host's access to {{site.data.keyword.filestorage_short}} from the CLI
 {: #revokeauthslcli}
 {: help}
 {: support}
@@ -202,7 +202,7 @@ When the volume is canceled, the request is followed by a 24-hour reclaim wait p
 Active replicas and dependent duplicates can block reclamation of the Storage volume. Make sure that the volume is no longer mounted, host authorizations are revoked, replication is canceled, and no dependent duplicates exist before you attempt to delete the original volume.
 
 
-## Deleting a storage volume from the SLCLI
+## Deleting a storage volume from the CLI
 {: #cancelvolCLI}
 {: help}
 {: support}

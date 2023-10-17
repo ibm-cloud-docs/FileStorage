@@ -61,7 +61,7 @@ Additionally, for most workloads, the larger a volume is the less space needs to
 
 8. Check the box to confirm that you read and understood the terms and conditions and click **Place Order**. Your snapshot space is provisioned in a few minutes.
 
-## Ordering Snapshot space from the SLCLI
+## Ordering Snapshot space from the CLI
 {: #ordersnapshotCLI}
 {: cli}
 

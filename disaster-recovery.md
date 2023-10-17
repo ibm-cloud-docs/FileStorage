@@ -33,7 +33,7 @@ This action breaks the replication relationship and restoring the connection bet
 4. When the primary location is disabled, the option of Disaster Recovery Failover becomes active.
 5. Click **Yes** to proceed.
 
-## Fail over to the replica volume from the SLCLI
+## Fail over to the replica volume from the CLI
 {: #DRFailoverCLI}
 {: cli}
 
@@ -106,7 +106,7 @@ After a disaster event, {{site.data.keyword.cloud}} begins remediation work to r
 
 If you need further assistance, create a [support case](/unifiedsupport/supportcenter){: external}.
 
-## Fail back from the SLCLI
+## Fail back from the CLI
 {: #DRFailbackCLI}
 {: cli}
 

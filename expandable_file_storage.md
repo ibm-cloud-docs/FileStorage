@@ -56,7 +56,7 @@ You can't change the file share to a smaller size after you expand its capacity.
 Unmount, then mount the modified volume, so the OS can recognize the extra storage space.
 {: tip}
 
-## Resizing storage from the SLCLI
+## Resizing storage from the CLI
 {: #resizingstepsCLI}
 {: cli}
 

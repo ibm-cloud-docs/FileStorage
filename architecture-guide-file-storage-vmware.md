@@ -134,7 +134,7 @@ Storage is provisioned in less than a minute and becomes visible on the **{{site
 
 After the subnets are authorized, make note of the hostname of the storage server. The hostname can be found on the {{site.data.keyword.filestorage_short}} detail page of the volume.
 
-## Authorizing hosts from the SLCLI
+## Authorizing hosts from the CLI
 {: #orderauthvmwareCLI}
 {: cli}
 

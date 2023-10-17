@@ -65,7 +65,7 @@ If the volume has replication in place, the replica is automatically updated to 
 {: #adjustingstepsCLI}
 {: cli}
 
-You can update your IOPS from the SLCLI by using the following command.
+You can update your IOPS from the CLI by using the following command.
 
 ```python
 # slcli file volume-modify --help

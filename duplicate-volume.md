@@ -77,7 +77,7 @@ Dependent duplicate volumes are created by using a snapshot from the primary vol
 
 After you click **Create**, the order confirmation window appears. When you close the window, you return to the resources list. You can go back to your list of {{site.data.keyword.filestorage_short}} shares to click the newly provisioned duplicate. The share details section displays information such as Duplicate Type, a link to the parent share's details page and the name of the snapshot that was used to create the duplicate.
 
-## Creating a duplicate from the SLCLI
+## Creating a duplicate from the CLI
 {: #createindependentduplicateCLI}
 {: cli}
 
@@ -136,7 +136,7 @@ Options:
 ```
 {: screen}
 
-**Dependent duplicate** volumes can be ordered from the SLCLI, too, with the option `--dependent-duplicate TRUE`.
+**Dependent duplicate** volumes can be ordered from the CLI, too, with the option `--dependent-duplicate TRUE`.
 
 ```python
 slcli file volume-duplicate --dependent-duplicate TRUE <primary-vol-id>

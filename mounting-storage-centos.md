@@ -40,7 +40,7 @@ You can authorize a host to access the {{site.data.keyword.filestorage_short}} v
 
 4. Select one or more hosts from the list and click **Save**.
 
-## Authorizing the host from the SLCLI
+## Authorizing the host from the CLI
 {: #authCentOShostCLI}
 {: cli}
 

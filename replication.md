@@ -43,7 +43,7 @@ Data centers in US 1 can replicate with only each other. Data centers in the US 
 As part of the data center modernization strategy for {{site.data.keyword.cloud}}, data centers in the US 1 region are scheduled to consolidate in 2023. For more information, see [Data center consolidations](/docs/get-support?topic=get-support-dc-closure){: external}.
 {: note}
 
-## Determining the remote data center for the replicated storage volume from the SLCLI
+## Determining the remote data center for the replicated storage volume from the CLI
 {: #determinereplicationlocCLI}
 {: cli}
 
@@ -88,7 +88,7 @@ Replications work based on a snapshot schedule. You must first have snapshot spa
 7. Review your order, and read the service agreement. If you agree with the terms, check the box.
 8. Click **Place Order**.
 
-## Creating the initial replica from the SLCLI
+## Creating the initial replica from the CLI
 {: #createrepCLI}
 {: cli}
 
@@ -117,7 +117,7 @@ Options:
 
 You can view your replication volumes on the {{site.data.keyword.filestorage_short}} page under **Storage** > **{{site.data.keyword.filestorage_short}}**. The volume name shows the primary volume's name followed by REP. The **Type** is Endurance or Performance – Replica.
 
-## Viewing the replica volumes from the SLCLI
+## Viewing the replica volumes from the CLI
 {: #replicalistCLI}
 {: cli}
 

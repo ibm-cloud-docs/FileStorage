@@ -39,7 +39,7 @@ You can authorize a host to access the {{site.data.keyword.filestorage_full}} vo
 5. Highlight the host that is to be authorized for replication. To select multiple hosts, use the CTRL-key and click the applicable hosts.
 6. Click **Save**. If you have no hosts, you are prompted to purchase Compute resources in the same data center.
 
-## Authorizing the host from the SLCLI
+## Authorizing the host from the CLI
 {: #authreplicahostCLI}
 {: cli}
 
@@ -91,7 +91,7 @@ Before you proceed with these steps, disconnect the volume. Failure to do so, re
 7. Refresh the page in your browser. When the transaction is complete, your replica volume has **Active** status, and your original source volume becomes **Inactive**.
 8. Mount and attach your storage volume to the host. For more information, see [connecting your storage](/docs/FileStorage?topic=FileStorage-getting-started#mountingstorage).
 
-## Fail over to replica from the SLCLI
+## Fail over to replica from the CLI
 {: #failovertoreplicaCLI}
 {: cli}
 
@@ -143,7 +143,7 @@ Failbacks are started under **Storage**, **{{site.data.keyword.filestorage_short
 8. Refresh the page in your browser. When the transaction is complete, the original source share is shown as **Active**, and the replica share has an **Inactive** status.
 9. Mount and attach your storage volume to the host. For more information, see [connecting your new storage](/docs/FileStorage?topic=FileStorage-getting-started#mountingstorage).
 
-## Fail back from the SLCLI
+## Fail back from the CLI
 {: #failbackfromreplicaCLI}
 {: cli}
 

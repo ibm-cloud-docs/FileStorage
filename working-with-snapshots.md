@@ -44,7 +44,7 @@ Snapshots schedules can be set up for hourly, daily, and weekly intervals, each 
 
 The list of the snapshots is displayed as they're taken in the **Snapshots** section of the **Detail** page.
 
-## Adding a Snapshot schedule from the SLCLI
+## Adding a Snapshot schedule from the CLI
 {: #addscheduleCLI}
 {: cli}
 
@@ -72,7 +72,7 @@ Options:
 
 ```
 
-You can see the list of your snapshot schedules from the SLCLI with the following command.
+You can see the list of your snapshot schedules from the CLI with the following command.
 ```sh
 # slcli file snapshot-schedule-list --help
 Usage: slcli file snapshot-schedule-list [OPTIONS] VOLUME_ID
@@ -142,11 +142,11 @@ The maximum limit of manual snapshots per storage volume is 50.
 
 The snapshot is taken and displayed in the **Snapshots** section of the **Detail** page. Its schedule appears Manual.
 
-## Taking a manual Snapshot from the SLCLI
+## Taking a manual Snapshot from the CLI
 {: #takemanualsnapshotCLI}
 {: cli}
 
-You can use the following command to create a snapshot from the SLCLI.
+You can use the following command to create a snapshot from the CLI.
 ```sh
 # slcli file snapshot-create --help
 Usage: slcli file snapshot-create [OPTIONS] VOLUME_ID
@@ -173,11 +173,11 @@ By default, snapshot warning notifications are enabled for every customer. Howev
 If snapshot space usage increases too rapidly, then you might receive one notification before autodeletion of the oldest scheduled snapshot occurs. For example, if usage jumps from 76% to 96% within 15 minutes, you receive one notification about exceeding 75% and one notification about exceeding 95%.
 {: note}
 
-## Listing all Snapshots with usage information and management functions from the SLCLI
+## Listing all Snapshots with usage information and management functions from the CLI
 {: #listsnapshotCLI}
 {: cli}
 
-You can accomplish this task from the SLCLI by using the following command.
+You can accomplish this task from the CLI by using the following command.
 ```sh
 # slcli file snapshot-list --help
 Usage: slcli file snapshot-list [OPTIONS] VOLUME_ID
@@ -254,7 +254,7 @@ Snapshot schedules can be deleted through **Storage** > **{{site.data.keyword.fi
 If you're using the replication feature, be sure that the schedule that you're deleting isn't the schedule that is used by replication. For more information about deleting a replication schedule, see [here](/docs/FileStorage?topic=FileStorage-replication).
 {: important}
 
-## Deleting a snapshot schedule from the SLCLI
+## Deleting a snapshot schedule from the CLI
 {: #cancelnapshotscheduleCLI}
 {: cli}
 
@@ -287,11 +287,11 @@ Snapshots that are no longer needed can be manually removed to free up space for
 Manual snapshots that aren't deleted in the portal manually, are automatically deleted when you reach space limitations. The oldest snapshot is deleted first.
 {: note}
 
-## Deleting a snapshot from the SLCLI
+## Deleting a snapshot from the CLI
 {: #deletesnapshotCLI}
 {: cli}
 
-Snapshots that are no longer needed can be manually removed to free up space for future snapshots. You can delete a snapshot from the SLCLI by using the following command.
+Snapshots that are no longer needed can be manually removed to free up space for future snapshots. You can delete a snapshot from the CLI by using the following command.
 
 ```sh
 # slcli file snapshot-delete --help
@@ -334,13 +334,13 @@ You might need to take your storage volume back to a specific point in time beca
    Restoring a volume results in deleting all snapshots that were taken after the snapshot that was used for the restore.
    {: important}
 
-## Restoring storage volume to a specific point in time by using a snapshot from the SLCLI
+## Restoring storage volume to a specific point in time by using a snapshot from the CLI
 {: #restorefromsnapshotCLI}
 {: cli}
 
 You might need to take your storage volume back to a specific point in time because of user-error or data corruption. First, unmount your volume.
 
-Then, you can restore the volume with a snapshot from the SLCLI by using the following command.
+Then, you can restore the volume with a snapshot from the CLI by using the following command.
 ```sh
 # slcli file snapshot-restore --help
 Usage: slcli file snapshot-restore [OPTIONS] VOLUME_ID
