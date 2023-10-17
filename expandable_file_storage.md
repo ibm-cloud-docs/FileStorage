@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-10-17"
+lastupdated: "2023-10-18"
 
 keywords: File Storage, modify volume, NFS, File Storage, expand capacity
 
