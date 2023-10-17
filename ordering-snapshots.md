@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-08-28"
+lastupdated: "2023-10-17"
 
 keywords: File Storage, NFS, snapshot, ordering snapshot, snapshot space
 
@@ -65,8 +65,30 @@ Additionally, for most workloads, the larger a volume is the less space needs to
 {: #ordersnapshotCLI}
 {: cli}
 
-```python
-# slcli file snapshot-order --help
+Before you can begin the provisioning process, decide on the CLI client that you want to use.
+
+* You you can either install the [IBM Cloud CLI](/docs/cli){: external} and install the SL plug-in with 'ibmcloud plugin install sl'. For more information, see [Extending IBM Cloud CLI with plug-ins](/docs/cli?topic=cli-plug-ins).
+* Or, you can install the [SLCLI](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}.
+
+### Provisioning from the IBMCLOUD CLI
+{: #orderingthroughICCLI}
+
+Use the `ibmcloud sl file snapshot-order` command to provision snapshot space for your volume. The following example creates a 1000 GB snapshot space for the file share, which is identified by its ID `560156918`.
+
+```sh
+ibmcloud sl file snapshot-order 560156918 -s 1000 -t 4
+```
+{: pre}
+
+For more information about all of the parameters that are available for this command, see [ibmcloud sl file snapshot-order](https://cloud.ibm.com/docs/cli?topic=cli-sl-file-storage-service#sl_file_snapshot_order){: external}.
+
+### Provisioning from the SLCLI
+{: #orderingthroughSLCLI}
+
+Use the `slcli file snapshot-order` command to provision snapshot space for your volume. 
+
+```sh
+$ slcli file snapshot-order --help
 Usage: slcli file snapshot-order [OPTIONS] VOLUME_ID
 
 Options:
@@ -77,10 +99,6 @@ Options:
   --upgrade             Flag to indicate that the order is an upgrade
   -h, --help            Show this message and exit.
 ```
-
-For more information about the same function in the IBM Cloud CLI, see [ibmcloud sl file snapshot-order](https://cloud.ibm.com/docs/cli?topic=cli-sl-file-storage-service#sl_file_snapshot_order){: external}.
-{: tip}
-
 
 ## Ordering Snapshot space with Terraform
 {: #ordersnapshotTerraform}
