@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-08-28"
+lastupdated: "2023-10-18"
 
 keywords: Classic File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
@@ -42,7 +42,7 @@ When you order {{site.data.keyword.filestorage_short}}, consider the following i
    {: note}
 
 - NFS uses many extra file control operations such as `lookup`, `getattr`, and `readdir`. These operations in addition to read/write operations can count as IOPS and vary by operation type and NFS version.
-- {{site.data.keyword.filestorage_short}} volumes are exposed to authorized devices, subnets, or IP addresses.
+- {{site.data.keyword.filestorage_short}} volumes are accessible only to authorized devices, subnets, or IP addresses.
 - To avoid storage disconnection during path-failover {{site.data.keyword.IBM}} recommends installing VMware&reg; tools, which set an appropriate timeout value. Don't change the value because the default setting is sufficient to ensure that your VMware&reg; host doesn't lose connectivity.
 - Both NFSv3 and NFSv4.1 are supported in the {{site.data.keyword.cloud}} environment. However, the use NFSv3 is preferred. Because NFSv4.1 is a stateful protocol (not stateless like NFSv3), protocol issues can occur during network events. NFSv4.1 must quiesce all operations and then complete lock reclamation. While these operations are taking place, disruptions can occur.
 
@@ -110,7 +110,6 @@ For more information about configuring replicas, see [Replication](/docs/FileSto
 Invalid data, whether corrupted, hacked, or infected replicate according to the snapshot schedule and snapshot retention. Using the smallest replication windows can provide for a better recovery point objective. However, it can also provide less time to react to the replication of invalid data.
 {: note}
 
-
 ## Ordering {{site.data.keyword.filestorage_short}}
 {: #orderauthvmware}
 
@@ -118,70 +117,10 @@ Follow the instructions in the [Advanced Single-Site VMware&reg; Reference Archi
 
 {{site.data.keyword.filestorage_short}} can be ordered through [The {{site.data.keyword.cloud}} catalog](/catalog){: external}, from the [CLI](/docs/cli?topic=cli-sl-file-storage-service#sl_file_volume_order), with the API or Terraform. For more information, see [Ordering {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-orderingFileStorage).
 
-## Authorizing hosts in the UI
-{: #orderauthvmwareui}
-{: ui}
+## Authorizing hosts 
+{: #hostauthvmware}
 
-Storage is provisioned in less than a minute and becomes visible on the **{{site.data.keyword.filestorage_short}}** page of the [{{site.data.keyword.cloud}} console](/cloud-storage/file){: external}. The {{site.data.keyword.BluBareMetServers_full}} or {{site.data.keyword.BluVirtServers_full}} that are going to use the volume must be authorized to access the storage. Use the following steps to authorize the host.
-
-1. In the console, go to **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic") > **Storage** > **{{site.data.keyword.filestorage_short}}**.
-2. Scroll to the File share that you want to mount, and click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions"). Then, select **Authorize Host**.
-3. Click **Subnets**.
-4. Choose from the list of available subnets that are assigned to the VMkernel ports on the ESXi hosts, and click **Save**.
-
-   The subnets that are displayed are subscribed subnets in the same data center as the storage volume.
-   {: note}
-
-After the subnets are authorized, make note of the hostname of the storage server. The hostname can be found on the {{site.data.keyword.filestorage_short}} detail page of the volume.
-
-## Authorizing hosts from the SLCLI
-{: #orderauthvmwareCLI}
-{: cli}
-
-Storage is provisioned in less than a minute. Next, the {{site.data.keyword.BluBareMetServers_full}} or {{site.data.keyword.BluVirtServers_full}} that are going to use the volume must be authorized to access the storage. Use the following command to authorize the host.
-
-```python
-# slcli file access-authorize --help
-Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
-
-Options:
-  -h, --hardware-id TEXT    The ID of one hardware server to authorize.
-  -v, --virtual-id TEXT     The ID of one virtual server to authorize.
-  -i, --ip-address-id TEXT  The ID of one IP address to authorize.
-  -p, --ip-address TEXT     An IP address to authorize.
-  -s, --subnet-id TEXT      An ID of one subnet to authorize.
-  --help                    Show this message and exit.
-```
-
-After the subnets are authorized, make note of the hostname of the storage server.
-
-## Authorizing hosts with Terraform
-{: #orderauthvmwareTerraform}
-{: terraform}
-
-To authorize a Compute host to access the share, use the `ibm_storage_file` resource and specify the `allowed_virtual_guest_ids` for virtual servers, or `allowed_hardware_ids` for bare metal servers. Specify `allowed_ip_addresses` to define which IP addresses have access to the storage. 
-
-The following example defines that the Virtual Server with the ID `28961689` can access the volume from the `10.146.139.64/26` subnet, and `10.146.139.84` address.
-
-```terraform
-resource "ibm_storage_file" "fs_endurance" {
-  type       = "Endurance"
-  datacenter = "dal09"
-  capacity   = 20
-  iops       = 0.25
-
-  allowed_virtual_guest_ids = ["28961689"]
-  allowed_subnets           = ["10.146.139.64/26"]
-  allowed_ip_addresses      = ["10.146.139.84"]
-  snapshot_capacity         = 10
-  hourly_billing            = true
-}
-```
-{: codeblock}
-
-After your storage resource is created, you can access the `hostname` and `volumename` attributes, which you can use to determine the mount target later. For example, a File Storage resource with the `hostname` argument set to `nfsdal0901a.service.softlayer.com` and the `volumename` argument set to `IBM01SV278685_7` has the mount point `nfsdal0901a.service.softlayer.com:-IBM01SV278685_7`.
-
-For more information about the arguments and attributes, see [ibm_storage_file](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/storage_file){: external}.
+You can create the authorization in the [UI](/docs/FileStorage?topic=FileStorage-managingstorage&interface=ui#authhostUI), from the [CLI](/docs/FileStorage?topic=FileStorage-managingstorage&interface=cli#authhostCLI), with the API, or with [Terraform](/docs/FileStorage?topic=FileStorage-managingstorage&interface=terraform#authhostterraform).
 
 ##  Configuring the VMware virtual machine host
 {: #configurevmwarehost}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-08-29"
+lastupdated: "2023-10-18"
 
 keywords: File Storage, NFS, upgrade, migrate to new
 
@@ -38,17 +38,9 @@ When you order a file share, your new storage is available to mount in a few min
 
 "Authorized" hosts are hosts that were given access to a volume. Without host authorization, you can't access or use the storage from your system.
 
-1. In the console, go to **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic") > **Storage** > **{{site.data.keyword.filestorage_short}}**.
-2. Scroll to the File share that you want to mount, and click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions"). Then, select **Authorize Host**.
-3. Filter the available host list by selecting the device type, subnet, or IP address.
-
-   When the list is filtered by subnet, the subnets that are displayed are subscribed subnets in the same data center as the storage volume.
-   {: note}
-
-4. Select one or more hosts from the list and click **Save**.
+You can create the authorization in the [UI](/docs/FileStorage?topic=FileStorage-managingstorage&interface=ui#authhostUI), from the [CLI](/docs/FileStorage?topic=FileStorage-managingstorage&interface=cli#authhostCLI), with the API, or with [Terraform](/docs/FileStorage?topic=FileStorage-managingstorage&interface=terraform#authhostterraform).
 
 When the host is authorized, connect the volume to your host.
-
 
 ## Migrating your data
 {: #copydataacross}

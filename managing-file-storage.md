@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-01-11"
+lastupdated: "2023-10-18"
 
 keywords: File Storage, NFS, authorizing hosts, revoke access, grant access, view authorizations
 
@@ -40,15 +40,37 @@ You can authorize and connect hosts that are located in the same data center as 
 
 6. Select one or more hosts from the list and click **Save**.
 
-## Authorizing hosts to access {{site.data.keyword.filestorage_short}} from the SLCLI
+## Authorizing hosts to access {{site.data.keyword.filestorage_short}} from the CLI
 {: #authhostCLI}
 {: help}
 {: support}
 {: cli}
 
+“Authorized” hosts are hosts that were given access to a particular volume. Without host authorization, you can't access or use the storage from your system. Authorizing a host to access your volume generates the username and password.
+
+Before you begin, decide on the CLI client that you want to use.
+
+* You can either install the [IBM Cloud CLI](/docs/cli){: external} and install the SL plug-in with `ibmcloud plugin install sl`. For more information, see [Extending IBM Cloud CLI with plug-ins](/docs/cli?topic=cli-plug-ins).
+* Or, you can install the [SLCLI](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}.
+
+### Authorizing hosts from the IBMCLOUD CLI
+{: #authhostICCLI}
+
+Use the `ibmcloud sl file access-authorize` command to authorize a host to access the file share. The following example authorizes the virtual server instance `87654321` to mount the file share `12345678`.
+
+```sh
+ibmcloud sl file access-authorize 12345678 --virtual-id 87654321
+```
+{: codeblock}
+
+For more information about all of the parameters that are available for this command, see [ibmcloud sl file access-authorize](/docs/cli?topic=cli-sl-file-storage-service#sl_file_access_authorizer){: external}.
+
+### Authorizing hosts from the SLCLI
+{: #authhostSLCLI}
+
 To authorize a host to access the volume, you can use the following command.
-```python
-# slcli file access-authorize --help
+```sh
+$ slcli file access-authorize --help
 Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
 
 Options:
@@ -59,6 +81,37 @@ Options:
   -s, --subnet-id TEXT      An ID of one subnet to authorize.
   --help                    Show this message and exit.
 ```
+
+## Authorizing the host with Terraform
+{: #authhostterraform}
+{: terraform}
+
+“Authorized” hosts are hosts that were given access to a particular volume. Without host authorization, you can't access or use the storage from your system. Authorizing a host to access your volume generates the username and password.
+
+To authorize a Compute host to access the share, use the `ibm_storage_file` resource and specify the `allowed_virtual_guest_ids` for virtual servers, or `allowed_hardware_ids` for bare metal servers. Specify `allowed_ip_addresses` to define which IP addresses have access to the storage. 
+
+The following example defines that the Virtual Server with the ID `28961689` can access the volume from the `10.146.139.64/26` subnet, and `10.146.139.84` address.
+
+```terraform
+resource "ibm_storage_file" "fs_endurance" {
+  type       = "Endurance"
+  datacenter = "dal09"
+  capacity   = 20
+  iops       = 0.25
+
+  allowed_virtual_guest_ids = ["28961689"]
+  allowed_subnets           = ["10.146.139.64/26"]
+  allowed_ip_addresses      = ["10.146.139.84"]
+  snapshot_capacity         = 10
+  hourly_billing            = true
+}
+```
+{: codeblock}
+
+After your storage resource is created, you can access the `hostname` and `volumename` attributes, which you can use to determine the mount target later. For example, a File Storage resource with the `hostname` argument set to `nfsdal0901a.service.softlayer.com` and the `volumename` argument set to `IBM01SV278685_7` has the mount point `nfsdal0901a.service.softlayer.com:-IBM01SV278685_7`.
+
+For more information about the arguments and attributes, see [ibm_storage_file](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/storage_file){: external}.
+
 
 ## Viewing the list of hosts that are authorized to access a {{site.data.keyword.filestorage_short}} volume in the UI
 {: #viewhostUI}
@@ -72,15 +125,30 @@ Options:
 
 There you can see the list of hosts, which are currently authorized to access the volume.
 
-## Viewing the list of hosts that are authorized to access a {{site.data.keyword.filestorage_short}} volume from the SLCLI
+## Viewing the list of hosts that are authorized to access a {{site.data.keyword.filestorage_short}} volume from the CLI
 {: #viewhostCLI}
 {: help}
 {: support}
 {: cli}
 
+### Viewing the list of authorized hosts from the IBMCLOUD CLI
+{: #viewhostICCLI}
+
+You can use the `ibmcloud sl file access-list` command to list the hosts that are authorized to access the file share. The following example lists the hosts that can mount the file share `12345678` and sorts them by their IDs.
+
+```sh
+ibmcloud sl file access-list 12345678 --sortby id
+```
+{: codeblock}
+
+For more information about all of the parameters that are available for this command, see [ibmcloud sl file access-list](/docs/cli?topic=cli-sl-file-storage-service#sl_file_access_list){: external}.
+
+### Viewing the list of authorized hosts from the SLCLI
+{: #viewhostCLI}
+
 To display the list of authorized hosts, you can use the following command.
-```python
-# slcli file access-list --help
+```sh
+$ slcli file access-list --help
 Usage: slcli file access-list [OPTIONS] VOLUME_ID
 
 Options:
@@ -90,7 +158,6 @@ Options:
                  password, allowed_host_id
  -h, --help      Show this message and exit.
 ```
-
 
 ## Viewing the {{site.data.keyword.filestorage_short}} volumes to which a host is authorized in the UI
 {: #viewvolUI}
@@ -136,7 +203,6 @@ You can revoke access from either Storage from the Device List or the Storage vi
 If you want to disconnect multiple volumes from a specific host, you need to repeat the Revoke Access action for each volume.
 {: tip}
 
-
 ### Revoking access from the Storage View in the UI
 {: #revokeauthStorageUI}
 {: help}
@@ -153,15 +219,30 @@ If you want to disconnect multiple volumes from a specific host, you need to rep
 If you want to disconnect multiple hosts from a specific volume, you need to repeat the Revoke Access action for each host.
 {: tip}
 
-## Revoking a host's access to {{site.data.keyword.filestorage_short}} from the SLCLI
-{: #revokeauthslcli}
+## Revoking a host's access to {{site.data.keyword.filestorage_short}} from the CLI
+{: #revokeauthcli}
 {: help}
 {: support}
 {: cli}
 
+### Revoking host authorization from the IBMCLOUD CLI
+{: #revokeauthiccli}
+
+You can use the `ibmcloud sl file access-revoke` command to remove authorization from a host. The following command disallows the virtual server instance `87654321` to mount the file share `12345678`.
+
+```sh
+ibmcloud sl file access-revoke 12345678 --virtual-id 87654321
+```
+{: codeblock}
+
+For more information about all of the parameters that are available for this command, see [ibmcloud sl file access-revoke](/docs/cli?topic=cli-sl-file-storage-service#sl_file_access_revoke){: external}.
+
+### Revoking host authorization from the SLCLI
+{: #revokeauthslcli}
+
 You can use the following command in SLCLI.
 ```sh
-# slcli file access-revoke --help
+$ slcli file access-revoke --help
 Usage: slcli file access-revoke [OPTIONS] VOLUME_ID
 
 Options:
@@ -201,16 +282,34 @@ When the volume is canceled, the request is followed by a 24-hour reclaim wait p
 
 Active replicas and dependent duplicates can block reclamation of the Storage volume. Make sure that the volume is no longer mounted, host authorizations are revoked, replication is canceled, and no dependent duplicates exist before you attempt to delete the original volume.
 
-
-## Deleting a storage volume from the SLCLI
+## Deleting a storage volume from the CLI
 {: #cancelvolCLI}
 {: help}
 {: support}
 {: cli}
 
+When the volume is canceled, the request is followed by a 24-hour reclaim wait period. You can still see the volume in the console during those 24 hours. Billing for the volume stops immediately. When the reclaim-period expires, the data is destroyed and the volume is removed from the console, too. For more information, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs).
+
+Active replicas and dependent duplicates can block reclamation of the Storage volume. Make sure that the volume is no longer mounted, host authorizations are revoked, replication is canceled, and no dependent duplicates exist before you attempt to delete the original volume.
+
+### Deleting a storage volume from the IBMCLOUD CLI
+{: #cancelvolICCLI}
+
+You can use the `ibmcloud sl file volume-cancel` command to cancel the file share. The following example cancels the file share `12345678` with immediate effect.
+
+```sh
+ibmcloud sl file volume-cancel 12345678 --immediate -f
+```
+{: codeblock}
+
+For more information about all of the parameters that are available for this command, see [ibmcloud sl file volume-cancel](/docs/cli?topic=cli-sl-file-storage-service#sl_file_volume_cancel){: external}.
+
+### Deleting a storage volume from the SLCLI
+{: #cancelvolSLCLI}
+
 To delete a storage volume, you can use the following command.
-```python
-# slcli file volume-cancel --help
+```sh
+$ slcli file volume-cancel --help
 Usage: slcli file volume-cancel [OPTIONS] VOLUME_ID
 
 Options:
@@ -219,6 +318,21 @@ Options:
                  billing anniversary.
   -h, --help     Show this message and exit.
 ```
+
+## Deleting a storage volume with Terraform
+{: #cancelvolTerraform}
+{: help}
+{: support}
+{: terraform}
+
+Use the `terraform destroy` command to conveniently destroy a remote object such as a single file share. The following example destroys the file share with the ID `ibm_file_share.example.id`.
+
+```terraform
+terraform destroy --target ibm_file_share.example.id
+```
+{: codeblock}
+
+For more information, see [terraform destroy](https://developer.hashicorp.com/terraform/cli/commands/destroy){: external}.
 
 When the volume is canceled, the request is followed by a 24-hour reclaim wait period. You can still see the volume in the console during those 24 hours. Billing for the volume stops immediately. When the reclaim-period expires, the data is destroyed and the volume is removed from the console, too. For more information, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs).
 {: note}

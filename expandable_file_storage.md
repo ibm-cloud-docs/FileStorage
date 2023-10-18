@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-08-30"
+lastupdated: "2023-10-18"
 
 keywords: File Storage, modify volume, NFS, File Storage, expand capacity
 
@@ -56,13 +56,34 @@ You can't change the file share to a smaller size after you expand its capacity.
 Unmount, then mount the modified volume, so the OS can recognize the extra storage space.
 {: tip}
 
-## Resizing storage from the SLCLI
+## Resizing storage from the CLI
 {: #resizingstepsCLI}
 {: cli}
 
-To increase your storage volume, you can use the following command in SLCLI.
-```python
-# slcli file volume-modify --help
+Before you begin, decide on the CLI client that you want to use.
+
+* You can either install the [IBM Cloud CLI](/docs/cli){: external} and install the SL plug-in with `ibmcloud plugin install sl`. For more information, see [Extending IBM Cloud CLI with plug-ins](/docs/cli?topic=cli-plug-ins).
+* Or, you can install the [SLCLI](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}.
+
+### Resizing a file share from the IBMCLOUD CLI
+{: #resizingstepsICCLI}
+
+You can increase the capacity of a volume by using the `ibmcloud sl file volume-modify` command. The following example modifies a file share by specifying a new, bigger capacity.
+
+```sh
+ibmcloud sl file volume-modify 12345678 --new-size 1000
+```
+{: codeblock}
+
+For more information about all of the parameters that are available for this command, see [ibmcloud sl file volume-modify](/docs/cli?topic=cli-sl-file-storage-service#sl_file_volume_modify){: external}.
+
+### Resizing a file share from the SLCLI
+{: #resizingstepsSLCLI}
+
+To increase your storage capacity, you can use the following command in SLCLI.
+
+```sh
+$ slcli file volume-modify --help
 Usage: slcli file volume-modify [OPTIONS] VOLUME_ID
 
 Options:
@@ -224,5 +245,5 @@ Unmount, then mount the modified volume, so the OS can recognize the extra stora
 If you need to increase your Storage volume capacity beyond 12 TB, you can request to be added to the allowlist by submitting a [support case](/unifiedsupport/cases/add){: external}. When the request is approved by the Offering Manager, you're going to be notified through the case process. You're also going to see the option to increase your storage up to 24 TB in the console.
 {: preview}
 
-The number of operations that can be performed on the storage is limited. This limit is 180k IOPS. So if you want to provision a volume with 10 IOPS, your maximum volume size is 18 TB. If you want to provision the maximum size of 24 TB, then the maximum rate of reads and writes to the volume is 4 IOPS per GB.
+The number of operations that can be performed on the storage is limited. This limit is 180k IOPS. So if you want to provision a volume with 10 IOPS, your maximum volume size is 18 TB. If you want to provision the maximum size of 24 TB, then the maximum rate of read and write operations to the volume is 4 IOPS per GB.
 {: note}

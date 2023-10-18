@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-08-29"
+lastupdated: "2023-10-18"
 
-keywords: File Storage, NFS,
+keywords: File Storage, NFS, limits, quotas
 
 subcollection: FileStorage
 
@@ -26,12 +26,31 @@ If you're unsure how many volumes you have, you can confirm the numbers by using
 {: #confirmprovisioncountCLI}
 {: cli}
 
+Before you begin, decide on the CLI client that you want to use.
+
+* You can either install the [IBM Cloud CLI](/docs/cli){: external} and install the SL plug-in with `ibmcloud plugin install sl`. For more information, see [Extending IBM Cloud CLI with plug-ins](/docs/cli?topic=cli-plug-ins).
+* Or, you can install the [SLCLI](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}.
+
+### IBMCLOUD CLI
+{: #ibmcloudcli1}
+
+Use the `ibmcloud sl file volume-limits` command to display what is available and what is provisioned.
+
+```sh
+ibmcloud sl file volume-limits
+Datacenter   MaximumAvailableCount   ProvisionedCount
+global       700                     99
+```
+{: codeblock}
+
+For more information about all of the parameters that are available for this command, see [ibmcloud sl file volume-limits](/docs/cli?topic=cli-sl-file-storage-service#sl_file_volume_limits){: external}.
+
 ### SLCLI
 {: #slcli1}
 
 You can list the number of your volumes by using the [`volume-limits`](https://softlayer-python.readthedocs.io/en/latest/cli/file/#file-volume-limits){: external} command in `slcli` (version 5.8.5 or higher).
 ```sh
-# slcli file volume-limits
+slcli file volume-limits
 ```
 {: pre}
 
@@ -44,18 +63,7 @@ The output looks similar to the following example.
 :   global   :           700         :         117      :
 :............:.......................:..................:
 ```
-
-### IBM Cloud CLI
-{: #ibmcloudcli1}
-
-The `volume-limits` command is also available in the `sl` plug-in for IBM Cloud CLI (v1.0 or higher).
-
-```sh
-# ibmcloud sl file volume-limits
-Datacenter   MaximumAvailableCount   ProvisionedCount
-global       700                     99
-```
-{: screen}
+{: codeblock}
 
 ## Confirming your current limit and provisioning count with the API
 {: #confirmprovisioncountAPI}
@@ -66,11 +74,12 @@ global       700                     99
 
 To directly get this information from the API, use the following method: [`SoftLayer_Network_Storage/getVolumeCountLimits`](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Storage/getVolumeCountLimits/){: external}.
 
-```curl
+```sh
 curl -u $SL_USER:$SL_APIKEY 'https://api.softlayer.com/rest/v3.1/SoftLayer_Network_Storage/getVolumeCountLimits.json'
 
 SoftLayer_Container_Network_Storage_DataCenterLimits_VolumeCountLimitContainer[{"datacenterName":"global","maximumAvailableCount":700,"provisionedCount":99}]
 ```
+{: codeblock}
 
 The API call shows the combined number of {{site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_short}}.
 {: tip}

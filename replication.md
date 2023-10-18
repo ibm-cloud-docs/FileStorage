@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-08-28"
+lastupdated: "2023-10-18"
 
 keywords: File Storage, NFS, replication, duplication, synchronous, replica schedule, replica space, disaster recovery
 
@@ -43,11 +43,40 @@ Data centers in US 1 can replicate with only each other. Data centers in the US 
 As part of the data center modernization strategy for {{site.data.keyword.cloud}}, data centers in the US 1 region are scheduled to consolidate in 2023. For more information, see [Data center consolidations](/docs/get-support?topic=get-support-dc-closure){: external}.
 {: note}
 
-## Determining the remote data center for the replicated storage volume from the SLCLI
+## Determining the remote data center for the replicated storage volume from the CLI
 {: #determinereplicationlocCLI}
 {: cli}
 
-{{site.data.keyword.cloud_notm}}'s data centers are paired into primary and remote combinations in every region worldwide. When you replicate data, consider the local data residency laws because moving data across borders can have legal implications. Replication across regions is not permitted.
+Before you begin, decide on the CLI client that you want to use.
+
+* You can either install the [IBM Cloud CLI](/docs/cli){: external} and install the SL plug-in with `ibmcloud plugin install sl`. For more information, see [Extending IBM Cloud CLI with plug-ins](/docs/cli?topic=cli-plug-ins).
+* Or, you can install the [SLCLI](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}.
+
+{{site.data.keyword.cloud_notm}} data centers are paired into primary and remote combinations in every region worldwide. When you replicate data, consider the local data residency laws because moving data across borders can have legal implications. Replication across regions is not permitted.
+
+### Listing data center locations from the IBMCLOUD CLI
+{: #determinereplicationlocICCLI}
+
+You can use the `ibmcloud sl file replica-locations` command to locate a replica location for your file share. The following example lists the available location for a file share in the US south region.
+
+```sh
+$ ibmcloud sl file replica-locations 560156918
+ID        Short Name   Long Name
+449494    dal09        Dallas 9
+957095    wdc04        Washington 4
+1004995   sjc03        San Jose 3
+1441195   dal10        Dallas 10
+1854795   dal12        Dallas 12
+2017603   wdc07        Washington 7
+2017695   wdc06        Washington 6
+2178495   sjc04        San Jose 4
+```
+{: codeblock}
+
+For more information about all of the parameters that are available for this command, see [ibmcloud sl file replica-locations](/docs/cli?topic=cli-sl-file-storage-service#sl_file_replica_locations).
+
+### Listing data center locations from the SLCLI
+{: #determinereplicationlocSLCLI}
 
 To list suitable replication data centers for a specific volume, use the following command.
 
@@ -75,7 +104,7 @@ Replications work based on a snapshot schedule. You must first have snapshot spa
 2. Click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions") and click **Order Replica**.
 3. Select the existing snapshot schedule that you want your replication to follow. The list contains all of your active snapshot schedules.
 
-   You can select only one schedule even if you have a mix of hourly, daily, and weekly. All the snapshots that were captured since the previous replication are replicated regardless of the schedule that originated them. For more information, see [Working with Snapshots](/docs/FileStorage?topic=FileStorage-snapshots). Replication starts 5 minutes after the snapshot is taken to ensure that the most up-to-date data is copied to the replica volume.
+   You can select only one schedule even if you have a mix of hourly, daily, and weekly. All the snapshots, which were captured since the previous replication, are replicated regardless of the schedule that originated them. For more information, see [Working with Snapshots](/docs/FileStorage?topic=FileStorage-snapshots). Replication starts 5 minutes after the snapshot is taken to ensure that the most up-to-date data is copied to the replica volume.
    {: tip}
 
 4. Select a **Location** for the replica volume.
@@ -88,14 +117,41 @@ Replications work based on a snapshot schedule. You must first have snapshot spa
 7. Review your order, and read the service agreement. If you agree with the terms, check the box.
 8. Click **Place Order**.
 
-## Creating the initial replica from the SLCLI
+## Creating the initial replica from the CLI
 {: #createrepCLI}
 {: cli}
 
-Replications work based on a snapshot schedule. You must first have snapshot space and a snapshot schedule for the source volume before you can replicate. Then, you can use the following command to order a replica volume.
+Replications work based on a snapshot schedule. You must first have snapshot space and a snapshot schedule for the source volume before you can replicate. 
+
+### Creating the initial replica from the IBMCLOUD CLI
+{: #createrepICCLI}
+
+You can use the `ibmcloud sl file replica-order` command to create a replica for your file share. The following example creates a replica in DAL09 for the file share `560156918`.
 
 ```sh
-# slcli file replica-order --help
+$ ibmcloud sl file replica-order 560156918  -s DAILY -d dal09 --tier 4
+This action will incur charges on your account. Continue?> y
+OK
+Order 110551616 was placed.
+ > Storage as a Service
+ > File Storage
+ > 500 GBs
+ > 4 IOPS per GB
+ > 500 GB (Snapshot Space)
+ > Replication for tier-based performance. Replicant of: SL02SEV1414935_268
+
+```
+{: codeblock}
+
+For more information about all of the parameters that are available for this command, see [ibmcloud sl file replica-order](/docs/cli?topic=cli-sl-file-storage-service#sl_file_replica_order).
+
+### Creating the initial replica from the SLCLI
+{: #createrepSLCLI}
+
+You can use the following command to order a replica volume.
+
+```sh
+$ slcli file replica-order --help
 Usage: slcli file replica-order [OPTIONS] VOLUME_ID
 
 Options:
@@ -117,9 +173,26 @@ Options:
 
 You can view your replication volumes on the {{site.data.keyword.filestorage_short}} page under **Storage** > **{{site.data.keyword.filestorage_short}}**. The volume name shows the primary volume's name followed by REP. The **Type** is Endurance or Performance – Replica.
 
-## Viewing the replica volumes from the SLCLI
+## Viewing the replica volumes from the CLI
 {: #replicalistCLI}
 {: cli}
+
+### Listing replica volumes from the IBMCLOUD CLI
+{: #replicalistICCLI}
+
+You can use the `ibmcloud sl file replica-order` command to list the replicas of your file share. The following example lists the replica partners of the file share `560156918`.
+
+```sh
+$ ibmcloud sl file replica-partners 560156918
+ID          User name                  Account ID   Capacity (GB)   Hardware ID   Guest ID   Host ID
+560382016   SL02SEV1414935_268_REP_1   1234567      500             -             -          -
+```
+{: codeblock}
+
+For more information about all of the parameters that are available for this command, see [ibmcloud sl file replica-partners](/docs/cli?topic=cli-sl-file-storage-service#sl_file_replica_partners).
+
+### Listing replica volumes from the SLCLI
+{: #replicalistSLCLI}
 
 List existing replicant volumes for a file volume with the following command.
 ```sh
@@ -170,7 +243,7 @@ You can cancel replication either immediately or on the anniversary date, which 
 
 When a primary volume is deleted, the replication schedule and the volume in the replica data center are deleted, too.
 
-You can expect the volume to remain visible in your Storage list for at least 24 hours (immediate cancellation) or until the anniversary date. Certain features aren't going to be available any longer, but the volume remains visible until it is reclaimed. However, billing is stopped immediately after you click Delete/Cancel Replica.
+You can expect the volume to remain visible in your Storage list for at least 24 hours (immediate cancellation) or until the anniversary date. Certain features aren't going to be available any longer, but the volume remains visible until it is reclaimed. However, billing is stopped immediately after you click **Delete Replica**.
 
 Active replicas can block reclamation of the Storage volume. Make sure that the volume is no longer mounted, host authorizations are revoked, and replication is canceled before you attempt to cancel the original volume.
 {: important}
@@ -191,5 +264,5 @@ For more information, see [Creating a duplicate File Volume](/docs/FileStorage?t
 
 When you fail over, you’re "flipping the switch" from your storage volume in your primary data center to the destination volume in your remote data center. For example, your primary data center is London and your secondary data center is Amsterdam. If a failure event occurs, you’d fail over to Amsterdam – connecting to the now-primary volume from a Compute instance in Amsterdam. After your volume in London is repaired, a snapshot is taken of the Amsterdam volume to fail back to London and the once-again primary volume from a Compute instance in London.
 
-* If the primary location is experiencing a problem but the storage and host are still online, see [Fail over with an accessible primary volume](/docs/FileStorage?topic=FileStorage-dr-accessible).
-* If the primary location is down, see [Fail over with an inaccessible primary volume](/docs/FileStorage?topic=FileStorage-dr-inaccessible).
+* If the primary location is experiencing a problem but the storage and host are still online, see [Failover with an accessible primary volume](/docs/FileStorage?topic=FileStorage-dr-accessible).
+* If the primary location is down, see [Failover with an inaccessible primary volume](/docs/FileStorage?topic=FileStorage-dr-inaccessible).
