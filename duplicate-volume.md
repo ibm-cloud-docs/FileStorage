@@ -187,7 +187,7 @@ Options:
                                   to monthly)
   -h, --help                      Show this message and exit.
 ```
-{: screen}
+{: codeblock}
 
 **Dependent duplicate** volumes can be ordered from the CLI, too, with the option `--dependent-duplicate TRUE`.
 
