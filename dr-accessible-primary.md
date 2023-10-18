@@ -43,7 +43,7 @@ Failovers are started under **Storage**, **{{site.data.keyword.filestorage_short
 Before you proceed with these steps, disconnect the volume. Failure to do so results in corruption and data loss.
 {: important}
 
-## Fail over to replica in the UI
+## Failing over to replica in the UI
 {: #failovertoreplicaUI}
 {: ui}
 
@@ -60,9 +60,31 @@ Before you proceed with these steps, disconnect the volume. Failure to do so res
 7. Refresh the page in your browser. When the transaction is complete, your replica volume has **Active** status, and your original source volume becomes **Inactive**.
 8. Mount and attach your storage volume to the host. For more information, see [connecting your storage](/docs/FileStorage?topic=FileStorage-getting-started#mountingstorage).
 
-## Fail over to replica from the CLI
+## Failing over to replica from the CLI
 {: #failovertoreplicaCLI}
 {: cli}
+
+Before you begin, decide on the CLI client that you want to use.
+
+* You can either install the [IBM Cloud CLI](/docs/cli){: external} and install the SL plug-in with `ibmcloud plugin install sl`. For more information, see [Extending IBM Cloud CLI with plug-ins](/docs/cli?topic=cli-plug-ins).
+* Or, you can install the [SLCLI](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}.
+
+### Initiating a failover from the IBMCLOUD CLI
+{: #failovertoreplicaICCLI}
+
+You can use the `ibmcloud sl file replica-failover` command to fail over operations from the source file share to the replica file share. The following example initiates a failover from the source share `560156918` to the replica share `560382016`.
+
+```sh
+$ ibmcloud sl file replica-failover 560156918 560382016
+OK
+Failover of volume 560156918 to replica 560382016 is now in progress.
+```
+{: codeblock}
+
+For more information about all of the parameters that are available for this command, see [ibmcloud sl file replica-failover](/docs/cli?topic=cli-sl-file-storage-service#sl_file_replica_failover){: external}.
+
+### Initiating a failover from the SLCLI
+{: #failovertoreplicaSLCLI}
 
 To fail over a file volume to a specific replicant volume, use the following command.
 ```python
@@ -112,9 +134,26 @@ Failbacks are started under **Storage**, **{{site.data.keyword.filestorage_short
 8. Refresh the page in your browser. When the transaction is complete, the original source share is shown as **Active**, and the replica share has an **Inactive** status.
 9. Mount and attach your storage volume to the host. For more information, see [connecting your new storage](/docs/FileStorage?topic=FileStorage-getting-started#mountingstorage).
 
-## Fail back from the CLI
+## Failing back from the CLI
 {: #failbackfromreplicaCLI}
 {: cli}
+
+### Initiating a failback from the IBMCLOUDCLI
+{: #failbackfromreplicaICCLI}
+
+You can use the `ibmcloud sl file replica-failback` command to fail back operations from the replica file share to the original source file share. The following example initiates a failback to the original source share `560156918`.
+
+```sh
+$ ibmcloud sl file replica-failback 560156918
+OK
+Failback of volume 560156918 is now in progress.
+```
+{: codeblock}
+
+For more information about all of the parameters that are available for this command, see [ibmcloud sl file replica-failover](/docs/cli?topic=cli-sl-file-storage-service#sl_file_replica_failover){: external}.
+
+### Initiating a failback from the SL CLI
+{: #failbackfromreplicaSLCLI}
 
 To fail back a file volume from a specific replicant volume.
 ```python

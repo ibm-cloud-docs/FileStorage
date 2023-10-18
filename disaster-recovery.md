@@ -20,6 +20,8 @@ If a catastrophic failure or disaster causes an outage on the primary site, cust
 Authorized hosts and volumes must be in the same data center. For example, you can't have a replica volume in London and the host in Amsterdam. Both must be in London or both must be in Amsterdam.
 {: note}
 
+You can create the authorization in the [UI](/docs/FileStorage?topic=FileStorage-managingstorage&interface=ui#authhostUI), from the [CLI](/docs/FileStorage?topic=FileStorage-managingstorage&interface=cli#authhostCLI), with the API, or with [Terraform](/docs/FileStorage?topic=FileStorage-managingstorage&interface=terraform#authhostterraform).
+
 This action breaks the replication relationship and restoring the connection between the primary and the replica location can be time-consuming.
 {: important}
 
@@ -48,13 +50,11 @@ Before you begin, decide on the CLI client that you want to use.
 You can use the `ibmcloud sl file replica-failover` command to fail over operations from the source file share to the replica file share. The following example initiates a failover from the source share `560156918` to the replica share `560382016`.
 
 ```sh
-$ ibmcloud sl file replica-failover 560156918 560382016
+$ ibmcloud sl file file disaster-recovery-failover 560156918 560382016
 OK
 Failover of volume 560156918 to replica 560382016 is now in progress.
 ```
 {: codeblock}
-
-For more information about all of the parameters that are available for this command, see [ibmcloud sl file replica-failover](/docs/cli?topic=cli-sl-file-storage-service#sl_file_replica_failover){: external}.
 
 ### Initiating a failover from the SLCLI
 {: #DRFailoverICCLI}
@@ -69,7 +69,7 @@ Options:
 -h, --help           Show this message and exit.
 ```
 
-## Fail over to the replica volume with the API
+## Failing over to the replica volume with the API
 {: #DRFailoverAPI}
 {: api}
 
@@ -108,6 +108,10 @@ Options:
     </SOAP-ENV:Body>
    </SOAP-ENV:Envelope>
    ```
+
+During the Disaster Recovery Failover, the system is forced to fail over to the replica site and the replication relationship is severed. To be able to fail back to the original site after the site is restored to normal operations, the system must reestablish the replication bond. This action can take a considerable amount of time. During the Failback process, configuration-related actions are read-only. You can't edit any snapshot schedule or change snapshot space. The event is logged in the replication history.
+
+If you need further assistance, create a [support case](/unifiedsupport/supportcenter){: external}.
 
 ## Fail back to the original primary site in the UI
 {: #DRFailbackUI}
@@ -160,7 +164,6 @@ Options:
 ```
 
 During the Disaster Recovery Failover, the system is forced to fail over to the replica site and the replication relationship is severed. To be able to fail back to the original site after the site is restored to normal operations, the system must reestablish the replication bond. This action can take a considerable amount of time. During the Failback process, configuration-related actions are read-only. You can't edit any snapshot schedule or change snapshot space. The event is logged in the replication history.
-{: note}
 
 When the original volume is active, you can mount and attach it to the host. For more information, see [connecting your storage](/docs/FileStorage?topic=FileStorage-getting-started#mountingstorage).
 
