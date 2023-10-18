@@ -64,7 +64,9 @@ Before you begin, decide on the CLI client that you want to use.
 Use the `ibmcloud sl file snapshot-enable` command to create a snapshot schedule. The following example creates a weekly schedule to take snapshots on every Sunday at 2:00 AM. In this example, up to 5 snapshots are retained.
 
 ```sh
-ibmcloud sl file snapshot-enable 12345678 -s WEEKLY -c 5 -m 0 --hour 2 -d 0
+$ ibmcloud sl file snapshot-enable 560156918 -s WEEKLY -c 5 -m 0 --hour 2 -d 0
+OK
+WEEKLY snapshots have been enabled for volume 560156918.
 ```
 {: pre}
 

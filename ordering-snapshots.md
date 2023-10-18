@@ -65,7 +65,7 @@ Additionally, for most workloads, the larger a volume is the less space needs to
 {: #ordersnapshotCLI}
 {: cli}
 
-Before you can begin the provisioning process, decide on the CLI client that you want to use.
+Before you begin, decide on the CLI client that you want to use.
 
 * You can either install the [IBM Cloud CLI](/docs/cli){: external} and install the SL plug-in with `ibmcloud plugin install sl`. For more information, see [Extending IBM Cloud CLI with plug-ins](/docs/cli?topic=cli-plug-ins).
 * Or, you can install the [SLCLI](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}.
