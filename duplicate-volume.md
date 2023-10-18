@@ -115,7 +115,7 @@ id          username             datacenter   storage_type             capacity_
 ```
 {: codeblock}
 
-When you want to create a dependent duplicate of your volume, use the comman with the `--dependent-duplicate` option. See the following example.
+When you want to create a dependent duplicate of your volume, use the command with the `--dependent-duplicate` option. See the following example.
 
 ```sh
 $ ibmcloud sl file volume-duplicate 560391190 --dependent-duplicate
@@ -344,7 +344,7 @@ If you want to use the dependent volume as a stand-alone volume in the future, y
 ### Converting a dependent volume from the IBMCLOUD CLI
 {: #convertdependentvolICCLI}
 
-Use the `ibmcloud sl file volume-convert` command to convert a dependent duplicate an independent file share. The following example shows how to convert the file share `560391814` to an independent volume.
+Use the `ibmcloud sl file volume-convert` command to convert a dependent duplicate to an independent file share. The following example shows how to convert the file share `560391814` to an independent volume.
 
 ```sh
 $ ibmcloud sl file volume-convert 560391814

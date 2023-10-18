@@ -417,7 +417,7 @@ Options:
 {: #deletesnapshotTerraform}
 {: terraform}
 
-Use the `terraform destroy` command to conveniently destroy a remote object such as a snapshot. The following example destroys the snapshot that is identified by its ID, `ibm_file_share_snapshot.example.id`.
+Use the `terraform destroy` command to conveniently destroy a remote object such as a snapshot. The following example destroys the snapshot that is identified by its ID `ibm_file_share_snapshot.example.id`.
 
 ```terraform
 terraform destroy --target ibm_file_share_snapshot.example.id

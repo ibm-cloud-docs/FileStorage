@@ -42,7 +42,7 @@ When you order {{site.data.keyword.filestorage_short}}, consider the following i
    {: note}
 
 - NFS uses many extra file control operations such as `lookup`, `getattr`, and `readdir`. These operations in addition to read/write operations can count as IOPS and vary by operation type and NFS version.
-- {{site.data.keyword.filestorage_short}} volumes are exposed to authorized devices, subnets, or IP addresses.
+- {{site.data.keyword.filestorage_short}} volumes are accessible only to authorized devices, subnets, or IP addresses.
 - To avoid storage disconnection during path-failover {{site.data.keyword.IBM}} recommends installing VMware&reg; tools, which set an appropriate timeout value. Don't change the value because the default setting is sufficient to ensure that your VMware&reg; host doesn't lose connectivity.
 - Both NFSv3 and NFSv4.1 are supported in the {{site.data.keyword.cloud}} environment. However, the use NFSv3 is preferred. Because NFSv4.1 is a stateful protocol (not stateless like NFSv3), protocol issues can occur during network events. NFSv4.1 must quiesce all operations and then complete lock reclamation. While these operations are taking place, disruptions can occur.
 
