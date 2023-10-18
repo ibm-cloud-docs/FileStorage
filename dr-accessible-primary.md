@@ -114,7 +114,7 @@ When your original source volume is repaired, you can start a controlled Failbac
 
 When a Failback is started, the replication relationship is flipped again. Your original source volume is restored as your active source volume, and your target volume becomes the inactive target volume again.
 
-## Fail back in the UI
+## Failing back in the UI
 {: #failbackfromreplicaUI}
 {: ui}
 

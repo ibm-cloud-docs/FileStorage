@@ -113,7 +113,7 @@ During the Disaster Recovery Failover, the system is forced to fail over to the 
 
 If you need further assistance, create a [support case](/unifiedsupport/supportcenter){: external}.
 
-## Fail back to the original primary site in the UI
+## Failing back to the original primary site in the UI
 {: #DRFailbackUI}
 {: ui}
 
@@ -132,7 +132,7 @@ After a disaster event, {{site.data.keyword.cloud}} begins remediation work to r
 
 If you need further assistance, create a [support case](/unifiedsupport/supportcenter){: external}.
 
-## Fail back from the CLI
+## Failing back from the CLI
 {: #DRFailbackCLI}
 {: cli}
 
