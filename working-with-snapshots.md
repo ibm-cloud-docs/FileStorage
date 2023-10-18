@@ -72,7 +72,6 @@ WEEKLY snapshots have been enabled for volume 560156918.
 
 For more information about all of the parameters that are available for this command, see [ibmcloud sl file snapshot-enable](/docs/cli?topic=cli-sl-file-storage-service#sl_file_snapshot_enable){: external}.
 
-
 ### Adding a schedule from the SLCLI
 {: #addscheduleSLCLI}
 

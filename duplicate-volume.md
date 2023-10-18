@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-08-29"
+lastupdated: "2023-10-18"
 
 keywords: File Storage, NFS, duplicate volume
 
@@ -81,8 +81,61 @@ After you click **Create**, the order confirmation window appears. When you clos
 {: #createindependentduplicateCLI}
 {: cli}
 
-The commands that are described in the topic are part of the SLCLI. For more information about how to install and use the SLCLI, see [Python API Client](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}.
-{: tip}
+Before you begin, decide on the CLI client that you want to use.
+
+* You can either install the [IBM Cloud CLI](/docs/cli){: external} and install the SL plug-in with `ibmcloud plugin install sl`. For more information, see [Extending IBM Cloud CLI with plug-ins](/docs/cli?topic=cli-plug-ins).
+* Or, you can install the [SLCLI](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}.
+
+### Creating a duplicate from the IBMCLOUD CLI
+{: #createindependentduplicateICCLI}
+
+You can use the `ibmcloud sl file volume-duplicate` command to create a duplicate for your file share. The following example creates an independent duplicate of the file share `560382016`.
+
+```sh
+ibmcloud sl file volume-duplicate 560382016
+This action will incur charges on your account. Continue?> y
+OK
+Order 110554892 was placed.
+ > Storage as a Service
+ > File Storage
+ > 500 GBs
+ > 4 IOPS per GB
+ > 500 GB (Snapshot Space)
+
+You may run 'ibmcloud sl file volume-list --order 110554892' to find this file volume after it is ready.
+```
+{: codeblock}
+
+Your new duplicate is ready within minutes.
+
+```sh
+$ ibmcloud sl file volume-list --order 110554892
+id          username             datacenter   storage_type             capacity_gb   bytes_used   IOPs   ip_addr                                 lunId   active_transactions   rep_partner_count   notes
+560391190   SL02SEV1414935_269   dal09        endurance_file_storage   500           -            -      fsf-dal0902b-fz.service.softlayer.com   -       1                     0                   -
+```
+{: codeblock}
+
+When you want to create a dependent duplicate of your volume, use the comman with the `--dependent-duplicate` option. See the following example.
+
+```sh
+$ ibmcloud sl file volume-duplicate 560391190 --dependent-duplicate
+This action will incur charges on your account. Continue?> y
+OK
+Order 110553472 was placed.
+ > Storage as a Service
+ > File Storage
+ > 500 GBs
+ > 4 IOPS per GB
+ > 500 GB (Snapshot Space)
+
+You may run 'ibmcloud sl file volume-list --order 110553472' to find this file volume after it is ready.
+```
+{: codeblock}
+
+For more information about all of the parameters that are available for this command, see [ibmcloud sl file volume-duplicate](/docs/cli?topic=cli-sl-file-storage-service#sl_file_volume_duplicate){: external}.
+
+### Creating a duplicate from the SLCLI
+{: #createindependentduplicateSLCLI}
 
 To create an **independent duplicate** {{site.data.keyword.filestorage_short}} volume, you can use the following command.
 
@@ -145,7 +198,7 @@ slcli file volume-duplicate --dependent-duplicate TRUE <primary-vol-id>
 
 For more information about available command options, see [`file volume-duplicate`](https://softlayer-python.readthedocs.io/en/latest/cli/file/#file-volume-duplicate){: external}.
 
-## Creating a duplicate LUN with the API
+## Creating a duplicate share with the API
 {: #cloneinAPI}
 {: api}
 
@@ -243,21 +296,42 @@ The conversion process can take some time to complete. The bigger the volume is,
 {: #refreshindependentvol}
 {: cli}
 
-As time passes and the primary volume changes, the duplicate volume can be updated with these changes to reflect the current state through the refresh action. The refresh involves taking a snapshot of the primary volume and then updating the duplicate volume by using that snapshot.
-
-Refreshes can be initiated by using the following command.
-```python
-slcli file volume-refresh <duplicate-vol-id> <primary-snapshot-id>
-```
-{: pre}
+As time passes and the primary volume changes, the duplicate volume can be updated with these changes to reflect the current state through the refresh action. The refresh involves [taking a snapshot](/docs/FileStorage?topic=FileStorage-managingSnapshots&interface=cli#takemanualsnapshotCLI) of the primary volume and then updating the duplicate volume by using that snapshot.
 
 A refresh incurs no downtime on the primary volume. However, during the refresh transaction, the duplicate volume is unavailable and must be remounted after the refresh is completed.
 {: important}
 
-The refresh process can be time-consuming. If you find that you have new data that you want to copy to the independent duplicate volume, you can issue the `slcli file volume-refresh` command with the `--force-refresh` option to stop all ongoing and pending refresh transactions, and initiate a new refresh. 
+The refresh process can be time-consuming. If you find that you have new data that you want to copy to the independent duplicate volume, you can issue the `file volume-refresh` command with the `--force-refresh` option to stop all ongoing and pending refresh transactions, and initiate a new refresh. 
 
 The force refresh process works only on independent volumes.
 {: note}
+
+### Refreshing data on a dependent duplicate from the IBMCLOUD CLI
+{: #refreshindependentvolICCLI}
+
+You can use the `ibmcloud sl file volume-refresh` command to update the data on your duplicate volume with the data from a snapshot of the parent volume. The following example shows how to manually create a snapshot of the parent volume `560391190`, then use the new snapshot `560391944` to refresh the data on the file share `560391814`.
+
+```sh
+$ ibmcloud sl file snapshot-create 560391190
+OK
+New snapshot 560391944 was created.
+
+$ ibmcloud sl file volume-refresh 560391814 560391944
+OK
+```
+{: codeblock}
+
+For more information about all of the parameters that are available for this command, see [ibmcloud sl file volume-refresh](/docs/cli?topic=cli-sl-file-storage-service#sl_file_volume_refresh){: external}.
+
+### Refreshing data on a dependent duplicate from the SLCLI
+{: #refreshindependentvolSLCLI}
+
+Refreshes can be initiated by using the following command.
+
+```sh
+slcli file volume-refresh <duplicate-vol-id> <primary-snapshot-id>
+```
+{: pre}
 
 For more information about available command options, see [`slcli file volume-refresh`](https://softlayer-python.readthedocs.io/en/latest/cli/file/#file-volume-refresh){: external}.
 
@@ -265,9 +339,34 @@ For more information about available command options, see [`slcli file volume-re
 {: #convertdependentvol}
 {: cli}
 
-If you want to use the dependent volume as a stand-alone volume in the future, you can convert it to a normal, independent {{site.data.keyword.filestorage_short}} volume through the SLCLI. Use the following command.
+If you want to use the dependent volume as a stand-alone volume in the future, you can convert it to a normal, independent {{site.data.keyword.filestorage_short}} volume from the CLI. 
 
-```python
+### Converting a dependent volume from the IBMCLOUD CLI
+{: #convertdependentvolICCLI}
+
+Use the `ibmcloud sl file volume-convert` command to convert a dependent duplicate an independent file share. The following example shows how to convert the file share `560391814` to an independent volume.
+
+```sh
+$ ibmcloud sl file volume-convert 560391814
+OK
+```
+{: codeblock}
+
+The conversion process can take some time to complete. The bigger the volume is, the longer it takes to convert it. Use the following command to check on the progress.
+
+```sh
+ibmcloud sl file volume-convert-status 560391814
+```
+{: pre}
+
+For more information about all of the parameters that are available for this command, see [ibmcloud sl file volume-convert](/docs/cli?topic=cli-sl-file-storage-service#sl_file_volume_convert){: external}.
+
+### Converting a dependent volume from the SLCLI
+{: #convertdependentvolSLCLI}
+
+Use the following command.
+
+```sh
 slcli file volume-convert <dependent-vol-id>
 ```
 {: pre}
