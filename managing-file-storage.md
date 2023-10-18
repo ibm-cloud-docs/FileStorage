@@ -69,8 +69,8 @@ For more information about all of the parameters that are available for this com
 {: #authhostSLCLI}
 
 To authorize a host to access the volume, you can use the following command.
-```python
-# slcli file access-authorize --help
+```sh
+$ slcli file access-authorize --help
 Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
 
 Options:
@@ -147,8 +147,8 @@ For more information about all of the parameters that are available for this com
 {: #viewhostCLI}
 
 To display the list of authorized hosts, you can use the following command.
-```python
-# slcli file access-list --help
+```sh
+$ slcli file access-list --help
 Usage: slcli file access-list [OPTIONS] VOLUME_ID
 
 Options:
@@ -242,7 +242,7 @@ For more information about all of the parameters that are available for this com
 
 You can use the following command in SLCLI.
 ```sh
-# slcli file access-revoke --help
+$ slcli file access-revoke --help
 Usage: slcli file access-revoke [OPTIONS] VOLUME_ID
 
 Options:
@@ -308,8 +308,8 @@ For more information about all of the parameters that are available for this com
 {: #cancelvolSLCLI}
 
 To delete a storage volume, you can use the following command.
-```python
-# slcli file volume-cancel --help
+```sh
+$ slcli file volume-cancel --help
 Usage: slcli file volume-cancel [OPTIONS] VOLUME_ID
 
 Options:

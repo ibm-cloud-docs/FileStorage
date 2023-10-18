@@ -82,8 +82,8 @@ For more information about all of the parameters that are available for this com
 
 To increase your storage capacity, you can use the following command in SLCLI.
 
-```python
-# slcli file volume-modify --help
+```sh
+$ slcli file volume-modify --help
 Usage: slcli file volume-modify [OPTIONS] VOLUME_ID
 
 Options:

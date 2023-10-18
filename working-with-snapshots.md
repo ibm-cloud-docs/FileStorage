@@ -78,7 +78,7 @@ For more information about all of the parameters that are available for this com
 To create a snapshot schedule, use the following command.
 
 ```sh
-# slcli file snapshot-enable --help
+$ slcli file snapshot-enable --help
 Usage: slcli file snapshot-enable [OPTIONS] VOLUME_ID
 
   Enables snapshots for a given volume on the specified schedule
@@ -95,7 +95,7 @@ Options:
 
 You can see the list of your snapshot schedules from the CLI with the following command.
 ```sh
-# slcli file snapshot-schedule-list --help
+$ slcli file snapshot-schedule-list --help
 Usage: slcli file snapshot-schedule-list [OPTIONS] VOLUME_ID
 
   Lists snapshot schedules for a given volume
@@ -184,7 +184,7 @@ For more information about all of the parameters that are available for this com
 You can use the following command to create a snapshot from the CLI.
 
 ```sh
-# slcli file snapshot-create --help
+$ slcli file snapshot-create --help
 Usage: slcli file snapshot-create [OPTIONS] VOLUME_ID
 
 Options:
@@ -231,7 +231,7 @@ For more information about all of the parameters that are available for this com
 You can accomplish this task from the CLI by using the following command.
 
 ```sh
-# slcli file snapshot-list --help
+$ slcli file snapshot-list --help
 Usage: slcli file snapshot-list [OPTIONS] VOLUME_ID
 
 Options:
@@ -282,7 +282,7 @@ For more information about all of the parameters that are available for this com
 To check whether the notifications are enabled for the storage volume, use the following command.
 
 ```sh
-# slcli file snapshot-get-notification-status
+$ slcli file snapshot-get-notification-status
 Usage: slcli file snapshot-get-notification-status [OPTIONS] VOLUME_ID
   Get snapshots space usage threshold warning flag setting for a given volume
 
@@ -292,7 +292,7 @@ Options:
 
 To change the status of the notification setting, use the following command.
 ```sh
-# slcli file snapshot-set-notification VOLUME_ID
+$ slcli file snapshot-set-notification VOLUME_ID
 Usage: slcli file snapshot-set-notification VOLUME_ID [OPTIONS]
 
 Options:
@@ -356,7 +356,7 @@ For more information about all of the parameters that are available for this com
 
 You can accomplish this task by using the following command.
 ```sh
-# slcli file snapshot-disable --help
+$ slcli file snapshot-disable --help
 Usage: slcli file snapshot-disable [OPTIONS] VOLUME_ID
 
   Disables snapshots on the specified schedule for a given volume
@@ -406,7 +406,7 @@ For more information about all of the parameters that are available for this com
 You can delete a snapshot from the CLI by using the following command.
 
 ```sh
-# slcli file snapshot-delete --help
+$ slcli file snapshot-delete --help
 Usage: slcli file snapshot-delete [OPTIONS] SNAPSHOT_ID
 
 Options:
@@ -488,7 +488,7 @@ For more information about all of the parameters that are available for this com
 
 You can restore the volume with a snapshot from the CLI by using the following command.
 ```sh
-# slcli file snapshot-restore --help
+$ slcli file snapshot-restore --help
 Usage: slcli file snapshot-restore [OPTIONS] VOLUME_ID
 
 Options:

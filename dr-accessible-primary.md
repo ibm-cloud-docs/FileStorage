@@ -87,8 +87,8 @@ For more information about all of the parameters that are available for this com
 {: #failovertoreplicaSLCLI}
 
 To fail over a file volume to a specific replicant volume, use the following command.
-```python
-# slcli file replica-failover --help
+```sh
+$ slcli file replica-failover --help
   Usage: slcli file replica-failover [OPTIONS] VOLUME_ID
 
   Options:
@@ -156,8 +156,8 @@ For more information about all of the parameters that are available for this com
 {: #failbackfromreplicaSLCLI}
 
 To fail back a file volume from a specific replicant volume.
-```python
-# slcli file replica-failback --help
+```sh
+$ slcli file replica-failback --help
    Usage: slcli file replica-failback [OPTIONS] VOLUME_ID
 
    Options:

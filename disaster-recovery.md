@@ -60,8 +60,8 @@ Failover of volume 560156918 to replica 560382016 is now in progress.
 {: #DRFailoverICCLI}
 
 Use the following command to fail a file volume over to a specific replicant volume.
-```python
-# slcli file disaster-recovery-failover --help
+```sh
+$ slcli file disaster-recovery-failover --help
 sage: slcli file disaster-recovery-failover [OPTIONS] VOLUME_ID
 
 Options:
@@ -154,8 +154,8 @@ For more information about all of the parameters that are available for this com
 {: #DRFailbackSLCLI}
 
 To fail back a file volume from a specific replicant volume, use the following command.
-```python
-# slcli file replica-failback --help
+```sh
+$ slcli file replica-failback --help
 Usage: slcli file replica-failback [OPTIONS] VOLUME_ID
 
 Options:

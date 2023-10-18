@@ -151,7 +151,7 @@ For more information about all of the parameters that are available for this com
 You can use the following command to order a replica volume.
 
 ```sh
-# slcli file replica-order --help
+$ slcli file replica-order --help
 Usage: slcli file replica-order [OPTIONS] VOLUME_ID
 
 Options:

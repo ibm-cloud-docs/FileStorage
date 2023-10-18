@@ -139,8 +139,8 @@ For more information about all of the parameters that are available for this com
 
 To create an **independent duplicate** {{site.data.keyword.filestorage_short}} volume, you can use the following command.
 
-```python
-# slcli file volume-duplicate --help
+```sh
+$ slcli file volume-duplicate --help
 Usage: slcli file volume-duplicate [OPTIONS] ORIGIN_VOLUME_ID
 
 Options:
