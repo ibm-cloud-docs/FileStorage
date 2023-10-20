@@ -57,7 +57,7 @@ Failover of volume 560156918 to replica 560382016 is now in progress.
 {: codeblock}
 
 ### Initiating a failover from the SLCLI
-{: #DRFailoverICCLI}
+{: #DRFailoverSLCLI}
 
 Use the following command to fail a file volume over to a specific replicant volume.
 ```sh

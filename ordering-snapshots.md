@@ -71,7 +71,7 @@ Before you begin, decide on the CLI client that you want to use.
 * Or, you can install the [SLCLI](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}.
 
 ### Provisioning from the IBMCLOUD CLI
-{: #orderingthroughICCLI}
+{: #orderingsnapthroughICCLI}
 
 Use the `ibmcloud sl file snapshot-order` command to provision snapshot space for your volume. The following example creates a 1000 GB snapshot space for the file share, which is identified by its ID `560156918`.
 
@@ -83,7 +83,7 @@ ibmcloud sl file snapshot-order 560156918 -s 1000 -t 4
 For more information about all of the parameters that are available for this command, see [ibmcloud sl file snapshot-order](/docs/cli?topic=cli-sl-file-storage-service#sl_file_snapshot_order){: external}.
 
 ### Provisioning from the SLCLI
-{: #orderingthroughSLCLI}
+{: #orderingsnapthroughSLCLI}
 
 Use the `slcli file snapshot-order` command to provision snapshot space for your volume. 
 
