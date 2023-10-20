@@ -241,7 +241,7 @@ Options:
 ```
 
 ## Checking notification status from the CLI
-{: #listsnapshotCLI}
+{: #checknotificationstatusCLI}
 {: cli}
 
 Notifications are sent when you reach three different space thresholds – 75 percent, 90 percent, and 95 percent.

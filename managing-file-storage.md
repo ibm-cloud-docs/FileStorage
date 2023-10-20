@@ -144,7 +144,7 @@ ibmcloud sl file access-list 12345678 --sortby id
 For more information about all of the parameters that are available for this command, see [ibmcloud sl file access-list](/docs/cli?topic=cli-sl-file-storage-service#sl_file_access_list){: external}.
 
 ### Viewing the list of authorized hosts from the SLCLI
-{: #viewhostCLI}
+{: #viewhostSLCLI}
 
 To display the list of authorized hosts, you can use the following command.
 ```sh
