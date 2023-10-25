@@ -150,7 +150,7 @@ Failback of volume 560156918 is now in progress.
 ```
 {: codeblock}
 
-For more information about all of the parameters that are available for this command, see [ibmcloud sl file replica-failover](/docs/cli?topic=cli-sl-file-storage-service#sl_file_replica_failover){: external}.
+For more information about all of the parameters that are available for this command, see [ibmcloud sl file replica-failback](/docs/cli?topic=cli-sl-file-storage-service#sl_file_replica_failback){: external}.
 
 ### Initiating a failback from the SL CLI
 {: #failbackfromreplicaSLCLI}
