@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-10-18"
+lastupdated: "2023-12-18"
 
 keywords: File Storage, NFS, authorizing hosts, revoke access, grant access, view authorizations
 
@@ -63,7 +63,7 @@ ibmcloud sl file access-authorize 12345678 --virtual-id 87654321
 ```
 {: codeblock}
 
-For more information about all of the parameters that are available for this command, see [ibmcloud sl file access-authorize](/docs/cli?topic=cli-sl-file-storage-service#sl_file_access_authorizer){: external}.
+For more information about all of the parameters that are available for this command, see [ibmcloud sl file access-authorize](/docs/cli?topic=cli-sl-file-storage-service#sl_file_access_authorize){: external}.
 
 ### Authorizing hosts from the SLCLI
 {: #authhostSLCLI}

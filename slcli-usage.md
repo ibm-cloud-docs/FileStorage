@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-01-11"
+lastupdated: "2023-12-18"
 
 keywords: File Storage, NSF, SLCLI, API
 
@@ -64,7 +64,7 @@ For more information about how to install and use the SLCLI, see [Python API Cli
 ## Volume-related SLCLI commands
 {: #slclivolume}
 
-* [Ordering a {{site.data.keyword.filestorage_short}} volume](/docs/FileStorage?topic=FileStorage-orderingFileStorage#orderingthroughCLI)
+* [Ordering a {{site.data.keyword.filestorage_short}} volume](/docs/FileStorage?topic=FileStorage-orderingFileStorage&interface=cli#orderingthroughCLI)
    ```python
    slcli file volume-order
    ```

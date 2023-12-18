@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-08-29"
+lastupdated: "2023-12-18"
 
 keywords: File Storage, NFS, durability, availability, HA, high-availability, data loss, data integrity, uptime, five 9's, eleven 9's, data health, data corruption, data decay, encryption, security, integrity
 
@@ -36,7 +36,7 @@ Think of durability as a measurement of how healthy and resilient your data is. 
 
 When people hear the word durability, most of them think of hardware failures of Storage, Compute, and Network components that might cause data loss. In {{site.data.keyword.filestorage_short}}, your data is protected against drive failures and numerous types of disk errors that otherwise might negatively impact data durability and data integrity. The data is stored redundantly across multiple physical disks in an Availability Zone to prevent data loss due to failure of any single component.
 
-Other than physical failure, a common source of data loss is accidental deletion or modifications of files by users. {{site.data.keyword.filestorage_short}} is only accessible to authorized hosts within your network. You control who can access it. Another measure to protect against accidental deletion and modification of files by users is a snapshot. If a user accidentally modifies or deletes crucial data from a volume, the data can be easily and quickly restored from a snapshot copy. For more information about this feature, see [Snapshots](/docs/FileStorage?topic=FileStorage-snapshot).
+Other than physical failure, a common source of data loss is accidental deletion or modifications of files by users. {{site.data.keyword.filestorage_short}} is only accessible to authorized hosts within your network. You control who can access it. Another measure to protect against accidental deletion and modification of files by users is a snapshot. If a user accidentally modifies or deletes crucial data from a volume, the data can be easily and quickly restored from a snapshot copy. For more information about this feature, see [Snapshots](/docs/FileStorage?topic=FileStorage-snapshots).
 
 The 11 nines durability target applies to a single Availability Zone. To protect against natural or human-made disasters that might destroy an entire Availability Zone, consider storing your most important data in multiple locations. For more information, see [Replicating Data](/docs/FileStorage?topic=FileStorage-replication).
 
