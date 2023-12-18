@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-08-29"
+lastupdated: "2023-12-18"
 
 keywords: File Storage, NFS, security, encryption
 
@@ -34,7 +34,7 @@ All cluster-to-cluster traffic is encrypted with TLS.
 
 The provider-managed encryption-at-rest feature is available in all [data centers](/docs/FileStorage?topic=FileStorage-selectDC). All storage that is ordered in these data centers is automatically provisioned with encryption for data-at-rest.
 
-When you order {{site.data.keyword.filestorage_short}}, select a data center that is marked with an asterisk (`*`). You can see a lock icon to the right of the Volume Name field that indicates that the volume is encrypted. See Figure 1.
+When you order {{site.data.keyword.filestorage_short}}, select a data center that is marked with an asterisk (`*`). You can see a lock icon next to the Volume Name field that indicates that the volume is encrypted. See Figure 1.
 
 ![Figure 1. Example of the lock icon that indicates that the volume is encrypted.](/images/encryptedstorage.svg){: caption="Figure 1. Example of the lock icon that indicates that the volume is encrypted." caption-side="bottom"}
 

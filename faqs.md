@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-08-30"
+lastupdated: "2023-12-18"
 
 keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
@@ -26,7 +26,7 @@ Look at your list of {{site.data.keyword.filestorage_short}} in the customer por
 {: #encryptupgrade}
 {: support}
 
-{{site.data.keyword.filestorage_short}} that was provisioned before a data center upgrade can't be encrypted. New {{site.data.keyword.filestorage_short}} that was provisioned in upgraded data centers is automatically encrypted. It's automatic, not a provisioning setting that can be selected or left out. Data on nonencrypted storage can be encrypted by creating a new volume, then copying the data to the new encrypted volume with host-based migration. For more information, see [Migrating {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-migratestorage).
+{{site.data.keyword.filestorage_short}} that was provisioned before a data center upgrade can't be encrypted. New {{site.data.keyword.filestorage_short}} that was provisioned in upgraded data centers is automatically encrypted. It's automatic, not a provisioning setting that can be selected or cleared. Data on nonencrypted storage can be encrypted by creating a new volume, then copying the data to the new encrypted volume with host-based migration. For more information, see [Migrating {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-migratestorage).
 
 ## How do I know whether I'm provisioning {{site.data.keyword.filestorage_short}} in an upgraded data center?
 {: faq}
@@ -90,13 +90,13 @@ The maximum number of inodes that can be configured on a volume is calculated by
 | 16,000 GB| 2,040,109,451 |
 {: row-headers}
 {: caption="Table 1 shows the maximum number of inodes that are allowed based on the volume size." caption-side="bottom"}
-{: summary="Table 1 shows the maximum number of inodes that are allowed based on the volume size. Volume sizes are in the left column. The numbers of inodes (files and directories) are on the right."}
+{: summary="Table 1 shows the maximum number of inodes that are allowed based on the volume size. Volume sizes are in the first column. The numbers of inodes (files and directories) are in the second column."}
 
 ## I ordered a {{site.data.keyword.filestorage_short}} volume in the wrong data center. Is it possible to move or migrate it to another data center?
 {: faq}
 {: #movedatacenter}
 
-You need to order a new {{site.data.keyword.filestorage_short}} share in the right data center, and then cancel the {{site.data.keyword.filestorage_short}} device that you ordered in the incorrect location. When the volume is canceled, the request is followed by a 24-hour reclaim wait period. You can still see the volume in the console during those 24 hours. Billing for the volume stops immediately. When the reclaim period expires, the data is destroyed and the volume is removed from the console, too.
+You need to order a new {{site.data.keyword.filestorage_short}} share in the correct data center, and then cancel the {{site.data.keyword.filestorage_short}} device that you ordered in the incorrect location. When the volume is canceled, the request is followed by a 24-hour reclaim wait period. You can still see the volume in the console during those 24 hours. Billing for the volume stops immediately. When the reclaim period expires, the data is destroyed and the volume is removed from the console, too.
 
 ## Measuring IOPS
 {: faq}
@@ -136,7 +136,7 @@ Pre-warming is not needed. You can observe the specified throughput immediately 
 {: #ethernet}
 {: support}
 
-Throughput limits are set at a per-volume level. That limit cannot be increased by using a faster Ethernet connection. However, with a slower Ethernet connection, your bandwidth can be a potential bottleneck.
+Throughput limits are set at the volume level. That limit cannot be increased by using a faster Ethernet connection. However, with a slower Ethernet connection, your bandwidth can be a potential bottleneck.
 
 ## Do firewalls and security groups impact performance?
 {: #isolatedstoragetraffic}
@@ -348,7 +348,7 @@ The following examples are utilities that you might consider to use to check per
 
 You can create a replica or a duplicate volume by using a snapshot of your volume. Replication and cloning use one of your snapshots to copy data to a destination volume. However, that is where the similarities end.
 
-Replication keeps your data in sync in two different locations. Only one of the volume pair (primary volume or replica volume) can be active at a time. The replication process automatically copies information from the active volume to the inactive volume based on the replication schedule. For more information about replica volumes, see [Replicating data](/docs/FileStorage?topic=FileStorage-replication).
+Replication keeps your data in sync in two different locations. Only one volume of the pair (primary volume or replica volume) can be active at a time. The replication process automatically copies information from the active volume to the inactive volume based on the replication schedule. For more information about replica volumes, see [Replicating data](/docs/FileStorage?topic=FileStorage-replication).
 
 Duplication creates a copy of your volume based on a snapshot in the same availability zone as the parent volume. The duplicate volume inherits the capacity and performance options of the original volume by default and has a copy of the data up to the point-in-time of a snapshot. The duplicate volume can be dependent or independent from the original volume, and it can be manually refreshed with data from the parent volume. You can adjust the IOPS or increase the volume size of the duplicate without any effect on the parent volume.
 
