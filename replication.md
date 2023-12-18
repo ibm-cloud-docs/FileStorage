@@ -23,7 +23,6 @@ Replication keeps your data in sync in two different locations. If you want to c
 Before you can replicate, you must create a snapshot schedule. The option to **Order Replica** does not appear until this condition is met.
 {: important}
 
-
 ## Determining the remote data center for the replicated storage volume in the UI
 {: #determinereplicationlocUI}
 {: ui}

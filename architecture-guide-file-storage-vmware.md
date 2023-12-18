@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-10-18"
+lastupdated: "2023-12-18"
 
 keywords: Classic File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
@@ -136,7 +136,7 @@ Before you begin the configuration process, make sure that the following prerequ
 
 1. From an internet-connected computer, start an RDP client and establish an RDP session to the {{site.data.keyword.BluVirtServers_full}} that is provisioned in the same data center where vSphere vCenter is installed.
 2. From the {{site.data.keyword.BluVirtServers_short}}, start a web browser and connect to VMware&reg; vCenter through the vSphere Web Client.
-3. From the **HOME** screen, select **Hosts and Clusters**. Expand the pane on the left and select the **VMware&reg; ESXi server** that is to be used for this deployment.
+3. From the **HOME** screen, select **Hosts and Clusters**. Expand the side pane and select the **VMware&reg; ESXi server** that is to be used for this deployment.
 4. Make sure that the firewall port for the NFS client is open on all hosts so that you can configure the NFS client on the vSphere host. (The port is automatically opened in the more recent releases of vSphere.) To check whether the port is open, go to the **ESXi host Manage** tab in VMware® vCenter™, select **Settings**, and then select **Security Profile**. In the **Firewall** section, click **Edit** and scroll down to **NFS Client**.
 5. Make sure **Allow connection from any IP address or a list of IP addresses** is provided.
     ![Allow Connection.](/images/1_4.svg){: caption="Allow Connections." caption-side="bottom"}
@@ -181,7 +181,7 @@ For more information about VMware&reg; and Jumbo Frames, see [here](https://kb.v
     ![Add physical adapters to the switch.](/images/2_3.svg){: caption="Add the physical adapters to the switch." caption-side="bottom"}
 8. Click **Next** and the **Finish**.
 9. Go back to the **Virtual switches** tab and select the **Edit setting** (Pencil icon) under the **Virtual Switches** heading.
-10. On the left, select the vSwitch **Teaming and failover** entry.
+10. Then, select the vSwitch **Teaming and failover** entry.
 11. Verify that the **Load-balancing** option is set to **Route based on the originating virtual port** and click **OK**.
 
 
