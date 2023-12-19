@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-12-18"
+lastupdated: "2023-12-19"
 
 keywords: File Storage, NFS, limits, quotas
 
@@ -101,16 +101,16 @@ In the ticket, provide the following information:
    >*For example, your answer might be something similar to a new VMware&reg; datastore, a new development and testing environment, an SQL database, or logging.*
 
 - **How many extra Block volumes are needed by type, size, IOPS, and location?**
-   >*For example, your answer might be "25x Endurance 2 TB @ 4 IOPS in DAL09" or "25x Performance 4 TB @ 2 IOPS in WDC04".*
+   >*"25x Endurance 2 TB @ 4 IOPS in DAL09" or "25x Performance 4 TB @ 2 IOPS in WDC04."*
 
 - **How many extra File volumes are needed by type, size, IOPS, and location?**
-   >*For example, your answer might be "25x Performance 20 GB @ 10 IOPS in DAL09" or "50x Endurance 2 TB @ 0.25 IOPS in SJC03".*
+   >*"25x Performance 20 GB @ 10 IOPS in DAL09" or "50x Endurance 2 TB @ 0.25 IOPS in SJC03."*
 
 - **Provide an estimate of when you expect or plan to provision all of the requested volume increase.**
-   >*For example, your answer might be "90 days".*
+   >*"90 days."*
 
 - **Provide a 90-day forecast of expected average capacity usage of these volumes.**
-   >*For example, your answer might be "expect 25 percent to be used in 30 days, 50 percent to be used in 60 days and 75 percent to be used in 90 days".*
+   >*"expect 25 percent to be used in 30 days, 50 percent to be used in 60 days and 75 percent to be used in 90 days."*
 
 Respond to all questions and statements in your request. They are required for processing and approval.
 {: important}
