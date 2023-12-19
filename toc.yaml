@@ -46,7 +46,6 @@ toc:
         - topicgroup:
             label: Configuring
             topics:
-            - set-host-queue-depth-settings-performance-and-endurance-storage.md
             - jumboframes.md
             - mounting-storage-centos.md
             - configure-backup-cpanel.md

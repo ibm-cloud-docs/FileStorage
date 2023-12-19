@@ -225,4 +225,4 @@ If you want to clone your volume, see [Creating and managing independent duplica
 ## Identifying {{site.data.keyword.filestorage_short}} volumes on the invoice
 {: #findstorageinvoice}
 
-All file shares appear on your invoice as a line item. Endurance volumes appear as “Endurance Storage Service” and Performance volumes appear as "Performance Storage Service". The rate varies based on your storage level. You can expand on Endurance or Performance to see that it's {{site.data.keyword.filestorage_short}}.
+All file shares appear on your invoice as a line item. Endurance volumes appear as _Endurance Storage Service_ and Performance volumes appear as _Performance Storage Service_. The rate varies based on your storage level. You can expand on Endurance or Performance to see that it's {{site.data.keyword.filestorage_short}}.
