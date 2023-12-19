@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-12-18"
+lastupdated: "2023-12-19"
 
 keywords: Classic File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
@@ -71,7 +71,6 @@ VMware&reg; vSphere on network-attached storage](https://www.vmware.com/content/
 
 *Source - [VMware&reg; - NFS Protocols and ESXi](https://docs.vmware.com/en/VMware-vSphere/6.0/vsphere-60-guide-archive.zip){: external}*.
 
-
 ### Using Snapshots
 {: #vmwaresnapshot}
 
@@ -84,7 +83,6 @@ It's important to note that VMware&reg; environments are not aware of snapshots.
 Restoring the {{site.data.keyword.filestorage_short}} volume requires powering off all the VMs on the {{site.data.keyword.filestorage_short}}. The volume needs to be temporarily unmounted from the ESXi host to avoid any data corruption during the process.
 
 For more information, see the [snapshots](/docs/FileStorage?topic=FileStorage-snapshots) article.
-
 
 ### Using replication
 {: #vmwarereplication}
@@ -122,7 +120,7 @@ Follow the instructions in the [Advanced Single-Site VMware&reg; Reference Archi
 
 You can create the authorization in the [UI](/docs/FileStorage?topic=FileStorage-managingstorage&interface=ui#authhostUI), from the [CLI](/docs/FileStorage?topic=FileStorage-managingstorage&interface=cli#authhostCLI), with the API, or with [Terraform](/docs/FileStorage?topic=FileStorage-managingstorage&interface=terraform#authhostterraform).
 
-##  Configuring the VMware virtual machine host
+## Configuring the VMware virtual machine host
 {: #configurevmwarehost}
 
 Before you begin the configuration process, make sure that the following prerequisites are met:
@@ -131,7 +129,7 @@ Before you begin the configuration process, make sure that the following prerequ
 - {{site.data.keyword.cloud}} Windows physical or {{site.data.keyword.virtualmachinesshort}} in the same data center as the {{site.data.keyword.BluBareMetServers}}. Including Public IP address of the {{site.data.keyword.cloud}} Windows VM and login credentials.
 - A computer with internet access, and with the web browser software and a Remote Desktop Protocol (RDP) client installed.
 
-### 1. Configuring the VMware Host.
+### Step 1. Configuring the VMware Host.
 {: #configurevmwarehost1}
 
 1. From an internet-connected computer, start an RDP client and establish an RDP session to the {{site.data.keyword.BluVirtServers_full}} that is provisioned in the same data center where vSphere vCenter is installed.
@@ -167,8 +165,7 @@ Before you begin the configuration process, make sure that the following prerequ
 For more information about VMware&reg; and Jumbo Frames, see [here](https://kb.vmware.com/s/article/1003712){: external}.
 {: tip}
 
-
-### 2. Adding an uplink adapter to a virtual switch
+### Step 2. Adding an uplink adapter to a virtual switch
 {: #configurevmwarehost2}
 
 1. Configure a new uplink adapter by going to the **ESXi host Manage** tab, select **Manage** and then **Networking**.
@@ -184,8 +181,7 @@ For more information about VMware&reg; and Jumbo Frames, see [here](https://kb.v
 10. Then, select the vSwitch **Teaming and failover** entry.
 11. Verify that the **Load-balancing** option is set to **Route based on the originating virtual port** and click **OK**.
 
-
-### 3. Configuring static routing (Optional)
+### Step 3. Configuring static routing (Optional)
 {: #configurevmwarehost3}
 
 The network configuration for this architecture guide uses a minimal number of port groups. If you have a VMkernel port group for NFS storage, extra steps must be taken. By default, ESXi uses the VMkernel port that is on the same subnet as an NFS volume to mount the NFS volume. Since layer 3 routing is used to mount the NFS volume, ESXi must be forced to use the VMkernel port that was configured to mount the NFS volume. To use the correct port, a static route must be created to the storage array.
@@ -242,6 +238,7 @@ To obtain the IP address from an ESXi host, use the following command. The resul
 PING nfsdal0902a-fz.service.softlayer.com (10.2.125.80): 56 data bytes
 64 bytes from 10.2.125.80: icmp_seq=0 ttl=253 time=0.187 ms
 ```
+{: screen}
 
 ## Enabling ESXi Storage I/O Control (Optional)
 {: #enableSIOC}
@@ -321,6 +318,7 @@ The following examples use the ESXi CLI to set the advanced configuration parame
  #esxcfg-advcfg -s 32 /Disk/QFullSampleSize
  #esxcfg-advcfg -s 8 /Disk/QFullThreshold
  ```
+ {: codeblock}
 
 - Checking the advanced configuration parameters from the ESXi CLI.
 
@@ -336,6 +334,7 @@ The following examples use the ESXi CLI to set the advanced configuration parame
  #esxcfg-advcfg -g /Disk/QFullSampleSize
  #esxcfg-advcfg -g /Disk/QFullThreshold
  ```
+ {: codeblock}
 
 For more information, see [Advanced Single-Site VMware&reg; Reference Architecture](/docs/virtualization?topic=virtualization-advanced-single-site-vmware-reference-architecture).
 {: tip}
