@@ -110,7 +110,7 @@ In the ticket, provide the following information:
    >*"90 days."*
 
 - **Provide a 90-day forecast of expected average capacity usage of these volumes.**
-   >*"expect 25 percent to be used in 30 days, 50 percent to be used in 60 days and 75 percent to be used in 90 days."*
+   >*"I expect 25 percent to be used in 30 days, 50 percent to be used in 60 days and 75 percent to be used in 90 days."*
 
 Respond to all questions and statements in your request. They are required for processing and approval.
 {: important}
