@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-12-18"
+lastupdated: "2023-12-19"
 
 keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
@@ -20,22 +20,6 @@ subcollection: FileStorage
 {: support}
 
 Look at your list of {{site.data.keyword.filestorage_short}} in the customer portal. You can see a lock icon next to the volume name for the volumes that are encrypted.
-
-## If I purchased nonencrypted {{site.data.keyword.filestorage_short}} in a data center that was upgraded for encryption, can I encrypt my {{site.data.keyword.filestorage_short}}?
-{: faq}
-{: #encryptupgrade}
-{: support}
-
-{{site.data.keyword.filestorage_short}} that was provisioned before a data center upgrade can't be encrypted. New {{site.data.keyword.filestorage_short}} that was provisioned in upgraded data centers is automatically encrypted. It's automatic, not a provisioning setting that can be selected or cleared. Data on nonencrypted storage can be encrypted by creating a new volume, then copying the data to the new encrypted volume with host-based migration. For more information, see [Migrating {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-migratestorage).
-
-## How do I know whether I'm provisioning {{site.data.keyword.filestorage_short}} in an upgraded data center?
-{: faq}
-{: #upgradedcenter}
-{: support}
-
-In the {{site.data.keyword.filestorage_short}} order form, all upgraded data centers are denoted with an asterisk (`*`). During the ordering process, you're given an indication that you're provisioning storage with encryption. When the storage is provisioned, you can see an icon in the storage list that shows that volume as encrypted.
-
-All encrypted volumes and file shares are provisioned in upgraded data centers only. You can find a full list of upgraded data centers and available features [here](/docs/FileStorage?topic=FileStorage-selectDC).
 
 ## How can I find the correct mount point for my {{site.data.keyword.filestorage_short}}?
 {: #mountpoint}
@@ -96,7 +80,9 @@ The maximum number of inodes that can be configured on a volume is calculated by
 {: faq}
 {: #movedatacenter}
 
-You need to order a new {{site.data.keyword.filestorage_short}} share in the correct data center, and then cancel the {{site.data.keyword.filestorage_short}} device that you ordered in the incorrect location. When the volume is canceled, the request is followed by a 24-hour reclaim wait period. You can still see the volume in the console during those 24 hours. Billing for the volume stops immediately. When the reclaim period expires, the data is destroyed and the volume is removed from the console, too.
+You need to order a new {{site.data.keyword.filestorage_short}} share in the correct data center, and then cancel the {{site.data.keyword.filestorage_short}} device that you ordered in the incorrect location. You can create a duplicate of your share, and cancel the parent share. For more information, see [Creating and managing duplicate volumes](/docs/FileStorage?topic=FileStorage-duplicatevolume).
+
+When the share is canceled, the request is followed by a 24-hour reclaim wait period. You can still see the storage volume in the console during those 24 hours. Billing for the volume stops immediately. When the reclaim period expires, the data is destroyed and the volume is removed from the console, too.
 
 ## Measuring IOPS
 {: faq}
@@ -105,17 +91,16 @@ You need to order a new {{site.data.keyword.filestorage_short}} share in the cor
 
 IOPS is measured based on a load profile of 16-KB blocks with random 50 percent reads and 50 percent writes. Workloads that differ from this profile might experience poor performance. To improve performance, you can try adjusting the host settings or [enabling Jumbo frames](/docs/FileStorage?topic=FileStorage-jumboframes).
 
-## What happens when I use a smaller block size for measuring performance?
+## What happens when I use a smaller IO size for measuring performance?
 {: faq}
 {: #smallblock}
 {: support}
 
-Maximum IOPS can be obtained even if you use smaller block sizes. However, the throughput is less in this case. For example, a volume with 6000 IOPS has the following throughput at various block sizes:
+Maximum IOPS can be obtained even if you use smaller IO sizes. However, the throughput is less in this case. For example, a volume with 6000 IOPS has the following throughput at various IO sizes:
 
 - 16 KB * 6000 IOPS == ~93.75 MB/sec
 - 8 KB * 6000 IOPS == ~46.88 MB/sec
 - 4 KB * 6000 IOPS == ~23.44 MB/sec
-
 
 ## Is the allocated IOPS enforced by instance or by volume?
 {: #iopslimit}
@@ -173,7 +158,7 @@ To enact this good practice, complete the following steps.
 
 Target latency within the storage is less than one ms. The storage is connected to compute instances on a shared network, so the exact performance latency depends on the network traffic during the operation.
 
-## What happens to the data when {{site.data.keyword.filestorage_short}} Volumes are deleted?
+## What happens to the data when {{site.data.keyword.filestorage_short}} shares are deleted?
 {: faq}
 {: #deleted}
 {: support}
@@ -188,7 +173,7 @@ When IBM decommissions a physical drive, the drive is destroyed before disposal.
 
 Customers with special requirements for compliance such as NIST 800-88 Guidelines for Media Sanitization can perform the data sanitization procedure before they delete their storage.
 
-## I cannot cancel a {{site.data.keyword.filestorage_short}} volume because the Cancel action in the Cloud console is unavailable or disabled. What’s happening?
+## Why is the Cancel action unavailable in the console?
 {: faq}
 {: #cancelstorage}
 
