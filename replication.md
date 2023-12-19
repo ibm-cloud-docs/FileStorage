@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-10-18"
+lastupdated: "2023-12-19"
 
 keywords: File Storage, NFS, replication, duplication, synchronous, replica schedule, replica space, disaster recovery
 
@@ -261,7 +261,7 @@ For more information, see [Creating a duplicate File Volume](/docs/FileStorage?t
 ## Using replicas to fail over when disaster strikes
 {: #replicatotherescureDR}
 
-When you fail over, you’re "flipping the switch" from your storage volume in your primary data center to the destination volume in your remote data center. For example, your primary data center is London and your secondary data center is Amsterdam. If a failure event occurs, you’d fail over to Amsterdam – connecting to the now-primary volume from a Compute instance in Amsterdam. After your volume in London is repaired, a snapshot is taken of the Amsterdam volume to fail back to London and the once-again primary volume from a Compute instance in London.
+When you fail over, you’re switching from your storage volume in your primary data center to the destination volume in your remote data center. For example, your primary data center is London and your secondary data center is Amsterdam. If a failure event occurs, you’d fail over to Amsterdam – connecting to the now-primary volume from a Compute instance in Amsterdam. After your volume in London is repaired, a snapshot is taken of the Amsterdam volume to fail back to London and the once-again primary volume from a Compute instance in London.
 
 * If the primary location is experiencing a problem but the storage and host are still online, see [Failover with an accessible primary volume](/docs/FileStorage?topic=FileStorage-dr-accessible).
 * If the primary location is down, see [Failover with an inaccessible primary volume](/docs/FileStorage?topic=FileStorage-dr-inaccessible).
