@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2014, 2023
+  years: 2014, 2024
 lastupdated: "2023-12-19"
 
 keywords: File Storage, NFS, replication, duplication, synchronous, replica schedule, replica space, disaster recovery
