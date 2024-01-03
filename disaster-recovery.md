@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2018, 2023
+  years: 2018, 2024
 lastupdated: "2023-12-18"
 
 keywords: File Storage, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,

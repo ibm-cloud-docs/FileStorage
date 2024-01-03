@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2014, 2023
+  years: 2014, 2024
 lastupdated: "2023-10-18"
 
 keywords: File Storage, mounting File Storage, Linux, CentOS, NFS

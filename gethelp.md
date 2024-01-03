@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2014, 2023
+  years: 2014, 2024
 lastupdated: "2023-02-22"
 
 keywords: File Storage, issues, get support, how to request help, open a case, open a ticket

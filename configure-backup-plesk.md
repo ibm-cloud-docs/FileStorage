@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2018, 2023
+  years: 2018, 2024
 lastupdated: "2019-02-05"
 
 keywords: File Storage, NFS, Plesk, backups
