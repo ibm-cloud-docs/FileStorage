@@ -57,22 +57,7 @@
         "ATS nfs esxi",
         "vStorage for API Array Integration and Hardware acceleration"
     ],
-    "failover": [
-        "controlled failover in File Storage",
-        "immediate failover in File Storage",
-        "File Storage replica ",
-        "replica failover in NFS",
-        "File Storage sync",
-        "File Storage mirroring",
-        "failover File Storage",
-        "replica failover for File Storage",
-        "File Storage recovery",
-        "snapshot failover for NFS",
-        "nfs volume failover",
-        "volume recovery File Storage",
-        "difference between Controlled Failover and Immediate Failover"
-],	    
-   "hostlimit": [
+    "hostlimit": [
         "a single host on nfs ",
         "one host for nfs ",
         "how many volumes on a  hosts in File Storage ",
