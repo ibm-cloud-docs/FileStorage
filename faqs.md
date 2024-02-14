@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2023-12-19"
+lastupdated: "2024-02-14"
 
 keywords: File Storage, encryption, security, provisioning, limitations, NFS
 
@@ -33,7 +33,7 @@ All encrypted {{site.data.keyword.filestorage_short}} volumes that are provision
 {: #provision}
 {: support}
 
-By default, you can provision a combined total of 700 Block and {{site.data.keyword.filestorage_short}} volumes. To increase your limit, contact your sales representative. For more information, see [Managing storage limits](/docs/FileStorage?topic=FileStorage-managinglimits).
+By default, you can provision a combined total of 750 Block and {{site.data.keyword.filestorage_short}} volumes. To increase your limit, contact your sales representative. For more information, see [Managing storage limits](/docs/FileStorage?topic=FileStorage-managinglimits).
 
 ## How many instances can share the use of a provisioned {{site.data.keyword.filestorage_short}} volume?
 {: faq}

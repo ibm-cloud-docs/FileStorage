@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2023-10-18"
+lastupdated: "2024-02-14"
 
 keywords: File Storage, NFS, provisioning, ordering, duplicate, cloning, replication
 
@@ -41,7 +41,7 @@ You can provision {{site.data.keyword.filestorage_short}} and fine-tune to meet 
    | 10,000 - 12,000 | 1,000 - 48,000 |
    {: caption="Table 1. Available IOPS based on volume size" caption-side="bottom"}
 
-By default, you can provision a combined total of 700 {{site.data.keyword.filestorage_short}} volumes. To increase the number of your volumes, contact your sales representative. Read about increasing limits [here](/docs/FileStorage?topic=FileStorage-managinglimits). For more information about the limit on simultaneous authorizations, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs#authlimit).
+By default, you can provision a combined total of 750 {{site.data.keyword.filestorage_short}} volumes. To increase the number of your volumes, contact your sales representative. Read about increasing limits [here](/docs/FileStorage?topic=FileStorage-managinglimits). For more information about the limit on simultaneous authorizations, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs#authlimit).
 {: important}   
 
 ## Ordering {{site.data.keyword.filestorage_short}} in the UI

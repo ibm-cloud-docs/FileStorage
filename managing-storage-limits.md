@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2023-12-19"
+lastupdated: "2024-02-14"
 
 keywords: File Storage, NFS, limits, quotas
 
@@ -16,7 +16,7 @@ subcollection: FileStorage
 {: help}
 {: support}
 
-By default, you can provision a combined total of 700 {{site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_short}} volumes globally. By following this process, you can increase the number of volumes you can provision.
+By default, you can provision a combined total of 750 {{site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_short}} volumes globally. By following this process, you can increase the number of volumes you can provision.
 
 For more information about increasing your storage volume capacity beyond 12 TB, see [expanding {{site.data.keyword.filestorage_short}} capacity](/docs/FileStorage?topic=FileStorage-expandCapacity#increasecapacityover12TB).
 
@@ -39,7 +39,7 @@ Use the `ibmcloud sl file volume-limits` command to display what is available an
 ```sh
 ibmcloud sl file volume-limits
 Datacenter   MaximumAvailableCount   ProvisionedCount
-global       700                     99
+global       750                     99
 ```
 {: codeblock}
 
@@ -56,11 +56,11 @@ slcli file volume-limits
 
 The output looks similar to the following example.
 ```text
-[{'datacenterName': 'global', 'maximumAvailableCount': 700, 'provisioned Count':117}]
+[{'datacenterName': 'global', 'maximumAvailableCount': 750, 'provisioned Count':117}]
 :............:.......................:..................:
 : Datacenter : maximumAvailableCount : ProvisionedCount :
 :............:.......................:..................:
-:   global   :           700         :         117      :
+:   global   :           750         :         117      :
 :............:.......................:..................:
 ```
 {: codeblock}
@@ -77,7 +77,7 @@ To directly get this information from the API, use the following method: [`SoftL
 ```sh
 curl -u $SL_USER:$SL_APIKEY 'https://api.softlayer.com/rest/v3.1/SoftLayer_Network_Storage/getVolumeCountLimits.json'
 
-SoftLayer_Container_Network_Storage_DataCenterLimits_VolumeCountLimitContainer[{"datacenterName":"global","maximumAvailableCount":700,"provisionedCount":99}]
+SoftLayer_Container_Network_Storage_DataCenterLimits_VolumeCountLimitContainer[{"datacenterName":"global","maximumAvailableCount":750,"provisionedCount":99}]
 ```
 {: codeblock}
 
