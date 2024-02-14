@@ -16,7 +16,7 @@ subcollection: FileStorage
 {: help}
 {: support}
 
-By default, you can provision a combined total of 750 {{site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_short}} volumes globally. By following this process, you can increase the number of volumes you can provision.
+By default, you can provision a combined total of 700 {{site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_short}} volumes globally. By following this process, you can increase the number of volumes you can provision.
 
 For more information about increasing your storage volume capacity beyond 12 TB, see [expanding {{site.data.keyword.filestorage_short}} capacity](/docs/FileStorage?topic=FileStorage-expandCapacity#increasecapacityover12TB).
 
@@ -39,7 +39,7 @@ Use the `ibmcloud sl file volume-limits` command to display what is available an
 ```sh
 ibmcloud sl file volume-limits
 Datacenter   MaximumAvailableCount   ProvisionedCount
-global       750                     99
+global       700                     99
 ```
 {: codeblock}
 
@@ -60,7 +60,7 @@ The output looks similar to the following example.
 :............:.......................:..................:
 : Datacenter : maximumAvailableCount : ProvisionedCount :
 :............:.......................:..................:
-:   global   :           750         :         117      :
+:   global   :           700         :         117      :
 :............:.......................:..................:
 ```
 {: codeblock}
