@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2023-12-19"
+lastupdated: "2024-02-15"
 
 keywords: File Storage, NFS, replication, duplication, synchronous, replica schedule, replica space, disaster recovery
 
@@ -27,20 +27,12 @@ Before you can replicate, you must create a snapshot schedule. The option to **O
 {: #determinereplicationlocUI}
 {: ui}
 
-{{site.data.keyword.cloud}} data centers are paired into primary and remote combinations in every region worldwide. When you replicate data, consider the local data residency laws because moving data across borders can have legal implications. Replication across regions is not permitted.
-
 See Table 1 for the complete list of data center availability and replication targets within each region.
 
-| US 1 | US 2 | Latin America | Canada  | Europe  | Asia-Pacific  | Australia  |
-|-----|-----|-----|-----|-----|-----|-----|
-| - DAL05 \n - SJC01 \n - WDC01 | - SJC03 \n - SJC04 \n - WDC04 \n - WDC06 \n - WDC07 \n - DAL09 \n - DAL10 \n - DAL12 \n - DAL13 | - SAO01 \n - SAO04 \n - SAO05 | - TOR01 \n - TOR04 \n - TOR05 \n - MON01 | - AMS03 \n - FRA02 \n - FRA04 \n - FRA05 \n - LON02 \n - LON04 \n - LON05 \n - LON06 \n - PAR01 \n - MAD04 \n - MAD05 \n - MIL01 | - TOK02 \n - TOK04 \n - TOK05 \n - OSA21 \n - OSA22 \n - OSA23 \n - SNG01 \n - CHE01 | - SYD01 \n - SYD04 \n - SYD05 \n |
+| US  | Latin America | Canada  | Europe  | Asia-Pacific  | Australia  |
+|-----|-----|-----|-----|-----|-----|
+| - SJC03 \n - SJC04 \n - WDC04 \n - WDC06 \n - WDC07 \n - DAL09 \n - DAL10 \n - DAL12 \n - DAL13 \n - DAL14 | - SAO01 \n - SAO04 \n - SAO05 | - TOR01 \n - TOR04 \n - TOR05 \n - MON01 | - AMS03 \n - FRA02 \n - FRA04 \n - FRA05 \n - LON02 \n - LON04 \n - LON05 \n - LON06 \n - PAR01 \n - MAD04 \n - MAD05 \n - MIL01 | - TOK02 \n - TOK04 \n - TOK05 \n - OSA21 \n - OSA22 \n - OSA23 \n - SNG01 \n - CHE01 | - SYD01 \n - SYD04 \n - SYD05 \n |
 {: caption="Table 1 - This table shows the complete list of data centers with enhanced capabilities in each region. Every region is a separate column. Some cities, such as Dallas, San Jose, Washington DC, Amsterdam, Frankfurt, London, and Sydney have multiple data centers." caption-side="top"}
-
-Data centers in US 1 can replicate with only each other. Data centers in the US 2 region cannot start replication with US 1 data centers.
-{: note}
-
-As part of the data center modernization strategy for {{site.data.keyword.cloud}}, data centers in the US 1 region are scheduled to consolidate in 2023. For more information, see [Data center consolidations](/docs/get-support?topic=get-support-dc-closure){: external}.
-{: note}
 
 ## Determining the remote data center for the replicated storage volume from the CLI
 {: #determinereplicationlocCLI}
