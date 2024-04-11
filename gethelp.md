@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2024
 lastupdated: "2023-02-22"
 
-keywords: File Storage, issues, get support, how to request help, open a case, open a ticket
+keywords: File Storage for Classic, issues, get support, how to request help, open a case, open a ticket
 
 subcollection: FileStorage
 

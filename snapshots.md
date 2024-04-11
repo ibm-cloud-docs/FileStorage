@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2024
 lastupdated: "2023-08-29"
 
-keywords: File Storage, NFS, snapshots
+keywords: File Storage for Classic, NFS, snapshots
 
 subcollection: FileStorage
 

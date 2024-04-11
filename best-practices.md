@@ -4,7 +4,7 @@ copyright:
   years: 2022, 2024
 lastupdated: "2023-12-18"
 
-keywords: File Storage, use of a File Storage volume, NFS
+keywords: File Storage for Classic, use of a File Storage volume, NFS
 
 subcollection: FileStorage
 

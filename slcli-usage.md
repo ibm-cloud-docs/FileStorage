@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2024
 lastupdated: "2023-12-18"
 
-keywords: File Storage, NSF, SLCLI, API
+keywords: File Storage for Classic, NSF, SLCLI, API
 
 subcollection: FileStorage
 

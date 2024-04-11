@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2024
 lastupdated: "2024-03-07"
 
-keywords: File Storage, encryption, security, provisioning, limitations, NFS
+keywords: File Storage for Classic, encryption, security, provisioning, limitations, NFS
 
 subcollection: FileStorage
 

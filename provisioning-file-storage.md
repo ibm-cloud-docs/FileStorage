@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2024
 lastupdated: "2024-02-15"
 
-keywords: File Storage, NFS, provisioning, ordering, duplicate, cloning, replication
+keywords: File Storage for Classic, NFS, provisioning, ordering, duplicate, cloning, replication
 
 subcollection: FileStorage
 

@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2024
 lastupdated: "2024-02-15"
 
-keywords: File Storage, NFS, upgrade, migrate to new
+keywords: File Storage for Classic, NFS, upgrade, migrate to new
 
 subcollection: FileStorage
 
