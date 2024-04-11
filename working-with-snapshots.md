@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2024
 lastupdated: "2023-10-18"
 
-keywords: File Storage, NFS, snapshots, snapshot schedule, manual snapshot, snapshot space, snapshot quota
+keywords: File Storage for Classic, NFS, snapshots, snapshot schedule, manual snapshot, snapshot space, snapshot quota
 
 subcollection: FileStorage
 

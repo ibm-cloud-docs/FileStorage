@@ -4,7 +4,7 @@ copyright:
   years: 2018, 2024
 lastupdated: "2019-02-05"
 
-keywords: File Storage, NFS, Plesk, backups
+keywords: File Storage for Classic, NFS, Plesk, backups
 
 subcollection: FileStorage
 

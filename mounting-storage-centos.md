@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2024
 lastupdated: "2023-10-18"
 
-keywords: File Storage, mounting File Storage, Linux, CentOS, NFS
+keywords: File Storage for Classic, mounting File Storage, Linux, CentOS, NFS
 
 subcollection: FileStorage
 

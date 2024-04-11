@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2024
 lastupdated: "2023-12-18"
 
-keywords: File Storage, NFS, authorizing hosts, revoke access, grant access, view authorizations
+keywords: File Storage for Classic, NFS, authorizing hosts, revoke access, grant access, view authorizations
 
 subcollection: FileStorage
 

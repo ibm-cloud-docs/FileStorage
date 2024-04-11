@@ -4,7 +4,7 @@ copyright:
   years: 2018, 2024
 lastupdated: "2023-10-18"
 
-keywords: File Storage, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
+keywords: File Storage for Classic, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
 subcollection: FileStorage
 
