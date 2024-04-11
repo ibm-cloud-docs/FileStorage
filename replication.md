@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-02-15"
+lastupdated: "2024-04-11"
 
 keywords: File Storage, NFS, replication, duplication, synchronous, replica schedule, replica space, disaster recovery
 
@@ -11,7 +11,7 @@ subcollection: FileStorage
 ---
 {{site.data.keyword.attribute-definition-list}}
 
-# Replicating Data
+# Replicating {{site.data.keyword.filestorage_short}} Shares
 {: #replication}
 
 Replication uses one of your snapshot schedules to automatically copy snapshots to a destination volume in a remote data center. The copies can be recovered in the remote site if a catastrophic event occurs or your data becomes corrupted.
