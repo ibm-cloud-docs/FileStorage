@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-02-15"
+lastupdated: "2024-04-12"
 
 keywords: File Storage for Classic, NFS, upgrade, migrate to new
 
@@ -26,7 +26,7 @@ You don't need to follow this process if your Storage received an upgrade to the
 ## Creating a {{site.data.keyword.filestorage_short}}
 {: #createencryptedvol}
 
-You can order an enhanced volume through the {{site.data.keyword.cloud}} Console UI, through the CLI or the API. Your new volume must be of the same size or greater than the original file share to facilitate the migration. For more information about provisioning a file share, see [Ordering {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-orderingFileStorage).
+You can order an enhanced volume through the {{site.data.keyword.cloud}} console, from the CLI or with the API. Your new volume must be of the same size or greater than the original file share to facilitate the migration. For more information about provisioning a file share, see [Ordering {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-orderingFileStorage).
 
 When you place an order with API, specify the "Storage-as-a-Service" package to ensure you're getting the updated features with your new storage.
 {: important}
