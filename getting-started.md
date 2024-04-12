@@ -96,6 +96,9 @@ When {{site.data.keyword.filestorage_short}} is used in a VMware&reg; deployment
 
 When you're ready to submit your order, you can place it in the [Console](/docs/FileStorage?topic=FileStorage-orderingFileStorage&interface=ui#orderingFileStorageUI), from the [CLI](/docs/FileStorage?topic=FileStorage-orderingFileStorage&interface=cli#orderingthroughCLI), with the [API](/docs/FileStorage?topic=FileStorage-orderingFileStorage&interface=api#orderingthroughAPI) or with [Terraform](/docs/FileStorage?topic=FileStorage-orderingFileStorage&interface=terraform#orderingthroughTerraform). For more information about provisioning File Storage for VMware&reg; deployments, see the [architecture guide](/docs/FileStorage?topic=FileStorage-architectureguide).
 
+By default, you can provision a combined total of 700 Block and {{site.data.keyword.filestorage_short}} volumes. For more information, see [Managing storage limits](/docs/FileStorage?topic=FileStorage-managinglimits).
+{: note}
+
 ## Connecting and configuring your new storage
 {: #mountingstorage}
 {: step}
