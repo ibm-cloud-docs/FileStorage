@@ -111,6 +111,8 @@ When your provisioning request is complete, authorize your hosts to access the n
 - [Configuring {{site.data.keyword.filestorage_short}} for backup with cPanel](/docs/FileStorage?topic=FileStorage-cPanelBackups)
 - [Configuring {{site.data.keyword.filestorage_short}} for backup with Plesk](/docs/FileStorage?topic=FileStorage-PleskBackup)
 
+Mounting {{site.data.keyword.filestorage_short}} shares on Windows OS is not supported.
+
 ## Managing your storage
 {: #manFileStor}
 {: step}
