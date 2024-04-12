@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-04-11"
+lastupdated: "2024-04-12"
 
 keywords: File Storage for Classic, NFS, provisioning, setup, configuration, mounting storage
 
@@ -66,7 +66,9 @@ The IO size that is used by your application directly impacts the storage perfor
 
 Another factor to consider is the number of hosts that are using your volume. When only a single host that is accessing the volume, it can be difficult to realize the maximum IOPS available, especially at extreme IOPS counts (10,000s). 
 
-The maximum IOPS for a file storage share is 48,000 IOPS. If your workload requires high throughput, it would be best to configure at least a couple servers to access your volume to avoid a single-server bottleneck.
+The maximum IOPS for a file storage share is 48,000 IOPS. If your workload requires such high throughput, it would be best to configure at least a couple servers to access your volume to avoid a single-server bottleneck.
+
+You can authorize up to 64 servers to access the file share. This limit includes all subnet, host, and IP authorizations combined. For more information about increasing this limit, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs#authlimit).
 
 ### Network connection
 {: #networkconnection}
