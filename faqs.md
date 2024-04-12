@@ -265,11 +265,17 @@ Complete the following steps to disconnect a volume from a host.
 
 Endurance and Performance are provisioning options that you can select for storage devices. In short, Endurance IOPS tiers offer predefined performance levels whereas you can fine-tune those levels with the Performance tier. The same devices are used but delivered with different options. For more information, see [File Storage Features](https://www.ibm.com/products/file-storage){: external}.
 
-## Can I connect {{site.data.keyword.filestorage_short}} to Windows&reg;?
+## Can I connect a {{site.data.keyword.filestorage_short}} share to Windows&reg;?
 {: faq}
 {: #connect-Windows}
 
-No. You cannot connect {{site.data.keyword.filestorage_full}} on Microsoft&reg; Windows&reg;. NFS is not supported by {{site.data.keyword.cloud}} in a Windows&reg; environment.
+No. You cannot mount {{site.data.keyword.filestorage_full}} shares on Microsoft&reg; Windows&reg;. NFS in a Windows&reg; environment is not supported by {{site.data.keyword.cloud}}.
+
+{{site.data.keyword.filestorage_short}} shares can be mounted on Linux operating systems or as a VMware&reg; datastore on ESXi hosts. For more information about mounting {{site.data.keyword.filestorage_short}} volumes, see the following topics:
+- [Mounting {{site.data.keyword.filestorage_short}} on Red Hat Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingLinux)
+- [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/FileStorage?topic=FileStorage-mountingCentOS)
+- [Mounting {{site.data.keyword.filestorage_short}} on Ubuntu](/docs/FileStorage?topic=FileStorage-mountingUbuntu)
+- [Mounting {{site.data.keyword.filestorage_short}} as a VMware&reg; datastore on ESXi hosts](/docs/FileStorage?topic=FileStorage-architectureguide)
 
 ## Can I mount a single storage device to multiple hosts within {{site.data.keyword.cloud_notm}}?
 {: faq}
