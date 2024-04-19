@@ -6,9 +6,7 @@ lastupdated: "2024-04-17"
 
 keywords: file storage for classic, read-only storage volume, offline file share
 
-subcollection: vpc
-
-content-type: troubleshoot
+subcollection: FileStorage
 
 ---
 
