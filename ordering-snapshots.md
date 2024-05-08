@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2023-10-18"
+lastupdated: "2024-05-08"
 
 keywords: File Storage for Classic, NFS, snapshot, ordering snapshot, snapshot space
 
@@ -18,7 +18,7 @@ subcollection: FileStorage
 To create snapshots of your storage volume, either in an automated way or manually, you need to purchase space to hold them. You can purchase snapshot capacity during the initial volume purchase or later by using these steps.
 {: shortdesc}
 
-## Determining how much snapshot space to order
+## Determining how much snapshot space you need
 {: #preorderdetermination}
 
 Generically speaking, snapshot space is used by snapshots based on two key factors:
@@ -43,6 +43,28 @@ Conversely, if that 500 GB of actual data, with 12 hourly snapshots, saw 10 perc
 So when you determine how much Snapshot space you need, consider the rate of change carefully. It's a huge influence on how much snapshot space you need. A bigger volume is more likely to change more often. However, a 500-GB volume with 5 GB of change and a 10-TB volume with 5 GB of change use the same amount of snapshot space.
 
 Additionally, for most workloads, the larger a volume is the less space needs to be set aside initially. It's primarily due to the underlying data efficiencies, and the nature of how snapshots work in the environment.
+
+## Available snapshot space capacity 
+{: #snapshotspaceforshare}
+
+The size of the snapshot space that you can order depends on the size of your volume. The size of the snapshot space cannot exceed the size of the volume. The following table shows the snapshot capacity that is available for specific volume sizes.
+
+| Volume capacity | Available Snapshot capacity         |
+|----------------------|------------------------------------------|
+|  100 GB | 5 GB, 10 GB, 20 GB, 40 GB, 60 GB, 80 GB, 100 GB |
+|  200 GB | 5 GB, 10 GB, 20 GB, 40 GB, 60 GB, 80 GB, 100 GB 150 GB, 200 GB |
+|  300 GB | 5 GB, 10 GB, 20 GB, 40 GB, 60 GB, 80 GB, 100 GB 150 GB, 200 GB, 250 GB, 300 GB |
+|  400 GB | 5 GB, 10 GB, 20 GB, 40 GB, 60 GB, 80 GB, 100 GB 150 GB, 200 GB, 250 GB, 300 GB, \n 350 GB, 400 GB |
+|  500 GB | 5 GB, 10 GB, 20 GB, 40 GB, 60 GB, 80 GB, 100 GB 150 GB, 200 GB, 250 GB, 300 GB, \n 350 GB, 400 GB, 450 GB, 500 GB  |
+|  600 GB | 5 GB, 10 GB, 20 GB, 40 GB, 60 GB, 80 GB, 100 GB 150 GB, 200 GB, 250 GB, 300 GB, \n 350 GB, 400 GB, 450 GB, 500 GB, 600 GB |
+|  700 GB | 5 GB, 10 GB, 20 GB, 40 GB, 60 GB, 80 GB, 100 GB 150 GB, 200 GB, 250 GB, 300 GB, \n 350 GB, 400 GB, 450 GB, 500 GB, 600 GB, 700 GB | 
+|  800 GB | 5 GB, 10 GB, 20 GB, 40 GB, 60 GB, 80 GB, 100 GB 150 GB, 200 GB, 250 GB, 300 GB, \n 350 GB, 400 GB, 450 GB, 500 GB, 600 GB, 700 GB | 
+|  900 GB | 5 GB, 10 GB, 20 GB, 40 GB, 60 GB, 80 GB, 100 GB 150 GB, 200 GB, 250 GB, 300 GB, \n 350 GB, 400 GB, 450 GB, 500 GB, 600 GB, 700 GB | 
+| 1000 GB | 5 GB, 10 GB, 20 GB, 40 GB, 60 GB, 80 GB, 100 GB 150 GB, 200 GB, 250 GB, 300 GB, \n 350 GB, 400 GB, 450 GB, 500 GB, 600 GB, 700 GB, 1000 GB | 
+| 2000 GB | 5 GB, 10 GB, 20 GB, 40 GB, 60 GB, 80 GB, 100 GB 150 GB, 200 GB, 250 GB, 300 GB, \n 350 GB, 400 GB, 450 GB, 500 GB, 600 GB, 700 GB, 1000 GB, 2000 GB | 
+| 3000 GB | 5 GB, 10 GB, 20 GB, 40 GB, 60 GB, 80 GB, 100 GB 150 GB, 200 GB, 250 GB, 300 GB, \n 350 GB, 400 GB, 450 GB, 500 GB, 600 GB, 700 GB, 1000 GB, 2000 GB | 
+| 4000 GB | 5 GB, 10 GB, 20 GB, 40 GB, 60 GB, 80 GB, 100 GB 150 GB, 200 GB, 250 GB, 300 GB, \n 350 GB, 400 GB, 450 GB, 500 GB, 600 GB, 700 GB, 1000 GB, 2000 GB, 4000 GB | 
+{: caption="Table 1 - This table shows the available snapshot space in increments for different volume capacities." caption-side="bottom"}
 
 ## Ordering Snapshot space in the UI
 {: #ordersnapshotUI}
