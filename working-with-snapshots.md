@@ -313,7 +313,7 @@ Snapshot space can be increased. It can't be reduced. You can select a smaller a
 Snapshot space is increased through **Storage** > **{{site.data.keyword.filestorage_short}}**.
 
 1. Click your storage volume, click **Actions**, and click **Change Snapshot Space**.
-2. Select from a range of sizes from the prompt. Sizes typically range from 0 to the size of your volume.
+2. Select from a range of sizes from the prompt. For more information about available snapshot capacity allotments, see [Ordering snapshots](/docs/BlockStorage?topic=BlockStorage-orderingsnapshots&interface=ui#snapshotspaceforvolume)..
 3. Click **Continue**.
 4. Enter any Promo Code that you have, and click **Recalculate**. The Charges for this order and Order Review fields are completed by default.
 5. Read the service agreement, and if you agree with the terms click checkbox, and click **Place Order**. Your additional snapshot space is provisioned in a few minutes.
