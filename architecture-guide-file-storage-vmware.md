@@ -162,7 +162,7 @@ Before you begin the configuration process, make sure that the following prerequ
      8980 bytes from a.b.c.d: icmp_seq=1 ttl=128 time=3.36 ms
      ```
 
-For more information about VMware&reg; and Jumbo Frames, see [here](https://kb.vmware.com/s/article/1003712){: external}.
+For more information about VMware&reg; and Jumbo Frames, see [here](https://knowledge.broadcom.com/external/article?legacyId=1003712){: external}.
 {: tip}
 
 ### Step 2. Adding an uplink adapter to a virtual switch
@@ -202,7 +202,7 @@ The network configuration for this architecture guide uses a minimal number of p
 
 2. Static routes are not persistent across restarts on ESXi 5.0 and earlier. To ensure that any added static routes remain persistent, this command needs to be added to the `local.sh` file on each host, which is located in the `/etc/rc.local.d/` directory. Open the `local.sh` file by using the visual editor, and add the second command in Step 4.1. in front of the `exit 0` line.
 
-Make note of the IP address as it can be used for mounting the volume in the next step. This process needs to be done for each NFS volume you plan to mount to your ESXi host. For more information, see the VMware&reg; KB article, [Configuring static routes for VMkernel ports on an ESXi host](https://kb.vmware.com/s/article/2001426){: external}.
+Make note of the IP address as it can be used for mounting the volume in the next step. This process needs to be done for each NFS volume you plan to mount to your ESXi host. For more information, see the VMware&reg; KB article, [Configuring static routes for VMkernel ports on an ESXi host](https://knowledge.broadcom.com/external/article?legacyId=2001426){: external}.
 {: tip}
 
 ##  Creating the datastore
