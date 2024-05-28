@@ -229,7 +229,7 @@ For mounting instructions, see the following topics.
 - [Mounting {{site.data.keyword.filestorage_short}} on Ubuntu](/docs/FileStorage?topic=FileStorage-mountingUbuntu)
 
 To prevent this situation from recurring, the customer might consider the following actions:
-- Increasing disk timeout values. For more information, see [VMware&reg; KB - Increasing the disk timeout values for a Linux&reg; 2.6 virtual machine](https://kb.vmware.com/s/article/1009465){: external}.
+- Increasing disk timeout values. For more information, see [VMware&reg; KB - Increasing the disk timeout values for a Linux&reg; 2.6 virtual machine](https://knowledge.broadcom.com/external/article?legacyId=1009465){: external}.
 - Adding guest OS tunings. For more information, see [NetApp's recommendations for guest OS tunings for a VMware&reg; vSphere deployment](https://kb.netapp.com/data-mgmt/OTV/VSC_Kbs/What_are_the_guest_OS_tunings_needed_for_a_VMware_vSphere_deployment){: external}.
 - Reconfiguring Host systems that use NFSv4.1 for NFSv3 for increased resilience during maintenance operations.
 - Discontinuing session trunking on host systems that run VMware&reg; ESXi. Session trunking is not supported and is known to cause disruptions.
@@ -331,7 +331,7 @@ When you store your data in {{site.data.keyword.filestorage_short}}, it's durabl
 The following examples are utilities that you might consider to use to check performance statistics.
 - [`sysstat`](https://github.com/sysstat/sysstat/blob/master/README.md){: external} - System performance tools for the Linux&reg; operating system.
 - [`typeperf`](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/typeperf){: external} - Windows&reg; command that writes performance data to the command window or to a log file.
-- [`esxtop`](https://communities.vmware.com/t5/Storage-Performance/Interpreting-esxtop-Statistics/ta-p/2776936){: external} - A command-line tool that gives administrators real-time information about resource usage in a VMware&reg; vSphere environment. It can monitor and collect data for all system resources: CPU, memory, disk, and network.
+- [`esxtop`](https://community.broadcom.com/vmware-cloud-foundation/blogs/zhelong-pan/2024/04/14/interpreting-esxtop-statistics){: external} - A command-line tool that gives administrators real-time information about resource usage in a VMware&reg; vSphere environment. It can monitor and collect data for all system resources: CPU, memory, disk, and network.
 
 ## What is the difference between a replica volume, a dependent and an independent duplicate volume?
 {: #replicavsduplicate}
