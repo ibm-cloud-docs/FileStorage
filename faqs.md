@@ -265,11 +265,11 @@ Complete the following steps to disconnect a volume from a host.
 
 Endurance and Performance are provisioning options that you can select for storage devices. In short, Endurance IOPS tiers offer predefined performance levels whereas you can fine-tune those levels with the Performance tier. The same devices are used but delivered with different options. For more information, see [File Storage Features](https://www.ibm.com/products/file-storage){: external}.
 
-## Can I connect a {{site.data.keyword.filestorage_short}} share to Windows&reg;?
+## Can I connect a {{site.data.keyword.filestorage_short}} share to Windows?
 {: faq}
 {: #connect-Windows}
 
-No. You cannot mount {{site.data.keyword.filestorage_full}} shares on Microsoft&reg; Windows&reg;. NFS in a Windows&reg; environment is not supported by {{site.data.keyword.cloud}}.
+No. You cannot mount {{site.data.keyword.filestorage_full}} shares on Microsoft Windows. NFS in a Windows environment is not supported by {{site.data.keyword.cloud}}.
 
 {{site.data.keyword.filestorage_short}} shares can be mounted on Linux operating systems or as a VMware&reg; datastore on ESXi hosts. For more information about mounting {{site.data.keyword.filestorage_short}} volumes, see the following topics:
 - [Mounting {{site.data.keyword.filestorage_short}} on Red Hat Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingLinux)
@@ -330,7 +330,7 @@ When you store your data in {{site.data.keyword.filestorage_short}}, it's durabl
 
 The following examples are utilities that you might consider to use to check performance statistics.
 - [`sysstat`](https://github.com/sysstat/sysstat/blob/master/README.md){: external} - System performance tools for the Linux&reg; operating system.
-- [`typeperf`](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/typeperf){: external} - Windows&reg; command that writes performance data to the command window or to a log file.
+- [`typeperf`](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/typeperf){: external} - Windows command that writes performance data to the command window or to a log file.
 - [`esxtop`](https://community.broadcom.com/vmware-cloud-foundation/blogs/zhelong-pan/2024/04/14/interpreting-esxtop-statistics){: external} - A command-line tool that gives administrators real-time information about resource usage in a VMware&reg; vSphere environment. It can monitor and collect data for all system resources: CPU, memory, disk, and network.
 
 ## What is the difference between a replica volume, a dependent and an independent duplicate volume?
