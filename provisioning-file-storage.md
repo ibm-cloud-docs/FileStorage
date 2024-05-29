@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-02-15"
+lastupdated: "2024-05-29"
 
 keywords: File Storage for Classic, NFS, provisioning, ordering, duplicate, cloning, replication
 
@@ -16,7 +16,7 @@ subcollection: FileStorage
 # Ordering {{site.data.keyword.filestorage_short}}
 {: #orderingFileStorage}
 
-You can provision {{site.data.keyword.filestorage_short}} and fine-tune to meet your capacity and IOPS needs. Get the most out of your storage with two options for specifying performance.
+You can provision {{site.data.keyword.filestorage_short}} and fine-tune your share to meet your capacity and IOPS needs. You can order {{site.data.keyword.filestorage_short}} shares in the console, from the CLI, with the API, or Terraform. Get the most out of your storage with two options for specifying IOPS: Endurance and Performance.
 {: shortdesc}
 
 - You can choose from Endurance IOPS tiers that feature pre-defined performance levels to fit workloads that don't have well-defined performance requirements.
@@ -41,7 +41,7 @@ You can provision {{site.data.keyword.filestorage_short}} and fine-tune to meet 
    | 10,000 - 12,000 | 1,000 - 48,000 |
    {: caption="Table 1. Available IOPS based on volume size" caption-side="bottom"}
 
-By default, you can provision a combined total of 700 {{site.data.keyword.filestorage_short}} volumes. To increase the number of your volumes, contact your sales representative. Read about increasing limits [here](/docs/FileStorage?topic=FileStorage-managinglimits). For more information about the limit on simultaneous authorizations, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs#authlimit).
+By default, you can provision a combined total of 700 {{site.data.keyword.filestorage_short}} volumes. To increase the number of your volumes, contact Support. Read about increasing limits [here](/docs/FileStorage?topic=FileStorage-managinglimits). For more information about the limit on simultaneous authorizations, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs#authlimit).
 {: important}   
 
 ## Ordering {{site.data.keyword.filestorage_short}} in the UI
