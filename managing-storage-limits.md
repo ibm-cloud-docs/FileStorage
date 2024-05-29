@@ -98,7 +98,7 @@ In the ticket, provide the following information:
    >Request to Increase Data Center Volume Count Storage Limit
 
 - **What is the use case for the additional volumes request?**
-   >*For example, your answer might be something similar to a new VMware&reg; datastore, a new development and testing environment, an SQL database, or logging.*
+   >*Your answer might be something similar to a new VMware&reg; datastore, a new development and testing environment, an SQL database, or logging.*
 
 - **How many extra Block volumes are needed by type, size, IOPS, and location?**
    >*"25x Endurance 2 TB @ 4 IOPS in DAL09" or "25x Performance 4 TB @ 2 IOPS in WDC04."*
