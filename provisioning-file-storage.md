@@ -16,7 +16,7 @@ subcollection: FileStorage
 # Ordering {{site.data.keyword.filestorage_short}}
 {: #orderingFileStorage}
 
-You can provision {{site.data.keyword.filestorage_short}} and fine-tune your share to meet your capacity and IOPS needs. You can order {{site.data.keyword.filestorage_short}} shares in the console, from the CLI, with the API, or Terraform. Get the most out of your storage with two options for specifying IOPS: Endurance and Performance.
+You can order {{site.data.keyword.filestorage_short}} shares in the console, from the CLI, with the API, or Terraform. You can provision {{site.data.keyword.filestorage_short}} and fine-tune your share to meet your capacity and IOPS needs. Get the most out of your storage with two options for specifying IOPS: Endurance and Performance. You can provision file shares with capacity up to 12 TB and maximum IOPS of 48,000.
 {: shortdesc}
 
 - You can choose from Endurance IOPS tiers that feature pre-defined performance levels to fit workloads that don't have well-defined performance requirements.
@@ -41,7 +41,7 @@ You can provision {{site.data.keyword.filestorage_short}} and fine-tune your sha
    | 10,000 - 12,000 | 1,000 - 48,000 |
    {: caption="Table 1. Available IOPS based on volume size" caption-side="bottom"}
 
-By default, you can provision a combined total of 700 {{site.data.keyword.filestorage_short}} volumes. To increase the number of your volumes, contact Support. Read about increasing limits [here](/docs/FileStorage?topic=FileStorage-managinglimits). For more information about the limit on simultaneous authorizations, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs#authlimit).
+By default, you can provision a combined total of 700 {{site.data.keyword.filestorage_short}} volumes. To increase the number of your volumes, contact Support. For more information, see [Managing storage limits](/docs/FileStorage?topic=FileStorage-managinglimits). For more information about the limit on simultaneous authorizations, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs#authlimit).
 {: important}   
 
 ## Ordering {{site.data.keyword.filestorage_short}} in the UI
@@ -84,7 +84,7 @@ Each order must have an associated location (data center). When you order {{site
 ### Provisioning from the IBMCLOUD CLI
 {: #orderingthroughICCLI}
 
-Use the `ibmcloud sl file volume-order` command to order a new file share. The following example provisions a new 500-GB file share in the DAL13 data center with a tiered performance profile (4 IOPS per GB) and 500 GB snapshot space.
+Use the `ibmcloud sl file volume-order` command to order a new file share. The following example provisions a 500-GB file share in the DAL13 data center with a tiered performance profile (4 IOPS per GB) and 500 GB snapshot space.
 
 ```sh
 $ ibmcloud sl file volume-order --storage-type endurance --size 500 --tier 4 -d dal13 --snapshot-size 500
@@ -122,16 +122,16 @@ Order #32076317 placed successfully!
 {: #orderingthroughAPI}
 {: api}
 
-The method `order_file_volume` (storage_type, location, size, iops=None, tier_level=None, snapshot_size=None, service_offering='storage_as_a_service', hourly_billing_flag=False) places an order for a file volume.
+The method `order_file_volume` (storage_type, location, size, iops=None, tier_level=None, snapshot_size=None, service_offering='storage_as_a_service', hourly_billing_flag=False) places an order for a file share.
 
 You must specify the following parameters for a successful order.
 - `storage_type` – "performance" or "endurance".
-- `location` – Data center in which to order iSCSI volume.
+- `location` – Data center in which to order the share.
 - `size` – Size of the new volume, in GB.
 - `iops` – Number of IOPS for a “Performance” order.
 - `tier_level` – Tier level to use for an “Endurance” order.
 - `snapshot_size` – The size of optional snapshot space, if snapshot space is also to be ordered. (None if not ordered.)
-- `service_offering` – Requested offering package to use in the order ("storage_as_a_service", "enterprise", or "performance").
+- `service_offering` – Requested offering package to use in the order ("storage_as_a_service").
 - `hourly_billing_flag` – Billing type, monthly (False) or hourly (True), default to monthly.
 
 To be able to access all the new features, order `Storage-as-a-Service Package 759`.
