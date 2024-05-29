@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2023-10-18"
+lastupdated: "2024-05-29"
 
 keywords: File Storage for Classic, NFS, mounting File Storage, mounting storage on Ubuntu,
 
@@ -89,7 +89,7 @@ Before you begin, make sure that the host that is to access the {{site.data.keyw
    Example
 
    ```text
-   nfsdal0501a.service.softlayer.com:/IBM01SV278685_7 /mnt nfsvers=3 defaults 0 0
+   nfsdal1301a.service.softlayer.com:/IBM01SV278685_7 /mnt nfsvers=3 defaults 0 0
    ```
 
 6. Verify that the configuration file has no errors.

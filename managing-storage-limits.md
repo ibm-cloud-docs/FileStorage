@@ -56,7 +56,7 @@ slcli file volume-limits
 
 The output looks similar to the following example.
 ```text
-[{'datacenterName': 'global', 'maximumAvailableCount': 700, 'provisioned Count':117}]
+[{'datacenterName': 'global', 'maximumAvailableCount': 750, 'provisioned Count':117}]
 :............:.......................:..................:
 : Datacenter : maximumAvailableCount : ProvisionedCount :
 :............:.......................:..................:
@@ -77,7 +77,7 @@ To directly get this information from the API, use the following method: [`SoftL
 ```sh
 curl -u $SL_USER:$SL_APIKEY 'https://api.softlayer.com/rest/v3.1/SoftLayer_Network_Storage/getVolumeCountLimits.json'
 
-SoftLayer_Container_Network_Storage_DataCenterLimits_VolumeCountLimitContainer[{"datacenterName":"global","maximumAvailableCount":700,"provisionedCount":99}]
+SoftLayer_Container_Network_Storage_DataCenterLimits_VolumeCountLimitContainer[{"datacenterName":"global","maximumAvailableCount":750,"provisionedCount":99}]
 ```
 {: codeblock}
 
@@ -98,7 +98,7 @@ In the ticket, provide the following information:
    >Request to Increase Data Center Volume Count Storage Limit
 
 - **What is the use case for the additional volumes request?**
-   >*Your answer might be something similar to a new VMware&reg; datastore, a new development and testing environment, an SQL database, or logging.*
+   >*For example, your answer might be something similar to a new VMware&reg; datastore, a new development and testing environment, an SQL database, or logging.*
 
 - **How many extra Block volumes are needed by type, size, IOPS, and location?**
    >*"25x Endurance 2 TB @ 4 IOPS in DAL09" or "25x Performance 4 TB @ 2 IOPS in WDC04."*
@@ -107,7 +107,7 @@ In the ticket, provide the following information:
    >*"25x Performance 20 GB @ 10 IOPS in DAL09" or "50x Endurance 2 TB @ 0.25 IOPS in SJC03."*
 
 - **Provide an estimate of when you expect or plan to provision all of the requested volume increase.**
-   >* "90 days."*
+   >*"90 days."*
 
 - **Provide a 90-day forecast of expected average capacity usage of these volumes.**
    >*"I expect 25 percent to be used in 30 days, 50 percent to be used in 60 days and 75 percent to be used in 90 days."*

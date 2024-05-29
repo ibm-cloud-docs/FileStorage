@@ -1,7 +1,6 @@
 #  Name your file `toc.yaml`
 #  Make sure you include all nav file coding requirements.
 #  Anything with a fully qualified URL with `http` or `https` will get an external link icon added to the nav entry
-
 toc:
   properties:
     subcollection: FileStorage
@@ -12,7 +11,6 @@ toc:
     product-page: https://www.ibm.com/products/file-storage
     path: FileStorage
     label: File Storage - Classic
-
 #  List your getting started tutorial (getting-started.md) as the first item in the Get started nav group. 
   entries:
     - navgroup:
@@ -24,14 +22,12 @@ toc:
         - link:
             label: What is File Storage?
             href: https://www.ibm.com/topics/file-storage
-
     - navgroup:
         id: tutorial
         topics:
         - accessing-file-storage-linux.md
         - accessing-file-storage-ubuntu.md
         - architecture-guide-file-storage-vmware.md
-
     - navgroup:
         id: howto
         topics:
@@ -68,7 +64,6 @@ toc:
             topics:
             - availability.md
             - data-security.md
-
     - navgroup:
         id: reference
         topics:
@@ -102,7 +97,6 @@ toc:
               - link:
                   label: Terraform reference
                   href: https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/storage_file    
-
     - navgroup:
         id: help
         topics:
