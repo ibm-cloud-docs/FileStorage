@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2023-12-19"
+lastupdated: "2024-05-30"
 
 keywords: Classic File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
@@ -38,7 +38,7 @@ When you order {{site.data.keyword.filestorage_short}}, consider the following i
 
 - When you decide on the size, consider the size of the workload and the throughput needed. Size matters with the Endurance service, which scales performance linearly in relation to capacity (IOPS/GB). Conversely, the Performance service allows the administrator to choose capacity and performance independently. Throughput requirements matter with Performance.
 
-   The throughput calculation is IOPS x 16 KB. IOPS is measured based on a 16-KB block size with a 50/50 read/write mix. Increasing block size increases the throughput but decreases IOPS. For example, doubling the block size to 32-KB blocks maintains the maximum throughput but halves the IOPS.
+   The throughput calculation is IOPS x 16 KB. IOPS is measured based on a 16-KB block size with a 50-50 read/write mix. Increasing block size increases the throughput but decreases IOPS. For example, doubling the block size to 32-KB blocks maintains the maximum throughput but halves the IOPS.
    {: note}
 
 - NFS uses many extra file control operations such as `lookup`, `getattr`, and `readdir`. These operations in addition to read/write operations can count as IOPS and vary by operation type and NFS version.

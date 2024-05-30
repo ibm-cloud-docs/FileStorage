@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-04-12"
+lastupdated: "2024-05-30"
 
 keywords: File Storage for Classic, NFS, provisioning, setup, configuration, mounting storage
 
@@ -44,7 +44,7 @@ For more information about the {{site.data.keyword.filestorage_short}} offering,
 ### IO size
 {: #blocksize}
 
-The IOPS value for both Endurance and Performance is based on a 16-KB block size with a 50/50 read and write, 50/50 random and sequential workload. A 16-KB block is the equivalent of one write to the volume.
+The IOPS value for both Endurance and Performance is based on a 16-KB block size with a 50-50 read and write, 50-50 random and sequential workload. A 16-KB block is the equivalent of one write to the volume.
 {: important}
 
 The IO size that is used by your application directly impacts the storage performance. If the IO size that is used by your application is smaller than 16 KB, the IOPS limit is realized before the throughput limit. Conversely, if the block size that is used by your application is larger than 16 KB, the throughput limit is realized before to the IOPS limit.
@@ -77,7 +77,7 @@ The speed of your Ethernet connection must be faster than the expected maximum t
 
 To achieve maximum IOPS, adequate network resources need to be in place. Other considerations include private network usage outside of storage and host side and application-specific tunings, and other settings.
 
-Storage traffic is to be isolated from other traffic types, and it is not to be directed through firewalls and routers. Keeping the storage traffic in a dedicated VLAN also helps preventing MTU mismatch when Jumbo frames are enabled. For more information, see [Enabling Jumbo Frames](/docs/FileStorage?topic=FileStorage-jumboframes).
+Storage traffic is to be isolated from other traffic types, and it is not to be directed through firewalls and routers. Keeping the storage traffic in a dedicated VLAN also helps prevent MTU mismatch when Jumbo frames are enabled. For more information, see [Enabling Jumbo Frames](/docs/FileStorage?topic=FileStorage-jumboframes).
 
 Storage traffic is included in the total network usage of Public Virtual Servers. For more information about the limits that might be imposed by the service, see the [Virtual Server Documentation](/docs/virtual-servers?topic=virtual-servers-about-public-virtual-servers).
 

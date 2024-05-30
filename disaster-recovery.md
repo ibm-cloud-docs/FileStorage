@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2023-12-18"
+lastupdated: "2024-05-30"
 
 keywords: File Storage for Classic, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
@@ -109,7 +109,7 @@ Options:
    </SOAP-ENV:Envelope>
    ```
 
-During the Disaster Recovery Failover, the system is forced to fail over to the replica site and the replication relationship is severed. To be able to fail back to the original site after the site is restored to normal operations, the system must reestablish the replication bond. This action can take a considerable amount of time. During the Failback process, configuration-related actions are read-only. You can't edit any snapshot schedule or change snapshot space. The event is logged in the replication history.
+During the Disaster Recovery Failover, the system is forced to fail over to the replica site and the replication relationship is severed. To be able to fail back to the original site after the site is restored to normal operations, the system must reestablish the replication bond. This action can take a considerable amount of time. During the Failback process, configuration-related actions are read only. You can't edit any snapshot schedule or change snapshot space. The event is logged in the replication history.
 
 If you need further assistance, create a [support case](/unifiedsupport/supportcenter){: external}.
 
@@ -120,10 +120,10 @@ If you need further assistance, create a [support case](/unifiedsupport/supportc
 After a disaster event, {{site.data.keyword.cloud}} begins remediation work to return the impacted locations to normal operations. When the site is restored, you can initiate a Failback to the original site by clicking **Storage**, **{{site.data.keyword.filestorage_short}}** in the [{{site.data.keyword.cloud}} console](/cloud-storage/file){: external}.
 
 1. Click your active volume ("target").
-2. Next, click **Replica** and click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions").
+2. Next, click **Replica**, and click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions").
 3. Select **Failback**. When the primary location is marked disabled, the option of Disaster Recovery Failback becomes active.
 
-   During the Disaster Recovery Failover, the system is forced to fail over to the replica site and the replication relationship is severed. To be able to fail back to the original site after the site is restored to normal operations, the system must reestablish the replication bond. This action can take a considerable amount of time. Expect a message that shows that the failover is in progress. Additionally, an icon appears next to your volume on the **{{site.data.keyword.filestorage_short}}** that indicates that an active transaction is occurring. Hovering over the icon produces a window that shows the transaction. The icon disappears when the transaction is complete. During the Failback process, configuration-related actions are read-only. You can't edit any snapshot schedule or change snapshot space. The event is logged in replication history.
+   During the Disaster Recovery Failover, the system is forced to fail over to the replica site and the replication relationship is severed. To be able to fail back to the original site after the site is restored to normal operations, the system must reestablish the replication bond. This action can take a considerable amount of time. Expect a message that shows that the failover is in progress. Additionally, an icon appears next to your volume on the **{{site.data.keyword.filestorage_short}}** that indicates that an active transaction is occurring. Hovering over the icon produces a window that shows the transaction. The icon disappears when the transaction is complete. During the Failback process, configuration-related actions are read only. You can't edit any snapshot schedule or change snapshot space. The event is logged in replication history.
    {: note}
 
 4. Next, click **View All {{site.data.keyword.filestorage_short}}**.
@@ -163,7 +163,7 @@ Options:
  -h, --help           Show this message and exit.
 ```
 
-During the Disaster Recovery Failover, the system is forced to fail over to the replica site and the replication relationship is severed. To be able to fail back to the original site after the site is restored to normal operations, the system must reestablish the replication bond. This action can take a considerable amount of time. During the Failback process, configuration-related actions are read-only. You can't edit any snapshot schedule or change snapshot space. The event is logged in the replication history.
+During the Disaster Recovery Failover, the system is forced to fail over to the replica site and the replication relationship is severed. To be able to fail back to the original site after the site is restored to normal operations, the system must reestablish the replication bond. This action can take a considerable amount of time. During the Failback process, configuration-related actions are read only. You can't edit any snapshot schedule or change snapshot space. The event is logged in the replication history.
 
 When the original volume is active, you can mount and attach it to the host. For more information, see [connecting your storage](/docs/FileStorage?topic=FileStorage-getting-started#mountingstorage).
 

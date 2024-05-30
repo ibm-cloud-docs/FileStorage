@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2023-10-18"
+lastupdated: "2024-05-30"
 
 keywords: File Storage for Classic, mounting File Storage, Linux, CentOS, NFS
 
@@ -31,7 +31,7 @@ Before you begin, make sure that the host that is to access the {{site.data.keyw
 ## Mounting the storage
 {: #mountingStorageCentOS}
 
-Most of the steps that are required for mounting your {{site.data.keyword.filestorage_short}} to a CentOS host are the same as the ones that are described in [Mounting {{site.data.keyword.filestorage_short}} on Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingLinux). However, for CentOS, you can specify some additional options by using the `Options=` line in the mount file. In the following example, the NFS is set to mount at `/data/www`.
+Most of the steps of mounting your {{site.data.keyword.filestorage_short}} to a CentOS host are the same as the ones that are described in [Mounting {{site.data.keyword.filestorage_short}} on Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingLinux). However, for CentOS, you can specify some additional options by using the `Options=` line in the mount file. In the following example, the NFS is set to mount at `/data/www`.
 
 The mount point information can be obtained from the {{site.data.keyword.filestorage_short}} Details page in the UI, with an API call - `SoftLayer_Network_Storage::getNetworkMountAddress()`, or by looking at the `ibm_storage_file` resource in Terraform.
 {: tip}

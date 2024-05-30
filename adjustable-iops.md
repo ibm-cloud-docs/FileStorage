@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2025-05-28"
+lastupdated: "2024-05-30"
 
 keywords: File Storage for Classic, adjusting IOPS, increase IOPS, decrease IOPS, modify IOPS
 
@@ -129,7 +129,7 @@ You can adjust the IOPS by using an API call to the SOAP web service. The follow
 For more information about the SLAPI, see the [SLDN](http://sldn.softlayer.com/reference/softlayerapi){: external}.
 {: tip}
 
-* The following example shows how to request IOPS change on a Performance storage volume. `XXXXXXXXX` is the ID of the volume that you want to modify. `3000` is the new IOPS value that you want your volume to have. `189433` is the ID of the max level price. `190233` is the ID of 2000 - 2999 GBs capacity range. `190293` is the ID for the 200 - 40000 IOPS range.
+* The following example shows how to request an IOPS change on a Performance storage volume. `XXXXXXXXX` is the ID of the volume that you want to modify. `3000` is the new IOPS value that you want your volume to have. `189433` is the ID of the max level price. `190233` is the ID of 2000 - 2999 GB capacity range. `190293` is the ID for the 200 - 40000 IOPS range.
 
    ```python
    <?xml version="1.0" encoding="UTF-8"?>
@@ -164,7 +164,7 @@ For more information about the SLAPI, see the [SLDN](http://sldn.softlayer.com/r
    ```
    {: codeblock}
 
-* The following example shows how to adjust IOPS IOPS on Endurance storage volume. `XXXXXXXXX` is the ID of the volume that you want to modify. `4` is the new IOPS tier value that you want your volume to have. `189433` is the ID of the max level price. `193373` and`193433` are the IDs for the price ranges for the capacity and IOPS that the volume has.
+* The following example shows how to adjust IOPS on Endurance storage volume. `XXXXXXXXX` is the ID of the volume that you want to modify. `4` is the new IOPS tier value that you want your volume to have. `189433` is the ID of the max level price. `193373` and`193433` are the IDs for the price ranges for the capacity and IOPS that the volume has.
 
    ```python
    <?xml version="1.0" encoding="UTF-8"?>

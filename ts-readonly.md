@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-04-17"
+lastupdated: "2024-05-30"
 
 keywords: file storage for classic, read-only storage volume, offline file share
 
@@ -15,8 +15,6 @@ subcollection: FileStorage
 # Troubleshooting {{site.data.keyword.filestorage_short}}
 {: #classic-file-troubleshooting}
 
-[New]{: tag-new}
-
 When you create or manage {{site.data.keyword.filestorage_short}}, you might encounter issues. Often, you can recover by following a few steps. Issues, symptoms, likely causes, and resolutions are described in the following sections.
 {: shortdesc}
 
@@ -27,10 +25,10 @@ When you create or manage {{site.data.keyword.filestorage_short}}, you might enc
 After a brief disconnect, the File storage volume appears offline or read-only.
 {: tsSymptoms}
 
-In a couple of scenarios a host (bare metal or VM) might lose connection to the storage briefly and as a result, the host considers that storage read-only to avoid data corruption. Most of the time the loss of connectivity is network-related but the status of the storage remains read-only from the host's perspective even when the network connection is restored. This issue can be observed with virtual drives of VMs on a network-attached VMware&reg; datastore (NFS protocol).
+In a few scenarios a host (bare-metal or VM) might lose connection to the storage briefly and as a result, it considers that storage to be read only to avoid data corruption. Most of the time the loss of connectivity is network-related but the status of the storage remains read only from the host's perspective even when the network connection is restored. This issue can be observed with virtual drives of VMs on a network-attached VMware&reg; datastore (NFS protocol).
 {: tsCauses}
 
-To resolve, confirm that the network path between the Storage and the Host is clear, and that no maintenance or outage is in progress. Then, unmount and mount the storage volume. If the volume is still read-only, restart the host.
+To resolve, confirm that the network path between the Storage and the Host is clear, and that no maintenance or outage is in progress. Then, unmount and mount the storage volume. If the volume is still read only, restart the host.
 {: tsResolve}
 
 For mounting instructions, see the following topics.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-05-29"
+lastupdated: "2024-05-30"
 
 keywords: File Storage for Classic, NFS, provisioning, ordering, duplicate, cloning, replication
 
@@ -16,7 +16,7 @@ subcollection: FileStorage
 # Ordering {{site.data.keyword.filestorage_short}}
 {: #orderingFileStorage}
 
-You can order {{site.data.keyword.filestorage_short}} shares in the console, from the CLI, with the API, or Terraform. You can provision {{site.data.keyword.filestorage_short}} and fine-tune your share to meet your capacity and IOPS needs. Get the most out of your storage with two options for specifying IOPS: Endurance and Performance. You can provision file shares with capacity up to 12 TB and maximum IOPS of 48,000.
+You can order {{site.data.keyword.filestorage_short}} shares in the console, from the CLI, with the API, or Terraform. You can provision {{site.data.keyword.filestorage_short}} and fine-tune your shares to meet your capacity and IOPS needs. Get the most out of your storage with two options for specifying IOPS: Endurance and Performance. You can provision file shares with capacity up to 12 TB and maximum IOPS of 48,000.
 {: shortdesc}
 
 - You can choose from Endurance IOPS tiers that feature pre-defined performance levels to fit workloads that don't have well-defined performance requirements.
