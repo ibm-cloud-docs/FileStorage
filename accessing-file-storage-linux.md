@@ -31,17 +31,24 @@ Before you begin, make sure that the host that is to access the {{site.data.keyw
 ## Mounting the {{site.data.keyword.filestorage_short}} share
 {: #mountRHEL}
 
-The example is based on RHEL 7. The steps can be adjusted for other Linux&reg; distributions according to the operating system's (OS) vendor Documentation.
+The example is based on RHEL 8. The steps can be adjusted for other Linux&reg; distributions according to the operating system's (OS) vendor Documentation.
 {: tip}
 
 1. Install the required tools.
-   ```zsh
+   ```sh
    # yum install nfs-utils
    ```
    {: pre}
 
-2. Mount the remote share.
-   ```zsh
+1. Create a directory in your instance.
+
+   ```sh
+   mkdir /mnt/test
+   ```
+   {: pre}
+
+1. Mount the remote share.
+   ```sh
    # mount -t nfs -o <options> <host:mount_point> /mnt
    ```
 
@@ -58,7 +65,7 @@ The example is based on RHEL 7. The steps can be adjusted for other Linux&reg; d
    The mount point information can be obtained from the {{site.data.keyword.filestorage_short}} Details page in the console, with an API call - `SoftLayer_Network_Storage::getNetworkMountAddress()`, or by looking at the `ibm_storage_file` resource in Terraform.
    {: tip}
 
-3. Verify that the mount was successful by using the disk file system command.
+1. Verify that the mount was successful by using the disk file system command.
    ```text
    # df -h
    Filesystem Size Used Avail Use% Mounted on
@@ -67,7 +74,7 @@ The example is based on RHEL 7. The steps can be adjusted for other Linux&reg; d
    /dev/xvda1 97M    51M  42M   55%
    ```
 
-4. Go to the mount point, and read/write files.
+1. Go to the mount point, and read/write files.
    ```text
    # touch /mnt/test
    # ls -la /mnt
@@ -96,7 +103,7 @@ The example is based on RHEL 7. The steps can be adjusted for other Linux&reg; d
 
 6. Verify that the configuration file has no errors.
 
-   ```zsh
+   ```sh
    # mount -fav
    ```
    {: pre}
@@ -136,7 +143,7 @@ Example
 
 2. Run `nfsidmap -c`.
 3. Start `rpcidmapd`.
-   ```zsh
+   ```sh
    systemctl start rpcidmapd
    systemctl enable rpcidmapd
    ```
@@ -146,12 +153,12 @@ Example
 
 To unmount any currently mounted file system on your host, run the `umount` command with disk name or mount point name.
 
-```zsh
+```sh
 umount /dev/sdb
 ```
 {: pre}
 
-```zsh
+```sh
 umount /mnt
 ```
 {: pre}

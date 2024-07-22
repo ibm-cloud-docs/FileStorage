@@ -54,7 +54,7 @@ WantedBy = multi-user.target
 
 Next, enable the mount and check that it is mounted properly.
 
-```zsh
+```sh
 systemctl enable --now /etc/systemd/system/data-www.mount
 
 cluster1 ~ # mount |grep data

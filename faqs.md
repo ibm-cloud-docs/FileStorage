@@ -376,12 +376,12 @@ The conversion process can take some time to complete. The bigger the volume, th
 
 - From the CLI, use the following command.
 
-   ```zsh
+   ```sh
    slcli file duplicate-convert-status <dependent-vol-id>
    ```
 
    The output looks similar to the following example.
-   ```zsh
+   ```sh
    slcli file duplicate-convert-status 370597202
    Username            Active Conversion Start Timestamp   Completed Percentage
    SL02SEVC307608_74   2022-06-13 14:59:17                 90

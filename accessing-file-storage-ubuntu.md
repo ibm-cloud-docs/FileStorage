@@ -31,15 +31,33 @@ Before you begin, make sure that the host that is to access the {{site.data.keyw
 ## Mounting the {{site.data.keyword.filestorage_short}} share
 {: #mountUbuntu}
 
-1. Install the required tools.
-   ```zsh
-   # apt-get install nfs-common
+1. Update and upgrade the distribution:
+   ```sh
+   apt update && apt upgrade
    ```
    {: pre}
 
-2. Mount the remote share.
-   ```zsh
-   # mount -t nfs -o <options> <host:/mount_point> /mnt
+1. Install the required tools.
+   ```sh
+   apt-get install nfs-common
+   ```
+   {: pre}
+
+1. Create a `/mnt/nfs` directory.
+   ```sh
+   mkdir -p /mnt/nfs
+   ```
+   {: pre}
+
+1. Restart your instance:
+   ```sh
+   reboot
+   ```
+   {: pre}
+
+1. Mount the remote share.
+   ```sh
+   mount -t nfs -o <options> <host:/mount_point> /mnt
    ```
 
    Example for `storage_as_a_service` volumes.
@@ -55,8 +73,7 @@ Before you begin, make sure that the host that is to access the {{site.data.keyw
    The mount point information can be obtained from the {{site.data.keyword.filestorage_short}} Details page in the console, with an API call - `SoftLayer_Network_Storage::getNetworkMountAddress()`, or by looking at the `ibm_storage_file` resource in Terraform.
    {: tip}
 
-
-3. Verify that the mount was successful by using the disk file system command.
+1. Verify that the mount was successful by using the disk file system command.
    ```text
    # df -h
    Filesystem Size Used Avail Use% Mounted on
@@ -65,7 +82,7 @@ Before you begin, make sure that the host that is to access the {{site.data.keyw
    /dev/xvda1 97M    51M  42M   55%
    ```
 
-4. Go to the mount point, and read/write files.
+1. Go to the mount point, and read/write files.
    ```text
    # touch /mnt/test
    # ls -la /mnt
@@ -75,14 +92,14 @@ Before you begin, make sure that the host that is to access the {{site.data.keyw
    -rw-r--r--   1 nobody nobody    0 Sep 8 15:52 test
    ```
 
-5. Make the configuration persistent by editing the file systems table (`/etc/fstab`). Add the remote share to the list of entries that are automatically mounted on startup:
+1. Make the configuration persistent by editing the file systems table (`/etc/fstab`). Add the remote share to the list of entries that are automatically mounted on startup:
 
-   ```zsh
+   ```sh
    sudo nano /etc/fstab
    ```
    Add a line with the following syntax to the end of the file.
 
-   ```zsh
+   ```sh
    (hostname):/(mount_point) /mnt nfs_version defaults 0 0
    ```
 
@@ -92,9 +109,9 @@ Before you begin, make sure that the host that is to access the {{site.data.keyw
    nfsdal1301a.service.softlayer.com:/IBM01SV278685_7 /mnt nfsvers=3 defaults 0 0
    ```
 
-6. Verify that the configuration file has no errors.
+1. Verify that the configuration file has no errors.
 
-   ```zsh
+   ```sh
    # mount -fav
    ```
    {: pre}
@@ -104,18 +121,17 @@ Before you begin, make sure that the host that is to access the {{site.data.keyw
    If you're using NFS 4.1, add `sec=sys` to the mount command to prevent file ownership issues.
    {: tip}
 
-
 ## Unmounting the file system
 {: #umountUbuntu}
 
 To unmount any currently mounted file system on your host, run the `umount` command with disk name or mount point name.
 
-```zsh
+```sh
 umount /dev/sdb
 ```
 {: pre}
 
-```zsh
+```sh
 umount /mnt
 ```
 {: pre}

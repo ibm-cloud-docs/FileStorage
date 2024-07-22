@@ -37,7 +37,7 @@ While you can store a backup directly to a remote filesystem, cPanel & WHM does 
    {: tip}
 
 1. **Optional**. Copy existing backups to the new storage. You can use `rsync` for example.
-   ```zsh
+   ```sh
    rsync -azv /backup/* /backup2/
    ```
    {: pre}

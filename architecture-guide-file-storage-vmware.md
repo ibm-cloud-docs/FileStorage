@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-05-30"
+lastupdated: "2024-07-22"
 
 keywords: Classic File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
@@ -149,7 +149,7 @@ Before you begin the configuration process, make sure that the following prerequ
      {: pre}
 
    - UNIX
-     ```zsh
+     ```sh
      ping -s 8972 a.b.c.d
      ```
      {: pre}
@@ -187,7 +187,7 @@ For more information about VMware&reg; and Jumbo Frames, see [here](https://know
 The network configuration for this architecture guide uses a minimal number of port groups. If you have a VMkernel port group for NFS storage, extra steps must be taken. By default, ESXi uses the VMkernel port that is on the same subnet as an NFS volume to mount the NFS volume. Since layer 3 routing is used to mount the NFS volume, ESXi must be forced to use the VMkernel port that was configured to mount the NFS volume. To use the correct port, a static route must be created to the storage array.
 
 1. To configure a static route, SSH to each ESXi host that uses Performance or Endurance storage and run the following commands. Take note of the IP address that is the result of the `ping` command (first command) and use it with the `esxcli` network command.
-   ```zsh
+   ```sh
    ping <hostname of the storage array>
    ```
    {: pre}
@@ -195,7 +195,7 @@ The network configuration for this architecture guide uses a minimal number of p
    The NFS storage DNS hostname is a Forwarding Zone (FZ) that has multiple IP addresses assigned to it. These IP addresses are static and belong to that specific DNS hostname. Any of those IP addresses can be used to access a specific volume.
    {: note}
 
-   ```zsh
+   ```sh
    esxcli network ip route ipv4 add –gateway GATEWAYIP –network <result of ping command>/32
    ```
    {: pre}
@@ -227,7 +227,7 @@ Make note of the IP address as it can be used for mounting the volume in the nex
 {: important}
 
 To use the IP address instead of the FQDN, ping the server to obtain the IP address.
-```zsh
+```sh
 ping <hostname of the storage array>
 ```
 {: pre}
