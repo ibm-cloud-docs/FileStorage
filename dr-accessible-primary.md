@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-05-30"
+lastupdated: "2024-07-22"
 
 keywords: File Storage for Classic, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
@@ -43,7 +43,7 @@ Failovers are started under **Storage**, **{{site.data.keyword.filestorage_short
 Before you proceed with these steps, disconnect the volume. Failure to do so results in corruption and data loss.
 {: important}
 
-## Failing over to replica in the UI
+## Failing over to replica in the console
 {: #failovertoreplicaUI}
 {: ui}
 
@@ -114,7 +114,7 @@ When your original source volume is repaired, you can start a controlled Failbac
 
 When a Failback is started, the replication relationship is flipped again. Your original source volume is restored as your active source volume, and your target volume becomes the inactive target volume again.
 
-## Failing back in the UI
+## Failing back in the console
 {: #failbackfromreplicaUI}
 {: ui}
 

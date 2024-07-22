@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2023-10-18"
+lastupdated: "2024-07-22"
 
 keywords: File Storage for Classic, NFS, duplicate volume
 
@@ -51,7 +51,7 @@ Dependent duplicate volumes are created by using a snapshot from the primary vol
 - **Data refreshes**. Create a copy of your production data to mount to your nonproduction environment for testing.
 - **Development and Testing**. Create up to four simultaneous duplicates of a volume at one time to create duplicate data for development and testing.
 
-## Creating a duplicate from a specific volume in the UI
+## Creating a duplicate from a specific volume in the console
 {: #createdepduplicateUI}
 {: ui}
 
@@ -256,12 +256,12 @@ However, snapshots and replication of independent duplicate volumes aren't allow
 
 While data is being copied from the original volume to the **independent** duplicate, you can see that the status indicator on the details page shows the duplication is in progress. During this time, you can attach to a host, and read and write to the volume, but you can't create snapshot schedules or refresh data from the original file share. When the separation process is complete, the new volume is independent from the original, and can be managed with snapshots and replication as normal. The independent duplicate can be manually refreshed by using a snapshot from the parent volume after the conversion is complete.
 
-**Dependent** duplicates do not go through the separation process and can be refreshed manually at any time. The refresh process can be initiated from the CLI, with the API or in the UI. Later, if you want to convert the dependent duplicate into an independent volume, you can initiate that process by using the UI, the API, or the CLI, too.
+**Dependent** duplicates do not go through the separation process and can be refreshed manually at any time. The refresh process can be initiated from the CLI, with the API or in the console. Later, if you want to convert the dependent duplicate into an independent volume, you can initiate that process by using the UI, the API, or the CLI, too.
 
 The dependent duplicate volume locks the original snapshot so the snapshot cannot be deleted while the dependent duplicate exists.
 {: note}
 
-## Updating data on the duplicate from the parent volume in the UI
+## Updating data on the duplicate from the parent volume in the console
 {: #refreshindependentvol_ui}
 {: ui}
 
@@ -280,7 +280,7 @@ If the duplicate volume is independent, you can stop a running refresh operation
 
 5. Click **Yes** to start the refresh. The refresh can take a while to complete. The status bar shows the percentage of data that is copied to the volume. To see updated status, refresh the page in the browser.
 
-## Converting a dependent volume to an independent duplicate in the UI
+## Converting a dependent volume to an independent duplicate in the console
 {: #convertdependentvol_ui}
 {: ui}
 

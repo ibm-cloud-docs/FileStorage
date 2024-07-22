@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-05-30"
+lastupdated: "2024-07-22"
 
 keywords: File Storage for Classic, adjusting IOPS, increase IOPS, decrease IOPS, modify IOPS
 
@@ -51,7 +51,7 @@ Maximum IOPS for file storage share varies based on volume size. The maximum IOP
 
 If the volume has replication in place, the replica is automatically updated to match the IOPS selection of the primary.
 
-## Adjusting the IOPS on your Storage in the UI
+## Adjusting the IOPS on your Storage in the console
 {: #adjustingstepsUI}
 {: ui}
 

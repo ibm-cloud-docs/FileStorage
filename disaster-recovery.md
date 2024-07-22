@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-05-30"
+lastupdated: "2024-07-22"
 
 keywords: File Storage for Classic, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
@@ -25,7 +25,7 @@ You can create the authorization in the [UI](/docs/FileStorage?topic=FileStorage
 This action breaks the replication relationship and restoring the connection between the primary and the replica location can be time-consuming.
 {: important}
 
-## Failing over to the replica volume in the UI
+## Failing over to the replica volume in the console
 {: #DRFailoverUI}
 {: ui}
 
@@ -113,7 +113,7 @@ During the Disaster Recovery Failover, the system is forced to fail over to the 
 
 If you need further assistance, create a [support case](/unifiedsupport/supportcenter){: external}.
 
-## Failing back to the original primary site in the UI
+## Failing back to the original primary site in the console
 {: #DRFailbackUI}
 {: ui}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-05-30"
+lastupdated: "2024-07-22"
 
 keywords: File Storage for Classic, NFS, provisioning, ordering, duplicate, cloning, replication
 
@@ -44,7 +44,7 @@ You can order {{site.data.keyword.filestorage_short}} shares in the console, fro
 By default, you can provision a combined total of 700 {{site.data.keyword.filestorage_short}} volumes. To increase the number of your volumes, contact Support. For more information, see [Managing storage limits](/docs/FileStorage?topic=FileStorage-managinglimits). For more information about the limit on simultaneous authorizations, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs#authlimit).
 {: important}   
 
-## Ordering {{site.data.keyword.filestorage_short}} in the UI
+## Ordering {{site.data.keyword.filestorage_short}} in the console
 {: #orderingFileStorageUI}
 {: ui}
 

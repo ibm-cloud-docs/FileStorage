@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-04-12"
+lastupdated: "2024-07-22"
 
 keywords: File Storage for Classic, encryption, security, provisioning, limitations, NFS
 
@@ -26,7 +26,7 @@ Look at your list of {{site.data.keyword.filestorage_short}} in the customer por
 {: faq}
 {: support}
 
-All encrypted {{site.data.keyword.filestorage_short}} volumes that are provisioned in the enhanced data centers have a different mount point than nonencrypted volumes. To ensure that you're using the correct mount point, view the mount point information in the **Volume Details** page in the UI. You can also access the correct mount point through an API call: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
+All encrypted {{site.data.keyword.filestorage_short}} volumes that are provisioned in the enhanced data centers have a different mount point than nonencrypted volumes. To ensure that you're using the correct mount point, view the mount point information in the **Volume Details** page in the console. You can also access the correct mount point through an API call: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 
 ## How many volumes can I provision?
 {: faq}
@@ -331,7 +331,7 @@ When you store your data in {{site.data.keyword.filestorage_short}}, it's durabl
 The following examples are utilities that you might consider to use to check performance statistics.
 - [`sysstat`](https://github.com/sysstat/sysstat/blob/master/README.md){: external} - System performance tools for the Linux&reg; operating system.
 - [`typeperf`](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/typeperf){: external} - Windows command that writes performance data to the command window or to a log file.
-- [`esxtop`](https://community.broadcom.com/vmware-cloud-foundation/blogs/zhelong-pan/2024/04/14/interpreting-esxtop-statistics){: external} - A command-line tool that gives administrators real-time information about resource usage in a VMware&reg; vSphere environment. It can monitor and collect data for all system resources: CPU, memory, disk, and network.
+- [`esxtop`](https://community.broadcom.com/vmware-cloud-foundation/viewdocument/interpreting-esxtop-statistics-1){: external} - A command-line tool that gives administrators real-time information about resource usage in a VMware&reg; vSphere environment. It can monitor and collect data for all system resources: CPU, memory, disk, and network.
 
 ## What is the difference between a replica volume, a dependent and an independent duplicate volume?
 {: #replicavsduplicate}
@@ -370,9 +370,9 @@ For more information about duplicates, see [Creating and managing duplicate volu
 {: #duplicateconversion}
 {: faq}
 
-The conversion process can take some time to complete. The bigger the volume, the longer it takes to convert it. In a 12-TB volume, it might take 24 hours. You can check on the progress in the UI or from the CLI.
+The conversion process can take some time to complete. The bigger the volume, the longer it takes to convert it. In a 12-TB volume, it might take 24 hours. You can check on the progress in the console or from the CLI.
 
-- In the UI, go to [Classic Infrastructure](/gen1/infrastructure/devices){: external}. Click **Storage** > **{{site.data.keyword.filestorage_short}}**, then locate the volume in the list. The conversion status is displayed on the Overview page.
+- in the console, go to [Classic Infrastructure](/gen1/infrastructure/devices){: external}. Click **Storage** > **{{site.data.keyword.filestorage_short}}**, then locate the volume in the list. The conversion status is displayed on the Overview page.
 
 - From the CLI, use the following command.
 

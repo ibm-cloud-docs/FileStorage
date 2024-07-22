@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-04-17"
+lastupdated: "2024-07-22"
 
 keywords: File Storage for Classic, NFS, authorizing hosts, revoke access, grant access, view authorizations
 
@@ -18,7 +18,7 @@ subcollection: FileStorage
 You can manage your {{site.data.keyword.filestorage_full}} volumes through the {{site.data.keyword.cloud}} console and from the CLI.
 {: shortdesc}
 
-## Authorizing hosts to access {{site.data.keyword.filestorage_short}} in the UI
+## Authorizing hosts to access {{site.data.keyword.filestorage_short}} in the console
 {: #authhostUI}
 {: help}
 {: support}
@@ -119,7 +119,7 @@ For more information about the arguments and attributes, see [ibm_storage_file](
 You can authorize up to 64 servers to access the file share. This limit includes all subnet, host, and IP authorizations combined. For more information about increasing this limit, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs#authlimit).
 
 
-## Viewing the list of hosts that are authorized to access a {{site.data.keyword.filestorage_short}} volume in the UI
+## Viewing the list of hosts that are authorized to access a {{site.data.keyword.filestorage_short}} volume in the console
 {: #viewhostUI}
 {: help}
 {: support}
@@ -165,7 +165,7 @@ Options:
  -h, --help      Show this message and exit.
 ```
 
-## Viewing the {{site.data.keyword.filestorage_short}} volumes to which a host is authorized in the UI
+## Viewing the {{site.data.keyword.filestorage_short}} volumes to which a host is authorized in the console
 {: #viewvolUI}
 {: help}
 {: support}
@@ -181,7 +181,7 @@ You can view the volumes, which a host has access to, including information that
 
 You are presented with a list of storage volumes that this particular host has access to, all are grouped by storage type (block, file, other). From the respective **Action** menus, you can authorize more storage or remove access.
 
-## Revoking a host's access to {{site.data.keyword.filestorage_short}} in the UI
+## Revoking a host's access to {{site.data.keyword.filestorage_short}} in the console
 {: #revokehostaccessinUI}
 {: ui}
 
@@ -192,7 +192,7 @@ To avoid host side issues, unmount the storage volume from your operating system
 
 You can revoke access from either Storage from the Device List or the Storage views.
 
-### Revoking access from the Device List in the UI
+### Revoking access from the Device List in the console
 {: #revokeauthDeviceUI}
 {: help}
 {: support}
@@ -209,7 +209,7 @@ You can revoke access from either Storage from the Device List or the Storage vi
 If you want to disconnect multiple volumes from a specific host, you need to repeat the Revoke Access action for each volume.
 {: tip}
 
-### Revoking access from the Storage View in the UI
+### Revoking access from the Storage View in the console
 {: #revokeauthStorageUI}
 {: help}
 {: support}
@@ -264,7 +264,7 @@ Options:
 If you want to disconnect multiple hosts from a specific volume, you need to repeat the Revoke Access action for each host.
 {: tip}
 
-## Deleting a storage volume in the UI
+## Deleting a storage volume in the console
 {: #cancelvolUI}
 {: help}
 {: support}

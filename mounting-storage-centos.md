@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-05-30"
+lastupdated: "2024-07-22"
 
 keywords: File Storage for Classic, mounting File Storage, Linux, CentOS, NFS
 
@@ -22,10 +22,10 @@ completion-time: 1h
 {: toc-services=""}
 {: toc-completion-time="1h"}
 
-To mount {{site.data.keyword.filestorage_full}} in CentOS 7, you must authorize the host first. Then, install the NFS utilities as described in [Mounting {{site.data.keyword.filestorage_short}} on Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingLinux).
+To mount {{site.data.keyword.filestorage_full}} in CentOS, you must authorize the host first. Then, install the NFS utilities as described in [Mounting {{site.data.keyword.filestorage_short}} on Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingLinux).
 {: shortdesc}
 
-Before you begin, make sure that the host that is to access the {{site.data.keyword.filestorage_short}} volume is authorized. For more information, see [Authorizing the host in the UI](/docs/FileStorage?topic=FileStorage-managingstorage&interface=ui#authhostUI){: ui}[Authorizing the host from the CLI](/docs/FileStorage?topic=FileStorage-managingstorage&interface=cli#authhostCLI){: cli}[Authorizing the host with Terraform](/docs/FileStorage?topic=FileStorage-managingstorage&interface=terraform#authhostterraform){: terraform}.
+Before you begin, make sure that the host that is to access the {{site.data.keyword.filestorage_short}} volume is authorized. For more information, see [Authorizing the host in the console](/docs/FileStorage?topic=FileStorage-managingstorage&interface=ui#authhostUI){: ui}[Authorizing the host from the CLI](/docs/FileStorage?topic=FileStorage-managingstorage&interface=cli#authhostCLI){: cli}[Authorizing the host with Terraform](/docs/FileStorage?topic=FileStorage-managingstorage&interface=terraform#authhostterraform){: terraform}.
 {: requirement}
 
 ## Mounting the storage
@@ -33,7 +33,7 @@ Before you begin, make sure that the host that is to access the {{site.data.keyw
 
 Most of the steps of mounting your {{site.data.keyword.filestorage_short}} to a CentOS host are the same as the ones that are described in [Mounting {{site.data.keyword.filestorage_short}} on Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingLinux). However, for CentOS, you can specify some additional options by using the `Options=` line in the mount file. In the following example, the NFS is set to mount at `/data/www`.
 
-The mount point information can be obtained from the {{site.data.keyword.filestorage_short}} Details page in the UI, with an API call - `SoftLayer_Network_Storage::getNetworkMountAddress()`, or by looking at the `ibm_storage_file` resource in Terraform.
+The mount point information can be obtained from the {{site.data.keyword.filestorage_short}} Details page in the console, with an API call - `SoftLayer_Network_Storage::getNetworkMountAddress()`, or by looking at the `ibm_storage_file` resource in Terraform.
 {: tip}
 
 ```text
@@ -60,4 +60,4 @@ systemctl enable --now /etc/systemd/system/data-www.mount
 cluster1 ~ # mount |grep data
 <nfs_mount_point> on /data/www type nfs4 (rw,relatime,vers=4.0,rsize=65536,wsize=65536,namlen=255,hard,proto=tcp,port=0,timeo=600,retrans=2,sec=sys,clientaddr=10.81.x.x,local_lock=none,addr=10.1.x.x)
 ```
-{: codeblock}
+{: screen}

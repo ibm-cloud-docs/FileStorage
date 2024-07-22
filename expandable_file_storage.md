@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2025-05-28"
+lastupdated: "2024-07-22"
 
 keywords: File Storage for Classic, modify volume, NFS, File Storage, expand capacity
 
@@ -19,7 +19,7 @@ With this feature, current users of {{site.data.keyword.filestorage_full}} are a
 
 Billing for the volume is automatically updated to add the prorated difference of the new price to the current billing cycle. Then, the full new amount is billed in the next billing cycle.
 
-The upgrade process is not instantaneous. You can expect to see the updated size in the UI or through the API in a short while after you put in the modification request. Resizing does not cause any outage or loss of access to the storage, so you can continue your operations as normal while you wait.
+The upgrade process is not instantaneous. You can expect to see the updated size in the console or through the API in a short while after you put in the modification request. Resizing does not cause any outage or loss of access to the storage, so you can continue your operations as normal while you wait.
 
 ## Advantages of Expandable Storage
 {: #advantagesofresizing}
@@ -43,7 +43,7 @@ Existing size limitations for {{site.data.keyword.filestorage_short}} that was p
 You can't change the file share to a smaller size after you expand its capacity.
 {: note}
 
-## Resizing storage in the UI
+## Resizing storage in the console
 {: #resizingstepsUI}
 {: ui}
 

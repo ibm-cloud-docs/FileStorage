@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-04-11"
+lastupdated: "2024-07-22"
 
 keywords: File Storage for Classic, NFS, replication, duplication, synchronous, replica schedule, replica space, disaster recovery
 
@@ -23,7 +23,7 @@ Replication keeps your data in sync in two different locations. If you want to c
 Before you can replicate, you must create a snapshot schedule. The option to **Order Replica** does not appear until this condition is met.
 {: important}
 
-## Determining the remote data center for the replicated storage volume in the UI
+## Determining the remote data center for the replicated storage volume in the console
 {: #determinereplicationlocUI}
 {: ui}
 
@@ -85,7 +85,7 @@ To list suitable replication data centers for a specific volume, use the followi
  As part of the data center modernization strategy for {{site.data.keyword.cloud}}, several data centers are scheduled to consolidate in 2023. For more information, see [Data center consolidations](/docs/get-support?topic=get-support-dc-closure){: external}.
 {: note}
 
-## Creating the initial replica in the UI
+## Creating the initial replica in the console
 {: #createrepUI}
 {: ui}
 
@@ -158,7 +158,7 @@ Options:
 -h, --help                      Show this message and exit.
 ```
 
-## Viewing the replica volumes in the Volume List in the UI
+## Viewing the replica volumes in the Volume List in the console
 {: #replicalistUI}
 {: ui}
 
@@ -197,13 +197,13 @@ List existing replicant volumes for a file volume with the following command.
   -h, --help      Show this message and exit.
 ```
 
-## Viewing the replication history in the UI
+## Viewing the replication history in the console
 {: #replicationhistoryUI}
 {: ui}
 
 To view the Replication history, click Manage on the main menu bar. Select **Account**, and scroll to the Audit Log. The Storage Replication Events list contains the names of the volume, a description of the replication event and the timestamp of the event.
 
-## Editing the Replication Schedule in the UI
+## Editing the Replication Schedule in the console
 {: #editreplicaschedule}
 {: ui}
 
@@ -216,7 +216,7 @@ However, if you want to change the time of day when your **Daily** replication o
 3. Look in the **Snapshot** frame under **Schedule** to determine which Daily schedule you're using for replication. Change the schedule that you want.
 4. Click **Save**.
 
-## Deleting an existing replica file share in the UI
+## Deleting an existing replica file share in the console
 {: #cancelreplicaUI}
 {: ui}
 
@@ -228,7 +228,7 @@ You can cancel replication either immediately or on the anniversary date, which 
 4. Select when to cancel. Choose **Immediately** or **Anniversary Date**, and click **Continue**.
 5. This operation deletes the replica volume with all its data. Click the checkbox to acknowledge the information, and click **Delete**.
 
-## Canceling replication when the primary volume is deleted in the UI
+## Canceling replication when the primary volume is deleted in the console
 {: #cancelprimaryUI}
 {: ui}
 

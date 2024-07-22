@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-05-08"
+lastupdated: "2024-07-22"
 
 keywords: File Storage for Classic, NFS, snapshots, snapshot schedule, manual snapshot, snapshot space, snapshot quota
 
@@ -17,7 +17,7 @@ subcollection: FileStorage
 Snapshots are a feature of {{site.data.keyword.blockstoragefull}}. A snapshot represents a volume's contents at a particular point in time. With snapshots, you can protect your data with no performance impact and minimal consumption of space. Learn more about how to manage snapshots by reading the following instructions.
 {: shortdesc}
 
-## Adding a Snapshot schedule in the UI
+## Adding a Snapshot schedule in the console
 {: #addscheduleUI}
 {: ui}
 
@@ -148,7 +148,7 @@ If you want to update the schedule, change these values and apply them to your r
 
 For more information about the arguments and attributes, see [ibm_storage_file](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/storage_file){: external}.
 
-## Taking a manual Snapshot in the UI
+## Taking a manual Snapshot in the console
 {: #takemanualsnapshotUI}
 {: ui}
 
@@ -192,7 +192,7 @@ Options:
   -h, --help        Show this message and exit.
 ```
 
-## Listing all Snapshots with usage information and management functions in the UI
+## Listing all Snapshots with usage information and management functions in the console
 {: #listsnapshotUI}
 {: ui}
 
@@ -301,7 +301,7 @@ Options:
  -h, --help  Show this message and exit.
 ```
 
-## Increasing the amount of Snapshot space for a volume in the UI
+## Increasing the amount of Snapshot space for a volume in the console
 {: #changesnapshotspaceUI}
 {: ui}
 
@@ -318,7 +318,7 @@ Snapshot space is increased through **Storage** > **{{site.data.keyword.filestor
 4. Enter any Promo Code that you have, and click **Recalculate**. The Charges for this order and Order Review fields are completed by default.
 5. Read the service agreement, and if you agree with the terms click checkbox, and click **Place Order**. Your additional snapshot space is provisioned in a few minutes.
 
-## Deleting a snapshot schedule in the UI
+## Deleting a snapshot schedule in the console
 {: #cancelnapshotscheduleUI}
 {: ui}
 
@@ -367,7 +367,7 @@ Options:
   -h, --help            Show this message and exit.
 ```
 
-## Deleting a snapshot in the UI
+## Deleting a snapshot in the console
 {: #deletesnapshotUI}
 {: ui}
 
@@ -426,7 +426,7 @@ terraform destroy --target ibm_file_share_snapshot.example.id
 
 For more information, see [terraform destroy](https://developer.hashicorp.com/terraform/cli/commands/destroy){: external}.
 
-## Restoring storage volume to a specific point in time by using a snapshot in the UI
+## Restoring storage volume to a specific point in time by using a snapshot in the console
 {: #restorefromsnapshotUI}
 {: ui}
 
