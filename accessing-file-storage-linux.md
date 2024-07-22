@@ -31,9 +31,6 @@ Before you begin, make sure that the host that is to access the {{site.data.keyw
 ## Mounting the {{site.data.keyword.filestorage_short}} share
 {: #mountRHEL}
 
-The example is based on RHEL 8. The steps can be adjusted for other Linux&reg; distributions according to the operating system's (OS) vendor Documentation.
-{: tip}
-
 1. Install the required tools.
    ```sh
    # yum install nfs-utils
