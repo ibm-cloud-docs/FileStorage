@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-07-23"
+lastupdated: "2024-07-29"
 
 keywords: Classic File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
@@ -133,7 +133,7 @@ Before you begin the configuration process, make sure that the following prerequ
 3. From the **HOME** screen, select **Hosts and Clusters**. Expand the side pane and select the **VMware&reg; ESXi server** that is to be used for this deployment.
 4. Make sure that the firewall port for the NFS client is open on all hosts so that you can configure the NFS client on the vSphere host. (The port is automatically opened in the more recent releases of vSphere.) To check whether the port is open, go to the **ESXi host Manage** tab in VMware® vCenter™, select **Settings**, and then select **Security Profile**. In the **Firewall** section, click **Edit** and scroll down to **NFS Client**.
 5. Make sure **Allow connection from any IP address or a list of IP addresses** is provided.
-    ![Allow Connection.](/images/1_4.svg){: caption="Allow Connections." caption-side="bottom"}
+    ![Allow Connection.](images/1_4.svg){: caption="Allow Connections." caption-side="bottom"}
 6. Configure Jumbo Frames by going to the **ESXi host Manage** tab, select **Manage** and then **Networking**.
 7. Select the **VMkernel adapters**, highlight the **vSwitch** and the click **Edit** (Pencil icon).
 8. Select the **NIC setting**, and ensure that the NIC MTU is set to 9000.
@@ -171,7 +171,7 @@ For more information about VMware&reg; and Jumbo Frames, see [here](https://know
 5. Select the existing **vSwitch** and click **Next**.
 6. Select **Unused adapters** and click **Add adapters** (Plus sign).
 7. Click the other "Connected" adapter and click **OK**.
-    ![Add physical adapters to the switch.](/images/2_3.svg){: caption="Add the physical adapters to the switch." caption-side="bottom"}
+    ![Add physical adapters to the switch.](images/2_3.svg){: caption="Add the physical adapters to the switch." caption-side="bottom"}
 8. Click **Next** and the **Finish**.
 9. Go back to the **Virtual switches** tab and select the **Edit setting** (Pencil icon) under the **Virtual Switches** heading.
 10. Then, select the vSwitch **Teaming and failover** entry.
@@ -254,7 +254,7 @@ Incorrectly configuring SIOC for a VMware&reg; datastore or for a VMDK can signi
 3. Click **Settings** and click **General**.
 4. Click **Edit** for **Datastore Capabilities**.
 5. Select the **Enable Storage I/O Control** checkbox.
-    ![NSF VMware&reg; datastore.](/images/3_0.svg){: caption="Select Enable Storage I/O Control." caption-side="bottom"}
+    ![NSF VMware&reg; datastore.](images/3_0.svg){: caption="Select Enable Storage I/O Control." caption-side="bottom"}
 6. Click **OK**.
 
 This setting is specific to the VMware&reg; datastore and not to the host.

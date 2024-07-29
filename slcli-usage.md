@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2023-12-18"
+lastupdated: "2024-07-29"
 
 keywords: File Storage for Classic, NSF, SLCLI, API
 
@@ -24,7 +24,7 @@ For more information about how to install and use the SLCLI, see [Python API Cli
 {: #slcliaccess}
 
 * [Managing {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-managingstorage)
-   ```python
+   ```sh
    slcli file access-authorize
    slcli file access-list
    slcli file access-revoke
@@ -34,7 +34,7 @@ For more information about how to install and use the SLCLI, see [Python API Cli
 {: #slclireplica}
 
 * [Replication-related SLCLI commands](/docs/FileStorage?topic=FileStorage-replication)
-   ```python
+   ```sh
    slcli file replica-failback
    slcli file replica-failover
    slcli file replica-locations
@@ -46,12 +46,12 @@ For more information about how to install and use the SLCLI, see [Python API Cli
 {: #slclisnapshot}
 
 * [Ordering Snapshots](/docs/FileStorage?topic=FileStorage-ordering-snapshots)
-   ```python
+   ```sh
    slcli file snapshot-order
    ```
 
 * [Managing Snapshots](/docs/FileStorage?topic=FileStorage-managingSnapshots)
-   ```python
+   ```sh
    slcli file snapshot-cancel
    slcli file snapshot-create
    slcli file snapshot-delete
@@ -65,19 +65,19 @@ For more information about how to install and use the SLCLI, see [Python API Cli
 {: #slclivolume}
 
 * [Ordering a {{site.data.keyword.filestorage_short}} volume](/docs/FileStorage?topic=FileStorage-orderingFileStorage&interface=cli#orderingthroughCLI)
-   ```python
+   ```sh
    slcli file volume-order
    ```
 * [Adjusting the IOPS](/docs/FileStorage?topic=FileStorage-adjustingIOPS)
-   ```python
+   ```sh
    slcli file volume-modify
    ```
 * [Expanding the capacity](/docs/FileStorage?topic=FileStorage-expandCapacity)
-   ```python
+   ```sh
    slcli file volume-modify
    ```
 * [Managing {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-managingstorage)
-   ```python
+   ```sh
    slcli file volume-cancel
    slcli file volume-count
    slcli file volume-detail
@@ -86,7 +86,7 @@ For more information about how to install and use the SLCLI, see [Python API Cli
    slcli file volume-order
    ```
 * [Creating and managing duplicate volumes](/docs/FileStorage?topic=FileStorage-duplicatevolume)
-   ```python
+   ```sh
    slcli file volume-duplicate
    slcli file volume-duplicate --dependent-duplicate TRUE <independent-vol-id>|
    slcli file volume-refresh <duplicate-vol-id> <parent-vol-snapshot-id>
@@ -95,7 +95,7 @@ For more information about how to install and use the SLCLI, see [Python API Cli
    ```
 
 * [Managing storage limits](/docs/FileStorage?topic=FileStorage-managinglimits)
-   ```python
+   ```sh
    slcli file volume-limit
    slcli file volume-count
    ```
