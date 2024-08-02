@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-07-22"
+lastupdated: "2024-08-02"
 
-keywords: File Storage for Classic, NFS, provisioning, ordering, duplicate, cloning, replication
+keywords: File Storage for Classic, NFS, provisioning, ordering, order file share, provision file volume, duplicate, cloning, replication
 
 subcollection: FileStorage
 
@@ -16,7 +16,7 @@ subcollection: FileStorage
 # Ordering {{site.data.keyword.filestorage_short}}
 {: #orderingFileStorage}
 
-You can order {{site.data.keyword.filestorage_short}} shares in the console, from the CLI, with the API, or Terraform. You can provision {{site.data.keyword.filestorage_short}} and fine-tune your shares to meet your capacity and IOPS needs. Get the most out of your storage with two options for specifying IOPS: Endurance and Performance. You can provision file shares with capacity up to 12 TB and maximum IOPS of 48,000.
+You can order {{site.data.keyword.filestorage_short}} volumes in the console, from the CLI, with the API, or Terraform. You can provision {{site.data.keyword.filestorage_short}} and fine-tune your file shares to meet your capacity and IOPS needs. Get the most out of your storage with two options for specifying IOPS: Endurance and Performance. You can provision file shares with capacity up to 12 TB and maximum IOPS of 48,000.
 {: shortdesc}
 
 - You can choose from Endurance IOPS tiers that feature pre-defined performance levels to fit workloads that don't have well-defined performance requirements.
@@ -50,7 +50,7 @@ By default, you can provision a combined total of 700 {{site.data.keyword.filest
 
 1. Log in to the [{{site.data.keyword.cloud}} catalog](https://{DomainName}/catalog){: external} and click **Storage**. Then, select {{site.data.keyword.filestorage_short}}. Click **Create**.
 2. Select your deployment location (region, location, zone).
-   - Ensure that the new Storage is added in the same location as the Compute host or hosts that you have.
+   - Ensure that the new file share is added in the same location as the Compute host or hosts that you have.
 3. Billing. If you selected a data center with improved capabilities (marked with an asterisk), you can choose between Monthly or Hourly Billing.
    - With **hourly** billing, the number of hours that the file volume existed on the account is calculated at the time the volume is deleted or at the end of the billing cycle. Which ever comes first. Hourly billing is a good choice for storage that is used for a few days or less than a full month.
    - With **monthly** billing, the calculation for the price is pro-rated from the date of creation to the end of the billing cycle and billed immediately. If a file volume is deleted before the end of the billing cycle, the difference is not refunded. Monthly billing is a good choice for storage that is used in production workloads that use data that needs to be stored and accessed for long periods of time (month or longer).
@@ -84,7 +84,7 @@ Each order must have an associated location (data center). When you order {{site
 ### Provisioning from the IBMCLOUD CLI
 {: #orderingthroughICCLI}
 
-Use the `ibmcloud sl file volume-order` command to order a new file share. The following example provisions a 500-GB file share in the DAL13 data center with a tiered performance profile (4 IOPS per GB) and 500 GB snapshot space.
+Use the `ibmcloud sl file volume-order` command to order a file volume. The following example provisions a 500-GB file share in the DAL13 data center with a tiered performance profile (4 IOPS per GB) and 500 GB snapshot space.
 
 ```sh
 $ ibmcloud sl file volume-order --storage-type endurance --size 500 --tier 4 -d dal13 --snapshot-size 500
