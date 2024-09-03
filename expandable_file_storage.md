@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-07-22"
+lastupdated: "2024-09-03"
 
 keywords: File Storage for Classic, modify volume, NFS, File Storage, expand capacity
 
@@ -14,7 +14,7 @@ subcollection: FileStorage
 # Expanding File Share Capacity
 {: #expandCapacity}
 
-With this feature, current users of {{site.data.keyword.filestorage_full}} are able to expand the size of their {{site.data.keyword.filestorage_short}} in GB increments up to 12 TB immediately. They don't need to create a duplicate or manually migrate data to a larger volume.
+With this feature, users of {{site.data.keyword.filestorage_full}} are able to expand the size of their {{site.data.keyword.filestorage_short}} in GB increments up to 12 TB immediately. You don't need to create a duplicate or manually migrate data to a larger volume. This feature is available in all [data centers](/docs/overview?topic=overview-locations#data-centers).
 {: shortdesc}
 
 Billing for the volume is automatically updated to add the prorated difference of the new price to the current billing cycle. Then, the full new amount is billed in the next billing cycle.
@@ -35,8 +35,6 @@ Expand action on the primary storage results in automatic resizing of the replic
 
 ## Limitations
 {: #limitsofextension}
-
-This feature is available for storage that is provisioned in [data centers](/docs/overview?topic=overview-locations#data-centers) with enhanced capabilities. Encrypted storage that is provisioned in these data centers can be increased to up to 12 TB.
 
 Existing size limitations for {{site.data.keyword.filestorage_short}} that was provisioned with Endurance still apply (up to 4 TB for 10 IOPS tier and up to 12 TB for all other tiers).
 
