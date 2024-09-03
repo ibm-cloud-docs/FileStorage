@@ -36,6 +36,8 @@ Expand action on the primary storage results in automatic resizing of the replic
 ## Limitations
 {: #limitsofextension}
 
+Storage that was provisioned before the release of this feature, during **April 2017 - 14 December 2017**, can be increased to 10 times its original size and no more. Storage that was provisioned after **14 December 2017** can be increased to 12 TB.
+
 Existing size limitations for {{site.data.keyword.filestorage_short}} that was provisioned with Endurance still apply (up to 4 TB for 10 IOPS tier and up to 12 TB for all other tiers).
 
 You can't change the file share to a smaller size after you expand its capacity.

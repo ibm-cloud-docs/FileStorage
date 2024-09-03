@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-07-22"
+lastupdated: "2024-09-03"
 
 keywords: File Storage for Classic, NFS, snapshots, snapshot schedule, manual snapshot, snapshot space, snapshot quota
 
@@ -376,7 +376,7 @@ Snapshots that are no longer needed can be manually removed to free up space for
 1. Click your storage volume and click **Snapshot** to see the list of existing snapshots.
 2. Click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions") next to a particular snapshot and click **Delete** to delete the snapshot. This deletion doesn't affect any future or past snapshots on the same schedule as snapshots don't depend on each other.
 
-Manual snapshots that aren't deleted in the portal manually, are automatically deleted when you reach space limitations. The oldest snapshot is deleted first.
+Manual snapshots that aren't deleted in the portal manually are automatically deleted when you take another snapshot if you have reached space limitations. The oldest snapshot is deleted first.
 {: note}
 
 ## Deleting a snapshot from the CLI
