@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-05-29"
+lastupdated: "2024-09-04"
 
 keywords: File Storage for Classic, NFS, limits, quotas
 
@@ -87,7 +87,7 @@ The API call shows the combined number of {{site.data.keyword.blockstorageshort}
 ## Requesting limit increase
 {: #increasefilelimits}
 
-You can request a limit increase by submitting a support case in the [portal](/unifiedsupport/cases/add){: external}. When the request is approved, you get a volume limit that is set for a specific data center.
+You can request a limit increase by submitting a support case in the [portal](/unifiedsupport/cases/add){: external}. When the request is approved, you get a volume limit that is set for a specific [data center](/docs/overview?topic=overview-locations#data-centers).
 {: shortdesc}
 
 To request a limit increase, open a support case.

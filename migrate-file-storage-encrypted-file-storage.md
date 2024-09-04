@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-07-22"
+lastupdated: "2024-09-04"
 
 keywords: File Storage for Classic, NFS, upgrade, migrate to new
 
@@ -78,6 +78,3 @@ When the host is authorized, connect the volume to your host.
 {: #setupnewreplica}
 
 If snapshots and replication were established for your original volume, then you need to set up them up for the new volume. Configure replication, snapshot space and create snapshot schedules with the same settings as the original volume.
-
-If your target data center does not have encryption, you can't establish replication for the new volume until that data center is upgraded.
-{: important}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-07-29"
+lastupdated: "2024-09-04"
 
 keywords: Classic File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
@@ -70,7 +70,7 @@ When you order {{site.data.keyword.filestorage_short}}, consider the following i
 ### Using Snapshots
 {: #vmwaresnapshot}
 
-{{site.data.keyword.filestorage_short}} allows administrators to set snapshot schedules that create and delete snapshot copies automatically for each storage volume. They can also create extra snapshot schedules (hourly, daily, weekly) for automatic snapshots and manually create ad hoc snapshots for business continuity and disaster recovery (BCDR) scenarios. Automatic alerts are delivered through the [{{site.data.keyword.cloud}} console to the volume owner for the retained snapshots and space used.
+{{site.data.keyword.filestorage_short}} allows administrators to set snapshot schedules that create and delete snapshot copies automatically for each storage volume. They can also create extra snapshot schedules (hourly, daily, weekly) for automatic snapshots and manually create ad hoc snapshots for business continuity and disaster recovery (BCDR) scenarios. Automatic alerts are delivered through the {{site.data.keyword.cloud}} console to the volume owner for the retained snapshots and space used.
 
 Snapshot space is required to use snapshots. Space can be purchased on the initial volume order or after the initial provisioning through the **Volume Details** page by clicking **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions") and selecting **Add Snapshot Space**.
 
@@ -83,7 +83,7 @@ For more information, see the [snapshots](/docs/FileStorage?topic=FileStorage-sn
 ### Using replication
 {: #vmwarereplication}
 
-Replication uses one of your snapshot schedules to automatically copy snapshots to a destination volume in a remote data center. The copies can be recovered in the remote site if a catastrophic event or data corruption occurs.
+Replication uses one of your snapshot schedules to automatically copy snapshots to a destination volume in a remote [data center](/docs/overview?topic=overview-locations#data-centers). The copies can be recovered in the remote site if a catastrophic event or data corruption occurs.
 
 With replicas, you can
 

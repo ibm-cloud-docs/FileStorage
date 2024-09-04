@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-07-22"
+lastupdated: "2024-09-04"
 
 keywords: File Storage for Classic, NFS, replication, duplication, synchronous, replica schedule, replica space, disaster recovery
 
@@ -27,7 +27,9 @@ Before you can replicate, you must create a snapshot schedule. The option to **O
 {: #determinereplicationlocUI}
 {: ui}
 
-See Table 1 for the complete list of data center availability and replication targets within each region.
+[{{site.data.keyword.cloud_notm}} data centers](/docs/overview?topic=overview-locations#data-centers) are paired into primary and remote combinations in every region worldwide. When you replicate data, consider the local data residency laws because moving data across borders can have legal implications. Replication across regions is not permitted.
+
+The following table shows the data center codes within each region.
 
 | US  | Latin America | Canada  | Europe  | Asia-Pacific  | Australia  |
 |-----|-----|-----|-----|-----|-----|
@@ -43,12 +45,12 @@ Before you begin, decide on the CLI client that you want to use.
 * You can either install the [IBM Cloud CLI](/docs/cli){: external} and install the SL plug-in with `ibmcloud plugin install sl`. For more information, see [Extending IBM Cloud CLI with plug-ins](/docs/cli?topic=cli-plug-ins).
 * Or, you can install the [SLCLI](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}.
 
-{{site.data.keyword.cloud_notm}} data centers are paired into primary and remote combinations in every region worldwide. When you replicate data, consider the local data residency laws because moving data across borders can have legal implications. Replication across regions is not permitted.
+[{{site.data.keyword.cloud_notm}} data centers](/docs/overview?topic=overview-locations#data-centers) are paired into primary and remote combinations in every region worldwide. When you replicate data, consider the local data residency laws because moving data across borders can have legal implications. Replication across regions is not permitted.
 
 ### Listing data center locations from the IBMCLOUD CLI
 {: #determinereplicationlocICCLI}
 
-You can use the `ibmcloud sl file replica-locations` command to locate a replica location for your file share. The following example lists the available location for a file share in the US south region.
+You can use the `ibmcloud sl file replica-locations` command to locate a suitable replica location for your file share. The following example lists the available location for a file share in the US south region.
 
 ```sh
 $ ibmcloud sl file replica-locations 560156918
