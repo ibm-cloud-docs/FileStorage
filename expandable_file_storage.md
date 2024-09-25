@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-09-03"
+lastupdated: "2024-09-25"
 
 keywords: File Storage for Classic, modify volume, NFS, File Storage, expand capacity
 
@@ -47,7 +47,7 @@ You can't change the file share to a smaller size after you expand its capacity.
 {: #resizingstepsUI}
 {: ui}
 
-1. Go to the [{{site.data.keyword.cloud}} console](/login){: external}. From the menu, select **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic"). Click **Storage** > **{{site.data.keyword.filestorage_short}}**.
+1. Go to the [{{site.data.keyword.cloud}} console](/login){: external}. From the menu, select**Infrastructure**  ![VPC icon](../icons/vpc.svg) > **Classic Infrastructure**. Click **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Select the volume from the list and click the ellipsis ![Actions icon](../icons/action-menu-icon.svg "Actions") > **Modify File Share**.
 3. Enter the new storage size in GB.
 4. Review your selection and the new pricing. Click **Modify**.

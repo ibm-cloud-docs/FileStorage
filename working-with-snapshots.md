@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-09-03"
+lastupdated: "2024-09-25"
 
 keywords: File Storage for Classic, NFS, snapshots, snapshot schedule, manual snapshot, snapshot space, snapshot quota
 
@@ -437,7 +437,7 @@ You might need to take your storage volume back to a specific point in time beca
    For more information about mounting and unmounting storage, see [connecting your new storage](/docs/FileStorage?topic=FileStorage-mountingLinux).
    {: tip}
 
-2. Go to the [{{site.data.keyword.cloud}} console](/login){: external}. From the menu, select **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic").
+2. Go to the [{{site.data.keyword.cloud}} console](/login){: external}. From the menu, select**Infrastructure**  ![VPC icon](../icons/vpc.svg) > **Classic Infrastructure**.
 3. Click **Storage**, **{{site.data.keyword.filestorage_short}}**.
 4. Scroll on the list, and click your volume to be restored. The **Snapshots** page displays the list of all saved snapshots along with their size and creation date.
 5. Click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions") next to the snapshot to be used and click **Restore**.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-07-22"
+lastupdated: "2024-09-25"
 
 keywords: File Storage for Classic, NFS, duplicate volume
 
@@ -55,7 +55,7 @@ Dependent duplicate volumes are created by using a snapshot from the primary vol
 {: #createdepduplicateUI}
 {: ui}
 
-1. Go to your list of {{site.data.keyword.filestorage_short}}. From the **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic") menu, click **Storage** > **{{site.data.keyword.filestorage_short}}**.
+1. Go to your list of {{site.data.keyword.filestorage_short}}. From the**Infrastructure**  ![VPC icon](../icons/vpc.svg) > **Classic Infrastructure** menu, click **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Locate and click the volume name.
 3. Click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions") > **Duplicate Share**.
 4. Select whether the duplicate is to be dependent or independent.
@@ -270,7 +270,7 @@ As time passes and the primary volume changes, the duplicate volume can be updat
 If the duplicate volume is independent, you can stop a running refresh operation and start a new one.
 {: note}
 
-1. Go to your list of {{site.data.keyword.filestorage_short}}. From the **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic") menu, click **Storage** > **{{site.data.keyword.filestorage_short}}**.
+1. Go to your list of {{site.data.keyword.filestorage_short}}. From the**Infrastructure**  ![VPC icon](../icons/vpc.svg) > **Classic Infrastructure** menu, click **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Locate the duplicate volume and click its name to view the volume details.
 3. Click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions") > **Restore parent snapshot**.
 4. From the list of snapshots, select the parent snapshot that holds the data that you want to restore to the duplicate volume. If the duplicate volume that you're refreshing is an independent volume, you can stop a running operation and force a new restore to start. If you want to force a current refresh process to stop, check the box before you proceed.
@@ -284,7 +284,7 @@ If the duplicate volume is independent, you can stop a running refresh operation
 {: #convertdependentvol_ui}
 {: ui}
 
-1. Go to your list of {{site.data.keyword.filestorage_short}}. From the **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic") menu, click **Storage** > **{{site.data.keyword.filestorage_short}}**.
+1. Go to your list of {{site.data.keyword.filestorage_short}}. From the**Infrastructure**  ![VPC icon](../icons/vpc.svg) > **Classic Infrastructure** menu, click **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Locate the duplicate volume and click its name to view the volume details.
 3. Click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions") > **Convert Dependent Duplicate**.
 4. Check the box to confirm that you want to proceed with the conversion.

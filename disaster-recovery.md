@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-07-22"
+lastupdated: "2024-09-25"
 
 keywords: File Storage for Classic, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
@@ -29,7 +29,7 @@ This action breaks the replication relationship and restoring the connection bet
 {: #DRFailoverUI}
 {: ui}
 
-1. Go to your list of {{site.data.keyword.filestorage_short}}. From the **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic") menu, click **Storage** > **{{site.data.keyword.filestorage_short}}**.
+1. Go to your list of {{site.data.keyword.filestorage_short}}. From the**Infrastructure**  ![VPC icon](../icons/vpc.svg) > **Classic Infrastructure** menu, click **Storage** > **{{site.data.keyword.filestorage_short}}**.
 2. Locate and click the volume name.
 3. Click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions") > **Failover**.
 4. When the primary location is disabled, the option of Disaster Recovery Failover becomes active.

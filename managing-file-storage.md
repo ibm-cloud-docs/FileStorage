@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-07-22"
+lastupdated: "2024-09-25"
 
 keywords: File Storage for Classic, NFS, authorizing hosts, revoke access, grant access, view authorizations
 
@@ -29,7 +29,7 @@ You can manage your {{site.data.keyword.filestorage_full}} volumes through the {
 You can authorize and connect hosts that are located in the same data center as your storage. You can have multiple accounts, but you can't authorize a host from one account to access your storage on another account.
 {: important}
 
-1. Go to the [{{site.data.keyword.cloud}} console](/login){: external}. From the menu, select **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic").
+1. Go to the [{{site.data.keyword.cloud}} console](/login){: external}. From the menu, select**Infrastructure**  ![VPC icon](../icons/vpc.svg) > **Classic Infrastructure**.
 2. Click **Storage** > **{{site.data.keyword.filestorage_short}}**, and click your **Volume Name**.
 3. Scroll to the **Authorized Hosts** section of the page.
 4. Click **Authorize Host** on the right.
@@ -125,7 +125,7 @@ You can authorize up to 64 servers to access the file share. This limit includes
 {: support}
 {: ui}
 
-1. Go to the [{{site.data.keyword.cloud}} console](/login){: external}. From the menu, select **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic").
+1. Go to the [{{site.data.keyword.cloud}} console](/login){: external}. From the menu, select**Infrastructure**  ![VPC icon](../icons/vpc.svg) > **Classic Infrastructure**.
 2. Click **Storage** > **{{site.data.keyword.filestorage_short}}**, and click your **Volume Name**.
 3. Click **Authorized Hosts** to display the Compute instances that have access to your file share.
 
@@ -174,7 +174,7 @@ Options:
 You can view the volumes, which a host has access to, including information that is needed to make a connection – Volume Name, Storage Type, Target Address, capacity, and location.
 
 1. Go to the [{{site.data.keyword.cloud}} console](/login){: external}.
-2. From the menu, select **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic").
+2. From the menu, select**Infrastructure**  ![VPC icon](../icons/vpc.svg) > **Classic Infrastructure**.
 3. Click **Devices** > **Device List**.
 4. Click the appropriate device.
 5. Select the Storage tab.
@@ -199,7 +199,7 @@ You can revoke access from either Storage from the Device List or the Storage vi
 {: ui}
 
 1. Go to the [{{site.data.keyword.cloud}} console](/login){: external}.
-2. From the menu, select **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic").
+2. From the menu, select**Infrastructure**  ![VPC icon](../icons/vpc.svg) > **Classic Infrastructure**.
 3. Click **Devices** > **Device List**.
 4. Double-click the appropriate device.
 5. Select the **Storage** tab.
@@ -216,7 +216,7 @@ If you want to disconnect multiple volumes from a specific host, you need to rep
 {: ui}
 
 1. Go to the [{{site.data.keyword.cloud}} console](/login){: external}.
-2. From the menu, select **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic").
+2. From the menu, select**Infrastructure**  ![VPC icon](../icons/vpc.svg) > **Classic Infrastructure**.
 3. Click **Storage** > **{{site.data.keyword.filestorage_short}}**, and select the **Volume** from which you want to revoke access.
 4. Click **Authorized Hosts** to display the Compute instances that have access to your File share.
 5. Click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions") next to the host whose access is to be revoked, and select **Revoke Access**.
@@ -272,7 +272,7 @@ If you want to disconnect multiple hosts from a specific volume, you need to rep
 
 If you no longer need a specific volume, you can delete that file share. To cancel a storage volume, you need to revoke access from any hosts first.
 
-1. Go to the [{{site.data.keyword.cloud}} console](/login){: external}. From the menu, select **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic").
+1. Go to the [{{site.data.keyword.cloud}} console](/login){: external}. From the menu, select**Infrastructure**  ![VPC icon](../icons/vpc.svg) > **Classic Infrastructure**.
 2. Click **Storage** > **{{site.data.keyword.filestorage_short}}**.
 3. Click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions") for the volume to be canceled, and select **Delete {{site.data.keyword.filestorage_short}}**.
 4. Confirm if you want to delete the volume immediately or on the anniversary date of when the volume was provisioned.
