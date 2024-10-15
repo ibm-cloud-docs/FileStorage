@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-09-04"
+lastupdated: "2024-10-09"
 
 keywords: File Storage for Classic, NFS, provisioning, ordering, order file share, provision file volume, duplicate, cloning, replication
 
@@ -39,7 +39,7 @@ You can order {{site.data.keyword.filestorage_short}} volumes in the console, fr
    | 4,000 - 7,999 | 300 - 48,000|
    | 8,000 - 9,999 | 500 - 48,000 |
    | 10,000 - 12,000 | 1,000 - 48,000 |
-   {: caption="Table 1. Available IOPS based on volume size" caption-side="bottom"}
+   {: caption="Available IOPS based on volume size" caption-side="bottom"}
 
 By default, you can provision a combined total of 700 {{site.data.keyword.filestorage_short}} volumes. To increase the number of your volumes, contact Support. For more information, see [Managing storage limits](/docs/FileStorage?topic=FileStorage-managinglimits). For more information about the limit on simultaneous authorizations, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs#authlimit).
 {: important}   

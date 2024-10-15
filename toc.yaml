@@ -6,7 +6,7 @@ toc:
     subcollection: FileStorage
     category: storage_classic
     audience: service
-    href: /docs/FileStorage?topic=FileStorage-getting-started
+    href: /docs/FileStorage
     console-page: /cloud-storage/file
     product-page: https://www.ibm.com/products/file-storage
     path: FileStorage

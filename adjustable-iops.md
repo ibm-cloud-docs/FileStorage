@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-09-25"
+lastupdated: "2024-10-09"
 
 keywords: File Storage for Classic, adjusting IOPS, increase IOPS, decrease IOPS, modify IOPS
 
@@ -42,7 +42,7 @@ You can’t switch between Endurance and Performance when you adjust your IOPS. 
 | 4,000 - 7,999 | 300 - 48,000|
 | 8,000 - 9,999 | 500 - 48,000 |
 | 10,000 - 12,000 | 1,000 - 48,000 |
-{: caption="Table 1. Available IOPS based on volume size." caption-side="bottom"}
+{: caption="Available IOPS based on volume size." caption-side="bottom"}
 
 Maximum IOPS for file storage share varies based on volume size. The maximum IOPS for a file share is 48,000 IOPS.
 

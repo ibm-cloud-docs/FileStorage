@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-09-04"
+lastupdated: "2024-10-09"
 
 keywords: File Storage for Classic, encryption, security, provisioning, limitations, NFS
 
@@ -357,7 +357,7 @@ For more information about duplicates, see [Creating and managing duplicate volu
 | Auto-synced with parent volume | ![Checkmark icon.](../../icons/checkmark-icon.svg) | |  |
 | On-demand refresh from parent volume | | ![Checkmark icon.](../../icons/checkmark-icon.svg) [^depdup] | ![Checkmark icon.](../../icons/checkmark-icon.svg) [^indepdup] |
 | Separated from parent volume | | | ![Checkmark icon.](../../icons/checkmark-icon.svg) |
-{: caption="Table 1. Comparison of features between different types of volume copies. " caption-side="top"}
+{: caption="Comparison of features between different types of volume copies. " caption-side="top"}
 {: summary="This table has row and column headers. The row headers identify the capability. The column headers identify the type of volume copy."}
 {: #table1}
 
