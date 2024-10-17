@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-09-25"
+lastupdated: "2024-10-17"
 
 keywords: File Storage for Classic, NFS, snapshot, ordering snapshot, snapshot space
 
@@ -75,7 +75,7 @@ The size of the snapshot space that you can order depends on the size of your vo
 {: ui}
 
 1. Log in to the [{{site.data.keyword.cloud}} console](/login){: external} and click the menu icon ![Menu icon](../icons/icon_hamburger.svg "Menu").
-2. Select**Infrastructure**  ![VPC icon](../icons/vpc.svg) > **Classic Infrastructure**.
+2. select **Infrastructure**  ![VPC icon](../icons/vpc.svg) > **Classic Infrastructure**.
 3. Access your Storage through **Storage** > **{{site.data.keyword.filestorage_short}}**.
 4. Click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions"), then click **Add Snapshot Space**.
 5. Select the amount of space that you need and the payment method.
