@@ -40,7 +40,7 @@ By default, you can provision a combined total of 700 Block and {{site.data.keyw
 {: #authlimit}
 {: support}
 
-The default limit for number of authorizations per file volume is 64. The limit includes all subnet, host, and IP authorizations combined. To increase this limit, contact Support. For more information, see [Creating support cases](/docs/get-support?topic=get-support-open-case).
+The default limit for number of authorizations per file volume is 64. The limit includes all subnet, host, and IP authorizations combined. To increase this limit, contact Support. For more information, see [Creating support cases](/docs/account?topic=account-open-case).
 
 ## How many {{site.data.keyword.filestorage_short}} volumes can be attached to a single host?
 {: faq}

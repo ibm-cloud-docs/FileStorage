@@ -84,7 +84,7 @@ To list suitable replication data centers for a specific volume, use the followi
  ```
  {: codeblock}
 
- As part of the data center modernization strategy for {{site.data.keyword.cloud}}, several data centers are scheduled to consolidate in 2023. For more information, see [Data center consolidations](/docs/get-support?topic=get-support-dc-closure){: external}.
+ As part of the data center modernization strategy for {{site.data.keyword.cloud}}, several data centers are scheduled to consolidate in 2023. For more information, see [Data center consolidations](/docs/account?topic=account-dc-closure){: external}.
 {: note}
 
 ## Creating the initial replica in the console
