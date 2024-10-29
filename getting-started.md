@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-09-04"
+lastupdated: "2024-10-29"
 
 keywords: File Storage for Classic, NFS, provisioning, setup, configuration, mounting storage
 
@@ -59,7 +59,7 @@ The IO size that is used by your application directly impacts the storage perfor
 | 128 | 128 | 16 |
 | 512 | 32 | 16 |
 | 1024 | 16 | 16 |
-{: caption="Table 1 shows examples of how IO size and IOPS affect the throughput. Average IO size x IOPS = Throughput in MB/s." caption-side="top"}
+{: caption="The table shows examples of how IO size and IOPS affect the throughput. Average IO size x IOPS = Throughput in MB/s." caption-side="bottom"}
 
 ### Authorized hosts
 {: #numberofhosts}

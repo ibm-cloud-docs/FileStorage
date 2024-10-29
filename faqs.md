@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-10-09"
+lastupdated: "2024-10-29"
 
 keywords: File Storage for Classic, encryption, security, provisioning, limitations, NFS
 
@@ -73,7 +73,7 @@ The maximum number of inodes that can be configured on a volume is calculated by
 | 12,000 GB| 2,040,109,451 |
 | 16,000 GB| 2,040,109,451 |
 {: row-headers}
-{: caption="Table 1 shows the maximum number of inodes that are allowed based on the volume size." caption-side="bottom"}
+{: caption="The table shows the maximum number of inodes that are allowed based on the volume size." caption-side="bottom"}
 {: summary="Table 1 shows the maximum number of inodes that are allowed based on the volume size. Volume sizes are in the first column. The numbers of inodes (files and directories) are in the second column."}
 
 ## I ordered a {{site.data.keyword.filestorage_short}} volume in the wrong data center. Is it possible to move or migrate it to another data center?
@@ -357,7 +357,7 @@ For more information about duplicates, see [Creating and managing duplicate volu
 | Auto-synced with parent volume | ![Checkmark icon.](../../icons/checkmark-icon.svg) | |  |
 | On-demand refresh from parent volume | | ![Checkmark icon.](../../icons/checkmark-icon.svg) [^depdup] | ![Checkmark icon.](../../icons/checkmark-icon.svg) [^indepdup] |
 | Separated from parent volume | | | ![Checkmark icon.](../../icons/checkmark-icon.svg) |
-{: caption="Comparison of features between different types of volume copies. " caption-side="top"}
+{: caption="Comparison of features between different types of volume copies. " caption-side="bottom"}
 {: summary="This table has row and column headers. The row headers identify the capability. The column headers identify the type of volume copy."}
 {: #table1}
 

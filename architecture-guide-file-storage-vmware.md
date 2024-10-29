@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-09-04"
+lastupdated: "2024-10-29"
 
 keywords: Classic File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
@@ -62,7 +62,7 @@ When you order {{site.data.keyword.filestorage_short}}, consider the following i
 | Virtual Volumes | Yes | No |
 {: row-headers}
 {: class="comparison-table"}
-{: caption="Table 1 - NFS Protocol VMware&reg; feature support matrix." caption-side="top"}
+{: caption="NFS Protocol VMware&reg; feature support matrix." caption-side="bottom"}
 {: summary="This table has row and column headers. The row headers identify the vSphere features. The column headers identify the NSF version. To see whether a feature is enabled navigate to the row of the feature, and look at the column that is associated with the NFS version that you use."}
 
 *Source - [VMware&reg; - NFS Protocols and ESXi](https://docs.vmware.com/en/VMware-vSphere/6.0/vsphere-60-guide-archive.zip){: external}*.
@@ -292,7 +292,7 @@ Other settings are required for configuring ESXi hosts for NFS storage. This tab
 |NFS.HeartbeatFrequency |	12 for all NFS configurations|
 |NFS.HeartbeatTimeout |	5 for all NFS configurations|
 |NFS.MaxQueueDepth|	64 for vSphere 5.0 and later versions |
-{: caption="Table 2 - Host side settings." caption-side="top"}
+{: caption="Host side settings." caption-side="bottom"}
 
 ### Updating advanced configuration parameters
 {: #updateconfigparam}
