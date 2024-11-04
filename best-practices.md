@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2023-12-18"
+lastupdated: "2024-11-04"
 
 keywords: File Storage for Classic, use of a File Storage volume, NFS
 
@@ -20,11 +20,11 @@ Follow our best practices to maximize the performance of your storage, and avoid
 ## Best practice 1 - Clear the path
 {: #bestpractice1}
 
-To achieve maximum IOPS, adequate network resources need to be in place. 
+To achieve maximum IOPS, adequate network resources need to be in place.
 
 * **Run storage traffic on a dedicated VLAN.** Running storage traffic through software firewalls increases latency and adversely affects storage performance. It's best to run storage traffic on a VLAN, which bypasses the firewall. For more information, see [routing storage traffic to its own VLAN interface](/docs/FileStorage?topic=FileStorage-file-storage-faqs#howtoisolatedstorage).
 
-* **Avoid routing your storage traffic to a gateway device** whenever possible. When storage traffic is routed to a gateway device, it can add latency to storage traffic, or it can cause storage traffic disruption if the firewall in the gateway device is misconfigured. The storage disruption is especially true when maintenance such as a restart is required on a single (not clustered) gateway device. If a storage traffic must be routed through a gateway device, ensure that the gateway device has an at-least 10-Gbps interface, or the gateway device might become a network bottleneck.
+* **Avoid routing your storage traffic to a gateway device** whenever possible. When storage traffic is routed to a gateway device, it can add latency to storage traffic, or it can cause storage traffic disruption if the firewall in the gateway device is misconfigured. The storage disruption is especially true when maintenance such as a restart is required on a single (not clustered) gateway device. If a storage traffic must be routed through a gateway device, help ensure that the gateway device has an at-least 10-Gbps interface, or the gateway device might become a network bottleneck.
 
 * **Use the subnet address** instead of individual IP addresses on firewalls for NFS traffic. The NFS hostname serves 6 IP addresses, and these 6 IP addresses can change.
 
@@ -32,7 +32,7 @@ To achieve maximum IOPS, adequate network resources need to be in place. 
 
 * **Choose a higher bandwidth.** The speed of your Ethernet connection must be faster than the expected maximum throughput from your volume. Generally, don't expect to saturate your Ethernet connection beyond 70% of the available bandwidth.
 
-     For example, if you have 6,000 IOPS and are using a 16-KB block size, the volume can handle approximately 94-MBps throughput. However, when you have a 1-Gbps Ethernet connection to your LUN, it becomes a bottleneck when your servers attempt to use the maximum available throughput. It's because 70 percent of the theoretical limit of a 1-Gbps Ethernet connection (125 MB per second) would allow for 88 MB per second only.
+     For example, if you have 6,000 IOPS and are using a 16-KB block size, the volume can handle approximately 94-MBps throughput. However, when you have a 1-Gbps Ethernet connection to your LUN, it becomes a bottleneck when your servers attempt to use the maximum available throughput. It's because 70% of the theoretical limit of a 1-Gbps Ethernet connection (125 MB per second) would allow for 88 MB per second only.
      {: note}
 
 ## Best practice 2 - Optimize the host and applications
@@ -46,9 +46,9 @@ To achieve maximum IOPS, adequate network resources need to be in place. 
 
     - **Completely fair queuing (CFQ)** uses both elevators and request merging, and it's a bit more complex than the NOOP or deadline schedulers. It's the standard scheduler for many Linux distributions. It groups simultaneous requests that are made by operations into a series of per-process pools before it allocates time slices to use the disc for every queue.
 
-   If your work load is dominated by interactive applications, the users might complain of the sluggish performance of databases with many I/O operations. In such environments, read operations happen significantly more often than write operations, and applications are more likely to be waiting to read data. You can check the default IO scheduler settings and try different schedulers to ensure optimization for your specific workload.
+   If your work load is dominated by interactive applications, the users might complain of the sluggish performance of databases with many I/O operations. In such environments, read operations happen significantly more often than write operations, and applications are more likely to be waiting to read data. You can check the default IO scheduler settings and try different schedulers to help ensure optimization for your specific workload.
 
-* **[Enable Jumbo Frames](/docs/FileStorage?topic=FileStorage-jumboframes) and configure them to be the same on the entire network path** from source device <-> switch <-> router <-> switch <-> target device. If the entire chain isn't set the same, it defaults to the lowest setting along the chain. {{site.data.keyword.cloud}} has network devices set to 9,000 currently. For best performance, all customer devices need to be set to the same 9,000 value.
+* **[Enable Jumbo Frames](/docs/FileStorage?topic=FileStorage-jumboframes) and configure them to be the same on the entire network path** from source device > switch > router > switch > target device. If the entire chain isn't set the same, it defaults to the lowest setting along the chain. {{site.data.keyword.cloud}} has network devices set to 9,000 currently. For best performance, all customer devices need to be set to the same 9,000 value.
 
    Setting MTU to 9000 on your host has the following benefits:
     - Data can be transmitted in fewer frames.
