@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-07-22"
+lastupdated: "2024-11-12"
 
 keywords: File Storage for Classic, NSF, networking, jumbo frames
 
@@ -17,7 +17,7 @@ subcollection: FileStorage
 A jumbo frame is an Ethernet frame with a payload greater than the standard maximum transmission unit (MTU) of 1,500 bytes. Jumbo frames are used on local area networks that support at least 1 Gbps and can be as large as 9,000 bytes.
 {: shortdesc}
 
-Jumbo frames need to be configured the same on the entire network path from source device <-> switch <-> router <-> switch <-> destination device. If the entire chain isn't set the same, it defaults to the lowest setting along the chain. {{site.data.keyword.cloud}} has network devices set to 9,000 currently. For best performance, all customer devices need to be set to the same 9,000 value.
+Jumbo frames need to be configured the same on the entire network path: source device > switch > router > switch > destination device. If the entire chain isn't set the same, it defaults to the lowest setting along the chain. {{site.data.keyword.cloud}} has network devices set to 9,000 currently. For best performance, all customer devices need to be set to the same 9,000 value.
 {: important}
 
 ## Enabling Jumbo Frames
