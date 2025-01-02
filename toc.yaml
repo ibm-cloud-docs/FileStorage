@@ -21,7 +21,7 @@ toc:
         - snapshots.md
         - link:
             label: What is File Storage?
-            href: https://www.ibm.com/topics/file-storage
+            href: https://www.ibm.com/think/topics/file-storage
     - navgroup:
         id: tutorial
         topics:
