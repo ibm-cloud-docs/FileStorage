@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2024
-lastupdated: "2024-10-29"
+  years: 2014, 2025
+lastupdated: "2025-01-10"
 
 keywords: Classic File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
@@ -158,7 +158,7 @@ Before you begin the configuration process, make sure that the following prerequ
      8980 bytes from a.b.c.d: icmp_seq=1 ttl=128 time=3.36 ms
      ```
 
-For more information about VMware&reg; and Jumbo Frames, see [here](https://knowledge.broadcom.com/external/article?legacyId=1003712){: external}.
+For more information, see [Jumbo Frames configuration on VMware ESXi/ESX](https://knowledge.broadcom.com/external/article?articleNumber=318937){: external}.
 {: tip}
 
 ### Step 2. Adding an uplink adapter to a virtual switch
