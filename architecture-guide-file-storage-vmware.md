@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-01-10"
+lastupdated: "2025-01-14"
 
 keywords: Classic File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
@@ -43,7 +43,7 @@ When you order {{site.data.keyword.filestorage_short}}, consider the following i
 
 - NFS uses many extra file control operations such as `lookup`, `getattr`, and `readdir`. These operations in addition to read/write operations can count as IOPS and vary by operation type and NFS version.
 - {{site.data.keyword.filestorage_short}} volumes are accessible only to authorized devices, subnets, or IP addresses.
-- To avoid storage disconnection during path-failover {{site.data.keyword.IBM}} recommends installing VMware&reg; tools, which set an appropriate timeout value. Don't change the value because the default setting is sufficient to ensure that your VMware&reg; host doesn't lose connectivity.
+- To avoid storage disconnection during path-failover {{site.data.keyword.IBM}} recommends installing VMware&reg; tools, which set an appropriate timeout value. Don't change the value because the default setting is sufficient to make sure that your VMware&reg; host doesn't lose connectivity.
 - Both NFSv3 and NFSv4.1 are supported in the {{site.data.keyword.cloud}} environment. However, the use NFSv3 is preferred. Because NFSv4.1 is a stateful protocol (not stateless like NFSv3), protocol issues can occur during network events. NFSv4.1 must quiesce all operations and then complete lock reclamation. While these operations are taking place, disruptions can occur.
 
 ### NFS Protocol VMware feature support matrix
@@ -136,7 +136,7 @@ Before you begin the configuration process, make sure that the following prerequ
     ![Allow Connection.](images/1_4.svg){: caption="Allow Connections." caption-side="bottom"}
 6. Configure Jumbo Frames by going to the **ESXi host Manage** tab, select **Manage** and then **Networking**.
 7. Select the **VMkernel adapters**, highlight the **vSwitch** and the click **Edit** (Pencil icon).
-8. Select the **NIC setting**, and ensure that the NIC MTU is set to 9000.
+8. Select the **NIC setting**, and make sure that the NIC MTU is set to 9000.
 9. **Optional**. Validate the jumbo frame settings.
    - Windows
      ```shell
@@ -196,7 +196,7 @@ The network configuration for this architecture guide uses a minimal number of p
    ```
    {: pre}
 
-2. Static routes are not persistent across restarts on ESXi 5.0 and earlier. To ensure that any added static routes remain persistent, this command needs to be added to the `local.sh` file on each host, which is located in the `/etc/rc.local.d/` directory. Open the `local.sh` file by using the visual editor, and add the second command in Step 4.1. in front of the `exit 0` line.
+2. Static routes are not persistent across restarts on ESXi 5.0 and earlier. To make sure that any added static routes remain persistent, this command needs to be added to the `local.sh` file on each host, which is located in the `/etc/rc.local.d/` directory. Open the `local.sh` file by using the visual editor, and add the second command in Step 4.1. in front of the `exit 0` line.
 
 Make note of the IP address as it can be used for mounting the volume in the next step. This process needs to be done for each NFS volume you plan to mount to your ESXi host. For more information, see the VMware&reg; KB article, [Configuring static routes for VMkernel ports on an ESXi host](https://knowledge.broadcom.com/external/article?legacyId=2001426){: external}.
 {: tip}

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2024
-lastupdated: "2024-12-09"
+  years: 2014, 2025
+lastupdated: "2025-01-14"
 
 keywords: File Storage for Classic, encryption, security, provisioning, limitations, NFS
 
@@ -26,7 +26,7 @@ Look at your list of {{site.data.keyword.filestorage_short}} in the customer por
 {: faq}
 {: support}
 
-All encrypted {{site.data.keyword.filestorage_short}} volumes that are provisioned in the enhanced data centers have a different mount point than nonencrypted volumes. To ensure that you're using the correct mount point, view the mount point information in the **Volume Details** page in the console. You can also access the correct mount point through an API call: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
+All encrypted {{site.data.keyword.filestorage_short}} volumes that are provisioned in the enhanced data centers have a different mount point than nonencrypted volumes. To make sure that you're using the correct mount point, view the mount point information in the **Volume Details** page in the console. You can also access the correct mount point through an API call: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 
 ## How many volumes can I provision?
 {: faq}
@@ -88,7 +88,7 @@ When the share is canceled, the request is followed by a 24-hour reclaim wait pe
 {: #iopsmeasure}
 {: support}
 
-IOPS is measured based on a load profile of 16-KB blocks with random 50 percent reads and 50 percent writes. Workloads that differ from this profile might experience poor performance. To improve performance, you can try adjusting the host settings or [enabling Jumbo frames](/docs/FileStorage?topic=FileStorage-jumboframes).
+IOPS is measured based on a load profile of 16-KB blocks with random 50% reads and 50% writes. Workloads that differ from this profile might experience poor performance. To improve performance, you can try adjusting the host settings or [enabling Jumbo frames](/docs/FileStorage?topic=FileStorage-jumboframes).
 
 ## What happens when I use a smaller IO size for measuring performance?
 {: faq}
@@ -318,7 +318,7 @@ When you store your data in {{site.data.keyword.filestorage_short}}, it's durabl
 {: #storavailabilityfaq}
 {: faq}
 
-When you store your data in {{site.data.keyword.filestorage_short}}, it's durable, highly available, and encrypted. File Storage is built upon best-in-class, proven, enterprise-grade hardware and software to ensure high availability and uptime. To ensure that the availability target of 99.999% (five 9's) is met, the data is stored redundantly across multiple physical disks on HA paired nodes. Each storage node has multiple paths to its own Solid-State Drives and its partner node's SSDs as well. This setup protects against path failure, and also controller failure because the node can still access its partner's disks seamlessly. For more information, see [Availability and Durability of {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-storageavailability).
+When you store your data in {{site.data.keyword.filestorage_short}}, it's durable, highly available, and encrypted. File Storage is built upon best-in-class, proven, enterprise-grade hardware and software to ensure high availability and uptime. To make sure that the availability target of 99.999% (five 9's) is met, the data is stored redundantly across multiple physical disks on HA paired nodes. Each storage node has multiple paths to its own Solid-State Drives and its partner node's SSDs as well. This setup protects against path failure, and also controller failure because the node can still access its partner's disks seamlessly. For more information, see [Availability and Durability of {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-storageavailability).
 
 ## Can I get storage performance metrics (IOPS or latency) from the Support team?
 {: #storagemetrics}

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2024
-lastupdated: "2024-10-29"
+  years: 2014, 2025
+lastupdated: "2025-01-14"
 
 keywords: File Storage for Classic, NFS, replication, duplication, synchronous, replica schedule, replica space, disaster recovery
 
@@ -97,7 +97,7 @@ Replications work based on a snapshot schedule. You must first have snapshot spa
 2. Click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions") and click **Order Replica**.
 3. Select the existing snapshot schedule that you want your replication to follow. The list contains all of your active snapshot schedules.
 
-   You can select only one schedule even if you have a mix of hourly, daily, and weekly. All the snapshots, which were captured since the previous replication, are replicated regardless of the schedule that originated them. For more information, see [Working with Snapshots](/docs/FileStorage?topic=FileStorage-snapshots). Replication starts 5 minutes after the snapshot is taken to ensure that the most up-to-date data is copied to the replica volume.
+   You can select only one schedule even if you have a mix of hourly, daily, and weekly. All the snapshots, which were captured since the previous replication, are replicated regardless of the schedule that originated them. For more information, see [Working with Snapshots](/docs/FileStorage?topic=FileStorage-snapshots). Replication starts 5 minutes after the snapshot is taken to make sure that the most up-to-date data is copied to the replica volume.
    {: tip}
 
 4. Select a **Location** for the replica volume.
