@@ -39,7 +39,8 @@
         "versions supported on File Storage",
         "nfs version does File Storage support",
         "no_root_squash",
-        "NFS versions supported"
+        "NFS versions supported",
+        "which versions of NFS"
     ],
     "isVAAIsupported": [
         "VAAI storage in File Storage",
@@ -68,7 +69,7 @@
         "server how many File Storage",
         "how many connect File Storage host",
         "multiple volumes attached to a single host on File Storage",
-        "attach File Storage host number ",
+        "attach File Storage host number",
         "many File Storage volumes can be attached to a single host"
     ],
     "provision": [
@@ -78,8 +79,8 @@
         "number nfs order",
         "how many nfs can I order",
         "account limit nfs order",
-        "increase File Storage limit ",
-        "increase File Storage order ",
+        "increase File Storage limit",
+        "increase File Storage order",
         "order more nfs storage",
         "File Storage provisioning limit",
         "order File Storage limit ",

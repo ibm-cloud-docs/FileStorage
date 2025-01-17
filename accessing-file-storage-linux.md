@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2024
-lastupdated: "2024-07-22"
+  years: 2014, 2025
+lastupdated: "2025-01-15"
 
 keywords: File Storage for Classic, NFS, mounting File Storage, mounting storage on Linux,
 
@@ -130,7 +130,7 @@ Example
    #vi /etc/idmapd.conf
    [General]
    #Verbosity = 0
-   #The following should be set to the local NFSv4 domain name
+   #The domain value should be set to the local NFSv4 domain name
    #The default is the host's DNS domain name.
    Domain = slnfsv4.com
    [Mapping]

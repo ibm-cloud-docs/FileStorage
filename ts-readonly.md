@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-05-30"
+  years: 2024, 2025
+lastupdated: "2025-01-15"
 
 keywords: file storage for classic, read-only storage volume, offline file share
 
@@ -25,7 +25,7 @@ When you create or manage {{site.data.keyword.filestorage_short}}, you might enc
 After a brief disconnect, the File storage volume appears offline or read-only.
 {: tsSymptoms}
 
-In a few scenarios a host (bare-metal or VM) might lose connection to the storage briefly and as a result, it considers that storage to be read only to avoid data corruption. Most of the time the loss of connectivity is network-related but the status of the storage remains read only from the host's perspective even when the network connection is restored. This issue can be observed with virtual drives of VMs on a network-attached VMware&reg; datastore (NFS protocol).
+In a few scenarios, a host (bare-metal or VM) might lose connection to the storage briefly and as a result, it considers that storage to be read-only to avoid data corruption. Most of the time the loss of connectivity is network-related but the status of the storage remains read only from the host's perspective even when the network connection is restored. This issue can be observed with virtual drives of VMs on a network-attached VMware&reg; datastore (NFS protocol).
 {: tsCauses}
 
 To resolve, confirm that the network path between the Storage and the Host is clear, and that no maintenance or outage is in progress. Then, unmount and mount the storage volume. If the volume is still read only, restart the host.

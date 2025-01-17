@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2024
-lastupdated: "2024-09-04"
+  years: 2014, 2025
+lastupdated: "2025-01-15"
 
 keywords: File Storage for Classic, NFS, upgrade, migrate to new
 
@@ -17,7 +17,7 @@ subcollection: FileStorage
 Enhanced {{site.data.keyword.filestorage_full}} is now available in all [data centers](/docs/overview?topic=overview-locations#data-centers). The preferred migration path is to provision an enhanced {{site.data.keyword.filestorage_short}} volume, then connect to both volumes simultaneously and transfer data directly from one volume to another. The specifics depend on your operating system and whether the data is expected to change during the copy operation.
 {: shortdesc}
 
-All new {{site.data.keyword.filestorage_short}} volumes that are provisioned in these data centers have a different mount point than nonencrypted volumes. To ensure you're using the correct mount point for both storage volumes, you can view the mount point information in the {{site.data.keyword.filestorage_short}} Details page in the console. You can also access the correct mount point through an API call: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
+All new {{site.data.keyword.filestorage_short}} volumes that are provisioned in these data centers have a different mount point than nonencrypted volumes. To make sure that you're using the correct mount point for both storage volumes, you can view the mount point information in the {{site.data.keyword.filestorage_short}} Details page in the console. You can also access the correct mount point through an API call: `SoftLayer_Network_Storage::getNetworkMountAddress()`.
 {: tip}
 
 You don't need to follow this process if your Storage received an upgrade to the Storage-as-a-Service package as part of the ongoing hardware refresh process.
@@ -28,7 +28,7 @@ You don't need to follow this process if your Storage received an upgrade to the
 
 You can order an enhanced volume through the {{site.data.keyword.cloud}} console, from the CLI or with the API. Your new volume must be of the same size or greater than the original file share to facilitate the migration. For more information about provisioning a file share, see [Ordering {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-orderingFileStorage).
 
-When you place an order with API, specify the "Storage-as-a-Service" package to ensure you're getting the updated features with your new storage.
+When you place an order with API, specify the "Storage-as-a-Service" package to get the updated features with your new storage.
 {: important}
 
 When you order a file share, your new storage is available to mount in a few minutes. You can view it in the Resource List and in the {{site.data.keyword.filestorage_short}} list.
