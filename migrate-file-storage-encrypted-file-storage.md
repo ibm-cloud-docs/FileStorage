@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-01-15"
+lastupdated: "2025-01-24"
 
 keywords: File Storage for Classic, NFS, upgrade, migrate to new
 
@@ -69,7 +69,7 @@ When the host is authorized, connect the volume to your host.
 
    When this command completes without the `--dry-run` flag, your data is copied to the new {{site.data.keyword.filestorage_short}} volume. Run the command again to make sure that nothing was missed. You can also manually review both locations to look for anything that might be missing.
 
-   For more information about `rsync`, see the [`rsync` man page](https://download.samba.org/pub/rsync/rsync.html){: external}.
+   For more information about `rsync`, see the [`rsync` man page](https://linux.die.net/man/1/rsync){: external}.
    {: note}
 
 4. When your migration is complete, you can move production to the new volume. Then, you can detach and delete your original volume from your configuration. The deletion also removes any snapshot or replica on the target site that was associated with the original volume.
