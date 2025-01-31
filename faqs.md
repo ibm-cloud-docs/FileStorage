@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-01-15"
+lastupdated: "2025-01-31"
 
 keywords: File Storage for Classic, encryption, security, provisioning, limitations, NFS
 
@@ -54,7 +54,7 @@ That depends on what the host operating system can handle, it’s not something 
 {: faq}
 {: support}
 
-The number of files a volume can contain is determined by how many inodes it has. An inode is a data structure that contains information about files. Volumes have both private and public inodes. Public inodes are used for files that are visible to the customer and private inodes are used for files that are used internally by the storage system. You can expect to have an inode for every 32 KB of volume capacity. The maximum number of files setting is 2 billion. However, this maximum value can be configured only with volumes of 7.8 TB or larger. Any volume of 9,000 GB or larger reaches the maximum limit at 2,040,109,451 inodes.
+The number of files a volume can contain is determined by how many inodes it has. An inode is a data structure that contains information about files. Volumes have both private and public inodes. Public inodes are used for files that are visible to the customer and private inodes are used for files that are used internally by the storage system. You can expect to have an inode for every 32 KB of volume capacity. The setting for maximum number of files is 2 billion. However, this maximum value can be configured only with volumes of 7.8 TB or larger. Any volume of 9,000 GB or larger reaches the maximum limit at 2,040,109,451 inodes.
 
 | Volume Size | Inodes |
 |------------:|-------:|
@@ -176,7 +176,7 @@ Customers with special requirements for compliance such as NIST 800-88 Guideline
 {: faq}
 {: #cancelstorage}
 
-The cancellation process for this storage device is in progress so the Cancel action is no longer available. The volume remains visible for at least 24 hours until it is reclaimed. The UI indicates that it’s inactive and the status "Cancellation pending" is displayed. The minimum 24-hour waiting period gives you a chance to void the cancel request if needed.
+The cancellation process for this storage device is in progress so the Cancel action is no longer available. The volume remains visible for at least 24 hours until it is reclaimed. The UI indicates that it’s inactive and the status "Cancellation pending" is displayed. The minimum 24-hour waiting period gives you a chance to void the cancellation request if needed.
 
 ## Which NFS versions are supported?
 {: faq}
@@ -189,7 +189,14 @@ Use the **NFSv3** protocol when possible. NFSv3 supports safe asynchronous write
 
 NFSv3 natively supports `no_root_squash` that allows root clients to retain root permissions on the NFS share. You can enable this feature in NFSv4.1, by editing the domain information and running the `rpcidmapd` or a similar service. For more information, see [Implementing no_root_squash for NFS](/docs/FileStorage?topic=FileStorage-mountingLinux#norootsquash).
 
-When {{site.data.keyword.filestorage_short}} is used in a VMware&reg; deployment, NFSv4.1 might be the better choice for your implementation. For more information about the different features of each version and what is supported by VMware&reg;, see [NFS Protocols and ESXi](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){: external}.
+When {{site.data.keyword.filestorage_short}} is used in a VMware&reg; deployment, NFSv4.1 might be the better choice for your implementation. For more information, see [Best Practices For Running NFS with VMware vSphere](https://www.vmware.com/docs/best-practices-for-running-nfs-with-vmware-vsphere){: external}.
+
+## Can multiple hosts in my VMware deployment with different NFS protocols access the same file share?
+{: faq}
+{: #vmware-multiple-host-nfs}
+{: support}
+
+No. You can't use different NFS versions to mount the same datastore on multiple hosts. Because NFS 3 and NFS 4.1 clients don't use the same locking protocol. Accessing the same virtual disks from two incompatible clients might result in incorrect behavior and cause data corruption. For more information,, see [NFS File Locking](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-storage-8-0/working-with-datastores-in-vsphere-storage-environment/nfs-datastore-concepts-and-operations-in-vsphere-environment/guidelines-and-requirements-for-nfs-storage-with-esxi/nfs-file-locking.html){: external}.
 
 ## Can VAAI and HW acceleration be enabled in our VMware deployments?
 {: #isVAAIsupported}
@@ -262,7 +269,7 @@ Complete the following steps to disconnect a volume from a host.
 {: faq}
 {: #tier-options}
 
-Endurance and Performance are provisioning options that you can select for storage devices. In short, Endurance IOPS tiers offer predefined performance levels whereas you can fine-tune those levels with the Performance tier. The same devices are used but delivered with different options. For more information, see [File Storage Features](https://www.ibm.com/products/file-storage){: external}.
+Endurance and Performance are provisioning options that you can select for storage devices. In short, Endurance IOPS tiers offer predefined performance levels whereas you can fine-tune those levels with the Performance tier. The same devices are used for storage but delivered with different options. For more information, see [File Storage Features](https://www.ibm.com/products/file-storage){: external}.
 
 ## Can I connect a {{site.data.keyword.filestorage_short}} share to Windows?
 {: faq}
@@ -370,7 +377,7 @@ For more information about duplicates, see [Creating and managing duplicate volu
 
 The conversion process can take some time to complete. The bigger the volume, the longer it takes to convert it. In a 12-TB volume, it might take 24 hours. You can check on the progress in the console or from the CLI.
 
-- in the console, go to [Classic Infrastructure](/gen1/infrastructure/devices){: external}. Click **Storage** > **{{site.data.keyword.filestorage_short}}**, then locate the volume in the list. The conversion status is displayed on the Overview page.
+- In the console, go to [Classic Infrastructure](/gen1/infrastructure/devices){: external}. Click **Storage** > **{{site.data.keyword.filestorage_short}}**, then locate the volume in the list. The conversion status is displayed on the Overview page.
 
 - From the CLI, use the following command.
 

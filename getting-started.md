@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-01-14"
+lastupdated: "2025-01-31"
 
 keywords: File Storage for Classic, NFS, provisioning, setup, configuration, mounting storage
 
@@ -88,7 +88,7 @@ Both NFSv3 and NFSv4.1 are supported in the {{site.data.keyword.cloud}} environm
 
 Use the **NFSv3** protocol when possible. NFSv3 supports safe asynchronous writes and is more robust at error handling than the previous NFSv2. It supports 64-bit file sizes and offsets, allowing clients to access more than 2 GB of file data. NFSv3 natively supports `no_root_squash` that allows root clients to retain root permissions on the NFS share.
 
-When {{site.data.keyword.filestorage_short}} is used in a VMware&reg; deployment, **NFSv4.1** might be the better choice for your implementation. For more information about the different features of each version and what is supported by VMware&reg;, see [NFS Protocols and ESXi](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.storage.doc/GUID-8A929FE4-1207-4CC5-A086-7016D73C328F.html){: external}.
+When {{site.data.keyword.filestorage_short}} is used in a VMware&reg; deployment, **NFSv4.1** might be the better choice for your implementation. For more information about the different features of each version and what is supported by VMware&reg;, see [Best Practices For Running NFS with VMware vSphere](https://www.vmware.com/docs/best-practices-for-running-nfs-with-vmware-vsphere){: external}.
 
 ## Submitting your order
 {: #submitFileStorOrder}

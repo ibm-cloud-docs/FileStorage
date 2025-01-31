@@ -27,7 +27,6 @@ toc:
         topics:
         - accessing-file-storage-linux.md
         - accessing-file-storage-ubuntu.md
-        - architecture-guide-file-storage-vmware.md
     - navgroup:
         id: howto
         topics:
