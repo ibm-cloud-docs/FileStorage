@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-01-31"
+lastupdated: "2025-02-03"
 
 keywords: File Storage for Classic, NFS, provisioning, setup, configuration, mounting storage
 
@@ -94,7 +94,7 @@ When {{site.data.keyword.filestorage_short}} is used in a VMware&reg; deployment
 {: #submitFileStorOrder}
 {: step}
 
-When you're ready to submit your order, you can place it in the [Console](/docs/FileStorage?topic=FileStorage-orderingFileStorage&interface=ui#orderingFileStorageUI), from the [CLI](/docs/FileStorage?topic=FileStorage-orderingFileStorage&interface=cli#orderingthroughCLI), with the [API](/docs/FileStorage?topic=FileStorage-orderingFileStorage&interface=api#orderingthroughAPI) or with [Terraform](/docs/FileStorage?topic=FileStorage-orderingFileStorage&interface=terraform#orderingthroughTerraform). For more information about provisioning File Storage for VMware&reg; deployments, see the [architecture guide](/docs/FileStorage?topic=FileStorage-architectureguide).
+When you're ready to submit your order, you can place it in the [Console](/docs/FileStorage?topic=FileStorage-orderingFileStorage&interface=ui#orderingFileStorageUI), from the [CLI](/docs/FileStorage?topic=FileStorage-orderingFileStorage&interface=cli#orderingthroughCLI), with the [API](/docs/FileStorage?topic=FileStorage-orderingFileStorage&interface=api#orderingthroughAPI) or with [Terraform](/docs/FileStorage?topic=FileStorage-orderingFileStorage&interface=terraform#orderingthroughTerraform).
 
 By default, you can provision a combined total of 700 Block and {{site.data.keyword.filestorage_short}} volumes. For more information, see [Managing storage limits](/docs/FileStorage?topic=FileStorage-managinglimits).
 {: note}
@@ -107,7 +107,6 @@ When your provisioning request is complete, authorize your hosts to access the n
 - [Mounting {{site.data.keyword.filestorage_short}} on Red Hat Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingLinux)
 - [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/FileStorage?topic=FileStorage-mountingCentOS)
 - [Mounting {{site.data.keyword.filestorage_short}} on Ubuntu](/docs/FileStorage?topic=FileStorage-mountingUbuntu)
-- [Mounting {{site.data.keyword.filestorage_short}} as a VMware&reg; datastore on ESXi hosts](/docs/FileStorage?topic=FileStorage-architectureguide)
 - [Configuring {{site.data.keyword.filestorage_short}} for backup with cPanel](/docs/FileStorage?topic=FileStorage-cPanelBackups)
 - [Configuring {{site.data.keyword.filestorage_short}} for backup with Plesk](/docs/FileStorage?topic=FileStorage-PleskBackup)
 
