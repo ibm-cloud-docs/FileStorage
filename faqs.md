@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-02-03"
+lastupdated: "2025-02-10"
 
 keywords: File Storage for Classic, encryption, security, provisioning, limitations, NFS
 
@@ -188,7 +188,7 @@ Use the **NFSv3** protocol when possible. NFSv3 supports safe asynchronous write
 
 NFSv3 natively supports `no_root_squash` that allows root clients to retain root permissions on the NFS share. You can enable this feature in NFSv4.1, by editing the domain information and running the `rpcidmapd` or a similar service. For more information, see [Implementing no_root_squash for NFS](/docs/FileStorage?topic=FileStorage-mountingLinux#norootsquash).
 
-When {{site.data.keyword.filestorage_short}} is used in a VMware&reg; deployment, NFSv4.1 might be the better choice for your implementation. For more information, see [Best Practices For Running NFS with VMware vSphere](https://www.vmware.com/docs/best-practices-for-running-nfs-with-vmware-vsphere){: external}.
+When {{site.data.keyword.filestorage_short}} is used in a VMware&reg; deployment, NFSv4.1 might be the better choice for your implementation. For more information, see [Best Practices For Running NFS with VMware vSphere](https://www.vmware.com/docs/vmw-best-practices-running-nfs-vmware-vsphere){: external}.
 
 ## Can multiple hosts in my VMware deployment with different NFS protocols access the same file share?
 {: faq}
