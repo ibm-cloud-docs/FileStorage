@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2024
-lastupdated: "2024-11-12"
+  years: 2014, 2025
+lastupdated: "2025-02-17"
 
 keywords: File Storage for Classic, NSF, networking, jumbo frames
 
@@ -20,7 +20,7 @@ A jumbo frame is an Ethernet frame with a payload greater than the standard maxi
 Jumbo frames need to be configured the same on the entire network path: source device > switch > router > switch > destination device. If the entire chain isn't set the same, it defaults to the lowest setting along the chain. {{site.data.keyword.cloud}} has network devices set to 9,000 currently. For best performance, all customer devices need to be set to the same 9,000 value.
 {: important}
 
-## Enabling Jumbo Frames
+## Enabling Jumbo Frames in Linux
 {: #enablejumbo}
 
 1. Edit the network configuration file for eth0 interface.
@@ -53,6 +53,11 @@ Jumbo frames need to be configured the same on the entire network path: source d
 
    This action causes a brief loss of network connectivity.
    {: attention}
+
+## Enabling Jumbo Frames in VMware vSphere
+{: #enablejumbovmware}
+
+For more information, see [VMware vSphere 8.0 - Enabling Jumbo Frames](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-networking-8-0/managing-network-resources/enabling-jumbo-frames.html){: external} and [Jumbo Frames configuration on VMware ESXi/ESX](https://knowledge.broadcom.com/external/article?articleNumber=318937){: external}.
 
 ## Related information
 {: #related-info}

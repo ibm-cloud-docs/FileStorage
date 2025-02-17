@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-02-03"
+lastupdated: "2025-02-15"
 
 keywords: file storage for classic, read-only storage volume, offline file share
 
@@ -42,3 +42,4 @@ To prevent this situation from recurring, the customer might consider the follow
 - Reconfiguring Host systems that use NFSv4.1 for NFSv3 for increased resilience during maintenance operations.
 - Discontinuing session trunking on host systems that run VMware&reg; ESXi. Session trunking is not supported and is known to cause disruptions.
  
+For more information, see [Why did my host lose connection to my NFS datastore?](/docs/vmwaresolutions?topic=vmwaresolutions-trbl_esxi_firewall_config_nfs){: external}.
