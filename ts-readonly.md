@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-02-15"
+lastupdated: "2025-02-17"
 
 keywords: file storage for classic, read-only storage volume, offline file share
 
@@ -37,7 +37,6 @@ For mounting instructions, see the following topics.
 - [Mounting {{site.data.keyword.filestorage_short}} on Ubuntu](/docs/FileStorage?topic=FileStorage-mountingUbuntu)
 
 To prevent this situation from recurring, the customer might consider the following actions:
-- Increasing disk timeout values. For more information, see [VMware&reg; KB - Increasing the disk timeout values for a Linux&reg; 2.6 virtual machine](https://knowledge.broadcom.com/external/article?legacyId=1009465){: external}.
 - Adding guest OS tunings. For more information, see [NetApp's recommendations for guest OS tunings for a VMware&reg; vSphere deployment](https://kb.netapp.com/data-mgmt/OTV/VSC_Kbs/What_are_the_guest_OS_tunings_needed_for_a_VMware_vSphere_deployment){: external}.
 - Reconfiguring Host systems that use NFSv4.1 for NFSv3 for increased resilience during maintenance operations.
 - Discontinuing session trunking on host systems that run VMware&reg; ESXi. Session trunking is not supported and is known to cause disruptions.
