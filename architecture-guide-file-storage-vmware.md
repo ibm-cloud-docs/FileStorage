@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-02-18"
+lastupdated: "2025-02-20"
 
 keywords: Classic File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
@@ -94,11 +94,11 @@ Before you begin the configuration process, make sure that the following require
 {: #configurevmwarehost1}
 
 To enable access to NFS storage, ESXi automatically opens firewall ports for the NFS clients when you mount an NFS datastore. For troubleshooting reasons, you might need to verify that the ports are open.
-1. In the vSphere Client, go to the ESXi host.
-1. Click the **Configure** tab.
-1. Under **System**, click **Firewall**, and click **Edit**.
+
+1. In the vSphere Client, select the ESXi host.
+1. Go to **Manage > Settings > Security Profile** and click **Edit**.
 1. Scroll down to an appropriate version of NFS to make sure that the port is open.
-    ![NFS Port information](images/1_4.svg){: caption="NFS Port information - Allow connection from any IP address." caption-side="bottom"}
+    ![The image shows the Edit Security Profile window. The NFS Client service is selected. The image shows that all connections from any IP addresses are allowed.](images/1_4.svg){: caption="NFS Port information - Allow connection from any IP address." caption-side="bottom"}
 
 For more information, see the [VMware vSphere 8.0 - Configuring ESXi Firewall](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-security-8-0/securing-esxi-hosts/customizing-hosts-with-the-security-profile/esxi-firewall-configuration.html){: external} and [VMware vSphere 8.0 - NFS Client Firewall Behavior](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-storage-8-0/working-with-datastores-in-vsphere-storage-environment/nfs-datastore-concepts-and-operations-in-vsphere-environment/guidelines-and-requirements-for-nfs-storage-with-esxi/firewall-configuration-for-nfs-storage-with-esxi.html#GUID-70686ADB-961A-46BD-B814-48DCF6C5E34B-en){: external}.
 
@@ -142,7 +142,7 @@ For more information, see [VMware vSphere 8.0 - Enabling Jumbo Frames](https://t
 1. Click **Add adapters**, select one or more network adapters from the list and click **OK**.
 1. The selected adapters appear in the failover group list under the **Assigned adapters** list.
 1. Use the up and down arrows to change the position of an adapter in the failover groups. The failover group determines the role of the adapter for exchanging data with the external network, that is, active, standby or unused. By default, the adapters are added as active to the standard switch.
-   ![Add physical adapters to the switch.](images/2_3.svg){: caption="Add the physical adapters to the switch." caption-side="bottom"}
+   ![The Add physical adapters to the switch screen is shown with 3 active network adapters already in the list.](images/2_3.svg){: caption="Add the physical adapters to the switch." caption-side="bottom"}
 1. Click **OK** to apply the physical adapter configuration.
 1. Return to **Virtual switches**, and click **Edit setting**.
 1. Expand **NIC teaming**.
@@ -243,7 +243,7 @@ For more information, see [Attached storage infrastructure design](/docs/vmwares
 3. Click **Settings** and click **General**.
 4. Click **Edit** for **Datastore Capabilities**.
 5. Select the **Enable Storage I/O Control** checkbox.
-    ![NSF VMware&reg; datastore.](images/3_0.svg){: caption="Select Enable Storage I/O Control." caption-side="bottom"}
+    ![The image shows the NSF VMware&reg; datastore - Configure I/O control screen.Enable Storage I/O Control option is selected.](images/3_0.svg){: caption="Select Enable Storage I/O Control." caption-side="bottom"}
 6. Click **OK**.
 
 For more information about how to Enable Storage I/O Control, see [VMware vSphere 8.0 - Manage Storage I/O Resources with vSphere](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-resource-management-8-0/managing-storage-i-o-resources.html){: external}.
