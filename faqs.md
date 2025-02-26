@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-02-18"
+lastupdated: "2025-02-26"
 
 keywords: File Storage for Classic, encryption, security, provisioning, limitations, NFS
 
@@ -390,3 +390,12 @@ The conversion process can take some time to complete. The bigger the volume, th
    Username            Active Conversion Start Timestamp   Completed Percentage
    SL02SEVC307608_74   2022-06-13 14:59:17                 90
    ```
+
+## How do I manage user permissions and access?
+{: #access_mgmt}
+
+The account owner, or a user with the "Manage user classic infrastructure" permission, can adjust the permissions for other users within the IBM Cloud account. If you are not the account owner, you can assign only the level of permissions or a subset of the permission that you're already assigned. In the IBM Cloud console, go to **Manage > Access (IAM) > Users**. Then, select a user's name from the list that you can manage access for, and click **Classic infrastructure**. Select **Account** permissions to allow the user to add and upgrade storage. For more information, see [Managing classic infrastructure access](/docs/account?topic=account-mngclassicinfra).
+
+When the file storage is provisioned, the host servers need to be authorized to be able to mount the file share. For more information, see Authorizing hosts section in [Managing File Storage for Classic](/docs/FileStorage?topic=FileStorage-managingstorage).
+
+After the host is authorized, you can mount the file share and assign owners to your new folder structure and files. In Linux, you can refine access control by using the `chown` and `chmod` commands to assign read, write, and execute permissions to individual users and groups. For more information, see [Mounting {{site.data.keyword.filestorage_short}} on Red Hat Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingLinux) and [Mounting {{site.data.keyword.filestorage_short}} on Ubuntu](/docs/FileStorage?topic=FileStorage-mountingUbuntu).

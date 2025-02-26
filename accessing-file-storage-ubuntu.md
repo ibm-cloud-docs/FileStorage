@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2024
-lastupdated: "2024-07-22"
+  years: 2014, 2025
+lastupdated: "2025-02-26"
 
 keywords: File Storage for Classic, NFS, mounting File Storage, mounting storage on Ubuntu,
 
@@ -120,6 +120,11 @@ Before you begin, make sure that the host that is to access the {{site.data.keyw
 
    If you're using NFS 4.1, add `sec=sys` to the mount command to prevent file ownership issues.
    {: tip}
+
+### Managing user permissions to the content of the mounted file share
+{: #ubuntu-user-group=permissions}
+
+As a system administrator, you can manage the access to data on the mounted file storage volume. After the file share is mounted, you can refine access control by using the `chown` and `chmod` commands to assign read, write, and execute permissions to individual users and groups. For more information, see [Ubuntu Server documentation: User management](https://documentation.ubuntu.com/server/how-to/security/user-management/index.html){: external}.
 
 ## Unmounting the file system
 {: #umountUbuntu}

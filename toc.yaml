@@ -64,6 +64,7 @@ toc:
             topics:
             - availability.md
             - data-security.md
+            - include: ../infrastructure-hub/encryption-classic-infra.md
     - navgroup:
         id: reference
         topics:

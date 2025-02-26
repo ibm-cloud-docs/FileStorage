@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-02-20"
+lastupdated: "2025-02-26"
 
 keywords: Classic File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
@@ -94,7 +94,6 @@ Before you begin the configuration process, make sure that the following require
 {: #configurevmwarehost1}
 
 To enable access to NFS storage, ESXi automatically opens firewall ports for the NFS clients when you mount an NFS datastore. For troubleshooting reasons, you might need to verify that the ports are open.
-
 1. In the vSphere Client, select the ESXi host.
 1. Go to **Manage > Settings > Security Profile** and click **Edit**.
 1. Scroll down to an appropriate version of NFS to make sure that the port is open.
