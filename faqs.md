@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-02-26"
+lastupdated: "2025-02-27"
 
 keywords: File Storage for Classic, encryption, security, provisioning, limitations, NFS
 
@@ -11,7 +11,7 @@ subcollection: FileStorage
 ---
 {{site.data.keyword.attribute-definition-list}}
 
-# FAQs for {{site.data.keyword.filestorage_short}}
+# FAQ for {{site.data.keyword.filestorage_short}}
 {: #file-storage-faqs}
 
 ## How can I tell which of my {{site.data.keyword.filestorage_short}} volumes are encrypted?
