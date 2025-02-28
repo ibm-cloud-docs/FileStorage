@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2024
-lastupdated: "2024-10-17"
+  years: 2014, 2025
+lastupdated: "2025-02-28"
 
 keywords: File Storage for Classic, NFS, authorizing hosts, revoke access, grant access, view authorizations
 
@@ -18,16 +18,25 @@ subcollection: FileStorage
 You can manage your {{site.data.keyword.filestorage_full}} volumes through the {{site.data.keyword.cloud}} console and from the CLI.
 {: shortdesc}
 
-## Authorizing hosts to access {{site.data.keyword.filestorage_short}} in the console
+## Authorizing hosts to access {{site.data.keyword.filestorage_short}}
+{: #managestorage-authhost}
+{: help}
+{: support}
+
+“Authorized” hosts are hosts that were given access to a particular volume. Without host authorization, you can't access or use the storage from your system. Authorizing a host to access your volume generates the username and password.
+
+ou can authorize and connect hosts that are located in the same data center as your storage. You can have multiple accounts, but you can't authorize a host from one account to access your storage on another account.
+{: important}
+
+You can authorize up to 64 servers to access the file share. This limit includes all subnet, host, and IP authorizations combined. For more information about increasing this limit, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs#authlimit).
+
+After the host is authorized, you can mount the file share and assign owners to your new folder structure and files. In Linux, you can refine access control by using the `chown` and `chmod` commands to assign read, write, and execute permissions to individual users and groups. For more information, see [Mounting {{site.data.keyword.filestorage_short}} on Red Hat Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingLinux) and [Mounting {{site.data.keyword.filestorage_short}} on Ubuntu](/docs/FileStorage?topic=FileStorage-mountingUbuntu).
+
+### Authorizing hosts to access {{site.data.keyword.filestorage_short}} in the console
 {: #authhostUI}
 {: help}
 {: support}
 {: ui}
-
-“Authorized” hosts are hosts that were given access to a particular volume. Without host authorization, you can't access or use the storage from your system. Authorizing a host to access your volume generates the username and password.
-
-You can authorize and connect hosts that are located in the same data center as your storage. You can have multiple accounts, but you can't authorize a host from one account to access your storage on another account.
-{: important}
 
 1. Go to the [{{site.data.keyword.cloud}} console](/login){: external}. From the menu, select **Infrastructure**  ![VPC icon](../icons/vpc.svg) > **Classic Infrastructure**.
 2. Click **Storage** > **{{site.data.keyword.filestorage_short}}**, and click your **Volume Name**.
@@ -40,25 +49,22 @@ You can authorize and connect hosts that are located in the same data center as 
 
 6. Select one or more hosts from the list and click **Save**.
 
-You can authorize up to 64 servers to access the file share. This limit includes all subnet, host, and IP authorizations combined. For more information about increasing this limit, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs#authlimit).
-
-## Authorizing hosts to access {{site.data.keyword.filestorage_short}} from the CLI
+### Authorizing hosts to access {{site.data.keyword.filestorage_short}} from the CLI
 {: #authhostCLI}
 {: help}
 {: support}
 {: cli}
-
-“Authorized” hosts are hosts that were given access to a particular volume. Without host authorization, you can't access or use the storage from your system. Authorizing a host to access your volume generates the username and password.
 
 Before you begin, decide on the CLI client that you want to use.
 
 * You can either install the [IBM Cloud CLI](/docs/cli){: external} and install the SL plug-in with `ibmcloud plugin install sl`. For more information, see [Extending IBM Cloud CLI with plug-ins](/docs/cli?topic=cli-plug-ins).
 * Or, you can install the [SLCLI](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}.
 
-You can authorize up to 64 servers to access the file share. This limit includes all subnet, host, and IP authorizations combined. For more information about increasing this limit, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs#authlimit).
-
-### Authorizing hosts from the IBMCLOUD CLI
+#### Authorizing hosts from the IBMCLOUD CLI
 {: #authhostICCLI}
+{: help}
+{: support}
+{: cli}
 
 Use the `ibmcloud sl file access-authorize` command to authorize a host to access the file share. The following example authorizes the virtual server instance `87654321` to mount the file share `12345678`.
 
@@ -69,8 +75,11 @@ ibmcloud sl file access-authorize 12345678 --virtual-id 87654321
 
 For more information about all of the parameters that are available for this command, see [ibmcloud sl file access-authorize](/docs/cli?topic=cli-sl-file-storage-service#sl_file_access_authorize){: external}.
 
-### Authorizing hosts from the SLCLI
+#### Authorizing hosts from the SLCLI
 {: #authhostSLCLI}
+{: help}
+{: support}
+{: cli}
 
 To authorize a host to access the volume, you can use the following command.
 ```sh
@@ -86,11 +95,9 @@ Options:
   --help                    Show this message and exit.
 ```
 
-## Authorizing the host with Terraform
+### Authorizing the host with Terraform
 {: #authhostterraform}
 {: terraform}
-
-“Authorized” hosts are hosts that were given access to a particular volume. Without host authorization, you can't access or use the storage from your system. Authorizing a host to access your volume generates the username and password.
 
 To authorize a Compute host to access the share, use the `ibm_storage_file` resource and specify the `allowed_virtual_guest_ids` for virtual servers, or `allowed_hardware_ids` for bare metal servers. Specify `allowed_ip_addresses` to define which IP addresses have access to the storage. 
 
@@ -115,8 +122,6 @@ resource "ibm_storage_file" "fs_endurance" {
 After your storage resource is created, you can access the `hostname` and `volumename` attributes, which you can use to determine the mount target later. For example, a File Storage resource with the `hostname` argument set to `nfsdal0901a.service.softlayer.com` and the `volumename` argument set to `IBM01SV278685_7` has the mount point `nfsdal0901a.service.softlayer.com:-IBM01SV278685_7`.
 
 For more information about the arguments and attributes, see [ibm_storage_file](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/storage_file){: external}.
-
-You can authorize up to 64 servers to access the file share. This limit includes all subnet, host, and IP authorizations combined. For more information about increasing this limit, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs#authlimit).
 
 ## Viewing the list of hosts that are authorized to access a {{site.data.keyword.filestorage_short}} volume in the console
 {: #viewhostUI}
