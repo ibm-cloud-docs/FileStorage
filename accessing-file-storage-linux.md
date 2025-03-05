@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-02-26"
+lastupdated: "2025-03-05"
 
 keywords: File Storage for Classic, NFS, mounting File Storage, mounting storage on Linux,
 
@@ -113,7 +113,7 @@ Before you begin, make sure that the host that is to access the {{site.data.keyw
    If your host OS is CentOS, you can configure more options. For more information, see [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/FileStorage?topic=FileStorage-mountingCentOS).
 
 ### Managing user permissions to the content of the mounted file share
-{: #rhel-user-group=permissions}
+{: #rhel-user-group-permissions}
 
 As a system administrator, you can manage the access to data on the mounted file storage volume. After the file share is mounted, you can refine access control by using the `chown` and `chmod` commands to assign read, write, and execute permissions to individual users and groups. For more information, see [Red Hat's tutorial: How to manage Linux permissions for users, groups, and others](https://www.redhat.com/en/blog/manage-permissions){: external}.
 
