@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-01-14"
+lastupdated: "2025-03-06"
 
 keywords: File Storage for Classic, NFS, Plesk, backups
 
@@ -17,7 +17,7 @@ subcollection: FileStorage
 You can use these instructions to configure {{site.data.keyword.filestorage_full}} for your backups in Plesk. The assumption is that root or sudo SSH and full admin level Plesk access are available.
 {: shortdesc}
 
-For more information, see [(Plesk for Linux) Storing Backups and Website Files on a Remote Server using NFS](https://docs.plesk.com/en-US/obsidian/administrator-guide/backing-up-and-restoration/plesk-for-linux-storing-backups-and-website-files-on-a-remote-server-using-nfs.80016/){: external}.
+For more information, see [(Plesk for Linux) Storing backups and website files on a remote server by using NFS](https://docs.plesk.com/en-US/obsidian/administrator-guide/backing-up-and-restoration/plesk-for-linux-storing-backups-and-website-files-on-a-remote-server-using-nfs.80016/){: external}.
 {: tip}
 
 1. Connect to the host through SSH.

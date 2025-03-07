@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-02-26"
+lastupdated: "2025-03-06"
 
 keywords: Classic File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
@@ -242,7 +242,7 @@ For more information, see [Attached storage infrastructure design](/docs/vmwares
 3. Click **Settings** and click **General**.
 4. Click **Edit** for **Datastore Capabilities**.
 5. Select the **Enable Storage I/O Control** checkbox.
-    ![The image shows the NSF VMware&reg; datastore - Configure I/O control screen.Enable Storage I/O Control option is selected.](images/3_0.svg){: caption="Select Enable Storage I/O Control." caption-side="bottom"}
+    ![The image shows the NSF VMware&reg; datastore - Configure I/O control screen. Enable Storage I/O Control option is selected.](images/3_0.svg){: caption="Select Enable Storage I/O Control." caption-side="bottom"}
 6. Click **OK**.
 
 For more information about how to Enable Storage I/O Control, see [VMware vSphere 8.0 - Manage Storage I/O Resources with vSphere](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-resource-management-8-0/managing-storage-i-o-resources.html){: external}.

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2024
-lastupdated: "2024-07-22"
+  years: 2018, 2025
+lastupdated: "2025-03-06"
 
 keywords: File Storage for Classic, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
@@ -54,7 +54,7 @@ Before you proceed with these steps, disconnect the volume. Failure to do so res
 5. In the list, locate your shares. If you have multiple pages, you might need to go to the next page to see the shares.
 6. The status of your source and replica shares is displayed as 'Failback in progress'. Additionally, an icon appears next to your volume on the **{{site.data.keyword.filestorage_short}}** that indicates that an active transaction is occurring. Hovering over the icon produces a window that shows the transaction details. The icon disappears when the transaction is complete. 
    
-    During the failover process, configuration-related actions are read only. You can't edit any snapshot schedule or change snapshot space. The event is logged in replication history. When your target volume is live, you get another message. Your original source volume's Status becomes Inactive.
+    During the failover process, configuration-related actions are read-only. You can't edit any snapshot schedule or change snapshot space. The event is logged in replication history. When your target volume is live, you get another message. Your original source volume's Status becomes Inactive.
     {: note}
 
 7. Refresh the page in your browser. When the transaction is complete, your replica volume has **Active** status, and your original source volume becomes **Inactive**.
@@ -98,7 +98,7 @@ $ slcli file replica-failover --help
 ```
 {: codeblock}
 
-During the failover process, configuration-related actions are read only. You can't edit any snapshot schedule or change snapshot space. The event is logged in replication history. When your target volume is live, you get another message. Your original source volume's Status becomes Inactive.
+During the failover process, configuration-related actions are read-only. You can't edit any snapshot schedule or change snapshot space. The event is logged in replication history. When your target volume is live, you get another message. Your original source volume's Status becomes Inactive.
 {: note}
 
 ## Starting a failback from a volume to its replica
@@ -128,7 +128,7 @@ Failbacks are started under **Storage**, **{{site.data.keyword.filestorage_short
 6. In the list, locate your shares. If you have multiple pages, you might need to go to the next page to see the shares.
 7. The status of your source and replica shares is displayed as 'Failback in progress'. Additionally, an icon appears next to your volume on the **{{site.data.keyword.filestorage_short}}** that indicates that an active transaction is occurring. Hovering over the icon produces a window that shows the transaction details. The icon disappears when the transaction is complete. 
 
-    During the failback process, configuration-related actions are read only. You can't edit any snapshot schedule or change snapshot space. The event is logged in replication history.
+    During the failback process, configuration-related actions are read-only. You can't edit any snapshot schedule or change snapshot space. The event is logged in replication history.
     {: note}
 
 8. Refresh the page in your browser. When the transaction is complete, the original source share is shown as **Active**, and the replica share has an **Inactive** status.
@@ -166,5 +166,5 @@ $ slcli file replica-failback --help
 ```
 {: codeblock}
 
-During the failback process, configuration-related actions are read only. You can't edit any snapshot schedule or change snapshot space. The event is logged in replication history.
+During the failback process, configuration-related actions are read-only. You can't edit any snapshot schedule or change snapshot space. The event is logged in replication history.
 {: note}
