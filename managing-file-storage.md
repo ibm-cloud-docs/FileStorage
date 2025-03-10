@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-02-28"
+lastupdated: "2025-03-10"
 
 keywords: File Storage for Classic, NFS, authorizing hosts, revoke access, grant access, view authorizations
 
@@ -18,12 +18,73 @@ subcollection: FileStorage
 You can manage your {{site.data.keyword.filestorage_full}} volumes through the {{site.data.keyword.cloud}} console and from the CLI.
 {: shortdesc}
 
+## Viewing the list of {{site.data.keyword.filestorage_short}} volumes in the console
+{: #managestorage-view-ui}
+{: ui}
+
+You can view your volumes from the Resources list or by going to the list of {{site.data.keyword.filestorage_short}} volumes.
+
+1. Go to the [{{site.data.keyword.cloud}} console](/login){: external}. From the menu, select **Infrastructure**  ![VPC icon](../icons/vpc.svg) > **Classic Infrastructure**.
+2. Click **Storage** > **{{site.data.keyword.filestorage_short}}**,
+
+## Viewing the list of {{site.data.keyword.filestorage_short}} volumes from the CLI
+{: #managestorage-view-cli}
+{: cli}
+
+Before you begin, decide on the CLI client that you want to use.
+
+* You can either install the [IBM Cloud CLI](/docs/cli){: external} and install the SL plug-in with `ibmcloud plugin install sl`. For more information, see [Extending IBM Cloud CLI with plug-ins](/docs/cli?topic=cli-plug-ins).
+* Or, you can install the [SLCLI](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}.
+
+### Viewing the list of volumes from the IBMCLOUD CLI
+{: #managestorage-view-iccli}
+{: cli}
+
+To get the list of your {{site.data.keyword.filestorage_short}} from the IBMCLOUD CLI, use the `ibmcloud sl file volume-list` command. The following example lists all endurance volumes on current account that are located in dal13, and sorts them by capacity.
+
+```sh
+ibmcloud sl file volume-list -d dal13 -t endurance --sortby capacity_gb
+id          username          datacenter  storage_type            capacity_gb   bytes_used   IOPs   ip_addr   lunId active_transactions   rep_partner_count   notes
+20973781    IBM02SEL1575811-1 dal13      endurance_file_storage   100           -            4      -         3 -                     0                   -
+22030583    IBM02SEL1575811-3 dal13      endurance_file_storage   20            -            4      -         0 -                     0                   -
+```
+{: screen}
+
+For more information about all of the parameters that are available for this command, see [ibmcloud sl file volume-list](/docs/cli?topic=cli-sl-file-storage-service&interface=cli#sl_file_volume_list){: external}.
+
+### Viewing the list of volumes from the SL CLI
+{: #managestorage-view-slcli}
+{: cli}
+
+To get the list of your {{site.data.keyword.filestorage_short}} from the SL CLI, use the `slcli file volume-list` command.
+
+```sh
+$ slcli file volume-list --help
+Usage: slcli file volume-list [OPTIONS]
+
+        List file storage.
+
+Example::
+        slcli file volume-list -d dal10 --storage-type endurance --sortby capacity_gb
+
+┌────┬────────────────┬──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ -u │ --username     │ Volume username                                                                                                                                                              │
+│ -d │ --datacenter   │ Datacenter shortname                                                                                                                                                         │
+│ -o │ --order        │ Filter by ID of the order that purchased the block storage                                                                                                                   │
+│    │ --storage-type │ Type of storage volume Choices: performance, endurance                                                                                                                       │
+│    │ --sortby       │ Column to sort by                                                                                                                                                            │
+│    │ --columns      │ Columns to display. Options: id, username, datacenter, storage_type, capacity_gb, bytes_used, ip_addr, active_transactions, mount_addr, rep_partner_count, created_by, notes │
+│ -h │ --help         │ Show this message and exit.                                                                                                                                                  │
+└────┴────────────────┴──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+```
+{: screen}
+
 ## Authorizing hosts to access {{site.data.keyword.filestorage_short}}
 {: #managestorage-authhost}
 {: help}
 {: support}
 
-“Authorized” hosts are hosts that were given access to a particular volume. Without host authorization, you can't access or use the storage from your system. Authorizing a host to access your volume generates the username and password.
+“Authorized” hosts are hosts that are given access to a particular volume. Without host authorization, you can't access or use the storage from your system. Authorizing a host to access your volume generates the username and password.
 
 You can authorize and connect hosts that are located in the same data center as your storage. You can have multiple accounts, but you can't authorize a host from one account to access your storage on another account.
 {: important}
@@ -55,11 +116,6 @@ After the host is authorized, you can mount the file share and assign owners to 
 {: support}
 {: cli}
 
-Before you begin, decide on the CLI client that you want to use.
-
-* You can either install the [IBM Cloud CLI](/docs/cli){: external} and install the SL plug-in with `ibmcloud plugin install sl`. For more information, see [Extending IBM Cloud CLI with plug-ins](/docs/cli?topic=cli-plug-ins).
-* Or, you can install the [SLCLI](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}.
-
 #### Authorizing hosts from the IBMCLOUD CLI
 {: #authhostICCLI}
 {: help}
@@ -81,7 +137,7 @@ For more information about all of the parameters that are available for this com
 {: support}
 {: cli}
 
-To authorize a host to access the volume, you can use the following command.
+To authorize a host to access the volume, you can use the `slcli file access-authorize` command.
 ```sh
 $ slcli file access-authorize --help
 Usage: slcli file access-authorize [OPTIONS] VOLUME_ID
@@ -132,7 +188,7 @@ For more information about the arguments and attributes, see [ibm_storage_file](
 1. Go to the [{{site.data.keyword.cloud}} console](/login){: external}. From the menu, select **Infrastructure**  ![VPC icon](../icons/vpc.svg) > **Classic Infrastructure**.
 1. Click **Storage** > **{{site.data.keyword.filestorage_short}}**, and click your **Volume Name**.
 1. Click **Authorized Hosts** to display the Compute instances that have access to your file share.
-1. Click the ellipsis ![Actions icon](../icons/action-menu-icon.svg "Actions") and select **View host details**. A side panel is displayed with details like device name, IP address, username and password. The Access Control List section is also displayed. You can add or remove subnets in this section.
+1. Click the ellipsis ![Actions icon](../icons/action-menu-icon.svg "Actions") and select **View host details**. A side panel is displayed with details like device name, IP address, username, and password. The Access Control List section is also displayed. In the Access Control List section, you can add or remove subnets.
  
 The Target address is listed on the **Storage Detail** page. For NFS, the Target address is described as a DNS name, and for iSCSI, it's the IP address of the Discover Target Portal.
 {: tip}
