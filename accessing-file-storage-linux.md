@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-03-05"
+lastupdated: "2025-03-14"
 
 keywords: File Storage for Classic, NFS, mounting File Storage, mounting storage on Linux,
 
@@ -44,22 +44,27 @@ Before you begin, make sure that the host that is to access the {{site.data.keyw
    ```
    {: pre}
 
+1. Obtain the mount point information from the {{site.data.keyword.filestorage_short}} Details page in the console, with an API call (`SoftLayer_Network_Storage::getNetworkMountAddress()`), or by looking at the `ibm_storage_file` resource in Terraform.
+
 1. Mount the remote share.
    ```sh
    # mount -t nfs -o <options> <host:mount_point> /mnt
    ```
+   {: pre}
 
    Example for `storage_as_a_service` volumes.
    ```text
    #mount -t nfs -o nfsvers=3 fsf-wdc0403a-fz.service.softlayer.com:/IBM02SEV1414935_66/data01 /mnt
    ```
+   {: screen}
 
    Example for `enterprise` volumes.
    ```text
    # mount -t nfs -o nfsvers=3 nfshou0201d-fz.service.softlayer.com:/IBM01SEV1414935_2 /mnt
    ```
+   {: screen}
 
-   The mount point information can be obtained from the {{site.data.keyword.filestorage_short}} Details page in the console, with an API call - `SoftLayer_Network_Storage::getNetworkMountAddress()`, or by looking at the `ibm_storage_file` resource in Terraform.
+   If you're using NFS 4.1, add `sec=sys` to the mount command to prevent file ownership issues. If you're using NFSv3 or NFS 4.1, add `_netdev` to wait for the storage to be mounted after all network components are started. For more information about the `mount` command and its options, see the [mount(8) manual page](https://man7.org/linux/man-pages/man8/mount.8.html){: external}.
    {: tip}
 
 1. Verify that the mount was successful by using the disk file system command.
@@ -70,6 +75,7 @@ Before you begin, make sure that the host that is to access the {{site.data.keyw
    /tmpfs     1.9G     0 1.9G    0%   /dev/shm
    /dev/xvda1 97M    51M  42M   55%
    ```
+   {: screen}
 
 1. Go to the mount point, and read/write files.
    ```text
@@ -80,6 +86,7 @@ Before you begin, make sure that the host that is to access the {{site.data.keyw
    dr-xr-xr-x. 22 root   root   4096 Sep 8 14:30 ..
    -rw-r--r--   1 nobody nobody    0 Sep 8 15:52 test
    ```
+   {: screen}
 
    The files that are created by root have ownership of `nobody:nobody`. To display ownership correctly, the `idmapd.conf` needs to be updated with the correct domain settings. For more information, see the [Implementing `no_root_squash` for NFS (optional)](#norootsquash) section.
    {: tip}
@@ -96,7 +103,11 @@ Before you begin, make sure that the host that is to access the {{site.data.keyw
    fsf-wdc0403a-fz.service.softlayer.com:/IBM02SEV1414935_66/data01 /mnt nfs nfsvers=3 0 0
    fsf-wdc0403a-fz.service.softlayer.com:/IBM02SEV1414935_66/data01 /mnt nfs options 0 0
    fsf-wdc0403a-fz.service.softlayer.com:/IBM02SEV1414935_66/data01 /mnt nfs4 options 0 0
+   fsf-wdc0403a-fz.service.softlayer.com:/IBM02SEV1414935_66/data01 /mnt nfs _netdev,nfsvers=3 0 0
    ```
+   {: screen}
+
+   For more information, see [An introduction to the Linux `/etc/fstab` file](https://www.redhat.com/en/blog/etc-fstab){: external}.
 
 6. Verify that the configuration file has no errors.
 
@@ -106,9 +117,6 @@ Before you begin, make sure that the host that is to access the {{site.data.keyw
    {: pre}
 
    If the command completes with no errors, your setup is complete.
-
-   If you're using NFS 4.1, add `sec=sys` to the mount command to prevent file ownership issues.
-   {: tip}
 
    If your host OS is CentOS, you can configure more options. For more information, see [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/FileStorage?topic=FileStorage-mountingCentOS).
 
