@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-03-04"
+lastupdated: "2025-03-18"
 
 keywords: File Storage for Classic, NFS, replication, duplication, synchronous, replica schedule, replica space, disaster recovery
 
@@ -50,7 +50,7 @@ Before you begin, decide on the CLI client that you want to use.
 
 [{{site.data.keyword.cloud_notm}} data centers](/docs/overview?topic=overview-locations#data-centers) are paired into primary and remote combinations in every region worldwide. When you replicate data, consider the local data residency laws because moving data across borders can have legal implications. Replication across regions is not permitted.
 
-### Listing data center locations from the IBMCLOUD CLI
+### Listing locations from the IBMCLOUD CLI
 {: #determinereplicationlocICCLI}
 
 You can use the `ibmcloud sl file replica-locations` command to locate a suitable replica location for your file share. The following example lists the available location for a file share in the US south region.
@@ -71,7 +71,7 @@ ID        Short Name   Long Name
 
 For more information about all of the parameters that are available for this command, see [ibmcloud sl file replica-locations](/docs/cli?topic=cli-sl-file-storage-service#sl_file_replica_locations).
 
-### Listing data center locations from the SLCLI
+### Listing locations from the SLCLI
 {: #determinereplicationlocSLCLI}
 
 To list suitable replication data centers for a specific volume, use the following command.
