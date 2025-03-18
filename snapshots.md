@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-01-14"
+lastupdated: "2025-03-18"
 
 keywords: File Storage for Classic, NFS, snapshots
 
@@ -41,7 +41,7 @@ Snapshot design depends on the customer’s environment. The following design co
 - Don't take more snapshots than what you need. Make sure that your scheduled snapshot frequency meets your RTO and RPO needs and your application business requirements by scheduling hourly, daily, or weekly snapshots.
 - Snapshot AutoDelete can be used to control the growth of storage consumption.
 
-   The AutoDelete threshold is fixed at 95 percent.
+   The AutoDelete threshold is fixed at 95%.
    {: note}
 
 Snapshots are not replacements for actual off-site Disaster Recovery replication or long-retention backup.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-03-06"
+lastupdated: "2025-03-18"
 
 keywords: File Storage for Classic, NFS, Plesk, backups
 
@@ -21,7 +21,7 @@ For more information, see [(Plesk for Linux) Storing backups and website files o
 {: tip}
 
 1. Connect to the host through SSH.
-1. Ensure that a mount point target exists.
+1. Make sure that a mount point target exists.
 
    Plesk has two options for storing backups. One is the internal Plesk storage, which is storage on your Plesk server. The other is external FTP storage, which is storage on some external server in the web or your local network. Commonly on Plesk boxes, internal backups are stored in `/var/lib/psa/dumps` and use `/tmp` as a temporary directory. In this example, the temporary directory is kept local, but the `dumps` directory is moved to the {{site.data.keyword.filestorage_short}} target (`/backup/psa/dumps`). No FTP user credentials are required.
    {: note}

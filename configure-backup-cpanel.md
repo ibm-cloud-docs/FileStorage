@@ -21,7 +21,7 @@ While you can store a backup directly to a remote filesystem, cPanel and WHM do 
 {: attention}
 
 1. Connect to the host through SSH.
-2. Ensure that a mount point target exists.
+2. Make sure that a mount point target exists.
 
    By default, the cPanel system saves backup files locally, to the `/backup` directory. In this document, the assumption is that the `/backup` folder exists and contains backups, and `/backup2` can be used as the new mount point.
    {: note}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-03-10"
+lastupdated: "2025-03-18"
 
 keywords: File Storage for Classic, NFS, authorizing hosts, revoke access, grant access, view authorizations
 
@@ -393,7 +393,7 @@ Options:
 {: support}
 {: terraform}
 
-Use the `terraform destroy` command to conveniently destroy a remote object such as a single file share. The following example destroys the file share with the ID `ibm_file_share.example.id`.
+Use the `terraform destroy` command to conveniently remove a remote object such as a single file share. The following example cancels the file share with the ID `ibm_file_share.example.id`.
 
 ```terraform
 terraform destroy --target ibm_file_share.example.id

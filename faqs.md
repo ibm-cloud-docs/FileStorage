@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-02-27"
+lastupdated: "2025-03-18"
 
 keywords: File Storage for Classic, encryption, security, provisioning, limitations, NFS
 
@@ -47,7 +47,7 @@ The default limit for number of authorizations per file volume is 64. The limit 
 {: #hostlimit}
 {: support}
 
-That depends on what the host operating system can handle, it’s not something that {{site.data.keyword.cloud}} limits. Refer to your OS Documentation for limits on the number of file shares that can be mounted.
+The number of volumes that can be attached to a single host depends on what the host operating system can handle. {{site.data.keyword.cloud}} does not impose limits on that. Refer to your OS Documentation for limits on the number of file shares that can be mounted.
 
 ## How many files and directories are allowed for specific file volume sizes? What is the maximum number of inodes allowed per volume size?
 {: #maxfilevolume}
