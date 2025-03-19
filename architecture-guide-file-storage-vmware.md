@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-03-06"
+lastupdated: "2025-03-19"
 
 keywords: Classic File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
@@ -255,7 +255,7 @@ This setting is specific to the VMware&reg; datastore and not to the host.
 
 You can limit individual virtual disks for individual VMs or grant them different shares with SIOC. By limiting disks and granting different shares, you can match and align the environment to the workload with the acquired {{site.data.keyword.filestorage_full}} volume IOPS number. The limit is set by IOPS and it is possible to set a different weight or shares.
 
-Virtual disks shares that are set to **High** (2,000 shares) receive twice as much I/O as a disk set to **Normal** (1,000 shares). Virtual disks shares that are set to **High** (2,000 shares) receive four times as much I/O as a share that is set to **Low** (500 shares). Normal is the default value for all the VMs, so you need to adjust the **Normal** settings for the VMs that require it.
+Virtual disk shares that are set to **High** (2,000 shares) receive twice as much I/O as a disk set to **Normal** (1,000 shares). Virtual disk shares that are set to **High** (2,000 shares) receive four times as much I/O as a share that is set to **Low** (500 shares). Normal is the default value for all the VMs, so you need to adjust the **Normal** settings for the VMs that require it.
 
 For more information, see [Storage I/O Control for NFS v3](/docs/vmwaresolutions?topic=vmwaresolutions-storage-settings#storage-settings-io-control-nfs-v3).
 
