@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-03-19"
+lastupdated: "2025-03-21"
 
 keywords: File Storage for Classic, NFS, upgrade, migrate to new
 
@@ -36,7 +36,7 @@ When you order a file share, your new storage is available to mount in a few min
 ## Authorizing host to the new {{site.data.keyword.filestorage_short}}
 {: #authtonewvol}
 
-"Authorized" hosts are hosts that were given access to a volume. Without host authorization, you can't access or use the storage from your system.
+"Authorized" hosts are compute hosts that are granted access to a volume. Without host authorization, you can't access or use the storage from your system.
 
 You can create the authorization in the [UI](/docs/FileStorage?topic=FileStorage-managingstorage&interface=ui#authhostUI), from the [CLI](/docs/FileStorage?topic=FileStorage-managingstorage&interface=cli#authhostCLI), with the API, or with [Terraform](/docs/FileStorage?topic=FileStorage-managingstorage&interface=terraform#authhostterraform).
 

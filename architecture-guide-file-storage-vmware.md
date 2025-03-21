@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-03-19"
+lastupdated: "2025-03-21"
 
 keywords: Classic File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
@@ -81,7 +81,7 @@ You can create the authorization in the [UI](/docs/FileStorage?topic=FileStorage
 Before you begin the configuration process, make sure that the following requirements are met:
 
 - {{site.data.keyword.BluBareMetServers}} with VMware&reg; ESXi are provisioned with proper storage configuration and ESXi login credentials.
-- {{site.data.keyword.cloud}} Windows physical or {{site.data.keyword.virtualmachinesshort}} is available in the same data center as the {{site.data.keyword.BluBareMetServers}}. Make sure that you know the public IP address of the {{site.data.keyword.cloud}} Windows server and the login credentials.
+- {{site.data.keyword.cloud}} Windows physical or {{site.data.keyword.virtualmachinesshort}} are available in the same data center as the {{site.data.keyword.BluBareMetServers}}. Make sure that you know the public IP address of the {{site.data.keyword.cloud}} Windows server and the login credentials.
 - You have a computer with internet access, and with the web browser software and a Remote Desktop Protocol (RDP) client installed.
 
 ### Connecting to vCenter

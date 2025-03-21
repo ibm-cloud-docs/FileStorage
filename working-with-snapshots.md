@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-03-19"
+lastupdated: "2025-03-21"
 
 keywords: File Storage for Classic, NFS, snapshots, snapshot schedule, manual snapshot, snapshot space, snapshot quota
 
@@ -196,7 +196,7 @@ Options:
 {: #listsnapshotUI}
 {: ui}
 
-The list of retained snapshots and the space that is used can be seen on the **{{site.data.keyword.filestorage_short}} Detail** page. Management functions (editing schedules and adding more space) are conducted on the **{{site.data.keyword.filestorage_short}} Detail** page by using the **Actions** menu or links in the various sections on the page. The Snapshot page displays how much capacity the volume has and how much of it is used.
+The list of retained snapshots and the space that they used can be seen on the **{{site.data.keyword.filestorage_short}} Detail** page. Management functions (editing schedules and adding more space) are conducted on the **{{site.data.keyword.filestorage_short}} Detail** page by using the **Actions** menu or links in the various sections on the page. The Snapshot page displays how much capacity the volume has and how much of it is used.
 
 You receive notifications when you reach space thresholds – 75%, 90%, and 95%.
 
@@ -376,7 +376,7 @@ Snapshots that are no longer needed can be manually removed to free up space for
 1. Click your storage volume and click **Snapshot** to see the list of existing snapshots.
 2. Click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions") next to a particular snapshot and click **Delete** to delete the snapshot. This deletion doesn't affect any future or past snapshots on the same schedule as snapshots don't depend on each other.
 
-Manual snapshots that aren't deleted in the portal manually are automatically deleted when you take another snapshot if you have reached space limitations. The oldest snapshot is deleted first.
+Manual snapshots that aren't deleted in the portal manually are automatically deleted when you take another snapshot if the space limitation is reached. The oldest snapshot is deleted first.
 {: note}
 
 ## Deleting a snapshot from the CLI
@@ -440,7 +440,7 @@ You might need to take your storage volume back to a specific point in time beca
 2. Go to the [{{site.data.keyword.cloud}} console](/login){: external}. From the menu, select **Infrastructure**  ![VPC icon](../icons/vpc.svg) > **Classic Infrastructure**.
 3. Click **Storage**, **{{site.data.keyword.filestorage_short}}**.
 4. Scroll on the list, and click your volume to be restored. The **Snapshots** page displays the list of all saved snapshots along with their size and creation date.
-5. Click **Actions**![Actions icon](../icons/action-menu-icon.svg "Actions") next to the snapshot to be used, and click **Restore**.
+5. Next to the snapshot that you want to use, click **Actions**! [Actions icon](../icons/action-menu-icon.svg "Actions"), and click **Restore**.
 
    Completing the restore results in the loss of the data that was created or modified after the snapshot was taken. This data loss occurs because your storage volume returns to the same state that it was in of the time of the snapshot.
    {: note}
