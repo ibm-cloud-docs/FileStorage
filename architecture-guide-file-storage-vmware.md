@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-03-21"
+lastupdated: "2025-04-02"
 
 keywords: Classic File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
@@ -30,7 +30,8 @@ If you require more than eight hosts to access your VMware&reg; datastore, then 
 
 The {{site.data.keyword.filestorage_short}} offering is accessed and mounted through an NFS connection. In a VMware&reg; deployment, a single volume can be mounted to up to 64 ESXi hosts as shared storage. You can also mount multiple volumes to create a storage cluster to use vSphere Storage Distributed Resource Scheduler (DRS).
 
-You can also familiarize yourself with the [VMware vSphere 8.0 - NFS Datastore Concepts and Operations in vSphere Environment](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-storage-8-0/working-with-datastores-in-vsphere-storage-environment/nfs-datastore-concepts-and-operations-in-vsphere-environment.html){: external}.
+You can also familiarize yourself with the [VMware vSphere 8.0 - NFS Datastore Concepts and Operations in vSphere Environment](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-storage-8-0/working-with-datastores-in-vsphere-storage-environment/nfs-datastore-concepts-and-operations-in-vsphere-environment.html){: external} and [Best Practices For Running NFS
+with VMware vSphere](https://www.vmware.com/docs/vmw-best-practices-running-nfs-vmware-vsphere){: external}.
 
 ## Before you begin
 {: #NFSfile_as_datastore_req}
