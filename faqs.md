@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-04-02"
+lastupdated: "2025-04-03"
 
 keywords: File Storage for Classic, encryption, security, provisioning, limitations, NFS
 
@@ -177,6 +177,12 @@ Customers with special requirements for compliance such as NIST 800-88 Guideline
 {: #cancelstorage}
 
 The cancellation process for this storage device is in progress so the Cancel action is no longer available. The volume remains visible for at least 24 hours until it is reclaimed. The UI indicates that it’s inactive and the status "Cancellation pending" is displayed. The minimum 24-hour waiting period gives you a chance to void the cancellation request if needed.
+
+## I accidentally deleted my volume, what can I do to get it back?
+{: faq}
+{: #accidentaldeletion}
+
+The answer depends on how long ago you deleted the storage volume, and if you chose to delete immediately or on anniversary date. If the deletion happened in the last 24 hours or the anniversary date is still yet to come, the volume might still be waiting to be reclaimed. If the volume status is "Cancellation pending", you can contact support to void the cancellation request. It's important to act fast because when the reclaim-period expires, the data is deleted automatically and it is no longer possible to restore.
 
 ## Which NFS versions are supported?
 {: faq}
