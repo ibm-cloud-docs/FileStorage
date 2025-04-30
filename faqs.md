@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-04-03"
+lastupdated: "2025-04-29"
 
 keywords: File Storage for Classic, encryption, security, provisioning, limitations, NFS
 
@@ -79,9 +79,18 @@ The number of files a volume can contain is determined by how many inodes it has
 {: faq}
 {: #movedatacenter}
 
-You need to order a new {{site.data.keyword.filestorage_short}} share in the correct data center, and then cancel the {{site.data.keyword.filestorage_short}} device that you ordered in the incorrect location. You can create a duplicate of your share, and cancel the parent share. For more information, see [Creating and managing duplicate volumes](/docs/FileStorage?topic=FileStorage-duplicatevolume).
+You need to order a new {{site.data.keyword.filestorage_short}} share in the correct data center, and then cancel the {{site.data.keyword.filestorage_short}} device that you ordered in the incorrect location. 
 
-When the share is canceled, the request is followed by a 24-hour reclaim wait period. You can still see the storage volume in the console during those 24 hours. Billing for the volume stops immediately. When the reclaim period expires, the data is destroyed and the volume is removed from the console, too.
+You can also create a duplicate of your share, and cancel the parent share. For more information, see [Creating and managing duplicate volumes](/docs/FileStorage?topic=FileStorage-duplicatevolume).
+
+## I cancelled my {{site.data.keyword.blockstorageshort}} volume "immediately", but it's still visible in the console. Why is it not deleted?
+{: #24hrreclaimperiod}
+{: faq}
+{: support}
+
+When the volume is canceled, the request is followed by a 24-hour reclaim wait period. You can still see the volume in the console during those 24 hours. The 24-hour waiting period gives you a chance to void the cancellation request if needed. If you want to cancel the deletion of the volume, raise a [Support case](/unifiedsupport/cases/add){: external}. 
+
+Billing for the volume stops immediately. When the reclaim period expires, the data is destroyed and the volume is removed from the console, too.
 
 ## Measuring IOPS
 {: faq}
