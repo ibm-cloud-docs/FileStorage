@@ -32,6 +32,7 @@ toc:
         id: howto
         topics:
         - topicgroup:
+            id: ordering-storage
             label: Provisioning
             topics:
             - provisioning-file-storage.md
@@ -39,6 +40,7 @@ toc:
             - managing-storage-limits.md
             - migrate-file-storage-encrypted-file-storage.md
         - topicgroup:
+            id: configuring-storage
             label: Configuring
             topics:
             - jumboframes.md
@@ -46,6 +48,7 @@ toc:
             - configure-backup-cpanel.md
             - configure-backup-plesk.md
         - topicgroup:
+            id: managing-storage
             label: Managing
             topics:
             - managing-file-storage.md
@@ -53,6 +56,7 @@ toc:
             - adjustable-iops.md
             - working-with-snapshots.md
         - topicgroup:
+            id: replication-dr
             label: Replication and Disaster Recovery
             topics:
             - replication.md
@@ -60,6 +64,7 @@ toc:
             - disaster-recovery.md
             - duplicate-volume.md
         - topicgroup:
+            id: encryption-and-security
             label: Enhancing Security
             topics:
             - availability.md
@@ -107,11 +112,13 @@ toc:
         id: help
         topics:
         - topicgroup:
+            id: FAQs
             label: FAQs
             topics:
             - faqs.md
             - gethelp.md
         - topicgroup:
+            id: troubleshooting
             label: Troubleshooting
             topics:
             - ts-readonly.md
