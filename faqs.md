@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-04-29"
+lastupdated: "2025-06-19"
 
 keywords: File Storage for Classic, encryption, security, provisioning, limitations, NFS
 
@@ -191,7 +191,7 @@ The cancellation process for this storage device is in progress so the Cancel ac
 {: faq}
 {: #accidentaldeletion}
 
-The answer depends on how long ago you deleted the storage volume, and if you chose to delete immediately or on anniversary date. If the deletion happened in the last 24 hours or the anniversary date is still yet to come, the volume might still be waiting to be reclaimed. If the volume status is "Cancellation pending", you can contact support to void the cancellation request. It's important to act fast because when the reclaim-period expires, the data is deleted automatically and it is no longer possible to restore.
+The answer depends on how long ago you deleted the storage volume, and if you chose to delete immediately or on the anniversary date. If the deletion happened in the last 24 hours or the anniversary date is still yet to come, the volume might still be waiting to be reclaimed. If the volume status is "Cancellation pending", you can contact support to void the cancellation request. It's important to act fast because when the reclaim-period expires, the data is deleted automatically and it is no longer possible to restore.
 
 ## Which NFS versions are supported?
 {: faq}
