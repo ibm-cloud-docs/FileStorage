@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-03-21"
+lastupdated: "2025-06-24"
 
 keywords: File Storage for Classic, NFS, authorizing hosts, revoke access, grant access, view authorizations
 
@@ -25,7 +25,7 @@ You can manage your {{site.data.keyword.filestorage_full}} volumes through the {
 You can view your volumes from the Resources list or by going to the list of {{site.data.keyword.filestorage_short}} volumes.
 
 1. Go to the [{{site.data.keyword.cloud}} console](/login){: external}. From the menu, select **Infrastructure**  ![VPC icon](../icons/vpc.svg) > **Classic Infrastructure**.
-2. Click **Storage** > **{{site.data.keyword.filestorage_short}}**,
+2. Click **Storage** > **{{site.data.keyword.filestorage_short}}**.
 
 ## Viewing the list of {{site.data.keyword.filestorage_short}} volumes from the CLI
 {: #managestorage-view-cli}
@@ -78,6 +78,50 @@ Example::
 └────┴────────────────┴──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 {: screen}
+
+## Updating the notes of a volume in the console
+{: #update-volume-notes-UI}
+{: ui}
+
+1. Go to the [{{site.data.keyword.cloud}} console](/login){: external}. From the menu, select **Infrastructure**  ![VPC icon](../icons/vpc.svg) > **Classic Infrastructure**.
+2. Click **Storage** > **{{site.data.keyword.filestorage_short}}**.
+3. Locate the volume that you want to update. Click the volume name to view the Volume details page.
+4. Click the **Edit icon** ![Edit icon](../icons/edit-tagging.svg "Edit") next to **Notes** and enter your text.
+
+## Updating the notes of a volume from the CLI
+{: #update-volume-notes-CLI}
+{: cli}
+
+You can use the `ibmcloud sl call-api` command to add and modify notes for your volumes.
+
+```sh
+$ ibmcloud sl call-api --help
+NAME:
+  call-api - Call arbitrary API endpoints
+
+USAGE:
+  ibmcloud sl call-api SERVICE METHOD [OPTIONS]
+
+OPTIONS:
+  --filter value      Object filters
+  -h, --help          Usage information.
+  --init value        Init parameter
+  --limit value       Result limit
+  --mask value        Object mask: use to limit fields returned
+  --offset value      Result offset
+  --output value      Specify output format, only JSON is supported now.
+  --parameters value  Append parameters to web call
+```
+{: screen}
+
+Specify the volume ID in the `--init` option, and use the `--parameters` option to set the new note. See the following example:
+
+```sh
+ibmcloud sl call-api SoftLayer_Network_Storage editObject --init 562193766 --parameters '[{"notes":"Testing."}]'
+```
+{: screen}
+
+For more information, see [ibmcloud sl call-api](/docs/cli?topic=cli-sl-all-api).
 
 ## Authorizing hosts to access {{site.data.keyword.filestorage_short}}
 {: #managestorage-authhost}
