@@ -83,7 +83,7 @@ Example::
 {: #update-volume-notes-UI}
 {: ui}
 
-1. Go to the [{{site.data.keyword.cloud}} console](/login){: external}. From the menu, select **Infrastructure**  ![VPC icon](../icons/vpc.svg) > **Classic Infrastructure**.
+1. Go to the [{{site.data.keyword.cloud}} console](/login){: external}. From the menu, select **Infrastructure** ![VPC icon](../icons/vpc.svg) > **Classic Infrastructure**.
 2. Click **Storage** > **{{site.data.keyword.filestorage_short}}**.
 3. Locate the volume that you want to update. Click the volume name to view the Volume details page.
 4. Click the **Edit icon** ![Edit icon](../icons/edit-tagging.svg "Edit") next to **Notes** and enter your text.
