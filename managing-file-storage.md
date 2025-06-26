@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-06-24"
+lastupdated: "2025-06-26"
 
 keywords: File Storage for Classic, NFS, authorizing hosts, revoke access, grant access, view authorizations
 
@@ -270,6 +270,7 @@ Options:
                  password, allowed_host_id
  -h, --help      Show this message and exit.
 ```
+{: screen}
 
 ## Viewing the {{site.data.keyword.filestorage_short}} volumes to which a host is authorized in the console
 {: #viewvolUI}
@@ -345,7 +346,7 @@ You can use the `ibmcloud sl file access-revoke` command to remove authorization
 ```sh
 ibmcloud sl file access-revoke 12345678 --virtual-id 87654321
 ```
-{: codeblock}
+{: pre}
 
 For more information about all of the parameters that are available for this command, see [ibmcloud sl file access-revoke](/docs/cli?topic=cli-sl-file-storage-service#sl_file_access_revoke){: external}.
 
@@ -365,7 +366,7 @@ Options:
   -s, --subnet-id TEXT      An ID of one subnet to revoke authorization.
   --help                    Show this message and exit.
 ```
-{: codeblock}
+{: screen}
 
 If you want to disconnect multiple hosts from a specific volume, you need to repeat the Revoke Access action for each host.
 {: tip}
@@ -412,7 +413,7 @@ You can use the `ibmcloud sl file volume-cancel` command to cancel the file shar
 ```sh
 ibmcloud sl file volume-cancel 12345678 --immediate -f
 ```
-{: codeblock}
+{: pre}
 
 For more information about all of the parameters that are available for this command, see [ibmcloud sl file volume-cancel](/docs/cli?topic=cli-sl-file-storage-service#sl_file_volume_cancel){: external}.
 
@@ -430,6 +431,7 @@ Options:
                  billing anniversary.
   -h, --help     Show this message and exit.
 ```
+{: screen}
 
 ## Deleting a storage volume with Terraform
 {: #cancelvolTerraform}
@@ -442,7 +444,7 @@ Use the `terraform destroy` command to conveniently remove a remote object such 
 ```terraform
 terraform destroy --target ibm_file_share.example.id
 ```
-{: codeblock}
+{: pre}
 
 For more information, see [terraform destroy](https://developer.hashicorp.com/terraform/cli/commands/destroy){: external}.
 

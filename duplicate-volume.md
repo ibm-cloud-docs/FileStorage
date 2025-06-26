@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2024
-lastupdated: "2024-09-25"
+  years: 2017, 2025
+lastupdated: "2025-06-26"
 
 keywords: File Storage for Classic, NFS, duplicate volume
 
@@ -115,6 +115,9 @@ id          username             datacenter   storage_type             capacity_
 ```
 {: codeblock}
 
+If you have a specific snapshot that holds the data that you want to use to create the duplicate volume, specify the snapshot's ID by using the `--origin-snapshot-id` option.
+{: tip}
+
 When you want to create a dependent duplicate of your volume, use the command with the `--dependent-duplicate` option. See the following example.
 
 ```sh
@@ -223,6 +226,8 @@ To order an **independent duplicate** {{site.data.keyword.blockstorageshort}} vo
    ```
    {: codeblock}
 
+   If you have a specific snapshot that holds the data that you want to use to create the duplicate volume, specify the snapshot's ID in the `duplicateOriginSnapshotId` property.
+
 To order a **dependent duplicate** for a Performance (custom IOPS) volume, make a `POST /SoftLayer_Product_Order/placeOrder` call like the following REST API example.
 
 - URL - `https://USERNAME:APIKEY@api.softlayer.com/rest/v3.1/SoftLayer_Product_Order/placeOrder`
@@ -245,7 +250,9 @@ To order a **dependent duplicate** for a Performance (custom IOPS) volume, make 
    ```
    {: codeblock}
 
-For more information about the API and the options, see the [API Reference](https://sldn.softlayer.com/reference/softlayerapi/){: external}.
+   If you have a specific snapshot that holds the data that you want to use to create the duplicate volume, specify the snapshot's ID in the `duplicateOriginSnapshotId` property.
+
+For more information about the API and the options, see the [API Reference](https://sldn.softlayer.com/reference/softlayerapi/){: external}. Look for the [SoftLayer_Container_Product_Order_Network_Storage_AsAService](https://sldn.softlayer.com/reference/datatypes/SoftLayer_Container_Product_Order_Network_Storage_AsAService/){: external} data type.
 
 ## Managing your duplicate volume
 {: #manageduplicate}
