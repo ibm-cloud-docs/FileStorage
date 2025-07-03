@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-06-19"
+lastupdated: "2025-07-03"
 
 keywords: File Storage for Classic, NFS, cPanel, backups
 
@@ -17,7 +17,7 @@ subcollection: FileStorage
 You can use these instructions to configure your backups to be stored in {{site.data.keyword.filestorage_full}} by cPanel. The assumption is that root or sudo SSH and full WebHost Manager (WHM) access are available.
 {: shortdesc}
 
-While you can store a backup directly to a remote file system, cPanel and WHM do **not** support this configuration. For more information, see the [cPanel documentation for backup](https://docs.cpanel.net/knowledge-base/backup/how-to-run-backups-on-locally-mounted-remoted-file-systems/){: external}.
+While you can store a backup directly to a remote file system, cPanel and WHM do **not** support this configuration. For more information, see the [cPanel documentation for backup](https://docs.cpanel.net/knowledge-base/backup/how-to-run-backups-on-locally-mounted-remote-file-systems/){: external}.
 {: attention}
 
 1. Connect to the host through SSH.
