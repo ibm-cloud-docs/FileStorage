@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-06-26"
+lastupdated: "2025-08-04"
 
 keywords: File Storage for Classic, NFS, authorizing hosts, revoke access, grant access, view authorizations
 
@@ -25,7 +25,9 @@ You can manage your {{site.data.keyword.filestorage_full}} volumes through the {
 You can view your volumes from the Resources list or by going to the list of {{site.data.keyword.filestorage_short}} volumes.
 
 1. Go to the [{{site.data.keyword.cloud}} console](/login){: external}. From the menu, select **Infrastructure**  ![VPC icon](../icons/vpc.svg) > **Classic Infrastructure**.
-2. Click **Storage** > **{{site.data.keyword.filestorage_short}}**.
+1. Click **Storage** > **{{site.data.keyword.filestorage_short}}**. The list of file shares is displayed. 
+1. You can filter the list by clicking the ![Filter icon](../icons/filter.svg "Filter") and selecting a location or entering a specific capacity. Click **Apply** to confirm your selection.
+1. Click the appropriate Volume name from the list.
 
 ## Viewing the list of {{site.data.keyword.filestorage_short}} volumes from the CLI
 {: #managestorage-view-cli}
