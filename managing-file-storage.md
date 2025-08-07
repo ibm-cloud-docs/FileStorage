@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-08-04"
+lastupdated: "2025-08-07"
 
 keywords: File Storage for Classic, NFS, authorizing hosts, revoke access, grant access, view authorizations
 
@@ -28,6 +28,9 @@ You can view your volumes from the Resources list or by going to the list of {{s
 1. Click **Storage** > **{{site.data.keyword.filestorage_short}}**. The list of file shares is displayed. 
 1. You can filter the list by clicking the ![Filter icon](../icons/filter.svg "Filter") and selecting a location or entering a specific capacity. Click **Apply** to confirm your selection.
 1. Click the appropriate Volume name from the list.
+
+You can download the list in a CSV format by clicking Download ![Download icon](../icons/download.svg "Download").
+{: tip}
 
 ## Viewing the list of {{site.data.keyword.filestorage_short}} volumes from the CLI
 {: #managestorage-view-cli}
