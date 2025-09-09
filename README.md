@@ -7,6 +7,4 @@ The content of this repository is built out in [Production output](https://cloud
 
 :information_source: **Tip:** If you want to give feedback about the documentation, create an [issue](https://github.com/ibm-cloud-docs/FileStorage/issues).
 
-
-
-
+ 
