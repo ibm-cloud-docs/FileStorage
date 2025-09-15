@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2024
-lastupdated: "2024-10-17"
+  years: 2018, 2025
+lastupdated: "2025-09-15"
 
 keywords: File Storage for Classic, modify volume, NFS, File Storage, expand capacity
 
@@ -73,7 +73,7 @@ You can increase the capacity of a volume by using the `ibmcloud sl file volume-
 ```sh
 ibmcloud sl file volume-modify 12345678 --new-size 1000
 ```
-{: codeblock}
+{: pre}
 
 For more information about all of the parameters that are available for this command, see [ibmcloud sl file volume-modify](/docs/cli?topic=cli-sl-file-storage-service#sl_file_volume_modify){: external}.
 

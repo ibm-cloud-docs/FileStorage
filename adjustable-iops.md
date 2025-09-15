@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-03-18"
+lastupdated: "2025-09-15"
 
 keywords: File Storage for Classic, adjusting IOPS, increase IOPS, decrease IOPS, modify IOPS
 
@@ -80,14 +80,14 @@ You can update the IOPS by using the `ibmcloud sl file volume-modify` command. T
 ```sh
 ibmcloud sl file volume-modify 12345678 --new-iops 4000
 ```
-{: codeblock}
+{: pre}
 
 The following example modifies an Endurance file share by specifying a new IOPS tier.
 
 ```sh
 ibmcloud sl file volume-modify 12345678 --new-tier 4
 ```
-{: codeblock}
+{: pre}
 
 For more information about all of the parameters that are available for this command, see [ibmcloud sl file volume-modify](/docs/cli?topic=cli-sl-file-storage-service#sl_file_volume_modify){: external}.
 

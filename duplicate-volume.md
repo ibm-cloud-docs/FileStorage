@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-06-26"
+lastupdated: "2025-09-15"
 
 keywords: File Storage for Classic, NFS, duplicate volume
 
@@ -359,12 +359,7 @@ OK
 ```
 {: codeblock}
 
-The conversion process can take some time to complete. The bigger the volume is, the longer it takes to convert it. Use the following command to check on the progress.
-
-```sh
-ibmcloud sl file volume-convert-status 560391814
-```
-{: pre}
+The conversion process can take some time to complete. The bigger the volume is, the longer it takes to convert it.
 
 For more information about all of the parameters that are available for this command, see [ibmcloud sl file volume-convert](/docs/cli?topic=cli-sl-file-storage-service#sl_file_volume_convert){: external}.
 

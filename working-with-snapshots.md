@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-03-21"
+lastupdated: "2025-09-15"
 
 keywords: File Storage for Classic, NFS, snapshots, snapshot schedule, manual snapshot, snapshot space, snapshot quota
 
@@ -479,7 +479,7 @@ Use the `ibmcloud sl file snapshot-restore` command to return your file share to
 ```sh
 ibmcloud sl file snapshot-restore 12345678 87654321
 ```
-{: codeblock}
+{: pre}
 
 For more information about all of the parameters that are available for this command, see [ibmcloud sl file snapshot-restore](/docs/cli?topic=cli-sl-file-storage-service#sl_file_snapshot_restore){: external}.
 

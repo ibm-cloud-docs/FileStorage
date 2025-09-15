@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-08-07"
+lastupdated: "2025-09-15"
 
 keywords: File Storage for Classic, NFS, authorizing hosts, revoke access, grant access, view authorizations
 
@@ -49,6 +49,10 @@ To get the list of your {{site.data.keyword.filestorage_short}} from the IBMCLOU
 
 ```sh
 ibmcloud sl file volume-list -d dal13 -t endurance --sortby capacity_gb
+```
+{: pre}
+
+```sh
 id          username          datacenter  storage_type            capacity_gb   bytes_used   IOPs   ip_addr   lunId active_transactions   rep_partner_count   notes
 20973781    IBM02SEL1575811-1 dal13      endurance_file_storage   100           -            4      -         3 -                     0                   -
 22030583    IBM02SEL1575811-3 dal13      endurance_file_storage   20            -            4      -         0 -                     0                   -
@@ -124,7 +128,7 @@ Specify the volume ID in the `--init` option, and use the `--parameters` option 
 ```sh
 ibmcloud sl call-api SoftLayer_Network_Storage editObject --init 562193766 --parameters '[{"notes":"Testing."}]'
 ```
-{: screen}
+{: pre}
 
 For more information, see [ibmcloud sl call-api](/docs/cli?topic=cli-sl-all-api).
 
@@ -176,7 +180,7 @@ Use the `ibmcloud sl file access-authorize` command to authorize a host to acces
 ```sh
 ibmcloud sl file access-authorize 12345678 --virtual-id 87654321
 ```
-{: codeblock}
+{: pre}
 
 For more information about all of the parameters that are available for this command, see [ibmcloud sl file access-authorize](/docs/cli?topic=cli-sl-file-storage-service#sl_file_access_authorize){: external}.
 
@@ -256,7 +260,7 @@ You can use the `ibmcloud sl file access-list` command to list the hosts that ar
 ```sh
 ibmcloud sl file access-list 12345678 --sortby id
 ```
-{: codeblock}
+{: pre}
 
 For more information about all of the parameters that are available for this command, see [ibmcloud sl file access-list](/docs/cli?topic=cli-sl-file-storage-service#sl_file_access_list){: external}.
 
