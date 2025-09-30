@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-03-14"
+lastupdated: "2025-09-30"
 
 keywords: File Storage for Classic, NFS, mounting File Storage, mounting storage on Linux,
 
@@ -33,7 +33,7 @@ Before you begin, make sure that the host that is to access the {{site.data.keyw
 
 1. Install the required tools.
    ```sh
-   # yum install nfs-utils
+   # dnf install nfs-utils
    ```
    {: pre}
 
