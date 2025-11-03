@@ -1,5 +1,5 @@
 includes:
-  - https://github.ibm.com/cloud-docs/account
-  - https://github.ibm.com/cloud-docs/cli
-  - https://github.ibm.com/cloud-docs/BlockStorage
-  - https://github.ibm.com/cloud-docs-solutions/infrastructure-hub
+- https://github.ibm.com/cloud-docs/account
+- https://github.ibm.com/cloud-docs/cli
+- https://github.ibm.com/cloud-docs/BlockStorage
+- https://github.ibm.com/cloud-docs-solutions/infrastructure-hub

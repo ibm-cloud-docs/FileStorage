@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-01-14"
+lastupdated: "2025-11-03"
 
 keywords: File Storage for Classic, NFS, limits, quotas
 
@@ -49,6 +49,7 @@ For more information about all of the parameters that are available for this com
 {: #slcli1}
 
 You can list the number of your volumes by using the [`volume-limits`](https://softlayer-python.readthedocs.io/en/latest/cli/file/#file-volume-limits){: external} command in `slcli` (version 5.8.5 or higher).
+
 ```sh
 slcli file volume-limits
 ```
@@ -81,7 +82,7 @@ SoftLayer_Container_Network_Storage_DataCenterLimits_VolumeCountLimitContainer[{
 ```
 {: codeblock}
 
-The API call shows the combined number of {{site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_short}}.
+The API response shows the combined number of {{site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_short}}.
 {: tip}
 
 ## Requesting limit increase

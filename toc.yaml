@@ -40,7 +40,6 @@ toc:
           label: Configuring
           topics:
           - jumboframes.md
-          - mounting-storage-centos.md
           - configure-backup-cpanel.md
           - configure-backup-plesk.md
       - topicgroup:
