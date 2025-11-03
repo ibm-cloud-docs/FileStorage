@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-07-03"
+lastupdated: "2025-11-03"
 
 keywords: File Storage for Classic, NFS, cPanel, backups
 
@@ -27,8 +27,7 @@ While you can store a backup directly to a remote file system, cPanel and WHM do
    {: note}
 
 3. Configure your {{site.data.keyword.filestorage_short}} as described in one of the following topics: 
-    - [Accessing {{site.data.keyword.filestorage_short}} on Red Hat Enterprise Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingLinux), 
-    - [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/FileStorage?topic=FileStorage-mountingCentOS),
+    - [Accessing {{site.data.keyword.filestorage_short}} on Red Hat Enterprise Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingLinux),
     - [Mounting {{site.data.keyword.filestorage_short}} in Ubuntu](/docs/FileStorage?topic=FileStorage-mountingUbuntu). 
 
 1. Mount the volume to `/backup2` and configure it in file system table (`/etc/fstab`) to enable mounting on start.

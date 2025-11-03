@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-09-30"
+lastupdated: "2025-11-03"
 
 keywords: File Storage for Classic, NFS, mounting File Storage, mounting storage on Linux,
 
@@ -117,8 +117,6 @@ Before you begin, make sure that the host that is to access the {{site.data.keyw
    {: pre}
 
    If the command completes with no errors, your setup is complete.
-
-   If your host OS is CentOS, you can configure more options. For more information, see [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/FileStorage?topic=FileStorage-mountingCentOS).
 
 ### Managing user permissions to the content of the mounted file share
 {: #rhel-user-group-permissions}

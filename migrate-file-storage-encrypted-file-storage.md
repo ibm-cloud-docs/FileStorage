@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-03-21"
+lastupdated: "2025-11-03"
 
 keywords: File Storage for Classic, NFS, upgrade, migrate to new
 
@@ -46,7 +46,6 @@ When the host is authorized, connect the volume to your host.
 {: #copydataacross}
 
 1. Connect to both your original and new {{site.data.keyword.filestorage_short}} volumes.
-   - [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/FileStorage?topic=FileStorage-mountingCentOS)
    - [Mounting {{site.data.keyword.filestorage_short}} on Red Hat Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingLinux)
    - [Mounting {{site.data.keyword.filestorage_short}} on Ubuntu](/docs/FileStorage?topic=FileStorage-mountingUbuntu)
 

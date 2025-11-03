@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-03-18"
+lastupdated: "2025-11-03"
 
 keywords: File Storage for Classic, NFS, Plesk, backups
 
@@ -28,7 +28,6 @@ For more information, see [(Plesk for Linux) Storing backups and website files o
 
 1. Configure your {{site.data.keyword.filestorage_short}} as described in one of the following topics:
     - [Mounting {{site.data.keyword.filestorage_short}} on Red Hat Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingLinux)
-    - [Mounting {{site.data.keyword.filestorage_short}} in CentOS](/docs/FileStorage?topic=FileStorage-mountingCentOS)
     - [Mounting {{site.data.keyword.filestorage_short}} on Ubuntu](/docs/FileStorage?topic=FileStorage-mountingUbuntu)
 
 1. Mount the volume to `/backup` and configure it in the file system table (`/etc/fstab`) to enable mounting on start.
