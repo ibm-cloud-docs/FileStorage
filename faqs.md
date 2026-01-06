@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2025
-lastupdated: "2025-11-03"
+  years: 2014, 2026
+lastupdated: "2026-01-06"
 
 keywords: File Storage for Classic, encryption, security, provisioning, limitations, NFS
 
@@ -74,6 +74,13 @@ The number of files a volume can contain is determined by how many inodes it has
 {: row-headers}
 {: caption="The table shows the maximum number of inodes that are allowed based on the volume size." caption-side="bottom"}
 {: summary="Table 1 shows the maximum number of inodes that are allowed based on the volume size. Volume sizes are in the first column. The numbers of inodes (files and directories) are in the second column."}
+
+## What is the maximum file size on a {{site.data.keyword.filestorage_short}} volume?
+{: #maxfilesize}
+{: faq}
+{: support}
+
+The maximum supported file size (including VMDKs) is limited to 16 TB per file.
 
 ## I ordered a {{site.data.keyword.filestorage_short}} volume in the wrong data center. Is it possible to move or migrate it to another data center?
 {: faq}
