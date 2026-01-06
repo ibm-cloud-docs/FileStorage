@@ -90,7 +90,7 @@ You need to order a new {{site.data.keyword.filestorage_short}} share in the cor
 
 You can also create a duplicate of your share, and cancel the parent share. For more information, see [Creating and managing duplicate volumes](/docs/FileStorage?topic=FileStorage-duplicatevolume).
 
-## I cancelled my {{site.data.keyword.blockstorageshort}} volume "immediately", but it's still visible in the console. Why is it not deleted?
+## I cancelled my {{site.data.keyword.filestorage_short}} volume "immediately", but it's still visible in the console. Why is it not deleted?
 {: #24hrreclaimperiod}
 {: faq}
 {: support}
