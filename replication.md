@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2025
-lastupdated: "2025-06-16"
+  years: 2014, 2026
+lastupdated: "2026-01-12"
 
 keywords: File Storage for Classic, NFS, replication, duplication, synchronous, replica schedule, replica space, disaster recovery
 
@@ -20,20 +20,20 @@ Replication uses one of your snapshot schedules to automatically copy snapshots 
 Replication keeps your data in sync in two different locations. If you want to clone your volume and use it independently from the original volume, see [Creating a duplicate File Volume](/docs/FileStorage?topic=FileStorage-duplicatevolume).
 {: tip}
 
-Before you can replicate, you must create a snapshot schedule. The option to **Order Replica** does not appear until this condition is met.
+Before you can replicate, you must create a snapshot schedule. The option to **Order replica** does not appear until this condition is met.
 {: important}
 
 ## Determining the remote data center for the replicated storage volume in the console
 {: #determinereplicationlocUI}
 {: ui}
 
-[{{site.data.keyword.cloud_notm}} data centers](/docs/overview?topic=overview-locations#data-centers) are paired into primary and remote combinations in every region worldwide. When you replicate data, consider the local data residency laws because moving data across borders can have legal implications. Replication across regions is not permitted.
+[{{site.data.keyword.cloud_notm}} data centers](/docs/overview?topic=overview-locations#data-centers) are paired into primary and remote combinations in every region worldwide. When you replicate data, consider the local data residency laws because moving data across borders can have legal implications. Replication across regions is not allowed.
 
 The following table shows the data center codes within each region.
 
 | US  | Latin America | Canada  | Europe  | Asia-Pacific  | Australia  |
 |-----|-----|-----|-----|-----|-----|
-| - SJC03 \n - SJC04 \n - WDC04 \n - WDC06 \n - WDC07 \n - DAL09 \n - DAL10 \n - DAL12 \n - DAL13 \n - DAL14 | - SAO01 \n - SAO04 \n - SAO05 | - TOR01 \n - TOR04 \n - TOR05 \n - MON01 | - AMS03 \n - FRA02 \n - FRA04 \n - FRA05 \n - LON02 \n - LON04 \n - LON05 \n - LON06 \n - PAR01 \n - MAD04 \n - MAD05 \n | - TOK02 \n - TOK04 \n - TOK05 \n - OSA21 \n - OSA22 \n - OSA23 \n - SNG01 \n - CHE01 | - SYD01 \n - SYD04 \n - SYD05 \n |
+| - SJC03 \n - SJC04 \n - WDC04 \n - WDC06 \n - WDC07 \n - DAL09 \n - DAL10 \n - DAL12 \n - DAL13 \n - DAL14 | - SAO01 \n - SAO04 \n - SAO05 | - TOR01 \n - TOR04 \n - TOR05 \n - MON01 | - AMS03 \n - FRA02 \n - FRA04 \n - FRA05 \n - LON02 \n - LON04 \n - LON05 \n - LON06 \n - PAR01 \n - MAD02 \n - MAD04 \n - MAD05 \n | - TOK02 \n - TOK04 \n - TOK05 \n - OSA21 \n - OSA22 \n - OSA23 \n - SNG01 \n - CHE01 | - SYD01 \n - SYD04 \n - SYD05 \n |
 {: caption="This table shows the complete list of data centers with enhanced capabilities in each region. Every region is a separate column. Some cities, such as Dallas, San Jose, Washington DC, Amsterdam, Frankfurt, London, and Sydney have multiple data centers." caption-side="bottom"}
 
 The table includes certain data centers that are set to close soon. For the list of data centers that are closing, see [Data center closures](/docs/account?topic=account-dc-closure).
@@ -48,7 +48,7 @@ Before you begin, decide on the CLI client that you want to use.
 * You can either install the [IBM Cloud CLI](/docs/cli){: external} and install the SL plug-in with `ibmcloud plugin install sl`. For more information, see [Extending IBM Cloud CLI with plug-ins](/docs/cli?topic=cli-plug-ins).
 * Or, you can install the [SLCLI](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}.
 
-[{{site.data.keyword.cloud_notm}} data centers](/docs/overview?topic=overview-locations#data-centers) are paired into primary and remote combinations in every region worldwide. When you replicate data, consider the local data residency laws because moving data across borders can have legal implications. Replication across regions is not permitted.
+[{{site.data.keyword.cloud_notm}} data centers](/docs/overview?topic=overview-locations#data-centers) are paired into primary and remote combinations in every region worldwide. When you replicate data, consider the local data residency laws because moving data across borders can have legal implications. Replication across regions is not allowed.
 
 ### Listing locations from the IBMCLOUD CLI
 {: #determinereplicationlocICCLI}
@@ -94,10 +94,10 @@ To list suitable replication data centers for a specific volume, use the followi
 {: #createrepUI}
 {: ui}
 
-Replications work based on a snapshot schedule. You must first have snapshot space and a snapshot schedule for the source volume before you can replicate. The **Order Replica** option appears when Snapshot space and Snapshot schedule are available for the source volume. Replication is managed under **Storage** > **{{site.data.keyword.filestorage_short}}** in the [{{site.data.keyword.cloud}} console](/cloud-storage/file){: external}.
+Replications work based on a snapshot schedule. You must first have snapshot space and a snapshot schedule for the source volume before you can replicate. The **Order replica** option appears when Snapshot space and Snapshot schedule are available for the source volume. Replication is managed under **Storage** > **{{site.data.keyword.filestorage_short}}** in the [{{site.data.keyword.cloud}} console](/cloud-storage/file){: external}.
 
 1. Click the name of your storage volume to display its details.
-2. Click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions") and click **Order Replica**.
+2. Click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions") and click **Order replica**.
 3. Select the existing snapshot schedule that you want your replication to follow. The list contains all of your active snapshot schedules.
 
    You can select only one schedule even if you have a mix of hourly, daily, and weekly. All the snapshots, which were captured since the previous replication, are replicated regardless of the schedule that originated them. For more information, see [Working with Snapshots](/docs/FileStorage?topic=FileStorage-snapshots). Replication starts 5 minutes after the snapshot is taken to make sure that the most up-to-date data is copied to the replica volume.
@@ -229,7 +229,7 @@ You can cancel replication either immediately or on the anniversary date, which 
 
 1. Click the volume from the **{{site.data.keyword.filestorage_short}}** page.
 2. Click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions").
-3. Select **Delete Replica**.
+3. Select **Delete replica**.
 4. Select when to cancel. Choose **Immediately** or **Anniversary Date**, and click **Continue**.
 5. This operation deletes the replica volume with all its data. Click the checkbox to acknowledge the information, and click **Delete**.
 
@@ -239,7 +239,7 @@ You can cancel replication either immediately or on the anniversary date, which 
 
 When a primary volume is deleted, the replication schedule and the volume in the replica data center are deleted, too.
 
-You can expect the volume to remain visible in your Storage list for at least 24 hours (immediate cancellation) or until the anniversary date. Certain features aren't going to be available any longer, but the volume remains visible until it is reclaimed. However, billing is stopped immediately after you click **Delete Replica**.
+You can expect the volume to remain visible in your Storage list for at least 24 hours (immediate cancellation) or until the anniversary date. Certain features aren't going to be available any longer, but the volume remains visible until it is reclaimed. However, billing is stopped immediately after you click **Delete replica**.
 
 Active replicas can block reclamation of the Storage volume. Make sure that the volume is no longer mounted, host authorizations are revoked, and replication is canceled before you attempt to cancel the original volume.
 {: important}
