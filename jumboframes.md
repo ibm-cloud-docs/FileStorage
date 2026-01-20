@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2025
-lastupdated: "2025-07-04"
+  years: 2014, 2026
+lastupdated: "2026-01-20"
 
 keywords: File Storage for Classic, NSF, networking, jumbo frames
 
@@ -57,7 +57,7 @@ Jumbo frames need to be configured the same on the entire network path: source d
 ## Enabling Jumbo Frames in VMware vSphere
 {: #enablejumbovmware}
 
-For more information, see [VMware vSphere 8.0 - Enabling Jumbo Frames](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-networking-8-0/managing-network-resources/enabling-jumbo-frames.html){: external} and [Jumbo Frames configuration on VMware ESXi host](https://knowledge.broadcom.com/external/article?articleNumber=318937){: external}.
+For more information, see [VMware vSphere 8.0 - Enabling Jumbo Frames](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-networking/managing-network-resources/enabling-jumbo-frames.html){: external} and [Jumbo Frames configuration on VMware ESXi host](https://knowledge.broadcom.com/external/article?articleNumber=318937){: external}.
 
 ## Related information
 {: #related-info}

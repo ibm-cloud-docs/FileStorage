@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2025
-lastupdated: "2025-06-19"
+  years: 2014, 2026
+lastupdated: "2026-01-20"
 
 keywords: Classic File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
@@ -30,7 +30,7 @@ If you require more than eight hosts to access your VMware&reg; datastore, then 
 
 The {{site.data.keyword.filestorage_short}} offering is accessed and mounted through an NFS connection. In a VMware&reg; deployment, a single volume can be mounted to up to 64 ESXi hosts as shared storage. You can also mount multiple volumes to create a storage cluster to use vSphere Storage Distributed Resource Scheduler (DRS).
 
-You can also familiarize yourself with the [VMware vSphere 8.0 - NFS Datastore Concepts and Operations in vSphere Environment](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-storage-8-0/working-with-datastores-in-vsphere-storage-environment/nfs-datastore-concepts-and-operations-in-vsphere-environment.html){: external} and [Best Practices For Running NFS
+You can also familiarize yourself with the [VMware vSphere 8.0 - NFS Datastore Concepts and Operations in vSphere Environment](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-storage/working-with-datastores-in-vsphere-storage-environment/nfs-datastore-concepts-and-operations-in-vsphere-environment.html){: external} and [Best Practices For Running NFS
 with VMware vSphere](https://www.vmware.com/docs/vmw-best-practices-running-nfs-vmware-vsphere){: external}.
 
 ## Before you begin
@@ -52,7 +52,7 @@ When you order {{site.data.keyword.filestorage_short}}, consider the following i
 
 - Both NFSv3 and NFSv4.1 are supported in the {{site.data.keyword.cloud}} environment. However, the use NFSv3 is preferred due to its different file locking mechanism. NFSv4.1 must quiesce all operations and then complete lock reclamation, thus protocol issues can occur during network events.
 
-   You can't use different NFS versions to mount the same datastore on multiple hosts. Because NFS 3 and NFS 4.1 clients don't use the same locking protocol, accessing the same virtual disks from two incompatible clients might result in incorrect behavior and cause data corruption. For more information, see [NFS File Locking](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-storage-8-0/working-with-datastores-in-vsphere-storage-environment/nfs-datastore-concepts-and-operations-in-vsphere-environment/guidelines-and-requirements-for-nfs-storage-with-esxi/nfs-file-locking.html){: external}.
+   You can't use different NFS versions to mount the same datastore on multiple hosts. Because NFS 3 and NFS 4.1 clients don't use the same locking protocol, accessing the same virtual disks from two incompatible clients might result in incorrect behavior and cause data corruption. For more information, see [NFS File Locking](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-storage/working-with-datastores-in-vsphere-storage-environment/nfs-datastore-concepts-and-operations-in-vsphere-environment/guidelines-and-requirements-for-nfs-storage-with-esxi/nfs-file-locking.html){: external}.
    {: important}
 
 - {{site.data.keyword.filestorage_short}} volumes are accessible only to authorized devices, subnets, or IP addresses.
@@ -100,7 +100,7 @@ To enable access to NFS storage, ESXi automatically opens firewall ports for the
 1. Scroll down to the appropriate version of NFS to make sure that the port is open.
     ![The image shows the Edit Security Profile window. The NFS Client service is selected. The image shows that all connections from any IP addresses are allowed.](images/1_4.svg){: caption="NFS Port information - Allow connection from any IP address." caption-side="bottom"}
 
-For more information, see the [VMware vSphere 8.0 - Configuring ESXi Firewall](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-security-8-0/securing-esxi-hosts/customizing-hosts-with-the-security-profile/esxi-firewall-configuration.html){: external} and [VMware vSphere 8.0 - NFS Client Firewall Behavior](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-storage-8-0/working-with-datastores-in-vsphere-storage-environment/nfs-datastore-concepts-and-operations-in-vsphere-environment/guidelines-and-requirements-for-nfs-storage-with-esxi/firewall-configuration-for-nfs-storage-with-esxi.html#GUID-70686ADB-961A-46BD-B814-48DCF6C5E34B-en){: external}.
+For more information, see the [VMware vSphere 8.0 - Configuring ESXi Firewall](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-security-8-0/securing-esxi-hosts/customizing-hosts-with-the-security-profile/esxi-firewall-configuration.html){: external} and [VMware vSphere 8.0 - NFS Client Firewall Behavior](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-storage/working-with-datastores-in-vsphere-storage-environment/nfs-datastore-concepts-and-operations-in-vsphere-environment/guidelines-and-requirements-for-nfs-storage-with-esxi/firewall-configuration-for-nfs-storage-with-esxi.html#GUID-70686ADB-961A-46BD-B814-48DCF6C5E34B-en){: external}.
 
 ### Configuring Jumbo frame settings
 {: #configureJumboFrames}
@@ -129,7 +129,7 @@ For more information, see the [VMware vSphere 8.0 - Configuring ESXi Firewall](h
      8980 bytes from a.b.c.d: icmp_seq=1 ttl=128 time=3.36 ms
      ```
 
-For more information, see [VMware vSphere 8.0 - Enabling Jumbo Frames](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-networking-8-0/managing-network-resources/enabling-jumbo-frames.html){: external}.
+For more information, see [VMware vSphere 8.0 - Enabling Jumbo Frames](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-networking/managing-network-resources/enabling-jumbo-frames.html){: external}.
 
 ### Adding an uplink adapter to a virtual switch
 {: #configurevmwarehost2}
@@ -155,7 +155,7 @@ For more information, see [vSphere Distributed Switch](/docs/vmwaresolutions?top
 
 If you have a VMkernel port group for NFS storage, extra steps must be taken. By default, ESXi uses the VMkernel port that is on the same subnet as an NFS volume to mount the NFS volume. Since layer 3 routing is used to mount the NFS volume, ESXi must be forced to use the VMkernel port that was configured to mount the NFS volume. To use the correct port, a static route must be created to the storage array.
 
-For more information, see [vSphere host static routing](/docs/vmwaresolutions?topic=vmwaresolutions-storage-infra-mgmt#storage-infra-mgmt-vsphere-routing), and [VMware vSphere 8.0 - Configure VMkernel Binding for NFS 3 Datastores](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-storage-8-0/working-with-datastores-in-vsphere-storage-environment/nfs-datastore-concepts-and-operations-in-vsphere-environment/configuring-the-nfs-datastore.html){: external}.
+For more information, see [vSphere host static routing](/docs/vmwaresolutions?topic=vmwaresolutions-storage-infra-mgmt#storage-infra-mgmt-vsphere-routing), and [VMware vSphere 8.0 - Configure VMkernel Binding for NFS 3 Datastores](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-storage/working-with-datastores-in-vsphere-storage-environment/nfs-datastore-concepts-and-operations-in-vsphere-environment/configuring-the-nfs-datastore.html){: external}.
 
 To configure a static route, SSH to each ESXi host that uses Performance or Endurance storage and run the following commands. Take note of the IP address that is the result of the `ping` command and use it with the `esxcli  network` command.
 
@@ -220,7 +220,7 @@ PING nfsdal0902a-fz.service.softlayer.com (10.2.125.80): 56 data bytes
 9. Review the inputs on the next screen and click **Finish**.
 10. Repeat for any additional {{site.data.keyword.filestorage_short}} volumes.
 
-For more information, see [VMware vSphere 8.0 - Creating a Datastore Cluster in vSphere](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-resource-management-8-0/creating-a-datastore-cluster.html){: external} and [VMware vSphere 8.0 - Creating vSphere Datastores](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-storage-8-0/working-with-datastores-in-vsphere-storage-environment/creating-vsphere-datastores.html){: external}.
+For more information, see [VMware vSphere 8.0 - Creating a Datastore Cluster in vSphere](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-resource-management-8-0/creating-a-datastore-cluster.html){: external} and [VMware vSphere 8.0 - Creating vSphere Datastores](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-storage/working-with-datastores-in-vsphere-storage-environment/creating-vsphere-datastores.html){: external}.
 
 ## Enabling ESXi Storage I/O Control (Optional)
 {: #enableSIOC}

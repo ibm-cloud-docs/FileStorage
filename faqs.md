@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-01-06"
+lastupdated: "2026-01-20"
 
 keywords: File Storage for Classic, encryption, security, provisioning, limitations, NFS
 
@@ -217,7 +217,7 @@ When {{site.data.keyword.filestorage_short}} is used in a VMware&reg; deployment
 {: #vmware-multiple-host-nfs}
 {: support}
 
-No. You can't use different NFS versions to mount the same datastore on multiple hosts. Because NFS 3 and NFS 4.1 clients don't use the same locking protocol. Accessing the same virtual disks from two incompatible clients might result in incorrect behavior and cause data corruption. For more information, see [NFS File Locking](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-storage-8-0/working-with-datastores-in-vsphere-storage-environment/nfs-datastore-concepts-and-operations-in-vsphere-environment/guidelines-and-requirements-for-nfs-storage-with-esxi/nfs-file-locking.html){: external}.
+No. You can't use different NFS versions to mount the same datastore on multiple hosts. Because NFS 3 and NFS 4.1 clients don't use the same locking protocol. Accessing the same virtual disks from two incompatible clients might result in incorrect behavior and cause data corruption. For more information, see [NFS File Locking](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-storage/working-with-datastores-in-vsphere-storage-environment/nfs-datastore-concepts-and-operations-in-vsphere-environment/guidelines-and-requirements-for-nfs-storage-with-esxi/nfs-file-locking.html){: external}.
 
 ## Can VAAI and HW acceleration be enabled in our VMware deployments?
 {: #isVAAIsupported}
