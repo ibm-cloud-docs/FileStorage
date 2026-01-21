@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-01-20"
+lastupdated: "2026-01-21"
 
 keywords: Classic File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
@@ -100,7 +100,7 @@ To enable access to NFS storage, ESXi automatically opens firewall ports for the
 1. Scroll down to the appropriate version of NFS to make sure that the port is open.
     ![The image shows the Edit Security Profile window. The NFS Client service is selected. The image shows that all connections from any IP addresses are allowed.](images/1_4.svg){: caption="NFS Port information - Allow connection from any IP address." caption-side="bottom"}
 
-For more information, see the [VMware vSphere 8.0 - Configuring ESXi Firewall](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-security-8-0/securing-esxi-hosts/customizing-hosts-with-the-security-profile/esxi-firewall-configuration.html){: external} and [VMware vSphere 8.0 - NFS Client Firewall Behavior](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-storage/working-with-datastores-in-vsphere-storage-environment/nfs-datastore-concepts-and-operations-in-vsphere-environment/guidelines-and-requirements-for-nfs-storage-with-esxi/firewall-configuration-for-nfs-storage-with-esxi.html#GUID-70686ADB-961A-46BD-B814-48DCF6C5E34B-en){: external}.
+For more information, see the [VMware vSphere 8.0 - Configuring ESXi Firewall](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-security/securing-esxi-hosts/customizing-hosts-with-the-security-profile/esxi-firewall-configuration.html){: external} and [VMware vSphere 8.0 - NFS Client Firewall Behavior](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-storage/working-with-datastores-in-vsphere-storage-environment/nfs-datastore-concepts-and-operations-in-vsphere-environment/guidelines-and-requirements-for-nfs-storage-with-esxi/firewall-configuration-for-nfs-storage-with-esxi.html#GUID-70686ADB-961A-46BD-B814-48DCF6C5E34B-en){: external}.
 
 ### Configuring Jumbo frame settings
 {: #configureJumboFrames}
@@ -220,7 +220,7 @@ PING nfsdal0902a-fz.service.softlayer.com (10.2.125.80): 56 data bytes
 9. Review the inputs on the next screen and click **Finish**.
 10. Repeat for any additional {{site.data.keyword.filestorage_short}} volumes.
 
-For more information, see [VMware vSphere 8.0 - Creating a Datastore Cluster in vSphere](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-resource-management-8-0/creating-a-datastore-cluster.html){: external} and [VMware vSphere 8.0 - Creating vSphere Datastores](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-storage/working-with-datastores-in-vsphere-storage-environment/creating-vsphere-datastores.html){: external}.
+For more information, see [VMware vSphere 8.0 - Creating a Datastore Cluster in vSphere](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-resource-management/creating-a-datastore-cluster.html){: external} and [VMware vSphere 8.0 - Creating vSphere Datastores](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-storage/working-with-datastores-in-vsphere-storage-environment/creating-vsphere-datastores.html){: external}.
 
 ## Enabling ESXi Storage I/O Control (Optional)
 {: #enableSIOC}
@@ -246,7 +246,7 @@ For more information, see [Attached storage infrastructure design](/docs/vmwares
     ![The image shows the NSF VMware&reg; datastore - Configure I/O control screen. Enable Storage I/O Control option is selected.](images/3_0.svg){: caption="Select Enable Storage I/O Control." caption-side="bottom"}
 6. Click **OK**.
 
-For more information about how to Enable Storage I/O Control, see [VMware vSphere 8.0 - Manage Storage I/O Resources with vSphere](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-resource-management-8-0/managing-storage-i-o-resources.html){: external}.
+For more information about how to Enable Storage I/O Control, see [VMware vSphere 8.0 - Manage Storage I/O Resources with vSphere](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-resource-management/managing-storage-i-o-resources.html){: external}.
 
 This setting is specific to the VMware&reg; datastore and not to the host.
 {: note}
@@ -270,7 +270,7 @@ For more information, see [Storage I/O Control for NFS v3](/docs/vmwaresolutions
 1. Under **Limit - IOPS**, click the drop-down menu and enter the maximum limit of storage resources to allocate to the virtual machine. By default, IOPS is unlimited. 
 1. Click **OK**.
 
-For more information about how to Set Storage I/O Control Resource Shares and Limits, see [VMware vSphere 8.0 - Manage Storage I/O Resources with vSphere](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-resource-management-8-0/managing-storage-i-o-resources.html){: external}.
+For more information about how to Set Storage I/O Control Resource Shares and Limits, see [VMware vSphere 8.0 - Manage Storage I/O Resources with vSphere](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-resource-management/managing-storage-i-o-resources.html){: external}.
 
 This process is used to set the resource consumption limits of individual vDisks in a {{site.data.keyword.BluVirtServers_short}} even when SIOC is not enabled. These settings are specific to the individual guest, and not the host, although they are used by SIOC.
 {: important}
