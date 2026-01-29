@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-01-28"
+lastupdated: "2026-01-29"
 
 keywords: File Storage for Classic, NFS, authorizing hosts, revoke access, grant access, view authorizations
 
@@ -27,10 +27,12 @@ You can view your volumes from the Resources list or by going to the list of {{s
 1. Go to the [{{site.data.keyword.cloud}} console](/login){: external}. From the menu, select **Infrastructure**  ![VPC icon](../icons/vpc.svg) > **Classic Infrastructure**.
 1. Click **Storage** > **{{site.data.keyword.filestorage_short}}**. The list of file shares is displayed. 
 1. You can filter the list by clicking the ![Filter icon](../icons/filter.svg "Filter") and selecting a location or entering a specific capacity. Click **Apply** to confirm your selection.
-1. Click the appropriate Volume name from the list.
+1. Click the appropriate volume name from the list.
 
 You can download the list in a CSV format by clicking Download ![Download icon](../icons/download.svg "Download").
 {: tip}
+
+The table shows information about the volume such as Name, Location, Status, Storage type, Max IOPS, Capacity, Usage, Snapshot capacity, Start date, and Notes, which are editable.
 
 ## Viewing the list of {{site.data.keyword.filestorage_short}} volumes from the CLI
 {: #managestorage-view-cli}
@@ -53,11 +55,14 @@ ibmcloud sl file volume-list -d dal13 -t endurance --sortby capacity_gb
 {: pre}
 
 ```sh
-id          username          datacenter  storage_type            capacity_gb   bytes_used   IOPs   ip_addr   lunId active_transactions   rep_partner_count   notes
-20973781    IBM02SEL1575811-1 dal13      endurance_file_storage   100           -            4      -         3 -                     0                   -
-22030583    IBM02SEL1575811-3 dal13      endurance_file_storage   20            -            4      -         0 -                     0                   -
+id          username              datacenter   storage_type             capacity_gb   bytes_used   IOPs   ip_addr                                lunId   active_transactions   rep_partner_count   notes
+233039512   IBM02SEV1414935_79    dal13        endurance_file_storage   20            0            -      fsf-dal1303g-fz.adn.networklayer.com   -       0                     1                   -
+703233985   IBM02SEV1414935_538   dal13        endurance_file_storage   20            0            -      fsf-dal1303d-fz.adn.networklayer.com   -       0                     0                   -
+221349094   IBM02SEV1414935_68    dal13        endurance_file_storage   30            0            -      fsf-dal1302c-fz.adn.networklayer.com   -       0                     1                   Testing
 ```
 {: screen}
+
+The command output shows information about the volume such as volume ID, volume name, location, storage type, capacity, usage, max IOPS, IP address, lunID, active transaction counts, replication partner count, and notes.
 
 For more information about all of the parameters that are available for this command, see [ibmcloud sl file volume-list](/docs/cli?topic=cli-sl-file-storage-service&interface=cli#sl_file_volume_list){: external}.
 
@@ -92,7 +97,26 @@ Example::
 {: #managestorage-view-api}
 {: api}
 
-To retrieve the list of {{site.data.keyword.filestorage_short}} volumes with the API, you can use the [`list_file_volumes` method](https://softlayer-python.readthedocs.io/en/latest/api/managers/SoftLayer.managers.FileStorageManager/#SoftLayer.managers.FileStorageManager.list_file_volumes){: external} and filter the results with the parameters `datacenter`, `storage_type` (Endurance or Performance) and `order`. The request returns a list of file volumes.
+To retrieve the list of {{site.data.keyword.filestorage_short}} volumes with the API, you can use the [`list_file_volumes` method](https://softlayer-python.readthedocs.io/en/latest/api/managers/SoftLayer.managers.FileStorageManager/#SoftLayer.managers.FileStorageManager.list_file_volumes){: external} and filter the results with the parameters `datacenter`, `storage_type` (Endurance or Performance) and `order`. The request returns a list of file volumes with details.
+
+You can also use curl commands like the following example to query various aspects of the storage volume. This example returns the number of bytes that are currently used.
+
+```sh
+curl -g -u $SL_USER:$SL_APIKEY -X GET \
+'https://api.softlayer.com/rest/v3.1/SoftLayer_Network_Storage/{volume_ID}/collectBytesUsed'
+```
+{: pre}
+
+The following request returns the maximum IOPS value for the volume.
+
+```sh
+curl -g -u $SL_USER:$SL_APIKEY -X GET \
+'https://api.softlayer.com/rest/v3.1/SoftLayer_Network_Storage/{volume_ID}/getIops'
+```
+{: pre}
+
+For more information, see [`SoftLayer_Network_Storage`](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Storage/){: external} article in the API reference.
+
 
 ## Updating the notes of a volume in the console
 {: #update-volume-notes-UI}
@@ -488,7 +512,7 @@ When the volume is canceled, the request is followed by a 24-hour reclaim wait p
 
 Active replicas and dependent duplicates can block reclamation of the Storage volume. Make sure that the volume is no longer mounted, host authorizations are revoked, replication is canceled, and no dependent duplicates exist before you attempt to delete the original volume.
 
-Then, you can use the [`cancel_volume` method](https://softlayer-python.readthedocs.io/en/latest/api/managers/SoftLayer.managers.FileStorageManager/#SoftLayer.managers.FileStorageManager.cancel_volume){: external} in the API Python Client. You have to specify the `volume_id` and whether you want to cancel he volume immediately or on the anniversary date (`immediate=False` or `immediate=True`) Optionally, you can also provide a reason for the cancellation (`reason='No longer needed'`).
+Then, you can use the [`cancel_volume` method](https://softlayer-python.readthedocs.io/en/latest/api/managers/SoftLayer.managers.FileStorageManager/#SoftLayer.managers.FileStorageManager.cancel_volume){: external} in the API Python Client. Specify the `volume_id` and whether you want to cancel he volume immediately or on the anniversary date (`immediate=False` or `immediate=True`) Optionally, you can also provide a reason for the cancellation (`reason='No longer needed'`).
 
 ## Deleting a storage volume with Terraform
 {: #cancelvolTerraform}

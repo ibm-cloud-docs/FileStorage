@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-01-20"
+lastupdated: "2026-01-29"
 
 keywords: File Storage for Classic, encryption, security, provisioning, limitations, NFS
 
@@ -311,7 +311,7 @@ Yes, you can use this setup because NFS is a file-aware protocol.
 {: faq}
 {: #inodes}
 
-Typically, when volumes are provisioned, they are allotted the maximum inode count for the size that you ordered. The maximum inode count grows automatically as the volume grows. If the inodes count does not increase after you expanded a volume, submit a [support case](/unifiedsupport/cases/add){: external}.
+Typically, when volumes are provisioned, the maximum inode count for the size that you ordered is allotted to the volumes. The maximum inode count grows automatically as the volume grows. If the inodes count does not increase after you expanded a volume, submit a [support case](/unifiedsupport/cases/add){: external}.
 
 ## I am unable to upgrade storage. What can affect the ability to upgrade or expand storage?
 {: faq}
@@ -417,9 +417,24 @@ The conversion process can take some time to complete. The bigger the volume, th
 
 ## How do I manage user permissions and access?
 {: #access_mgmt}
+{: faq}
 
 The account owner, or a user with the "Manage user classic infrastructure" permission, can adjust the permissions for other users within the IBM Cloud account. If you are not the account owner, you can assign only the level of permissions or a subset of the permission that you're already assigned. In the IBM Cloud console, go to **Manage > Access (IAM) > Users**. Then, select a user's name from the list that you can manage access for, and click **Classic infrastructure**. Select **Account** permissions to allow the user to add and upgrade storage. For more information, see [Managing classic infrastructure access](/docs/account?topic=account-mngclassicinfra).
 
 When the file storage is provisioned, the host servers need to be authorized to be able to mount the file share. Authorization can be set up in the console, from the CLI, with the API, or Terraform. For more information, see Authorizing hosts section in [Managing File Storage for Classic](/docs/FileStorage?topic=FileStorage-managingstorage).
 
 After the host is authorized, you can mount the file share and assign owners to your new folder structure and files. In Linux, you can refine access control by using the `chown` and `chmod` commands to assign read, write, and execute permissions to individual users and groups. For more information, see [Mounting {{site.data.keyword.filestorage_short}} on Red Hat Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingLinux) and [Mounting {{site.data.keyword.filestorage_short}} on Ubuntu](/docs/FileStorage?topic=FileStorage-mountingUbuntu).
+
+## Can I use the API to retrieve how much capacity is used in my {{site.data.keyword.filestorage_short}}?
+{: #api-to-get-usage}
+{: faq}
+
+Yes. You can use the following curl command to query how much capacity is used in the storage volume that is specified by its ID.
+
+```sh
+curl -g -u $SL_USER:$SL_APIKEY -X GET \
+'https://api.softlayer.com/rest/v3.1/SoftLayer_Network_Storage/{volume_ID}/collectBytesUsed'
+```
+{: pre}
+
+For more information, see the [API Reference](https://sldn.softlayer.com/reference/softlayerapi/){: external}.
