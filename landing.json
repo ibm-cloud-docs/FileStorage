@@ -1,7 +1,7 @@
 {
   "version": 2,
   "title": "File Storage - Classic",
-  "introduction": "Flash-backed, durable, fast and flexible NFS-based file storage\u2014with customizable IOPS and predictable billing",
+  "introduction": "Flash-backed, durable, fast and flexible NFS-based file storage—with customizable IOPS and predictable billing",
   "product_page": "https://www.ibm.com/products/file-storage",
   "console_page": "/cloud-storage/file",
   "section_topics": {

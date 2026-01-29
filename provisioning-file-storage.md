@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2025
-lastupdated: "2025-11-03"
+  years: 2014, 2026
+lastupdated: "2026-01-28"
 
 keywords: File Storage for Classic, NFS, provisioning, ordering, order file share, provision file volume, duplicate, cloning, replication
 
@@ -122,22 +122,59 @@ Order #32076317 placed successfully!
 {: #orderingthroughAPI}
 {: api}
 
-The method `order_file_volume` (storage_type, location, size, iops=None, tier_level=None, snapshot_size=None, service_offering='storage_as_a_service', hourly_billing_flag=False) places an order for a file share.
+The most convenient way to order {{site.data.keyword.filestorage_short}} with the API is by using the `FileStorageManager` in the [SL API Python client](https://sldn.softlayer.com/python/order_block_file_storage_with_managers/){: external}
+
+The method [`order_file_volume` method](https://softlayer-python.readthedocs.io/en/latest/api/managers/SoftLayer.managers.FileStorageManager/#SoftLayer.managers.FileStorageManager.order_file_volume){: external} places an order for a file share.
 
 You must specify the following parameters for a successful order.
 - `storage_type` – "performance" or "endurance".
 - `location` – Data center in which to order the share.
-- `size` – Size of the new volume, in GB.
-- `iops` – Number of IOPS for a “Performance” order.
-- `tier_level` – Tier level to use for an “Endurance” order.
-- `snapshot_size` – The size of optional snapshot space, if snapshot space is also to be ordered. (None if not ordered.)
+- `size` – Size of the new volume, in GB. Minimum value is 20 and maximum value is 12000.
+- `iops` – Number of IOPS for a “Performance” order. IOPS for performance storage can be between 100 - 1000 IOPS.
+- `tier_level` – Tier level to use for an “Endurance” order. Tier Level IOPS for endurance can be: 0.25, 2, 4 or 10.
+- `snapshot_size` – The size of optional snapshot space, if snapshot space is also to be ordered. (None if not ordered.) Snapshot size can be 0, 5, 10, 20.
 - `service_offering` – Requested offering package to use in the order ("storage_as_a_service").
 - `hourly_billing_flag` – Billing type, monthly (False) or hourly (True), default to monthly.
 
-To be able to access all the new features, order `Storage-as-a-Service Package 759`.
-{: tip}
+To be able to access all the current features, order `Storage-as-a-Service Package 759`. See the following example.
 
-For more information about ordering {{site.data.keyword.filestorage_short}} through the API, see [order_file_volume](https://softlayer-python.readthedocs.io/en/latest/api/managers/SoftLayer.managers.FileStorageManager/#SoftLayer.managers.FileStorageManager.order_file_volume){: external}.
+```sh
+import SoftLayer
+from pprint import pprint
+
+client = SoftLayer.Client()
+file_mgr = SoftLayer.FileStorageManager(client)
+
+storage_type = 'performance'
+location = 'dal10'
+hourly = True
+size = 20           
+iops = 100         
+snapshot_size = 5
+
+try:
+    result = file_mgr.order_file_volume(storage_type, location, size, iops=iops,
+                                        snapshot_size=snapshot_size, hourly_billing_flag=hourly)
+
+    pprint(result)
+except SoftLayer.SoftLayerAPIError as e:
+    pprint('Unable to create the storage. %s, %s ' % (e.faultCode, e.faultString))
+```
+{: codeblock}
+
+Alternatively, you can use curl commands to interact with the ordering system. The following example curl request retrieves the storage package information that can be used for ordering.
+
+```sh
+curl -u $SL_USER:$SL_APIKEY -X GET -H 'https://api.softlayer.com/rest/v3.1/SoftLayer_Product_Package/getAllObjects.json?objectMask=mask%5Bid%2Cname%2Citems%5Bprices%5Bcategories%5D%2Cattributes%5D%5D&objectFilter=%7B%22categories%22%3A+%7B%22categoryCode%22%3A+%7B%22operation%22%3A+%22_%3D+storage_as_a_service%22%7D%7D%2C+%22statusCode%22%3A+%7B%22operation%22%3A+%22_%3D+ACTIVE%22%7D%7D'
+```
+{: pre}
+
+The following example curl request example orders a storage volume.
+
+```sh
+curl -u $SL_USER:$SL_APIKEY -X POST -H -d '{"parameters": [{"complexType": "SoftLayer_Container_Product_Order_Network_Storage_AsAService", "packageId": 759, "prices": [{"id": 189433}, {"id": 189443}, {"id": 194763}, {"id": 194703}], "quantity": 1, "location":1854895, "useHourlyPricing": true, "volumeSize": 100' 'https://api.softlayer.com/rest/v3.1/SoftLayer_Product_Order/placeOrder.json'
+```
+{: pre}
 
 ## Ordering {{site.data.keyword.filestorage_short}} with Terraform
 {: #orderingthroughTerraform}

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2025
-lastupdated: "2025-09-15"
+  years: 2014, 2026
+lastupdated: "2026-01-28"
 
 keywords: File Storage for Classic, NFS, snapshots, snapshot schedule, manual snapshot, snapshot space, snapshot quota
 
@@ -104,6 +104,28 @@ Options:
   -h, --help  Show this message and exit.
 ```
 
+## Managing a Snapshot schedule with the API
+{: #addscheduleAPI}
+{: api}
+
+You can decide how often and when you want to create a point in time reference of your storage volume with Snapshot schedules. You can have a maximum of 50 snapshots per storage volume.
+
+Before you can set up your initial schedule, you must first purchase snapshot space if you didn't purchase it during the initial provisioning of the storage volume.
+{: important}
+
+You can use the [`enable_snapshots` method](https://softlayer-python.readthedocs.io/en/latest/api/managers/SoftLayer.managers.FileStorageManager/#SoftLayer.managers.FileStorageManager.enable_snapshots){: external} in the File Storage Manager of the API Python Client to add a snapshot schedule to your volume. You must specify the following parameters:
+
+- `volume_id` (integer) – The ID of the volume
+- `schedule_type` (string) – `HOURLY`,`DAILY`, or `WEEKLY`
+- `retention_count` (integer) – Number of snapshots to be kept
+- `minute` (integer) – Minute when to take snapshot
+- `hour` (integer) – Hour when to take snapshot
+- `day_of_week `(string) – Day when to take snapshot
+
+A successful API call returns whether the snapshot was successfully scheduled or not.
+
+When you want to disable a schedule, use the [`disable_snapshots` method](https://softlayer-python.readthedocs.io/en/latest/api/managers/SoftLayer.managers.FileStorageManager/#SoftLayer.managers.FileStorageManager.disable_snapshots){: external}. Specify the `volume_id` and the schedule (`HOURLY`,`DAILY`, or `WEEKLY`) that you want to disable. 
+
 ## Managing a Snapshot schedule with Terraform
 {: #addscheduleTerraform}
 {: terraform}
@@ -166,6 +188,10 @@ The snapshot is taken and displayed in the **Snapshots** section of the **Detail
 {: #takemanualsnapshotCLI}
 {: cli}
 
+Manual snapshots can be taken at various points during an application upgrade or maintenance. You can also take snapshots across multiple servers that were temporarily deactivated at the application level.
+
+The maximum limit of manual snapshots per storage volume is 50.
+
 ### Taking a manual Snapshot from the IBMCLOUD CLI
 {: #takemanualsnapshotICCLI}
 
@@ -191,6 +217,16 @@ Options:
   -n, --notes TEXT  Notes to set on the new snapshot
   -h, --help        Show this message and exit.
 ```
+
+## Taking a manual Snapshot with the API
+{: #takemanualsnapshotAPI}
+{: api}
+
+Manual snapshots can be taken at various points during an application upgrade or maintenance. You can also take snapshots across multiple servers that were temporarily deactivated at the application level.
+
+The maximum limit of manual snapshots per storage volume is 50.
+
+You can use the [`create_snapshot` method](https://softlayer-python.readthedocs.io/en/latest/api/managers/SoftLayer.managers.FileStorageManager/#SoftLayer.managers.FileStorageManager.create_snapshot){: external} in the API Python client to create a snapshot on demand. Specify the `volume_id` and a name for your snapshot by adding it as `notes`. A successful API call returns the ID of the new snapshot.
 
 ## Listing all Snapshots with usage information and management functions in the console
 {: #listsnapshotUI}
@@ -300,6 +336,23 @@ Options:
  --enable   Enable snapshot threshold warning notification for the storage volume
  -h, --help  Show this message and exit.
 ```
+
+## Checking notification status with the API
+{: #checknotificationstatusAPI}
+{: api}
+
+Notifications are sent when you reach three different space thresholds – 75%, 90%, and 95%.
+
+- At **75% capacity**, a warning is sent that snapshot space usage exceeded 75%. To remediate this situation, you can manually add space, or delete retained unnecessary snapshots. You can reduce the number of retained snapshots in the schedule. If you reduce the snapshot data or increase the space, the warning system resets, and no autodeletion occurs.
+- At **90% capacity**, a second warning is sent when snapshot space usage exceeded 90%. Like with reaching 75% capacity, if you take the necessary actions to decrease the snapshot data or increase the space, the warning system is reset and no autodeletion occurs.
+- At **95% capacity**, a final warning is sent. If no action is taken to bring your space usage under the threshold, automatic deletion starts so that future snapshots can be created. Scheduled snapshots are deleted, starting with the oldest, until usage drops under 95%. Snapshots continue to be deleted each time usage exceeds 95% until it drops under the threshold. If the space is manually increased or snapshots are manually deleted, the warning is reset, and reissued if the threshold is exceeded again. If no actions are taken, this notification is the only warning that you receive.
+
+If snapshot space usage increases too rapidly, then you might receive one notification before autodeletion of the oldest scheduled snapshot occurs. For example, if usage jumps from 76% to 96% within 15 minutes, you receive one notification about exceeding 75% and one notification about exceeding 95%. The system skips the 90%-exceeded warning.
+{: note}
+
+By default, snapshot warning notifications are enabled for every customer. However, you can choose to disable them. When this feature is disabled, all ticket generation and notifications are stopped. You can disable and enable notifications for the volume at any time.
+
+To see whether the notifications are enabled, use the [`get_volume_snapshot_notification_status` method](https://softlayer-python.readthedocs.io/en/latest/api/managers/SoftLayer.managers.FileStorageManager/#SoftLayer.managers.FileStorageManager.get_volume_snapshot_notification_status){: external} in the API Python client. Specify the `volume_id`. The successful response indicates whether the snapshot space usage threshold warning is enabled or disabled.
 
 ## Increasing the amount of Snapshot space for a volume in the console
 {: #changesnapshotspaceUI}
@@ -412,6 +465,12 @@ Usage: slcli file snapshot-delete [OPTIONS] SNAPSHOT_ID
 Options:
   -h, --help  Show this message and exit.
 ```
+
+## Deleting a snapshot with the API
+{: #deletesnapshotAPI}
+{: api}
+
+To delete a snapshot with the API, use the [`delete_snapshot` method](https://softlayer-python.readthedocs.io/en/latest/api/managers/SoftLayer.managers.FileStorageManager/#SoftLayer.managers.FileStorageManager.delete_snapshot){: external}. Specify the ID of the snapshot in the `snapshot_id` parameter. 
 
 ## Deleting a snapshot with Terraform
 {: #deletesnapshotTerraform}

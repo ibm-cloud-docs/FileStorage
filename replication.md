@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-01-12"
+lastupdated: "2026-01-29"
 
 keywords: File Storage for Classic, NFS, replication, duplication, synchronous, replica schedule, replica space, disaster recovery
 
@@ -90,6 +90,12 @@ To list suitable replication data centers for a specific volume, use the followi
  As part of the data center modernization strategy for {{site.data.keyword.cloud}}, several data centers are scheduled to consolidate in 2023. For more information, see [Data center consolidations](/docs/account?topic=account-dc-closure){: external}.
 {: note}
 
+## Determining the remote data center for the replicated storage volume with the API
+{: #determinereplicationlocAPI}
+{: api}
+
+To determine available replication locations for your {{site.data.keyword.filestorage_short}} volume, you can use the [`get_replication_locations` method](https://softlayer-python.readthedocs.io/en/latest/api/managers/SoftLayer.managers.FileStorageManager/#SoftLayer.managers.FileStorageManager.get_replication_locations){: external} in the API Python client. Specify your source `volume_id`, and the API response returns an array of locations where replicas can be created.
+
 ## Creating the initial replica in the console
 {: #createrepUI}
 {: ui}
@@ -163,6 +169,14 @@ Options:
 -h, --help                      Show this message and exit.
 ```
 
+## Creating the initial replica with the API
+{: #createrepAPI}
+{: api}
+
+Replications work based on a snapshot schedule. You must first have snapshot space and a snapshot schedule for the source volume before you can replicate.
+
+To create a replica, use the [`order_replicant_volume` method](https://softlayer-python.readthedocs.io/en/latest/api/managers/SoftLayer.managers.FileStorageManager/#SoftLayer.managers.FileStorageManager.order_replicant_volume){: external} of the API Python client. Specify the ID of the primary volume to be replicated with the `volume_id` parameter, the `snapshot_schedule` to use for replication, the `location` for the replica volume, and the `tier` or `iops` value of the new replica.
+
 ## Viewing the replica volumes in the Volume List in the console
 {: #replicalistUI}
 {: ui}
@@ -201,12 +215,11 @@ List existing replicant volumes for a file volume with the following command.
                   Capacity (GB), Hardware ID, Guest ID, Host ID
   -h, --help      Show this message and exit.
 ```
+## Listing the replica volumes with the API
+{: #replicalistAPI}
+{: api}
 
-## Viewing the replication history in the console
-{: #replicationhistoryUI}
-{: ui}
-
-To view the Replication history, click Manage on the main menu bar. Select **Account**, and scroll to the Audit Log. The Storage Replication Events list contains the names of the volume, a description of the replication event and the timestamp of the event.
+To list the replica volumes that are related to the primary volume, use the [`get_replication_partners`method](https://softlayer-python.readthedocs.io/en/latest/api/managers/SoftLayer.managers.FileStorageManager/#SoftLayer.managers.FileStorageManager.get_replication_partners){: external} and specify the primary `volume_id`. A successful response presents the list of replica volumes of the specified volume.
 
 ## Editing the Replication Schedule in the console
 {: #editreplicaschedule}

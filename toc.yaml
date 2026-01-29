@@ -27,6 +27,7 @@ toc:
   - navgroup:
       id: howto
       topics:
+      - slapi-usage.md
       - topicgroup:
           id: ordering-storage
           label: Provisioning

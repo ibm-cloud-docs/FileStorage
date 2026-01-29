@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2025
-lastupdated: "2025-11-03"
+  years: 2014, 2026
+lastupdated: "2026-01-28"
 
 keywords: File Storage for Classic, NFS, limits, quotas
 
@@ -77,13 +77,15 @@ To directly get this information from the API, use the following method: [`SoftL
 
 ```sh
 curl -u $SL_USER:$SL_APIKEY 'https://api.softlayer.com/rest/v3.1/SoftLayer_Network_Storage/getVolumeCountLimits.json'
-
-SoftLayer_Container_Network_Storage_DataCenterLimits_VolumeCountLimitContainer[{"datacenterName":"global","maximumAvailableCount":750,"provisionedCount":99}]
 ```
-{: codeblock}
+{: pre}
+
+```json
+SoftLayer_Container_Network_Storage_DataCenterLimits_VolumeCountLimitContainer[{"datacenterName":"global","maximumAvailableCount":750,"provisionedCount":99}]`
+```
+{: screen}
 
 The API response shows the combined number of {{site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_short}}.
-{: tip}
 
 ## Requesting limit increase
 {: #increasefilelimits}

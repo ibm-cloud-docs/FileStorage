@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2025
-lastupdated: "2025-03-18"
+  years: 2014, 2026
+lastupdated: "2026-01-28"
 
 keywords: File Storage for Classic, NFS, snapshot, ordering snapshot, snapshot space
 
@@ -125,6 +125,13 @@ Options:
   --upgrade             Flag to indicate that the order is an upgrade
   -h, --help            Show this message and exit.
 ```
+{: codeblock}
+
+## Ordering Snapshot space with the API
+{: #ordersnapshotAPI}
+{: api}
+
+You can use the [`order_snapshot_space` method](https://softlayer-python.readthedocs.io/en/latest/api/managers/SoftLayer.managers.FileStorageManager/#SoftLayer.managers.FileStorageManager.order_snapshot_space){: external} in the SL API Python client to order more capacity to store snapshots.
 
 ## Ordering Snapshot space with Terraform
 {: #ordersnapshotTerraform}

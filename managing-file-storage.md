@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2025
-lastupdated: "2025-09-15"
+  years: 2014, 2026
+lastupdated: "2026-01-28"
 
 keywords: File Storage for Classic, NFS, authorizing hosts, revoke access, grant access, view authorizations
 
@@ -15,7 +15,7 @@ subcollection: FileStorage
 # Managing {{site.data.keyword.filestorage_short}}
 {: #managingstorage}
 
-You can manage your {{site.data.keyword.filestorage_full}} volumes through the {{site.data.keyword.cloud}} console and from the CLI.
+You can manage your {{site.data.keyword.filestorage_full}} volumes through the {{site.data.keyword.cloud}} console, from the CLI, with the API, or Terraform. You can add notes, authorize compute hosts to access your volume, revoke access, and delete the volume when it is no longer needed. You can [increase capacity](/docs/FileStorage?topic=FileStorage-expandCapacity), [adjust IOPS](/docs/FileStorage?topic=FileStorage-adjustingIOPS), [manage snapshots](/docs/FileStorage?topic=FileStorage-managingSnapshots), and manage [replication](/docs/FileStorage?topic=FileStorage-replication).
 {: shortdesc}
 
 ## Viewing the list of {{site.data.keyword.filestorage_short}} volumes in the console
@@ -88,6 +88,12 @@ Example::
 ```
 {: screen}
 
+## Viewing the list of {{site.data.keyword.filestorage_short}} volumes with the API
+{: #managestorage-view-api}
+{: api}
+
+To retrieve the list of {{site.data.keyword.filestorage_short}} volumes with the API, you can use the [`list_file_volumes` method](https://softlayer-python.readthedocs.io/en/latest/api/managers/SoftLayer.managers.FileStorageManager/#SoftLayer.managers.FileStorageManager.list_file_volumes){: external} and filter the results with the parameters `datacenter`, `storage_type` (Endurance or Performance) and `order`. The request returns a list of file volumes.
+
 ## Updating the notes of a volume in the console
 {: #update-volume-notes-UI}
 {: ui}
@@ -131,6 +137,19 @@ ibmcloud sl call-api SoftLayer_Network_Storage editObject --init 562193766 --par
 {: pre}
 
 For more information, see [ibmcloud sl call-api](/docs/cli?topic=cli-sl-all-api).
+
+## Updating the notes of a volume with the API
+{: #update-volume-notes-API}
+{: api}
+
+To update notes on a volume with the API, you can make a `POST /SoftLayer_Network_Storage/$VOLUME_ID/editObject.json` curl request. The following API example adds the word "Testing" as a note to the storage volume.
+
+```sh
+curl -u $SL_USER:$SL_APIKEY -X POST -H "Accept: */*" -H "Accept-Encoding: gzip, deflate, compress" -d '{"parameters": [{"notes": "Testing"}]}' 'https://api.softlayer.com/rest/v3.1/SoftLayer_Network_Storage/123456789/editObject.json'
+```
+{: pre}
+
+Alternatively, you can use the [`volume_set_note` method](https://softlayer-python.readthedocs.io/en/latest/api/managers/SoftLayer.managers.FileStorageManager/#SoftLayer.managers.FileStorageManager.volume_set_note){: external} in the API Python Client. 
 
 ## Authorizing hosts to access {{site.data.keyword.filestorage_short}}
 {: #managestorage-authhost}
@@ -203,6 +222,15 @@ Options:
   -s, --subnet-id TEXT      An ID of one subnet to authorize.
   --help                    Show this message and exit.
 ```
+{: screen}
+
+### Authorizing hosts to access {{site.data.keyword.filestorage_short}} with the API
+{: #authhostAPI}
+{: help}
+{: support}
+{: api}
+
+To authorize hosts to access your file volume, you can use the [`authorize_host_to_volume` method](https://softlayer-python.readthedocs.io/en/latest/api/managers/SoftLayer.managers.FileStorageManager/#SoftLayer.managers.FileStorageManager.authorize_host_to_volume){: external} in the API Python Client. You have to specify the `volume_id` and the compute hosts by providing one of the following parameters: `hardware_ids` (for bare metal servers),`virtual_guest_ids` (for virtual server instances), `ip_address_ids`, `subnet_ids`.The request returns an array of `SoftLayer_Network_Storage_Allowed_Host` objects that have access to the specified volume.
 
 ### Authorizing the host with Terraform
 {: #authhostterraform}
@@ -380,6 +408,14 @@ Options:
 If you want to disconnect multiple hosts from a specific volume, you need to repeat the Revoke Access action for each host.
 {: tip}
 
+## Revoking a host's access to {{site.data.keyword.filestorage_short}} with the API
+{: #revokeauthapi}
+{: help}
+{: support}
+{: api}
+
+To revoke host authorization to access your file volume, you can use the [`deauthorize_host_to_volume` method](https://softlayer-python.readthedocs.io/en/latest/api/managers/SoftLayer.managers.FileStorageManager/#SoftLayer.managers.FileStorageManager.deauthorize_host_to_volume){: external} in the API Python Client. You have to specify the `volume_id` and the compute hosts by providing one of the following parameters: `hardware_ids` (for bare metal servers),`virtual_guest_ids` (for virtual server instances), `ip_address_ids`, `subnet_ids`. The request returns an array of `SoftLayer_Network_Storage_Allowed_Host` objects that have access to the specified volume, so you can confirm that the requested compute hosts were removed.
+
 ## Deleting a storage volume in the console
 {: #cancelvolUI}
 {: help}
@@ -441,6 +477,18 @@ Options:
   -h, --help     Show this message and exit.
 ```
 {: screen}
+
+## Deleting a storage volume with the API
+{: #cancelvolAPI}
+{: help}
+{: support}
+{: api}
+
+When the volume is canceled, the request is followed by a 24-hour reclaim wait period. You can still see the volume in the console during those 24 hours. Billing for the volume stops immediately. When the reclaim-period expires, the data is destroyed and the volume is removed from the console, too. For more information, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs).
+
+Active replicas and dependent duplicates can block reclamation of the Storage volume. Make sure that the volume is no longer mounted, host authorizations are revoked, replication is canceled, and no dependent duplicates exist before you attempt to delete the original volume.
+
+Then, you can use the [`cancel_volume` method](https://softlayer-python.readthedocs.io/en/latest/api/managers/SoftLayer.managers.FileStorageManager/#SoftLayer.managers.FileStorageManager.cancel_volume){: external} in the API Python Client. You have to specify the `volume_id` and whether you want to cancel he volume immediately or on the anniversary date (`immediate=False` or `immediate=True`) Optionally, you can also provide a reason for the cancellation (`reason='No longer needed'`).
 
 ## Deleting a storage volume with Terraform
 {: #cancelvolTerraform}
