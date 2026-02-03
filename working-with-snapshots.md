@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-01-28"
+lastupdated: "2026-01-29"
 
 keywords: File Storage for Classic, NFS, snapshots, snapshot schedule, manual snapshot, snapshot space, snapshot quota
 
@@ -120,7 +120,7 @@ You can use the [`enable_snapshots` method](https://softlayer-python.readthedocs
 - `retention_count` (integer) – Number of snapshots to be kept
 - `minute` (integer) – Minute when to take snapshot
 - `hour` (integer) – Hour when to take snapshot
-- `day_of_week `(string) – Day when to take snapshot
+- `day_of_week` (string) – Day when to take snapshot
 
 A successful API call returns whether the snapshot was successfully scheduled or not.
 

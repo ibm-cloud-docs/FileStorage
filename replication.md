@@ -215,6 +215,8 @@ List existing replicant volumes for a file volume with the following command.
                   Capacity (GB), Hardware ID, Guest ID, Host ID
   -h, --help      Show this message and exit.
 ```
+{: screen}
+
 ## Listing the replica volumes with the API
 {: #replicalistAPI}
 {: api}

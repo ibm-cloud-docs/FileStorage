@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-01-29"
+lastupdated: "2026-02-03"
 
 keywords: File Storage for Classic, NFS, provisioning, setup, configuration, mounting storage
 
@@ -120,6 +120,6 @@ Mounting {{site.data.keyword.filestorage_short}} shares on Windows OS is not sup
 {: #manFileStor}
 {: step}
 
-In the console, from the [CLI](/docs/FileStorage?topic=FileStorage-SLCLIcommands), with the [API](/docs/FileStorage?topic=FileStorage-setupAPI) or [Terraform](docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-getting-started), you can manage various aspects of your {{site.data.keyword.filestorage_short}} such as host authorizations and cancellations. For more information, see [Managing {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-managingstorage).
+In the console, from the [CLI](/docs/FileStorage?topic=FileStorage-SLCLIcommands), with the [API](/docs/FileStorage?topic=FileStorage-setupAPI) or [Terraform](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-getting-started), you can manage various aspects of your {{site.data.keyword.filestorage_short}} such as host authorizations and cancellations. For more information, see [Managing {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-managingstorage).
 
 You can keep your data in sync in two different locations by using replication. Replication uses one of your snapshot schedules to automatically copy snapshots to a destination volume in a remote [data center](/docs/overview?topic=overview-locations#data-centers). The copies can be recovered in the remote site if a catastrophic event occurs or your data becomes corrupted. For more information, see [Replication and Disaster Recovery – Replicating Data](/docs/FileStorage?topic=FileStorage-replication&interface=ui).
