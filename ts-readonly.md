@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024, 2025
-lastupdated: "2025-11-03"
+  years: 2024, 2026
+lastupdated: "2026-02-05"
 
 keywords: file storage for classic, read-only storage volume, offline file share
 
@@ -12,15 +12,8 @@ subcollection: FileStorage
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Troubleshooting {{site.data.keyword.filestorage_short}}
-{: #classic-file-troubleshooting}
-
-When you create or manage {{site.data.keyword.filestorage_short}}, you might encounter issues. Often, you can recover by following a few steps. Issues, symptoms, likely causes, and resolutions are described in the following sections.
-{: shortdesc}
-
-## My storage appears offline or read-only.
-{: #fs_snapshot_ts_restore_fail}
-{: troubleshoot}
+# Why does my {{site.data.keyword.filestorage_short}} appear offline or read-only?
+{: #ts-volume-readonly}
 
 After a brief disconnect, the File storage volume appears offline or read-only.
 {: tsSymptoms}
