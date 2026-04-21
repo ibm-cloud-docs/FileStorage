@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-01-29"
+lastupdated: "2026-04-21"
 
 keywords: File Storage for Classic, encryption, security, provisioning, limitations, NFS
 
@@ -40,7 +40,7 @@ By default, you can provision a combined total of 700 Block and {{site.data.keyw
 {: #authlimit}
 {: support}
 
-The default limit for number of authorizations per file volume is 64. The limit includes all subnet, host, and IP authorizations combined. To increase this limit, contact Support. For more information, see [Creating support cases](/docs/account?topic=account-open-case).
+The default limit for number of authorizations per file volume is 64. The limit includes all subnet, host, and IP authorizations combined. To increase this limit, contact Support. For more information, see [Creating support cases](/docs/support?topic=support-open-case).
 
 ## How many {{site.data.keyword.filestorage_short}} volumes can be attached to a single host?
 {: faq}
@@ -318,7 +318,7 @@ Typically, when volumes are provisioned, the maximum inode count for the size th
 {: #expand-fail}
 
 The following situations can affect the ability to upgrade or expand storage.
-- The permissions that you have in the Cloud console can be a factor. For more information, see the topics within [User roles and permissions](/docs/account?topic=account-userroles){: external}.
+- The permissions that you have in the Cloud console can be a factor. For more information, see the topics within [User roles and permissions](/docs/iam?topic=iam-userroles){: external}.
 
 ## Does upgrading my storage affect the data that is on the volume?
 {: faq}
@@ -419,7 +419,7 @@ The conversion process can take some time to complete. The bigger the volume, th
 {: #access_mgmt}
 {: faq}
 
-The account owner, or a user with the "Manage user classic infrastructure" permission, can adjust the permissions for other users within the IBM Cloud account. If you are not the account owner, you can assign only the level of permissions or a subset of the permission that you're already assigned. In the IBM Cloud console, go to **Manage > Access (IAM) > Users**. Then, select a user's name from the list that you can manage access for, and click **Classic infrastructure**. Select **Account** permissions to allow the user to add and upgrade storage. For more information, see [Managing classic infrastructure access](/docs/account?topic=account-mngclassicinfra).
+The account owner, or a user with the "Manage user classic infrastructure" permission, can adjust the permissions for other users within the IBM Cloud account. If you are not the account owner, you can assign only the level of permissions or a subset of the permission that you're already assigned. In the IBM Cloud console, go to **Manage > Access (IAM) > Users**. Then, select a user's name from the list that you can manage access for, and click **Classic infrastructure**. Select **Account** permissions to allow the user to add and upgrade storage. For more information, see [Managing classic infrastructure access](/docs/iam?topic=iam-mngclassicinfra).
 
 When the file storage is provisioned, the host servers need to be authorized to be able to mount the file share. Authorization can be set up in the console, from the CLI, with the API, or Terraform. For more information, see Authorizing hosts section in [Managing File Storage for Classic](/docs/FileStorage?topic=FileStorage-managingstorage).
 
