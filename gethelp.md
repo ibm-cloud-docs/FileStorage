@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-21"
+lastupdated: "2026-06-08"
 
 keywords: File Storage for Classic, issues, get support, how to request help, open a case, open a ticket
 
@@ -14,7 +14,7 @@ subcollection: FileStorage
 # Getting help and support for {{site.data.keyword.filestorage_short}}
 {: #help-and-support}
 
-If you experience an issue or have questions when you use {{site.data.keyword.filestorage_full}}, you can use the following resources before you open a support case.
+Get help with {{site.data.keyword.filestorage_full}} by using available resources before opening a support case for issues or questions.
 {: shortdesc}
 
 * Ask the [AI assistant](/docs/overview?topic=overview-ask-ai-assistant) in the console or from the {{site.data.keyword.cloud_notm}} CLI.

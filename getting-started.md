@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-02-03"
+lastupdated: "2026-06-08"
 
-keywords: File Storage for Classic, NFS, provisioning, setup, configuration, mounting storage
+keywords: File Storage for Classic, NFS, provisioning, setup, configuration, mounting storage, mount storage, provision storage, NFS share, network attached storage
 
 subcollection: FileStorage
 
@@ -23,8 +23,10 @@ completion-time: 2h
 {: toc-services=""}
 {: toc-completion-time="2h"}
 
-{{site.data.keyword.filestorage_full}} is persistent, fast, and flexible network-attached, NFS-based {{site.data.keyword.filestorage_short}}. In this network-attached storage (NAS) environment, you have total control over your file shares function and performance. {{site.data.keyword.filestorage_short}} shares can be connected to up to 64 authorized devices over routed TCP/IP connections for resiliency.
+{{site.data.keyword.filestorage_short}} delivers enterprise-grade durability and availability with flexible performance options through persistent NFS-based network-attached storage.
 {: shortdesc}
+
+{{site.data.keyword.filestorage_full}} is persistent, fast, and flexible network-attached, NFS-based {{site.data.keyword.filestorage_short}}. In this network-attached storage (NAS) environment, you have total control over your file shares function and performance. {{site.data.keyword.filestorage_short}} shares can be connected to up to 64 authorized devices over routed TCP/IP connections for resiliency.
 
 For more information about using {{site.data.keyword.filestorage_short}} with the {{site.data.keyword.containerlong}}, see [Storing data on classic IBM Cloud File Storage](/docs/containers?topic=containers-file_storage).
 
@@ -32,12 +34,12 @@ For more information about using {{site.data.keyword.filestorage_short}} with th
 {: #prereqs}
 
 {{site.data.keyword.filestorage_short}} volumes can be provisioned from 20 GB to 12 TB with two options:
-- Provision **Endurance** tiers that feature pre-defined performance levels and other features like snapshots and replication. The following 4 tiers are available:
+- Provision **Endurance** tiers that feature pre-defined performance levels and other features like snapshots and replication. The following 4 tiers are available based on input/output operations per second (IOPS) per GB:
    - `LOW_INTENSITY_TIER` = 0.25 IOPS/GB
    - `READHEAVY_TIER` = 2 IOPS/GB
    - `WRITEHEAVY_TIER` = 4 IOPS/GB
    - `10_IOPS_PER_GB` = 10 IOPS/GB
-- Build a high-powered **Performance** environment with allocated input/output operations per second (IOPS).
+- Build a high-powered **Performance** environment with allocated IOPS.
 
 For more information about the {{site.data.keyword.filestorage_short}} offering, see [What is IBM Cloud File Storage](https://www.ibm.com/products/file-storage){: external}.
 
@@ -68,7 +70,7 @@ The IO size that is used by your application directly impacts the storage perfor
 ### Authorized hosts
 {: #numberofhosts}
 
-Another factor to consider is the number of hosts that are using your volume. When only a single host that is accessing the volume, it can be difficult to realize the maximum IOPS available, especially at extreme IOPS counts (10,000s). 
+Another factor to consider is the number of hosts that are using your volume. When only a single host that is accessing the volume, it can be difficult to realize the maximum IOPS available, especially at extreme IOPS counts (10,000s).
 
 The maximum IOPS for a file storage share is 48,000 IOPS. If your workload requires such high throughput, it would be best to configure at least a couple servers to access your volume to avoid a single-server bottleneck.
 
@@ -81,7 +83,7 @@ The speed of your Ethernet connection must be faster than the expected maximum t
 
 To achieve maximum IOPS, adequate network resources need to be in place. Other considerations include private network usage outside of storage and host side and application-specific tunings, and other settings.
 
-Storage traffic is to be isolated from other traffic types, and it is not to be directed through firewalls and routers. Keeping the storage traffic in a dedicated VLAN also helps prevent MTU mismatch when Jumbo frames are enabled. For more information, see [Enabling Jumbo Frames](/docs/FileStorage?topic=FileStorage-jumboframes).
+Storage traffic is to be isolated from other traffic types, and it is not to be directed through firewalls and routers. Keeping the storage traffic in a dedicated VLAN also helps prevent maximum transmission unit (MTU) mismatch when Jumbo frames are enabled. For more information, see [Enabling Jumbo Frames](/docs/FileStorage?topic=FileStorage-jumboframes).
 
 Storage traffic is included in the total network usage of Public Virtual Servers. For more information about the limits that might be imposed by the service, see the [Virtual Server Documentation](/docs/virtual-servers?topic=virtual-servers-about-public-virtual-servers).
 
@@ -122,4 +124,4 @@ Mounting {{site.data.keyword.filestorage_short}} shares on Windows OS is not sup
 
 In the console, from the [CLI](/docs/FileStorage?topic=FileStorage-SLCLIcommands), with the [API](/docs/FileStorage?topic=FileStorage-setupAPI) or [Terraform](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-getting-started), you can manage various aspects of your {{site.data.keyword.filestorage_short}} such as host authorizations and cancellations. For more information, see [Managing {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-managingstorage).
 
-You can keep your data in sync in two different locations by using replication. Replication uses one of your snapshot schedules to automatically copy snapshots to a destination volume in a remote [data center](/docs/overview?topic=overview-locations#data-centers). The copies can be recovered in the remote site if a catastrophic event occurs or your data becomes corrupted. For more information, see [Replication and Disaster Recovery – Replicating Data](/docs/FileStorage?topic=FileStorage-replication&interface=ui).
+You can keep your data in sync in two different locations by using replication. Replication uses one of your snapshot schedules to automatically copy snapshots to a destination volume in a remote [data center](/docs/overview?topic=overview-locations#data-centers). The copies can be recovered in the remote site if a catastrophic event occurs or your data becomes corrupted. For more information, see [Replication and Disaster Recovery - Replicating Data](/docs/FileStorage?topic=FileStorage-replication&interface=ui).

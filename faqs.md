@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-21"
+lastupdated: "2026-06-08"
 
 keywords: File Storage for Classic, encryption, security, provisioning, limitations, NFS
 
@@ -13,6 +13,9 @@ subcollection: FileStorage
 
 # FAQ for {{site.data.keyword.filestorage_short}}
 {: #file-storage-faqs}
+
+Find answers to common questions about {{site.data.keyword.filestorage_full}}, including provisioning, management, performance, security, and troubleshooting.
+{: shortdesc}
 
 ## How can I tell which of my {{site.data.keyword.filestorage_short}} volumes are encrypted?
 {: faq}
@@ -86,7 +89,7 @@ The maximum supported file size (including VMDKs) is limited to 16 TB per file
 {: faq}
 {: #movedatacenter}
 
-You need to order a new {{site.data.keyword.filestorage_short}} share in the correct data center, and then cancel the {{site.data.keyword.filestorage_short}} device that you ordered in the incorrect location. 
+You need to order a new {{site.data.keyword.filestorage_short}} share in the correct data center, and then cancel the {{site.data.keyword.filestorage_short}} device that you ordered in the incorrect location.
 
 You can also create a duplicate of your share, and cancel the parent share. For more information, see [Creating and managing duplicate volumes](/docs/FileStorage?topic=FileStorage-duplicatevolume).
 
@@ -95,7 +98,7 @@ You can also create a duplicate of your share, and cancel the parent share. For 
 {: faq}
 {: support}
 
-When the volume is canceled, the request is followed by a 24-hour reclaim wait period. You can still see the volume in the console during those 24 hours. The 24-hour waiting period gives you a chance to void the cancellation request if needed. If you want to cancel the deletion of the volume, raise a [Support case](/unifiedsupport/cases/add){: external}. 
+When the volume is canceled, the request is followed by a 24-hour reclaim wait period. You can still see the volume in the console during those 24 hours. The 24-hour waiting period gives you a chance to void the cancellation request if needed. If you want to cancel the deletion of the volume, raise a [Support case](/unifiedsupport/cases/add){: external}.
 
 Billing for the volume stops immediately. When the reclaim period expires, the data is destroyed and the volume is removed from the console, too.
 
@@ -206,7 +209,7 @@ The answer depends on how long ago you deleted the storage volume, and if you ch
 
 Both NFSv3 and NFSv4.1 are supported in the {{site.data.keyword.cloud}} environment. NFSv4.2 is not supported.
 
-Use the **NFSv3** protocol when possible. NFSv3 supports safe asynchronous writes and is more robust at error handling than the previous NFSv2. It supports 64-bit file sizes and offsets, allowing clients to access more than 2 GB of file data. 
+Use the **NFSv3** protocol when possible. NFSv3 supports safe asynchronous writes and is more robust at error handling than the previous NFSv2. It supports 64-bit file sizes and offsets, allowing clients to access more than 2 GB of file data.
 
 NFSv3 natively supports `no_root_squash` that allows root clients to retain root permissions on the NFS share. You can enable this feature in NFSv4.1, by editing the domain information and running the `rpcidmapd` or a similar service. For more information, see [Implementing no_root_squash for NFS](/docs/FileStorage?topic=FileStorage-mountingLinux#norootsquash).
 

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2025
-lastupdated: "2025-06-19"
+  years: 2018, 2026
+lastupdated: "2026-06-08"
 
 keywords: File Storage for Classic, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
@@ -11,10 +11,13 @@ subcollection: FileStorage
 ---
 {{site.data.keyword.attribute-definition-list}}
 
-# Disaster Recovery - Failover with an accessible primary volume
+# Fail over with an accessible primary volume for disaster recovery
 {: #dr-accessible}
 
-If a catastrophic event occurs on the primary site and the primary storage is still accessible, customers can take the following steps to quickly access their data on the secondary site.
+Quickly access your data on the secondary site when the primary storage remains accessible after a catastrophic event by following these failover steps.
+{: shortdesc}
+
+If a catastrophic event occurs on the primary site and the primary storage is still accessible, you can take the following steps to quickly access your data on the secondary site.
 
 Before you start the failover, make sure that all host-authorization is in place.
 {: requirement}
@@ -52,8 +55,8 @@ Before you proceed with these steps, disconnect the volume. Failure to do so res
 3. Select **Failover**. Select **Controlled Failover** or **Immediate Failover**.
 4. Mark the checkbox to acknowledge pertinent information and click **Yes** to proceed. A window is displayed to confirm that the failover is in progress. Click **Close** to return to the File shares list.
 5. In the list, locate your shares. If you have multiple pages, you might need to go to the next page to see the shares.
-6. The status of your source and replica shares is displayed as 'Failback in progress'. Additionally, an icon appears next to your volume on the **{{site.data.keyword.filestorage_short}}** that indicates that an active transaction is occurring. Hovering over the icon produces a window that shows the transaction details. The icon disappears when the transaction is complete. 
-   
+6. The status of your source and replica shares is displayed as 'Failback in progress'. Additionally, an icon appears next to your volume on the **{{site.data.keyword.filestorage_short}}** that indicates that an active transaction is occurring. Hovering over the icon produces a window that shows the transaction details. The icon disappears when the transaction is complete.
+
     During the failover process, configuration-related actions are read-only. You can't edit any snapshot schedule or change snapshot space. The event is logged in replication history. When your target volume is live, you get another message. Your original source volume's Status becomes Inactive.
     {: note}
 
@@ -104,7 +107,7 @@ During the failover process, configuration-related actions are read-only. You ca
 ## Starting a failback from a volume to its replica
 {: #failbackfromreplica}
 
-When your original source volume is repaired, you can start a controlled Failback to your original source volume. 
+When your original source volume is repaired, you can start a controlled Failback to your original source volume.
 
 In a controlled failback the following steps occur:
 - The acting source volume is taken offline.
@@ -123,11 +126,11 @@ Failbacks are started under **Storage**, **{{site.data.keyword.filestorage_short
 
 1. Click your active volume ("target").
 2. On the Share Details page, click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions").
-3. Select **Failback**. 
+3. Select **Failback**.
 4. Mark the checkbox to acknowledge pertinent information and click Yes to proceed.
 5. A window is displayed to confirm that the failover is in progress. Click **Close** to return to the File shares list.
 6. In the list, locate your shares. If you have multiple pages, you might need to go to the next page to see the shares.
-7. The status of your source and replica shares is displayed as 'Failback in progress'. Additionally, an icon appears next to your volume on the **{{site.data.keyword.filestorage_short}}** that indicates that an active transaction is occurring. Hovering over the icon produces a window that shows the transaction details. The icon disappears when the transaction is complete. 
+7. The status of your source and replica shares is displayed as 'Failback in progress'. Additionally, an icon appears next to your volume on the **{{site.data.keyword.filestorage_short}}** that indicates that an active transaction is occurring. Hovering over the icon produces a window that shows the transaction details. The icon disappears when the transaction is complete.
 
     During the failback process, configuration-related actions are read-only. You can't edit any snapshot schedule or change snapshot space. The event is logged in replication history.
     {: note}

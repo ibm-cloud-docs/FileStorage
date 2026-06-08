@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2025
-lastupdated: "2025-11-03"
+  years: 2014, 2026
+lastupdated: "2026-06-08"
 
 keywords: File Storage for Classic, NFS, security, encryption
 
@@ -14,7 +14,7 @@ subcollection: FileStorage
 # Securing your data in {{site.data.keyword.filestorage_short}}
 {: #mng-data}
 
-{{site.data.keyword.cloud}} prioritizes security and understands the critical need to encrypt data for protection. For {{site.data.keyword.filestorage_full}} that is provisioned with either Endurance or Performance options, provider-managed encryption is enabled by default, at no extra cost and with no performance impact.
+Your data is protected with provider-managed encryption that's enabled by default at no extra cost and with no performance impact for all file storage volumes.
 {: shortdesc}
 
 The provider-managed encryption-at-rest feature uses the following industry standard protocols:

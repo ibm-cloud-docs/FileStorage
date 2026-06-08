@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-01-28"
+lastupdated: "2026-06-08"
 
 keywords: File Storage for Classic, NFS, limits, quotas
 
@@ -11,10 +11,13 @@ subcollection: FileStorage
 ---
 {{site.data.keyword.attribute-definition-list}}
 
-# Managing storage limits
+# Managing storage limits of {{site.data.keyword.filestorage_short}}
 {: #managinglimits}
 {: help}
 {: support}
+
+Increase your storage volume limit beyond the default 700 combined block and file storage volumes by requesting a limit increase with a support case.
+{: shortdesc}
 
 By default, you can provision a combined total of 700 {{site.data.keyword.blockstorageshort}} and {{site.data.keyword.filestorage_short}} volumes globally. By following this process, you can increase the number of volumes you can provision.
 
@@ -56,7 +59,7 @@ slcli file volume-limits
 {: pre}
 
 The output looks similar to the following example.
-```text
+```sh
 [{'datacenterName': 'global', 'maximumAvailableCount': 750, 'provisioned Count':117}]
 :............:.......................:..................:
 : Datacenter : maximumAvailableCount : ProvisionedCount :
@@ -91,13 +94,12 @@ The API response shows the combined number of {{site.data.keyword.blockstoragesh
 {: #increasefilelimits}
 
 You can request a limit increase by submitting a support case in the [portal](/unifiedsupport/cases/add){: external}. When the request is approved, you get a volume limit that is set for a specific [data center](/docs/overview?topic=overview-locations#data-centers).
-{: shortdesc}
 
 To request a limit increase, open a support case.
 
 In the ticket, provide the following information:
 
-- **Ticket Subject**: 
+- **Ticket Subject**:
    >Request to Increase Data Center Volume Count Storage Limit
 
 - **What is the use case for the additional volumes request?**

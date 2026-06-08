@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-01-20"
+lastupdated: "2026-06-08"
 
 keywords: File Storage for Classic, NSF, networking, jumbo frames
 
@@ -11,7 +11,7 @@ subcollection: FileStorage
 ---
 {{site.data.keyword.attribute-definition-list}}
 
-# Enabling Jumbo Frames
+# Enabling Jumbo Frames in {{site.data.keyword.cloud_notm}}
 {: #jumboframes}
 
 A jumbo frame is an Ethernet frame with a payload greater than the standard maximum transmission unit (MTU) of 1,500 bytes. Jumbo frames are used on local area networks that support at least 1 Gbps and can be as large as 9,000 bytes.
@@ -62,7 +62,7 @@ For more information, see [VMware vSphere 8.0 - Enabling Jumbo Frames](https://t
 ## Related information
 {: #related-info}
 
-For more information about MTU settings, see the following topics.
+For more information about maximum transmission unit (MTU) settings, see the following topics.
 - [Configuring virtual server settings for improved network performance](/docs/virtual-servers?topic=virtual-servers-configuring-network-performance){: external}.
 - [Tuning performance in Red Hat OpenShift on IBM Cloud](/openshift?topic=openshift-kernel&interface=ui#calico-mtu){: external}.
 - [Tuning performance in Kubernetes Service](/docs/containers?topic=containers-kernel#calico-mtu){: external}.

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2025
-lastupdated: "2025-03-06"
+  years: 2018, 2026
+lastupdated: "2026-06-08"
 
 keywords: File Storage for Classic, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
@@ -11,11 +11,13 @@ subcollection: FileStorage
 ---
 {{site.data.keyword.attribute-definition-list}}
 
-# Disaster Recovery - Failover from an inaccessible primary volume
+# Fail over from an inaccessible primary volume for disaster recovery
 {: #dr-inaccessible}
 
-If a catastrophic failure or disaster causes an outage on the primary site, customers can perform the following actions to quickly access their data on the secondary site. When the primary volume is inaccessible, you can force a failover to the remote replica. Before you start the failover, make sure that all host authorization is in place.
+Quickly access your data on the secondary site when catastrophic failure makes the primary volume inaccessible by forcing failover to the remote replica.
 {: shortdesc}
+
+If a catastrophic failure or disaster causes an outage on the primary site, you can perform the following actions to quickly access your data on the secondary site. When the primary volume is inaccessible, you can force a failover to the remote replica. Before you start the failover, make sure that all host authorization is in place.
 
 Authorized hosts and volumes must be in the same data center. For example, you can't have a replica volume in London and the host in Amsterdam. Both must be in London or both must be in Amsterdam.
 {: note}

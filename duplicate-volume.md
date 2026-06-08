@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2025
-lastupdated: "2025-09-15"
+  years: 2017, 2026
+lastupdated: "2026-06-08"
 
 keywords: File Storage for Classic, NFS, duplicate volume
 
@@ -11,11 +11,13 @@ subcollection: FileStorage
 ---
 {{site.data.keyword.attribute-definition-list}}
 
-# Creating and managing duplicate volumes
+# Creating and managing duplicate {{site.data.keyword.filestorage_short}} volumes
 {: #duplicatevolume}
 
-You can create a duplicate of an existing {{site.data.keyword.filestorage_full}}. The duplicate volume inherits the capacity and performance options of the original volume by default. However, both attributes can be changed. The duplicate has a copy of the data up to the point-in-time of the snapshot that was used to create it. The duplicate volume can be dependent or independent from the original volume.
+Create a duplicate file storage volume from a snapshot with inherited and customizable capacity and performance options. The duplicate can be dependent or independent.
 {: shortdesc}
+
+You can create a duplicate of an existing {{site.data.keyword.filestorage_full}}. The duplicate volume inherits the capacity and performance options of the original volume by default. However, both attributes can be changed. The duplicate has a copy of the data up to the point-in-time of the snapshot that was used to create it. The duplicate volume can be dependent or independent from the original volume.
 
 If you are a Dedicated account user of {{site.data.keyword.containerlong}}, see your options for duplicating a volume in the [{{site.data.keyword.containerlong_notm}} Documentation](/docs/containers?topic=containers-file_storage#file_backup_restore).
 {: tip}
@@ -209,7 +211,7 @@ To order an **independent duplicate** {{site.data.keyword.blockstorageshort}} vo
 
 - URL - `https://USERNAME:APIKEY@api.softlayer.com/rest/v3.1/SoftLayer_Product_Order/placeOrder`
 - Type - POST
-- Request body - 
+- Request body -
    ```js
     {
        "parameters":[{
@@ -232,7 +234,7 @@ To order a **dependent duplicate** for a Performance (custom IOPS) volume, make 
 
 - URL - `https://USERNAME:APIKEY@api.softlayer.com/rest/v3.1/SoftLayer_Product_Order/placeOrder`
 - Type - POST
-- Request body - 
+- Request body -
    ```js
    {
        "parameters":[{
@@ -308,7 +310,7 @@ As time passes and the primary volume changes, the duplicate volume can be updat
 A refresh incurs no downtime on the primary volume. However, during the refresh transaction, the duplicate volume is unavailable and must be remounted after the refresh is completed.
 {: important}
 
-The refresh process can be time-consuming. If you find that you have new data that you want to copy to the independent duplicate volume, you can issue the `file volume-refresh` command with the `--force-refresh` option to stop all ongoing and pending refresh transactions, and initiate a new refresh. 
+The refresh process can be time-consuming. If you find that you have new data that you want to copy to the independent duplicate volume, you can issue the `file volume-refresh` command with the `--force-refresh` option to stop all ongoing and pending refresh transactions, and initiate a new refresh.
 
 The force refresh process works only on independent volumes.
 {: note}
@@ -346,7 +348,7 @@ For more information about available command options, see [`slcli file volume-re
 {: #convertdependentvol}
 {: cli}
 
-If you want to use the dependent volume as a stand-alone volume in the future, you can convert it to a normal, independent {{site.data.keyword.filestorage_short}} volume from the CLI. 
+If you want to use the dependent volume as a stand-alone volume in the future, you can convert it to a normal, independent {{site.data.keyword.filestorage_short}} volume from the CLI.
 
 ### Converting a dependent volume from the IBMCLOUD CLI
 {: #convertdependentvolICCLI}
@@ -394,7 +396,7 @@ For more information about available command options, see [`file duplicate-conve
 {: #refreshindependentvol_api}
 {: api}
 
-As time passes and the primary volume changes, the duplicate volume can be updated with these changes to reflect the current state through the refresh action. The refresh involves taking a snapshot of the primary volume and then updating the duplicate volume by using the data from that snapshot. 
+As time passes and the primary volume changes, the duplicate volume can be updated with these changes to reflect the current state through the refresh action. The refresh involves taking a snapshot of the primary volume and then updating the duplicate volume by using the data from that snapshot.
 
 A refresh incurs no downtime on the primary volume. However, during the refresh transaction, the duplicate volume is disabled and must be remounted after the refresh is completed.
 {: important}
@@ -409,7 +411,7 @@ The force refresh process works only on independent volumes.
 
 - URL - `https://USERNAME:APIKEY@api.softlayer.com/rest/v3.1/SoftLayer_Network_Storage/duplicateVolumeId/refreshDuplicate`
 - Type - POST
-- Request body - 
+- Request body -
    ```js
    {
     "parameters": [primaryVolumeSnapshotId, true OR false]
@@ -422,7 +424,7 @@ The force refresh process works only on independent volumes.
 
 - URL - `https://api.softlayer.com/soap/v3.1/SoftLayer_Network_Storage`
 - Type - POST
-- Request body - 
+- Request body -
    ```js
    <?xml version="1.0" encoding="UTF-8"?>
    <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://api.service.softlayer.com/soap/v3.1/">

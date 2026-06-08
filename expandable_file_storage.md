@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2025
-lastupdated: "2025-09-15"
+  years: 2018, 2026
+lastupdated: "2026-06-08"
 
 keywords: File Storage for Classic, modify volume, NFS, File Storage, expand capacity
 
@@ -11,11 +11,13 @@ subcollection: FileStorage
 ---
 {{site.data.keyword.attribute-definition-list}}
 
-# Expanding File Share Capacity
+# Expanding {{site.data.keyword.filestorage_short}} capacity
 {: #expandCapacity}
 
-With this feature, users of {{site.data.keyword.filestorage_full}} are able to expand the size of their {{site.data.keyword.filestorage_short}} in GB increments up to 12 TB immediately. You don't need to create a duplicate or manually migrate data to a larger volume. This feature is available in all [data centers](/docs/overview?topic=overview-locations#data-centers).
+Expand file storage capacity in GB increments up to 12 TB immediately without creating duplicates, manually migrating data, or experiencing downtime.
 {: shortdesc}
+
+With this feature, users of {{site.data.keyword.filestorage_full}} are able to expand the size of their {{site.data.keyword.filestorage_short}} in GB increments up to 12 TB immediately. You don't need to create a duplicate or manually migrate data to a larger volume. This feature is available in all [data centers](/docs/overview?topic=overview-locations#data-centers).
 
 Billing for the volume is automatically updated to add the prorated difference of the new price to the current billing cycle. Then, the full new amount is billed in the next billing cycle.
 
@@ -24,7 +26,7 @@ The upgrade process is not instantaneous. You can expect to see the updated size
 ## Advantages of Expandable Storage
 {: #advantagesofresizing}
 
-- **Cost management** – You might know of a potential for growth of your data, but you need a smaller amount of storage to start. The ability to expand allows customers to save on the costs of storage at the start and then grow to accommodate their needs.
+- **Cost management** - When you anticipate data growth but need a smaller amount of storage to start, you can save on storage costs initially and expand capacity as your needs grow.
 
 - **Growing Storage needs** - Customers who experience rapid growth beyond need a way to quickly and easily increase the size of their storage to manage that growth.
 

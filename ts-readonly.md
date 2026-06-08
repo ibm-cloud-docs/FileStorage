@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-02-05"
+lastupdated: "2026-06-08"
 
 keywords: file storage for classic, read-only storage volume, offline file share
 
@@ -14,6 +14,9 @@ subcollection: FileStorage
 
 # Why does my {{site.data.keyword.filestorage_short}} appear offline or read-only?
 {: #ts-volume-readonly}
+
+Resolve read-only or offline file storage volumes caused by network disconnections by remounting the volume or restarting the host.
+{: shortdesc}
 
 After a brief disconnect, the File storage volume appears offline or read-only.
 {: tsSymptoms}
@@ -33,5 +36,5 @@ To prevent this situation from recurring, the customer might consider the follow
 - Adding guest OS tunings. For more information, see [NetApp's recommendations for guest OS tunings for a VMware&reg; vSphere deployment](https://kb.netapp.com/data-mgmt/OTV/VSC_Kbs/What_are_the_guest_OS_tunings_needed_for_a_VMware_vSphere_deployment){: external}.
 - Reconfiguring Host systems that use NFSv4.1 for NFSv3 for increased resilience during maintenance operations.
 - Discontinuing session trunking on host systems that run VMware&reg; ESXi. Session trunking is not supported and is known to cause disruptions.
- 
+
 For more information, see [Why did my host lose connection to my NFS datastore](/docs/vmwaresolutions?topic=vmwaresolutions-trbl_esxi_firewall_config_nfs){: external} troubleshooting topic.

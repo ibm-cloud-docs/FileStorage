@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-01-28"
+lastupdated: "2026-06-08"
 
-keywords: File Storage for Classic, NFS, provisioning, ordering, order file share, provision file volume, duplicate, cloning, replication
+keywords: File Storage for Classic, NFS, provisioning, ordering, order file share, provision file volume, duplicate, cloning, replication, mount storage, NFS share
 
 subcollection: FileStorage
 
@@ -13,11 +13,13 @@ subcollection: FileStorage
 {: uilinked}
 
 
-# Ordering {{site.data.keyword.filestorage_short}}
+# Ordering {{site.data.keyword.filestorage_short}} volumes
 {: #orderingFileStorage}
 
-You can order {{site.data.keyword.filestorage_short}} volumes in the console, from the CLI, with the API, or Terraform. You can provision {{site.data.keyword.filestorage_short}} and fine-tune your file shares to meet your capacity and IOPS needs. Get the most out of your storage with two options for specifying IOPS: Endurance and Performance. You can provision file shares with capacity up to 12 TB and maximum IOPS of 48,000.
+Provision {{site.data.keyword.filestorage_short}} with customizable capacity and performance options using Endurance or Performance tiers to meet your workload requirements.
 {: shortdesc}
+
+You can order {{site.data.keyword.filestorage_short}} volumes in the console, from the CLI, with the API, or Terraform. You can provision {{site.data.keyword.filestorage_short}} and fine-tune your file shares to meet your capacity and input/outp per seconds needs. Get the most out of your storage with two options for specifying IOPS: Endurance and Performance. You can provision file shares with capacity up to 12 TB and maximum IOPS of 48,000.
 
 - You can choose from Endurance IOPS tiers that feature pre-defined performance levels to fit workloads that don't have well-defined performance requirements.
    - **0.25 IOPS per GB** is designed for workloads with low I/O intensity. These workloads are typically characterized by having a large percentage of data inactive at a time. Example applications include storing mailboxes or departmental-level file shares. The CLI and API responses show this tier as `LOW_INTENSITY_TIER`.
@@ -42,7 +44,7 @@ You can order {{site.data.keyword.filestorage_short}} volumes in the console, fr
    {: caption="Available IOPS based on volume size" caption-side="bottom"}
 
 By default, you can provision a combined total of 700 {{site.data.keyword.filestorage_short}} volumes. To increase the number of your volumes, contact Support. For more information, see [Managing storage limits](/docs/FileStorage?topic=FileStorage-managinglimits). For more information about the limit on simultaneous authorizations, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs#authlimit).
-{: important}   
+{: important}
 
 ## Ordering {{site.data.keyword.filestorage_short}} in the console
 {: #orderingFileStorageUI}
@@ -148,8 +150,8 @@ file_mgr = SoftLayer.FileStorageManager(client)
 storage_type = 'performance'
 location = 'dal10'
 hourly = True
-size = 20           
-iops = 100         
+size = 20
+iops = 100
 snapshot_size = 5
 
 try:

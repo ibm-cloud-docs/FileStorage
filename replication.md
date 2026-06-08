@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-05-21"
+lastupdated: "2026-06-08"
 
 keywords: File Storage for Classic, NFS, replication, duplication, synchronous, replica schedule, replica space, disaster recovery
 
@@ -11,10 +11,10 @@ subcollection: FileStorage
 ---
 {{site.data.keyword.attribute-definition-list}}
 
-# Replicating {{site.data.keyword.filestorage_short}} Shares
+# Replicating {{site.data.keyword.filestorage_short}} shares for disaster recovery
 {: #replication}
 
-Replication uses one of your snapshot schedules to automatically copy snapshots to a destination volume in a remote data center. The copies can be recovered in the remote site if a catastrophic event occurs or your data becomes corrupted.
+Automatically copy snapshots to a remote data center with replication to recover data if a catastrophic event occurs or data becomes corrupted.
 {: shortdesc}
 
 Replication keeps your data in sync in two different locations. If you want to clone your volume and use it independently from the original volume, see [Creating a duplicate File Volume](/docs/FileStorage?topic=FileStorage-duplicatevolume).
@@ -123,7 +123,7 @@ Replications work based on a snapshot schedule. You must first have snapshot spa
 {: #createrepCLI}
 {: cli}
 
-Replications work based on a snapshot schedule. You must first have snapshot space and a snapshot schedule for the source volume before you can replicate. 
+Replications work based on a snapshot schedule. You must first have snapshot space and a snapshot schedule for the source volume before you can replicate.
 
 ### Creating the initial replica from the IBMCLOUD CLI
 {: #createrepICCLI}
@@ -181,7 +181,7 @@ To create a replica, use the [`order_replicant_volume` method](https://softlayer
 {: #replicalistUI}
 {: ui}
 
-You can view your replication volumes on the {{site.data.keyword.filestorage_short}} page under **Storage** > **{{site.data.keyword.filestorage_short}}**. The volume name shows the primary volume's name followed by REP. The **Type** is Endurance or Performance – Replica.
+You can view your replication volumes on the {{site.data.keyword.filestorage_short}} page under **Storage** > **{{site.data.keyword.filestorage_short}}**. The volume name shows the primary volume's name followed by REP. The **Type** is Endurance or Performance - Replica.
 
 ## Viewing the replica volumes from the CLI
 {: #replicalistCLI}
@@ -273,7 +273,7 @@ For more information, see [Creating a duplicate File Volume](/docs/FileStorage?t
 ## Using replicas to fail over when disaster strikes
 {: #replicatotherescureDR}
 
-When you fail over, you’re switching from your storage volume in your primary data center to the destination volume in your remote data center. For example, your primary data center is London and your secondary data center is Amsterdam. If a failure event occurs, you’d fail over to Amsterdam – connecting to the now-primary volume from a Compute instance in Amsterdam. After your volume in London is repaired, a snapshot is taken of the Amsterdam volume to fail back to London and the once-again primary volume from a Compute instance in London.
+When you fail over, you're switching from your storage volume in your primary data center to the destination volume in your remote data center. For example, your primary data center is London and your secondary data center is Amsterdam. If a failure event occurs, you'd fail over to Amsterdam - connecting to the now-primary volume from a Compute instance in Amsterdam. After your volume in London is repaired, a snapshot is taken of the Amsterdam volume to fail back to London and the once-again primary volume from a Compute instance in London.
 
 * If the primary location is experiencing a problem but the storage and host are still online, see [Failover with an accessible primary volume](/docs/FileStorage?topic=FileStorage-dr-accessible).
 * If the primary location is down, see [Failover with an inaccessible primary volume](/docs/FileStorage?topic=FileStorage-dr-inaccessible).

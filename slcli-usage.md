@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2025
-lastupdated: "2025-11-03"
+  years: 2014, 2026
+lastupdated: "2026-06-08"
 
 keywords: File Storage for Classic, NSF, SLCLI, API
 
@@ -14,7 +14,7 @@ subcollection: FileStorage
 # SLCLI commands for {{site.data.keyword.filestorage_short}}
 {: #SLCLIcommands}
 
-You can use the SLCLI to accomplish tasks that are normally handled through the [{{site.data.keyword.cloud}} console](/cloud-storage/file){: external}. For example, from the SL CLI you can place orders for new volumes, snapshot space, and replication, update authorizations, and cancel volumes.
+Use the command-line interface (SLCLI) to manage file storage volumes, place orders, update authorizations, and cancel volumes in the {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
 
 For more information about how to install and use the SL CLI, see [Python API Client](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}.
@@ -100,7 +100,7 @@ For more information about how to install and use the SL CLI, see [Python API Cl
 * [Creating and managing duplicate volumes](/docs/FileStorage?topic=FileStorage-duplicatevolume)
    ```sh
    slcli file volume-duplicate ORIGIN_VOLUME_ID
-   slcli file volume-duplicate ORIGIN_VOLUME_ID --dependent-duplicate TRUE 
+   slcli file volume-duplicate ORIGIN_VOLUME_ID --dependent-duplicate TRUE
    slcli file volume-refresh DUPLICATE_VOLUME_ID ORIGIN_VOLUME_SNAPSHOT_ID
    slcli file volume-convert DUPLICATE_VOLUME_ID
    slcli

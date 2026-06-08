@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2025
-lastupdated: "2025-11-03"
+  years: 2014, 2026
+lastupdated: "2026-06-08"
 
 keywords: File Storage for Classic, NFS, mounting File Storage, mounting storage on Linux,
 
@@ -53,13 +53,13 @@ Before you begin, make sure that the host that is to access the {{site.data.keyw
    {: pre}
 
    Example for `storage_as_a_service` volumes.
-   ```text
+   ```sh
    #mount -t nfs -o nfsvers=3 fsf-wdc0403a-fz.service.softlayer.com:/IBM02SEV1414935_66/data01 /mnt
    ```
    {: screen}
 
    Example for `enterprise` volumes.
-   ```text
+   ```sh
    # mount -t nfs -o nfsvers=3 nfshou0201d-fz.service.softlayer.com:/IBM01SEV1414935_2 /mnt
    ```
    {: screen}
@@ -68,7 +68,7 @@ Before you begin, make sure that the host that is to access the {{site.data.keyw
    {: tip}
 
 1. Verify that the mount was successful by using the disk file system command.
-   ```text
+   ```sh
    # df -h
    Filesystem Size Used Avail Use% Mounted on
    /dev/xvda2  25G  1.4G  22G    6%   /
@@ -78,7 +78,7 @@ Before you begin, make sure that the host that is to access the {{site.data.keyw
    {: screen}
 
 1. Go to the mount point, and read/write files.
-   ```text
+   ```sh
    # touch /mnt/test
    # ls -la /mnt
    total 12
@@ -93,13 +93,13 @@ Before you begin, make sure that the host that is to access the {{site.data.keyw
 
 5. Mount the remote share on start. To complete the setup, edit the file systems table (`/etc/fstab`) to add the remote share to the list of entries that are automatically mounted on startup:
 
-   ```text
+   ```sh
    (hostname):/(username) /mnt nfs_version options 0 0
    ```
 
    See the following examples.
 
-   ```text
+   ```sh
    fsf-wdc0403a-fz.service.softlayer.com:/IBM02SEV1414935_66/data01 /mnt nfs nfsvers=3 0 0
    fsf-wdc0403a-fz.service.softlayer.com:/IBM02SEV1414935_66/data01 /mnt nfs options 0 0
    fsf-wdc0403a-fz.service.softlayer.com:/IBM02SEV1414935_66/data01 /mnt nfs4 options 0 0
@@ -136,7 +136,7 @@ Example
 
 1. From the host, set the domain setting in `/etc/idmapd.conf`.
 
-   ```text
+   ```sh
    #vi /etc/idmapd.conf
    [General]
    #Verbosity = 0

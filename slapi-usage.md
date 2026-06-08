@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-01-28"
+lastupdated: "2026-06-08"
 
 keywords: File Storage for Classic, NSF, SLAPI, Python
 
@@ -14,7 +14,7 @@ subcollection: FileStorage
 # Setting up your API environment
 {: #setupAPI}
 
-You can use the SLAPI to accomplish tasks that are normally handled through the [{{site.data.keyword.cloud}} console](/cloud-storage/file){: external}. For example, you can place orders for new volumes, snapshot space, and replication, update authorizations, cancel volumes, query capacity usage.
+Use the SLAPI to manage file storage volumes, place orders, update authorizations, and query capacity through programmatic access to {{site.data.keyword.cloud_notm}} services.
 {: shortdesc}
 
 Before you begin, review the [Introduction to the SL API](https://sldn.softlayer.com/article/getting-started/){: external} in the [API Reference](https://sldn.softlayer.com/reference/softlayerapi/){: external}. For more information about the {{site.data.keyword.filestorage_short}} service and available data types, see the [`SoftLayer_Network_Storage`](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Storage/){: external} topic.

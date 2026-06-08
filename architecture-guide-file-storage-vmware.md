@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-01-21"
+lastupdated: "2026-06-08"
 
 keywords: Classic File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
@@ -71,7 +71,7 @@ Review [Attached storage infrastructure design](/docs/vmwaresolutions?topic=vmwa
 
 {{site.data.keyword.filestorage_short}} can be ordered through [The {{site.data.keyword.cloud}} catalog](/catalog){: external}, from the [CLI](/docs/cli?topic=cli-sl-file-storage-service#sl_file_volume_order), with the API or Terraform. For more information, see [Ordering {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-orderingFileStorage).
 
-### Authorizing hosts 
+### Authorizing hosts
 {: #hostauthvmware}
 
 You can create the authorization in the [UI](/docs/FileStorage?topic=FileStorage-managingstorage&interface=ui#authhostUI), from the [CLI](/docs/FileStorage?topic=FileStorage-managingstorage&interface=cli#authhostCLI), with the API, or with [Terraform](/docs/FileStorage?topic=FileStorage-managingstorage&interface=terraform#authhostterraform).
@@ -94,7 +94,7 @@ Before you begin the configuration process, make sure that the following require
 ### Confirming the firewall settings
 {: #configurevmwarehost1}
 
-To enable access to NFS storage, ESXi automatically opens firewall ports for the NFS clients when you mount an NFS datastore. For troubleshooting reasons, you might need to verify that the ports are open.
+To enable access to NFS storage, ESXi automatically opens firewall ports for the NFS clients when you mount an NFS datastore. For troubleshooting purposes, verify that the ports are open.
 1. In the vSphere Client, select the ESXi host.
 1. Go to **Manage > Settings > Security Profile** and click **Edit**.
 1. Scroll down to the appropriate version of NFS to make sure that the port is open.
@@ -124,7 +124,7 @@ For more information, see the [VMware vSphere 8.0 - Configuring ESXi Firewall](h
      The value a.b.c.d is the neighboring {{site.data.keyword.BluVirtServers_short}} interface.
 
      Example
-     ```text
+     ```sh
      ping a.b.c.d (a.b.c.d) 8972(9000) bytes of data.
      8980 bytes from a.b.c.d: icmp_seq=1 ttl=128 time=3.36 ms
      ```
@@ -177,7 +177,7 @@ The same IP address as it can be used for mounting the volume in the next step. 
 ### Configuring Advanced ESXi host-side settings
 {: #configureESXihost}
 
-Configure the Advanced settings that are required for ESXi hosts that want to mount NFS storage. 
+Configure the Advanced settings that are required for ESXi hosts that want to mount NFS storage.
 
 1. Review the table of [Advanced configuration parameters](/docs/vmwaresolutions?topic=vmwaresolutions-storage-settings#storage-settings-adv-config-param).
 2. Follow the steps to configure these advance settings in the vSphere Client or from the vSphere PowerCLI as they are described in Broadcom's [Configuring advanced options for ESXi](https://knowledge.broadcom.com/external/article/310338/configuring-advanced-options-for-esxi.html){: external}.
@@ -185,9 +185,9 @@ Configure the Advanced settings that are required for ESXi hosts that want to mo
 ## Creating the VMware&reg; datastore
 {: #mountNFSonESXI}
 
-{{site.data.keyword.cloud_notm}} recommends that FQDN names be used to connect to the VMware&reg; datastore. Using direct IP addressing might bypass the load-balancing mechanism that is provided by using FQDN.
+{{site.data.keyword.cloud_notm}} recommends that fully qualified domain name (FQDN) names be used to connect to the VMware&reg; datastore. Using direct IP addressing bypasses the load-balancing mechanism that is provided by using FQDN.
 
-If you want to use the IP address instead of the FQDN, ping the server to obtain the IP address.
+If you want to use the IP address instead of the fully qualified domain name (FQDN), ping the server to obtain the IP address.
 ```sh
 ping <hostname of the storage array>
 ```
@@ -195,7 +195,7 @@ ping <hostname of the storage array>
 
 To obtain the IP address from an ESXi host, use `vmkping` as shown in the following example.
 
-```text
+```sh
 ~ # vmkping nfsdal0902a-fz.service.softlayer.com
 PING nfsdal0902a-fz.service.softlayer.com (10.2.125.80): 56 data bytes
 64 bytes from 10.2.125.80: icmp_seq=0 ttl=253 time=0.187 ms
@@ -215,7 +215,7 @@ PING nfsdal0902a-fz.service.softlayer.com (10.2.125.80): 56 data bytes
    Make sure that you use only one NFS version to access the datastore. Consequences of mounting one or more hosts to the same datastore by using different versions can result in data corruption.
    {: important}
 
-7. On the **Name and configuration** screen, enter the name that you want to call the VMware datastore. Additionally, enter the hostname of the NFS server. Using the FQDN for the NFS server produces the best traffic distribution to the underlying server. IP address is also valid but is used less frequently and only in specific instances. Enter the folder name in the form of `/foldername`.
+7. On the **Name and configuration** screen, enter the name that you want to call the VMware datastore. Additionally, enter the hostname of the NFS server. Using the fully qualified domain name (FQDN) for the NFS server produces the best traffic distribution to the underlying server. IP address is also valid but is used less frequently and only in specific instances. Enter the folder name in the form of `/foldername`.
 8. On the **Host accessibility** screen, select one or more hosts that you want to mount the NFS VMware&reg; datastore on and click **next**.
 9. Review the inputs on the next screen and click **Finish**.
 10. Repeat for any additional {{site.data.keyword.filestorage_short}} volumes.
@@ -267,7 +267,7 @@ For more information, see [Storage I/O Control for NFS v3](/docs/vmwaresolutions
 1. Click the **Virtual Hardware** tab and select a virtual hard disk from the list. Expand **Hard disk.**
 1. Select a VM storage policy from the menu. If you select a storage policy, do not manually configure Shares and Limit - IOPS.
 1. Under **Shares**, click the menu and select the relative number of shares to allocate to the virtual machine (Low, Normal, or High). You can select Custom to enter a user-defined shares value.
-1. Under **Limit - IOPS**, click the drop-down menu and enter the maximum limit of storage resources to allocate to the virtual machine. By default, IOPS is unlimited. 
+1. Under **Limit - IOPS**, click the drop-down menu and enter the maximum limit of storage resources to allocate to the virtual machine. By default, IOPS is unlimited.
 1. Click **OK**.
 
 For more information about how to Set Storage I/O Control Resource Shares and Limits, see [VMware vSphere 8.0 - Manage Storage I/O Resources with vSphere](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-resource-management/managing-storage-i-o-resources.html){: external}.

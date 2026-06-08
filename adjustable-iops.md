@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2025
-lastupdated: "2025-09-15"
+  years: 2014, 2026
+lastupdated: "2026-06-08"
 
 keywords: File Storage for Classic, adjusting IOPS, increase IOPS, decrease IOPS, modify IOPS
 
@@ -11,10 +11,10 @@ subcollection: FileStorage
 ---
 {{site.data.keyword.attribute-definition-list}}
 
-# Adjusting IOPS
+# Adjusting IOPS for {{site.data.keyword.filestorage_short}} volumes
 {: #adjustingIOPS}
 
-With this feature, you can adjust the IOPS of your existing {{site.data.keyword.filestorage_short}} immediately. You don't need to create a duplicate or manually copy data to new storage. The adjustment does not cause any kind of outage or lack of access.
+Adjust IOPS for your file storage volume immediately without outage or disruption. No need to create duplicates or manually migrate data to new storage.
 {: shortdesc}
 
 Billing for the storage is updated to add the prorated difference of the new price to the current billing cycle. The full new amount is billed in the next billing cycle.
@@ -22,7 +22,7 @@ Billing for the storage is updated to add the prorated difference of the new pri
 ## Advantages of adjustable IOPS
 {: #advantagesadjustableIOPS}
 
-- Cost management – Some of our clients might need high IOPS just during peak usage times. For example, a large retail store has peak usage during the holidays and might need higher IOPS on the storage then than in the middle of the summer. With this feature, you can manage your costs and pay for higher IOPS only when you need it.
+- Cost management - Clients can adjust IOPS based on usage patterns. For example, a large retail store experiences peak usage during the holidays and requires higher IOPS on the storage then than in the middle of the summer. With this feature, you can manage your costs and pay for higher IOPS only when you need it.
 
 ## Limitations
 {: #limitsofadjustIOPS}
@@ -67,7 +67,7 @@ If the volume has replication in place, the replica is automatically updated to 
 {: #adjustingstepsCLI}
 {: cli}
 
-Before you can begin the process, decide on the CLI client that you want to use.
+Before you can begin the process, decide on the command-line interface (CLI) client that you want to use.
 
 * You can either install the [IBM Cloud CLI](/docs/cli){: external} and install the SL plug-in with `ibmcloud plugin install sl`. For more information, see [Extending IBM Cloud CLI with plug-ins](/docs/cli?topic=cli-plug-ins).
 * Or, you can install the [SLCLI](https://softlayer-python.readthedocs.io/en/latest/cli/){: external}.
@@ -124,7 +124,7 @@ Options:
 {: #adjustingstepsAPI}
 {: api}
 
-You can adjust the IOPS by using an API call to the SOAP web service. The following sample API calls can be made from the scripting language of your choice.
+You can adjust the IOPS by using an application programming interface (API) call to the SOAP web service. The following sample API calls can be made from the scripting language of your choice.
 
 For more information about the SLAPI, see the [SLDN](http://sldn.softlayer.com/reference/softlayerapi){: external}.
 {: tip}

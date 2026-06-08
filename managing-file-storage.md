@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-01-29"
+lastupdated: "2026-06-08"
 
 keywords: File Storage for Classic, NFS, authorizing hosts, revoke access, grant access, view authorizations
 
@@ -15,8 +15,10 @@ subcollection: FileStorage
 # Managing {{site.data.keyword.filestorage_short}}
 {: #managingstorage}
 
-You can manage your {{site.data.keyword.filestorage_full}} volumes through the {{site.data.keyword.cloud}} console, from the CLI, with the API, or Terraform. You can add notes, authorize compute hosts to access your volume, revoke access, and delete the volume when it is no longer needed. You can [increase capacity](/docs/FileStorage?topic=FileStorage-expandCapacity), [adjust IOPS](/docs/FileStorage?topic=FileStorage-adjustingIOPS), [manage snapshots](/docs/FileStorage?topic=FileStorage-managingSnapshots), and manage [replication](/docs/FileStorage?topic=FileStorage-replication).
+Manage file storage volumes through the {{site.data.keyword.cloud_notm}} console, CLI, API, or Terraform to authorize hosts, adjust capacity and IOPS, and control snapshots and replication.
 {: shortdesc}
+
+You can manage your {{site.data.keyword.filestorage_full}} volumes through the {{site.data.keyword.cloud}} console, from the CLI, with the API, or Terraform. You can add notes, authorize compute hosts to access your volume, revoke access, and delete the volume when it is no longer needed. You can [increase capacity](/docs/FileStorage?topic=FileStorage-expandCapacity), [adjust IOPS](/docs/FileStorage?topic=FileStorage-adjustingIOPS), [manage snapshots](/docs/FileStorage?topic=FileStorage-managingSnapshots), and manage [replication](/docs/FileStorage?topic=FileStorage-replication).
 
 ## Viewing the list of {{site.data.keyword.filestorage_short}} volumes in the console
 {: #managestorage-view-ui}
@@ -25,7 +27,7 @@ You can manage your {{site.data.keyword.filestorage_full}} volumes through the {
 You can view your volumes from the Resources list or by going to the list of {{site.data.keyword.filestorage_short}} volumes.
 
 1. Go to the [{{site.data.keyword.cloud}} console](/login){: external}. From the menu, select **Infrastructure**  ![VPC icon](../icons/vpc.svg) > **Classic Infrastructure**.
-1. Click **Storage** > **{{site.data.keyword.filestorage_short}}**. The list of file shares is displayed. 
+1. Click **Storage** > **{{site.data.keyword.filestorage_short}}**. The list of file shares is displayed.
 1. You can filter the list by clicking the ![Filter icon](../icons/filter.svg "Filter") and selecting a location or entering a specific capacity. Click **Apply** to confirm your selection.
 1. Click the appropriate volume name from the list.
 
@@ -173,7 +175,7 @@ curl -u $SL_USER:$SL_APIKEY -X POST -H "Accept: */*" -H "Accept-Encoding: gzip, 
 ```
 {: pre}
 
-Alternatively, you can use the [`volume_set_note` method](https://softlayer-python.readthedocs.io/en/latest/api/managers/SoftLayer.managers.FileStorageManager/#SoftLayer.managers.FileStorageManager.volume_set_note){: external} in the API Python Client. 
+Alternatively, you can use the [`volume_set_note` method](https://softlayer-python.readthedocs.io/en/latest/api/managers/SoftLayer.managers.FileStorageManager/#SoftLayer.managers.FileStorageManager.volume_set_note){: external} in the API Python Client.
 
 ## Authorizing hosts to access {{site.data.keyword.filestorage_short}}
 {: #managestorage-authhost}
@@ -260,7 +262,7 @@ To authorize hosts to access your file volume, you can use the [`authorize_host_
 {: #authhostterraform}
 {: terraform}
 
-To authorize a Compute host to access the share, use the `ibm_storage_file` resource and specify the `allowed_virtual_guest_ids` for virtual servers, or `allowed_hardware_ids` for bare metal servers. Specify `allowed_ip_addresses` to define which IP addresses have access to the storage. 
+To authorize a Compute host to access the share, use the `ibm_storage_file` resource and specify the `allowed_virtual_guest_ids` for virtual servers, or `allowed_hardware_ids` for bare metal servers. Specify `allowed_ip_addresses` to define which IP addresses have access to the storage.
 
 The following example defines that the Virtual Server with the ID `28961689` can access the volume from the `10.146.139.64/26` subnet, and `10.146.139.84` address.
 
@@ -294,7 +296,7 @@ For more information about the arguments and attributes, see [ibm_storage_file](
 1. Click **Storage** > **{{site.data.keyword.filestorage_short}}**, and click your **Volume Name**.
 1. Click **Authorized Hosts** to display the Compute instances that have access to your file share.
 1. Click the ellipsis ![Actions icon](../icons/action-menu-icon.svg "Actions") and select **View host details**. A side panel is displayed with details like device name, IP address, username, and password. The Access Control List section is also displayed. In the Access Control List section, you can add or remove subnets.
- 
+
 The Target address is listed on the **Storage Detail** page. For NFS, the Target address is described as a DNS name, and for iSCSI, it's the IP address of the Discover Target Portal.
 {: tip}
 

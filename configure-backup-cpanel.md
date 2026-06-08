@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2025
-lastupdated: "2025-11-03"
+  years: 2018, 2026
+lastupdated: "2026-06-08"
 
 keywords: File Storage for Classic, NFS, cPanel, backups
 
@@ -14,7 +14,7 @@ subcollection: FileStorage
 # Configuring {{site.data.keyword.filestorage_short}} for backup with cPanel
 {: #cPanelBackups}
 
-You can use these instructions to configure your backups to be stored in {{site.data.keyword.filestorage_full}} by cPanel. The assumption is that root or sudo SSH and full WebHost Manager (WHM) access are available.
+Configure cPanel to store backups in {{site.data.keyword.filestorage_full}} with root or sudo SSH and full WebHost Manager access.
 {: shortdesc}
 
 While you can store a backup directly to a remote file system, cPanel and WHM do **not** support this configuration. For more information, see the [cPanel documentation for backup](https://docs.cpanel.net/knowledge-base/backup/how-to-run-backups-on-locally-mounted-remote-file-systems/){: external}.
@@ -26,9 +26,9 @@ While you can store a backup directly to a remote file system, cPanel and WHM do
    By default, the cPanel system saves backup files locally, to the `/backup` directory. In this document, the assumption is that the `/backup` folder exists and contains backups, and `/backup2` can be used as the new mount point.
    {: note}
 
-3. Configure your {{site.data.keyword.filestorage_short}} as described in one of the following topics: 
+3. Configure your {{site.data.keyword.filestorage_short}} as described in one of the following topics:
     - [Accessing {{site.data.keyword.filestorage_short}} on Red Hat Enterprise Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingLinux),
-    - [Mounting {{site.data.keyword.filestorage_short}} in Ubuntu](/docs/FileStorage?topic=FileStorage-mountingUbuntu). 
+    - [Mounting {{site.data.keyword.filestorage_short}} in Ubuntu](/docs/FileStorage?topic=FileStorage-mountingUbuntu).
 
 1. Mount the volume to `/backup2` and configure it in file system table (`/etc/fstab`) to enable mounting on start.
 

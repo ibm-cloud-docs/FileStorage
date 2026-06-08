@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-01-28"
+lastupdated: "2026-06-08"
 
 keywords: File Storage for Classic, NFS, snapshot, ordering snapshot, snapshot space
 
@@ -12,7 +12,7 @@ subcollection: FileStorage
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Ordering Snapshots
+# Ordering snapshots space for {{site.data.keyword.filestorage_short}}
 {: #ordering-snapshots}
 
 To create snapshots of your storage volume, either in an automated way or manually, you need to purchase space to hold them. You can purchase snapshot capacity during the initial volume purchase or later by using these steps.
@@ -44,7 +44,7 @@ So when you determine how much Snapshot space you need, consider the rate of cha
 
 Additionally, for most workloads, the larger a volume is the less space needs to be set aside initially. It's primarily due to the underlying data efficiencies, and the nature of how snapshots work in the environment.
 
-## Available snapshot space capacity 
+## Available snapshot space capacity
 {: #snapshotspaceforshare}
 
 The size of the snapshot space that you can order depends on the size of your volume. The size of the snapshot space cannot exceed the size of the volume. The following table shows the snapshot capacity that is available for specific volume sizes.
@@ -67,7 +67,7 @@ The size of the snapshot space that you can order depends on the size of your vo
 | 3000 GB | 5 GB, 10 GB, 20 GB, 40 GB, 60 GB, 80 GB, 100 GB 150 GB, 200 GB, 250 GB, 300 GB, \n 350 GB, 400 GB, 450 GB, 500 GB, 600 GB, 700 GB, 1000 GB, 2000 GB |
 | 4000 GB | 5 GB, 10 GB, 20 GB, 40 GB, 60 GB, 80 GB, 100 GB 150 GB, 200 GB, 250 GB, 300 GB, \n 350 GB, 400 GB, 450 GB, 500 GB, 600 GB, 700 GB, 1000 GB, 2000 GB, 4000 GB |
 | 5000 GB | 5 GB, 10 GB, 20 GB, 40 GB, 60 GB, 80 GB, 100 GB 150 GB, 200 GB, 250 GB, 300 GB, \n 350 GB, 400 GB, 450 GB, 500 GB, 600 GB, 700 GB, 1000 GB, 2000 GB, 4000 GB |
-|12000 GB | 5 GB, 10 GB, 20 GB, 40 GB, 60 GB, 80 GB, 100 GB 150 GB, 200 GB, 250 GB, 300 GB, \n 350 GB, 400 GB, 450 GB, 500 GB, 600 GB, 700 GB, 1000 GB, 2000 GB, 4000 GB |  
+|12000 GB | 5 GB, 10 GB, 20 GB, 40 GB, 60 GB, 80 GB, 100 GB 150 GB, 200 GB, 250 GB, 300 GB, \n 350 GB, 400 GB, 450 GB, 500 GB, 600 GB, 700 GB, 1000 GB, 2000 GB, 4000 GB |
 {: caption="This table shows the available snapshot space in increments for different volume capacities." caption-side="bottom"}
 
 ## Ordering Snapshot space in the console
@@ -111,7 +111,7 @@ For more information about all of the parameters that are available for this com
 ### Provisioning from the SLCLI
 {: #orderingsnapthroughSLCLI}
 
-Use the `slcli file snapshot-order` command to provision snapshot space for your volume. 
+Use the `slcli file snapshot-order` command to provision snapshot space for your volume.
 
 ```sh
 $ slcli file snapshot-order --help

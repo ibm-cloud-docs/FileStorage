@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-21"
+lastupdated: "2026-06-08"
 
 keywords: File Storage for Classic, NFS, mounting File Storage, mounting storage on Ubuntu,
 
@@ -61,12 +61,12 @@ Before you begin, make sure that the host that is to access the {{site.data.keyw
    ```
 
    Example for `storage_as_a_service` volumes.
-   ```text
+   ```sh
    #mount -t nfs -o nfsvers=3 fsf-wdc0403a-fz.service.softlayer.com:/IBM02SEV1414935_66/data01 /mnt
    ```
 
    Example for `enterprise` volumes.
-   ```text
+   ```sh
    # mount -t nfs -o nfsvers=3 nfshou0201d-fz.service.softlayer.com:/IBM01SEV1414935_2 /mnt
    ```
 
@@ -74,7 +74,7 @@ Before you begin, make sure that the host that is to access the {{site.data.keyw
    {: tip}
 
 1. Verify that the mount was successful by using the disk file system command.
-   ```text
+   ```sh
    # df -h
    Filesystem Size Used Avail Use% Mounted on
    /dev/xvda2  25G  1.4G  22G    6%   /
@@ -83,7 +83,7 @@ Before you begin, make sure that the host that is to access the {{site.data.keyw
    ```
 
 1. Go to the mount point, and read/write files.
-   ```text
+   ```sh
    # touch /mnt/test
    # ls -la /mnt
    total 12
@@ -105,7 +105,7 @@ Before you begin, make sure that the host that is to access the {{site.data.keyw
 
    Example
 
-   ```text
+   ```sh
    nfsdal1301a.service.softlayer.com:/IBM01SV278685_7 /mnt nfsvers=3 defaults 0 0
    ```
 

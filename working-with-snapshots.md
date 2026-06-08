@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-01-29"
+lastupdated: "2026-06-08"
 
 keywords: File Storage for Classic, NFS, snapshots, snapshot schedule, manual snapshot, snapshot space, snapshot quota
 
@@ -11,11 +11,13 @@ subcollection: FileStorage
 ---
 {{site.data.keyword.attribute-definition-list}}
 
-# Managing Snapshots
+# Managing snapshots for {{site.data.keyword.filestorage_short}}
 {: #managingSnapshots}
 
-Snapshots are a feature of {{site.data.keyword.blockstoragefull}}. A snapshot represents a volume's contents at a particular point in time. With snapshots, you can protect your data with no performance impact and minimal consumption of space. Learn more about how to manage snapshots by reading the following instructions.
+Manage snapshots to protect your data with no performance impact by creating schedules, taking manual snapshots, and restoring data from snapshot copies.
 {: shortdesc}
+
+Snapshots are a feature of {{site.data.keyword.filestorage_full}}. A snapshot represents a volume's contents at a particular point in time. With snapshots, you can protect your data with no performance impact and minimal consumption of space. Learn more about how to manage snapshots by reading the following instructions.
 
 ## Adding a Snapshot schedule in the console
 {: #addscheduleUI}
@@ -124,7 +126,7 @@ You can use the [`enable_snapshots` method](https://softlayer-python.readthedocs
 
 A successful API call returns whether the snapshot was successfully scheduled or not.
 
-When you want to disable a schedule, use the [`disable_snapshots` method](https://softlayer-python.readthedocs.io/en/latest/api/managers/SoftLayer.managers.FileStorageManager/#SoftLayer.managers.FileStorageManager.disable_snapshots){: external}. Specify the `volume_id` and the schedule (`HOURLY`,`DAILY`, or `WEEKLY`) that you want to disable. 
+When you want to disable a schedule, use the [`disable_snapshots` method](https://softlayer-python.readthedocs.io/en/latest/api/managers/SoftLayer.managers.FileStorageManager/#SoftLayer.managers.FileStorageManager.disable_snapshots){: external}. Specify the `volume_id` and the schedule (`HOURLY`,`DAILY`, or `WEEKLY`) that you want to disable.
 
 ## Managing a Snapshot schedule with Terraform
 {: #addscheduleTerraform}
@@ -470,7 +472,7 @@ Options:
 {: #deletesnapshotAPI}
 {: api}
 
-To delete a snapshot with the API, use the [`delete_snapshot` method](https://softlayer-python.readthedocs.io/en/latest/api/managers/SoftLayer.managers.FileStorageManager/#SoftLayer.managers.FileStorageManager.delete_snapshot){: external}. Specify the ID of the snapshot in the `snapshot_id` parameter. 
+To delete a snapshot with the API, use the [`delete_snapshot` method](https://softlayer-python.readthedocs.io/en/latest/api/managers/SoftLayer.managers.FileStorageManager/#SoftLayer.managers.FileStorageManager.delete_snapshot){: external}. Specify the ID of the snapshot in the `snapshot_id` parameter.
 
 ## Deleting a snapshot with Terraform
 {: #deletesnapshotTerraform}
@@ -519,7 +521,7 @@ You might need to take your storage volume back to a specific point in time beca
 {: #restorefromsnapshotCLI}
 {: cli}
 
-You might need to take your storage volume back to a specific point in time because of user-error or data corruption. 
+You might need to take your storage volume back to a specific point in time because of user-error or data corruption.
 
 1. First, unmount your volume.
 1. Then, you can restore the volume with a snapshot from the CLI.
