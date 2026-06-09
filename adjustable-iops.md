@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-06-08"
+lastupdated: "2026-06-09"
 
 keywords: File Storage for Classic, adjusting IOPS, increase IOPS, decrease IOPS, modify IOPS
 
@@ -14,7 +14,7 @@ subcollection: FileStorage
 # Adjusting IOPS for {{site.data.keyword.filestorage_short}} volumes
 {: #adjustingIOPS}
 
-Adjust IOPS for your file storage volume immediately without outage or disruption. No need to create duplicates or manually migrate data to new storage.
+Adjust the input/output operations per second (IOPS) value for your file storage volume immediately without outage or disruption.
 {: shortdesc}
 
 Billing for the storage is updated to add the prorated difference of the new price to the current billing cycle. The full new amount is billed in the next billing cycle.
