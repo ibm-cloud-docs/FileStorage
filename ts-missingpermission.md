@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-06-08"
+lastupdated: "2026-06-09"
 
 keywords: file storage for classic, missing permissions, insufficient permission, viewer role
 
@@ -15,7 +15,7 @@ subcollection: FileStorage
 # Why do I get an insufficient permissions error when I try to update my volume?
 {: #ts-insufficient-permissions}
 
-Resolve insufficient permissions errors when updating volume capacity or IOPS by adding the viewer {{site.data.keyword.iamshort}} role for billing.
+Resolve insufficient permissions errors that occur when you update volume capacity or IOPS by adding the viewer {{site.data.keyword.iamshort}} role for billing
 {: shortdesc}
 
 As you try to increase your volume's capacity or update your volume's IOPS, you receive a 500 error that states `PermissionDenied: You do not have permission to perform upgrades.` You successfully completed such operations previously and you are certain your permissions were not changed.

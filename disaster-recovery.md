@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-06-08"
+lastupdated: "2026-06-09"
 
 keywords: File Storage for Classic, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
@@ -64,7 +64,7 @@ Failover of volume 560156918 to replica 560382016 is now in progress.
 Use the following command to fail a file volume over to a specific replicant volume.
 ```sh
 $ slcli file disaster-recovery-failover --help
-sage: slcli file disaster-recovery-failover [OPTIONS] VOLUME_ID
+Usage: slcli file disaster-recovery-failover [OPTIONS] VOLUME_ID
 
 Options:
 --replicant-id TEXT  ID of the replicant volume
@@ -78,7 +78,7 @@ Options:
 ### REST API
 {: #drrestaapi}
 
-* URL - `https://USERNAME:APIKEY@api.softlayer.com/rest/v3/SoftLayer_Network_Storage/primaryvolumeId/disasterRecoveryFailoverToReplicant`
+* URL: `https://USERNAME:APIKEY@api.softlayer.com/rest/v3/SoftLayer_Network_Storage/primaryvolumeId/disasterRecoveryFailoverToReplicant`
 * Request body
  ```python
   {
@@ -89,7 +89,7 @@ Options:
 ### SOAP API
 {: #drsoapapi}
 
-* URL - `https://api.softlayer.com/soap/v3/SoftLayer_Network_Storage`
+* URL: `https://api.softlayer.com/soap/v3/SoftLayer_Network_Storage`
 * Request body
   ```python
    <?xml version="1.0" encoding="UTF-8"?>

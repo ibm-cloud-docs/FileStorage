@@ -7,7 +7,7 @@ toc:
     console-page: /cloud-storage/file
     product-page: https://www.ibm.com/products/file-storage
     path: FileStorage
-    label: File Storage - Classic
+    label: File Storage for Classic
   entries:
   - navgroup:
       id: learn

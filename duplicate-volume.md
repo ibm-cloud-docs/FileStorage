@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-06-08"
+lastupdated: "2026-06-09"
 
 keywords: File Storage for Classic, NFS, duplicate volume
 
@@ -209,9 +209,9 @@ For more information about available command options, see [`file volume-duplicat
 
 To order an **independent duplicate** {{site.data.keyword.blockstorageshort}} volume with the API, you can make a `POST /SoftLayer_Product_Order/placeOrder` call. The following REST API example creates an independent duplicate for an Endurance (IOPS tiers) volume.
 
-- URL - `https://USERNAME:APIKEY@api.softlayer.com/rest/v3.1/SoftLayer_Product_Order/placeOrder`
-- Type - POST
-- Request body -
+- URL: `https://USERNAME:APIKEY@api.softlayer.com/rest/v3.1/SoftLayer_Product_Order/placeOrder`
+- Type: POST
+- Request body:
    ```js
     {
        "parameters":[{
@@ -232,9 +232,9 @@ To order an **independent duplicate** {{site.data.keyword.blockstorageshort}} vo
 
 To order a **dependent duplicate** for a Performance (custom IOPS) volume, make a `POST /SoftLayer_Product_Order/placeOrder` call like the following REST API example.
 
-- URL - `https://USERNAME:APIKEY@api.softlayer.com/rest/v3.1/SoftLayer_Product_Order/placeOrder`
-- Type - POST
-- Request body -
+- URL: `https://USERNAME:APIKEY@api.softlayer.com/rest/v3.1/SoftLayer_Product_Order/placeOrder`
+- Type: POST
+- Request body:
    ```js
    {
        "parameters":[{
@@ -409,9 +409,9 @@ The force refresh process works only on independent volumes.
 ### REST API example
 {: #refreshindependentvol_rest}
 
-- URL - `https://USERNAME:APIKEY@api.softlayer.com/rest/v3.1/SoftLayer_Network_Storage/duplicateVolumeId/refreshDuplicate`
-- Type - POST
-- Request body -
+- URL: `https://USERNAME:APIKEY@api.softlayer.com/rest/v3.1/SoftLayer_Network_Storage/duplicateVolumeId/refreshDuplicate`
+- Type: POST
+- Request body:
    ```js
    {
     "parameters": [primaryVolumeSnapshotId, true OR false]
@@ -422,9 +422,9 @@ The force refresh process works only on independent volumes.
 ### SOAP API example
 {: #refreshindependentvol_soap}
 
-- URL - `https://api.softlayer.com/soap/v3.1/SoftLayer_Network_Storage`
-- Type - POST
-- Request body -
+- URL: `https://api.softlayer.com/soap/v3.1/SoftLayer_Network_Storage`
+- Type: POST
+- Request body:
    ```js
    <?xml version="1.0" encoding="UTF-8"?>
    <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://api.service.softlayer.com/soap/v3.1/">
@@ -455,9 +455,9 @@ For more information about the API and the options, see the [API Reference](http
 
 If you want to use the dependent volume as a stand-alone volume in the future, you can convert it to a normal, independent {{site.data.keyword.blockstoragefull}} volume with the API. See the following example that uses the REST API.
 
-- URL - `https://USERNAME:APIKEY@api.softlayer.com/rest/v3.1/SoftLayer_Network_Storage/<storageId>/convertCloneDependentToIndependent`
-- Type - POST
-- Request body - blank
+- URL: `https://USERNAME:APIKEY@api.softlayer.com/rest/v3.1/SoftLayer_Network_Storage/<storageId>/convertCloneDependentToIndependent`
+- Type: POST
+- Request body: blank
 
 For more information about the API and the options, see the [API Reference](https://sldn.softlayer.com/reference/softlayerapi/){: external}.
 

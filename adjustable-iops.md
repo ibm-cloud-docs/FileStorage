@@ -22,7 +22,7 @@ Billing for the storage is updated to add the prorated difference of the new pri
 ## Advantages of adjustable IOPS
 {: #advantagesadjustableIOPS}
 
-- Cost management - Clients can adjust IOPS based on usage patterns. For example, a large retail store experiences peak usage during the holidays and requires higher IOPS on the storage then than in the middle of the summer. With this feature, you can manage your costs and pay for higher IOPS only when you need it.
+- Cost management: Clients can adjust IOPS based on usage patterns. For example, a large retail store experiences peak usage during the holidays and requires higher IOPS on the storage during that peak than in the middle of the summer. With this feature, you can manage your costs and pay for higher IOPS only when you need it.
 
 ## Limitations
 {: #limitsofadjustIOPS}
@@ -59,7 +59,7 @@ If the volume has replication in place, the replica is automatically updated to 
 2. Select the volume from the list and click the ellipsis ![Actions icon](../icons/action-menu-icon.svg "Actions") > **Modify File Share**.
 3. In the **Adjust Storage IOPS** section, make a new selection:
     - For Endurance (Tiered IOPS), select a different IOPS tier for your storage. You can increase the IOPS tier at any time. However, decreasing is available only once a month.
-    - For Performance (Allocated IOPS), specify a new IOPS option for your storage by entering a value in the range 100 - 48,000 IOPS.
+    - For Performance (Allocated IOPS), specify a new IOPS option for your storage by entering a value in the range 100-48,000 IOPS.
 4. Review your selection and the new pricing. Click **Modify**.
 5. Your new storage allocation is going to be available in a few minutes.
 
@@ -129,7 +129,7 @@ You can adjust the IOPS by using an application programming interface (API) call
 For more information about the SLAPI, see the [SLDN](http://sldn.softlayer.com/reference/softlayerapi){: external}.
 {: tip}
 
-* The following example shows how to request an IOPS change on a Performance storage volume. `XXXXXXXXX` is the ID of the volume that you want to modify. `3000` is the new IOPS value that you want your volume to have. `189433` is the ID of the max level price. `190233` is the ID of 2000 - 2999 GB capacity range. `190293` is the ID for the 200 - 40000 IOPS range.
+* The following example shows how to request an IOPS change on a Performance storage volume. `XXXXXXXXX` is the ID of the volume that you want to modify. `3000` is the new IOPS value that you want your volume to have. `189433` is the ID of the max level price. `190233` is the ID of 2000-2999 GB capacity range. `190293` is the ID for the 200-40000 IOPS range.
 
    ```python
    <?xml version="1.0" encoding="UTF-8"?>

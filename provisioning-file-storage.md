@@ -22,10 +22,10 @@ Provision {{site.data.keyword.filestorage_short}} with customizable capacity and
 You can order {{site.data.keyword.filestorage_short}} volumes in the console, from the CLI, with the API, or Terraform. You can provision {{site.data.keyword.filestorage_short}} and fine-tune your file shares to meet your capacity and IOPS needs. Get the most out of your storage with two options for specifying IOPS: Endurance and Performance. You can provision file shares with capacity up to 12 TB and maximum IOPS of 48,000.
 
 - You can choose from Endurance IOPS tiers that feature pre-defined performance levels to fit workloads that don't have well-defined performance requirements.
-   - **0.25 IOPS per GB** is designed for workloads with low I/O intensity. These workloads are typically characterized by having a large percentage of data inactive at a time. Example applications include storing mailboxes or departmental-level file shares. The CLI and API responses show this tier as `LOW_INTENSITY_TIER`.
-   - **2 IOPS per GB** is designed for most general-purpose usage. Example applications include hosting small databases that are backing web applications or virtual machine disk images for a hypervisor. The CLI and API responses show this tier as `READHEAVY_TIER`.
-   - **4 IOPS per GB** is designed for higher-intensity workloads. These workloads are typically characterized by having a high percentage of data active at a time. Example applications include transactional and other performance-sensitive databases. The CLI and API responses show this tier as `WRITEHEAVY_TIER`.
-   - **10 IOPS per GB** is designed for the most demanding workloads such as those created by NoSQL databases, and data processing for Analytics. This tier is available for storage that is provisioned up to 4 TB.The CLI and API responses show this tier as `10_IOPS_PER_GB`.
+  - **0.25 IOPS per GB** is designed for workloads with low I/O intensity. These workloads are typically characterized by having a large percentage of data inactive at a time. Example applications include storing mailboxes or departmental-level file shares. The CLI and API responses show this tier as `LOW_INTENSITY_TIER`.
+  - **2 IOPS per GB** is designed for most general-purpose usage. Example applications include hosting small databases that are backing web applications or virtual machine disk images for a hypervisor. The CLI and API responses show this tier as `READHEAVY_TIER`.
+  - **4 IOPS per GB** is designed for higher-intensity workloads. These workloads are typically characterized by having a high percentage of data active at a time. Example applications include transactional and other performance-sensitive databases. The CLI and API responses show this tier as `WRITEHEAVY_TIER`.
+  - **10 IOPS per GB** is designed for the most demanding workloads such as those created by NoSQL databases, and data processing for Analytics. This tier is available for storage that is provisioned up to 4 TB. The CLI and API responses show this tier as `10_IOPS_PER_GB`.
 - You can fine-tune your storage to meet specific performance requirements by specifying the total number of IOPS with Performance. The available **custom** IOPS range depends on the volume capacity. The following table shows the available IOPS ranges based on volume size.
 
    | Volume size (GB) | IOPS range |
@@ -52,10 +52,10 @@ By default, you can provision a combined total of 700 {{site.data.keyword.filest
 
 1. Log in to the [{{site.data.keyword.cloud}} catalog](https://{DomainName}/catalog){: external} and click **Storage**. Then, select {{site.data.keyword.filestorage_short}}. Click **Create**.
 2. Select your deployment location (region, location, zone).
-   - Make sure that the new file share is added in the same location as the Compute host or hosts that you have.
+  : Make sure that the new file share is added in the same location as the Compute host or hosts that you have.
 3. Billing. You can choose between Monthly or Hourly Billing.
-   - With **hourly** billing, the number of hours that the file volume existed on the account is calculated at the time the volume is deleted or at the end of the billing cycle. Which ever comes first. Hourly billing is a good choice for storage that is used for a few days or less than a full month.
-   - With **monthly** billing, the calculation for the price is pro-rated from the date of creation to the end of the billing cycle and billed immediately. If a file volume is deleted before the end of the billing cycle, the difference is not refunded. Monthly billing is a good choice for storage that is used in production workloads that use data that needs to be stored and accessed for long periods of time (month or longer).
+  : With **hourly** billing, the number of hours that the file volume existed on the account is calculated at the time the volume is deleted or at the end of the billing cycle. Which ever comes first. Hourly billing is a good choice for storage that is used for a few days or less than a full month.
+  : With **monthly** billing, the calculation for the price is pro-rated from the date of creation to the end of the billing cycle and billed immediately. If a file volume is deleted before the end of the billing cycle, the difference is not refunded. Monthly billing is a good choice for storage that is used in production workloads that use data that needs to be stored and accessed for long periods of time (month or longer).
 4. Enter your storage size in the **Size** field.
 5. Select the size of the Snapshot space from the list.
 
@@ -89,7 +89,7 @@ Each order must have an associated location (data center). When you order {{site
 Use the `ibmcloud sl file volume-order` command to order a file volume. The following example provisions a 500-GB file share in the DAL13 data center with a tiered performance profile (4 IOPS per GB) and 500 GB snapshot space.
 
 ```sh
-$ ibmcloud sl file volume-order --storage-type endurance --size 500 --tier 4 -d dal13 --snapshot-size 500
+$ ibmcloud sl file volume-order:-storage-type endurance:-size 500:-tier 4:d dal13:-snapshot-size 500
 This action will incur charges on your account. Continue?> y
 OK
 Order 110526870 was placed.
@@ -99,7 +99,7 @@ Order 110526870 was placed.
  > 4 IOPS per GB
  > 500 GB (Snapshot Space)
 
-You may run 'ibmcloud sl file volume-list --order 110526870' to find this file volume after it is ready.
+You may run 'ibmcloud sl file volume-list:-order 110526870' to find this file volume after it is ready.
 ```
 {: codeblock}
 
@@ -111,7 +111,7 @@ For more information about all of the parameters that are available for this com
 Use the `slcli file volume-order` command to provision the file share volume. The following example shows how to order a 10 GB {{site.data.keyword.filestorage_short}} volume with 100 IOPS per GB.
 
 ```sh
-$ slcli file volume-order --storage-type performance --size 20 --location dal10 --iops 100
+$ slcli file volume-order:-storage-type performance:-size 20:-location dal10:-iops 100
 Order #32076317 placed successfully!
 > Storage as a Service
 > File Storage
@@ -126,17 +126,17 @@ Order #32076317 placed successfully!
 
 The most convenient way to order {{site.data.keyword.filestorage_short}} with the API is by using the `FileStorageManager` in the [SL API Python client](https://sldn.softlayer.com/python/order_block_file_storage_with_managers/){: external}
 
-The method [`order_file_volume` method](https://softlayer-python.readthedocs.io/en/latest/api/managers/SoftLayer.managers.FileStorageManager/#SoftLayer.managers.FileStorageManager.order_file_volume){: external} places an order for a file share.
+The [`order_file_volume`](https://softlayer-python.readthedocs.io/en/latest/api/managers/SoftLayer.managers.FileStorageManager/#SoftLayer.managers.FileStorageManager.order_file_volume){: external} method places an order for a file share.
 
 You must specify the following parameters for a successful order.
-- `storage_type` – "performance" or "endurance".
-- `location` – Data center in which to order the share.
-- `size` – Size of the new volume, in GB. Minimum value is 20 and maximum value is 12000.
-- `iops` – Number of IOPS for a “Performance” order. IOPS for performance storage can be between 100 - 1000 IOPS.
-- `tier_level` – Tier level to use for an “Endurance” order. Tier Level IOPS for endurance can be: 0.25, 2, 4 or 10.
-- `snapshot_size` – The size of optional snapshot space, if snapshot space is also to be ordered. (None if not ordered.) Snapshot size can be 0, 5, 10, 20.
-- `service_offering` – Requested offering package to use in the order ("storage_as_a_service").
-- `hourly_billing_flag` – Billing type, monthly (False) or hourly (True), default to monthly.
+- `storage_type`: "performance" or "endurance".
+- `location`: Data center in which to order the share.
+- `size`: Size of the new volume, in GB. The minimum value is 20 and the maximum value is 12000.
+- `iops`: Number of IOPS for a “Performance” order. IOPS for performance storage can be between 100 - 1000 IOPS.
+- `tier_level`: Tier level to use for an “Endurance” order. Tier Level IOPS for endurance can be: 0.25, 2, 4 or 10.
+- `snapshot_size`: The size of optional snapshot space, if snapshot space is also to be ordered. (None if not ordered.) Snapshot size can be 0, 5, 10, 20.
+- `service_offering`: Requested offering package to use in the order ("storage_as_a_service").
+- `hourly_billing_flag`: Billing type, monthly (False) or hourly (True), default to monthly.
 
 To be able to access all the current features, order `Storage-as-a-Service Package 759`. See the following example.
 
@@ -167,14 +167,14 @@ except SoftLayer.SoftLayerAPIError as e:
 Alternatively, you can use curl commands to interact with the ordering system. The following example curl request retrieves the storage package information that can be used for ordering.
 
 ```sh
-curl -u $SL_USER:$SL_APIKEY -X GET -H 'https://api.softlayer.com/rest/v3.1/SoftLayer_Product_Package/getAllObjects.json?objectMask=mask%5Bid%2Cname%2Citems%5Bprices%5Bcategories%5D%2Cattributes%5D%5D&objectFilter=%7B%22categories%22%3A+%7B%22categoryCode%22%3A+%7B%22operation%22%3A+%22_%3D+storage_as_a_service%22%7D%7D%2C+%22statusCode%22%3A+%7B%22operation%22%3A+%22_%3D+ACTIVE%22%7D%7D'
+curl:u $SL_USER:$SL_APIKEY:X GET:H 'https://api.softlayer.com/rest/v3.1/SoftLayer_Product_Package/getAllObjects.json?objectMask=mask%5Bid%2Cname%2Citems%5Bprices%5Bcategories%5D%2Cattributes%5D%5D&objectFilter=%7B%22categories%22%3A+%7B%22categoryCode%22%3A+%7B%22operation%22%3A+%22_%3D+storage_as_a_service%22%7D%7D%2C+%22statusCode%22%3A+%7B%22operation%22%3A+%22_%3D+ACTIVE%22%7D%7D'
 ```
 {: pre}
 
 The following example curl request example orders a storage volume.
 
 ```sh
-curl -u $SL_USER:$SL_APIKEY -X POST -H -d '{"parameters": [{"complexType": "SoftLayer_Container_Product_Order_Network_Storage_AsAService", "packageId": 759, "prices": [{"id": 189433}, {"id": 189443}, {"id": 194763}, {"id": 194703}], "quantity": 1, "location":1854895, "useHourlyPricing": true, "volumeSize": 100' 'https://api.softlayer.com/rest/v3.1/SoftLayer_Product_Order/placeOrder.json'
+curl:u $SL_USER:$SL_APIKEY:X POST:H:d '{"parameters": [{"complexType": "SoftLayer_Container_Product_Order_Network_Storage_AsAService", "packageId": 759, "prices": [{"id": 189433}, {"id": 189443}, {"id": 194763}, {"id": 194703}], "quantity": 1, "location":1854895, "useHourlyPricing": true, "volumeSize": 100' 'https://api.softlayer.com/rest/v3.1/SoftLayer_Product_Order/placeOrder.json'
 ```
 {: pre}
 
