@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-06-08"
+lastupdated: "2026-06-09"
 
 keywords: File Storage for Classic, NFS, authorizing hosts, revoke access, grant access, view authorizations
 
@@ -514,7 +514,7 @@ When the volume is canceled, the request is followed by a 24-hour reclaim wait p
 
 Active replicas and dependent duplicates can block reclamation of the Storage volume. Make sure that the volume is no longer mounted, host authorizations are revoked, replication is canceled, and no dependent duplicates exist before you attempt to delete the original volume.
 
-Then, you can use the [`cancel_volume` method](https://softlayer-python.readthedocs.io/en/latest/api/managers/SoftLayer.managers.FileStorageManager/#SoftLayer.managers.FileStorageManager.cancel_volume){: external} in the API Python Client. Specify the `volume_id` and whether you want to cancel he volume immediately or on the anniversary date (`immediate=False` or `immediate=True`) Optionally, you can also provide a reason for the cancellation (`reason='No longer needed'`).
+Then, you can use the [`cancel_volume` method](https://softlayer-python.readthedocs.io/en/latest/api/managers/SoftLayer.managers.FileStorageManager/#SoftLayer.managers.FileStorageManager.cancel_volume){: external} in the API Python Client. Specify the `volume_id` and whether you want to cancel the volume immediately or on the anniversary date (`immediate=False` or `immediate=True`) Optionally, you can also provide a reason for the cancellation (`reason='No longer needed'`).
 
 ## Deleting a storage volume with Terraform
 {: #cancelvolTerraform}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-06-08"
+lastupdated: "2026-06-10"
 
 keywords: File Storage for Classic, NFS, durability, availability, HA, high-availability, data loss, data integrity, uptime, five 9's, eleven 9's, data health, data corruption, data decay, encryption, security, integrity
 
@@ -11,15 +11,17 @@ subcollection: FileStorage
 ---
 {{site.data.keyword.attribute-definition-list}}
 
-# Availability and Durability of {{site.data.keyword.filestorage_short}}
+# High availability and durability for {{site.data.keyword.filestorage_short}}
 {: #storageavailability}
 
-Store your data with confidence in durable, highly available, and encrypted file storage that protects data integrity and provides secure, immediate access.
+{{site.data.keyword.filestorage_full}} delivers 99.999% availability and 99.999999999% durability with Advanced Encryption Standard (AES)-256 encryption and redundant storage.
 {: shortdesc}
 
-In today's fast-paced economy, companies rely on data in their decision-making. They need secure and immediate access to their data on a moment's notice. Data integrity is a high priority because compromised or incomplete data is of no use. Not to mention the dangers that are presented by sensitive data if it goes missing. When you store your data in {{site.data.keyword.filestorage_full}}, it's durable, highly available, and encrypted.
+Enterprise data storage requires both immediate accessibility and long-term data integrity. According to {{site.data.keyword.cloud}} infrastructure standards, {{site.data.keyword.filestorage_short}} is designed to provide continuous data access while protecting against hardware failures, data corruption, and unauthorized access.
 
-| Storage type | Use case | Durability | Availability | Encryption |
+The following table provides an overview of the durability, availability, and encryption features of File Storage.
+
+| Storage type | Purpose | Durability | Availability | Encryption |
 |--------------|----------|------------|--------------|------------|
 | Classic Endurance - \n 0.25 IOPS per GB tier  |  It is designed for workloads with low I/O intensity. These workloads are typically characterized by having a large percentage of data inactive at a time. Example applications include storing mailboxes or departmental-level file shares. | 99.999999999% \n (11 9's) | 99.999% \n (5 9's) | Provider-managed Advanced Encryption Standard (AES)-256 encryption at rest.|
 | Classic Endurance - \n 2 IOPS per GB tier | It is designed for most general-purpose usage. Example applications include hosting small databases that are backing web applications or virtual machine disk images for a hypervisor.| 99.999999999% \n (11 9's) | 99.999% \n (5 9's) | Provider-managed AES-256 encryption at rest. |
@@ -33,20 +35,20 @@ The values in the table represent service level objectives (SLOs), design target
 ## Durability
 {: #stordurability}
 
-Think of durability as a measurement of how healthy and resilient your data is. Durability in {{site.data.keyword.filestorage_short}} means that your data is stored consistently and intact without any signs of data decay, influence of drive failures, or any other form of corruption. 99.999999999% (11 nines) durability means that if you store 10 million files, then you expect to lose one file every 10000 years.
+Durability measures data integrity and resilience over time. {{site.data.keyword.filestorage_short}} is designed to achieve 99.999999999% (eleven 9's) durability, which means storing 10 million files results in an expected loss of only one file every 10,000 years. This durability level protects data against decay, drive failures, and corruption.
 
-When people hear the word durability, most of them think of hardware failures of Storage, Compute, and Network components that might cause data loss. In {{site.data.keyword.filestorage_short}}, your data is protected against drive failures and numerous types of disk errors that otherwise negatively impact data durability and data integrity. The data is stored redundantly across multiple physical disks in an Availability Zone to prevent data loss due to failure of any single component.
+{{site.data.keyword.filestorage_short}} protects data through redundant storage across multiple physical disks within an Availability Zone. This architecture prevents data loss from single component failures, including drive failures, disk errors, and hardware malfunctions that typically compromise data durability and integrity.
 
-Other than physical failure, a common source of data loss is accidental deletion or modifications of files by users. {{site.data.keyword.filestorage_short}} is only accessible to authorized hosts within your network. You control who can access it. Another measure to protect against accidental deletion and modification of files by users is a snapshot. If a user accidentally modifies or deletes crucial data from a volume, the data can be easily and quickly restored from a snapshot copy. For more information about this feature, see [Snapshots](/docs/FileStorage?topic=FileStorage-snapshots).
+Beyond hardware failures, accidental deletion, and user modifications represent common data loss scenarios. {{site.data.keyword.filestorage_short}} restricts access to authorized hosts within your network, providing administrator-controlled access management. Snapshot functionality enables rapid data restoration when users accidentally modify or delete critical data. For more information about this feature, see [Snapshots](/docs/FileStorage?topic=FileStorage-snapshots).
 
-The 11 nines durability target applies to a single Availability Zone. To protect against natural or human-made disasters that might destroy an entire Availability Zone, consider storing your most important data in multiple locations. For more information, see [Replicating Data](/docs/FileStorage?topic=FileStorage-replication).
+The eleven 9's durability target applies within a single Availability Zone. To protect against zone-wide disasters (natural or human-made), {{site.data.keyword.cloud}} recommends storing critical data across multiple geographic locations. For more information, see [Replicating Data](/docs/FileStorage?topic=FileStorage-replication).
 
 ## High Availability
 {: #storavailability}
 
-{{site.data.keyword.filestorage_short}} is built upon best-in-class, proven, enterprise-grade hardware and software to provide high availability and uptime. The data is stored redundantly across multiple physical disks on HA paired nodes. Each storage node has multiple paths to its own Solid-State Drives and its partner node's SSDs as well. This setup protects against path failure and controller failure because the node can still access its partner's disks for continued productivity. In fact, the system can lose multiple disks in the cluster simultaneously without degrading customer performance or adverse risk of data loss. Redundant network ports and paths protect against network failures across the cloud connections.
+{{site.data.keyword.filestorage_short}} is designed to achieve 99.999% (five 9's) availability through enterprise-grade hardware and redundant architecture. Data is stored across multiple physical disks on high-availability (HA) paired nodes. Each storage node maintains multiple paths to both its own Solid-State Drives (SSDs) and its partner node's SSDs. This multi-path configuration ensures continued operation during path failures or controller failures, as nodes can access partner disks for uninterrupted service. The system can lose multiple disks in the cluster simultaneously without degrading customer performance or risking data loss. Redundant network ports and paths provide additional protection against network failures.
 
 ## Encryption
 {: #storencryption}
 
-{{site.data.keyword.cloud}} provides full-disk encryption without compromising storage application performance. For more information about encryption of {{site.data.keyword.filestorage_short}}, see [Securing your data in File Storage](/docs/FileStorage?topic=FileStorage-mng-data). For more information about provider- and customer-managed encryption in a VPC, see [Data encryption for VPC](/docs/vpc?topic=vpc-vpc-encryption-about#vpc-customer-managed-encryption).
+{{site.data.keyword.cloud}} implements provider-managed AES-256 encryption at rest for all File Storage volumes. This full-disk encryption maintains data security without impacting storage performance. For more information about encryption of {{site.data.keyword.filestorage_short}}, see [Securing your data in File Storage](/docs/FileStorage?topic=FileStorage-mng-data). For more information about provider- and customer-managed encryption in a VPC, see [Data encryption for VPC](/docs/vpc?topic=vpc-vpc-encryption-about#vpc-customer-managed-encryption).
