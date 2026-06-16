@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-06-08"
+lastupdated: "2026-06-16"
 
 keywords: File Storage for Classic, modify volume, NFS, File Storage, expand capacity
 
@@ -14,10 +14,10 @@ subcollection: FileStorage
 # Expanding {{site.data.keyword.filestorage_short}} capacity
 {: #expandCapacity}
 
-Expand file storage capacity in GB increments up to 12 TB immediately without creating duplicates, manually migrating data, or experiencing downtime.
+Increase the capacity of your {{site.data.keyword.filestorage_full}} volume up to 12 TB without creating duplicates or migrating data manually.
 {: shortdesc}
 
-With this feature, users of {{site.data.keyword.filestorage_full}} are able to expand the size of their {{site.data.keyword.filestorage_short}} in GB increments up to 12 TB immediately. You don't need to create a duplicate or manually migrate data to a larger volume. This feature is available in all [data centers](/docs/overview?topic=overview-locations#data-centers).
+With this feature, users of {{site.data.keyword.filestorage_short}} are able to expand the size of their {{site.data.keyword.filestorage_short}} in GB increments up to 12 TB immediately. You don't need to create a duplicate or manually migrate data to a larger volume. This feature is available in all [data centers](/docs/overview?topic=overview-locations#data-centers).
 
 Billing for the volume is automatically updated to add the prorated difference of the new price to the current billing cycle. Then, the full new amount is billed in the next billing cycle.
 
