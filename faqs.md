@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-06-16"
+lastupdated: "2026-07-14"
 
 keywords: File Storage for Classic, encryption, security, provisioning, limitations, NFS
 
@@ -186,6 +186,7 @@ To enact this good practice, complete the following steps.
 7. For mounting instructions, depending on your host's operating system, follow the appropriate link.
    - [Accessing {{site.data.keyword.filestorage_short}} on Linux&reg;](/docs/FileStorage?topic=FileStorage-mountingLinux)
    - [Mounting {{site.data.keyword.filestorage_short}} Volume on ESXi hosts](/docs/FileStorage?topic=FileStorage-architectureguide)
+   - [VMware]{: tag-cool-gray} [How do you connect storage through isolated VLANs?](https://www.ibm.com/support/pages/how-do-you-connect-iscsi-block-storage-through-isolated-vlans){: external}
 
 ## What performance latency can be expected from the {{site.data.keyword.filestorage_short}}?
 {: faq}
