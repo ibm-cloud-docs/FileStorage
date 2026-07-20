@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-06-08"
+lastupdated: "2026-07-14"
 
 keywords: File Storage for Classic, NSF, SLCLI, API
 
@@ -11,7 +11,7 @@ subcollection: FileStorage
 ---
 {{site.data.keyword.attribute-definition-list}}
 
-# SLCLI commands for {{site.data.keyword.filestorage_short}}
+#  Managing {{site.data.keyword.filestorage_short}} with SLCLI commands
 {: #SLCLIcommands}
 
 Use the command-line interface (SLCLI) to manage file storage volumes, place orders, update authorizations, and cancel volumes in the {{site.data.keyword.cloud_notm}}.
