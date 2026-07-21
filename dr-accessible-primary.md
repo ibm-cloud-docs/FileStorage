@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-06-08"
+lastupdated: "2026-07-20"
 
 keywords: File Storage for Classic, NFS, disaster recovery, duplicate volume, replica volume, failover, failback,
 
@@ -109,7 +109,7 @@ During the failover process, configuration-related actions are read-only. You ca
 
 When your original source volume is repaired, you can start a controlled Failback to your original source volume.
 
-In a controlled failback the following steps occur:
+In a controlled failback, the following steps occur:
 - The acting source volume is taken offline.
 - A snapshot is taken.
 - The replication cycle is completed.
