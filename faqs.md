@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-07-14"
+lastupdated: "2026-08-07"
 
 keywords: File Storage for Classic, encryption, security, provisioning, limitations, NFS
 
@@ -91,7 +91,9 @@ The maximum supported file size (including VMDKs) is limited to 16 TB per file
 
 You need to order a new {{site.data.keyword.filestorage_short}} share in the correct data center, and then cancel the {{site.data.keyword.filestorage_short}} device that you ordered in the incorrect location.
 
-You can also create a duplicate of your share, and cancel the parent share. For more information, see [Creating and managing duplicate volumes](/docs/FileStorage?topic=FileStorage-duplicatevolume).
+You can also create a duplicate of your share and cancel the parent share. For more information, see [Creating and managing duplicate volumes](/docs/FileStorage?topic=FileStorage-duplicatevolume).
+
+If you are considering a broader migration to {{site.data.keyword.vpc_short}}, see [Migrating data from IBM Cloud classic infrastructure to VPC](/docs/classic-to-vpc?topic=classic-to-vpc-data-migration-classic-to-vpc).
 
 ## I cancelled my {{site.data.keyword.filestorage_short}} volume "immediately", but it's still visible in the console. Why is it not deleted?
 {: #24hrreclaimperiod}
@@ -461,3 +463,9 @@ curl -g -u $SL_USER:$SL_APIKEY -X GET \
 {: pre}
 
 For more information, see the [API Reference](https://sldn.softlayer.com/reference/softlayerapi/){: external}.
+
+## Can I migrate my {{site.data.keyword.filestorage_short}} volumes to VPC?
+{: #migrate-to-vpc}
+{: faq}
+
+Yes. If you are planning to move your workloads to {{site.data.keyword.vpc_full}}, {{site.data.keyword.cloud_notm}} provides guidance on connecting your classic and VPC environments and copying your data by using tools such as `rsync` and `dcfldd`. For more information, see [Migrating data from IBM Cloud classic infrastructure to VPC](/docs/classic-to-vpc?topic=classic-to-vpc-data-migration-classic-to-vpc) and the broader [Classic to VPC migration guide](/docs/classic-to-vpc?topic=classic-to-vpc-about-migration-infra).
