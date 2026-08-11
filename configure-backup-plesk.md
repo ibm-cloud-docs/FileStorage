@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-06-08"
+lastupdated: "2026-08-11"
 
 keywords: File Storage for Classic, NFS, Plesk, backups
 
@@ -14,7 +14,7 @@ subcollection: FileStorage
 # Configuring {{site.data.keyword.filestorage_short}} for backup with Plesk
 {: #PleskBackup}
 
-Configure Plesk to store backups in {{site.data.keyword.filestorage_full}} with root or sudo SSH and full admin-level access.
+Configure {{site.data.keyword.filestorage_full}} as an NFS backup target for Plesk on Linux by mounting the volume and redirecting the Plesk dump directory.
 {: shortdesc}
 
 For more information, see [(Plesk for Linux) Storing backups and website files on a remote server by using NFS](https://docs.plesk.com/en-US/obsidian/administrator-guide/backing-up-and-restoration/plesk-for-linux-storing-backups-and-website-files-on-a-remote-server-using-nfs.80016/){: external}.
@@ -44,6 +44,6 @@ For more information, see [(Plesk for Linux) Storing backups and website files o
    This command compresses and transmits your data, and it preserves as much as possible, except hard links. It also provides information about what files are being transferred plus a brief summary at the end.
    {: tip}
 
-1. Edit `/etc/psa/psa.conf` to point the `DUMP_D` value at the new target. It appears as: `DUMP_D /backup/psa/dumps`.
+1. Edit `/etc/psa/psa.conf` to point the `DUMP_D` value at the new target: `DUMP_D /backup/psa/dumps`.
 
 1. **Optional**. As dictated by your particular use case and business needs, remove the old storage from the server and cancel it from the account.

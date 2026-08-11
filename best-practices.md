@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-06-09"
+lastupdated: "2026-08-11"
 
 keywords: File Storage for Classic, use of a File Storage volume, NFS
 
@@ -14,7 +14,7 @@ subcollection: FileStorage
 # Best practices for {{site.data.keyword.filestorage_short}}
 {: #best-practices-classic}
 
-Follow best practices to maximize file storage performance, avoid application downtime, and ensure reliable data access for your workloads.
+Follow these best practices for {{site.data.keyword.filestorage_full}} to maximize IOPS, reduce latency, and ensure reliable NFS performance for your workloads.
 {: shortdesc}
 
 ## Clear the path
@@ -56,6 +56,6 @@ To achieve maximum IOPS, adequate network resources need to be in place.
     - Throughput is increased by reducing the number of CPU cycles and instructions for packet processing.
     - Jumbo frames provide less opportunity for packets to arrive out of order or to be lost, resulting in fewer retransmissions. Fewer retransmissions mean less time that is spent in TCP recovery. The result is greater throughput.
 
-* **Use the NFSv3** protocol when possible. Network File System (NFS) is a networking protocol for distributed file sharing. It allows remote hosts to mount file systems over a network and interact with those file systems as if they are mounted locally. NFSv3 supports safe asynchronous writes and is more robust at error handling than the previous NFSv2. It supports 64-bit file sizes and offsets, allowing clients to access more than 2 GB of file data. NFSv3 natively supports `no_root_squash` that allows root clients to retain root permissions on the NFS share. **NFSv4.1** is also supported. When {{site.data.keyword.filestorage_short}} is used in a VMware&reg; deployment, NFSv4.1 might be the better choice for your implementation. For more information about the different features of each version and what is supported by VMware&reg; vSphere, see [Best Practices For running NFS with VMware vSphere](https://www.vmware.com/docs/vmw-best-practices-running-nfs-vmware-vsphere){: external}.
+* **Use the NFSv3** protocol when possible. Network File System (NFS) is a networking protocol for distributed file sharing. It allows remote hosts to mount file systems over a network and interact with those file systems as if they are mounted locally. NFSv3 supports safe asynchronous writes and is more robust at error handling than the previous NFSv2. It supports 64-bit file sizes and offsets, allowing clients to access more than 2 GB of file data. NFSv3 natively supports `no_root_squash` that allows root clients to retain root permissions on the NFS share. **NFSv4.1** is also supported. When {{site.data.keyword.filestorage_short}} is used in a VMware&reg; deployment, NFSv4.1 can be the better choice for your implementation. For more information about the different features of each version and what is supported by VMware&reg; vSphere, see [Best Practices For running NFS with VMware vSphere](https://www.vmware.com/docs/vmw-best-practices-running-nfs-vmware-vsphere){: external}.
 
 * **Follow VMware&reg; specific best practice for teaming**. If you plan to use teaming to increase network availability to the storage array, turn off port security on the switch. Disable it for the two ports that share the virtual IP address. The purpose of this port security setting is to prevent spoofing of IP addresses. Thus, many network administrators enable this setting. However, if you don't change it, the port security setting prevents failover of the virtual IP from one switch port to another. Then, teaming cannot fail over from one path to another. For most LAN switches, the port security is enabled on a port level and thus can be set on or off for each port.

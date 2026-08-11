@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-08-05"
+lastupdated: "2026-08-11"
 
 keywords: Classic File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
@@ -22,10 +22,10 @@ completion-time: 1h
 {: toc-services=""}
 {: toc-completion-time="1h"}
 
-This tutorial guides you through the steps of ordering and configuring {{site.data.keyword.filestorage_full}} in a vSphere environment at {{site.data.keyword.cloud}}. {{site.data.keyword.filestorage_short}} is designed to support high I/O applications that require predictable levels of performance. The predictable performance is achieved through the allocation of protocol-level input/output operations per second (IOPS) to individual volumes.
+Provision and configure {{site.data.keyword.filestorage_full}} as a VMware vSphere NFS datastore to support high I/O applications with predictable IOPS performance.
 {: shortdesc}
 
-If you require more than eight hosts to access your VMware&reg; datastore, then choosing NFS {{site.data.keyword.filestorage_short}} is the best practice.
+If you require more than eight hosts to access your VMware&reg; datastore, then choosing Network File System (NFS) {{site.data.keyword.filestorage_short}} is the best practice.
 {: tip}
 
 The {{site.data.keyword.filestorage_short}} offering is accessed and mounted through an NFS connection. In a VMware&reg; deployment, a single volume can be mounted to up to 64 ESXi hosts as shared storage. You can also mount multiple volumes to create a storage cluster to use vSphere Storage Distributed Resource Scheduler (DRS).
@@ -59,7 +59,7 @@ When you order {{site.data.keyword.filestorage_short}}, consider the following i
 
 - To avoid storage disconnection during path-failover {{site.data.keyword.IBM}} recommends installing VMware&reg; tools, which set an appropriate timeout value. Don't change the value because the default setting is sufficient to make sure that your VMware&reg; host doesn't lose connectivity.
 
-- {{site.data.keyword.filestorage_short}} allows administrators to set snapshot schedules that create and delete snapshot copies automatically for each storage volume. You can also create extra snapshot schedules (hourly, daily, weekly) for automatic snapshots and manually create ad hoc snapshots for business continuity and disaster recovery (BCDR) scenarios. Automatic alerts are delivered through the {{site.data.keyword.cloud}} console to the volume owner for the retained snapshots and space used. Snapshot space is required to use snapshots. Space can be purchased on the initial volume order or after the initial provisioning. Restoring the {{site.data.keyword.filestorage_short}} volume requires powering off all the VMs. The volume needs to be temporarily unmounted from the ESXi host to avoid any data corruption during the process. For more information, see the [snapshots](/docs/FileStorage?topic=FileStorage-snapshots) article.
+- {{site.data.keyword.filestorage_short}} allows administrators to set snapshot schedules that create and delete snapshot copies automatically for each storage volume. You can also create extra snapshot schedules (hourly, daily, weekly) for automatic snapshots and manually create ad hoc snapshots for business continuity and disaster recovery (BCDR) scenarios. Automatic alerts are delivered through the {{site.data.keyword.cloud}} console to the volume owner for the retained snapshots and space used. Snapshot space is required to use snapshots. Space can be purchased on the initial volume order or after the initial provisioning. Restoring the {{site.data.keyword.filestorage_short}} volume requires powering off all the virtual machines (VMs). The volume needs to be temporarily unmounted from the ESXi host to avoid any data corruption during the process. For more information, see the [snapshots](/docs/FileStorage?topic=FileStorage-snapshots) article.
 
    VMware&reg; environments are not aware of snapshots. The {{site.data.keyword.filestorage_short}} snapshot capability must not be confused with VMware&reg; snapshots. Any recovery that uses the {{site.data.keyword.filestorage_short}} snapshot feature must be handled from the [{{site.data.keyword.cloud}} console](/login){: external}.
    {: important}

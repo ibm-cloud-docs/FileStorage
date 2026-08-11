@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-08-07"
+lastupdated: "2026-08-11"
 
 keywords: File Storage for Classic, NFS, provisioning, setup, configuration, mounting storage, mount storage, provision storage, NFS share, network attached storage
 
@@ -26,7 +26,7 @@ completion-time: 2h
 {{site.data.keyword.filestorage_short}} delivers enterprise-grade durability and availability with flexible performance options through persistent NFS-based network-attached storage.
 {: shortdesc}
 
-{{site.data.keyword.filestorage_full}} is persistent, fast, and flexible network-attached, NFS-based {{site.data.keyword.filestorage_short}}. In this network-attached storage (NAS) environment, you have total control over your file shares function and performance. {{site.data.keyword.filestorage_short}} shares can be connected to up to 64 authorized devices over routed TCP/IP connections for resiliency.
+{{site.data.keyword.filestorage_full}} is persistent, fast, and flexible network-attached, Network File System (NFS)-based {{site.data.keyword.filestorage_short}}. In this network-attached storage (NAS) environment, you have total control over your file shares function and performance. {{site.data.keyword.filestorage_short}} shares can be connected to up to 64 authorized devices over routed Transmission Control Protocol/Internet Protocol (TCP/IP) connections for resiliency.
 
 For more information about using {{site.data.keyword.filestorage_short}} with the {{site.data.keyword.containerlong}}, see [Storing data on classic IBM Cloud File Storage](/docs/containers?topic=containers-file_storage).
 
@@ -50,7 +50,7 @@ For more information about the {{site.data.keyword.filestorage_short}} offering,
 ### IO size
 {: #blocksize}
 
-The IOPS value for both Endurance and Performance is based on a 16-KB block size with a 50-50 read and write, 50-50 random and sequential workload. A 16-KB block is the equivalent of one write to the volume.
+The IOPS value for both Endurance and Performance is based on a 16 KB block size with a 50-50 read and write, 50-50 random and sequential workload. A 16-KB block is the equivalent of one write to the volume.
 {: important}
 
 The IO size that is used by your application directly impacts the storage performance. If the IO size that is used by your application is smaller than 16 KB, the IOPS limit is realized before the throughput limit. Conversely, if the block size that is used by your application is larger than 16 KB, the throughput limit is realized before to the IOPS limit.
@@ -79,11 +79,11 @@ You can authorize up to 64 servers to access the file share. This limit includes
 ### Network connection
 {: #networkconnection}
 
-The speed of your Ethernet connection must be faster than the expected maximum throughput from your volume. Generally, don't expect to saturate your Ethernet connection beyond 70% of the available bandwidth. For example, if you have 6,000 IOPS and are using a 16-KB block size, the volume can handle approximately 94-MBps throughput. If you have a 1-Gbps Ethernet connection to your volume, it becomes a bottleneck when your servers attempt to use the maximum available throughput. It's because 70% of the theoretical limit of a 1-Gbps Ethernet connection (125 MB per second) would allow for 88 MB per second only.
+The speed of your Ethernet connection must be faster than the expected maximum throughput from your volume. Generally, don't expect to saturate your Ethernet connection beyond 70% of the available bandwidth. For example, if you have 6,000 IOPS and are using a 16-KB block size, the volume can handle approximately 94 MBps throughput. If you have a 1-Gbps Ethernet connection to your volume, it becomes a bottleneck when your servers attempt to use the maximum available throughput. It's because 70% of the theoretical limit of a 1-Gbps connection is only 88 MBps.
 
 To achieve maximum IOPS, adequate network resources need to be in place. Other considerations include private network usage outside of storage and host side and application-specific tunings, and other settings.
 
-Storage traffic is to be isolated from other traffic types, and it is not to be directed through firewalls and routers. Keeping the storage traffic in a dedicated VLAN also helps prevent maximum transmission unit (MTU) mismatch when Jumbo frames are enabled. For more information, see [Enabling Jumbo Frames](/docs/FileStorage?topic=FileStorage-jumboframes).
+Storage traffic is to be isolated from other traffic types, and it is not to be directed through firewalls and routers. Keeping the storage traffic in a dedicated Virtual Local Area Network (VLAN) also helps prevent maximum transmission unit (MTU) mismatch when Jumbo frames are enabled. For more information, see [Enabling Jumbo Frames](/docs/FileStorage?topic=FileStorage-jumboframes).
 
 Storage traffic is included in the total network usage of Public Virtual Servers. For more information about the limits that might be imposed by the service, see the [Virtual Server Documentation](/docs/virtual-servers?topic=virtual-servers-about-public-virtual-servers).
 
