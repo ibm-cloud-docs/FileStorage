@@ -65,6 +65,8 @@ toc:
             navtitle: Adjusting IOPS
           - topic: working-with-snapshots.md
             navtitle: Managing snapshots
+          - topic: decommissioning-file-storage.md
+            navtitle: Deleting volumes
       - topicgroup:
           id: replication-dr
           label: Replication and Disaster Recovery

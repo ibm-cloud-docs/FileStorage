@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-08-07"
+lastupdated: "2026-10-08"
 
 keywords: File Storage for Classic, encryption, security, provisioning, limitations, NFS
 
@@ -103,6 +103,8 @@ If you are considering a broader migration to {{site.data.keyword.vpc_short}}, s
 When the volume is canceled, the request is followed by a 24-hour reclaim wait period. You can still see the volume in the console during those 24 hours. The 24-hour waiting period gives you a chance to void the cancellation request if needed. If you want to cancel the deletion of the volume, raise a [Support case](/unifiedsupport/cases/add){: external}.
 
 Billing for the volume stops immediately. When the reclaim period expires, the data is destroyed and the volume is removed from the console, too.
+
+Before you cancel a volume, review the [pre-deletion checklist](/docs/FileStorage?topic=FileStorage-decommissioning-file-storage#file-storage-deletion-checklist) to confirm the volume is unused and avoid accidental data loss.
 
 ## Measuring IOPS
 {: faq}
@@ -216,13 +218,17 @@ Customers with special requirements for compliance such as NIST 800-88 Guideline
 {: faq}
 {: #cancelstorage}
 
-The cancellation process for this storage device is in progress so the Cancel action is no longer available. The volume remains visible for at least 24 hours until it is reclaimed. The UI indicates that it’s inactive and the status "Cancellation pending" is displayed. The minimum 24-hour waiting period gives you a chance to void the cancellation request if needed.
+The cancellation process for this storage device is in progress so the Cancel action is no longer available. The volume remains visible for at least 24 hours until it is reclaimed. The UI indicates that it's inactive and the status "Cancellation pending" is displayed. The minimum 24-hour waiting period gives you a chance to void the cancellation request if needed.
+
+Before canceling a volume, use the [pre-deletion checklist](/docs/FileStorage?topic=FileStorage-decommissioning-file-storage#file-storage-deletion-checklist) to verify the volume is safe to delete.
 
 ## I accidentally deleted my volume, what can I do to get it back?
 {: faq}
 {: #accidentaldeletion}
 
-The answer depends on how long ago you deleted the storage volume, and if you chose to delete immediately or on the anniversary date. If the deletion happened in the last 24 hours or the anniversary date is still yet to come, the volume might still be waiting to be reclaimed. If the volume status is "Cancellation pending", you can contact support to void the cancellation request. It's important to act fast because when the reclaim-period expires, the data is deleted automatically and it is no longer possible to restore.
+The answer depends on how long ago you deleted the storage volume, and whether you chose to delete immediately or on the anniversary date. If the deletion happened in the last 24 hours or the anniversary date is still yet to come, the volume might still be waiting to be reclaimed. If the volume status is "Cancellation pending", you can contact support to void the cancellation request. It's important to act fast because when the reclaim-period expires, the data is deleted automatically and it is no longer possible to restore.
+
+To help prevent accidental deletions in the future, see the [pre-deletion checklist](/docs/FileStorage?topic=FileStorage-decommissioning-file-storage#file-storage-deletion-checklist).
 
 ## Which NFS versions are supported?
 {: faq}

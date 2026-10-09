@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-06-09"
+lastupdated: "2026-10-08"
 
 keywords: File Storage for Classic, NFS, authorizing hosts, revoke access, grant access, view authorizations
 
@@ -442,96 +442,11 @@ If you want to disconnect multiple hosts from a specific volume, you need to rep
 
 To revoke host authorization to access your file volume, you can use the [`deauthorize_host_to_volume` method](https://softlayer-python.readthedocs.io/en/latest/api/managers/SoftLayer.managers.FileStorageManager/#SoftLayer.managers.FileStorageManager.deauthorize_host_to_volume){: external} in the API Python Client. You have to specify the `volume_id` and the compute hosts by providing one of the following parameters: `hardware_ids` (for bare metal servers),`virtual_guest_ids` (for virtual server instances), `ip_address_ids`, `subnet_ids`. The request returns an array of `SoftLayer_Network_Storage_Allowed_Host` objects that have access to the specified volume, so you can confirm that the requested compute hosts were removed.
 
-## Deleting a storage volume in the console
+## Deleting a storage volume
 {: #cancelvolUI}
 {: help}
 {: support}
-{: ui}
 
-If you no longer need a specific volume, you can delete that file share. To cancel a storage volume, you need to revoke access from any hosts first.
+Before you delete a volume, complete the [pre-deletion checklist](/docs/FileStorage?topic=FileStorage-decommissioning-file-storage#file-storage-deletion-checklist) to confirm that the volume is unused and that you understand the reclaim timeline.
 
-1. Go to the [{{site.data.keyword.cloud}} console](/login){: external}. From the menu, select **Infrastructure**  ![VPC icon](../icons/vpc.svg) > **Classic Infrastructure**.
-2. Click **Storage** > **{{site.data.keyword.filestorage_short}}**.
-3. Click **Actions** ![Actions icon](../icons/action-menu-icon.svg "Actions") for the volume to be canceled, and select **Delete {{site.data.keyword.filestorage_short}}**.
-4. Confirm if you want to delete the volume immediately or on the anniversary date of when the volume was provisioned.
-
-   If you select the option to cancel the volume on its anniversary date, you can void the cancellation request before its anniversary date.
-   {: tip}
-
-5. Click **Continue** or **Close**.
-6. Click the acknowledgment checkbox, and click **Confirm**.
-
-When the volume is canceled, the request is followed by a 24-hour reclaim wait period. You can still see the volume in the console during those 24 hours. Billing for the volume stops immediately. When the reclaim-period expires, the data is destroyed and the volume is removed from the console, too. For more information, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs).
-{: note}
-
-Active replicas and dependent duplicates can block reclamation of the Storage volume. Make sure that the volume is no longer mounted, host authorizations are revoked, replication is canceled, and no dependent duplicates exist before you attempt to delete the original volume.
-
-## Deleting a storage volume from the CLI
-{: #cancelvolCLI}
-{: help}
-{: support}
-{: cli}
-
-When the volume is canceled, the request is followed by a 24-hour reclaim wait period. You can still see the volume in the console during those 24 hours. Billing for the volume stops immediately. When the reclaim-period expires, the data is destroyed and the volume is removed from the console, too. For more information, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs).
-
-Active replicas and dependent duplicates can block reclamation of the Storage volume. Make sure that the volume is no longer mounted, host authorizations are revoked, replication is canceled, and no dependent duplicates exist before you attempt to delete the original volume.
-
-### Deleting a storage volume from the IBMCLOUD CLI
-{: #cancelvolICCLI}
-
-You can use the `ibmcloud sl file volume-cancel` command to cancel the file share. The following example cancels the file share `12345678` with immediate effect.
-
-```sh
-ibmcloud sl file volume-cancel 12345678 --immediate -f
-```
-{: pre}
-
-For more information about all of the parameters that are available for this command, see [ibmcloud sl file volume-cancel](/docs/cli?topic=cli-sl-file-storage-service#sl_file_volume_cancel){: external}.
-
-### Deleting a storage volume from the SLCLI
-{: #cancelvolSLCLI}
-
-To delete a storage volume, you can use the following command.
-```sh
-$ slcli file volume-cancel --help
-Usage: slcli file volume-cancel [OPTIONS] VOLUME_ID
-
-Options:
-  --reason TEXT  An optional reason for cancellation.
-  --immediate    Cancels the File Storage volume immediately instead of on the
-                 billing anniversary.
-  -h, --help     Show this message and exit.
-```
-{: screen}
-
-## Deleting a storage volume with the API
-{: #cancelvolAPI}
-{: help}
-{: support}
-{: api}
-
-When the volume is canceled, the request is followed by a 24-hour reclaim wait period. You can still see the volume in the console during those 24 hours. Billing for the volume stops immediately. When the reclaim-period expires, the data is destroyed and the volume is removed from the console, too. For more information, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs).
-
-Active replicas and dependent duplicates can block reclamation of the Storage volume. Make sure that the volume is no longer mounted, host authorizations are revoked, replication is canceled, and no dependent duplicates exist before you attempt to delete the original volume.
-
-Then, you can use the [`cancel_volume` method](https://softlayer-python.readthedocs.io/en/latest/api/managers/SoftLayer.managers.FileStorageManager/#SoftLayer.managers.FileStorageManager.cancel_volume){: external} in the API Python Client. Specify the `volume_id` and whether you want to cancel the volume immediately or on the anniversary date (`immediate=False` or `immediate=True`) Optionally, you can also provide a reason for the cancellation (`reason='No longer needed'`).
-
-## Deleting a storage volume with Terraform
-{: #cancelvolTerraform}
-{: help}
-{: support}
-{: terraform}
-
-Use the `terraform destroy` command to conveniently remove a remote object such as a single file share. The following example cancels the file share with the ID `ibm_file_share.example.id`.
-
-```terraform
-terraform destroy --target ibm_file_share.example.id
-```
-{: pre}
-
-For more information, see [terraform destroy](https://developer.hashicorp.com/terraform/cli/commands/destroy){: external}.
-
-When the volume is canceled, the request is followed by a 24-hour reclaim wait period. You can still see the volume in the console during those 24 hours. Billing for the volume stops immediately. When the reclaim-period expires, the data is destroyed and the volume is removed from the console, too. For more information, see the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs).
-{: note}
-
-Active replicas and dependent duplicates can block reclamation of the Storage volume. Make sure that the volume is no longer mounted, host authorizations are revoked, replication is canceled, and no dependent duplicates exist before you attempt to delete the original volume.
+For step-by-step deletion instructions in the console, CLI, API, and Terraform, see [Decommissioning and deleting {{site.data.keyword.filestorage_short}} volumes](/docs/FileStorage?topic=FileStorage-decommissioning-file-storage).
