@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-10-08"
+lastupdated: "2026-10-10"
 
 keywords: File Storage for Classic, NFS, delete volume, cancel volume, decommission, pre-deletion checklist, accidental deletion
 
@@ -31,9 +31,9 @@ Work through each step in order before you cancel the volume.
 
 Check the **Notes** field on the volume details page to identify the original purpose or owner. Contact the team that ordered the volume to confirm it is no longer needed.
 
-- Console: see [Updating the notes of a volume in the console](/docs/FileStorage?topic=FileStorage-managingstorage#update-volume-notes-UI).{: ui}
-- CLI: see [Updating the notes of a volume from the CLI](/docs/FileStorage?topic=FileStorage-managingstorage#update-volume-notes-CLI).{: cli}
-- API: see [Updating the notes of a volume with the API](/docs/FileStorage?topic=FileStorage-managingstorage#update-volume-notes-API).{: api}
+- For more information about how to check notes in the console, see [Updating the notes of a volume in the console](/docs/FileStorage?topic=FileStorage-managingstorage#update-volume-notes-UI).{: ui}
+- For more information about how to check notes from the CLI, see [Updating the notes of a volume from the CLI](/docs/FileStorage?topic=FileStorage-managingstorage#update-volume-notes-CLI).{: cli}
+- For more information about how to check notes with the API, see [Updating the notes of a volume with the API](/docs/FileStorage?topic=FileStorage-managingstorage#update-volume-notes-API).{: api}
 
 ### Step 2: Understand what "authorized hosts" means
 {: #checklist-authorized-hosts-meaning}
@@ -50,13 +50,13 @@ The `ibmcloud sl file access-list` command and the SoftLayer API (`SoftLayer_Net
 
 Always run the authorized-host check as the account owner, or as a user who has Classic infrastructure device permissions for all devices in the account. For information about assigning those permissions, see [Managing classic infrastructure access](/docs/iam?topic=iam-mngclassicinfra).
 
-- Console: see [Viewing the list of hosts that are authorized to access a volume in the console](/docs/FileStorage?topic=FileStorage-managingstorage#viewhostUI).{: ui}
-- CLI: see [Viewing the list of authorized hosts from the CLI](/docs/FileStorage?topic=FileStorage-managingstorage#viewhostCLI).{: cli}
+- In the console, see [Viewing the list of hosts that are authorized to access a volume in the console](/docs/FileStorage?topic=FileStorage-managingstorage#viewhostUI).{: ui}
+- In the CLI, see [Viewing the list of authorized hosts from the CLI](/docs/FileStorage?topic=FileStorage-managingstorage#viewhostCLI).{: cli}
 
 ### Step 4: Check actual data usage on the host
 {: #checklist-check-data-usage}
 
-Unlike Block Storage, {{site.data.keyword.filestorage_short}} volumes do report bytes used. Check the `bytes_used` column in the `ibmcloud sl file volume-list` output to see whether the volume stores data. You can also query usage directly with the API:
+Unlike Block Storage, {{site.data.keyword.filestorage_short}} volumes do report the bytes used. Check the `bytes_used` column in the `ibmcloud sl file volume-list` output to see whether the volume stores data. You can also query usage directly with the API:
 
 ```sh
 curl -g -u $SL_USER:$SL_APIKEY -X GET \
@@ -78,16 +78,16 @@ Confirm with the application team that no workload depends on the volume before 
 
 Unmount the volume from every host before you revoke access. Revoking access while the share is mounted can cause stale NFS handles and data corruption on the host.
 
-- Red Hat Linux: see [Unmounting the file system](/docs/FileStorage?topic=FileStorage-mountingLinux#umountRHEL).
-- Ubuntu: see [Unmounting the file system](/docs/FileStorage?topic=FileStorage-mountingUbuntu#umountUbuntu).
+- On Red Hat Linux, see [unmounting the file system](/docs/FileStorage?topic=FileStorage-mountingLinux#umountRHEL).
+- On Ubuntu, see [unmounting the file system](/docs/FileStorage?topic=FileStorage-mountingUbuntu#umountUbuntu).
 
 ### Step 6: Revoke all host authorizations
 {: #checklist-revoke-access}
 
 After unmounting, revoke access for every authorized host and subnet.
 
-- Console: see [Revoking a host's access in the console](/docs/FileStorage?topic=FileStorage-managingstorage#revokehostaccessinUI).{: ui}
-- CLI: see [Revoking a host's access from the CLI](/docs/FileStorage?topic=FileStorage-managingstorage#revokeauthcli).{: cli}
+- In the console, see [Revoking a host's access in the console](/docs/FileStorage?topic=FileStorage-managingstorage#revokehostaccessinUI).{: ui}
+- In the CLI, see [Revoking a host's access from the CLI](/docs/FileStorage?topic=FileStorage-managingstorage#revokeauthcli).{: cli}
 
 ### Step 7: Cancel active replication and remove dependent duplicates
 {: #checklist-cancel-replication}
@@ -100,7 +100,7 @@ Active replicas and dependent duplicate volumes block reclamation of the parent 
 ### Step 8: Understand the reclaim timeline
 {: #checklist-reclaim-timeline}
 
-When you cancel a volume, a 24-hour reclaim wait period begins. During this period, the volume remains visible in the console but is inactive. Billing stops immediately. After the reclaim period expires, the data is permanently destroyed and the volume is removed from the console.
+When you cancel a volume, a 24-hour reclaim wait period begins. During this period, the volume remains visible in the console but is inactive. The billing stops immediately. After the reclaim period expires, the data is permanently destroyed and the volume is removed from the console.
 
 To stop a pending cancellation before the reclaim period expires, open a [Support case](/unifiedsupport/cases/add){: external}.
 
@@ -120,7 +120,7 @@ If you no longer need a specific volume, you can delete that file share.
    If you select the option to cancel the volume on its anniversary date, you can void the cancellation request before its anniversary date.
    {: tip}
 
-5. Click **Continue** or **Close**.
+5. Click **Continue** or **close**.
 6. Click the acknowledgment checkbox, and click **Confirm**.
 
 ## Deleting a storage volume from the CLI
