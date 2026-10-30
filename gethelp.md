@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-06-09"
+lastupdated: "2026-10-30"
 
 keywords: File Storage for Classic, issues, get support, how to request help, open a case, open a ticket
 
@@ -14,10 +14,10 @@ subcollection: FileStorage
 # Getting help and support for {{site.data.keyword.filestorage_short}}
 {: #help-and-support}
 
-Get help with {{site.data.keyword.filestorage_full}} by using available resources before you open a support case for issues or questions.
+If you experience an issue or have questions about {{site.data.keyword.filestorage_full}}, you can use the following resources before you open a support case.
 {: shortdesc}
 
-* Ask the [AI assistant](/docs/overview?topic=overview-ask-ai-assistant) in the console or from the {{site.data.keyword.cloud_notm}} CLI.
+* Troubleshoot with [{{site.data.keyword.paver_full}}](http://cloud.paver.ibm.com){: external}. {{site.data.keyword.paver}} is an embedded AI operator that understands your account context, creates a resolution plan, and executes changes on your behalf, while always requiring your approval before touching your live environment.
 * Review the [FAQs](/docs/FileStorage?topic=FileStorage-file-storage-faqs) in the product Documentation.
 * Check the status of the {{site.data.keyword.cloud}} platform and resources by going to the [Status page](/status){: external}.
 * Review [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud){: external} to see whether other users experienced the same problem. When you ask a question, tag the question with `ibm-cloud` and `file-storage`, so it can be seen by the {{site.data.keyword.cloud_notm}} development teams.
