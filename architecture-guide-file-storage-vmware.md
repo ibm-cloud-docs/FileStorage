@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-08-11"
+lastupdated: "2026-10-30"
 
 keywords: Classic File Storage, provisioning File Storage for VMware, NFS, File Storage, vmware,
 
@@ -148,7 +148,7 @@ For more information, see [VMware vSphere 8.0 - Enabling Jumbo Frames](https://t
 1. Expand **NIC teaming**.
 1. Verify that the **Load-balancing** option is set to **Route based on the originating virtual port** and click **OK**.
 
-For more information, see [vSphere Distributed Switch](/docs/vmwaresolutions?topic=vmwaresolutions-storage-infra-mgmt#storage-infra-mgmt-vsphere-ds), and [VMware vSphere 8.0 - Edit Virtual Switch Settings in theVMware Host Client](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-single-host-management-vmware-host-client/networking-in-the-vsphere-host-client-vSphereSingleHostManagementVMwareHostClient/managing-virtual-switches-in-the-vsphere-host-client-vSphereSingleHostManagementVMwareHostClient/edit-virtual-switch-settings-in-the-vsphere-host-client-vSphereSingleHostManagementVMwareHostClient.html){: external}.
+For more information, see [vSphere Distributed Switch](/docs/vmwaresolutions?topic=vmwaresolutions-storage-infra-mgmt#storage-infra-mgmt-vsphere-ds), and [VMware vSphere 8.0 - Edit Virtual Switch Settings in theVMware Host Client](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-single-host-management-vmware-host-client/networking-in-the-vsphere-host-client/managing-virtual-switches-in-the-vsphere-host-client/edit-virtual-switch-settings-in-the-vsphere-host-client.html){: external}.
 
 ### Configuring static routing (Optional)
 {: #configurevmwarehost3}
