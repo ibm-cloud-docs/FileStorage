@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-10-08"
+lastupdated: "2026-11-09"
 
 keywords: File Storage for Classic, encryption, security, provisioning, limitations, NFS
 
@@ -367,7 +367,7 @@ All Block and {{site.data.keyword.filestorage_short}} services are thin-provisio
 {: #staasV2migration}
 {: faq}
 
-You might notice that your Storage volumes are now billed as "Endurance Storage Service” or "Performance Storage Service" instead of "Enterprise Storage". You might also have new options in the console, such as the ability to adjust IOPS or increase capacity. {{site.data.keyword.cloud}} strives to continuously improve storage capabilities. As hardware gets upgraded in the data centers, storage volumes that are in those data centers are also upgraded to use all enhanced features. The price that you pay for your Storage volume does not change with this upgrade.
+You might notice that your Storage volumes are now billed as "Endurance Storage Service" or "Performance Storage Service" instead of "Enterprise Storage". You might also have new options in the console, such as the ability to adjust IOPS or increase capacity. {{site.data.keyword.cloud}} strives to continuously improve storage capabilities. As hardware gets upgraded in the data centers, storage volumes that are in those data centers are also upgraded to use all enhanced features. The price that you pay for your Storage volume does not change with this upgrade.
 
 ## How durable is {{site.data.keyword.filestorage_short}}?
 {: #stordurabilityfaq}
